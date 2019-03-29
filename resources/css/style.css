@@ -28,8 +28,7 @@ ul {
   margin-left: auto;
   margin-right: auto;
   max-width: 1140px;
-  align-items: center;
-  /* justify-content: center; */ }
+  text-align: center; }
 
 header {
   width: 100%; }
@@ -135,4 +134,6 @@ footer {
   font-size: 1em; }
 
 section {
-  padding: 33px 0px; }
+  padding: 33px 0px;
+  max-width: 1140px;
+  margin: 0 auto; }
