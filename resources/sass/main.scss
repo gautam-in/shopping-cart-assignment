@@ -168,8 +168,97 @@
         font-size: 1em;
     }
     
-    section {
+    .section_1 {
         padding: 33px 0px;
         max-width: 1140px;
         margin: 0 auto;
+
+        -webkit-box-shadow: 0 8px 6px -6px rgba(0,0,0,.15);
+        -moz-box-shadow: 0 8px 6px -6px rgba(0,0,0,.15);
+             box-shadow: 0 8px 6px -6px rgba(0,0,0,.15);
+
+
+             
+       
     }
+
+    $primary : #6dccd3;
+    
+    form{
+        display: none;
+        max-width: 400px;
+        padding: 20px 40px;
+        background: #fff;
+        height: 300px;
+        margin: auto;
+        display: block;
+         transition:.3s;
+        position: relative;
+        transition: translateY(-100px);
+        z-index: 500;
+        &.up{
+            transition: translateY(-180px);
+        }
+      }
+      
+      h1{
+        color: $primary;
+        font-family: 'Dancing Script', cursive;
+      }
+      .btn{
+        background: #fff;
+        padding: 5px;
+        width: 100%;
+        height: 35px;
+        border:1px solid #bf2957;;
+        margin-top: 25px;
+        cursor: pointer;
+     transition:.3s;
+         box-shadow:0 50px #bf2957 inset;
+        color: #fff;
+      }
+      .form-group{
+       
+        position: relative;
+        font-size: 15px;
+        color: #666;
+        &+&{
+          margin-top: 30px;
+        }
+        
+        .form-label{
+          position: absolute;
+          z-index: 1;
+          left: 0;
+          top: 5px;
+          transition:.3s;
+          
+        }
+        
+        .form-control{
+          width: 100%;
+          position: relative;
+          z-index: 3;
+          height: 35px;
+          background: none;
+          border:none;
+          padding: 5px 0;
+           transition:.3s;
+          border-bottom: 1px solid #777;
+          color: #555;
+          &:invalid{outline: none;}
+          
+          &:focus , &:valid{
+            outline: none;
+      
+            box-shadow:0 1px $primary;
+            border-color:$primary;
+            + .form-label{
+              font-size: 12px;
+              color: $primary;
+              transition: translateY(-40px);
+            }
+          }
+        }
+        
+      }
