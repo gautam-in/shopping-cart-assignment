@@ -15,6 +15,14 @@ ul {
   display: flex;
   list-style: none; }
 
+.row_header {
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1140px;
+  align-items: center;
+  /* justify-content: center; */ }
+
 .row {
   display: flex;
   margin-left: auto;
@@ -27,31 +35,31 @@ header {
   width: 100%; }
   header nav {
     border-bottom: 1px solid #a79a9a; }
-  header .row ul > li {
+  header .row_header ul > li {
     margin-left: 20px; }
-    header .row ul > li a {
+    header .row_header ul > li a {
       text-decoration: none; }
-  header .row .logo {
+  header .row_header .logo {
     flex: 0;
     height: 70px;
     width: auto; }
-  header .row .main-nav {
+  header .row_header .main-nav {
     flex: 1;
     display: flex;
     align-items: center;
     margin-left: 11%;
     margin-top: 3%; }
-  header .row .super-header {
+  header .row_header .super-header {
     flex: 0;
     font-size: 14px; }
-    header .row .super-header .cart-section {
+    header .row_header .super-header .cart-section {
       margin-top: 10px;
       display: flex;
       background-color: #eeeeee;
       width: 100px;
       align-items: center;
       justify-content: center; }
-      header .row .super-header .cart-section .img {
+      header .row_header .super-header .cart-section .img {
         width: 40px;
         height: 40px; }
 
@@ -82,30 +90,23 @@ footer {
 .fruits {
   width: 60%; }
 
-.left {
-  flex: 1;
-  align-items: center;
-  justify-content: center; }
+.heading {
+  font-weight: 800;
+  font-size: 1.3em; }
 
-.right {
-  flex: 1;
-  align-items: center;
-  text-align: center; }
-  .right .heading {
-    font-weight: 800;
-    font-size: 1.3em; }
-  .right .fruit_text {
-    font-weight: 500;
-    font-size: 1em;
-    line-height: 50px; }
-  .right .fruit_button {
-    background: #bf2957;
-    color: white;
-    border-color: #bf2957;
-    padding: 1%;
-    font-weight: 500;
-    font-size: 1em;
-    /* line-height: 2%; */ }
+.fruit_text {
+  font-weight: 500;
+  font-size: 1em;
+  line-height: 50px; }
+
+.fruit_button {
+  background: #bf2957;
+  color: white;
+  border-color: #bf2957;
+  padding: 1%;
+  font-weight: 500;
+  font-size: 1em;
+  /* line-height: 2%; */ }
 
 .category_bakery {
   max-width: 1140px;
@@ -117,105 +118,21 @@ footer {
 .bakery {
   width: 60%; }
 
-.right_bakery {
-  flex: 1;
-  text-align: center; }
+.bakery_heading {
+  font-weight: 800; }
 
-.left_bakery {
-  flex: 1;
-  text-align: center; }
-  .left_bakery .bakery_heading {
-    font-weight: 800; }
-  .left_bakery .bakery_text {
-    font-weight: 500;
-    font-size: 1em;
-    padding: 1%; }
-  .left_bakery .bakery_button {
-    background: #bf2957;
-    color: white;
-    border-color: #bf2957;
-    padding: 1%;
-    font-weight: 500;
-    font-size: 1em; }
+.bakery_text {
+  font-weight: 500;
+  font-size: 1em;
+  padding: 1%; }
+
+.bakery_button {
+  background: #bf2957;
+  color: white;
+  border-color: #bf2957;
+  padding: 1%;
+  font-weight: 500;
+  font-size: 1em; }
 
 section {
   padding: 33px 0px; }
-
-.category_beverages {
-  max-width: 1140px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: center;
-  justify-items: center; }
-
-.beverages {
-  width: 45%;
-  margin-left: 6%; }
-
-.left_beverages {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center; }
-
-.right_beverages {
-  flex: 1;
-  display: flex;
-  align-items: center; }
-  .right_beverages .heading_beverages {
-    font-weight: 800;
-    font-size: 1.3em;
-    margin-left: 13%; }
-  .right_beverages .beverages_text {
-    font-weight: 500;
-    font-size: 1em;
-    margin-left: -31%;
-    padding: 1%; }
-  .right_beverages .beverages_button > button {
-    background: #bf2957;
-    color: white;
-    border-color: #bf2957;
-    padding: 1%;
-    font-weight: 500;
-    font-size: 1em;
-    /* line-height: 2%; */
-    margin-left: 13%;
-    margin-top: 2%; }
-
-.category_baby {
-  max-width: 1140px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: center;
-  justify-items: center; }
-
-.baby {
-  width: 45%;
-  margin-left: 6%; }
-
-.left_baby {
-  flex: 1;
-  align-items: center;
-  justify-content: center; }
-
-.right_baby {
-  flex: 1;
-  align-items: center; }
-  .right_baby .heading_baby {
-    font-weight: 800;
-    font-size: 1.3em;
-    margin-left: 13%; }
-  .right_baby .text_baby {
-    font-weight: 500;
-    font-size: 1em;
-    margin-left: 13px; }
-  .right_baby .button_baby > button {
-    background: #bf2957;
-    color: white;
-    border-color: #bf2957;
-    padding: 1%;
-    font-weight: 500;
-    font-size: 1em;
-    /* line-height: 2%; */
-    margin-top: 2%;
-    margin-left: 13%; }

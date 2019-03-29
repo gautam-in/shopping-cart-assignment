@@ -9,12 +9,15 @@
     <link href="https://fonts.googleapis.com/css?family=Dosis:200,300,400,500,600,700,800" rel="stylesheet">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" type="text/css" href="resources/css/style.css">
+    <link rel="stylesheet" type="text/css" href="resources/css/flexboxgrid.css">
+
+
 </head>
 
 <body>
     <header>
         <nav>
-            <div class="row">
+            <div class="row_header">
                 <img src="resources/images/logo.png" alt="Shopping logo" class="logo_img">
                 <div class="main-nav">
                     <ul>
@@ -57,77 +60,61 @@
     </section>
     <div class="container">
         <section>
-            <div class="category_fruits">
-                <div class="left">
+            <div class="row">
+                <div class="col-sm-8">
                     <img src="resources/images/category/fruits.png" alt="fruits" class="fruits">
                 </div>
-
-                <div class="right">
-                    <h3 class="heading">Fruits & Vegitables </h3>
+                <div class="col-sm-4">
+                    <h2>Fruits & Vegitables </h2>
                     <p class="fruit_text">A variety of Fruits & Vegitables. </p>
                     <button class="fruit_button">Explore fruits-and-veg</button>
-
                 </div>
             </div>
         </section>
 
-        <section>
-            <div class="category_bakery">
-                <div class="left_bakery">
-
-                    <h3 class="bakery_heading">Bakery Cakes and Dairy</h3>
-                    <p class="bakery_text">The best cupcakes,cookies,pies,cheesecakes,fresh bread ,biscotti,muffines,bagels,fresh coffee,milk and more. </p>
-                    <button class="bakery_button">Explore bakery-cakes-dairy</button>
-
-                </div>
-                <div class="right_bakery">
-                    <img src="resources/images/category/bakery.png" alt="bakery" class="bakery">
-                </div>
-            </div>
-        </section>
-
-        <section>
-            <div class="category_beverages">
-                <div class="left_beverages">
-                    <img src="resources/images/category/beverages.png" alt="beverages" class="beverages">
-                </div>
-
-                <div class="right_beverages">
-                    <div style="margin-left:11%">
-                        <div class="heading_beverages">Beverages </div>
-                        <p class="beverages_text">Our bevrage department will ensure your fridge is always fully stocked. Shop for soda,juice, beer and more. </p>
-                        <div class="beverages_button"><button>Explore beverages</button></div>
+        <div class="container">
+            <section>
+                <div class="row">
+                    <div class="col-xs-6">
+                        <h2>Bakery Cakes and Dairy</h2>
+                        <p>The best cupcakes,cookies,pies,cheesecakes,fresh bread ,biscotti,muffines,bagels,fresh coffee,milk and more. </p>
+                        <button class="bakery_button">Explore bakery-cakes-dairy</button>
+                    </div>
+                    <div class="col-xs-6">
+                        <img src="resources/images/category/bakery.png" alt="bakery" class="bakery">
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
 
+            <section>
+                <div class="category_bakery">
+                    <div class="left_bakery">
 
-        <section>
-            <div class="category_baby">
-                <div class="left_baby">
-                    <img src="resources/images/category/baby.png" alt="baby" class="baby">
-                </div>
+                        <h2>Bakery Cakes and Dairy</h2>
+                        <p class="bakery_text">The best cupcakes,cookies,pies,cheesecakes,fresh bread ,biscotti,muffines,bagels,fresh coffee,milk and more. </p>
+                        <button class="bakery_button">Explore bakery-cakes-dairy</button>
 
-                <div class="right_baby">
-                    <div style="margin-left:11%">
-                        <div class="heading_baby">Baby Care </div>
-                        <p class="text_baby">Shop online for Baby Products,Diapers.Skin Care Products,etc. </p>
-                        <div class="button_baby"><button>Explore baby</button></div>
+                    </div>
+                    <div class="right_bakery">
+                        <img src="resources/images/category/bakery.png" alt="bakery" class="bakery">
                     </div>
                 </div>
-            </div>
-        </section>
-
-    </div>
+            </section>
 
 
-    <footer>
-        <div class="footer">
-            Copyright @ 2011-2018 Sabka Bazar Grocery Supplie Pvt Ltd
+
+
+
+
         </div>
-    </footer>
+
+
+        <footer>
+            <div class="footer">
+                Copyright @ 2011-2018 Sabka Bazar Grocery Supplie Pvt Ltd
+            </div>
+        </footer>
 </body>
 
 </html>

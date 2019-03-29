@@ -18,6 +18,15 @@
         list-style: none;
     }
     
+    .row_header {
+        display: flex;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 1140px;
+        align-items: center;
+        /* justify-content: center; */
+    }
+    
     .row {
         display: flex;
         margin-left: auto;
@@ -32,7 +41,7 @@
         nav {
             border-bottom: 1px solid #a79a9a;
         }
-        .row {
+        .row_header {
             ul>li {
                 margin-left: 20px;
                 a {
@@ -107,34 +116,25 @@
         width: 60%;
     }
     
-    .left {
-        flex: 1;
-        align-items: center;
-        justify-content: center;
+    .heading {
+        font-weight: 800;
+        font-size: 1.3em;
     }
     
-    .right {
-        flex: 1;
-        align-items: center;
-        text-align: center;
-        .heading {
-            font-weight: 800;
-            font-size: 1.3em;
-        }
-        .fruit_text {
-            font-weight: 500;
-            font-size: 1em;
-            line-height: 50px;
-        }
-        .fruit_button {
-            background: #bf2957;
-            color: white;
-            border-color: #bf2957;
-            padding: 1%;
-            font-weight: 500;
-            font-size: 1em;
-            /* line-height: 2%; */
-        }
+    .fruit_text {
+        font-weight: 500;
+        font-size: 1em;
+        line-height: 50px;
+    }
+    
+    .fruit_button {
+        background: #bf2957;
+        color: white;
+        border-color: #bf2957;
+        padding: 1%;
+        font-weight: 500;
+        font-size: 1em;
+        /* line-height: 2%; */
     }
     
     .category_bakery {
@@ -149,125 +149,25 @@
         width: 60%;
     }
     
-    .right_bakery {
-        flex: 1;
-        text-align: center;
+    .bakery_heading {
+        font-weight: 800;
     }
     
-    .left_bakery {
-        flex: 1;
-        text-align: center;
-        .bakery_heading {
-            font-weight: 800;
-        }
-        .bakery_text {
-            font-weight: 500;
-            font-size: 1em;
-            padding: 1%;
-        }
-        .bakery_button {
-            background: #bf2957;
-            color: white;
-            border-color: #bf2957;
-            padding: 1%;
-            font-weight: 500;
-            font-size: 1em;
-        }
+    .bakery_text {
+        font-weight: 500;
+        font-size: 1em;
+        padding: 1%;
+    }
+    
+    .bakery_button {
+        background: #bf2957;
+        color: white;
+        border-color: #bf2957;
+        padding: 1%;
+        font-weight: 500;
+        font-size: 1em;
     }
     
     section {
         padding: 33px 0px;
-    }
-    
-    .category_beverages {
-        max-width: 1140px;
-        margin: 0 auto;
-        display: flex;
-        justify-content: center;
-        justify-items: center;
-    }
-    
-    .beverages {
-        width: 45%;
-        margin-left: 6%;
-    }
-    
-    .left_beverages {
-        flex: 1;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-    
-    .right_beverages {
-        flex: 1;
-        display: flex;
-        align-items: center;
-        .heading_beverages {
-            font-weight: 800;
-            font-size: 1.3em;
-            margin-left: 13%;
-        }
-        .beverages_text {
-            font-weight: 500;
-            font-size: 1em;
-            margin-left: -31%;
-            padding: 1%;
-        }
-        .beverages_button>button {
-            background: #bf2957;
-            color: white;
-            border-color: #bf2957;
-            padding: 1%;
-            font-weight: 500;
-            font-size: 1em;
-            /* line-height: 2%; */
-            margin-left: 13%;
-            margin-top: 2%;
-        }
-    }
-    
-    .category_baby {
-        max-width: 1140px;
-        margin: 0 auto;
-        display: flex;
-        justify-content: center;
-        justify-items: center;
-    }
-    
-    .baby {
-        width: 45%;
-        margin-left: 6%;
-    }
-    
-    .left_baby {
-        flex: 1;
-        align-items: center;
-        justify-content: center;
-    }
-    
-    .right_baby {
-        flex: 1;
-        align-items: center;
-        .heading_baby {
-            font-weight: 800;
-            font-size: 1.3em;
-            margin-left: 13%;
-        }
-        .text_baby {
-            font-weight: 500;
-            font-size: 1em;
-            margin-left: 13px;
-        }
-        .button_baby>button {
-            background: #bf2957;
-            color: white;
-            border-color: #bf2957;
-            padding: 1%;
-            font-weight: 500;
-            font-size: 1em;
-            /* line-height: 2%; */
-            margin-top: 2%;
-            margin-left: 13%;
-        }
     }
