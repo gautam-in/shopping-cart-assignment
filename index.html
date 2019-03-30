@@ -10,63 +10,69 @@
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" type="text/css" href="resources/css/style.css">
     <link rel="stylesheet" type="text/css" href="resources/css/flexboxgrid.css">
-<style>
-    
+    <style>
+
     </style>
 
 </head>
 
 <body>
-        <header>
-                <nav>
-                    <div class="row_header">
-                        <img src="resources/images/logo.png" alt="Shopping logo" class="logo_img">
-                        <div class="main-nav">
-                            <ul>
-                                <li><a class="active" href="index.html">Home</a></li>
-                                <li><a href="#product">Product</a></li>
-                            </ul>
-                        </div>
-                        <div class="super-header ">
-                            <ul>
-                                <li><a href="login.html">SignIn</a></li>
-                                <li><a href="#product">Registor</a></li>
-                            </ul>
-                            <span class="cart-section">
-                                <img src="resources/images/cart.svg" alt="cart" class="img">
-                                <p>Cart</p>
-                            </span>
-                        </div>
-                    </div>
-                </nav>
-            </header>
+    <header>
+        <nav>
+            <div class="row_header">
+                <img src="resources/images/logo.png" alt="Shopping logo" class="logo_img">
+                <div class="main-nav">
+                    <ul>
+                        <li><a class="active" href="index.html">Home</a></li>
+                        <li><a href="#product">Product</a></li>
+                    </ul>
+                </div>
+                <div class="super-header ">
+                    <ul>
+                        <li><a href="login.html">SignIn</a></li>
+                        <li><a href="#product">Registor</a></li>
+                    </ul>
+                    <span class="cart-section">
+                        <img src="resources/images/cart.svg" alt="cart" class="img">
+                        <p>Cart</p>
+                    </span>
+                </div>
+            </div>
+        </nav>
+    </header>
     <div class="wrap container-fluid">
         <section class="section_1">
             <div class="row">
                 <div class="col-xs-12">
                     <div class="slider_img">
                         <div class="w3-content w3-display-container">
-                            <img class="mySlides" src="resources/images/offers/offer5.jpg" alt="offer5" class="offer">
-                            <img class="mySlides" src="resources/images/offers/offer4.jpg" alt="offer4" class="offer">
-                            <img class="mySlides" src="resources/images/offers/offer3.jpg" alt="offer3" class="offer">
-                            <img class="mySlides" src="resources/images/offers/offer2.jpg" alt="offer2" class="offer">
-                            <img class="mySlides" src="resources/images/offers/offer1.jpg" alt="offer1" class="offer">
-            
-            
-                            <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
-                            <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
-                        </div>
-                </div>
-            </div>
+                            <img src="resources/images/offers/offer5.jpg" alt="offer5" class="offer">
+                            <img src="resources/images/offers/offer4.jpg" alt="offer4" class="offer">
+                            <img src="resources/images/offers/offer3.jpg" alt="offer3" class="offer">
+                            <img src="resources/images/offers/offer2.jpg" alt="offer2" class="offer">
+                            <img src="resources/images/offers/offer1.jpg" alt="offer1" class="offer">
+
+
+                            <button class="w3-button w3-grey w3-display-left" onclick="plusDivs(-1)">PREV</button>
+                            <button class="w3-button w3-grey w3-display-right" onclick="plusDivs(1)">NEXT</button>
+
+                            <span class="w3-badge demo w3-border w3-transparent w3-hover-black" onclick="currentDiv(1)"></span>
+                            <span class="w3-badge demo w3-border w3-transparent w3-hover-black" onclick="currentDiv(2)"></span>
+                            <span class="w3-badge demo w3-border w3-transparent w3-hover-black" onclick="currentDiv(3)"></span>
+                            <span class="w3-badge demo w3-border w3-transparent w3-hover-black" onclick="currentDiv(4)"></span>
+                            <span class="w3-badge demo w3-border w3-transparent w3-hover-black" onclick="currentDiv(5)"></span>
+                            <div>
+                                <div>
+                                </div>
         </section>
 
         <section class="section_1">
             <div class="row">
-                <div class="col-xs-8">
+                <div class="col-xs-4">
                     <img src="resources/images/category/fruits.png" alt="fruits" class="fruits">
                 </div>
-                <div class="col-xs-4">
-                    <h2>Fruits & Vegitables </h2>
+                <div class="col-xs-8">
+                    <div class="text">Fruits & Vegitables </div>
                     <p class="fruit_text">A variety of Fruits & Vegitables. </p>
                     <button class="fruit_button">Explore fruits-and-veg</button>
                 </div>
@@ -76,8 +82,8 @@
         <section class="section_1">
             <div class="row">
                 <div class="col-xs-8">
-                    <h2>Bakery Cakes and Dairy</h2>
-                    <p>The best cupcakes,cookies,pies,cheesecakes,fresh bread ,biscotti,muffines,bagels,fresh coffee,milk and more.
+                    <div class="text">Bakery Cakes and Dairy</div>
+                    <p class="fruit_text">The best cupcakes,cookies,pies,cheesecakes,fresh bread ,biscotti,muffines,bagels,fresh coffee,milk and more.
                     </p>
                     <button class="bakery_button">Explore bakery-cakes-dairy</button>
                 </div>
@@ -88,13 +94,13 @@
         </section>
         <section class="section_1">
             <div class="row">
-                <div class="col-xs-8">
+                <div class="col-xs-4">
                     <img src="resources/images/category/beverages.png" alt="fruits" class="fruits">
                 </div>
-                <div class="col-xs-4">
-                    <h2>Fruits & Vegitables </h2>
-                    <p class="fruit_text">A variety of Fruits & Vegitables. </p>
-                    <button class="fruit_button">Explore fruits-and-veg</button>
+                <div class="col-xs-8">
+                    <div class="text">Beverages </div>
+                    <p class="fruit_text">Our bevrage department will ensure your fridge is always fully stocked. Shop for soda,juice, beer and more. </p>
+                    <button class="fruit_button">Explore beverages</button>
                 </div>
             </div>
         </section>
@@ -102,10 +108,10 @@
         <section class="section_1">
             <div class="row">
                 <div class="col-xs-8">
-                    <h2>Bakery Cakes and Dairy</h2>
-                    <p>The best cupcakes,cookies,pies,cheesecakes,fresh bread ,biscotti,muffines,bagels,fresh coffee,milk and more.
+                    <div class="text">Beauty and Hygiene</div>
+                    <p class="fruit_text">Buy beauty and personal care products online in india at best prices.
                     </p>
-                    <button class="bakery_button">Explore bakery-cakes-dairy</button>
+                    <button class="bakery_button">Explore beauty-hygiene</button>
                 </div>
                 <div class="col-xs-4">
                     <img src="resources/images/category/beauty.png" alt="bakery" class="bakery">
@@ -115,29 +121,25 @@
 
         <section class="section_1">
             <div class="row">
-                <div class="col-xs-8">
+                <div class="col-xs-4">
                     <img src="resources/images/category/baby.png" alt="fruits" class="fruits">
                 </div>
-                <div class="col-xs-4">
-                    <h2>Fruits & Vegitables </h2>
-                    <p class="fruit_text">A variety of Fruits & Vegitables. </p>
-                    <button class="fruit_button">Explore fruits-and-veg</button>
+                <div class="col-xs-8">
+                    <div class="text">Baby Care </div>
+                    <p class="fruit_text">Shop online for Baby Products,Diapers.Skin Care Products,etc. </p>
+                    <button class="fruit_button">Explore baby</button>
                 </div>
             </div>
         </section>
 
-    </div>
-
-
-
-
-
-
-    <footer>
-        <div class="footer">
-            Copyright @ 2011-2018 Sabka Bazar Grocery Supplie Pvt Ltd
         </div>
-    </footer>
+
+
+        <footer>
+            <div class="footer">
+                Copyright @ 2011-2018 Sabka Bazar Grocery Supplie Pvt Ltd
+            </div>
+        </footer>
 </body>
 
 </html>
@@ -150,9 +152,13 @@
         showDivs(slideIndex += n);
     }
 
+    function currentDiv(n) {
+        showDivs(slideIndex = n);
+    }
+
     function showDivs(n) {
         var i;
-        var x = document.getElementsByClassName("mySlides");
+        var x = document.getElementsByClassName("offer");
         if (n > x.length) {
             slideIndex = 1
         }
