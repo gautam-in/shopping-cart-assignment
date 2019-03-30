@@ -11,7 +11,7 @@ body {
   font-size: 18px;
   text-rendering: optimizeLegibility; }
 
-ul {
+.header-nav {
   display: flex;
   list-style: none; }
 
