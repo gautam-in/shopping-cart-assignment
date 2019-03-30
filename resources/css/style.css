@@ -97,10 +97,27 @@ header {
   display: none;
   width: 100%; }
 
+.login_text {
+  font-size: 16px;
+  font-weight: 500;
+  padding: 3%;
+  font-family: 'Dosis', 'Arial', 'sans-serif';
+  margin-left: 37%;
+  text-align: left; }
+
+.login_heading {
+  font-weight: 700;
+  font-size: 30px;
+  /* line-height: 50px; */
+  padding: 3%;
+  font-family: 'Dosis', 'Arial', 'sans-serif';
+  margin-left: 37%;
+  text-align: left; }
+
 footer {
   background-color: #eaeaea; }
   footer .footer {
-    margin-left: 15%;
+    margin-left: 13%;
     font-weight: 500;
     font-size: 16px;
     /* line-height: 50px; */
@@ -183,13 +200,10 @@ form {
   display: none;
   max-width: 400px;
   padding: 20px 40px;
-  background: #fff;
-  height: 300px;
   margin: auto;
   display: block;
   transition: .3s;
   position: relative;
-  transition: translateY(-100px);
   z-index: 500; }
   form.up {
     transition: translateY(-180px); }
@@ -204,7 +218,7 @@ h1 {
   width: 100%;
   height: 35px;
   border: 1px solid #bf2957;
-  margin-top: 25px;
+  margin-top: 40px;
   cursor: pointer;
   transition: .3s;
   box-shadow: 0 50px #bf2957 inset;
@@ -212,8 +226,9 @@ h1 {
 
 .form-group {
   position: relative;
-  font-size: 15px;
-  color: #666; }
+  font-weight: 500;
+  font-size: 16px;
+  color: #aeaaaa; }
   .form-group + .form-group {
     margin-top: 30px; }
   .form-group .form-label {
@@ -231,7 +246,7 @@ h1 {
     border: none;
     padding: 5px 0;
     transition: .3s;
-    border-bottom: 1px solid #777;
+    border-bottom: 1px solid #aeaaaa;
     color: #555; }
     .form-group .form-control:invalid {
       outline: none; }
@@ -240,6 +255,11 @@ h1 {
       box-shadow: 0 1px #6dccd3;
       border-color: #6dccd3; }
       .form-group .form-control:focus + .form-label, .form-group .form-control:valid + .form-label {
-        font-size: 12px;
+        font-weight: 500;
+        font-size: 16px;
         color: #6dccd3;
-        transition: translateY(-40px); }
+        -o-transform: translateY(-20px);
+        -ms-transform: translateY(-20px);
+        -moz-transform: translateY(-20px);
+        -webkit-transform: translateY(-20px);
+        transform: translateY(-20px); }
