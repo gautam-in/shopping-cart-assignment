@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Shopping Cart</title>
+    <link href="https://fonts.googleapis.com/css?family=Dosis:200,300,400,500,600,700,800" rel="stylesheet">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" type="text/css" href="resources/css/style.css">
+    <link rel="stylesheet" type="text/css" href="resources/css/flexboxgrid.css">
+    <style>
+
+    </style>
+
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="row_header">
+                <img src="resources/images/logo.png" alt="Shopping logo" class="logo_img">
+                <div class="main-nav">
+                    <ul class="header-nav">
+                        <li><a class="active" href="index.html">Home</a></li>
+                        <li><a href="plp.html">Product</a></li>
+                    </ul>
+                </div>
+                <div class="super-header ">
+                    <ul class="header-nav">
+                        <li><a href="login.html">SignIn</a></li>
+                        <li><a href="registor.html">Registor</a></li>
+                    </ul>
+                    <span class="cart-section">
+                        <img src="resources/images/cart.svg"  id="myBtn" alt="cart" style="cursor: pointer;"class="img">
+                        <p>0 items</p>
+                    </span>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="wrap container-fluid" style="margin-top: 3em;">
+        <section>
+            <div class="row">
+                <div class="col-xs-7">
+                    <p class="login_heading">Login</p>
+
+                    <p class="login_text">Get access to your orders. Wishlist and Recommendations.</p>
+                </div>
+                <div class="col-xs-5">
+
+                    <form>
+
+                        <div class="form-group">
+                            <input required="required" class="form-control" />
+                            <label class="form-label">Email</label>
+                        </div>
+                        <div class="form-group">
+                            <input id="password" type="password" required="required" class="form-control" />
+                            <label class="form-label">Password</label>
+
+                            <button class="btn">Login </button>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+
+
+        </section>
+
+
+                    <!-- The Modal -->
+<div id="myModal" class="modal">
+        
+          <!-- Modal content -->
+          <div class="modal-content">
+            <div class="modal-header">
+              <span class="close">&times;</span>
+              <h4>My Cart</h4>
+            </div>
+            <div class="modal-body">
+              <h4>No items in your cart</h4>
+              <h6>Your Favourite items are just a click away</h6>
+            </div>
+            <div class="modal-footer">
+              <button class="m-footer">Start Shopping</button>
+            </div>
+          </div>
+        
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer">
+            Copyright @ 2011-2018 Sabka Bazar Grocery Supplie Pvt Ltd
+        </div>
+    </footer>
+</body>
+
+</html>
+
+<script>
+// Get the modal
+var modal = document.getElementById('myModal');
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+</script>
+
+<style>
+    /* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  -webkit-animation-name: fadeIn; /* Fade in the background */
+  -webkit-animation-duration: 0.4s;
+  animation-name: fadeIn;
+  animation-duration: 0.4s
+}
+
+/* Modal Content */
+.modal-content {
+  
+  bottom: 0;
+  background-color: #fefefe;
+  
+  -webkit-animation-name: slideIn;
+  -webkit-animation-duration: 0.4s;
+  animation-name: slideIn;
+  animation-duration: 0.4s;
+    
+  margin-top: 8%;
+  margin-bottom: 8%;
+  margin-left: 35%;
+  margin-right: 35%;
+  border: 1px solid black;
+}
+
+/* The Close Button */
+.close {
+  color: white;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-header {
+  padding: 2px 16px;
+  background-color: black;
+  color: white;
+  height: 60px;
+  font-family: 'Dosis', 'Arial', 'sans-serif';
+}
+
+.modal-body {    padding: 2px 16px;
+    height: 321px;
+    text-align: center;
+    margin-top: 24%;
+    font-family: 'Dosis', 'Arial', 'sans-serif';}
+
+.modal-footer {
+  padding: 2px 16px;
+ 
+ 
+}
+
+.m-footer{
+    background: #fff;
+    padding: 5px;
+    width: 100%;
+    height: 35px;
+    border: 1px solid #bf2957;
+    margin-top: 40px;
+    cursor: pointer;
+    transition: .3s;
+    box-shadow: 0 50px #bf2957 inset;
+    color: #fff;
+    margin-bottom: 2%;
+    font-size: 16px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Dosis', 'Arial', 'sans-serif';
+    font-weight: 400;
+    margin: 10px 0;
+   
+}
+
+/* Add Animation */
+@-webkit-keyframes slideIn {
+  from {bottom: -300px; opacity: 0} 
+  to {bottom: 0; opacity: 1}
+}
+
+@keyframes slideIn {
+  from {bottom: -300px; opacity: 0}
+  to {bottom: 0; opacity: 1}
+}
+
+@-webkit-keyframes fadeIn {
+  from {opacity: 0} 
+  to {opacity: 1}
+}
+
+@keyframes fadeIn {
+  from {opacity: 0} 
+  to {opacity: 1}
+}
+</style>
+
+  

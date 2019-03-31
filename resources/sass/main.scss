@@ -251,7 +251,7 @@ form {
     display: block;
     transition: .3s;
     position: relative;
-    z-index: 500;
+    
     &.up {
         transition: translateY(-180px);
     }
@@ -285,7 +285,7 @@ h1 {
     }
     .form-label {
         position: absolute;
-        z-index: 1;
+       
         left: 0;
         top: 5px;
         transition: .3s;
@@ -293,7 +293,7 @@ h1 {
     .form-control {
         width: 100%;
         position: relative;
-        z-index: 3;
+       
         height: 35px;
         background: none;
         border: none;
