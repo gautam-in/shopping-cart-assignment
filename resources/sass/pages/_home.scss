@@ -1,0 +1,122 @@
+.row {
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1140px;
+    text-align: center
+    /* justify-content: center; */
+}
+
+
+.w3-transparent {
+    background-color: #7f7f7f !important;
+}
+
+.w3-left,
+.w3-right,
+.w3-badge {
+    cursor: pointer
+}
+
+.text {
+    font-family: $primary_font !important;
+    font-weight: 700 !important;
+    font-size: 22px !important;
+}
+
+.w3-grey {
+    background-color: #999999 !important;
+    opacity: 0.6;
+    font-weight: 400;
+}
+
+.w3-button:hover {
+    color: $color_white !important;
+}
+
+
+
+.w3-badge {
+    height: 7px;
+    width: 7px;
+    padding: 3px;
+    margin: 1%;
+}
+
+
+.offer {
+    display: none;
+    width: 100%;
+}
+
+
+.w3-button {
+    color: $color_white !important;
+}
+
+.w3-content {
+    max-width: 1150px !important;
+}
+
+.fruits {
+    width: 60%;
+}
+
+.heading {
+    font-weight: 800;
+    font-size: 1.3em;
+}
+
+.fruit_text {
+    font-weight: 500;
+    font-size: 15px;
+    /* line-height: 50px; */
+    padding: 2%;
+}
+
+.fruit_button {
+    background: $color_red;
+    color: $color_white;
+    border-color: $color_red;
+    padding: 1%;
+    font-weight: 500;
+    font-size: 1em;
+    /* line-height: 2%; */
+}
+
+
+
+.bakery {
+    width: 60%;
+}
+
+.bakery_heading {
+    font-weight: 800;
+}
+
+.bakery_text {
+    font-weight: 500;
+    font-size: 1em;
+    padding: 1%;
+}
+
+.bakery_button {
+    background: $color_red;
+    color: $color_white;
+    border-color: $color_red;
+    padding: 1%;
+    font-weight: 500;
+    font-size: 1em;
+}
+
+.section_1 {
+    padding: 33px 0px;
+    max-width: 1140px;
+    margin: 0 auto;
+    -webkit-box-shadow: 0 8px 6px -6px rgba(0, 0, 0, .15);
+    -moz-box-shadow: 0 8px 6px -6px rgba(0, 0, 0, .15);
+    box-shadow: 0 8px 6px -6px rgba(0, 0, 0, .15);
+}
+
+
+
