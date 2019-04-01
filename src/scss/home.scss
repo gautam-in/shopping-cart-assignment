@@ -27,6 +27,13 @@ section {
   }
 }
 
+.hamberger {
+  width: 35px;
+  height: 5px;
+  background-color: #d00255;
+  margin: 6px 0;
+}
+
 .row {
   display: flex;
   max-width: 1140px;
@@ -209,7 +216,11 @@ hr {
 
 //form
 
-.email, .password {
+.firstname,
+.lastname,
+.confirm_password,
+.email,
+.password {
   position: relative;
   margin-bottom: 45px;
 }
@@ -219,7 +230,7 @@ input {
   display: block;
   width: 300px;
   border: none;
-  border-bottom: 1px solid #757575;
+  border-bottom: 1px solid #cccccc;
 }
 input:focus {
   outline: none;
@@ -256,7 +267,7 @@ input:valid ~ label {
 .bar:before,
 .bar:after {
   content: "";
-  height: 2px;
+  height: 1px;
   width: 0;
   bottom: 1px;
   position: absolute;

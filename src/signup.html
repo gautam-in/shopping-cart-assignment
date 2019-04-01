@@ -8,7 +8,7 @@
     <title>Sabka Bazaar</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Dosis:400,600,700">
     <link rel="stylesheet" href="dist/css/style.css">
-<link href="css/style.css" rel="stylesheet"></head>
+</head>
 
 <body>
     <header id="header">
@@ -16,11 +16,23 @@
     <section class="login_section">
         <div class="row align-center">
             <div class="login-text">
-                <h2>Login</h2>
-                <p>Get acces to your Order, Wishlists and Recommendations</p>
+                <h2>Signup</h2>
+                <p>We do not share your personal details to anyone.</p>
             </div>
             <div class="login-form">
                 <form autocomplete="off">
+                    <div class="firstname">
+                        <input type="text" required>
+                        <span class="highlight"></span>
+                        <span class="bar"></span>
+                        <label>FirstName</label>
+                    </div>
+                    <div class="lastname">
+                        <input type="text" required>
+                        <span class="highlight"></span>
+                        <span class="bar"></span>
+                        <label>LastName</label>
+                    </div>
                     <div class="email">
                         <input type="email" required>
                         <span class="highlight"></span>
@@ -33,7 +45,13 @@
                         <span class="bar"></span>
                         <label>Password</label>
                     </div>
-                    <button type="submit" class="btn default_btn">Login</button>
+                    <div class="confirm_password">
+                        <input type="password" required>
+                        <span class="highlight"></span>
+                        <span class="bar"></span>
+                        <label>Confirm Password</label>
+                    </div>
+                    <button type="submit" class="btn default_btn">Signup</button>
                 </form>
             </div>
         </div>
@@ -48,6 +66,6 @@
 
     <script src="assets/bundle.js"></script>
 
-<script type="text/javascript" src="bundle.js"></script></body>
+</body>
 
 </html>

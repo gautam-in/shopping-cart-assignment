@@ -1,9 +1,51 @@
-@media only screen and (max-width: 1200px) {
-  footer {
-    left: 0;
-    bottom: 0;
-    padding: 10px 0;
-    font-size: 77%; } }
+.login_section .login-text {
+  flex: 0 1 50%;
+  padding-left: 100px;
+  align-self: flex-start; }
+
+.login_section .login-text p {
+  margin-top: 15px;
+  font-size: 16px; }
+
+.login_section .login-form h2 {
+  margin-bottom: 10px; }
+
+.login_section .login-form {
+  flex: 0 1 50%; }
+
+.login_section .default_btn {
+  width: 300px; }
+.sidenav {
+  min-height: 82vh;
+  flex: 0 1 20%;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #eaeaea;
+  overflow-x: hidden;
+  padding-top: 20px; }
+  .sidenav a {
+    padding: 11px 30px;
+    border-bottom: 1px solid #cccccc;
+    text-decoration: none;
+    font-size: 19px;
+    color: #818181;
+    display: block; }
+  .sidenav a:hover {
+    color: #818181; }
+
+.main {
+  margin-left: 160px;
+  /* Same as the width of the sidenav */
+  font-size: 28px;
+  /* Increased text to enable scrolling */
+  padding: 0px 10px; }
+
+@media screen and (max-height: 450px) {
+  .sidenav {
+    padding-top: 15px; }
+  .sidenav a {
+    font-size: 18px; } }
 .mySlides {
   display: none; }
 
@@ -98,6 +140,12 @@
   .next,
   .text {
     font-size: 11px; } }
+@media only screen and (max-width: 1200px) {
+  footer {
+    left: 0;
+    bottom: 0;
+    padding: 10px 0;
+    font-size: 77%; } }
 * {
   margin: 0;
   padding: 0px;
@@ -272,7 +320,7 @@ hr {
   width: 50%;
   text-align: center; }
 
-.email, .password {
+.firstname, .lastname, .confirm_password, .email, .password {
   position: relative;
   margin-bottom: 45px; }
 
@@ -282,7 +330,7 @@ input {
   display: block;
   width: 300px;
   border: none;
-  border-bottom: 1px solid #757575; }
+  border-bottom: 1px solid #cccccc; }
 
 input:focus {
   outline: none; }
@@ -316,7 +364,7 @@ input:valid ~ label {
 .bar:before,
 .bar:after {
   content: "";
-  height: 2px;
+  height: 1px;
   width: 0;
   bottom: 1px;
   position: absolute;

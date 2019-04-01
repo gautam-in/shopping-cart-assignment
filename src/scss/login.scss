@@ -1,0 +1,24 @@
+.login_section {
+  .login-text {
+    flex: 0 1 50%;
+    padding-left: 100px;
+    align-self: flex-start;
+  }
+
+  .login-text p{    
+    margin-top: 15px;
+    font-size: 16px;
+  }
+
+  .login-form h2 {
+    margin-bottom: 10px;
+  }
+
+  .login-form {
+    flex: 0 1 50%;
+  }
+
+  .default_btn{
+      width: 300px;
+  }
+}

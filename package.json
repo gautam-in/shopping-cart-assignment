@@ -4,10 +4,9 @@
   "description": "Sabka Bazaar",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack --mode development --watch",
-    "build": "webpack --mode production --watch",
-    "start": "http-server -a localhost -p 8000 -o -c-1 ./dist",
-    "webstart": "webpack-dev-server --mode development --watch"
+    "dev": "webpack --mode development",
+    "build": "webpack --mode production",
+    "webstart": "webpack-dev-server --mode development --open"
   },
   "keywords": [],
   "author": "Ashwani Kumar",
@@ -17,6 +16,7 @@
     "@babel/preset-env": "^7.4.2",
     "babel-loader": "^8.0.5",
     "gulp": "^4.0.0",
+    "html-webpack-plugin": "^3.2.0",
     "node-sass": "^4.11.0",
     "sass-loader": "^7.1.0",
     "webpack": "^4.29.6",
