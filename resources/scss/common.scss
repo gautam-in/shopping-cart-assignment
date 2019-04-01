@@ -2,6 +2,7 @@ $app-padding-horizontal: 10vw;
 $app-font-weight: 600;
 $footer-padding-vertical: 10px;
 $secondary-color: #d10157;
+$header-height: 96px;
 @mixin flex {
   display: flex;
 }
@@ -82,12 +83,23 @@ body {
 
 .nav {
   display: flex;
-  height: 96px;
-  padding: 0 10vw;
+  height: $header-height;
+
+  @media only screen and (min-width: 1024px) {
+    padding: 0 $app-padding-horizontal;
+  }
+
   box-shadow: 0 8px 6px -3px #eeeeee;
   &__logo {
-    width: 14vw;
+    margin-left: 1vw;
+
+    width: 29vw;
+
     padding: 9.5px 0;
+    @media only screen and (min-width: 480px) {
+      margin-left: 0;
+      width: 16vw;
+    }
   }
   &__bar {
     @include flex-row;
@@ -98,6 +110,10 @@ body {
     &--link {
       @include flex-column-reverse;
       margin-left: 2vw;
+      display: none;
+      @media only screen and (min-width: 480px) {
+        display: flex;
+      }
       a {
         color: #736a6d;
       }
@@ -106,12 +122,18 @@ body {
   &__end {
     @include flex;
     flex-direction: column;
-    width: 12vw;
+    width: 29vw;
+    @media only screen and (min-width: 480px) {
+      width: 12vw;
+    }
     &-register-box {
       @include flex;
       flex-direction: row-reverse;
       height: 34%;
-
+      display: none;
+      @media only screen and (min-width: 480px) {
+        display: flex;
+      }
       &--link {
         font-size: 0.7rem;
         margin-left: 1.5vw;
@@ -124,7 +146,7 @@ body {
 
       background-color: #eeeeee;
       &--logo {
-        height: 57%;
+        height: 0.37 * $header-height;
         fill: $secondary-color;
       }
     }
@@ -132,11 +154,18 @@ body {
 }
 
 main {
-  padding: 0 $app-padding-horizontal;
   margin-top: 10px;
+  @media only screen and (min-width: 1024px) {
+    padding: 0 $app-padding-horizontal;
+  }
 }
 
 footer {
-  padding: $footer-padding-vertical $app-padding-horizontal;
+  padding: $footer-padding-vertical 0;
+  text-align: center;
+  @media only screen and (min-width: 1024px) {
+    padding: $footer-padding-vertical $app-padding-horizontal;
+    text-align: left;
+  }
   background-color: #eaeaea;
 }

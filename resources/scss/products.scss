@@ -6,6 +6,12 @@ main.flex-row {
     padding: 3px 12px 3px 12px;
     background-color: #eaeaea;
     margin-top: -10px;
+    display: none;
+
+    @media only screen and (min-width: 480px) {
+      display: block;
+    }
+
     &__name {
       font-size: 1rem;
       padding: 12px 0 12px 10px;
@@ -18,8 +24,17 @@ main.flex-row {
     padding: 5px;
 
     .product-list-row {
+      display: flex;
+      width: 100%;
+      flex-wrap: wrap;
       .product-card {
-        width: 25%;
+        width: 100%;
+        @media only screen and (min-width: 480px) {
+          width: 50%;
+        }
+        @media only screen and (min-width: 1024px) {
+          width: 25%;
+        }
         padding: 5px;
         margin-top: 10px;
         border-bottom: 1px dashed #d0d0d0;
@@ -28,24 +43,48 @@ main.flex-row {
           font-size: 1rem;
           height: 4rem;
         }
-        &__img {
-          width: 100%;
+        &__detail {
+          @include flex-row;
+
+          &--img {
+            width: 50%;
+            height: 5.5rem;
+          }
+
+          &--description {
+            background-color: #f0f0f0;
+            font-size: 0.8rem;
+            padding: 5px;
+            height: 5.5rem;
+            overflow: hidden;
+          }
+          @media only screen and (min-width: 1024px) {
+            @include flex-column;
+            &--img {
+              width: 100%;
+              height: auto;
+            }
+          }
         }
-        &__description {
-          background-color: #f0f0f0;
-          font-size: 0.8rem;
-          padding: 5px;
-          height: 5.5rem;
-          overflow: hidden;
-        }
+
         &__buy {
           height: 40px;
           margin-top: 20px;
           &--price {
             align-items: center;
+            display: none;
+            @media only screen and (min-width: 1024px) {
+              display: unset;
+            }
           }
           &--btn {
             justify-content: center;
+          }
+          &--sm-txt {
+            color: white;
+            @media only screen and (min-width: 1024px) {
+              display: none;
+            }
           }
         }
       }

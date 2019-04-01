@@ -16,16 +16,22 @@
       </div>
       <div class="flex-column product-list">
         <% for(var i=0; i < products.length;i) { %>
-        <div class="flex-row product-list-row">
+        <div class="product-list-row">
           <% for(i && i++; i < products.length; i++) { %>
           <div class="product-card">
             <h1 class="product-card__name"><%= products[i].name %></h1>
-            <img class="product-card__img" src="<%= products[i].imageURL %>" alt="<%= products[i].name %> logo" />
-            <p class="product-card__description"><%= products[i].description %></p>
+            <div class="product-card__detail">
+              <img
+                class="product-card__detail--img"
+                src="<%= products[i].imageURL %>"
+                alt="<%= products[i].name %> logo"
+              />
+              <p class="product-card__detail--description"><%= products[i].description %></p>
+            </div>
             <div class="flex-row product-card__buy">
               <div class="flex-row product-card__buy--price">MRP Rs.<%= products[i].price %></div>
               <a href="" class="flex-row btn product-card__buy--btn">
-                Buy Now
+                Buy Now <span class="product-card__buy--sm-txt">@Rs.<%= products[i].price %></span>
               </a>
             </div>
           </div>
