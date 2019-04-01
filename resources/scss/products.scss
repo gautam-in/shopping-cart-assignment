@@ -74,7 +74,7 @@ main.flex-row {
             align-items: center;
             display: none;
             @media only screen and (min-width: 1024px) {
-              display: unset;
+              display: flex;
             }
           }
           &--btn {
