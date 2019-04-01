@@ -1,0 +1,57 @@
+@import './common.scss';
+
+@mixin border-bottom-radial {
+  position: relative;
+  padding-bottom: 39px;
+  &:after {
+    content: '';
+    bottom: -1rem;
+    background: radial-gradient(farthest-corner at 50% 0px, #d4d2d2 0%, transparent 50%);
+    width: 100%;
+    height: 1rem;
+    position: absolute;
+    bottom: 0;
+  }
+}
+
+main.home {
+  .offer-banner {
+    position: relative;
+    padding-bottom: 39px;
+    &:after {
+      content: '';
+      bottom: -1rem;
+      background: radial-gradient(farthest-corner at 50% 0px, #d4d2d2 0%, transparent 50%);
+      width: 100%;
+      height: 1rem;
+      position: absolute;
+      bottom: 0;
+    }
+    &__img {
+      display: flex;
+      flex: 1;
+    }
+  }
+  .category {
+    @include border-bottom-radial;
+    &:nth-child(odd) {
+      flex-direction: row-reverse;
+    }
+    .category-logo {
+      height: 200px;
+    }
+    .category-detail {
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      &__main {
+        font-size: 1.8rem;
+        margin-bottom: 10px;
+      }
+      &__sub {
+        font-size: 0.9rem;
+        margin-bottom: 10px;
+      }
+    }
+  }
+}

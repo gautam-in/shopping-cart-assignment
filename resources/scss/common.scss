@@ -1,0 +1,142 @@
+$app-padding-horizontal: 10vw;
+$app-font-weight: 600;
+$footer-padding-vertical: 10px;
+$secondary-color: #d10157;
+@mixin flex {
+  display: flex;
+}
+
+@mixin flex-row {
+  @include flex;
+  flex: 1;
+}
+
+@mixin flex-column {
+  @include flex;
+  flex: 1;
+  flex-direction: column;
+}
+
+@mixin flex-row-reverse {
+  @include flex;
+  flex-direction: row-reverse;
+}
+
+@mixin flex-column-reverse {
+  @include flex;
+  flex-direction: column-reverse;
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+  color: black;
+}
+a {
+  color: black;
+}
+
+html,
+body {
+  margin: 0 auto;
+  font-family: 'Dosis';
+  font-weight: $app-font-weight;
+  box-sizing: border-box;
+}
+
+.flex {
+  @include flex;
+}
+
+.flex-row {
+  @include flex-row;
+}
+
+.flex-column {
+  @include flex-column;
+}
+
+.flex-row-reverse {
+  @include flex;
+  flex: 1;
+  flex-direction: row-reverse;
+}
+
+.flex-column-reverse {
+  @include flex;
+  flex: 1;
+  flex-direction: column-reverse;
+}
+
+.btn {
+  background: #d10157;
+  border: 0;
+  padding: 10px;
+  color: white;
+  font-family: 'Dosis';
+  text-align: center;
+}
+
+.nav {
+  display: flex;
+  height: 96px;
+  padding: 0 10vw;
+  box-shadow: 0 8px 6px -3px #eeeeee;
+  &__logo {
+    width: 14vw;
+    padding: 9.5px 0;
+  }
+  &__bar {
+    @include flex-row;
+    list-style: none;
+    margin-left: 7vw;
+    padding: 9.5px 0;
+
+    &--link {
+      @include flex-column-reverse;
+      margin-left: 2vw;
+      a {
+        color: #736a6d;
+      }
+    }
+  }
+  &__end {
+    @include flex;
+    flex-direction: column;
+    width: 12vw;
+    &-register-box {
+      @include flex;
+      flex-direction: row-reverse;
+      height: 34%;
+
+      &--link {
+        font-size: 0.7rem;
+        margin-left: 1.5vw;
+      }
+    }
+    &-cart {
+      @include flex-row;
+      justify-content: center;
+      align-items: center;
+
+      background-color: #eeeeee;
+      &--logo {
+        height: 57%;
+        fill: $secondary-color;
+      }
+    }
+  }
+}
+
+main {
+  padding: 0 $app-padding-horizontal;
+  margin-top: 10px;
+}
+
+footer {
+  padding: $footer-padding-vertical $app-padding-horizontal;
+  background-color: #eaeaea;
+}

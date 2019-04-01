@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <% include ../partials/head %>
+    <link rel="stylesheet" href="/resources/css/home.css" />
+  </head>
+  <body class="container">
+    <header>
+      <% include ../partials/header %>
+    </header>
+
+    <main class="home">
+      <div class="offer-banner">
+        <img src="/resources/img/offers/offer5.jpg" alt="offer1 logo" class="offer-banner__img" />
+      </div>
+      <% for(var i=0; i < categories.length; i++) { %>
+      <div class="<%= i % 2 === 0 ? 'flex-row' : 'flex-row-reverse' %> category">
+        <img src="<%= categories[i].imageUrl %>" alt="<%= categories[i].name %> logo" class="category-logo" />
+        <div class="flex-column category-detail">
+          <h1 class="category-detail__main"><%= categories[i].name %></h1>
+          <h3 class="category-detail__sub"><%= categories[i].description %></h3>
+          <a href="/products/<%= categories[i].key %>" class="btn">Explore <%= categories[i].key %></a>
+        </div>
+      </div>
+      <% } %>
+    </main>
+
+    <footer>
+      <% include ../partials/footer %>
+    </footer>
+  </body>
+</html>

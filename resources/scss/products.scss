@@ -1,0 +1,54 @@
+@import './common.scss';
+
+main.flex-row {
+  .category-list {
+    width: 25%;
+    padding: 3px 12px 3px 12px;
+    background-color: #eaeaea;
+    margin-top: -10px;
+    &__name {
+      font-size: 1rem;
+      padding: 12px 0 12px 10px;
+      color: #959595;
+      border-bottom: 1px solid #cecccc;
+    }
+  }
+  .product-list {
+    width: 75%;
+    padding: 5px;
+
+    .product-list-row {
+      .product-card {
+        width: 25%;
+        padding: 5px;
+        margin-top: 10px;
+        border-bottom: 1px dashed #d0d0d0;
+        box-shadow: 10px 0 5px -13px #888;
+        &__name {
+          font-size: 1rem;
+          height: 4rem;
+        }
+        &__img {
+          width: 100%;
+        }
+        &__description {
+          background-color: #f0f0f0;
+          font-size: 0.8rem;
+          padding: 5px;
+          height: 5.5rem;
+          overflow: hidden;
+        }
+        &__buy {
+          height: 40px;
+          margin-top: 20px;
+          &--price {
+            align-items: center;
+          }
+          &--btn {
+            justify-content: center;
+          }
+        }
+      }
+    }
+  }
+}
