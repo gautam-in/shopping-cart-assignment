@@ -63,6 +63,14 @@ body {
     color: white !important;
 }
 
+.hide {
+    display: block;
+}
+
+.hide-menu {
+    display: inline-block;
+}
+
 .w3-badge {
     height: 7px;
     width: 7px;
@@ -115,6 +123,10 @@ header {
             }
         }
     }
+}
+
+.show {
+    display: none;
 }
 
 .offer {
@@ -243,15 +255,21 @@ footer {
 
 // Login  page Css
 $primary: #6dccd3;
+.login__form {
+    padding: 20px 40px;
+}
+
+.signup__form {
+    padding: 20px 40px;
+}
+
 form {
     display: none;
     max-width: 400px;
-    padding: 20px 40px;
     margin: auto;
     display: block;
     transition: .3s;
     position: relative;
-    
     &.up {
         transition: translateY(-180px);
     }
@@ -285,7 +303,6 @@ h1 {
     }
     .form-label {
         position: absolute;
-       
         left: 0;
         top: 5px;
         transition: .3s;
@@ -293,7 +310,6 @@ h1 {
     .form-control {
         width: 100%;
         position: relative;
-       
         height: 35px;
         background: none;
         border: none;

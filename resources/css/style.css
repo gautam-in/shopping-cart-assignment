@@ -51,6 +51,12 @@ body {
 .w3-button:hover {
   color: white !important; }
 
+.hide {
+  display: block; }
+
+.hide-menu {
+  display: inline-block; }
+
 .w3-badge {
   height: 7px;
   width: 7px;
@@ -92,6 +98,9 @@ header {
       header .row_header .super-header .cart-section .img {
         width: 40px;
         height: 40px; }
+
+.show {
+  display: none; }
 
 .offer {
   display: none;
@@ -196,10 +205,15 @@ footer {
   -moz-box-shadow: 0 8px 6px -6px rgba(0, 0, 0, 0.15);
   box-shadow: 0 8px 6px -6px rgba(0, 0, 0, 0.15); }
 
+.login__form {
+  padding: 20px 40px; }
+
+.signup__form {
+  padding: 20px 40px; }
+
 form {
   display: none;
   max-width: 400px;
-  padding: 20px 40px;
   margin: auto;
   display: block;
   transition: .3s;
