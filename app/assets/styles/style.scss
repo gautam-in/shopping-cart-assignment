@@ -200,7 +200,7 @@ $break-medium: 1024px;
     }
   }
 
-  section:nth-child(even) .category-image {
+  section:nth-child(odd) .category-image {
     -ms-flex-order:2;
     order:2;
   }
