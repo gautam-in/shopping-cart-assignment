@@ -73,12 +73,13 @@
 }
 
 
-/* for ipad */
+/* for mobile */
 
 @media screen and (max-width: 480px) {
     /* for ipad  menu css */
     .cat-inner-img {
-        width: 100% !important;
+        width: 125% !important;
+        margin-top: 31%;
     }
     .w3-btn,
     .w3-button {
@@ -91,13 +92,15 @@
 @media screen and (max-width: 767px) {
     /* for ipad  menu css */
     .cat-inner-img {
-        width: 100% !important;
+        width: 125% !important;
+        margin-top: 31%;
     }
 }
 
 @media screen and (max-width: 1023px) {
     /* for ipad  menu css */
     .cat-inner-img {
-        width: 100% !important;
+        width: 125% !important;
+        margin-top: 31%;
     }
 }
