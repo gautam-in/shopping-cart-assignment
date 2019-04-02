@@ -15,6 +15,19 @@
         <% } %>
       </div>
       <div class="flex-column product-list">
+        <div class="mob-category-list-container">
+        <select class="mob-category-list" onchange="window.location = this.value;">
+        <% for(var i=0; i < categories.length; i++) { %>
+            <% if (categoryId && categoryId===categories[i].id) { %>
+                <option value="/products/<%= categories[i].key %>" selected>
+            <% } else { %>
+                <option value="/products/<%= categories[i].key %>">
+            <% } %>
+            <%= categories[i].name %>
+        </option>
+        <% } %>
+        </select>
+        </div>
         <% for(var i=0; i < products.length;i) { %>
         <div class="product-list-row">
           <% for(i && i++; i < products.length; i++) { %>

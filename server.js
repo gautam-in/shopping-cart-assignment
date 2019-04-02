@@ -38,7 +38,8 @@ app.get('/products/:key?', function(req, res) {
   }
   res.render('pages/products', {
     categories: require('./data/categories'),
-    products
+    products,
+    categoryId
   });
 });
 

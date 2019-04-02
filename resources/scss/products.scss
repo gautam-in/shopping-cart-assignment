@@ -8,7 +8,7 @@ main.flex-row {
     margin-top: -10px;
     display: none;
 
-    @media only screen and (min-width: 480px) {
+    @include break-point(tablet) {
       display: block;
     }
 
@@ -21,18 +21,46 @@ main.flex-row {
   }
   .product-list {
     width: 75%;
-    padding: 5px;
-
+    padding: 0;
+    @include break-point(tablet) {
+      padding: 5px;
+    }
+    .mob-category-list-container {
+      position: relative;
+      .mob-category-list {
+        width: 100%;
+        position: relative;
+        background: #d10157;
+        color: white;
+        border: 0;
+        padding: 10px;
+        -webkit-appearance: none;
+        appearance: none;
+        @include break-point(tablet) {
+          display: none;
+        }
+      }
+      &:after {
+        position: absolute;
+        content: ' \2228';
+        color: white;
+        width: 10px;
+        height: 10px;
+        top: 7px;
+        right: 20px;
+        pointer-events: none;
+      }
+    }
     .product-list-row {
       display: flex;
       width: 100%;
       flex-wrap: wrap;
       .product-card {
         width: 100%;
-        @media only screen and (min-width: 480px) {
+        @include break-point(tablet) {
           width: 50%;
         }
-        @media only screen and (min-width: 1024px) {
+        @include break-point(desktop) {
           width: 25%;
         }
         padding: 5px;
@@ -58,7 +86,7 @@ main.flex-row {
             height: 5.5rem;
             overflow: hidden;
           }
-          @media only screen and (min-width: 1024px) {
+          @include break-point(desktop) {
             @include flex-column;
             &--img {
               width: 100%;
@@ -73,7 +101,7 @@ main.flex-row {
           &--price {
             align-items: center;
             display: none;
-            @media only screen and (min-width: 1024px) {
+            @include break-point(desktop) {
               display: flex;
             }
           }
@@ -82,7 +110,7 @@ main.flex-row {
           }
           &--sm-txt {
             color: white;
-            @media only screen and (min-width: 1024px) {
+            @include break-point(desktop) {
               display: none;
             }
           }

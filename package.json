@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "compile:sass": "node-sass  -rw resources/scss -o resources/css/",
     "compile:sass-dev": "node-sass  -rw resources/scss -o resources/css/ -w",
-    "start": "npm run compile:sass > ./out.log | node server.js",
+    "start": "node server.js",
     "start:dev": "npm run compile:sass-dev > ./out.log | nodemon server.js"
   },
   "author": "",
