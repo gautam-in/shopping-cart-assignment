@@ -50,7 +50,7 @@ header {
       flex: 0;
       font-size: 14px; }
       header .row-header .super-header .cart-section {
-        margin-top: 10px;
+        margin-top: 21%;
         display: flex;
         background-color: #eeeeee;
         width: 100px;
@@ -244,9 +244,15 @@ h1 {
   padding: 33px 0px;
   max-width: 1140px;
   margin: 0 auto;
-  -webkit-box-shadow: 0 8px 6px -6px rgba(0, 0, 0, 0.15);
-  -moz-box-shadow: 0 8px 6px -6px rgba(0, 0, 0, 0.15);
-  box-shadow: 0 8px 6px -6px rgba(0, 0, 0, 0.15); }
+  position: relative; }
+  .home-section:after {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: -1rem;
+    background: radial-gradient(farthest-corner at 50% 0px, grey 0%, transparent 50%);
+    width: 100%;
+    height: 1rem; }
   .home-section .row {
     display: flex;
     margin-left: auto;
