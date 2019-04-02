@@ -1,0 +1,383 @@
+/* ----------------------------------------------- */
+/* BASIC SETUP */
+/* ----------------------------------------------- */
+
+$primary-color: #d10157;
+$secondary-color: #ffffff;
+$color-grey: #f0f0f0;
+
+$break-medium: 1024px;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html, body {
+    background-color: #fff;
+    color: #2e2e2e;
+    font-family: 'Dosis', sans-serif;
+    font-weight: 300;
+    font-size: 20px;
+    overflow-x: hidden;
+  }
+  
+  .clearfix {
+    zoom: 1;
+    &:after {
+      content: '.';
+      clear: both;
+      display: block;
+      height: 0;
+      visibility: hidden;
+    }
+  }
+  
+  a {
+    color: inherit;
+    text-decoration: none;
+    &:active {
+      color: inherit;
+      text-decoration: none;
+    }
+  }
+
+  li{
+    list-style: none;
+  }
+
+  section {
+    padding: 40px 0;
+  }
+  
+  /* ----------------------------------------------- */
+  /* REUSABLE COMPONENTS */
+  /* ----------------------------------------------- */
+  
+  .box {
+    box-shadow: 10px 15px 25px 5px #eee;
+  }
+  
+  .d-flex{
+    display: flex;
+  }
+
+  .width-100{
+      width: 100%;
+  }
+  
+  /* ----- HEADINGS ----- */
+  
+  h1, h2, h3 {
+    text-transform: capitalize;
+    font-weight: 700;
+  }
+  
+  h2 {
+    font-size: 125%;
+  }
+
+  h3{
+    font-size: 90%;
+  }
+  
+  p {
+    font-size: 80%;
+    padding: 20px 0px;
+    font-weight: 500;
+  }
+
+  .button-small {
+    font-size: 65%;
+    padding: 10px;
+    background: $primary-color;
+    color: $secondary-color;
+  }
+  
+  .button-large {
+    font-size: 80%;
+    padding: 10px;
+    background: $primary-color;
+    color: $secondary-color;
+    border: none;
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  
+  /* ---- Header ---- */
+
+  header{
+    margin-bottom: 0px;
+    box-shadow: 18px -8px 18px 8px #eee;
+    padding-top: 10px;
+    width: 100%;
+    background: #fff;
+    z-index: 999;
+    nav{
+      .main-logo img{
+        max-width: 200px;
+        width: 100%;
+      }
+      .nav-list{
+        display: flex;
+        flex-wrap: wrap;
+        position: relative;
+        .nav-links{
+          width: 100%;
+          display: flex;
+          ul{
+            li{
+              padding: 12px 0px 12px 12px;
+              display: inline-flex;
+              &:first-child{
+                padding-right: 20px;
+              }
+            }
+          }
+          .left, .right{
+            flex: 0 1 50%;
+          }
+          .left li{
+            padding-top: 50px;
+            font-size: 80%;
+          }
+          .right li{
+            font-size: 70%;
+            padding-top: 0px;
+            &:first-child{
+              padding-right: 10px;
+            }
+          }
+        }
+      }
+      .nav-list > span{
+        display: block;
+        position: absolute;
+        right:20px;
+        bottom:15px;
+        a{
+          text-decoration: none;
+          padding:15px 35px 15px 56px;
+          background-color: #eee;
+          line-height: 1;
+          position: relative;
+        }
+      }
+      .cart-icon{
+        fill: $primary-color;
+        width: 30px;
+        display: inline-block;
+        position: absolute;
+        left: 16px;
+        top: 16px;
+        span{
+          display: none;
+        }
+      }
+    }
+    #header-nav label, #header-hamburger {
+      display: none;
+    }
+  }
+
+  /* ------ Hero Slider --------- */
+  .bx-wrapper{ 
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+ 
+  /* -------- Product Section ------- */
+  
+  .category-section {
+    .category-image img {
+      width: 100%;
+    }
+    .category-description {
+      padding-top: 50px;
+      text-align: center;
+    }
+  }
+
+  section:nth-child(even) .category-image {
+    -ms-flex-order:2;
+    order:2;
+  }
+  
+  /* ------ Login Page -------*/
+  
+  .login-info, .register-info{
+    form {
+      width: 70%;
+      margin: 20px auto;
+    }
+    
+    fieldset {
+      position: relative;
+      border: none;
+      padding-bottom: 20px;
+    }
+    
+    label {
+      position: absolute;
+      top: 18px;
+      color: rgba(0, 0, 0, 0.3);
+      transform-origin: left;
+      transition: all 0.3s ease;
+      font-size: 70%;
+    }
+    
+    input {
+      &:focus ~ label {
+        color: #53c5cf;
+        top: 0;
+        transform: scale(0.8, 0.8);
+      }
+      &:valid ~ label {
+        top: 0;
+        transform: scale(0.8, 0.8);
+      }
+      font-size: 15px;
+      width: 100%;
+      border: none;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      padding-top: 10px;
+      font-family: 'Dosis', sans-serif;
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+  
+  .after {
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(to right, #53c5cf 50%, transparent 50%);
+    background-color: rgba(0, 0, 0, 0.3);
+    background-size: 200% 100%;
+    background-position: 100% 0;
+    transition: all 0.6s ease;
+  }
+  
+  input:focus ~ .after {
+    background-position: 0 0;
+  }
+
+
+  /* ------ Product Description Page ------- */
+
+  .product-listing-wrap .product-filter .product-categories{
+    padding-top: 20px;
+    li{
+      font-size: 85%;
+      &:after{
+      content: "";
+      display: block;
+      height: 1px;
+      width: 100%;
+      margin: 10px 0px;
+      background-color: #eee;
+      }
+    }
+  }
+
+  .product-listing-wrap .product-list{
+    padding-top: 15px;
+    .product-detail{
+      .product-box{
+        padding-top: 20px;
+        padding-bottom: 10px;
+        border-bottom: 1px dashed $color-grey;
+        margin-bottom: 40px;
+        .product-image, .product-description{
+          padding: 0px;
+        }
+        .product-pricing{
+          margin-top: 15px;
+          text-align: right;
+          position: relative;
+          span{
+            font-size: 75%;
+            position: absolute;
+            left: 0;
+            color: initial;
+            font-size: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+          }
+          a{
+            padding: 7px 30px;
+            display: inline-block;
+          }
+        }
+        p{
+          background-color: $color-grey;
+          padding: 15px 10px;
+          font-size: 70%;
+          min-height: 100px;
+        }
+        h3{
+          font-size: 100%;
+          min-height: 80px;
+        }
+        .buy-now-btn{
+          display: none;
+          align-items: flex-start;
+          text-align: center;
+          padding: 10px;
+          background: $primary-color;
+          a{
+            color: $secondary-color;
+          }
+          @media screen and (max-width: $break-medium) {
+            display: block;
+          }
+        }
+      } 
+    }
+  }
+
+
+/* Product Category Menu */
+
+
+
+/* [HAMBURGER - HIDDEN ON BIG SCREENS] */
+#page-nav label, #page-nav #product-hamburger {
+  display: none;
+}
+#page-nav label {
+  color: $secondary-color;
+  background: $primary-color;
+  font-style: normal;
+  font-size: 1.2em;
+  padding: 10px;
+}
+
+/* [MENU ITEMS] */
+#page-nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  li {
+    padding: 10px;
+    box-sizing: border-box;
+    a {
+      color: $secondary-color;
+      text-decoration: none;
+    }
+  }
+}
+
+
+/* ------- Footer -------- */
+footer {
+  background-color: $color-grey;
+  padding: 10px 0;
+  p{
+    font-size: 80%;
+    padding: 0px;
+  }
+}
