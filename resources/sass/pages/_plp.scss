@@ -1,0 +1,191 @@
+.main {
+    float: left;
+    padding: 20px;
+    width: 80%;
+    height: 10000px;
+}
+
+.p1_row {
+    display: flex;
+}
+
+.plp_img {
+    width: 100%;
+}
+
+.item1 {
+    flex: 0 1 80%;
+    display: flex;
+    flex-direction: column;
+    border-bottom: 2px dotted #dedede;
+    /* border-style: dotted; */
+    margin-right: 2%;
+}
+
+.item2 {
+    flex: 0 1 80%;
+    display: flex;
+    flex-direction: column;
+    border-bottom: 2px dotted #dedede;
+    /* border-style: dotted; */
+    margin-right: 2%;
+}
+
+.item3 {
+    flex: 0 1 80%;
+    display: flex;
+    flex-direction: column;
+    border-bottom: 2px dotted #dedede;
+    /* border-style: dotted; */
+    margin-right: 2%;
+}
+
+.item4 {
+    flex: 0 1 80%;
+    display: flex;
+    flex-direction: column;
+    border-bottom: 2px dotted #dedede;
+    /* border-style: dotted; */
+    margin-right: 2%;
+}
+
+.plp_text {
+    background-color: #eaeaea;
+    font-size: 14px;
+    padding: 5%;
+    width: 214px;
+    height: 104px;
+    margin: 3%;
+}
+
+.div-h3 {
+    font-size: 16px !important;
+    font-weight: 700;
+    font-family: 'Dosis', 'Arial', 'sans-serif' !important;
+    margin-bottom: 8%;
+    height: 44px;
+}
+
+.a-list {
+    color: #8a8a8a;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+hr {
+    border: 0;
+    border-top: 1px solid #d8d8d8 !important;
+    margin: 8px 0 !important;
+}
+
+.nav {
+    float: left;
+    width: 20%;
+    height: 10000px;
+    background: #eaeaea;
+    padding: 20px;
+}
+
+
+/* Style the list inside the menu */
+
+.nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.nav ul a {
+    text-decoration: none;
+}
+
+.container-fluid {
+    margin-right: 9% !important;
+    margin-left: 8% !important;
+    padding-right: 0px;
+    padding-left: 0px;
+}
+
+section:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+@media (max-width: 600px) {
+    .nav,
+    article {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+
+/* Float four columns side by side */
+
+.column {
+    float: left;
+    width: 25%;
+    padding: 0 10px;
+}
+
+
+/* Remove extra left and right margins, due to padding */
+
+.row {
+    margin: 0 -5px;
+}
+
+
+/* Clear floats after the columns */
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+
+/* Responsive columns */
+
+@media screen and (max-width: 600px) {
+    .column {
+        width: 100%;
+        display: block;
+        margin-bottom: 20px;
+    }
+}
+
+
+/* Style the counter cards */
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    padding: 16px;
+    text-align: center;
+    background-color: #f1f1f1;
+}
+
+.price-div {
+    margin: 5%;
+}
+
+.mrp_text {
+    float: left;
+    font-size: 14px;
+    font-weight: 500;
+    font-family: 'Dosis', 'Arial', 'sans-serif' !important;
+    margin: 4%;
+}
+
+.buy_now {
+    float: right;
+    padding: 3px;
+    width: 50%;
+    /* height: 39px; */
+    border: 1px solid #bf2957;
+    cursor: pointer;
+    box-shadow: 0 50px #bf2957 inset;
+    color: #fff;
+    margin-right: 4%;
+    font-family: 'Dosis', 'Arial', 'sans-serif' !important;
+}

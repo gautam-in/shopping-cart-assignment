@@ -1,9 +1,9 @@
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
 body {
     background-color: $color_white;
     color: #000;
@@ -11,4 +11,8 @@ body {
     font-weight: 300;
     font-size: 18px;
     text-rendering: optimizeLegibility;
+}
+
+.row {
+    @include div-row;
 }

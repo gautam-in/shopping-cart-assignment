@@ -19,27 +19,40 @@
 <body>
     <header>
         <nav>
-            <div class="row_header">
+            <div class="row-header">
                 <img src="resources/images/logo.png" alt="Shopping logo" class="logo_img">
                 <div class="main-nav">
                     <ul class="header-nav">
-                        <li><a class="active" href="index.html">Home</a></li>
-                        <li><a href="plp.html">Product</a></li>
+                        <li><a class="active " href="index.html">Home</a></li>
+                        <li><a href="plp.html" class="hide">Product</a></li>
                     </ul>
                 </div>
-                <div class="super-header ">
+                <div class="super-header">
                     <ul class="header-nav">
                         <li><a href="login.html">SignIn</a></li>
                         <li><a href="registor.html">Registor</a></li>
                     </ul>
                     <span class="cart-section">
                         <img src="resources/images/cart.svg" alt="cart" class="img">
-                        <p>0 items</p>
+                        <p class="hide">0 items</p> <button class="show w3-button w3-teal w3-xlarge"
+                            onclick="w3_open()">☰</button>
                     </span>
                 </div>
             </div>
         </nav>
     </header>
+    <div class="mobile_menu">
+        <div class="w3-sidebar w3-bar-block w3-border-right" style="display:none" id="sidebar-menu">
+            <a href="index.html" class="w3-bar-item ">Home <span onclick="w3_close()" style="float: right;">
+                    &times;</span></a>
+
+            <a href="plp.html" class="w3-bar-item ">Product</a>
+            <a href="login.html" class="w3-bar-item ">SignIn</a>
+            <a href="registor.html" class="w3-bar-item ">Registor</a>
+
+        </div>
+    </div>
+
     <div class="wrap container-fluid">
         <section>
 
@@ -346,22 +359,6 @@
 
                 <br />
 
-
-                <!-- <div class="p1_row">
-                <div class="item1">
-                    <p class="div-h3">Johnson & Johnson Baby skincare wipes,20 pcs</p>
-                    <img src="resources/images/products/baby/red-wipes.jpg" alt="plp_img1" class="plp_img">
-        
-                    <p class="plp_text">Low Fat and High protein delicious and thick Greek Yogurt.</p>
-                    <div class="price-div"><span class="mrp_text">MRP Rs.87</span><span><button class="buy_now">Buy Now</button></span></div>
-        
-                </div>
-                <div class="item2"><div>
-                        <div class="item3"><div>
-                                <div class="item4"><div>
-            </div>-->
-
-
             </div>
 
 
@@ -378,4 +375,12 @@
 </body>
 
 </html>
+<script>
+    function w3_open() {
+        document.getElementById("sidebar-menu").style.display = "block";
+    }
 
+    function w3_close() {
+        document.getElementById("sidebar-menu").style.display = "none";
+    }
+</script>

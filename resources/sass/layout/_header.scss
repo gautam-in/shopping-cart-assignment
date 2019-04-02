@@ -1,28 +1,3 @@
-.header-nav {
-    display: flex;
-    list-style: none;
-}
-
-.row_header {
-    display: flex;
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 1140px;
-    align-items: center;
-    /* justify-content: center; */
-}
-
-.hide {
-    display: block;
-}
-
-.hide-menu {
-    display: inline-block;
-}
-.show {
-    display: none;
-}
-
 header {
     width: 100%;
     nav {
@@ -30,7 +5,8 @@ header {
         -moz-box-shadow: 0 8px 6px -6px rgba(0, 0, 0, .15);
         box-shadow: 0 8px 6px -6px rgba(0, 0, 0, .15);
     }
-    .row_header {
+    .row-header {
+        @include div-row;
         ul>li {
             margin-left: 20px;
             a {
@@ -67,5 +43,113 @@ header {
                 }
             }
         }
+    }
+}
+
+.header-nav {
+    display: flex;
+    list-style: none;
+}
+
+.show {
+    display: none;
+}
+
+.hide {
+    display: block;
+}
+
+.hide-menu {
+    display: inline-block;
+}
+
+.w3-teal,
+.w3-hover-teal:hover {
+    color: #fff !important;
+    background-color: #0e0e0e !important;
+}
+
+
+/* for ipad */
+
+@media screen and (max-width: 480px) {
+    .show {
+        display: block;
+    }
+    .hide-menu {
+        display: none !important;
+    }
+    .hide {
+        display: none !important;
+    }
+    .header-nav {
+        display: none !important;
+    }
+    .row-header {
+        @include div-row;
+        height: 45px;
+        /* justify-content: center; */
+    }
+    .logo_img {
+        width: 25%;
+        padding: 2%;
+    }
+    .cart-section {
+        margin-top: 5% !important;
+    }
+    body {
+        padding: 2%;
+    }
+    .w3-teal,
+    .w3-hover-teal:hover {
+        color: #fff !important;
+        background-color: #0e0e0e !important;
+    }
+    .mobile_menu {
+        margin-left: 55%;
+        color: #8a8a8a;
+        font-size: 18px;
+        font-weight: 400;
+        a {
+            text-decoration: none;
+        }
+        .w3-sidebar {
+            height: auto !important;
+            width: 200px;
+            background-color: #eaeaea !important;
+            position: fixed !important;
+            z-index: 1;
+            overflow: auto;
+        }
+    }
+}
+
+
+/*tablet */
+
+@media screen and (max-width: 767px) {
+    .show {
+        display: none;
+    }
+    .super-header {
+        padding-right: 1%;
+    }
+    .cart-section {
+        margin-left: 16%;
+    }
+}
+
+
+/*tablet  landscape*/
+
+@media screen and (max-width: 1023px) {
+    .show {
+        display: none;
+    }
+    .super-header {
+        padding-right: 1%;
+    }
+    .cart-section {
+        margin-left: 16%;
     }
 }

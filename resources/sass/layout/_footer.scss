@@ -9,3 +9,16 @@ footer {
         font-family: $primary_font;
     }
 }
+
+
+/* for ipad */
+
+@media screen and (max-width: 480px) {
+    footer .footer {
+        margin-left: 8%;
+        padding: 1%;
+        font-family: $primary_font;
+        /* text-align: left; */
+        font-size: 14px;
+    }
+}

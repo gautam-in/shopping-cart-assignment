@@ -1,5 +1,3 @@
-
-
 .cart-modal {
     display: none;
     position: fixed;
@@ -9,13 +7,12 @@
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color:$color_black;
+    background-color: $color_black;
     background-color: rgba($color_black, 0.4);
     -webkit-animation-name: fadeIn;
     -webkit-animation-duration: 0.4s;
     animation-name: fadeIn;
     animation-duration: 0.4s;
-
     &-content {
         bottom: 0;
         background-color: #fefefe;
@@ -48,7 +45,6 @@
             }
         }
     }
-    
     &-body {
         padding: 2px 16px;
         height: 321px;
@@ -56,7 +52,6 @@
         margin-top: 24%;
         font-family: $primary_font;
     }
-    
     &-footer {
         padding: 2px 16px;
         &-text {
@@ -74,10 +69,7 @@
             font-size: 16px;
         }
     }
-    
-    
 }
-
 
 h1,
 h2,
@@ -90,18 +82,18 @@ h6 {
     margin: 10px 0;
 }
 
-
 @media screen and (max-width:480px) {
     .cart-modal-content {
         @include modal-content;
     }
 }
+
 @media screen and (max-width:767px) {
-   
     .cart-modal-content {
         @include modal-content;
     }
 }
+
 @media screen and (max-width:1023px) {
     .cart-modal-content {
         @include modal-content;

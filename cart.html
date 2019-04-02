@@ -20,7 +20,7 @@
 <body>
     <header>
         <nav>
-            <div class="row_header">
+            <div class="row-header">
                 <img src="resources/images/logo.png" alt="Shopping logo" class="logo_img">
                 <div class="main-nav">
                     <ul class="header-nav ">
@@ -34,7 +34,8 @@
                         <li><a href="registor.html">Registor</a></li>
                     </ul>
                     <span class="cart-section">
-                        <img src="resources/images/cart.svg" id="cart-img-id" alt="cart" style="cursor: pointer;" class="img">
+                        <img src="resources/images/cart.svg" id="cart-img-id" alt="cart" style="cursor: pointer;"
+                            class="img">
                         <p class="hide">0 items</p> <button class="w3-button w3-teal w3-xlarge show"
                             onclick="w3_open()">☰</button>
                     </span>
@@ -43,7 +44,7 @@
         </nav>
     </header>
     <div class="mobile_menu">
-        <div class="w3-sidebar w3-bar-block w3-border-right" style="display:none" id="Sidebar-menu">
+        <div class="w3-sidebar w3-bar-block w3-border-right" style="display:none" id="sidebar-menu">
 
 
             <a href="index.html" class="w3-bar-item ">Home <span onclick="w3_close()" style="float: right;">
@@ -61,14 +62,14 @@
     <div class="wrap container-fluid" style="margin-top: 3em;">
         <section>
             <div class="row">
-                <div class="col-xs-7 login__text">
-                    <p class="login_heading">Login</p>
+                <div class="col-xs-7 login-text-box">
+                    <p class="login-heading">Login</p>
 
-                    <p class="login_text">Get access to your orders. Wishlist and Recommendations.</p>
+                    <p class="login-text">Get access to your orders. Wishlist and Recommendations.</p>
                 </div>
                 <div class="col-xs-5">
 
-                    <form class="login__form">
+                    <form class="login-form">
 
                         <div class="form-group">
                             <input required="required" class="form-control" />
@@ -78,7 +79,7 @@
                             <input id="password" type="password" required="required" class="form-control" />
                             <label class="form-label">Password</label>
 
-                            <button class="btn">Login </button>
+                            <button class="login-btn">Login </button>
                         </div>
                     </form>
 
@@ -87,29 +88,28 @@
         </section>
 
     </div>
-
     <!-- The Modal -->
     <div id="cart-modal-id" class="cart-modal">
         <!-- Modal content -->
         <div class="cart-modal-content">
-             <!-- Modal header -->
+            <!-- Modal header -->
             <div class="cart-modal-header">
                 <span class="close">&times;</span>
                 <h4>My Cart</h4>
             </div>
-             <!-- Modal body -->
+            <!-- Modal body -->
             <div class="cart-modal-body">
                 <h4>No items in your cart</h4>
                 <h6>Your Favourite items are just a click away</h6>
             </div>
-             <!-- Modal footer-->
+            <!-- Modal footer-->
             <div class="cart-modal-footer">
                 <button class="cart-modal-footer-text">Start Shopping</button>
             </div>
         </div>
 
     </div>
-    </div>
+
 
     <footer>
         <div class="footer">
@@ -130,7 +130,7 @@
     // Get the <span> element that closes the modal
     var span = document.getElementsByClassName("close")[0];
 
-    // When the user clicks the button, open the modal 
+    // When the user clicks the button, open the modal
     btn.onclick = function() {
         modal.style.display = "block";
     }
@@ -148,11 +148,10 @@
     }
 
     function w3_open() {
-        document.getElementById("Sidebar-menu").style.display = "block";
+        document.getElementById("sidebar-menu").style.display = "block";
     }
 
     function w3_close() {
-        document.getElementById("Sidebar-menu").style.display = "none";
+        document.getElementById("sidebar-menu").style.display = "none";
     }
 </script>
-

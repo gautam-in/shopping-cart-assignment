@@ -20,7 +20,7 @@
 <body>
     <header>
         <nav>
-            <div class="row_header">
+            <div class="row-header">
                 <img src="resources/images/logo.png" alt="Shopping logo" class="logo_img">
                 <div class="main-nav">
                     <ul class="header-nav ">
@@ -43,7 +43,7 @@
         </nav>
     </header>
     <div class="mobile_menu">
-        <div class="w3-sidebar w3-bar-block w3-border-right" style="display:none" id="mySidebar">
+        <div class="w3-sidebar w3-bar-block w3-border-right" style="display:none" id="sidebar-menu">
 
 
             <a href="index.html" class="w3-bar-item ">Home <span onclick="w3_close()" style="float: right;">
@@ -61,14 +61,14 @@
     <div class="wrap container-fluid" style="margin-top: 3em;">
         <section>
             <div class="row">
-                <div class="col-xs-7 signup__text">
-                    <p class="login_heading">Signup</p>
+                <div class="col-xs-7 signup-text-box">
+                    <p class="signup-heading">Signup</p>
 
-                    <p class="login_text">We do not share your personal details with anyone.</p>
+                    <p class="signup-text">We do not share your personal details with anyone.</p>
                 </div>
                 <div class="col-xs-5">
 
-                    <form class="signup__form">
+                    <form class="signup-form">
                         <div class="form-group">
                             <input required="required" class="form-control" />
                             <label class="form-label">First Name</label>
@@ -88,7 +88,7 @@
                             <input id="password" type="password" required="required" class="form-control" />
                             <label class="form-label"> Confirm Password</label>
 
-                            <button class="btn">Signup </button>
+                            <button class="signup-btn">Signup </button>
                         </div>
                     </form>
 
@@ -109,10 +109,10 @@
 </html>
 <script>
     function w3_open() {
-        document.getElementById("mySidebar").style.display = "block";
+        document.getElementById("sidebar-menu").style.display = "block";
     }
 
     function w3_close() {
-        document.getElementById("mySidebar").style.display = "none";
+        document.getElementById("sidebar-menu").style.display = "none";
     }
 </script>
