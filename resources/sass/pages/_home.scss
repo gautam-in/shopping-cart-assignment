@@ -90,17 +90,9 @@
 }
 
 @media screen and (max-width: 767px) {
-    /* for ipad  menu css */
     .cat-inner-img {
-        width: 125% !important;
-        margin-top: 31%;
+        width: 116% !important;
     }
 }
 
-@media screen and (max-width: 1023px) {
-    /* for ipad  menu css */
-    .cat-inner-img {
-        width: 125% !important;
-        margin-top: 31%;
-    }
-}
+@media screen and (max-width: 1023px) {}
