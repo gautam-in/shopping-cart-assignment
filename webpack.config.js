@@ -24,6 +24,14 @@ module.exports = {
             filename: 'plp.html',
             template: './src/plp.html',
         }),
+        new HtmlWebpackPlugin({
+            filename: 'login.html',
+            template: './src/login.html',
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'register.html',
+            template: './src/register.html',
+        }),
         new MiniCssExtractPlugin({
             filename: isDevelopment ? '[name].css' : '[name].[hash].css',
             chunkFilename: isDevelopment ? '[id].css' : '[id].[hash].css'

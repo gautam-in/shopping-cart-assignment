@@ -2,6 +2,22 @@
 .logo, .logo img {
     margin: 0;
     display:inline-block;
+    width:10vw;
+    height:auto;
+    margin-right: 10vw;
+}
+.sub-nav{
+
+    
+    float: right;
+    margin: 0 2% 0 0;
+
+    li{
+        
+    }
+    .sub-nav-item{
+
+    }
 }
 .main-nav {
     margin: 0;
@@ -31,6 +47,7 @@
     a:hover {
         color: #718daa;
     }
+    
     
     
 }

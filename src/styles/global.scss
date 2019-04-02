@@ -3,92 +3,32 @@
 @import "home";
 @import "variables";
 @import "cart";
+@import "plp";
+@import "login";
+
+@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,500,700");
 
 * {
 	box-sizing: border-box;
 }
 body {
-	font-family: 'Montserrat', sans-serif;
+	font-family: 'Raleway', sans-serif;
 	line-height: 1.6;
 	margin: 0;
 	min-height: 100vh;
 }
 
 .row{
-    max-width: 1200px;
-    margin: 10px auto 10px;
-    
+    max-width: 1140px;
+    margin: 10px auto 10px;   
 }
 
 footer{
     background: #888888;
     color: #fff;
+    position: relative;
+    left: 0;
+    bottom: 0;
+    width: 100%;
     text-align: center;
-    margin-bottom: -5%;
-}
-
-.plp-all-parent{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: space-between;
-    //align-items: stretch;
-    align-items: center;
-    justify-content: center;
-    align-items: flex-start;
-
-    .category-nav{
-        flex: 2;
-        flex-flow: column; 
-        margin-right: 10px;
-        padding-top: 15px;
-        margin-top:-10px;
-        padding-bottom: 150%;
-        
-        background-color: #888888;
-       span{
-           display: block;
-       }
-    }
-
-
-    .plp-container{
-        flex: 7;
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-    
-        .product-overview{
-            width: 22%;
-            height: auto;
-            margin: auto 1%;
-            border: transparent solid 2px;
-            border-bottom: rgb(168, 168, 168) dotted 2px;
-    
-            img{
-                max-width: 100%;
-                height: auto;
-            }
-        
-            .product-desc{
-                background: #bbb;
-    
-            }
-            .atc{
-                p{
-                    display: inline-block;
-                }
-                button{
-                    background-color: $accent; 
-                    border: none;
-                    color: white;
-                    text-align: center;
-                    text-decoration: none;
-                    display: inline-block;
-                    padding : 10px;
-                }
-            }
-        }
-    }
-    
 }
