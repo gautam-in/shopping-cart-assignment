@@ -136,6 +136,7 @@ body {
       .nav .menu-toggle input:checked ~ span:nth-last-child(2) {
         transform: rotate(-45deg) translate(0, -1px); }
       .nav .menu-toggle input:checked ~ ul {
+        display: block;
         transform: translate(-150%, 0); }
     .nav .menu-toggle span {
       display: block;
@@ -153,6 +154,7 @@ body {
       .nav .menu-toggle span:nth-last-child(2) {
         transform-origin: 0% 100%; }
   .nav .menu {
+    display: none;
     position: absolute;
     width: 300px;
     margin: -63px 0 0 300px;
