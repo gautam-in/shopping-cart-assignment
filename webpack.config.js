@@ -3,6 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const isDevelopment = process.env.NODE_ENV !== 'production'
 const CleanWebpackPlugin = require('clean-webpack-plugin')
+const webpack = require('webpack');
 
 module.exports = {
     entry: ['@babel/polyfill','./src/js/index.js'],
@@ -17,15 +18,25 @@ module.exports = {
     plugins:[
         new HtmlWebpackPlugin({
             filename: 'index.html',
-            template: './src/index.html'
+            template: './src/index.html',
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'plp.html',
+            template: './src/plp.html',
         }),
         new MiniCssExtractPlugin({
             filename: isDevelopment ? '[name].css' : '[name].[hash].css',
             chunkFilename: isDevelopment ? '[id].css' : '[id].[hash].css'
           }),
-          new CleanWebpackPlugin()    
+          new CleanWebpackPlugin(),
+          new webpack.ProvidePlugin({
+            $: 'jquery',
+            jQuery: 'jquery',
+            'window.jQuery': 'jquery'
+          }),
+        
     ],
-    module:{
+    module:{ 
         rules:[
             {
                 test: /\.js$/,
@@ -42,6 +53,10 @@ module.exports = {
                     options: { minimize: !isDevelopment }
                   }
                 ]
+            },
+            {
+                test: /\.css$/,
+                loader: 'style!css?importLoaders=1!postcss'
             },
 
             {
@@ -111,7 +126,8 @@ module.exports = {
         ]
     },
     resolve: {
-        extensions: ['.js', '.jsx', '.scss']
+        extensions: ['.js', '.jsx', '.scss'],
+      
       }
     
    

@@ -18,7 +18,9 @@
     "canned": "^0.3.12",
     "flexbox": "0.0.3",
     "html-loader": "^0.5.5",
-    "jquery": "^3.3.1"
+    "jquery": "^3.3.1",
+    "owl.carousel": "^2.3.4",
+    "slick-carousel": "^1.8.1"
   },
   "devDependencies": {
     "@babel/core": "^7.4.0",

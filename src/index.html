@@ -4,19 +4,151 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    
     <title>Sabka Bazaar</title>
-  </head>
+     </head>
   <body>
         <nav class="header">
               
               <ul class="main-nav">
                   <li> <div class="logo"><img src="../static/images/logo.png"></div></li>
                   <li><a href="#">Home</a></li>
-                  <li><a href="#">Product</a></li>
+                  <li><a href=".\plp.html">Product</a></li>
                   
-                   <li class="cart-icon"><a href="#">Cart</a></li>
+                   <li class="cart-icon" id="cart"><a href="#">Cart</a></li>
+                   <li><a href="#">Sign in</a></li>
+                   <li><a href="#">Register</a></li>
                   
               </ul>
-            </nav> 
+        </nav> 
+
+        <!--shopping cart-->
+<div class="container sc">
+        <div class="shopping-cart">
+          <div class="shopping-cart-header">
+            <i class="fa fa-shopping-cart cart-icon"></i><span class="badge">3</span>
+            <div class="shopping-cart-total">
+              <span class="lighter-text">Total:</span>
+              <span class="main-color-text">$2,229.97</span>
+            </div>
+          </div> <!--end shopping-cart-header -->
+      
+          <ul class="shopping-cart-items">
+            <li class="clearfix">
+              <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/cart-item1.jpg" alt="item1" />
+              <span class="item-name">Sony DSC-RX100M III</span>
+              <span class="item-price">$849.99</span>
+              <span class="item-quantity">Quantity: 01</span>
+            </li>
+      
+            <li class="clearfix">
+              <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/cart-item2.jpg" alt="item1" />
+              <span class="item-name">KS Automatic Mechanic...</span>
+              <span class="item-price">$1,249.99</span>
+              <span class="item-quantity">Quantity: 01</span>
+            </li>
+      
+            <li class="clearfix">
+              <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/cart-item3.jpg" alt="item1" />
+              <span class="item-name">Kindle, 6" Glare-Free To...</span>
+              <span class="item-price">$129.99</span>
+              <span class="item-quantity">Quantity: 01</span>
+            </li>
+          </ul>
+      
+          <a href="#" class="button">Checkout</a>
+        </div> <!--end shopping-cart -->
+      </div> <!--end container -->
+
+        <section class="section-carousel">
+            <div class="container">
+                    <li><img src="../static/images/offers/offer1.jpg"></li>
+                    <!-- Placeholder for carousel-->
+                <!--
+                    <ul class="owl-carousel owl-theme">
+                        <li><img src="../static/images/offers/offer1.jpg"></li>
+                        <li><img src="../static/images/offers/offer2.jpg"></li>
+                        <li><img src="../static/images/offers/offer3.jpg"></li>
+                        <li><img src="../static/images/offers/offer4.jpg"></li>
+                        <li><img src="../static/images/offers/offer5.jpg"></li>
+                    </ul>
+                     -->
+            </div>            
+        </section>
+        
+        <section class="category-section section-fruits-and-veggies row">
+            <div class="flex-category-container"> 
+                <div class="category">
+                    <img src="../static/images/category/fruits.png">
+                </div>
+
+                <div class="category-desc">
+                    <h4 class="category-heading">Fruits &amp; Vegetables</h4>
+                    <p class="category-text">A variety of fresh fruits and vegetables</p>
+                    <button class="category-button">Explore fruits-and-veg</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="category-section section-bakery row">
+                <div class="flex-category-container-alt"> 
+                    <div class="category">
+                        <img src="../static/images/category/bakery.png">
+                    </div>
+    
+                    <div class="category-desc">
+                        <h4 class="category-heading">Bakery Cakes &amp; Dairy</h4>
+                        <p class="category-text"></p>The best cupcakes,cookies, cakes, pies, cheesecakes,fresh bread, biscotti, muffins, bagels, fresh coffee, milk and more </p>
+                        <button class="category-button">Explore bakery-cakes-dairy</button>
+                    </div>
+                </div>
+        </section>
+
+        <section class="category-section section-beverages row">
+                <div class="flex-category-container"> 
+                    <div class="category">
+                        <img src="../static/images/category/beverages.png">
+                    </div>
+    
+                    <div class="category-desc">
+                        <h4 class="category-heading">Beverages</h4>
+                        <p class="category-text">Our beverage department will ensure your fridge is always fully stocked. Shop for soda, juice, beer and more.</p>
+                        <button class="category-button">Explore beverages</button>
+                    </div>
+                </div>
+        </section>
+
+        <section class="category-section section-beauty-and-hygiene row">
+                <div class="flex-category-container-alt"> 
+                    <div class="category">
+                        <img src="../static/images/category/beauty.png">
+                    </div>
+    
+                    <div class="category-desc">
+                        <h4 class="category-heading">Beauty and Hygiene</h4>
+                        <p class="category-text">Buy beauty and personal care products online in India at best prices.</p>
+                        <button class="category-button">Explore beauty-hygiene</button>
+                    </div>
+                </div>
+        
+        </section>
+
+        <section class="category-section section-fruits-and-veggies row">
+                <div class="flex-category-container"> 
+                    <div class="category">
+                        <img src="../static/images/category/baby.png">
+                    </div>
+    
+                    <div class="category-desc">
+                        <h4 class="category-heading">Baby Care</h4>
+                        <p class="category-text">Shop Online for Baby Products, Diapers, Skin Care Products, etc</p>
+                        <button class="category-button">Explore baby</button>
+                    </div>
+                </div>
+        </section>
+        
+        <footer class="footer">
+            <p>Copy right &copy; 2011-2018 Sabka Bazaar Grocery Supplies Pvt Ltd</p>
+        </footer>
   </body>
 </html>
