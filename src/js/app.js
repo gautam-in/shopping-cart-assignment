@@ -19,20 +19,26 @@ const header = `<nav>
                                 <span>0 items</span>
                             </a>
                         </span>
-                        <div class="nav_btn">
-                            <label for="hamberger">
-                                <div class="hamberger"></div>
-                                <div class="hamberger"></div>
-                                <div class="hamberger"></div>
-                            </label>
-                        </div>
-                        <input type="checkbox" id="hamberger" />
+                        
+                        <input type="checkbox" id="toggle">                  
+                        <label class="nav-btn" for="toggle">
+                      
+                        <div class="center">
+                          <div class="icon">
+                            <div class="line-1 no-animation"></div>
+                            <div class="line-2 no-animation"></div>
+                            <div class="line-3 no-animation"></div>
+                          </div>
+                      </div>
+                        </label>
+
+                        
                         <div class="nav_link">
-                            <ul>
+                            <ul class="sup_nav">
                                 <li><a href="index.html">Home</a></li>
                                 <li><a href="products.html">Products</a></li>
                             </ul>
-                            <ul>
+                            <ul class="sub_nav">
                                 <li><a href="login.html">SignIn</a></li>
                                 <li><a href="signup.html">Register</a></li>
                             </ul>
@@ -40,6 +46,7 @@ const header = `<nav>
                     </div>
                 </div>
                 </nav>`;
+
 
 
 const footer = `<section class="row">

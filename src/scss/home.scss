@@ -25,6 +25,11 @@ section {
   a {
     margin: 5px;
   }
+
+  p {
+    padding: 10px 0px;
+    font-size: 15px;
+  }
 }
 
 .hamberger {
@@ -51,8 +56,9 @@ li {
 
 .default_btn {
   color: #fff;
+  font-size: 15px;
   text-decoration: none;
-  background-color: #bf2957;
+  background-color: $pink-btn;
   padding: 13px 17px;
   transition: 0.5s;
 }
@@ -81,6 +87,18 @@ header {
 nav input {
   display: none;
 }
+
+.nav_btn label {
+  color: $pink-btn;
+  font-size: 36px;
+  display: none;
+}
+
+.nav-btn {
+  display: flex;
+  align-items: center;
+}
+
 
 nav:after {
   border: none;
@@ -224,7 +242,7 @@ hr {
   position: relative;
   margin-bottom: 45px;
 }
-input {
+.login_section input {
   font-size: 18px;
   padding: 10px 10px 10px 5px;
   display: block;
@@ -232,12 +250,12 @@ input {
   border: none;
   border-bottom: 1px solid #cccccc;
 }
-input:focus {
+.login_section input:focus {
   outline: none;
 }
 
 /* LABEL ======================================= */
-label {
+.login_section label {
   color: #999;
   font-size: 18px;
   font-weight: normal;
@@ -251,21 +269,21 @@ label {
 }
 
 /* active state */
-input:focus ~ label,
-input:valid ~ label {
+.login_section input:focus ~ .login_section label,
+.login_section input:valid ~ .login_section label {
   top: -20px;
   font-size: 14px;
   color: #50dae4;
 }
 
 /* BOTTOM BARS ================================= */
-.bar {
+.login_section .bar {
   position: relative;
   display: block;
   width: 300px;
 }
-.bar:before,
-.bar:after {
+.login_section .bar:before,
+.login_section .bar:after {
   content: "";
   height: 1px;
   width: 0;
@@ -276,16 +294,16 @@ input:valid ~ label {
   -moz-transition: 0.2s ease all;
   -webkit-transition: 0.2s ease all;
 }
-.bar:before {
+.login_section .bar:before {
   left: 50%;
 }
-.bar:after {
+.login_section .bar:after {
   right: 50%;
 }
 
 /* active state */
-input:focus ~ .bar:before,
-input:focus ~ .bar:after {
+.login_section input:focus ~ .login_section .bar:before,
+.login_section input:focus ~ .login_section .bar:after {
   width: 50%;
 }
 
@@ -301,7 +319,7 @@ input:focus ~ .bar:after {
 }
 
 /* active state */
-input:focus ~ .highlight {
+.login_section input:focus ~ .login_section .highlight {
   -webkit-animation: inputHighlighter 0.3s ease;
   -moz-animation: inputHighlighter 0.3s ease;
   animation: inputHighlighter 0.3s ease;
@@ -337,3 +355,160 @@ input:focus ~ .highlight {
 }
 
 //end form
+
+@media only screen and (max-width: 767px) {
+  
+
+$lineHeight: 8px;
+$lineSpace: 14px;
+$offsetY: $lineHeight + $lineSpace;
+$shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.3);
+$duration: 0.6s;
+
+.no-animation {
+  animation: none !important;
+}
+
+.center{
+  width: 50px;
+  height: 50px;
+  border: 2px solid #d00255;
+  position: relative;
+}
+.icon {
+
+  position: absolute;
+  .line-1,
+  .line-2,
+  .line-3 {
+    width: 100%;
+    height: 2px;
+    background-color: #d10256;
+  }
+
+  .line-1 {
+    animation: line-1-rev $duration forwards;
+  }
+
+  .line-2 {
+    margin: $lineSpace 0;
+    animation: line-2-rev $duration forwards;
+  }
+
+  .line-3 {
+    animation: line-3-rev $duration forwards;
+  }
+
+  &.active {
+    .line-1 {
+      animation: line-1 $duration forwards;
+    }
+    .line-2 {
+      animation: line-2 $duration forwards;
+    }
+    .line-3 {
+      animation: line-3 $duration forwards;
+    }
+  }
+}
+
+@keyframes line-1 {
+  0% {
+    transform: translateY(0) rotate(0);
+  }
+
+  50% {
+    transform: translateY($offsetY) rotate(0);
+  }
+
+  100% {
+    transform: translateY($offsetY) rotate(45deg);
+  }
+}
+
+@keyframes line-2 {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0);
+    opacity: 0;
+  }
+}
+
+@keyframes line-3 {
+  0% {
+    transform: translateY(0) rotate(0);
+  }
+
+  50% {
+    transform: translateY(-$offsetY) rotate(0);
+  }
+
+  100% {
+    transform: translateY(-$offsetY) rotate(135deg);
+  }
+}
+
+@keyframes line-1-rev {
+  0% {
+    transform: translateY($offsetY) rotate(45deg);
+  }
+
+  50% {
+    transform: translateY($offsetY) rotate(0);
+  }
+
+  100% {
+    transform: translateY(0) rotate(0);
+  }
+}
+
+@keyframes line-2-rev {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes line-3-rev {
+  0% {
+    transform: translateY(-$offsetY) rotate(135deg);
+  }
+
+  50% {
+    transform: translateY(-$offsetY) rotate(0);
+  }
+
+  100% {
+    transform: translateY(0) rotate(0);
+  }
+}
+
+  .cart_btn {
+    position: static;
+    a {
+      display: inline-block;
+      padding: 0;
+    background: transparent;
+      .cart_icon{
+         position: static;
+      }
+      span {
+        display: none;
+      }
+    }
+  }
+  nav > .row > div {
+    text-align: right;
+}
+  .nav_link {
+    height: 0;
+    display: none;
+}
+}

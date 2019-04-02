@@ -41,7 +41,7 @@
                 </div>
 
                 <a class="prev" onclick="plusSlides(-1)">PREV</a>
-                <a class="next" onclick="plusSlides(1)">NEXT</a>
+                <a class="next" id="next" onclick="plusSlides(1)">NEXT</a>
 
             </div>
             <br>
@@ -76,9 +76,8 @@
             <div class="category_desc">
                 <h3>Bakery Cakes And Dairy</h3>
                 <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque dolorum saepe sit ea ratione
-                    excepturi, praesentium a alias iusto recusandae tempora. Perferendis modi unde praesentium animi
-                    velit ab, reiciendis quia!
+                    The best cupcakes, cookies, cakes, pies,cheesecakes, fresh bread,biscotti, muffins, bagels, fresh
+                    coffee, milk and more.
                 </p>
                 <a href="#" class="default_btn">Explore Fruits-and-Vegetable</a>
             </div>
@@ -96,8 +95,8 @@
             <div class="category_desc">
                 <h3>Fruits & Vegetable</h3>
                 <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas earum dolore veritatis corporis
-                    quasi laboriosam
+                    Our beverage department+ will ensure your fridge is always fully stocked. Shop for soda, juice, beer
+                    and more.
                 </p>
                 <a href="#" class="default_btn">Explore Fruits-and-Vegetable</a>
             </div>
@@ -107,12 +106,10 @@
     <section>
         <div class="row align-center">
             <div class="category_desc">
-                <h3>Fruits & Vegetable</h3>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas earum dolore veritatis corporis
-                    quasi laboriosam
-                </p>
+                <h3>Beauty and Hygiene</h3>
+                <p>Buy beauty and personal care products online in India at best prices.</p>
                 <a href="#" class="default_btn">Explore Fruits-and-Vegetable</a>
+
             </div>
             <div class="category_img">
                 <img src="/dist/images/category/beauty.png" />
@@ -128,20 +125,13 @@
             <div class="category_desc">
                 <h3>Baby Care</h3>
                 <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas earum dolore veritatis corporis
-                    quasi laboriosam
+                    Shop online for Baby Products, Diapers,Skin Care Products,etc.
                 </p>
                 <a href="#" class="default_btn">Explore Fruits-and-Vegetable</a>
             </div>
         </div>
     </section>
-    <footer>
-        <section class="row">
-            <p>
-                Copyright &copy; 2011 &mdash; 2018 Sabka Bazaar Grocery Supplies Pvt Ltd
-            </p>
-        </section>
-    </footer>
+    <footer id="footer"></footer>
     <script>
 
     </script>
@@ -174,6 +164,12 @@
             slides[slideIndex - 1].style.display = "block";
             dots[slideIndex - 1].className += " active";
         }
+
+        var elem = document.getElementById("next");
+        setInterval(function () {
+            elem.click();
+        }, 4000);
+
     </script>
 </body>
 
