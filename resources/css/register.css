@@ -1,0 +1,183 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+  color: black; }
+
+a {
+  color: black; }
+
+html,
+body {
+  margin: 0 auto;
+  font-family: 'Dosis';
+  font-weight: 600;
+  box-sizing: border-box; }
+
+.flex {
+  display: flex; }
+
+.flex-row {
+  display: flex;
+  flex: 1; }
+
+.flex-column {
+  display: flex;
+  flex: 1;
+  flex-direction: column; }
+
+.flex-row-reverse {
+  display: flex;
+  flex: 1;
+  flex-direction: row-reverse; }
+
+.flex-column-reverse {
+  display: flex;
+  flex: 1;
+  flex-direction: column-reverse; }
+
+.btn {
+  background: #d10157;
+  border: 0;
+  padding: 10px;
+  color: white;
+  font-family: 'Dosis';
+  text-align: center; }
+
+.nav {
+  display: flex;
+  height: 96px;
+  box-shadow: 0 8px 6px -3px #eeeeee; }
+  @media only screen and (min-width: 1024px) {
+    .nav {
+      padding: 0 10vw; } }
+  .nav__logo {
+    margin-left: 1vw;
+    width: 29vw;
+    padding: 9.5px 0; }
+    @media only screen and (min-width: 480px) {
+      .nav__logo {
+        margin-left: 0;
+        width: 16vw; } }
+  .nav__bar {
+    display: flex;
+    flex: 1;
+    list-style: none;
+    margin-left: 7vw;
+    padding: 9.5px 0; }
+    .nav__bar--link {
+      display: flex;
+      flex-direction: column-reverse;
+      margin-left: 2vw;
+      display: none; }
+      @media only screen and (min-width: 480px) {
+        .nav__bar--link {
+          display: flex; } }
+      .nav__bar--link a {
+        color: #736a6d; }
+  .nav__end {
+    display: flex;
+    flex-direction: column;
+    width: 29vw; }
+    @media only screen and (min-width: 480px) {
+      .nav__end {
+        width: 12vw; } }
+    .nav__end-register-box {
+      display: flex;
+      flex-direction: row-reverse;
+      height: 34%;
+      display: none; }
+      @media only screen and (min-width: 480px) {
+        .nav__end-register-box {
+          display: flex; } }
+      .nav__end-register-box--link {
+        font-size: 0.7rem;
+        margin-left: 1.5vw; }
+    .nav__end-cart {
+      display: flex;
+      flex: 1;
+      justify-content: center;
+      align-items: center;
+      background-color: #eeeeee; }
+      .nav__end-cart--logo {
+        height: 35.52px;
+        fill: #d10157; }
+
+main {
+  margin-top: 10px; }
+  @media only screen and (min-width: 1024px) {
+    main {
+      padding: 0 10vw; } }
+
+footer {
+  padding: 10px 0;
+  text-align: center;
+  background-color: #eaeaea; }
+  @media only screen and (min-width: 1024px) {
+    footer {
+      padding: 10px 10vw;
+      text-align: left; } }
+
+main.form-container {
+  display: flex;
+  flex: 1; }
+  main.form-container .heading {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    margin-top: 6%; }
+  main.form-container .form {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    padding: 10px 0; }
+    main.form-container .form .form__input-container {
+      overflow: hidden;
+      position: relative;
+      height: 72px; }
+      main.form-container .form .form__input-container label {
+        position: absolute;
+        top: 14px;
+        color: #b4a89c;
+        font-size: 16px;
+        cursor: text;
+        transition: 0.25s ease; }
+      main.form-container .form .form__input-container input {
+        display: block;
+        width: 100%;
+        padding-top: 16px;
+        border: none;
+        border-radius: 0;
+        color: black;
+        background: white;
+        font-size: 16px;
+        transition: 0.3s ease;
+        font-family: 'Dosis'; }
+        main.form-container .form .form__input-container input:valid ~ label {
+          top: 0;
+          font-size: 9.6px;
+          color: rgba(0, 0, 0, 0.5); }
+        main.form-container .form .form__input-container input:focus {
+          outline: none; }
+          main.form-container .form .form__input-container input:focus ~ label {
+            top: 0;
+            font: 700 9.6px;
+            color: #93d4d2; }
+          main.form-container .form .form__input-container input:focus ~ .bar:before {
+            transform: translateX(0); }
+      main.form-container .form .form__input-container .bar {
+        background: rgba(180, 168, 156, 0.5);
+        content: '';
+        width: 100%;
+        height: 1.5px;
+        transition: 0.3s ease;
+        position: relative; }
+        main.form-container .form .form__input-container .bar:before {
+          content: '';
+          position: absolute;
+          width: 100%;
+          height: 150%;
+          background: #93d4d2;
+          transform: translateX(-100%); }
