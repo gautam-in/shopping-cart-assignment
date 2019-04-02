@@ -13,8 +13,9 @@
       .category{
           order:2;
           img{
-          float:right;
-          clear:right;
+                
+                float:right;
+                clear:right;
           }
       }
       .category-desc{
@@ -28,8 +29,9 @@
     
     .category{
         flex: 1;
+        transform: translateY(25%);
         img{
-            vertical-align: middle;
+           
             width:50%;
             height:auto;
         }
@@ -39,7 +41,7 @@
         align-items: center;
         
         p, h4, button{
-            vertical-align: middle;
+            transform: translateY(25%);
             text-align: center ;
             
             display: block;
