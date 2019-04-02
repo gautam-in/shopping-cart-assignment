@@ -23,6 +23,24 @@
   }
 }
 
+.product {
+  flex: 0 1 80%;
+  overflow-x: hidden;
+  padding-top: 20px;
+
+  .product_listing{
+    display: flex; 
+    
+    .items{
+      flex: 0 1 25%;      
+
+      img{
+        height: 200px;
+        width: 200px;
+      }
+    }
+  }
+}
 
 .main {
   margin-left: 160px; /* Same as the width of the sidenav */
