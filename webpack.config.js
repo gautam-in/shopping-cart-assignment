@@ -1,5 +1,5 @@
 const path = require('path');
-const HtmlwebpackPlugin =require('html-webpack-plugin');
+const HtmlWebpackPlugin =require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const cssOutput = 'css/style.css';
 
@@ -20,7 +20,7 @@ module.exports = {
         contentBase: './resources'
     },
     plugins: [
-        new HtmlwebpackPlugin({
+        new HtmlWebpackPlugin({
             filename: 'index.html',
             template: './src/home.html'
         })
@@ -44,8 +44,30 @@ module.exports = {
         ]
     },
     plugins: [
-        new ExtractTextPlugin(cssOutput)
+        new ExtractTextPlugin(cssOutput),
+        new HtmlWebpackPlugin({
+            filename: 'index.html',
+            inject: true,
+            template: path.resolve(__dirname, "src/index.html")
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'login.html',
+            inject: true,
+            template: path.resolve(__dirname, "src/login.html")
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'product_listing.html',
+            inject: true,
+            template: path.resolve(__dirname, "src/product_listing.html")
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'register.html',
+            inject: true,
+            template: path.resolve(__dirname, "src/register.html")
+        })
     ]
+
+
 
 };
 

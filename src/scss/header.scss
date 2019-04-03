@@ -1,7 +1,7 @@
 @import "breakpoint.scss";
-/* ----------------------------------------------- */
+
 /* REUSABLE COMPONENTS */
-/* ----------------------------------------------- */
+
 .row {
     display: flex;
     justify-content: center;
@@ -55,7 +55,7 @@ nav {
 }
 
 footer {
-    background-color:#DCDCDC;
+    background-color:#eaeaea;
     padding: 10px;
     color:black;
     //position: fixed;
@@ -72,10 +72,9 @@ footer {
   }
 
   @media only screen and (max-width: #{$breakpoint-tablet - 2px}) and (min-width: $breakpoint-mobile) {
-
-    #hamburger {
-      display: inline;
-    }
+     #hamburger {
+        display: inline;
+      }
     .row{
       display: flex;
 

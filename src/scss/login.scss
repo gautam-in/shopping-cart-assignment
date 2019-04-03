@@ -31,15 +31,20 @@
       
   }
 
-  @media(min-width:$breakpoint-mobile) {
+  @media (max-width:$breakpoint-tablet) and (min-width:$breakpoint-mobile) {
 
     .form_text{
         margin-left: 20px;
         margin-right: 20px;
+        width: 100%;
     }
 
     .form_set {
-        margin-right: 50px;
+        margin-left: 70px;
+    }
+
+    .login_mobile {
+      flex-direction: column;
     }
 
   }
