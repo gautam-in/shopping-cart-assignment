@@ -197,6 +197,7 @@
       max-width: 100%;
       padding-left: 0;
       margin-top: 30px;
+      margin-bottom: 30px;
       label {
         display: block;
         cursor: pointer;
@@ -243,6 +244,8 @@
       & > ul {
         li {
           padding: 0 5px 10px;
+          margin-top: 0;
+          margin-bottom: 30px;
         }
       }
     }
@@ -253,7 +256,7 @@
   }
 }
 
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 479px) {
   .buy {
     padding: 10px 8px;
   }
@@ -266,6 +269,7 @@
           -ms-flex: 0 1 100%;
           flex: 0 1 100%;
           margin-right: 0;
+         
           &:after {
             display: none;
           }
