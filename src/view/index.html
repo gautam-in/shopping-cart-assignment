@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+    <title>SABKA BAZAAR HOME</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+ 
+    <body>
+
+        <header>
+            <div class="container flex" id="navbar">
+                <nav>
+                    <div class="row">
+                        <img src="assets/images/logo.png" alt=" logo" class="logo">
+                        <ul class="main-nav bottom-xs xs-hide">
+                            <li><a href="index.html" class="">Home</a></li>
+                            <li><a href="plp.html" class=""> Products</a></li>
+                        </ul>
+                      </div>
+                </nav>
+            
+                <div class="header-right">
+                    <a href="sign-in.html" class="xs-hide"> SignIn</a>
+                    <a href="sign-up.html" class="xs-hide"> Register</a>
+
+                    <div class="cart">
+                        <img src="./assets/images/cart.svg" alt="" id="myBtn"> 
+                        <span class="xs-show item-in-cart"> 0</span>
+                        <span class="xs-hide">0 item</span>
+                        <div id="hamburger-icon">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+
+                        <ul class="main-nav js--main-nav bottom-xs" id="mobile-nav">
+                            <li><a href="index.html" class="">Home</a></li>
+                            <li><a href="plp.html" class=""> Products</a></li>
+                            <li><a href="sign-in.html" class=""> Signin</a></li>
+                            <li><a href="sign-up.html" class=""> Signup</a></li>
+
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <section class="home-section mt-25 mb-20">
+            <div class="container " >
+                <div class="flex flex-center box-shadow p-0">
+                    <div class="home-slider">
+                        <div class="slideshow-container">
+                            <div class="mySlides fade">
+                              <img src="assets/images/offers/offer1.jpg" style="width:100%">
+                            </div>
+                            <div class="mySlides fade">
+                              <img src="assets/images/offers/offer2.jpg" style="width:100%">
+                            </div>
+                            <div class="mySlides fade">
+                              <img src="assets/images/offers/offer3.jpg" style="width:100%">
+                            </div>
+                            <a class="prev" id="prev_slide" >PREV</a>
+                            <a class="next" id="next_slide" >NEXT</a>
+                            </div>
+                            <br>
+                            <div style="text-align:center">
+                              <span class="dot"></span> 
+                              <span class="dot"></span> 
+                              <span class="dot"></span> 
+                            </div>
+                    </div>
+                </div>
+
+                <div class="flex flex-center box-shadow mt-15">
+                    <div class="category fruits">
+                        <img src="assets/images/category/fruits.png" alt="">
+                    </div>
+                    <div>
+                        <div>
+                            <h2>Fruits and Vegetables</h2>
+                            <p>A veriety of fresh fruits and vegetables</p>
+                            <button>Explore fruit-and-veg</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class=" flex flex-center box-shadow mt-15">
+                    <div>
+                        <div>
+                            <h2>Bakery Cakes and Dairy</h2>
+                            <p>The best cupcakes, cookies, cakes, pie, cheesecakes, fresh bread, biscotti, muffines, bagels, fresh cofees, milk and more</p>
+                            <button>Explore bakry-cake-dairy</button>
+                        </div>
+                    </div>
+                    <div class="category">
+                            <img src="assets/images/category/bakery.png" alt="">
+                    </div>
+                </div>
+
+                <div class="flex flex-center box-shadow mt-15">
+                    <div class="category">
+                        <img src="assets/images/category/beverages.png" alt="">
+                    </div>
+                    <div>
+                        <div>
+                            <h2>Beverages</h2>
+                            <p>Our beverages deparpemnt will ensure your fridge is always fully stocked. Shop for soda, juice, beer and more  </p>
+                            <button>Explore beverages</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class=" flex flex-center box-shadow mt-15">
+                    <div>
+                        <div>
+                            <h2>Beauty and Hygiene</h2>
+                            <p>Buy beauty and personal care products online in india at best prices.</p>
+                            <button>Explore beauty hygiene</button>
+                        </div>
+                    </div>
+                    <div class="category">
+                            <img src="assets/images/category/beauty.png" alt="">
+                    </div>
+                </div>
+
+                <div class="flex flex-center box-shadow mt-15">
+                        <div class="category">
+                            <img src="assets/images/category/baby.png" alt="">
+                        </div>
+                        <div>
+                            <div>
+                                <h2>Baby care</h2>
+                                <p>Shop online for baby products, Diapers, Skin care Products etc.</p>
+                                <button>Explore baby</button>
+                            </div>
+                        </div>
+                    </div>
+
+            </div>
+        </section>
+
+        <footer>
+                <div class="footer-copy">
+                    <div class="container">
+                    
+                        <p>Copyright &copy; 2011-2018 Sabka Bazaar Grocery Supplies Pvt. Ltd.</p>
+                    </div>
+                </div>
+         </footer>
+
+         <div id="myModal" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="close">&times;</span>
+                    <h2>My cart</h2>
+                </div>
+                <div class="modal-body">
+                    <h2>No item in your cart</h2>
+                    <p>Your favourite items are just a click away</p>
+                </div>
+                <div class="modal-footer">
+                    <button>Start Shopping</button>
+                </div>
+            </div>
+            
+            </div>     
+
+
+            <script>
+                // Get the modal
+                var modal = document.getElementById('myModal');
+                
+                // Get the button that opens the modal
+                var btn = document.getElementById("myBtn");
+                
+                // Get the <span> element that closes the modal
+                var span = document.getElementsByClassName("close")[0];
+                
+                // When the user clicks the button, open the modal 
+                btn.onclick = function() {
+                    modal.style.display = "block";
+                }
+                
+                // When the user clicks on <span> (x), close the modal
+                span.onclick = function() {
+                    modal.style.display = "none";
+                }
+                
+                // When the user clicks anywhere outside of the modal, close it
+                window.onclick = function(event) {
+                    if (event.target == modal) {
+                    modal.style.display = "none";
+                    }
+                }
+            </script>       
+
+    </body>
+</html>
