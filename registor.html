@@ -10,10 +10,6 @@
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" type="text/css" href="resources/css/style.css">
     <link rel="stylesheet" type="text/css" href="resources/css/flexboxgrid.css">
-    <style>
-
-    </style>
-
 </head>
 
 <body>
@@ -23,16 +19,19 @@
                 <img src="resources/images/logo.png" alt="Shopping logo" class="logo_img">
                 <div class="main-nav">
                     <ul class="header-nav ">
-                        <li><a class="active " href="index.html">Home</a></li>
-                        <li><a href="plp.html" class="hide">Product</a></li>
+                        <li><a class="active " href="index.html">Home</a>
+                        </li>
+                        <li><a href="plp.html" class="hide">Product</a>
+                        </li>
                     </ul>
                 </div>
                 <div class="super-header ">
                     <ul class="header-nav">
-                        <li><a href="login.html">SignIn</a></li>
-                        <li><a href="registor.html">Register</a></li>
-                    </ul>
-                    <span class="cart-section">
+                        <li><a href="login.html">SignIn</a>
+                        </li>
+                        <li><a href="registor.html">Register</a>
+                        </li>
+                    </ul> <span class="cart-section">
                         <img src="resources/images/cart.svg" alt="cart" class="img">
                         <p class="hide">0 items</p> <button class="w3-button w3-teal w3-xlarge show"
                             onclick="w3_open()">☰</button>
@@ -42,31 +41,21 @@
         </nav>
     </header>
     <div class="mobile_menu">
-        <div class="w3-sidebar w3-bar-block w3-border-right" style="display:none" id="sidebar-menu">
-
-
-            <a href="index.html" class="w3-bar-item ">Home <span onclick="w3_close()" style="float: right;">
+        <div class="w3-sidebar w3-bar-block w3-border-right" style="display:none" id="sidebar-menu"> <a href="index.html" class="w3-bar-item ">Home <span onclick="w3_close()" style="float: right;">
                     &times;</span></a>
-
             <a href="plp.html" class="w3-bar-item ">Product</a>
-
             <a href="login.html" class="w3-bar-item ">SignIn</a>
-
             <a href="registor.html" class="w3-bar-item ">Registor</a>
-
         </div>
     </div>
-
     <div class="wrap container-fluid" style="margin-top: 3em;">
         <section>
             <div class="row">
                 <div class="col-xs-7 signup-text-box">
                     <p class="signup-heading">Signup</p>
-
                     <p class="signup-text">We do not share your personal details with anyone.</p>
                 </div>
                 <div class="col-xs-5">
-
                     <form class="signup-form">
                         <div class="form-group">
                             <input required="required" class="form-control" />
@@ -82,36 +71,30 @@
                         </div>
                         <div class="form-group">
                             <input id="password" type="password" required="required" class="form-control" />
-                            <label class="form-label">Password</label></div>
+                            <label class="form-label">Password</label>
+                        </div>
                         <div class="form-group">
                             <input id="password" type="password" required="required" class="form-control" />
-                            <label class="form-label"> Confirm Password</label>
-
-                            <button class="signup-btn">Signup </button>
+                            <label class="form-label">Confirm Password</label>
+                            <button class="signup-btn">Signup</button>
                         </div>
                     </form>
-
                 </div>
             </div>
         </section>
-
     </div>
-
-
     <footer>
-        <div class="footer">
-            Copyright @ 2011-2018 Sabka Bazar Grocery Supplie Pvt Ltd
-        </div>
+        <div class="footer">Copyright @ 2011-2018 Sabka Bazar Grocery Supplie Pvt Ltd</div>
     </footer>
+    <script>
+        function w3_open() {
+            document.getElementById("sidebar-menu").style.display = "block";
+        }
+
+        function w3_close() {
+            document.getElementById("sidebar-menu").style.display = "none";
+        }
+    </script>
 </body>
 
 </html>
-<script>
-    function w3_open() {
-        document.getElementById("sidebar-menu").style.display = "block";
-    }
-
-    function w3_close() {
-        document.getElementById("sidebar-menu").style.display = "none";
-    }
-</script>
