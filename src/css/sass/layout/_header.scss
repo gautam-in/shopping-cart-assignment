@@ -1,0 +1,52 @@
+nav {
+	border-bottom: $border-bottom;
+}
+.logo {
+	height: 78px;
+	padding: 3px;
+}
+.cart {
+	height: 32px;
+	width: auto;
+	margin-top: 16px;
+}
+.main-nav {
+	@include position($float-left);
+	left: 24%;
+	top: 48%;
+	@include li-last-child;
+}
+.cart-nav {
+	@include position($float-right);
+	left: 88%;
+	top: 4%;
+	display: flex;
+	@include li-last-child;
+}
+.hero__cart {
+	@include position($float-left);
+	left: 88%;
+	top: 28%;
+}
+.hero__cart__box {
+	a {
+		@include  flex-align-items;
+		justify-content: flex-start;
+		background-color: #e2d8d8;
+		padding: 0px 12px;
+		margin-top: 12px;
+		text-decoration: none;
+		color: black;
+	}
+	
+	.icon {
+		display: none;
+		color: $color-secondary;
+		text-decoration: none;
+	}
+}
+li {
+	a {
+		text-decoration: none;
+	}
+}

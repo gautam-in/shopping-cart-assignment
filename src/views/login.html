@@ -1,0 +1,103 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <title>SABKA BAZAAR</title>
+    </head>
+    <body>
+        <header>
+                <nav>
+                    <div class="row-container clearfix">
+                        <img src="img/logo_2x.png" alt="sabka-bazaar logo" class="logo">
+                        
+                        <div class="hero__cart">
+                            <span class="hero__cart__box">
+                                <a href="/Cart">
+                                <img src="img/cart.svg" alt="cart" class="cart">
+                                <p>0</p><p>items</p>
+                                </a>
+                                <a  class="icon" onclick="myFunction()">
+                                    <i class="fa fa-bars"></i>
+                                  </a>
+                            </span>
+                        </div>
+                        <div class="hero__link__box mobile-nav" id="mobileNav">
+                                <ul class="main-nav">
+                                    <li><a href="index.html">Home</a></li>
+                                    <li><a href="product-list.html">Products</a></li>
+                                </ul>
+                                <ul class="cart-nav">
+                                    <li><a href="login.html">Login</a></li>
+                                    <li><a href="register.html">Register</a></li>
+                                </ul>
+                            </div>
+                    </div>
+                </nav>
+        </header>
+        <section>
+            <div class="sign__in__container">
+                <div class="sign__in__content">
+                    <h2>Login</h2>
+                    <p>Get access to your Orders, Wishlist and Recommendations.</p>
+                </div>
+                <div class="sign__in__form">
+                    <form>
+                        <div class="form__input">
+                            <input type="email" name="email" id="email" required>
+                            <label>Email</label>
+                        </div>
+                        <div class="form__input">
+                            <input type="password" name="password" id="password" required>
+                            <label>Password</label>
+                        </div>
+                        <div class="form__input">
+                            <button>Login</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+        <footer class="footer">
+                <p>Copyright &copy; 2011-2018 Sabka Bazaar Grocery Supplies Pvt Ltd.</p>
+            </footer>
+    
+            <script>
+                    var slideIndex = 1;
+                    showSlides(slideIndex);
+                    
+                    function plusSlides(n) {
+                      showSlides(slideIndex += n);
+                    }
+                    
+                    function currentSlide(n) {
+                      showSlides(slideIndex = n);
+                    }
+                    
+                    function showSlides(n) {
+                      var i;
+                      var slides = document.getElementsByClassName("mySlides");
+                      var dots = document.getElementsByClassName("dot");
+                      if (n > slides.length) {slideIndex = 1}    
+                      if (n < 1) {slideIndex = slides.length}
+                      for (i = 0; i < slides.length; i++) {
+                          slides[i].style.display = "none";  
+                      }
+                      for (i = 0; i < dots.length; i++) {
+                          dots[i].className = dots[i].className.replace(" active", "");
+                      }
+                      slides[slideIndex-1].style.display = "block";  
+                      dots[slideIndex-1].className += " active";
+                    }
+                    function myFunction() {
+                    var x = document.getElementById("mobileNav");
+                    if (x.style.display === "none") {
+                        x.style.display = "inline";
+                    } else {
+                        x.style.display = "none";
+                    }
+                    }
+                    </script>
+    </body>
+</html>

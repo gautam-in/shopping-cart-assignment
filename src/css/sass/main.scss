@@ -1,0 +1,18 @@
+
+@import url("https://fonts.googleapis.com/css?family=Dosis:400,600,700");
+
+@import './abstracts/mixins';
+@import './abstracts/variables';
+
+@import './base/animations';
+@import './base/base';
+@import './base/utilities';
+
+@import './layout/footer';
+@import './layout/header';
+
+@import './pages/home';
+@import './pages/cart';
+@import './pages/plp';
+@import './pages/signin';
+@import './layout/slider';

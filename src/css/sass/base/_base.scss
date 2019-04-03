@@ -1,0 +1,13 @@
+*, *::after, *::before {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+html {
+	background-color: $color-secondary;
+	color: #555;
+	font-family: 'Dosis';
+	height: 100vh;
+	font-weight: 300;
+	font-size: 20px;
+}

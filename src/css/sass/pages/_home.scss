@@ -1,0 +1,29 @@
+.row-container {
+	@include max-width;
+	position: relative;
+}
+.row {
+	@include max-width;
+	@include display-flex;
+	align-items: center;
+}
+
+
+
+.home__section {
+	padding: 40px 0;
+	&:after {
+		content: '';
+		position: absolute;
+		left: 50%;
+		height: 3px;
+		width: 60%;
+		background: $color-secondary;
+		border-radius: 30%;
+		box-shadow: 0 10px 17px #000000d9;
+		-moz-box-shadow: 0 10px 17px #000000d9;
+		z-index: -1;
+		transform: translate(-50%);
+		margin-top: 19px;
+	}
+}
