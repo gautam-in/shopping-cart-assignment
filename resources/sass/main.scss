@@ -1,10 +1,10 @@
 @import "abstracts/mixins";
 @import "abstracts/variables";
-@import "layout/body";
+@import "base/body";
+@import "base/animation";
 @import "layout/header";
 @import "layout/footer";
-@import "layout/form";
-@import "layout/animation";
+@import "components/form";
 @import "pages/home";
 @import "pages/plp";
 @import "pages/login";
