@@ -9,7 +9,9 @@ $background-color-primary: white;
 $background-color-secondary: #d10157;
 
 $text-color-primary: black;
-$text-color-secondary: #736a6d;
+$text-color-secondary: white;
+
+$input-theme-color-primary: #93d4d2;
 
 @mixin flex {
   display: flex;
@@ -104,7 +106,7 @@ body {
   background: $background-color-secondary;
   border: 0;
   padding: $app-btn-padding;
-  color: white;
+  color: $text-color-secondary;
   font-family: 'Dosis';
   text-align: center;
 }
@@ -165,7 +167,6 @@ body {
         margin-left: 1.5vw;
       }
     }
-
     &-cart {
       @include flex-row;
       justify-content: center;
@@ -178,90 +179,94 @@ body {
       }
     }
   }
+}
 
-  .menu-toggle {
-    display: block;
-    position: relative;
-    z-index: 1;
-    -webkit-user-select: none;
-    user-select: none;
-    align-self: center;
-    @include break-point(tablet) {
-      display: none;
-    }
-    input {
-      display: block;
-      width: 40px;
-      height: 32px;
-      position: absolute;
-      top: -7px;
-      left: -5px;
-      cursor: pointer;
-      opacity: 0;
-      z-index: 2;
-      -webkit-touch-callout: none;
-      &:checked ~ span {
-        opacity: 1;
-        transform: rotate(45deg) translate(-2px, -1px);
-        background: #232323;
-      }
-      &:checked ~ span:nth-last-child(3) {
-        opacity: 0;
-        transform: rotate(0deg) scale(0.2, 0.2);
-      }
-      &:checked ~ span:nth-last-child(2) {
-        transform: rotate(-45deg) translate(0, -1px);
-      }
-      &:checked ~ ul {
-        display: block;
-        transform: translate(-150%, 0);
-      }
-    }
-    span {
-      display: block;
-      width: 33px;
-      height: 4px;
-      margin-bottom: 5px;
-      position: relative;
-      background: #cdcdcd;
-      border-radius: 3px;
-      z-index: 1;
-      transform-origin: 4px 0px;
-      transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1),
-        opacity 0.55s ease;
-      &:first-child {
-        transform-origin: 0% 0%;
-      }
-      &:nth-last-child(2) {
-        transform-origin: 0% 100%;
-      }
-    }
+// toggle menu for mobile
+.menu-toggle {
+  display: block;
+  position: relative;
+  z-index: 1;
+  -webkit-user-select: none;
+  user-select: none;
+  align-self: center;
+  @include break-point(tablet) {
+    display: none;
   }
 
-  .menu {
-    $menu-width: 300px;
-
-    display: none;
+  input {
+    display: block;
+    width: 40px;
+    height: 32px;
     position: absolute;
-    width: $menu-width;
-    margin: -63px 0 0 $menu-width;
-    padding: 50px;
-    padding-top: 125px;
-    background: #ededed;
-    list-style-type: none;
-    -webkit-font-smoothing: antialiased;
-    transform-origin: 0% 0%;
-    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
-    &--link {
-      transition: color 0.3s ease;
-      &:hover {
-        color: tomato;
-      }
+    top: -7px;
+    left: -5px;
+    cursor: pointer;
+    opacity: 0;
+    z-index: 2;
+    -webkit-touch-callout: none;
+    &:checked ~ span {
+      opacity: 1;
+      transform: rotate(45deg) translate(-2px, -1px);
+      background: #232323;
     }
-    li {
-      padding: 10px 0;
-      font-size: 22px;
+    &:checked ~ span:nth-last-child(3) {
+      opacity: 0;
+      transform: rotate(0deg) scale(0.2, 0.2);
     }
+    &:checked ~ span:nth-last-child(2) {
+      transform: rotate(-45deg) translate(0, -1px);
+    }
+    &:checked ~ ul {
+      display: block;
+      transform: translate(-150%, 0);
+    }
+  }
+  span {
+    display: block;
+    width: 33px;
+    height: 4px;
+    margin-bottom: 5px;
+    position: relative;
+    background: #cdcdcd;
+    border-radius: 3px;
+    z-index: 1;
+    transform-origin: 4px 0px;
+    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1),
+      opacity 0.55s ease;
+    &:first-child {
+      transform-origin: 0% 0%;
+    }
+    &:nth-last-child(2) {
+      transform-origin: 0% 100%;
+    }
+  }
+}
+
+// mobile menu toggle list
+.menu {
+  $menu-width: 300px;
+
+  display: none;
+  position: absolute;
+  width: $menu-width;
+  margin: -63px 0 0 $menu-width;
+  padding: 50px;
+  padding-top: 125px;
+  background: #ededed;
+  list-style-type: none;
+  -webkit-font-smoothing: antialiased;
+  transform-origin: 0% 0%;
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+
+  &--link {
+    transition: color 0.3s ease;
+    &:hover {
+      color: tomato;
+    }
+  }
+  li {
+    padding: 10px 0;
+    font-size: 22px;
   }
 }
 

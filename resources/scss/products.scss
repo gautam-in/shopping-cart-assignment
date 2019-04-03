@@ -1,121 +1,130 @@
 @import './common.scss';
 
-main.flex-row {
-  .category-list {
-    width: 25%;
-    padding: 3px 12px 3px 12px;
-    background-color: #eaeaea;
-    margin-top: -10px;
-    display: none;
+// side category name list.
+.category-list {
+  width: 25%;
+  padding: 3px 12px 3px 12px;
+  background-color: #eaeaea;
+  margin-top: -10px;
+  display: none;
 
-    @include break-point(tablet) {
-      display: block;
+  @include break-point(tablet) {
+    display: block;
+  }
+
+  &__name {
+    font-size: 1rem;
+    padding: 12px 0 12px 10px;
+    color: #959595;
+    border-bottom: 1px solid #cecccc;
+  }
+}
+
+// product list
+.product-list {
+  width: 75%;
+  padding: 0;
+  @include break-point(tablet) {
+    padding: 5px;
+  }
+
+  .product-list-row {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+  }
+}
+
+// product card
+.product-card {
+  width: 100%;
+  padding: 5px;
+  margin-top: 10px;
+  border-bottom: 1px dashed #d0d0d0;
+  box-shadow: 10px 0 5px -13px #888;
+  @include break-point(tablet) {
+    width: 50%;
+  }
+  @include break-point(desktop) {
+    width: 25%;
+  }
+
+  &__name {
+    font-size: 1rem;
+    height: 4rem;
+  }
+  &__detail {
+    @include flex-row;
+    @include break-point(desktop) {
+      @include flex-column;
+      &--img {
+        width: 100%;
+        height: auto;
+      }
     }
 
-    &__name {
-      font-size: 1rem;
-      padding: 12px 0 12px 10px;
-      color: #959595;
-      border-bottom: 1px solid #cecccc;
+    &--img {
+      width: 50%;
+      height: 5.5rem;
+    }
+
+    &--description {
+      background-color: #f0f0f0;
+      font-size: 0.8rem;
+      padding: 5px;
+      height: 5.5rem;
+      overflow: hidden;
     }
   }
-  .product-list {
-    width: 75%;
-    padding: 0;
+
+  &__buy {
+    height: 40px;
+    margin-top: 20px;
+
+    &--price {
+      align-items: center;
+      display: none;
+      @include break-point(desktop) {
+        display: flex;
+      }
+    }
+    &--btn {
+      justify-content: center;
+    }
+    &--sm-txt {
+      color: $text-color-secondary;
+      @include break-point(desktop) {
+        display: none;
+      }
+    }
+  }
+}
+
+// mobile category select dropdown
+.mob-category-list-container {
+  position: relative;
+
+  &:after {
+    position: absolute;
+    content: '﹀';
+    color: $text-color-secondary;
+    width: 10px;
+    height: 10px;
+    top: 9px;
+    right: 20px;
+    pointer-events: none;
+  }
+  .mob-category-list {
+    width: 100%;
+    position: relative;
+    background: #d10157;
+    color: $text-color-secondary;
+    border: 0;
+    padding: 10px;
+    -webkit-appearance: none;
+    appearance: none;
     @include break-point(tablet) {
-      padding: 5px;
-    }
-    .mob-category-list-container {
-      position: relative;
-      .mob-category-list {
-        width: 100%;
-        position: relative;
-        background: #d10157;
-        color: white;
-        border: 0;
-        padding: 10px;
-        -webkit-appearance: none;
-        appearance: none;
-        @include break-point(tablet) {
-          display: none;
-        }
-      }
-      &:after {
-        position: absolute;
-        content: ' \2228';
-        color: white;
-        width: 10px;
-        height: 10px;
-        top: 7px;
-        right: 20px;
-        pointer-events: none;
-      }
-    }
-    .product-list-row {
-      display: flex;
-      width: 100%;
-      flex-wrap: wrap;
-      .product-card {
-        width: 100%;
-        @include break-point(tablet) {
-          width: 50%;
-        }
-        @include break-point(desktop) {
-          width: 25%;
-        }
-        padding: 5px;
-        margin-top: 10px;
-        border-bottom: 1px dashed #d0d0d0;
-        box-shadow: 10px 0 5px -13px #888;
-        &__name {
-          font-size: 1rem;
-          height: 4rem;
-        }
-        &__detail {
-          @include flex-row;
-
-          &--img {
-            width: 50%;
-            height: 5.5rem;
-          }
-
-          &--description {
-            background-color: #f0f0f0;
-            font-size: 0.8rem;
-            padding: 5px;
-            height: 5.5rem;
-            overflow: hidden;
-          }
-          @include break-point(desktop) {
-            @include flex-column;
-            &--img {
-              width: 100%;
-              height: auto;
-            }
-          }
-        }
-
-        &__buy {
-          height: 40px;
-          margin-top: 20px;
-          &--price {
-            align-items: center;
-            display: none;
-            @include break-point(desktop) {
-              display: flex;
-            }
-          }
-          &--btn {
-            justify-content: center;
-          }
-          &--sm-txt {
-            color: white;
-            @include break-point(desktop) {
-              display: none;
-            }
-          }
-        }
-      }
+      display: none;
     }
   }
 }

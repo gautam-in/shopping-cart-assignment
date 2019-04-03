@@ -1,6 +1,8 @@
 @import './common.scss';
 
-@mixin border-bottom-radial {
+
+// bottom radial shadow css
+.border-bottom-radial {
   position: relative;
   padding-bottom: 39px;
   &:after {
@@ -16,7 +18,7 @@
 
 main.home {
   .offer-banner {
-    @include border-bottom-radial;
+    @extend border-bottom-radial;
 
     &__img {
       display: flex;
@@ -25,7 +27,8 @@ main.home {
     }
   }
   .category {
-    @include border-bottom-radial;
+    @extend border-bottom-radial;
+
     &:nth-child(odd) {
       flex-direction: row-reverse;
     }
