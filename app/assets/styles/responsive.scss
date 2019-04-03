@@ -39,6 +39,10 @@ $break-large: 1220px;
 }
 
 @media screen and (max-width: $break-tablet){
+  .nav-list > span{
+    bottom: 0px;
+    right: 15px;
+  }
   .product-listing-wrap .product-list .product-detail .product-box{
     p{
       min-height: 70%;

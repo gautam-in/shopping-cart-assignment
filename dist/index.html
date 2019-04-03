@@ -3,11 +3,28 @@
     <head>
         <meta charset="UTF-8">
         <link rel="stylesheet" type="text/css" href="/style.css">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
         <link href="https://fonts.googleapis.com/css?family=Dosis:400,500,600,700" rel="stylesheet">
         <title>Training Exercise</title>
     <link href="style.css" rel="stylesheet"></head>
 
     <body>
+        <div id="id01" class="w3-modal">
+            <div class="w3-modal-content w3-animate-top w3-card-4">
+                <header class="w3-container w3-teal"> 
+                <span onclick="document.getElementById('id01').style.display='none'" 
+                class="w3-button w3-display-topright">&times;</span>
+                <h2>Modal Header</h2>
+                </header>
+                <div class="w3-container">
+                <p>Some text..</p>
+                <p>Some text..</p>
+                </div>
+                <footer class="w3-container w3-teal">
+                <p>Modal Footer</p>
+                </footer>
+            </div>
+        </div>
         <header>
             <div class="wrapper">
                 <nav class="row">
@@ -29,7 +46,7 @@
                             </ul>
                         </div>
                         <span>
-                            <a href="#" class="cart">
+                            <a href="#" class="cart" onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-black">
                                 <i class="cart-icon">
                                     <svg version="1.1" id="Layer_1" focusable="false" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                                         x="0px" y="0px" viewBox="0 0 24 24" style="enable-background:new 0 0 24 24;" xml:space="preserve">
@@ -57,7 +74,7 @@
             </div>        
         </section>
         <!-- Product Category 1 -->
-        <section class="category-section box" id="category-1">
+        <section class="category-section box">
             <div class="wrapper">
                 <div class="row">
                     <div class="col-xs-5 col-sm-4 category-image">
@@ -72,7 +89,7 @@
             </div>
         </section>
         <!-- Product Category 2 -->
-        <section class="category-section box" id="category-2">
+        <section class="category-section box">
             <div class="wrapper">
                 <div class="row">
                     <div class="col-xs-5 col-sm-4 category-image">
@@ -87,7 +104,7 @@
             </div>
         </section>
         <!-- Product Category 3 -->
-        <section class="category-section box" id="category-3">
+        <section class="category-section box">
             <div class="wrapper">
                 <div class="row">
                     <div class="col-xs-5 col-sm-4 category-image">
@@ -102,7 +119,7 @@
             </div>
         </section>
         <!-- Product Category 4 -->
-        <section class="category-section box" id="category-4">
+        <section class="category-section box">
             <div class="wrapper">
                 <div class="row">
                     <div class="col-xs-5 col-sm-4 category-image">
@@ -117,7 +134,7 @@
             </div>
         </section>
         <!-- Product Category 5 -->
-        <section class="category-section box" id="category-5">
+        <section class="category-section box">
             <div class="wrapper">
                 <div class="row">
                     <div class="col-xs-5 col-sm-4 category-image">
