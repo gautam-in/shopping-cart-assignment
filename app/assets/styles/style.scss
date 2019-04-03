@@ -245,10 +245,16 @@ section:nth-child(even) .category-image {
     margin: 20px auto;
   }
 
+<<<<<<< HEAD
   fieldset {
     position: relative;
     border: none;
     padding-bottom: 20px;
+=======
+  section:nth-child(odd) .category-image {
+    -ms-flex-order:2;
+    order:2;
+>>>>>>> 85c75ace601704ecb5677b1a84618695900eb133
   }
 
   label {
