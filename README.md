@@ -1,15 +1,21 @@
-# XT Shopping Cart Assignment
+ ## SABKA BAZAAR
 
-This is the base folder for the shopping cart exercise. You will have all the static assets and mock server responses available in this repo.
 
-## Getting Started
+Below are pages it contains
+ 1. Home Page
+ 2. Login Page
+ 3. Register Page
+ 4. Product Listing
 
-Clone this repo and run following command for starting the mock server:
+> Run below commands to start project
 
-```
-npm install
-npm run start
-# or
-yarn install
-yarn start
-```
+    git clone -b develop https://github.com/muskanup/shopping-cart-assignment.git
+
+    cd shopping-cart-assignment
+    
+    npm install
+
+    npm start
+
+> Open the below url in browser
+> [http://localhost:8080](http://localhost:8080/)
