@@ -1,0 +1,250 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sabka Bazaar</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Dosis:400,600,700"
+    />
+  </head>
+  <body class="container">
+    <header>
+      <nav class="nav" role="navigation">
+        <img class="nav__logo" src="/img/logo.png" alt="Sabka Bazaar Logo" />
+        <ul class="nav__bar">
+          <li class="nav__bar--link"><a href="/">Home</a></li>
+          <li class="nav__bar--link"><a href="/products.html">Products</a></li>
+        </ul>
+        <div class="nav__end">
+          <div class="nav__end-register-box">
+            <a class="nav__end-register-box--link" href="/register.html"
+              >Register</a
+            >
+            <a class="nav__end-register-box--link" href="/login.html"
+              >Sign In</a
+            >
+          </div>
+          <div class="nav__end-cart">
+            <svg
+              class="nav__end-cart--logo"
+              version="1.1"
+              id="Layer_1"
+              focusable="false"
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              x="0px"
+              y="0px"
+              viewBox="0 0 24 24"
+              style="enable-background:new 0 0 24 24;"
+              xml:space="preserve"
+            >
+              <path
+                d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49A1.003 1.003 0 0 0 20 4H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"
+              />
+            </svg>
+            <div class="nav__end-cart--count">0 items</div>
+          </div>
+        </div>
+        <div class="menu-toggle">
+          <input type="checkbox" />
+          <span></span>
+          <span></span>
+          <span></span>
+          <ul class="menu">
+            <a href="/"><li class="menu--link">Home</li></a>
+            <a href="/products.html"><li class="menu--link">Products</li></a>
+            <a href="/login.html"><li class="menu--link">Sign In</li></a>
+            <a href="/register.html"><li class="menu--link">Register</li></a>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <main class="home">
+      <!-- <div class="offer-banner">
+        <img
+          src="/img/offers/offer5.jpg"
+          alt="offer1 logo"
+          class="offer-banner__img"
+        />
+      </div> -->
+      <div class="slideshow-container">
+        <div class="mySlides fade">
+          <img
+            src="img/offers/offer5.jpg"
+            alt="independence day sale"
+            class="sale"
+            style="width:100%"
+          />
+        </div>
+
+        <div class="mySlides fade">
+          <img
+            src="img/offers/offer4.jpg"
+            alt="independence day sale"
+            class="sale"
+            style="width:100%"
+          />
+        </div>
+
+        <div class="mySlides fade">
+          <img
+            src="img/offers/offer3.jpg"
+            alt="independence day sale"
+            class="sale"
+            style="width:100%"
+          />
+        </div>
+        <div class="mySlides fade">
+          <img
+            src="img/offers/offer2.jpg"
+            alt="independence day sale"
+            class="sale"
+            style="width:100%"
+          />
+        </div>
+        <div class="mySlides fade">
+          <img
+            src="img/offers/offer1.jpg"
+            alt="independence day sale"
+            class="sale"
+            style="width:100%"
+          />
+        </div>
+
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        <div style="text-align:center">
+          <span class="dot" onclick="currentSlide(1)"></span>
+          <span class="dot" onclick="currentSlide(2)"></span>
+          <span class="dot" onclick="currentSlide(3)"></span>
+          <span class="dot" onclick="currentSlide(4)"></span>
+          <span class="dot" onclick="currentSlide(5)"></span>
+        </div>
+      </div>
+
+      <div class="flex-row category">
+        <img
+          src="/img/category/fruits.png"
+          alt="Fruits &amp; Vegetables logo"
+          class="category-logo"
+        />
+        <div class="flex-column category-detail">
+          <h1 class="category-detail__main">Fruits &amp; Vegetables</h1>
+          <h3 class="category-detail__sub">
+            A variety of fresh fruits and vegetables.
+          </h3>
+          <a href="/products/fruit-and-veg" class="btn"
+            >Explore fruit-and-veg</a
+          >
+        </div>
+      </div>
+
+      <div class="flex-row-reverse category">
+        <img
+          src="/img/category/bakery.png"
+          alt="Bakery Cakes and Dairy logo"
+          class="category-logo"
+        />
+        <div class="flex-column category-detail">
+          <h1 class="category-detail__main">Bakery Cakes and Dairy</h1>
+          <h3 class="category-detail__sub">
+            The best cupcakes, cookies, cakes, pies, cheesecakes, fresh bread,
+            biscotti, muffins, bagels, fresh coffee, milk and more.
+          </h3>
+          <a href="/products/bakery-cakes-dairy" class="btn"
+            >Explore bakery-cakes-dairy</a
+          >
+        </div>
+      </div>
+
+      <div class="flex-row category">
+        <img
+          src="/img/category/beverages.png"
+          alt="Beverages logo"
+          class="category-logo"
+        />
+        <div class="flex-column category-detail">
+          <h1 class="category-detail__main">Beverages</h1>
+          <h3 class="category-detail__sub">
+            Our beverage department will ensure your fridge is always fully
+            stocked. Shop for soda, juice, beer and more.
+          </h3>
+          <a href="/products/beverages" class="btn">Explore beverages</a>
+        </div>
+      </div>
+
+      <div class="flex-row-reverse category">
+        <img
+          src="/img/category/beauty.png"
+          alt="Beauty and Hygiene logo"
+          class="category-logo"
+        />
+        <div class="flex-column category-detail">
+          <h1 class="category-detail__main">Beauty and Hygiene</h1>
+          <h3 class="category-detail__sub">
+            Buy beauty and personal care products online in India at best
+            prices.
+          </h3>
+          <a href="/products/beauty-hygiene" class="btn"
+            >Explore beauty-hygiene</a
+          >
+        </div>
+      </div>
+
+      <div class="flex-row category">
+        <img
+          src="/img/category/baby.png"
+          alt="Baby Care logo"
+          class="category-logo"
+        />
+        <div class="flex-column category-detail">
+          <h1 class="category-detail__main">Baby Care</h1>
+          <h3 class="category-detail__sub">
+            Shop online for Baby Products, Diapers, Skin Care Products,etc.
+          </h3>
+          <a href="/products/baby" class="btn">Explore baby</a>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <p class="app-footer">
+        Copyright &copy; 2011-2019 Sabka Bazaar Grocery Supplies Pvt Ltd
+      </p>
+    </footer>
+  </body>
+  <script>
+    var slideIndex = 1;
+    showSlides(slideIndex);
+
+    function plusSlides(n) {
+      showSlides((slideIndex += n));
+    }
+
+    function currentSlide(n) {
+      showSlides((slideIndex = n));
+    }
+
+    function showSlides(n) {
+      var i;
+      var slides = document.getElementsByClassName("mySlides");
+      var dots = document.getElementsByClassName("dot");
+      if (n > slides.length) {
+        slideIndex = 1;
+      }
+      if (n < 1) {
+        slideIndex = slides.length;
+      }
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex - 1].style.display = "block";
+      dots[slideIndex - 1].className += " active";
+    }
+  </script>
+</html>
