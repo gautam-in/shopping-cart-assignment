@@ -15,37 +15,6 @@
 
 .login_section .default_btn {
   width: 300px; }
-.sidenav {
-  min-height: 82vh;
-  flex: 0 1 20%;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  background-color: #eaeaea;
-  overflow-x: hidden;
-  padding-top: 20px; }
-  .sidenav a {
-    padding: 11px 30px;
-    border-bottom: 1px solid #cccccc;
-    text-decoration: none;
-    font-size: 19px;
-    color: #818181;
-    display: block; }
-  .sidenav a:hover {
-    color: #818181; }
-
-.main {
-  margin-left: 160px;
-  /* Same as the width of the sidenav */
-  font-size: 28px;
-  /* Increased text to enable scrolling */
-  padding: 0px 10px; }
-
-@media screen and (max-height: 450px) {
-  .sidenav {
-    padding-top: 15px; }
-  .sidenav a {
-    font-size: 18px; } }
 .mySlides {
   display: none; }
 
@@ -140,6 +109,49 @@
   .next,
   .text {
     font-size: 11px; } }
+.sidenav {
+  min-height: 82vh;
+  flex: 0 1 20%;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #eaeaea;
+  overflow-x: hidden;
+  padding-top: 20px; }
+  .sidenav a {
+    padding: 11px 30px;
+    border-bottom: 1px solid #cccccc;
+    text-decoration: none;
+    font-size: 19px;
+    color: #818181;
+    display: block; }
+  .sidenav a:hover {
+    color: #818181; }
+
+.product {
+  flex: 0 1 80%;
+  overflow-x: hidden;
+  padding-top: 20px; }
+  .product .product_listing {
+    display: flex; }
+    .product .product_listing .items {
+      flex: 0 1 25%; }
+      .product .product_listing .items img {
+        height: 200px;
+        width: 200px; }
+
+.main {
+  margin-left: 160px;
+  /* Same as the width of the sidenav */
+  font-size: 28px;
+  /* Increased text to enable scrolling */
+  padding: 0px 10px; }
+
+@media screen and (max-height: 450px) {
+  .sidenav {
+    padding-top: 15px; }
+  .sidenav a {
+    font-size: 18px; } }
 @media only screen and (max-width: 1200px) {
   footer {
     left: 0;
@@ -221,6 +233,10 @@ nav input {
   color: #bf2957;
   font-size: 36px;
   display: none; }
+
+.nav-btn {
+  display: flex;
+  align-items: center; }
 
 nav:after {
   border: none;
@@ -441,3 +457,90 @@ hr {
   to {
     width: 0;
     background: transparent; } }
+
+@media only screen and (max-width: 767px) {
+  .no-animation {
+    animation: none !important; }
+  .center {
+    width: 50px;
+    height: 50px;
+    border: 2px solid #d00255;
+    position: relative; }
+  .icon {
+    position: absolute; }
+    .icon .line-1,
+    .icon .line-2,
+    .icon .line-3 {
+      width: 100%;
+      height: 2px;
+      background-color: #d10256; }
+    .icon .line-1 {
+      animation: line-1-rev 0.6s forwards; }
+    .icon .line-2 {
+      margin: 14px 0;
+      animation: line-2-rev 0.6s forwards; }
+    .icon .line-3 {
+      animation: line-3-rev 0.6s forwards; }
+    .icon.active .line-1 {
+      animation: line-1 0.6s forwards; }
+    .icon.active .line-2 {
+      animation: line-2 0.6s forwards; }
+    .icon.active .line-3 {
+      animation: line-3 0.6s forwards; }
+  @keyframes line-1 {
+    0% {
+      transform: translateY(0) rotate(0); }
+    50% {
+      transform: translateY(22px) rotate(0); }
+    100% {
+      transform: translateY(22px) rotate(45deg); } }
+  @keyframes line-2 {
+    0% {
+      transform: scale(1);
+      opacity: 1; }
+    100% {
+      transform: scale(0);
+      opacity: 0; } }
+  @keyframes line-3 {
+    0% {
+      transform: translateY(0) rotate(0); }
+    50% {
+      transform: translateY(-22px) rotate(0); }
+    100% {
+      transform: translateY(-22px) rotate(135deg); } }
+  @keyframes line-1-rev {
+    0% {
+      transform: translateY(22px) rotate(45deg); }
+    50% {
+      transform: translateY(22px) rotate(0); }
+    100% {
+      transform: translateY(0) rotate(0); } }
+  @keyframes line-2-rev {
+    0% {
+      transform: scale(0);
+      opacity: 0; }
+    100% {
+      transform: scale(1);
+      opacity: 1; } }
+  @keyframes line-3-rev {
+    0% {
+      transform: translateY(-22px) rotate(135deg); }
+    50% {
+      transform: translateY(-22px) rotate(0); }
+    100% {
+      transform: translateY(0) rotate(0); } }
+  .cart_btn {
+    position: static; }
+    .cart_btn a {
+      display: inline-block;
+      padding: 0;
+      background: transparent; }
+      .cart_btn a .cart_icon {
+        position: static; }
+      .cart_btn a span {
+        display: none; }
+  nav > .row > div {
+    text-align: right; }
+  .nav_link {
+    height: 0;
+    display: none; } }
