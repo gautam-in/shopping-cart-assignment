@@ -30,6 +30,7 @@
 
   .product_listing {
     display: flex;
+    margin-bottom: 50px;
 
     .items:not(:last-child, :first-child) {
       margin: 0 20px;
