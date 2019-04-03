@@ -42,8 +42,8 @@ module.exports = {
             inject: true
         }),
         new HtmlWebpackPlugin({ // Also generate a test.html
-            template: path.resolve(__dirname, './src/app/registor.html'),
-            filename: 'registor.html',
+            template: path.resolve(__dirname, './src/app/register.html'),
+            filename: 'register.html',
             inject: true
         })
 
