@@ -4,7 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
     <title>Sabka Bazaar</title>
      </head>
   <body>
@@ -35,60 +37,101 @@
               </ul>
             
         </nav> 
+        <div id="myModal" class="modal">
 
-        <!--shopping cart-->
-<div class="container sc">
-        <div class="shopping-cart">
-          <div class="shopping-cart-header">
-            <i class="fa fa-shopping-cart cart-icon"></i><span class="badge">3</span>
-            <div class="shopping-cart-total">
-              <span class="lighter-text">Total:</span>
-              <span class="main-color-text">$2,229.97</span>
+            <!-- Modal content -->
+            <div class="modal-content">
+              <span class="close">&times;</span>
+              <div class="cart-header"><p>My Cart (1) Item </p></div>
+              <div class="item">
+                <div class="item-image">
+                  <img src="../static/images/products/fruit-n-veg/apple.jpg">
+              </div>
+                <div class="item-details">
+                  <div class="item-name">
+                      Washington Apples
+                  </div>
+                  <div class="item-qty-price">
+                    <div class="cart-edit-btn">
+                      <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                        viewBox="0 0 476.737 476.737" style="enable-background:new 0 0 476.737 476.737;" xml:space="preserve">
+
+                            <path  d="M238.369,0C106.726,0,0,106.726,0,238.369c0,131.675,106.726,238.369,238.369,238.369
+                              c131.675,0,238.369-106.694,238.369-238.369C476.737,106.726,370.043,0,238.369,0z M365.499,254.26h-254.26
+                              c-8.772,0-15.891-7.151-15.891-15.891c0-8.772,7.119-15.891,15.891-15.891h254.26c8.74,0,15.891,7.119,15.891,15.891
+                              C381.39,247.109,374.239,254.26,365.499,254.26z"/>
+
+                        </svg>
+                    </div>
+                        1 
+                      <div class="cart-edit-btn">
+                        <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                              width="510px" height="510px" viewBox="0 0 510 510" style="enable-background:new 0 0 510 510;" xml:space="preserve">
+
+                                <path d="M255,0C114.75,0,0,114.75,0,255s114.75,255,255,255s255-114.75,255-255S395.25,0,255,0z M382.5,280.5h-102v102h-51v-102
+                                  h-102v-51h102v-102h51v102h102V280.5z"/>
+
+                            </svg>
+                      </div>
+
+                        x Rs. 287
+                  </div>
+
+                </div>
+
+              </div>
+              
+              <div class="offer-banner">
+                <p>You wont find it cheaper anywhere</p>
+              </div>
+              <div class="checkout-container">
+                  <div class="promo-banner">
+                      <p>Promo code can be applied on checkout page</p>
+                  </div>
+                  <button class="checkout-button">Proceed to checkout</button>
+              </div>
+              
             </div>
-          </div> <!--end shopping-cart-header -->
-      
-          <ul class="shopping-cart-items">
-            <li class="clearfix">
-              <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/cart-item1.jpg" alt="item1" />
-              <span class="item-name">Sony DSC-RX100M III</span>
-              <span class="item-price">$849.99</span>
-              <span class="item-quantity">Quantity: 01</span>
-            </li>
-      
-            <li class="clearfix">
-              <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/cart-item2.jpg" alt="item1" />
-              <span class="item-name">KS Automatic Mechanic...</span>
-              <span class="item-price">$1,249.99</span>
-              <span class="item-quantity">Quantity: 01</span>
-            </li>
-      
-            <li class="clearfix">
-              <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/cart-item3.jpg" alt="item1" />
-              <span class="item-name">Kindle, 6" Glare-Free To...</span>
-              <span class="item-price">$129.99</span>
-              <span class="item-quantity">Quantity: 01</span>
-            </li>
-          </ul>
-      
-          <a href="#" class="button">Checkout</a>
-        </div> <!--end shopping-cart -->
-      </div> <!--end container -->
+          
+          </div>
 
-        <section class="section-carousel">
-            <div class="container">
-                    <li><img src="../static/images/offers/offer1.jpg"></li>
-                    <!-- Placeholder for carousel-->
-                <!--
-                    <ul class="owl-carousel owl-theme">
-                        <li><img src="../static/images/offers/offer1.jpg"></li>
-                        <li><img src="../static/images/offers/offer2.jpg"></li>
-                        <li><img src="../static/images/offers/offer3.jpg"></li>
-                        <li><img src="../static/images/offers/offer4.jpg"></li>
-                        <li><img src="../static/images/offers/offer5.jpg"></li>
-                    </ul>
-                     -->
-            </div>            
-        </section>
+      
+      <section class="section-carousel">
+          <div id="myCarousel" class="carousel slide" data-ride="carousel">
+              <!-- Indicators -->
+              <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+                <li data-target="#myCarousel" data-slide-to="3"></li>
+                <li data-target="#myCarousel" data-slide-to="4"></li>
+              </ol>
+            
+              <!-- Wrapper for slides -->
+              <div class="carousel-inner">
+                <div class="item active">
+                  <img src="../static/images/offers/offer1.jpg" alt="Offer 1">
+                </div>
+            
+                <div class="item">
+                  <img src="../static/images/offers/offer2.jpg" alt="Offer 2">
+                </div>
+            
+                <div class="item">
+                  <img src="../static/images/offers/offer3.jpg" alt="Offer 3">
+                </div>
+                <div class="item">
+                    <img src="../static/images/offers/offer4.jpg" alt="Offer 4">
+                </div>
+                <div class="item">
+                    <img src="../static/images/offers/offer5.jpg" alt="Offer 5">
+                </div>
+              </div>
+            
+            
+            </div>
+
+      </section>
         
         <section class="category-section section-fruits-and-veggies row">
             <div class="flex-category-container"> 

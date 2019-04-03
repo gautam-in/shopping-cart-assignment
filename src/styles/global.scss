@@ -4,31 +4,33 @@
 @import "variables";
 @import "cart";
 @import "plp";
-@import "login";
-
-@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,500,700");
+@import "forms";
+@import url("https://fonts.googleapis.com/css?family=Lato:300,400,700,900");
 
 * {
 	box-sizing: border-box;
 }
 body {
-	font-family: 'Raleway', sans-serif;
+	font-family: 'Lato', sans-serif;
 	line-height: 1.6;
 	margin: 0;
-	min-height: 100vh;
+    min-height: 100%;
+    
+}
+a{
+    text-decoration: none;
 }
 
 .row{
-    max-width: 1140px;
+    max-width: 90vw;
     margin: 10px auto 10px;   
 }
 
 footer{
     background: #888888;
     color: #fff;
-    position: relative;
-    left: 0;
-    bottom: 0;
+    display: block;
+    margin-bottom: -50%;
     width: 100%;
     text-align: center;
 }

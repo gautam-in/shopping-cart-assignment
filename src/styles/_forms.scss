@@ -7,13 +7,15 @@ $placeholder-padding: 8px;
   $input-font-size: 16px;
   $input-top: 15px;
   $input-height: 35px;
-  $input-border-color: $accent;
+  $input-border-color: $dark-grey;
 
 .login-container{
     display: flex;
 }
 .login-text{
     flex: 50%;
+    align-items: center;
+    transform: translateY(25%);
 }
 .login-form{
     flex: 50%;
@@ -85,4 +87,50 @@ $placeholder-padding: 8px;
     display: inline-block;
     padding : 10px;
     width: 100%;
+}
+
+@media (max-width: $breakpoint-tablet-potrait) {
+  
+}
+@media (max-width: $breakpoint-phone) {
+  .login-container{
+    display: flex;
+    flex-direction: column;
+}
+.login-text{
+    flex: 50%;
+    align-items: center;
+    transform: translateY(25%);
+}
+.login-form{
+    flex: 50%;
+}
+}
+@media (max-width: $breakpoint-small-phone) {
+  .login-container{
+    display: flex;
+    flex-direction: column
+}
+.login-text{
+    flex: 50%;
+    align-items: center;
+    transform: translateY(25%);
+}
+.login-form{
+    flex: 50%;
+}
+}
+@media (max-width: $breakpoint-smaller-phone) {
+  .login-container{
+    display: flex;
+    flex-direction: column;
+}
+.login-text{
+    flex: 50%;
+    align-items: center;
+    transform: translateY(25%);
+}
+.login-form{
+    flex: 50%;
+}
 }

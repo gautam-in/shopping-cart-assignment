@@ -1,47 +1,49 @@
 @import "variables";
 
+
 .logo, .logo img {
     margin: 0;
     display:inline-block;
     width:10vw;
     height:auto;
     margin-right: 10vw;
+    z-index:1;
 }
 .sub-nav{
 
     
+   
+    margin: 0 2% 0 auto;
     float: right;
-    margin: 0 2% 0 0;
-
+    
     li{
         
-    }
-    .sub-nav-item{
-
+        display: inline-block;
+        margin-left:5px;
+        .sub-nav-item{
+            text-decoration: none;
+        }
+        
     }
 }
 .main-nav {
+    
     margin: 0;
     padding: 0;
     list-style: none;
-    display: block;
-    
     display: flex;
     flex-direction: row;
 	align-items: center;
-    li{
-        display: inline-block;
-        
-    }
     .cart-icon-container{
-        display: inline;
+      
         margin: auto 0 0 auto;
-        background-color: #5555;
+        background-color: $grey;
         text-align: left;
         padding-left: 0;
+        
         .cart-icon{
             display:inline-block;
-            height:30px;
+            height:20px;
             width:auto;
             fill: $accent;
         }
@@ -52,20 +54,53 @@
         text-align: center;
         display: inline-block;
         color: #34495e;
-	    font-size: .99em;
+        font-size: .99em;
     }
     a:hover {
         color: #718daa;
     }
-    
-    
-    
+
+
+
 }
 
 nav {
 	padding-top: .5em;
-	border: 1px solid #a2a2a2;
-	background-color: #f4f4f4;
+	
+	background-color: #fff;
 	box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.75);
-	border-radius: 5px;
+	
+}
+
+@media (max-width: $breakpoint-tablet-potrait) {
+    
+   
+}
+@media (max-width: $breakpoint-phone) {
+   
+}
+@media (max-width: $breakpoint-small-phone) {
+    .logo, .logo img {
+        margin: 0;
+        display:inline-block;
+        width:15vw;
+        height:auto;
+        margin-right: 10vw;
+        z-index:1;
+    }
+    .main-nav{
+        a{
+            padding: 5px 5px;
+        }
+    }
+}
+@media (max-width: $breakpoint-smaller-phone) {
+    .logo, .logo img {
+        margin: 0;
+        display:inline-block;
+        width:15vw;
+        height:auto;
+        margin-right: 10vw;
+        z-index:1;
+    }
 }
