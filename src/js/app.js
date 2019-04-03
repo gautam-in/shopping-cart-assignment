@@ -35,11 +35,11 @@ const header = `<div class="row">
     <div class="nav_link">
       <ul class="align_left">
         <li><a href="index.html">Home</a></li>
-        <li><a href="#">Products</a></li>
+        <li><a href="products.html">Products</a></li>
       </ul>
       <ul class="align_right">
-        <li><a href="#">SignIn</a></li>
-        <li><a href="#">Register</a></li>
+        <li><a href="login.html">SignIn</a></li>
+        <li><a href="signup.html">Register</a></li>
       </ul>
     </div>
   </div>
