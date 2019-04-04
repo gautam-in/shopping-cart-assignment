@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css?family=Dosis:400,600,700');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+$primaryColor: #d00256;
+$secondaryColor: #50dae3;
+$footerColor: #eeeeee;
+$blackColor:#000000;
+$whiteColor:#ffffff;
+$backgroundColor:#eeeeee;
+body {
+    font-family: 'Dosis', sans-serif;
+    font-size: 14px;
+}
+
+header{
+    box-shadow: 0px 1px 11px #88888840;
+}
+.wrapper{
+    width: 80%;
+    margin: 0px auto;
+}
+.main_header {
+    display: flex;
+    padding: 5px;
+    
+}
+.main_header__logo {
+    flex: 1;
+}
+
+.main_header__menu {
+    flex: 2;
+    align-self: flex-end;
+    padding: 0px 0px 2% 0px;
+    text-decoration: none;   
+}
+
+
+#m_menu{
+    display: none;
+}
+
+a{
+    text-decoration: none;
+    color: $blackColor;
+}
+
+.right_menu_part{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+.up-section{
+    flex: 1;
+    align-self: flex-end;
+    
+   
+}
+.down-section{
+    flex: 1;
+    display: inline-flex;
+    align-items: center;
+    background-color: $backgroundColor;
+    padding: 9px 0px 0px 20px;
+    margin-bottom: -5px;
+    align-self: flex-end;
+    padding: 9px 20px 0px 20px;
+}
+    
+
+.up-section__menu{
+    list-style: none;
+    display: inline-flex;
+  }
+.up-section__menu li{
+    padding-left: 10px;
+    font-size: 12px;
+    font-weight: bold;
+    color: $primaryColor;
+}
+ 
+
+.footer{
+    display:flex;
+    background-color: $footerColor;
+}
+.footer_copyright{
+    flex: 1;
+    padding: 1% 0%;
+    
+}
+
+/*form style start header*/
+    @import 'header';
+/*form style end*/
+/*form style start Login*/
+    @import 'login';
+/*form style end*/
+
+/*home page start*/
+    @import 'home';
+/*home page end*/
+
+/*plp page start*/
+    @import 'prod_listing';
+/*plp page end*/
+
+/*Media query start*/
+    @import 'media';
+/*Media query end*/
