@@ -15,7 +15,7 @@
 
                 <div class="hero__cart">
                     <span class="hero__cart__box">
-                        <a href="#" id="cart-modal">
+                        <a href="cart.html"  class="cart__on__hover" id="cart-modal">
                             <img src="img/cart.svg" alt="cart" class="cart">
                             <p>0</p>
                             <p>items</p>
@@ -25,6 +25,7 @@
                         </a>
                     </span>
                 </div>
+                
                 <div class="hero__link__box mobile-nav" id="mobileNav">
                     <ul class="main-nav">
                         <li><a href="index.html">Home</a></li>
@@ -143,20 +144,20 @@
 <!-- cart Modal -->
 
 <div id="myModal" class="modal">
-    <div class="modal-content">
-        <div class="modal-header">
-            <span class="close">&times;</span>
-            <h2>My Cart</h2>
-        </div>
-        <div class="modal-body">
-            <h3>No item in your Cart</h3>
-            <p>Your favourite item are just a click away</p>
-        </div>
-        <div class="modal-footer">
-            <h3>Start Shopping</h3>
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close">&times;</span>
+                <h2>My Cart</h2>
+            </div>
+            <div class="modal-body">
+                <h3>No item in your Cart</h3>
+                <p>Your favourite item are just a click away</p>
+            </div>
+            <div class="modal-footer">
+                <a href="cart.html"><h3>Start Shopping</h3>
+            </div>
         </div>
     </div>
-</div>
 
     <script>
         var slideIndex = 1;
@@ -203,17 +204,17 @@
         var span = document.getElementsByClassName("close")[0];
 
         // When the user clicks the button, open the modal
-        btn.onclick = function () {
+        btn.onmouseover = function () {
             modal.style.display = "block";
         }
-
+       
         // When the user clicks on <span> (x), close the modal
         span.onclick = function () {
             modal.style.display = "none";
         }
 
         // When the user clicks anywhere outside of the modal, close it
-        window.onclick = function (event) {
+        window.onmouseover = function (event) {
             if (event.target == modal) {
                 modal.style.display = "none";
             }

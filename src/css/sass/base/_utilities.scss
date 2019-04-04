@@ -67,6 +67,7 @@
 			padding: 0px 4px;
 		}
 	}
+	
 	.product__item__col {
 		flex: 100%;
 		max-width: 100%;
@@ -221,6 +222,13 @@
 	ul#menu {
 		background:  $color-primary;
 		color: $color-secondary;
+	}
+	.total__price {
+		align-self: center;
+		flex: 1 0 30%;
+	}
+	.items {
+		max-height: 60%;
 	}
 	label {
 		&:after {

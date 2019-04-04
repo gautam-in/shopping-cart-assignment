@@ -3,21 +3,20 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 
-
-
-
 module.exports = {
-
   entry: [
+    'babel-polyfill',
     './src/css/sass/main.scss',
     './src/js/index.js',
   ],
 
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'bundle.js'
+    filename: 'js/bundle.js'
   },
-
+  devServer: {
+    contentBase: './dist'
+},
   plugins: [
 
     new MiniCssExtractPlugin({
@@ -60,6 +59,14 @@ module.exports = {
         filename: 'register.html',
         inject: true
       }
+    ),
+    new HtmlWebpackPlugin(
+
+      {  
+        template: path.resolve(__dirname, './src/views/cart.html'),
+        filename: 'cart.html',
+        inject: true
+      }
     )
   ],
 
@@ -88,3 +95,4 @@ module.exports = {
     ]
   }
 }
+

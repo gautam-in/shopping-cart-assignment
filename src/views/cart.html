@@ -4,8 +4,6 @@
 <head>
     <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Dosis:400,600,700" rel="stylesheet" type="text/css">
-    <link type="text/css" rel="stylesheet" href="./../css/stylesheets/style.css">
     <title>SABKA BAZAAR</title>
 </head>
 
@@ -39,33 +37,41 @@
             </div>
         </nav>
     </header>
-        <!-- <section> -->
+        <section>
             <div class="cart__container">
                 <div class="cart__content">
                     <h2>My Cart</h2><span>(0 item)</span>
                 </div>
                 <div class="cart__content__item">
-                    <figure>
-                    <img src="./../images/products/fruit-n-veg/apple.jpg" alt="fruits" class="items">
-                </figure>
+                    <!-- <figure> -->
+                        <img src="img/products/fruit-n-veg/apple.jpg" alt="fruits" class="items">
+                    <!-- </figure> -->
                     <div class="cart__content__items">
                         <h3>Apple - Washington, Reguler, 4pcs</h3>
-                        <p>Rs 187</p>
+                        <div class="item__count">
+                            <button type="button" class="plus__count"><i class="fa fa-plus"></i></button>
+                            <input type="text" class="cart__counter" value="1">
+                            <button type="button" class="minus__count"><i class="fa fa-minus"></i></button>
+                            <i class="fa fa-close"></i>
+                            <span>Rs 187</span>
+                        </div>
                     </div>
-                    <span>Rs 187</span>
+                    <div class="total__price">Rs 187</div>
                 </div>
                 <div class="cart__content__price">
-                    <img src="./../images/lowest-price.png" alt="lowest price" class="lowest__price">
+                    <img src="img/lowest-price.png" alt="lowest price" class="lowest__price">
                     <span>You won't find it cheaper anywhere.</span>
                 </div>
-                <div class="cart__checkout__btn">
-                        <p>Promto code can be applied on payment page.</p>
-                    <button class="checkout__btn">
-                        <span>Proceed to checkout</span>
-                        <span>Rs. 187</span>
-                    </button>
-                </div>
+                
             </div>
-        <!-- </section> -->
+            
+        </section>
+        <div class="cart__checkout__btn">
+                <p>Promto code can be applied on payment page.</p>
+                <a href="#" class="btn checkout__btn">
+                <span>Proceed to checkout</span>
+                <span>Rs. 187</span>
+            </a>
+        </div>
     </body>
 </html>
