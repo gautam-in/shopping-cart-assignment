@@ -1,0 +1,120 @@
+.box{
+    position: relative;
+    margin-bottom : 20px;
+    margin-top: 74px;
+    background: $whiteColor;
+    
+    } 
+
+.box:after {
+    content:'';
+    position: absolute;
+    left: 50%;
+    top: 41px;
+    width: 60%;
+    height: 83%;
+    background: $whiteColor;
+    border-radius: 30%;
+    box-shadow: 0 10px 17px #000000d9;
+    z-index: -1;
+    transform: translate(-50%);
+
+}
+
+.cat_decs{
+    padding: 25px;
+}
+.crousel-container{
+    margin-top: 5px;
+    padding-bottom: 23px;
+    
+}
+/*w3 sc*/
+.slide-container{
+    position: relative;
+}
+.mySlides {
+    display:none;
+    width:100%;
+}
+.left-btn, .right-btn, .slide-badge {cursor:pointer}
+.slide-badge {height:13px;width:13px;padding:0}
+.left-btn{
+    float:left!important;
+    background-color: rgba(0,0,0,0.5);
+    padding: 8px;
+    color: #fff;
+}
+.right-btn{
+    float:right!important;
+    background-color: rgba(0,0,0,0.5);
+    padding: 8px;
+    color: #fff;
+}
+
+
+.slide-dots{
+    position: absolute;
+    left: 40%;
+}
+.slide-btn{
+    width: 100%;
+    position: absolute;
+    bottom: 50%;
+}
+
+
+.w3-border {
+    border: 1px solid #ccc!important;
+    height: 15px;
+}
+.w3-badge {
+    border-radius: 50%;
+}
+.w3-badge, .w3-tag {
+    background-color: #eee;
+    color: #fff;
+    display: inline-block;
+    padding-left: 8px;
+    padding-right: 8px;
+    text-align: center;
+}
+
+.w3-white,.slide-white, .w3-hover-white:hover {
+    color: #000!important;
+    background-color: #000!important;
+}
+
+
+.home-container{
+    display: flex;
+    justify-content: center;
+    padding-bottom: 23px;
+    
+}
+.category:nth-child(even) .home-container {
+    flex-direction: row-reverse;
+}
+.cat_img{
+    flex: 35%;
+    width: 100%;
+    align-self: center;
+    text-align: center;
+}
+.cat_info{
+    
+    flex: 65%;
+    width: 100%;
+    align-self: center;
+    text-align: center;
+    
+
+}
+
+.cat_explore{
+    border-style: none;
+    background-color: #d00256e6;
+    padding: 8px;
+    color: #fff;
+    font-weight: bold;
+}
