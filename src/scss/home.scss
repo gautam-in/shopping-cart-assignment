@@ -16,6 +16,9 @@ html {
   font-size: 20px;
   text-rendering: optimizeLegibility;
 }
+img{
+  max-width: 100%;
+}
 
 section {
   margin: 40px 0px;
@@ -30,7 +33,7 @@ section {
 
   p {
     padding: 10px 0px;
-    font-size: 15px;
+    font-size: 18px;
   }
 }
 
@@ -279,8 +282,8 @@ header nav li a:focus {
   color: #bb2855;
 }
 nav .align_right li a {
-  font-size: 12px;
-  font-weight: 400;
+  font-size: 14px;
+  font-weight: 700;
 }
 
 @media (max-width: 1023px) {
