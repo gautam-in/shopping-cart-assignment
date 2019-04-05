@@ -5,7 +5,6 @@ const CopyWebpackPlugin = require('copy-webpack-plugin')
 
 module.exports = {
   entry: [
-    'babel-polyfill',
     './src/css/sass/main.scss',
     './src/js/index.js',
   ],
@@ -72,14 +71,33 @@ module.exports = {
 
   module: {
     rules: [
+      // {
+      //   test: /\.s?css$/,
+      //   use: [
+      //     MiniCssExtractPlugin.loader,
+      //     'css-loader',
+      //     'sass-loader'
+      //   ]
+      // },
       {
-        test: /\.s?css$/,
+        test: /\.(sa|sc|c)ss$/,
         use: [
           MiniCssExtractPlugin.loader,
-          'css-loader',
-          'sass-loader'
+          { loader: "css-loader", options: {} },
+          {
+            loader: "postcss-loader",
+            options: {
+              ident: 'postcss',
+              plugins: [
+                require('autoprefixer')({
+                  'browsers': ['> 1%', 'last 2 versions']
+                }),
+              ]
+            }
+          },
+          { loader: "sass-loader", options: {} }
         ]
-      },
+      },    
       {
         use: 'babel-loader',
         test: /\.js$/,

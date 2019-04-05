@@ -125,14 +125,13 @@
 	margin: auto;
 	padding: 0;
 	border: 1px solid #888;
-	width: 80%;
 	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
 	-webkit-animation-name: animatetop;
 	-webkit-animation-duration: 0.4s;
 	animation-name: animatetop;
 	animation-duration: 0.4s;
 	height: 89vh;
-	width: 45%;
+	width: 30%;
 
 
 	float: right;
@@ -161,14 +160,28 @@
 	background-color: $color-tertairy;
 	color: $color-secondary;
 }
+.cart__content__model {
+	display: flex;
+	border-bottom: $border-bottom;
+    padding: 10px;
+}
+.cart__content__model img {
+	height: 0%;
+    width: 30%;
+}
+.cart__content__model .total__price {
+
+		padding: 24px 10px;
+	
+}
 .modal-body {
-	padding: 2px 16px;
-	top: 50%;
-	left: 50%;
-	padding: 1px;
-	transform: translate(-50%,-50%);
+	// padding: 2px 16px;
+	// top: 50%;
+	// left: 50%;
+	// padding: 1px;
+	// transform: translate(-50%,-50%);
 	text-align: center;
-	position: absolute;
+	// position: absolute;
 }
 .modal-footer {
 	padding: 2px 16px;
