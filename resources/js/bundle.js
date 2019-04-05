@@ -93,7 +93,7 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("var header = \"<nav>\\n<div class=\\\"row\\\">\\n    <img src=\\\"assets/images/logo.png\\\" alt=\\\"Sabka Bazar logo\\\" class=\\\"logo\\\">\\n    <ul class=\\\"main-nav home\\\">\\n        <li><a href=\\\"index.html\\\">Home</a></li>\\n        <li><a href=\\\"product_listing.html\\\">Product</a></li>\\n    </ul>\\n    <div class=\\\"cart\\\">\\n        <ul class=\\\"main-nav \\\">\\n            <li><a href=\\\"login.html\\\">SignIn</a></li>\\n            <li><a href=\\\"register.html\\\">Register</a></li>\\n        </ul>\\n        <span class=\\\"cart_item\\\">\\n            <svg version=\\\"1.1\\\" id=\\\"Layer_1\\\" focusable=\\\"false\\\" xmlns=\\\"http://www.w3.org/2000/svg\\\"\\n                xmlns:xlink=\\\"http://www.w3.org/1999/xlink\\\" x=\\\"0px\\\" y=\\\"0px\\\" height=30 width=30\\n                viewBox=\\\"0 0 24 24\\\" style=\\\"enable-background:new 0 0 24 24;\\\" xml:space=\\\"preserve\\\">\\n                <path\\n                    d=\\\"M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49A1.003 1.003 0 0 0 20 4H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z\\\" />\\n            </svg> &nbsp;\\n            <p> 0 Items</p>\\n            <label id=\\\"hamburger\\\">&#9776;</label>\\n        </span>\\n    </div>\\n</div>\\n\\n</nav>\";\nvar footer = \"Copyright @ 2017-2018 Sabka Bazar Grocery Suppliers Pvt. Ltd\";\n\n(function () {\n  console.log(\"hello\");\n  document.getElementById(\"header\").innerHTML = header;\n  document.getElementById(\"footer\").innerHTML = footer;\n})();\n\n//# sourceURL=webpack:///./src/js/index.js?");
+eval("var header = \"<nav>\\n<div class=\\\"row\\\">\\n    <img src=\\\"assets/images/logo.png\\\" alt=\\\"Sabka Bazar logo\\\" class=\\\"logo\\\">\\n    <ul class=\\\"main-nav home\\\">\\n        <li><a href=\\\"index.html\\\">Home</a></li>\\n        <li><a href=\\\"product_listing.html\\\">Product</a></li>\\n    </ul>\\n    <div class=\\\"cart\\\">\\n        <ul class=\\\"main-nav \\\">\\n            <li><a href=\\\"login.html\\\">SignIn</a></li>\\n            <li><a href=\\\"register.html\\\">Register</a></li>\\n        </ul>\\n        <span class=\\\"cart_item\\\">\\n            <svg version=\\\"1.1\\\" id=\\\"Layer_1\\\" focusable=\\\"false\\\" xmlns=\\\"http://www.w3.org/2000/svg\\\"\\n                xmlns:xlink=\\\"http://www.w3.org/1999/xlink\\\" x=\\\"0px\\\" y=\\\"0px\\\" height=30 width=30\\n                viewBox=\\\"0 0 24 24\\\" style=\\\"enable-background:new 0 0 24 24;\\\" xml:space=\\\"preserve\\\">\\n                <path\\n                    d=\\\"M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49A1.003 1.003 0 0 0 20 4H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z\\\" />\\n            </svg> &nbsp;\\n            <p> 0 Items</p>\\n            <div class=\\\"topnav\\\" id=\\\"hamburger\\\">\\n                <a href=\\\"javascript:void(0);\\\" class=\\\"icon\\\" id=\\\"show_menu\\\" onclick=\\\"myFunction()\\\">&#9776;</a>\\n                <div id=\\\"myLinks\\\">\\n                    <a href=\\\"index.html\\\">Home</a>\\n                    <a href=\\\"product_listing.html\\\">Product</a>\\n                    <a href=\\\"login.html\\\">Login</a>\\n                    <a href=\\\"register.html\\\">Register</a>\\n            </div>\\n            </div>\\n        </span>\\n    </div>\\n</div>\\n\\n</nav>\";\nvar footer = \"Copyright @ 2017-2018 Sabka Bazar Grocery Suppliers Pvt. Ltd\";\n\n(function () {\n  console.log(\"hello\");\n  document.getElementById(\"header\").innerHTML = header;\n  document.getElementById(\"footer\").innerHTML = footer;\n})();\n\n//# sourceURL=webpack:///./src/js/index.js?");
 
 /***/ }),
 
@@ -105,6 +105,17 @@ eval("var header = \"<nav>\\n<div class=\\\"row\\\">\\n    <img src=\\\"assets/i
 /***/ (function(module, exports) {
 
 eval("// removed by extract-text-webpack-plugin\n\n//# sourceURL=webpack:///./src/scss/breakpoint.scss?");
+
+/***/ }),
+
+/***/ "./src/scss/cart.scss":
+/*!****************************!*\
+  !*** ./src/scss/cart.scss ***!
+  \****************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("// removed by extract-text-webpack-plugin\n\n//# sourceURL=webpack:///./src/scss/cart.scss?");
 
 /***/ }),
 
@@ -164,13 +175,13 @@ eval("// removed by extract-text-webpack-plugin\n\n//# sourceURL=webpack:///./sr
 /***/ }),
 
 /***/ 0:
-/*!*********************************************************************************************************************************************************************************!*\
-  !*** multi ./src/js/index.js ./src/scss/breakpoint.scss ./src/scss/product_listing.scss ./src/scss/login.scss ./src/scss/main.scss ./src/scss/home.scss ./src/scss/header.scss ***!
-  \*********************************************************************************************************************************************************************************/
+/*!******************************************************************************************************************************************************************************************************!*\
+  !*** multi ./src/js/index.js ./src/scss/breakpoint.scss ./src/scss/cart.scss ./src/scss/product_listing.scss ./src/scss/login.scss ./src/scss/main.scss ./src/scss/home.scss ./src/scss/header.scss ***!
+  \******************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("__webpack_require__(/*! ./src/js/index.js */\"./src/js/index.js\");\n__webpack_require__(/*! ./src/scss/breakpoint.scss */\"./src/scss/breakpoint.scss\");\n__webpack_require__(/*! ./src/scss/product_listing.scss */\"./src/scss/product_listing.scss\");\n__webpack_require__(/*! ./src/scss/login.scss */\"./src/scss/login.scss\");\n__webpack_require__(/*! ./src/scss/main.scss */\"./src/scss/main.scss\");\n__webpack_require__(/*! ./src/scss/home.scss */\"./src/scss/home.scss\");\nmodule.exports = __webpack_require__(/*! ./src/scss/header.scss */\"./src/scss/header.scss\");\n\n\n//# sourceURL=webpack:///multi_./src/js/index.js_./src/scss/breakpoint.scss_./src/scss/product_listing.scss_./src/scss/login.scss_./src/scss/main.scss_./src/scss/home.scss_./src/scss/header.scss?");
+eval("__webpack_require__(/*! ./src/js/index.js */\"./src/js/index.js\");\n__webpack_require__(/*! ./src/scss/breakpoint.scss */\"./src/scss/breakpoint.scss\");\n__webpack_require__(/*! ./src/scss/cart.scss */\"./src/scss/cart.scss\");\n__webpack_require__(/*! ./src/scss/product_listing.scss */\"./src/scss/product_listing.scss\");\n__webpack_require__(/*! ./src/scss/login.scss */\"./src/scss/login.scss\");\n__webpack_require__(/*! ./src/scss/main.scss */\"./src/scss/main.scss\");\n__webpack_require__(/*! ./src/scss/home.scss */\"./src/scss/home.scss\");\nmodule.exports = __webpack_require__(/*! ./src/scss/header.scss */\"./src/scss/header.scss\");\n\n\n//# sourceURL=webpack:///multi_./src/js/index.js_./src/scss/breakpoint.scss_./src/scss/cart.scss_./src/scss/product_listing.scss_./src/scss/login.scss_./src/scss/main.scss_./src/scss/home.scss_./src/scss/header.scss?");
 
 /***/ })
 

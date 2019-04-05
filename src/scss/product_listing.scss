@@ -195,3 +195,134 @@
 
 }
 
+// mobile device
+
+@media only screen and (max-width: 767px) {
+
+    .prod_list {
+    .product_list_menu {
+      width: 100%;
+      padding: 0px;
+      & > ul {
+        li {
+          padding: 0 5px 10px;
+          margin-top: 0;
+          margin-bottom: 30px;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 479px) {
+  
+    .prod_list {
+      max-width: 100%;
+      padding-left: 0;
+      margin-top: 30px;
+      margin-bottom: 30px;
+      flex-wrap: wrap;
+      .navigation {
+        background-color: transparent;
+        padding-top: 0;
+        max-width: 100%;
+        label {
+          position: relative;
+          display: block;
+          background-color: #d00256;
+          color: #fff;
+          padding: 11px 30px;
+        }
+  
+        .carret:after {
+          content: "";
+          width: 15px;
+          height: 15px;
+          border-left: 1px solid white;
+          border-bottom: 1px solid white;
+          position: absolute;
+          right: 25px;
+          bottom: 20px;
+          transform: rotate(-45deg);
+        }
+  
+        ul {
+          display: none;
+          margin: 0;
+        }
+        #side_menu:checked ~ ul {
+          position: relative;
+          display: block;
+          transition: display 0.5s;
+        }
+      }
+    .product_list_menu {
+      &> ul {
+        padding: 10px;
+        li {
+          -webkit-box-flex: 0;
+          -ms-flex: 0 1 100%;
+          flex: 0 1 100%;
+          margin-right: 0;
+          margin-bottom: 0;
+          
+         
+          &:after {
+            display: none;
+          }
+          h4{
+            height: 25px;
+          }
+        }
+  
+      }  
+      .prod_desc{
+        display: block;
+        .prod_img,
+         p {
+          display: inline-block;
+          float: left;
+          width: 50%;
+          margin: 0;
+        }
+        .buy_now {
+          position: relative;
+          display: -webkit-box;
+          display: -ms-flexbox;
+          display: flex;
+          -ms-flex-line-pack: end;
+          align-content: end;
+          -webkit-box-pack: end;
+          -ms-flex-pack: end;
+          justify-content: flex-end;
+          -ms-flex-item-align: baseline;
+          align-self: baseline;
+          width: 50%;
+          clear: both;
+          float: right;
+          #desktop_view {
+            display: none;
+          }
+          #mobile_view {
+            display: inline;
+          }
+          span {
+            font-size: 15px;
+            position: relative;
+            color: #fff;
+            top: 0;
+            -webkit-transform: translateY(-50%);
+            -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
+            left: 0;
+            cursor: default;
+            pointer-events: none;
+          }
+          .buy {
+            font-size: 15px;
+          }
+        }
+      }
+    }  
+  }
+  }

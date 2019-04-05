@@ -6,6 +6,7 @@ const cssOutput = 'css/style.css';
 module.exports = {
     entry: ["./src/js/index.js", 
             "./src/scss/breakpoint.scss",
+            "./src/scss/cart.scss",
             "./src/scss/product_listing.scss",
             "./src/scss/login.scss",
             "./src/scss/main.scss",
@@ -64,6 +65,16 @@ module.exports = {
             filename: 'register.html',
             inject: true,
             template: path.resolve(__dirname, "src/register.html")
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'cart.html',
+            inject: true,
+            template: path.resolve(__dirname, "src/cart.html")
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'product.html',
+            inject: true,
+            template: path.resolve(__dirname, "src/product.html")
         })
     ]
 

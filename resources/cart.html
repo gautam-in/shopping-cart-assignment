@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Sabka-Bazar</title>
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <link rel="stylesheet" type="text/css" media="screen" href="src/scss/flexboxgrid.css">
+        <link href='https://fonts.googleapis.com/css?family=Dosis:400,600,700' rel='stylesheet' type='text/css'>
+    <link href="css/style.css" rel="stylesheet"></head>
+
+    <body>
+        
+        <header id="header"></header>
+        <div class="cart-container">
+        <section>
+            <div class="row">
+                <div class="shopping-cart">
+                    <div class="myCart">My Cart <label id="cart-value">(1 item)</label></div>
+                    <a href="#" class="closebtn">X</a>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="cart-item-list">
+                <div class="cart-item">
+                    <div class="cart-image">
+                        <img src="./assets/images/products/fruit-n-veg/apple.jpg" alt=" apple image" />
+                    </div>
+                    <div class="description">
+                        <p> Apple - Washington, Regular, 4 pcs </p>
+                        <div class="item-count">
+                            <button class="plus-btn" type="button" name="button" onclick="minusCounter()">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6 13h-12v-2h12v2z"/></svg>
+                            </button>
+                            <input type="text" name="name" value="1" id="cart-counter" onclick="plusCounter()">
+                            <button class="minus-btn" type="button" name="button">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6 13h-5v5h-2v-5h-5v-2h5v-5h2v5h5v2z"/></svg>                          
+                            </button>
+                            <p>X &nbsp; &nbsp; Rs.187</p>
+                            <div class="total-price">Rs.187</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="banner">
+                <img src="./assets/images/lowest-price.png" alt="" />
+                <p>You won't find it cheaper anywhere</p>
+            </div>
+        </section>
+        <section>
+            <div class="checkout-btn">
+                <p>Promo code can be applied on payment page</p>
+                <button type="submit" class="btn btn-checkout">
+                    <span>Proceed to checkout</span>
+                    <span>Rs. 187</span>
+                </button>
+            </div>
+        </section>
+
+        </div>
+        <footer id="footer"></footer>
+        <script>
+       
+        </script>
+    <script type="text/javascript" src="js/bundle.js"></script></body>
+</html>

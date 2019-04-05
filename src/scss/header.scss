@@ -4,7 +4,7 @@
 
 .row {
     display: flex;
-    justify-content: center;
+   // justify-content: center;
     margin: 0 auto;
     max-width: 1140px;
 }
@@ -51,7 +51,7 @@ nav {
 }
 
 .cart {
-    margin-left: 25%;
+   // margin-left: 25%;
 }
 
 footer {
@@ -75,8 +75,58 @@ footer {
      #hamburger {
         display: inline;
       }
+
+      .btn{
+        font-size: 12px;
+        padding: 13px 10px;
+      }
+
+
+
+      .cart{
+        position: relative;
+        display: flex;
+        p{
+          font-size: 15px;
+        }
+
+        .topnav #myLinks {
+          display: none;
+         // display: block;
+    position: absolute;
+    right: 0px;
+    top: 100%;
+    z-index: 999;
+    background-color: white;
+    min-width: 100%;
+        }
+        
+        .topnav a {
+          color: #C71585;
+          text-decoration: none;
+          font-size: 17px;
+          display: block;
+          padding-left: 10px;
+          padding-bottom: 10px;
+        }
+        
+        .topnav a.icon {
+          display: block;
+        }
+        
+        .topnav a:hover {
+         // background-color: #ddd;
+          color: #C71585;
+        }
+        
+        .active {
+          background-color: #4CAF50;
+          color: white;
+        }
+      }
     .row{
       display: flex;
+      justify-content: space-between;
 
       img{
         width: 28%;
@@ -90,12 +140,26 @@ footer {
 
     .cart_item {
       margin-left: 45px;
+      padding: 10px 5px 5px 5px;
   }
   #hamburger{
-    position: relative;
+    icon{
+      position: relative;
     color:  #C71585;
     top: 0;
     font-size: 25px;
+
+    }
+    
   
   }
 }
+
+// .topnav {
+//   overflow: hidden;
+//   background-color: #333;
+//   position: relative;
+// }
+
+
+

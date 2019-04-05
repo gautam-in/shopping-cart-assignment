@@ -16,6 +16,8 @@
                 <div class="box_flex">
                     <div class="prod_list">
                         <nav class="navigation">
+                                <input type="checkbox" id="side_menu" />
+                                <label for="side_menu" class="carret">Fruits & Vegetables</label>
                             <ul class="mainmenu">
                                 <li><a href="#">Fruits & Vegetables</a></li>
                                 <li><a href="#">Bakery Cakes and Dairy</a></li>
@@ -490,5 +492,15 @@
         </section>
     <footer id="footer"></header>
     <script src="../src/js/index.js"></script>
+    <script>
+            function myFunction() {
+              var x = document.getElementById("myLinks");
+              if (x.style.display === "block") {
+                x.style.display = "none";
+              } else {
+                x.style.display = "block";
+              }
+            }
+            </script>
     </body>
 </html>

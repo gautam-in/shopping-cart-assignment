@@ -49,6 +49,14 @@ ul {
  list-style: none;
 }
 
+a{
+    text-decoration: none;
+}
+
+figure{
+    margin: 0;
+}
+
 
 @media only screen and (min-width: $breakpoint-desktop) {
 .container {
