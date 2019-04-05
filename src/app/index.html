@@ -40,11 +40,12 @@
                         </li>
                     </ul>
                     <span class="cart-section">
-                        <img src="images/cart.svg" alt="cart" class="img">
+                        <!--<a href="cartdesktop.html"><img src="images/cart.svg" alt="cart" class="img"></a> -->
+                        <img src="images/cart.svg" id="cart-img-id" alt="cart" class="img">
                         <p class="hide">0 items
                         </p>
                         <button class="show
-                                w3-button w3-teal w3-xlarge" onclick="w3_open()">☰
+                                w3-button w3-teal w3-xlarge" id="mobile-menu-open">☰
                         </button>
                     </span>
                 </div>
@@ -54,7 +55,7 @@
     <div class="mobile_menu">
         <div class="w3-sidebar w3-bar-block w3-border-right" style="display:none" id="sidebar-menu">
             <a href="index.html" class="w3-bar-item">Home
-                <span onclick="w3_close()" style="float: right;">
+                <span id="mobile-menu-close" style="float: right;">
                     &times;
                 </span>
             </a>
@@ -77,26 +78,26 @@
                             <img src="images/offers/offer3.jpg" alt="offer3" class="offer">
                             <img src="images/offers/offer2.jpg" alt="offer2" class="offer">
                             <img src="images/offers/offer1.jpg" alt="offer1" class="offer">
-                            <button class="w3-button w3-grey w3-display-left
-                                    hide" onclick="plusDivs(-1)">PREV
+                            <button id="prev-button-js" class="w3-button w3-grey w3-display-left
+                                    hide">PREV
                             </button>
-                            <button class="w3-button w3-grey
-                                    w3-display-right hide" onclick="plusDivs(1)">NEXT
+                            <button id="next-button-js" class="w3-button w3-grey
+                                    w3-display-right hide">NEXT
                             </button>
                             <span class="w3-badge demo w3-border
-                                    w3-transparent w3-hover-black" onclick="currentDiv(1)">
+                                    w3-transparent w3-hover-black slider-dot">
                             </span>
                             <span class="w3-badge demo w3-border
-                                    w3-transparent w3-hover-black" onclick="currentDiv(2)">
+                                    w3-transparent w3-hover-black slider-dot">
                             </span>
                             <span class="w3-badge demo w3-border
-                                    w3-transparent w3-hover-black" onclick="currentDiv(3)">
+                                    w3-transparent w3-hover-black slider-dot">
                             </span>
                             <span class="w3-badge demo w3-border
-                                    w3-transparent w3-hover-black" onclick="currentDiv(4)">
+                                    w3-transparent w3-hover-black slider-dot">
                             </span>
                             <span class="w3-badge demo w3-border
-                                    w3-transparent w3-hover-black" onclick="currentDiv(5)">
+                                    w3-transparent w3-hover-black slider-dot">
                             </span>
                         </div>
                     </div>
@@ -179,45 +180,36 @@
             </div>
         </section>
     </div>
+
+    <!-- The Modal -->
+    <div id="cart-modal-id" class="cart-modal">
+        <!-- Modal content -->
+        <div class="cart-modal-content">
+            <!-- Modal header -->
+            <div class="cart-modal-header">
+                <span class="close">&times;
+                </span>
+                <h4>My Cart
+                </h4>
+            </div>
+            <!-- Modal body -->
+            <div class="cart-modal-body">
+                <h4>No items in your cart
+                </h4>
+                <h6>Your Favourite items are just a click away
+                </h6>
+            </div>
+            <!-- Modal footer-->
+            <div class="cart-modal-footer">
+                <button class="cart-modal-footer-text">Start Shopping
+                </button>
+            </div>
+        </div>
+    </div>
     <footer>
         <div class="footer">Copyright @ 2011-2018 Sabka Bazar Grocery Supplie Pvt Ltd
         </div>
     </footer>
-    <script>
-        var slideIndex = 1;
-        showDivs(slideIndex);
-
-        function plusDivs(n) {
-            showDivs(slideIndex += n);
-        }
-
-        function currentDiv(n) {
-            showDivs(slideIndex = n);
-        }
-
-        function showDivs(n) {
-            var i;
-            var x = document.getElementsByClassName("offer");
-            if (n > x.length) {
-                slideIndex = 1
-            }
-            if (n < 1) {
-                slideIndex = x.length
-            }
-            for (i = 0; i < x.length; i++) {
-                x[i].style.display = "none";
-            }
-            x[slideIndex - 1].style.display = "block";
-        }
-
-        function w3_open() {
-            document.getElementById("sidebar-menu").style.display = "block";
-        }
-
-        function w3_close() {
-            document.getElementById("sidebar-menu").style.display = "none";
-        }
-    </script>
 </body>
 
 </html>

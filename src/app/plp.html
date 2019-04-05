@@ -20,7 +20,7 @@
                 <div class="main-nav">
                     <ul class="header-nav">
                         <li>
-                            <a class="active " href="index.html">Home
+                            <a class="active" href="index.html">Home
                             </a>
                         </li>
                         <li>
@@ -41,10 +41,12 @@
                         </li>
                     </ul>
                     <span class="cart-section">
-                        <img src="images/cart.svg" alt="cart" class="img">
+                        <!--<a href="cartdesktop.html"><img src="images/cart.svg" alt="cart" class="img"></a> -->
+                        <img src="images/cart.svg" id="cart-img-id" alt="cart" class="img">
                         <p class="hide">0 items
                         </p>
-                        <button class="show w3-button w3-teal w3-xlarge" onclick="w3_open()">☰
+                        <button class="show
+                                w3-button w3-teal w3-xlarge" id="mobile-menu-open">☰
                         </button>
                     </span>
                 </div>
@@ -53,16 +55,16 @@
     </header>
     <div class="mobile_menu">
         <div class="w3-sidebar w3-bar-block w3-border-right" style="display:none" id="sidebar-menu">
-            <a href="index.html" class="w3-bar-item ">Home
-                <span onclick="w3_close()" style="float: right;">
+            <a href="index.html" class="w3-bar-item">Home
+                <span id="mobile-menu-close" style="float: right;">
                     &times;
                 </span>
             </a>
-            <a href="plp.html" class="w3-bar-item ">Product
+            <a href="plp.html" class="w3-bar-item">Product
             </a>
-            <a href="login.html" class="w3-bar-item ">SignIn
+            <a href="login.html" class="w3-bar-item">SignIn
             </a>
-            <a href="register.html" class="w3-bar-item ">Register
+            <a href="register.html" class="w3-bar-item">Register
             </a>
         </div>
     </div>
@@ -178,19 +180,35 @@
             </div>
         </div>
     </section>
+    <!-- The Modal -->
+    <div id="cart-modal-id" class="cart-modal">
+        <!-- Modal content -->
+        <div class="cart-modal-content">
+            <!-- Modal header -->
+            <div class="cart-modal-header">
+                <span class="close">&times;
+                </span>
+                <h4>My Cart
+                </h4>
+            </div>
+            <!-- Modal body -->
+            <div class="cart-modal-body">
+                <h4>No items in your cart
+                </h4>
+                <h6>Your Favourite items are just a click away
+                </h6>
+            </div>
+            <!-- Modal footer-->
+            <div class="cart-modal-footer">
+                <button class="cart-modal-footer-text">Start Shopping
+                </button>
+            </div>
+        </div>
+    </div>
     <footer>
         <div class="footer">Copyright @ 2011-2018 Sabka Bazar Grocery Supplie Pvt Ltd
         </div>
     </footer>
-    <script>
-        function w3_open() {
-            document.getElementById("sidebar-menu").style.display = "block";
-        }
-
-        function w3_close() {
-            document.getElementById("sidebar-menu").style.display = "none";
-        }
-    </script>
 </body>
 
 </html>
