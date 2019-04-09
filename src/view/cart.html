@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+    <title>SABKA BAZAAR Login</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <body>
+
+        <header>
+            <div class="container flex" id="navbar"> 
+                <nav>
+                    <div class="row">
+                        <img src="assets/images/logo.png" alt="logo" class="logo">
+                        <ul class="main-nav bottom-xs xs-hide">
+                            <li><a href="index.html" class="">Home</a></li>
+                            <li><a href="plp.html" class=""> Products</a></li>
+                        </ul>
+                    </div>
+                </nav>
+                <div class="header-right">
+                    <a href="sign-in.html" class="xs-hide"> SignIn</a>
+                    <a href="sign-up.html" class="xs-hide"> Register</a>
+                    <div class="cart">
+                        <a href="cart.html" id="myBtn" class="got-to-cart"> <img src="./assets/images/cart.svg" alt=""> </a>
+                        <span class="xs-show item-in-cart"> 0</span>
+                        <span class="xs-hide">0 item</span>
+                        <div id="hamburger-icon">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                        <ul class="main-nav js--main-nav bottom-xs" id="mobile-nav">
+                            <li><a href="index.html" class="">Home</a></li>
+                            <li><a href="plp.html" class=""> Products</a></li>
+                            <li><a href="sign-in.html" class=""> Signin</a></li>
+                            <li><a href="sign-up.html" class=""> Signup</a></li>
+                        </ul>
+                    </div>
+                    <div id="myModal" class="modal tooltip">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <span class="close">&times;</span>
+                                <h2>My cart</h2>
+                            </div>
+                            <div class="modal-body">
+                                <h2>No item in your cart</h2>
+                                <p>Your favourite items are just a click away</p>
+                            </div>
+                            <div class="modal-footer">
+                                <button>Start Shopping</button>
+                            </div>
+                        </div>
+                    </div>     
+                </div>
+            </div>
+        </header>
+
+        <section class="cart-section " >
+            <div class="container " >
+
+                <div class="item-in-cart">
+
+                    <div class="my-cart">
+                        <h4>My cart <span > (1 item)</span> </h4>
+                    </div>
+                    <div class="my-cart items-details">
+                        <img src="assets/images/products/fruit-n-veg/apple.jpg" alt="" width="80px">
+                        <div class="details">
+                            <h3>Apple - Washington, Regular, 4pcs</h3>
+                            <div>
+                            <a href="" class="add">-</a>
+                            <span class="quantity">2</span>
+                            <a href="" class="add">+</a> * <span class="total-rs">Rs. 87</span>
+                            </div>
+                        </div>
+                        <span class="tot-rupee">Rs. 115</span>
+                    </div>
+
+                    <div class="my-cart items">
+                        <img src="assets/images/lowest-price.png" alt="">
+                        <span > You won't fint it cheeper anywahere</span> 
+                    </div>
+
+                </div>
+
+           </div>
+        </section>
+        <section class="promo-code" >
+            <div class="container " >
+                <p class="text-center">Promo code can be applied on payment page.</p>
+                <button>Checkout to proceed <span>Rs. 187 ></span></button>   
+            </div>
+        </section>
+           
+        <footer>
+                <div class="footer-copy">
+                    <div class="container">
+                        <p>Copyright &copy; 2011-2018 Sabka Bazaar Grocery Supplies Pvt. Ltd.</p>
+                    </div>
+                </div>
+         </footer>
+    </body>
+</html>
