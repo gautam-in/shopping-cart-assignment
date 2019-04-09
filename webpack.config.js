@@ -1,20 +1,15 @@
 const path = require('path');
-const HtmlWebpackPlugin =require('html-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const cssOutput = 'css/style.css';
+const handlebars = require('handlebars');
 
 module.exports = {
-    entry: ["./src/js/index.js", 
-            "./src/scss/breakpoint.scss",
-            "./src/scss/cart.scss",
-            "./src/scss/product_listing.scss",
-            "./src/scss/login.scss",
-            "./src/scss/main.scss",
-            "./src/scss/home.scss",
-            "./src/scss/header.scss"
+    entry: ["./src/js/index.js"
         ],
+        
     output: {
-        path: path.resolve(__dirname,'resources'),
+        path: path.resolve(__dirname, 'resources'),
         filename: 'js/bundle.js'
     },
     devServer: {
@@ -26,7 +21,7 @@ module.exports = {
             template: './src/home.html'
         })
     ],
-    
+
 
     module: {
         rules: [
@@ -41,6 +36,10 @@ module.exports = {
                     use: ['css-loader', 'sass-loader'],
                     fallback: 'style-loader'
                 })
+            }, 
+            {
+                test: /\.hbs$/,
+                loader: "handlebars-loader"
             }
         ]
     },
