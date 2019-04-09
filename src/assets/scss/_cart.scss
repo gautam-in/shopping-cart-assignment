@@ -4,17 +4,22 @@
 	cursor: pointer;
 }
 .modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  padding-top: 100px; /* Location of the box */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-	background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+	display: none; /* Hidden by default */
+	position: fixed; /* Stay in place */
+	z-index: 1; /* Sit on top */
+	left: 0;
+	top: 0;
+	width: 100%; /* Full width */
+	height: 100%; /* Full height */
+	overflow: auto; /* Enable scroll if needed */
+	margin-top: 100px;
+	padding-top: 0;
+	background-color: unset;
+	max-width: 1121px;
+    left: 0px;
+    right: 0px;
+    margin: 110px auto;
+		
 	.modal-content {
 		position: relative;
 		background-color: #fefefe;
@@ -29,12 +34,15 @@
 		animation-duration: 0.4s;
 		height:80vh;
 		width:40%;
+		float: right;
 		.modal-header{
 			padding: 2px 16px;
 			background-color: black;
 			color: white;
 			h2{
 				color: #fff;
+				text-align: left;
+				
 			}
 			.close {
 				color: white;
@@ -80,6 +88,73 @@
 				font-size: 115%;
 			}
 		}
+	}
+}
+.cart-section {
+	background:#eee;min-height: 60vh;
+	.item-in-cart{
+		width: 100%;
+	}
+	.my-cart{
+		background: #fff;
+		padding: 12px;
+		margin: 20px 0 0 0; 
+		width: 100%;
+		span{
+			font-weight: 400;
+			margin-left:6px;
+		}
+	}
+	.items{
+		padding: 20px 12px;
+		display: flex;
+		align-items: center;
+		img{
+			margin-right: 12px;
+		}
+	}
+	.items-details{
+		padding: 20px 12px;
+		display: flex;
+		align-items: center;
+		img{
+			margin-right: 15px;
+		  }
+		.details{
+			flex:1;
+			.add{
+				background: #d00256;
+				/* padding: 9px; */
+				width: 29px;
+				height: 19px;
+				display: inline-block;
+				color: #fff;
+				text-align: center;
+				border-radius: 5px;
+				margin: 0 10px;
+				text-decoration: none;
+				font-size: 125%;
+			}
+			.quantity{
+				margin-top: 20px;
+				display: inline-block;
+				padding-top: 0;
+			}
+		}  
+	}
+}
+.promo-code{
+	.text-center{
+		text-align: center;
+		padding: 12px 0;
+		width: 100%;
+		color:black;
+	}
+	button{
+		margin-top: 0;
+		margin-bottom: 35px;
+		display: flex;
+		justify-content: space-between;
 	}
 }
 

@@ -31,6 +31,12 @@ header{
 			margin: 5px;
 			font-weight: 600;	
 		}
+		.got-to-cart{
+			width:40px;
+			>img{
+				width:100%;
+			}
+		}
 		>a {
 			&:hover {
 				color: $color-hover;
