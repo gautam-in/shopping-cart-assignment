@@ -2,6 +2,7 @@ const path = require('path');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
+const postcssloader = require('postcss-loader');
 
 module.exports = {
     entry: ['@babel/polyfill', './src/js/app.js', './resources/sass/main.scss'],
@@ -21,26 +22,33 @@ module.exports = {
             from: './resources/images',
             to: 'images'
         }]),
+
         new HtmlWebpackPlugin({ // Also generate a test.html
             template: path.resolve(__dirname, './src/app/index.html'),
             filename: 'index.html',
             inject: true
         }),
-        new HtmlWebpackPlugin({ // Also generate a test.html
-            template: path.resolve(__dirname, './src/app/login.html'),
-            filename: 'login.html',
-            inject: true
-        }),
-        new HtmlWebpackPlugin({ // Also generate a test.html
-            template: path.resolve(__dirname, './src/app/plp.html'),
-            filename: 'plp.html',
-            inject: true
-        }),
-        new HtmlWebpackPlugin({ // Also generate a test.html
-            template: path.resolve(__dirname, './src/app/register.html'),
-            filename: 'register.html',
-            inject: true
-        })
+
+        // new HtmlWebpackPlugin({ // Also generate a test.html
+        //     template: path.resolve(__dirname, './src/app/index.html'),
+        //     filename: 'index.html',
+        //     inject: true
+        // }),
+        // new HtmlWebpackPlugin({ // Also generate a test.html
+        //     template: path.resolve(__dirname, './src/app/login.html'),
+        //     filename: 'login.html',
+        //     inject: true
+        // }),
+        // new HtmlWebpackPlugin({ // Also generate a test.html
+        //     template: path.resolve(__dirname, './src/app/plp.html'),
+        //     filename: 'plp.html',
+        //     inject: true
+        // }),
+        // new HtmlWebpackPlugin({ // Also generate a test.html
+        //     template: path.resolve(__dirname, './src/app/register.html'),
+        //     filename: 'register.html',
+        //     inject: true
+        // })
 
     ],
     module: {
