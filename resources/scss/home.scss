@@ -1,6 +1,5 @@
 @import './common.scss';
 
-
 // bottom radial shadow css
 .border-bottom-radial {
   position: relative;
@@ -18,7 +17,7 @@
 
 main.home {
   .offer-banner {
-    @extend border-bottom-radial;
+    @extend .border-bottom-radial;
 
     &__img {
       display: flex;
@@ -27,7 +26,7 @@ main.home {
     }
   }
   .category {
-    @extend border-bottom-radial;
+    @extend .border-bottom-radial;
 
     &:nth-child(odd) {
       flex-direction: row-reverse;
