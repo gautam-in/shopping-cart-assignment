@@ -1,7 +1,7 @@
 <main class="cart">
     <section>
         <div class="cart-header">
-            <div class="cart-header__text">My Cart </div>
+            <div class="cart-header__text">My Cart {{cart.count}} items</div>
         </div>
 
         {{#each cart.items}}
@@ -35,14 +35,16 @@
                 class="lowest__price">
             <span>You won't find it cheaper anywhere.</span>
         </div>
+
+        <div class="checkout-box">
+            <div class="checkout-text">Promo code can be applied on payment
+                page.</div>
+            <div><button class="button-small-checkout">Checkout to proceed
+                    <span class="button-price">Rs.{{cart.totalPrice}}</span>
+                </button></div>
+        </div>
     </section>
 
-    <!-- <section class="promo-code">
-        <div class="container">
-            <p class="text-center">Promo code can be applied on payment page.</p>
-            <button>Checkout to proceed <span>Rs. 187 ></span></button>
-        </div>
-    </section> -->
 </main>
 
 <script type="text/javascript" src="/js/cart.js"></script>

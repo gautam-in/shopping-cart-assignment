@@ -720,6 +720,26 @@ main.cart {
   display: flex;
   justify-content: space-between; }
 
+.button-small-checkout {
+  border: #d10157;
+  font-size: 100%;
+  padding: 10px;
+  background: #bf2957;
+  color: #fff;
+  width: 100%;
+  text-align: left; }
+
+.button-price {
+  float: right; }
+
+.checkout-box {
+  margin-top: 16px;
+  width: 100%;
+  padding: 12px;
+  background: white; }
+  .checkout-box .checkout-text {
+    text-align: center; }
+
 .signup-form {
   padding: 20px 40px; }
 
