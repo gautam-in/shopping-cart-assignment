@@ -1,0 +1,48 @@
+<main class="cart">
+    <section>
+        <div class="cart-header">
+            <div class="cart-header__text">My Cart </div>
+        </div>
+
+        {{#each cart.items}}
+
+
+        <div class="cart-item" data-id="{{product.id}}">
+            <img src="{{product.imageURL}}" alt="{{product.name}}"
+                class="cart-item__logo" />
+            <div class="cart-item-detail">
+                <h1 class="cart-item-detail__heading">{{product.name}}</h1>
+                <div class="cart-item-detail__info">
+                    <div class="cart-item-detail__info--count">
+                        <a class="cart-item-detail__info--remove"
+                            data-id="{{product.id}}">&#45;</a>
+                        <span class="cart-item-detail__info--item-count"
+                            data-id="{{product.id}}">{{count}}</span>
+                        <a class="cart-item-detail__info--add"
+                            data-id="{{product.id}}">&#43;</a>*
+                        Rs.{{product.price}}
+                    </div>
+                    <span class="cart-item-detail__info--total"
+                        data-id="{{product.id}}"> Rs.{{totalPrice}}
+                    </span>
+                </div>
+            </div>
+        </div>
+        {{/each }}
+
+        <div class="cart__content__price">
+            <img src="/static/images/lowest-price.png" alt="lowest price"
+                class="lowest__price">
+            <span>You won't find it cheaper anywhere.</span>
+        </div>
+    </section>
+
+    <!-- <section class="promo-code">
+        <div class="container">
+            <p class="text-center">Promo code can be applied on payment page.</p>
+            <button>Checkout to proceed <span>Rs. 187 ></span></button>
+        </div>
+    </section> -->
+</main>
+
+<script type="text/javascript" src="/js/cart.js"></script>

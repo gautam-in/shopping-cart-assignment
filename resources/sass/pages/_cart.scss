@@ -1,3 +1,82 @@
+$app-padding-horizontal: 10vw;
+$app-font-weight: 600;
+$app-btn-padding: 10px;
+$header-height: 96px;
+$main-margin-top: 10px;
+$background-color-primary: white;
+$background-color-secondary: #d10157;
+$text-color-primary: black;
+$text-color-secondary: white;
+$input-theme-color-primary: #93d4d2;
+@mixin flex {
+    display: flex;
+}
+
+@mixin flex-row {
+    @include flex;
+    flex: 1;
+}
+
+@mixin flex-column {
+    @include flex;
+    flex: 1;
+    flex-direction: column;
+}
+
+@mixin flex-row-reverse {
+    @include flex;
+    flex-direction: row-reverse;
+}
+
+@mixin flex-column-reverse {
+    @include flex;
+    flex-direction: column-reverse;
+}
+
+@mixin break-point($point) {
+    @if $point==tablet {
+        @media only screen and (min-width: 480px) {
+            @content;
+        }
+    }
+    @else if $point==desktop {
+        @media only screen and (min-width: 1024px) {
+            @content;
+        }
+    }
+}
+
+@mixin app-header-padding-changes {
+    @include break-point(desktop) {
+        padding-left: $app-padding-horizontal;
+        padding-right: $app-padding-horizontal;
+    }
+}
+
+.flex {
+    @include flex;
+}
+
+.flex-row {
+    @include flex-row;
+}
+
+.flex-column {
+    @include flex-column;
+}
+
+.flex-row-reverse {
+    @include flex;
+    flex: 1;
+    flex-direction: row-reverse;
+}
+
+.flex-column-reverse {
+    @include flex;
+    flex: 1;
+    flex-direction: column-reverse;
+}
+
 .cart-modal {
     display: none;
     position: fixed;
@@ -97,5 +176,94 @@ h6 {
 @media screen and (max-width:1023px) {
     .cart-modal-content {
         @include modal-content;
+    }
+}
+
+main.cart {
+    @extend .flex-column;
+    background: #eeeeee;
+    padding: 33px 0px;
+    max-width: 1140px;
+    margin: 0 auto;
+    position: relative;
+    .cart-header {
+        @extend .flex-column;
+        background: black;
+        padding: 10px;
+        &__text {
+            color: white;
+        }
+    }
+}
+
+.cart-item {
+    @extend .flex-row;
+    margin-top: 10px;
+    background: $background-color-primary;
+    &__logo {
+        width: 20%;
+        height: 20%;
+    }
+}
+
+.cart-item-detail {
+    @extend .flex-column;
+    &__heading {
+        font-size: 1.5rem;
+        padding: 15px;
+    }
+    &__info {
+        @extend .flex-row;
+        font-size: 1rem;
+        align-items: center;
+        &--count {
+            @extend .flex-row;
+        }
+        &--remove,
+        &--add {
+            margin-right: 25px;
+            margin-left: 25px;
+            height: 25px;
+            width: 25px;
+            background: $background-color-secondary;
+            text-align: center;
+            color: $text-color-secondary;
+            border-radius: 100%;
+            display: inline-flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-size: 1rem;
+            font-weight: bold;
+            text-decoration: none;
+            font-family: sans-serif;
+        }
+        &--total {
+            margin-right: 50px;
+        }
+    }
+}
+
+.cart__content__price {
+    margin-top: 16px;
+    width: 100%;
+    padding: 12px;
+    display: flex;
+    align-items: center;
+    background: white;
+}
+
+.promo-code {
+    .text-center {
+        text-align: center;
+        padding: 12px 0;
+        width: 100%;
+        color: black;
+    }
+    button {
+        margin-top: 0;
+        margin-bottom: 35px;
+        display: flex;
+        justify-content: space-between;
     }
 }

@@ -540,6 +540,28 @@ a {
   .login-text-box {
     margin-left: -10%; } }
 
+.flex {
+  display: flex; }
+
+.flex-row, .cart-item, .cart-item-detail__info, .cart-item-detail__info--count {
+  display: flex;
+  flex: 1; }
+
+.flex-column, main.cart, main.cart .cart-header, .cart-item-detail {
+  display: flex;
+  flex: 1;
+  flex-direction: column; }
+
+.flex-row-reverse {
+  display: flex;
+  flex: 1;
+  flex-direction: row-reverse; }
+
+.flex-column-reverse {
+  display: flex;
+  flex: 1;
+  flex-direction: column-reverse; }
+
 .cart-modal {
   display: none;
   position: fixed;
@@ -631,6 +653,72 @@ h6 {
     margin-left: 18% !important;
     margin-right: 20% !important;
     width: 63% !important; } }
+
+main.cart {
+  background: #eeeeee;
+  padding: 33px 0px;
+  max-width: 1140px;
+  margin: 0 auto;
+  position: relative; }
+  main.cart .cart-header {
+    background: black;
+    padding: 10px; }
+    main.cart .cart-header__text {
+      color: white; }
+
+.cart-item {
+  margin-top: 10px;
+  background: white; }
+  .cart-item__logo {
+    width: 20%;
+    height: 20%; }
+
+.cart-item-detail__heading {
+  font-size: 1.5rem;
+  padding: 15px; }
+
+.cart-item-detail__info {
+  font-size: 1rem;
+  align-items: center; }
+  .cart-item-detail__info--remove, .cart-item-detail__info--add {
+    margin-right: 25px;
+    margin-left: 25px;
+    height: 25px;
+    width: 25px;
+    background: #d10157;
+    text-align: center;
+    color: white;
+    border-radius: 100%;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    font-weight: bold;
+    text-decoration: none;
+    font-family: sans-serif; }
+  .cart-item-detail__info--total {
+    margin-right: 50px; }
+
+.cart__content__price {
+  margin-top: 16px;
+  width: 100%;
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  background: white; }
+
+.promo-code .text-center {
+  text-align: center;
+  padding: 12px 0;
+  width: 100%;
+  color: black; }
+
+.promo-code button {
+  margin-top: 0;
+  margin-bottom: 35px;
+  display: flex;
+  justify-content: space-between; }
 
 .signup-form {
   padding: 20px 40px; }

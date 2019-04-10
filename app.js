@@ -6,7 +6,7 @@ var logger = require('morgan');
 var hbs = require('hbs');
 
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/plp');
+// var usersRouter = require('./routes/plp');
 
 var app = express();
 
@@ -36,7 +36,7 @@ app.use(express.static(path.join(__dirname, 'resources')));
 hbs.registerPartials(path.join(__dirname, './src/views/partials'));
 
 app.use('/', indexRouter);
-app.use('/products', usersRouter);
+// app.use('/products', usersRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

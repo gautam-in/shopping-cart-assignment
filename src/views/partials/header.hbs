@@ -27,11 +27,13 @@
                     </li>
                 </ul>
                 <span class="cart-section">
-                    <!--<a href="cartdesktop.html"><img src="/static/images/cart.svg" alt="cart" class="img"></a> -->
-                    <img src="/static/images/cart.svg" id="cart-img-id"
+                    <a href="cart"><img
+                            src="/static/images/cart.svg" id="cart-img-id"
+                            alt="cart" class="img"></a>
+                    <!-- <img src="/static/images/cart.svg" id="cart-img-id"
                         alt="cart"
-                        class="img">
-                    <p class="hide">0 items
+                        class="img"> -->
+                    <p class="hide nav__end-cart--count">{{cart.count}} items
                     </p>
                     <button class="show
                         w3-button w3-teal w3-xlarge" id="mobile-menu-open">☰
@@ -57,31 +59,22 @@
         </a>
     </div>
 </div>
-
 <script>
-   /*  Menu for Mobile  */
+    /*  Menu for Mobile  */
     function w3_open() {
         document.getElementById("sidebar-menu").style.display = "block";
     }
-
     function w3_close() {
         document.getElementById("sidebar-menu").style.display = "none";
     }
-
     var open = document.getElementById("mobile-menu-open");
     var mobile = document.getElementById("mobile-menu-close");
-
     open.addEventListener("click", w3_open);
     mobile.addEventListener("click", w3_close);
-
-
-
     /*  Get the modal  */
     var modal = document.getElementById('cart-modal-id');
     var btn = document.getElementById("cart-img-id");
-
     var span = document.getElementsByClassName("close")[0];
-
     if (typeof (btn) != 'undefined' && btn != null) {
         btn.onmouseover = function () {
             modal.style.display = "block";
