@@ -1,0 +1,95 @@
+<header>
+    <nav>
+        <div class="row-header">
+            <img src="/static/images/logo.png" alt="Shopping logo"
+                class="logo_img">
+            <div class="main-nav">
+                <ul class="header-nav">
+                    <li>
+                        <a class="active" href="/">Home
+                        </a>
+                    </li>
+                    <li>
+                        <a href="product" class="hide">Product
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="super-header">
+                <ul class="header-nav">
+                    <li>
+                        <a href="login">SignIn
+                        </a>
+                    </li>
+                    <li>
+                        <a href="register">Register
+                        </a>
+                    </li>
+                </ul>
+                <span class="cart-section">
+                    <!--<a href="cartdesktop.html"><img src="/static/images/cart.svg" alt="cart" class="img"></a> -->
+                    <img src="/static/images/cart.svg" id="cart-img-id"
+                        alt="cart"
+                        class="img">
+                    <p class="hide">0 items
+                    </p>
+                    <button class="show
+                        w3-button w3-teal w3-xlarge" id="mobile-menu-open">☰
+                    </button>
+                </span>
+            </div>
+        </div>
+    </nav>
+</header>
+<div class="mobile_menu">
+    <div class="w3-sidebar w3-bar-block w3-border-right" style="display:none"
+        id="sidebar-menu">
+        <a href="/" class="w3-bar-item">Home
+            <span id="mobile-menu-close" style="float: right;">
+                &times;
+            </span>
+        </a>
+        <a href="product" class="w3-bar-item">Product
+        </a>
+        <a href="login" class="w3-bar-item">SignIn
+        </a>
+        <a href="register" class="w3-bar-item">Register
+        </a>
+    </div>
+</div>
+
+<script>
+   /*  Menu for Mobile  */
+    function w3_open() {
+        document.getElementById("sidebar-menu").style.display = "block";
+    }
+
+    function w3_close() {
+        document.getElementById("sidebar-menu").style.display = "none";
+    }
+
+    var open = document.getElementById("mobile-menu-open");
+    var mobile = document.getElementById("mobile-menu-close");
+
+    open.addEventListener("click", w3_open);
+    mobile.addEventListener("click", w3_close);
+
+
+
+    /*  Get the modal  */
+    var modal = document.getElementById('cart-modal-id');
+    var btn = document.getElementById("cart-img-id");
+
+    var span = document.getElementsByClassName("close")[0];
+
+    if (typeof (btn) != 'undefined' && btn != null) {
+        btn.onmouseover = function () {
+            modal.style.display = "block";
+        }
+        document.onmouseover = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    }  
+</script>

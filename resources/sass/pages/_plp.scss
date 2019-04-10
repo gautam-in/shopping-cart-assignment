@@ -41,15 +41,18 @@
                     display: inline-block;
                 }
             }
-            p {
+            .description-box {
+                overflow: hidden;
+                height: 100px;
                 background-color: $plp_item_bg_color;
-                padding: 15px 10px;
+                padding: 8px 8px;
                 font-size: 70%;
                 min-height: 100px;
             }
             h3 {
-                font-size: 100%;
+                font-size: 13px;
                 min-height: 80px;
+                font-weight: bold;
             }
             .buy-now-btn {
                 display: none;

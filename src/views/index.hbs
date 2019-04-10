@@ -1,0 +1,142 @@
+
+
+
+  
+<div id="categories-id">
+    <section class="home-section">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="slider_img">
+                    <div class="w3-content w3-display-container">
+                        {{#each banners}}
+                        <img src="{{this.bannerImageUrl}}" alt="{{this.bannerImageAlt}}" class="offer">
+                        {{/each}}
+                        <button id="prev-button-js" class="w3-button
+                                w3-grey w3-display-left
+                                hide">PREV
+                        </button>
+                        <button id="next-button-js" class="w3-button
+                                w3-grey
+                                w3-display-right hide">NEXT
+                        </button>
+
+                        {{#each banners}}
+                        <span class="w3-badge demo w3-border
+                                w3-transparent w3-hover-black slider-dot" onclick="currentSlide({{math @index "+" 1}})"></span>
+                        {{/each}}
+
+
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    {{#each categories}}
+    <section class="home-section">
+        <div class="row">
+            <div class="col-xs-4">
+                <img src="{{this.imageUrl}}" alt="{{this.name}}" class="cat-inner-img">
+            </div>
+            <div class="col-xs-8">
+                <div class="cat-inner-heading">{{this.name}}
+                </div>
+                <p class="cat-inner_text">{{this.description}}
+                </p>
+                <a href="category/{{this.key}}" <button class="cat_button">Explore {{this.key}}
+                    </button></a>
+            </div>
+        </div>
+    </section>
+    {{/each}}
+</div>
+
+
+<!-- The Modal -->
+<div id="cart-modal-id" class="cart-modal">
+    <!-- Modal content -->
+    <div class="cart-modal-content">
+        <!-- Modal header -->
+        <div class="cart-modal-header">
+            <span class="close">&times;
+            </span>
+            <h4>My Cart
+            </h4>
+        </div>
+        <!-- Modal body -->
+        <div class="cart-modal-body">
+            <h4>No items in your cart
+            </h4>
+            <h6>Your Favourite items are just a click away
+            </h6>
+        </div>
+        <!-- Modal footer-->
+        <div class="cart-modal-footer">
+            <button class="cart-modal-footer-text">Start Shopping
+            </button>
+        </div>
+    </div>
+</div>
+<script>
+
+      /* Home page slider  */
+        var prev = document.getElementById("prev-button-js");
+        var next = document.getElementById("next-button-js");
+
+        var slider_dot = document.getElementsByClassName("slider-dot");
+        var slider_dot = Array.prototype.slice.call(slider_dot)
+        var slideIndex = 1;
+
+        if (typeof (prev) != 'undefined' && prev != null) {
+            showSlide(slideIndex);
+
+            prev.addEventListener("click", function () {
+                slideIndex--;
+                showSlide(slideIndex);
+            });
+            next.addEventListener("click", function () {
+                slideIndex++
+                showSlide(slideIndex);
+            });
+        }
+
+
+        if (typeof (slider_dot) != 'undefined' && slider_dot != null) {
+            slider_dot.forEach(function (elem, index) {
+                elem.addEventListener("click", function () {
+                    currentSlide(index + 1);
+                });
+            });
+
+        }
+
+        function plusSlide(n) {
+            showSlide(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlide(slideIndex = n);
+        }
+
+        function showSlide(n) {
+            var i;
+            var slides = document.getElementsByClassName("offer");
+            var dots = document.getElementsByClassName("slider-dot");
+            if (n > slides.length) {
+                slideIndex = 1
+            }
+            if (n < 1) {
+                slideIndex = slides.length
+            }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+        }
+
+        
+</script>

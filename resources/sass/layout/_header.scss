@@ -75,7 +75,7 @@ header {
 
 @media screen and (max-width: 480px) {
     .show {
-        display: block;
+        display: block !important;
     }
     .hide-menu {
         display: none !important;
@@ -97,7 +97,7 @@ header {
         padding: 2%;
     }
     .cart-section {
-        margin-top: 5% !important;
+        margin-top: -7% !important;
     }
     body {
         padding: 2%;
