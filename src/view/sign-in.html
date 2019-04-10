@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+    <title>SABKA BAZAAR Login</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <body>
+
+        <header>
+                <div class="container flex" id="navbar">
+                    <nav>
+                        <div class="row">
+                            <img src="assets/images/logo.png" alt="logo" class="logo">
+                            <ul class="main-nav bottom-xs xs-hide">
+                                <li><a href="index.html" class="">Home</a></li>
+                                <li><a href="plp.html" class=""> Products</a></li>
+                            </ul>
+                          </div>
+                    </nav>
+                
+                    <div class="header-right">
+                        <a href="sign-in.html" class="xs-hide"> SignIn</a>
+                        <a href="sign-up.html" class="xs-hide"> Register</a>
+    
+                        <div class="cart">
+                            <a href="cart.html" id="myBtn" class="got-to-cart">  <img src="./assets/images/cart.svg" alt=""> </a>
+                            <span class="xs-show item-in-cart"> 0</span>
+                            <span class="xs-hide">0 item</span>
+                            <div id="hamburger-icon">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+    
+                            <ul class="main-nav js--main-nav bottom-xs" id="mobile-nav">
+                                <li><a href="index.html" class="">Home</a></li>
+                                <li><a href="plp.html" class=""> Products</a></li>
+                                <li><a href="sign-in.html" class=""> Signin</a></li>
+                                <li><a href="sign-up.html" class=""> Signup</a></li>
+    
+                            </ul>
+    
+                            <div id="myModal" class="modal tooltip">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <span class="close">&times;</span>
+                                        <h2>My cart</h2>
+                                    </div>
+                                    <div class="modal-body">
+                                        <h2>No item in your cart</h2>
+                                        <p>Your favourite items are just a click away</p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button>Start Shopping</button>
+                                    </div>
+                                </div>
+                            </div>     
+
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+        <section class="login-section mt-30 mb-15">
+            <div class="container " >
+                <div class="sign-up flex">
+                    <div class="page-info mt-20">
+                        <h2>Login</h2>
+                        <p>Get access to your Orders, Wishlist and Recommandations</p>
+                    </div>
+                    <div>
+                        <form action="#" autocomplete="off">
+                            <fieldset>
+                                <input id="first" type="text" name="first" required>
+                                <label for="first">First Name</label>
+                                <div class="after"></div>
+                            </fieldset>
+                            <fieldset>
+                                <input id="last" type="text" name="last" required>
+                                <label for="last">Last Name</label>
+                                <div class="after"></div>
+                            </fieldset>
+                            <fieldset>
+                                <button>Sign up</button>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+                <div class="footer-copy">
+                    <div class="container">
+                        <p>Copyright &copy; 2011-2018 Sabka Bazaar Grocery Supplies Pvt. Ltd.</p>
+                    </div>
+                </div>
+         </footer>
+
+    </body>
+</html>
