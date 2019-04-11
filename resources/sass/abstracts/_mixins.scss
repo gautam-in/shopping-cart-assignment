@@ -43,3 +43,48 @@
     max-width: 1140px;
     //text-align: center
 }
+
+@mixin flex {
+    display: flex;
+}
+
+@mixin flex-row {
+    @include flex;
+    flex: 1;
+}
+
+@mixin flex-column {
+    @include flex;
+    flex: 1;
+    flex-direction: column;
+}
+
+@mixin flex-row-reverse {
+    @include flex;
+    flex-direction: row-reverse;
+}
+
+@mixin flex-column-reverse {
+    @include flex;
+    flex-direction: column-reverse;
+}
+
+@mixin break-point($point) {
+    @if $point==tablet {
+        @media only screen and (min-width: 480px) {
+            @content;
+        }
+    }
+    @else if $point==desktop {
+        @media only screen and (min-width: 1024px) {
+            @content;
+        }
+    }
+}
+
+@mixin app-header-padding-changes {
+    @include break-point(desktop) {
+        padding-left: $app-padding-horizontal;
+        padding-right: $app-padding-horizontal;
+    }
+}
