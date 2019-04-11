@@ -27,8 +27,8 @@
                     </li>
                 </ul>
                 <span class="cart-section">
-                    <a href="cart"><img
-                            src="/static/images/cart.svg" id="cart-img-id"
+                    <a href="cart" id="cart-img-id">
+                        <img src="/static/images/cart.svg"
                             alt="cart" class="img"></a>
                     <!-- <img src="/static/images/cart.svg" id="cart-img-id"
                         alt="cart"
@@ -71,18 +71,5 @@
     var mobile = document.getElementById("mobile-menu-close");
     open.addEventListener("click", w3_open);
     mobile.addEventListener("click", w3_close);
-    /*  Get the modal  */
-    var modal = document.getElementById('cart-modal-id');
-    var btn = document.getElementById("cart-img-id");
-    var span = document.getElementsByClassName("close")[0];
-    if (typeof (btn) != 'undefined' && btn != null) {
-        btn.onmouseover = function () {
-            modal.style.display = "block";
-        }
-        document.onmouseover = function (event) {
-            if (event.target == modal) {
-                modal.style.display = "none";
-            }
-        }
-    }  
+   
 </script>

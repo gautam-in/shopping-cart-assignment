@@ -5,8 +5,6 @@
         </div>
 
         {{#each cart.items}}
-
-
         <div class="cart-item" data-id="{{product.id}}">
             <img src="{{product.imageURL}}" alt="{{product.name}}"
                 class="cart-item__logo" />
@@ -39,7 +37,7 @@
         <div class="checkout-box">
             <div class="checkout-text">Promo code can be applied on payment
                 page.</div>
-            <div><button class="button-small-checkout">Checkout to proceed
+            <div><button class="button-small-checkout">Proceed to checkout
                     <span class="button-price">Rs. {{cart.totalPrice}}</span>
                 </button></div>
         </div>

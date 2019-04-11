@@ -124,26 +124,17 @@ main.cart {
     display: none;
     position: fixed;
     z-index: 1;
-    left: 0;
+    left: 31%;
     top: 0;
     width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: $color_black;
-    background-color: rgba($color_black, 0.4);
-    -webkit-animation-name: fadeIn;
-    -webkit-animation-duration: 0.4s;
-    animation-name: fadeIn;
-    animation-duration: 0.4s;
+    height: 87%;
+    top: 12%;
     &-content {
+        position: absolute;
+        top: 0;
+        left: 0%;
         bottom: 0;
-        background-color: #fefefe;
-        -webkit-animation-name: slideIn;
-        -webkit-animation-duration: 0.4s;
-        animation-name: slideIn;
-        animation-duration: 0.4s;
-        margin-top: 8%;
-        margin-bottom: 8%;
+        background: #eeeeee;
         margin-left: 35%;
         margin-right: 35%;
         border: 1px solid $color_black;
@@ -168,23 +159,21 @@ main.cart {
         }
     }
     &-body {
-        padding: 2px 16px;
-        height: 321px;
-        text-align: center;
-        margin-top: 24%;
         font-family: $primary_font;
+        height: 80%;
+        overflow-y: scroll;
+        width: 500px;
     }
     &-footer {
         padding: 2px 16px;
+        margin-top: 10px;
         &-text {
             background: $color_white;
             padding: 5px;
             width: 100%;
             height: 35px;
             border: 1px solid $color_red;
-            margin-top: 40px;
             cursor: pointer;
-            transition: .3s;
             box-shadow: 0 50px $color_red inset;
             color: $color_white;
             margin-bottom: 2%;
@@ -204,20 +193,6 @@ h6 {
     margin: 10px 0;
 }
 
-@media screen and (max-width:480px) {
-    .cart-modal-content {
-        @include modal-content;
-    }
-}
-
-@media screen and (max-width:767px) {
-    .cart-modal-content {
-        @include modal-content;
-    }
-}
-
-@media screen and (max-width:1023px) {
-    .cart-modal-content {
-        @include modal-content;
-    }
+.modal-view {
+    padding-bottom: 13px;
 }
