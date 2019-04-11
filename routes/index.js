@@ -22,7 +22,7 @@ router.get('/', function(req, res, next) {
 router.get('/product', function(req, res, next) {
     ActiveCategories = prodCategories.filter(category => category.enabled);
     res.render('product', {
-        prodHbs: products,
+        productList: products,
         categories: ActiveCategories,
         cart
     });
@@ -31,9 +31,9 @@ router.get('/product', function(req, res, next) {
 router.get('/product/:id', function(req, res, next) {
     var catId = req.params.id;
     ActiveCategories = prodCategories.filter(category => category.enabled);
-    prodHbs1 = products.filter(prod => prod.category === catId);
+    productListDetail = products.filter(prod => prod.category === catId);
     res.render('product', {
-        prodHbs: prodHbs1,
+        productList: productListDetail,
         categories: ActiveCategories,
         cart
     });
