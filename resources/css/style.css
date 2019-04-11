@@ -702,6 +702,17 @@ h6 {
 .modal-view {
   padding-bottom: 13px; }
 
+.blank-cart {
+  text-align: center;
+  vertical-align: 40%; }
+
+.blank-cart-text {
+  margin-top: 40%; }
+
+.font-size {
+  font-size: 16px;
+  margin: 10px 13px; }
+
 .signup-form {
   padding: 20px 40px; }
 

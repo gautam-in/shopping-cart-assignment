@@ -17,7 +17,7 @@
                 <img src="{{product.imageURL}}" alt="{{product.name}}"
                     class="cart-item__logo" />
                 <div class="cart-item-detail">
-                    <h1 class="cart-item-detail__heading">{{product.name}}</h1>
+                    <h4 class="cart-item-detail__heading font-size">{{product.name}}</h4>
                     <div class="cart-item-detail__info">
                         <div class="cart-item-detail__info--count">
                             <a class="cart-item-detail__info--remove"
@@ -36,10 +36,12 @@
             </div>
             {{/each }}
             {{else}}
-            <h4>No items in your cart
-            </h4>
-            <h6>Your Favourite items are just a click away
-            </h6>
+            <span class="blank-cart">
+                <h4 class="blank-cart-text">No items in your cart
+                </h4>
+                <h6>Your Favourite items are just a click away
+                </h6>
+            </span>
             {{/if}}
 
 
