@@ -6,7 +6,8 @@ var prodCategories = require('../resources/data/categories/index.get.json');
 var products = require('../resources/data/products/index.get.json');
 var cart = {
         items: [],
-        count: 0
+        count: 0,
+        totalPrice: 0
     }
     /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -57,6 +58,8 @@ router.get('/cart', function(req, res, next) {
     });
 });
 
+
+
 // cart operations 
 router.post('/cart/:operation', function(req, res) {
     const operation = req.params.operation;
@@ -74,23 +77,28 @@ router.post('/cart/:operation', function(req, res) {
         const oldItem = cart.items.find(item => item.product.id === product.id);
         if (oldItem) {
             oldItem.count += count;
+            cart.totalPrice -= oldItem.totalPrice;
             oldItem.totalPrice = oldItem.product.price * oldItem.count
             cart.count += count;
+            cart.totalPrice += oldItem.totalPrice;
             if (oldItem.count <= 0) {
                 cart.items.splice(cart.items.findIndex(item => item.product.id === product.id), 1);
             }
         } else {
+            let itemPrice = product.price;
             cart.items.push({
                 product,
                 count,
-                totalPrice: product.price * count
+                totalPrice: itemPrice
             });
             cart.count += count;
+            cart.totalPrice += itemPrice;
         }
         return res.send(cart);
     }
     return res.status(404).send('Not Found');
 });
+
 
 
 module.exports = router;

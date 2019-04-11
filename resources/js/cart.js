@@ -11,7 +11,7 @@ function postCartData(type, data) {
 
 const cartController = (function() {
     return {
-        updateItemCount: function(itemId, count, price, totalCount) {
+        updateItemCount: function(itemId, count, price, totalCount, totalPrice) {
             count = count || 0;
             if (count > 0) {
                 document.querySelectorAll('span[data-id="' + itemId + '"]')[0].innerHTML = count;
@@ -23,6 +23,8 @@ const cartController = (function() {
                 elem.parentNode.removeChild(elem);
             }
             document.getElementsByClassName('cart-header__text')[0].innerHTML = 'My Cart (' + totalCount + ' items)';
+
+            document.getElementsByClassName('button-price')[0].innerHTML = 'Rs.' + totalPrice;
         }
     };
 })();
@@ -48,7 +50,8 @@ const cartController = (function() {
                         productId,
                         cartProductDetail && cartProductDetail.count,
                         cartProductDetail && cartProductDetail.product.price,
-                        cart.count
+                        cart.count,
+                        cart.totalPrice
                     );
                 });
             });
