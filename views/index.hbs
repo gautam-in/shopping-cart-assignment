@@ -1,0 +1,48 @@
+
+
+<div class="home">
+    <div class="slider">
+        <div class="container">
+            <div class="slider_home">
+
+                {{#each slides}}
+                <div class="mySlides fade">
+                    <img src="{{this.bannerImageUrl}}"
+                        alt="{{this.bannerImageAlt}}">
+                </div>
+                {{/each}}
+                <a class="btn_slide prev" onclick="plusSlides(-1)">prev</a>
+                <a class="btn_slide next" id="next" onclick="plusSlides(1)">next</a>
+                <div class="dots">
+                    <span class="dot" onclick="currentSlide(1)"></span>
+                    <span class="dot" onclick="currentSlide(2)"></span>
+                    <span class="dot" onclick="currentSlide(3)"></span>
+                    <span class="dot" onclick="currentSlide(4)"></span>
+                    <span class="dot" onclick="currentSlide(5)"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {{#each categories}}
+
+    <section>
+        <div class="container">
+            <div class="flex_boxes">
+                <div class="cat_img">
+                    <figure>
+                        <img src="{{this.imageUrl}}" alt="{{this.name}}" tabindex="0" />
+                    </figure>
+                </div>
+                <div class="cat_desc">
+                    <h3 tabindex="0">{{this.name}}</h3>
+                    <p tabindex="0">{{this.description}}</p>
+                    <a href="#" class="btn" role="button">Explore {{this.key}}</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {{/each}}
+
+</div>

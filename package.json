@@ -1,43 +1,25 @@
 {
-  "name": "sabka-bazaar",
-  "version": "1.0.0",
-  "description": "sabka bazaar project",
-  "main": "index.js",
+  "name": "sabkabazaar",
+  "version": "0.0.0",
+  "private": true,
   "scripts": {
-    "dev": "webpack --mode development",
-    "build": "webpack --mode production",
-    "start": "http-server -a localhost -p 8000 -o -c-1",
-    "webstart": "webpack-dev-server --mode development --open"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Shailjabharti/sabka-bazaar.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Shailjabharti/sabka-bazaar/issues"
-  },
-  "homepage": "https://github.com/Shailjabharti/sabka-bazaar#readme",
-  "devDependencies": {
-    "@babel/core": "^7.4.0",
-    "@babel/preset-env": "^7.4.2",
-    "babel-loader": "^8.0.5",
-    "copy-webpack-plugin": "^5.0.2",
-    "css-loader": "^2.1.1",
-    "gulp": "^4.0.0",
-    "html-loader": "^0.5.5",
-    "html-webpack-plugin": "^3.2.0",
-    "mini-css-extract-plugin": "^0.5.0",
-    "node-sass": "^4.11.0",
-    "sass-loader": "^7.1.0",
-    "style-loader": "^0.23.1",
-    "webpack": "^4.29.6",
-    "webpack-cli": "^3.3.0",
-    "webpack-dev-server": "^3.2.1"
+    "compile:js-dev": "babel public/assets/js -d public/js/ -w",
+    "compile:sass-dev": "node-sass  -rw public/scss -o public/stylesheets/ -w",
+    "start": "node ./bin/www",
+    "start:dev": "npm run compile:sass-dev > out.log | npm run compile:js-dev | nodemon ./bin/www"
   },
   "dependencies": {
-    "@babel/polyfill": "^7.4.0",
-    "extract-text-webpack-plugin": "^4.0.0-beta.0"
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.9",
+    "express": "~4.16.0",
+    "hbs": "~4.0.1",
+    "http-errors": "~1.6.2",
+    "morgan": "~1.9.0",
+    "node-sass": "^4.11.0",
+    "nodemon": "^1.18.11"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0"
   }
 }

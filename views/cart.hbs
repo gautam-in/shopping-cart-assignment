@@ -1,0 +1,101 @@
+{{!-- <section class="cart_Box">
+    <div class="container">
+        <div>
+            <h3>My Cart<span>(1 item)</span></h3>
+            <div class="cart_Items">
+                <ul>
+                    <li>
+                        <div class="items flex_box">
+                            <div class="img_wrap">
+                                <img
+                                    src="img/products/fruit-n-veg/apple.jpg"
+                                    alt="">
+                            </div>
+                            <div class="detail_wrap">
+                                <h5>Fruits & Vegetable</h5>
+                                <div>
+                                    <button class="btn">-</button>
+                                    <input type="text" value="0">
+                                    <button class="btn">+</button>
+                                    <span class="price">Rs.187</span>
+                                    <span class="total_price">Rs.187</span>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                </ul>
+            </div>
+            <div class="batch">
+                <div>
+                    <img src="img/lowest-price.png" alt="">
+                </div>
+                <div>
+                    <p>You won't find cheaper anywhere</p>
+                </div>
+            </div>
+        </div>
+        <div class="checkout">
+            <p>Promo code can be applied on payment page</p>
+            <button class="btn full_width">Proceed to checkout
+                <span>Rs. 187</span></button>
+        </div>
+    </div>
+</section> --}}
+
+<section>
+    <div class="container">
+        <div class="onhover_Cart">
+    <div class="cart_Box">
+        <div>
+            <h3>My Cart<span>({{cart_Item.count}} item)</span></h3>
+            <div class="cart_Items">
+                <ul>
+                   
+                    <li>
+                        <div class="items
+                            flex_box">
+                            <div
+                                class="img_wrap">
+                                <img
+                                    src="static/images/products/fruit-n-veg/apple.jpg"
+                                    alt="">
+                            </div>
+                            <div
+                                class="detail_wrap">
+                                <h5>Fruits & Vegetable</h5>
+                                <div>
+                                    <button class="btn">-</button>
+                                    <input type="text" value="0" class="prod_quantity">
+                                    <button class="btn">+</button>
+                                    <span class="price">Rs.187</span>
+                                    <span class="total_price">Rs.187</span>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="batch">
+                <div>
+                    <img
+                        src="/static/images/lowest-price.png"
+                        alt="">
+                </div>
+                <div>
+                    <p>You won't find cheaper
+                        anywhere</p>
+                </div>
+            </div>
+        </div>
+        <div class="checkout">
+            <p>Promo code can be applied on
+                payment page</p>
+            <button class="btn full_width">Proceed
+                to checkout <span>Rs. {{cart_item.totalPrice}}</span></button>
+        </div>
+
+    </div>
+</div>
+    </div>
+</section>
