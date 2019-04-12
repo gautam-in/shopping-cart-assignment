@@ -9,42 +9,31 @@
             <h4>My Cart {{cart.count}} items
             </h4>
         </div>
-
         <div class="cart-modal-body">
-            {{#if cart.items}}
-            {{#each cart.items}}
+            {{#if cart.items}} {{#each cart.items}}
             <div class="cart-item modal-view" data-id="{{product.id}}">
-                <img src="{{product.imageURL}}" alt="{{product.name}}"
-                    class="cart-item__logo" />
+                <img src="{{product.imageURL}}" alt="{{product.name}}" class="cart-item__logo" />
                 <div class="cart-item-detail">
                     <h4 class="cart-item-detail__heading font-size">{{product.name}}</h4>
                     <div class="cart-item-detail__info">
                         <div class="cart-item-detail__info--count">
-                            <a class="cart-item-detail__info--remove"
-                                data-id="{{product.id}}">&#45;</a>
-                            <span class="cart-item-detail__info--item-count"
-                                data-id="{{product.id}}">{{count}}</span>
-                            <a class="cart-item-detail__info--add"
-                                data-id="{{product.id}}">&#43;</a>*
+                            <a class="cart-item-detail__info--remove" data-id="{{product.id}}">&#45;</a>
+                            <span class="cart-item-detail__info--item-count" data-id="{{product.id}}">{{count}}</span>
+                            <a class="cart-item-detail__info--add" data-id="{{product.id}}">&#43;</a>*
                             Rs.{{product.price}}
                         </div>
-                        <span class="cart-item-detail__info--total"
-                            data-id="{{product.id}}"> Rs.{{totalPrice}}
+                        <span class="cart-item-detail__info--total" data-id="{{product.id}}"> Rs.{{totalPrice}}
                         </span>
                     </div>
                 </div>
             </div>
-            {{/each }}
-            {{else}}
+            {{/each }} {{else}}
             <span class="blank-cart">
                 <h4 class="blank-cart-text">No items in your cart
                 </h4>
                 <h6>Your Favourite items are just a click away
                 </h6>
-            </span>
-            {{/if}}
-
-
+            </span> {{/if}}
         </div>
         <!-- Modal footer-->
         <div class="cart-modal-footer">
@@ -61,30 +50,25 @@
     </div>
 </div>
 <script type="text/javascript" src="/js/cart.js"></script>
-
 <script>
-         /*  Get the modal  */
-            var modal = document.getElementById('cart-modal-id');
-            var btn = document.getElementById("cart-img-id");
+    /*  Get the modal  */
+    var modal = document.getElementById('cart-modal-id');
+    var btn = document.getElementById("cart-img-id");
+    var span = document.getElementsByClassName("close")[0];
 
-            var span = document.getElementsByClassName("close")[0];
+    /*   if (typeof (btn) != 'undefined' && btn != null) { */
+    btn.onmouseover = function () {
+        modal.style.display = "block";
+    }
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function () {
+        modal.style.display = "none";
+    }
+    window.onmouseover = function (event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
 
-         /*   if (typeof (btn) != 'undefined' && btn != null) { */
-                btn.onmouseover = function () {
-                    modal.style.display = "block";
-                }
-                 // When the user clicks on <span> (x), close the modal
-                    span.onclick = function () {
-                        modal.style.display = "none";
-                    }
-                window.onmouseover = function (event) {
-                    if (event.target == modal) {
-                       modal.style.display = "none";
-                   }
-               }
-               
-           // }
-
-
-            
+    // }
 </script>

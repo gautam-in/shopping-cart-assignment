@@ -1,7 +1,3 @@
-
-
-
-  
 <div id="categories-id">
     <section class="home-section">
         <div class="row">
@@ -19,14 +15,11 @@
                                 w3-grey
                                 w3-display-right hide">NEXT
                         </button>
-
                         {{#each banners}}
                         <span class="w3-badge demo w3-border
-                                w3-transparent w3-hover-black slider-dot" onclick="currentSlide({{math @index "+" 1}})"></span>
+                                w3-transparent w3-hover-black slider-dot"
+                            onclick="currentSlide({{math @index "+" 1}})"></span>
                         {{/each}}
-
-
-                       
                     </div>
                 </div>
             </div>
@@ -43,76 +36,73 @@
                 </div>
                 <p class="cat-inner_text">{{this.description}}
                 </p>
-                <a href="category/{{this.key}}" <button class="cat_button">Explore {{this.key}}
+                <a href="category/{{this.key}}"> <button class="cat_button">Explore {{this.key}}
                     </button></a>
             </div>
         </div>
     </section>
     {{/each}}
 </div>
-
-
-
 <script>
 
-      /* Home page slider  */
-        var prev = document.getElementById("prev-button-js");
-        var next = document.getElementById("next-button-js");
+    /* Home page slider  */
+    var prev = document.getElementById("prev-button-js");
+    var next = document.getElementById("next-button-js");
 
-        var slider_dot = document.getElementsByClassName("slider-dot");
-        var slider_dot = Array.prototype.slice.call(slider_dot)
-        var slideIndex = 1;
+    var slider_dot = document.getElementsByClassName("slider-dot");
+    var slider_dot = Array.prototype.slice.call(slider_dot)
+    var slideIndex = 1;
 
-        if (typeof (prev) != 'undefined' && prev != null) {
+    if (typeof (prev) != 'undefined' && prev != null) {
+        showSlide(slideIndex);
+
+        prev.addEventListener("click", function () {
+            slideIndex--;
             showSlide(slideIndex);
+        });
+        next.addEventListener("click", function () {
+            slideIndex++
+            showSlide(slideIndex);
+        });
+    }
 
-            prev.addEventListener("click", function () {
-                slideIndex--;
-                showSlide(slideIndex);
+
+    if (typeof (slider_dot) != 'undefined' && slider_dot != null) {
+        slider_dot.forEach(function (elem, index) {
+            elem.addEventListener("click", function () {
+                currentSlide(index + 1);
             });
-            next.addEventListener("click", function () {
-                slideIndex++
-                showSlide(slideIndex);
-            });
+        });
+
+    }
+
+    function plusSlide(n) {
+        showSlide(slideIndex += n);
+    }
+
+    function currentSlide(n) {
+        showSlide(slideIndex = n);
+    }
+
+    function showSlide(n) {
+        var i;
+        var slides = document.getElementsByClassName("offer");
+        var dots = document.getElementsByClassName("slider-dot");
+        if (n > slides.length) {
+            slideIndex = 1
         }
-
-
-        if (typeof (slider_dot) != 'undefined' && slider_dot != null) {
-            slider_dot.forEach(function (elem, index) {
-                elem.addEventListener("click", function () {
-                    currentSlide(index + 1);
-                });
-            });
-
+        if (n < 1) {
+            slideIndex = slides.length
         }
-
-        function plusSlide(n) {
-            showSlide(slideIndex += n);
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
         }
-
-        function currentSlide(n) {
-            showSlide(slideIndex = n);
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
         }
+        slides[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].className += " active";
+    }
 
-        function showSlide(n) {
-            var i;
-            var slides = document.getElementsByClassName("offer");
-            var dots = document.getElementsByClassName("slider-dot");
-            if (n > slides.length) {
-                slideIndex = 1
-            }
-            if (n < 1) {
-                slideIndex = slides.length
-            }
-            for (i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";
-            }
-            for (i = 0; i < dots.length; i++) {
-                dots[i].className = dots[i].className.replace(" active", "");
-            }
-            slides[slideIndex - 1].style.display = "block";
-            dots[slideIndex - 1].className += " active";
-        }
 
-        
 </script>

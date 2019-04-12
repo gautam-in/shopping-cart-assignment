@@ -3,46 +3,36 @@
         <div class="cart-header">
             <div class="cart-header__text">My Cart {{cart.count}} items</div>
         </div>
-
         {{#each cart.items}}
         <div class="cart-item" data-id="{{product.id}}">
-            <img src="{{product.imageURL}}" alt="{{product.name}}"
-                class="cart-item__logo" />
+            <img src="{{product.imageURL}}" alt="{{product.name}}" class="cart-item__logo" />
             <div class="cart-item-detail">
                 <h2 class="cart-item-detail__heading">{{product.name}}</h2>
                 <div class="cart-item-detail__info">
                     <div class="cart-item-detail__info--count">
-                        <a class="cart-item-detail__info--remove"
-                            data-id="{{product.id}}">&#45;</a>
-                        <span class="cart-item-detail__info--item-count"
-                            data-id="{{product.id}}">{{count}}</span>
-                        <a class="cart-item-detail__info--add"
-                            data-id="{{product.id}}">&#43;</a>*
-                        Rs.{{product.price}}
+                        <a class="cart-item-detail__info--remove" data-id="{{product.id}}">&#45;</a>
+                        <span class="cart-item-detail__info--item-count" data-id="{{product.id}}">{{count}}</span>
+                        <a class="cart-item-detail__info--add" data-id="{{product.id}}">&#43;</a>* Rs.{{product.price}}
                     </div>
-                    <span class="cart-item-detail__info--total"
-                        data-id="{{product.id}}"> Rs.{{totalPrice}}
+                    <span class="cart-item-detail__info--total" data-id="{{product.id}}"> Rs.{{totalPrice}}
                     </span>
                 </div>
             </div>
         </div>
         {{/each }}
-
         <div class="cart__content__price">
-            <img src="/static/images/lowest-price.png" alt="lowest price"
-                class="lowest__price">
+            <img src="/static/images/lowest-price.png" alt="lowest price" class="lowest__price">
             <span>You won't find it cheaper anywhere.</span>
         </div>
-
         <div class="checkout-box">
-            <div class="checkout-text">Promo code can be applied on payment
-                page.</div>
-            <div><button class="button-small-checkout">Proceed to checkout
+            <div class="checkout-text">Promo code can be applied on payment page.
+            </div>
+            <div>
+                <button class="button-small-checkout">Proceed to checkout
                     <span class="button-price">Rs. {{cart.totalPrice}}</span>
-                </button></div>
+                </button>
+            </div>
         </div>
     </section>
-
 </main>
-
 <script type="text/javascript" src="/js/cart.js"></script>
