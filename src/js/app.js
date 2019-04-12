@@ -1,11 +1,14 @@
+require("babel-runtime/regenerator");
+require("webpack-hot-middleware/client?reload=true");
+require('../favicon.ico');
+
+
 const header = `<div class="row">
 <nav>
   <a href="#" class="logo">
-    <img src="dist/images/logo.png" alt="Sabka Bazaar" srcset="" class="logo">
+    <img src="./static/images/logo.png" alt="Sabka Bazaar" srcset="" class="logo">
   </a>
   <div>
-
-
     <input type="checkbox" id="hamberger" />
 
     <label class="nav_btn" for="hamberger">
@@ -19,7 +22,7 @@ const header = `<div class="row">
       </div>
     </label>
     <span class="cart_btn">
-      <a href="#" class="btn_to_cart">
+      <a href="cart.html" class="btn_to_cart">
         <i class="cart_icon">
           <svg version="1.1" width="30" id="Layer_1" focusable="false" xmlns="http://www.w3.org/2000/svg"
             xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 24 24"
@@ -48,14 +51,13 @@ const header = `<div class="row">
 
 
 
-const footer = `<section class="row">
+
+const footer = `<div class="row">
                 <p>
                     Copyright &copy; 2011 &mdash; 2018 Sabka Bazaar Grocery Supplies Pvt Ltd
                 </p>
-                </section>`;
+                </div>`;
 
-(function () {
-    document.getElementById("header").innerHTML = header;
-    document.getElementById("footer").innerHTML = footer;
-})();
 
+document.getElementById("header").innerHTML = header;
+document.getElementById("footer").innerHTML = footer;
