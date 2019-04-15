@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <% include ../partials/head %>
+    <link rel="stylesheet" href="/resources/css/register.css" />
+  </head>
+  <body>
+    <header>
+      <% include ../partials/header %>
+    </header>
+    <main class="form-container">
+      <div class="heading">
+        <h1 class="heading__primary">
+          <%= primaryHeading %>
+        </h1>
+        <h3 class="heading__sub"><%= primarySubHeading %></h3>
+      </div>
+      <form class="form">
+        <% for(var i=0; i < inputs.length; i++) { %>
+        <div class="form__input-container">
+          <input type="<%= inputs[i].type %>" class="register-form__input" required name="<%= inputs[i].label %>" />
+          <label for="name"><%= inputs[i].label %></label>
+          <div class="bar"></div>
+        </div>
+        <% } %>
+        <a class="btn form__submit" href="<%= submitLink %>"><%= submitLabel %></a>
+      </form>
+    </main>
+
+    <footer>
+      <% include ../partials/footer %>
+    </footer>
+  </body>
+</html>
