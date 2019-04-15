@@ -1,0 +1,67 @@
+@import "breakpoint.scss";
+
+ * {
+    box-sizing: border-box
+}
+html
+body {
+    font-family: 'Dosis';
+    font-weight: 600;
+    font-size: 20px;
+    margin: 0;
+}
+
+
+svg {
+    fill: #C71585;
+}
+
+p {
+    margin: 0;
+}
+
+.btn{
+    color: #fff;
+    text-decoration: none;
+    background-color: #bf2957;
+    padding: 13px 17px;
+    transition:.5s;
+    font-size: 15px;
+    border: 0px;
+}
+.btn:active, .btn:hover,.btn:focus, .btn:active, .btn:hover, .btn:focus  {
+    outline: 0;
+    outline-offset: 0;
+    background-color: #da1a55;
+}
+
+
+.full__width{
+    width:100%;
+}
+
+
+.flex_box{
+    display: flex;
+}
+
+ul {
+ list-style: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+figure{
+    margin: 0;
+}
+
+
+@media only screen and (min-width: $breakpoint-desktop) {
+.container {
+    max-width:1215px;
+    padding:0 15px;
+    margin:0 auto;
+    }
+}

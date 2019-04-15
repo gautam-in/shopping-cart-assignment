@@ -1,0 +1,11 @@
+require("./app.js");
+require("./home.js");
+require("./handlebars-v4.1.1.js");
+require("./main.js");
+require("../scss/breakpoint.scss");
+require("../scss/cart.scss");
+require("../scss/product_listing.scss");
+require("../scss/main.scss");
+require("../scss/login.scss");
+require("../scss/home.scss");
+require("../scss/header.scss");

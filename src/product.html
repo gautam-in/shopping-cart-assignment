@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+<body>
+
+    <div class="product_list_menu">
+      <ul>
+      </ul>
+    </div>
+
+  <script id="product-list" type="text/x-handlebars-template">
+    
+            <li>
+                <div>
+                    <h4>{{name}}</h4>
+                    <div class="prod_desc">
+                        <div class="prod_img"><img src="{{imageURL}}.jpg"></div>
+                        <p>
+                            {{description}}
+                        </p>
+
+                        <div class="buy_now">
+                            <a href="#" class="btn buy">Buy Now 
+                                    <span id="desktop_view">MRP Rs.{{price}}</span>
+                                    <span id="mobile_view">@ Rs.{{price}}</span></a>
+                        </div>
+                    </div>
+
+                </div>
+            </li>
+  
+  
+  
+  
+  </script>
+
+
+
+
+</body>
+</html>

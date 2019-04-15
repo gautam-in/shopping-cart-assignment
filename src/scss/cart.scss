@@ -1,0 +1,146 @@
+@import "breakpoint.scss";
+
+.cart-container{
+    background-color: #E0E0E0;
+    max-width: 1142px;
+    max-width: 1142px;
+    margin: 0 auto;
+}
+
+.shopping-cart {
+    display: flex;
+    background-color: black;
+    width: 100%;
+    height: 3.5em;
+    justify-content: space-between;
+    padding: 20px;
+
+    .myCart{
+        position: relative;
+        color: white;
+
+        #cart-value{
+            font-size: 15px;
+            display: contents;
+            color: white;
+        }
+    }
+
+    a{
+        color: white;
+        display: none;
+    }
+}
+
+.cart-item-list{
+    display: flex;
+    max-width: 1140px;
+    margin-top: 10px;
+    background-color: white;
+    margin: 10px;
+    border-radius: 5px;
+}
+
+.cart-item{
+    display: flex;
+    width: 100%;
+.cart-image img{
+    width: 50%;
+    margin-left: 10px;
+}
+}
+
+.description {
+    padding-top: 10px;
+    margin-right: 60px;
+    width: 100%;
+  }
+   
+  .description span {
+    display: block;
+    font-size: 14px;
+    color: #43484D;
+    font-weight: 400;
+    
+  }
+   
+  .description span:first-child {
+    margin-bottom: 5px;
+  }
+  .description span:last-child {
+    font-weight: 300;
+    margin-top: 8px;
+    color: #86939E;
+  }
+  .item-count{
+      display: flex;
+      padding-top: 10px;
+      #cart-counter {
+          text-align: center;
+          max-width: 50px;
+          border: 0;
+         }
+         p{
+             margin-left: 35px;
+             margin-top: 5px;
+         }
+         .total-price {
+            flex: auto;
+            text-align: right;
+          
+         }
+
+          button[class*=btn] {
+            background-color: Transparent;
+            background-repeat:no-repeat;
+            border: none;
+            cursor:pointer;
+            overflow: hidden;   
+          }
+  }
+  .banner{
+      display: flex;
+      justify-content: center;
+      background-color: white;
+      margin: 10px;
+      border-radius: 5px;
+      img{
+          width: 15%;
+          height: 20%;
+      }
+      p{
+          margin-top: 20px;
+          margin-left: 75px;
+          font-weight: 200;
+          font-size: 17px;
+      }
+  }
+
+.checkout-btn{
+    justify-content: flex-end;
+    background-color: white;
+    margin: 50px 10px 10px 10px;
+    border-radius: 5px;
+    .btn-checkout{
+        border-radius: 5px;
+        width: 100%;
+        margin-top: 10px;
+        font-size: 17px;
+    }
+    p{
+        margin-right: 70px;
+        font-weight: 200;
+        font-size: 17px;
+        padding-top: 10px;
+        text-align: center;
+    }
+}
+
+
+
+
+
+
+
+
+

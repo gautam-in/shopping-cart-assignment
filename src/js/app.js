@@ -1,7 +1,8 @@
-[
+var product = { 
+  "prod" : [
   {
     "name": "Fresho Kiwi - Green, 3 pcs",
-    "imageURL": "/static/images/products/fruit-n-veg/kiwi-green.jpg",
+    "imageURL": "/assets/images/products/fruit-n-veg/kiwi-green.jpg",
     "description": "Kiwis are oval shaped with a brownish outer skin. The flesh is bright green and juicy with tiny, edible black seeds.",
     "price": 87,
     "stock": 50,
@@ -11,7 +12,7 @@
   },
   {
     "name": "Apple - Washington, Regular, 4 pcs",
-    "imageURL": "/static/images/products/fruit-n-veg/apple.jpg",
+    "imageURL": "/assets/images/products/fruit-n-veg/apple.jpg",
     "description": "The bright red coloured and heart shaped Washington apples are crunchy, juicy and slightly sweet. Washington Apples are a natural source of fibre and are fat free.",
     "price": 187,
     "stock": 50,
@@ -21,7 +22,7 @@
   },
   {
     "name": "Fresho Pomegrante Peeled, 500 gm ",
-    "imageURL": "/static/images/products/fruit-n-veg/pomegrante.jpg",
+    "imageURL": "/assets/images/products/fruit-n-veg/pomegrante.jpg",
     "description": "Pomegranate variety has a glossy, vibrant and soft ruby-red skin. The inside of the fruit is divided into compartments by thin white membranes.",
     "price": 88,
     "stock": 50,
@@ -250,3 +251,12 @@
     "id": "5b6c761801a7c3842953089b"
   }
 ]
+
+}
+
+// $(document).ready(function(){
+
+//   var productTemplate = $("product-list").html();
+
+// });
+
