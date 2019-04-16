@@ -3,6 +3,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
+const autoprefixer = require('autoprefixer');
 const cssOutput = 'css/style.css';
 
 module.exports = {
@@ -33,7 +34,12 @@ module.exports = {
             {
                 test: /\.scss$/,
                 use: ExtractTextPlugin.extract({
-                    use: ['css-loader', 'sass-loader'],
+                    use: ['css-loader', {
+                        loader: 'postcss-loader',
+                        options: {
+                            plugins: () => [autoprefixer()]
+                        }
+                    }, 'sass-loader'],
                     fallback: 'style-loader'
                 })
             },
