@@ -10,32 +10,29 @@
 </head>
 
 <body>
-    <header id="header">
-    </header>
-    <section class="login_section">
-        <div class="row">
-            <div class="login-text">
-                <h2>Login</h2>
-                <p>Get acces to your Order, Wishlists and Recommendations</p>
-            </div>
-            <div class="login-form">
-                <form autocomplete="off">
-                    <div class="email">
-                        <input type="email" required>
-                        <span class="highlight"></span>
-                        <span class="bar"></span>
-                        <label>Email</label>
-                    </div>
-                    <div class="password">
-                        <input type="password" required>
-                        <span class="highlight"></span>
-                        <span class="bar"></span>
-                        <label>Password</label>
-                    </div>
-                    <button type="submit" class="btn default_btn">Login</button>
-                </form>
-            </div>
+    <header id="header"></header>
+    <section class="login">
+        <div class="login__text">
+            <h2>Login</h2>
+            <p>Get acces to your Order, Wishlists and Recommendations</p>
         </div>
+
+        <form autocomplete="off" class="login__form">
+            <div class="login__email">
+                <input class="email login__email--email" type="email" required>
+                <span class="highlight login__email--highlight"></span>
+                <span class="bar login__email--bar"></span>
+                <label class="label login__email--label">Email</label>
+            </div>
+            <div class="login__password">
+                <input class="password" type="password" required>
+                <span class="highlight login__password--highlight"></span>
+                <span class="bar login__password--bar"></span>
+                <label class="label login__password--label">Password</label>
+            </div>
+            <button type="submit" class="btn btn-default">Login</button>
+        </form>
+
     </section>
     <footer id="footer"></footer>
 </body>

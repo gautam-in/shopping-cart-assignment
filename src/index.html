@@ -19,13 +19,12 @@
             </div>
             <br>
 
-            <div style="text-align:center">
-                <span class="dot" onclick="currentSlide(1)"></span>
-                <span class="dot" onclick="currentSlide(2)"></span>
-                <span class="dot" onclick="currentSlide(3)"></span>
-                <span class="dot" onclick="currentSlide(4)"></span>
-                <span class="dot" onclick="currentSlide(5)"></span>
-            </div>
+            <div style="text-align:center" id="slideshow-row__dot"></div>
+            <script type="text/x-handlebars-template" id="slideshow-row__dotTemplates">
+                {{#each banners}}
+                <span class="dot" onclick="currentSlide({{inc @index}})"></span>
+                {{/each}}
+            </script>
         </div>
     </section>
 
@@ -59,7 +58,11 @@
     <footer id="footer"></footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.1/handlebars.js"></script>
     <script>
-        var slideIndex = 1;
+        Handlebars.registerHelper('inc', function (index, options) {
+            return parseInt(index) + 1;
+        });
+
+        let slideIndex = 1;
         function plusSlides(n) {
             showSlides(slideIndex += n);
         }
@@ -69,9 +72,9 @@
         }
 
         function showSlides(n) {
-            var i;
-            var slides = document.getElementsByClassName("mySlides");
-            var dots = document.getElementsByClassName("dot");
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            let dots = document.getElementsByClassName("dot");
             if (n > slides.length) { slideIndex = 1 }
             if (n < 1) { slideIndex = slides.length }
             for (i = 0; i < slides.length; i++) {
@@ -84,12 +87,12 @@
             dots[slideIndex - 1].className += " active";
         }
 
-        
-        var categoriesXHttp = new XMLHttpRequest();
+
+        let categoriesXHttp = new XMLHttpRequest();
         categoriesXHttp.open("GET", "categories", true);
         categoriesXHttp.onload = function () {
             if (categoriesXHttp.status >= 200 && categoriesXHttp.status < 400) {
-                var data = JSON.parse(categoriesXHttp.responseText);
+                let data = JSON.parse(categoriesXHttp.responseText);
                 createCategoryContainer(data);
             } else {
                 console.log("We conected to the server, but it returned an error.");
@@ -100,12 +103,13 @@
         }
         categoriesXHttp.send();
 
-        var bannerXHttp = new XMLHttpRequest();
+        let bannerXHttp = new XMLHttpRequest();
         bannerXHttp.open("GET", "banners", true);
         bannerXHttp.onload = function () {
             if (bannerXHttp.status >= 200 && bannerXHttp.status < 400) {
-                var data = JSON.parse(bannerXHttp.responseText);
-                createSlideshow(data);
+                let data = JSON.parse(bannerXHttp.responseText);
+                createSlideshowDots(data);
+                createSlideshow(data);                
             } else {
                 console.log("We conected to the server, but it returned an error.");
             }
@@ -117,29 +121,38 @@
 
 
         function createCategoryContainer(data) {
-            console.log("Data: ", data);
-            var categoryTemplate = document.getElementById("categoryTemplates").innerHTML;
-            var compiledTemplate = Handlebars.compile(categoryTemplate);
-            var generatedHtml = compiledTemplate(data);
+            let categoryTemplate = document.getElementById("categoryTemplates").innerHTML;
+            let compiledTemplate = Handlebars.compile(categoryTemplate);
+            let generatedHtml = compiledTemplate(data);
 
-            var categoryContainer = document.getElementById("category_container");
+            let categoryContainer = document.getElementById("category_container");
             categoryContainer.innerHTML = generatedHtml;
         }
 
-        function createSlideshow(data) {
-            var slideshowTemplates = document.getElementById("slideshowTemplates").innerHTML;
-            var slideshowCompiledTemplate = Handlebars.compile(slideshowTemplates);
-            var generatedHtml = slideshowCompiledTemplate(data);
+        function createSlideshowDots(data) {            
+            let categoryTemplate = document.getElementById("slideshow-row__dotTemplates").innerHTML;
+            let compiledTemplate = Handlebars.compile(categoryTemplate);
+            let generatedHtml = compiledTemplate(data);
 
-            var categoryContainer = document.getElementById("slideshow");
+            let categoryContainer = document.getElementById("slideshow-row__dot");
             categoryContainer.innerHTML += generatedHtml;
+        }
+
+        function createSlideshow(data) {
+            let slideshowTemplates = document.getElementById("slideshowTemplates").innerHTML;
+            let slideshowCompiledTemplate = Handlebars.compile(slideshowTemplates);
+            let generatedHtml = slideshowCompiledTemplate(data);
+
+            let categoryContainer = document.getElementById("slideshow");
+            categoryContainer.innerHTML += generatedHtml;
+            
 
             showSlides(slideIndex);
 
-            var elem = document.getElementById("next");
+            let elem = document.getElementById("next");
             setInterval(function () {
                 elem.click();
-            }, 4000);
+            }, 10000);
         }
 
     </script>

@@ -2,6 +2,13 @@ require("babel-runtime/regenerator");
 require("webpack-hot-middleware/client?reload=true");
 require('../favicon.ico');
 
+require("../scss/cart.scss");
+require("../scss/products.scss");
+require("../scss/login.scss");
+require("../scss/carousel.scss");
+require("../scss/query.scss");
+require("../scss/home.scss");
+
 
 const header = `<div class="row">
 <nav>

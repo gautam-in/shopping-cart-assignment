@@ -8,13 +8,7 @@ const cssOutput = 'css/style.css';
 
 module.exports = {
     entry: [
-        "./src/js/app.js",
-        "./src/scss/cart.scss",
-        "./src/scss/products.scss",
-        "./src/scss/login.scss",
-        "./src/scss/carousel.scss",
-        "./src/scss/query.scss",
-        "./src/scss/home.scss"
+        "./src/js/app.js"
     ],
     mode: "development",
     devServer: {

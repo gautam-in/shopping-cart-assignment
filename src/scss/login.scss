@@ -1,120 +1,107 @@
-.login_section {
-  .login-text {
-    flex: 0 1 50%;
-    padding-left: 100px;
-    align-self: flex-start;
-  }
+/*************block******************/
 
-  .login-text p {
+.login {
+  max-width: 280px;
+  margin: 0 auto;
+}
+
+/*************element******************/
+.login__text {
+  p {
     margin-top: 15px;
     font-size: 16px;
   }
-
-  .login-form h2 {
+  h2 {
     margin-bottom: 10px;
   }
+}
 
-  .login-form {
-    flex: 0 1 50%;
+.login__form {
+  input {
+    position: relative;
+    margin-bottom: 45px;
+    font-size: 18px;
+    padding: 10px 10px 10px 5px;
+    display: block;
+    border: none;
+    border-bottom: 1px solid #cccccc;
+  }
+  input:focus {
+    outline: none;
   }
 
-  .default_btn {
+  label {
+    color: #999;
+    font-size: 18px;
+    font-weight: normal;
+    position: absolute;
+    pointer-events: none;
+    left: 5px;
+    top: 10px;
+    transition: 0.2s ease all;
+    -moz-transition: 0.2s ease all;
+    -webkit-transition: 0.2s ease all;
+  }
+
+  input:focus ~ label,
+  input:valid ~ label {
+    top: -20px;
+    font-size: 14px;
+    color: #50dae4;
+  }
+
+  input:focus,
+  input:valid {
+    border-bottom: 1px solid #50dae4;
+  }
+
+  .bar {
+    position: relative;
+    display: block;
     width: 300px;
   }
+
+  .bar:before,
+  .bar:after {
+    content: "";
+    height: 1px;
+    width: 0;
+    bottom: 1px;
+    position: absolute;
+    transition: 0.2s ease all;
+    -moz-transition: 0.2s ease all;
+    -webkit-transition: 0.2s ease all;
+  }
+  .bar:before {
+    left: 50%;
+  }
+  .bar:after {
+    right: 50%;
+  }
+
+  /* active state */
+  input:focus ~ .bar:before,
+  input:focus ~ .bar:after {
+    width: 50%;
+  }
+
+  /* HIGHLIGHTER ================================== */
+  .highlight {
+    position: absolute;
+    height: 60%;
+    width: 100px;
+    top: 25%;
+    left: 0;
+    pointer-events: none;
+    opacity: 0.5;
+  }
+
+  /* active state */
+  input:focus ~ .highlight {
+    -webkit-animation: inputHighlighter 0.3s ease;
+    -moz-animation: inputHighlighter 0.3s ease;
+    animation: inputHighlighter 0.3s ease;
+  }
 }
 
-.firstname,
-.lastname,
-.confirm_password,
-.email,
-.password {
-  position: relative;
-  margin-bottom: 45px;
-}
-.login_section input {
-  font-size: 18px;
-  padding: 10px 10px 10px 5px;
-  display: block;
-  width: 300px;
-  border: none;
-  border-bottom: 1px solid #cccccc;
-}
-.login_section input:focus {
-  outline: none;
-}
-
-/* LABEL ======================================= */
-.login_section label {
-  color: #999;
-  font-size: 18px;
-  font-weight: normal;
-  position: absolute;
-  pointer-events: none;
-  left: 5px;
-  top: 10px;
-  transition: 0.2s ease all;
-  -moz-transition: 0.2s ease all;
-  -webkit-transition: 0.2s ease all;
-}
-
-/* active state */
-.login_section input:focus ~ label,
-.login_section input:valid ~ label {
-  top: -20px;
-  font-size: 14px;
-  color: #50dae4;
-}
-
-.login_section input:focus,
-.login_section input:valid {  
-  border-bottom: 1px solid #50dae4;  
-}
-
-/* BOTTOM BARS ================================= */
-.login_section .bar {
-  position: relative;
-  display: block;
-  width: 300px;
-}
-.login_section .bar:before,
-.login_section .bar:after {
-  content: "";
-  height: 1px;
-  width: 0;
-  bottom: 1px;
-  position: absolute;
-  background: #50dae4;
-  transition: 0.2s ease all;
-  -moz-transition: 0.2s ease all;
-  -webkit-transition: 0.2s ease all;
-}
-.login_section .bar:before {
-  left: 50%;
-}
-.login_section .bar:after {
-  right: 50%;
-}
-
-/* active state */
-.login_section input:focus ~ .login_section .bar:before,
-.login_section input:focus ~ .login_section .bar:after {
-  width: 50%;
-}
-
-/* HIGHLIGHTER ================================== */
-.highlight {
-  position: absolute;
-  height: 60%;
-  width: 100px;
-  top: 25%;
-  left: 0;
-  pointer-events: none;
-  opacity: 0.5;
-}
-
-/* active state */
-.login_section input:focus ~ .login_section .highlight {
-  -webkit-animation: inputHighlighter 0.3s ease;
-  -moz-animation: inputHighlighter 0.3s ease;
-  animation: inputHighlighter 0.3s ease;
-}
+/*************modifier******************/
