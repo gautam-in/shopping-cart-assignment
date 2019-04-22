@@ -12,28 +12,30 @@
 <body>
     <header id="header">
     </header>
-    <section class="login_section">
+    <section>
         <div class="row">
-            <div class="login-text">
-                <h2>Login</h2>
-                <p>Get acces to your Order, Wishlists and Recommendations</p>
-            </div>
-            <div class="login-form">
-                <form autocomplete="off">
-                    <div class="email">
-                        <input type="email" required>
-                        <span class="highlight"></span>
-                        <span class="bar"></span>
-                        <label>Email</label>
-                    </div>
-                    <div class="password">
-                        <input type="password" required>
-                        <span class="highlight"></span>
-                        <span class="bar"></span>
-                        <label>Password</label>
-                    </div>
-                    <button type="submit" class="btn default_btn">Login</button>
-                </form>
+            <div class="login">
+                <div class="login__text">
+                    <h2>Login</h2>
+                    <p>Get acces to your Order, Wishlists and Recommendations</p>
+                </div>
+                <div class="login__form">
+                    <form autocomplete="off" method="POST">
+                        <div class="email">
+                            <input type="email" required>
+                            <span class="highlight"></span>
+
+                            <label>Email</label>
+                        </div>
+                        <div class="password">
+                            <input type="password" required>
+                            <span class="highlight"></span>
+
+                            <label>Password</label>
+                        </div>
+                        <button type="submit" class="btn btn--default">Login</button>
+                    </form>
+                </div>
             </div>
         </div>
     </section>

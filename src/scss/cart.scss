@@ -1,20 +1,20 @@
 .cart_Box {
-  position        : relative;
-  max-width       : 770px;
-  width           : 100%;
-  margin          : 0px auto;
+  position: relative;
+  max-width: 770px;
+  width: 100%;
+  margin: 0px auto;
   background-color: #eee;
-  padding         : 30px 0px 0;
+  padding: 30px 0px 0;
 
   h3 {
-    font-size : 21px;
+    font-size: 21px;
     border-top: #e6e6e6;
-    padding   : 14px 25px;
+    padding: 14px 25px;
 
     background-color: #fff;
 
     span {
-      font-size  : 20px;
+      font-size: 20px;
       font-weight: 300;
       margin-left: 5px;
     }
@@ -27,29 +27,29 @@
 
   .items {
     background-color: #fff;
-    padding         : 10px;
-    display         : table;
-    width           : 100%;
+    padding: 10px;
+    display: table;
+    width: 100%;
 
-    &>div {
-      display       : table-cell;
+    & > div {
+      display: table-cell;
       vertical-align: middle;
     }
 
     .img_wrap {
-      width    : 95px;
+      width: 95px;
       max-width: 95px;
     }
 
     .detail_wrap {
-      width       : calc(100% - 95px);
+      width: calc(100% - 95px);
       padding-left: 10px;
     }
   }
 
   h5 {
     font-weight: bold;
-    font-size  : 18px;
+    font-size: 18px;
   }
 
   .detail_wrap {
@@ -57,49 +57,49 @@
 
     button {
       border-radius: 4px;
-      font-weight  : bold;
-      font-size    : 22px;
-      padding      : 4px 5px 4px;
-      display      : inline-block;
-      width        : 30px;
-      height       : 30px;
-      cursor       : pointer;
-      line-height  : 1;
+      font-weight: bold;
+      font-size: 22px;
+      padding: 4px 5px 4px;
+      display: inline-block;
+      width: 30px;
+      height: 30px;
+      cursor: pointer;
+      line-height: 1;
     }
 
     input {
-      border    : none;
+      border: none;
       text-align: center;
-      width     : 45px;
+      width: 45px;
     }
 
     .price {
-      position    : relative;
-      margin-left : 10px;
+      position: relative;
+      margin-left: 10px;
       padding-left: 20px;
 
       &:after,
       &:before {
-        content         : "";
-        position        : absolute;
+        content: "";
+        position: absolute;
         background-color: #000;
-        left            : 0;
-        top             : 50%;
-        transform       : translateY(-50%);
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
       }
 
       &:before {
-        height   : 2px;
-        width    : 10px;
+        height: 2px;
+        width: 10px;
         transform: rotate(45deg);
       }
 
       &:after {
-        width    : 2px;
-        height   : 10px;
+        width: 2px;
+        height: 10px;
         transform: rotate(45deg);
-        left     : 4px;
-        top      : 6px;
+        left: 4px;
+        top: 6px;
       }
     }
 
@@ -110,17 +110,17 @@
 
   .batch {
     background-color: #fff;
-    width           : calc(100% - 20px);
-    margin          : 15px auto;
-    padding         : 15px;
-    border-radius   : 4px;
-    display         : table;
+    width: calc(100% - 20px);
+    margin: 15px auto;
+    padding: 15px;
+    border-radius: 4px;
+    display: table;
 
     // img {
     //   width: 100px;
     // }
-    &>div {
-      display       : table-cell;
+    & > div {
+      display: table-cell;
       vertical-align: middle;
 
       &:first-child {
@@ -139,34 +139,34 @@
 
   .checkout {
     background-color: #fff;
-    padding         : 15px 10px;
-    margin-top      : 300px;
+    padding: 15px 10px;
+    margin-top: 300px;
 
     p {
-      text-align   : center;
+      text-align: center;
       margin-bottom: 15px;
-      font-size    : 20px;
+      font-size: 20px;
     }
 
-    .default_btn {
-      text-align   : left;
+    .btn--default {
+      text-align: left;
       border-radius: 4px;
-      font-weight  : 600;
-      font-size    : 22px;
+      font-weight: 600;
+      font-size: 22px;
 
       span {
-        float   : right;
+        float: right;
         position: relative;
 
         &:after {
-          content     : "";
-          width       : 8px;
-          height      : 8px;
+          content: "";
+          width: 8px;
+          height: 8px;
           border-right: 2px solid #fff;
-          border-top  : 2px solid #fff;
-          display     : inline-block;
-          transform   : rotate(45deg);
-          margin-left : 9px;
+          border-top: 2px solid #fff;
+          display: inline-block;
+          transform: rotate(45deg);
+          margin-left: 9px;
         }
       }
     }
@@ -196,14 +196,14 @@
     padding: 0px 0;
 
     h3 {
-      font-size       : 26px;
+      font-size: 26px;
       background-color: #000;
-      color           : #fff;
-      padding         : 26px 30px;
+      color: #fff;
+      padding: 26px 30px;
     }
 
     h5 {
-      font-size  : 22px;
+      font-size: 22px;
       font-weight: bold;
     }
 
@@ -224,7 +224,6 @@
     }
 
     .batch {
-
       // img {
       //   width: 130px;
       // }

@@ -7,6 +7,9 @@ const config = require("../../config/webpack.dev.js");
 const compiler = webpack(config);
 
 var bodyParser = require('body-parser');
+var products = require("../../json/products/index.get.json");
+var addtocart = require("../../json/addToCart/index.post.json");
+var categories = require("../../json/categories/index.get.json");
 
 // parse application/x-www-form-urlencoded
 server.use(bodyParser.urlencoded({ extended: false }));
@@ -31,12 +34,11 @@ server.use('/', function (req, res, next) {
 });
 
 server.get('/addtocart', function (req, res) {
-    var addtocart = require("../../json/addToCart/index.post.json");
     res.end(JSON.stringify({ addtocart: addtocart }));
 });
 
 server.get('/categories', function (req, res) {
-    var categories = require("../../json/categories/index.get.json");
+    
     categories.sort((a, b) => {
         return a.order - b.order;
     });
@@ -59,6 +61,11 @@ server.get('/products', function (req, res) {
         var filteredProduct = products.filter((p) => p.category == req.query.id);
         res.end(JSON.stringify({ products: filteredProduct }));
     }
+});
+
+server.get('/addTocart/:id', function (req, res) {
+    var products = require("../../json/products/index.get.json");
+    res.end(JSON.stringify({ id: req.params.id }));
 });
 
 server.listen(8080, () => {

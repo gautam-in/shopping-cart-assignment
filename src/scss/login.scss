@@ -1,25 +1,19 @@
-.login_section {
-  .login-text {
-    flex: 0 1 50%;
-    padding-left: 100px;
-    align-self: flex-start;
-  }
+.login {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
 
-  .login-text p {
-    margin-top: 15px;
-    font-size: 16px;
+  &__text {
+    flex: 0 1 100%;
+    margin-bottom: 40px;
+    padding: 0 15px;
   }
-
-  .login-form h2 {
-    margin-bottom: 10px;
+  &__form {
+    flex: 0 1 100%;
+    padding: 0 15px;
   }
-
-  .login-form {
-    flex: 0 1 50%;
-  }
-
-  .default_btn {
-    width: 300px;
+  .btn--default {
+    width: 100%;
   }
 }
 
@@ -31,90 +25,74 @@
   position: relative;
   margin-bottom: 45px;
 }
-.login_section input {
-  font-size: 18px;
-  padding: 10px 10px 10px 5px;
-  display: block;
-  width: 300px;
-  border: none;
-  border-bottom: 1px solid #cccccc;
-}
-.login_section input:focus {
-  outline: none;
-}
 
 /* LABEL ======================================= */
-.login_section label {
-  color: #999;
-  font-size: 18px;
-  font-weight: normal;
-  position: absolute;
-  pointer-events: none;
-  left: 5px;
-  top: 10px;
-  transition: 0.2s ease all;
-  -moz-transition: 0.2s ease all;
-  -webkit-transition: 0.2s ease all;
+.login {
+  label {
+    color: #999;
+    font-size: 18px;
+    font-weight: normal;
+    position: absolute;
+    pointer-events: none;
+    left: 5px;
+    top: 10px;
+    transition: 0.2s ease all;
+    -moz-transition: 0.2s ease all;
+    -webkit-transition: 0.2s ease all;
+  }
+  input {
+    font-size: 18px;
+    padding: 10px 10px 10px 5px;
+    display: block;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #cccccc;
+    &:focus,
+    &:valid {
+      outline: none;
+      border-bottom: 1px solid #50dae4;
+    }
+  }
 }
 
 /* active state */
-.login_section input:focus ~ label,
-.login_section input:valid ~ label {
-  top: -20px;
-  font-size: 14px;
-  color: #50dae4;
+.login {
+  input {
+    &:focus,
+    &:valid {
+      & ~ label {
+        top: -20px;
+        font-size: 14px;
+        color: #50dae4;
+      }
+    }
+  }
 }
 
-.login_section input:focus,
-.login_section input:valid {  
-  border-bottom: 1px solid #50dae4;  
+@media only screen and (min-width: 480px) {
+  .login {
+    &__text {
+      flex: 0 1 50%;
+      align-self: flex-start;
+      p {
+        margin-top: 15px;
+        font-size: 16px;
+      }
+    }
+    &__form {
+      flex: 0 1 50%;
+      max-width: 450px;
+      h2 {
+        margin-bottom: 10px;
+      }
+    }
+  }
 }
 
-/* BOTTOM BARS ================================= */
-.login_section .bar {
-  position: relative;
-  display: block;
-  width: 300px;
-}
-.login_section .bar:before,
-.login_section .bar:after {
-  content: "";
-  height: 1px;
-  width: 0;
-  bottom: 1px;
-  position: absolute;
-  background: #50dae4;
-  transition: 0.2s ease all;
-  -moz-transition: 0.2s ease all;
-  -webkit-transition: 0.2s ease all;
-}
-.login_section .bar:before {
-  left: 50%;
-}
-.login_section .bar:after {
-  right: 50%;
-}
-
-/* active state */
-.login_section input:focus ~ .login_section .bar:before,
-.login_section input:focus ~ .login_section .bar:after {
-  width: 50%;
-}
-
-/* HIGHLIGHTER ================================== */
-.highlight {
-  position: absolute;
-  height: 60%;
-  width: 100px;
-  top: 25%;
-  left: 0;
-  pointer-events: none;
-  opacity: 0.5;
-}
-
-/* active state */
-.login_section input:focus ~ .login_section .highlight {
-  -webkit-animation: inputHighlighter 0.3s ease;
-  -moz-animation: inputHighlighter 0.3s ease;
-  animation: inputHighlighter 0.3s ease;
+@media only screen and (min-width: 768px) {
+  .login {
+    &__text {
+      padding-left: 100px;
+    }
+  }
 }
