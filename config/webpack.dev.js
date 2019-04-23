@@ -8,7 +8,7 @@ const cssOutput = 'css/style.css';
 
 module.exports = {
     entry: [
-        "./src/js/app.js"
+        "./src/app.js"
     ],
     mode: "development",
     devServer: {
@@ -58,7 +58,9 @@ module.exports = {
         new ExtractTextPlugin(cssOutput),
         new webpack.HotModuleReplacementPlugin(),
         new CopyWebpackPlugin([
-            { from: 'src/images', to: 'static/images' }
+            { from: 'src/images', to: 'static/images' },
+            { from: 'src/vendor', to: 'vendor' },
+            { from: 'src/js', to: 'js' }
         ]),
         new HtmlWebpackPlugin({
             filename: 'index.html',
