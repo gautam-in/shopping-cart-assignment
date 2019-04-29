@@ -8,7 +8,7 @@
     "start": "node ./bin/www",
     "nodemon_serve": "nodemon ./bin/www",
     "postcss_sc": "postcss --use autoprefixer -d resources/stylesheets resources/stylesheets/*.css",
-    "start:dev": "npm run compile:sass-dev > out.log | npm run compile:js-dev | npm run postcss_sc | nodemon ./bin/www"
+    "start:dev": "npm run compile:sass-dev | npm run compile:js-dev | npm run postcss_sc | nodemon ./bin/www"
   },
   "dependencies": {
     "autoprefixer": "^9.5.1",
