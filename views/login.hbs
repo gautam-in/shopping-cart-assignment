@@ -1,30 +1,25 @@
-<div class="login">
+<div class="user-form">
     <section>
         <div class="container">
-            <div class="login__form">
-                <div class="flex_box">
-                    <div class="form_text">
-                        <h2 tabindex="0">Login</h2>
+            <div class="user-form__form">
+                <div class="flex-container">
+                    <div class="user-form__formText">
+                        <h2 tabindex="0">login</h2>
                         <p tabindex="0">Get access to your Orders , Wishlists and
                             Recommendations </p>
                     </div>
-                    <div class="form_set">
-                        <form autocomplete="off">
+                    <div class="user-form__formSet">
+                        <form method="post" autocomplete="off">
+                            {{#each loginLabel}}
                             <div class="fieldset">
-                                <input type="email" class="form-control"
-                                    id="email" required>
-                                <span class="border_bottom"></span>
-                                <label for="email">Email</label>
+                                <input type="{{type}}" class="form__input" name="email"
+                                    id="email" required tabindex="0">
+                                <label for="email" tabindex="0">{{label}}</label>
                             </div>
+                            {{/each}}
+                         
                             <div class="fieldset">
-
-                                <input type="password" class="form-control"
-                                    id="pwd" required>
-                                <span class="border_bottom"></span>
-                                <label for="pwd">Password</label>
-                            </div>
-                            <div class="fieldset">
-                                <button type="submit" class="btn full__width">Login</button>
+                                <button type="submit" class="btn btn--full_width" tabindex="0">Login</button>
                             </div>
                         </form>
                     </div>

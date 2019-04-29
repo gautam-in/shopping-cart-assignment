@@ -6,12 +6,17 @@ var logger = require('morgan');
 
 
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+var loginRouter = require('./routes/login');
+var registerRouter = require('./routes/register');
+var productRouter = require('./routes/product');
+var cartRouter = require('./routes/cart');
 
 var hbs = require('hbs');
 
 
-//var addToCart = require('./public/data/addToCart/index.get');
+
+
+//var addToCart = require('./resources/data/addToCart/index.get');
 
 var app = express();
 
@@ -23,10 +28,14 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'resources')));
+
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use('/login', loginRouter);
+app.use('/register', registerRouter);
+app.use('/product', productRouter);
+app.use('/cart', cartRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -48,6 +57,9 @@ app.use(function(err, req, res, next) {
 // partials
 
 hbs.registerPartials(path.join(__dirname, 'views/partials'));  
+hbs.registerHelper("inc", function(value, options){
+  return parseInt(value) + 1;
+});
 
 
 module.exports = app;

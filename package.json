@@ -3,15 +3,19 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "compile:js-dev": "babel public/assets/js -d public/js/ -w",
-    "compile:sass-dev": "node-sass  -rw public/scss -o public/stylesheets/ -w",
+    "compile:js-dev": "babel resources/javascripts -d resources/js -w",
+    "compile:sass-dev": "node-sass  -rw resources/scss -o resources/stylesheets/ -w",
     "start": "node ./bin/www",
-    "start:dev": "npm run compile:sass-dev > out.log | npm run compile:js-dev | nodemon ./bin/www"
+    "nodemon_serve": "nodemon ./bin/www",
+    "postcss_sc": "postcss --use autoprefixer -d resources/stylesheets resources/stylesheets/*.css",
+    "start:dev": "npm run compile:sass-dev > out.log | npm run compile:js-dev | npm run postcss_sc | nodemon ./bin/www"
   },
   "dependencies": {
+    "autoprefixer": "^9.5.1",
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.9",
     "express": "~4.16.0",
+    "express-autoprefixer": "^5.4.0",
     "hbs": "~4.0.1",
     "http-errors": "~1.6.2",
     "morgan": "~1.9.0",
