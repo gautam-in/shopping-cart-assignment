@@ -44,8 +44,7 @@
     border-radius: 290px / 8px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.9);
     z-index: -3;
-    -webkit-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%); }
+    transform: translate(-50%, -50%); }
   .home section:nth-child(odd) .categories__image {
     order: 1; }
 
@@ -77,10 +76,7 @@
     font-weight: 400;
     font-size: 16px;
     transition: 0.6s ease;
-    -webkit-user-select: none;
-       -moz-user-select: none;
-        -ms-user-select: none;
-            user-select: none;
+    user-select: none;
     background-color: rgba(0, 0, 0, 0.2);
     text-transform: uppercase;
     display: block; }

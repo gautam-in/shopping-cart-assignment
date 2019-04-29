@@ -1,4 +1,0 @@
-
-> sabkabazaar@0.0.0 compile:sass-dev C:\Users\shabhart\Documents\training\sabkaBazaar
-> node-sass  -rw resources/scss -o resources/stylesheets/ -w
-
