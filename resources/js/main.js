@@ -4,7 +4,6 @@ if (window.location.pathname == "/") {
     showSlides(slideIndex);
 }
 
-
 function plusSlides(n) {
     showSlides(slideIndex += n);
 }
@@ -86,11 +85,10 @@ function updateCheckoutAmount() {
     totalCheckoutSpan.innerHTML = totalCheckoutPrice;
 }
 
-if(window.location.pathname === "/cart"){
+if (window.location.pathname === "/cart") {
     request_server();
     updateCheckoutAmount();
 }
-
 
 function buy(id, operation) {
     var url = window.location.origin + `/cart/${id}/${operation}`;
@@ -101,9 +99,9 @@ function buy(id, operation) {
         if (xmlHttpReq.status == 200) {
             let data = JSON.parse(xmlHttpReq.responseText);
             updateCart(data.item_counter);
-        } else { }
+        } else {}
     };
-    xmlHttpReq.onerror = function () { };
+    xmlHttpReq.onerror = function () {};
     xmlHttpReq.send();
 }
 
@@ -118,17 +116,12 @@ function addRemoveItem(id, index, price, task) {
             buy(id, 'remove');
             request_server();
             //updateCart(d.item_counter);
-        } else { }
+        } else {}
     } else if (task == 'plus') {
         input.value++;
         totalCost = input.value * price;
         document.getElementById("totalp" + index).innerHTML = totalCost;
         buy(id, 'add');
         request_server();
-    } else { }
+    } else {}
 }
-
-
-
-
-
