@@ -1,6 +1,8 @@
 var slideIndex = 1;
 
-showSlides(slideIndex);
+if (window.location.pathname == "/") {
+    showSlides(slideIndex);
+}
 
 function plusSlides(n) {
     showSlides(slideIndex += n);
@@ -11,7 +13,6 @@ function currentSlide(n) {
 }
 
 function showSlides(n) {
-
     var i;
     var slides = document.getElementsByClassName("mySlides");
     var dots = document.getElementsByClassName("dot");
@@ -40,27 +41,26 @@ setInterval(() => {
 
 function request_server() {
     var url = window.location.origin + "/cart/allitem";
-
-    console.log(url);
+    console.log("request: ", url);
     let xmlHttpReq = new XMLHttpRequest();
     xmlHttpReq.open("GET", url, true);
     xmlHttpReq.onload = function () {
         if (xmlHttpReq.status == 200) {
             let data = JSON.parse(xmlHttpReq.responseText);
+            //console.log("response: ", data);
+            //console.log("response: ", data.cartItems.length);
             let totalCheckoutSpan = document.getElementById("totalCheckoutAmount");
-            console.log(" >>>>>>>>>>>>>>> ", totalCheckoutSpan);
+            document.getElementById("item_counter").innerHTML = data.item_counter;
             let totalCheckoutPrice = 0;
             data.cartItems.forEach(element => {
                 totalCheckoutPrice = totalCheckoutPrice + element.total_price;
+                //console.log(totalCheckoutPrice, " --- ", element.total_price);
             });
-            console.log(" >>>>>>>>>>>>>>> ", totalCheckoutPrice);
-
             totalCheckoutSpan.innerHTML = totalCheckoutPrice;
         } else {
             console.log("We conected to the server, but it returned an error.");
         }
     };
-
     xmlHttpReq.onerror = function () {
         console.log("Connection Error");
     };

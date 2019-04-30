@@ -34,11 +34,13 @@ router.get('/:id/:operation', function (req, res) {
           element.count = 1;
           productInCart.push(element);
           itemCounter.item_counter++;
-          element.total_price = element.price;
+          element.total_price = element.price ;
+          console.log(element.total_price);
         } else {
           element.count++;
           itemCounter.item_counter++;
           element.total_price = element.count * element.price;
+          
         }
       }
     });
