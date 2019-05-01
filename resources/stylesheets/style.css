@@ -928,14 +928,14 @@ footer {
     overflow: hidden;
     height: calc(100% - 61px);
     max-height: 10.5em; }
-  .prod-description__text a {
+  .prod-description__text .btn {
     margin-top: 20px;
     width: 100%;
     text-align: center;
     font-size: 14px; }
-    .prod-description__text a > span:before {
+    .prod-description__text .btn > span:before {
       content: "@"; }
-    .prod-description__text a > span span {
+    .prod-description__text .btn > span span {
       display: none; }
 
 @media only screen and (min-width: 480px) {
@@ -962,7 +962,7 @@ footer {
     position: relative; }
     .prod-description__text p {
       height: 10.5em; }
-    .prod-description__text a {
+    .prod-description__text .btn {
       position: absolute;
       left: 0;
       bottom: 0; } }
@@ -1007,22 +1007,22 @@ footer {
       width: 100%; }
     .prod-description__text p {
       height: 5.7em; }
-    .prod-description__text a {
+    .prod-description__text .btn {
       position: static; }
-      .prod-description__text a > span {
+      .prod-description__text .btn > span {
         position: absolute; }
-        .prod-description__text a > span:before {
+        .prod-description__text .btn > span:before {
           display: none; }
-        .prod-description__text a > span span {
+        .prod-description__text .btn > span span {
           display: inline-block; }
     .prod-description .buy_now {
       position: relative;
       text-align: right;
       margin-top: 20px; }
-      .prod-description .buy_now a {
+      .prod-description .buy_now .btn {
         width: 55%;
         margin-top: 0; }
-        .prod-description .buy_now a > span {
+        .prod-description .buy_now .btn > span {
           left: 0;
           top: 50%;
           transform: translateY(-50%);

@@ -9,12 +9,12 @@
                             Recommendations </p>
                     </div>
                     <div class="user-form__formSet">
-                        <form name="register_form" method="post" autocomplete="off">
+                        <form action="blank" method="post" autocomplete="off">
                             {{#each registerLabel}}
                             <div class="fieldset">
                                 <input type="{{type}}" class="form__input"
-                                    id="First_name" required tabindex="0">
-                                <label for="First_name" tabindex="0">{{label}}</label>
+                                     tabindex="0" name="{{name}}" id="{{id}}" required>
+                                <label for="{{id}}" tabindex="0">{{label}}</label>
                             </div>
                             {{/each}}
                           

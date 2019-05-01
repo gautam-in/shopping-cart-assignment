@@ -32,11 +32,13 @@ function showSlides(n) {
     slides[slideIndex - 1].style.display = "block";
     dots[slideIndex - 1].className += " active";
 }
+if (window.location.pathname == "/"){
+    var carousal = document.getElementById("next");
+    setInterval(() => {
+        carousal.click();
+    }, 5000);
+}
 
-var carousal = document.getElementById("next");
-setInterval(() => {
-    carousal.click();
-}, 5000);
 
 // Cart functonality
 

@@ -1,10 +1,14 @@
 [
     {
         "label": "Email",
-        "type": "text"
+        "type": "text",
+        "name": "UserEmail",
+        "id" : "User_mail"
     },
     {
         "label": "Password",
-        "type": "password"
+        "type": "password",
+        "name": "UserPwd",
+        "id" : "User_pwd"
     }
 ]
