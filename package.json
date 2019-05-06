@@ -1,15 +1,42 @@
 {
-  "name": "code-exercise",
+  "name": "webpack-shopping",
   "version": "1.0.0",
-  "description": "This is a shopping cart coding exercise",
+  "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "canned -p 5000 ./server"
+    "start": "webpack-dev-server --config=config/webpack.dev.js --open",
+    "build": "webpack --config=config/webpack.dev.js",
+    "dev": "nodemon --watch config --watch src/server src/server/main.js"
   },
-  "author": "",
-  "license": "MIT",
+  "keywords": [],
+  "author": "Ashwani Kumar",
+  "license": "ISC",
   "dependencies": {
-    "canned": "^0.3.12"
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.0.5",
+    "babel-preset-env": "^1.7.0",
+    "body-parser": "^1.18.3"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.4.3",
+    "autoprefixer": "^9.5.1",
+    "copy-webpack-plugin": "^5.0.2",
+    "css-loader": "^2.1.1",
+    "extract-loader": "^3.1.0",
+    "extract-text-webpack-plugin": "^4.0.0-beta.0",
+    "file-loader": "^3.0.1",
+    "html-loader": "^0.5.5",
+    "html-webpack-plugin": "^3.2.0",
+    "mini-css-extract-plugin": "^0.5.0",
+    "node-sass": "^4.11.0",
+    "postcss-loader": "^3.0.0",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.1",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.3.0",
+    "webpack-dev-middleware": "^3.6.2",
+    "webpack-dev-server": "^3.3.0",
+    "webpack-hot-middleware": "^2.24.3"
   }
 }
