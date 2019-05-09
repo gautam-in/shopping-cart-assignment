@@ -32,7 +32,7 @@ function showSlides(n) {
     slides[slideIndex - 1].style.display = "block";
     dots[slideIndex - 1].className += " active";
 }
-if (window.location.pathname == "/"){
+if (window.location.pathname == "/") {
     var carousal = document.getElementById("next");
     setInterval(() => {
         carousal.click();
@@ -44,30 +44,24 @@ if (window.location.pathname == "/"){
 
 function request_server() {
     var url = window.location.origin + "/cart/allitem";
-    console.log("request: ", url);
-    let xmlHttpReq = new XMLHttpRequest();
-    xmlHttpReq.open("GET", url, true);
-    xmlHttpReq.onload = function () {
-        if (xmlHttpReq.status == 200) {
-            let data = JSON.parse(xmlHttpReq.responseText);
-            //console.log("response: ", data);
-            //console.log("response: ", data.cartItems.length);
+    // console.log("request: ", url);
+
+
+    fetch(url)
+        .then(function (response) {
+            return response.json();
+        })
+        .then(function (myJson) {
+            let data = myJson;
             let totalCheckoutSpan = document.getElementById("totalCheckoutAmount");
             document.getElementById("item_counter").innerHTML = data.item_counter;
             let totalCheckoutPrice = 0;
             data.cartItems.forEach(element => {
                 totalCheckoutPrice = totalCheckoutPrice + element.total_price;
-                //console.log(totalCheckoutPrice, " --- ", element.total_price);
             });
             totalCheckoutSpan.innerHTML = totalCheckoutPrice;
-        } else {
-            console.log("We conected to the server, but it returned an error.");
-        }
-    };
-    xmlHttpReq.onerror = function () {
-        console.log("Connection Error");
-    };
-    xmlHttpReq.send();
+            // console.log(JSON.stringify(myJson));
+        });
 }
 
 function updateCart(item_counter) {
@@ -88,7 +82,7 @@ function updateCheckoutAmount() {
     totalCheckoutSpan.innerHTML = totalCheckoutPrice;
 }
 
-if(window.location.pathname === "/cart"){
+if (window.location.pathname === "/cart") {
     request_server();
     updateCheckoutAmount();
 }
