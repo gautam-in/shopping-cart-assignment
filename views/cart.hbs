@@ -1,0 +1,48 @@
+
+<section class="onhoverCart">
+    <div class="container">
+        <h3>My Cart<span>(<i id="item_counter">{{item_counter}}</i> item)</span></h3>
+        <div class="onhoverCart__Items">
+            {{#each productInCart}}
+            <div class="onhoverCart-List flex-container">
+                <div class="onhoverCart-List__img">
+                    <img
+                        src="{{imageURL}}"
+                        alt="{{name}}" tabindex="0">
+                </div>
+                <div class="onhoverCart-List__detail">
+                    <h5 tabindex="0">{{name}}</h5>
+                    <div>
+                        <button class="btn btn--minus"
+                            onclick="addRemoveItem('{{id}}', {{@index}},
+                            {{price}},'minus')">-</button>
+                        <input type="text" value="{{count}}"
+                            class="prod_quantity" id="prod{{@index}}">
+                        <button class="btn btn--plus"
+                            onclick="addRemoveItem('{{id}}', {{@index}}, {{price}},'plus')">+</button>
+                        <span class="price" tabindex="0">Rs.{{price}}</span>
+                        <span class="prod-total_price" tabindex="0">Rs. <span class="total totalp{{@index}}" id="totalp{{@index}}" tabindex="0">{{total_price}}</span></span>
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+        <div class="onhoverCart__batch">
+            <div>
+                <img
+                    src="/static/images/lowest-price.png"
+                    alt="" tabindex="0">
+            </div>
+            <div>
+                <p tabindex="0">You won't find cheaper
+                    anywhere</p>
+            </div>
+        </div>
+        <div class="checkout">
+            <p tabindex="0">Promo code can be applied on
+                payment page</p>
+            <button class="btn btn--full_width" tabindex="0">Proceed
+                to checkout <span tabindex="0">Rs. <b id="totalCheckoutAmount">0</b></span></button>
+        </div>
+    </div>
+</section>

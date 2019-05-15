@@ -1,0 +1,30 @@
+<div class="user-form">
+    <section>
+        <div class="container">
+            <div class="user-form__form">
+                <div class="flex-container">
+                    <div class="user-form__formText">
+                        <h2 tabindex="0">register</h2>
+                        <p tabindex="0">Get access to your Orders , Wishlists and
+                            Recommendations </p>
+                    </div>
+                    <div class="user-form__formSet">
+                        <form action="blank" method="post" autocomplete="off">
+                            {{#each registerLabel}}
+                            <div class="fieldset">
+                                <input type="{{type}}" class="form__input"
+                                     tabindex="0" name="{{name}}" id="{{id}}" required>
+                                <label for="{{id}}" tabindex="0">{{label}}</label>
+                            </div>
+                            {{/each}}
+                          
+                            <div class="fieldset">
+                                <button type="submit" class="btn btn--full_width" tabindex="0">Register</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

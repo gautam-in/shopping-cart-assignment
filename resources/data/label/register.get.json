@@ -1,0 +1,32 @@
+[
+    {
+        "label": "Full Name",
+        "type": "text",
+        "name" : "UserFullName",
+        "id" : "User_Fullname"
+    },
+    {
+        "label": "Last Name",
+        "type": "text",
+        "name" : "UserLastName",
+        "id" : "User_Lastname"
+    },
+    {
+        "label": "Email",
+        "type": "text",
+        "name" : "UserEmail",
+        "id" : "User_mail"
+    },
+    {
+        "label": "Password",
+        "type": "password",
+        "name" : "UserPwd",
+        "id" : "User_Pwd"
+    },
+    {
+        "label": "Confirm Password",
+        "type": "password",
+        "name" : "UserConfirmPwd",
+        "id" : "User_ConfirmPwd"
+    }
+]

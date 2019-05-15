@@ -1,15 +1,28 @@
 {
-  "name": "code-exercise",
-  "version": "1.0.0",
-  "description": "This is a shopping cart coding exercise",
-  "main": "index.js",
+  "name": "sabkabazaar",
+  "version": "0.0.0",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "canned -p 5000 ./server"
+    "compile:sass-dev": "node-sass  -rw resources/scss -o resources/stylesheets/ -w",
+    "start": "node ./bin/www",
+    "nodemon_serve": "nodemon ./bin/www",
+    "postcss_sc": "postcss --use autoprefixer -d resources/stylesheets resources/stylesheets/*.css",
+    "start:dev": "npm run compile:sass-dev | nodemon ./bin/www"
   },
-  "author": "",
-  "license": "MIT",
   "dependencies": {
-    "canned": "^0.3.12"
+    "autoprefixer": "^9.5.1",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.9",
+    "express": "~4.16.0",
+    "express-autoprefixer": "^5.4.0",
+    "hbs": "~4.0.1",
+    "http-errors": "~1.6.2",
+    "morgan": "~1.9.0",
+    "node-sass": "^4.11.0",
+    "nodemon": "^1.18.11"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0"
   }
 }

@@ -1,0 +1,48 @@
+
+<section class="product-List">
+    <div class="container">
+        <div class="flex-container">
+            <div class="product-List__filter">
+                <input id="check01" type="checkbox" name="menu" />
+                <label for="check01" class="btn"><i class="i-dropdown"></i>Fruits
+                    & Vegetable</label>
+                <ul class="product-List__dropdown">
+                    {{#each cat_List}}
+                    <li>
+                        <a href="/product/{{this.id}}">{{this.name}}</a>
+                    </li>
+                    {{/each}}
+
+                </ul>
+            </div>
+            <div class="product-List__lists">
+                <ul class="flex-container">
+                    {{#each prod_List}}
+                    <li id="{{this.category}}">
+                        <div>
+                            <h4 tabindex="0">{{this.name}}</h4>
+                            <div class="prod-description">
+                                <div class="prod-description__img"><img
+                                        alt="fruits"
+                                        src="{{this.imageURL}}"></div>
+                                <div class="prod-description__text">
+                                    <p tabindex="0">
+                                        {{this.description}}
+                                    </p>
+                                    <div class="buy_now">
+                                        <button class="btn buy"
+                                            onclick="buy('{{this.id}}', 'add')"
+                                            role="button" tabindex="0">Buy
+                                            Now <span><span>MRP</span> Rs.
+                                                {{this.price}}</span></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    {{/each}}
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
