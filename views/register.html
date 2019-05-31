@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Login Page">
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" type='text/css' href="/resources/css/main.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type='text/css' href='https://fonts.googleapis.com/css?family=Dosis:400,600,700'
+        rel='stylesheet' />
+
+    <title>Shopping Site</title>
+</head>
+
+<body>
+    <header>
+        <div class="header_wrapper">
+            <div class="header_logo">
+                <img src="/resources/images/logo.png" alt="Shpping Site logo">
+            </div>
+            <div class="header_nav">
+                <nav>
+                    <div class="header_nav_one">
+                        <span><a class="btn" href="">Home</a></span>
+                        <span><a class="btn" href="plp.html">Products</a></span>
+                    </div>
+                    <div class="header_nav_two">
+                        <div>
+                            <span><a class="btn" href="signIn.html">Login</a></span>
+                            <span><a class="btn" href="signUp.html">Register</a></span>
+                        </div>    
+                        <div class="header_nav_two_child">
+                            <i class="fa fa-shopping-cart" aria-hidden="true"></i>0 items
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <section>
+        <div class="register_sect">
+            <div class="register_sect_l">
+                <h2>Login</h2>
+                <p>Get access to your Orders, Wishlist and Recommendations</p>
+            </div>
+            <div class="register_sect_r">                
+                <form>
+                    <input type="text" id="fname" name="fname" placeholder="First Name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'First Name'">
+                    <label for="fname">First Name</label>                        
+                
+                    <input type="text" id="lname" name="lname" placeholder="Last Name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Last Name'">
+                    <label for="lname">Last Name</label>                        
+                
+                    <input type="email" id="register_email" name="email" placeholder="Email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email'">
+                    <label for="email">Email</label>                        
+                
+                    <input type="password" id="register_password" name="password" placeholder="Password" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Password'">
+                    <label for="password">Password</label>                        
+                
+                    <input type="password" id="cpassword" name="cpassword" placeholder="Confirm Password" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Confirm Password'">
+                    <label for="password">Confirm Password</label>
+
+                    <input type="button" value="Signup" onclick="register()">
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer_wrapper">
+                Copyright &copy; 2011-2019 Sabka Bazaar Grocery Supplies Pvt Ltd
+        </div>
+    </footer>
+
+    <script src="/resources/js/main.js"></script>
+
+</body>
+
+</html>
