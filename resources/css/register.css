@@ -1,0 +1,41 @@
+input[type=text], input[type=email], input[type=password] {
+  border: none;
+  border-bottom: 1px solid #3333331a;
+  width: 50%;
+  margin-top: 30px; }
+  input[type=text]:focus, input[type=email]:focus, input[type=password]:focus {
+    border-bottom: 1px solid #2FB9C6;
+    outline: none; }
+  input[type=text]:focus + label, input[type=email]:focus + label, input[type=password]:focus + label {
+    position: absolute;
+    opacity: 1;
+    display: block;
+    color: #2FB9C6;
+    font-size: 12px; }
+
+input[type=button] {
+  color: #fff;
+  background: #D10157;
+  width: 50%;
+  border: none;
+  height: 35px;
+  margin-top: 30px; }
+
+.register_sect_l {
+  width: 50%;
+  overflow: hidden;
+  float: left; }
+  .register_sect_l p {
+    font-size: 12px;
+    margin-top: 15px; }
+
+.register_sect_r {
+  width: 50%;
+  overflow: hidden; }
+  .register_sect_r label {
+    position: absolute;
+    opacity: 0;
+    display: block; }
+
+.register_sect {
+  padding: 30px; }
