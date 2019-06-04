@@ -5,23 +5,33 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "canned -p 5000 ./server",
+    "start": "node ./app.js",
     "startnew": "json-server -p 5000 ./server/db.json",
     "gulp": "gulp"
   },
   "author": "",
   "license": "MIT",
   "dependencies": {
+    "bootstrap": "^3.4.1",
     "canned": "^0.3.12",
+    "cookie-parser": "^1.4.4",
     "express-handlebars": "^3.1.0",
     "glob": "^7.1.4",
-    "gulp": "^4.0.2",
     "gulp-compile-handlebars": "^0.6.1",
+    "gulp-concat": "^2.6.1",
     "gulp-ext": "^1.0.0",
+    "gulp-livereload": "^4.0.1",
+    "gulp-minify-css": "^1.2.4",
+    "gulp-uglify": "^3.0.2",
+    "handlebars": "^4.1.2",
+    "json-concat": "0.0.1",
+    "json-server": "^0.15.0"
+  },
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-connect": "^5.7.0",
     "gulp-sass": "^4.0.2",
     "gulp-webserver": "^0.9.1",
-    "json-concat": "0.0.1",
-    "json-server": "^0.15.0",
     "node-sass": "^4.12.0"
   }
 }
