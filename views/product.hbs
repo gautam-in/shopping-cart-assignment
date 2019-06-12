@@ -1,0 +1,22 @@
+<div class="products_container">
+    <section class="navbar">
+        <div class="navbar-content">
+            <i class="fa fa-angle-down"></i>
+            {{#each prod_categories}}
+                <a href="#">{{name}}</a>
+            {{/each}}
+        </div>
+    </section>
+
+    <section class="prodlist_container">
+        {{#each prod_list}}
+        <figure class="product_item">
+            <p><strong>{{name}}</strong></p>
+            <img src={{imageURL}} alt={{description}} width="80%"/>
+            <h6>{{description}}</h6>
+            <div class="desktop_prod"><span>Rs.{{price}}</span><a class="btn" href="#">Buy Now</a></div>      
+            <div class="tablet_prod"><a class="btn" href="#">Buy Now @ Rs{{price}}</a></div>    
+        </figure>    
+        {{/each}}
+    </section>
+</div>

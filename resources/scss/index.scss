@@ -1,0 +1,125 @@
+@mixin bottom_style {
+    margin-bottom: 20px;
+    &::after {
+        content: "";
+        display: block;
+        border: 1px solid #cdcdcd6e;
+        margin: 0 30%;
+        box-shadow: 0 2px 2px #cdcdcd6e;
+        clear: both;
+    }
+}
+
+.slideshow-section {
+    @include bottom_style;
+}
+
+.prod_text_section {
+    width: 60%;
+    text-align: center;
+    p {
+        margin-bottom: 20px;
+    }
+}
+
+.prod_image_section {
+    width: 30%;
+}
+
+.prod_section {
+    .left {
+        float: left;
+    }
+    .right {
+        float: right;
+    }
+    @include bottom_style;
+}
+
+.home_container {
+    padding: 0 40px;
+}
+
+.mySlides {
+    display: none;
+    img {
+        text-align: center;
+    }
+}
+
+
+/* Slideshow container */
+
+.slideshow-container {
+    position: relative;
+    margin: auto;
+}
+
+.dot-container {
+    text-align: center;
+}
+
+
+/* Next & previous buttons */
+
+.prev,
+.next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    font-size: 25px;
+}
+
+
+/* Position the "next button" to the right */
+
+.next {
+    right: 0;
+}
+
+
+/* The dots/bullets/indicators */
+
+.dot {
+    cursor: pointer;
+    height: 10px;
+    width: 10px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active,
+.dot:hover {
+    background-color: #717171;
+}
+
+
+/* Fading animation */
+
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+    from {
+        opacity: .4
+    }
+    to {
+        opacity: 1
+    }
+}
+
+@keyframes fade {
+    from {
+        opacity: .4
+    }
+    to {
+        opacity: 1
+    }
+}
