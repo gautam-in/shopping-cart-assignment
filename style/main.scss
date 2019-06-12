@@ -1,0 +1,11 @@
+@import "header.scss" ;
+@import "login.scss" ;
+footer {
+    margin-top: 20px;
+    background: $grey;
+    color: $darker-grey;
+    display: block;
+    margin-bottom: -50%;
+    width: 100%;
+    text-align: center;
+  }

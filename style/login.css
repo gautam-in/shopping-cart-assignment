@@ -1,0 +1,95 @@
+.row-fix {
+  margin: 0px !important; }
+
+.login-text {
+  align-items: center;
+  transform: translateY(25%); }
+
+.form-input {
+  margin: 40px 0;
+  width: 100%; }
+  .form-input label {
+    position: relative;
+    display: block;
+    width: 100%;
+    min-height: 50px; }
+  .form-input .placeholder {
+    position: absolute;
+    display: block;
+    top: 25.5px;
+    z-index: 2;
+    color: #d10157;
+    font-size: 16px;
+    transition: all 200ms ease-in-out;
+    width: 100%;
+    cursor: text; }
+  .form-input input {
+    position: absolute;
+    top: 15px;
+    z-index: 1;
+    width: 100%;
+    font-size: 16px;
+    border: 0;
+    border-bottom: 1px solid #eeeeee;
+    transition: border-color 200ms ease-in-out;
+    outline: none;
+    padding: 0;
+    margin: 0; }
+  .form-input input {
+    height: 35px; }
+  .form-input input:focus,
+  .form-input input,
+  .form-input textarea:focus,
+  .form-input textarea {
+    border-bottom: 2px solid #d10157; }
+    .form-input input:focus + .placeholder,
+    .form-input input + .placeholder,
+    .form-input textarea:focus + .placeholder,
+    .form-input textarea + .placeholder {
+      top: 0;
+      cursor: inherit;
+      font-size: 14px;
+      color: #d10157; }
+
+.form-button-large {
+  background-color: #d10157;
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  padding: 10px;
+  width: 100%; }
+
+@media (max-width: 768px) {
+  .login-container {
+    display: flex;
+    flex-direction: column; }
+  .login-text {
+    flex: 50%;
+    align-items: center;
+    transform: translateY(25%); }
+  .login-form {
+    flex: 50%; } }
+
+@media (max-width: 600px) {
+  .login-container {
+    display: flex;
+    flex-direction: column; }
+  .login-text {
+    flex: 50%;
+    align-items: center;
+    transform: translateY(25%); }
+  .login-form {
+    flex: 50%; } }
+
+@media (max-width: 480px) {
+  .login-container {
+    display: flex;
+    flex-direction: column; }
+  .login-text {
+    flex: 50%;
+    align-items: center;
+    transform: translateY(25%); }
+  .login-form {
+    flex: 50%; } }

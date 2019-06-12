@@ -1,0 +1,130 @@
+@import "variables.scss";
+$highlight-color: $accent;
+$placeholder-padding: 8px;
+$placeholder-font-size: 16px;
+$placeholder-font-size-small: 14px;
+$placeholder-transition: 200ms ease-in-out;
+$input-font-size: 16px;
+$input-top: 15px;
+$input-height: 35px;
+$input-border-color: $dark-grey;
+
+.row-fix{
+    margin: 0px !important;
+}
+
+.login-text {
+  align-items: center;
+  transform: translateY(25%);
+}
+.form-input {
+  margin: 40px 0;
+  width: 100%;
+
+  label {
+    position: relative;
+    display: block;
+    width: 100%;
+    min-height: $input-height + $input-top;
+  }
+
+  .placeholder {
+    position: absolute;
+    display: block;
+    top: ($input-height / 2) + $placeholder-padding;
+    z-index: 2;
+    color: $highlight-color;
+    font-size: $placeholder-font-size;
+    transition: all $placeholder-transition;
+    width: 100%;
+    cursor: text;
+  }
+
+  input {
+    position: absolute;
+    top: $input-top;
+    z-index: 1;
+    width: 100%;
+    font-size: $input-font-size;
+    border: 0;
+    border-bottom: 1px solid $input-border-color;
+    transition: border-color $placeholder-transition;
+    outline: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  input {
+    height: $input-height;
+  }
+
+  input:focus,
+  input,
+  textarea:focus,
+  textarea {
+    & + .placeholder {
+      top: 0;
+      cursor: inherit;
+      font-size: $placeholder-font-size-small;
+      color: $highlight-color;
+    }
+
+    border-bottom: 2px solid $highlight-color;
+  }
+}
+
+.form-button-large {
+  background-color: $accent;
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  padding: 10px;
+  width: 100%;
+}
+
+@media (max-width: $breakpoint-tablet-potrait) {
+}
+@media (max-width: $breakpoint-phone) {
+  .login-container {
+    display: flex;
+    flex-direction: column;
+  }
+  .login-text {
+    flex: 50%;
+    align-items: center;
+    transform: translateY(25%);
+  }
+  .login-form {
+    flex: 50%;
+  }
+}
+@media (max-width: $breakpoint-small-phone) {
+  .login-container {
+    display: flex;
+    flex-direction: column;
+  }
+  .login-text {
+    flex: 50%;
+    align-items: center;
+    transform: translateY(25%);
+  }
+  .login-form {
+    flex: 50%;
+  }
+}
+@media (max-width: $breakpoint-smaller-phone) {
+  .login-container {
+    display: flex;
+    flex-direction: column;
+  }
+  .login-text {
+    flex: 50%;
+    align-items: center;
+    transform: translateY(25%);
+  }
+  .login-form {
+    flex: 50%;
+  }
+}

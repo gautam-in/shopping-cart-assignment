@@ -1,0 +1,127 @@
+@import "variables.scss";
+
+.section-carousel {
+  box-shadow: 0 10px 10px -7px #7777;
+  .carousel {
+    margin-top: 10px;
+  }
+  margin: 0 5px;
+  li {
+    background-color: $darker-grey;
+    border: 1px solid $darker-grey;
+  }
+}
+
+.flex-category-container-alt {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  justify-content: center;
+}
+
+section:nth-child(odd) {
+  .flex-category-container-alt {
+    .category {
+      order: 2;
+      img {
+        float: right;
+        clear: right;
+      }
+    }
+    .category-desc {
+      order: 1;
+    }
+  }
+}
+.category-section {
+  box-shadow: 0 10px 10px -7px #7777;
+  height: 20vw;
+
+  .category {
+    flex: 1;
+    transform: translateY(25%);
+    img {
+      width: 50%;
+      height: auto;
+    }
+  }
+  .category-desc {
+    flex: 1;
+    align-items: center;
+
+    p,
+    h4,
+    button {
+      transform: translateY(25%);
+      text-align: center;
+
+      display: block;
+      margin: 1em auto;
+    }
+  }
+  .category-button {
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    padding: 10px;
+  }
+}
+
+@media (max-width: $breakpoint-tablet-potrait) {
+  .category-section {
+    height: 30vw;
+  }
+}
+@media (max-width: $breakpoint-phone) {
+  .category-section {
+    height: 40vw;
+    .category {
+      img {
+        width: auto;
+        height: 100%;
+      }
+    }
+  }
+}
+@media (max-width: $breakpoint-small-phone) {
+  .category-section {
+    height: 50vw;
+    .category {
+      flex: 1;
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+    .category-desc {
+      flex: 3;
+      button {
+        margin-top: 1em;
+      }
+    }
+  }
+}
+@media (max-width: $breakpoint-smaller-phone) {
+  .category-section {
+    height: 70vw;
+    .category {
+      flex: 1;
+      width: 33.33%;
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+    .category-desc {
+      width: 66.66%;
+      flex: 3;
+      button {
+        margin-top: 1em;
+      }
+    }
+  }
+}

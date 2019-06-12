@@ -1,0 +1,128 @@
+@import "variables.scss";
+
+.logo,
+.logo img {
+  margin: 3px;
+  display: inline-block;
+  width: 10vw;
+  height: auto;
+  margin-right: 10vw;
+  z-index: 1;
+}
+.sub-nav {
+  margin: 0 2% 0 auto;
+  float: right;
+  .icon {
+    display: none;
+  }
+  li {
+    display: inline-block;
+    margin-left: 5px;
+    .sub-nav-item {
+      font-size: 12px;
+      color: $darker-grey;
+      text-decoration: none;
+    }
+  }
+}
+.main-nav {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: inline-flex;
+  width: 50vw;
+  flex-direction: row;
+  align-items: center;
+  .cart-icon-container {
+    background-color: $grey;
+    text-align: left;
+    padding-left: 0;
+
+    .cart-icon {
+      display: inline-block;
+      height: 20px;
+      width: auto;
+      fill: $accent;
+    }
+  }
+  a {
+    padding: 10px 15px;
+    text-align: center;
+    display: inline-block;
+    color: $darker-grey;
+    font-size:  12px;
+  }
+  a:hover {
+    color: #718daa;
+  }
+}
+
+nav {
+  padding-top: 0.5em;
+
+  background-color: #fff;
+  box-shadow: 0px 0px 14px 0px rgba(0, 0, 0, 0.75);
+}
+
+@media (max-width: $breakpoint-tablet-potrait) {
+}
+@media (max-width: $breakpoint-phone) {
+  .clearfix:after {
+    content: " ";
+    display: block;
+    height: 0;
+    clear: both;
+  }
+  .logo,
+  .logo img {
+    margin: 3px;
+    display: inline-block;
+    width: 15vw;
+    height: auto;
+    margin-right: 10vw;
+    z-index: 1;
+  }
+  .main-nav {
+    float: right;
+    a {
+      padding: 5px 5px;
+    }
+  }
+  .main-nav li:not(:nth-last-child(1)) {
+    display: none;
+  }
+
+  .sub-nav .icon {
+    float: right;
+    display: block;
+    margin-left: 5px;
+    img {
+      height: 1.5em;
+    }
+  }
+
+  .main-nav.responsive:not(a) {
+    width: 100%;
+    display: block;
+  }
+  .main-nav.responsive li {
+    float: none;
+    display: block;
+    width: 100%;
+    text-align: left;
+  }
+}
+
+@media (max-width: $breakpoint-small-phone) {
+}
+@media (max-width: $breakpoint-smaller-phone) {
+  .logo,
+  .logo img {
+    margin: 0;
+    display: inline-block;
+    width: 15vw;
+    height: auto;
+    margin-right: 10vw;
+    z-index: 1;
+  }
+}
