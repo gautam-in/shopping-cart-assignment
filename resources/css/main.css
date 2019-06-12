@@ -1,0 +1,143 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Dosis", "Arial", sans-serif; }
+
+a {
+  text-decoration: none; }
+
+.page_nav_link:link {
+  display: inline-block;
+  font-weight: 300;
+  text-decoration: none;
+  color: black; }
+
+.page_nav_link:visited {
+  display: inline-block;
+  font-weight: 300;
+  text-decoration: none;
+  color: black; }
+
+.header_wrapper {
+  padding: 2px 40px;
+  border-bottom: 2px solid #33333314;
+  width: 100%; }
+
+.header_logo {
+  width: 15%;
+  display: inline-block; }
+
+.header_nav {
+  width: 75%;
+  display: inline-block;
+  font-size: 12px; }
+
+.header_nav_one {
+  width: 50%;
+  float: left;
+  padding-top: 25px; }
+
+.header_nav_two {
+  width: 50%;
+  float: left;
+  text-align: right;
+  margin-bottom: -6px; }
+
+.footer_wrapper {
+  background: #3333331a;
+  height: 30px;
+  padding-left: 10%;
+  padding-top: 6px;
+  font-size: 10px; }
+
+.fa-shopping-cart {
+  color: #CF0153; }
+
+.header_nav_two_child {
+  background: #3333331a;
+  text-align: center;
+  width: 15%;
+  height: 30px;
+  float: right;
+  padding-top: 5px;
+  margin-top: 5px; }
+
+input[type=submit] {
+  color: #fff;
+  background: #D10157;
+  width: 50%;
+  border: none;
+  height: 35px;
+  margin-top: 30px; }
+
+.login_sect_l {
+  width: 50%;
+  overflow: hidden;
+  float: left; }
+  .login_sect_l p {
+    font-size: 12px;
+    margin-top: 15px; }
+
+.login_sect_r {
+  width: 50%;
+  overflow: hidden; }
+  .login_sect_r label {
+    position: absolute;
+    opacity: 0;
+    display: block; }
+
+.login_sect {
+  padding: 30px; }
+
+input[type=text],
+input[type=email],
+input[type=password] {
+  border: none;
+  border-bottom: 1px solid #3333331a;
+  width: 50%;
+  margin-top: 30px; }
+  input[type=text]:focus,
+  input[type=email]:focus,
+  input[type=password]:focus {
+    border-bottom: 1px solid #2FB9C6;
+    outline: none; }
+  input[type=text]:focus + label,
+  input[type=email]:focus + label,
+  input[type=password]:focus + label {
+    position: absolute;
+    opacity: 1;
+    display: block;
+    color: #2FB9C6;
+    font-size: 12px; }
+
+.register_sect_l {
+  width: 50%;
+  overflow: hidden;
+  float: left; }
+  .register_sect_l p {
+    font-size: 12px;
+    margin-top: 15px; }
+
+.register_sect_r {
+  width: 50%;
+  overflow: hidden; }
+  .register_sect_r label {
+    position: absolute;
+    opacity: 0;
+    display: block; }
+
+.register_sect {
+  padding: 30px; }
+
+.btn {
+  color: #fff;
+  border: #BF2957;
+  background-color: #BF2957;
+  display: inline-block;
+  text-decoration: none;
+  height: 35px;
+  padding: 5px; }
+
+footer {
+  clear: both; }
