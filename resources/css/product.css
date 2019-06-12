@@ -1,0 +1,129 @@
+.products_container {
+  padding: 0 40px; }
+
+.navbar {
+  width: 15%;
+  z-index: 1;
+  background-color: #EAEAEA;
+  font-size: 12px;
+  float: left; }
+  .navbar .navbar-content a {
+    padding: 6px 8px 6px 16px;
+    display: block;
+    color: #000; }
+    .navbar .navbar-content a::after {
+      content: "";
+      display: block;
+      border: 1px solid #1d151533; }
+  .navbar .navbar-content i {
+    display: none; }
+
+.prodlist_container {
+  width: 85%;
+  float: right; }
+
+.product_item {
+  width: 20%;
+  float: left;
+  margin: 15px;
+  height: 475px; }
+  .product_item::after {
+    content: "";
+    display: block;
+    border: 1px dotted #1d151533; }
+  .product_item p {
+    height: 100px; }
+  .product_item h6 {
+    background: #EAEAEA;
+    margin: 5px 0px;
+    padding: 5px;
+    min-height: 110px;
+    color: #333333cf; }
+  .product_item .desktop_prod {
+    display: block;
+    margin: 15px 0px 25px 0px;
+    clear: both; }
+    .product_item .desktop_prod .btn {
+      float: right; }
+  .product_item .tablet_prod {
+    display: none; }
+
+/* 
+  ##Device = Tablets, Ipads (portrait)
+  ##Screen = B/w 768px to 1024px
+*/
+@media (min-width: 768px) and (max-width: 1024px) {
+  .product_item {
+    width: 44%;
+    height: 350px; }
+    .product_item img {
+      width: 55%;
+      margin-top: 70px;
+      float: left; }
+    .product_item h6 {
+      width: 45%;
+      float: left;
+      height: 210px;
+      margin-bottom: 10px; }
+    .product_item .desktop_prod {
+      display: none; }
+    .product_item .tablet_prod {
+      display: block;
+      clear: both;
+      text-align: center;
+      margin: 15px 0px 25px 0px; }
+    .product_item p {
+      height: 80px; } }
+
+/* 
+  ##Device = Most of the Smartphones Mobiles (Portrait)
+  ##Screen = B/w 320px to 479px
+*/
+@media (min-width: 320px) and (max-width: 480px) {
+  .navbar {
+    width: 80%;
+    position: absolute;
+    background: #BF2957; }
+    .navbar:hover .navbar-content {
+      height: unset; }
+    .navbar .navbar-content {
+      overflow: hidden;
+      z-index: 1;
+      background: #BF2957;
+      height: 35px; }
+      .navbar .navbar-content a {
+        float: none;
+        color: #ffffff;
+        padding: 12px 16px; }
+        .navbar .navbar-content a::after {
+          content: "";
+          border: none; }
+      .navbar .navbar-content i {
+        display: block;
+        font-size: 25px;
+        float: right;
+        padding: 5px;
+        color: #ffffff; }
+  .product_item {
+    width: 44%;
+    height: 350px; }
+    .product_item img {
+      width: 55%;
+      margin-top: 70px;
+      float: left; }
+    .product_item h6 {
+      width: 45%;
+      float: left;
+      height: 210px;
+      margin-bottom: 10px; }
+    .product_item .desktop_prod {
+      display: none; }
+    .product_item .tablet_prod {
+      display: block;
+      clear: both;
+      text-align: center;
+      margin: 15px 0px 25px 0px; }
+    .product_item p {
+      height: 80px; }
+  .prodlist_container {
+    width: 100%; } }
