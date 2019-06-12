@@ -13,10 +13,10 @@ glob("./server/**/*.json",null,function(er,files){
         })
     };
 });
-var express = require('express');
+const express = require('express');
 var exphbs  = require('express-handlebars');  
 var app = express();
- 
+var mainRouting = require('./scripts/main');
 app.engine('hbs', exphbs({
     extname: 'hbs', 
     defaultLayout: 'main',
@@ -26,14 +26,13 @@ app.engine('hbs', exphbs({
 app.use(express.static('static'));
 app.use(express.static('style'));
 app.use(express.static('scripts'));
-const fs = require('fs');
-let obj = fs.readFileSync('server/banners/index.get.json');  
-let banners = JSON.parse(obj);
+app.use(express.static('server'));
+app.use('/', mainRouting);
 app.set('views',__dirname+'/views/');
 app.set('view engine', 'hbs');
  
 app.get('/', (req, res) => {
-    res.render('home',{banners: banners.banners})
+    res.render('home',)
 });
 app.get('/login', (req, res) => {
     res.render('login')
