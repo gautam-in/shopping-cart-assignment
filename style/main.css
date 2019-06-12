@@ -192,6 +192,47 @@ nav {
   .login-form {
     flex: 50%; } }
 
+.banner-wrapper {
+  margin-top: 20px; }
+
+.mySlides {
+  display: none; }
+
+.w3-left, .w3-right, .w3-badge {
+  cursor: pointer; }
+
+.w3-badge {
+  height: 13px;
+  width: 13px;
+  padding: 0; }
+
+.banner-image {
+  height: auto;
+  max-width: 100%;
+  display: block; }
+
+section:nth-child(even) .category img {
+  width: 35%;
+  height: auto;
+  float: right; }
+
+section:nth-child(odd) .category img {
+  width: 35%;
+  height: auto;
+  float: left; }
+
+.category-section {
+  min-height: 230px; }
+
+.category-heading {
+  text-align: center; }
+
+.category-text {
+  text-align: center; }
+
+.button-align {
+  text-align: center; }
+
 footer {
   margin-top: 20px;
   background: rgba(238, 238, 238, 0.867);
