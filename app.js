@@ -31,18 +31,18 @@ app.use('/', mainRouting);
 app.set('views',__dirname+'/views/');
 app.set('view engine', 'hbs');
  
-app.get('/', (req, res) => {
-    res.render('home',)
-});
+// app.get('/', (req, res) => {
+//     res.render('home',)
+// });
 app.get('/login', (req, res) => {
     res.render('login')
 });
 app.get('/register', (req, res) => {
     res.render('register')
 });
-app.get('/products', (req, res) => {
-    res.render('products')
-});
+// app.get('/products', (req, res) => {
+//     res.render('products')
+// });
 
 app.listen(8080, () => {
   console.log('Example app listening on port 8080!')

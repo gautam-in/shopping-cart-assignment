@@ -36,7 +36,7 @@
       display: inline-block;
       height: 20px;
       width: auto;
-      fill: #d10157; }
+      color: #d10157; }
   .main-nav a {
     padding: 10px 15px;
     text-align: center;
@@ -212,26 +212,155 @@ nav {
   display: block; }
 
 section:nth-child(even) .category img {
-  width: 35%;
+  width: 30%;
   height: auto;
-  float: right; }
+  float: right;
+  margin-top: 20px; }
+
+section:nth-child(even) .category-desc {
+  float: left;
+  width: 70%;
+  margin-top: 30px; }
 
 section:nth-child(odd) .category img {
-  width: 35%;
+  width: 30%;
   height: auto;
-  float: left; }
+  float: left;
+  margin-top: 20px; }
+
+section:nth-child(odd) .category-desc {
+  float: right;
+  width: 70%;
+  margin-top: 30px; }
 
 .category-section {
   min-height: 230px; }
+
+.category-section:after {
+  content: "";
+  display: block;
+  margin: 0 auto;
+  width: 50%;
+  border-bottom: 5px solid #ededed; }
 
 .category-heading {
   text-align: center; }
 
 .category-text {
-  text-align: center; }
+  text-align: center;
+  font-size: 12px; }
 
 .button-align {
   text-align: center; }
+
+.category-button {
+  background-color: #d10157;
+  color: #fff; }
+
+@media (max-width: 768px) {
+  .category img {
+    margin-top: 60px; } }
+
+.categories-wrapper {
+  background: rgba(238, 238, 238, 0.867);
+  padding-top: 15px;
+  padding-bottom: 15px;
+  float: left;
+  width: 25%; }
+
+.product-wrapper {
+  float: right;
+  width: 75%;
+  margin-top: 20px; }
+
+.category-name {
+  font-size: 12px;
+  padding: 14px;
+  border-bottom: 1px solid #6b6b6b;
+  color: #6b6b6b; }
+
+.product-name {
+  overflow: hidden;
+  font-size: 12px;
+  height: 34px; }
+
+.product {
+  width: 20%;
+  float: left;
+  min-height: 330px;
+  margin: 15px;
+  border-bottom: 1px dashed; }
+
+.product-image {
+  margin-top: 15px; }
+  .product-image .pro-img {
+    width: 100%; }
+
+.product-description {
+  background: rgba(238, 238, 238, 0.867);
+  font-size: 11px;
+  padding: 5px;
+  height: 88px;
+  overflow: hidden;
+  margin-top: 5px; }
+
+.pricing-purchasing {
+  margin-top: 5px; }
+  .pricing-purchasing .pricing {
+    font-size: 12px; }
+  .pricing-purchasing .purchasing {
+    background-color: #d10157;
+    color: #fff;
+    width: 40%;
+    font-size: 10px;
+    padding: 0px; }
+    .pricing-purchasing .purchasing .smaller-device {
+      display: none; }
+
+.categories-wrapper-phone {
+  display: none; }
+
+@media (max-width: 768px) {
+  .product {
+    width: 40%;
+    min-height: 200px; }
+  .product-name {
+    font-size: 14px;
+    height: 40px; }
+  .product-image .pro-img {
+    width: 50%;
+    float: left; }
+  .product-description {
+    width: 50%;
+    float: right; }
+  .pricing-purchasing .pricing {
+    display: none; }
+  .pricing-purchasing .purchasing {
+    width: 100%; }
+    .pricing-purchasing .purchasing .smaller-device {
+      display: block; } }
+
+@media (max-width: 600px), (max-width: 600px) {
+  .categories-wrapper {
+    display: none; }
+  .product-wrapper {
+    float: left;
+    width: 100%; }
+  .product {
+    width: 90%; }
+  .categories-wrapper-phone {
+    display: block;
+    background-color: #d10157;
+    color: #fff; }
+    .categories-wrapper-phone .category-phone {
+      padding: 10px; }
+    .categories-wrapper-phone .w3-dropdown-content {
+      background: #d10157;
+      min-width: 94%;
+      top: 131px;
+      right: 15px; }
+    .categories-wrapper-phone .category-name {
+      color: #fff; } }
 
 footer {
   margin-top: 20px;

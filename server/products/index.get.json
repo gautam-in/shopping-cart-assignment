@@ -42,7 +42,7 @@
     },
     {
       "name": "Tomato - Local, Organically Grown, 500 gm",
-      "imageURL": "/images/products/fruit-n-veg/capsicum-green.jpg",
+      "imageURL": "/images/products/fruit-n-veg/tomato.jpg",
       "description": "Fresho brings to you an exquisite range of locally grown organic tomatoes, which are now available at bigbasket. These organic tomatoes are free from harmful pesticides and insecticides.",
       "price": 12,
       "stock": 50,
@@ -212,7 +212,7 @@
     },
     {
       "name": "Nestle Cerelac Stage - 4 Multi Grain & Fruits, 2x300 gm",
-      "imageURL": "/static/images/products/baby/cerelac.jpg",
+      "imageURL": "/images/products/baby/cerelac.jpg",
       "description": "Nestle Multigrain Cerelac enriched with the goodness of five fruits is a complementary food which is given to babies above the age of six months.",
       "price": 478,
       "stock": 50,
@@ -222,7 +222,7 @@
     },
     {
       "name": "Baby Dove Baby Bar - Rich Moisture, 50 gm",
-      "imageURL": "/static/images/products/baby/baby-dove.jpg",
+      "imageURL": "/images/products/baby/baby-dove.jpg",
       "description": "Gentler and more nourishing than any other baby soap bar, Baby Dove Rich Moisture Baby Bar has a hypoallergenic and pH neutral formula thats ophthalmologist, dermatologist and pediatrician tested too.",
       "price": 30,
       "stock": 50,
@@ -232,7 +232,7 @@
     },
     {
       "name": "Johnson's Active Kids Shampoo - Shiny Drops With Argan Oil, 100 ml",
-      "imageURL": "/static/images/products/baby/shampoo.jpg",
+      "imageURL": "/images/products/baby/shampoo.jpg",
       "description": "A hair care product range specifically for kids aged 2 years and above. This mild shiny drops shampoo formula has been developed to boost natural shine & help reduce frizz, leaving hair silky smooth and healthy looking.",
       "price": 95,
       "stock": 50,
@@ -242,7 +242,7 @@
     },
     {
       "name": "Baby Wipes - Cherry Blossom, 2x80 pcs",
-      "imageURL": "/static/images/products/baby/red-wipes.jpg",
+      "imageURL": "/images/products/baby/red-wipes.jpg",
       "description": "These Wipes have aloe vera as key ingredient which makes it the best choice for baby hygiene, make-up remover, sanitizing your face and hand after a long drive, sports or any other situation where you need a quick hygiene solution.",
       "price": 300,
       "stock": 50,

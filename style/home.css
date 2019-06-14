@@ -18,23 +18,51 @@
   display: block; }
 
 section:nth-child(even) .category img {
-  width: 35%;
+  width: 30%;
   height: auto;
-  float: right; }
+  float: right;
+  margin-top: 20px; }
+
+section:nth-child(even) .category-desc {
+  float: left;
+  width: 70%;
+  margin-top: 30px; }
 
 section:nth-child(odd) .category img {
-  width: 35%;
+  width: 30%;
   height: auto;
-  float: left; }
+  float: left;
+  margin-top: 20px; }
+
+section:nth-child(odd) .category-desc {
+  float: right;
+  width: 70%;
+  margin-top: 30px; }
 
 .category-section {
   min-height: 230px; }
+
+.category-section:after {
+  content: "";
+  display: block;
+  margin: 0 auto;
+  width: 50%;
+  border-bottom: 5px solid #ededed; }
 
 .category-heading {
   text-align: center; }
 
 .category-text {
-  text-align: center; }
+  text-align: center;
+  font-size: 12px; }
 
 .button-align {
   text-align: center; }
+
+.category-button {
+  background-color: #d10157;
+  color: #fff; }
+
+@media (max-width: 768px) {
+  .category img {
+    margin-top: 60px; } }
