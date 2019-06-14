@@ -1,16 +1,16 @@
-<div class="home_container">
+<main class="home_container">
     <section class="slideshow-section">
         <div class="slideshow-container">
             {{#each banners}}
             <div class="mySlides fade">
-                <img src={{bannerImageUrl}} alt={{bannerImageAlt}} width="100%"/>
+                <img src={{bannerImageUrl}} alt={{bannerImageAlt}} width="100%" />
             </div>
             {{/each}}
 
-            <a class="prev" onclick="plusSlides(-1)"><i class="fa fa-chevron-circle-left"></i></a>
-            <a class="next" onclick="plusSlides(1)"><i class="fa fa-chevron-circle-right"></i></a>
+            <a class="prev" onclick="plusSlides(-1)"><i class="fa fa-chevron-circle-left" aria-hidden="true"></i></a>
+            <a class="next" onclick="plusSlides(1)"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i></a>
         </div>
-        
+
         <div class="dot-container">
             {{#each banners}}
             <span class="dot" onclick="currentSlide({{order}})"></span>
@@ -21,12 +21,12 @@
     <section class="prod_section">
         {{#each categories}}
         {{#if_eq key "fruit-and-veg"}}
-        <div class="prod_image_section left"><img src={{imageUrl}} alt={{key}} width="100%"/></div>
-        <div class="prod_text_section right">
-            <p><strong>{{name}}</strong></p>
+        <div class="prod_image left"><img src={{imageUrl}} alt={{key}} width="100%" /></div>
+        <aside class="prod_content right">
+            <h4>{{name}}</h4>
             <p>{{description}}</p>
             <a class="btn" href="#">Explore {{key}}</a>
-        </div>
+        </aside>
         {{/if_eq}}
         {{/each}}
     </section>
@@ -34,12 +34,12 @@
     <section class="prod_section">
         {{#each categories}}
         {{#if_eq key "bakery-cakes-dairy"}}
-        <div class="prod_text_section left">
-            <p><strong>{{name}}</strong></p>
+        <aside class="prod_content left">
+            <h4>{{name}}</h4>
             <p>{{description}}</p>
             <a class="btn" href="#">Explore {{key}}</a>
-        </div>
-        <div class="prod_image_section right"><img src={{imageUrl}} alt={{key}} width="100%"/></div>
+        </aside>
+        <div class="prod_image right"><img src={{imageUrl}} alt={{key}} width="100%" /></div>
         {{/if_eq}}
         {{/each}}
     </section>
@@ -47,12 +47,12 @@
     <section class="prod_section">
         {{#each categories}}
         {{#if_eq key "beverages"}}
-        <div class="prod_image_section left"><img src={{imageUrl}} alt={{key}} width="100%"/></div>
-        <div class="prod_text_section right">
-            <p><strong>{{name}}</strong></p>
+        <div class="prod_image left"><img src={{imageUrl}} alt={{key}} width="100%" /></div>
+        <aside class="prod_content right">
+            <h4>{{name}}</h4>
             <p>{{description}}</p>
             <a class="btn" href="#">Explore {{key}}</a>
-        </div>
+        </aside>
         {{/if_eq}}
         {{/each}}
     </section>
@@ -60,12 +60,12 @@
     <section class="prod_section">
         {{#each categories}}
         {{#if_eq key "beauty-hygiene"}}
-        <div class="prod_text_section left">
-            <p><strong>{{name}}</strong></p>
+        <aside class="prod_content left">
+            <h4>{{name}}</h4>
             <p>{{description}}</p>
             <a class="btn" href="#">Explore {{key}}</a>
-        </div>
-        <div class="prod_image_section right"><img src={{imageUrl}} alt={{key}} width="100%"/></div>
+        </aside>
+        <div class="prod_image right"><img src={{imageUrl}} alt={{key}} width="100%" /></div>
         {{/if_eq}}
         {{/each}}
     </section>
@@ -73,13 +73,13 @@
     <section class="prod_section">
         {{#each categories}}
         {{#if_eq key "baby"}}
-        <div class="prod_image_section left"><img src={{imageUrl}} alt={{key}} width="100%"/></div>
-        <div class="prod_text_section right">
-            <p><strong>{{name}}</strong></p>
+        <div class="prod_image left"><img src={{imageUrl}} alt={{key}} width="100%" /></div>
+        <aside class="prod_content right">
+            <h4>{{name}}</h4>
             <p>{{description}}</p>
             <a class="btn" href="#">Explore {{key}}</a>
-        </div>
+        </aside>
         {{/if_eq}}
         {{/each}}
     </section>
-</div>
+</main>
