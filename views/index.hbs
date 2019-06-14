@@ -17,69 +17,16 @@
             {{/each}}
         </div>
     </section>
-
+    {{#each categories}}
+    {{#if enabled}}
     <section class="prod_section">
-        {{#each categories}}
-        {{#if_eq key "fruit-and-veg"}}
-        <div class="prod_image left"><img src={{imageUrl}} alt={{key}} width="100%" /></div>
-        <aside class="prod_content right">
+        <div class="prod_image"><img src={{imageUrl}} alt={{key}} width="100%" /></div>
+        <aside class="prod_content">
             <h4>{{name}}</h4>
             <p>{{description}}</p>
             <a class="btn" href="#">Explore {{key}}</a>
         </aside>
-        {{/if_eq}}
-        {{/each}}
     </section>
-
-    <section class="prod_section">
-        {{#each categories}}
-        {{#if_eq key "bakery-cakes-dairy"}}
-        <aside class="prod_content left">
-            <h4>{{name}}</h4>
-            <p>{{description}}</p>
-            <a class="btn" href="#">Explore {{key}}</a>
-        </aside>
-        <div class="prod_image right"><img src={{imageUrl}} alt={{key}} width="100%" /></div>
-        {{/if_eq}}
-        {{/each}}
-    </section>
-
-    <section class="prod_section">
-        {{#each categories}}
-        {{#if_eq key "beverages"}}
-        <div class="prod_image left"><img src={{imageUrl}} alt={{key}} width="100%" /></div>
-        <aside class="prod_content right">
-            <h4>{{name}}</h4>
-            <p>{{description}}</p>
-            <a class="btn" href="#">Explore {{key}}</a>
-        </aside>
-        {{/if_eq}}
-        {{/each}}
-    </section>
-
-    <section class="prod_section">
-        {{#each categories}}
-        {{#if_eq key "beauty-hygiene"}}
-        <aside class="prod_content left">
-            <h4>{{name}}</h4>
-            <p>{{description}}</p>
-            <a class="btn" href="#">Explore {{key}}</a>
-        </aside>
-        <div class="prod_image right"><img src={{imageUrl}} alt={{key}} width="100%" /></div>
-        {{/if_eq}}
-        {{/each}}
-    </section>
-
-    <section class="prod_section">
-        {{#each categories}}
-        {{#if_eq key "baby"}}
-        <div class="prod_image left"><img src={{imageUrl}} alt={{key}} width="100%" /></div>
-        <aside class="prod_content right">
-            <h4>{{name}}</h4>
-            <p>{{description}}</p>
-            <a class="btn" href="#">Explore {{key}}</a>
-        </aside>
-        {{/if_eq}}
-        {{/each}}
-    </section>
+    {{/if}}
+    {{/each}}
 </main>

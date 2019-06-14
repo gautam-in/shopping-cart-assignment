@@ -14,8 +14,12 @@
             <h4>{{name}}</strong></h4>
             <img src={{imageURL}} alt={{description}} width="80%"/>
             <h6>{{description}}</h6>
-            <div class="desktop_prod"><span>Rs.{{price}}</span><a class="btn" href="#">Buy Now</a></div>      
-            <div class="tablet_prod"><a class="btn" href="#">Buy Now @ Rs{{price}}</a></div>    
+            <div class="desktop_prod">
+                <span>Rs.{{price}}</span><a class="btn" onclick="addItemToCart('{{this.id}}')">Buy Now</a>
+            </div>      
+            <div class="tablet_prod">
+                <a class="btn" onclick="addItemToCart('{{this.id}}')">Buy Now @ Rs{{price}}</a>
+            </div>    
         </div>    
         {{/each}}
     </section>

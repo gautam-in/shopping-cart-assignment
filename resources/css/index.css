@@ -8,21 +8,8 @@
     box-shadow: 0 2px 2px #cdcdcdcd;
     clear: both; }
 
-.prod_content {
-  width: 60%;
-  text-align: center; }
-  .prod_content p {
-    margin-bottom: 20px; }
-
-.prod_image {
-  width: 30%; }
-
 .prod_section {
   margin-bottom: 20px; }
-  .prod_section .left {
-    float: left; }
-  .prod_section .right {
-    float: right; }
   .prod_section::after {
     content: "";
     display: block;
@@ -30,6 +17,24 @@
     margin: 0 30%;
     box-shadow: 0 2px 2px #cdcdcdcd;
     clear: both; }
+  .prod_section:nth-child(even) .prod_content {
+    width: 60%;
+    float: right;
+    text-align: center; }
+    .prod_section:nth-child(even) .prod_content p {
+      margin-bottom: 20px; }
+  .prod_section:nth-child(even) .prod_image {
+    width: 30%;
+    float: left; }
+  .prod_section:nth-child(odd) .prod_content {
+    width: 60%;
+    float: left;
+    text-align: center; }
+    .prod_section:nth-child(odd) .prod_content p {
+      margin-bottom: 20px; }
+  .prod_section:nth-child(odd) .prod_image {
+    width: 30%;
+    float: right; }
 
 .home_container {
   padding: 0 40px; }

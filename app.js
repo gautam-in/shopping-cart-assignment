@@ -5,6 +5,7 @@ var glob = require("glob"),
     app = express(),
     indexRouter = require('./resources/js/index'),
     productsRouter = require('./resources/js/product');
+    //cartRouter = require('./resources/js/cart');
 
 // options is optional 
 glob("./server/**/*.json", null, function(er, files) {
@@ -33,6 +34,7 @@ app.use(express.static(__dirname + '/resources'));
 
 app.use('/', indexRouter);
 app.use('/product', productsRouter);
+//app.use('/cart', cartRouter);
 
 app.set('views', __dirname + '/views/');
 app.set('view engine', 'hbs');

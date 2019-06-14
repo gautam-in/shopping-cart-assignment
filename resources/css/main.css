@@ -6,53 +6,54 @@
   * a {
     text-decoration: none; }
 
-.page_nav_link:link {
-  display: inline-block;
-  font-weight: 300;
-  color: black; }
+body {
+  font-size: 12px; }
 
-.page_nav_link:visited {
-  display: inline-block;
-  font-weight: 300;
-  color: black; }
-
-.header_wrapper {
+header {
   padding: 2px 40px;
-  border-bottom: 2px solid #cdcdcdcd;
-  width: 100%; }
-  .header_wrapper .header_logo {
-    width: 15%;
-    display: inline-block; }
-  .header_wrapper .header_nav {
-    width: 75%;
+  border-bottom: 2px solid #cdcdcdcd; }
+  header .header_nav {
+    width: 80%;
     display: inline-block;
-    font-size: 12px; }
-    .header_wrapper .header_nav .header_nav_one {
-      width: 50%;
+    margin-bottom: -6px; }
+    header .header_nav a:link, header .header_nav a:visited {
+      display: inline-block;
+      font-weight: 300;
+      color: black; }
+    header .header_nav .header_nav_one {
       float: left;
       padding-top: 25px; }
-    .header_wrapper .header_nav .header_nav_two {
-      width: 50%;
-      float: left;
-      text-align: right;
-      margin-bottom: -6px; }
-      .header_wrapper .header_nav .header_nav_two .my-cart-btn {
+    header .header_nav .header_nav_two {
+      float: right; }
+      header .header_nav .header_nav_two .cart-btn {
+        cursor: pointer;
         background: #cdcdcdcd;
         text-align: center;
-        width: 15%;
         height: 30px;
-        float: right;
         padding-top: 5px;
         margin-top: 5px; }
-        .header_wrapper .header_nav .header_nav_two .my-cart-btn .fa-shopping-cart {
+        header .header_nav .header_nav_two .cart-btn .fa-shopping-cart {
           color: #cf0153; }
 
-.footer_wrapper {
+footer {
   background: #cdcdcdcd;
-  height: 30px;
-  padding-left: 10%;
-  padding-top: 6px;
-  font-size: 10px; }
+  padding: 10px;
+  text-align: center;
+  clear: both; }
+
+.form_content {
+  padding: 30px; }
+  .form_content .left_content {
+    width: 50%;
+    overflow: hidden;
+    float: left; }
+  .form_content .right_content {
+    width: 50%;
+    overflow: hidden; }
+    .form_content .right_content label {
+      position: absolute;
+      opacity: 0;
+      display: block; }
 
 input[type="submit"] {
   color: #fff;
@@ -61,23 +62,6 @@ input[type="submit"] {
   border: none;
   height: 35px;
   margin-top: 30px; }
-
-.login_sect {
-  padding: 30px; }
-  .login_sect .login_sect_l {
-    width: 50%;
-    overflow: hidden;
-    float: left; }
-    .login_sect .login_sect_l p {
-      font-size: 12px;
-      margin-top: 15px; }
-  .login_sect .login_sect_r {
-    width: 50%;
-    overflow: hidden; }
-    .login_sect .login_sect_r label {
-      position: absolute;
-      opacity: 0;
-      display: block; }
 
 input[type="text"],
 input[type="email"],
@@ -97,32 +81,12 @@ input[type="password"] {
     position: absolute;
     opacity: 1;
     display: block;
-    color: #2fb9c6;
-    font-size: 12px; }
-
-.register_sect {
-  padding: 30px; }
-  .register_sect .register_sect_l {
-    width: 50%;
-    overflow: hidden;
-    float: left; }
-    .register_sect .register_sect_l p {
-      font-size: 12px;
-      margin-top: 15px; }
-  .register_sect .register_sect_r {
-    width: 50%;
-    overflow: hidden; }
-    .register_sect .register_sect_r label {
-      position: absolute;
-      opacity: 0;
-      display: block; }
+    color: #2fb9c6; }
 
 .btn {
+  cursor: pointer;
   color: #fff;
   border: #bf2957;
   background-color: #bf2957;
   display: inline-block;
   padding: 10px; }
-
-footer {
-  clear: both; }

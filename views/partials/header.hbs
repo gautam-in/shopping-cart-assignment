@@ -1,24 +1,20 @@
 <header>
-        <div class="header_wrapper">
-            <div class="header_logo">
-                <img src="/images/logo.png" alt="Shpping Site logo" width="70%">
+    <img src="/images/logo.png" alt="Shpping Site logo" width="15%">
+    <nav class="header_nav">
+        <div class="header_nav_one">
+            <span><a href="/">Home</a></span>
+            <span><a href="/product">Products</a></span>
+        </div>
+        <div class="header_nav_two">
+            <div>
+                <span><a href="/login">Login</a></span>
+                <span><a href="/register">Register</a></span>
             </div>
-            <div class="header_nav">
-                <nav>
-                    <div class="header_nav_one">
-                        <span><a class="page_nav_link" href="/">Home</a></span>
-                        <span><a class="page_nav_link" href="/product">Products</a></span>
-                    </div>
-                    <div class="header_nav_two">
-                        <div>
-                            <span><a class="page_nav_link" href="/login">Login</a></span>
-                            <span><a class="page_nav_link" href="/register">Register</a></span>
-                        </div>
-                        <div class="my-cart-btn" onclick="openMyCart();">
-                            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                        </div>
-                    </div>
-                </nav>
+            <div class="cart-btn" onclick="openCart();">
+                <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                <a id="item_count" href="#">0</a>items
             </div>
         </div>
-    </header>
+    </nav>
+    </div>
+</header>
