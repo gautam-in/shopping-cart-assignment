@@ -3,7 +3,7 @@
         <div class="categories-wrapper">
             {{#each categories}}
                 {{#if this.enabled}}
-                    <div class="category-name"><strong>{{this.name}}</strong></div>
+                    <div class="category-name"><strong><a href="/products/{{this.id}}">{{this.name}}</a></strong></div>
                 {{/if}}
             {{/each}}
         </div>
@@ -13,7 +13,7 @@
                 <div id="Demo" class="w3-dropdown-content w3-bar-block w3-border">
                     {{#each categories}}
                         {{#if this.enabled}}
-                            <div class="category-name"><strong>{{this.name}}</strong></div>
+                            <div class="category-name"><strong><a href="/products/{{this.id}}">{{this.name}}</a></strong></div>
                         {{/if}}
                     {{/each}}
                 </div>
@@ -29,7 +29,7 @@
                     <div class="product-description" title="{{this.description}}">{{this.description}}</div>
                     <div class="pricing-purchasing">
                         <span class="pricing">MRP Rs {{this.price}}</span>
-                        <button class="purchasing" tabindex="0">Buy now&nbsp;<span class="smaller-device">@ {{this.price}}</span></button>                        
+                        <button class="purchasing" tabindex="0" onclick="buy('{{this.id}}', 'add')">Buy now&nbsp;<span class="smaller-device">@ {{this.price}}</span></button>                        
                     </div>
                 </div>
             {{/each}}

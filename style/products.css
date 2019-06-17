@@ -14,7 +14,9 @@
   font-size: 12px;
   padding: 14px;
   border-bottom: 1px solid #6b6b6b;
-  color: #6b6b6b; }
+  color: #6b6b6b;
+  cursor: pointer;
+  text-decoration: none; }
 
 .product-name {
   overflow: hidden;

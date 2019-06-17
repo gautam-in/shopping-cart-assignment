@@ -1,0 +1,71 @@
+@import "variables.scss";
+.cart-wrapper{
+    width: 60% !important;
+    padding: 0px !important;
+    background: $grey;
+    .my-cart{
+        background: black;
+        color: white;
+        padding: 10px;
+    }
+    .item-wrapper{
+        min-height: 100px;
+        margin-top: 10px;
+        background: #fff;
+    }
+    .item-img{
+        width: 15%;
+        float: left;
+        .img-cart{
+            width: 100%
+        }
+    }
+    .item-details{
+        float: left;
+        width: 60%;
+        padding-left: 10px;
+    }
+    .item-total{
+        float:left;
+        width: 24%;
+        text-align: center;
+        padding-top: 25px;
+    }
+    .btn{
+        background: $accent;
+        color: #fff;
+        border-radius: 15px;
+    }
+    input {
+        border: none;
+        text-align: center;
+        width: 40px;
+    }
+    .product-offer{
+        margin-top: 10px;
+        background: #fff;
+        min-height: 60px;
+        padding: 5px;
+        .offer-image{
+            float: left;
+            width: 30%;
+        }
+        .offer-heading{
+            float: left;
+            width: 70%;
+            margin-top: 15px;
+        }
+    }
+    .checkout{
+        margin-top: 60px;
+        min-height: 100px;
+        background: #fff;
+        text-align: center;
+        padding: 10px;
+        .btn-checkout{
+            background: $accent;
+            color: #fff;
+            width: 100%;
+        }
+    }
+}

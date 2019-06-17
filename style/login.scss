@@ -83,9 +83,6 @@ $input-border-color: $dark-grey;
   padding: 10px;
   width: 100%;
 }
-
-@media (max-width: $breakpoint-tablet-potrait) {
-}
 @media (max-width: $breakpoint-phone) {
   .login-container {
     display: flex;
