@@ -3,13 +3,14 @@
 
 .navbar {
   width: 15%;
-  position: absolute;
+  z-index: 1;
   background-color: #EAEAEA;
-  font-size: 12px; }
+  font-size: 12px;
+  float: left; }
   .navbar .navbar-content a {
-    padding: 15px;
+    padding: 6px 8px 6px 16px;
     display: block;
-    color: #333333cf; }
+    color: #000; }
     .navbar .navbar-content a::after {
       content: "";
       display: block;
@@ -36,7 +37,7 @@
     background: #EAEAEA;
     margin: 5px 0px;
     padding: 5px;
-    min-height: 135px;
+    min-height: 110px;
     color: #333333cf; }
   .product_item .desktop_prod {
     display: block;
@@ -54,9 +55,10 @@
 @media (min-width: 768px) and (max-width: 1024px) {
   .product_item {
     width: 44%;
-    height: 390px; }
+    height: 350px; }
     .product_item img {
       width: 55%;
+      margin-top: 70px;
       float: left; }
     .product_item h6 {
       width: 45%;
@@ -70,8 +72,8 @@
       clear: both;
       text-align: center;
       margin: 15px 0px 25px 0px; }
-    .product_item p {
-      height: 60px; } }
+    .product_item h4 {
+      height: 80px; } }
 
 /* 
   ##Device = Most of the Smartphones Mobiles (Portrait)
@@ -121,7 +123,7 @@
       clear: both;
       text-align: center;
       margin: 15px 0px 25px 0px; }
-    .product_item p {
+    .product_item h4 {
       height: 80px; }
   .prodlist_container {
     width: 100%;

@@ -1,0 +1,107 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Dosis", "Arial", sans-serif; }
+
+a {
+  text-decoration: none; }
+
+footer {
+  clear: both;
+  overflow: hidden;
+  background: #3333331a;
+  font-size: 10px;
+  padding: 10px; }
+
+header {
+  padding: 2px 40px;
+  border-bottom: 2px solid #33333314;
+  width: 100%; }
+
+.header_nav {
+  width: 75%;
+  display: inline-block;
+  font-size: 12px; }
+
+.header_nav_one {
+  width: 50%;
+  float: left;
+  padding-top: 25px; }
+
+.header_nav_two {
+  width: 50%;
+  float: left;
+  text-align: right;
+  margin-bottom: -6px; }
+
+.cart-btn {
+  cursor: pointer; }
+
+.fa-shopping-cart {
+  color: #CF0153; }
+
+.header_nav_two_child {
+  background: #3333331a;
+  text-align: center;
+  width: 15%;
+  height: 30px;
+  float: right;
+  padding-top: 5px;
+  margin-top: 5px; }
+
+input[type=submit] {
+  color: #fff;
+  background: #D10157;
+  width: 50%;
+  border: none;
+  height: 35px;
+  margin-top: 30px; }
+
+.left_content {
+  width: 50%;
+  overflow: hidden;
+  float: left; }
+  .left_content p {
+    font-size: 12px;
+    margin-top: 15px; }
+
+.right_content {
+  width: 50%;
+  overflow: hidden; }
+  .right_content label {
+    position: absolute;
+    opacity: 0;
+    display: block; }
+
+.form_content {
+  padding: 30px; }
+
+input[type=text],
+input[type=email],
+input[type=password] {
+  border: none;
+  border-bottom: 1px solid #3333331a;
+  width: 50%;
+  margin-top: 30px; }
+  input[type=text]:focus,
+  input[type=email]:focus,
+  input[type=password]:focus {
+    border-bottom: 1px solid #2FB9C6;
+    outline: none; }
+  input[type=text]:focus + label,
+  input[type=email]:focus + label,
+  input[type=password]:focus + label {
+    position: absolute;
+    opacity: 1;
+    display: block;
+    color: #2FB9C6;
+    font-size: 12px; }
+
+.btn {
+  cursor: pointer;
+  color: #fff;
+  border: #BF2957;
+  background-color: #BF2957;
+  display: inline-block;
+  padding: 5px; }

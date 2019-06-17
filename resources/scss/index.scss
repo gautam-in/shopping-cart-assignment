@@ -14,23 +14,33 @@
     @include bottom_style;
 }
 
-.prod_text_section {
-    width: 60%;
-    text-align: center;
-    p {
-        margin-bottom: 20px;
+.prod_section:nth-child(even) {
+    .prod_content {
+        width: 60%;
+        float: right;
+        text-align: center;
+        p {
+            margin-bottom: 20px;
+        }
     }
-}
-
-.prod_image_section {
-    width: 30%;
-}
-
-.prod_section {
-    .left {
+    .prod_image {
+        width: 30%;
         float: left;
     }
-    .right {
+    @include bottom_style;
+}
+
+.prod_section:nth-child(odd) {
+    .prod_content {
+        width: 60%;
+        float: left;
+        text-align: center;
+        p {
+            margin-bottom: 20px;
+        }
+    }
+    .prod_image {
+        width: 30%;
         float: right;
     }
     @include bottom_style;

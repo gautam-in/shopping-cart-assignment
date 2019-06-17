@@ -28,8 +28,6 @@ currentSlide = (n) => {
     showSlides(slideIndex = n);
 };
 
-
-/*-------------------------- Cart functonality --------------------------*/
 openCart = () => {
     document.getElementById('cart').style.display = 'block';
 };
@@ -38,12 +36,28 @@ closeCart = () => {
     document.getElementById('cart').style.display = 'none';
 };
 
-var item_counter=0;
-addItemToCart = (id) => {
-    updateCart(item_counter++);
-};
+var item_counter = 0;
 
+function addItemToCart(id, operation) {
+    var url = window.location.href + '/' + id + '/' + operation;
+    console.log(url);
+    let xmlHttpReq = new XMLHttpRequest();
+    xmlHttpReq.open("GET", url, true);
+    xmlHttpReq.onload = function() {
+        if (xmlHttpReq.status == 200) {
+            let data = JSON.parse(xmlHttpReq.responseText);
+            updateCart(data.item_counter);
+        } else {}
+    };
+    xmlHttpReq.onerror = function() {};
+    xmlHttpReq.send();
+}
 
 updateCart = (item_counter) => {
     document.getElementById('item_count').innerHTML = item_counter;
+    updateCheckoutAmount();
+}
+
+updateCheckoutAmount = () => {
+
 }
