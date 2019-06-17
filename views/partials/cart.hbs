@@ -1,27 +1,32 @@
 <section class="cart" id="cart">
     <div class="cart_content">
-        <h4 class="cart_header">My Cart(1 item)<i class="fa fa-close" aria-hidden="true" onclick="closeCart();"></i>
+        <h4 class="cart_header">{{name}}
+            My Cart(1 item)<i class="fa fa-close" aria-hidden="true" onclick="closeCart();"></i>
         </h4>
+        
         <section>
+            {{#each productInCart}}
             <div class="cart_items">
-                <img src="/images/products/fruit-n-veg/apple.jpg" width="10%" />
+                <img src={{imageURL}} width="10%" />
                 <div class="item_cal">
-                    <strong>Fresho Kiwi - Green, 3 pcs</strong>
+                    <strong>{{name}}</strong>
                     <div>
                         <span><i class="fa fa-minus" aria-hidden="true"></i></span>
                         <span>1</span>
                         <span><i class="fa fa-plus" aria-hidden="true"></i></span>
                         <span><i class="fa fa-times" aria-hidden="true"></i></span>
-                        <span>Rs.187</span>
-                        <span class="total_amt">Rs.187</span>
+                        <span>Rs{{price}}</span>
+                        <span class="total_amt">Rs{{total_price}}</span>
                     </div>
                 </div>
             </div>
+            {{/each}}
             <div class="cart-caption">
                 <img src="/images/lowest-price.png" alt="" width="30%" />
                 <p>You won't find it cheaper anywhere</p>
             </div>
         </section>
+        
         <footer>
             <p>Promo code can be applied on payment page
                 <a class="btn" href="#">Proceed to Checkout
