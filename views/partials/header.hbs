@@ -1,32 +1,24 @@
-<nav class="header clearfix">
-    <div class="container">
-        <ul class="sub-nav">
-            <li><a href="/login" class="sub-nav-item">Sign in</a></li>
-            <li><a href="/register" class="sub-nav-item">Register</a>
-            </li>
-            <a class ="icon">
-                <img src="/images/menu.png" alt="menu"/>
-            </a>
-        </ul>
-        <div class="logo">
+<nav class="header-wrapper clearfix">
+    <div class="container position-rel">
+        <div class="logo disp-inline">
             <a href="/">
-                <picture>
-                    <source media="(min-width: 1024px)" srcset="/images/logo_2x.png">
-                    <source media="(min-width: 768px)" srcset="/images/logo_2x.png">
-                    <source media="(min-width: 600px)" srcset="/images/logo.png">
-                    <img src="/images/logo.png" >
-                </picture>
+                <img class="logo-img" src="/images/logo.png" alt="Logo of Sabka bazar" >
             </a>
         </div>
-        <ul class="main-nav">
-            <li><a href="/">Home</a></li>
-            <li><a href="/products" class="plp_page_link">Product</a></li>
+        <ul class="main-nav disp-inline">
+            <li class="disp-inline main-nav-list"><a href="/">Home</a></li>
+            <li class="disp-inline main-nav-list"><a href="/products" class="plp_page_link">Product</a></li>
             
-            <li class="cart-icon-container" id="cart">
+            <li class="cart-icon-container disp-inline" id="cart">
                 <a href="/cart">
                     <span class="cart-icon"><i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i></span>
                     <span class="cart-count">{{item_counter}} Items</span>
                 </a>
+            </li>
+        </ul>
+        <ul class="sub-nav position-abs">
+            <li class="sub-nav-list disp-inline"><a href="/login" class="sub-nav-item">Sign in</a></li>
+            <li class="sub-nav-list disp-inline"><a href="/register" class="sub-nav-item">Register</a>
             </li>
         </ul>
     </div>

@@ -1,3 +1,12 @@
+.disp-inline {
+  display: inline; }
+
+.position-rel {
+  position: relative; }
+
+.position-abs {
+  position: absolute; }
+
 .categories-wrapper {
   background: rgba(238, 238, 238, 0.867);
   padding-top: 15px;

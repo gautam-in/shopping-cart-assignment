@@ -1,3 +1,12 @@
+.disp-inline {
+  display: inline; }
+
+.position-rel {
+  position: relative; }
+
+.position-abs {
+  position: absolute; }
+
 .cart-wrapper {
   width: 60% !important;
   padding: 0px !important;
