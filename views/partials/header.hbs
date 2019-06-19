@@ -1,4 +1,4 @@
-<nav class="header-wrapper clearfix">
+{{!-- <nav class="header-wrapper clearfix">
     <div class="container position-rel">
         <div class="logo disp-inline">
             <a href="/">
@@ -22,4 +22,37 @@
             </li>
         </ul>
     </div>
-</nav> 
+</nav>  --}}
+<header class="header-wrapper">
+    <div class="logo disp-inline-block">
+        <a href="/">
+            <img class="logo-img" src="/images/logo.png" alt="Logo of Sabka bazar" >
+        </a>
+    </div>
+    <div class="navigation disp-inline-block">
+        <ul>
+            <li class="disp-inline-block">
+                <a href="/">Home</a>
+            </li>
+            <li class="disp-inline-block">
+                <a href="/products" class="plp_page_link">Product</a>
+            </li>
+        </ul>
+    </div>
+    <div class="disp-inline-block credentials-and-cart">
+        <ul>
+            <li class="disp-inline-block">
+                <a href="/login">Sign in</a>
+            </li>
+            <li class="disp-inline-block">
+                <a href="/register">Register</a>
+            </li>
+        </ul>
+        <div class="cart-container">
+            <a href="/cart">
+                <span class="cart-icon"><i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i></span>
+                <span class="cart-count">{{item_counter}} Items</span>
+            </a>
+        </div>
+    </div>
+</header>

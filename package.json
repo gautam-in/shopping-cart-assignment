@@ -5,9 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node app.js",
-    "startnew": "json-server ./server/db.json",
-    "gulp": "gulp"
+    "gulp": "gulp",
+    "start": "npm run gulp && node app.js"
   },
   "author": "",
   "license": "MIT",

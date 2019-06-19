@@ -1,8 +1,5 @@
 function request_server() {
     var url = window.location.origin + "/cart/allitem";
-    // console.log("request: ", url);
-
-
     fetch(url)
         .then(function (response) {
             return response.json();
@@ -16,7 +13,6 @@ function request_server() {
                 totalCheckoutPrice = totalCheckoutPrice + element.total_price;
             });
             totalCheckoutSpan.innerHTML = totalCheckoutPrice;
-            // console.log(JSON.stringify(myJson));
         });
 }
 

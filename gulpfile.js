@@ -1,17 +1,30 @@
-var gulp = require('gulp'),
-webserver = require('gulp-webserver'),
-sass = require('gulp-sass');
-gulp.task('webserver', function() {
-    gulp.src('/')
-      .pipe(webserver({
-        livereload: true,
-        directoryListing: true,
-        open: true,
-        port: '8080'
-      }));
-  });
-  gulp.task("sass", function () {
-       gulp.src("style/*.scss") 
-       .pipe(sass().on("error", sass.logError)) 
-       .pipe(gulp.dest("style")); 
-    });
+// var gulp = require('gulp'),
+// sass = require('gulp-sass');
+// gulp.task("sass", function () {
+//   gulp.src("style/*.scss") 
+//   .pipe(sass()) 
+//   .pipe(gulp.dest("style/css")); 
+// });
+// gulp.task('sass', function () {
+//   console.log("I am here");
+//   gulp.src('style/*.scss')
+//       .pipe(sass())
+//       .pipe(gulp.dest('style'))
+// });
+// gulp.task('default', function(done) { 
+//     gulp.series('sass')
+//     console.log("sdjfhsajkf");
+//     done();
+// })
+
+var gulp = require('gulp'),
+sass = require('gulp-sass');
+gulp.task('styles', function(){
+return gulp.src(['style/*.scss'])
+.pipe(sass()) // Converts Sass to CSS with gulp-sass
+      .pipe(gulp.dest('style'))
+});
+
+//Default task array
+gulp.task("default", gulp.series('styles')); 
+ 
