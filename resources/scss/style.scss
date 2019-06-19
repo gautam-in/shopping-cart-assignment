@@ -1,134 +1,131 @@
-$font-family: 'Dosis',
-'Arial',
-sans-serif;
+$font-family: "Dosis", "Arial", sans-serif;
 $primary-fontsize: 12px;
+$grey-color: #cdcdcdcd;
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: $font-family;
-}
-
-a {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: $font-family;
+  a {
     text-decoration: none;
+    cursor: pointer;
+  }
 }
 
-footer {
-    clear: both;
-    overflow: hidden;
-    background: #3333331a;
-    font-size: 10px;
-    padding: 10px;
+body {
+  font-size: $primary-fontsize;
+}
+
+@mixin nav_link_style {
+  display: inline-block;
+  font-weight: 300;
+  color: black;
 }
 
 header {
-    padding: 2px 40px;
-    border-bottom: 2px solid #33333314;
-    width: 100%;
-}
-
-.header_nav {
-    width: 75%;
+  padding: 2px 40px;
+  border-bottom: 2px solid $grey-color;
+  .header_nav {
+    width: 80%;
     display: inline-block;
-    font-size: $primary-fontsize;
-}
-
-@mixin headernav {
-    width: 50%;
-    float: left;
-}
-
-.header_nav_one {
-    @include headernav;
-    padding-top: 25px;
-}
-
-.header_nav_two {
-    @include headernav;
-    text-align: right;
     margin-bottom: -6px;
+
+    a {
+      &:link,
+      &:visited {
+        @include nav_link_style;
+      }
+    }
+
+    .header_nav_one {
+      float: left;
+      padding-top: 25px;
+    }
+
+    .header_nav_two {
+      float: right;
+
+      .cart-btn {
+        cursor: pointer;
+        background: #cdcdcdcd;
+        text-align: center;
+        height: 30px;
+        padding-top: 5px;
+        margin-top: 5px;
+        .fa-shopping-cart {
+          color: #cf0153;
+        }
+      }
+    }
+  }
 }
 
-.cart-btn {
-    cursor: pointer;
-}
-
-.fa-shopping-cart {
-    color: #CF0153;
-}
-
-.header_nav_two_child {
-    background: #3333331a;
-    text-align: center;
-    width: 15%;
-    height: 30px;
-    float: right;
-    padding-top: 5px;
-    margin-top: 5px;
+footer {
+  background: $grey-color;
+  padding: 10px;
+  text-align: center;
+  clear: both;
 }
 
 @mixin input {
-    border: none;
-    border-bottom: 1px solid #3333331a;
-    width: 50%;
-    margin-top: 30px;
-    &:focus {
-        border-bottom: 1px solid #2FB9C6;
-        outline: none;
-    }
+  border: none;
+  border-bottom: 1px solid $grey-color;
+  width: 50%;
+  margin-top: 30px;
+  &:focus {
+    border-bottom: 1px solid #2fb9c6;
+    outline: none;
+  }
 }
 
-input[type=submit] {
-    color: #fff;
-    background: #D10157;
-    width: 50%;
-    border: none;
-    height: 35px;
-    margin-top: 30px;
-}
-
-.left_content {
-    width: 50%;
-    overflow: hidden;
-    float: left;
-    p {
-        font-size: 12px;
-        margin-top: 15px;
-    }
-}
-
-.right_content {
-    width: 50%;
-    overflow: hidden;
-    label {
-        position: absolute;
-        opacity: 0;
-        display: block;
-    }
+@mixin sub_div {
+  width: 50%;
+  overflow: hidden;
 }
 
 .form_content {
-    padding: 30px;
+  padding: 30px;
+  .left_content {
+    @include sub_div;
+    float: left;
+  }
+
+  .right_content {
+    @include sub_div;
+    label {
+      position: absolute;
+      opacity: 0;
+      display: block;
+    }
+  }
 }
 
-input[type=text],
-input[type=email],
-input[type=password] {
-    @include input;
-    &:focus+label {
-        position: absolute;
-        opacity: 1;
-        display: block;
-        color: #2FB9C6;
-        font-size: 12px;
-    }
+input[type="submit"] {
+  color: #fff;
+  background: #d10157;
+  width: 50%;
+  border: none;
+  height: 35px;
+  margin-top: 30px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  @include input;
+  &:focus + label {
+    position: absolute;
+    opacity: 1;
+    display: block;
+    color: #2fb9c6;
+  }
 }
 
 .btn {
-    cursor: pointer;
-    color: #fff;
-    border: #BF2957;
-    background-color: #BF2957;
-    display: inline-block;
-    padding: 5px;
+  cursor: pointer;
+  color: #fff;
+  border: #bf2957;
+  background-color: #bf2957;
+  display: inline-block;
+  padding: 10px;
 }

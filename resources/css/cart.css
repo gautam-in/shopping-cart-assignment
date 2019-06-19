@@ -1,47 +1,38 @@
-.cart {
-  display: none;
-  position: fixed;
+.cart_main {
+  position: relative;
   z-index: 1;
-  padding-top: 60px;
+  padding: 60px;
   left: 0;
   top: 0;
   width: 100%;
   height: 100%;
   overflow: auto;
-  background-color: rgba(0, 0, 0, 0.4); }
+  background-color: rgba(0, 0, 0, 0.4);
+  margin: 0px; }
 
-.cart_content {
+.cart {
   background-color: #eaeaea;
   margin: auto;
   width: 70%; }
-  .cart_content section {
-    margin-top: 20px;
-    height: 380px;
-    overflow-y: auto; }
 
 .cart_header {
   background: #000;
   color: #fff;
   padding: 20px; }
+  .cart_header .fa-close {
+    float: right;
+    color: #fff; }
 
-.fa-close {
-  float: right; }
-
-.fa-minus,
-.fa-plus {
-  border-radius: 20%;
-  width: 20px;
-  background: #bf2957;
-  text-align: center;
-  padding: 2px;
-  color: #fff; }
-
-.cart_items {
-  padding: 15px;
-  background: #fff;
-  overflow: hidden; }
-  .cart_items img {
-    float: left; }
+.cart_content {
+  margin: 20px 0px;
+  height: 400px;
+  overflow-y: auto; }
+  .cart_content .cart_items {
+    padding: 15px;
+    background: #fff;
+    overflow: hidden; }
+    .cart_content .cart_items img {
+      float: left; }
 
 .item_cal {
   float: left;
@@ -49,6 +40,14 @@
   width: 85%; }
   .item_cal div {
     padding: 10px 0 0 0; }
+    .item_cal div .fa-minus,
+    .item_cal div .fa-plus {
+      border-radius: 20%;
+      width: 20px;
+      background: #bf2957;
+      text-align: center;
+      padding: 2px;
+      color: #fff; }
     .item_cal div span {
       margin: 0 3px; }
     .item_cal div .total_amt {
@@ -65,16 +64,17 @@
     text-align: center;
     margin: 15px; }
 
-.cart_content footer {
+.cart_footer {
+  padding: 15px;
   background: #fff; }
-  .cart_content footer p {
+  .cart_footer p {
     margin-bottom: 10px;
     text-align: center; }
-  .cart_content footer a {
+  .cart_footer a {
     width: 100%;
     margin-top: 10px;
     text-align: left; }
-    .cart_content footer a span {
+    .cart_footer a span {
       float: right; }
 
 /* cart Content */

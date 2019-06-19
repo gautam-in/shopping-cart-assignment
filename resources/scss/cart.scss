@@ -1,102 +1,99 @@
-.cart {
-    display: none;
-    position: fixed;
-    z-index: 1;
-    padding-top: 60px;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.4);
+@mixin item_block {
+  padding: 15px;
+  background: #fff;
+  overflow: hidden;
 }
-
-.cart_content {
-    background-color: #eaeaea;
-    margin: auto;
-    width: 70%;
-    section {
-        margin-top: 20px;
-        height: 380px;
-        overflow-y: auto;
-    }
+.cart_main {
+  position: relative;
+  z-index: 1;
+  padding: 60px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+  margin: 0px;
+}
+.cart {
+  background-color: #eaeaea;
+  margin: auto;
+  width: 70%;
 }
 
 .cart_header {
-    background: #000;
-    color: #fff;
-    padding: 20px;
-}
-
-.fa-close {
+  background: #000;
+  color: #fff;
+  padding: 20px;
+  .fa-close {
     float: right;
-}
-
-.fa-minus,
-.fa-plus {
-    border-radius: 20%;
-    width: 20px;
-    background: #bf2957;
-    text-align: center;
-    padding: 2px;
     color: #fff;
+  }
 }
 
-.cart_items {
-    padding: 15px;
-    background: #fff;
-    overflow: hidden;
-    img {
+.cart_content{
+    margin: 20px 0px;
+    height: 400px;
+    overflow-y: auto;
+    .cart_items {
+      @include item_block;
+      img {
         float: left;
+      }
     }
 }
 
 .item_cal {
-    float: left;
-    margin-left: 10px;
-    width: 85%;
-    div {
-        padding: 10px 0 0 0;
-        span {
-            margin: 0 3px;
-        }
-        .total_amt {
-            float: right;
-        }
+  float: left;
+  margin-left: 10px;
+  width: 85%;
+  div {
+    padding: 10px 0 0 0;
+    .fa-minus,
+    .fa-plus {
+      border-radius: 20%;
+      width: 20px;
+      background: #bf2957;
+      text-align: center;
+      padding: 2px;
+      color: #fff;
     }
+    span {
+      margin: 0 3px;
+    }
+    .total_amt {
+      float: right;
+    }
+  }
 }
 
 .cart-caption {
-    margin: 10px;
-    padding: 15px;
-    background: #fff;
-    overflow: hidden;
-    img {
-        float: left;
-    }
-    p {
-        text-align: center;
-        margin: 15px;
-    }
+  margin: 10px;
+  @include item_block;
+  img {
+    float: left;
+  }
+  p {
+    text-align: center;
+    margin: 15px;
+  }
 }
 
-.cart_content {
-    footer {
-        background: #fff;
-        p {
-            margin-bottom: 10px;
-            text-align: center;
-        }
-        a {
-            width: 100%;
-            margin-top: 10px;
-            text-align: left;
-            span {
-                float: right;
-            }
-        }
+.cart_footer {
+  padding: 15px;
+  background: #fff;
+  p {
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  a {
+    width: 100%;
+    margin-top: 10px;
+    text-align: left;
+    span {
+      float: right;
     }
+  }
 }
-
 
 /* cart Content */

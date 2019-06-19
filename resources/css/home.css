@@ -1,0 +1,105 @@
+.slideshow-section {
+  margin-bottom: 20px; }
+  .slideshow-section::after {
+    content: "";
+    display: block;
+    border: 2px solid #cdcdcd;
+    border-bottom-left-radius: 300px;
+    border-bottom-right-radius: 300px;
+    margin: 0 25%;
+    clear: both;
+    box-shadow: 0px 3px 7px 2px #cdcdcd;
+    clear: both; }
+
+.prod_section {
+  margin-bottom: 20px; }
+  .prod_section::after {
+    content: "";
+    display: block;
+    border: 2px solid #cdcdcd;
+    border-bottom-left-radius: 300px;
+    border-bottom-right-radius: 300px;
+    margin: 0 25%;
+    clear: both;
+    box-shadow: 0px 3px 7px 2px #cdcdcd;
+    clear: both; }
+  .prod_section:nth-child(even) .prod_content {
+    width: 60%;
+    float: right;
+    text-align: center; }
+    .prod_section:nth-child(even) .prod_content p {
+      margin-bottom: 20px; }
+  .prod_section:nth-child(even) .prod_image {
+    width: 30%;
+    float: left; }
+  .prod_section:nth-child(odd) .prod_content {
+    width: 60%;
+    float: left;
+    text-align: center; }
+    .prod_section:nth-child(odd) .prod_content p {
+      margin-bottom: 20px; }
+  .prod_section:nth-child(odd) .prod_image {
+    width: 30%;
+    float: right; }
+
+.home_container {
+  padding: 0 40px; }
+
+.mySlides {
+  display: none; }
+  .mySlides img {
+    text-align: center; }
+
+/* Slideshow container */
+.slideshow-container {
+  position: relative;
+  margin: auto; }
+
+.dot-container {
+  text-align: center; }
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  font-size: 25px; }
+
+/* Position the "next button" to the right */
+.next {
+  right: 0; }
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 10px;
+  width: 10px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease; }
+
+.active,
+.dot:hover {
+  background-color: #717171; }
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s; }
+
+@-webkit-keyframes fade {
+  from {
+    opacity: 0.4; }
+  to {
+    opacity: 1; } }
+
+@keyframes fade {
+  from {
+    opacity: 0.4; }
+  to {
+    opacity: 1; } }

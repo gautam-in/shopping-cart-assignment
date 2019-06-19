@@ -1,0 +1,145 @@
+$grey-color: #cdcdcd;
+
+@mixin clearfix {
+  clear: both;
+}
+
+@mixin alignCenter {
+  text-align: center;
+}
+
+@mixin bottom_style {
+  margin-bottom: 20px;
+  &::after {
+    content: "";
+    display: block;
+    border: 1px solid $grey-color;
+    border-bottom-left-radius: 300px;
+    border-bottom-right-radius: 300px;
+    margin: 0 25%;
+    clear: both;
+    box-shadow: 0px 3px 7px 2px $grey-color;
+    @include clearfix;
+  }
+}
+
+.slideshow-section {
+  @include bottom_style;
+}
+
+.prod_section {
+  @include bottom_style;
+  &:nth-child(even) {
+    .prod_content {
+      width: 60%;
+      float: right;
+      @include alignCenter;
+      p {
+        margin-bottom: 20px;
+      }
+    }
+
+    .prod_image {
+      width: 30%;
+      float: left;
+    }
+  }
+  &:nth-child(odd) {
+    .prod_content {
+      width: 60%;
+      float: left;
+      @include alignCenter;
+      p {
+        margin-bottom: 20px;
+      }
+    }
+
+    .prod_image {
+      width: 30%;
+      float: right;
+    }
+  }
+}
+
+.home_container {
+  padding: 0 40px;
+}
+
+.mySlides {
+  display: none;
+  img {
+    @include alignCenter;
+  }
+}
+
+/* Slideshow container */
+
+.slideshow-container {
+  position: relative;
+  margin: auto;
+}
+
+.dot-container {
+  @include alignCenter;
+}
+
+/* Next & previous buttons */
+
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  font-size: 25px;
+}
+
+/* Position the "next button" to the right */
+
+.next {
+  right: 0;
+}
+
+/* The dots/bullets/indicators */
+
+.dot {
+  cursor: pointer;
+  height: 10px;
+  width: 10px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active,
+.dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}

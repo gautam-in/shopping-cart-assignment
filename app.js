@@ -3,19 +3,20 @@ var glob = require("glob"),
     express = require('express'),
     hbs = require('express-handlebars'),
     app = express(),
-    indexRouter = require('./resources/js/index'),
-    productsRouter = require('./resources/js/product');
+    homeRouter = require('./resources/js/home'),
+    productsRouter = require('./resources/js/product'),
+    cartRouter = require('./resources/js/cart');
 
 // options is optional 
 glob("./server/**/*.json", null, function(er, files) {
-    if (er) {
-        console.error(er);
-    } else {
+    if (er)
+        console.log(er);
+    else {
         jsonConcat({
             src: files,
             dest: "./server/db.json"
         }, function(json) {
-            console.error(json);
+            console.log(json);
         });
     };
 });
@@ -31,33 +32,33 @@ app.engine('hbs', hbs({
 app.use(express.static(__dirname + '/resources'));
 /*----------------------------------------------------*/
 
-app.use('/', indexRouter);
+app.use('/', homeRouter);
 app.use('/product', productsRouter);
-
+app.use('/cart', cartRouter);
 
 app.set('views', __dirname + '/views/');
 app.set('view engine', 'hbs');
 
 
-/*----------------- rendring views --------------*/
+/*----------------- rendering view --------------*/
 
 app.get('/', (req, res) => {
-    res.render('index')
+    res.render('home')
 });
-
 app.get('/login', (req, res) => {
     res.render('login')
 });
-
 app.get('/register', (req, res) => {
     res.render('register')
 });
-
 app.get('/product', (req, res) => {
     res.render('product')
 });
+app.get('/cart', (req, res) => {
+    res.render('cart')
+});
 
-/*--------------------------------------------------*/
+/*-------------------------------------------------*/
 
 app.listen(8000, () => {
     console.log('Example app listening on port 8000!')
