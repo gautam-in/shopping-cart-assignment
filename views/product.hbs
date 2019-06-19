@@ -1,24 +1,24 @@
 <main class="products_container">
     <nav class="navbar">
-        <div class="navbar-content">
+        <ul>
             <i class="fa fa-angle-down"></i>
-            {{#each prod_categories}}
-                <a href="#">{{name}}</a>
+            {{#each prodCategories}}
+                <li><a href="/product/{{this.id}}">{{name}}</a></li>
             {{/each}}
-        </div>
+        </ul>
     </nav>
 
     <section class="prodlist_container">
-        {{#each prod_list}}
+        {{#each productList}}
         <div class="product_item">
             <h4>{{name}}</strong></h4>
             <img src={{imageURL}} alt={{description}} width="80%"/>
             <h6>{{description}}</h6>
             <div class="desktop_prod">
-                <span>Rs.{{price}}</span><a class="btn" onclick="addItemToCart('{{this.id}}', 'add')">Buy Now</a>
+                <span>Rs.{{price}}</span><a class="btn" onclick="buyItem('{{this.id}}', 'add')">Buy Now</a>
             </div>      
             <div class="tablet_prod">
-                <a class="btn" onclick="addItemToCart('{{this.id}}')">Buy Now @ Rs{{price}}</a>
+                <a class="btn" onclick="buyItem('{{this.id}}', 'add')">Buy Now @ Rs{{price}}</a>
             </div>    
         </div>    
         {{/each}}

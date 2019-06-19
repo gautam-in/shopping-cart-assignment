@@ -10,9 +10,11 @@
                 <span><a href="/login">Login</a></span>
                 <span><a href="/register">Register</a></span>
             </div>
-            <div class="cart-btn" onclick="openCart();">
-                <a id="item_count"><i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                0</a>items
+            <div class="cart-btn">
+                <a href="/cart">
+                    <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                <span id="item_count">{{itemCounter}}</span>items
+                </a>
             </div>
         </div>
     </nav>

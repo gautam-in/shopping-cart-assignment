@@ -19,6 +19,8 @@ $grey-color: #cdcdcd;
     margin: 0 25%;
     clear: both;
     box-shadow: 0px 3px 7px 2px $grey-color;
+    -webkit-box-shadow: 0px 3px 7px 2px $grey-color;
+    -moz-box-shadow:0px 3px 7px 2px $grey-color;
     @include clearfix;
   }
 }

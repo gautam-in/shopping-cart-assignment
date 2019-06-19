@@ -1,0 +1,32 @@
+<main class="home_container">
+    <section class="slideshow-section">
+        <div class="slideshow-container">
+            {{#each banners}}
+            <div class="mySlides fade">
+                <img src={{bannerImageUrl}} alt={{bannerImageAlt}} width="100%" />
+            </div>
+            {{/each}}
+
+            <a class="prev" onclick="plusSlides(-1)"><i class="fa fa-chevron-circle-left" aria-hidden="true"></i></a>
+            <a class="next" onclick="plusSlides(1)"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i></a>
+        </div>
+
+        <div class="dot-container">
+            {{#each banners}}
+            <span class="dot" onclick="currentSlide({{order}})"></span>
+            {{/each}}
+        </div>
+    </section>
+    {{#each categories}}
+    {{#if enabled}}
+    <section class="prod_section">
+        <div class="prod_image"><img src={{imageUrl}} alt={{key}} width="100%" /></div>
+        <aside class="prod_content">
+            <h4>{{name}}</h4>
+            <p>{{description}}</p>
+            <a class="btn" href="#">Explore {{key}}</a>
+        </aside>
+    </section>
+    {{/if}}
+    {{/each}}
+</main>
