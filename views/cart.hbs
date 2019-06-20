@@ -3,7 +3,7 @@
         <h3>My Cart<span>(<i id="item_counter">{{item_counter}}</i> item)</span></h3>
     </div>
     <div class="cart-items">
-        {{#each productInCart}}
+        {{#each session.productInCart}}
             <div class="item-wrapper">
                 <div class="item-img">
                     <img class="img-cart" src="{{imageURL}}" alt="{{name}}" tabindex="0">

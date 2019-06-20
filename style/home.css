@@ -16,7 +16,8 @@
 .banner-wrapper {
   padding: 5px 140px 0 140px; }
   .banner-wrapper .image-width {
-    width: 100%; }
+    width: 100%;
+    height: 180px; }
   .banner-wrapper .home-slider .home-slider-offers {
     position: relative; }
   .banner-wrapper .dots {
@@ -66,7 +67,8 @@
     float: left;
     width: 30%; }
     .banner-wrapper .category .category-image {
-      width: 100%; }
+      width: 100%;
+      height: 120px; }
   .banner-wrapper .category-desc {
     float: right;
     margin-top: 30px;

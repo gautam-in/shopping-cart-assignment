@@ -1,28 +1,3 @@
-{{!-- <nav class="header-wrapper clearfix">
-    <div class="container position-rel">
-        <div class="logo disp-inline">
-            <a href="/">
-                <img class="logo-img" src="/images/logo.png" alt="Logo of Sabka bazar" >
-            </a>
-        </div>
-        <ul class="main-nav disp-inline">
-            <li class="disp-inline main-nav-list"><a href="/">Home</a></li>
-            <li class="disp-inline main-nav-list"><a href="/products" class="plp_page_link">Product</a></li>
-            
-            <li class="cart-icon-container disp-inline" id="cart">
-                <a href="/cart">
-                    <span class="cart-icon"><i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i></span>
-                    <span class="cart-count">{{item_counter}} Items</span>
-                </a>
-            </li>
-        </ul>
-        <ul class="sub-nav position-abs">
-            <li class="sub-nav-list disp-inline"><a href="/login" class="sub-nav-item">Sign in</a></li>
-            <li class="sub-nav-list disp-inline"><a href="/register" class="sub-nav-item">Register</a>
-            </li>
-        </ul>
-    </div>
-</nav>  --}}
 <header class="header-wrapper">
     <div class="logo disp-inline-block float-left">
         <a href="/">
@@ -39,7 +14,7 @@
             </li>
         </ul>
     </div>
-    <div class="disp-inline-block credentials-and-cart">
+    <div class="disp-inline-block credentials-and-cart float-right">
         <ul class="credentials-wrapper">
             <li class="disp-inline-block credential-item">
                 <a href="/login">Sign in</a>
@@ -51,7 +26,7 @@
         <div class="cart-container float-right">
             <a href="/cart">
                 <span class="cart-icon"><i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i></span>
-                <span class="cart-count">{{item_counter}} Items</span>
+                <span class="cart-count">{{session.itemCounter}} Items</span>
             </a>
         </div>
     </div>

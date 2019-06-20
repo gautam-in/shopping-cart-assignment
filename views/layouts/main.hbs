@@ -14,12 +14,15 @@
 </head>
 
 <body>
-    {{> header}}
+    <div class="position-rel">
+        {{> header}}
 
-    {{{body}}}
+        {{{body}}}
 
-    {{> footer
-        currentYear="2019"}}
+        {{> footer
+            currentYear="2019"}}
+    </div>
+    
 
 </body>
 <script src="/script.js"></script>

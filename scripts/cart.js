@@ -38,7 +38,9 @@ router.get('/:id/:operation', function (req, res) {
         }
       }
     });
-    res.end(JSON.stringify({ 'cartItems': productInCart, 'item_counter': itemCounter.item_counter }));
+    req.session.productInCart = productInCart;
+    req.session.itemCounter = itemCounter.item_counter;
+    res.end(JSON.stringify({ 'cartItems': req.session.productInCart, 'item_counter': req.session.itemCounter }));
   } else if (req.params.operation == "remove") {
     productList.forEach(element => {
       if (element.id === req.params.id) {
@@ -47,7 +49,9 @@ router.get('/:id/:operation', function (req, res) {
         element.total_price = element.count * element.price;
       }
     });
-    res.end(JSON.stringify({ 'cartItems': productInCart, 'item_counter': itemCounter.item_counter }));
+    req.session.productInCart = productInCart;
+    req.session.itemCounter = itemCounter.item_counter;
+    res.end(JSON.stringify({ 'cartItems': req.session.productInCart, 'item_counter': req.session.itemCounter }));
   }
 });
 module.exports = router;
