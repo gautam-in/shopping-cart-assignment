@@ -1,14 +1,51 @@
 @import "variables.scss";
 .header-wrapper{
-  padding: 5px 90px;
+  border-bottom: 3px solid $grey;
+  padding: 5px 140px 0 140px;
+  min-height: 70px;
+  @media (max-width: $breakpoint-phone),(max-width: $breakpoint-small-phone),(max-width: $breakpoint-small-phone) {
+    padding: 5px 0px;
+    min-height: 32px;
+  }
   .logo{
-    width: 25%;
+    width: 20%;
     .logo-img{
       width: 100%;
     }
   }
   .navigation{
-    width: 50%;
+    margin: 30px 0 0 45px;
     padding: 10px;
+    width: 50%;
+    @media (max-width: $breakpoint-phone), (max-width: $breakpoint-small-phone),(max-width: $breakpoint-small-phone) {
+      margin: 4px 0 0 13px;
+      padding: 10px;
+      width: 38%;
+    }
+    .navigation-list-item{
+      margin-right: 20px;
+    }
+  }
+  .credentials-and-cart{
+    width: 20%;
+    .credentials-wrapper{
+      text-align: right;
+      width: 100%;
+    }
+    .credential-item{
+      margin-left: 10px;
+    }
+    .cart-container{
+      background: $grey;
+      float: right;
+      margin: 21px 0 0px 0;
+      min-height: 15px;
+      padding: 5px;
+      text-align: center;
+      width: 71%;
+    }
+    .fa-shopping-cart{
+      color: $accent;
+    }
   }
 }

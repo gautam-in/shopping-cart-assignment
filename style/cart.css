@@ -7,6 +7,12 @@
 .position-abs {
   position: absolute; }
 
+.float-right {
+  float: right; }
+
+.float-left {
+  float: left; }
+
 .cart-wrapper {
   width: 60% !important;
   padding: 0px !important;

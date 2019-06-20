@@ -7,12 +7,49 @@
 .position-abs {
   position: absolute; }
 
+.float-right {
+  float: right; }
+
+.float-left {
+  float: left; }
+
 .header-wrapper {
-  padding: 5px 90px; }
+  border-bottom: 3px solid rgba(238, 238, 238, 0.867);
+  padding: 5px 140px 0 140px;
+  min-height: 70px; }
+  @media (max-width: 768px), (max-width: 600px), (max-width: 600px) {
+    .header-wrapper {
+      padding: 5px 0px;
+      min-height: 32px; } }
   .header-wrapper .logo {
-    width: 25%; }
+    width: 20%; }
     .header-wrapper .logo .logo-img {
       width: 100%; }
   .header-wrapper .navigation {
-    width: 50%;
-    padding: 10px; }
+    margin: 30px 0 0 45px;
+    padding: 10px;
+    width: 50%; }
+    @media (max-width: 768px), (max-width: 600px), (max-width: 600px) {
+      .header-wrapper .navigation {
+        margin: 4px 0 0 13px;
+        padding: 10px;
+        width: 38%; } }
+    .header-wrapper .navigation .navigation-list-item {
+      margin-right: 20px; }
+  .header-wrapper .credentials-and-cart {
+    width: 20%; }
+    .header-wrapper .credentials-and-cart .credentials-wrapper {
+      text-align: right;
+      width: 100%; }
+    .header-wrapper .credentials-and-cart .credential-item {
+      margin-left: 10px; }
+    .header-wrapper .credentials-and-cart .cart-container {
+      background: rgba(238, 238, 238, 0.867);
+      float: right;
+      margin: 21px 0 0px 0;
+      min-height: 15px;
+      padding: 5px;
+      text-align: center;
+      width: 71%; }
+    .header-wrapper .credentials-and-cart .fa-shopping-cart {
+      color: #d10157; }

@@ -1,35 +1,36 @@
-<section class="container banner-wrapper">
-    <div class="w3-content w3-display-container">
-        <img class="banner-image mySlides" src="/images/offers/offer1.jpg" alt="Independence Day Deal - 25% off on shampoo" />  
-        <img class="banner-image mySlides" src="/images/offers/offer2.jpg" alt="Independence Day Deal - Rs120 off on surf" />
-        <img class="banner-image mySlides" src="/images/offers/offer3.jpg" alt="Independence Day Deal - Rs99 off on domex" /> 
-        <img class="banner-image mySlides" src="/images/offers/offer4.jpg" alt="Independence Day Deal - Rs99 off on bodywash" />  
-        <img class="banner-image mySlides" src="/images/offers/offer5.jpg" alt="Independence Day Deal - Rs70 off on tea" /> 
-        <div class="w3-center w3-container w3-section w3-large w3-text-white w3-display-bottommiddle" style="width:100%">
-            <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(1)"></span>
-            <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(2)"></span>
-            <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(3)"></span>
-            <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(4)"></span>
-            <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(5)"></span>
+<section class="banner-wrapper">
+    <div class="home-slider">
+        <div class="home-slider-offers">
+            {{#each banners}}
+            <div class="mySlides fade">
+                <img class="image-width" src="{{this.bannerImageUrl}}"
+                    alt="{{this.bannerImageAlt}}">
+            </div>
+            {{/each}}
+            <a class="prev" onClick="plusSlides(-1)" tabindex="0">prev</a>
+            <a class="next" id="next" onClick="plusSlides(1)" tabindex="0">next</a>
+            <div class="dots">
+                {{#each banners}}
+                <span class="dot" onclick="currentSlide({{ @index}})" tabindex="0"></span>
+                {{/each}}
+            </div>
+
         </div>
     </div>
     <div class="category-wrapper">
         {{#each categories}}
             {{#if this.enabled}}
                  <section class="category-section">
-                    <div class="flex-category-container-alt"> 
-                        <div class="category">
-                            <img src="{{this.imageUrl}}" alt="{{this.name}}" align="middle">
-                        </div>
-                        <div class="category-desc">
-                            <h5 class="category-heading" tabindex="0"><strong>{{this.name}}</strong></h5>
-                            <p class="category-text" tabindex="0">{{this.description}}</p>
-                            <div class="button-align"><button tabindex="0" class="category-button">Explore {{this.name}}</button></div>
-                        </div>
+                    <div class="category">
+                        <img class="category-image" src="{{this.imageUrl}}" alt="{{this.name}}" align="middle">
+                    </div>
+                    <div class="category-desc">
+                        <h1 class="category-heading" tabindex="0">{{this.name}}</h1>
+                        <p class="category-text" tabindex="0">{{this.description}}</p>
+                        <div class="button-align"><button tabindex="0" class="category-button"><a class="filter" href="/products/{{this.id}}">Explore {{this.name}}</a></button></div>
                     </div>
                 </section>
             {{/if}}
         {{/each}}
     </div>
 </section>
-<script src="/home.js"></script>

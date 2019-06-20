@@ -7,6 +7,12 @@
 .position-abs {
   position: absolute; }
 
+.float-right {
+  float: right; }
+
+.float-left {
+  float: left; }
+
 .categories-wrapper {
   background: rgba(238, 238, 238, 0.867);
   padding-top: 15px;

@@ -7,6 +7,12 @@
 .position-abs {
   position: absolute; }
 
+.float-right {
+  float: right; }
+
+.float-left {
+  float: left; }
+
 .row-fix {
   margin: 0px !important; }
 
