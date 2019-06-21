@@ -1,28 +1,30 @@
 <section class="cart-wrapper container">
     <div class="my-cart">
-        <h3>My Cart<span>(<i id="item_counter">{{item_counter}}</i> item)</span></h3>
+        <h3 class="font-color">My Cart<span class="font-color">(<i id="item_counter" class="font-color">{{item_counter}}</i> item)</span></h3>
     </div>
     <div class="cart-items">
         {{#each session.productInCart}}
             <div class="item-wrapper">
-                <div class="item-img">
+                <div class="item-img float-left">
                     <img class="img-cart" src="{{imageURL}}" alt="{{name}}" tabindex="0">
                 </div>
-                <div class="item-details">
-                    <h6><strong>{{name}}</strong></h6>
-                    <div>
-                        <button class="btn btn-minus"
-                            onclick="addRemoveItem('{{id}}', {{@index}},
-                            {{price}},'minus')">-</button>
-                        <input type="text" value="{{count}}"
-                            class="prod_quantity" id="prod{{@index}}">
-                        <button class="btn btn-plus"
-                            onclick="addRemoveItem('{{id}}', {{@index}}, {{price}},'plus')">+</button>
-                        <span class="price" tabindex="0">Rs.{{price}}</span>
+                <div class="item-details float-left">
+                    <div class="float-left items">
+                        <h4>{{name}}</h4>
+                        <div class="item-button">
+                            <button class="btn btn-minus"
+                                onclick="addRemoveItem('{{id}}', {{@index}},
+                                {{price}},'minus')">-</button>
+                            <input type="text" value="{{count}}"
+                                class="prod_quantity" id="prod{{@index}}">
+                            <button class="btn btn-plus"
+                                onclick="addRemoveItem('{{id}}', {{@index}}, {{price}},'plus')">+</button>
+                            <span class="price">Rs.{{price}}</span>
+                        </div>
                     </div>
-                </div>
-                <div class="item-total" id="totalp{{@index}}" >
-                    Rs. {{total_price}}
+                    <div class="item-total float-right" id="totalp{{@index}}" >
+                        Rs. {{total_price}}
+                    </div>
                 </div>
             </div>
         {{/each}}
@@ -34,14 +36,13 @@
                 alt="" tabindex="0">
         </div>
         <div class="offer-heading">
-            <p tabindex="0">You won't find cheaper
+            <p>You won't find cheaper
                 anywhere</p>
         </div>
     </div>
     <div class="checkout">
-        <p tabindex="0">Promo code can be applied on
+        <p>Promo code can be applied on
             payment page</p>
-        <button class="btn-checkout" tabindex="0">Proceed
-            to checkout <span tabindex="0">Rs. <b id="totalCheckoutAmount">0</b></span></button>
+        <button class="btn-checkout"><span class="font-color float-left">Proceed to checkout</span><span class="font-color float-right" id="totalCheckoutAmount">Rs. 0</span></button>
     </div>
 </section>

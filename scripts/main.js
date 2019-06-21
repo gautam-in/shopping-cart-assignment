@@ -36,10 +36,10 @@ routing.get('/products/:id', function (req, res, next) {
         item_counter: itemCounter.item_counter
     })
 });
-routing.get('/login', (req, res) => {
+routing.get('/login', function(req, res){
     res.render('login')
 });
-routing.get('/register', (req, res) => {
+routing.get('/register', function(req, res){
     res.render('register')
 });
 module.exports = routing;

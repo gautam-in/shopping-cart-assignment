@@ -1,6 +1,5 @@
 var express = require('express');
 var router = express.Router();
-/* GET cart page. */
 
 var productList = require('../server/products/index.get.json');
 var productInCart = [];
@@ -8,7 +7,7 @@ var itemCounter = require('./constant');
 
 
 router.get('/', function (req, res, next) {
-  var productLists = productList.products.filter(category_list => category_list.category);
+  var productLists = productList.products.filter(function(category_list){category_list.category});
 
   res.render('cart', {
     title: 'cart',
@@ -23,7 +22,7 @@ router.get('/allitem', function (req, res) {
 });
 router.get('/:id/:operation', function (req, res) {
   if (req.params.operation == "add") {
-    productList.products.forEach(element => {
+    productList.products.forEach(function(element) {
       if (element.id === req.params.id) {
         if (element.count == undefined) {
           element.count = 1;
@@ -42,7 +41,7 @@ router.get('/:id/:operation', function (req, res) {
     req.session.itemCounter = itemCounter.item_counter;
     res.end(JSON.stringify({ 'cartItems': req.session.productInCart, 'item_counter': req.session.itemCounter }));
   } else if (req.params.operation == "remove") {
-    productList.forEach(element => {
+    productList.products.forEach(function(element) {
       if (element.id === req.params.id) {
         element.count = element.count - 1;
         itemCounter.item_counter = itemCounter.item_counter - 1;

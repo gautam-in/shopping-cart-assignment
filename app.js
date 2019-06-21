@@ -31,7 +31,7 @@ app.use('/', mainRouting);
 app.use('/cart', cartRouter);
 app.set('views',__dirname+'/views/');
 app.set('view engine', 'hbs');
-app.listen(8080, () => {
+app.listen(8080, function() {
   console.log('Example app listening on port 8080!')
 });
 module.exports = app;

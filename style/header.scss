@@ -5,7 +5,7 @@
   min-height: 70px;
   @media (max-width: $breakpoint-phone),(max-width: $breakpoint-small-phone),(max-width: $breakpoint-small-phone) {
     padding: 5px 0px;
-    min-height: 32px;
+    min-height: 75px;
   }
   .logo{
     width: 20%;
@@ -25,16 +25,21 @@
     }
     .navigation-list-item{
       margin-right: 20px;
+      font: 400 12px Dosis;
     }
   }
   .credentials-and-cart{
     width: 20%;
+    @media (max-width: $breakpoint-phone), (max-width: $breakpoint-small-phone),(max-width: $breakpoint-small-phone) {
+      width: 28%;
+    }
     .credentials-wrapper{
       text-align: right;
       width: 100%;
     }
     .credential-item{
       margin-left: 10px;
+      font: 400 12px Dosis;
     }
     .cart-container{
       background: $grey;
@@ -44,6 +49,10 @@
       padding: 5px;
       text-align: center;
       width: 71%;
+      font: 400 12px Dosis;
+      @media (max-width: $breakpoint-phone), (max-width: $breakpoint-small-phone),(max-width: $breakpoint-small-phone) {
+        margin: 28px 0 0px 0;
+      }
     }
     .fa-shopping-cart{
       color: $accent;

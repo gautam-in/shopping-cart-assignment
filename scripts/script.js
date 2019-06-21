@@ -9,14 +9,14 @@
                 let totalCheckoutSpan = document.getElementById("totalCheckoutAmount");
                 document.getElementById("item_counter").innerHTML = data.item_counter;
                 let totalCheckoutPrice = 0;
-                data.cartItems.forEach(element => {
+                data.cartItems.forEach(function(element) {
                     totalCheckoutPrice = totalCheckoutPrice + element.total_price;
                 });
-                totalCheckoutSpan.innerHTML = totalCheckoutPrice;
+                totalCheckoutSpan.innerHTML = "Rs. "+totalCheckoutPrice;
             });
     }
     
-    function updateCart(item_counter) {
+    function updateCart(item_counter, cartItems) {
         document.getElementsByClassName("cart-count")[0].innerHTML = item_counter;
         if (window.location.pathname == "/product") {
             window.location.href = "/cart";
@@ -31,7 +31,7 @@
         for (let i = 0; i < checkoutAccumulation.length; i++) {
             totalCheckoutPrice = totalCheckoutPrice + parseInt(checkoutAccumulation[i].innerHTML);
         }
-        totalCheckoutSpan.innerHTML = totalCheckoutPrice;
+        totalCheckoutSpan.innerHTML = "Rs. "+totalCheckoutPrice;
     }
     
     if (window.location.pathname === "/cart") {
@@ -48,7 +48,8 @@
         xmlHttpReq.onload = function () {
             if (xmlHttpReq.status == 200) {
                 let data = JSON.parse(xmlHttpReq.responseText);
-                updateCart(data.item_counter);
+                console.log(data)
+                updateCart(data.item_counter, data.cartItems);
             } else { }
         };
         xmlHttpReq.onerror = function () { };
@@ -65,7 +66,6 @@
                 document.getElementById("totalp" + index).innerHTML = "Rs."+totalCost;
                 buy(id, 'remove');
                 request_server();
-                //updateCart(d.item_counter);
             } else { }
         } else if (task == 'plus') {
             input.value++;
@@ -111,5 +111,21 @@
     
     var carousal = document.getElementById("next");
     setInterval(() => {
-        carousal.click();
-    }, 5000);    
+        if(carousal){
+            carousal.click();
+        }
+    }, 5000); 
+    
+    if (window.location.pathname == "/products/") {
+        if($(window).width() <= 768){
+            var element = document.getElementsByClassName("display-none");
+            console.log(element[0]);
+            element[0].classList.add("display-block");
+            element[0].classList.remove("display-none");
+        }
+        else{
+            var element = document.getElementsByClassName("display-none");
+            element[0].classList.add("display-none");
+            element[0].classList.remove("display-block");
+        }
+    }

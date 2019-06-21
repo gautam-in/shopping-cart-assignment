@@ -1,39 +1,27 @@
-<section class="products-wrapper container">
-    <div class="">
-        <div class="categories-wrapper">
+<section class="products-wrapper">
+    <ul class="categories-wrapper">
+        <div onclick="myfunction()" class="display-none">Categories</div>
+        <div id="demo">
             {{#each categories}}
                 {{#if this.enabled}}
-                    <div class="category-name"><strong><a href="/products/{{this.id}}">{{this.name}}</a></strong></div>
+                    <li class="category-name"><a href="/products/{{this.id}}">{{this.name}}</a></li>
                 {{/if}}
             {{/each}}
         </div>
-        <div class="categories-wrapper-phone w3-container">
-            <div class="category-phone">
-                <div onclick="myFunction()"><span>Categories</span><span class="pull-right"><i class="fa fa-angle-down " aria-hidden="true"></i></span></div>
-                <div id="Demo" class="w3-dropdown-content w3-bar-block w3-border">
-                    {{#each categories}}
-                        {{#if this.enabled}}
-                            <div class="category-name"><strong><a href="/products/{{this.id}}">{{this.name}}</a></strong></div>
-                        {{/if}}
-                    {{/each}}
+    </ul>
+    <div class="product-wrapper">
+        {{#each products}}
+            <div class="product">
+                <div class="product-name" title="{{this.name}}">{{this.name}}</div>
+                <div class="product-image">
+                    <img class="pro-img" src="{{this.imageURL}}" alt="{{this.name}}">
+                </div>
+                <div class="product-description" title="{{this.description}}">{{this.description}}</div>
+                <div class="pricing-purchasing">
+                    <span class="pricing">MRP Rs {{this.price}}</span>
+                    <button class="purchasing" onclick="buy('{{this.id}}', 'add')">Buy now<span class="smaller-device">@ {{this.price}}</span></button>                        
                 </div>
             </div>
-        </div>
-        <div class="product-wrapper">
-            {{#each products}}
-                <div class="product">
-                    <div class="product-name" title="{{this.name}}"><strong>{{this.name}}</strong></div>
-                    <div class="product-image">
-                        <img class="pro-img" src="{{this.imageURL}}" alt="{{this.name}}" align="middle">
-                    </div>
-                    <div class="product-description" title="{{this.description}}">{{this.description}}</div>
-                    <div class="pricing-purchasing">
-                        <span class="pricing">MRP Rs {{this.price}}</span>
-                        <button class="purchasing" tabindex="0" onclick="buy('{{this.id}}', 'add')">Buy now&nbsp;<span class="smaller-device">@ {{this.price}}</span></button>                        
-                    </div>
-                </div>
-            {{/each}}
-        </div>
+        {{/each}}
     </div>
 </section>
-<script src="/product.js"></script>

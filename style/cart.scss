@@ -1,40 +1,47 @@
 @import "variables.scss";
 .cart-wrapper{
-    width: 60% !important;
-    padding: 0px !important;
     background: $grey;
+    padding: 0 150px;
+    @media (max-width: $breakpoint-small-phone),(max-width: $breakpoint-small-phone){
+        padding: 0 ;
+    }
     .my-cart{
         background: black;
-        color: white;
+        color: $white;
         padding: 10px;
     }
     .item-wrapper{
         min-height: 100px;
         margin-top: 10px;
-        background: #fff;
+        background: $white;
     }
     .item-img{
         width: 15%;
-        float: left;
         .img-cart{
-            width: 100%
+            width: 100%;
+            height: 90px;
         }
     }
     .item-details{
-        float: left;
-        width: 60%;
+        width: 83%;
         padding-left: 10px;
     }
+    .items{
+        margin: 20px;
+        width: 70%;
+    }
+    .item-button{
+        margin-top: 17px;
+    }
     .item-total{
-        float:left;
-        width: 24%;
-        text-align: center;
-        padding-top: 25px;
+        margin-top: 45px;
+        margin-right: 15px;
     }
     .btn{
         background: $accent;
-        color: #fff;
+        color: $white;
         border-radius: 15px;
+        border: $accent;
     }
     input {
         border: none;
@@ -43,7 +50,7 @@
     }
     .product-offer{
         margin-top: 10px;
-        background: #fff;
+        background: $white;
         min-height: 60px;
         padding: 5px;
         .offer-image{
@@ -59,13 +66,20 @@
     .checkout{
         margin-top: 60px;
         min-height: 100px;
-        background: #fff;
-        text-align: center;
+        background: $white;
         padding: 10px;
         .btn-checkout{
             background: $accent;
-            color: #fff;
+            color: $white;
             width: 100%;
+            border: $accent;
+            height: 40px;
+            padding: 13px;
+            border-radius: 6px;
+            margin-top: 18px;
         }
+    }
+    .font-color{
+        color: $white;
     }
 }
