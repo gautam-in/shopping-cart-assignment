@@ -1,51 +1,130 @@
-.carousel-indicators {
-    li {    
-        background-color: #00000066 !important;
-        border: none !important;
-    }
-    .active {
-        width: 15px !important;
-        height: 15px !important;
-    }
+@import "mixins.scss";
+@import "variables.scss";
+@import "main.scss";
+
+.slideshow-section {
+  @include bottom-style;
 }
 
-.carousel-control {
-    .glyphicon-chevron-left,.icon-prev,.glyphicon-chevron-right,.icon-next{
-        color: black !important;
+.prod-section {
+  @include bottom-style;
+  &:nth-child(even) {
+    .prod-content {
+      width: 60%;
+      float: right;
+      padding-bottom: 20px;
+      @include alignCenter;
+      p,
+      h4 {
+        margin-bottom: 20px;
+      }
     }
-    .left,.right{
-        background: none !important;
+
+    .prod-image {
+      width: 30%;
+      float: left;
     }
-}
-
-.caraousel_sec,
-.fruits_sec,
-.bakery_sec,
-.beverages_sec,
-.beauty_sec,
-.babycare_sec {
-    margin-bottom: 20px;
-    &::after{
-        content: "";
-        display: block;
-        border: 1px solid #cdcdcd6e;
-        margin: 0 30%;
-        box-shadow: 0 2px 2px #cdcdcd6e;
-        clear: both;
+  }
+  &:nth-child(odd) {
+    .prod-content {
+      width: 60%;
+      float: left;
+      padding-bottom: 20px;
+      @include alignCenter;
+      p,
+      h4 {
+        margin-bottom: 20px;
+      }
     }
-    
+
+    .prod-image {
+      width: 30%;
+      float: right;
+    }
+  }
 }
 
-@mixin right_div{
-    width: 50%;
-    overflow: hidden;
+.home-container {
+  padding: 0 40px;
 }
 
-.fruits_sec_r{
-    @include right_div;
+.mySlidesShow {
+  display: block;
 }
 
-.fruits_sec_l{
-    @include right_div;
-    float: left;
+.mySlidesHide {
+  display: none;
+}
+
+/* Slideshow container */
+
+.slideshow-container {
+  position: relative;
+  margin: auto;
+}
+
+.dot-container {
+  @include alignCenter;
+}
+
+/* Next & previous buttons */
+
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  font-size: 30px;
+  background: #fff;
+}
+
+/* Position the "next button" to the right */
+
+.next {
+  right: 0;
+}
+
+/* The dots/bullets/indicators */
+
+.dot {
+  cursor: pointer;
+  height: 10px;
+  width: 10px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active,
+.dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
 }

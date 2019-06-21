@@ -184,3 +184,9 @@ input[type="password"] {
   color: red;
   height: 10px;
   margin: 5px 0px; }
+
+.footer-wrapper {
+  background: #cdcdcdcd;
+  padding: 10px;
+  text-align: center;
+  clear: both; }

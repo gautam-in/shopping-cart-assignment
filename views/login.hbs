@@ -1,0 +1,25 @@
+<main class="form-content">
+    <aside class="left-content">
+        <h1>Login</h1>
+        <p>Get access to your Orders, Wishlist and Recommendations</p>
+    </aside>
+    <section class="right-content">
+        <form action="#" method="POST" id="login-form">
+            <p id="error" class="error"></p>
+
+            <input type="text" id="email" name="email" placeholder="Email" onkeyup="validate(this);"
+                onfocus="this.placeholder = ''" onmouseover="this.placeholder = ''"
+                onmouseout="this.placeholder = 'Email'">
+            <p id="email-error" class="error"></p>
+
+            <input type="password" id="password" name="password" placeholder="Password" onfocus="this.placeholder = ''"
+                onkeyup="validate(this);" onmouseover="this.placeholder = ''"
+                onmouseout="this.placeholder = 'Password'">
+            <p id="pwd-error" class="error"></p>
+
+            <input type="button" class="submit" id="submit-login" value="Login">
+        </form>
+    </section>
+    </div>
+</main>
+<script src="/js/login.js"></script>

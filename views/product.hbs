@@ -1,0 +1,29 @@
+<main class="products-container">
+    <nav class="navbar">
+        <ul>
+            <i class="fa fa-angle-down"></i>
+            {{#each prodCategories}}
+            {{#if enabled}}
+                <li><a href="/product/{{this.id}}">{{name}}</a></li>
+            {{/if}}    
+            {{/each}}
+        </ul>
+    </nav>
+
+    <section class="prodlist-container">
+        {{#each productList}}
+        <div class="product-item">
+            <h4>{{name}}</h4>
+            <img src={{imageURL}} alt={{description}} width="80%"/>
+            <h6>{{description}}</h6>
+            <div class="desktop-prod">
+                <span>Rs.{{price}}</span><a class="btn" onclick="buyItem('{{this.id}}', 'add')">Buy Now</a>
+            </div>      
+            <div class="tablet-prod">
+                <a class="btn" onclick="buyItem('{{this.id}}', 'add')">Buy Now @ Rs{{price}}</a>
+            </div>    
+        </div>    
+        {{/each}}
+    </section>
+</main>
+<link rel="stylesheet" type='text/css' href="/css/product.css" />

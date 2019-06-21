@@ -1,0 +1,64 @@
+@import "variables.scss";
+@import "mixins.scss";
+
+.header-wrapper {
+  display: flex;
+  align-items: flex-end;
+  height: 80px;
+  border-bottom: 2px solid #cdcdcdcd;
+  * {
+    display: inline-block;
+  }
+  img {
+    margin-left: 40px;
+  }
+}
+
+.cart-btn {
+  cursor: pointer;
+  display: block;
+  background: #cdcdcdcd;
+  height: 30px;
+  padding: 8px;
+  .fa-shopping-cart {
+    color: #cf0153;
+  }
+}
+.leftnav {
+  width: 70%;
+  ul {
+    padding: 0 0 15px 40px;
+  }
+}
+
+.rightnav {
+  ul {
+    padding-bottom: 15px;
+  }
+}
+
+/* 
+  ##Device = Tablets, Ipads (portrait)
+  ##Screen = B/w 768px to 1024px
+*/
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .header-wrapper {
+    img {
+      margin-left: unset;
+    }
+  }
+}
+
+/* 
+  ##Device = Most of the Smartphones Mobiles (Portrait)
+  ##Screen = B/w 320px to 479px
+*/
+
+@media (min-width: 320px) and (max-width: 480px) {
+  .header-wrapper {
+    img {
+      margin-left: unset;
+    }
+  }
+}

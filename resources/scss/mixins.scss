@@ -1,0 +1,53 @@
+@import "variables.scss";
+
+@mixin item-block {
+  padding: 15px;
+  background: #fff;
+  overflow: hidden;
+}
+
+@mixin clearfix {
+  clear: both;
+}
+
+@mixin alignCenter {
+  text-align: center;
+}
+
+@mixin bottom-style {
+  margin-bottom: 20px;
+  &::after {
+    content: "";
+    display: block;
+    border: 1px solid $grey-color;
+    border-bottom-left-radius: 300px;
+    border-bottom-right-radius: 300px;
+    margin: 0 25%;
+    box-shadow: 0px 3px 7px 2px $grey-color;
+    -webkit-box-shadow: 0px 3px 7px 2px $grey-color;
+    -moz-box-shadow: 0px 3px 7px 2px $grey-color;
+    @include clearfix;
+  }
+}
+
+@mixin nav-link-style {
+  display: inline-block;
+  font-weight: 300;
+  color: black;
+}
+
+@mixin input {
+  border: none;
+  border-bottom: 1px solid $grey-color;
+  width: 50%;
+  height: 40px;
+  &:focus {
+    border-bottom: 1px solid #2fb9c6;
+    outline: none;
+  }
+}
+
+@mixin sub-div {
+  width: 50%;
+  overflow: hidden;
+}

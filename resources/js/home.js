@@ -1,31 +1,45 @@
-function getAjax(url, success) {
-    var xhr = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
-    xhr.open('GET', url);
-    xhr.onreadystatechange = function() {
-        if (xhr.readyState>3 && xhr.status==200) success(xhr.responseText);
-    };
-    xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
-    xhr.send();
-    return xhr;
-}
-(function () {   
-    getAjax('http://localhost:5000/banners', function(data){ 
-        var response=JSON.parse(data);
-        for (let i = 0; i < response.length; i++) {
-            let elem = document.createElement("img");
-            let div = document.createElement("div");
-            div.setAttribute("class", "item");
-            if (i == 0) {
-                div.setAttribute("class", "item active");
-            }
-            elem.setAttribute("src", response[i].bannerImageUrl);
-            elem.setAttribute("alt", response[i].bannerImageAlt);
-            div.appendChild(elem);
-            document.getElementById("carousel-inner").appendChild(div);
-        }
+var express = require('express'),
+    router = express.Router(),
+    request = require("request"),
+    itemCounter = require('./constant'),
+    content = require('./main'),
+    banners, categories;
+
+request({
+    url: "http://localhost:5000/banners",
+    json: true
+}, function (error, response, result) {
+    if (!error && response.statusCode === 200) {
+        banners = result;
+    }
+});
+
+request({
+    url: "http://localhost:5000/categories",
+    json: true
+}, function (error, response, result) {
+    if (!error && response.statusCode === 200) {
+        categories = result;
+    }
+});
+
+request({
+    url: "http://localhost:5000/content",
+    json: true
+}, function (error, response, result) {
+    if (!error && response.statusCode === 200) {
+        content = result;
+    }
+});
+
+router.get('/', function (req, res, next) {
+    res.render('home', {
+        banners: banners,
+        categories: categories,
+        itemCounter: itemCounter.item_counter,
+        name: content.name
     });
-    getAjax('http://localhost:5000/categories', function(data){ 
-        var response=JSON.parse(data);
-        
-    });
-})();
+    console.log(content.name);
+});
+
+module.exports = router;

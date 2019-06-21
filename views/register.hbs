@@ -1,0 +1,39 @@
+<main class="form-content">
+    <aside class="left-content">
+        <h1>Login</h2>
+            <p>Get access to your Orders, Wishlist and Recommendations</p>
+    </aside>
+    <section class="right-content">
+        <form action="#" method="POST" id="register-form">
+            <p id="error" class="error"></p>
+
+            <input type="text" id="fname" name="fname" placeholder="First Name" onkeyup="validate(this);"
+                onfocus="this.placeholder = ''" onmouseover="this.placeholder = ''"
+                onmouseout="this.placeholder = 'First Name'">
+            <p id="fname-error" class="error"></p>
+
+            <input type="text" id="lname" name="lname" placeholder="Last Name" onkeyup="validate(this);"
+                onfocus="this.placeholder = ''" onmouseover="this.placeholder = ''"
+                onmouseout="this.placeholder = 'Last Name'">
+            <p id="lname-error" class="error"></p>
+
+            <input type="text" id="email" name="email" placeholder="Email" onkeyup="validate(this);"
+                onfocus="this.placeholder = ''" onmouseover="this.placeholder = ''"
+                onmouseout="this.placeholder = 'Email'">
+            <p id="email-error" class="error"></p>
+
+            <input type="password" id="password" name="password" placeholder="Password"
+                onkeyup="validate(this);" onfocus="this.placeholder = ''" onmouseover="this.placeholder = ''"
+                onmouseout="this.placeholder = 'Password'">
+            <p id="password-error" class="error"></p>
+
+            <input type="password" id="cpassword" name="cpassword" placeholder="Confirm Password"
+                onkeyup="validate(this);" onfocus="this.placeholder = ''" onmouseover="this.placeholder = ''"
+                onmouseout="this.placeholder = 'Confirm Password'">
+            <p id="cpassword-error" class="error"></p>
+
+            <input type="button" id="submit-register" class="submit" value="Signup">
+        </form>
+    </section>
+</main>
+<script src="/js/register.js"></script>
