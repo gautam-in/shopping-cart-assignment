@@ -1,35 +1,35 @@
 <main class="form-content">
     <aside class="left-content">
-        <h1>Login</h2>
-            <p>Get access to your Orders, Wishlist and Recommendations</p>
+        <h1>{{content.register}}</h2>
+            <p>{{content.access}}</p>
     </aside>
     <section class="right-content">
         <form action="#" method="POST" id="register-form">
             <p id="error" class="error"></p>
 
-            <input type="text" id="fname" name="fname" placeholder="First Name" onkeyup="validate(this);"
+            <input type="text" id="fname" name="fname" placeholder={{content.fname}} onkeyup="validate(this);"
                 onfocus="this.placeholder = ''" onmouseover="this.placeholder = ''"
-                onmouseout="this.placeholder = 'First Name'">
+                onmouseout="this.placeholder = '{{content.fname}}'">
             <p id="fname-error" class="error"></p>
 
-            <input type="text" id="lname" name="lname" placeholder="Last Name" onkeyup="validate(this);"
+            <input type="text" id="lname" name="lname" placeholder={{content.lname}} onkeyup="validate(this);"
                 onfocus="this.placeholder = ''" onmouseover="this.placeholder = ''"
-                onmouseout="this.placeholder = 'Last Name'">
+                onmouseout="this.placeholder = '{{content.lname}}'">
             <p id="lname-error" class="error"></p>
 
-            <input type="text" id="email" name="email" placeholder="Email" onkeyup="validate(this);"
+            <input type="text" id="email" name="email" placeholder={{content.email}} onkeyup="validate(this);"
                 onfocus="this.placeholder = ''" onmouseover="this.placeholder = ''"
-                onmouseout="this.placeholder = 'Email'">
+                onmouseout="this.placeholder = '{{content.email}}'">
             <p id="email-error" class="error"></p>
 
-            <input type="password" id="password" name="password" placeholder="Password"
-                onkeyup="validate(this);" onfocus="this.placeholder = ''" onmouseover="this.placeholder = ''"
-                onmouseout="this.placeholder = 'Password'">
+            <input type="password" id="password" name="password" placeholder={{content.password}} onkeyup="validate(this);"
+                onfocus="this.placeholder = ''" onmouseover="this.placeholder = ''"
+                onmouseout="this.placeholder = '{{content.password}}'">
             <p id="password-error" class="error"></p>
 
-            <input type="password" id="cpassword" name="cpassword" placeholder="Confirm Password"
-                onkeyup="validate(this);" onfocus="this.placeholder = ''" onmouseover="this.placeholder = ''"
-                onmouseout="this.placeholder = 'Confirm Password'">
+            <input type="password" id="cpassword" name="cpassword" placeholder={{content.cpassword}} onkeyup="validate(this);"
+                onfocus="this.placeholder = ''" onmouseover="this.placeholder = ''"
+                onmouseout="this.placeholder = '{{content.cpassword}}'">
             <p id="cpassword-error" class="error"></p>
 
             <input type="button" id="submit-register" class="submit" value="Signup">

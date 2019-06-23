@@ -163,7 +163,7 @@ input[type="text"],
 input[type="email"],
 input[type="password"] {
   border: none;
-  border-bottom: 1px solid #cdcdcdcd;
+  border-bottom: 1px solid #cdcdcd;
   width: 50%;
   height: 40px; }
   input[type="text"]:focus,
@@ -176,7 +176,7 @@ input[type="password"] {
   cursor: pointer;
   color: #fff;
   border: #bf2957;
-  background-color: #bf2957;
+  background: #bf2957;
   display: inline-block;
   padding: 10px; }
 
@@ -186,11 +186,11 @@ input[type="password"] {
   margin: 5px 0px; }
 
 .products-container {
-  padding: 0 40px; }
+  padding: 0 40px;
+  display: flex; }
 
 .prodlist-container {
-  width: 85%;
-  float: right; }
+  width: 85%; }
 
 .product-item {
   width: 20%;
@@ -247,9 +247,7 @@ input[type="password"] {
 
 .navbar {
   width: 15%;
-  position: absolute;
-  background-color: #eaeaea;
-  font-size: 12px; }
+  background: #eaeaea; }
   .navbar ul {
     list-style-type: none; }
     .navbar ul li::after {

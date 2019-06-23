@@ -1,7 +1,7 @@
 <main class="cart-main" id="cart">
     <div class="cart">
         <h4 class="cart-header">{{name}}
-            My Cart({{itemCounter}} item)<a href="/"><i class="fa fa-close" aria-hidden="true"></i></a>
+            {{content.mycart}}({{itemCounter}} {{content.item}})</a>
         </h4>
         
         <section class="cart-content">
@@ -11,9 +11,9 @@
                 <div class="item-cal">
                     <h6>{{name}}</h6>
                     <div>
-                        <button class="add-remove-items" onclick="addRemoveItem('{{id}}',{{@index}},{{price}},'minus')">-</button>
+                        <button id="minus-item" class="add-remove-items" data-id='{{id}}' data-index={{@index}} data-price={{price}} data-operation='minus'>-</button>
                         <span id="prod{{@index}}">{{count}}</span>
-                        <button class="add-remove-items" onclick="addRemoveItem('{{id}}',{{@index}},{{price}},'plus')">+</button>
+                        <button id="plus-item" class="add-remove-items" data-id='{{id}}' data-index={{@index}} data-price={{price}} data-operation='plus'>+</button>
                         <i class="fa fa-times" aria-hidden="true"></i>
                         <span>Rs{{price}}</span>
                         <span class="total-amt" id="totalp{{@index}}">Rs{{totalPrice}}</span>
@@ -23,13 +23,13 @@
             {{/each}}
             <div class="cart-caption">
                 <img src="/images/lowest-price.png" alt="image for lowest price guaranteed" width="30%" />
-                <p>You won't find it cheaper anywhere</p>
+                <p>{{content.cheaper}}</p>
             </div>
         </section>
         
         <section class="cart-footer">
-            <p>Promo code can be applied on payment page
-                <a class="btn" href="#">Proceed to Checkout
+            <p>{{content.promo}}
+                <a class="btn" href="#">{{content.checkout}}
                     <span id="total-checkout-amt">Rs187</span><i class="fa fa-angle-right" aria-hidden="true"></i>
                 </a>
             </p>

@@ -1,13 +1,14 @@
+"use strict";
+
 var validation = false;
 
-callback = function (flag, id, value) {
+callback = function callback(flag, id, value) {
     validation = flag;
     document.getElementById(id).innerHTML = value;
-}
-
+};
 
 document.getElementById("submit-login").addEventListener("click", function () {
-    let ele = document.getElementById('login-form');
+    var ele = document.getElementById('login-form');
     ele.childNodes.forEach(function (element) {
         if (element.nodeName == "INPUT") {
             if (document.getElementById(element.id).value == "") {
@@ -19,7 +20,6 @@ document.getElementById("submit-login").addEventListener("click", function () {
         window.location.href = window.location.origin + "/";
     }
 });
-
 
 function validate(e) {
     switch (e.id) {
@@ -42,8 +42,7 @@ function validate(e) {
                 callback(true, 'error', "");
                 if (e.value.match(decimal)) {
                     callback(true, 'pwd-error', "");
-                }
-                else {
+                } else {
                     callback(false, 'pwd-error', "Please enter valid password.");
                 }
             } else {
@@ -52,5 +51,4 @@ function validate(e) {
             break;
         default:
     }
-
 }

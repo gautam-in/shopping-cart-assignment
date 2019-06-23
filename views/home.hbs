@@ -13,7 +13,7 @@
 
         <div class="dot-container">
             {{#each banners}}
-            <span class="dot" onclick="currentSlide({{order}})"></span>
+            <span class="dot" id="dot" data-attr={{order}}></span>
             {{/each}}
         </div>
     </section>
@@ -24,7 +24,7 @@
         <aside class="prod-content">
             <h4>{{name}}</h4>
             <p>{{description}}</p>
-            <a class="btn" href="#">Explore {{key}}</a>
+            <a class="btn" href="/product/{{this.id}}">Explore {{key}}</a>
         </aside>
     </section>
     {{/if}}

@@ -1,96 +1,90 @@
 @import "mixins.scss";
 @import "main.scss";
-
 .cart-main {
-  position: relative;
-  z-index: 1;
-  padding: 60px;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgba(0, 0, 0, 0.4);
-  margin: 0px;
+    display: block;
+    padding: 60px;
+    background: grey;
 }
+
 .cart {
-  background-color: #eaeaea;
-  margin: auto;
-  width: 70%;
+    background: #eaeaea;
+    margin: auto;
+    width: 70%;
 }
 
 .cart-header {
-  background: #000;
-  color: #fff;
-  padding: 20px;
-  .fa-close {
-    float: right;
+    background: #000;
     color: #fff;
-  }
+    padding: 20px;
+    .fa-close {
+        float: right;
+        color: #fff;
+    }
 }
 
 .cart-content {
-  margin: 20px 0px;
-  height: 400px;
-  overflow-y: auto;
-  .cart-items {
-    @include item-block;
-    img {
-      float: left;
+    margin: 20px 0px;
+    height: 400px;
+    overflow-y: auto;
+    .cart-items {
+        @include item-block;
+        img {
+            float: left;
+        }
     }
-  }
 }
 
 .item-cal {
-  float: left;
-  margin-left: 10px;
-  width: 85%;
-  div {
-    padding: 10px 0 0 0;
-    .add-remove-items {
-      border-radius: 20%;
-      width: 20px;
-      background: #bf2957;
-      text-align: center;
-      padding: 2px;
-      color: #fff;
+    float: left;
+    margin-left: 10px;
+    width: 85%;
+    div {
+        padding: 10px 0 0 0;
+        .add-remove-items {
+            border-radius: 20%;
+            width: 20px;
+            background: #bf2957;
+            text-align: center;
+            padding: 2px;
+            color: #fff;
+        }
+        span {
+            margin: 0 3px;
+        }
+        .total-amt {
+            float: right;
+        }
     }
-    span {
-      margin: 0 3px;
-    }
-    .total-amt {
-      float: right;
-    }
-  }
 }
 
 .cart-caption {
-  margin: 10px;
-  @include item-block;
-  img {
-    float: left;
-  }
-  p {
-    text-align: center;
-    margin: 15px;
-  }
+    margin: 10px;
+    @include item-block;
+    img {
+        float: left;
+    }
+    p {
+        text-align: center;
+        margin: 15px;
+    }
 }
 
 .cart-footer {
-  padding: 15px;
-  background: #fff;
-  p {
-    margin-bottom: 10px;
-    text-align: center;
-  }
-  a {
-    width: 100%;
-    margin-top: 10px;
-    text-align: left;
-    span {
-      float: right;
+    padding: 15px;
+    background: #fff;
+    p {
+        margin-bottom: 10px;
+        text-align: center;
     }
-  }
+    a {
+        width: 100%;
+        margin-top: 10px;
+        text-align: left;
+        span {
+            float: right;
+        }
+    }
 }
+
 
 /* cart Content */

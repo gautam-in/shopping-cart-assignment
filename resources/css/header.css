@@ -2,7 +2,7 @@
   display: flex;
   align-items: flex-end;
   height: 80px;
-  border-bottom: 2px solid #cdcdcdcd; }
+  border-bottom: 2px solid #cdcdcd; }
   .header-wrapper * {
     display: inline-block; }
   .header-wrapper img {
@@ -11,7 +11,7 @@
 .cart-btn {
   cursor: pointer;
   display: block;
-  background: #cdcdcdcd;
+  background: #cdcdcd;
   height: 30px;
   padding: 8px; }
   .cart-btn .fa-shopping-cart {

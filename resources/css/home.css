@@ -163,7 +163,7 @@ input[type="text"],
 input[type="email"],
 input[type="password"] {
   border: none;
-  border-bottom: 1px solid #cdcdcdcd;
+  border-bottom: 1px solid #cdcdcd;
   width: 50%;
   height: 40px; }
   input[type="text"]:focus,
@@ -176,7 +176,7 @@ input[type="password"] {
   cursor: pointer;
   color: #fff;
   border: #bf2957;
-  background-color: #bf2957;
+  background: #bf2957;
   display: inline-block;
   padding: 10px; }
 
@@ -190,13 +190,13 @@ input[type="password"] {
   .slideshow-section::after {
     content: "";
     display: block;
-    border: 1px solid #cdcdcdcd;
+    border: 1px solid #cdcdcd;
     border-bottom-left-radius: 300px;
     border-bottom-right-radius: 300px;
     margin: 0 25%;
-    box-shadow: 0px 3px 7px 2px #cdcdcdcd;
-    -webkit-box-shadow: 0px 3px 7px 2px #cdcdcdcd;
-    -moz-box-shadow: 0px 3px 7px 2px #cdcdcdcd;
+    box-shadow: 0px 3px 7px 2px #cdcdcd;
+    -webkit-box-shadow: 0px 3px 7px 2px #cdcdcd;
+    -moz-box-shadow: 0px 3px 7px 2px #cdcdcd;
     clear: both; }
 
 .prod-section {
@@ -204,13 +204,13 @@ input[type="password"] {
   .prod-section::after {
     content: "";
     display: block;
-    border: 1px solid #cdcdcdcd;
+    border: 1px solid #cdcdcd;
     border-bottom-left-radius: 300px;
     border-bottom-right-radius: 300px;
     margin: 0 25%;
-    box-shadow: 0px 3px 7px 2px #cdcdcdcd;
-    -webkit-box-shadow: 0px 3px 7px 2px #cdcdcdcd;
-    -moz-box-shadow: 0px 3px 7px 2px #cdcdcdcd;
+    box-shadow: 0px 3px 7px 2px #cdcdcd;
+    -webkit-box-shadow: 0px 3px 7px 2px #cdcdcd;
+    -moz-box-shadow: 0px 3px 7px 2px #cdcdcd;
     clear: both; }
   .prod-section:nth-child(even) .prod-content {
     width: 60%;
@@ -271,14 +271,14 @@ input[type="password"] {
   height: 10px;
   width: 10px;
   margin: 0 2px;
-  background-color: #bbb;
+  background: #bbb;
   border-radius: 50%;
   display: inline-block;
   transition: background-color 0.6s ease; }
 
 .active,
 .dot:hover {
-  background-color: #717171; }
+  background: #717171; }
 
 /* Fading animation */
 .fade {

@@ -17,10 +17,10 @@
             <img src={{imageURL}} alt={{description}} width="80%"/>
             <h6>{{description}}</h6>
             <div class="desktop-prod">
-                <span>Rs.{{price}}</span><a class="btn" onclick="buyItem('{{this.id}}', 'add')">Buy Now</a>
+                <span>Rs.{{price}}</span><button id="buyItem" class="btn" data-id='{{this.id}}' data-operation='add'>{{buy}}</button>
             </div>      
             <div class="tablet-prod">
-                <a class="btn" onclick="buyItem('{{this.id}}', 'add')">Buy Now @ Rs{{price}}</a>
+                <button class="btn" data-id='{{this.id}}' data-operation='add'>{{buy}} @ Rs{{price}}</button>
             </div>    
         </div>    
         {{/each}}

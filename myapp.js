@@ -16,17 +16,21 @@ var _expressHandlebars = require('express-handlebars');
 
 var _expressHandlebars2 = _interopRequireDefault(_expressHandlebars);
 
-var _home = require('./resources/js/home');
+var _home = require('./resources/routes/home');
 
 var _home2 = _interopRequireDefault(_home);
 
-var _product = require('./resources/js/product');
+var _product = require('./resources/routes/product');
 
 var _product2 = _interopRequireDefault(_product);
 
-var _cart = require('./resources/js/cart');
+var _cart = require('./resources/routes/cart');
 
 var _cart2 = _interopRequireDefault(_cart);
+
+var _constant = require('./resources/routes/constant');
+
+var _constant2 = _interopRequireDefault(_constant);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -65,14 +69,23 @@ app.get('/', function (req, res) {
     res.render('home');
 });
 app.get('/login', function (req, res) {
-    res.render('login');
+    res.render('login', {
+        itemCounter: _constant2.default.item_counter,
+        content: _constant2.default.content.content
+    });
 });
+
 app.get('/register', function (req, res) {
-    res.render('register');
+    res.render('register', {
+        itemCounter: _constant2.default.item_counter,
+        content: _constant2.default.content.content
+    });
 });
+
 app.get('/product', function (req, res) {
     res.render('product');
 });
+
 app.get('/cart', function (req, res) {
     res.render('cart');
 });

@@ -1,63 +1,61 @@
 @import "mixins.scss";
 @import "variables.scss";
 @import "reset.scss";
-
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  a {
-    text-decoration: none;
-    cursor: pointer;
-  }
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    a {
+        text-decoration: none;
+        cursor: pointer;
+    }
 }
 
 body {
-  font-size: $primary-fontsize;
+    font-size: $primary-fontsize;
 }
 
 .form-content {
-  padding: 8% 10%;
-  .left-content {
-    @include sub-div;
-    float: left;
-  }
-
-  .right-content {
-    @include sub-div;
-    label {
-      opacity: 0;
-      position: absolute;
+    padding: 8% 10%;
+    .left-content {
+        @include sub-div;
+        float: left;
     }
-  }
+    .right-content {
+        @include sub-div;
+        label {
+            opacity: 0;
+            position: absolute;
+        }
+    }
 }
 
 .submit {
-  color: #fff;
-  background: #d10157;
-  width: 50%;
-  border: none;
-  height: 35px;
-  margin-top: 30px;
+    color: #fff;
+    background: #d10157;
+    width: 50%;
+    border: none;
+    height: 35px;
+    margin-top: 30px;
 }
 
 input[type="text"],
 input[type="email"],
 input[type="password"] {
-  @include input;
+    @include input;
 }
 
 .btn {
-  cursor: pointer;
-  color: #fff;
-  border: #bf2957;
-  background-color: #bf2957;
-  display: inline-block;
-  padding: 10px;
+    cursor: pointer;
+    color: #fff;
+    border: #bf2957;
+    background: #bf2957;
+    display: inline-block;
+    padding: 10px;
 }
 
 .error {
-  color: red;
-  height: 10px;
-  margin: 5px 0px;
+    color: red;
+    height: 10px;
+    margin: 5px 0px;
 }

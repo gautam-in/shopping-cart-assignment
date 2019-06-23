@@ -163,7 +163,7 @@ input[type="text"],
 input[type="email"],
 input[type="password"] {
   border: none;
-  border-bottom: 1px solid #cdcdcdcd;
+  border-bottom: 1px solid #cdcdcd;
   width: 50%;
   height: 40px; }
   input[type="text"]:focus,
@@ -176,7 +176,7 @@ input[type="password"] {
   cursor: pointer;
   color: #fff;
   border: #bf2957;
-  background-color: #bf2957;
+  background: #bf2957;
   display: inline-block;
   padding: 10px; }
 
