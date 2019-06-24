@@ -1,8 +1,7 @@
 var express = require('express');
-const routing = express.Router();
 var itemCounter = require('./constant');
-
 const fs = require('fs');
+const routing = express.Router();
 let obj = fs.readFileSync('./server/banners/index.get.json');  
 let banners = JSON.parse(obj);
 let obj1 = fs.readFileSync('./server/categories/index.get.json');  
@@ -28,8 +27,8 @@ routing.get('/products', function(req, res,next){
 });
 routing.get('/products/:id', function (req, res, next) {
     var categoryId = req.params.id;
-    var ActiveCategories = categories.categories.filter(category => category.enabled);
-    var product_cat = products.products.filter(product => product.category === categoryId);
+    var ActiveCategories = categories.categories.filter(function(category){ return category.enabled});
+    var product_cat = products.products.filter(function(product){return product.category === categoryId});
     res.render('products', {
         categories: ActiveCategories,
         products: product_cat,
@@ -37,9 +36,13 @@ routing.get('/products/:id', function (req, res, next) {
     })
 });
 routing.get('/login', function(req, res){
-    res.render('login')
+    res.render('login',{
+        item_counter: itemCounter.item_counter
+    })
 });
 routing.get('/register', function(req, res){
-    res.render('register')
+    res.render('register',{
+        item_counter: itemCounter.item_counter
+    })
 });
 module.exports = routing;

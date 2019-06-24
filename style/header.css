@@ -1,27 +1,6 @@
-.disp-inline-block {
-  display: inline-block; }
-
-.position-rel {
-  position: relative; }
-
-.position-abs {
-  position: absolute; }
-
-.float-right {
-  float: right; }
-
-.float-left {
-  float: left; }
-
-.display-none {
-  display: none; }
-
-.display-block {
-  display: block; }
-
 .header-wrapper {
   border-bottom: 3px solid rgba(238, 238, 238, 0.867);
-  padding: 5px 140px 0 140px;
+  padding: 5px 70px 0 70px;
   min-height: 70px; }
   @media (max-width: 768px), (max-width: 600px), (max-width: 600px) {
     .header-wrapper {

@@ -2,8 +2,9 @@
     <div class="my-cart">
         <h3 class="font-color">My Cart<span class="font-color">(<i id="item_counter" class="font-color">{{item_counter}}</i> item)</span></h3>
     </div>
+    {{#if productInCart}}
     <div class="cart-items">
-        {{#each session.productInCart}}
+        {{#each productInCart}}
             <div class="item-wrapper">
                 <div class="item-img float-left">
                     <img class="img-cart" src="{{imageURL}}" alt="{{name}}" tabindex="0">
@@ -43,6 +44,14 @@
     <div class="checkout">
         <p>Promo code can be applied on
             payment page</p>
-        <button class="btn-checkout"><span class="font-color float-left">Proceed to checkout</span><span class="font-color float-right" id="totalCheckoutAmount">Rs. 0</span></button>
+        <button class="btn-checkout" onclick="navigateToHome();"><span class="font-color float-left">Proceed to checkout</span><span class="font-color float-right" id="totalCheckoutAmount">Rs. 0</span></button>
     </div>
+    {{else}}
+        <div class="cart-exception">
+            No Items in the cart
+            <p class="helper-text">You favourite items are just a click away</p>
+            <button class="btn-start" onclick="navigateToProducts();">Start Shopping</button>
+        </div>
+
+    {{/if}}
 </section>

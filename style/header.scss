@@ -1,7 +1,7 @@
 @import "variables.scss";
 .header-wrapper{
   border-bottom: 3px solid $grey;
-  padding: 5px 140px 0 140px;
+  padding: 5px 70px 0 70px;
   min-height: 70px;
   @media (max-width: $breakpoint-phone),(max-width: $breakpoint-small-phone),(max-width: $breakpoint-small-phone) {
     padding: 5px 0px;

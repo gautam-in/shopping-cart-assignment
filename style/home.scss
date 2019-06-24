@@ -1,6 +1,6 @@
 @import "variables.scss";
 .banner-wrapper{
-    padding: 5px 140px 0 140px;
+    padding: 5px 70px 0 70px;
     @media (max-width: $breakpoint-phone),(max-width: $breakpoint-small-phone),(max-width: $breakpoint-small-phone) {
         padding: 0px;
     }
@@ -44,6 +44,7 @@
         transition: 0.6s ease;
         background-color: rgba(0, 0, 0, 0.2);
         text-transform: uppercase;
+        border: none;
     }
     .next{
         right: 8px;
@@ -52,7 +53,7 @@
         min-height: 150px;
         padding: 10px;
         position: relative;
-        &:after {
+        &::after {
             content: "";
             position: absolute;
             left: 50%;

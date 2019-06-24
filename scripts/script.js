@@ -41,14 +41,12 @@
     
     
     function buy(id, operation) {
-        var url = window.location.origin + `/cart/${id}/${operation}`;
-        console.log(url);
+        var url = window.location.origin + "/cart/"+id+"/"+operation;
         let xmlHttpReq = new XMLHttpRequest();
         xmlHttpReq.open("GET", url, true);
         xmlHttpReq.onload = function () {
             if (xmlHttpReq.status == 200) {
                 let data = JSON.parse(xmlHttpReq.responseText);
-                console.log(data)
                 updateCart(data.item_counter, data.cartItems);
             } else { }
         };
@@ -81,7 +79,6 @@
     }
     
     function plusSlides(n) {
-        console.log("fsfashfasjk")
         showSlides(slideIndex += n);
     }
     
@@ -110,22 +107,22 @@
     }
     
     var carousal = document.getElementById("next");
-    setInterval(() => {
+    setInterval(function() {
         if(carousal){
             carousal.click();
         }
     }, 5000); 
-    
-    if (window.location.pathname == "/products/") {
-        if($(window).width() <= 768){
-            var element = document.getElementsByClassName("display-none");
-            console.log(element[0]);
-            element[0].classList.add("display-block");
-            element[0].classList.remove("display-none");
-        }
-        else{
-            var element = document.getElementsByClassName("display-none");
-            element[0].classList.add("display-none");
-            element[0].classList.remove("display-block");
-        }
+function myFunction() {
+    var x = document.getElementById("Demo");
+    if (x.className.indexOf("display-block") == -1) {
+        x.className += "display-block";
+    } else { 
+        x.className = x.className.replace("display-block", "");
     }
+}
+function navigateToHome(){
+    window.location.href = "/";
+}
+function navigateToProducts(){
+    window.location.href = "/products";
+}

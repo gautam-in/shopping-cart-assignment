@@ -7,11 +7,11 @@
                     alt="{{this.bannerImageAlt}}">
             </div>
             {{/each}}
-            <a class="prev" onClick="plusSlides(-1)" tabindex="0">prev</a>
-            <a class="next" id="next" onClick="plusSlides(1)" tabindex="0">next</a>
+            <button class="prev" onClick="plusSlides(-1)">prev</button>
+            <button class="next" id="next" onClick="plusSlides(1)">next</button>
             <div class="dots">
                 {{#each banners}}
-                <span class="dot" onclick="currentSlide({{ @index}})" tabindex="0"></span>
+                <span class="dot" onclick="currentSlide({{@index}})"></span>
                 {{/each}}
             </div>
 
@@ -22,11 +22,11 @@
             {{#if this.enabled}}
                  <section class="category-section">
                     <div class="category">
-                        <img class="category-image" src="{{this.imageUrl}}" alt="{{this.name}}" align="middle">
+                        <img class="category-image" src="{{this.imageUrl}}" alt="{{this.name}}">
                     </div>
                     <div class="category-desc">
-                        <h1 class="category-heading" tabindex="0">{{this.name}}</h1>
-                        <p class="category-text" tabindex="0">{{this.description}}</p>
+                        <h1 class="category-heading">{{this.name}}</h1>
+                        <p class="category-text">{{this.description}}</p>
                         <div class="button-align"><button class="category-button"><a class="filter" href="/products/{{this.id}}">Explore {{this.name}}</a></button></div>
                     </div>
                 </section>

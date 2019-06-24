@@ -1,25 +1,24 @@
 <section class="products-wrapper">
     <ul class="categories-wrapper">
-        <div onclick="myfunction()" class="display-none">Categories</div>
-        <div id="demo">
-            {{#each categories}}
-                {{#if this.enabled}}
-                    <li class="category-name"><a href="/products/{{this.id}}">{{this.name}}</a></li>
-                {{/if}}
-            {{/each}}
-        </div>
+        {{#each categories}}
+            {{#if this.enabled}}
+                <li class="category-name"><a href="/products/{{this.id}}">{{this.name}}</a></li>
+            {{/if}}
+        {{/each}}
     </ul>
     <div class="product-wrapper">
         {{#each products}}
-            <div class="product">
+            <div class="product position-rel">
                 <div class="product-name" title="{{this.name}}">{{this.name}}</div>
                 <div class="product-image">
                     <img class="pro-img" src="{{this.imageURL}}" alt="{{this.name}}">
                 </div>
                 <div class="product-description" title="{{this.description}}">{{this.description}}</div>
                 <div class="pricing-purchasing">
-                    <span class="pricing">MRP Rs {{this.price}}</span>
+                    <div class="pricing">MRP Rs {{this.price}}</div>
                     <button class="purchasing" onclick="buy('{{this.id}}', 'add')">Buy now<span class="smaller-device">@ {{this.price}}</span></button>                        
+                </div>
+                <div class="mask position-abs">
                 </div>
             </div>
         {{/each}}
