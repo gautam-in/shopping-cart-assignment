@@ -52,10 +52,6 @@ if (document.location.pathname == "/") {
 };
 
 /*-------------------------- Cart functonality --------------------------*/
-// closeCart = () => {
-//     document.getElementById('cart').style.display = 'none';
-// };
-
 var allitemInCart = function allitemInCart() {
     var url = window.location.origin + "/cart/allitem";
     var xmlHttpReq = new XMLHttpRequest();
@@ -103,7 +99,7 @@ var updateCheckoutAmount = function updateCheckoutAmount() {
 };
 
 if (window.location.pathname === "/product") {
-    document.getElementById("buyItem").addEventListener("click", function () {
+    document.getElementById("buy-item").addEventListener("click", function () {
         var id = this.getAttribute('data-id'),
             operation = this.getAttribute('data-operation');
         buyItem(id, operation);

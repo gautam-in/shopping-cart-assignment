@@ -44,10 +44,6 @@ if (document.location.pathname == "/") {
 };
 
 /*-------------------------- Cart functonality --------------------------*/
-// closeCart = () => {
-//     document.getElementById('cart').style.display = 'none';
-// };
-
 var allitemInCart = () => {
     var url = window.location.origin + "/cart/allitem";
     let xmlHttpReq = new XMLHttpRequest();
@@ -95,7 +91,7 @@ var updateCheckoutAmount = () => {
 }
 
 if (window.location.pathname === "/product") {
-    document.getElementById("buyItem").addEventListener("click", function() {
+    document.getElementById("buy-item").addEventListener("click", function() {
         let id = this.getAttribute('data-id'),
             operation = this.getAttribute('data-operation');
         buyItem(id, operation);

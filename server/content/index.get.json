@@ -11,6 +11,7 @@
         "access": "Get access to your Orders, Wishlist and Recommendations",
         "mycart": "My Cart",
         "item": "item",
+        "items": "items",
         "email": "Email",
         "password": "Password",
         "cpassword": "Confirm Password",

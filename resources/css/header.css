@@ -1,7 +1,6 @@
 .header-wrapper {
   display: flex;
   align-items: flex-end;
-  height: 80px;
   border-bottom: 2px solid #cdcdcd; }
   .header-wrapper * {
     display: inline-block; }
@@ -13,7 +12,7 @@
   display: block;
   background: #cdcdcd;
   height: 30px;
-  padding: 8px; }
+  padding: 5px; }
   .cart-btn .fa-shopping-cart {
     color: #cf0153; }
 

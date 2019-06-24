@@ -1,105 +1,108 @@
-@import "main.scss";
+@import "mixins.scss";
+@import "variables.scss";
 .products-container {
-    padding: 0 40px;
-    display: flex;
+  padding: 0 40px;
+  display: flex;
 }
 
 .prodlist-container {
-    width: 85%;
+  width: 85%;
 }
 
 .product-item {
-    width: 20%;
-    float: left;
-    margin: 15px;
-    height: 475px;
-    &::after {
-        content: "";
-        display: block;
-        border: 1px dotted #1d151533;
+  width: 20%;
+  float: left;
+  margin: 15px;
+  height: 475px;
+  &::after {
+    content: "";
+    display: block;
+    border: 1px dotted #1d151533;
+  }
+  h4 {
+    height: 70px;
+  }
+  h6 {
+    background: #eaeaea;
+    margin: 5px 0px;
+    padding: 5px;
+    min-height: 135px;
+    color: #333333cf;
+    font-weight: 500;
+  }
+  .desktop-prod {
+    display: block;
+    margin: 15px 0px 25px 0px;
+    clear: both;
+    .btn {
+      float: right;
     }
-    h4 {
-        height: 70px;
-    }
-    h6 {
-        background: #eaeaea;
-        margin: 5px 0px;
-        padding: 5px;
-        min-height: 135px;
-        color: #333333cf;
-        font-weight: 500;
-    }
-    .desktop-prod {
-        display: block;
-        margin: 15px 0px 25px 0px;
-        clear: both;
-        .btn {
-            float: right;
-        }
-    }
-    .tablet-prod {
-        display: none;
-    }
+  }
+  .tablet-prod {
+    display: none;
+  }
 }
-
-
+.navbar{
+  button {
+    display: none;
+  }
+}
 /* 
   ##Device = Tablets, Ipads (portrait)
   ##Screen = B/w 768px to 1024px
 */
 
 @media (min-width: 768px) and (max-width: 1024px) {
-    .product-item {
-        width: 44%;
-        height: 390px;
-        img {
-            width: 55%;
-            float: left;
-        }
-        h6 {
-            width: 45%;
-            float: left;
-            height: 210px;
-            margin-bottom: 10px;
-        }
-        .desktop-prod {
-            display: none;
-        }
-        .tablet-prod {
-            display: block;
-            clear: both;
-            text-align: center;
-            margin: 15px 0px 25px 0px;
-        }
-        p {
-            height: 60px;
-        }
+  .product-item {
+    width: 44%;
+    height: 390px;
+    img {
+      width: 55%;
+      float: left;
     }
+    h6 {
+      width: 45%;
+      float: left;
+      height: 210px;
+      margin-bottom: 10px;
+    }
+    .desktop-prod {
+      display: none;
+    }
+    .tablet-prod {
+      display: block;
+      clear: both;
+      text-align: center;
+      margin: 15px 0px 25px 0px;
+    }
+    p {
+      height: 60px;
+    }
+  }
 }
 
 .navbar {
-    width: 15%;
-    background: #eaeaea;
-    ul {
-        list-style-type: none;
-        li {
-            &::after {
-                content: "";
-                display: block;
-                border: 1px solid #1d151533;
-            }
-            a {
-                padding: 15px;
-                display: block;
-                color: #333333cf;
-            }
-        }
-        i {
-            display: none;
-        }
+  width: 15%;
+  background: #eaeaea;
+  ul {
+    list-style-type: none;
+    li {
+      &::after {
+        content: "";
+        display: block;
+        border: 1px solid #1d151533;
+      }
+      a {
+        padding: 15px;
+        display: block;
+        color: #333333cf;
+      }
     }
+    button {
+      display: none;
+    }
+  }
 }
-
 
 /* 
   ##Device = Most of the Smartphones Mobiles (Portrait)
@@ -107,64 +110,91 @@
 */
 
 @media (min-width: 320px) and (max-width: 480px) {
-    .navbar {
-        width: 80%;
-        position: absolute;
-        background: #bf2957;
-        &:hover ul {
-            height: unset;
-        }
-        ul {
-            height: 35px;
-            li {
-                &::after {
-                    content: "";
-                    border: none;
-                }
-                a {
-                    float: none;
-                    color: #ffffff;
-                    padding: 12px 16px;
-                }
-            }
-            i {
-                display: block;
-                font-size: 25px;
-                float: right;
-                padding: 5px;
-                color: #ffffff;
-            }
-        }
+  .navbar {
+    width: 80%;
+    position: absolute;
+    background: #bf2957;
+    &:hover ul {
+      height: unset;
     }
-    .product-item {
-        width: 95%;
-        height: 380px;
-        img {
-            width: 55%;
-            margin-top: 70px;
-            float: left;
-        }
-        h6 {
-            width: 45%;
-            float: left;
-            height: 210px;
-            margin-bottom: 10px;
-        }
-        .desktop-prod {
-            display: none;
-        }
-        .tablet-prod {
-            display: block;
-            clear: both;
-            text-align: center;
-            margin: 15px 0px 25px 0px;
-        }
-        p {
-            height: 80px;
-        }
+    button {
+      cursor: pointer;
+      display: block;
+      font-size: 16px;
+      border: none;
+      outline: none;
+      color: #fff;
+      padding: 14px 16px;
+      background-color: inherit;
+      font-family: initial;
+      margin: 0;
     }
-    .prodlist-container {
-        width: 100%;
-        margin-top: 40px;
+    i {
+      margin-left: 170px;
     }
+    ul {
+      height: 35px;
+      li {
+        &::after {
+          content: "";
+          border: none;
+        }
+        a {
+          float: none;
+          color: #ffffff;
+          padding: 12px 16px;
+        }
+      }
+    }
+  }
+  .navbar-content {
+    display: none;
+    position: absolute;
+    background: #bf2957;
+    width: 100%;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    a:hover {
+      background-color: $grey-color;
+      color: #000;
+    }
+  }
+
+  .navbar:hover {
+    .navbar-content {
+      display: block;
+    }
+  }
+
+  .product-item {
+    width: 95%;
+    height: 380px;
+    img {
+      width: 55%;
+      margin-top: 70px;
+      float: left;
+    }
+    h6 {
+      width: 45%;
+      float: left;
+      height: 210px;
+      margin-bottom: 10px;
+    }
+    .desktop-prod {
+      display: none;
+    }
+    .tablet-prod {
+      display: block;
+      clear: both;
+      text-align: center;
+      margin: 15px 0px 25px 0px;
+    }
+    p {
+      height: 80px;
+    }
+  }
+  .prodlist-container {
+    width: 100%;
+    margin-top: 60px;
+  }
 }
