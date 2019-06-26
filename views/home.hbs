@@ -7,20 +7,20 @@
             </div>
             {{/each}}
 
-            <button id="prev" class="prev"><i class="fa fa-chevron-circle-left" aria-hidden="true"></i></button>
-            <button id="next" class="next"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i></button>
+            <button id="prev" class="prev">PREV</button>
+            <button id="next" class="next">NEXT</button>
         </div>
 
         <div class="dot-container">
             {{#each banners}}
-            <span class="dot" id="dot" data-attr={{order}}></span>
+            <span class="dot" data-attr={{order}}></span>
             {{/each}}
         </div>
     </section>
     {{#each categories}}
     {{#if enabled}}
     <section class="prod-section">
-        <div class="prod-image"><img src={{imageUrl}} alt={{key}} width="100%" /></div>
+        <div class="prod-image"><img src={{imageUrl}} alt={{key}} width="100px" height="100px" /></div>
         <aside class="prod-content">
             <h4>{{name}}</h4>
             <p>{{description}}</p>

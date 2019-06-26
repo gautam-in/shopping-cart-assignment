@@ -1,28 +1,31 @@
 <main class="products-container">
     <nav class="navbar">
-        <ul>
-            <i class="fa fa-angle-down"></i>
-            {{#each prodCategories}}
-            {{#if enabled}}
-                <li><a href="/product/{{this.id}}">{{name}}</a></li>
-            {{/if}}    
-            {{/each}}
-        </ul>
+        <button>Categories<i class="fa fa-caret-down"></i></button>
+        <div class="navbar-content">
+            <ul>
+                {{#each prodCategories}}
+                {{#if enabled}}
+                <li><a onclick="categorySelection(this);" href="/product/{{this.id}}">{{name}}</a></li>
+                {{/if}}
+                {{/each}}
+            </ul>
+        </div>
     </nav>
 
     <section class="prodlist-container">
         {{#each productList}}
         <div class="product-item">
             <h4>{{name}}</h4>
-            <img src={{imageURL}} alt={{description}} width="80%"/>
+            <img src={{imageURL}} alt={{description}} width="80%" />
             <h6>{{description}}</h6>
             <div class="desktop-prod">
-                <span>Rs.{{price}}</span><button id="buyItem" class="btn" data-id='{{this.id}}' data-operation='add'>{{buy}}</button>
-            </div>      
+                <span>Rs.{{price}}</span><button class="buy-item btn" data-id='{{this.id}}'
+                    data-operation='add'>{{buy}}</button>
+            </div>
             <div class="tablet-prod">
                 <button class="btn" data-id='{{this.id}}' data-operation='add'>{{buy}} @ Rs{{price}}</button>
-            </div>    
-        </div>    
+            </div>
+        </div>
         {{/each}}
     </section>
 </main>
