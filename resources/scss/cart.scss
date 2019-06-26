@@ -26,11 +26,12 @@
   margin: 20px 0px;
   height: 400px;
   overflow-y: auto;
-  .cart-items {
-    @include item-block;
-    img {
-      float: left;
-    }
+}
+
+.cart-items {
+  @include item-block;
+  img {
+    float: left;
   }
 }
 
@@ -73,16 +74,26 @@
   padding: 15px;
   background: #fff;
   p {
-    margin-bottom: 10px;
     text-align: center;
   }
   a {
     width: 100%;
     margin-top: 10px;
-    text-align: left;
-    span {
+    span,
+    i {
       float: right;
     }
+  }
+}
+
+.cart-empty{
+  background: #fff;
+  background: #fff;
+  height: 250px;
+  text-align: center;
+  padding-top: 100px;
+  h6{
+    font-size: 1.5em;
   }
 }
 

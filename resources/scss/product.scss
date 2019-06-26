@@ -14,10 +14,12 @@
   float: left;
   margin: 15px;
   height: 475px;
+  padding-right: 10px;
+  box-shadow: 4px 0 10px -5px rgba(0, 0, 0, 0.2);;
   &::after {
     content: "";
     display: block;
-    border: 1px dotted #1d151533;
+    border: 1px dotted rgba(0, 0, 0, 0.2);
   }
   h4 {
     height: 70px;
@@ -27,7 +29,7 @@
     margin: 5px 0px;
     padding: 5px;
     min-height: 135px;
-    color: #333333cf;
+    color: #333333;
     font-weight: 500;
   }
   .desktop-prod {
@@ -90,12 +92,12 @@
       &::after {
         content: "";
         display: block;
-        border: 1px solid #1d151533;
+        border: 1px solid rgba(0, 0, 0, 0.2);;
       }
       a {
         padding: 15px;
         display: block;
-        color: #333333cf;
+        color: #333333;
       }
     }
     button {

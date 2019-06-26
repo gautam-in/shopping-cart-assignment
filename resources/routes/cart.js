@@ -7,18 +7,18 @@ var express = require('express'),
 request({
     url: "http://localhost:5000/products",
     json: true
-}, function(error, response, result) {
+}, function (error, response, result) {
     if (!error && response.statusCode === 200) {
         productList = result;
     }
 });
 
-router.get('/allitem', function(req, res) {
+router.get('/allitem', function (req, res) {
     res.end(JSON.stringify({ 'productInCart': productInCart, 'itemCounter': data.item_counter }));
 });
 
 
-router.get('/:id/:operation', function(req, res) {
+router.get('/:id/:operation', function (req, res) {
     if (req.params.operation == "add") {
         productList.forEach(element => {
             if (element.id === req.params.id) {
@@ -31,11 +31,10 @@ router.get('/:id/:operation', function(req, res) {
                     element.count++;
                     data.item_counter++;
                     element.totalPrice = element.count * element.price;
-
                 }
             }
         });
-        res.end(JSON.stringify({ 'productInCart': productInCart, 'itemCounter': data.item_counter }));
+        res.send(JSON.stringify({ 'productInCart': productInCart, 'itemCounter': data.item_counter }));
     } else if (req.params.operation == "remove") {
         productList.forEach(element => {
             if (element.id === req.params.id) {
@@ -44,11 +43,19 @@ router.get('/:id/:operation', function(req, res) {
                 element.totalPrice = element.count * element.price;
             }
         });
-        res.end(JSON.stringify({ 'productInCart': productInCart, 'itemCounter': data.item_counter }));
+
+        productInCart.forEach((element, index) => {
+            if (element.id === req.params.id) {
+                if (element.count == 0) {
+                    productInCart.splice(index, 1);
+                }
+            }
+        });
+        res.send(JSON.stringify({ 'productList': productList, 'productInCart': productInCart, 'itemCounter': data.item_counter }));
     }
 });
 
-router.get('/', function(req, res, next) {
+router.get('/', function (req, res, next) {
     res.render('cart', {
         title: 'cart',
         productList: productList,

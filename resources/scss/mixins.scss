@@ -2,6 +2,7 @@
   padding: 15px;
   background: #fff;
   overflow: hidden;
+  border-bottom: 1px solid $grey-color;
 }
 
 @mixin clearfix {
