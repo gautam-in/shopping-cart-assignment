@@ -16,6 +16,10 @@
         "password": "Password",
         "cpassword": "Confirm Password",
         "fname": "First Name",
-        "lname": "Last Name"
+        "lname": "Last Name",
+        "error": "Fields can not be blank.",
+        "emailerror": "Please enter valid email.",
+        "pwderror": "Please enter valid password.",
+        "cpwderror": "Password does not match."
     }
 }
