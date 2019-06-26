@@ -2,10 +2,11 @@ import glob from 'glob';
 import jsonConcat from 'json-concat';
 import express from 'express';
 import hbs from 'express-handlebars';
-import homeRouter from './resources/routes/home';
-import productsRouter from './resources/routes/product';
-import cartRouter from './resources/routes/cart';
-import data from './resources/routes/constant';
+import PATH from 'path';
+import homeRouter from '../resources/routes/home';
+import productsRouter from '../resources/routes/product';
+import cartRouter from '../resources/routes/cart';
+import data from '../resources/routes/constant';
 const app = express();
 
 
@@ -21,19 +22,20 @@ glob("./server/**/*.json", null, function(er, files) {
 app.engine('hbs', hbs({
     extname: 'hbs',
     defaultLayout: 'layout',
-    layoutDir: __dirname + '/views/layouts/',
-    partialsDir: __dirname + '/views/partials/',
+    layoutDir: PATH.resolve(__dirname, '../views/layouts/'),
+    partialsDir: PATH.resolve(__dirname, '../views/partials/'),
 }));
 
 /*----------------- adding static files --------------*/
-app.use(express.static(__dirname + '/resources'));
+app.use(express.static(PATH.resolve(__dirname, '../resources/')));
+app.use(express.static(PATH.resolve(__dirname + '/js/')));
 /*----------------------------------------------------*/
 
 app.use('/', homeRouter);
 app.use('/product', productsRouter);
 app.use('/cart', cartRouter);
 
-app.set('views', __dirname + '/views/');
+app.set('views', PATH.resolve(__dirname, '../views/'));
 app.set('view engine', 'hbs');
 
 
