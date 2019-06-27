@@ -59,6 +59,7 @@ app.engine('hbs', (0, _expressHandlebars2.default)({
 /*----------------- adding static files --------------*/
 app.use(_express2.default.static(_path2.default.resolve(__dirname, '../resources/')));
 app.use(_express2.default.static(_path2.default.resolve(__dirname + '/js/')));
+app.use(_express2.default.static(_path2.default.resolve(__dirname + '/css/')));
 /*----------------------------------------------------*/
 
 app.use('/', _home2.default);
