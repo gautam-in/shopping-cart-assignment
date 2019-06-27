@@ -1,8 +1,5 @@
-@import "footer.scss";
-@import "header.scss";
 @import "mixins.scss";
 @import "variables.scss";
-
 * {
   margin: 0;
   padding: 0;
@@ -61,4 +58,12 @@ input[type="password"] {
   color: red;
   height: 10px;
   margin: 5px 0px;
+}
+
+.show {
+  display: block;
+}
+
+.hide {
+  display: none;
 }

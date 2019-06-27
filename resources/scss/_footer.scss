@@ -1,0 +1,9 @@
+@import "mixins.scss";
+@import "variables.scss";
+
+.footer-wrapper {
+  background: $grey-color;
+  padding: 10px;
+  text-align: center;
+  @include clearfix;
+}
