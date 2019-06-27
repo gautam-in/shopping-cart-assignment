@@ -1,52 +1,52 @@
 <main class="cart-main" id="cart">
     <div class="cart">
-        {{#if productInCart}}
-        <h4 id="total-item" class="cart-header">
-            {{content.mycart}}({{itemCounter}} {{content.item}})
-        </h4>
-        <section class="cart-content">
-            {{#each productInCart}}
-            <div class="cart-items" id="item-{{id}}">
-                <img src={{imageURL}} alt={{description}} width="10%" />
-                <div class="item-cal">
-                    <h6>{{name}}</h6>
-                    <div>
-                        <button class="add-remove-items" data-id='{{id}}' data-index={{@index}} data-price={{price}}
-                            data-operation='minus'>-</button>
-                        <span id="prod{{@index}}">{{count}}</span>
-                        <button class="add-remove-items" data-id='{{id}}' data-index={{@index}} data-price={{price}}
-                            data-operation='plus'>+</button>
-                        <i class="fa fa-times" aria-hidden="true"></i>
-                        <span>Rs{{price}}</span>
-                        <span class="total-amt" id="totalp{{@index}}">Rs{{totalPrice}}</span>
+        <div class="item-in-cart">
+            <h4 id="total-item" class="cart-header">
+                {{content.mycart}}({{itemCounter}} {{content.item}})
+            </h4>
+            <section class="cart-content">
+                {{#each productInCart}}
+                <div class="cart-items" id="item-{{id}}">
+                    <img src={{imageURL}} alt={{description}} width="10%" />
+                    <div class="item-cal">
+                        <h6>{{name}}</h6>
+                        <div>
+                            <button class="add-remove-items" data-id='{{id}}' data-index={{@index}} data-price={{price}}
+                                data-operation='minus'>-</button>
+                            <span id="prod{{@index}}">{{count}}</span>
+                            <button class="add-remove-items" data-id='{{id}}' data-index={{@index}} data-price={{price}}
+                                data-operation='plus'>+</button>
+                            <i class="fa fa-times" aria-hidden="true"></i>
+                            <span>Rs{{price}}</span>
+                            <span class="total-amt" id="totalp{{@index}}">Rs{{totalPrice}}</span>
+                        </div>
                     </div>
                 </div>
-            </div>
-            {{/each}}
-            <div class="cart-caption">
-                <img src="/images/lowest-price.png" alt="image for lowest price guaranteed" width="30%" />
-                <p>{{content.cheaper}}</p>
-            </div>
-        </section>
+                {{/each}}
+                <div class="cart-caption">
+                    <img src="/images/lowest-price.png" alt="image for lowest price guaranteed" width="30%" />
+                    <p>{{content.cheaper}}</p>
+                </div>
+            </section>
 
-        <section class="cart-footer">
-            <p>{{content.promo}}</p>
-            <a class="btn" href="/">{{content.checkout}}
-                <i class="fa fa-angle-right" aria-hidden="true"></i>
-                <span id="total-checkout-amt"></span>
-            </a>
-        </section>
-
-        {{else}}
-        <h4 class="cart-header">{{name}}{{content.mycart}}</h4>
-        <section class="cart-empty">
-            <h6>No items in your cart</h6>
-            <p>Your favorite items are just a click away</p>
-        </section>
-        <section class="cart-footer">
-            <p><a class="btn" href="/">{{content.checkout}}</a></p>
-        </section>
-        {{/if}}
+            <section class="cart-footer">
+                <p>{{content.promo}}</p>
+                <a class="btn" href="/">{{content.checkout}}
+                    <i class="fa fa-angle-right" aria-hidden="true"></i>
+                    <span id="total-checkout-amt"></span>
+                </a>
+            </section>
+        </div>
+        <div class="no-item">
+            <h4 class="cart-header">{{name}}{{content.mycart}}</h4>
+            <section class="cart-empty">
+                <h6>No items in your cart</h6>
+                <p>Your favorite items are just a click away</p>
+            </section>
+            <section class="cart-footer">
+                <p><a class="btn" href="/">{{content.checkout}}</a></p>
+            </section>
+        </div>
     </div>
 </main>
-<link rel="stylesheet" type='text/css' href="/css/cart.css" />
+<link rel="stylesheet" type='text/css' href="/cart.css" />

@@ -29,6 +29,7 @@ app.engine('hbs', hbs({
 /*----------------- adding static files --------------*/
 app.use(express.static(PATH.resolve(__dirname, '../resources/')));
 app.use(express.static(PATH.resolve(__dirname + '/js/')));
+app.use(express.static(PATH.resolve(__dirname + '/css/')));
 /*----------------------------------------------------*/
 
 app.use('/', homeRouter);
