@@ -7,7 +7,7 @@
             <section class="cart-content">
                 {{#each productInCart}}
                 <div class="cart-items" id="item-{{id}}">
-                    <img src={{imageURL}} alt={{description}} width="10%" />
+                    <img src={{imageURL}} alt={{description}} />
                     <div class="item-cal">
                         <h6>{{name}}</h6>
                         <div>
@@ -24,7 +24,7 @@
                 </div>
                 {{/each}}
                 <div class="cart-caption">
-                    <img src="/images/lowest-price.png" alt="image for lowest price guaranteed" width="30%" />
+                    <img src="/images/lowest-price.png" alt="image for lowest price guaranteed" />
                     <p>{{content.cheaper}}</p>
                 </div>
             </section>

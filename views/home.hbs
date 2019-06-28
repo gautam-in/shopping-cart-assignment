@@ -3,7 +3,7 @@
         <div class="slideshow-container">
             {{#each banners}}
             <div class="mySlides">
-                <img src={{bannerImageUrl}} alt={{bannerImageAlt}} width="100%" />
+                <img src={{bannerImageUrl}} alt={{bannerImageAlt}} />
             </div>
             {{/each}}
 
@@ -20,7 +20,7 @@
     {{#each categories}}
     {{#if enabled}}
     <section class="prod-section">
-        <div class="prod-image"><img src={{imageUrl}} alt={{key}} width="100px" height="100px" /></div>
+        <div class="prod-image"><img src={{imageUrl}} alt={{key}} /></div>
         <aside class="prod-content">
             <h4>{{name}}</h4>
             <p>{{description}}</p>
