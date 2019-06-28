@@ -16,12 +16,18 @@
   position: relative;
   display: block;
   overflow: hidden;
-  padding: 40px 20px;;
+  padding: 40px 20px;
   @include alignCenter;
   @include home-border-bottom;
   p,
   h4 {
     margin-bottom: 20px;
+  }
+  .prod-image {
+    img {
+      width: auto;
+      height: 100px;
+    }
   }
   &:nth-child(even) {
     .prod-content {
@@ -55,6 +61,10 @@
 .slideshow-container {
   position: relative;
   margin: auto;
+  img {
+    width: 100%;
+    height: auto;
+  }
 }
 
 .dot-container {
@@ -68,8 +78,8 @@
   cursor: pointer;
   position: absolute;
   top: 50%;
-  background-color: rgba(0,0,0,0.5);
-  border:none;
+  background-color: rgba(0, 0, 0, 0.5);
+  border: none;
   padding: 5px;
   color: #fff;
 }

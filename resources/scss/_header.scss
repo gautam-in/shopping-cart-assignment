@@ -5,11 +5,16 @@
   display: flex;
   align-items: flex-end;
   border-bottom: 2px solid $grey-color;
-  * {
+  a,
+  nav,
+  ul,
+  li {
     display: inline-block;
   }
   img {
     margin-left: 40px;
+    width: 100px;
+    height: 80px;
   }
 }
 
@@ -22,12 +27,18 @@
   .fa-shopping-cart {
     color: #cf0153;
   }
+  span {
+    margin-right: 3px;
+  }
 }
 
 .leftnav {
   width: 70%;
   ul {
-    padding: 0 0 15px 40px;
+    padding: 0 0 15px 20px;
+    li {
+      margin-right: 20px;
+    }
   }
 }
 

@@ -32,6 +32,8 @@
   @include item-block;
   img {
     float: left;
+    width: 10%;
+    height: auto;
   }
 }
 
@@ -63,6 +65,8 @@
   @include item-block;
   img {
     float: left;
+    width: 30%;
+    height: auto;
   }
   p {
     text-align: center;
@@ -86,13 +90,13 @@
   }
 }
 
-.cart-empty{
+.cart-empty {
   background: #fff;
   background: #fff;
   height: 250px;
   text-align: center;
   padding-top: 100px;
-  h6{
+  h6 {
     font-size: 1.5em;
   }
 }

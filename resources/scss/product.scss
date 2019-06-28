@@ -16,6 +16,10 @@
   height: 475px;
   padding-right: 10px;
   box-shadow: 4px 0 10px -5px rgba(0, 0, 0, 0.2);
+  img {
+    width: 80%;
+    height: auto;
+  }
   &::after {
     content: "";
     display: block;
