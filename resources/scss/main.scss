@@ -20,6 +20,9 @@ body {
   .left-content {
     @include sub-div;
     float: left;
+    p {
+      margin-top: 15px;
+    }
   }
   .right-content {
     @include sub-div;
