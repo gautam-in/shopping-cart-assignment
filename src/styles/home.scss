@@ -1,0 +1,132 @@
+@import './../utils/styles/partial/breakpoints.scss';
+@import './common/header.scss';
+
+.clearfix{
+	clear: both;
+}
+.carousel-container{
+    overflow: hidden;
+    margin: 15px auto;
+    position: relative;
+    box-shadow: 0 8px 6px -6px #ccc;
+}
+.carousel-wrapper{
+	width: 500%;
+	transition: margin 0.5s;
+	-webkit-transition:margin 0.5s;
+}
+.carousel-wrapper:after{
+	display: table;
+	clear: both;
+	content:'';
+}
+.carousel-wrapper img{
+    width: 20%;
+    display: block;
+    float: left;
+}
+.margin-0{
+	margin-left:0;
+}
+.margin-1{
+	margin-left:-100%;
+}
+.margin-2{
+	margin-left:-200%;
+}
+.margin-3{
+	margin-left:-300%;
+}
+.margin-4{
+	margin-left:-400%;
+}
+.carousel-container .controls{
+	position: absolute;
+	top:50%;
+	background: gray;
+	cursor: pointer;
+	outline: 0;
+    border: 0;
+    transform: translate(0,-50%);
+}
+.carousel-container .controls:hover{
+	background-color: #c5c5c5;
+}
+#next{
+	right: 10px;
+	@media #{$breakpoint-medium}{
+		right:0;
+	}
+}
+#prev{
+	left: 10px;
+	@media #{$breakpoint-medium}{
+		left:0;
+	}
+}
+
+/*--------------------------------*/
+.home-category-container{
+	box-shadow: 0 8px 6px -6px #ccc;
+	margin-top: 20px;
+	&:after{
+		display:table;
+		content:'';
+		clear: both;
+	}
+	&:nth-child(odd){
+		> div > div{
+			&:first-child{
+				float:left;
+				text-align: center;
+			}
+		}
+	}
+	&:nth-child(even){
+		> div > div{
+			&:first-child{
+				float:right;
+				text-align: center;
+			}
+		}
+	}
+	img{
+		width: 100%;
+		height: auto;
+		max-width: 180px;
+		@media #{$breakpoint-medium}{
+			max-width: 290px;
+		}
+	}
+	.category-info{
+		text-align: center;
+    	padding: 5px 0;
+    	@media #{$breakpoint-medium}{
+			padding: 15px 0;
+		}
+	}
+	h4{
+		font-weight: 600;
+		font-size: 80%;
+		@media #{$breakpoint-medium}{
+			font-size: 100%
+		}
+	}
+	p{
+		font-size: 70%;
+    	margin-top: 10px;
+    	@media #{$breakpoint-medium}{
+			font-size: 90%;
+		}
+	}
+	button{
+		margin-top: 10px;
+	    border: 0;
+	    outline: 0;
+	    padding: 8px 10px;
+	    font-family: Dosis;
+	    background: #ce5267;
+	    color: #fff;
+	}
+}
+

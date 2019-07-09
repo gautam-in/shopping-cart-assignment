@@ -1,0 +1,56 @@
+@import './../utils/styles/partial/breakpoints.scss';
+@import './common/header.scss';
+
+.category-block{
+	display: none;
+	@media #{$breakpoint-small}{
+		display: block;
+		height: 100vh;
+		background-color: #ccc;
+	}
+	li{
+		padding: 15px 0 15px 20px;
+		@media #{$breakpoint-small}{
+			padding-left: 5px;
+			color: #6d6d6d;
+			border-bottom: 1px solid #6d6d6d;
+			font-size: 80%;
+		}
+		@media #{$breakpoint-medium}{
+			padding-left: 20px;
+			font-size: 100%;
+		}
+	}
+}
+.plp-container{
+	.product-block{
+		margin-top: 20px;
+		padding-bottom: 10px;
+		border-bottom: 1px dotted #6d6d6d;
+	}
+	img{
+		width: 100%;
+		height: auto;
+	}
+	h4{
+		    font-weight: 600;
+    		font-size: 90%;
+    		margin-bottom: 15px;
+	}
+	button{
+		margin-top: 10px;
+	    border: 0;
+	    outline: 0;
+	    padding: 8px 10px;
+	    font-family: Dosis;
+	    background: #ce5267;
+	    color: #fff;
+	    float: right;
+	}
+	p{
+		background-color: #ccc;
+	    padding: 5px 10px;
+	    font-size: 75%;
+	    line-height: 120%;
+	}
+}
