@@ -1,15 +1,39 @@
 @import './../utils/styles/partial/breakpoints.scss';
 @import './common/header.scss';
 
-.category-block{
-	display: none;
+.category-mobile{
+    border: 0;
+    outline: 0;
+    padding: 8px 10px;
+    font-family: Dosis;
+    background: #ce5267;
+    color: #fff;
+    width: 100%;
+    cursor: pointer;
 	@media #{$breakpoint-small}{
-		display: block;
+		display:none;
+	}
+}
+.category-block{
+	background-color:#ce2567;
+	text-align:center;
+	height:0px;
+	overflow:hidden;
+	transition: height 0.5s;
+	-webkit-transition : height 0.5s;
+	&.active{
+		height: 240px;
+	}
+	@media #{$breakpoint-small}{
+		text-align:left;
 		height: 100vh;
 		background-color: #ccc;
 	}
 	li{
 		padding: 15px 0 15px 20px;
+		border-bottom: 1px solid #fff;
+		color:#fff;
+		cursor: pointer;
 		@media #{$breakpoint-small}{
 			padding-left: 5px;
 			color: #6d6d6d;
@@ -54,3 +78,6 @@
 	    line-height: 120%;
 	}
 }
+/*.category-mobile:hover + .category-block{
+	height:300px;
+}*/
