@@ -1,0 +1,13 @@
+@import "header.scss";
+@import "login.scss" ;
+@import "home.scss";
+@import "products.scss";
+@import "cart.scss";
+footer {
+    margin-top: 20px;
+    background: $grey;
+    color: $darker-grey;
+    display: block;
+    width: 100%;
+    text-align: center;
+  }

@@ -1,0 +1,98 @@
+.cart-wrapper {
+  background: rgba(238, 238, 238, 0.867);
+  padding: 0 150px; }
+  @media (max-width: 600px), (max-width: 600px) {
+    .cart-wrapper {
+      padding: 0; } }
+  .cart-wrapper .my-cart {
+    background: black;
+    color: #fff;
+    padding: 10px; }
+  .cart-wrapper .item-wrapper {
+    min-height: 100px;
+    margin-top: 10px;
+    background: #fff; }
+  .cart-wrapper .item-img {
+    width: 15%; }
+    .cart-wrapper .item-img .img-cart {
+      width: 100%;
+      height: 90px; }
+  .cart-wrapper .item-details {
+    width: 83%;
+    padding-left: 10px; }
+    @media (max-width: 768px) {
+      .cart-wrapper .item-details {
+        width: 82%; } }
+  .cart-wrapper .items {
+    margin: 20px;
+    width: 70%; }
+    @media (max-width: 768px) {
+      .cart-wrapper .items {
+        width: 50%; } }
+  .cart-wrapper .item-button {
+    margin-top: 17px; }
+  .cart-wrapper .item-total {
+    margin-top: 45px;
+    margin-right: 15px; }
+  .cart-wrapper .btn {
+    background: #d10157;
+    color: #fff;
+    border-radius: 15px;
+    border: #d10157; }
+  .cart-wrapper input {
+    border: none;
+    text-align: center;
+    width: 40px; }
+  .cart-wrapper .product-offer {
+    margin-top: 10px;
+    background: #fff;
+    min-height: 60px;
+    padding: 5px; }
+    .cart-wrapper .product-offer .offer-image {
+      float: left;
+      width: 30%; }
+      @media (max-width: 768px) {
+        .cart-wrapper .product-offer .offer-image img {
+          width: 80%; } }
+    .cart-wrapper .product-offer .offer-heading {
+      float: left;
+      width: 70%;
+      margin-top: 15px; }
+  .cart-wrapper .checkout {
+    margin-top: 60px;
+    min-height: 100px;
+    background: #fff;
+    padding: 10px; }
+    .cart-wrapper .checkout .btn-checkout {
+      background: #d10157;
+      color: #fff;
+      width: 100%;
+      border: #d10157;
+      height: 40px;
+      padding: 13px;
+      border-radius: 6px;
+      margin-top: 18px;
+      cursor: pointer; }
+  .cart-wrapper .font-color {
+    color: #fff; }
+  .cart-wrapper .cart-exception {
+    background: #fff;
+    min-height: 350px;
+    text-align: center;
+    font-size: 27px;
+    padding-top: 20%; }
+    .cart-wrapper .cart-exception .helper-text {
+      font-size: 19px;
+      margin-top: 10px;
+      color: #847777; }
+    .cart-wrapper .cart-exception .btn-start {
+      background: #d10157;
+      color: #fff;
+      width: 100%;
+      border: #d10157;
+      height: 40px;
+      padding: 13px;
+      border-radius: 6px;
+      cursor: pointer;
+      text-align: center;
+      margin-top: 39%; }

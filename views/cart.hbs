@@ -1,0 +1,57 @@
+<section class="cart-wrapper container">
+    <div class="my-cart">
+        <h3 class="font-color">My Cart<span class="font-color">(<i id="item_counter" class="font-color">{{item_counter}}</i> item)</span></h3>
+    </div>
+    {{#if productInCart}}
+    <div class="cart-items">
+        {{#each productInCart}}
+            <div class="item-wrapper">
+                <div class="item-img float-left">
+                    <img class="img-cart" src="{{imageURL}}" alt="{{name}}" tabindex="0">
+                </div>
+                <div class="item-details float-left">
+                    <div class="float-left items">
+                        <h4>{{name}}</h4>
+                        <div class="item-button">
+                            <button class="btn btn-minus"
+                                onclick="addRemoveItem('{{id}}', {{@index}},
+                                {{price}},'minus')">-</button>
+                            <input type="text" value="{{count}}"
+                                class="prod_quantity" id="prod{{@index}}">
+                            <button class="btn btn-plus"
+                                onclick="addRemoveItem('{{id}}', {{@index}}, {{price}},'plus')">+</button>
+                            <span class="price">Rs.{{price}}</span>
+                        </div>
+                    </div>
+                    <div class="item-total float-right" id="totalp{{@index}}" >
+                        Rs. {{total_price}}
+                    </div>
+                </div>
+            </div>
+        {{/each}}
+    </div>
+    <div class="product-offer">
+        <div class="offer-image">
+            <img
+                src="/images/lowest-price.png"
+                alt="" tabindex="0">
+        </div>
+        <div class="offer-heading">
+            <p>You won't find cheaper
+                anywhere</p>
+        </div>
+    </div>
+    <div class="checkout">
+        <p>Promo code can be applied on
+            payment page</p>
+        <button class="btn-checkout" onclick="navigateToHome();"><span class="font-color float-left">Proceed to checkout</span><span class="font-color float-right" id="totalCheckoutAmount">Rs. 0</span></button>
+    </div>
+    {{else}}
+        <div class="cart-exception">
+            No Items in the cart
+            <p class="helper-text">You favourite items are just a click away</p>
+            <button class="btn-start" onclick="navigateToProducts();">Start Shopping</button>
+        </div>
+
+    {{/if}}
+</section>

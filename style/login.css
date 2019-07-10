@@ -1,0 +1,70 @@
+.login-wrapper {
+  padding: 0 176px;
+  display: flex; }
+  @media (max-width: 600px), (max-width: 600px) {
+    .login-wrapper {
+      padding: 0; } }
+  .login-wrapper .login-details {
+    padding-right: 15px;
+    width: 58%;
+    margin-top: 50px;
+    font: 600 14px dosis; }
+  .login-wrapper .login-text {
+    margin-top: 14px;
+    font: 400 13px dosis; }
+  .login-wrapper .login-form {
+    width: 50%; }
+  .login-wrapper .form-input {
+    margin: 40px 0;
+    width: 100%; }
+    .login-wrapper .form-input label {
+      position: relative;
+      display: block;
+      width: 100%;
+      min-height: 50px; }
+    .login-wrapper .form-input .placeholder {
+      position: absolute;
+      display: block;
+      top: 25.5px;
+      z-index: 2;
+      color: #01d1c9;
+      font-size: 16px;
+      transition: all 200ms ease-in-out;
+      width: 100%;
+      cursor: text; }
+    .login-wrapper .form-input input {
+      position: absolute;
+      top: 15px;
+      z-index: 1;
+      width: 100%;
+      font-size: 16px;
+      border: 0;
+      border-bottom: 1px solid #eeeeee;
+      transition: border-color 200ms ease-in-out;
+      outline: none;
+      padding: 0;
+      margin: 0; }
+    .login-wrapper .form-input input {
+      height: 35px; }
+    .login-wrapper .form-input input:focus,
+    .login-wrapper .form-input input,
+    .login-wrapper .form-input textarea:focus,
+    .login-wrapper .form-input textarea {
+      border-bottom: 2px solid #eeeeee; }
+      .login-wrapper .form-input input:focus + .placeholder,
+      .login-wrapper .form-input input + .placeholder,
+      .login-wrapper .form-input textarea:focus + .placeholder,
+      .login-wrapper .form-input textarea + .placeholder {
+        top: 0;
+        cursor: inherit;
+        font-size: 14px;
+        color: #01d1c9; }
+  .login-wrapper .form-button-large {
+    background-color: #d10157;
+    border: none;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    padding: 10px;
+    width: 100%; }

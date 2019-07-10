@@ -1,0 +1,86 @@
+@import "variables.scss";
+.login-wrapper{
+  padding: 0 176px;
+  display: flex;
+  @media (max-width: $breakpoint-small-phone),(max-width: $breakpoint-small-phone){
+    padding: 0 ;
+  }
+  .login-details{
+    padding-right: 15px;
+    width: 58%;
+    margin-top: 50px;
+    font: 600 14px dosis;
+  }
+  .login-text{
+    margin-top: 14px;
+    font: 400 13px dosis;
+  }
+  .login-form{
+    width: 50%;
+  }
+  .form-input {
+    margin: 40px 0;
+    width: 100%;
+  
+    label {
+      position: relative;
+      display: block;
+      width: 100%;
+      min-height: $input-height + $input-top;
+    }
+  
+    .placeholder {
+      position: absolute;
+      display: block;
+      top: ($input-height / 2) + $placeholder-padding;
+      z-index: 2;
+      color: $highlight-color;
+      font-size: $placeholder-font-size;
+      transition: all $placeholder-transition;
+      width: 100%;
+      cursor: text;
+    }
+  
+    input {
+      position: absolute;
+      top: $input-top;
+      z-index: 1;
+      width: 100%;
+      font-size: $input-font-size;
+      border: 0;
+      border-bottom: 1px solid $input-border-color;
+      transition: border-color $placeholder-transition;
+      outline: none;
+      padding: 0;
+      margin: 0;
+    }
+  
+    input {
+      height: $input-height;
+    }
+  
+    input:focus,
+    input,
+    textarea:focus,
+    textarea {
+      & + .placeholder {
+        top: 0;
+        cursor: inherit;
+        font-size: $placeholder-font-size-small;
+        color: $highlight-color;
+      }
+  
+      border-bottom: 2px solid $dark-grey;
+    }
+  }
+  .form-button-large {
+    background-color: $accent;
+    border: none;
+    color: $white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    padding: 10px;
+    width: 100%;
+  }
+}

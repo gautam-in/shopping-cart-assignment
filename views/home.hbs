@@ -1,0 +1,36 @@
+<section class="banner-wrapper">
+    <div class="home-slider">
+        <div class="home-slider-offers">
+            {{#each banners}}
+            <div class="mySlides fade">
+                <img class="image-width" src="{{this.bannerImageUrl}}"
+                    alt="{{this.bannerImageAlt}}">
+            </div>
+            {{/each}}
+            <button class="prev" onClick="plusSlides(-1)">prev</button>
+            <button class="next" id="next" onClick="plusSlides(1)">next</button>
+            <div class="dots">
+                {{#each banners}}
+                <span class="dot" onclick="currentSlide({{@index}})"></span>
+                {{/each}}
+            </div>
+
+        </div>
+    </div>
+    <div class="category-wrapper">
+        {{#each categories}}
+            {{#if this.enabled}}
+                 <section class="category-section">
+                    <div class="category">
+                        <img class="category-image" src="{{this.imageUrl}}" alt="{{this.name}}">
+                    </div>
+                    <div class="category-desc">
+                        <h1 class="category-heading">{{this.name}}</h1>
+                        <p class="category-text">{{this.description}}</p>
+                        <div class="button-align"><button class="category-button"><a class="filter" href="/products/{{this.id}}">Explore {{this.name}}</a></button></div>
+                    </div>
+                </section>
+            {{/if}}
+        {{/each}}
+    </div>
+</section>
