@@ -28,14 +28,20 @@ function toggleCat(){
 	function toggleNav(){
 		if(ul.classList.contains('active')){
 			ul.classList.remove('active');
+			this.classList.remove('active');
 		}
 		else{
 			ul.classList.add('active');
+			this.classList.add('active');
 		}
 	}
 	function selectCategory(e){
-		toggleBtn.innerText= e.target.innerText;
-		ul.classList.remove('active');
+		if(toggleBtn.classList.contains('active')){
+			toggleBtn.innerText= e.target.innerText;
+			ul.classList.remove('active');
+			toggleBtn.classList.remove('active');
+		}
+		
 	}
 }
 toggleCat();
