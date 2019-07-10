@@ -33,7 +33,7 @@ server.get('/banners', function (req, res) {
 
 server.get('/products', function (req, res) {
     var products = require("../../api/products/index.get.json");
-    if (typeof req.query.id === "undefined") {
+    if (req.query.id === "undefined") {
         res.end(JSON.stringify({ products: products }));
     } else {
         var filteredProduct = products.filter((p) => p.category == req.query.id);

@@ -2,22 +2,31 @@ import './../utils/styles/global.scss';
 import './../styles/home.scss';
 import ajax from './../utils/scripts/ajax';
 import PubSub from './../utils/scripts/pubsub';
+import  Home from './../components/features/home/home.hbs';
 
-ajax('api/categories', 1);
-ajax('api/banners', 1);
-
-PubSub.subscribe("anEvent", data => {
-    console.log(
-        `"anEvent", was published with this data: "${data.msg}"`
-    );
+var promiseBanners = new Promise(function(resolve, reject){
+	ajax('api/banners', function(data){
+		resolve(data);
+	});
 });
-(function(document){
-	function  publishEvent() {
-        const data = {
-            msg: "TOP SECRET DATA"
-        };
-        PubSub.publish("anEvent", data);
-    }
+var promiseCategories = new Promise(function(resolve, reject){
+	ajax('api/categories', function(data){
+		resolve(data);
+	});
+});
+Promise.all([promiseBanners, promiseCategories]).then(function(data){
+	var div = document.createElement('div');
+	div.innerHTML = Home({
+		data:{
+			banners:JSON.parse(data[0]).banners,
+			categories:JSON.parse(data[1]).categories
+		}
+	});
+	document.body.appendChild(div);	
+	init(document);
+});
+
+function init(document){
 	function NavToggle(){
 		var toggleBtn =  document.querySelector('.nav-icon--mobile');
 		toggleBtn.addEventListener('click',toggleNav);
@@ -72,7 +81,7 @@ PubSub.subscribe("anEvent", data => {
 		 	prevSlide();
 		}
 	}
-	NavToggle();
-	Carousel();
-	publishEvent();
-}(document));
+	NavToggle()
+	Carousel()
+	publishEvent()
+}	

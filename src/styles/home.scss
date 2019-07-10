@@ -1,71 +1,67 @@
 @import './../utils/styles/partial/breakpoints.scss';
 @import './common/header.scss';
 
-.clearfix{
-	clear: both;
-}
 .carousel-container{
     overflow: hidden;
     margin: 15px auto;
     position: relative;
     box-shadow: 0 8px 6px -6px #ccc;
-}
-.carousel-wrapper{
-	width: 500%;
-	transition: margin 0.5s;
-	-webkit-transition:margin 0.5s;
-}
-.carousel-wrapper:after{
-	display: table;
-	clear: both;
-	content:'';
-}
-.carousel-wrapper img{
-    width: 20%;
-    display: block;
-    float: left;
-}
-.margin-0{
-	margin-left:0;
-}
-.margin-1{
-	margin-left:-100%;
-}
-.margin-2{
-	margin-left:-200%;
-}
-.margin-3{
-	margin-left:-300%;
-}
-.margin-4{
-	margin-left:-400%;
-}
-.carousel-container .controls{
-	position: absolute;
-	top:50%;
-	background: gray;
-	cursor: pointer;
-	outline: 0;
-    border: 0;
-    transform: translate(0,-50%);
-}
-.carousel-container .controls:hover{
-	background-color: #c5c5c5;
-}
-#next{
-	right: 10px;
-	@media #{$breakpoint-medium}{
-		right:0;
+    .carousel-wrapper{
+		width: 500%;
+		transition: margin 0.5s;
+		-webkit-transition:margin 0.5s;
+		&:after{
+			display: table;
+			clear: both;
+			content:'';
+		}
+		img{
+			width: 20%;
+		    display: block;
+		    float: left;
+		}
 	}
-}
-#prev{
-	left: 10px;
-	@media #{$breakpoint-medium}{
-		left:0;
+	.margin-0{
+		margin-left:0;
+	}
+	.margin-1{
+		margin-left:-100%;
+	}
+	.margin-2{
+		margin-left:-200%;
+	}
+	.margin-3{
+		margin-left:-300%;
+	}
+	.margin-4{
+		margin-left:-400%;
+	}
+	.controls{
+		position: absolute;
+		top:50%;
+		background: gray;
+		cursor: pointer;
+		outline: 0;
+	    border: 0;
+	    transform: translate(0,-50%);
+	    &:hover{
+	    	background-color: #c5c5c5;
+	    }
+	}
+	#next{
+		right: 10px;
+		@media #{$breakpoint-medium}{
+			right:0;
+		}
+	}
+	#prev{
+		left: 10px;
+		@media #{$breakpoint-medium}{
+			left:0;
+		}
 	}
 }
 
-/*--------------------------------*/
 .home-category-container{
 	box-shadow: 0 8px 6px -6px #ccc;
 	margin-top: 20px;
