@@ -6,7 +6,7 @@
     outline: 0;
     padding: 8px 10px;
     font-family: Dosis;
-    background: #ce5267;
+    background: #ce2567;
     color: #fff;
     width: 100%;
     cursor: pointer;
@@ -60,6 +60,7 @@
 		    font-weight: 600;
     		font-size: 90%;
     		margin-bottom: 15px;
+    		min-height: 35px;
 	}
 	button{
 		margin-top: 10px;
@@ -67,17 +68,32 @@
 	    outline: 0;
 	    padding: 8px 10px;
 	    font-family: Dosis;
-	    background: #ce5267;
+	    background: #ce2567;
 	    color: #fff;
-	    float: right;
+	    width: 100%;
+	    @media #{$breakpoint-medium}{
+			float: right;
+		}
 	}
 	p{
 		background-color: #ccc;
 	    padding: 5px 10px;
 	    font-size: 75%;
 	    line-height: 120%;
+	    max-height: 200px;
+	    overflow: hidden;
+	    flex:1 1 auto;
 	}
 }
-/*.category-mobile:hover + .category-block{
-	height:300px;
-}*/
+.flex{
+	display: flex;
+	@media #{$breakpoint-large}{
+		flex-direction: column;
+	}
+	> div{
+		&:last-child{
+		flex-direction:column;
+		display: flex;
+		};	
+	}
+}
