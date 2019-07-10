@@ -1,0 +1,33 @@
+<main class="home-container">
+    <section class="slideshow-section">
+        <div class="slideshow-container">
+            {{#each banners}}
+            <div class="mySlides">
+                <img src={{bannerImageUrl}} alt={{bannerImageAlt}} />
+            </div>
+            {{/each}}
+
+            <button id="prev" class="prev">PREV</button>
+            <button id="next" class="next">NEXT</button>
+        </div>
+
+        <div class="dot-container">
+            {{#each banners}}
+            <span class="dot" data-attr={{order}}></span>
+            {{/each}}
+        </div>
+    </section>
+    {{#each categories}}
+    {{#if enabled}}
+    <section class="prod-section">
+        <div class="prod-image"><img src={{imageUrl}} alt={{key}} /></div>
+        <aside class="prod-content">
+            <h4>{{name}}</h4>
+            <p>{{description}}</p>
+            <a class="btn" href="/product/{{this.id}}">Explore {{key}}</a>
+        </aside>
+    </section>
+    {{/if}}
+    {{/each}}
+</main>
+<link rel="stylesheet" type='text/css' href="/home.css" />

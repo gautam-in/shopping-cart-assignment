@@ -1,0 +1,33 @@
+<main class="products-container">
+    <nav class="navbar">
+        <button>Categories</button>
+        <i class="fa fa-caret-down"></i>
+        <div class="navbar-content">
+            <ul>
+                {{#each prodCategories}}
+                {{#if enabled}}
+                <li><a href="/product/{{this.id}}">{{name}}</a></li>
+                {{/if}}
+                {{/each}}
+            </ul>
+        </div>
+    </nav>
+
+    <section class="prodlist-container">
+        {{#each productList}}
+        <div class="product-item">
+            <h4>{{name}}</h4>
+            <img src={{imageURL}} alt={{description}} />
+            <h6>{{description}}</h6>
+            <div class="desktop-prod">
+                <span>Rs.{{price}}</span><button class="buy-item btn" data-id='{{this.id}}'
+                    data-operation='add'>{{buy}}</button>
+            </div>
+            <div class="tablet-prod">
+                <button class="buy-item btn" data-id='{{this.id}}' data-operation='add'>{{buy}} @ Rs{{price}}</button>
+            </div>
+        </div>
+        {{/each}}
+    </section>
+</main>
+<link rel="stylesheet" type='text/css' href="/product.css" />

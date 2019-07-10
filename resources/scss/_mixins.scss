@@ -1,0 +1,52 @@
+@mixin item-block {
+  padding: 15px;
+  background: #fff;
+  overflow: hidden;
+  border-bottom: 1px solid $grey-color;
+}
+
+@mixin clearfix {
+  content: "";
+  clear: both;
+}
+
+@mixin alignCenter {
+  text-align: center;
+}
+
+@mixin home-border-bottom {
+  &::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 0px;
+    width: 60%;
+    height: 5px;
+    background: $grey-color;
+    border-radius: 290px/8px;
+    transform: translate(-50%,-5%);
+    @include clearfix;
+  }
+}
+
+@mixin nav-link-style {
+  display: inline-block;
+  font-weight: 300;
+  color: black;
+}
+
+@mixin input {
+  border: none;
+  border-bottom: 1px solid $grey-color;
+  width: 50%;
+  height: 40px;
+  &:focus {
+    border-bottom: 1px solid #2fb9c6;
+    outline: none;
+  }
+}
+
+@mixin sub-div {
+  width: 50%;
+  overflow: hidden;
+}

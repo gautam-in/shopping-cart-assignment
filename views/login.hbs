@@ -1,0 +1,24 @@
+<main class="form-content">
+    <aside class="left-content">
+        <h1>{{content.login}}</h1>
+        <p>{{content.access}}</p>
+    </aside>
+    <section class="right-content">
+        <form action="#" method="POST">
+            <p class="emptyerror error"></p>
+
+            <input type="text" name="email" placeholder={{content.email}} onkeyup="validate(this);"
+                onfocus="this.placeholder = ''" onmouseover="this.placeholder = ''"
+                onmouseout="this.placeholder = '{{content.email}}'">
+            <p class="email-error error"></p>
+
+            <input type="password" name="password" placeholder={{content.password}} onfocus="this.placeholder = ''"
+                onkeyup="validate(this);" onmouseover="this.placeholder = ''"
+                onmouseout="this.placeholder = '{{content.password}}'">
+            <p class="password-error error"></p>
+
+            <input type="button" class="submit" id="submit-login" value="Login">
+        </form>
+    </section>
+    </div>
+</main>

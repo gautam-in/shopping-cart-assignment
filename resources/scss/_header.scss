@@ -1,0 +1,75 @@
+@import "mixins.scss";
+@import "variables.scss";
+
+.header-wrapper {
+  display: flex;
+  align-items: flex-end;
+  border-bottom: 2px solid $grey-color;
+  a,
+  nav,
+  ul,
+  li {
+    display: inline-block;
+  }
+  img {
+    margin-left: 40px;
+    width: 100px;
+    height: 80px;
+  }
+}
+
+.cart-btn {
+  cursor: pointer;
+  display: block;
+  background: $grey-color;
+  height: 30px;
+  padding: 5px;
+  .fa-shopping-cart {
+    color: #cf0153;
+  }
+  span {
+    margin-right: 3px;
+  }
+}
+
+.leftnav {
+  width: 70%;
+  ul {
+    padding: 0 0 15px 20px;
+    li {
+      margin-right: 20px;
+    }
+  }
+}
+
+.rightnav {
+  ul {
+    padding-bottom: 15px;
+  }
+}
+
+/* 
+  ##Device = Tablets, Ipads (portrait)
+  ##Screen = B/w 768px to 1024px
+*/
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .header-wrapper {
+    img {
+      margin-left: 0px;
+    }
+  }
+}
+
+/* 
+  ##Device = Most of the Smartphones Mobiles (Portrait)
+  ##Screen = B/w 320px to 479px
+*/
+
+@media (min-width: 320px) and (max-width: 480px) {
+  .header-wrapper {
+    img {
+      margin-left: 0px;
+    }
+  }
+}

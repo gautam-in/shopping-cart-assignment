@@ -1,0 +1,109 @@
+@import "mixins.scss";
+@import "variables.scss";
+
+/* 
+  ##Device = Most of the Smartphones Mobiles, Tablets, Ipads (portrait)
+  ##Screen = B/w 320px to 1024px
+*/
+
+@media (min-width: 320px) and (max-width: 1024px) {
+  .home-container {
+    padding: 0px;
+  }
+}
+
+.prod-section {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  padding: 40px 20px;
+  @include alignCenter;
+  @include home-border-bottom;
+  p,
+  h4 {
+    margin-bottom: 20px;
+  }
+  .prod-image {
+    img {
+      width: auto;
+      height: 100px;
+    }
+  }
+  &:nth-child(even) {
+    .prod-content {
+      width: 60%;
+      float: right;
+    }
+    .prod-image {
+      width: 30%;
+      float: left;
+    }
+  }
+  &:nth-child(odd) {
+    .prod-content {
+      width: 60%;
+      float: left;
+    }
+    .prod-image {
+      width: 40%;
+      float: right;
+    }
+  }
+}
+
+.home-container {
+  padding: 0 40px;
+  display: block;
+}
+
+/* Slideshow container */
+
+.slideshow-container {
+  position: relative;
+  margin: auto;
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.dot-container {
+  @include alignCenter;
+}
+
+/* Next & previous buttons */
+
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  background-color: rgba(0, 0, 0, 0.5);
+  border: none;
+  padding: 5px;
+  color: #fff;
+}
+
+/* Position the "next button" to the right */
+
+.next {
+  right: 0;
+}
+
+/* The dots/bullets/indicators */
+
+.dot {
+  cursor: pointer;
+  height: 10px;
+  width: 10px;
+  margin: 0 2px;
+  background: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active,
+.dot:hover {
+  background: #717171;
+}

@@ -1,0 +1,22 @@
+<header class="header-wrapper">
+    <a href="/"><img src="/images/logo.png" alt="Shpping Site logo"></a>
+    <nav class="leftnav">
+        <ul>
+            <li><a href="/">{{content.home}}</a></li>
+            <li><a href="/product">{{content.products}}</a></li>
+        </ul>
+    </nav>
+    <nav class="rightnav">
+        <ul>
+            <li><a href="/login">{{content.login}}</a></li>
+            <li><a href="/register">{{content.register}}</a></li>
+        </ul>
+        <div class="cart-btn">
+            <a href="/cart">
+                <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                <span id="item-count">{{itemCounter}}</span>{{content.items}}
+            </a>
+        </div>
+    </nav>
+    </div>
+</header>
