@@ -4,6 +4,7 @@ import './../styles/products.scss';
 import  Products from './../components/features/products/products.hbs';
 import  ProductList from './../components/common/organisms/o-productList.hbs';
 import ajax from './../utils/scripts/ajax';
+import PubSub from './../utils/scripts/pubsub.js';
 import Header from './common/header';
 import ToggleCategories from './common/Category-mobile';
 
@@ -37,7 +38,7 @@ Promise.all([promiseProducts(id), promiseCategories]).then(function(data){
 	Header.init();
 	ToggleCategories();
 	document.querySelector('.category-block').addEventListener('click',triggerFilter);
-	/*initClick();*/
+	initClick();
 });
 function triggerFilter(e){
 	if(e.target.nodeName==="LI"){
@@ -57,10 +58,11 @@ function createProductsList(promiseProducts){
 		document.querySelector('.plp-container').appendChild(div);
 	});	
 }
-/*function initClick(){
+function initClick(){
 	document.querySelector('.plp-container').addEventListener('click',function(e){
 		if(e.target.nodeName === "BUTTON"){
 			console.log('hi');
+			PubSub.publish('productAdded',1);
 		}
 	});
-}*/
+}

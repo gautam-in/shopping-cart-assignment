@@ -70,6 +70,7 @@
 	    background: $pink;
 	    color: $white;
 	    width: 100%;
+	    cursor:pointer;
 	    @media #{$breakpoint-medium}{
 			float: right;
 		}

@@ -88,12 +88,12 @@ module.exports = {
 	    new HtmlWebpackPlugin({
 	    	template:'src/components/features/home/home.hbs',
 	    	filename:'home.html',
-	    	chunks: ['home']
+	    	chunks: ['home','commons']
 	    }),
 	    new HtmlWebpackPlugin({
 	    	template:'src/components/features/products/products.hbs',
 	    	filename:'products.html',
-	    	chunks: ['products']
+	    	chunks: ['products','commons']
 	    }),
 	    new CopyWebpackPlugin([
             { from: 'src/static/images', to: 'static/images' },
@@ -106,5 +106,16 @@ module.exports = {
 	            ]
 	        }
 	    })
-    ]
+    ],
+    optimization: {
+	    splitChunks: {
+	      cacheGroups: {
+	        commons: {
+	          name: 'commons',
+	          chunks: 'all',
+	          minChunks: 2
+	        }
+	      }
+	    }
+	}
 }
