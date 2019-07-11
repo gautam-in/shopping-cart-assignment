@@ -2,6 +2,7 @@
 <html>
 <head>
 	<title>Sabka Bazaar</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link href="https://fonts.googleapis.com/css?family=Dosis:400,600,700" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="./utils/fonts/icofont.min.css">
 </head>
@@ -14,7 +15,7 @@
 					<button class="category-mobile">Categories</button>
 					<ul class="category-block">
 						{{#each categories}}
-						<li>{{name}}</li>
+						<li data-id ={{id}}>{{name}}</li>
 						{{/each}}
 					</ul>
 				</div>
@@ -25,7 +26,7 @@
 							<h4>{{name}}</h4>
 							<div class="row flex">
 								<div class ="col col-xs-6 col-sm-7 col-lg-12">
-									<img src={{imageURL}}>
+									<img src={{imageURL}} alt={{name}}>
 								</div>
 								<div class="col col-xs-6 col-sm-5 col-lg-12">
 									<p>{{description}}</p>

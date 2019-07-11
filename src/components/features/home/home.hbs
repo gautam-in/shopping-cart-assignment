@@ -2,6 +2,7 @@
 <html>
 <head>
 	<title>Sabka Bazaar</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link href="https://fonts.googleapis.com/css?family=Dosis:400,600,700" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="./utils/fonts/icofont.min.css">
 </head>
@@ -17,8 +18,8 @@
 						<img src ={{bannerImageUrl}} alt ={{bannerImageAlt}}>
 						{{/each}}
 					</div>
-					<button class ="controls" id ="next">Next</button>
-					<button class ="controls" id ="prev">Prev</button>
+					<button class ="controls next">Next</button>
+					<button class ="controls prev">Prev</button>
 				</section>
 			</div>
 			<div class="row">
@@ -32,7 +33,7 @@
 							<div class ="category-info">
 								<h4>{{name}}</h4>
 								<p>{{description}}</p>
-								<button>Explore {{key}}</button>
+								<button><a href ="/products.html?id={{id}}">Explore {{key}}</a></button>
 							</div>
 						</div>
 					</div>

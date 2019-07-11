@@ -1,15 +1,11 @@
 var express = require('express');
 
 const server = express();
-var bodyParser = require('body-parser');
 var products = require("../../api/products/index.get.json");
 var addtocart = require("../../api/addToCart/index.post.json");
 var categories = require("../../api/categories/index.get.json");
 
 
-server.use('/', function (req, res, next) {
-    next();
-});
 
 server.get('/addtocart', function (req, res) {
     res.end(JSON.stringify({ addtocart: addtocart }));
@@ -20,10 +16,10 @@ server.get('/categories', function (req, res) {
     categories.sort((a, b) => {
         return a.order - b.order;
     });
-    var new_cat = categories.filter((item) => {
+    var newCat = categories.filter((item) => {
         return item.enabled;
     });
-    res.end(JSON.stringify({ categories: new_cat }));
+    res.end(JSON.stringify({ categories: newCat }));
 });
 
 server.get('/banners', function (req, res) {

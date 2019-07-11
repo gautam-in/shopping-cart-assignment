@@ -1,5 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
+const autoprefixer = require("autoprefixer");
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -31,16 +32,18 @@ module.exports = {
 			{
                 test: /\.css$/,
                 use: [
-                    'style-loader', 'css-loader'
+                    MiniCssExtractPlugin.loader,
+	                "css-loader",
+	                "postcss-loader"
                 ]
             },
 			{
 		        test: /\.scss$/,
 		        use: [
-		          "style-loader",
-		          MiniCssExtractPlugin.loader,
-		          "css-loader",
-		          "sass-loader"
+		        	MiniCssExtractPlugin.loader,
+	                "css-loader",
+	                "postcss-loader",
+	                "sass-loader"
 		        ]
 		    },
 		    {
@@ -95,6 +98,13 @@ module.exports = {
 	    new CopyWebpackPlugin([
             { from: 'src/static/images', to: 'static/images' },
             { from:'src/utils/fonts', to: 'utils/fonts'}
-        ])
+        ]),
+        new webpack.LoaderOptionsPlugin({
+	        options: {
+	            postcss: [
+	                autoprefixer()
+	            ]
+	        }
+	    })
     ]
 }

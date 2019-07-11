@@ -1,13 +1,12 @@
 @import './../utils/styles/partial/breakpoints.scss';
-@import './common/header.scss';
-
+@import './../utils/styles/partial/variables.scss';
 .category-mobile{
     border: 0;
     outline: 0;
     padding: 8px 10px;
     font-family: Dosis;
-    background: #ce2567;
-    color: #fff;
+    background: $pink;
+    color: $white;
     width: 100%;
     cursor: pointer;
 	@media #{$breakpoint-small}{
@@ -15,7 +14,7 @@
 	}
 }
 .category-block{
-	background-color:#ce2567;
+	background-color:$pink;
 	text-align:center;
 	height:0px;
 	overflow:hidden;
@@ -27,17 +26,17 @@
 	@media #{$breakpoint-small}{
 		text-align:left;
 		height: 100vh;
-		background-color: #ccc;
+		background-color: $lightgray;
 	}
 	li{
 		padding: 15px 0 15px 20px;
-		border-bottom: 1px solid #fff;
-		color:#fff;
+		border-bottom: 1px solid $white;
+		color:$white;
 		cursor: pointer;
 		@media #{$breakpoint-small}{
 			padding-left: 5px;
-			color: #6d6d6d;
-			border-bottom: 1px solid #6d6d6d;
+			color: $graphiteGray;
+			border-bottom: 1px solid $graphiteGray;
 			font-size: 80%;
 		}
 		@media #{$breakpoint-medium}{
@@ -50,7 +49,7 @@
 	.product-block{
 		margin-top: 20px;
 		padding-bottom: 10px;
-		border-bottom: 1px dotted #6d6d6d;
+		border-bottom: 1px dotted $graphiteGray;
 	}
 	img{
 		width: 100%;
@@ -68,15 +67,15 @@
 	    outline: 0;
 	    padding: 8px 10px;
 	    font-family: Dosis;
-	    background: #ce2567;
-	    color: #fff;
+	    background: $pink;
+	    color: $white;
 	    width: 100%;
 	    @media #{$breakpoint-medium}{
 			float: right;
 		}
 	}
 	p{
-		background-color: #ccc;
+		background-color: $lightgray;
 	    padding: 5px 10px;
 	    font-size: 75%;
 	    line-height: 120%;
