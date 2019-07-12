@@ -1,0 +1,45 @@
+@import './../utils/styles/partial/breakpoints.scss';
+@import './../utils/styles/partial/variables.scss';
+h1{
+	margin-top: 20px;
+	margin-bottom:10px;
+	padding: 10px 20px;
+	background: #ccc;
+}
+.cart-item-block{
+	background: #ccc;
+	.row{
+		&.padding-10{
+			padding: 10px;
+		}
+		>div{
+			p{
+				margin-bottom: 5px;
+				@media #{$breakpoint-small}{
+					margin-bottom: 10px;
+				}
+			}
+		}
+	}
+	img{
+		width:100%;
+		@media #{$breakpoint-small}{
+			min-height: 66px;
+		}
+	}
+	.flex{
+		display:flex;
+		align-items: center;
+	}
+	.justify-content{
+		justify-content:space-between;
+	}
+	button{
+	    border: 0;
+	    outline: 0;
+	    padding: 8px 10px;
+	    font-family: Dosis;
+	    background: #ce2f67;
+	    color: #fff;
+	}
+}

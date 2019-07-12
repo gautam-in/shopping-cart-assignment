@@ -2,19 +2,19 @@ import './../utils/styles/global.scss';
 import './../styles/common/header.scss';
 import './../styles/home.scss';
 import Home from './../components/features/home/home.hbs';
-import ajax from './../utils/scripts/ajax';
+import ajaxRequests from './../utils/scripts/ajax';
 import PubSub from './../utils/scripts/pubsub.js';
 import Header from './common/header';
 import Carousel from './common/carousel';
 
 
 var promiseBanners = new Promise(function(resolve, reject){
-	ajax('api/banners', function(data){
+	ajaxRequests.ajax('api/banners', function(data){
 		resolve(data);
 	});
 });
 var promiseCategories = new Promise(function(resolve, reject){
-	ajax('api/categories', function(data){
+	ajaxRequests.ajax('api/categories', function(data){
 		resolve(data);
 	});
 });

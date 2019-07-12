@@ -1,14 +1,22 @@
 var express = require('express');
-
+var bodyParser = require("body-parser");
 const server = express();
 var products = require("../../api/products/index.get.json");
-var addtocart = require("../../api/addToCart/index.post.json");
+/*var addtocart = require("../../api/addToCart/index.post.json");*/
 var categories = require("../../api/categories/index.get.json");
 
 
+server.use(bodyParser.urlencoded({ extended: false }));
+server.use(bodyParser.json());
 
-server.get('/addtocart', function (req, res) {
-    res.end(JSON.stringify({ addtocart: addtocart }));
+server.post('/addtocart', function (req, res) {
+    try {
+        fs.writeFileSync('api/addToCart/index.post.json', JSON.stringify(req.body));
+    } catch(err) {
+    // An error occurred
+    console.error(err);
+    }
+    res.end(JSON.stringify({ addtocart: 'hello'}));
 });
 
 server.get('/categories', function (req, res) {
@@ -37,12 +45,25 @@ server.get('/products', function (req, res) {
     }
 });
 
-server.get('/addTocart/:id', function (req, res) {
-    var products = require("../../api/products/index.get.json");
-    res.end(JSON.stringify({ id: req.params.id }));
+server.get('/getcart', function (req, res) {
+    let jsonData = {}
+    fs.readFile('api/addToCart/index.post.json', 'utf-8', (err, data) => {
+      if (err) throw err
+      jsonData = JSON.parse(data);
+      res.end(JSON.stringify({ data: jsonData }));
+    })
 });
 
 server.listen(8080, () => {
     console.log("server is listening");
 });
+const fs = require('fs');
+
+let student = {  
+    name: 'Mike',
+    age: 23, 
+    gender: 'Male',
+    department: 'English',
+    car: 'Honda' 
+};
 

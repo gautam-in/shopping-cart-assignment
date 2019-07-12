@@ -9,7 +9,8 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 module.exports = {
 	entry:{
 		'products':'./src/js/products.js',
-		'home':'./src/js/home.js'
+		'home':'./src/js/home.js',
+		'cart':'./src/js/cart.js'
 	},
 	mode:'development',
 	output :{
@@ -48,7 +49,13 @@ module.exports = {
 		    },
 		    {
 		    	test:/\.hbs$/,
-		    	use:['handlebars-loader']
+		    	loader: 'handlebars-loader',
+		        options: {
+		          helperDirs: path.join(__dirname, 'helpers'),
+		          precompileOptions: {
+		            knownHelpersOnly: false,
+		          }
+        		}
 		    },
 		    {
                 test: /\.(jpg|jpeg|png|gif)$/,
@@ -94,6 +101,11 @@ module.exports = {
 	    	template:'src/components/features/products/products.hbs',
 	    	filename:'products.html',
 	    	chunks: ['products','commons']
+	    }),
+	    new HtmlWebpackPlugin({
+	    	template:'src/components/features/cart/cart.hbs',
+	    	filename:'cart.html',
+	    	chunks: ['cart','commons']
 	    }),
 	    new CopyWebpackPlugin([
             { from: 'src/static/images', to: 'static/images' },
