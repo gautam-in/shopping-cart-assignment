@@ -15,7 +15,6 @@ var Cart = (function() {
 				var list = data.list;
 				list[index].setQuantity(1);
 				var totalvalue = list[index].totalItemValue();
-				
 			}
 			else{
 				var item = new Product(name, image, price, category, id, quantity);
@@ -25,13 +24,10 @@ var Cart = (function() {
 					console.log(res);
 			},data)
 		},
-		updateCart:function(){
-			var promiseCart = new Promise(function(resolve, reject){
-				ajaxRequests.ajax('api/getcart',function(result){
-					resolve(result);
-				})	
+		updateCart:function(items){
+			items.forEach((el,index,array)=>{
+				data.list.push(el);
 			});
-			return promiseCart;
 		},
 		getData:function(){
 			return data;

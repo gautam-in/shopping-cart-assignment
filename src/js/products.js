@@ -1,11 +1,11 @@
 import './../utils/styles/global.scss';
 import './../styles/common/header.scss';
 import './../styles/products.scss';
-import  Products from './../components/features/products/products.hbs';
-import  ProductList from './../components/common/organisms/o-productList.hbs';
+import Products from './../components/features/products/products.hbs';
 import ajaxRequests from './../utils/scripts/ajax';
 import PubSub from './../utils/scripts/pubsub.js';
 import Cart from './../utils/scripts/data.js';
+import Events from './../utils/scripts/registerEventsOnLoad.js';
 import Header from './common/header';
 import ToggleCategories from './common/Category-mobile';
 
@@ -38,27 +38,10 @@ Promise.all([promiseProducts(id), promiseCategories]).then(function(data){
 	document.body.appendChild(div);
 	Header.init();
 	ToggleCategories();
-	document.querySelector('.category-block').addEventListener('click',triggerFilter);
+	document.querySelector('.category-block').addEventListener('click',Events.getProductList.bind(null,promiseProducts));
 	initClick();
 });
-function triggerFilter(e){
-	if(e.target.nodeName==="LI"){
-		var promiseProducts1 = promiseProducts(e.target.dataset.id);
-		createProductsList(promiseProducts1);	
-	}
-	return false;
-}
 
-function createProductsList(promiseProducts){
-	promiseProducts.then(function(data){
-		var div = document.createElement('div');
-		document.querySelector('.plp-container').innerHTML ='';
-		div.innerHTML = ProductList({
-				products:JSON.parse(data).products
-		})
-		document.querySelector('.plp-container').appendChild(div);
-	});	
-}
 function initClick(){
 	document.querySelector('.plp-container').addEventListener('click',function(e){
 		if(e.target.nodeName === "BUTTON"){
