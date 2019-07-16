@@ -69,6 +69,7 @@ header{
 		}
 		&.active{
 			background: $pink;
+			z-index:9999;
 			ul{
 				display: block;
 				height: 150px;
@@ -76,6 +77,8 @@ header{
 		}
 	}
 	.nav-cart{
+		z-index:999;
+		position:relative;
 		float: right !important;
 		margin-right: 75px;
 

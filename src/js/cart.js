@@ -8,6 +8,7 @@ import ajaxRequests from './../utils/scripts/ajax';
 import PubSub from './../utils/scripts/pubsub';
 import  CartHTML from './../components/features/cart/cart.hbs';
 import  CartProducts from './../components/common/organisms/o-cart--product.hbs';
+import Header from './common/header';
 
 PubSub.subscribe('cartUpdate',function(data){
 		document.querySelector('.cart-value').innerHTML = 'Rs.' + data;
@@ -33,6 +34,7 @@ promiseCart.then(function(result){
 		}
 	});
 	document.body.appendChild(div);
+	Header.init();
 	PubSub.publish('productAdded',cartData.totalCount);
 	document.querySelector('.cart-lists-block').addEventListener('click',function(e){
 		if(e.target.nodeName === 'BUTTON'){
