@@ -2,6 +2,7 @@ import './../utils/styles/global.scss';
 import './../styles/common/header.scss';
 import './../styles/products.scss';
 import Products from './../components/features/products/products.hbs';
+import '@babel/polyfill';
 import ajaxRequests from './../utils/scripts/ajax';
 import PubSub from './../utils/scripts/pubsub.js';
 import Product from './../utils/scripts/product';

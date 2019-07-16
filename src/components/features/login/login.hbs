@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sabka Bazaar</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://fonts.googleapis.com/css?family=Dosis:400,600,700" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="./utils/fonts/icofont.min.css">
+</head>
+<body>
+	{{> ../../common/organisms/o-header}}
+	<section class="container">
+		<div class ="row form-container">
+			<div class ="col col-xs-12 col-sm-6">
+				<h1>Login</h1>
+				<p>Get access to your Orders, Wishlist and Recommendations</p>
+			</div>
+			<div class ="col col-xs-12 col-sm-6">
+				<form>
+					<div class ="form-group">
+						<label for="email">Email</label>
+					    <input type="email" placeholder="Email id" name="email" required>	
+					</div>
+					
+					<div class="form-group">
+						<label for="psw">Password</label>
+				    	<input type="password" placeholder="Password" name="psw" required>
+					</div>
+				    <button type="submit">Login</button>
+				</form>
+			</div>
+		</div>
+	</section>
+</body>
+</html>

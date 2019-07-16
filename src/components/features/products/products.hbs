@@ -11,14 +11,7 @@
 		{{> ../../common/organisms/o-header}}
 		<section class="container">
 			<div class="row">
-				<div class="col col-xs-12 col-sm-3">
-					<button class="category-mobile">Categories</button>
-					<ul class="category-block">
-						{{#each categories}}
-						<li data-id ={{id}}>{{name}}</li>
-						{{/each}}
-					</ul>
-				</div>
+				{{> ../../common/molecules/m-category}}
 				<div class="col col-xs-12 col-sm-9 plp-container">
 					{{> ../../common/organisms/o-productList}}
 				</div>

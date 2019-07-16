@@ -1,13 +1,19 @@
 @import './../utils/styles/partial/breakpoints.scss';
 @import './../utils/styles/partial/variables.scss';
+.cart-container{
+	background:$lightgray;
+	padding:10px;
+}
 h1{
 	margin-top: 20px;
 	margin-bottom:10px;
 	padding: 10px 20px;
-	background: #ccc;
+	background: $white;
 }
 .cart-item-block{
-	background: #ccc;
+	background: $white;
+    padding: 15px;
+    margin: 10px 0;
 	.row{
 		&.padding-10{
 			padding: 10px;
@@ -39,7 +45,38 @@ h1{
 	    outline: 0;
 	    padding: 8px 10px;
 	    font-family: Dosis;
-	    background: #ce2f67;
-	    color: #fff;
+	    background: $pink;
+	    color: $white;
 	}
 }
+.offer-block{
+	padding: 15px;
+    margin: 10px 0;
+    background: $white;
+    img{
+	    max-width: 145px;
+	    width: 100%;
+    }
+    p{
+    	line-height:45px;
+    }	
+}
+.checkout-block{
+	> div{
+		&:first-child{
+			text-align: center;
+    		padding: 10px;
+		}
+	}
+	button{
+	    width: 100%;
+	    border: 0;
+	    outline: 0;
+	    padding: 10px;
+	    font-family: Dosis;
+	    background: $pink;
+	    color: $white;
+	    display: flex;
+	    justify-content: space-between;
+	}
+}   

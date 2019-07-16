@@ -1,6 +1,7 @@
 import './../utils/styles/global.scss';
 import './../styles/common/header.scss';
 import './../styles/cart.scss';
+import '@babel/polyfill';
 import Product from './../utils/scripts/product';
 import Cart from './../utils/scripts/data';
 import ajaxRequests from './../utils/scripts/ajax';
@@ -8,7 +9,12 @@ import PubSub from './../utils/scripts/pubsub';
 import  CartHTML from './../components/features/cart/cart.hbs';
 import  CartProducts from './../components/common/organisms/o-cart--product.hbs';
 
-
+PubSub.subscribe('cartUpdate',function(data){
+		document.querySelector('.cart-value').innerHTML = 'Rs.' + data;
+});
+PubSub.subscribe('productAdded',function(data){
+		document.querySelector('.header-cart-count').innerHTML = 'My Cart ('+data+' items)';
+});
 var promiseCart = ajaxRequests.promiseFunc('api/getcart',function(result,resolve, reject){
 	resolve(result);
 },'GET');	
@@ -22,6 +28,7 @@ promiseCart.then(function(result){
 	var div = document.createElement('div');
 	div.innerHTML = CartHTML({
 		data:{
+			totalCartValue:cartData.totalCartValue,
 			items:cartData.list
 		}
 	});
@@ -46,6 +53,7 @@ promiseCart.then(function(result){
 					items:cartData.list
 			})
 			document.querySelector('.cart-lists-block').appendChild(div);
+			PubSub.publish('cartUpdate',cartData.totalCartValue);
 		}
 	});
 });

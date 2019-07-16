@@ -10,7 +10,9 @@ module.exports = {
 	entry:{
 		'products':'./src/js/products.js',
 		'home':'./src/js/home.js',
-		'cart':'./src/js/cart.js'
+		'cart':'./src/js/cart.js',
+		'login':'./src/js/login.js',
+		'signup':'./src/js/register.js'
 	},
 	mode:'development',
 	output :{
@@ -106,6 +108,16 @@ module.exports = {
 	    	template:'src/components/features/cart/cart.hbs',
 	    	filename:'cart.html',
 	    	chunks: ['cart','commons']
+	    }),
+	    new HtmlWebpackPlugin({
+	    	template:'src/components/features/login/login.hbs',
+	    	filename:'login.html',
+	    	chunks: ['login','commons']
+	    }),
+	    new HtmlWebpackPlugin({
+	    	template:'src/components/features/register/signup.hbs',
+	    	filename:'signup.html',
+	    	chunks: ['signup','commons']
 	    }),
 	    new CopyWebpackPlugin([
             { from: 'src/static/images', to: 'static/images' },

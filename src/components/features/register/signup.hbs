@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sabka Bazaar</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://fonts.googleapis.com/css?family=Dosis:400,600,700" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="./utils/fonts/icofont.min.css">
+</head>
+<body>
+	{{> ../../common/organisms/o-header}}
+	<section class="container">
+		<div class ="row form-container">
+			<div class ="col col-xs-12 col-sm-6">
+				<h1>Signup</h1>
+				<p>We do not share your personal details with anyone.</p>
+			</div>
+			<div class ="col col-xs-12 col-sm-6">
+				<form>
+					<div class ="form-group">
+						<label for="fname">First Name</label>
+					    <input type="text" placeholder="First Name" name="fname" required>	
+					</div>
+					<div class ="form-group">
+						<label for="lname">Last Name</label>
+					    <input type="text" placeholder="Last Name" name="lname" required>	
+					</div>
+					<div class ="form-group">
+						<label for="email">Email</label>
+					    <input type="email" placeholder="Email id" name="email" required>	
+					</div>					
+					<div class="form-group">
+						<label for="psw">Password</label>
+				    	<input type="password" placeholder="Password" name="psw" required>
+					</div>
+					<div class="form-group">
+						<label for="conpsw">Confirm Password</label>
+				    	<input type="password" placeholder="Confirm Password" name="conpsw" required>
+					</div>
+				    <button type="submit">Signup</button>
+				</form>
+			</div>
+		</div>
+	</section>
+</body>
+</html>

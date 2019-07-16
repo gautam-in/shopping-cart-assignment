@@ -10,18 +10,7 @@
 	{{#data}}
 		{{> ../../common/organisms/o-header}}
 		<section class="container">
-			<div class ="row">
-				<section class ="carousel-container">
-					
-					<div class="carousel-wrapper">
-						{{#each banners}}
-						<img src ={{bannerImageUrl}} alt ={{bannerImageAlt}}>
-						{{/each}}
-					</div>
-					<button class ="controls next">Next</button>
-					<button class ="controls prev">Prev</button>
-				</section>
-			</div>
+			{{> ../../common/molecules/m-carousel}}
 			<div class="row">
 				{{#each categories}}
 				<div class="col col-xs-12 home-category-container">
