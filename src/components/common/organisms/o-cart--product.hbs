@@ -1,0 +1,25 @@
+{{#each items}}
+<div class ="cart-item-block">
+	<div class="row padding-10">
+		<div class ="col col-xs-2">
+			<img src="{{image}}">
+		</div>
+		<div class ="col col-xs-10">
+			<p>{{name}}</p>
+			<div class="flex justify-content">
+				<div data-id ="{{id}}">
+					<button class ="button-dec">-</button>
+					<span class="sb-quantity">{{quantity}}</span>
+					<button class ="button-inc">+</button>
+					<span>X</span>
+					<span>Rs.{{price}}</span>
+				</div>
+				<div>
+					<span>Rs.{{multiply quantity price}}</span>
+				</div>
+			</div>
+			
+		</div>
+	</div>
+</div>
+{{/each}}

@@ -1,8 +1,8 @@
 var express = require('express');
 var bodyParser = require("body-parser");
+const fs = require('fs');
 const server = express();
 var products = require("../../api/products/index.get.json");
-/*var addtocart = require("../../api/addToCart/index.post.json");*/
 var categories = require("../../api/categories/index.get.json");
 
 
@@ -57,13 +57,4 @@ server.get('/getcart', function (req, res) {
 server.listen(8080, () => {
     console.log("server is listening");
 });
-const fs = require('fs');
-
-let student = {  
-    name: 'Mike',
-    age: 23, 
-    gender: 'Male',
-    department: 'English',
-    car: 'Honda' 
-};
 

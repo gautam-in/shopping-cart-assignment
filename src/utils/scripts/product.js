@@ -13,6 +13,7 @@ function Product(name, image, price, category, id, quantity){
 	}
 	this.setQuantity = function(data){
 		this.quantity = this.quantity+data;
+		return this.quantity;
 	}
 }
 Product.prototype.totalItemValue = function(){

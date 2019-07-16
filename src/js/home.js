@@ -6,18 +6,16 @@ import ajaxRequests from './../utils/scripts/ajax';
 import PubSub from './../utils/scripts/pubsub.js';
 import Header from './common/header';
 import Carousel from './common/carousel';
+ 
 
+var promiseBanners = ajaxRequests.promiseFunc('api/banners',function(data,resolve,reject){
+	resolve(data);
+},'GET');
 
-var promiseBanners = new Promise(function(resolve, reject){
-	ajaxRequests.ajax('api/banners', function(data){
-		resolve(data);
-	});
-});
-var promiseCategories = new Promise(function(resolve, reject){
-	ajaxRequests.ajax('api/categories', function(data){
-		resolve(data);
-	});
-});
+var promiseCategories = ajaxRequests.promiseFunc('api/categories', function(data,resolve,reject){
+	resolve(data);
+},'GET');
+
 Promise.all([promiseBanners, promiseCategories]).then(function(data){
 	var div = document.createElement('div');
 	div.innerHTML = Home({

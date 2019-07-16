@@ -19,7 +19,7 @@ var Header = (function(){
 	}
 	var count = 0;
 	PubSub.subscribe('productAdded',function(data){
-		count= count+data;
+		count = data;
 		document.querySelector('.text-count').innerHTML = count + ' items';
 	});
 	return {

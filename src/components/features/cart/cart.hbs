@@ -15,31 +15,10 @@
 					<h1>My Cart(1 item)</h1>
 				</div>
 			</div>
-			{{#each items}}
-			<div class ="cart-item-block">
-				<div class="row padding-10">
-					<div class ="col col-xs-2">
-						<img src="{{image}}">
-					</div>
-					<div class ="col col-xs-10">
-						<p>{{name}}</p>
-						<div class="flex justify-content">
-							<div>
-								<button>-</button>
-								<span>{{quantity}}</span>
-								<button>+</button>
-								<span>X</span>
-								<span>Rs.{{price}}</span>
-							</div>
-							<div>
-								<span>Rs.{{price}}</span>
-							</div>
-						</div>
-						
-					</div>
-				</div>
+			
+			<div class="cart-lists-block">
+				{{> ../../common/organisms/o-cart--product}}
 			</div>
-			{{/each}}
 		</section>
 	{{/data}}
 </body>

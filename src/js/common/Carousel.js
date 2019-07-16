@@ -6,10 +6,8 @@ var Carousel = function(){
 	var prev = document.querySelector('.prev');
 	var clear =1;
 	function goToSlide(n){
-	 	/*images[currentSlide].parentNode.classList.remove("margin-"+currentSlide);*/
 	 	images[currentSlide].parentNode.style.marginLeft = 0;
 	 	currentSlide = (images.length+n)%images.length;
-	 	/*images[currentSlide].parentNode.classList.add("margin-"+currentSlide);*/
 	 	images[currentSlide].parentNode.style.marginLeft = -(currentSlide*100)+'%';
 	 	if(!clear){
 	 		clear=1;

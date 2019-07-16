@@ -4,6 +4,7 @@ import './../styles/products.scss';
 import Products from './../components/features/products/products.hbs';
 import ajaxRequests from './../utils/scripts/ajax';
 import PubSub from './../utils/scripts/pubsub.js';
+import Product from './../utils/scripts/product';
 import Cart from './../utils/scripts/data.js';
 import Events from './../utils/scripts/registerEventsOnLoad.js';
 import Header from './common/header';
@@ -14,20 +15,20 @@ function getCatID(){
 }
 var id = getCatID();
 var promiseProducts = function(id){
-		return new Promise(function(resolve, reject){
-		ajaxRequests.ajax('api/products?id='+id, function(data){
-			resolve(data);
-		});
-	})
-}
-
-var promiseCategories = new Promise(function(resolve, reject){
-	ajaxRequests.ajax('api/categories', function(data){
+	return ajaxRequests.promiseFunc('api/products?id='+id,function(data,resolve,reject){
 		resolve(data);
-	});
-});
+	},'GET')
+};
 
-Promise.all([promiseProducts(id), promiseCategories]).then(function(data){
+var promiseCart = ajaxRequests.promiseFunc('api/getcart',function(data,resolve,reject){
+	resolve(data);
+},'GET');
+
+var promiseCategories = ajaxRequests.promiseFunc('api/categories', function(data,resolve,reject){
+	resolve(data);
+},'GET');
+
+Promise.all([promiseProducts(id), promiseCategories, promiseCart]).then(function(data){
 	var div = document.createElement('div');
 	div.innerHTML = Products({
 		data:{
@@ -36,6 +37,16 @@ Promise.all([promiseProducts(id), promiseCategories]).then(function(data){
 		}
 	});
 	document.body.appendChild(div);
+
+
+	var cartData = JSON.parse(data[2]);
+	var cartData1 = (cartData.data.list).map((el,index,array)=>{
+		return new Product(el.name, el.image, el.price, el.category, el.id, el.quantity);
+	});
+	Cart.updateCart(cartData1);
+	var totalCount = Cart.getData().totalCount;
+	PubSub.publish('productAdded',totalCount);
+
 	Header.init();
 	ToggleCategories();
 	document.querySelector('.category-block').addEventListener('click',Events.getProductList.bind(null,promiseProducts));
