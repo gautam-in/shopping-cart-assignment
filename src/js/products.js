@@ -1,5 +1,6 @@
 import './../utils/styles/global.scss';
 import './../styles/common/header.scss';
+import './../styles/common/footer.scss';
 import './../styles/products.scss';
 import Products from './../components/features/products/products.hbs';
 import '@babel/polyfill';

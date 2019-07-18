@@ -1,5 +1,6 @@
 import './../utils/styles/global.scss';
 import './../styles/common/header.scss';
+import './../styles/common/footer.scss';
 import './../styles/home.scss';
 import Home from './../components/features/home/home.hbs';
 import '@babel/polyfill';

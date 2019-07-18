@@ -15,31 +15,37 @@
 				<p>We do not share your personal details with anyone.</p>
 			</div>
 			<div class ="col col-xs-12 col-sm-6">
-				<form>
+				<form name ="sb-signup" class="sb-signup">
 					<div class ="form-group">
 						<label for="fname">First Name</label>
-					    <input type="text" placeholder="First Name" name="fname" required>	
+					    <input type="text" placeholder="First Name" name="fname" required>
+					    <p class="error-msg"></p>	
 					</div>
 					<div class ="form-group">
 						<label for="lname">Last Name</label>
-					    <input type="text" placeholder="Last Name" name="lname" required>	
+					    <input type="text" placeholder="Last Name" name="lname" required>
+					    <p class="error-msg"></p>	
 					</div>
 					<div class ="form-group">
 						<label for="email">Email</label>
-					    <input type="email" placeholder="Email id" name="email" required>	
+					    <input type="email" placeholder="Email Address" name="email" required>
+					    <p class="error-msg"></p>	
 					</div>					
 					<div class="form-group">
 						<label for="psw">Password</label>
 				    	<input type="password" placeholder="Password" name="psw" required>
+				    	<p class="error-msg"></p>
 					</div>
 					<div class="form-group">
 						<label for="conpsw">Confirm Password</label>
 				    	<input type="password" placeholder="Confirm Password" name="conpsw" required>
+				    	<p class="error-msg"></p>
 					</div>
 				    <button type="submit">Signup</button>
 				</form>
 			</div>
 		</div>
 	</section>
+	{{> ../../common/organisms/o-footer}}
 </body>
 </html>

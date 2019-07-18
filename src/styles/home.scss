@@ -71,6 +71,9 @@
 			}
 		}
 	}
+	&:last-child{
+		margin-bottom:100px;
+	}
 	img{
 		width: 100%;
 		height: auto;
