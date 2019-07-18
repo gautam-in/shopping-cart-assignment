@@ -2,12 +2,25 @@
 <link href="https://fonts.googleapis.com/css?family=Dosis:400,600,700" rel="stylesheet">
 {{#data}}
 	{{> ../../common/organisms/o-header}}
+	{{#if items.length}}
 	<section class="container cart-container">
 		{{> ../../common/molecules/m-cartDetail}}
 		<div class="cart-lists-block">
 			{{> ../../common/organisms/o-cart--product}}
 		</div>
 		{{> ../../common/molecules/m-offer}}
+		{{else}}
+		<div class="container no-item-container">
+			<p>No items in your cart</p>
+			<p>Your favourite items are just a click away</p>
+		</div>	
 	</section>
+	{{/if}}
+	{{#if items.length}}
 	{{> ../../common/molecules/m-checkout}}
+	{{else}}
+		<div class="container">
+			<button class="btn btn-shop"><a href ="/products.html">Start Shopping</a></button>
+		</div>
+	{{/if}}
 {{/data}}
