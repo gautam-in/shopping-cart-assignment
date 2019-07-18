@@ -22,8 +22,30 @@ Promise.all([promiseBanners, promiseCategories]).then(function(data){
 	var div = document.createElement('div');
 	div.innerHTML = Home({
 		data:{
-			banners:JSON.parse(data[0]).banners,
-			categories:JSON.parse(data[1]).categories
+			header:{
+				logo:{
+					src:'static/images/logo.png',
+					alt:'Sabka Bazaar',
+					link:'home.html'
+				},
+				nav:{
+					primary:[
+						{text:'Home',link:'/home.html'},
+						{text:'Products',link:'/products.html'}
+					],
+					secondary:[
+						{text:'Sign in',link:'/login.html'},
+						{text:'Register',link:'/signup.html'}
+					],
+					cart:{
+						link:'/cart.html',
+						src:'static/images/cart.svg',
+						alt:'cart'
+					}
+				}
+			},
+			banners:JSON.parse(data[0]),
+			categories:JSON.parse(data[1])
 		}
 	});
 	document.body.appendChild(div);	

@@ -1,7 +1,9 @@
+{{#header}}
 <header>
 	<div class="container">
 		<div class ="row">
 			{{> ../atoms/a-logo}}
+			{{#nav}}
 			{{> ../molecules/m-nav--primary}}
 			<div class ="col col-xs-4 col-md-3 nav-cart">
 				<div class ="cart-block">
@@ -9,6 +11,8 @@
 					{{> ../molecules/m-cart}}
 				</div>
 			</div>
+			{{/nav}}
 		</div>
 	</div>
 </header>
+{{/header}}

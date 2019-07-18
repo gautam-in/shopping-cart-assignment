@@ -12,12 +12,13 @@ import Events from './../utils/scripts/registerEventsOnLoad.js';
 import Header from './common/header';
 import ToggleCategories from './common/Category-mobile';
 
-function getCatID(){
+var id, promiseProducts, promiseCart, promiseCategories;
+
+var getCatID = function(){
 	return window.location.href.split('=')[1];
 }
-var id = getCatID();
-var promiseProducts = function(id){
-	return ajaxRequests.promiseFunc('api/products?id='+id,function(data,resolve,reject){
+var promiseProducts = function(cb){
+	return ajaxRequests.promiseFunc('api/products?id='+cb,function(data,resolve,reject){
 		resolve(data);
 	},'GET')
 };
@@ -30,38 +31,43 @@ var promiseCategories = ajaxRequests.promiseFunc('api/categories', function(data
 	resolve(data);
 },'GET');
 
-Promise.all([promiseProducts(id), promiseCategories, promiseCart]).then(function(data){
+Promise.all([promiseProducts(getCatID()), promiseCategories, promiseCart]).then(function(data){
+	var [products,categories,cartData] = data;
 	var div = document.createElement('div');
-	div.innerHTML = Products({
-		data:{
-			products:JSON.parse(data[0]).products,
-			categories:JSON.parse(data[1]).categories
-		}
-	});
+	div.innerHTML = Products({data:{
+		header:{
+			logo:{
+				src:'static/images/logo.png',
+				alt:'Sabka Bazaar',
+				link:'home.html'
+			},
+			nav:{
+				primary:[
+					{text:'Home',link:'/home.html'},
+					{text:'Products',link:'/products.html'}
+				],
+				secondary:[
+					{text:'Sign in',link:'/login.html'},
+					{text:'Register',link:'/signup.html'}
+				],
+				cart:{
+					link:'/cart.html',
+					src:'static/images/cart.svg',
+					alt:'cart'
+				}
+			}
+		},
+		products:JSON.parse(products),
+		categories:JSON.parse(categories)}});
 	document.body.appendChild(div);
 
-
-	var cartData = JSON.parse(data[2]);
-	var cartData1 = (cartData.data.list).map((el,index,array)=>{
-		return new Product(el.name, el.image, el.price, el.category, el.id, el.quantity);
+	(JSON.parse(cartData).list).forEach((el,index,array)=>{
+		Cart.updateData(el.name, el.image, el.price, el.category, el.id, el.quantity);
 	});
-	Cart.updateCart(cartData1);
+
 	var totalCount = Cart.getData().totalCount;
 	PubSub.publish('productAdded',totalCount);
-
 	Header.init();
 	ToggleCategories();
-	document.querySelector('.category-block').addEventListener('click',Events.getProductList.bind(null,promiseProducts));
-	initClick();
+	Events.initEvents(promiseProducts);
 });
-
-function initClick(){
-	document.querySelector('.plp-container').addEventListener('click',function(e){
-		if(e.target.nodeName === "BUTTON"){
-			var productData = e.target.dataset.id;
-			productData = JSON.parse(productData);
-			PubSub.publish('productAdded',1);
-			Cart.addProduct(productData.name,productData.imageURL, productData.price, productData.category,productData.id, 1)
-		}
-	});
-}

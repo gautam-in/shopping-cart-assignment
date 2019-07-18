@@ -4,11 +4,11 @@ import './../styles/common/footer.scss';
 import './../styles/cart.scss';
 import '@babel/polyfill';
 import Product from './../utils/scripts/product';
+import Events from './../utils/scripts/registerEventsOnLoad.js';
 import Cart from './../utils/scripts/data';
 import ajaxRequests from './../utils/scripts/ajax';
 import PubSub from './../utils/scripts/pubsub';
 import  CartHTML from './../components/features/cart/cart.hbs';
-import  CartProducts from './../components/common/organisms/o-cart--product.hbs';
 import Header from './common/header';
 
 PubSub.subscribe('cartUpdate',function(data){
@@ -17,19 +17,42 @@ PubSub.subscribe('cartUpdate',function(data){
 PubSub.subscribe('productAdded',function(data){
 		document.querySelector('.header-cart-count').innerHTML = 'My Cart ('+data+' items)';
 });
+
 var promiseCart = ajaxRequests.promiseFunc('api/getcart',function(result,resolve, reject){
 	resolve(result);
 },'GET');	
 promiseCart.then(function(result){
 	result = JSON.parse(result);
-	var data = (result.data.list).map((el,index,array)=>{
-		return new Product(el.name, el.image, el.price, el.category, el.id, el.quantity);
+	(result.list).forEach((el,index,array)=>{
+		Cart.updateData(el.name, el.image, el.price, el.category, el.id, el.quantity);
 	});
-	Cart.updateCart(data);
 	var cartData = Cart.getData();
+
 	var div = document.createElement('div');
 	div.innerHTML = CartHTML({
 		data:{
+			header:{
+				logo:{
+					src:'static/images/logo.png',
+					alt:'Sabka Bazaar',
+					link:'home.html'
+				},
+				nav:{
+					primary:[
+						{text:'Home',link:'/home.html'},
+						{text:'Products',link:'/products.html'}
+					],
+					secondary:[
+						{text:'Sign in',link:'/login.html'},
+						{text:'Register',link:'/signup.html'}
+					],
+					cart:{
+						link:'/cart.html',
+						src:'static/images/cart.svg',
+						alt:'cart'
+					}
+				}
+			},
 			totalCartValue:cartData.totalCartValue,
 			items:cartData.list
 		}
@@ -37,26 +60,5 @@ promiseCart.then(function(result){
 	document.body.appendChild(div);
 	Header.init();
 	PubSub.publish('productAdded',cartData.totalCount);
-	document.querySelector('.cart-lists-block').addEventListener('click',function(e){
-		if(e.target.nodeName === 'BUTTON'){
-			var id = e.target.parentNode.dataset.id;
-			var quantity;
-			if(e.target.classList.contains('button-dec')){
-				quantity = -1;	
-			}
-			
-			else if(e.target.classList.contains('button-inc')){
-				quantity=1;
-			}
-
-			Cart.updateProduct(id, quantity);
-			var div = document.createElement('div');
-			document.querySelector('.cart-lists-block').innerHTML ='';
-			div.innerHTML = CartProducts({
-					items:cartData.list
-			})
-			document.querySelector('.cart-lists-block').appendChild(div);
-			PubSub.publish('cartUpdate',cartData.totalCartValue);
-		}
-	});
+	Events.cartEvents(cartData);
 });
