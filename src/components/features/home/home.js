@@ -1,13 +1,13 @@
-import './../utils/styles/global.scss';
-import './../styles/common/header.scss';
-import './../styles/common/footer.scss';
-import './../styles/home.scss';
-import Home from './../components/features/home/home.hbs';
+import './../../../utils/styles/global.scss';
+import './../../../styles/common/header.scss';
+import './../../../styles/common/footer.scss';
+import './home.scss';
+import Home from './home.hbs';
 import '@babel/polyfill';
-import ajaxRequests from './../utils/scripts/ajax';
-import PubSub from './../utils/scripts/pubsub.js';
-import Header from './common/header';
-import Carousel from './common/carousel';
+import ajaxRequests from './../../../utils/scripts/ajax';
+import PubSub from './../../../utils/scripts/pubsub.js';
+import Header from './../../../js/common/header';
+import Carousel from './../../../js/common/carousel';
  
 
 var promiseBanners = ajaxRequests.promiseFunc('api/banners',function(data,resolve,reject){

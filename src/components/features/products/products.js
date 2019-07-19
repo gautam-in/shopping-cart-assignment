@@ -1,16 +1,16 @@
-import './../utils/styles/global.scss';
-import './../styles/common/header.scss';
-import './../styles/common/footer.scss';
-import './../styles/products.scss';
-import Products from './../components/features/products/products.hbs';
+import './../../../utils/styles/global.scss';
+import './../../../styles/common/header.scss';
+import './../../../styles/common/footer.scss';
+import './products.scss';
+import Products from './products.hbs';
 import '@babel/polyfill';
-import ajaxRequests from './../utils/scripts/ajax';
-import PubSub from './../utils/scripts/pubsub.js';
-import Product from './../utils/scripts/product';
-import Cart from './../utils/scripts/data.js';
-import Events from './../utils/scripts/registerEventsOnLoad.js';
-import Header from './common/header';
-import ToggleCategories from './common/Category-mobile';
+import ajaxRequests from './../../../utils/scripts/ajax';
+import PubSub from './../../../utils/scripts/pubsub';
+import Product from './../../../utils/scripts/product';
+import Cart from './../../../utils/scripts/data';
+import Events from './../../../utils/scripts/registerEventsOnLoad';
+import Header from './../../../js/common/header';
+import ToggleCategories from './../../../js/common/Category-mobile';
 
 function getCatID(){
 	return window.location.href.split('=')[1];

@@ -8,16 +8,16 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
 	entry:{
-		'products':'./src/js/products.js',
-		'home':'./src/js/home.js',
-		'cart':'./src/js/cart.js',
-		'login':'./src/js/login.js',
-		'signup':'./src/js/register.js'
+		'products':'./src/components/features/products/products.js',
+		'home':'./src/components/features/home/home.js',
+		'cart':'./src/components/features/cart/cart.js',
+		'login':'./src/components/features/login/login.js',
+		'signup':'./src/components/features/register/register.js'
 	},
 	mode:'development',
 	output :{
 		path:path.resolve(__dirname,'dist'),
-		filename:'[name].bundle.js'
+		filename:'features/[name].bundle.js'
 	},
 	module:{
 		rules:[
@@ -92,7 +92,7 @@ module.exports = {
 	},
 	plugins: [
 	    new MiniCssExtractPlugin({
-	      filename: '[name].css'
+	      filename: 'styles/[name].css'
 	    }),
 	    new HtmlWebpackPlugin({
 	    	template:'src/components/features/home/home.hbs',

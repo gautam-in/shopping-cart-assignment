@@ -1,15 +1,15 @@
-import './../utils/styles/global.scss';
-import './../styles/common/header.scss';
-import './../styles/common/footer.scss';
-import './../styles/cart.scss';
+import './../../../utils/styles/global.scss';
+import './../../../styles/common/header.scss';
+import './../../../styles/common/footer.scss';
+import './cart.scss';
 import '@babel/polyfill';
-import Product from './../utils/scripts/product';
-import Cart from './../utils/scripts/data';
-import ajaxRequests from './../utils/scripts/ajax';
-import PubSub from './../utils/scripts/pubsub';
-import  CartHTML from './../components/features/cart/cart.hbs';
-import  CartProducts from './../components/common/organisms/o-cart--product.hbs';
-import Header from './common/header';
+import Product from './../../../utils/scripts/product';
+import Cart from './../../../utils/scripts/data';
+import ajaxRequests from './../../../utils/scripts/ajax';
+import PubSub from './../../../utils/scripts/pubsub';
+import  CartHTML from './cart.hbs';
+import  CartProducts from './../../common/organisms/o-cart--product.hbs';
+import Header from './../../../js/common/header';
 
 PubSub.subscribe('cartUpdate',function(data){
 		document.querySelector('.cart-value').innerHTML = 'Rs.' + data;

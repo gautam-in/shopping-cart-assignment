@@ -1,7 +1,7 @@
-import './../utils/styles/global.scss';
-import './../styles/common/header.scss';
-import './../styles/common/footer.scss';   
-import './../styles/login.scss';
+import './../../../utils/styles/global.scss';
+import './../../../styles/common/header.scss';
+import './../../../styles/common/footer.scss';   
+import './../login/login.scss';
 var inputFields = document.querySelectorAll('input');
 inputFields.forEach((el,index,array)=>{
 	el.addEventListener('blur',function(e){
