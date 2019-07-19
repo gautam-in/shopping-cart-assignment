@@ -10,6 +10,13 @@ var Cart = (function() {
 	}
 	return {
 		addProduct:function(name, image, price, category, id, quantity){
+			this.updateData(name, image, price, category, id, quantity);
+			PubSub.publish('productAdded',data.totalCount);
+			ajaxRequests.promiseFunc('api/addtocart',function(res){
+				console.log(res);
+			},'POST',data);	
+		},
+		updateData:function(name, image, price, category, id, quantity){
 			var index = (data.list).findIndex((el, index, arr)=>{
 				return el.id === id;
 			});
@@ -24,18 +31,7 @@ var Cart = (function() {
 				(data.list).push(item);
 				data.totalCartValue = data.totalCartValue + item.totalItemValue();
 			}
-			data.totalCount= data.totalCount+1;
-			PubSub.publish('productAdded',data.totalCount);
-			ajaxRequests.promiseFunc('api/addtocart',function(res){
-				console.log(res);
-			},'POST',data);	
-		},
-		updateCart:function(items){
-			items.forEach((el,index,array)=>{
-				data.list.push(el);
-				data.totalCount = data.totalCount + el.quantity;
-				data.totalCartValue = data.totalCartValue + el.totalItemValue();
-			});
+			data.totalCount= data.totalCount+quantity;
 		},
 		getData:function(){
 			return data;

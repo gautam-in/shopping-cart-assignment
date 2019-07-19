@@ -1,3 +1,4 @@
+@import './../../../utils/styles/partial/variables.scss';
 .form-container{
 	padding:70px;
 	h1{
@@ -11,8 +12,8 @@
 	    outline: 0;
 	    padding: 8px 10px;
 	    font-family: Dosis;
-	    background: #ce2f67;
-	    color: #fff;
+	    background: $pink;
+	    color: $white;
 	    width: 75%;
 	    cursor: pointer;
 	}

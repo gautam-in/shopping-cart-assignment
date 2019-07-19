@@ -2,7 +2,7 @@
 @import './../../../utils/styles/partial/variables.scss';
 .cart-container{
 	background:$lightgray;
-	padding:10px;
+	padding:10px 0;
 }
 h1{
 	margin-top: 20px;
@@ -79,4 +79,29 @@ h1{
 	    display: flex;
 	    justify-content: space-between;
 	}
-}   
+} 
+.no-item-container{
+	height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background:$white;
+    p:first-child{
+    	font-weight:600;
+    	line-height:36px;
+    }
+    p:last-child{
+    	font-size:14px;
+    }
+} 
+.btn-shop{
+    width: 100%;
+    border: 0;
+    outline: 0;
+    padding: 10px;
+    font-family: Dosis;
+    background: $pink;
+    color: $white;
+    text-align:center;
+} 

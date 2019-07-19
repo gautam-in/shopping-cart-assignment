@@ -2,6 +2,35 @@ import './../../../utils/styles/global.scss';
 import './../../../styles/common/header.scss';
 import './../../../styles/common/footer.scss';   
 import './../login/login.scss';
+import Signup from './signup.hbs';
+
+var div = document.createElement('div');
+div.innerHTML = Signup({data:{
+	header:{
+		logo:{
+			src:'static/images/logo.png',
+			alt:'Sabka Bazaar',
+			link:'home.html'
+		},
+		nav:{
+			primary:[
+				{text:'Home',link:'/home.html'},
+				{text:'Products',link:'/products.html'}
+			],
+			secondary:[
+				{text:'Sign in',link:'/login.html'},
+				{text:'Register',link:'/signup.html'}
+			],
+			cart:{
+				link:'/cart.html',
+				src:'static/images/cart.svg',
+				alt:'cart'
+			}
+		}
+	}
+}});
+document.body.appendChild(div);
+
 var inputFields = document.querySelectorAll('input');
 inputFields.forEach((el,index,array)=>{
 	el.addEventListener('blur',function(e){

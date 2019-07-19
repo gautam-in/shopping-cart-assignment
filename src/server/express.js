@@ -27,21 +27,21 @@ server.get('/categories', function (req, res) {
     var newCat = categories.filter((item) => {
         return item.enabled;
     });
-    res.end(JSON.stringify({ categories: newCat }));
+    res.end(JSON.stringify(newCat));
 });
 
 server.get('/banners', function (req, res) {
     var banners = require("../../api/banners/index.get.json");
-    res.end(JSON.stringify({ banners: banners }));
+    res.end(JSON.stringify(banners));
 });
 
 server.get('/products', function (req, res) {
     var products = require("../../api/products/index.get.json");
     if (req.query.id === "undefined") {
-        res.end(JSON.stringify({ products: products }));
+        res.end(JSON.stringify(products));
     } else {
         var filteredProduct = products.filter((p) => p.category == req.query.id);
-        res.end(JSON.stringify({ products: filteredProduct }));
+        res.end(JSON.stringify(filteredProduct));
     }
 });
 
@@ -50,7 +50,7 @@ server.get('/getcart', function (req, res) {
     fs.readFile('api/addToCart/index.post.json', 'utf-8', (err, data) => {
       if (err) throw err
       jsonData = JSON.parse(data);
-      res.end(JSON.stringify({ data: jsonData }));
+      res.end(JSON.stringify(jsonData));
     })
 });
 
