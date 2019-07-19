@@ -8,46 +8,30 @@
 </head>
 <body>
 	{{#data}}
-	{{> ../../common/organisms/o-header}}
-	<section class="container">
-		<div class ="row form-container">
-			<div class ="col col-xs-12 col-sm-6">
-				<h1>Signup</h1>
-				<p>We do not share your personal details with anyone.</p>
+		{{> ../../common/organisms/o-header}}
+		<section class="container">
+			{{#signup}}
+			<div class ="row form-container">
+				<div class ="col col-xs-12 col-sm-6">
+					<h1>{{title}}</h1>
+					<p>{{description}}</p>
+				</div>
+				{{#form}}
+				<div class ="col col-xs-12 col-sm-6">
+					<form name ="sb-signup" class="sb-signup">
+						{{#each inputs}}
+							{{> ./../../common/molecules/m-input}}
+						{{/each}}
+						{{#button}}
+					    	<button type="submit">{{label}}</button>
+					    {{/button}}
+					</form>
+				</div>
+				{{/form}}
 			</div>
-			<div class ="col col-xs-12 col-sm-6">
-				<form name ="sb-signup" class="sb-signup">
-					<div class ="form-group">
-						<label for="fname">First Name</label>
-					    <input type="text" placeholder="First Name" name="fname" required>
-					    <p class="error-msg"></p>	
-					</div>
-					<div class ="form-group">
-						<label for="lname">Last Name</label>
-					    <input type="text" placeholder="Last Name" name="lname" required>
-					    <p class="error-msg"></p>	
-					</div>
-					<div class ="form-group">
-						<label for="email">Email</label>
-					    <input type="email" placeholder="Email Address" name="email" required>
-					    <p class="error-msg"></p>	
-					</div>					
-					<div class="form-group">
-						<label for="psw">Password</label>
-				    	<input type="password" placeholder="Password" name="psw" required>
-				    	<p class="error-msg"></p>
-					</div>
-					<div class="form-group">
-						<label for="conpsw">Confirm Password</label>
-				    	<input type="password" placeholder="Confirm Password" name="conpsw" required>
-				    	<p class="error-msg"></p>
-					</div>
-				    <button type="submit">Signup</button>
-				</form>
-			</div>
-		</div>
-	</section>
-	{{> ../../common/organisms/o-footer}}
+			{{/signup}}
+		</section>
+		{{> ../../common/organisms/o-footer}}
 	{{/data}}
 </body>
 </html>

@@ -3,7 +3,7 @@ import './../../../styles/common/header.scss';
 import './../../../styles/common/footer.scss';
 import './login.scss';
 import Login from './login.hbs';
-
+import validations from './../../../utils/scripts/validations';
 var div = document.createElement('div');
 div.innerHTML = Login({data:{
 	header:{
@@ -27,6 +27,68 @@ div.innerHTML = Login({data:{
 				alt:'cart'
 			}
 		}
+	},
+	signin:{
+		title:'Login',
+		description:'Get access to your Orders,WishList and Recommendations',
+		form:{
+			inputs:[
+				{
+					label:'Email',
+					name:'email',
+					placeholder:'Email Address',
+					type:'email'
+				},
+				{
+					label:'Password',
+					name:'psw',
+					placeholder:'Password',
+					type:'password'
+				}
+			],
+			button:{
+				label:'Login'
+			}
+		}
 	}
 }});
 document.body.appendChild(div);
+var inputFields = document.querySelectorAll('input');
+inputFields.forEach((el,index,array)=>{
+	el.addEventListener('blur',function(e){
+		this.classList.add('touched');
+		initValidations.call(this,e);
+	})
+	el.addEventListener('keyup',function(e){
+		if(el.classList.contains('touched')){
+			initValidations.call(this,e);
+		}
+		return false;
+	})
+});
+function initValidations(e){
+	var name = this.name;
+	var placeholder = this.placeholder;
+	var data = validations.emptyCheck(e, placeholder);
+	if(data){
+		switch(name){
+			case 'fname':
+					validations.textValidation(name, e, placeholder);
+					break;
+			case 'lname':
+					validations.textValidation(name, e, placeholder);
+					break;
+			case 'email':
+					validations.validateEmail(name,e,placeholder);
+					break;
+			case 'psw':
+					validations.validatePassword(name,e,placeholder);
+					break;
+			case 'conpsw':
+					validations.confirmPassword(name,e,placeholder);
+					break;		 
+			default:
+			console.log('ok');				
+		}
+	}
+}

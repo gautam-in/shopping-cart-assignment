@@ -51,16 +51,16 @@
 		margin-top: 20px;
 		padding-bottom: 10px;
 		border-bottom: 1px dotted $graphiteGray;
-	}
-	img{
-		width: 100%;
-		height: auto;
-	}
-	h4{
+		.product-name{
 		    font-weight: 600;
     		font-size: 90%;
     		margin-bottom: 15px;
     		min-height: 50px;
+		}
+	}
+	img{
+		width: 100%;
+		height: auto;
 	}
 	button{
 		margin-top: 10px;
@@ -76,15 +76,6 @@
 			float: right;
 		}
 	}
-	p{
-		background-color: $lightgray;
-	    padding: 5px 10px;
-	    font-size: 75%;
-	    line-height: 120%;
-	    height: 100px;
-	    overflow: hidden;
-	    flex:1 1 auto;
-	}
 	.flex{
 		display: flex;
 		@media #{$breakpoint-large}{
@@ -95,6 +86,15 @@
 			flex-direction:column;
 			display: flex;
 			};	
+		}
+		p{
+			background-color: $lightgray;
+		    padding: 5px 10px;
+		    font-size: 75%;
+		    line-height: 120%;
+		    height: 100px;
+		    overflow: hidden;
+		    flex:1 1 auto;
 		}
 	}
 }

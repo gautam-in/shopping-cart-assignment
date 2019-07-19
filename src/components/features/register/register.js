@@ -3,6 +3,7 @@ import './../../../styles/common/header.scss';
 import './../../../styles/common/footer.scss';   
 import './../login/login.scss';
 import Signup from './signup.hbs';
+import validations from './../../../utils/scripts/validations';
 
 var div = document.createElement('div');
 div.innerHTML = Signup({data:{
@@ -27,6 +28,47 @@ div.innerHTML = Signup({data:{
 				alt:'cart'
 			}
 		}
+	},
+	signup:{
+		title:'Signup',
+		description:'We do not share your personal details with anyone.',
+		form:{
+			inputs:[
+				{
+					label:'First Name',
+					name:'fname',
+					placeholder:'First Name',
+					type:'text'
+				},
+				{
+					label:'Last Name',
+					name:'lname',
+					placeholder:'Last Name',
+					type:'text'
+				},
+				{
+					label:'Email',
+					name:'email',
+					placeholder:'Email Address',
+					type:'email'
+				},
+				{
+					label:'Password',
+					name:'psw',
+					placeholder:'Password',
+					type:'password'
+				},
+				{
+					label:'Confirm Password',
+					name:'conpsw',
+					placeholder:'Confirm Password',
+					type:'password'
+				}
+			],
+			button:{
+				label:'Signup'
+			}
+		}
 	}
 }});
 document.body.appendChild(div);
@@ -35,87 +77,38 @@ var inputFields = document.querySelectorAll('input');
 inputFields.forEach((el,index,array)=>{
 	el.addEventListener('blur',function(e){
 		this.classList.add('touched');
-		validations.call(this,e);
+		initValidations.call(this,e);
 	})
 	el.addEventListener('keyup',function(e){
 		if(el.classList.contains('touched')){
-			validations.call(this,e);
+			initValidations.call(this,e);
 		}
 		return false;
 	})
 });
-function validations(e){
+function initValidations(e){
 	var name = this.name;
 	var placeholder = this.placeholder;
-	if(!emptyCheck(e,placeholder)){
+	var data = validations.emptyCheck(e, placeholder);
+	if(data){
 		switch(name){
 			case 'fname':
-					textValidation(name, e, placeholder);
+					validations.textValidation(name, e, placeholder);
 					break;
 			case 'lname':
-					textValidation(name, e, placeholder);
+					validations.textValidation(name, e, placeholder);
 					break;
 			case 'email':
-					validateEmail(name,e,placeholder);
+					validations.validateEmail(name,e,placeholder);
 					break;
 			case 'psw':
-					validatePassword(name,e,placeholder);
+					validations.validatePassword(name,e,placeholder);
 					break;
 			case 'conpsw':
-					confirmPassword(name,e,placeholder);
+					validations.confirmPassword(name,e,placeholder);
 					break;		 
 			default:
 			console.log('ok');				
 		}
 	}
-}
-function emptyCheck(event, placeholder){
-	if(!event.target.value){
-		event.target.nextElementSibling.innerHTML = 'Please enter your ' + placeholder;
-		return false;
-	}
-}
-function textValidation(name, event, placeholder){
-	if((event.target.value).length<2){
-		event.target.nextElementSibling.innerHTML ='The field ' + placeholder +' has invalid characters';
-		return false;
-	}
-	event.target.nextElementSibling.innerHTML ='';
-	return true;
-}
-function validateEmail(name,event,placeholder){
-	if(event.target.value){
-		var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
-        if (reg.test(event.target.value) == false) 
-        {
-            event.target.nextElementSibling.innerHTML = 'The ' +placeholder+' entered is invalid';
-            return false;
-        }
-	}
-	event.target.nextElementSibling.innerHTML ='';
-	return true;
-}
-function validatePassword(name, event, placeholder){
-	if(event.target.value){
-		var reg = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$/;
-        if (reg.test(event.target.value) == false) 
-        {
-            event.target.nextElementSibling.innerHTML = 'The ' +placeholder+' entered is invalid';
-            return false;
-        }
-	}
-	event.target.nextElementSibling.innerHTML ='';
-	return true;
-}
-function confirmPassword(name, event, placeholder){
-	if(event.target.value){
-		var password = document.getElementsByName("psw")[0].value;
-        if (event.target.value!== password) 
-        {
-            event.target.nextElementSibling.innerHTML = 'The ' +placeholder+' entered is invalid';
-            return false;
-        }
-	}
-	event.target.nextElementSibling.innerHTML ='';
-	return true;
 }
