@@ -4,6 +4,7 @@ import './../../../styles/common/footer.scss';
 import './../login/login.scss';
 import Signup from './signup.hbs';
 import validations from './../../../utils/scripts/validations';
+import Events from './../../../utils/scripts/registerEventsOnLoad';
 
 var div = document.createElement('div');
 div.innerHTML = Signup({data:{
@@ -112,3 +113,4 @@ function initValidations(e){
 		}
 	}
 }
+Events.cartCountEvent();

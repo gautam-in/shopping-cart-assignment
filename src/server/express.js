@@ -16,7 +16,7 @@ server.post('/addtocart', function (req, res) {
     // An error occurred
     console.error(err);
     }
-    res.end(JSON.stringify({ addtocart: 'hello'}));
+    res.end('item added to cart');
 });
 
 server.get('/categories', function (req, res) {

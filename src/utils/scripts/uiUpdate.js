@@ -12,12 +12,16 @@ var domUtils = (function(){
 		});	
 	}
 	var CartList = function(cartData){
-		var div = document.createElement('div');
-		document.querySelector('.cart-lists-block').innerHTML ='';
-		div.innerHTML = CartProducts({
-				items:cartData.list
-		})
-		document.querySelector('.cart-lists-block').appendChild(div);
+		if(cartData.list.length>0){
+			var div = document.createElement('div');
+			document.querySelector('.cart-lists-block').innerHTML ='';
+			div.innerHTML = CartProducts({
+					items:cartData.list
+			})
+			document.querySelector('.cart-lists-block').appendChild(div);
+			return false;	
+		}
+		window.location.reload();
 	}
 	return {
 		UpdateProducts:function(productsDataPromise){

@@ -5,11 +5,12 @@ import './home.scss';
 import Home from './home.hbs';
 import '@babel/polyfill';
 import ajaxRequests from './../../../utils/scripts/ajax';
-import PubSub from './../../../utils/scripts/pubsub.js';
+import PubSub from './../../../utils/scripts/pubsub';
 import Header from './../../../js/common/header';
+import Cart from './../../../utils/scripts/data';
 import Carousel from './../../../js/common/carousel';
+import Events from './../../../utils/scripts/registerEventsOnLoad';
  
-
 var promiseBanners = ajaxRequests.promiseFunc('api/banners',function(data,resolve,reject){
 	resolve(data);
 },'GET');
@@ -51,5 +52,7 @@ Promise.all([promiseBanners, promiseCategories]).then(function(data){
 	document.body.appendChild(div);	
 	Header.init();
 	Carousel();
+	Events.cartCountEvent();
 });
+
 	

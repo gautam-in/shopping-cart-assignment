@@ -1,6 +1,7 @@
 import Cart from './data';
 import PubSub from './pubsub';
 import domUtils from './uiUpdate';
+import ajaxRequests from './ajax';
 var Events = (function(){
 	var filterProducts = function(promise, e){
 		if(e.target.nodeName==="LI"){
@@ -29,10 +30,23 @@ var Events = (function(){
 				quantity=1;
 			}
 
-			Cart.updateProduct(id, quantity);
+			var count = Cart.updateProduct(id, quantity);
 			domUtils.UpdateCartList(cartData);
-			PubSub.publish('cartUpdate',cartData.totalCartValue);
+			PubSub.publish('cartUpdate',cartData.totalCartValue);	
 		}
+	}
+	var cartCount = function(){
+		var count;
+		var promiseCart = ajaxRequests.promiseFunc('api/getcart',function(result,resolve, reject){
+								resolve(result);
+						},'GET');
+		promiseCart.then(function(result){
+			result = JSON.parse(result);
+			(result.list).forEach((el,index,array)=>{
+				Cart.updateData(el.name, el.image, el.price, el.category, el.id, el.quantity);
+			});
+			PubSub.publish('productAdded',Cart.getCount());
+		});
 	}
 	return {
 		initEvents:function(promiseProducts){
@@ -41,6 +55,9 @@ var Events = (function(){
 		},
 		cartEvents:function(cartData){
 			document.querySelector('.cart-lists-block').addEventListener('click',updateProductQuantity.bind(null, cartData));
+		},
+		cartCountEvent:function(){
+			cartCount();
 		}	
 	}
 }());

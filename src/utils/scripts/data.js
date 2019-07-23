@@ -54,7 +54,13 @@ var Cart = (function() {
 			PubSub.publish('productAdded',data.totalCount);
 			ajaxRequests.promiseFunc('api/addtocart',function(res){
 				console.log(res);
-			},'POST',data);						
+			},'POST',data);
+			if(data.totalCount<=0){
+				return data.totalCount;
+			}						
+		},
+		getCount:function(){
+			return data.totalCount;
 		}
 	}
 }());

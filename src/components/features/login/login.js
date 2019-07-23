@@ -4,6 +4,8 @@ import './../../../styles/common/footer.scss';
 import './login.scss';
 import Login from './login.hbs';
 import validations from './../../../utils/scripts/validations';
+import Events from './../../../utils/scripts/registerEventsOnLoad';
+
 var div = document.createElement('div');
 div.innerHTML = Login({data:{
 	header:{
@@ -72,23 +74,16 @@ function initValidations(e){
 	var data = validations.emptyCheck(e, placeholder);
 	if(data){
 		switch(name){
-			case 'fname':
-					validations.textValidation(name, e, placeholder);
-					break;
-			case 'lname':
-					validations.textValidation(name, e, placeholder);
-					break;
 			case 'email':
 					validations.validateEmail(name,e,placeholder);
 					break;
 			case 'psw':
 					validations.validatePassword(name,e,placeholder);
-					break;
-			case 'conpsw':
-					validations.confirmPassword(name,e,placeholder);
-					break;		 
+					break;	 
 			default:
 			console.log('ok');				
 		}
 	}
 }
+
+Events.cartCountEvent();

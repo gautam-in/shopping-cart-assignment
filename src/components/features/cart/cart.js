@@ -15,8 +15,12 @@ import Events from './../../../utils/scripts/registerEventsOnLoad';
 PubSub.subscribe('cartUpdate',function(data){
 		document.querySelector('.cart-value').innerHTML = 'Rs.' + data;
 });
+
 PubSub.subscribe('productAdded',function(data){
-		document.querySelector('.header-cart-count').innerHTML = 'My Cart ('+data+' items)';
+	var cartHeader = document.querySelector('.header-cart-count');
+	if(cartHeader){
+		cartHeader.innerHTML = 'My Cart ('+data+' items)';
+	}
 });
 
 var promiseCart = ajaxRequests.promiseFunc('api/getcart',function(result,resolve, reject){
@@ -61,5 +65,7 @@ promiseCart.then(function(result){
 	document.body.appendChild(div);
 	Header.init();
 	PubSub.publish('productAdded',cartData.totalCount);
-	Events.cartEvents(cartData);
+	if(document.querySelector('.cart-lists-block')){
+		Events.cartEvents(cartData);	
+	}	
 });
