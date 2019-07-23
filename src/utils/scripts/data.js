@@ -1,6 +1,6 @@
 import Product from './product';
 import ajaxRequests from './ajax';
-import PubSub from './pubsub';
+import PubSub from './../../core/pubsub';
 import Header from './../../js/common/header';
 var Cart = (function() {
 	var data ={

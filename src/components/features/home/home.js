@@ -5,11 +5,11 @@ import './home.scss';
 import Home from './home.hbs';
 import '@babel/polyfill';
 import ajaxRequests from './../../../utils/scripts/ajax';
-import PubSub from './../../../utils/scripts/pubsub';
+import PubSub from './../../../core/pubsub';
 import Header from './../../../js/common/header';
 import Cart from './../../../utils/scripts/data';
 import Carousel from './../../../js/common/carousel';
-import Events from './../../../utils/scripts/registerEventsOnLoad';
+import Events from './../../../core/registerEventsOnLoad';
  
 var promiseBanners = ajaxRequests.promiseFunc('api/banners',function(data,resolve,reject){
 	resolve(data);

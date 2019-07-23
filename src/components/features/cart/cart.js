@@ -6,11 +6,11 @@ import '@babel/polyfill';
 import Product from './../../../utils/scripts/product';
 import Cart from './../../../utils/scripts/data';
 import ajaxRequests from './../../../utils/scripts/ajax';
-import PubSub from './../../../utils/scripts/pubsub';
+import PubSub from './../../../core/pubsub';
 import  CartHTML from './cart.hbs';
 import  CartProducts from './../../common/organisms/o-cart--product.hbs';
 import Header from './../../../js/common/header';
-import Events from './../../../utils/scripts/registerEventsOnLoad';
+import Events from './../../../core/registerEventsOnLoad';
 
 PubSub.subscribe('cartUpdate',function(data){
 		document.querySelector('.cart-value').innerHTML = 'Rs.' + data;

@@ -5,10 +5,10 @@ import './products.scss';
 import Products from './products.hbs';
 import '@babel/polyfill';
 import ajaxRequests from './../../../utils/scripts/ajax';
-import PubSub from './../../../utils/scripts/pubsub';
+import PubSub from './../../../core/pubsub';
 import Product from './../../../utils/scripts/product';
 import Cart from './../../../utils/scripts/data';
-import Events from './../../../utils/scripts/registerEventsOnLoad';
+import Events from './../../../core/registerEventsOnLoad';
 import Header from './../../../js/common/header';
 import ToggleCategories from './../../../js/common/Category-mobile';
 

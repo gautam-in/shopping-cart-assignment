@@ -1,4 +1,4 @@
-import PubSub from './../../utils/scripts/pubsub.js';
+import PubSub from './../../core/pubsub.js';
 var Header = (function(){
 	var NavToggle = function(){
 		var toggleBtn =  document.querySelector('.nav-icon-mobile');

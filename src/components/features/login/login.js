@@ -4,7 +4,7 @@ import './../../../styles/common/footer.scss';
 import './login.scss';
 import Login from './login.hbs';
 import validations from './../../../utils/scripts/validations';
-import Events from './../../../utils/scripts/registerEventsOnLoad';
+import Events from './../../../core/registerEventsOnLoad';
 
 var div = document.createElement('div');
 div.innerHTML = Login({data:{

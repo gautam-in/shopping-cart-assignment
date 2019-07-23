@@ -1,7 +1,7 @@
-import Cart from './data';
+import Cart from './../utils/scripts/data';
 import PubSub from './pubsub';
-import domUtils from './uiUpdate';
-import ajaxRequests from './ajax';
+import domUtils from './../utils/scripts/uiUpdate';
+import ajaxRequests from './../utils/scripts/ajax';
 var Events = (function(){
 	var filterProducts = function(promise, e){
 		if(e.target.nodeName==="LI"){
