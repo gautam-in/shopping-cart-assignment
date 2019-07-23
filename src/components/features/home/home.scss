@@ -22,15 +22,19 @@
 		}
 	}
 	.controls{
+		padding:10px;
+		color:$white;
+		font-family:Dosis;
 		position: absolute;
 		top:50%;
-		background: $lightgray;
+		background: $lightblack;
+		opacity:0.5;
 		cursor: pointer;
 		outline: 0;
 	    border: 0;
 	    transform: translate(0,-50%);
-	    &:hover{
-	    	background-color: $darkgray;
+	    &:hover, &:focus{
+	    	background-color: $black;
 	    }
 	}
 	.next{
