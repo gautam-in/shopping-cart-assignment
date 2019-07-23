@@ -72,6 +72,12 @@
 	    color: $white;
 	    width: 100%;
 	    cursor:pointer;
+	    border:1px solid $pink;
+	    &:hover, &:focus{
+	    		background: $white;
+    			color: $pink;
+    			font-weight: 600;
+	    }
 	    @media #{$breakpoint-medium}{
 			float: right;
 		}
