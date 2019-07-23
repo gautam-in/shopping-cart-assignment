@@ -97,27 +97,42 @@ module.exports = {
 	    new HtmlWebpackPlugin({
 	    	template:'src/components/features/home/home.hbs',
 	    	filename:'home.html',
-	    	chunks: ['home','commons']
+	    	chunks: ['home','commons'],
+	    	meta: {
+        			'viewport': 'width=device-width, initial-scale=1, shrink-to-fit=no'
+        	}
 	    }),
 	    new HtmlWebpackPlugin({
 	    	template:'src/components/features/products/products.hbs',
 	    	filename:'products.html',
-	    	chunks: ['products','commons']
+	    	chunks: ['products','commons'],
+	    	meta: {
+        			'viewport': 'width=device-width, initial-scale=1, shrink-to-fit=no'
+        	}
 	    }),
 	    new HtmlWebpackPlugin({
 	    	template:'src/components/features/cart/cart.hbs',
 	    	filename:'cart.html',
-	    	chunks: ['cart','commons']
+	    	chunks: ['cart','commons'],
+	    	meta: {
+        			'viewport': 'width=device-width, initial-scale=1, shrink-to-fit=no'
+        	}
 	    }),
 	    new HtmlWebpackPlugin({
 	    	template:'src/components/features/login/login.hbs',
 	    	filename:'login.html',
-	    	chunks: ['login','commons']
+	    	chunks: ['login','commons'],
+	    	meta: {
+        			'viewport': 'width=device-width, initial-scale=1, shrink-to-fit=no'
+        	}
 	    }),
 	    new HtmlWebpackPlugin({
 	    	template:'src/components/features/register/signup.hbs',
 	    	filename:'signup.html',
-	    	chunks: ['signup','commons']
+	    	chunks: ['signup','commons'],
+	    	meta: {
+        			'viewport': 'width=device-width, initial-scale=1, shrink-to-fit=no'
+        	}
 	    }),
 	    new CopyWebpackPlugin([
             { from: 'src/static/images', to: 'static/images' },
