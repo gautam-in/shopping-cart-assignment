@@ -59,20 +59,10 @@
 		content:'';
 		clear: both;
 	}
-	&:nth-child(odd){
-		> div > div{
-			&:first-child{
-				float:left;
-				text-align: center;
-			}
-		}
-	}
 	&:nth-child(even){
-		> div > div{
-			&:first-child{
-				float:right;
-				text-align: center;
-			}
+		> div{
+			flex-direction: row-reverse;
+			text-align: center;
 		}
 	}
 	&:last-child{

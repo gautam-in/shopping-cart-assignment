@@ -35,12 +35,16 @@ body{
 	margin:0 -5px;
 	position:relative;
 	@extend %clearfix;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
 
 	.col,
 	[class*='col-']{
-		float: left;
 		padding:0 5px;
-		width:100%;
+		flex-basis: 100%;
+	    flex-grow: 1;
+	    max-width: 100%;
 	}
 
 	@media #{$breakpoint-small}{
@@ -50,7 +54,9 @@ body{
 		}
 		[class*='col-md-'],
 		[class*='col-lg-']{
-			width: 100%;
+			flex-basis: 100%;
+		    flex-grow: 1;
+		    max-width: 100%;
 		}
 	}
 
@@ -60,7 +66,9 @@ body{
 			padding: 0 15px;
 		}
 		[class*='col-md-']{
-			width: 100%;
+			flex-basis: 100%;
+		    flex-grow: 1;
+		    max-width: 100%;
 		}
 	}
 
@@ -74,13 +82,15 @@ body{
 .col{
 	@for $i from 1 through $grid-columns {      
 		&.col-xs-#{$i} {         
-            width: 100% / $grid-columns * $i;   
+            flex: 0 0 100% / 12 * $i;
+    		max-width: 100% / 12 * $i;   
         }
     }
     @media #{$breakpoint-small}{
         @for $i from 1 through $grid-columns {
         	&.col-sm-#{$i}{
-	        	width: 100% / $grid-columns * $i;
+	            flex: 0 0 100% / 12 * $i;
+	    		max-width: 100% / 12 * $i; 
 	        }
         }
     }
@@ -88,14 +98,16 @@ body{
     @media #{$breakpoint-medium}{
         @for $i from 1 through $grid-columns {	
         	&.col-md-#{$i}{
-	        	width: 100% / $grid-columns * $i;
+	            flex: 0 0 100% / 12 * $i;
+	    		max-width: 100% / 12 * $i; 
 	        }
         }
     }
     @media #{$breakpoint-large}{
         @for $i from 1 through $grid-columns {
         	&.col-lg-#{$i}{
-	        	width: 100% / $grid-columns * $i;
+	            flex: 0 0 100% / 12 * $i;
+	    		max-width: 100% / 12 * $i; 
 	        }
         }
     }
