@@ -1,0 +1,140 @@
+/* COMMON */
+// Variables
+$buttonRightCaptionTop:70%
+$buttonRightCaptionLeft:60%
+
+$buttonLeftCaptionTop:65%
+$buttonLeftCaptionLeft:30%
+
+
+body
+  font-family: $font-stack-consolas
+
+h1,h2,h3,h4,h5,h6
+  font-family: $sans-serif-2
+  text-transform: uppercase
+
+h2
+  font-size: 3em
+
+.wrapper
+  +outer-container
+
+header
+  +clearfix
+  padding: 5px 20px 0
+  -webkit-box-shadow: 0 8px 7px -6px #ccc
+  -moz-box-shadow: 0 8px 6px -6px #ccc
+  box-shadow: 0 8px 6px -6px #ccc
+
+.brand
+  background-image: url("/static/images/logo.png")
+  width: 190px
+  height: 83px
+  margin: 15px 0
+  float: left
+
+  +retina
+    background-image: url("/static/images/logo.png")
+    background-size: 190px 83px
+
+a
+  color: $brand-dark
+  text-decoration: none
+  &:hover
+    color: $brand-primary
+
+section, aside, article
+  margin-top: 10px
+  margin-bottom: 5px
+  +clearfix
+
+
+.container
+  position: relative
+  width: 100%
+  max-width: 400px
+  img
+    width: 100%
+    height: auto
+  .btn-right
+    border-radius: 0px
+    position: absolute
+    top: $buttonRightCaptionTop
+    left: $buttonRightCaptionLeft
+    transform: translate(-50%, -50%)
+    -ms-transform: translate(-50%, -50%)
+    background-color: $theme-primary
+    color: white
+    font-size: 16px
+    padding: 12px 24px
+    cursor: pointer
+    text-align: center
+    &:hover
+      background-color: #D68B3E
+  .caption-right
+    position: absolute
+    top: $buttonRightCaptionTop - 60
+    left: $buttonRightCaptionLeft - 15
+    color: 050505
+    font-size: 30px
+    font-weight: bold
+    padding: 12px 24px
+    text-align: center
+  .sub-caption-right
+    position: absolute
+    top: $buttonRightCaptionTop - 30
+    left: $buttonRightCaptionLeft - 15
+    color: 050505
+    font-size: 18px
+    padding: 6px 12px
+    text-align: center
+  .btn-left
+    border-radius: 0px
+    position: absolute
+    top: $buttonLeftCaptionTop
+    left: $buttonLeftCaptionLeft
+    transform: translate(-50%, -50%)
+    -ms-transform: translate(-50%, -50%)
+    background-color: $theme-primary
+    color: white
+    font-size: 16px
+    padding: 12px 24px
+    cursor: pointer
+    text-align: center
+    &:hover
+      background-color: #D68B3E
+  .caption-left
+    position: absolute
+    top: $buttonLeftCaptionTop - 60
+    left: $buttonLeftCaptionLeft - 15
+    color: 050505
+    font-size: 30px
+    font-weight: bold
+    padding: 12px 24px
+    text-align: center
+  .sub-caption-left
+    position: absolute
+    top: $buttonLeftCaptionTop - 30
+    left: $buttonLeftCaptionLeft - 30
+    color: 050505
+    font-size: 18px
+    padding: 6px 12px
+    text-align: center
+
+.img-shadow
+    -webkit-box-shadow: 0 8px 7px -6px #ccc
+    -moz-box-shadow: 0 8px 6px -6px #ccc
+    box-shadow: 0 8px 6px -6px #ccc
+
+#{$all-buttons}
+  font-family: $sans-serif
+  background: $brand-primary
+
+  &:hover
+    background: shade($brand-primary, 10%)
+
+.vertical-center
+  position: relative
+  top: 50%
+  transform: translateY(-50%)

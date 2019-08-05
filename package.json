@@ -5,11 +5,16 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "canned -p 5000 ./server"
+    "start": "canned --cors=false ./server",
+    "process-sass": "sass --watch assets\\sass:assets\\css",
+    "hot-start": "lite-server"
   },
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "canned": "^0.3.12"
-  }
+    "@glidejs/glide": "^3.3.0",
+    "canned": "^0.3.12",
+    "lite-server": "^2.4.0"
+  },
+  "devDependencies": {}
 }
