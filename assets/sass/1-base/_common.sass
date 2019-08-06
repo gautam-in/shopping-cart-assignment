@@ -58,20 +58,19 @@ section, aside, article
     width: 100%
     height: auto
   .btn-right
-    border-radius: 0px
     position: absolute
     top: $buttonRightCaptionTop
     left: $buttonRightCaptionLeft
     transform: translate(-50%, -50%)
     -ms-transform: translate(-50%, -50%)
-    background-color: $theme-primary
+    background-color: $brand-primary
     color: white
     font-size: 16px
     padding: 12px 24px
     cursor: pointer
     text-align: center
     &:hover
-      background-color: #D68B3E
+      background-color: shade($brand-primary, 10%)
   .caption-right
     position: absolute
     top: $buttonRightCaptionTop - 60
@@ -90,20 +89,19 @@ section, aside, article
     padding: 6px 12px
     text-align: center
   .btn-left
-    border-radius: 0px
     position: absolute
     top: $buttonLeftCaptionTop
     left: $buttonLeftCaptionLeft
     transform: translate(-50%, -50%)
     -ms-transform: translate(-50%, -50%)
-    background-color: $theme-primary
+    background-color: $brand-primary
     color: white
     font-size: 16px
     padding: 12px 24px
     cursor: pointer
     text-align: center
     &:hover
-      background-color: #D68B3E
+      background-color: shade($brand-primary, 10%)
   .caption-left
     position: absolute
     top: $buttonLeftCaptionTop - 60
@@ -128,8 +126,9 @@ section, aside, article
     box-shadow: 0 8px 6px -6px #ccc
 
 #{$all-buttons}
-  font-family: $sans-serif
+  font-family: Dosis
   background: $brand-primary
+  border-radius: 0px
 
   &:hover
     background: shade($brand-primary, 10%)
