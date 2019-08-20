@@ -5,18 +5,23 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "sass src\\sass:src\\assets\\css && webpack-dev-server --mode development --open",
+    "start": "webpack-dev-server --mode development --open",
     "dev": "webpack --mode development",
     "build": "webpack --mode production",
-    "process-sass": "sass --watch assets\\sass:assets\\css"
+    "process-sass-win": "sass --watch src\\sass:src\\assets\\css",
+    "process-sass-mac": "sass --watch src/sass:src/assets/css",
+    "start-server": "node server/server.js"
   },
   "author": "",
   "license": "MIT",
   "dependencies": {
+    "@akanass/rx-http-request": "^3.3.0",
     "@glidejs/glide": "^3.3.0",
+    "babel-polyfill": "^6.26.0",
     "canned": "^0.3.12",
+    "cors": "^2.8.5",
     "lite-server": "^2.4.0",
-    "babel-polyfill": "^6.26.0"
+    "rxjs": "^6.5.2"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",

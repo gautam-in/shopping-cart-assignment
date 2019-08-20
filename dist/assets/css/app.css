@@ -271,7 +271,7 @@ header::after {
 }
 
 .brand {
-  background-image: url("/static/images/logo.png");
+  background-image: url("../../assets/images/common/logo.jpg");
   width: 190px;
   height: 83px;
   margin: 15px 0;
@@ -279,7 +279,7 @@ header::after {
 }
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   .brand {
-    background-image: url("/static/images/logo.png");
+    background-image: url("../../assets/images/common/logo.jpg");
     background-size: 190px 83px;
   }
 }
@@ -653,6 +653,105 @@ body {
   height: 5px;
 }
 
+/* Message Box starting stylings ------------------------------- */
+.message-box-success {
+  padding: 10px;
+  margin-bottom: 20px;
+  color: #721c24;
+  background-color: #d4edda;
+  border-color: #c3e6cb;
+  border-radius: 5px;
+  width: 301px;
+}
+
+.message-box-failure {
+  padding: 10px;
+  margin-bottom: 20px;
+  color: #721c24;
+  background-color: #f8d7da;
+  border-color: #f5c6cb;
+  border-radius: 5px;
+  width: 301px;
+}
+
+.message-box-warning {
+  padding: 10px;
+  margin-bottom: 20px;
+  color: #721c24;
+  background-color: #fff3cd;
+  border-color: #ffeeba;
+  border-radius: 5px;
+  width: 301px;
+}
+
+.message-box-info {
+  padding: 10px;
+  margin-bottom: 20px;
+  color: #721c24;
+  background-color: #d1ecf1;
+  border-color: #bee5eb;
+  border-radius: 5px;
+  width: 301px;
+}
+
+.closebtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.closebtn:hover {
+  color: black;
+}
+
+#loader {
+  position: fixed;
+  width: 100%;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.7);
+  z-index: 9999;
+  display: none;
+}
+#loader::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 48%;
+  top: 40%;
+  width: 40px;
+  height: 40px;
+  border-style: solid;
+  border-color: black;
+  border-top-color: transparent;
+  border-width: 4px;
+  border-radius: 50%;
+  -webkit-animation: spin 0.8s linear infinite;
+  animation: spin 0.8s linear infinite;
+}
+
+@-webkit-keyframes spin {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
 /* ==============================
  * LAYOUT STYLES
  * ============================== */

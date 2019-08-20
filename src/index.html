@@ -10,6 +10,7 @@
   <link href="assets/css/app.css" rel="stylesheet">
   <!-- Google Font used in this App -->
   <link href="https://fonts.googleapis.com/css?family=Dosis:400,600,700" rel="stylesheet">
+  <script <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8=" crossorigin="anonymous"></script>
 
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
 </head>
@@ -23,7 +24,7 @@
 
       <nav>
         <ul>
-          <li><a href="index.html">Home</a></li>
+          <li><a id="main-page-route" href="#">Home</a></li>
           <li id="products-route"><a href="#">Products</a></li>
         </ul>
       </nav>
@@ -40,62 +41,17 @@
         <span class="cart-value">0 Items</span>
       </section>
 
-
-
     </header>
-    <div id="main-block">
 
-      <section>
-        <div class="container">
-          <div class="carousel">
-            <input type="radio" id="carousel-1" name="carousel[]" checked>
-            <input type="radio" id="carousel-2" name="carousel[]">
-            <input type="radio" id="carousel-3" name="carousel[]">
-            <ul class="carousel__items">
-              <li class="carousel__item"><img class="img-shadow" src="assets/images/slides/01.png" alt=""></li>
-              <li class="carousel__item"><img class="img-shadow" src="assets/images/slides/02.png" alt=""></li>
-              <li class="carousel__item"><img class="img-shadow" src="assets/images/slides/03.png" alt=""></li>
-            </ul>
-            <div class="carousel__nav">
-              <label for="carousel-1"></label>
-              <label for="carousel-2"></label>
-              <label for="carousel-3"></label>
-            </div>
-          </div>
-        </div>
-      </section>
-      < <section>
-        <div class="container">
-          <img class="img-shadow" src="assets/images/slides/02.png" style="width:100%">
 
-          <span class="caption-right">Fruits & vegetables</span>
-          <span class="sub-caption-right">A variety of fresh fruits & vegetables</span>
-          <button class="btn-right">Explore fruit-and-veg</button>
-        </div>
-        <div class="container">
-          <img class="img-shadow" src="assets/images/slides/03.png" style="width:100%">
 
-          <span class="caption-left">Beauty & Hygiene</span>
-          <span class="sub-caption-left">Buy Beauty & Personal Care Products online in India at Best Prices</span>
-          <button class="btn-left">Explore fruit-and-veg</button>
-        </div>
-        <div class="container">
-          <img class="img-shadow" src="assets/images/slides/02.png" style="width:100%">
-
-          <span class="caption-right">Fruits & vegetables</span>
-          <span class="sub-caption-right">A variety of fresh fruits & vegetables</span>
-          <button class="btn-right">Explore fruit-and-veg</button>
-        </div>
-        <div class="container">
-          <img class="img-shadow" src="assets/images/slides/03.png" style="width:100%">
-
-          <span class="caption-left">Beauty & Hygiene</span>
-          <span class="sub-caption-left">Buy Beauty & Personal Care Products online in India at Best Prices</span>
-          <button class="btn-left">Explore fruit-and-veg</button>
-        </div>
-        </section>
-
+    <div id="carousel-content">
+      <!-- Render Carousel -->
     </div>
+    <div id="main-content">
+      <!-- Render All Routes -->
+    </div>
+    <div id="loader"></div>
 
   </div>
   <footer>

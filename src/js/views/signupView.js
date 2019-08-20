@@ -4,7 +4,6 @@ import {
 
 export const renderSignup = () => {
   const markup = `
-  <div id="main-block">
     <section class="register">
       <div class="register-left">
         <h3>Signup</h3>
@@ -14,41 +13,53 @@ export const renderSignup = () => {
         <div class="container-input">
           <form>
             <div class="group">
-              <input type="text" required>
+              <input id="signup-firstName" type="text" required>
               <span class="highlight"></span>
               <span class="bar"></span>
               <label>First Name</label>
             </div>
             <div class="group">
-              <input type="text" required>
+              <input id="signup-lastName" type="text" required>
               <span class="highlight"></span>
               <span class="bar"></span>
               <label>Last Name</label>
             </div>
             <div class="group">
-              <input type="text" required>
+              <input id="signup-email" type="text" required>
               <span class="highlight"></span>
               <span class="bar"></span>
               <label>Email</label>
             </div>
             <div class="group">
-              <input type="text" required>
+              <input id="signup-password" type="text" required>
               <span class="highlight"></span>
               <span class="bar"></span>
               <label>Password</label>
             </div>
             <div class="group">
-              <input type="text" required>
+              <input id="signup-confirmPassword" type="text" required>
               <span class="highlight"></span>
               <span class="bar"></span>
               <label>Confirm Password</label>
             </div>
-            <button>Submit</input>
+            <button id="signup-submit">Submit</input>
           </form>
         </div>
     </section>
   </div>
-</div>
     `;
-  elements.mainBlock.innerHTML = markup;
+  elements.landingPage.mainContent.innerHTML = markup;
+  addElements();
+};
+
+const addElements = () => {
+  elements.signUpPage = {
+    userForm: document.querySelector('.container-input'),
+    firstNameInput: document.querySelector('#signup-firstName'),
+    lastNameInput: document.querySelector('#signup-lastName'),
+    email: document.querySelector('#signup-email'),
+    password: document.querySelector('#signup-password'),
+    confirmPassword: document.querySelector('#signup-confirmPassword'),
+    submitButton: document.querySelector('#signup-submit')
+  };
 };

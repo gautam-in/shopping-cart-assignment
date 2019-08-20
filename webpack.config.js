@@ -1,8 +1,14 @@
 const path = require('path');
 const CopyPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-console.log(__dirname);
+const platformPath = (process.platform == "win") ? "\\" : "/"
 module.exports = {
+  target: "web",
+  node: {
+    fs: "empty",
+    net: "empty",
+    tls: "empty"
+  },
   entry: ['babel-polyfill', './src/js/index.js'],
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -17,8 +23,13 @@ module.exports = {
       template: './src/index.html'
     }),
     new CopyPlugin([{
-      from: __dirname + '\\src\\assets',
-      to: __dirname + '\\dist\\assets',
+      from: __dirname + platformPath + 'src' + platformPath + 'assets',
+      to: __dirname + platformPath + 'dist' + platformPath + 'assets',
+      ignore: ['*.js', '*.sass', "*.scss"],
+    }]),
+    new CopyPlugin([{
+      from: __dirname + platformPath + 'src' + platformPath + 'static',
+      to: __dirname + platformPath + 'dist' + platformPath + 'static',
       ignore: ['*.js', '*.sass', "*.scss"],
     }])
   ],

@@ -545,6 +545,22 @@ body {
   cursor: default;
   pointer-events: none;
 }
+.carousel > input[type=radio]:nth-child(4):checked ~ .carousel__items .carousel__item:nth-child(4) {
+  opacity: 1;
+}
+.carousel > input[type=radio]:nth-child(4):checked ~ .carousel__nav > label:nth-child(4) {
+  background: #060606;
+  cursor: default;
+  pointer-events: none;
+}
+.carousel > input[type=radio]:nth-child(5):checked ~ .carousel__items .carousel__item:nth-child(5) {
+  opacity: 1;
+}
+.carousel > input[type=radio]:nth-child(5):checked ~ .carousel__nav > label:nth-child(5) {
+  background: #060606;
+  cursor: default;
+  pointer-events: none;
+}
 
 .carousel__items {
   margin: 0;
@@ -653,6 +669,105 @@ body {
   height: 5px;
 }
 
+/* Message Box starting stylings ------------------------------- */
+.message-box-success {
+  padding: 10px;
+  margin-bottom: 20px;
+  color: #721c24;
+  background-color: #d4edda;
+  border-color: #c3e6cb;
+  border-radius: 5px;
+  width: 301px;
+}
+
+.message-box-failure {
+  padding: 10px;
+  margin-bottom: 20px;
+  color: #721c24;
+  background-color: #f8d7da;
+  border-color: #f5c6cb;
+  border-radius: 5px;
+  width: 301px;
+}
+
+.message-box-warning {
+  padding: 10px;
+  margin-bottom: 20px;
+  color: #721c24;
+  background-color: #fff3cd;
+  border-color: #ffeeba;
+  border-radius: 5px;
+  width: 301px;
+}
+
+.message-box-info {
+  padding: 10px;
+  margin-bottom: 20px;
+  color: #721c24;
+  background-color: #d1ecf1;
+  border-color: #bee5eb;
+  border-radius: 5px;
+  width: 301px;
+}
+
+.closebtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.closebtn:hover {
+  color: black;
+}
+
+#loader {
+  position: fixed;
+  width: 100%;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.7);
+  z-index: 9999;
+  display: none;
+}
+#loader::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 48%;
+  top: 40%;
+  width: 40px;
+  height: 40px;
+  border-style: solid;
+  border-color: black;
+  border-top-color: transparent;
+  border-width: 4px;
+  border-radius: 50%;
+  -webkit-animation: spin 0.8s linear infinite;
+  animation: spin 0.8s linear infinite;
+}
+
+@-webkit-keyframes spin {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
 /* ==============================
  * LAYOUT STYLES
  * ============================== */
@@ -905,10 +1020,10 @@ body {
   display: block;
   margin-right: 2.3576520234%;
   width: 23.2317609825%;
-  margin-top: 50px;
-  margin-bottom: 50px;
-  width: 200px;
-  height: 460px;
+  margin-top: 5%;
+  margin-bottom: 10%;
+  width: 20%;
+  height: auto;
   background-color: transparent;
   border-bottom: 1px dashed #D2D2D2;
 }
@@ -921,47 +1036,20 @@ body {
   font-weight: bold;
   margin-bottom: 50px;
 }
-.products .products-listing .product .country img {
-  position: absolute;
-  width: 30px;
-  height: 20px;
-  margin: 40px 0px 20px 0px;
-  z-index: 1;
-}
-.products .products-listing .product .ribbon {
-  width: 200px;
-  height: 200px;
-  background-color: #9BC255;
-  z-index: -1;
-  clip-path: polygon(75% 0, 100% 23%, 100% 43%, 49% 0);
-}
-.products .products-listing .product .ribbon span {
-  position: absolute;
-  margin-left: 135px;
-  margin-top: 20px;
-  font-weight: bold;
-  font-size: 18px;
-  -webkit-transform: rotate(42deg);
-  color: #000;
-}
 .products .products-listing .product img {
+  float: left;
+  display: block;
+  margin-right: 2.3576520234%;
+  width: 14.7019566472%;
   position: absolute;
-  margin: 20px 0px 0px 10px;
+  margin: 0px 0px 0px 10px;
 }
-.products .products-listing .product .product-info {
-  margin: 20px 0px 0px 0px;
-  background-color: #9BC255;
-  border-radius: 10px;
-  padding: 3px;
-  font-family: sans-serif;
-  font-size: 18px;
-  text-align: center;
-  font-weight: bold;
+.products .products-listing .product img:last-child {
+  margin-right: 0;
 }
 .products .products-listing .product .description {
-  margin: 20px 0px 0px 10px;
-  width: 180px;
-  height: 100px;
+  margin-top: 150%;
+  margin-left: 10%;
   background-color: #F0F0F0;
 }
 .products .products-listing .product .description p {
@@ -969,16 +1057,17 @@ body {
   font-weight: bold;
   padding: 5px;
 }
+.products .products-listing .product .purchase {
+  margin-top: 10%;
+}
 .products .products-listing .product .purchase span {
   float: left;
-  margin: 20px 0px 0px 10px;
   font-weight: bold;
 }
 .products .products-listing .product .purchase button {
   float: right;
   width: 95px;
   height: 40px;
-  margin: 20px 0px 0px 10px;
 }
 .products .group {
   position: relative;

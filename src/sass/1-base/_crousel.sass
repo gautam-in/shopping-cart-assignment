@@ -70,7 +70,20 @@ body
         background: #060606
         cursor: default
         pointer-events: none
-
+    &:nth-child(4):checked ~
+      .carousel__items .carousel__item:nth-child(4)
+        opacity: 1
+      .carousel__nav > label:nth-child(4)
+        background: #060606
+        cursor: default
+        pointer-events: none
+    &:nth-child(5):checked ~
+      .carousel__items .carousel__item:nth-child(5)
+        opacity: 1
+      .carousel__nav > label:nth-child(5)
+        background: #060606
+        cursor: default
+        pointer-events: none
 .carousel__items
   margin: 0
   padding: 0
