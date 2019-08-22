@@ -9,7 +9,7 @@ export const renderMessage = (type, message, element) => {
 
   let markup = `
     <div id="message-box" class="%%message-box-class%%">
-    <span class="closebtn" onclick="this.parentElement.style.display='none';">x</span>
+    <i class="fa fa-times closebtn" onclick="this.parentElement.style.display='none';"></i>
   <strong> %%message%% </strong>
   </div>
     `;

@@ -45,7 +45,9 @@ import {
 import {
   renderCarousel
 } from './views/carouselView';
-
+import {
+  renderCart
+} from './views/cartView';
 
 // API section
 import {
@@ -59,8 +61,6 @@ import {
   =>Routes
  */
 const state = {};
-
-
 
 /**
  * Routes Registration
@@ -89,11 +89,23 @@ const registerRoutes = () => {
 
   routes.products.addEventListener('click', e => {
     // Load Products View
-    renderCarousel(false);
     XHRLoader(true);
+    renderCarousel(false);
     productsController();
     renderProducts();
     XHRLoader(false);
+
+
+  });
+
+  routes.cart.addEventListener('click', e => {
+    // Load Products View
+    if (!servicesData.cartStatus.cartDetails.onScreen) {
+      renderCart(true);
+
+    }
+    cartController();
+
   });
 
 };
@@ -183,6 +195,18 @@ const productsController = () => {
       console.error(err);
     }
   );
+
+};
+
+const cartController = () => {
+  if (!state.cartView) {
+    state.cartView = {};
+  }
+
+  elements.cartView.closeButtonIcon.addEventListener('click', e => {
+    renderCart(false);
+    console.log("clicked")
+  });
 
 };
 

@@ -17,6 +17,12 @@ export const GETProducts = () => {
   return RxHR.get(APIEndPoints.baseURL + APIEndPoints.products.URL);
 };
 
-export const POSTAddToCart = () => {
-  return RxHR.get(APIEndPoints.baseURL + APIEndPoints.addToCart.URL);
+export const POSTAddToCart = (productId) => {
+  const options = {
+    body: {
+      productId: productId
+    },
+    json: true
+  };
+  return RxHR.post(APIEndPoints.baseURL + APIEndPoints.addToCart.URL, options);
 };
