@@ -92,9 +92,9 @@ const registerRoutes = () => {
     XHRLoader(true);
     renderCarousel(false);
     productsController();
-    renderProducts();
+    renderProducts(false);
     XHRLoader(false);
-
+    // console.log("Via Ptroducts");
 
   });
 
@@ -104,6 +104,7 @@ const registerRoutes = () => {
       renderCart(true);
 
     }
+    // renderCart(true);
     cartController();
 
   });
@@ -167,6 +168,7 @@ const signUpController = () => {
 };
 
 const productsController = () => {
+  elements.registerdEvents.productsPage.handleButtonsEventStatus = false;
   if (!state.productsPage) {
     state.productsPage = {};
   }
@@ -205,7 +207,6 @@ const cartController = () => {
 
   elements.cartView.closeButtonIcon.addEventListener('click', e => {
     renderCart(false);
-    console.log("clicked")
   });
 
 };

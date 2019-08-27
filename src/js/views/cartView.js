@@ -13,7 +13,7 @@ import {
 
 
 export const renderCart = (render) => {
-  console.log(servicesData.cartStatus.cartDetails.onScreen, render);
+  // console.log(servicesData.cartStatus.cartDetails.onScreen, render);
   // if (servicesData.cartStatus.cartDetails.onScreen && render) {
   //   elements.cartView.cartSection.remove();
   // }
@@ -34,7 +34,7 @@ export const renderCart = (render) => {
       <div class="header">
         <div class="centre">
           <div class="cart-count">My Cart</div>
-          <i class="fa fa-times close-button"></i>
+          <i class="fa fa-times cart-close-button"></i>
         </div>
       </div>
       <div class="cart-empty-message">
@@ -56,7 +56,7 @@ export const renderCart = (render) => {
       <div class="header">
         <div class="centre">
           <div class="cart-count">My Cart (%%item-count%% item)</div>
-          <i class="fa fa-times close-button"></i>
+          <i class="fa fa-times cart-close-button"></i>
         </div>
       </div>
       <div class="cart-item">
@@ -93,13 +93,15 @@ export const renderCart = (render) => {
     markup = markup.replace('%%item-price%%', servicesData.cartStatus.productDetails['price']);
     markup = markup.replace(/%%item-final-price%%/g, servicesData.cartStatus.productDetails['price'] * servicesData.cartStatus.productDetails['count']);
   }
-
   if (render) {
-    elements.landingPage.carouselContent.insertAdjacentHTML('beforebegin', markup);
+    elements.cart.innerHTML = markup;
     addElements();
     servicesData.cartStatus.cartDetails.onScreen = true;
+    elements.cart.style.display = "block";
+    // console.log(elements.cartView);
   } else {
-    elements.cartView.cartSection.remove();
+    elements.cart.style.display = "none";
+
     servicesData.cartStatus.cartDetails.onScreen = false;
   }
 
@@ -107,7 +109,7 @@ export const renderCart = (render) => {
 
 const addElements = () => {
   elements.cartView = {
-    closeButtonIcon: document.querySelector('.close-button'),
+    closeButtonIcon: document.querySelector('.cart-close-button'),
     cartSection: document.querySelector('.cart-load'),
 
   };

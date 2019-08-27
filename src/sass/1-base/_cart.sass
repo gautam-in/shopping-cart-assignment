@@ -19,112 +19,113 @@ $cart-height: 60px
     font-size: 16px
     font-weight: bold
     margin-left: 10px
-
-.cart-load
-  position: fixed
-  bottom: 0
-  right: 0
-  margin-right: 8%
-  background-color: #eeeeee
-  width: 30%
-  height: 85%
-  z-index: 5
-  // float: right
-  color: #fff
-  margin-top: 0%
-  .header
-    display: table
-    position: absolute
-    background-color: #1D2124
-    width: 100%
-    height: 10%
-    z-index: 0
+#cart
+  display: none
+  .cart-load
+    position: fixed
+    bottom: 0
+    right: 0
+    margin-right: 8%
+    background-color: #eeeeee
+    width: 30%
+    height: 85%
+    z-index: 5
+    // float: right
     color: #fff
-    .centre
-      display: table-cell
-      vertical-align: middle
-      .cart-count
-        color: #FEFEFE
-        float: left
-        margin-left: 3%
-        font-weight: bold
-      .close-button
-        color: #fff
-        float: right
-        margin-right: 3%
-        cursor: pointer
-        z-index: 1
-        &:hover
-          color: #ccc
-  .cart-item
-    background-color: #FFFFFF
-    width: 100%
-    height: 25%
-    margin-top: 20%
-    padding-top: 3%
-    padding-left: 5%
-    .cart-item-image
-      float: left
-      width: 22%
-      height: 22%
-
-    .cart-item-details
-      float: right
-      margin-right: 15%
-      h3
-        color: #000
-      .cart-item-manipulation
-        margin-top: 10%
-
-        .cart-item-quantity
+    margin-top: 0%
+    .header
+      display: table
+      position: absolute
+      background-color: #1D2124
+      width: 100%
+      height: 10%
+      z-index: 0
+      color: #fff
+      .centre
+        display: table-cell
+        vertical-align: middle
+        .cart-count
+          color: #FEFEFE
+          float: left
           margin-left: 3%
+          font-weight: bold
+        .cart-close-button
+          color: #fff
+          float: right
           margin-right: 3%
-        i
-          color: $theme-primary
           cursor: pointer
+          z-index: 1
           &:hover
-            color: $brand-dark
-        .cart-multiplier
-          margin-left: 3%
-          margin-right: 3%
-          i
-            color: #1D2124
-            cursor: auto
-        .cart-currency-symbol
-          margin-right: 1%
-          i
-            color: #1D2124
-            cursor: auto
-        .cart-item-price
-          margin-right: 5%
-  .cart-checkout
-    background-color: #FFFFFF
-    color: #1D2124
-    position: absolute
-    bottom: 0
-    left: 0
-    width: 100%
-    height: 10%
-    text-align: center
+            color: #ccc
+    .cart-item
+      background-color: #FFFFFF
+      width: 100%
+      height: 25%
+      margin-top: 20%
+      padding-top: 3%
+      padding-left: 5%
+      .cart-item-image
+        float: left
+        width: 22%
+        height: 22%
 
-    button
-      width: 100%
-      text-align: left
-      border-radius: 2px
-      span
+      .cart-item-details
         float: right
-  .cart-empty
-    color: #1D2124
-    position: absolute
-    bottom: 0
-    left: 0
-    width: 100%
-    height: 6%
-    text-align: center
-    button
+        margin-right: 15%
+        h3
+          color: #000
+        .cart-item-manipulation
+          margin-top: 10%
+
+          .cart-item-quantity
+            margin-left: 3%
+            margin-right: 3%
+          i
+            color: $theme-primary
+            cursor: pointer
+            &:hover
+              color: $brand-dark
+          .cart-multiplier
+            margin-left: 3%
+            margin-right: 3%
+            i
+              color: #1D2124
+              cursor: auto
+          .cart-currency-symbol
+            margin-right: 1%
+            i
+              color: #1D2124
+              cursor: auto
+          .cart-item-price
+            margin-right: 5%
+    .cart-checkout
+      background-color: #FFFFFF
+      color: #1D2124
+      position: absolute
+      bottom: 0
+      left: 0
       width: 100%
-      border-radius: 2px
-  .cart-empty-message
-    text-align: center
-    color: #1D2124
-    margin-top: 50%
+      height: 10%
+      text-align: center
+
+      button
+        width: 100%
+        text-align: left
+        border-radius: 2px
+        span
+          float: right
+    .cart-empty
+      color: #1D2124
+      position: absolute
+      bottom: 0
+      left: 0
+      width: 100%
+      height: 6%
+      text-align: center
+      button
+        width: 100%
+        border-radius: 2px
+    .cart-empty-message
+      text-align: center
+      color: #1D2124
+      margin-top: 50%

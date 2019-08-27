@@ -6,5 +6,6 @@ export const servicesData = {
     cartDetails: {
       onScreen: false
     }
-  }
+  },
+  filteredProducts: null
 };
