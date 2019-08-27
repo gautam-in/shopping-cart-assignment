@@ -1,0 +1,114 @@
+@import 'variables';
+@import 'breakpoints';
+@import 'mixins';
+
+
+*{
+	margin:0;
+	padding: 0;
+	@include border-box;
+}
+
+body{
+	overflow-x: hidden;
+	font-family:Dosis;
+	font-size: 18px;
+}
+
+.container{
+	width:100%;
+	margin:0 auto;
+	
+	@media #{$breakpoint-medium}{
+		width: 760px;
+	}
+
+	@media #{$breakpoint-large}{
+		width: 960px;
+	}
+
+	@media #{$breakpoint-xlarge}{
+		width: 1140px;
+	}
+}
+.row{
+	margin:0 -5px;
+	position:relative;
+	@extend %clearfix;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+
+	.col,
+	[class*='col-']{
+		padding:0 5px;
+		flex-basis: 100%;
+	    flex-grow: 1;
+	    max-width: 100%;
+	}
+
+	@media #{$breakpoint-small}{
+		margin: 0 -10px;
+		.col{
+			padding: 0 10px;
+		}
+		[class*='col-md-'],
+		[class*='col-lg-']{
+			flex-basis: 100%;
+		    flex-grow: 1;
+		    max-width: 100%;
+		}
+	}
+
+	@media #{$breakpoint-medium}{
+		margin: 0 -15px;
+		.col{
+			padding: 0 15px;
+		}
+		[class*='col-md-']{
+			flex-basis: 100%;
+		    flex-grow: 1;
+		    max-width: 100%;
+		}
+	}
+
+	@media #{$breakpoint-large}{
+		margin: 0 -20px;
+		.col{
+			padding: 0 20px;
+		}
+	}
+}
+.col{
+	@for $i from 1 through $grid-columns {      
+		&.col-xs-#{$i} {         
+            flex: 0 0 100% / 12 * $i;
+    		max-width: 100% / 12 * $i;   
+        }
+    }
+    @media #{$breakpoint-small}{
+        @for $i from 1 through $grid-columns {
+        	&.col-sm-#{$i}{
+	            flex: 0 0 100% / 12 * $i;
+	    		max-width: 100% / 12 * $i; 
+	        }
+        }
+    }
+
+    @media #{$breakpoint-medium}{
+        @for $i from 1 through $grid-columns {	
+        	&.col-md-#{$i}{
+	            flex: 0 0 100% / 12 * $i;
+	    		max-width: 100% / 12 * $i; 
+	        }
+        }
+    }
+    @media #{$breakpoint-large}{
+        @for $i from 1 through $grid-columns {
+        	&.col-lg-#{$i}{
+	            flex: 0 0 100% / 12 * $i;
+	    		max-width: 100% / 12 * $i; 
+	        }
+        }
+    }
+}

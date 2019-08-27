@@ -1,0 +1,112 @@
+@import './../../../utils/styles/partial/breakpoints.scss';
+@import './../../../utils/styles/partial/variables.scss';
+
+.carousel-container{
+    overflow: hidden;
+    margin: 15px auto;
+    position: relative;
+    box-shadow: 0 8px 6px -6px $lightgray;
+    .carousel-wrapper{
+		width: 500%;
+		transition: margin 0.5s;
+		-webkit-transition:margin 0.5s;
+		&:after{
+			display: table;
+			clear: both;
+			content:'';
+		}
+		img{
+			width: 20%;
+		    display: block;
+		    float: left;
+		}
+	}
+	.controls{
+		padding:10px;
+		color:$white;
+		font-family:Dosis;
+		position: absolute;
+		top:50%;
+		background: $lightblack;
+		opacity:0.5;
+		cursor: pointer;
+		outline: 0;
+	    border: 0;
+	    transform: translate(0,-50%);
+	    &:hover, &:focus{
+	    	background-color: $black;
+	    }
+	}
+	.next{
+		right: 10px;
+		@media #{$breakpoint-medium}{
+			right:0;
+		}
+	}
+	.prev{
+		left: 10px;
+		@media #{$breakpoint-medium}{
+			left:0;
+		}
+	}
+}
+
+.home-category-container{
+	box-shadow: 0 8px 6px -6px $lightgray;
+	margin-top: 20px;
+	&:after{
+		display:table;
+		content:'';
+		clear: both;
+	}
+	&:nth-child(even){
+		> div{
+			flex-direction: row-reverse;
+			text-align: center;
+		}
+	}
+	&:last-child{
+		margin-bottom:100px;
+	}
+	img{
+		width: 100%;
+		height: auto;
+		max-width: 180px;
+		@media #{$breakpoint-medium}{
+			max-width: 290px;
+		}
+	}
+	.category-info{
+		text-align: center;
+    	padding: 5px 0;
+    	@media #{$breakpoint-medium}{
+			padding: 15px 0;
+		}
+	}
+	.category-name{
+		font-weight: 600;
+		font-size: 80%;
+		@media #{$breakpoint-medium}{
+			font-size: 100%;
+		}
+	}
+	p{
+		font-size: 70%;
+    	margin-top: 10px;
+    	@media #{$breakpoint-medium}{
+			font-size: 90%;
+		}
+	}
+	a{
+		display: inline-block;
+	    margin-top: 10px;
+	    border: 0;
+	    outline: 0;
+	    padding: 8px 10px;
+	    font-family: Dosis;
+	    background: #ce2f67;
+	    color: #fff;
+	    font-size: 14px;
+	}
+}
+

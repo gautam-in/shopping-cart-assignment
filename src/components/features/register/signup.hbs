@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sabka Bazaar</title>
+	<link href="https://fonts.googleapis.com/css?family=Dosis:400,600,700" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="./utils/fonts/icofont.min.css">
+</head>
+<body>
+	{{#data}}
+		{{> ../../common/organisms/o-header}}
+		<section class="container">
+			{{#signup}}
+			<div class ="row form-container">
+				<div class ="col col-xs-12 col-sm-6">
+					<h1>{{title}}</h1>
+					<p>{{description}}</p>
+				</div>
+				{{#form}}
+				<div class ="col col-xs-12 col-sm-6">
+					<form name ="sb-signup" class="sb-signup">
+						{{#each inputs}}
+							{{> ./../../common/molecules/m-input}}
+						{{/each}}
+						{{#button}}
+					    	<button type="submit">{{label}}</button>
+					    {{/button}}
+					</form>
+				</div>
+				{{/form}}
+			</div>
+			{{/signup}}
+		</section>
+		{{> ../../common/organisms/o-footer}}
+	{{/data}}
+</body>
+</html>

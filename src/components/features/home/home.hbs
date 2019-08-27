@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sabka Bazaar</title>
+	<link href="https://fonts.googleapis.com/css?family=Dosis:400,600,700" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="./utils/fonts/icofont.min.css">
+</head>
+<body>
+	{{#data}}
+		{{> ../../common/organisms/o-header}}
+		<section class="container">
+			{{> ../../common/molecules/m-carousel}}
+			<div class="row">
+				{{#each categories}}
+				<div class="col col-xs-12 home-category-container">
+					<div class ="row">
+						<div class ="col col-xs-7 col-sm-4">
+							<img src={{imageUrl}} alt ={{name}}>
+						</div>
+						<div class ="col col-xs-5 col-sm-8">
+							<div class ="category-info">
+								<p class="category-name">{{name}}<p>
+								<p>{{description}}</p>
+								<a href ="/products.html?id={{id}}">Explore {{key}}</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				{{/each}}
+			</div>
+		</section>
+		{{> ../../common/organisms/o-footer}}
+	{{/data}}
+</body>
+</html>

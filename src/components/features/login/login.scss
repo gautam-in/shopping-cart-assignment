@@ -1,0 +1,40 @@
+@import './../../../utils/styles/partial/variables.scss';
+.form-container{
+	padding:70px;
+	h1{
+		font-size:30px;
+		margin-bottom: 20px;
+		font-weight:600;
+	}
+	button{
+	    margin-top: 10px;
+	    border: 0;
+	    outline: 0;
+	    padding: 8px 10px;
+	    font-family: Dosis;
+	    background: $pink;
+	    color: $white;
+	    width: 75%;
+	    cursor: pointer;
+	}
+}
+.form-group{
+	margin-bottom: 20px;
+	label{
+		display: block;
+	    font-size: 80%;
+    	margin-bottom: 10px;
+	}
+	input{
+	    width: 75%;
+	    border: 0;
+	    border-bottom: 1px solid black;
+	    outline: 0;
+	    padding: 5px 0 10px 0;
+	}
+	.error-msg{
+	    color: red;
+	    font-size: 12px;
+	    margin-top: 10px;
+	}
+}

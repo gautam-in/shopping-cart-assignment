@@ -1,0 +1,106 @@
+@import './../../../utils/styles/partial/breakpoints.scss';
+@import './../../../utils/styles/partial/variables.scss';
+.category-mobile{
+    border: 0;
+    outline: 0;
+    padding: 8px 10px;
+    font-family: Dosis;
+    background: $pink;
+    color: $white;
+    width: 100%;
+    cursor: pointer;
+	@media #{$breakpoint-small}{
+		display:none;
+	}
+}
+.category-block{
+	background-color:$pink;
+	text-align:center;
+	height:0px;
+	overflow:hidden;
+	transition: height 0.5s;
+	-webkit-transition : height 0.5s;
+	&.active{
+		height: 240px;
+	}
+	@media #{$breakpoint-small}{
+		text-align:left;
+		height: 100vh;
+		background-color: $lightgray;
+	}
+	li{
+		padding: 15px 0 15px 20px;
+		border-bottom: 1px solid $white;
+		color:$white;
+		cursor: pointer;
+		@media #{$breakpoint-small}{
+			padding-left: 5px;
+			color: $graphiteGray;
+			border-bottom: 1px solid $graphiteGray;
+			font-size: 80%;
+		}
+		@media #{$breakpoint-medium}{
+			padding-left: 20px;
+			font-size: 100%;
+		}
+	}
+}
+.plp-container{
+	margin-bottom:100px;
+	.product-block{
+		margin-top: 20px;
+		padding-bottom: 10px;
+		border-bottom: 1px dotted $graphiteGray;
+		.product-name{
+		    font-weight: 600;
+    		font-size: 90%;
+    		margin-bottom: 15px;
+    		min-height: 65px;
+		}
+	}
+	img{
+		width: 100%;
+		height: auto;
+	}
+	button{
+		margin-top: 10px;
+	    border: 0;
+	    outline: 0;
+	    padding: 8px 10px;
+	    font-family: Dosis;
+	    background: $pink;
+	    color: $white;
+	    width: 100%;
+	    cursor:pointer;
+	    border:1px solid $pink;
+	    &:hover, &:focus{
+	    		background: $white;
+    			color: $pink;
+    			font-weight: 600;
+	    }
+	    @media #{$breakpoint-medium}{
+			float: right;
+		}
+	}
+	.flex{
+		display: flex;
+		@media #{$breakpoint-large}{
+			flex-direction: column;
+		}
+		> div{
+			&:last-child{
+			flex-direction:column;
+			display: flex;
+			};	
+		}
+		p{
+			background-color: $lightgray;
+		    padding: 5px 10px;
+		    font-size: 75%;
+		    line-height: 120%;
+		    height: 100px;
+		    overflow: hidden;
+		    flex:1 1 auto;
+		}
+	}
+}
