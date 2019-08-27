@@ -1,0 +1,19 @@
+<% include ../common/header %>
+<!-- Product List content starts here -->
+<div class="container clearfix product-list-wrapper">
+    <div class="sidebar-navigation">
+        <div class="category-action">
+            <span class="show-category-for-responsive">Fruits &amp; Vegetables </span><img src="static/images/down-arrow.svg" alt="arrow">
+        </div>
+        <div class="category-items"></div>
+    </div>
+    <div class="product-section"></div>
+</div>
+<!-- Product List content ends here -->
+
+<script>
+    document.querySelector('.category-action').addEventListener("click", function(){
+        document.querySelector(".category-items").style.display = "block";
+    });
+</script>
+<% include ../common/footer %>

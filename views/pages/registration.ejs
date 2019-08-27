@@ -1,0 +1,42 @@
+<% include ../common/header %>
+<!-- Index content starts here -->
+<div class="container">
+    <div class="signup-area clearfix">
+        <div class="signup-info">
+            <h1>Signup</h1>
+            <p>We do not share your personal details with anyone.</p>
+        </div>
+        <div class="signup-form">
+            <form action="/" class="floating-input-form fl-form" novalidate method="get">
+                <div class="form-group">
+                    <input type="text" class="form-control" name="firstName" id="firstName">
+                    <label class="form-label">First Name</label>
+                    <p class="error-message"></p>
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" name="lastName" id="lastName">
+                    <label class="form-label">Last Name</label>
+                    <p class="error-message"></p>
+                </div>
+                <div class="form-group">
+                    <input type="email" class="form-control" name="email" id="email">
+                    <label class="form-label">Email</label>
+                    <p class="error-message"></p>
+                </div>
+                <div class="form-group">
+                    <input type="password" class="form-control" name="password" id="password">
+                    <label class="form-label">Password</label>
+                    <p class="error-message"></p>
+                </div>
+                <div class="form-group">
+                    <input type="password" class="form-control" name="confirmPassword" id="confirmPassword">
+                    <label class="form-label">Confirm Password</label>
+                    <p class="error-message"></p>
+                </div>
+                <button type="submit" class="btn btn-block btn-primary" onsubmit="submit()">Signup</button>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- Index content ends here -->
+<% include ../common/footer %>

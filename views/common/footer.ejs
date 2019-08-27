@@ -1,0 +1,15 @@
+</main>
+<footer class="product-footer">
+    <div class="container clearfix">
+        Copyright &copy; 2011-2018 Sabka Bazaar Grocery Suplies Pvt Ltd
+    </div>
+</footer>
+<% include ../common/mini-cart %>
+<script type="text/javascript" src="static/js/script.js"></script>
+<script type="text/javascript" src="static/js/api.js"></script>
+<% if(scripts && scripts.length) { scripts.forEach(script => { %>
+<script type="text/javascript" src="<%= script %>"></script>
+<% });} %>
+</body>
+
+</html>

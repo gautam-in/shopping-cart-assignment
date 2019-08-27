@@ -1,0 +1,40 @@
+<div class="shopping-cart" id="shopping-cart">
+    <div class="shopping-cart-header">
+        <div class="cart-title">
+            <h2>My Cart</h2>
+        </div>
+        <div class="close-icon" onclick="closeShoppingCart(event)">
+            <img src="static/images/cancel.png" alt="close">
+        </div>                   
+    </div>
+    <div class="shopping-cart-items">
+        <section class="add-to-cart" id="add-to-cart">
+            <div class="cart-items clearfix">
+                <div class="img">
+                    <img src="static/images/products/fruit-n-veg/apple.jpg">
+                </div>
+                <div class="cart-action">
+                    <h3 class="name">Apple washington Regular - 4pcs</h3>
+                    <div class="qty-addr">
+                        <button type="button" class="btn-primary btn-update minus">-</button>
+                        <span class="qty">1</span>
+                        <button type="button" class="btn-primary btn-update plus">+</button>
+                    </div>
+                    <div class="amount"><span class="operator">&times;</span>Rs.<span class="per-quantity-amt">187</span></span></div>
+                </div>
+                <div class="total">Rs.<span class="total-amt">187</span></div>
+            </div>
+            <div class="cheaper clearfix">
+                <img src="static/images/lowest-price.png" alt="cheaper">
+                <h5 class="title">You won't find it cheaper anywhere</h5>
+            </div>
+        </section>
+        <div class="no-items" id="no-items">
+            <h2>No items in your cart</h2>
+            <p>Your favourite items are just a click away</p>
+        </div> 
+    </div>
+    <div class="shopping-cart-button">
+        <button class="btn btn-primary btn-block shopping-btn">Start shopping</button>
+    </div>           
+</div>
