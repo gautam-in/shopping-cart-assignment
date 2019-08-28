@@ -15,6 +15,10 @@ import {
   renderCart
 } from '../views/cartView';
 
+import {
+  renderCartCount
+} from '../views/headerCartCountView';
+
 
 // API section
 import {
@@ -123,8 +127,6 @@ export const renderProducts = (filtered) => {
     }
 
   }
-
-
 };
 
 const handleButtons = () => {
@@ -169,12 +171,11 @@ const updateProductDetails = (insertionType, productId) => {
       // console.log(servicesData.cartStatus.productDetails);
       break;
   }
-
-
+  servicesData.cartStatus.cartDetails.totalItemCount = servicesData.cartStatus.productDetails['count'];
 
 };
 
-const buttonEventHandler =  (event) => {
+const buttonEventHandler = (event) => {
   if (event.target.classList.contains('button-Buy-Now')) {
     XHRLoader(true);
     let productId = event.target.id;
@@ -188,11 +189,14 @@ const buttonEventHandler =  (event) => {
 
             if (servicesData.cartStatus.productDetails['id'] == productId) {
               updateProductDetails("update", productId);
+              renderCartCount();
             } else {
               updateProductDetails("new", productId);
+              renderCartCount();
             }
           } else { //When Cart is Empty
             updateProductDetails("empty", productId);
+            renderCartCount();
           }
 
         }
@@ -218,12 +222,12 @@ const buttonEventHandler =  (event) => {
 }
 
 
-const filterCategoriesEventHandler =  (event) => {
+const filterCategoriesEventHandler = (event) => {
   if (event.target.classList.contains('filter-categories')) {
     XHRLoader(true);
     let categoryId = event.target.id;
 
-    if (servicesData.filteredProducts == null ) {
+    if (servicesData.filteredProducts == null) {
       servicesData.filteredProducts = [];
       //servicesData.categories.length
       for (let i = 0; i < servicesData.products.length; i++) {
@@ -235,7 +239,7 @@ const filterCategoriesEventHandler =  (event) => {
       XHRLoader(false);
 
       return
-    }else if (categoryId != servicesData.filteredProducts[0].category) {
+    } else if (categoryId != servicesData.filteredProducts[0].category) {
       servicesData.filteredProducts = [];
       //servicesData.categories.length
       for (let i = 0; i < servicesData.products.length; i++) {
@@ -246,7 +250,7 @@ const filterCategoriesEventHandler =  (event) => {
       renderProducts(true);
       XHRLoader(false);
 
-    }else {
+    } else {
       elements.registerdEvents.productsPage.handleButtonsEventStatus = false;
       renderProducts(false);
       XHRLoader(false);
@@ -255,10 +259,6 @@ const filterCategoriesEventHandler =  (event) => {
 
   }
 }
-
-
-
-
 
 
 

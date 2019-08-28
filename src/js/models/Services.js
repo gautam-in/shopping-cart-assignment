@@ -4,7 +4,8 @@ export const servicesData = {
       id: null
     },
     cartDetails: {
-      onScreen: false
+      onScreen: false,
+      totalItemCount: 0
     }
   },
   filteredProducts: null

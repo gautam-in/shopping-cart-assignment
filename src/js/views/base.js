@@ -1,6 +1,7 @@
 export const elements = {
   loader: document.querySelector('#loader'),
   cart: document.querySelector('#cart'),
+  cartItemCount: document.querySelector('#cart-item-count'),
   landingPage: {
     mainContent: document.querySelector('#main-content'),
     carouselContent: document.querySelector('#carousel-content')
