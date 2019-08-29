@@ -33,7 +33,8 @@ import {
   renderSignup
 } from './views/signupView';
 import {
-  renderProducts
+  renderProducts,
+  updateProductDetails
 } from './views/ProductsView';
 import {
   renderMessage
@@ -46,8 +47,14 @@ import {
   renderCarousel
 } from './views/carouselView';
 import {
-  renderCart
+  renderCart,
+  registerEvents,
+  renderCartValues
 } from './views/cartView';
+
+import {
+  renderCartCount
+} from './views/headerCartCountView';
 
 // API section
 import {
@@ -102,7 +109,6 @@ const registerRoutes = () => {
     // Load Products View
     if (!servicesData.cartStatus.cartDetails.onScreen) {
       renderCart(true);
-
     }
     // renderCart(true);
     cartController();
@@ -204,10 +210,14 @@ const cartController = () => {
   if (!state.cartView) {
     state.cartView = {};
   }
-
+  
   elements.cartView.closeButtonIcon.addEventListener('click', e => {
     renderCart(false);
   });
+
+
+
+  // console.log(elements.cartView);
 
 };
 

@@ -12,10 +12,15 @@ export const elements = {
     passwordCriteriaPattern: /(?=.{6,})((?=.*\d)(?=.*[a-z])(?=.*[A-Z])|(?=.*\d)(?=.*[a-zA-Z])(?=.*[\W_])|(?=.*[a-z])(?=.*[A-Z])(?=.*[\W_])).*/,
     spacePattern: /\s/
   },
-  registerdEvents:{
+  registerdEvents: {
     productsPage: {
       handleButtonsEventStatus: false,
       filterCategoriesEventStatus: false
+    },
+    CartPage: {
+      closeButtonIconEventStatus: false,
+      addItemEventStatus: false,
+      removeItemEventStatus: false
     }
   }
 };

@@ -139,7 +139,7 @@ const filterCategories = () => {
   document.addEventListener('click', filterCategoriesEventHandler);
 };
 
-const updateProductDetails = (insertionType, productId) => {
+export const updateProductDetails = (insertionType, productId) => {
   let productCounter;
   for (productCounter = 0; productCounter < servicesData.products.length; productCounter++) {
     if (servicesData.products[productCounter].id == productId) {
@@ -157,9 +157,21 @@ const updateProductDetails = (insertionType, productId) => {
       // console.log(servicesData.cartStatus.productDetails);
 
       break;
-    case "update":
+    case "updateAdd":
       servicesData.cartStatus.productDetails['count'] = servicesData.cartStatus.productDetails['count'] + 1;
       // console.log(servicesData.cartStatus.productDetails);
+      break;
+    case "updateRemove":
+      servicesData.cartStatus.productDetails['count'] = servicesData.cartStatus.productDetails['count'] - 1;
+      if (servicesData.cartStatus.productDetails.count == 0) {
+        servicesData.cartStatus.productDetails = {
+          id: null
+        };
+        servicesData.cartStatus.productDetails['count'] = 0;
+        elements.registerdEvents.CartPage.addItemEventStatus = false;
+        elements.registerdEvents.CartPage.removeItemEventStatus = false;
+      }
+      // console.log(servicesData.cartStatus.productDetails['count']);
       break;
     case "empty":
       servicesData.cartStatus.productDetails['id'] = productId;
@@ -172,6 +184,7 @@ const updateProductDetails = (insertionType, productId) => {
       break;
   }
   servicesData.cartStatus.cartDetails.totalItemCount = servicesData.cartStatus.productDetails['count'];
+  // console.log(servicesData.cartStatus.cartDetails.totalItemCount);
 
 };
 
@@ -188,7 +201,7 @@ const buttonEventHandler = (event) => {
           if (servicesData.cartStatus.productDetails['id'] !== null) {
 
             if (servicesData.cartStatus.productDetails['id'] == productId) {
-              updateProductDetails("update", productId);
+              updateProductDetails("updateAdd", productId);
               renderCartCount();
             } else {
               updateProductDetails("new", productId);
@@ -202,7 +215,8 @@ const buttonEventHandler = (event) => {
         }
         // console.log(servicesData.cartStatus.cartDetails.onScreen);
         if (servicesData.cartStatus.cartDetails.onScreen) {
-
+          elements.registerdEvents.CartPage.addItemEventStatus = false;
+          elements.registerdEvents.CartPage.removeItemEventStatus = false;
           renderCart(true);
           elements.cartView.closeButtonIcon.addEventListener('click', e => {
             renderCart(false);
