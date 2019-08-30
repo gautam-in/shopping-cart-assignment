@@ -1,8 +1,8 @@
 /**
- * Create Class for banner
+ * Create Class for Custom Banner
+ * Takes one argument banner (class name of slider wrapper element)
  */
 
-/** Custom Banner  */
 function BannerSlider(banner) {
     this.banner = document.querySelector(banner);
     var interval = null;
@@ -15,7 +15,8 @@ function BannerSlider(banner) {
         current: 0
     };
     var self = this;
-    // Create Method for banner bullets
+    
+    // Create Method to bind banner bullets elements
     function getBullets(itemCount) {
         var ul = "<ul class='go-slide'>";
         for(i=0; i < itemCount; i++){
@@ -25,11 +26,13 @@ function BannerSlider(banner) {
         ul += "</ul>";
         return ul;
     }
-
+    
+    // Create Method to bind slider next and previous elements
     function getNavigation() {
         return '<button class="prev arrow">prev</button><button class="next arrow">next</button>';
     }
-
+    
+    // Create Method to take action according to next and prev
     function navigate(ele) {
        var e = ele.target;       
        if(e.className.includes("prev")){
@@ -39,6 +42,7 @@ function BannerSlider(banner) {
        }
     }
 
+    // Create init method to initalize the slider 
     this.init = function(options) {
         var self = this;
         var banner = self.banner;
@@ -55,7 +59,7 @@ function BannerSlider(banner) {
         bulletArea.classList.add("bullet-area");
         bulletArea.innerHTML = getBullets(slides.count);
 
-        // Append Navigations
+        // Append Navigations inside the slider area
         var navArea = document.createElement("div");
         navArea.className = "nav-area";
         navArea.innerHTML = getNavigation();
@@ -66,11 +70,13 @@ function BannerSlider(banner) {
         navs.forEach(function(nav){
             nav.addEventListener("click", navigate);
         });
+        
         // Bind Dot functions
         var goToLi = document.querySelectorAll(".goto-li");
         goToLi.forEach(function(goToLi){
             goToLi.addEventListener("click", self.gotoSlide);
         });
+        
         // Setting width to slides
         if(window.matchMedia("screen and (max-width: 767px").matches){
             for(i=0; i < slides.count; i++){
@@ -78,10 +84,12 @@ function BannerSlider(banner) {
             }
         }
         wrapper.style.width = slides.width * slides.count + "px";
+        
         // Call the slider rotation method
         self.play(delay);
     };
-
+    
+    // Create next method to navigate the slider into forword direction
     this.next = function(){
         var self = this;
         let previousState = slides.current;
@@ -98,6 +106,7 @@ function BannerSlider(banner) {
         
     };
     
+    // Create prev method to navigate the slider into backword direction
     this.prev = function(){
         var self = this;
         let previousState = slides.current;
@@ -113,6 +122,7 @@ function BannerSlider(banner) {
         });
     };
 
+    // Create gotoSlide method to jump specific slider
     this.gotoSlide = function(e){
         let previousState = slides.current;
         slides.current = parseInt(e.target.id);
@@ -125,6 +135,7 @@ function BannerSlider(banner) {
         });
     };
 
+    // Create play method to rotate slider
     this.play = function(delay){
         interval = setInterval(function(){
             let previousState = slides.current;
@@ -139,16 +150,22 @@ function BannerSlider(banner) {
         }, delay);
     };
     
+    // Create a method to add active class in dot dynamically
     this.activeDot = function(current, previousState){
         document.getElementsByClassName('goto-li')[previousState].children.item(0).classList.remove("arrow-active");
         document.getElementsByClassName('goto-li')[current].children.item(0).classList.add("arrow-active");
     };
 }
 
+/**
+* Create a object for BannerSlider
+* Pass the class name of slider element
+*/
 var banner = new BannerSlider(".my-slider");
 
 /**
- * Get banner from apiService.getBanner
+ * Call get Banner method to fetch data from API
+ * After getting banner data bind the data with html element and add into DOM
  */
 apiService.getBanner({url: "http://localhost:3000/api/getBanners"})
     .then(res => {
@@ -162,8 +179,9 @@ apiService.getBanner({url: "http://localhost:3000/api/getBanners"})
     });
 
 /**
- * Get Categories List from apiService.getCategories
- */
+* Call get Categories List method to fetch data from API
+* After getting categories list data bind the data with html element and add into DOM
+*/
 apiService.getCategories({url: "http://localhost:3000/api/getCategories"})
     .then(res => {
         let contentBlock = "";

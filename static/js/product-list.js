@@ -1,6 +1,7 @@
 /**
- * Get product List from apiService.getProductList
- */
+* Call product List method to fetch data from API
+* After getting product data bind the data with html element and add into DOM
+*/
 
 let products = [];
 
@@ -37,7 +38,7 @@ function filterProducts(id, name){
     document.getElementsByClassName("product-section")[0].innerHTML = getProductTemplate(filtered);
 }
 /**
- * Register Lister in Buy now button
+ * Register action Lister in Buy now button
  */
 function registerListenerForBuyNowButton(){
     var addToCartButton = document.querySelectorAll(".add-product-item"); 
@@ -58,8 +59,9 @@ apiService.getProductList({url: "http://localhost:3000/api/getProductList"})
     });
 
 /**
- * Get Categories List from apiService.getCategories
- */
+* Call get Categories List method to fetch data from API
+* After getting categories list data bind the data with html element and add into DOM
+*/
 apiService.getCategories({url: "http://localhost:3000/api/getCategories"})
     .then(res => {
         let contentBlock = "";

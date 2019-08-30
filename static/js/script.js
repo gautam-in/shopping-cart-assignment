@@ -1,5 +1,7 @@
-
-// For Login Form
+/*
+* Create a method to check login form field value
+* If input field having any value then label will be move on top
+*/
 function validationForLabel(field){
     if(document.getElementById(field).value !== ''){
         document.getElementById(field).classList.add("has-text");
@@ -9,7 +11,7 @@ function validationForLabel(field){
 }
 
 /**
- * Toggle mini-cart popup
+ * Create a methods for open/close shopping cart after clicking shopping button
  */
 function openShoppingCart(){
     if(window.matchMedia("screen and (min-width: 768px)").matches){
@@ -31,7 +33,9 @@ function closeShoppingCart(e){
 
 }
 
-/** Cart quantityt increment and decrement */
+/**
+* Add listener to increment the quantity of product available inside the cart
+*/
 document.querySelector('.plus').addEventListener("click", function(){
     let element = document.querySelector('.qty');
     let quantity = parseInt(element.textContent);
@@ -39,6 +43,10 @@ document.querySelector('.plus').addEventListener("click", function(){
     document.querySelector('.total-amt').textContent = parseInt(document.querySelector('.per-quantity-amt').textContent) * (quantity + 1);
     document.getElementById("cart-item-quantity").textContent = element.textContent;
 });
+
+/**
+* Add listener to decrement the quantity of product available inside the cart
+*/
 document.querySelector('.minus').addEventListener("click", function(){
     let element = document.querySelector('.qty');
     let quantity = parseInt(element.textContent);   
@@ -54,7 +62,7 @@ document.querySelector('.minus').addEventListener("click", function(){
 });
 
 /**
- * JS for Responsive 
+ * JS for Responsive Product category
  */
 if(window.innerWidth < 768) {
     var categoryMenuItems = document.querySelectorAll(".category-items .menu-items");
@@ -67,7 +75,7 @@ if(window.innerWidth < 768) {
 }
 
 /**
- * Adding Item in 
+ * Adding element in cart
  */
     function addToCart(){
         let quantity = parseInt(document.getElementById("cart-item-quantity").textContent)+1
@@ -76,7 +84,7 @@ if(window.innerWidth < 768) {
     }
 
 /**
- * Adding listener for shopping btn
+ * Adding listener to hiding shopping cart
  */
     document.querySelector('.shopping-btn').addEventListener("click", function(){
         document.getElementById("shopping-cart").style.display = "none";
