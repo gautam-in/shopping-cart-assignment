@@ -84,9 +84,13 @@ export const renderCart = (render) => {
         <div class="cart-checkout">
           <span>Promocode can be applied on payment page</span>
           <button>Proceed To Checkout <span class="cart-currency-symbol"><i class="fas fa-rupee-sign"></i>
-          %%item-final-price%%</span></button>
+          <span id="cart-total-price">%%item-final-price%%</span></span></button>
 
         </div>
+
+      </div>
+      <div class="lowest-price">
+        <img src="static/images/lowest-price.png" alt="Lowet Price">
       </div>
     </section>
       `;
@@ -119,6 +123,7 @@ export const renderCart = (render) => {
 
 export const renderCartValues = () => {
   let markup = null;
+  let finalPrice = null;
   if (servicesData.cartStatus.cartDetails.totalItemCount == 0) {
     markup = `
     <section class="cart-load">
@@ -149,10 +154,11 @@ export const renderCartValues = () => {
     }
 
   } else {
-
+    finalPrice = servicesData.cartStatus.cartDetails.totalItemCount * servicesData.cartStatus.productDetails['price'];
     document.querySelector('.cart-item-quantity').innerHTML = servicesData.cartStatus.cartDetails.totalItemCount;
-    document.querySelector('.cart-final-price').innerHTML = servicesData.cartStatus.cartDetails.totalItemCount * servicesData.cartStatus.productDetails['price'];
+    document.querySelector('.cart-final-price').innerHTML = finalPrice
     document.querySelector('.cart-count').innerHTML = 'My Cart (' + servicesData.cartStatus.cartDetails.totalItemCount + ' Item)';
+    document.querySelector('#cart-total-price').innerHTML = finalPrice;
 
   }
 

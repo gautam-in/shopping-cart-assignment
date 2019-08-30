@@ -565,6 +565,12 @@ footer {
 #cart .cart-load .cart-item .cart-item-details .cart-item-manipulation .cart-item-price {
   margin-right: 5%;
 }
+#cart .cart-load .lowest-price img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+}
 #cart .cart-load .cart-checkout {
   background-color: #FFFFFF;
   color: #1D2124;

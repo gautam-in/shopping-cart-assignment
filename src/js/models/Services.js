@@ -8,5 +8,8 @@ export const servicesData = {
       totalItemCount: 0
     }
   },
+  categoryDetails: {
+    previousSelectedProductID: null
+  },
   filteredProducts: null
 };

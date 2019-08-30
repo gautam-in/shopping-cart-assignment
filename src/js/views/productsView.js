@@ -96,7 +96,7 @@ export const renderProducts = (filtered) => {
     // Filfiltered Products Section
     document.querySelector('.products-listing').removeEventListener('click', buttonEventHandler);
     elements.registerdEvents.productsPage.handleButtonsEventStatus = false;
-    if (servicesData.filteredProducts) {
+    if (servicesData.filteredProducts.length != 0) {
       let filteredProducts = "";
       // servicesData.products.length
       for (let i = 0; i < servicesData.filteredProducts.length; i++) {
@@ -121,8 +121,10 @@ export const renderProducts = (filtered) => {
         handleButtons();
       }
     } else {
-
-      elements.landingPage.mainContent.innerHTML = "Sorry Unable to Fetch Data";
+      let noProductsHtml = `<img class="noProducts" src="static/images/noproduct.png" alt="Sorry No Products" style="margin-left:auto; margin-right: auto; display: block;">
+      `;
+      markup = markup.replace('%%products%%', noProductsHtml);
+      elements.landingPage.mainContent.innerHTML = markup;
 
     }
 
@@ -249,11 +251,12 @@ const filterCategoriesEventHandler = (event) => {
           servicesData.filteredProducts.push(servicesData.products[i]);
         }
       }
+      servicesData.categoryDetails.previousSelectedProductID = categoryId;
       renderProducts(true);
       XHRLoader(false);
 
       return
-    } else if (categoryId != servicesData.filteredProducts[0].category) {
+    } else if (categoryId != servicesData.categoryDetails.previousSelectedProductID) {
       servicesData.filteredProducts = [];
       //servicesData.categories.length
       for (let i = 0; i < servicesData.products.length; i++) {
@@ -261,6 +264,7 @@ const filterCategoriesEventHandler = (event) => {
           servicesData.filteredProducts.push(servicesData.products[i]);
         }
       }
+      servicesData.categoryDetails.previousSelectedProductID = categoryId;
       renderProducts(true);
       XHRLoader(false);
 
