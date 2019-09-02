@@ -2,7 +2,7 @@
 * Create a method to check login form field value
 * If input field having any value then label will be move on top
 */
-function validationForLabel(field){
+const validationForLabel = (field) =>{
     if(document.getElementById(field).value !== ''){
         document.getElementById(field).classList.add("has-text");
     }else{
@@ -13,8 +13,9 @@ function validationForLabel(field){
 /**
  * Create a methods for open/close shopping cart after clicking shopping button
  */
-function openShoppingCart(){
+const openShoppingCart = () =>{
     if(window.matchMedia("screen and (min-width: 768px)").matches){
+        // Calculate the width to show cart    
         var posLeft = document.querySelectorAll(".mini-cart")[0].offsetLeft + document.querySelectorAll(".mini-cart")[0].offsetWidth;
         document.getElementById("shopping-cart").style.right = (window.innerWidth - (posLeft + 15)) + "px";
     }
@@ -27,10 +28,9 @@ function openShoppingCart(){
     }
     document.getElementById("shopping-cart").style.display = "block";
 }
-function closeShoppingCart(e){
+const closeShoppingCart = (e) =>{
     e.stopPropagation();
     document.getElementById("shopping-cart").style.display = "none";
-
 }
 
 /**
@@ -77,11 +77,11 @@ if(window.innerWidth < 768) {
 /**
  * Adding element in cart
  */
-    function addToCart(){
-        let quantity = parseInt(document.getElementById("cart-item-quantity").textContent)+1
-        document.getElementById("cart-item-quantity").textContent = quantity;
-        document.querySelector('.qty').textContent= quantity;
-    }
+const addToCart =()=>{
+    let quantity = parseInt(document.getElementById("cart-item-quantity").textContent)+1
+    document.getElementById("cart-item-quantity").textContent = quantity;
+    document.querySelector('.qty').textContent= quantity;
+};
 
 /**
  * Adding listener to hiding shopping cart

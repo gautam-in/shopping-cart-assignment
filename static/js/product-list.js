@@ -5,7 +5,7 @@
 
 let products = [];
 
-function getProductTemplate (res){
+const getProductTemplate = (res) =>{
     let contentBlock = "";
     res.forEach(element => {
         contentBlock += `<div class="products">
@@ -22,30 +22,31 @@ function getProductTemplate (res){
         </div>`;     
     });
     return contentBlock;
-}
+};
 
 /**
- * Filer the product list according to category
+ * Filter the product list according to category
  */
-function filterProducts(id, name){
+const filterProducts = (id, name) =>{
     if(window.matchMedia("screen and (max-width: 767px)").matches){
         document.querySelector(".show-category-for-responsive").textContent = name;
         document.querySelector(".category-items").style.display = "none";
     }
+    // Retrun the value according to categories id
     let filtered = products.filter(item => {
         return item.category == id;
     });
     document.getElementsByClassName("product-section")[0].innerHTML = getProductTemplate(filtered);
-}
+};
 /**
  * Register action Lister in Buy now button
  */
-function registerListenerForBuyNowButton(){
+const registerListenerForBuyNowButton = () =>{
     var addToCartButton = document.querySelectorAll(".add-product-item"); 
     addToCartButton.forEach(function(addToCartButton){
         addToCartButton.addEventListener("click", addToCart);
     });
-}
+};
 
 /**
  * Call get category list API

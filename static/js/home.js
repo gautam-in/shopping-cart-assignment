@@ -49,9 +49,9 @@ function BannerSlider(banner) {
         var wrapper = banner.querySelector(".slide-wrapper");
         var delay = options.delay || 3000;
         
-        slides.count = wrapper.children.length;
-        slides.items = wrapper.children;
-        slides.width = wrapper.children.item(0).width;
+        slides.count = wrapper.children.length; //Count of the slider
+        slides.items = wrapper.children; //Elements of the slider
+        slides.width = wrapper.children.item(0).width; //Get the width of 1st Item
        
         // Append Bullets
         var bulletArea = document.createElement("div");
@@ -77,12 +77,13 @@ function BannerSlider(banner) {
             goToLi.addEventListener("click", self.gotoSlide);
         });
         
-        // Setting width to slides
+        // Setting width to slides for mobile devices
         if(window.matchMedia("screen and (max-width: 767px").matches){
             for(i=0; i < slides.count; i++){
                 wrapper.children.item(i).style.width = slides.width + "px";
             }
         }
+        // Added all slider in same row
         wrapper.style.width = slides.width * slides.count + "px";
         
         // Call the slider rotation method
