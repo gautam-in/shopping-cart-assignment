@@ -1,30 +1,14 @@
-@import 'libs.scss';
+@import 'abstracts/variables';
 
-*,*::before , *::after{
-    box-sizing: border-box;
-}
+@import 'base/base';
 
-body {
-   background-color: $body_bg_color;
-   margin: 0;
-   font-family: $font_style;
-   font-size: 15px;
-   color: #000000;
-}
-header {
-    box-shadow: 0 0 5px #ccc;
-    position: relative;
-    z-index: 1;
-}
-.clearfix::before, .clearfix::after {
-    content: "";
-    clear: both;
-    display: block;
-}
-.container {
-    width: 1170px;
-    margin: 0 auto;
-}
+@import 'components/button';
+@import 'components/banner';
+
+@import 'layout/header';
+@import 'layout/footer';
+
+
 .site-logo {
     height: 88px;
     float: left;
@@ -59,7 +43,7 @@ nav {
     }
 }
 .mini-cart{
-    background-color: #eeeeee;
+    background-color: $box-bg-color;
     cursor: pointer;
     position: relative;
     img {
@@ -122,23 +106,13 @@ a {
     font-size: 12px;
     color: #2fb9c6;
 }
-.btn {
-    height: 47px;
-    padding: 0 15px;
-    line-height: 47px;
-    border-color: transparent;
-    border-radius: 0;
-}
+
 .btn-block {
     width: 100%;
 }
 .btn-primary {
     background-color: #d10157;
-    color: #fff;
-}
-footer {
-    background-color: #fff;
-    padding: 20px 0;
+    color: $body_color-white;
 }
 .error-message {
     color: red;
@@ -153,7 +127,7 @@ footer {
     width: 500px;
     border: 1px #ccc solid;
     z-index: 9999;
-    background-color: #eeeeee;
+    background-color: $box-bg-color;
     height: calc(100vh - 89px);
 }
 .shopping-cart-header {
@@ -199,7 +173,7 @@ footer {
     padding: 15px;
 }
 .cart-items {
-    background-color: #fff;
+    background-color: $body_color-white;
     .img {
         margin-right: 15px;
         float: left;
@@ -250,7 +224,7 @@ footer {
 }
 .cheaper {
     height: 80px;
-    background-color: #fff;
+    background-color: $body_color-white;
     margin: 15px;
     border-radius: 5px;
     padding: 15px;
@@ -281,76 +255,8 @@ footer {
     width: 50%;
 }
 
-
 /** Banner Section */
-.banner {
-    overflow: hidden;
-    font-size: 0;
-    position: relative;
-    .slide-wrapper {
-        white-space: nowrap;
-        transition: 1s all ease;
-        font-size: 0;
-    }
-    img {
-        display: inline-block;
-        width: 1170px;
-        height: 258px;
-    }
-    .bullet-area{
-        position: absolute;
-        bottom: 30px;
-        left: 50%;
-        transform: translateX(-50%);
-        z-index: 2;
-    }
-    .bullet-area ul{
-        list-style: none;
-        margin: 0;
-        padding: 0;
-    }
-    .bullet-area ul li {
-        display: inline-block;
-    }
-    .bullet-area ul li button{
-        width: 10px;
-        height: 10px;
-        background-color: #ccc;
-        display: inline-block;
-        border: 0 none;
-        border-radius: 10px;
-        padding: 0;
-        margin: 0 5px;
-    }
-    .bullet-area ul li.active button{
-        background-color: #aaa;
-    }
-    .nav-area {
-        position: absolute;
-        top: 0;
-        left: 0;
-        z-index: 1;
-        width: 100%;
-        top: 50%;
-        margin-top: -15px;
-    }
-    .nav-area::before,.nav-area::after{
-        content: "";
-        clear: both;
-    }
-    .nav-area .arrow {
-        height: 30px;
-        background-color: rgba(0,0,0,0.5);
-        color: #fff;
-        border: 0;
-        text-transform: uppercase;
-        padding: 0 15px;
-        text-align: center;
-    }
-    .nav-area .arrow.next {
-        float: right;
-    }
-}
+
 .placeholder {
     background-color: #f0f0f0;
 }
@@ -363,6 +269,7 @@ footer {
 .arrow-active {
     background-color: teal !important;
 }
+
 /** Home Page */
 .product-info-section {
     float: left;
@@ -407,6 +314,7 @@ footer {
     text-align: center;
     margin: 50px auto;
 }
+
 /** Product List section */
 .navigation-section {
     float: right;
@@ -422,7 +330,7 @@ footer {
 }
 .sidebar-navigation {
     float: left;
-    background-color: #eeeeee;
+    background-color: $box-bg-color;
     width: 25%;
     height: 100%;
 }
@@ -443,14 +351,14 @@ footer {
     float: left;
     margin: 20px 20px;
     width: 20%;
-    border-bottom: 2px dashed #eeeeee;
+    border-bottom: 2px dashed $box-bg-color;
     margin-bottom: 20px;
     img {
         width: 100%;
         height: 170px;
     }
     p{
-        background-color: #eeeeee;
+        background-color: $box-bg-color;
         padding: 2px 5px;
         height: 120px;
         overflow: hidden;
@@ -480,7 +388,7 @@ footer.product-footer {
 .category-action {
     background-color: #d10157;
     padding: 12px 15px;
-    color: #fff;
+    color: $body_color-white;
     display: none;
 }
 .responsive-price-button-section {

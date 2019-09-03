@@ -1,6 +1,3 @@
-/**
-* Scss variable declaration section
-*/
 *, *::before, *::after {
   box-sizing: border-box; }
 
@@ -24,6 +21,13 @@ header {
 .container {
   width: 1170px;
   margin: 0 auto; }
+
+.btn {
+  height: 47px;
+  padding: 0 15px;
+  line-height: 47px;
+  border-color: transparent;
+  border-radius: 0; }
 
 .site-logo {
   height: 88px;
@@ -117,22 +121,15 @@ a {
   font-size: 12px;
   color: #2fb9c6; }
 
-.btn {
-  height: 47px;
-  padding: 0 15px;
-  line-height: 47px;
-  border-color: transparent;
-  border-radius: 0; }
-
 .btn-block {
   width: 100%; }
 
 .btn-primary {
   background-color: #d10157;
-  color: #fff; }
+  color: #ffffff; }
 
 footer {
-  background-color: #fff;
+  background-color: #ffffff;
   padding: 20px 0; }
 
 .error-message {
@@ -190,7 +187,7 @@ footer {
   padding: 15px; }
 
 .cart-items {
-  background-color: #fff; }
+  background-color: #ffffff; }
   .cart-items .img {
     margin-right: 15px;
     float: left; }
@@ -231,7 +228,7 @@ footer {
 
 .cheaper {
   height: 80px;
-  background-color: #fff;
+  background-color: #ffffff;
   margin: 15px;
   border-radius: 5px;
   padding: 15px; }
@@ -308,7 +305,7 @@ footer {
   .banner .nav-area .arrow {
     height: 30px;
     background-color: rgba(0, 0, 0, 0.5);
-    color: #fff;
+    color: #ffffff;
     border: 0;
     text-transform: uppercase;
     padding: 0 15px;
@@ -434,7 +431,7 @@ footer.product-footer {
 .category-action {
   background-color: #d10157;
   padding: 12px 15px;
-  color: #fff;
+  color: #ffffff;
   display: none; }
 
 .responsive-price-button-section {
