@@ -20,7 +20,7 @@ app.get("/", (req, res, next) => {
  * Router for Login Page
  */
 app.get("/login", (req, res, next) => {
-    const data = {scripts: []};
+    const data = {scripts: ['/static/js/login.js']};
     res.render("pages/login", data);
 });
 /**

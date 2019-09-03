@@ -7,14 +7,16 @@
             <p>Get access to your orders. Whishlist and Recommendations</p>
         </div>
         <div class="login-form">
-            <form method="GET" class="floating-input-form" id="login-form" name="login-form" action="/">
+            <form  action="/" class="floating-input-form l-Form" novalidate method="get" >
                 <div class="form-group">
-                    <input type="email" class="form-control" id="email" onfocusout="validationForLabel('email')">
+                    <input type="email" class="form-control" id="email" onfocusout="common.validationForLabel('email')">
                     <label class="form-label">Email</label>
+                    <p class="error-message"></p>
                 </div>
                 <div class="form-group">
-                    <input type="password" class="form-control" id="password" onfocusout="validationForLabel('password')">
+                    <input type="password" class="form-control" id="password" onfocusout="common.validationForLabel('password')">
                     <label class="form-label">Password</label>
+                    <p class="error-message"></p>
                 </div>
                 <button type="submit" class="btn btn-block btn-primary">Login</button>
             </form>

@@ -1,36 +1,36 @@
 /**
- * Floating Label
- * Check for input value, if available then sticks the label on top of the input
+ * Create immediately invoked function expression (IIFE)
  */
-function FloatingLabel(formSelector){
-    // create a object for DOM elements
-    const DOMElements = {
-        form: document.querySelectorAll(formSelector)[0],
-        formInput : document.querySelectorAll(".form-group input")
-    }
-    function checkForContent (e){
+
+const registration = (function(formSelector) {
+    
+    //Create private variable
+    var formSelector = formSelector;
+    var form = document.querySelectorAll(formSelector)[0];
+    var formInput = document.querySelectorAll(".form-group input");
+
+    //Private Method to validate input field having value or not.If input filed having value then lable move on top
+    var checkForContent = (e) => {
         if(e.target.value !== "" && e.target.value !== null){
             e.target.classList.add("has-text");
         } else {
             e.target.classList.remove("has-text");
         }
-    }
-    this.init = function(){
-        //var formFields = document.querySelectorAll(".form-group input");
-        DOMElements.formInput.forEach(function(item){
-            item.addEventListener("blur", checkForContent);
-        });
-        return this;
     };
-
-    this.validateForm = function(e){
+    
+    //Private method to register listener to submit the form 
+    var validate = (eventType) => {
+        form.addEventListener(eventType, e => validateForm(e));
+    }
+    
+    // Private method to validate the input filed
+    var validateForm = (e) => {
         e.preventDefault();  
-        //var formFields = document.querySelectorAll(".form-group input");
         var patternPasssword = /((^[0-9]+[a-z]+)|(^[a-z]+[0-9]+))+[0-9a-z]+$/i;
         var patternEmail = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
         var errorMsg = '';
         var count = 1;
-        DOMElements.formInput.forEach(function(item){
+        formInput.forEach(function(item){
             if(item.value === "" || item.value === null){
                 errorMsg = "Fields should not be empty!";
                 count = 0;
@@ -55,12 +55,18 @@ function FloatingLabel(formSelector){
         if(count){
             e.target.submit();
         }
-    }
-
-    this.validate = function(eventType){
-        DOMElements.form.addEventListener(eventType, this.validateForm );
     };
-}
-// Create object
-var formValidation = new FloatingLabel(".fl-form");
-formValidation.init().validate('submit');
+    
+    // create public method to register listener to input fields 
+    return{
+        init: function() {
+            formInput.forEach(function(item){
+                item.addEventListener("blur", (e) => checkForContent(e));
+            });
+            validate('submit');
+        }
+    }
+})(".fl-form");
+
+// Calling inti method
+registration.init();

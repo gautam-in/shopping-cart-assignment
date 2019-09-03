@@ -1,4 +1,3 @@
-"use strict";
 /**
  * API services to make ajax request
  */
