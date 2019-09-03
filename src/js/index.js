@@ -97,10 +97,15 @@ const registerRoutes = () => {
   routes.products.addEventListener('click', e => {
     // Load Products View
     XHRLoader(true);
-    renderCarousel(false);
-    productsController();
-    renderProducts(false);
-    XHRLoader(false);
+    if (!servicesData.products) {
+      productsController();
+      return;
+    }else {
+      elements.registerdEvents.productsPage.handleButtonsEventStatus = false;
+      renderCarousel(false);
+      renderProducts(false);
+      XHRLoader(false);
+    }
     // console.log("Via Ptroducts");
 
   });
@@ -196,6 +201,9 @@ const productsController = () => {
       if (data.response.statusCode === 200) {
         if (!servicesData.products) {
           servicesData.products = JSON.parse(data.body);
+          renderCarousel(false);
+          renderProducts(false);
+          XHRLoader(false);
         }
       }
     },
@@ -210,7 +218,7 @@ const cartController = () => {
   if (!state.cartView) {
     state.cartView = {};
   }
-  
+
   elements.cartView.closeButtonIcon.addEventListener('click', e => {
     renderCart(false);
   });

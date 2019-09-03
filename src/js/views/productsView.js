@@ -70,7 +70,7 @@ export const renderProducts = (filtered) => {
         // let splittedString = servicesData.products[i].name.split(',');
         products = products + `<div class="product">
             <h3>` + servicesData.products[i].name + `</h3>
-            <img src="` + servicesData.products[i].imageURL + `"></img>
+            <img src="` + servicesData.products[i].imageURL + `"` + ` alt="` + servicesData.products[i].name + `"></img>
           <div class="description">
             <p>` + servicesData.products[i].description + `</p>
           </div>
@@ -121,7 +121,7 @@ export const renderProducts = (filtered) => {
         handleButtons();
       }
     } else {
-      let noProductsHtml = `<img class="noProducts" src="static/images/noproduct.png" alt="Sorry No Products" style="margin-left:auto; margin-right: auto; display: block;">
+      let noProductsHtml = `<img class="noProducts" src="static/images/noproduct.jpg" alt="Sorry No Products" style="margin-left:auto; margin-right: auto; display: block;">
       `;
       markup = markup.replace('%%products%%', noProductsHtml);
       elements.landingPage.mainContent.innerHTML = markup;

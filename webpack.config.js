@@ -2,6 +2,7 @@ const path = require('path');
 const CopyPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const platformPath = (process.platform == "win") ? "\\" : "/"
+const CompressionPlugin = require('compression-webpack-plugin');
 module.exports = {
   target: "web",
   node: {
@@ -18,6 +19,7 @@ module.exports = {
     contentBase: './dist'
   },
   plugins: [
+    new CompressionPlugin(),
     new HtmlWebpackPlugin({
       filename: 'index.html',
       template: './src/index.html'
