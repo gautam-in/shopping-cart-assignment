@@ -8,7 +8,7 @@
     "start": "npm-run-all --parallel start-server process-sass-mac dev-open",
     "dev-open": "webpack-dev-server --mode development --open",
     "dev": "webpack --mode development",
-    "build": "webpack --mode production",
+    "prod-build": "webpack --mode production",
     "process-sass-win": "sass --watch src\\sass:src\\assets\\css",
     "process-sass-mac": "sass --watch src/sass:src/assets/css",
     "start-server": "node server/server.js"

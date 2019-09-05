@@ -2,6 +2,11 @@
 <html lang="en">
 
 <head>
+  <style>
+    @font-face {
+      font-display: auto;
+    }
+  </style>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" charset="UTF-8">
   <title>Sabka Bazaar</title>
   <meta name="keywords"
@@ -11,10 +16,26 @@
   <!-- Complete App related Styles -->
   <link href="assets/css/app.css" rel="stylesheet">
   <!-- Google Font used in this App -->
-  <link href="https://fonts.googleapis.com/css?family=Dosis:400,600,700" rel="stylesheet">
-  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8=" crossorigin="anonymous"></script>
+  <!-- <link href="https://fonts.googleapis.com/css?family=Dosis:400,600,700" rel="stylesheet"> -->
+  <!-- <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8=" crossorigin="anonymous"></script> -->
 
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+  <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous"> -->
+  <script type="text/javascript">
+    WebFontConfig = {
+      google: {
+        families: ['Dosis']
+      }
+    };
+    (function() {
+      var wf = document.createElement('script');
+      wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+        '://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js';
+      wf.type = 'text/javascript';
+      wf.async = 'true';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(wf, s);
+    })();
+  </script>
 </head>
 
 <body>
@@ -39,14 +60,12 @@
 
       </section>
       <section class="cart">
-        <i id="cart-route" class="fas fa-shopping-cart"></i>
+        <!-- <i id="cart-route" class="fas fa-shopping-cart"></i> -->
+        <img id="cart-route" src="static/images/cart.svg" alt="cart">
         <span id="cart-item-count" class="cart-value">0 Items</span>
       </section>
 
     </header>
-
-
-
     <div id="carousel-content">
       <!-- Render Carousel -->
     </div>

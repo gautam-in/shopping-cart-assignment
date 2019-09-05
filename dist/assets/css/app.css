@@ -455,6 +455,13 @@ footer {
   content: "";
   display: block;
 }
+.cart #cart-route {
+  margin-top: 25px;
+  margin-left: 5px;
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+}
 .cart i {
   margin-left: 10px;
   margin-top: 20px;
@@ -493,6 +500,17 @@ footer {
   z-index: 0;
   color: #fff;
 }
+#cart .cart-load .header .manipulation-icons {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  float: right;
+  margin-right: 3%;
+  z-index: 1;
+}
+#cart .cart-load .header .manipulation-icons:hover {
+  color: #ccc;
+}
 #cart .cart-load .header .centre {
   display: table-cell;
   vertical-align: middle;
@@ -502,16 +520,6 @@ footer {
   float: left;
   margin-left: 3%;
   font-weight: bold;
-}
-#cart .cart-load .header .centre .cart-close-button {
-  color: #fff;
-  float: right;
-  margin-right: 3%;
-  cursor: pointer;
-  z-index: 1;
-}
-#cart .cart-load .header .centre .cart-close-button:hover {
-  color: #ccc;
 }
 #cart .cart-load .cart-item {
   background-color: #FFFFFF;
@@ -529,12 +537,22 @@ footer {
 #cart .cart-load .cart-item .cart-item-details {
   float: right;
   margin-right: 15%;
+  word-wrap: break-word;
 }
 #cart .cart-load .cart-item .cart-item-details h3 {
   color: #000;
 }
 #cart .cart-load .cart-item .cart-item-details .cart-item-manipulation {
   margin-top: 10%;
+}
+#cart .cart-load .cart-item .cart-item-details .cart-item-manipulation .manipulation-icons {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+#cart .cart-load .cart-item .cart-item-details .cart-item-manipulation .manipulation-icons-no-hover {
+  width: 15px;
+  height: 15px;
 }
 #cart .cart-load .cart-item .cart-item-details .cart-item-manipulation .cart-item-quantity {
   margin-left: 3%;
@@ -1206,6 +1224,10 @@ body {
   float: left;
   font-weight: bold;
 }
+.products .products-listing .product .purchase #rupee-symbol {
+  font-size: 24px;
+  margin-top: 24px;
+}
 .products .products-listing .product .purchase button {
   float: right;
   width: 95px;
@@ -1254,6 +1276,15 @@ body {
   width: 300px;
 }
 
+@media all and (min-width: 480px) and (max-width: 768px) {
+  .top-nav {
+    display: none;
+  }
+
+  .cart-load {
+    display: 100%;
+  }
+}
 /* ==============================
  * MODULE STYLES
  * ============================== */

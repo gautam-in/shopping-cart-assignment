@@ -9,6 +9,7 @@ import {
 export const renderCarousel = (render) => {
   // console.log(servicesData.banners);
   let markup = `
+  <h1>Welcome To Sabka Bazar</h1>
   <section>
     <div class="container">
       <div class="carousel">

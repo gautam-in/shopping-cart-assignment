@@ -1,7 +1,20 @@
 var express = require('express');
 var app = express();
 var fs = require("fs");
+var path = require('path');
 var cors = require('cors')
+var http = require('http');
+var https = require('https');
+var certificate = fs.readFileSync(path.join(__dirname, 'server.crt'), 'utf8');
+var privateKey  = fs.readFileSync(path.join(__dirname, 'server.key'), 'utf8');
+var credentials = {key: privateKey, cert: certificate};
+
+
+// Server Creation
+app.use(cors());
+var httpServer = http.createServer(app);
+var httpsServer = https.createServer(credentials, app);
+
 const platformPath = (process.platform == "win32") ? "\\" : "/"
 var APIDetails = {
   "banners": {
@@ -26,7 +39,7 @@ var APIDetails = {
   },
 
 };
-app.use(cors());
+
 // Banners
 app.get(APIDetails.banners.APIName, function(req, res) {
   fs.readFile(__dirname + platformPath + APIDetails.banners.folderName + platformPath + APIDetails.banners.fileName, 'utf8', function(err, data) {
@@ -59,8 +72,5 @@ app.post(APIDetails.addToCart.APIName, function(req, res) {
   });
 })
 
-var server = app.listen(5000, function() {
-  var host = server.address().address
-  var port = server.address().port
-  console.log("listening at http://%s:%s", host, port)
-})
+httpServer.listen(5000);
+httpsServer.listen(8081);

@@ -7,6 +7,13 @@ $cart-height: 60px
   height: $cart-height
   margin-left: 1040px
   margin-top: 50px
+  #cart-route
+    margin-top: 25px
+    margin-left: 5px
+    cursor: pointer
+    width: 20px
+    height: 20px
+
 
   i
     margin-left: 10px
@@ -41,6 +48,16 @@ $cart-height: 60px
       height: 10%
       z-index: 0
       color: #fff
+      .manipulation-icons
+        width: 20px
+        height: 20px
+        cursor: pointer
+        float: right
+        margin-right: 3%
+        z-index: 1
+        &:hover
+          color: #ccc
+
       .centre
         display: table-cell
         vertical-align: middle
@@ -49,14 +66,16 @@ $cart-height: 60px
           float: left
           margin-left: 3%
           font-weight: bold
-        .cart-close-button
-          color: #fff
-          float: right
-          margin-right: 3%
-          cursor: pointer
-          z-index: 1
-          &:hover
-            color: #ccc
+        // .cart-close-button
+        //   width: 20px
+        //   height: 20px
+        //   color: #fff
+        //   float: right
+        //   margin-right: 3%
+        //   cursor: pointer
+        //   z-index: 1
+        //   &:hover
+        //     color: #ccc
     .cart-item
       background-color: #FFFFFF
       width: 100%
@@ -72,10 +91,18 @@ $cart-height: 60px
       .cart-item-details
         float: right
         margin-right: 15%
+        word-wrap: break-word
         h3
           color: #000
         .cart-item-manipulation
           margin-top: 10%
+          .manipulation-icons
+            width: 20px
+            height: 20px
+            cursor: pointer
+          .manipulation-icons-no-hover
+            width: 15px
+            height: 15px
 
           .cart-item-quantity
             margin-left: 3%

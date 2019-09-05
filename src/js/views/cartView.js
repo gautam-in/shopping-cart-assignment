@@ -37,7 +37,7 @@ export const renderCart = (render) => {
       <div class="header">
         <div class="centre">
           <div class="cart-count">My Cart</div>
-          <i class="fa fa-times cart-close-button"></i>
+          <img id="cart-close-button" class="manipulation-icons" src="static/images/close.svg" alt="cart">
         </div>
       </div>
       <div class="cart-empty-message">
@@ -59,7 +59,7 @@ export const renderCart = (render) => {
       <div class="header">
         <div class="centre">
           <div class="cart-count">My Cart (%%item-count%% item)</div>
-          <i class="fa fa-times cart-close-button"></i>
+          <img id="cart-close-button" class="manipulation-icons" src="static/images/close.svg" alt="cart">
         </div>
       </div>
       <div class="cart-item">
@@ -70,20 +70,20 @@ export const renderCart = (render) => {
         <div class="cart-item-details">
           <h3> %%item-name%%</hr>
           <div class="cart-item-manipulation">
-            <i id="add-item-cart" class="fa fa-plus-circle"></i>
+            <img id="add-item-cart" class="manipulation-icons" src="static/images/plus.svg" alt="minus">
             <span class="cart-item-quantity">%%item-count%%</span>
-            <i id="remove-item-cart" class="fa fa-minus-circle"></i>
-            <span class="cart-multiplier"><i class="fa fa-times"></i></span>
-            <span class="cart-currency-symbol"><i class="fas fa-rupee-sign"></i></span>
+            <img id="remove-item-cart" class="manipulation-icons" src="static/images/minus.svg" alt="minus">
+            <img class="manipulation-icons-no-hover" src="static/images/cross.svg" alt="cross">
+            <span class="cart-currency-symbol">₹ </span>
             <span class="cart-item-price">%%item-price%%</span>
-            <span class="cart-currency-symbol"><i class="fas fa-rupee-sign"></i></span>
+            <span class="cart-currency-symbol">₹ </span>
             <span class="cart-final-price">%%item-final-price%%</span>
           </div>
         </div>
 
         <div class="cart-checkout">
           <span>Promocode can be applied on payment page</span>
-          <button>Proceed To Checkout <span class="cart-currency-symbol"><i class="fas fa-rupee-sign"></i>
+          <button>Proceed To Checkout <span class="cart-currency-symbol">₹ 
           <span id="cart-total-price">%%item-final-price%%</span></span></button>
 
         </div>
@@ -166,7 +166,7 @@ export const renderCartValues = () => {
 }
 const addElements = () => {
   elements.cartView = {
-    closeButtonIcon: document.querySelector('.cart-close-button'),
+    closeButtonIcon: document.querySelector('#cart-close-button'),
     cartSection: document.querySelector('.cart-load'),
     addItem: document.querySelector('#add-item-cart'),
     removeItem: document.querySelector('#remove-item-cart')

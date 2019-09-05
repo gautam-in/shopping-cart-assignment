@@ -33,6 +33,7 @@ export const renderProducts = (filtered) => {
         %%products-menu%%
       </ul>
     </div>
+    <h1>Our Products</h1>
     <div class=" products-listing">
       %%products%%
     </div>
@@ -75,7 +76,7 @@ export const renderProducts = (filtered) => {
             <p>` + servicesData.products[i].description + `</p>
           </div>
           <div class="purchase">
-            <span class="price">MRP <i class="fas fa-rupee-sign"></i> ` + servicesData.products[i].price + `</span>
+            <span class="price">MRP ₹ ` + servicesData.products[i].price + `</span>
             <button class="button-Buy-Now" id="` + servicesData.products[i].id + `">Buy Now</button>
           </div>
           </div>`;
@@ -108,7 +109,7 @@ export const renderProducts = (filtered) => {
             <p>` + servicesData.filteredProducts[i].description + `</p>
           </div>
           <div class="purchase">
-            <span class="price">MRP <i class="fas fa-rupee-sign"></i> ` + servicesData.filteredProducts[i].price + `</span>
+            <span class="price">MRP ₹ ` + servicesData.filteredProducts[i].price + `</span>
             <button class="button-Buy-Now" id="` + servicesData.filteredProducts[i].id + `">Buy Now</button>
           </div>
           </div>`;
