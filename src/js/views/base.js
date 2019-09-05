@@ -8,7 +8,7 @@ export const elements = {
   },
   validators: {
     emailPattern: /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/,
-    blankPattern: "",
+    blankPattern: '',
     passwordCriteriaPattern: /(?=.{6,})((?=.*\d)(?=.*[a-z])(?=.*[A-Z])|(?=.*\d)(?=.*[a-zA-Z])(?=.*[\W_])|(?=.*[a-z])(?=.*[A-Z])(?=.*[\W_])).*/,
     spacePattern: /\s/
   },
@@ -23,4 +23,4 @@ export const elements = {
       removeItemEventStatus: false
     }
   }
-};
+}

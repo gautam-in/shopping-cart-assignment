@@ -1,6 +1,6 @@
 import {
   elements
-} from './base';
+} from './base'
 
 export const renderSignup = () => {
   const markup = `
@@ -47,10 +47,10 @@ export const renderSignup = () => {
         </div>
     </section>
   </div>
-    `;
-  elements.landingPage.mainContent.innerHTML = markup;
-  addElements();
-};
+    `
+  elements.landingPage.mainContent.innerHTML = markup
+  addElements()
+}
 
 const addElements = () => {
   elements.signUpPage = {
@@ -61,5 +61,5 @@ const addElements = () => {
     password: document.querySelector('#signup-password'),
     confirmPassword: document.querySelector('#signup-confirmPassword'),
     submitButton: document.querySelector('#signup-submit')
-  };
-};
+  }
+}

@@ -1,6 +1,6 @@
 import {
   elements
-} from './base';
+} from './base'
 
 export const renderMainPage = () => {
   const markup = `
@@ -35,6 +35,6 @@ export const renderMainPage = () => {
     </div>
     </section>
   </div>
-    `;
-  elements.landingPage.mainContent.innerHTML = markup;
-};
+    `
+  elements.landingPage.mainContent.innerHTML = markup
+}

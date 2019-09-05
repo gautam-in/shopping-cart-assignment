@@ -12,4 +12,4 @@ export const servicesData = {
     previousSelectedProductID: null
   },
   filteredProducts: null
-};
+}

@@ -1,11 +1,10 @@
 import {
   elements
-} from './base';
-
+} from './base'
 import {
   servicesData
-} from '../models/Services';
+} from '../models/Services'
 
 export const renderCartCount = () => {
-  elements.cartItemCount.innerHTML = servicesData.cartStatus.cartDetails.totalItemCount + ' Items';
-};
+  elements.cartItemCount.innerHTML = servicesData.cartStatus.cartDetails.totalItemCount + ' Items'
+}
