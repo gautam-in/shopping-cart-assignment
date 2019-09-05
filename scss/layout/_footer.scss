@@ -1,4 +1,4 @@
 footer {
-    background-color: $body_color-white;
+    background-color: map-get($site_colors, body_color-white);
     padding: 20px 0;
 }

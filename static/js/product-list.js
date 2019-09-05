@@ -1,11 +1,16 @@
 /**
 * Create immediately invoked function expression (IIFE)
 */
-const productList = (function(){
+var productList = (function(){
     
     // Private method
     var products = [];
-    
+
+    //API urls declaration
+    var productsAPI = "http://localhost:3000/api/getProductList";
+    var categoriesAPI = "http://localhost:3000/api/getCategories";
+    var addToCartAPI = "http://localhost:3000/api/addToCart";
+
     //Private Method for product list data binding
     var getProductTemplate = (res) => {
         let contentBlock = "";
@@ -16,10 +21,10 @@ const productList = (function(){
                 <p>${element.description}</p>
                 <div class="price-button-section">
                     <div class="price">MRP Rs.${element.price}</div>
-                    <button class="btn btn-primary add-product-item">Buy Now</button>
+                    <button id="buy-now" aria-label="Byu Now" class="btn btn-primary add-product-item" value=${element.id}>Buy Now</button>
                 </div>
                 <div class="responsive-price-button-section">
-                    <button class="btn btn-primary add-product-item">Buy Now @ MRP Rs.${element.price}</button>
+                    <button id="buy-now" aria-label="Byu Now" class="btn btn-primary add-product-item" value=${element.id}>Buy Now @ MRP Rs.${element.price}</button>
                 </div>
             </div>`;     
         });
@@ -27,25 +32,36 @@ const productList = (function(){
     };
     
     //Private Adding element in cart
-    var addToCart = () => {
-        let quantity = parseInt(document.getElementById("cart-item-quantity").textContent)+1
-        document.getElementById("cart-item-quantity").textContent = quantity;
-        document.querySelector('.qty').textContent= quantity;
+    var addToCart = (e) => {
+        apiService.addToCart({url: addToCartAPI, id: (e.target.value)})
+        .then(res => {
+            if(res.response === "Success"){
+                let quantity = parseInt(document.getElementById("cart-item-quantity").textContent)+1
+                document.getElementById("cart-item-quantity").textContent = quantity;
+                //Set Session
+                let filtered = products.filter(item => {
+                    return item.id == e.target.value;
+                })[0];
+
+                if(filtered) cart.setSession(filtered);
+                
+            }
+        });
     }   
     
     // Private methid to Register action Lister in Buy now button
     var registerListenerForBuyNowButton = () =>{
         var addToCartButton = document.querySelectorAll(".add-product-item"); 
         addToCartButton.forEach(function(addToCartButton){
-            addToCartButton.addEventListener("click", addToCart);
+            addToCartButton.addEventListener("click", e => addToCart(e));
         });
     };
     
     // Public methods
     return {
         //Call get category list API
-        getProductList : function(apiUrl){
-            apiService.getProductList({url: apiUrl})
+        getProductList : function(){
+            apiService.getProductList({url: productsAPI})
             .then(res => {
                 products = res;
                 document.getElementsByClassName("product-section")[0].innerHTML = getProductTemplate(products);
@@ -54,8 +70,8 @@ const productList = (function(){
         },
 
         //Call get Categories List method to fetch data from API
-        getCategories : function(apiUrl){
-            apiService.getCategories({url: apiUrl})
+        getCategories : function(){
+            apiService.getCategories({url: categoriesAPI})
             .then(res => {
                 let contentBlock = "";
                 res.forEach(element => {
@@ -83,6 +99,6 @@ const productList = (function(){
 })();
 
 //Call get category list API
-productList.getProductList("http://localhost:3000/api/getProductList");
+productList.getProductList();
 //Call get Categories List method to fetch data from API
-productList.getCategories("http://localhost:3000/api/getCategories");
+productList.getCategories();

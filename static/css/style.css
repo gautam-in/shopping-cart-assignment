@@ -35,7 +35,7 @@ body {
   .banner img {
     display: inline-block;
     width: 1170px;
-    height: 258px; }
+    height: 292.5px; }
   .banner .bullet-area {
     position: absolute;
     bottom: 30px;
@@ -205,7 +205,7 @@ a {
   height: calc(100vh - 89px); }
 
 .shopping-cart-header {
-  background-color: black;
+  background-color: #000000;
   height: 50px; }
 
 .cart-title {
@@ -244,7 +244,8 @@ a {
   padding: 15px; }
 
 .cart-items {
-  background-color: #ffffff; }
+  background-color: #ffffff;
+  margin-bottom: 15px; }
   .cart-items .img {
     margin-right: 15px;
     float: left; }

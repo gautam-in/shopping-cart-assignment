@@ -1,9 +1,8 @@
 /**
  * Create immediately invoked function expression (IIFE)
  */
-
-const home = (function(banner){
-    
+var home = (function(banner){
+ 
     // Create Private variable
     var banner = document.querySelector(banner);
     var interval = null;
@@ -15,13 +14,16 @@ const home = (function(banner){
         width: 'auto',
         current: 0
     };
+    //API urls declaration
+    var banners = "http://localhost:3000/api/getBanners";
+    var categories = "http://localhost:3000/api/getCategories";
     
     // Private Method to bind banner bullets elements
     var getBullets = (itemCount) => {
         var ul = "<ul class='go-slide'>";
         for(let i=0; i < itemCount; i++){
             let className = i===0 ? 'arrow-active' : ''; 
-            ul += `<li class='goto-li'><button class='${className}' id='${i}'></button></li>`
+            ul += `<li class='goto-li'><button class='${className}' id='${i}' aria-label="bullets"></button></li>`
         }
         ul += "</ul>";
         return ul;
@@ -153,8 +155,8 @@ const home = (function(banner){
     
     return{
         // Call get Banner method to fetch data from API
-        getBanners : function(apiUrl){
-            apiService.getBanner({url: apiUrl})
+        getBanners : function(){
+            apiService.getBanner({url: banners})
             .then(res => {
                 let img = "";
                 res.forEach(element => {
@@ -167,8 +169,8 @@ const home = (function(banner){
         },
     
         //Call get Categories List method to fetch data from API
-        getCategories : function(apiUrl){
-            apiService.getCategories({url: apiUrl})
+        getCategories : function(){
+            apiService.getCategories({url: categories})
             .then(res => {
                 let contentBlock = "";
                 let count = 1;
@@ -189,6 +191,6 @@ const home = (function(banner){
 })('.my-slider');
 
 //Call get Banner method to fetch data from API
-home.getBanners("http://localhost:3000/api/getBanners");
-//Call get Banner method to fetch data from API
-home.getCategories("http://localhost:3000/api/getCategories");
+home.getBanners();
+//Call get categories method to fetch data from API
+home.getCategories();

@@ -3,11 +3,11 @@
 }
 
 body {
-   background-color: $body_color-white;
+   background-color: map-get($site_colors, body_color-white);
    margin: 0;
    font-family: $font_style;
    font-size: 15px;
-   color: #000000;
+   color: map-get($site_colors, text_color);
 }
 .clearfix::before, .clearfix::after {
     content: "";

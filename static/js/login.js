@@ -1,7 +1,7 @@
 /**
 * Create immediately invoked function expression (IIFE)
 */
-const login = (function(formSelector) {
+var login = (function(formSelector) {
 
     //create private variable
     var formSelector = formSelector;

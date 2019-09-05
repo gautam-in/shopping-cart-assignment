@@ -44,7 +44,7 @@ app.get("/registration", (req, res, next) => {
  * Get Banner list
  */
 
-app.get("/api/getBanners", (req, res, next) => {
+app.get("/api/getBanners", (req, res) => {
     res.set({
         'Content-Type': 'application/json'
       }).status(200).sendFile( __dirname + "/server/banners/index.get.json");
@@ -53,7 +53,7 @@ app.get("/api/getBanners", (req, res, next) => {
 /**
  * Get Product List
  */
-app.get("/api/getProductList", (req, res, next) => {
+app.get("/api/getProductList", (req, res) => {
     res.set({
         'Content-Type': 'application/json'
       }).status(200).sendFile( __dirname + "/server/products/index.get.json");
@@ -62,12 +62,20 @@ app.get("/api/getProductList", (req, res, next) => {
 /**
  * Get Categories list
  */
-app.get("/api/getCategories", (req, res, next) => {
+app.get("/api/getCategories", (req, res ) => {
     res.set({
         'Content-Type': 'application/json'
       }).status(200).sendFile( __dirname + "/server/categories/index.get.json");
 });
 
+/**
+ * Add To cart
+ */
+app.post("/api/addToCart", (req, res) => {
+    res.set({
+        'Content-Type': 'application/json'
+      }).status(200).sendFile( __dirname + "/server/addToCart/index.post.json");
+});
 
 app.listen(portNumber, function(){
     console.log("App started on localhost:" + portNumber);

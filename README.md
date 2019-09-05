@@ -8,8 +8,8 @@ Clone this repo and run following command for starting the mock server:
 
 ```
 npm install
-npm run start
+npm run dev
 # or
 yarn install
-yarn start
+yarn dev
 ```
