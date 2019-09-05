@@ -33,7 +33,7 @@ const common = (function() {
 
     //Public method to open shopping cart after clicking shopping button
     openShoppingCart: () => {
-      if (window.matchMedia("screen and (min-width: 768px)").matches) {
+      if (window.matchMedia("screen and (min-width: 1025px)").matches) {
         // Calculate the width to show cart
         var posLeft =
           document.querySelectorAll(".mini-cart")[0].offsetLeft +

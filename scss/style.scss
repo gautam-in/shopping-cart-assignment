@@ -131,7 +131,7 @@ a {
     height: calc(100vh - 89px);
 }
 .shopping-cart-header {
-    background-color: map-get($site_colors, text_color);;
+    background-color: map-get($site_colors, text_color);
     height: 50px;
 }
 .cart-title {
@@ -171,6 +171,7 @@ a {
     bottom: 0;
     width: 100%;
     padding: 15px;
+    background-color: map-get($site_colors , body_color-white)
 }
 .cart-items {
     background-color: map-get($site_colors, body_color-white);

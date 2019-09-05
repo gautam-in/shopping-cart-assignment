@@ -24,6 +24,12 @@ body {
   border-color: transparent;
   border-radius: 0; }
 
+.btn.goto-checkout .title {
+  float: left; }
+
+.btn.goto-checkout .price {
+  float: right; }
+
 .banner {
   overflow: hidden;
   font-size: 0;
@@ -241,7 +247,8 @@ a {
   position: absolute;
   bottom: 0;
   width: 100%;
-  padding: 15px; }
+  padding: 15px;
+  background-color: #ffffff; }
 
 .cart-items {
   background-color: #ffffff;

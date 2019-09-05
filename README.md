@@ -13,3 +13,11 @@ npm run dev
 yarn install
 yarn dev
 ```
+
+## Technology
+
+```
+1) EJS : For Templating.
+2) ExpressJs : For API accessing.
+3) Gulp: Use for compile scss to css
+```

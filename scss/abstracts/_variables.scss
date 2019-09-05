@@ -4,3 +4,9 @@ $site_colors: (
     text_color: #000000,
 );
 $font_style: 'Dosis', sans-serif;
+
+$breakpoints_of_screen: (
+    screen-md-min: 768px,
+    screen-md-max: 1024px,
+    screen-sm-max: 480px,
+);

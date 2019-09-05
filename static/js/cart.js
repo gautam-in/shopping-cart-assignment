@@ -62,6 +62,7 @@ var cart = (function() {
     //Show Cart Items
     showCart: () => {
       let content = "";
+      let buttonBlock = "";
       if (
         localStorage.getItem("cart") !== "undefined" &&
         localStorage.getItem("cart") !== null && JSON.parse(localStorage.getItem("cart")).length > 0
@@ -100,15 +101,26 @@ var cart = (function() {
                     <h5 class="title">You won't find it cheaper anywhere</h5>
                     </div>
                     </section>`;
+        buttonBlock = `
+        <div>fdfdffdefdfdf</div>
+        <button class="btn btn-primary btn-block shopping-btn goto-checkout clearfix" id="start-shopping">
+        <span class="title">Proceed to Checkout</span>
+        <span class="price">Rs. 187 &rarr;</span>
+        </button>`;
       } else {
         content = `<div class="no-items" id="no-items">
                     <h2>No items in your cart</h2>
                     <p>Your favourite items are just a click away</p>
                     </div> `;
+        buttonBlock = `<button class="btn btn-primary btn-block shopping-btn" id="start-shopping">Start shopping</button>`;
       }
       document.getElementsByClassName(
         "shopping-cart-items"
       )[0].innerHTML = content;
+      
+      document.getElementsByClassName(
+        "shopping-cart-button"
+      )[0].innerHTML = buttonBlock;
     }
   };
 })();
