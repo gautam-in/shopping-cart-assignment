@@ -1,7 +1,6 @@
-/* CART */
+/* Cart */
 $cart-height: 60px
 .cart
-  +clearfix
   background-color: #EEEEEE
   width: 135px
   height: $cart-height
@@ -13,13 +12,11 @@ $cart-height: 60px
     cursor: pointer
     width: 20px
     height: 20px
-
-
-  i
+  img
     margin-left: 10px
     margin-top: $cart-height  - 40
     color: $theme-primary
-  i:hover
+  img:hover
       cursor: pointer
 
   .cart-value
@@ -66,16 +63,6 @@ $cart-height: 60px
           float: left
           margin-left: 3%
           font-weight: bold
-        // .cart-close-button
-        //   width: 20px
-        //   height: 20px
-        //   color: #fff
-        //   float: right
-        //   margin-right: 3%
-        //   cursor: pointer
-        //   z-index: 1
-        //   &:hover
-        //     color: #ccc
     .cart-item
       background-color: #FFFFFF
       width: 100%
@@ -84,12 +71,12 @@ $cart-height: 60px
       padding-top: 3%
       padding-left: 5%
       .cart-item-image
-        float: left
-        width: 22%
-        height: 22%
+        img
+          float: left
+          width: 90px
+          height: 90px
 
       .cart-item-details
-        // float: right
         margin-left: 90px
         h3
           word-wrap: break-word
@@ -163,3 +150,7 @@ $cart-height: 60px
       text-align: center
       color: #1D2124
       margin-top: 50%
+      h6
+        font-size: 30px
+      span
+        font-size: 15px

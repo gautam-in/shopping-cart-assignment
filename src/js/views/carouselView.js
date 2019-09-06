@@ -33,7 +33,7 @@ export const renderCarousel = (render) => {
       if (i !== 0) {
         carouselRadio = carouselRadio + '<input type="radio" id="carousel-' + (i + 1) + '" name="carousel[]">'
         carouselImage = carouselImage + '<li class="carousel__item"><img class="img-shadow" src="' + servicesData.banners[i].bannerImageUrl + '" alt="' + servicesData.banners[i].bannerImageAlt + '"></li>'
-        carouselNav = carouselNav + '<label for="carousel-` + (i + 1) + `"></label>'
+        carouselNav = carouselNav + '<label for="carousel-' + (i + 1) + '"></label>'
       } else {
         carouselRadio = carouselRadio + '<input type="radio" id="carousel-' + (i + 1) + '" name="carousel[]" checked>'
         carouselImage = carouselImage + '<li class="carousel__item"><img class="img-shadow" src="' + servicesData.banners[i].bannerImageUrl + '" alt="' + servicesData.banners[i].bannerImageAlt + '"></li>'

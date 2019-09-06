@@ -1,4 +1,4 @@
-/* HOME */
+/* Products */
 $form-elmnt-width: 300px
 $page-height: 800px
 
@@ -26,8 +26,8 @@ $product-inner-width: 195px
 
   .products-listing
     +span-columns(9)
-    float: right
-    padding-top: 30px
+    display: flex
+    flex-wrap: wrap
     .product
       +span-columns(3)
       margin-top: 5%
@@ -42,51 +42,11 @@ $product-inner-width: 195px
         text-transform: none
         font-weight: bold
         margin-bottom: 50px
-      // .country
-      //   img
-      //     position: absolute
-      //     width: 30px
-      //     height: 20px
-      //     margin: 40px 0px 20px 0px
-      //     z-index: 1
-      // .ribbon
-      //   width: 200px
-      //   height: 200px
-      //   background-color: #9BC255
-      //   // margin-bottom: 30px
-      //   z-index: -1
-      //   clip-path: polygon(75% 0, 100% 23%, 100% 43%, 49% 0)
-      //   // position: relative
-      //   span
-      //     position: absolute
-      //     margin-left: 135px
-      //     margin-top: 20px
-      //     font-weight: bold
-      //     font-size: 18px
-      //
-      //     -webkit-transform: rotate(42deg)
-      //
-      //     // line-height: 40px
-      //     color: #000
 
       img
         +span-columns(2)
         position: absolute
         margin: 0px 0px 0px 10px
-      // .noProducts
-      //   display: block
-      //   margin-left: auto
-      //   margin-right: auto
-
-      // .product-info
-      //   margin: 20px 0px 0px 0px
-      //   background-color: #9BC255
-      //   border-radius: 10px
-      //   padding: 3px
-      //   font-family: sans-serif
-      //   font-size: 18px
-      //   text-align: center
-      //   font-weight: bold
 
       .description
         margin-top: 150%
@@ -107,57 +67,6 @@ $product-inner-width: 195px
           font-size: 24px
           margin-top: 24px
         button
-          // text-align: center
           float: right
           width: 95px
           height: 40px
-
-  /* form starting stylings -------------------------------
-
-  .group
-    position: relative
-    margin-bottom: 45px
-
-  input
-    font-size: 18px
-    padding: 10px 10px 10px 5px
-    display: block
-    width: $form-elmnt-width
-    border: none
-    border-bottom: 2px solid #ACACAC
-    border-radius: 0px
-    font-weight: bold
-    background-color: #FCFCFC
-    box-shadow: none
-    &:focus
-      outline: none
-      border: none
-      border-bottom: 2px solid #2FB9C6
-      border-radius: 0px
-      box-shadow: none
-
-  /* LABEL =======================================
-
-  label
-    color: #ACACAC
-    font-size: 16px
-    position: absolute
-    pointer-events: none
-    left: 0px
-    top: 10px
-    transition: 0.2s ease all
-    -moz-transition: 0.2s ease all
-    -webkit-transition: 0.2s ease all
-
-  /* active state
-
-  input
-    &:focus ~ label, &:valid ~ label
-      top: -20px
-      font-size: 14px
-      color: #2FB9C6
-      // border: none
-      // border-bottom: 2px solid #2FB9C6
-      // border-radius: 0px
-  button
-    width: $form-elmnt-width
