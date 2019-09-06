@@ -44,8 +44,12 @@ $ npm install
 ```sh
 $ npm start
 ```
-For production environments...
+For production environments.
 
 ```sh
 $ npm run prod-build
 ```
+
+### Lighthouse Report
+
+[![N|Solid](https://i.ibb.co/dtFFq3z/Audit-Report-Final-Cropped.png)](https://oboxyear1.s3.ap-south-1.amazonaws.com/temp/Audit-Report-Final.html)
