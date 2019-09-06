@@ -22,7 +22,7 @@ body {
   padding: 0 15px;
   line-height: 47px;
   border-color: transparent;
-  border-radius: 0; }
+  border-radius: 2px; }
 
 .btn.goto-checkout .title {
   float: left; }
@@ -220,6 +220,11 @@ a {
   .cart-title h2 {
     margin: 0;
     padding: 10px 5px; }
+
+.promo-code {
+  text-align: center;
+  font-size: 15px;
+  margin-bottom: 8px; }
 
 .close-icon {
   float: right;

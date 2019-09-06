@@ -8,7 +8,10 @@ var registration = (function(formSelector) {
     var form = document.querySelectorAll(formSelector)[0];
     var formInput = document.querySelectorAll(".form-group input");
 
-    //Private Method to validate input field having value or not.If input filed having value then lable move on top
+    /**
+     * private Method to validate input field having value or not.If input filed having value then lable move on top
+     * @param  {object} e Refrence of HTML element 
+     */
     var checkForContent = (e) => {
         if(e.target.value !== "" && e.target.value !== null){
             e.target.classList.add("has-text");
@@ -17,12 +20,18 @@ var registration = (function(formSelector) {
         }
     };
     
-    //Private method to register listener to submit the form 
+    /**
+     * private method to register listener to submit the form 
+     * @param  {string} eventType Event name
+     */
     var validate = (eventType) => {
         form.addEventListener(eventType, e => validateForm(e));
     }
     
-    // Private method to validate the input filed
+    /**
+     * private method to validate the input filed 
+     * @param  {object} e reference of context
+     */
     var validateForm = (e) => {
         e.preventDefault();  
         var patternPasssword = /((^[0-9]+[a-z]+)|(^[a-z]+[0-9]+))+[0-9a-z]+$/i;

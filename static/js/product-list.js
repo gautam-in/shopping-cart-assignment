@@ -11,10 +11,13 @@ var productList = (function(){
     var categoriesAPI = "http://localhost:3000/api/getCategories";
     var addToCartAPI = "http://localhost:3000/api/addToCart";
 
-    //Private Method for product list data binding
-    var getProductTemplate = (res) => {
+    /**
+     * private Method for product list data binding
+     * @param  {Object} response product list data
+     */
+    var getProductTemplate = (response) => {
         let contentBlock = "";
-        res.forEach(element => {
+        response.forEach(element => {
             contentBlock += `<div class="products">
                 <h3>${element.name}</h3>
                 <img src="${element.imageURL}" alt="${element.name}">
@@ -31,25 +34,27 @@ var productList = (function(){
         return contentBlock;
     };
     
-    //Private Adding element in cart
+    /**
+     * private method to adding element in cart
+     * @param  {Object} e refrence of current product element refrence
+     */
     var addToCart = (e) => {
         apiService.addToCart({url: addToCartAPI, id: (e.target.value)})
         .then(res => {
             if(res.response === "Success"){
                 let quantity = parseInt(document.getElementById("cart-item-quantity").textContent)+1
                 document.getElementById("cart-item-quantity").textContent = quantity;
-                //Set Session
                 let filtered = products.filter(item => {
                     return item.id == e.target.value;
                 })[0];
-
-                if(filtered) cart.setSession(filtered);
-                
+                if(filtered) cart.setSession(filtered); //Set Session
             }
         });
     }   
     
-    // Private methid to Register action Lister in Buy now button
+    /**
+     * private methid to Register action Lister in Buy now button
+     */
     var registerListenerForBuyNowButton = () =>{
         var addToCartButton = document.querySelectorAll(".add-product-item"); 
         addToCartButton.forEach(function(addToCartButton){
@@ -59,7 +64,10 @@ var productList = (function(){
     
     // Public methods
     return {
-        //Call get category list API
+
+        /**
+         * Call get category list API to fetch the data from API
+         */
         getProductList : function(){
             apiService.getProductList({url: productsAPI})
             .then(res => {
@@ -69,7 +77,9 @@ var productList = (function(){
             })
         },
 
-        //Call get Categories List method to fetch data from API
+        /**
+         * Call get Categories List method to fetch data from API
+         */
         getCategories : function(){
             apiService.getCategories({url: categoriesAPI})
             .then(res => {
@@ -82,7 +92,12 @@ var productList = (function(){
                 document.getElementsByClassName("category-items")[0].innerHTML = contentBlock;
             });
         },
-        //Private methid to Filter the product list according to category
+
+        /**
+         * private method to Filter the product list according to category id
+         * @param(String) id selected product Id
+         * @param(String) name selected product name  
+         */
         filterProducts : function (id, name){
             if(window.matchMedia("screen and (max-width: 767px)").matches){
                 document.querySelector(".show-category-for-responsive").textContent = name;

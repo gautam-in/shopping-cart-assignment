@@ -1,9 +1,10 @@
 /**
  * Create immediately invoked function expression (IIFE)
+ * @param  {String} banner Class name of banner wrapper html element
  */
 var home = (function(banner){
  
-    // Create Private variable
+    // Create private variable
     var banner = document.querySelector(banner);
     var interval = null;
     var timeout = null;
@@ -14,11 +15,15 @@ var home = (function(banner){
         width: 'auto',
         current: 0
     };
+
     //API urls declaration
     var banners = "http://localhost:3000/api/getBanners";
     var categories = "http://localhost:3000/api/getCategories";
     
-    // Private Method to bind banner bullets elements
+    /**
+     * private Method to bind banner bullets elements
+     * @param  {Number} itemCount number of slider comming from API
+     */
     var getBullets = (itemCount) => {
         var ul = "<ul class='go-slide'>";
         for(let i=0; i < itemCount; i++){
@@ -29,12 +34,17 @@ var home = (function(banner){
         return ul;
     }
     
-    // Private Method to bind slider next and previous elements
+    /**
+     * private method to bind slider next and previous elements
+     */
     var getNavigation = () => {
         return '<button class="prev arrow">prev</button><button class="next arrow">next</button>';
     }
     
-    // Private Method to take action according to next and prev
+    /**
+     * private method to take action according to next and prev
+     * @param (object) e Refrence of next and previous button
+     */
     var navigate = (e) => {
         var element = e.target;       
         if(element.className.includes("prev")){
@@ -44,7 +54,10 @@ var home = (function(banner){
         }
     }
 
-    // Private init method to initalize the slider 
+    /**
+     * private init method to initalize the slider 
+     * @param (object) options contain the delay attribute to rotate the slider
+     */
     var init = (options) => {
         var delay = options.delay || 3000;
         slides.count = wrapper.children.length; //Count of the slider
@@ -88,15 +101,16 @@ var home = (function(banner){
         play(delay);
     }
     
-    // Create next method to navigate the slider into forword direction
+    /**
+     * Create next method to navigate the slider into forword direction 
+     */
     var next = () => {
         let previousState = slides.current;
         if(interval !== null) clearInterval(interval);
         if(slides.current === (slides.count - 1)) slides.current = -1;
         wrapper.style.transform = "translateX(-" + (slides.width * (slides.current + 1)) + "px)";
         slides.current++;
-        // Call method for dot active
-        activeDot(slides.current, previousState);
+        activeDot(slides.current, previousState); // Call method for dot active
         if(timeout !== null) clearTimeout(timeout);
         timeout = setTimeout(function(){
             play(5000);
@@ -104,14 +118,15 @@ var home = (function(banner){
         
     }
     
-    // Private prev method to navigate the slider into backword direction
+    /**
+     * private prev method to navigate the slider into backword direction 
+     */
     var prev = () => {
         let previousState = slides.current;
         if(interval !== null) clearInterval(interval);
         if(slides.current === 0){ slides.current = (slides.count); previousState = 0;}
         wrapper.style.transform = "translateX(-" + (slides.width * (slides.current - 1)) + "px)";
-        // Call method for dot active
-        activeDot(slides.current-1, previousState);
+        activeDot(slides.current-1, previousState); // Call method for dot active
         slides.current--;     
         if(timeout !== null) clearTimeout(timeout);
         timeout = setTimeout(function(){
@@ -119,20 +134,25 @@ var home = (function(banner){
         });
     };
 
-    // Private method gotoSlide method to jump specific slider
+    /**
+     * private method gotoSlide method to jump specific slider
+     * @param (object) e contain the reference of active html element
+     */
     var gotoSlide = (e) => {
         let previousState = slides.current;
         slides.current = parseInt(e.target.id);
         wrapper.style.transform = "translateX(-" + (slides.width * (slides.current)) + "px)";
-        // Call method for dot active
-        activeDot(slides.current, previousState);
+        activeDot(slides.current, previousState); // Call method for dot active
         if(interval !== null) clearInterval(interval);
         setTimeout(function(){
             play(4000);
         });
     };
 
-    // Private method to play method to rotate slider
+    /**
+     * private method to play method to rotate slider
+     * @param (Number) delay Number of milisecond to move slider
+     */
     var play = (delay) => {
         interval = setInterval(function(){
             let previousState = slides.current;
@@ -147,14 +167,21 @@ var home = (function(banner){
         }, delay);
     };
     
-    // private method to add active class in dot dynamically
+    /**
+     * private method to add active class in dot dynamically
+     * @param (Number) current position of active slider
+     * @param (Number) previousState next position of the slider
+     */
     var activeDot = function(current, previousState){
         document.getElementsByClassName('goto-li')[previousState].children.item(0).classList.remove("arrow-active");
         document.getElementsByClassName('goto-li')[current].children.item(0).classList.add("arrow-active");
     };
     
     return{
-        // Call get Banner method to fetch data from API
+
+        /**
+         * Call get Banner data from API and bind with html element
+         */
         getBanners : function(){
             apiService.getBanner({url: banners})
             .then(res => {
@@ -163,12 +190,13 @@ var home = (function(banner){
                     img += `<img class="img-responsive" src="${element.bannerImageUrl}" alt="${element.bannerImageAlt}">`;
                 });
                 document.getElementsByClassName("slide-wrapper")[0].innerHTML = img;   
-                // call banner init method
-                init({delay: 3000});
+                init({delay: 3000}); // call banner init method
             });
         },
     
-        //Call get Categories List method to fetch data from API
+        /**
+         * Call get Categories List data from API and bind the data with HTML element
+         */
         getCategories : function(){
             apiService.getCategories({url: categories})
             .then(res => {

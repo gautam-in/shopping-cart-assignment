@@ -6,7 +6,10 @@ var login = (function(formSelector) {
     //create private variable
     var formSelector = formSelector;
    
-    //Create private method to validate the input filed
+    /**
+     * Create private method to validate the input filed
+     * @param  {Object} e Refrenece of html elements
+     */
     var validateForm = (e) => {
         e.preventDefault();  
         var formFields = document.querySelectorAll(".form-group input");
@@ -26,7 +29,6 @@ var login = (function(formSelector) {
         }
     }
     
-    // create public method
     return {
         //validate method to register listener to submit the form after form validation
         validate: function(eventType) {

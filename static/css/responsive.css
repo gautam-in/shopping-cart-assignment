@@ -198,11 +198,12 @@
         margin-right: 2px;
     }
     .products h3 {
-        height: 14px;
+        height: 18px;
+        font-size: 12px;
     }
     .products img {
-        height: 80%;
-        width: 50%;
+        height: 75%;
+        width: 43%;
         float: left;
         padding-right: 7px;
     }
@@ -226,6 +227,7 @@
         display: block;
         margin: 0;
         float: right;
+        width: 57%;
     }
     .product-section {     
         width: 90%;
