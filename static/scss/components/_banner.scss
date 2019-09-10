@@ -64,7 +64,7 @@
   .nav-area .arrow {
     height: 30px;
     background-color: rgba(0, 0, 0, 0.5);
-    color: #fff;
+    color: map-get($site_colors, body-color-white);
     border: 0;
     text-transform: uppercase;
     padding: 0 15px;

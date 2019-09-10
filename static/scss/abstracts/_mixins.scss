@@ -1,4 +1,7 @@
-
+/* 
+  ##Device = Tablets, Ipads (portrait)
+  ##Screen = B/w 768px to 1024px
+*/
 @mixin responsive-for-ipad {
     @media all and (min-width: 768px) and (max-width: 1024px) {
         @content;
@@ -11,6 +14,10 @@
     }
 }
 
+/* 
+  ##Device = Most of the Smartphones Mobiles (Portrait)
+  ##Screen =  Max 480px
+*/
 @mixin responsive-for-sm-mobile {
     @media all and (max-width: 480px){
         @content;

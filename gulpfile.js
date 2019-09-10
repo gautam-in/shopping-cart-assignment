@@ -1,10 +1,11 @@
-const gulp = require("gulp");
-const path = require("path");
-const sass = require("gulp-sass");
+const gulp = require('gulp'),
+  sass = require('gulp-sass'),
+  autoprefixer = require('gulp-autoprefixer'),
+  minifyCss = require('gulp-clean-css');
 
 const settings = {
     sources: {
-        scss:  __dirname + "/static/scss/**/*"
+        scss:  __dirname + "/static/scss/**/*.scss"
     },
     destination: {
         css: __dirname + "/static/css/"
@@ -18,6 +19,8 @@ gulp.task('default', function(){
 // Add task to compile scss code inot css code
 gulp.task('scss-css', function(){
     gulp.src(settings.sources.scss)
-        .pipe(sass().on('error', sass.logError))
-        .pipe(gulp.dest(settings.destination.css));
+    .pipe(sass().on('error', sass.logError))
+    .pipe(autoprefixer())
+    .pipe(minifyCss())
+    .pipe(gulp.dest(settings.destination.css));
 });
