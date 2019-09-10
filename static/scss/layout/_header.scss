@@ -1,0 +1,65 @@
+header {
+  box-shadow: 0 0 5px #ccc;
+  position: relative;
+  z-index: 1;
+}
+.site-logo {
+  height: 88px;
+  float: left;
+  padding: 10px 0;
+  @include responsive-for-sm-mobile {
+    height: 50px;
+  }
+}
+.site-logo img {
+  height: 100%;
+}
+nav {
+  @include responsive-for-sm-mobile {
+    display: none;
+  }
+  float: left;
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  li {
+    float: left;
+    margin: 55px 0px 15px 30px;
+  }
+}
+.nav-align {
+  float: right;
+  width: 150px;
+  ul {
+    list-style: none;
+    margin: 10px 0;
+    padding: 0;
+    @include responsive-for-sm-mobile {
+      display: none;
+    }
+  }
+  ul li {
+    float: right;
+    margin: 0 0 0 15px;
+  }
+}
+.mini-cart {
+  background-color: map-get($site_colors, box-bg-color);
+  cursor: pointer;
+  position: relative;
+  img {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 10px;
+  }
+}
+.mini-cart-info {
+  padding: 15px 15px;
+  text-align: center;
+}
+a {
+  text-decoration: none;
+  color: map-get($site_colors, text-color);
+}

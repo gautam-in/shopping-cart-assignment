@@ -7,7 +7,7 @@
         "test": "echo \"Error: no test specified\" && exit 1",
         "start": "canned -p 5000 ./server",
         "dev": "nodemon index --open",
-        "scss-to-css": "node-sass scss/style.scss static/css/style.css"
+        "scss-to-css": "node-sass static/scss/main.scss static/css/style.css"
     },
     "author": "",
     "license": "MIT",

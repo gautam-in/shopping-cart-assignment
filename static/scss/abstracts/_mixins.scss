@@ -1,0 +1,18 @@
+
+@mixin responsive-for-ipad {
+    @media all and (min-width: 768px) and (max-width: 1024px) {
+        @content;
+    }
+}
+
+@mixin responsive-for-ms-mobile {
+    @media all and (min-width: 480px) and (max-width: 768px) {
+        @content;
+    }
+}
+
+@mixin responsive-for-sm-mobile {
+    @media all and (max-width: 480px){
+        @content;
+    }
+}

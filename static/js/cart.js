@@ -35,11 +35,15 @@ var cart = (function() {
         cartItems.push({
           data: data,
           count: 1,
-          id: data.id
+          id: data.id,
+          price: data.price
         });
       }
       //Remove items from localstorage if count is 0
-      if(idx > -1 && cartItems[idx].count === 0) cartItems.splice(idx, 1);
+      if(idx > -1 && cartItems[idx].count === 0){
+        cartItems.splice(idx, 1);
+        document.getElementById("cart-item-quantity").textContent = 0;
+      }
       localStorage.setItem("cart", JSON.stringify(cartItems));
     },
     
@@ -48,12 +52,15 @@ var cart = (function() {
      */
     itemsCalculation: () => {
       var count = 0;
-      if (localStorage.getItem("cart") !== "undefined" && localStorage.getItem("cart") !== null) {
+      var totalPrice = 0;
+      if (JSON.parse(localStorage.getItem("cart")).length > 0 && localStorage.getItem("cart") !== "undefined" && localStorage.getItem("cart") !== null) {
         JSON.parse(localStorage.getItem("cart")).forEach(element => {
           count += element.count;
+          totalPrice += element.price * element.count;
         });
+        document.getElementById("cart-item-quantity").textContent = count;
+        document.getElementById("totalPrice").textContent = totalPrice;
       }
-      document.getElementById("cart-item-quantity").textContent = count;
     },
     
     /**
@@ -113,7 +120,7 @@ var cart = (function() {
         buttonBlock = `<div class='promo-code'>Promo code can be applied on payment page</div>
                     <button class="btn btn-primary btn-block shopping-btn goto-checkout clearfix" id="start-shopping">
                     <span class="title">Proceed to Checkout</span>
-                    <span class="price">Rs. 187 &rarr;</span>
+                    <span class="price">Rs. <span id='totalPrice'>0</span> &rarr;</span>
                     </button>`;
       } else {
         content = `<div class="no-items" id="no-items">

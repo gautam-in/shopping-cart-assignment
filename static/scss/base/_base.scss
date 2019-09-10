@@ -1,0 +1,29 @@
+*,*::before , *::after{
+    box-sizing: border-box;
+}
+
+body {
+   background-color: map-get($site_colors, body-color-white);
+   margin: 0;
+   font-family: $font_style;
+   font-size: 15px;
+   color: map-get($site_colors, text-color);
+}
+.clearfix::before, .clearfix::after {
+    content: "";
+    clear: both;
+    display: block;
+}
+.container {
+    width: 1170px;
+    margin: 0 auto;
+    @include responsive-for-ipad {
+            max-width: 1024px;
+    }
+    @include responsive-for-ms-mobile {
+        max-width: 100%;
+    }
+    @include responsive-for-sm-mobile {
+        max-width: 100%;
+    }
+}

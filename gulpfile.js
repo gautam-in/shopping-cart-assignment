@@ -4,10 +4,10 @@ const sass = require("gulp-sass");
 
 const settings = {
     sources: {
-        scss:  __dirname + "/scss/**/*"
+        scss:  __dirname + "/static/scss/**/*"
     },
     destination: {
-        css: __dirname + "/static/css"
+        css: __dirname + "/static/css/"
     }
 };
 
