@@ -12,7 +12,7 @@ var login = (function(formSelector) {
      */
     var validateForm = (e) => {
         e.preventDefault();  
-        var formFields = document.querySelectorAll(".form-group input");
+        var formFields = document.querySelectorAll(".input-form__form-group input");
         var errorMsg = '';
         var count = 1;
         var patternEmail = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
@@ -26,7 +26,7 @@ var login = (function(formSelector) {
                     count = 0;
                 }
             }
-            var msgElement = item.offsetParent.querySelectorAll("p.error-message")[0];
+            var msgElement = item.offsetParent.querySelectorAll("p.input-form__form-group--error-message")[0];
             msgElement.innerText = errorMsg;
             errorMsg = '';
         });
@@ -41,7 +41,7 @@ var login = (function(formSelector) {
             document.querySelectorAll(formSelector)[0].addEventListener(eventType, (e) => validateForm(e));
         }
     }
-})('.l-Form');
+})('.login-form');
 
 // Calling validate private method
 login.validate('submit');

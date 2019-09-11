@@ -22,10 +22,10 @@
     width: 48%;
   }
 }
-.form-group {
+.input-form__form-group {
   margin-bottom: 15px;
 }
-.form-control {
+.input-form__form-group--form-control {
   height: 47px;
   border: 1px #ccc solid;
   background: none;
@@ -33,35 +33,35 @@
   padding: 15px;
   outline: 0 none;
 }
-.floating-input-form .form-group {
+.input-form__form-group {
   position: relative;
 }
-.floating-input-form .form-group .form-control {
+.input-form__form-group--form-control {
   padding: 23px 15px 10px 0px;
   border: 0 none;
   border-bottom: 1px #ccc solid;
 }
-.floating-input-form .form-group .form-label {
+.input-form__form-group--form-label {
   position: absolute;
   left: 0;
   top: 12px;
   transition: 0.2s all ease;
 }
-.floating-input-form .form-control:focus,
-.floating-input-form .form-control.has-text {
+.input-form__form-group--form-control:focus,
+.input-form__form-group--form-control.has-text {
   border-color: #2fb9c6;
 }
-.floating-input-form .form-control:focus + .form-label,
-.floating-input-form .form-control.has-text + .form-label {
+.input-form__form-group--form-control:focus + .input-form__form-group--form-label,
+.input-form__form-group--form-control.has-text + .input-form__form-group--form-label {
   top: 5px;
   font-size: 12px;
   color: #2fb9c6;
 }
-.login-area {
+.login-block {
   max-width: 860px;
   margin: 30px auto;
 }
-.login-info {
+.login-block__info {
   padding-right: 30px;
   @include responsive-for-ipad {
     margin-left: 24px;
@@ -70,8 +70,8 @@
     padding-left: 11px;
   }
 }
-.login-info,
-.login-form {
+.login-block__info,
+.login-block__form {
   float: left;
   width: 48%;
   margin-left: 1%;
@@ -80,7 +80,7 @@
     margin-left: 1%;
   }
 }
-.error-message {
+.input-form__form-group--error-message, login-form__form-group--error-message {
   color: red;
   font-size: 12px;
 }

@@ -205,9 +205,9 @@ var home = (function(banner){
                 res.forEach(element => {
                     if(element.enabled){
                         if(count % 2 === 0){
-                            contentBlock += `<div class="product-list bottom-shadow"><div class="clearfix"><div class="product-img-section-right"><img src=${element.imageUrl} alt=${element.key}></div><div class="product-content-section-left"><h2>${element.name}</h2><p>${element.description}</p><a href='/product-list'><button id=${element.id} class="btn btn-primary" type="button" name=${element.name}></a>Explore ${element.key}</button></div></div></div>`;
+                            contentBlock += `<div class="product-list bottom-shadow"><div class="clearfix"><div class="product-img-section-right"><img src=${element.imageUrl} alt=${element.key}></div><div class="product-content-section-left"><h2>${element.name}</h2><p>${element.description}</p><a href='/product-list' aria-hidden="true"><button id=${element.id} class="btn btn-primary" type="button" name=${element.name}></a>Explore ${element.key}</button></div></div></div>`;
                         }else{
-                            contentBlock += `<div class="product-list bottom-shadow"><div class="clearfix"><div class="product-info-section"><h2>${element.name}</h2><p>${element.description}</p><a href='/product-list'><button class="btn btn-primary" id=${element.id} name=${element.name}>Explore ${element.key}</button></a></div><div class="product-img-section"><img src=${element.imageUrl} alt=${element.key}></div></div></div>`;
+                            contentBlock += `<div class="product-list bottom-shadow"><div class="clearfix"><div class="product-info-section"><h2>${element.name}</h2><p>${element.description}</p><a href='/product-list' aria-hidden="true"><button class="btn btn-primary" id=${element.id} name=${element.name}>Explore ${element.key}</button></a></div><div class="product-img-section"><img src=${element.imageUrl} alt=${element.key}></div></div></div>`;
                         }
                         count++;
                     }

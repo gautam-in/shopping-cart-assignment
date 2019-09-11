@@ -6,7 +6,7 @@ var registration = (function(formSelector) {
     //Create private variable
     var formSelector = formSelector;
     var form = document.querySelectorAll(formSelector)[0];
-    var formInput = document.querySelectorAll(".form-group input");
+    var formInput = document.querySelectorAll(".input-form__form-group input");
 
     /**
      * private Method to validate input field having value or not.If input filed having value then lable move on top
@@ -56,7 +56,7 @@ var registration = (function(formSelector) {
                     count = 0;
                 }
             }
-            var msgElement = item.offsetParent.querySelectorAll("p.error-message")[0];
+            var msgElement = item.offsetParent.querySelectorAll("p.input-form__form-group--error-message")[0];
             msgElement.innerText = errorMsg;
             errorMsg = '';
         });
@@ -74,7 +74,7 @@ var registration = (function(formSelector) {
             validate('submit');
         }
     }
-})(".fl-form");
+})(".input-form");
 
 // Calling inti method
 registration.init();

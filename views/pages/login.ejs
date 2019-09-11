@@ -1,22 +1,22 @@
 <% include ../common/header %>
 <!-- Login content starts here -->
 <div class="container clearfix">
-    <div class="login-area clearfix" id="login-area">
-        <div class="login-info">
+    <div class="login-block clearfix" id="login-area">
+        <div class="login-block__info">
             <h1>Login</h1>
             <p>Get access to your orders. Whishlist and Recommendations</p>
         </div>
-        <section class="login-form">
-            <form  action="/" class="floating-input-form l-Form" method="get" novalidate>
-                <div class="form-group">
-                    <input type="email" class="form-control" id="email" onfocusout="common.validationForLabel('email')">
-                    <label class="form-label">Email</label>
-                    <p class="error-message"></p>
+        <section class="login-block__form">
+            <form  action="/" class="input-form login-form" method="get" novalidate>
+                <div class="input-form__form-group">
+                    <input type="email" class="input-form__form-group--form-control" id="email" onfocusout="common.validationForLabel('email')">
+                    <label class="input-form__form-group--form-label">Email</label>
+                    <p class="input-form__form-group--error-message"></p>
                 </div>
-                <div class="form-group">
-                    <input type="password" class="form-control" id="password" onfocusout="common.validationForLabel('password')">
-                    <label class="form-label">Password</label>
-                    <p class="error-message"></p>
+                <div class="input-form__form-group">
+                    <input type="password" class="input-form__form-group--form-control" id="password" onfocusout="common.validationForLabel('password')">
+                    <label class="input-form__form-group--form-label">Password</label>
+                    <p class="input-form__form-group--error-message"></p>
                 </div>
                 <button type="submit" class="btn btn-block btn-primary" id="login-btn" aria-label="Login">Login</button>
             </form>
