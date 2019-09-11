@@ -86,7 +86,7 @@ var productList = (function(){
                 let contentBlock = "";
                 res.forEach(element => {
                     if(element.enabled){
-                        contentBlock+= `<div class="menu-items" onclick="productList.filterProducts('${element.id}', '${element.name}')"><p>${element.name}</p></div>`
+                        contentBlock+= `<div class="menu-items" id=${element.id} onclick="productList.filterProducts('${element.id}', '${element.name}')"><p>${element.name}</p></div>`
                     }
                 });
                 document.getElementsByClassName("category-items")[0].innerHTML = contentBlock;
@@ -94,11 +94,12 @@ var productList = (function(){
         },
 
         /**
-         * private method to Filter the product list according to category id
+         * Filter the product list according to category id
          * @param(String) id selected product Id
          * @param(String) name selected product name  
          */
-        filterProducts : function (id, name){
+        filterProducts : function ( id, name){
+            productList.addAndRemoveClassess(id);
             if(window.matchMedia("screen and (max-width: 767px)").matches){
                 document.querySelector(".show-category-for-responsive").textContent = name;
                 document.querySelector(".category-items").style.display = "none";
@@ -108,6 +109,22 @@ var productList = (function(){
                 return item.category == id;
             });
             document.getElementsByClassName("product-section")[0].innerHTML = getProductTemplate(filtered);
+        },
+        /**
+         * Add and remove class name from elements
+         * @param(String) id selected product Id
+         */
+        addAndRemoveClassess : function (id){
+            var els = document.querySelectorAll('.menu-items.active')
+            for (var i = 0; i < els.length; i++) {
+                els[i].classList.remove('active')
+            }
+            var element = document.getElementById(id);
+            element.classList.add("active");
+        },
+        homePageFilter : function(Obj){
+            console.log("calling", Obj.target);
+            window.location.href = '/product-list';
         }
     }
     

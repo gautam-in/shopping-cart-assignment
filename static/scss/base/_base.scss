@@ -18,7 +18,7 @@ body {
     width: 1170px;
     margin: 0 auto;
     @include responsive-for-ipad {
-            max-width: 1024px;
+        max-width: 1024px;
     }
     @include responsive-for-ms-mobile {
         max-width: 100%;

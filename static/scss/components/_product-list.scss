@@ -36,10 +36,19 @@
   .menu-items {
     border-bottom: 2px solid #d3d3d3;
     cursor: pointer;
+    &:hover {
+      background-color: #666;
+      color: white;
+    }
     p {
       line-height: 25px;
       margin-left: 30px;
     }
+    
+  }
+  .active {
+    background-color: #666;
+    color: white;
   }
   .products {
     float: left;
