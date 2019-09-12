@@ -11,7 +11,7 @@ var cart = (function() {
      */
     setSession: data => {
       var cartItems = [];
-      if (localStorage.getItem("cart") !== "undefined" && localStorage.getItem("cart") !== null) {
+      if (localStorage.getItem("cart") !== "undefined" && localStorage.getItem("cart") !== null && JSON.parse(localStorage.getItem("cart")).length > 0 ) {
         cartItems = JSON.parse(localStorage.getItem("cart"));
       }
       cart.cartUpdate(cartItems, data);
@@ -53,7 +53,7 @@ var cart = (function() {
     itemsCalculation: () => {
       var count = 0;
       var totalPrice = 0;
-      if (JSON.parse(localStorage.getItem("cart")).length > 0 && localStorage.getItem("cart") !== "undefined" && localStorage.getItem("cart") !== null) {
+      if (localStorage.getItem("cart") !== "undefined" && localStorage.getItem("cart") !== null && JSON.parse(localStorage.getItem("cart")).length > 0 ) {
         JSON.parse(localStorage.getItem("cart")).forEach(element => {
           count += element.count;
           totalPrice += element.price * element.count;

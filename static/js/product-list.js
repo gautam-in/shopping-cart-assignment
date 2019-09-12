@@ -64,7 +64,6 @@ var productList = (function(){
     
     // Public methods
     return {
-
         /**
          * Call get category list API to fetch the data from API
          */
@@ -134,3 +133,7 @@ var productList = (function(){
 productList.getProductList();
 //Call get Categories List method to fetch data from API
 productList.getCategories();
+//Bind the listener into category list
+document.querySelector(".category-action").addEventListener("click", function() {
+    document.querySelector(".category-items").style.display = "block";
+});

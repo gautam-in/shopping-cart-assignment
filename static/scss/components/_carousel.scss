@@ -1,8 +1,8 @@
-.banner {
+.carousel {
   overflow: hidden;
   font-size: 0;
   position: relative;
-  .slide-wrapper {
+  .carousel__wrapper {
     white-space: nowrap;
     transition: 1s all ease;
     font-size: 0;
@@ -19,35 +19,35 @@
       height: 150px;
     }
   }
-  .bullet-area {
+  .carousel__wrapper--bullet-area {
     position: absolute;
     bottom: 30px;
     left: 50%;
     transform: translateX(-50%);
     z-index: 2;
   }
-  .bullet-area ul {
+  .carousel__wrapper--bullet-area ul {
     list-style: none;
     margin: 0;
     padding: 0;
   }
-  .bullet-area ul li {
+  .carousel__wrapper--bullet-area ul li {
     display: inline-block;
   }
-  .bullet-area ul li button {
+  .carousel__wrapper--bullet-area ul li button {
     width: 10px;
     height: 10px;
-    background-color: #ccc;
+    background-color: map-get($site_colors, bullet-bg-color);
     display: inline-block;
     border: 0 none;
     border-radius: 10px;
     padding: 0;
     margin: 0 5px;
   }
-  .bullet-area ul li.active button {
-    background-color: #aaa;
+  .carousel__wrapper--bullet-area ul li.active button {
+    background-color: map-get($site_colors, bullet-bg-color-active);
   }
-  .nav-area {
+  .carousel__wrapper--nav-area {
     position: absolute;
     top: 0;
     left: 0;
@@ -56,12 +56,12 @@
     top: 50%;
     margin-top: -15px;
   }
-  .nav-area::before,
-  .nav-area::after {
+  .carousel__wrapper--nav-area::before,
+  .carousel__wrapper--nav-area::after {
     content: "";
     clear: both;
   }
-  .nav-area .arrow {
+  .carousel__wrapper--nav-area .arrow {
     height: 30px;
     background-color: rgba(0, 0, 0, 0.5);
     color: map-get($site_colors, body-color-white);
@@ -70,18 +70,15 @@
     padding: 0 15px;
     text-align: center;
   }
-  .nav-area .arrow.next {
+  .carousel__wrapper--nav-area .arrow.next {
     float: right;
   }
-}
-.placeholder {
-  background-color: #f0f0f0;
-}
-.img-responsive {
-  max-width: 100%;
-}
-.go-slide li button {
-  cursor: pointer;
+  .carousel__img-responsive {
+    max-width: 100%;
+  }
+  .carousel__wrapper--go-slide li button {
+    cursor: pointer;
+  }
 }
 .arrow-active {
   background-color: teal !important;
