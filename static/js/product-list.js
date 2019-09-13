@@ -19,18 +19,18 @@ var productList = (function(){
         let contentBlock = "";
         response.forEach(element => {
             contentBlock += `<div class="products">
-                <h3>${element.name}</h3>
-                <img src="${element.imageURL}" alt="${element.name}">
-                <p>${element.description}</p>
-                <div class="price-button-section">
-                    <div class="price">MRP Rs.${element.price}</div>
-                    <button id="buy-now" aria-label="Byu Now" class="btn btn-primary add-product-item" value=${element.id}>Buy Now</button>
-                </div>
-                <div class="responsive-price-button-section">
-                    <button id="buy-now" aria-label="Byu Now" class="btn btn-primary add-product-item" value=${element.id}>Buy Now @ MRP Rs.${element.price}</button>
-                </div>
-            </div>`;     
-        });
+                                <h3>${element.name}</h3>
+                                <img src="${element.imageURL}" alt="${element.name}">
+                                <p>${element.description}</p>
+                                <div class="price-button-section">
+                                <div class="price">MRP Rs.${element.price}</div>
+                                <button id="buy-now" aria-label="Byu Now" class="btn btn-primary add-product-item" value=${element.id}>Buy Now</button>
+                            </div>
+                            <div class="responsive-price-button-section">
+                                <button id="buy-now" aria-label="Byu Now" class="btn btn-primary add-product-item" value=${element.id}>Buy Now @ MRP Rs.${element.price}</button>
+                            </div>
+                            </div>`;     
+                        });
         return contentBlock;
     };
     

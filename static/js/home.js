@@ -178,7 +178,6 @@ var home = (function(carousel){
     };
     
     return{
-
         /**
          * Call get Banner data from API and bind with html element
          */

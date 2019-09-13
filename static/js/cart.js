@@ -4,7 +4,6 @@
 var cart = (function() {
   
   return {
-
     /**
      * Set Product in the session
      * @param  {Object} data The selected cart Items data. 
@@ -88,26 +87,27 @@ var cart = (function() {
         JSON.parse(localStorage.getItem("cart")).forEach(element => {
           content += `<div class="cart-items clearfix">
                       <div class="img"><img src=${element.data.imageURL} alt="cart"></div>
-                      <div class="cart-action"><h3 class="name">${element.data.name}</h3>
-                      <div class="qty-addr">
-                        <button 
-                          id = ${element.data.id} 
-                          type="button" 
-                          class="btn-primary btn-update minus" 
-                          onclick="cart.cartQuantityIncOrDec(this, 'dec')">-
-                        </button>
-                        <span class="qty">${element.count}</span>
-                        <button 
-                          id = ${element.data.id} 
-                          type="button" 
-                          class="btn-primary btn-update plus" 
-                          onclick="cart.cartQuantityIncOrDec(this, 'inc')">+
-                        </button>
-                      </div>
-                      <div class="amount">
-                        <span class="operator">&times;</span>Rs.<span class="per-quantity-amt">${element.data.price}
-                        </span></span>
-                      </div>
+                      <div class="cart-action">
+                        <h3 class="name">${element.data.name}</h3>
+                        <div class="qty-addr">
+                          <button 
+                            id = ${element.data.id} 
+                            type="button" 
+                            class="btn-primary btn-update minus" 
+                            onclick="cart.cartQuantityIncOrDec(this, 'dec')">-
+                          </button>
+                          <span class="qty">${element.count}</span>
+                          <button 
+                            id = ${element.data.id} 
+                            type="button" 
+                            class="btn-primary btn-update plus" 
+                            onclick="cart.cartQuantityIncOrDec(this, 'inc')">+
+                          </button>
+                        </div>
+                        <div class="amount">
+                          <span class="operator">&times;</span>Rs.<span class="per-quantity-amt">${element.data.price}
+                          </span></span>
+                        </div>
                       </div>
                       <div class="total">Rs.<span class="total-amt">${element.data.price * element.count}</span></div>
                     </div>`;
@@ -117,11 +117,11 @@ var cart = (function() {
                       <h5 class="title">You won't find it cheaper anywhere</h5>
                     </div>
                     </section>`;
-        buttonBlock = `<div class='promo-code'>Promo code can be applied on payment page</div>
-                    <button class="btn btn-primary btn-block shopping-btn goto-checkout clearfix" id="start-shopping">
-                    <span class="title">Proceed to Checkout</span>
-                    <span class="price">Rs. <span id='totalPrice'>0</span> &rarr;</span>
-                    </button>`;
+        buttonBlock =`<div class='promo-code'>Promo code can be applied on payment page</div>
+                      <button class="btn btn-primary btn-block shopping-btn goto-checkout clearfix" id="start-shopping">
+                      <span class="title">Proceed to Checkout</span>
+                      <span class="price">Rs. <span id='totalPrice'>0</span> &rarr;</span>
+                      </button>`;
       } else {
         content = `<div class="no-items" id="no-items">
                     <h2>No items in your cart</h2>
