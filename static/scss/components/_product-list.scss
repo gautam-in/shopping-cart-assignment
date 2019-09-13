@@ -57,14 +57,14 @@
 * === PRODUCT LIST SECTION ===
 */
 
-  .product-wrapper {
+  .product-list-wrapper {
     float: right;
     width: 75%;
     background-color: map-get($site_colors, body-color-white);
     @include responsive-for-sm-mobile {
       width: 100%;
     }
-    .product-wrapper__products {
+    .product-list-wrapper__products {
       float: left;
       margin: 20px 20px;
       width: 20%;
@@ -128,7 +128,7 @@
         }
       }
     }
-    .product-wrapper__products--price-button {
+    .product-list-wrapper__products--price-button {
       @include responsive-for-ipad {
         display: none;
       }
@@ -144,7 +144,7 @@
         margin-bottom: 5px;
       }
     }
-    .product-wrapper__products--responsive-price-button {
+    .product-list-wrapper__products--responsive-price-button {
       display: none;
       @include responsive-for-ipad {
         display: block;
@@ -157,13 +157,13 @@
         width: 57%;
       }
     }
-    .product-wrapper__products--add-product-item {
+    .product-list-wrapper__products--add-product-item {
       @include responsive-for-ipad {
         width: 100%;
       }
     }
   }
-  .product-block {
+  .product-list-block {
     background-color: map-get($site_colors, box-bg-color);
     @include responsive-for-sm-mobile {
       margin-top: 10px;

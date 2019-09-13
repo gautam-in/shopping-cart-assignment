@@ -18,16 +18,16 @@ var productList = (function(){
     var getProductTemplate = (response) => {
         let contentBlock = "";
         response.forEach(element => {
-            contentBlock += `<div class="product-wrapper__products">
+            contentBlock += `<div class="product-list-wrapper__products">
                                 <h3>${element.name}</h3>
                                 <img src="${element.imageURL}" alt="${element.name}">
                                 <p>${element.description}</p>
-                                <div class="product-wrapper__products--price-button">
+                                <div class="product-list-wrapper__products--price-button">
                                 <div class="price">MRP Rs.${element.price}</div>
-                                <button id="buy-now" aria-label="Byu Now" class="btn btn-primary product-wrapper__products--add-product-item" value=${element.id}>Buy Now</button>
+                                <button id="buy-now" aria-label="Byu Now" class="btn btn-primary product-list-wrapper__products--add-product-item" value=${element.id}>Buy Now</button>
                             </div>
-                            <div class="product-wrapper__products--responsive-price-button">
-                                <button id="buy-now" aria-label="Byu Now" class="btn btn-primary product-wrapper__products--add-product-item" value=${element.id}>Buy Now @ MRP Rs.${element.price}</button>
+                            <div class="product-list-wrapper__products--responsive-price-button">
+                                <button id="buy-now" aria-label="Byu Now" class="btn btn-primary product-list-wrapper__products--add-product-item" value=${element.id}>Buy Now @ MRP Rs.${element.price}</button>
                             </div>
                             </div>`;     
                         });
@@ -56,7 +56,7 @@ var productList = (function(){
      * private methid to Register action Lister in Buy now button
      */
     var registerListenerForBuyNowButton = () =>{
-        var addToCartButton = document.querySelectorAll(".product-wrapper__products--add-product-item"); 
+        var addToCartButton = document.querySelectorAll(".product-list-wrapper__products--add-product-item"); 
         addToCartButton.forEach(function(addToCartButton){
             addToCartButton.addEventListener("click", e => addToCart(e));
         });
@@ -71,7 +71,7 @@ var productList = (function(){
             apiService.getProductList({url: productsAPI})
             .then(res => {
                 products = res;
-                document.getElementsByClassName("product-wrapper")[0].innerHTML = getProductTemplate(products);
+                document.getElementsByClassName("product-list-wrapper")[0].innerHTML = getProductTemplate(products);
                 registerListenerForBuyNowButton();
             })
         },
@@ -107,7 +107,7 @@ var productList = (function(){
             let filtered = products.filter(item => {
                 return item.category == id;
             });
-            document.getElementsByClassName("product-wrapper")[0].innerHTML = getProductTemplate(filtered);
+            document.getElementsByClassName("product-list-wrapper")[0].innerHTML = getProductTemplate(filtered);
         },
         /**
          * Add and remove class name from elements
