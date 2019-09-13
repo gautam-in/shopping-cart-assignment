@@ -1,10 +1,10 @@
 .btn {
   height: 47px;
+  cursor: pointer;
   padding: 0 15px;
   line-height: 47px;
   border-color: transparent;
   border-radius: 2px;
-  cursor: pointer;
   @include responsive-for-ipad {
     height: 50px;
     line-height: 50px;

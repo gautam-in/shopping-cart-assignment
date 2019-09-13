@@ -18,16 +18,16 @@ var productList = (function(){
     var getProductTemplate = (response) => {
         let contentBlock = "";
         response.forEach(element => {
-            contentBlock += `<div class="products">
+            contentBlock += `<div class="product-wrapper__products">
                                 <h3>${element.name}</h3>
                                 <img src="${element.imageURL}" alt="${element.name}">
                                 <p>${element.description}</p>
-                                <div class="price-button-section">
+                                <div class="product-wrapper__products--price-button">
                                 <div class="price">MRP Rs.${element.price}</div>
-                                <button id="buy-now" aria-label="Byu Now" class="btn btn-primary add-product-item" value=${element.id}>Buy Now</button>
+                                <button id="buy-now" aria-label="Byu Now" class="btn btn-primary product-wrapper__products--add-product-item" value=${element.id}>Buy Now</button>
                             </div>
-                            <div class="responsive-price-button-section">
-                                <button id="buy-now" aria-label="Byu Now" class="btn btn-primary add-product-item" value=${element.id}>Buy Now @ MRP Rs.${element.price}</button>
+                            <div class="product-wrapper__products--responsive-price-button">
+                                <button id="buy-now" aria-label="Byu Now" class="btn btn-primary product-wrapper__products--add-product-item" value=${element.id}>Buy Now @ MRP Rs.${element.price}</button>
                             </div>
                             </div>`;     
                         });
@@ -56,7 +56,7 @@ var productList = (function(){
      * private methid to Register action Lister in Buy now button
      */
     var registerListenerForBuyNowButton = () =>{
-        var addToCartButton = document.querySelectorAll(".add-product-item"); 
+        var addToCartButton = document.querySelectorAll(".product-wrapper__products--add-product-item"); 
         addToCartButton.forEach(function(addToCartButton){
             addToCartButton.addEventListener("click", e => addToCart(e));
         });
@@ -71,7 +71,7 @@ var productList = (function(){
             apiService.getProductList({url: productsAPI})
             .then(res => {
                 products = res;
-                document.getElementsByClassName("product-section")[0].innerHTML = getProductTemplate(products);
+                document.getElementsByClassName("product-wrapper")[0].innerHTML = getProductTemplate(products);
                 registerListenerForBuyNowButton();
             })
         },
@@ -85,10 +85,10 @@ var productList = (function(){
                 let contentBlock = "";
                 res.forEach(element => {
                     if(element.enabled){
-                        contentBlock+= `<div class="menu-items" id=${element.id} onclick="productList.filterProducts('${element.id}', '${element.name}')"><p>${element.name}</p></div>`
+                        contentBlock+= `<div class="sidebar-wrapper__category-items--menu-items" id=${element.id} onclick="productList.filterProducts('${element.id}', '${element.name}')"><p>${element.name}</p></div>`
                     }
                 });
-                document.getElementsByClassName("category-items")[0].innerHTML = contentBlock;
+                document.getElementsByClassName("sidebar-wrapper__category-items")[0].innerHTML = contentBlock;
             });
         },
 
@@ -100,30 +100,26 @@ var productList = (function(){
         filterProducts : function ( id, name){
             productList.addAndRemoveClassess(id);
             if(window.matchMedia("screen and (max-width: 767px)").matches){
-                document.querySelector(".show-category-for-responsive").textContent = name;
-                document.querySelector(".category-items").style.display = "none";
+                document.querySelector(".sidebar-wrapper__category-action--for-responsive").textContent = name;
+                document.querySelector(".sidebar-wrapper__category-items").style.display = "none";
             }
             // Retrun the value according to categories id
             let filtered = products.filter(item => {
                 return item.category == id;
             });
-            document.getElementsByClassName("product-section")[0].innerHTML = getProductTemplate(filtered);
+            document.getElementsByClassName("product-wrapper")[0].innerHTML = getProductTemplate(filtered);
         },
         /**
          * Add and remove class name from elements
          * @param(String) id selected product Id
          */
         addAndRemoveClassess : function (id){
-            var els = document.querySelectorAll('.menu-items.active')
+            var els = document.querySelectorAll('.sidebar-wrapper__category-items--menu-items.active')
             for (var i = 0; i < els.length; i++) {
                 els[i].classList.remove('active')
             }
             var element = document.getElementById(id);
             element.classList.add("active");
-        },
-        homePageFilter : function(Obj){
-            console.log("calling", Obj.target);
-            window.location.href = '/product-list';
         }
     }
     
@@ -134,6 +130,6 @@ productList.getProductList();
 //Call get Categories List method to fetch data from API
 productList.getCategories();
 //Bind the listener into category list
-document.querySelector(".category-action").addEventListener("click", function() {
-    document.querySelector(".category-items").style.display = "block";
+document.querySelector(".sidebar-wrapper__category-action").addEventListener("click", function() {
+    document.querySelector(".sidebar-wrapper__category-items").style.display = "block";
 });
