@@ -8,18 +8,14 @@ var home = (function(carousel){
     var carousel = document.querySelector(carousel);
     var interval = null;
     var timeout = null;
-    var wrapper = carousel.querySelector(".carousel__wrapper");
+    var wrapper = carousel.querySelector(CONSTANS.CAROUSEL_WRAPPER);
     var slides = {
         count: 0,
         items: [],
         width: 'auto',
         current: 0
     };
-
-    //API urls declaration
-    var banners = "http://localhost:3000/api/getBanners";
-    var categories = "http://localhost:3000/api/getCategories";
-    
+  
     /**
      * private Method to bind banner bullets elements
      * @param  {Number} itemCount number of slider comming from API
@@ -182,7 +178,7 @@ var home = (function(carousel){
          * Call get Banner data from API and bind with html element
          */
         getBanners : function(){
-            apiService.getBanner({url: banners})
+            apiService.getBanner({url: END_POINTS.BANNER})
             .then(res => {
                 let img = "";
                 res.forEach(element => {
@@ -197,7 +193,7 @@ var home = (function(carousel){
          * Call get Categories List data from API and bind the data with HTML element
          */
         getCategories : function(){
-            apiService.getCategories({url: categories})
+            apiService.getCategories({url: END_POINTS.CATEGORIES})
             .then(res => {
                 let contentBlock = "";
                 let count = 1;

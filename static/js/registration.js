@@ -6,7 +6,7 @@ var registration = (function(formSelector) {
     //Create private variable
     var formSelector = formSelector;
     var form = document.querySelectorAll(formSelector)[0];
-    var formInput = document.querySelectorAll(".input-form__form-group input");
+    var formInput = document.querySelectorAll(CONSTANS.FORM_INPUT_FIELD);
 
     /**
      * private Method to validate input field having value or not.If input filed having value then lable move on top
@@ -33,30 +33,29 @@ var registration = (function(formSelector) {
      * @param  {object} e reference of context
      */
     var validateForm = (e) => {
-        e.preventDefault();  
-        var patternPasssword = /((^[0-9]+[a-z]+)|(^[a-z]+[0-9]+))+[0-9a-z]+$/i;
-        var patternEmail = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+        e.preventDefault();
         var errorMsg = '';
         var count = 1;
         formInput.forEach(function(item){
             if(item.value === "" || item.value === null){
-                errorMsg = "Fields should not be empty!";
+                errorMsg = CONSTANS.EMPTY_ERROR_MSG;
                 count = 0;
             }else{
-                if(item.type === 'password' && ((item.value).length < 6 || !item.value.match(patternPasssword))){
-                    errorMsg = "Password Field should be number and alphabet and minimum lenght 6!";
+                console.log(item.value, (item.value).length);
+                if(item.type === 'password' && ((item.value).length < 6 || !item.value.match(CONSTANS.PASSWORD_VALIDATION))){
+                    errorMsg = CONSTANS.PASSWORD_ERROR_MSG;
                     count = 0;
                 }
                 if(item.id === 'confirmPassword' && (item.value).localeCompare(document.getElementById("password").value)){
                     errorMsg = "Mismatch password!";
                     count = 0;
                 }
-                if(item.type === 'email' && !item.value.match(patternEmail)){
-                    errorMsg = "Invalid Email Address";
+                if(item.type === 'email' && !item.value.match(CONSTANS.EMAIL_VALIDATION)){
+                    errorMsg = CONSTANS.EMAIL_ERROR_MSG;
                     count = 0;
                 }
             }
-            var msgElement = item.offsetParent.querySelectorAll("p.input-form__form-group--error-message")[0];
+            var msgElement = item.offsetParent.querySelectorAll(CONSTANS.FORM_ERROR_CLASS)[0];
             msgElement.innerText = errorMsg;
             errorMsg = '';
         });
@@ -74,7 +73,7 @@ var registration = (function(formSelector) {
             validate('submit');
         }
     }
-})(".input-form");
+})(CONSTANS.REGISTRATION_FORM);
 
 // Calling inti method
 registration.init();

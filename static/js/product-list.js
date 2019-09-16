@@ -6,11 +6,6 @@ var productList = (function(){
     // Private method
     var products = [];
 
-    //API urls declaration
-    var productsAPI = "http://localhost:3000/api/getProductList";
-    var categoriesAPI = "http://localhost:3000/api/getCategories";
-    var addToCartAPI = "http://localhost:3000/api/addToCart";
-
     /**
      * private Method for product list data binding
      * @param  {Object} response product list data
@@ -39,9 +34,9 @@ var productList = (function(){
      * @param  {Object} e refrence of current product element refrence
      */
     var addToCart = (e) => {
-        apiService.addToCart({url: addToCartAPI, id: (e.target.value)})
+        apiService.addToCart({url: END_POINTS.ADDTOCART, id: (e.target.value)})
         .then(res => {
-            if(res.response === "Success"){
+            if(res.status === 200){
                 let quantity = parseInt(document.getElementById("cart-item-quantity").textContent)+1
                 document.getElementById("cart-item-quantity").textContent = quantity;
                 let filtered = products.filter(item => {
@@ -68,7 +63,7 @@ var productList = (function(){
          * Call get category list API to fetch the data from API
          */
         getProductList : function(){
-            apiService.getProductList({url: productsAPI})
+            apiService.getProductList({url: END_POINTS.PRODUCTS})
             .then(res => {
                 products = res;
                 document.getElementsByClassName("product-list-wrapper")[0].innerHTML = getProductTemplate(products);
@@ -80,7 +75,7 @@ var productList = (function(){
          * Call get Categories List method to fetch data from API
          */
         getCategories : function(){
-            apiService.getCategories({url: categoriesAPI})
+            apiService.getCategories({url: END_POINTS.CATEGORIES})
             .then(res => {
                 let contentBlock = "";
                 res.forEach(element => {

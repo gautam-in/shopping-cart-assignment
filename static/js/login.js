@@ -12,21 +12,20 @@ var login = (function(formSelector) {
      */
     var validateForm = (e) => {
         e.preventDefault();  
-        var formFields = document.querySelectorAll(".input-form__form-group input");
+        var formFields = document.querySelectorAll(FORM_INPUT_FIELD);
         var errorMsg = '';
         var count = 1;
-        var patternEmail = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
         formFields.forEach(function(item){
             if(item.value === "" || item.value === null){
-                errorMsg = "Fields should not be empty!";
+                errorMsg = CONSTANS.EMPTY_ERROR_MSG;
                 count = 0;
             }else{
-                if(item.type === 'email' && !item.value.match(patternEmail)){
-                    errorMsg = "Invalid Email Address";
+                if(item.type === 'email' && !item.value.match(CONSTANS.EMAIL_VALIDATION)){
+                    errorMsg = CONSTANS.EMAIL_ERROR_MSG;
                     count = 0;
                 }
             }
-            var msgElement = item.offsetParent.querySelectorAll("p.input-form__form-group--error-message")[0];
+            var msgElement = item.offsetParent.querySelectorAll(CONSTANS.FORM_ERROR_CLASS)[0];
             msgElement.innerText = errorMsg;
             errorMsg = '';
         });
@@ -41,7 +40,7 @@ var login = (function(formSelector) {
             document.querySelectorAll(formSelector)[0].addEventListener(eventType, (e) => validateForm(e));
         }
     }
-})('.login-form');
+})(CONSTANS.LOGIN_FORM);
 
 // Calling validate private method
 login.validate('submit');

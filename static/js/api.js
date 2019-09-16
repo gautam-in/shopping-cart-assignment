@@ -6,7 +6,7 @@ var apiService = {
         return fetch(requestObj.url).then(res => res.json());
     },
     postRequest: async function (url, data) {
-        return fetch(url,{method: 'POST', body: data}).then(res => res.json());
+        return fetch(url,{method: 'POST', body: data}).then(res => res);
     },
     getBanner: function(obj){
         return this.getRequest(obj);

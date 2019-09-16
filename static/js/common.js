@@ -13,7 +13,7 @@ const common = (function() {
       item.onclick = function(e) {
         document.querySelector(".show-category-for-responsive").textContent =
           e.target.textContent;
-        document.querySelector(".category-items").style.display = "none";
+        document.querySelector(CONSTANS.CATEGORY_ITEMS).style.display = "none";
       };
     });
   }
@@ -22,7 +22,7 @@ const common = (function() {
      * Bind the listener to hiding shopping cart
      */
   document.querySelector(".shopping-btn").addEventListener("click", function() {
-    document.getElementById("shopping-cart").style.display = "none";
+    document.getElementById(CONSTANS.CART_ID).classList.remove("show");
   });
 
   return {
@@ -45,11 +45,11 @@ const common = (function() {
     openShoppingCart: () => {
       if (window.matchMedia("screen and (min-width: 1025px)").matches) {
         // Calculate the width to show cart
-        var posLeft = document.querySelectorAll(".mini-cart")[0].offsetLeft + 
-        document.querySelectorAll(".mini-cart")[0].offsetWidth;
-        document.getElementById("shopping-cart").style.right = window.innerWidth - (posLeft + 15) + "px";
+        var posLeft = document.querySelectorAll(CONSTANS.MINI_CART)[0].offsetLeft + 
+        document.querySelectorAll(CONSTANS.MINI_CART)[0].offsetWidth;
+        document.getElementById(CONSTANS.CART_ID).style.right = window.innerWidth - (posLeft + 15) + "px";
       }
-      document.getElementById("shopping-cart").style.display = "block";
+      document.getElementById(CONSTANS.CART_ID).classList.add("show");
     },
 
     /**
@@ -58,7 +58,7 @@ const common = (function() {
      */
     closeShoppingCart: e => {
       e.stopPropagation();
-      document.getElementById("shopping-cart").style.display = "none";
+      document.getElementById(CONSTANS.CART_ID).classList.remove("show");
     }
   };
 })();

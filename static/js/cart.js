@@ -3,6 +3,10 @@
  */
 var cart = (function() {
   
+  var CONSTANS ={
+    CART_QUANTITY : 'cart-item-quantity',
+    TOTAL : 'totalPrice'
+  }
   return {
     /**
      * Set Product in the session
@@ -41,7 +45,7 @@ var cart = (function() {
       //Remove items from localstorage if count is 0
       if(idx > -1 && cartItems[idx].count === 0){
         cartItems.splice(idx, 1);
-        document.getElementById("cart-item-quantity").textContent = 0;
+        document.getElementById(CONSTANS.CART_QUANTITY).textContent = 0;
       }
       localStorage.setItem("cart", JSON.stringify(cartItems));
     },
@@ -57,8 +61,8 @@ var cart = (function() {
           count += element.count;
           totalPrice += element.price * element.count;
         });
-        document.getElementById("cart-item-quantity").textContent = count;
-        document.getElementById("totalPrice").textContent = totalPrice;
+        document.getElementById(CONSTANS.CART_QUANTITY).textContent = count;
+        document.getElementById(CONSTANS.TOTAL).textContent = totalPrice;
       }
     },
     
