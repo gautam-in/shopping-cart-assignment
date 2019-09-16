@@ -2,11 +2,20 @@
  * Create immediately invoked function expression (IIFE)
  */
 var cart = (function() {
-  
+  let emitter = window.mitt();
   var CONSTANS ={
     CART_QUANTITY : 'cart-item-quantity',
     TOTAL : 'totalPrice'
   }
+
+   // Subscriber for cart element binding
+  emitter.on('cart', e =>{
+    cart.showCart();
+  });
+  // Subscriber for cart item calculation
+    emitter.on('cart', e => {
+    cart.itemsCalculation();
+  });
   return {
     /**
      * Set Product in the session
@@ -18,8 +27,8 @@ var cart = (function() {
         cartItems = JSON.parse(localStorage.getItem("cart"));
       }
       cart.cartUpdate(cartItems, data);
-      cart.showCart();
-      cart.itemsCalculation();
+      //cart.showCart();
+      //cart.itemsCalculation();
     },
 
     /**
@@ -48,6 +57,8 @@ var cart = (function() {
         document.getElementById(CONSTANS.CART_QUANTITY).textContent = 0;
       }
       localStorage.setItem("cart", JSON.stringify(cartItems));
+      // publisher for cart
+      emitter.emit('cart', null);
     },
     
     /**
@@ -74,8 +85,8 @@ var cart = (function() {
     cartQuantityIncOrDec: (obj, type) => {
       var data = { id: obj.getAttribute("id") };
       cart.cartUpdate(JSON.parse(localStorage.getItem("cart")), data, type);
-      cart.showCart();
-      cart.itemsCalculation();
+      //cart.showCart();
+      //cart.itemsCalculation();
     },
 
     /**
