@@ -48,6 +48,12 @@
       p {
         line-height: 25px;
         margin-left: 30px;
+        margin: 0;
+        padding: 15px 15px 15px 30px;
+      } 
+      &.active {
+        background-color: #333;
+        color: white;
       }
       
     }
@@ -169,7 +175,7 @@
       margin-top: 10px;
     }
   }
-  .active {
-    background-color: #666;
-    color: white;
-  }
+  // .active {
+  //   background-color: #333;
+  //   color: white;
+  // }
