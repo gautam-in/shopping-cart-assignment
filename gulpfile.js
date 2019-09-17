@@ -20,7 +20,7 @@ gulp.task('default', function(){
 gulp.task('scss-css', function(){
     gulp.src(settings.sources.scss)
     .pipe(sass().on('error', sass.logError))
-    .pipe(autoprefixer())
+    .pipe(autoprefixer('last 2 versions'))
     .pipe(minifyCss())
     .pipe(gulp.dest(settings.destination.css));
 });

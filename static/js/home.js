@@ -21,9 +21,9 @@ var home = (function(carousel){
      * @param  {Number} itemCount number of slider comming from API
      */
     var getBullets = (itemCount) => {
-        var ul = "<ul class='carousel__wrapper--go-slide'>";
+        var ul = "<ul class='carousel__goto'>";
         for(let i=0; i < itemCount; i++){
-            let className = i===0 ? 'arrow-active' : ''; 
+            let className = i===0 ? 'goto__active' : ''; 
             ul += `<li class='goto-li'><button class='${className}' id='${i}' aria-label="bullets"></button></li>`
         }
         ul += "</ul>";
@@ -34,7 +34,7 @@ var home = (function(carousel){
      * private method to bind slider next and previous elements
      */
     var getNavigation = () => {
-        return '<button class="prev arrow">prev</button><button class="next arrow">next</button>';
+        return '<button class="prev carousel__arrow">prev</button><button class="next carousel__arrow">next</button>';
     }
     
     /**
@@ -63,17 +63,17 @@ var home = (function(carousel){
         // Append Bullets
         var bulletArea = document.createElement("div");
         carousel.appendChild(bulletArea);
-        bulletArea.classList.add("carousel__wrapper--bullet-area");
+        bulletArea.classList.add("carousel__bullet");
         bulletArea.innerHTML = getBullets(slides.count);
 
         // Append Navigations inside the slider area
         var navArea = document.createElement("div");
-        navArea.className = "carousel__wrapper--nav-area";
+        navArea.className = "carousel__nav-area";
         navArea.innerHTML = getNavigation();
         carousel.appendChild(navArea);
 
         // Bind nav functions
-        var navs = carousel.querySelectorAll(".arrow");
+        var navs = carousel.querySelectorAll(".carousel__arrow");
         navs.forEach(function(nav){
             nav.addEventListener("click", (e) => navigate(e));
         });
@@ -169,8 +169,8 @@ var home = (function(carousel){
      * @param (Number) previousState next position of the slider
      */
     var activeDot = function(current, previousState){
-        document.getElementsByClassName('goto-li')[previousState].children.item(0).classList.remove("arrow-active");
-        document.getElementsByClassName('goto-li')[current].children.item(0).classList.add("arrow-active");
+        document.getElementsByClassName('goto-li')[previousState].children.item(0).classList.remove("goto__active");
+        document.getElementsByClassName('goto-li')[current].children.item(0).classList.add("goto__active");
     };
     
     return{
@@ -182,7 +182,7 @@ var home = (function(carousel){
             .then(res => {
                 let img = "";
                 res.forEach(element => {
-                    img += `<img class="carousel__img-responsive" src="${element.bannerImageUrl}" alt="${element.bannerImageAlt}">`;
+                    img += `<img class="carousel__img" src="${element.bannerImageUrl}" alt="${element.bannerImageAlt}">`;
                 });
                 document.getElementsByClassName("carousel__wrapper")[0].innerHTML = img;   
                 init({delay: 3000}); // call banner init method
@@ -200,9 +200,9 @@ var home = (function(carousel){
                 res.forEach(element => {
                     if(element.enabled){
                         if(count % 2 === 0){
-                            contentBlock += `<div class="product-block"><div class="clearfix"><div class="product-block__img-section-right"><img src=${element.imageUrl} alt=${element.key}></div><div class="product-block__content-section-left"><h2>${element.name}</h2><p>${element.description}</p><a href='/product-list' aria-hidden="true"><button id=${element.id} class="btn btn-primary" type="button" name=${element.name}></a>Explore ${element.key}</button></div></div></div>`;
+                            contentBlock += `<div class="product"><div class="clearfix"><div class="product__img-left"><img src=${element.imageUrl} alt=${element.key} class="product__img-right--img"></div><div class="product__content-right"><h2>${element.name}</h2><p>${element.description}</p><a href='/product-list' aria-hidden="true"><button id=${element.id} class="btn btn-primary product__btn" type="button" name=${element.name}></a>Explore ${element.key}</button></div></div></div>`;
                         }else{
-                            contentBlock += `<div class="product-block"><div class="clearfix"><div class="product-block__info-section-left"><h2>${element.name}</h2><p>${element.description}</p><a href='/product-list' aria-hidden="true"><button class="btn btn-primary" id=${element.id} name=${element.name}>Explore ${element.key}</button></a></div><div class="product-block__img-section_right"><img src=${element.imageUrl} alt=${element.key}></div></div></div>`;
+                            contentBlock += `<div class="product"><div class="clearfix"><div class="product__content-left"><h2>${element.name}</h2><p>${element.description}</p><a href='/product-list' aria-hidden="true"><button class="btn btn-primary product__btn" id=${element.id} name=${element.name}>Explore ${element.key}</button></a></div><div class="product__img-right"><img src=${element.imageUrl} alt=${element.key} class="product__img-left--img"></div></div></div>`;
                         }
                         count++;
                     }
@@ -211,7 +211,7 @@ var home = (function(carousel){
             });
         }
     }
-})('.carousel');
+})(CONSTANS.CAROUSEL_CLASS);
 
 //Call get Banner method to fetch data from API
 home.getBanners();

@@ -2,38 +2,38 @@
 <!-- start registration container -->
 <div class="container">
     <div class="registration clearfix">
-        <div class="registration__registration-info">
+        <div class="registration__info">
             <h1>Signup</h1>
             <p>We do not share your personal details with anyone.</p>
         </div>
-        <div class="registration__registration-form">
-            <form action="/" class="input-form" novalidate method="get">
-                <div class="input-form__form-group">
-                    <input type="text" class="input-form__form-group--form-control" name="firstName" id="firstName">
-                    <label class="input-form__form-group--form-label">First Name</label>
-                    <p class="input-form__form-group--error-message"></p>
+        <div class="registration__form">
+            <form action="/" class="form" novalidate method="POST">
+                <div class="form__group">
+                    <input type="text" class="form__control" name="firstName" id="firstName">
+                    <label for="firstName" class="form__label" aria-label="FirstName">First Name</label>
+                    <p class="form__error"></p>
                 </div>
-                <div class="input-form__form-group">
-                    <input type="text" class="input-form__form-group--form-control" name="lastName" id="lastName">
-                    <label class="input-form__form-group--form-label">Last Name</label>
-                    <p class="input-form__form-group--error-message"></p>
+                <div class="form__group">
+                    <input type="text" class="form__control" name="lastName" id="lastName">
+                    <label for="lastName" class="form__label" aria-label="LastName">Last Name</label>
+                    <p class="form__error"></p>
                 </div>
-                <div class="input-form__form-group">
-                    <input type="email" class="input-form__form-group--form-control" name="email" id="email">
-                    <label class="input-form__form-group--form-label">Email</label>
-                    <p class="input-form__form-group--error-message"></p>
+                <div class="form__group">
+                    <input type="email" class="form__control" name="email" id="email">
+                    <label for="email" class="form__label" aria-label="Email">Email</label>
+                    <p class="form__error"></p>
                 </div>
-                <div class="input-form__form-group">
-                    <input type="password" class="input-form__form-group--form-control" name="password" id="password">
-                    <label class="input-form__form-group--form-label">Password</label>
-                    <p class="input-form__form-group--error-message"></p>
+                <div class="form__group">
+                    <input type="password" class="form__control" name="password" id="password">
+                    <label for="password" class="form__label" aria-label="Password">Password</label>
+                    <p class="form__error"></p>
                 </div>
-                <div class="input-form__form-group">
-                    <input type="password" class="input-form__form-group--form-control" name="confirmPassword" id="confirmPassword">
-                    <label class="input-form__form-group--form-label">Confirm Password</label>
-                    <p class="input-form__form-group--error-message"></p>
+                <div class="form__group">
+                    <input type="password" class="form__control" name="confirmPassword" id="confirmPassword">
+                    <label for="confirmPassword" class="form__label" aria-label="Password">Confirm Password</label>
+                    <p class="form__error"></p>
                 </div>
-                <button type="submit" class="btn btn-block btn-primary" id="registration-btn" aria-label="Signup">Signup</button>
+                <button type="submit" class="btn btn-block btn-primary" aria-label="Signup">Signup</button>
             </form>
         </div>
     </div>

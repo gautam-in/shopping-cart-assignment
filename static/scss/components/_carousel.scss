@@ -1,16 +1,16 @@
 .carousel {
   overflow: hidden;
-  font-size: 0;
   position: relative;
-  .carousel__wrapper {
+  box-shadow: 0px 5px 4px 4px #ccc;
+  &__wrapper {
     white-space: nowrap;
     transition: 1s all ease;
-    font-size: 0;
   }
-  img {
+  &__img {
     display: inline-block;
     width: 1170px;
     height: 292.5px;
+    max-width: 100%;
     @include responsive-for-ipad {
       width: 768px;
     }
@@ -19,35 +19,35 @@
       height: 150px;
     }
   }
-  .carousel__wrapper--bullet-area {
+  &__bullet {
     position: absolute;
     bottom: 30px;
     left: 50%;
     transform: translateX(-50%);
     z-index: 2;
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      li {
+        display: inline-block;
+      }
+      button {
+        width: 10px;
+        height: 10px;
+        background-color: map-get($site_colors, bullet-bg-color);
+        display: inline-block;
+        border: 0 none;
+        border-radius: 10px;
+        padding: 0;
+        margin: 0 5px;
+      }
+    }
   }
-  .carousel__wrapper--bullet-area ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-  .carousel__wrapper--bullet-area ul li {
-    display: inline-block;
-  }
-  .carousel__wrapper--bullet-area ul li button {
-    width: 10px;
-    height: 10px;
-    background-color: map-get($site_colors, bullet-bg-color);
-    display: inline-block;
-    border: 0 none;
-    border-radius: 10px;
-    padding: 0;
-    margin: 0 5px;
-  }
-  .carousel__wrapper--bullet-area ul li.active button {
+  &__bullet-area ul li.active button {
     background-color: map-get($site_colors, bullet-bg-color-active);
   }
-  .carousel__wrapper--nav-area {
+  &__nav-area {
     position: absolute;
     top: 0;
     left: 0;
@@ -55,13 +55,13 @@
     width: 100%;
     top: 50%;
     margin-top: -15px;
+    cursor: pointer;
+    &::before,&::after{
+      content: "";
+      clear: both;
+    }
   }
-  .carousel__wrapper--nav-area::before,
-  .carousel__wrapper--nav-area::after {
-    content: "";
-    clear: both;
-  }
-  .carousel__wrapper--nav-area .arrow {
+  &__arrow {
     height: 30px;
     background-color: rgba(0, 0, 0, 0.5);
     color: map-get($site_colors, body-color-white);
@@ -69,17 +69,17 @@
     text-transform: uppercase;
     padding: 0 15px;
     text-align: center;
+    &.next {
+      float: right;
+    }
   }
-  .carousel__wrapper--nav-area .arrow.next {
-    float: right;
-  }
-  .carousel__img-responsive {
-    max-width: 100%;
-  }
-  .carousel__wrapper--go-slide li button {
-    cursor: pointer;
+  &__goto{ 
+    li button {
+      cursor: pointer;    
+    }
+    &__active {
+      background-color: teal;
+    }
   }
 }
-.arrow-active {
-  background-color: teal !important;
-}
+

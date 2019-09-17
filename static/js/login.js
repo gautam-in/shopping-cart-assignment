@@ -12,11 +12,11 @@ var login = (function(formSelector) {
      */
     var validateForm = (e) => {
         e.preventDefault();  
-        var formFields = document.querySelectorAll(FORM_INPUT_FIELD);
+        var formFields = document.querySelectorAll(CONSTANS.FORM_INPUT_FIELD);
         var errorMsg = '';
         var count = 1;
         formFields.forEach(function(item){
-            if(item.value === "" || item.value === null){
+            if(item.value === "" || item.value){
                 errorMsg = CONSTANS.EMPTY_ERROR_MSG;
                 count = 0;
             }else{
@@ -40,7 +40,7 @@ var login = (function(formSelector) {
             document.querySelectorAll(formSelector)[0].addEventListener(eventType, (e) => validateForm(e));
         }
     }
-})(CONSTANS.LOGIN_FORM);
+})(CONSTANS.FORM);
 
 // Calling validate private method
 login.validate('submit');

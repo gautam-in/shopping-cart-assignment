@@ -37,7 +37,7 @@ var registration = (function(formSelector) {
         var errorMsg = '';
         var count = 1;
         formInput.forEach(function(item){
-            if(item.value === "" || item.value === null){
+            if(item.value === "" || item.value){
                 errorMsg = CONSTANS.EMPTY_ERROR_MSG;
                 count = 0;
             }else{
@@ -47,7 +47,7 @@ var registration = (function(formSelector) {
                     count = 0;
                 }
                 if(item.id === 'confirmPassword' && (item.value).localeCompare(document.getElementById("password").value)){
-                    errorMsg = "Mismatch password!";
+                    errorMsg = CONSTANS.PASSWORD_MISSMATCH;
                     count = 0;
                 }
                 if(item.type === 'email' && !item.value.match(CONSTANS.EMAIL_VALIDATION)){
@@ -73,7 +73,7 @@ var registration = (function(formSelector) {
             validate('submit');
         }
     }
-})(CONSTANS.REGISTRATION_FORM);
+})(CONSTANS.FORM);
 
 // Calling inti method
 registration.init();
