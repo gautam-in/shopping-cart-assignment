@@ -8,12 +8,12 @@ footer {
         @include responsive-for-ipad {
             text-align: center;
             height: 40px;
-            font-size: 12px;
+            @include fontSize(12px);
         }
         @include responsive-for-sm-mobile {
             padding: 11px 0;
             height: 40px;
-            font-size: 12px;
+            @include fontSize(12px);
             text-align: center;
         } 
     }

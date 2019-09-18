@@ -20,7 +20,7 @@
         widows: 15px;
         height: 15px;
         float: right;
-        font-size: 10px;
+        @include fontSize(10px);
         margin-top: 4px;
         margin-right: 2px;
       }

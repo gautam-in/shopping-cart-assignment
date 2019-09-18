@@ -1,3 +1,4 @@
+// Color code
 $site_colors: (
     body-color-white: #ffffff,
     box-bg-color: #eeeeee,
@@ -7,5 +8,12 @@ $site_colors: (
     bullet-bg-color-active :#aaa
 
 );
-
+// Z-index
+$z-index: (
+    cart : 4,
+    carousel : 3,
+    home  : 2,
+    header : 1,
+);
+$body-width : 1170px;
 $font_style: Dosis, sans-serif;

@@ -34,7 +34,7 @@ var home = (function(carousel){
      * private method to bind slider next and previous elements
      */
     var getNavigation = () => {
-        return '<button class="prev carousel__arrow">prev</button><button class="next carousel__arrow">next</button>';
+        return `<button class="prev carousel__arrow">${i18[locale].prev}</button><button class="next carousel__arrow">${i18[locale].next}</button>`;
     }
     
     /**
@@ -60,17 +60,11 @@ var home = (function(carousel){
         slides.items = wrapper.children; //Elements of the slider
         slides.width = wrapper.children.item(0).width; //Get the width of 1st Item
        
-        // Append Bullets
-        var bulletArea = document.createElement("div");
-        carousel.appendChild(bulletArea);
-        bulletArea.classList.add("carousel__bullet");
-        bulletArea.innerHTML = getBullets(slides.count);
+        //Append Bullets
+        bulletArea();
 
-        // Append Navigations inside the slider area
-        var navArea = document.createElement("div");
-        navArea.className = "carousel__nav-area";
-        navArea.innerHTML = getNavigation();
-        carousel.appendChild(navArea);
+        //Append Navigations inside the slider area
+        navigations();
 
         // Bind nav functions
         var navs = carousel.querySelectorAll(".carousel__arrow");
@@ -98,6 +92,26 @@ var home = (function(carousel){
     }
     
     /**
+     * Append Bullets
+     */
+    var bulletArea = () =>{
+        var bulletArea = document.createElement("div");
+        carousel.appendChild(bulletArea);
+        bulletArea.classList.add("carousel__bullet");
+        bulletArea.innerHTML = getBullets(slides.count);
+    }
+
+    /**
+     * Append Navigations inside the slider area
+     */
+    var navigations = () =>{
+        var navArea = document.createElement("div");
+        navArea.className = "carousel__nav-area";
+        navArea.innerHTML = getNavigation();
+        carousel.appendChild(navArea);
+    }
+
+    /**
      * Create next method to navigate the slider into forword direction 
      */
     var next = () => {
@@ -111,7 +125,6 @@ var home = (function(carousel){
         timeout = setTimeout(function(){
             play(5000);
         });
-        
     }
     
     /**

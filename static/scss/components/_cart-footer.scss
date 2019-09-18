@@ -1,0 +1,46 @@
+.cart-button {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 15px;
+    background-color: map-get($site_colors, body-color-white);
+    @include responsive-for-sm-mobile {
+        padding: 15px;
+        right: 7px;
+    }
+    &__cheaper {
+        height: 80px;
+        background-color: map-get($site_colors, body-color-white);
+        margin: 15px;
+        border-radius: 5px;
+        padding: 15px;
+        @include responsive-for-ipad {
+            width: 96.2%;
+        }
+        @include responsive-for-sm-mobile {
+            margin: 8px;
+            padding: none;
+        }
+        &--title {
+            display: inline-block;
+            vertical-align: middle;
+            margin: 0;
+            @include fontSize(15px);
+            margin-left: 15px;
+            @include responsive-for-sm-mobile {
+                @include fontSize(11px);
+                margin-left: 0px;
+            }
+        }
+        &--img {
+            display: inline-block;
+            vertical-align: middle;
+            margin: 0;
+        }
+    }
+}
+.promo-code {
+    text-align: center;
+    @include fontSize(15px);
+    margin-bottom: 8px;
+}

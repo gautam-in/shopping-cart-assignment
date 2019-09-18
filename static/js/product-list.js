@@ -19,10 +19,10 @@ var productList = (function(){
                                 <p>${element.description}</p>
                                 <div class="product-list__products--button">
                                 <div class="price">MRP Rs.${element.price}</div>
-                                <button id="buy-now" aria-label="Byu Now" class="btn btn-primary product-list__products--item" value=${element.id}>Buy Now</button>
+                                <button id="buy-now" aria-label="Byu Now" class="btn btn-primary product-list__products--item" value=${element.id}>${i18[locale].buy}</button>
                             </div>
                             <div class="product-list__products--mob-button">
-                                <button id="buy-now" aria-label="Byu Now" class="btn btn-primary product-list__products--item" value=${element.id}>Buy Now @ MRP Rs.${element.price}</button>
+                                <button id="buy-now" aria-label="Byu Now" class="btn btn-primary product-list__products--item" value=${element.id}>${i18[locale].buy} @ MRP Rs.${element.price}</button>
                             </div>
                             </div>`;     
                         });
@@ -37,8 +37,8 @@ var productList = (function(){
         apiService.addToCart({url: END_POINTS.ADDTOCART, id: (e.target.value)})
         .then(res => {
             if(res.status === 200){
-                let quantity = parseInt(document.getElementById("cart-item-quantity").textContent)+1
-                document.getElementById("cart-item-quantity").textContent = quantity;
+                let quantity = parseInt(document.getElementById(CONSTANS.CART_ITEM_QUANTITY).textContent)+1
+                document.getElementById(CONSTANS.CART_ITEM_QUANTITY).textContent = quantity;
                 let filtered = products.filter(item => {
                     return item.id == e.target.value;
                 })[0];
@@ -51,7 +51,7 @@ var productList = (function(){
      * private methid to Register action Lister in Buy now button
      */
     var registerListenerForBuyNowButton = () =>{
-        var addToCartButton = document.querySelectorAll(".product-list__products--add-product-item"); 
+        var addToCartButton = document.querySelectorAll(CONSTANS.PRODUCT_BTN); 
         addToCartButton.forEach(function(addToCartButton){
             addToCartButton.addEventListener("click", e => addToCart(e));
         });

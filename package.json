@@ -12,20 +12,16 @@
     "author": "",
     "license": "MIT",
     "dependencies": {
-        "canned": "^0.3.12",
-        "ejs": "^2.6.2",
+        "canned": "^0.3.13",
+        "ejs": "^2.7.1",
         "express": "^4.17.1"
     },
     "devDependencies": {
-        "eslint": "^6.4.0",
         "gulp": "^4.0.2",
         "gulp-autoprefixer": "^7.0.0",
         "gulp-clean-css": "^4.2.0",
         "gulp-sass": "^4.0.2",
-        "husky": "^3.0.5",
-        "lint-staged": "^9.2.5",
         "node-sass": "^4.12.0",
-        "nodemon": "^1.19.1",
-        "prettier": "^1.18.2"
+        "nodemon": "^1.19.2"
     }
 }

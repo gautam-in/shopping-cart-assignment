@@ -23,3 +23,13 @@
         @content;
     }
 }
+/* 
+  ##Convert px to rem
+*/
+@function calculateRem($size) {
+    $remSize: $size / 16px;
+    @return #{$remSize}rem;
+}
+@mixin fontSize($size) {
+    font-size: calculateRem($size);
+}

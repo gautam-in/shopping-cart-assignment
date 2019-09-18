@@ -6,7 +6,7 @@ body {
    background-color: map-get($site_colors, body-color-white);
    margin: 0;
    font-family: $font_style;
-   font-size: 15px;
+   @include fontSize(15px);
    color: map-get($site_colors, text-color);
 }
 .clearfix::before, .clearfix::after {
@@ -15,7 +15,7 @@ body {
     display: block;
 }
 .container {
-    width: 1170px;
+    width: $body-width;
     margin: 0 auto;
     @include responsive-for-ipad {
         max-width: 1024px;

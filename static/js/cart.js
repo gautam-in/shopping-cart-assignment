@@ -98,38 +98,38 @@ var cart = (function() {
       if (localStorage.getItem("cart") !== "undefined" &&
         localStorage.getItem("cart") !== null && 
         JSON.parse(localStorage.getItem("cart")).length > 0 ) {
-        content += `<section class="add-to-cart" id="add-to-cart">`;
+        content += `<section>`;
         JSON.parse(localStorage.getItem("cart")).forEach(element => {
-          content += `<div class="cart-items clearfix">
-                      <div class="img"><img src=${element.data.imageURL} alt="cart"></div>
+          content += `<div class="items__cart clearfix">
+                      <img class="items__cart--img" src=${element.data.imageURL} alt="cart">
                       <div class="cart-action">
-                        <h3 class="name">${element.data.name}</h3>
-                        <div class="qty-addr">
+                        <h3 class="cart-action__name">${element.data.name}</h3>
+                        <div class="cart-action__qty">
                           <button 
                             id = ${element.data.id} 
                             type="button" 
-                            class="btn-primary btn-update minus" 
+                            class="btn-primary cart-action__update minus" 
                             onclick="cart.cartQuantityIncOrDec(this, 'dec')">-
                           </button>
-                          <span class="qty">${element.count}</span>
+                          <span class="cart-action__quantity">${element.count}</span>
                           <button 
                             id = ${element.data.id} 
                             type="button" 
-                            class="btn-primary btn-update plus" 
+                            class="btn-primary cart-action__update plus" 
                             onclick="cart.cartQuantityIncOrDec(this, 'inc')">+
                           </button>
                         </div>
-                        <div class="amount">
-                          <span class="operator">&times;</span>Rs.<span class="per-quantity-amt">${element.data.price}
+                        <div class="cart-action__amount">
+                          <span class="cart-action__operator">&times;</span>Rs.<span class="per-quantity-amt">${element.data.price}
                           </span></span>
                         </div>
                       </div>
-                      <div class="total">Rs.<span class="total-amt">${element.data.price * element.count}</span></div>
+                      <div class="cart-action__total">Rs.<span class="total-amt">${element.data.price * element.count}</span></div>
                     </div>`;
         });
-        content += `<div class="cheaper clearfix">
-                      <img src="static/images/lowest-price.png" alt="cheaper">
-                      <h5 class="title">You won't find it cheaper anywhere</h5>
+        content += `<div class="cart-button__cheaper clearfix">
+                      <img class="cart-button__cheaper--img" src="static/images/lowest-price.png" alt="cheaper">
+                      <h5 class="cart-button__cheaper--title">You won't find it cheaper anywhere</h5>
                     </div>
                     </section>`;
         buttonBlock =`<div class='promo-code'>Promo code can be applied on payment page</div>
@@ -145,8 +145,8 @@ var cart = (function() {
         buttonBlock = `<button class="btn btn-primary btn-block shopping-btn" id="start-shopping">
                     Start shopping</button>`;
       }
-      document.getElementsByClassName("shopping-cart-items")[0].innerHTML = content;
-      document.getElementsByClassName("shopping-cart-button")[0].innerHTML = buttonBlock;
+      document.getElementsByClassName("items")[0].innerHTML = content;
+      document.getElementsByClassName("cart-button")[0].innerHTML = buttonBlock;
     }
   };
 })();

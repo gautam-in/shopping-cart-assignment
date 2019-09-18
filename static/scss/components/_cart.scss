@@ -1,10 +1,10 @@
-.shopping-cart {
+.cart {
     display: none;
     position: fixed;
     bottom: 0;
     width: 500px;
     border: 1px #ccc solid;
-    z-index: 9999;
+    z-index: map-get($z-index, cart);
     background-color: map-get($site_colors, box-bg-color);
     height: calc(100vh - 89px);
     @include responsive-for-ipad {
@@ -19,180 +19,26 @@
       width: 376px;
       height: 100%;
     }
-  }
-  .shopping-cart-header {
-    background-color: map-get($site_colors, text-color);
-    height: 50px;
-  }
-  .cart-title {
-    float: left;
-    color: rgb(234, 239, 241);
-    h2 {
-      margin: 0;
-      padding: 10px 5px;
-    }
-  }
-  .promo-code {
-    text-align: center;
-    font-size: 15px;
-    margin-bottom: 8px;
-  }
-  .close-icon {
-    float: right;
-    padding: 15px 15px;
-    cursor: pointer;
-    img {
-      height: 15px;
-      width: 15px;
-      margin-right: 6px;
-    }
-  }
-  .shopping-cart-items {
-    height: calc(100% - 129px);
-    position: absolute;
-    background: #eaeaea;
-    width: 100%;
-    top: 51px;
-    overflow-x: hidden;
-    overflow-y: auto;
-    .no-items {
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -50%);
-      @include responsive-for-sm-mobile {
-        width: 62%;
-      }
-      h2 {
-        @include responsive-for-sm-mobile {
-          text-align: center;
+    &__header {
+      background-color: map-get($site_colors, text-color);
+      height: 50px;
+      &--title {
+        float: left;
+        color: rgb(234, 239, 241);
+        h2 {
+          margin: 0;
+          padding: 10px 5px;
         }
       }
-    }
-  }
-  .shopping-cart-button {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    padding: 15px;
-    background-color: map-get($site_colors, body-color-white);
-    @include responsive-for-sm-mobile {
-      padding: 15px;
-      right: 7px;
-    }
-  }
-  .cart-items {
-    background-color: map-get($site_colors, body-color-white);
-    margin-bottom: 15px;
-    .img {
-      margin-right: 15px;
-      float: left;
-      @include responsive-for-sm-mobile {
-        margin-right: 0;
-      }
-    }
-    img {
-      width: 100px;
-      height: 100px;
-      float: left;
-      @include responsive-for-sm-mobile {
-        width: 70px;
-        height: 70px;
-      }
-    }
-    .qty-addr .btn-update {
-      width: 30px;
-      height: 30px;
-      border: 0;
-      border-radius: 30px;
-      font-size: 24px;
-      @include responsive-for-sm-mobile {
-        width: 25px;
-        height: 25px;
-        border-radius: 25px;
-        font-size: 19px;
-        margin-top: 12px;
-      }
-    }
-    .cart-action {
-      padding: 15px;
-      float: left;
-      width: 270px;
-      @include responsive-for-sm-mobile {
-        width: 48%;
-        h3 {
-          font-size: 12px;
+      &--close{
+        float: right;
+        padding: 15px 15px;
+        cursor: pointer;
+        img {
+          height: 15px;
+          width: 15px;
+          margin-right: 6px;
         }
       }
-    }
-    .total {
-      float: right;
-      width: 96px;
-      text-align: center;
-      padding: 27px 0;
-      margin-top: 31px;   
-      @include responsive-for-sm-mobile {
-        width: 25%;
-        padding: none;
-        padding: 19px 0;
-      }
-    }
-    .name {
-      margin: 0 0 15px 0;
-      @include responsive-for-sm-mobile {
-        margin: 0 0 7px 0;
-      }
-    }
-    .qty-addr .qty {
-      margin: 0 5px;
-    }
-    .qty-addr,
-    .amount {
-      display: inline-block;
-      vertical-align: top;
-    }
-    .amount {
-      padding: 2px 0;
-      margin-left: 20px;
-      font-size: 20px;
-      @include responsive-for-sm-mobile {
-        padding: 15px 0px 15px 0px;
-        margin-left: 10px;
-        font-size: 15px;
-      }
-    }
-    .amount .operator {
-      line-height: 0;
-      margin-right: 20px;
-    }
-  }
-  .cheaper {
-    height: 80px;
-    background-color: map-get($site_colors, body-color-white);
-    margin: 15px;
-    border-radius: 5px;
-    padding: 15px;
-    @include responsive-for-ipad {
-      width: 96.2%;
-    }
-    @include responsive-for-sm-mobile {
-      margin: 8px;
-      padding: none;
-    }
-    .title {
-      display: inline-block;
-      vertical-align: middle;
-      margin: 0;
-      font-size: 15px;
-      margin-left: 15px;
-      @include responsive-for-sm-mobile {
-        font-size: 11px;
-        margin-left: 0px;
-      }
-    }
-    img {
-      display: inline-block;
-      vertical-align: middle;
-      margin: 0;
-    }
+    } 
   }

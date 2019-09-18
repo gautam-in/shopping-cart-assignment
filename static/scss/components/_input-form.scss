@@ -29,11 +29,11 @@
    }
    &__control:focus + &__label,&__control.has-text + &__label {
     top: 5px;
-    font-size: 12px;
+    @include fontSize(12px);
     color: #2fb9c6;
   }
   &__error{
     color: red;
-    font-size: 12px;
+    @include fontSize(12px);
   }  
 }
