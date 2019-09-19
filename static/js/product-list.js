@@ -15,7 +15,7 @@ var productList = (function(){
         response.forEach(element => {
             contentBlock += `<div class="product-list__products">
                                 <h3>${element.name}</h3>
-                                <img src="${element.imageURL}" alt="${element.name}">
+                                <img class="product-list__products--img" src="${element.imageURL}" alt="${element.name}">
                                 <p>${element.description}</p>
                                 <div class="product-list__products--button">
                                 <div class="price">MRP Rs.${element.price}</div>

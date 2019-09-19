@@ -10,17 +10,17 @@
     position: relative;
   }
   &__action {
-    background-color: #d10157;
+    background-color : map-get($site_colors, btn-bg-color);
     padding: 12px 15px;
     color: map-get($site_colors, body-color-white);
     display: none;
     @include responsive-for-sm-mobile {
       display: block;
       img {
+        @include fontSize(10px);
         widows: 15px;
         height: 15px;
         float: right;
-        @include fontSize(10px);
         margin-top: 4px;
         margin-right: 2px;
       }
@@ -31,7 +31,7 @@
       position: absolute;
       top: 100%;
       width: 100%;
-      background-color: #eee;
+      background-color: map-get($site_colors, box-bg-color);
       display: none;
     }
     &--menu {
@@ -39,7 +39,7 @@
       cursor: pointer;
       &:hover {
         background-color: #666;
-        color: white;
+        color: map-get($site_colors, body-color-white);
       }
       p {
         line-height: 25px;
@@ -49,7 +49,7 @@
       } 
       &.active {
         background-color: #333;
-        color: white;
+        color: map-get($site_colors, body-color-white);
       }    
     }
   }

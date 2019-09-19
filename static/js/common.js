@@ -4,19 +4,6 @@
  */
 
 const common = (function() {
-  //JS for Responsive Product category
-  // if (window.innerWidth < 768) {
-  //   var categoryMenuItems = document.querySelectorAll(
-  //     ".category-items .menu-items"
-  //   );
-  //   categoryMenuItems.forEach(function(item) {
-  //     item.onclick = function(e) {
-  //       document.querySelector(".sidebar__action--mobile").textContent =
-  //         e.target.textContent;
-  //       document.querySelector(CONSTANS.CATEGORY_ITEMS).classList.remove("hide");
-  //     };
-  //   });
-  // }
 
   /**
      * Bind the listener to hiding shopping cart

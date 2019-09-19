@@ -27,45 +27,45 @@
             float: left;
             border-bottom: 5px dashed map-get($site_colors, box-bg-color);
         }
-        img {
+        &--img {
             width: 100%;
             height: 170px;
-        @include responsive-for-ipad {
-            height: 109px;
-            width: 40%;
-            float: left;
-            margin-right: 6px;
-        }
-        @include responsive-for-sm-mobile {
-            height: 75%;
-            width: 43%;
-            float: left;
-            padding-right: 7px;
-        }
+            @include responsive-for-ipad {
+                height: 109px;
+                width: 40%;
+                float: left;
+                margin-right: 6px;
+            }
+            @include responsive-for-sm-mobile {
+                height: 75%;
+                width: 43%;
+                float: left;
+                padding-right: 7px;
+            }
         }
         p {
             background-color: map-get($site_colors, box-bg-color);
             padding: 2px 5px;
             height: 120px;
             overflow: hidden;
-        @include responsive-for-ipad {
-            @include fontSize(13px);
-            margin-top: 0;
-            text-align: justify;
-            padding-left: 2px;
-        }
-        @include responsive-for-sm-mobile {
-            margin-top: 0;
-            @include fontSize(13px);
-            text-align: justify;
-            margin-right: 7px;
-        }
+            @include responsive-for-ipad {
+                @include fontSize(13px);
+                margin-top: 0;
+                text-align: justify;
+                padding-left: 2px;
+            }
+            @include responsive-for-sm-mobile {
+                margin-top: 0;
+                @include fontSize(13px);
+                text-align: justify;
+                margin-right: 7px;
+            }
         }
         h3 {
             height: 55px;
             @include responsive-for-sm-mobile {
-                height: 18px;
                 @include fontSize(12px);
+                height: 18px;
             }
         }
     }
@@ -88,22 +88,23 @@
     &__products--mob-button {
         display: none;
         @include responsive-for-ipad {
-        display: block;
-        margin: 0;
+            display: block;
+            margin: 0;
         }
         @include responsive-for-sm-mobile {
-        display: block;
-        margin: 0;
-        float: right;
-        width: 57%;
+            display: block;
+            margin: 0;
+            float: right;
+            width: 57%;
         }
     }
     &__products--item {
         @include responsive-for-ipad {
-        width: 100%;
+            width: 100%;
         }
     }
 }
+// General Class
 .product-list-block {
     background-color: map-get($site_colors, box-bg-color);
     @include responsive-for-sm-mobile {

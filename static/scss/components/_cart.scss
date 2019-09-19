@@ -3,7 +3,7 @@
     position: fixed;
     bottom: 0;
     width: 500px;
-    border: 1px #ccc solid;
+    border: 1px map-get($site_colors, bullet-bg-color) solid;
     z-index: map-get($z-index, cart);
     background-color: map-get($site_colors, box-bg-color);
     height: calc(100vh - 89px);
@@ -40,5 +40,11 @@
           margin-right: 6px;
         }
       }
-    } 
+    }
+    &.show{
+      display: block;
+    }
+    &.hide {
+      display: none
+    }
   }

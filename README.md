@@ -20,4 +20,20 @@ yarn dev
 1) EJS : For Templating.
 2) ExpressJs : For accessing mock API.
 3) Gulp: Use for compile scss to css, add autoprefixer, minifyCss
+4) i18 : I have created i18 file for multilingual
+```
+
+## Functionality 
+
+```
+1) Application is responsive (Use media query).
+2) Carousel is fully working (I have created custome carousel).
+3) Shopping cart is working good (I have use pub/sub for shopping cart).
+```
+
+## Non Functional
+
+```
+1) I have attached preformance/ accessibility/SEO report page wise.
+
 ```

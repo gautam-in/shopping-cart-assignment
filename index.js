@@ -1,5 +1,4 @@
 const express = require('express');
-const path = require("path");
 const app = express();
 const portNumber = 3000;
 
@@ -10,6 +9,12 @@ app.set('view engine', 'ejs');
 /**
  * Router for Home Page
  */
+app.post("/", (req, res, next) => {
+    const data = {
+        scripts: ['/static/js/home.js']
+    };
+    res.render("pages/home", data);
+});
 app.get("/", (req, res, next) => {
     const data = {
         scripts: ['/static/js/home.js']

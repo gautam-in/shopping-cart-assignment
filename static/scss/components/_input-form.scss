@@ -4,7 +4,7 @@
    }
    &__control{
     height: 47px;
-    border: 1px #ccc solid;
+    border: 1px map-get($site_colors, bullet-bg-color) solid;
     background: none;
     width: 100%;
     padding: 15px;
@@ -16,7 +16,7 @@
    &__control{
     padding: 23px 15px 10px 0px;
     border: 0 none;
-    border-bottom: 1px #ccc solid;
+    border-bottom: 1px map-get($site_colors, bullet-bg-color) solid;
    }
    &__label{
     position: absolute;
@@ -33,7 +33,7 @@
     color: #2fb9c6;
   }
   &__error{
-    color: red;
+    color: map-get($site_colors, btn-bg-color);
     @include fontSize(12px);
   }  
 }

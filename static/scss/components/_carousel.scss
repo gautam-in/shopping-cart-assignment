@@ -1,7 +1,7 @@
 .carousel {
   overflow: hidden;
   position: relative;
-  box-shadow: 0px 5px 4px 4px #ccc;
+  box-shadow: 0px 5px 4px 4px map-get($site_colors, bullet-bg-color);
   &__wrapper {
     white-space: nowrap;
     transition: 1s all ease;

@@ -19,6 +19,7 @@
   }
 }
 
+// General Classes
 .btn.goto-checkout .title {
   float: left;
 }
@@ -29,6 +30,6 @@
   width: 100%;
 }
 .btn-primary {
-  background-color: #d10157;
+  background-color: map-get($site_colors, btn-bg-color);
   color: map-get($site_colors, body-color-white);
 }

@@ -37,7 +37,7 @@ var registration = (function(formSelector) {
         var errorMsg = '';
         var count = 1;
         formInput.forEach(function(item){
-            if(item.value === "" || item.value){
+            if(item.value === "" || !item.value){
                 errorMsg = CONSTANS.EMPTY_ERROR_MSG;
                 count = 0;
             }else{

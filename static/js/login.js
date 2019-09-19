@@ -3,9 +3,6 @@
 */
 var login = (function(formSelector) {
 
-    //create private variable
-    var formSelector = formSelector;
-   
     /**
      * Create private method to validate the input filed
      * @param  {Object} e Refrenece of html elements
@@ -16,7 +13,7 @@ var login = (function(formSelector) {
         var errorMsg = '';
         var count = 1;
         formFields.forEach(function(item){
-            if(item.value === "" || item.value){
+            if(item.value === "" || !item.value){
                 errorMsg = CONSTANS.EMPTY_ERROR_MSG;
                 count = 0;
             }else{

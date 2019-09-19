@@ -39,8 +39,12 @@
         }
     }
 }
+// General Class
 .promo-code {
     text-align: center;
     @include fontSize(15px);
     margin-bottom: 8px;
+}
+.cart-icon{
+    width: 20px;
 }

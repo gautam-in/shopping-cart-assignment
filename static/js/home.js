@@ -213,9 +213,9 @@ var home = (function(carousel){
                 res.forEach(element => {
                     if(element.enabled){
                         if(count % 2 === 0){
-                            contentBlock += `<div class="product"><div class="clearfix"><div class="product__img-left"><img src=${element.imageUrl} alt=${element.key} class="product__img-right--img"></div><div class="product__content-right"><h2>${element.name}</h2><p>${element.description}</p><a href='/product-list' aria-hidden="true"><button id=${element.id} class="btn btn-primary product__btn" type="button" name=${element.name}></a>Explore ${element.key}</button></div></div></div>`;
+                            contentBlock += `<div class="product"><div class="clearfix"><img src=${element.imageUrl} alt=${element.key} class="product__img-left"><div class="product__content-right"><h2>${element.name}</h2><p>${element.description}</p><a href='/product-list' aria-hidden="true"><button id=${element.id} class="btn btn-primary product__btn" type="button" name=${element.name}></a>Explore ${element.key}</button></div></div></div>`;
                         }else{
-                            contentBlock += `<div class="product"><div class="clearfix"><div class="product__content-left"><h2>${element.name}</h2><p>${element.description}</p><a href='/product-list' aria-hidden="true"><button class="btn btn-primary product__btn" id=${element.id} name=${element.name}>Explore ${element.key}</button></a></div><div class="product__img-right"><img src=${element.imageUrl} alt=${element.key} class="product__img-left--img"></div></div></div>`;
+                            contentBlock += `<div class="product"><div class="clearfix"><div class="product__content-left"><h2>${element.name}</h2><p>${element.description}</p><a href='/product-list' aria-hidden="true"><button class="btn btn-primary product__btn" id=${element.id} name=${element.name}>Explore ${element.key}</button></a></div><img class="product__img-right" src=${element.imageUrl} alt=${element.key} ></div></div>`;
                         }
                         count++;
                     }
