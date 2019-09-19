@@ -18,6 +18,6 @@ yarn dev
 
 ```
 1) EJS : For Templating.
-2) ExpressJs : For API accessing.
-3) Gulp: Use for compile scss to css
+2) ExpressJs : For accessing mock API.
+3) Gulp: Use for compile scss to css, add autoprefixer, minifyCss
 ```
