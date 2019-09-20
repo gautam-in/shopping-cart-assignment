@@ -1,65 +1,51 @@
-header {
-  box-shadow: 0 0 5px #ccc;
+.header {
+  box-shadow: 0 0 5px map-get($site_colors, bullet-bg-color);
   position: relative;
   z-index: map-get($z-index, header);
-}
-.site-logo {
-  height: 88px;
-  float: left;
-  padding: 10px 0;
-  @include responsive-for-sm-mobile {
-    height: 50px;
-  }
-}
-.site-logo img {
-  height: 100%;
-}
-nav {
-  @include responsive-for-sm-mobile {
-    display: none;
-  }
-  float: left;
-  ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-  li {
+  &__logo {
+    height: 88px;
     float: left;
-    margin: 55px 0px 15px 30px;
+    padding: 10px 0;
+    @include responsive-for-sm-mobile {
+      height: 50px;
+    }
+    &--img {
+      height: 100%;
+    }
   }
-}
-.nav-align {
-  float: right;
-  width: 150px;
-  ul {
-    list-style: none;
-    margin: 10px 0;
-    padding: 0;
+  &__left-navbar {
+    float: left;
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    li {
+      float: left;
+      margin: 55px 0px 15px 30px;
+    }
     @include responsive-for-sm-mobile {
       display: none;
     }
   }
-  ul li {
+  &__right-navbar {
     float: right;
-    margin: 0 0 0 15px;
+    width: 150px;
+    ul {
+      list-style: none;
+      margin: 10px 0;
+      padding: 0;
+      @include responsive-for-sm-mobile {
+        display: none;
+      }
+    }
+    ul li {
+      float: right;
+      margin: 0 0 0 15px;
+    }
   }
-}
-.mini-cart {
-  background-color: map-get($site_colors, box-bg-color);
-  cursor: pointer;
-  position: relative;
-  img {
-    display: inline-block;
-    vertical-align: middle;
-    margin-right: 10px;
+  a {
+    text-decoration: none;
+    color: map-get($site_colors, text-color);
   }
-}
-.mini-cart-info {
-  padding: 15px 15px;
-  text-align: center;
-}
-a {
-  text-decoration: none;
-  color: map-get($site_colors, text-color);
 }

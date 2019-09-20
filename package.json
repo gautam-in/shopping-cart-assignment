@@ -6,8 +6,7 @@
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
         "start": "canned -p 5000 ./server",
-        "dev": "nodemon index --open",
-        "scss-to-css": "node-sass static/scss/main.scss static/css/style.css"
+        "dev": "nodemon index --open"
     },
     "author": "",
     "license": "MIT",

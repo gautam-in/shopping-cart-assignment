@@ -2,12 +2,12 @@
   .items {
     height: calc(100% - 129px);
     position: absolute;
-    background: #eaeaea;
+    background: map-get($site_colors, box-bg-color);
     width: 100%;
     top: 51px;
     overflow-x: hidden;
     overflow-y: auto;
-    .no-items {
+    &__no-items {
       position: absolute;
       left: 50%;
       top: 50%;

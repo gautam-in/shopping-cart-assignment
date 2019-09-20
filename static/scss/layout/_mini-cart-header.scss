@@ -1,0 +1,17 @@
+
+
+.mini-cart {
+  background-color: map-get($site_colors, box-bg-color);
+  cursor: pointer;
+  position: relative;
+  &__info {
+    padding: 15px 15px;
+    text-align: center;
+    img {
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: 10px;
+    }
+  }
+}
+

@@ -25,12 +25,12 @@
     transition: 0.2s all ease;
    }
    &__control:focus, &__control.has-text{
-    border-color: #2fb9c6;
+    border-color: map-get($site_colors, input-label-color);
    }
    &__control:focus + &__label,&__control.has-text + &__label {
     top: 5px;
     @include fontSize(12px);
-    color: #2fb9c6;
+    color: map-get($site_colors, input-label-color);
   }
   &__error{
     color: map-get($site_colors, btn-bg-color);

@@ -138,7 +138,7 @@ var cart = (function() {
                       <span class="price">Rs. <span id='totalPrice'>0</span> &rarr;</span>
                       </button>`;
       } else {
-        content = `<div class="no-items" id="no-items">
+        content = `<div class="items__no-items">
                     <h2>No items in your cart</h2>
                     <p>Your favourite items are just a click away</p>
                     </div> `;

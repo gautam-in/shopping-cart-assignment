@@ -16,9 +16,9 @@
     display: none;
     @include responsive-for-sm-mobile {
       display: block;
-      img {
+      &--img {
         @include fontSize(10px);
-        widows: 15px;
+        width: 15px;
         height: 15px;
         float: right;
         margin-top: 4px;
@@ -35,10 +35,10 @@
       display: none;
     }
     &--menu {
-      border-bottom: 2px solid #d3d3d3;
+      border-bottom: 2px solid map-get($site_colors, bullet-bg-color);
       cursor: pointer;
       &:hover {
-        background-color: #666;
+        background-color: map-get($site_colors, bullet-bg-color-active);
         color: map-get($site_colors, body-color-white);
       }
       p {
@@ -48,7 +48,7 @@
         padding: 15px 15px 15px 30px;
       } 
       &.active {
-        background-color: #333;
+        background-color: map-get($site_colors, btn-bg-color);
         color: map-get($site_colors, body-color-white);
       }    
     }

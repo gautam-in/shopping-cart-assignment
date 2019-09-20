@@ -18,7 +18,7 @@ yarn dev
 
 ```
 1) EJS : For Templating.
-2) ExpressJs : For accessing mock API.
+2) ExpressJs : For routing.
 3) Gulp: Use for compile scss to css, add autoprefixer, minifyCss
 4) i18 : I have created i18 file for multilingual
 ```
@@ -34,6 +34,6 @@ yarn dev
 ## Non Functional
 
 ```
-1) I have attached preformance/ accessibility/SEO report page wise.
+1) I have attached preformance/accessibility/SEO report page wise.
 
 ```
