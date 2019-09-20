@@ -28,11 +28,11 @@ yarn dev
 1) Application is responsive (Use media query).
 2) Carousel is fully working (I have created custome carousel).
 3) Shopping cart is working good (I have used pub/sub for shopping cart).
+4) Validation : I have used custom validation to validate our form.
 ```
 
 ## Non Functional
 
 ```
 1) I have attached preformance/accessibility/SEO report page wise.
-
 ```

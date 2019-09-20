@@ -133,7 +133,7 @@ var cart = (function() {
                     </div>
                     </section>`;
         buttonBlock =`<div class='promo-code'>Promo code can be applied on payment page</div>
-                      <button class="btn btn-primary btn-block shopping-btn goto-checkout clearfix" id="start-shopping">
+                      <button class="btn btn-primary btn-block shopping-btn goto-checkout clearfix">
                       <span class="title">Proceed to Checkout</span>
                       <span class="price">Rs. <span id='totalPrice'>0</span> &rarr;</span>
                       </button>`;
@@ -142,7 +142,7 @@ var cart = (function() {
                     <h2>No items in your cart</h2>
                     <p>Your favourite items are just a click away</p>
                     </div> `;
-        buttonBlock = `<button class="btn btn-primary btn-block shopping-btn" id="start-shopping">
+        buttonBlock = `<button class="btn btn-primary btn-block shopping-btn">
                     Start shopping</button>`;
       }
       document.getElementsByClassName("items")[0].innerHTML = content;
