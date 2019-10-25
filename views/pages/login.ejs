@@ -1,0 +1,37 @@
+<% include ../common/header %>
+<!-- start login container -->
+<div class="container clearfix">
+    <div class="login clearfix" id="login-area">
+        <div class="login__info">
+            <h1>Login</h1>
+            <p>Get access to your orders. Whishlist and Recommendations</p>
+        </div>
+        <section class="login__form">
+            <form  action="/" class="form" method="POST" novalidate>
+                <div class="form__group">
+                    <input 
+                        type="email" 
+                        class="form__control" 
+                        id="email" required 
+                        onfocusout="common.validationForLabel('email')"
+                    >
+                    <label for="email" class="form__label" aria-label="Email">Email</label>
+                    <p class="form__error"></p>
+                </div>
+                <div class="form__group">
+                    <input 
+                        type="password" 
+                        class="form__control" 
+                        id="password" required 
+                        onfocusout="common.validationForLabel('password')"
+                    >
+                    <label for="password" class="form__label" aria-label="Password">Password</label>
+                    <p class="form__error"></p>
+                </div>
+                <button type="submit" class="btn btn-block btn-primary" aria-label="Login">Login</button>
+            </form>
+        </section>
+    </div>
+</div>
+<!-- end login container -->
+<% include ../common/footer %>

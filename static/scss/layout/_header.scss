@@ -1,0 +1,51 @@
+.header {
+  box-shadow: 0 0 5px map-get($site_colors, bullet-bg-color);
+  position: relative;
+  z-index: map-get($z-index, header);
+  &__logo {
+    height: 88px;
+    float: left;
+    padding: 10px 0;
+    @include responsive-for-sm-mobile {
+      height: 50px;
+    }
+    &--img {
+      height: 100%;
+    }
+  }
+  &__left-navbar {
+    float: left;
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    li {
+      float: left;
+      margin: 55px 0px 15px 30px;
+    }
+    @include responsive-for-sm-mobile {
+      display: none;
+    }
+  }
+  &__right-navbar {
+    float: right;
+    width: 150px;
+    ul {
+      list-style: none;
+      margin: 10px 0;
+      padding: 0;
+      @include responsive-for-sm-mobile {
+        display: none;
+      }
+    }
+    ul li {
+      float: right;
+      margin: 0 0 0 15px;
+    }
+  }
+  a {
+    text-decoration: none;
+    color: map-get($site_colors, text-color);
+  }
+}

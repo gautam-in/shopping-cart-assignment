@@ -1,0 +1,22 @@
+.login {
+    max-width: 860px;
+    margin: 30px auto;
+    &__info {
+        padding-right: 30px;
+        @include responsive-for-ipad {
+            margin-left: 24px;
+        }
+        @include responsive-for-sm-mobile {
+        padding-left: 11px;
+        }
+    }
+    &__info,&__form {
+    float: left;
+    width: 48%;
+    margin-left: 1%;
+    @include responsive-for-ipad {
+      width: 43%;
+      margin-left: 1%;
+    }
+  }
+}

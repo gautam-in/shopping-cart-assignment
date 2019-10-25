@@ -1,0 +1,39 @@
+.form{
+   &__group{
+    margin-bottom: 15px;
+   }
+   &__control{
+    height: 47px;
+    border: 1px map-get($site_colors, bullet-bg-color) solid;
+    background: none;
+    width: 100%;
+    padding: 15px;
+    outline: 0 none; 
+   }
+   &__group{
+    position: relative;
+   }
+   &__control{
+    padding: 23px 15px 10px 0px;
+    border: 0 none;
+    border-bottom: 1px map-get($site_colors, bullet-bg-color) solid;
+   }
+   &__label{
+    position: absolute;
+    left: 0;
+    top: 12px;
+    transition: 0.2s all ease;
+   }
+   &__control:focus, &__control.has-text{
+    border-color: map-get($site_colors, input-label-color);
+   }
+   &__control:focus + &__label,&__control.has-text + &__label {
+    top: 5px;
+    @include fontSize(12px);
+    color: map-get($site_colors, input-label-color);
+  }
+  &__error{
+    color: map-get($site_colors, btn-bg-color);
+    @include fontSize(12px);
+  }  
+}

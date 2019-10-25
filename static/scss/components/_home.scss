@@ -1,0 +1,89 @@
+  .product {
+    position: relative;
+    padding-bottom: 24px;
+    margin-top: 1%;
+    &__img-right {
+      float: left;
+      width: 40%;
+      height: 258px;
+      margin-left: 1%;
+      @include responsive-for-sm-mobile {
+        width: 47%;
+        height: 195px;
+        padding: 6% 3%;
+      }
+    }
+    &__content-left {
+      float: right;
+      text-align: center;
+      margin: 50px auto;
+      @include responsive-for-ipad {
+        margin: 0;
+        margin-right: 23px;
+        margin-top: 50px;
+        width: 49%;
+      }
+      @include responsive-for-ms-mobile {
+        width: 49%;
+        margin-right: 1px;
+      }
+      @include responsive-for-sm-mobile {
+        width: 49%;
+        margin: 0;
+        margin-right: 1px;
+      }
+    }
+    &__content-right {
+      float: left;
+      text-align: center;
+      margin: 50px auto;
+      @include responsive-for-ipad {
+        width: 49%;
+        margin-left: 1%;
+      }
+      @include responsive-for-ms-mobile {
+        width: 49%;
+        margin-left: 1%;
+      }
+      @include responsive-for-sm-mobile {
+        width: 49%;
+        margin: 0;
+        padding: 0 5px;
+      }
+    }
+    &__btn {
+      @include responsive-for-ipad {
+        height: 50px;
+        padding: 0;
+        line-height: 50px;
+        border-radius: 0;
+        width: 52%;
+      }
+    }
+    &__img-left {
+      float: right;
+      width: 40%;
+      height: 258px;
+      margin-left: 1%;
+      @include responsive-for-sm-mobile {  
+        width: 47%;
+        height: 195px;
+        padding: 6% 3%;
+      }
+    }
+    &:not(:last-child)::after {
+      content: "";
+      display: block;
+      position: absolute;
+      height: 24px;
+      background-image: url(/static/images/border.png);
+      background-repeat: no-repeat;
+      background-position: center;
+      left: 0;
+      border: 0;
+      z-index: map-get($z-index, home);
+      width: 100%;
+    }
+  }
+  
+  
