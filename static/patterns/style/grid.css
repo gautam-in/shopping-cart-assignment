@@ -3,6 +3,13 @@
     margin:0 auto;
     font-family: 'Dosis', 'Arial', 'sans-serif';
  }
+ .container-fluid {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
  .text-center{
     text-align: center;
 }
