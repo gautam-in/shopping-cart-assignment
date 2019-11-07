@@ -1,0 +1,38 @@
+@import "../../../static/patterns/style/base.css";
+.header-wrapper{
+    box-shadow:0px 4px 4px #dedede;
+}
+.header-wrapper a{
+    text-decoration: none;
+    color: #444;
+    font-weight: 600;
+}
+.header-wrapper{
+    position: relative;
+}
+
+.main-navigation{
+    margin-left: 90px;
+    margin-top: 50px;
+}
+.header-wrapper .card-and-signup{
+    position: absolute;
+    right:30px;
+    top:10px;
+}
+/*
+.header-wrapper .cart-img path {
+    background-color: #D10157 !important;
+}
+*/
+.header-wrapper .sigin-register{
+    text-align: right;
+}
+.header-wrapper .cart{
+    background-color: #f5f5f5;
+    padding: 5px 15px;
+}
+.header-wrapper .cart-items{
+    font: 600 13px 'Dosis';
+    color: #444;
+}
