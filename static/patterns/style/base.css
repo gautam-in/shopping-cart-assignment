@@ -1,7 +1,12 @@
 @import url("https://fonts.googleapis.com/css?family=Dosis:400,600,700");
+@import "query.css";
 @import "grid.css";
+
 html{
   font-family: "Dosis";
+}
+body{
+  font-size: 20px;
 }
 * {
     box-sizing: border-box;

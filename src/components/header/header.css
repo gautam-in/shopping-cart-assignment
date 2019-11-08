@@ -32,19 +32,31 @@
     left: 23px;
     background-color: #f5f5f5;
     padding: 12px 15px;
+    transition: background-color 0.2s, transform 0.2s;
 }
+.cart-container .cart:hover{
+    background-color: #dedede;
+    transform: scaleY(0.9);
+}
+
 /*
 .header-wrapper .cart-img path {
     background-color: #D10157 !important;
 }
 */
+.header-wrapper .navbar a{
+    font-size: 70%;
+}
 .header-wrapper .cart-items{
-    font: 600 13px 'Dosis';
+    font: 600 50% 'Dosis';
     color: #444;
 }
 .header-wrapper .header-img{
     height: 76px;
     width: auto;
+}
+.sigin-register a{
+    font-size: 60%;
 }
 .header-wrapper .sigin-register{
     position: relative;
