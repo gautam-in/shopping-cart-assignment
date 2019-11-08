@@ -5,14 +5,18 @@
 .right-pane{
     display: inline;
 }
-.login-heading{
+.form-heading{
     font-size: 32px;
+}
+.form-desc{
+    font-family: 'Dosis';
+    font-weight: 500;
 }
 .login-form{
     width:100%;
 }
-.row{
-    padding: 20px 200px;
+.page-body{
+    padding: 30px 200px;
 }
 input{
     border-bottom: 1px solid cyan;

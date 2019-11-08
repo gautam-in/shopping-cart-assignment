@@ -1,18 +1,22 @@
 @import url("https://fonts.googleapis.com/css?family=Dosis:400,600,700");
 @import "grid.css";
+html{
+  font-family: "Dosis";
+}
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
   }
-.pull-left{
-  float: left;
-}
 .clearfix:after{
   content: "";
   clear: both;
   display: block;
 }
+
+/********************/
+/*** Margins ******/
+
 .margin-left-5{ margin-left:5px;}
 .margin-right-5{margin-right:5px;}
 .margin-top-5{margin-top:5px;}
@@ -33,12 +37,21 @@
 .margin-right-20{margin-right:20px;}
 .margin-top-20{ margin-top:20px;}
 .margin-bottom-20{margin-bottom:20px;}
+.margin-left-0{
+  margin-left:0px !important;
+}
 
+
+/********************/
+/*** Padding ******/
 .padding-5{ padding:5px;}
 .padding-10{ padding:10px;}
 .padding-15{ padding:15px;}
 .padding-20{ padding:20px;}
 
+
+/********************/
+/*** Font ******/
 .font-12{
   font-size: 12px;
 }
@@ -51,8 +64,14 @@
 .font-18{
   font-size: 18px;
 }
+
+/********************/
+/*** Text and container alignment ******/
 .pull-left{
   float: left;
+}
+.pull-right{
+  float: right;
 }
 .text-left{
   text-align: left;
@@ -66,3 +85,7 @@
 .cursor-pointer{
   cursor: pointer;
 }
+
+
+/********************/
+/*** Gray scale ******/
