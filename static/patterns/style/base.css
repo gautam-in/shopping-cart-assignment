@@ -8,6 +8,13 @@ html{
 body{
   font-size: 20px;
 }
+.custom-button{
+  padding: 10px 15px;
+  background-color: #D10157;
+  color: #fff;
+  font-size: 65%;
+  display: inline-block;
+}
 * {
     box-sizing: border-box;
     margin: 0;
