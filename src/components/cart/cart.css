@@ -4,7 +4,7 @@
     width:400px;
     right: 0;
     top:0;
-    height: 500px;
+    height: 500%;
     z-index: 2;
     background-color: #f5f5f5;
     
@@ -25,15 +25,30 @@
     padding: 15px;
     position: relative;
 }
+.cart-container .inner-container{
+    position: relative;
+}
+.cart-container .card-container{
+    overflow: auto;
+    height: 580px;;
+}
+.cart-container .no-item-exception{
+    position: relative;
+    top:40%;
+}
 .cart-container .cart-values .plus,.minus{
-    height: 20px;
-    width: 20px;
+    height: 16px;
+    width: 16px;
     border-radius: 100%;
     display: inline-block;
     background-color: #D10157;
     color: #fff;
     cursor: pointer;
     font-size: 73%;
+}
+.cart-container .cart-values .sign{
+    position: relative;
+    bottom: 3px;
 }
 .cart-container .cart-values .value{
     font-size: 70%;
@@ -69,4 +84,15 @@
 }
 .cart-container .offer p{
     font-size: 70%;
+}
+.cart-container .cart-footer{
+    background-color: #fff;
+    position: absolute;
+    bottom: 2%;
+    width: 100%;
+}
+.cart-container .cart-btn{
+    border-radius: 3px;
+    color: #fff;
+    background-color: #D10157;
 }

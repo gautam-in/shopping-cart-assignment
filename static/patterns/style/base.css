@@ -11,6 +11,10 @@ body{
 .disp-inline{
   display: inline-block;
 }
+.cursor-pointer{
+  cursor: pointer;
+}
+
 .custom-button{
   padding: 10px 15px;
   background-color: #D10157;
@@ -24,7 +28,7 @@ body{
     padding: 0;
   }
 .clearfix:after{
-  content: "";
+  content: " ";
   clear: both;
   display: block;
 }
@@ -68,16 +72,19 @@ body{
 /********************/
 /*** Font ******/
 .font-12{
-  font-size: 12px;
+  font-size: 60%;
+}
+.font-13{
+  font-size: 65%;
 }
 .font-14{
-  font-size: 14px;
-}
-.font-16{
-  font-size: 16px;
+  font-size: 70%;
 }
 .font-18{
-  font-size: 18px;
+  font-size: 80%;
+}
+.font-18{
+  font-size: 90%;
 }
 
 /********************/
