@@ -56,6 +56,9 @@
 	body{
         font-size:18px !important;
     }
+    .login-wrapper .span-1-of-4 {
+		width: 100%; 
+	}
     .list-container .list-item{
         height: 192px !important;
     }
@@ -64,7 +67,8 @@
         color: #000 !important;
         margin-top: 30px;
         font-size: 130% !important;
-        box-shadow: 3px -1px 1px #ccc;
+        -webkit-box-shadow: 3px -1px 1px #ccc;
+                box-shadow: 3px -1px 1px #ccc;
     }
     .cart-container .cart{
         padding: 7px 13px !important;

@@ -19,7 +19,8 @@
     margin: auto;
 }
 .home-wrapper .item-container{
-    box-shadow: 1px 6px 5px -6px #aaa;
+    -webkit-box-shadow: 1px 6px 5px -6px #aaa;
+            box-shadow: 1px 6px 5px -6px #aaa;
     padding:10px 0 30px 0;
     position: relative;
 }

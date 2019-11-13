@@ -5,7 +5,6 @@
     height: 476px;
     margin: 15px 10px 0 0;
     border-bottom: 1px dashed #dedede;
-    -moz-box-shadow: 3px 0 4px -2px #ccc;
     -webkit-box-shadow: 3px 0 4px -2px #ccc;
     box-shadow: 3px 0 4px -2px #ccc;
 }
@@ -56,19 +55,15 @@
     color: #fff;
     position: relative;
     right: 5px;
+    -webkit-transition: -webkit-transform 0.4s;
+    transition: -webkit-transform 0.4s;
     transition: transform 0.4s;
-    -webkit-transition: transform 0.4s;
-    -moz-transition: transform 0.4s;
-    -ms-transition: transform 0.4s;
-    -o-transition: transform 0.4s;
+    transition: transform 0.4s, -webkit-transform 0.4s;
 }
 .list-container .list-item .buy-now:hover{
-    transform: scaleY(1.2);
-    background: rgba(rgba(209, 1, 88, 0.322), 0.8);
     -webkit-transform: scaleY(1.2);
-    -moz-transform: scaleY(1.2);
-    -ms-transform: scaleY(1.2);
-    -o-transform: scaleY(1.2);
+            transform: scaleY(1.2);
+    background: rgba(rgba(209, 1, 88, 0.322), 0.8);
 }
 .list-container footer{
     position: absolute;
