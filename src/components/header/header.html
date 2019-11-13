@@ -10,34 +10,39 @@
 <body>
     <header>
         <div class="header-wrapper clearfix row">
-            <section class="col span-1-of-12"></section>
-            <section class="logo col span-2-of-12 text-right">
+            <div class="col span-1-of-12"></div>
+            <figure class="logo col span-2-of-12 text-right">
                 <img class="header-img" src="../../../static/images/logo.png" alt="App logo">
-            </section>
-            <section class="main-navigation col span-6-of-12">
+            </figure>
+            <div class="main-navigation col span-6-of-12">
                 <nav class="navbar">
-                    <a  href="#">Home</a>
-                    <a class="margin-left-15" href="#">Products</a>
+                    <ul>
+                        <li class="pull-left padding-5"><a  href="#">Home</a></li>
+                        <li class="pull-left padding-5"><a class="margin-left-15" href="#">Products</a></li>
+                    </ul>
                 </nav>
-            </section>
-            <section class="cart-container col span-2-of-12">
-                <section class="card-and-signup">
-                    <section class="sigin-register">
+            </div>
+            <div class="cart-container col span-2-of-12">
+                <div class="card-and-signup">
+                    <div class="sigin-register">
                             <nav>
-                                <a href="#">Signin</a>
-                                <a href="#">Register</a>
+                                <ul>
+                                    <li class="pull-left padding-5"> <a href="#">Signin</a></li>
+                                    <li class="pull-left margin-left-20 padding-5"><a href="#">Register</a></li>
+                                </ul>
                             </nav>
-                    </section>
-                    <section class="cart clearfix margin-top-10 cursor-pointer">
-                        <img class="pull-left" height="30px" width="30px" class="cart-img" src="../../../static/images/cart.svg" alt="Cart image">
-                        <div class="pull-left cart-items margin-top-5">0 items</div>
-                    </section>
-                </section>
-            </section>
-            <section class="col span-1-of-12"></section>
+                        </div>
+                    <div class="cart clearfix margin-top-10 cursor-pointer">
+                        <img class="pull-left cart-img" src="../../../static/images/cart.svg" alt="Cart image">
+                        <div class="pull-left cart-items margin-top-5 margin-left-5">0 items</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col span-1-of-12"></div>
         </div>
     </header>
+    <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script> 
+    <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
 </body>
-<script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script> 
-<script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+
 </html>

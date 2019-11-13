@@ -9,13 +9,12 @@
 /*  Medium device tablet */
 @media only screen and (max-width: 991px) {
     .cart-container .cart{
-        padding: 10px 13px !important;
+        padding: 9px !important;
     }
     .list-container .span-3-of-12 {
 		width: 50%; 
     }
     .list-container .categories{
-        width: 25%;
         text-align: center;
     }
     .list-container .list-body{
@@ -56,6 +55,19 @@
 	body{
         font-size:18px !important;
     }
+    .main-navigation nav{
+        left:39% !important;
+    }
+    .header-wrapper .span-2-of-12{
+        width:21% !important;
+    }
+    .header-wrapper .span-1-of-12{
+        width:4% !important;
+    }
+    .header-wrapper .signin-register{
+        top:-11px !important;
+    }
+
     .login-wrapper .span-1-of-4 {
 		width: 100%; 
 	}
@@ -71,7 +83,7 @@
                 box-shadow: 3px -1px 1px #ccc;
     }
     .cart-container .cart{
-        padding: 7px 13px !important;
+        padding: 6px 3px !important;
     }
     .cart-container .card-container{
         height: 530px !important;
@@ -97,7 +109,7 @@
     .list-container .list-item .buy-now{
         width: 97% !important;
         padding: 15px 20px !important;
-        margin: 20px 0 !important;
+        margin: 30px 0 !important;
     }
     .list-container footer{
         width: 50% !important;
@@ -106,7 +118,7 @@
         float: left;
     }
     .list-container figure{
-        height: 53% !important;
+        height: 100% !important;
     }
     .list-container figure  img{
         height: 80% !important;
@@ -121,26 +133,8 @@
 }
 /* Small devices (landscape phones, 576px and up) */
 @media only screen and (max-width: 576px) {
-    .cart-container .cart{
-        padding: 3px 13px !important;
-    }
     .list-container .span-3-of-12 {
 		width: 100%;
 	}
 
-}
-
-
-/* custom */
-
-@media only screen and (max-width:  690px) {
-    .cart-container .cart{
-        padding: 0 13px !important;
-    }
-    .logo img{
-        height: 73px !important;
-    }
-    .cart img{
-        height: 25px !important;
-    }
 }

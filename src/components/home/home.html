@@ -3,14 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sabka bazar helps people to buy amazing products with many offers">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <link rel="stylesheet" href="home.css">
 
 </head>
 <body>
-    <article class="home-wrapper">
-        <section class="slideshow-container">
+    <main class="home-wrapper">
+        <div class="slideshow-container">
 
             <div class="mySlides fade">
                 <div class="numbertext">1 / 3</div>
@@ -19,42 +20,42 @@
             
             <div class="mySlides fade">
                 <div class="numbertext">2 / 3</div>
-                <img src="../../../static/images/offers/offer2.jpg" style="width:100%">
+                <img src="../../../static/images/offers/offer2.jpg" alt="Offer image" style="width:100%">
             </div>
             
             <div class="mySlides fade">
                 <div class="numbertext">3 / 3</div>
-                <img src="../../../static/images/offers/offer3.jpg" style="width:100%">
+                <img src="../../../static/images/offers/offer3.jpg" alt="Offer image" style="width:100%">
             </div>
 
             <div class="mySlides fade">
                 <div class="numbertext">3 / 3</div>
-                <img src="../../../static/images/offers/offer4.jpg" style="width:100%">
+                <img src="../../../static/images/offers/offer4.jpg" alt="Offer image" style="width:100%">
             </div>
 
             <div class="mySlides fade">
                 <div class="numbertext">3 / 3</div>
-                <img src="../../../static/images/offers/offer5.jpg" style="width:100%">
+                <img src="../../../static/images/offers/offer5.jpg" alt="Offer image" style="width:100%">
             </div>
             
             <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
             <a class="next" onclick="plusSlides(1)">&#10095;</a>
-            <section class="dot-container">
+            <div class="dot-container" role="list" aria-label="List of dot to navigate carousel screens">
                 <span class="dot" onclick="currentSlide(1)"></span> 
                 <span class="dot" onclick="currentSlide(2)"></span> 
                 <span class="dot" onclick="currentSlide(3)"></span>
                 <span class="dot" onclick="currentSlide(4)"></span>
                 <span class="dot" onclick="currentSlide(5)"></span> 
-            </section>
+            </div>
                 
-        </section>
-        <section class="product-category">
+        </div>
+        <div class="product-category">
             <div class="item-container clearfix">
-                <section class="img-container pull-left clrarfix">
+                <div class="img-container pull-left clrarfix">
                     <figure class="">
-                        <img src="../../../static/images/category/fruits.png">
+                        <img src="../../../static/images/category/fruits.png" alt="Product category">
                     </figure>
-                </section>
+                </div>
                 <section class="pull-right cateory-container text-center right">
                     <header>
                         <h4>Fruits & Vegetables</h4>
@@ -64,11 +65,11 @@
                 </section>
             </div>
             <div class="item-container clearfix">
-                <section class="img-container pull-right clrarfix">
+                <div class="img-container pull-right clrarfix">
                     <figure class="">
-                        <img src="../../../static/images/category/baby.png">
+                        <img src="../../../static/images/category/baby.png" alt="Product category">
                     </figure>
-                </section>
+                </div>
                 <section class="pull-left cateory-container text-center right">
                     <header>
                         <h4>Fruits & Vegetables</h4>
@@ -78,11 +79,11 @@
                 </section>
             </div>
             <div class="item-container clearfix">
-                <section class="img-container pull-right clrarfix">
+                <div class="img-container pull-right clrarfix">
                     <figure class="">
-                        <img src="../../../static/images/category/bakery.png" alt="Category image">
+                        <img src="../../../static/images/category/bakery.png" alt="Product category">
                     </figure>
-                </section>
+                </div>
                 <section class="pull-left cateory-container text-center">
                     <header>
                         <h4>Fruits & Vegetables</h4>
@@ -92,11 +93,11 @@
                 </section>
             </div>
             <div class="item-container clearfix">
-                <section class="img-container pull-left clrarfix">
+                <div class="img-container pull-left clrarfix">
                     <figure class="">
-                        <img src="../../../static/images/category/beauty.png">
+                        <img src="../../../static/images/category/beauty.png" alt="Product category">
                     </figure>
-                </section>
+                </div>
                 <section class="pull-right cateory-container text-center right">
                     <header>
                         <h4>Fruits & Vegetables</h4>
@@ -106,11 +107,11 @@
                 </section>
             </div>
             <div class="item-container clearfix">
-                <section class="img-container pull-right clrarfix">
+                <div class="img-container pull-right clrarfix">
                     <figure class="">
-                        <img src="../../../static/images/category/beverages.png">
+                        <img src="../../../static/images/category/beverages.png" alt="Product category">
                     </figure>
-                </section>
+                </div>
                 <section class="pull-left cateory-container text-center right">
                     <header>
                         <h4>Fruits & Vegetables</h4>
@@ -119,14 +120,13 @@
                     <div class="custom-button margin-top-20">Explore Fruit-and-veg</div>
                 </section>
             </div>
-        </section>
-    </article>
-    <section class="clearfix copyright padding-10">
+        </div>
+    </main>
+    <footer class="clearfix copyright padding-10">
         <div class="content font-14">Copyright &copy; 2011-2018 Sbka Bazar Grocery Supplies Pvt Ltd.</div>
-    </section>
-        
+    </footer>
     <script src="home.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script> 
+    <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
 </body>
-<script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script> 
-<script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
 </html>

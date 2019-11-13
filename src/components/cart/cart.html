@@ -1,35 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <link rel="stylesheet" href="cart.css">
-    
-</head>
-<body>
-    <article class="cart-wrapper">
-        <div onclick="toggleCart()">Cart</div>
-        <div class="disp-inline">sd</div>
-        <section class="cart-container">
-            <div class="clearfix inner-container">
-                <!-- Header -->
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+        <link rel="stylesheet" href="cart.css">
+    </head>
+    <body>
+        <div class="cart-wrapper">
+            <div onclick="toggleCart()">Cart</div>
+            <div class="disp-inline">sd</div>
+            <section class="cart-container">
                 <header class="main-header">
                     <h6 class="disp-inline">My Cart&nbsp;<span class="cart-count">(0 items)</span></h6>
                     <p class="pull-right cursor-pointer">&#10006;</p>
                 </header>
-
-                <section class="card-container">
-                    <!-- cart's Cards -->
-                    <section class="card-panel clearfix margin-top-10">
-                        <section class="img pull-left">
-                            <img src="../../../static/images/products/fruit-n-veg/apple.jpg" alt="Product image">
-                        </section>
-                        <section class="cart-values pull-left margin-left-20">
-                            <header>
-                                <h6>Apple Washington, Regular 4 pcs</h6>
-                            </header>
+                <div class="clearfix inner-container">
+                    <!-- Header -->
+                    <div class="card-container">
+                        <!-- cart's Cards -->
+                        <div class="card-panel clearfix margin-top-10">
+                            <figure class="img pull-left">
+                                <img src="../../../static/images/products/fruit-n-veg/apple.jpg" alt="Product image">
+                            </figure>
+                            <section class="cart-values pull-left margin-left-20">
+                                <header>
+                                    <h6>Apple Washington, Regular 4 pcs</h6>
+                                </header>
                                     <div class="minus disp-inline text-center">
                                         <span class="sign">&#8722;</span>
                                     </div>
@@ -37,30 +35,29 @@
                                     <div class="plus margin-right-20 disp-inline text-center">
                                         <span class="sign">&#43;</span>
                                     </div>
-                                
-                                <span class="price">X&nbsp;&nbsp;&nbsp;&nbsp;Rs.187</span>
-                        </section>
-                        <section class="total-price">
-                            <p>Rs.187</p>
-                        </section>
-                    </section>
-                    <!-- Offer section -->
-                    <section class="offer margin-top-10 clearfix">
-                        <figure class="pull-left"><img src="../../../static/images/lowest-price.png"></figure>
-                        <p class="disp-inline margin-left-20">You won't find it cheaper anywhere.</p>
-                    </section>
+                                    
+                                    <span class="price">X&nbsp;&nbsp;&nbsp;&nbsp;Rs.187</span>
+                            </section>
+                            <div class="total-price">
+                                <p>Rs.187</p>
+                            </div>
+                        </div>
+                        <!-- Offer section -->
+                        <div class="offer margin-top-10 clearfix">
+                            <figure class="pull-left"><img src="../../../static/images/lowest-price.png" alt="Lowest Price"></figure>
+                            <p class="disp-inline margin-left-20">You won't find it cheaper anywhere.</p>
+                        </div>
 
 
-                    <!-- No item in the card -->
-                    <!-- <section class="no-item-exception text-center">
-                        <header>
-                            <h5>No items in your cart</h5>
-                            <p class="font-13">Your favourite items are just a click away</p>
-                        </header>
-                    </section> -->
-                </section>
-    
-                
+                        <!-- No item in the card -->
+                        <!-- <section class="no-item-exception text-center">
+                            <header>
+                                <h5>No items in your cart</h5>
+                                <p class="font-13">Your favourite items are just a click away</p>
+                            </header>
+                        </section> -->
+                    </div>                
+                </div>
                 <footer class="cart-footer margin-top-5 padding-10">
                     <p class="font-14 text-center margin-bottom-10">Promo code can be applied on payment page</p>
                     <div class="cart-btn clearfix padding-10">
@@ -68,28 +65,10 @@
                         <p class="pull-right margin-right-5 font-14">Rs.187&nbsp;&gt;</p>
                     </div>
                 </footer>
-            </div>
-            
-        </section>
-        <section>sdsad sadsadsadsa sad asdasd asd sad sad sad sad sad sdsd asdasddas
-                dsa sdfd sfs df dsf dsfdsfsdfsd fdsf fdsf dsf dsf dsf dsf ds fds fds fds fsd fds f dsf dsf dsf dsf ds fds fds f sf dsf sd fsdf sf 
-            </section><section>sdsad sadsadsadsa sad asdasd asd sad sad sad sad sad sdsd asdasddas
-                    dsa
-                    sdsdsfddf dsfdsfdsfsdfsdfds fdsfdsfsdfsfsdfsdfsf
-                </section><section>sdsad sadsadsadsa sad asdasd asd sad sad sad sad sad sdsd asdasddas
-                        dsa
-                        sdsdsfddf dsfdsfdsfsdfsdfds fdsfdsfsdfsfsdfsdfsf
-                    </section><section>sdsad sadsadsadsa sad asdasd asd sad sad sad sad sad sdsd asdasddas
-                            dsa
-                            sdsdsfddf dsfdsfdsfsdfsdfds fdsfdsfsdfsfsdfsdfsf
-                        </section><section>sdsad sadsadsadsa sad asdasd asd sad sad sad sad sad sdsd asdasddas
-                                dsa
-                                sdsdsfddf dsfdsfdsfsdfsdfds fdsfdsfsdfsfsdfsdfsf
-                            </section>
-    </article>
-    <script src="cart.js"></script>
-    
-</body>
-<script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script> 
-<script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+            </section>
+        </div>
+        <script src="cart.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script> 
+        <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+    </body>
 </html>

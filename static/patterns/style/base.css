@@ -7,6 +7,7 @@ html{
 }
 body{
   font-size: 20px;
+  height: 100%;
 }
 .disp-inline{
   display: inline-block;
@@ -86,6 +87,9 @@ body{
 }
 .font-18{
   font-size: 90%;
+}
+.font-20{
+  font-size: 100%;
 }
 
 /********************/

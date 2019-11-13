@@ -7,9 +7,8 @@
 .header-wrapper a:link,
 .header-wrapper a:visited{
     text-decoration: none;
-    color: #888;
+    color: #444;
     font-weight: 600;
-    padding: 5px 0;
     -webkit-transition: border-bottom 0.2s;
     transition: border-bottom 0.2s;
 }
@@ -22,8 +21,8 @@
 }
 .main-navigation nav{
     position: relative;
-    top: 56px;
-    left:100px;
+    top: 40px;
+    left:17%;
 }
 .cart-container{
     position: relative;
@@ -33,7 +32,7 @@
     top:30px;
     left: 23px;
     background-color: #f5f5f5;
-    padding: 12px 15px;
+    padding: 12px 20px;
     -webkit-transition: background-color 0.2s, -webkit-transform 0.2s;
     transition: background-color 0.2s, -webkit-transform 0.2s;
     transition: background-color 0.2s, transform 0.2s;
@@ -44,17 +43,20 @@
     -webkit-transform: scaleY(0.9);
             transform: scaleY(0.9);
 }
-
+.header-wrapper .cart-img{
+    height:30px;
+    width:30px;
+}
 /*
 .header-wrapper .cart-img path {
     background-color: #D10157 !important;
 }
 */
 .header-wrapper .navbar a{
-    font-size: 70%;
+    font-size: 80%;
 }
 .header-wrapper .cart-items{
-    font: 600 50% 'Dosis';
+    font: 600 70% 'Dosis';
     color: #444;
 }
 .header-wrapper .header-img{
@@ -64,7 +66,14 @@
 .sigin-register a{
     font-size: 60%;
 }
+.header-wrapper ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
 .header-wrapper .sigin-register{
     position: relative;
-    left:48px;
+    left:16%;
+    top:-17px;
 }

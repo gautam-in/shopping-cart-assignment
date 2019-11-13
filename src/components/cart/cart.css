@@ -4,7 +4,7 @@
     width:400px;
     right: 0;
     top:0;
-    height: 500%;
+    height: 100%;
     z-index: 2;
     background-color: #f5f5f5;
     
@@ -26,11 +26,12 @@
     position: relative;
 }
 .cart-container .inner-container{
+    height: 100%;
     position: relative;
 }
 .cart-container .card-container{
     overflow: auto;
-    height: 580px;;
+    height: 77%;
 }
 .cart-container .no-item-exception{
     position: relative;
@@ -87,8 +88,9 @@
 }
 .cart-container .cart-footer{
     background-color: #fff;
-    position: absolute;
-    width: 100%;
+    position: fixed;
+    width: 29%;
+    top:87%;
 }
 .cart-container .cart-btn{
     border-radius: 3px;
