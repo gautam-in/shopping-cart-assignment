@@ -1,0 +1,1158 @@
+/* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css?family=Dosis:400,600,700");
+html{
+    font-family: "Dosis","Arial","Roboto";
+  }
+  body{
+    font-size: 20px;
+    height: 100%;
+  }
+  .disp-inline{
+    display: inline-block;
+  }
+  .cursor-pointer{
+    cursor: pointer;
+  }
+  
+  .custom-button{
+    padding: 10px 15px;
+    background-color: #D10157;
+    color: #fff;
+    font-size: 65%;
+    display: inline-block;
+  }
+  * {
+      -webkit-box-sizing: border-box;
+              box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+  .clearfix:after{
+    content: " ";
+    clear: both;
+    display: block;
+  }
+  
+  /********************/
+  /*** Margins ******/
+  
+  .margin-left-5{ margin-left:5px;}
+  .margin-right-5{margin-right:5px;}
+  .margin-top-5{margin-top:5px;}
+  .margin-bottom-5{margin-bottom:5px;}
+  
+  .margin-left-10{margin-left:10px;}
+  .margin-right-10{margin-right:10px;}
+  .margin-top-10{ margin-top:10px;}
+  .margin-bottom-10{margin-bottom:10px;}
+  
+  
+  .margin-left-15{margin-left:15px;}
+  .margin-right-15{margin-right:15px;}
+  .margin-top-15{ margin-top:15px;}
+  .margin-bottom-15{margin-bottom:15px;}
+  
+  .margin-left-20{margin-left:20px;}
+  .margin-right-20{margin-right:20px;}
+  .margin-top-20{ margin-top:20px;}
+  .margin-bottom-20{margin-bottom:20px;}
+  .margin-left-0{
+    margin-left:0px !important;
+  }
+  
+  
+  /********************/
+  /*** Padding ******/
+  .padding-5{ padding:5px;}
+  .padding-10{ padding:10px;}
+  .padding-15{ padding:15px;}
+  .padding-20{ padding:20px;}
+  
+  
+  /********************/
+  /*** Font ******/
+  .font-12{
+    font-size: 60%;
+  }
+  .font-13{
+    font-size: 65%;
+  }
+  .font-14{
+    font-size: 70%;
+  }
+  .font-18{
+    font-size: 80%;
+  }
+  .font-18{
+    font-size: 90%;
+  }
+  .font-20{
+    font-size: 100%;
+  }
+  
+  /********************/
+  /*** Text and container alignment ******/
+  .pull-left{
+    float: left;
+  }
+  .pull-right{
+    float: right;
+  }
+  .text-left{
+    text-align: left;
+  }
+  .text-right{
+    text-align: right;
+  }
+  .text-center{
+    text-align: center;
+  }
+  .copyright{
+    background-color: #f5f5f5;
+  }
+  .copyright .content{
+    font-weight: 600;
+    position: relative;
+    left: 14%;
+    display: inline-block;
+  }
+  
+  
+  /********************/
+  /*** Gray scale ******/
+
+
+
+
+
+
+
+
+  /**************************/
+  /****** carousel styles*****/
+
+  .mySlides {display: none}
+    img {vertical-align: middle;}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+  -webkit-box-shadow: 1px 6px 5px -6px #aaa;
+          box-shadow: 1px 6px 5px -6px #aaa;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  -webkit-transition: 0.6s ease;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 5px;
+  width: 5px;
+  margin: 0 6px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  -webkit-transition: background-color 0.6s ease;
+  transition: background-color 0.6s ease;
+
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+          animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+          animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .prev, .next,.text {font-size: 11px}
+}
+
+
+
+
+
+
+
+/***************************/
+/**********query styles*****/
+
+
+/*  Extra large devices (large desktops, 1200px and up) */
+@media only screen and (max-width: 1200px) {
+    .cart-container .cart{
+        padding: 10px 13px !important;
+    }
+}
+
+/*  Medium device tablet */
+@media only screen and (max-width: 991px) {
+    .cart-container .cart{
+        padding: 9px !important;
+    }
+    .list-container .span-3-of-12 {
+		width: 50%; 
+    }
+    .list-container .categories{
+        text-align: center;
+    }
+    .list-container .list-body{
+        width: 75%;
+    }
+    .col {
+        margin: 1% 0 1% 0 !important;
+    }
+    .list-container .list-item{
+        height: 274px !important;
+    }
+    .list-container .list-item figure{
+        width: 50% !important;
+        margin-top:15px !important;
+        float: left !important;
+    }
+    .list-container .list-item .fig-caption{
+        font-size: 65%;
+        float: left !important;
+        width: 49%;
+        height: 65%;
+    }
+    .list-container .list-item .mrp{
+        display: none !important;
+    }
+    .list-container .list-item .mini-mrp{
+        display: inline !important;
+    }
+    .list-container .list-item .buy-now{
+       display: block !important;
+       width: 100% !important;
+    }
+}
+
+/* 
+// small devices (phone, upto 767px) */
+@media only screen and (max-width: 767px) {
+	body{
+        font-size:18px !important;
+    }
+    .main-navigation nav{
+        left:39% !important;
+    }
+    .header-wrapper .span-2-of-12{
+        width:21% !important;
+    }
+    .header-wrapper .span-1-of-12{
+        width:4% !important;
+    }
+    .header-wrapper .signin-register{
+        top:-11px !important;
+    }
+
+    .login-wrapper .span-1-of-4 {
+		width: 100%; 
+	}
+    .list-container .list-item{
+        height: 192px !important;
+    }
+    .cart-container .main-header{
+        background-color: #fff !important;
+        color: #000 !important;
+        margin-top: 30px;
+        font-size: 130% !important;
+        -webkit-box-shadow: 3px -1px 1px #ccc;
+                box-shadow: 3px -1px 1px #ccc;
+    }
+    .cart-container .cart{
+        padding: 6px 3px !important;
+    }
+    .cart-container .card-container{
+        height: 530px !important;
+    }
+    .logo img{
+        height: 73px !important;
+    }
+    .list-container .list-item .mrp{
+        display: none !important;
+    }
+    .list-container .list-item .mini-mrp{
+        display: inline !important;
+    }
+    .list-container .categories{
+        display: none;
+    }
+    .list-container .span-10-of-12 {
+		width: 100%;
+    }
+    .list-container .min-category{
+        display: block !important;
+    }
+    .list-container .list-item .buy-now{
+        width: 97% !important;
+        padding: 15px 20px !important;
+        margin: 30px 0 !important;
+    }
+    .list-container footer{
+        width: 50% !important;
+        position: relative !important;
+        bottom: 0 !important;
+        float: left;
+    }
+    .list-container figure{
+        height: 100% !important;
+    }
+    .list-container figure  img{
+        height: 80% !important;
+    }
+
+    .list-container .span-3-of-12{
+        width: 100% !important;
+    }
+    .list-container .list-item .fig-caption{
+        height: auto;
+    }
+}
+/* Small devices (landscape phones, 576px and up) */
+@media only screen and (max-width: 576px) {
+    .list-container .span-3-of-12 {
+		width: 100%;
+	}
+
+}
+
+
+
+
+/*********************************/
+/*******forms styles**************/
+
+
+.left-pane{
+    display: inline-block;
+}
+.right-pane{
+    display: inline;
+}
+.form-heading{
+    font-size: 160%;
+}
+.form-desc{
+    font-family: 'Dosis';
+    font-weight: 500;
+}
+.field-label{
+    font-size: 60%;
+}
+.login-form{
+    width:100%;
+}
+.page-body{
+    padding: 30px 200px;
+}
+input{
+    border-bottom: 1px solid cyan;
+    border-top:none;
+    border-left: none;
+    border-right: none;
+    width:100%;
+    height: 25px;
+    outline: none;
+}
+input:focus{
+    border-bottom: 1px solid #79D0E5;
+}
+.block-btn{
+    display: block;
+    font-size: 70%;
+    width: 100%;
+    border: none;
+    background-color: #D10157;
+    color: #fff;
+    text-align: center;
+    margin-top:30px;
+}
+
+
+
+/*************************************/
+/*************grid styles*************/
+.section {
+	clear: both;
+	padding: 0px;
+	margin: 0px;
+}
+
+/*  GROUPING  ============================================================================= */
+
+.row {
+    zoom: 1; /* For IE 6/7 (trigger hasLayout) */
+}
+
+.row:before,
+.row:after {
+    content:"";
+    display:table;
+}
+.row:after {
+    clear:both;
+}
+
+/*  GRID COLUMN SETUP   ====*/
+
+.col {
+	display: block;
+	float:left;
+	margin: 1% 0 1% 1.6%;
+}
+
+.col:first-child { margin-left: 0; } /* all browsers except IE6 and lower */
+
+
+/*  REMOVE MARGINS AS ALL GO FULL WIDTH AT 480 PIXELS */
+
+@media only screen and (max-width: 480px) {
+	.col { 
+		/*margin: 1% 0 1% 0%;*/
+        margin: 0;
+	}
+}
+
+
+/*  GRID OF TWO   ======*/
+
+
+.span-2-of-2 {
+	width: 100%;
+}
+
+.span-1-of-2 {
+	width: 49.2%;
+}
+
+/*  GO FULL WIDTH AT LESS THAN 480 PIXELS */
+
+@media only screen and (max-width: 480px) {
+	.span-2-of-2 {
+		width: 100%; 
+	}
+	.span-1-of-2 {
+		width: 100%; 
+	}
+}
+
+/*  GO FULL WIDTH AT LESS THAN 576px PIXELS */
+
+@media only screen and (max-width: 576px) {
+	.span-2-of-2 {
+		width: 100%; 
+	}
+	.span-1-of-2 {
+		width: 100%; 
+	}
+}
+
+/*  GRID OF THREE   ==*/
+
+	
+.span-3-of-3 {
+	width: 100%; 
+}
+
+.span-2-of-3 {
+	width: 66.13%; 
+}
+
+.span-1-of-3 {
+	width: 32.26%; 
+}
+
+
+/*  GO FULL WIDTH AT LESS THAN 480 PIXELS */
+
+@media only screen and (max-width: 480px) {
+	.span-3-of-3 {
+		width: 100%; 
+	}
+	.span-2-of-3 {
+		width: 100%; 
+	}
+	.span-1-of-3 {
+		width: 100%;
+	}
+}
+
+
+/*  GRID OF FOUR   ==== */
+
+	
+.span-4-of-4 {
+	width: 100%; 
+}
+
+.span-3-of-4 {
+	width: 74.6%; 
+}
+
+.span-2-of-4 {
+	width: 49.2%; 
+}
+
+.span-1-of-4 {
+	width: 23.8%; 
+}
+
+
+/*  GO FULL WIDTH AT LESS THAN 480 PIXELS */
+
+@media only screen and (max-width: 480px) {
+	.span-4-of-4 {
+		width: 100%; 
+	}
+	.span-3-of-4 {
+		width: 100%; 
+	}
+	.span-2-of-4 {
+		width: 100%; 
+	}
+	.span-1-of-4 {
+		width: 100%; 
+	}
+}
+
+
+/*  GO FULL WIDTH AT LESS THAN 576px PIXELS */
+
+@media only screen and (max-width: 576px) {
+	.span-4-of-4 {
+		width: 100%; 
+	}
+	.span-3-of-4 {
+		width: 100%; 
+	}
+	.span-2-of-4 {
+		width: 100%; 
+	}
+	.span-1-of-4 {
+		width: 100%; 
+	}
+}
+
+/*  GRID OF FIVE   ===== */
+
+	
+.span-5-of-5 {
+	width: 100%;
+}
+
+.span-4-of-5 {
+  	width: 79.68%; 
+}
+
+.span-3-of-5 {
+  	width: 59.36%; 
+}
+
+.span-2-of-5 {
+  	width: 39.04%;
+}
+
+.span-1-of-5 {
+  	width: 18.72%;
+}
+
+
+/*  GO FULL WIDTH AT LESS THAN 480 PIXELS */
+
+@media only screen and (max-width: 480px) {
+	.span-5-of-5 {
+		width: 100%; 
+	}
+	.span-4-of-5 {
+		width: 100%; 
+	}
+	.span-3-of-5 {
+		width: 100%; 
+	}
+	.span-2-of-5 {
+		width: 100%; 
+	}
+	.span-1-of-5 {
+		width: 100%; 
+	}
+}
+
+
+/*  GRID OF SIX   =======*/
+
+
+.span-6-of-6 {
+	width: 100%;
+}
+
+.span-5-of-6 {
+  	width: 83.06%;
+}
+
+.span-4-of-6 {
+  	width: 66.13%;
+}
+
+.span-3-of-6 {
+  	width: 49.2%;
+}
+
+.span-2-of-6 {
+  	width: 32.26%;
+}
+
+.span-1-of-6 {
+  	width: 15.33%;
+}
+
+
+/*  GO FULL WIDTH AT LESS THAN 480 PIXELS */
+
+@media only screen and (max-width: 480px) {
+	.span-6-of-6 {
+		width: 100%; 
+	}
+	.span-5-of-6 {
+		width: 100%; 
+	}
+	.span-4-of-6 {
+		width: 100%; 
+	}
+	.span-3-of-6 {
+		width: 100%; 
+	}
+	.span-2-of-6 {
+		width: 100%; 
+	}
+	.span-1-of-6 {
+		width: 100%; 
+	}
+}
+
+
+
+/*  GRID OF SEVEN   ========= */
+
+
+.span-7-of-7 {
+	width: 100%;
+}
+
+.span-6-of-7 {
+	width: 85.48%;
+}
+
+.span-5-of-7 {
+  	width: 70.97%;
+}
+
+.span-4-of-7 {
+  	width: 56.45%;
+}
+
+.span-3-of-7 {
+  	width: 41.94%;
+}
+
+.span-2-of-7 {
+  	width: 27.42%;
+}
+
+.span-1-of-7 {
+  	width: 12.91%;
+}
+
+
+/*  GO FULL WIDTH AT LESS THAN 480 PIXELS */
+
+@media only screen and (max-width: 480px) {
+	.span-7-of-7 {
+		width: 100%; 
+	}
+	.span-6-of-7 {
+		width: 100%; 
+	}
+	.span-5-of-7 {
+		width: 100%; 
+	}
+	.span-4-of-7 {
+		width: 100%; 
+	}
+	.span-3-of-7 {
+		width: 100%; 
+	}
+	.span-2-of-7 {
+		width: 100%; 
+	}
+	.span-1-of-7 {
+		width: 100%; 
+	}
+}
+
+
+/*  GRID OF EIGHT   ======== */
+
+	
+.span-8-of-8 {
+	width: 100%;
+}
+
+.span-7-of-8 {
+	width: 87.3%; 
+}
+
+.span-6-of-8 {
+	width: 74.6%; 
+}
+
+.span-5-of-8 {
+	width: 61.9%; 
+}
+
+.span-4-of-8 {
+	width: 49.2%; 
+}
+
+.span-3-of-8 {
+	width: 36.5%;
+}
+
+.span-2-of-8 {
+	width: 23.8%; 
+}
+
+.span-1-of-8 {
+	width: 11.1%; 
+}
+
+
+/*  GO FULL WIDTH AT LESS THAN 480 PIXELS */
+
+@media only screen and (max-width: 480px) {
+	.span-8-of-8 {
+		width: 100%; 
+	}
+	.span-7-of-8 {
+		width: 100%; 
+	}
+	.span-6-of-8 {
+		width: 100%; 
+	}
+	.span-5-of-8 {
+		width: 100%; 
+	}
+	.span-4-of-8 {
+		width: 100%; 
+	}
+	.span-3-of-8 {
+		width: 100%; 
+	}
+	.span-2-of-8 {
+		width: 100%; 
+	}
+	.span-1-of-8 {
+		width: 100%; 
+	}
+}
+
+
+/*  GRID OF NINE   ======= */
+
+
+.span-9-of-9 {
+	width: 100%;
+}
+
+.span-8-of-9 {
+	width: 88.71%;
+}
+
+.span-7-of-9 {
+	width: 77.42%; 
+}
+
+.span-6-of-9 {
+	width: 66.13%; 
+}
+
+.span-5-of-9 {
+	width: 54.84%; 
+}
+
+.span-4-of-9 {
+	width: 43.55%; 
+}
+
+.span-3-of-9 {
+	width: 32.26%;
+}
+
+.span-2-of-9 {
+	width: 20.97%; 
+}
+
+.span-1-of-9 {
+	width: 9.68%; 
+}
+
+
+/*  GO FULL WIDTH AT LESS THAN 480 PIXELS */
+
+@media only screen and (max-width: 480px) {
+	.span-9-of-9 {
+		width: 100%; 
+	}
+	.span-8-of-9 {
+		width: 100%; 
+	}
+	.span-7-of-9 {
+		width: 100%; 
+	}
+	.span-6-of-9 {
+		width: 100%; 
+	}
+	.span-5-of-9 {
+		width: 100%; 
+	}
+	.span-4-of-9 {
+		width: 100%; 
+	}
+	.span-3-of-9 {
+		width: 100%; 
+	}
+	.span-2-of-9 {
+		width: 100%; 
+	}
+	.span-1-of-9 {
+		width: 100%; 
+	}
+}
+
+
+/*  GRID OF TEN   =======*/
+
+
+.span-10-of-10 {
+	width: 100%;
+}
+
+.span-9-of-10 {
+	width: 89.84%;
+}
+
+.span-8-of-10 {
+	width: 79.68%;
+}
+
+.span-7-of-10 {
+	width: 69.52%; 
+}
+
+.span-6-of-10 {
+	width: 59.36%; 
+}
+
+.span-5-of-10 {
+	width: 49.2%; 
+}
+
+.span-4-of-10 {
+	width: 39.04%; 
+}
+
+.span-3-of-10 {
+	width: 28.88%;
+}
+
+.span-2-of-10 {
+	width: 18.72%; 
+}
+
+.span-1-of-10 {
+	width: 8.56%; 
+}
+
+
+/*  GO FULL WIDTH AT LESS THAN 480 PIXELS */
+
+@media only screen and (max-width: 480px) {
+	.span-10-of-10 {
+		width: 100%; 
+	}
+	.span-9-of-10 {
+		width: 100%; 
+	}
+	.span-8-of-10 {
+		width: 100%; 
+	}
+	.span-7-of-10 {
+		width: 100%; 
+	}
+	.span-6-of-10 {
+		width: 100%; 
+	}
+	.span-5-of-10 {
+		width: 100%; 
+	}
+	.span-4-of-10 {
+		width: 100%; 
+	}
+	.span-3-of-10 {
+		width: 100%; 
+	}
+	.span-2-of-10 {
+		width: 100%; 
+	}
+	.span-1-of-10 {
+		width: 100%; 
+	}
+}
+
+
+/*  GRID OF ELEVEN   ======== */
+
+.span-11-of-11 {
+	width: 100%;
+}
+
+.span-10-of-11 {
+	width: 90.76%;
+}
+
+.span-9-of-11 {
+	width: 81.52%;
+}
+
+.span-8-of-11 {
+	width: 72.29%;
+}
+
+.span-7-of-11 {
+	width: 63.05%; 
+}
+
+.span-6-of-11 {
+	width: 53.81%; 
+}
+
+.span-5-of-11 {
+	width: 44.58%; 
+}
+
+.span-4-of-11 {
+	width: 35.34%; 
+}
+
+.span-3-of-11 {
+	width: 26.1%;
+}
+
+.span-2-of-11 {
+	width: 16.87%; 
+}
+
+.span-1-of-11 {
+	width: 7.63%; 
+}
+
+
+/*  GO FULL WIDTH AT LESS THAN 480 PIXELS */
+
+@media only screen and (max-width: 480px) {
+	.span-11-of-11 {
+		width: 100%; 
+	}
+	.span-10-of-11 {
+		width: 100%; 
+	}
+	.span-9-of-11 {
+		width: 100%; 
+	}
+	.span-8-of-11 {
+		width: 100%; 
+	}
+	.span-7-of-11 {
+		width: 100%; 
+	}
+	.span-6-of-11 {
+		width: 100%; 
+	}
+	.span-5-of-11 {
+		width: 100%; 
+	}
+	.span-4-of-11 {
+		width: 100%; 
+	}
+	.span-3-of-11 {
+		width: 100%; 
+	}
+	.span-2-of-11 {
+		width: 100%; 
+	}
+	.span-1-of-11 {
+		width: 100%; 
+	}
+}
+
+
+/*  GRID OF TWELVE   ======== */
+
+.span-12-of-12 {
+	width: 100%;
+}
+
+.span-11-of-12 {
+	width: 91.53%;
+}
+
+.span-10-of-12 {
+	width: 83.06%;
+}
+
+.span-9-of-12 {
+	width: 74.6%;
+}
+
+.span-8-of-12 {
+	width: 66.13%;
+}
+
+.span-7-of-12 {
+	width: 57.66%; 
+}
+
+.span-6-of-12 {
+	width: 49.2%; 
+}
+
+.span-5-of-12 {
+	width: 40.73%; 
+}
+
+.span-4-of-12 {
+	width: 32.26%; 
+}
+
+.span-3-of-12 {
+	width: 23.8%;
+}
+
+.span-2-of-12 {
+	width: 15.33%; 
+}
+
+.span-1-of-12 {
+	width: 6.86%; 
+}
+
+
+/*  GO FULL WIDTH AT LESS THAN 480 PIXELS */
+
+@media only screen and (max-width: 480px) {
+	.span-12-of-12 {
+		width: 100%; 
+	}
+	.span-11-of-12 {
+		width: 100%; 
+	}
+	.span-10-of-12 {
+		width: 100%; 
+	}
+	.span-9-of-12 {
+		width: 100%; 
+	}
+	.span-8-of-12 {
+		width: 100%; 
+	}
+	.span-7-of-12 {
+		width: 100%; 
+	}
+	.span-6-of-12 {
+		width: 100%; 
+	}
+	.span-5-of-12 {
+		width: 100%; 
+	}
+	.span-4-of-12 {
+		width: 100%; 
+	}
+	.span-3-of-12 {
+		width: 100%; 
+	}
+	.span-2-of-12 {
+		width: 100%; 
+	}
+	.span-1-of-12 {
+		width: 100%; 
+	}
+}
