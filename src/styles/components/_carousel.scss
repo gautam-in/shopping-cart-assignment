@@ -6,7 +6,7 @@ img {vertical-align: middle;
 .slideshow-container {
   max-width: 1000px;
   position: relative;
-  margin: auto;
+  margin: 40px auto;
   @include box-shadow(1px 6px 5px -6px #aaa);
 }
 
