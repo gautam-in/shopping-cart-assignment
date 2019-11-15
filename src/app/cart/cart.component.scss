@@ -1,0 +1,97 @@
+@import '../../styles/abstract/variables';
+@import '../../styles/abstract/mixin';
+.cart-container{
+    position: fixed;
+    width:400px;
+    right: 0;
+    top:0;
+    height: 100%;
+    visibility: hidden;
+    right: 14%;
+    top: 12%;
+    z-index: 5;
+    @include bg-opacity(#f5f5f5);
+    .card-panel{
+        @include bg-opacity($color-white);
+        padding: 15px;
+        position: relative;
+        figure{
+            height: 50px;
+            img{
+                height: 100%;
+                width: auto;
+            }
+        }
+    }
+    .total-price{
+        position: absolute;
+        right: 10px;
+        bottom:28%;
+        @include font-size(80%);
+    }
+    .offer{
+        padding: 10px;
+        @include bg-opacity($color-white);
+        p{
+            @include font-size(70%);
+        }
+        figure{
+            height: 35px;
+            img{
+                height: 100%;
+                width:auto;
+            }
+        }
+    }
+    .main-header{
+        @include bg-opacity(#000);
+        padding: 15px 20px;
+        color: $color-white;
+        .cart-count{
+            @include font-size(70%);
+        }
+    }
+    .inner-container{
+        height: 100%;
+        position: relative;
+    }
+    .card-container{
+        overflow: auto;
+        height: 77%;
+    }
+    .no-item-exception{
+        position: relative;
+        top:40%;
+    }
+    .cart-values{
+        .sign{
+            position: relative;
+            bottom: 3px;
+        }
+        .price{
+            @include font-size(65%);
+            color: #000;
+        }
+        .plus,.minus{
+            height: 16px;
+            width: 16px;
+            border-radius: 100%;
+            display: inline-block;
+            @include bg-opacity($color-white);
+            color: $color-white;
+            cursor: pointer;
+            @include font-size(73%);
+        }
+    }
+    .cart-footer{
+        @include bg-opacity($color-white);
+        position: fixed;
+        width: 29%;
+        top:87%;
+    }
+    .cart-btn{
+        border-radius: 3px;
+        color: $color-white;
+        @include bg-opacity($btn-color);
+    }
+}

@@ -1,76 +1,91 @@
-.list-container .list-item{
-    background-color: #fff;
-    position: relative;
-    height: 476px;
-    margin: 15px 10px 0 0;
-    border-bottom: 1px dashed #dedede;
-    -webkit-box-shadow: 3px 0 4px -2px #ccc;
-    box-shadow: 3px 0 4px -2px #ccc;
+@import '../../styles/abstract/variables';
+@import '../../styles/abstract/mixin';
+.list-container{
+    .list-item{
+        background-color: $color-white;
+        position: relative;
+        height: 476px;
+        @include margin($top:15px,$right:10px);
+        border-bottom: 1px dashed #dedede;
+        @include box-shadow(3px 0 4px -2px #ccc);
+        &:hover{
+            @include box-shadow(5px 0 7px -1px #ccc);
+        }
+    }
+    .categories {
+        .category-item{
+            padding: 15px 10px;
+            cursor: pointer;
+            @include font-size(80%);
+            @include bg-opacity(#f5f5f5);
+            border-bottom: 2px solid #dedede;
+            &:hover{
+                @include bg-opacity(darken(#f5f5f5,5%),1);
+            }
+        }
+    }
+    .min-category{
+        select{
+            @include bg-opacity($btn-color);
+            padding: 10px;
+            width: 100%;
+        }
+    }
+    a{
+        text-decoration: none;
+        color: #777;
+        font-weight: 600;
+    }
+    .min-category{
+        display: none;
+    }
+    .list-item{
+        figure{
+            width: 100%;
+            @include margin($top:55px);
+        }
+        .fig-caption{
+            @include bg-opacity(#f5f5f5);
+            padding: 5px;
+            @include font-size(70%);
+            line-height: 1.4;
+        }
+        img{
+            width: 100%;
+        }
+        .mrp{
+            display: inline-block;
+            @include font-size(70%);
+            position: relative;
+            top: 5px;
+        }
+        .mini-mrp{
+            display: none;
+        }
+        .buy-now{
+            display: inline-block;
+            cursor: pointer;
+            border:none;
+            padding: 10px 20px;
+            @include bg-opacity($btn-color);
+            color: $color-white;
+            position: relative;
+            right: 5px;
+            -webkit-transition: -webkit-transform 0.4s;
+            transition: -webkit-transform 0.4s;
+            transition: transform 0.4s;
+            transition: transform 0.4s, -webkit-transform 0.4s;
+            &:hover{
+                -webkit-transform: scaleY(1.2);
+                transform: scaleY(1.2);
+                @include bg-opacity(lighten($btn-color,7%));
+            }
+        }
+        footer{
+            position: absolute;
+            bottom: 10px;
+            width: 100%;
+        }
+    }  
 }
-.list-container .min-category select{
-    background-color: #D10157;
-    padding: 10px;
-    width: 100%;
-}
-.list-container a{
-    text-decoration: none;
-    color: #777;
-    font-weight: 600;
-}
-.list-container .min-category{
-    display: none;
-}
-.list-container .categories{
-    background-color: #f0f0f0;
-}
-.list-container .list-item figure{
-    width: 100%;
-    margin-top:55px;
-}
-.list-container .list-item .fig-caption{
-    background-color: #f5f5f5;
-    padding: 5px;
-    font-size: 70%;
-    line-height: 1.4;
-}
-.list-container .list-item img{
-    width: 100%;
-}
-.list-container .list-item .mrp{
-    display: inline-block;
-    font-size: 70%;
-    position: relative;
-    top: 5px;
-}
-.list-container .list-item .mini-mrp{
-    display: none;
-}
-.list-container .list-item .buy-now{
-    display: inline-block;
-    cursor: pointer;
-    border:none;
-    padding: 10px 20px;
-    background-color: #D10157;
-    color: #fff;
-    position: relative;
-    right: 5px;
-    -webkit-transition: -webkit-transform 0.4s;
-    transition: -webkit-transform 0.4s;
-    transition: transform 0.4s;
-    transition: transform 0.4s, -webkit-transform 0.4s;
-}
-.list-container .list-item .buy-now:hover{
-    -webkit-transform: scaleY(1.2);
-            transform: scaleY(1.2);
-    background: rgba(rgba(209, 1, 88, 0.322), 0.8);
-}
-.list-container footer{
-    position: absolute;
-    bottom: 10px;
-    width: 100%;
-}
-.categories .category-item{
-    padding: 15px 10px;
-    font-size: 80%;
-    border-bottom: 2px solid #dedede;
-}
+

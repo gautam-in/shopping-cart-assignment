@@ -1,79 +1,81 @@
 @import '../../../../styles.scss';
 .header-wrapper{
-    -webkit-box-shadow:0px 4px 4px #dedede;
-            box-shadow:0px 4px 4px #dedede;
+    @include box-shadow(0px 4px 4px #dedede);
     height: auto;
-}
-.header-wrapper a:link,
-.header-wrapper a:visited{
-    text-decoration: none;
-    color: #444;
-    font-weight: 600;
-    -webkit-transition: border-bottom 0.2s;
-    transition: border-bottom 0.2s;
-}
-.header-wrapper a:hover,
-.header-wrapper a:active{
-    border-bottom: 2px solid #79D0E5;
-}
-.header-wrapper{
-    position: relative;
-}
-.main-navigation nav{
-    position: relative;
-    top: 40px;
-    left:17%;
-}
-.cart-container{
-    position: relative;
-}
-.cart-container .cart{
-    position: absolute;
-    top:30px;
-    left: 23px;
-    background-color: #f5f5f5;
-    padding: 12px 20px;
-    -webkit-transition: background-color 0.2s, -webkit-transform 0.2s;
-    transition: background-color 0.2s, -webkit-transform 0.2s;
-    transition: background-color 0.2s, transform 0.2s;
-    transition: background-color 0.2s, transform 0.2s, -webkit-transform 0.2s;
-}
-.cart-container .cart:hover{
-    background-color: #dedede;
-    -webkit-transform: scaleY(0.9);
-            transform: scaleY(0.9);
-}
-.header-wrapper .cart-img{
-    height:30px;
-    width:30px;
-}
-/*
-.header-wrapper .cart-img path {
-    background-color: #D10157 !important;
-}
-*/
-.header-wrapper .navbar a{
-    font-size: 80%;
-}
-.header-wrapper .cart-items{
-    font: 600 70% 'Dosis';
-    color: #444;
-}
-.header-wrapper .header-img{
-    height: 76px;
-    width: auto;
-}
-.sigin-register a{
-    font-size: 60%;
-}
-.header-wrapper ul{
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-}
-.header-wrapper .sigin-register{
-    position: relative;
-    left:16%;
-    top:-17px;
+    @include bg-opacity($color-white);
+    .header-img{
+        height: 76px;
+        width: auto;
+    }
+    ul{
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+    }
+    a{
+        transition: border-bottom 0.3s;
+        transition-timing-function: ease-in-out;
+        -webkit-transition: border-bottom 0.3s;
+        -webkit-transition-timing-function: ease-in-out;
+
+        &:link,&:visited{
+            text-decoration: none;
+            color: darken(#444,5%);
+            font-weight: 600;
+            border-bottom: 1px solid transparentize($color: #fff, $amount: 1);
+        }
+        &:hover,&:active{
+            border-bottom: 2px solid opacify($color: #79D0E5, $amount: 0.5) ;
+            
+        }
+    }
+
+    .navbar{
+        a{
+            @include font-size(80%);
+        }
+    }
+    .main-navigation{
+        nav{
+            position: relative;
+            top: 40px;
+            left:17%;
+        }
+    }
+    .cart-container{
+        position: relative;
+        .cart{
+            position: absolute;
+            top:30px;
+            left: 23px;
+            @include bg-opacity(#f5f5f5);
+            padding: 12px 20px;
+            -webkit-transition: background-color 0.2s, -webkit-transform 0.2s;
+            transition: background-color 0.2s, -webkit-transform 0.2s;
+            transition: background-color 0.2s, transform 0.2s;
+            transition: background-color 0.2s, transform 0.2s, -webkit-transform 0.2s;
+            &:hover{
+                @include bg-opacity(darken(#f5f5f5,5%));
+                -webkit-transform: scaleY(0.9);
+                transform: scaleY(0.9);
+            }
+        }
+        .cart-img{
+            height:30px;
+            width:30px;
+        }
+        .cart-items{
+            font: 600 70% 'Dosis';
+            color: #444;
+        }
+        .sigin-register{
+            position: relative;
+            left:16%;
+            top:-17px;
+            a{
+                @include font-size(60%);
+            }
+        }
+    }
 }

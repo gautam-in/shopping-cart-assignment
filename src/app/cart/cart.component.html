@@ -1,0 +1,57 @@
+<div class="cart-wrapper">
+    <section class="cart-container" id="js-cart">
+        <header class="main-header">
+            <h6 class="disp-inline">My Cart&nbsp;<span class="cart-count">(0 items)</span></h6>
+            <p class="pull-right cursor-pointer" (click)="closeCart()">&#10006;</p>
+        </header>
+        <div class="clearfix inner-container">
+            <!-- Header -->
+            <div class="card-container">
+                <!-- cart's Cards -->
+                <div class="card-panel clearfix margin-top-10">
+                    <figure class="pull-left">
+                        <img src="../../assets/images/products/fruit-n-veg/apple.jpg" alt="Product image">
+                    </figure>
+                    <section class="cart-values pull-left margin-left-20">
+                        <header>
+                            <h6>Apple Washington, Regular 4 pcs</h6>
+                        </header>
+                            <div class="minus disp-inline text-center">
+                                <span class="sign">&#8722;</span>
+                            </div>
+                            <span class="value margin-left-20 margin-right-20">1</span>
+                            <div class="plus margin-right-20 disp-inline text-center">
+                                <span class="sign">&#43;</span>
+                            </div>
+                            
+                            <span class="price">X&nbsp;&nbsp;&nbsp;&nbsp;Rs.187</span>
+                    </section>
+                    <div class="total-price">
+                        <p>Rs.187</p>
+                    </div>
+                </div>
+                <!-- Offer section -->
+                <div class="offer margin-top-10 clearfix">
+                    <figure class="pull-left"><img src="../../assets/images/lowest-price.png" alt="Lowest Price"></figure>
+                    <p class="disp-inline margin-left-20">You won't find it cheaper anywhere.</p>
+                </div>
+
+
+                <!-- No item in the card -->
+                <!-- <section class="no-item-exception text-center">
+                    <header>
+                        <h5>No items in your cart</h5>
+                        <p class="font-13">Your favourite items are just a click away</p>
+                    </header>
+                </section> -->
+            </div>                
+        </div>
+        <footer class="cart-footer margin-top-5 padding-10">
+            <p class="font-14 text-center margin-bottom-10">Promo code can be applied on payment page</p>
+            <div class="cart-btn clearfix padding-10">
+                <p class="pull-left margin-left-5 font-14">Proceed Checkout</p>
+                <p class="pull-right margin-right-5 font-14">Rs.187&nbsp;&gt;</p>
+            </div>
+        </footer>
+    </section>
+</div>

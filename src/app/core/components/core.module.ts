@@ -6,11 +6,13 @@ import { AppRoutingModule } from '../../app-routing.module';
 
 import { HeaderComponent } from '../components/header/header.component';
 import { FooterComponent } from '../components/footer/footer.component';
+import { CartComponent } from 'src/app/cart/cart.component';
 
 @NgModule({
   declarations: [
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    CartComponent
   ],
   imports: [
     CommonModule,
