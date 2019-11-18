@@ -46,9 +46,11 @@
     .cart-container{
         position: relative;
         .cart{
+            border:none;
             position: absolute;
             top:30px;
             left: 23px;
+            @include font-size(90%);
             @include bg-opacity(#f5f5f5);
             padding: 12px 20px;
             -webkit-transition: background-color 0.2s, -webkit-transform 0.2s;

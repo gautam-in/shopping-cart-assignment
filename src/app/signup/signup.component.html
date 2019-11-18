@@ -9,39 +9,39 @@
         <div class="col span-1-of-2 text-center">
                 <form class="login-form">
                     <div class="text-left">
-                        <label class="font-12" for="firstname">First Name</label>
+                        <label class="font-12" id="nameLbl" tabindex="-1" for="firstname">First Name</label>
                     </div>
                     <div class="text-left">
-                        <input id="firstname" type="text" name="firstname">
+                        <input id="firstname" type="text" aria-labelledby="nameLbl" name="firstname">
                     </div>
                     
                     <div class="text-left margin-top-20">
-                        <label class="field-label" for="lastname">Last Name</label>
+                        <label class="field-label" id="lastnameLbl" tabindex="-2" for="lastname">Last Name</label>
                     </div>
                     <div class="text-left">
-                        <input id="lastname" type="text" name="lastname">
+                        <input id="lastname" type="text" name="lastname" aria-labelledby="lastnameLbl">
                     </div>
                     <div class="text-left margin-top-20">
-                        <label class="field-label" for="email">Email</label>
+                        <label class="field-label" tabindex="-3" id="emailLbl" for="email">Email</label>
                     </div>
                     <div class="text-left">
-                        <input id="email" type="email" name="email">
+                        <input id="email" type="email" name="email" aria-labelledby="emailLbl">
                     </div>
                     
                     <div class="text-left margin-top-20">
-                        <label class="field-label"  for="password">Password</label>
+                        <label class="field-label" id="pwdLbl" tabindex="-4" for="password">Password</label>
                     </div>
                     <div class="text-left">
-                        <input id="password" type="password" name="password">
+                        <input id="password" type="password" name="password" aria-labelledby="pwdLbl">
                     </div>
 
                     <div class="text-left margin-top-20">
-                        <label class="field-label"  for="confirmPassword">Confirm Password</label>
+                        <label class="field-label" tabindex="-5"  id="confPwdLbl" for="confirmPassword">Confirm Password</label>
                     </div>
                     <div class="text-left">
-                        <input id="confirmPassword" type="password" name="password">
+                        <input id="confirmPassword" type="password" name="password" aria-labelledby="confPwdLbl">
                     </div>
-                    <button class="cursor-pointer block-btn padding-10">Signup</button>
+                    <button aria-label="Signup Button" class="cursor-pointer block-btn padding-10">Signup</button>
                 </form> 
         </div>
     </div> 

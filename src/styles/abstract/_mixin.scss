@@ -1,3 +1,8 @@
+
+// @mixin width($num:1,$den :1) {
+//     width: percentage(($num/$den)-(13.66 * ($den-$num)));
+// }
+
 @mixin box-shadow($shadows...) {
     box-shadow: $shadows;
     -webkit-box-shadow:$shadows;

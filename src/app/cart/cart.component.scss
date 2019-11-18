@@ -50,10 +50,9 @@
         .cart-count{
             @include font-size(70%);
         }
-    }
-    .inner-container{
-        height: 100%;
-        position: relative;
+        h1{
+            @include font-size(80%);
+        }
     }
     .card-container{
         overflow: auto;
@@ -86,12 +85,17 @@
     .cart-footer{
         @include bg-opacity($color-white);
         position: fixed;
-        width: 29%;
+        width: 400px;
         top:87%;
     }
     .cart-btn{
         border-radius: 3px;
+        cursor: pointer;
+        width: 100%;
+        border: none;
         color: $color-white;
+        padding: 15px;
+        @include font-size(80%);
         @include bg-opacity($btn-color);
     }
 }

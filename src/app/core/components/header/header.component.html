@@ -6,7 +6,7 @@
             <img class="header-img" src="../../../../assets/images/logo.png" alt="App logo">
         </figure>
         <div class="main-navigation col span-6-of-12">
-            <nav class="navbar">
+            <nav id="main-nav" class="navbar" aria-label="Main">
                 <ul>
                     <li class="pull-left padding-5"><a [routerLink]="['']">Home</a></li>
                     <li class="pull-left padding-5"><a class="margin-left-15" [routerLink]="['/product-list']">Products</a></li>
@@ -16,17 +16,17 @@
         <div class="cart-container col span-2-of-12">
             <div class="card-and-signup">
                 <div class="sigin-register">
-                        <nav>
+                        <nav id="signup-signin-nav" aria-label="Secondary Navigation">
                             <ul>
                                 <li class="pull-left padding-5"> <a [routerLink]="['/login']">Signin</a></li>
                                 <li class="pull-left margin-left-20 padding-5"><a [routerLink]="['/signup']">Register</a></li>
                             </ul>
                         </nav>
                     </div>
-                <div class="cart clearfix cursor-pointer" (click)="toggleCart()">
-                    <img class="pull-left cart-img" src="../../../../assets/images/cart.svg" alt="Cart">
-                    <div class="pull-left cart-items margin-top-5 margin-left-5">0 items</div>
-                </div>
+                <button aria-label="Cart button" class="cart clearfix cursor-pointer" (click)="toggleCart()">
+                    <img class="pull-left cart-img" src="../../../../assets/images/cart.svg" alt="Cart logo">
+                    <p  class="pull-left cart-items margin-top-5 margin-left-5">0 items</p>
+                </button>
             </div>
         </div>
         <div class="col span-1-of-12"></div>

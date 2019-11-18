@@ -1,11 +1,15 @@
 <div class="cart-wrapper">
     <section class="cart-container" id="js-cart">
+        
+        <!-- Header -->
         <header class="main-header">
-            <h6 class="disp-inline">My Cart&nbsp;<span class="cart-count">(0 items)</span></h6>
-            <p class="pull-right cursor-pointer" (click)="closeCart()">&#10006;</p>
+                <h1 class="disp-inline">My Cart&nbsp;<span class="cart-count">(0 items)</span></h1>
+                <p class="pull-right cursor-pointer" (click)="closeCart()">&#10006;</p>
         </header>
-        <div class="clearfix inner-container">
-            <!-- Header -->
+
+
+        <!-- Main content -->
+        <main>
             <div class="card-container">
                 <!-- cart's Cards -->
                 <div class="card-panel clearfix margin-top-10">
@@ -44,14 +48,17 @@
                         <p class="font-13">Your favourite items are just a click away</p>
                     </header>
                 </section> -->
-            </div>                
-        </div>
+            </div>
+        </main>
+
+
+        <!-- Footer -->
         <footer class="cart-footer margin-top-5 padding-10">
             <p class="font-14 text-center margin-bottom-10">Promo code can be applied on payment page</p>
-            <div class="cart-btn clearfix padding-10">
+            <button class="cart-btn clearfix padding-10" role="button" aria-label="Proceed checkout button">
                 <p class="pull-left margin-left-5 font-14">Proceed Checkout</p>
                 <p class="pull-right margin-right-5 font-14">Rs.187&nbsp;&gt;</p>
-            </div>
+            </button>
         </footer>
     </section>
 </div>
