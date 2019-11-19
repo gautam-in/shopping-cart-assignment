@@ -31,22 +31,22 @@
             </nav>
         </div>
         <div class="col span-10-of-12 list-body">
-            <div class="padding-5 col span-3-of-12 margin-left-0">
+            <div class="padding-5 col span-3-of-12 margin-left-0" *ngFor="let product of productList">
                 <section class="list-item">
                     <header>
-                        <h4 class="font-20">Fresho Kiwi- Green 3pcs</h4>
+                        <h4 class="font-20">{{product.name}}</h4>
                     </header>
                     <figure>
-                        <img src="../../assets/images/products/fruit-n-veg/kiwi-green.jpg" alt="Product image">
+                        <img src="{{product.imageURL}}" alt="Product image">
                     </figure>
-                    <p class="fig-caption margin-top-15">Kiwifruit (often shortened to kiwi outside Australia and New Zealand), or Chinese </p>
+                    <p class="fig-caption margin-top-15">{{product.description}}</p>
                     <footer class="clearfix margin-top-15 footer">
-                        <p class="mrp">MRP Rs.87</p>
-                        <button class="buy-now pull-right">Buy Now<span class="mini-mrp">@Rs87</span></button>
+                        <p class="mrp">MRP Rs.{{product.price}}</p>
+                        <button class="buy-now pull-right">Buy Now<span class="mini-mrp">@Rs{{product.price}}</span></button>
                     </footer>
                 </section>
             </div>
-            <div class="padding-5 col span-3-of-12 margin-left-0">
+            <!-- <div class="padding-5 col span-3-of-12 margin-left-0">
                 <section class="list-item">
                     <header>
                         <h4 class="font-20">Fresho Kiwi- Green 3pcs</h4>
@@ -105,7 +105,7 @@
                         <button class="buy-now pull-right">Buy Now<span class="mini-mrp">@Rs87</span></button>
                     </footer>
                 </section>
-            </div>
+            </div> -->
         </div>
     </div>
 </main>
