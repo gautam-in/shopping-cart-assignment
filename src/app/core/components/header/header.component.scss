@@ -1,8 +1,14 @@
 @import '../../../../styles.scss';
+.header-container{
+    height: 130px;;
+}
 .header-wrapper{
     @include box-shadow(0px 4px 4px #dedede);
     height: auto;
     @include bg-opacity($color-white);
+    width: 100%;
+    position: fixed;
+    z-index: 4;
     .header-img{
         height: 76px;
         width: auto;

@@ -12,7 +12,7 @@ export class HeaderComponent implements OnInit {
 
   toggleCart(){
     let cart = document.getElementById("js-cart");
-    if(cart.style.visibility === 'hidden'){
+    if(cart.style.visibility == 'hidden' || cart.style.visibility == ''){
       cart.style.visibility = "visible";
     }else{
       cart.style.visibility = "hidden";
