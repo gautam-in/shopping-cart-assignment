@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { IBanner } from './../models/IBanner';
+import { BannerService } from './../services/banner.service';
 
 @Component({
   selector: 'app-home',
@@ -6,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
+  bannerList: IBanner[];
   slideIndex:number = 1;
   
-  constructor() { }
+  constructor(private bannerService: BannerService) { }
   showSlides(n) {
     let i:number;
     let slides:any = document.getElementsByClassName("mySlides");
@@ -34,6 +37,11 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
     let slideIndex = 1;
     this.showSlides(slideIndex);
+    this.getBannerData();
+  }
+
+  getBannerData(){
+    this.bannerService.getBanner().subscribe((bannerList)=>this.bannerList = bannerList)
   }
  
 }
