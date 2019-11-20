@@ -1,5 +1,5 @@
 <main class="home-wrapper">
-    <div class="slideshow-container">
+    <div class="slideshow-container carousel-wrapper">
 
         <div class="mySlides fade">
             <div class="numbertext">1 / 3</div>
@@ -38,72 +38,16 @@
             
     </div>
     <div class="product-category">
-        <div class="item-container clearfix">
-            <div class="img-container pull-left clrarfix">
+        <div class="item-container clearfix" *ngFor="let category of categoryList;let odd=odd; let even=even">
+            <div class="img-container clrarfix" [ngClass]="{'pull-left':odd,'pull-right':even}">
                 <figure class="">
-                    <img src="../../assets/images/category/fruits.png" alt="Fruit Bucket">
+                    <img src="{{category.imageUrl}}" alt="{{category.name}}">
                 </figure>
             </div>
-            <section class="pull-right cateory-container text-center right">
-                <h4>Fruits & Vegetables</h4>
-                <p class="margin-top-15">A variety of fresh fruits and vegetables</p>
-                <button class="custom-button margin-top-20 cursor-pointer">Explore Fruit-and-veg</button>
-            </section>
-        </div>
-        <div class="item-container clearfix">
-            <div class="img-container pull-right clrarfix">
-                <figure class="">
-                    <img src="../../assets/images/category/baby.png" alt="Pampers Diapers Pants - Large Size, Monthly Box Pack, New, 128's pack">
-                </figure>
-            </div>
-            <section class="pull-left cateory-container text-center right">
-                <header>
-                    <h4>Fruits & Vegetables</h4>
-                </header>
-                <p aria-label="Product description" class="margin-top-15">A variety of fresh fruits and vegetables</p>
-                <button class="custom-button margin-top-20 cursor-pointer">Explore Fruit-and-veg</button>
-            </section>
-        </div>
-        <div class="item-container clearfix">
-            <div class="img-container pull-right clrarfix">
-                <figure class="">
-                    <img src="../../assets/images/category/bakery.png" alt="Product category image">
-                </figure>
-            </div>
-            <section class="pull-left cateory-container text-center">
-                <header>
-                    <h4>Fruits & Vegetables</h4>
-                </header>
-                <p aria-label="Product description" class="margin-top-15">A variety of fresh fruits and vegetables</p>
-                <button class="custom-button margin-top-20 cursor-pointer">Explore Fruit-and-veg</button>
-            </section>
-        </div>
-        <div class="item-container clearfix">
-            <div class="img-container pull-left clrarfix">
-                <figure class="">
-                    <img src="../../assets/images/category/beauty.png" alt="Product category image">
-                </figure>
-            </div>
-            <section class="pull-right cateory-container text-center right">
-                <header>
-                    <h4>Fruits & Vegetables</h4>
-                </header>
-                <p aria-label="Product description" class="margin-top-15">A variety of fresh fruits and vegetables</p>
-                <button class="custom-button margin-top-20 cursor-pointer">Explore Fruit-and-veg</button>
-            </section>
-        </div>
-        <div class="item-container clearfix">
-            <div class="img-container pull-right clrarfix">
-                <figure class="">
-                    <img src="../../assets/images/category/beverages.png" alt="Product category image">
-                </figure>
-            </div>
-            <section class="pull-left cateory-container text-center right">
-                <header>
-                    <h4>Fruits & Vegetables</h4>
-                </header>
-                <p aria-label="Product description" class="margin-top-15">A variety of fresh fruits and vegetables</p>
-                <button class="custom-button margin-top-20 cursor-pointer">Explore Fruit-and-veg</button>
+            <section class="cateory-container text-center" [ngClass]="{'pull-left':even,'pull-right right':odd}">
+                <h4>{{category.name}}</h4>
+                <p class="margin-top-15">{{category.description}}</p>
+                <button class="custom-button margin-top-20 cursor-pointer"><a [routerLink]="['/product-list']" [queryParams]="{ category: category.id }" queryParamsHandling="merge">Explore {{category.name}}</a></button>
             </section>
         </div>
     </div>

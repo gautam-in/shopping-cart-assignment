@@ -1,6 +1,7 @@
 @import '../../styles/abstract/variables';
 @import '../../styles/abstract/mixin';
 .list-container{
+    min-height: 570px;
     .list-item{
         background-color: $color-white;
         position: relative;
@@ -20,16 +21,46 @@
             @include bg-opacity(#f5f5f5);
             border-bottom: 2px solid #dedede;
             &:hover{
-                @include bg-opacity(darken(#f5f5f5,5%),1);
+                opacity:0.8;
             }
+        }
+        .active{
+            @include bg-opacity(#d10157);
+            color:$color-white;
         }
     }
     .min-category{
-        select{
-            @include bg-opacity($btn-color);
-            padding: 10px;
+        position: relative;
+        .dropbtn{
             width: 100%;
+            border: none;
+            outline: none;
+            @include font-size(90%);
+            font-family: "Dosis","Arial","Roboto";
+            color:$color-white;
+            padding: 10px;
+            @include bg-opacity($btn-color);
         }
+        .dropdown-content{
+            display: none;
+        }
+        &:hover{
+            .dropdown-content{
+                position: absolute;
+                left:0;
+                z-index:2;
+                top:42px;
+                display: inline-block;
+                @include bg-opacity($btn-color);
+                padding: 10px;
+                width: 100%;
+                color:$color-white;
+                .active{
+                    background-color: darken(#d10157,15%);
+                }
+            }
+        }
+        
     }
     a{
         text-decoration: none;
@@ -39,20 +70,40 @@
     .min-category{
         display: none;
     }
+    .list-body{
+        .no-data-exception{
+            margin: 15% 35%;
+            @include font-size(110%);
+            width:max-content;
+        }
+        .loading{
+            @include font-size(110%);
+            margin: 10% 35%;
+        }
+    }
     .list-item{
+        header{
+            height: 80px;
+            overflow: hidden;
+        }
         figure{
             width: 100%;
-            @include margin($top:55px);
+            height:232px;
+            @include margin($top:10px);
         }
         .fig-caption{
             @include bg-opacity(#f5f5f5);
             padding: 5px;
             @include font-size(70%);
             line-height: 1.4;
+            font-weight: 600;
+            overflow: hidden;
+            height: 84px;
             overflow: hidden;
         }
         img{
             width: 100%;
+            height: 100%;
         }
         .mrp{
             display: inline-block;

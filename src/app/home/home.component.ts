@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { IBanner } from './../models/IBanner';
 import { BannerService } from './../services/banner.service';
+import { ICategory } from './../models/Icategory';
+import { CategoriesService } from './../services/categories.service';
 
 @Component({
   selector: 'app-home',
@@ -9,9 +11,10 @@ import { BannerService } from './../services/banner.service';
 })
 export class HomeComponent implements OnInit {
   bannerList: IBanner[];
+  categoryList:ICategory[];
   slideIndex:number = 1;
   
-  constructor(private bannerService: BannerService) { }
+  constructor(private bannerService: BannerService, private categoriesService:CategoriesService) { }
   showSlides(n) {
     let i:number;
     let slides:any = document.getElementsByClassName("mySlides");
@@ -36,12 +39,19 @@ export class HomeComponent implements OnInit {
   }
   ngOnInit() {
     let slideIndex = 1;
-    this.showSlides(slideIndex);
     this.getBannerData();
+    this.getCategories();
+    this.showSlides(slideIndex);
   }
 
   getBannerData(){
-    this.bannerService.getBanner().subscribe((bannerList)=>this.bannerList = bannerList)
+    this.bannerService.getBanner().subscribe((bannerList)=>this.bannerList = bannerList);
+
+    console.log(this.bannerList)
+  }
+
+  getCategories(){
+    this.categoriesService.getCategories().subscribe((categories)=>this.categoryList = categories);
   }
  
 }

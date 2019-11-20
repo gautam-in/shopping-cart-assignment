@@ -6,6 +6,16 @@ body{
   font-size: 20px;
   height: 100%;
 }
+.arrow-down{
+  border: solid $color-white;
+  display: inline-block;
+  border-width: 0 3px 3px 0;
+  padding: 3px;
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  
+}
+
 .disp-inline{
   display: inline-block;
 }
@@ -27,9 +37,9 @@ body{
   display: inline-block;
   border: none;
   -webkit-transition: -webkit-transform 0.6s ease;
-  transition: -webkit-transform 0.6s ease;
-  transition: transform 0.6s ease;
-  transition: transform 0.6s ease, -webkit-transform 0.6s ease;
+  transition: -webkit-transform 0.3s ease;
+  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, -webkit-transform 0.3s ease;
   &:hover{
     -webkit-transform: scale(1.2);
             transform: scale(1.2);

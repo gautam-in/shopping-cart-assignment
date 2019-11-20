@@ -7,10 +7,16 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ProductListService {
-  private _url = "http://localhost:3000/products";
+  private baseUrl = "http://localhost:3000";
   constructor(private http: HttpClient) { }
 
   getProducts() : Observable <IProduct[]> {
-    return this.http.get<IProduct[]>(this._url);
+    const url = `${this.baseUrl}/products`;
+    return this.http.get<IProduct[]>(url);
+  }
+
+  getFilteredProducts(categoryId:string): Observable <IProduct[]> {
+    const url = `${this.baseUrl}/products?category=${categoryId}`;
+    return this.http.get<IProduct[]>(url);
   }
 }
