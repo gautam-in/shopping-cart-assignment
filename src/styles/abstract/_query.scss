@@ -83,6 +83,12 @@
 @include tiny-screen {
 	body{
         font-size:18px !important;
+        .sm-hidden{
+            display: none;
+        }
+        .sm-visible{
+            display: inline-block;
+        }
     }
     .main-navigation nav{
         left:39% !important;
@@ -191,6 +197,15 @@
 
 // extra small devices*/
 @include extra-small-screen{
+
+    body{
+        .xs-hidden{
+            display: none;
+        }
+        .xs-visible{
+            display: inline-block;
+        }
+    }
     .cart-container{
         .cart{
             left: 16px !important;

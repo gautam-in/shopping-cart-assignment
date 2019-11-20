@@ -1,31 +1,9 @@
-<main class="home-wrapper">
-    <div class="slideshow-container carousel-wrapper">
-
-        <div class="mySlides fade">
-            <div class="numbertext">1 / 3</div>
-            <img src="../../assets/images/offers/offer1.jpg"  alt="Offer image  upto 25%" style="width:100%">
+<main class="home-wrapper carousel-wrapper">
+    <div class="slideshow-container">
+        <div class="mySlides fade" *ngFor="let slide of bannerList; let index=index">
+            <div class="numbertext">{{index}} / {{bannerList.length}}</div>
+            <img src="{{slide.bannerImageUrl}}"  alt="Offer image  upto 25%" style="width:100%">
         </div>
-        
-        <div class="mySlides fade">
-            <div class="numbertext">2 / 3</div>
-            <img src="../../assets/images/offers/offer2.jpg" alt="Offer image upto 120 rupees off" style="width:100%">
-        </div>
-        
-        <div class="mySlides fade">
-            <div class="numbertext">3 / 3</div>
-            <img src="../../assets/images/offers/offer3.jpg" alt="Offer image @99 rupees" style="width:100%">
-        </div>
-
-        <div class="mySlides fade">
-            <div class="numbertext">3 / 3</div>
-            <img src="../../assets/images/offers/offer4.jpg" alt="Offer image @99 rupees" style="width:100%">
-        </div>
-
-        <div class="mySlides fade">
-            <div class="numbertext">3 / 3</div>
-            <img src="../../assets/images/offers/offer5.jpg" alt="Offer image upto 70 rupees off" style="width:100%">
-        </div>
-        
         <a role="button" aria-label="Previous" class="prev" (click)="plusSlides(-1)">&#10094;</a>
         <a role="button" aria-label="Next" class="next" (click)="plusSlides(1)">&#10095;</a>
         <div class="dot-container" role="list" aria-label="List of dot to navigate carousel screens">

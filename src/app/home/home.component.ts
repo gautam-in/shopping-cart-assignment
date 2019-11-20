@@ -19,6 +19,8 @@ export class HomeComponent implements OnInit {
     let i:number;
     let slides:any = document.getElementsByClassName("mySlides");
     let dots = document.getElementsByClassName("dot");
+
+    console.log(slides)  
     if (n > slides.length) {this.slideIndex = 1}    
     if (n < 1) {this.slideIndex = slides.length}
     for (i = 0; i < slides.length; i++) {
@@ -38,14 +40,18 @@ export class HomeComponent implements OnInit {
     this.showSlides(this.slideIndex += n);
   }
   ngOnInit() {
-    let slideIndex = 1;
+    this.slideIndex = 1;
     this.getBannerData();
     this.getCategories();
-    this.showSlides(slideIndex);
   }
 
   getBannerData(){
-    this.bannerService.getBanner().subscribe((bannerList)=>this.bannerList = bannerList);
+    this.bannerService.getBanner().subscribe((bannerList)=>{
+    this.bannerList = bannerList;
+    setTimeout (() => {
+      this.showSlides(this.slideIndex);
+   });
+  });
 
     console.log(this.bannerList)
   }
