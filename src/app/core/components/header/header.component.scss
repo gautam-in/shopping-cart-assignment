@@ -1,6 +1,69 @@
 @import '../../../../styles.scss';
 .header-container{
-    height: 130px;;
+    height: 130px;
+    .margin-top-4{
+        margin-top: 4px;
+    }
+    .small-screen-view{
+        width: 96%;
+        display: none;
+        .cart{
+            position: relative;
+            top:12px;
+            left: 26px;
+            padding: 8px 15px;
+            p{
+                @include font-size(80%);
+            }
+            img{
+                height: 25x;
+                width: 25px;
+            }
+        }
+        .menu{
+            @include bg-opacity(#f5f5f5);
+            position: relative;
+            top: 20px;
+            left: 17px;
+            .show{
+                display: inline-block;
+            }
+            .line{
+                width:25px;
+                border: 1px solid #444;
+            }
+            ul{
+                display: none;
+                position: absolute;
+                top:113%;
+                right: 8%;
+                @include font-size(90%);
+                @include bg-opacity(#f5f5f5);
+                @include box-shadow(1px 1px 1px 1px #dedede);
+                width: 160px;
+                li{
+                    &:not(:last-child){
+                        border-bottom:1px solid #cacaca;
+                    }
+                    a{
+                        color: #444;
+                        display: block;
+                        padding: 10px;
+                        &:hover{
+                            color: $color-white;
+                            @include bg-opacity($btn-color);
+                        }
+                        
+                    }
+                }
+                
+            }
+            .active{
+                @include bg-opacity($btn-color);
+                color: $color-white !important;
+            }
+        }
+    }
 }
 .header-wrapper{
     @include box-shadow(0px 4px 4px #dedede);
@@ -19,27 +82,28 @@
         padding: 0;
         overflow: hidden;
     }
-    .active{
-        background-color: #f5f5f5;
-        padding: 5px 10px;
-    }
-    a{
-        transition: border-bottom 0.3s;
-        transition-timing-function: ease-in-out;
-        -webkit-transition: border-bottom 0.3s;
-        -webkit-transition-timing-function: ease-in-out;
-
-        &:link,&:visited{
-            text-decoration: none;
-            color: darken(#444,5%);
-            font-weight: 600;
-            border-bottom: 1px solid transparentize($color: #fff, $amount: 1);
+    .large-screen-view{
+        .active{
+            background-color: #f5f5f5;
+            padding: 5px 10px;
         }
-        &:hover,&:active{
-            border-bottom: 2px solid opacify($color: #79D0E5, $amount: 0.5);            
+        a{
+            transition: border-bottom 0.3s;
+            transition-timing-function: ease-in-out;
+            -webkit-transition: border-bottom 0.3s;
+            -webkit-transition-timing-function: ease-in-out;
+    
+            &:link,&:visited{
+                color: darken(#444,5%);
+                font-weight: 600;
+                border-bottom: 1px solid transparentize($color: #fff, $amount: 1);
+            }
+            &:hover,&:active{
+                border-bottom: 2px solid opacify($color: #79D0E5, $amount: 0.5);            
+            }
         }
     }
-
+    
     .navbar{
         a{
             @include font-size(80%);
@@ -54,24 +118,6 @@
     }
     .cart-container{
         position: relative;
-        .cart{
-            border:none;
-            position: absolute;
-            top:30px;
-            left: 23px;
-            @include font-size(90%);
-            @include bg-opacity(#f5f5f5);
-            padding: 12px 20px;
-            -webkit-transition: background-color 0.2s, -webkit-transform 0.2s;
-            transition: background-color 0.2s, -webkit-transform 0.2s;
-            transition: background-color 0.2s, transform 0.2s;
-            transition: background-color 0.2s, transform 0.2s, -webkit-transform 0.2s;
-            &:hover{
-                @include bg-opacity(darken(#f5f5f5,5%));
-                -webkit-transform: scaleY(0.9);
-                transform: scaleY(0.9);
-            }
-        }
         .cart-img{
             height:30px;
             width:30px;
@@ -87,6 +133,25 @@
             a{
                 @include font-size(60%);
             }
+        }
+    }
+    .cart{
+        border:none;
+        outline: none;
+        position: absolute;
+        top:30px;
+        left: 23px;
+        @include font-size(90%);
+        @include bg-opacity(#f5f5f5);
+        padding: 12px 20px;
+        -webkit-transition: background-color 0.2s, -webkit-transform 0.2s;
+        transition: background-color 0.2s, -webkit-transform 0.2s;
+        transition: background-color 0.2s, transform 0.2s;
+        transition: background-color 0.2s, transform 0.2s, -webkit-transform 0.2s;
+        &:hover{
+            @include bg-opacity(darken(#f5f5f5,5%));
+            -webkit-transform: scaleY(0.9);
+            transform: scaleY(0.9);
         }
     }
 }

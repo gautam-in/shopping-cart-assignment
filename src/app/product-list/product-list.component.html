@@ -1,10 +1,10 @@
 <main class="list-container">
     <div class="min-category">
-        <button class="dropbtn cursor-pointer">
+        <button id="dropdown-btn" class="dropbtn cursor-pointer" (click)="onCategorySelect()">
             <p class="pull-left">{{selectedCategory}}</p>
             <p class="pull-right"><i class="arrow-down"></i></p>
         </button>
-        <ul class="dropdown-content">
+        <ul class="dropdown-content" id="js-dropdown-content">
             <li [ngClass]="{'active':(category.name==selectedCategory)}" class="cursor-pointer" (click)="getFilteredProducts(category)" *ngFor="let category of categoryList">{{category.name}}</li>
         </ul>
 

@@ -5,6 +5,9 @@ html{
 body{
   font-size: 20px;
   height: 100%;
+  a{
+    text-decoration: none;
+  }
 }
 .arrow-down{
   border: solid $color-white;

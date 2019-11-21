@@ -58,6 +58,11 @@ export class ProductListComponent implements OnInit {
       this.selectedCategoryId = categoryObj.id;
       this.apiService.getFilteredProducts("products",categoryObj.id).subscribe((productList) => this.productList = productList);
     }
+    this.onCategorySelect()
+  }
+
+  onCategorySelect(){
+    document.getElementById("js-dropdown-content").classList.toggle("show");
   }
 
 }

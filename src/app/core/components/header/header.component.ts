@@ -5,9 +5,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
+  public showMenu: boolean=false;
   constructor() { }
 
   ngOnInit() {
+    this.showMenu;
   }
 
   toggleCart(){
@@ -17,7 +19,7 @@ export class HeaderComponent implements OnInit {
     }else{
       cart.style.visibility = "hidden";
     }
-    
+    this.closeMenu();
   }
 
   closeCart(){
@@ -25,4 +27,11 @@ export class HeaderComponent implements OnInit {
     cart.style.visibility = "hidden";
   }
 
+  closeMenu(){
+    let menu = document.getElementById("mini-menu-navigation");
+    menu.style.visibility = "hidden";
+  }
+  onMenuClick(){
+    document.getElementById('mini-menu-navigation').classList.toggle("show");
+  }
 }

@@ -76,7 +76,7 @@
             width: 16px;
             border-radius: 100%;
             display: inline-block;
-            @include bg-opacity($color-white);
+            @include bg-opacity($btn-color);
             color: $color-white;
             cursor: pointer;
             @include font-size(73%);

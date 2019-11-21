@@ -87,7 +87,7 @@
             display: none;
         }
         .sm-visible{
-            display: inline-block;
+            display: inline-block !important;
         }
     }
     .main-navigation nav{
@@ -167,7 +167,7 @@
         }
     }
     .cart-container{
-        right: 8% !important;
+        right:0 !important;
         top: 11% !important;
         .main-header{
             background-color: $color-white !important;
@@ -203,7 +203,7 @@
             display: none;
         }
         .xs-visible{
-            display: inline-block;
+            display: inline-block !important;
         }
     }
     .cart-container{

@@ -9,79 +9,6 @@
         @include margin($top:15px,$right:10px);
         border-bottom: 1px dashed #dedede;
         @include box-shadow(3px 0 4px -2px #ccc);
-        &:hover{
-            @include box-shadow(5px 0 7px -1px #ccc);
-        }
-    }
-    .categories {
-        .category-item{
-            padding: 15px 10px;
-            cursor: pointer;
-            @include font-size(80%);
-            @include bg-opacity(#f5f5f5);
-            border-bottom: 2px solid #dedede;
-            &:hover{
-                opacity:0.8;
-            }
-        }
-        .active{
-            @include bg-opacity(#d10157);
-            color:$color-white;
-        }
-    }
-    .min-category{
-        position: relative;
-        .dropbtn{
-            width: 100%;
-            border: none;
-            outline: none;
-            @include font-size(90%);
-            font-family: "Dosis","Arial","Roboto";
-            color:$color-white;
-            padding: 10px;
-            @include bg-opacity($btn-color);
-        }
-        .dropdown-content{
-            display: none;
-        }
-        &:hover{
-            .dropdown-content{
-                position: absolute;
-                left:0;
-                z-index:2;
-                top:42px;
-                display: inline-block;
-                @include bg-opacity($btn-color);
-                padding: 10px;
-                width: 100%;
-                color:$color-white;
-                .active{
-                    background-color: darken(#d10157,15%);
-                }
-            }
-        }
-        
-    }
-    a{
-        text-decoration: none;
-        color: #777;
-        font-weight: 600;
-    }
-    .min-category{
-        display: none;
-    }
-    .list-body{
-        .no-data-exception{
-            margin: 15% 35%;
-            @include font-size(110%);
-            width:max-content;
-        }
-        .loading{
-            @include font-size(110%);
-            margin: 10% 35%;
-        }
-    }
-    .list-item{
         header{
             height: 80px;
             overflow: hidden;
@@ -137,6 +64,80 @@
             position: absolute;
             bottom: 10px;
             width: 100%;
+        }
+        &:hover{
+            @include box-shadow(5px 0 7px -1px #ccc);
+        }        
+    }
+    .categories {
+        .category-item{
+            padding: 15px 10px;
+            cursor: pointer;
+            @include font-size(80%);
+            @include bg-opacity(#f5f5f5);
+            border-bottom: 2px solid #dedede;
+            &:hover{
+                opacity:0.8;
+            }
+        }
+        .active{
+            @include bg-opacity(#d10157);
+            color:$color-white;
+        }
+    }
+    .min-category{
+        position: relative;
+        .show{
+            display: inline-block !important;
+        }
+        .dropbtn{
+            width: 100%;
+            border: none;
+            outline: none;
+            @include font-size(90%);
+            font-family: "Dosis","Arial","Roboto";
+            color:$color-white;
+            padding: 10px;
+            @include bg-opacity($btn-color);
+        }
+        .dropdown-content{
+            display: none;
+            position: absolute;
+            left:0;
+            z-index:2;
+            top:42px;
+            @include bg-opacity($btn-color);
+            padding: 10px;
+            width: 100%;
+            color:$color-white;
+            .active{
+                background-color: darken($btn-color,10%);
+            }
+            li{
+                &:hover{
+                    @include bg-opacity(darken($btn-color,12%));
+                }
+            }
+        }
+        
+        
+    }
+    a{
+        color: #777;
+        font-weight: 600;
+    }
+    .min-category{
+        display: none;
+    }
+    .list-body{
+        .no-data-exception{
+            margin: 15% 35%;
+            @include font-size(110%);
+            width:max-content;
+        }
+        .loading{
+            @include font-size(110%);
+            margin: 10% 35%;
         }
     }  
 }
