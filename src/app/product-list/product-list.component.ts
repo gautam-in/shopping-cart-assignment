@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ProductListService } from './../services/product-list.service';
 import { IProduct } from './../models/IProduct';
-import { CategoriesService } from './../services/categories.service';
+import { ApiService } from './../shared/services/api.service';
 import { ICategory } from './../models/Icategory';
 import { ActivatedRoute } from "@angular/router";
 
@@ -18,7 +17,7 @@ export class ProductListComponent implements OnInit {
   public selectedCategory:string='Select Category';
   public productLoading : boolean = true;
 
-  constructor(private route: ActivatedRoute, private _productListService: ProductListService, private categoriesService:CategoriesService) { 
+  constructor(private route: ActivatedRoute, private apiService:ApiService) { 
   }
 
   ngOnInit() {
@@ -26,7 +25,7 @@ export class ProductListComponent implements OnInit {
     this.route.queryParams.subscribe(params=>{
       this.selectedCategoryId = params.category;
       if(this.selectedCategoryId){
-        this._productListService.getFilteredProducts(this.selectedCategoryId).subscribe((productList) =>{
+        this.apiService.getFilteredProducts("products",this.selectedCategoryId).subscribe((productList) =>{
           this.productList = productList;
           this.productLoading = false;
         } );
@@ -39,14 +38,14 @@ export class ProductListComponent implements OnInit {
   
   getProducts(){
     this.productLoading = true;
-    this._productListService.getProducts().subscribe((productList) => {
+    this.apiService.getProducts("products").subscribe((productList) => {
       this.productList = productList;
       this.productLoading = false;
     });
   }
 
   getCategories(){
-    this.categoriesService.getCategories().subscribe((categories)=>this.categoryList = categories);
+    this.apiService.getCategories("categories").subscribe((categories)=>this.categoryList = categories);
   }
 
   getFilteredProducts(categoryObj:ICategory){
@@ -57,7 +56,7 @@ export class ProductListComponent implements OnInit {
     }else{
       this.selectedCategory = categoryObj.name;
       this.selectedCategoryId = categoryObj.id;
-      this._productListService.getFilteredProducts(categoryObj.id).subscribe((productList) => this.productList = productList);
+      this.apiService.getFilteredProducts("products",categoryObj.id).subscribe((productList) => this.productList = productList);
     }
   }
 

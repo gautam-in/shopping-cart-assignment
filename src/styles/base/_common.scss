@@ -36,10 +36,10 @@ body{
   font-size: 65%;
   display: inline-block;
   border: none;
-  -webkit-transition: -webkit-transform 0.6s ease;
-  transition: -webkit-transform 0.3s ease;
-  transition: transform 0.3s ease;
-  transition: transform 0.3s ease, -webkit-transform 0.3s ease;
+  -webkit-transition: -webkit-transform 0.2s ease;
+  transition: -webkit-transform 0.2s ease;
+  transition: transform 0.2s ease;
+  transition: transform 0.2s ease, -webkit-transform 0.2s ease;
   &:hover{
     -webkit-transform: scale(1.2);
             transform: scale(1.2);

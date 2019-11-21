@@ -7,8 +7,8 @@ import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { SignupComponent } from './signup/signup.component';
-import { ProductListService } from './services/product-list.service';
-import { HttpClientModule, HTTP_INTERCEPTORS }    from '@angular/common/http';
+import { HttpClientModule}    from '@angular/common/http';
+import { ConstantsService } from './shared/services/constants.service';
 
 @NgModule({
   declarations: [
@@ -20,12 +20,13 @@ import { HttpClientModule, HTTP_INTERCEPTORS }    from '@angular/common/http';
   ],
   imports: [
   
+
   BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     CoreModule
   ],
-  providers: [ProductListService],
+  providers: [ConstantsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

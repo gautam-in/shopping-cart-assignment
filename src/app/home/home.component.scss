@@ -2,6 +2,7 @@
 @import '../../styles/abstract/mixin';
 .home-wrapper{
     max-width: 1170px;
+    min-height: 580px;
     margin:auto;
     .dot-container{
         position: absolute;

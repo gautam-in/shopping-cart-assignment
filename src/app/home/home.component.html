@@ -1,17 +1,13 @@
 <main class="home-wrapper carousel-wrapper">
     <div class="slideshow-container">
         <div class="mySlides fade" *ngFor="let slide of bannerList; let index=index">
-            <div class="numbertext">{{index}} / {{bannerList.length}}</div>
+            <div class="numbertext">{{index+1}} / {{bannerList.length}}</div>
             <img src="{{slide.bannerImageUrl}}"  alt="Offer image  upto 25%" style="width:100%">
         </div>
         <a role="button" aria-label="Previous" class="prev" (click)="plusSlides(-1)">&#10094;</a>
         <a role="button" aria-label="Next" class="next" (click)="plusSlides(1)">&#10095;</a>
         <div class="dot-container" role="list" aria-label="List of dot to navigate carousel screens">
-            <span aria-label="Slide 1"  class="dot" (click)="currentSlide(1)"></span> 
-            <span aria-label="Slide 2"  class="dot" (click)="currentSlide(2)"></span> 
-            <span aria-label="Slide 3"  class="dot" (click)="currentSlide(3)"></span>
-            <span aria-label="Slide 4"  class="dot" (click)="currentSlide(4)"></span>
-            <span aria-label="Slide 5"  class="dot" (click)="currentSlide(5)"></span> 
+            <span class="dot" (click)="currentSlide(index+1)" *ngFor="let slide of bannerList; let index=index" ></span> 
         </div>
             
     </div>
