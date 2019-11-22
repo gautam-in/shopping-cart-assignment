@@ -26,27 +26,39 @@
 /******Mixin for differnt screens********/
 
 
-
-@mixin extra-small-screen {
-    @media screen and (max-width:567px) {
+@mixin custom-small-screen {
+    @media screen and (min-width:568px) {
         @content;
     }
 }
 
-@mixin tiny-screen {
-    @media screen and (max-width:767px) {
+
+@mixin extra-small-screen {
+    @media screen and (min-width:480px) {
         @content;
     }
 }
 
 @mixin small-screen {
-    @media screen and (max-width:991px) {
+    @media screen and (min-width:768px) {
         @content;
     }
 }
 
 @mixin medium-screen {
-    @media screen and (max-width:1199px) {
+    @media screen and (min-width:992px) {
+        @content;
+    }
+}
+
+@mixin large-screen {
+    @media screen and (min-width:1200px) {
+        @content;
+    }
+}
+
+@mixin range-of-screen($min:320px,$max:480px) {
+    @media (min-width: $min) and (max-width: $max) {
         @content;
     }
 }

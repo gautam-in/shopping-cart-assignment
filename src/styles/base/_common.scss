@@ -9,6 +9,9 @@ body{
     text-decoration: none;
   }
 }
+.lg-visible{
+  display: none;
+}
 .arrow-down{
   border: solid $color-white;
   display: inline-block;
