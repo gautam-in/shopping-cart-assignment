@@ -11,9 +11,9 @@
     .show{
         display: inline-block;
     }
-    .secondary-nav{
-        float: right;
-    }
+    // .secondary-nav{
+    //     float: right;
+    // }
     ul{
         list-style: none;
         margin: 0;
@@ -44,7 +44,7 @@
         width: 40%;
     }
     .cart-container{
-        width: 58%;
+        width: 56%;
         text-align: right;
     }
     .menu{
@@ -134,7 +134,7 @@
         height: 130px;
         .main-navigation{
             display: inline-block;
-            width:50%;
+            width:47%;
         }
         .menu{
             display: none;
@@ -150,14 +150,13 @@
         .cart{
             display: block;
             top:16px;
-            left:50px;
         }
         .logo-container{
             width: 22%;
         }
         .cart-container{
             text-align: right;
-            width: 23%;
+            width: 25%;
         }
         
     }
@@ -180,11 +179,17 @@
         .lg-visible{
             display: inline-block;
         }
+        .left-empty{
+            width:9%;
+        }
         .logo-container{
             width: 14%;
         }
         .cart-container{
-            width: 11%;
+            width: 13%;
+        }
+        .main-navigation{
+            width:53%;
         }
     }
 }

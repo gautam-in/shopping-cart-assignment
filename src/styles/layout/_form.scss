@@ -1,8 +1,9 @@
-.left-pane{
-    display: inline-block;
+.left-pane,.left-container,.right-container,.right-pane{
+    display: block;
+    width: 100%;
 }
-.right-pane{
-    display: inline;
+.register-body{
+    padding: 20px 40px;
 }
 .form-heading{
     font-size: 160%;
@@ -49,4 +50,34 @@ input:focus{
   
 .ng-invalid:not(form)  {
 border-left: 2px solid #a94442; /* red */
+}
+
+@include small-screen{
+    .register-body{
+        padding: 20px 36px;
+    }
+    .left-pane,.right-pane{
+        width : 39%;
+    }
+    .left-container,.right-container{
+        width : 49%;
+    }
+}
+
+@include custom-small-screen{
+    .left-container,.right-container{
+        width : 49%;
+    } 
+}
+
+@include medium-screen{
+    .register-body{
+        padding: 20px 130px;
+    }
+}
+
+@include large-screen{
+    .register-body{
+        padding: 20px 250px;
+    }
 }
