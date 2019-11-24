@@ -1,19 +1,15 @@
 @import '../../../../styles.scss';
 .header-container{
+    .lg-visible{
+        display: none;
+    }
     height: 107px;
     a{
         color: #444;
-        font-weight: 600;
     }
     .margin-top-4{
         margin-top: 4px;
     }
-    .show{
-        display: inline-block;
-    }
-    // .secondary-nav{
-    //     float: right;
-    // }
     ul{
         list-style: none;
         margin: 0;
@@ -41,20 +37,23 @@
         }
     }
     .logo-container{
-        width: 40%;
+        width: 28%;
     }
     .cart-container{
-        width: 56%;
+        width: 72%;
         text-align: right;
     }
     .menu{
         @include bg-opacity(#f5f5f5);
         position: relative;
-        top: 43px;
+        top: 40px;
         left: -3px;
         .line{
             width:25px;
             border: 1px solid #444;
+        }
+        .show{
+            display: inline-block;
         }
         ul{
             display: none;
@@ -66,6 +65,8 @@
             @include box-shadow(1px 1px 1px 1px #dedede);
             width: 160px;
             li{
+                @include font-size(70%);
+                text-align: center;
                 &:not(:last-child){
                     border-bottom:1px solid #cacaca;
                 }
@@ -73,6 +74,7 @@
                     color: #444;
                     display: block;
                     padding: 10px;
+                    font-weight: normal;
                     &:hover{
                         color: $color-white;
                         @include bg-opacity($btn-color);
@@ -93,7 +95,8 @@
         outline: none;
         position: relative;
         @include bg-opacity(#f5f5f5);
-        top:35px;
+        margin: 0 0 15px;
+        top:32px;
         left: 0px;
         padding: 8px 15px;
         p{
@@ -129,8 +132,8 @@
         }
     }
 
-    // 568px
-    @include  custom-small-screen{
+    // 576px
+    @include  small-screen{
         height: 130px;
         .main-navigation{
             display: inline-block;
@@ -141,14 +144,14 @@
         }
         .card-and-signup{
             .sigin-register{
-                display: block;
+                display: inline-block;
                 a{
-                    @include font-size(70%);
+                    @include font-size(65%);
                 }
             }
         }
         .cart{
-            display: block;
+            display: inline-block;
             top:16px;
         }
         .logo-container{
@@ -156,26 +159,28 @@
         }
         .cart-container{
             text-align: right;
-            width: 25%;
+            width: 23%;
         }
         
     }
 
     // min-width  768px
-    @include small-screen {
-        .cart{
-            padding: 14px 16px;
-            @include font-size(90%);
+    @include medium-screen {
+        .main-navigation{
+            width: 53%;
         }
-        .header-wrapper{
-            figure{
-                height: 94px;
-            }
+        .cart-container{
+            width: 16%;
+        }
+        .cart{
+            padding: 10px 16px;
+            margin: 0 0 15px;
+            @include font-size(90%);
         }
         
     }
 
-    @include medium-screen{
+    @include large-screen{
         .lg-visible{
             display: inline-block;
         }

@@ -1,21 +1,23 @@
 
-// @mixin width($num:1,$den :1) {
-//     width: percentage(($num/$den)-(13.66 * ($den-$num)));
-// }
 
+//box-shadow
 @mixin box-shadow($shadows...) {
     box-shadow: $shadows;
     -webkit-box-shadow:$shadows;
 }
 
+// font-size
 @mixin  font-size($size:70%) {
     font-size: $size;
 }
 
+
+//background
 @mixin bg-opacity($color, $opacity:1) {
     background: rgba($color, $opacity);
 }
 
+//margins
 @mixin margin($top:0,$right:0,$bottom:0,$left:0) {
     margin: $top $right $bottom $left;
 }
@@ -26,32 +28,29 @@
 /******Mixin for differnt screens********/
 
 
-@mixin custom-small-screen {
-    @media screen and (min-width:568px) {
-        @content;
-    }
-}
-
-
-@mixin extra-small-screen {
-    @media screen and (min-width:480px) {
-        @content;
-    }
-}
-
+//Small devices (landscape phones, 576px and up)
 @mixin small-screen {
+    @media screen and (min-width:576px) {
+        @content;
+    }
+}
+
+
+//Medium devices (tablets, 768px and up)
+@mixin medium-screen {
     @media screen and (min-width:768px) {
         @content;
     }
 }
-
-@mixin medium-screen {
+// Large devices (desktops, 992px and up)
+@mixin large-screen {
     @media screen and (min-width:992px) {
         @content;
     }
 }
 
-@mixin large-screen {
+//Extra large devices (large desktops, 1200px and up)
+@mixin extra-large-screen {
     @media screen and (min-width:1200px) {
         @content;
     }

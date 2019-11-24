@@ -194,8 +194,8 @@
     }
 
 
-    //custom-small-screen 568px
-    @include custom-small-screen{
+    //small-screen 576px
+    @include small-screen{
         .span-1-of-4{
             width: 49%;
         }
@@ -211,7 +211,7 @@
     }
 
     // min-width  768px
-    @include small-screen {
+    @include medium-screen {
         .min-category{
             display: none;
 
@@ -251,7 +251,7 @@
         }
     }
     // min-width 992px
-    @include medium-screen{
+    @include large-screen{
         .span-1-of-4{
             width: 24.9%;
         }

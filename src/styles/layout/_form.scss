@@ -1,3 +1,6 @@
+.login-wrapper{
+    min-height: 530px;
+}
 .left-pane,.left-container,.right-container,.right-pane{
     display: block;
     width: 100%;
@@ -64,19 +67,19 @@ border-left: 2px solid #a94442; /* red */
     }
 }
 
-@include custom-small-screen{
+@include small-screen{
     .left-container,.right-container{
         width : 49%;
     } 
 }
 
-@include medium-screen{
+@include large-screen{
     .register-body{
         padding: 20px 130px;
     }
 }
 
-@include large-screen{
+@include extra-large-screen{
     .register-body{
         padding: 20px 250px;
     }
