@@ -8,6 +8,8 @@
 .error{
     @include font-size(70%);
     color: #a94442;
+    word-spacing: 2px;
+    line-height: 1.6;
 }
 .register-body{
     padding: 20px 40px;

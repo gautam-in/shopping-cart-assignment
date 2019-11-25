@@ -18,7 +18,7 @@ export class ValidationService {
     this.validateObj();
     return this;
   }
-
+  
   private validateObj(){
     let config = {
       "validEmail": this._constant.VALID_EMAIL,
@@ -27,6 +27,7 @@ export class ValidationService {
     this.validations = [{
         "field":"email",
         "validation":"Please provide email value",
+        "required":true,
         "value":"",
         "error":false,
         "rule": function(title:string){
@@ -36,17 +37,14 @@ export class ValidationService {
             return false
           }
         },
-        "errorMsg": "Email is not provided. Please provide email",
-        "key": "requiredName"        
+        "errorMsg": "Email Field can not be empty."
       },
       {
         
           "field":"email",
           "validation":"Valid email",
           "value":"",
-          "checked":false,
           "error":false,
-          "check":false,
           "rule": function(title:string){
             if(title){
               return config.validEmail.test(title)
@@ -54,18 +52,30 @@ export class ValidationService {
               return false;
             }
           },
-          "errorMsg": "Please provide valid email",
-          "key": "titleMin"        
+          "errorMsg": "Please provide valid email"
         
       },
       {
-        
         "field":"password",
         "validation":"Valid password",
         "value":"",
-        "checked":false,
+        "required":true,
         "error":false,
-        "check":false,
+        "rule": function(title:string){
+          if(title && title.length){
+            return true;
+          }else{
+            return false;
+          }
+        },
+        "errorMsg": "Password can not be empty."
+      
+      },
+      {
+        "field":"password",
+        "validation":"Valid password",
+        "value":"",
+        "error":false,
         "rule": function(title:string){
           if(title){
             return config.validPassword.test(title)
@@ -73,10 +83,9 @@ export class ValidationService {
             return false;
           }
         },
-        "errorMsg": "Please provide valid password",
-        "key": "titleMin"        
+        "errorMsg": "Please provide valid password"
       
-    }
+      }
     ];
     
   }
