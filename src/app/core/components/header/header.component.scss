@@ -1,12 +1,28 @@
 @import '../../../../styles.scss';
+#cover{
+    position:fixed;
+    top:0;
+    left:0;
+    background:rgba(0,0,0,0.6);
+    z-index:5;
+    width:100%;
+    height:100%;
+    display:none;
+  }
 .header-container{
     .lg-visible{
         display: none;
     }
     height: 107px;
-    a{
-        color: #444;
+    li{
+        a{
+            color: #444;
+            &:hover{
+                border-bottom: 2px solid $btn-color;
+            }
+        }
     }
+    
     .margin-top-4{
         margin-top: 4px;
     }
@@ -21,12 +37,26 @@
             @include font-size(80%);
         }
     }
+    .secondary-nav{
+        li{
+            .active{
+                @include bg-opacity(#f5f5f5);
+                padding: 5px 10px;
+            }
+        }
+    }
     .main-navigation{
         display: none;
         nav{
             position: relative;
             top: 40px;
             left:17%;
+        }
+        li{
+            .active{
+                @include bg-opacity(#f5f5f5);
+                padding: 10px 15px;
+            }
         }
     }
     .sigin-register{
@@ -91,6 +121,7 @@
     }
 
     .cart{
+        z-index: 10;
         border:none;
         outline: none;
         position: relative;
@@ -137,7 +168,7 @@
         height: 130px;
         .main-navigation{
             display: inline-block;
-            width:47%;
+            width:53%;
         }
         .menu{
             display: none;
@@ -167,7 +198,7 @@
     // min-width  768px
     @include medium-screen {
         .main-navigation{
-            width: 53%;
+            width: 60%;
         }
         .cart-container{
             width: 16%;

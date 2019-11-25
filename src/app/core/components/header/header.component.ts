@@ -14,17 +14,22 @@ export class HeaderComponent implements OnInit {
 
   toggleCart(){
     let cart = document.getElementById("js-cart");
+    let overlayCover = document.getElementById("cover");
     if(cart.style.visibility == 'hidden' || cart.style.visibility == ''){
+      overlayCover.style.display="block";
       cart.style.visibility = "visible";
     }else{
       cart.style.visibility = "hidden";
+      overlayCover.style.display="none";
     }
     this.closeMenu();
   }
 
   closeCart(){
     let cart = document.getElementById("js-cart");
+    let overlayCover = document.getElementById("cover");
     cart.style.visibility = "hidden";
+    overlayCover.style.display="none";
   }
 
   closeMenu(){

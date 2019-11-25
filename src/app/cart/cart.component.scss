@@ -10,7 +10,7 @@
     visibility: hidden;
     top: 13%;
     right:0;
-    z-index: 5;
+    z-index: 10;
     @include bg-opacity(#f5f5f5);
     .card-panel{
         @include bg-opacity($color-white);
@@ -103,7 +103,7 @@
         .main-header{
             @include bg-opacity($color-black);
             color: $color-white;
-            margin-top: 5px;
+            margin-top: 0;
         }
     }
 }
