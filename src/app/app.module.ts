@@ -9,6 +9,9 @@ import { ProductListComponent } from './product-list/product-list.component';
 import { SignupComponent } from './signup/signup.component';
 import { HttpClientModule}    from '@angular/common/http';
 import { ConstantsService } from './shared/services/constants.service';
+import { ErrorDisplayDirective } from './shared/directives/error-display.directive';
+import { FormsModule } from '@angular/forms';
+import { FilterByType } from './shared/pipes/filter-by-type.pipe';
 
 @NgModule({
   declarations: [
@@ -16,15 +19,16 @@ import { ConstantsService } from './shared/services/constants.service';
     LoginComponent,
     HomeComponent,
     ProductListComponent,
-    SignupComponent
+    SignupComponent,
+    ErrorDisplayDirective,
+    FilterByType
   ],
   imports: [
-  
-
-  BrowserModule,
+    BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    CoreModule
+    CoreModule,
+    FormsModule
   ],
   providers: [ConstantsService],
   bootstrap: [AppComponent]

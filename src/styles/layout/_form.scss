@@ -5,6 +5,10 @@
     display: block;
     width: 100%;
 }
+.error{
+    @include font-size(70%);
+    color: #a94442;
+}
 .register-body{
     padding: 20px 40px;
 }
