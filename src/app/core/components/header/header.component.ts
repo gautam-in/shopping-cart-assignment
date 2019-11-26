@@ -21,7 +21,6 @@ export class HeaderComponent implements OnInit {
       cart.style.visibility = "hidden";
       overlayCover.style.display="none";
     }
-    this.closeMenu();
   }
 
   closeCart(){
@@ -31,10 +30,7 @@ export class HeaderComponent implements OnInit {
     overlayCover.style.display="none";
   }
 
-  closeMenu(){
-    let menu = document.getElementById("mini-menu-navigation");
-    menu.style.visibility = "hidden";
-  }
+
   onMenuClick(){
     document.getElementById('mini-menu-navigation').classList.toggle("show");
   }

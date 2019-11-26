@@ -143,9 +143,6 @@
     }
     .min-category{
         position: relative;
-        .show{
-            display: inline-block;
-        }
         .dropbtn{
             width: 100%;
             outline: none;
@@ -155,22 +152,28 @@
             padding: 10px;
             @include bg-opacity($btn-color);
         }
+        .show{
+            display: inline-block !important;
+        }
         .dropdown-content{
             display: none;
             position: absolute;
             left:0;
             z-index:2;
             top:42px;
-            @include bg-opacity($btn-color);
+            @include box-shadow(1px 3px 3px #ccc);
+            @include bg-opacity($color-white);
             padding: 10px;
-            width: 100%;
-            color:$color-white;
+            width: 99%;
+            color:$color-black;
             .active{
-                background-color: darken($btn-color,10%);
+                @include bg-opacity($btn-color);
+                color: $color-white;
             }
             li{
                 &:hover{
-                    @include bg-opacity(darken($btn-color,12%));
+                    @include bg-opacity($btn-color);
+                    color: $color-white;
                 }
             }
         }
