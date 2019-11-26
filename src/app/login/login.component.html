@@ -11,7 +11,7 @@
                             <label id="emailLbl" tabindex="-1" class="field-label" for="email">Email</label>
                         </div>
                         <div class="text-left">
-                            <input [(ngModel)]="email" (blur)="changedField(email,'email')"  id="email" type="email" name="email" aria-labelledby="emailLbl">
+                            <input [(ngModel)]="email" (ngModelChange)="changedField(email,'email')"  id="email" type="email" name="email" aria-labelledby="emailLbl">
                             <div class="error" *ngFor="let error of errorValues | filterByType: 'email'">
                                 {{error.errorMsg}}
                             </div>
@@ -21,7 +21,7 @@
                             <label class="field-label" tabindex="-2" id="pwdLbl" for="password">Password</label>
                         </div>
                         <div class="text-left">
-                            <input [(ngModel)]="password" (blur)="changedField(password,'password')" id="password" type="password" name="password" aria-labelledby="pwdLbl">
+                            <input [(ngModel)]="password" (ngModelChange)="changedField(password,'password')" id="password" type="password" name="password" aria-labelledby="pwdLbl">
                             <div class="error" *ngFor="let error of errorValues | filterByType: 'password'">
                                 {{error.errorMsg}}
                             </div>
