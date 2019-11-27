@@ -12,6 +12,8 @@ import { ConstantsService } from './shared/services/constants.service';
 import { ErrorDisplayDirective } from './shared/directives/error-display.directive';
 import { FormsModule } from '@angular/forms';
 import { FilterByType } from './shared/pipes/filter-by-type.pipe';
+import { CartService } from './shared/services/cart.service';
+
 
 @NgModule({
   declarations: [
@@ -24,13 +26,13 @@ import { FilterByType } from './shared/pipes/filter-by-type.pipe';
     FilterByType
   ],
   imports: [
-    BrowserModule,
+  BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     CoreModule,
     FormsModule
   ],
-  providers: [ConstantsService],
+  providers: [ConstantsService,CartService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

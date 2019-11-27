@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { CartService } from './../../../shared/services/cart.service';
+
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -6,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
   public showMenu: boolean=false;
-  constructor() { }
+  public cartCount :number;
+  constructor(private cartService: CartService) { }
   ngOnInit() {
     this.showMenu;
+    this.cartService.cartCount.subscribe(cart=>{
+      console.log(cart);
+      this.cartCount = cart;
+    });
   }
 
   toggleCart(){

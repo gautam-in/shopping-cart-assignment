@@ -33,7 +33,7 @@
                     <p class="fig-caption margin-top-15" title="{{product.description}}">{{product.description}}</p>
                     <footer class="clearfix margin-top-15 footer">
                         <p class="mrp">MRP Rs.{{product.price}}</p>
-                        <button class="buy-now pull-right">Buy Now<span class="mini-mrp">@Rs{{product.price}}</span></button>
+                        <button (click)="buynow(product)" class="buy-now pull-right">Buy Now<span class="mini-mrp">@Rs{{product.price}}</span></button>
                     </footer>
                 </section>
             </div>

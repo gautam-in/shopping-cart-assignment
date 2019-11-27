@@ -19,7 +19,6 @@ export class HomeComponent implements OnInit {
     let slides:any = document.getElementsByClassName("mySlides");
     let dots = document.getElementsByClassName("dot");
 
-    console.log(slides)  
     if (n > slides.length) {this.slideIndex = 1}    
     if (n < 1) {this.slideIndex = slides.length}
     for (i = 0; i < slides.length; i++) {

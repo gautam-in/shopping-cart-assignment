@@ -1,64 +1,65 @@
-<div class="cart-wrapper">
-    <section class="cart-container" id="js-cart">
-        
-        <!-- Header -->
-        <header class="main-header">
-                <h1 class="disp-inline">My Cart&nbsp;<span class="cart-count">(0 items)</span></h1>
-                <p class="pull-right cursor-pointer" (click)="closeCart()">&#10006;</p>
-        </header>
+
+<section class="cart-container" id="js-cart">
+    
+    <!-- Header -->
+    <header class="main-header">
+            <h1 class="disp-inline">My Cart&nbsp;<span class="cart-count">(0 items)</span></h1>
+            <p class="pull-right cursor-pointer" (click)="closeCart()">&#10006;</p>
+    </header>
 
 
-        <!-- Main content -->
-        <main>
-            <div class="card-container">
-                <!-- cart's Cards -->
-                <div class="card-panel clearfix margin-top-10">
-                    <figure class="pull-left">
-                        <img src="../../assets/images/products/fruit-n-veg/apple.jpg" alt="Product image">
-                    </figure>
-                    <section class="cart-values pull-left margin-left-20">
-                        <header>
-                            <h6>Apple Washington, Regular 4 pcs</h6>
-                        </header>
-                            <div class="minus disp-inline text-center">
-                                <span class="sign">&#8722;</span>
-                            </div>
-                            <span class="value margin-left-20 margin-right-20">1</span>
-                            <div class="plus margin-right-20 disp-inline text-center">
-                                <span class="sign">&#43;</span>
-                            </div>
-                            
-                            <span class="price">X&nbsp;&nbsp;&nbsp;&nbsp;Rs.187</span>
-                    </section>
-                    <div class="total-price">
-                        <p>Rs.187</p>
-                    </div>
-                </div>
-                <!-- Offer section -->
-                <div class="offer margin-top-10 clearfix">
-                    <figure class="pull-left"><img src="../../assets/images/lowest-price.png" alt="Lowest Price"></figure>
-                    <p class="disp-inline margin-left-20">You won't find it cheaper anywhere.</p>
-                </div>
-
-
-                <!-- No item in the card -->
-                <!-- <section class="no-item-exception text-center">
+    <!-- Main content -->
+    <main>
+        <div class="card-container">
+            <!-- cart's Cards -->
+            <div class="card-panel clearfix margin-top-10" *ngFor="let cart of cartList; let i = index">
+                <figure class="pull-left">
+                    <img src="{{cart.imageURL}}" alt="Product image">
+                </figure>
+                <section class="cart-values pull-left margin-left-20">
                     <header>
-                        <h5>No items in your cart</h5>
-                        <p class="font-13">Your favourite items are just a click away</p>
+                        <h6>{{cart.name}}</h6>
                     </header>
-                </section> -->
+                        <div class="minus disp-inline text-center" (click)="modifyItems(cart,'decrement',i)">
+                            <span class="sign">&#8722;</span>
+                        </div>
+                        <span class="value margin-left-20 margin-right-20">{{cart.count}}</span>
+                        <div class="plus margin-right-20 disp-inline text-center" (click)="modifyItems(cart,'increment',i)">
+                            <span class="sign">&#43;</span>
+                        </div>
+                        
+                        <span class="price">X&nbsp;&nbsp;&nbsp;&nbsp;Rs.{{cart.price}}</span>
+                </section>
+                <div class="total-price">
+                    <p>Rs.{{cart.count * cart.price}}</p>
+                </div>
             </div>
-        </main>
+            <!-- Offer section -->
+            <div class="offer margin-top-10 clearfix" *ngIf="cartList?.length">
+                <figure class="pull-left"><img src="../../assets/images/lowest-price.png" alt="Lowest Price"></figure>
+                <p class="disp-inline margin-left-20">You won't find it cheaper anywhere.</p>
+            </div>
 
 
-        <!-- Footer -->
-        <footer class="cart-footer margin-top-5 padding-10">
-            <p class="font-14 text-center margin-bottom-10">Promo code can be applied on payment page</p>
-            <button class="cart-btn clearfix padding-10" role="button" aria-label="Proceed checkout button">
-                <p class="pull-left margin-left-5 font-14">Proceed Checkout</p>
-                <p class="pull-right margin-right-5 font-14">Rs.187&nbsp;&gt;</p>
-            </button>
-        </footer>
-    </section>
-</div>
+            <!-- No item in the card -->
+            <section *ngIf="!cartList?.length" class="no-item-exception text-center">
+                <h5>No items in your cart</h5>
+                <p class="font-13">Your favourite items are just a click away</p>
+            </section>
+        </div>
+    </main>
+
+
+    <!-- Footer -->
+    <footer class="cart-footer margin-top-5 padding-10">
+        <p *ngIf="cartList?.length" class="font-14 text-center margin-bottom-10">Promo code can be applied on payment page</p>
+        <button *ngIf="cartList?.length" (click)="closeCart()" class="cart-btn clearfix padding-10" role="button" aria-label="Proceed checkout button">
+            <p class="pull-left margin-left-5 font-14">Proceed Checkout</p>
+            <p class="pull-right margin-right-5 font-14">Rs.{{totalPrice}}&nbsp;&gt;</p>
+        </button>
+        <button *ngIf="!cartList?.length" (click)="exploreShopping()" class="cart-btn clearfix padding-10" role="button" aria-label="Start Shopping">
+            <p class="margin-left-5 font-14" >Start Shopping</p>
+        </button>
+    </footer>
+</section>
+

@@ -3,6 +3,7 @@ import { IProduct } from './../models/IProduct';
 import { ApiService } from './../shared/services/api.service';
 import { ICategory } from './../models/Icategory';
 import { ActivatedRoute } from "@angular/router";
+import { CartService } from './../shared/services/cart.service';
 
 
 @Component({
@@ -17,7 +18,7 @@ export class ProductListComponent implements OnInit {
   public selectedCategory:string='Select Category';
   public productLoading : boolean = true;
 
-  constructor(private route: ActivatedRoute, private apiService:ApiService) { 
+  constructor(private route: ActivatedRoute, private apiService:ApiService, private cartService: CartService) { 
   }
 
   ngOnInit() {
@@ -65,4 +66,15 @@ export class ProductListComponent implements OnInit {
     document.getElementById("js-dropdown-content").classList.toggle("show");
   }
 
+  buynow(product:any){
+    let product_new ={
+      "name": product.name,
+      "imageURL": product.imageURL,
+      "price": product.price,
+      "stock": product.stock,
+      "id": product.id,
+      "count":1
+    }
+    this.cartService.addCartItem(product_new)
+  }
 }

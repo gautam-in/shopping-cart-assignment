@@ -4,13 +4,15 @@
 .cart-container{
     position: fixed;
     width:400px;
-    right: 0;
-    top:0;
     height: 100%;
     visibility: hidden;
-    top: 13%;
+    top: 12%;
     right:0;
     z-index: 10;
+    main{
+        height: 537px;
+        position: relative;
+    }
     @include bg-opacity(#f5f5f5);
     .card-panel{
         @include bg-opacity($color-white);
@@ -84,9 +86,9 @@
     }
     .cart-footer{
         @include bg-opacity($color-white);
-        position: fixed;
-        width: 400px;
-        top:87%;
+        position: absolute;
+        width: 100%;
+        bottom: 12%;
     }
     .cart-btn{
         border-radius: 3px;
@@ -105,5 +107,8 @@
             color: $color-white;
             margin-top: 0;
         }
+    }
+    @include large-screen{
+        right: 10%;
     }
 }
