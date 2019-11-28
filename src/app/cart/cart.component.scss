@@ -11,6 +11,7 @@
     z-index: 10;
     main{
         height: 537px;
+        overflow: auto;
         position: relative;
     }
     @include bg-opacity(#f5f5f5);
@@ -55,10 +56,6 @@
         h1{
             @include font-size(90%);
         } 
-    }
-    .card-container{
-        overflow: auto;
-        height: 77%;
     }
     .no-item-exception{
         position: relative;

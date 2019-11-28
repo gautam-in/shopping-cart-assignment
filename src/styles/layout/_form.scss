@@ -1,7 +1,7 @@
 .login-wrapper{
     min-height: 530px;
 }
-.left-pane,.left-container,.right-container,.right-pane{
+.top-pane,.top-container,.bottom-container,.bottom-pane{
     display: block;
     width: 100%;
 }
@@ -65,16 +65,16 @@ border-left: 2px solid #a94442; /* red */
     .register-body{
         padding: 20px 36px;
     }
-    .left-pane,.right-pane{
+    .top-pane,.bottom-pane{
         width : 39%;
     }
-    .left-container,.right-container{
+    .top-container,.bottom-container{
         width : 49%;
     }
 }
 
 @include small-screen{
-    .left-container,.right-container{
+    .top-container,.bottom-container{
         width : 49%;
     } 
 }

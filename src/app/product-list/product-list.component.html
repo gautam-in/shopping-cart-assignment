@@ -18,7 +18,7 @@
 
         <!-- Product category filter for medium and large screen -->
 
-        <div class="col span-2-of-12 tabs">
+        <aside class="col span-2-of-12 tabs">
             <nav aria-label="Side tabs for Category" aria-labelledby="mainmenulabel">
                 <ul class="categories margin-right-10">
                     <li class="category-item" [ngClass]="{'active':(selectedCategoryId==category.id)}"  (click)="getFilteredProducts(category)" *ngFor="let category of categoryList">
@@ -26,7 +26,7 @@
                     </li>
                 </ul>
             </nav>
-        </div>
+        </aside>
 
         <!-- Main content(dynamic product list) -->
         <div class="col span-10-of-12 list-body">
@@ -50,5 +50,4 @@
         </div>
     </div>
 
-    <div appErrorDisplay errorType="'success'"></div>
 </main>

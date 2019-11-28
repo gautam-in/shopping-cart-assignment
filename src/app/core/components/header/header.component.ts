@@ -23,9 +23,11 @@ export class HeaderComponent implements OnInit {
     if(cart.style.visibility == 'hidden' || cart.style.visibility == ''){
       overlayCover.style.display="block";
       cart.style.visibility = "visible";
+      document.body.style.overflow = 'hidden';
     }else{
       cart.style.visibility = "hidden";
       overlayCover.style.display="none";
+      document.body.style.overflow = 'auto';
     }
   }
 
@@ -34,7 +36,9 @@ export class HeaderComponent implements OnInit {
     let overlayCover = document.getElementById("cover");
     cart.style.visibility = "hidden";
     overlayCover.style.display="none";
+    document.body.style.overflow = 'auto';
   }
+
 
 
   onMenuClick(){

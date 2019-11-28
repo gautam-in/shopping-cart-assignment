@@ -14,11 +14,7 @@
         height: auto;
         
     }
-    .product-category{
-        max-width: 1000px;
-        position: relative;
-        margin: auto;
-    }
+
     .item-container{
         @include box-shadow(1px 6px 5px -6px #aaa);
         padding:10px 0 30px 0;

@@ -23,6 +23,7 @@ export class CartComponent implements OnInit {
     this.cartService.cartCount.subscribe(cartCount=>{
       this.getTotalPrice();
     });
+
   }
   
 
