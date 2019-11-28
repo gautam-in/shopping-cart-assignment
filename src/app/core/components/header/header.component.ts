@@ -13,7 +13,6 @@ export class HeaderComponent implements OnInit {
   ngOnInit() {
     this.showMenu;
     this.cartService.cartCount.subscribe(cart=>{
-      console.log(cart);
       this.cartCount = cart;
     });
   }

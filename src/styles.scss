@@ -2,7 +2,8 @@
 @import url("https://fonts.googleapis.com/css?family=Dosis:400,600,700");
 @import "./styles/abstract/variables";
 @import "./styles/abstract/mixin";
+@import "./styles/base/common";
 @import "./styles/layout/grid";
 @import "./styles/layout/form";
-@import "./styles/base/common";
+
 @import "./styles/components/carousel";

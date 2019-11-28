@@ -1,4 +1,7 @@
 <main class="list-container">
+
+    <!-- Dropdown for category for small screen -->
+
     <div class="min-category">
         <button id="dropdown-btn" class="dropbtn cursor-pointer" (click)="onCategorySelect()">
             <p class="pull-left">{{selectedCategory}}</p>
@@ -9,7 +12,12 @@
         </ul>
 
     </div>
+
+
     <div class="row">
+
+        <!-- Product category filter for medium and large screen -->
+
         <div class="col span-2-of-12 tabs">
             <nav aria-label="Side tabs for Category" aria-labelledby="mainmenulabel">
                 <ul class="categories margin-right-10">
@@ -19,6 +27,8 @@
                 </ul>
             </nav>
         </div>
+
+        <!-- Main content(dynamic product list) -->
         <div class="col span-10-of-12 list-body">
             <p class="no-data-exception margin-top-20" *ngIf="!productList?.length && !productLoading">No Products found for <em>{{selectedCategory}}</em></p>
             <p class="loading margin-top-20" *ngIf="productLoading">Loading ...</p>
@@ -39,4 +49,6 @@
             </div>
         </div>
     </div>
+
+    <div appErrorDisplay errorType="'success'"></div>
 </main>

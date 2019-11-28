@@ -1,10 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChildren } from '@angular/core';
 import { IProduct } from './../models/IProduct';
 import { ApiService } from './../shared/services/api.service';
 import { ICategory } from './../models/Icategory';
 import { ActivatedRoute } from "@angular/router";
 import { CartService } from './../shared/services/cart.service';
-
 
 @Component({
   selector: 'app-product-list',
@@ -17,7 +16,7 @@ export class ProductListComponent implements OnInit {
   public selectedCategoryId:string='';
   public selectedCategory:string='Select Category';
   public productLoading : boolean = true;
-
+  
   constructor(private route: ActivatedRoute, private apiService:ApiService, private cartService: CartService) { 
   }
 
@@ -62,19 +61,22 @@ export class ProductListComponent implements OnInit {
     this.onCategorySelect()
   }
 
+  buynow(product:any){
+    this.apiService.buyProduct("addToCart").subscribe(()=>{
+      let product_new ={
+        "name": product.name,
+        "imageURL": product.imageURL,
+        "price": product.price,
+        "stock": product.stock,
+        "id": product.id,
+        "count":1
+      }
+      this.cartService.addCartItem(product_new);
+    })
+  }
+
   onCategorySelect(){
     document.getElementById("js-dropdown-content").classList.toggle("show");
   }
 
-  buynow(product:any){
-    let product_new ={
-      "name": product.name,
-      "imageURL": product.imageURL,
-      "price": product.price,
-      "stock": product.stock,
-      "id": product.id,
-      "count":1
-    }
-    this.cartService.addCartItem(product_new)
-  }
 }

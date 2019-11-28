@@ -65,11 +65,16 @@
         top:40%;
     }
     .cart-values{
+        user-select: none;
+        .cart-title{
+            width: 95%;
+        }
         .sign{
             position: relative;
             bottom: 3px;
         }
         .price{
+            
             @include font-size(65%);
             color: $color-black;
         }

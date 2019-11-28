@@ -1,14 +1,24 @@
-<header>
+<div>
+    <!-- app cart component inject over here -->
     <app-cart (cartClosed)="closeCart()"></app-cart>
+
+    <!-- Header container -->
     <div class="clearfix header-container">
         <div class="header-wrapper clearfix row">
             <div class="col span-1-of-12 lg-visible left-empty"></div>
+
+
+            <!-- App logo container -->
+
             <div class="col span-3-of-12 text-right logo-container margin-0">
                 <figure class="logo ">
                     <img class="header-img" src="../../../../assets/images/logo.png" alt="App logo">
                 </figure>
             </div>
             
+
+            <!-- Main navigation container -->
+
             <div class="main-navigation col span-5-of-12">
                 <nav id="main-nav" class="navbar" aria-label="Main">
                     <ul>
@@ -17,6 +27,10 @@
                     </ul>
                 </nav>
             </div>
+
+
+            <!-- Cart, signup and signin container -->
+
             <div class="cart-container col span-4-of-12 margin-0">
                 <div class="card-and-signup">
                     <div class="sigin-register clearfix">
@@ -52,7 +66,7 @@
             
         </div>
     </div>
-</header>
+</div>
 <div id="cover">
-    </div>
+</div>
 

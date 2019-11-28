@@ -29,4 +29,9 @@ export class ApiService {
     const url = `${this._constant.baseAppUrl+param}?category=${categoryId}`;
     return this.http.get<IProduct[]>(url);
   }
+
+  buyProduct(param:string){
+    const url = `${this._constant.baseAppUrl+param}`;
+    return this.http.get<IProduct[]>(url);
+  }
 }

@@ -1,34 +1,40 @@
 <main class="login-wrapper row margin-top-20">
     <div class="row page-body">
-            <div class="col span-1-of-6"></div>
-            <section class="col span-2-of-6 text-center left-pane">
-                <h1 class="text-left form-heading">Login</h1>
-                <h5 class="text-left margin-top-20 form-desc">Get access to your Orders, Wishlist and Recommendations</h5>
-            </section>
-            <div class="col span-2-of-6 text-center right-pane">
-                    <form id="js-login-form" class="login-form">
-                        <div class="text-left">
-                            <label id="emailLbl" tabindex="-1" class="field-label" for="email">Email</label>
-                        </div>
-                        <div class="text-left">
-                            <input [(ngModel)]="email" (ngModelChange)="changedField(email,'email')"  id="email" type="email" name="email" aria-labelledby="emailLbl">
-                            <div class="error" *ngFor="let error of errorValues | filterByType: 'email'">
-                                {{error.errorMsg}}
-                            </div>
-                        </div>
-                        
-                        <div class="text-left margin-top-20">
-                            <label class="field-label" tabindex="-2" id="pwdLbl" for="password">Password</label>
-                        </div>
-                        <div class="text-left">
-                            <input [(ngModel)]="password" (ngModelChange)="changedField(password,'password')" id="password" type="password" name="password" aria-labelledby="pwdLbl">
-                            <div class="error" *ngFor="let error of errorValues | filterByType: 'password'">
-                                {{error.errorMsg}}
-                            </div>
-                        </div>
-                        <button aria-label="Login button" (click)="onSubmit()" type="button" class="cursor-pointer block-btn padding-10">Login</button>
-                    </form> 
-            </div>
-            <div class="col span-1-of-6"></div>
+        <div class="col span-1-of-6"></div>
+        
+        <!-- Content container for login -->
+
+        <section class="col span-2-of-6 text-center left-pane">
+            <h1 class="text-left form-heading">Login</h1>
+            <h5 class="text-left margin-top-20 form-desc">Get access to your Orders, Wishlist and Recommendations</h5>
+        </section>
+
+        <!--Login form container  -->
+
+        <div class="col span-2-of-6 text-center right-pane">
+            <form id="js-login-form" class="login-form">
+                <div class="text-left">
+                    <label id="emailLbl" tabindex="-1" class="field-label" for="email">Email</label>
+                </div>
+                <div class="text-left">
+                    <input [(ngModel)]="email" (ngModelChange)="changedField(email,'email')"  id="email" type="email" name="email" aria-labelledby="emailLbl">
+                    <div class="error" *ngFor="let error of errorValues | filterByType: 'email'">
+                        {{error.errorMsg}}
+                    </div>
+                </div>
+                
+                <div class="text-left margin-top-20">
+                    <label class="field-label" tabindex="-2" id="pwdLbl" for="password">Password</label>
+                </div>
+                <div class="text-left">
+                    <input [(ngModel)]="password" (ngModelChange)="changedField(password,'password')" id="password" type="password" name="password" aria-labelledby="pwdLbl">
+                    <div class="error" *ngFor="let error of errorValues | filterByType: 'password'">
+                        {{error.errorMsg}}
+                    </div>
+                </div>
+                <button aria-label="Login button" (click)="onSubmit()" type="button" class="cursor-pointer block-btn padding-10">Login</button>
+            </form> 
+        </div>
+        <div class="col span-1-of-6"></div>
     </div>
 </main>

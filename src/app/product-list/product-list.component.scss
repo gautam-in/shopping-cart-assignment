@@ -9,7 +9,7 @@
         display: none;
     }
     .list-item{
-        background-color: $color-white;
+        @include bg-opacity($color-white);
         position: relative;
         height: 332px;
         @include margin($top:15px,$right:10px);
@@ -22,7 +22,7 @@
 
         .fig-caption{
             height: 43%;
-            font-size: 65%;
+            @include font-size(65%);
             float: left;
             width: 49%;
             @include bg-opacity(#f5f5f5);
@@ -40,38 +40,6 @@
                 width: 100%;
             }
         }
-        // figure{
-            // height: 50%;
-            // width: 50%;
-            // margin-top:15px;
-            // float: left;
-            // width: 100%;
-            // height:232px;
-            // @include margin($top:10px);
-        // }
-        // .fig-caption{            
-            // font-size: 65%;
-            // float: left;
-            // width: 49%;
-            // height: 65%;
-            // @include bg-opacity(#f5f5f5);
-            // padding: 5px;
-            // line-height: 1.4;
-            // overflow: hidden;
-                             
-            // @include bg-opacity(#f5f5f5);
-            // padding: 5px;
-            // @include font-size(70%);
-            // line-height: 1.4;
-            // font-weight: 600;
-            // overflow: hidden;
-            // height: 84px;
-            // overflow: hidden;
-        // }
-        // img{
-        //     width: 100%;
-        //     height: 100%;
-        // }
         .mrp{
             display: none;
             @include font-size(70%);
@@ -100,13 +68,7 @@
                 -webkit-transform: scaleY(1.2);
                 transform: scaleY(1.2);
                 @include bg-opacity(lighten($btn-color,7%));
-            }
-            //padding: 10px 20px;
-            // @include bg-opacity($btn-color);
-            // color: $color-white;
-            // position: relative;
-            // right: 5px;
-            
+            }   
         }
         footer{
             width: 50%;
@@ -115,11 +77,6 @@
             float: left;
             margin:0;
         }
-        // footer{
-        //     position: absolute;
-        //     bottom: 10px;
-        //     width: 100%;
-        // }
         &:hover{
             @include box-shadow(5px 0 7px -1px #ccc);
         }        
@@ -245,7 +202,7 @@
                 display: block;
                 font-weight: 600;
                 overflow: hidden;
-                height: 84px;
+                height: 80px;
             }
             figure{
                 width: 100%;

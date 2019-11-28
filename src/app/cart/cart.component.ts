@@ -20,18 +20,21 @@ export class CartComponent implements OnInit {
       this.cartList = carts;
       this.getTotalPrice();
     });
+    this.cartService.cartCount.subscribe(cartCount=>{
+      this.getTotalPrice();
+    });
   }
+  
 
   modifyItems(product:any,action:string,index:number){
     if(action == 'increment'){
       product.count++;
       this.cartService.incrementCount();
     }else{
-      console.log(product)
       if(product.count>0){
         product.count--;
         if(product.count == 0){
-          this.cartList.splice(index);
+          this.cartList.splice(index,1);
         }
         this.cartService.decrementCount();
       }
@@ -43,7 +46,7 @@ export class CartComponent implements OnInit {
   }
 
   getTotalPrice(){
-    this.totalPrice = 0 ;
+    this.totalPrice = 0;
     this.cartList.map(obj=>{
       if(obj.count>0){
         this.totalPrice+= (obj.price * obj.count);
@@ -52,10 +55,13 @@ export class CartComponent implements OnInit {
   }
 
   exploreShopping(){
+    this.cartList = [];
+    this.cartService.resetCount();
     this.closeCart();
     if(this.route.url !== '/product-list'){
       this.route.navigate(['/product-list']);
     }
+
   }
 
 }
