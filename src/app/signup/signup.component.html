@@ -1,9 +1,9 @@
 <main class="login-wrapper margin-top-20">
-    <div class="row register-body">
-
+    <div class="row page-body">
+        <div class="col span-1-of-6"></div>
         <!-- Content container for sign up form -->
 
-        <section class="col span-1-of-2 text-center top-container">
+        <section class="col span-2-of-6 text-center top-pane">
             <header>
                 <h1 class="text-left form-heading">Signup</h1>
                 <h5 class="text-left form-desc margin-top-20">We do not share your personal details with anyone</h5>
@@ -13,58 +13,60 @@
 
         <!-- Signup form container -->
 
-        <div class="col span-1-of-2 text-center bottom-container">
+        <div class="col span-2-of-6 text-center bottom-pane">
             <form class="login-form">
                 <div class="text-left">
                     <label class="font-12" id="nameLbl" tabindex="-1" for="firstname">First Name</label>
                 </div>
                 <div class="text-left">
-                    <input id="firstname" [(ngModel)]="firstname" (ngModelChange)="changedField(firstname,'firstname')"  type="text" aria-labelledby="nameLbl" name="firstname">
-                    <div class="error" *ngFor="let error of errorValues | filterByType: 'firstname'">
+                    <input id="firstname" [(ngModel)]="firstname" (ngModelChange)="changedField(firstname,'firstname')"  type="text" aria-required="true" aria-labelledby="nameLbl" name="firstname">
+                    <p class="error" *ngFor="let error of errorValues | filterByType: 'firstname'">
                         {{error.errorMsg}}
-                    </div>
+                    </p>
                 </div>
                 
                 <div class="text-left margin-top-20">
                     <label class="field-label" id="lastnameLbl" tabindex="-2" for="lastname">Last Name</label>
                 </div>
                 <div class="text-left">
-                    <input id="lastname" [(ngModel)]="lastname" (ngModelChange)="changedField(lastname,'lastname')"  type="text" name="lastname" aria-labelledby="lastnameLbl">
-                    <div class="error" *ngFor="let error of errorValues | filterByType: 'lastname'">
+                    <input id="lastname" [(ngModel)]="lastname" (ngModelChange)="changedField(lastname,'lastname')"  type="text" name="lastname" aria-required="true" aria-labelledby="lastnameLbl">
+                    <p class="error" *ngFor="let error of errorValues | filterByType: 'lastname'">
                         {{error.errorMsg}}
-                    </div>
+                    </p>
                 </div>
                 <div class="text-left margin-top-20">
                     <label class="field-label" tabindex="-3" id="emailLbl" for="email">Email</label>
                 </div>
                 <div class="text-left">
-                    <input id="email" [(ngModel)]="email" (ngModelChange)="changedField(email,'email')" type="email" name="email" aria-labelledby="emailLbl">
-                    <div class="error" *ngFor="let error of errorValues | filterByType: 'email'">
+                    <input id="email" [(ngModel)]="email" (ngModelChange)="changedField(email,'email')" type="email" name="email" aria-required="true" aria-labelledby="emailLbl">
+                    <p class="error" *ngFor="let error of errorValues | filterByType: 'email'">
                         {{error.errorMsg}}
-                    </div>
+                    </p>
                 </div>
                 
                 <div class="text-left margin-top-20">
                     <label class="field-label" id="pwdLbl" tabindex="-4" for="password">Password</label>
                 </div>
                 <div class="text-left">
-                    <input id="password" [(ngModel)]="password" (ngModelChange)="changedField(password,'password')" type="password" name="password" aria-labelledby="pwdLbl">
-                    <div class="error" *ngFor="let error of errorValues | filterByType: 'password'">
+                    <input id="password" [(ngModel)]="password" (ngModelChange)="changedField(password,'password')" type="password" name="password" aria-required="true" aria-labelledby="pwdLbl">
+                    <p class="error" *ngFor="let error of errorValues | filterByType: 'password'">
                         {{error.errorMsg}}
-                    </div>
+                    </p>
                 </div>
 
                 <div class="text-left margin-top-20">
                     <label class="field-label" tabindex="-5"  id="confPwdLbl" for="confirmPassword">Confirm Password</label>
                 </div>
                 <div class="text-left">
-                    <input id="confirmPassword" [(ngModel)]="confirmPassword" (ngModelChange)="changedField(confirmPassword,'confirmPassword')" type="password" name="confirmPassword" aria-labelledby="confPwdLbl">
-                    <div class="error" *ngFor="let error of errorValues | filterByType: 'confirmPassword'">
+                    <input id="confirmPassword" [(ngModel)]="confirmPassword" (ngModelChange)="changedField(confirmPassword,'confirmPassword')" type="password" name="confirmPassword" aria-required="true" aria-labelledby="confPwdLbl">
+                    <p class="error" *ngFor="let error of errorValues | filterByType: 'confirmPassword'">
                         {{error.errorMsg}}
-                    </div>
+                    </p>
                 </div>
-                <button aria-label="Signup Button" (click)="onSubmit()" class="cursor-pointer block-btn padding-10">Signup</button>
+                <button aria-label="Signup Button" (click)="onSubmit()" (keydown.enter)="onSubmit()" class="cursor-pointer block-btn padding-10">Signup</button>
             </form> 
         </div>
+
+        <div class="col span-1-of-6"></div>
     </div> 
 </main>

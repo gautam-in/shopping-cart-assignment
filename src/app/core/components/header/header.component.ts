@@ -15,15 +15,18 @@ export class HeaderComponent implements OnInit {
     this.cartService.cartCount.subscribe(cart=>{
       this.cartCount = cart;
     });
+    
   }
 
   toggleCart(){
     let cart = document.getElementById("js-cart");
     let overlayCover = document.getElementById("cover");
+    let body = document.body;
     if(cart.style.visibility == 'hidden' || cart.style.visibility == ''){
       overlayCover.style.display="block";
       cart.style.visibility = "visible";
-      document.body.style.overflow = 'hidden';
+      body.style.overflow = 'hidden';  
+      // cart.attr('aria-pressed', true);
     }else{
       cart.style.visibility = "hidden";
       overlayCover.style.display="none";

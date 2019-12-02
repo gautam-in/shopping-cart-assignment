@@ -1,10 +1,10 @@
 
 <section class="cart-container" id="js-cart">
-    
+    <div class="visuallyhidden" id="closeButtonId">Close Cart</div>
     <!-- Header -->
     <header class="main-header">
-            <h1 class="disp-inline">My Cart&nbsp;<span class="cart-count">(0 items)</span></h1>
-            <p class="pull-right cursor-pointer" (click)="closeCart()">&#10006;</p>
+        <h1 class="disp-inline">My Cart&nbsp;<span class="cart-count">(0 items)</span></h1>
+        <p tabindex="0" role="button" class="pull-right cursor-pointer" (click)="closeCart()" aria-labelledby="closeButtonId">&#10006;</p>
     </header>
 
 
@@ -16,26 +16,28 @@
                     <img src="{{cart.imageURL}}" alt="Product image">
                 </figure>
                 <section class="cart-values pull-left margin-left-20">
-                    <header>
+                    <header class="margin-bottom-15">
                         <h6 class="ellipse cart-title" title="{{cart.name}}">{{cart.name}}</h6>
                     </header>
-                        <div class="minus disp-inline text-center" (click)="modifyItems(cart,'decrement',i)">
-                            <span class="sign">&#8722;</span>
-                        </div>
-                        <span class="value margin-left-20 margin-right-20">{{cart.count}}</span>
-                        <div class="plus margin-right-20 disp-inline text-center" (click)="modifyItems(cart,'increment',i)">
-                            <span class="sign">&#43;</span>
-                        </div>
-                        
-                        <span class="price">X&nbsp;&nbsp;&nbsp;&nbsp;Rs.{{cart.price}}</span>
+                    <button  aria-label="decrement" class="minus disp-inline text-center" (click)="modifyItems(cart,'decrement',i)">
+                        <span class="sign">&#8722;</span>
+                    </button>
+                    <span class="value margin-left-20 margin-right-20">{{cart.count}}</span>
+                    <button  aria-label="increment" class="plus margin-right-20 disp-inline text-center" (click)="modifyItems(cart,'increment',i)">
+                        <span class="sign">&#43;</span>
+                    </button>
+                    
+                    <div class="visuallyhidden" id="item-count-price">{{cart.count}} items at {{cart.price}} each</div>
+                    <div  role="text" class="price disp-inline" aria-labelledby="item-count-price">X&nbsp;&nbsp;&nbsp;&nbsp;Rs.{{cart.price}}</div>
                 </section>
                 <div class="total-price">
-                    <p>Rs.{{cart.count * cart.price}}</p>
+                    <p class="visuallyhidden" id="total-product-price">{{cart.count * cart.price}} Rupees</p>
+                    <div role="text" aria-labelledby="total-product-price"><data value="{{cart.count * cart.price}}" >Rs.{{cart.count * cart.price}}</data></div>
                 </div>
             </div>
             <!-- Offer section -->
             <div class="offer margin-top-10 clearfix" *ngIf="cartList?.length">
-                <figure class="pull-left"><img src="../../assets/images/lowest-price.png" alt="Lowest Price"></figure>
+                <figure class="pull-left"><img src="../../assets/images/lowest-price.png" alt="Lowest Price logo"></figure>
                 <p class="disp-inline margin-left-20">You won't find it cheaper anywhere.</p>
             </div>
 

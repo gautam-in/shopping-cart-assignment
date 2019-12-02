@@ -3,6 +3,7 @@
 .home-wrapper{
     max-width: 1170px;
     min-height: 580px;
+    font-size: 18px;
     margin:auto;
     .dot-container{
         position: absolute;
@@ -41,5 +42,9 @@
             right: 25%;
         }
         
+    }
+
+    @include large-screen{
+        font-size: 20px;
     }
 }

@@ -43,8 +43,8 @@
         .mrp{
             display: none;
             @include font-size(70%);
-            position: relative;
-            top: 5px;
+            margin-top: 25px;
+            font-weight: 600;
         }
         .mini-mrp{
             display: inline;
@@ -128,6 +128,7 @@
                 color: $color-white;
             }
             li{
+                display: block;
                 &:hover{
                     @include bg-opacity($btn-color);
                     color: $color-white;
@@ -184,11 +185,6 @@
         .span-1-of-4{
             width: 33%;
         }
-        .categories{
-            .category-item{
-                display: block;
-            }
-        }
         .span-10-of-12{
             width: 80%;
         }
@@ -214,6 +210,25 @@
     @include large-screen{
         .span-1-of-4{
             width: 24.9%;
+        }
+        .footer{
+            .mini-mrp{
+                display: none;
+            }
+            .mrp{
+                display: inline-block;
+            }
+            .buy-now{
+                width: 50%;
+            }
+        }
+    }
+    @include range-of-screen(992px,1083px){
+        .footer{
+            .buy-now{
+                @include font-size(60%);
+                padding: 10px 20px;
+            }
         }
     }
     

@@ -14,7 +14,7 @@
 
             <div class="col span-3-of-12 text-right logo-container margin-0">
                 <figure class="logo ">
-                    <img class="header-img" src="../../../../assets/images/logo.png" alt="App logo">
+                    <img class="header-img" src="../../../../assets/images/logo.png" alt="App logo Sabka bazar">
                 </figure>
             </div>
             
@@ -43,13 +43,13 @@
                             </ul>
                         </nav>
                     </div>
-                    <div class="disp-inline menu  padding-10 cursor-pointer">
-                        <div role="button" id="mini-menu-btn" (click)="onMenuClick()" class="mini-main-menu" aria-label="Main menu button">
+                    <div class="disp-inline menu cursor-pointer">
+                        <button  aria-label="Main menu button" id="mini-menu-btn" (click)="onMenuClick()" class="cursor-pointer mini-main-menu" aria-label="Main menu button">
                             <div class="line"></div>
                             <div class="line margin-top-4"></div>
                             <div class="line margin-top-4"></div>
                             <div class="line margin-top-4"></div>
-                        </div>
+                        </button>
                         <ul role="navigation" id="mini-menu-navigation">
                             <li (click)="onMenuClick()"><a [routerLink]="['/home']" routerLinkActive="active">Home</a></li>
                             <li (click)="onMenuClick()"><a [routerLink]="['/product-list']" routerLinkActive="active">Products</a></li>
@@ -57,7 +57,7 @@
                             <li (click)="onMenuClick()"><a [routerLink]="['/signup']" routerLinkActive="active">Register</a></li>
                         </ul>
                     </div>
-                    <button aria-label="Cart button" class="cart clearfix cursor-pointer" (click)="toggleCart()">
+                    <button aria-label="Go to Cart" class="cart clearfix cursor-pointer" tabindex="0" aria-pressed="false" (click)="toggleCart()" >
                         <img id="js-svg-cart" class="pull-left cart-img" src="../../../../assets/images/cart.svg" alt="Cart logo">
                         <p  class="pull-left cart-items margin-top-5 margin-left-5" *ngIf="cartCount">{{cartCount}} items</p>
                         <p  class="pull-left cart-items margin-top-5 margin-left-5" *ngIf="!cartCount">0 items</p>

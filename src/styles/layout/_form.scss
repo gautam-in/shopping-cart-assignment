@@ -1,7 +1,7 @@
 .login-wrapper{
     min-height: 530px;
 }
-.top-pane,.top-container,.bottom-container,.bottom-pane{
+.top-pane,.bottom-pane{
     display: block;
     width: 100%;
 }
@@ -10,9 +10,6 @@
     color: #a94442;
     word-spacing: 2px;
     line-height: 1.6;
-}
-.register-body{
-    padding: 20px 40px;
 }
 .form-heading{
     font-size: 160%;
@@ -62,9 +59,6 @@ border-left: 2px solid #a94442; /* red */
 }
 
 @include small-screen{
-    .register-body{
-        padding: 20px 36px;
-    }
     .top-pane,.bottom-pane{
         width : 39%;
     }
@@ -80,13 +74,14 @@ border-left: 2px solid #a94442; /* red */
 }
 
 @include large-screen{
-    .register-body{
-        padding: 20px 130px;
+    .page-body{
+        padding: 30px 144px 30px 53px;;
     }
 }
 
 @include extra-large-screen{
-    .register-body{
-        padding: 20px 250px;
+    .page-body{
+        padding: 30px 293px 30px 53px;
     }
+    
 }

@@ -3,7 +3,7 @@
     .lg-visible{
         display: none;
     }
-    height: 107px;
+    height: 48px;
     li{
         a{
             color: #444;
@@ -41,7 +41,7 @@
         display: none;
         nav{
             position: relative;
-            top: 40px;
+            top: 21px;
             left:17%;
         }
         li{
@@ -60,16 +60,16 @@
         }
     }
     .logo-container{
-        width: 28%;
+        width: 21%;
     }
     .cart-container{
-        width: 72%;
+        width: 79%;
         text-align: right;
     }
     .menu{
         @include bg-opacity(#f5f5f5);
         position: relative;
-        top: 40px;
+        top: 0px;
         left: -3px;
         .line{
             width:25px;
@@ -111,6 +111,14 @@
             @include bg-opacity($btn-color);
             color: $color-white !important;
         }
+        .mini-main-menu{
+            border: none;
+            outline: none;
+            @include bg-opacity(#f5f5f5);
+            padding: 12px 10px 11px 10px;
+            bottom: 1px;
+            position: relative;
+        }
     }
 
     .cart{
@@ -119,10 +127,9 @@
         outline: none;
         position: relative;
         @include bg-opacity(#f5f5f5);
-        margin: 0 0 15px;
-        top:32px;
+        top:0px;
         left: 0px;
-        padding: 8px 15px;
+        padding: 11px 15px;
         p{
             @include font-size(80%);
         }
@@ -143,12 +150,12 @@
     .header-wrapper{
         width: 100%;
         position: fixed;
-        z-index: 4;
+        z-index: 5;
         @include box-shadow(0px 4px 4px #dedede);
         height: auto;
         @include bg-opacity($color-white);
         figure{
-            height: 80px;
+            height: 41px;
         }
         .header-img{
             height: 100%;
@@ -158,7 +165,7 @@
 
     // 576px
     @include  small-screen{
-        height: 130px;
+        height: 80px;
         .main-navigation{
             display: inline-block;
             width:53%;
@@ -176,7 +183,6 @@
         }
         .cart{
             display: inline-block;
-            top:16px;
         }
         .logo-container{
             width: 22%;
@@ -184,6 +190,11 @@
         .cart-container{
             text-align: right;
             width: 23%;
+        }
+        .header-wrapper{
+            figure{
+                height: 70px;
+            }
         }
         
     }
@@ -197,10 +208,10 @@
             width: 16%;
         }
         .cart{
-            padding: 10px 16px;
-            margin: 0 0 15px;
+            padding: 8px 15px;
             @include font-size(90%);
         }
+        height: 74px;
         
     }
 
@@ -219,6 +230,9 @@
         }
         .main-navigation{
             width:53%;
+            nav{
+                top: 15px;
+            }
         }
     }
 }

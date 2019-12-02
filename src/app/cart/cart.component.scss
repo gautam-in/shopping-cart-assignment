@@ -3,15 +3,16 @@
 
 .cart-container{
     position: fixed;
-    width:400px;
+    width:350px;
     height: 100%;
     visibility: hidden;
-    top: 12%;
-    right:0;
+    top: 7%;
+    right:10px;
     z-index: 10;
     main{
         height: 537px;
-        overflow: auto;
+        overflow-y: auto;
+        overflow-x:hidden;
         position: relative;
     }
     @include bg-opacity(#f5f5f5);
@@ -21,6 +22,7 @@
         position: relative;
         figure{
             height: 50px;
+            width: 15%;
             img{
                 height: 100%;
                 width: auto;
@@ -63,34 +65,34 @@
     }
     .cart-values{
         user-select: none;
-        .cart-title{
-            width: 95%;
-        }
-        .sign{
-            position: relative;
-            bottom: 3px;
-        }
+        width: 77%;
         .price{
             
             @include font-size(65%);
             color: $color-black;
         }
         .plus,.minus{
-            height: 16px;
-            width: 16px;
-            border-radius: 100%;
+            outline: none;
+            border: none;
+            height: 18px;
+            width: 21px;
+            border-radius: 20%;
             display: inline-block;
             @include bg-opacity($btn-color);
             color: $color-white;
             cursor: pointer;
             @include font-size(73%);
         }
+        .value{
+            @include font-size(80%);
+            font-weight: 600;
+        }
     }
     .cart-footer{
         @include bg-opacity($color-white);
         position: absolute;
         width: 100%;
-        bottom: 12%;
+        bottom: 6%;
     }
     .cart-btn{
         border-radius: 3px;
@@ -109,8 +111,15 @@
             color: $color-white;
             margin-top: 0;
         }
+        .cart-footer{
+            bottom: 9%;
+        }
+       
+        top:10%;
+       
     }
     @include large-screen{
         right: 10%;
+        width:400px;
     }
 }
