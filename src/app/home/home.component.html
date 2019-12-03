@@ -4,32 +4,48 @@
 
     <div class="slideshow-container">
 
-
-        <!-- Slider starts here -->
-
-        <figure class="mySlides fade" *ngFor="let slide of bannerList; let index=index">
-            <img src="{{slide.bannerImageUrl}}"  alt="{{slide.bannerImageAlt}}" style="width:100%">
-        </figure>
+        <!-- Loading -->
+        <p class="loading margin-top-20" *ngIf="bannerLoading">
+            <loading size="normal"></loading>
+         </p>
 
 
+         <div *ngIf="!bannerLoading">
+            <!-- Slider starts here -->
 
-        <!-- Left and right buttona -->
-
-        <a role="button" aria-label="Previous" class="prev" (click)="plusSlides(-1)">&#10094;</a>
-        <a role="button" aria-label="Next" class="next" (click)="plusSlides(1)">&#10095;</a>
-
-
-
-        <!-- Dot container -->
-        <div class="dot-container" role="list" aria-label="List of dot to navigate carousel screens">
-            <span class="dot" (click)="currentSlide(index+1)" *ngFor="let slide of bannerList; let index=index" ></span> 
-        </div>
+            <figure class="mySlides" *ngFor="let slide of bannerList; let index=index">
+                <img src="{{slide.bannerImageUrl}}"  alt="{{slide.bannerImageAlt}}" style="width:100%">
+            </figure>
+    
+    
+    
+            <!-- Left and right buttona -->
+    
+            <a role="button" aria-label="Previous" class="prev" (click)="plusSlides(-1)">&#10094;</a>
+            <a role="button" aria-label="Next" class="next" (click)="plusSlides(1)">&#10095;</a>
+    
+    
+    
+            <!-- Dot container -->
+            <div class="dot-container" role="list" aria-label="List of dot to navigate carousel screens">
+                <span class="dot" (click)="currentSlide(index+1)" *ngFor="let slide of bannerList; let index=index" ></span> 
+            </div>
+         </div>
+        
             
     </div>
 
 
     
     <!-- All product category list starts here -->
+
+    <!-- category loading -->
+    <p class="loading margin-top-20" *ngIf="bannerLoading">
+        <loading size="normal" msg="Please wait while category is loading."></loading>
+    </p>
+
+
+    <!-- Category details -->
 
     <div class="item-container clearfix" *ngFor="let category of categoryList;let odd=odd; let even=even">
         <figure class="img-container clrarfix" [ngClass]="{'pull-left':odd,'pull-right':even}">

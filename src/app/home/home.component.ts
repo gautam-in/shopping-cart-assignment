@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { IBanner } from './../models/IBanner';
 import { ICategory } from './../models/Icategory';
 import { ApiService } from './../shared/services/api.service';
+import { error } from 'util';
 
 @Component({
   selector: 'app-home',
@@ -12,6 +13,8 @@ export class HomeComponent implements OnInit {
   bannerList: IBanner[];
   categoryList:ICategory[];
   slideIndex:number = 1;
+  bannerLoading: boolean=false;
+  categoryLoading:boolean = false;
   
   constructor(private apiService: ApiService) { }
   showSlides(n) {
@@ -44,18 +47,20 @@ export class HomeComponent implements OnInit {
   }
 
   getBannerData(){
+    this.bannerLoading = true;
     this.apiService.getBanner("banners").subscribe((bannerList)=>{
-    this.bannerList = bannerList;
-    setTimeout (() => {
-      this.showSlides(this.slideIndex);
-   });
-  });
-
-    console.log(this.bannerList)
+      this.bannerList = bannerList;
+      setTimeout (() => {
+        this.showSlides(this.slideIndex);
+      });
+      this.bannerLoading = false;
+    });
   }
 
   getCategories(){
+    this.categoryLoading = true;
     this.apiService.getCategories("categories").subscribe((categories)=>this.categoryList = categories);
+    this.categoryLoading = false;
   }
  
 }

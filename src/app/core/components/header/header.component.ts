@@ -21,25 +21,18 @@ export class HeaderComponent implements OnInit {
   toggleCart(){
     let cart = document.getElementById("js-cart");
     let overlayCover = document.getElementById("cover");
-    let body = document.body;
     if(cart.style.visibility == 'hidden' || cart.style.visibility == ''){
       overlayCover.style.display="block";
       cart.style.visibility = "visible";
-      body.style.overflow = 'hidden';  
-      // cart.attr('aria-pressed', true);
     }else{
       cart.style.visibility = "hidden";
       overlayCover.style.display="none";
-      document.body.style.overflow = 'auto';
     }
   }
-
   closeCart(){
     let cart = document.getElementById("js-cart");
     let overlayCover = document.getElementById("cover");
-    cart.style.visibility = "hidden";
     overlayCover.style.display="none";
-    document.body.style.overflow = 'auto';
   }
 
 

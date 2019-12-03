@@ -4,11 +4,16 @@ import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { SignupComponent } from './signup/signup.component';
-
+import { ErrorComponent } from './core/components/error/error.component';
 
 const routes: Routes = [
   {
-    path:'' || 'home',
+    path:'',
+    pathMatch:'full',
+    component: HomeComponent
+  },
+  {
+    path:'home',
     pathMatch:'full',
     component: HomeComponent
   },
@@ -26,11 +31,16 @@ const routes: Routes = [
     path:'signup',
     pathMatch:'full',
     component: SignupComponent
+  },
+  {
+    path:'error',
+    pathMatch:'full',
+    component: ErrorComponent
   }
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes,{ scrollPositionRestoration: 'enabled' })],
-  exports: [RouterModule]
+exports: [RouterModule]
 })
 export class AppRoutingModule { }

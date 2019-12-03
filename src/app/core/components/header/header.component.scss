@@ -1,9 +1,9 @@
 @import '../../../../styles.scss';
 .header-container{
+    height: 48px;
     .lg-visible{
         display: none;
     }
-    height: 48px;
     li{
         a{
             color: #444;
@@ -43,6 +43,10 @@
             position: relative;
             top: 21px;
             left:17%;
+            display: inline-block;
+        }
+        ul{
+            display: inline-block;
         }
         li{
             .active{
@@ -211,7 +215,7 @@
             padding: 8px 15px;
             @include font-size(90%);
         }
-        height: 74px;
+        
         
     }
 
@@ -226,7 +230,7 @@
             width: 14%;
         }
         .cart-container{
-            width: 13%;
+            width: 12%;
         }
         .main-navigation{
             width:53%;

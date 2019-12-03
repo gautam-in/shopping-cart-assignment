@@ -15,7 +15,8 @@ export class ProductListComponent implements OnInit {
   public categoryList:ICategory[];
   public selectedCategoryId:string='';
   public selectedCategory:string='Select Category';
-  public productLoading : boolean = true;
+  public productLoading : boolean = false;
+  public categoryLoading:boolean = false;
   
   constructor(private route: ActivatedRoute, private apiService:ApiService, private cartService: CartService) { 
   }
@@ -45,7 +46,11 @@ export class ProductListComponent implements OnInit {
   }
 
   getCategories(){
-    this.apiService.getCategories("categories").subscribe((categories)=>this.categoryList = categories);
+    this.categoryLoading= true;
+    this.apiService.getCategories("categories").subscribe((categories)=>{
+      this.categoryList = categories;
+      this.categoryLoading = false;
+    });
   }
 
   getFilteredProducts(categoryObj:ICategory){

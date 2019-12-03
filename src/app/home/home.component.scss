@@ -2,9 +2,18 @@
 @import '../../styles/abstract/mixin';
 .home-wrapper{
     max-width: 1170px;
-    min-height: 580px;
     font-size: 18px;
     margin:auto;
+    .loading{
+        padding: 10px 30px;
+        position: relative;
+        left:35%;
+        top:100px;
+        display: inline-block;
+    }
+    .slideshow-container{
+        min-height: 200px;
+    }
     .dot-container{
         position: absolute;
         left: 40%;

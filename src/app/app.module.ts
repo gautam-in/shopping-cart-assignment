@@ -13,6 +13,9 @@ import { ErrorDisplayDirective } from './shared/directives/error-display.directi
 import { FormsModule } from '@angular/forms';
 import { FilterByType } from './shared/pipes/filter-by-type.pipe';
 import { CartService } from './shared/services/cart.service';
+import { LoadingComponent } from './core/components/loading/loading.component';
+
+
 
 
 @NgModule({
@@ -23,10 +26,12 @@ import { CartService } from './shared/services/cart.service';
     ProductListComponent,
     SignupComponent,
     ErrorDisplayDirective,
-    FilterByType
+    FilterByType,
+    LoadingComponent
   ],
   imports: [
-  BrowserModule,
+
+    BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     CoreModule,

@@ -1,18 +1,26 @@
 @import '../../styles/abstract/variables';
 @import '../../styles/abstract/mixin';
 .list-container{
-    min-height: 570px;
+    .col{
+        margin: 0 !important
+    }
     .span-10-of-12,.span-1-of-4{
         width: 100%;
     }
-    .lg-visible{
+    .tabs{
         display: none;
+        .loading{
+            position: relative;
+            top:100px;
+            color: #444;
+        }
     }
+    
     .list-item{
         @include bg-opacity($color-white);
         position: relative;
         height: 332px;
-        @include margin($top:15px,$right:10px);
+        @include margin($top:15px,$right:5px);
         border-bottom: 1px dashed #dedede;
         @include box-shadow(3px 0 4px -2px #ccc);
         header{
@@ -83,8 +91,8 @@
     }
     .categories {
         .category-item{
-            display: none;
             padding: 15px 10px;
+            list-style: none;
             cursor: pointer;
             @include font-size(80%);
             @include bg-opacity(#f5f5f5);
@@ -100,6 +108,7 @@
     }
     .min-category{
         position: relative;
+        width: 100%;
         .dropbtn{
             width: 100%;
             outline: none;
@@ -158,7 +167,7 @@
     //small-screen 576px
     @include small-screen{
         .span-1-of-4{
-            width: 49%;
+            width: 50%;
         }
         .list-item{
             height: 358px;
@@ -177,10 +186,8 @@
             display: none;
 
         }
-        .categories{
-            .category-item{
-                display: block;
-            }
+        .tabs{
+            display: inline-block;
         }
         .span-1-of-4{
             width: 33%;
@@ -230,6 +237,11 @@
                 padding: 10px 20px;
             }
         }
+    }
+
+    @include extra-large-screen{
+        width: 1170px;
+        margin: auto;
     }
     
 }
