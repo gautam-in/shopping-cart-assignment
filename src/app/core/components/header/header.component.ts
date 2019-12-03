@@ -32,6 +32,7 @@ export class HeaderComponent implements OnInit {
   closeCart(){
     let cart = document.getElementById("js-cart");
     let overlayCover = document.getElementById("cover");
+    cart.style.visibility = "hidden";
     overlayCover.style.display="none";
   }
 
