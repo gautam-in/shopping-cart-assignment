@@ -1,18 +1,36 @@
 {
-    "name": "shopping-cart-assignment-master",
+    "name": "hbs-express-boilerplate",
     "version": "1.0.0",
-    "description": "shopping site",
+    "description": "Handlebars express boilerplate",
     "main": "index.js",
-    "scripts": {
-        "sass": "node-sass -w scss/ -o assets/css/ --recursive",
-        "start": "node index.js"
-    },
-    "author": "",
-    "license": "ISC",
-    "devDependencies": {
-        "node-sass": "^4.13.0"
-    },
+    "repository": "https://github.com/ccabo1/hbs-express-boilerplate",
+    "author": "Cameron Cabo",
+    "license": "MIT",
     "dependencies": {
-        "handlebars": "^4.5.3"
+        "babel-eslint": "^8.2.3",
+        "body-parser": "^1.18.2",
+        "express": "^4.16.3",
+        "express-handlebars": "^3.0.0",
+        "handlebars": "^4.0.11",
+        "node-sass": "^4.9.0",
+        "node-sass-middleware": "^0.11.0",
+        "nodemon": "^1.17.4"
+    },
+    "scripts": {
+        "start": "node index.js",
+        "dev": "source env.sh && concurrently \"nodemon index.js\" \"open \"http://localhost:4200\"\"",
+        "build": "node index.js",
+        "test": "node index.js --env=jsdom"
+    },
+    "devDependencies": {
+        "babel-eslint": "^7.2.3",
+        "eslint": "^4.19.1",
+        "eslint-config-react-app": "^2.1.0",
+        "eslint-loader": "^2.0.0",
+        "eslint-plugin-flowtype": "^2.49.3",
+        "eslint-plugin-import": "^2.13.0",
+        "eslint-plugin-jsx-a11y": "^5.1.1",
+        "eslint-plugin-react": "^7.10.0",
+        "eslint-watch": "^3.1.4"
     }
 }

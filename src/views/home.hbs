@@ -1,0 +1,28 @@
+<section>
+            <div class="carousel" id="img-container"></div>
+            <div style="text-align:center" id="slides-dot">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+                <span class="dot" onclick="currentSlide(4)"></span>
+                <span class="dot" onclick="currentSlide(5)"></span>
+            </div>
+        </section>
+        <section>
+            <div id="category-list">
+              {{#each categoryval}} 
+        <div class="category">
+            <div class="category-image">
+                <img src="{{imageUrl}}">
+            </div>
+
+
+            <div class="category-details">
+                <h3 class="category-title">{{name}}</h3>
+                <p class="category-title-details">{{description}}</p>
+                <button class="category-button">Explore {{key}}</button>
+            </div>
+        </div>
+         {{/each}}
+            </div>
+        </section>

@@ -1,15 +1,38 @@
-# XT Shopping Cart Assignment
+# Handlebars express boilerplate
 
-This is the base folder for the shopping cart exercise. You will have all the static assets and mock server responses available in this repo.
+Boilerplate code for developing websites in handlebars with an express API and SCSS for styling.
 
-## Getting Started
+--------
 
-Clone this repo and run following command for starting the mock server:
-
+### Architecture
 ```
-npm install
-npm run start
-# or
-yarn install
-yarn start
+│
+├─ public               # Files accessible from the frontend
+│  ├─ img               # Images
+│  │  └─ ...
+│  ├─ js                # Frontend scripts
+│  │  └─ ...
+│  ├─ index.css         # Compiled CSS file
+│  └─ ...               # Favicon files
+│
+├─ src                  # Assets, data, and content
+│  ├─ assets
+│  │  └─ scss           # Styles written in SCSS
+│  │     └─ ...
+│  ├─ json              # Data
+│  │  └─ ...
+│  └─ views             # Handlebars files
+│     ├─ layouts        # Data for posts, projects, etc.
+│     │  └─ layout.hbs  # Wrapper HTML for all pages
+│     ├─ partials       # HTML partials
+│     │  └─ ...         # Other partials
+│     └─ ...            # Page components
+│
+├─ .eslintrc            # Documentation
+├─ .gitignore           # Files not included in git repo
+├─ index.js             # Configure express server
+├─ package.json         # Layout dependencies
+├─ routes.js            # App API's and routing
+├─ ...                  # Yarn config files
+└─ README.md            # Documentation
 ```
