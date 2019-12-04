@@ -14,22 +14,22 @@
         <div class="col span-2-of-6 text-center bottom-pane">
             <form id="js-login-form" class="login-form">
                 <div class="text-left">
-                    <label id="emailLbl" tabindex="-1" class="field-label" for="email">Email</label>
+                    <label id="emailLbl" [ngClass]="{'no-field-label':!loginForm.email.name && !loginForm.email.error.isError,'label-error':loginForm.email.error.isError}" tabindex="-1" class="field-label" for="email">Email</label>
                 </div>
                 <div class="text-left">
-                    <input [(ngModel)]="email" (ngModelChange)="changedField(email,'email')"  id="email" type="email" name="email" aria-required="true" aria-labelledby="emailLbl">
-                    <p class="error" *ngFor="let error of errorValues | filterByType: 'email'">
-                        {{error.errorMsg}}
+                    <input [(ngModel)]="loginForm.email.name" [ngClass]="{'field-error':loginForm.email.error.isError}" (ngModelChange)="changedField(loginForm.email.name,'email')"  id="email" type="email" name="email" aria-required="true" aria-labelledby="emailLbl">
+                    <p class="error" *ngIf="loginForm.email.error.isError">
+                        {{loginForm.email.error.errorMsg}}
                     </p>
                 </div>
                 
                 <div class="text-left margin-top-20">
-                    <label class="field-label" tabindex="-2" id="pwdLbl" for="password">Password</label>
+                    <label class="field-label" [ngClass]="{'no-field-label':!loginForm.password.name && !loginForm.password.error.isError,'label-error':loginForm.password.error.isError}" tabindex="-2" id="pwdLbl" for="password">Password</label>
                 </div>
                 <div class="text-left">
-                    <input [(ngModel)]="password" (ngModelChange)="changedField(password,'password')" id="password" type="password" name="password" aria-required="true" aria-labelledby="pwdLbl">
-                    <p class="error" *ngFor="let error of errorValues | filterByType: 'password'">
-                        {{error.errorMsg}}
+                    <input [(ngModel)]="loginForm.password.name"  [ngClass]="{'field-error':loginForm.password.error.isError}" (ngModelChange)="changedField(loginForm.password.name,'password')" id="password" type="password" name="password" aria-required="true" aria-labelledby="pwdLbl">
+                    <p class="error" *ngIf="loginForm.password.error.isError">
+                        {{loginForm.password.error.errorMsg}}
                     </p>
                 </div>
                 <button aria-label="Login button" (click)="onSubmit()" (keydown.enter)="onSubmit()" type="button" class="cursor-pointer block-btn padding-10">Login</button>

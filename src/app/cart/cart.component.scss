@@ -64,7 +64,10 @@
         top:40%;
     }
     .cart-values{
-        user-select: none;
+        -webkit-user-select: none;
+           -moz-user-select: none;
+            -ms-user-select: none;
+                user-select: none;
         width: 77%;
         .price{
             

@@ -1,5 +1,9 @@
 .carousel-wrapper{
-    .mySlides {display: none}
+    .mySlides {
+      display: none;
+      -webkit-transition: all 0.2s;
+      transition: all 0.2s;
+    }
     img {vertical-align: middle;
   }
 

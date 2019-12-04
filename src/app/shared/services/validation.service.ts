@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { ConstantsService } from './constants.service';
 import { noop } from 'rxjs';
+import { error } from 'util';
 
 @Injectable({
   providedIn: 'root'
@@ -53,7 +54,7 @@ export class ValidationService {
               return true;
             }
           },
-          "errorMsg": "Please provide valid email"
+          "errorMsg": "Please provide a valid email"
         
       },
       {
@@ -84,7 +85,7 @@ export class ValidationService {
             return true;
           }
         },
-        "errorMsg": "Please provide valid password"
+        "errorMsg": "Please provide a valid password"
       },
       {
         "field":"confirmPassword",
@@ -196,6 +197,25 @@ export class ValidationService {
       }else{
         noop();
       }
+    }
+  }
+
+  setErrors(formVal:any,errors:any){
+    for (let key in formVal){
+      if(formVal.hasOwnProperty(key)){
+        formVal[key].error.isError = false;
+      }
+   }
+    if(errors && errors.length){
+      errors.map((obj)=>{
+        if(obj.error){
+          formVal[obj.field].error.isError = true;
+        }else{
+          formVal[obj.field].error.isError = false;
+        }
+        
+        formVal[obj.field].error.errorMsg =obj.errorMsg;
+      })
     }
   }
 }

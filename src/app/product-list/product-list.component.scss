@@ -155,6 +155,8 @@
         .no-data-exception{
             margin: 15% 35%;
             @include font-size(110%);
+            width:-webkit-max-content;
+            width:-moz-max-content;
             width:max-content;
         }
         .loading{
