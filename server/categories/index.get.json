@@ -39,7 +39,14 @@
             "id": "5b6899683d1a866534f516e0",
             "class": "even"
         },
-
+        {
+            "name": "Seafood",
+            "key": "seafood",
+            "description": "Great place to buy fresh seafood.",
+            "enabled": false,
+            "order": -1,
+            "id": "5b68997d3d1a866534f516e1"
+        },
         {
             "name": "Fruits & Vegetables",
             "key": "fruit-and-veg",
@@ -48,7 +55,7 @@
             "order": 1,
             "imageUrl": "/static/images/category/fruits.png",
             "id": "5b6899953d1a866534f516e2",
-            "class": "even"
+            "class": "odd"
         }
     ]
 }

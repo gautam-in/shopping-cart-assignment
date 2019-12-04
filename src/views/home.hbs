@@ -1,28 +1,52 @@
-<section>
-            <div class="carousel" id="img-container"></div>
-            <div style="text-align:center" id="slides-dot">
-                <span class="dot" onclick="currentSlide(1)"></span>
-                <span class="dot" onclick="currentSlide(2)"></span>
-                <span class="dot" onclick="currentSlide(3)"></span>
-                <span class="dot" onclick="currentSlide(4)"></span>
-                <span class="dot" onclick="currentSlide(5)"></span>
+<section class="banner-wrapper">
+             <div class="home-slider">
+                <div class="home-slider-offers">
+                    {{#each banners}}
+                    <div class="mySlides fade">
+                        <img class="image-width" src="{{this.bannerImageUrl}}"
+                            alt="{{this.bannerImageAlt}}">
+                    </div>
+                    {{/each}}
+                    <button class="prev" onClick="plusSlides(-1)"><</button>
+                    <button class="next" id="next" onClick="plusSlides(1)">></button>
+                    <div class="dots">
+                        {{#each banners}}
+                        <span class="dot" onclick="currentSlide({{@index}})"></span>
+                        {{/each}}
+                    </div>
+
+                </div>
             </div>
-        </section>
+        </section> 
+        
         <section>
             <div id="category-list">
-              {{#each categoryval}} 
-        <div class="category">
-            <div class="category-image">
-                <img src="{{imageUrl}}">
-            </div>
+             
+            {{#each categories}} {{#is this.class "odd"}}
+                <div class="category">
+                    <div class="category-image">
+                        <img src="{{this.imageUrl}}">
+                    </div>
 
 
-            <div class="category-details">
-                <h3 class="category-title">{{name}}</h3>
-                <p class="category-title-details">{{description}}</p>
-                <button class="category-button">Explore {{key}}</button>
-            </div>
+                    <div class="category-details">
+                        <h3 class="category-title">{{this.name}}</h3>
+                        <p class="category-title-details">{{this.description}}</p>
+                        <button class="category-button">Explore {{this.key}}</button>
+                    </div>
+                </div>
+                {{/is }} {{#is this.class "even"}}
+                <div class="category">
+                    <div class="category-details">
+                        <h3 class="category-title">{{this.name}}</h3>
+                        <p class="category-title-details">{{this.description}}</p>
+                        <button class="category-button">Explore {{this.key}}</button>
+                    </div>
+                    <div class="category-image">
+                        <img src="{{this.imageUrl}}">
+                    </div>
+                </div>
+                {{/is }} {{/each}}  
         </div>
-         {{/each}}
-            </div>
-        </section>
+    </section>
+</section>

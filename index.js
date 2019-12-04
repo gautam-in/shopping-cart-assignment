@@ -4,7 +4,8 @@ const path = require('path');
 const hbs = require('express-handlebars');
 const sassMiddleware = require('node-sass-middleware');
 const bodyParser = require('body-parser');
-
+const hbshelpers = require("handlebars-helpers");
+const multihelpers = hbshelpers();
 // Import the port, if there is one
 const PORT = process.env.PORT;
 
@@ -16,6 +17,7 @@ const app = express();
 
 // Leverage handlebars
 app.engine('hbs', hbs({
+    helpers: multihelpers,
     extname: 'hbs',
     defaultLayout: 'layout',
     layoutsDir: `${__dirname}/src/views/layouts/`,
@@ -38,22 +40,15 @@ app.use(bodyParser.urlencoded({ extended: false }));
 // Serve assets via the public directory
 app.use(express.static(path.join(__dirname, 'public')));
 
+
 // Set the views path
 app.set('views', path.join(__dirname, 'src/views'));
 app.set('view engine', 'hbs');
 
-// Middleware to always use https protocol when in production
-// app.use((req, res, next) => {
-//   const host = req.headers.host;
-//   if (host.startsWith('localhost')) next();
-//   else {
-//     if (req.headers['x-forwarded-proto'] === 'https') next();
-//     else res.redirect(`https://${req.headers.host}${req.url}`);
-//   }
-// });
 
 // Serve all API routes
 app.use('/', api);
 
 // Render the app
 app.listen(PORT || 4200, () => console.log('App listening on port 4200! 🐳'));
+module.exports = app;

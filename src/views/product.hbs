@@ -1,1 +1,30 @@
-<h1>Hello..!!</h1>
+ <div class="product-content-area clearfix">
+    <div id="left-nav-filter">
+        <ul id="side-nav-filter-list">
+            {{#each categories}}
+            <li value="{{this.name}}" id="{{this.id}}" onclick="display(this)">{{this.name}}</li>
+            {{/each}}
+        </ul>
+    </div>        
+    <div id="product-list-section">
+        {{#each products}}
+        <div class="product">
+            <h3 class="product-title">{{this.name}}</h2>
+                <div class="product-view">
+                    <div class="product-image">
+                        <img src="{{this.imageURL}}">
+                    </div>
+
+
+                    <div class="product-details">
+                        <p class="product-description">{{this.description}}</p>
+                        <div class="product-price-details">MRP: {{this.price}}</div>
+
+                        <button class="product-buy-button">Buy Now</button>
+                    </div>
+                </div>
+        </div>
+
+        {{/each}}
+    </div>
+</div> 

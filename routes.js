@@ -1,40 +1,44 @@
 // Import frameworks
 const express = require('express');
 const router = express.Router();
-
-// Constants used for setting meta tags
-const defaultProps = {
-    title: 'Shopping Site',
-    description: 'Shopping Site',
-    keywords: 'Shopping Site',
-    image: 'Shopping Site',
-    siteName: 'Shopping Site',
-    url: 'Shopping Site'
-};
-
-// Helper function to set default props
-const renderProps = (props) => (
-    Object.assign(defaultProps, props)
-);
-
-// Helper function to render a not found page
-const renderNotFound = (res) => {
-    res.status(404).render('not-found', {
-        title: `${defaultProps.title} | Not Found`,
-    });
-};
+const fs = require('fs');
+let obj = fs.readFileSync('./server/banners/index.get.json');
+let banners = JSON.parse(obj);
+let obj1 = fs.readFileSync('./server/categories/index.get.json');
+let categories = JSON.parse(obj1);
+let productObj = fs.readFileSync('./server/products/index.get.json');
+let products = JSON.parse(productObj);
 
 /**
  * BEGIN ROUTING
  */
 
 // Homepage
-router.get('/', (req, res) => {
-    res.render('home', renderProps({}));
+router.get('/', function(req, res, next) {
+    res.render('home', {
+        title: "shopping cart",
+        banners: banners.banners,
+        categories: categories.categoryval
+    });
 });
 
-router.get('/product', (req, res) => {
-    res.render('product', renderProps({}));
+//Login Page
+router.get('/login', function(req, res) {
+    res.render('login', { title: "shopping cart" });
+});
+
+//Register Page
+router.get('/register', function(req, res) {
+    res.render('register', { title: "shopping cart" });
+});
+
+//Product Page
+router.get('/product', function(req, res, next) {
+    res.render('product', {
+        title: "shopping cart",
+        products: products.products,
+        categories: categories.categoryval
+    });
 });
 
 // Handle 404 error
