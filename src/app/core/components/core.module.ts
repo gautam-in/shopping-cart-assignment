@@ -1,5 +1,5 @@
 
-import { NgModule, ErrorHandler } from '@angular/core';
+import { NgModule, ErrorHandler, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AppRoutingModule } from '../../app-routing.module';
 
@@ -27,5 +27,6 @@ import { GlobalErrorHandler } from './../global-error-handler.service';
   providers: [{
     provide: ErrorHandler, useClass : GlobalErrorHandler
   }],
+  schemas:[ CUSTOM_ELEMENTS_SCHEMA ]
 })
 export class CoreModule { }

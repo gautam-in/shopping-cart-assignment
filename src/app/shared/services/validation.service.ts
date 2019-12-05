@@ -80,7 +80,7 @@ export class ValidationService {
         "error":false,
         "rule": function(title:string){
           if(title && title.length){
-            return config.validPassword.test(title)
+            return config.validPassword.test(title);
           }else{
             return true;
           }

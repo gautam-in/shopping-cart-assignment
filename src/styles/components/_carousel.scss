@@ -34,6 +34,9 @@
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+    &:hover{
+      @include bg-opacity(#777,0.6);
+    }
 
   }
 
