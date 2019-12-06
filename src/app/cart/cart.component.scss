@@ -1,5 +1,6 @@
 @import '../../styles/abstract/variables';
 @import '../../styles/abstract/mixin';
+@import '../../styles/abstract/color';
 
 .cart-container{
     position: fixed;
@@ -15,9 +16,9 @@
         overflow-x:hidden;
         position: relative;
     }
-    @include bg-opacity(#f5f5f5);
+    @include bg-opacity($gs-19);
     .card-panel{
-        @include bg-opacity($color-white);
+        @include bg-opacity($gs-23);
         padding: 15px;
         position: relative;
         figure{
@@ -37,7 +38,7 @@
     }
     .offer{
         padding: 10px;
-        @include bg-opacity($color-white);
+        @include bg-opacity($gs-23);
         p{
             @include font-size(70%);
         }
@@ -50,11 +51,11 @@
         }
     }
     .main-header{ 
-        background-color: $color-white;
-        color: $color-black;
-        margin-top: 30px;
+        background-color: $gs-23;
+        color: $gs-1;
+        @include margin(30px);
         padding: 15px 20px;
-        @include box-shadow(0px -1px 0px 0px #ccc);
+        @include box-shadow(0px -1px 0px 0px $gs-12);
         h1{
             @include font-size(90%);
         } 
@@ -72,7 +73,7 @@
         .price{
             
             @include font-size(65%);
-            color: $color-black;
+            color: $gs-1;
         }
         .plus,.minus{
             outline: none;
@@ -81,8 +82,8 @@
             width: 21px;
             border-radius: 20%;
             display: inline-block;
-            @include bg-opacity($btn-color);
-            color: $color-white;
+            @include bg-opacity($color-theme);
+            color: $gs-23;
             cursor: pointer;
             @include font-size(73%);
         }
@@ -92,7 +93,7 @@
         }
     }
     .cart-footer{
-        @include bg-opacity($color-white);
+        @include bg-opacity($gs-23);
         position: absolute;
         width: 100%;
         bottom: 6%;
@@ -102,24 +103,22 @@
         cursor: pointer;
         width: 100%;
         border: none;
-        color: $color-white;
+        color: $gs-23;
         padding: 15px;
         @include font-size(80%);
-        @include bg-opacity($btn-color);
+        @include bg-opacity($color-theme);
     }
 
     @include small-screen{
         .main-header{
-            @include bg-opacity($color-black);
-            color: $color-white;
-            margin-top: 0;
+            @include bg-opacity($gs-1);
+            @include margin();
+            color: $gs-23;
         }
         .cart-footer{
             bottom: 9%;
         }
-       
         top:10%;
-       
     }
     @include large-screen{
         right: 10%;

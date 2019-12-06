@@ -1,5 +1,6 @@
 @import '../../styles/abstract/variables';
 @import '../../styles/abstract/mixin';
+@import '../../styles/abstract/color';
 .home-wrapper{
     max-width: 1170px;
     font-size: 18px;
@@ -26,12 +27,12 @@
     }
 
     .item-container{
-        @include box-shadow(1px 6px 5px -6px #aaa);
+        @include box-shadow(1px 6px 5px -6px $gs-10);
         padding:10px 0 30px 0;
         position: relative;
         .custom-button{
             a{
-                color: $color-white;
+                color: $gs-23;
             }
         }
     }

@@ -2,9 +2,9 @@
 .error-handler-wrapper{
     min-height: 600px;
     .error{
-        margin:30px 80px;
+        @include margin(30px,80px,30px,80px);
         padding: 30px;
-        color:#dc3545;
+        color:$color-error;
         h1{
             @include font-size(200%);
         }

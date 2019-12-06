@@ -1,5 +1,6 @@
 @import '../../styles/abstract/variables';
 @import '../../styles/abstract/mixin';
+@import '../../styles/abstract/color';
 .list-container{
     .col{
         margin: 0 !important
@@ -12,17 +13,17 @@
         .loading{
             position: relative;
             top:100px;
-            color: #444;
+            color: $gs-4;
         }
     }
     
     .list-item{
-        @include bg-opacity($color-white);
+        @include bg-opacity($gs-23);
         position: relative;
         height: 332px;
         @include margin($top:15px,$right:5px);
-        border-bottom: 1px dashed #dedede;
-        @include box-shadow(3px 0 4px -2px #ccc);
+        border-bottom: 1px dashed $gs-13;
+        @include box-shadow(3px 0 4px -2px $gs-12);
         header{
             height: 80px;
             overflow: hidden;
@@ -33,7 +34,7 @@
             @include font-size(65%);
             float: left;
             width: 49%;
-            @include bg-opacity(#f5f5f5);
+            @include bg-opacity($gs-19);
             padding: 5px;
             line-height: 1.4;
             overflow: hidden;
@@ -41,7 +42,7 @@
         figure{
             height: 61%;
             width: 50%;
-            margin-top:15px;
+            @include margin($top:15px);
             float: left;
             img{
                 height: 100%;
@@ -51,7 +52,7 @@
         .mrp{
             display: none;
             @include font-size(70%);
-            margin-top: 25px;
+            @include margin($top:25px);
             font-weight: 600;
         }
         .mini-mrp{
@@ -60,12 +61,12 @@
         .buy-now{
             width: 97% ;
             padding: 15px 20px;
-            margin: 10px 0;
+            @include margin($top:10px,$bottom:10px);
             display: inline-block;
-            color: $color-white;
+            color: $gs-23;
             cursor: pointer;
             border:none;
-            @include bg-opacity($btn-color);
+            @include bg-opacity($color-theme);
             position: relative;
             right: 5px;
             -webkit-transition: -webkit-transform 0.4s;
@@ -75,7 +76,7 @@
             &:hover{
                 -webkit-transform: scaleY(1.2);
                 transform: scaleY(1.2);
-                @include bg-opacity(lighten($btn-color,7%));
+                @include bg-opacity(lighten($color-theme,7%));
             }   
         }
         footer{
@@ -83,10 +84,10 @@
             position: relative;
             bottom: 0;
             float: left;
-            margin:0;
+            @include margin();
         }
         &:hover{
-            @include box-shadow(5px 0 7px -1px #ccc);
+            @include box-shadow(5px 0 7px -1px $gs-12);
         }        
     }
     .categories {
@@ -95,15 +96,15 @@
             list-style: none;
             cursor: pointer;
             @include font-size(80%);
-            @include bg-opacity(#f5f5f5);
-            border-bottom: 2px solid #dedede;
+            @include bg-opacity($gs-19);
+            border-bottom: 2px solid $gs-13;
             &:hover{
                 opacity:0.8;
             }
         }
         .active{
-            @include bg-opacity(#d10157);
-            color:$color-white;
+            @include bg-opacity($color-theme);
+            color:$gs-23;
         }
     }
     .min-category{
@@ -113,10 +114,9 @@
             width: 100%;
             outline: none;
             @include font-size(90%);
-            font-family: "Dosis","Arial","Roboto";
-            color:$color-white;
+            color:$gs-23;
             padding: 10px;
-            @include bg-opacity($btn-color);
+            @include bg-opacity($color-theme);
         }
         .show{
             display: inline-block !important;
@@ -127,20 +127,20 @@
             left:0;
             z-index:2;
             top:42px;
-            @include box-shadow(1px 3px 3px #ccc);
-            @include bg-opacity($color-white);
+            @include box-shadow(1px 3px 3px $gs-12);
+            @include bg-opacity($gs-23);
             padding: 10px;
             width: 99%;
-            color:$color-black;
+            color:$gs-1;
             .active{
-                @include bg-opacity($btn-color);
-                color: $color-white;
+                @include bg-opacity($color-theme);
+                color: $gs-23;
             }
             li{
                 display: block;
                 &:hover{
-                    @include bg-opacity($btn-color);
-                    color: $color-white;
+                    @include bg-opacity($color-theme);
+                    color: $gs-23;
                 }
             }
         }
@@ -148,12 +148,12 @@
         
     }
     a{
-        color: #777;
+        color:$gs-7;
         font-weight: 600;
     }
     .list-body{
         .no-data-exception{
-            margin: 15% 35%;
+            @include margin(15%,35%,15%,35%);
             @include font-size(110%);
             width:-webkit-max-content;
             width:-moz-max-content;
@@ -161,7 +161,8 @@
         }
         .loading{
             @include font-size(110%);
-            margin: 10% 35%;
+            @include margin(10%,35%,10%,35%);
+            @include margin($top:10%,$right:35%,$bottom:10%,$left:35%);
         }
     }
 

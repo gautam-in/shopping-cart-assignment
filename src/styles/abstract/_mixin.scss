@@ -19,9 +19,12 @@
 
 //margins
 @mixin margin($top:0,$right:0,$bottom:0,$left:0) {
-    margin: $top $right $bottom $left;
+    @if ($top == 0 and $right == 0 and $bottom == 0 and $left == 0) {
+        margin: 0;
+    } @else{
+        margin: $top $right $bottom $left;
+    }
 }
-
 
 
 /****************************************/

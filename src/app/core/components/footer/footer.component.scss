@@ -1,5 +1,6 @@
+@import '../../../../styles/abstract/color';
 .copyright{
-    background-color: #f5f5f5;
+    background-color: $gs-19;
     .content{
         font-weight: 600;
         position: relative;

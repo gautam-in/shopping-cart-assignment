@@ -4,7 +4,7 @@
 .section {
 	clear: both;
 	padding: 0px;
-	margin: 0px;
+	@include margin();
 }
 
 /*  GROUPING  ============================================================================= */
@@ -27,7 +27,7 @@
 .col {
 	display: block;
 	float:left;
-	margin: 1% 0 1% 1.6%;
+	@include margin($top:1%,$right:0%,$bottom:1%,$left:1.6%);
 }
 
 .col:first-child { margin-left: 0; } /* all browsers except IE6 and lower */

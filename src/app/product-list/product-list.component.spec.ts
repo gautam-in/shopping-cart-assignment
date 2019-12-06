@@ -6,7 +6,10 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { HttpClientModule } from '@angular/common/http';
 import { ConstantsService } from './../shared/services/constants.service';
 import { CartService } from './../shared/services/cart.service';
+import { ApiService } from './../shared/services/api.service';
 
+import { Observable, from } from 'rxjs';
+import 'rxjs/add/observable/from';
 
 
 
@@ -17,9 +20,11 @@ describe('ProductListComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports:[RouterTestingModule,HttpClientModule],
-      declarations: [ ProductListComponent ],
+
+
+    declarations: [ ProductListComponent ],
       schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA],
-      providers:[ConstantsService, CartService ]
+      providers:[ConstantsService, CartService, ApiService ]
     })
 
     .compileComponents();
@@ -34,4 +39,13 @@ describe('ProductListComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+
+  // it('should return category list',()=>{
+  //   let service = TestBed.get(ApiService);
+  //   var o = from([ [1,2,3]])
+  //   spyOn(service,'getCategories')
+  //   fixture.detectChanges();
+  //   expect(component.categoryList.length).toBe(3);
+  // })
 });

@@ -32,7 +32,7 @@ body{
   margin: 0 !important;
 }
 .arrow-down{
-  border: solid $color-white;
+  border: solid $gs-23;
   display: inline-block;
   border-width: 0 3px 3px 0;
   padding: 3px;
@@ -56,8 +56,8 @@ body{
 }
 .custom-button{
   padding: 10px 15px;
-  background-color: $btn-color;
-  color: $color-white;
+  background-color: $color-theme;
+  color: $gs-23;
   font-size: 65%;
   display: inline-block;
   border: none;

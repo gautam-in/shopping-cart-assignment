@@ -4,23 +4,23 @@
         width: 100%;
     }
     .field-error{
-        border-bottom: 2px solid #e93835 !important;
+        border-bottom: 2px solid $color-error !important;
     }
     .label-error{
-        color:#e93835 !important;
+        color:$color-error !important;
     }
     .no-field-label{
         position: relative;
         bottom: -15px;
         -webkit-transition: all 0.3s ease-in-out;
         transition: all 0.3s ease-in-out;
-        color: #acacac !important;
+        color: $gs-10 !important;
         font-size: 70% !important;
         font-weight: 600 !important;
     }
     .error{
         @include font-size(70%);
-        color: #e93835;
+        color: $color-error;
         word-spacing: 2px;
         line-height: 1.6;
     }
@@ -33,7 +33,7 @@
     }
     .field-label{
         @include font-size(65%);
-        color: #79D0E5;
+        color: $color-secondary;
         -webkit-transition: all 0.3s ease-in-out;
         transition: all 0.3s ease-in-out;
         font-weight: normal;
@@ -46,7 +46,7 @@
         padding: 30px 60px;
     }
     input{
-        border-bottom: 2px solid #ccc;
+        border-bottom: 2px solid $gs-12;
         border-top:none;
         border-left: none;
         border-right: none;
@@ -55,28 +55,28 @@
         outline: none;
     }
     input:hover,:focus{
-        border-bottom: 2px solid #79D0E5;
+        border-bottom: 2px solid $color-secondary;
     }
     .block-btn{
         display: block;
         font-size: 70%;
         width: 100%;
         border: none;
-        background-color: $btn-color;
-        color: $color-white;
+        background-color: $color-theme;
+        color: $gs-23;
         text-align: center;
-        margin-top:30px;
+        @include margin($top:30px);
         &:hover{
-            @include bg-opacity($btn-color,0.8);
+            @include bg-opacity($color-theme,0.8);
         }
     }
     
     .ng-valid[required], .ng-valid.required  {
-        border-left: 2px solid #42A948; /* green */
+        border-left: 2px solid $color-success; /* green */
     }
       
     .ng-invalid:not(form)  {
-    border-left: 2px solid #a94442; /* red */
+        border-left: 2px solid $color-error; /* red */
     }
     @include small-screen{
         .top-pane,.bottom-pane{

@@ -5,6 +5,7 @@ import { ICategory } from './../models/Icategory';
 import { ActivatedRoute } from "@angular/router";
 import { CartService } from './../shared/services/cart.service';
 
+
 @Component({
   selector: 'app-product-list',
   templateUrl: './product-list.component.html',
