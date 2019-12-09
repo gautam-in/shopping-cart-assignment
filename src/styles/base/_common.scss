@@ -55,20 +55,11 @@ body{
   margin: -1px; padding: 0; border: 0; 
 }
 .custom-button{
-  padding: 10px 15px;
-  background-color: $color-theme;
-  color: $gs-23;
-  font-size: 65%;
+  @include margin($top:10px,$bottom:10px);
   display: inline-block;
-  border: none;
-  -webkit-transition: -webkit-transform 0.2s ease;
-  transition: -webkit-transform 0.2s ease;
-  transition: transform 0.2s ease;
-  transition: transform 0.2s ease, -webkit-transform 0.2s ease;
-  &:hover{
-    -webkit-transform: scale(1.2);
-            transform: scale(1.2);
-  }
+  cursor: pointer;
+  border:none;
+  position: relative;
 }
 * {
     -webkit-box-sizing: border-box;

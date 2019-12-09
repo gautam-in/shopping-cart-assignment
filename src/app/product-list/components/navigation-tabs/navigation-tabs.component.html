@@ -1,0 +1,8 @@
+<nav  aria-label="Side navigation for Category">
+    <ul class="nav-tabs margin-right-10">
+        <li class="tab-item" [ngClass]="{'active':(selectedTabId==tab.id)}"  (click)="selectedTab(tab)" *ngFor="let tab of tabList">
+            {{tab.name}}
+        </li>
+    </ul>
+</nav>
+

@@ -1,7 +1,5 @@
 <main class="home-wrapper carousel-wrapper">
-
     <!-- Image slider for offers -->
-
     <div class="slideshow-container">
 
         <!-- Loading -->
@@ -52,7 +50,7 @@
         <section class="cateory-container text-center" [ngClass]="{'pull-left':even,'pull-right right':odd}">
             <h4>{{category.name}}</h4>
             <p class="margin-top-15">{{category.description}}</p>
-            <button class="custom-button margin-top-20 cursor-pointer"><a [routerLink]="['/product-list']" [queryParams]="{ category: category.id }" queryParamsHandling="merge">Explore {{category.name}}</a></button>
+            <button class="custom-button margin-top-20 cursor-pointer" appCommonBtn (onClick)="onBtnClicked(category)">Explore {{category.name}}</button>
         </section>
     </div>
 </main>

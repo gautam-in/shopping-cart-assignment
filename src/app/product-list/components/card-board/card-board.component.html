@@ -1,0 +1,13 @@
+<section class="card-board">
+    <header>
+        <h4 class="font-20">{{cardTitle}}</h4>
+    </header>
+    <figure>
+        <img src="{{imageUrl}}" alt="{{imgAlt}}">
+    </figure>
+    <p class="fig-caption margin-top-15" title="{{cardDes}}">{{cardDes}}</p>
+    <footer class="clearfix margin-top-15 footer">
+        <p class="mrp">MRP Rs.{{price}}</p>
+        <button class="custom-button pull-right" appCommonBtn  (onClick)="btnClicked()">Buy Now<span class="mini-mrp">@Rs87</span></button>
+    </footer>
+</section>

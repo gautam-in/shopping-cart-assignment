@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { IBanner } from './../models/IBanner';
 import { ICategory } from './../models/Icategory';
 import { ApiService } from './../shared/services/api.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -10,12 +11,13 @@ import { ApiService } from './../shared/services/api.service';
 })
 export class HomeComponent implements OnInit {
   bannerList: IBanner[];
+  buttonConfig:any;
   categoryList:ICategory[];
   slideIndex:number = 1;
   bannerLoading: boolean=false;
   categoryLoading:boolean = false;
   
-  constructor(private apiService: ApiService) { }
+  constructor(private apiService: ApiService, private route: Router) { }
   showSlides(n) {
     let i:number;
     let slides:any = document.getElementsByClassName("mySlides");
@@ -44,6 +46,17 @@ export class HomeComponent implements OnInit {
   }
   ngOnInit() {
     this.slideIndex = 1;
+    this.buttonConfig = {
+      bgColor:"#d10157",
+      color:"#fff",
+      padding:"10px 15px",
+      display:"inline-block",
+      position:"static",
+      width:"auto",
+      border:"none",
+      margin:"20px 0 0 0",
+      cursor:"pointer"
+    }
     this.getBannerData();
     this.getCategories();
   }
@@ -64,5 +77,7 @@ export class HomeComponent implements OnInit {
     this.apiService.getCategories("categories").subscribe((categories)=>this.categoryList = categories);
     this.categoryLoading = false;
   }
- 
+  onBtnClicked(category:any){
+    this.route.navigate(['/product-list'],{ queryParams: { category: category.id } });
+  }
 }

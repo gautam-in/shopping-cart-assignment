@@ -1,60 +1,48 @@
-<main class="list-container">
-
+<div class="list-container">
     <!-- Dropdown for category for small screen -->
 
-    <div class="min-category">
-        <button id="dropdown-btn" class="dropbtn cursor-pointer" (click)="onCategorySelect()">
-            <p class="pull-left">{{selectedCategory}}</p>
-            <p class="pull-right"><i class="arrow-down"></i></p>
-        </button>
-        <ul class="dropdown-content" id="js-dropdown-content">
-            <li [ngClass]="{'active':(category.name==selectedCategory)}" class="cursor-pointer" (click)="getFilteredProducts(category)" *ngFor="let category of categoryList">{{category.name}}</li>
-        </ul>
-
-    </div>
 
 
-    <div class="row">
+    <!-- Mini navigation -->
+    <app-mini-navigation [selectedTab]="selectedCategory" [tabList]="categoryList" (selectTabFn)="getFilteredProducts($event)" (buttonClick)="onCategorySelect()"></app-mini-navigation>
+
+    
+    <!-- main content -->
+    <main class="row">
 
         <!-- Product category filter for medium and large screen -->
 
         <aside class="col span-2-of-12 tabs margin-top-0">
-            <nav  aria-label="Side navigation for Category" *ngIf="!categoryLoading">
-                <ul class="categories margin-right-10">
-                    <li class="category-item" [ngClass]="{'active':(selectedCategoryId==category.id)}"  (click)="getFilteredProducts(category)" *ngFor="let category of categoryList">
-                        {{category.name}}
-                    </li>
-                </ul>
-            </nav>
 
-            <!-- Loading -->
+            <!-- Side navigation starts here -->
+            <product-navigation-tabs *ngIf="!categoryLoading && categoryList?.length" [selectedTabId]="selectedCategoryId" [tabList]="categoryList" (onSelect)="getFilteredProducts($event)"> </product-navigation-tabs>
+
+
+            <!-- Sidetabs Loading -->
+
             <p class="loading margin-top-20 clearfix margin-left-20" *ngIf="categoryLoading">
                 <loading size="medium" msg="Please wait till categoies load."></loading>
              </p>
         </aside>
 
+
         <!-- Main content(dynamic product list) -->
         <div class="col span-10-of-12 list-body margin-top-0">
             <p class="no-data-exception margin-top-20" *ngIf="!productList?.length && !productLoading">No Products found for <em>{{selectedCategory}}</em></p>
+
+            <!-- Main content oading component comes here -->
+
             <p class="loading margin-top-20" *ngIf="productLoading">
                <loading size="normal" msg="Please wait while products are loading."></loading>
             </p>
+
+            
             <div class="padding-5 col span-1-of-4 margin-left-0" *ngFor="let product of productList">
-                <section class="list-item">
-                    <header>
-                        <h4 class="font-20">{{product.name}}</h4>
-                    </header>
-                    <figure>
-                        <img src="{{product.imageURL}}" alt="Product image">
-                    </figure>
-                    <p class="fig-caption margin-top-15" title="{{product.description}}">{{product.description}}</p>
-                    <footer class="clearfix margin-top-15 footer">
-                        <p class="mrp">MRP Rs.{{product.price}}</p>
-                        <button (click)="buynow(product)" class="buy-now pull-right">Buy Now<span class="mini-mrp">@Rs{{product.price}}</span></button>
-                    </footer>
-                </section>
+
+                <!-- Card board component comes here -->
+                <product-card-board [title]="product.name" [desc]="product.description" [imageUrl]="product.imageURL" [price]="product.price" [imageAlt]="'Product image'" (onClick)="buynow(product)"></product-card-board>
             </div>
         </div>
-    </div>
+    </main>
 
-</main>
+</div>

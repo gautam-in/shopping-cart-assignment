@@ -1,0 +1,9 @@
+<div class="mini-navigation">
+    <button id="dropdown-btn" class="dropbtn cursor-pointer" (click)="onButtonClicked()">
+        <p class="pull-left">{{selectedTab}}</p>
+        <p class="pull-right"><i class="arrow-down"></i></p>
+    </button>
+    <ul class="dropdown-content" id="js-dropdown-content">
+        <li [ngClass]="{'active':(tab.name==selectedTab)}" class="cursor-pointer" (click)="selectTab(tab)" *ngFor="let tab of tablist">{{tab.name}}</li>
+    </ul>
+</div>

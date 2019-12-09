@@ -11,6 +11,7 @@ import { ErrorComponent } from './error/error.component';
 
 import { GlobalErrorHandler } from './../global-error-handler.service';
 
+
 @NgModule({
   declarations: [
     HeaderComponent,
@@ -19,7 +20,6 @@ import { GlobalErrorHandler } from './../global-error-handler.service';
     ErrorComponent
   ],
   imports: [
-  
   CommonModule,
     AppRoutingModule
   ],

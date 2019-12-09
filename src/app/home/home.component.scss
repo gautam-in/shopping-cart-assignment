@@ -5,6 +5,17 @@
     max-width: 1170px;
     font-size: 18px;
     margin:auto;
+    .custom-button{
+        padding: 10px 15px;
+        -webkit-transition: -webkit-transform 0.3s;
+        transition: -webkit-transform 0.3s;
+        transition: transform 0.3s;
+        transition: transform 0.3s, -webkit-transform 0.3s;
+        &:hover{
+            -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+        }
+    }
     .loading{
         padding: 10px 30px;
         position: relative;
@@ -25,7 +36,7 @@
         height: auto;
         
     }
-
+    
     .item-container{
         @include box-shadow(1px 6px 5px -6px $gs-10);
         padding:10px 0 30px 0;
@@ -36,9 +47,13 @@
             }
         }
     }
+    .app-common-btn{
+        box-shadow: 2px 2px 2px #aaa;
+    }
     .cateory-container{
         width:60%;
         @include margin($top:35px);
+        
     }
     .img-container{
         img,figure{

@@ -59,9 +59,7 @@ export class SignupComponent implements OnInit {
     }
     this._validationService.validate(fieldValue,type);
     this.errorValues = this._validationService.validations.filter(obj=> obj.error=== true);
-    console.log("Error values =  ",this.errorValues)
     this._validationService.setErrors(this.signupForm,this.errorValues);
-    console.log("Forn obj = ",this.signupForm)
   }
   onSubmit(){
     let errors=[];

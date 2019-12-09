@@ -1,4 +1,4 @@
-<main class="login-wrapper margin-top-20">
+<main class="form-wrapper margin-top-20">
     <div class="row page-body">
         <div class="col span-1-of-6"></div>
         <!-- Content container for sign up form -->
@@ -63,8 +63,9 @@
                         {{signupForm.confirmPassword.error.errorMsg}}
                     </p>
                 </div>
-                <button aria-label="Signup Button" (click)="onSubmit()" (keydown.enter)="onSubmit()" class="cursor-pointer block-btn padding-10">Signup</button>
+                <button aria-label="Signup Button" class="custom-button" appCommonBtn  (onKeydown)="onSubmit()" (onClick)="onSubmit()">Signup</button>
             </form> 
+
         </div>
 
         <div class="col span-1-of-6"></div>

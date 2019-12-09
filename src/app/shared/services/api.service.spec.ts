@@ -18,19 +18,4 @@ describe('ApiService', () => {
     expect(service).toBeTruthy();
   });
 
-
-  // it('should get banner data',()=>{
-  //   service.getBanner('banners').subscribe((data:any)=>{
-  //     console.log(data);
-  //     expect(data.length).toBe(5)
-  //   });
-  //   const req = httpMock.expectOne(`http://localhost:3000/banners`, 'call to api');
-  //   expect(req.request.method).toBe('GET');
-  //   req.flush({banners:'banners'});
-
-  //   httpMock.verify();
-  // })
-
-
-  
 });
