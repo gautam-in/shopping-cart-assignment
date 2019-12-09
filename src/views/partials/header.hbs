@@ -17,8 +17,11 @@
                             <a href="/register">Register</a>
                         </div>
                         <div class="cart-details" id="shopping-cart">
-                            <span class="cart-img"><img src="/static/images/cart.svg" alt="shopping cart image" /></span>
-                            <span class="number-of-items">0 items</span>
+                            <a href="/cart">
+                                <span class="cart-img"><img src="/static/images/cart.svg" alt="shopping cart image" /></span>
+                                {{!-- <span class="number-of-items">0 items</span> --}}
+                                <span class="cart-count">{{item_counter}}</span> <span class="cart-count">Items</span>
+                            </a>
                         </div>
                     </div>
                 </div>

@@ -107,6 +107,9 @@ $break-medium:768px;
                 color: #fff;
                 border: #ec5454;
                 cursor: pointer;
+                a {
+                    color: #fff;
+                }
             }
         }
     }
@@ -134,6 +137,7 @@ $break-medium:768px;
                 .category-button {
                     font-size: 16px;
                     padding: 8px;
+                    margin-top: 10px;
                 }
             }
         }

@@ -32,7 +32,7 @@
                     <div class="category-details">
                         <h3 class="category-title">{{this.name}}</h3>
                         <p class="category-title-details">{{this.description}}</p>
-                        <button class="category-button">Explore {{this.key}}</button>
+                        <button class="category-button"><a class="filter" href="/product/{{this.id}}">Explore {{this.name}}</a></button>
                     </div>
                 </div>
                 {{/is }} {{#is this.class "even"}}
@@ -40,7 +40,7 @@
                     <div class="category-details">
                         <h3 class="category-title">{{this.name}}</h3>
                         <p class="category-title-details">{{this.description}}</p>
-                        <button class="category-button">Explore {{this.key}}</button>
+                        <button class="category-button"><a class="filter" href="/product/{{this.id}}">Explore {{this.name}}</a></button>
                     </div>
                     <div class="category-image">
                         <img src="{{this.imageUrl}}">
