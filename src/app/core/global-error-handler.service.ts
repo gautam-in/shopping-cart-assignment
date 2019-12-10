@@ -16,6 +16,8 @@ export class GlobalErrorHandler implements ErrorHandler {
       console.error("Response body", error.message);
       if (!navigator.onLine) {
         // Handle offline error
+        console.error("Network not available",error.status);
+
       } else {
         console.error("401 or 403")
         // Handle Http Error (error.status === 403, 404...)
@@ -26,8 +28,9 @@ export class GlobalErrorHandler implements ErrorHandler {
    }
 
     if (error instanceof TimeoutError) {
-      //do sth
+      console.error("service timeout error")
     }
+    
       // Log the error anyway
       console.error('It happens: ', error);
       router.navigate(['error']);

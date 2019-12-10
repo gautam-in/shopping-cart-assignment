@@ -2,6 +2,8 @@
 .copyright{
     background-color: $gs-19;
     .content{
+        word-wrap: break-word;
+        width: 80%;
         font-weight: 600;
         position: relative;
         left: 14%;

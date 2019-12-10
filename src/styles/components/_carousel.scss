@@ -10,9 +10,15 @@
   /* Slideshow container */
   .slideshow-container {
     max-width: 1000px;
+    min-height: 100px;
     position: relative;
     @include margin($top:40px,$right:auto,$bottom:40px,$left:auto);
     @include box-shadow(1px 6px 5px -6px $gs-10);
+    .dot-container{
+      position: absolute;
+      left: 40%;
+      top:78%;
+    }
   }
 
   /* Next & previous buttons */
@@ -20,9 +26,9 @@
     @include bg-opacity($gs-6);
     cursor: pointer;
     position: absolute;
-    top: 50%;
+    top: 35%;
     width: auto;
-    padding: 16px;
+    padding: 10px;
     @include margin($top:-22px);
     color: $gs-23;
     font-weight: bold;
@@ -67,5 +73,19 @@
   /* On smaller screens, decrease text size */
   @media only screen and (max-width: 300px) {
     .prev, .next,.text {@include font-size(55%)}
+  }
+
+  @include small-screen {
+    .prev, .next {
+      padding: 15px;
+      top:40%;
+    }
+  }
+
+  @include medium-screen{
+    .prev, .next {
+      padding: 15px;
+      top:50%;
+    }
   }
 }

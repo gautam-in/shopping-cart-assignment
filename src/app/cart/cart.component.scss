@@ -21,21 +21,8 @@
         @include bg-opacity($gs-23);
         padding: 15px;
         position: relative;
-        figure{
-            height: 50px;
-            width: 15%;
-            img{
-                height: 100%;
-                width: auto;
-            }
-        }
     }
-    .total-price{
-        position: absolute;
-        right: 10px;
-        bottom:28%;
-        @include font-size(80%);
-    }
+    
     .offer{
         padding: 10px;
         @include bg-opacity($gs-23);
@@ -63,34 +50,6 @@
     .no-item-exception{
         position: relative;
         top:40%;
-    }
-    .cart-values{
-        -webkit-user-select: none;
-           -moz-user-select: none;
-            -ms-user-select: none;
-                user-select: none;
-        width: 77%;
-        .price{
-            
-            @include font-size(65%);
-            color: $gs-1;
-        }
-        .plus,.minus{
-            outline: none;
-            border: none;
-            height: 18px;
-            width: 21px;
-            border-radius: 20%;
-            display: inline-block;
-            @include bg-opacity($color-theme);
-            color: $gs-23;
-            cursor: pointer;
-            @include font-size(73%);
-        }
-        .value{
-            @include font-size(80%);
-            font-weight: 600;
-        }
     }
     .cart-footer{
         @include bg-opacity($gs-23);

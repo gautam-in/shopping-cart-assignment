@@ -1,0 +1,44 @@
+<div class="cart-item-wrapper">
+    <!-- Cart item image -->
+    <figure class="pull-left">
+        <img src="{{imageURL}}" alt="Product image">
+    </figure>
+    <section class="cart-values pull-left margin-left-20">
+
+        <!-- Header -->
+        <header class="margin-bottom-15">
+            <h6 class="ellipse cart-title" title="{{title}}">{{title}}</h6>
+        </header>
+
+
+
+        <!-- Add remove values -->
+
+        <button  aria-label="decrement" class="minus disp-inline text-center" (click)="updateCartItem('decrement')">
+            <span class="sign">&#8722;</span>
+        </button>
+        <span class="value margin-left-20 margin-right-20">{{count}}</span>
+        <button  aria-label="increment" class="plus margin-right-20 disp-inline text-center" (click)="updateCartItem('increment')">
+            <span class="sign">&#43;</span>
+        </button>
+        
+
+        <!-- Visuall hidden element for accessibility -->
+
+        <div class="visuallyhidden" id="item-count-price">{{count}} items at {{price}} each</div>
+
+
+        <!-- item price -->
+
+        <div  role="text" class="price disp-inline" aria-labelledby="item-count-price">X&nbsp;&nbsp;&nbsp;&nbsp;Rs.{{price}}</div>
+
+    </section>
+    
+
+    <!-- Total price(count * price) -->
+
+    <div class="total-price">
+        <p class="visuallyhidden" id="total-product-price">{{count * price}} Rupees</p>
+        <div role="text" aria-labelledby="total-product-price"><data value="{{count * price}}" >Rs.{{count * price}}</data></div>
+    </div>
+</div>
