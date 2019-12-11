@@ -138,3 +138,36 @@ function navigateToHome() {
 function navigateToProducts() {
     window.location.href = "/products";
 }
+
+//===================================================================================================
+
+//============================================================================================================
+
+function validate() {
+    var name = document.Form.email.value;
+    var passwordlength = document.Form.password.value.length;
+    var status = false;
+    var reg = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    if (name != '') {
+        if (reg.test(name) == false) {
+            document.getElementById("error-email").innerHTML = "Invalid email-id";
+            status = false;
+        }
+    } else if (name == '') {
+        document.getElementById("error-email").innerHTML = "Please enter email Id";
+        status = false;
+    } else {
+        document.getElementById("error-email").innerHTML = "";
+        status = true;
+    }
+
+    if (passwordlength < 6) {
+        document.getElementById("error-psw").innerHTML = " Password must be greater than 6";
+        status = false;
+    } else {
+        document.getElementById("error-psw").innerHTML = "";
+        status = true;
+    }
+
+    return status;
+}

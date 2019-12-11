@@ -17,3 +17,9 @@ $breakpoint-tablet-potrait: 1024px;
 $breakpoint-phone: 768px;
 $breakpoint-small-phone: 600px;
 $breakpoint-smaller-phone: 480px;
+$site_colors: ( body-color-white: #ffffff, box-bg-color: #eeeeee, text-color: #000000, footer-bg-color: #eaeaea, bullet-bg-color: #ccc, bullet-bg-color-active :#aaa, btn-bg-color : #d10157, input-label-color: #2fb9c6);
+// Z-index
+$z-index: ( cart: 4, carousel: 3, home: 2, header: 1, );
+$body-width: 1170px;
+$font_style: Dosis,
+sans-serif;

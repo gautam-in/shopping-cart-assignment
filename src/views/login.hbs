@@ -1,26 +1,28 @@
 <!-- Page Content-->
-        <div class="content-area">
+        <div class="content-area login">
+           
             <section class="login-text-details">
                 <h2>Login</h2>
                 <p>Get access to your Orders, Wishlist and Recommendations</p>
             </section>
             <section class="login-form">
                 <h2 class="mobile-view-title">Login</h2>
-                <form action="" method="post">
+                <form name="Form" action="/login/post" onsubmit="return validate()" method="post">
 
-                    <div class="form-container">
+                    <div class="form-group">
                         <label for="uname"><b>Email</b></label>
-                        <input type="email" placeholder="" name="uname" required>
-
-                        <label for="psw"><b>Password</b></label>
-                        <input type="password" placeholder="" name="psw" required>
-
-                        <button type="submit">Login</button>
-
+                        <input type="email" placeholder="Email" class="form_input" name="email"  >
+                        <p id="error error-email"></p>
                     </div>
-
-
+                    <div class="form-group">
+                        <label for="psw"><b>Password</b></label>
+                        <input type="password" class="form_input" placeholder="Password" name="password"  >
+                        <p id="error error-psw"></p>
+                    </div>
+                         <button type="submit" class="btn" aria-label="Login">Login</button>
+                    </div>
                 </form>
             </section>
+        </section>
         </div>
         <!-- Page Content-->

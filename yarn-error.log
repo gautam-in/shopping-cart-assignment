@@ -17,10 +17,10 @@ npm manifest:
   {
     "name": "Website",
     "version": "1.0.0",
-    "description": "Personal website for Cameron Cabo",
+    "description": "",
     "main": "index.js",
-    "repository": "https://github.com/ccabo1/website",
-    "author": "Cameron Cabo",
+    "repository": "",
+    "author": "",
     "license": "MIT",
     "dependencies": {
       "express": "^4.16.3",

@@ -8,12 +8,15 @@ const hbshelpers = require("handlebars-helpers");
 const multihelpers = hbshelpers();
 var cookieParser = require('cookie-parser');
 var session = require('express-session');
+const expressValidator = require('express-validator');
 // Import the port, if there is one
 const PORT = process.env.PORT;
 
 // Import routes
-const api = require('./routes');
-const cartroute = require('./routes-scripts/cart')
+const api = require('./routes-scripts/routes');
+const cartroute = require('./routes-scripts/cart');
+const login = require('./routes-scripts/login');
+const register = require('./routes-scripts/register');
 
 // Configure the app to use express
 const app = express();
@@ -36,9 +39,9 @@ app.use(sassMiddleware({
 }));
 
 // Leverage JSON body parser
-// app.use(bodyParser.json());
+app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-
+app.use(expressValidator());
 
 // Serve assets via the public directory
 app.use(express.static(path.join(__dirname, 'public')));
@@ -50,6 +53,7 @@ app.use(session({
     resave: false,
     saveUninitialized: true
 }));
+
 app.use(function(req, res, next) {
     res.locals.session = req.session;
     next();
@@ -63,6 +67,8 @@ app.set('view engine', 'hbs');
 // Serve all API routes
 app.use('/', api);
 app.use('/cart', cartroute);
+app.use('/login', login);
+app.use('/register', register);
 
 // Render the app
 app.listen(PORT || 4200, () => console.log('App listening on port 4200! 🐳'));
