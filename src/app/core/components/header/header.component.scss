@@ -22,11 +22,6 @@
         padding: 0;
         overflow: hidden;
     }
-    .navbar{
-        a{
-            @include font-size(80%);
-        }
-    }
     .secondary-nav{
         height: 28px;
         li{
@@ -39,23 +34,6 @@
     }
     .main-navigation{
         display: none;
-        nav{
-            position: relative;
-            top: 21px;
-            left:17%;
-            display: inline-block;
-        }
-        ul{
-            display: inline-block;
-        }
-        li{
-            .active{
-                @include bg-opacity($color-theme);
-                padding: 6px 15px;
-                color: $gs-23;
-                font-weight: 600;
-            }
-        }
     }
     .sigin-register{
         display: none;
@@ -159,13 +137,6 @@
         @include box-shadow(0px 4px 4px $gs-13);
         height: auto;
         @include bg-opacity($gs-23);
-        figure{
-            height: 41px;
-        }
-        .header-img{
-            height: 100%;
-            width: 100%;
-        }
     }
 
     // 576px
@@ -195,11 +166,6 @@
         .cart-container{
             text-align: right;
             width: 23%;
-        }
-        .header-wrapper{
-            figure{
-                height: 70px;
-            }
         }
         
     }
@@ -235,9 +201,6 @@
         }
         .main-navigation{
             width:53%;
-            nav{
-                top: 15px;
-            }
         }
     }
 }

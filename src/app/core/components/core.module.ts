@@ -10,6 +10,8 @@ import { ErrorComponent } from './error/error.component';
 import { GlobalErrorHandler } from './../global-error-handler.service';
 import { CartItemComponent } from './../../cart/components/cart-item/cart-item.component';
 import { CartOfferComponent } from './../../cart/components/cart-offer/cart-offer.component';
+import { LogoComponent } from './header/components/logo/logo.component';
+import { NavigationComponent } from './header/components/navigation/navigation.component';
 @NgModule({
   declarations: [
     CartItemComponent,
@@ -17,7 +19,9 @@ import { CartOfferComponent } from './../../cart/components/cart-offer/cart-offe
     HeaderComponent,
     FooterComponent,
     CartComponent,
-    ErrorComponent
+    ErrorComponent,
+    LogoComponent,
+    NavigationComponent
   ],
   imports: [
 

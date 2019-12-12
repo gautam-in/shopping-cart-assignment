@@ -1,0 +1,33 @@
+@import '../../../../../../styles/abstract/mixin';
+@import '../../../../../../styles/abstract/color';
+#main-nav{
+    position: relative;
+    top: 21px;
+    left:17%;
+    display: inline-block;
+    ul{
+        display: inline-block;
+        list-style: none;
+        @include margin();
+        padding: 0;
+        overflow: hidden;
+    }
+    li{
+        a{
+            @include font-size(80%);
+            color: $gs-4;
+            &:hover{
+                border-bottom: 2px solid $color-theme;
+            }
+        }
+        .active{
+            @include bg-opacity($color-theme);
+            padding: 6px 15px;
+            color: $gs-23;
+            font-weight: 600;
+        }
+    }
+    @include  large-screen{
+        top: 15px;
+    }
+}
