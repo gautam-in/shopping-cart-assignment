@@ -4,18 +4,6 @@
     .lg-visible{
         display: none;
     }
-    li{
-        a{
-            color: $gs-4;
-            &:hover{
-                border-bottom: 2px solid $color-theme;
-            }
-        }
-    }
-    
-    .margin-top-4{
-        margin-top: 4px;
-    }
     ul{
         list-style: none;
         @include margin();
@@ -24,84 +12,17 @@
     }
     .secondary-nav{
         height: 28px;
-        li{
-            .active{
-                @include bg-opacity($color-theme);
-                padding: 5px 10px;
-                color: $gs-23;
-            }
-        }
     }
     .main-navigation{
         display: none;
     }
-    .sigin-register{
-        display: none;
-        padding: 0;
-        a{
-            @include font-size(80%);
-        }
-    }
+
     .logo-container{
         width: 21%;
     }
     .cart-container{
         width: 79%;
         text-align: right;
-    }
-    .menu{
-        @include bg-opacity($gs-19);
-        position: relative;
-        top: 0px;
-        left: -3px;
-        .line{
-            width:25px;
-            border: 1px solid $gs-4;
-        }
-        .show{
-            display: inline-block !important;
-        }
-        ul{
-            display: none;
-            position: absolute;
-            top:113%;
-            right: 8%;
-            @include font-size(90%);
-            @include bg-opacity($gs-19);
-            @include box-shadow(1px 1px 1px 1px $gs-13);
-            width: 160px;
-            li{
-                @include font-size(70%);
-                text-align: center;
-                &:not(:last-child){
-                    border-bottom:1px solid $gs-12;
-                }
-                a{
-                    color: #444;
-                    display: block;
-                    padding: 10px;
-                    font-weight: normal;
-                    &:hover{
-                        color: $gs-23;
-                        @include bg-opacity($color-theme);
-                    }
-                    
-                }
-            }
-            
-        }
-        .active{
-            @include bg-opacity($color-theme);
-            color: $gs-23 !important;
-        }
-        .mini-main-menu{
-            border: none;
-            outline: none;
-            @include bg-opacity($gs-19);
-            padding: 12px 10px 11px 10px;
-            bottom: 1px;
-            position: relative;
-        }
     }
 
     .cart{
@@ -145,17 +66,6 @@
         .main-navigation{
             display: inline-block;
             width:53%;
-        }
-        .menu{
-            display: none;
-        }
-        .card-and-signup{
-            .sigin-register{
-                display: inline-block;
-                a{
-                    @include font-size(65%);
-                }
-            }
         }
         .cart{
             display: inline-block;

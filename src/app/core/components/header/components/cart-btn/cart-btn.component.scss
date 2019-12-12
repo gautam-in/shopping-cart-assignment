@@ -1,0 +1,37 @@
+@import '../../../../../../styles/abstract/variables';
+@import '../../../../../../styles/abstract/mixin';
+@import '../../../../../../styles/abstract/color';
+.cart{
+    z-index: 10;
+    border:none;
+    outline: none;
+    position: relative;
+    @include bg-opacity($gs-19);
+    top:0px;
+    left: 0px;
+    padding: 11px 15px;
+    p{
+        @include font-size(80%);
+    }
+    img{
+        height: 25px;
+        width: 25px;
+    }
+    -webkit-transition: background-color 0.2s, -webkit-transform 0.2s;
+    transition: background-color 0.2s, -webkit-transform 0.2s;
+    transition: background-color 0.2s, transform 0.2s;
+    transition: background-color 0.2s, transform 0.2s, -webkit-transform 0.2s;
+    &:hover{
+        @include bg-opacity(darken($gs-19,5%));
+        -webkit-transform: scaleY(0.9);
+        transform: scaleY(0.9);
+    }
+    @include  small-screen{
+        display: inline-block;
+    }
+
+    @include medium-screen {
+        padding: 8px 15px;
+        @include font-size(90%);
+    }
+}

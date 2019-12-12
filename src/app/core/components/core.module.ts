@@ -12,6 +12,9 @@ import { CartItemComponent } from './../../cart/components/cart-item/cart-item.c
 import { CartOfferComponent } from './../../cart/components/cart-offer/cart-offer.component';
 import { LogoComponent } from './header/components/logo/logo.component';
 import { NavigationComponent } from './header/components/navigation/navigation.component';
+import { SecondaryNavigationComponent } from './header/components/secondary-navigation/secondary-navigation.component';
+import { MiniSecondaryNavComponent } from './header/components/mini-secondary-nav/mini-secondary-nav.component';
+import { CartBtnComponent } from './header/components/cart-btn/cart-btn.component';
 @NgModule({
   declarations: [
     CartItemComponent,
@@ -21,7 +24,10 @@ import { NavigationComponent } from './header/components/navigation/navigation.c
     CartComponent,
     ErrorComponent,
     LogoComponent,
-    NavigationComponent
+    NavigationComponent,
+    SecondaryNavigationComponent,
+    MiniSecondaryNavComponent,
+    CartBtnComponent
   ],
   imports: [
 

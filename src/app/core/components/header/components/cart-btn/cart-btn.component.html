@@ -1,0 +1,5 @@
+<button aria-label="Go to Cart" class="cart clearfix cursor-pointer" tabindex="0" (click)="toggleCart()" >
+    <img id="js-svg-cart" class="pull-left cart-img" src="../../../../../../assets/images/cart.svg" alt="Cart logo">
+    <p  class="pull-left cart-items margin-top-5 margin-left-5" *ngIf="cartCount">{{cartCount}} items</p>
+    <p  class="pull-left cart-items margin-top-5 margin-left-5" *ngIf="!cartCount">0 items</p>
+</button>
