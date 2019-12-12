@@ -1,0 +1,18 @@
+@import '../../../../styles/abstract/variables';
+@import '../../../../styles/abstract/mixin';
+@import '../../../../styles/abstract/color';
+
+.offer{
+    padding: 10px;
+    @include bg-opacity($gs-23);
+    p{
+        @include font-size(70%);
+    }
+    figure{
+        height: 35px;
+        img{
+            height: 100%;
+            width:auto;
+        }
+    }
+}

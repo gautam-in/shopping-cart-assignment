@@ -15,12 +15,10 @@
             <!-- Each cart  item -->
             <cart-item [imageURL]="cart.imageURL"  [title]="cart.name" [count]="cart.count" [price]="cart.price" (modifyItem)="modifyItems(cart,$event,i)"></cart-item>
         </div>
-        <!-- Offer section -->
-        <div class="offer margin-top-10 clearfix" *ngIf="cartList?.length">
-            <figure class="pull-left"><img src="../../assets/images/lowest-price.png" alt="Lowest Price logo"></figure>
-            <p class="disp-inline margin-left-20">You won't find it cheaper anywhere.</p>
-        </div>
 
+        <!-- Offer section -->
+       
+        <cart-offer *ngIf="cartList?.length"></cart-offer>
 
         <!-- No item in the card -->
         <section *ngIf="!cartList?.length" class="no-item-exception text-center">

@@ -22,7 +22,7 @@
             <!-- Main navigation container -->
 
             <div class="main-navigation col span-5-of-12">
-                <nav id="main-nav" class="navbar" aria-label="Main">
+                <nav id="main-nav" class="navbar" role="navigation" aria-label="Main Navigation">
                     <ul>
                         <li class="pull-left padding-5"><a [routerLink]="['/home']" routerLinkActive="active">Home</a></li>
                         <li class="pull-left padding-5"><a class="margin-left-15" [routerLink]="['/product-list']" routerLinkActive="active">Products</a></li>
@@ -57,7 +57,7 @@
                             <li (click)="onMenuClick()"><a [routerLink]="['/signup']" routerLinkActive="active">Register</a></li>
                         </ul>
                     </div>
-                    <button aria-label="Go to Cart" class="cart clearfix cursor-pointer" tabindex="0" aria-pressed="false" (click)="toggleCart()" >
+                    <button aria-label="Go to Cart" class="cart clearfix cursor-pointer" tabindex="0" (click)="toggleCart()" >
                         <img id="js-svg-cart" class="pull-left cart-img" src="../../../../assets/images/cart.svg" alt="Cart logo">
                         <p  class="pull-left cart-items margin-top-5 margin-left-5" *ngIf="cartCount">{{cartCount}} items</p>
                         <p  class="pull-left cart-items margin-top-5 margin-left-5" *ngIf="!cartCount">0 items</p>

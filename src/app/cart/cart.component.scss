@@ -22,21 +22,6 @@
         padding: 15px;
         position: relative;
     }
-    
-    .offer{
-        padding: 10px;
-        @include bg-opacity($gs-23);
-        p{
-            @include font-size(70%);
-        }
-        figure{
-            height: 35px;
-            img{
-                height: 100%;
-                width:auto;
-            }
-        }
-    }
     .main-header{ 
         background-color: $gs-23;
         color: $gs-1;

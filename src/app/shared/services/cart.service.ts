@@ -22,14 +22,6 @@ export class CartService {
                         this.cartSource.value[i].count++;
                      }
                 }
-                // this.cartData.subscribe(data  =>{
-                //     for(let i=0;i<data.length;i++){
-                //         if(data[i].id == cartItem.id){
-                //             data[i].count++;
-                //         }
-                //     }
-                // });
-
                 
             }else{
                 const updatedValue = [...this.cartSource.value, cartItem];

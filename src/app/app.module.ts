@@ -19,7 +19,7 @@ import { CardBoardComponent } from './product-list/components/card-board/card-bo
 import { NavigationTabsComponent } from './product-list/components/navigation-tabs/navigation-tabs.component';
 import { MiniNavigationComponent } from './product-list/components/mini-navigation/mini-navigation.component';
 import { CarouselComponent } from './shared/components/carousel/carousel.component';
-
+import { GlobalErrorHandler } from './core/global-error-handler.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,13 +39,14 @@ import { CarouselComponent } from './shared/components/carousel/carousel.compone
   imports: [
 
 
+
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     CoreModule,
     FormsModule
   ],
-  providers: [ConstantsService,CartService],
+  providers: [ConstantsService,CartService,GlobalErrorHandler],
   bootstrap: [AppComponent],
 })
 export class AppModule { }

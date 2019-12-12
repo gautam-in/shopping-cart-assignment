@@ -9,17 +9,19 @@ import { ErrorComponent } from './error/error.component';
 
 import { GlobalErrorHandler } from './../global-error-handler.service';
 import { CartItemComponent } from './../../cart/components/cart-item/cart-item.component';
-
+import { CartOfferComponent } from './../../cart/components/cart-offer/cart-offer.component';
 @NgModule({
   declarations: [
     CartItemComponent,
+    CartOfferComponent,
     HeaderComponent,
     FooterComponent,
     CartComponent,
     ErrorComponent
   ],
   imports: [
-    CommonModule,
+
+  CommonModule,
     AppRoutingModule
   ],
   exports:[HeaderComponent,FooterComponent],
