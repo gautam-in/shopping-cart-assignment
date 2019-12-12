@@ -3,10 +3,9 @@
         display: block;
         width: 100%;
     }
-    .custom-button{
+    .btn-app{
         width: 100%;
-        padding: 10px;
-        margin: 30px 0 0 0;
+        margin: 35px auto;
         &:hover{
             background-color:  lighten($color-theme,10%) !important;
         }
@@ -27,7 +26,7 @@
         font-weight: 600 !important;
     }
     .error{
-        @include font-size(70%);
+        @include font-size(65%);
         color: $color-error;
         word-spacing: 2px;
         line-height: 1.6;
@@ -40,7 +39,7 @@
         font-weight: 500;
     }
     .field-label{
-        @include font-size(65%);
+        @include font-size(70%);
         color: $color-secondary;
         -webkit-transition: all 0.3s ease-in-out;
         transition: all 0.3s ease-in-out;

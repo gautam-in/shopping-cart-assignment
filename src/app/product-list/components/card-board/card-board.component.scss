@@ -42,19 +42,6 @@
     .mini-mrp{
         display: inline;
     }
-    .custom-button{
-        width: 100%;
-        padding: 15px 20px;
-        -webkit-transition: -webkit-transform 0.3s;
-        transition: -webkit-transform 0.3s;
-        transition: transform 0.3s;
-        transition: transform 0.3s, -webkit-transform 0.3s;
-        &:hover{
-            -webkit-transform: scaleY(1.2);
-            transform: scaleY(1.2);
-            @include bg-opacity(lighten($color-theme,7%));
-        }   
-    }
     footer{
         width: 50%;
         position: relative;

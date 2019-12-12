@@ -63,7 +63,7 @@
                         {{signupForm.confirmPassword.error.errorMsg}}
                     </p>
                 </div>
-                <button aria-label="Signup Button" class="custom-button" appCommonBtn  (onKeydown)="onSubmit()" (onClick)="onSubmit()">Signup</button>
+                <app-common-button [buttonSize]="'large'" (onBtnClick)="onSubmit()" [type]="'btn-app'" [title]="'Signup'"></app-common-button>
             </form> 
 
         </div>

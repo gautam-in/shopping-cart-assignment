@@ -1,6 +1,5 @@
 
 <section class="cart-container" id="js-cart">
-    
     <div class="visuallyhidden" id="closeButtonId">Close Cart</div>
     <!-- Header -->
     <header class="main-header">
@@ -36,9 +35,9 @@
             <p class="pull-left margin-left-5 font-14">Proceed Checkout</p>
             <p class="pull-right margin-right-5 font-14">Rs.{{totalPrice}}&nbsp;&gt;</p>
         </button>
-        <button *ngIf="!cartList?.length" (click)="exploreShopping()" class="cart-btn clearfix padding-10" role="button" aria-label="Start Shopping">
-            <p class="margin-left-5 font-14" >Start Shopping</p>
-        </button>
+
+        <!-- Common button component : Start shopping -->
+        <app-common-button *ngIf="!cartList?.length"  [buttonSize]="'large'" [customStyles]="btnCustomStyles" (onBtnClick)="exploreShopping()" [type]="'btn-app'" [title]="'Start Shopping'"></app-common-button>
     </footer>
 </section>
 

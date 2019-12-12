@@ -2,7 +2,6 @@ import { Injectable, Injector, ErrorHandler } from '@angular/core';
 import { Router } from '@angular/router';
 import { HttpErrorResponse } from '@angular/common/http';
 import { TimeoutError } from 'rxjs';
-import { BehaviorSubject, Observable } from 'rxjs'
 
 
 @Injectable()

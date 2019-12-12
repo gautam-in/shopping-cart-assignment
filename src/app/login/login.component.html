@@ -32,7 +32,9 @@
                         {{loginForm.password.error.errorMsg}}
                     </p>
                 </div>
-                <button aria-label="Login button" class="custom-button" appCommonBtn  (onKeydown)="onSubmit()" (onClick)="onSubmit()">Login</button>
+
+                <!-- Common button component -->
+                <app-common-button [buttonSize]="'large'" (onBtnClick)="onSubmit()" [type]="'btn-app'" [title]="'Login'"></app-common-button>
             </form> 
         </div>
         <div class="col span-1-of-6"></div>

@@ -8,6 +8,8 @@
     <p class="fig-caption margin-top-15" title="{{cardDes}}">{{cardDes}}</p>
     <footer class="clearfix margin-top-15 footer">
         <p class="mrp">MRP Rs.{{price}}</p>
-        <button class="custom-button pull-right" appCommonBtn  (onClick)="btnClicked()">Buy Now<span class="mini-mrp">@Rs87</span></button>
+        
+        <!-- common button -->
+        <app-common-button [buttonSize]="'large'"  [customStyles]="customStyles" (onBtnClick)="btnClicked()" [type]="'btn-app'" [title]="buttonText" [isTransitionRequired]="true"></app-common-button>
     </footer>
 </section>

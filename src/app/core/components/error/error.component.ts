@@ -1,5 +1,5 @@
 import { Component, OnInit, ErrorHandler } from '@angular/core';
-import { GlobalErrorHandler } from './../../global-error-handler.service';
+import { GlobalErrorHandler } from './../../../shared/services/global-error-handler.service';
 
 @Component({
   selector: 'app-error',

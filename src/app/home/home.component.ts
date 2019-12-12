@@ -12,6 +12,7 @@ import { Router } from '@angular/router';
 export class HomeComponent implements OnInit {
   bannerList: IBanner[];
   buttonConfig:any;
+  btnCustomStyles:any;
   categoryList:ICategory[];
   slideIndex:number = 1;
   bannerLoading: boolean=false;
@@ -57,6 +58,12 @@ export class HomeComponent implements OnInit {
       margin:"20px 0 0 0",
       cursor:"pointer"
     }
+
+    this.btnCustomStyles={
+      "marginTop":"20px"
+    }
+
+
     this.getBannerData();
     this.getCategories();
   }

@@ -1,0 +1,41 @@
+@import '../../../../styles/abstract/color';
+@import '../../../../styles/abstract/variables';
+@import '../../../../styles/abstract/mixin';
+
+.btn{
+    cursor: pointer;
+    display: inline-block;
+    color: $gs-23;
+    text-align: center;
+    border: none;
+    outline: none;
+}
+.btn-regular{
+    padding: 5px 10px;
+}
+.btn-sm{
+    padding: 5px;
+}
+.btn-lg{
+    padding: 10px 15px;
+}
+.btn-xlg{
+    padding: 15px 20px;
+}
+.btn-app{
+    @include bg-opacity($color-theme);
+}
+.btn-primary{
+    @include bg-opacity($color-btn-primary);
+}
+
+.transition{
+    -webkit-transition: -webkit-transform 0.3s;
+    transition: -webkit-transform 0.3s;
+    transition: transform 0.3s;
+    transition: transform 0.3s, -webkit-transform 0.3s;
+    &:hover{
+        -webkit-transform: scale(1.2);
+        transform: scale(1.2);
+    }
+}

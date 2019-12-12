@@ -12,6 +12,7 @@ import { Router } from '@angular/router';
 export class CartComponent implements OnInit {
   cartList:ICart[];
   totalPrice:any;
+  public btnCustomStyles:any;
   @Output() cartClosed= new EventEmitter();
   constructor(private cartService: CartService, private route:Router) { }
 
@@ -23,7 +24,9 @@ export class CartComponent implements OnInit {
     this.cartService.cartCount.subscribe(cartCount=>{
       this.getTotalPrice();
     });
-
+    this.btnCustomStyles ={
+      "width": "100%"
+    }
   }
   
 
