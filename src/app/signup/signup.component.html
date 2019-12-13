@@ -4,10 +4,9 @@
         <!-- Content container for sign up form -->
 
         <section class="col span-2-of-6 text-center top-pane">
-            <header>
-                <h1 class="text-left form-heading">Signup</h1>
-                <h5 class="text-left form-desc margin-top-20">We do not share your personal details with anyone</h5>
-            </header>
+            <app-heading [class]="'form-heading text-left'" [tag]="'h1'" [isHeaderTagRequired]="false" [headingText]="'Signup'"></app-heading>
+            <app-heading [class]="'text-left margin-top-20 text-left font-500'" [tag]="'h5'" [isHeaderTagRequired]="false" [headingText]="'We do not share your personal details with anyone'"></app-heading>
+            
         </section>
 
 

@@ -1,0 +1,15 @@
+<header *ngIf="isHeaderTagRequired">
+    <h1 class="{{class}}" *ngIf="tag=='h1'">{{headingText}}</h1>
+    <h2 class="{{class}}" *ngIf="tag=='h2'">{{headingText}}</h2>
+    <h3 class="{{class}}"*ngIf="tag=='h3'">{{headingText}}</h3>
+    <h4 class="{{class}}" *ngIf="tag=='h4'">{{headingText}}</h4>
+    <h5 class="{{class}}" *ngIf="tag=='h5'">{{headingText}}</h5>
+    <h6 class="{{class}}" *ngIf="tag=='h6'">{{headingText}}</h6>
+</header>
+
+<h1 class="{{class}}" *ngIf="tag=='h1' && !isHeaderTagRequired">{{headingText}}</h1>
+<h2 class="{{class}}" *ngIf="tag=='h2' && !isHeaderTagRequired">{{headingText}}</h2>
+<h3 class="{{class}}" *ngIf="tag=='h3' && !isHeaderTagRequired">{{headingText}}</h3>
+<h4 class="{{class}}"*ngIf="tag=='h4' && !isHeaderTagRequired">{{headingText}}</h4>
+<h5 class="{{class}}"*ngIf="tag=='h5' && !isHeaderTagRequired">{{headingText}}</h5>
+<h6 class="{{class}}" *ngIf="tag=='h6' && !isHeaderTagRequired">{{headingText}}</h6>

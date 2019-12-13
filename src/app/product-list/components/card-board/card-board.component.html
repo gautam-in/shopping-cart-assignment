@@ -1,10 +1,11 @@
 <section class="card-board">
-    <header>
-        <h4 class="font-20">{{cardTitle}}</h4>
-    </header>
+
+    <app-heading [class]="'font-20 font-card'" [tag]="'h4'" [isHeaderTagRequired]="true" [headingText]="cardTitle"></app-heading>
+
     <figure>
         <img src="{{imageUrl}}" alt="{{imgAlt}}">
     </figure>
+    
     <app-paragraph [type]="'p-card'" [desc]="cardDes" [title]="cardDes"></app-paragraph>
     <footer class="clearfix margin-top-15 footer">
 
