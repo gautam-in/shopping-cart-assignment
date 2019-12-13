@@ -15,6 +15,7 @@ import { MiniSecondaryNavComponent } from './components/header/components/mini-s
 import { CartBtnComponent } from './components/header/components/cart-btn/cart-btn.component';
 import { SharedModule } from './../app.shared.module';
 import { GlobalErrorHandler } from './../shared/services/global-error-handler.service';
+import { NoDataExceptionComponent } from './../cart/components/no-data-exception/no-data-exception.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { GlobalErrorHandler } from './../shared/services/global-error-handler.se
     CartOfferComponent,
     HeaderComponent,
     FooterComponent,
+    NoDataExceptionComponent,
     CartComponent,
     ErrorComponent,
     LogoComponent,

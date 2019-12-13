@@ -33,7 +33,7 @@
             li{
                 display: block;
                 &:hover{
-                    @include bg-opacity($color-theme);
+                    @include bg-opacity(lighten($color-theme,5%));
                     color: $gs-23;
                 }
             }

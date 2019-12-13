@@ -5,9 +5,10 @@
     <figure>
         <img src="{{imageUrl}}" alt="{{imgAlt}}">
     </figure>
-    <p class="fig-caption margin-top-15" title="{{cardDes}}">{{cardDes}}</p>
+    <app-paragraph [type]="'p-card'" [desc]="cardDes" [title]="cardDes"></app-paragraph>
     <footer class="clearfix margin-top-15 footer">
-        <p class="mrp">MRP Rs.{{price}}</p>
+
+        <app-paragraph [type]="'p-mrp'" [desc]="'MRP Rs.'+price"></app-paragraph>
         
         <!-- common button -->
         <app-common-button [buttonSize]="'large'"  [customStyles]="customStyles" (onBtnClick)="btnClicked()" [type]="'btn-app'" [title]="buttonText" [isTransitionRequired]="true"></app-common-button>

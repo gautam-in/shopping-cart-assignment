@@ -28,7 +28,9 @@
 .btn-primary{
     @include bg-opacity($color-btn-primary);
 }
-
+.full-width{
+    width:100%;
+}
 .transition{
     -webkit-transition: -webkit-transform 0.3s;
     transition: -webkit-transform 0.3s;

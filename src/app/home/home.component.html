@@ -14,7 +14,6 @@
         </p>
 
     </div>
-
     
     <!-- All product category list starts here -->
 
@@ -25,7 +24,6 @@
         <loading size="normal" msg="Please wait while category is loading."></loading>
     </p>
 
-
     <!-- Category details -->
 
     <div class="item-container clearfix" *ngFor="let category of categoryList;let odd=odd; let even=even">
@@ -34,10 +32,11 @@
         </figure>
         <section class="category-container text-center" [ngClass]="{'pull-left':even,'pull-right right':odd}">
             <h4>{{category.name}}</h4>
-            <p class="margin-top-15">{{category.description}}</p>
+            <app-paragraph [type]="'p-normal'" [desc]="category.description" ></app-paragraph>
+            <!-- <p class="margin-top-15">{{category.description}}</p> -->
 
             <!-- Common button component -->
-            <app-common-button [buttonSize]="'large'" [customStyles]="btnCustomStyles" (onBtnClick)="onBtnClicked(category)" [type]="'btn-app'" [title]="'Explore '+category.name" [isTransitionRequired]="true"></app-common-button>
+            <app-common-button [buttonSize]="'large'" (onBtnClick)="onBtnClicked(category)" [type]="'btn-app margin-top-20'" [title]="'Explore '+category.name" [isTransitionRequired]="true"></app-common-button>
         </section>
     </div>
 </main>

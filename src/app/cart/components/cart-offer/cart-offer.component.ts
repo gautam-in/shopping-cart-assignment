@@ -11,5 +11,4 @@ export class CartOfferComponent implements OnInit {
 
   ngOnInit() {
   }
-
 }

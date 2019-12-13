@@ -34,7 +34,7 @@ import { SharedModule } from './app.shared.module';
     CarouselComponent
   ],
   imports: [
-BrowserModule,
+    BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     SharedModule,

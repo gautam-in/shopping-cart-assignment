@@ -12,17 +12,6 @@
         height: 80px;
         overflow: hidden;
     }
-
-    .fig-caption{
-        height: 43%;
-        @include font-size(65%);
-        float: left;
-        width: 49%;
-        @include bg-opacity($gs-19);
-        padding: 5px;
-        line-height: 1.4;
-        overflow: hidden;
-    }
     figure{
         height: 61%;
         width: 50%;
@@ -67,17 +56,10 @@
     // min-width  768px
     @include medium-screen {
         height: 476px;
-            .fig-caption{
-                width: 100%;
-                display: block;
-                font-weight: 600;
-                overflow: hidden;
-                height: 80px;
-            }
-            figure{
-                width: 100%;
-                height: 46%;
-            }
+        figure{
+            width: 100%;
+            height: 46%;
+        }
     }
     @include large-screen{
         .footer{
