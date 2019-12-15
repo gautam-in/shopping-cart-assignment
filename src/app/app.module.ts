@@ -16,9 +16,10 @@ import { LoadingComponent } from './core/components/loading/loading.component';
 import { CardBoardComponent } from './product-list/components/card-board/card-board.component';
 import { NavigationTabsComponent } from './product-list/components/navigation-tabs/navigation-tabs.component';
 import { MiniNavigationComponent } from './product-list/components/mini-navigation/mini-navigation.component';
-import { CarouselComponent } from './shared/components/carousel/carousel.component';
 import { GlobalErrorHandler } from './shared/services/global-error-handler.service';
 import { SharedModule } from './app.shared.module';
+import { CarouselComponent } from './home/components/carousel.component';
+
 @NgModule({
   declarations: [
     AppComponent,

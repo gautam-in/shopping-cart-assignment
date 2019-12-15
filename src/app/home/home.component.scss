@@ -24,15 +24,6 @@
         top:100px;
         display: inline-block;
     }
-    .img-container{
-        width: 39%;
-        position: relative;
-        top:20px;
-        img{
-            width: 100%;
-        }
-        
-    }
     
     .item-container{
         @include box-shadow(1px 6px 5px -6px $gs-10);
@@ -57,11 +48,6 @@
     @include small-screen{
         .custom-button{
             @include font-size(60%);
-        }
-        .img-container{
-            img{
-                width: 75%;
-            }
         }
         .category-container{
             @include margin($top:20px);

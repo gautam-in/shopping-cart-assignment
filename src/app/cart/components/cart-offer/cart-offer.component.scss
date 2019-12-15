@@ -8,11 +8,4 @@
     p{
         @include font-size(70%);
     }
-    figure{
-        height: 35px;
-        img{
-            height: 100%;
-            width:auto;
-        }
-    }
 }

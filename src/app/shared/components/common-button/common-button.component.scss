@@ -31,7 +31,7 @@
 .full-width{
     width:100%;
 }
-.transition{
+.btn-transition-full{
     -webkit-transition: -webkit-transform 0.3s;
     transition: -webkit-transform 0.3s;
     transition: transform 0.3s;
@@ -39,5 +39,15 @@
     &:hover{
         -webkit-transform: scale(1.2);
         transform: scale(1.2);
+    }
+}
+.btn-transition-y{
+    -webkit-transition: -webkit-transform 0.3s;
+    transition: -webkit-transform 0.3s;
+    transition: transform 0.3s;
+    transition: transform 0.3s, -webkit-transform 0.3s;
+    &:hover{
+        -webkit-transform: scaleY(1.2);
+        transform: scaleY(1.2);
     }
 }

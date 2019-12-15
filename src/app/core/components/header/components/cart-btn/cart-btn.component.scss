@@ -13,10 +13,6 @@
     p{
         @include font-size(80%);
     }
-    img{
-        height: 25px;
-        width: 25px;
-    }
     -webkit-transition: background-color 0.2s, -webkit-transform 0.2s;
     transition: background-color 0.2s, -webkit-transform 0.2s;
     transition: background-color 0.2s, transform 0.2s;
