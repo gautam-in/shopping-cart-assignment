@@ -4,7 +4,6 @@
 .cart{
     z-index: 10;
     border:none;
-    outline: none;
     position: relative;
     @include bg-opacity($gs-19);
     top:0px;
