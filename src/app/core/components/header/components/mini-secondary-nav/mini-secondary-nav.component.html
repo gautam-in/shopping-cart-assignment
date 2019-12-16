@@ -5,10 +5,10 @@
         <div class="line margin-top-4"></div>
         <div class="line margin-top-4"></div>
     </button>
-    <ul role="navigation" id="mini-menu-navigation">
-        <li (click)="onmenuBtnClick()"><a [routerLink]="['/home']" routerLinkActive="active">Home</a></li>
-        <li (click)="onmenuBtnClick()"><a [routerLink]="['/product-list']" routerLinkActive="active">Products</a></li>
-        <li (click)="onmenuBtnClick()"><a [routerLink]="['/login']" routerLinkActive="active">Signin</a></li>
-        <li (click)="onmenuBtnClick()"><a [routerLink]="['/signup']" routerLinkActive="active">Register</a></li>
+    <ul role="menu" id="mini-menu-navigation">
+        <li role="menu-item" aria-label="Home menu item" (click)="onmenuBtnClick()"><a [routerLink]="['/home']" routerLinkActive="active">Home</a></li>
+        <li role="menu-item" aria-label="Products menu item"(click)="onmenuBtnClick()"><a [routerLink]="['/product-list']" routerLinkActive="active">Products</a></li>
+        <li role="menu-item" aria-label="Sigin menu item" (click)="onmenuBtnClick()"><a [routerLink]="['/login']" routerLinkActive="active">Signin</a></li>
+        <li role="menu-item" aria-label="Register menu item" (click)="onmenuBtnClick()"><a [routerLink]="['/signup']" routerLinkActive="active">Register</a></li>
     </ul>
 </div>

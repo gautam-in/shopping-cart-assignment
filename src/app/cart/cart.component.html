@@ -11,7 +11,7 @@
     </header>
 
     <!-- Main content -->
-    <main>
+    <div class="main">
             
         <div class="card-panel clearfix margin-top-10" *ngFor="let cart of cartList; let i = index">
             <!-- Each cart  item -->
@@ -28,7 +28,7 @@
 
         <cart-no-data-exception *ngIf="!cartList?.length"></cart-no-data-exception>
             
-    </main>
+    </div>
 
     <!-- Footer -->
     <footer class="cart-footer margin-top-5 padding-10">
@@ -39,7 +39,7 @@
         </button>
 
         <!-- Common button component : Start shopping -->
-        <app-common-button *ngIf="!cartList?.length"  [buttonSize]="'large'"  (onBtnClick)="exploreShopping()" [type]="'btn-app full-width'" [title]="'Start Shopping'"></app-common-button>
+        <app-common-button *ngIf="!cartList?.length"  [actionLabel]="'Start shopping'" [buttonSize]="'large'"  (onBtnClick)="exploreShopping()" [type]="'btn-app full-width'" [title]="'Start Shopping'"></app-common-button>
     </footer>
 </section>
 

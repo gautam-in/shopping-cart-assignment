@@ -1,1 +1,1 @@
-<button [ngStyle]="customStyles" class="btn {{defaultClass}} {{type}}"  (onKeydown)="onSubmit()" (click)="onSubmit()">{{buttonTitle}}</button>
+<button [ngStyle]="customStyles"  [attr.aria-label]="actionLabel" class="btn {{defaultClass}} {{type}}"  (onKeydown)="onSubmit()" (click)="onSubmit()">{{buttonTitle}}</button>

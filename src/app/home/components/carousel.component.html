@@ -15,8 +15,8 @@
 
 
     <!-- Dot container -->
-    <div class="dot-container" role="list" aria-label="List of dot to navigate carousel screens">
-        <span class="dot" (click)="currentSlide(index+1)" *ngFor="let slide of bannerList; let index=index" ></span> 
+    <div class="dot-container">
+        <span role="button" aria-label="dot for next or previous slide" class="dot" (click)="currentSlide(index+1)" *ngFor="let slide of bannerList; let index=index" ></span> 
     </div>
 </div>
 

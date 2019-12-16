@@ -12,6 +12,7 @@ export class CommonButtonComponent implements OnInit {
   @Input('buttonSize') size :string;
   @Input('customStyles') customStyles:any;
   @Input('isTransitionRequired') isTransitionRequired: boolean;
+  @Input('actionLabel') actionLabel : string;
   @Output('onBtnClick') onBtnClick: EventEmitter<any> = new EventEmitter();
   constructor(private el: ElementRef, private renderer : Renderer2) { }
 

@@ -12,7 +12,7 @@
 
         <!-- Product category filter for medium and large screen -->
 
-        <aside class="col span-2-of-12 tabs margin-top-0">
+        <div class="col span-2-of-12 tabs margin-top-0">
 
             <!-- Side navigation starts here -->
             <product-navigation-tabs *ngIf="!categoryLoading && categoryList?.length" [selectedTabId]="selectedCategoryId" [tabList]="categoryList" (onSelect)="getFilteredProducts($event)"> </product-navigation-tabs>
@@ -23,7 +23,7 @@
             <p class="loading margin-top-20 clearfix margin-left-20" *ngIf="categoryLoading">
                 <loading size="medium" msg="Please wait till categoies load."></loading>
              </p>
-        </aside>
+        </div>
 
 
         <!-- Main content(dynamic product list) -->
