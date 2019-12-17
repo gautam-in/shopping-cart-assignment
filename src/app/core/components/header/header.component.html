@@ -1,6 +1,6 @@
 <header>
     <!-- app cart component inject over here -->
-    <app-cart (cartClosed)="closeCart()"></app-cart>
+    <app-cart  [showCart]="showCart" (notifyToggleCart)="getNotofiedFromChild($event)"></app-cart>
 
     <!-- Header container -->
     <div class="clearfix header-container">
@@ -40,13 +40,13 @@
                     <app-mini-secondary-nav></app-mini-secondary-nav>
 
                     <!-- Cart button section -->
-                    <cart-btn [cartCount]="cartCount"></cart-btn>
+                    <cart-btn [cartCount]="cartCount" (toggleCart)="toggleCart()"></cart-btn>
                 </div>
             </div>
             <div class="col span-1-of-12 lg-visible"></div>
         </div>
-    </div>
-    <div id="cover">
+        <div id="cover-overlay" (click)="closeCart()">
+        </div>
     </div>
 </header>
 

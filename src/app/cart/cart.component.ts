@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { CartService } from './../shared/services/cart.service';
 import { ICart } from './../models/Icart';
 import { Router } from '@angular/router';
@@ -13,7 +13,8 @@ export class CartComponent implements OnInit {
   cartList:ICart[];
   totalPrice:any;
   cartCount:any;
-  @Output() cartClosed= new EventEmitter();
+  @Input('showCart') showCart: boolean;
+  @Output('notifyToggleCart') notifyToggleCart : EventEmitter<any> = new EventEmitter();
   constructor(private cartService: CartService, private route:Router) { }
 
   ngOnInit() {
@@ -44,7 +45,8 @@ export class CartComponent implements OnInit {
     this.getTotalPrice();
   }
   closeCart(){
-    this.cartClosed.emit();
+    this.showCart = false;
+    this.notifyToggleCart.emit(this.showCart);
   }
 
   getTotalPrice(){

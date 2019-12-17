@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, ElementRef, Renderer2 } from '@angular/core';
 import { CartService } from './../../../shared/services/cart.service';
 
 @Component({
@@ -7,38 +7,45 @@ import { CartService } from './../../../shared/services/cart.service';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-  public showMenu: boolean=false;
+  public showMenu: boolean;
   public cartCount :number;
-  constructor(private cartService: CartService) { }
+  showCart :boolean;
+  constructor(private cartService: CartService, private el: ElementRef, private renderer : Renderer2) { }
+   
   ngOnInit() {
     this.showMenu;
     this.cartService.cartCount.subscribe(cart=>{
       this.cartCount = cart;
     });
-    
   }
-
   toggleCart(){
-    let cart = document.getElementById("js-cart");
-    let overlayCover = document.getElementById("cover");
-    if(cart.style.visibility == 'hidden' || cart.style.visibility == ''){
-      overlayCover.style.display="block";
-      cart.style.visibility = "visible";
+    if(!this.showCart){
+      this.showCart = true;
     }else{
-      cart.style.visibility = "hidden";
-      overlayCover.style.display="none";
+      this.showCart = false;
     }
+    this.toggleOverLay();
   }
   closeCart(){
-    let cart = document.getElementById("js-cart");
-    let overlayCover = document.getElementById("cover");
-    cart.style.visibility = "hidden";
-    overlayCover.style.display="none";
+    this.showCart = false;
+    this.toggleOverLay();
   }
 
-
-
+  toggleOverLay(){
+    if(this.showCart){
+      document.getElementById('cover-overlay').style.display ="inline-block";
+      document.body.style.overflow = 'hidden';
+    }else{
+      document.getElementById('cover-overlay').style.display ="none";
+      document.body.style.overflow = 'auto';
+    }
+  }
+  getNotofiedFromChild(val){
+    this.showCart = val;
+    this.toggleOverLay();
+  }
   onMenuClick(){
     document.getElementById('mini-menu-navigation').classList.toggle("show");
   }
+
 }

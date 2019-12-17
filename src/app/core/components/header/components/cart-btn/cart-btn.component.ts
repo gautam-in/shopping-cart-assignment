@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, ElementRef } from '@angular/core';
+import { Component, OnInit, Input, ElementRef, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'cart-btn',
@@ -7,20 +7,14 @@ import { Component, OnInit, Input, ElementRef } from '@angular/core';
 })
 export class CartBtnComponent implements OnInit {
   @Input('cartCount') cartCount: number;
+  @Output('toggleCart') toggleCartBtn: EventEmitter <any> = new EventEmitter();
   constructor() { }
 
   ngOnInit() {
   }
 
   toggleCart(){
-    let cart = document.getElementById("js-cart");
-    let overlayCover = document.getElementById("cover");
-    if(cart.style.visibility == 'hidden' || cart.style.visibility == ''){
-      overlayCover.style.display="block";
-      cart.style.visibility = "visible";
-    }else{
-      cart.style.visibility = "hidden";
-      overlayCover.style.display="none";
-    }
+    this.toggleCartBtn.emit();
+
   }
 }
