@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css?family=Dosis:400,600,700');
+
+$bgColor:#eeeeee;
+$blueColor:#5fc8d0;
+$navColor:#646E72;
+
+@media screen and (max-width: 1200px) {
+ .row {
+ 	padding: 0% 2%;
+ }
+}
+* {
+	box-sizing: border-box;
+	padding:0;
+	margin:0;
+}
+body {
+	background: white;
+	font-size: 20px;
+	font-family: Dosis;
+}
+.row {
+	max-width:1140px;
+	margin:0 auto;
+}
+
+@import "header";
+
+.login-section{
+	padding: 3%;
+}
+
+.login-text {
+	padding: 2%;
+	h1{
+		font-weight: 700;
+    	letter-spacing: -1px;
+	}
+	p{
+		font-weight: 600;
+	    font-size: 70%;
+	    margin-top: 20px;
+	}
+}
+.login-form{
+	.input-area, .login-btn{
+		width:65%;
+	}
+	.input-cls{
+		border: none;
+		width:100%;
+		border-bottom: solid 2px $blueColor;
+	}
+	label{
+		margin-top: 1%;
+		font-weight: 600;
+    	font-size: 11px;
+    	color:$blueColor;
+	}
+	.login-btn {
+		height: 40px;
+		background: #D10157;
+		color: #ffffff;
+
+	}
+	
+}
+
+@import "footer";
