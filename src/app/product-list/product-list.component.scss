@@ -21,13 +21,6 @@
         font-weight: 600;
     }
     .list-body{
-        .no-data-exception{
-            @include margin(15%,35%,15%,35%);
-            @include font-size(110%);
-            width:-webkit-max-content;
-            width:-moz-max-content;
-            width:max-content;
-        }
         .loading{
             @include font-size(110%);
             @include margin(10%,35%,10%,35%);

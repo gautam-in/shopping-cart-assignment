@@ -7,6 +7,11 @@
     margin-top: 10px;
 }
 
+.p-large{
+    @include font-size(110%);
+    margin-top: 10px; 
+}
+
 .margin-left-15{
     @include margin($left:15px);
 }
@@ -36,6 +41,13 @@
     @include font-size(70%);
     @include margin($top:25px);
     font-weight: 600;
+}
+.p-no-data-exception{
+    @include margin(15%,35%,15%,35%);
+    @include font-size(110%);
+    width:-webkit-max-content;
+    width:-moz-max-content;
+    width:max-content;
 }
 
 @include medium-screen{

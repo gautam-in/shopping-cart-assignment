@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from "@angular/core";
+import { Component, Input } from "@angular/core";
 
 @Component({
     selector:'app-paragraph',
@@ -6,10 +6,7 @@ import { Component, OnInit, Input } from "@angular/core";
     styleUrls:['./paragraph.component.scss']
 })
 
-export class ParagraphComponent implements OnInit{
+export class ParagraphComponent{
     @Input('type') paragraphType : string;
     @Input('desc') description : string;
-    ngOnInit(){
-
-    }
 }

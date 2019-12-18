@@ -15,7 +15,7 @@ export class CarouselComponent implements OnInit, OnDestroy{
     this.plusSlides(1);
     this.interval = setInterval(()=>{
       this.plusSlides(1);
-    },2000)
+    },4000)
   }
 
   showSlides() {

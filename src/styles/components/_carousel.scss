@@ -4,12 +4,14 @@
       -webkit-transition: all 0.2s;
       transition: all 0.2s;
     }
-    img {vertical-align: middle;
+    img {
+      vertical-align: middle;
+      width: 100%;
   }
 
   /* Slideshow container */
   .slideshow-container {
-    max-width: 1000px;
+    width: 100%;
     min-height: 100px;
     position: relative;
     @include margin($top:40px,$right:auto,$bottom:40px,$left:auto);

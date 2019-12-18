@@ -11,6 +11,6 @@
         <app-paragraph [type]="'p-mrp'" [desc]="'MRP Rs.'+price"></app-paragraph>
         
         <!-- common button -->
-        <app-common-button [buttonSize]="'large'"  [actionLabel]="'Buy now'" [customStyles]="customStyles" (onBtnClick)="btnClicked()" [type]="'btn-app btn-transition-y'" [title]="buttonText" [isTransitionRequired]="true"></app-common-button>
+        <app-common-button [buttonSize]="'large'"  [actionLabel]="'Click to buy '+cardTitle" [customStyles]="customStyles" (onBtnClick)="btnClicked()" [type]="'btn-app btn-transition-y'" [title]="buttonText" [isTransitionRequired]="true"></app-common-button>
     </footer>
 </section>

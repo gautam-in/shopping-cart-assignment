@@ -28,7 +28,7 @@
 
         <!-- Main content(dynamic product list) -->
         <div class="col span-10-of-12 list-body margin-top-0">
-            <p class="no-data-exception margin-top-20" *ngIf="!productList?.length && !productLoading">No Products found for <em>{{selectedCategory}}</em></p>
+            <app-paragraph *ngIf="!productList?.length && !productLoading" [type]="'p-large p-no-data-exception'" [desc]="'No Products found for '+selectedCategory" ></app-paragraph>
 
             <!-- Main content oading component comes here -->
 
