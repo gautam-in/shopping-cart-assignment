@@ -27,7 +27,7 @@ app.engine('hbs', hbs({
     extname: 'hbs',
     defaultLayout: 'layout',
     layoutsDir: `${__dirname}/src/views/layouts/`,
-    partialsDir: `${__dirname}/src/views/partials`,
+    partialsDir: `${__dirname}/src/views/common/`,
 }));
 
 // Compile SCSS to CSS
@@ -69,6 +69,7 @@ app.use('/', api);
 app.use('/cart', cartroute);
 app.use('/login', login);
 app.use('/register', register);
+
 
 // Render the app
 app.listen(PORT || 4200, () => console.log('App listening on port 4200! 🐳'));

@@ -6,21 +6,20 @@
                         <img src="/static/images/logo.png" alt="website logo" />
                     </div>
                     <div class="header-middle">
-                        <ul>
-                            <li><a href="/">Home</a></li>
-                            <li><a href="/product">Products</a></li>
+                        <ul aria-label="navigation for home and product pages">
+                            <li aria-label="Home page"><a href="/">Home</a></li>
+                            <li aria-label="Product Page"><a href="/product">Products</a></li>
                         </ul>
                     </div>
                     <div class="header-right">
-                        <div class="signup-details">
-                            <a href="/login">SingIn</a>
-                            <a href="/register">Register</a>
+                        <div class="signup-details" aria-label="Links to SingIn and Register">
+                            <a href="/login" title="SignIn page link">SingIn</a>
+                            <a href="/register" title="Register page link">Register</a>
                         </div>
-                        <div class="cart-details" id="shopping-cart">
+                        <div class="cart-details" id="shopping-cart" aria-label="link to Cart page">
                             <a href="/cart">
                                 <span class="cart-img"><img src="/static/images/cart.svg" alt="shopping cart image" /></span>
-                                {{!-- <span class="number-of-items">0 items</span> --}}
-                                <span class="cart-count">{{item_counter}}</span> <span class="cart-count">Items</span>
+                               <span class="cart-count">{{item_counter}}</span> <span class="cart-count">Items</span>
                             </a>
                         </div>
                     </div>

@@ -16,19 +16,21 @@
   <body>
     <!-- Wrapper div for the application -->
     <div class="app">
-      {{> header}}
+      {{> components/organisms/o-header}}
 
       <!-- App content -->
-      <div>
+      <main role="main">
         {{{ body }}}
-      </div>
+      </main>
 
-      {{> footer}}
+      {{> components/organisms/o-footer}}
     </div>
 
     <!-- Javascripts -->
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="/js/script.js"></script>
+    
+
     
   </body>
 </html>

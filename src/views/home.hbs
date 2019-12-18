@@ -2,16 +2,13 @@
              <div class="home-slider">
                 <div class="home-slider-offers">
                     {{#each banners}}
-                    <div class="mySlides fade">
-                        <img class="image-width" src="{{this.bannerImageUrl}}"
-                            alt="{{this.bannerImageAlt}}">
-                    </div>
+                        {{> components/molecules/m-banner-image}}
                     {{/each}}
-                    <button class="prev" onClick="plusSlides(-1)"><</button>
-                    <button class="next" id="next" onClick="plusSlides(1)">></button>
+                    <button class="prev" onClick="plusSlides(-1)" aria-label="button for previous slide" tabindex="0"><</button>
+                    <button class="next" id="next" onClick="plusSlides(1)" aria-label="button for next slide" tabindex="0">></button>
                     <div class="dots">
                         {{#each banners}}
-                        <span class="dot" onclick="currentSlide({{@index}})"></span>
+                        <span class="dot" onclick="currentSlide({{@index}})" tabindex="0"></span>
                         {{/each}}
                     </div>
 
@@ -24,27 +21,13 @@
              
             {{#each categories}} {{#is this.class "odd"}}
                 <div class="category">
-                    <div class="category-image">
-                        <img src="{{this.imageUrl}}">
-                    </div>
-
-
-                    <div class="category-details">
-                        <h3 class="category-title">{{this.name}}</h3>
-                        <p class="category-title-details">{{this.description}}</p>
-                        <button class="category-button"><a class="filter" href="/product/{{this.id}}">Explore {{this.name}}</a></button>
-                    </div>
+                    {{> components/molecules/m-category-image}}
+                     {{> components/molecules/m-category-details}}
                 </div>
                 {{/is }} {{#is this.class "even"}}
                 <div class="category">
-                    <div class="category-details">
-                        <h3 class="category-title">{{this.name}}</h3>
-                        <p class="category-title-details">{{this.description}}</p>
-                        <button class="category-button"><a class="filter" href="/product/{{this.id}}">Explore {{this.name}}</a></button>
-                    </div>
-                    <div class="category-image">
-                        <img src="{{this.imageUrl}}">
-                    </div>
+                    {{> components/molecules/m-category-details}}
+                    {{> components/molecules/m-category-image}}
                 </div>
                 {{/is }} {{/each}}  
         </div>

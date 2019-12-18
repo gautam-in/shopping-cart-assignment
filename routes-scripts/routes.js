@@ -11,7 +11,9 @@ let categories = JSON.parse(obj1);
 let productObj = fs.readFileSync('./server/products/index.get.json');
 let products = JSON.parse(productObj);
 
-
+var classvalue = "active";
+var productList = require('../server/products/index.get.json');
+var productInCart = [];
 /**
  * BEGIN ROUTING
  */
@@ -28,9 +30,20 @@ router.get('/', function(req, res, next) {
     });
 });
 
+router.get('/home', function(req, res, next) {
+    console.log('home;')
+    res.render('home', {
+        title: "shopping cart",
+        banners: banners.banners,
+        categories: categories.categoryval,
+        products: products.products,
+        item_counter: itemCounter.item_counter
+    });
+});
+
 //Login Page
 router.get('/login', function(req, res) {
-    console.log('Hello');
+
     res.render('login', {
         title: "shopping cart",
         item_counter: itemCounter.item_counter,
@@ -68,7 +81,7 @@ router.get('/product/:id', function(req, res, next) {
     var product_cat = products.products.filter(function(products) { return products.category == categoryId });
     console.log(product_cat);
     res.render('product', {
-        classvalue: "active",
+        classvalue: classvalue,
         categories: ActiveCategories,
         products: product_cat,
         item_counter: itemCounter.item_counter
@@ -89,4 +102,49 @@ router.get('/product/:id', function(req, res, next) {
 //router.get('*', (req, res) => renderNotFound(res));
 
 // Export the router
+router.get('/cart', function(req, res, next) {
+    var productLists = productList.products.filter(function(category_list) { category_list.category });
+
+    res.render('cart', {
+        title: 'cart',
+        prod_List: productLists,
+        productInCart: productInCart,
+        item_counter: itemCounter.item_counter
+    });
+});
+
+router.get('/cart/allitem', function(req, res) {
+    res.end(JSON.stringify({ 'cartItems': productInCart, 'item_counter': itemCounter.item_counter }));
+});
+
+router.get('/cart/:id/:operation', function(req, res) {
+    if (req.params.operation == "add") {
+        productList.products.forEach(function(element) {
+            if (element.id === req.params.id) {
+                if (element.count == undefined) {
+                    element.count = 1;
+                    productInCart.push(element);
+                    itemCounter.item_counter++;
+                    element.total_price = element.price;
+                } else {
+                    element.count++;
+                    itemCounter.item_counter++;
+                    element.total_price = element.count * element.price;
+
+                }
+            }
+        });
+        res.end(JSON.stringify({ 'cartItems': productInCart, 'item_counter': itemCounter.item_counter }));
+    } else if (req.params.operation == "remove") {
+        productList.products.forEach(function(element) {
+            if (element.id === req.params.id) {
+                element.count = element.count - 1;
+                itemCounter.item_counter = itemCounter.item_counter - 1;
+                element.total_price = element.count * element.price;
+            }
+        });
+        res.end(JSON.stringify({ 'cartItems': productInCart, 'item_counter': itemCounter.item_counter }));
+    }
+});
+
 module.exports = router;

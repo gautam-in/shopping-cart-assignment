@@ -1,32 +1,13 @@
  <div class="product-content-area clearfix">
     <div id="left-nav-filter">
-        <ul id="side-nav-filter-list">
-            {{#each categories}}
-                {{#if this.enabled}}
-                    <li value="{{this.name}}" id="{{this.id}}" ><a href="/product/{{this.id}}" class="{{classvalue}}">{{this.name}}</a></li>
-                {{/if}}
-            {{/each}}
-        </ul>
+        {{> components/molecules/m-nav-primary}}
+        <div class="nav-mobile">
+            {{> components/molecules/m-nav-mobile}}
+        </div>        
     </div>        
     <div id="product-list-section">
         {{#each products}}
-        <div class="product">
-            <h3 class="product-title" title="{{this.name}}">{{this.name}}</h2>
-                <div class="product-view">
-                    <div class="product-image">
-                        <img src="{{this.imageURL}}" alt="{{this.name}}">
-                    </div>
-
-
-                    <div class="product-details">
-                        <p class="product-description" title="{{this.description}}">{{this.description}}</p>
-                        <div class="product-price-details">MRP: {{this.price}}</div>
-
-                        <button class="product-buy-button" onclick="buy('{{this.id}}', 'add')">Buy Now</button>
-                    </div>
-                </div>
-        </div>
-
+             {{> components/organisms/o-productlist }}
         {{/each}}
     </div>
 </div> 

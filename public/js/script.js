@@ -45,7 +45,6 @@ setInterval(function() {
 /*================================================================================================ */
 
 /*============================================================================================================== */
-
 function request_server() {
     var url = window.location.origin + "/cart/allitem";
     fetch(url)
@@ -143,31 +142,96 @@ function navigateToProducts() {
 
 //============================================================================================================
 
-function validate() {
-    var name = document.Form.email.value;
-    var passwordlength = document.Form.password.value.length;
-    var status = false;
-    var reg = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-    if (name != '') {
-        if (reg.test(name) == false) {
-            document.getElementById("error-email").innerHTML = "Invalid email-id";
-            status = false;
-        }
-    } else if (name == '') {
-        document.getElementById("error-email").innerHTML = "Please enter email Id";
-        status = false;
+// JS for Mobile Category Dropdown
+var ul = null;
+var toggleBtn = '';
+var targ = null;
+window.onload = function() {
+    toggleBtn = document.querySelector('.category-mobile');
+    targ = document.querySelector('.category-block');
+    ul = document.querySelector('.test');
+    var urlParams = new URLSearchParams(window.location.search);
+    console.log(urlParams.get('category'));
+    //toggleBtn.text = '';
+    if (urlParams.get('category') == null) {
+        toggleBtn.innerHTML = "Categories" + '<span class="caret"></span>';
     } else {
-        document.getElementById("error-email").innerHTML = "";
-        status = true;
+        toggleBtn.innerHTML = urlParams.get('category') + '<span class="caret"></span>';
     }
 
-    if (passwordlength < 6) {
-        document.getElementById("error-psw").innerHTML = " Password must be greater than 6";
-        status = false;
-    } else {
-        document.getElementById("error-psw").innerHTML = "";
-        status = true;
-    }
-
-    return status;
 }
+
+function toggleNav(e) {
+
+    targ.classList.toggle('disp');
+    e.stopPropagation();
+}
+
+function changeText(e, id, name) {
+    console.log(name)
+    toggleBtn.innerHTML = e.target.text;
+    targ.classList.toggle('disp');
+    location.href = "/product/" + id + "?category=" + name;
+    console.log(id);
+    e.stopPropagation();
+
+}
+
+
+//=================================================================================================================
+//=================================================================================================================
+
+//JS for Login Form Validation
+
+function ValidateLogin() {
+    var name = document.getElementById('email').value;
+    var password = document.getElementById('psw').value;
+
+
+    var reg = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    var passw = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{6,14}$/;
+    var statusemail = false;
+    var statuspassword = false;
+    if (name == '') {
+        document.getElementsByClassName("error-email")[0].innerHTML = "Please enter email Id";
+        statusemail = false;
+    } else if (name != '') {
+
+        if (reg.test(name) == false) {
+
+            document.getElementsByClassName("error-email")[0].innerHTML = "Invalid email-id";
+            statusemail = false;
+        } else {
+
+            document.getElementsByClassName("error-email")[0].innerHTML = "";
+            statusemail = true;
+        }
+    }
+
+    if (password == '') {
+        document.getElementsByClassName("error-psw")[0].innerHTML = "Please enter password";
+        //console.log(document.getElementsByClassName("error-email").value);
+        statuspassword = false;
+    } else if (password != '') {
+
+        if (passw.test(password) == false) {
+            document.getElementsByClassName("error-psw")[0].innerHTML = "Invalid password (Password should contain 6 to 14 characters which contain at least one lowercase letter, one uppercase letter, one numeric digit, and one special character)";
+            statuspassword = false;
+        } else {
+            document.getElementsByClassName("error-psw")[0].innerHTML = "";
+            statuspassword = true;
+        }
+    }
+
+    if (statusemail == true && statuspassword == true) {
+        return true;
+    } else {
+        return false;
+    }
+
+}
+
+//=============================================================================================================
+//==============================================================================================================
+
+//JS used for register validation

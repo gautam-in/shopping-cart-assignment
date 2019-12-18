@@ -1,7 +1,10 @@
-<section class="cart-wrapper container">
+<section class="cart-wrapper cart container" id="cart">
     <div class="my-cart">
         <h3 class="font-color">My Cart<span class="font-color">(<i id="item_counter" class="font-color">{{item_counter}}</i> item)</span></h3>
     </div>
+    {{!-- <div class="cart__header--close" onclick="common.closeShoppingCart(event)">
+            <img src="static/images/cancel.png" alt="close">
+        </div>  --}}
     {{#if productInCart}}
     <div class="cart-items">
         {{#each productInCart}}
@@ -30,25 +33,16 @@
             </div>
         {{/each}}
     </div>
-    <div class="product-offer">
-        <div class="offer-image">
-            <img src="./static/images/lowest-price.png" alt="" tabindex="0">
-        </div>
-        <div class="offer-heading">
-            <p>You won't find cheaper
-                anywhere</p>
-        </div>
-    </div>
+    {{> components/molecules/m-offer}}
     <div class="checkout">
-        <p>Promo code can be applied on
-            payment page</p>
-        <button class="btn-checkout" onclick="navigateToHome();"><span class="font-color float-left">Proceed to checkout</span><span class="font-color float-right " id="totalCheckoutAmount">Rs. 0</span></button>
+        <p>Promo code can be applied on payment page</p>
+        <a class="btn-checkout" href="/"><span class="font-color float-left">Proceed to checkout</span><span class="font-color float-right " id="totalCheckoutAmount">Rs. 0</span></a>
     </div>
     {{else}}
         <div class="cart-exception">
             No Items in the cart
             <p class="helper-text">You favourite items are just a click away</p>
-            <button class="btn-start" onclick="navigateToProducts();">Start Shopping</button>
+            <a class="btn-start" href="/product">Start Shopping</a>
         </div>
 
     {{/if}}
