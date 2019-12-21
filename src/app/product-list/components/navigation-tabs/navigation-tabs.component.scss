@@ -5,10 +5,11 @@
     .tab-item{
         padding: 15px 10px;
         list-style: none;
+        outline: none;
         cursor: pointer;
         @include font-size(80%);
         @include bg-opacity($gs-19);
-        border-bottom: 2px solid $gs-13;
+        border-bottom: 1px solid $gs-13;
         &:hover{
             opacity:0.8;
         }

@@ -37,4 +37,14 @@
         bottom:28%;
         @include font-size(80%);
     }
+
+    @include small-screen{
+        .cart-values{
+            .plus,.minus{
+                border-radius: 50%;
+                height: 20px;
+                width: 20px;
+            }
+        }
+    }
 }

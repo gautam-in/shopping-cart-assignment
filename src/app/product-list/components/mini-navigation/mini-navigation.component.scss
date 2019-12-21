@@ -38,7 +38,7 @@
                 }
             }
         }
-        @include medium-screen {
+        @include small-screen {
             display: none;
         }
 }

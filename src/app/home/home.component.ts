@@ -18,34 +18,7 @@ export class HomeComponent implements OnInit {
   categoryLoading:boolean = false;
   
   constructor(private apiService: ApiService, private route: Router) { }
-  showSlides(n) {
-    let i:number;
-    let slides:any = document.getElementsByClassName("mySlides");
-    let dots = document.getElementsByClassName("dot");
-
-    if (n > slides.length) {this.slideIndex = 1}    
-    if (n < 1) {this.slideIndex = slides.length}
-    for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
-    }
-    for (i = 0; i < dots.length; i++) {
-        dots[i].className = dots[i].className.replace(" active", "");
-    }
-    if(slides[this.slideIndex-1]){
-      slides[this.slideIndex-1].style.display = "block";  
-      dots[this.slideIndex-1].className += " active";
-    }
-   
-    
-  }
-  currentSlide(n) {
-    this.showSlides(this.slideIndex = n);
-  }
-  plusSlides(n) {
-    this.showSlides(this.slideIndex += n);
-  }
   ngOnInit() {
-    this.slideIndex = 1;
     this.buttonConfig = {
       bgColor:"#d10157",
       color:"#fff",
@@ -66,9 +39,6 @@ export class HomeComponent implements OnInit {
     this.bannerLoading = true;
     this.apiService.getBanner("banners").subscribe((bannerList)=>{
       this.bannerList = bannerList;
-      setTimeout (() => {
-        this.showSlides(this.slideIndex);
-      });
       this.bannerLoading = false;
     });
   }

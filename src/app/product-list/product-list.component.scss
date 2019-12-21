@@ -10,6 +10,7 @@
     }
     .tabs{
         display: none;
+        @include bg-opacity($gs-19);
         .loading{
             position: relative;
             top:100px;
@@ -21,6 +22,8 @@
         font-weight: 600;
     }
     .list-body{
+        display: table-cell;
+        width: 100%;
         .loading{
             @include font-size(110%);
             @include margin(10%,35%,10%,35%);
@@ -31,6 +34,10 @@
 
     //small-screen 576px
     @include small-screen{
+        .tabs{
+            display: table-cell;
+            width: 25%;
+        }
         .span-1-of-4{
             width: 50%;
         }
@@ -39,7 +46,10 @@
     // min-width  768px
     @include medium-screen {
         .tabs{
-            display: inline-block;
+            width: 25%;
+        }
+        .list-body{
+            width: 75%;
         }
         .span-1-of-4{
             width: 33%;
@@ -56,6 +66,13 @@
         .span-1-of-4{
             width: 24.9%;
         }
+        .tabs{
+            width: 20%;
+        }
+        .list-body{
+            width: 80%;
+        }
+        
     }
 
     @include extra-large-screen{

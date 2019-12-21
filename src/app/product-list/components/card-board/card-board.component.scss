@@ -7,7 +7,7 @@
     height: 332px;
     @include margin($top:15px,$right:5px);
     border-bottom: 1px dashed $gs-13;
-    @include box-shadow(3px 0 4px -2px $gs-12);
+    @include box-shadow(3px 0 4px -3px $gs-10);
     header{
         height: 80px;
         overflow: hidden;

@@ -5,15 +5,8 @@
 
     <!-- Mini navigation -->
     <app-mini-navigation [selectedTab]="selectedCategory" [tabList]="categoryList" (selectTabFn)="getFilteredProducts($event)" (buttonClick)="onCategorySelect()"></app-mini-navigation>
-
-    
-    <!-- main content -->
-    <main class="row">
-
-        <!-- Product category filter for medium and large screen -->
-
-        <div class="col span-2-of-12 tabs margin-top-0">
-
+    <main class="container" style="display: table">
+        <div class="tabs">
             <!-- Side navigation starts here -->
             <product-navigation-tabs *ngIf="!categoryLoading && categoryList?.length" [selectedTabId]="selectedCategoryId" [tabList]="categoryList" (onSelect)="getFilteredProducts($event)"> </product-navigation-tabs>
 
@@ -22,27 +15,27 @@
 
             <p class="loading margin-top-20 clearfix margin-left-20" *ngIf="categoryLoading">
                 <loading size="medium" msg="Please wait till categoies load."></loading>
-             </p>
-        </div>
-
-
-        <!-- Main content(dynamic product list) -->
-        <div class="col span-10-of-12 list-body margin-top-0">
-            <app-paragraph *ngIf="!productList?.length && !productLoading" [type]="'p-large p-no-data-exception'" [desc]="'No Products found for '+selectedCategory" ></app-paragraph>
-
-            <!-- Main content oading component comes here -->
-
-            <p class="loading margin-top-20" *ngIf="productLoading">
-               <loading size="normal" msg="Please wait while products are loading."></loading>
             </p>
-
+        </div>
+        <div class="row list-body margin-top-0">
+            <!-- Main content(dynamic product list) -->
             
-            <div class="padding-5 col span-1-of-4 margin-left-0" *ngFor="let product of productList">
+                <app-paragraph *ngIf="!productList?.length && !productLoading" [type]="'p-large p-no-data-exception'" [desc]="'No Products found for '+selectedCategory" ></app-paragraph>
 
-                <!-- Card board component comes here -->
-                <product-card-board [title]="product.name" [desc]="product.description" [imageUrl]="product.imageURL" [price]="product.price" [imageAlt]="'Product image'" (onClick)="buynow(product)"></product-card-board>
-            </div>
+                <!-- Main content oading component comes here -->
+
+                <p class="loading margin-top-20" *ngIf="productLoading">
+                    <loading size="normal" msg="Please wait while products are loading."></loading>
+                </p>
+
+                
+                <div class="padding-5 col span-1-of-4 margin-left-0" *ngFor="let product of productList">
+
+                    <!-- Card board component comes here -->
+                    <product-card-board [title]="product.name" [desc]="product.description" [imageUrl]="product.imageURL" [price]="product.price" [imageAlt]="'Product image'" (onClick)="buynow(product)"></product-card-board>
+                </div>
+            
+
         </div>
     </main>
-
 </div>

@@ -12,10 +12,13 @@ export class CarouselComponent implements OnInit, OnDestroy{
   constructor(private el : ElementRef) { }
 
   ngOnInit() {
-    this.plusSlides(1);
-    this.interval = setInterval(()=>{
+    setTimeout (() => {
       this.plusSlides(1);
-    },4000)
+      this.interval = setInterval(()=>{
+        this.plusSlides(1);
+      },4000);
+    })
+    
   }
 
   showSlides() {
