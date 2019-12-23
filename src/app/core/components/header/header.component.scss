@@ -65,7 +65,7 @@
     .header-wrapper{
         width: 100%;
         position: fixed;
-        z-index: 5;
+        z-index: 11;
         @include box-shadow(0px 4px 4px $gs-13);
         height: auto;
         @include bg-opacity($gs-23);
@@ -93,6 +93,9 @@
 
     // min-width  768px
     @include medium-screen {
+        .header-wrapper{
+            z-index: 5;
+        }
         .cover-overlay{
             display: inline-block;
         }

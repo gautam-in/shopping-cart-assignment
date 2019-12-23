@@ -11,7 +11,7 @@ export class SkipToMainComponent implements OnInit {
   constructor(private router: Router) { }
 
   ngOnInit() {
-    this.skipLinkPath = `${this.router.url}#main-content`;
+    this.skipLinkPath = 'main-content';
   }
 
 }
