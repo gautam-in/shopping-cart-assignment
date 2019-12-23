@@ -13,23 +13,6 @@
 	margin: auto;
 }
 
-@include small-screen{
-	.container{
-		max-width: 570px;
-	}
-}
-@include medium-screen{
-	.container{
-		max-width: 760px;
-	}
-}
-
-@include large-screen{
-	.container{
-		max-width: 990px;
-	}
-}
-
 @include extra-large-screen{
 	.container{
 		max-width: 1190px;

@@ -33,14 +33,14 @@ export class HeaderComponent implements OnInit {
 
   toggleOverLay(){
     if(this.showCart){
-      document.getElementById('cover-overlay').style.display ="inline-block";
+      document.getElementById('js-overlay').classList.add('cover-overlay');
       document.body.style.overflow = 'hidden';
     }else{
-      document.getElementById('cover-overlay').style.display ="none";
+      document.getElementById('js-overlay').classList.remove('cover-overlay');
       document.body.style.overflow = 'auto';
     }
   }
-  getNotofiedFromChild(val){
+  getNotofiedFromChild(val:boolean){
     this.showCart = val;
     this.toggleOverLay();
   }

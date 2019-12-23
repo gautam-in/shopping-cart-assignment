@@ -5,8 +5,8 @@
 
     <!-- Mini navigation -->
     <app-mini-navigation [selectedTab]="selectedCategory" [tabList]="categoryList" (selectTabFn)="getFilteredProducts($event)" (buttonClick)="onCategorySelect()"></app-mini-navigation>
-    <main class="container" style="display: table">
-        <div class="tabs">
+    <main class="container">
+        <div class="tabs clearfix">
             <!-- Side navigation starts here -->
             <product-navigation-tabs *ngIf="!categoryLoading && categoryList?.length" [selectedTabId]="selectedCategoryId" [tabList]="categoryList" (onSelect)="getFilteredProducts($event)"> </product-navigation-tabs>
 
@@ -17,7 +17,7 @@
                 <loading size="medium" msg="Please wait till categoies load."></loading>
             </p>
         </div>
-        <div class="row list-body margin-top-0">
+        <div class="row list-body margin-top-0 clearfix">
             <!-- Main content(dynamic product list) -->
             
                 <app-paragraph *ngIf="!productList?.length && !productLoading" [type]="'p-large p-no-data-exception'" [desc]="'No Products found for '+selectedCategory" ></app-paragraph>

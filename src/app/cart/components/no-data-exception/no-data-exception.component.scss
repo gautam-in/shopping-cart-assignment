@@ -1,5 +1,12 @@
+@import '../../../../styles/abstract/mixin';
 .no-item-exception{
     position: absolute;
     top: 41%;
-    left: 25%;
+    left: 30%;
+    @include small-screen{
+        left: 35%; 
+    }
+    @include medium-screen{
+        left: 24%;
+    }
 }

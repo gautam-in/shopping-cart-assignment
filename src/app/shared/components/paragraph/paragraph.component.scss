@@ -17,7 +17,6 @@
 }
 
 .p-card{
-    height: 43%;
     @include font-size(65%);
     float: left;
     width: 49%;
@@ -25,6 +24,7 @@
     padding: 5px;
     line-height: 1.4;
     overflow: hidden;
+    max-height: 95px;
 }
 .p-copywrite{
     @include font-size(70%);
@@ -50,6 +50,12 @@
     width:max-content;
 }
 
+@include small-screen{
+    .p-card{
+        height: 49%;
+        max-height: none;
+    }
+}
 @include medium-screen{
     .p-card{
         width: 100%;
@@ -57,6 +63,8 @@
         font-weight: 600;
         overflow: hidden;
         height: 80px;
+        @include margin($top:10px);
+        
     }
 }
 

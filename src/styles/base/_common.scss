@@ -32,7 +32,14 @@ body{
   -webkit-transform: rotate(45deg);
   
 }
-
+.arrow-up{
+  border: 1px solid $gs-23;
+  display: inline-block;
+  border-width: 3px 3px 0 0;
+  padding: 3px;
+  transform: rotate(45deg);
+  -webkit-transform: rotate(-45deg);
+}
 .disp-inline{
   display: inline-block;
 }

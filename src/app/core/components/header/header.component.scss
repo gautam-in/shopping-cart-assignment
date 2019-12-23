@@ -1,7 +1,8 @@
 @import '../../../../styles.scss';
 .header-container{
     height: 48px;
-    #cover-overlay{
+    .cover-overlay{
+        display: none;
         position:fixed;
         top:0;
         left:0;
@@ -9,7 +10,6 @@
         z-index:5;
         width:100%;
         height:100%;
-        display:none;
         overflow-y: scroll;
     }
     .lg-visible{
@@ -93,6 +93,9 @@
 
     // min-width  768px
     @include medium-screen {
+        .cover-overlay{
+            display: inline-block;
+        }
         .main-navigation{
             width: 60%;
         }

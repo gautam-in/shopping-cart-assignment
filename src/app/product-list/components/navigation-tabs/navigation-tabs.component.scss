@@ -5,7 +5,6 @@
     .tab-item{
         padding: 15px 10px;
         list-style: none;
-        outline: none;
         cursor: pointer;
         @include font-size(80%);
         @include bg-opacity($gs-19);

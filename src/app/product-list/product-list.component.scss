@@ -2,6 +2,9 @@
 @import '../../styles/abstract/mixin';
 @import '../../styles/abstract/color';
 .list-container{
+    .container{
+        display: table;
+    }
     .col{
         margin: 0 !important
     }
@@ -10,6 +13,9 @@
     }
     .tabs{
         display: none;
+
+        /*For IE vertical align is used*/
+        vertical-align: top;
         @include bg-opacity($gs-19);
         .loading{
             position: relative;

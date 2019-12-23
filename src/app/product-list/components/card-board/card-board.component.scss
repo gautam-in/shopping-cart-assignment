@@ -2,6 +2,7 @@
 @import '../../../../styles/abstract/mixin';
 @import '../../../../styles/abstract/color';
 .card-board{
+    position: relative;
     @include bg-opacity($gs-23);
     position: relative;
     height: 265px;
@@ -23,8 +24,9 @@
     }
     footer{
         width: 50%;
-        position: relative;
-        bottom: 0;
+        position: absolute;
+        bottom: 31px;
+        right: 0;
         float: left;
         @include margin();
     }
@@ -37,15 +39,17 @@
         height: 275px;
         footer{
             width: 97%;
+            bottom: 0;
+            position: relative;
         }
     }
 
     // min-width  768px
     @include medium-screen {
-        height: 407px;
+        height: 427px;
     }
     @include large-screen{
-        height: 448px;
+        height: 463px;
         .footer{
             .mini-mrp{
                 display: none;
