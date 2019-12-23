@@ -4,7 +4,7 @@
 .card-board{
     @include bg-opacity($gs-23);
     position: relative;
-    height: 332px;
+    height: 265px;
     @include margin($top:15px,$right:5px);
     border-bottom: 1px dashed $gs-13;
     @include box-shadow(3px 0 4px -3px $gs-10);
@@ -34,7 +34,7 @@
 
     //small-screen 576px
     @include small-screen{
-        height: 358px;
+        height: 275px;
         footer{
             width: 97%;
         }
@@ -42,9 +42,10 @@
 
     // min-width  768px
     @include medium-screen {
-        height: 476px;
+        height: 407px;
     }
     @include large-screen{
+        height: 448px;
         .footer{
             .mini-mrp{
                 display: none;
