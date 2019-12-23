@@ -1,0 +1,17 @@
+a.skipToMain{
+    position: absolute;
+    top: -1000px;
+    left: -1000px;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+}
+a.skipToMain:focus:active:hover{
+    z-index: 99;
+    left: 0; 
+    top: 0;
+    width: auto; 
+    height: auto; 
+    overflow: visible; 
+    color: red;
+}

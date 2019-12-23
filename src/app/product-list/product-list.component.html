@@ -5,7 +5,7 @@
 
     <!-- Mini navigation -->
     <app-mini-navigation [selectedTab]="selectedCategory" [tabList]="categoryList" (selectTabFn)="getFilteredProducts($event)" (buttonClick)="onCategorySelect()"></app-mini-navigation>
-    <main class="container">
+    <main class="container" id="main-content">
         <div class="tabs clearfix">
             <!-- Side navigation starts here -->
             <product-navigation-tabs *ngIf="!categoryLoading && categoryList?.length" [selectedTabId]="selectedCategoryId" [tabList]="categoryList" (onSelect)="getFilteredProducts($event)"> </product-navigation-tabs>
