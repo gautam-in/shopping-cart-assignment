@@ -2,8 +2,9 @@ import { Component, OnInit, ViewChildren } from '@angular/core';
 import { IProduct } from './../models/IProduct';
 import { ApiService } from './../shared/services/api.service';
 import { ICategory } from './../models/Icategory';
-import { ActivatedRoute } from "@angular/router";
+import { ActivatedRoute, Router } from "@angular/router";
 import { CartService } from './../shared/services/cart.service';
+import { RouterUrlService } from '../shared/services/routerUrl.service';
 
 
 @Component({
@@ -19,7 +20,7 @@ export class ProductListComponent implements OnInit {
   public productLoading : boolean = false;
   public categoryLoading:boolean = false;
   
-  constructor(private route: ActivatedRoute, private apiService:ApiService, private cartService: CartService) { 
+  constructor(private route: ActivatedRoute, private apiService:ApiService, private cartService: CartService, private routerUrlService: RouterUrlService, private router: Router) { 
   }
 
   ngOnInit() {
@@ -35,7 +36,7 @@ export class ProductListComponent implements OnInit {
         this.getProducts();
       }
     });
-  
+    this.routerUrlService.setPageUrl(this.router.url);
   }
   
   getProducts(){

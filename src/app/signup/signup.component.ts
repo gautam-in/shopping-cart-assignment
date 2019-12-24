@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ValidationService } from './../shared/services/validation.service';
 import { Router } from '@angular/router';
 import { ISignup } from './../models/ISignup';
+import { RouterUrlService } from '../shared/services/routerUrl.service';
 
 @Component({
   selector: 'app-signup',
@@ -11,7 +12,7 @@ import { ISignup } from './../models/ISignup';
 export class SignupComponent implements OnInit {
   private errorValues:any;
   public signupForm: ISignup;
-  constructor(private _validationService : ValidationService,private router: Router) { }
+  constructor(private _validationService : ValidationService,private router: Router, private routerUrlService: RouterUrlService) { }
 
   ngOnInit() {
     this.signupForm={
@@ -52,6 +53,7 @@ export class SignupComponent implements OnInit {
       }
     }
     this._validationService.get();
+    this.routerUrlService.setPageUrl(this.router.url);
   }
   changedField(fieldValue:any,type:any){
     if(type ==='password'){

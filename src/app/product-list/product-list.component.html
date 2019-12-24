@@ -1,11 +1,11 @@
-<div class="list-container">
+<div class="list-container" id="main-content" tabindex="-1">
     <!-- Dropdown for category for small screen -->
 
 
 
     <!-- Mini navigation -->
     <app-mini-navigation [selectedTab]="selectedCategory" [tabList]="categoryList" (selectTabFn)="getFilteredProducts($event)" (buttonClick)="onCategorySelect()"></app-mini-navigation>
-    <main class="container" id="main-content">
+    <main class="container">
         <div class="tabs clearfix">
             <!-- Side navigation starts here -->
             <product-navigation-tabs *ngIf="!categoryLoading && categoryList?.length" [selectedTabId]="selectedCategoryId" [tabList]="categoryList" (onSelect)="getFilteredProducts($event)"> </product-navigation-tabs>

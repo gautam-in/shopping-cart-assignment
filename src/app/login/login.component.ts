@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ValidationService } from './../shared/services/validation.service';
 import { Router } from '@angular/router';
 import { ILogin } from './../models/ILogin';
+import { RouterUrlService } from '../shared/services/routerUrl.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -10,7 +11,7 @@ import { ILogin } from './../models/ILogin';
 export class LoginComponent implements OnInit {
   private errorValues:any;
   public loginForm:ILogin;
-  constructor(private _validationService : ValidationService, private router: Router){
+  constructor(private _validationService : ValidationService, private router: Router, private routerUrlService: RouterUrlService){
   }
   ngOnInit(){
     this.loginForm = {
@@ -30,6 +31,7 @@ export class LoginComponent implements OnInit {
       }
     }
     this._validationService.get();
+    this.routerUrlService.setPageUrl(this.router.url);
   }
   changedField(fieldValue:any,type:any){
     this._validationService.validate(fieldValue,type);

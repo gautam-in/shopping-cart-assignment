@@ -2,6 +2,7 @@
 @import '../../styles/abstract/mixin';
 @import '../../styles/abstract/color';
 .list-container{
+    outline: none;
     .container{
         display: table;
     }

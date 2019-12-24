@@ -5,12 +5,14 @@ import { ParagraphComponent } from './shared/components/paragraph/paragraph.comp
 import { HeadingComponent } from './shared/components/heading/heading.component';
 import { FigureComponent } from './shared/components/figure/figure.component';
 import { SkipToMainComponent } from './shared/components/skip-to-main/skip-to-main.component';
+import { RouterUrlService } from './shared/services/routerUrl.service';
 
 
 @NgModule({
     imports:[CommonModule],
     declarations:[CommonButtonComponent,ParagraphComponent,HeadingComponent,FigureComponent,SkipToMainComponent],
-    exports:[CommonButtonComponent,ParagraphComponent,HeadingComponent,FigureComponent,SkipToMainComponent]
+    exports:[CommonButtonComponent,ParagraphComponent,HeadingComponent,FigureComponent,SkipToMainComponent],
+    providers:[RouterUrlService]
 })
  export class SharedModule{
 

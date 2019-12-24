@@ -3,6 +3,8 @@ import { IBanner } from './../models/IBanner';
 import { ICategory } from './../models/Icategory';
 import { ApiService } from './../shared/services/api.service';
 import { Router } from '@angular/router';
+import { RouterUrlService } from '../shared/services/routerUrl.service';
+
 
 @Component({
   selector: 'app-home',
@@ -17,7 +19,7 @@ export class HomeComponent implements OnInit {
   bannerLoading: boolean=false;
   categoryLoading:boolean = false;
   
-  constructor(private apiService: ApiService, private route: Router) { }
+  constructor(private apiService: ApiService, private route: Router, private routerUrlService: RouterUrlService) { }
   ngOnInit() {
     this.buttonConfig = {
       bgColor:"#d10157",
@@ -33,6 +35,7 @@ export class HomeComponent implements OnInit {
 
     this.getBannerData();
     this.getCategories();
+    this.routerUrlService.setPageUrl(this.route.url);
   }
 
   getBannerData(){

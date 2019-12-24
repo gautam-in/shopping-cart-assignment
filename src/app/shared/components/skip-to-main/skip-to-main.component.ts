@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { RouterUrlService } from '../../services/routerUrl.service';
+
 
 @Component({
   selector: 'skip-to-main',
@@ -8,10 +10,12 @@ import { Router } from '@angular/router';
 })
 export class SkipToMainComponent implements OnInit {
   skipLinkPath: string;
-  constructor(private router: Router) { }
+  constructor(private routerservice: RouterUrlService) { }
 
   ngOnInit() {
-    this.skipLinkPath = 'main-content';
+    this.routerservice.getPageUrl().subscribe(val=> {
+      this.skipLinkPath = `${val}#main-content`;
+    })
   }
 
 }
