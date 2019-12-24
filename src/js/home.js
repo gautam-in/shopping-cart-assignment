@@ -45,23 +45,29 @@ fetch('http://localhost:5000/banners')
 	         }
 	 
 	});
-  	var rawTemplate= document.getElementById("categoriesTemplate").innerHTML;
-  	var compiledTemplate = Handlebars.compile(rawTemplate);
-  	var ourGeneratedHTML = compiledTemplate(categories);
-
-  	var categoriesContainer = document.getElementById("categories-container");
-  	categoriesContainer.innerHTML = ourGeneratedHTML;
+	createHTML(categories,"categories-container","categoriesTemplate");
   }
 
 
   function createBannersHTML(banners) {
-  	var rawTemplate= document.getElementById("bannersTemplate").innerHTML;
-  	var compiledTemplate = Handlebars.compile(rawTemplate);
-  	var ourGeneratedHTML = compiledTemplate(banners);
+  	createHTML(banners,"banners-container","bannersTemplate");
+  	createDotsTemplate(banners);
+  	
+  }
 
-  	var bannersContainer = document.getElementById("banners-container");
-  	bannersContainer.innerHTML = ourGeneratedHTML;
+  function createDotsTemplate(dots) {
+  	createHTML(dots,"carousal-dot","dotsTemplate");
   	showSlides(slideIndex);
+  }
+
+  function createHTML(data,ctrId,templateId) {
+  	// body...
+  	var rawTemplate = document.getElementById(templateId).innerHTML;
+  	var compiledTemplate = Handlebars.compile(rawTemplate);
+  	var ourGeneratedHTML = compiledTemplate(data);
+
+  	var container = document.getElementById(ctrId);
+  	container.innerHTML = ourGeneratedHTML;
   }
 
 var slideIndex = 1;

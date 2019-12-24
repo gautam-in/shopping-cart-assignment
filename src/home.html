@@ -45,14 +45,11 @@
 		<br>
 
 		<div style="text-align:center" id="carousal-dot">
-			<script id="bannersTemplate" type="text/x-handlebars-template">
+			<script id="dotsTemplate" type="text/x-handlebars-template">
 				{{#each this}}
-					 <span class="dot" onclick="currentSlide(1)"></span> 
+					 <span class="dot" onclick="currentSlide({{@index}})"></span> 
 				{{/each}}
 			</script>
-		  <span class="dot" onclick="currentSlide(1)"></span> 
-		  <span class="dot" onclick="currentSlide(2)"></span> 
-		  <span class="dot" onclick="currentSlide(3)"></span> 
 		</div>	
 	</section>
 	<section class="categories-section">

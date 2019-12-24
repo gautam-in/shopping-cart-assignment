@@ -1,0 +1,54 @@
+<header>
+		<nav>
+			<div class="row nav-bar">
+				<img src="/static/images/logo.png" class="logo"/>
+				<ul class="main-nav">
+					<li><a href="/login">Sign In</a></li>
+					<li><a href="/register">Register</a></li>
+				</ul>
+				<ul class="home-nav">
+					<li><a href="/">Home</a></li>
+					<li><a href="">Products</a></li>
+				</ul>
+				<div class="cart-box">
+					<img src="/static/images/cart.svg" alt="Logo" class="cart">
+					<span>0 items</span>
+				</div>
+				<div style="clear: both"></div>
+			</div>
+			<div style="clear: both"></div>
+		</nav>
+	</header>
+	<section class="categories-section">
+		<div id="categories-container">
+				{{#each categories as |value key|}}
+				{{#ifEven key}}
+				<div class="row category-block">
+				<div class="col span-1-of-2 img-block">
+					<img src="{{value.imageUrl}}" class="category-img">
+				</div>
+				<div class="col span-1-of-2 desc-block">
+					<p class="category-title">{{value.name}}</p>
+					<p class="category-desc">{{value.description}}</p>
+					<button class="category-btn">Explore {{value.key}}</button>
+				</div>
+				</div>
+				{{else}}
+				<div class="row category-block">
+					<div class="col span-1-of-2 desc-block">
+							<p class="category-title">{{value.name}}</p>
+							<p class="category-desc">{{value.description}}</p>
+							<button class="category-btn">Explore {{value.key}}</button>
+					</div>
+					<div class="col span-1-of-2 img-block">
+						<img src="{{value.imageUrl}}" class="category-img">
+					</div>
+						
+				</div>
+				{{/ifEven}}
+				{{/each}}
+		</div>
+	</section>
+	<footer>
+		<div class="row copyright">Copyright &copy 2011-2018 Sabka Bazaar Grocery Supplies Pvt Ltd</div>
+	</footer>
