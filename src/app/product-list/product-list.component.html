@@ -3,11 +3,21 @@
 
 
 
-    <!-- Mini navigation -->
+    <!-- Dropdown for category (Mini navigation) -->
     <app-mini-navigation [selectedTab]="selectedCategory" [tabList]="categoryList" (selectTabFn)="getFilteredProducts($event)" (buttonClick)="onCategorySelect()"></app-mini-navigation>
+
+
+    <!--Main content starts here  -->
+
     <main class="container">
+
+        <!-- Side tabs for Product category -->
+
         <div class="tabs clearfix">
+
+
             <!-- Side navigation starts here -->
+
             <product-navigation-tabs *ngIf="!categoryLoading && categoryList?.length" [selectedTabId]="selectedCategoryId" [tabList]="categoryList" (onSelect)="getFilteredProducts($event)"> </product-navigation-tabs>
 
 
@@ -16,26 +26,34 @@
             <p class="loading margin-top-20 clearfix margin-left-20" *ngIf="categoryLoading">
                 <loading size="medium" msg="Please wait till categoies load."></loading>
             </p>
+
         </div>
+
+
         <div class="row list-body margin-top-0 clearfix">
-            <!-- Main content(dynamic product list) -->
-            
-                <app-paragraph *ngIf="!productList?.length && !productLoading" [type]="'p-large p-no-data-exception'" [desc]="'No Products found for '+selectedCategory" ></app-paragraph>
 
-                <!-- Main content oading component comes here -->
-
-                <p class="loading margin-top-20" *ngIf="productLoading">
-                    <loading size="normal" msg="Please wait while products are loading."></loading>
-                </p>
-
-                
-                <div class="padding-5 col span-1-of-4 margin-left-0" *ngFor="let product of productList">
-
-                    <!-- Card board component comes here -->
-                    <product-card-board [title]="product.name" [desc]="product.description" [imageUrl]="product.imageURL" [price]="product.price" [imageAlt]="'Product image'" (onClick)="buynow(product)"></product-card-board>
-                </div>
+            <!-- Dynamic product list -->
             
 
+            <!-- Exception when no content found -->
+
+            <app-paragraph *ngIf="!productList?.length && !productLoading" [type]="'p-large p-no-data-exception'" [desc]="'No Products found for '+selectedCategory" ></app-paragraph>
+
+
+
+            <!-- Loading component comes here -->
+
+            <p class="loading margin-top-20" *ngIf="productLoading">
+                <loading size="normal" msg="Please wait while products are loading."></loading>
+            </p>
+
+            
+            <div class="padding-5 col span-1-of-4 margin-left-0" *ngFor="let product of productList">
+
+                <!-- Card board component comes here for product listing -->
+
+                <product-card-board [title]="product.name" [desc]="product.description" [imageUrl]="product.imageURL" [price]="product.price" [imageAlt]="'Product image'" (onClick)="buynow(product)"></product-card-board>
+            </div>
         </div>
     </main>
 </div>

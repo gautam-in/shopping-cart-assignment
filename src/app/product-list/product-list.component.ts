@@ -69,7 +69,6 @@ export class ProductListComponent implements OnInit {
   }
 
   buynow(product:any){
-    console.log(product)
     this.apiService.buyProduct("addToCart").subscribe(()=>{
       let product_new ={
         "name": product.name,
