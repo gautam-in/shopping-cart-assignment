@@ -1,0 +1,42 @@
+<!-- Page Header-->
+        <header>
+            <div class="header-area">
+                <div class="header-center">
+                    <a href="/" aria-label="Sabka Bazar">
+                        <div class="header-left">
+                            <img src="/static/images/logo.png" alt="website logo" />
+                        </div>
+                    </a>
+                    <div class="header-middle">
+                        <ul aria-label="navigation for home and product pages">
+                            <li aria-label="Home page"><a href="/">Home</a></li>
+                            <li aria-label="Product Page"><a href="/product">Products</a></li>
+                        </ul>
+                    </div>
+                    <div class="header-middle-mobile">
+                        <a class="menu-hamburger" onclick="toggleMenu(event)">
+                            <img src="/static/images/hamburger-menu.png" alt="Mobile Hamburger menu">
+                        </a>
+                        <ul class="menu-list" aria-label="navigation for home and product pages">
+                            <li aria-label="Home page"><a href="/" title="Home page link">Home</a></li>
+                            <li aria-label="Product Page"><a href="/product" title="Products page link">Products</a></li>
+                            <li aria-label="SignIn"><a href="/login" title="SignIn page link">SingIn</a></li>
+                            <li aria-label="Register"><a href="/register" title="Register page link">Register</a></li>
+                        </ul>
+                    </div>
+                    <div class="header-right">
+                        <div class="signup-details" aria-label="Links to SingIn and Register">
+                            <a href="/login" title="SignIn page link">SingIn</a>
+                            <a href="/register" title="Register page link">Register</a>
+                        </div>
+                        <div class="cart-details mini-cart" id="shopping-cart" aria-label="link to Cart page" onclick="common.openShoppingCart()">
+                            <a href="#">
+                                <span class="cart-img"><img src="/static/images/cart.svg" alt="shopping cart image" /></span>
+                              <span class="number-of-items"><span id="cart-item-quantity">0</span>Items</span> 
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Page Header Ends-->

@@ -1,0 +1,33 @@
+.content-area {
+    .login-text-details {
+        display: none;
+    }
+    .login-form {
+        padding: 40px;
+        .mobile-view-title {
+            margin-bottom: 40px;
+        }
+    }
+}
+
+@media screen and (min-width: $break-medium) {
+    .content-area {
+        display: flex;
+        max-width: 1170px;
+        margin: 0 auto;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 34px;
+        .login-text-details {
+            display: block;
+            padding: 40px;
+            width: 30%;
+        }
+        .login-form {
+            width: 25%;
+            .mobile-view-title {
+                display: none;
+            }
+        }
+    }
+}

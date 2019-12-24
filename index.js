@@ -14,9 +14,6 @@ const PORT = process.env.PORT;
 
 // Import routes
 const api = require('./routes-scripts/routes');
-const cartroute = require('./routes-scripts/cart');
-const login = require('./routes-scripts/login');
-const register = require('./routes-scripts/register');
 
 // Configure the app to use express
 const app = express();
@@ -30,21 +27,13 @@ app.engine('hbs', hbs({
     partialsDir: `${__dirname}/src/views/common/`,
 }));
 
-// Compile SCSS to CSS
-app.use(sassMiddleware({
-    src: `${__dirname}/src/assets/scss`,
-    dest: `${__dirname}/public`,
-    outputStyle: 'compressed',
-    debug: true,
-}));
-
 // Leverage JSON body parser
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(expressValidator());
 
 // Serve assets via the public directory
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'src')));
 app.use(express.static(path.join(__dirname, 'routes-scripts')));
 
 app.use(cookieParser());
@@ -66,9 +55,6 @@ app.set('view engine', 'hbs');
 
 // Serve all API routes
 app.use('/', api);
-app.use('/cart', cartroute);
-app.use('/login', login);
-app.use('/register', register);
 
 
 // Render the app

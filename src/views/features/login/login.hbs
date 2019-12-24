@@ -1,0 +1,19 @@
+<!-- Page Content-->
+        <div class="content-area login">
+           
+            <section class="login-text-details">
+                 {{> components/atoms/a-header header="Login"}}
+                 {{> components/atoms/a-paragraph para="Get access to your Orders, Wishlist and Recommendations"}}
+            </section>
+            <section class="login-form">
+                <h2 class="mobile-view-title">Login</h2>
+                <form name="Form" action="/" onsubmit="return ValidateLogin()" >
+                    {{> components/molecules/m-input name="email" placeholder="" label="Email" type="email" classname="error-email"}}
+                    {{> components/molecules/m-input name="psw" placeholder="" label="Password" type="password" classname="error-psw"}}
+                    {{> components/molecules/m-button name="Login" id="login-btn" type="submit" }}
+                    
+                </form>
+            </section>
+        </section>
+        </div>
+        <!-- Page Content-->

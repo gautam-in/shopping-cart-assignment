@@ -1,0 +1,11 @@
+@import '../atoms/a-lable.scss';
+@import '../atoms/a-input.scss';
+@import '../../../../styles/common/variables.scss';
+.form-group {
+    .error {
+        color: $error-msg;
+        font-size: 12px;
+        position: relative;
+        top: -16px;
+    }
+}

@@ -7,7 +7,7 @@
             <div class="product-details">
                 <p class="product-description" title="{{this.description}}">{{this.description}}</p>
                 <div class="product-price-details" aria-label="Price for {{this.name}}">MRP: {{this.price}}</div>
-                <button class="product-buy-button" onclick="buy('{{this.id}}', 'add')" aria-label="Buy Now Button">Buy Now</button>
+                <button class="product-buy-button" value={{this.id}} onclick="addToCart(event)" aria-label="Buy Now Button">Buy Now</button>
             </div>
         </div>
 </div>

@@ -1,0 +1,131 @@
+$break-medium:768px;
+.header-area {
+    position: sticky;
+    top: 0;
+    height: 60px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background: #ffffff;
+    z-index: 1;
+    border-bottom: 2px solid #e8e7e7;
+    box-sizing: border-box;
+    .header-center {
+        width: 100%;
+        max-width: 1170px;
+        margin: 0 auto;
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        position: relative;
+        .header-left {
+            img {
+                width: 120px;
+            }
+        }
+        .header-middle {
+            display: none;
+        }
+        .header-middle-mobile {
+            display: block;
+            right: 110px;
+            position: absolute;
+            .menu-hamburger {
+                cursor: pointer;
+                img {
+                    width: 30px;
+                }
+            }
+            .menu-list {
+                display: none;
+                position: absolute;
+                background: #fff;
+                top: 106%;
+                width: 100px;
+                z-index: 3;
+                box-shadow: 0 16px 20px -9px #ddd;
+                li {
+                    padding: 5px;
+                    border-bottom: 1px dotted #ccc;
+                }
+                li:last-child {
+                    border-bottom: 0px;
+                }
+            }
+        }
+        .header-right {
+            .signup-details {
+                display: none;
+            }
+            .cart-details {
+                background: #e8e7e7;
+                padding: 13px;
+                cursor: pointer;
+                .cart-img {
+                    img {
+                        width: 25px;
+                    }
+                }
+                .number-of-items {
+                    position: relative;
+                    top: -5px;
+                    #cart-item-quantity {
+                        margin-right: 2px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: $break-medium) {
+    .header-area {
+        height: 80px;
+        .header-center {
+            justify-content: baseline;
+            .header-left {
+                img {
+                    width: 150px;
+                }
+            }
+            .header-middle {
+                display: block !important;
+                min-width: 63%;
+                ul {
+                    list-style-type: none;
+                    li {
+                        float: left;
+                        padding: 20px;
+                        a {
+                            text-decoration: none;
+                            color: #808080;
+                            font-weight: bold;
+                        }
+                    }
+                }
+            }
+            .header-middle-mobile {
+                display: none;
+            }
+            .header-right {
+                box-sizing: border-box;
+                position: relative;
+                bottom: 1px;
+                .signup-details {
+                    display: block !important;
+                    padding: 5px 0px 5px 14px;
+                    a {
+                        font-size: 11px;
+                        text-decoration: none;
+                        color: #808080;
+                        font-weight: bold;
+                        padding: 6px;
+                        text-align: right;
+                        vertical-align: top;
+                    }
+                }
+                .cart-details {}
+            }
+        }
+    }
+}

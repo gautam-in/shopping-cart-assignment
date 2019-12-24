@@ -1,0 +1,52 @@
+.cart-button {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: map-get($site_colors, body-color-white);
+    @include responsive-for-sm-mobile {
+        padding: 15px;
+        right: 7px;
+    }
+    &__cheaper {
+        height: 80px;
+        background-color: map-get($site_colors, body-color-white);
+        margin: 15px;
+        border-radius: 5px;
+        padding: 10px;
+        padding-top: 26px;
+        @include responsive-for-ipad {
+            width: 96.2%;
+        }
+        @include responsive-for-sm-mobile {
+            margin: 8px;
+            padding: none;
+        }
+        &--title {
+            display: inline-block;
+            vertical-align: middle;
+            margin: 0;
+            @include fontSize(15px);
+            margin-left: 8px;
+            @include responsive-for-sm-mobile {
+                @include fontSize(11px);
+                margin-left: 0px;
+            }
+        }
+        &--img {
+            display: inline-block;
+            vertical-align: middle;
+            margin: 0;
+        }
+    }
+}
+
+// General Class
+.promo-code {
+    text-align: center;
+    @include fontSize(15px);
+    margin-bottom: 52px;
+}
+
+.cart-icon {
+    width: 20px;
+}
