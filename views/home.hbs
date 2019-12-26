@@ -8,7 +8,7 @@
 				</ul>
 				<ul class="home-nav">
 					<li><a href="/">Home</a></li>
-					<li><a href="">Products</a></li>
+					<li><a href="/plp">Products</a></li>
 				</ul>
 				<div class="cart-box">
 					<img src="/static/images/cart.svg" alt="Logo" class="cart">
@@ -19,6 +19,25 @@
 			<div style="clear: both"></div>
 		</nav>
 	</header>
+	<section>
+		<div class="slideshow-container">
+			<div id="banners-container">
+				{{#each banners as |value key|}}
+					<div class="mySlides fade">
+					  <img src="{{value.bannerImageUrl}}">
+					</div>
+				{{/each}}
+			</div>
+			<a class="prev" onclick="plusSlides(-1)">Prev</a>
+			<a class="next" onclick="plusSlides(1)">Next</a>
+		</div>
+		<br>
+		<div style="text-align:center" id="carousal-dot">
+				{{#each banners  as |value key|}}
+					 <span class="dot" onclick="currentSlide({{@index}})"></span> 
+				{{/each}}
+		</div>	
+	</section>
 	<section class="categories-section">
 		<div id="categories-container">
 				{{#each categories as |value key|}}

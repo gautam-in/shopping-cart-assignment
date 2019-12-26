@@ -1,0 +1,65 @@
+<header>
+		<nav>
+			<div class="row nav-bar">
+				<img src="/static/images/logo.png" class="logo"/>
+				<ul class="main-nav">
+					<li><a href="/login">Sign In</a></li>
+					<li><a href="/register">Register</a></li>
+				</ul>
+				<ul class="home-nav">
+					<li><a href="/">Home</a></li>
+					<li><a href="/plp">Products</a></li>
+				</ul>
+				<div class="cart-box">
+					<img src="/static/images/cart.svg" alt="Logo" class="cart">
+					<span>0 items</span>
+				</div>
+				<div style="clear: both"></div>
+			</div>
+			<div style="clear: both"></div>
+		</nav>
+	</header>
+	<div class="row parent-ctr">
+		<div class="col span-2-of-10">
+					{{#each categories}}
+					<div class="row category-bg" onclick="category ='{{this.id}}'">
+						{{this.name}}
+					</div>	
+					{{/each}}
+		</div>
+		<div class="col span-8-of-10 product-container">
+			<div class="row">
+			{{#foreach products category}}
+				{{#if $first}}
+					<div class="col span-1-of-4 product">
+						<div class="name">{{this.name}}</div>
+						<img src={{this.imageURL}}>
+						<div class="desc">{{this.description}}</div>
+						<div class="price-ctr">
+						<div class="col span-1-of-2 price">MRP{{this.price}}</div>
+						<div class="col span-1-of-2 btn-box "><button type="button" class="btn-buy">Buy now</button></div>
+						</div>
+					</div>
+
+
+					</div><div class="row">
+
+				{{else}}
+				<div class="col span-1-of-4 product">
+					<div class="name">{{this.name}}</div>
+					<img src={{this.imageURL}}>
+					<div class="desc">{{description}}</div>
+					<div class="price-ctr">
+						<div class="col span-1-of-2 price">MRP{{this.price}}</div>
+						<div class="col span-1-of-2 btn-box"><button type="button" class="btn-buy">Buy now</button></div>
+					</div>
+				</div>	
+				{{/if}}
+			{{/foreach}}
+		</div>
+	</div>
+	</div>
+	
+	<footer>
+		<div class="row copyright">Copyright &copy 2011-2018 Sabka Bazaar Grocery Supplies Pvt Ltd</div>
+	</footer>

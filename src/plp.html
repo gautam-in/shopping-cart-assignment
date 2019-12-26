@@ -3,7 +3,7 @@
 <head>
 	<title>Shopping Cart</title>
 	<link rel="stylesheet" href="css/grid.css">
-	<link rel="stylesheet" href="css/home.css">
+	<link rel="stylesheet" href="css/plp.css">
 </head>
 <body>
 	<header>
@@ -29,29 +29,21 @@
 	</header>
 	<div class="row">
 		<div class="col span-2-of-10">
-			<div id="categories-container">
-				<script id="categoriesTemplate" type="text/x-handlebars-template">
-					{{#each this}}
-					
-					<div class="row category-block">
-					<div class="col span-1-of-2 img-block">
-						<img src="..{{imageUrl}}" class="category-img">
-					</div>
-					<div class="col span-1-of-2 desc-block">
-						<p class="category-title">{{name}}</p>
-						<p class="category-desc">{{description}}</p>
-						<button class="category-btn">Explore {{key}}</button>
-					</div>
-					</div>
+					{{#each categories}}
+					<div class="row category-bg">
+						{{this.name}}
+					</div>	
 					{{/each}}
-				</script>
-			</div>
 		</div>
 		<div class="col span-8-of-10">
-			<div class="col span-1-of-4">sddas</div>
-			<div class="col span-1-of-4">ddd</div>
-			<div class="col span-1-of-4">dd</div>
-			<div class="col span-1-of-4">dddd</div>
+			{{#ifEven key}}
+				{{#each this}}
+					<div class="col span-1-of-4">{{name}}</div>
+				{{/each}}
+				<div class="row">
+					<div class="col span-1-of-4">{{name}}</div>
+				</div>
+			{{else}}
 		</div>
 	</div>
 	

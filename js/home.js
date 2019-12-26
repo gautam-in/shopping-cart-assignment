@@ -1,5 +1,5 @@
 var slideIndex = 1;
-var selectedCategory;
+
 function plusSlides(n) {
   showSlides(slideIndex += n);
 }
@@ -24,10 +24,5 @@ function showSlides(n) {
   dots[slideIndex-1].className += " active";
 }
 setTimeout(function(){
-  //showSlides(1);
+  showSlides(1);
 })
-
-function selectCatgory(category){
-
-selectedCategory =category;
-}
