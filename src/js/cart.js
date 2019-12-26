@@ -141,14 +141,14 @@ var cart = (function() {
                             <button 
                               id = ${element.data.id} 
                               type="button" 
-                              class="btn-primary cart-action__update minus" 
+                              class="cart-action__update minus" 
                               onclick="cart.cartQuantityIncOrDec(this, 'dec')">-
                             </button>
                             <span class="cart-action__quantity">${element.count}</span>
                             <button 
                               id = ${element.data.id} 
                               type="button" 
-                              class="btn-primary cart-action__update plus" 
+                              class="cart-action__update plus" 
                               onclick="cart.cartQuantityIncOrDec(this, 'inc')">+
                             </button>
                           </div>

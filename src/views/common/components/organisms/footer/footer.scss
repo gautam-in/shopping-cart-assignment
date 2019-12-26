@@ -1,11 +1,11 @@
 /*CSS for footer*/
 
 .footer {
-    background: #e8e7e7;
+    background: $grey;
     p {
         max-width: 1170px;
         margin: 0 auto;
         padding: 15px 10px;
-        font-size: 13px;
+        @include fontSize(13px);
     }
 }

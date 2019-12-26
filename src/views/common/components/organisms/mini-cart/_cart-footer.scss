@@ -2,14 +2,14 @@
     position: absolute;
     bottom: 0;
     width: 100%;
-    background-color: map-get($site_colors, body-color-white);
+    background-color: $white;
     @include responsive-for-sm-mobile {
         padding: 15px;
         right: 7px;
     }
     &__cheaper {
         height: 80px;
-        background-color: map-get($site_colors, body-color-white);
+        background-color: $white;
         margin: 15px;
         border-radius: 5px;
         padding: 10px;

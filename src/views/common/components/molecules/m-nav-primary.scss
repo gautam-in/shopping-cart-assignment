@@ -1,0 +1,19 @@
+#side-nav-filter-list {
+    display: none;
+}
+
+@media screen and (min-width: 768px) {
+    #side-nav-filter-list {
+        display: block;
+        background: #e8e7e7;
+        height: 100%;
+        list-style-type: none;
+        padding: 0px;
+        margin: 0px;
+        li {
+            padding: 10px;
+            border-bottom: 1px solid #808080;
+            cursor: pointer;
+        }
+    }
+}

@@ -1,0 +1,84 @@
+      .product {
+          -ms-flex-preferred-size: 100%;
+          flex-basis: 100%;
+          -webkit-box-shadow: 0 16px 20px -9px #ddd;
+          box-shadow: 0 16px 20px -9px #ddd;
+          padding: 7px 10px;
+          min-height: 230px;
+          .product-title {
+              @include fontSize(16px);
+              min-height: 30px;
+          }
+          .product-view {
+              display: -webkit-box;
+              display: -ms-flexbox;
+              display: flex;
+              .product-image {
+                  -ms-flex-preferred-size: 30%;
+                  flex-basis: 30%;
+                  img {
+                      width: 150px;
+                  }
+              }
+              .product-details {
+                  -ms-flex-preferred-size: 70%;
+                  flex-basis: 70%;
+                  margin-left: 10px;
+                  .product-description {
+                      background: #e8e7e7;
+                      padding: 10px;
+                      @include fontSize(14px);
+                  }
+                  .product-price-details {
+                      margin-top: 10px;
+                  }
+                  .product-buy-button {
+                      border: 0;
+                      width: 100%;
+                      margin-top: 10px;
+                  }
+              }
+          }
+      }
+      
+      @media screen and (min-width: 768px) {
+          .product {
+              -ms-flex-preferred-size: 46%;
+              flex-basis: 46%;
+              .product-description {
+                  min-height: 200px;
+              }
+          }
+      }
+      
+      @media screen and (min-width: 1025px) {
+          .product {
+              -ms-flex-preferred-size: 22%;
+              flex-basis: 22%;
+              min-height: 420px;
+              .product-title {
+                  min-height: 65px;
+              }
+              .product-view {
+                  display: block;
+                  .product-details {
+                      margin: 0px;
+                      position: relative;
+                      .product-description {
+                          min-height: 130px;
+                      }
+                      .product-price-details {
+                          display: inline;
+                          position: absolute;
+                          top: 107%;
+                      }
+                      .product-buy-button {
+                          width: auto;
+                          position: absolute;
+                          right: 0px;
+                          top: 104%;
+                      }
+                  }
+              }
+          }
+      }

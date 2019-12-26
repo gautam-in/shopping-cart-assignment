@@ -1,0 +1,44 @@
+@import '../../../../styles/common/variables.scss';
+.category-details {
+    margin-left: 10px;
+    .category-title {
+        text-align: center;
+        @include fontSize(16px);
+        margin: 10px 0px;
+    }
+    .category-title-details {
+        text-align: center;
+        @include fontSize(12px);
+        margin-bottom: 5px;
+    }
+    .category-button {
+        display: block;
+        width: auto;
+        margin: 0 auto;
+        padding: 5px;
+        cursor: pointer;
+        a {
+            color: $white;
+        }
+    }
+}
+
+@media screen and (min-width: $breakpoint-phone) {
+    .category-details {
+        margin-left: 10px;
+        .category-title {
+            @include fontSize(20px);
+        }
+        .category-title-details {
+            text-align: center;
+            @include fontSize(14px);
+            -webkit-margin-before: 0px;
+            margin-block-start: 0px;
+        }
+        .category-button {
+            @include fontSize(16px);
+            padding: 8px;
+            margin-top: 10px;
+        }
+    }
+}

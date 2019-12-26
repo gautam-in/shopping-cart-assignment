@@ -1,0 +1,5 @@
+.para {
+    color: $black;
+    @include fontSize(16px);
+    margin: 2px 0px;
+}

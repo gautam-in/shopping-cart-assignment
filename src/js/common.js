@@ -1,8 +1,9 @@
 const common = (function() {
+    const body = document.body;
     return {
         openShoppingCart: () => {
             document.getElementById('cart').classList.add("show");
-            const body = document.body;
+
             body.style.overflow = 'hidden';
         },
 

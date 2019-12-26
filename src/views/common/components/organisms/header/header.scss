@@ -1,21 +1,33 @@
-$break-medium:768px;
+@import '../../../../../styles/common/variables.scss';
 .header-area {
+    position: -webkit-sticky;
     position: sticky;
     top: 0;
     height: 60px;
     width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
-    background: #ffffff;
+    background: $white;
     z-index: 1;
-    border-bottom: 2px solid #e8e7e7;
+    border-bottom: 2px solid $grey;
+    -webkit-box-sizing: border-box;
     box-sizing: border-box;
     .header-center {
         width: 100%;
         max-width: 1170px;
         margin: 0 auto;
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
+        -webkit-box-align: end;
+        -ms-flex-align: end;
         align-items: flex-end;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
         justify-content: space-between;
         position: relative;
         .header-left {
@@ -39,14 +51,15 @@ $break-medium:768px;
             .menu-list {
                 display: none;
                 position: absolute;
-                background: #fff;
+                background: $white;
                 top: 106%;
                 width: 100px;
                 z-index: 3;
-                box-shadow: 0 16px 20px -9px #ddd;
+                -webkit-box-shadow: 0 16px 20px -9px $lightgray;
+                box-shadow: 0 16px 20px -9px $lightgray;
                 li {
                     padding: 5px;
-                    border-bottom: 1px dotted #ccc;
+                    border-bottom: 1px dotted $graphiteGray;
                 }
                 li:last-child {
                     border-bottom: 0px;
@@ -58,7 +71,7 @@ $break-medium:768px;
                 display: none;
             }
             .cart-details {
-                background: #e8e7e7;
+                background: $grey;
                 padding: 13px;
                 cursor: pointer;
                 .cart-img {
@@ -78,10 +91,12 @@ $break-medium:768px;
     }
 }
 
-@media screen and (min-width: $break-medium) {
+@media screen and (min-width: $breakpoint-phone) {
     .header-area {
         height: 80px;
         .header-center {
+            -webkit-box-pack: baseline;
+            -ms-flex-pack: baseline;
             justify-content: baseline;
             .header-left {
                 img {
@@ -98,8 +113,9 @@ $break-medium:768px;
                         padding: 20px;
                         a {
                             text-decoration: none;
-                            color: #808080;
+                            color: $dark-grey;
                             font-weight: bold;
+                            cursor: pointer;
                         }
                     }
                 }
@@ -108,23 +124,24 @@ $break-medium:768px;
                 display: none;
             }
             .header-right {
+                -webkit-box-sizing: border-box;
                 box-sizing: border-box;
                 position: relative;
                 bottom: 1px;
                 .signup-details {
-                    display: block !important;
+                    display: block;
                     padding: 5px 0px 5px 14px;
                     a {
-                        font-size: 11px;
+                        @include fontSize(11px);
                         text-decoration: none;
-                        color: #808080;
+                        color: $dark-grey;
                         font-weight: bold;
                         padding: 6px;
                         text-align: right;
                         vertical-align: top;
+                        cursor: pointer;
                     }
                 }
-                .cart-details {}
             }
         }
     }

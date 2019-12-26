@@ -1,10 +1,10 @@
-button {
+.btn {
     display: block;
     width: 100%;
-    background: #d10256;
-    color: #f0f0f0;
+    background: $pink;
+    color: $white;
     padding: 11px 10px;
-    font-size: 12px;
+    @include fontSize(12px);
     border: 0;
     margin-top: 30px;
 }

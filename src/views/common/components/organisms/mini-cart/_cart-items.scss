@@ -1,7 +1,7 @@
  .items {
      height: calc(100% - 129px);
      position: absolute;
-     background: map-get($site_colors, box-bg-color);
+     background: $lightgray;
      width: 100%;
      top: 51px;
      overflow-x: hidden;
@@ -21,7 +21,7 @@
          }
      }
      &__cart {
-         background-color: map-get($site_colors, body-color-white);
+         background-color: $white;
          margin-bottom: 15px;
          position: relative;
          &--img {

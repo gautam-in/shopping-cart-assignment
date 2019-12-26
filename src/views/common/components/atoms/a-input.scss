@@ -2,9 +2,11 @@ input {
     border-top: 0;
     border-left: 0;
     border-right: 0;
-    font-size: 12px;
+    @include fontSize( $input-font-size);
     margin-bottom: 20px;
     display: block;
     width: 100%;
-    color: #888888;
+    color: $graphiteGray;
+    outline: 0;
+    padding: 16px 0 10px;
 }

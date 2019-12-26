@@ -1,7 +1,14 @@
 label {
     display: block;
-    font-size: 11px;
-    color: #888888;
+    color: $graphiteGray;
     font-weight: bold;
     margin-bottom: 5px;
+    @include fontSize(14px);
+    position: absolute;
+    -webkit-transform-origin: top left;
+    transform-origin: top left;
+    -webkit-transform: translate(0, 16px) scale(1);
+    transform: translate(0, 16px) scale(1);
+    -webkit-transition: all .1s ease-in-out;
+    transition: all .1s ease-in-out; //speed
 }

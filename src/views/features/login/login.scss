@@ -1,3 +1,6 @@
+@import '../../../styles/common/variables.scss';
+@import '../../common/components/atoms/a-paragraph.scss';
+@import '../../common/components/atoms/a-header.scss';
 .content-area {
     .login-text-details {
         display: none;
@@ -10,12 +13,18 @@
     }
 }
 
-@media screen and (min-width: $break-medium) {
+@media screen and (min-width: $breakpoint-phone) {
     .content-area {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
         max-width: 1170px;
         margin: 0 auto;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
         align-items: center;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
         justify-content: center;
         margin-bottom: 34px;
         .login-text-details {

@@ -1,3 +1,4 @@
+@import '../../../../../styles/common/variables.scss';
 .cart-action {
     padding: 22px;
     @include responsive-for-sm-mobile {
@@ -14,6 +15,8 @@
         padding: 0;
         display: inherit;
         margin: 0;
+        background-color: $pink;
+        color: $white;
         @include fontSize(24px);
         @include responsive-for-sm-mobile {
             width: 25px;

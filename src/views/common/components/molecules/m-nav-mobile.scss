@@ -1,0 +1,69 @@
+.category-mobile {
+    border: 0;
+    outline: 0;
+    padding: 8px 10px;
+    font-family: Dosis;
+    background: $pink;
+    color: $white;
+    width: 100%;
+    display: block;
+    cursor: pointer;
+    @include fontSize(20px);
+    position: relative;
+    .caret {
+        display: inline-block;
+        width: 0;
+        height: 0;
+        margin-right: 20px;
+        vertical-align: middle;
+        border: solid $white;
+        border-width: 0 3px 3px 0;
+        padding: 3px;
+        transform: rotate(45deg);
+        -webkit-transform: rotate(45deg);
+        position: absolute;
+        right: 15px;
+        top: 12px;
+    }
+    @media screen and (min-width:$breakpoint-tablet-potrait) {
+        display: none;
+    }
+}
+
+.category-block {
+    background-color: $pink;
+    text-align: center;
+    overflow: hidden;
+    display: none;
+    -webkit-transition: height 0.5s;
+    transition: height 0.5s;
+    border: 1px solid $white;
+    @media screen and (min-width: $breakpoint-phone) {
+        text-align: left;
+        height: 300px;
+        background-color: $lightgray;
+    }
+    li {
+        padding: 15px 0 15px 20px;
+        border-bottom: 1px solid $white;
+        cursor: pointer;
+        a {
+            color: $white;
+            @include fontSize(18px);
+        }
+        @media screen and (min-width: $breakpoint-phone) {
+            padding-left: 5px;
+            color: $graphiteGray;
+            border-bottom: 1px solid $graphiteGray;
+            font-size: 80%;
+        }
+        @media screen and (min-width: $breakpoint-phone) {
+            padding-left: 20px;
+            font-size: 100%;
+        }
+    }
+}
+
+.disp {
+    display: block !important;
+}
