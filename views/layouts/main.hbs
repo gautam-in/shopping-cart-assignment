@@ -2,14 +2,19 @@
 <html>
 <head>
 	<title>Shopping Cart</title>
-	<link rel="stylesheet" href="css/grid.css">
-	<link rel="stylesheet" href="css/plp.css">
-	<link rel="stylesheet" href="css/login.css">
-	<link rel="stylesheet" href="css/register.css">
-	<link rel="stylesheet" href="css/home.css">
+	<link rel="stylesheet" href="/css/grid.css">
+	<link rel="stylesheet" href="/css/cart.css">
+	<link rel="stylesheet" href="/css/plp.css">
+	<link rel="stylesheet" href="/css/login.css">
+	<link rel="stylesheet" href="/css/register.css">
+	<link rel="stylesheet" href="/css/home.css">
 </head>
-<body>
-{{{body}}}
-	<script src="js/home.js"></script>
+<body class="box">
+	{{> header}}
+
+    {{{body}}}
+    {{> cart}}
+    {{> footer}}
+	<script src="/js/home.js"></script>
 </body>
 </html>

@@ -19,9 +19,12 @@ body {
 .parent-ctr{
 	background: $bgColor;
 	.category-bg{
-			color:#A6A6A6;
+			color: #A6A6A6;
 			padding-left: 10px;
 			border-bottom:solid 1px #A6A6A;
+	}
+	.grey{
+		background: black;
 	}
 	
 	.product-container{

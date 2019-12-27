@@ -24,6 +24,9 @@ body {
   padding-left: 10px;
   border-bottom: solid 1px #A6A6A;
 }
+.parent-ctr .grey {
+  background: black;
+}
 .parent-ctr .product-container {
   background: white;
 }

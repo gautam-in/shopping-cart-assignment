@@ -1,5 +1,7 @@
 var slideIndex = 1;
-
+var selectedCategory;
+let categoryId,prevId;
+var itemCounter =0;
 function plusSlides(n) {
   showSlides(slideIndex += n);
 }
@@ -24,5 +26,29 @@ function showSlides(n) {
   dots[slideIndex-1].className += " active";
 }
 setTimeout(function(){
-  showSlides(1);
+  //showSlides(1);
 })
+
+function selectCategory(id){
+  categoryId = id;
+  let prevUrl =window.location.href.split("/");
+  let prevId = prevUrl[prevUrl.length -1];
+  let diffUrl = categoryId !== prevId;
+  window.location.href = diffUrl? `/plp/${id}`:'/plp';
+
+}
+
+function buy(id, operation) {
+
+  const url = `http://localhost:5000/addToCart`;
+
+  fetch(url, {
+  method: 'post',
+  body: JSON.stringify({'id':id}),
+  }).then(function(response) {
+    if(response.status === 200) {
+      itemCounter++;
+      document.getElementById("cartNumber").innerHTML=`${itemCounter} items`;
+    }
+  });
+}

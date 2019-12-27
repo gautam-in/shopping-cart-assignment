@@ -3,13 +3,15 @@ var path =require('path')
 var exphbs = require('express-handlebars'); 
 const app = express()
 const port = 3000
-
+let categoryId,prevId; 
 app.set('views', path.join(__dirname,'views'));
 app.use( express.static( 'src'));
 app.use(express.static('server'));
 app.use(express.static('js'));
 app.use(express.static('./'));
 app.engine('hbs',exphbs({extname:'hbs',defaultLayout:'main',
+	 partialsDir: __dirname+'/views/partials/',
+    layoutDir: __dirname+'/views/layouts/',
 	helpers:{
 		ifEven:function(value , options){
 			if(value%2=== 0 ){
@@ -24,12 +26,7 @@ app.engine('hbs',exphbs({extname:'hbs',defaultLayout:'main',
 			});
 
 		},
-		foreach:function(arr,item,options) {
-			if(item){
-				var arr = arr.filter((x) =>x.category === item);
-			}else {
-
-			}
+		foreach:function(arr, options) {
 		    return arr.map(function(item,index) {
 		        item.$first = (index+1)%4 === 0;
 		        item.$last  = index === arr.length-1;
@@ -78,4 +75,12 @@ app.get('/register', (req, res) => res.render('register'));
 app.get('/plp', (req, res) =>{
 	res.render('plp',{categories:categories, products:products});
 });
+app.get('/plp/:id', function (req, res) {
+    let categoryId = req.params.id;
+	let product_cat = products.filter((product) => product.category === categoryId);
+	res.render('plp', { products: product_cat, categories:categories});
+    
+});
+
+
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))

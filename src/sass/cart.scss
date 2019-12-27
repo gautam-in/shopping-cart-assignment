@@ -1,0 +1,62 @@
+@mixin padding10{
+	padding: 10px;
+}
+.box{
+	position: relative;
+	
+}
+
+.overlay{
+	position: fixed;
+	top:10%;
+	width:30%;
+	background: yellow;
+	left:50%;
+	height: auto;
+
+	/*position: fixed;
+	top:10%;
+	width:30%;
+	background: yellow;
+	left:50%;
+	height: auto;*/
+	.header{
+		background: black;
+		color: white;
+		@include padding10;
+	    font-size: 15px;
+	    font-weight: 700;
+
+	}
+	.low-price{
+		@include padding10;
+
+		.low-price-row {
+			padding:10px;
+			background: white;
+			img{
+				    height: 30px;
+			}
+			.anywhere {
+				font-size: 15px;
+    			margin-left: 5px;
+			}
+		}
+	}
+	.footer{
+		background: white;
+		@include padding10;
+		.promo{
+			font-size: 15px;
+    		text-align: center;
+		}
+			.checkout-btn{
+		height: 40px;
+		background: #D10157;
+		color: #ffffff;
+		width: 100%;
+	}
+	}
+
+}
+

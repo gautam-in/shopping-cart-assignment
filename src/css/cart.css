@@ -1,0 +1,55 @@
+.box {
+  position: relative;
+}
+
+.overlay {
+  position: fixed;
+  top: 10%;
+  width: 30%;
+  background: yellow;
+  left: 50%;
+  height: auto;
+  /*position: fixed;
+  top:10%;
+  width:30%;
+  background: yellow;
+  left:50%;
+  height: auto;*/
+}
+.overlay .header {
+  background: black;
+  color: white;
+  padding: 10px;
+  font-size: 15px;
+  font-weight: 700;
+}
+.overlay .low-price {
+  padding: 10px;
+}
+.overlay .low-price .low-price-row {
+  padding: 10px;
+  background: white;
+}
+.overlay .low-price .low-price-row img {
+  height: 30px;
+}
+.overlay .low-price .low-price-row .anywhere {
+  font-size: 15px;
+  margin-left: 5px;
+}
+.overlay .footer {
+  background: white;
+  padding: 10px;
+}
+.overlay .footer .promo {
+  font-size: 15px;
+  text-align: center;
+}
+.overlay .footer .checkout-btn {
+  height: 40px;
+  background: #D10157;
+  color: #ffffff;
+  width: 100%;
+}
+
+/*# sourceMappingURL=cart.css.map */
