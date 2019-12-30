@@ -2,6 +2,7 @@ var slideIndex = 1;
 var selectedCategory;
 let categoryId,prevId;
 var itemCounter =0;
+
 function plusSlides(n) {
   showSlides(slideIndex += n);
 }
@@ -39,16 +40,41 @@ function selectCategory(id){
 }
 
 function buy(id, operation) {
-
-  const url = `http://localhost:5000/addToCart`;
-
+ var url = window.location.origin + "/cart/addToCart/";
+ console.log(id);
   fetch(url, {
-  method: 'post',
+  method: 'POST',
+   headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    },
   body: JSON.stringify({'id':id}),
   }).then(function(response) {
     if(response.status === 200) {
       itemCounter++;
+//      cart.itemCount = itemCounter;
+  //    cart.addItem(id);
       document.getElementById("cartNumber").innerHTML=`${itemCounter} items`;
+      return response.json();
+    }
+  }).then((myJson) => {
+    console.log(myJson);
+  });
+ 
+}
+
+function showCart(){
+   var url = window.location.origin + "/cart/";
+   fetch(url, {
+  method: 'GET',
+  }).then(function(response) {
+    if(response.status === 200) {
+   document.getElementsByClassName("parent-overlay")[0].style.display ='block';
     }
   });
+   
+}
+
+function closeCart(){
+  document.getElementsByClassName("parent-overlay")[0].style.display ='none';
 }

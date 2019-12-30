@@ -1,6 +1,8 @@
 const express = require('express')
+let cart =require('./js/cart');
 var path =require('path')
 var exphbs = require('express-handlebars'); 
+var bodyParser = require('body-parser');
 const app = express()
 const port = 3000
 let categoryId,prevId; 
@@ -9,6 +11,8 @@ app.use( express.static( 'src'));
 app.use(express.static('server'));
 app.use(express.static('js'));
 app.use(express.static('./'));
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 app.engine('hbs',exphbs({extname:'hbs',defaultLayout:'main',
 	 partialsDir: __dirname+'/views/partials/',
     layoutDir: __dirname+'/views/layouts/',
@@ -73,7 +77,7 @@ app.get('/login', (req, res) =>{
 app.get('/register', (req, res) => res.render('register'));
 
 app.get('/plp', (req, res) =>{
-	res.render('plp',{categories:categories, products:products});
+	res.render('plp',{categories:categories, products:products,cartItems:cart.cartItems});
 });
 app.get('/plp/:id', function (req, res) {
     let categoryId = req.params.id;
@@ -81,6 +85,8 @@ app.get('/plp/:id', function (req, res) {
 	res.render('plp', { products: product_cat, categories:categories});
     
 });
+
+app.use('/cart', cart)
 
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))

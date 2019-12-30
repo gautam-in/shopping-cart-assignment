@@ -1,51 +1,54 @@
-.box {
-  position: relative;
+.parent-overlay {
+  display: none;
 }
-
-.overlay {
+.parent-overlay .bg-overlay {
+  position: fixed;
+  background: gray;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  opacity: 0.9;
+}
+.parent-overlay .overlay {
   position: fixed;
   top: 10%;
   width: 30%;
-  background: yellow;
+  background: #eeeeee;
   left: 50%;
   height: auto;
-  /*position: fixed;
-  top:10%;
-  width:30%;
-  background: yellow;
-  left:50%;
-  height: auto;*/
+  z-index: 200;
 }
-.overlay .header {
+.parent-overlay .overlay .header {
   background: black;
   color: white;
-  padding: 10px;
+  padding: 15px;
   font-size: 15px;
   font-weight: 700;
+  height: 50px;
 }
-.overlay .low-price {
+.parent-overlay .overlay .low-price {
   padding: 10px;
 }
-.overlay .low-price .low-price-row {
+.parent-overlay .overlay .low-price .low-price-row {
   padding: 10px;
   background: white;
 }
-.overlay .low-price .low-price-row img {
+.parent-overlay .overlay .low-price .low-price-row img {
   height: 30px;
 }
-.overlay .low-price .low-price-row .anywhere {
-  font-size: 15px;
-  margin-left: 5px;
+.parent-overlay .overlay .low-price .low-price-row .anywhere {
+  font-size: 12px;
+  margin-left: 15px;
 }
-.overlay .footer {
+.parent-overlay .overlay .footer {
   background: white;
   padding: 10px;
 }
-.overlay .footer .promo {
-  font-size: 15px;
+.parent-overlay .overlay .footer .promo {
+  font-size: 12px;
   text-align: center;
 }
-.overlay .footer .checkout-btn {
+.parent-overlay .overlay .footer .checkout-btn {
   height: 40px;
   background: #D10157;
   color: #ffffff;

@@ -1,5 +1,13 @@
+<div class="parent-overlay">
+ <div class="bg-overlay"></div>
  <div class="overlay">
- 	<div class="header">My Cart(1 item)</div>
+ {{#each cartItems}}
+ <div>
+ {{this}}
+ </div>
+ {{/each}}
+ 	<div class="header">My Cart(1 item)
+ 	<span onclick="closeCart()">x</span></div>
  	<div class="row low-price">
  	<div class="low-price-row"><img src="/static/images/lowest-price.png"/><span class="anywhere">You won't find it cheaper anywhere</span></div>
  	</div>
@@ -9,4 +17,5 @@
             <button class="checkout-btn">Proceed to Checkout</button>
  	</div>
   </div>
+ </div>
 
