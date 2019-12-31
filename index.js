@@ -1,5 +1,6 @@
 const express = require('express')
-let cart =require('./js/cart');
+let cartObj =require('./js/cartconstant');
+let cart =require('./js/cart1');
 var path =require('path')
 var exphbs = require('express-handlebars'); 
 var bodyParser = require('body-parser');
@@ -69,7 +70,8 @@ products = getConfig('server/products/index.get.json');
 
 
 app.get('/', (req, res) =>{
-	res.render('home',{categories:categories, banners:banners})
+	console.log(cartObj.cartItems);
+	res.render('home',{categories:categories, banners:banners,cartItems:cartObj.cartItems})
 });
 app.get('/login', (req, res) =>{
 	res.render('login')
@@ -77,7 +79,8 @@ app.get('/login', (req, res) =>{
 app.get('/register', (req, res) => res.render('register'));
 
 app.get('/plp', (req, res) =>{
-	res.render('plp',{categories:categories, products:products,cartItems:cart.cartItems});
+	console.log(cartObj.cartItems);
+	res.render('plp',{categories:categories, products:products,cartItems:cartObj.cartItems});
 });
 app.get('/plp/:id', function (req, res) {
     let categoryId = req.params.id;

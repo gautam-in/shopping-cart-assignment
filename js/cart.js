@@ -1,29 +1,14 @@
-
-var express = require('express')
-var router = express.Router();
-var productList = require('../server/products/index.get.json');
-let cart =require('./cartconstant');
-// define the home page route
-router.get('/', function (req, res) {
-   res.render('cart',{cartItems:cart.cartItems})
-    
-});
-// define the home page route
-router.post('/addToCart', function (req, res) {
-    let id = req.body.id;
-    let item =productList.find((product)=>product.id=id);
-    if(item){
-    	cart.addItem(item);
+class Cart {
+    constructor() {
+    	this.items =[];
+        this.item_counter = 0;
     }
-	res.end(JSON.stringify({ 'responseMessage': "Product added to carts successfully"}));
-    
-});
-router.get('/all', function (req, res) {
-	res.end(JSON.stringify({ 'data': productList}));
-    
-});
+    getItems(){
+    	return this.items;
+    }
 
-module.exports = router;
-
-
+    addItem(item) {
+    	this.items.push(item);
+    }
+}
 

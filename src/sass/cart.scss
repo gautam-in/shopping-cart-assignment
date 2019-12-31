@@ -3,6 +3,9 @@
 @mixin padding10{
 	padding: 10px;
 }
+@mixin paddingTop10{
+	padding-top: 10px;
+}
 @mixin padding15{
 	padding: 15px;
 }
@@ -10,6 +13,7 @@
 		font-size:12px;
 }
 .parent-overlay{
+	font-size: 14px;
 	display: none;
 	.bg-overlay{
 	position: fixed;
@@ -37,11 +41,47 @@
 		    height: 50px;
 
 		}
+		.cart-box{
+			background: white;
+			.cart-item{
+				img{
+					width:100%;
+				}
+				.label{
+					font-size:14px;
+					font-weight: 700;
+					margin-top: 20px;
+					
+				}
+				.dot {
+					width: 20px;
+					height: 20px;
+				    background-color: #D10157;
+				    border-radius: 50%;
+				    display: inline-block;
+				    text-align: center;
+				   
+
+				}
+				.item-price{
+					
+				}
+				.qty-ctr{
+					@include paddingTop10;
+				}
+				.price-ctr{
+					@include paddingTop10;
+				    float: right;
+				    text-align: right;
+				    padding-right: 20px;
+				}
+			}
+		}
 		.low-price{
 			@include padding10;
 
 			.low-price-row {
-				padding:10px;
+				@include padding10;
 				background: white;
 				img{
 					    height: 30px;
@@ -61,9 +101,17 @@
 			}
 			.checkout-btn{
 				height: 40px;
+				@include padding10;
 				background: #D10157;
 				color: #ffffff;
 				width: 100%;
+				margin-top: 10px;
+				.checkout{
+					float: left;
+				}
+				.total{
+					float: right;
+				}
 			}
 		}
 

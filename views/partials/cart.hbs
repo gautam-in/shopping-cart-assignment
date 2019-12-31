@@ -1,20 +1,18 @@
 <div class="parent-overlay">
  <div class="bg-overlay"></div>
  <div class="overlay">
- {{#each cartItems}}
- <div>
- {{this}}
- </div>
- {{/each}}
  	<div class="header">My Cart(1 item)
  	<span onclick="closeCart()">x</span></div>
+ 	<div class="cart-box">
+ 	</div>
  	<div class="row low-price">
  	<div class="low-price-row"><img src="/static/images/lowest-price.png"/><span class="anywhere">You won't find it cheaper anywhere</span></div>
  	</div>
  	<div class="footer">
  		 <p class="promo">Promo code can be applied on
             payment page</p>
-            <button class="checkout-btn">Proceed to Checkout</button>
+            <button class="checkout-btn"><span class="checkout">Proceed to Checkout </span>
+            <span id="totalprice" class="total"></span></button>
  	</div>
   </div>
  </div>
