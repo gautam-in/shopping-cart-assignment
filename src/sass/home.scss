@@ -1,45 +1,33 @@
 @import url('https://fonts.googleapis.com/css?family=Dosis:400,600,700');
-@import "colors";
-
-@media screen and (max-width: 1200px) {
- .row {
- 	padding: 0% 2%;
- }
-}
-* {
-	box-sizing: border-box;
-	padding:0;
-	margin:0;
-}
-body {
-	background: white;
-	font-size: 20px;
-	font-family: Dosis;
-}
-.row {
-	max-width:1140px;
-	margin:0 auto;
-}
-
-@import "header";
+@import "variables";
 
 .category-block{
-	margin-top:20px;
+	padding: 4% 2%;
 	box-shadow: 0 6px 6px -7px grey;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+   @media screen and (min-width: $breakpoint-phone) {
+    padding: 0% 2%;
+   }
+    @media screen and (min-width: $breakpoint-tablet-potrait) {
+    padding: 0% 1%;
+   }
 	.img-block{
 		text-align: center;
 		.category-img{
-			max-width:50%;
-			height:100px;
+      width: 70%;
+      height: auto;
+      @media screen and (min-width: $breakpoint-phone) {
+			 max-width:50%;
+			 height:auto;
+      }
 		}
 	}
 	.desc-block{
-		display: flex;
-	    flex-direction: column;
-	    align-items: center;
 
 	    .category-title{
-			font-weight: 700;
+			   font-weight: 700;
 		    letter-spacing: -1px;
 		    font-size: 18px;
 		}
@@ -63,7 +51,14 @@ img {vertical-align: middle;}
 
 /* Slideshow container */
 .slideshow-container {
-  max-width: 55%;
+   max-width: 100%;
+   @media screen and (min-width: $breakpoint-small-phone) {
+   max-width: 70%;
+   }
+   @media screen and (min-width: $breakpoint-tablet-potrait) {
+   max-width: 55%;
+   }
+
   position: relative;
   margin: auto;
   img {
@@ -87,6 +82,11 @@ img {vertical-align: middle;}
   user-select: none;
   background-color: rgba(0,0,0,0.8);
   opacity: .2;
+  display: none;
+  @media screen and (min-width: $breakpoint-phone) {
+    display: block;
+  }
+
 }
 
 /* Position the "next button" to the right */
@@ -144,5 +144,3 @@ img {vertical-align: middle;}
   .prev, .next,.text {font-size: 11px}
 }
 
-
-@import "footer";

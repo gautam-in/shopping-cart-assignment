@@ -1,3 +1,5 @@
+@import "variables";
+
 header {
 	border-bottom: solid 1px #ececec;
 	box-shadow: 1px 1px #f0f0f0 !important;
@@ -7,10 +9,15 @@ header {
 
 	}
 	.logo {
-		height:70px;
-		width:auto;
+		height:auto;
+		width:100%;
 		float: left;
 		margin: 10px 0px;
+		@media screen and (min-width: $breakpoint-phone) {
+			padding: 0% 2%;
+			height: 70px;
+			width: auto;
+		}
 
 	}
 

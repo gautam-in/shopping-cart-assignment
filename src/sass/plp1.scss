@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css?family=Dosis:400,600,700');
+@import "variables";
+
+
+.parent-ctr{
+	background: $bgColor;
+	.category-bg{
+			color: #A6A6A6;
+			padding-left: 10px;
+			border-bottom:solid 1px #A6A6A;
+	}
+	.grey{
+		background: black;
+	}
+	
+	.product-container{
+		background: white;
+
+		.name {
+			font-size:12px;
+			font-weight: 600;
+		}
+
+		img {
+			height:150px;
+		}
+		.desc,.price,.btn-buy{
+			font-size:10px;
+		}
+		.desc{
+			background: $bgColor;
+			margin-top: 10px;
+		}
+		.product{
+			padding:5px;
+		}
+		.price-ctr{
+			margin-top: 10px;
+			.btn-box{
+				display: flex;
+				.btn-buy{
+				background: $redBg;
+				color: $redColor;
+				padding: 5px;
+				}
+
+			}
+		}
+
+		}
+}
+
+

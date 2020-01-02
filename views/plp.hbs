@@ -1,43 +1,23 @@
-{{#each cartItems}}
-{{this}}
-{{/each}}
-	<div class="row parent-ctr">
-		<div class="col span-2-of-10">
-					{{#each categories}}
-					<div class="row category-bg {{this.id}}" onclick="selectCategory('{{this.id}}')">
-						{{this.name}}
-					</div>	
-					{{/each}}
-		</div>
-		<div class="col span-8-of-10 product-container">
-			<div class="row">
-			{{#foreach products}}
-				{{#if $first}}
-					<div class="col span-1-of-4 product">
-						<div class="name">{{this.name}}</div>
-						<img src={{this.imageURL}}>
-						<div class="desc">{{this.description}}</div>
-						<div class="price-ctr">
-						<div class="col span-1-of-2 price">MRP{{this.price}}</div>
-						<div class="col span-1-of-2 btn-box "><button type="button" class="btn-buy">Buy now</button></div>
-						</div>
-					</div>
-
-
-					</div><div class="row">
-
-				{{else}}
-				<div class="col span-1-of-4 product">
-					<div class="name">{{this.name}}</div>
-					<img src={{this.imageURL}}>
-					<div class="desc">{{description}}</div>
-					<div class="price-ctr">
-						<div class="col span-1-of-2 price">MRP{{this.price}}</div>
-						<div class="col span-1-of-2 btn-box"><button type="button" class="btn-buy" onclick="buy('{{this.id}}', 'add')">Buy now</button></div>
-					</div>
+<section class="parent-ctr">
+   <!--<div class="col category-wrapper">
+				{{#each categories}}
+				<div class="row category-bg {{this.id}}" onclick="selectCategory('{{this.id}}')">
+					{{this.name}}
 				</div>	
-				{{/if}}
-			{{/foreach}}
-		</div>
-	</div>
-	</div>
+				{{/each}}
+	</div>-->
+    <div class="product-wrapper">
+        {{#each products}}
+        	<div class="product">
+        		<div class="name">{{this.name}}</div>
+				<div class="img-holder">
+					<div class="img-ctr col"><img src={{this.imageURL}}></div>
+					<div class="desc-ctr col">
+						<div class="desc">{{this.description}}</div>
+						<div class="btn-box"><button type="button" class="btn-buy">Buy now @ MRP{{this.price}}</button></div>
+					</div>
+				</div>
+        	</div>
+        {{/each}}
+    </div>
+</section>

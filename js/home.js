@@ -28,7 +28,8 @@ function showSlides(n) {
   dots[slideIndex-1].className += " active";
 }
 setTimeout(function(){
-  //showSlides(1);
+  let address = window.location.href;
+  showSlides(1);
 })
 
 function selectCategory(id){

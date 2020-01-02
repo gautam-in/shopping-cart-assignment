@@ -1,23 +1,58 @@
 @import url("https://fonts.googleapis.com/css?family=Dosis:400,600,700");
-@media screen and (max-width: 1200px) {
-  .row {
-    padding: 0% 2%;
-  }
-}
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-}
-
-body {
-  background: white;
-  font-size: 20px;
-  font-family: Dosis;
-}
-
 .parent-ctr {
   background: #eeeeee;
+}
+.parent-ctr .category-wrapper {
+  width: 10%;
+}
+.parent-ctr .product-wrapper {
+  width: 100%;
+  background: white;
+}
+@media screen and (min-width: 1024px) {
+  .parent-ctr .product-wrapper {
+    width: 80%;
+  }
+}
+.parent-ctr .product-wrapper .product {
+  padding: 5px;
+  clear: left;
+}
+@media screen and (min-width: 768px) {
+  .parent-ctr .product-wrapper .product {
+    width: 49.2%;
+    clear: none;
+    float: left;
+  }
+}
+.parent-ctr .product-wrapper .product .name {
+  font-size: 12px;
+  font-weight: 600;
+}
+.parent-ctr .product-wrapper .product .img-holder .img-ctr {
+  width: 49.2%;
+}
+.parent-ctr .product-wrapper .product .img-holder .img-ctr img {
+  width: 100%;
+  height: auto;
+}
+.parent-ctr .product-wrapper .product .img-holder .desc-ctr {
+  width: 49.2%;
+}
+.parent-ctr .product-wrapper .product .img-holder .desc-ctr .desc, .parent-ctr .product-wrapper .product .img-holder .desc-ctr .price, .parent-ctr .product-wrapper .product .img-holder .desc-ctr .btn-buy {
+  font-size: 10px;
+}
+.parent-ctr .product-wrapper .product .img-holder .desc-ctr .desc {
+  background: #eeeeee;
+  margin-top: 10px;
+}
+.parent-ctr .product-wrapper .product .img-holder .desc-ctr .btn-box {
+  display: flex;
+}
+.parent-ctr .product-wrapper .product .img-holder .desc-ctr .btn-box .btn-buy {
+  background: #D10157;
+  color: #ffffff;
+  padding: 5px;
 }
 .parent-ctr .category-bg {
   color: #A6A6A6;
@@ -26,102 +61,6 @@ body {
 }
 .parent-ctr .grey {
   background: black;
-}
-.parent-ctr .product-container {
-  background: white;
-}
-.parent-ctr .product-container .name {
-  font-size: 12px;
-  font-weight: 600;
-}
-.parent-ctr .product-container img {
-  height: 150px;
-}
-.parent-ctr .product-container .desc, .parent-ctr .product-container .price, .parent-ctr .product-container .btn-buy {
-  font-size: 10px;
-}
-.parent-ctr .product-container .desc {
-  background: #eeeeee;
-  margin-top: 10px;
-}
-.parent-ctr .product-container .product {
-  padding: 5px;
-}
-.parent-ctr .product-container .price-ctr {
-  margin-top: 10px;
-}
-.parent-ctr .product-container .price-ctr .btn-box {
-  display: flex;
-}
-.parent-ctr .product-container .price-ctr .btn-box .btn-buy {
-  background: #D10157;
-  color: #ffffff;
-  padding: 5px;
-}
-
-.row {
-  max-width: 1140px;
-  margin: 0 auto;
-}
-
-header {
-  border-bottom: solid 1px #ececec;
-  box-shadow: 1px 1px #f0f0f0 !important;
-  position: relative;
-}
-header .nav-bar {
-  position: relative;
-}
-header .logo {
-  height: 70px;
-  width: auto;
-  float: left;
-  margin: 10px 0px;
-}
-header .main-nav {
-  float: right;
-  word-spacing: -2px;
-  font-size: 60%;
-  list-style-type: none;
-}
-header .main-nav li {
-  display: inline-block;
-  margin-left: 10px;
-}
-header .main-nav li a {
-  color: #646E72;
-  text-decoration: none;
-  font-weight: 600;
-}
-header .home-nav {
-  float: left;
-  font-size: 70%;
-  margin-top: 50px;
-  margin-left: 10%;
-  list-style-type: none;
-}
-header .home-nav li {
-  display: inline-block;
-  margin-left: 10px;
-}
-header .home-nav li a {
-  color: #646E72;
-  text-decoration: none;
-  font-weight: 600;
-}
-header .cart-box {
-  background: #eeeeee;
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  padding: 1%;
-}
-header .cart-box .cart {
-  height: 35px;
-  width: auto;
-}
-header .cart-box span {
-  font-size: 70%;
 }
 
 /*# sourceMappingURL=plp.css.map */

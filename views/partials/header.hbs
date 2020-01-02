@@ -1,21 +1,27 @@
 <header>
 		<nav>
 			<div class="row nav-bar">
-				<img src="/static/images/logo.png" class="logo"/>
-				<ul class="main-nav">
-					<li><a href="/login">Sign In</a></li>
-					<li><a href="/register">Register</a></li>
-				</ul>
-				<ul class="home-nav">
-					<li><a href="/">Home</a></li>
-					<li><a href="/plp">Products</a></li>
-				</ul>
+				<div class="col span-1-of-4">
+					<img src="/static/images/logo.png" class="logo"/>
+				</div>
+				<div class="col span-2-of-4">
+					<ul class="home-nav">
+						<li><a href="/">Home</a></li>
+						<li><a href="/plp">Products</a></li>
+					</ul>
+				</div>
+				<div class="col span-1-of-4">
+				<div>
+					<ul class="main-nav">
+						<li><a href="/login">Sign In</a></li>
+						<li><a href="/register">Register</a></li>
+					</ul>
+				</div>
 				<div class="cart-box">
 					<img src="/static/images/cart.svg" alt="Logo" class="cart" onclick="showCart()">
 					<span id="cartNumber">{{itemCounter}} items</span>
 				</div>
-				<div style="clear: both"></div>
 			</div>
-			<div style="clear: both"></div>
+			<div class="clear-all"></div>
 		</nav>
 </header>

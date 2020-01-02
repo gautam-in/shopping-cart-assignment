@@ -1,27 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Dosis:400,600,700');
-@import "colors";
-
-@media screen and (max-width: 1200px) {
- .row {
- 	padding: 0% 2%;
- }
-}
-* {
-	box-sizing: border-box;
-	padding:0;
-	margin:0;
-}
-body {
-	background: white;
-	font-size: 20px;
-	font-family: Dosis;
-}
-.row {
-	max-width:1140px;
-	margin:0 auto;
-}
-
-@import "header";
+@import "variables";
 
 .login-section{
 	padding: 3%;
@@ -63,4 +41,3 @@ body {
 	
 }
 
-@import "footer";

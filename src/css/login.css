@@ -1,86 +1,4 @@
 @import url("https://fonts.googleapis.com/css?family=Dosis:400,600,700");
-@media screen and (max-width: 1200px) {
-  .row {
-    padding: 0% 2%;
-  }
-}
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-}
-
-body {
-  background: white;
-  font-size: 20px;
-  font-family: Dosis;
-}
-
-.row {
-  max-width: 1140px;
-  margin: 0 auto;
-}
-
-header {
-  border-bottom: solid 1px #ececec;
-  box-shadow: 1px 1px #f0f0f0 !important;
-  position: relative;
-}
-header .nav-bar {
-  position: relative;
-}
-header .logo {
-  height: 70px;
-  width: auto;
-  float: left;
-  margin: 10px 0px;
-}
-header .main-nav {
-  float: right;
-  word-spacing: -2px;
-  font-size: 60%;
-  list-style-type: none;
-}
-header .main-nav li {
-  display: inline-block;
-  margin-left: 10px;
-}
-header .main-nav li a {
-  color: #646E72;
-  text-decoration: none;
-  font-weight: 600;
-}
-header .home-nav {
-  float: left;
-  font-size: 70%;
-  margin-top: 50px;
-  margin-left: 10%;
-  list-style-type: none;
-}
-header .home-nav li {
-  display: inline-block;
-  margin-left: 10px;
-}
-header .home-nav li a {
-  color: #646E72;
-  text-decoration: none;
-  font-weight: 600;
-}
-header .cart-box {
-  background: #eeeeee;
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  padding: 1%;
-}
-header .cart-box .cart {
-  height: 35px;
-  width: auto;
-}
-header .cart-box span {
-  font-size: 70%;
-}
-
 .login-section {
   padding: 3%;
 }
@@ -116,15 +34,6 @@ header .cart-box span {
   height: 40px;
   background: #D10157;
   color: #ffffff;
-}
-
-footer {
-  background: #eeeeee;
-  padding: 10px;
-}
-footer .copyright {
-  font-weight: 600;
-  font-size: 13px;
 }
 
 /*# sourceMappingURL=login.css.map */
