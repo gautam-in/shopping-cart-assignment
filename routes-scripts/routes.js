@@ -16,7 +16,6 @@ let products = JSON.parse(productObj);
 
 // Homepage
 router.get('/', function(req, res, next) {
-    console.log('home;')
     res.render('features/home/home', {
         title: "shopping cart",
         banners: banners.banners,
@@ -60,12 +59,10 @@ router.get('/product', function(req, res, next) {
 });
 
 router.get('/product/:id', function(req, res, next) {
-    console.log(req.params.id);
     var categoryId = req.params.id;
-
     var ActiveCategories = categories.categoryval.filter(function(category) { return category.enabled });
     var product_cat = products.products.filter(function(products) { return products.category == categoryId });
-    console.log(product_cat);
+
     res.render('features/product/product', {
         categories: ActiveCategories,
         products: product_cat

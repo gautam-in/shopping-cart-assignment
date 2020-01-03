@@ -5,7 +5,7 @@
             </section>
             <section class="signup-form">
                 <h2 class="mobile-view-title">Signup</h2>
-                <form name="form" action="/" onsubmit="return ValidationRegister()">
+                <form name="form" class="form" action="/" onsubmit="return validateRegister()">
 
                     {{> components/molecules/m-input name="fname" placeholder="" label="FirstName" type="text" classname="error-fname"}}
                     {{> components/molecules/m-input name="lname" placeholder="" label="LastName" type="text" classname="error-lname"}}
