@@ -29,7 +29,7 @@ function showSlides(n) {
 }
 setTimeout(function(){
   let address = window.location.href;
-  showSlides(1);
+  //showSlides(1);
 })
 
 function selectCategory(id){
@@ -41,7 +41,7 @@ function selectCategory(id){
 
 }
 
-function buy(id, operation) {
+function buy(id) {
  const url = `http://localhost:5000/addToCart`;
  console.log(id);
   fetch(url, {
