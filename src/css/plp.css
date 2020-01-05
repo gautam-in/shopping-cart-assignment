@@ -24,6 +24,18 @@
   padding: 15px;
 }
 
+.marginTop15 {
+  margin-top: 15px;
+}
+
+.marginTop25 {
+  margin-top: 25px;
+}
+
+.marginTop50 {
+  margin-top: 50px;
+}
+
 .fontDecorate {
   font-size: 12px;
 }

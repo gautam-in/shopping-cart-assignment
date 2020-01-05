@@ -50,18 +50,18 @@ header .home-nav li a {
   text-decoration: none;
   font-weight: 600;
 }
-header .cart-box {
+header .cart-header-box {
   background: #eeeeee;
   position: absolute;
   right: 0;
   bottom: 0;
   padding: 1%;
 }
-header .cart-box .cart {
+header .cart-header-box .cart {
   height: 35px;
   width: auto;
 }
-header .cart-box span {
+header .cart-header-box span {
   font-size: 70%;
 }
 

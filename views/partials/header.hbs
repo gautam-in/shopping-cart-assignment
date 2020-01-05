@@ -4,12 +4,14 @@
 				<div class="col span-1-of-4">
 					<img src="/static/images/logo.png" class="logo"/>
 				</div>
+
 				<div class="col span-2-of-4">
 					<ul class="home-nav">
 						<li><a href="/">Home</a></li>
 						<li><a href="/plp">Products</a></li>
 					</ul>
 				</div>
+
 				<div class="col span-1-of-4">
 				<div>
 					<ul class="main-nav">
@@ -17,11 +19,15 @@
 						<li><a href="/register">Register</a></li>
 					</ul>
 				</div>
-				<div class="cart-box">
+				<div class="cart-header-box">
 					<img src="/static/images/cart.svg" alt="Logo" class="cart" onclick="showCart()">
-					<span id="cartNumber">{{itemCounter}} items</span>
+					<div id="parent">
+					<span class="cartNumber">{{cartItems}} items</span>
+					</div>
 				</div>
-			</div>
+			    </div>
+
+			 </div>   
 			<div class="clear-all"></div>
 		</nav>
 </header>

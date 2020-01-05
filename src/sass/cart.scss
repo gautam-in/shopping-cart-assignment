@@ -1,4 +1,5 @@
 @import "variables";
+@import "common";
 
 @mixin padding10{
 	padding: 10px;
@@ -12,12 +13,22 @@
 @mixin fontDecorate{
 		font-size:12px;
 }
+@mixin show-md{
+		@media screen and (min-width:$breakpoint-phone) {
+			display: block;
+		}
+}
+@mixin show-lap{
+		@media screen and (min-width:$lap) {
+			display: none;
+		}
+}
 .parent-overlay{
 	font-size: 14px;
 	display: none;
 	.bg-overlay{
 	position: fixed;
-    background: gray;
+    background: $bgColor;
     width: 100%;
     height: 100%;
     z-index: 10;
@@ -25,27 +36,44 @@
 	}
 	.overlay{
 		position: fixed;
-	    top: 10%;
-	    width: 30%;
-	    background: #eeeeee;
-	    left: 50%;
-	    height: auto;
+	    width: 100%;
+	    background: $bgColor;
+	    height: 100%;
 	    z-index: 200;
+	    overflow:auto;
+	    @media screen and (min-width:$lap) {
+			top: 10%;
+		    width: 30%;
+		    left: 50%;
+		     height: 600px;
+	    	overflow:auto;
+		    .cart-header {
+		      display:none;
+		    }
+
+		}
 
 		.header{
-			background: black;
-			color: white;
-			@include padding15;
+			background: $whiteColor;
+			color: $blackColor;
 		    font-size: 15px;
 		    font-weight: 700;
 		    height: 50px;
+		    @media screen and (min-width:$lap) {
+		    	background: $blackColor;
+				color: $whiteColor;
+		    }
+		    .close{
+		    float:right;
+		    }
 
 		}
 		.cart-box{
-			background: white;
+			background: $whiteColor;
 			.cart-item{
 				img{
-					width:100%;
+					width:60%;
+					height:auto;
 				}
 				.label{
 					font-size:14px;
@@ -63,12 +91,6 @@
 				   
 
 				}
-				.item-price{
-					
-				}
-				.qty-ctr{
-					@include paddingTop10;
-				}
 				.price-ctr{
 					@include paddingTop10;
 				    float: right;
@@ -84,7 +106,7 @@
 				@include padding10;
 				background: white;
 				img{
-					    height: 30px;
+				    height: 30px;
 				}
 				.anywhere {
 					@include fontDecorate;
@@ -93,8 +115,11 @@
 			}
 		}
 		.footer{
-			background: white;
+			background: $whiteColor;
 			@include padding10;
+			position:absolute;
+			bottom:0px;
+			width:100%;
 			.promo{
 				@include fontDecorate;
 	    		text-align: center;

@@ -4,6 +4,7 @@ let categoryId,prevId;
 var itemCount =0;
 var itemList = [];
 var itemsinCart =[];
+var myDiv;
 function plusSlides(n) {
   showSlides(slideIndex += n);
 }
@@ -53,22 +54,34 @@ function buy(id) {
   body: JSON.stringify({'id':id}),
   }).then(function(response) {
     if(response.status === 200) {
-      itemCount++;
-      document.getElementById("cartNumber").innerHTML=`${itemCount} items`;
+      itemCount=itemCount+1;
       localStorage.setItem("itemCount",itemCount);
-      if(!itemList.length){
-         itemList.push({'qty':1,'id':id});
-       } else {
-         itemList.forEach((item, i) => { 
-          if (item.id == id) {
-            item.qty+=1;
-          }else {
-            itemList.push({'qty':1,'id':id});
-          }
-        });
-       }
-     
-      localStorage.setItem("itemList",JSON.stringify(itemList));
+      document.getElementsByClassName("cartNumber")[1].innerHTML=`${itemCount} items` ;
+      const url = window.location.origin + "/updateCart";
+        fetch(url, {
+        method: 'POST',
+         headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+          },
+        body: JSON.stringify({'cartCount':itemCount}),
+        }).then((resp)=>{
+          if(!itemList.length){
+             itemList.push({'qty':1,'id':id});
+           } else {
+             itemList.forEach((item, i) => { 
+              if (item.id == id) {
+                item.qty+=1;
+              }else {
+                itemList.push({'qty':1,'id':id});
+              }
+            });
+           }
+          localStorage.setItem("itemList",JSON.stringify(itemList));
+        })
+
+
+      
     }
   });
  
@@ -83,12 +96,15 @@ xmlhttp.onreadystatechange = function() {
 xmlhttp.open("GET", "../server/products/index.get.json", true);
 xmlhttp.send();
 
-function increment(event,flag){
+function update(event,flag){
   let id =event.classList[1].split("-")[1]
   const index =itemsinCart.findIndex(item=>item.id ==id);
   itemsinCart[index].qty=flag?itemsinCart[index].qty+1:itemsinCart[index].qty-1;
   document.getElementById(`item-price-${id}`).innerHTML = itemsinCart[index].qty;
   document.getElementById(`item-total-${id}`).innerHTML = `Rs.${itemsinCart[index].qty* itemsinCart[index].price}`;
+  if( itemsinCart[index].qty === 0){
+    itemsinCart.splice(index,1);
+  }
   calcSum();
 }
 
@@ -101,7 +117,7 @@ let totalprice = itemsinCart.reduce((sum,x)=>{
 
 }
 function showCart(){
-  
+  itemsinCart = [];
   let itemList =JSON.parse(localStorage.getItem("itemList"));
    let products =JSON.parse(localStorage.getItem("products"));
    itemList.forEach(item=>{
@@ -118,10 +134,10 @@ function showCart(){
                 <div class="col span-9-of-12">
                   <div class="label"> ${itemsinCart[i].name}</div>
                     <div class="row">
-                      <div class="col span 1-of-2 qty-ctr">
-                          <span class="dot id-${item.id}" id=${item.id} onclick="increment(event.target,true)">+</span>
+                      <div class="col span 1-of-2 qty-ctr paddingTop10">
+                          <span class="dot id-${item.id}" id=${item.id} onclick="update(event.target,true)">+</span>
                           <span class="item-price" id="item-price-${item.id}">${itemsinCart[i].qty}</span>
-                          <span class="dot  id-${item.id}" onclick="dec(event.target,false)">-</span>
+                          <span class="dot  id-${item.id}" onclick="update(event.target,false)">-</span>
                           <span>x</span>
                           <span>Rs.${itemsinCart[i].price}</span>
                       </div>
@@ -146,16 +162,4 @@ item.qty-=1;
 }
 function closeCart(){
   document.getElementsByClassName("parent-overlay")[0].style.display ='none';
-}
-// Using the location.hash property to change the anchor part
-function changePart() {
-  location.hash = "part5";
-  var x = location.hash;
-  document.getElementById("demo").innerHTML = "The anchor part is now: " + x;
-}
-
-window.onhashchange = myFunction;
-
-function myFunction() {
-  alert("The anchor part has changed!");
 }

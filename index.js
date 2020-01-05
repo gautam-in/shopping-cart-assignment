@@ -6,7 +6,8 @@ var exphbs = require('express-handlebars');
 var bodyParser = require('body-parser');
 const app = express()
 const port = 3000
-let categoryId,prevId; 
+let categoryId,prevId;
+let cartCount = 0; 
 app.set('views', path.join(__dirname,'views'));
 app.use( express.static( 'src'));
 app.use(express.static('server'));
@@ -37,7 +38,10 @@ app.engine('hbs',exphbs({extname:'hbs',defaultLayout:'main',
 		        item.$last  = index === arr.length-1;
 		        return options.fn(item);
 		    }).join('');
-		}
+		},
+	      year: function() {
+	        return cartCount;
+	      }
 	}
 
 }));
@@ -71,21 +75,27 @@ products = getConfig('server/products/index.get.json');
 
 app.get('/', (req, res) =>{
 	console.log(cartObj.cartItems);
-	res.render('home',{categories:categories, banners:banners,cartItems:cartObj.cartItems})
+	res.render('home',{categories:categories, banners:banners,cartItems:cartCount})
 });
 app.get('/login', (req, res) =>{
-	res.render('login')
+	res.render('login',{cartItems:cartCount})
 });
-app.get('/register', (req, res) => res.render('register'));
+app.get('/register', (req, res) => res.render('register',{cartItems:cartCount}));
 
 app.get('/plp', (req, res) =>{
 	console.log(cartObj.cartItems);
-	res.render('plp',{categories:categories, products:products,cartItems:cartObj.cartItems});
+	res.render('plp',{categories:categories, products:products,cartItems:cartCount});
 });
 app.get('/plp/:id', function (req, res) {
     let categoryId = req.params.id;
 	let product_cat = products.filter((product) => product.category === categoryId);
-	res.render('plp', { products: product_cat, categories:categories});
+	res.render('plp', { products: product_cat, categories:categories,cartItems:cartCount});
+    
+});
+app.post('/updateCart', function (req, res) {
+    cartCount = req.body.cartCount;
+    console.log(cartCount);
+	res.end(JSON.stringify({ 'responseMessage': cartCount}));
     
 });
 
