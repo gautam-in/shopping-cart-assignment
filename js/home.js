@@ -5,6 +5,7 @@ var itemCount =0;
 var itemList = [];
 var itemsinCart =[];
 var myDiv;
+let cartUpdated;
 function plusSlides(n) {
   showSlides(slideIndex += n);
 }
@@ -69,14 +70,14 @@ function buy(id) {
           if(!itemList.length){
              itemList.push({'qty':1,'id':id});
            } else {
-             itemList.forEach((item, i) => { 
-              if (item.id == id) {
-                item.qty+=1;
-              }else {
-                itemList.push({'qty':1,'id':id});
-              }
-            });
+            let x = itemList.findIndex(x=>x.id == id)
+            if(x !== -1){
+              itemList[x].qty+=1
+            }else {
+              itemList.push({'qty':1,'id':id});
+            }
            }
+           cartUpdated = true;
           localStorage.setItem("itemList",JSON.stringify(itemList));
         })
 
@@ -105,6 +106,7 @@ function update(event,flag){
   if( itemsinCart[index].qty === 0){
     itemsinCart.splice(index,1);
   }
+  renderCart(itemsinCart);
   calcSum();
 }
 
@@ -117,8 +119,8 @@ let totalprice = itemsinCart.reduce((sum,x)=>{
 
 }
 function showCart(){
-  itemsinCart = [];
-  let itemList =JSON.parse(localStorage.getItem("itemList"));
+  if(cartUpdated){
+    let itemList =JSON.parse(localStorage.getItem("itemList"));
    let products =JSON.parse(localStorage.getItem("products"));
    itemList.forEach(item=>{
     let product =products.find(product=>product.id == item.id);
@@ -148,18 +150,37 @@ function showCart(){
               </div>`;
    }
    document.getElementsByClassName("cart-box")[0].innerHTML =html;
-   calcSum();
+   calcSum();  
+  }
    document.getElementsByClassName("parent-overlay")[0].style.display ='block';
-    
+   cartUpdated = false; 
    
 }
+function renderCart(itemsinCart){
+  let html ='';
+  for(let i=0;i<itemsinCart.length;i++) {
+    let item = itemsinCart[i];
+      html+=`<div class="row cart-item">
+                <div class="col span-3-of-12"><img src="${itemsinCart[i].imageURL}"></div>
+                <div class="col span-9-of-12">
+                  <div class="label"> ${itemsinCart[i].name}</div>
+                    <div class="row">
+                      <div class="col span 1-of-2 qty-ctr paddingTop10">
+                          <span class="dot id-${item.id}" id=${item.id} onclick="update(event.target,true)">+</span>
+                          <span class="item-price" id="item-price-${item.id}">${itemsinCart[i].qty}</span>
+                          <span class="dot  id-${item.id}" onclick="update(event.target,false)">-</span>
+                          <span>x</span>
+                          <span>Rs.${itemsinCart[i].price}</span>
+                      </div>
+                      <div class="col span-1-of-2 price-ctr" id="item-total-${item.id}">Rs.${itemsinCart[i].price*itemsinCart[i].qty}
+                      </div>
+                    </div>
+                </div>
+              </div>`;
+   }
+   document.getElementsByClassName("cart-box")[0].innerHTML =html;
+}
 
-function inc(ele){
- console.log(ele);
-}
-function dec(item){
-item.qty-=1;
-}
 function closeCart(){
   document.getElementsByClassName("parent-overlay")[0].style.display ='none';
 }
