@@ -1,6 +1,7 @@
 @import "variables";
 @import "common";
 
+
 @mixin padding10{
 	padding: 10px;
 }
@@ -28,7 +29,7 @@
 	display: none;
 	.bg-overlay{
 	position: fixed;
-    background: $bgColor;
+    background: $darkGrayColor;
     width: 100%;
     height: 100%;
     z-index: 10;
@@ -41,15 +42,21 @@
 	    height: 100%;
 	    z-index: 200;
 	    overflow:auto;
+	    	 .footer{
+				width:100%;
+			}
 	    @media screen and (min-width:$lap) {
 			top: 10%;
 		    width: 30%;
 		    left: 50%;
-		     height: 600px;
+		    height: 600px;
 	    	overflow:auto;
 		    .cart-header {
 		      display:none;
 		    }
+		    .footer{
+				width:30%;
+			}
 
 		}
 
@@ -117,9 +124,8 @@
 		.footer{
 			background: $whiteColor;
 			@include padding10;
-			position:absolute;
+			position:fixed;
 			bottom:0px;
-			width:100%;
 			.promo{
 				@include fontDecorate;
 	    		text-align: center;

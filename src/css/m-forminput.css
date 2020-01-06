@@ -1,0 +1,11 @@
+.form-group {
+  width: 65%; }
+  .form-group input {
+    border: none;
+    width: 100%;
+    border-bottom: solid 2px #5fc8d0; }
+  .form-group label {
+    margin-top: 1%;
+    font-weight: 600;
+    font-size: 11px;
+    color: #5fc8d0; }

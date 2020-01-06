@@ -56,8 +56,7 @@ function buy(id) {
   }).then(function(response) {
     if(response.status === 200) {
       itemCount=itemCount+1;
-      localStorage.setItem("itemCount",itemCount);
-      document.getElementsByClassName("cartNumber")[1].innerHTML=`${itemCount} items` ;
+      setCount();
       const url = window.location.origin + "/updateCart";
         fetch(url, {
         method: 'POST',
@@ -78,6 +77,8 @@ function buy(id) {
             }
            }
            cartUpdated = true;
+           itemsinCart =[];
+           
           localStorage.setItem("itemList",JSON.stringify(itemList));
         })
 
@@ -101,6 +102,8 @@ function update(event,flag){
   let id =event.classList[1].split("-")[1]
   const index =itemsinCart.findIndex(item=>item.id ==id);
   itemsinCart[index].qty=flag?itemsinCart[index].qty+1:itemsinCart[index].qty-1;
+  itemCount= flag?itemCount+1:itemCount-1;
+  setCount();
   document.getElementById(`item-price-${id}`).innerHTML = itemsinCart[index].qty;
   document.getElementById(`item-total-${id}`).innerHTML = `Rs.${itemsinCart[index].qty* itemsinCart[index].price}`;
   if( itemsinCart[index].qty === 0){
@@ -120,6 +123,7 @@ let totalprice = itemsinCart.reduce((sum,x)=>{
 }
 function showCart(){
   if(cartUpdated){
+
     let itemList =JSON.parse(localStorage.getItem("itemList"));
    let products =JSON.parse(localStorage.getItem("products"));
    itemList.forEach(item=>{
@@ -154,7 +158,7 @@ function showCart(){
   }
    document.getElementsByClassName("parent-overlay")[0].style.display ='block';
    cartUpdated = false; 
-   
+
 }
 function renderCart(itemsinCart){
   let html ='';
@@ -179,6 +183,11 @@ function renderCart(itemsinCart){
               </div>`;
    }
    document.getElementsByClassName("cart-box")[0].innerHTML =html;
+}
+
+function setCount(){
+  document.getElementsByClassName("cartNumber")[1].innerHTML=`${itemCount} items` ;
+       document.getElementsByClassName("cartNumber")[0].innerHTML=`${itemCount} items` ;
 }
 
 function closeCart(){

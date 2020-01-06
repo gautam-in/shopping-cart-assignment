@@ -4,7 +4,6 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 	<title>Shopping Cart</title>
 	<link rel="stylesheet" href="/css/ngrid.css">
-	<link rel="stylesheet" href="/css/common.css">
 	<link rel="stylesheet" href="/css/main.css">
 	<link rel="stylesheet" href="/css/cart.css">
 	<link rel="stylesheet" href="/css/plp.css">
@@ -15,14 +14,10 @@
 	<link rel="stylesheet" href="/css/footer.css">
 </head>
 <body>
-	
-	{{>cart}}
-	
-	{{> header this}}
-
+	{{> organisms/header}}
     {{{body}}}
     
-    {{> footer}}
+ 	{{> organisms/footer}}
     <script src="/js/home.js"></script>
 	<script src="/js/cart.js"></script>
 </body>

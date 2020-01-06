@@ -1,68 +1,52 @@
 header {
   border-bottom: solid 1px #ececec;
   box-shadow: 1px 1px #f0f0f0 !important;
-  position: relative;
-}
-header .nav-bar {
-  position: relative;
-}
-header .logo {
-  height: auto;
-  width: 100%;
-  float: left;
-  margin: 10px 0px;
-}
-@media screen and (min-width: 768px) {
+  position: relative; }
+  header .nav-bar {
+    position: relative; }
   header .logo {
-    padding: 0% 2%;
-    height: 70px;
-    width: auto;
-  }
-}
-header .main-nav {
-  float: right;
-  word-spacing: -2px;
-  font-size: 60%;
-  list-style-type: none;
-}
-header .main-nav li {
-  display: inline-block;
-  margin-left: 10px;
-}
-header .main-nav li a {
-  color: #646E72;
-  text-decoration: none;
-  font-weight: 600;
-}
-header .home-nav {
-  float: left;
-  font-size: 70%;
-  margin-top: 50px;
-  margin-left: 10%;
-  list-style-type: none;
-}
-header .home-nav li {
-  display: inline-block;
-  margin-left: 10px;
-}
-header .home-nav li a {
-  color: #646E72;
-  text-decoration: none;
-  font-weight: 600;
-}
-header .cart-header-box {
-  background: #eeeeee;
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  padding: 1%;
-}
-header .cart-header-box .cart {
-  height: 35px;
-  width: auto;
-}
-header .cart-header-box span {
-  font-size: 70%;
-}
-
-/*# sourceMappingURL=header.css.map */
+    height: auto;
+    width: 100%;
+    float: left;
+    margin: 10px 0px; }
+    @media screen and (min-width: 768px) {
+      header .logo {
+        padding: 0% 2%;
+        height: 70px;
+        width: auto; } }
+  header .main-nav {
+    float: right;
+    word-spacing: -2px;
+    font-size: 60%;
+    list-style-type: none; }
+    header .main-nav li {
+      display: inline-block;
+      margin-left: 10px; }
+      header .main-nav li a {
+        color: #646E72;
+        text-decoration: none;
+        font-weight: 600; }
+  header .home-nav {
+    float: left;
+    font-size: 70%;
+    margin-top: 50px;
+    margin-left: 10%;
+    list-style-type: none; }
+    header .home-nav li {
+      display: inline-block;
+      margin-left: 10px; }
+      header .home-nav li a {
+        color: #646E72;
+        text-decoration: none;
+        font-weight: 600; }
+  header .cart-header-box {
+    background: #eeeeee;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    padding: 1%; }
+    header .cart-header-box .cart {
+      height: 35px;
+      width: auto; }
+    header .cart-header-box span {
+      font-size: 70%; }

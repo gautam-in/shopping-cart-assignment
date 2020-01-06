@@ -1,6 +1,6 @@
 const express = require('express')
 let cartObj =require('./js/cartconstant');
-let cart =require('./js/cart1');
+//let cart =require('./js/cart1');
 var path =require('path')
 var exphbs = require('express-handlebars'); 
 var bodyParser = require('body-parser');
@@ -15,8 +15,9 @@ app.use(express.static('js'));
 app.use(express.static('./'));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+
 app.engine('hbs',exphbs({extname:'hbs',defaultLayout:'main',
-	 partialsDir: __dirname+'/views/partials/',
+	partialsDir: __dirname+'/views/components/',
     layoutDir: __dirname+'/views/layouts/',
 	helpers:{
 		ifEven:function(value , options){
@@ -74,11 +75,10 @@ products = getConfig('server/products/index.get.json');
 
 
 app.get('/', (req, res) =>{
-	console.log(cartObj.cartItems);
 	res.render('home',{categories:categories, banners:banners,cartItems:cartCount})
 });
 app.get('/login', (req, res) =>{
-	res.render('login',{cartItems:cartCount})
+	res.render('features/login/login',{cartItems:cartCount})
 });
 app.get('/register', (req, res) => res.render('register',{cartItems:cartCount}));
 
@@ -94,12 +94,11 @@ app.get('/plp/:id', function (req, res) {
 });
 app.post('/updateCart', function (req, res) {
     cartCount = req.body.cartCount;
-    console.log(cartCount);
 	res.end(JSON.stringify({ 'responseMessage': cartCount}));
     
 });
 
-app.use('/cart', cart)
+//app.use('/cart', cart)
 
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))
