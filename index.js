@@ -11,7 +11,7 @@ let cartCount = 0;
 app.set('views', path.join(__dirname,'views'));
 app.use( express.static( 'src'));
 app.use(express.static('server'));
-app.use(express.static('js'));
+app.use(express.static('views'));
 app.use(express.static('./'));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
@@ -42,7 +42,17 @@ app.engine('hbs',exphbs({extname:'hbs',defaultLayout:'main',
 		},
 	      year: function() {
 	        return cartCount;
+	      },
+	      concat:function(){
+	      	 var outStr = '';
+            for(var arg in arguments){
+                if(typeof arguments[arg]!='object'){
+                    outStr += arguments[arg];
+                }
+            }
+            return outStr;
 	      }
+	     // concat:(...strs) =>  strs.filter( arg => typeof arg !== 'object' ).join('')
 	}
 
 }));
@@ -75,23 +85,23 @@ products = getConfig('server/products/index.get.json');
 
 
 app.get('/', (req, res) =>{
-	res.render('home',{categories:categories, banners:banners,cartItems:cartCount})
+	res.render('features/home/home',{categories:categories, banners:banners,cartItems:cartCount})
 });
 app.get('/login', (req, res) =>{
 	res.render('features/login/login',{cartItems:cartCount})
 });
-app.get('/register', (req, res) => res.render('register',{cartItems:cartCount}));
+app.get('/register', (req, res) => res.render('features/register/register',{cartItems:cartCount}));
 
 app.get('/plp', (req, res) =>{
 	console.log(cartObj.cartItems);
-	res.render('plp',{categories:categories, products:products,cartItems:cartCount});
+	res.render('features/products/products',{categories:categories, products:products,cartItems:cartCount});
 });
-app.get('/plp/:id', function (req, res) {
+/*app.get('/plp/:id', function (req, res) {
     let categoryId = req.params.id;
 	let product_cat = products.filter((product) => product.category === categoryId);
 	res.render('plp', { products: product_cat, categories:categories,cartItems:cartCount});
     
-});
+});*/
 app.post('/updateCart', function (req, res) {
     cartCount = req.body.cartCount;
 	res.end(JSON.stringify({ 'responseMessage': cartCount}));

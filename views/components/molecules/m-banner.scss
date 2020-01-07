@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css?family=Dosis:400,600,700');
+@import "../../../src/sass/variables";
+@import "../../../src/sass/common";
+.category-block{
+  padding: 4% 2%;
+  box-shadow: 0 6px 6px -7px grey;
+   @media screen and (min-width: $tab) {
+    padding: 0% 2%;
+   }
+    @media screen and (min-width: $lap) {
+    padding: 0% 1%;
+   }
+	.img-block{
+	  text-align: center;
+	  @import "../atoms/a-img";
+	  @media screen and (min-width: $tab) {
+	  	.category-img{
+		 max-width:50%;
+		 height:auto;
+		}
+      }
+		/*.category-img{
+      width: 70%;
+      height: auto;
+      @media screen and (min-width: $breakpoint-phone) {
+			 max-width:50%;
+			 height:auto;
+      }
+		}*/
+	}
+
+	.desc-block{
+	    .category-title{
+			 font-weight: 700;
+		     letter-spacing: -1px;
+		     font-size: .7rem;
+		      @media screen and (min-width: $lap) {
+    			font-size: 1rem;
+   			  }
+		}
+
+		.category-desc{
+			font-size: .6rem;
+			 @media screen and (min-width: $lap) {
+    			font-size: .8rem;
+   			  }
+		}
+
+		.category-btn{
+		    padding: 5px;
+		    font-size: .6rem;
+		    @import "../atoms/a-button";
+		}
+	}
+}
+.category-block:nth-child(even){
+	.img-block{
+		float: right;
+
+	}
+}

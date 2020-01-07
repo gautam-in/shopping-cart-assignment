@@ -1,0 +1,17 @@
+<div class="slideshow-container">
+	<div id="banners-container">
+		{{#each banners as |value key|}}
+			<div class="mySlides fade">
+			 {{> atoms/a-img imageUrl=value.bannerImageUrl }}
+			</div>
+		{{/each}}
+	</div>
+	<a class="prev" onclick="plusSlides(-1)">Prev</a>
+	<a class="next" onclick="plusSlides(1)">Next</a>
+</div>
+<br/>
+<div class="textCenter" id="carousal-dot">
+			{{#each banners  as |value key|}}
+				 <span class="dot" onclick="currentSlide({{@index}})"></span> 
+			{{/each}}
+</div>

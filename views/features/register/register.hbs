@@ -1,31 +1,16 @@
 <section class="row register-section">
 	<div class="col span-1-of-2 register-text">
-		<h1>Sign Up</h1>
-		<p>We do not share your personal details with anyone.
+	 	{{> atoms/a-header text="Sign Up"}}
+		{{> atoms/a-desc text="We do not share your personal details with anyone."}}
 	</div>
 	<div class="col span-1-of-2">
 		<form class="register-form">
-		  <div class="input-area">
-			  <label for="first">First Name</label><br>
-			  <input type="text" name="first" placeholder="First Name" class="input-cls"><br><br>
-		  </div>
-		  <div class="input-area">
-		  	<label for="last">Last Name</label><br>
-		  	<input type="text" name="last" placeholder="Last Name" class="input-cls"><br><br>
-		  </div>
-		  <div class="input-area">
-			  <label for="email">Email</label><br>
-			  <input type="email" name="email" placeholder="Email" class="input-cls"><br><br>
-		  </div>
-		  <div class="input-area">
-		  	<label for="password">Password</label><br>
-		  	<input type="password" name="password" placeholder="Password" class="input-cls"><br><br>
-		  </div>
-		  <div class="input-area">
-			  <label for="passw2">Confirm Password</label><br>
-			  <input type="passw2" name="passw2" placeholder="Confirm Password" class="input-cls"><br><br>
-		  </div>
-		  <button type="button" class="register-btn">Signup</button>
+		 	{{> molecules/m-forminput type="text" name="first" placeholder="First Name" labelText="First Name"}}
+		 	{{> molecules/m-forminput type="text" name="last" placeholder="Last Name" labelText="Last Name"}}
+		 	{{> molecules/m-forminput type="email" name="email" placeholder="Email" labelText="Email"}}
+		 	{{> molecules/m-forminput type="password" name="password" placeholder="Password" labelText="Password"}}
+		 	{{> molecules/m-forminput type="password" name="passw2" placeholder="Confirm Password" labelText="Confirm Password"}}
+		  {{> atoms/a-button class="register-btn" btntext="Signup"}}
 		</form>
 	</div>
 </section>

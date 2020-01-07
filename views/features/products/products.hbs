@@ -1,0 +1,28 @@
+<section class="parent-ctr">
+    <div class="category-wrapper">
+   			<div class="md-screen">
+				{{#each categories}}
+				<div class="row category-bg padding10 {{this.id}}" onclick="selectCategory('{{this.id}}')">
+					<span>{{this.name}}</span>
+				</div>	
+				{{/each}}
+			</div>
+			<div class="sm-screen padding5">
+				<div class="dropdown">
+		    		<button class="dropbtn">Select Categories 
+				      <i class="fa fa-caret-down"></i>
+				    </button>
+				    <div class="dropdown-content">
+				    {{#each categories}}
+				     <a onclick="selectCategory('{{this.id}}')">{{this.name}}</a>
+					{{/each}}
+			    </div>
+			  </div> 
+			</div>
+	</div>
+    <div class="product-wrapper">
+        {{#each products}}
+        {{> molecules/m-product this}}
+        {{/each}}
+    </div>
+</section>

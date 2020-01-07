@@ -1,0 +1,18 @@
+
+@import url('https://fonts.googleapis.com/css?family=Dosis:400,600,700');
+@import "../../../src/sass/variables";
+
+
+.categories-section{
+	@import "../../components/molecules/m-banner";
+
+}
+
+// For carousel
+.mySlides {display: none}
+img {vertical-align: middle;}
+
+/* Slideshow container */
+
+
+@import "../../components/organisms/o-carousel";

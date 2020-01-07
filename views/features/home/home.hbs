@@ -1,0 +1,9 @@
+<section>
+{{> organisms/o-carousel  banners =banners}}
+</section>
+<section class="categories-section">
+			{{#each categories as |value key|}}
+			 {{> molecules/m-banner  imageUrl=value.imageUrl title=value.name description=value.description labelText="Email" btntext=(concat 'Explore ' value.name) }}
+			{{/each}}
+</section>
+	

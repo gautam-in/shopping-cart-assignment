@@ -18,6 +18,9 @@
 .padding15 {
   padding: 15px; }
 
+.marginTop5 {
+  margin-top: 5px; }
+
 .marginTop15 {
   margin-top: 15px; }
 
@@ -32,6 +35,9 @@
 
 .paddingLeft5 {
   padding-left: 5px; }
+
+.textCenter {
+  text-align: center; }
 
 .parent-ctr {
   background: #eeeeee;
@@ -87,108 +93,6 @@
     @media screen and (min-width: 768px) {
       .parent-ctr .product-wrapper {
         width: 80%; } }
-    .parent-ctr .product-wrapper .product {
-      padding: 5px;
-      clear: left; }
-      @media screen and (min-width: 768px) {
-        .parent-ctr .product-wrapper .product {
-          width: 49.2%;
-          clear: none;
-          float: left; } }
-      @media screen and (min-width: 1024px) {
-        .parent-ctr .product-wrapper .product {
-          width: 23.8%;
-          clear: none;
-          float: left; } }
-      .parent-ctr .product-wrapper .product .name {
-        font-size: 12px;
-        font-weight: 600;
-        height: 40px; }
-      .parent-ctr .product-wrapper .product .img-holder .img-ctr {
-        width: 49.2%;
-        text-align: center; }
-        @media screen and (min-width: 1024px) {
-          .parent-ctr .product-wrapper .product .img-holder .img-ctr {
-            width: 100%;
-            clear: none;
-            float: left; } }
-        .parent-ctr .product-wrapper .product .img-holder .img-ctr img {
-          height: 110px;
-          width: auto; }
-          @media screen and (min-width: 1024px) {
-            .parent-ctr .product-wrapper .product .img-holder .img-ctr img {
-              clear: none;
-              float: left; } }
-      .parent-ctr .product-wrapper .product .img-holder .desc-ctr {
-        width: 49.2%; }
-        @media screen and (min-width: 1024px) {
-          .parent-ctr .product-wrapper .product .img-holder .desc-ctr {
-            width: 100%; } }
-        .parent-ctr .product-wrapper .product .img-holder .desc-ctr .desc, .parent-ctr .product-wrapper .product .img-holder .desc-ctr .price, .parent-ctr .product-wrapper .product .img-holder .desc-ctr .btn-buy {
-          font-size: 10px; }
-        .parent-ctr .product-wrapper .product .img-holder .desc-ctr .desc {
-          background: #eeeeee;
-          overflow: hidden; }
-          @media screen and (min-width: 768px) {
-            .parent-ctr .product-wrapper .product .img-holder .desc-ctr .desc {
-              height: 80px; } }
-        .parent-ctr .product-wrapper .product .img-holder .desc-ctr .btn-box {
-          display: flex;
-          display: block; }
-          @media screen and (min-width: 768px) {
-            .parent-ctr .product-wrapper .product .img-holder .desc-ctr .btn-box {
-              display: none; } }
-          @media screen and (min-width: 1024px) {
-            .parent-ctr .product-wrapper .product .img-holder .desc-ctr .btn-box {
-              width: 100%;
-              display: block; } }
-          .parent-ctr .product-wrapper .product .img-holder .desc-ctr .btn-box .btn-buy {
-            background: #D10157;
-            color: #ffffff;
-            padding: 5px; }
-          .parent-ctr .product-wrapper .product .img-holder .desc-ctr .btn-box .price-ctr {
-            width: 50%;
-            float: left;
-            display: none;
-            padding: 5px;
-            font-size: 12px; }
-            @media screen and (min-width: 1024px) {
-              .parent-ctr .product-wrapper .product .img-holder .desc-ctr .btn-box .price-ctr {
-                display: block; } }
-          .parent-ctr .product-wrapper .product .img-holder .desc-ctr .btn-box .btn-ctr {
-            width: 100%;
-            float: left; }
-            @media screen and (min-width: 1024px) {
-              .parent-ctr .product-wrapper .product .img-holder .desc-ctr .btn-box .btn-ctr {
-                width: 50%; }
-                .parent-ctr .product-wrapper .product .img-holder .desc-ctr .btn-box .btn-ctr .lg-screen {
-                  display: none; } }
-    @media screen and (min-width: 1024px) and (min-width: 1024px) {
-      .parent-ctr .product-wrapper .product .img-holder .desc-ctr .btn-box .btn-ctr .lg-screen {
-        display: block; } }
-            @media screen and (min-width: 1024px) {
-                .parent-ctr .product-wrapper .product .img-holder .desc-ctr .btn-box .btn-ctr .md-screen {
-                  display: block; } }
-    @media screen and (min-width: 1024px) and (min-width: 1024px) {
-      .parent-ctr .product-wrapper .product .img-holder .desc-ctr .btn-box .btn-ctr .md-screen {
-        display: none; } }
-      .parent-ctr .product-wrapper .product .img-holder .desc-ctr-pad {
-        width: 100%; }
-      .parent-ctr .product-wrapper .product .btn-box-pad {
-        clear: left;
-        display: none; }
-        @media screen and (min-width: 768px) {
-          .parent-ctr .product-wrapper .product .btn-box-pad {
-            width: 100%;
-            display: block; } }
-        @media screen and (min-width: 1024px) {
-          .parent-ctr .product-wrapper .product .btn-box-pad {
-            display: none; } }
-        .parent-ctr .product-wrapper .product .btn-box-pad .btn-buy {
-          width: 100%;
-          background: #D10157;
-          color: #ffffff;
-          padding: 5px; }
   .parent-ctr .grey {
     background: black; }
 

@@ -1,0 +1,83 @@
+/* Next & previous buttons */
+@import "../../../src/sass/variables";
+@import "../../../src/sass/common";
+
+.slideshow-container {
+   max-width: 100%;
+   @media screen and (min-width: $tab) {
+   max-width: 70%;
+   }
+   @media screen and (min-width: $lap) {
+   max-width: 55%;
+   }
+
+  position: relative;
+  margin: auto;
+  
+  @import "../atoms/a-img";
+
+  .prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: $whiteColor;
+    font-weight: bold;
+    font-size: .9rem;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    background-color: $bgColor;
+    opacity: .2;
+    display: none;
+    @media screen and (min-width: $tab) {
+      display: block;
+    }
+
+  }
+
+  /* Position the "next button" to the right */
+  .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+  }
+
+
+  /* Fading animation */
+  .fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+  }
+
+  @-webkit-keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+  }
+
+  @keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+  }
+
+
+}
+
+  /* The dots/bullets/indicators */
+  .dot {
+    cursor: pointer;
+    height: 5px;
+    width: 5px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+  }
+
+  .active, .dot:hover {
+    background-color: #717171;
+  }

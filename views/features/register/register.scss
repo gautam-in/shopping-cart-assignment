@@ -1,25 +1,26 @@
 @import url('https://fonts.googleapis.com/css?family=Dosis:400,600,700');
 @import "../../../src/sass/variables";
+@import "../../components/atoms/a-button";
 
 
-.login-section{
+.register-section{
 	padding: 3%;
 }
 
-.login-text {
+.register-text {
 	padding: 2%;
 	@import "../../components/atoms/a-header";
 	@import "../../components/atoms/a-desc";
 }
-.login-form{
-	input, .login-btn{
+.register-form{
+	.input-area, .register-btn{
 		width:65%;
 	}
 	@import "../../components/molecules/m-forminput";
 	@import "../../components/atoms/a-button";
-	.login-btn {
+	.register-btn {
 		height: 40px;
-
 	}
 	
 }
+

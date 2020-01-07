@@ -1,0 +1,109 @@
+/* Next & previous buttons */
+.basic-btn-color {
+  background: #D10157;
+  color: #ffffff; }
+
+.clear-all {
+  clear: both; }
+
+.padding5 {
+  padding: 5px; }
+
+.padding10 {
+  padding: 10px; }
+
+.paddingTop10 {
+  padding-top: 10px; }
+
+.padding15 {
+  padding: 15px; }
+
+.marginTop5 {
+  margin-top: 5px; }
+
+.marginTop15 {
+  margin-top: 15px; }
+
+.marginTop25 {
+  margin-top: 25px; }
+
+.marginTop50 {
+  margin-top: 50px; }
+
+.fontDecorate {
+  font-size: 12px; }
+
+.paddingLeft5 {
+  padding-left: 5px; }
+
+.textCenter {
+  text-align: center; }
+
+.slideshow-container {
+  max-width: 100%;
+  position: relative;
+  margin: auto;
+  /* Position the "next button" to the right */
+  /* Fading animation */ }
+  @media screen and (min-width: 768px) {
+    .slideshow-container {
+      max-width: 70%; } }
+  @media screen and (min-width: 992px) {
+    .slideshow-container {
+      max-width: 55%; } }
+  .slideshow-container img {
+    width: 100%;
+    height: auto; }
+  .slideshow-container .prev, .slideshow-container .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: .9rem;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    background-color: #eeeeee;
+    opacity: .2;
+    display: none; }
+    @media screen and (min-width: 768px) {
+      .slideshow-container .prev, .slideshow-container .next {
+        display: block; } }
+  .slideshow-container .next {
+    right: 0;
+    border-radius: 3px 0 0 3px; }
+  .slideshow-container .fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s; }
+
+@-webkit-keyframes fade {
+  from {
+    opacity: .4; }
+  to {
+    opacity: 1; } }
+
+@keyframes fade {
+  from {
+    opacity: .4; }
+  to {
+    opacity: 1; } }
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 5px;
+  width: 5px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease; }
+
+.active, .dot:hover {
+  background-color: #717171; }
