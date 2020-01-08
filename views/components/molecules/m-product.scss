@@ -1,11 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Dosis:400,600,700');
 @import "../../../src/sass/variables";
 @import "../../../src/sass/common";
-@mixin btn-basic{
-		background: $redBg;
-		color: $whiteColor;
-		padding: 5px;
-}
+
 @mixin show-lg{
 		@media screen and (min-width:$lap) {
 			display: block;
@@ -85,9 +81,6 @@
 							display: block;
 						}
 				
-						.btn-buy{
-						@include btn-basic;
-						}
 						.price-ctr {
 							width:50%;
 							float: left;
@@ -100,6 +93,9 @@
 						.btn-ctr{
 							width:100%;
 							float: left;
+							.lg-screen{
+								display:none; 
+							}
 							@media screen and (min-width:$lap) {
 							width:50%;
 								.lg-screen{
@@ -134,7 +130,6 @@
 					}
 					.btn-buy{
 						width:100%;
-						@include btn-basic;
 					}
 
 		}

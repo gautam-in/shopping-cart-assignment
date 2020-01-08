@@ -1,12 +1,12 @@
 <section class="parent-ctr">
     <div class="category-wrapper">
-   			<div class="md-screen">
+   			<ul class="md-screen">
 				{{#each categories}}
-				<div class="row category-bg padding10 {{this.id}}" onclick="selectCategory('{{this.id}}')">
+				<li class="category-bg padding10 {{this.id}}" onclick="selectCategory('{{this.id}}')">
 					<span>{{this.name}}</span>
-				</div>	
+				</li>	
 				{{/each}}
-			</div>
+			</ul>
 			<div class="sm-screen padding5">
 				<div class="dropdown">
 		    		<button class="dropbtn">Select Categories 

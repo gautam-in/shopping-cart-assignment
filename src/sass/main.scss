@@ -1,11 +1,13 @@
-@media screen and (max-width: 1200px) {
+@import url('https://fonts.googleapis.com/css?family=Dosis:400,600,700');
+@import "../../src/sass/variables";
+@import "../../src/sass/common";
+@import "../../views/components/organisms/o-header";
+//@media screen and (max-width: 1200px) {
 html{
 	font-size: 20px;
 }
- .row {
- 	padding: 0% 2%;
- }
-}
+
+//}
 * {
 	box-sizing: border-box;
 	padding:0;
@@ -19,4 +21,8 @@ body {
 .row {
 	max-width:1140px;
 	margin:0 auto;
+ 	padding: 0% 2%;
+
 }
+@import "../../views/components/organisms/o-cart";
+@import "../../views/components/organisms/o-footer";

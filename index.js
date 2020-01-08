@@ -92,20 +92,18 @@ app.get('/login', (req, res) =>{
 });
 app.get('/register', (req, res) => res.render('features/register/register',{cartItems:cartCount}));
 
-app.get('/plp', (req, res) =>{
+app.get('/products', (req, res) =>{
 	console.log(cartObj.cartItems);
 	res.render('features/products/products',{categories:categories, products:products,cartItems:cartCount});
 });
-/*app.get('/plp/:id', function (req, res) {
+app.get('/products/:id', function (req, res) {
     let categoryId = req.params.id;
 	let product_cat = products.filter((product) => product.category === categoryId);
-	res.render('plp', { products: product_cat, categories:categories,cartItems:cartCount});
-    
-});*/
+	res.render('features/products/products', { products: product_cat, categories:categories,cartItems:cartCount});
+});
 app.post('/updateCart', function (req, res) {
     cartCount = req.body.cartCount;
 	res.end(JSON.stringify({ 'responseMessage': cartCount}));
-    
 });
 
 //app.use('/cart', cart)

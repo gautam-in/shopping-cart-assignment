@@ -1,13 +1,18 @@
 @import url('https://fonts.googleapis.com/css?family=Dosis:400,600,700');
 @import "../../../src/sass/variables";
-
+@import "../../../src/sass/common";
 
 .login-section{
 	padding: 3%;
 }
 
 .login-text {
-	padding: 2%;
+	padding:2% 0%;
+	//@include padding(2%,null,null,null);
+	h1{
+		@include margin(20px,null,null,null);
+	}
+	
 	@import "../../components/atoms/a-header";
 	@import "../../components/atoms/a-desc";
 }
@@ -19,6 +24,7 @@
 	@import "../../components/atoms/a-button";
 	.login-btn {
 		height: 40px;
+		@include margin(20px,null,null,null);
 
 	}
 	

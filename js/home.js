@@ -30,8 +30,10 @@ function showSlides(n) {
   dots[slideIndex-1].className += " active";
 }
 setTimeout(function(){
-  let address = window.location.href;
-  //showSlides(1);
+  let address =window.location.pathname;
+  if(address === '/'){
+   showSlides(1);
+  }
 })
 
 function selectCategory(id){
@@ -39,7 +41,7 @@ function selectCategory(id){
   let prevUrl =window.location.href.split("/");
   let prevId = prevUrl[prevUrl.length -1];
   let diffUrl = categoryId !== prevId;
-  window.location.href = diffUrl? `/plp/${id}`:'/plp';
+  window.location.href = diffUrl? `/products/${id}`:'/products';
 
 }
 

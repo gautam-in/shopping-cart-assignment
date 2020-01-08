@@ -7,7 +7,7 @@
   clear: both; }
 
 .padding5 {
-  padding: 5px; }
+  padding: 5px  !important; }
 
 .padding10 {
   padding: 10px; }
@@ -67,7 +67,7 @@
     transition: 0.6s ease;
     border-radius: 0 3px 3px 0;
     user-select: none;
-    background-color: #eeeeee;
+    background-color: #A9A9A9;
     opacity: .2;
     display: none; }
     @media screen and (min-width: 768px) {

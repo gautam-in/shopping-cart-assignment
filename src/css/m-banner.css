@@ -7,7 +7,7 @@
   clear: both; }
 
 .padding5 {
-  padding: 5px; }
+  padding: 5px  !important; }
 
 .padding10 {
   padding: 10px; }

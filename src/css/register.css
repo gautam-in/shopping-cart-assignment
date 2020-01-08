@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Dosis:400,600,700");
+@import url("https://fonts.googleapis.com/css?family=Dosis:400,600,700");
 button {
   background: #D10157;
   color: #ffffff; }
@@ -16,24 +17,50 @@ button {
     font-size: .7rem;
     margin-top: 20px; }
 
-.register-form .input-area, .register-form .register-btn {
-  width: 65%; }
-
-.register-form .form-group {
-  width: 65%; }
-  .register-form .form-group input {
-    border: none;
-    width: 100%;
-    border-bottom: solid 2px #5fc8d0; }
-  .register-form .form-group label {
-    margin-top: 1%;
-    font-weight: 600;
-    font-size: .6rem;
-    color: #5fc8d0; }
-
-.register-form button {
-  background: #D10157;
-  color: #ffffff; }
-
-.register-form .register-btn {
-  height: 40px; }
+.register-form { }
+  .register-form .input-area, .register-form .register-btn {
+    width: 65%; }
+  .register-form .basic-btn-color {
+    background: #D10157;
+    color: #ffffff; }
+  .register-form .clear-all {
+    clear: both; }
+  .register-form .padding5 {
+    padding: 5px  !important; }
+  .register-form .padding10 {
+    padding: 10px; }
+  .register-form .paddingTop10 {
+    padding-top: 10px; }
+  .register-form .padding15 {
+    padding: 15px; }
+  .register-form .marginTop5 {
+    margin-top: 5px; }
+  .register-form .marginTop15 {
+    margin-top: 15px; }
+  .register-form .marginTop25 {
+    margin-top: 25px; }
+  .register-form .marginTop50 {
+    margin-top: 50px; }
+  .register-form .fontDecorate {
+    font-size: 12px; }
+  .register-form .paddingLeft5 {
+    padding-left: 5px; }
+  .register-form .textCenter {
+    text-align: center; }
+  .register-form .form-group {
+    width: 65%;
+    margin-top: 20px; }
+    .register-form .form-group input {
+      border: none;
+      width: 100%;
+      border-bottom: solid 2px #5fc8d0; }
+    .register-form .form-group label {
+      margin-top: 1%;
+      font-weight: 600;
+      font-size: .6rem;
+      color: #5fc8d0; }
+  .register-form button {
+    background: #D10157;
+    color: #ffffff; }
+  .register-form .register-btn {
+    height: 40px; }

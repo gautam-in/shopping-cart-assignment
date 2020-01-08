@@ -9,15 +9,12 @@
 			<div class="btn-box paddingTop10">
 				<div class="price-ctr lg-screen">MRP{{this.price}}</div>
 				<div class="btn-ctr">
-				 {{> atoms/a-button imageUrl=this.imageURL click =(concat 'buy( "' this.id '")') btntext="sd" }}
-					<!--<button type="button" class="btn-buy" onclick="buy('{{this.id}}')">
-						<span class="md-screen">Buy now @ MRP{{this.price}}</span>
-						<span  class="lg-screen">Buy now</span>
-					</button>-->
+				 {{> atoms/a-button class="md-screen btn-buy padding5" imageUrl=this.imageURL click =(concat 'buy( "' this.id '")')  btntext=(concat 'Buy now @ MRP' this.price) }}
+				  {{> atoms/a-button  class="lg-screen btn-buy padding5" imageUrl=this.imageURL click =(concat 'buy( "' this.id '")') btntext="Buy now" }}
 				</div>
 			</div>
 		</div>
 	</div>
-	<div class="btn-box-pad paddingTop10"><button type="button" class="btn-buy"  onclick="buy('{{this.id}}')">Buy now @ MRP{{this.price}}</button>
+	<div class="btn-box-pad paddingTop10"><button type="button" class="btn-buy padding5"  onclick="buy('{{this.id}}')">Buy now @ MRP{{this.price}}</button>
 	</div>
 </div>

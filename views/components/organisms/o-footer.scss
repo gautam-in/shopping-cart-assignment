@@ -1,0 +1,11 @@
+@import "../../../src/sass/variables";
+@import "../../../src/sass/common";
+
+footer {
+	background: $bgColor;
+	padding: 10px;
+	.copyright{
+		font-weight: 600;
+    	font-size: .65rem;
+	}
+}

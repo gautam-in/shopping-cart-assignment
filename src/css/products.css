@@ -8,7 +8,7 @@
   clear: both; }
 
 .padding5 {
-  padding: 5px; }
+  padding: 5px  !important; }
 
 .padding10 {
   padding: 10px; }
@@ -52,8 +52,11 @@
     @media screen and (max-width: 768px) {
       .parent-ctr .category-wrapper .md-screen {
         display: none; } }
-    .parent-ctr .category-wrapper .category-bg {
+    .parent-ctr .category-wrapper li {
       color: #A6A6A6;
+      padding: 10px 0px;
+      text-align: center;
+      font-size: .9rem;
       border-bottom: solid 1px #A6A6A6; }
     @media screen and (min-width: 768px) {
       .parent-ctr .category-wrapper .sm-screen {
@@ -102,7 +105,7 @@
     .parent-ctr .product-wrapper .clear-all {
       clear: both; }
     .parent-ctr .product-wrapper .padding5 {
-      padding: 5px; }
+      padding: 5px  !important; }
     .parent-ctr .product-wrapper .padding10 {
       padding: 10px; }
     .parent-ctr .product-wrapper .paddingTop10 {
@@ -178,10 +181,6 @@
             .parent-ctr .product-wrapper .product .img-holder .desc-ctr .btn-box {
               width: 100%;
               display: block; } }
-          .parent-ctr .product-wrapper .product .img-holder .desc-ctr .btn-box .btn-buy {
-            background: #D10157;
-            color: #ffffff;
-            padding: 5px; }
           .parent-ctr .product-wrapper .product .img-holder .desc-ctr .btn-box .price-ctr {
             width: 50%;
             float: left;
@@ -194,6 +193,8 @@
           .parent-ctr .product-wrapper .product .img-holder .desc-ctr .btn-box .btn-ctr {
             width: 100%;
             float: left; }
+            .parent-ctr .product-wrapper .product .img-holder .desc-ctr .btn-box .btn-ctr .lg-screen {
+              display: none; }
             @media screen and (min-width: 992px) {
               .parent-ctr .product-wrapper .product .img-holder .desc-ctr .btn-box .btn-ctr {
                 width: 50%; }
@@ -221,10 +222,7 @@
           .parent-ctr .product-wrapper .product .btn-box-pad {
             display: none; } }
         .parent-ctr .product-wrapper .product .btn-box-pad .btn-buy {
-          width: 100%;
-          background: #D10157;
-          color: #ffffff;
-          padding: 5px; }
+          width: 100%; }
   .parent-ctr .grey {
     background: black; }
 

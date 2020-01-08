@@ -21,7 +21,7 @@
 		@media screen and (min-width: $tab) {
 			float: left;
 			width:20%;
-			
+
 		}
 		.md-screen{
 			@media screen and (max-width: $tab) {
@@ -29,8 +29,11 @@
 			}
 			
 		}
-		.category-bg{
+		li{
 			color: #A6A6A6;
+			padding:10px 0px;
+			text-align: center;
+			font-size:.9rem;
 			border-bottom:solid 1px #A6A6A6;
 		}
 		.sm-screen{

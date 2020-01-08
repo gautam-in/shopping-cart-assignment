@@ -8,7 +8,7 @@
 	clear: both;
 }
 .padding5{
-	padding: 5px;
+	padding: 5px  !important;
 }
 .padding10{
 	padding: 10px;
@@ -40,3 +40,15 @@
 .textCenter{
 	text-align: center;
 }
+ @mixin padding($top, $right, $bottom, $left) { 
+	padding-top: $top; 
+	padding-right: $right; 
+	padding-bottom: $bottom;
+ 	padding-left: $left; 
+ } //Margin mixin @mixin margin($top, $right, $bottom, $left) { margin-top: $top; margin-right: $right; margin-bottom: $bottom; margin-left: $left; } 
+ @mixin margin($top, $right, $bottom, $left) { 
+	margin-top: $top; 
+	margin-right: $right; 
+	margin-bottom: $bottom;
+ 	margin-left: $left; 
+ }
