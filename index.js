@@ -98,6 +98,11 @@ app.get('/products/:id', function (req, res) {
 	let product_cat = products.filter((product) => product.category === categoryId);
 	res.render('features/products/products', { products: product_cat, categories:categories,cartItems:cartCount});
 });
+app.post('/addtoCart', function (req, res) {
+    cartCount = req.body.cartCount;
+	res.end(JSON.stringify({ 'responseMessage': cartCount}));
+});
+
 app.post('/updateCart', function (req, res) {
     cartCount = req.body.cartCount;
 	res.end(JSON.stringify({ 'responseMessage': cartCount}));

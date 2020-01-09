@@ -52,7 +52,6 @@
 			background:color('white');
 			color: color('black');
 			@include padding(15);
-			@include margin(15 0 0 0);
 		    font-size: .75rem;
 		    font-weight: 700;
 		    height: 50px;
