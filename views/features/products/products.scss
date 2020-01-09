@@ -2,9 +2,9 @@
 @import "../../../src/sass/variables";
 @import "../../../src/sass/common";
 @mixin btn-basic{
-		background: $redBg;
-		color: $whiteColor;
-		padding: 5px;
+		background: color('red');
+		color: color('white');
+		@include padding(5);
 }
 
 @mixin hide-md{
@@ -13,7 +13,7 @@
 		}
 }
 .parent-ctr{
-	background: $bgColor;
+	background: color('grey');
 	float: left;
 	.category-wrapper{
 		width:100%;
@@ -29,25 +29,29 @@
 			}
 			
 		}
-		li{
-			color: #A6A6A6;
-			padding:10px 0px;
+		.category-bg{
+			@include padding(10 0);
 			text-align: center;
 			font-size:.9rem;
 			border-bottom:solid 1px #A6A6A6;
+			a{
+				color: color(link);
+				text-decoration: none;
+			}
 		}
 		.sm-screen{
 			@include hide-md;
+			@include padding(5);
 			.dropdown .dropbtn {
 				   
 				  border: none;
 				  outline: none;
-				  padding: 14px 16px;
+				  @include padding(14 16);
 				  font-family: inherit;
-				  margin: 0;
+				  @include margin(0);
 				  width: 100%;
-					background: $redBg;
-					color:$whiteColor;
+					background: color('red');
+					color:color('white');
 			}
 
 			.dropdown-content {
@@ -62,9 +66,9 @@
 
 			.dropdown-content a {
 			  float: none;
-			  background: $redBg;
-					color:$whiteColor;
-			  padding:6px;
+			  background: color('red');
+			  color:color('white');
+			  @include padding(6);
 			  font-size:.6rem;
 			  text-decoration: none;
 			  display: block;

@@ -1,4 +1,4 @@
-function InvalidMsg(textbox) {
+function checkPassword(textbox) {
 	let rgularExp = {
         containsNumber : /\d+/,
         containsAlphabet : /[a-zA-Z]/,
@@ -16,3 +16,4 @@ function InvalidMsg(textbox) {
     }
     return true;
 }
+

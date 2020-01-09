@@ -1,6 +1,6 @@
 const express = require('express')
 let cartObj =require('./js/cartconstant');
-//let cart =require('./js/cart1');
+let cart =require('./js/cart');
 var path =require('path')
 var exphbs = require('express-handlebars'); 
 var bodyParser = require('body-parser');
@@ -40,9 +40,6 @@ app.engine('hbs',exphbs({extname:'hbs',defaultLayout:'main',
 		        return options.fn(item);
 		    }).join('');
 		},
-	      year: function() {
-	        return cartCount;
-	      },
 	      concat:function(){
 	      	 var outStr = '';
             for(var arg in arguments){
@@ -106,7 +103,7 @@ app.post('/updateCart', function (req, res) {
 	res.end(JSON.stringify({ 'responseMessage': cartCount}));
 });
 
-//app.use('/cart', cart)
+app.use('/cart', cart)
 
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))

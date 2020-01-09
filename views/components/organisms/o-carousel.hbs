@@ -10,7 +10,7 @@
 	<a class="next" onclick="carousel.plusSlides(1)">Next</a>
 </div>
 <br/>
-<div class="textCenter" id="carousal-dot">
+<div class="carousal-dot" id="carousal-dot">
 	{{#each banners  as |value key|}}
 		 <span class="dot" onclick="carousel.currentSlide({{@index}})"></span> 
 	{{/each}}

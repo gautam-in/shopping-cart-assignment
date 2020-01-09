@@ -2,8 +2,8 @@
 @import "../../../src/sass/common";
 
 header {
-	border-bottom: solid 1px $bgColor;
-	box-shadow: 1px 1px $shadowColor !important;
+	border-bottom: solid 1px color('grey');
+	box-shadow: 1px color('shadowColor') !important;
 	position: relative;
 	.nav-bar{
 		position: relative;
@@ -14,7 +14,7 @@ header {
 		height:auto;
 		width:100%;
 		float: left;
-		margin: 10px 0px;
+		@include margin(10 0);
 		@media screen and (min-width: $tab) {
 			padding: 0% 2%;
 			height: 70px;
@@ -27,9 +27,10 @@ header {
 		list-style-type: none;
 		li {
 			display: inline-block;
-			margin-left: 10px;
-			a {
-				color:$navColor;
+
+			@include margin(0 0 0 10);
+			a{
+				color:  color('navColor');
 				text-decoration: none;
 				font-weight: 600;
 			}
@@ -46,26 +47,31 @@ header {
 	}
 	.home-nav {
 		float: left;
-		font-size:70%;
-		margin-top:50px;
+		font-size:.7rem;
+		@include margin(50 0 0 0);
 		margin-left:10%;
 		@include nav-text;
 	}
 	.cart-header-box{
-		background: $bgColor;
+		background:  color('grey');
 		position: absolute;
 		right: 0;
 		bottom: 0;
-		
-		padding: 1%;
+		@include padding(5);
 		.cart {
 			height: 35px;
 			width: auto;
 
 		}
-		span {
-				font-size: 70%;
-				
+		button{
+			border:none;
+			span {
+				font-size:.7rem;
 			}
+		}
+		
+	}
+	.clear-all{
+		clear: both;
 	}
 }

@@ -4,12 +4,12 @@
 		{{> atoms/a-desc text="We do not share your personal details with anyone."}}
 	</div>
 	<div class="col span-1-of-2">
-		<form class="register-form">
-		 	{{> molecules/m-forminput type="text" name="first" placeholder="First Name" labelText="First Name"}}
-		 	{{> molecules/m-forminput type="text" name="last" placeholder="Last Name" labelText="Last Name"}}
-		 	{{> molecules/m-forminput type="email" name="email" placeholder="Email" labelText="Email"}}
-		 	{{> molecules/m-forminput type="password" name="password" placeholder="Password" labelText="Password"}}
-		 	{{> molecules/m-forminput type="password" name="passw2" placeholder="Confirm Password" labelText="Confirm Password"}}
+		<form class="register-form" action="/" method="get">
+		 	{{> molecules/m-forminput type="text" name="first" id="first" placeholder="First Name" labelText="First Name"}}
+		 	{{> molecules/m-forminput type="text" name="last" id="last" placeholder="Last Name" labelText="Last Name"}}
+		 	{{> molecules/m-forminput type="email" name="email" id="email" placeholder="Email" labelText="Email"}}
+		 	{{> molecules/m-forminput type="password" name="password" id="password" placeholder="Password" labelText="Password" oninvalid="checkRegPass(this);" oninput="checkRegPass(this);"}}
+		 	{{> molecules/m-forminput type="password" name="passw2" id="passw2" placeholder="Confirm Password" labelText="Confirm Password" oninvalid="confirmPassword(this);" oninput="confirmPassword(this);"}}
 		  {{> atoms/a-button class="register-btn" btntext="Signup"}}
 		</form>
 	</div>

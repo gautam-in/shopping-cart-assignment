@@ -2,16 +2,6 @@
 @import "../../../src/sass/variables";
 @import "../../../src/sass/common";
 
-@mixin padding10{
-	padding: 10px;
-}
-@mixin paddingTop10{
-	padding-top: 10px;
-}
-@mixin padding15{
-	padding: 15px;
-}
-
 @mixin show-md{
 		@media screen and (min-width:$lap) {
 			display: block;
@@ -26,7 +16,7 @@
 	display: none;
 	.bg-overlay{
 	position: fixed;
-    background: $darkGrayColor;
+    background: color('darkgrey');
     width: 100%;
     height: 100%;
     z-index: 10;
@@ -34,8 +24,9 @@
 	}
 	.overlay{
 		position: fixed;
+		font-size:.7rem;
 	    width: 100%;
-	    background: $bgColor;
+	    background: color('grey');
 	    height: 100%;
 	    z-index: 200;
 	    overflow:auto;
@@ -58,14 +49,16 @@
 		}
 
 		.header{
-			background: $whiteColor;
-			color: $blackColor;
+			background:color('white');
+			color: color('black');
+			@include padding(15);
+			@include margin(15 0 0 0);
 		    font-size: .75rem;
 		    font-weight: 700;
 		    height: 50px;
 		    @media screen and (min-width:$lap) {
-		    	background: $blackColor;
-				color: $whiteColor;
+		    	background: color('black');
+				color: color('white');
 		    }
 		    .close{
 		    float:right;
@@ -73,7 +66,8 @@
 
 		}
 		.cart-box{
-			background: $whiteColor;
+			@include margin(25 0 0 0);
+			background: color('white');
 			.cart-item{
 				font-size:.7rem;
 				img{
@@ -82,7 +76,7 @@
 				}
 				.label{
 					font-weight: 700;
-					margin-top: 20px;
+					@include margin(20 0 0 0);
 					
 				}
 				.dot {
@@ -96,7 +90,7 @@
 
 				}
 				.price-ctr{
-					@include paddingTop10;
+					@include padding(10 0 0 0);
 				    float: right;
 				    text-align: right;
 				    padding-right: 20px;
@@ -104,22 +98,23 @@
 			}
 		}
 		.low-price{
-			@include padding10;
+			@include padding(10);
+
 
 			.low-price-row {
-				@include padding10;
-				background: white;
+				@include padding(10);
+				background: color('white');
 				img{
 				    height: 30px;
 				}
 				.anywhere {
-	    			margin-left: 15px;
+					@include margin(0 0 0 15);
 				}
 			}
 		}
 		.footer{
-			background: $whiteColor;
-			@include padding10;
+			background: color('white');
+			@include padding(10);
 			position:relative;
 			width: 100%;
 			bottom:0px;
@@ -128,11 +123,11 @@
 			}
 			.checkout-btn{
 				height: 40px;
-				@include padding10;
+				@include padding(10);
 				background: #D10157;
-				color: #ffffff;
+				color:  color('white');
 				width: 100%;
-				margin-top: 10px;
+				@include margin(10 0 0 0);
 				.checkout{
 					float: left;
 				}

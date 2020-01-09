@@ -1,87 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Dosis:400,600,700");
-.basic-btn-color {
-  background: #D10157;
-  color: #ffffff; }
-
-.clear-all {
-  clear: both; }
-
-.padding5 {
-  padding: 5px  !important; }
-
-.padding10 {
-  padding: 10px; }
-
-.paddingTop10 {
-  padding-top: 10px; }
-
-.padding15 {
-  padding: 15px; }
-
-.marginTop5 {
-  margin-top: 5px; }
-
-.marginTop15 {
-  margin-top: 15px; }
-
-.marginTop25 {
-  margin-top: 25px; }
-
-.marginTop50 {
-  margin-top: 50px; }
-
-.fontDecorate {
-  font-size: 12px; }
-
-.paddingLeft5 {
-  padding-left: 5px; }
-
-.textCenter {
-  text-align: center; }
-
-.basic-btn-color {
-  background: #D10157;
-  color: #ffffff; }
-
-.clear-all {
-  clear: both; }
-
-.padding5 {
-  padding: 5px  !important; }
-
-.padding10 {
-  padding: 10px; }
-
-.paddingTop10 {
-  padding-top: 10px; }
-
-.padding15 {
-  padding: 15px; }
-
-.marginTop5 {
-  margin-top: 5px; }
-
-.marginTop15 {
-  margin-top: 15px; }
-
-.marginTop25 {
-  margin-top: 25px; }
-
-.marginTop50 {
-  margin-top: 50px; }
-
-.fontDecorate {
-  font-size: 12px; }
-
-.paddingLeft5 {
-  padding-left: 5px; }
-
-.textCenter {
-  text-align: center; }
-
 header {
   border-bottom: solid 1px #eeeeee;
-  box-shadow: 1px 1px #f0f0f0 !important;
+  box-shadow: 1px #f0f0f0 !important;
   position: relative; }
   header .nav-bar {
     position: relative; }
@@ -105,20 +25,20 @@ header {
         font-size: .6rem; } }
     header .main-nav li {
       display: inline-block;
-      margin-left: 10px; }
+      margin: 0px 0px 0px 10px; }
       header .main-nav li a {
         color: #646E72;
         text-decoration: none;
         font-weight: 600; }
   header .home-nav {
     float: left;
-    font-size: 70%;
-    margin-top: 50px;
+    font-size: .7rem;
+    margin: 50px 0px 0px 0px;
     margin-left: 10%;
     list-style-type: none; }
     header .home-nav li {
       display: inline-block;
-      margin-left: 10px; }
+      margin: 0px 0px 0px 10px; }
       header .home-nav li a {
         color: #646E72;
         text-decoration: none;
@@ -128,12 +48,16 @@ header {
     position: absolute;
     right: 0;
     bottom: 0;
-    padding: 1%; }
+    padding: 5px; }
     header .cart-header-box .cart {
       height: 35px;
       width: auto; }
-    header .cart-header-box span {
-      font-size: 70%; }
+    header .cart-header-box button {
+      border: none; }
+      header .cart-header-box button span {
+        font-size: .7rem; }
+  header .clear-all {
+    clear: both; }
 
 html {
   font-size: 20px; }
@@ -153,46 +77,6 @@ body {
   padding: 0% 2%; }
 
 /* Next & previous buttons */
-.basic-btn-color {
-  background: #D10157;
-  color: #ffffff; }
-
-.clear-all {
-  clear: both; }
-
-.padding5 {
-  padding: 5px  !important; }
-
-.padding10 {
-  padding: 10px; }
-
-.paddingTop10 {
-  padding-top: 10px; }
-
-.padding15 {
-  padding: 15px; }
-
-.marginTop5 {
-  margin-top: 5px; }
-
-.marginTop15 {
-  margin-top: 15px; }
-
-.marginTop25 {
-  margin-top: 25px; }
-
-.marginTop50 {
-  margin-top: 50px; }
-
-.fontDecorate {
-  font-size: 12px; }
-
-.paddingLeft5 {
-  padding-left: 5px; }
-
-.textCenter {
-  text-align: center; }
-
 .parent-overlay {
   display: none; }
   .parent-overlay .bg-overlay {
@@ -204,6 +88,7 @@ body {
     opacity: .9; }
   .parent-overlay .overlay {
     position: fixed;
+    font-size: .7rem;
     width: 100%;
     background: #eeeeee;
     height: 100%;
@@ -223,19 +108,22 @@ body {
         .parent-overlay .overlay .footer {
           width: 30%; } }
     .parent-overlay .overlay .header {
-      background: #ffffff;
+      background: #FFFFFF;
       color: #000000;
+      padding: 15px;
+      margin: 15px 0px 0px 0px;
       font-size: .75rem;
       font-weight: 700;
       height: 50px; }
       @media screen and (min-width: 992px) {
         .parent-overlay .overlay .header {
           background: #000000;
-          color: #ffffff; } }
+          color: #FFFFFF; } }
       .parent-overlay .overlay .header .close {
         float: right; }
     .parent-overlay .overlay .cart-box {
-      background: #ffffff; }
+      margin: 25px 0px 0px 0px;
+      background: #FFFFFF; }
       .parent-overlay .overlay .cart-box .cart-item {
         font-size: .7rem; }
         .parent-overlay .overlay .cart-box .cart-item img {
@@ -243,7 +131,7 @@ body {
           height: auto; }
         .parent-overlay .overlay .cart-box .cart-item .label {
           font-weight: 700;
-          margin-top: 20px; }
+          margin: 20px 0px 0px 0px; }
         .parent-overlay .overlay .cart-box .cart-item .dot {
           width: 20px;
           height: 20px;
@@ -252,7 +140,7 @@ body {
           display: inline-block;
           text-align: center; }
         .parent-overlay .overlay .cart-box .cart-item .price-ctr {
-          padding-top: 10px;
+          padding: 10px 0px 0px 0px;
           float: right;
           text-align: right;
           padding-right: 20px; }
@@ -260,13 +148,13 @@ body {
       padding: 10px; }
       .parent-overlay .overlay .low-price .low-price-row {
         padding: 10px;
-        background: white; }
+        background: #FFFFFF; }
         .parent-overlay .overlay .low-price .low-price-row img {
           height: 30px; }
         .parent-overlay .overlay .low-price .low-price-row .anywhere {
-          margin-left: 15px; }
+          margin: 0px 0px 0px 15px; }
     .parent-overlay .overlay .footer {
-      background: #ffffff;
+      background: #FFFFFF;
       padding: 10px;
       position: relative;
       width: 100%;
@@ -277,53 +165,13 @@ body {
         height: 40px;
         padding: 10px;
         background: #D10157;
-        color: #ffffff;
+        color: #FFFFFF;
         width: 100%;
-        margin-top: 10px; }
+        margin: 10px 0px 0px 0px; }
         .parent-overlay .overlay .footer .checkout-btn .checkout {
           float: left; }
         .parent-overlay .overlay .footer .checkout-btn .total {
           float: right; }
-
-.basic-btn-color {
-  background: #D10157;
-  color: #ffffff; }
-
-.clear-all {
-  clear: both; }
-
-.padding5 {
-  padding: 5px  !important; }
-
-.padding10 {
-  padding: 10px; }
-
-.paddingTop10 {
-  padding-top: 10px; }
-
-.padding15 {
-  padding: 15px; }
-
-.marginTop5 {
-  margin-top: 5px; }
-
-.marginTop15 {
-  margin-top: 15px; }
-
-.marginTop25 {
-  margin-top: 25px; }
-
-.marginTop50 {
-  margin-top: 50px; }
-
-.fontDecorate {
-  font-size: 12px; }
-
-.paddingLeft5 {
-  padding-left: 5px; }
-
-.textCenter {
-  text-align: center; }
 
 footer {
   background: #eeeeee;

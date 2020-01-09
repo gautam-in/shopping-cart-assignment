@@ -2,12 +2,13 @@
     <div class="category-wrapper">
    			<ul class="md-screen">
 				{{#each categories}}
-				<li class="category-bg padding10 {{this.id}}" onclick="selectCategory('{{this.id}}')">
-					<span>{{this.name}}</span>
+				<li class="category-bg  {{this.id}}" onclick="selectCategory('{{this.id}}')">
+				   <!-- {{> atoms/a-link href="" func="onclick='return false;'"}}-->
+				   	<a href=""  onclick="return false;">{{this.name}}</a>
 				</li>	
 				{{/each}}
 			</ul>
-			<div class="sm-screen padding5">
+			<div class="sm-screen">
 				<div class="dropdown">
 		    		<button class="dropbtn">Select Categories 
 				      <i class="fa fa-caret-down"></i>

@@ -1,54 +1,34 @@
-.basic-btn-color{
-	background: #D10157;
-	color: #ffffff;
-	
-}
-
-.clear-all{
-	clear: both;
-}
-.padding5{
-	padding: 5px  !important;
-}
-.padding10{
-	padding: 10px;
-}
-.paddingTop10{
-	padding-top: 10px;
-}
-.padding15{
-	padding: 15px;
-}
-.marginTop5{
-	margin-top: 5px;
-}
-.marginTop15{
-	margin-top: 15px;
-}
-.marginTop25{
-	margin-top: 25px;
-}
-.marginTop50{
-	margin-top: 50px;
-}
-.fontDecorate{
-		font-size:12px;
-}
-.paddingLeft5{
-	padding-left: 5px;
-}
-.textCenter{
+@mixin textCenter{
 	text-align: center;
 }
- @mixin padding($top, $right, $bottom, $left) { 
-	padding-top: $top; 
-	padding-right: $right; 
-	padding-bottom: $bottom;
- 	padding-left: $left; 
- } //Margin mixin @mixin margin($top, $right, $bottom, $left) { margin-top: $top; margin-right: $right; margin-bottom: $bottom; margin-left: $left; } 
- @mixin margin($top, $right, $bottom, $left) { 
-	margin-top: $top; 
-	margin-right: $right; 
-	margin-bottom: $bottom;
- 	margin-left: $left; 
- }
+
+
+@mixin padding($padding) {
+    @if length($padding) == 1 {
+        padding: $padding+px;
+    }
+    @if length($padding) == 2 {
+        padding: nth($padding, 1)+px nth($padding, 2)+px;
+    }
+    @if length($padding) == 3 {
+        padding: nth($padding, 1)+px nth($padding, 2)+px nth($padding, 3)+px;
+    }
+    @if length($padding) == 4 {
+        padding: nth($padding, 1)+px nth($padding, 2)+px nth($padding, 3)+px nth($padding, 4)+px;
+    }
+}
+
+@mixin margin($margin) {
+    @if length($margin) == 1 {
+        margin: $margin+px;
+    }
+    @if length($margin) == 2 {
+        margin: nth($margin, 1)+px nth($margin, 2)+px;
+    }
+    @if length($margin) == 3 {
+        margin: nth($padding, 1)+px nth($margin, 2)+px nth($margin, 3)+px;
+    }
+    @if length($margin) == 4 {
+        margin: nth($margin, 1)+px nth($margin, 2)+px nth($margin, 3)+px nth($margin, 4)+px;
+    }
+}

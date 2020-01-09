@@ -8,9 +8,8 @@
 
 .login-text {
 	padding:2% 0%;
-	//@include padding(2%,null,null,null);
 	h1{
-		@include margin(20px,null,null,null);
+		@include margin(20 0 0 0);
 	}
 	
 	@import "../../components/atoms/a-header";
@@ -24,7 +23,7 @@
 	@import "../../components/atoms/a-button";
 	.login-btn {
 		height: 40px;
-		@include margin(20px,null,null,null);
+		@include margin(20 0 0 0);
 
 	}
 	

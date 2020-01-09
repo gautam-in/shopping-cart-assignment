@@ -38,6 +38,26 @@
 .textCenter {
   text-align: center; }
 
+/*
+@mixin padding($padding) {
+    @if length($padding) == 1 {
+        padding: $padding+px;
+        //padding: $padding/10+rem;
+    }
+    @if length($padding) == 2 {
+        padding: nth($padding, 1)+px nth($padding, 2)+px;
+        //padding: nth($padding, 1)*0.1+rem nth($padding, 2)*0.1+rem;
+    }
+    @if length($padding) == 3 {
+        padding: nth($padding, 1)+px nth($padding, 2)+px nth($padding, 3)+px;
+       // padding: nth($padding, 1)*0.1+rem nth($padding, 2)*0.1+rem nth($padding, 3)*0.1+rem;
+    }
+    @if length($padding) == 4 {
+        padding: nth($padding, 1)+px nth($padding, 2)+px nth($padding, 3)+px nth($padding, 4)+px;
+       // padding: nth($padding, 1)*0.1+rem nth($padding, 2)*0.1+rem nth($padding, 3)*0.1+rem nth($padding, 4)*0.1+rem;
+    }
+}
+*/
 .parent-overlay {
   font-size: 14px;
   display: none; }

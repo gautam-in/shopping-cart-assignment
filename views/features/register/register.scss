@@ -1,7 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Dosis:400,600,700');
 @import "../../../src/sass/variables";
-@import "../../components/atoms/a-button";
-
 
 .register-section{
 	padding: 3%;
@@ -20,6 +18,7 @@
 	@import "../../components/atoms/a-button";
 	.register-btn {
 		height: 40px;
+		@include margin(20 0 0 0);
 	}
 	
 }

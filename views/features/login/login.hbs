@@ -4,9 +4,9 @@
 			 {{> atoms/a-desc text="Get access to your Orders, Wishlist and Recommendations"}}
 		</div>
 		<div class="col span-1-of-2">
-			<form class="login-form" onsubmit="return checkForm(this);">
-			  {{> molecules/m-forminput  type="email" name="email" placeholder="Email" labelText="Email"}}
-			  {{> molecules/m-forminput type="password" name="password" placeholder="Password"  labelText="Password"    oninvalid="InvalidMsg(this);" oninput="InvalidMsg(this);"}}
+			<form class="login-form" action="/" method="get">
+			  {{> molecules/m-forminput  type="email" name="email" placeholder="Email" labelText="Email" id="email"}}
+			  {{> molecules/m-forminput type="password" name="password" placeholder="Password"  labelText="Password" id="password"  oninvalid="checkPassword(this);" oninput="checkPassword(this);"}}
 			  {{> atoms/a-button type="submit" class="login-btn" btntext="Login"}}
 			</form>
 		</div>

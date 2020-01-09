@@ -1,15 +1,54 @@
-$bgColor:#eeeeee;
-$blueColor:#5fc8d0;
-$navColor:#646E72;
-$redBg:#D10157;
-$whiteColor:#ffffff;
-$blackColor:#000000;
-$darkGrayColor:#A9A9A9;
-$shadowColor:#f0f0f0;
 
-$breakpoint-tablet-potrait: 1024px;
-$breakpoint-phone: 768px;
-$breakpoint-small-phone: 600px;
-$breakpoint-smaller-phone: 480px;
+$theme-colors: (
+
+    'grey'              : #eeeeee,
+
+    'darkgrey'          : #A9A9A9,
+
+    'darkergrey'        : #6B6B6B,
+
+    'midgrey'           : #D8DCE3,
+
+    'orange'            : #E67E22,
+    'blue'				: #5fc8d0,
+
+    'red':#D10157,
+	'navColor':#646E72,
+    'white'     : #FFFFFF,
+
+    'black'     : #000000,
+    'shadowColor':#f0f0f0,
+
+    'error'     : #DF4036,
+
+    'caution'   : #F09924,
+
+    'success'   : #69BC36,
+    'link':#A6A6A6;
+
+);
+
+ 
+
+/// The primary function for
+
+/// accessing colors in your palette
+
+@function color($color, $source: $theme-colors) {
+
+    @if map-has-key($source, $color) {
+
+        $key: map-get($source, $color);
+
+        @return $key;
+
+    } @else {
+
+        @error "ERROR: Specified color variant does not exist in the mapping";
+
+    }
+
+}
+
 $tab:768px;
 $lap:992px;

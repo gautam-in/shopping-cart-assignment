@@ -1,7 +1,13 @@
 @import "../../../src/sass/variables";
+@import "../../../src/sass/common";
 input{
 		border: none;
 		width:100%;
-		border-bottom: solid 2px $blueColor;
+		@include padding(0 0 5 0);
+		border-bottom: solid 2px color('blue');
+}
+input:focus{
+	outline: none;
+
 }
 	

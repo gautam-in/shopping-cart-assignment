@@ -1,20 +1,20 @@
 <div class="product">
-	<div class="name padding5">{{this.name}}</div>
+	<div class="name">{{this.name}}</div>
 	<div class="img-holder">
 		<div class="img-ctr col">
 		 {{> atoms/a-img imageUrl=this.imageURL}}
 		 </div>
 		<div class="desc-ctr col ">
-			<div class="desc padding5">{{this.description}}</div>
-			<div class="btn-box paddingTop10">
+			<div class="desc">{{this.description}}</div>
+			<div class="btn-box">
 				<div class="price-ctr lg-screen">MRP{{this.price}}</div>
 				<div class="btn-ctr">
-				 {{> atoms/a-button class="md-screen btn-buy padding5" imageUrl=this.imageURL click =(concat 'buy( "' this.id '")')  btntext=(concat 'Buy now @ MRP' this.price) }}
-				  {{> atoms/a-button  class="lg-screen btn-buy padding5" imageUrl=this.imageURL click =(concat 'buy( "' this.id '")') btntext="Buy now" }}
+				 {{> atoms/a-button class="md-screen btn-buy" imageUrl=this.imageURL click =(concat 'buy( "' this.id '")')  btntext=(concat 'Buy now @ MRP' this.price) }}
+				  {{> atoms/a-button  class="lg-screen btn-buy" imageUrl=this.imageURL click =(concat 'buy( "' this.id '")') btntext="Buy now" }}
 				</div>
 			</div>
 		</div>
 	</div>
-	<div class="btn-box-pad paddingTop10"><button type="button" class="btn-buy padding5"  onclick="buy('{{this.id}}')">Buy now @ MRP{{this.price}}</button>
+	<div class="btn-box-pad"><button type="button" class="btn-buy"  onclick="buy('{{this.id}}')">Buy now @ MRP{{this.price}}</button>
 	</div>
 </div>

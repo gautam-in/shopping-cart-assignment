@@ -2,8 +2,8 @@
 @import "../../../src/sass/common";
 
 footer {
-	background: $bgColor;
-	padding: 10px;
+	background:color('grey');
+	@include padding(10);
 	.copyright{
 		font-weight: 600;
     	font-size: .65rem;

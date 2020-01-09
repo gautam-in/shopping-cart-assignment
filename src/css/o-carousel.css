@@ -1,44 +1,4 @@
 /* Next & previous buttons */
-.basic-btn-color {
-  background: #D10157;
-  color: #ffffff; }
-
-.clear-all {
-  clear: both; }
-
-.padding5 {
-  padding: 5px  !important; }
-
-.padding10 {
-  padding: 10px; }
-
-.paddingTop10 {
-  padding-top: 10px; }
-
-.padding15 {
-  padding: 15px; }
-
-.marginTop5 {
-  margin-top: 5px; }
-
-.marginTop15 {
-  margin-top: 15px; }
-
-.marginTop25 {
-  margin-top: 25px; }
-
-.marginTop50 {
-  margin-top: 50px; }
-
-.fontDecorate {
-  font-size: 12px; }
-
-.paddingLeft5 {
-  padding-left: 5px; }
-
-.textCenter {
-  text-align: center; }
-
 .slideshow-container {
   max-width: 100%;
   position: relative;
@@ -60,8 +20,8 @@
     top: 50%;
     width: auto;
     padding: 16px;
-    margin-top: -22px;
-    color: #ffffff;
+    margin: -22px 0px 0px 0px;
+    color: #FFFFFF;
     font-weight: bold;
     font-size: .9rem;
     transition: 0.6s ease;
@@ -95,15 +55,16 @@
     opacity: 1; } }
 
 /* The dots/bullets/indicators */
-.dot {
-  cursor: pointer;
-  height: 5px;
-  width: 5px;
-  margin: 0 2px;
-  background-color: #bbb;
-  border-radius: 50%;
-  display: inline-block;
-  transition: background-color 0.6s ease; }
-
-.active, .dot:hover {
-  background-color: #717171; }
+.carousal-dot {
+  text-align: center; }
+  .carousal-dot .dot {
+    cursor: pointer;
+    height: 5px;
+    width: 5px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease; }
+  .carousal-dot .active, .carousal-dot .dot:hover {
+    background-color: #717171; }

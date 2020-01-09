@@ -1,44 +1,4 @@
 @import url("https://fonts.googleapis.com/css?family=Dosis:400,600,700");
-.basic-btn-color {
-  background: #D10157;
-  color: #ffffff; }
-
-.clear-all {
-  clear: both; }
-
-.padding5 {
-  padding: 5px  !important; }
-
-.padding10 {
-  padding: 10px; }
-
-.paddingTop10 {
-  padding-top: 10px; }
-
-.padding15 {
-  padding: 15px; }
-
-.marginTop5 {
-  margin-top: 5px; }
-
-.marginTop15 {
-  margin-top: 15px; }
-
-.marginTop25 {
-  margin-top: 25px; }
-
-.marginTop50 {
-  margin-top: 50px; }
-
-.fontDecorate {
-  font-size: 12px; }
-
-.paddingLeft5 {
-  padding-left: 5px; }
-
-.textCenter {
-  text-align: center; }
-
 .product {
   padding: 5px;
   clear: left; }
@@ -55,7 +15,8 @@
   .product .name {
     font-size: .6rem;
     font-weight: 600;
-    height: 40px; }
+    height: 40px;
+    padding: 5px; }
   .product .img-holder .img-ctr {
     width: 49.2%;
     text-align: center; }
@@ -78,7 +39,10 @@
         width: 100%; } }
     .product .img-holder .desc-ctr .desc, .product .img-holder .desc-ctr .price, .product .img-holder .desc-ctr .btn-buy {
       font-size: .5rem; }
+    .product .img-holder .desc-ctr .btn-buy {
+      padding: 5px; }
     .product .img-holder .desc-ctr .desc {
+      padding: 5px;
       background: #eeeeee;
       overflow: hidden; }
       @media screen and (min-width: 768px) {
@@ -86,7 +50,12 @@
           height: 80px; } }
     .product .img-holder .desc-ctr .btn-box {
       display: flex;
-      display: block; }
+      display: block;
+      padding: 10px 0px 0px 0px; }
+      .product .img-holder .desc-ctr .btn-box button {
+        background: #D10157;
+        color: #FFFFFF;
+        cursor: pointer; }
       @media screen and (min-width: 768px) {
         .product .img-holder .desc-ctr .btn-box {
           display: none; } }
@@ -126,7 +95,12 @@
     width: 100%; }
   .product .btn-box-pad {
     clear: left;
-    display: none; }
+    display: none;
+    padding: 10px 0px 0px 0px; }
+    .product .btn-box-pad button {
+      background: #D10157;
+      color: #FFFFFF;
+      cursor: pointer; }
     @media screen and (min-width: 768px) {
       .product .btn-box-pad {
         width: 100%;
@@ -135,4 +109,5 @@
       .product .btn-box-pad {
         display: none; } }
     .product .btn-box-pad .btn-buy {
+      padding: 5px;
       width: 100%; }

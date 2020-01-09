@@ -14,7 +14,7 @@
 }
 
 .product{
-		padding:5px;
+		@include padding(5);
 		clear:left;
 		@media screen and (min-width: $tab) {
 			width: 49.2%;
@@ -30,6 +30,7 @@
 			font-size:.6rem;
 			font-weight: 600;
 			height: 40px;
+			@include padding(5);
 		}
 		.img-holder{
 			.img-ctr{
@@ -60,9 +61,12 @@
 				.desc,.price,.btn-buy{
 				font-size:.5rem;
 				}
+				.btn-buy{
+					@include padding(5);
+				}
 				.desc{
-					background: $bgColor;
-					//margin-top: 10px;
+					@include padding(5);
+					background: color('grey');
 					@media screen and (min-width:$tab) {
 						height: 80px;
 					}
@@ -72,6 +76,8 @@
 					.btn-box{
 						display: flex;
 						display: block;
+						 @import "../atoms/a-button";
+						@include padding(10 0 0 0);
 						@media screen and (min-width:$tab) {
 							display: none;
 
@@ -85,7 +91,7 @@
 							width:50%;
 							float: left;
 							display: none;
-							padding:5px;
+							@include padding(5);
 							font-size:.6rem;
 							@include show-lg;
 								
@@ -121,6 +127,8 @@
 		.btn-box-pad{
 					clear: left;
 					display: none;
+					 @import "../atoms/a-button";
+					@include padding(10 0 0 0);
 					@media screen and (min-width:$tab) {
 						width:100%;
 						display: block;
@@ -129,6 +137,7 @@
 						display: none;
 					}
 					.btn-buy{
+						@include padding(5);
 						width:100%;
 					}
 

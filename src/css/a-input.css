@@ -1,4 +1,8 @@
 input {
   border: none;
   width: 100%;
+  padding: 0px 0px 5px 0px;
   border-bottom: solid 2px #5fc8d0; }
+
+input:focus {
+  outline: none; }

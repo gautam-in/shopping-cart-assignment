@@ -1,5 +1,6 @@
 @import "../../../src/sass/variables";
 button{
-	background: $redBg;
-	color: $whiteColor;
+	background: color('red');
+	color: color('white');
+	cursor: pointer;
 }

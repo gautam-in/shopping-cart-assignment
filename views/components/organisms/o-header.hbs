@@ -2,26 +2,27 @@
 		<nav>
 			<div class="row nav-bar">
 				<div class="col span-1-of-4">
-					<img src="/static/images/logo.png" class="logo"/>
+				{{> atoms/a-img class="logo" imageUrl="/static/images/logo.png" alt="Sab ka Bazar"}}
 				</div>
-
 				<div class="col span-2-of-4">
 					<ul class="home-nav">
-						<li><a href="/">Home</a></li>
-						<li><a href="/products">Products</a></li>
+						<li>{{> atoms/a-link hypertext="Home" href="/"}}</li>
+						<li>{{> atoms/a-link hypertext="Products" href="/products"}}</li>
 					</ul>
 				</div>
 
 				<div class="col span-1-of-4">
 				<div>
 					<ul class="main-nav">
-						<li><a href="/login">Sign In</a></li>
-						<li><a href="/register">Register</a></li>
+						<li>{{> atoms/a-link hypertext="Sign In" href="/login"}}</li>
+						<li>{{> atoms/a-link hypertext="Register" href="/register"}}</li>
 					</ul>
 				</div>
-				<div class="cart-header-box padding5">
-					<img src="/static/images/cart.svg" alt="Logo" class="cart" onclick="showCart()">
+				<div class="cart-header-box"  onclick="showCart()">
+				<button>
+					<img src="/static/images/cart.svg" alt="Logo" class="cartNumber">
 					<span class="cartNumber">{{cartItems}} items</span>
+				</button>
 				</div>
 			    </div>
 
