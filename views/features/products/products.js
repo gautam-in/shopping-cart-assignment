@@ -63,6 +63,7 @@ var shoppingCart = (function(){
         if( itemsinCart[index].qty === 0){
           removeItem(index);
         }
+        saveCart();
     }
 
     function saveCart(){
