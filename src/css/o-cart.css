@@ -44,6 +44,9 @@
         float: right;
         border: none;
         background: transparent; }
+        @media screen and (min-width: 992px) {
+          .parent-overlay .overlay .header .close {
+            color: #FFFFFF; } }
     .parent-overlay .overlay .cart-box {
       margin: 25px 0px 0px 0px;
       background: #FFFFFF; }

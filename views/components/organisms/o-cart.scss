@@ -63,6 +63,9 @@
 		    float:right;
 		    border: none;
 		    background: transparent;
+		    	@media screen and (min-width:$lap) {
+				color: color('white');
+		    	}
 		    }
 
 		}

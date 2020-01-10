@@ -38,7 +38,6 @@ let shoppingCart = (function(){
        } else {
          itemsinCart[index].qty += 1;
        }
-       cartUpdated = true;
        saveCart();
          
     }
@@ -115,6 +114,7 @@ function buy(id) {
         body: JSON.stringify({'cartCount':itemCount}),
         }).then((resp)=>{
           shoppingCart.addItemtoCart(id);
+          cartUpdated = true;
            setCount();
         })
     }
@@ -149,6 +149,7 @@ function update(event,flag){
         body: JSON.stringify({'cartCount':itemCount}),
         }).then((resp)=>{
           shoppingCart.updateCart(id,flag);
+          cartUpdated = true;
           setCount();
           let itemsinCart = shoppingCart.getCart();
           renderCart(itemsinCart);
@@ -202,9 +203,12 @@ function renderCart(itemsinCart){
   }
 
    document.getElementsByClassName("cart-box")[0].innerHTML =html;
+   setTimeout(()=> document.getElementsByClassName("checkout")[0].focus(),1000);
+   
 }
 
 function setCount(){
+  document.getElementsByClassName("cart-head-count")[0].innerHTML=`My Cart(${shoppingCart.getCount()} items)` ;
   document.getElementsByClassName("cartNumber")[1].innerHTML=`${shoppingCart.getCount()} items` ;
   document.getElementsByClassName("cartNumber")[0].innerHTML=`${shoppingCart.getCount()} items` ;
 }
