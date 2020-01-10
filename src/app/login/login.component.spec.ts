@@ -4,6 +4,7 @@ import { ConstantsService } from './../shared/services/constants.service';
 import { LoginComponent } from './login.component';
 import { CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/core';
 import { RouterTestingModule } from '@angular/router/testing';
+import { RouterUrlService } from '../shared/services/routerUrl.service';
 
 
 
@@ -14,7 +15,7 @@ describe('LoginComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports:[FormsModule,RouterTestingModule],
-      providers:[ ConstantsService ],
+      providers:[ ConstantsService,RouterUrlService ],
       declarations: [ LoginComponent ],
       schemas: [ CUSTOM_ELEMENTS_SCHEMA , NO_ERRORS_SCHEMA ]
     })

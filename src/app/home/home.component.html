@@ -1,9 +1,14 @@
 <main class="home-wrapper carousel-wrapper" id="main-content" tabindex="-1">
 
+
+    <!-- Error handling -->
+
+    <app-error [message] ="error" *ngIf="bannerErrorOccured"></app-error>
+
+
     <div class="slideshow-container">
 
         <!-- Carousel component -->
-
         <shopping-cart-carousel *ngIf="!bannerLoading && bannerList?.length" [bannerList]="bannerList"></shopping-cart-carousel>
 
 
@@ -25,6 +30,11 @@
     </p>
 
     <!-- Category details -->
+
+    <!-- Error handling -->
+
+    <app-error [message] ="error" *ngIf="categoryErrorOccured"></app-error>
+
 
     <div class="item-container clearfix" *ngFor="let category of categoryList;let odd=odd; let even=even">
 

@@ -32,6 +32,10 @@
 
         <div class="row list-body margin-top-0 clearfix">
 
+             <!-- Error handling -->
+
+            <app-error [message] ="errorMsg" *ngIf="productErrorOccured"></app-error>
+
             <!-- Dynamic product list -->
             
 

@@ -9,7 +9,7 @@ import { CartService } from './../shared/services/cart.service';
 import { ApiService } from './../shared/services/api.service';
 
 import { Observable, from } from 'rxjs';
-import 'rxjs/add/observable/from';
+import { RouterUrlService } from '../shared/services/routerUrl.service';
 
 
 
@@ -24,7 +24,7 @@ describe('ProductListComponent', () => {
 
     declarations: [ ProductListComponent ],
       schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA],
-      providers:[ConstantsService, CartService, ApiService ]
+      providers:[ConstantsService, CartService, ApiService,RouterUrlService ]
     })
 
     .compileComponents();

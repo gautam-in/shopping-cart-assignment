@@ -1,10 +1,11 @@
-import { Component, OnInit, ViewChildren } from '@angular/core';
+import { Component, OnInit, ViewChildren, OnDestroy } from '@angular/core';
 import { IProduct } from './../models/IProduct';
 import { ApiService } from './../shared/services/api.service';
 import { ICategory } from './../models/Icategory';
 import { ActivatedRoute, Router } from "@angular/router";
 import { CartService } from './../shared/services/cart.service';
 import { RouterUrlService } from '../shared/services/routerUrl.service';
+import { Subscription } from 'rxjs';
 
 
 @Component({
@@ -12,18 +13,23 @@ import { RouterUrlService } from '../shared/services/routerUrl.service';
   templateUrl: './product-list.component.html',
   styleUrls: ['./product-list.component.scss']
 })
-export class ProductListComponent implements OnInit {
+export class ProductListComponent implements OnInit,OnDestroy {
   public productList:IProduct[];
   public categoryList:ICategory[];
   public selectedCategoryId:string='';
   public selectedCategory:string='Select Category';
   public productLoading : boolean = false;
   public categoryLoading:boolean = false;
-  
+  productErrorOccured:boolean = false;
+  errorMsg= null;
+  errorMsgSub : Subscription;
   constructor(private route: ActivatedRoute, private apiService:ApiService, private cartService: CartService, private routerUrlService: RouterUrlService, private router: Router) { 
   }
 
   ngOnInit() {
+    this.errorMsgSub = this.apiService.error.subscribe(error =>{
+      this.errorMsg = error;
+    });
     this.getCategories();
     this.route.queryParams.subscribe(params=>{
       this.selectedCategoryId = params.category;
@@ -31,7 +37,12 @@ export class ProductListComponent implements OnInit {
         this.apiService.getFilteredProducts("products",this.selectedCategoryId).subscribe((productList) =>{
           this.productList = productList;
           this.productLoading = false;
-        } );
+          this.productErrorOccured = false;
+        },error=>{
+          this.productLoading = false;
+          this.apiService.error.next(error.message);
+          this.productErrorOccured = true;
+        });
       }else{
         this.getProducts();
       }
@@ -44,6 +55,11 @@ export class ProductListComponent implements OnInit {
     this.apiService.getProducts("products").subscribe((productList) => {
       this.productList = productList;
       this.productLoading = false;
+      this.productErrorOccured = false;
+    },error=>{
+      this.productLoading = false;
+      this.apiService.error.next(error.message);
+      this.productErrorOccured = true;
     });
   }
 
@@ -84,6 +100,10 @@ export class ProductListComponent implements OnInit {
 
   onCategorySelect(){
     document.getElementById("js-dropdown-content").classList.toggle("show");
+  }
+
+  ngOnDestroy(){
+    this.errorMsgSub.unsubscribe();
   }
 
 }

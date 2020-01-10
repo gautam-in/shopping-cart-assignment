@@ -1,5 +1,4 @@
-import { Component, OnInit, ErrorHandler } from '@angular/core';
-import { GlobalErrorHandler } from './../../../shared/services/global-error-handler.service';
+import { Component, OnInit, ErrorHandler, Input } from '@angular/core';
 
 @Component({
   selector: 'app-error',
@@ -7,8 +6,8 @@ import { GlobalErrorHandler } from './../../../shared/services/global-error-hand
   styleUrls: ['./error.component.scss']
 })
 export class ErrorComponent implements OnInit {
-
-  constructor(private errorHandler: ErrorHandler, private globalError: GlobalErrorHandler) { }
+  @Input('message') errorMsg;
+  constructor() { }
 
   ngOnInit() {
     
