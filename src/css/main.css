@@ -9,16 +9,18 @@ header {
     height: auto;
     width: 100%;
     float: left;
+    cursor: pointer;
+    padding: 0px 0px 0px 5px;
     margin: 10px 0px; }
     @media screen and (min-width: 768px) {
       header .logo {
-        padding: 0% 2%;
+        padding: 0px;
         height: 70px;
         width: auto; } }
   header .main-nav {
-    float: right;
     word-spacing: -2px;
     font-size: .45rem;
+    float: right;
     list-style-type: none; }
     @media screen and (min-width: 768px) {
       header .main-nav {
@@ -28,7 +30,7 @@ header {
       margin: 0px 0px 0px 10px; }
       header .main-nav li a {
         color: #646E72;
-        text-decoration: none;
+        text-decoration: none !important;
         font-weight: 600; }
   header .home-nav {
     float: left;
@@ -41,21 +43,24 @@ header {
       margin: 0px 0px 0px 10px; }
       header .home-nav li a {
         color: #646E72;
-        text-decoration: none;
+        text-decoration: none !important;
         font-weight: 600; }
   header .cart-header-box {
     background: #eeeeee;
     position: absolute;
-    right: 0;
     bottom: 0;
-    padding: 7px; }
+    right: 0;
+    padding: 10px;
+    padding: 10px; }
     header .cart-header-box .cart-link {
       text-decoration: none !important; }
       header .cart-header-box .cart-link .cart {
         height: 35px;
         width: auto; }
       header .cart-header-box .cart-link span {
-        font-size: .7rem; }
+        color: #646E72;
+        font-size: .7rem;
+        font-weight: 600; }
   header .clear-all {
     clear: both; }
 
@@ -73,8 +78,7 @@ body {
 
 .row {
   max-width: 1140px;
-  margin: 0 auto;
-  padding: 0% 2%; }
+  margin: 0 auto; }
 
 /* Next & previous buttons */
 .parent-overlay {

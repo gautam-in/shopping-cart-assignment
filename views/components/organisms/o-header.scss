@@ -14,9 +14,11 @@ header {
 		height:auto;
 		width:100%;
 		float: left;
+		cursor: pointer;
+		@include padding(0 0 0 5);
 		@include margin(10 0);
 		@media screen and (min-width: $tab) {
-			padding: 0% 2%;
+			@include padding(0);
 			height: 70px;
 			width: auto;
 		}
@@ -31,15 +33,15 @@ header {
 			@include margin(0 0 0 10);
 			a{
 				color:  color('navColor');
-				text-decoration: none;
+				@include a-decorate;
 				font-weight: 600;
 			}
 		}
 	}
 	.main-nav {
-		float: right;
 		word-spacing: -2px;
 		font-size:.45rem;
+		float:right;
 		@media screen and (min-width: $tab) {
 			font-size:.6rem;
 		}
@@ -55,9 +57,11 @@ header {
 	.cart-header-box{
 		background:  color('grey');
 		position: absolute;
-		right: 0;
-		bottom: 0;
-		@include padding(7);
+	    bottom: 0;
+	    right: 0;
+	    @include padding(10);
+	    padding: 10px;
+		
 		.cart-link{
 			@include a-decorate;
 			.cart {
@@ -65,7 +69,9 @@ header {
 				width: auto;
 			}
 			span {
+				color:  color('navColor');
 					font-size:.7rem;
+					font-weight: 600;
 				}
 			}
 	

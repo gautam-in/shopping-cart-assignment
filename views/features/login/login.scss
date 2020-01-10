@@ -3,28 +3,28 @@
 @import "../../../src/sass/common";
 
 .login-section{
-	padding: 3%;
+	.login-text {
+		padding:2% 0% 0% 5%;
+		h1{
+			@include margin(20 0 0 0);
+		}
+		
+		@import "../../components/atoms/a-header";
+		@import "../../components/atoms/a-desc";
+	}
+	.login-form{
+		input, .login-btn{
+			width:65%;
+		}
+		@import "../../components/molecules/m-forminput";
+		@import "../../components/atoms/a-button";
+		.login-btn {
+			height: 40px;
+			@include margin(20 0 0 0);
+
+		}
+		
+	}
 }
 
-.login-text {
-	padding:2% 0%;
-	h1{
-		@include margin(20 0 0 0);
-	}
-	
-	@import "../../components/atoms/a-header";
-	@import "../../components/atoms/a-desc";
-}
-.login-form{
-	input, .login-btn{
-		width:65%;
-	}
-	@import "../../components/molecules/m-forminput";
-	@import "../../components/atoms/a-button";
-	.login-btn {
-		height: 40px;
-		@include margin(20 0 0 0);
 
-	}
-	
-}

@@ -3,7 +3,7 @@
 input{
 		border: none;
 		width:100%;
-		@include padding(0 0 5 0);
+		@include padding(0 0 10 0);
 		border-bottom: solid 2px color('blue');
 }
 input:focus{

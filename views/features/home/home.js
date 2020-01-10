@@ -46,6 +46,11 @@ let carousel = (function () {
  
 })();
 
+function exploreBeverages(id){
+window.location.href = `/products/${id}`;
+}
+
+
 setTimeout(function(){
   let address =window.location.pathname;
   if(address === '/'){

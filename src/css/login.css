@@ -1,42 +1,39 @@
 @import url("https://fonts.googleapis.com/css?family=Dosis:400,600,700");
 @import url("https://fonts.googleapis.com/css?family=Dosis:400,600,700");
-.login-section {
-  padding: 3%; }
-
-.login-text {
-  padding: 2% 0%; }
-  .login-text h1 {
+.login-section .login-text {
+  padding: 2% 0% 0% 5%; }
+  .login-section .login-text h1 {
     margin: 20px 0px 0px 0px; }
-  .login-text h1 {
+  .login-section .login-text h1 {
     font-weight: 700;
     letter-spacing: -1px; }
-  .login-text p {
+  .login-section .login-text p {
     font-weight: 600;
     font-size: .7rem;
     margin-top: 20px; }
 
-.login-form { }
-  .login-form input, .login-form .login-btn {
+.login-section .login-form { }
+  .login-section .login-form input, .login-section .login-form .login-btn {
     width: 65%; }
-  .login-form .form-group {
+  .login-section .login-form .form-group {
     width: 65%;
     padding: 20px 0px 0px 0px; }
-    .login-form .form-group input {
+    .login-section .login-form .form-group input {
       border: none;
       width: 100%;
-      padding: 0px 0px 5px 0px;
+      padding: 0px 0px 10px 0px;
       border-bottom: solid 2px #5fc8d0; }
-    .login-form .form-group input:focus {
+    .login-section .login-form .form-group input:focus {
       outline: none; }
-    .login-form .form-group label {
+    .login-section .login-form .form-group label {
       margin-top: 1%;
       font-weight: 600;
       font-size: .6rem;
       color: #5fc8d0; }
-  .login-form button {
+  .login-section .login-form button {
     background: #D10157;
     color: #FFFFFF;
     cursor: pointer; }
-  .login-form .login-btn {
+  .login-section .login-form .login-btn {
     height: 40px;
     margin: 20px 0px 0px 0px; }

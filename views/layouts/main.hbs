@@ -3,20 +3,22 @@
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 	<title>Shopping Cart</title>
+	<!--<link rel="stylesheet" href="/dest/concat.css">-->
+	<link rel="stylesheet" href="/css/ngrid.css">
 	<link rel="stylesheet" href="/css/ngrid.css">
 	<link rel="stylesheet" href="/css/main.css">
-	<link rel="stylesheet" href="/css/cart.css">
 	<link rel="stylesheet" href="/css/products.css">
 	<link rel="stylesheet" href="/css/login.css">
 	<link rel="stylesheet" href="/css/register.css">
 	<link rel="stylesheet" href="/css/home.css">
 </head>
-<body>
+<body >
 	{{> organisms/o-cart}}
 	{{> organisms/o-header}}
     {{{body}}}
     
  	{{> organisms/o-footer}}
+ 	<script src="/js/common.js"></script>
  	<script src="/features/home/home.js"></script>
  	<script src="/features/login/login.js"></script>
  	<script src="/features/register/register.js"></script>

@@ -26,7 +26,7 @@ let shoppingCart = (function(){
       if( localStorage.getItem("itemsinCart")){
         itemsinCart = JSON.parse(localStorage.getItem("itemsinCart"));
         cartUpdated =true;
-      }
+      } 
     }
 
     function addItemtoCart(id) {
@@ -130,6 +130,11 @@ function init(){
   xmlhttp.open("GET", "../server/products/index.get.json", true);
   xmlhttp.send();
   shoppingCart.init();
+  if(shoppingCart.getCart().length){
+    togglePriceDetails('block');
+  }else {
+    togglePriceDetails('none');
+  }
   setCount();
 
 }
@@ -168,6 +173,7 @@ function showCart(){
    showSum();  
   }
    document.getElementsByClassName("parent-overlay")[0].style.display ='block';
+  document.getElementsByTagName("body")[0].style.overflow ='hidden';
    cartUpdated = false;
 
 }
@@ -182,9 +188,9 @@ function renderCart(itemsinCart){
                   <div class="label"> ${itemsinCart[i].name}</div>
                     <div class="row">
                       <div class="col span 1-of-2 qty-ctr paddingTop10">
-                          <button class="dot id-${item.id}" id=${item.id} onclick="update(event.target,true)">+</button>
+                          <button class="dot id-${item.id}" id=${item.id} tabindex="0" onclick="update(event.target,true)">+</button>
                           <span class="item-price" id="item-price-${item.id}">${itemsinCart[i].qty}</span>
-                          <button class="dot  id-${item.id}" onclick="update(event.target,false)">-</button>
+                          <button class="dot  id-${item.id}" tabindex="0" onclick="update(event.target,false)">-</button>
                           <span>x</span>
                           <span>Rs.${itemsinCart[i].price}</span>
                       </div>
@@ -212,6 +218,7 @@ function setCount(){
 }
 
 function closeCart(){
+  document.getElementsByTagName("body")[0].style.overflow ='auto';
   document.getElementsByClassName("parent-overlay")[0].style.display ='none';
 }
 function togglePriceDetails(param){

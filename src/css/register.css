@@ -22,7 +22,7 @@
     .register-form .form-group input {
       border: none;
       width: 100%;
-      padding: 0px 0px 5px 0px;
+      padding: 0px 0px 10px 0px;
       border-bottom: solid 2px #5fc8d0; }
     .register-form .form-group input:focus {
       outline: none; }

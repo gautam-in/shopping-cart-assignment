@@ -2,7 +2,7 @@
 		<nav>
 			<div class="row nav-bar">
 				<div class="col span-1-of-4">
-				{{> atoms/a-img class="logo" imageUrl="/static/images/logo.png" alt="Sab ka Bazar"}}
+				{{> atoms/a-img class="logo" imageUrl="/static/images/logo.png" alt="Sab ka Bazar" onclick="movetoHome('/')"}}
 				</div>
 				<div class="col span-2-of-4">
 					<ul class="home-nav">
@@ -18,8 +18,8 @@
 						<li>{{> atoms/a-link hypertext="Register" href="/register"}}</li>
 					</ul>
 				</div>
-				<div class="cart-header-box" >
-				<a href=""  onclick="showCart();return false;" class="cart-link">
+				<div class="cart-header-box">
+				<a href="" onclick="showCart();return false;" class="cart-link">
 					{{> atoms/a-img imageUrl="/static/images/cart.svg" alt="Logo" class="cart"}}
 					<span class="cartNumber">{{cartItems}} items</span>
 				</a>

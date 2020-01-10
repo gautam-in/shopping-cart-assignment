@@ -27,7 +27,6 @@
 .col {
 	display: block;
 	float:left;
-	margin: 1% 0 1% 1.6%;
 }
 
 .col:first-child { margin-left: 0; } /* all browsers except IE6 and lower */
@@ -96,9 +95,23 @@
 }
  */
 /*  GRID OF FOUR   ============================================================================= */
-
-	
 .span-4-of-4 {
+	width: 100%; 
+}
+
+.span-3-of-4 {
+	width: 75%; 
+}
+
+.span-2-of-4 {
+	width: 50%; 
+}
+
+.span-1-of-4 {
+	width: 25%; 
+}
+	
+/*.span-4-of-4 {
 	width: 100%; 
 }
 
@@ -112,7 +125,7 @@
 
 .span-1-of-4 {
 	width: 23.8%; 
-}
+}*/
 
 
 /*  GO FULL WIDTH AT LESS THAN 480 PIXELS */
