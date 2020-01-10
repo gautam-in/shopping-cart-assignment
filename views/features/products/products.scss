@@ -1,11 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Dosis:400,600,700');
 @import "../../../src/sass/variables";
 @import "../../../src/sass/common";
-@mixin btn-basic{
-		background: color('red');
-		color: color('white');
-		@include padding(5);
-}
 
 @mixin hide-md{
 		@media screen and (min-width:$tab) {
@@ -89,6 +84,7 @@
 	.product-wrapper{
 		width:98%;
 		background: white;
+		
 		@media screen and (min-width: $tab) {
 			width: 80%;
 			float: right;

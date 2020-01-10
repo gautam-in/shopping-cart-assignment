@@ -6,7 +6,7 @@
 	 	{{>organisms/o-header}}
 	 </div>
  	<div class="header">My Cart(1 item)
- 	<span class="close" onclick="closeCart()">x</span></div>
+ 	<button class="close" onclick="closeCart()">x</button></div>
  	<div class="cart-box">
  	</div>
  	<div class="row low-price">
@@ -15,8 +15,9 @@
  	<div class="footer">
  		 <p class="promo">Promo code can be applied on
             payment page</p>
-            <button class="checkout-btn"><span class="checkout">Proceed to Checkout </span>
+            <button class="checkout-btn checkout" onclick="closeCart()" autofocus><span class="checkout" >Proceed to Checkout </span>
             <span id="totalprice" class="total"></span></button>
+            <button class="checkout-btn shopping" onclick="closeCart()" autofocus>Start shopping</div>
  	</div>
   </div>
  </div>

@@ -1,5 +1,3 @@
-
-
 let itemCount =0;
 let itemList = [];
 let itemsinCart =[];
@@ -14,10 +12,10 @@ function selectCategory(id){
 
 }
 
-var shoppingCart = (function(){
+let shoppingCart = (function(){
  
-    var itemsinCart = [];
-    var products;
+    let itemsinCart = [];
+    let products;
 
 
     function setProducts(pr){
@@ -38,22 +36,10 @@ var shoppingCart = (function(){
         product.qty = 1;
         itemsinCart.push(product);
        } else {
-         product.qty += 1;
+         itemsinCart[index].qty += 1;
        }
-        /*if(!itemsinCart.length){
-            product.qty=1;
-             //itemList.push({'qty':1,'id':id});
-           } else {
-            let x = itemList.findIndex(x=>x.id == id)
-            if(x !== -1){
-              itemList[x].qty+=1
-            }else {
-              itemList.push({'qty':1,'id':id});
-            }
-           }*/
-           cartUpdated = true;
-          // itemsinCart =[];
-           saveCart();
+       cartUpdated = true;
+       saveCart();
          
     }
 
@@ -130,39 +116,25 @@ function buy(id) {
         }).then((resp)=>{
           shoppingCart.addItemtoCart(id);
            setCount();
-          /*if(!itemList.length){
-             itemList.push({'qty':1,'id':id});
-           } else {
-            let x = itemList.findIndex(x=>x.id == id)
-            if(x !== -1){
-              itemList[x].qty+=1
-            }else {
-              itemList.push({'qty':1,'id':id});
-            }
-           }
-           cartUpdated = true;
-           itemsinCart =[];
-           
-          localStorage.setItem("itemList",JSON.stringify(itemList));*/
         })
-
-
-     
     }
   });
  
 }
-var xmlhttp = new XMLHttpRequest();
-xmlhttp.onreadystatechange = function() {
-  if (this.readyState == 4 && this.status == 200) {
-     var data =eval('('+this.responseText+')');
-     shoppingCart.setProducts(data);
-  }
-};
-xmlhttp.open("GET", "../server/products/index.get.json", true);
-xmlhttp.send();
-shoppingCart.init();
-setCount();
+function init(){
+  let xmlhttp = new XMLHttpRequest();
+  xmlhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+       let data =eval('('+this.responseText+')');
+       shoppingCart.setProducts(data);
+    }
+  };
+  xmlhttp.open("GET", "../server/products/index.get.json", true);
+  xmlhttp.send();
+  shoppingCart.init();
+  setCount();
+
+}
 
 function update(event,flag){
   let id =event.classList[1].split("-")[1];
@@ -176,7 +148,6 @@ function update(event,flag){
           },
         body: JSON.stringify({'cartCount':itemCount}),
         }).then((resp)=>{
-          shoppingCart.addItemtoCart(id);
           shoppingCart.updateCart(id,flag);
           setCount();
           let itemsinCart = shoppingCart.getCart();
@@ -187,47 +158,14 @@ function update(event,flag){
 
 function showSum(){
   let totalPrice = shoppingCart.calcSum();
-/*let totalprice = itemsinCart.reduce((sum,x)=>{
-    sum = sum+x.qty*x.price;
-    return sum;    
-},0)*/
  document.getElementById(`totalprice`).innerHTML = `Rs.${totalPrice}&nbsp;&nbsp;>`;
 
 }
 function showCart(){
   if(cartUpdated){
    let itemsinCart = shoppingCart.getCart();
-   //let itemList =JSON.parse(localStorage.getItem("itemList"));
    let products =JSON.parse(localStorage.getItem("products"));
-   /*itemList.forEach(item=>{
-    let product =products.find(product=>product.id == item.id);
-      product.qty = item.qty;
-      itemsinCart.push(product);
-   });*/
    renderCart(itemsinCart);
-   /*let html='';
-   console.log(itemsinCart);
-   for(let i=0;i<itemsinCart.length;i++) {
-    let item = itemsinCart[i];
-      html+=`<div class="row cart-item">
-                <div class="col span-3-of-12"><img src="${itemsinCart[i].imageURL}"></div>
-                <div class="col span-9-of-12">
-                  <div class="label"> ${itemsinCart[i].name}</div>
-                    <div class="row">
-                      <div class="col span 1-of-2 qty-ctr paddingTop10">
-                          <span class="dot id-${item.id}" id=${item.id} onclick="update(event.target,true)">+</span>
-                          <span class="item-price" id="item-price-${item.id}">${itemsinCart[i].qty}</span>
-                          <span class="dot  id-${item.id}" onclick="update(event.target,false)">-</span>
-                          <span>x</span>
-                          <span>Rs.${itemsinCart[i].price}</span>
-                      </div>
-                      <div class="col span-1-of-2 price-ctr" id="item-total-${item.id}">Rs.${itemsinCart[i].price*itemsinCart[i].qty}
-                      </div>
-                    </div>
-                </div>
-              </div>`;
-   }
-   document.getElementsByClassName("cart-box")[0].innerHTML =html;*/
    showSum();  
   }
    document.getElementsByClassName("parent-overlay")[0].style.display ='block';
@@ -236,17 +174,18 @@ function showCart(){
 }
 function renderCart(itemsinCart){
   let html ='';
-  for(let i=0;i<itemsinCart.length;i++) {
-    let item = itemsinCart[i];
-      html+=`<div class="row cart-item">
+  if(itemsinCart.length){
+      for(let i=0;i<itemsinCart.length;i++) {
+        let item = itemsinCart[i];
+        html+=`<div class="row cart-item">
                 <div class="col span-3-of-12"><img src="${itemsinCart[i].imageURL}"></div>
                 <div class="col span-9-of-12">
                   <div class="label"> ${itemsinCart[i].name}</div>
                     <div class="row">
                       <div class="col span 1-of-2 qty-ctr paddingTop10">
-                          <span class="dot id-${item.id}" id=${item.id} onclick="update(event.target,true)">+</span>
+                          <button class="dot id-${item.id}" id=${item.id} onclick="update(event.target,true)">+</button>
                           <span class="item-price" id="item-price-${item.id}">${itemsinCart[i].qty}</span>
-                          <span class="dot  id-${item.id}" onclick="update(event.target,false)">-</span>
+                          <button class="dot  id-${item.id}" onclick="update(event.target,false)">-</button>
                           <span>x</span>
                           <span>Rs.${itemsinCart[i].price}</span>
                       </div>
@@ -255,7 +194,13 @@ function renderCart(itemsinCart){
                     </div>
                 </div>
               </div>`;
-   }
+              togglePriceDetails('block');
+      }
+  } else {
+       html+=`<div class="no-item-heading">No items in your cart.</div><p class="no-item-text">Your favorite items are just a click away</div>`;
+       togglePriceDetails('none');
+  }
+
    document.getElementsByClassName("cart-box")[0].innerHTML =html;
 }
 
@@ -267,3 +212,10 @@ function setCount(){
 function closeCart(){
   document.getElementsByClassName("parent-overlay")[0].style.display ='none';
 }
+function togglePriceDetails(param){
+  document.getElementsByClassName("low-price")[0].style.display =param;
+  document.getElementsByClassName("promo")[0].style.display =param;
+  document.getElementsByClassName("checkout")[0].style.display =param;
+  document.getElementsByClassName("shopping")[0].style.display = param === 'none'?'block':'none';
+}
+init();

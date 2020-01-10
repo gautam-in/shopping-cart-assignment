@@ -120,7 +120,9 @@ body {
           background: #000000;
           color: #FFFFFF; } }
       .parent-overlay .overlay .header .close {
-        float: right; }
+        float: right;
+        border: none;
+        background: transparent; }
     .parent-overlay .overlay .cart-box {
       margin: 25px 0px 0px 0px;
       background: #FFFFFF; }
@@ -138,12 +140,23 @@ body {
           background-color: #D10157;
           border-radius: 50%;
           display: inline-block;
-          text-align: center; }
+          text-align: center;
+          border: none; }
         .parent-overlay .overlay .cart-box .cart-item .price-ctr {
           padding: 10px 0px 0px 0px;
           float: right;
           text-align: right;
           padding-right: 20px; }
+      .parent-overlay .overlay .cart-box .no-item-heading {
+        text-align: center;
+        font-weight: 700;
+        padding: 20px 0px 0px 0px;
+        font-size: .9rem; }
+      .parent-overlay .overlay .cart-box .no-item-text {
+        text-align: center;
+        font-size: .7rem;
+        padding: 10px 0px 0px 0px;
+        font-weight: 400; }
     .parent-overlay .overlay .low-price {
       padding: 10px; }
       .parent-overlay .overlay .low-price .low-price-row {
@@ -172,6 +185,8 @@ body {
           float: left; }
         .parent-overlay .overlay .footer .checkout-btn .total {
           float: right; }
+    .parent-overlay .overlay button {
+      cursor: pointer; }
 
 footer {
   background: #eeeeee;
