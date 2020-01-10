@@ -91,8 +91,7 @@ let shoppingCart = (function(){
 })();
 
 function buy(id) {
- const url = `http://localhost:5000/addToCart`;
- console.log(id);
+const url = window.location.origin + "/addToCart";
   fetch(url, {
   method: 'POST',
    headers: {
@@ -103,7 +102,6 @@ function buy(id) {
   }).then(function(response) {
     if(response.status === 200) {
       itemCount=itemCount+1;
-     
       const url = window.location.origin + "/updateCart";
         fetch(url, {
         method: 'POST',

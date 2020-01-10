@@ -1,6 +1,4 @@
 const express = require('express')
-let cartObj =require('./js/cartconstant');
-let cart =require('./js/cart');
 var path =require('path')
 var exphbs = require('express-handlebars'); 
 var bodyParser = require('body-parser');
@@ -20,26 +18,6 @@ app.engine('hbs',exphbs({extname:'hbs',defaultLayout:'main',
 	partialsDir: __dirname+'/views/components/',
     layoutDir: __dirname+'/views/layouts/',
 	helpers:{
-		ifEven:function(value , options){
-			if(value%2=== 0 ){
-				 return options.fn(this);
-	       } else {
-	            return options.inverse(this);
-	        }
-		},
-		ifNewRow:function(value,options) {
-			return value.map(function(item,index){
-				 item.$first = (index+1)%4 === 0;
-			});
-
-		},
-		foreach:function(arr, options) {
-		    return arr.map(function(item,index) {
-		        item.$first = (index+1)%4 === 0;
-		        item.$last  = index === arr.length-1;
-		        return options.fn(item);
-		    }).join('');
-		},
 	      concat:function(){
 	      	 var outStr = '';
             for(var arg in arguments){
@@ -49,7 +27,6 @@ app.engine('hbs',exphbs({extname:'hbs',defaultLayout:'main',
             }
             return outStr;
 	      }
-	     // concat:(...strs) =>  strs.filter( arg => typeof arg !== 'object' ).join('')
 	}
 
 }));
@@ -90,7 +67,6 @@ app.get('/login', (req, res) =>{
 app.get('/register', (req, res) => res.render('features/register/register',{cartItems:cartCount}));
 
 app.get('/products', (req, res) =>{
-	console.log(cartObj.cartItems);
 	res.render('features/products/products',{categories:categories, products:products,cartItems:cartCount});
 });
 app.get('/products/:id', function (req, res) {
@@ -99,8 +75,8 @@ app.get('/products/:id', function (req, res) {
 	res.render('features/products/products', { products: product_cat, categories:categories,cartItems:cartCount});
 });
 app.post('/addtoCart', function (req, res) {
-    cartCount = req.body.cartCount;
-	res.end(JSON.stringify({ 'responseMessage': cartCount}));
+    let id = req.body.id;
+	res.end(JSON.stringify({ 'responseMessage': 'Product added to cart successfully'}));
 });
 
 app.post('/updateCart', function (req, res) {
@@ -108,7 +84,6 @@ app.post('/updateCart', function (req, res) {
 	res.end(JSON.stringify({ 'responseMessage': cartCount}));
 });
 
-app.use('/cart', cart)
 
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))

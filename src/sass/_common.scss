@@ -1,7 +1,13 @@
 @mixin textCenter{
 	text-align: center;
 }
+@mixin a-decorate{
+    text-decoration: none !important;
+}
 
+@mixin btn-decorate{
+    cursor: pointer;
+}
 
 @mixin padding($padding) {
     @if length($padding) == 1 {

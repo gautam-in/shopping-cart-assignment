@@ -47,14 +47,13 @@ header {
     position: absolute;
     right: 0;
     bottom: 0;
-    padding: 5px; }
-    header .cart-header-box .cart {
-      height: 35px;
-      width: auto; }
-    header .cart-header-box button {
-      border: none;
-      cursor: pointer; }
-      header .cart-header-box button span {
+    padding: 7px; }
+    header .cart-header-box .cart-link {
+      text-decoration: none !important; }
+      header .cart-header-box .cart-link .cart {
+        height: 35px;
+        width: auto; }
+      header .cart-header-box .cart-link span {
         font-size: .7rem; }
   header .clear-all {
     clear: both; }

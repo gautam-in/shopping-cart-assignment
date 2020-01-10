@@ -57,20 +57,18 @@ header {
 		position: absolute;
 		right: 0;
 		bottom: 0;
-		@include padding(5);
-		.cart {
-			height: 35px;
-			width: auto;
-
-		}
-		button{
-			border:none;
-			cursor: pointer;
-			span {
-				font-size:.7rem;
+		@include padding(7);
+		.cart-link{
+			@include a-decorate;
+			.cart {
+				height: 35px;
+				width: auto;
 			}
-		}
-		
+			span {
+					font-size:.7rem;
+				}
+			}
+	
 	}
 	.clear-all{
 		clear: both;

@@ -18,11 +18,11 @@
 						<li>{{> atoms/a-link hypertext="Register" href="/register"}}</li>
 					</ul>
 				</div>
-				<div class="cart-header-box"  onclick="showCart()">
-				<button>
-					<img src="/static/images/cart.svg" alt="Logo">
+				<div class="cart-header-box" >
+				<a href=""  onclick="showCart();return false;" class="cart-link">
+					{{> atoms/a-img imageUrl="/static/images/cart.svg" alt="Logo" class="cart"}}
 					<span class="cartNumber">{{cartItems}} items</span>
-				</button>
+				</a>
 				</div>
 			    </div>
 
