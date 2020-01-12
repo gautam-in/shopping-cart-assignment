@@ -9,7 +9,7 @@
 }
 .parent-ctr{
 	background: color('grey');
-	float: left;
+	
 	.category-wrapper{
 		width:100%;
 
@@ -19,14 +19,14 @@
 
 		}
 		.md-screen{
+		list-style:none;
 			@media screen and (max-width: $tab) {
 				display: none;
 			}
 			
 		}
 		.category-bg{
-			@include padding(10 0);
-			text-align: center;
+			@include padding(10 0 10 10);
 			font-size:.9rem;
 			border-bottom:solid 1px #A6A6A6;
 			a{
@@ -82,7 +82,7 @@
 		}
 	}
 	.product-wrapper{
-		width:98%;
+		width:100%;
 		background: white;
 		
 		@media screen and (min-width: $tab) {

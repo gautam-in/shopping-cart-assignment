@@ -17,24 +17,24 @@
 		@include padding(5);
 		clear:left;
 		@media screen and (min-width: $tab) {
-			width: 49.2%;
+			width: 50%;
 			 clear: none;
 			 float: left;
 		}
 		@media screen and (min-width:$lap) {
-			width:23.8%;
+			width:25%;
 			clear: none;
 			float: left;
 		}
 		.name {
-			font-size:.6rem;
-			font-weight: 600;
+			font-size:.7rem;
+			font-weight: 700;
 			height: 40px;
 			@include padding(5);
 		}
 		.img-holder{
 			.img-ctr{
-				width:49.2%;
+				width:50%;
 				text-align: center;
 				@media screen and (min-width:$lap) {
 					width:100%;
@@ -43,8 +43,8 @@
 				}
 				
 				img{
-					height: 110px;
-						width: auto;
+					height: 150px;
+					width: auto;
 					@media screen and (min-width:$lap) {
 					 clear: none;
 					 float: left;
@@ -52,7 +52,7 @@
 				}
 			}
 			.desc-ctr{
-				width:49.2%;
+				width:50%;
 				
 				@media screen and (min-width:$lap) {
 					width:100%;
@@ -62,13 +62,13 @@
 				font-size:.5rem;
 				}
 				.btn-buy{
-					@include padding(5);
+					@include padding(10);
 				}
 				.desc{
 					@include padding(5);
 					background: color('grey');
 					@media screen and (min-width:$tab) {
-						height: 80px;
+						height: 150px;
 					}
 					overflow: hidden;
 				}
@@ -103,16 +103,19 @@
 								display:none; 
 							}
 							@media screen and (min-width:$lap) {
-							width:50%;
+								width:50%;
 								.lg-screen{
-									display:none; 
+									display:none;
+									width:100%; 
 									@include show-lg;
 								}
-								.md-screen{
+								.sm-screen{
 									display:block; 
 									@include hide-lg;
+									@include margin(10 0 0 0);
 								}
 							}
+
 
 						}
 
@@ -124,7 +127,7 @@
 			}
 		}
 
-		.btn-box-pad{
+		.btn-box-pad{     
 					clear: left;
 					display: none;
 					 @import "../atoms/a-button";

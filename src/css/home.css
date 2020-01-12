@@ -2,14 +2,10 @@
 @import url("https://fonts.googleapis.com/css?family=Dosis:400,600,700");
 .categories-section { }
   .categories-section .category-block {
-    padding: 4% 2%;
-    box-shadow: 0 6px 6px -7px #eeeeee; }
-    @media screen and (min-width: 768px) {
-      .categories-section .category-block {
-        padding: 0% 2%; } }
-    @media screen and (min-width: 992px) {
-      .categories-section .category-block {
-        padding: 0% 1%; } }
+    padding: 30px 0px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 14px 6px -7px #eeeeee; }
     .categories-section .category-block .img-block {
       text-align: center; }
       .categories-section .category-block .img-block img {
@@ -17,32 +13,37 @@
         height: auto; }
       @media screen and (min-width: 768px) {
         .categories-section .category-block .img-block .category-img {
-          max-width: 50%;
           height: auto; } }
     .categories-section .category-block .desc-block {
       text-align: center; }
       .categories-section .category-block .desc-block button {
         background: #D10157;
         color: #FFFFFF;
-        cursor: pointer; }
+        cursor: pointer;
+        border: none; }
       .categories-section .category-block .desc-block .category-title {
         font-weight: 700;
-        letter-spacing: -1px;
-        font-size: .7rem;
-        margin: 5px 0px 0px 0px; }
+        font-size: .7rem; }
         @media screen and (min-width: 992px) {
           .categories-section .category-block .desc-block .category-title {
             font-size: 1rem; } }
       .categories-section .category-block .desc-block .category-desc {
         font-size: .6rem;
         margin: 5px 0px 0px 0px; }
+        @media screen and (min-width: 768px) {
+          .categories-section .category-block .desc-block .category-desc {
+            margin: 10px 0px 0px 0px; } }
         @media screen and (min-width: 992px) {
           .categories-section .category-block .desc-block .category-desc {
             font-size: .8rem; } }
       .categories-section .category-block .desc-block .category-btn {
-        padding: 5px;
-        margin: 5px 0px 0px 0px;
-        font-size: .6rem; }
+        padding: 10px;
+        margin: 10px 0px 0px 0px;
+        font-size: .5rem;
+        line-height: 1.5; }
+        @media screen and (min-width: 768px) {
+          .categories-section .category-block .desc-block .category-btn {
+            margin: 20px 0px 0px 0px; } }
   .categories-section .category-block:nth-child(even) .img-block {
     float: right; }
 
@@ -55,17 +56,11 @@ img {
 /* Slideshow container */
 /* Next & previous buttons */
 .slideshow-container {
-  max-width: 100%;
   position: relative;
   margin: auto;
+  box-shadow: 0 14px 6px -7px #eeeeee;
   /* Position the "next button" to the right */
   /* Fading animation */ }
-  @media screen and (min-width: 768px) {
-    .slideshow-container {
-      max-width: 70%; } }
-  @media screen and (min-width: 992px) {
-    .slideshow-container {
-      max-width: 55%; } }
   .slideshow-container img {
     width: 100%;
     height: auto; }
@@ -108,18 +103,40 @@ img {
     opacity: .4; }
   to {
     opacity: 1; } }
+  .slideshow-container .tab {
+    display: block;
+    padding: 0px 0px 10px 0px;
+    text-align: center; }
+    @media screen and (max-width: 767px) {
+      .slideshow-container .tab {
+        display: none; } }
+    .slideshow-container .tab .dot {
+      cursor: pointer;
+      height: 5px;
+      width: 5px;
+      margin: 0 10px;
+      background-color: #bbb;
+      border-radius: 50%;
+      display: inline-block;
+      transition: background-color 0.6s ease; }
+    .slideshow-container .tab .active, .slideshow-container .tab .dot:hover {
+      background-color: #717171; }
 
 /* The dots/bullets/indicators */
-.carousal-dot {
+.mob {
+  display: block;
   text-align: center; }
-  .carousal-dot .dot {
+  @media screen and (min-width: 768px) {
+    .mob {
+      display: none; } }
+  .mob .dot {
     cursor: pointer;
     height: 5px;
     width: 5px;
-    margin: 0 2px;
+    margin: 0 10px;
     background-color: #bbb;
     border-radius: 50%;
     display: inline-block;
     transition: background-color 0.6s ease; }
-  .carousal-dot .active, .carousal-dot .dot:hover {
+  .mob .active, .mob .dot:hover {
     background-color: #717171; }

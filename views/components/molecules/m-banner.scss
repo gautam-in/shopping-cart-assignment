@@ -2,20 +2,15 @@
 @import "../../../src/sass/variables";
 @import "../../../src/sass/common";
 .category-block{
-  padding: 4% 2%;
-  box-shadow: 0 6px 6px -7px color('grey');
-   @media screen and (min-width: $tab) {
-    padding: 0% 2%;
-   }
-    @media screen and (min-width: $lap) {
-    padding: 0% 1%;
-   }
+  @include padding(30 0);
+  display:flex;
+  align-items:center;
+  box-shadow: 0 14px 6px -7px #eeeeee;
 	.img-block{
 	  text-align: center;
 	  @import "../atoms/a-img";
 	  @media screen and (min-width: $tab) {
 	  	.category-img{
-		 max-width:50%;
 		 height:auto;
 		}
       }
@@ -26,9 +21,8 @@
 		 @import "../atoms/a-button";
 	    .category-title{
 			 font-weight: 700;
-		     letter-spacing: -1px;
 		     font-size: .7rem;
-		     @include margin(5 0 0 0);
+		     
 		      @media screen and (min-width: $lap) {
     			font-size: 1rem;
    			  }
@@ -37,16 +31,26 @@
 		.category-desc{
 			font-size: .6rem;
 			 @include margin(5 0 0 0);
+			  @media screen and (min-width: $tab) {
+    			 @include margin(10 0 0 0);
+    			 
+   			  }
 			 @media screen and (min-width: $lap) {
     			font-size: .8rem;
+
    			  }
 		}
 
 		.category-btn{
-			@include padding(5);
-			@include margin(5 0 0 0);
-		    font-size: .6rem;
-		   
+			@include padding(10);
+			@include margin(10 0 0 0);
+			@media screen and (min-width: $tab) {
+    			 @include margin(20 0 0 0);
+    			 
+   			  }
+		    font-size: .5rem;
+    		line-height: 1.5;
+    		
 		}
 	}
 }

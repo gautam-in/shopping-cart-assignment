@@ -3,11 +3,12 @@
 input{
 		border: none;
 		width:100%;
-		@include padding(0 0 10 0);
-		border-bottom: solid 2px color('blue');
+		border-bottom: solid 2px color('grey');
 }
 input:focus{
 	outline: none;
-
+	border-bottom: solid 2px color('blue');
+	color:color('blue');
+	@include padding(0 0 10 0);
 }
 	

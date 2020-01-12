@@ -3,6 +3,7 @@
 @import "../../../src/sass/common";
 
 .login-section{
+	@include padding(0 0 20 0);
 	.login-text {
 		padding:2% 0% 0% 5%;
 		h1{
@@ -26,5 +27,3 @@
 		
 	}
 }
-
-

@@ -5,8 +5,8 @@
 		</div>
 		<div class="col span-1-of-2">
 			<form class="login-form" action="/" method="get">
-			  {{> molecules/m-forminput  type="email" name="email" placeholder="Email" labelText="Email" id="email"}}
-			  {{> molecules/m-forminput type="password" name="password" placeholder="Password"  labelText="Password" id="password"  oninvalid="checkPassword(this);" oninput="checkPassword(this);"}}
+			  {{> molecules/m-forminput  type="email" name="email"  labelText="Email" id="email"}}
+			  {{> molecules/m-forminput type="password" name="password"   labelText="Password" id="password"  oninvalid="checkPassword(this);" oninput="checkPassword(this);"}}
 			  {{> atoms/a-button type="submit" class="login-btn" btntext="Login"}}
 			</form>
 		</div>

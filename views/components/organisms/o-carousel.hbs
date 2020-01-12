@@ -1,16 +1,20 @@
-<div class="slideshow-container">
+<div class="slideshow-container row">
 	<div id="banners-container">
 		{{#each banners as |value key|}}
 			<div class="mySlides fade">
 			 {{> atoms/a-img imageUrl=value.bannerImageUrl }}
 			</div>
 		{{/each}}
+		<div class="carousal-dot tab" id="carousal-dot">
+			{{#each banners  as |value key|}}
+				 <span class="dot" onclick="carousel.currentSlide({{@index}})"></span> 
+			{{/each}}
+		</div>
 	</div>
 	<a class="prev" onclick="carousel.plusSlides(-1)">Prev</a>
 	<a class="next" onclick="carousel.plusSlides(1)">Next</a>
 </div>
-<br/>
-<div class="carousal-dot" id="carousal-dot">
+<div class="carousal-dot mob" id="carousal-dot">
 	{{#each banners  as |value key|}}
 		 <span class="dot" onclick="carousel.currentSlide({{@index}})"></span> 
 	{{/each}}

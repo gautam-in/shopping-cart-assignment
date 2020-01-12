@@ -3,16 +3,9 @@
 @import "../../../src/sass/common";
 
 .slideshow-container {
-   max-width: 100%;
-   @media screen and (min-width: $tab) {
-   max-width: 70%;
-   }
-   @media screen and (min-width: $lap) {
-   max-width: 55%;
-   }
-
   position: relative;
   margin: auto;
+  box-shadow: 0 14px 6px -7px #eeeeee;
   
   @import "../atoms/a-img";
 
@@ -62,18 +55,44 @@
     from {opacity: .4} 
     to {opacity: 1}
   }
-
-
-}
-
-  /* The dots/bullets/indicators */
-  .carousal-dot{
+  .tab{
+    display:block;  
+    @media screen and (max-width: $mob) {
+        display:none;  
+    }
+    @include padding(0 0 10 0);
     @include textCenter;
     .dot {
       cursor: pointer;
       height: 5px;
       width: 5px;
-      margin: 0 2px;
+      margin: 0 10px;
+      background-color: #bbb;
+      border-radius: 50%;
+      display: inline-block;
+      transition: background-color 0.6s ease;
+    }
+
+    .active, .dot:hover {
+      background-color: #717171;
+    }
+  }
+
+
+}
+
+  /* The dots/bullets/indicators */
+  .mob{
+    display:block;
+    @media screen and (min-width: $tab) {
+        display:none;  
+    }
+    @include textCenter;
+    .dot {
+      cursor: pointer;
+      height: 5px;
+      width: 5px;
+      margin: 0 10px;
       background-color: #bbb;
       border-radius: 50%;
       display: inline-block;

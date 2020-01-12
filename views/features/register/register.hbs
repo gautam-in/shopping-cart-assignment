@@ -1,15 +1,15 @@
 <section class="row register-section">
 	<div class="col span-1-of-2 register-text">
-	 	{{> atoms/a-header text="Sign Up"}}
+	 	{{> atoms/a-header text="Signup"}}
 		{{> atoms/a-desc text="We do not share your personal details with anyone."}}
 	</div>
 	<div class="col span-1-of-2">
 		<form class="register-form" action="/" method="get">
-		 	{{> molecules/m-forminput type="text" name="first" id="first" placeholder="First Name" labelText="First Name"}}
-		 	{{> molecules/m-forminput type="text" name="last" id="last" placeholder="Last Name" labelText="Last Name"}}
-		 	{{> molecules/m-forminput type="email" name="email" id="email" placeholder="Email" labelText="Email"}}
-		 	{{> molecules/m-forminput type="password" name="password" id="password" placeholder="Password" labelText="Password" oninvalid="checkRegPass(this);" oninput="checkRegPass(this);"}}
-		 	{{> molecules/m-forminput type="password" name="passw2" id="passw2" placeholder="Confirm Password" labelText="Confirm Password" oninvalid="confirmPassword(this);" oninput="confirmPassword(this);"}}
+		 	{{> molecules/m-forminput type="text" name="first" id="first" labelText="First Name"}}
+		 	{{> molecules/m-forminput type="text" name="last" id="last"  labelText="Last Name"}}
+		 	{{> molecules/m-forminput type="email" name="email" id="email"  labelText="Email"}}
+		 	{{> molecules/m-forminput type="password" name="password" id="password"  labelText="Password" oninvalid="checkRegPass(this);" oninput="checkRegPass(this);"}}
+		 	{{> molecules/m-forminput type="password" name="passw2" id="passw2"  labelText="Confirm Password" oninvalid="confirmPassword(this);" oninput="confirmPassword(this);"}}
 		  {{> atoms/a-button class="register-btn" btntext="Signup"}}
 		</form>
 	</div>
