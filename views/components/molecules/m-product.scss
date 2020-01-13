@@ -15,7 +15,11 @@
 
 .product{
 		@include padding(5);
-		clear:left;
+		position: relative;
+		border-bottom: dashed 1px color('grey');
+		width: 100%;
+		 float: left;
+		 background: color('white');
 		@media screen and (min-width: $tab) {
 			width: 50%;
 			 clear: none;
@@ -47,7 +51,6 @@
 					width: auto;
 					@media screen and (min-width:$lap) {
 					 clear: none;
-					 float: left;
 					}
 				}
 			}
@@ -145,4 +148,13 @@
 					}
 
 		}
+}
+
+.right-border{
+	position: absolute;
+    border-right: solid 1px rgba(238, 238, 238, 0.867);
+    right: 0;
+    display: block;
+    height: 80%;
+    top: 10%;
 }
