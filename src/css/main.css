@@ -130,29 +130,31 @@ body {
           .parent-overlay .overlay .header .close {
             color: #FFFFFF; } }
     .parent-overlay .overlay .cart-box {
-      margin: 25px 0px 0px 0px;
+      margin: 10px 0px 0px 0px;
       background: #FFFFFF; }
       .parent-overlay .overlay .cart-box .cart-item {
+        display: flex;
+        align-items: center;
         font-size: .7rem; }
         .parent-overlay .overlay .cart-box .cart-item img {
           width: 60%;
           height: auto; }
         .parent-overlay .overlay .cart-box .cart-item .label {
-          font-weight: 700;
-          margin: 20px 0px 0px 0px; }
-        .parent-overlay .overlay .cart-box .cart-item .dot {
-          width: 20px;
-          height: 20px;
-          background-color: #D10157;
-          border-radius: 50%;
-          display: inline-block;
-          text-align: center;
-          border: none; }
-        .parent-overlay .overlay .cart-box .cart-item .price-ctr {
-          padding: 10px 0px 0px 0px;
-          float: right;
-          text-align: right;
-          padding-right: 20px; }
+          font-weight: 700; }
+        .parent-overlay .overlay .cart-box .cart-item .price-row {
+          padding: 10px 0px 0px 0px; }
+          .parent-overlay .overlay .cart-box .cart-item .price-row .dot {
+            width: 20px;
+            height: 20px;
+            background-color: #D10157;
+            border-radius: 50%;
+            display: inline-block;
+            text-align: center;
+            border: none; }
+          .parent-overlay .overlay .cart-box .cart-item .price-row .price-ctr {
+            float: right;
+            text-align: right;
+            padding-right: 20px; }
       .parent-overlay .overlay .cart-box .no-item-heading {
         text-align: center;
         font-weight: 700;

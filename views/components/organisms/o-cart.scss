@@ -70,9 +70,11 @@
 
 		}
 		.cart-box{
-			@include margin(25 0 0 0);
+			@include margin(10 0 0 0);
 			background: color('white');
 			.cart-item{
+				display: flex;
+    			align-items: center;
 				font-size:.7rem;
 				img{
 					width:60%;
@@ -80,26 +82,30 @@
 				}
 				.label{
 					font-weight: 700;
-					@include margin(20 0 0 0);
+					//@include margin(20 0 0 0);
 					
 				}
-				.dot {
-					width: 20px;
-					height: 20px;
-				    background-color: #D10157;
-				    border-radius: 50%;
-				    display: inline-block;
-				    text-align: center;
-				    border:none;
-				   
-
-				}
-				.price-ctr{
+				.price-row{
 					@include padding(10 0 0 0);
-				    float: right;
-				    text-align: right;
-				    padding-right: 20px;
+						.dot {
+						width: 20px;
+						height: 20px;
+					    background-color: #D10157;
+					    border-radius: 50%;
+					    display: inline-block;
+					    text-align: center;
+					    border:none;
+					   
+
+					}
+					.price-ctr{
+						//@include padding(10 0 0 0);
+					    float: right;
+					    text-align: right;
+					    padding-right: 20px;
+					}
 				}
+			
 			}
 
 			.no-item-heading{

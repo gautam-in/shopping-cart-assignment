@@ -3,9 +3,9 @@
 @import "../../../src/sass/common";
 .category-block{
   @include padding(30 0);
-  display:flex;
-  align-items:center;
   box-shadow: 0 14px 6px -7px #eeeeee;
+  min-height: 150px;
+  position: relative;
 	.img-block{
 	  text-align: center;
 	  @import "../atoms/a-img";
@@ -18,6 +18,14 @@
 
 	.desc-block{
 		@include textCenter;
+		@media screen and (min-width: $tab) {
+    		    position: absolute;
+	    		top: 50%;
+	    		width: 50%;
+	    		left: 50%;
+	    		transform: translateY(-50%);
+
+	  	}
 		 @import "../atoms/a-button";
 	    .category-title{
 			 font-weight: 700;
@@ -59,4 +67,14 @@
 		float: right;
 
 	}
+	.desc-block{
+		@include textCenter;
+		@media screen and (min-width: $tab) {
+		    position: absolute;
+    		top: 50%;
+    		width: 50%;
+    		left: 0%;
+    		transform: translateY(-50%);
+  		}
+  	}
 }

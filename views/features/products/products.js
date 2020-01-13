@@ -186,7 +186,7 @@ function renderCart(itemsinCart){
                 <div class="col span-3-of-12"><img src="${itemsinCart[i].imageURL}"></div>
                 <div class="col span-9-of-12">
                   <div class="label"> ${itemsinCart[i].name}</div>
-                    <div class="row">
+                    <div class="row price-row">
                       <div class="col span 1-of-2 qty-ctr paddingTop10">
                           <button class="dot id-${item.id}" id=${item.id} tabindex="0" onclick="update(event.target,true)">+</button>
                           <span class="item-price" id="item-price-${item.id}">${itemsinCart[i].qty}</span>
