@@ -212,7 +212,7 @@ function renderCart(itemsinCart){
 }
 
 function setCount(){
-  document.getElementsByClassName("cart-head-count")[0].innerHTML=`My Cart(${shoppingCart.getCount()} items)` ;
+  document.getElementsByClassName("cart-head-count")[0].innerHTML=`<span class="mycart">My Cart</span> (${shoppingCart.getCount()} items)` ;
   document.getElementsByClassName("cartNumber")[1].innerHTML=`${shoppingCart.getCount()} items` ;
   document.getElementsByClassName("cartNumber")[0].innerHTML=`${shoppingCart.getCount()} items` ;
 }

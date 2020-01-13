@@ -66,7 +66,7 @@
     .parent-ctr .product-wrapper .product {
       padding: 5px;
       position: relative;
-      border-bottom: dashed 1px #eeeeee;
+      border-bottom: dashed 1px #A9A9A9;
       width: 100%;
       float: left;
       background: #FFFFFF; }
@@ -104,10 +104,20 @@
         @media screen and (min-width: 992px) {
           .parent-ctr .product-wrapper .product .img-holder .desc-ctr {
             width: 100%; } }
-        .parent-ctr .product-wrapper .product .img-holder .desc-ctr .desc, .parent-ctr .product-wrapper .product .img-holder .desc-ctr .price, .parent-ctr .product-wrapper .product .img-holder .desc-ctr .btn-buy {
+        .parent-ctr .product-wrapper .product .img-holder .desc-ctr .desc {
+          font-size: .7rem; }
+          @media screen and (max-width: 768px) {
+            .parent-ctr .product-wrapper .product .img-holder .desc-ctr .desc {
+              display: -webkit-box;
+              -webkit-line-clamp: 5;
+              -webkit-box-orient: vertical;
+              overflow: hidden; } }
+        .parent-ctr .product-wrapper .product .img-holder .desc-ctr .price {
           font-size: .5rem; }
         .parent-ctr .product-wrapper .product .img-holder .desc-ctr .btn-buy {
-          padding: 10px; }
+          padding: 10px;
+          font-size: .6rem;
+          width: 100%; }
         .parent-ctr .product-wrapper .product .img-holder .desc-ctr .desc {
           padding: 5px;
           background: #eeeeee;

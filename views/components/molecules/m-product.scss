@@ -16,7 +16,7 @@
 .product{
 		@include padding(5);
 		position: relative;
-		border-bottom: dashed 1px color('grey');
+		border-bottom: dashed 1px color('darkgrey');
 		width: 100%;
 		 float: left;
 		 background: color('white');
@@ -60,12 +60,22 @@
 				@media screen and (min-width:$lap) {
 					width:100%;
 				}
-				
-				.desc,.price,.btn-buy{
-				font-size:.5rem;
+				.desc {
+					font-size: .7rem;
+					@media screen and (max-width:$tab) {
+						display: -webkit-box;
+				    	-webkit-line-clamp: 5;
+				    	-webkit-box-orient: vertical;
+				    	overflow: hidden;
+					}
+				}
+				.price{
+					font-size:.5rem;
 				}
 				.btn-buy{
 					@include padding(10);
+					font-size: .6rem;
+					width: 100%;
 				}
 				.desc{
 					@include padding(5);

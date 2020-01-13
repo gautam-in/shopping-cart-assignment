@@ -42,6 +42,7 @@ header {
 		word-spacing: -2px;
 		font-size:.45rem;
 		float:right;
+		@include padding(5 0 0 0);
 		@media screen and (min-width: $tab) {
 			font-size:.6rem;
 		}
@@ -59,8 +60,10 @@ header {
 		position: absolute;
 	    bottom: 0;
 	    right: 0;
-	    @include padding(10);
-	    padding: 10px;
+	   	@include padding(5);
+       	@media screen and (min-width:$tab) {
+       		@include padding(10);
+      	}
 		
 		.cart-link{
 			@include a-decorate;

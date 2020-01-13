@@ -30,9 +30,18 @@
 	    height: 100%;
 	    z-index: 200;
 	    overflow:auto;
-	    	 .footer{
-				width:100%;
-			}
+	    .cart-header {
+	      background: color('white');
+	      .cart-header-box{
+	      	@include padding(5);
+	       	@media screen and (min-width:$tab) {
+	       		@include padding(10);
+	      	}
+	       }
+	    }
+    	.footer{
+			width:100%;
+		}
 	    @media screen and (min-width:$lap) {
 			top: 10%;
 		    width: 30%;
@@ -52,9 +61,13 @@
 			background:color('white');
 			color: color('black');
 			@include padding(15);
-		    font-size: .75rem;
-		    font-weight: 700;
+		    font-size: .7rem;
+		    font-weight: 400;
 		    height: 50px;
+		    .mycart{
+		    	font-weight: 700;
+    			font-size: .8rem;
+		    }
 		    @media screen and (min-width:$lap) {
 		    	background: color('black');
 				color: color('white');
@@ -70,18 +83,20 @@
 
 		}
 		.cart-box{
-			@include margin(10 0 0 0);
-			background: color('white');
+			
 			.cart-item{
 				display: flex;
+				@include margin(10 0 0 0);
     			align-items: center;
+    			background: color('white');
 				font-size:.7rem;
 				img{
-					width:60%;
+					width:100%;
 					height:auto;
 				}
 				.label{
 					font-weight: 700;
+					font-size: .8rem;
 					//@include margin(20 0 0 0);
 					
 				}
@@ -98,11 +113,16 @@
 					   
 
 					}
+
+					button,span{
+						@include margin(0 0 0 5);
+					}
 					.price-ctr{
 						//@include padding(10 0 0 0);
 					    float: right;
 					    text-align: right;
 					    padding-right: 20px;
+
 					}
 				}
 			
@@ -151,6 +171,7 @@
 				background: #D10157;
 				color:  color('white');
 				width: 100%;
+				border:none;
 				@include margin(10 0 0 0);
 				.checkout{
 					float: left;
