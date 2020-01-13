@@ -11,9 +11,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
     var urlParams = new URLSearchParams(window.location.search);
 
     setTimeout(() => {
-        if (urlParams.get('category') == null) {
+        if (urlParams.get('category') == null && toggleBtn) {
             toggleBtn.innerHTML = "Categories" + '<span class="caret"></span>';
-        } else {
+        } else if (urlParams.get('category') != null && !toggleBtn) {
             toggleBtn.innerHTML = urlParams.get('category') + '<span class="caret"></span>';
         }
 

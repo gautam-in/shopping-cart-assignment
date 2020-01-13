@@ -82,14 +82,14 @@ const valid = (function() {
             var cnfpassword = document.getElementById('psw-repeat').value;
             if (cnfpassword != password) {
                 document.getElementsByClassName("error-psw-repeat")[0].innerHTML = "Passwords do not match";
-                getConstants().CONFIRM_PASSWORD_STATUS = false;
+                CONSTANS.CONFIRM_PASSWORD_STATUS = false;
             } else {
                 document.getElementsByClassName("error-psw-repeat")[0].innerHTML = "";
-                getConstants().CONFIRM_PASSWORD_STATUS = true;
+                CONSTANS.CONFIRM_PASSWORD_STATUS = true;
             }
         },
         validateRegister: () => {
-            var form = document.querySelectorAll(getConstants().FORM_INPUT_FIELD);
+            var form = document.querySelectorAll(CONSTANS.FORM_INPUT_FIELD);
             let arr = Array.from(form);
             for (var i = 0; i < arr.length; i++) {
                 let item = arr[i];
@@ -97,7 +97,7 @@ const valid = (function() {
             }
             valid.confirmPwd();
 
-            if (getConstants().NAME_STATUS && getConstants().PASSWORD_STATUS && getConstants().EMAIL_STATUS && getConstants().CONFIRM_PASSWORD_STATUS) {
+            if (CONSTANS.NAME_STATUS && CONSTANS.PASSWORD_STATUS && CONSTANS.EMAIL_STATUS && CONSTANS.CONFIRM_PASSWORD_STATUS) {
                 return true;
             } else {
                 return false;

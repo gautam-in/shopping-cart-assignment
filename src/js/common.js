@@ -37,8 +37,11 @@ const FloatLabel = (() => {
     // register events
     const bindEvents = (element) => {
         const floatField = element.querySelector('input');
-        floatField.addEventListener('focus', handleFocus);
-        floatField.addEventListener('blur', handleBlur);
+        if (floatField) {
+
+            floatField.addEventListener('focus', handleFocus);
+            floatField.addEventListener('blur', handleBlur);
+        }
     };
 
     // get DOM elements
