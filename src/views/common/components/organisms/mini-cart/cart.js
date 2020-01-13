@@ -134,7 +134,7 @@ var cart = (function() {
                 content += `<section>`;
                 JSON.parse(localStorage.getItem("cart")).forEach(element => {
                     content += `<div class="items__cart clearfix">
-                        <img class="items__cart--img" src=${element.data.imageURL} alt="cart">
+                        <img class="items__cart--img" src=${element.data.imageURL} alt="${element.data.name}">
                         <div class="cart-action">
                           <h3 class="cart-action__name">${element.data.name}</h3>
                           <div class="cart-action__qty">
