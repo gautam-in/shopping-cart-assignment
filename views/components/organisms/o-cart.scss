@@ -22,6 +22,7 @@
     z-index: 10;
     opacity: .9;
 	}
+
 	.overlay{
 		position: fixed;
 		font-size:.7rem;
@@ -167,11 +168,12 @@
 		}
 		.footer{
 			background: color('white');
-			@include padding(10);
+			
 			position:relative;
 			width: 100%;
 			bottom:0px;
 			.promo{
+				@include margin(0 0 10 0);
 	    		text-align: center;
 			}
 			.checkout-btn{
@@ -181,7 +183,6 @@
 				color:  color('white');
 				width: 100%;
 				border:none;
-				@include margin(10 0 0 0);
 				.checkout{
 					float: left;
 				}
@@ -190,10 +191,16 @@
 				}
 			}
 		}
+		.cart-footer{
+			@include padding(10);
+		}
 		button{
 			cursor: pointer;
 		}
 
+	}
+	.checkoutCart{
+		background: color('white');
 	}
 
 

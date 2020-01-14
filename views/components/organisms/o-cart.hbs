@@ -1,21 +1,21 @@
 <div class="parent-overlay">
  <div class="bg-overlay"></div>
 
- <div class="overlay">
+ <div class="overlay" id="overlay">
 	 <div class="cart-header">
 	 	{{>organisms/o-header}}
 	 </div>
  	<div class="header"><span class="cart-head-count">My Cart(0 item)</span>
- 	<button class="close" onclick="closeCart()">x</button></div>
+ 	<button class="close" id="close" onclick="closeCart()">x</button></div>
  	<div class="cart-box">
  	</div>
  	<div class="row low-price">
  	<div class="low-price-row"><img src="/static/images/lowest-price.png"/><span class="anywhere">You won't find it cheaper anywhere</span></div>
  	</div>
- 	<div class="footer">
+ 	<div class="footer cart-footer">
  		 <p class="promo">Promo code can be applied on
             payment page</p>
-            <button class="checkout-btn checkout" onclick="closeCart()" autofocus><span class="checkout" >Proceed to Checkout </span>
+            <button class="checkout-btn checkout" id="checkout" onclick="closeCart()"><span class="checkout" >Proceed to Checkout </span>
             <span id="totalprice" class="total"></span></button>
             <button class="checkout-btn shopping" onclick="closeCart()" autofocus>Start shopping</div>
  	</div>

@@ -166,15 +166,16 @@ function showSum(){
 
 }
 function showCart(){
+  let itemsinCart = shoppingCart.getCart();
   if(cartUpdated){
-   let itemsinCart = shoppingCart.getCart();
    let products =JSON.parse(localStorage.getItem("products"));
    renderCart(itemsinCart);
    showSum();  
   }
    document.getElementsByClassName("parent-overlay")[0].style.display ='block';
-  document.getElementsByTagName("body")[0].style.overflow ='hidden';
+   document.getElementsByTagName("body")[0].style.overflow ='hidden';
    cartUpdated = false;
+  
 
 }
 function renderCart(itemsinCart){
@@ -188,9 +189,9 @@ function renderCart(itemsinCart){
                   <div class="label"> ${itemsinCart[i].name}</div>
                     <div class="row price-row">
                       <div class="col span 1-of-2 qty-ctr paddingTop10">
-                          <button class="dot id-${item.id}" id=${item.id} tabindex="1" onclick="update(event.target,true)">+</button>
+                          <button class="dot id-${item.id}" id=${item.id}  onclick="update(event.target,true)">+</button>
                           <span class="item-price" id="item-price-${item.id}">${itemsinCart[i].qty}</span>
-                          <button class="dot  id-${item.id}" tabindex="1" onclick="update(event.target,false)">-</button>
+                          <button class="dot  id-${item.id}"  onclick="update(event.target,false)">-</button>
                           <span>x</span>
                           <span>Rs.${itemsinCart[i].price}</span>
                       </div>
@@ -205,9 +206,16 @@ function renderCart(itemsinCart){
        html+=`<div class="no-item-heading">No items in your cart.</div><p class="no-item-text">Your favorite items are just a click away</div>`;
        togglePriceDetails('none');
   }
+   if(itemsinCart.length){
+    document.getElementsByClassName("checkout")[0].focus();
+    document.getElementById("overlay").classList.remove('checkoutCart');
+        
+  }else {
+     document.getElementsByClassName("shopping")[0].focus();
+     document.getElementById("overlay").classList.add('checkoutCart');
+  }
 
    document.getElementsByClassName("cart-box")[0].innerHTML =html;
-   setTimeout(()=> document.getElementsByClassName("checkout")[0].focus(),1000);
    
 }
 

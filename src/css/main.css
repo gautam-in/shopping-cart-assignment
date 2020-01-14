@@ -229,11 +229,11 @@ body {
           margin: 0px 0px 0px 15px; }
     .parent-overlay .overlay .footer {
       background: #FFFFFF;
-      padding: 10px;
       position: relative;
       width: 100%;
       bottom: 0px; }
       .parent-overlay .overlay .footer .promo {
+        margin: 0px 0px 10px 0px;
         text-align: center; }
       .parent-overlay .overlay .footer .checkout-btn {
         height: 40px;
@@ -241,14 +241,17 @@ body {
         background: #D10157;
         color: #FFFFFF;
         width: 100%;
-        border: none;
-        margin: 10px 0px 0px 0px; }
+        border: none; }
         .parent-overlay .overlay .footer .checkout-btn .checkout {
           float: left; }
         .parent-overlay .overlay .footer .checkout-btn .total {
           float: right; }
+    .parent-overlay .overlay .cart-footer {
+      padding: 10px; }
     .parent-overlay .overlay button {
       cursor: pointer; }
+  .parent-overlay .checkoutCart {
+    background: #FFFFFF; }
 
 footer {
   background: #eeeeee;
