@@ -25,7 +25,13 @@ setTimeout(function(){
 		 		 }
          if (event.target['id'] === 'shopping') {
             event.preventDefault();
-            document.getElementById('shopping').focus();
+            if(document.getElementById('close')){
+              document.getElementById('close').focus();
+            } else {
+              event.preventDefault();
+              document.getElementById('shopping').focus();
+
+            }
          }
 
 		 }

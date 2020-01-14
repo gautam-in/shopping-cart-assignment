@@ -175,7 +175,11 @@ function showCart(){
    document.getElementsByClassName("parent-overlay")[0].style.display ='block';
    document.getElementsByTagName("body")[0].style.overflow ='hidden';
    cartUpdated = false;
-  
+   if(itemsinCart.length){
+    document.getElementsByClassName("checkout")[0].focus();
+  }else {
+     document.getElementsByClassName("shopping")[0].focus();
+  }
 
 }
 function renderCart(itemsinCart){
@@ -206,15 +210,11 @@ function renderCart(itemsinCart){
        html+=`<div class="no-item-heading">No items in your cart.</div><p class="no-item-text">Your favorite items are just a click away</div>`;
        togglePriceDetails('none');
   }
-   if(itemsinCart.length){
-    document.getElementsByClassName("checkout")[0].focus();
+  if(itemsinCart.length){
     document.getElementById("overlay").classList.remove('checkoutCart');
-        
   }else {
-     document.getElementsByClassName("shopping")[0].focus();
-     document.getElementById("overlay").classList.add('checkoutCart');
+    document.getElementById("overlay").classList.add('checkoutCart');
   }
-
    document.getElementsByClassName("cart-box")[0].innerHTML =html;
    
 }
