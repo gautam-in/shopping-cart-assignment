@@ -19,8 +19,8 @@
 
 		}
 		.md-screen{
-		list-style:none;
-			@media screen and (max-width: $tab) {
+			list-style:none;
+			@media screen and (max-width: $mob) {
 				display: none;
 			}
 			

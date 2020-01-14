@@ -10,7 +10,7 @@
         width: 20%; } }
     .parent-ctr .category-wrapper .md-screen {
       list-style: none; }
-      @media screen and (max-width: 768px) {
+      @media screen and (max-width: 767px) {
         .parent-ctr .category-wrapper .md-screen {
           display: none; } }
     .parent-ctr .category-wrapper .category-bg {
