@@ -19,7 +19,7 @@ var products = [];
 var cart = {};
 
 var getProductList = function() {
-    apiService.getProductList({ url: "http://localhost:3000/products" })
+    apiService.getProductList({ url: "http://localhost:5000/products" })
         .then(res => {
             products = res;
         })
@@ -28,7 +28,7 @@ var getProductList = function() {
 getProductList();
 
 var addToCart = (e) => {
-    apiService.addToCart({ url: "http://localhost:3000/addToCart" })
+    apiService.addToCart({ url: "http://localhost:5000/addToCart" })
         .then(res => {
             if (res.status === 200) {
                 let quantity = parseInt(document.getElementById('cart-item-quantity').textContent) + 1
