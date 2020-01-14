@@ -1,3 +1,16 @@
+@mixin responsive-for-desktop {
+    @media all and (min-width: 1024px) {
+        @content;
+    }
+}
+
+@mixin responsive-for-ipad-desktop {
+    @media all and (min-width: 768px) {
+        @content;
+    }
+}
+
+
 /* 
   ##Device = Tablets, Ipads (portrait)
   ##Screen = B/w 768px to 1024px
@@ -39,41 +52,4 @@
 
 @mixin fontSize($size) {
     font-size: calculateRem($size);
-}
-
-@mixin float-label-container {
-    display: block;
-    position: relative;
-}
-
-@mixin float-label {
-    label,
-    >span {
-        position: absolute;
-        left: 0;
-        top: 0;
-        cursor: text;
-        font-size: 75%;
-        opacity: 1;
-        transition: all .2s;
-        @content;
-    }
-}
-
-@mixin float-label-input {
-    &::placeholder {
-        opacity: 1;
-        transition: all .2s;
-    }
-    &:placeholder-shown:not(:focus)::placeholder {
-        opacity: 0;
-    }
-}
-
-@mixin float-label-scaled {
-    &:placeholder-shown:not(:focus)+* {
-        font-size: 150%;
-        opacity: .5;
-        @content;
-    }
 }

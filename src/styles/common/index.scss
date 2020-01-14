@@ -3,8 +3,8 @@ body {
 }
 
 @import url('https://fonts.googleapis.com/css?family=Dosis:400,600,700');
-@import './mixins.scss';
-@import './reset.scss';
+@import './mixins';
+@import './reset';
 @import '../../views/common/components/organisms/header/header.scss';
 @import '../../views/common/components/organisms/footer/footer.scss';
 @import '../../views/features/home/home.scss';

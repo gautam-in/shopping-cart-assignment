@@ -1,4 +1,4 @@
-@import '../../../../../styles/common/variables.scss';
+@import '../../../../../styles/common/variables';
 .header-area {
     position: -webkit-sticky;
     position: sticky;
@@ -20,14 +20,8 @@
         width: 100%;
         max-width: 1170px;
         margin: 0 auto;
-        display: -webkit-box;
-        display: -ms-flexbox;
         display: flex;
-        -webkit-box-align: end;
-        -ms-flex-align: end;
         align-items: flex-end;
-        -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
         justify-content: space-between;
         position: relative;
         .header-left {

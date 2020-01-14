@@ -77,14 +77,8 @@ a {
     width: 100%;
     max-width: 1170px;
     margin: 0 auto;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-align: end;
-    -ms-flex-align: end;
     align-items: flex-end;
-    -webkit-box-pack: justify;
-    -ms-flex-pack: justify;
     justify-content: space-between;
     position: relative; }
     .header-area .header-center .header-left img {
@@ -396,11 +390,8 @@ input {
     display: flex;
     max-width: 1170px;
     margin: 0 auto;
-    -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
     justify-content: center;
     margin-bottom: 34px; }
     .content-area .signup-text-details {
