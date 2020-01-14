@@ -21,11 +21,13 @@ header {
     word-spacing: -2px;
     font-size: .45rem;
     float: right;
+    display: none;
     padding: 5px 0px 0px 0px;
     list-style-type: none; }
     @media screen and (min-width: 768px) {
       header .main-nav {
-        font-size: .6rem; } }
+        font-size: .6rem;
+        display: block; } }
     header .main-nav li {
       display: inline-block;
       margin: 0px 0px 0px 10px; }
@@ -34,6 +36,7 @@ header {
         text-decoration: none !important;
         font-weight: 600; }
   header .home-nav {
+    display: none;
     float: left;
     font-size: .7rem;
     margin: 50px 0px 0px 0px;
@@ -46,15 +49,19 @@ header {
         color: #646E72;
         text-decoration: none !important;
         font-weight: 600; }
+    @media screen and (min-width: 768px) {
+      header .home-nav {
+        display: block; } }
   header .cart-header-box {
     background: #eeeeee;
     position: absolute;
     bottom: 0;
-    right: 0;
+    right: 25px;
     padding: 5px; }
     @media screen and (min-width: 768px) {
       header .cart-header-box {
-        padding: 10px; } }
+        padding: 10px;
+        right: 0px; } }
     header .cart-header-box .cart-link {
       text-decoration: none !important; }
       header .cart-header-box .cart-link .cart {
@@ -64,8 +71,33 @@ header {
         color: #646E72;
         font-size: .7rem;
         font-weight: 600; }
+  header .menu {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 25px;
+    padding: 5px;
+    border: none;
+    background: white;
+    font-size: 1rem;
+    cursor: pointer; }
+    header .menu img {
+      width: 25px; }
+    @media screen and (min-width: 768px) {
+      header .menu {
+        display: none; } }
   header .clear-all {
     clear: both; }
+
+.mob-nav-list {
+  background: #eeeeee;
+  display: none; }
+  .mob-nav-list li {
+    padding: 5px 5px 5px 10px;
+    border-bottom: solid 1px #FFFFFF; }
+    .mob-nav-list li a {
+      text-decoration: none;
+      color: #A9A9A9; }
 
 html {
   font-size: 20px; }
@@ -101,6 +133,8 @@ body {
     height: 100%;
     z-index: 200;
     overflow: auto; }
+    .parent-overlay .overlay header {
+      font-size: 1rem; }
     .parent-overlay .overlay .cart-header {
       background: #FFFFFF; }
       .parent-overlay .overlay .cart-header .cart-header-box {
