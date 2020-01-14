@@ -13,7 +13,7 @@
     }
 }
 
-@media screen and (min-width: $breakpoint-phone) {
+@include responsive-for-ipad-desktop {
     .content-area {
         display: -webkit-box;
         display: -ms-flexbox;

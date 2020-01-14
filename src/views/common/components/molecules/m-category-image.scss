@@ -4,7 +4,7 @@
     }
 }
 
-@media screen and (min-width: $breakpoint-phone) {
+@include responsive-for-ipad-desktop {
     .category-image {
         img {
             width: 300px;

@@ -5,7 +5,7 @@
     padding: 5px 70px 0 70px;
     max-width: $body-width;
     margin: auto;
-    @media (max-width: $breakpoint-phone), (max-width: $breakpoint-small-phone), (max-width: $breakpoint-small-phone) {
+    @media (max-width: $breakpoint-phone) {
         padding: 0px;
     }
     .image-width {
@@ -20,22 +20,22 @@
         position: absolute;
         text-align: center;
         width: 100%;
-        bottom: 12px;
-        z-index: 5;
+        bottom: -18px;
+        z-index: map-get($z-index, carousel-dot);
     }
     .dot {
         cursor: pointer;
         height: 6px;
         width: 6px;
         margin: 0 8px;
-        background-color: #bbb;
+        background-color: $dot-banner;
         border-radius: 50%;
         display: inline-block;
         -webkit-transition: background-color 0.6s ease;
         transition: background-color 0.6s ease;
         &.active,
         &:hover {
-            background-color: #717171;
+            background-color: $dot-banner-hover;
         }
     }
     .prev,
@@ -48,7 +48,8 @@
         color: $white;
         -webkit-transition: 0.6s ease;
         transition: 0.6s ease;
-        background-color: rgba(0, 0, 0, 0.2);
+        background-color: $black;
+        opacity: 0.2;
         text-transform: uppercase;
         border: none;
     }
@@ -69,17 +70,15 @@
         -webkit-box-align: center;
         -ms-flex-align: center;
         align-items: center;
-        -webkit-box-pack: center;
-        -ms-flex-pack: center;
         justify-content: space-evenly;
-        -webkit-box-shadow: 0 16px 20px -9px #ddd;
-        box-shadow: 0 16px 20px -9px #ddd;
+        -webkit-box-shadow: 0 16px 20px -9px $box-shadow;
+        box-shadow: 0 16px 20px -9px $box-shadow;
         padding: 7px 0px;
         min-height: 170px;
     }
 }
 
-@media screen and (min-width: $breakpoint-phone) {
+@include responsive-for-ipad-desktop {
     #category-list {
         .category {
             min-height: 220px;

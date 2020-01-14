@@ -2,13 +2,8 @@
 const express = require('express');
 const path = require('path');
 const hbs = require('express-handlebars');
-const sassMiddleware = require('node-sass-middleware');
-const bodyParser = require('body-parser');
 const hbshelpers = require("handlebars-helpers");
 const multihelpers = hbshelpers();
-var cookieParser = require('cookie-parser');
-var session = require('express-session');
-const expressValidator = require('express-validator');
 // Import the port, if there is one
 const PORT = process.env.PORT;
 
@@ -27,26 +22,9 @@ app.engine('hbs', hbs({
     partialsDir: `${__dirname}/src/views/common/`,
 }));
 
-// Leverage JSON body parser
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(expressValidator());
-
 // Serve assets via the public directory
 app.use(express.static(path.join(__dirname, 'src')));
 app.use(express.static(path.join(__dirname, 'routes-scripts')));
-
-app.use(cookieParser());
-app.use(session({
-    secret: 'secret',
-    resave: false,
-    saveUninitialized: true
-}));
-
-app.use(function(req, res, next) {
-    res.locals.session = req.session;
-    next();
-});
 
 // Set the views path
 app.set('views', path.join(__dirname, 'src/views'));

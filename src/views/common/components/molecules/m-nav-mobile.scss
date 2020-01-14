@@ -25,7 +25,7 @@
         right: 15px;
         top: 12px;
     }
-    @media screen and (min-width:$breakpoint-tablet-potrait) {
+    @include responsive-for-ipad-desktop {
         display: none;
     }
 }
@@ -51,15 +51,11 @@
             color: $white;
             @include fontSize(18px);
         }
-        @media screen and (min-width: $breakpoint-phone) {
-            padding-left: 5px;
-            color: $graphiteGray;
-            border-bottom: 1px solid $graphiteGray;
-            font-size: 80%;
-        }
-        @media screen and (min-width: $breakpoint-phone) {
+        @include responsive-for-ipad-desktop {
             padding-left: 20px;
             font-size: 100%;
+            color: $graphiteGray;
+            border-bottom: 1px solid $graphiteGray;
         }
     }
 }

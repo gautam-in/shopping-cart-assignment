@@ -23,7 +23,7 @@
     }
 }
 
-@media screen and (min-width: $breakpoint-phone) {
+@include responsive-for-ipad-desktop {
     .category-details {
         margin-left: 10px;
         .category-title {

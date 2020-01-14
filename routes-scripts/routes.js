@@ -15,17 +15,7 @@ let products = JSON.parse(productObj);
  */
 
 // Homepage
-router.get('/', function(req, res, next) {
-    res.render('features/home/home', {
-        title: "shopping cart",
-        banners: banners.banners,
-        categories: categories.categoryval,
-        products: products.products
-    });
-});
-
-router.get('/home', function(req, res, next) {
-    console.log('home;')
+router.get(['/', '/home'], function(req, res, next) {
     res.render('features/home/home', {
         title: "shopping cart",
         banners: banners.banners,

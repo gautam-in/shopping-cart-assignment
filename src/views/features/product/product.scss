@@ -12,8 +12,6 @@
         display: -webkit-box;
         display: -ms-flexbox;
         display: flex;
-        -webkit-box-orient: horizontal;
-        -webkit-box-direction: normal;
         -ms-flex-direction: row;
         flex-direction: row;
         -ms-flex-wrap: wrap;
@@ -21,7 +19,7 @@
     }
 }
 
-@media screen and (min-width: 768px) {
+@include responsive-for-ipad {
     .product-content-area {
         display: table;
         margin-bottom: 0px;
@@ -36,7 +34,7 @@
     }
 }
 
-@media screen and (min-width: 1025px) {
+@include responsive-for-desktop {
     .product-content-area {
         #product-list-section {
             position: relative;

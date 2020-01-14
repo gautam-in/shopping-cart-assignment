@@ -91,7 +91,7 @@
     }
 }
 
-@media screen and (min-width: $breakpoint-phone) {
+@include responsive-for-ipad-desktop {
     .header-area {
         height: 80px;
         .header-center {

@@ -41,7 +41,7 @@
           }
       }
       
-      @media screen and (min-width: 768px) {
+      @include responsive-for-ipad {
           .product {
               -ms-flex-preferred-size: 46%;
               flex-basis: 46%;
@@ -51,7 +51,7 @@
           }
       }
       
-      @media screen and (min-width: 1025px) {
+      @include responsive-for-desktop {
           .product {
               -ms-flex-preferred-size: 22%;
               flex-basis: 22%;
