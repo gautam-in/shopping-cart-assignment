@@ -19,7 +19,7 @@
     }
 }
 
-@include responsive-for-ipad {
+@include responsive-for-ipad-desktop {
     .product-content-area {
         display: table;
         margin-bottom: 0px;

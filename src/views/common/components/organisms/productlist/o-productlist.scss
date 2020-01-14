@@ -41,7 +41,7 @@
           }
       }
       
-      @include responsive-for-ipad {
+      @include responsive-for-ipad-desktop {
           .product {
               -ms-flex-preferred-size: 46%;
               flex-basis: 46%;
