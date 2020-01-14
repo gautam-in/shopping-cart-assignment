@@ -7,15 +7,15 @@
 		{{/each}}
 		<div class="carousal-dot tab" id="carousal-dot">
 			{{#each banners  as |value key|}}
-				 <span class="dot" onclick="carousel.currentSlide({{@index}})"></span> 
+				  <a class="dot" onclick="carousel.currentSlide({{@index}});return false;" href=""></a> 
 			{{/each}}
 		</div>
 	</div>
-	<a class="prev" onclick="carousel.plusSlides(-1)">Prev</a>
-	<a class="next" onclick="carousel.plusSlides(1)">Next</a>
+	<a class="prev" onclick="carousel.plusSlides(-1);return false;" href="">Prev</a>
+	<a class="next" onclick="carousel.plusSlides(1);return false;"  href="">Next</a>
 </div>
 <div class="carousal-dot mob" id="carousal-dot">
 	{{#each banners  as |value key|}}
-		 <span class="dot" onclick="carousel.currentSlide({{@index}})"></span> 
+		 <a class="dot" onclick="carousel.currentSlide({{@index}});return false;" href=""></a> 
 	{{/each}}
 </div>
