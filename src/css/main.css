@@ -161,21 +161,25 @@ body {
       padding: 15px;
       font-size: .7rem;
       font-weight: 400;
-      height: 50px; }
+      height: 50px;
+      margin: 20px 0px 0px 0px; }
       .parent-overlay .overlay .header .mycart {
         font-weight: 700;
         font-size: .8rem; }
       @media screen and (min-width: 992px) {
         .parent-overlay .overlay .header {
           background: #000000;
-          color: #FFFFFF; } }
+          color: #FFFFFF;
+          margin: 0px; } }
       .parent-overlay .overlay .header .close {
+        display: none;
         float: right;
         border: none;
         background: transparent; }
         @media screen and (min-width: 992px) {
           .parent-overlay .overlay .header .close {
-            color: #FFFFFF; } }
+            color: #FFFFFF;
+            display: block; } }
     .parent-overlay .overlay .cart-box .cart-item {
       display: flex;
       margin: 10px 0px 0px 0px;

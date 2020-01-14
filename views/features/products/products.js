@@ -220,6 +220,7 @@ function setCount(){
 function closeCart(){
   document.getElementsByTagName("body")[0].style.overflow ='auto';
   document.getElementsByClassName("parent-overlay")[0].style.display ='none';
+  document.getElementsByClassName("mob-nav-list")[0].style.display ='none';
 }
 function togglePriceDetails(param){
   document.getElementsByClassName("low-price")[0].style.display =param;

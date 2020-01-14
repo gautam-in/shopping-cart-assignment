@@ -32,6 +32,7 @@
 	    overflow:auto;
 	    header {
 	    	font-size:1rem;
+
 	    }
 	    .cart-header {
 	      background: color('white');
@@ -68,6 +69,7 @@
 		    font-size: .7rem;
 		    font-weight: 400;
 		    height: 50px;
+		    @include margin(20 0 0 0);
 		    .mycart{
 		    	font-weight: 700;
     			font-size: .8rem;
@@ -75,13 +77,16 @@
 		    @media screen and (min-width:$lap) {
 		    	background: color('black');
 				color: color('white');
+				 @include margin(0);
 		    }
 		    .close{
-		    float:right;
-		    border: none;
-		    background: transparent;
+		    	display: none;
+			    float:right;
+			    border: none;
+			    background: transparent;
 		    	@media screen and (min-width:$lap) {
-				color: color('white');
+					color: color('white');
+					display: block;
 		    	}
 		    }
 
