@@ -192,8 +192,8 @@ function renderCart(itemsinCart){
       for(let i=0;i<itemsinCart.length;i++) {
         let item = itemsinCart[i];
         html+=`<div class="row cart-item">
-                <div class="col span-1-of-10"><img src="${itemsinCart[i].imageURL}"></div>
-                <div class="col span-9-of-10 item-desc">
+                <div class="col span-1-of-7"><img src="${itemsinCart[i].imageURL}"></div>
+                <div class="col span-6-of-7 item-desc">
                   <h3 class="label"> ${itemsinCart[i].name}</h3>
                     <div class="row price-row">
                       <div class="col span 1-of-2 qty-ctr paddingTop10">
