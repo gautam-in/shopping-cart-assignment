@@ -16,14 +16,12 @@ function toggleMenu(){
   	  x.style.display = 'block';
   	}
 }
-setTimeout(function(){
-	document.getElementsByTagName("body")[0].addEventListener("keydown", function(e){
-		 if (event.keyCode === 9) {
-		 		 if (event.target['id'] === 'checkout' || event.target['id'] === 'shopping') {
-		 		 	  event.preventDefault();
-            document.getElementById('close').focus();
-		 		 }
-		 }
+document.getElementsByTagName("body")[0].addEventListener("keydown", function(e){
+	 if (event.keyCode === 9) {
+	 		 if (event.target['id'] === 'checkout' || event.target['id'] === 'shopping') {
+	 		 	  event.preventDefault();
+          document.getElementById('close').focus();
+	 		 }
+	 }
 
-	})
 });
