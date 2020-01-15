@@ -1,4 +1,10 @@
 @import url("https://fonts.googleapis.com/css?family=Dosis:400,600,700");
+.cursor-link {
+  cursor: pointer; }
+
+.cursor-link {
+  cursor: pointer; }
+
 header {
   border-bottom: solid 1px #eeeeee;
   box-shadow: 1px #f0f0f0 !important;
@@ -116,11 +122,14 @@ body {
   margin: 0 auto; }
 
 /* Next & previous buttons */
+.cursor-link {
+  cursor: pointer; }
+
 .parent-overlay {
   display: none; }
   .parent-overlay .bg-overlay {
     position: fixed;
-    background: #A9A9A9;
+    background: rgba(0, 0, 0, 0.7);
     width: 100%;
     height: 100%;
     z-index: 10;
@@ -146,11 +155,12 @@ body {
       width: 100%; }
     @media screen and (min-width: 992px) {
       .parent-overlay .overlay {
-        top: 10%;
+        bottom: 0;
         width: 30%;
         left: 50%;
         height: 600px;
-        overflow: auto; }
+        overflow: auto;
+        min-width: 420px; }
         .parent-overlay .overlay .cart-header {
           display: none; }
         .parent-overlay .overlay .footer {
@@ -175,66 +185,92 @@ body {
         display: none;
         float: right;
         border: none;
-        background: transparent; }
+        background: transparent;
+        font-size: .8rem; }
         @media screen and (min-width: 992px) {
           .parent-overlay .overlay .header .close {
             color: #FFFFFF;
             display: block; } }
-    .parent-overlay .overlay .cart-box .cart-item {
-      display: flex;
-      margin: 10px 0px 0px 0px;
-      align-items: center;
-      background: #FFFFFF;
-      font-size: .7rem; }
-      .parent-overlay .overlay .cart-box .cart-item img {
-        width: 100%;
-        height: auto; }
-      .parent-overlay .overlay .cart-box .cart-item .label {
+    .parent-overlay .overlay .cart-ctr {
+      max-height: 65vh;
+      overflow-y: auto; }
+      @media screen and (min-width: 992px) {
+        .parent-overlay .overlay .cart-ctr {
+          max-height: 60vh; } }
+      .parent-overlay .overlay .cart-ctr .cart-box .cart-item {
+        display: flex;
+        margin: 10px 0px 0px 0px;
+        padding: 5px;
+        align-items: center;
+        background: #FFFFFF;
+        font-size: .7rem; }
+        @media screen and (min-width: 992px) {
+          .parent-overlay .overlay .cart-ctr .cart-box .cart-item {
+            padding: 10px 5px; } }
+        .parent-overlay .overlay .cart-ctr .cart-box .cart-item img {
+          width: 100%;
+          height: auto; }
+        @media screen and (min-width: 992px) {
+          .parent-overlay .overlay .cart-ctr .cart-box .cart-item .item-desc {
+            margin: 0px 0px 0px 10px; } }
+        .parent-overlay .overlay .cart-ctr .cart-box .cart-item .item-desc .label {
+          font-weight: 700;
+          font-size: .8rem; }
+        .parent-overlay .overlay .cart-ctr .cart-box .cart-item .item-desc .price-row {
+          padding: 10px 0px 0px 0px; }
+          .parent-overlay .overlay .cart-ctr .cart-box .cart-item .item-desc .price-row .dot {
+            width: 20px;
+            height: 20px;
+            background-color: #D10157;
+            border-radius: 50%;
+            display: inline-block;
+            text-align: center;
+            border: none;
+            color: #FFFFFF; }
+          .parent-overlay .overlay .cart-ctr .cart-box .cart-item .item-desc .price-row button, .parent-overlay .overlay .cart-ctr .cart-box .cart-item .item-desc .price-row span {
+            margin: 0px 0px 0px 5px; }
+            @media screen and (min-width: 992px) {
+              .parent-overlay .overlay .cart-ctr .cart-box .cart-item .item-desc .price-row button, .parent-overlay .overlay .cart-ctr .cart-box .cart-item .item-desc .price-row span {
+                margin: 0px 0px 0px 10px; } }
+          .parent-overlay .overlay .cart-ctr .cart-box .cart-item .item-desc .price-row button:first-child {
+            margin: 0px; }
+          .parent-overlay .overlay .cart-ctr .cart-box .cart-item .item-desc .price-row .price-ctr {
+            float: right;
+            text-align: right;
+            padding-right: 20px; }
+      .parent-overlay .overlay .cart-ctr .cart-box .no-item-heading {
+        text-align: center;
         font-weight: 700;
-        font-size: .8rem; }
-      .parent-overlay .overlay .cart-box .cart-item .price-row {
-        padding: 10px 0px 0px 0px; }
-        .parent-overlay .overlay .cart-box .cart-item .price-row .dot {
-          width: 20px;
-          height: 20px;
-          background-color: #D10157;
-          border-radius: 50%;
-          display: inline-block;
-          text-align: center;
-          border: none; }
-        .parent-overlay .overlay .cart-box .cart-item .price-row button, .parent-overlay .overlay .cart-box .cart-item .price-row span {
-          margin: 0px 0px 0px 5px; }
-        .parent-overlay .overlay .cart-box .cart-item .price-row .price-ctr {
-          float: right;
-          text-align: right;
-          padding-right: 20px; }
-    .parent-overlay .overlay .cart-box .no-item-heading {
-      text-align: center;
-      font-weight: 700;
-      padding: 20px 0px 0px 0px;
-      font-size: .9rem; }
-    .parent-overlay .overlay .cart-box .no-item-text {
-      text-align: center;
-      font-size: .7rem;
-      padding: 10px 0px 0px 0px;
-      font-weight: 400; }
-    .parent-overlay .overlay .low-price {
-      padding: 10px; }
-      .parent-overlay .overlay .low-price .low-price-row {
-        padding: 10px;
-        background: #FFFFFF; }
-        .parent-overlay .overlay .low-price .low-price-row img {
-          height: 30px; }
-        .parent-overlay .overlay .low-price .low-price-row .anywhere {
-          margin: 0px 0px 0px 15px; }
+        padding: 20px 0px 0px 0px;
+        font-size: .9rem; }
+      .parent-overlay .overlay .cart-ctr .cart-box .no-item-text {
+        text-align: center;
+        font-size: .7rem;
+        padding: 10px 0px 0px 0px;
+        font-weight: 400; }
+      .parent-overlay .overlay .cart-ctr .low-price {
+        padding: 10px; }
+        .parent-overlay .overlay .cart-ctr .low-price .low-price-row {
+          padding: 10px;
+          background: #FFFFFF; }
+          .parent-overlay .overlay .cart-ctr .low-price .low-price-row img {
+            height: 30px; }
+          .parent-overlay .overlay .cart-ctr .low-price .low-price-row .anywhere {
+            margin: 0px 0px 0px 15px;
+            font-weight: 600; }
     .parent-overlay .overlay .footer {
       background: #FFFFFF;
-      position: relative;
+      position: fixed;
       width: 100%;
       bottom: 0px; }
+      @media screen and (min-width: 992px) {
+        .parent-overlay .overlay .footer {
+          width: 30%;
+          min-width: 420px; } }
       .parent-overlay .overlay .footer .promo {
         margin: 0px 0px 10px 0px;
-        text-align: center; }
+        text-align: center;
+        font-weight: 600; }
       .parent-overlay .overlay .footer .checkout-btn {
         height: 40px;
         padding: 10px;
@@ -252,6 +288,9 @@ body {
       cursor: pointer; }
   .parent-overlay .checkoutCart {
     background: #FFFFFF; }
+
+.cursor-link {
+  cursor: pointer; }
 
 footer {
   background: #eeeeee;

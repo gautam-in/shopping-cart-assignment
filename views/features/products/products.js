@@ -193,8 +193,8 @@ function renderCart(itemsinCart){
         let item = itemsinCart[i];
         html+=`<div class="row cart-item">
                 <div class="col span-2-of-12"><img src="${itemsinCart[i].imageURL}"></div>
-                <div class="col span-10-of-12">
-                  <div class="label"> ${itemsinCart[i].name}</div>
+                <div class="col span-10-of-12 item-desc">
+                  <h3 class="label"> ${itemsinCart[i].name}</h3>
                     <div class="row price-row">
                       <div class="col span 1-of-2 qty-ctr paddingTop10">
                           <button class="dot id-${item.id}" id=${item.id}  onclick="update(event.target,true)">+</button>

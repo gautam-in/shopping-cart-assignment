@@ -1,6 +1,8 @@
 @import url("https://fonts.googleapis.com/css?family=Dosis:400,600,700");
 @import url("https://fonts.googleapis.com/css?family=Dosis:400,600,700");
 .categories-section { }
+  .categories-section .cursor-link {
+    cursor: pointer; }
   .categories-section .category-block {
     padding: 30px 0px;
     box-shadow: 0 14px 6px -7px #eeeeee;
@@ -20,8 +22,8 @@
         .categories-section .category-block .desc-block {
           position: absolute;
           top: 50%;
-          width: 50%;
-          left: 50%;
+          width: 75%;
+          left: 25%;
           transform: translateY(-50%); } }
       .categories-section .category-block .desc-block button {
         background: #D10157;
@@ -36,7 +38,8 @@
             font-size: 1rem; } }
       .categories-section .category-block .desc-block .category-desc {
         font-size: .6rem;
-        margin: 5px 0px 0px 0px; }
+        margin: 5px 0px 0px 0px;
+        padding: 0px 5px; }
         @media screen and (min-width: 768px) {
           .categories-section .category-block .desc-block .category-desc {
             margin: 10px 0px 0px 0px; } }
@@ -46,7 +49,7 @@
       .categories-section .category-block .desc-block .category-btn {
         padding: 10px;
         margin: 10px 0px 0px 0px;
-        font-size: .5rem;
+        font-size: .6rem;
         line-height: 1.5; }
         @media screen and (min-width: 768px) {
           .categories-section .category-block .desc-block .category-btn {
@@ -59,7 +62,7 @@
       .categories-section .category-block:nth-child(even) .desc-block {
         position: absolute;
         top: 50%;
-        width: 50%;
+        width: 75%;
         left: 0%;
         transform: translateY(-50%); } }
 
@@ -71,6 +74,9 @@ img {
 
 /* Slideshow container */
 /* Next & previous buttons */
+.cursor-link {
+  cursor: pointer; }
+
 .slideshow-container {
   position: relative;
   margin: auto;

@@ -21,8 +21,8 @@
 		@media screen and (min-width: $tab) {
     		    position: absolute;
 	    		top: 50%;
-	    		width: 50%;
-	    		left: 50%;
+	    		width: 75%;
+	    		left: 25%;
 	    		transform: translateY(-50%);
 
 	  	}
@@ -39,6 +39,7 @@
 		.category-desc{
 			font-size: .6rem;
 			 @include margin(5 0 0 0);
+			 @include padding(0 5);
 			  @media screen and (min-width: $tab) {
     			 @include margin(10 0 0 0);
     			 
@@ -56,7 +57,7 @@
     			 @include margin(20 0 0 0);
     			 
    			  }
-		    font-size: .5rem;
+		    font-size: .6rem;
     		line-height: 1.5;
     		
 		}
@@ -72,7 +73,7 @@
 		@media screen and (min-width: $tab) {
 		    position: absolute;
     		top: 50%;
-    		width: 50%;
+    		width: 75%;
     		left: 0%;
     		transform: translateY(-50%);
   		}

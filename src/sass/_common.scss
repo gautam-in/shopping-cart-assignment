@@ -38,3 +38,7 @@
         margin: nth($margin, 1)+px nth($margin, 2)+px nth($margin, 3)+px nth($margin, 4)+px;
     }
 }
+
+.cursor-link{
+    cursor: pointer;
+}
