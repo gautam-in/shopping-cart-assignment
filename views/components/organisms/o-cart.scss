@@ -116,6 +116,7 @@
 						height:auto;
 					}
 					.item-desc {
+						@include margin(0 0 0 4);
 						@media screen and (min-width:$lap) {
 							@include margin(0 0 0 10);
 				    	}
@@ -126,15 +127,20 @@
 						}
 						.price-row{
 							@include padding(10 0 0 0);
+							font-weight: 600;
+							font-size: .7rem;
 							.dot {
 								width: 20px;
 								height: 20px;
 							    background-color: #D10157;
-							    border-radius: 50%;
+							    border-radius: 10%;
 							    display: inline-block;
 							    text-align: center;
 							    border:none;
 							    color: color('white');
+							    @media screen and (min-width:$lap) {
+									border-radius: 50%;
+				    			}
 							   
 							}
 
