@@ -27,7 +27,7 @@
 		}
 
 		.category-bg{
-			@include padding(10 0 10 10);
+			@include padding(10 0 10 20);
 			@extend .cursor-link;
 			font-size:.9rem;
 			border-bottom:solid 1px #A6A6A6;

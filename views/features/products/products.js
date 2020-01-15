@@ -197,9 +197,9 @@ function renderCart(itemsinCart){
                   <h3 class="label"> ${itemsinCart[i].name}</h3>
                     <div class="row price-row">
                       <div class="col span 1-of-2 qty-ctr paddingTop10">
-                          <button class="dot id-${item.id}" id=${item.id}  onclick="update(event.target,true)">+</button>
+                          <button class="dot id-${item.id}" id=${item.id}  onclick="update(event.target,false)">-</button>
                           <span class="item-price" id="item-price-${item.id}">${itemsinCart[i].qty}</span>
-                          <button class="dot  id-${item.id}"  onclick="update(event.target,false)">-</button>
+                          <button class="dot  id-${item.id}"  onclick="update(event.target,true)">+</button>
                           <span>x</span>
                           <span>Rs.${itemsinCart[i].price}</span>
                       </div>
