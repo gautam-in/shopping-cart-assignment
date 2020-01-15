@@ -1,14 +1,16 @@
 @import "../../../src/sass/variables";
 @import "../../../src/sass/common";
 input{
-		border: none;
-		width:100%;
-		border-bottom: solid 2px color('grey');
+	border: none;
+	width:100%;
+	border-bottom: solid 2px color('grey');
+	&:focus {
+    	outline: none;
+		border-bottom: solid 2px color('blue');
+		color:color('blue');
+		@include padding(0 0 10 0);
+      	+label {
+        	color: color('blue');
+      	}
+    }
 }
-input:focus{
-	outline: none;
-	border-bottom: solid 2px color('blue');
-	color:color('blue');
-	@include padding(0 0 10 0);
-}
-	

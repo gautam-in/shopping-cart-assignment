@@ -225,14 +225,16 @@ function renderCart(itemsinCart){
 
 function highlightCatgory(){
   let item = JSON.parse(localStorage.getItem('categorySelected'));
-  if(item.prevId === item.currentId){
+  if(item.prevId === item.currentId && item.currentId !== ''){
     document.getElementsByClassName(item.prevId)[0].classList.remove('highlight');
     return false;
   }
   if(document.getElementsByClassName(item.prevId)[0]){
     document.getElementsByClassName(item.prevId)[0].classList.remove('highlight');
   }
-  document.getElementsByClassName(item.currentId)[0].classList.add('highlight');
+  if(document.getElementsByClassName(item.currentId)[0]){
+    document.getElementsByClassName(item.currentId)[0].classList.add('highlight');
+  }
 }
 
 function setCount(){
