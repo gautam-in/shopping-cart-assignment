@@ -4,8 +4,8 @@
                     {{#each banners}}
                         {{> components/molecules/m-banner-image}}
                     {{/each}}
-                    <button class="prev" onClick="plusSlides(-1)" aria-label="button for previous slide" tabindex="0"><</button>
-                    <button class="next" id="next" onClick="plusSlides(1)" aria-label="button for next slide" tabindex="0">></button>
+                    <button class="prev" onClick="plusSlides(-1)" aria-label="button for previous slide" tabindex="0">prev</button>
+                    <button class="next" id="next" onClick="plusSlides(1)" aria-label="button for next slide" tabindex="0">next</button>
                     <div class="dots">
                         {{#each banners}}
                         <span class="dot" onclick="currentSlide({{@index}})" tabindex="0"></span>

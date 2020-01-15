@@ -8,12 +8,16 @@
         background: #e8e7e7;
         height: 100%;
         list-style-type: none;
-        padding: 0px;
+        padding: 0px 0px 0px 10px;
         margin: 0px;
         li {
-            padding: 10px;
-            border-bottom: 1px solid #808080;
+            padding: 15px;
+            border-bottom: 1px solid #cec2c2;
             cursor: pointer;
+            a {
+                color: #808080;
+                font-weight: 600;
+            }
         }
     }
 }

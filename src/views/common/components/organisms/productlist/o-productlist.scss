@@ -1,13 +1,13 @@
       .product {
           -ms-flex-preferred-size: 100%;
           flex-basis: 100%;
-          -webkit-box-shadow: 0 16px 20px -9px #ddd;
-          box-shadow: 0 16px 20px -9px #ddd;
           padding: 7px 10px;
           min-height: 230px;
+          margin-top: 20px;
           .product-title {
-              @include fontSize(16px);
-              min-height: 30px;
+              @include fontSize(17px);
+              min-height: 40px;
+              font-weight: bolder;
           }
           .product-view {
               display: -webkit-box;
@@ -28,16 +28,24 @@
                       background: #e8e7e7;
                       padding: 10px;
                       @include fontSize(14px);
+                      min-height: 90px;
                   }
                   .product-price-details {
-                      margin-top: 10px;
+                      display: none;
                   }
                   .product-buy-button {
                       border: 0;
                       width: 100%;
                       margin-top: 10px;
+                      .button-mobile-text {
+                          color: $white;
+                          margin-left: 5px;
+                      }
                   }
               }
+          }
+          .product-buy-button-ipad {
+              display: none;
           }
       }
       
@@ -45,8 +53,24 @@
           .product {
               -ms-flex-preferred-size: 46%;
               flex-basis: 46%;
+              border-right: 5px solid #c5c2c22e;
               .product-description {
-                  min-height: 200px;
+                  min-height: 200px !important;
+              }
+          }
+      }
+      
+      @include responsive-for-ipad {
+          .product {
+              .product-price-details {
+                  display: none;
+              }
+              .product-buy-button {
+                  display: none;
+              }
+              .product-buy-button-ipad {
+                  display: block;
+                  margin-top: 10px;
               }
           }
       }
@@ -55,7 +79,8 @@
           .product {
               -ms-flex-preferred-size: 22%;
               flex-basis: 22%;
-              min-height: 420px;
+              min-height: 425px;
+              margin-bottom: 40px;
               .product-title {
                   min-height: 65px;
               }
@@ -71,12 +96,16 @@
                           display: inline;
                           position: absolute;
                           top: 107%;
+                          margin-top: 10px;
                       }
                       .product-buy-button {
                           width: auto;
                           position: absolute;
                           right: 0px;
                           top: 104%;
+                          .button-mobile-text {
+                              display: none;
+                          }
                       }
                   }
               }
