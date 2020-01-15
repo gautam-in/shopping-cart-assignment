@@ -19,21 +19,10 @@ function toggleMenu(){
 setTimeout(function(){
 	document.getElementsByTagName("body")[0].addEventListener("keydown", function(e){
 		 if (event.keyCode === 9) {
-		 		 if (event.target['id'] === 'checkout') {
+		 		 if (event.target['id'] === 'checkout' || event.target['id'] === 'shopping') {
 		 		 	  event.preventDefault();
-      			document.getElementById('close').focus();
+            document.getElementById('close').focus();
 		 		 }
-         if (event.target['id'] === 'shopping') {
-            event.preventDefault();
-            if(document.getElementById('close')){
-              document.getElementById('close').focus();
-            } else {
-              event.preventDefault();
-              document.getElementById('shopping').focus();
-
-            }
-         }
-
 		 }
 
 	})
