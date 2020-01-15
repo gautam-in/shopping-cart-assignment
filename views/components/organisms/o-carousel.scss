@@ -1,14 +1,11 @@
 /* Next & previous buttons */
 @import "../../../src/sass/variables";
 @import "../../../src/sass/common";
-
+@import "../atoms/a-img";
 .slideshow-container {
   position: relative;
   margin: auto;
   box-shadow: 0 14px 6px -7px #eeeeee;
-  
-  @import "../atoms/a-img";
-
   .prev, .next {
     cursor: pointer;
     position: absolute;

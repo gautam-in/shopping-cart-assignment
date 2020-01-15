@@ -300,9 +300,9 @@ body {
 .cursor-link {
   cursor: pointer; }
 
-footer {
+.footer {
   background: #eeeeee;
   padding: 10px; }
-  footer .copyright {
+  .footer .copyright {
     font-weight: 600;
     font-size: .65rem; }

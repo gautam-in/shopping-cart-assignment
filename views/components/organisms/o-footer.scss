@@ -1,7 +1,7 @@
 @import "../../../src/sass/variables";
 @import "../../../src/sass/common";
 
-footer {
+.footer {
 	background:color('grey');
 	@include padding(10);
 	.copyright{

@@ -3,51 +3,58 @@
 .cursor-link {
   cursor: pointer; }
 
+.basic-header {
+  font-weight: 700;
+  letter-spacing: -1px; }
+
+.desc {
+  font-weight: 600;
+  font-size: .7rem;
+  margin-top: 20px; }
+
+.cursor-link {
+  cursor: pointer; }
+
+.cursor-link {
+  cursor: pointer; }
+
+.basic-input {
+  border: none;
+  width: 100%;
+  border-bottom: solid 2px #eeeeee; }
+  .basic-input:focus {
+    outline: none;
+    border-bottom: solid 2px #5fc8d0;
+    color: #5fc8d0;
+    padding: 0px 0px 10px 0px; }
+    .basic-input:focus + label {
+      color: #5fc8d0; }
+
+.basic-label {
+  font-weight: 600;
+  font-size: .7rem;
+  color: #A9A9A9; }
+
+.form-group {
+  width: 65%;
+  display: flex;
+  flex-direction: column-reverse;
+  margin: 30px 0px 0px 0px; }
+
+.btn-basic {
+  background: #D10157;
+  color: #FFFFFF;
+  cursor: pointer;
+  border: none; }
+
 .login-section {
   padding: 0px 0px 20px 0px; }
   .login-section .login-text {
     padding: 2% 0% 0% 5%; }
     .login-section .login-text h1 {
       margin: 20px 0px 0px 0px; }
-    .login-section .login-text h1 {
-      font-weight: 700;
-      letter-spacing: -1px; }
-    .login-section .login-text p {
-      font-weight: 600;
-      font-size: .7rem;
-      margin-top: 20px; }
-  .login-section .login-form { }
-    .login-section .login-form input, .login-section .login-form .login-btn {
-      width: 65%; }
-    .login-section .login-form .cursor-link {
-      cursor: pointer; }
-    .login-section .login-form .form-group {
-      width: 65%;
-      display: flex;
-      flex-direction: column-reverse;
-      margin: 30px 0px 0px 0px; }
-      .login-section .login-form .form-group .cursor-link {
-        cursor: pointer; }
-      .login-section .login-form .form-group input {
-        border: none;
-        width: 100%;
-        border-bottom: solid 2px #eeeeee; }
-        .login-section .login-form .form-group input:focus {
-          outline: none;
-          border-bottom: solid 2px #5fc8d0;
-          color: #5fc8d0;
-          padding: 0px 0px 10px 0px; }
-          .login-section .login-form .form-group input:focus + label {
-            color: #5fc8d0; }
-      .login-section .login-form .form-group label {
-        font-weight: 600;
-        font-size: .7rem;
-        color: #A9A9A9; }
-    .login-section .login-form button {
-      background: #D10157;
-      color: #FFFFFF;
-      cursor: pointer;
-      border: none; }
-    .login-section .login-form .login-btn {
-      height: 40px;
-      margin: 20px 0px 0px 0px; }
+  .login-section .login-form input, .login-section .login-form .login-btn {
+    width: 65%; }
+  .login-section .login-form .login-btn {
+    height: 40px;
+    margin: 20px 0px 0px 0px; }

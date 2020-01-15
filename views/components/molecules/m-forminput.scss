@@ -1,11 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=Dosis:400,600,700');
 @import "../../../src/sass/variables";
 @import "../../../src/sass/common";
+@import "../atoms/a-input";
+@import "../atoms/a-label";
 .form-group{
 	width:65%;
-	 display: flex;
+	display: flex;
  	flex-direction: column-reverse;
-	@import "../atoms/a-input";
-	@import "../atoms/a-label";
 	@include margin(30 0 0 0);
 }

@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Dosis:400,600,700');
 @import "../../../src/sass/variables";
 @import "../../../src/sass/common";
-
+@import "../atoms/a-button";
 @mixin show-lg{
 		@media screen and (min-width:$lap) {
 			display: block;
@@ -91,7 +91,7 @@
 					.btn-box{
 						display: flex;
 						display: block;
-						 @import "../atoms/a-button";
+						
 						@include padding(10 0 0 0);
 						@media screen and (min-width:$tab) {
 							display: none;
@@ -145,7 +145,7 @@
 		.btn-box-pad{     
 					clear: left;
 					display: none;
-					 @import "../atoms/a-button";
+					 
 					@include padding(10 0 0 0);
 					@media screen and (min-width:$tab) {
 						width:100%;

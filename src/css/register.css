@@ -3,51 +3,58 @@
 .cursor-link {
   cursor: pointer; }
 
+.basic-header {
+  font-weight: 700;
+  letter-spacing: -1px; }
+
+.desc {
+  font-weight: 600;
+  font-size: .7rem;
+  margin-top: 20px; }
+
+.cursor-link {
+  cursor: pointer; }
+
+.cursor-link {
+  cursor: pointer; }
+
+.basic-input {
+  border: none;
+  width: 100%;
+  border-bottom: solid 2px #eeeeee; }
+  .basic-input:focus {
+    outline: none;
+    border-bottom: solid 2px #5fc8d0;
+    color: #5fc8d0;
+    padding: 0px 0px 10px 0px; }
+    .basic-input:focus + label {
+      color: #5fc8d0; }
+
+.basic-label {
+  font-weight: 600;
+  font-size: .7rem;
+  color: #A9A9A9; }
+
+.form-group {
+  width: 65%;
+  display: flex;
+  flex-direction: column-reverse;
+  margin: 30px 0px 0px 0px; }
+
+.btn-basic {
+  background: #D10157;
+  color: #FFFFFF;
+  cursor: pointer;
+  border: none; }
+
 .register-section {
   padding: 0px 0px 20px 0px; }
   .register-section .register-text {
     padding: 2% 0% 0% 5%; }
     .register-section .register-text h1 {
       margin: 20px 0px 0px 0px; }
-    .register-section .register-text h1 {
-      font-weight: 700;
-      letter-spacing: -1px; }
-    .register-section .register-text p {
-      font-weight: 600;
-      font-size: .7rem;
-      margin-top: 20px; }
-  .register-section .register-form { }
-    .register-section .register-form .input-area, .register-section .register-form .register-btn {
-      width: 65%; }
-    .register-section .register-form .cursor-link {
-      cursor: pointer; }
-    .register-section .register-form .form-group {
-      width: 65%;
-      display: flex;
-      flex-direction: column-reverse;
-      margin: 30px 0px 0px 0px; }
-      .register-section .register-form .form-group .cursor-link {
-        cursor: pointer; }
-      .register-section .register-form .form-group input {
-        border: none;
-        width: 100%;
-        border-bottom: solid 2px #eeeeee; }
-        .register-section .register-form .form-group input:focus {
-          outline: none;
-          border-bottom: solid 2px #5fc8d0;
-          color: #5fc8d0;
-          padding: 0px 0px 10px 0px; }
-          .register-section .register-form .form-group input:focus + label {
-            color: #5fc8d0; }
-      .register-section .register-form .form-group label {
-        font-weight: 600;
-        font-size: .7rem;
-        color: #A9A9A9; }
-    .register-section .register-form button {
-      background: #D10157;
-      color: #FFFFFF;
-      cursor: pointer;
-      border: none; }
-    .register-section .register-form .register-btn {
-      height: 40px;
-      margin: 20px 0px 0px 0px; }
+  .register-section .register-form .input-area, .register-section .register-form .register-btn {
+    width: 65%; }
+  .register-section .register-form .register-btn {
+    height: 40px;
+    margin: 20px 0px 0px 0px; }

@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Dosis:400,600,700');
 @import "../../../src/sass/variables";
 @import "../../../src/sass/common";
+@import "../atoms/a-img";
+@import "../atoms/a-button";
 .category-block{
   @include padding(30 0);
   box-shadow: 0 14px 6px -7px #eeeeee;
@@ -8,7 +10,6 @@
   position: relative;
 	.img-block{
 	  text-align: center;
-	  @import "../atoms/a-img";
 	  @media screen and (min-width: $tab) {
 	  	.category-img{
 		 height:auto;
@@ -26,7 +27,6 @@
 	    		transform: translateY(-50%);
 
 	  	}
-		 @import "../atoms/a-button";
 	    .category-title{
 			 font-weight: 700;
 		     font-size: .7rem;

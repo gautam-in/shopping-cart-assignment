@@ -1,7 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Dosis:400,600,700');
 @import "../../../src/sass/variables";
 @import "../../../src/sass/common";
-
+@import "../../components/atoms/a-header";
+@import "../../components/atoms/a-desc";
+@import "../../components/molecules/m-forminput";
+@import "../../components/atoms/a-button";
 .register-section{
 	@include padding(0 0 20 0);
 	//padding: 3%;
@@ -11,15 +14,12 @@
 		h1{
 			@include margin(20 0 0 0);
 		}
-		@import "../../components/atoms/a-header";
-		@import "../../components/atoms/a-desc";
+
 	}
 	.register-form{
 		.input-area, .register-btn{
 			width:65%;
 		}
-		@import "../../components/molecules/m-forminput";
-		@import "../../components/atoms/a-button";
 		.register-btn {
 			height: 40px;
 			@include margin(20 0 0 0);
