@@ -8,6 +8,8 @@ function selectCategory(id){
   let prevUrl =window.location.href.split("/");
   let prevId = prevUrl[prevUrl.length -1];
   let diffUrl = categoryId !== prevId;
+  let obj = {'prevId':prevId,'currentId':categoryId};
+  localStorage.setItem('categorySelected',JSON.stringify(obj));
   window.location.href = diffUrl? `/products/${id}`:'/products';
 
 }
@@ -136,6 +138,8 @@ function init(){
     togglePriceDetails('none');
   }
   setCount();
+  highlightCatgory();
+ 
 
 }
 
@@ -217,6 +221,18 @@ function renderCart(itemsinCart){
   }
    document.getElementsByClassName("cart-box")[0].innerHTML =html;
    
+}
+
+function highlightCatgory(){
+  let item = JSON.parse(localStorage.getItem('categorySelected'));
+  if(item.prevId === item.currentId){
+    document.getElementsByClassName(item.prevId)[0].classList.remove('highlight');
+    return false;
+  }
+  if(document.getElementsByClassName(item.prevId)[0]){
+    document.getElementsByClassName(item.prevId)[0].classList.remove('highlight');
+  }
+  document.getElementsByClassName(item.currentId)[0].classList.add('highlight');
 }
 
 function setCount(){

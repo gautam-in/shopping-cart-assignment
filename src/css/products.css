@@ -20,6 +20,10 @@
       .parent-ctr .category-wrapper .category-bg a {
         color: #A6A6A6;
         text-decoration: none !important; }
+    .parent-ctr .category-wrapper .highlight {
+      background: #A9A9A9; }
+      .parent-ctr .category-wrapper .highlight a {
+        color: #FFFFFF; }
     .parent-ctr .category-wrapper .sm-screen {
       padding: 5px; }
       @media screen and (min-width: 768px) {

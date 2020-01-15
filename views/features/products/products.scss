@@ -25,6 +25,7 @@
 			}
 			
 		}
+
 		.category-bg{
 			@include padding(10 0 10 10);
 			font-size:.9rem;
@@ -33,6 +34,13 @@
 				color: color(link);
 				@include a-decorate;
 			}
+		}
+		.highlight{
+			background: color('darkgrey');
+			a{
+				color:color('white');
+			}
+			
 		}
 		.sm-screen{
 			@include hide-md;
