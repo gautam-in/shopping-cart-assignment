@@ -191,19 +191,19 @@ function renderCart(itemsinCart){
   if(itemsinCart.length){
       for(let i=0;i<itemsinCart.length;i++) {
         let item = itemsinCart[i];
-        html+=`<div class="row item">
-                <div class="col span-1-of-7 item__img"><img src="${itemsinCart[i].imageURL}"></div>
-                <div class="col span-6-of-7 item__desc">
-                  <h3 class="item__label"> ${itemsinCart[i].name}</h3>
-                    <div class="row item__price-ctr">
+        html+=`<div class="row cart-item">
+                <div class="col span-1-of-7"><img src="${itemsinCart[i].imageURL}"></div>
+                <div class="col span-6-of-7 item-desc">
+                  <h3 class="label"> ${itemsinCart[i].name}</h3>
+                    <div class="row price-row">
                       <div class="col span 1-of-2 qty-ctr paddingTop10">
-                          <button class="btn id-${item.id}" id=${item.id}  onclick="update(event.target,false)">-</button>
-                          <span class="text-padding" id="item-price-${item.id}">${itemsinCart[i].qty}</span>
-                          <button class="btn id-${item.id}"  onclick="update(event.target,true)">+</button>
-                          <span class="text-padding">x</span>
+                          <button class="dot id-${item.id}" id=${item.id}  onclick="update(event.target,false)">-</button>
+                          <span class="item-price" id="item-price-${item.id}">${itemsinCart[i].qty}</span>
+                          <button class="dot  id-${item.id}"  onclick="update(event.target,true)">+</button>
+                          <span>x</span>
                           <span>Rs.${itemsinCart[i].price}</span>
                       </div>
-                      <div class="col span-1-of-2 item__totalprice" id="item-total-${item.id}">Rs.${itemsinCart[i].price*itemsinCart[i].qty}
+                      <div class="col span-1-of-2 price-ctr" id="item-total-${item.id}">Rs.${itemsinCart[i].price*itemsinCart[i].qty}
                       </div>
                     </div>
                 </div>
@@ -211,7 +211,7 @@ function renderCart(itemsinCart){
               togglePriceDetails('block');
       }
   } else {
-       html+=`<div class="empty__heading">No items in your cart.</div><p class="empty__label">Your favorite items are just a click away</div>`;
+       html+=`<div class="no-item-heading">No items in your cart.</div><p class="no-item-text">Your favorite items are just a click away</div>`;
        togglePriceDetails('none');
   }
   if(itemsinCart.length){
@@ -219,7 +219,7 @@ function renderCart(itemsinCart){
   }else {
     document.getElementById("overlay").classList.add('checkoutCart');
   }
-   document.getElementsByClassName("item__wrapper")[0].innerHTML =html;
+   document.getElementsByClassName("cart-box")[0].innerHTML =html;
    
 }
 
@@ -249,7 +249,7 @@ function closeCart(){
   document.getElementsByClassName("mob-nav-list")[0].style.display ='none';
 }
 function togglePriceDetails(param){
-  document.getElementsByClassName("cart__offer")[0].style.display =param;
+  document.getElementsByClassName("low-price")[0].style.display =param;
   document.getElementsByClassName("promo")[0].style.display =param;
   document.getElementsByClassName("checkout")[0].style.display =param;
   document.getElementsByClassName("shopping")[0].style.display = param === 'none'?'block':'none';

@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Dosis:400,600,700");
 /*------- MIXINS--------*/
 /*------- EXTEND CLASSES--------*/
-.text-center, .parent-overlay .cart .cart__box .empty__heading, .parent-overlay .cart .cart__box .empty__label {
+.text-center, .parent-overlay .overlay .cart-ctr .cart-box .no-item-heading, .parent-overlay .overlay .cart-ctr .cart-box .no-item-text {
   text-align: center; }
 
 .a-decorate, header .main-nav li a, header .home-nav li a, header .cart-header-box .cart-link {
@@ -10,15 +10,15 @@
 .cursor-link, header .menu {
   cursor: pointer; }
 
-.float-left, .parent-overlay .cart .cart__footer .checkout-btn .checkout {
+.float-left {
   float: left; }
 
-.float-right, .parent-overlay .cart .cart__footer .checkout-btn .total {
+.float-right {
   float: right; }
 
 /*------- MIXINS--------*/
 /*------- EXTEND CLASSES--------*/
-.text-center, .parent-overlay .cart .cart__box .empty__heading, .parent-overlay .cart .cart__box .empty__label {
+.text-center, .parent-overlay .overlay .cart-ctr .cart-box .no-item-heading, .parent-overlay .overlay .cart-ctr .cart-box .no-item-text {
   text-align: center; }
 
 .a-decorate, header .main-nav li a, header .home-nav li a, header .cart-header-box .cart-link {
@@ -27,10 +27,10 @@
 .cursor-link, header .menu {
   cursor: pointer; }
 
-.float-left, .parent-overlay .cart .cart__footer .checkout-btn .checkout {
+.float-left {
   float: left; }
 
-.float-right, .parent-overlay .cart .cart__footer .checkout-btn .total {
+.float-right {
   float: right; }
 
 header {
@@ -137,12 +137,17 @@ html {
   margin: 0; }
 
 body {
-  background: #FFFFFF;
+  background: white;
   font-family: Dosis; }
 
+.row {
+  max-width: 1140px;
+  margin: 0 auto; }
+
+/* Next & previous buttons */
 /*------- MIXINS--------*/
 /*------- EXTEND CLASSES--------*/
-.text-center, .parent-overlay .cart .cart__box .empty__heading, .parent-overlay .cart .cart__box .empty__label {
+.text-center, .parent-overlay .overlay .cart-ctr .cart-box .no-item-heading, .parent-overlay .overlay .cart-ctr .cart-box .no-item-text {
   text-align: center; }
 
 .a-decorate, header .main-nav li a, header .home-nav li a, header .cart-header-box .cart-link {
@@ -151,10 +156,10 @@ body {
 .cursor-link, header .menu {
   cursor: pointer; }
 
-.float-left, .parent-overlay .cart .cart__footer .checkout-btn .checkout {
+.float-left {
   float: left; }
 
-.float-right, .parent-overlay .cart .cart__footer .checkout-btn .total {
+.float-right {
   float: right; }
 
 .parent-overlay {
@@ -166,7 +171,7 @@ body {
     height: 100%;
     z-index: 10;
     opacity: .9; }
-  .parent-overlay .cart {
+  .parent-overlay .overlay {
     position: fixed;
     font-size: .7rem;
     width: 100%;
@@ -174,63 +179,62 @@ body {
     height: 100%;
     z-index: 200;
     overflow: auto; }
+    .parent-overlay .overlay header {
+      font-size: 1rem; }
+    .parent-overlay .overlay .cart-header {
+      background: #FFFFFF; }
+      .parent-overlay .overlay .cart-header .cart-header-box {
+        padding: 5px; }
+        @media screen and (min-width: 768px) {
+          .parent-overlay .overlay .cart-header .cart-header-box {
+            padding: 10px; } }
+    .parent-overlay .overlay .footer {
+      width: 100%; }
     @media screen and (min-width: 992px) {
-      .parent-overlay .cart {
+      .parent-overlay .overlay {
         bottom: 0;
         width: 30%;
         left: 50%;
         height: 600px;
         overflow: auto;
-        min-width: 420px; } }
-    .parent-overlay .cart .header {
-      font-size: 1rem;
-      background: #FFFFFF; }
-      @media screen and (min-width: 992px) {
-        .parent-overlay .cart .header {
-          display: none; } }
-      .parent-overlay .cart .header .cart-header-box {
-        padding: 5px; }
-        @media screen and (min-width: 768px) {
-          .parent-overlay .cart .header .cart-header-box {
-            padding: 10px; } }
-    .parent-overlay .cart .cart__header {
-      padding: 15px;
-      margin: 20px 0px 0px 0px;
+        min-width: 420px; }
+        .parent-overlay .overlay .cart-header {
+          display: none; }
+        .parent-overlay .overlay .footer {
+          width: 30%; } }
+    .parent-overlay .overlay .header {
       background: #FFFFFF;
       color: #000000;
+      padding: 15px;
       font-size: .7rem;
       font-weight: 400;
-      height: 50px; }
+      height: 50px;
+      margin: 20px 0px 0px 0px; }
+      .parent-overlay .overlay .header .mycart {
+        font-weight: 700;
+        font-size: .8rem; }
       @media screen and (min-width: 992px) {
-        .parent-overlay .cart .cart__header {
+        .parent-overlay .overlay .header {
           background: #000000;
           color: #FFFFFF;
           margin: 0px; } }
-      .parent-overlay .cart .cart__header .close {
+      .parent-overlay .overlay .header .close {
         display: none;
         float: right;
         border: none;
         background: transparent;
         font-size: .8rem; }
         @media screen and (min-width: 992px) {
-          .parent-overlay .cart .cart__header .close {
+          .parent-overlay .overlay .header .close {
             color: #FFFFFF;
             display: block; } }
-    .parent-overlay .cart .cart__box {
+    .parent-overlay .overlay .cart-ctr {
       max-height: 65vh;
       overflow-y: auto; }
       @media screen and (min-width: 992px) {
-        .parent-overlay .cart .cart__box {
+        .parent-overlay .overlay .cart-ctr {
           max-height: 60vh; } }
-      .parent-overlay .cart .cart__box .empty__heading {
-        font-weight: 700;
-        padding: 20px 0px 0px 0px;
-        font-size: .9rem; }
-      .parent-overlay .cart .cart__box .empty__label {
-        font-size: .7rem;
-        padding: 10px 0px 0px 0px;
-        font-weight: 400; }
-      .parent-overlay .cart .cart__box .item {
+      .parent-overlay .overlay .cart-ctr .cart-box .cart-item {
         display: flex;
         margin: 10px 0px 0px 0px;
         padding: 5px;
@@ -238,24 +242,24 @@ body {
         background: #FFFFFF;
         font-size: .7rem; }
         @media screen and (min-width: 992px) {
-          .parent-overlay .cart .cart__box .item {
+          .parent-overlay .overlay .cart-ctr .cart-box .cart-item {
             padding: 10px 5px; } }
-        .parent-overlay .cart .cart__box .item .item__img > img {
+        .parent-overlay .overlay .cart-ctr .cart-box .cart-item img {
           width: 100%;
           height: auto; }
-        .parent-overlay .cart .cart__box .item .item__desc {
+        .parent-overlay .overlay .cart-ctr .cart-box .cart-item .item-desc {
           margin: 0px 0px 0px 4px; }
           @media screen and (min-width: 992px) {
-            .parent-overlay .cart .cart__box .item .item__desc {
+            .parent-overlay .overlay .cart-ctr .cart-box .cart-item .item-desc {
               margin: 0px 0px 0px 10px; } }
-          .parent-overlay .cart .cart__box .item .item__desc .item__label {
+          .parent-overlay .overlay .cart-ctr .cart-box .cart-item .item-desc .label {
             font-weight: 700;
             font-size: .8rem; }
-          .parent-overlay .cart .cart__box .item .item__desc .item__price-ctr {
+          .parent-overlay .overlay .cart-ctr .cart-box .cart-item .item-desc .price-row {
             padding: 10px 0px 0px 0px;
             font-weight: 600;
             font-size: .7rem; }
-            .parent-overlay .cart .cart__box .item .item__desc .item__price-ctr .btn {
+            .parent-overlay .overlay .cart-ctr .cart-box .cart-item .item-desc .price-row .dot {
               width: 20px;
               height: 20px;
               background-color: #D10157;
@@ -266,54 +270,71 @@ body {
               border: none;
               color: #FFFFFF; }
               @media screen and (min-width: 992px) {
-                .parent-overlay .cart .cart__box .item .item__desc .item__price-ctr .btn {
+                .parent-overlay .overlay .cart-ctr .cart-box .cart-item .item-desc .price-row .dot {
                   border-radius: 50%; } }
-            .parent-overlay .cart .cart__box .item .item__desc .item__price-ctr .btn:first-child {
-              margin: 0px; }
-            .parent-overlay .cart .cart__box .item .item__desc .item__price-ctr .text-padding {
-              margin: 0px 5px; }
+            .parent-overlay .overlay .cart-ctr .cart-box .cart-item .item-desc .price-row button, .parent-overlay .overlay .cart-ctr .cart-box .cart-item .item-desc .price-row span {
+              margin: 0px 0px 0px 5px; }
               @media screen and (min-width: 992px) {
-                .parent-overlay .cart .cart__box .item .item__desc .item__price-ctr .text-padding {
-                  margin: 0px 10px; } }
-            .parent-overlay .cart .cart__box .item .item__desc .item__price-ctr .item__totalprice {
+                .parent-overlay .overlay .cart-ctr .cart-box .cart-item .item-desc .price-row button, .parent-overlay .overlay .cart-ctr .cart-box .cart-item .item-desc .price-row span {
+                  margin: 0px 0px 0px 10px; } }
+            .parent-overlay .overlay .cart-ctr .cart-box .cart-item .item-desc .price-row button:first-child {
+              margin: 0px; }
+            .parent-overlay .overlay .cart-ctr .cart-box .cart-item .item-desc .price-row .price-ctr {
               float: right;
               text-align: right;
               padding-right: 20px; }
-      .parent-overlay .cart .cart__box .cart__offer {
+      .parent-overlay .overlay .cart-ctr .cart-box .no-item-heading {
+        font-weight: 700;
+        padding: 20px 0px 0px 0px;
+        font-size: .9rem; }
+      .parent-overlay .overlay .cart-ctr .cart-box .no-item-text {
+        font-size: .7rem;
+        padding: 10px 0px 0px 0px;
+        font-weight: 400; }
+      .parent-overlay .overlay .cart-ctr .low-price {
         padding: 10px; }
-        .parent-overlay .cart .cart__box .cart__offer .offer__img {
+        .parent-overlay .overlay .cart-ctr .low-price .low-price-row {
           padding: 10px;
           background: #FFFFFF; }
-          .parent-overlay .cart .cart__box .cart__offer .offer__img img {
+          .parent-overlay .overlay .cart-ctr .low-price .low-price-row img {
             height: 30px; }
-          .parent-overlay .cart .cart__box .cart__offer .offer__img span {
+          .parent-overlay .overlay .cart-ctr .low-price .low-price-row .anywhere {
             margin: 0px 0px 0px 15px;
             font-weight: 600; }
-    .parent-overlay .cart .cart__footer {
-      padding: 10px;
+    .parent-overlay .overlay .footer {
       background: #FFFFFF;
       position: fixed;
       width: 100%;
       bottom: 0px; }
       @media screen and (min-width: 992px) {
-        .parent-overlay .cart .cart__footer {
+        .parent-overlay .overlay .footer {
           width: 30%;
           min-width: 420px; } }
-      .parent-overlay .cart .cart__footer .promo {
+      .parent-overlay .overlay .footer .promo {
         margin: 0px 0px 10px 0px;
         text-align: center;
         font-weight: 600; }
-      .parent-overlay .cart .cart__footer .checkout-btn {
+      .parent-overlay .overlay .footer .checkout-btn {
         height: 40px;
         padding: 10px;
         background: #D10157;
         color: #FFFFFF;
         width: 100%;
         border: none; }
+        .parent-overlay .overlay .footer .checkout-btn .checkout {
+          float: left; }
+        .parent-overlay .overlay .footer .checkout-btn .total {
+          float: right; }
+    .parent-overlay .overlay .cart-footer {
+      padding: 10px; }
+    .parent-overlay .overlay button {
+      cursor: pointer; }
+  .parent-overlay .checkoutCart {
+    background: #FFFFFF; }
 
 /*------- MIXINS--------*/
 /*------- EXTEND CLASSES--------*/
-.text-center, .parent-overlay .cart .cart__box .empty__heading, .parent-overlay .cart .cart__box .empty__label {
+.text-center, .parent-overlay .overlay .cart-ctr .cart-box .no-item-heading, .parent-overlay .overlay .cart-ctr .cart-box .no-item-text {
   text-align: center; }
 
 .a-decorate, header .main-nav li a, header .home-nav li a, header .cart-header-box .cart-link {
@@ -322,10 +343,10 @@ body {
 .cursor-link, header .menu {
   cursor: pointer; }
 
-.float-left, .parent-overlay .cart .cart__footer .checkout-btn .checkout {
+.float-left {
   float: left; }
 
-.float-right, .parent-overlay .cart .cart__footer .checkout-btn .total {
+.float-right {
   float: right; }
 
 .footer {

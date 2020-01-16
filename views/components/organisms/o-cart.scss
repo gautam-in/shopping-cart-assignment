@@ -1,5 +1,7 @@
+/* Next & previous buttons */
 @import "../../../src/sass/variables";
 @import "../../../src/sass/common";
+
 @mixin show-md{
 		@media screen and (min-width:$lap) {
 			display: block;
@@ -12,7 +14,6 @@
 }
 .parent-overlay{
 	display: none;
-
 	.bg-overlay{
 	position: fixed;
     background: rgba(0,0,0,.7);
@@ -22,7 +23,7 @@
     opacity: .9;
 	}
 
-	.cart {
+	.overlay{
 		position: fixed;
 		font-size:.7rem;
 	    width: 100%;
@@ -30,20 +31,12 @@
 	    height: 100%;
 	    z-index: 200;
 	    overflow:auto;
-	    @media screen and (min-width:$lap) {
-			bottom: 0;
-		    width: 30%;
-		    left: 50%;
-		    height: 600px;
-	    	overflow:auto;
-	    	min-width: 420px;
-		}
-	    .header {
-	       font-size:1rem;
-	       background: color('white');
-	       @media screen and (min-width:$lap) {
-	       		 display:none;
-	       }
+	    header {
+	    	font-size:1rem;
+
+	    }
+	    .cart-header {
+	      background: color('white');
 	      .cart-header-box{
 	      	@include padding(5);
 	       	@media screen and (min-width:$tab) {
@@ -51,21 +44,45 @@
 	      	}
 	       }
 	    }
-		.cart__header {
-			@include padding(15);
-		    @include margin(20 0 0 0);
+
+    	.footer{
+			width:100%;
+		}
+	    @media screen and (min-width:$lap) {
+			bottom: 0;
+		    width: 30%;
+		    left: 50%;
+		    height: 600px;
+	    	overflow:auto;
+	    	min-width: 420px;
+		    .cart-header {
+		      display:none;
+		    }
+		    .footer{
+				width:30%;
+			}
+
+		}
+
+		.header{
 			background:color('white');
 			color: color('black');
+			@include padding(15);
 		    font-size: .7rem;
 		    font-weight: 400;
 		    height: 50px;
+		    @include margin(20 0 0 0);
+		    .mycart{
+		    	font-weight: 700;
+    			font-size: .8rem;
+		    }
 		    @media screen and (min-width:$lap) {
 		    	background: color('black');
 				color: color('white');
 				 @include margin(0);
 		    }
-		    .close {
-				display: none;
+		    .close{
+		    	display: none;
 			    float:right;
 			    border: none;
 			    background: transparent;
@@ -74,112 +91,123 @@
 					color: color('white');
 					display: block;
 		    	}
-			}
+		    }
+
 		}
-		.cart__box{
+		.cart-ctr {
 			max-height: 65vh;
     		overflow-y: auto;
 		    @media screen and (min-width:$lap) {
 				max-height: 60vh;
 		    }
-			.empty__heading{
+			.cart-box{
+				.cart-item{
+					display: flex;
+					@include margin(10 0 0 0);
+					@include padding(5);
+	    			align-items: center;
+	    			background: color('white');
+					font-size:.7rem;
+					@media screen and (min-width:$lap) {
+						@include padding(10 5);
+				    }
+					img{
+						width:100%;
+						height:auto;
+					}
+					.item-desc {
+						@include margin(0 0 0 4);
+						@media screen and (min-width:$lap) {
+							@include margin(0 0 0 10);
+				    	}
+						.label{
+							font-weight: 700;
+							font-size: .8rem;
+							
+						}
+						.price-row{
+							@include padding(10 0 0 0);
+							font-weight: 600;
+							font-size: .7rem;
+							.dot {
+								width: 20px;
+								height: 20px;
+							    background-color: #D10157;
+							    border-radius: 10%;
+							    display: inline-block;
+							    text-align: center;
+							    line-height: 20px;
+							    border:none;
+							    color: color('white');
+							    @media screen and (min-width:$lap) {
+									border-radius: 50%;
+				    			}
+							   
+							}
+
+							button,span{
+								@include margin(0 0 0 5);
+								@media screen and (min-width:$lap) {
+									@include  margin(0 0 0 10);
+				    			}
+							}
+							button:first-child{
+								@include margin(0);
+							}
+							.price-ctr{
+								//@include padding(10 0 0 0);
+							    float: right;
+							    text-align: right;
+							    padding-right: 20px;
+
+							}
+						}
+					}
+				
+				
+				}
+
+				.no-item-heading{
 					@extend .text-center;
 				    font-weight: 700;
 				    @include padding(20 0 0 0);
 				    font-size: .9rem;
-			}
-			.empty__label {
-				@extend .text-center;
-				font-size: .7rem;
-				@include padding(10 0 0 0);
-    			font-weight: 400;
-			}
-			.item{
-				display: flex;
-				@include margin(10 0 0 0);
-				@include padding(5);
-				align-items: center;
-				background: color('white');
-				font-size:.7rem;
-				@media screen and (min-width:$lap) {
-					@include padding(10 5);
-			    }
-	    		.item__img {
-					> img {
-						width:100%;
-						height:auto;
-					}
 				}
-				.item__desc {
-					@include margin(0 0 0 4);
-					@media screen and (min-width:$lap) {
-						@include margin(0 0 0 10);
-			    	}
-			    	.item__label{
-						font-weight: 700;
-						font-size: .8rem;
-					}
-					.item__price-ctr {
-						@include padding(10 0 0 0);
-						font-weight: 600;
-						font-size: .7rem;
-						.btn{
-							width: 20px;
-							height: 20px;
-						    background-color: #D10157;
-						    border-radius: 10%;
-						    display: inline-block;
-						    text-align: center;
-						    line-height: 20px;
-						    border:none;
-						    color: color('white');
-						    @media screen and (min-width:$lap) {
-								border-radius: 50%;
-							}
-						}
-						.btn:first-child {
-							@include margin(0);
-						}
-						.text-padding {
-							@include margin(0 5);
-							@media screen and (min-width:$lap) {
-								@include  margin(0 10);
-							}
-						}
-						.item__totalprice{
-						    float: right;
-						    text-align: right;
-						    padding-right: 20px;
-
-						}
-					}
+				.no-item-text {
+					@extend .text-center;
+					font-size: .7rem;
+					@include padding(10 0 0 0);
+	    			font-weight: 400;
 				}
 			}
-			.cart__offer{
+			.low-price{
 				@include padding(10);
-				.offer__img{
+
+
+				.low-price-row {
 					@include padding(10);
 					background: color('white');
 					img{
 					    height: 30px;
 					}
-					span{
+					.anywhere {
 						@include margin(0 0 0 15);
 						font-weight: 600;
 					}
 				}
 			}
 		}
-		.cart__footer {
-			@include padding(10);
+
+		.footer{
 			background: color('white');
+			
 			position:fixed;
 			width: 100%;
 			bottom:0px;
 			@media screen and (min-width:$lap) {
-	   			width: 30%;
-	   			min-width: 420px;
-	  		}
+	       			width: 30%;
+	       			min-width: 420px;
+      		}
 			.promo{
 				@include margin(0 0 10 0);
 	    		text-align: center;
@@ -193,13 +221,25 @@
 				width: 100%;
 				border:none;
 				.checkout{
-					@extend .float-left;
+					float: left;
 				}
 				.total{
-					@extend .float-right;
+					float: right;
 				}
 				
 			}
 		}
+		.cart-footer{
+			@include padding(10);
+		}
+		button{
+			cursor: pointer;
+		}
+
 	}
+	.checkoutCart{
+		background: color('white');
+	}
+
+
 }
