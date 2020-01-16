@@ -1,14 +1,4 @@
-@mixin textCenter{
-	text-align: center;
-}
-@mixin a-decorate{
-    text-decoration: none !important;
-}
-
-@mixin btn-decorate{
-    cursor: pointer;
-}
-
+/*------- MIXINS--------*/
 @mixin padding($padding) {
     @if length($padding) == 1 {
         padding: $padding+px;
@@ -39,6 +29,27 @@
     }
 }
 
+// Clamps a block of text to a certain number of lines,
+@mixin text-clamp($lines) {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: $lines;
+}
+
+/*------- EXTEND CLASSES--------*/
+.text-center{
+    text-align: center;
+}
+.a-decorate{
+    text-decoration: none !important;
+}
 .cursor-link{
     cursor: pointer;
+}
+.float-left{
+    float: left;
+}
+.float-right{
+    float: right;
 }

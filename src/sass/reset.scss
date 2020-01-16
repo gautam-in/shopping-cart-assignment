@@ -1,0 +1,47 @@
+html, body, div, span,
+h1, h2, h3, h4, h5, h6, p,
+a, img, ul, li, form, label, footer, header, nav, section {
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+/* HTML5 display-role reset for older browsers */ 
+footer, header, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ul {
+	list-style: none;
+}
+a{
+	text-decoration: none;
+}
+
+/*  GROUPING  ============================================================================= */
+
+.row {
+    zoom: 1; /* For IE 6/7 (trigger hasLayout) */
+    max-width:1140px;
+	margin:0 auto;
+}
+
+.row:before,
+.row:after {
+    content:"";
+    display:table;
+}
+.row:after {
+    clear:both;
+}
+
+/*  GRID COLUMN SETUP   ==================================================================== */
+
+.col {
+	display: block;
+	float:left;
+}
+
+.col:first-child { margin-left: 0; } /* all browsers except IE6 and lower */

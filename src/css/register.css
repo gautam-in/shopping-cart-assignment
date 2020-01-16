@@ -1,7 +1,21 @@
 @import url("https://fonts.googleapis.com/css?family=Dosis:400,600,700");
+/*------- MIXINS--------*/
+/*------- EXTEND CLASSES--------*/
 @import url("https://fonts.googleapis.com/css?family=Dosis:400,600,700");
+.text-center {
+  text-align: center; }
+
+.a-decorate {
+  text-decoration: none !important; }
+
 .cursor-link {
   cursor: pointer; }
+
+.float-left {
+  float: left; }
+
+.float-right {
+  float: right; }
 
 .basic-header {
   font-weight: 700;
@@ -12,11 +26,22 @@
   font-size: .7rem;
   margin-top: 20px; }
 
-.cursor-link {
-  cursor: pointer; }
+/*------- MIXINS--------*/
+/*------- EXTEND CLASSES--------*/
+.text-center {
+  text-align: center; }
+
+.a-decorate {
+  text-decoration: none !important; }
 
 .cursor-link {
   cursor: pointer; }
+
+.float-left {
+  float: left; }
+
+.float-right {
+  float: right; }
 
 .basic-input {
   border: none;
@@ -34,6 +59,23 @@
   font-weight: 600;
   font-size: .7rem;
   color: #A9A9A9; }
+
+/*------- MIXINS--------*/
+/*------- EXTEND CLASSES--------*/
+.text-center {
+  text-align: center; }
+
+.a-decorate {
+  text-decoration: none !important; }
+
+.cursor-link {
+  cursor: pointer; }
+
+.float-left {
+  float: left; }
+
+.float-right {
+  float: right; }
 
 .form-group {
   width: 65%;

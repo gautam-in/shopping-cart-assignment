@@ -6,7 +6,6 @@
 html{
 	font-size: 20px;
 }
-
 //}
 * {
 	box-sizing: border-box;
@@ -14,15 +13,9 @@ html{
 	margin:0;
 }
 body {
-	background: white;
-	
+	background: color('white');
 	font-family: Dosis;
 }
-.row {
-	max-width:1140px;
-	margin:0 auto;
- 
 
-}
 @import "../../views/components/organisms/o-cart";
 @import "../../views/components/organisms/o-footer";

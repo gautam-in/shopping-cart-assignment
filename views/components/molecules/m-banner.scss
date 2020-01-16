@@ -16,9 +16,8 @@
 		}
       }
 	}
-
 	.desc-block{
-		@include textCenter;
+		@extend .text-center;
 		@media screen and (min-width: $tab) {
     		    position: absolute;
 	    		top: 50%;
@@ -49,7 +48,6 @@
 
    			  }
 		}
-
 		.category-btn{
 			@include padding(10);
 			@include margin(10 0 0 0);
@@ -69,7 +67,7 @@
 
 	}
 	.desc-block{
-		@include textCenter;
+		@extend .text-center;
 		@media screen and (min-width: $tab) {
 		    position: absolute;
     		top: 50%;

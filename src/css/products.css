@@ -1,10 +1,38 @@
 @import url("https://fonts.googleapis.com/css?family=Dosis:400,600,700");
+/*------- MIXINS--------*/
+/*------- EXTEND CLASSES--------*/
 @import url("https://fonts.googleapis.com/css?family=Dosis:400,600,700");
-.cursor-link, .parent-ctr .category-wrapper .category-bg {
-  cursor: pointer; }
+.text-center {
+  text-align: center; }
+
+.a-decorate, .parent-ctr .category-wrapper .category-bg a, .parent-ctr .category-wrapper .sm-screen .dropdown-content a {
+  text-decoration: none !important; }
 
 .cursor-link, .parent-ctr .category-wrapper .category-bg {
   cursor: pointer; }
+
+.float-left {
+  float: left; }
+
+.float-right {
+  float: right; }
+
+/*------- MIXINS--------*/
+/*------- EXTEND CLASSES--------*/
+.text-center {
+  text-align: center; }
+
+.a-decorate, .parent-ctr .category-wrapper .category-bg a, .parent-ctr .category-wrapper .sm-screen .dropdown-content a {
+  text-decoration: none !important; }
+
+.cursor-link, .parent-ctr .category-wrapper .category-bg {
+  cursor: pointer; }
+
+.float-left {
+  float: left; }
+
+.float-right {
+  float: right; }
 
 .btn-basic {
   background: #D10157;
@@ -64,10 +92,10 @@
       padding: 5px;
       background: #eeeeee;
       font-size: .7rem;
-      display: -webkit-box;
-      -webkit-line-clamp: 5;
-      -webkit-box-orient: vertical;
       overflow: hidden;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 5;
       line-height: 1.5;
       overflow: hidden; }
       @media screen and (min-width: 768px) {
@@ -159,8 +187,7 @@
       font-size: .9rem;
       border-bottom: solid 1px #A6A6A6; }
       .parent-ctr .category-wrapper .category-bg a {
-        color: #A6A6A6;
-        text-decoration: none !important; }
+        color: #A6A6A6; }
     .parent-ctr .category-wrapper .highlight {
       background: #A9A9A9; }
       .parent-ctr .category-wrapper .highlight a {
@@ -193,7 +220,6 @@
         color: #FFFFFF;
         padding: 6px;
         font-size: .6rem;
-        text-decoration: none !important;
         display: block;
         text-align: left; }
       .parent-ctr .category-wrapper .sm-screen .dropdown-content a:hover {

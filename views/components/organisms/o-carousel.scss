@@ -1,13 +1,13 @@
-/* Next & previous buttons */
 @import "../../../src/sass/variables";
 @import "../../../src/sass/common";
+/* Next & previous buttons */
 @import "../atoms/a-img";
 .slideshow-container {
   position: relative;
   margin: auto;
   box-shadow: 0 14px 6px -7px #eeeeee;
   .prev, .next {
-    cursor: pointer;
+    @extend .cursor-link;
     position: absolute;
     top: 50%;
     width: auto;
@@ -58,9 +58,9 @@
         display:none;  
     }
     @include padding(0 0 10 0);
-    @include textCenter;
+    @extend .text-center;
     .dot {
-      cursor: pointer;
+      @extend .cursor-link;
       height: 5px;
       width: 5px;
       margin: 0 10px;
@@ -84,9 +84,9 @@
     @media screen and (min-width: $tab) {
         display:none;  
     }
-    @include textCenter;
+    @extend .text-center;
     .dot {
-      cursor: pointer;
+      @extend .cursor-link;
       height: 5px;
       width: 5px;
       margin: 0 10px;

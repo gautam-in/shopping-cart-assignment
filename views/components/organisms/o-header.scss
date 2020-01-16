@@ -1,6 +1,5 @@
 @import "../../../src/sass/variables";
 @import "../../../src/sass/common";
-
 header {
 	border-bottom: solid 1px color('grey');
 	box-shadow: 1px color('shadowColor') !important;
@@ -33,7 +32,7 @@ header {
 			@include margin(0 0 0 10);
 			a{
 				color:  color('navColor');
-				@include a-decorate;
+				@extend .a-decorate;
 				font-weight: 600;
 			}
 		}
@@ -73,7 +72,7 @@ header {
       	}
 		
 		.cart-link{
-			@include a-decorate;
+			@extend .a-decorate;
 			.cart {
 				height: 35px;
 				width: auto;
@@ -95,7 +94,7 @@ header {
     	border: none;
 	    background: white;
 	    font-size: 1rem;
-	    cursor: pointer;
+	    @extend .cursor-link;
 	    img{
 	    	width:25px;
 	    }

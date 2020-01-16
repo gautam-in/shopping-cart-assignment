@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Dosis:400,600,700');
-@import "../../../src/sass/variables";
-@import "../../../src/sass/common";
 @import "../atoms/a-input";
 @import "../atoms/a-label";
+@import "../../../src/sass/variables";
+@import "../../../src/sass/common";
 .form-group{
 	width:65%;
 	display: flex;

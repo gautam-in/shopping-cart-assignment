@@ -75,10 +75,7 @@
 					@include padding(5);
 					background: color('grey');
 					font-size: .7rem;
-					display: -webkit-box;
-			    	-webkit-line-clamp: 5;
-			    	-webkit-box-orient: vertical;
-			    	overflow: hidden;
+					@include text-clamp(5);
 					line-height: 1.5;
 					@media screen and (min-width:$tab) {
 						height: 150px;
@@ -88,51 +85,49 @@
 					overflow: hidden;
 				}
 				
-					.btn-box{
-						display: flex;
-						display: block;
-						
-						@include padding(10 0 0 0);
-						@media screen and (min-width:$tab) {
-							display: none;
+				.btn-box{
+					display: flex;
+					display: block;
+					
+					@include padding(10 0 0 0);
+					@media screen and (min-width:$tab) {
+						display: none;
 
+					}
+					@media screen and (min-width:$lap) {
+						width:100%;
+						display: block;
+					}
+			
+					.price-ctr {
+						width:50%;
+						float: left;
+						display: none;
+						@include padding(5);
+						font-size:.7rem;
+						@include show-lg;
+							
+					}
+					.btn-ctr{
+						width:100%;
+						float: left;
+						.lg-screen{
+							display:none; 
 						}
 						@media screen and (min-width:$lap) {
-							width:100%;
-							display: block;
-						}
-				
-						.price-ctr {
 							width:50%;
-							float: left;
-							display: none;
-							@include padding(5);
-							font-size:.7rem;
-							@include show-lg;
-								
-						}
-						.btn-ctr{
-							width:100%;
-							float: left;
 							.lg-screen{
-								display:none; 
+								display:none;
+								width:100%; 
+								@include show-lg;
 							}
-							@media screen and (min-width:$lap) {
-								width:50%;
-								.lg-screen{
-									display:none;
-									width:100%; 
-									@include show-lg;
-								}
-								.sm-screen{
-									display:block; 
-									@include hide-lg;
-									@include margin(10 0 0 0);
-								}
+							.sm-screen{
+								display:block; 
+								@include hide-lg;
+								@include margin(10 0 0 0);
 							}
-
-
 						}
+					}
 
 					}
 
@@ -143,22 +138,21 @@
 		}
 
 		.btn-box-pad{     
-					clear: left;
-					display: none;
-					 
-					@include padding(10 0 0 0);
-					@media screen and (min-width:$tab) {
-						width:100%;
-						display: block;
-					}
-					@media screen and (min-width:$lap) {
-						display: none;
-					}
-					.btn-buy{
-						@include padding(5);
-						width:100%;
-					}
-
+			clear: left;
+			display: none;
+			 
+			@include padding(10 0 0 0);
+			@media screen and (min-width:$tab) {
+				width:100%;
+				display: block;
+			}
+			@media screen and (min-width:$lap) {
+				display: none;
+			}
+			.btn-buy{
+				@include padding(5);
+				width:100%;
+			}
 		}
 }
 
