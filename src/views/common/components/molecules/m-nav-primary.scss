@@ -1,11 +1,11 @@
 #side-nav-filter-list {
-    display: none;
+    display: map-get($display, none);
 }
 
 @include responsive-for-ipad-desktop {
     #side-nav-filter-list {
-        display: block;
-        background: #e8e7e7;
+        display: map-get($display, block);
+        background: $primary-grey;
         height: 100%;
         list-style-type: none;
         padding: 0px 0px 0px 10px;
@@ -15,7 +15,7 @@
             border-bottom: 1px solid #cec2c2;
             cursor: pointer;
             a {
-                color: #808080;
+                color: $text-grey-color;
                 font-weight: 600;
             }
         }

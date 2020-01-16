@@ -4,14 +4,14 @@
 .product-content-area {
     max-width: 1170px;
     margin: auto;
-    position: relative;
+    position: map-get($position, relative);
     height: 100%;
     overflow: hidden;
     width: 100%;
     #product-list-section {
         display: -webkit-box;
         display: -ms-flexbox;
-        display: flex;
+        display: map-get($display, flex);
         -ms-flex-direction: row;
         flex-direction: row;
         -ms-flex-wrap: wrap;
@@ -21,15 +21,15 @@
 
 @include responsive-for-ipad-desktop {
     .product-content-area {
-        display: table;
+        display: map-get($display, tab);
         margin-bottom: 0px;
         #left-nav-filter {
-            display: table-cell;
+            display: map-get($display, tab-c);
             width: 25%;
             vertical-align: top;
         }
         #product-list-section {
-            position: relative;
+            position: map-get($position, relative);
             margin-top: 20px;
         }
     }
@@ -38,7 +38,7 @@
 @include responsive-for-desktop {
     .product-content-area {
         #product-list-section {
-            position: relative;
+            position: map-get($position, rel);
         }
     }
 }

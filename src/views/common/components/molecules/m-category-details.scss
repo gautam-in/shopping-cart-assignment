@@ -12,7 +12,7 @@
         margin-bottom: 5px;
     }
     .category-button {
-        display: block;
+        display: map-get($display, block);
         width: auto;
         margin: 0 auto;
         padding: 5px;

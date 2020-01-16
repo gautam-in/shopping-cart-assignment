@@ -168,7 +168,7 @@ var cart = (function() {
                 buttonBlock = `<div class='promo-code'>Promo code can be applied on payment page</div>
                         <button class="btn shopping-btn goto-checkout clearfix" onclick="common.closeShoppingCart(event)">
                         <span class="title">Proceed to Checkout</span>
-                        <span class="price">Rs. <span id='totalPrice'>0</span> &rarr;</span>
+                        <span class="price">Rs. <span id='totalPrice'>0</span> <span class="caret"></span></span>
                         </button>`;
             } else {
                 content = `<div class="items__no-items">

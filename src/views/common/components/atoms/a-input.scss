@@ -3,10 +3,11 @@ input {
     border-left: 0;
     border-right: 0;
     @include fontSize( $input-font-size);
+    font-family: Dosis;
+    color: $black;
     margin-bottom: 20px;
-    display: block;
+    display: map-get($display, block);
     width: 100%;
-    color: $graphiteGray;
     outline: 0;
     padding: 16px 0 10px;
 }

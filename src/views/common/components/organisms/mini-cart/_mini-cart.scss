@@ -1,6 +1,6 @@
 #cart {
     display: none;
-    position: fixed;
+    position: map-get($position, fix);
     z-index: map-get($z-index, cart);
     left: 0;
     top: 0;
@@ -16,11 +16,11 @@
         .modal-header {
             .modal-header-title {
                 background: $black;
-                position: relative;
-                padding: 10px;
+                position: map-get($position, rel);
+                padding: 15px;
                 h2 {
                     color: $white;
-                    @include fontSize(20px);
+                    @include fontSize(16px);
                     span {
                         color: $white;
                     }
@@ -29,29 +29,57 @@
             .cart-header-close {
                 position: absolute;
                 right: 10px;
-                top: 10px;
+                top: 14px;
                 cursor: pointer;
                 img {
-                    width: 18px;
+                    width: 13px;
                 }
             }
         }
         .modal-body {
             .btn {
-                position: absolute;
-                bottom: 0px;
-                background: $pink;
-                display: block;
-                width: 100%;
-                padding: 10px;
+                position: map-get($position, abs);
+                bottom: 4px;
+                width: 90%;
+                padding: 14px;
                 box-sizing: border-box;
                 text-align: center;
-                color: $white;
-                font-size: 17px;
-                font-weight: bold;
+                @include fontSize(16px);
+                border-radius: 3px;
+                left: 41px;
+                font-family: Dosis;
                 span {
                     color: $white;
+                    margin-right: 17px;
                 }
+                .title {
+                    float: map-get($float, l);
+                }
+                .price {
+                    float: map-get($float, r);
+                    .caret {
+                        display: map-get($position, in-blk);
+                        width: 0;
+                        height: 0;
+                        vertical-align: middle;
+                        border: solid #fff;
+                        border-width: 0 2px 2px 0;
+                        padding: 3px;
+                        transform: rotate(45deg);
+                        -webkit-transform: rotate(-45deg);
+                        position: map-get($position, abs);
+                        right: 8px;
+                        top: 20px;
+                    }
+                }
+            }
+        }
+    }
+    @include responsive-for-ipad-desktop {
+        .modal-body {
+            .btn {
+                width: 97% !important;
+                left: 7px !important;
             }
         }
     }
@@ -61,15 +89,15 @@
         .modal-container {
             width: 450px;
             background-color: $white;
-            height: 600px;
+            height: 700px;
             margin: 2% 7% 7% 45%;
-            position: relative;
+            position: map-get($position, rel);
         }
     }
     &.show {
-        display: block;
+        display: map-get($display, block);
     }
     &.hide {
-        display: none
+        display: map-get($display, none)
     }
 }

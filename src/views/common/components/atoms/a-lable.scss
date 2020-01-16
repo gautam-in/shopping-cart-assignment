@@ -1,10 +1,10 @@
 label {
-    display: block;
-    color: $graphiteGray;
+    display: map-get($display, block);
+    color: $list-item-color;
     font-weight: bold;
     margin-bottom: 5px;
     @include fontSize(14px);
-    position: absolute;
+    position: map-get($position, abc);
     -webkit-transform-origin: top left;
     transform-origin: top left;
     -webkit-transform: translate(0, 16px) scale(1);

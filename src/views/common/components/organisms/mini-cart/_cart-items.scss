@@ -1,13 +1,12 @@
  .items {
      height: calc(100% - 129px);
-     position: absolute;
-     background: $lightgray;
+     position: map-get($position, abs);
+     background: #fffdfd;
      width: 100%;
-     top: 51px;
      overflow-x: hidden;
      overflow-y: auto;
      &__no-items {
-         position: absolute;
+         position: map-get($position, abs);
          left: 50%;
          top: 50%;
          transform: translate(-50%, -50%);
@@ -18,23 +17,31 @@
              @include responsive-for-sm-mobile {
                  text-align: center;
              }
+             text-align: center;
+             font-size: 18px;
+         }
+         p {
+             text-align: center;
+             font-size: 14px;
+             margin-top: 10px;
          }
      }
      &__cart {
          background-color: $white;
-         margin-bottom: 15px;
-         position: relative;
+         margin-top: 15px;
+         position: map-get($position, rel);
          &--img {
-             margin-right: 15px;
-             float: left;
+             margin-right: 20px;
+             float: map-get($float, l);
+             margin-left: 10px;
              @include responsive-for-sm-mobile {
                  margin-right: 0;
              }
          }
          &--img {
-             width: 100px;
-             height: 100px;
-             float: left;
+             width: 90px;
+             height: 90px;
+             float: map-get($float, l);
              @include responsive-for-sm-mobile {
                  width: 70px;
                  height: 70px;

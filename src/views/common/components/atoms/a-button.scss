@@ -1,7 +1,7 @@
 .btn {
-    display: block;
+    display: map-get($display, block);
     width: 100%;
-    background: $pink;
+    background: $primary-pink-color;
     color: $white;
     padding: 11px 10px;
     @include fontSize(12px);

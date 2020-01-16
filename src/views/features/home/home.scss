@@ -13,11 +13,11 @@
     }
     .home-slider {
         .home-slider-offers {
-            position: relative;
+            position: map-get($position, rel);
         }
     }
     .dots {
-        position: absolute;
+        position: map-get($position, abs);
         text-align: center;
         width: 100%;
         bottom: -18px;
@@ -28,20 +28,20 @@
         height: 6px;
         width: 6px;
         margin: 0 8px;
-        background-color: $dot-banner;
+        background-color: $dot-banner-color;
         border-radius: 50%;
-        display: inline-block;
+        display: map-get($display, in-blk);
         -webkit-transition: background-color 0.6s ease;
         transition: background-color 0.6s ease;
         &.active,
         &:hover {
-            background-color: $dot-banner-hover;
+            background-color: $dot-banner-hover-color;
         }
     }
     .prev,
     .next {
         cursor: pointer;
-        position: absolute;
+        position: map-get($position, abs);
         top: 42%;
         width: auto;
         padding: 5px;
@@ -62,7 +62,7 @@
     margin-top: 20px;
     .category {
         width: 100%;
-        max-width: 1170px;
+        max-width: $body-width;
         margin: 0 auto;
         display: -webkit-box;
         display: -ms-flexbox;
@@ -71,8 +71,8 @@
         -ms-flex-align: center;
         align-items: center;
         justify-content: space-evenly;
-        -webkit-box-shadow: 0 16px 20px -9px $box-shadow;
-        box-shadow: 0 16px 20px -9px $box-shadow;
+        -webkit-box-shadow: $box-shadow;
+        box-shadow: $box-shadow;
         padding: 7px 0px;
         min-height: 170px;
     }
