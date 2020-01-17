@@ -1,0 +1,7 @@
+@for $j from 1 through 12 {
+	@for $i from 1 through $j {
+	  .span-#{$i}-of-#{$j} {
+	     width: ( (100/$j) * $i)*1%;
+	  }
+	}
+}
