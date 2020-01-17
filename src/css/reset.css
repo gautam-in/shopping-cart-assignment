@@ -4,6 +4,9 @@ ul {
 a {
   text-decoration: none; }
 
+button {
+  cursor: pointer; }
+
 /*  SECTIONS  ============================================================================= */
 .section {
   clear: both;

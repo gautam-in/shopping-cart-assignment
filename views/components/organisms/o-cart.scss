@@ -2,16 +2,6 @@
 @import "../../../src/sass/variables";
 @import "../../../src/sass/common";
 
-@mixin show-md{
-		@media screen and (min-width:$lap) {
-			display: block;
-		}
-}
-@mixin show-lap{
-		@media screen and (min-width:$lap) {
-			display: none;
-		}
-}
 .parent-overlay{
 	display: none;
 	.bg-overlay{
@@ -22,12 +12,11 @@
     z-index: 10;
     opacity: .9;
 	}
-
-	.overlay{
+	.cart{
+		@include fontstyle(.7);
+		background: color('grey');
 		position: fixed;
-		font-size:.7rem;
 	    width: 100%;
-	    background: color('grey');
 	    height: 100%;
 	    z-index: 200;
 	    overflow:auto;
@@ -42,7 +31,7 @@
 
 	    .header {
 	      background: color('white');
-	      font-size:1rem;
+	      @include fontstyle(1);
 	       @media screen and (min-width:$lap) {
 	       		display:none;
 	       }
@@ -55,28 +44,26 @@
 	    }
 
 		.cart__header{
+			@include padding(15);
+		    @include margin(20 0 0 0);
+		    @include fontstyle(.7 400);
 			background:color('white');
 			color: color('black');
-			@include padding(15);
-		    font-size: .7rem;
-		    font-weight: 400;
 		    height: 50px;
-		    @include margin(20 0 0 0);
 		     @media screen and (min-width:$lap) {
+				@include margin(0);
 		    	background: color('black');
 				color: color('white');
-				 @include margin(0);
 		    }
 		    .cart__text{
-		    	font-weight: 700;
-    			font-size: .8rem;
+		    	@include fontstyle(.8 700);
 		    }
 		    .close{
+			    @include fontstyle(.8);
+				@extend .float-right;
 		    	display: none;
-			    float:right;
 			    border: none;
 			    background: transparent;
-			    font-size: .8rem;
 		    	@media screen and (min-width:$lap) {
 					color: color('white');
 					display: block;
@@ -91,12 +78,12 @@
 				max-height: 60vh;
 		    }
 			.item{
-				display: flex;
 				@include margin(10 0 0 0);
 				@include padding(5);
+				@include fontstyle(.7);
+				display: flex;
     			align-items: center;
     			background: color('white');
-				font-size:.7rem;
 				@media screen and (min-width:$lap) {
 					@include padding(10 5);
 			    }
@@ -112,14 +99,11 @@
 						@include margin(0 0 0 10);
 			    	}
 					.item__label{
-						font-weight: 700;
-						font-size: .8rem;
-						
+						@include fontstyle(.8 700);
 					}
-					.item__price-ctr{
+					.price__wrapper{
 						@include padding(10 0 0 0);
-						font-weight: 600;
-						font-size: .7rem;
+						@include fontstyle(.7 600);
 						.btn {
 							width: 20px;
 							height: 20px;
@@ -146,7 +130,7 @@
 						}
 						
 						.item__totalprice{
-						    float: right;
+							@extend .float-right;
 						    text-align: right;
 						    padding-right: 20px;
 
@@ -158,15 +142,13 @@
 			}
 			.empty__heading{
 				@extend .text-center;
-			    font-weight: 700;
 			    @include padding(20 0 0 0);
-			    font-size: .9rem;
+			    @include fontstyle(.9 700);
 			}
 			.empty__label {
 				@extend .text-center;
-				font-size: .7rem;
 				@include padding(10 0 0 0);
-    			font-weight: 400;
+				@include fontstyle(.7 400);
 			}
 			.cart__offer{
 				@include padding(10);
@@ -191,8 +173,8 @@
 			width: 100%;
 			bottom:0px;
 			@media screen and (min-width:$lap) {
-	       			width: 30%;
-	       			min-width: 420px;
+       			width: 30%;
+       			min-width: 420px;
       		}
 			.promo{
 				@include margin(0 0 10 0);
@@ -200,23 +182,13 @@
 	    		font-weight: 600;
 			}
 			.checkout-btn{
-				height: 40px;
 				@include padding(10);
-				background: #D10157;
+				height: 40px;
+				background: color('red');
 				color:  color('white');
 				width: 100%;
 				border:none;
-				.checkout{
-					float: left;
-				}
-				.total{
-					float: right;
-				}
-				
 			}
-		}
-		button{
-			cursor: pointer;
 		}
 
 	}

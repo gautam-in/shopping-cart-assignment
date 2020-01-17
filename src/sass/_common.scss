@@ -28,6 +28,15 @@
         margin: nth($margin, 1)+px nth($margin, 2)+px nth($margin, 3)+px nth($margin, 4)+px;
     }
 }
+//Mixin for font-size and weight
+@mixin fontstyle($font) {
+    @if length($font) == 1 {
+        font-size: $font+rem;
+    }
+    @if length($font) == 2 {
+         font-weight: nth($font, 2);
+    }
+}
 
 // Clamps a block of text to a certain number of lines,
 @mixin text-clamp($lines) {

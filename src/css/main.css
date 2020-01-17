@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Dosis:400,600,700");
 /*------- MIXINS--------*/
 /*------- EXTEND CLASSES--------*/
-.text-center, .parent-overlay .overlay .cart__wrapper .empty__heading, .parent-overlay .overlay .cart__wrapper .empty__label {
+.text-center, .parent-overlay .cart .cart__wrapper .empty__heading, .parent-overlay .cart .cart__wrapper .empty__label {
   text-align: center; }
 
 .a-decorate, header .main-nav li a, header .home-nav li a, header .cart-header-box .cart-link {
@@ -13,12 +13,12 @@
 .float-left {
   float: left; }
 
-.float-right {
+.float-right, .parent-overlay .cart .cart__header .close, .parent-overlay .cart .cart__wrapper .item .item__desc .price__wrapper .item__totalprice {
   float: right; }
 
 /*------- MIXINS--------*/
 /*------- EXTEND CLASSES--------*/
-.text-center, .parent-overlay .overlay .cart__wrapper .empty__heading, .parent-overlay .overlay .cart__wrapper .empty__label {
+.text-center, .parent-overlay .cart .cart__wrapper .empty__heading, .parent-overlay .cart .cart__wrapper .empty__label {
   text-align: center; }
 
 .a-decorate, header .main-nav li a, header .home-nav li a, header .cart-header-box .cart-link {
@@ -30,7 +30,7 @@
 .float-left {
   float: left; }
 
-.float-right {
+.float-right, .parent-overlay .cart .cart__header .close, .parent-overlay .cart .cart__wrapper .item .item__desc .price__wrapper .item__totalprice {
   float: right; }
 
 header {
@@ -94,7 +94,7 @@ header {
       header .cart-header-box {
         padding: 10px;
         right: 0px; } }
-    header .cart-header-box .cart-link .cart {
+    header .cart-header-box .cart-link .cart-img {
       height: 35px;
       width: auto; }
     header .cart-header-box .cart-link span {
@@ -147,7 +147,7 @@ body {
 /* Next & previous buttons */
 /*------- MIXINS--------*/
 /*------- EXTEND CLASSES--------*/
-.text-center, .parent-overlay .overlay .cart__wrapper .empty__heading, .parent-overlay .overlay .cart__wrapper .empty__label {
+.text-center, .parent-overlay .cart .cart__wrapper .empty__heading, .parent-overlay .cart .cart__wrapper .empty__label {
   text-align: center; }
 
 .a-decorate, header .main-nav li a, header .home-nav li a, header .cart-header-box .cart-link {
@@ -159,7 +159,7 @@ body {
 .float-left {
   float: left; }
 
-.float-right {
+.float-right, .parent-overlay .cart .cart__header .close, .parent-overlay .cart .cart__wrapper .item .item__desc .price__wrapper .item__totalprice {
   float: right; }
 
 .parent-overlay {
@@ -171,91 +171,86 @@ body {
     height: 100%;
     z-index: 10;
     opacity: .9; }
-  .parent-overlay .overlay {
-    position: fixed;
-    font-size: .7rem;
-    width: 100%;
+  .parent-overlay .cart {
+    font-size: 0.7rem;
     background: #eeeeee;
+    position: fixed;
+    width: 100%;
     height: 100%;
     z-index: 200;
     overflow: auto; }
     @media screen and (min-width: 992px) {
-      .parent-overlay .overlay {
+      .parent-overlay .cart {
         bottom: 0;
         width: 30%;
         left: 50%;
         height: 600px;
         overflow: auto;
         min-width: 420px; } }
-    .parent-overlay .overlay .header {
+    .parent-overlay .cart .header {
       background: #FFFFFF;
       font-size: 1rem; }
       @media screen and (min-width: 992px) {
-        .parent-overlay .overlay .header {
+        .parent-overlay .cart .header {
           display: none; } }
-      .parent-overlay .overlay .header .cart-header-box {
+      .parent-overlay .cart .header .cart-header-box {
         padding: 5px; }
         @media screen and (min-width: 768px) {
-          .parent-overlay .overlay .header .cart-header-box {
+          .parent-overlay .cart .header .cart-header-box {
             padding: 10px; } }
-    .parent-overlay .overlay .cart__header {
+    .parent-overlay .cart .cart__header {
+      padding: 15px;
+      margin: 20px 0px 0px 0px;
+      font-weight: 400;
       background: #FFFFFF;
       color: #000000;
-      padding: 15px;
-      font-size: .7rem;
-      font-weight: 400;
-      height: 50px;
-      margin: 20px 0px 0px 0px; }
+      height: 50px; }
       @media screen and (min-width: 992px) {
-        .parent-overlay .overlay .cart__header {
+        .parent-overlay .cart .cart__header {
+          margin: 0px;
           background: #000000;
-          color: #FFFFFF;
-          margin: 0px; } }
-      .parent-overlay .overlay .cart__header .cart__text {
-        font-weight: 700;
-        font-size: .8rem; }
-      .parent-overlay .overlay .cart__header .close {
+          color: #FFFFFF; } }
+      .parent-overlay .cart .cart__header .cart__text {
+        font-weight: 700; }
+      .parent-overlay .cart .cart__header .close {
+        font-size: 0.8rem;
         display: none;
-        float: right;
         border: none;
-        background: transparent;
-        font-size: .8rem; }
+        background: transparent; }
         @media screen and (min-width: 992px) {
-          .parent-overlay .overlay .cart__header .close {
+          .parent-overlay .cart .cart__header .close {
             color: #FFFFFF;
             display: block; } }
-    .parent-overlay .overlay .cart__wrapper {
+    .parent-overlay .cart .cart__wrapper {
       max-height: 65vh;
       overflow-y: auto; }
       @media screen and (min-width: 992px) {
-        .parent-overlay .overlay .cart__wrapper {
+        .parent-overlay .cart .cart__wrapper {
           max-height: 60vh; } }
-      .parent-overlay .overlay .cart__wrapper .item {
-        display: flex;
+      .parent-overlay .cart .cart__wrapper .item {
         margin: 10px 0px 0px 0px;
         padding: 5px;
+        font-size: 0.7rem;
+        display: flex;
         align-items: center;
-        background: #FFFFFF;
-        font-size: .7rem; }
+        background: #FFFFFF; }
         @media screen and (min-width: 992px) {
-          .parent-overlay .overlay .cart__wrapper .item {
+          .parent-overlay .cart .cart__wrapper .item {
             padding: 10px 5px; } }
-        .parent-overlay .overlay .cart__wrapper .item .item__img > img {
+        .parent-overlay .cart .cart__wrapper .item .item__img > img {
           width: 100%;
           height: auto; }
-        .parent-overlay .overlay .cart__wrapper .item .item__desc {
+        .parent-overlay .cart .cart__wrapper .item .item__desc {
           margin: 0px 0px 0px 4px; }
           @media screen and (min-width: 992px) {
-            .parent-overlay .overlay .cart__wrapper .item .item__desc {
+            .parent-overlay .cart .cart__wrapper .item .item__desc {
               margin: 0px 0px 0px 10px; } }
-          .parent-overlay .overlay .cart__wrapper .item .item__desc .item__label {
-            font-weight: 700;
-            font-size: .8rem; }
-          .parent-overlay .overlay .cart__wrapper .item .item__desc .item__price-ctr {
+          .parent-overlay .cart .cart__wrapper .item .item__desc .item__label {
+            font-weight: 700; }
+          .parent-overlay .cart .cart__wrapper .item .item__desc .price__wrapper {
             padding: 10px 0px 0px 0px;
-            font-weight: 600;
-            font-size: .7rem; }
-            .parent-overlay .overlay .cart__wrapper .item .item__desc .item__price-ctr .btn {
+            font-weight: 600; }
+            .parent-overlay .cart .cart__wrapper .item .item__desc .price__wrapper .btn {
               width: 20px;
               height: 20px;
               background-color: #D10157;
@@ -266,70 +261,61 @@ body {
               border: none;
               color: #FFFFFF; }
               @media screen and (min-width: 992px) {
-                .parent-overlay .overlay .cart__wrapper .item .item__desc .item__price-ctr .btn {
+                .parent-overlay .cart .cart__wrapper .item .item__desc .price__wrapper .btn {
                   border-radius: 50%; } }
-            .parent-overlay .overlay .cart__wrapper .item .item__desc .item__price-ctr .btn:first-child {
+            .parent-overlay .cart .cart__wrapper .item .item__desc .price__wrapper .btn:first-child {
               margin: 0px; }
-            .parent-overlay .overlay .cart__wrapper .item .item__desc .item__price-ctr button, .parent-overlay .overlay .cart__wrapper .item .item__desc .item__price-ctr span {
+            .parent-overlay .cart .cart__wrapper .item .item__desc .price__wrapper button, .parent-overlay .cart .cart__wrapper .item .item__desc .price__wrapper span {
               margin: 0px 0px 0px 5px; }
               @media screen and (min-width: 992px) {
-                .parent-overlay .overlay .cart__wrapper .item .item__desc .item__price-ctr button, .parent-overlay .overlay .cart__wrapper .item .item__desc .item__price-ctr span {
+                .parent-overlay .cart .cart__wrapper .item .item__desc .price__wrapper button, .parent-overlay .cart .cart__wrapper .item .item__desc .price__wrapper span {
                   margin: 0px 0px 0px 10px; } }
-            .parent-overlay .overlay .cart__wrapper .item .item__desc .item__price-ctr .item__totalprice {
-              float: right;
+            .parent-overlay .cart .cart__wrapper .item .item__desc .price__wrapper .item__totalprice {
               text-align: right;
               padding-right: 20px; }
-      .parent-overlay .overlay .cart__wrapper .empty__heading {
-        font-weight: 700;
+      .parent-overlay .cart .cart__wrapper .empty__heading {
         padding: 20px 0px 0px 0px;
-        font-size: .9rem; }
-      .parent-overlay .overlay .cart__wrapper .empty__label {
-        font-size: .7rem;
+        font-weight: 700; }
+      .parent-overlay .cart .cart__wrapper .empty__label {
         padding: 10px 0px 0px 0px;
         font-weight: 400; }
-      .parent-overlay .overlay .cart__wrapper .cart__offer {
+      .parent-overlay .cart .cart__wrapper .cart__offer {
         padding: 10px; }
-        .parent-overlay .overlay .cart__wrapper .cart__offer .offer__img {
+        .parent-overlay .cart .cart__wrapper .cart__offer .offer__img {
           padding: 10px;
           background: #FFFFFF; }
-          .parent-overlay .overlay .cart__wrapper .cart__offer .offer__img img {
+          .parent-overlay .cart .cart__wrapper .cart__offer .offer__img img {
             height: 30px; }
-          .parent-overlay .overlay .cart__wrapper .cart__offer .offer__img span {
+          .parent-overlay .cart .cart__wrapper .cart__offer .offer__img span {
             margin: 0px 0px 0px 15px;
             font-weight: 600; }
-    .parent-overlay .overlay .cart__footer {
+    .parent-overlay .cart .cart__footer {
       padding: 10px;
       background: #FFFFFF;
       position: fixed;
       width: 100%;
       bottom: 0px; }
       @media screen and (min-width: 992px) {
-        .parent-overlay .overlay .cart__footer {
+        .parent-overlay .cart .cart__footer {
           width: 30%;
           min-width: 420px; } }
-      .parent-overlay .overlay .cart__footer .promo {
+      .parent-overlay .cart .cart__footer .promo {
         margin: 0px 0px 10px 0px;
         text-align: center;
         font-weight: 600; }
-      .parent-overlay .overlay .cart__footer .checkout-btn {
-        height: 40px;
+      .parent-overlay .cart .cart__footer .checkout-btn {
         padding: 10px;
+        height: 40px;
         background: #D10157;
         color: #FFFFFF;
         width: 100%;
         border: none; }
-        .parent-overlay .overlay .cart__footer .checkout-btn .checkout {
-          float: left; }
-        .parent-overlay .overlay .cart__footer .checkout-btn .total {
-          float: right; }
-    .parent-overlay .overlay button {
-      cursor: pointer; }
   .parent-overlay .checkoutCart {
     background: #FFFFFF; }
 
 /*------- MIXINS--------*/
 /*------- EXTEND CLASSES--------*/
-.text-center, .parent-overlay .overlay .cart__wrapper .empty__heading, .parent-overlay .overlay .cart__wrapper .empty__label {
+.text-center, .parent-overlay .cart .cart__wrapper .empty__heading, .parent-overlay .cart .cart__wrapper .empty__label {
   text-align: center; }
 
 .a-decorate, header .main-nav li a, header .home-nav li a, header .cart-header-box .cart-link {
@@ -341,7 +327,7 @@ body {
 .float-left {
   float: left; }
 
-.float-right {
+.float-right, .parent-overlay .cart .cart__header .close, .parent-overlay .cart .cart__wrapper .item .item__desc .price__wrapper .item__totalprice {
   float: right; }
 
 .footer {

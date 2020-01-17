@@ -195,11 +195,11 @@ function renderCart(itemsinCart){
                 <div class="col span-1-of-7 item__img"><img src="${itemsinCart[i].imageURL}"></div>
                 <div class="col span-6-of-7 item__desc">
                   <h3 class="item__label"> ${itemsinCart[i].name}</h3>
-                    <div class="row item__price-ctr">
+                    <div class="row price__wrapper">
                       <div class="col span 1-of-2 qty-ctr paddingTop10">
                           <button class="btn id-${item.id}" id=${item.id}  onclick="update(event.target,false)">-</button>
                           <span  id="item-price-${item.id}">${itemsinCart[i].qty}</span>
-                          <button class="btn id-${item.id}"  onclick="update(event.target,true)">+</button>
+                          <button class="btn id-${item.id}" onclick="update(event.target,true)">+</button>
                           <span>x</span>
                           <span>Rs.${itemsinCart[i].price}</span>
                       </div>
@@ -211,7 +211,7 @@ function renderCart(itemsinCart){
               togglePriceDetails('block');
       }
   } else {
-       html+=`<div class="empty__heading">No items in your cart.</div><p class="empty__label">Your favorite items are just a click away</div>`;
+       html+=`<h2 class="empty__heading">No items in your cart.</h2><p class="empty__label">Your favorite items are just a click away</p>`;
        togglePriceDetails('none');
   }
   if(itemsinCart.length){
