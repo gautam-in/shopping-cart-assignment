@@ -6,108 +6,100 @@ header {
 	position: relative;
 	.nav-bar{
 		position: relative;
-
-	}
-
-	.logo {
-		height:auto;
-		width:100%;
-		float: left;
-		cursor: pointer;
-		@include padding(0 0 0 5);
-		@include margin(10 0);
-		@media screen and (min-width: $tab) {
-			@include padding(0);
-			height: 70px;
-			width: auto;
-		}
-
-	}
-
-	@mixin nav-text {
-		list-style-type: none;
-		li {
-			display: inline-block;
-
-			@include margin(0 0 0 10);
-			a{
-				color:  color('navColor');
-				@extend .a-decorate;
-				font-weight: 600;
-			}
-		}
-	}
-	.main-nav {
-		word-spacing: -2px;
-		font-size:.45rem;
-		float:right;
-		display: none;
-		@include padding(5 0 0 0);
-		@media screen and (min-width: $tab) {
-			font-size:.6rem;
-			display: block;
-		}
-		@include nav-text;
-	}
-	.home-nav {
-		display: none;
-		float: left;
-		font-size:.7rem;
-		@include margin(50 0 0 0);
-		margin-left:10%;
-		@include nav-text;
-		@media screen and (min-width:$tab) {
-       		display: block;
-      	}
-	}
-	.cart-header-box{
-		background:  color('grey');
-		position: absolute;
-	    bottom: 0;
-	    right: 25px;
-	   	@include padding(5);
-       	@media screen and (min-width:$tab) {
-       		@include padding(10);
-       		 right: 0px;
-      	}
-		
-		.cart-link{
-			@extend .a-decorate;
-			.cart-img {
-				height: 35px;
+		.logo {
+			@extend .float-left;
+			@include padding(0 0 0 5);
+			@include margin(10 0);
+			height:auto;
+			width:100%;
+			cursor: pointer;
+			@media screen and (min-width: $tab) {
+				@include padding(0);
+				height: 70px;
 				width: auto;
 			}
-			span {
-				color:  color('navColor');
-					font-size:.7rem;
+		}
+		.nav-text {
+			list-style-type: none;
+			li {
+				display: inline-block;
+				@include margin(0 0 0 10);
+				a{
+					color:  color('navColor');
+					@extend .a-decorate;
 					font-weight: 600;
 				}
 			}
-	
-	}
-	.menu {
-		position: absolute;
-    	bottom: 0;
-    	right: 0;
-    	width:25px;
-    	@include padding(5);
-    	border: none;
-	    background: white;
-	    font-size: 1rem;
-	    @extend .cursor-link;
-	    img{
+		}
+		.home-nav {
+			@extend .nav-text;
+			@include margin(50 0 0 0);
+			@extend .float-left;
+			@include fontstyle(.70);
+			display: none;
+			margin-left:10%;
+			@media screen and (min-width:$tab) {
+	       		display: block;
+	      	}
+		}
+		.main-nav {
+			@extend .nav-text;
+			@include padding(5 0 0 0);
+			@include fontstyle(.45);
+			@extend .float-right;
+			word-spacing: -2px;
+			display: none;
+			@media screen and (min-width: $tab) {
+				@include fontstyle(.6);
+				display: block;
+			}
+		}
+		.cart-header-box{
+		   	@include padding(5);
+			background:  color('grey');
+			position: absolute;
+		    bottom: 0;
+		    right: 25px;
+	       	@media screen and (min-width:$tab) {
+	       		@include padding(10);
+	       		 right: 0px;
+	      	}
+			
+			.cart-link{
+				.cart-img {
+					height: 35px;
+					width: auto;
+				}
+				span {
+					@include fontstyle(.7 600);
+					color:  color('navColor');
+				}
+			}
+		
+		}
+		.menu {
+	    	@include padding(5);
+		    @extend .cursor-link;
+			position: absolute;
+	    	bottom: 0;
+	    	right: 0;
 	    	width:25px;
-	    }
-	    @media screen and (min-width:$tab) {
-       		display: none;
-      	}
-	}
-	.clear-all{
-		clear: both;
+	    	border: none;
+		    background: color('white');
+		    @include fontstyle(1);
+		    img{
+		    	width:25px;
+		    }
+		    @media screen and (min-width:$tab) {
+	       		display: none;
+	      	}
+		}
 	}
 	
 }
-
+.clear-all{
+		clear: both;
+	}
 .mob-nav-list{
 	background: color('grey');
 	display: none;
@@ -115,7 +107,6 @@ header {
     	@include padding(5 5 5 10);
     	 border-bottom: solid 1px color('white');
     	a{
-    		text-decoration: none;
     		color:color('darkgrey');
     	}
     }
