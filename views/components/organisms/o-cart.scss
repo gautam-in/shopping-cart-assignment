@@ -43,7 +43,7 @@
 	       }
 	    }
 
-		.&__header{
+		.cart__header{
 			@include padding(15);
 		    @include margin(20 0 0 0);
 		    @include fontstyle(.7 400);
@@ -55,7 +55,7 @@
 		    	background: color('black');
 				color: color('white');
 		    }
-		    .&__text{
+		    .cart__text{
 		    	@include fontstyle(.8 700);
 		    }
 		    .close{
@@ -71,7 +71,7 @@
 		    }
 
 		}
-		.&__wrapper {
+		.cart__wrapper {
 			max-height: 65vh;
     		overflow-y: auto;
 		    @media screen and (min-width:$lap) {
@@ -87,18 +87,18 @@
 				@media screen and (min-width:$lap) {
 					@include padding(10 5);
 			    }
-			    .&__img {
+			    .item__img {
 					> img {
 						width:100%;
 						height:auto;
 					}
 				}
-				.&__desc {
+				.item__desc {
 					@include margin(0 0 0 4);
 					@media screen and (min-width:$lap) {
 						@include margin(0 0 0 10);
 			    	}
-					.&__label{
+					.item__label{
 						@include fontstyle(.8 700);
 					}
 					.price__wrapper{
@@ -117,10 +117,10 @@
 						    @media screen and (min-width:$lap) {
 								border-radius: 50%;
 			    			}
-			    			&:first-child{
-								@include margin(0);
-							}
 						   
+						}
+						.btn:first-child{
+							@include margin(0);
 						}
 						button,span{
 							@include margin(0 0 0 5);
@@ -129,7 +129,7 @@
 			    			}
 						}
 						
-						.&__totalprice{
+						.item__totalprice{
 							@extend .float-right;
 						    text-align: right;
 						    padding-right: 20px;
@@ -150,7 +150,7 @@
 				@include padding(10 0 0 0);
 				@include fontstyle(.7 400);
 			}
-			.&__offer{
+			.cart__offer{
 				@include padding(10);
 				.offer__img{
 					@include padding(10);
@@ -166,7 +166,7 @@
 			}
 		}
 
-		.&__footer{
+		.cart__footer{
 			@include padding(10);
 			background: color('white');
 			position:fixed;

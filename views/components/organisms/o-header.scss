@@ -4,9 +4,9 @@ header {
 	border-bottom: solid 1px color('grey');
 	box-shadow: 1px color('shadowColor') !important;
 	position: relative;
-	.nav-bar{
+	.nav{
 		position: relative;
-		.logo {
+		.nav__logo {
 			@extend .float-left;
 			@include padding(0 0 0 5);
 			@include margin(10 0);
@@ -95,7 +95,7 @@ header {
 	      	}
 		}
 	}
-	
+
 }
 .clear-all{
 		clear: both;
