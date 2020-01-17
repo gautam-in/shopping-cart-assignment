@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Dosis:400,600,700");
 /*------- MIXINS--------*/
 /*------- EXTEND CLASSES--------*/
-.text-center, .parent-overlay .overlay .cart-ctr .cart-box .no-item-heading, .parent-overlay .overlay .cart-ctr .cart-box .no-item-text {
+.text-center, .parent-overlay .overlay .cart__wrapper .empty__heading, .parent-overlay .overlay .cart__wrapper .empty__label {
   text-align: center; }
 
 .a-decorate, header .main-nav li a, header .home-nav li a, header .cart-header-box .cart-link {
@@ -18,7 +18,7 @@
 
 /*------- MIXINS--------*/
 /*------- EXTEND CLASSES--------*/
-.text-center, .parent-overlay .overlay .cart-ctr .cart-box .no-item-heading, .parent-overlay .overlay .cart-ctr .cart-box .no-item-text {
+.text-center, .parent-overlay .overlay .cart__wrapper .empty__heading, .parent-overlay .overlay .cart__wrapper .empty__label {
   text-align: center; }
 
 .a-decorate, header .main-nav li a, header .home-nav li a, header .cart-header-box .cart-link {
@@ -147,7 +147,7 @@ body {
 /* Next & previous buttons */
 /*------- MIXINS--------*/
 /*------- EXTEND CLASSES--------*/
-.text-center, .parent-overlay .overlay .cart-ctr .cart-box .no-item-heading, .parent-overlay .overlay .cart-ctr .cart-box .no-item-text {
+.text-center, .parent-overlay .overlay .cart__wrapper .empty__heading, .parent-overlay .overlay .cart__wrapper .empty__label {
   text-align: center; }
 
 .a-decorate, header .main-nav li a, header .home-nav li a, header .cart-header-box .cart-link {
@@ -179,17 +179,6 @@ body {
     height: 100%;
     z-index: 200;
     overflow: auto; }
-    .parent-overlay .overlay header {
-      font-size: 1rem; }
-    .parent-overlay .overlay .cart-header {
-      background: #FFFFFF; }
-      .parent-overlay .overlay .cart-header .cart-header-box {
-        padding: 5px; }
-        @media screen and (min-width: 768px) {
-          .parent-overlay .overlay .cart-header .cart-header-box {
-            padding: 10px; } }
-    .parent-overlay .overlay .footer {
-      width: 100%; }
     @media screen and (min-width: 992px) {
       .parent-overlay .overlay {
         bottom: 0;
@@ -197,12 +186,19 @@ body {
         left: 50%;
         height: 600px;
         overflow: auto;
-        min-width: 420px; }
-        .parent-overlay .overlay .cart-header {
-          display: none; }
-        .parent-overlay .overlay .footer {
-          width: 30%; } }
+        min-width: 420px; } }
     .parent-overlay .overlay .header {
+      background: #FFFFFF;
+      font-size: 1rem; }
+      @media screen and (min-width: 992px) {
+        .parent-overlay .overlay .header {
+          display: none; } }
+      .parent-overlay .overlay .header .cart-header-box {
+        padding: 5px; }
+        @media screen and (min-width: 768px) {
+          .parent-overlay .overlay .header .cart-header-box {
+            padding: 10px; } }
+    .parent-overlay .overlay .cart__header {
       background: #FFFFFF;
       color: #000000;
       padding: 15px;
@@ -210,31 +206,31 @@ body {
       font-weight: 400;
       height: 50px;
       margin: 20px 0px 0px 0px; }
-      .parent-overlay .overlay .header .mycart {
-        font-weight: 700;
-        font-size: .8rem; }
       @media screen and (min-width: 992px) {
-        .parent-overlay .overlay .header {
+        .parent-overlay .overlay .cart__header {
           background: #000000;
           color: #FFFFFF;
           margin: 0px; } }
-      .parent-overlay .overlay .header .close {
+      .parent-overlay .overlay .cart__header .cart__text {
+        font-weight: 700;
+        font-size: .8rem; }
+      .parent-overlay .overlay .cart__header .close {
         display: none;
         float: right;
         border: none;
         background: transparent;
         font-size: .8rem; }
         @media screen and (min-width: 992px) {
-          .parent-overlay .overlay .header .close {
+          .parent-overlay .overlay .cart__header .close {
             color: #FFFFFF;
             display: block; } }
-    .parent-overlay .overlay .cart-ctr {
+    .parent-overlay .overlay .cart__wrapper {
       max-height: 65vh;
       overflow-y: auto; }
       @media screen and (min-width: 992px) {
-        .parent-overlay .overlay .cart-ctr {
+        .parent-overlay .overlay .cart__wrapper {
           max-height: 60vh; } }
-      .parent-overlay .overlay .cart-ctr .cart-box .cart-item {
+      .parent-overlay .overlay .cart__wrapper .item {
         display: flex;
         margin: 10px 0px 0px 0px;
         padding: 5px;
@@ -242,24 +238,24 @@ body {
         background: #FFFFFF;
         font-size: .7rem; }
         @media screen and (min-width: 992px) {
-          .parent-overlay .overlay .cart-ctr .cart-box .cart-item {
+          .parent-overlay .overlay .cart__wrapper .item {
             padding: 10px 5px; } }
-        .parent-overlay .overlay .cart-ctr .cart-box .cart-item img {
+        .parent-overlay .overlay .cart__wrapper .item .item__img > img {
           width: 100%;
           height: auto; }
-        .parent-overlay .overlay .cart-ctr .cart-box .cart-item .item-desc {
+        .parent-overlay .overlay .cart__wrapper .item .item__desc {
           margin: 0px 0px 0px 4px; }
           @media screen and (min-width: 992px) {
-            .parent-overlay .overlay .cart-ctr .cart-box .cart-item .item-desc {
+            .parent-overlay .overlay .cart__wrapper .item .item__desc {
               margin: 0px 0px 0px 10px; } }
-          .parent-overlay .overlay .cart-ctr .cart-box .cart-item .item-desc .label {
+          .parent-overlay .overlay .cart__wrapper .item .item__desc .item__label {
             font-weight: 700;
             font-size: .8rem; }
-          .parent-overlay .overlay .cart-ctr .cart-box .cart-item .item-desc .price-row {
+          .parent-overlay .overlay .cart__wrapper .item .item__desc .item__price-ctr {
             padding: 10px 0px 0px 0px;
             font-weight: 600;
             font-size: .7rem; }
-            .parent-overlay .overlay .cart-ctr .cart-box .cart-item .item-desc .price-row .dot {
+            .parent-overlay .overlay .cart__wrapper .item .item__desc .item__price-ctr .btn {
               width: 20px;
               height: 20px;
               background-color: #D10157;
@@ -270,63 +266,62 @@ body {
               border: none;
               color: #FFFFFF; }
               @media screen and (min-width: 992px) {
-                .parent-overlay .overlay .cart-ctr .cart-box .cart-item .item-desc .price-row .dot {
+                .parent-overlay .overlay .cart__wrapper .item .item__desc .item__price-ctr .btn {
                   border-radius: 50%; } }
-            .parent-overlay .overlay .cart-ctr .cart-box .cart-item .item-desc .price-row button, .parent-overlay .overlay .cart-ctr .cart-box .cart-item .item-desc .price-row span {
+            .parent-overlay .overlay .cart__wrapper .item .item__desc .item__price-ctr .btn:first-child {
+              margin: 0px; }
+            .parent-overlay .overlay .cart__wrapper .item .item__desc .item__price-ctr button, .parent-overlay .overlay .cart__wrapper .item .item__desc .item__price-ctr span {
               margin: 0px 0px 0px 5px; }
               @media screen and (min-width: 992px) {
-                .parent-overlay .overlay .cart-ctr .cart-box .cart-item .item-desc .price-row button, .parent-overlay .overlay .cart-ctr .cart-box .cart-item .item-desc .price-row span {
+                .parent-overlay .overlay .cart__wrapper .item .item__desc .item__price-ctr button, .parent-overlay .overlay .cart__wrapper .item .item__desc .item__price-ctr span {
                   margin: 0px 0px 0px 10px; } }
-            .parent-overlay .overlay .cart-ctr .cart-box .cart-item .item-desc .price-row button:first-child {
-              margin: 0px; }
-            .parent-overlay .overlay .cart-ctr .cart-box .cart-item .item-desc .price-row .price-ctr {
+            .parent-overlay .overlay .cart__wrapper .item .item__desc .item__price-ctr .item__totalprice {
               float: right;
               text-align: right;
               padding-right: 20px; }
-      .parent-overlay .overlay .cart-ctr .cart-box .no-item-heading {
+      .parent-overlay .overlay .cart__wrapper .empty__heading {
         font-weight: 700;
         padding: 20px 0px 0px 0px;
         font-size: .9rem; }
-      .parent-overlay .overlay .cart-ctr .cart-box .no-item-text {
+      .parent-overlay .overlay .cart__wrapper .empty__label {
         font-size: .7rem;
         padding: 10px 0px 0px 0px;
         font-weight: 400; }
-      .parent-overlay .overlay .cart-ctr .low-price {
+      .parent-overlay .overlay .cart__wrapper .cart__offer {
         padding: 10px; }
-        .parent-overlay .overlay .cart-ctr .low-price .low-price-row {
+        .parent-overlay .overlay .cart__wrapper .cart__offer .offer__img {
           padding: 10px;
           background: #FFFFFF; }
-          .parent-overlay .overlay .cart-ctr .low-price .low-price-row img {
+          .parent-overlay .overlay .cart__wrapper .cart__offer .offer__img img {
             height: 30px; }
-          .parent-overlay .overlay .cart-ctr .low-price .low-price-row .anywhere {
+          .parent-overlay .overlay .cart__wrapper .cart__offer .offer__img span {
             margin: 0px 0px 0px 15px;
             font-weight: 600; }
-    .parent-overlay .overlay .footer {
+    .parent-overlay .overlay .cart__footer {
+      padding: 10px;
       background: #FFFFFF;
       position: fixed;
       width: 100%;
       bottom: 0px; }
       @media screen and (min-width: 992px) {
-        .parent-overlay .overlay .footer {
+        .parent-overlay .overlay .cart__footer {
           width: 30%;
           min-width: 420px; } }
-      .parent-overlay .overlay .footer .promo {
+      .parent-overlay .overlay .cart__footer .promo {
         margin: 0px 0px 10px 0px;
         text-align: center;
         font-weight: 600; }
-      .parent-overlay .overlay .footer .checkout-btn {
+      .parent-overlay .overlay .cart__footer .checkout-btn {
         height: 40px;
         padding: 10px;
         background: #D10157;
         color: #FFFFFF;
         width: 100%;
         border: none; }
-        .parent-overlay .overlay .footer .checkout-btn .checkout {
+        .parent-overlay .overlay .cart__footer .checkout-btn .checkout {
           float: left; }
-        .parent-overlay .overlay .footer .checkout-btn .total {
+        .parent-overlay .overlay .cart__footer .checkout-btn .total {
           float: right; }
-    .parent-overlay .overlay .cart-footer {
-      padding: 10px; }
     .parent-overlay .overlay button {
       cursor: pointer; }
   .parent-overlay .checkoutCart {
@@ -334,7 +329,7 @@ body {
 
 /*------- MIXINS--------*/
 /*------- EXTEND CLASSES--------*/
-.text-center, .parent-overlay .overlay .cart-ctr .cart-box .no-item-heading, .parent-overlay .overlay .cart-ctr .cart-box .no-item-text {
+.text-center, .parent-overlay .overlay .cart__wrapper .empty__heading, .parent-overlay .overlay .cart__wrapper .empty__label {
   text-align: center; }
 
 .a-decorate, header .main-nav li a, header .home-nav li a, header .cart-header-box .cart-link {

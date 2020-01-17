@@ -31,12 +31,21 @@
 	    height: 100%;
 	    z-index: 200;
 	    overflow:auto;
-	    header {
-	    	font-size:1rem;
+	    @media screen and (min-width:$lap) {
+			bottom: 0;
+		    width: 30%;
+		    left: 50%;
+		    height: 600px;
+	    	overflow:auto;
+	    	min-width: 420px;
+		}
 
-	    }
-	    .cart-header {
+	    .header {
 	      background: color('white');
+	      font-size:1rem;
+	       @media screen and (min-width:$lap) {
+	       		display:none;
+	       }
 	      .cart-header-box{
 	      	@include padding(5);
 	       	@media screen and (min-width:$tab) {
@@ -45,26 +54,7 @@
 	       }
 	    }
 
-    	.footer{
-			width:100%;
-		}
-	    @media screen and (min-width:$lap) {
-			bottom: 0;
-		    width: 30%;
-		    left: 50%;
-		    height: 600px;
-	    	overflow:auto;
-	    	min-width: 420px;
-		    .cart-header {
-		      display:none;
-		    }
-		    .footer{
-				width:30%;
-			}
-
-		}
-
-		.header{
+		.cart__header{
 			background:color('white');
 			color: color('black');
 			@include padding(15);
@@ -72,14 +62,14 @@
 		    font-weight: 400;
 		    height: 50px;
 		    @include margin(20 0 0 0);
-		    .mycart{
-		    	font-weight: 700;
-    			font-size: .8rem;
-		    }
-		    @media screen and (min-width:$lap) {
+		     @media screen and (min-width:$lap) {
 		    	background: color('black');
 				color: color('white');
 				 @include margin(0);
+		    }
+		    .cart__text{
+		    	font-weight: 700;
+    			font-size: .8rem;
 		    }
 		    .close{
 		    	display: none;
@@ -94,103 +84,99 @@
 		    }
 
 		}
-		.cart-ctr {
+		.cart__wrapper {
 			max-height: 65vh;
     		overflow-y: auto;
 		    @media screen and (min-width:$lap) {
 				max-height: 60vh;
 		    }
-			.cart-box{
-				.cart-item{
-					display: flex;
-					@include margin(10 0 0 0);
-					@include padding(5);
-	    			align-items: center;
-	    			background: color('white');
-					font-size:.7rem;
-					@media screen and (min-width:$lap) {
-						@include padding(10 5);
-				    }
-					img{
+			.item{
+				display: flex;
+				@include margin(10 0 0 0);
+				@include padding(5);
+    			align-items: center;
+    			background: color('white');
+				font-size:.7rem;
+				@media screen and (min-width:$lap) {
+					@include padding(10 5);
+			    }
+			    .item__img {
+					> img {
 						width:100%;
 						height:auto;
 					}
-					.item-desc {
-						@include margin(0 0 0 4);
-						@media screen and (min-width:$lap) {
-							@include margin(0 0 0 10);
-				    	}
-						.label{
-							font-weight: 700;
-							font-size: .8rem;
-							
+				}
+				.item__desc {
+					@include margin(0 0 0 4);
+					@media screen and (min-width:$lap) {
+						@include margin(0 0 0 10);
+			    	}
+					.item__label{
+						font-weight: 700;
+						font-size: .8rem;
+						
+					}
+					.item__price-ctr{
+						@include padding(10 0 0 0);
+						font-weight: 600;
+						font-size: .7rem;
+						.btn {
+							width: 20px;
+							height: 20px;
+						    background-color: #D10157;
+						    border-radius: 10%;
+						    display: inline-block;
+						    text-align: center;
+						    line-height: 20px;
+						    border:none;
+						    color: color('white');
+						    @media screen and (min-width:$lap) {
+								border-radius: 50%;
+			    			}
+						   
 						}
-						.price-row{
-							@include padding(10 0 0 0);
-							font-weight: 600;
-							font-size: .7rem;
-							.dot {
-								width: 20px;
-								height: 20px;
-							    background-color: #D10157;
-							    border-radius: 10%;
-							    display: inline-block;
-							    text-align: center;
-							    line-height: 20px;
-							    border:none;
-							    color: color('white');
-							    @media screen and (min-width:$lap) {
-									border-radius: 50%;
-				    			}
-							   
-							}
+						.btn:first-child{
+							@include margin(0);
+						}
+						button,span{
+							@include margin(0 0 0 5);
+							@media screen and (min-width:$lap) {
+								@include  margin(0 0 0 10);
+			    			}
+						}
+						
+						.item__totalprice{
+						    float: right;
+						    text-align: right;
+						    padding-right: 20px;
 
-							button,span{
-								@include margin(0 0 0 5);
-								@media screen and (min-width:$lap) {
-									@include  margin(0 0 0 10);
-				    			}
-							}
-							button:first-child{
-								@include margin(0);
-							}
-							.price-ctr{
-								//@include padding(10 0 0 0);
-							    float: right;
-							    text-align: right;
-							    padding-right: 20px;
-
-							}
 						}
 					}
-				
-				
 				}
-
-				.no-item-heading{
-					@extend .text-center;
-				    font-weight: 700;
-				    @include padding(20 0 0 0);
-				    font-size: .9rem;
-				}
-				.no-item-text {
-					@extend .text-center;
-					font-size: .7rem;
-					@include padding(10 0 0 0);
-	    			font-weight: 400;
-				}
+			
+			
 			}
-			.low-price{
+			.empty__heading{
+				@extend .text-center;
+			    font-weight: 700;
+			    @include padding(20 0 0 0);
+			    font-size: .9rem;
+			}
+			.empty__label {
+				@extend .text-center;
+				font-size: .7rem;
+				@include padding(10 0 0 0);
+    			font-weight: 400;
+			}
+			.cart__offer{
 				@include padding(10);
-
-
-				.low-price-row {
+				.offer__img{
 					@include padding(10);
 					background: color('white');
 					img{
 					    height: 30px;
 					}
-					.anywhere {
+					span{
 						@include margin(0 0 0 15);
 						font-weight: 600;
 					}
@@ -198,9 +184,9 @@
 			}
 		}
 
-		.footer{
+		.cart__footer{
+			@include padding(10);
 			background: color('white');
-			
 			position:fixed;
 			width: 100%;
 			bottom:0px;
@@ -228,9 +214,6 @@
 				}
 				
 			}
-		}
-		.cart-footer{
-			@include padding(10);
 		}
 		button{
 			cursor: pointer;
