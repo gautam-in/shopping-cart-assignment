@@ -34,7 +34,8 @@
         font-size: $font+rem;
     }
     @if length($font) == 2 {
-         font-weight: nth($font, 2);
+        font-size: nth($font, 1)+rem;
+        font-weight: nth($font, 2);
     }
 }
 

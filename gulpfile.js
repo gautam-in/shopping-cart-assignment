@@ -13,7 +13,7 @@ return gulp.src(['src/**/*.scss','views/features/**/*.scss'])
 });
 
 gulp.task('concatcss', function() {
-    return gulp.src('src/**/*.css')
+    return gulp.src(['src/**/*.css','!src/css/reset.css','!src/css/ngrid.css'])
         .pipe(concat('concat.css'))
         .pipe(gulp.dest('src/dest'));
 });

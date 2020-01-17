@@ -1,10 +1,9 @@
 @import "../../../src/sass/variables";
 @import "../../../src/sass/common";
 .footer {
-	background:color('grey');
 	@include padding(10);
+	background:color('grey');
 	.copyright{
 		font-weight: 600;
-    	font-size: .65rem;
 	}
 }

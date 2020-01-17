@@ -201,6 +201,7 @@ body {
     .parent-overlay .cart .cart__header {
       padding: 15px;
       margin: 20px 0px 0px 0px;
+      font-size: 0.7rem;
       font-weight: 400;
       background: #FFFFFF;
       color: #000000;
@@ -211,6 +212,7 @@ body {
           background: #000000;
           color: #FFFFFF; } }
       .parent-overlay .cart .cart__header .cart__text {
+        font-size: 0.8rem;
         font-weight: 700; }
       .parent-overlay .cart .cart__header .close {
         font-size: 0.8rem;
@@ -246,9 +248,11 @@ body {
             .parent-overlay .cart .cart__wrapper .item .item__desc {
               margin: 0px 0px 0px 10px; } }
           .parent-overlay .cart .cart__wrapper .item .item__desc .item__label {
+            font-size: 0.8rem;
             font-weight: 700; }
           .parent-overlay .cart .cart__wrapper .item .item__desc .price__wrapper {
             padding: 10px 0px 0px 0px;
+            font-size: 0.7rem;
             font-weight: 600; }
             .parent-overlay .cart .cart__wrapper .item .item__desc .price__wrapper .btn {
               width: 20px;
@@ -275,9 +279,11 @@ body {
               padding-right: 20px; }
       .parent-overlay .cart .cart__wrapper .empty__heading {
         padding: 20px 0px 0px 0px;
+        font-size: 0.9rem;
         font-weight: 700; }
       .parent-overlay .cart .cart__wrapper .empty__label {
         padding: 10px 0px 0px 0px;
+        font-size: 0.7rem;
         font-weight: 400; }
       .parent-overlay .cart .cart__wrapper .cart__offer {
         padding: 10px; }
@@ -331,8 +337,7 @@ body {
   float: right; }
 
 .footer {
-  background: #eeeeee;
-  padding: 10px; }
+  padding: 10px;
+  background: #eeeeee; }
   .footer .copyright {
-    font-weight: 600;
-    font-size: .65rem; }
+    font-weight: 600; }
