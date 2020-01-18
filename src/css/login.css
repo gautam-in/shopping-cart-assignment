@@ -95,7 +95,7 @@
     padding: 2% 0% 0% 5%; }
     .login-section .login-text h1 {
       margin: 20px 0px 0px 0px; }
-  .login-section .login-form input, .login-section .login-form .login-btn {
+  .login-section .login-form .login-btn {
     width: 65%; }
   .login-section .login-form .login-btn {
     height: 40px;
