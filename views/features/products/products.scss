@@ -2,13 +2,8 @@
 @import "../../../src/sass/variables";
 @import "../../../src/sass/common";
 @import "../../components/molecules/m-product";
-
-@mixin hide-md{
-		@media screen and (min-width:$tab) {
-			display: none;
-		}
-}
 .parent-ctr{
+	
 	background: color('primary');
 	
 	.category-wrapper{
@@ -85,7 +80,9 @@
 			.dropdown:hover .dropdown-content {
 			  display: block;
 			}
-			
+			@media screen and (min-width:$tab) {
+				display: none;
+			}
 		}
 	}
 	.product-wrapper{
@@ -97,14 +94,7 @@
 			float: right;
 		}
 	}
-	
-	.primary{
-		background: black;
-	}
-
 }
-
-
 footer{
 		clear: left;
 	}
