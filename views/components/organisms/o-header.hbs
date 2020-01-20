@@ -1,10 +1,10 @@
 <header>
 		<nav class="row nav">
 				<div class="col span-1-of-4">
-				{{> atoms/a-img class="nav__logo" imageUrl="/static/images/logo.png" alt="Sab ka Bazar" onclick="movetoHome('/')"}}
+				{{> atoms/a-img class="nav__logo float-left" imageUrl="/static/images/logo.png" alt="Sab ka Bazar" onclick="movetoHome('/')"}}
 				</div>
 				<div class="col span-2-of-4">
-					<ul class="nav__list nav__list--home">
+					<ul class="nav__list nav__list--home float-left">
 						<li>{{> atoms/a-link hypertext="Home" href="/"}}</li>
 						<li>{{> atoms/a-link hypertext="Products" href="/products"}}</li>
 					</ul>
@@ -12,7 +12,7 @@
 
 				<div class="col span-1-of-4">
 					<div>
-						<ul class="nav__list nav__list--main">
+						<ul class="nav__list nav__list--main float-right">
 							<li>{{> atoms/a-link hypertext="Sign In" href="/login"}}</li>
 							<li>{{> atoms/a-link hypertext="Register" href="/register"}}</li>
 						</ul>
@@ -20,7 +20,7 @@
 					<div class="cart-header-box">
 						<a href="" onclick="showCart();return false;" class="cart-link">
 							{{> atoms/a-img imageUrl="/static/images/cart.svg" alt="Logo" class="cart-img"}}
-							<span class="cartNumber">{{cartItems}} items</span>
+							<span class="cartNumber float-right">{{cartItems}} items</span>
 						</a>
 					</div>
 					<button class="nav__menu" onclick="toggleMenu()">

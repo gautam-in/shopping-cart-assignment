@@ -203,7 +203,7 @@ function renderCart(itemsinCart){
                           <span>x</span>
                           <span>Rs.${itemsinCart[i].price}</span>
                       </div>
-                      <div class="col span-1-of-2 item__totalprice" id="item-total-${item.id}">Rs.${itemsinCart[i].price*itemsinCart[i].qty}
+                      <div class="col span-1-of-2 item__totalprice float-right" id="item-total-${item.id}">Rs.${itemsinCart[i].price*itemsinCart[i].qty}
                       </div>
                     </div>
                 </div>
@@ -211,7 +211,7 @@ function renderCart(itemsinCart){
               togglePriceDetails('block');
       }
   } else {
-       html+=`<h2 class="empty__heading">No items in your cart.</h2><p class="empty__label">Your favorite items are just a click away</p>`;
+       html+=`<h2 class="empty__heading text-center">No items in your cart.</h2><p class="empty__label text-center">Your favorite items are just a click away</p>`;
        togglePriceDetails('none');
   }
   if(itemsinCart.length){

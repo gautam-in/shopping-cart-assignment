@@ -1,16 +1,16 @@
 @import url("https://fonts.googleapis.com/css?family=Dosis:400,600,700");
 /*------- MIXINS--------*/
 /*------- EXTEND CLASSES--------*/
-.text-center, .cart-overlay .cart__wrapper .empty__heading, .cart-overlay .cart__wrapper .empty__label {
+.text-center {
   text-align: center; }
 
 .cursor-link {
   cursor: pointer; }
 
-.float-left, header .nav__logo, header .nav__list--home {
+.float-left {
   float: left; }
 
-.float-right, header .nav__list--main, .cart-overlay .cart__header .close, .cart-overlay .cart__wrapper .item__desc .price__wrapper .item__totalprice {
+.float-right {
   float: right; }
 
 .clear-all {
@@ -18,16 +18,16 @@
 
 /*------- MIXINS--------*/
 /*------- EXTEND CLASSES--------*/
-.text-center, .cart-overlay .cart__wrapper .empty__heading, .cart-overlay .cart__wrapper .empty__label {
+.text-center {
   text-align: center; }
 
 .cursor-link {
   cursor: pointer; }
 
-.float-left, header .nav__logo, header .nav__list--home {
+.float-left {
   float: left; }
 
-.float-right, header .nav__list--main, .cart-overlay .cart__header .close, .cart-overlay .cart__wrapper .item__desc .price__wrapper .item__totalprice {
+.float-right {
   float: right; }
 
 .clear-all {
@@ -89,6 +89,7 @@ header {
       header .nav .cart-header-box .cart-link span {
         font-size: 0.7rem;
         font-weight: 600;
+        padding: 10px 0px 0px 0px;
         color: #646E72; }
     header .nav__menu {
       padding: 5px;
@@ -132,16 +133,16 @@ body {
 /* Next & previous buttons */
 /*------- MIXINS--------*/
 /*------- EXTEND CLASSES--------*/
-.text-center, .cart-overlay .cart__wrapper .empty__heading, .cart-overlay .cart__wrapper .empty__label {
+.text-center {
   text-align: center; }
 
 .cursor-link {
   cursor: pointer; }
 
-.float-left, header .nav__logo, header .nav__list--home {
+.float-left {
   float: left; }
 
-.float-right, header .nav__list--main, .cart-overlay .cart__header .close, .cart-overlay .cart__wrapper .item__desc .price__wrapper .item__totalprice {
+.float-right {
   float: right; }
 
 .clear-all {
@@ -306,16 +307,16 @@ body {
 
 /*------- MIXINS--------*/
 /*------- EXTEND CLASSES--------*/
-.text-center, .cart-overlay .cart__wrapper .empty__heading, .cart-overlay .cart__wrapper .empty__label {
+.text-center {
   text-align: center; }
 
 .cursor-link {
   cursor: pointer; }
 
-.float-left, header .nav__logo, header .nav__list--home {
+.float-left {
   float: left; }
 
-.float-right, header .nav__list--main, .cart-overlay .cart__header .close, .cart-overlay .cart__wrapper .item__desc .price__wrapper .item__totalprice {
+.float-right {
   float: right; }
 
 .clear-all {

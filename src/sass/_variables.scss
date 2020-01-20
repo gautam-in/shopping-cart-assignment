@@ -1,6 +1,5 @@
 @import "colors";
 
-
 @function color($color, $source: $theme-colors) {
 
     @if map-has-key($source, $color) {

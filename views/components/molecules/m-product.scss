@@ -4,7 +4,6 @@
 @import "../atoms/a-button";
 .product{
 		@include padding(5);
-		@extend .float-left;
 		position: relative;
 		border-bottom: dashed 1px color('secondary');
 		width: 100%;
@@ -33,8 +32,6 @@
 		}
 		&__img{
 				width:50%;
-				@extend .float-left;
-				@extend .text-center;
 				@media screen and (min-width:$lap) {
 					@include margin(10 0);
 					 width:100%;
@@ -79,7 +76,6 @@
 						display: block;
 					}
 					.price{
-						@extend .float-left;
 						@include padding(5);
 						@include fontstyle(.7);
 						width:50%;
@@ -90,7 +86,6 @@
 							
 					}
 					.btn__wrapper{
-						@extend .float-left;
 						width:100%;
 						.lg-screen{
 							display:none; 

@@ -3,21 +3,19 @@
 @import "../../../src/sass/common";
 @import "../atoms/a-img";
 @import "../atoms/a-button";
-.category-block{
+.category{
   @include padding(30 0);
   box-shadow: 0 14px 6px -7px #eeeeee;
   min-height: 150px;
   position: relative;
-	.img-block{
-	  text-align: center;
+	&__img{
 	  @media screen and (min-width: $tab) {
-	  	.category-img{
+	  	> img{
 		 height:auto;
 		}
       }
 	}
-	.desc-block{
-		@extend .text-center;
+	&__desc{
 		@media screen and (min-width: $tab) {
     		    position: absolute;
 	    		top: 50%;
@@ -26,17 +24,15 @@
 	    		transform: translateY(-50%);
 
 	  	}
-	    .category-title{
-			 font-weight: 700;
-		     font-size: .7rem;
-		     
+	    .category__title{
+	    	@include fontstyle(.7 700);
 		      @media screen and (min-width: $lap) {
-    			font-size: 1rem;
+		      	@include fontstyle(1);
    			  }
 		}
 
-		.category-desc{
-			font-size: .6rem;
+		.category__detail{
+			 @include fontstyle(.6);
 			 @include margin(5 0 0 0);
 			 @include padding(0 5);
 			  @media screen and (min-width: $tab) {
@@ -44,7 +40,7 @@
     			 
    			  }
 			 @media screen and (min-width: $lap) {
-    			font-size: .8rem;
+			 	@include fontstyle(.8);
 
    			  }
 		}
@@ -55,25 +51,23 @@
     			 @include margin(20 0 0 0);
     			 
    			  }
-		    font-size: .6rem;
+   			@include fontstyle(.6);  
     		line-height: 1.5;
     		
 		}
 	}
-}
-.category-block:nth-child(even){
-	.img-block{
-		float: right;
-
+	&:nth-child(even){
+		.category__img{
+			@extend .float-right;
+		}
+		.category__desc{
+			@media screen and (min-width: $tab) {
+			    position: absolute;
+	    		top: 50%;
+	    		width: 75%;
+	    		left: 0%;
+	    		transform: translateY(-50%);
+	  		}
+	  	}
 	}
-	.desc-block{
-		@extend .text-center;
-		@media screen and (min-width: $tab) {
-		    position: absolute;
-    		top: 50%;
-    		width: 75%;
-    		left: 0%;
-    		transform: translateY(-50%);
-  		}
-  	}
 }

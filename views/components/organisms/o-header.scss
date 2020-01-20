@@ -7,7 +7,6 @@ header {
 	.nav{
 		position: relative;
 		&__logo {
-			@extend .float-left;
 			@include padding(0 0 0 5);
 			@include margin(10 0);
 			height:auto;
@@ -33,7 +32,6 @@ header {
 		&__list--home {
 			@include margin(50 0 0 0);
 			@include fontstyle(.70);
-			@extend .float-left;
 			display: none;
 			margin-left:10%;
 			@media screen and (min-width:$tab) {
@@ -43,7 +41,6 @@ header {
 		&__list--main{
 			@include padding(5 0 0 0);
 			@include fontstyle(.45);
-			@extend .float-right;
 			word-spacing: -2px;
 			display: none;
 			@media screen and (min-width: $tab) {
@@ -69,6 +66,7 @@ header {
 				}
 				span {
 					@include fontstyle(.7 600);
+					@include padding(10 0 0 0);
 					color:  color('nav');
 				}
 			}
