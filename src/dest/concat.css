@@ -796,9 +796,6 @@ body {
         color: #FFFFFF; }
     .parent-ctr .category-wrapper .sm-screen {
       padding: 5px; }
-      @media screen and (min-width: 768px) {
-        .parent-ctr .category-wrapper .sm-screen {
-          display: none; } }
       .parent-ctr .category-wrapper .sm-screen .dropdown .dropbtn {
         border: none;
         outline: none;
@@ -829,6 +826,9 @@ body {
         color: black; }
       .parent-ctr .category-wrapper .sm-screen .dropdown:hover .dropdown-content {
         display: block; }
+      @media screen and (min-width: 768px) {
+        .parent-ctr .category-wrapper .sm-screen {
+          display: none; } }
   .parent-ctr .product-wrapper {
     width: 100%;
     background: white; }
