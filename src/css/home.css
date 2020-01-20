@@ -5,9 +5,6 @@
 .text-center, .category-block .desc-block, .category-block:nth-child(even) .desc-block {
   text-align: center; }
 
-.a-decorate {
-  text-decoration: none !important; }
-
 .cursor-link {
   cursor: pointer; }
 
@@ -24,9 +21,6 @@
 /*------- EXTEND CLASSES--------*/
 .text-center, .category-block .desc-block, .category-block:nth-child(even) .desc-block {
   text-align: center; }
-
-.a-decorate {
-  text-decoration: none !important; }
 
 .cursor-link {
   cursor: pointer; }
@@ -108,9 +102,6 @@
 .text-center, .category-block .desc-block, .category-block:nth-child(even) .desc-block {
   text-align: center; }
 
-.a-decorate {
-  text-decoration: none !important; }
-
 .cursor-link {
   cursor: pointer; }
 
@@ -134,18 +125,18 @@
   /* Position the "next button" to the right */
   /* Fading animation */ }
   .carousal .btn {
+    padding: 16px;
+    margin: -22px 0px 0px 0px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #FFFFFF;
+    background-color: #A9A9A9;
     position: absolute;
     top: 50%;
     width: auto;
-    padding: 16px;
-    margin: -22px 0px 0px 0px;
-    color: #FFFFFF;
-    font-weight: bold;
-    font-size: .9rem;
     transition: 0.6s ease;
     border-radius: 0 3px 3px 0;
     user-select: none;
-    background-color: #A9A9A9;
     opacity: .2;
     display: none; }
     @media screen and (min-width: 768px) {

@@ -4,9 +4,6 @@
 .text-center, .cart-overlay .cart__wrapper .empty__heading, .cart-overlay .cart__wrapper .empty__label {
   text-align: center; }
 
-.a-decorate {
-  text-decoration: none !important; }
-
 .cursor-link {
   cursor: pointer; }
 
@@ -23,9 +20,6 @@
 /*------- EXTEND CLASSES--------*/
 .text-center, .cart-overlay .cart__wrapper .empty__heading, .cart-overlay .cart__wrapper .empty__label {
   text-align: center; }
-
-.a-decorate {
-  text-decoration: none !important; }
 
 .cursor-link {
   cursor: pointer; }
@@ -140,9 +134,6 @@ body {
 /*------- EXTEND CLASSES--------*/
 .text-center, .cart-overlay .cart__wrapper .empty__heading, .cart-overlay .cart__wrapper .empty__label {
   text-align: center; }
-
-.a-decorate {
-  text-decoration: none !important; }
 
 .cursor-link {
   cursor: pointer; }
@@ -317,9 +308,6 @@ body {
 /*------- EXTEND CLASSES--------*/
 .text-center, .cart-overlay .cart__wrapper .empty__heading, .cart-overlay .cart__wrapper .empty__label {
   text-align: center; }
-
-.a-decorate {
-  text-decoration: none !important; }
 
 .cursor-link {
   cursor: pointer; }

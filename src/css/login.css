@@ -5,9 +5,6 @@
 .text-center {
   text-align: center; }
 
-.a-decorate {
-  text-decoration: none !important; }
-
 .cursor-link {
   cursor: pointer; }
 
@@ -33,9 +30,6 @@
 /*------- EXTEND CLASSES--------*/
 .text-center {
   text-align: center; }
-
-.a-decorate {
-  text-decoration: none !important; }
 
 .cursor-link {
   cursor: pointer; }
@@ -70,9 +64,6 @@
 /*------- EXTEND CLASSES--------*/
 .text-center {
   text-align: center; }
-
-.a-decorate {
-  text-decoration: none !important; }
 
 .cursor-link {
   cursor: pointer; }

@@ -5,9 +5,6 @@
 .text-center, .product__img {
   text-align: center; }
 
-.a-decorate, .parent-ctr .category-wrapper .category-bg a, .parent-ctr .category-wrapper .sm-screen .dropdown-content a {
-  text-decoration: none !important; }
-
 .cursor-link {
   cursor: pointer; }
 
@@ -24,9 +21,6 @@
 /*------- EXTEND CLASSES--------*/
 .text-center, .product__img {
   text-align: center; }
-
-.a-decorate, .parent-ctr .category-wrapper .category-bg a, .parent-ctr .category-wrapper .sm-screen .dropdown-content a {
-  text-decoration: none !important; }
 
 .cursor-link {
   cursor: pointer; }
@@ -230,7 +224,7 @@
       .parent-ctr .product-wrapper {
         width: 80%;
         float: right; } }
-  .parent-ctr .grey {
+  .parent-ctr .primary {
     background: black; }
 
 footer {
