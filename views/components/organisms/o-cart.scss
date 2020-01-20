@@ -43,7 +43,7 @@
 	       }
 	    }
 
-		.cart__header{
+		&__header{
 			@include padding(15);
 		    @include margin(20 0 0 0);
 		    @include fontstyle(.7 400);
@@ -71,7 +71,7 @@
 		    }
 
 		}
-		.cart__wrapper {
+		&__wrapper {
 			max-height: 65vh;
     		overflow-y: auto;
 		    @media screen and (min-width:$lap) {
@@ -87,13 +87,13 @@
 				@media screen and (min-width:$lap) {
 					@include padding(10 5);
 			    }
-			    .item__img {
+			    &__img {
 					> img {
 						width:100%;
 						height:auto;
 					}
 				}
-				.item__desc {
+				&__desc {
 					@include margin(0 0 0 4);
 					@media screen and (min-width:$lap) {
 						@include margin(0 0 0 10);
@@ -166,7 +166,7 @@
 			}
 		}
 
-		.cart__footer{
+		&__footer{
 			@include padding(10);
 			background: color('white');
 			position:fixed;
