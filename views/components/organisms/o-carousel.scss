@@ -2,41 +2,38 @@
 @import "../../../src/sass/common";
 @import "../atoms/a-img";
 
-.slideshow-container {
+.carousal {
   position: relative;
   margin: auto;
   box-shadow: 0 14px 6px -7px #eeeeee;
-  .prev, .next {
-    @extend .cursor-link;
+  .btn {
+    @include padding(16);
+    @include margin(-22 0 0 0);
+    @include fontstyle(.9 700);
+    color: color('white');
+    background-color: color('secondary');
     position: absolute;
     top: 50%;
     width: auto;
-    @include padding(16);
-    @include margin(-22 0 0 0);
-    color: color('white');
-    font-weight: bold;
-    font-size: .9rem;
     transition: 0.6s ease;
     border-radius: 0 3px 3px 0;
     user-select: none;
-    background-color: color('darkgrey');
     opacity: .2;
     display: none;
     @media screen and (min-width: $tab) {
       display: block;
     }
-
   }
 
   /* Position the "next button" to the right */
-  .next {
+  .btn__next {
     right: 0;
     border-radius: 3px 0 0 3px;
   }
 
 
   /* Fading animation */
-  .fade {
+  &__img--fade {
     -webkit-animation-name: fade;
     -webkit-animation-duration: 1.5s;
     animation-name: fade;
@@ -52,51 +49,29 @@
     from {opacity: .4} 
     to {opacity: 1}
   }
-  .tab{
-    display:block;  
-    @media screen and (max-width: $mob) {
-        display:none;  
-    }
-    @include padding(0 0 10 0);
-    @extend .text-center;
-    .dot {
-      @extend .cursor-link;
-      height: 5px;
-      width: 5px;
-      margin: 0 10px;
-      background-color: #bbb;
-      border-radius: 50%;
-      display: inline-block;
-      transition: background-color 0.6s ease;
-    }
-
-    .active, .dot:hover {
-      background-color: #717171;
-    }
-  }
-
-
-}
-
-  /* The dots/bullets/indicators */
-  .mob{
-    display:block;
+  &__nav{
+    position: absolute;
+    top: 110%;
+    left: 50%;
+    transform: translate(-50%,-50%);  
     @media screen and (min-width: $tab) {
-        display:none;  
+        top: 90%;  
+        @include padding(0 0 10 0);
     }
-    @extend .text-center;
     .dot {
-      @extend .cursor-link;
       height: 5px;
       width: 5px;
       margin: 0 10px;
-      background-color: #bbb;
+      background-color: color('secondary');
       border-radius: 50%;
       display: inline-block;
       transition: background-color 0.6s ease;
+      :hover {
+        background-color: color('highlight');
+      }
     }
-
-    .active, .dot:hover {
-      background-color: #717171;
+    .active{
+      background-color: color('highlight');
     }
   }
+}

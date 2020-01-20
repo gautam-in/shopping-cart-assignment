@@ -9,7 +9,7 @@
 		}
 }
 .parent-ctr{
-	background: color('grey');
+	background: color('primary');
 	
 	.category-wrapper{
 		width:100%;
@@ -29,7 +29,6 @@
 
 		.category-bg{
 			@include padding(10 0 10 20);
-			@extend .cursor-link;
 			font-size:.9rem;
 			border-bottom:solid 1px #A6A6A6;
 			a{
@@ -38,7 +37,7 @@
 			}
 		}
 		.highlight{
-			background: color('darkgrey');
+			background: color('secondary');
 			a{
 				color:color('white');
 			}
@@ -55,7 +54,7 @@
 				  font-family: inherit;
 				  @include margin(0);
 				  width: 100%;
-					background: color('red');
+					background: color('btn');
 					color:color('white');
 			}
 
@@ -71,7 +70,7 @@
 
 			.dropdown-content a {
 			  float: none;
-			  background: color('red');
+			  background: color('btn');
 			  color:color('white');
 			  @include padding(6);
 			  font-size:.6rem;
@@ -101,7 +100,7 @@
 		}
 	}
 	
-	.grey{
+	.primary{
 		background: black;
 	}
 

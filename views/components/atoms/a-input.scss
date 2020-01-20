@@ -3,14 +3,14 @@
 .basic-input{
 	border: none;
 	width:100%;
-	border-bottom: solid 2px color('grey');
+	border-bottom: solid 2px color('primary');
 	&:focus {
     	outline: none;
-		border-bottom: solid 2px color('blue');
-		color:color('blue');
+		border-bottom: solid 2px color('focus');
+		color:color('focus');
 		@include padding(0 0 10 0);
       	+label {
-        	color: color('blue');
+        	color: color('focus');
       	}
     }
 }

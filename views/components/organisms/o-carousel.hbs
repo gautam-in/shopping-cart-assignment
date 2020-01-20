@@ -1,21 +1,14 @@
-<div class="slideshow-container row">
-	<div id="banners-container">
+<div class="carousal row">
 		{{#each banners as |value key|}}
-			<div class="mySlides fade">
+			<div class="carousal__img carousal__img--fade">
 			 {{> atoms/a-img imageUrl=value.bannerImageUrl }}
 			</div>
 		{{/each}}
-		<div class="carousal-dot tab" id="carousal-dot">
+		<div class="carousal__nav">
 			{{#each banners  as |value key|}}
-				  <a class="dot" onclick="carousel.currentSlide({{@index}});return false;" href=""></a> 
+				  <a class="dot cursor-link" onclick="carousel.currentSlide({{@index}});return false;" href=""></a> 
 			{{/each}}
 		</div>
-	</div>
-	<a class="prev" onclick="carousel.plusSlides(-1);return false;" href="">Prev</a>
-	<a class="next" onclick="carousel.plusSlides(1);return false;"  href="">Next</a>
-</div>
-<div class="carousal-dot mob" id="carousal-dot">
-	{{#each banners  as |value key|}}
-		 <a class="dot" onclick="carousel.currentSlide({{@index}});return false;" href=""></a> 
-	{{/each}}
+	<a class="btn btn__prev cursor-link" onclick="carousel.plusSlides(-1);return false;" href="">Prev</a>
+	<a class="btn btn__next cursor-link" onclick="carousel.plusSlides(1);return false;"  href="">Next</a>
 </div>

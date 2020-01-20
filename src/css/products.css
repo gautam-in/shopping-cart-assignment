@@ -8,7 +8,7 @@
 .a-decorate, .parent-ctr .category-wrapper .category-bg a, .parent-ctr .category-wrapper .sm-screen .dropdown-content a {
   text-decoration: none !important; }
 
-.cursor-link, .parent-ctr .category-wrapper .category-bg {
+.cursor-link {
   cursor: pointer; }
 
 .float-left, .product, .product__img, .product__desc .price__wrapper .price, .product__desc .price__wrapper .btn__wrapper {
@@ -16,6 +16,9 @@
 
 .float-right {
   float: right; }
+
+.clear-all {
+  clear: both; }
 
 /*------- MIXINS--------*/
 /*------- EXTEND CLASSES--------*/
@@ -25,7 +28,7 @@
 .a-decorate, .parent-ctr .category-wrapper .category-bg a, .parent-ctr .category-wrapper .sm-screen .dropdown-content a {
   text-decoration: none !important; }
 
-.cursor-link, .parent-ctr .category-wrapper .category-bg {
+.cursor-link {
   cursor: pointer; }
 
 .float-left, .product, .product__img, .product__desc .price__wrapper .price, .product__desc .price__wrapper .btn__wrapper {
@@ -33,6 +36,9 @@
 
 .float-right {
   float: right; }
+
+.clear-all {
+  clear: both; }
 
 .btn-basic {
   background: #D10157;

@@ -4,7 +4,7 @@
 				{{> atoms/a-img class="nav__logo" imageUrl="/static/images/logo.png" alt="Sab ka Bazar" onclick="movetoHome('/')"}}
 				</div>
 				<div class="col span-2-of-4">
-					<ul class="home-nav">
+					<ul class="nav__list nav__list--home">
 						<li>{{> atoms/a-link hypertext="Home" href="/"}}</li>
 						<li>{{> atoms/a-link hypertext="Products" href="/products"}}</li>
 					</ul>
@@ -12,7 +12,7 @@
 
 				<div class="col span-1-of-4">
 					<div>
-						<ul class="main-nav">
+						<ul class="nav__list nav__list--main">
 							<li>{{> atoms/a-link hypertext="Sign In" href="/login"}}</li>
 							<li>{{> atoms/a-link hypertext="Register" href="/register"}}</li>
 						</ul>
@@ -23,17 +23,16 @@
 							<span class="cartNumber">{{cartItems}} items</span>
 						</a>
 					</div>
-					<button class="menu" onclick="toggleMenu()">
+					<button class="nav__menu" onclick="toggleMenu()">
 						<i class="fa fa-bars" aria-hidden="true"></i>
 					</button>
 			    </div>
 		</nav>
 		<div class="clear-all"></div>
-		
+		<ul class="row nav__list-mob">
+			<li>{{> atoms/a-link hypertext="Home" href="/"}}</li>
+			<li>{{> atoms/a-link hypertext="Products" href="/products"}}</li>
+			<li>{{> atoms/a-link hypertext="Sign In" href="/login"}}</li>
+			<li>{{> atoms/a-link hypertext="Register" href="/register"}}</li>
+		</ul>
 </header>
-<ul class="row mob-nav-list">
-	<li>{{> atoms/a-link hypertext="Home" href="/"}}</li>
-	<li>{{> atoms/a-link hypertext="Products" href="/products"}}</li>
-	<li>{{> atoms/a-link hypertext="Sign In" href="/login"}}</li>
-	<li>{{> atoms/a-link hypertext="Register" href="/register"}}</li>
-</ul>

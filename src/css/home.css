@@ -2,13 +2,13 @@
 /*------- MIXINS--------*/
 /*------- EXTEND CLASSES--------*/
 @import url("https://fonts.googleapis.com/css?family=Dosis:400,600,700");
-.text-center, .category-block .desc-block, .category-block:nth-child(even) .desc-block, .slideshow-container .tab, .mob {
+.text-center, .category-block .desc-block, .category-block:nth-child(even) .desc-block {
   text-align: center; }
 
 .a-decorate {
   text-decoration: none !important; }
 
-.cursor-link, .slideshow-container .prev, .slideshow-container .next, .slideshow-container .tab .dot, .mob .dot {
+.cursor-link {
   cursor: pointer; }
 
 .float-left {
@@ -16,16 +16,19 @@
 
 .float-right {
   float: right; }
+
+.clear-all {
+  clear: both; }
 
 /*------- MIXINS--------*/
 /*------- EXTEND CLASSES--------*/
-.text-center, .category-block .desc-block, .category-block:nth-child(even) .desc-block, .slideshow-container .tab, .mob {
+.text-center, .category-block .desc-block, .category-block:nth-child(even) .desc-block {
   text-align: center; }
 
 .a-decorate {
   text-decoration: none !important; }
 
-.cursor-link, .slideshow-container .prev, .slideshow-container .next, .slideshow-container .tab .dot, .mob .dot {
+.cursor-link {
   cursor: pointer; }
 
 .float-left {
@@ -33,6 +36,9 @@
 
 .float-right {
   float: right; }
+
+.clear-all {
+  clear: both; }
 
 .basic-img {
   width: 100%;
@@ -99,13 +105,13 @@
 
 /*------- MIXINS--------*/
 /*------- EXTEND CLASSES--------*/
-.text-center, .category-block .desc-block, .category-block:nth-child(even) .desc-block, .slideshow-container .tab, .mob {
+.text-center, .category-block .desc-block, .category-block:nth-child(even) .desc-block {
   text-align: center; }
 
 .a-decorate {
   text-decoration: none !important; }
 
-.cursor-link, .slideshow-container .prev, .slideshow-container .next, .slideshow-container .tab .dot, .mob .dot {
+.cursor-link {
   cursor: pointer; }
 
 .float-left {
@@ -114,17 +120,20 @@
 .float-right {
   float: right; }
 
+.clear-all {
+  clear: both; }
+
 .basic-img {
   width: 100%;
   height: auto; }
 
-.slideshow-container {
+.carousal {
   position: relative;
   margin: auto;
   box-shadow: 0 14px 6px -7px #eeeeee;
   /* Position the "next button" to the right */
   /* Fading animation */ }
-  .slideshow-container .prev, .slideshow-container .next {
+  .carousal .btn {
     position: absolute;
     top: 50%;
     width: auto;
@@ -140,12 +149,12 @@
     opacity: .2;
     display: none; }
     @media screen and (min-width: 768px) {
-      .slideshow-container .prev, .slideshow-container .next {
+      .carousal .btn {
         display: block; } }
-  .slideshow-container .next {
+  .carousal .btn__next {
     right: 0;
     border-radius: 3px 0 0 3px; }
-  .slideshow-container .fade {
+  .carousal__img--fade {
     -webkit-animation-name: fade;
     -webkit-animation-duration: 1.5s;
     animation-name: fade;
@@ -162,39 +171,27 @@
     opacity: .4; }
   to {
     opacity: 1; } }
-  .slideshow-container .tab {
-    display: block;
-    padding: 0px 0px 10px 0px; }
-    @media screen and (max-width: 767px) {
-      .slideshow-container .tab {
-        display: none; } }
-    .slideshow-container .tab .dot {
+  .carousal__nav {
+    position: absolute;
+    top: 110%;
+    left: 50%;
+    transform: translate(-50%, -50%); }
+    @media screen and (min-width: 768px) {
+      .carousal__nav {
+        top: 90%;
+        padding: 0px 0px 10px 0px; } }
+    .carousal__nav .dot {
       height: 5px;
       width: 5px;
       margin: 0 10px;
-      background-color: #bbb;
+      background-color: #A9A9A9;
       border-radius: 50%;
       display: inline-block;
       transition: background-color 0.6s ease; }
-    .slideshow-container .tab .active, .slideshow-container .tab .dot:hover {
-      background-color: #717171; }
-
-/* The dots/bullets/indicators */
-.mob {
-  display: block; }
-  @media screen and (min-width: 768px) {
-    .mob {
-      display: none; } }
-  .mob .dot {
-    height: 5px;
-    width: 5px;
-    margin: 0 10px;
-    background-color: #bbb;
-    border-radius: 50%;
-    display: inline-block;
-    transition: background-color 0.6s ease; }
-  .mob .active, .mob .dot:hover {
-    background-color: #717171; }
+      .carousal__nav .dot :hover {
+        background-color: #6B6B6B; }
+    .carousal__nav .active {
+      background-color: #6B6B6B; }
 
 .mySlides {
   display: none; }

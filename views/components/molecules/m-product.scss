@@ -6,7 +6,7 @@
 		@include padding(5);
 		@extend .float-left;
 		position: relative;
-		border-bottom: dashed 1px color('darkgrey');
+		border-bottom: dashed 1px color('secondary');
 		width: 100%;
 		background: color('white');
 		@media screen and (min-width: $tab) {
@@ -57,7 +57,7 @@
 					@include padding(5);
 					@include fontstyle(.7);
 					@include text-clamp(5);
-					background: color('grey');
+					background: color('primary');
 					line-height: 1.5;
 					overflow: hidden;
 					@media screen and (min-width:$tab) {

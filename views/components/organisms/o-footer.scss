@@ -2,7 +2,7 @@
 @import "../../../src/sass/common";
 .footer {
 	@include padding(10);
-	background:color('grey');
+	background:color('primary');
 	.copyright{
 		font-weight: 600;
 	}

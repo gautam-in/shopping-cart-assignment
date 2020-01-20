@@ -176,7 +176,7 @@ function showCart(){
    renderCart(itemsinCart);
    showSum();  
   }
-   document.getElementsByClassName("parent-overlay")[0].style.display ='block';
+   document.getElementsByClassName("cart-overlay")[0].style.display ='block';
    document.getElementsByTagName("body")[0].style.overflow ='hidden';
    cartUpdated = false;
    if(itemsinCart.length){
@@ -245,8 +245,7 @@ function setCount(){
 
 function closeCart(){
   document.getElementsByTagName("body")[0].style.overflow ='auto';
-  document.getElementsByClassName("parent-overlay")[0].style.display ='none';
-  document.getElementsByClassName("mob-nav-list")[0].style.display ='none';
+  document.getElementsByClassName("cart-overlay")[0].style.display ='none';
 }
 function togglePriceDetails(param){
   document.getElementsByClassName("cart__offer")[0].style.display =param;

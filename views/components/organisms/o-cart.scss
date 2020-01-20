@@ -2,7 +2,7 @@
 @import "../../../src/sass/variables";
 @import "../../../src/sass/common";
 
-.parent-overlay{
+.cart-overlay{
 	display: none;
 	.bg-overlay{
 	position: fixed;
@@ -14,7 +14,7 @@
 	}
 	.cart{
 		@include fontstyle(.7);
-		background: color('grey');
+		background: color('primary');
 		position: fixed;
 	    width: 100%;
 	    height: 100%;
@@ -184,7 +184,7 @@
 			.checkout-btn{
 				@include padding(10);
 				height: 40px;
-				background: color('red');
+				background: color('btn');
 				color:  color('white');
 				width: 100%;
 				border:none;

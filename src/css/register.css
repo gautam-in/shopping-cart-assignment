@@ -17,6 +17,9 @@
 .float-right {
   float: right; }
 
+.clear-all {
+  clear: both; }
+
 .basic-header {
   font-weight: 700;
   letter-spacing: -1px; }
@@ -42,6 +45,9 @@
 
 .float-right {
   float: right; }
+
+.clear-all {
+  clear: both; }
 
 .basic-input {
   border: none;
@@ -76,6 +82,9 @@
 
 .float-right {
   float: right; }
+
+.clear-all {
+  clear: both; }
 
 .form-group {
   width: 65%;

@@ -2,7 +2,7 @@
     <div class="category-wrapper">
    			<ul class="md-screen">
 				{{#each categories}}
-				<li class="category-bg  {{this.id}}" onclick="selectCategory('{{this.id}}')">
+				<li class="category-bg cursor-link {{this.id}}" onclick="selectCategory('{{this.id}}')">
 				   	<a href=""  onclick="return false;">{{this.name}}</a>
 				</li>	
 				{{/each}}

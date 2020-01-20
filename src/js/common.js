@@ -2,13 +2,11 @@ function movetoHome(){
 	window.location.href="/";
 }
 function toggleMenu(){
-  
-  let cart = document.getElementsByClassName("parent-overlay")[0].style.display ==='block';
+  let cart = document.getElementsByClassName("cart-overlay")[0].style.display ==='block';
   if(cart){
-  	x = document.getElementsByClassName("mob-nav-list")[0];
+  	x = document.getElementsByClassName("nav__list-mob")[0];
   } else {
-  	x = document.getElementsByClassName("mob-nav-list")[1];
-
+  	x = document.getElementsByClassName("nav__list-mob")[1];
   }
 	if (x.style.display === 'block') {
    	  x.style.display = 'none';
@@ -23,5 +21,4 @@ document.getElementsByTagName("body")[0].addEventListener("keydown", function(e)
           document.getElementById('close').focus();
 	 		 }
 	 }
-
 });

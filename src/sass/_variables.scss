@@ -1,34 +1,4 @@
-
-$theme-colors: (
-
-    'grey'              : #eeeeee,
-
-    'darkgrey'          : #A9A9A9,
-
-    'darkergrey'        : #6B6B6B,
-
-    'midgrey'           : #D8DCE3,
-
-    'orange'            : #E67E22,
-    'blue'				: #5fc8d0,
-
-    'red':#D10157,
-	'navColor':#646E72,
-    'white'     : #FFFFFF,
-
-    'black'     : #000000,
-    'shadowColor':#f0f0f0,
-
-    'error'     : #DF4036,
-
-    'caution'   : #F09924,
-
-    'success'   : #69BC36,
-    'link':#A6A6A6
-
-);
-
- 
+import "colors";
 
 /// The primary function for
 
