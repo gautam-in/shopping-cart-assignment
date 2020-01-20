@@ -1,21 +1,19 @@
 <div class="product">
-<div class="right-border"></div> 
-	<h3 class="name">{{this.name}}</h3>
-	<div class="img-holder">
-		<div class="img-ctr col">
-		 {{> atoms/a-img imageUrl=this.imageURL}}
-		 </div>
-		<div class="desc-ctr col ">
-			<p class="desc">{{this.description}}</p>
-			<div class="btn-box">
-				<p class="price-ctr lg-screen">MRP{{this.price}}</p>
-				<div class="btn-ctr">
-				 {{> atoms/a-button tabindex="0" class="sm-screen btn-buy"  click =(concat 'buy( "' this.id '")')  btntext=(concat 'Buy now @ MRP' this.price) }}
-				  {{> atoms/a-button tabindex="0" class="lg-screen btn-buy" click =(concat 'buy( "' this.id '")') btntext="Buy now" }}
-				</div>
+	<div class="product__border"></div> 
+	<h3 class="product__name">{{this.name}}</h3>
+	<div class="product__img col">
+	 {{> atoms/a-img imageUrl=this.imageURL}}
+	 </div>
+	<div class="product__desc col">
+		<p class="desc">{{this.description}}</p>
+		<div class="price__wrapper">
+			<p class="price lg-screen">MRP{{this.price}}</p>
+			<div class="btn__wrapper">
+			 {{> atoms/a-button tabindex="0" class="sm-screen buy-btn"  click =(concat 'buy( "' this.id '")')  btntext=(concat 'Buy now @ MRP' this.price) }}
+			  {{> atoms/a-button tabindex="0" class="lg-screen buy-btn" click =(concat 'buy( "' this.id '")') btntext="Buy now" }}
 			</div>
 		</div>
 	</div>
-	<div class="btn-box-pad"> {{> atoms/a-button class="btn-buy"  click =(concat 'buy( "' this.id '")') btntext=(concat 'Buy now @ MRP' this.price) }}
+	<div class="btn__pad"> {{> atoms/a-button class="buy-btn"  click =(concat 'buy( "' this.id '")') btntext=(concat 'Buy now @ MRP' this.price) }}
 	</div>
 </div>
