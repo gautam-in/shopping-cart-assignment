@@ -7,9 +7,7 @@
 @import "../../components/atoms/a-button";
 .register-section{
 	@include padding(0 0 20 0);
-	//padding: 3%;
 	.register-text {
-	//padding: 2%;
 		padding:2% 0% 0% 5%;
 		h1{
 			@include margin(20 0 0 0);
@@ -17,10 +15,8 @@
 
 	}
 	.register-form{
-		.register-btn{
-			width:65%;
-		}
 		.register-btn {
+			width:65%;
 			height: 40px;
 			@include margin(20 0 0 0);
 		}

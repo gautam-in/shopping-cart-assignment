@@ -276,8 +276,7 @@
     .login-section .login-text h1 {
       margin: 20px 0px 0px 0px; }
   .login-section .login-form .login-btn {
-    width: 65%; }
-  .login-section .login-form .login-btn {
+    width: 65%;
     height: 40px;
     margin: 20px 0px 0px 0px; }
 
@@ -941,7 +940,6 @@ footer {
     .register-section .register-text h1 {
       margin: 20px 0px 0px 0px; }
   .register-section .register-form .register-btn {
-    width: 65%; }
-  .register-section .register-form .register-btn {
+    width: 65%;
     height: 40px;
     margin: 20px 0px 0px 0px; }
