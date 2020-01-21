@@ -18,7 +18,7 @@ gulp.task('concatcss', function() {
 });
 
 gulp.task('watch', function () {
-	 gulp.watch(['src/sass/*.scss','views/**/*.scss'], gulp.series('styles','clean','concatcss'));
+	 gulp.watch(['src/sass/*.scss','views/**/*.scss'], gulp.series('clean','styles'));
 });
 gulp.task('clean', function () {
     return gulp.src('src/css', {read: false,allowEmpty: true})

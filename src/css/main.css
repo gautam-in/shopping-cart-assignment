@@ -1444,27 +1444,26 @@ body {
       @media screen and (min-width: 992px) {
         .product__desc .price__wrapper .price {
           display: block; } }
-    .product__desc .price__wrapper .btn__wrapper .lg-screen {
-      display: none; }
-    @media screen and (min-width: 992px) {
-      .product__desc .price__wrapper .btn__wrapper {
-        width: 50%; }
-        .product__desc .price__wrapper .btn__wrapper .lg-screen {
-          display: none;
-          width: 100%; } }
-    @media screen and (min-width: 992px) and (min-width: 992px) {
+    .product__desc .price__wrapper .btn__wrapper {
+      width: 100%; }
+      @media screen and (min-width: 992px) {
+        .product__desc .price__wrapper .btn__wrapper {
+          width: 50%; } }
       .product__desc .price__wrapper .btn__wrapper .lg-screen {
-        display: block; } }
-    @media screen and (min-width: 992px) {
-        .product__desc .price__wrapper .btn__wrapper .sm-screen {
-          margin: 10px 0px 0px 0px;
-          display: block; } }
-    @media screen and (min-width: 992px) and (min-width: 992px) {
+        display: none; }
+        @media screen and (min-width: 992px) {
+          .product__desc .price__wrapper .btn__wrapper .lg-screen {
+            display: block; } }
       .product__desc .price__wrapper .btn__wrapper .sm-screen {
-        display: none; } }
-    .product__desc .price__wrapper .btn__wrapper .buy-btn {
-      padding: 10px;
-      font-size: 0.7rem; }
+        width: 100%;
+        margin: 10px 0px 0px 0px;
+        display: block; }
+        @media screen and (min-width: 992px) {
+          .product__desc .price__wrapper .btn__wrapper .sm-screen {
+            display: none; } }
+      .product__desc .price__wrapper .btn__wrapper .buy-btn {
+        padding: 10px;
+        font-size: 0.7rem; }
   .product .btn__pad {
     padding: 10px 0px 0px 0px;
     display: none;

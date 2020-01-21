@@ -76,24 +76,22 @@
 							
 					}
 					.btn__wrapper{
-						.lg-screen{
-							display:none; 
-						}
+						width:100%;
 						@media screen and (min-width:$lap) {
 							width:50%;
-							.lg-screen{
-								display:none;
-								width:100%; 
-								@media screen and (min-width:$lap) {
+						}
+						.lg-screen{
+							display:none; 
+							@media screen and (min-width:$lap) {
 									display: block;
-								}
 							}
-							.sm-screen{
-								@include margin(10 0 0 0);
-								display:block; 
-								@media screen and (min-width:$lap) {
-									display: none;
-								}
+						}
+						.sm-screen{
+							width:100%; 
+							@include margin(10 0 0 0);
+							display:block; 
+							@media screen and (min-width:$lap) {
+								display: none;
 							}
 						}
 						.buy-btn{
