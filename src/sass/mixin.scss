@@ -1,3 +1,5 @@
+@import "variables";
+
 /*------- MIXINS--------*/
 @mixin padding($padding) {
     @if length($padding) == 1 {
@@ -47,19 +49,3 @@
     -webkit-line-clamp: $lines;
 }
 
-/*------- EXTEND CLASSES--------*/
-.text-center{
-    text-align: center;
-}
-.cursor-link{
-    cursor: pointer;
-}
-.float-left{
-    float: left;
-}
-.float-right{
-    float: right;
-}
-.clear-all{
-    clear: both;
-}

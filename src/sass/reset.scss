@@ -1,3 +1,9 @@
+* {
+	box-sizing: border-box;
+	padding:0;
+	margin:0;
+}
+
 ul {
 	list-style: none;
 }
@@ -7,39 +13,3 @@ a{
 button{
 	cursor: pointer;
 }
-
-
-/*  SECTIONS  ============================================================================= */
-
-.section {
-	clear: both;
-	padding: 0px;
-	margin: 0px;
-}
-
-/*  GROUPING  ============================================================================= */
-
-.row {
-    zoom: 1; /* For IE 6/7 (trigger hasLayout) */
-    max-width:1140px;
-	margin:0 auto;
-}
-
-.row:before,
-.row:after {
-    content:"";
-    display:table;
-}
-.row:after {
-    clear:both;
-}
-
-/*  GRID COLUMN SETUP   ==================================================================== */
-
-.col {
-	display: block;
-	float:left;
-}
-
-.col:first-child { margin-left: 0; } /* all browsers except IE6 and lower */
-

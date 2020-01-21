@@ -6,10 +6,9 @@ sass = require('gulp-sass'),
  var clean = require('gulp-clean');
 
 gulp.task('styles', function(){
-return gulp.src(['src/**/*.scss','views/features/**/*.scss'])
+return gulp.src(['src/sass/main.scss','src/sass/reset.scss','src/sass/grid.scss'])
 .pipe(sass())
- .pipe(flatten())
-      .pipe(gulp.dest('src/css'))
+   .pipe(gulp.dest('src/css'))
 });
 
 gulp.task('concatcss', function() {
@@ -22,14 +21,14 @@ gulp.task('watch', function () {
 	 gulp.watch(['src/sass/*.scss','views/**/*.scss'], gulp.series('styles','clean','concatcss'));
 });
 gulp.task('clean', function () {
-    return gulp.src('src/dest', {read: false,allowEmpty: true})
+    return gulp.src('src/css', {read: false,allowEmpty: true})
         .pipe(clean());
 });
 
 //Default task array
-gulp.task('default', gulp.series('styles', 'clean','concatcss','watch'));
+//gulp.task('default', gulp.series('styles', 'clean','concatcss','watch'));
 
 
 
-
+gulp.task('default', gulp.series( 'clean','styles','watch'));
  

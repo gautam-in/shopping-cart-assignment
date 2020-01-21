@@ -1,5 +1,4 @@
-@import "../../../src/sass/variables";
-@import "../../../src/sass/common";
+@import "../../../src/sass/base";
 .footer {
 	@include padding(10);
 	background:color('primary');
