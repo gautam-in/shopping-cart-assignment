@@ -26,14 +26,15 @@
 					color: color(link);
 				}
 			}
-		}
-		.highlight{
-			background: color('secondary');
-			a{
-				color:color('white');
+			.highlight{
+				background: color('secondary');
+				a{
+					color:color('white');
+				}
+				
 			}
-			
 		}
+		
 		.categories__dropdown{
 			@include padding(5);
 			.dropdown .dropbtn {

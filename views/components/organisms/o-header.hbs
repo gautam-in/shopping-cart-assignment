@@ -1,32 +1,27 @@
 <header>
-		<nav class="row nav">
-				<div class="col span-1-of-4">
-				{{> atoms/a-img class="nav__logo float-left" imageUrl="/static/images/logo.png" alt="Sab ka Bazar" onclick="movetoHome('/')"}}
+		<nav class="nav">
+			<div>
+			{{> atoms/a-img class="nav__logo float-left" imageUrl="/static/images/logo.png" alt="Sab ka Bazar" onclick="movetoHome('/')"}}</div>
+			<div class="nav__menu">
+			<div class="menu_blank"></div>
+				<div class="menu__item menu__item--main">
+					{{> atoms/a-link hypertext="Sign In" class="login" href="/login"}}
+					{{> atoms/a-link hypertext="Register" href="/register"}}
 				</div>
-				<div class="col span-2-of-4">
-					<ul class="nav__list nav__list--home float-left">
-						<li>{{> atoms/a-link hypertext="Home" href="/"}}</li>
-						<li>{{> atoms/a-link hypertext="Products" href="/products"}}</li>
-					</ul>
+				<div  class="menu__item menu__item--home">
+					{{> atoms/a-link hypertext="Home" href="/"}}
+					{{> atoms/a-link hypertext="Products" class="products" href="/products"}}
 				</div>
-
-				<div class="col span-1-of-4">
-					<div>
-						<ul class="nav__list nav__list--main float-right">
-							<li>{{> atoms/a-link hypertext="Sign In" href="/login"}}</li>
-							<li>{{> atoms/a-link hypertext="Register" href="/register"}}</li>
-						</ul>
-					</div>
-					<div class="cart-header-box">
+				<div class="cart-header-box">
 						<a href="" onclick="showCart();return false;" class="cart-link">
 							{{> atoms/a-img imageUrl="/static/images/cart.svg" alt="Logo" class="cart-img"}}
 							<span class="cartNumber float-right">{{cartItems}} items</span>
 						</a>
-					</div>
-					<button class="nav__menu" onclick="toggleMenu()">
-						<i class="fa fa-bars" aria-hidden="true"></i>
-					</button>
-			    </div>
+				</div>
+				<button class="nav__menu--mob" onclick="toggleMenu()">
+							<i class="fa fa-bars" aria-hidden="true"></i>
+				</button>
+			</div>
 		</nav>
 		<div class="clear-all"></div>
 		<ul class="row nav__list-mob">
