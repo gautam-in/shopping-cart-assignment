@@ -1,13 +1,13 @@
-<section class="row parent-ctr">
+<section class=" parent-ctr">
     <div class="category-wrapper">
-   			<ul class="md-screen">
+   			<ul class="categories__list">
 				{{#each categories}}
-				<li class="category-bg cursor-link {{this.id}}" onclick="selectCategory('{{this.id}}')">
+				<li class="category__item cursor-link {{this.id}}" onclick="selectCategory('{{this.id}}')">
 				   	<a href=""  onclick="return false;">{{this.name}}</a>
 				</li>	
 				{{/each}}
 			</ul>
-			<div class="sm-screen">
+			<div class="categories__dropdown">
 				<div class="dropdown">
 		    		<button class="dropbtn">Select Categories 
 				      <i class="fa fa-caret-down"></i>

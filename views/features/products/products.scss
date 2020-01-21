@@ -3,31 +3,28 @@
 @import "../../../src/sass/common";
 @import "../../components/molecules/m-product";
 .parent-ctr{
-	
+	display: grid;
+	grid-template-columns: 100%;
+	margin:auto;
 	background: color('primary');
-	
+	max-width:1140px;
+	@media screen and (min-width: $tab) {
+		display: grid;
+		grid-template-columns: 20% 80%;
+	}
 	.category-wrapper{
-		width:100%;
-
-		@media screen and (min-width: $tab) {
-			float: left;
-			width:20%;
-
-		}
-		.md-screen{
-			list-style:none;
-			@media screen and (max-width: $mob) {
-				display: none;
+		.categories__list{
+			display: none;
+			@media screen and (min-width: $pad) {
+				display: block;
 			}
-			
-		}
-
-		.category-bg{
-			@include padding(10 0 10 20);
-			font-size:.9rem;
-			border-bottom:solid 1px #A6A6A6;
-			a{
-				color: color(link);
+			.category__item{
+				@include padding(10 0 10 20);
+				font-size:.9rem;
+				border-bottom:solid 1px #A6A6A6;
+				a{
+					color: color(link);
+				}
 			}
 		}
 		.highlight{
@@ -37,18 +34,17 @@
 			}
 			
 		}
-		.sm-screen{
+		.categories__dropdown{
 			@include padding(5);
 			.dropdown .dropbtn {
-				   
 				  border: none;
 				  outline: none;
 				  @include padding(14 16);
 				  font-family: inherit;
 				  @include margin(0);
 				  width: 100%;
-					background: color('btn');
-					color:color('white');
+				  background: color('btn');
+				  color:color('white');
 			}
 
 			.dropdown-content {
@@ -59,23 +55,20 @@
 			  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 			  z-index: 1;
 			  width: 99%;
+			  	a {
+				  float: none;
+				  background: color('btn');
+				  color:color('white');
+				  @include padding(6);
+				  font-size:.6rem;
+				  display: block;
+				  text-align: left;
+				}
+				:hover {
+				 background: color('primary');
+				  color:color('black');
+				}
 			}
-
-			.dropdown-content a {
-			  float: none;
-			  background: color('btn');
-			  color:color('white');
-			  @include padding(6);
-			  font-size:.6rem;
-			  display: block;
-			  text-align: left;
-			}
-
-			.dropdown-content a:hover {
-			  background-color: #ddd;
-			  color: black;
-			}
-
 			.dropdown:hover .dropdown-content {
 			  display: block;
 			}
@@ -85,15 +78,14 @@
 		}
 	}
 	.product-wrapper{
-		width:100%;
-		background: white;
-		
+		background: color('white');
+		display: grid;
+		grid-template-columns: 100%;
 		@media screen and (min-width: $tab) {
-			width: 80%;
-			float: right;
+			grid-template-columns: 50% 50%;
+		}
+		@media screen and (min-width:$lap) {
+			grid-template-columns: 25% 25%  25% 25%;
 		}
 	}
 }
-footer{
-		clear: left;
-	}
