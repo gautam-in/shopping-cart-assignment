@@ -914,10 +914,68 @@ body {
   font-weight: 700;
   letter-spacing: -1px; }
 
+/*------- MIXINS--------*/
+/*------- EXTEND CLASSES--------*/
+.text-center {
+  text-align: center; }
+
+.cursor-link {
+  cursor: pointer; }
+
+.float-left {
+  float: left; }
+
+.float-right, .category:nth-child(even) .category__img {
+  float: right; }
+
+.clear-all {
+  clear: both; }
+
+html {
+  font-size: 20px; }
+
+body {
+  background: white;
+  font-family: Dosis; }
+
+.row {
+  max-width: 1140px;
+  margin: 0 auto; }
+
+/*  SECTIONS  ============================================================================= */
+.section {
+  clear: both;
+  padding: 0px;
+  margin: 0px; }
+
+/*  GROUPING  ============================================================================= */
+.row {
+  zoom: 1;
+  /* For IE 6/7 (trigger hasLayout) */
+  max-width: 1140px;
+  margin: 0 auto; }
+
+.row:before,
+.row:after {
+  content: "";
+  display: table; }
+
+.row:after {
+  clear: both; }
+
+/*  GRID COLUMN SETUP   ==================================================================== */
+.col {
+  display: block;
+  float: left; }
+
+.col:first-child {
+  margin-left: 0; }
+
+/* all browsers except IE6 and lower */
 .basic-desc {
+  font-size: 0.7rem;
   font-weight: 600;
-  font-size: .7rem;
-  margin-top: 20px; }
+  margin: 20px 0px 0px 0px; }
 
 /*------- MIXINS--------*/
 /*------- EXTEND CLASSES--------*/
@@ -1048,8 +1106,8 @@ body {
 
 /* all browsers except IE6 and lower */
 .basic-label {
+  font-size: 0.7rem;
   font-weight: 600;
-  font-size: .7rem;
   color: #A9A9A9; }
 
 /*------- MIXINS--------*/
@@ -1377,7 +1435,7 @@ body {
   border-bottom: dashed 1px #A9A9A9;
   background: #FFFFFF;
   display: grid;
-  grid-template-columns: 50% 50%; }
+  grid-template-columns: repeat(2, 1fr); }
   .product__border {
     position: absolute;
     border-right: solid 1px rgba(238, 238, 238, 0.867);
@@ -1477,14 +1535,14 @@ body {
 
 .parent-ctr {
   display: grid;
-  grid-template-columns: 100%;
+  grid-template-columns: 1fr;
   margin: auto;
   background: #eeeeee;
   max-width: 1140px; }
   @media screen and (min-width: 768px) {
     .parent-ctr {
       display: grid;
-      grid-template-columns: 20% 80%; } }
+      grid-template-columns: 1fr 4fr; } }
   .parent-ctr .category-wrapper .categories__list {
     display: none; }
     @media screen and (min-width: 767px) {
@@ -1538,13 +1596,13 @@ body {
   .parent-ctr .product-wrapper {
     background: #FFFFFF;
     display: grid;
-    grid-template-columns: 100%; }
+    grid-template-columns: 1fr; }
     @media screen and (min-width: 768px) {
       .parent-ctr .product-wrapper {
-        grid-template-columns: 50% 50%; } }
+        grid-template-columns: repeat(2, 1fr); } }
     @media screen and (min-width: 992px) {
       .parent-ctr .product-wrapper {
-        grid-template-columns: 25% 25%  25% 25%; } }
+        grid-template-columns: repeat(4, 1fr); } }
 
 /*------- MIXINS--------*/
 /*------- EXTEND CLASSES--------*/
@@ -1608,10 +1666,68 @@ body {
   font-weight: 700;
   letter-spacing: -1px; }
 
+/*------- MIXINS--------*/
+/*------- EXTEND CLASSES--------*/
+.text-center {
+  text-align: center; }
+
+.cursor-link {
+  cursor: pointer; }
+
+.float-left {
+  float: left; }
+
+.float-right, .category:nth-child(even) .category__img {
+  float: right; }
+
+.clear-all {
+  clear: both; }
+
+html {
+  font-size: 20px; }
+
+body {
+  background: white;
+  font-family: Dosis; }
+
+.row {
+  max-width: 1140px;
+  margin: 0 auto; }
+
+/*  SECTIONS  ============================================================================= */
+.section {
+  clear: both;
+  padding: 0px;
+  margin: 0px; }
+
+/*  GROUPING  ============================================================================= */
+.row {
+  zoom: 1;
+  /* For IE 6/7 (trigger hasLayout) */
+  max-width: 1140px;
+  margin: 0 auto; }
+
+.row:before,
+.row:after {
+  content: "";
+  display: table; }
+
+.row:after {
+  clear: both; }
+
+/*  GRID COLUMN SETUP   ==================================================================== */
+.col {
+  display: block;
+  float: left; }
+
+.col:first-child {
+  margin-left: 0; }
+
+/* all browsers except IE6 and lower */
 .basic-desc {
+  font-size: 0.7rem;
   font-weight: 600;
-  font-size: .7rem;
-  margin-top: 20px; }
+  margin: 20px 0px 0px 0px; }
 
 /*------- MIXINS--------*/
 /*------- EXTEND CLASSES--------*/
@@ -1742,8 +1858,8 @@ body {
 
 /* all browsers except IE6 and lower */
 .basic-label {
+  font-size: 0.7rem;
   font-weight: 600;
-  font-size: .7rem;
   color: #A9A9A9; }
 
 /*------- MIXINS--------*/

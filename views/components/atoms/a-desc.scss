@@ -1,5 +1,5 @@
+@import "../../../src/sass/base";
 .basic-desc{
-	font-weight: 600;
-	font-size: .7rem;
-	margin-top: 20px;
+	@include fontstyle(.7 600);
+	@include margin(20 0 0 0);
 }

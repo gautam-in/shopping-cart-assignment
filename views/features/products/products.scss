@@ -2,13 +2,13 @@
 @import "../../components/molecules/m-product";
 .parent-ctr{
 	display: grid;
-	grid-template-columns: 100%;
+	grid-template-columns: 1fr;
 	margin:auto;
 	background: color('primary');
 	max-width:1140px;
 	@media screen and (min-width: $tab) {
 		display: grid;
-		grid-template-columns: 20% 80%;
+		grid-template-columns: 1fr 4fr;
 	}
 	.category-wrapper{
 		.categories__list{
@@ -79,12 +79,12 @@
 	.product-wrapper{
 		background: color('white');
 		display: grid;
-		grid-template-columns: 100%;
+		grid-template-columns: 1fr;
 		@media screen and (min-width: $tab) {
-			grid-template-columns: 50% 50%;
+			grid-template-columns: repeat(2, 1fr);
 		}
 		@media screen and (min-width:$lap) {
-			grid-template-columns: 25% 25%  25% 25%;
+			grid-template-columns:  repeat(4, 1fr);
 		}
 	}
 }

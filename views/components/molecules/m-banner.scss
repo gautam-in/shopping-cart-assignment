@@ -15,12 +15,11 @@
 	}
 	&__desc{
 		@media screen and (min-width: $tab) {
-    		    position: absolute;
-	    		top: 50%;
-	    		width: 75%;
-	    		left: 25%;
-	    		transform: translateY(-50%);
-
+		    position: absolute;
+    		top: 50%;
+    		width: 75%;
+    		left: 25%;
+    		transform: translateY(-50%);
 	  	}
 	    .category__title{
 	    	@include fontstyle(.7 700);
@@ -28,7 +27,6 @@
 		      	@include fontstyle(1);
    			  }
 		}
-
 		.category__detail{
 			 @include fontstyle(.6);
 			 @include margin(5 0 0 0);

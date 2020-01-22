@@ -1,7 +1,5 @@
 @import "../../../src/sass/base";
-
 .basic-label{
-		font-weight: 600;
-    	font-size: .7rem;
-    	color:color('secondary');
-	}
+	@include fontstyle(.7 600);
+    color:color('secondary');
+}
