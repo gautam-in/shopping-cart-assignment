@@ -148,6 +148,8 @@
 				.offer__img{
 					@include padding(10);
 					background: color('white');
+					display:flex;
+					align-items: center;
 					img{
 					    height: 30px;
 					}

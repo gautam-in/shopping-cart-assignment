@@ -403,7 +403,9 @@ body {
         padding: 10px; }
         .cart-overlay .cart__wrapper .cart__offer .offer__img {
           padding: 10px;
-          background: #FFFFFF; }
+          background: #FFFFFF;
+          display: flex;
+          align-items: center; }
           .cart-overlay .cart__wrapper .cart__offer .offer__img img {
             height: 30px; }
           .cart-overlay .cart__wrapper .cart__offer .offer__img span {
