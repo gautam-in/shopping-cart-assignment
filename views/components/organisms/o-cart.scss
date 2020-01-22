@@ -34,12 +34,6 @@
 	       @media screen and (min-width:$lap) {
 	       		display:none;
 	       }
-	      .cart-header-box{
-	      	@include padding(5);
-	       	@media screen and (min-width:$tab) {
-	       		@include padding(10);
-	      	}
-	       }
 	    }
 
 		&__header{
@@ -135,14 +129,21 @@
 					}
 				}
 			}
-			.empty__heading{
-			    @include padding(20 0 0 0);
-			    @include fontstyle(.9 700);
+			.cart__empty{
+				position: absolute;
+			    top: 40%;
+			    left: 50%;
+			    transform: translate(-50%,-50%);
+				.empty__heading{
+				    @include padding(20 0 0 0);
+				    @include fontstyle(.9 700);
+				}
+				.empty__label {
+					@include padding(10 0 0 0);
+					@include fontstyle(.7 400);
+				}
 			}
-			.empty__label {
-				@include padding(10 0 0 0);
-				@include fontstyle(.7 400);
-			}
+
 			.cart__offer{
 				@include padding(10);
 				.offer__img{

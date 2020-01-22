@@ -203,7 +203,7 @@ function renderCart(itemsinCart){
                           <span>x</span>
                           <span>Rs.${itemsinCart[i].price}</span>
                       </div>
-                      <div class="col span-1-of-2 item__totalprice float-right" id="item-total-${item.id}">Rs.${itemsinCart[i].price*itemsinCart[i].qty}
+                      <div class="item__totalprice float-right" id="item-total-${item.id}">Rs.${itemsinCart[i].price*itemsinCart[i].qty}
                       </div>
                     </div>
                 </div>
@@ -215,8 +215,10 @@ function renderCart(itemsinCart){
        togglePriceDetails('none');
   }
   if(itemsinCart.length){
+    document.getElementsByClassName("item__wrapper")[0].classList.remove('cart__empty');
     document.getElementById("overlay").classList.remove('checkoutCart');
   }else {
+    document.getElementsByClassName("item__wrapper")[0].classList.add('cart__empty');
     document.getElementById("overlay").classList.add('checkoutCart');
   }
    document.getElementsByClassName("item__wrapper")[0].innerHTML =html;

@@ -7,7 +7,10 @@ header {
 		display: grid;
 		max-width: 1140px;
 		margin: auto;
-		grid-template-columns: 1fr 4fr;
+		grid-template-columns: 1fr 3fr;
+		@media screen and (min-width: $tab) {
+			grid-template-columns: 1fr 4fr;
+		}
 		&__logo {
 			@include padding(0 0 0 5);
 			@include margin(10 0);
@@ -91,7 +94,7 @@ header {
 			&--mob {
 				align-self: center;
     			justify-self: center;
-		    	@include padding(5);
+		    	@include padding(10 5 5 5);
 			    @include fontstyle(1);
 		    	width:25px;
 		    	border: none;

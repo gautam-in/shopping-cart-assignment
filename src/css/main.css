@@ -122,7 +122,10 @@ header {
     display: grid;
     max-width: 1140px;
     margin: auto;
-    grid-template-columns: 1fr 4fr; }
+    grid-template-columns: 1fr 3fr; }
+    @media screen and (min-width: 768px) {
+      header .nav {
+        grid-template-columns: 1fr 4fr; } }
     header .nav__logo {
       padding: 0px 0px 0px 5px;
       margin: 10px 0px;
@@ -189,7 +192,7 @@ header {
       header .nav__menu--mob {
         align-self: center;
         justify-self: center;
-        padding: 5px;
+        padding: 10px 5px 5px 5px;
         font-size: 1rem;
         width: 25px;
         border: none;
@@ -298,11 +301,6 @@ body {
       @media screen and (min-width: 992px) {
         .cart-overlay .cart .header {
           display: none; } }
-      .cart-overlay .cart .header .cart-header-box {
-        padding: 5px; }
-        @media screen and (min-width: 768px) {
-          .cart-overlay .cart .header .cart-header-box {
-            padding: 10px; } }
     .cart-overlay .cart__header {
       padding: 15px;
       margin: 20px 0px 0px 0px;
@@ -382,14 +380,19 @@ body {
             .cart-overlay .cart__wrapper .item__desc .price__wrapper .item__totalprice {
               text-align: right;
               padding-right: 20px; }
-      .cart-overlay .cart__wrapper .empty__heading {
-        padding: 20px 0px 0px 0px;
-        font-size: 0.9rem;
-        font-weight: 700; }
-      .cart-overlay .cart__wrapper .empty__label {
-        padding: 10px 0px 0px 0px;
-        font-size: 0.7rem;
-        font-weight: 400; }
+      .cart-overlay .cart__wrapper .cart__empty {
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%); }
+        .cart-overlay .cart__wrapper .cart__empty .empty__heading {
+          padding: 20px 0px 0px 0px;
+          font-size: 0.9rem;
+          font-weight: 700; }
+        .cart-overlay .cart__wrapper .cart__empty .empty__label {
+          padding: 10px 0px 0px 0px;
+          font-size: 0.7rem;
+          font-weight: 400; }
       .cart-overlay .cart__wrapper .cart__offer {
         padding: 10px; }
         .cart-overlay .cart__wrapper .cart__offer .offer__img {
