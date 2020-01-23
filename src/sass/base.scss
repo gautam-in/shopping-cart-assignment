@@ -2,14 +2,27 @@
 html{
 	font-size: 20px;
 }
+
 body {
 	background: white;
 	font-family: Dosis;
 }
+
+div, a, img, li, form, label, button, input[type=submit] {
+    &:focus {
+        border: 1px dashed color('tab') !important;
+    }
+}
+button, input[type=submit] {
+    &:focus,&:hover {
+        background-color: color('btnTab') !important;
+    }
+} 
+
 .row {
 	max-width:1140px;
 	margin:0 auto;
-
+	zoom: 1; /* For IE 6/7 (trigger hasLayout) */
 }
 
 
@@ -21,16 +34,10 @@ body {
 
 /*  GROUPING  ============================================================================= */
 
-.row {
-    zoom: 1; /* For IE 6/7 (trigger hasLayout) */
-    max-width:1140px;
-	margin:0 auto;
-}
-
 .row:before,
 .row:after {
     content:"";
-    display:block;
+    display:table;
 }
 .row:after {
     clear:both;

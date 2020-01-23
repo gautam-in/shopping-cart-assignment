@@ -25,10 +25,5 @@ gulp.task('clean', function () {
         .pipe(clean());
 });
 
-//Default task array
-//gulp.task('default', gulp.series('styles', 'clean','concatcss','watch'));
-
-
-
 gulp.task('default', gulp.series( 'clean','styles','watch'));
  
