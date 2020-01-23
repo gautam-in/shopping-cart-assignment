@@ -28,9 +28,7 @@ body {
 
 /*  SECTIONS  ============================================================================= */
 .section {
-  clear: both;
-  padding: 0px;
-  margin: 0px; }
+  clear: both; }
 
 /*  GROUPING  ============================================================================= */
 .row {
@@ -42,7 +40,7 @@ body {
 .row:before,
 .row:after {
   content: "";
-  display: table; }
+  display: block; }
 
 .row:after {
   clear: both; }
@@ -86,9 +84,7 @@ body {
 
 /*  SECTIONS  ============================================================================= */
 .section {
-  clear: both;
-  padding: 0px;
-  margin: 0px; }
+  clear: both; }
 
 /*  GROUPING  ============================================================================= */
 .row {
@@ -100,7 +96,7 @@ body {
 .row:before,
 .row:after {
   content: "";
-  display: table; }
+  display: block; }
 
 .row:after {
   clear: both; }
@@ -242,9 +238,7 @@ body {
 
 /*  SECTIONS  ============================================================================= */
 .section {
-  clear: both;
-  padding: 0px;
-  margin: 0px; }
+  clear: both; }
 
 /*  GROUPING  ============================================================================= */
 .row {
@@ -256,7 +250,7 @@ body {
 .row:before,
 .row:after {
   content: "";
-  display: table; }
+  display: block; }
 
 .row:after {
   clear: both; }
@@ -459,9 +453,7 @@ body {
 
 /*  SECTIONS  ============================================================================= */
 .section {
-  clear: both;
-  padding: 0px;
-  margin: 0px; }
+  clear: both; }
 
 /*  GROUPING  ============================================================================= */
 .row {
@@ -473,7 +465,7 @@ body {
 .row:before,
 .row:after {
   content: "";
-  display: table; }
+  display: block; }
 
 .row:after {
   clear: both; }
@@ -523,9 +515,7 @@ body {
 
 /*  SECTIONS  ============================================================================= */
 .section {
-  clear: both;
-  padding: 0px;
-  margin: 0px; }
+  clear: both; }
 
 /*  GROUPING  ============================================================================= */
 .row {
@@ -537,7 +527,7 @@ body {
 .row:before,
 .row:after {
   content: "";
-  display: table; }
+  display: block; }
 
 .row:after {
   clear: both; }
@@ -581,9 +571,7 @@ body {
 
 /*  SECTIONS  ============================================================================= */
 .section {
-  clear: both;
-  padding: 0px;
-  margin: 0px; }
+  clear: both; }
 
 /*  GROUPING  ============================================================================= */
 .row {
@@ -595,7 +583,7 @@ body {
 .row:before,
 .row:after {
   content: "";
-  display: table; }
+  display: block; }
 
 .row:after {
   clear: both; }
@@ -643,9 +631,7 @@ body {
 
 /*  SECTIONS  ============================================================================= */
 .section {
-  clear: both;
-  padding: 0px;
-  margin: 0px; }
+  clear: both; }
 
 /*  GROUPING  ============================================================================= */
 .row {
@@ -657,7 +643,7 @@ body {
 .row:before,
 .row:after {
   content: "";
-  display: table; }
+  display: block; }
 
 .row:after {
   clear: both; }
@@ -754,9 +740,7 @@ body {
 
 /*  SECTIONS  ============================================================================= */
 .section {
-  clear: both;
-  padding: 0px;
-  margin: 0px; }
+  clear: both; }
 
 /*  GROUPING  ============================================================================= */
 .row {
@@ -768,7 +752,7 @@ body {
 .row:before,
 .row:after {
   content: "";
-  display: table; }
+  display: block; }
 
 .row:after {
   clear: both; }
@@ -837,8 +821,8 @@ body {
     transform: translate(-50%, -50%); }
     @media screen and (min-width: 768px) {
       .carousal__nav {
-        top: 90%;
-        padding: 0px 0px 10px 0px; } }
+        padding: 0px 0px 10px 0px;
+        top: 90%; } }
     .carousal__nav .dot {
       height: 5px;
       width: 5px;
@@ -882,9 +866,7 @@ body {
 
 /*  SECTIONS  ============================================================================= */
 .section {
-  clear: both;
-  padding: 0px;
-  margin: 0px; }
+  clear: both; }
 
 /*  GROUPING  ============================================================================= */
 .row {
@@ -896,7 +878,7 @@ body {
 .row:before,
 .row:after {
   content: "";
-  display: table; }
+  display: block; }
 
 .row:after {
   clear: both; }
@@ -944,9 +926,7 @@ body {
 
 /*  SECTIONS  ============================================================================= */
 .section {
-  clear: both;
-  padding: 0px;
-  margin: 0px; }
+  clear: both; }
 
 /*  GROUPING  ============================================================================= */
 .row {
@@ -958,7 +938,7 @@ body {
 .row:before,
 .row:after {
   content: "";
-  display: table; }
+  display: block; }
 
 .row:after {
   clear: both; }
@@ -1007,9 +987,7 @@ body {
 
 /*  SECTIONS  ============================================================================= */
 .section {
-  clear: both;
-  padding: 0px;
-  margin: 0px; }
+  clear: both; }
 
 /*  GROUPING  ============================================================================= */
 .row {
@@ -1021,7 +999,7 @@ body {
 .row:before,
 .row:after {
   content: "";
-  display: table; }
+  display: block; }
 
 .row:after {
   clear: both; }
@@ -1045,7 +1023,8 @@ body {
     color: #5fc8d0;
     padding: 0px 0px 10px 0px; }
     .basic-input:focus + label {
-      color: #5fc8d0; }
+      color: #5fc8d0;
+      margin: 0px 0px 10px 0px; }
 
 /*------- MIXINS--------*/
 /*------- EXTEND CLASSES--------*/
@@ -1077,9 +1056,7 @@ body {
 
 /*  SECTIONS  ============================================================================= */
 .section {
-  clear: both;
-  padding: 0px;
-  margin: 0px; }
+  clear: both; }
 
 /*  GROUPING  ============================================================================= */
 .row {
@@ -1091,7 +1068,7 @@ body {
 .row:before,
 .row:after {
   content: "";
-  display: table; }
+  display: block; }
 
 .row:after {
   clear: both; }
@@ -1140,9 +1117,7 @@ body {
 
 /*  SECTIONS  ============================================================================= */
 .section {
-  clear: both;
-  padding: 0px;
-  margin: 0px; }
+  clear: both; }
 
 /*  GROUPING  ============================================================================= */
 .row {
@@ -1154,7 +1129,7 @@ body {
 .row:before,
 .row:after {
   content: "";
-  display: table; }
+  display: block; }
 
 .row:after {
   clear: both; }
@@ -1204,9 +1179,7 @@ body {
 
 /*  SECTIONS  ============================================================================= */
 .section {
-  clear: both;
-  padding: 0px;
-  margin: 0px; }
+  clear: both; }
 
 /*  GROUPING  ============================================================================= */
 .row {
@@ -1218,7 +1191,7 @@ body {
 .row:before,
 .row:after {
   content: "";
-  display: table; }
+  display: block; }
 
 .row:after {
   clear: both; }
@@ -1279,9 +1252,7 @@ body {
 
 /*  SECTIONS  ============================================================================= */
 .section {
-  clear: both;
-  padding: 0px;
-  margin: 0px; }
+  clear: both; }
 
 /*  GROUPING  ============================================================================= */
 .row {
@@ -1293,7 +1264,7 @@ body {
 .row:before,
 .row:after {
   content: "";
-  display: table; }
+  display: block; }
 
 .row:after {
   clear: both; }
@@ -1337,9 +1308,7 @@ body {
 
 /*  SECTIONS  ============================================================================= */
 .section {
-  clear: both;
-  padding: 0px;
-  margin: 0px; }
+  clear: both; }
 
 /*  GROUPING  ============================================================================= */
 .row {
@@ -1351,7 +1320,7 @@ body {
 .row:before,
 .row:after {
   content: "";
-  display: table; }
+  display: block; }
 
 .row:after {
   clear: both; }
@@ -1395,9 +1364,7 @@ body {
 
 /*  SECTIONS  ============================================================================= */
 .section {
-  clear: both;
-  padding: 0px;
-  margin: 0px; }
+  clear: both; }
 
 /*  GROUPING  ============================================================================= */
 .row {
@@ -1409,7 +1376,7 @@ body {
 .row:before,
 .row:after {
   content: "";
-  display: table; }
+  display: block; }
 
 .row:after {
   clear: both; }
@@ -1550,7 +1517,7 @@ body {
         display: block; } }
     .parent-ctr .category-wrapper .categories__list .category__item {
       padding: 10px 0px 10px 20px;
-      font-size: .9rem;
+      font-size: 0.9rem;
       border-bottom: solid 1px #A6A6A6; }
       .parent-ctr .category-wrapper .categories__list .category__item a {
         color: #A6A6A6; }
@@ -1578,11 +1545,11 @@ body {
       z-index: 1;
       width: 99%; }
       .parent-ctr .category-wrapper .categories__dropdown .dropdown-content a {
+        padding: 6px;
+        font-size: 0.6rem;
         float: none;
         background: #D10157;
         color: #FFFFFF;
-        padding: 6px;
-        font-size: .6rem;
         display: block;
         text-align: left; }
       .parent-ctr .category-wrapper .categories__dropdown .dropdown-content :hover {
@@ -1634,9 +1601,7 @@ body {
 
 /*  SECTIONS  ============================================================================= */
 .section {
-  clear: both;
-  padding: 0px;
-  margin: 0px; }
+  clear: both; }
 
 /*  GROUPING  ============================================================================= */
 .row {
@@ -1648,7 +1613,7 @@ body {
 .row:before,
 .row:after {
   content: "";
-  display: table; }
+  display: block; }
 
 .row:after {
   clear: both; }
@@ -1696,9 +1661,7 @@ body {
 
 /*  SECTIONS  ============================================================================= */
 .section {
-  clear: both;
-  padding: 0px;
-  margin: 0px; }
+  clear: both; }
 
 /*  GROUPING  ============================================================================= */
 .row {
@@ -1710,7 +1673,7 @@ body {
 .row:before,
 .row:after {
   content: "";
-  display: table; }
+  display: block; }
 
 .row:after {
   clear: both; }
@@ -1759,9 +1722,7 @@ body {
 
 /*  SECTIONS  ============================================================================= */
 .section {
-  clear: both;
-  padding: 0px;
-  margin: 0px; }
+  clear: both; }
 
 /*  GROUPING  ============================================================================= */
 .row {
@@ -1773,7 +1734,7 @@ body {
 .row:before,
 .row:after {
   content: "";
-  display: table; }
+  display: block; }
 
 .row:after {
   clear: both; }
@@ -1797,7 +1758,8 @@ body {
     color: #5fc8d0;
     padding: 0px 0px 10px 0px; }
     .basic-input:focus + label {
-      color: #5fc8d0; }
+      color: #5fc8d0;
+      margin: 0px 0px 10px 0px; }
 
 /*------- MIXINS--------*/
 /*------- EXTEND CLASSES--------*/
@@ -1829,9 +1791,7 @@ body {
 
 /*  SECTIONS  ============================================================================= */
 .section {
-  clear: both;
-  padding: 0px;
-  margin: 0px; }
+  clear: both; }
 
 /*  GROUPING  ============================================================================= */
 .row {
@@ -1843,7 +1803,7 @@ body {
 .row:before,
 .row:after {
   content: "";
-  display: table; }
+  display: block; }
 
 .row:after {
   clear: both; }
@@ -1892,9 +1852,7 @@ body {
 
 /*  SECTIONS  ============================================================================= */
 .section {
-  clear: both;
-  padding: 0px;
-  margin: 0px; }
+  clear: both; }
 
 /*  GROUPING  ============================================================================= */
 .row {
@@ -1906,7 +1864,7 @@ body {
 .row:before,
 .row:after {
   content: "";
-  display: table; }
+  display: block; }
 
 .row:after {
   clear: both; }
@@ -1956,9 +1914,7 @@ body {
 
 /*  SECTIONS  ============================================================================= */
 .section {
-  clear: both;
-  padding: 0px;
-  margin: 0px; }
+  clear: both; }
 
 /*  GROUPING  ============================================================================= */
 .row {
@@ -1970,7 +1926,7 @@ body {
 .row:before,
 .row:after {
   content: "";
-  display: table; }
+  display: block; }
 
 .row:after {
   clear: both; }

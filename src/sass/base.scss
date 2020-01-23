@@ -2,10 +2,8 @@
 html{
 	font-size: 20px;
 }
-
 body {
 	background: white;
-	
 	font-family: Dosis;
 }
 .row {
@@ -19,8 +17,6 @@ body {
 
 .section {
 	clear: both;
-	padding: 0px;
-	margin: 0px;
 }
 
 /*  GROUPING  ============================================================================= */
@@ -34,7 +30,7 @@ body {
 .row:before,
 .row:after {
     content:"";
-    display:table;
+    display:block;
 }
 .row:after {
     clear:both;

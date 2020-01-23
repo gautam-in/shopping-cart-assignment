@@ -54,8 +54,8 @@
     left: 50%;
     transform: translate(-50%,-50%);  
     @media screen and (min-width: $tab) {
-        top: 90%;  
         @include padding(0 0 10 0);
+        top: 90%;  
     }
     .dot {
       height: 5px;

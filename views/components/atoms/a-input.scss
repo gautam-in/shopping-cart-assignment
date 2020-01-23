@@ -7,9 +7,11 @@
     	outline: none;
 		border-bottom: solid 2px color('focus');
 		color:color('focus');
+
 		@include padding(0 0 10 0);
       	+label {
         	color: color('focus');
+            @include margin(0 0 10 0);
       	}
     }
 }
