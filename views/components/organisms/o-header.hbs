@@ -12,8 +12,8 @@
 					{{> atoms/a-link hypertext="Home" href="/"}}
 					{{> atoms/a-link hypertext="Products" class="products" href="/products"}}
 				</div>
-				<div class="cart-header-box">
-						<a href="" onclick="showCart();return false;" class="cart-link float-left">
+				<div class="cart__count">
+						<a href="" onclick="showCart();return false;" class="float-left">
 							{{> atoms/a-img imageUrl="/static/images/cart.svg" alt="Logo" class="cart-img"}}
 							<span class="cartNumber float-right">{{cartItems}} items</span>
 						</a>

@@ -56,7 +56,7 @@ header {
 						display: block;
 					}
 					.login{
-						margin-right: 5px;
+						@include margin(0 15 0 0);
 					}
 					
 			}
@@ -73,29 +73,30 @@ header {
 			       		display: block;
 			      	}
 			}
-			.cart-header-box{
-			   	@include padding(10);
+			.cart__count{
+			   	@include padding(5);
 			   	justify-self: end;
    				align-self: end;
 				background:  color('primary');
-				.cart-link{
+				@media screen and (min-width:$tab) {
+			       	@include padding(10);
+			    }
 					.cart-img {
-						height: 35px;
+						height: 25px;
 						width: auto;
 					}
 					span {
 						@include fontstyle(.7 600);
-						@include padding(10 0 0 0);
+						@include padding(7 5 5 5);
 						color:  color('nav');
 					}
-				}
 			
 			}
 			&--mob {
-				align-self: center;
+				align-self: end;
     			justify-self: center;
 		    	@include padding(10 5 5 5);
-			    @include fontstyle(1);
+			    @include fontstyle(1.5);
 		    	width:25px;
 		    	border: none;
 			    background: color('white');
