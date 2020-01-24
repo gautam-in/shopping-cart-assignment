@@ -12,10 +12,9 @@ header {
 			grid-template-columns: 1fr 4fr;
 		}
 		&__logo {
-			@include padding(0 0 0 5);
-			@include margin(10 0);
-			height:auto;
-			width:100%;
+			@include margin(5 0 5 5);
+			height:45px;
+			width:auto;
 			cursor: pointer;
 			@media screen and (min-width: $tab) {
 				@include padding(0);
@@ -45,6 +44,7 @@ header {
 				
 			}
 			.menu__item--main{
+				grid-area: 1 / 1 / span 1 / span 2;
 				justify-self: end;
 				@include padding(5 0 0 0);
 					@include fontstyle(.45);
@@ -74,10 +74,10 @@ header {
 			      	}
 			}
 			.cart__count{
-			   	@include padding(5);
 			   	justify-self: end;
-   				align-self: end;
 				background:  color('primary');
+				font-family: Dosis;
+				border: none;
 				@media screen and (min-width:$tab) {
 			       	@include padding(10);
 			    }
@@ -87,17 +87,17 @@ header {
 					}
 					span {
 						@include fontstyle(.7 600);
-						@include padding(7 5 5 5);
+						@include padding(5 15 5 10);
 						color:  color('nav');
 					}
 			
 			}
 			&--mob {
 				align-self: end;
-    			justify-self: center;
-		    	@include padding(10 5 5 5);
+    			justify-self: start;
+    			width: 100%;
+    			background: color('white') !important;
 			    @include fontstyle(1.5);
-		    	width:25px;
 		    	border: none;
 			    background: color('white');
 			    img{

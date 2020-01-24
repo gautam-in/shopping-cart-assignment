@@ -121,10 +121,9 @@ header {
       header .nav {
         grid-template-columns: 1fr 4fr; } }
     header .nav__logo {
-      padding: 0px 0px 0px 5px;
-      margin: 10px 0px;
-      height: auto;
-      width: 100%;
+      margin: 5px 0px 5px 5px;
+      height: 45px;
+      width: auto;
       cursor: pointer; }
       @media screen and (min-width: 768px) {
         header .nav__logo {
@@ -148,6 +147,7 @@ header {
         color: #646E72;
         font-weight: 600; }
       header .nav__menu .menu__item--main {
+        grid-area: 1 / 1 / span 1 / span 2;
         justify-self: end;
         padding: 5px 0px 0px 0px;
         font-size: 0.45rem;
@@ -171,10 +171,10 @@ header {
           header .nav__menu .menu__item--home {
             display: block; } }
       header .nav__menu .cart__count {
-        padding: 5px;
         justify-self: end;
-        align-self: end;
-        background: #eeeeee; }
+        background: #eeeeee;
+        font-family: Dosis;
+        border: none; }
         @media screen and (min-width: 768px) {
           header .nav__menu .cart__count {
             padding: 10px; } }
@@ -184,14 +184,14 @@ header {
         header .nav__menu .cart__count span {
           font-size: 0.7rem;
           font-weight: 600;
-          padding: 7px 5px 5px 5px;
+          padding: 5px 15px 5px 10px;
           color: #646E72; }
       header .nav__menu--mob {
         align-self: end;
-        justify-self: center;
-        padding: 10px 5px 5px 5px;
+        justify-self: start;
+        width: 100%;
+        background: #FFFFFF !important;
         font-size: 1.5rem;
-        width: 25px;
         border: none;
         background: #FFFFFF; }
         header .nav__menu--mob img {

@@ -1,9 +1,7 @@
 <header>
 		<nav class="nav">
-			<div>
-			{{> atoms/a-img class="nav__logo float-left" imageUrl="/static/images/logo.png" alt="Sab ka Bazar" onclick="movetoHome('/')"}}</div>
+		<a  href="/" tabindex=-1><img src="/static/images/logo.png" class="nav__logo alt="Sab ka Bazar"></a>
 			<div class="nav__menu">
-			<div class="menu_blank"></div>
 				<div class="menu__item menu__item--main">
 					{{> atoms/a-link hypertext="Sign In" class="login" href="/login"}}
 					{{> atoms/a-link hypertext="Register" href="/register"}}
@@ -12,18 +10,15 @@
 					{{> atoms/a-link hypertext="Home" href="/"}}
 					{{> atoms/a-link hypertext="Products" class="products" href="/products"}}
 				</div>
-				<div class="cart__count">
-						<a href="" onclick="showCart();return false;" class="float-left">
-							{{> atoms/a-img imageUrl="/static/images/cart.svg" alt="Logo" class="cart-img"}}
-							<span class="cartNumber float-right">{{cartItems}} items</span>
-						</a>
-				</div>
-				<a class="nav__menu--mob" onclick="toggleMenu()">
+				<button onclick="showCart()" class="cart__count">
+					{{> atoms/a-img imageUrl="/static/images/cart.svg" alt="Logo" class="cart-img"}}
+					<span class="cartNumber float-right">{{cartItems}} items</span>
+				</button>
+				<button class="nav__menu--mob" onclick="toggleMenu()">
 							<i class="fa fa-bars" aria-hidden="true"></i>
-				</a>
+				</button>
 			</div>
 		</nav>
-		
 		<ul class="row nav__list-mob">
 			<li>{{> atoms/a-link hypertext="Home" href="/"}}</li>
 			<li>{{> atoms/a-link hypertext="Products" href="/products"}}</li>
