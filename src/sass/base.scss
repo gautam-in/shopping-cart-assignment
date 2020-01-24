@@ -15,9 +15,14 @@ div, a, img, li, form, label, button, input[type=submit] {
 }
 button, input[type=submit] {
     &:focus,&:hover {
-        background-color: color('btnTab') !important;
+       // background-color: color('btnTab') !important;
     }
+
 } 
+button{
+	font-family: Dosis;
+	border: none;
+}
 
 .row {
 	max-width:1140px;

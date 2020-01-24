@@ -6,9 +6,9 @@
 		{{/each}}
 		<div class="carousal__nav">
 			{{#each banners  as |value key|}}
-				  <a class="dot cursor-link" onclick="carousel.currentSlide({{@index}});return false;" href=""></a> 
+				  <span class="dot cursor-link" onclick="carousel.currentSlide({{@index}});return false;" href=""></span> 
 			{{/each}}
 		</div>
-	<a class="btn btn__prev cursor-link" onclick="carousel.plusSlides(-1);return false;" href="">Prev</a>
-	<a class="btn btn__next cursor-link" onclick="carousel.plusSlides(1);return false;"  href="">Next</a>
+	<button class="btn btn__prev cursor-link" onclick="carousel.plusSlides(-1)" href="">Prev</button>
+	<button class="btn btn__next cursor-link" onclick="carousel.plusSlides(1);"  href="">Next</button>
 </div>

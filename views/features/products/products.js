@@ -203,8 +203,8 @@ function renderCart(itemsinCart){
                           <span>x</span>
                           <span>Rs.${itemsinCart[i].price}</span>
                       </div>
-                      <div class="item__totalprice float-right" id="item-total-${item.id}">Rs.${itemsinCart[i].price*itemsinCart[i].qty}
-                      </div>
+                      <span class="item__totalprice float-right" id="item-total-${item.id}">Rs.${itemsinCart[i].price*itemsinCart[i].qty}
+                      </span>
                     </div>
                 </div>
               </div>`;

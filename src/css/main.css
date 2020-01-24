@@ -22,8 +22,9 @@ body {
 div:focus, a:focus, img:focus, li:focus, form:focus, label:focus, button:focus, input[type=submit]:focus {
   border: 1px dashed #E67E22 !important; }
 
-button:focus, button:hover, input[type=submit]:focus, input[type=submit]:hover {
-  background-color: #960240 !important; }
+button {
+  font-family: Dosis;
+  border: none; }
 
 .row {
   max-width: 1140px;
@@ -77,8 +78,9 @@ body {
 div:focus, a:focus, img:focus, li:focus, form:focus, label:focus, button:focus, input[type=submit]:focus {
   border: 1px dashed #E67E22 !important; }
 
-button:focus, button:hover, input[type=submit]:focus, input[type=submit]:hover {
-  background-color: #960240 !important; }
+button {
+  font-family: Dosis;
+  border: none; }
 
 .row {
   max-width: 1140px;
@@ -233,8 +235,9 @@ body {
 div:focus, a:focus, img:focus, li:focus, form:focus, label:focus, button:focus, input[type=submit]:focus {
   border: 1px dashed #E67E22 !important; }
 
-button:focus, button:hover, input[type=submit]:focus, input[type=submit]:hover {
-  background-color: #960240 !important; }
+button {
+  font-family: Dosis;
+  border: none; }
 
 .row {
   max-width: 1140px;
@@ -358,7 +361,6 @@ button:focus, button:hover, input[type=submit]:focus, input[type=submit]:hover {
               border-radius: 10%;
               display: inline-block;
               text-align: center;
-              line-height: 20px;
               border: none;
               color: #FFFFFF; }
               @media screen and (min-width: 992px) {
@@ -447,8 +449,9 @@ body {
 div:focus, a:focus, img:focus, li:focus, form:focus, label:focus, button:focus, input[type=submit]:focus {
   border: 1px dashed #E67E22 !important; }
 
-button:focus, button:hover, input[type=submit]:focus, input[type=submit]:hover {
-  background-color: #960240 !important; }
+button {
+  font-family: Dosis;
+  border: none; }
 
 .row {
   max-width: 1140px;
@@ -508,8 +511,9 @@ body {
 div:focus, a:focus, img:focus, li:focus, form:focus, label:focus, button:focus, input[type=submit]:focus {
   border: 1px dashed #E67E22 !important; }
 
-button:focus, button:hover, input[type=submit]:focus, input[type=submit]:hover {
-  background-color: #960240 !important; }
+button {
+  font-family: Dosis;
+  border: none; }
 
 .row {
   max-width: 1140px;
@@ -563,8 +567,9 @@ body {
 div:focus, a:focus, img:focus, li:focus, form:focus, label:focus, button:focus, input[type=submit]:focus {
   border: 1px dashed #E67E22 !important; }
 
-button:focus, button:hover, input[type=submit]:focus, input[type=submit]:hover {
-  background-color: #960240 !important; }
+button {
+  font-family: Dosis;
+  border: none; }
 
 .row {
   max-width: 1140px;
@@ -622,8 +627,9 @@ body {
 div:focus, a:focus, img:focus, li:focus, form:focus, label:focus, button:focus, input[type=submit]:focus {
   border: 1px dashed #E67E22 !important; }
 
-button:focus, button:hover, input[type=submit]:focus, input[type=submit]:hover {
-  background-color: #960240 !important; }
+button {
+  font-family: Dosis;
+  border: none; }
 
 .row {
   max-width: 1140px;
@@ -730,8 +736,9 @@ body {
 div:focus, a:focus, img:focus, li:focus, form:focus, label:focus, button:focus, input[type=submit]:focus {
   border: 1px dashed #E67E22 !important; }
 
-button:focus, button:hover, input[type=submit]:focus, input[type=submit]:hover {
-  background-color: #960240 !important; }
+button {
+  font-family: Dosis;
+  border: none; }
 
 .row {
   max-width: 1140px;
@@ -784,7 +791,7 @@ button:focus, button:hover, input[type=submit]:focus, input[type=submit]:hover {
     transition: 0.6s ease;
     border-radius: 0 3px 3px 0;
     user-select: none;
-    opacity: .2;
+    opacity: .4;
     display: none; }
     @media screen and (min-width: 768px) {
       .carousal .btn {
@@ -855,8 +862,9 @@ body {
 div:focus, a:focus, img:focus, li:focus, form:focus, label:focus, button:focus, input[type=submit]:focus {
   border: 1px dashed #E67E22 !important; }
 
-button:focus, button:hover, input[type=submit]:focus, input[type=submit]:hover {
-  background-color: #960240 !important; }
+button {
+  font-family: Dosis;
+  border: none; }
 
 .row {
   max-width: 1140px;
@@ -914,8 +922,9 @@ body {
 div:focus, a:focus, img:focus, li:focus, form:focus, label:focus, button:focus, input[type=submit]:focus {
   border: 1px dashed #E67E22 !important; }
 
-button:focus, button:hover, input[type=submit]:focus, input[type=submit]:hover {
-  background-color: #960240 !important; }
+button {
+  font-family: Dosis;
+  border: none; }
 
 .row {
   max-width: 1140px;
@@ -974,8 +983,9 @@ body {
 div:focus, a:focus, img:focus, li:focus, form:focus, label:focus, button:focus, input[type=submit]:focus {
   border: 1px dashed #E67E22 !important; }
 
-button:focus, button:hover, input[type=submit]:focus, input[type=submit]:hover {
-  background-color: #960240 !important; }
+button {
+  font-family: Dosis;
+  border: none; }
 
 .row {
   max-width: 1140px;
@@ -1042,8 +1052,9 @@ body {
 div:focus, a:focus, img:focus, li:focus, form:focus, label:focus, button:focus, input[type=submit]:focus {
   border: 1px dashed #E67E22 !important; }
 
-button:focus, button:hover, input[type=submit]:focus, input[type=submit]:hover {
-  background-color: #960240 !important; }
+button {
+  font-family: Dosis;
+  border: none; }
 
 .row {
   max-width: 1140px;
@@ -1102,8 +1113,9 @@ body {
 div:focus, a:focus, img:focus, li:focus, form:focus, label:focus, button:focus, input[type=submit]:focus {
   border: 1px dashed #E67E22 !important; }
 
-button:focus, button:hover, input[type=submit]:focus, input[type=submit]:hover {
-  background-color: #960240 !important; }
+button {
+  font-family: Dosis;
+  border: none; }
 
 .row {
   max-width: 1140px;
@@ -1163,8 +1175,9 @@ body {
 div:focus, a:focus, img:focus, li:focus, form:focus, label:focus, button:focus, input[type=submit]:focus {
   border: 1px dashed #E67E22 !important; }
 
-button:focus, button:hover, input[type=submit]:focus, input[type=submit]:hover {
-  background-color: #960240 !important; }
+button {
+  font-family: Dosis;
+  border: none; }
 
 .row {
   max-width: 1140px;
@@ -1235,8 +1248,9 @@ body {
 div:focus, a:focus, img:focus, li:focus, form:focus, label:focus, button:focus, input[type=submit]:focus {
   border: 1px dashed #E67E22 !important; }
 
-button:focus, button:hover, input[type=submit]:focus, input[type=submit]:hover {
-  background-color: #960240 !important; }
+button {
+  font-family: Dosis;
+  border: none; }
 
 .row {
   max-width: 1140px;
@@ -1290,8 +1304,9 @@ body {
 div:focus, a:focus, img:focus, li:focus, form:focus, label:focus, button:focus, input[type=submit]:focus {
   border: 1px dashed #E67E22 !important; }
 
-button:focus, button:hover, input[type=submit]:focus, input[type=submit]:hover {
-  background-color: #960240 !important; }
+button {
+  font-family: Dosis;
+  border: none; }
 
 .row {
   max-width: 1140px;
@@ -1345,8 +1360,9 @@ body {
 div:focus, a:focus, img:focus, li:focus, form:focus, label:focus, button:focus, input[type=submit]:focus {
   border: 1px dashed #E67E22 !important; }
 
-button:focus, button:hover, input[type=submit]:focus, input[type=submit]:hover {
-  background-color: #960240 !important; }
+button {
+  font-family: Dosis;
+  border: none; }
 
 .row {
   max-width: 1140px;
@@ -1530,7 +1546,7 @@ button:focus, button:hover, input[type=submit]:focus, input[type=submit]:hover {
       box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
       z-index: 1;
       width: 99%; }
-      .parent-ctr .category-wrapper .categories__dropdown .dropdown-content a {
+      .parent-ctr .category-wrapper .categories__dropdown .dropdown-content span {
         padding: 6px;
         font-size: 0.6rem;
         float: none;
@@ -1581,8 +1597,9 @@ body {
 div:focus, a:focus, img:focus, li:focus, form:focus, label:focus, button:focus, input[type=submit]:focus {
   border: 1px dashed #E67E22 !important; }
 
-button:focus, button:hover, input[type=submit]:focus, input[type=submit]:hover {
-  background-color: #960240 !important; }
+button {
+  font-family: Dosis;
+  border: none; }
 
 .row {
   max-width: 1140px;
@@ -1640,8 +1657,9 @@ body {
 div:focus, a:focus, img:focus, li:focus, form:focus, label:focus, button:focus, input[type=submit]:focus {
   border: 1px dashed #E67E22 !important; }
 
-button:focus, button:hover, input[type=submit]:focus, input[type=submit]:hover {
-  background-color: #960240 !important; }
+button {
+  font-family: Dosis;
+  border: none; }
 
 .row {
   max-width: 1140px;
@@ -1700,8 +1718,9 @@ body {
 div:focus, a:focus, img:focus, li:focus, form:focus, label:focus, button:focus, input[type=submit]:focus {
   border: 1px dashed #E67E22 !important; }
 
-button:focus, button:hover, input[type=submit]:focus, input[type=submit]:hover {
-  background-color: #960240 !important; }
+button {
+  font-family: Dosis;
+  border: none; }
 
 .row {
   max-width: 1140px;
@@ -1768,8 +1787,9 @@ body {
 div:focus, a:focus, img:focus, li:focus, form:focus, label:focus, button:focus, input[type=submit]:focus {
   border: 1px dashed #E67E22 !important; }
 
-button:focus, button:hover, input[type=submit]:focus, input[type=submit]:hover {
-  background-color: #960240 !important; }
+button {
+  font-family: Dosis;
+  border: none; }
 
 .row {
   max-width: 1140px;
@@ -1828,8 +1848,9 @@ body {
 div:focus, a:focus, img:focus, li:focus, form:focus, label:focus, button:focus, input[type=submit]:focus {
   border: 1px dashed #E67E22 !important; }
 
-button:focus, button:hover, input[type=submit]:focus, input[type=submit]:hover {
-  background-color: #960240 !important; }
+button {
+  font-family: Dosis;
+  border: none; }
 
 .row {
   max-width: 1140px;
@@ -1889,8 +1910,9 @@ body {
 div:focus, a:focus, img:focus, li:focus, form:focus, label:focus, button:focus, input[type=submit]:focus {
   border: 1px dashed #E67E22 !important; }
 
-button:focus, button:hover, input[type=submit]:focus, input[type=submit]:hover {
-  background-color: #960240 !important; }
+button {
+  font-family: Dosis;
+  border: none; }
 
 .row {
   max-width: 1140px;
