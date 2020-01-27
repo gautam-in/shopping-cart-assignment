@@ -14,7 +14,7 @@ document.addEventListener('click', function (event) {
   } else if(event.target.classList.contains('category__link')){
       event.preventDefault();
       selectCategory(event.target.id);
-    }else if(event.target.classList.contains('nav__menu--mob')){
+    }else if(event.target.closest('.nav__menu--mob')){
        toggleMenu();
     } else {
       return false;
