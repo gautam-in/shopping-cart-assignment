@@ -4,8 +4,8 @@
 	 <div class="header">
 	 	{{>organisms/o-header}}
 	 </div>
- 	<div class="cart__header"><span class="cart-head-count">My Cart(0 item)</span>
- 	<button class="close float-right" id="close" onclick="closeCart()">x</button></div>
+ 	<div class="cart__header"><span class="cart-head-count">My Cart (0 item)</span>
+ 	<button class="close float-right"  data-slide-type="prev" id="close"  data-cart-action="close">x</button></div>
  	<div class="cart__wrapper">
 	 	<div class="item__wrapper">
 	 	</div>
@@ -16,9 +16,9 @@
  	<div class="cart__footer">
  		 <p class="promo">Promo code can be applied on
             payment page</p>
-            <button class="checkout-btn checkout" id="checkout" onclick="closeCart()"><span class="float-left" >Proceed to Checkout </span>
+            <button class="checkout-btn checkout" id="checkout" data-cart-action="close"><span class="float-left" >Proceed to Checkout </span>
             <span id="totalprice" class="float-right"></span></button>
-            <button class="checkout-btn shopping" id="shopping" onclick="closeCart()" autofocus>Start shopping</div>
+            <button class="checkout-btn shopping" id="shopping" data-cart-action="close" autofocus>Start shopping</div>
  	</div>
   </div>
  </div>

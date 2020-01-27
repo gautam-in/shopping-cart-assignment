@@ -2,8 +2,8 @@
     <div class="category-wrapper">
    			<ul class="categories__list">
 				{{#each categories}}
-				<li class="category__item cursor-link {{this.id}}" onclick="selectCategory('{{this.id}}')">
-				   	<a href=""  onclick="return false;">{{this.name}}</a>
+				<li class="category__item {{this.id}}">
+				   	<a href="" id="{{this.id}}" class="category__link">{{this.name}}</a>
 				</li>	
 				{{/each}}
 			</ul>
@@ -12,10 +12,11 @@
 		    		<button class="dropbtn">Select Categories 
 				      <i class="fa fa-caret-down"></i>
 				    </button>
-				    <div class="dropdown-content">
+				    <ul class="dropdown-content">
 				    {{#each categories}}
-				     <span onclick="selectCategory('{{this.id}}')">{{this.name}}</span>
+				     <li onclick="selectCategory('{{this.id}}')">{{this.name}}</li>
 					{{/each}}
+					</ul>
 			    </div>
 			  </div> 
 			</div>

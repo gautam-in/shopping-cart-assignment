@@ -2,6 +2,24 @@ let itemCount =0;
 let itemList = [];
 let itemsinCart =[];
 let cartUpdated;
+document.addEventListener('click', function (event) {
+
+ if(event.target.closest('[data-cart-action]')){
+     let val = event.target.closest('[data-cart-action]').getAttribute('data-cart-action');
+      if(val === 'show'){
+        showCart();
+      } else if(val === 'close') {
+        closeCart();
+      }
+  } else if(event.target.classList.contains('category__link')){
+      event.preventDefault();
+      selectCategory(event.target.id);
+    }else if(event.target.classList.contains('nav__menu--mob')){
+       toggleMenu();
+    } else {
+      return false;
+    }
+}, false);
 
 function selectCategory(id){
   categoryId = id;
@@ -11,7 +29,6 @@ function selectCategory(id){
   let obj = {'prevId':prevId,'currentId':categoryId};
   localStorage.setItem('categorySelected',JSON.stringify(obj));
   window.location.href = diffUrl? `/products/${id}`:'/products';
-
 }
 
 let shoppingCart = (function(){
@@ -196,7 +213,7 @@ function renderCart(itemsinCart){
                 <div class="col span-6-of-7 item__desc">
                   <h3 class="item__label"> ${itemsinCart[i].name}</h3>
                     <div class="row price__wrapper">
-                      <div class="col span 1-of-2 qty-ctr paddingTop10">
+                      <div class="col span 1-of-2 qty-ctr">
                           <button class="btn id-${item.id}" id=${item.id}  onclick="update(event.target,false)">-</button>
                           <span  id="item-price-${item.id}">${itemsinCart[i].qty}</span>
                           <button class="btn id-${item.id}" onclick="update(event.target,true)">+</button>
