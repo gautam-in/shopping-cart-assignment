@@ -4,7 +4,7 @@ let rgularExp = {
 }
 let password;
 
-function checkRegPass(textbox) {
+function checkRegPassword(textbox) {
 
 	const val = textbox.value;
 	let apha= rgularExp.containsNumber.test(val);

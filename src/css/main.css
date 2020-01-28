@@ -424,7 +424,7 @@ button {
         color: #FFFFFF;
         width: 100%;
         border: none; }
-  .cart-overlay .checkoutCart {
+  .cart-overlay .checkout-cart {
     background: #FFFFFF; }
 
 /*------- MIXINS--------*/
@@ -819,7 +819,8 @@ button {
     position: absolute;
     top: 110%;
     left: 50%;
-    transform: translate(-50%, -50%); }
+    transform: translate(-50%, -50%);
+    z-index: 10; }
     @media screen and (min-width: 768px) {
       .carousal__nav {
         padding: 0px 0px 10px 0px;
@@ -1412,11 +1413,11 @@ button {
     height: 80%;
     top: 10%; }
   .product__name {
-    grid-column-start: 1;
-    grid-column-end: 3;
     padding: 5px;
     font-size: 0.7rem;
     font-weight: 700;
+    grid-column-start: 1;
+    grid-column-end: 3;
     height: 50px; }
   @media screen and (min-width: 992px) {
     .product__img {
@@ -1501,34 +1502,34 @@ button {
       padding: 5px;
       width: 100%; }
 
-.parent-ctr {
+.parent-wrapper {
   display: grid;
   grid-template-columns: 1fr;
   margin: auto;
   background: #eeeeee;
   max-width: 1140px; }
   @media screen and (min-width: 768px) {
-    .parent-ctr {
+    .parent-wrapper {
       display: grid;
       grid-template-columns: 1fr 4fr; } }
-  .parent-ctr .category-wrapper .categories__list {
+  .parent-wrapper .category-wrapper .categories__list {
     display: none; }
     @media screen and (min-width: 767px) {
-      .parent-ctr .category-wrapper .categories__list {
+      .parent-wrapper .category-wrapper .categories__list {
         display: block; } }
-    .parent-ctr .category-wrapper .categories__list .category__item {
+    .parent-wrapper .category-wrapper .categories__list .category__item {
       padding: 10px 0px 10px 20px;
       font-size: 0.9rem;
       border-bottom: solid 1px #A6A6A6; }
-      .parent-ctr .category-wrapper .categories__list .category__item a {
+      .parent-wrapper .category-wrapper .categories__list .category__item a {
         color: #A6A6A6; }
-    .parent-ctr .category-wrapper .categories__list .highlight {
+    .parent-wrapper .category-wrapper .categories__list .highlight {
       background: #A9A9A9; }
-      .parent-ctr .category-wrapper .categories__list .highlight a {
+      .parent-wrapper .category-wrapper .categories__list .highlight a {
         color: #FFFFFF; }
-  .parent-ctr .category-wrapper .categories__dropdown {
+  .parent-wrapper .category-wrapper .categories__dropdown {
     padding: 5px; }
-    .parent-ctr .category-wrapper .categories__dropdown .dropdown .dropbtn {
+    .parent-wrapper .category-wrapper .categories__dropdown .dropdown .dropbtn {
       border: none;
       outline: none;
       padding: 14px 16px;
@@ -1537,7 +1538,7 @@ button {
       width: 100%;
       background: #D10157;
       color: #FFFFFF; }
-    .parent-ctr .category-wrapper .categories__dropdown .dropdown-content {
+    .parent-wrapper .category-wrapper .categories__dropdown .dropdown-content {
       display: none;
       position: absolute;
       background-color: #f9f9f9;
@@ -1545,7 +1546,7 @@ button {
       box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
       z-index: 1;
       width: 99%; }
-      .parent-ctr .category-wrapper .categories__dropdown .dropdown-content li {
+      .parent-wrapper .category-wrapper .categories__dropdown .dropdown-content li {
         padding: 6px;
         font-size: 0.6rem;
         float: none;
@@ -1553,23 +1554,23 @@ button {
         color: #FFFFFF;
         display: block;
         text-align: left; }
-      .parent-ctr .category-wrapper .categories__dropdown .dropdown-content :hover {
+      .parent-wrapper .category-wrapper .categories__dropdown .dropdown-content :hover {
         background: #eeeeee;
         color: #000000; }
-    .parent-ctr .category-wrapper .categories__dropdown .dropdown:hover .dropdown-content {
+    .parent-wrapper .category-wrapper .categories__dropdown .dropdown:hover .dropdown-content {
       display: block; }
     @media screen and (min-width: 768px) {
-      .parent-ctr .category-wrapper .categories__dropdown {
+      .parent-wrapper .category-wrapper .categories__dropdown {
         display: none; } }
-  .parent-ctr .product-wrapper {
+  .parent-wrapper .product-wrapper {
     background: #FFFFFF;
     display: grid;
     grid-template-columns: 1fr; }
     @media screen and (min-width: 768px) {
-      .parent-ctr .product-wrapper {
+      .parent-wrapper .product-wrapper {
         grid-template-columns: repeat(2, 1fr); } }
     @media screen and (min-width: 992px) {
-      .parent-ctr .product-wrapper {
+      .parent-wrapper .product-wrapper {
         grid-template-columns: repeat(4, 1fr); } }
 
 /*------- MIXINS--------*/

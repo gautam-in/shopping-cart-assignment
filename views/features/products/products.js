@@ -244,10 +244,10 @@ function renderCart(itemsinCart){
   }
   if(itemsinCart.length){
     document.getElementsByClassName("item__wrapper")[0].classList.remove('cart__empty');
-    document.getElementById("overlay").classList.remove('checkoutCart');
+    document.getElementById("overlay").classList.remove('checkout-cart');
   }else {
     document.getElementsByClassName("item__wrapper")[0].classList.add('cart__empty');
-    document.getElementById("overlay").classList.add('checkoutCart');
+    document.getElementById("overlay").classList.add('checkout-cart');
   }
    document.getElementsByClassName("item__wrapper")[0].innerHTML =html;
    

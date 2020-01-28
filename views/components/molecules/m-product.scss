@@ -17,10 +17,10 @@
 		}
 
 		&__name {
-			grid-column-start: 1;
-  			grid-column-end: 3;
 			@include padding(5);
 			@include fontstyle(.7 700);
+			grid-column-start: 1;
+  			grid-column-end: 3;
 			height: 50px;
 		}
 		&__img{
