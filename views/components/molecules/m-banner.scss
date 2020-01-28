@@ -29,12 +29,8 @@
 		}
 		.category__detail{
 			 @include fontstyle(.6);
-			 @include margin(5 0 0 0);
+			 @include margin(10 0 0 0);
 			 @include padding(0 5);
-			  @media screen and (min-width: $tab) {
-    			 @include margin(10 0 0 0);
-    			 
-   			  }
 			 @media screen and (min-width: $lap) {
 			 	@include fontstyle(.8);
 

@@ -355,9 +355,9 @@ button {
             font-size: 0.7rem;
             font-weight: 600; }
             .cart-overlay .cart__wrapper .item__desc .price__wrapper .btn {
-              padding: 0px;
-              width: 20px;
-              height: 20px;
+              padding: 0px 0px 4px 0px;
+              width: 22px;
+              height: 22px;
               background-color: #D10157;
               border-radius: 10%;
               display: inline-block;
@@ -690,11 +690,8 @@ button {
         font-size: 1rem; } }
   .category__desc .category__detail {
     font-size: 0.6rem;
-    margin: 5px 0px 0px 0px;
+    margin: 10px 0px 0px 0px;
     padding: 0px 5px; }
-    @media screen and (min-width: 768px) {
-      .category__desc .category__detail {
-        margin: 10px 0px 0px 0px; } }
     @media screen and (min-width: 992px) {
       .category__desc .category__detail {
         font-size: 0.8rem; } }
