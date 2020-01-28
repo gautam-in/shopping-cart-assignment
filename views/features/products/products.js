@@ -10,15 +10,25 @@ document.addEventListener('click', function (event) {
         showCart();
       } else if(val === 'close') {
         closeCart();
-      }
+      } else if(val === 'update') {
+        let qty = event.target.getAttribute('data-cart-qty');
+        if(qty === 'dec'){
+          update(event.target,false);
+        } else if(qty === 'inc'){
+           update(event.target,true);
+        }
+      } 
   } else if(event.target.classList.contains('category__link')){
       event.preventDefault();
-      selectCategory(event.target.id);
-    }else if(event.target.closest('.nav__menu--mob')){
+      selectCategory(event.target.getAttribute('data-category-id'));
+  }else if(event.target.closest('.nav__menu--mob')){
        toggleMenu();
-    } else {
+  } else if(event.target.classList.contains('buy-btn')){
+      let id = event.target.getAttribute('data-citem-id');
+      buy(id);
+  } else {
       return false;
-    }
+  }
 }, false);
 
 function selectCategory(id){
@@ -214,9 +224,10 @@ function renderCart(itemsinCart){
                   <h3 class="item__label"> ${itemsinCart[i].name}</h3>
                     <div class="row price__wrapper">
                       <div class="col span 1-of-2 qty-ctr">
-                          <button class="btn id-${item.id}" id=${item.id}  onclick="update(event.target,false)">-</button>
+                          <button class="btn id-${item.id}" id=${item.id} data-cart-action="update" data-cart-qty="dec"
+                          >-</button>
                           <span  id="item-price-${item.id}">${itemsinCart[i].qty}</span>
-                          <button class="btn id-${item.id}" onclick="update(event.target,true)">+</button>
+                          <button class="btn id-${item.id}" data-cart-action="update" data-cart-qty="inc">+</button>
                           <span>x</span>
                           <span>Rs.${itemsinCart[i].price}</span>
                       </div>

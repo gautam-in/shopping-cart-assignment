@@ -9,11 +9,11 @@
 		<div class="price__wrapper">
 			<p class="price lg-screen float-left">MRP{{this.price}}</p>
 			<div class="btn__wrapper float-left">
-			 {{> atoms/a-button tabindex="0" class="sm-screen buy-btn"  click =(concat 'buy( "' this.id '")')  btntext=(concat 'Buy now @ MRP' this.price) }}
-			  {{> atoms/a-button tabindex="0" class="lg-screen buy-btn" click =(concat 'buy( "' this.id '")') btntext="Buy now" }}
+			 {{> atoms/a-button tabindex="0" class="sm-screen buy-btn"  key="citem-id" value =this.id  btntext=(concat 'Buy now @ MRP' this.price) }}
+			  {{> atoms/a-button tabindex="0" class="lg-screen buy-btn" key="citem-id" value =this.id btntext="Buy now" }}
 			</div>
 		</div>
 	</div>
-	<div class="btn__pad"> {{> atoms/a-button class="buy-btn"  click =(concat 'buy( "' this.id '")') btntext=(concat 'Buy now @ MRP' this.price) }}
+	<div class="btn__pad"> {{> atoms/a-button class="buy-btn" key="citem-id" value =this.id btntext=(concat 'Buy now @ MRP' this.price) }}
 	</div>
 </div>

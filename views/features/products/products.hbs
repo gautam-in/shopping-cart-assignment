@@ -3,7 +3,7 @@
    			<ul class="categories__list">
 				{{#each categories}}
 				<li class="category__item {{this.id}}">
-				   	<a href="" id="{{this.id}}" class="category__link">{{this.name}}</a>
+				   	<a href="" data-category-id="{{this.id}}" class="category__link">{{this.name}}</a>
 				</li>	
 				{{/each}}
 			</ul>
@@ -14,7 +14,7 @@
 				    </button>
 				    <ul class="dropdown-content">
 				    {{#each categories}}
-				     <li onclick="selectCategory('{{this.id}}')">{{this.name}}</li>
+				     <li data-category-id="{{this.id}}" class="category__link">{{this.name}}</li>
 					{{/each}}
 					</ul>
 			    </div>
