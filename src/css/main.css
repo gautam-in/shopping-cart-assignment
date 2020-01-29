@@ -88,9 +88,7 @@ button {
 
 .btn-basic {
   background: #D10157;
-  color: #FFFFFF;
-  cursor: pointer;
-  border: none; }
+  color: #FFFFFF; }
 
 .category {
   padding: 30px 0px;
@@ -183,8 +181,7 @@ button {
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 5;
     background: #eeeeee;
-    line-height: 1.5;
-    overflow: hidden; }
+    line-height: 1.5; }
     @media screen and (min-width: 768px) {
       .product__desc .desc {
         overflow: hidden;
@@ -329,8 +326,7 @@ header {
         width: 100%;
         background: #FFFFFF !important;
         font-size: 1.5rem;
-        border: none;
-        background: #FFFFFF; }
+        border: none; }
         header .nav__menu--mob img {
           width: 25px; }
         @media screen and (min-width: 768px) {
@@ -501,7 +497,7 @@ header {
             font-size: 0.7rem;
             font-weight: 600; }
             .cart-overlay .cart__wrapper .item__desc .price__wrapper .btn {
-              padding: 0px 0px 4px 0px;
+              padding: 0px;
               width: 22px;
               height: 22px;
               background-color: #D10157;
@@ -617,7 +613,6 @@ header {
   .parent-wrapper .category-wrapper .categories__dropdown {
     padding: 5px; }
     .parent-wrapper .category-wrapper .categories__dropdown .dropdown .dropbtn {
-      border: none;
       outline: none;
       padding: 14px 16px;
       font-family: inherit;

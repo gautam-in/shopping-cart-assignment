@@ -33,7 +33,6 @@
 		.categories__dropdown{
 			@include padding(5);
 			.dropdown .dropbtn {
-				  border: none;
 				  outline: none;
 				  @include padding(14 16);
 				  font-family: inherit;

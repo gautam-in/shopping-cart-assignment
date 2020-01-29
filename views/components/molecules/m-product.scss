@@ -43,7 +43,6 @@
 					@include text-clamp(5);
 					background: color('primary');
 					line-height: 1.5;
-					overflow: hidden;
 					@media screen and (min-width:$tab) {
 						@include text-clamp(8);
 						height: 150px;

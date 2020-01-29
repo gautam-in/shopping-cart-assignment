@@ -95,7 +95,7 @@
 						@include padding(10 0 0 0);
 						@include fontstyle(.7 600);
 						.btn {
-							@include padding(0 0 4 0);
+							@include padding(0);
 							width: 22px;
 							height: 22px;
 						    background-color:color('btn');
