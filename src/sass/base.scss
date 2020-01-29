@@ -1,27 +1,21 @@
 @import "helperClasses.scss";
 html{
 	font-size: 20px;
+	background: color('white');
+	font-family: 'Dosis','Arial', 'sans-serif';
 }
 
-body {
-	background: white;
-	font-family: Dosis;
+* {
+	box-sizing: border-box;
 }
-
 div, a, img, li, form, label, button, input[type=submit] {
     &:focus {
         border: 1px dashed color('tab') !important;
     }
 }
-button, input[type=submit] {
-    &:focus,&:hover {
-       // background-color: color('btnTab') !important;
-    }
-
-} 
 button{
-	font-family: Dosis;
 	border: none;
+	cursor: pointer;
 }
 
 .row {

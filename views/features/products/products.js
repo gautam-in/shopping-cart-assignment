@@ -223,7 +223,7 @@ function renderCart(itemsinCart){
                 <div class="col span-6-of-7 item__desc">
                   <h3 class="item__label"> ${itemsinCart[i].name}</h3>
                     <div class="row price__wrapper">
-                      <div class="col span 1-of-2 qty-ctr">
+                      <div class="col span-1-of-2 qty-ctr">
                           <button class="btn id-${item.id}" id=${item.id} data-cart-action="update" data-cart-qty="dec"
                           >-</button>
                           <span  id="item-price-${item.id}">${itemsinCart[i].qty}</span>

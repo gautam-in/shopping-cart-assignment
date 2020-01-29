@@ -1,8 +1,3 @@
-@import "../../../src/sass/base";
-@import "../../components/atoms/a-header";
-@import "../../components/atoms/a-desc";
-@import "../../components/molecules/m-forminput";
-@import "../../components/atoms/a-button";
 .register-section{
 	@include padding(0 0 20 0);
 	.register-text {
