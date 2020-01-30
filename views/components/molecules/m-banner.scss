@@ -3,13 +3,6 @@
   box-shadow: 0 14px 6px -7px #eeeeee;
   min-height: 150px;
   position: relative;
-	&__img{
-	  @media screen and (min-width: $tab) {
-	  	> img{
-		 height:auto;
-		}
-      }
-	}
 	&__desc{
 		@media screen and (min-width: $tab) {
 		    position: absolute;

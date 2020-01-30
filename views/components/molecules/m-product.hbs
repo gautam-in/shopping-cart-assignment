@@ -7,11 +7,9 @@
 	<div class="product__desc">
 		<p class="desc">{{this.description}}</p>
 		<div class="price__wrapper">
-			<p class="price lg-screen float-left">MRP{{this.price}}</p>
-			<div class="btn__wrapper float-left">
+			<p class="price lg-screen">MRP{{this.price}}</p>
 			 {{> atoms/a-button tabindex="0" class="sm-screen buy-btn"  key="citem-id" value =this.id  btntext=(concat 'Buy now @ MRP' this.price) }}
 			  {{> atoms/a-button tabindex="0" class="lg-screen buy-btn" key="citem-id" value =this.id btntext="Buy now" }}
-			</div>
 		</div>
 	</div>
 	<div class="btn__pad"> {{> atoms/a-button class="buy-btn" key="citem-id" value =this.id btntext=(concat 'Buy now @ MRP' this.price) }}

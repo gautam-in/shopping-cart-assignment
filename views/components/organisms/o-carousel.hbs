@@ -1,7 +1,7 @@
 <div class="carousal row">
 		{{#each banners as |value key|}}
 			<div class="carousal__img carousal__img--fade">
-			 {{> atoms/a-img imageUrl=value.bannerImageUrl }}
+			 {{> atoms/a-img imageUrl=value.bannerImageUrl alt="Banner"}}
 			</div>
 		{{/each}}
 		<div class="carousal__nav">

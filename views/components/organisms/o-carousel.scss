@@ -1,6 +1,5 @@
 .carousal {
   position: relative;
-  margin: auto;
   box-shadow: 0 14px 6px -7px #eeeeee;
   .btn {
     @include padding(16);
@@ -24,7 +23,6 @@
   /* Position the "next button" to the right */
   .btn__next {
     right: 0;
-    border-radius: 3px 0 0 3px;
   }
 
 

@@ -52,50 +52,42 @@
 				
 				.price__wrapper{
 					@include padding(10 0 0 0);
-					display: block;
+					display: grid;
+    				grid-template-columns:1fr;
 					@media screen and (min-width:$tab) {
 						display: none;
-
 					}
 					@media screen and (min-width:$lap) {
-						width:100%;
-						display: block;
+						grid-template-columns: repeat(2, 1fr);
+						display: grid;
 					}
 					.price{
 						@include padding(5);
 						@include fontstyle(.7);
-						width:50%;
 						display: none;
 						@media screen and (min-width:$lap) {
 							display: block;
 						}
 							
 					}
-					.btn__wrapper{
-						width:100%;
+					.lg-screen{
+						display:none; 
 						@media screen and (min-width:$lap) {
-							width:50%;
-						}
-						.lg-screen{
-							display:none; 
-							@media screen and (min-width:$lap) {
-									display: block;
-							}
-						}
-						.sm-screen{
-							width:100%; 
-							@include margin(10 0 0 0);
-							display:block; 
-							@media screen and (min-width:$lap) {
-								display: none;
-							}
-						}
-						.buy-btn{
-							@include padding(10);
-							@include fontstyle(.7);
+								display: block;
 						}
 					}
-
+					.sm-screen{
+						width:100%; 
+						@include margin(10 0 0 0);
+						display:block; 
+						@media screen and (min-width:$lap) {
+							display: none;
+						}
+					}
+					.buy-btn{
+						@include padding(10);
+						@include fontstyle(.7);
+					}
 				}
 
 		}
@@ -111,7 +103,7 @@
 				display: none;
 			}
 			.buy-btn{
-				@include padding(5);
+				@include padding(10);
 				width:100%;
 			}
 		}

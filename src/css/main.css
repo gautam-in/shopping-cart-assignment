@@ -96,9 +96,6 @@ button {
   min-height: 150px;
   position: relative; }
   @media screen and (min-width: 768px) {
-    .category__img > img {
-      height: auto; } }
-  @media screen and (min-width: 768px) {
     .category__desc {
       position: absolute;
       top: 50%;
@@ -192,42 +189,37 @@ button {
         line-height: 1.3; } }
   .product__desc .price__wrapper {
     padding: 10px 0px 0px 0px;
-    display: block; }
+    display: grid;
+    grid-template-columns: 1fr; }
     @media screen and (min-width: 768px) {
       .product__desc .price__wrapper {
         display: none; } }
     @media screen and (min-width: 992px) {
       .product__desc .price__wrapper {
-        width: 100%;
-        display: block; } }
+        grid-template-columns: repeat(2, 1fr);
+        display: grid; } }
     .product__desc .price__wrapper .price {
       padding: 5px;
       font-size: 0.7rem;
-      width: 50%;
       display: none; }
       @media screen and (min-width: 992px) {
         .product__desc .price__wrapper .price {
           display: block; } }
-    .product__desc .price__wrapper .btn__wrapper {
-      width: 100%; }
+    .product__desc .price__wrapper .lg-screen {
+      display: none; }
       @media screen and (min-width: 992px) {
-        .product__desc .price__wrapper .btn__wrapper {
-          width: 50%; } }
-      .product__desc .price__wrapper .btn__wrapper .lg-screen {
-        display: none; }
-        @media screen and (min-width: 992px) {
-          .product__desc .price__wrapper .btn__wrapper .lg-screen {
-            display: block; } }
-      .product__desc .price__wrapper .btn__wrapper .sm-screen {
-        width: 100%;
-        margin: 10px 0px 0px 0px;
-        display: block; }
-        @media screen and (min-width: 992px) {
-          .product__desc .price__wrapper .btn__wrapper .sm-screen {
-            display: none; } }
-      .product__desc .price__wrapper .btn__wrapper .buy-btn {
-        padding: 10px;
-        font-size: 0.7rem; }
+        .product__desc .price__wrapper .lg-screen {
+          display: block; } }
+    .product__desc .price__wrapper .sm-screen {
+      width: 100%;
+      margin: 10px 0px 0px 0px;
+      display: block; }
+      @media screen and (min-width: 992px) {
+        .product__desc .price__wrapper .sm-screen {
+          display: none; } }
+    .product__desc .price__wrapper .buy-btn {
+      padding: 10px;
+      font-size: 0.7rem; }
   .product .btn__pad {
     padding: 10px 0px 0px 0px;
     display: none;
@@ -240,12 +232,11 @@ button {
       .product .btn__pad {
         display: none; } }
     .product .btn__pad .buy-btn {
-      padding: 5px;
+      padding: 10px;
       width: 100%; }
 
 header {
   border-bottom: solid 1px #eeeeee;
-  box-shadow: 1px #f0f0f0 !important;
   position: relative; }
   header .nav {
     display: grid;
@@ -343,7 +334,6 @@ header {
 
 .carousal {
   position: relative;
-  margin: auto;
   box-shadow: 0 14px 6px -7px #eeeeee;
   /* Position the "next button" to the right */
   /* Fading animation */ }
@@ -366,8 +356,7 @@ header {
       .carousal .btn {
         display: block; } }
   .carousal .btn__next {
-    right: 0;
-    border-radius: 3px 0 0 3px; }
+    right: 0; }
   .carousal__img--fade {
     -webkit-animation-name: fade;
     -webkit-animation-duration: 1.5s;
