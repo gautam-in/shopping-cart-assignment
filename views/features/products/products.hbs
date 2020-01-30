@@ -1,5 +1,5 @@
-<section class="parent-wrapper">
-    <div class="category-wrapper">
+<main class="parent-wrapper">
+    <aside class="category-wrapper">
    			<ul class="categories__list">
 				{{#each categories}}
 				<li class="category__item {{this.id}}">
@@ -20,10 +20,10 @@
 			    </div>
 			  </div> 
 			</div>
-	</div>
-    <div class="product-wrapper">
+	</aside>
+    <section class="product-wrapper">
         {{#each products}}
         {{> molecules/m-product this}}
         {{/each}}
-    </div>
-</section>
+    </section>
+</main>

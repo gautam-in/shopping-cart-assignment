@@ -1,3 +1,4 @@
+<main>
 <section class="row register-section">
 	<div class="col span-1-of-2 register-text">
 	 	{{> atoms/a-header text="Signup"}}
@@ -10,7 +11,8 @@
 		 	{{> molecules/m-forminput type="email" name="email" id="email"  labelText="Email"}}
 		 	{{> molecules/m-forminput type="password" name="password" id="password"  labelText="Password" oninvalid="checkRegPass(this);" oninput="checkRegPassword(this);"}}
 		 	{{> molecules/m-forminput type="password" name="passw2" id="passw2"  labelText="Confirm Password" oninvalid="confirmPassword(this);" oninput="confirmPassword(this);"}}
-		  {{> atoms/a-button class="register-btn" btntext="Signup"}}
+		  {{> atoms/a-button class="register-btn" btntext="Signup" key="type" value="signup"}}
 		</form>
 	</div>
 </section>
+</main>

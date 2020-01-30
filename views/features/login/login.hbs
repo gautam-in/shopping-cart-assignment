@@ -1,3 +1,4 @@
+<main>
 <section class="row login-section">
 		<div class="col span-1-of-2 login-text">
 			 {{> atoms/a-header text="Login"}}
@@ -7,8 +8,8 @@
 			<form class="login-form" action="/" method="get">
 			  {{> molecules/m-forminput  type="email" name="email"  labelText="Email" id="email"}}
 			  {{> molecules/m-forminput type="password" name="password"   labelText="Password" id="password"  oninvalid="checkPassword(this);" oninput="checkPassword(this);"}}
-			  {{> atoms/a-button type="submit" class="login-btn" btntext="Login"}}
+			  {{> atoms/a-button type="submit" class="login-btn" btntext="Login" key="type" value="login"}}
 			</form>
 		</div>
 </section>
-
+</main>
