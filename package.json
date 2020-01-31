@@ -1,15 +1,35 @@
 {
-  "name": "code-exercise",
+  "name": "shoppingAssignment",
   "version": "1.0.0",
-  "description": "This is a shopping cart coding exercise",
-  "main": "index.js",
+  "description": "This is the base folder for the shopping cart exercise. You will have all the static assets and mock server responses available in this repo.",
+  "main": "webpack.dev.js",
+  "dependencies": {
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.10.0",
+    "eslint-plugin-prettier": "^3.1.2",
+    "lodash": "^4.17.15",
+    "path": "^0.12.7",
+    "prettier": "^1.19.1",
+    "webpack-cli": "^3.3.10",
+    "webpack": "^4.41.5"
+  },
+  "devDependencies": {
+    "html-webpack-plugin": "^3.2.0",
+    "webpack-dev-server": "^3.10.1"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "canned -p 5000 ./server"
+    "start": "webpack-dev-server --mode development"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hmnshu-shrma/shopping-cart-assignment.git"
+  },
+  "keywords": [],
   "author": "",
-  "license": "MIT",
-  "dependencies": {
-    "canned": "^0.3.12"
-  }
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hmnshu-shrma/shopping-cart-assignment/issues"
+  },
+  "homepage": "https://github.com/hmnshu-shrma/shopping-cart-assignment#readme"
 }
