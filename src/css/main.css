@@ -88,7 +88,14 @@ button {
 
 .btn-basic {
   background: #D10157;
-  color: #FFFFFF; }
+  color: #FFFFFF;
+  padding: 10px;
+  font-size: 0.7rem; }
+
+.basic-submit {
+  background: #D10157;
+  color: #FFFFFF;
+  border: none; }
 
 .category {
   padding: 30px 0px;
@@ -102,27 +109,26 @@ button {
       width: 75%;
       left: 25%;
       transform: translateY(-50%); } }
-  .category__desc .category__title {
+  .category__desc h2 {
     font-size: 0.7rem;
     font-weight: 700; }
     @media screen and (min-width: 992px) {
-      .category__desc .category__title {
+      .category__desc h2 {
         font-size: 1rem; } }
-  .category__desc .category__detail {
+  .category__desc p {
     font-size: 0.6rem;
-    margin: 10px 0px 0px 0px;
+    margin: 10px 0px 20px 0px;
     padding: 0px 5px; }
     @media screen and (min-width: 992px) {
-      .category__desc .category__detail {
+      .category__desc p {
         font-size: 0.8rem; } }
-  .category__desc .category-btn {
+  .category__desc a {
     padding: 10px;
-    margin: 10px 0px 0px 0px;
+    background: #D10157;
+    color: #FFFFFF;
+    height: 40px;
     font-size: 0.6rem;
     line-height: 1.5; }
-    @media screen and (min-width: 768px) {
-      .category__desc .category-btn {
-        margin: 20px 0px 0px 0px; } }
   @media screen and (min-width: 768px) {
     .category:nth-child(even) .category__desc {
       position: absolute;
@@ -231,8 +237,7 @@ button {
     @media screen and (min-width: 992px) {
       .product .btn__pad {
         display: none; } }
-    .product .btn__pad .buy-btn {
-      padding: 10px;
+    .product .btn__pad button {
       width: 100%; }
 
 header {
@@ -570,7 +575,7 @@ header {
     padding: 2% 0% 0% 5%; }
     .login-section .login-text h1 {
       margin: 20px 0px 0px 0px; }
-  .login-section .login-form .login-btn {
+  .login-section .login-form input[type="submit"] {
     width: 65%;
     height: 40px;
     margin: 20px 0px 0px 0px; }
@@ -650,7 +655,7 @@ header {
     padding: 2% 0% 0% 5%; }
     .register-section .register-text h1 {
       margin: 20px 0px 0px 0px; }
-  .register-section .register-form .register-btn {
+  .register-section .register-form input[type="submit"] {
     width: 65%;
     height: 40px;
     margin: 20px 0px 0px 0px; }

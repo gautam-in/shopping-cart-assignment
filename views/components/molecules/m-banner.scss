@@ -11,28 +11,26 @@
     		left: 25%;
     		transform: translateY(-50%);
 	  	}
-	    .category__title{
+	    h2{
 	    	@include fontstyle(.7 700);
 		      @media screen and (min-width: $lap) {
 		      	@include fontstyle(1);
    			  }
 		}
-		.category__detail{
+		p{
 			 @include fontstyle(.6);
-			 @include margin(10 0 0 0);
+			 @include margin(10 0 20 0);
 			 @include padding(0 5);
 			 @media screen and (min-width: $lap) {
 			 	@include fontstyle(.8);
 
    			  }
 		}
-		.category-btn{
+		a{
 			@include padding(10);
-			@include margin(10 0 0 0);
-			@media screen and (min-width: $tab) {
-    			 @include margin(20 0 0 0);
-    			 
-   			  }
+			background: color('btn');
+			color: color('white');
+			height: 40px;
    			@include fontstyle(.6);  
     		line-height: 1.5;
     		

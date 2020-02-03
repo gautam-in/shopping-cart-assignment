@@ -7,7 +7,7 @@
 		}
 	}
 	.login-form{
-		.login-btn {
+		input[type="submit"] {
 			width:65%;
 			height: 40px;
 			@include margin(20 0 0 0);

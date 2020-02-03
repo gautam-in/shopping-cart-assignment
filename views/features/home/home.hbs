@@ -4,7 +4,7 @@
 </section>
 <section class="categories-section">
 			{{#each categories as |value key|}}
-			 {{> molecules/m-banner  imageUrl=value.imageUrl title=value.name description=value.description labelText="Email" btntext=(concat 'Explore ' value.key) class="category__type" key="category" value=value.id }}
+			 {{> molecules/m-banner  imageUrl=value.imageUrl title=value.name description=value.description labelText="Email"  hypertext=(concat 'Explore ' value.key) href=(concat '/products/' value.id) alt=value.name}}
 			{{/each}}
 </section>
 </main>	
