@@ -53,7 +53,7 @@ header {
 						@include fontstyle(.6);
 						display: block;
 					}
-					.login{
+					a:first-child{
 						@include margin(0 15 0 0);
 					}
 					
@@ -64,7 +64,8 @@ header {
 				@include padding(0 0 5 40);
 					@include fontstyle(.70);
 					display: none;
-					.products{
+					a:last-child{
+						@include margin(0 0 0 10);
 						margin-left: 10px;
 					}
 					@media screen and (min-width:$tab) {

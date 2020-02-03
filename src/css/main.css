@@ -288,7 +288,7 @@ header {
           header .nav__menu .menu__item--main {
             font-size: 0.6rem;
             display: block; } }
-        header .nav__menu .menu__item--main .login {
+        header .nav__menu .menu__item--main a:first-child {
           margin: 0px 15px 0px 0px; }
       header .nav__menu .menu__item--home {
         justify-self: start;
@@ -296,7 +296,8 @@ header {
         padding: 0px 0px 5px 40px;
         font-size: 0.7rem;
         display: none; }
-        header .nav__menu .menu__item--home .products {
+        header .nav__menu .menu__item--home a:last-child {
+          margin: 0px 0px 0px 10px;
           margin-left: 10px; }
         @media screen and (min-width: 768px) {
           header .nav__menu .menu__item--home {

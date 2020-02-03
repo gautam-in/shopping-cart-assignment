@@ -3,12 +3,12 @@
 		<a  href="/" tabindex=-1><img src="/static/images/logo.png" class="nav__logo" alt="Sab ka Bazar"></a>
 			<div class="nav__menu">
 				<div class="menu__item menu__item--main">
-					{{> atoms/a-link hypertext="Sign In" class="login" href="/login"}}
+					{{> atoms/a-link hypertext="Sign In" href="/login"}}
 					{{> atoms/a-link hypertext="Register" href="/register"}}
 				</div>
 				<div  class="menu__item menu__item--home">
 					{{> atoms/a-link hypertext="Home" href="/"}}
-					{{> atoms/a-link hypertext="Products" class="products" href="/products"}}
+					{{> atoms/a-link hypertext="Products" href="/products"}}
 				</div>
 				<button  data-cart-action="show" class="cart__count">
 					{{> atoms/a-img imageUrl="/static/images/cart.svg" alt="Logo" class="cart-img"}}
