@@ -171,7 +171,7 @@ function init(){
 }
 
 function update(event,flag){
-  let id =event.classList[1].split("-")[1];
+ let id =event.id;
   itemCount= flag?itemCount+1:itemCount-1;
    const url = window.location.origin + "/updateCart";
         fetch(url, {
@@ -221,17 +221,17 @@ function renderCart(itemsinCart){
         html+=`<div class="row item">
                 <div class="col span-1-of-7 item__img"><img src="${itemsinCart[i].imageURL}" alt="${itemsinCart[i].name}"></div>
                 <div class="col span-6-of-7 item__desc">
-                  <h3 class="item__label"> ${itemsinCart[i].name}</h3>
-                    <div class="row price__wrapper">
-                      <div class="col span-1-of-2 qty-ctr">
-                          <button class="btn id-${item.id}" id=${item.id} data-cart-action="update" data-cart-qty="dec"
+                  <h3> ${itemsinCart[i].name}</h3>
+                    <div class="price__wrapper">
+                      <div class="col span-1-of-2">
+                          <button class="btn" id=${item.id} data-cart-action="update" data-cart-qty="dec"
                           >-</button>
                           <span  id="item-price-${item.id}">${itemsinCart[i].qty}</span>
-                          <button class="btn id-${item.id}" data-cart-action="update" data-cart-qty="inc">+</button>
+                          <button class="btn"  id=${item.id} data-cart-action="update" data-cart-qty="inc">+</button>
                           <span>x</span>
                           <span>Rs.${itemsinCart[i].price}</span>
                       </div>
-                      <span class="item__totalprice float-right" id="item-total-${item.id}">Rs.${itemsinCart[i].price*itemsinCart[i].qty}
+                      <span class="item__totalprice float-right">Rs.${itemsinCart[i].price*itemsinCart[i].qty}
                       </span>
                     </div>
                 </div>
@@ -256,21 +256,21 @@ function renderCart(itemsinCart){
 function highlightCatgory(){
     let item = JSON.parse(localStorage.getItem('categorySelected'));
     if(item){
-        if(document.getElementsByClassName(item.prevId)[0]){
-          document.getElementsByClassName(item.prevId)[0].classList.remove('highlight');
+        if(document.getElementById(item.prevId)){
+          document.getElementById(item.prevId).classList.remove('highlight');
         }
-        if(document.getElementsByClassName(item.currentId)[0]){
+        if(document.getElementById(item.currentId)){
           if(item.prevId !== item.currentId){
-            document.getElementsByClassName(item.currentId)[0].classList.add('highlight');
+            document.getElementById(item.currentId).classList.add('highlight');
           }
         }
     }
 }
 
 function setCount(){
-  document.getElementsByClassName("cart-head-count")[0].innerHTML=`<span class="cart__text">My Cart</span> (${shoppingCart.getCount()} items)` ;
-  document.getElementsByClassName("cartNumber")[1].innerHTML=`${shoppingCart.getCount()} items` ;
-  document.getElementsByClassName("cartNumber")[0].innerHTML=`${shoppingCart.getCount()} items` ;
+  document.getElementsByClassName("cart-head-count")[0].innerHTML=`<span>My Cart</span> (${shoppingCart.getCount()} items)` ;
+  document.getElementsByClassName("cart-number")[1].innerHTML=`${shoppingCart.getCount()} items` ;
+  document.getElementsByClassName("cart-number")[0].innerHTML=`${shoppingCart.getCount()} items` ;
 }
 
 function closeCart(){

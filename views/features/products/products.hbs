@@ -2,14 +2,14 @@
     <aside class="category-wrapper">
    			<ul class="categories__list">
 				{{#each categories}}
-				<li class="category__item {{this.id}}">
+				<li id="{{this.id}}">
 				   	<a href="" data-category-id="{{this.id}}" class="category__link">{{this.name}}</a>
 				</li>	
 				{{/each}}
 			</ul>
 			<div class="categories__dropdown">
 				<div class="dropdown">
-		    		<button class="dropbtn">Select Categories 
+		    		<button>Select Categories 
 				      <i class="fa fa-caret-down"></i>
 				    </button>
 				    <ul class="dropdown-content">

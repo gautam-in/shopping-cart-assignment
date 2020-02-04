@@ -46,7 +46,7 @@
 		    	background: color('black');
 				color: color('white');
 		    }
-		    .cart__text{
+		    .cart-head-count span{
 		    	@include fontstyle(.8 700);
 		    }
 		    .close{
@@ -88,7 +88,7 @@
 					@media screen and (min-width:$lap) {
 						@include margin(0 0 0 10);
 			    	}
-					.item__label{
+					h3{
 						@include fontstyle(.8 700);
 					}
 					.price__wrapper{
@@ -152,6 +152,7 @@
 					align-items: center;
 					img{
 					    height: 30px;
+					    width: auto;
 					}
 					span{
 						@include margin(0 0 0 15);

@@ -2,7 +2,7 @@
 <section class="row register-section">
 	<div class="col span-1-of-2 register-text">
 	 	{{> atoms/a-header text="Signup"}}
-		{{> atoms/a-desc text="We do not share your personal details with anyone."}}
+	 	 <p>We do not share your personal details with anyone.</p>
 	</div>
 	<div class="col span-1-of-2">
 		<form class="register-form" action="/" method="get">
@@ -11,7 +11,7 @@
 		 	{{> molecules/m-forminput type="email" name="email" id="email"  labelText="Email"}}
 		 	{{> molecules/m-forminput type="password" name="password" id="password"  labelText="Password" oninvalid="checkRegPass(this);" oninput="checkRegPassword(this);"}}
 		 	{{> molecules/m-forminput type="password" name="passw2" id="passw2"  labelText="Confirm Password" oninvalid="confirmPassword(this);" oninput="confirmPassword(this);"}}
-		 	 {{> atoms/a-submit value="Signup" }}
+		 	 <input type="submit" value="Signup">
 		</form>
 	</div>
 </section>

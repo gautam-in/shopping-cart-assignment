@@ -1,4 +1,4 @@
-.basic-input{
+input:not([type=submit]){
 	border: none;
 	width:100%;
 	border-bottom: solid 2px color('primary');

@@ -1,13 +1,13 @@
 <article class="product">
 	<div class="product__border"></div> 
-	<h3 class="product__name">{{this.name}}</h3>
-	<div class="product__img text-center">
+	<h3>{{this.name}}</h3>
+	<div class="product__img">
 	 {{> atoms/a-img imageUrl=this.imageURL alt=this.name}}
 	 </div>
 	<div class="product__desc">
-		<p class="desc">{{this.description}}</p>
+		<p>{{this.description}}</p>
 		<div class="price__wrapper">
-			<p class="price">MRP{{this.price}}</p>
+			<p>MRP{{this.price}}</p>
 			 {{> atoms/a-button tabindex="0" class="sm-screen buy-btn"  key="citem-id" value =this.id  btntext=(concat 'Buy now @ MRP' this.price) }}
 			  {{> atoms/a-button tabindex="0" class="lg-screen buy-btn" key="citem-id" value =this.id btntext="Buy now" }}
 		</div>

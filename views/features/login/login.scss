@@ -5,13 +5,19 @@
 		h1{
 			@include margin(20 0 0 0);
 		}
+		p{
+			@include fontstyle(.7 600);
+			@include margin(20 0 0 0);
+		}
 	}
 	.login-form{
 		input[type="submit"] {
+			@include margin(20 0 0 0);
 			width:65%;
 			height: 40px;
-			@include margin(20 0 0 0);
-
+			background: color('btn');
+			color: color('white');
+			border: none;
 		}
 		
 	}

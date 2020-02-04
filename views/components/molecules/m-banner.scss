@@ -4,6 +4,7 @@
   min-height: 150px;
   position: relative;
 	&__desc{
+		text-align: center;
 		@media screen and (min-width: $tab) {
 		    position: absolute;
     		top: 50%;

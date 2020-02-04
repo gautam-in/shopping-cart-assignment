@@ -14,7 +14,7 @@
 		    top: 10%;
 		}
 
-		&__name {
+		h3 {
 			@include padding(5);
 			@include fontstyle(.7 700);
 			grid-column-start: 1;
@@ -22,6 +22,7 @@
 			height: 50px;
 		}
 		&__img{
+				justify-self:center;
 				@media screen and (min-width:$lap) {
 					@include margin(10 0);
 					grid-column-start: 1;
@@ -37,7 +38,7 @@
 					grid-column-start: 1;
   					grid-column-end: 3;
 				}
-				.desc{
+				> p{
 					@include padding(5);
 					@include fontstyle(.7);
 					@include text-clamp(5);
@@ -61,7 +62,7 @@
 						grid-template-columns: repeat(2, 1fr);
 						display: grid;
 					}
-					.price{
+					> p{
 						@include padding(5);
 						@include fontstyle(.7);
 						display: none;
