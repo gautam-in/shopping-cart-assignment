@@ -1,0 +1,117 @@
+header {
+	border-bottom: solid 1px color('primary');
+	position: relative;
+	.nav{
+		display: grid;
+		max-width: 1140px;
+		margin: auto;
+		grid-template-columns: 1fr 3fr;
+		@media screen and (min-width: $tab) {
+			grid-template-columns: 1fr 4fr;
+		}
+		&__logo {
+			@include margin(5 0 5 5);
+			height:45px;
+			width:auto;
+			cursor: pointer;
+			@media screen and (min-width: $tab) {
+				@include padding(0);
+				height: 70px;
+				width: auto;
+			}
+		}
+		&__menu {
+			display: grid;
+			grid-template-rows: auto;
+			grid-template-columns: 4fr 1fr;
+			@media screen and (min-width: $tab) {
+				grid-template-rows: 30px auto;
+				grid-template-columns: 2fr 1fr;
+			}
+			a{
+					color:  color('nav');
+					font-weight: 600;
+			}
+			.menu_blank{
+				display: none;
+				@media screen and (min-width: $tab) {
+					display: block;
+				}
+			}
+			.item__main{
+				grid-area: 1 / 1 / span 1 / span 2;
+				justify-self: end;
+				@include padding(5 0 0 0);
+					@include fontstyle(.45);
+					word-spacing: -2px;
+					display: none;
+
+					@media screen and (min-width: $tab) {
+						@include fontstyle(.6);
+						display: block;
+					}
+					a:first-child{
+						@include margin(0 15 0 0);
+					}
+					
+			}
+			.item__home{
+				justify-self: start;
+				align-self: center;
+				@include padding(0 0 5 40);
+					@include fontstyle(.70);
+					display: none;
+					a:last-child{
+						@include margin(0 0 0 10);
+						margin-left: 10px;
+					}
+					@media screen and (min-width:$tab) {
+			       		display: block;
+			      	}
+			}
+			.cart__count{
+			   	justify-self: end;
+				background:  color('primary');
+				border: none;
+				@media screen and (min-width:$tab) {
+			       	@include padding(10);
+			    }
+					>img {
+						height: 25px;
+						width: auto;
+					}
+					span {
+						@include fontstyle(.7 400);
+						@include padding(5 15 5 10);
+						color:  color('nav');
+					}
+			
+			}
+			&--mob {
+				align-self: end;
+    			justify-self: start;
+    			width: 100%;
+    			background: color('white') !important;
+			    @include fontstyle(1.5);
+		    	border: none;
+			    img{
+			    	width:25px;
+			    }
+			    @media screen and (min-width:$tab) {
+		       		display: none;
+		      	}
+			}
+		}
+	}
+	.nav__list-mob{
+		background: color('primary');
+		display: none;
+	    li {
+	    	@include padding(5 5 5 10);
+	    	 border-bottom: solid 1px color('white');
+	    	a{
+	    		color:color('secondary');
+	    	}
+	    }
+	}
+}

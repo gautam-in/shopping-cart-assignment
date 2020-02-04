@@ -1,0 +1,15 @@
+<main>
+<section class="row login-section">
+		<div class="col span-1-of-2 login-text">
+			 {{> atoms/a-header text="Login"}}
+			 <p>Get access to your Orders, Wishlist and Recommendations</p>
+		</div>
+		<div class="col span-1-of-2">
+			<form class="login-form" action="/" method="get">
+			  {{> molecules/m-forminput  type="email" name="email"  labelText="Email" id="email"}}
+			  {{> molecules/m-forminput type="password" name="password"   labelText="Password" id="password"  oninvalid="checkPassword(this);" oninput="checkPassword(this);"}}
+			  <input type="submit" value="Login">
+			</form>
+		</div>
+</section>
+</main>

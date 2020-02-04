@@ -1,0 +1,6 @@
+.btn-basic{
+	background: color('btn');
+	color: color('white');
+	@include padding(10);
+	@include fontstyle(.7);
+}

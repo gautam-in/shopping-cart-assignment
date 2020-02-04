@@ -1,0 +1,14 @@
+<div class="carousal row">
+		{{#each banners as |value key|}}
+			<div class="carousal__img carousal__img--fade">
+			 {{> atoms/a-img imageUrl=value.bannerImageUrl alt="Banner"}}
+			</div>
+		{{/each}}
+		<div class="carousal__nav">
+			{{#each banners  as |value key|}}
+				  <span class="dot" data-slide-type="{{@index}}"></span> 
+			{{/each}}
+		</div>
+	<button class="btn btn__prev" data-slide-type="prev" >Prev</button>
+	<button class="btn btn__next" data-slide-type="next" >Next</button>
+</div>

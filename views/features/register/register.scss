@@ -1,0 +1,28 @@
+.register-section{
+	@include padding(0 0 20 0);
+	.register-text {
+		padding:2% 0% 0% 5%;
+		h1{
+			@include margin(20 0 0 0);
+		}
+		p{
+			@include fontstyle(.7 600);
+			@include margin(20 0 0 0);
+		}
+
+	}
+	.register-form{
+		input[type="submit"]{
+			width:65%;
+			height: 40px;
+			@include margin(20 0 0 0);
+			background: color('btn');
+			color: color('white');
+			border: none;
+		}
+		
+	}
+
+}
+
+

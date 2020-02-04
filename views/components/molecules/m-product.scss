@@ -1,0 +1,110 @@
+.product{
+		@include padding(5);
+		position: relative;
+		border-bottom: dashed 1px color('secondary');
+		background: color('white');
+		display: grid;
+		grid-template-columns:repeat(2, 1fr);
+		&__border{
+			position: absolute;
+		    border-right: solid 1px rgba(238, 238, 238, 0.867);
+		    right: 0;
+		    display: block;
+		    height: 80%;
+		    top: 10%;
+		}
+
+		h3 {
+			@include padding(5);
+			@include fontstyle(.7 700);
+			grid-column-start: 1;
+  			grid-column-end: 3;
+			height: 50px;
+		}
+		&__img{
+				justify-self:center;
+				@media screen and (min-width:$lap) {
+					@include margin(10 0);
+					grid-column-start: 1;
+  					grid-column-end: 3;
+				}
+				> img{
+					height: 150px;
+					width: auto;
+				}
+		}
+		&__desc{
+				@media screen and (min-width:$lap) {
+					grid-column-start: 1;
+  					grid-column-end: 3;
+				}
+				> p{
+					@include padding(5);
+					@include fontstyle(.7);
+					@include text-clamp(5);
+					background: color('primary');
+					line-height: 1.5;
+					@media screen and (min-width:$tab) {
+						@include text-clamp(8);
+						height: 150px;
+						line-height: 1.3;
+					}
+				}
+				
+				.price__wrapper{
+					@include padding(10 0 0 0);
+					display: grid;
+    				grid-template-columns:1fr;
+					@media screen and (min-width:$tab) {
+						display: none;
+					}
+					@media screen and (min-width:$lap) {
+						grid-template-columns: repeat(2, 1fr);
+						display: grid;
+					}
+					> p{
+						@include padding(5);
+						@include fontstyle(.7);
+						display: none;
+						@media screen and (min-width:$lap) {
+							display: block;
+						}
+							
+					}
+					.lg-screen{
+						display:none; 
+						@media screen and (min-width:$lap) {
+								display: block;
+						}
+					}
+					.sm-screen{
+						width:100%; 
+						@include margin(10 0 0 0);
+						display:block; 
+						@media screen and (min-width:$lap) {
+							display: none;
+						}
+					}
+					.buy-btn{
+						@include padding(10);
+						@include fontstyle(.7);
+					}
+				}
+
+		}
+		.btn__pad{ 
+			@include padding(10 0 0 0);
+			display: none;
+			grid-column-start: 1;
+  			grid-column-end: 3;
+			@media screen and (min-width:$tab) {
+				display: block;
+			}
+			@media screen and (min-width:$lap) {
+				display: none;
+			}
+			button{
+				width:100%;
+			}
+		}
+}

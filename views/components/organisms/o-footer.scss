@@ -1,0 +1,8 @@
+footer {
+	@include padding(10);
+	background:color('primary');
+	p{
+		font-size: .7rem;
+		font-weight: 600;
+	}
+}

@@ -1,0 +1,28 @@
+<header>
+		<nav class="nav">
+		<a  href="/" tabindex=-1><img src="/static/images/logo.png" class="nav__logo" alt="Sab ka Bazar"></a>
+			<div class="nav__menu">
+				<div class="item__main">
+					{{> atoms/a-link hypertext="Sign In" href="/login"}}
+					{{> atoms/a-link hypertext="Register" href="/register"}}
+				</div>
+				<div  class="item__home">
+					{{> atoms/a-link hypertext="Home" href="/"}}
+					{{> atoms/a-link hypertext="Products" href="/products"}}
+				</div>
+				<button  data-cart-action="show" class="cart__count">
+					{{> atoms/a-img imageUrl="/static/images/cart.svg" alt="Logo" class="cart-img"}}
+					<span class="cart-number float-right">{{cartItems}} items</span>
+				</button>
+				<button class="nav__menu--mob">
+					<i class="fa fa-bars" aria-hidden="true"></i>
+				</button>
+			</div>
+		</nav>
+		<ul class="nav__list-mob">
+			<li>{{> atoms/a-link hypertext="Home" href="/"}}</li>
+			<li>{{> atoms/a-link hypertext="Products" href="/products"}}</li>
+			<li>{{> atoms/a-link hypertext="Sign In" href="/login"}}</li>
+			<li>{{> atoms/a-link hypertext="Register" href="/register"}}</li>
+		</ul>
+</header>

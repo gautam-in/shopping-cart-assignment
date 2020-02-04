@@ -1,0 +1,29 @@
+<main class="parent-wrapper">
+    <aside class="category-wrapper">
+   			<ul class="categories__list">
+				{{#each categories}}
+				<li id="{{this.id}}">
+				   	<a href="" data-category-id="{{this.id}}" class="category__link">{{this.name}}</a>
+				</li>	
+				{{/each}}
+			</ul>
+			<div class="categories__dropdown">
+				<div class="dropdown">
+		    		<button>Select Categories 
+				      <i class="fa fa-caret-down"></i>
+				    </button>
+				    <ul class="dropdown-content">
+				    {{#each categories}}
+				     <li data-category-id="{{this.id}}" class="category__link">{{this.name}}</li>
+					{{/each}}
+					</ul>
+			    </div>
+			  </div> 
+			</div>
+	</aside>
+    <section class="product-wrapper">
+        {{#each products}}
+        {{> molecules/m-product this}}
+        {{/each}}
+    </section>
+</main>

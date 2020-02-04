@@ -1,0 +1,196 @@
+/* Next & previous buttons */
+.cart-overlay{
+	display: none;
+	.bg-overlay{
+	position: fixed;
+    background: rgba(0,0,0,.7);
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    opacity: .9;
+	}
+	.cart{
+		@include fontstyle(.7);
+		background: color('primary');
+		position: fixed;
+	    width: 100%;
+	    height: 100%;
+	    z-index: 200;
+	    overflow:auto;
+	    @media screen and (min-width:$lap) {
+			bottom: 0;
+		    width: 30%;
+		    left: 50%;
+		    height: 600px;
+	    	overflow:auto;
+	    	min-width: 420px;
+		}
+
+	    .header {
+	      background: color('white');
+	      @include fontstyle(1);
+	       @media screen and (min-width:$lap) {
+	       		display:none;
+	       }
+	    }
+
+		&__header{
+			@include padding(15);
+		    @include margin(20 0 0 0);
+		    @include fontstyle(.7 400);
+			background:color('white');
+			color: color('black');
+		    height: 50px;
+		     @media screen and (min-width:$lap) {
+				@include margin(0);
+		    	background: color('black');
+				color: color('white');
+		    }
+		    .cart-head-count span{
+		    	@include fontstyle(.8 700);
+		    }
+		    .close{
+			    @include fontstyle(.8);
+		    	display: none;
+			    border: none;
+			    background: transparent;
+		    	@media screen and (min-width:$lap) {
+					color: color('white');
+					display: block;
+		    	}
+		    }
+
+		}
+		&__wrapper {
+			max-height: 65vh;
+    		overflow-y: auto;
+		    @media screen and (min-width:$lap) {
+				max-height: 60vh;
+		    }
+			.item{
+				@include margin(10 0 0 0);
+				@include padding(5);
+				@include fontstyle(.7);
+				display: flex;
+    			align-items: center;
+    			background: color('white');
+				@media screen and (min-width:$lap) {
+					@include padding(10 5);
+			    }
+			    &__img {
+					> img {
+						width:100%;
+						height:auto;
+					}
+				}
+				&__desc {
+					@include margin(0 0 0 4);
+					@media screen and (min-width:$lap) {
+						@include margin(0 0 0 10);
+			    	}
+					h3{
+						@include fontstyle(.8 700);
+					}
+					.price__wrapper{
+						@include padding(10 0 0 0);
+						@include fontstyle(.7 600);
+						.btn {
+							@include padding(0);
+							width: 22px;
+							height: 22px;
+						    background-color:color('btn');
+						    border-radius: 10%;
+						    display: inline-block;
+						    text-align: center;
+						    border:none;
+						    color: color('white');
+						    @media screen and (min-width:$lap) {
+								border-radius: 50%;
+			    			}
+						   
+						}
+						.btn:first-child{
+							@include margin(0);
+						}
+						button,span{
+							@include margin(0 0 0 5);
+							@media screen and (min-width:$lap) {
+								@include  margin(0 0 0 10);
+			    			}
+						}
+						
+						.item__totalprice{
+							@include padding(0 20 0 0);
+						    text-align: right;
+						    padding-right: 20px;
+
+						}
+					}
+				}
+			}
+			.cart__empty{
+				position: absolute;
+			    top: 40%;
+			    left: 50%;
+			    transform: translate(-50%,-50%);
+				.empty__heading{
+				    @include padding(20 0 0 0);
+				    @include fontstyle(.9 700);
+				}
+				.empty__label {
+					@include padding(10 0 0 0);
+					@include fontstyle(.7 400);
+				}
+			}
+
+			.cart__offer{
+				@include padding(10);
+				.offer__img{
+					@include padding(10);
+					background: color('white');
+					display:flex;
+					align-items: center;
+					img{
+					    height: 30px;
+					    width: auto;
+					}
+					span{
+						@include margin(0 0 0 15);
+						font-weight: 600;
+					}
+				}
+			}
+		}
+
+		&__footer{
+			@include padding(10);
+			background: color('white');
+			position:fixed;
+			width: 100%;
+			bottom:0px;
+			@media screen and (min-width:$lap) {
+       			width: 30%;
+       			min-width: 420px;
+      		}
+			.promo{
+				@include margin(0 0 10 0);
+	    		text-align: center;
+	    		font-weight: 600;
+			}
+			.checkout-btn{
+				@include padding(10);
+				height: 40px;
+				background: color('btn');
+				color:  color('white');
+				width: 100%;
+				border:none;
+			}
+		}
+
+	}
+	.checkout-cart{
+		background: color('white');
+	}
+
+
+}

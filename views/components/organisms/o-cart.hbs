@@ -1,0 +1,25 @@
+<div class="cart-overlay">
+ <div class="bg-overlay"></div>
+ <div class="cart" id="overlay">
+	 <div class="header">
+	 	{{>organisms/o-header}}
+	 </div>
+ 	<div class="cart__header"><span class="cart-head-count">My Cart (0 item)</span>
+ 	<button class="close float-right" data-cart-action="close">x</button></div>
+ 	<div class="cart__wrapper">
+	 	<div class="item__wrapper">
+	 	</div>
+	 	<div class="row cart__offer">
+	 		<div class="offer__img"><img src="/static/images/lowest-price.png" alt="Lowest price Guarantee"/><span>You won't find it cheaper anywhere</span></div>
+	 	</div>
+ 	</div>
+ 	<div class="cart__footer">
+ 		 <p class="promo">Promo code can be applied on
+            payment page</p>
+            <button class="checkout-btn checkout" id="checkout" data-cart-action="close"><span class="float-left" >Proceed to Checkout </span>
+            <span id="totalprice" class="float-right"></span></button>
+            <button class="checkout-btn shopping" id="shopping" data-cart-action="close" autofocus>Start shopping</div>
+ 	</div>
+  </div>
+ </div>
+

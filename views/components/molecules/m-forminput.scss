@@ -1,0 +1,6 @@
+.form-group{
+	width:65%;
+	display: flex;
+ 	flex-direction: column-reverse;
+	@include margin(30 0 0 0);
+}

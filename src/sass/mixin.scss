@@ -1,0 +1,51 @@
+@import "variables";
+
+/*------- MIXINS--------*/
+@mixin padding($padding) {
+    @if length($padding) == 1 {
+        padding: $padding+px;
+    }
+    @if length($padding) == 2 {
+        padding: nth($padding, 1)+px nth($padding, 2)+px;
+    }
+    @if length($padding) == 3 {
+        padding: nth($padding, 1)+px nth($padding, 2)+px nth($padding, 3)+px;
+    }
+    @if length($padding) == 4 {
+        padding: nth($padding, 1)+px nth($padding, 2)+px nth($padding, 3)+px nth($padding, 4)+px;
+    }
+}
+
+@mixin margin($margin) {
+    @if length($margin) == 1 {
+        margin: $margin+px;
+    }
+    @if length($margin) == 2 {
+        margin: nth($margin, 1)+px nth($margin, 2)+px;
+    }
+    @if length($margin) == 3 {
+        margin: nth($padding, 1)+px nth($margin, 2)+px nth($margin, 3)+px;
+    }
+    @if length($margin) == 4 {
+        margin: nth($margin, 1)+px nth($margin, 2)+px nth($margin, 3)+px nth($margin, 4)+px;
+    }
+}
+//Mixin for font-size and weight
+@mixin fontstyle($font) {
+    @if length($font) == 1 {
+        font-size: $font+rem;
+    }
+    @if length($font) == 2 {
+        font-size: nth($font, 1)+rem;
+        font-weight: nth($font, 2);
+    }
+}
+
+// Clamps a block of text to a certain number of lines,
+@mixin text-clamp($lines) {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: $lines;
+}
+

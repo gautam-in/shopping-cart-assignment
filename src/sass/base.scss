@@ -1,0 +1,53 @@
+@import "helperClasses.scss";
+html{
+	font-size: 20px;
+	background: color('white');
+	font-family: 'Dosis','Arial', 'sans-serif';
+}
+
+* {
+	box-sizing: border-box;
+}
+div, a, img, li, form, label, button, input[type=submit] {
+    &:focus {
+        border: 1px dashed color('tab') !important;
+    }
+}
+button{
+	border: none;
+	cursor: pointer;
+}
+
+.row {
+	max-width:1140px;
+	margin:0 auto;
+	zoom: 1; /* For IE 6/7 (trigger hasLayout) */
+}
+
+
+/*  SECTIONS  ============================================================================= */
+
+.section {
+	clear: both;
+}
+
+/*  GROUPING  ============================================================================= */
+
+.row:before,
+.row:after {
+    content:"";
+    display:table;
+}
+.row:after {
+    clear:both;
+}
+
+/*  GRID COLUMN SETUP   ==================================================================== */
+
+.col {
+	display: block;
+	float:left;
+}
+
+.col:first-child { margin-left: 0; } /* all browsers except IE6 and lower */
+

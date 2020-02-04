@@ -5,11 +5,23 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "gulp": "gulp",
     "start": "canned -p 5000 ./server"
   },
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "canned": "^0.3.12"
+    "body-parser": "^1.19.0",
+    "canned": "^0.3.12",
+    "express": "^4.17.1",
+    "express-handlebars": "^3.1.0",
+    "gulp": "^4.0.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-flatten": "^0.4.0",
+    "gulp-sass": "^4.0.2"
+  },
+  "devDependencies": {
+    "gulp-clean": "^0.4.0",
+    "gulp-watch": "^5.0.1"
   }
 }
