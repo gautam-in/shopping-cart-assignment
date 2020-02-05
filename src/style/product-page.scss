@@ -1,0 +1,39 @@
+@import 'colors';
+.product{
+  &.container{
+    width:75vw;
+    margin:0 auto;
+    display: flex;
+    flex:1;
+  }
+  &-category{
+
+    ul{
+      list-style: none;
+      margin:0px;
+      margin-block-start: 0em;
+      margin-block-end: 0em;
+      margin-inline-start: 0px;
+      margin-inline-end: 0px;
+      padding-inline-start: 0px;
+      li{
+        background: #eaeaea;
+        color: $listColor;
+        font-family: $font-family-dosis;
+        font-size: 16px;
+        padding: 10px 20px;
+        cursor: pointer;
+      }
+    }
+  }
+  &-list{
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    max-width: 800px;
+
+    @media  screen and (min-width:1680px) {
+      max-width: 1200px;
+    }
+  }
+}

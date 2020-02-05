@@ -1,0 +1,39 @@
+@import 'navigation';
+@import 'product-page';
+@import 'product-card';
+@import 'banner';
+@import 'carousel';
+body{
+  margin:0px;
+}
+.heading{
+  color: $textColor1;
+  p{
+    color:$primaryCTA;
+    span{
+      color: $alert;
+    }
+  }
+}
+
+.app-footer{
+  padding:15px;
+  background: gray;
+  p{
+    margin:0px auto;
+    width: 75vw;
+    color: #fff;
+    font-family: $font-family-dosis;
+    font-weight: 500;
+    font-family: 12px;
+  }
+}
+.btn-cta{
+  background: $tertiaryCTA;
+  font-family: $font-family-dosis;
+  border: none;
+  padding: 10px;
+  margin: 0 auto;
+  color: #fff;
+  font-size: 17px;
+}

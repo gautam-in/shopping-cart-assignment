@@ -4,22 +4,39 @@
   "description": "This is the base folder for the shopping cart exercise. You will have all the static assets and mock server responses available in this repo.",
   "main": "webpack.dev.js",
   "dependencies": {
+    "@babel/core": "^7.8.4",
+    "autoprefixer": "^9.7.4",
+    "babel-loader": "^8.0.6",
+    "clean-webpack-plugin": "^3.0.0",
+    "copy-webpack-plugin": "^5.1.1",
+    "css-loader": "^3.4.2",
+    "cssnano": "^4.1.10",
     "eslint": "^6.8.0",
     "eslint-config-prettier": "^6.10.0",
     "eslint-plugin-prettier": "^3.1.2",
+    "http-server": "^0.12.1",
     "lodash": "^4.17.15",
+    "mini-css-extract-plugin": "^0.9.0",
+    "node-sass": "^4.13.1",
+    "optimize-css-assets-webpack-plugin": "^5.0.3",
     "path": "^0.12.7",
+    "postcss-loader": "^3.0.0",
     "prettier": "^1.19.1",
-    "webpack-cli": "^3.3.10",
-    "webpack": "^4.41.5"
+    "raw-loader": "^4.0.0",
+    "sass-loader": "^8.0.2",
+    "webpack": "^4.41.5",
+    "webpack-cli": "^3.3.10"
   },
   "devDependencies": {
+    "glob": "^7.1.6",
     "html-webpack-plugin": "^3.2.0",
-    "webpack-dev-server": "^3.10.1"
+    "webpack-dev-server": "^3.10.1",
+    "webpack-merge": "^4.2.2"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack-dev-server --mode development"
+    "start:dev": "webpack-dev-server --config webpack.dev.js",
+    "start": "webpack --config webpack.prod.js && http-server ./dist -o"
   },
   "repository": {
     "type": "git",
