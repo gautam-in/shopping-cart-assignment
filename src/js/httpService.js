@@ -7,7 +7,6 @@ class HttpRequest {
   makeCall = () => {
     const xhr = new XMLHttpRequest();
     let response = null
-    console.log(response);
     xhr.open(this.method, this.url, true)
     xhr.onload = function(e) {
       console.log(e)
@@ -20,11 +19,33 @@ class HttpRequest {
       }
     }
     xhr.onerror = function(e) {
-      console.log(e);
       console.error(xhr.statusText)
     }
     xhr.send(null);
-    return JSON.parse(response)
+    console.log(response);
+    return response
   }
 }
 export default HttpRequest
+
+
+customAjax = (url, method, data) => {
+  return new Promise(function(resolve, reject) {
+    let request = new XMLHttpRequest();
+    request.responseType = 'json';
+    request.onreadystatechange = function() {
+      if (request.readyState === XMLHttpRequest.DONE) {
+        if (request.status === 200) {
+          resolve(request.response);
+        } else {
+          reject(Error(request.status));
+        }
+      }
+    };
+    request.onerror = function() {
+      reject(Error("Network Error"));
+    };
+    request.open(method, url, true);
+    request.send(data);
+  });
+}

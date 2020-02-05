@@ -3,12 +3,12 @@ import HttpRequest from './HttpService'
 
 // const banners = new Banners();
 console.log(process.env);
-const AJAX = new HttpRequest('get', `${process.env.API_URL}categories`);
+const AJAX = new HttpRequest('GET', `${process.env.API_URL}categories`);
 const response = AJAX.makeCall()
 
 
-console.log(response);
-console.log('himanshu');
+console.log(response, 'response');
+
 
 // banners.callBannersApi();
 

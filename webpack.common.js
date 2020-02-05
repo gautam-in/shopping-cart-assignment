@@ -1,10 +1,11 @@
 const glob = require('glob')
 const path = require('path')
+
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const HTMLWebpackPlugin = require('html-webpack-plugin')
 const ExtractCssChunks = require('extract-css-chunks-webpack-plugin')
-// const dotenv = require('dotenv-webpack')
-// const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const Dotenv = require('dotenv-webpack')
+
 const generateHTMLPlugins = () => glob.sync('./src/**/*.html').map(
   dir => new HTMLWebpackPlugin({
     filename: path.basename(dir),
@@ -48,8 +49,7 @@ module.exports = {
         use: [{
           loader: 'file-loader',
           options: {
-            name: '[name].[ext]',
-            outputPath: 'fonts/',
+            outputPath: 'static/',
           },
         }],
       },
@@ -81,6 +81,9 @@ module.exports = {
         chunkFilename: '[id].css'
       }
     ),
+    new Dotenv({
+      path: './.env',
+    }),
     ...generateHTMLPlugins(),
   ],
   

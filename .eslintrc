@@ -1,39 +1,29 @@
 {
 "parser": "babel-eslint",
-"parserOptions": { "ecmaVersion": 2018 },
-"globals": {
-  "Atomics": "readonly",
-  "SharedArrayBuffer": "readonly"
+"extends": ["standard", "standard-jsx", "prettier"],
+"env": {
+  "browser": true,
+  "node": true
   },
-  "env": {
-    "es6": true,
-    "node": true,
-    "browser": true
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
     },
-    
-    "extends": "eslint:recommended",
-    "rules": {
-      "prettier/prettier": "error",
-      'semi': 'error',
-      'eqeqeq': ['error', 'smart'],
-      'no-debugger': 'off',
-      'space-before-function-paren': ['error', 'never'],
-      'jsx-quotes': ['error', 'prefer-single'],
-      'camelcase': ['error', {'ignoreDestructuring': true , 'properties': 'never' }],
-      'no-console': ['warn', { allow: ['warn'] }],
-      'no-multi-spaces': 'error',
-      'max-len': ['error', { 'code': 200 }],
-      'indent': ['off'],
-      
+    "parserOptions": {
+      "sourceType": "module",
+      "ecmaVersion": 2018
       },
-      "settings": {
-        "import/parser": "babel-eslint",
-        "import/resolve": {
-          "moduleDirectory": ["node_modules", "src"]
-          },
-          "ecmaFeatures": {
-            "classes": true,
-            },
-            },
-          }
-          
+      "rules": {
+        "semi": "error",
+        "eqeqeq": ["error", "smart"],
+        "no-debugger": "off",
+        "space-before-function-paren": ["error", "never"],
+        "jsx-quotes": ["error", "prefer-single"],
+        "camelcase": ["error", {"ignoreDestructuring": true , "properties": "never" }],
+        "no-console": ["warn", { allow: ["warn"] }],
+        "no-multi-spaces": "error",
+        "max-len": ["error", { "code": 150 }]
+      }
+    }
+    

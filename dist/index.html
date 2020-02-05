@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta  ="viewport" content="width=device-width, initial-scale=1">
   <link rel="apple-touch-icon" sizes="57x57" href="static/images/favicon/apple-icon-57x57.png">
   <link rel="apple-touch-icon" sizes="60x60" href="static/images/favicon/apple-icon-60x60.png">
   <link rel="apple-touch-icon" sizes="72x72" href="static/images/favicon/apple-icon-72x72.png">
@@ -19,12 +19,13 @@
   <link rel="icon" type="image/png" sizes="96x96" href="static/images/favicon/favicon-96x96.png">
   <link rel="icon" type="image/png" sizes="16x16" href="static/images/favicon/favicon-16x16.png">
   <link rel="manifest" href="static/images/favicon/manifest.json">
-  <meta name="msapplication-TileColor" content="#ffffff">
-  <meta name="msapplication-TileImage" content="static/images/favicon/ms-icon-144x144.png">
-  <meta name="theme-color" content="#ffffff">
+  <meta  ="msapplication-TileColor" content="#ffffff">
+  <meta  ="msapplication-TileImage" content="static/images/favicon/ms-icon-144x144.png">
+  <meta  ="theme-color" content="#ffffff">
   <title>Sabka Bazaar</title>
 <link href="main.css" rel="stylesheet"></head>
 <body>
+  <!-- header starts -->
   <header>
     <nav>
       <div class='navigation'>
@@ -52,35 +53,55 @@
               </span>
             </p>
           </div>
+          <div class ='cart'>
+            <img src='static/images/cart.svg' alt='cart image' class ='cart-img' />
+            <p class ='cart-text'>0 Items</p>
+          </div>
         </div>
       </div>
     </nav>
   </header>
+  <!-- headers ends -->
+  <!-- main section starts -->
   <main>
+    <!-- carousel banner starts -->
     <div class="banner">
       <div id="carousel" class="carousel carousel-container">
         <div class="slides">
-          <div  class='item slide' data-state="active"><img src='static/images/offers/offer1.jpg' alt='1' /></div>,
-          <div  class='item slide'><img src='static/images/offers/offer2.jpg' alt='2' /></div>,
-          <div  class='item slide'><img src='static/images/offers/offer3.jpg' alt='3' /></div>,
-          <div  class='item slide'><img src='static/images/offers/offer4.jpg' alt='4' /></div>,
-          <div  class='item slide'><img src='static/images/offers/offer5.jpg' alt='5' /></div>
+          <div  class='item slide' data-state="active">
+            <img src='static/images/offers/offer1.jpg' alt='1' />
+          </div>
+          <div  class='item slide'>
+            <img src='static/images/offers/offer2.jpg' alt='2' />
+          </div>
+          <div  class='item slide'>
+            <img src='static/images/offers/offer3.jpg' alt='3' />
+          </div>
+          <div  class='item slide'>
+            <img src='static/images/offers/offer4.jpg' alt='4' />
+          </div>
+          <div  class='item slide'>
+            <img src='static/images/offers/offer5.jpg' alt='5' />
+          </div>
         </div>
         <div class="indicators">
-          <input class="indicator" name="indicator" data-slide="1" data-state="active" checked type="radio" />
-          <input class="indicator" name="indicator" data-slide="2" type="radio" />
-          <input class="indicator" name="indicator" data-slide="3" type="radio" />
-          <input class="indicator" name="indicator" data-slide="4" type="radio" />
-          <input class="indicator" name="indicator" data-slide="5" type="radio" />
+          <input class="indicator"  ="indicator" data-slide="1" data-state="active" checked type="radio" />
+          <input class="indicator"  ="indicator" data-slide="2" type="radio" />
+          <input class="indicator"  ="indicator" data-slide="3" type="radio" />
+          <input class="indicator"  ="indicator" data-slide="4" type="radio" />
+          <input class="indicator"  ="indicator" data-slide="5" type="radio" />
           
         </div>
       </div>
     </div>
+    <!-- carousel banner ends -->
+    <!-- offer banners start -->
+    
+    <!-- offer banner ends -->
   </main>
-  <footer>
-    <div class="">
-      footer
-    </div>
+  <!-- main ends -->
+  <footer class='app-footer'>
+    <p> Copyright &copy; 2011-2020 Sabka Bazaar Grocery Supplies Pvt Ltd.</p>
   </footer>
 <script type="text/javascript" src="app.bundle.js"></script></body>
 </html>
