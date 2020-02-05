@@ -3,11 +3,12 @@ class HttpRequest {
     this.method = method
     this.url = url
   }
-  
+
   makeCall = () => {
     const xhr = new XMLHttpRequest();
     let response = null
-    console.log(response);
+    debugger
+    console.log(process.env.API_URL)
     xhr.open(this.method, this.url, true)
     xhr.onload = function(e) {
       console.log(e)

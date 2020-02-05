@@ -1,27 +1,19 @@
-const glob = require('glob');
-const path = require('path');
-const webpack = require('webpack')
+const glob = require('glob')
+const path = require('path')
 
-const CopyWebpackPlugin = require('copy-webpack-plugin');
-const dotenv = require('dotenv-webpack');
-const HTMLWebpackPlugin = require('html-webpack-plugin');
-// const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const ExtractCssChunks = require('extract-css-chunks-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin')
+const HTMLWebpackPlugin = require('html-webpack-plugin')
+const ExtractCssChunks = require('extract-css-chunks-webpack-plugin')
+const Dotenv = require('dotenv-webpack')
 
 const generateHTMLPlugins = () => glob.sync('./src/**/*.html').map(
   dir => new HTMLWebpackPlugin({
     filename: path.basename(dir),
     template: dir,
   }),
-);
+)
 
-module.exports = () => {
-  const env = dotenv.config().parsed
-  const envKeys = Object.keys(env).reduce((prev, next) => {
-    prev[`process.env.${next}`] = JSON.stringify(env[next])
-    return prev
-  }, {})
-  return {
+module.exports = {
     node: {
       fs: 'empty',
     },
@@ -90,13 +82,14 @@ module.exports = () => {
           chunkFilename: '[id].css'
         }
       ),
-      new webpack.DefinePlugin(envKeys),
+      new Dotenv({
+        path: './.env',
+      }),
       ...generateHTMLPlugins(),
     ],
-    
+
     stats: {
       colors: true,
     },
     devtool: 'source-map',
   }
-}
