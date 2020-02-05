@@ -3,6 +3,9 @@ const path = require('path');
 
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const ExtractCssChunks = require('extract-css-chunks-webpack-plugin');
+
 
 const generateHTMLPlugins = () => glob.sync('./src/**/*.html').map(
   dir => new HTMLWebpackPlugin({
@@ -52,7 +55,23 @@ module.exports = {
           },
         }],
       },
+      {
+        test: /\.s[ac]ss$/i,
+        use: [
+          // Creates `style` nodes from JS strings
+          'style-loader',
+          // Translates CSS into CommonJS
+          'css-loader',
+          // Compiles Sass to CSS
+          'sass-loader',
+        ],
+      },
     ],
+  },
+  devServer: {
+    contentBase: path.join(__dirname, 'src'),
+    hot:true,
+    port:3000
   },
   plugins: [
     new CopyWebpackPlugin([
@@ -61,8 +80,15 @@ module.exports = {
         to: './static/',
       },
     ]),
+    new ExtractCssChunks(
+      {
+        filename: '[name].css',
+        chunkFilename: '[id].css'
+      }
+    ),
     ...generateHTMLPlugins(),
   ],
+  
   stats: {
     colors: true,
   },

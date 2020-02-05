@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -23,18 +23,16 @@
   <meta name="msapplication-TileImage" content="static/images/favicon/ms-icon-144x144.png">
   <meta name="theme-color" content="#ffffff">
   <title>Sabka Bazaar</title>
-
 <link href="main.css" rel="stylesheet"></head>
-
 <body>
   <header>
     <nav>
-      <div className='navigation'>
-        <div className='logo-container'>
-          <img className='logo-img' src='static/images/logo.png' alt='logo image' />
+      <div class='navigation'>
+        <div class='logo-container'>
+          <img class='logo-img' src='static/images/logo.png' alt='logo image' />
         </div>
-        <div className='navlinks-container'>
-          <ul className='links'>
+        <div class='navlinks-container'>
+          <ul class='links'>
             <li>
               Home
             </li>
@@ -43,13 +41,13 @@
             </li>
           </ul>
         </div>
-        <div className='cart-login-container'>
-          <div className='login-container'>
-            <p className='link-block'>
-              <span className='link'>
+        <div class='cart-login-container'>
+          <div class='login-container'>
+            <p class='link-block'>
+              <span class='link'>
                 Signup
               </span>
-              <span className='login'>
+              <span class='login'>
                 Login
               </span>
             </p>
@@ -58,5 +56,31 @@
       </div>
     </nav>
   </header>
+  <main>
+    <div class="banner">
+      <div id="carousel" class="carousel carousel-container">
+        <div class="slides">
+          <div  class='item slide' data-state="active"><img src='static/images/offers/offer1.jpg' alt='1' /></div>,
+          <div  class='item slide'><img src='static/images/offers/offer2.jpg' alt='2' /></div>,
+          <div  class='item slide'><img src='static/images/offers/offer3.jpg' alt='3' /></div>,
+          <div  class='item slide'><img src='static/images/offers/offer4.jpg' alt='4' /></div>,
+          <div  class='item slide'><img src='static/images/offers/offer5.jpg' alt='5' /></div>
+        </div>
+        <div class="indicators">
+          <input class="indicator" name="indicator" data-slide="1" data-state="active" checked type="radio" />
+          <input class="indicator" name="indicator" data-slide="2" type="radio" />
+          <input class="indicator" name="indicator" data-slide="3" type="radio" />
+          <input class="indicator" name="indicator" data-slide="4" type="radio" />
+          <input class="indicator" name="indicator" data-slide="5" type="radio" />
+          
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <div class="">
+      footer
+    </div>
+  </footer>
 <script type="text/javascript" src="app.bundle.js"></script></body>
 </html>
