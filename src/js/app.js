@@ -2,10 +2,13 @@
 import HttpRequest from './HttpService'
 
 // const banners = new Banners();
-const AJAX = new HttpRequest('get', 'https://jsonplaceholder.typicode.com/todos/1');
+console.log(process.env);
+const AJAX = new HttpRequest('get', `${process.env.API_URL}categories`);
 const response = AJAX.makeCall()
 
+
 console.log(response);
+console.log('himanshu');
 
 // banners.callBannersApi();
 
