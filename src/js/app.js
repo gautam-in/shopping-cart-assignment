@@ -1,22 +1,9 @@
-// import Banners from './banners'
-import HttpRequest from './HttpService'
-
-// const banners = new Banners();
-console.log(process.env);
-const AJAX = new HttpRequest('GET', `${process.env.API_URL}categories`);
-const response = AJAX.makeCall()
-
-
-console.log(response, 'response');
-
-
-// banners.callBannersApi();
-
-
+import Banners from './banners'
 if (module.hot) {
   module.hot.accept();
 }
 
+const banner =  new Banners();
 var carousel = document.getElementById('carousel');
 var slides = 5;
 var speed = 5000; // 5 seconds
