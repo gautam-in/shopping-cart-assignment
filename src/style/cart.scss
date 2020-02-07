@@ -1,0 +1,27 @@
+@import 'colors';
+.cart{
+    &_header {
+        display: flex;
+    }
+
+    &_contents {
+        &-table {
+            width: 100%;
+        }
+    }
+
+    &-btn {
+        background-color: $tertiaryCTA;
+        border: none;
+        padding: .1rem .5rem;
+        color: $white;
+    }
+}
+
+.checkout_btn {
+    background-color: $tertiaryCTA;
+    border: none;
+    padding: 1rem;
+    color: $white;
+    width: 100%;
+}

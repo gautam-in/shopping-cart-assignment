@@ -1,18 +1,19 @@
 const glob = require('glob')
 const path = require('path')
-const webpack = require('webpack')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const HTMLWebpackPlugin = require('html-webpack-plugin')
 const ExtractCssChunks = require('extract-css-chunks-webpack-plugin')
 const Dotenv = require('dotenv-webpack')
-const HandlebarsPlugin = require("handlebars-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
-// const generateHTMLPlugins = () => glob.sync('./src/**/*.html').map(
-//   dir => new HTMLWebpackPlugin({
-//     filename: path.basename(dir),
-//     template: dir,
-//   }),
-// )
+
+const generateHTMLPlugins = () => glob.sync('./src/*.html').map(
+  dir => new HTMLWebpackPlugin({
+    filename: path.basename(dir),
+    template: dir,
+    style : "style.[hash].css"
+  }),
+)
 const isDevelopment = process.env.NODE_ENV !== 'production'
 module.exports = {
   node: {
@@ -26,10 +27,6 @@ module.exports = {
   performance: { hints: false },
   module: {
     rules: [
-      {
-        test: /\.hbs$/,
-        loader: "handlebars-loader"
-      },
       {
         test: /\.js$/,
         loader: 'babel-loader',
@@ -114,12 +111,7 @@ module.exports = {
         to: './static/',
       },
     ]),
-    new webpack.LoaderOptionsPlugin({
-      options: {
-        handlebarsLoader: {}
-      }
-    }),
-    
+
     new ExtractCssChunks(
       {
         filename: '[name].css',
@@ -129,51 +121,45 @@ module.exports = {
     new Dotenv({
       path: './.env',
     }),
-    
     new HTMLWebpackPlugin({
-      title: 'My awesome service',
-      template: path.join(__dirname, "src", "generatedpartial", "head.hbs"),
-      // the output file name
-      filename: path.join(__dirname, "dist", "partials", "head.hbs"),
-      inject: "head",
-      template: './src/index.hbs',
-      minify: !isDevelopment && {
-        html5: true,
-        collapseWhitespace: true,
-        caseSensitive: true,
-        removeComments: true,
-        removeEmptyElements: true
-      }
+      template: './src/index.html',
+      inject: true,
+      chunks: ['index'],
+      filename: 'index.html'
     }),
-    new HandlebarsPlugin({
-      htmlWebpackPlugin: {
-        enabled: true, // register all partials from html-webpack-plugin, defaults to `false`
-        prefix: "html" // where to look for htmlWebpackPlugin output. default is "html"
-      },
-      
-      entry: path.join(process.cwd(), "src", "*.hbs"),
-      output: path.join(process.cwd(), "dist", "[name].html"),
-      
-      partials: [
-        path.join(process.cwd(), "html",/* <-- this should match htmlWebpackPlugin.prefix */ "*", "*.hbs"),
-        path.join(process.cwd(), "src", "hbs", "*", "*.hbs")
-      ],
-      helpers: {
-        nameOfHbsHelper: Function.prototype,
-        projectHelpers: path.join(process.cwd(), "app", "helpers", "*.helper.js")
-      },
-      onBeforeSetup: function (Handlebars) {},
-      onBeforeAddPartials: function (Handlebars, partialsMap) {},
-      onBeforeCompile: function (Handlebars, templateContent) {},
-      onBeforeRender: function (Handlebars, data, filename) {},
-      onBeforeSave: function (Handlebars, resultHtml, filename) {},
-      onDone: function (Handlebars, filename) {}
-    })
-    
+    new HTMLWebpackPlugin({
+      template: './src/login.html',
+      inject: true,
+      chunks: ['login'],
+      filename: 'login.html'
+    }),
+    new HTMLWebpackPlugin({
+      template: './src/login.html',
+      inject: true,
+      chunks: ['signup'],
+      filename: 'signup.html'
+    }),
+    new HTMLWebpackPlugin({
+      template: './src/products.html',
+      inject: true,
+      chunks: ['products'],
+      filename: 'products.html'
+    }),
+    new HTMLWebpackPlugin({
+      template: './src/cart.html',
+      inject: true,
+      chunks: ['cart'],
+      filename: 'cart.html'
+    }),
+    new MiniCssExtractPlugin({
+      filename: "[name].[contenthash].css",
+      chunkFilename: "[id].[contenthash].css"
+    }),
+    ...generateHTMLPlugins(),
   ],
-  
+
   stats: {
     colors: true,
   },
-  devtool: 'source-map',
+  devtool: 'eval-cheap-module-source-map',
 }

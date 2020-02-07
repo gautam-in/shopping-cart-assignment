@@ -140,7 +140,7 @@ module.exports = {
     }),
     // ...generateHTMLPlugins(),
   ],
-  
+
   stats: {
     colors: true,
   },
