@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="apple-touch-icon" sizes="57x57" href="./src_fe/assets/images/favicon/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="./src_fe/assets/images/favicon/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="./src_fe/assets/images/favicon/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="./src_fe/assets/images/favicon/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="./src_fe/assets/images/favicon/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="./src_fe/assets/images/favicon/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="./src_fe/assets/images/favicon/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="./src_fe/assets/images/favicon/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="./src_fe/assets/images/favicon/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="./src_fe/assets/images/favicon/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./src_fe/assets/images/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="./src_fe/assets/images/favicon/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./src_fe/assets/images/favicon/favicon-16x16.png">
+  <link rel="manifest" href="./src_fe/assets/images/favicon/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="./src_fe/assets/images/favicon/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+  <title>Sabka Bazaar</title>
+<link href="main.css" rel="stylesheet"></head>
+<body>
+  <header>
+    <nav>
+      <div class='navigation'>
+        <div class='logo-container'>
+          <img class='logo-img' src='static/images/logo.png' alt='logo image' />
+        </div>
+        <div class='navlinks-container'>
+          <ul class='links'>
+            <li>
+              Home
+            </li>
+            <li>
+              Products
+            </li>
+          </ul>
+        </div>
+        <div class='cart-login-container'>
+          <div class='login-container'>
+            <p class='link-block'>
+              <span class='link'>
+                <a href="signup.html">SignIn</a>
+              </span>
+              <span class='login'>
+                <a href="login.html">Login</a>
+              </span>
+            </p>
+          </div>
+          <div class ='cart'>
+            <img src='static/images/cart.svg' alt='cart image' class ='cart-img' />
+            <p class ='cart-text'>0 Items</p>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <!--Main Section-->
+  <main class="main-section">
+    <div class="wrapper">
+      <!--Login Section-->
+      <div class="cart-section">
+        <div class="cart__header">
+          <h3>My Cart</h3>
+          <span>(1 item)</span>
+        </div>
+        <div class="cart__contents">
+          <table class="cart__contents-table">
+            <tr class="cart__contents-row">
+              <td>
+                <div class="cart__content-img-container">
+                  <div>image</div>
+                </div>
+              </td>
+              <td>
+                <div class="cart__content-descp">
+                  Item Name
+                </div>
+                <div>
+                  <button class="cart-btn cart-btn-decrement">-</button>
+                  <span>1</span>
+                  <button class="cart-btn cart-btn-increment">+</button>
+                  <span >asdasdasd</span>
+                </div>
+              </td>
+              <td>
+                <div class="cart__content-price">
+                  <span>price</span>
+                </div>
+              </td>
+            </tr>
+            <tr class="cart__contents-row">
+              <td>
+                <div class="cart__content-img-container">
+                  <div>image</div>
+                </div>
+              </td>
+              <td>
+                <div class="cart__content-desc">
+                  Item Name
+                </div>
+                <div>
+                  <button class="cart-btn cart-btn-decrement">-</button>
+                  <span>1</span>
+                  <button class="cart-btn cart-btn-increment">+</button>
+                  <span >asdasdasd</span>
+                </div>
+              </td>
+              <td>
+                <div class="cart__content-price">
+                  <span>price</span>
+                </div>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="cart__coupon-panel">
+          <div>coupon Image</div>
+          <div>Coupon Description</div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <!-- -->
+
+  <footer class="footer">
+    <div class="wrapper">
+      <div>
+        <div>Promo Code can be applied on Payment page</div>
+        <button class="checkout_btn">
+          <span>Proceed to heckout</span>
+          <span>Amount</span>
+        </button>
+      </div>
+      <!- <div class="footer__copyright">
+      Copyright &copy; 2011-2019 Sabka Bazaar Grocery Supplies Pvt Ltd
+    </div> ->
+  </div>
+</footer>
+<script type="text/javascript" src="app.bundle.js"></script></body>
+</html>

@@ -1,0 +1,112 @@
+@import 'colors';
+.login-section, .signup-section {
+	display: flex;
+	justify-content: center;
+	margin: 0 auto;
+	width:75vw;
+	flex-flow: wrap;
+	font-family:$font-family-dosis;
+	margin-bottom:40px;
+	&_form{
+		display: flex;
+		flex-direction: column;
+		flex:0 0 30%;
+		margin-left: 10%;
+	}
+
+	&_info{
+		flex: 0 0 50%;
+		margin-left: 10%;
+	}
+
+	&_btn-container {
+		margin-bottom: 2rem;
+	}
+
+
+	&-heading{
+		font-family: $font-family-dosis;
+	}
+	&-desc{
+		font-size: 14px;
+		font-family: $font-family-dosis;
+	}
+	.form {
+		&_group {
+			position: relative;
+			margin-bottom: 21px;
+			margin-top: 12px;
+			&-highlight {
+				position: absolute;
+				height: 60%;
+				width: 100px;
+				top: 25%;
+				left: 0;
+				pointer-events: none;
+				opacity: 0.5;
+			}
+
+			&-bar {
+				position: relative;
+				display: block;
+				width: 100%;
+
+				&:before, &:after {
+					content: '';
+					height: 2px;
+					width: 0;
+					bottom: 1px;
+					position: absolute;
+					background: #4a89dc;
+					transition: all 0.2s ease;
+				}
+
+				&:before { left: 50%; }
+
+				&:after { right: 50%; }
+			}
+			input {
+				font-size: 18px;
+				padding: 10px 10px 10px 5px;
+				-webkit-appearance: none;
+				font-family: $font-family-dosis;
+				display: block;
+				background: none;
+				color: #636363;
+				width: 100%;
+				border: none;
+				border-radius: 0;
+				border-bottom: 1px solid #757575;
+			}
+			input:focus {
+				outline: none;
+			}
+			label {
+				color: #999;
+				font-size: 18px;
+				font-weight: normal;
+				position: absolute;
+				pointer-events: none;
+				left: 5px;
+				top: 10px;
+				transition: all 0.2s ease;
+			}
+			input:not(:placeholder-shown) ~ label {
+				top: -20px;
+				transform: scale(.75);
+				left: -2px;
+				color:$input-active;
+			}
+		}
+	}
+}
+
+
+.login-btn, .signup-btn {
+	background-color: $tertiaryCTA;
+	border: none;
+	width: 100%;
+	padding: 0.5rem;
+	color: #fff;
+	font-size: 1.2rem;
+}
