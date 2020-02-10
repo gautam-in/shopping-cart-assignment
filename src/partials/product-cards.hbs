@@ -1,0 +1,21 @@
+<div class='product-list'>
+    {{#each .}}
+    <div class='product-cards' >
+        <p class='product-name'>
+            {{name}}
+        </p>
+        <img src={{imageURL}} alt={{name}} class='product-img' />
+        <p class='product-desc'>
+            {{ description }}
+        </p>
+        <div class='product-cta-container'>
+            <p class='product-price'>
+                MRP Rs. {{ price }}
+            </p>
+            <button  class='btn-cta' data-product={{id}} onclick="return sayHi(this)" >
+                Buy Now
+            </button>
+        </div>
+    </div>
+    {{/each }}
+</div>
