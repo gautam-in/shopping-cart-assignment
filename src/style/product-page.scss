@@ -1,9 +1,9 @@
 @import 'colors';
 .product{
   &.container{
+    display: none;
     width:75vw;
     margin:0 auto;
-    display: flex;
     flex:1;
   }
   &-category{

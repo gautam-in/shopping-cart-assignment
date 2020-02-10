@@ -5,12 +5,41 @@
   margin: 30px auto 0px auto;
   position: relative;
   box-shadow: 0 17px 17px -20px rgb(0, 0, 0);
+  img{
+    width: 100%;
+  }
+  @media only screen
+  and (min-device-width: 320px)
+  and (max-device-width: 480px){
+    width: 100%;
+    margin: 30px auto 0px auto;
+  }
+
+  @media screen
+  and (device-width: 360px)
+  and (device-height: 640px)
+  and (-webkit-device-pixel-ratio: 3) {
+    width: 100%;
+    margin: 30px auto 0px auto;
+  }
 }
 
 
 .carousel {
   position: relative;
   height: 400px;
+  @media only screen
+  and (min-device-width: 320px)
+  and (max-device-width: 480px){
+    height: 320px;
+  }
+
+  @media screen
+  and (device-width: 360px)
+  and (device-height: 640px)
+  and (-webkit-device-pixel-ratio: 3) {
+    height: 320px;
+  }
 }
 
 .slides {
@@ -30,6 +59,7 @@
   line-height: 400px;
   text-align: center;
   opacity: 0;
+
   transition: opacity 750ms;
   &[data-state=active] {
     display: block;

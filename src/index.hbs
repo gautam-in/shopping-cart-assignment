@@ -2,9 +2,12 @@
 <html lang="en" dir="ltr">
 {{> partials/head}}
 <body>
-  {{> partials/header title=htmlWebpackPlugin.options.title}}
-  {{> partials/carousel}}
-  {{> partials/banners}}
+
+  {{> partials/header}}
+  <main>
+    {{> partials/carousel}}
+    <div class="display" id="banner-container" > </div>
+  </main>
   {{> partials/footer}}
 </body>
 </html>

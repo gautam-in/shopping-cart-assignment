@@ -1,6 +1,6 @@
 {
 "parser": "babel-eslint",
-"extends": ["standard", "standard-jsx", "prettier"],
+"extends": ["standard", "prettier"],
 "env": {
   "browser": true,
   "node": true
@@ -26,4 +26,3 @@
         "max-len": ["error", { "code": 150 }]
       }
     }
-    

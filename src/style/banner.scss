@@ -7,34 +7,68 @@
   display: flex;
   width: 75vw;
   margin: 50px auto;
+  @media only screen
+  and (min-device-width: 320px)
+  and (max-device-width: 480px){
+    width: 100%;
+  }
+
+  @media screen
+  and (device-width: 320px)
+  and (device-height: 640px)
+  and (-webkit-device-pixel-ratio: 2) {
+    width: 100%;
+  }
   justify-content: space-between;
   position: relative;
   box-shadow: 0 25px 31px -20px rgba(0, 0, 0, 0.22);
   padding: 15px;
+
   .image-container{
     width: 30%;
+    @media only screen
+    and (min-device-width: 320px)
+    and (max-device-width: 480px){
+      width: 60%;
+    }
     img{
       width: 100%;
     }
   }
+
   .content {
     width: 70%;
+    @media only screen
+    and (min-device-width: 320px)
+    and (max-device-width: 480px){
+      width: 40%;
+    }
     margin:15px;
     p{
       font-family: $font-family-dosis;
-      font-size: 12px;
+      font-size: 1.2rem;
       text-align:center;
     }
     a{
       text-decoration: none;
     }
     .heading{
-      font-size: 20px;
+      font-size: 1.5rem;
+      @media only screen
+      and (min-device-width: 320px)
+      and (max-device-width: 480px){
+        font-size:  2.5rem;
+      }
       font-weight: bold;
       margin: 15px 0px 0px 0px;
     }
     .desc{
-      font-size: 16px;
+      font-size: 1.3rem;
+      @media only screen
+      and (min-device-width: 320px)
+      and (max-device-width: 480px){
+        font-size:  2.3rem;
+      }
       margin: 10px 0px 0px 0px;
     }
     .link-button{
@@ -42,7 +76,12 @@
       padding:15px;
       border-radius:3px;
       border:none;
-      font-size: 14px;
+      font-size:  1.3rem;
+      @media only screen
+      and (min-device-width: 320px)
+      and (max-device-width: 480px){
+        font-size:  2rem;
+      }
       font-weight: 500;
       font-family: $font-family-dosis;
       color: #fff;
@@ -52,5 +91,6 @@
       text-transform: capitalize;
     }
   }
+
 
 }
