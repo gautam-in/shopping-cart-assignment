@@ -12,10 +12,16 @@
             <p class='product-price'>
                 MRP Rs. {{ price }}
             </p>
-            <button  class='btn-cta' data-product={{id}} onclick="return sayHi(this)" >
-                Buy Now
-            </button>
-        </div>
+            <button
+            class='btn-cta'
+            data-prod-id={{id}}
+            data-prod-name={{name}}
+            data-prod-price={{price}}
+            data-prod-img={{imageURL}}
+            >
+            Buy Now
+        </button>
     </div>
-    {{/each }}
+</div>
+{{/each }}
 </div>

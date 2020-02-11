@@ -76,16 +76,11 @@ if (carousel) {
 }
 
 const pageSlug = window.location.pathname
-let products = ''
+
 if (pageSlug === '/index.html' || pageSlug === '' || pageSlug === '/') {
   const banner = new Banners()
 } else if (pageSlug === '/products.html') {
   setTimeout(() => {
-    products = new Products()
-    console.log(products)
-  }, 2000)
-}
-
-function sayHi(e){
-  console.log(e)
+    const products = new Products()
+  },1000)
 }
