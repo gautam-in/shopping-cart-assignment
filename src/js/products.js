@@ -1,13 +1,14 @@
 import productCardsTemplate from '../partials/product-cards.hbs'
 import HttpRequest from './httpRequest'
 import ProductsDataStructure from '../constants/cartStructure'
+import LocalStore from './storage'
 import { renderHTML } from './utils'
 
 export default class Products {
   constructor() {
     this.product = {...ProductsDataStructure}
-    this.dataCart = []
     this.getProducts()
+    this.storage = new LocalStore()
   }
 
   getProducts = () => {
@@ -25,12 +26,14 @@ export default class Products {
   }
 
   addToCart = (dataObj) => {
-    this.dataCart.push(JSON.parse(JSON.stringify(dataObj)))
-    console.log(this.dataCart)
+    this.storage.setLocaldata('cart', dataObj)
+    return true
   }
-  getClick = () =>{
+
+  getClick = () => {
     document.body.addEventListener('click', this.handleCartData , false)
   }
+
   handleCartData = (event) =>{
     if (event.target.className === 'btn-cta') {
       const { prodId, prodName, prodPrice, prodImg } = event.target.dataset
