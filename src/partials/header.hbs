@@ -34,9 +34,12 @@
             </span>
           </p>
         </div>
-        <div class ='cart'>
-          <img src='static/images/cart.svg' alt='cart image' class ='cart-img' id='outside'/>
-          <p class ='cart-text'>0 Items</p>
+        <button class ='btn-cart'>
+          <img src='static/images/cart.svg' alt='cart image' class ='icon' id='outside'/>
+          <span class ='text' id="cart-items" >0 Items</span>
+        </button>
+        <div id="desktop-cart">
+          {{> desktop-cart}}
         </div>
       </div>
     </div>

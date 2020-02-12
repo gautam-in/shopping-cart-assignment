@@ -1,0 +1,42 @@
+<div class="header-container">
+  <h1 class="heading">
+    My cart  ( {{items}} Items) 
+  </h1>
+  <button type="button" name="button" class="btn-close">
+  </button>
+</div>
+
+<ul class="cart_list">
+  {{#each data}}
+  <li class="cart_list-item" data-product-id={{ id }}>
+    <img src={{ imageUrl }}  class="cart_list-img" alt={{name}}>
+    <div class="cart_list-details">
+      <p class="cart_list-name">{{name}}</p>
+      <button type="button" name="button" class="btn-increment" data-product-id={{ id }}>
+        +
+      </button>
+      <span class="quantity">
+        {{#if " quantity == '' " }}
+        0
+        {{else}}
+        {{quantity}}
+        {{/if}}
+
+      </span>
+      <button type="button" name="button" class="btn-decrement" data-product-id={{ id }}>
+        -
+      </button>
+      <span>
+        X
+      </span>
+      <span class="cart_list-price">Rs. {{price}}</span>
+    </div>
+    <p class="cart_list-item-total">
+      Rs. {{price}}
+    </p>
+  </li>
+  {{/each }}
+</ul>
+<div class="proceed-to-checkout">
+
+</div>

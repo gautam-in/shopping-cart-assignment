@@ -1,27 +1,89 @@
 @import 'colors';
 .cart{
-    &_header {
-        display: flex;
-    }
+  &_header {
+    display: flex;
+  }
 
-    &_contents {
-        &-table {
-            width: 100%;
-        }
+  &_contents {
+    &-table {
+      width: 100%;
     }
+  }
 
-    &-btn {
-        background-color: $tertiaryCTA;
-        border: none;
-        padding: .1rem .5rem;
-        color: $white;
-    }
+  &-btn {
+    background-color: $tertiaryCTA;
+    border: none;
+    padding: .1rem .5rem;
+    color: $white;
+  }
 }
 
 .checkout_btn {
-    background-color: $tertiaryCTA;
-    border: none;
-    padding: 1rem;
-    color: $white;
-    width: 100%;
+  background-color: $tertiaryCTA;
+  border: none;
+  padding: 1rem;
+  color: $white;
+  width: 100%;
+}
+
+// cart
+#desktop-cart {
+  position: absolute;
+  // display: none;
+  right: 0;
+  top: 65px;
+  width: 25vw;
+  background: #efefef;
+  height: 80vh;
+  z-index: 3;
+  .header-container{
+    background: $black;
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 15px;
+    .heading{
+      color: $white;
+    }
+  }
+
+  .cart_list{
+    list-style: none;
+    margin-block-start: 0em;
+    margin-block-end: 0em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 0px;
+
+    &-item{
+      background: $white;
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 10px;
+      &-total {
+        text-align: right;
+        width: 25%;
+        font-size: 1rem;
+        padding: 10px;
+        margin: 31px 16px 14px 10px;
+      }
+    }
+    .quantity,&-price{
+      font-size: 1rem;
+    }
+    &-price{
+      padding-left: 10px;
+    }
+
+
+    &-img{
+      width: 80px;
+      padding:10px;
+    }
+    &-name{
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin: 10px 0px;
+      text-align: left;
+    }
+  }
 }

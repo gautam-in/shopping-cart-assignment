@@ -3,12 +3,14 @@ import HttpRequest from './httpRequest'
 import ProductsDataStructure from '../constants/cartStructure'
 import LocalStore from './storage'
 import { renderHTML } from './utils'
+import Cart from './cart-handler'
 
 export default class Products {
   constructor() {
     this.product = {...ProductsDataStructure}
     this.getProducts()
     this.storage = new LocalStore()
+    this.cart = new Cart()
   }
 
   getProducts = () => {
@@ -26,7 +28,8 @@ export default class Products {
   }
 
   addToCart = (dataObj) => {
-    this.storage.setLocaldata('cart', dataObj)
+    const isLocalUpdated = this.storage.setLocaldata('cart', dataObj)
+    isLocalUpdated ? this.cart.handleCartView() : console.error('cart not updated');
     return true
   }
 

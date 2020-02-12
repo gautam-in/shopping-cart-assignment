@@ -1,6 +1,6 @@
 import Banners from './banners'
 import Products from './products'
-
+import Cart from './cart-handler'
 
 if (module.hot) {
   module.hot.accept()
@@ -82,5 +82,28 @@ if (pageSlug === '/index.html' || pageSlug === '' || pageSlug === '/') {
 } else if (pageSlug === '/products.html') {
   setTimeout(() => {
     const products = new Products()
-  },1000)
+  }, 1000)
 }
+
+
+function handleCloseToggle(event){
+  if (event.target.className === 'btn-close') {
+    const cartContainer = document.getElementById('desktop-cart')
+    const overlay = document.getElementsByClassName('overlay')
+    cartContainer.style.display = 'none'
+    overlay[0].style.display = 'none'
+    console.log('close')
+  }
+  if (event.target.className === 'btn-cart') {
+    console.log('open cart')
+    const cartContainer = document.getElementById('desktop-cart')
+    const overlay = document.getElementsByClassName('overlay')
+    cartContainer.style.display = 'block'
+    overlay[0].style.display = 'block'
+  }
+}
+
+setTimeout(() => {
+  const cart = new Cart()
+  document.body.addEventListener('click', handleCloseToggle , false)
+}, 0)
