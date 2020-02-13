@@ -3,13 +3,11 @@
   &_header {
     display: flex;
   }
-
   &_contents {
     &-table {
       width: 100%;
     }
   }
-
   &-btn {
     background-color: $tertiaryCTA;
     border: none;
@@ -17,7 +15,6 @@
     color: $white;
   }
 }
-
 .checkout_btn {
   background-color: $tertiaryCTA;
   border: none;
@@ -25,7 +22,6 @@
   color: $white;
   width: 100%;
 }
-
 // cart
 #desktop-cart {
   position: absolute;
@@ -36,8 +32,8 @@
   z-index: 3;
   .cart-wrapper{
     position: relative;
-    height: 80vh;
-    width: 25vw;
+    height: 81.5vh;
+    width: 30vw;
     .checkout {
       position: absolute;
       padding:15px;
@@ -59,6 +55,7 @@
         margin: 0px 0px 15px 0px;
         text-align: center;
         font-size: 1rem;
+        display: block;
       }
       &-price{
 
@@ -81,7 +78,8 @@
       margin-inline-start: 0px;
       margin-inline-end: 0px;
       padding-inline-start: 0px;
-
+      max-height: 62vh;
+      overflow: auto;
       &-item{
         background: $white;
         display: flex;
@@ -101,8 +99,6 @@
       &-price{
         padding-left: 10px;
       }
-
-
       &-img{
         width: 80px;
         padding:10px;
@@ -112,6 +108,7 @@
         font-weight: 600;
         margin: 10px 0px;
         text-align: left;
+        display: block;
       }
     }
   }

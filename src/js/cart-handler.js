@@ -1,4 +1,4 @@
-import cartTemplate from '../partials/desktop-cart.hbs'
+import cartTemplate from '../partials/cart.hbs'
 import HttpRequest from './httpRequest'
 import ProductsDataStructure from '../constants/cartStructure'
 import LocalStore from './storage'

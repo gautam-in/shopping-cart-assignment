@@ -14,18 +14,26 @@ export default class LocalStore {
   }
   setLocaldata = (args, data) => {
     const isDuplicate = this.findDuplicateItem(args,data)
-    if(!isDuplicate){
-      console.log('%cdata exists & no duplicated allowed','color:#5FFF47')
-      this.data.push(JSON.parse(JSON.stringify(data)))
-      window.localStorage[args] = JSON.stringify(this.data)
-    }else if(window.localStorage[args] === undefined){
+    if (window.localStorage[args] === undefined) {
       console.log('%cinside empty storage', 'color:#5FFF47')
-      this.data.push(JSON.parse(JSON.stringify(data)))
-      window.localStorage[args] = JSON.stringify(this.data)
+      this.updateLocalStorage(args,data)
+    }else if(!isDuplicate){
+      console.log('%cdata exists & no duplicated allowed','color:#5FFF47')
+      if(window.localStorage[args] !== undefined){
+        debugger
+        const response = this.getLocaldata(args)
+      }
+      this.updateLocalStorage(args,data)
     }else{
       console.error('data already exists')
       return false
     }
+    return true
+  }
+
+  updateLocalStorage = (args, data) => {
+    this.data.push(JSON.parse(JSON.stringify(data)))
+    window.localStorage[args] = JSON.stringify(this.data)
     return true
   }
 
