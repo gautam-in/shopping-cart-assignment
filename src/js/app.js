@@ -87,6 +87,7 @@ if (pageSlug === '/index.html' || pageSlug === '' || pageSlug === '/') {
 
 
 function handleCloseToggle(event){
+  console.log('here');
   if (event.target.className === 'btn-close') {
     const cartContainer = document.getElementById('desktop-cart')
     const overlay = document.getElementsByClassName('overlay')
@@ -94,7 +95,10 @@ function handleCloseToggle(event){
     overlay[0].style.display = 'none'
     console.log('close')
   }
-  if (event.target.className === 'btn-cart') {
+  if (
+    event.target.className === 'btn-cart' ||
+    event.target.className === 'text' ||
+    event.target.className === 'icon'){
     console.log('open cart')
     const cartContainer = document.getElementById('desktop-cart')
     const overlay = document.getElementsByClassName('overlay')
@@ -105,5 +109,7 @@ function handleCloseToggle(event){
 
 setTimeout(() => {
   const cart = new Cart()
-  document.body.addEventListener('click', handleCloseToggle , false)
+  if(cart){
+    document.body.addEventListener('click', handleCloseToggle, false)
+  }
 }, 0)
