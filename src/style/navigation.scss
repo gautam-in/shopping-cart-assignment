@@ -8,11 +8,11 @@ nav{
   .navigation{
     display: flex;
     justify-content: space-between;
-    max-width:70vw;
+    max-width:75vw;
     margin: 0 auto;
     .logo {
       &-container{
-        width:100px;
+        width:120px;
       }
       &-img {
         width:100%;
@@ -41,18 +41,15 @@ nav{
       width: 15vw;
       position: relative;
       .login-container{
-        .link-block{
-          text-align: right;
-          margin:0px 0px 5px 0px;
-          .link{
-            display: inline-block;
-            margin : 0px 10px;
-            font-size: 12px;
-            cursor: pointer;
-          }
+        text-align: right;
+        margin:0px 0px 5px 0px;
+        .link{
+          display: inline-block;
+          margin : 0px 10px;
+          font-size: 12px;
+          cursor: pointer;
         }
       }
-    
     }
   }
 }

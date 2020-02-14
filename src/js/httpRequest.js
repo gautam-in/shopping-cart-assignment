@@ -18,7 +18,6 @@ class HttpRequest {
           if (request.status === 200) {
             resolve(request.response)
           } else {
-
             reject(Error(request.status))
           }
         }

@@ -44,7 +44,7 @@
       width: 40%;
     }
     margin:15px;
-    p{
+    p, span{
       font-family: $font-family-dosis;
       font-size: 1.2rem;
       text-align:center;
@@ -54,6 +54,8 @@
     }
     .heading{
       font-size: 1.5rem;
+      display: block;
+      text-align: center;
       @media only screen
       and (min-device-width: 320px)
       and (max-device-width: 480px){

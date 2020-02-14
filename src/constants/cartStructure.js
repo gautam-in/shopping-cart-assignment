@@ -3,6 +3,7 @@ const ProductsDataStructure = {
   name: '',
   price: '',
   imageUrl: '',
-  quantity: ''
+  quantity: 0,
+  totalPrice: ''
 }
 export default ProductsDataStructure

@@ -15,12 +15,47 @@ export default class Cart {
     console.log(isDataPresent)
     if(ifExists && items !== 0){
       const templateResponse = {items:items, data:data}
-      this.updateCart(items, templateResponse)
+      this.updateCartView(items, templateResponse)
     }
     return true
   }
-  updateCart = (numberOfItems,data) => {
+  updateCartView = (numberOfItems,data) => {
     document.getElementById('cart-items').innerHTML = `${numberOfItems} Items`
     renderHTML('desktop-cart', cartTemplate, data)
+  }
+  updateCartData = (productId, updateCartFlag) => {
+
+    const localData = this.storage.getLocaldata('cart')
+    const { data } = localData
+    let itemTobeUpdated = data.filter((item)=> item.id === productId)
+      const quantity = updateCartFlag ? itemTobeUpdated[0].quantity + 1 : itemTobeUpdated[0].quantity - 1
+      if(quantity===0){
+        alert('are you sure  you want to delete the items from your cart')
+        this.storage.removeItemFromLIst(productId)
+      }
+      itemTobeUpdated[0].quantity = quantity
+      itemTobeUpdated[0].totalPrice = quantity * itemTobeUpdated[0].price
+      const isCartUpdated = this.storage.updateCartItemQtyAndPrice('cart',itemTobeUpdated[0])
+      if(isCartUpdated){
+        const storageData = JSON.parse(window.localStorage.cart)
+        const newCartData = {
+          items:storageData.length,
+          data:storageData
+        }
+        renderHTML('desktop-cart', cartTemplate, newCartData)
+        console.log('cart updated')
+      }else{
+        console.error('error in updating the cart')
+      }
+
+  }
+  updateItemQuantity = (event) =>{
+    if (event.target.className === 'btn-increment') {
+      const { productId } =  event.target.dataset
+      this.updateCartData(productId, true)
+    } else if (event.target.className === 'btn-decrement') {
+      const { productId } =  event.target.dataset
+      this.updateCartData(productId, false)
+    }
   }
 }

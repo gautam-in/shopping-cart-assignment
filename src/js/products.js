@@ -44,6 +44,7 @@ export default class Products {
       this.product.name = prodName
       this.product.price = prodPrice
       this.product.imageUrl = prodImg
+      this.product.quantity = 1
       const dataString = this.product
       this.addToCart(dataString)
     }

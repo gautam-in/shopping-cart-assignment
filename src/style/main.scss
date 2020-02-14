@@ -28,13 +28,13 @@ body{
   padding:15px;
   background: gray;
   width:100%;
-  p{
+  span{
+    display: block;
     margin:0px auto;
     width: 75vw;
     color: #fff;
     font-family: $font-family-dosis;
     font-weight: 500;
-
     @media only screen
     and (min-device-width: 320px)
     and (max-device-width: 480px){
@@ -94,7 +94,7 @@ body{
     border:none;
     padding:0px 6px 4px 6px;
     border-radius: 50%;
-    margin: 0px 5px;
+    margin: 0px 2px;
     font-size: 1rem;
     font-weight: 500;
     color: #fff;

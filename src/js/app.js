@@ -98,7 +98,7 @@ function handleCloseToggle(event){
   if (
     event.target.className === 'btn-cart' ||
     event.target.className === 'text' ||
-    event.target.className === 'icon'){
+    event.target.className === 'icon') {
     console.log('open cart')
     const cartContainer = document.getElementById('desktop-cart')
     const overlay = document.getElementsByClassName('overlay')
@@ -109,7 +109,8 @@ function handleCloseToggle(event){
 
 setTimeout(() => {
   const cart = new Cart()
-  if(cart){
+  if (cart) {
     document.body.addEventListener('click', handleCloseToggle, false)
+    document.body.addEventListener('click', cart.updateItemQuantity, false)
   }
 }, 0)

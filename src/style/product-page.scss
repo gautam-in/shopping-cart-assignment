@@ -6,8 +6,11 @@
     margin:0 auto;
     flex:1;
   }
+  &-cards-container{
+    flex: 0 0 75%;
+  }
   &-category{
-
+    flex: 0 0 25%;
     ul{
       list-style: none;
       margin:0px;
@@ -30,7 +33,12 @@
     display: flex;
     justify-content: flex-start;
     flex-wrap: wrap;
-    max-width: 800px;
+    list-style: none;
+    margin-block-start: 0em;
+    margin-block-end: 0em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 0px;
 
     @media  screen and (min-width:1680px) {
       max-width: 1200px;

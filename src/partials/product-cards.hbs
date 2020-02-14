@@ -1,17 +1,17 @@
-<div class='product-list'>
+<ul class='product-list'>
     {{#each .}}
-    <div class='product-cards' >
-        <p class='product-name'>
+    <li class='product-cards' >
+        <span class='product-name'>
             {{name}}
-        </p>
+        </span>
         <img src={{imageURL}} alt={{name}} class='product-img' />
         <p class='product-desc'>
             {{ description }}
         </p>
         <div class='product-cta-container'>
-            <p class='product-price'>
+            <span class='product-price'>
                 MRP Rs. {{ price }}
-            </p>
+            </span>
             <button
             class='btn-cta'
             data-prod-id={{id}}
@@ -22,6 +22,6 @@
             Buy Now
         </button>
     </div>
-</div>
+</li>
 {{/each }}
-</div>
+</ul>

@@ -3,15 +3,13 @@
 {{> partials/head}}
 <body>
   {{> partials/header}}
-  <main>
-    <div class="loader" id='loader'>
+
+  <main class='product container' id='products-list-container'>
+    {{> partials/product-list}}
+    <div id='products-cards-container' class="product-cards-container">
     </div>
-    <div class='product container' id='products-list-container' >
-      {{> partials/product-list}}
-      <div id='products-cards-container'>
-      </div>
-    </div>
-  </main>
-  {{> partials/footer}}
+  </div>
+</main>
+{{> partials/footer}}
 </body>
 </html>
