@@ -38,14 +38,17 @@ export default class Products {
   }
 
   handleCartData = (event) =>{
-    if (event.target.className === 'btn-cta') {
+    if (event.target.className === 'btn-cta' || event.target.className === 'btn-cta mobile') {
       const { prodId, prodName, prodPrice, prodImg } = event.target.dataset
+      if(!prodId) return console.error('cart could not be updated')
       this.product.id = prodId
       this.product.name = prodName
       this.product.price = prodPrice
       this.product.imageUrl = prodImg
       this.product.quantity = 1
       const dataString = this.product
+      console.log(dataString);
+
       this.addToCart(dataString)
     }
   }

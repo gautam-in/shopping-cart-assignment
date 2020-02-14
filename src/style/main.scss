@@ -27,7 +27,6 @@ body{
 .app-footer{
   padding:15px;
   background: gray;
-  width:100%;
   span{
     display: block;
     margin:0px auto;
@@ -69,9 +68,14 @@ body{
     font-size: 30px;
     content: "\d7";
     margin-top: -2px;
+    @media only screen
+    and (min-device-width: 320px)
+    and (max-device-width: 480px) {
+      font-size: 5em;
+      padding-right: 50px;
+    }
   }
 }
-
 
 .btn{
   &-cart{
@@ -114,4 +118,13 @@ body{
   background: rgba(0, 0, 0, 0.2784313725490196);
   top: 0;
   left: 0;
+}
+
+.mobile{
+  display: none;
+  @media only screen
+  and (min-device-width: 320px)
+  and (max-device-width: 480px) {
+    display: block;
+  }
 }

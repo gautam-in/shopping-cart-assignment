@@ -1,27 +1,37 @@
 <ul class='product-list'>
-    {{#each .}}
-    <li class='product-cards' >
-        <span class='product-name'>
-            {{name}}
-        </span>
-        <img src={{imageURL}} alt={{name}} class='product-img' />
-        <p class='product-desc'>
-            {{ description }}
-        </p>
-        <div class='product-cta-container'>
-            <span class='product-price'>
-                MRP Rs. {{ price }}
-            </span>
-            <button
-            class='btn-cta'
-            data-prod-id={{id}}
-            data-prod-name={{name}}
-            data-prod-price={{price}}
-            data-prod-img={{imageURL}}
-            >
-            Buy Now
-        </button>
-    </div>
+  {{#each .}}
+  <li class='product-cards' >
+    <span class='product-name'>
+      {{name}}
+    </span>
+    <img src={{imageURL}} alt={{name}} class='product-img' />
+    <p class='product-desc'>
+      {{ description }}
+    </p>
+    <button
+    class='btn-cta mobile'
+    data-prod-id={{id}}
+    data-prod-name={{name}}
+    data-prod-price={{price}}
+    data-prod-img={{imageURL}}
+    >
+    Buy Now @ Rs. {{ price }}
+  </button>
+  <div class='product-cta-container'>
+    <span class='product-price'>
+      MRP Rs. {{ price }}
+    </span>
+    <button
+    class='btn-cta'
+    data-prod-id={{id}}
+    data-prod-name={{name}}
+    data-prod-price={{price}}
+    data-prod-img={{imageURL}}
+    >
+    Buy Now
+  </button>
+
+</div>
 </li>
 {{/each }}
 </ul>

@@ -86,8 +86,8 @@ if (pageSlug === '/index.html' || pageSlug === '' || pageSlug === '/') {
 }
 
 
-function handleCloseToggle(event){
-  console.log('here');
+function handleCloseToggle (event) {
+  console.log('here', event.target.className)
   if (event.target.className === 'btn-close') {
     const cartContainer = document.getElementById('desktop-cart')
     const overlay = document.getElementsByClassName('overlay')

@@ -113,3 +113,104 @@
     }
   }
 }
+
+// mobile
+
+@media only screen
+and (min-device-width: 320px)
+and (max-device-width: 480px) {
+
+  #desktop-cart {
+    position: fixed;
+    display: none;
+    right: 0;
+    top: 0;
+    bottom:0;
+    left:0;
+    background: #efefef;
+    z-index: 3;
+    .cart-wrapper{
+      position: relative;
+      width:100vw;
+      height:100vh;
+      .checkout {
+        position: absolute;
+        padding:15px;
+        left: 0;
+        right:0;
+        bottom: 0;
+        background: #fff;
+        &-button {
+          background: $tertiaryCTA;
+          border: none;
+          display: flex;
+          width: 100%;
+          color: $white;
+          font-size: 1rem;
+          padding: 15px;
+          justify-content: space-between;
+        }
+        &-heading {
+          margin: 0px 0px 15px 0px;
+          text-align: center;
+          font-size: 1rem;
+          display: block;
+        }
+        &-price{
+
+        }
+      }
+      .header-container{
+        background: $black;
+        display: flex;
+        justify-content: space-between;
+        padding: 0px 15px;
+        .heading{
+          color: $white;
+          font-size: 2.5rem;
+        }
+      }
+
+      .cart_list{
+        list-style: none;
+        margin-block-start: 0em;
+        margin-block-end: 0em;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+        padding-inline-start: 0px;
+        max-height: 62vh;
+        overflow: auto;
+        &-item{
+          background: $white;
+          display: flex;
+          align-items: flex-start;
+          margin-bottom: 10px;
+          &-total {
+            text-align: right;
+            width: 25%;
+            font-size: 1rem;
+            padding: 10px;
+            margin: 31px 16px 14px 10px;
+          }
+        }
+        .quantity,&-price{
+          font-size: 1rem;
+        }
+        &-price{
+          padding-left: 10px;
+        }
+        &-img{
+          width: 80px;
+          padding:10px;
+        }
+        &-name{
+          font-size: 1.1rem;
+          font-weight: 600;
+          margin: 10px 0px;
+          text-align: left;
+          display: block;
+        }
+      }
+    }
+  }
+}
