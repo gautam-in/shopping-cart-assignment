@@ -39,11 +39,11 @@ export default class LocalStore {
     return true
   }
 
-  removeItemFromLIst = (key,productId) => {
-    debugger
+  removeItemFromLIst = (productId) => {
     const localData = JSON.parse(window.localStorage.cart)
     const updatedList = localData.filter((item)=> item.id !== productId)
-    console.log(updatedList,'updated list');
+    window.localStorage.cart = JSON.stringify(updatedList)
+    return true
   }
 
   updateLocalStorage = (args, data) => {
