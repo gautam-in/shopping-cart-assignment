@@ -124,7 +124,7 @@ and (max-device-width: 480px) {
     position: fixed;
     display: none;
     right: 0;
-    top: 0;
+    top: 10vh;
     bottom:0;
     left:0;
     background: #efefef;
@@ -132,7 +132,7 @@ and (max-device-width: 480px) {
     .cart-wrapper{
       position: relative;
       width:100vw;
-      height:100vh;
+      height:90vh;
       .checkout {
         position: absolute;
         padding:15px;
@@ -146,14 +146,14 @@ and (max-device-width: 480px) {
           display: flex;
           width: 100%;
           color: $white;
-          font-size: 1rem;
+          font-size: 3rem;
           padding: 15px;
           justify-content: space-between;
         }
         &-heading {
           margin: 0px 0px 15px 0px;
           text-align: center;
-          font-size: 1rem;
+          font-size: 3rem;
           display: block;
         }
         &-price{
@@ -178,7 +178,7 @@ and (max-device-width: 480px) {
         margin-inline-start: 0px;
         margin-inline-end: 0px;
         padding-inline-start: 0px;
-        max-height: 62vh;
+        max-height: 71vh;
         overflow: auto;
         &-item{
           background: $white;
@@ -188,23 +188,28 @@ and (max-device-width: 480px) {
           &-total {
             text-align: right;
             width: 25%;
-            font-size: 1rem;
+            font-size: 3rem;
             padding: 10px;
-            margin: 31px 16px 14px 10px;
+            margin: 72px 16px 14px 10px;
           }
         }
         .quantity,&-price{
-          font-size: 1rem;
+          font-size: 3rem;
+          padding: 0px 15px;
+        }
+        .into-qty{
+          font-size: 3rem;
+          padding: 0px 5px;
         }
         &-price{
           padding-left: 10px;
         }
         &-img{
-          width: 80px;
+          width: 250px;
           padding:10px;
         }
         &-name{
-          font-size: 1.1rem;
+          font-size: 3rem;
           font-weight: 600;
           margin: 10px 0px;
           text-align: left;

@@ -1,50 +1,93 @@
 <div class="signup-section">
-    <div class="signup-section_info">
+   <div class="signup-section_info">
       <!-- remove h2 -->
-
       <h1 class="login-section-heading">Signup</h1>
       <span class="login-section-desc">We do nto share your personal details anywhere.</span>
-    </div>
-    <form action="#" method="post" autocomplete="off" class="signup-section_form">
-      <div class="form_group">
-        <input type="text" required="required" name="firstname" placeholder=" " />
-        <!-- SPAN to be removed  -->
-        <span class="form_group-highlight"></span>
-        <span class="form_group-bar"></span>
-        <label>FirstName</label>
-      </div>
-
-      <div class="form_group">
-        <input type="text" required="required" name="Lastname" placeholder=" " />
-        <span class="form_group-highlight"></span>
-        <span class="form_group-bar"></span>
-        <label>LastName</label>
-      </div>
-
-      <div class="form_group">
-        <input type="email" required="required" name="email" placeholder=" " />
-        <span class="form_group-highlight"></span>
-        <span class="form_group-bar"></span>
-        <label>Email</label>
-      </div>
-
-      <div class="form_group">
-        <input type="password" required="required" name="password" placeholder=" " />
-        <span class="form_group-highlight"></span>
-        <span class="form_group-bar"></span>
-        <label>Password</label>
-      </div>
-
-      <div class="form_group">
-        <input type="password" required="required" name="confirmpassword" placeholder=" " />
-        <span class="form_group-highlight"></span>
-        <span class="form_group-bar"></span>
-        <label>Confirm Password</label>
-      </div>
-
-      <div class="signup-section_btn-container">
-
-        <input type="submit" class="signup-btn" name="" value="SignUp" />
-      </div>
-    </form>
-  </div>
+   </div>
+   <div class="login-section_formGroup">
+      <form action="#" method="post" autocomplete="off" class="signup-section_form">
+         <div class="field">
+            <input
+               aria-required="true"
+               aria-labelledby="firstname"
+               type="text"
+               name="firstname"
+               id="firstname"
+               placeholder="Steve"
+               title="Numbers not allowed"
+               required>
+            <label
+               for="firstname"
+               id="firstname">
+            Firstname
+            </label>
+         </div>
+         <div class="field">
+            <input
+               aria-required="true"
+               aria-labelledby="lastname"
+               type="text"
+               name="lastname"
+               id="lastname"
+               placeholder="Carrel"
+               title="Numbers not allowed"
+               required>
+            <label
+               for="lastname"
+               id="lastname">
+            Lastname
+            </label>
+         </div>
+         <div class="field">
+            <input
+               aria-required="true"
+               aria-labelledby="email"
+               type="email"
+               name="email"
+               id="email"
+               placeholder="jane@sabkabazaar.com"
+               pattern="[^@\s]+@[^@\s]+\.[^@\s]+"
+               title="Invalid email address"
+               required>
+            <label
+               for="email"
+               id="email">
+            Email
+            </label>
+         </div>
+         <div class="field">
+            <input
+               aria-required="true"
+               aria-labelledby="password"
+               type="password"
+               name="password"
+               id="password"
+               placeholder="***"
+               required
+               >
+            <label
+               for="password"
+               id="password">Password
+            </label>
+         </div>
+         <div class="field">
+            <input
+               aria-required="true"
+               aria-labelledby="confirm-password"
+               type="password"
+               name="confirm-password"
+               id="confirm-password"
+               placeholder="***"
+               required
+               >
+            <label
+               for="confirm-password"
+               id="confirm-password">Confirm Password
+            </label>
+         </div>
+         <div class="signup-section_btn-container">
+            <input type="submit" class="signup-btn" name="" value="SignUp" />
+         </div>
+      </form>
+   </div>
+</div>

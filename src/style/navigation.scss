@@ -9,6 +9,11 @@ nav{
     display: flex;
     justify-content: space-between;
     max-width:75vw;
+    @media only screen
+    and (min-device-width: 320px)
+    and (max-device-width: 480px) {
+      max-width:100%;
+    }
     margin: 0 auto;
     .logo {
       &-container{
@@ -16,11 +21,21 @@ nav{
       }
       &-img {
         width:100%;
+        @media only screen
+        and (min-device-width: 320px)
+        and (max-device-width: 480px) {
+          width:250px;
+        }
       }
     }
     .navlinks-container{
       margin-top:15px;
       flex:1;
+      @media only screen
+      and (min-device-width: 320px)
+      and (max-device-width: 480px) {
+        display: none;
+      }
       .links{
         list-style: none;
         margin:0px;
@@ -40,9 +55,22 @@ nav{
     .cart-login-container{
       width: 15vw;
       position: relative;
+      @media only screen
+      and (min-device-width: 320px)
+      and (max-device-width: 480px) {
+        font-size: 4rem;
+        margin-top: -8px;
+        font-weight: 300;
+        width: 29vw;
+      }
       .login-container{
         text-align: right;
         margin:0px 0px 5px 0px;
+        @media only screen
+        and (min-device-width: 320px)
+        and (max-device-width: 480px) {
+          display: none;
+        }
         .link{
           display: inline-block;
           margin : 0px 10px;

@@ -47,8 +47,6 @@ export default class Products {
       this.product.imageUrl = prodImg
       this.product.quantity = 1
       const dataString = this.product
-      console.log(dataString);
-
       this.addToCart(dataString)
     }
   }

@@ -83,6 +83,8 @@ if (pageSlug === '/index.html' || pageSlug === '' || pageSlug === '/') {
   setTimeout(() => {
     const products = new Products()
   }, 1000)
+} else if (pageSlug === '/signup.html' ||  pageSlug === '/login.html') {
+  document.getElementById('loader').style.display = 'none'
 }
 
 
