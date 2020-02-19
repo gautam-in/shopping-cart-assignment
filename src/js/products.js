@@ -29,7 +29,7 @@ export default class Products {
 
   addToCart = (dataObj) => {
     const isLocalUpdated = this.storage.setLocaldata('cart', dataObj)
-    isLocalUpdated ? this.cart.handleCartView() : console.error('cart not updated');
+    isLocalUpdated ? this.cart.handleCartView() : console.error('cart not updated')
     return true
   }
 

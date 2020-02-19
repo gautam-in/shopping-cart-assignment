@@ -9,6 +9,7 @@ export default class Cart {
     this.storage = new LocalStore()
     this.handleCartView()
   }
+
   handleCartView = (event) =>{
     const isDataPresent = this.storage.getLocaldata('cart')
     const { items , data, ifExists} = isDataPresent
@@ -19,14 +20,16 @@ export default class Cart {
     }
     return true
   }
+
   updateCartView = (numberOfItems,data) => {
     document.getElementById('cart-items').innerHTML = `${numberOfItems} Items`
     renderHTML('desktop-cart', cartTemplate, data)
   }
+
   updateCartData = (productId, updateCartFlag) => {
     const localData = this.storage.getLocaldata('cart')
     const { data } = localData
-    let itemTobeUpdated = data.filter((item)=> item.id === productId)
+    const itemTobeUpdated = data.filter((item)=> item.id === productId)
     const quantity = updateCartFlag ? itemTobeUpdated[0].quantity + 1 : itemTobeUpdated[0].quantity - 1
     if(quantity===0){
       alert('are you sure  you want to delete the items from your cart')
@@ -57,10 +60,10 @@ export default class Cart {
 
   updateItemQuantity = (event) =>{
     if (event.target.className === 'btn-increment') {
-      const { productId } =  event.target.dataset
+      const { productId } = event.target.dataset
       this.updateCartData(productId, true)
     } else if (event.target.className === 'btn-decrement') {
-      const { productId } =  event.target.dataset
+      const { productId } = event.target.dataset
       this.updateCartData(productId, false)
     }
   }

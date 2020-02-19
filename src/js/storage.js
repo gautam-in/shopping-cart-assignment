@@ -3,6 +3,7 @@ export default class LocalStore {
     this.cart = cart
     this.data = []
   }
+
   getLocaldata = (args) => {
     let data = []
     const localData = window.localStorage[args]
@@ -71,6 +72,6 @@ export default class LocalStore {
   }
 
   deleteLocaldata = () => {
-    window.localStorage.clear();
+    window.localStorage.clear()
   }
 }

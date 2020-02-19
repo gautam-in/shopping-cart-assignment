@@ -1,4 +1,3 @@
-import myTemplate from '../partials/sample.hbs'
 import bannerTemplate from '../partials/banner.hbs'
 import HttpRequest from './httpRequest'
 import {renderHTML} from './utils'
@@ -12,7 +11,7 @@ class Banners {
     AJAX.customAjax()
     .then(result => {
       renderHTML('banner-container',bannerTemplate,result)
-      document.getElementById('loader').style.display = 'none' 
+      document.getElementById('loader').style.display = 'none'
     })
     .catch(function(error) {
       console.log('Something went wrong', error)
