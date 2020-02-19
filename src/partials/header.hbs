@@ -1,5 +1,5 @@
 <!-- header starts -->
-<header>
+<header role="banner">
   <nav role="navigation">
     <div class='navigation'>
       <div class='logo-container'>
@@ -8,7 +8,7 @@
         </a>
       </div>
       <div class='navlinks-container'>
-        <ul class='links'>
+        <ul class='links' role="navigation">
           <li>
             <a href='index.html'>
               Home
@@ -38,7 +38,7 @@
           <img src='static/images/cart.svg' alt='cart image' class ='icon' id='outside'/>
           <span class ='text' id="cart-items" >0 Items</span>
         </button>
-        <div id="desktop-cart">
+        <div id="desktop-cart" class="cart-main-cont">
           {{> cart}}
         </div>
       </div>

@@ -25,7 +25,6 @@ class OfferCarousel {
   carouselHide  = (num) => {
     indicators[num].setAttribute('data-state', '')
     slides[num].setAttribute('data-state', '')
-
     slides[num].style.opacity = 0
   }
 
@@ -37,7 +36,7 @@ class OfferCarousel {
   }
 
   setSlide = (slide) => {
-    return function () {
+    return () => {
       // Reset all slides
       for (var i = 0; i < indicators.length; i++) {
         indicators[i].setAttribute('data-state', '')

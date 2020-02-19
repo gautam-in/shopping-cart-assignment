@@ -1,15 +1,15 @@
 <ul class='product-list'>
   {{#each .}}
   <li class='product-cards' >
-    <span class='product-name'>
+    <span class='product-name truncate'>
       {{name}}
     </span>
     <img src={{imageURL}} alt={{name}} class='product-img' />
-    <p class='product-desc'>
+    <p class='product-desc' title={{ description }}>
       {{ description }}
     </p>
     <button
-    class='btn-cta mobile'
+    class='btn-cta mobile tablet'
     data-prod-id={{id}}
     data-prod-name={{name}}
     data-prod-price={{price}}

@@ -1,4 +1,4 @@
-@import 'colors';
+@import '../colors';
 
 .banner-component{
   &:nth-child(even){
@@ -7,22 +7,32 @@
   display: flex;
   width: 75vw;
   margin: 50px auto;
+  justify-content: space-between;
+  position: relative;
+  box-shadow: 0 25px 31px -20px rgba(0, 0, 0, 0.22);
+  padding: 25px 0px;
+
+  // tablet
+  @media only screen
+  and (min-device-width: 481px)
+  and (max-device-width: 1024px) {
+    width: 100%;
+  }
+
+
+  // mobile
   @media only screen
   and (min-device-width: 320px)
   and (max-device-width: 480px){
     width: 100%;
   }
-
+  // mobile pixel ratio 2
   @media screen
   and (device-width: 320px)
   and (device-height: 640px)
   and (-webkit-device-pixel-ratio: 2) {
     width: 100%;
   }
-  justify-content: space-between;
-  position: relative;
-  box-shadow: 0 25px 31px -20px rgba(0, 0, 0, 0.22);
-  padding: 15px;
 
   .image-container{
     width: 30%;

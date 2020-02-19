@@ -1,4 +1,4 @@
-@import 'colors';
+@import '../colors';
 .cart{
   &_header {
     display: flex;
@@ -23,7 +23,7 @@
   width: 100%;
 }
 // cart
-#desktop-cart {
+.cart-main-cont {
   position: absolute;
   display: none;
   right: 0;

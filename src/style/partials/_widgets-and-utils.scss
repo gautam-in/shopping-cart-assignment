@@ -1,0 +1,172 @@
+@import '../colors';
+.heading{
+  color: $textColor1;
+  p{
+    color:$primaryCTA;
+    span{
+      color: $alert;
+    }
+  }
+}
+
+.app-footer{
+  padding:15px;
+  background: gray;
+  span{
+    display: block;
+    margin:0px auto;
+    width: 75vw;
+    color: #fff;
+    font-family: $font-family-dosis;
+    font-weight: 500;
+    @media only screen
+    and (min-device-width: 320px)
+    and (max-device-width: 480px){
+      font-size:  2.3rem;
+    }
+  }
+}
+.btn-cta{
+  background: $tertiaryCTA;
+  font-family: $font-family-dosis;
+  border: none;
+  padding: 10px;
+  margin: 0 auto;
+  color: #fff;
+  font-size: 17px;
+}
+
+.btn-close{
+  position: relative;
+  background: transparent;
+  border: none;
+  &:after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-size: 30px;
+    content: "\d7";
+    margin-top: -2px;
+    @media only screen
+    and (min-device-width: 320px)
+    and (max-device-width: 480px) {
+      font-size: 5em;
+      padding-right: 50px;
+    }
+  }
+}
+
+.btn{
+  &-cart{
+    background: #d3d3d3;
+    width:15vw;
+    display: flex;
+    justify-content: center;
+    padding: 2px 10px 10px 4px;
+    @media only screen
+    and (min-device-width: 320px)
+    and (max-device-width: 480px) {
+      width:30vw;
+      padding:2px 33px 16px 4px;
+    }
+    .text{
+      font-size: 1rem;
+      margin-top:8px;
+      @media only screen
+      and (min-device-width: 320px)
+      and (max-device-width: 480px) {
+        font-size: 2.7rem;
+        margin-top: 33px;
+        font-weight: 300;
+      }
+    }
+
+    .icon{
+      width:21px;
+      margin:6px 10px 0px 14px;
+      @media only screen
+      and (min-device-width: 320px)
+      and (max-device-width: 480px) {
+        width:80px;
+        margin-top: 23px;
+      }
+    }
+  }
+  &-increment,&-decrement{
+    background-color:$tertiaryCTA;
+    border:none;
+    padding:0px 6px 4px 6px;
+    border-radius: 50%;
+    margin: 0px 2px;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #fff;
+
+    @media only screen
+    and (min-device-width: 320px)
+    and (max-device-width: 480px) {
+      font-size: 3rem;
+      border-radius: 5px;
+    }
+  }
+  &-decrement{
+    padding: 0px 7px 4px 7px;
+    font-size: 1rem;
+
+    @media only screen
+    and (min-device-width: 320px)
+    and (max-device-width: 480px) {
+      font-size: 3rem;
+      padding:0px 10px 6px 8px;
+    }
+  }
+}
+
+.overlay {
+  position: fixed;
+  display: none;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2784313725490196);
+  top: 0;
+  left: 0;
+}
+
+.mobile{
+  display: none;
+  @media only screen
+  and (min-device-width: 320px)
+  and (max-device-width: 480px) {
+    display: block;
+  }
+
+}
+
+.tablet{
+  display: none;
+  @media only screen
+  and (min-device-width: 481px)
+  and (max-device-width: 1024px) {
+    display: block;
+  }
+
+}
+
+
+.truncate {
+  @media only screen
+  and (min-device-width: 481px)
+  and (max-device-width: 1024px) {
+    width: auto;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}

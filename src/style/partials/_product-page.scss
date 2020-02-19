@@ -1,8 +1,16 @@
-@import 'colors';
+@import '../colors';
+
 .product{
   &.container{
     display: none;
     width:75vw;
+    margin:0 auto;
+    flex:1;
+    @media only screen
+    and (min-device-width: 481px)
+    and (max-device-width: 1024px) {
+      width: 100%;
+    }
     @media only screen
     and (min-device-width: 320px)
     and (max-device-width: 480px)
@@ -10,8 +18,6 @@
       width:100%;
       display: block!important;
     }
-    margin:0 auto;
-    flex:1;
   }
   &-cards-container{
     flex: 0 0 75%;

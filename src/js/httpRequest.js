@@ -1,5 +1,5 @@
 class HttpRequest {
-  constructor(method,url,data) {
+  constructor(method, url, data) {
     this.method = method
     this.url = url
     this.data = data
@@ -10,10 +10,10 @@ class HttpRequest {
     const method = this.method
     const data = this.data
 
-    return new Promise(function(resolve, reject) {
+    return new Promise(function (resolve, reject) {
       const request = new XMLHttpRequest()
       request.responseType = 'json'
-      request.onreadystatechange = function() {
+      request.onreadystatechange = function () {
         if (request.readyState === XMLHttpRequest.DONE) {
           if (request.status === 200) {
             resolve(request.response)
@@ -22,7 +22,7 @@ class HttpRequest {
           }
         }
       }
-      request.onerror = function() {
+      request.onerror = function () {
         reject(Error("Network Error"))
       }
       request.open(method, url, true)

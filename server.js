@@ -6,7 +6,7 @@ const port = process.env.PORT || 5000
 
 app.use(cors())
 
-app.get('/add-to-cart', (req, res) => {
+app.post('/add-to-cart', (req, res) => {
   const addtocart = require('./server/addToCart/index.post.json')
   res.header('Content-Type','application/json')
   res.status(200)

@@ -2,19 +2,23 @@ import productCardsTemplate from '../partials/product-cards.hbs'
 import HttpRequest from './httpRequest'
 import ProductsDataStructure from '../constants/cartStructure'
 import LocalStore from './storage'
-import { renderHTML } from './utils'
+import {
+  renderHTML
+} from './utils'
 import Cart from './cart-handler'
 
 export default class Products {
   constructor() {
-    this.product = {...ProductsDataStructure}
+    this.product = {
+      ...ProductsDataStructure
+    }
     this.getProducts()
     this.storage = new LocalStore()
     this.cart = new Cart()
   }
 
   getProducts = () => {
-    const AJAX = new HttpRequest('GET', `${process.env.API_URL}products` , '')
+    const AJAX = new HttpRequest('GET', `${process.env.API_URL}products`, '')
     AJAX.customAjax()
     .then(result => {
       document.getElementById('loader').style.display = 'none'
@@ -22,11 +26,10 @@ export default class Products {
       renderHTML('products-cards-container', productCardsTemplate, result)
       this.getClick()
     })
-    .catch(function(error) {
+    .catch(function (error) {
       console.log('Something went wrong', error)
     })
   }
-
   addToCart = (dataObj) => {
     const isLocalUpdated = this.storage.setLocaldata('cart', dataObj)
     isLocalUpdated ? this.cart.handleCartView() : console.error('cart not updated')
@@ -34,13 +37,18 @@ export default class Products {
   }
 
   getClick = () => {
-    document.body.addEventListener('click', this.handleCartData , false)
+    document.body.addEventListener('click', this.handleCartData, false)
   }
 
-  handleCartData = (event) =>{
-    if (event.target.className === 'btn-cta' || event.target.className === 'btn-cta mobile') {
-      const { prodId, prodName, prodPrice, prodImg } = event.target.dataset
-      if(!prodId) return console.error('cart could not be updated')
+  handleCartData = (event) => {
+    if (event.target.className === 'btn-cta' || event.target.className === 'btn-cta mobile tablet') {
+      const {
+        prodId,
+        prodName,
+        prodPrice,
+        prodImg
+      } = event.target.dataset
+      if (!prodId) return console.error('cart could not be updated')
       this.product.id = prodId
       this.product.name = prodName
       this.product.price = prodPrice
