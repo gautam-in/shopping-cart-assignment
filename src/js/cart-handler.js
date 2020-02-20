@@ -16,11 +16,15 @@ import {
 
 
 export default class Cart {
+  /**
+  * @constructs Cart
+  */
+
   constructor() {
     this.storage = new LocalStore()
     this.handleCartView()
+    this.cartTotal = 0
   }
-
 
   /**
   * @function handleCartView
@@ -34,16 +38,39 @@ export default class Cart {
       data,
       ifExists
     } = isDataPresent
-    console.log(isDataPresent)
     if (ifExists && items !== 0) {
+      const cartTotal  = this.getTotal(data)
       const templateResponse = {
         items: items,
-        data: data
+        data: data,
+        cartTotal:cartTotal
       }
       this.updateCartView(items, templateResponse)
     }
     return true
   }
+
+  getTotal = (args) => {
+    let initPrice = 0
+    let itemPrice  = 0
+    let total = 0
+    let totalPriceItem  = 0
+    for (var i = 0; i < args.length; i++) {
+      if(args[i].totalPrice !== ''){
+        totalPriceItem = args[i].totalPrice
+        total= initPrice + totalPriceItem
+        initPrice = total
+      }else{
+        itemPrice = parseInt(args[i].price)
+        total  =  initPrice + itemPrice
+        initPrice = total
+      }
+    }
+    return total
+  }
+
+
+
 
   /**
   * @function updateCartView
@@ -56,7 +83,6 @@ export default class Cart {
     document.getElementById('cart-items').innerHTML = `${numberOfItems} Items`
     renderHTML('desktop-cart', cartTemplate, data)
   }
-
 
   /**
   * @function updateCartData
@@ -98,9 +124,11 @@ export default class Cart {
 
   generateCartView = () => {
     const storageData = JSON.parse(window.localStorage.cart)
+    const cartTotal  = this.getTotal(storageData)
     const newCartData = {
       items: storageData.length,
-      data: storageData
+      data: storageData,
+      cartTotal:cartTotal
     }
     renderHTML('desktop-cart', cartTemplate, newCartData)
     console.log('cart updated')

@@ -5,11 +5,9 @@ import {
   initSliderCarousel
 } from './carousel'
 
-
 if (module.hot) {
   module.hot.accept()
 }
-
 
 /**
 * @function handleCloseToggle
@@ -77,12 +75,11 @@ const handleCloseToggle = (event) => {
 
 
   /**
-  * @function autocallingfunctions
+  * @function iife
   * iife (imidiate invoked functions) - this looks for if window is being loaded and it
   * mainatains check for event listning
   * on the basis of page rendering using the url
   */
-
   (() => {
     if (document.readyState === 'complete' || document.readyState === 'interactive') {
       setTimeout(initApp, 1)

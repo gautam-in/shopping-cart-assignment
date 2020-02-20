@@ -33,6 +33,7 @@ export default class Products {
   * @function getProducts
   * call the product api (xhr request) & calls renderHTML functions
   */
+
   getProducts = () => {
     const AJAX = new HttpRequest('GET', `${process.env.API_URL}products`, '')
     AJAX.customAjax()

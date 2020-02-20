@@ -114,13 +114,36 @@
   }
 }
 
+
+// tablet
+@media only screen
+and (min-device-width: 481px)
+and (max-device-width: 1024px) {  
+  .cart-main-cont  {
+    position: fixed;
+    display: none;
+    right: 0;
+    top: 10vh;
+    bottom:0;
+    left:0;
+    background: #efefef;
+    z-index: 3;
+    .cart-wrapper{
+      position: relative;
+      width:100vw;
+      height:90vh;
+    }
+  }
+}
+
+
 // mobile
 
 @media only screen
 and (min-device-width: 320px)
 and (max-device-width: 480px) {
 
-  #desktop-cart {
+  .cart-main-cont  {
     position: fixed;
     display: none;
     right: 0;
