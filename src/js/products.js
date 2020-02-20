@@ -7,7 +7,19 @@ import {
 } from './utils'
 import Cart from './cart-handler'
 
+
+/**
+* Creates a new Products.
+* @class Products
+* @classdesc calls product api and populates products view & updates cart
+*/
+
 export default class Products {
+
+  /**
+  * @constructs Products
+  */
+
   constructor() {
     this.product = {
       ...ProductsDataStructure
@@ -17,6 +29,10 @@ export default class Products {
     this.cart = new Cart()
   }
 
+  /**
+  * @function getProducts
+  * call the product api (xhr request) & calls renderHTML functions
+  */
   getProducts = () => {
     const AJAX = new HttpRequest('GET', `${process.env.API_URL}products`, '')
     AJAX.customAjax()
@@ -30,16 +46,31 @@ export default class Products {
       console.log('Something went wrong', error)
     })
   }
+
+  /**
+  * @function addToCart
+  * @param {object} dataObj - accepts object from the handlecartdata funtion
+  * call the product api (xhr request) & calls renderHTML functions
+  */
   addToCart = (dataObj) => {
     const isLocalUpdated = this.storage.setLocaldata('cart', dataObj)
     isLocalUpdated ? this.cart.handleCartView() : console.error('cart not updated')
     return true
   }
 
+  /**
+  * @function getClick
+  * catches click funtion and then takes callback handleCartData
+  */
   getClick = () => {
     document.body.addEventListener('click', this.handleCartData, false)
   }
 
+
+  /**
+  * @function handleCartData
+  * @param {object} event - takes event and get data from the clicked item binded with the data attribute
+  */
   handleCartData = (event) => {
     if (event.target.className === 'btn-cta' || event.target.className === 'btn-cta mobile tablet') {
       const {

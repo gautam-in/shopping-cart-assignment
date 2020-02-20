@@ -5,29 +5,48 @@ var indicators = ''
 var switcher = ''
 
 class OfferCarousel {
+  /**
+  * @constructs OfferCarousel
+  */
   constructor () { }
 
+  /**
+  * @function switchSlide
+  * changes current slide
+  * Reset all slides
+  * If current slide is active & NOT equal to last slide then increment nextSlide
+  * Remove all active states & hide
+  * Set next slide as active & show the next slide
+  */
+
   switchSlide = () => {
-    var nextSlide = 0
-    // Reset all slides
+    let nextSlide = 0
     for (var i = 0; i < indicators.length; i++) {
-      // If current slide is active & NOT equal to last slide then increment nextSlide
       if ((indicators[i].getAttribute('data-state') === 'active') && (i !== (indicators.length-1))) {
         nextSlide = i + 1
       }
-      // Remove all active states & hide
       this.carouselHide(i)
     }
-    // Set next slide as active & show the next slide
     this.carouselShow(nextSlide)
   }
 
+  /**
+  * @function carouselHide
+  * @param {number} num - The index of the slide.
+  * Hides the current slide in the view port
+  */
   carouselHide  = (num) => {
     indicators[num].setAttribute('data-state', '')
     slides[num].setAttribute('data-state', '')
     slides[num].style.opacity = 0
   }
 
+
+  /**
+  * @function carouselShow
+  * @param {number} num - The index of the slide.
+  * shows the next slide to the view port
+  */
   carouselShow = (num) => {
     indicators[num].checked = true
     indicators[num].setAttribute('data-state', 'active')
@@ -35,25 +54,38 @@ class OfferCarousel {
     slides[num].style.opacity = 1
   }
 
+  /**
+  * @function setSlide
+  * @param {Object} slide  Accepts html markup for a slide
+  * Reset all slides
+  * Set defined slide as active
+  * Stop the auto-switcher
+  */
+
   setSlide = (slide) => {
     return () => {
-      // Reset all slides
+
       for (var i = 0; i < indicators.length; i++) {
         indicators[i].setAttribute('data-state', '')
         slides[i].setAttribute('data-state', '')
         this.carouselHide(i)
       }
-      // Set defined slide as active
       indicators[slide].setAttribute('data-state', 'active')
       slides[slide].setAttribute('data-state', 'active')
       this.carouselShow(slide)
-      // Stop the auto-switcher
       clearInterval(switcher)
     }
   }
 }
 
 const carouselSlider = new OfferCarousel()
+
+/**
+* @function initSliderCarousel
+* check if carousel present in the dom 
+* initiate the switch slide function
+*/
+
 const initSliderCarousel = () => {
   if (carousel) {
     slides = carousel.querySelectorAll('.slide')

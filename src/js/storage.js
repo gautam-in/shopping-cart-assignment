@@ -1,9 +1,32 @@
 import HttpRequest from './httpRequest'
+
+
+
+/**
+* Creates a new LocalStore.
+* @class LocalStore
+* @classdesc updates delete and modify the data of localstorage
+*/
+
 export default class LocalStore {
+
+  /**
+  * @constructs LocalStore
+  * @param {object} cart - cart html element
+  * @param {object} data - array object
+  */
+
   constructor(cart, data) {
     this.cart = cart
     this.data = []
   }
+
+  /**
+  * @function getLocaldata
+  * @param {object} args - key for the localstorage object to fetch the value
+  * checks if the data is present in the localstorate or not
+  * @return {object}
+  */
 
   getLocaldata = (args) => {
     let data = []
@@ -23,6 +46,14 @@ export default class LocalStore {
     }
   }
 
+  /**
+  * @function getLocaldata
+  * @param {string} args - key for the localstorage array object
+  * @param {object} data - data to be updated in the localStorage
+  * handles if item should be updated in the cart or not
+  * updates the localstorage using key and array data on click on cta button to move items in the cart
+  * @return {boolean}
+  */
 
   setLocaldata = (args, data) => {
     const isDuplicate = this.findDuplicateItem(args, data)
@@ -46,6 +77,14 @@ export default class LocalStore {
     return true
   }
 
+  /**
+  * @function updateCartItemQtyAndPrice
+  * @param {string} args - key for the localstorage array object
+  * @param {object} data - data to be updated in the localstorage
+  * updates the quantity of the selected item and price
+  * @return {boolean}
+  */
+
   updateCartItemQtyAndPrice = (args, data) => {
     const localData = window.localStorage[args]
     if (localData !== undefined) {
@@ -58,6 +97,12 @@ export default class LocalStore {
     return true
   }
 
+  /**
+  * @function updateCartItemQtyAndPrice
+  * @param {string} productId - removes array item where product id matches in the array object
+  * removes array item frmo teh array object item
+  * @return {boolean}
+  */
   removeItemFromLIst = (productId) => {
     const localData = JSON.parse(window.localStorage.cart)
     const updatedList = localData.filter((item) => item.id !== productId)
@@ -65,6 +110,14 @@ export default class LocalStore {
     return true
   }
 
+
+  /**
+  * @function updateLocalStorage
+  * @param {string} args - key for the localstorage array object
+  * @param {object} data - data to be updated in the localstorage
+  * updates local storage
+  * @return {boolean}
+  */
   updateLocalStorage = (args, data) => {
     if (window.localStorage[args] !== undefined) {
       this.data = JSON.parse(window.localStorage[args])
@@ -77,6 +130,14 @@ export default class LocalStore {
     return true
   }
 
+
+  /**
+  * @function findDuplicateItem
+  * @param {string} args - key for the localstorage array object
+  * @param {object} item - item array for the selected
+  * finds duplicate item present in the exsisting array object of the localstorage
+  * @return {boolean}
+  */
   findDuplicateItem = (key, item) => {
     const localData = window.localStorage[key]
     if (localData !== undefined) {
@@ -87,6 +148,12 @@ export default class LocalStore {
     }
     return false
   }
+
+
+  /**
+  * @function deleteLocaldata
+  * cleans localstorage
+  */
 
   deleteLocaldata = () => {
     window.localStorage.clear()

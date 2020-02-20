@@ -6,13 +6,28 @@ import {
   renderHTML
 } from './utils'
 
+
+
+/**
+* Creates a new Cart.
+* @class Cart
+* @classdesc handles the card rendering updating cart values for item prices.
+*/
+
+
 export default class Cart {
   constructor() {
     this.storage = new LocalStore()
     this.handleCartView()
   }
 
-  handleCartView = (event) => {
+
+  /**
+  * @function handleCartView
+  * check if data present in localStorage
+  * updates cart view if data present
+  */
+  handleCartView = () => {
     const isDataPresent = this.storage.getLocaldata('cart')
     const {
       items,
@@ -30,11 +45,27 @@ export default class Cart {
     return true
   }
 
+  /**
+  * @function updateCartView
+  * @param {number} numberOfItems - number of item selected by user
+  * @param {object} data - number of item selected by user
+  * updates item in cart button
+  * updates cart view if data present
+  */
   updateCartView = (numberOfItems, data) => {
     document.getElementById('cart-items').innerHTML = `${numberOfItems} Items`
     renderHTML('desktop-cart', cartTemplate, data)
   }
 
+
+  /**
+  * @function updateCartData
+  * @param {string} productId - takes product id as param & and check for redundancy
+  * @param {boolean} updateCartFlag - used to update the quantity of the item based
+  * based on the flag increment or decrement is decided
+  * updates item in cart button
+  * updates cart view if data present
+  */
   updateCartData = (productId, updateCartFlag) => {
     const localData = this.storage.getLocaldata('cart')
     const {
@@ -59,6 +90,12 @@ export default class Cart {
     }
   }
 
+  /**
+  * @function generateCartView
+  * pull data from the localstorage  and populate cart template
+  * present the data using render html function present in utils
+  */
+
   generateCartView = () => {
     const storageData = JSON.parse(window.localStorage.cart)
     const newCartData = {
@@ -69,6 +106,11 @@ export default class Cart {
     console.log('cart updated')
   }
 
+  /**
+  * @function updateItemQuantity
+  * @event document#button
+  * updtaes the quantity
+  */
   updateItemQuantity = (event) => {
     if (event.target.className === 'btn-increment') {
       const {
