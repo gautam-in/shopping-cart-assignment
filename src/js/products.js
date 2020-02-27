@@ -21,9 +21,7 @@ export default class Products {
   */
 
   constructor() {
-    this.product = {
-      ...ProductsDataStructure
-    }
+    this.product =  JSON.parse(JSON.stringify(ProductsDataStructure))
     this.getProducts()
     this.storage = new LocalStore()
     this.cart = new Cart()
