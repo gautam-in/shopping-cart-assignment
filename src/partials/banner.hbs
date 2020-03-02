@@ -1,14 +1,14 @@
 {{#each .}}
 {{#if imageUrl }}
-<div class='banner-component'  >
-      <div class='image-container' >
-            <img src={{imageUrl}} alt={{name}} class='banner-image' />
-      </div>
-      <div class='content' >
-            <span class='heading' > {{name}} </span>
-            <p class='desc' > {{ description }} </p>
-            <button class='link-button' > Explore {{key}} </button>
-      </div>
+<div class='banner-component'>
+  <div class='image-container'>
+    <img src={{imageUrl}} alt={{name}} class='banner-image' />
+  </div>
+  <div class='content'>
+    <span class='heading'> {{name}} </span>
+    <p class='desc'> {{ description }} </p>
+    <button class='link-button'> Explore {{key}} </button>
+  </div>
 </div>
 {{/if}}
 {{/each}}
