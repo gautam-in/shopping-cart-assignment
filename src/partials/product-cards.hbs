@@ -1,10 +1,10 @@
-<ul class='product-list'>
+<ul class='product-list' role="list">
   {{#each .}}
-  <li class='product-cards' >
+  <li class='product-cards' role="listitem">
     <span class='product-name truncate'>
       {{name}}
     </span>
-    <img src={{imageURL}} alt={{name}} class='product-img' />
+    <img src={{imageURL}} alt={{name}} class='product-img' role="img" aria-label={{ description }} />
     <p class='product-desc' title={{ description }}>
       {{ description }}
     </p>
