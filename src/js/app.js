@@ -61,6 +61,7 @@ const handleCloseToggle = (event) => {
   * on the basis of page rendering using the url
   */
   const initApp = () => {
+    console.log('init');
     const pageSlug = window.location.pathname
     if (pageSlug === '/index.html' || pageSlug === '' || pageSlug === '/') {
       if (!initSliderCarousel()) return
@@ -81,9 +82,8 @@ const handleCloseToggle = (event) => {
   * on the basis of page rendering using the url
   */
   (() => {
-    if (document.readyState === 'complete' || document.readyState === 'interactive') {
-      setTimeout(initApp, 1)
-    } else {
-      document.addEventListener('DOMContentLoaded', initApp)
-    }
+    debugger
+    document.readyState === 'complete' || 'interactive'
+    ? setTimeout(initApp, 1)
+    : document.addEventListener('DOMContentLoaded', initApp)
   })()
