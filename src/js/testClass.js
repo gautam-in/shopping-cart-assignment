@@ -3,12 +3,12 @@ export default class GreetUser {
     this.name = name
     this.lastname = lastname
   }
+
   sayHello = () => {
     return `${this.name + this.lastname}`
   }
+
   sum = (a, b) => {
     return a + b
   }
-
-
 }
