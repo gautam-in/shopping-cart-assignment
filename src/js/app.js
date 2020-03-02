@@ -82,7 +82,6 @@ const handleCloseToggle = (event) => {
   * on the basis of page rendering using the url
   */
   (() => {
-    debugger
     document.readyState === 'complete' || 'interactive'
     ? setTimeout(initApp, 1)
     : document.addEventListener('DOMContentLoaded', initApp)
