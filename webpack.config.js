@@ -3,6 +3,7 @@ const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const Dotenv = require('dotenv-webpack')
+const CopyWebpackPlugin = require('copy-webpack-plugin')
 module.exports = {
   entry: ['./src/js/app.js', './src/style/main.scss'],
   output: {
@@ -62,6 +63,9 @@ module.exports = {
     new Dotenv({
       path: './.env'
     }),
+    new CopyWebpackPlugin([
+      {from: 'src/static',to: 'static'}
+    ]),
     new MiniCssExtractPlugin({
       filename: '[name]-styles.css',
       chunkFilename: '[id].css'
