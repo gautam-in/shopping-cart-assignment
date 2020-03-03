@@ -65,6 +65,15 @@ export default class LocalStore {
         )
         AJAX.customAjax()
           .then(result => {
+            if (result.response === 'Success') {
+              const snackbar = document.getElementById('snackbar')
+              snackbar.innerHTML = result.responseMessage
+              snackbar.classList.add('show')
+              setTimeout(() => {
+                snackbar.classList.replace('show', 'snackbar')
+                snackbar.innerHTML = 'No Products added'
+              }, 2000)
+            }
             return true
           })
           .catch(function(error) {
