@@ -16,19 +16,18 @@ if (module.hot) {
  */
 
 const handleCloseToggle = event => {
-  console.log('here', event.target.className)
-  if (event.target.className === 'btn-close') {
+  const clickableButtons = [['btn-close'], ['btn-cart', 'text', 'icon']]
+  const {
+    target: { className }
+  } = event
+  if (clickableButtons[0].includes(className)) {
     const cartContainer = document.getElementById('desktop-cart')
     const overlay = document.getElementsByClassName('overlay')
     cartContainer.style.display = 'none'
     overlay[0].style.display = 'none'
     console.log('close')
   }
-  if (
-    event.target.className === 'btn-cart' ||
-    event.target.className === 'text' ||
-    event.target.className === 'icon'
-  ) {
+  if (clickableButtons[1].includes(className)) {
     console.log('open cart')
     const cartContainer = document.getElementById('desktop-cart')
     const overlay = document.getElementsByClassName('overlay')
@@ -45,10 +44,8 @@ const handleCloseToggle = event => {
 
 const initCart = () => {
   const cart = new Cart()
-  if (cart) {
-    document.body.addEventListener('click', handleCloseToggle, false)
-    document.body.addEventListener('click', cart.updateItemQuantity, false)
-  }
+  if (cart) document.body.addEventListener('click', handleCloseToggle, false)
+  document.body.addEventListener('click', cart.updateItemQuantity, false)
 }
 
 /**
@@ -57,40 +54,32 @@ const initCart = () => {
  * on the basis of page rendering using the url
  */
 const initApp = () => {
-  console.log('init')
-  const pageSlug = window.location.pathname
-  if (pageSlug === '/index.html' || pageSlug === '' || pageSlug === '/') {
+  const {
+    location: { pathname }
+  } = window
+  const ROUTES = [
+    ['/index.html', '', '/'],
+    ['/products.html'],
+    ['/signup.html', '/login.html']
+  ]
+  if (ROUTES[0].includes(pathname)) {
     if (!initSliderCarousel()) return
     const banner = new Banners()
-  } else if (pageSlug === '/products.html') {
+  } else if (ROUTES[1].includes(pathname)) {
     const products = new Products()
-  } else if (pageSlug === '/signup.html' || pageSlug === '/login.html') {
+  } else if (ROUTES[2].includes(pathname)) {
     document.getElementById('loader').style.display = 'none'
   }
   initCart()
 }
 
-<<<<<<< HEAD
-
-  /**
-  * @function iife
-  * iife (imidiate invoked functions) - this looks for if window is being loaded and it
-  * mainatains check for event listning
-  * on the basis of page rendering using the url
-  */
-  (() => {
-  
-    document.readyState === 'complete' || 'interactive'
-    ? setTimeout(initApp, 1)
-    : document.addEventListener('DOMContentLoaded', initApp)
-  })()
-=======
 /**
  * @function iife
  * iife (imidiate invoked functions) - this looks for if window is being loaded and it
  * mainatains check for event listning
  * on the basis of page rendering using the url
  */
+
 ;(() => {
   if (
     document.readyState === 'complete' ||
@@ -101,4 +90,3 @@ const initApp = () => {
     document.addEventListener('DOMContentLoaded', initApp)
   }
 })()
->>>>>>> development
