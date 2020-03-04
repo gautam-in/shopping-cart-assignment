@@ -12,11 +12,7 @@ import Cart from './cart-handler'
  */
 
 export default class Products {
-  /**
-   * @constructs Products
-   */
-
-  constructor() {
+  init = () => {
     this.product = JSON.parse(JSON.stringify(ProductsDataStructure))
     this.getProducts()
     this.storage = new LocalStore()

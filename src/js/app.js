@@ -44,8 +44,10 @@ const handleCloseToggle = event => {
 
 const initCart = () => {
   const cart = new Cart()
-  if (cart) document.body.addEventListener('click', handleCloseToggle, false)
-  document.body.addEventListener('click', cart.updateItemQuantity, false)
+  if (cart) {
+    document.body.addEventListener('click', handleCloseToggle, false)
+    document.body.addEventListener('click', cart.updateItemQuantity, false)
+  }
 }
 
 /**
@@ -65,21 +67,21 @@ const initApp = () => {
   if (ROUTES[0].includes(pathname)) {
     if (!initSliderCarousel()) return
     const banner = new Banners()
+    banner.callBanners()
   } else if (ROUTES[1].includes(pathname)) {
     const products = new Products()
+    products.init()
   } else if (ROUTES[2].includes(pathname)) {
     document.getElementById('loader').style.display = 'none'
   }
   initCart()
 }
-
 /**
  * @function iife
  * iife (imidiate invoked functions) - this looks for if window is being loaded and it
  * mainatains check for event listning
  * on the basis of page rendering using the url
  */
-
 ;(() => {
   if (
     document.readyState === 'complete' ||
