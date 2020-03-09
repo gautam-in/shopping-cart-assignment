@@ -1,17 +1,17 @@
 <ul class='product-list' role="list">
   {{#each .}}
-  <li class='product-cards' role="listitem">
-    <span class='product-name truncate'>
+  <li class='product-cards' role="listitem" id={{category}}>
+    <h2 class='product-name truncate'>
       {{name}}
-    </span>
-    <img src={{imageURL}} alt={{name}} class='product-img' role="img" aria-label={{ description }} />
-    <p class='product-desc' title={{ description }}>
+    </h2>
+    <img src={{imageURL}} alt='{{name}}' class='product-img'/>
+    <p class='product-desc' >
       {{ description }}
     </p>
     <button
     class='btn-cta mobile tablet'
     data-prod-id={{id}}
-    data-prod-name={{name}}
+    data-prod-name='{{name}}'
     data-prod-price={{price}}
     data-prod-img={{imageURL}}
     >
@@ -24,13 +24,12 @@
     <button
     class='btn-cta'
     data-prod-id={{id}}
-    data-prod-name={{name}}
+    data-prod-name='{{name}}'
     data-prod-price={{price}}
     data-prod-img={{imageURL}}
     >
     Buy Now
   </button>
-
 </div>
 </li>
 {{/each }}

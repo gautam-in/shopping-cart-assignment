@@ -5,7 +5,6 @@
 	margin: 0 auto;
 	width:75vw;
 	flex-flow: wrap;
-	font-family:$font-family-dosis;
 	margin:50px 50px;
 	&_formGroup{
 		display: flex;
@@ -86,14 +85,8 @@
 	&_btn-container {
 		margin-bottom: 2rem;
 	}
-
-
-	&-heading{
-		font-family: $font-family-dosis;
-	}
 	&-desc{
 		font-size: 14px;
-		font-family: $font-family-dosis;
 	}
 }
 

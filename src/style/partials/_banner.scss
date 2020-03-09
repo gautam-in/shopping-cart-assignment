@@ -55,7 +55,6 @@
     }
     margin:15px;
     p, span{
-      font-family: $font-family-dosis;
       font-size: 1.2rem;
       text-align:center;
     }
@@ -87,20 +86,21 @@
       background: $tertiaryCTA;
       padding:15px;
       border-radius:3px;
-      border:none;
       font-size:  1.3rem;
-      @media only screen
-      and (min-device-width: 320px)
-      and (max-device-width: 480px){
-        font-size:  2rem;
-      }
       font-weight: 500;
-      font-family: $font-family-dosis;
       color: #fff;
       margin:15px auto;
       display: block;
       cursor: pointer;
       text-transform: capitalize;
+      text-align: center;
+      width:20vw;
+      @media only screen
+      and (min-device-width: 320px)
+      and (max-device-width: 480px){
+        font-size:  2rem;
+      }
+
     }
   }
 

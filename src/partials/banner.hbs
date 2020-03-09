@@ -2,12 +2,12 @@
 {{#if imageUrl }}
 <div class='banner-component'>
   <div class='image-container'>
-    <img src={{imageUrl}} alt={{name}} class='banner-image' />
+    <img src={{imageUrl}} alt='{{name}}' class='banner-image' />
   </div>
   <div class='content'>
-    <span class='heading'> {{name}} </span>
+    <h2 class='heading'> {{name}} </h2>
     <p class='desc'> {{ description }} </p>
-    <button class='link-button'> Explore {{key}} </button>
+    <a href='#' class='link-button'> Explore {{key}} </a>
   </div>
 </div>
 {{/if}}

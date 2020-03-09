@@ -1,7 +1,6 @@
 @import '../colors';
 
 .product{
-  font-family: $font-family-dosis;
   &-cards{
     width: 21%;
     margin: 4px;
@@ -87,7 +86,6 @@ and (max-device-width: 1024px) {
     }
     .btn-cta {
       background: $tertiaryCTA;
-      font-family: $font-family-dosis;
       border: none;
       padding: 15px;
       margin: 0 auto;
@@ -149,7 +147,6 @@ and (max-device-width: 480px) {
     }
     .btn-cta {
       background: $tertiaryCTA;
-      font-family: $font-family-dosis;
       border: none;
       padding: 25px;
       margin: 0 auto;

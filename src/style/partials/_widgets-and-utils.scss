@@ -17,7 +17,6 @@
     margin:0px auto;
     width: 75vw;
     color: #fff;
-    font-family: $font-family-dosis;
     font-weight: 500;
     @media only screen
     and (min-device-width: 320px)
@@ -28,7 +27,6 @@
 }
 .btn-cta{
   background: $tertiaryCTA;
-  font-family: $font-family-dosis;
   border: none;
   padding: 10px;
   margin: 0 auto;
@@ -64,6 +62,7 @@
 
 .btn{
   &-cart{
+    border: none;
     background: #d3d3d3;
     width:15vw;
     display: flex;
@@ -72,8 +71,8 @@
     @media only screen
     and (min-device-width: 320px)
     and (max-device-width: 480px) {
-      width:30vw;
-      padding:2px 33px 16px 4px;
+      width:31vw;
+      padding:11px 36px 27px 4px;
     }
     .text{
       font-size: 1rem;

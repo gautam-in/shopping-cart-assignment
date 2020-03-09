@@ -1,48 +1,47 @@
 <!-- header starts -->
 <header role="banner">
-  <nav role="navigation" aria-label="Main">
-    <div class='navigation'>
-      <div class='logo-container'>
-        <a href='index.html'>
-          <img class='logo-img' src='static/images/logo.png' alt='logo image' />
-        </a>
-      </div>
-      <div class='navlinks-container'>
-        <ul class='links' role="navigation">
-          <li>
-            <a href='index.html'>
-              Home
+  <div class='navigation' role="navigation">
+    <a href='index.html' rel="home">
+      <img class='logo-img' src='static/images/logo.png' alt='logo image' />
+    </a>
+    <nav>
+      <ul class='list-h'>
+        <li>
+          <a href='index.html' role='link'>
+            Home
+          </a>
+        </li>
+        <li>
+          <a href='products.html' role='link'>
+            Products
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <div class='cart-login-container'>
+      <nav>
+        <ul class='list-h'>
+          <li class="link">
+            <a href='signup.html' role='link'>
+              Signup
             </a>
           </li>
-          <li>
-            <a href='products.html'>
-              Products
+          <li class="link">
+            <a href='login.html' role='link'>
+              Login
             </a>
           </li>
         </ul>
-      </div>
-      <div class='cart-login-container'>
-        <div class='login-container'>
-          <span class='link'>
-            <a href='signup.html'>
-              Signup
-            </a>
-          </span>
-          <span class='login'>
-            <a href='login.html'>
-              Login
-            </a>
-          </span>
-        </div>
-        <button class ='btn-cart'>
-          <img src='static/images/cart.svg' alt='cart image' class ='icon' id='outside'/>
-          <span class ='text' id="cart-items" >0 Items</span>
-        </button>
-        <div id="desktop-cart" class="cart-main-cont">
-          {{> cart}}
-        </div>
+      </nav>
+      <button class ='btn-cart' >
+        <img src='static/images/cart.svg' alt='cart image' class ='icon' id='outside'/>
+        <span class ='text' id="cart-items" >0 Items</span>
+      </button>
+      <div id="desktop-cart" class="cart-main-cont">
+        {{> cart}}
       </div>
     </div>
-  </nav>
+  </div>
+</div>
 </header>
 <!-- headers ends -->
