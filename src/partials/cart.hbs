@@ -10,48 +10,44 @@
 
   <ul class="cart_list">
     {{#each data}}
-      <li class="cart_list-item" data-product-id={{ id }}>
-        <img src={{ imageUrl }} class="cart_list-img" alt={{name}}>
-        <!-- to be changed later for future -->
-        <div class="cart_list-details">
-          
-          <span class="cart_list-name">{{name}}</span>
-
-          <button type="button" name="button" class="btn-increment" data-product-id={{ id }}>
-            +
-          </button>
-
-          <span class="quantity">
-            {{#if " quantity != '' " }}
-              {{quantity}}
-            {{else}}
-              0
-            {{/if}}
-          </span>
-
-          <button type="button" name="button" class="btn-decrement" data-product-id={{ id }}>
-            -
-          </button>
-          <span class="into-qty">
-            X
-          </span>
-          <span class="cart_list-price">Rs. {{price}}</span>
-        </div>
-        <span class="cart_list-item-total">
-          {{#if totalPrice}}
-            Rs.{{ totalPrice }}
+    <li class="cart_list-item" data-product-id={{ id }}>
+      <img src={{ imageUrl }} class="cart_list-img" alt='{{name}}'>
+      <!-- to be changed later for future -->
+      <div class="cart_list-details">
+        <h2 class="cart_list-name truncate">{{name}}</h2>
+        <a  href='#' role="button" class="btn-increment" data-product-id={{ id }}>
+          +
+        </a>
+        <span class="quantity">
+          {{#if " quantity != '' " }}
+          {{quantity}}
           {{else}}
-            Rs.{{ price }}
+          0
           {{/if}}
         </span>
-      </li>
+        <a  href='#' role="button" class="btn-decrement" data-product-id={{ id }}>
+          -
+        </a>
+        <span class="into-qty">
+          X
+        </span>
+        <span class="cart_list-price">Rs. {{price}}</span>
+        <span class="cart_list-item-total">
+          {{#if totalPrice}}
+          Rs.{{ totalPrice }}
+          {{else}}
+          Rs.{{ price }}
+          {{/if}}
+        </span>
+      </div>
+    </li>
     {{/each }}
   </ul>
 
   <div class="checkout">
-    <span class="checkout-heading">
+    <p class="checkout-heading">
       Promo code can be applied on the checkout page.
-    </span>
+    </p>
     <button type="button" name="button" class="btn-cart-checkout checkout-button">
       <!-- TODO: remove containers -->
       <span class="checkout-text">

@@ -1,16 +1,15 @@
-<div class="login-section">
+<section class="login-section">
    <div class="login-section_info">
       <h1 class="login-section-heading" role="heading">Login</h1>
-      <span class="login-section-desc">Get Access to your Orders. Wishlist and Recommendations</span>
+      <div class="login-section-desc">Get Access to your Orders. Wishlist and Recommendations</div>
    </div>
    <div class="login-section_formGroup">
       <form
       action="index.html"
       method="post"
       autocomplete="off"
-      role='form'
       class="login-section_form"
-      aria-label="Login form"
+      aria-label="form"
       >
          <div class="field">
             <input
@@ -19,7 +18,7 @@
                type="email"
                name="email"
                id="email"
-               placeholder='your email id'
+               placeholder='Email id'
                pattern="[^@\s]+@[^@\s]+\.[^@\s]+"
                required>
             <label
@@ -35,7 +34,7 @@
                type="password"
                name="password"
                id="password"
-               placeholder="***"
+               placeholder="Password"
                required
                >
             <label
@@ -43,9 +42,9 @@
                id="password">Password *
             </label>
          </div>
-         <div class="login-section_btn-container">
-            <input type="submit" role class="login-btn" name="" value="Login" />
-         </div>
+
+            <input type="submit" role class="btn--login" name="" value="Login" />
+
       </form>
    </div>
-</div>
+</section>

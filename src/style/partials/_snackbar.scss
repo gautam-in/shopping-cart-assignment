@@ -3,7 +3,7 @@
 .snackbar {
   visibility: hidden;
   min-width: 250px;
-  background-color: #3c3c3c;
+  background-color: #1d1d1d;
   color: #fff;
   text-align: center;
   border-radius: 2px;
@@ -13,7 +13,6 @@
   left: 30px;
   bottom: 30px;
   font-size: 17px;
-  color:$success;
   &.show {
     visibility: visible;
     -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;

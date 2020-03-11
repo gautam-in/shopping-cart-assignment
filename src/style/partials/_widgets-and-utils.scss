@@ -100,24 +100,28 @@
   &-increment,&-decrement{
     background-color:$tertiaryCTA;
     border:none;
-    padding:0px 6px 4px 6px;
+    padding:0px 5px 4px 9px;
     border-radius: 50%;
-    margin: 0px 2px;
-    font-size: 1rem;
-    font-weight: 500;
+    margin: 0px 15px;
+    font-size: 1.2rem;
+    font-weight: bold;
     color: #fff;
-
+    // @media only screen
+    // and (min-device-width: 481px)
+    // and (max-device-width: 1024px) {
+    //
+    // }
     @media only screen
     and (min-device-width: 320px)
     and (max-device-width: 480px) {
       font-size: 3rem;
       border-radius: 5px;
     }
+
+
   }
   &-decrement{
-    padding: 0px 7px 4px 7px;
-    font-size: 1rem;
-
+    padding: 0px 5px 4px 8px;
     @media only screen
     and (min-device-width: 320px)
     and (max-device-width: 480px) {

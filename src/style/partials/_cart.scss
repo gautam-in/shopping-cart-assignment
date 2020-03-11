@@ -33,29 +33,25 @@
   .cart-wrapper{
     position: relative;
     height: 81.5vh;
-    width: 30vw;
+    width: 35vw;
     .checkout {
       position: absolute;
       padding:15px;
       left: 0;
       right:0;
       bottom: 0;
-      background: #fff;
+      background: $white;
       &-button {
         background: $tertiaryCTA;
         border: none;
-        display: flex;
         width: 100%;
         color: $white;
         font-size: 1rem;
         padding: 15px;
-        justify-content: space-between;
       }
       &-heading {
         margin: 0px 0px 15px 0px;
         text-align: center;
-        font-size: 1rem;
-        display: block;
       }
       &-price{
 
@@ -73,24 +69,22 @@
 
     .cart_list{
       list-style: none;
-      margin-block-start: 0em;
-      margin-block-end: 0em;
-      margin-inline-start: 0px;
-      margin-inline-end: 0px;
-      padding-inline-start: 0px;
+      padding: 0px;
+      margin-left: 0px;
       max-height: 62vh;
       overflow: auto;
+      &-details{
+        width:100%;
+      }
       &-item{
         background: $white;
         display: flex;
         align-items: flex-start;
         margin-bottom: 10px;
         &-total {
-          text-align: right;
-          width: 25%;
           font-size: 1rem;
-          padding: 10px;
-          margin: 31px 16px 14px 10px;
+          margin: 0px 15px 0px 0px;
+          float: right;
         }
       }
       .quantity,&-price{
@@ -108,7 +102,6 @@
         font-weight: 600;
         margin: 10px 0px;
         text-align: left;
-        display: block;
       }
     }
   }
@@ -118,20 +111,12 @@
 // tablet
 @media only screen
 and (min-device-width: 481px)
-and (max-device-width: 1024px) {  
-  .cart-main-cont  {
+and (max-device-width: 1024px) {
+  .cart-main-cont{
     position: fixed;
-    display: none;
-    right: 0;
-    top: 10vh;
-    bottom:0;
-    left:0;
-    background: #efefef;
-    z-index: 3;
-    .cart-wrapper{
-      position: relative;
-      width:100vw;
-      height:90vh;
+    .cart-wrapper {
+      width: 100vw;
+      height:95vh;
     }
   }
 }
@@ -166,18 +151,15 @@ and (max-device-width: 480px) {
         &-button {
           background: $tertiaryCTA;
           border: none;
-          display: flex;
           width: 100%;
           color: $white;
           font-size: 3rem;
           padding: 15px;
-          justify-content: space-between;
         }
         &-heading {
           margin: 0px 0px 15px 0px;
           text-align: center;
           font-size: 3rem;
-          display: block;
         }
         &-price{
 
@@ -195,12 +177,6 @@ and (max-device-width: 480px) {
       }
 
       .cart_list{
-        list-style: none;
-        margin-block-start: 0em;
-        margin-block-end: 0em;
-        margin-inline-start: 0px;
-        margin-inline-end: 0px;
-        padding-inline-start: 0px;
         max-height: 71vh;
         overflow: auto;
         &-item{
@@ -209,11 +185,7 @@ and (max-device-width: 480px) {
           align-items: flex-start;
           margin-bottom: 10px;
           &-total {
-            text-align: right;
-            width: 25%;
             font-size: 3rem;
-            padding: 10px;
-            margin: 72px 16px 14px 10px;
           }
         }
         .quantity,&-price{

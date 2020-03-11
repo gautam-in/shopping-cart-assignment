@@ -1,4 +1,5 @@
 import HttpRequest from './httpRequest'
+import Snackbar from './snackbar'
 
 /**
  * Creates a new LocalStore.
@@ -53,6 +54,7 @@ export default class LocalStore {
    */
 
   setLocaldata = (args, data) => {
+    const snackbar = new Snackbar()
     const isDuplicate = this.findDuplicateItem(args, data)
     if (!isDuplicate) {
       console.log('%c no duplicated allowed', 'color:#5FFF47')
@@ -66,13 +68,7 @@ export default class LocalStore {
         AJAX.customAjax()
           .then(result => {
             if (result.response === 'Success') {
-              const snackbar = document.getElementById('snackbar')
-              snackbar.innerHTML = result.responseMessage
-              snackbar.classList.add('show')
-              setTimeout(() => {
-                snackbar.classList.replace('show', 'snackbar')
-                snackbar.innerHTML = 'No Products added'
-              }, 2000)
+              snackbar.updateSnackBar(result.responseMessage, true)
             }
             return true
           })
@@ -82,6 +78,7 @@ export default class LocalStore {
       }
     } else {
       console.error('data already exists please select other item')
+      snackbar.updateSnackBar('Item already exists in the cart', false)
       return false
     }
     return true

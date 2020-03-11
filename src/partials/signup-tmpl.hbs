@@ -1,25 +1,22 @@
-<div class="signup-section">
+<section class="signup-section">
    <div class="signup-section_info" role="heading" >
       <h1 class="login-section-heading">Signup</h1>
-      <span class="login-section-desc">We do nto share your personal details anywhere.</span>
+      <div class="login-section-desc">We do nto share your personal details anywhere.</div>
    </div>
    <div class="login-section_formGroup">
       <form
       action="index.html"
-      role="form" method="post"
+      method="post"
       autocomplete="off"
       class="signup-section_form"
-      aria-label="Signup form"
+      aria-label="form"
       >
          <div class="field">
             <input
-               aria-required="true"
-               aria-labelledby="firstname"
                type="text"
                name="firstname"
                id="firstname"
-               placeholder="Steve"
-
+               placeholder="First Name"
                required>
             <label
                for="firstname"
@@ -29,13 +26,11 @@
          </div>
          <div class="field">
             <input
-               aria-required="true"
-               aria-labelledby="lastname"
+
                type="text"
                name="lastname"
                id="lastname"
-               placeholder="Carrel"
-
+               placeholder="Last Name"
                required>
             <label
                for="lastname"
@@ -45,14 +40,12 @@
          </div>
          <div class="field">
             <input
-               aria-required="true"
-               aria-labelledby="email"
+
                type="email"
                name="email"
                id="email"
-               placeholder="steve@sabkabazaar.com"
+               placeholder="Email id"
                pattern="[^@\s]+@[^@\s]+\.[^@\s]+"
-
                required>
             <label
                for="email"
@@ -62,12 +55,11 @@
          </div>
          <div class="field">
             <input
-               aria-required="true"
-               aria-labelledby="password"
+
                type="password"
                name="password"
                id="password"
-               placeholder="***"
+               placeholder="Password"
                required
                >
             <label
@@ -77,12 +69,10 @@
          </div>
          <div class="field">
             <input
-               aria-required="true"
-               aria-labelledby="confirm-password"
                type="password"
                name="confirm-password"
                id="confirm-password"
-               placeholder="***"
+               placeholder="Confirm Password"
                required
                >
             <label
@@ -90,9 +80,9 @@
                id="confirm-password">Confirm Password *
             </label>
          </div>
-         <div class="signup-section_btn-container">
-            <input type="submit" class="signup-btn" name="" value="SignUp" />
-         </div>
+
+            <input type="submit" class="btn--signup" name="submit" value="SignUp" />
+
       </form>
    </div>
-</div>
+</section>

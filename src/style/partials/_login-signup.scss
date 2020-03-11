@@ -75,29 +75,24 @@
 		}
 
 	}
-
-
 	&_info{
 		flex: 0 0 50%;
 		margin-left: 10%;
-	}
-
-	&_btn-container {
-		margin-bottom: 2rem;
 	}
 	&-desc{
 		font-size: 14px;
 	}
 }
 
-
-.login-btn, .signup-btn {
-	background-color: $tertiaryCTA;
-	border: none;
-	width: 100%;
-	padding: 0.5rem!important;
-	color: #fff;
-	font-size: 1.2rem;
-	box-sizing: border-box;
-	border-bottom: 0px solid transparent!important;
+.btn{
+	&--login, &--signup {
+		background-color: $tertiaryCTA;
+		border: none;
+		width: 100%;
+		padding: 0.5rem!important;
+		color: #fff;
+		font-size: 1.2rem;
+		box-sizing: border-box;
+		border-bottom: 0px solid transparent!important;
+	}
 }

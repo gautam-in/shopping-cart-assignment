@@ -6,7 +6,7 @@ header{
     margin:0px auto;
     display: flex;
     justify-content: space-between;
-    
+
     .logo-img {
       margin-top: 15px;
       width: 140px;
@@ -28,6 +28,9 @@ header{
         margin: 15px;
         width: 240px;
       }
+    }
+    .cart-login-container{
+      position: relative;
     }
   }
   nav{
