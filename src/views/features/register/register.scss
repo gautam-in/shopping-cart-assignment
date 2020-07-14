@@ -1,0 +1,45 @@
+@import '../../common/components/molecules/m-input.scss';
+@import '../../common/components/molecules/m-button.scss';
+@import '../../../styles/common/variables';
+.content-area {
+    .signup-text-details {
+        display: map-get($display, none);
+    }
+    .signup-form {
+        padding: 40px;
+        .mobile-view-title {
+            margin-bottom: 40px;
+        }
+    }
+}
+
+@include responsive-for-ipad-desktop {
+    .content-area {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: map-get($display, flex);
+        max-width: 1170px;
+        margin: 0 auto;
+        -ms-flex-align: center;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 34px;
+        .signup-text-details {
+            display: map-get($display, block);
+            padding: 40px;
+            width: 30%;
+            .main-header {
+                @include fontSize(27px);
+            }
+            .para {
+                margin-top: 30px;
+            }
+        }
+        .signup-form {
+            width: 25%;
+            .mobile-view-title {
+                display: map-get($display, none);
+            }
+        }
+    }
+}

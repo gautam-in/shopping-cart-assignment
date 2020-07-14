@@ -1,4 +1,7 @@
 {
-  "response": "Success",
-  "responseMessage": "Product added to cart successfully"
+
+    "addToCart": {
+        "status": 200
+    }
+
 }

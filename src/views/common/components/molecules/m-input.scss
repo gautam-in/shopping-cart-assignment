@@ -1,0 +1,33 @@
+@import '../atoms/a-lable.scss';
+@import '../atoms/a-input.scss';
+@import '../../../../styles/common/variables';
+
+/** float container */
+
+.form-group {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    margin-bottom: 8px;
+    padding: 0 8px;
+    position: map-get($position, rel);
+    ;
+    width: 300px;
+    /** active label */
+    &.active {
+        label {
+            //move the x coordinate and reduce size
+            -webkit-transform: translate(0, 4px) scale(.75);
+            transform: translate(0, 4px) scale(.75);
+            color: $input-highlight-color;
+        }
+        input {
+            border-bottom: 1px solid $input-highlight-color;
+        }
+    }
+    .error {
+        color: $validation-error-msg-color;
+        @include fontSize(12px);
+        position: relative;
+        top: -16px;
+    }
+}

@@ -1,0 +1,44 @@
+@import '../../../views/common/components/molecules/m-nav-mobile.scss';
+@import '../../common/components/molecules/m-nav-primary.scss';
+@import '../../common/components/organisms/productlist/o-productlist.scss';
+.product-content-area {
+    max-width: 1170px;
+    margin: auto;
+    position: map-get($position, relative);
+    height: 100%;
+    overflow: hidden;
+    width: 100%;
+    #product-list-section {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: map-get($display, flex);
+        -ms-flex-direction: row;
+        flex-direction: row;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    }
+}
+
+@include responsive-for-ipad-desktop {
+    .product-content-area {
+        display: map-get($display, tab);
+        margin-bottom: 0px;
+        #left-nav-filter {
+            display: map-get($display, tab-c);
+            width: 25%;
+            vertical-align: top;
+        }
+        #product-list-section {
+            position: map-get($position, relative);
+            margin-top: 20px;
+        }
+    }
+}
+
+@include responsive-for-desktop {
+    .product-content-area {
+        #product-list-section {
+            position: map-get($position, rel);
+        }
+    }
+}

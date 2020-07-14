@@ -1,0 +1,13 @@
+input {
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    @include fontSize( $input-font-size);
+    font-family: Dosis;
+    color: $black;
+    margin-bottom: 20px;
+    display: map-get($display, block);
+    width: 100%;
+    outline: 0;
+    padding: 16px 0 10px;
+}

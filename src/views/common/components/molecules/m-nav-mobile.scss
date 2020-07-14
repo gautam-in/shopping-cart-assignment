@@ -1,0 +1,60 @@
+.category-mobile {
+    border: 0;
+    outline: 0;
+    padding: 8px 10px;
+    font-family: Dosis;
+    background: $primary-pink-color;
+    color: $white;
+    width: 100%;
+    display: map-get($display, block);
+    cursor: pointer;
+    @include fontSize(20px);
+    position: map-get($position, rel);
+    .caret {
+        display: map-get($display, in-blk);
+        width: 0;
+        height: 0;
+        margin-right: 20px;
+        vertical-align: middle;
+        border: solid $white;
+        border-width: 0 3px 3px 0;
+        padding: 3px;
+        transform: rotate(45deg);
+        -webkit-transform: rotate(45deg);
+        position: map-get($position, abs);
+        right: 15px;
+        top: 12px;
+    }
+    @include responsive-for-ipad-desktop {
+        display: map-get($display, none);
+    }
+}
+
+.category-block {
+    background-color: $primary-pink-color;
+    text-align: center;
+    overflow: hidden;
+    display: map-get($display, none);
+    -webkit-transition: height 0.5s;
+    transition: height 0.5s;
+    border: 1px solid $white;
+    li {
+        padding: 15px 0 15px 20px;
+        border-bottom: 1px solid $white;
+        cursor: pointer;
+        a {
+            color: $white;
+            @include fontSize(18px);
+        }
+        @include responsive-for-ipad-desktop {
+            padding-left: 20px;
+            font-size: 100%;
+            color: $list-item-color;
+            border-bottom: 1px solid $list-item-color;
+        }
+    }
+}
+
+.disp {
+    display: map-get($display, block) !important;
+}

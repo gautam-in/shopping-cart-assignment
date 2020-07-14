@@ -1,0 +1,44 @@
+@import '../../../styles/common/variables';
+@import '../../common/components/atoms/a-paragraph.scss';
+@import '../../common/components/atoms/a-header.scss';
+.content-area {
+    .login-text-details {
+        display: map-get($display, none);
+    }
+    .login-form {
+        padding: 40px;
+        .mobile-view-title {
+            margin-bottom: 40px;
+        }
+    }
+}
+
+@include responsive-for-ipad-desktop {
+    .content-area {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: map-get($display, flex);
+        max-width: 1170px;
+        margin: 0 auto;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 34px;
+        .login-text-details {
+            display: map-get($display, block);
+            padding: 40px;
+            width: 30%;
+            .main-header {
+                @include fontSize(27px);
+            }
+            .para {
+                margin-top: 30px;
+            }
+        }
+        .login-form {
+            width: 25%;
+            .mobile-view-title {
+                display: map-get($display, none);
+            }
+        }
+    }
+}

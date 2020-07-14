@@ -1,0 +1,11 @@
+    <a class="category-mobile" onclick="toggleNav(event)" tabindex="0">Categories</a>
+    <ul class="category-block" role="list" aria-labelledby="categories for mobile">
+    {{#each categories}}
+    {{#if this.enabled}}
+        <li value="{{this.name}}" role="listitem" aria-label="{{this.name}}" >
+            <a  id={{this.id}} name="{{this.name}}"class="test" onclick="changeText(event,this.id,this.name)" tabindex="0">{{this.name}}</a>
+        </li>
+    {{/if}}
+    {{/each}}
+
+    </ul>

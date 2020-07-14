@@ -1,0 +1,9 @@
+<ul id="side-nav-filter-list" role="list" aria-label="Product Filter List">
+            {{#each categories}}
+                {{#if this.enabled}}
+                    <li value="{{this.name}}" role="listitem" aria-label="{{this.name}}" >
+                        <a href="/product/{{this.id}}" class="{{classvalue}}">{{this.name}}</a>
+                    </li>
+                {{/if}}
+            {{/each}}
+        </ul>

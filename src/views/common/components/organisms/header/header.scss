@@ -1,0 +1,144 @@
+@import '../../../../../styles/common/variables';
+.header-area {
+    position: -webkit-sticky;
+    position: map-get($position, stick);
+    top: 0;
+    height: 60px;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: map-get($display, flex);
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    background: $white;
+    z-index: 1;
+    border-bottom: 2px solid $primary-grey;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    .header-center {
+        width: 100%;
+        max-width: 1170px;
+        margin: 0 auto;
+        display: map-get($display, flex);
+        align-items: flex-end;
+        justify-content: space-between;
+        position: map-get($position, rel);
+        .header-left {
+            img {
+                width: 120px;
+            }
+        }
+        .header-middle {
+            display: map-get($display, none);
+        }
+        .header-middle-mobile {
+            display: map-get($display, block);
+            right: 110px;
+            position: map-get($position, abs);
+            .menu-hamburger {
+                cursor: pointer;
+                img {
+                    width: 30px;
+                }
+            }
+            .menu-list {
+                display: map-get($display, none);
+                position: map-get($position, abs);
+                background: $white;
+                top: 106%;
+                width: 100px;
+                z-index: 3;
+                -webkit-box-shadow: $box-shadow;
+                box-shadow: $box-shadow;
+                li {
+                    padding: 5px;
+                    border-bottom: 1px dotted $list-item-color;
+                }
+                li:last-child {
+                    border-bottom: 0px;
+                }
+            }
+        }
+        .header-right {
+            .signup-details {
+                display: map-get($display, none);
+            }
+            .cart-details {
+                background: $primary-grey;
+                padding: 14px;
+                cursor: pointer;
+                .cart-img {
+                    img {
+                        width: 25px;
+                    }
+                }
+                .number-of-items {
+                    position: map-get($position, rel);
+                    top: -5px;
+                    @include fontSize(14px);
+                    font-weight: 600;
+                    #cart-item-quantity {
+                        margin-right: 2px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include responsive-for-ipad-desktop {
+    .header-area {
+        height: 80px;
+        .header-center {
+            -webkit-box-pack: baseline;
+            -ms-flex-pack: baseline;
+            justify-content: baseline;
+            .header-left {
+                img {
+                    width: 150px;
+                }
+            }
+            .header-middle {
+                display: block !important;
+                min-width: 63%;
+                ul {
+                    list-style-type: none;
+                    li {
+                        float: map-get($float, l);
+                        padding: 20px;
+                        a {
+                            text-decoration: none;
+                            color: $text-grey-color;
+                            font-weight: bold;
+                            cursor: pointer;
+                        }
+                    }
+                }
+            }
+            .header-middle-mobile {
+                display: map-get($display, none);
+            }
+            .header-right {
+                -webkit-box-sizing: border-box;
+                box-sizing: border-box;
+                position: map-get($position, rel);
+                bottom: 1px;
+                .signup-details {
+                    display: map-get($display, block);
+                    padding: 5px 0px 5px 14px;
+                    a {
+                        @include fontSize(11px);
+                        text-decoration: none;
+                        color: $text-grey-color;
+                        font-weight: bold;
+                        padding: 6px;
+                        text-align: right;
+                        vertical-align: top;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+    }
+}

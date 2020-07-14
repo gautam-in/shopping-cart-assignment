@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <!-- Config meta tags -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="TODO">
+
+    <!-- Set the page title -->
+    <title>{{ title }}</title>
+
+    <!-- App styles -->
+    <link rel="stylesheet" href="/css/index.css" />
+  </head>
+  <body>
+    <!-- Wrapper div for the application -->
+    <div class="app">
+      {{> components/organisms/header/o-header}}
+
+      <!-- App content -->
+      <main role="main">
+        {{{ body }}}
+      </main>
+
+      {{> components/organisms/footer/o-footer}}
+    </div>
+
+    <!-- Javascripts -->
+    <script src="/js/validation.js"></script>
+    <script src="/js/common.js"></script>
+    <script src="/views/common/components/organisms/mini-cart/cart.js"></script>
+    <script src="/views/features/home/home.js"></script>
+    <script src="/views/features/product/product.js"></script>
+  </body>
+</html>

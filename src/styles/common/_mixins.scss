@@ -1,0 +1,55 @@
+@mixin responsive-for-desktop {
+    @media all and (min-width: 1024px) {
+        @content;
+    }
+}
+
+@mixin responsive-for-ipad-desktop {
+    @media all and (min-width: 768px) {
+        @content;
+    }
+}
+
+
+/* 
+  ##Device = Tablets, Ipads (portrait)
+  ##Screen = B/w 768px to 1024px
+*/
+
+@mixin responsive-for-ipad {
+    @media all and (min-width: 768px) and (max-width: 1024px) {
+        @content;
+    }
+}
+
+@mixin responsive-for-ms-mobile {
+    @media all and (min-width: 480px) and (max-width: 768px) {
+        @content;
+    }
+}
+
+
+/* 
+  ##Device = Most of the Smartphones Mobiles (Portrait)
+  ##Screen =  Max 480px
+*/
+
+@mixin responsive-for-sm-mobile {
+    @media all and (max-width: 480px) {
+        @content;
+    }
+}
+
+
+/* 
+  ##Convert px to rem
+*/
+
+@function calculateRem($size) {
+    $remSize: $size / 16px;
+    @return #{$remSize}rem;
+}
+
+@mixin fontSize($size) {
+    font-size: calculateRem($size);
+}

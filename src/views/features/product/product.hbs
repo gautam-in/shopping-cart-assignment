@@ -1,0 +1,13 @@
+ <div class="product-content-area clearfix">
+    <div id="left-nav-filter">
+        {{> components/molecules/m-nav-primary}}
+        <div class="nav-mobile">
+            {{> components/molecules/m-nav-mobile}}
+        </div>        
+    </div>        
+    <div id="product-list-section">
+        {{#each products}}
+             {{> components/organisms/productlist/o-productlist }}
+        {{/each}}
+    </div>
+</div> 

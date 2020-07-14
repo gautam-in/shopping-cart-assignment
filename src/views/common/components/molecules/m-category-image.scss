@@ -1,0 +1,13 @@
+.category-image {
+    img {
+        width: 150px;
+    }
+}
+
+@include responsive-for-ipad-desktop {
+    .category-image {
+        img {
+            width: 300px;
+        }
+    }
+}

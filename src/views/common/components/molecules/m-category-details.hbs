@@ -1,0 +1,7 @@
+<div class="category-details">
+    {{> components/atoms/a-header header=this.name classname="category-title"}}
+    {{> components/atoms/a-paragraph classname="category-title-details" para=this.description}}
+    <button class="btn category-button">
+        <a class="filter" href="/product/{{this.id}}">Explore {{this.name}}</a>
+    </button>
+</div>

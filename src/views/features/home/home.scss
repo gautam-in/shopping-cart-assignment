@@ -1,0 +1,87 @@
+@import '../../../styles/common/variables';
+@import '../../common/components/molecules/m-category-image.scss';
+@import '../../common/components/molecules/m-category-details.scss';
+.banner-wrapper {
+    padding: 5px 70px 0 70px;
+    max-width: $body-width;
+    margin: auto;
+    @media (max-width: $breakpoint-phone) {
+        padding: 0px;
+    }
+    .image-width {
+        width: 100%;
+    }
+    .home-slider {
+        .home-slider-offers {
+            position: map-get($position, rel);
+        }
+    }
+    .dots {
+        position: map-get($position, abs);
+        text-align: center;
+        width: 100%;
+        bottom: -18px;
+        z-index: map-get($z-index, carousel-dot);
+    }
+    .dot {
+        cursor: pointer;
+        height: 6px;
+        width: 6px;
+        margin: 0 8px;
+        background-color: $dot-banner-color;
+        border-radius: 50%;
+        display: map-get($display, in-blk);
+        -webkit-transition: background-color 0.6s ease;
+        transition: background-color 0.6s ease;
+        &.active,
+        &:hover {
+            background-color: $dot-banner-hover-color;
+        }
+    }
+    .prev,
+    .next {
+        cursor: pointer;
+        position: map-get($position, abs);
+        top: 42%;
+        width: auto;
+        padding: 5px;
+        color: $white;
+        -webkit-transition: 0.6s ease;
+        transition: 0.6s ease;
+        background-color: $black;
+        opacity: 0.2;
+        text-transform: uppercase;
+        border: none;
+    }
+    .next {
+        right: 8px;
+    }
+}
+
+#category-list {
+    margin-top: 20px;
+    .category {
+        width: 100%;
+        max-width: $body-width;
+        margin: 0 auto;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        justify-content: space-evenly;
+        -webkit-box-shadow: $box-shadow;
+        box-shadow: $box-shadow;
+        padding: 7px 0px;
+        min-height: 170px;
+    }
+}
+
+@include responsive-for-ipad-desktop {
+    #category-list {
+        .category {
+            min-height: 220px;
+        }
+    }
+}

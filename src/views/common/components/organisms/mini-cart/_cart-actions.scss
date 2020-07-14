@@ -1,0 +1,75 @@
+@import '../../../../../styles/common/variables';
+.cart-action {
+    padding: 22px;
+    @include responsive-for-sm-mobile {
+        width: 48%;
+        h3 {
+            @include fontSize(12px);
+        }
+    }
+    &__qty &__update {
+        width: 25px;
+        height: 25px;
+        border: 0;
+        border-radius: 50%;
+        padding: 0;
+        margin: 0;
+        background-color: $primary-pink-color;
+        color: $white;
+        @include fontSize(19px);
+        @include responsive-for-sm-mobile {
+            width: 25px;
+            height: 25px;
+            border-radius: 25px;
+            @include fontSize(19px);
+            margin-top: 12px;
+        }
+    }
+    &__qty &__quantity {
+        margin: 0px 15px;
+    }
+    &__qty,
+    &__amount {
+        display: map-get($display, in-blk);
+        vertical-align: top;
+    }
+    &__amount {
+        padding: 2px 0;
+        margin-left: 20px;
+        @include fontSize(16px);
+        @include responsive-for-sm-mobile {
+            padding: 15px 0px 15px 0px;
+            margin-left: 10px;
+            @include fontSize(15px);
+        }
+    }
+    &__amount &__operator {
+        line-height: 0;
+        margin-right: 20px;
+        @include fontSize(31px);
+        position: map-get($position, rel);
+        top: 3px;
+    }
+    &__total {
+        position: map-get($position, abs);
+        right: 0px;
+        top: 53px;
+        width: 96px;
+        text-align: center;
+        @include fontSize(16px);
+        @include responsive-for-ipad {
+            padding-top: 8%;
+        }
+        @include responsive-for-sm-mobile {
+            width: 25%;
+            padding: 0;
+        }
+    }
+    &__name {
+        margin: 0 0 15px 0;
+        @include fontSize(15px);
+        @include responsive-for-sm-mobile {
+            margin: 0 0 7px 0;
+        }
+    }
+}
