@@ -1,0 +1,72 @@
+<main class="form-wrapper margin-top-20" id="main-content" tabindex="-1">
+    <div class="row page-body">
+        <div class="col span-1-of-6"></div>
+        <!-- Content container for sign up form -->
+
+        <section class="col span-2-of-6 text-center top-pane">
+            <app-heading [class]="'form-heading text-left'" [tag]="'h1'" [isHeaderTagRequired]="false" [headingText]="'Signup'"></app-heading>
+            <app-heading [class]="'text-left margin-top-20 text-left font-500 font-16'" [tag]="'h2'" [isHeaderTagRequired]="false" [headingText]="'We do not share your personal details with anyone'"></app-heading>
+            
+        </section>
+
+
+        <!-- Signup form container -->
+
+        <div class="col span-2-of-6 text-center bottom-pane">
+            <form class="login-form">
+                <div class="text-left">
+                    <label class="field-label" [ngClass]="{'no-field-label':!signupForm.firstname.name && !signupForm.firstname.error.isError, 'label-error':signupForm.firstname.error.isError }" id="nameLbl" for="firstname">First Name</label>
+                </div>
+                <div class="text-left">
+                    <input id="firstname" [(ngModel)]="signupForm.firstname.name" [ngClass]="{'field-error':signupForm.firstname.error.isError}" (ngModelChange)="changedField(signupForm.firstname.name,'firstname')"  type="text" aria-required="true" aria-labelledby="nameLbl" name="firstname">
+                    <p class="error" *ngIf="signupForm.firstname.error.isError">
+                        {{signupForm.firstname.error.errorMsg}}
+                    </p>
+                </div>
+                
+                <div class="text-left margin-top-20">
+                    <label class="field-label" id="lastnameLbl" [ngClass]="{'no-field-label':!signupForm.lastname.name && !signupForm.lastname.error.isError, 'label-error':signupForm.lastname.error.isError}" for="lastname">Last Name</label>
+                </div>
+                <div class="text-left">
+                    <input id="lastname" [(ngModel)]="signupForm.lastname.name" [ngClass]="{'field-error':signupForm.lastname.error.isError}"  (ngModelChange)="changedField(signupForm.lastname.name,'lastname')"  type="text" name="lastname" aria-required="true" aria-labelledby="lastnameLbl">
+                    <p class="error" *ngIf="signupForm.lastname.error.isError">
+                        {{signupForm.lastname.error.errorMsg}}
+                    </p>
+                </div>
+                <div class="text-left margin-top-20">
+                    <label class="field-label"  [ngClass]="{'no-field-label':!signupForm.email.name && !signupForm.email.error.isError,'label-error':signupForm.email.error.isError}" id="emailLbl" for="email">Email</label>
+                </div>
+                <div class="text-left">
+                    <input id="email" [(ngModel)]="signupForm.email.name" [ngClass]="{'field-error':signupForm.email.error.isError}" (ngModelChange)="changedField(signupForm.email.name,'email')" type="email" name="email" aria-required="true" aria-labelledby="emailLbl">
+                    <p class="error" *ngIf="signupForm.email.error.isError">
+                        {{signupForm.email.error.errorMsg}}
+                    </p>
+                </div>
+                
+                <div class="text-left margin-top-20">
+                    <label class="field-label" id="pwdLbl"  [ngClass]="{'no-field-label':!signupForm.password.name && !signupForm.password.error.isError, 'label-error':signupForm.password.error.isError}" for="password">Password</label>
+                </div>
+                <div class="text-left">
+                    <input id="password" [(ngModel)]="signupForm.password.name" [ngClass]="{'field-error':signupForm.password.error.isError}" (ngModelChange)="changedField(signupForm.password.name,'password')" type="password" name="password" aria-required="true" aria-labelledby="pwdLbl">
+                    <p class="error" *ngIf="signupForm.password.error.isError">
+                        {{signupForm.password.error.errorMsg}}
+                    </p>
+                </div>
+
+                <div class="text-left margin-top-20">
+                    <label class="field-label" [ngClass]="{'no-field-label':!signupForm.confirmPassword.name && !signupForm.confirmPassword.error.isError,'label-error':signupForm.confirmPassword.error.isError}"   id="confPwdLbl" for="confirmPassword">Confirm Password</label>
+                </div>
+                <div class="text-left">
+                    <input id="confirmPassword" [(ngModel)]="signupForm.confirmPassword.name" [ngClass]="{'field-error':signupForm.confirmPassword.error.isError}" (ngModelChange)="changedField(signupForm.confirmPassword.name,'confirmPassword')" type="password" name="confirmPassword" aria-required="true" aria-labelledby="confPwdLbl">
+                    <p class="error" *ngIf="signupForm.confirmPassword.error.isError">
+                        {{signupForm.confirmPassword.error.errorMsg}}
+                    </p>
+                </div>
+                <app-common-button [buttonSize]="'large'" (onBtnClick)="onSubmit()" [type]="'btn-app'" [title]="'Signup'"></app-common-button>
+            </form> 
+
+        </div>
+
+        <div class="col span-1-of-6"></div>
+    </div> 
+</main>

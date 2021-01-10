@@ -1,0 +1,75 @@
+@import '../../../../styles/abstract/variables';
+@import '../../../../styles/abstract/mixin';
+@import '../../../../styles/abstract/color';
+.card-board{
+    position: relative;
+    @include bg-opacity($gs-23);
+    position: relative;
+    height: 265px;
+    @include margin($top:15px,$right:5px);
+    border-bottom: 1px dashed $gs-13;
+    @include box-shadow(3px 0 4px -3px $gs-10);
+    header{
+        height: 80px;
+        overflow: hidden;
+    }
+    .mrp{
+        display: none;
+        @include font-size(70%);
+        @include margin($top:25px);
+        font-weight: 600;
+    }
+    .mini-mrp{
+        display: inline;
+    }
+    footer{
+        width: 50%;
+        position: absolute;
+        bottom: 31px;
+        right: 0;
+        float: left;
+        @include margin();
+    }
+    &:hover{
+        @include box-shadow(5px 0 7px -1px $gs-12);
+    }
+
+    //small-screen 576px
+    @include small-screen{
+        height: 275px;
+        footer{
+            width: 97%;
+            bottom: 0;
+            position: relative;
+        }
+    }
+
+    // min-width  768px
+    @include medium-screen {
+        height: 427px;
+    }
+    @include large-screen{
+        height: 463px;
+        .footer{
+            .mini-mrp{
+                display: none;
+            }
+            .mrp{
+                display: inline-block;
+            }
+            .custom-button{
+                width: 50%;
+            }
+        }
+    }
+
+    @include range-of-screen(992px,1083px){
+        .footer{
+            .custom-button{
+                @include font-size(60%);
+                padding: 10px 20px;
+            }
+        }
+    }
+}
+

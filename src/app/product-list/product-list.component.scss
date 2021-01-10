@@ -1,0 +1,91 @@
+@import '../../styles/abstract/variables';
+@import '../../styles/abstract/mixin';
+@import '../../styles/abstract/color';
+.list-container{
+    outline: none;
+    .container{
+        display: table;
+    }
+    .col{
+        margin: 0 !important
+    }
+    .span-10-of-12,.span-1-of-4{
+        width: 100%;
+    }
+    .tabs{
+        display: none;
+
+        /*For IE vertical align is used*/
+        vertical-align: top;
+        @include bg-opacity($gs-19);
+        .loading{
+            position: relative;
+            top:100px;
+            color: $gs-4;
+        }
+    }
+    a{
+        color:$gs-7;
+        font-weight: 600;
+    }
+    .list-body{
+        display: table-cell;
+        width: 100%;
+        .loading{
+            @include font-size(110%);
+            @include margin(10%,35%,10%,35%);
+            @include margin($top:10%,$right:35%,$bottom:10%,$left:35%);
+        }
+    }
+
+
+    //small-screen 576px
+    @include small-screen{
+        .tabs{
+            display: table-cell;
+            width: 25%;
+        }
+        .span-1-of-4{
+            width: 50%;
+        }
+    }
+
+    // min-width  768px
+    @include medium-screen {
+        .tabs{
+            width: 25%;
+        }
+        .list-body{
+            width: 75%;
+        }
+        .span-1-of-4{
+            width: 33%;
+        }
+        .span-10-of-12{
+            width: 80%;
+        }
+        .span-2-of-12{
+            width: 17%;
+        }
+    }
+    // min-width 992px
+    @include large-screen{
+        .span-1-of-4{
+            width: 24.9%;
+        }
+        .tabs{
+            width: 20%;
+        }
+        .list-body{
+            width: 80%;
+        }
+        
+    }
+
+    @include extra-large-screen{
+        width: 1170px;
+        margin: auto;
+    }
+    
+}
+

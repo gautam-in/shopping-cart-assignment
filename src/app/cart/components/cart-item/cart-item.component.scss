@@ -1,0 +1,49 @@
+@import '../../../../styles/abstract/variables';
+@import '../../../../styles/abstract/mixin';
+@import '../../../../styles/abstract/color';
+
+.cart-item-wrapper{
+    .cart-values{
+        -webkit-user-select: none;
+           -moz-user-select: none;
+            -ms-user-select: none;
+                user-select: none;
+        width: 77%;
+        .price{
+            
+            @include font-size(65%);
+            color: $gs-1;
+        }
+        .plus,.minus{
+            border: none;
+            height: 18px;
+            width: 21px;
+            border-radius: 20%;
+            display: inline-block;
+            @include bg-opacity($color-theme);
+            color: $gs-23;
+            cursor: pointer;
+            @include font-size(73%);
+        }
+        .value{
+            @include font-size(80%);
+            font-weight: 600;
+        }
+    }
+    .total-price{
+        position: absolute;
+        right: 10px;
+        bottom:28%;
+        @include font-size(80%);
+    }
+
+    @include small-screen{
+        .cart-values{
+            .plus,.minus{
+                border-radius: 50%;
+                height: 20px;
+                width: 20px;
+            }
+        }
+    }
+}

@@ -1,0 +1,51 @@
+<main class="home-wrapper carousel-wrapper" id="main-content" tabindex="-1">
+
+
+    <!-- Error handling -->
+
+    <app-error [message] ="error" *ngIf="bannerErrorOccured"></app-error>
+
+
+    <div class="slideshow-container">
+
+        <!-- Carousel component -->
+        <shopping-cart-carousel *ngIf="!bannerLoading && bannerList?.length" [bannerList]="bannerList"></shopping-cart-carousel>
+
+
+        <!-- Loading -->
+
+        <p class="loading margin-top-20" *ngIf="bannerLoading">
+            <loading size="normal"></loading>
+        </p>
+
+    </div>
+    
+    <!-- All product category list starts here -->
+
+
+    <!-- category loading -->
+
+    <p class="loading margin-top-20" *ngIf="bannerLoading">
+        <loading size="normal" msg="Please wait while category is loading."></loading>
+    </p>
+
+    <!-- Category details -->
+
+    <!-- Error handling -->
+
+    <app-error [message] ="error" *ngIf="categoryErrorOccured"></app-error>
+
+
+    <div class="item-container clearfix" *ngFor="let category of categoryList;let odd=odd; let even=even">
+
+        <app-figure [class]="'home-category-img clearfix'" [url]="category.imageUrl" [alt]="category.name" [dynamicClass]="odd? 'pull-left': 'pull-right'"></app-figure>
+        <section class="category-container text-center" [ngClass]="{'pull-left':even,'pull-right right':odd}">
+
+            <app-heading [tag]="'h4'" [isHeaderTagRequired]="false" [headingText]="category.name"></app-heading>
+            <app-paragraph [type]="'p-normal'" [desc]="category.description" ></app-paragraph>
+
+            <!-- Common button component -->
+            <app-common-button [buttonSize]="'large'" [actionLabel]="'Explore '+category.name" (onBtnClick)="onBtnClicked(category)" [type]="'btn-app margin-top-20 btn-transition-full'" [title]="'Explore '+category.name" [isTransitionRequired]="true"></app-common-button>
+        </section>
+    </div>
+</main>

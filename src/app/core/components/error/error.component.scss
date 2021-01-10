@@ -1,0 +1,15 @@
+@import '../../../../styles.scss';
+.error-handler-wrapper{
+    min-height: 600px;
+    .error{
+        @include margin(30px,80px,30px,80px);
+        padding: 30px;
+        color:$color-error;
+        h1{
+            @include font-size(200%);
+        }
+        p{
+            @include font-size(100%); 
+        }
+    }
+}

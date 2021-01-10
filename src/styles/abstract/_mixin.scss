@@ -1,0 +1,66 @@
+
+
+//box-shadow
+@mixin box-shadow($shadows...) {
+    box-shadow: $shadows;
+    -webkit-box-shadow:$shadows;
+}
+
+// font-size
+@mixin  font-size($size:70%) {
+    font-size: $size;
+}
+
+
+//background
+@mixin bg-opacity($color, $opacity:1) {
+    background: rgba($color, $opacity);
+}
+
+//margins
+@mixin margin($top:0,$right:0,$bottom:0,$left:0) {
+    @if ($top == 0 and $right == 0 and $bottom == 0 and $left == 0) {
+        margin: 0;
+    } @else{
+        margin: $top $right $bottom $left;
+    }
+}
+
+
+/****************************************/
+/******Mixin for differnt screens********/
+
+
+//Small devices (landscape phones, 576px and up)
+@mixin small-screen {
+    @media screen and (min-width:576px) {
+        @content;
+    }
+}
+
+
+//Medium devices (tablets, 768px and up)
+@mixin medium-screen {
+    @media screen and (min-width:768px) {
+        @content;
+    }
+}
+// Large devices (desktops, 992px and up)
+@mixin large-screen {
+    @media screen and (min-width:992px) {
+        @content;
+    }
+}
+
+//Extra large devices (large desktops, 1200px and up)
+@mixin extra-large-screen {
+    @media screen and (min-width:1200px) {
+        @content;
+    }
+}
+
+@mixin range-of-screen($min:320px,$max:480px) {
+    @media (min-width: $min) and (max-width: $max) {
+        @content;
+    }
+}

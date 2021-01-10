@@ -1,0 +1,93 @@
+.carousel-wrapper{
+    .mySlides {
+      display: none;
+      -webkit-transition: all 0.2s;
+      transition: all 0.2s;
+    }
+    img {
+      vertical-align: middle;
+      width: 100%;
+  }
+
+  /* Slideshow container */
+  .slideshow-container {
+    width: 100%;
+    min-height: 100px;
+    position: relative;
+    @include margin($top:40px,$right:auto,$bottom:40px,$left:auto);
+    @include box-shadow(1px 6px 5px -6px $gs-10);
+    .dot-container{
+      position: absolute;
+      left: 40%;
+      top:78%;
+    }
+  }
+
+  /* Next & previous buttons */
+  .prev, .next {
+    @include bg-opacity($gs-6);
+    cursor: pointer;
+    position: absolute;
+    top: 35%;
+    width: auto;
+    padding: 10px;
+    @include margin($top:-22px);
+    color: $gs-23;
+    font-weight: bold;
+    font-size: 18px;
+    -webkit-transition: 0.6s ease;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    &:hover{
+      @include bg-opacity($gs-7,0.6);
+    }
+
+  }
+
+  /* Position the "next button" to the right */
+  .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+
+  }
+
+  /* The dots/bullets/indicators */
+  .dot {
+    cursor: pointer;
+    height: 10px;
+    width: 10px;
+    @include margin($right:6px,$left:6px);
+    @include bg-opacity($gs-11);
+    border-radius: 50%;
+    display: inline-block;
+    -webkit-transition: background-color 0.6s ease;
+    transition: background-color 0.6s ease;
+  }
+
+  .active, .dot:hover {
+    background-color: $gs-7;
+  }
+
+  /* On smaller screens, decrease text size */
+  @media only screen and (max-width: 300px) {
+    .prev, .next,.text {@include font-size(55%)}
+  }
+
+  @include small-screen {
+    .prev, .next {
+      padding: 15px;
+      top:40%;
+    }
+  }
+
+  @include medium-screen{
+    .prev, .next {
+      padding: 15px;
+      top:50%;
+    }
+  }
+}

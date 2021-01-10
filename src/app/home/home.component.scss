@@ -1,0 +1,78 @@
+@import '../../styles/abstract/variables';
+@import '../../styles/abstract/mixin';
+@import '../../styles/abstract/color';
+.home-wrapper{
+    max-width: 1170px;
+    font-size: 18px;
+    outline: none;
+    margin:auto;
+    .custom-button{
+        padding: 10px 15px;
+        -webkit-transition: -webkit-transform 0.3s;
+        transition: -webkit-transform 0.3s;
+        transition: transform 0.3s;
+        transition: transform 0.3s, -webkit-transform 0.3s;
+        &:hover{
+            -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+        }
+        @include font-size(50%);
+    }
+    .loading{
+        padding: 10px 30px;
+        position: relative;
+        left:35%;
+        top:100px;
+        display: inline-block;
+    }
+    
+    .item-container{
+        @include box-shadow(1px 6px 5px -6px $gs-10);
+        padding:10px 0 30px 0;
+        position: relative;
+        .custom-button{
+            a{
+                color: $gs-23;
+            }
+        }
+    }
+    .category-container{
+        width:60%;
+        @include margin($top:10px);
+        p{
+            @include font-size(65%);
+            right: 25%;
+        }
+        
+    }
+
+    @include small-screen{
+        .custom-button{
+            @include font-size(60%);
+        }
+        .category-container{
+            @include margin($top:20px);
+        }
+    }
+
+    @include medium-screen{
+        .custom-button{
+            @include font-size(70%);
+        }
+        .category-container{
+            @include margin($top:30px);
+        }
+    }
+    @include large-screen{
+        font-size: 20px;
+        .category-container{
+            @include margin($top:35px);
+        }
+        .img-container{
+            top:5px;
+            img{
+                width: 62%;
+            }
+        }
+    }
+}

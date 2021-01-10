@@ -1,0 +1,11 @@
+@import '../../../../../../styles/abstract/mixin';
+.logo{
+    height: 41px;
+    .header-img{
+        height: 100%;
+        width: 100%;
+    }
+    @include  small-screen{
+        height: 70px;
+    }
+}

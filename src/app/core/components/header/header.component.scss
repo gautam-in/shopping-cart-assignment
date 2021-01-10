@@ -1,0 +1,133 @@
+@import '../../../../styles.scss';
+.header-container{
+    height: 48px;
+    .cover-overlay{
+        display: none;
+        position:fixed;
+        top:0;
+        left:0;
+        background:rgba(0,0,0,0.6);
+        z-index:5;
+        width:100%;
+        height:100%;
+        overflow-y: scroll;
+    }
+    .lg-visible{
+        display: none;
+    }
+    ul{
+        list-style: none;
+        @include margin();
+        padding: 0;
+        overflow: hidden;
+    }
+    .secondary-nav{
+        height: 28px;
+    }
+    .main-navigation{
+        display: none;
+    }
+
+    .logo-container{
+        width: 21%;
+    }
+    .cart-container{
+        width: 79%;
+        text-align: right;
+    }
+
+    .cart{
+        z-index: 10;
+        border:none;
+        outline: none;
+        position: relative;
+        @include bg-opacity($gs-19);
+        top:0px;
+        left: 0px;
+        padding: 11px 15px;
+        p{
+            @include font-size(80%);
+        }
+        img{
+            height: 25px;
+            width: 25px;
+        }
+        -webkit-transition: background-color 0.2s, -webkit-transform 0.2s;
+        transition: background-color 0.2s, -webkit-transform 0.2s;
+        transition: background-color 0.2s, transform 0.2s;
+        transition: background-color 0.2s, transform 0.2s, -webkit-transform 0.2s;
+        &:hover{
+            @include bg-opacity(darken($gs-19,5%));
+            -webkit-transform: scaleY(0.9);
+            transform: scaleY(0.9);
+        }
+    }
+    .header-wrapper{
+        width: 100%;
+        position: fixed;
+        z-index: 11;
+        @include box-shadow(0px 4px 4px $gs-13);
+        height: auto;
+        @include bg-opacity($gs-23);
+    }
+
+    // 576px
+    @include  small-screen{
+        height: 80px;
+        .main-navigation{
+            display: inline-block;
+            width:53%;
+        }
+        .cart{
+            display: inline-block;
+        }
+        .logo-container{
+            width: 22%;
+        }
+        .cart-container{
+            text-align: right;
+            width: 23%;
+        }
+        
+    }
+
+    // min-width  768px
+    @include medium-screen {
+        .header-wrapper{
+            z-index: 5;
+        }
+        .cover-overlay{
+            display: inline-block;
+        }
+        .main-navigation{
+            width: 60%;
+        }
+        .cart-container{
+            width: 16%;
+        }
+        .cart{
+            padding: 8px 15px;
+            @include font-size(90%);
+        }
+        
+        
+    }
+
+    @include large-screen{
+        .lg-visible{
+            display: inline-block;
+        }
+        .left-empty{
+            width:9%;
+        }
+        .logo-container{
+            width: 14%;
+        }
+        .cart-container{
+            width: 12%;
+        }
+        .main-navigation{
+            width:53%;
+        }
+    }
+}

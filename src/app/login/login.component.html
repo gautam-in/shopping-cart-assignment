@@ -1,0 +1,42 @@
+<main class="form-wrapper row margin-top-20" id="main-content" tabindex="-1">
+    <div class="row page-body">
+        <div class="col span-1-of-6"></div>
+        
+        <!-- Content container for login -->
+
+        <section class="col span-2-of-6 text-center top-pane">
+            <app-heading [class]="'form-heading text-left'" [tag]="'h1'" [isHeaderTagRequired]="false" [headingText]="'Login'"></app-heading>
+            <app-heading [class]="'text-left margin-top-20 text-left font-500 font-16'" [tag]="'h2'" [isHeaderTagRequired]="false" [headingText]="'Get access to your Orders, Wishlist and Recommendations'"></app-heading>
+        </section>
+
+        <!--Login form container  -->
+
+        <div class="col span-2-of-6 text-center bottom-pane">
+            <form id="js-login-form" class="login-form">
+                <div class="text-left">
+                    <label id="emailLbl" [ngClass]="{'no-field-label':!loginForm.email.name && !loginForm.email.error.isError,'label-error':loginForm.email.error.isError}" tabindex="-1" class="field-label" for="email">Email</label>
+                </div>
+                <div class="text-left">
+                    <input [(ngModel)]="loginForm.email.name" [ngClass]="{'field-error':loginForm.email.error.isError}" (ngModelChange)="changedField(loginForm.email.name,'email')"  id="email" type="email" name="email" aria-required="true" aria-labelledby="emailLbl">
+                    <p class="error" *ngIf="loginForm.email.error.isError">
+                        {{loginForm.email.error.errorMsg}}
+                    </p>
+                </div>
+                
+                <div class="text-left margin-top-20">
+                    <label class="field-label" [ngClass]="{'no-field-label':!loginForm.password.name && !loginForm.password.error.isError,'label-error':loginForm.password.error.isError}" tabindex="-2" id="pwdLbl" for="password">Password</label>
+                </div>
+                <div class="text-left">
+                    <input [(ngModel)]="loginForm.password.name"  [ngClass]="{'field-error':loginForm.password.error.isError}" (ngModelChange)="changedField(loginForm.password.name,'password')" id="password" type="password" name="password" aria-required="true" aria-labelledby="pwdLbl">
+                    <p class="error" *ngIf="loginForm.password.error.isError">
+                        {{loginForm.password.error.errorMsg}}
+                    </p>
+                </div>
+
+                <!-- Common button component -->
+                <app-common-button [buttonSize]="'large'" (onBtnClick)="onSubmit()" [type]="'btn-app'" [title]="'Login'"></app-common-button>
+            </form> 
+        </div>
+        <div class="col span-1-of-6"></div>
+    </div>
+</main>

@@ -1,0 +1,20 @@
+@import '../../../../styles/abstract/variables';
+@import '../../../../styles/abstract/mixin';
+@import '../../../../styles/abstract/color';
+.nav-tabs{
+    .tab-item{
+        padding: 15px 10px;
+        list-style: none;
+        cursor: pointer;
+        @include font-size(80%);
+        @include bg-opacity($gs-19);
+        border-bottom: 1px solid $gs-13;
+        &:hover{
+            opacity:0.8;
+        }
+    }
+    .active{
+        @include bg-opacity($color-theme);
+        color:$gs-23;
+    }
+}

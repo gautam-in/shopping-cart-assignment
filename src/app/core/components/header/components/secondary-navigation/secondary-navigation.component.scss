@@ -1,0 +1,36 @@
+@import '../../../../../../styles/abstract/color';
+@import '../../../../../../styles/abstract/mixin';
+@import '../../../../../../styles/abstract/variables';
+
+.sigin-register{
+    li{
+        a{
+            color: $gs-4;
+            &:hover{
+                border-bottom: 2px solid $color-theme;
+            }
+        }
+        .active{
+            @include bg-opacity($color-theme);
+            padding: 5px 10px;
+            color: $gs-23;
+        }
+    }
+    ul{
+        list-style: none;
+        @include margin();
+        padding: 0;
+        overflow: hidden;
+    }
+    display: none;
+    padding: 0;
+    a{
+        @include font-size(80%);
+    }
+    @include  small-screen{
+        display: inline-block;
+        a{
+            @include font-size(65%);
+        }
+    }
+}

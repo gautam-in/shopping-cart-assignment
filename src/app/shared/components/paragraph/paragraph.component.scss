@@ -1,0 +1,75 @@
+@import '../../../../styles/abstract/mixin';
+@import '../../../../styles/abstract/variables';
+@import '../../../../styles/abstract/color';
+
+.p-normal{
+    @include font-size(70%);
+    margin-top: 10px;
+}
+
+.p-large{
+    @include font-size(110%);
+    margin-top: 10px; 
+}
+
+.margin-left-15{
+    @include margin($left:15px);
+}
+
+.p-card{
+    @include font-size(65%);
+    float: left;
+    width: 49%;
+    @include bg-opacity($gs-19);
+    padding: 5px;
+    line-height: 1.4;
+    overflow: hidden;
+    max-height: 95px;
+}
+.p-copywrite{
+    @include font-size(70%);
+    word-wrap: break-word;
+    width: 80%;
+    font-weight: 600;
+    position: relative;
+    left: 14%;
+    display: inline-block;
+}
+
+.p-mrp{
+    display: none;
+    @include font-size(70%);
+    @include margin($top:25px);
+    font-weight: 600;
+}
+.p-no-data-exception{
+    @include margin(15%,35%,15%,35%);
+    @include font-size(110%);
+    width:-webkit-max-content;
+    width:-moz-max-content;
+    width:max-content;
+}
+
+@include small-screen{
+    .p-card{
+        height: 49%;
+        max-height: none;
+    }
+}
+@include medium-screen{
+    .p-card{
+        width: 100%;
+        display: block;
+        font-weight: 600;
+        overflow: hidden;
+        height: 80px;
+        @include margin($top:10px);
+        
+    }
+}
+
+@include large-screen{
+    .p-mrp{
+        display: inline-block;
+    }  
+}

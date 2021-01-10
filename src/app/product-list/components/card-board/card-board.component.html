@@ -1,0 +1,16 @@
+<section class="card-board">
+
+    <app-heading [class]="'font-20 font-card'" [tag]="'h4'" [isHeaderTagRequired]="true" [headingText]="cardTitle"></app-heading>
+
+    <app-figure [class]="'plp-fig'" [url]="imageUrl" [alt]="imgAlt"></app-figure>
+
+    
+    <app-paragraph [type]="'p-card'" [desc]="cardDes" [title]="cardDes"></app-paragraph>
+    <footer class="clearfix margin-top-15 footer">
+
+        <app-paragraph [type]="'p-mrp'" [desc]="'MRP Rs.'+price"></app-paragraph>
+        
+        <!-- common button -->
+        <app-common-button [buttonSize]="'large'"  [actionLabel]="'Click to buy '+cardTitle" [customStyles]="customStyles" (onBtnClick)="btnClicked()" [type]="'btn-app btn-transition-y'" [title]="buttonText" [isTransitionRequired]="true"></app-common-button>
+    </footer>
+</section>

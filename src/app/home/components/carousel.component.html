@@ -1,0 +1,17 @@
+
+    <!-- Slider starts here -->
+
+    <app-figure [class]="'mySlides width-100'" [url]="slide.bannerImageUrl" [alt]="slide.bannerImageAlt" *ngFor="let slide of bannerList; let index=index"></app-figure>
+
+    <!-- Left and right button -->
+
+    <a role="button" aria-label="Previous" tabindex="0" class="prev" (click)="plusSlides(-1)">&#10094;</a>
+    <a role="button" aria-label="Next" class="next" tabindex="0" (click)="plusSlides(1)">&#10095;</a>
+
+
+
+    <!-- Dot container -->
+    <div class="dot-container">
+        <span role="button" tabindex="0" aria-label="dot for next or previous slide" class="dot" (click)="currentSlide(index+1)" *ngFor="let slide of bannerList; let index=index" ></span> 
+    </div>
+
