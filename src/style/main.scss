@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css?family=Dosis:400,600,700');
+@import './partials/header';
+@import './partials/product-page';
+@import './partials/product-card';
+@import './partials/banner';
+@import './partials/carousel';
+@import './partials/login-signup';
+@import './partials/cart';
+@import './partials/loader';
+@import './partials/widgets-and-utils';
+@import './partials/snackbar';
+
+body{
+  margin:0px;
+  font-size: 14px;
+  font-family:'Dosis', sans-serif;
+  a{
+    text-decoration: none;
+    color: inherit;
+  }
+}

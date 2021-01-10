@@ -1,0 +1,98 @@
+@import '../colors';
+.login-section, .signup-section {
+	display: flex;
+	justify-content: center;
+	margin: 0 auto;
+	width:75vw;
+	flex-flow: wrap;
+	margin:50px 50px;
+	&_formGroup{
+		display: flex;
+		flex-direction: column;
+		flex:0 0 30%;
+		margin-block-start: 0em;
+		margin-block-end: 0em;
+		margin-inline-start: 0px;
+		margin-inline-end: 0px;
+		padding-inline-start: 00px;
+		list-style: none;
+		.lbl-submit{
+			display: none;
+		}
+
+		label, input {
+			transition: all 0.2s;
+			touch-action: manipulation;
+		}
+
+		input {
+			font-size: 1.5em;
+			border: 0;
+			border-bottom: 1px solid #ccc;
+			font-family: inherit;
+			-webkit-appearance: none;
+			border-radius: 0;
+			padding: 0;
+			cursor: text;
+		}
+
+		input:focus {
+			outline: 0;
+			border-bottom: 1px solid $input-active;
+			& + label{
+				color: $input-active;
+			}
+		}
+
+		label {
+			letter-spacing: 0.05em;
+		}
+		input:placeholder-shown + label {
+			cursor: text;
+			max-width: 66.66%;
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			transform-origin: left bottom;
+			transform: translate(0, 1.8rem) scale(1.5);
+		}
+		::-webkit-input-placeholder {
+			opacity: 0;
+			transition: inherit;
+		}
+		input:focus::-webkit-input-placeholder {
+			opacity: 1;
+		}
+		input:not(:placeholder-shown) + label,
+		input:focus + label {
+			transform: translate(0, 0) scale(1);
+			cursor: pointer;
+		}
+		.field {
+			display: flex;
+			flex-flow: column-reverse;
+			margin-bottom: 1em;
+		}
+
+	}
+	&_info{
+		flex: 0 0 50%;
+		margin-left: 10%;
+	}
+	&-desc{
+		font-size: 14px;
+	}
+}
+
+.btn{
+	&--login, &--signup {
+		background-color: $tertiaryCTA;
+		border: none;
+		width: 100%;
+		padding: 0.5rem!important;
+		color: #fff;
+		font-size: 1.2rem;
+		box-sizing: border-box;
+		border-bottom: 0px solid transparent!important;
+	}
+}

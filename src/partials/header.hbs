@@ -1,0 +1,47 @@
+<!-- header starts -->
+<header role="banner">
+  <div class='navigation' role="navigation">
+    <a href='index.html' rel="home">
+      <img class='logo-img' src='static/images/logo.png' alt='logo' />
+    </a>
+    <nav>
+      <ul class='list-h'>
+        <li>
+          <a href='index.html' role='link'>
+            Home
+          </a>
+        </li>
+        <li>
+          <a href='products.html' role='link'>
+            Products
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <div class='cart-login-container'>
+      <nav>
+        <ul class='list-h'>
+          <li class="link">
+            <a href='signup.html' role='link'>
+              Signup
+            </a>
+          </li>
+          <li class="link">
+            <a href='login.html' role='link'>
+              Login
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <button class ='btn-cart' >
+        <img src='static/images/cart.svg' alt='cart image' class ='icon' id='outside'/>
+        <span class ='text' id="cart-items" >0 Items</span>
+      </button>
+      <div id="desktop-cart" class="cart-main-cont">
+        {{> cart}}
+      </div>
+    </div>
+  </div>
+</div>
+</header>
+<!-- headers ends -->

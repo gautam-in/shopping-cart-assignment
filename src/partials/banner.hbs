@@ -1,0 +1,14 @@
+{{#each .}}
+{{#if imageUrl }}
+<div class='banner-component'>
+  <div class='image-container'>
+    <img src={{imageUrl}} alt='{{name}}' class='banner-image' />
+  </div>
+  <div class='content'>
+    <h2 class='heading'> {{name}} </h2>
+    <p class='desc'> {{ description }} </p>
+    <a href='#' role="link" class='link-button'> Explore {{key}} </a>
+  </div>
+</div>
+{{/if}}
+{{/each}}
