@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css?family=Dosis:400,600,700&display=swap');
+
+//fonts
+$font-family-dosis:'Dosis', sans-serif;
+
+//screen sizes
+$screen-tablet:481px; /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
+$screen-laptop:1025px; /* big landscape tablets, laptops, and desktops */
+
+//colors
+$color-pink-1:lightpink;
+$color-pink-2:#C12958;
+
+$color-grey-1:#EEEEEE;
+$color-grey-2:#E0E0E0;
+$color-grey-3:gray;
+$color-grey-4:#b3b3b3;
+$color-grey-5:#999;
+$color-grey-6:#7a7a7a;
+
+$color-black-1:#000000;
+$color-black-2:#242424;
+$color-black-3:#333;
+$color-black-transparent-1:rgba(0, 0, 0, 0.14);
+$color-black-transparent-2:rgba(0, 0, 0, 0.3);
+
+$color-blue-1:#2fb9c6;
+
+$color-red-1:#d9534f;
+
+$color-white-1:#fff;

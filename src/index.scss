@@ -1,0 +1,12 @@
+@import './global-styles.scss';
+
+body {
+  margin: 0;
+  font-family: $font-family-dosis;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: $font-family-dosis;
+}
