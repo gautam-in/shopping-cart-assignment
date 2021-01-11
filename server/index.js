@@ -1,17 +1,3 @@
-// const canned = require('canned');
-// const http = require('http');
-// const opts = {
-//   cors: true,
-//   cors_headers: ["Content-Type", "Location"]
-// };
-// // server\addToCart
-// // /path/to/canned/response/folder (default)
-// const can = canned('server/addToCart', opts);
-
-// http.createServer(can).listen(3000);
-
-// ----------------------------------------------------------------
-
 const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');

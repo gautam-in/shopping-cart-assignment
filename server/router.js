@@ -1,7 +1,6 @@
 const express       = require('express');
 const router        = express.Router();
 
-// json-server npm
 // import json data
 const categories    = require('./categories/index.get.json');
 // const addToCart    = require('./addToCart/index.get.json');
