@@ -1,12 +1,19 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Paper, Button  } from '@material-ui/core';
 
+import { ActiveContext } from "../../../../Library/context";
 import baseHelper from "../../../../Library/helper";
 
 const Item = props => {
   const { productItem } = props;
   const { name, imageURL, description, price } = productItem;
-
+  const { setCartItems } = useContext(ActiveContext);
+  const pushToCart = [];
+  pushToCart.push({
+    name,
+    imageURL,
+    price
+  });
   const imagePath = baseHelper.getImagePath(imageURL);
 
   return (
@@ -20,7 +27,7 @@ const Item = props => {
         {description}
       </div>
       <Button variant="contained" color="secondary"
-        onClick={() => alert("add to cart")}
+        onClick={() => setCartItems(prevCart => [ ...prevCart, ...pushToCart ])}
         style={{fontSize: "0.7rem"}}
       >
             {`Buy Now @ Rs.${price}`}

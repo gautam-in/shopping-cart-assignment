@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useContext } from "react";
 
+import { ActiveContext } from "../../../Library/context";
 import baseHelper from "../../../Library/helper";
 import { Logo } from "../../../Library/components";
 import NavigationItems from "../NavigationItems";
@@ -8,6 +9,7 @@ import DrawerToggle from "../SideDrawer/DrawerToggle/DrawerToggle";
 import classes from "./Toolbar.module.scss";
 
 const Toolbar = props => {
+  const { cartItems, setCartItems } = useContext(ActiveContext);
   const { drawerToggleClicked } = props;
 
   const cartLogoPath = baseHelper.getImagePath("/static/images/cart.svg");
@@ -30,7 +32,7 @@ const Toolbar = props => {
           backgroundColor: "#f50057",
           padding: "1px",
         }}>
-          2
+          {cartItems.length}
         </div>
       </div>
       <nav className={classes.DesktopOnly}>
