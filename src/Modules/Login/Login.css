@@ -3,7 +3,7 @@
 }
 
 .LoginWrapper div {
-  padding: 10px;
+  padding-bottom: 5px;
 }
 
 .LoginDescription {
@@ -14,18 +14,26 @@
 
 .LoginForm { 
   overflow: hidden;
-  margin-right: 10px;
 }
 
 .Hidden {
   display: none;
 }
 
-@media screen and (min-width: 600px) {
+@media (min-width: 500px) and (max-width: 800px) {
+  .LoginDescription {
+    margin-left: 0px;
+    margin-right: 10px;
+    float: left;
+    width: 300px;
+  }
+}
+
+@media screen and (min-width: 800px) {
   .LoginDescription {
     margin-left: 150px;
-    float: left;
     margin-right: 20px;
+    float: left;
     width: 350px;
   }
 }

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { TextField, Button } from '@material-ui/core';
 
 import classes from "./Login.css";
 
@@ -55,29 +56,28 @@ const Login = () => {
 
       <div className={classes.LoginForm}>
         <div>
-          <label htmlFor="userEmail" className={classes.Hidden}>Email</label>
-          <input
-            id="userEmail"
-            type="text"
-            placeholder="Email"
+          
+          <TextField id="userEmail" label="Email"
             value={loginDetails.userEmail}
             onChange={e => onChangeField("userEmail", e)}
+            required={true}
           />
         </div>
 
         <div>
-          <label htmlFor="userPassword" className={classes.Hidden}>Password</label>
-          <input
-            id="userPassword"
-            type="password"
-            placeholder="Password"
+          <TextField id="userPassword" label="Password"
             value={loginDetails.userPassword}
             onChange={e => onChangeField("userPassword", e)}
+            required={true}
           />
         </div>
-        
+
         <div>
-          <button type="submit" onClick={() => checkCredentials()} >Login</button>
+          <Button variant="contained" color="secondary"
+            onClick={() => checkCredentials()}
+          >
+            Login
+          </Button>
         </div>
 
       </div>

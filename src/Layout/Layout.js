@@ -9,13 +9,13 @@ const Layout = props => {
   const { children = null } = props;
 
   return (
-    <>
+    <div className={classes.Layout}>
       <Toolbar />
         <main className={classes.Content}>
           {children}
         </main>
       <Footer />
-    </>
+    </div>
   );
 };
 

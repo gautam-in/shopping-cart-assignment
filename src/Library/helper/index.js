@@ -7,7 +7,7 @@ class BaseHelper {
    * @return string
    *
    */
-  ucFirst = function ucFirst(string) {
+  ucFirst = (string) => {
     if (!string) {
       return "";
     }
@@ -20,6 +20,27 @@ class BaseHelper {
     });
 
     return finalString;
+  };
+
+  /**
+   * @desc To get absolute url of image options
+   *
+   * @return {String} image url
+   *
+   */
+  getImagePath(path) {
+    const imagePath = `${this.getRootUrl()}/assets${path}`;
+    return imagePath;
+  };
+
+  /**
+   * @desc To get root url of current domain
+   *
+   * @return root url
+   *
+   */
+  getRootUrl() {
+    return window.location.origin;
   };
 }
 

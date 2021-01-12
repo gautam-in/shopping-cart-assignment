@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { TextField, Button } from '@material-ui/core';
 
 import classes from "./Register.css";
 
@@ -30,6 +31,7 @@ const Register = () => {
     existingUser.push(registrationDetails);
     localStorage.setItem("registeredUser", JSON.stringify(existingUser));
     setRegistrationDetails(registrationField);
+    alert("User registered successfully!!");
   };
 
   return (
@@ -41,62 +43,51 @@ const Register = () => {
 
       <div className={classes.RegisterForm}>
         <div>
-          <label htmlFor="firstName" className={classes.Hidden}>First name</label>
-          <input
-            id="firstName"
-            type="text"
-            placeholder="First name"
+          <TextField id="firstName" label="First name"
             value={registrationDetails.firstName}
             onChange={e => onChangeField("firstName", e)}
+            required={true}
           />
         </div>
 
         <div>
-          <label htmlFor="lastName" className={classes.Hidden}>Last name</label>
-          <input
-            id="lastName"
-            type="text"
-            placeholder="Last name"
+          <TextField id="lastName" label="Last name"
             value={registrationDetails.lastName}
             onChange={e => onChangeField("lastName", e)}
+            required={true}
           />
         </div>
 
         <div>
-          <label htmlFor="userEmail" className={classes.Hidden} aria-hidden="true">Email address</label>
-          <input
-            id="userEmail"
-            type="email"
-            placeholder="Enter email"
+          <TextField id="userEmail" label="Email"
             value={registrationDetails.userEmail}
             onChange={e => onChangeField("userEmail", e)}
+            required={true}
           />
         </div>
 
         <div>
-          <label htmlFor="userPassword" className={classes.Hidden}>Password</label>
-          <input
-            id="userPassword"
-            type="password"
-            placeholder="Enter password"
+          <TextField id="userPassword" label="Password"
             value={registrationDetails.userPassword}
             onChange={e => onChangeField("userPassword", e)}
+            required={true}
           />
         </div>
 
         <div>
-          <label htmlFor="userConfirmPassword" className={classes.Hidden}>Confirm Password</label>
-          <input
-            id="userConfirmPassword"
-            type="password"
-            placeholder="Enter confirm password"
+          <TextField id="userConfirmPassword" label="Confirm Password"
             value={registrationDetails.userConfirmPassword}
             onChange={e => onChangeField("userConfirmPassword", e)}
+            required={true}
           />
         </div>
         
         <div>
-          <button type="submit" onClick={() => registerUser()}>Sign Up</button>
+          <Button variant="contained" color="secondary"
+            onClick={() => registerUser()}
+          >
+            Sign Up
+          </Button>
         </div>
 
       </div>

@@ -1,0 +1,30 @@
+.Card {
+  margin-bottom: 10px;
+}
+
+.Image {
+  width: 100%;
+  height: auto;
+}
+
+.FloatingLeftImg {
+  float: left;
+  max-width: 200px;
+  margin-right: 50px;
+
+  @media (max-width: 700px) {
+    float: none;
+    margin-right: 0px;
+ }
+}
+
+.FloatingRightImg {
+  float: right;
+  max-width: 200px;
+  margin-left: 50px;
+
+  @media (max-width: 600px) {
+    float: none;
+    margin-right: 0px;
+ }
+}

@@ -1,14 +1,16 @@
 import React from "react";
 
-import burgerLogo from "../../../assets/images/logo.png";
+import baseHelper from "../../helper";
 
 import classes from "./Logo.css";
 
 const Logo = props => {
 
+  const logoPath = baseHelper.getImagePath("/static/images/logo.png");
+
   return (
     <div className={classes.Logo}>
-      <a href="/"><img src={burgerLogo} alt="My Burger" /></a>
+      <a href="/"><img src={logoPath} alt="Sabka Bazaar" /></a>
     </div>
   )
 }
