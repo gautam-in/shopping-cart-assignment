@@ -1,26 +1,34 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 
 import { ActiveContext } from "../../../Library/context";
 import baseHelper from "../../../Library/helper";
 import { Logo } from "../../../Library/components";
 import NavigationItems from "../NavigationItems";
 import DrawerToggle from "../SideDrawer/DrawerToggle/DrawerToggle";
+import ToolbarModal from "./ToolbarModal";
 
 import classes from "./Toolbar.module.scss";
 
 const Toolbar = props => {
-  const { cartItems, setCartItems } = useContext(ActiveContext);
+  const { cartItems } = useContext(ActiveContext);
   const { drawerToggleClicked } = props;
+  const [isModalOpen, setModal] = useState(false);
 
   const cartLogoPath = baseHelper.getImagePath("/static/images/cart.svg");
 
   return (
     <header className={classes.Toolbar}>
-      {/* <DrawerToggle clicked={drawerToggleClicked} /> */}
+      <DrawerToggle clicked={drawerToggleClicked} />
       <div className={classes.Logo}>
         <Logo />
       </div>
-      <div style={{width: "40px", borderRadius: "5px", padding: "5px", backgroundColor: "#e0e4e7", position: "relative"}}>
+      <ToolbarModal
+        isModalOpen={isModalOpen}
+        setModal={() => setModal(false)}
+      />
+      <div 
+        onClick={() => setModal(true)}
+        style={{cursor: "pointer", width: "40px", borderRadius: "5px", padding: "5px", backgroundColor: "#e0e4e7", position: "relative"}}>
         <img src={cartLogoPath} alt="cart Logo" style={{width: "100%", height: "auto", float: "right"}} />
         <div style={{
           position: "absolute",
