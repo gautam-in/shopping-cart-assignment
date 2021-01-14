@@ -2,7 +2,7 @@ import React from "react";
 
 import baseHelper from "../../helper";
 
-import classes from "./Logo.css";
+import classes from "./Logo.module.scss";
 
 const Logo = props => {
 

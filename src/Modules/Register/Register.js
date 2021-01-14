@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { TextField, Button } from '@material-ui/core';
+import md5 from "md5";
 
 import classes from "./Register.css";
 
@@ -27,8 +28,15 @@ const Register = () => {
       return null;
     }
 
+    if (registrationDetails.userPassword !== registrationDetails.userConfirmPassword) {
+      return null;
+    }
+
     const existingUser = JSON.parse(localStorage.getItem("registeredUser")) || [];
-    existingUser.push(registrationDetails);
+    const registrationDetailsWithEncryptedPassword = { ...registrationDetails };
+    delete registrationDetailsWithEncryptedPassword.userConfirmPassword;
+    registrationDetailsWithEncryptedPassword["userPassword"] = md5(registrationDetails.userPassword);
+    existingUser.push(registrationDetailsWithEncryptedPassword);
     localStorage.setItem("registeredUser", JSON.stringify(existingUser));
     setRegistrationDetails(registrationField);
     alert("User registered successfully!!");
@@ -70,6 +78,7 @@ const Register = () => {
           <TextField id="userPassword" label="Password"
             value={registrationDetails.userPassword}
             onChange={e => onChangeField("userPassword", e)}
+            type="password"
             required={true}
           />
         </div>
@@ -78,6 +87,7 @@ const Register = () => {
           <TextField id="userConfirmPassword" label="Confirm Password"
             value={registrationDetails.userConfirmPassword}
             onChange={e => onChangeField("userConfirmPassword", e)}
+            type="password"
             required={true}
           />
         </div>

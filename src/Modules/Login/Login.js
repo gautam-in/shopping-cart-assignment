@@ -1,15 +1,16 @@
 import React, { useState } from "react";
 import { TextField, Button } from '@material-ui/core';
+import md5 from "md5";
 
 import classes from "./Login.css";
 
-const loginField = {
+const defaultLoginField = {
   userEmail: "",
   userPassword: "",
 };
 
 const Login = () => {
-  const [loginDetails, setLoginDetails] = useState(loginField);
+  const [loginDetails, setLoginDetails] = useState(defaultLoginField);
 
   const onChangeField = (key, val) => {
     const value = val.target.value;
@@ -20,7 +21,7 @@ const Login = () => {
   };
 
   const checkCredentials = () => {
-    if (JSON.stringify(loginDetails) === JSON.stringify(loginField)) {
+    if (JSON.stringify(loginDetails) === JSON.stringify(defaultLoginField)) {
       return null;
     }
 
@@ -34,10 +35,10 @@ const Login = () => {
       const { userEmail: registererEmail, userPassword: registeredPassword } = user;
       const { userEmail, userPassword } = loginDetails;
 
-      return registererEmail === userEmail && registeredPassword === userPassword;
+      return registererEmail === userEmail && registeredPassword === md5(userPassword);
     });
 
-    setLoginDetails(loginField);
+    setLoginDetails(defaultLoginField);
 
     if (found) {
       alert("Login is successful");
@@ -68,6 +69,7 @@ const Login = () => {
           <TextField id="userPassword" label="Password"
             value={loginDetails.userPassword}
             onChange={e => onChangeField("userPassword", e)}
+            type="password"
             required={true}
           />
         </div>
