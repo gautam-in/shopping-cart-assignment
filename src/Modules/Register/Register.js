@@ -4,7 +4,7 @@ import md5 from "md5";
 
 import classes from "./Register.css";
 
-const registrationField = {
+const defaultRegistrationField = {
   firstName: "",
   lastName: "",
   userEmail: "",
@@ -13,7 +13,7 @@ const registrationField = {
 };
 
 const Register = () => {
-  const [registrationDetails, setRegistrationDetails] = useState(registrationField);
+  const [registrationDetails, setRegistrationDetails] = useState(defaultRegistrationField);
 
   const onChangeField = (key, val) => {
     const value = val.target.value;
@@ -23,8 +23,15 @@ const Register = () => {
     });
   };
 
+  const encryptPassword = () => {
+    const registrationDetailsWithEncryptedPassword = { ...registrationDetails };
+    delete registrationDetailsWithEncryptedPassword.userConfirmPassword;
+    registrationDetailsWithEncryptedPassword["userPassword"] = md5(registrationDetails.userPassword);
+    return registrationDetailsWithEncryptedPassword;
+  }
+
   const registerUser = () => {
-    if (JSON.stringify(registrationDetails) === JSON.stringify(registrationField)) {
+    if (JSON.stringify(registrationDetails) === JSON.stringify(defaultRegistrationField)) {
       return null;
     }
 
@@ -33,12 +40,12 @@ const Register = () => {
     }
 
     const existingUser = JSON.parse(localStorage.getItem("registeredUser")) || [];
-    const registrationDetailsWithEncryptedPassword = { ...registrationDetails };
-    delete registrationDetailsWithEncryptedPassword.userConfirmPassword;
-    registrationDetailsWithEncryptedPassword["userPassword"] = md5(registrationDetails.userPassword);
-    existingUser.push(registrationDetailsWithEncryptedPassword);
+
+    // password encryption
+    existingUser.push(encryptPassword());
+
     localStorage.setItem("registeredUser", JSON.stringify(existingUser));
-    setRegistrationDetails(registrationField);
+    setRegistrationDetails(defaultRegistrationField);
     alert("User registered successfully!!");
   };
 
