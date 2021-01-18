@@ -1,0 +1,39 @@
+.RegisterWrapper {
+  overflow: hidden;
+}
+
+.RegisterWrapper div {
+  padding-bottom: 5px;
+}
+
+.RegisterDescription {
+  float: none;
+  margin-right: 0;
+  width: auto;
+}
+
+.RegisterForm { 
+  overflow: hidden;
+}
+
+.Hidden {
+  display: none;
+}
+
+@media (min-width: 500px) and (max-width: 800px) {
+  .RegisterDescription {
+    margin-left: 0px;
+    margin-right: 10px;
+    float: left;
+    width: 300px;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .RegisterDescription {
+    margin-left: 150px;
+    margin-right: 20px;
+    float: left;
+    width: 350px;
+  }
+}

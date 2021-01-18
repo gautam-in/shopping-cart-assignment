@@ -1,0 +1,39 @@
+.LoginWrapper {
+  overflow: hidden;
+}
+
+.LoginWrapper div {
+  padding-bottom: 5px;
+}
+
+.LoginDescription {
+  float: none;
+  margin-right: 0;
+  width: auto;
+}
+
+.LoginForm { 
+  overflow: hidden;
+}
+
+.Hidden {
+  display: none;
+}
+
+@media (min-width: 500px) and (max-width: 800px) {
+  .LoginDescription {
+    margin-left: 0px;
+    margin-right: 10px;
+    float: left;
+    width: 300px;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .LoginDescription {
+    margin-left: 150px;
+    margin-right: 20px;
+    float: left;
+    width: 350px;
+  }
+}

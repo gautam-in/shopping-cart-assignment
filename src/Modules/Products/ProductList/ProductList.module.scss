@@ -1,0 +1,7 @@
+.ProductItemGrid {
+  min-width: 250px;
+
+  @media screen and (min-width: 600px) {
+    min-width: 200px;
+  }
+}

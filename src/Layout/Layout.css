@@ -1,0 +1,13 @@
+.Content {
+  margin-top: 72px;
+}
+
+.Layout {
+  margin: 0px 50px;
+}
+
+@media screen and (min-width: 500px) {
+  .Layout {
+    margin: 0px 100px;
+  }
+}
