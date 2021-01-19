@@ -1,0 +1,23 @@
+@import '../../global-styles.scss';
+
+.cart-button {
+    border: none;
+    padding: 0.75em;
+    min-width: auto;
+    background-color: $color-grey-1;
+
+
+    &-icon {
+        vertical-align: middle;
+        height: 2em;
+        filter: invert(27%) sepia(51%) saturate(2878%) hue-rotate(320deg) brightness(104%) contrast(70%);
+    }
+
+    &:hover {
+        cursor: pointer;
+    }
+
+    @media only screen and (max-width: $screen-tablet) {
+        min-width: 10em;
+    }
+}

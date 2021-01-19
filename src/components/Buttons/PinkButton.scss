@@ -1,0 +1,14 @@
+@import '../../global-styles.scss';
+
+.button-pink {
+    background-color: $color-pink-2 ;
+    color: $color-white-1;
+    border: none;
+    padding: 0.75em;
+    margin-bottom: 1.5em;
+    
+
+    &:hover {
+        cursor: pointer;
+    }
+}

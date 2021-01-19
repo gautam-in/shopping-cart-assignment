@@ -1,0 +1,18 @@
+@import '../../global-styles.scss';
+
+.carousel {
+    margin-top: 1em;
+    box-shadow: 0 5px 3px -2px $color-grey-1;
+    position: relative;
+
+    &-buttons {
+        position: absolute;
+        top: 40%;
+        left: 0;
+        width: 100%;
+    }
+
+    &-img {
+        width: 100%;
+    }
+}

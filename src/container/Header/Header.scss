@@ -2,10 +2,10 @@
 
 .header {
     display: flex;
-    width: 80%;
-    padding: 0 10%;
+    width: 90%;
+    padding: 0 5%;
     align-items: center;
-    box-shadow: 0 2px 2px #efefef;
+    box-shadow: 0 5px 3px -2px $color-grey-1;
 
     &-logo {
         height: auto;
@@ -19,7 +19,7 @@
 
         &-right {
             padding: 0;
-            font-size: 80%;
+            font-size: 70%;
             margin-bottom: 0.5em;
         }
     }
@@ -27,7 +27,7 @@
     &-link {
         color: $color-black-2;
         font-weight: 600;
-        font-size: 80%;
+        font-size: 70%;
     
         &:not(:last-of-type) {
           margin-right: 1em;

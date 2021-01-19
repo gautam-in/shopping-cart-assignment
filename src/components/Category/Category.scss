@@ -1,0 +1,31 @@
+@import '../../global-styles.scss';
+
+.category {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0 5px 3px -2px $color-grey-1;
+    padding: 2% 0;
+
+    &-img {
+        width: 40%;
+    }
+
+    &-dec {
+        p {
+            font-size: 75%;
+            font-weight: 600;
+        }
+    }
+
+    @media only screen and (max-width: $screen-tablet) {
+        h3 {
+            font-size: 80%;
+        }
+
+        p {
+            font-size: 65%;
+        }
+    }
+}

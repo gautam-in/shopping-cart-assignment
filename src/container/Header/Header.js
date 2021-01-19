@@ -2,6 +2,7 @@ import React from "react";
 import "./Header.scss";
 import { NavLink, withRouter } from "react-router-dom";
 import * as Constants from "../../global-constants";
+import CartButton from '../../components/Buttons/CartButton';
 
 const navLinks = [
   {
@@ -23,14 +24,15 @@ const navLinks = [
 ];
 
 function Header(props) {
+
   const handleMenuItemClick = (menuItem) => {
     props.history.push("/" + menuItem);
   };
-  console.log(props.screenSize);
+
   return (
     <header className="header">
       <img
-        src="public\images\logo.png"
+        src="public/static/images/logo.png"
         alt="logo"
         className="header-logo"
       ></img>
@@ -67,6 +69,7 @@ function Header(props) {
             ))}
           </nav>
         )}
+        <CartButton cartItems={0} handleClick={props.handleClick} />
       </div>
     </header>
   );

@@ -1,0 +1,9 @@
+@import '../../global-styles.scss';
+
+@media only screen and (max-width: $screen-tablet) {
+    .home {
+        &-container {
+            margin-top: 2%;
+        }
+    }
+}

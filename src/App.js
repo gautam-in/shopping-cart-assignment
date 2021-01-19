@@ -1,7 +1,11 @@
 import React from "react";
-import Header from "./container/Header/Header";
 import "./App.scss";
+import { Switch ,Route, withRouter } from 'react-router-dom'
+
+import Header from "./container/Header/Header";
+import Home from "./container/Home/Home"
 import * as Constants from "./global-constants";
+import Footer from "./components/Footer/Footer";
 
 class App extends React.Component {
   constructor(props) {
@@ -70,10 +74,16 @@ class App extends React.Component {
     return (
       <div className="app">
         <Header screenSize={this.state.screenSize} />
-        <div>Herer</div>
+        <div className="app-container">
+          <Switch>
+          <Route exact path='/' 
+              render={(props) => <Home {...props} screenSize={this.state.screenSize} />} />
+          </Switch>
+        </div>
+        <Footer />
       </div>
     );
   }
 }
 
-export default App;
+export default withRouter(App);

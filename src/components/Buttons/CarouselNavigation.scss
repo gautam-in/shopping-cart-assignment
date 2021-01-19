@@ -1,0 +1,54 @@
+@import '../../global-styles.scss';
+
+.carousel-navigation {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    text-align: center;
+
+    &-lis,&-item {
+        display: inline-block;
+    }
+
+    &-button {
+        display: inline-block;
+        width: 0.5rem;
+        height: 0.5rem;
+        background-color: $color-grey-4;;
+        background-clip: content-box;
+        border: 0.25rem solid transparent;
+        border-radius: 50%;
+        font-size: 0;
+        transition: transform 0.1s;
+
+        &-active {
+            background-color: $color-black-1;
+        }
+    }
+
+    @media only screen and (max-width: $screen-laptop) {
+        bottom: -10px;
+    }
+
+    @media only screen and (max-width: $screen-tablet) {
+        bottom: -40px;
+    }
+}
+  
+//   .carousel__navigation-list,
+//   .carousel__navigation-item {
+//     display: inline-block;
+//   }
+
+//   .carousel__navigation-button {
+//     display: inline-block;
+//     width: 0.5rem;
+//     height: 0.5rem;
+//     background-color: $color-grey-4;;
+//     background-clip: content-box;
+//     border: 0.25rem solid transparent;
+//     border-radius: 50%;
+//     font-size: 0;
+//     transition: transform 0.1s;
+//   }

@@ -1,0 +1,22 @@
+@import '../../global-styles.scss';
+
+.button-grey {
+    color: $color-white-1;
+    background-color: $color-black-transparent-2;
+    padding: 6px 8px;
+    border: 0;
+    position: absolute;
+    top: 0;
+
+    &-PREV {
+        left:0
+    }
+
+    &-NEXT {
+        right: 0;
+    }
+
+    &:hover {
+        cursor: pointer;
+    }
+}
