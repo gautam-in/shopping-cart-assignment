@@ -9,8 +9,7 @@ function Product() {
   const [data, setData] = React.useState([]);
   const [categories, setCategories] = React.useState([]);
   const { filter } = useSelector((state) => state);
-  console.log(data);
-  console.log(categories);
+
   React.useEffect(() => {
     axios.get("http://localhost:5000/products").then((res) => {
       setData(res.data);
@@ -48,7 +47,7 @@ function Product() {
           {filter != null &&
             data.length > 0 &&
             data.map((item) =>
-              item.category == filter ? (
+              item.category === filter ? (
                 <ProductCard product={item} key={item.id} />
               ) : null
             )}
