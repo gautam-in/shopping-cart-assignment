@@ -1,0 +1,97 @@
+.banner-component {
+  display: flex;
+  margin: 30px auto;
+  justify-content: space-between;
+  position: relative;
+  box-shadow: 0 25px 31px -20px rgba(0, 0, 0, 0.22);
+  padding: 25px 0px;
+}
+
+.banner-component:nth-child(odd) {
+  flex-direction: row-reverse;
+}
+.banner-component .content p,
+.banner-component .content span {
+  font-size: 1.2rem;
+  text-align: center;
+}
+.banner-component .content a {
+  text-decoration: none;
+}
+.banner-component .content .heading {
+  font-size: 1.5rem;
+  display: block;
+  text-align: center;
+  font-weight: bold;
+  margin: 15px 0px 0px 0px;
+}
+
+.banner-component .content .link-button {
+  background: #e83583;
+  padding: 15px;
+  border-radius: 3px;
+
+  font-weight: 500;
+  color: #fff;
+  margin: 15px auto;
+  display: block;
+  cursor: pointer;
+  text-transform: capitalize;
+  text-align: center;
+  width: 20vw;
+}
+.banner-component .image-container img {
+  width: 100%;
+}
+.banner-component .content {
+  width: 70%;
+  margin: 15px;
+}
+.banner-component .image-container {
+  width: 30%;
+}
+@media only screen and (min-device-width: 481px) and (max-device-width: 1024px) {
+  .banner-component {
+    width: 100%;
+  }
+  .banner-component .content {
+    width: 60%;
+    margin: 15px;
+  }
+  .banner-component .image-container {
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  .banner-component {
+    width: 100%;
+  }
+}
+@media screen and (device-width: 320px) and (device-height: 640px) and (-webkit-device-pixel-ratio: 2) {
+  .banner-component {
+    width: 100%;
+  }
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  .banner-component .image-container {
+    width: 40%;
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  .banner-component .content {
+    width: 60%;
+  }
+  .banner-component {
+    display: flex;
+    margin: 1px auto;
+    padding: 15px 0px;
+  }
+  .banner-component .content .link-button {
+    width: fit-content;
+  }
+}
