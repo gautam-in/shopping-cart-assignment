@@ -1,0 +1,43 @@
+$grey: #eaeaea;
+$darkGrey: #acacac;
+$lightBlue: #50dae4;
+$pink: #d10157;
+
+.floatLabel {
+  display: flex;
+  flex-direction: column;
+  width: 280px;
+  position: relative;
+  &:focus-within {
+    label {
+      transform: translate(0, 12px) scale(0.8);
+      color: $lightBlue;
+    }
+    input {
+      border-color: $lightBlue;
+    }
+  }
+  input {
+    width: 100%;
+    height: 40px;
+    padding: 20px 0px 0 0;
+    outline: 0;
+    border-color: $darkGrey;
+    border-style: solid;
+    border-width: 0 0 1px 0;
+    background: #fff;
+  }
+  label {
+    &.active {
+      transform: translate(0, 12px) scale(0.8);
+      color: $lightBlue;
+    }
+    padding: 0 12px 0px 0px;
+    color: $darkGrey;
+    pointer-events: none;
+    position: absolute;
+    transform: translate(0, 26px) scale(1);
+    transform-origin: top left;
+    transition: all 0.2s ease-out;
+  }
+}

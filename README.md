@@ -4,12 +4,17 @@ This is the base folder for the shopping cart exercise. You will have all the st
 
 ## Getting Started
 
-Clone this repo and run following command for starting the mock server:
+npx json-server --watch db.json
 
-```
 npm install
 npm run start
+
 # or
+
+npx json-server --watch db.json
 yarn install
 yarn start
+
+```
+
 ```

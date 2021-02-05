@@ -1,0 +1,89 @@
+$grey: #eaeaea;
+$darkGrey: #acacac;
+$lightBlue: #50dae4;
+$pink: #d10157;
+
+.productCardContainer {
+  width: 200px;
+  margin: 20px;
+  box-shadow: 10px 5px 15px 0px $darkGrey;
+  border-bottom: 1px dashed $darkGrey;
+  h2 {
+    min-height: 75px;
+    font-size: 18px;
+    padding: 0px 5px;
+  }
+  .subContainer {
+    .leftCardContainer {
+      img {
+        width: 90%;
+      }
+    }
+    .rightCardContainer {
+      p {
+        box-sizing: border-box;
+        min-height: 90px;
+        background: $grey;
+        padding: 10px;
+      }
+    }
+  }
+  .priceContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px 10px;
+  }
+  button {
+    &:focus {
+      outline: 0;
+    }
+    padding: 8px 10px;
+    border: 0;
+    background: $pink;
+    color: #fff;
+    cursor: pointer;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .productCardContainer {
+    box-shadow: none;
+    h2 {
+      min-height: 0px;
+    }
+    .subContainer {
+      display: flex;
+      padding-bottom: 5px;
+      .rightCardContainer {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        p {
+          margin: 0px;
+        }
+        button {
+          width: 100%;
+          margin: 10px 0px;
+        }
+      }
+      .leftCardContainer {
+        img {
+          height: 100%;
+        }
+      }
+    }
+    .priceContainer {
+      padding: 0px;
+      button {
+        width: 100%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .productCardContainer {
+    width: 100%;
+  }
+}

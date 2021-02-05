@@ -1,0 +1,35 @@
+$grey: #eaeaea;
+$darkGrey: #acacac;
+$lightBlue: #50dae4;
+$pink: #d10157;
+
+.cardContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px;
+  &.alter {
+    flex-direction: row-reverse;
+  }
+  .leftCardContainer {
+    img {
+      width: 300px;
+    }
+  }
+  .rightCardContainer {
+    text-align: center;
+    button {
+      &:focus {
+        outline: 0;
+      }
+      padding: 8px 10px;
+      border: 0;
+      background: $pink;
+      color: #fff;
+      cursor: pointer;
+    }
+    .title {
+      font-size: 20px;
+    }
+  }
+}

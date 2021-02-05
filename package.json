@@ -1,15 +1,63 @@
 {
   "name": "code-exercise",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "This is a shopping cart coding exercise",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "canned -p 5000 ./server"
-  },
-  "author": "",
-  "license": "MIT",
+  "private": true,
   "dependencies": {
-    "canned": "^0.3.12"
+    "axios": "^0.21.1",
+    "node-sass": "^4.14.1",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-redux": "^7.2.2",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "4.0.1",
+    "redux": "^4.0.5",
+    "redux-thunk": "^2.3.0"
+  },
+  "scripts": {
+    "clean": "rimraf dist",
+    "start": "set PORT=3001 && react-scripts start",
+    "build": "npm run clean && webpack --config webpack.config.js",
+    "serve": "webpack-dev-server"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.10",
+    "@babel/preset-env": "^7.12.11",
+    "autoprefixer": "^10.2.4",
+    "babel-core": "^6.17.0",
+    "babel-loader": "8.1.0",
+    "babel-preset-env": "^1.1.4",
+    "babel-preset-react": "^6.16.0",
+    "css-loader": "^0.26.4",
+    "file-loader": "^6.2.0",
+    "html-webpack-plugin": "^2.24.1",
+    "json-server": "^0.16.3",
+    "mini-css-extract-plugin": "^1.3.5",
+    "postcss-loader": "^4.2.0",
+    "rimraf": "^2.5.4",
+    "sass": "^1.32.6",
+    "sass-loader": "^10.1.1",
+    "style-loader": "^0.13.1",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.2.3",
+    "webpack-dev-server": "^3.11.0"
   }
 }

@@ -1,0 +1,100 @@
+$grey: #eaeaea;
+$darkGrey: #acacac;
+$lightBlue: #50dae4;
+$pink: #d10157;
+
+.modal {
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow: auto;
+  padding-top: 80px;
+  button {
+    &:focus {
+      outline: 0;
+    }
+    border: 0;
+    cursor: pointer;
+  }
+  .modalContent {
+    background-color: $grey;
+    width: 70%;
+    max-width: 500px;
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: auto;
+    .modalHeader {
+      display: flex;
+      justify-content: space-between;
+      background: #000;
+      padding: 15px;
+      .title {
+        color: #fff;
+        .cartTitle {
+          font-size: 17px;
+        }
+      }
+      button {
+        background: transparent;
+        img {
+          height: 15px;
+        }
+        cursor: pointer;
+      }
+    }
+    .modalFooter {
+      text-align: center;
+      background-color: #fff;
+      padding-top: 10px;
+      border-top: 1px solid $darkGrey;
+      .title {
+        &.start {
+          justify-content: center;
+        }
+        padding: 15px 25px;
+        background: $pink;
+        color: #fff;
+        margin: 10px;
+        font-size: 14px;
+        width: 95%;
+        border-radius: 4px;
+        display: flex;
+        justify-content: space-between;
+        .arrow {
+          margin-left: 20px;
+        }
+      }
+    }
+    .modalSubContent {
+      overflow: auto;
+      height: 100%;
+    }
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .modal {
+    padding-top: 90px;
+    background-color: transparent;
+    .modalContent {
+      overflow: auto;
+      height: 88%;
+      width: 100%;
+      margin: 0px;
+      max-width: 100%;
+      .modalHeader {
+        background: #fff;
+        .title {
+          color: #000;
+        }
+      }
+    }
+  }
+}
