@@ -1,0 +1,55 @@
+
+
+.loginbtn {
+    font-family: "Roboto", sans-serif;
+    text-transform: uppercase;
+    outline: 0;
+    background: #4CAF50;
+    width: 100%;
+    border: 0;
+    padding: 7px;
+    color: #FFFFFF;
+    font-size: 14px;
+    cursor: pointer;
+}
+.loginbtn:hover{
+    background-color: white;
+    color: #4CAF50;
+    border: 1px solid #4CAF50;
+}
+label{
+    color: #4CAF50;
+}
+.link{
+    color: #4CAF50;
+}
+.card {
+    /* Add shadows to create the "card" effect */
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+  }
+  
+  /* On mouse-over, add a deeper shadow */
+  .card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  }
+
+  .card1{
+      justify-content: center;
+      display: flex
+  }
+  .container {
+    padding: 38px 36px;
+  }
+  .form {
+    position: relative;
+    z-index: 1;
+    background: #FFFFFF;
+    max-width: 360px;
+    margin: 0 auto 100px;
+    padding: 45px;
+    text-align: center;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+  }
+
+  
