@@ -1,0 +1,18 @@
+.btn {
+    text-transform: none;
+    border-radius: 0%;
+}
+
+.content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.card-title {
+    font-size: 20px;
+}
+
+.para,
+.btn-div {
+    text-align: center;
+}

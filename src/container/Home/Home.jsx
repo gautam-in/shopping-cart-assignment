@@ -3,18 +3,13 @@ import Header from '../../components/common/Header'
 import Carousel from './Carousel'
 import Footer from '../../components/common/Footer';
 import './Home.css';
-import {withRouter} from 'react-router-dom'
+import { withRouter } from 'react-router-dom'
 
 const banners = require('../../server/banners/index.get.json')
 const data = require('../../server/categories/index.get.json')
 
 class Home extends React.Component {
-
-    state = {
-        currentImageIndex: 0
-    };
-
-    onBtnClick =(id)=>{
+    onBtnClick = (id) => {
         this.props.history.push(`/products/${id}`)
     }
     processCards = () => {
@@ -32,71 +27,20 @@ class Home extends React.Component {
                 onClick={this.onBtnClick} />
         })
     }
-    processCarousel = () => {
-        return (
-            <div className="container">
-                <div className="carousel">
-                    {this.arrow("left", this.previousSlide, "PREV")}
-                    {banners.map((banner) => {
-                        return this.imageSlide(banner.bannerImageUrl)
-                    })}
-                    {this.arrow("right", this.nextSlide, "NEXT")}
-                </div>
-            </div>);
-    }
-
-    imageSlide = (url) => {
-        console.log(url)
-        const styles = {
-            backgroundImage: `url(${url})`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center'
-        };
-
-        return (
-            <div className="image-slide" style={styles}><img src={url} /></div>
-        );
-    }
-
-    arrow = (direction, clickFunction, glyph) => {
-        return (<div
-            className={`slide-arrow ${direction}`}
-            onClick={clickFunction}>
-            { glyph}
-        </div>)
-    };
-
-    previousSlide = () => {
-        const lastIndex = banners.length - 1;
-        const { currentImageIndex } = this.state;
-        const shouldResetIndex = currentImageIndex === 0;
-        const index = shouldResetIndex ? lastIndex : currentImageIndex - 1;
-
-        this.setState({
-            currentImageIndex: index
-        });
-    }
-
-    nextSlide = () => {
-        const lastIndex = banners.length - 1;
-        const { currentImageIndex } = this.state;
-        const shouldResetIndex = currentImageIndex === lastIndex;
-        const index = shouldResetIndex ? 0 : currentImageIndex + 1;
-
-        this.setState({
-            currentImageIndex: index
-        });
-    }
 
     render() {
         return (
-            <div>
+            <>
                 <Header />
-                {/* {this.processCarousel()} */}
-                {this.processCards()}
+                <div className="home-container">
+                    <div></div>
+                    <div>
+                        {this.processCards()}
+                    </div>
+                    <div></div>
+                </div>
                 <Footer />
-            </div>
-
+            </>
         );
     }
 }

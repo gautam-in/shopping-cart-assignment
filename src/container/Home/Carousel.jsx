@@ -1,56 +1,71 @@
 import React from 'react';
 import Container from '@material-ui/core/Container'
 import Card from '@material-ui/core/Card'
-import CardContent from '@material-ui/core/CardContent';
-import CardMedia from '@material-ui/core/CardMedia';
-import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
-
+import './Carousel.css'
 
 class Cards extends React.Component {
-    constructor(props){
+    constructor(props) {
         super(props);
     }
 
     processLeftMedia = (cardContentH5, cardContentSubtitle, image, buttonText) => {
         return (
-            <>
-                <CardMedia style={{ marginRight: '5%' }}>
+            <div className="content">
+                <div style={{ marginRight: '5%' }}>
                     <img style={{ width: '60%', backgroundSize: 'contain' }} src={image} alt={buttonText} />
-                </CardMedia>
-                <CardContent style={{ marginTop: '5%', paddingLeft: '2%' }}>
-                    <Typography component="h5" variant="h5">
-                        {cardContentH5}
-                    </Typography>
-                    <Typography variant="subtitle1" color="textSecondary">
-                        {cardContentSubtitle}
-                    </Typography>
-                    <Button onClick={()=>this.props.onClick(this.props.id)} variant="contained" color="secondary" style={{ textTransform: 'none', marginTop: '5%' }}>
-                        {buttonText}
-                    </Button>
-                </CardContent>
-            </>
+                </div>
+                <div>
+                    <div className="para">
+                        <p className="card-title">
+                            <strong>{cardContentH5}</strong>
+                        </p>
+                        <p>
+                            {cardContentSubtitle}
+                        </p>
+                    </div>
+                    <div className="btn-div">
+                        <Button
+                            className="btn"
+                            onClick={() => this.props.onClick(this.props.id)}
+                            variant="contained"
+                            color="secondary"
+                        >
+                            {buttonText}
+                        </Button>
+                    </div>
+                </div>
+            </div>
         );
     }
 
     processRightMedia = (cardContentH5, cardContentSubtitle, image, buttonText) => {
         return (
-            <>
-                <CardContent style={{ marginTop: '5%', paddingLeft: '2%' }}>
-                    <Typography component="h5" variant="h5">
-                        {cardContentH5}
-                    </Typography>
-                    <Typography variant="subtitle1" color="textSecondary">
-                        {cardContentSubtitle}
-                    </Typography>
-                    <Button onClick={()=>this.props.onClick(this.props.id)} variant="contained" color="secondary" style={{ textTransform: 'none', marginTop: '5%' }}>
-                        {buttonText}
-                    </Button>
-                </CardContent>
-                <CardMedia>
+            <div className="content">
+                <div>
+                    <div className="para">
+                        <p className="card-title">
+                            <strong>{cardContentH5}</strong>
+                        </p>
+                        <p>
+                            {cardContentSubtitle}
+                        </p>
+                    </div>
+                    <div className="btn-div">
+                        <Button
+                            className="btn"
+                            onClick={() => this.props.onClick(this.props.id)}
+                            variant="contained"
+                            color="secondary"
+                        >
+                            {buttonText}
+                        </Button>
+                    </div>
+                </div>
+                <div>
                     <img style={{ width: '70%' }} src={image} alt={buttonText} />
-                </CardMedia>
-            </>
+                </div>
+            </div>
         );
     }
 
@@ -79,7 +94,7 @@ class Cards extends React.Component {
         );
     }
     render() {
-        const { cardContentH5, cardContentSubtitle, image, mediaPosition, buttonText, lastCard,id } = this.props
+        const { cardContentH5, cardContentSubtitle, image, mediaPosition, buttonText, lastCard, id } = this.props
         return (
             <div>
                 {this.categoryCard(cardContentH5, cardContentSubtitle, image, mediaPosition, buttonText, lastCard)}

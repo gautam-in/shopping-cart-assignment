@@ -1,30 +1,4 @@
-html, body, .carousel {
-	height:100%;
-	margin: 0;
-	width: 100%;
-}
-#container{
-margin-left: 25%;
-}
-
-.image-slide {
-	height: 100%;
-	width: 100%;
-	transition: background-image .3s ease-in-out;
-}
-
-.slide-arrow {
-	color: #14B6D4;
-	cursor: pointer;
-	font-size: 1.5rem;
-	position: absolute;
-	top: 50%;
-}
-
-.slide-arrow.right {
-	right: 1rem;
-}
-
-.slide-arrow.left {
-	left: 1rem;
+.home-container {
+    display: grid;
+    grid-template-columns: 1fr 7fr 1fr;
 }
