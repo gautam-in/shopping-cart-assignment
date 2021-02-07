@@ -2,11 +2,10 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route,Switch  } from "react-router-dom"
 import Login from './components/login/index';
 import Register from './components/signUp/index'
-import {IoMdCart} from "react-icons/io"
+import {IoMdCart} from "react-icons/io" 
 import "./App.scss";
-
-class App extends Component { 
-  render(){
+function App() { 
+   
     return (
       <>
      <div className="header">
@@ -43,7 +42,7 @@ class App extends Component {
               <div>
                0 items
               </div>
-          </div>
+          </div> 
         </div>
       
 </div>
@@ -54,9 +53,12 @@ class App extends Component {
         <Route exact path="/login" component={Login} />
         </Switch>
     </Router>
+    <div className={"copyrightrow"}>
+      Copyright © 2011-2018 Sabka Bazaar Grocery Supplies Pvt Ltd
+    </div>
     </>
     )
-   }
+   
   }
 
 export default App;

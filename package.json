@@ -8,10 +8,11 @@
     "start": "canned -p 5000 ./server"
   },
   "author": "",
-  "license": "MIT",
+  "license": "MIT", 
   "dependencies": {
-    "canned": "^0.3.12",
-    "node-sass": "^5.0.0",
-    "react-icons": "^4.1.0"
+   
+    "canned": "^0.3.12"
+  
+    
   }
 }

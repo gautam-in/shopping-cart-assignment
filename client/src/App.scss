@@ -20,6 +20,15 @@ body{
    
 
 }
+
+.copyrightrow{
+    background-color: #bbbbbbad;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 10px;
+    margin-top: 1rem;
+
+}
 .text{
  display: flex;
  justify-content: flex-end;
@@ -56,6 +65,7 @@ body{
     margin: 10px;
 }
 
+
 .header{
 position: sticky;
 top: 0;
@@ -85,5 +95,14 @@ display: flex;
     .cartIcon{
         height: 100%;
     }
+    .header>div{
+        width: max-content;
+       
+       
+    }
+    .header{
+           justify-content: space-between;
+    }
+    
 
 }
