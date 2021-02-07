@@ -1,0 +1,41 @@
+.nav-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+@media screen and(max-width:100px) {
+    #items-count {
+        font-size: 1px
+    }
+}
+
+.menu {
+    display: flex;
+    margin-top: 6%;
+}
+
+#products {
+    margin-left: 30%;
+}
+
+#logo {
+    background-size: cover;
+    width: 10vw;
+    margin-left: 35%;
+}
+
+.img {
+    margin-top: 2%;
+}
+
+.other-links {
+    margin-right: 5%;
+    font-size: 0.9rem;
+    margin-bottom: 2%;
+}
+
+#items-count {
+    color: 'black';
+    font-size: 0.9rem;
+    font-family: Dosis;
+}

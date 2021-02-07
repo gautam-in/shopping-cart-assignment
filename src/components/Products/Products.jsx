@@ -7,7 +7,7 @@ import buynow from '../../flux/actions/buynow'
 import Snackbar from '@material-ui/core/Snackbar';
 import MuiAlert from '@material-ui/lab/Alert';
 import { withRouter } from 'react-router-dom'
-
+import './Products.css'
 
 function Alert(props) {
     return <MuiAlert elevation={6} variant="filled" {...props} />;
@@ -72,37 +72,15 @@ class Products extends React.Component {
         }
     }
     processMenu = (name, id) => {
-        const btnStyle = {
-            width: '100%',
-            justifyContent: 'left'
-        }
-        const hrStyle = {
-            height: '2px',
-            width: '100%',
-            color: '#e7e7ec',
-            float: 'left',
-            marginLeft: '2%'
-
-        }
         return (
-            <>
-
-                <div>
-                    <Button key={id} style={btnStyle} onClick={() => this.handleMenuClick(id)}>
-                        {name}
-                    </Button>
-                </div>
-
-            </>);
+            <div>
+                <Button key={id} id="category-btn" onClick={() => this.handleMenuClick(id)}>
+                    {name}
+                </Button>
+            </div>);
     }
     processMenuList = () => {
-        return <div style={{
-            width: '100%',
-            height: '100%',
-            backgroundColor: '#e7e7ec',
-            top: '0'
-        }}>
-
+        return <div className="category-list">
             {
                 categories.map(category => {
                     return (
@@ -114,30 +92,25 @@ class Products extends React.Component {
     }
     processItemGrid = () => {
         return (
-            <Container style={{ height: "100%" }}>
-                <Grid container style={{ height: "100%" }} spacing={1}>
-                    <Grid item xs={3} style={{ height: '100%' }}>
+            <div className="item-container">
+                <div className="section">
+                    <div></div>
+                    <div className="menu-list">
                         {this.processMenuList()}
-                    </Grid>
-                    <Grid style={{ height: "100%" }} item xs={9}>
-                        <div style={{ marginTop: '1%', height: '100%' }}>
-                            {this.processProductLists(this.state.categoryData)}
-                        </div>
-                    </Grid>
-                </Grid>
-            </Container>
+                    </div>
+                    <div style={{ marginTop: '1%', height: '100%' }}>
+                        {this.processProductLists(this.state.categoryData)}
+                    </div>
+                    <div></div>
+                </div>
+            </div>
         );
     }
 
     processProductCard = (value) => {
         return (
             <Card key={value.id} style={{ height: '100%', boxShadow: 'none', borderBottom: 'dashed #e7e7ec' }}>
-                <div style={{
-                    padding: '2%',
-                    fontWeight: 'bold',
-                    fontSize: '1rem',
-                    height: '12vh',
-                }}>
+                <div className="product-name">
                     {value.name}
                 </div>
                 <CardMedia
@@ -145,21 +118,19 @@ class Products extends React.Component {
                     image={value.imageURL}
                     title={value.name}
                 />
-                <div style={{
-                    backgroundColor: '#e7e7ec',
-                    fontSize: '.9rem',
-                    overflow: 'hidden',
-                    height: '12vh',
-                    lineHeight: '1.8',
-                    padding: '1vh'
-                }}>
+                <div className="description">
                     {value.description}
                 </div >
-                <CardActions style={{ boxSizing: "border-box" }}>
-                    <Typography variant="subtitle2">
-                        {`MRP Rs.${value.price}`}
-                    </Typography>
-                    <Button onClick={() => this.props.buynow(value)} style={{ textTransform: 'none', borderRadius: '0%' }} variant="contained" color="secondary">
+                <CardActions style={{ boxSizing: "border-box", fontSize: '0.7rem' }}>
+                    <p id="mrp">
+                        <strong>{`MRP Rs.${value.price}`}</strong>
+                    </p>
+                    <Button
+                        onClick={() => this.props.buynow(value)}
+                        id="buy-now"
+                        variant="contained"
+                        color="secondary"
+                    >
                         Buy Now
                 </Button>
                 </CardActions>
@@ -170,15 +141,13 @@ class Products extends React.Component {
 
     processProductLists = (data) => {
         return (
-            <Grid container spacing={1}>
-                <Grid container item xs={12} spacing={3} >
-                    {data.map(value => <Grid item xs={3} key={value.id}>
+            <div className="product-list">
+                {data.map(value =>
+                    <div className="product" key={value.id}>
                         {this.processProductCard(value)}
-                    </Grid>
-                    )}
-                </Grid>
-            </Grid>
-
+                    </div>
+                )}
+            </div>
         );
     }
     render() {

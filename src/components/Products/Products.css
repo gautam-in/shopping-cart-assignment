@@ -1,0 +1,83 @@
+.item-container {
+    height: 100%;
+}
+
+.section {
+    display: grid;
+    grid-template-columns: 0.5fr 0.7fr 2fr 0.5fr;
+}
+
+.menu-list {
+    margin-right: 3%;
+}
+
+.category-list {
+    width: 100%;
+    height: 100%;
+    background-color: #e7e7ec;
+}
+
+.product-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.product {
+    margin-right: 5%;
+    margin-bottom: 2%
+}
+
+@media only screen and (max-width:1200px) {
+    .product-name {
+        padding: 2%;
+        font-weight: bold;
+        overflow: hidden;
+        font-family: Dosis;
+    }
+    #buy-now {
+        border-radius: 0%;
+        text-transform: none;
+        font-size: 8px;
+        font-family: Dosis;
+    }
+    #mrp {
+        font-size: 10px;
+        font-family: Dosis;
+    }
+    #category-btn {
+        width: 100%;
+        text-transform: none;
+        justify-content: left;
+        font-size: 10px;
+    }
+}
+
+#buy-now {
+    border-radius: 0%;
+    text-transform: none;
+    font-family: Dosis;
+}
+
+.description {
+    background-color: #e7e7ec;
+    font-size: 0.9rem;
+    overflow: hidden;
+    height: 12vh;
+    line-height: 1.8;
+    padding: 1vh;
+    font-family: Dosis;
+}
+
+.product-name {
+    padding: 2%;
+    font-weight: bold;
+    font-size: 1rem;
+    height: 12vh;
+    font-family: Dosis;
+}
+
+#category-btn {
+    width: 100%;
+    text-transform: none;
+    justify-content: left;
+}

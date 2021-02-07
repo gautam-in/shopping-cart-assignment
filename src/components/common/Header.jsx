@@ -9,47 +9,72 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from "redux";
 import addItem from '../../flux/actions/addItem';
 import removeItem from '../../flux/actions/removeItem';
-
+import './Header.css'
 class Header extends React.Component {
     state = {
         open: false
     }
     processSabkaBazaarLogo = () => {
-        return (<img style={{ marginLeft: '15%', backgroundSize: 'contain' }}
-            width="200vw"
-            src="/static/images/logo_2x.png"
-            alt="Sabka Bazaar" />);
+        return (
+            <div className="img">
+                <img id="logo"
+                    src="/static/images/logo_2x.png"
+                    alt="Sabka Bazaar" />
+            </div>
+        )
     }
 
     processMenuOptions = () => {
         return (
-            <>
-                <div style={{ marginLeft: "7%", marginRight: '3%', marginTop: '2.5%' }}>
-                    <Typography variant="h6" noWrap>
-                        <Link onClick={() => this.props.history.push("/")} style={{ color: "#52525d" }}>Home</Link>
-                    </Typography>
+            <div className="menu">
+                <div>
+                    <p id="home">
+                        <Link onClick={() => this.props.history.push("/")} style={{ color: "#52525d" }}>
+                            <strong>Home</strong>
+                        </Link>
+                    </p>
                 </div>
 
-                <div style={{ marginTop: '2.5%' }}>
-                    <Typography variant="h6" noWrap>
-                        <Link onClick={() => this.props.history.push("/products")} style={{ color: "#52525d" }}>Products</Link>
-                    </Typography>
+                <div>
+                    <p id="products">
+                        <Link onClick={() => this.props.history.push("/products")} style={{ color: "#52525d" }}>
+                            <strong>Products</strong>
+                        </Link>
+                    </p>
                 </div>
 
-            </>
+            </div>
         );
     }
 
     processOtherOptions = () => {
         return (
-            <div style={{ marginLeft: '35%' }}>
-                <Link onClick={() => this.props.history.push("/signin")} style={{ marginRight: '10%', color: '#52525d' }}>SignIn</Link>
-                <Link onClick={() => this.props.history.push("/register")} style={{ color: '#52525d' }}>Register</Link>
-                <div style={{ marginTop: '23%' }}>
-                    <IconButton onClick={this.setModalState} aria-label="show 4 new mails" color="inherit" style={{ backgroundColor: '#e7e7ec', borderRadius: '0%' }}>
-                        <ShoppingCartIcon style={{ fontSize: "38px" }} color="secondary" />
-                        {/* <img src="/static/images/cart.svg" alt="cart" style={{ width: '2vw' }} /> */}
-                        <span style={{ color: 'black', fontSize: '18px' }}>{`${this.props.productdetail.count} items`}</span>
+            <div style={{ marginLeft: '30%' }}>
+                <div style={{ display: 'flex', marginLeft: '6%', marginTop: "2%" }}>
+                    <div className="other-links">
+                        <Link onClick={() => this.props.history.push("/signin")}
+                            style={{ marginRight: '5%', color: '#52525d' }}>
+                            <strong>SignIn</strong>
+                        </Link>
+                    </div>
+                    <div className="other-links">
+                        <Link onClick={() => this.props.history.push("/register")}
+                            style={{ color: '#52525d' }}>
+                            <strong>Register</strong>
+                        </Link>
+                    </div>
+                </div>
+                <div>
+                    <IconButton onClick={this.setModalState} style={{
+                        backgroundColor: '#e7e7ec',
+                        width: '7vw',
+                        borderRadius: '0%',
+                        border: 'none',
+                        marginTop:'3%',
+                        height:'7vh'
+                    }}>
+                        <ShoppingCartIcon style={{ fontSize: "1.5rem" }} color="secondary" />
+                        <span id="items-count">{`${this.props.productdetail.count} items`}</span>
                     </IconButton>
                 </div>
             </div>
@@ -189,28 +214,28 @@ class Header extends React.Component {
 
     renderProceedToCheckout = () => {
         return <>.
-        <Paper style={{padding: '4%' }}>
-            <div style={{ marginBottom:'1.5%',textAlign: 'center' }}>Promo code can be applied on payment page</div>
-            <Button fullWidth
-                onClick={this.handleClose}
-                style={{ textTransform: 'none', fontWeight: 'bolder' }} variant="contained" color="secondary">
-                Proceed to checkout
+            <Paper style={{ padding: '4%' }}>
+                <div style={{ marginBottom: '1.5%', textAlign: 'center' }}>Promo code can be applied on payment page</div>
+                <Button fullWidth
+                    onClick={this.handleClose}
+                    style={{ textTransform: 'none', fontWeight: 'bolder' }} variant="contained" color="secondary">
+                    Proceed to checkout
                         <span style={{ color: 'white', marginLeft: 'auto', fontWeight: 'bolder' }}>
-                    {`Rs. ${this.props.productdetail.totalAmt}`}
-                </span>
-                <span style={{ color: 'white', marginLeft: '2%', marginTop: "-0.5%", fontWeight: '1000' }}>
-                    {`>`}
-                </span>
-            </Button>
+                        {`Rs. ${this.props.productdetail.totalAmt}`}
+                    </span>
+                    <span style={{ color: 'white', marginLeft: '2%', marginTop: "-0.5%", fontWeight: '1000' }}>
+                        {`>`}
+                    </span>
+                </Button>
             </Paper>
-         </>
-         
+        </>
+
     }
     processCartView = () => {
         return (
             <div style={{ backgroundColor: '#e7e7ec', height: '100%' }}>
                 {this.renderCartViewHeader()}
-                <div style={{height:'72%', overflow: 'hidden', overflowY: 'auto' }}>
+                <div style={{ height: '72%', overflow: 'hidden', overflowY: 'auto' }}>
                     {this.renderItemDetails()}
                     {this.renderPromotionalTag()}
                 </div>
@@ -251,17 +276,25 @@ class Header extends React.Component {
     }
 
     render() {
-        return (
-            <AppBar position="static">
-                <Toolbar style={{ backgroundColor: 'white' }}>
-                    {this.processSabkaBazaarLogo()}
-                    {this.processMenuOptions()}
-                    {this.processOtherOptions()}
-                    {this.processModal()}
-                </Toolbar>
-            </AppBar>
+        return <div style={{ position: 'static', boxShadow: "0 8px 6px -6px black" }}>
+            {/* <div style={{ backgroundColor: 'white' }}> */}
+            <div className="nav-container">
 
-        );
+                <div>
+                    {this.processSabkaBazaarLogo()}
+                </div>
+                <div>
+                    {this.processMenuOptions()}
+                </div>
+                <div>
+                    {this.processOtherOptions()}
+                </div>
+
+                {/* </div> */}
+
+                {this.processModal()}
+            </div>
+        </div>
     }
 }
 
