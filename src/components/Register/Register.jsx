@@ -1,7 +1,8 @@
 import React from 'react';
 import Header from '../common/Header'
 import Footer from '../common/Footer'
-import { Typography, Container, TextField, Button, Grid } from '@material-ui/core'
+import { Typography, Container, TextField, Button, Grid, Snackbar } from '@material-ui/core';
+import Alert from '@material-ui/lab/Alert'
 
 class Register extends React.Component {
     state = {
@@ -9,7 +10,9 @@ class Register extends React.Component {
         lname: "",
         email: "",
         password: "",
-        confirm_password: ""
+        confirm_password: "",
+        status: false,
+        message: ""
     }
 
     processTextFieldChange = (e, property) => {
@@ -54,24 +57,47 @@ class Register extends React.Component {
             </div>
         </>
     }
-    handleSignup = () => {
+    handleClose = () => {
+        this.setState({ status: false })
+    }
+
+    renderSnackBar = () => {
+        return <Snackbar
+            anchorOrigin={{
+                vertical: 'top',
+                horizontal: 'right',
+            }
+            }
+            open={this.state.status}
+        >
+            <Alert
+                onClose={() => this.handleClose()}
+                severity="error"
+            >
+                {this.state.message}
+            </Alert>
+        </Snackbar>
+    }
+    handleSignup = (e) => {
         const { email, password, confirm_password, fname, lname } = this.state;
         const mailFormat = /^\w+([\.-]?w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
         if (email === "" || password === "" || confirm_password === "" || fname === "" || lname === "") {
-            return alert("All fields are mandatory")
+            return this.setState({ message: "All fields are mandatory", status: true })
         }
         else if (!email.match(mailFormat)) {
-            return alert("Please provide email in correct format")
+            return this.setState({ message: "Please provide email in correct format", status: true })
         }
         else if (password.length < 6) {
-            return alert("Password length is less than 6 characters. ")
+            return this.setState({ message: "Password length is less than 6 characters. ", status: true })
         }
         else if (/\s/.test(password)) {
-            return alert("Password should not contain spaces")
-        } else if (!(/[0-9]/g.test(password)) || !(/[a-zA-Z]/g.test(password))) {
-            return alert("Password should contain a uppercase letter, a lowercase letter and a digit")
-        } else if (password !== confirm_password) {
-            return alert("Passwords doesn't match")
+            return this.setState({ message: "Password should not contain spaces", status: true })
+        }
+        else if (!(/[0-9]/g.test(password)) || !(/[a-zA-Z]/g.test(password))) {
+            return this.setState({ message: "Password should contain a uppercase letter, a lowercase letter and a digit", status: true })
+        }
+        else if (password !== confirm_password) {
+            return this.setState({ message: "Passwords doesn't match", status: true })
         }
         this.props.history.push('/')
     }
@@ -97,7 +123,7 @@ class Register extends React.Component {
                             }} fullWidth
                                 variant="contained"
                                 color="secondary"
-                                onClick={this.handleSignup}>
+                                onClick={(e) => this.handleSignup(e)}>
                                 Signup
                                     </Button>
                         </div>
@@ -111,6 +137,10 @@ class Register extends React.Component {
             <Header />
             {this.MuiCard()}
             <Footer />
+            {
+                this.state.status &&
+                this.renderSnackBar()
+            }
         </div>)
     }
 }

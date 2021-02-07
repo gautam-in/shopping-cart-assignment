@@ -3,6 +3,7 @@ import Header from '../../components/common/Header'
 import Carousel from './Carousel'
 import Footer from '../../components/common/Footer';
 import './Home.css';
+import {withRouter} from 'react-router-dom'
 
 const banners = require('../../server/banners/index.get.json')
 const data = require('../../server/categories/index.get.json')
@@ -13,6 +14,9 @@ class Home extends React.Component {
         currentImageIndex: 0
     };
 
+    onBtnClick =(id)=>{
+        this.props.history.push(`/products/${id}`)
+    }
     processCards = () => {
         const length = data.length - 1
         return data.map((val, index) => {
@@ -22,8 +26,10 @@ class Home extends React.Component {
                 cardContentSubtitle={val.description}
                 image={val.imageUrl}
                 mediaPosition={val.order}
+                id={val.id}
                 buttonText={val.name}
-                lastCard={length === index ? true : false} />
+                lastCard={length === index ? true : false}
+                onClick={this.onBtnClick} />
         })
     }
     processCarousel = () => {
@@ -95,4 +101,4 @@ class Home extends React.Component {
     }
 }
 
-export default Home;
+export default withRouter(Home);

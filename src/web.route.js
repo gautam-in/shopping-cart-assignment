@@ -20,12 +20,16 @@ class Routing extends React.Component {
                         component={Signin}
                     />
                     <Route
-                        path="/products"
+                       exact path="/products"
                         component={Products}
                     />
                     <Route
                         path="/register"
                         component={Register}
+                    />
+                    <Route
+                        path="/products/:id"
+                        component={Products}
                     />
                 </Switch>
             </Router>

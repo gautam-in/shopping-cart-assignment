@@ -6,6 +6,7 @@ import { connect } from 'react-redux';
 import buynow from '../../flux/actions/buynow'
 import Snackbar from '@material-ui/core/Snackbar';
 import MuiAlert from '@material-ui/lab/Alert';
+import { withRouter } from 'react-router-dom'
 
 
 function Alert(props) {
@@ -20,11 +21,14 @@ class Products extends React.Component {
 
     state = {
         open: false,
-        categoryData:data,
-        status:false,
-        id:""
+        categoryData: data,
+        status: false,
+        id: this.props.match.params.id
     }
 
+    componentDidMount() {
+        this.handleMenuClick()
+    }
     componentDidUpdate(prevProps) {
         if (prevProps.count !== undefined && prevProps.count !== this.props.count)
             this.setState({ open: true }, () => {
@@ -38,17 +42,25 @@ class Products extends React.Component {
         this.setState({ open: false })
     }
 
-    handleMenuClick = (categoryId)=>{
-        if(this.state.id !== categoryId){
-        const categorizedData = data.filter(value=> value.category === categoryId)
-        this.setState({categoryData : categorizedData,id:categoryId})
-        }else{
-            this.setState({categoryData : data,id:""})
+    handleMenuClick = (categoryId = "") => {
+        if (this.state.id !== categoryId) {
+            const categorizedData = data.filter(value => {
+                if (categoryId && value.category === categoryId) {
+                    return true
+                } else if (this.state.id === value.category) {
+                    return true
+                }
+                return false
+            })
+            this.setState({ categoryData: categorizedData, id: categoryId })
+        } else {
+            this.setState({ categoryData: data, id: "" })
         }
     }
-    processMenu =(name,id)=>{
+    processMenu = (name, id) => {
         const btnStyle = {
-                marginLeft: '5%',
+            width: '100%',
+            justifyContent: 'left'
         }
         const hrStyle = {
             height: '2px',
@@ -59,15 +71,15 @@ class Products extends React.Component {
 
         }
         return (
-        <>
-        
-        <div>
-                <Button key={id} style={btnStyle} onClick={()=>this.handleMenuClick(id)}>
-                   {name}
-                </Button>
+            <>
+
+                <div>
+                    <Button key={id} style={btnStyle} onClick={() => this.handleMenuClick(id)}>
+                        {name}
+                    </Button>
                 </div>
-           
-        </>);
+
+            </>);
     }
     processMenuList = () => {
         return <div style={{
@@ -77,13 +89,13 @@ class Products extends React.Component {
             top: '0'
         }}>
 
-    {
-    categories.map(category=>{
-        return (
-            <div style={{backgroundColor:category.id === this.state.id ? 'orange':""}}>{this.processMenu(category.name,category.id)}</div>
-        )
-    })
-    }            
+            {
+                categories.map(category => {
+                    return (
+                        <div style={{ backgroundColor: category.id === this.state.id ? 'orange' : "" }}>{this.processMenu(category.name, category.id)}</div>
+                    )
+                })
+            }
         </div>
     }
     processItemGrid = () => {
@@ -200,4 +212,4 @@ const mapDispatchToProps = dispatch => {
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Products);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Products));

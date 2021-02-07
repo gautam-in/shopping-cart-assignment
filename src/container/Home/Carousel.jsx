@@ -8,9 +8,10 @@ import Button from '@material-ui/core/Button';
 
 
 class Cards extends React.Component {
-    constructor({ props }) {
-        super({ props });
+    constructor(props){
+        super(props);
     }
+
     processLeftMedia = (cardContentH5, cardContentSubtitle, image, buttonText) => {
         return (
             <>
@@ -24,7 +25,7 @@ class Cards extends React.Component {
                     <Typography variant="subtitle1" color="textSecondary">
                         {cardContentSubtitle}
                     </Typography>
-                    <Button variant="contained" color="secondary" style={{ textTransform: 'none', marginTop: '5%' }}>
+                    <Button onClick={()=>this.props.onClick(this.props.id)} variant="contained" color="secondary" style={{ textTransform: 'none', marginTop: '5%' }}>
                         {buttonText}
                     </Button>
                 </CardContent>
@@ -42,7 +43,7 @@ class Cards extends React.Component {
                     <Typography variant="subtitle1" color="textSecondary">
                         {cardContentSubtitle}
                     </Typography>
-                    <Button variant="contained" color="secondary" style={{ textTransform: 'none', marginTop: '5%' }}>
+                    <Button onClick={()=>this.props.onClick(this.props.id)} variant="contained" color="secondary" style={{ textTransform: 'none', marginTop: '5%' }}>
                         {buttonText}
                     </Button>
                 </CardContent>
@@ -78,7 +79,7 @@ class Cards extends React.Component {
         );
     }
     render() {
-        const { cardContentH5, cardContentSubtitle, image, mediaPosition, buttonText, lastCard } = this.props
+        const { cardContentH5, cardContentSubtitle, image, mediaPosition, buttonText, lastCard,id } = this.props
         return (
             <div>
                 {this.categoryCard(cardContentH5, cardContentSubtitle, image, mediaPosition, buttonText, lastCard)}
