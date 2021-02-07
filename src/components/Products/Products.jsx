@@ -23,31 +23,45 @@ class Products extends React.Component {
         open: false,
         categoryData: data,
         status: false,
-        id: this.props.match.params.id
+        id: this.props.match.params.id ? this.props.match.params.id : ''
     }
-
     componentDidMount() {
-        this.handleMenuClick()
+        if (this.props.match.params.id) {
+            let categoryData = data.filter(value => {
+                if (this.props.match.params.id && value.category === this.props.match.params.id) {
+                    return true
+                }
+                return false
+            })
+            this.setState({ categoryData })
+        } else {
+            this.setState({ categoryData: data })
+        }
     }
     componentDidUpdate(prevProps) {
-        if (prevProps.count !== undefined && prevProps.count !== this.props.count)
+        if (prevProps.count !== undefined && prevProps.count < this.props.count) {
             this.setState({ open: true }, () => {
                 setInterval(() => {
                     this.setState({ open: false })
                 }, 3000)
             })
+        }
+        if (prevProps.match.path !== this.props.match.path) {
+            if (!this.props.match.params.id) {
+                this.setState({ categoryData: data, id: "" })
+            }
+        }
     }
 
     handleClose = () => {
         this.setState({ open: false })
     }
 
-    handleMenuClick = (categoryId = "") => {
+    handleMenuClick = (categoryId) => {
+        this.props.history.push(`/products/${categoryId}`)
         if (this.state.id !== categoryId) {
             const categorizedData = data.filter(value => {
-                if (categoryId && value.category === categoryId) {
-                    return true
-                } else if (this.state.id === value.category) {
+                if (value.category === categoryId) {
                     return true
                 }
                 return false

@@ -1,0 +1,31 @@
+.container {
+    margin-top: 2%
+}
+
+.login-div {
+    display: grid;
+    grid-template-columns: 0.8fr 1fr 1fr 0.5fr;
+}
+
+#login-btn {
+    margin-bottom: 5%;
+    font-family: Dosis;
+    width: 60%;
+    text-transform: none;
+    border-radius: 0%;
+}
+
+.login-fields {
+    margin-top: 2%;
+}
+
+#email,
+#password {
+    margin-bottom: 7%;
+    font-family: Dosis;
+    width: 54%;
+    border: none;
+    border-bottom: 1px solid black;
+    padding: 5px 10px;
+    outline: none;
+}
