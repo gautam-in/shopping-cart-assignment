@@ -3,6 +3,7 @@ import Header from '../common/Header'
 import Footer from '../common/Footer'
 import { Typography, Container, TextField, Button, Grid, Snackbar } from '@material-ui/core';
 import Alert from '@material-ui/lab/Alert'
+import './Register.css'
 
 class Register extends React.Component {
     state = {
@@ -30,30 +31,36 @@ class Register extends React.Component {
         };
 
         return <>
-            <div style={divStyle}>
-                <TextField style={textFieldStyle}
-                    onChange={(e) => this.processTextFieldChange(e, 'fname')} value={this.state.fname} label="First Name" required />
+            <div className="text-field">
+                <input
+                onChange={(e) => this.processTextFieldChange(e, 'fname')}
+                value={this.state.fname}
+                placeholder="First Name"
+                required />
             </div>
-            <div style={divStyle}>
-                <TextField style={textFieldStyle}
-                    onChange={(e) => this.processTextFieldChange(e, 'lname')} value={this.state.lname} label="Last Name" required />
+            <div className="text-field">
+                <input
+                    onChange={(e) => this.processTextFieldChange(e, 'lname')} 
+                    value={this.state.lname} 
+                    placeholder="Last Name" required />
             </div>
-            <div style={divStyle}>
-                <TextField style={textFieldStyle}
-                    onChange={(e) => this.processTextFieldChange(e, 'email')} value={this.state.email} label="Email" required />
+            <div className="text-field">
+                <input 
+                type="text"
+                    onChange={(e) => this.processTextFieldChange(e, 'email')}
+                     value={this.state.email} placeholder="Email" required />
             </div>
-            <div style={divStyle}>
-                <TextField style={textFieldStyle}
+            <div className="text-field">
+                <input
                     onChange={(e) => this.processTextFieldChange(e, 'password')}
                     value={this.state.password} type="password"
-                    label="Password"
-                    helperText="Password length should be of minimum 6 characters. It should include alphabets and numbers"
+                    placeholder="Password"
                     required />
             </div>
-            <div style={divStyle}>
-                <TextField style={textFieldStyle} type="password"
+            <div className="text-field">
+                <input type="password"
                     value={this.state.confirm_password}
-                    onChange={(e) => this.processTextFieldChange(e, 'confirm_password')} label="Confirm Password" required />
+                    onChange={(e) => this.processTextFieldChange(e, 'confirm_password')} placeholder="Confirm Password" required />
             </div>
         </>
     }
@@ -103,33 +110,31 @@ class Register extends React.Component {
     }
     MuiCard = () => {
         return (
-            <Container>
-                <Grid style={{ marginTop: '5%' }} container spacing={7}>
-                    <Grid item xs={6}>
-                        <Typography style={{ marginTop: '1%' }} variant="h4">
+            <div className="container">
+                <div className="register-div">
+                    <div></div>
+                    <div>
+                        <h1>
                             Signup
-                        </Typography>
-                        <Typography style={{ marginTop: '5%' }} variant="h6">
+                        </h1>
+                        <p>
                             We do not share your personal details with any one
-                        </Typography>
-                    </Grid>
-                    <Grid item xs={6}>
+                        </p>
+                    </div>
+                    <div>
                         {this.renderTextField()}
-                        <div style={{ marginBottom: '5%', width: '100%' }}>
-                            <Button style={{
-                                borderRadius: '0px',
-                                width: '60%',
-                                textTransform: 'none'
-                            }} fullWidth
+                        <div>
+                            <Button id="signup-btn"
                                 variant="contained"
                                 color="secondary"
                                 onClick={(e) => this.handleSignup(e)}>
                                 Signup
                                     </Button>
                         </div>
-                    </Grid>
-                </Grid>
-            </Container>
+                    </div>
+                    <div></div>
+                </div>
+            </div>
         );
     }
     render() {
