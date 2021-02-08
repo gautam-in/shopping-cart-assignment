@@ -1,6 +1,18 @@
-.btn {
+
+#btn-left{
     text-transform: none;
-    border-radius: 0%;
+    border-radius: 0;
+    font-family: Dodis;
+}
+
+
+#btn-right{
+    text-transform: none;
+    border-radius: 0;
+    font-family: Dodis;
+}
+.btn-div{
+    text-transform: none;
 }
 
 .content {

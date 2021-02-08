@@ -26,12 +26,12 @@ class Cards extends React.Component {
                     </div>
                     <div className="btn-div">
                         <Button
-                            className="btn"
+                            id="btn-left"
                             onClick={() => this.props.onClick(this.props.id)}
                             variant="contained"
                             color="secondary"
                         >
-                            {buttonText}
+                            {`Explore ${buttonText}`}
                         </Button>
                     </div>
                 </div>
@@ -53,12 +53,12 @@ class Cards extends React.Component {
                     </div>
                     <div className="btn-div">
                         <Button
-                            className="btn"
+                            id="btn-right"
                             onClick={() => this.props.onClick(this.props.id)}
                             variant="contained"
                             color="secondary"
                         >
-                            {buttonText}
+                           {`Explore ${buttonText}`}
                         </Button>
                     </div>
                 </div>

@@ -276,10 +276,9 @@ class Header extends React.Component {
     }
 
     render() {
-        return <div style={{ position: 'static', boxShadow: "0 8px 6px -6px black" }}>
+        return <div style={{ position: 'static', boxShadow: "0 8px 6px -6px black",width:'100%' }}>
             {/* <div style={{ backgroundColor: 'white' }}> */}
             <div className="nav-container">
-
                 <div>
                     {this.processSabkaBazaarLogo()}
                 </div>
