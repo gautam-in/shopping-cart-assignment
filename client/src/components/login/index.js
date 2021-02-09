@@ -5,9 +5,10 @@ import TextField from '@material-ui/core/TextField';
 import './index.scss';
 function Login() { 
  
+    
    
         return (
-            <div>
+            <div className={"loginContainer"}>
                 <div>
                     <span className="login">
                         Login
@@ -17,11 +18,11 @@ function Login() {
                    </span>
                 </div>
                 <div>
-                  
-                        <TextField id="standard-basic" label="Email" />
-                        <TextField id="standard-basic" label="Password" />
-                        {/* <button class="btn">Login</button> */}
-
+                   <form className={"form"}>
+                        <TextField required id="standard-basic" label="Email" />
+                        <TextField required id="standard-basic" label="Password" />
+                        <button class="btn" type="submit">Login</button>
+                   </form>
 
 
 

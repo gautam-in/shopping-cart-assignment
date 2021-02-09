@@ -1,7 +1,7 @@
 body{
     margin: 0;
     box-sizing: border-box;
-    font-family: "poppins";
+    font-family: "dosis";
 }
 .navOptions{
     display: flex;
@@ -26,6 +26,7 @@ body{
     display: flex;
     justify-content: space-evenly;
     padding: 10px;
+    text-align: center;
     margin-top: 1rem;
 
 }
@@ -34,10 +35,20 @@ body{
  justify-content: flex-end;
  font-size: 0.7rem;
 }
+a{
+    text-decoration: none;
+    font-weight: 600;
+    color: gray;
+
+}
+a:hover{
+    color: rgb(255, 7, 48);
+}
 
 .cartLogoContainer span{
     padding: 5px;
     text-align: right;
+    text-decoration: none;
 }
 .cartIcon div{
    display: flex;
@@ -58,6 +69,14 @@ body{
 }
 .navOptions>span{
    padding: 10px;
+   font-weight: 600;
+   cursor: pointer;
+   font-size: 0.9rem;
+   color: rgb(112, 112, 112);
+}
+.navOptions>span:hover{
+ color:rgb(255, 7, 48)
+ 
 }
 
 .logo img{

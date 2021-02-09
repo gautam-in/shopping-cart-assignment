@@ -1,5 +1,7 @@
 import React from 'react';
-import './index.scss';
+import '../login/index.scss';
+import TextField from '@material-ui/core/TextField';
+
 
 import { Link } from 'react-router-dom';
 class Register extends React.Component {
@@ -9,39 +11,32 @@ class Register extends React.Component {
     }
     render() {
         return (
-            <div>
-            <div>
-                <span className="register">
+            <div className={"loginContainer"}>
+            <div className={"registerMargin"}>
+                <span className="login">
                    SignUp
                 </span>
-                <span className="register2">
+                <span className="login2">
                 We do not share your personal details with anyone
                 </span>
             </div>
             <div class="text-fields">
-            <div class="form__group field">
-                            <input type="input" class="form__field" placeholder="First name" name="firstname" id='firstname' required />
+            <form className={"form"}>
+                        <TextField required id="standard-basic" label="First Name" />
+                        <TextField required id="standard-basic" label="Last Name" />
+                        <TextField required id="standard-basic" label="Email" />
+                        <TextField required id="standard-basic" label="Password" />
+                        <TextField required id="standard-basic" label="Confirm Password" />
 
-                        </div>
-                        <div class="form__group field">
-                            <input type="input" class="form__field" placeholder="Last name" name="lastname" id='lastname' required />
+                        <button class="btn" type="submit">Login</button>
 
-                        </div>
-                        <div class="form__group field">
-                            <input type="input" class="form__field" placeholder="Email" name="email" id='email' required />
+                   </form>
 
-                        </div>
-                        <div class="form__group field">
-                            <input type="input" class="form__field" placeholder="Password" name="password" id='password' required />
 
-                        </div>
-                        <div class="form__group field">
-                            <input type="input" class="form__field" placeholder="Confirm Password" name="password" id='confrimpassword' required />
 
-                        </div>
-                        <div>
-                        <a class="btn" href="#">Register</a>
-                        </div>
+                      
+
+
             </div>
             </div>
         )
