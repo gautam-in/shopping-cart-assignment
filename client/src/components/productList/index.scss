@@ -1,0 +1,103 @@
+
+
+.card {
+    
+    padding: 10px;
+    width: 200px;
+    border-bottom: dashed gray 0.5px;
+  }
+  .card>div{
+    width: 100%;
+    cursor: pointer;
+  }
+
+ .card img{
+   width: 100%;
+ } 
+  
+  .card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  }
+  
+  
+  
+
+.productContainer{
+  padding: 0 10%;
+  display: flex;
+  font-family: "dosis";
+  flex-wrap: wrap;
+}
+.description{
+   background-color:  #bbbbbbad;  
+   padding: 10px;
+   box-sizing: border-box;
+   height: 90px;
+   font-size: 0.8rem;
+   font-weight: 600;
+   letter-spacing: 0.3px;
+   line-height: 17px;
+   
+}
+.description>div{
+  overflow: hidden;
+  height: 100%;
+}
+
+  .sidebar{
+   background-color: #e6e3e3ad;
+   width: 25%;
+  
+
+  }
+
+  .card h3{
+    height: 50px;
+  }
+
+
+  .price{
+    padding: 10px;
+  }
+  .priceBuy{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 20px;
+    
+  }
+  .button{
+    background-color: rgb(245, 47, 80);
+    color: white;
+    padding: 10px 20px;
+    outline: none;
+    border: none;
+
+  }
+
+  .sidebar>div{
+      border-bottom:0.5px rgb(167, 166, 166) solid;
+      padding: 15px 0px 15px 30px;
+     font-weight: 600;
+     color: gray;
+
+  }
+  .mainContainer{
+    background-color: white;
+    height: 100%;
+    width: 75%;
+    box-sizing: border-box;
+    justify-content: space-between;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 1.5rem;
+    padding-right: 0;
+  }
+
+  @media (max-width:690px){
+
+    .productContainer{
+      padding: 0%;
+      
+    }
+
+  }
