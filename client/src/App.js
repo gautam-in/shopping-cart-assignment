@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Link, Route,Switch  } from "react-router-dom"
+import { BrowserRouter as Router, Link, Redirect, Route,Switch  } from "react-router-dom"
 import Login from './components/login/index';
 import Register from './components/signUp/index'
 import {IoMdCart} from "react-icons/io" 
+import Product from "./components/productList/index"
+import Home from "./components/home/home"
 import "./App.scss";
 function App() { 
    
@@ -16,11 +18,14 @@ function App() {
                    </div>
                    <div className="navOptions">
                      <span>
-                       
+                     <Link to="/home">
                        Home
+                       </Link>
                        </span>
                        <span>
-                         Products
+                       <Link to="/products">
+        Products
+       </Link>
                        </span>
                      </div>
           </div>
@@ -57,6 +62,11 @@ function App() {
         <Switch>
         <Route exact path="/register" component={Register} />
         <Route exact path="/login" component={Login} />
+        <Route exact path ="/products" component={Product}/>
+        <Route exact path ="/home" component={Home}/>
+        <Route  path="/" >
+          <Redirect to="/home" />
+          </Route>
         </Switch>
    
     <div className={"copyrightrow"}>

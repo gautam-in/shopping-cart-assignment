@@ -12,7 +12,7 @@ body{
 }
 .cartIcon{
     
-    background-color: #bbbbbbad;
+    background-color: #e6e3e3ad;
     display: flex;
     justify-content: space-evenly;
     padding: 10px;
@@ -22,12 +22,12 @@ body{
 }
 
 .copyrightrow{
-    background-color: #bbbbbbad;
+    background-color: #e6e3e3ad;
     display: flex;
     justify-content: space-evenly;
     padding: 10px;
     text-align: center;
-    margin-top: 1rem;
+   
 
 }
 .text{
@@ -93,11 +93,18 @@ height: 100px;
 background-color: white;
 border-bottom: rgb(180, 180, 180) 0.5px solid;
 display: flex;
+padding: 0 10%;
 
 
 }
+
+.header{
+    justify-content: space-between;
+    z-index: 100;
+}
+
 .header>div{
-    width: 50%;
+ 
     display: flex;
     justify-content: center;
 }
@@ -119,9 +126,13 @@ display: flex;
        
        
     }
-    .header{
-           justify-content: space-between;
+    .logo img{
+        width: 125px;
     }
     
+    .header{
+        padding:0;
+        height: 70px;
+    }
 
 }
