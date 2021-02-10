@@ -32,7 +32,7 @@
     "description": "Shop online for Baby Products, Diapers, Skin Care Products,etc.",
     "enabled": true,
     "order": 5,
-    "imageUrl": "/static/images/category/baby.png",
+    "imageUrl": "static/images/category/baby.png",
     "id": "5b6899683d1a866534f516e0"
   },
   {
@@ -49,7 +49,7 @@
     "description": "A variety of fresh fruits and vegetables.",
     "enabled": true,
     "order": 1,
-    "imageUrl": "/static/images/category/fruits.png",
+    "imageUrl": "static/images/category/fruits.png", 
     "id": "5b6899953d1a866534f516e2"
   }
 ]

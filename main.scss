@@ -1,0 +1,40 @@
+$color: red;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Dosis", sans-serif;
+}
+
+.category-item {
+    display: flex;
+    justify-content: space-around;
+    padding: 2% 0;
+    // -webkit-box-shadow: 0px 1px 5px #7f8c8d;
+    // -moz-box-shadow: 0px 1px 5px #7f8c8d;
+    // box-shadow: 0px 1px 5px #7f8c8d;
+}
+
+.flexbox {
+    display: flex;
+}
+
+@mixin flexbox-justify-center {
+    justify-content: center;
+}
+
+@mixin flexbox-align-center {
+    align-items: center;
+}
+
+.flexbox-vertical {
+    @extend .flexbox;
+    flex-direction: column;    
+}
+
+.flexbox-vertical-horizontal-center {
+    @extend.flexbox-vertical;
+    @include flexbox-justify-center();
+    @include flexbox-align-center();
+}
