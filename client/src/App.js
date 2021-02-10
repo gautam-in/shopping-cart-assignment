@@ -1,17 +1,19 @@
-import React, { Component } from 'react';
+import React, {useState, Component } from 'react';
 import { BrowserRouter as Router, Link, Redirect, Route,Switch  } from "react-router-dom"
 import Login from './components/login/index';
 import Register from './components/signUp/index'
 import {IoMdCart} from "react-icons/io" 
 import Product from "./components/productList/index"
 import Home from "./components/home/home"
+import Cart from "./components/cart/cart"
 import "./App.scss";
 function App() { 
-   
+         const [cart,setCart]=useState(false);
     return (
       <>
         <Router>
      <div className="header">
+       {cart&&<Cart setCart={setCart}/>}
           <div>
                  <div className="logo">
                    <img src="./logo_2x.png"/>
@@ -46,7 +48,7 @@ function App() {
           
              </span>  
           </div>
-          <div className={"cartIcon"}>
+          <div onClick={()=>setCart(true)} className={"cartIcon"}>
            <div>
            <IoMdCart style={{color: "#fd032f",fontSize:"2.5rem"}}/>
              </div> 
