@@ -1,0 +1,62 @@
+$grey: #eaeaea;
+$darkGrey: #acacac;
+$lightBlue: #50dae4;
+$pink: #d10157;
+
+.miniCardContainer {
+  display: flex;
+  height: 80px;
+  background: #fff;
+  margin: 10px 0px;
+  .imageContainer {
+    width: 20%;
+    img {
+      height: 100%;
+    }
+  }
+  .detailsContainer {
+    width: 96%;
+    padding-right: 20px;
+    .name {
+      width: 350px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      font-size: 20px;
+      padding: 10px 0px;
+    }
+    .priceContainer {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      align-items: center;
+      button {
+        &:focus {
+          outline: 0;
+        }
+        border: 0;
+        background: $pink;
+        border-radius: 50%;
+        color: #fff;
+        cursor: pointer;
+        width: 25px;
+        font-size: 18px;
+      }
+      .count {
+        padding: 10px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .miniCardContainer {
+    .detailsContainer {
+      .priceContainer {
+        button {
+          border-radius: 5px;
+        }
+      }
+    }
+  }
+}

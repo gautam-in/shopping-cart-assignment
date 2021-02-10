@@ -1,0 +1,15 @@
+$grey: #eaeaea;
+
+.footerContainer {
+  background: $grey;
+  padding: 15px;
+  text-align: left;
+  padding-left: 5%;
+}
+
+@media screen and (max-width: 991px) {
+  .footerContainer {
+    text-align: center;
+    padding-left: 15px;
+  }
+}

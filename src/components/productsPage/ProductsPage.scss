@@ -1,0 +1,40 @@
+$grey: #eaeaea;
+
+.productContainer {
+  display: flex;
+  width: 90%;
+  margin: auto;
+  .filterContainer {
+    min-width: 190px;
+    background: $grey;
+  }
+  .productListContainer {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+.backShed {
+  background-color: rgba(48, 49, 48, 0.42);
+  height: 100%;
+  position: fixed;
+  transition: all 1.3s;
+  width: 100%;
+}
+
+.openModalBtn {
+  margin: 15px;
+  padding: 10px;
+}
+
+@media screen and (max-width: 991px) {
+  .productContainer {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .productContainer {
+    flex-direction: column;
+  }
+}

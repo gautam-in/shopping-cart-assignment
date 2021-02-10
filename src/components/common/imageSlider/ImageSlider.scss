@@ -1,0 +1,56 @@
+$grey: #eaeaea;
+$darkGrey: #acacac;
+$lightBlue: #50dae4;
+$pink: #d10157;
+
+.imageSliderConatiner {
+  min-height: 300px;
+  background-size: 100% 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  .imageSlider {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 75px;
+    button {
+      &:focus {
+        outline: 0;
+      }
+      background: $darkGrey;
+      border: 0;
+      opacity: 0.5;
+      color: #fff;
+      height: 40px;
+      cursor: pointer;
+    }
+  }
+  .dotContainer {
+    display: flex;
+    justify-content: center;
+    margin-top: 80px;
+    .dot {
+      &.active {
+        background: #000;
+      }
+      &:focus {
+        outline: 0;
+      }
+      margin: 5px;
+      height: 12px;
+      width: 10px;
+      border-radius: 50%;
+      background: $darkGrey;
+      border: 0;
+      cursor: pointer;
+    }
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .imageSliderConatiner {
+    .dotContainer {
+      margin-top: 200px;
+    }
+  }
+}

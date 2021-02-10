@@ -1,0 +1,20 @@
+$grey: #eaeaea;
+$darkGrey: #acacac;
+$lightBlue: #50dae4;
+$pink: #d10157;
+
+.filterBarContainer {
+  display: flex;
+  flex-direction: column;
+  a {
+    &.active {
+      color: #000;
+    }
+    background: $grey;
+    border-bottom: 1px solid $darkGrey;
+    color: $darkGrey;
+    text-decoration: none;
+    padding: 15px 30px;
+    cursor: pointer;
+  }
+}

@@ -1,0 +1,28 @@
+$pink: #d10157;
+
+.loginContainer {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 10px;
+  .titleContainer {
+    text-align: left;
+    padding-top: 30px;
+  }
+  .inputContainer {
+    button {
+      &:focus {
+        outline: 0;
+      }
+      width: 280px;
+      padding: 8px 10px;
+      border: 0;
+      background: $pink;
+      margin: 20px 0px;
+      color: #fff;
+      cursor: pointer;
+    }
+  }
+  .error {
+    color: #cc0000;
+  }
+}
