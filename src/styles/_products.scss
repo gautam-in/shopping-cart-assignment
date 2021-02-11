@@ -1,0 +1,15 @@
+.categories-pane {
+    height: 100%;
+}
+
+.product-box {
+    -webkit-box-shadow: 8px 0 6px -8px rgb(90, 90, 90);
+    -moz-box-shadow: 8px 0 6px -8px rgb(90, 90, 90);
+    box-shadow: 8px 0 6px -8px rgb(90, 90, 90);
+}
+
+.product-box:nth-child(4n) {
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
