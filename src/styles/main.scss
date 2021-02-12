@@ -1,16 +1,10 @@
 @import 'products';
 
-$color: red;
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: "Dosis", sans-serif;
-}
-
-body{
-    overflow-x: hidden;
 }
 
 .navbar {
@@ -50,6 +44,11 @@ body{
     @extend.flexbox-vertical;
     @include flexbox-justify-center();
     @include flexbox-align-center();
+}
+
+.flexbox-space-between{
+    @extend .flexbox;
+    justify-content: space-between;
 }
 
 

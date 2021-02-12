@@ -8,7 +8,7 @@ async function getCategories() {
         data.sort((a, b) => a.order - b.order);
         sessionStorage.setItem('categories', JSON.stringify(data));
     }
-    else{
+    else {
         data = JSON.parse(data);
     }
     const mainDiv = document.querySelector('.categories-row');
@@ -29,7 +29,12 @@ async function getCategories() {
             h3.textContent = element.name;
             const p = document.createElement('p');
             p.textContent = element.description;
-            textDiv.append(h3, p);
+            const button = document.createElement('button');
+            button.classList.add('btn', 'btn-danger', 'explore-button');
+            button.type = 'button';
+            button.id = element.id;
+            button.textContent = `Explore ${element.key}`;
+            textDiv.append(h3, p, button);
             if (odd) {
                 divElement.append(imgDiv, textDiv);
             }
@@ -40,6 +45,18 @@ async function getCategories() {
             odd = !odd;
         }
     }
+    buttonClickInit();
+}
+
+function buttonClickInit() {
+    const exploreButtons = document.querySelectorAll('.explore-button');
+
+    exploreButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            sessionStorage.setItem('categorySelected', button.id);
+            window.location = 'products.html';
+        });
+    });
 }
 
 getCategories();

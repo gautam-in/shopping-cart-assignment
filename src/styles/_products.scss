@@ -1,6 +1,4 @@
-.categories-pane {
-    height: 100%;
-}
+$backgroundColor: #ecf0f1;
 
 .product-box {
     -webkit-box-shadow: 8px 0 6px -8px rgb(90, 90, 90);
@@ -12,4 +10,33 @@
     -webkit-box-shadow: none;
     -moz-box-shadow: none;
     box-shadow: none;
+}
+
+.categories-pane {
+    background-color: $backgroundColor;
+    .categories-row {
+        .individual-category {
+            border-bottom: 2px solid rgb(112, 108, 108);
+            a:link,
+            a:visited {
+                color: #777;
+                text-decoration: none;
+                transition: color 0.2s;
+            }
+            a:hover,
+            a:active {
+                color: #000;
+            }
+        }
+    }
+}
+
+.product-description {
+    background-color: $backgroundColor;
+    height: 100px;
+    overflow: hidden;
+}
+
+h4 {
+    height: 110px;
 }
