@@ -13,3 +13,13 @@ npm run start
 yarn install
 yarn start
 ```
+
+To start a development server, use:
+```
+npm run dev
+```
+
+For production mode, use:
+```
+npm run build
+```
