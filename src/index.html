@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -37,7 +38,10 @@
                     <a class="nav-link" href="#">Register</a>
                 </li>
             </ul>
-            <button class="btn btn-lg btn-light my-2 my-sm-0" type="button">Items</button>
+            <button class="btn btn-lg btn-light my-2 my-sm-0" type="button">
+                <i class="icon ion-md-cart"></i>&nbsp;
+                <span class="item-count"></span>&nbsp;Item(s)
+            </button>
         </div>
     </nav>
     <div class="container mb-4">
@@ -48,7 +52,7 @@
         </section>
     </div>
 
-    <script src="main.js"></script>
+    <script src="scripts/main.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>

@@ -1,4 +1,5 @@
 import 'regenerator-runtime/runtime';
+import { renderCartQuantity } from './cart';
 
 async function getCategories() {
     let data = sessionStorage.getItem('categories');
@@ -60,3 +61,4 @@ function buttonClickInit() {
 }
 
 getCategories();
+renderCartQuantity();
