@@ -1,16 +1,36 @@
 import React from 'react';
+import { useSelector,useDispatch } from "react-redux";
 import "../cart.scss"
+import {handleIncrement,handledecrement} from "../../../Redux/action";
 
-function Item() {
+
+function Item({ i }) {
+ const cart=useSelector(state=>state.cart);
+ const dispatch=useDispatch();
+
+let  qty=quantity()
+ 
+ function quantity(){
+       
+    for(let item of cart){
+        
+        if(item.id===i.id)
+           return item.qty;
+                
+    }
+          
+
+ }
+
+
+
     return (
         <div className="item">
-            <div className="icon"> <img src="/static/images/products/fruit-n-veg/apple.jpg" alt=""/> </div>
-            <div className="quantity"><h3> dss akjsda dasd asdas</h3><div>
-                <span className={"changeQnt"}>-</span>  <span >1</span>  <span  className={"changeQnt"}>+</span> <span>x &nbsp; &nbsp;&nbsp; Rs.187  </span>
-                
-                
-                 </div></div>
-            <div className="priceItem"> Rs. 187 </div>
+            <div className="icon"> <img src={i.imageURL} alt="" /> </div>
+            <div className="quantity"><h3>{i.name}</h3><div>
+                <span onClick={()=>dispatch(handledecrement(i))} className={"changeQnt"}>-</span>  <span >{qty}</span>  <span onClick={()=>dispatch(handleIncrement(i))} className={"changeQnt"}>+</span> <span>x &nbsp; &nbsp;&nbsp; Rs.{i.price}  </span>
+            </div></div>
+            <div className="priceItem"> Rs. {i.price*qty} </div> 
         </div>
     )
 }
