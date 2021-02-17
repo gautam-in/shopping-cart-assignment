@@ -1,0 +1,33 @@
+/* You can add global styles to this file, and also import other style files */
+@import "./reset";
+
+/** colors **/
+$color-pink: #d24357;
+$color-blue: #85d8dc;
+
+/** style for base elements **/
+.custom-form-group {
+    label{
+        display: block;
+    }
+    .custom-input {
+        outline: 0;
+        border-width: 0 0 2px;
+        border-color: $color-blue;
+        width: 100%;
+    }
+    margin-bottom: 20px;
+}
+.custom-flex-container {
+    display: flex;
+    flex-direction: column;
+}
+.custom-btn{
+    border: none;
+    padding: 15px;
+    width: 100%;
+}
+.btn-pink {
+    color: white;
+    background-color: $color-pink;
+}
