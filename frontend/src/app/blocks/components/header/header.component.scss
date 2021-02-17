@@ -1,0 +1,16 @@
+nav{
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0px 5px 10px -6px black;
+    margin-bottom: 20px;
+    padding: 10px;
+    div {
+        display: flex;
+        flex-direction: column;
+    }
+    a {
+        text-decoration: none;
+        padding: 10px;
+        border-bottom: 1px solid grey;
+    }
+}

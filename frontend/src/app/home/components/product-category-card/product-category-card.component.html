@@ -1,0 +1,10 @@
+<section class="product-category-container" *ngFor="let category of categories">
+    <figure>
+        <img src="{{category.imageUrl}}" alt="{{category.name}}" title="{{category.name}}"/>
+    </figure>
+    <article>
+        <h2>{{category.name}}</h2>
+        <p>{{category.description}}</p>
+        <button type="button" class="custom-btn custom-btn-explore">Explore {{category.key |  titlecase}}</button>
+    </article>
+</section>

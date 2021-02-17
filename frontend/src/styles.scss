@@ -1,5 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
 @import "./reset";
+@import "https://fonts.googleapis.com/css?family=Dosis:400,600,700";
+
+/** base styles **/
+body{
+    font-family: 'Dosis';
+}
 
 /** colors **/
 $color-pink: #d24357;
@@ -24,7 +30,7 @@ $color-blue: #85d8dc;
 }
 .custom-btn{
     border: none;
-    padding: 15px;
+    padding: 12px;
     width: 100%;
 }
 .btn-pink {

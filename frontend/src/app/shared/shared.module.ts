@@ -8,7 +8,7 @@ import { CommonModule } from '@angular/common';
   declarations: [],
   imports: [
     CommonModule,
-    AuthModule
+    AuthModule,
   ]
 })
 export class SharedModule { }

@@ -1,3 +1,9 @@
-<header>
-    header works!
-</header>
+<nav>
+    <app-logo (click)="toggleMenu()"></app-logo>
+    <div *ngIf="showMenu">
+        <a href="#">Home</a>
+        <a href="#">Products</a>
+        <a href="#">Signin</a>
+        <a href="#">Register</a>
+    </div>
+</nav>
