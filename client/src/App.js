@@ -7,8 +7,39 @@ import Product from "./components/productList/index"
 import Home from "./components/home/home"
 import Cart from "./components/cart/cart"
 import "./App.scss";
+import {useSelector,useDispatch} from "react-redux"
 function App() { 
          const [cart,setCart]=useState(false);
+         const[error,setError]=useState("All fields are mandatory!!!");
+         const [categories,setCats]=useState([]);
+         const cart1 =useSelector(store=>store.cart);
+         localStorage.setItem("cart",JSON.stringify(cart1))
+         console.log("cartAPP")
+    
+         React.useEffect(()=>{
+          var axios = require('axios');
+
+          var config = {
+            method: 'get',
+            url: 'http://localhost:5000/categories', 
+            headers: { }
+          };
+           
+          axios(config)
+          .then(function (response) {
+          
+            setCats(response.data)
+          })
+          .catch(function (error) {
+            console.log(error);
+          });
+          
+
+
+
+         },[])
+
+
     return (
       <>
         <Router>
@@ -53,7 +84,7 @@ function App() {
            <IoMdCart style={{color: "#fd032f",fontSize:"2.5rem"}}/>
              </div> 
               <div>
-               0 items
+               {cart1.length} items  
               </div>
           </div> 
         </div>
@@ -64,10 +95,15 @@ function App() {
         <Switch>
         <Route exact path="/register" component={Register} />
         <Route exact path="/login" component={Login} />
-        <Route exact path ="/products" component={Product}/>
-        <Route exact path ="/home" component={Home}/>
+        <Route exact path ="/products" >
+          <Product categories={categories} setCart={setCart}/>
+          </Route>
+        <Route exact path ="/home"  >
+             <Home categories={categories}/>
+          </Route>
+          
         <Route  path="/" >
-          <Redirect to="/home" />
+          <Redirect to="/home" />   
           </Route>
         </Switch>
    

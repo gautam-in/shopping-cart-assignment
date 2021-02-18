@@ -1,5 +1,5 @@
 .container{
-    width: 100vw;
+    width: 100vw !important;
     height: 100vh;
     background-color: rgba(0,0,0,0.4);
     position: fixed;
@@ -7,6 +7,35 @@
     left: 0;
     padding-top: 5rem;
     box-sizing: border-box;
+    
+}
+.dialog{
+ width: 100vw;
+ height: 100vh;
+ position: fixed;
+ top: 0;
+ left: 0;
+ background-color: rgba(0,0,0,0.4);
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ z-index: 1000;
+ 
+ 
+   
+
+
+}
+.dialog>div{
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width:350px ;
+    width: 50%;
+    border-radius: 20px;
+    padding: 2rem;
+
 }
 
 .cart{

@@ -92,6 +92,36 @@
     padding: 1.5rem;
     padding-right: 0;
   }
+  .catIcon{
+    display: none;
+  }
+
+  @keyframes ex{
+     from{
+         right: -150px;
+     }
+
+    to{
+          right: 0;
+     }
+    
+
+  }
+
+   .addtocart{
+     
+    padding: 7px 15px;
+    background-color: palevioletred;
+    font-weight: bold;
+    color: white;
+    font-size: 1.1rem;
+    position: fixed;
+    top: 150px;
+    right: 0;
+    width: 150px !important;
+    animation: 1s ex ease-in-out;
+
+   }
 
   @media (max-width:690px){
 
@@ -99,5 +129,42 @@
       padding: 0%;
       
     }
+
+    .mainContainer{
+          width: 100%;
+          justify-content: center;
+    }
+    .sidebar{
+      display: none;
+    }
+    .mainContainer>div{
+      width:80%;
+    }
+    .catIcon{
+      padding-top: 10px;
+      display: flex;
+      
+    }
+    .catIcon>span{
+      padding: 1rem;
+      background-color: rgb(248, 20, 96);
+      border-radius: 5px;
+    }
+    .sidebarMobile{
+      position: absolute;
+      top:150px;
+      left: 0;
+     
+      background-color: white;
+
+    }
+    .sidebarMobile>div{
+      border: palevioletred 0.5px solid;
+      padding: 10px;
+      border-radius: 5px;
+     
+
+    }
+
 
   }
