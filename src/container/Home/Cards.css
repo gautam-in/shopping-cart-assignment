@@ -1,0 +1,30 @@
+
+#btn-left{
+    text-transform: none;
+    border-radius: 0;
+    font-family: Dodis;
+}
+
+
+#btn-right{
+    text-transform: none;
+    border-radius: 0;
+    font-family: Dodis;
+}
+.btn-div{
+    text-transform: none;
+}
+
+.content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.card-title {
+    font-size: 20px;
+}
+
+.para,
+.btn-div {
+    text-align: center;
+}

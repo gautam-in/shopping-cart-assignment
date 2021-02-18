@@ -1,9 +1,10 @@
 import React from 'react';
 import Header from '../../components/common/Header'
-import Carousel from './Carousel'
+import Cards from './Cards'
 import Footer from '../../components/common/Footer';
 import './Home.css';
-import { withRouter } from 'react-router-dom'
+import { withRouter } from 'react-router-dom';
+import Carousels from './Carousels'
 
 const banners = require('../../server/banners/index.get.json')
 const data = require('../../server/categories/index.get.json')
@@ -15,7 +16,7 @@ class Home extends React.Component {
     processCards = () => {
         const length = data.length - 1
         return data.map((val, index) => {
-            return <Carousel
+            return <Cards
                 key={val.id}
                 cardContentH5={val.name}
                 cardContentSubtitle={val.description}
@@ -28,10 +29,21 @@ class Home extends React.Component {
         })
     }
 
+    processCarousel = () => {
+        return <Carousels banners={banners} />
+    }
+
     render() {
         return (
             <>
                 <Header />
+                <div className="carousel-container">
+                <div></div>
+                    <div>
+                        {this.processCarousel()}
+                    </div>
+                    <div></div>
+                </div>
                 <div className="home-container">
                     <div></div>
                     <div>

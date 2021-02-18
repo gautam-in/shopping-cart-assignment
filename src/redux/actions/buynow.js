@@ -1,6 +1,8 @@
+import C from '../../config/constant'
+
 const buynow = (value) => {
     return {
-        type: 'BUY_NOW',
+        type: C.BUY_NOW,
         payload: { ...value, count: 1 }
     }
 }

@@ -3,7 +3,7 @@ import React from 'react';
 import Header from '../common/Header';
 import Footer from '../common/Footer';
 import { connect } from 'react-redux';
-import buynow from '../../flux/actions/buynow'
+import buynow from '../../redux/actions/buynow'
 import Snackbar from '@material-ui/core/Snackbar';
 import MuiAlert from '@material-ui/lab/Alert';
 import { withRouter } from 'react-router-dom'

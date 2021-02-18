@@ -2,7 +2,7 @@ import React from 'react';
 import Container from '@material-ui/core/Container'
 import Card from '@material-ui/core/Card'
 import Button from '@material-ui/core/Button';
-import './Carousel.css'
+import './Cards.css'
 
 class Cards extends React.Component {
     constructor(props) {

@@ -1,30 +1,22 @@
-
-#btn-left{
-    text-transform: none;
-    border-radius: 0;
-    font-family: Dodis;
+.carousel .carousel-status {
+    display:none;
 }
 
-
-#btn-right{
-    text-transform: none;
-    border-radius: 0;
-    font-family: Dodis;
-}
-.btn-div{
-    text-transform: none;
+.carousel .thumbs{
+    display: none;
 }
 
-.content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+.carousel .control-next.control-arrow:before{
+    border-left: 8px solid grey
+    
 }
 
-.card-title {
-    font-size: 20px;
+.carousel .control-prev.control-arrow:before{
+    border-right: 8px solid grey
 }
 
-.para,
-.btn-div {
-    text-align: center;
+.carousel .control-next.control-arrow:hover,.carousel .control-prev.control-arrow:hover{
+transition: none;
+opacity: 1;
+background: rgba(0,0,0,0.0);
 }

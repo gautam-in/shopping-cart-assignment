@@ -7,8 +7,8 @@ import { withRouter } from 'react-router-dom';
 import CloseIcon from '@material-ui/icons/Close';
 import { connect } from 'react-redux';
 import { bindActionCreators } from "redux";
-import addItem from '../../flux/actions/addItem';
-import removeItem from '../../flux/actions/removeItem';
+import addItem from '../../redux/actions/addItem';
+import removeItem from '../../redux/actions/removeItem';
 import './Header.css'
 class Header extends React.Component {
     state = {

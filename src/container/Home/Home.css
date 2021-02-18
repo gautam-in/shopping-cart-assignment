@@ -2,3 +2,10 @@
     display: grid;
     grid-template-columns: 1fr 7fr 1fr;
 }
+
+.carousel-container {
+    margin-top: 2%;
+    display: grid;
+    grid-template-columns: 1fr 7fr 1fr;
+    
+}
