@@ -5,6 +5,6 @@
     <article>
         <h2>{{category.name}}</h2>
         <p>{{category.description}}</p>
-        <button type="button" class="custom-btn custom-btn-explore">Explore {{category.key |  titlecase}}</button>
+        <button type="button" class="custom-btn custom-btn-dark-pink" (click)="goToProductsPage()">Explore {{category.key |  titlecase}}</button>
     </article>
 </section>

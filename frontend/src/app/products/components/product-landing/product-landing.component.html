@@ -1,0 +1,15 @@
+<section class="product-landing-page-container">
+    <aside class="product-category-nav" #categoryList>
+        <ul>
+            <li *ngFor="let category of categories">{{category.name}}</li>
+        </ul>
+        <i
+        class="fa"
+        [class.fa-chevron-down] = "menuNavDirection === 'down'" 
+        [class.fa-chevron-up] = "menuNavDirection === 'up'" 
+        aria-hidden="true" (click)="toggleCategoryMenu()"></i>
+    </aside>
+    <div>
+        <app-product-card [products]="productsList"></app-product-card>
+    </div>
+</section>

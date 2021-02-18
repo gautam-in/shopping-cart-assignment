@@ -10,6 +10,7 @@ body{
 /** colors **/
 $color-pink: #d24357;
 $color-blue: #85d8dc;
+$color-dark-pink: #c03e57;
 
 /** style for base elements **/
 .custom-form-group {
@@ -36,4 +37,8 @@ $color-blue: #85d8dc;
 .btn-pink {
     color: white;
     background-color: $color-pink;
+}
+.custom-btn-dark-pink {
+    background-color: $color-dark-pink;
+    color: white;
 }

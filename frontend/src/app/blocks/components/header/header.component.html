@@ -1,9 +1,9 @@
 <nav>
     <app-logo (click)="toggleMenu()"></app-logo>
     <div *ngIf="showMenu">
-        <a href="#">Home</a>
-        <a href="#">Products</a>
-        <a href="#">Signin</a>
-        <a href="#">Register</a>
+        <a [routerLink] = "['/home']">Home</a>
+        <a [routerLink] = "['/products']">Products</a>
+        <a [routerLink] = "['/login']">Signin</a>
+        <a [routerLink] = "['/signup']">Register</a>
     </div>
 </nav>

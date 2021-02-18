@@ -1,0 +1,25 @@
+section {
+    border-bottom: 1px solid grey;
+    padding: 5px;
+}
+.product-card-body {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-top: 10px;
+    align-content: center;
+    figure {
+        flex-basis: 100%;
+        img {
+            width: 250px;
+        }
+    }
+    .product-card-content{
+        padding: 5px;
+        background-color: #eaeaea;
+        margin-bottom: 40%;
+    }
+}
+section:nth-child(1) {
+    margin-top: 20px;
+}

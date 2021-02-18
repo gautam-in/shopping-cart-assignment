@@ -19,7 +19,6 @@ import { ProductCategoryCardComponent } from './components/product-category-card
     HttpClientModule,
     RouterModule
   ],
-  providers: [BannerService],
   exports: [
     HomeComponent
   ]

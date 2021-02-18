@@ -1,5 +1,6 @@
 import { ProductCategoryDTO } from './../../models/product-category-dto';
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-product-category-card',
@@ -9,9 +10,13 @@ import { Component, Input, OnInit } from '@angular/core';
 export class ProductCategoryCardComponent implements OnInit {
 
   @Input() categories: ProductCategoryDTO[] = [];
-  constructor() { }
+  constructor(private readonly router: Router) { }
 
   ngOnInit(): void {
+  }
+
+  goToProductsPage() {
+    this.router.navigate(['/products']);
   }
 
 }

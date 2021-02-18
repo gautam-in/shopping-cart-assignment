@@ -1,0 +1,13 @@
+<section *ngFor="let product of products">
+    <h2>{{product.name}}</h2>
+    <div class="product-card-body">
+        <figure>
+            <img src="assets/{{product.imageURL}}" alt="{{product.name}}"/>
+            <!-- <figcaption>{{product.stock}}</figcaption> -->
+        </figure>
+        <article>
+            <p class="product-card-content">{{product.description}}</p>
+            <button type="button" class="custom-btn custom-btn-dark-pink">Buy Now @ Rs.{{product.price}}</button>
+        </article>
+    </div>
+</section>

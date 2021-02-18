@@ -1,3 +1,4 @@
+import { BlocksModule } from './blocks/blocks.module';
 import { AuthModule } from './auth/auth.module';
 import { SharedModule } from './shared/shared.module';
 import { CoreModule } from './core/core.module';
@@ -17,7 +18,8 @@ import { AppComponent } from './app.component';
     AppRoutingModule,
     CoreModule,
     SharedModule,
-    HomeModule
+    HomeModule,
+    BlocksModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -18,10 +18,10 @@
            @include margin-bottom(20px);
         }
     }
-    .custom-btn-explore {
-        background-color: #c03e57;
-        color: white;
-    }
+    // .custom-btn-dark-pink {
+    //     background-color: #c03e57;
+    //     color: white;
+    // }
 }
 .product-category-container:nth-child(2n) {
     flex-direction: row-reverse;

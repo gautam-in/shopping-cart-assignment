@@ -29,7 +29,7 @@ export class HomeComponent implements OnInit {
       );
     
     this.bannerService
-      .getBannersFromAPI$()
+      .bannersList$
       .subscribe((banners) => banners.map(banner => this.bannersList.push(banner)))
   }
 }

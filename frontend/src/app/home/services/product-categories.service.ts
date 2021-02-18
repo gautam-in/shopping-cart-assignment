@@ -1,4 +1,4 @@
-import { map, tap } from 'rxjs/operators';
+import { map, shareReplay } from 'rxjs/operators';
 import { ProductCategoryDTO } from './../models/product-category-dto';
 import { baseAPIPath } from './../../../constants';
 import { HttpClient } from '@angular/common/http';
@@ -13,7 +13,7 @@ export class ProductCategoriesService {
 
   constructor(private http: HttpClient) { }
   
-  private readonly categoriesData$ = this.getCategoriesFromAPI$();
+  private readonly categoriesData$ = this.getCategoriesFromAPI$().pipe(shareReplay(1));
 
   private getCategoriesFromAPI$(): Observable<ProductCategoryDTO[]> {
     return this.http.get<ProductCategoryDTO[]>(`${baseAPIPath}/categories`);
@@ -34,7 +34,7 @@ export class ProductCategoriesService {
   getSortedCategories$(): Observable<ProductCategoryDTO[]> {
     return this.categoriesData$.pipe(
       map(categoriesData => _.sortBy(categoriesData, 'order')),
-      map(categoriesData => categoriesData.map(categoryData => this.transformData(categoryData)))
+      map(categoriesData => categoriesData.map(categoryData => this.transformData(categoryData))),
     )
   }
 }

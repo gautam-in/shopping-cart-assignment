@@ -1,4 +1,4 @@
-import { BannerDTO } from './../models/banner-dto';
+import { ProductsList } from './../models/products-list';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { baseAPIPath } from 'src/constants';
@@ -7,13 +7,13 @@ import { shareReplay } from 'rxjs/operators';
 @Injectable({
   providedIn: 'root'
 })
-export class BannerService {
+export class ProductsDataService {
 
   constructor(private http: HttpClient) { }
-  bannersList$ = this.getBannersFromAPI$().pipe(
+  productsList$ = this.getProductsFromAPI$().pipe(
     shareReplay(1)
   )
-  private getBannersFromAPI$() {
-    return this.http.get<BannerDTO[]>(`${baseAPIPath}/banners`);
+  private getProductsFromAPI$() {
+    return this.http.get<ProductsList[]>(`${baseAPIPath}/products`);
   }
 }

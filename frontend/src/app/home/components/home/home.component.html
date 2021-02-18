@@ -1,16 +1,2 @@
-<!--
-    <header></header>
-    <nav></nav>
-    <main>
-        <section class="banner">
-        </section>
-    </main>
-    <footer></footer>
--->
-<app-header></app-header>
-<main>
-    <router-outlet></router-outlet>
-    <app-slider [imagesList]="bannersList"></app-slider>
-    <app-product-category-card [categories]="productCategories"></app-product-category-card>
-</main>
-<app-footer></app-footer>
+<app-slider [imagesList]="bannersList"></app-slider>
+<app-product-category-card [categories]="productCategories"></app-product-category-card>
