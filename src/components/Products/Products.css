@@ -19,7 +19,7 @@
 
 .product-list {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: repeat(1, 25% 25% 25% 25%);
 }
 
 .product {
@@ -27,29 +27,16 @@
     margin-bottom: 2%
 }
 
-@media only screen and (max-width:1200px) {
-    .product-name {
-        padding: 2%;
-        font-weight: bold;
-        overflow: hidden;
-        font-family: Dosis;
-    }
-    #buy-now {
-        border-radius: 0%;
-        text-transform: none;
-        font-size: 8px;
-        font-family: Dosis;
-    }
-    #mrp {
-        font-size: 10px;
-        font-family: Dosis;
-    }
-    #category-btn {
-        width: 100%;
-        text-transform: none;
-        justify-content: left;
-        font-size: 10px;
-    }
+.mobile-category-list, .mobile-product-list, .mobile-item-container {
+    display: none;
+}
+
+.product-name {
+    padding: 2%;
+    font-weight: bold;
+    font-size: 1rem;
+    height: 15vh;
+    font-family: Dosis;
 }
 
 #buy-now {
@@ -68,16 +55,88 @@
     font-family: Dosis;
 }
 
-.product-name {
-    padding: 2%;
-    font-weight: bold;
-    font-size: 1rem;
-    height: 12vh;
-    font-family: Dosis;
-}
-
 #category-btn {
     width: 100%;
     text-transform: none;
     justify-content: left;
+}
+
+@media only screen and (max-width:1024px) {
+    .product-name {
+        padding: 2%;
+        font-weight: bold;
+        font-size: 1rem;
+        height: 3vh;
+        overflow: hidden;
+        font-family: Dosis;
+    }
+    .MuiCardMedia-root {
+        max-height: 10vh;
+        padding: 0%
+    }
+    .description {
+        background-color: #e7e7ec;
+        font-size: 0.9rem;
+        overflow: hidden;
+        height: 5vh;
+        line-height: 1.8;
+        padding: 0.5vh;
+        font-family: Dosis;
+    }
+}
+
+@media only screen and (max-width:800px) {
+    .product-list {
+        display: grid;
+        grid-template-columns: repeat(1, 50% 50%);
+    }
+    .product-name {
+        padding: 2%;
+        font-weight: bold;
+        font-size: 1rem;
+        height: 5vh;
+        font-family: Dosis;
+    }
+}
+
+@media only screen and (max-width:600px) {
+    .mobile-category-list, .mobile-product-list, .mobile-item-container {
+        display: block;
+    }
+    .mobile-category-list select {
+        padding: 3%;
+        width: 100%;
+        font-family: Dosis;
+        background-color: #f50057;
+        color: white
+    }
+    .product-list {
+        display: none;
+    }
+    .item-container {
+        display: none;
+    }
+    .mobile-card-media {
+        display: grid;
+        grid-template-columns: repeat(1, 50% 50%)
+    }
+    .mobile-product-name {
+        padding: 2%;
+        font-weight: bold;
+        font-size: 1rem;
+        font-family: Dosis;
+    }
+    .description {
+        background-color: #e7e7ec;
+        font-size: 0.9rem;
+        overflow: hidden;
+        height: 12vh;
+        line-height: 1.5;
+        padding: 1vh;
+        font-family: Dosis;
+    }
+    .MuiCardMedia-root {
+        max-height: 18vh;
+        padding: 2%
+    }
 }
