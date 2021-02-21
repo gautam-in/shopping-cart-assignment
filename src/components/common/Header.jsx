@@ -92,17 +92,7 @@ class Header extends React.Component {
                 aria-describedby="simple-modal-description"
             >
                 {
-                    <div style={
-                        {
-                            width: '30%',
-                            height: '85%',
-                            backgroundColor: 'white',
-                            outline: 0,
-                            margin: 'auto',
-                            marginTop: '6%',
-                            marginLeft: '52.8%'
-                        }
-                    }>
+                    <div className="cart">
                         {
                             this.props.productdetail.count ?
                                 this.processCartView()
@@ -143,16 +133,7 @@ class Header extends React.Component {
                             <Typography variant="subtitle2"><strong>{data.name}</strong></Typography>
                             <Grid container style={{ margin: '1%' }}>
                                 <Grid item xs={"auto"}>
-                                    <button style={{
-                                        borderRadius: '50%',
-                                        border: 'none',
-                                        backgroundColor: '#f50057',
-                                        color: 'white',
-                                        display: 'block',
-                                        height: '100%',
-                                        width: '120%',
-                                        outline: 'none'
-                                    }}
+                                    <button id="minus-btn"
                                         onClick={() => this.props.removeItem(data)}>
                                         -
                                              </button>
@@ -161,16 +142,7 @@ class Header extends React.Component {
                                     {data.count}
                                 </Grid>
                                 <Grid item xs={1}>
-                                    <button style={{
-                                        borderRadius: '50%',
-                                        border: 'none',
-                                        backgroundColor: '#f50057',
-                                        color: 'white',
-                                        display: 'block',
-                                        height: '100%',
-                                        width: '80%',
-                                        outline: 'none'
-                                    }}
+                                    <button id="plus-btn"
                                         onClick={() => this.props.addItem(data)}>
                                         +
                                             </button>
@@ -228,7 +200,7 @@ class Header extends React.Component {
         return (
             <div style={{ backgroundColor: '#e7e7ec', height: '100%' }}>
                 {this.renderCartViewHeader()}
-                <div style={{ height: '72%', overflow: 'hidden', overflowY: 'auto' }}>
+                <div className="cart-items">
                     {this.renderItemDetails()}
                     {this.renderPromotionalTag()}
                 </div>
