@@ -1,0 +1,18 @@
+.Cart {
+  background-color: white;
+  padding: 8px;
+  height: 100%;
+  box-sizing: border-box;
+  background: lightgrey;
+  display: flex;
+  width: 8rem;
+  justify-content: space-evenly;
+  cursor: pointer;
+}
+
+.Cart img {
+  height: 25px;
+  width: auto;
+  filter: invert(27%) sepia(51%) saturate(2878%) hue-rotate(346deg)
+    brightness(104%) contrast(97%);
+}

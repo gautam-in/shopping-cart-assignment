@@ -1,0 +1,164 @@
+.CardWrapper {
+  width: 20.9%;
+  background-color: white;
+  margin-right: 2px;
+  padding: 2rem 1rem;
+  border-bottom: 2px dashed #e3e5e6;
+  padding-bottom: 0px;
+  height: fit-content;
+}
+.CardHeader {
+  font-weight: bold;
+  font-size: 14px;
+  height: 5rem;
+}
+.CardImgWrapper {
+  padding-top: 1rem;
+}
+.CardImg {
+  max-width: 100%;
+  height: auto;
+}
+.PriceDesktop {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+}
+.DescriptionWrapper {
+  background-color: #e3e5e6;
+  font-size: 12px;
+  height: 6rem;
+  display: block;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  overflow: hidden;
+  max-height: 5.1em;
+  line-height: 1.3em;
+}
+.PriceWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.PriceTab,
+.CustomBtnMob {
+  display: none;
+}
+.CustomBtn {
+  margin-right: 0px;
+}
+.ImgDescWrap {
+  display: block;
+}
+
+@media (max-width: 499px) {
+  .CardWrapper {
+    width: 100%;
+    height: 13.5rem;
+  }
+  .PriceTab {
+    display: block;
+    width: 48%;
+    position: relative;
+    bottom: 40px;
+    left: 177px;
+  }
+  .PriceDesktop {
+    display: none;
+  }
+
+  .ImgDescWrap {
+    display: flex;
+  }
+  .CustomBtnTab {
+    margin: 0px;
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+  .CardHeader {
+    height: 3rem;
+  }
+  .CardImgWrapper {
+    padding-top: 0px;
+    margin-right: 12px;
+    width: 50%;
+    box-sizing: border-box;
+    height: 10rem;
+  }
+  .DescriptionWrapper {
+    margin: 0px;
+    width: 50%;
+    box-sizing: border-box;
+    padding: 10px;
+    height: 6rem;
+    max-height: 6rem;
+    line-height: 1.2em;
+  }
+}
+
+@media (min-width: 500px) and (max-width: 1024px) {
+  .CardWrapper {
+    width: 44.2%;
+  }
+  .PriceTab {
+    display: block;
+    width: 100%;
+  }
+  .CardHeader {
+    height: 4rem;
+  }
+  .PriceDesktop,
+  .CustomBtnMob {
+    display: none;
+  }
+  .CustomBtnTab {
+    margin: 0px;
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+  .CustomBtnMT {
+    margin: 0px;
+    margin-bottom: 1rem;
+    width: 100%;
+  }
+  .ImgDescWrap {
+    display: flex;
+    width: 100%;
+    margin: 1rem 0;
+  }
+  .CardImgWrapper {
+    margin-right: 10px;
+    width: 50%;
+    box-sizing: border-box;
+    height: 10rem;
+    padding-top: 0;
+  }
+  .DescriptionWrapper {
+    background-color: #e3e5e6;
+    font-size: 12px;
+    display: block;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+    overflow: hidden;
+    height: 12rem;
+    max-height: 12rem;
+    line-height: 1.5em;
+    margin: 0;
+    width: 50%;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+  .PriceDesktop {
+    display: none;
+  }
+}
+@media (min-width: 1280px) and (max-width: 1439px) {
+  .CardWrapper {
+    width: 20.35%;
+  }
+}
+@media (min-width: 1440px) {
+  .CardWrapper {
+    width: 21%;
+  }
+}

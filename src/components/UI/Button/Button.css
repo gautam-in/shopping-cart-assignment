@@ -1,0 +1,30 @@
+.Button {
+  background-color: #ac1447;
+  border: none;
+  color: white;
+  outline: none;
+  cursor: pointer;
+  font: inherit;
+  padding: 10px;
+  margin: 10px;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+.Button:disabled {
+  color: #ccc;
+  cursor: not-allowed;
+}
+
+.Success {
+  color: #5c9210;
+}
+
+.Danger {
+  color: #944317;
+}
+@media (max-width: 499px) {
+  .Button {
+    font-size: 10px;
+  }
+}

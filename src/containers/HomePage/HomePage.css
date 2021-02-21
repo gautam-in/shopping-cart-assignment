@@ -1,0 +1,7 @@
+@media (max-width: 499px) {
+  .HomeContainer {
+    height: 87vh;
+    overflow: hidden;
+    overflow-y: scroll;
+  }
+}

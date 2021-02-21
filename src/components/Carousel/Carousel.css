@@ -1,0 +1,17 @@
+.CarousalWrapper {
+  padding-top: 2rem;
+}
+.CarousalImg {
+  max-width: 100%;
+  height: auto;
+}
+@media (max-width: 499px) {
+  .CarousalWrapper {
+    height: 10rem;
+  }
+}
+@media (min-width: 500px) and (max-width: 1024px) {
+  .CarousalWrapper {
+    height: 15rem;
+  }
+}

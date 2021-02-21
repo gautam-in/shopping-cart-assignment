@@ -1,0 +1,81 @@
+.Auth {
+  width: 100%;
+  display: flex;
+}
+.AuthInfoWapper {
+  width: 45%;
+  box-sizing: border-box;
+  padding-left: 4rem;
+  text-align: left;
+}
+
+.FormWapper {
+  width: 35%;
+  margin-left: 1rem;
+}
+p {
+  font-size: 13px;
+}
+.Label {
+  text-align: left;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.Input {
+  width: 100%;
+  padding: 10px 0;
+  box-sizing: border-box;
+}
+.InputElement {
+  outline: none;
+  border: 0;
+  border-bottom: 1px solid #ccc;
+  background-color: white;
+  font: inherit;
+  padding: 6px 0;
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.InputElement:focus {
+  outline: none;
+  border-bottom: 2px solid #4abac3;
+}
+
+.input:focus + .Label {
+  color: #4abac3;
+}
+
+.Invalid {
+  border: 1px solid red;
+  background-color: #fda49a;
+}
+.submitBtn {
+  width: 100%;
+  margin-left: 0;
+}
+.errorMsg {
+  color: red;
+  margin: 5px 0;
+}
+@media (max-width: 499px) {
+  .Auth {
+    margin: 20px auto;
+    width: 80%;
+    padding: 10px;
+    box-sizing: border-box;
+    display: block;
+  }
+
+  .AuthInfoWapper {
+    width: 100%;
+    padding-left: unset;
+  }
+
+  .FormWapper {
+    width: 100%;
+    margin-left: unset;
+  }
+}

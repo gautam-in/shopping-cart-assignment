@@ -1,0 +1,34 @@
+.Content {
+  padding: 0 10rem;
+  margin-top: 10vh;
+  font-family: "Open Sans", sans-serif;
+  overflow-y: scroll;
+  height: 87vh;
+}
+.FooterWrapper {
+  display: flex;
+  justify-content: center;
+  height: 3vh;
+}
+@media (max-width: 499px) {
+  .Content {
+    padding: 0px;
+    overflow-y: hidden;
+  }
+  .FooterWrapper {
+    font-size: 12px;
+  }
+}
+
+@media (min-width: 500px) and (max-width: 1024px) {
+  .Content {
+    padding: 0px;
+    margin-top: 8vh;
+    height: 90vh;
+  }
+}
+@media (min-width: 1024px) {
+  .Content {
+    margin-top: 10vh;
+  }
+}

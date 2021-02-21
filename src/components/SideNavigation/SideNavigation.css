@@ -1,0 +1,73 @@
+.SideNavigationWrapper {
+  width: 22%;
+  height: 100vh;
+  color: #686969;
+  font-size: 15px;
+}
+.CategoriesWrap {
+  border-bottom: 1px solid #cecfd0;
+  padding: 10px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.CategoryDropdown,
+.CategoriesWrap:first-child {
+  display: none;
+}
+.CategoriesSelect {
+  background-color: lightskyblue;
+}
+
+/* .CustomCategoryBtn {
+} */
+@media (max-width: 499px) {
+  .SideNavigationWrapper {
+    width: 100%;
+    z-index: 10;
+    height: fit-content;
+    position: fixed;
+    background-color: #e3e5e6;
+    margin-top: 58px;
+  }
+  .CategoriesWrap:first-child {
+    display: block;
+  }
+  .inactive {
+    display: none;
+  }
+  .active {
+    display: block;
+  }
+  .CategoryDropdown {
+    display: block;
+    width: 100%;
+  }
+  .CustomCategoryBtn {
+    margin: 0px;
+    width: 100%;
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    z-index: 10;
+  }
+  .IconWrap {
+    font-size: 48px;
+    color: white;
+  }
+  .DropdownContent {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    width: 90%;
+    font-size: 15px;
+    height: 3rem;
+    padding-left: 1rem;
+  }
+  .DropdownIconWrap {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+}

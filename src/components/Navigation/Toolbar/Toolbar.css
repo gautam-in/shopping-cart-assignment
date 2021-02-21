@@ -1,0 +1,42 @@
+.Toolbar {
+  height: 82px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  z-index: 90;
+  background-color: white;
+  padding: 0 10rem;
+}
+
+.Toolbar nav {
+  height: 100%;
+}
+
+.Logo {
+  height: 80%;
+}
+.Cart {
+  display: flex;
+  flex-direction: column;
+}
+.DesktopOnly {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+@media (max-width: 499px) {
+  .Toolbar {
+    padding: 0px;
+  }
+}
+@media (min-width: 500px) and (max-width: 1024px) {
+  .Toolbar {
+    padding: 0px;
+  }
+}
