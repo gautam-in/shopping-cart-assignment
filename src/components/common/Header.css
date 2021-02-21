@@ -1,17 +1,14 @@
-.nav-container {
+.nav-bar {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-}
-
-@media screen and(max-width:100px) {
-    #items-count {
-        font-size: 1px
-    }
+    grid-template-columns: repeat(1, 40% 40% auto);
+    height: 100%;
+    flex-direction: column;
 }
 
 .menu {
     display: flex;
-    margin-top: 6%;
+    margin-top: 8%;
+    margin-left: 11%
 }
 
 #products {
@@ -19,23 +16,62 @@
 }
 
 #logo {
-    background-size: cover;
-    width: 10vw;
+    margin-top: 1.5%;
+    max-width: 180px;
+    width: auto;
     margin-left: 35%;
 }
 
-.img {
-    margin-top: 2%;
+.other-links {
+    margin-top: 3%;
+    display: flex;
 }
 
-.other-links {
-    margin-right: 5%;
-    font-size: 0.9rem;
-    margin-bottom: 2%;
+.header {
+    position: static;
+    box-shadow: 0 8px 6px -6px black;
+    width: 100% !important
+}
+
+.MuiGrid-spacing-xs-3>.MuiGrid-item {
+    padding: 0px !important;
 }
 
 #items-count {
     color: 'black';
     font-size: 0.9rem;
     font-family: Dosis;
+}
+
+#icon-btn {
+    background-color: #e7e7ec;
+    max-width: 100px;
+    max-height: 100%;
+    border-radius: 0%;
+    border: none;
+    margin-top: 7%;
+}
+
+@media only screen and (max-width:600px) {
+    .menu {
+        display: none;
+    }
+    .other-links {
+        display: none;
+    }
+    .nav-bar {
+        display: grid;
+        grid-template-columns: repeat(1, 50% 0% 50%);
+    }
+    #logo {
+        margin-left: 0%;
+        max-width: 100px;
+        width: auto;
+    }
+    #icon-btn {
+        background-color: #e7e7ec;
+        margin-left: 50%;
+        margin-top: 0%;
+        
+    }
 }

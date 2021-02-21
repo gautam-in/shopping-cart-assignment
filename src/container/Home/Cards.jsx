@@ -11,16 +11,16 @@ class Cards extends React.Component {
 
     processLeftMedia = (cardContentH5, cardContentSubtitle, image, buttonText) => {
         return (
-            <div className="content">
-                <div style={{ marginRight: '5%' }}>
-                    <img style={{ width: '60%', backgroundSize: 'contain' }} src={image} alt={buttonText} />
-                </div>
+            <div className="left-content">
                 <div>
+                    <img id="left-img" src={image} alt={buttonText} />
+                </div>
+                <div className="content">
                     <div className="para">
                         <p className="card-title">
                             <strong>{cardContentH5}</strong>
                         </p>
-                        <p>
+                        <p id="desc">
                             {cardContentSubtitle}
                         </p>
                     </div>
@@ -41,13 +41,13 @@ class Cards extends React.Component {
 
     processRightMedia = (cardContentH5, cardContentSubtitle, image, buttonText) => {
         return (
-            <div className="content">
+            <div className="right-content">
                 <div>
                     <div className="para">
                         <p className="card-title">
                             <strong>{cardContentH5}</strong>
                         </p>
-                        <p>
+                        <p id="desc">
                             {cardContentSubtitle}
                         </p>
                     </div>
@@ -58,12 +58,12 @@ class Cards extends React.Component {
                             variant="contained"
                             color="secondary"
                         >
-                           {`Explore ${buttonText}`}
+                            {`Explore ${buttonText}`}
                         </Button>
                     </div>
                 </div>
                 <div>
-                    <img style={{ width: '70%' }} src={image} alt={buttonText} />
+                    <img id="right-img" src={image} alt={buttonText} />
                 </div>
             </div>
         );

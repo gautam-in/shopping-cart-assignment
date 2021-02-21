@@ -49,30 +49,23 @@ class Header extends React.Component {
 
     processOtherOptions = () => {
         return (
-            <div style={{ marginLeft: '30%' }}>
-                <div style={{ display: 'flex', marginLeft: '6%', marginTop: "2%" }}>
-                    <div className="other-links">
+            <div>
+                <div className="other-links">
+                    <div>
                         <Link onClick={() => this.props.history.push("/signin")}
-                            style={{ marginRight: '5%', color: '#52525d' }}>
+                            style={{ color: '#52525d' }}>
                             <strong>SignIn</strong>
                         </Link>
                     </div>
-                    <div className="other-links">
+                    <div>
                         <Link onClick={() => this.props.history.push("/register")}
-                            style={{ color: '#52525d' }}>
+                            style={{ marginLeft: '15%', color: '#52525d' }}>
                             <strong>Register</strong>
                         </Link>
                     </div>
                 </div>
-                <div>
-                    <IconButton onClick={this.setModalState} style={{
-                        backgroundColor: '#e7e7ec',
-                        width: '7vw',
-                        borderRadius: '0%',
-                        border: 'none',
-                        marginTop:'3%',
-                        height:'7vh'
-                    }}>
+                <div className="icon-class">
+                    <IconButton onClick={this.setModalState} id="icon-btn">
                         <ShoppingCartIcon style={{ fontSize: "1.5rem" }} color="secondary" />
                         <span id="items-count">{`${this.props.productdetail.count} items`}</span>
                     </IconButton>
@@ -276,24 +269,22 @@ class Header extends React.Component {
     }
 
     render() {
-        return <div style={{ position: 'static', boxShadow: "0 8px 6px -6px black",width:'100%' }}>
-            {/* <div style={{ backgroundColor: 'white' }}> */}
-            <div className="nav-container">
-                <div>
-                    {this.processSabkaBazaarLogo()}
+        return (
+            <header className="header">
+                <div className="nav-bar">
+                    <div>
+                        {this.processSabkaBazaarLogo()}
+                    </div>
+                    <div>
+                        {this.processMenuOptions()}
+                    </div>
+                    <div>
+                        {this.processOtherOptions()}
+                    </div>
+                    {this.processModal()}
                 </div>
-                <div>
-                    {this.processMenuOptions()}
-                </div>
-                <div>
-                    {this.processOtherOptions()}
-                </div>
-
-                {/* </div> */}
-
-                {this.processModal()}
-            </div>
-        </div>
+            </header >
+        )
     }
 }
 
