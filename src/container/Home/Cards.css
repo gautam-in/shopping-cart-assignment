@@ -43,12 +43,11 @@
     width: auto;
 }
 
-
-@media only screen and (max-width:600px) {
+@media only screen and (max-width:1200px) {
     .left-content {
         width: 100%;
         display: grid;
-        grid-template-columns: repeat(1, 20% 80%);
+        grid-template-columns: repeat(1, 30% 70%);
     }
     .right-content {
         width: 100%;
@@ -56,7 +55,10 @@
         grid-template-columns: repeat(1, 70% 30%);
     }
     #right-img, #left-img {
-        max-width: 120px;
+        max-width: 100%;
         width: auto;
+    }
+    .left-content p, .right-content p {
+        font-size: 12px
     }
 }

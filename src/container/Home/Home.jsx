@@ -56,23 +56,24 @@ class Home extends React.Component {
     }
 
     render() {
-        console.log(this.state)
         return (
             <>
                 <Header />
-                <div className="carousel-container">
-                    <div></div>
-                    <div>
-                        {this.processCarousel()}
+                <div className="card-view">
+                    <div className="carousel-container">
+                        <div></div>
+                        <div>
+                            {this.processCarousel()}
+                        </div>
+                        <div></div>
                     </div>
-                    <div></div>
-                </div>
-                <div className="home-container">
-                    <div></div>
-                    <div>
-                        {this.processCards()}
+                    <div className="home-container">
+                        <div></div>
+                        <div>
+                            {this.processCards()}
+                        </div>
+                        <div></div>
                     </div>
-                    <div></div>
                 </div>
                 <Footer />
             </>
