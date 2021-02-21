@@ -3,28 +3,32 @@
         <h2>Signup</h2>
         <p>We do not share your personal details with anyone.</p>
     </article>
-    <form class="bazar-signup-form">
+    <form class="bazar-signup-form" #signupForm="ngForm" (ngSubmit)="onSubmit(signupForm)">
         <div class="custom-form-group">
             <label for="firstName">First Name</label>
-            <input type="text" id="firstName" class="custom-input"/>
+            <input type="text" id="firstName" name="firstName" class="custom-input" required #fname="ngModel" ngModel />
+            <div class="custom-error" *ngIf="fname.touched && fname.valid">shsjh</div>
         </div>
         <div class="custom-form-group">
             <label for="lastName">Last Name</label>
-            <input type="text" id="lastName" class="custom-input"/>
+            <input type="text" id="lastName" name="lastName" class="custom-input" required #lname="ngModel" ngModel />
         </div>
         <div class="custom-form-group">
             <label for="email">Email</label>
-            <input type="email" id="email" class="custom-input"/>
+            <input type="email" id="email" name="email" class="custom-input" required #email="ngModel" ngModel />
         </div>
         <div class="custom-form-group">
             <label for="password">Password</label>
-            <input type="password" id="password" class="custom-input"/>
+            <input type="password" id="password" name="password" class="custom-input" minlength="6" #password="ngModel"
+                required ngModel />
         </div>
         <div class="custom-form-group">
             <label for="confirmPassword">Confirm Password</label>
-            <input type="password" id="confirmPassword" class="custom-input"/>
+            <input type="password" id="confirmPassword" name="confirmPassword" class="custom-input" minlength="6"
+                #confirmPassword="ngModel" required ngModel />
         </div>
-        <button type="submit" class="custom-btn btn-pink">Signup</button>
+        <button type="submit" class="custom-btn btn-pink"
+            [disabled]="signupForm.touched && signupForm.valid">Signup</button>
     </form>
 </section>
 

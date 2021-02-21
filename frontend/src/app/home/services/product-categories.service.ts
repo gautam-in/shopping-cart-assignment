@@ -1,4 +1,4 @@
-import { map, shareReplay } from 'rxjs/operators';
+import { map, shareReplay, filter, tap } from 'rxjs/operators';
 import { ProductCategoryDTO } from './../models/product-category-dto';
 import { baseAPIPath } from './../../../constants';
 import { HttpClient } from '@angular/common/http';
@@ -35,6 +35,15 @@ export class ProductCategoriesService {
     return this.categoriesData$.pipe(
       map(categoriesData => _.sortBy(categoriesData, 'order')),
       map(categoriesData => categoriesData.map(categoryData => this.transformData(categoryData))),
+    )
+  }
+
+  getFilteredCategories$(categoryId: string): Observable<ProductCategoryDTO[]> {
+    return this.categoriesData$.pipe(
+      map(categoriesData => _.sortBy(categoriesData, 'order')),
+      map(categoriesData => categoriesData.filter(categoryData => categoryData.id === categoryId)),
+      map(categoriesData => categoriesData.map(categoryData => this.transformData(categoryData))),
+      tap((categoriesData) => console.log(categoriesData))
     )
   }
 }

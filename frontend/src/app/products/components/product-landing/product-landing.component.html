@@ -1,7 +1,7 @@
 <section class="product-landing-page-container">
     <aside class="product-category-nav" #categoryList>
         <ul>
-            <li *ngFor="let category of categories">{{category.name}}</li>
+            <li *ngFor="let category of categories" (click)="renderProductByCategory(category.id)">{{category.name}}</li>
         </ul>
         <i
         class="fa"
@@ -10,6 +10,9 @@
         aria-hidden="true" (click)="toggleCategoryMenu()"></i>
     </aside>
     <div>
+        <div class="no-product-found-placeholder" *ngIf="productsList.length===0">
+            <h2>No products found</h2>
+        </div>
         <app-product-card [products]="productsList"></app-product-card>
     </div>
 </section>

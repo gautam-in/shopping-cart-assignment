@@ -1,1 +1,7 @@
-    <img src="assets{{image.bannerImageUrl}}" alt="some" *ngFor="let image of imagesList"/>
+<carousel
+    [dots]="true"
+    class="carousel">
+    <div class="carousel-cell" *ngFor="let image of imagesList">
+        <img src="assets{{image.bannerImageUrl}}" alt="{{image.bannerImageAlt}}"/>
+    </div>
+</carousel>

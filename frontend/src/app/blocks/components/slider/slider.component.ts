@@ -14,4 +14,10 @@ export class SliderComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  imagesListAlt = [
+    {path: 'http://ivylab.space/assets/photo-1444065707204-12decac917e8.jfif'},
+    {path: 'http://ivylab.space/assets/photo-1444065707204-12decac917e8.jfif'},
+    {path: 'http://ivylab.space/assets/photo-1444065707204-12decac917e8.jfif'}
+  ]
+
 }

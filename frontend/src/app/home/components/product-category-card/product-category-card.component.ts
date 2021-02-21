@@ -15,8 +15,8 @@ export class ProductCategoryCardComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  goToProductsPage() {
-    this.router.navigate(['/products']);
+  goToProductsPage(categoryId: string) {
+    this.router.navigate(['/products', categoryId]);
   }
 
 }
