@@ -1,0 +1,44 @@
+.Cardwrapper,
+.ReverseFlow {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  box-shadow: 0 -5px 5px -5px #333;
+  padding: 1rem 0;
+}
+.ReverseFlow {
+  flex-flow: row-reverse wrap;
+}
+
+.HomeCardImg {
+  max-width: 100%;
+  height: auto;
+}
+.HomeCardContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 60%;
+  padding: 1rem;
+}
+.ImgWrapper {
+  display: flex;
+  justify-content: center;
+  width: 30%;
+  padding: 1rem;
+}
+.FontP {
+  font-size: 12px;
+}
+@media (max-width: 499px) {
+  .HomeCardContent,
+  .ImgWrapper {
+    width: 50%;
+    padding: 0rem;
+  }
+  .FontP,
+  .Header3 {
+    padding: 0 10px;
+  }
+}

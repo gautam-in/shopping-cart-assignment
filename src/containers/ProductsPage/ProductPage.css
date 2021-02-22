@@ -1,0 +1,10 @@
+.ProductPageWrapper {
+  width: 100%;
+  display: flex;
+  background-color: #e3e5e6;
+}
+@media (max-width: 499px) {
+  .ProductPageWrapper {
+    flex-direction: column;
+  }
+}
