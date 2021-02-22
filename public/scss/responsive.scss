@@ -1,0 +1,57 @@
+@media screen and (min-width: $break-mobile-small){
+  .button-small {
+    font-size: 80%;
+  }
+}
+  
+@media screen and (min-width: $break-mobile-medium){
+  .button-small {
+    font-size: 100%;
+  }
+}
+
+@media screen and (min-width: $break-mobile-large){
+  section{
+    padding: 3% 0;
+  }
+  h1{
+    font-size: 180%;
+  }
+  h2{
+    font-size: 160%;
+  }
+  h3{
+    font-size: 140%;
+  }
+  p,li,input{
+    font-size: 120%;
+  }
+}
+  
+@media screen and (min-width: $break-medium){  
+  .button-small {
+    font-size: 120%;
+  }
+  h1{
+    font-size: 200%;
+  }
+  h2{
+    font-size: 180%;
+  }
+  h3{
+    font-size: 160%;
+  }
+  p{
+    font-size: 140%;
+    padding: 20px 0px;
+  }
+  li,input{
+    font-size: 140%;
+  }
+}
+
+@media screen and (max-width: $break-medium) {
+  .wrapper{
+    width: 95%;
+  }
+}

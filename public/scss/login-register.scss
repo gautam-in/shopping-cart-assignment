@@ -1,0 +1,71 @@
+/* ------ Login Page -------*/
+
+.login-info,
+.register-info {
+  form {
+    width: 100%;
+    margin: 0px auto;
+  }
+  &__heading{
+    text-align: center;
+  }
+
+  fieldset {
+    position: relative;
+    border: none;
+    padding-bottom: 20px;
+  }
+
+  label {
+    position: absolute;
+    top: 18px;
+    color: $color-border-secondary;
+    transform-origin: left;
+    transition: all 0.3s ease;
+  }
+
+  input {
+    &:focus ~ label {
+      color: $color-blue;
+      top: 0;
+      transform: scale(0.8, 0.8);
+    }
+    &:valid ~ label {
+      top: 0;
+      transform: scale(0.8, 0.8);
+    }
+    font-size: 15px;
+    width: 100%;
+    border: none;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-top: 10px;
+    border-bottom: 2px solid $color-border-secondary;
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+/* ------- Responsive Screens -------- */
+
+@media screen and (min-width: $break-mobile-medium){
+  .login-info,
+  .register-info {
+    form{
+      width: 50%;
+    }
+  }
+}
+
+@media screen and (min-width: $break-tablet){
+  .login-info,
+  .register-info {
+    form{
+      width: 70%;
+    }
+    &__heading{
+      text-align: left;
+    }
+  }
+}

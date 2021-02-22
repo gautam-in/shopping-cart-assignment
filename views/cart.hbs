@@ -1,0 +1,52 @@
+<div class="cart-info">
+    <div class="wrapper">
+        <div class="row">
+            <div class="col-xs-12 cart-info__title">
+                <h2>{{cartTitle}} (<span id="prod_totcount">{{totalCounter}}</span> item)</h2>
+            </div>
+            {{#if productselect}}
+                {{#each productselect}}
+                <div class="cart-info__prodlist width-100 d-flex" id="cart-info__prodlist{{@index}}">
+                    <div class="col-xs-4 col-sm-2 cart-info__image">
+                        <img src="{{imageURL}}" alt="" class="width-100">
+                    </div>
+                    <div class="col-xs-6 col-sm-8 cart-info__details">
+                        <h3>{{name}}</h3>
+                        <div class="item-count d-flex">
+                            <button class="minus-btn d-flex" type="button" name="button" onclick="buyProduct.changeProductCount('{{id}}', 'minus', {{@index}})">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6 13h-12v-2h12v2z"/></svg>
+                            </button>
+                            <input type="text" name="name" id="prod_count{{@index}}" value="{{count}}">
+                            <button class="plus-btn d-flex" type="button" name="button" onclick="buyProduct.changeProductCount('{{id}}', 'plus', {{@index}})">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6 13h-5v5h-2v-5h-5v-2h5v-5h2v5h5v2z"/></svg>
+                            </button>   
+                            <div class="cart-info__prod-price">
+                                <span id="prod_price{{@index}}">Rs. {{price}}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-2 col-sm-2 cart-info__total-price" id="prod_totalprice{{@index}}">
+                        <span>Rs.{{totalprice}}</span>
+                    </div>
+                </div>
+                {{/each}}
+                {{else}}
+                <div class="col-xs-12 col-sm-12 cart-info__details">
+                    <p>{{emptyCart}}</p>
+                </div>
+            {{/if}}
+        </div>
+        <div class="row cart-info__guarantee">
+            <div class="col-xs-4 col-sm-4 col-md-2">
+                <img src="static/images/lowest-price.png" alt="">
+            </div>
+            <div class="col-xs-8 col-sm-8 col-md-10">
+                <p>{{priceGuarantee}}</p>
+            </div>
+        </div>
+        <div class="row cart-info__checkout">
+            <p class="width-100">{{cartPromocode}}</p>
+            <button class="button-large"><span>{{checkoutBtn}}</span><span id="prod_checkoutprice">Rs.{{checkoutAmount}} ></span></button>
+        </div>
+    </div>
+</div>

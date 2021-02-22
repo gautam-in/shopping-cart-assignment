@@ -1,15 +1,23 @@
 {
-  "name": "code-exercise",
-  "version": "1.0.0",
-  "description": "This is a shopping cart coding exercise",
-  "main": "index.js",
+  "name": "shopping-cart-assignment",
+  "version": "0.0.0",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "canned -p 5000 ./server"
-  },
-  "author": "",
-  "license": "MIT",
+    "compile:js-dev": "babel public/assets/js -d public/js/ -w",
+    "compile:sass-dev": "node-sass  -rw public/scss -o public/css/ -w",
+    "start:dev": "npm run compile:sass-dev > out.log | npm run compile:js-dev | nodemon ./bin/www"
+  },  
   "dependencies": {
-    "canned": "^0.3.12"
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.9",
+    "express": "~4.16.0",
+    "hbs": "~4.0.1",
+    "http-errors": "~1.6.2",
+    "morgan": "~1.9.0",
+    "node-sass": "^4.11.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0"
   }
 }

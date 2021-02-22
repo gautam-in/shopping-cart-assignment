@@ -1,0 +1,28 @@
+
+<section class="login-info">
+    <div class="wrapper">
+        <div class="row">
+            <div class="col-xs-12 cols-sm-12 col-md-6 col-lg-6 login-info__heading">
+                <h1>{{loginHeading}}</h1>
+                <p>{{loginDesc}}</p>
+            </div>
+            <div class="col-xs-12 cols-sm-12 col-md-6 col-lg-6 login-info__form">
+                <form action="/" autocomplete="off">
+                    <fieldset>
+                        <input id="email" type="email" name="email" required>
+                        <label for="email">{{Email}}</label>
+                        <div class="after"></div>
+                    </fieldset>
+                    <fieldset>
+                        <input id="password" type="password" name="password" required>
+                        <label for="password">{{Password}}</label>
+                        <div class="after"></div>
+                    </fieldset>
+                    <fieldset>
+                        <button class="button-large" onclick="validateLogin()">{{loginBtn}}</button>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
