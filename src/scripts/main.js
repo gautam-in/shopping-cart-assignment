@@ -1,5 +1,8 @@
 import 'regenerator-runtime/runtime';
-import { renderCartQuantity } from './cart';
+import {
+    getCartCount, setCartCount, renderCartQuantity, setCartItems,
+    addItemCartSession, openCart, closeCart
+} from './cart';
 
 async function getCategories() {
     let data = sessionStorage.getItem('categories');
@@ -62,3 +65,12 @@ function buttonClickInit() {
 
 getCategories();
 renderCartQuantity();
+
+const cartButton = document.querySelector('.cart-button');
+cartButton.addEventListener('click', openCart);
+
+const cartClose = document.querySelector('.close-cart');
+cartClose.addEventListener('click', closeCart);
+
+const shoppingButton = document.querySelector('.shopping-button');
+shoppingButton.addEventListener('click', closeCart);

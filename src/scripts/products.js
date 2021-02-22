@@ -131,11 +131,14 @@ function buyNowClickInit() {
 window.onbeforeunload = () => sessionStorage.removeItem('categorySelected');
 
 document.addEventListener("unload", () => sessionStorage.removeItem('categorySelected'));
-// const cartButton = document.querySelector('.cart-button');
-// cartButton.addEventListener('click', openCart);
+const cartButton = document.querySelector('.cart-button');
+cartButton.addEventListener('click', openCart);
 
-// const cartClose = document.querySelector('.close-cart');
-// cartClose.addEventListener('click', closeCart);
+const cartClose = document.querySelector('.close-cart');
+cartClose.addEventListener('click', closeCart);
+
+const shoppingButton = document.querySelector('.shopping-button');
+shoppingButton.addEventListener('click', closeCart);
 
 getCategories();
 getProducts();

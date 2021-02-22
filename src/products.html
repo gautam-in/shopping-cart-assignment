@@ -14,7 +14,7 @@
     <title>Sabka Bazaar</title>
 </head>
 
-<body>
+<body id="body">
     <div id="opacity-element"></div>
     <nav class="navbar navbar-expand-lg navbar-light">
         <img src="../static/images/logo.png" class="d-inline-block align-top" alt="">
@@ -43,14 +43,29 @@
                 <span class="item-count"></span>&nbsp;Item(s)
             </button>
             <div id="cart-modal">
-                <button type="button" class="close-cart">Close</button>
+                <header class="p-2">
+                    <h3>My Cart<span class="total-in-cart"></span></h3>
+                    <button type="button" class="btn btn-link close-cart">&#10799;</button>
+                </header>
+                <div class="cart-body">
+
+                </div>
+                <footer>
+                    <p class="promo-code mt-2 text-center">
+                        Promo code can be applied on payment page
+                    </p>
+                    <button type="button" class="shopping-button btn btn-danger btn-lg btn-block">
+                        <div class="cart-button-content">
+                        </div>
+                    </button>
+                </footer>
             </div>
         </div>
     </nav>
 
     <div class="container-fluid">
         <section class="products">
-            
+
             <div class="row">
                 <div class="col-2 categories-pane px-0 mt-1">
                     <div class="row mx-1 categories-row"></div>

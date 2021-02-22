@@ -1,4 +1,6 @@
 @import 'products';
+@import 'cart';
+
 
 * {
     margin: 0;
@@ -40,6 +42,11 @@
     flex-direction: column;
 }
 
+.flexbox-vertical-center {
+    @extend.flexbox-vertical;
+    @include flexbox-justify-center();
+}
+
 .flexbox-vertical-horizontal-center {
     @extend.flexbox-vertical;
     @include flexbox-justify-center();
@@ -53,6 +60,10 @@
 
 .icon{
     color: #bd2130;
+}
+
+.total-in-cart{
+    font-size: 70%;
 }
 
 
