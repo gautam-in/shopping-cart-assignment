@@ -2,7 +2,7 @@
     display:none;
 }
 
-.carousel .thumbs{
+.carousel .thumbs-wrapper{
     display: none;
 }
 
@@ -20,3 +20,9 @@ transition: none;
 opacity: 1;
 background: rgba(0,0,0,0.0);
 }
+
+/* @media only screen and(max-width:600px){
+   div.thumbs-wrapper.axis-vertical button.control-next {
+        display:none ;
+    }
+} */
