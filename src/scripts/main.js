@@ -63,6 +63,34 @@ function buttonClickInit() {
     });
 }
 
+// {
+//     "bannerImageUrl": "/static/images/offers/offer1.jpg",
+//     "bannerImageAlt": "Independence Day Deal - 25% off on shampoo",
+//     "isActive": true,
+//     "order": 1,
+//     "id": "5b6c38156cb7d770b7010ccc"
+//   }
+
+async function renderCarousel() {
+    let data = await fetch('http://localhost:5000/banners');
+    data = await data.json();
+    const carousel = document.querySelector('.carousel');
+    // carousel.innerHTML = '';
+    data.forEach(element => {
+        if(element.isActive){
+            const div = document.createElement('div');
+            div.classList.add('carousel-cell');
+            const img = document.createElement('img');
+            img.src = element.bannerImageUrl;
+            img.id = element.id;
+            img.alt = element.bannerImageAlt;
+            div.append(img);
+            carousel.append(div);
+        }
+    })
+}
+
+renderCarousel();
 getCategories();
 renderCartQuantity();
 

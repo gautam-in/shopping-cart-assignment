@@ -63,22 +63,29 @@
             </div>
         </div>
     </nav>
-    <div class="container mb-4">
-
-        <section class="carousel-section mt-3">
-            <div class="carousel" data-flickity='{ "wrapAround": true, "autoPlay": true }'>
-            </div>
-        </section>
-
-        <section class="categories">
-            <div class="row categories-row">
-
-            </div>
-        </section>
+    <div class="container flexbox-center mt-5">
+        <div class="flex-item mt-4 mr-4">
+            <h3><strong>Signup</strong></h3>
+            <p>We do not share personal details with anyone.</p>
+        </div>
+        <div class="flex-item ml-5">
+            <form action="/index.html" method="post">
+                <input type="text" id="fname" name="fname" placeholder=" ">
+                <label for="fname">First Name</label>
+                <input type="text" id="lname" name="lname" placeholder=" ">
+                <label for="lname">Last Name</label>
+                <input type="text" id="email" name="email" placeholder=" ">
+                <label for="email">Email</label>
+                <input type="password" id="password" name="password" placeholder=" ">
+                <label for="password">Password</label>
+                <input type="password" id="confirm-password" name="confirm-password" placeholder=" ">
+                <label for="confirm-password">Confirm Password</label>
+                <button class="btn btn-danger btn-block" type="submit">Signup</button>
+            </form>
+        </div>
     </div>
 
-
-    <script src="scripts/main.js"></script>
+    <script src="scripts/login.js"></script>
     <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"

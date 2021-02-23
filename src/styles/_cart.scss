@@ -1,5 +1,4 @@
 #cart-modal{
-    border-radius: 25px;
     header{
         display: flex;
         justify-content: space-between;
@@ -15,4 +14,17 @@
     .cart-body{
         overflow-y: auto;
     }
+}
+
+.change-quantity{
+    border-radius: 50%;
+    border-color: black;
+}
+
+.multiply{
+    font-size: 150%;
+}
+
+.total-in-cart{
+    font-size: 70%;
 }

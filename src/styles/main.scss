@@ -1,6 +1,4 @@
-@import 'products';
-@import 'cart';
-
+@import "products", "cart", "login";
 
 * {
     margin: 0;
@@ -33,6 +31,11 @@
     justify-content: center;
 }
 
+.flexbox-center{
+    @extend .flexbox;;
+    @include flexbox-justify-center();
+}
+
 @mixin flexbox-align-center {
     align-items: center;
 }
@@ -53,17 +56,76 @@
     @include flexbox-align-center();
 }
 
-.flexbox-space-between{
+.flexbox-space-between {
     @extend .flexbox;
     justify-content: space-between;
 }
 
-.icon{
+.icon {
     color: #bd2130;
 }
 
-.total-in-cart{
-    font-size: 70%;
+.carousel-section-end{
+    -webkit-box-shadow: 0 8px 6px -8px rgb(90, 90, 90);
+    -moz-box-shadow: 0 8px 6px -8px rgb(90, 90, 90);
+    box-shadow: 0 8px 6px -8px rgb(90, 90, 90);
 }
 
+// Carousel
 
+.carousel {
+    background: #fafafa;
+    margin: 0 60px; /* space for prev/next buttons */
+}
+
+  .carousel-cell {
+    width: 100%;
+    height: 200px;
+    margin-right: 10px;
+    // background: #8C8;
+    border-radius: 5px;
+    // counter-increment: gallery-cell;
+  }
+// .carousel-cell {
+//     width: 100%;
+// }
+
+.carousel-cell img {
+    width: 100%;
+    height: auto;
+}
+
+/* cell number */
+//   .carousel-cell:before {
+//     display: block;
+//     text-align: center;
+//     content: counter(gallery-cell);
+//     line-height: 200px;
+//     font-size: 80px;
+//     color: white;
+//   }
+
+/* smaller, dark, rounded square */
+.flickity-prev-next-button {
+    width: 30px;
+    height: 30px;
+    border-radius: 5px;
+    background: #333;
+}
+.flickity-prev-next-button:hover {
+    background: #f90;
+}
+/* arrow color */
+.flickity-prev-next-button .arrow {
+    fill: white;
+}
+.flickity-prev-next-button.no-svg {
+    color: white;
+}
+/* position outside */
+.flickity-prev-next-button.previous {
+    left: -40px;
+}
+.flickity-prev-next-button.next {
+    right: -40px;
+}

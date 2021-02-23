@@ -91,6 +91,7 @@ function renderCartView() {
     const promoCode = document.querySelector('.promo-code');
     const totalInCart = document.querySelector('.total-in-cart');
     if (!cartCount) {
+        cartBody.style.backgroundColor = '#fff';
         totalInCart.textContent = '';
         cartBody.style.height = '75%';
         cartBody.classList.add('flexbox-vertical-horizontal-center');
@@ -133,14 +134,14 @@ function renderCartView() {
             innerRow2.classList.add('flexbox-space-between');
             innerRow2.innerHTML =
                 `<div>
-                <button class="change-quantity" id="${value.id}-decrease">
+                <button class="change-quantity btn btn-danger btn-sm" id="${value.id}-decrease">
                     &#8722;
                 </button>
-                ${value.inCart}
-                <button class="change-quantity" id="${value.id}-increase">
+                &nbsp;&nbsp;${value.inCart}&nbsp;&nbsp;
+                <button class="change-quantity btn btn-danger btn-sm" id="${value.id}-increase">
                     &#43;
                 </button>
-                &#215; ${value.price}
+                &nbsp;&nbsp;<span class="multiply">&#215;</span> ${value.price}
             </div>
             <div>
                 Rs. ${value.totalPrice}
