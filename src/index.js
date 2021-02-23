@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import RootRouter from './web.route';
+import RootRouter from './controller/web.route';
 import { Provider } from 'react-redux';
 import store from './redux/store/store';
 
