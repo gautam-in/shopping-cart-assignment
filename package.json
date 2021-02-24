@@ -12,8 +12,11 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
+    "autoprefixer": "^9.8.6",
+    "bootstrap": "^4.6.0",
     "canned": "^0.3.12",
-    "cart.js": "0.0.0"
+    "imagesloaded": "^4.1.4",
+    "jquery": "^3.5.1"
   },
   "devDependencies": {
     "parcel-bundler": "^1.12.4",

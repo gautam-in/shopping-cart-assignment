@@ -1,0 +1,37 @@
+.flexbox {
+    display: flex;
+}
+
+@mixin flexbox-justify-center {
+    justify-content: center;
+}
+
+.flexbox-center{
+    @extend .flexbox;;
+    @include flexbox-justify-center();
+}
+
+@mixin flexbox-align-center {
+    align-items: center;
+}
+
+.flexbox-vertical {
+    @extend .flexbox;
+    flex-direction: column;
+}
+
+.flexbox-vertical-center {
+    @extend.flexbox-vertical;
+    @include flexbox-justify-center();
+}
+
+.flexbox-vertical-horizontal-center {
+    @extend.flexbox-vertical;
+    @include flexbox-justify-center();
+    @include flexbox-align-center();
+}
+
+.flexbox-space-between {
+    @extend .flexbox;
+    justify-content: space-between;
+}

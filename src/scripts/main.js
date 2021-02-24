@@ -3,18 +3,31 @@ import {
     getCartCount, setCartCount, renderCartQuantity, setCartItems,
     addItemCartSession, openCart, closeCart
 } from './cart';
+import { WebStorage } from '../helpers/webStorage';
+import { ApiInteraction } from '../helpers/apiInteraction';
 
-async function getCategories() {
-    let data = sessionStorage.getItem('categories');
+function getCategories() {
+    let data = webStorage.getItemSessionStore('categories');
     if (!data) {
-        data = await fetch('http://localhost:5000/categories');
-        data = await data.json();
-        data.sort((a, b) => a.order - b.order);
-        sessionStorage.setItem('categories', JSON.stringify(data));
+        apiInteraction.getCategories().then(
+            data => {
+                data.sort((a, b) => a.order - b.order);
+                webStorage.setItemSessionStore('categories', data, true);
+                renderCategories(data);
+            }
+        );
+        // data = await fetch('http://localhost:5000/categories');
+        // data = await data.json();
+        // data.sort((a, b) => a.order - b.order);
+        // webStorage.setItemSessionStore('categories', data, true);
     }
     else {
         data = JSON.parse(data);
+        renderCategories(data);
     }
+}
+
+function renderCategories(data) {
     const mainDiv = document.querySelector('.categories-row');
     let odd = true;
     for (let element of data) {
@@ -49,35 +62,35 @@ async function getCategories() {
             odd = !odd;
         }
     }
-    buttonClickInit();
+    // buttonClickInit();
 }
 
+/*
 function buttonClickInit() {
     const exploreButtons = document.querySelectorAll('.explore-button');
 
     exploreButtons.forEach(button => {
         button.addEventListener('click', () => {
-            sessionStorage.setItem('categorySelected', button.id);
+            webStorage.setItemSessionStore('categorySelected', button.id);
             window.location = 'products.html';
         });
     });
 }
+*/
 
-// {
-//     "bannerImageUrl": "/static/images/offers/offer1.jpg",
-//     "bannerImageAlt": "Independence Day Deal - 25% off on shampoo",
-//     "isActive": true,
-//     "order": 1,
-//     "id": "5b6c38156cb7d770b7010ccc"
-//   }
+function getCarouselItems() {
+    apiInteraction.getBanners().then(
+        data => renderCarousel(data)
+    ).catch(err => console.log(err));
+}
 
-async function renderCarousel() {
-    let data = await fetch('http://localhost:5000/banners');
-    data = await data.json();
+function renderCarousel(data) {
+    // let data = await fetch('http://localhost:5000/banners');
+    // data = await data.json();
     const carousel = document.querySelector('.carousel');
     // carousel.innerHTML = '';
     data.forEach(element => {
-        if(element.isActive){
+        if (element.isActive) {
             const div = document.createElement('div');
             div.classList.add('carousel-cell');
             const img = document.createElement('img');
@@ -90,15 +103,34 @@ async function renderCarousel() {
     })
 }
 
-renderCarousel();
-getCategories();
-renderCartQuantity();
+const webStorage = new WebStorage();
+const apiInteraction = new ApiInteraction();
+getCarouselItems();
 
-const cartButton = document.querySelector('.cart-button');
-cartButton.addEventListener('click', openCart);
+document.addEventListener("DOMContentLoaded", (event) => {
+    getCategories();
+    renderCartQuantity();
 
-const cartClose = document.querySelector('.close-cart');
-cartClose.addEventListener('click', closeCart);
+    const cartButton = document.querySelector('.cart-button');
+    cartButton.addEventListener('click', openCart);
 
-const shoppingButton = document.querySelector('.shopping-button');
-shoppingButton.addEventListener('click', closeCart);
+    const cartClose = document.querySelector('.close-cart');
+    cartClose.addEventListener('click', closeCart);
+
+    const shoppingButton = document.querySelector('.shopping-button');
+    shoppingButton.addEventListener('click', closeCart);
+
+    //Event delegation
+    const categoryRow = document.querySelector('.categories-row');
+    categoryRow.addEventListener('click', (e) => {
+        if (e.target.tagName === 'BUTTON' && e.target.classList.contains('explore-button')) {
+            const button = e.target;
+            webStorage.setItemSessionStore('categorySelected', button.id);
+            window.location = 'products.html';
+        }
+    });
+});
+
+// getCarouselItems();
+
+

@@ -3,23 +3,36 @@ import {
     getCartCount, setCartCount, renderCartQuantity, setCartItems,
     addItemCartSession, openCart, closeCart
 } from './cart';
+import { WebStorage } from '../helpers/webStorage';
+import { ApiInteraction } from '../helpers/apiInteraction';
 
 let productsData = [];
-let categoryLinks = null;
-let buyNowButtons = null;
+// let categoryLinks = null;
+// let buyNowButtons = null;
 const categoryState = {};
 
-async function getCategories() {
-    let data = sessionStorage.getItem('categories');
+function getCategories() {
+    let data = webStorage.getItemSessionStore('categories');
     if (!data) {
-        data = await fetch('http://localhost:5000/categories');
-        data = await data.json();
-        data.sort((a, b) => a.order - b.order);
-        sessionStorage.setItem('categories', JSON.stringify(data));
+        apiInteraction.getCategories().then(
+            data => {
+                data.sort((a, b) => a.order - b.order);
+                webStorage.setItemSessionStore('categories', data, true);
+                renderCategories(data);
+            }
+        ).catch(err => console.log(err));
+        // data = await fetch('http://localhost:5000/categories');
+        // data = await data.json();
+        // data.sort((a, b) => a.order - b.order);
+        // webStorage.setItemSessionStore('categories', data, true);
     }
     else {
         data = JSON.parse(data);
+        renderCategories(data);
     }
+}
+
+function renderCategories(data) {
     const categoriesPane = document.querySelector('.categories-row');
     for (let element of data) {
         if (element.enabled) {
@@ -35,21 +48,32 @@ async function getCategories() {
             categoryState[element.id] = -1;
         }
     }
-    console.log(categoryState);
-    categoryLinksClickInit();
+    // categoryLinksClickInit();
 }
 
-async function getProducts() {
-    let data = await fetch('http://localhost:5000/products');
-    productsData = await data.json();
-    console.log(data);
-    const categorySelected = sessionStorage.getItem('categorySelected');
-    if (categorySelected) {
-        filterProducts(categorySelected);
-    }
-    else {
-        renderProducts(productsData);
-    }
+function getProducts() {
+    // let data = await fetch('http://localhost:5000/products');
+    // productsData = await data.json();
+    // const categorySelected = webStorage.getItemSessionStore('categorySelected');
+    // if (categorySelected) {
+    //     filterProducts(categorySelected);
+    // }
+    // else {
+    //     renderProducts(productsData);
+    // }
+
+    apiInteraction.getProducts().then(
+        data => {
+            productsData = data;
+            const categorySelected = webStorage.getItemSessionStore('categorySelected');
+            if (categorySelected) {
+                filterProducts(categorySelected);
+            }
+            else {
+                renderProducts(productsData);
+            }
+        }
+    ).catch(err => console.log(err));
 }
 
 function renderProducts(data) {
@@ -81,9 +105,10 @@ function renderProducts(data) {
         divElement.append(h4, image, prodDescription, priceBuyDiv);
         productsRow.append(divElement);
     });
-    buyNowClickInit();
+    // buyNowClickInit();
 }
 
+/*
 function categoryLinksClickInit() {
     categoryLinks = document.querySelectorAll('.category-link');
 
@@ -91,6 +116,7 @@ function categoryLinksClickInit() {
         link.addEventListener('click', () => { filterProducts(link.id) });
     });
 }
+*/
 
 function filterProducts(id) {
     const category = document.getElementById(id);
@@ -106,39 +132,74 @@ function filterProducts(id) {
     categoryState[id] *= -1;
 }
 
+/*
 function buyNowClickInit() {
     buyNowButtons = document.querySelectorAll('.buy-now');
 
     buyNowButtons.forEach(button => {
-        button.addEventListener('click', async () => {
-            let data = await fetch('http://localhost:5000/addToCart/', {
-                method: "POST",
-                body: JSON.stringify({ productId: button.id })
-            });
-            data = await data.json();
-            console.log(data);
-            if (data.response === 'Success') {
-                alert(data.responseMessage);
-                setCartCount(1);
-                setCartItems(button.id, productsData)
-                renderCartQuantity();
-            }
-
+        button.addEventListener('click', () => {
+            // let data = await fetch('http://localhost:5000/addToCart/', {
+            //     method: "POST",
+            //     body: JSON.stringify({ productId: button.id })
+            // });
+            // data = await data.json();
+            apiInteraction.addToCart(button.id)
+                .then(data => {
+                    if (data.response === 'Success') {
+                        alert(data.responseMessage);
+                        setCartCount(1);
+                        setCartItems(button.id, productsData)
+                        renderCartQuantity();
+                    }
+                }).catch(err => console.log(err));
         });
     });
 }
+*/
 
-window.onbeforeunload = () => sessionStorage.removeItem('categorySelected');
+window.onbeforeunload = () => webStorage.removeItemSessionStore('categorySelected');
 
-document.addEventListener("unload", () => sessionStorage.removeItem('categorySelected'));
-const cartButton = document.querySelector('.cart-button');
-cartButton.addEventListener('click', openCart);
+const webStorage = new WebStorage();
+const apiInteraction = new ApiInteraction();
 
-const cartClose = document.querySelector('.close-cart');
-cartClose.addEventListener('click', closeCart);
+document.addEventListener("DOMContentLoaded", (event) => {
+    const cartButton = document.querySelector('.cart-button');
+    cartButton.addEventListener('click', openCart);
 
-const shoppingButton = document.querySelector('.shopping-button');
-shoppingButton.addEventListener('click', closeCart);
+    const cartClose = document.querySelector('.close-cart');
+    cartClose.addEventListener('click', closeCart);
+
+    const shoppingButton = document.querySelector('.shopping-button');
+    shoppingButton.addEventListener('click', closeCart);
+
+    //Event delegation
+    const categoryRow = document.querySelector('.categories-row');
+    categoryRow.addEventListener('click', (e) => {
+        if (e.target.tagName === 'A' && e.target.classList.contains('category-link')) {
+            const link = e.target;
+            filterProducts(link.id);
+        }
+    });
+
+    //Event delegation
+    const productsRow = document.querySelector('.products-row');
+    productsRow.addEventListener('click', (e) => {
+        if (e.target.tagName === 'BUTTON' && e.target.classList.contains('buy-now')) {
+            const button = e.target;
+            apiInteraction.addToCart(button.id)
+                .then(data => {
+                    if (data.response === 'Success') {
+                        // alert(data.responseMessage);
+                        setCartCount(1);
+                        setCartItems(button.id, productsData)
+                        renderCartQuantity();
+                    }
+                }).catch(err => console.log(err));
+        }
+    });
+});
+
+
 
 getCategories();
 getProducts();

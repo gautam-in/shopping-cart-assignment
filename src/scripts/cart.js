@@ -1,23 +1,25 @@
+import { WebStorage } from '../helpers/webStorage';
+
 function getCartCount() {
-    return sessionStorage.getItem('cartCount');
+    return webStorage.getItemSessionStore('cartCount');
 }
 
 function setCartCount(coefficient) {
-    let cartCount = sessionStorage.getItem('cartCount');
+    let cartCount = webStorage.getItemSessionStore('cartCount');
     if (!cartCount) {
         if (coefficient === 1) {
-            sessionStorage.setItem('cartCount', 1);
+            webStorage.setItemSessionStore('cartCount', 1);
         }
         return;
     }
     else {
         cartCount = Number(cartCount) + coefficient;
         if (cartCount !== 0) {
-            sessionStorage.setItem('cartCount', cartCount);
+            webStorage.setItemSessionStore('cartCount', cartCount);
         }
         else {
-            sessionStorage.removeItem('cartCount');
-            sessionStorage.removeItem('cartItems');
+            webStorage.removeItemSessionStore('cartCount');
+            webStorage.removeItemSessionStore('cartItems');
         }
     }
 }
@@ -29,7 +31,7 @@ function renderCartQuantity() {
 }
 
 function setCartItems(id, productsData = [], coefficient = 1) {
-    let cartItems = sessionStorage.getItem('cartItems');
+    let cartItems = webStorage.getItemSessionStore('cartItems');
     if (cartItems) {
         cartItems = JSON.parse(cartItems);
         if (cartItems[id]) {
@@ -38,16 +40,16 @@ function setCartItems(id, productsData = [], coefficient = 1) {
             if (cartItems[id].inCart === 0) {
                 delete cartItems[id];
             }
-            sessionStorage.setItem('cartItems', JSON.stringify(cartItems));
+            webStorage.setItemSessionStore('cartItems', cartItems, true);
         }
         else {
             cartItems = addItemCartSession(id, productsData, cartItems);
-            sessionStorage.setItem('cartItems', JSON.stringify(cartItems));
+            webStorage.setItemSessionStore('cartItems', cartItems, true);
         }
     }
     else if(coefficient === 1) {
         cartItems = addItemCartSession(id, productsData, cartItems);
-        sessionStorage.setItem('cartItems', JSON.stringify(cartItems));
+        webStorage.setItemSessionStore('cartItems', cartItems, true);
     }    
 }
 
@@ -65,7 +67,7 @@ function openCart() {
     cartModal.classList.add('sample-modal');
     const opacityElement = document.getElementById('opacity-element');
     opacityElement.classList.add('black-opacity');
-    const body = document.getElementById('body');
+    const body = document.querySelector('.page-body');
     body.classList.add('body-container');
     renderCartView();
 }
@@ -76,7 +78,7 @@ function closeCart() {
     cartModal.classList.remove('sample-modal');
     const opacityElement = document.getElementById('opacity-element');
     opacityElement.classList.remove('black-opacity');
-    const body = document.getElementById('body');
+    const body = document.querySelector('.page-body');
     body.classList.remove('body-container');
     const cartBody = document.querySelector('.cart-body');
     cartBody.innerHTML = '';
@@ -108,7 +110,7 @@ function renderCartView() {
         cartBody.style.height = '70%';
         cartButtonContent.textContent = 'Start Shopping';
         promoCode.style.display = 'block';
-        let cartItems = sessionStorage.getItem('cartItems');
+        let cartItems = webStorage.getItemSessionStore('cartItems');
         cartItems = JSON.parse(cartItems);
         const row = document.createElement('div');
         row.classList.add('row', 'mx-0', 'my-4');
@@ -176,10 +178,11 @@ function renderCartView() {
         <div>Rs. ${totalCartAmount} ></div>
         `;
 
-        changeQuantityClickInit();
+        // changeQuantityClickInit();
     }
 }
 
+/*
 function changeQuantityClickInit() {
     const changeQuantity = document.querySelectorAll('.change-quantity');
 
@@ -198,8 +201,29 @@ function changeQuantityClickInit() {
         });
     });
 }
+*/
+
+//Event delegation
+const cartBody = document.querySelector('.cart-body');
+cartBody.addEventListener('click', (e) => {
+    if (e.target.tagName === 'BUTTON' && e.target.classList.contains('change-quantity')) {
+        const button = e.target;
+        const id = button.id;
+            let idList = id.split('-');
+            let coefficient = 1;
+            if (idList[1] === 'decrease') {
+                coefficient = -1;
+            }
+            setCartCount(coefficient);
+            renderCartQuantity();
+            setCartItems(idList[0], [], coefficient);
+            renderCartView();
+    }
+});
 
 export {
     getCartCount, setCartCount, renderCartQuantity, setCartItems,
     addItemCartSession, openCart, closeCart
 };
+
+const webStorage = new WebStorage();
