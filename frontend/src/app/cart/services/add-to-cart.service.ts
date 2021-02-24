@@ -38,4 +38,8 @@ export class AddToCartService {
       }
     })
   }
+
+  resetCart() {
+    this.numberOfProductsInCart.next([]);
+  }
 }

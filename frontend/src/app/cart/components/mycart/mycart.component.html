@@ -2,16 +2,6 @@
     <div class="my-cart-item-count-container">
         <h2>My Cart</h2><label>({{listofProductsInCart.length}} item)</label>
     </div>
-    <!--
-        name: string;
-    imageURL: string;
-    description: string;
-    price: number;
-    stock: number;
-    category: string;
-    sku: string;
-    id: string;
-    -->
     <div class="my-cart" *ngFor="let product of listofProductsInCart">
         <figure>
             <img src="assets{{product.imageURL}}" alt="{{product.name}}" title="{{product.name}}"/>
@@ -36,6 +26,6 @@
 
     <article class="cart-total-price">
         <p>Promo code can be applied on payment page<p>
-        <button type="button" class="custom-btn custom-btn-dark-pink checkout-btn">Proceed to Checkout Rs. {{totalProductsPrice}}/-</button>
+        <button type="button" class="custom-btn custom-btn-dark-pink checkout-btn" (click)="goToCheckoutPage()" [disabled]="totalProductsPrice === 0"><span>Proceed to Checkout</span> <span>Rs. {{totalProductsPrice}}/- ></span></button>
     </article>
 </section>

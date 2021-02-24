@@ -21,6 +21,20 @@ section {
     background-color: $color-white;
     margin-top: 20px;
     padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    article {
+        flex-grow: 1;
+        div {
+            margin-top: 20px;
+            p {
+                float: right;
+            }
+        }
+    }
+    img {
+        width: 100px;
+    }
 }
 
 .cart-offer-info {
@@ -45,5 +59,11 @@ section {
     }
     .checkout-btn {
         border-radius: 4px;
+    }
+    button {
+        display: flex;
+        justify-content: space-between;
+        font-size: 15px;
+        font-weight: bolder;
     }
 }

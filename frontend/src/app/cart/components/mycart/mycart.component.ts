@@ -1,6 +1,7 @@
 import { AddToCartService } from './../../services/add-to-cart.service';
 import { Component, OnInit } from '@angular/core';
 import { ProductsListDTO } from 'src/app/products/models/products-list';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-mycart',
@@ -9,7 +10,8 @@ import { ProductsListDTO } from 'src/app/products/models/products-list';
 })
 export class MycartComponent implements OnInit {
 
-  constructor(private readonly addToCartService: AddToCartService) { }
+  constructor(private readonly addToCartService: AddToCartService,
+              private readonly router: Router) { }
   listofProductsInCart: ProductsListDTO[] = [];
   totalProductsPrice: number = 0; 
   ngOnInit(): void {
@@ -20,6 +22,11 @@ export class MycartComponent implements OnInit {
   this.listofProductsInCart.forEach(data => {
     this.totalProductsPrice = data.price + this.totalProductsPrice;
   });
+  }
+
+
+  goToCheckoutPage() {
+    this.router.navigate(['/checkout']);
   }
 
 }
