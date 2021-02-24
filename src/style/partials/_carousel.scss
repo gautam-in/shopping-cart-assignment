@@ -1,0 +1,91 @@
+@import '../colors';
+
+.carousel-container{
+  width: 75vw;
+  @media only screen and (min-device-width: 481px) and (max-device-width: 1024px) {
+    width: 100%;
+    box-shadow: 0 25px 31px -20px rgba(0, 0, 0, 0.22);
+    margin-top: 30px 0px;
+    padding: 25px 0px;
+  }
+  margin: 30px auto 0px auto;
+  position: relative;
+  box-shadow: 0 17px 17px -20px rgba(0, 0, 0, 0.22);
+  img{
+    width: 100%;
+  }
+  @media only screen
+  and (min-device-width: 320px)
+  and (max-device-width: 480px){
+    width: 100%;
+    margin: 30px auto 0px auto;
+  }
+
+  @media screen
+  and (device-width: 360px)
+  and (device-height: 640px)
+  and (-webkit-device-pixel-ratio: 3) {
+    width: 100%;
+    margin: 30px auto 0px auto;
+  }
+}
+
+
+.carousel {
+  position: relative;
+  height: 330px;
+
+  // tablet
+  @media only screen and (min-device-width: 481px) and (max-device-width: 1024px) {
+    height: 260px;
+  }
+  // mobile
+  @media only screen
+  and (min-device-width: 320px)
+  and (max-device-width: 480px){
+    height: 320px;
+  }
+
+  @media screen
+  and (device-width: 360px)
+  and (device-height: 640px)
+  and (-webkit-device-pixel-ratio: 3) {
+    height: 320px;
+  }
+}
+
+.slides {
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  font-size: 3em;
+  color: white;
+  line-height: 400px;
+  text-align: center;
+  opacity: 0;
+
+  transition: opacity 750ms;
+  &[data-state=active] {
+    display: block;
+  }
+}
+
+.indicators {
+  position: absolute;
+  bottom: 10px;
+  left: 0px;
+  margin-left: 50%;
+  transform: translateX(-50%);
+}
+
+.indicator {
+  cursor: pointer;
+}

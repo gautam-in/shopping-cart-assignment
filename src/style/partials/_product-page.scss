@@ -1,0 +1,71 @@
+@import '../colors';
+
+.product{
+  &.container{
+    display: none;
+    width:75vw;
+    margin:0 auto;
+    flex:1;
+    @media only screen
+    and (min-device-width: 481px)
+    and (max-device-width: 1024px) {
+      width: 100%;
+    }
+    @media only screen
+    and (min-device-width: 320px)
+    and (max-device-width: 480px)
+    and (-webkit-min-device-pixel-ratio: 2) {
+      width:100%;
+      display: block!important;
+    }
+  }
+  &-cards-container{
+    flex: 0 0 75%;
+    @media only screen
+    and (min-device-width: 320px)
+    and (max-device-width: 480px)
+    and (-webkit-min-device-pixel-ratio: 2) {
+      flex: none;
+    }
+  }
+  &-category{
+    @media only screen
+    and (min-device-width: 320px)
+    and (max-device-width: 480px)
+    and (-webkit-min-device-pixel-ratio: 2) {
+      display: none;
+    }
+    flex: 0 0 25%;
+    ul{
+      list-style: none;
+      margin:0px;
+      padding: 0px;
+      li{
+        background: #eaeaea;
+        color: $listColor;
+        font-size: 16px;
+        padding: 10px 20px;
+        cursor: pointer;
+      }
+    }
+  }
+  &-list{
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    padding:0px;
+    margin:0px;
+    @media only screen
+    and (min-device-width: 320px)
+    and (max-device-width: 480px)
+    and (-webkit-min-device-pixel-ratio: 2) {
+      display: block;
+      justify-content: initial;
+      flex-wrap: nowrap;
+    }
+    list-style: none;
+    @media  screen and (min-width:1680px) {
+      max-width: 1200px;
+    }
+  }
+}

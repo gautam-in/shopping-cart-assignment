@@ -1,0 +1,88 @@
+<section class="signup-section">
+   <div class="signup-section_info" >
+      <h1 class="login-section-heading">Signup</h1>
+      <div class="login-section-desc">We do nto share your personal details anywhere.</div>
+   </div>
+   <div class="login-section_formGroup">
+      <form
+      action="index.html"
+      method="post"
+      autocomplete="off"
+      class="signup-section_form"
+      aria-label="form"
+      >
+         <div class="field">
+            <input
+               type="text"
+               name="firstname"
+               id="firstname"
+               placeholder="First Name"
+               required>
+            <label
+               for="firstname"
+               id="firstname">
+            Firstname *
+            </label>
+         </div>
+         <div class="field">
+            <input
+
+               type="text"
+               name="lastname"
+               id="lastname"
+               placeholder="Last Name"
+               required>
+            <label
+               for="lastname"
+               id="lastname">
+            Lastname *
+            </label>
+         </div>
+         <div class="field">
+            <input
+
+               type="email"
+               name="email"
+               id="email"
+               placeholder="Email id"
+               pattern="[^@\s]+@[^@\s]+\.[^@\s]+"
+               required>
+            <label
+               for="email"
+               id="email">
+            Email *
+            </label>
+         </div>
+         <div class="field">
+            <input
+
+               type="password"
+               name="password"
+               id="password"
+               placeholder="Password"
+               required
+               >
+            <label
+               for="password"
+               id="password">Password *
+            </label>
+         </div>
+         <div class="field">
+            <input
+               type="password"
+               name="confirm-password"
+               id="confirm-password"
+               placeholder="Confirm Password"
+               required
+               >
+            <label
+               for="confirm-password"
+               id="confirm-password">Confirm Password *
+            </label>
+         </div>
+
+            <input type="submit" role="button" class="btn--signup" name="submit" value="SignUp" />
+
+      </form>
+   </div>
+</section>

@@ -1,0 +1,50 @@
+<section class="login-section">
+   <div class="login-section_info">
+      <h1 class="login-section-heading" >Login</h1>
+      <div class="login-section-desc">Get Access to your Orders. Wishlist and Recommendations</div>
+   </div>
+   <div class="login-section_formGroup">
+      <form
+      action="index.html"
+      method="post"
+      autocomplete="off"
+      class="login-section_form"
+      aria-label="form"
+      >
+         <div class="field">
+            <input
+               aria-required="true"
+               aria-labelledby="email"
+               type="email"
+               name="email"
+               id="email"
+               placeholder='Email id'
+               pattern="[^@\s]+@[^@\s]+\.[^@\s]+"
+               required>
+            <label
+               for="email"
+               id="email">
+            Email *
+            </label>
+         </div>
+         <div class="field">
+            <input
+               aria-required="true"
+               aria-labelledby="password"
+               type="password"
+               name="password"
+               id="password"
+               placeholder="Password"
+               required
+               >
+            <label
+               for="password"
+               id="password">Password *
+            </label>
+         </div>
+
+            <input type="submit" role="button" class="btn--login" name="" value="Login" />
+
+      </form>
+   </div>
+</section>

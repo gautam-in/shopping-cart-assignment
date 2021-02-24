@@ -1,0 +1,29 @@
+{
+"parser": "babel-eslint",
+"extends": ["standard", "prettier"],
+"env": {
+  "browser": true,
+  "node": true
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+    },
+    "parserOptions": {
+      "sourceType": "module",
+      "ecmaVersion": 2018
+      },
+      "rules": {
+        "semi": "error",
+        "eqeqeq": ["error", "smart"],
+        "no-debugger": "off",
+        "space-before-function-paren": ["error", "never"],
+        "jsx-quotes": ["error", "prefer-single"],
+        "camelcase": ["error", {"ignoreDestructuring": true , "properties": "never" }],
+        "no-console": ["warn", { allow: ["warn"] }],
+        "no-multi-spaces": "error",
+        "max-len": ["error", { "code": 150 }],
+        "wrap-iife": ["error", "outside"]
+      }
+    }
