@@ -1,0 +1,25 @@
+import { AddToCartService } from './../../services/add-to-cart.service';
+import { Component, OnInit } from '@angular/core';
+import { ProductsListDTO } from 'src/app/products/models/products-list';
+
+@Component({
+  selector: 'app-mycart',
+  templateUrl: './mycart.component.html',
+  styleUrls: ['./mycart.component.scss']
+})
+export class MycartComponent implements OnInit {
+
+  constructor(private readonly addToCartService: AddToCartService) { }
+  listofProductsInCart: ProductsListDTO[] = [];
+  totalProductsPrice: number = 0; 
+  ngOnInit(): void {
+   this.addToCartService.numberOfproductsInCart$.subscribe(data => {
+      this.listofProductsInCart = [...data];
+   });
+   
+  this.listofProductsInCart.forEach(data => {
+    this.totalProductsPrice = data.price + this.totalProductsPrice;
+  });
+  }
+
+}

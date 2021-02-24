@@ -1,4 +1,4 @@
-export interface ProductsList {
+export interface ProductsListDTO {
     name: string;
     imageURL: string;
     description: string;

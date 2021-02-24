@@ -1,9 +1,10 @@
 <nav>
     <app-logo (click)="toggleMenu()"></app-logo>
     <div *ngIf="showMenu">
-        <a [routerLink] = "['/home']">Home</a>
-        <a [routerLink] = "['/products']">Products</a>
-        <a [routerLink] = "['/login']">Signin</a>
-        <a [routerLink] = "['/signup']">Register</a>
+        <a [routerLink]="['/home']">Home</a>
+        <a [routerLink]="['/products']">Products</a>
+        <a [routerLink]="['/login']">Signin</a>
+        <a [routerLink]="['/signup']">Register</a>
     </div>
+    <app-cart-counter></app-cart-counter>
 </nav>

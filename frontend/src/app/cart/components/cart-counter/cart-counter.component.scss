@@ -1,0 +1,18 @@
+@import '../../../../styles.scss';
+
+:host {
+    padding: 20px;
+    background-color: $color-light-grey;
+}
+a {
+    text-decoration: none;
+    i {
+        margin-right: 10px;
+        color: #bf3d54;
+        font-size: 20px;
+    }
+    label {
+        color: black;
+        font-weight: bolder;
+    }
+}

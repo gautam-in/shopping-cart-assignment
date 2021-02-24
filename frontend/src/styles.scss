@@ -11,6 +11,10 @@ body{
 $color-pink: #d24357;
 $color-blue: #85d8dc;
 $color-dark-pink: #c03e57;
+$color-white: #ffffff;
+$color-grey: #808080;
+$color-black: #000000;
+$color-light-grey: #e2e2e2;
 
 /** style for base elements **/
 .custom-form-group {
@@ -34,6 +38,9 @@ $color-dark-pink: #c03e57;
     padding: 12px;
     width: 100%;
 }
+.custom-btn:disabled {
+    opacity: 0.5;
+}
 .btn-pink {
     color: white;
     background-color: $color-pink;
@@ -41,4 +48,10 @@ $color-dark-pink: #c03e57;
 .custom-btn-dark-pink {
     background-color: $color-dark-pink;
     color: white;
+}
+.custom-error{
+    div {
+        margin: 5px 0;
+        color: red;
+    }
 }

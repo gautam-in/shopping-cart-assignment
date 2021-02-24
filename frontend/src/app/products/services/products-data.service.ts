@@ -1,8 +1,8 @@
-import { ProductsList } from './../models/products-list';
+import { ProductsListDTO } from './../models/products-list';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { baseAPIPath } from 'src/constants';
 import { shareReplay } from 'rxjs/operators';
+import { baseAPIPath } from 'src/config';
 
 @Injectable({
   providedIn: 'root'
@@ -14,6 +14,6 @@ export class ProductsDataService {
     shareReplay(1)
   )
   private getProductsFromAPI$() {
-    return this.http.get<ProductsList[]>(`${baseAPIPath}/products`);
+    return this.http.get<ProductsListDTO[]>(`${baseAPIPath}/products`);
   }
 }

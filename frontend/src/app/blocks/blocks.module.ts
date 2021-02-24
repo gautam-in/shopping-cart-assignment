@@ -8,14 +8,15 @@ import { LoaderComponent } from './components/loader/loader.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { SliderComponent } from './components/slider/slider.component';
 import { IvyCarouselModule } from 'angular-responsive-carousel';
+import { SharedModule } from '../shared/shared.module';
 
 
 @NgModule({
   declarations: [HeaderComponent, LogoComponent, FooterComponent, LoaderComponent, PageNotFoundComponent, SliderComponent],
   imports: [
-    CommonModule,
     RouterModule,
-    IvyCarouselModule
+    IvyCarouselModule,
+    SharedModule
   ],
   exports: [
     HeaderComponent,

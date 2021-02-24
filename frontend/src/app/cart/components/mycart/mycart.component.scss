@@ -1,0 +1,49 @@
+@import '../../../../styles.scss';
+
+section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    background-color: $color-light-grey;
+    .my-cart-item-count-container {
+        background-color: $color-white;
+    }
+}
+.my-cart-item-count-container {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    margin-top: 40px;
+    padding: 15px;
+}
+
+.my-cart{
+    background-color: $color-white;
+    margin-top: 20px;
+    padding: 10px;
+}
+
+.cart-offer-info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 20px 10px;
+    padding: 10px;
+    justify-content: space-evenly;
+    background-color: $color-white;
+    border-radius: 2px;
+}
+
+.cart-total-price {
+    text-align: center;
+    padding: 10px;
+    position: sticky;
+    bottom: 0;
+    background-color: $color-white;
+    p { 
+        margin-bottom: 10px;
+    }
+    .checkout-btn {
+        border-radius: 4px;
+    }
+}

@@ -1,5 +1,7 @@
+@import '../../../../styles.scss';
+
 footer {
-    background-color: #eaeaea;
+    background-color: $color-light-grey;
     padding: 5px 10px;
     p {
         text-align: center;

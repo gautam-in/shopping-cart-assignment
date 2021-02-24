@@ -4,13 +4,14 @@ import { AppComponent } from './app.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { ProductRoutingModule } from './products/product-routing.module';
+import { CartRoutingModule } from './cart/cart-routing.module';
 
 const routes: Routes = [
   {path: '', component: AppComponent, pathMatch: 'full'}
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes), HomeRoutingModule, ProductRoutingModule, AuthRoutingModule],
+  imports: [RouterModule.forRoot(routes), HomeRoutingModule, ProductRoutingModule, AuthRoutingModule, CartRoutingModule],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

@@ -1,6 +1,6 @@
-import { ProductsList } from './../../models/products-list';
+import { ProductsListDTO } from './../../models/products-list';
 import { ProductsDataService } from './../../services/products-data.service';
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { ProductCategoriesService } from 'src/app/home/services/product-categories.service';
 import { ProductCategoryDTO } from 'src/app/home/models/product-category-dto';
 import { ActivatedRoute } from '@angular/router';
@@ -11,7 +11,8 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./product-landing.component.scss'],
 })
 export class ProductLandingComponent implements OnInit {
-  productsList: ProductsList[] = [];
+  productsRenderList: ProductsListDTO[] = [];
+  allProductsList: ProductsListDTO[] = [];
   categories: ProductCategoryDTO[] = [];
   showCategoryMenu: boolean = false;
   menuNavDirection: string = 'down';
@@ -34,17 +35,23 @@ export class ProductLandingComponent implements OnInit {
       .subscribe((categoryList) => (this.categories = [...categoryList]));
 
     this.productDataService.productsList$.subscribe((products) => {
-      this.productsList = [...products];
-      if(this.selectedCategoryId) {
-        this.productsList = [...this.getFilterProductsByCategory(this.selectedCategoryId)];
+      this.allProductsList = [...products];
+      this.productsRenderList = [...this.allProductsList];
+      if (this.selectedCategoryId) {
+        this.renderProductByCategory(this.selectedCategoryId);
       }
     });
   }
-  
+
+  renderProductByCategory(categoryId: string) {
+    this.productsRenderList = [...this.getFilterProductsByCategory(categoryId)];
+  }
 
   getFilterProductsByCategory(categoryId: string) {
-    console.log('you got clicked');
-    return this.productsList.filter((product) => product.category === categoryId);
+    const customProductList = [...this.allProductsList];
+    return [...this.allProductsList].filter(
+      (product) => product.category === categoryId
+    );
   }
 
   toggleCategoryMenu() {

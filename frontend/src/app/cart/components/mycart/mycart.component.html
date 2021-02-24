@@ -1,0 +1,41 @@
+<section>
+    <div class="my-cart-item-count-container">
+        <h2>My Cart</h2><label>({{listofProductsInCart.length}} item)</label>
+    </div>
+    <!--
+        name: string;
+    imageURL: string;
+    description: string;
+    price: number;
+    stock: number;
+    category: string;
+    sku: string;
+    id: string;
+    -->
+    <div class="my-cart" *ngFor="let product of listofProductsInCart">
+        <figure>
+            <img src="assets{{product.imageURL}}" alt="{{product.name}}" title="{{product.name}}"/>
+        </figure>
+        <article>
+            <h2>{{product.name}}</h2>
+            <div>
+                <i class="fas fa-plus-square"></i> 1 <i class="fas fa-minus-square"></i> X Rs. {{product.price}} /-
+                <p>Rs.{{product.price}}/-</p>
+            </div>
+        </article>
+    </div>
+
+    <div class="cart-offer-info">
+        <figure>
+            <img src="../../../../assets/static/images/lowest-price.png" alt="lowest-price"/>
+        </figure>
+        <article>
+            <p>You won't find it cheaper anywhere</p>
+        </article>
+    </div>
+
+    <article class="cart-total-price">
+        <p>Promo code can be applied on payment page<p>
+        <button type="button" class="custom-btn custom-btn-dark-pink checkout-btn">Proceed to Checkout Rs. {{totalProductsPrice}}/-</button>
+    </article>
+</section>

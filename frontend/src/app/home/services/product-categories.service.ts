@@ -1,10 +1,10 @@
 import { map, shareReplay, filter, tap } from 'rxjs/operators';
 import { ProductCategoryDTO } from './../models/product-category-dto';
-import { baseAPIPath } from './../../../constants';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
 import * as _ from 'underscore';
+import { baseAPIPath } from 'src/config';
 
 @Injectable({
   providedIn: 'root'
@@ -21,13 +21,8 @@ export class ProductCategoriesService {
 
   private transformData(categoryData: ProductCategoryDTO) {
     return {
-      name: categoryData.name,
-      key: categoryData.key,
-      description: categoryData.description,
-      enabled: categoryData.enabled,
-      order: categoryData.order,
+      ...categoryData,
       imageUrl: categoryData.imageUrl ? 'assets/' + categoryData.imageUrl : 'assets/static/images/category/fruits.png',
-      id: categoryData.id
     }
   }
 
@@ -43,7 +38,6 @@ export class ProductCategoriesService {
       map(categoriesData => _.sortBy(categoriesData, 'order')),
       map(categoriesData => categoriesData.filter(categoryData => categoryData.id === categoryId)),
       map(categoriesData => categoriesData.map(categoryData => this.transformData(categoryData))),
-      tap((categoriesData) => console.log(categoriesData))
     )
   }
 }
