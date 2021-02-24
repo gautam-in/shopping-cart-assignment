@@ -8,8 +8,8 @@
             <label for="email">Email</label>
             <input type="email" id="email" name="email" class="custom-input" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required ngModel #email="ngModel" />
             <div class="custom-error" *ngIf="email.touched && !email.valid">
-                <div *ngIf="email.errors?.required">Please enter email.</div>
-                <div *ngIf="email.errors?.pattern">Please enter email in correct format</div>
+                <div *ngIf="email.errors?.required" aria-live="assertive">Please enter email.</div>
+                <div *ngIf="email.errors?.pattern" aria-live="assertive">Please enter email in correct format</div>
             </div>
         </div>
         <div class="custom-form-group">
@@ -18,9 +18,9 @@
                 #password="ngModel"
                 pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$" />
             <div class="custom-error" *ngIf="password.touched && !password.valid">
-                <div *ngIf="password.errors?.required">Please enter password.</div>
-                <div *ngIf="password.errors?.minlength">Minimum 6 characters required</div>
-                <div *ngIf="password.errors?.pattern">Please enter alphanumeric password without spaces</div>
+                <div *ngIf="password.errors?.required" aria-live="assertive">Please enter password.</div>
+                <div *ngIf="password.errors?.minlength" aria-live="assertive">Minimum 6 characters required</div>
+                <div *ngIf="password.errors?.pattern" aria-live="assertive">Please enter alphanumeric password without spaces</div>
             </div>
         </div>
         <button type="submit" class="custom-btn btn-pink" [disabled]="!loginForm.valid">Login</button>

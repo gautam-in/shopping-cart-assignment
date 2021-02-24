@@ -9,7 +9,7 @@
             <input type="text" id="firstName" name="firstName" class="custom-input" required ngModel
                 #firstName="ngModel" />
             <div class="custom-error" *ngIf="firstName.touched && !firstName.valid">
-                <div *ngIf="firstName.errors?.required">Please fill first name</div>
+                <div *ngIf="firstName.errors?.required" aria-live="assertive">Please fill first name</div>
             </div>
         </div>
         <div class="custom-form-group">
@@ -17,7 +17,7 @@
             <input type="text" id="lastName" name="lastName" class="custom-input" required ngModel
                 #lastName="ngModel" />
             <div class="custom-error" *ngIf="lastName.touched && !lastName.valid">
-                <div *ngIf="lastName.errors?.required">Please fill last name</div>
+                <div *ngIf="lastName.errors?.required" aria-live="assertive">Please fill last name</div>
             </div>
         </div>
         <div class="custom-form-group">
@@ -25,8 +25,8 @@
             <input type="email" id="email" name="email" class="custom-input" required ngModel #email="ngModel"
                 pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" />
             <div class="custom-error" *ngIf="email.touched && !email.valid">
-                <div *ngIf="email.errors?.required">Please fill email.</div>
-                <div *ngIf="email.errors?.pattern">Please enter valid email address</div>
+                <div *ngIf="email.errors?.required" aria-live="assertive">Please fill email.</div>
+                <div *ngIf="email.errors?.pattern" aria-live="assertive">Please enter valid email address</div>
             </div>
         </div>
         <div class="custom-form-group">
@@ -34,9 +34,9 @@
             <input type="password" id="password" name="password" class="custom-input" minlength="6" ngModel
                 #password="ngModel" pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$" required />
             <div class="custom-error" *ngIf="password.touched && !password.valid">
-                <div *ngIf="password.errors?.required">Please enter password</div>
-                <div *ngIf="password.errors?.minlength">Minimum 6 characters are required</div>
-                <div *ngIf="password.errors?.pattern">Please enter alphanumeric password without spaces</div>
+                <div *ngIf="password.errors?.required" aria-live="assertive">Please enter password</div>
+                <div *ngIf="password.errors?.minlength" aria-live="assertive">Minimum 6 characters are required</div>
+                <div *ngIf="password.errors?.pattern" aria-live="assertive">Please enter alphanumeric password without spaces</div>
             </div>
         </div>
         <div class="custom-form-group">
@@ -44,9 +44,9 @@
             <input type="password" id="confirmPassword" name="confirmPassword" class="custom-input" minlength="6"
                 #confirmPassword="ngModel" required ngModel pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$" required/>
             <div class="custom-error" *ngIf="confirmPassword.touched && !confirmPassword.valid">
-                <div *ngIf="confirmPassword.errors?.required">Please enter password again</div>
-                <div *ngIf="confirmPassword.errors?.minlength">Minimum 6 characters are required</div>
-                <div *ngIf="password.errors?.pattern">Please enter alphanumeric password without spaces</div>
+                <div *ngIf="confirmPassword.errors?.required" aria-live="assertive">Please enter password again</div>
+                <div *ngIf="confirmPassword.errors?.minlength" aria-live="assertive">Minimum 6 characters are required</div>
+                <div *ngIf="password.errors?.pattern" aria-live="assertive">Please enter alphanumeric password without spaces</div>
             </div>
         </div>
         <button type="submit" class="custom-btn btn-pink" [disabled]="!signupForm.valid">Signup</button>

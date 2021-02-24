@@ -2,12 +2,14 @@
     <h2>{{product.name}}</h2>
     <div class="product-card-body">
         <figure>
-            <img src="assets/{{product.imageURL}}" alt="{{product.name}}"/>
-            <!-- <figcaption>{{product.stock}}</figcaption> -->
+            <img src="assets/{{product.imageURL}}" alt="{{product.name}}" title="{{product.name}}" />
         </figure>
         <article>
             <p class="product-card-content">{{product.description}}</p>
-            <button type="button" class="custom-btn custom-btn-dark-pink" (click)="addProductToCart(product)">Buy Now @ Rs.{{product.price}}</button>
+            <button type="button" class="custom-btn custom-btn-dark-pink" (click)="addProductToCart(product)"
+                aria-valuetext="Buy Now @
+            Rs.{{product.price}}">Buy Now @
+                Rs.{{product.price}}</button>
         </article>
     </div>
 </section>

@@ -1,10 +1,13 @@
 <section class="product-category-container" *ngFor="let category of categories">
     <figure>
-        <img src="{{category.imageUrl}}" alt="{{category.name}}" title="{{category.name}}"/>
+        <img src="{{category.imageUrl}}" alt="{{category.name}}" title="{{category.name}}" />
     </figure>
     <article>
         <h2>{{category.name}}</h2>
         <p>{{category.description}}</p>
-        <button type="button" class="custom-btn custom-btn-dark-pink" (click)="goToProductsPage(category.id)">Explore {{category.key |  titlecase}}</button>
+        <button type="button" class="custom-btn custom-btn-dark-pink" (click)="goToProductsPage(category.id)"
+            aria-valuetext="Explore
+        {{category.key | titlecase}}">Explore
+            {{category.key | titlecase}}</button>
     </article>
 </section>

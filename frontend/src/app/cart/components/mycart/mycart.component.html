@@ -9,7 +9,7 @@
     </ng-container>
     <ng-container *ngIf="listofProductsInCart.length !== 0">
         <div class="my-cart-item-count-container">
-            <h2>My Cart</h2><label>({{listofProductsInCart.length}} item)</label>
+            <h2>My Cart</h2><label aria-live="polite">({{listofProductsInCart.length}} item)</label>
         </div>
         <div class="my-cart" *ngFor="let product of listofProductsInCart">
             <figure>
@@ -38,7 +38,7 @@
             <p>Promo code can be applied on payment page
             <p>
                 <button type="button" class="custom-btn custom-btn-dark-pink checkout-btn"
-                    (click)="goToCheckoutPage()"><span>Proceed to Checkout</span> <span>Rs.
+                    (click)="goToCheckoutPage()" aria-valuetext="Proceed to Checkout Rs. {{totalProductsPrice}} /-"><span>Proceed to Checkout</span> <span>Rs.
                         {{totalProductsPrice}}/- ></span></button>
         </article>
     </ng-container>
