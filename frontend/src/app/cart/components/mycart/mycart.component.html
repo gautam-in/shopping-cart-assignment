@@ -9,7 +9,7 @@
         <article>
             <h2>{{product.name}}</h2>
             <div>
-                <i class="fas fa-plus-square"></i> 1 <i class="fas fa-minus-square"></i> X Rs. {{product.price}} /-
+                <i class="fas fa-plus-square" (click)="increaseQuantity(product)"></i> 1 <i class="fas fa-minus-square"></i> X Rs. {{product.price}} /-
                 <p>Rs.{{product.price}}/-</p>
             </div>
         </article>

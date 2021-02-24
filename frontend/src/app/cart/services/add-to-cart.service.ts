@@ -11,7 +11,7 @@ import { baseAPIPath } from 'src/config';
 export class AddToCartService {
   constructor(private http: HttpClient) {}
   private numberOfProductsInCart = new BehaviorSubject<ProductsListDTO[]>([]);
-  numberOfproductsInCart$ = this.numberOfProductsInCart.asObservable();
+  productsInCart$ = this.numberOfProductsInCart.asObservable();
   addToCartSendDataToAPI$() {
     return of({
       response: 'Success',
@@ -37,6 +37,10 @@ export class AddToCartService {
         this.numberOfProductsInCart.next(updatedValue)
       }
     })
+  }
+
+  removeProductsFromCart(productId: string) {
+    
   }
 
   resetCart() {

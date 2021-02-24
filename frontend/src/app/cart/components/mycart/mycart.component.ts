@@ -15,15 +15,19 @@ export class MycartComponent implements OnInit {
   listofProductsInCart: ProductsListDTO[] = [];
   totalProductsPrice: number = 0; 
   ngOnInit(): void {
-   this.addToCartService.numberOfproductsInCart$.subscribe(data => {
+   this.addToCartService.productsInCart$.subscribe(data => {
       this.listofProductsInCart = [...data];
+      this.listofProductsInCart.forEach(data => {
+        this.totalProductsPrice = data.price + this.totalProductsPrice;
+      });
    });
-   
-  this.listofProductsInCart.forEach(data => {
-    this.totalProductsPrice = data.price + this.totalProductsPrice;
-  });
   }
 
+
+  increaseQuantity(product: ProductsListDTO) {
+    console.log('increasing', product);
+    this.addToCartService.addProductsInCart(product);
+  }
 
   goToCheckoutPage() {
     this.router.navigate(['/checkout']);
