@@ -24,13 +24,20 @@ export class MycartComponent implements OnInit {
   }
 
 
-  increaseQuantity(product: ProductsListDTO) {
-    console.log('increasing', product);
+  addProduct(product: ProductsListDTO) {
     this.addToCartService.addProductsInCart(product);
   }
 
+  removeProduct(product: ProductsListDTO) {
+    this.addToCartService.removeProductsFromCart(product);
+  }  
+
   goToCheckoutPage() {
     this.router.navigate(['/checkout']);
+  }
+
+  goToHomePage() {
+    this.router.navigate(['/home']);
   }
 
 }

@@ -4,7 +4,6 @@ section {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    background-color: $color-light-grey;
     .my-cart-item-count-container {
         background-color: $color-white;
     }
@@ -66,4 +65,17 @@ section {
         font-size: 15px;
         font-weight: bolder;
     }
+}
+
+.cart-empty {
+    text-align: center;
+    padding: 10px;
+    background-color: $color-white;
+    margin: 75% 10px;
+}
+
+.cart-empty + button {
+    margin: 0 auto 10px;
+    width: 90%;
+    text-align: center;
 }

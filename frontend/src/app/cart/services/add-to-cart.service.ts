@@ -12,6 +12,7 @@ export class AddToCartService {
   constructor(private http: HttpClient) {}
   private numberOfProductsInCart = new BehaviorSubject<ProductsListDTO[]>([]);
   productsInCart$ = this.numberOfProductsInCart.asObservable();
+
   addToCartSendDataToAPI$() {
     return of({
       response: 'Success',
@@ -30,17 +31,27 @@ export class AddToCartService {
   }
 
   addProductsInCart(product: ProductsListDTO) {
-    this.addToCartSendDataToAPI$().subscribe(data => {
-      if(data.response === "Success"){
+    this.addToCartSendDataToAPI$().subscribe((data) => {
+      if (data.response === 'Success') {
         const currentValue = this.numberOfProductsInCart.value;
         const updatedValue = [...currentValue, product];
-        this.numberOfProductsInCart.next(updatedValue)
+        this.numberOfProductsInCart.next(updatedValue);
       }
-    })
+    });
   }
 
-  removeProductsFromCart(productId: string) {
-    
+  removeProductsFromCart(product: ProductsListDTO) {
+    let changedValue: any;
+    this.numberOfProductsInCart.subscribe((productList) => {
+      const index = productList.indexOf(product);
+      if(index > -1) {
+        productList.splice(index, 1);
+      }
+      changedValue = [...productList];
+      // productList.filter((product) => productList.pop(productId))
+      // changedValue = productList.filter((product) => product.id !== productId);
+    });
+    this.numberOfProductsInCart.next([...changedValue]);
   }
 
   resetCart() {
