@@ -2,8 +2,13 @@
     margin-top: 20px;
 }
 section {
+    justify-content: center;
     article {
         line-height: 2;
+    }
+    form {
+        flex-basis: 20%;
+        margin-left: 40px;
     }
     margin: 10px;
 }

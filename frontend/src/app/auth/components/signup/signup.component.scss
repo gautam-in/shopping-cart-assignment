@@ -1,9 +1,12 @@
 section {
+    justify-content: center;
+    margin: 10px;
     article {
         line-height: 1.25;
+        margin-right: 20px;
     }
-    margin: 10px;
-}
-.bazar-signup-form {
-    margin-top: 20px;
+    .bazar-signup-form {
+        margin-top: 20px;
+        flex-basis: 20%;
+    }
 }

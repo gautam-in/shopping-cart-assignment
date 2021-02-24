@@ -55,3 +55,10 @@ $color-light-grey: #e2e2e2;
         color: red;
     }
 }
+
+@media (min-width: 1024px) {
+    .custom-flex-container {
+        display: flex;
+        flex-direction: row;
+    }  
+} 
