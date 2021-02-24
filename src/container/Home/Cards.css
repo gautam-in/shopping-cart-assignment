@@ -1,0 +1,64 @@
+#btn-left {
+    text-transform: none;
+    border-radius: 0;
+    font-family: Dodis;
+}
+
+#btn-right {
+    text-transform: none;
+    border-radius: 0;
+    font-family: Dodis;
+}
+
+.btn-div {
+    text-transform: none;
+}
+
+#desc {
+    font-size: 14px;
+}
+
+.left-content {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(1, 20% 80%);
+}
+
+.right-content {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(1, 70% 30%);
+}
+
+.card-title {
+    font-size: 20px;
+}
+
+.para, .btn-div {
+    text-align: center;
+}
+
+#right-img, #left-img {
+    max-width: 300px;
+    width: auto;
+}
+
+@media only screen and (max-width:1200px) {
+    .left-content {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(1, 30% 70%);
+    }
+    .right-content {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(1, 70% 30%);
+    }
+    #right-img, #left-img {
+        max-width: 100%;
+        width: auto;
+    }
+    .left-content p, .right-content p {
+        font-size: 12px
+    }
+}

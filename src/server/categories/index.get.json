@@ -1,12 +1,12 @@
 [
   {
-    "name": "Beverages",
-    "key": "beverages",
-    "description": "Our beverage department will ensure your fridge is always fully stocked. Shop for soda, juice, beer and more. ",
+    "name": "Fruits & Vegetables",
+    "key": "fruit-and-veg",
+    "description": "A variety of fresh fruits and vegetables.",
     "enabled": true,
-    "order": 3,
-    "imageUrl": "/static/images/category/beverages.png",
-    "id": "5b675e5e5936635728f9fc30"
+    "order": 1,
+    "imageUrl": "/static/images/category/fruits.png",
+    "id": "5b6899953d1a866534f516e2"
   },
   {
     "name": "Bakery Cakes and Dairy",
@@ -16,6 +16,15 @@
     "order": 2,
     "imageUrl": "/static/images/category/bakery.png",
     "id": "5b6899123d1a866534f516de"
+  },
+  {
+    "name": "Beverages",
+    "key": "beverages",
+    "description": "Our beverage department will ensure your fridge is always fully stocked. Shop for soda, juice, beer and more. ",
+    "enabled": true,
+    "order": 3,
+    "imageUrl": "/static/images/category/beverages.png",
+    "id": "5b675e5e5936635728f9fc30"
   },
   {
     "name": "Beauty and Hygiene",
@@ -34,22 +43,5 @@
     "order": 5,
     "imageUrl": "/static/images/category/baby.png",
     "id": "5b6899683d1a866534f516e0"
-  },
-  {
-    "name": "Seafood",
-    "key": "seafood",
-    "description": "Great place to buy fresh seafood.",
-    "enabled": false,
-    "order": -1,
-    "id": "5b68997d3d1a866534f516e1"
-  },
-  {
-    "name": "Fruits & Vegetables",
-    "key": "fruit-and-veg",
-    "description": "A variety of fresh fruits and vegetables.",
-    "enabled": true,
-    "order": 1,
-    "imageUrl": "/static/images/category/fruits.png",
-    "id": "5b6899953d1a866534f516e2"
   }
 ]

@@ -1,0 +1,131 @@
+.nav-bar {
+    display: grid;
+    grid-template-columns: repeat(1, 40% 40% auto);
+    height: 100%;
+    flex-direction: column;
+}
+
+.menu {
+    display: flex;
+    margin-top: 8%;
+    margin-left: 11%
+}
+
+#products {
+    margin-left: 30%;
+}
+
+#logo {
+    margin-top: 1.5%;
+    max-width: 180px;
+    width: auto;
+    margin-left: 35%;
+}
+
+.other-links {
+    margin-top: 3%;
+    display: flex;
+}
+
+.header {
+    position: static;
+    box-shadow: 0 8px 6px -6px black;
+    width: 100% !important
+}
+
+.MuiGrid-spacing-xs-3>.MuiGrid-item {
+    padding: 0px !important;
+}
+
+#items-count {
+    color: 'black';
+    font-size: 0.9rem;
+    font-family: Dosis;
+}
+
+#icon-btn {
+    background-color: #e7e7ec;
+    max-width: 100px;
+    max-height: 100%;
+    border-radius: 0%;
+    border: none;
+    margin-top: 7%;
+}
+
+.cart {
+    width: 30%;
+    height: 85%;
+    background-color: white;
+    outline: 0;
+    margin: auto;
+    margin-top: 6%;
+    margin-left: 52.8%;
+}
+
+.cart-items {
+    height: '72%';
+    overflow: 'hidden';
+    overflow-y: 'auto';
+}
+
+#minus-btn {
+    border-radius: 50%;
+    border: none;
+    background-color: #f50057;
+    color: white;
+    display: block;
+    height: 100%;
+    width: 120%;
+    outline: none;
+}
+
+#plus-btn {
+    border-radius: 50%;
+    border: none;
+    background-color: #f50057;
+    color: white;
+    display: block;
+    height: 100%;
+    width: 80%;
+    outline: none
+}
+
+@media only screen and (max-width:600px) {
+    .menu {
+        display: none;
+    }
+    .other-links {
+        display: none;
+    }
+    .nav-bar {
+        display: grid;
+        grid-template-columns: repeat(1, 50% 0% 50%);
+    }
+    #logo {
+        margin-left: 0%;
+        max-width: 100px;
+        width: auto;
+    }
+    #icon-btn {
+        background-color: #e7e7ec;
+        margin-left: 50%;
+        margin-top: 0%;
+    }
+    .cart {
+        width: 98%;
+        height: 100%;
+        margin-top: 0%;
+        margin-left: 0%;
+    }
+
+    #plus-btn {
+        border-radius: 50%;
+        border: none;
+        background-color: #f50057;
+        color: white;
+        display: block;
+        height: 100%;
+        width: 90%;
+        outline: none
+    }
+}

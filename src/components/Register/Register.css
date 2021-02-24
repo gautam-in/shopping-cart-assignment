@@ -1,0 +1,26 @@
+.container {
+    margin-top: 2%
+}
+
+.register-div {
+    display: grid;
+    grid-template-columns: 0.8fr 1.3fr 2fr 0.5fr;
+}
+
+.text-field input {
+    margin-bottom: 7%;
+    font-family: Dosis;
+    width: 54%;
+    border: none;
+    border-bottom: 1px solid black;
+    padding: 5px 10px;
+    outline: none;
+}
+
+#signup-btn {
+    margin-bottom: 5%;
+    font-family: Dosis;
+    width: 60%;
+    text-transform: none;
+    border-radius: 0%;
+}

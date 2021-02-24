@@ -1,0 +1,17 @@
+.home-container {
+    display: grid;
+    grid-template-columns: 1fr 7fr 1fr;
+}
+
+.carousel-container {
+    margin-top: 2%;
+    display: grid;
+    grid-template-columns: 1fr 7fr 1fr;
+    
+}
+
+@media only screen and (max-width:600px){
+    .home-container{
+        grid-template-columns: repeat(1,0% 100% 0%);
+    }
+}

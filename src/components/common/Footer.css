@@ -1,0 +1,9 @@
+.footer {
+    width: 100%;
+    background-color: #e7e7ec;
+    padding: 0.01%;
+}
+
+.footer>p {
+    margin-left: 16%;
+}

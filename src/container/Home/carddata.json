@@ -1,0 +1,37 @@
+[
+    {
+        "cardContentH5": "Fruits and Vegetables",
+        "cardContentSubtitle": "A variety of fresh fruits and vegetables.",
+        "image": "https://img.freepik.com/free-photo/collection-fruits-vegetables-isolated_135427-230.jpg?size=626&ext=jpg",
+        "mediaPosition": "left",
+        "buttonText": "Explore fruit-and-veg"
+    },
+    {
+        "cardContentH5": "Bakery Cakes and Dairy",
+        "cardContentSubtitle": "The best cup cakes, cookies, pies, cheesecakes, fresh bread and more.",
+        "image": "https://www.seekpng.com/png/full/27-276206_bread-png.png",
+        "mediaPosition": "right",
+        "buttonText": "Explore bakery-cakes-dairy"
+    },
+    {
+        "cardContentH5": "Beverages",
+        "cardContentSubtitle": "Our beverages department will ensure your fridge is always fully stocked.",
+        "image": "https://i4.progressivedigitalmedia.com/3/2020-08-26-11-06-trussbeverageportfolio_cropped_90.jpg",
+        "mediaPosition": "left",
+        "buttonText": "Explore beverages"
+    },
+    {
+        "cardContentH5": "Beauty and Hygiene",
+        "cardContentSubtitle": "Buy beauty and personal care products.",
+        "image": "https://d1dlh1v05qf6d3.cloudfront.net/information/uploads/2018/03/Nivea-products.png",
+        "mediaPosition": "right",
+        "buttonText": "Explore beauty-hygiene"
+    },
+    {
+        "cardContentH5": "Baby Care",
+        "cardContentSubtitle": "Shop online for Baby Products, Diapers, Skin Care Products,etc.",
+        "image": "https://www.babycouture.in/blog/wp-content/uploads/2016/02/baby-care-tips-9.jpg",
+        "mediaPosition": "left",
+        "buttonText": "Explore baby-care"
+    }
+]
