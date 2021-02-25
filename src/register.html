@@ -42,7 +42,7 @@
             <div id="cart-modal">
                 <header class="p-2">
                     <h3>My Cart<span class="total-in-cart"></span></h3>
-                    <button type="button" class="btn btn-link close-cart">&#10799;</button>
+                    <button aria-label="Close" type="button" class="btn btn-link close-cart">&#10799;</button>
                 </header>
                 <div class="cart-body">
 
@@ -59,29 +59,44 @@
             </div>
         </div>
     </nav>
-    <div class="container flexbox-center mt-5">
+    <div class="container flexbox-center my-5">
         <div class="flex-item mt-4 mr-4">
             <h3><strong>Signup</strong></h3>
             <p>We do not share personal details with anyone.</p>
         </div>
         <div class="flex-item ml-5">
-            <form action="/index.html" method="post">
-                <input type="text" id="fname" name="fname" placeholder=" ">
+            <form id="registerForm" name="registerForm">
+                <!-- action="index.html" method="POST" -->
+                <input type="text" id="fname" name="fname" placeholder=" " required 
+                aria-required="true" aria-describedby="fname-error">
                 <label for="fname">First Name</label>
-                <input type="text" id="lname" name="lname" placeholder=" ">
+                <div class="text-danger" id="fname-error" role="alert"></div>
+                <input type="text" id="lname" name="lname" placeholder=" " required 
+                aria-required="true" aria-describedby="lname-error">
                 <label for="lname">Last Name</label>
-                <input type="text" id="email" name="email" placeholder=" ">
+                <div class="text-danger" id="lname-error" role="alert"></div>
+                <input type="text" id="email" name="email" placeholder=" " required 
+                aria-required="true" aria-describedby="email-error">
                 <label for="email">Email</label>
-                <input type="password" id="password" name="password" placeholder=" ">
+                <div class="text-danger" id="email-error" role="alert"></div>
+                <input type="password" id="password" name="password" placeholder=" " required 
+                aria-required="true" aria-describedby="password-error">
                 <label for="password">Password</label>
-                <input type="password" id="confirm-password" name="confirm-password" placeholder=" ">
+                <div class="text-danger" id="password-error" role="alert"></div>
+                <input type="password" id="confirm-password" name="confirmPassword" placeholder=" " required 
+                aria-required="true" aria-describedby="confirm-password-error">
                 <label for="confirm-password">Confirm Password</label>
+                <div class="text-danger" id="confirm-password-error" role="alert"></div>
                 <button class="btn btn-danger btn-block" type="submit">Signup</button>
             </form>
         </div>
     </div>
 
-    <script src="scripts/login.js"></script>
+    <footer class="main-footer" role="contentinfo">
+        Copyright &#169; 2011-2018 Sabka Bazaar Grocery Supplies Pvt Ltd
+    </footer>
+
+    <script src="scripts/register.js"></script>
 
 </body>
 </html>

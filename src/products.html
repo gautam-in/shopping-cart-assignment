@@ -13,7 +13,7 @@
 
 <body class="page-body">
     <div id="opacity-element"></div>
-    <nav class="navbar navbar-expand-lg navbar-light">
+    <nav class="navbar navbar-expand-lg navbar-light" role="navigation">
         <img src="../static/images/logo.png" class="d-inline-block align-top" alt="">
         </button>
         <div class="collapse navbar-collapse ml-5 pt-3" id="navbarNavDropdown">
@@ -42,7 +42,7 @@
             <div id="cart-modal">
                 <header class="p-2">
                     <h3>My Cart<span class="total-in-cart"></span></h3>
-                    <button type="button" class="btn btn-link close-cart">&#10799;</button>
+                    <button aria-label="Close" type="button" class="btn btn-link close-cart">&#10799;</button>
                 </header>
                 <div class="cart-body">
 
@@ -60,7 +60,7 @@
         </div>
     </nav>
 
-    <div class="container-fluid">
+    <div class="container-fluid" role="main">
         <section class="products">
 
             <div class="row">
@@ -75,6 +75,11 @@
             </div>
         </section>
     </div>
+
+    <footer class="main-footer" role="contentinfo">
+        Copyright &#169; 2011-2018 Sabka Bazaar Grocery Supplies Pvt Ltd
+    </footer>
+
     <script src="scripts/products.js"></script>
 
 </body>

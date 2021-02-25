@@ -1,3 +1,4 @@
+import 'regenerator-runtime/runtime';
 import {
     getCartCount, setCartCount, renderCartQuantity, setCartItems,
     addItemCartSession, openCart, closeCart
@@ -19,11 +20,12 @@ document.addEventListener("DOMContentLoaded", (event) => {
     const shoppingButton = document.querySelector('.shopping-button');
     shoppingButton.addEventListener('click', closeCart);
 
-    const loginForm = document.getElementById('loginForm');
-    loginForm.addEventListener('submit', (e) => {
+    const registerForm = document.getElementById('registerForm');
+    registerForm.addEventListener('submit', (e) => {
         e.preventDefault();
         let emailValid = false;
         let passwordValid = false;
+        let confirmPasswordValid = false;
         const email = e.target.elements.email;
         const emailError = document.querySelector('#email-error');
         if (validator.validateEmail(email.value)) {
@@ -55,7 +57,19 @@ document.addEventListener("DOMContentLoaded", (event) => {
             password.setAttribute("aria-invalid", "true");
             passwordValid = false;
         }
-        if (emailValid && passwordValid) {
+        const confirmPassword = e.target.elements.confirmPassword;
+        const confirmPasswordError = document.querySelector('#confirm-password-error');
+        if (password.value === confirmPassword.value) {
+            confirmPasswordError.textContent = '';
+            confirmPassword.setAttribute("aria-invalid", "false");
+            confirmPasswordValid = true;
+        }
+        else {
+            confirmPasswordError.textContent = 'Passwords do not match';
+            confirmPassword.setAttribute("aria-invalid", "true");
+            confirmPasswordValid = false;
+        }
+        if (emailValid && passwordValid && confirmPasswordValid) {
             window.location = 'index.html';
         }
     });

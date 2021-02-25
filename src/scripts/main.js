@@ -3,23 +3,19 @@ import {
     getCartCount, setCartCount, renderCartQuantity, setCartItems,
     addItemCartSession, openCart, closeCart
 } from './cart';
-import { WebStorage } from '../helpers/webStorage';
-import { ApiInteraction } from '../helpers/apiInteraction';
+import { SessionStorageService } from '../helpers/webStorage';
+import { EcommService } from '../helpers/ecommService';
 
 function getCategories() {
-    let data = webStorage.getItemSessionStore('categories');
+    let data = sessionStorageService.getItem('categories');
     if (!data) {
-        apiInteraction.getCategories().then(
+        ecommService.getCategories().then(
             data => {
                 data.sort((a, b) => a.order - b.order);
-                webStorage.setItemSessionStore('categories', data, true);
+                sessionStorageService.setItem('categories', data, true);
                 renderCategories(data);
             }
         );
-        // data = await fetch('http://localhost:5000/categories');
-        // data = await data.json();
-        // data.sort((a, b) => a.order - b.order);
-        // webStorage.setItemSessionStore('categories', data, true);
     }
     else {
         data = JSON.parse(data);
@@ -39,7 +35,7 @@ function renderCategories(data) {
             image.src = element.imageUrl;
             image.height = '200';
             image.alt = element.key;
-            imgDiv.append(image);
+            imgDiv.appendChild(image);
             const textDiv = document.createElement('div');
             textDiv.classList.add('flexbox-vertical-horizontal-center', 'px-3');
             const h3 = document.createElement('h3');
@@ -51,44 +47,31 @@ function renderCategories(data) {
             button.type = 'button';
             button.id = element.id;
             button.textContent = `Explore ${element.key}`;
-            textDiv.append(h3, p, button);
+            textDiv.appendChild(h3);
+            textDiv.appendChild(p);
+            textDiv.appendChild(button);
             if (odd) {
-                divElement.append(imgDiv, textDiv);
+                divElement.appendChild(imgDiv), 
+                divElement.appendChild(textDiv);
             }
             else {
-                divElement.append(textDiv, imgDiv);
+                divElement.appendChild(textDiv);
+                divElement.appendChild(imgDiv);
             }
-            mainDiv.append(divElement);
+            mainDiv.appendChild(divElement);
             odd = !odd;
         }
     }
-    // buttonClickInit();
 }
-
-/*
-function buttonClickInit() {
-    const exploreButtons = document.querySelectorAll('.explore-button');
-
-    exploreButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            webStorage.setItemSessionStore('categorySelected', button.id);
-            window.location = 'products.html';
-        });
-    });
-}
-*/
 
 function getCarouselItems() {
-    apiInteraction.getBanners().then(
+    ecommService.getBanners().then(
         data => renderCarousel(data)
     ).catch(err => console.log(err));
 }
 
 function renderCarousel(data) {
-    // let data = await fetch('http://localhost:5000/banners');
-    // data = await data.json();
     const carousel = document.querySelector('.carousel');
-    // carousel.innerHTML = '';
     data.forEach(element => {
         if (element.isActive) {
             const div = document.createElement('div');
@@ -97,17 +80,20 @@ function renderCarousel(data) {
             img.src = element.bannerImageUrl;
             img.id = element.id;
             img.alt = element.bannerImageAlt;
-            div.append(img);
-            carousel.append(div);
+            div.appendChild(img);
+            carousel.appendChild(div);
         }
     })
 }
 
-const webStorage = new WebStorage();
-const apiInteraction = new ApiInteraction();
+const sessionStorageService = new SessionStorageService();
+const ecommService = new EcommService();
+
+// window.onload = () => getCarouselItems();
 getCarouselItems();
 
 document.addEventListener("DOMContentLoaded", (event) => {
+
     getCategories();
     renderCartQuantity();
 
@@ -125,12 +111,11 @@ document.addEventListener("DOMContentLoaded", (event) => {
     categoryRow.addEventListener('click', (e) => {
         if (e.target.tagName === 'BUTTON' && e.target.classList.contains('explore-button')) {
             const button = e.target;
-            webStorage.setItemSessionStore('categorySelected', button.id);
+            sessionStorageService.setItem('categorySelected', button.id);
             window.location = 'products.html';
         }
     });
 });
 
-// getCarouselItems();
 
 

@@ -3,28 +3,22 @@ import {
     getCartCount, setCartCount, renderCartQuantity, setCartItems,
     addItemCartSession, openCart, closeCart
 } from './cart';
-import { WebStorage } from '../helpers/webStorage';
-import { ApiInteraction } from '../helpers/apiInteraction';
+import { SessionStorageService } from '../helpers/webStorage';
+import { EcommService } from '../helpers/ecommService';
 
 let productsData = [];
-// let categoryLinks = null;
-// let buyNowButtons = null;
 const categoryState = {};
 
 function getCategories() {
-    let data = webStorage.getItemSessionStore('categories');
+    let data = sessionStorageService.getItem('categories');
     if (!data) {
-        apiInteraction.getCategories().then(
+        ecommService.getCategories().then(
             data => {
                 data.sort((a, b) => a.order - b.order);
-                webStorage.setItemSessionStore('categories', data, true);
+                sessionStorageService.setItem('categories', data, true);
                 renderCategories(data);
             }
         ).catch(err => console.log(err));
-        // data = await fetch('http://localhost:5000/categories');
-        // data = await data.json();
-        // data.sort((a, b) => a.order - b.order);
-        // webStorage.setItemSessionStore('categories', data, true);
     }
     else {
         data = JSON.parse(data);
@@ -43,29 +37,18 @@ function renderCategories(data) {
             anchorElement.href = '#';
             anchorElement.classList.add('category-link');
             anchorElement.id = element.id;
-            divElement.append(anchorElement);
-            categoriesPane.append(divElement);
+            divElement.appendChild(anchorElement);
+            categoriesPane.appendChild(divElement);
             categoryState[element.id] = -1;
         }
     }
-    // categoryLinksClickInit();
 }
 
 function getProducts() {
-    // let data = await fetch('http://localhost:5000/products');
-    // productsData = await data.json();
-    // const categorySelected = webStorage.getItemSessionStore('categorySelected');
-    // if (categorySelected) {
-    //     filterProducts(categorySelected);
-    // }
-    // else {
-    //     renderProducts(productsData);
-    // }
-
-    apiInteraction.getProducts().then(
+    ecommService.getProducts().then(
         data => {
             productsData = data;
-            const categorySelected = webStorage.getItemSessionStore('categorySelected');
+            const categorySelected = sessionStorageService.getItem('categorySelected');
             if (categorySelected) {
                 filterProducts(categorySelected);
             }
@@ -101,22 +84,15 @@ function renderProducts(data) {
         button.type = 'button';
         button.id = element.id;
         button.textContent = `Buy Now`;
-        priceBuyDiv.append(priceDiv, button);
-        divElement.append(h4, image, prodDescription, priceBuyDiv);
-        productsRow.append(divElement);
-    });
-    // buyNowClickInit();
-}
-
-/*
-function categoryLinksClickInit() {
-    categoryLinks = document.querySelectorAll('.category-link');
-
-    categoryLinks.forEach(link => {
-        link.addEventListener('click', () => { filterProducts(link.id) });
+        priceBuyDiv.appendChild(priceDiv);
+        priceBuyDiv.appendChild(button);
+        divElement.appendChild(h4);
+        divElement.appendChild(image);
+        divElement.appendChild(prodDescription);
+        divElement.appendChild(priceBuyDiv);
+        productsRow.appendChild(divElement);
     });
 }
-*/
 
 function filterProducts(id) {
     const category = document.getElementById(id);
@@ -132,37 +108,16 @@ function filterProducts(id) {
     categoryState[id] *= -1;
 }
 
-/*
-function buyNowClickInit() {
-    buyNowButtons = document.querySelectorAll('.buy-now');
+window.onbeforeunload = () => sessionStorageService.removeItem('categorySelected');
 
-    buyNowButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            // let data = await fetch('http://localhost:5000/addToCart/', {
-            //     method: "POST",
-            //     body: JSON.stringify({ productId: button.id })
-            // });
-            // data = await data.json();
-            apiInteraction.addToCart(button.id)
-                .then(data => {
-                    if (data.response === 'Success') {
-                        alert(data.responseMessage);
-                        setCartCount(1);
-                        setCartItems(button.id, productsData)
-                        renderCartQuantity();
-                    }
-                }).catch(err => console.log(err));
-        });
-    });
-}
-*/
-
-window.onbeforeunload = () => webStorage.removeItemSessionStore('categorySelected');
-
-const webStorage = new WebStorage();
-const apiInteraction = new ApiInteraction();
+const sessionStorageService = new SessionStorageService();
+const ecommService = new EcommService();
 
 document.addEventListener("DOMContentLoaded", (event) => {
+    getCategories();
+    getProducts();
+    renderCartQuantity();
+
     const cartButton = document.querySelector('.cart-button');
     cartButton.addEventListener('click', openCart);
 
@@ -186,7 +141,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     productsRow.addEventListener('click', (e) => {
         if (e.target.tagName === 'BUTTON' && e.target.classList.contains('buy-now')) {
             const button = e.target;
-            apiInteraction.addToCart(button.id)
+            ecommService.addToCart(button.id)
                 .then(data => {
                     if (data.response === 'Success') {
                         // alert(data.responseMessage);
@@ -198,9 +153,3 @@ document.addEventListener("DOMContentLoaded", (event) => {
         }
     });
 });
-
-
-
-getCategories();
-getProducts();
-renderCartQuantity();

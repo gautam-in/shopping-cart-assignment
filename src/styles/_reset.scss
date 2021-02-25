@@ -87,9 +87,9 @@ video {
     padding: 0;
     border: 0;
     font-size: 100%;
-    font: inherit;
+    // font: inherit;
     vertical-align: baseline;
-    font-family: "Dosis", sans-serif;
+    // font-family: "Dosis", sans-serif;
 }
 // HTML5 display-role reset for older browsers
 article,
@@ -108,10 +108,10 @@ section {
 body {
     line-height: 1;    
 }
-ol,
-ul {
-    list-style: none;
-}
+// ol,
+// ul {
+//     list-style: none;
+// }
 blockquote,
 q {
     quotes: none;

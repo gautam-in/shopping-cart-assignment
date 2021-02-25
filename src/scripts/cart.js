@@ -1,25 +1,25 @@
-import { WebStorage } from '../helpers/webStorage';
+import { SessionStorageService } from '../helpers/webStorage';
 
 function getCartCount() {
-    return webStorage.getItemSessionStore('cartCount');
+    return sessionStorageService.getItem('cartCount');
 }
 
 function setCartCount(coefficient) {
-    let cartCount = webStorage.getItemSessionStore('cartCount');
+    let cartCount = sessionStorageService.getItem('cartCount');
     if (!cartCount) {
         if (coefficient === 1) {
-            webStorage.setItemSessionStore('cartCount', 1);
+            sessionStorageService.setItem('cartCount', 1);
         }
         return;
     }
     else {
         cartCount = Number(cartCount) + coefficient;
         if (cartCount !== 0) {
-            webStorage.setItemSessionStore('cartCount', cartCount);
+            sessionStorageService.setItem('cartCount', cartCount);
         }
         else {
-            webStorage.removeItemSessionStore('cartCount');
-            webStorage.removeItemSessionStore('cartItems');
+            sessionStorageService.removeItem('cartCount');
+            sessionStorageService.removeItem('cartItems');
         }
     }
 }
@@ -31,7 +31,7 @@ function renderCartQuantity() {
 }
 
 function setCartItems(id, productsData = [], coefficient = 1) {
-    let cartItems = webStorage.getItemSessionStore('cartItems');
+    let cartItems = sessionStorageService.getItem('cartItems');
     if (cartItems) {
         cartItems = JSON.parse(cartItems);
         if (cartItems[id]) {
@@ -40,17 +40,17 @@ function setCartItems(id, productsData = [], coefficient = 1) {
             if (cartItems[id].inCart === 0) {
                 delete cartItems[id];
             }
-            webStorage.setItemSessionStore('cartItems', cartItems, true);
+            sessionStorageService.setItem('cartItems', cartItems, true);
         }
         else {
             cartItems = addItemCartSession(id, productsData, cartItems);
-            webStorage.setItemSessionStore('cartItems', cartItems, true);
+            sessionStorageService.setItem('cartItems', cartItems, true);
         }
     }
-    else if(coefficient === 1) {
+    else if (coefficient === 1) {
         cartItems = addItemCartSession(id, productsData, cartItems);
-        webStorage.setItemSessionStore('cartItems', cartItems, true);
-    }    
+        sessionStorageService.setItem('cartItems', cartItems, true);
+    }
 }
 
 function addItemCartSession(id, productsData, cartItems) {
@@ -101,16 +101,17 @@ function renderCartView() {
         noItems.textContent = 'No items in your cart';
         const favItems = document.createElement('p');
         favItems.textContent = 'Your favourite items are just a click away';
-        cartBody.append(noItems, favItems);
+        cartBody.appendChild(noItems);
+        cartBody.appendChild(favItems);
         promoCode.style.display = 'none';
         cartButtonContent.textContent = 'Start Shopping';
     }
     else {
         cartBody.style.backgroundColor = '#ecf0f1';
-        cartBody.style.height = '70%';
+        cartBody.style.height = '65%';
         cartButtonContent.textContent = 'Start Shopping';
         promoCode.style.display = 'block';
-        let cartItems = webStorage.getItemSessionStore('cartItems');
+        let cartItems = sessionStorageService.getItem('cartItems');
         cartItems = JSON.parse(cartItems);
         const row = document.createElement('div');
         row.classList.add('row', 'mx-0', 'my-4');
@@ -127,7 +128,8 @@ function renderCartView() {
             const img = document.createElement('img');
             img.src = value.imageURL;
             img.height = '100';
-            imgDiv.append(img);
+            img.alt = value.name;
+            imgDiv.appendChild(img);
             const details = document.createElement('div');
             details.classList.add('col-10', 'pl-4', 'flexbox-vertical-center');
             const strong = document.createElement('strong');
@@ -136,11 +138,13 @@ function renderCartView() {
             innerRow2.classList.add('flexbox-space-between');
             innerRow2.innerHTML =
                 `<div>
-                <button class="change-quantity btn btn-danger btn-sm" id="${value.id}-decrease">
+                <button class="change-quantity btn btn-danger btn-sm" id="${value.id}-decrease"
+                aria-label="Decrease quantity">
                     &#8722;
                 </button>
                 &nbsp;&nbsp;${value.inCart}&nbsp;&nbsp;
-                <button class="change-quantity btn btn-danger btn-sm" id="${value.id}-increase">
+                <button class="change-quantity btn btn-danger btn-sm" id="${value.id}-increase"
+                aria-label="Increase quantity">
                     &#43;
                 </button>
                 &nbsp;&nbsp;<span class="multiply">&#215;</span> ${value.price}
@@ -148,10 +152,12 @@ function renderCartView() {
             <div>
                 Rs. ${value.totalPrice}
             </div>`;
-            details.append(strong, innerRow2);
-            innerRow.append(imgDiv, details);
-            col.append(innerRow);
-            row.append(col);
+            details.appendChild(strong);
+            details.appendChild(innerRow2);
+            innerRow.appendChild(imgDiv)
+            innerRow.appendChild(details);
+            col.appendChild(innerRow);
+            row.appendChild(col);
 
             totalCartAmount += value.totalPrice;
             totalItems += value.inCart;
@@ -164,11 +170,14 @@ function renderCartView() {
         const cheapImg = document.createElement('img');
         cheapImg.classList.add('mx-3');
         cheapImg.src = '/static/images/lowest-price.png';
+        cheapImg.alt = `You won't find it cheaper anywhere`;
         const cheapBlockText = document.createElement('div');
         cheapBlockText.style.display = 'inline-block';
         cheapBlockText.innerText = "You won't find it cheaper anywhere";
-        cheapBlock.append(cheapImg, cheapBlockText);
-        cartBody.append(row, cheapBlock);
+        cheapBlock.appendChild(cheapImg);
+        cheapBlock.appendChild(cheapBlockText);
+        cartBody.appendChild(row);
+        cartBody.appendChild(cheapBlock);
 
         cartButtonContent.innerHTML =
             `
@@ -177,31 +186,8 @@ function renderCartView() {
         </div>
         <div>Rs. ${totalCartAmount} ></div>
         `;
-
-        // changeQuantityClickInit();
     }
 }
-
-/*
-function changeQuantityClickInit() {
-    const changeQuantity = document.querySelectorAll('.change-quantity');
-
-    changeQuantity.forEach(button => {
-        button.addEventListener('click', () => {
-            const id = button.id;
-            let idList = id.split('-');
-            let coefficient = 1;
-            if (idList[1] === 'decrease') {
-                coefficient = -1;
-            }
-            setCartCount(coefficient);
-            renderCartQuantity();
-            setCartItems(idList[0], [], coefficient);
-            renderCartView();
-        });
-    });
-}
-*/
 
 //Event delegation
 const cartBody = document.querySelector('.cart-body');
@@ -209,15 +195,15 @@ cartBody.addEventListener('click', (e) => {
     if (e.target.tagName === 'BUTTON' && e.target.classList.contains('change-quantity')) {
         const button = e.target;
         const id = button.id;
-            let idList = id.split('-');
-            let coefficient = 1;
-            if (idList[1] === 'decrease') {
-                coefficient = -1;
-            }
-            setCartCount(coefficient);
-            renderCartQuantity();
-            setCartItems(idList[0], [], coefficient);
-            renderCartView();
+        let idList = id.split('-');
+        let coefficient = 1;
+        if (idList[1] === 'decrease') {
+            coefficient = -1;
+        }
+        setCartCount(coefficient);
+        renderCartQuantity();
+        setCartItems(idList[0], [], coefficient);
+        renderCartView();
     }
 });
 
@@ -226,4 +212,4 @@ export {
     addItemCartSession, openCart, closeCart
 };
 
-const webStorage = new WebStorage();
+const sessionStorageService = new SessionStorageService();
