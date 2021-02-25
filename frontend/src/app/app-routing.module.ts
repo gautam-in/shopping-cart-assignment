@@ -1,3 +1,4 @@
+import { BlockRoutingModule } from './blocks/block-routing.module';
 import { HomeRoutingModule } from './home/home-routing.module';
 import { AuthRoutingModule } from './auth/auth-routing.module';
 import { AppComponent } from './app.component';
@@ -11,7 +12,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes), HomeRoutingModule, ProductRoutingModule, AuthRoutingModule, CartRoutingModule],
+  imports: [RouterModule.forRoot(routes), HomeRoutingModule, ProductRoutingModule, AuthRoutingModule, CartRoutingModule, BlockRoutingModule],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
