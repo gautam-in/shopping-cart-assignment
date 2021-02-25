@@ -31,7 +31,9 @@ function renderCategories(data) {
     for (let element of data) {
         if (element.enabled) {
             const divElement = document.createElement('div');
-            divElement.classList.add('col-12', 'p-3', 'individual-category');
+            divElement.classList.add('col-12');
+            divElement.classList.add('p-3');
+            divElement.classList.add('individual-category');
             const anchorElement = document.createElement('a');
             anchorElement.textContent = element.name;
             anchorElement.href = '#';
@@ -64,7 +66,12 @@ function renderProducts(data) {
     productsRow.innerHTML = '';
     data.forEach(element => {
         const divElement = document.createElement('div');
-        divElement.classList.add('col-lg-3', 'col-md-6', 'col-sm-12', 'my-3', 'text-center', 'product-box');
+        divElement.classList.add('col-lg-3');
+        divElement.classList.add('col-md-6');
+        divElement.classList.add('col-sm-12');
+        divElement.classList.add('my-3');
+        divElement.classList.add('text-center');
+        divElement.classList.add('product-box');
         const h4 = document.createElement('h4');
         h4.textContent = element.name;
         const image = document.createElement('img');
@@ -72,7 +79,10 @@ function renderProducts(data) {
         image.height = '150';
         image.alt = element.name;
         const prodDescription = document.createElement('p');
-        prodDescription.classList.add('product-description', 'text-left', 'mt-2', 'px-2');
+        prodDescription.classList.add('product-description')
+        prodDescription.classList.add('text-left');
+        prodDescription.classList.add('mt-2');
+        prodDescription.classList.add('px-2');
         prodDescription.textContent = element.description;
         const priceBuyDiv = document.createElement('div');
         priceBuyDiv.classList.add('flexbox-space-between');
@@ -80,7 +90,10 @@ function renderProducts(data) {
         priceDiv.classList.add('mt-1');
         priceDiv.textContent = `MRP Rs. ${element.price}`;
         const button = document.createElement('button');
-        button.classList.add('btn', 'btn-danger', 'btn-sm', 'buy-now');
+        button.classList.add('btn')
+        button.classList.add('btn-danger')
+        button.classList.add('btn-sm')
+        button.classList.add('buy-now');
         button.type = 'button';
         button.id = element.id;
         button.textContent = `Buy Now`;

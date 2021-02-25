@@ -17,8 +17,10 @@
 }
 
 .change-quantity{
-    border-radius: 50%;
-    border-color: black;
+    font-size: 125%;
+    &:hover{
+        cursor: pointer;
+    }
 }
 
 .multiply{

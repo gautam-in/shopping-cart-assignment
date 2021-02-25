@@ -54,7 +54,8 @@ function setCartItems(id, productsData = [], coefficient = 1) {
 }
 
 function addItemCartSession(id, productsData, cartItems) {
-    let addedItem = productsData.find(x => x.id === id);
+    // let addedItem = productsData.find(x => x.id === id);
+    let addedItem = productsData.filter(x => x.id === id)[0];
     addedItem.inCart = 1;
     addedItem.totalPrice = addedItem.price;
     const newObj = { [id]: addedItem };
@@ -114,13 +115,18 @@ function renderCartView() {
         let cartItems = sessionStorageService.getItem('cartItems');
         cartItems = JSON.parse(cartItems);
         const row = document.createElement('div');
-        row.classList.add('row', 'mx-0', 'my-4');
+        row.classList.add('row');
+        row.classList.add('mx-0');
+        row.classList.add('my-4');
         row.style.backgroundColor = '#fff';
         let totalCartAmount = 0;
         let totalItems = 0;
-        Object.entries(cartItems).forEach(([key, value]) => {
+        // Object.entries(cartItems).forEach(([key, value]) => {
+        Object.keys(cartItems).forEach(key => {
+            let value = cartItems[key];
             const col = document.createElement('div');
             col.classList.add('col-12');
+            col.classList.add('my-1');
             const innerRow = document.createElement('div');
             innerRow.classList.add('row');
             const imgDiv = document.createElement('div');
@@ -131,27 +137,25 @@ function renderCartView() {
             img.alt = value.name;
             imgDiv.appendChild(img);
             const details = document.createElement('div');
-            details.classList.add('col-10', 'pl-4', 'flexbox-vertical-center');
+            details.classList.add('col-10')
+            details.classList.add('pl-4');
+            details.classList.add('flexbox-vertical-center');
             const strong = document.createElement('strong');
             strong.textContent = value.name;
             const innerRow2 = document.createElement('div');
             innerRow2.classList.add('flexbox-space-between');
             innerRow2.innerHTML =
-                `<div>
-                <button class="change-quantity btn btn-danger btn-sm" id="${value.id}-decrease"
-                aria-label="Decrease quantity">
-                    &#8722;
-                </button>
-                &nbsp;&nbsp;${value.inCart}&nbsp;&nbsp;
-                <button class="change-quantity btn btn-danger btn-sm" id="${value.id}-increase"
-                aria-label="Increase quantity">
-                    &#43;
-                </button>
-                &nbsp;&nbsp;<span class="multiply">&#215;</span> ${value.price}
-            </div>
-            <div>
-                Rs. ${value.totalPrice}
-            </div>`;
+               `<div>
+                   <i class="change-quantity icon ion-md-remove-circle" id="${value.id}-decrease"
+                        aria-label="Decrease quantity"></i>&nbsp;
+                    &nbsp;&nbsp;${value.inCart}&nbsp;&nbsp;
+                    <i class="change-quantity icon ion-md-add-circle" id="${value.id}-increase"
+                        aria-label="Increase quantity"></i>
+                    &nbsp;&nbsp;&nbsp;<span class="multiply">&#215;</span> ${value.price}
+                </div>
+                <div>
+                    Rs. ${value.totalPrice}
+                </div>`;
             details.appendChild(strong);
             details.appendChild(innerRow2);
             innerRow.appendChild(imgDiv)
@@ -165,7 +169,8 @@ function renderCartView() {
             totalInCart.textContent = ` (${totalItems} item(s))`;
         });
         const cheapBlock = document.createElement('div');
-        cheapBlock.classList.add('mx-3', 'mb-4');
+        cheapBlock.classList.add('mx-3');
+        cheapBlock.classList.add('mb-4');
         cheapBlock.style.backgroundColor = '#fff';
         const cheapImg = document.createElement('img');
         cheapImg.classList.add('mx-3');
@@ -192,7 +197,7 @@ function renderCartView() {
 //Event delegation
 const cartBody = document.querySelector('.cart-body');
 cartBody.addEventListener('click', (e) => {
-    if (e.target.tagName === 'BUTTON' && e.target.classList.contains('change-quantity')) {
+    if (e.target.classList.contains('change-quantity')) {
         const button = e.target;
         const id = button.id;
         let idList = id.split('-');

@@ -29,7 +29,8 @@ function renderCategories(data) {
     for (let element of data) {
         if (element.enabled) {
             const divElement = document.createElement('div');
-            divElement.classList.add('col-12', 'category-item');
+            divElement.classList.add('col-12');
+            divElement.classList.add('category-item');
             const imgDiv = document.createElement('div');
             const image = document.createElement('img');
             image.src = element.imageUrl;
@@ -37,17 +38,20 @@ function renderCategories(data) {
             image.alt = element.key;
             imgDiv.appendChild(image);
             const textDiv = document.createElement('div');
-            textDiv.classList.add('flexbox-vertical-horizontal-center', 'px-3');
+            textDiv.classList.add('flexbox-vertical-horizontal-center');
+            textDiv.classList.add('px-3');
             const h3 = document.createElement('h3');
             h3.textContent = element.name;
             const p = document.createElement('p');
             p.textContent = element.description;
             const button = document.createElement('button');
-            button.classList.add('btn', 'btn-danger', 'explore-button');
+            button.classList.add('btn');  //IE doesn't support multiple arguments
+            button.classList.add('btn-danger');
+            button.classList.add('explore-button');
             button.type = 'button';
             button.id = element.id;
             button.textContent = `Explore ${element.key}`;
-            textDiv.appendChild(h3);
+            textDiv.appendChild(h3); //append changed to appendChild for IE support
             textDiv.appendChild(p);
             textDiv.appendChild(button);
             if (odd) {
