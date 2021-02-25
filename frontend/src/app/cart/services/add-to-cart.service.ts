@@ -34,20 +34,14 @@ export class AddToCartService {
   addProductsInCart(productItem: CartItem) {
     let currentValue: any;
     let updatedValue: any;
-    let isProductPresentInCart = true;
-    console.log(productItem);
     this.addToCartSendDataToAPI$().subscribe((data) => {
       if (data.response === 'Success') {
         currentValue = this.numberOfProductsInCart.value;
-        console.log(currentValue, 'currentvalue');
         if (currentValue.length === 0) {
           updatedValue = [...currentValue, productItem];
           this.numberOfProductsInCart.next(updatedValue);
-          console.log('only first time');
         } else {
-          debugger;
           let index = [...currentValue].indexOf(productItem);
-          console.log(index, 'index')
           if (index > -1) {
             [...currentValue].forEach((product) => {
               if (
@@ -67,18 +61,26 @@ export class AddToCartService {
   }
 
   removeProductsFromCart(product: CartItem) {
-    console.log('remove');
-    // let changedValue: any;
-    // this.numberOfProductsInCart.subscribe((productList) => {
-    //   const index = productList.indexOf(product);
-    //   if(index > -1) {
-    //     productList.splice(index, 1);
-    //   }
-    //   changedValue = [...productList];
-    //   // productList.filter((product) => productList.pop(productId))
-    //   // changedValue = productList.filter((product) => product.id !== productId);
-    // });
-    // this.numberOfProductsInCart.next([...changedValue]);
+    let currentValue = this.numberOfProductsInCart.value;
+    let index = [...currentValue].indexOf(product);
+    if (index > -1) {
+      [...currentValue].forEach((productItem) => {
+        if (
+          productItem.id === product.id &&
+          productItem.category === product.category
+        ) {
+          if (product.count === 1) {
+            currentValue = [...currentValue].filter((p) => p.id !== product.id);
+            return;
+          }
+          --product.count;
+          product.totalPrice = product.totalPrice - product.price;
+        }
+      });
+      this.numberOfProductsInCart.next([...currentValue]);
+    } else {
+      console.log('product not found');
+    }
   }
 
   resetCart() {
