@@ -6,7 +6,7 @@
     justify-content: space-around;
     align-items: center;
     padding: 50px 5px;
-    box-shadow: 0px 5px 10px -6px black;
+    box-shadow: 0px 5px 5px -6px black;
     img {
         width: 200px;
         padding: 10px;
@@ -18,7 +18,25 @@
            @include margin-bottom(20px);
         }
     }
-}
-.product-category-container:nth-child(2n) {
+
+    &:nth-child(2n) {
     flex-direction: row-reverse;
+}
+
+
+}
+
+@media (min-width: 1024px) {
+    .product-category-container {
+        &:last-child {
+            box-shadow: none;
+        }
+        img {
+            width: 200px;
+            padding: 10px;
+        }
+        article {
+            flex-basis: auto;
+        }
+    }
 }

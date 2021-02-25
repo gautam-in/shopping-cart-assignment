@@ -1,3 +1,4 @@
+import { CartItem } from './../../cart-items.interface';
 import { AddToCartService } from './../../services/add-to-cart.service';
 import { Component, OnInit } from '@angular/core';
 import { ProductsListDTO } from 'src/app/products/models/products-list';
@@ -12,23 +13,24 @@ export class MycartComponent implements OnInit {
 
   constructor(private readonly addToCartService: AddToCartService,
               private readonly router: Router) { }
-  listofProductsInCart: ProductsListDTO[] = [];
+  listofProductsInCart: CartItem[] = [];
   totalProductsPrice: number = 0; 
   ngOnInit(): void {
    this.addToCartService.productsInCart$.subscribe(data => {
       this.listofProductsInCart = [...data];
-      this.listofProductsInCart.forEach(data => {
-        this.totalProductsPrice = data.price + this.totalProductsPrice;
+      this.listofProductsInCart.forEach(product => {
+        // To do: need to rectify logic here
+        this.totalProductsPrice = product.totalPrice + this.totalProductsPrice;
       });
    });
   }
 
 
-  addProduct(product: ProductsListDTO) {
+  addProduct(product: CartItem) {
     this.addToCartService.addProductsInCart(product);
   }
 
-  removeProduct(product: ProductsListDTO) {
+  removeProduct(product: CartItem) {
     this.addToCartService.removeProductsFromCart(product);
   }  
 

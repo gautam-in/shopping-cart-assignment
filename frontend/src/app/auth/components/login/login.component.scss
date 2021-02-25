@@ -6,9 +6,12 @@ section {
     article {
         line-height: 2;
     }
+    margin: 10px;
+}
+
+@media (min-width: 1024px) {
     form {
         flex-basis: 20%;
         margin-left: 40px;
     }
-    margin: 10px;
 }

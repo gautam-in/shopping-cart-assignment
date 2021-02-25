@@ -1,10 +1,11 @@
+@import '/src/styles.scss';
 .product-landing-page-container {
     display: flex;
     flex-direction: column;
 }
 .product-category-nav {
-    background-color: #c03e57;
-    color: white;
+    background-color: $color-dark-pink;
+    color: $color-white;
     padding: 5px 20px;
     height: 25px;
     line-height: 1.24;
@@ -21,4 +22,22 @@ aside {
 .no-product-found-placeholder {
     margin: 20px;
     text-align: center;
+}
+
+@media (min-width: 1024px) {
+    .product-landing-page-container {
+        display: flex;
+        flex-direction: row;
+    }
+    .product-category-nav {
+        height: auto;
+        background-color: $color-light-grey;
+        color: $color-black;
+        ul>li {
+            border-bottom: 1px solid $color-grey;
+        }
+        .fa {
+            display: none;
+        }
+    }   
 }

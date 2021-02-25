@@ -14,6 +14,7 @@ export class CartCounterComponent implements OnInit {
 
   ngOnInit(): void {
     this.addToCartService.productsInCart$.subscribe(data => {
+      console.log(data);
       this.productCountInCart = data.length;
     });
   }

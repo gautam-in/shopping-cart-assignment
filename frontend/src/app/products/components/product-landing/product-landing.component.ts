@@ -1,3 +1,4 @@
+import { CartItem } from './../../../cart/cart-items.interface';
 import { ProductsListDTO } from './../../models/products-list';
 import { ProductsDataService } from './../../services/products-data.service';
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
@@ -11,8 +12,8 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./product-landing.component.scss'],
 })
 export class ProductLandingComponent implements OnInit {
-  productsRenderList: ProductsListDTO[] = [];
-  allProductsList: ProductsListDTO[] = [];
+  productsRenderList: CartItem[] = [];
+  allProductsList: CartItem[] = [];
   categories: ProductCategoryDTO[] = [];
   showCategoryMenu: boolean = false;
   menuNavDirection: string = 'down';
