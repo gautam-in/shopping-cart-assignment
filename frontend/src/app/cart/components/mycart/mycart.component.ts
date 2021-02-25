@@ -18,11 +18,12 @@ export class MycartComponent implements OnInit {
   ngOnInit(): void {
    this.addToCartService.productsInCart$.subscribe(data => {
       this.listofProductsInCart = [...data];
-      this.listofProductsInCart.forEach(product => {
-        // To do: need to rectify logic here
-        this.totalProductsPrice = product.totalPrice + this.totalProductsPrice;
-      });
+      // this.listofProductsInCart.forEach(product => {
+      //   // To do: need to rectify logic here
+      //   this.totalProductsPrice = product.totalPrice + this.totalProductsPrice;
+      // });
    });
+   this.totalProductsPrice = this.addToCartService.getTotalPriceToCheckout();
   }
 
 

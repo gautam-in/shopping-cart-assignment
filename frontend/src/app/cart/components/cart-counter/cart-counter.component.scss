@@ -16,3 +16,9 @@ a {
         font-weight: bolder;
     }
 }
+
+@media (min-width: 1024px) {
+    :host {
+        margin-top: 20px;
+    }
+}

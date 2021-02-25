@@ -16,7 +16,6 @@ export class SignupComponent implements OnInit {
 
   onSubmit(signupFormInfo: any) {
     this.router.navigate(['/home']);
-    console.log(signupFormInfo.value);
   }
 
 }

@@ -86,4 +86,13 @@ export class AddToCartService {
   resetCart() {
     this.numberOfProductsInCart.next([]);
   }
+
+  getTotalPriceToCheckout() {
+    let grandTotal: number = 0;
+    [...this.numberOfProductsInCart.value].forEach((product) => {
+        grandTotal = product.totalPrice + grandTotal;
+    });
+
+    return grandTotal;
+  }
 }

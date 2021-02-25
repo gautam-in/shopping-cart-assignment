@@ -4,3 +4,11 @@
         width: 40%;
     }
 }
+
+@media (min-width: 1024px) {
+    :host {
+        img {
+            width: 60%;
+        }
+    }
+}

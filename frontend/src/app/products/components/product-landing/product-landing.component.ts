@@ -49,7 +49,6 @@ export class ProductLandingComponent implements OnInit {
   }
 
   getFilterProductsByCategory(categoryId: string) {
-    const customProductList = [...this.allProductsList];
     return [...this.allProductsList].filter(
       (product) => product.category === categoryId
     );

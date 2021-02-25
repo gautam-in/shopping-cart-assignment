@@ -30,6 +30,6 @@ export class HomeComponent implements OnInit {
     
     this.bannerService
       .bannersList$
-      .subscribe((banners) => banners.map(banner => this.bannersList.push(banner)))
+      .subscribe((banners) => banners.map(banner => this.bannersList.push(banner)));
   }
 }

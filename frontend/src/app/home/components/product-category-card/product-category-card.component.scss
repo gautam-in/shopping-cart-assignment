@@ -5,13 +5,14 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
+    align-content: center;
     padding: 50px 5px;
-    box-shadow: 0px 5px 5px -6px black;
+    box-shadow: 0px 15px 10px -15px #111;
     img {
         width: 200px;
         padding: 10px;
     }
-    article {
+    div {
         flex: 2;
         text-align: center;
         h2,p {
@@ -19,7 +20,7 @@
         }
     }
 
-    &:nth-child(2n) {
+    &:nth-child(even) {
     flex-direction: row-reverse;
 }
 

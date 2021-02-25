@@ -10,8 +10,14 @@ section {
 }
 
 @media (min-width: 1024px) {
+    section {
+        align-items: baseline;
+    }
     form {
         flex-basis: 20%;
         margin-left: 40px;
+    }
+    button {
+        width: 100%;
     }
 }

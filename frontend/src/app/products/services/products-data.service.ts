@@ -14,7 +14,6 @@ export class ProductsDataService {
   constructor(private http: HttpClient) { }
   productsList$ = this.getProductsFromAPI$().pipe(
     map(productList => productList.map(product =>  this.transformProductListToCartItem(product))),
-    // tap(productList => console.log(productList)),
     shareReplay(1)
   )
   private getProductsFromAPI$() {

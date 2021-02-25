@@ -10,3 +10,12 @@ section {
         flex-basis: 20%;
     }
 }
+
+@media (min-width: 1024px) {
+    section {
+        align-items: baseline;
+    }
+    button {
+        width: 100%;
+    }
+}

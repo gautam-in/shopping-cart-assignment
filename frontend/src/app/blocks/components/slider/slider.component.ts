@@ -1,5 +1,5 @@
 import { BannerDTO } from './../../../home/models/banner-dto';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnChanges, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-slider',
@@ -12,9 +12,12 @@ export class SliderComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    // console.log(this.imagesList[1].id);
   }
 
   imagesListAlt = [
+    {path: 'http://ivylab.space/assets/photo-1444065707204-12decac917e8.jfif'},
+    {path: 'http://ivylab.space/assets/photo-1444065707204-12decac917e8.jfif'},
     {path: 'http://ivylab.space/assets/photo-1444065707204-12decac917e8.jfif'},
     {path: 'http://ivylab.space/assets/photo-1444065707204-12decac917e8.jfif'},
     {path: 'http://ivylab.space/assets/photo-1444065707204-12decac917e8.jfif'}

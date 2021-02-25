@@ -1,6 +1,6 @@
 <nav>
     <app-logo (click)="toggleMenu()"></app-logo>
-    <div *ngIf="showMenu">
+    <div #showMenu>
         <a [routerLink]="['/home']">Home</a>
         <a [routerLink]="['/products']">Products</a>
         <a [routerLink]="['/login']">Signin</a>

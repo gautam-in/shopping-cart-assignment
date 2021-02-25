@@ -7,18 +7,27 @@ nav{
     justify-content: space-between;
     align-items: center;
     div {
-        display: flex;
+        display: none;
         flex-direction: row;
         position: absolute;
         border: 1px solid $color-grey;
         background-color: $color-white;
-        padding: 5px;
-        top: 5%;
+        padding: 10px;
+        top: 10%;
         left: 5%;
         z-index: 100000;
     }
     a {
         text-decoration: none;
         padding: 10px;
+    }
+}
+
+@media (min-width: 1024px) {
+    nav {
+        justify-content: space-around;
+    }
+    div {
+        display: block;
     }
 }
