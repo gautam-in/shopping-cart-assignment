@@ -6,7 +6,6 @@
 body{
     font-family: 'Dosis';
 }
-
 /** colors **/
 $color-pink: #d24357;
 $color-blue: #85d8dc;
@@ -56,6 +55,20 @@ $color-light-grey: #e2e2e2;
     }
 }
 
+/** ngb-carousel overwrites**/
+
+.carousel-control-next-icon,
+.carousel-control-prev-icon {
+   filter: invert(1);
+}
+.carousel-indicators li {
+    width : 12px!important;
+    background-color: black;
+    border-radius: 50% !important;
+    height: 12px;
+  }
+
+/** media query **/
 @media (min-width: 1024px) {
     .custom-flex-container {
         display: flex;

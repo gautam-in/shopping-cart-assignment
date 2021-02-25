@@ -1,7 +1,12 @@
-<carousel
+<!-- <carousel
     [dots]="true"
     class="carousel">
     <div class="carousel-cell" *ngFor="let image of imagesList">
         <img src="assets{{image.bannerImageUrl}}" alt="{{image.bannerImageAlt}}"/>
     </div>
-</carousel>
+</carousel> -->
+<ngb-carousel *ngIf="imagesList">
+    <ng-template ngbSlide *ngFor="let image of imagesList">
+      <img src="assets{{image.bannerImageUrl}}" alt="{{image.bannerImageAlt}}">
+    </ng-template>
+  </ngb-carousel>
