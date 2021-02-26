@@ -55,7 +55,7 @@ function setCartItems(id, productsData = [], coefficient = 1) {
 
 function addItemCartSession(id, productsData, cartItems) {
     // let addedItem = productsData.find(x => x.id === id);
-    let addedItem = productsData.filter(x => x.id === id)[0];
+    let addedItem = productsData.filter(x => x.id === id)[0]; //IE doesn't support find
     addedItem.inCart = 1;
     addedItem.totalPrice = addedItem.price;
     const newObj = { [id]: addedItem };
@@ -122,7 +122,7 @@ function renderCartView() {
         let totalCartAmount = 0;
         let totalItems = 0;
         // Object.entries(cartItems).forEach(([key, value]) => {
-        Object.keys(cartItems).forEach(key => {
+        Object.keys(cartItems).forEach(key => {  //For browser compatibility
             let value = cartItems[key];
             const col = document.createElement('div');
             col.classList.add('col-12');

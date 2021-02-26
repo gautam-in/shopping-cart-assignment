@@ -111,11 +111,11 @@ function filterProducts(id) {
     const category = document.getElementById(id);
     if (categoryState[id] === -1) {
         let filteredData = productsData.filter(x => x.category === id);
-        // category.style.color = '#000';
+        category.focus();
         renderProducts(filteredData);
     }
     else {
-        // category.style.color = 'rgba(0,0,0,0.5)';
+        category.blur();
         renderProducts(productsData);
     }
     categoryState[id] *= -1;
@@ -127,6 +127,7 @@ const sessionStorageService = new SessionStorageService();
 const ecommService = new EcommService();
 
 document.addEventListener("DOMContentLoaded", (event) => {
+
     getCategories();
     getProducts();
     renderCartQuantity();
