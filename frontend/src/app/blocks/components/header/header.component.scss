@@ -6,7 +6,8 @@ nav{
     box-shadow: 0px 5px 10px -6px $color-black;  
     justify-content: space-between;
     align-items: center;
-    div {
+    margin-bottom: 10px;
+    .mobile-menu {
         display: none;
         flex-direction: row;
         position: absolute;
@@ -27,7 +28,21 @@ nav{
     nav {
         justify-content: space-around;
     }
-    div {
+    .mobile-menu {
         display: block;
+    }
+    .login-menu {
+        position: absolute;
+        right: 20%;
+        top: 0%;
+    }
+    .page-menu {
+        position: absolute;
+        left: 30%;
+    }
+
+    a {
+        color: black;
+        font-weight: 600;
     }
 }

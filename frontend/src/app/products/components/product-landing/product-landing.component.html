@@ -3,11 +3,11 @@
         <ul>
             <li *ngFor="let category of categories" (click)="renderProductByCategory(category.id)">{{category.name}}</li>
         </ul>
-        <i
+        <button type="button" (click)="toggleCategoryMenu()"><i
         class="fa"
         [class.fa-chevron-down] = "menuNavDirection === 'down'" 
         [class.fa-chevron-up] = "menuNavDirection === 'up'" 
-        aria-hidden="true" (click)="toggleCategoryMenu()"></i>
+        aria-hidden="true"></i></button>
     </aside>
     <div>
         <div class="no-product-found-placeholder" *ngIf="productsRenderList.length===0">

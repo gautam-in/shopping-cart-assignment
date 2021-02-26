@@ -89,10 +89,12 @@ export class AddToCartService {
 
   getTotalPriceToCheckout() {
     let grandTotal: number = 0;
-    [...this.numberOfProductsInCart.value].forEach((product) => {
+    this.productsInCart$.subscribe(productList => {
+      productList.forEach((product) => {
         grandTotal = product.totalPrice + grandTotal;
+      });
     });
-
+    console.log(grandTotal);
     return grandTotal;
   }
 }

@@ -22,8 +22,9 @@ export class MycartComponent implements OnInit {
       //   // To do: need to rectify logic here
       //   this.totalProductsPrice = product.totalPrice + this.totalProductsPrice;
       // });
+      this.totalProductsPrice = this.addToCartService.getTotalPriceToCheckout();
    });
-   this.totalProductsPrice = this.addToCartService.getTotalPriceToCheckout();
+
   }
 
 

@@ -55,11 +55,11 @@ export class ProductLandingComponent implements OnInit {
   }
 
   toggleCategoryMenu() {
-    if (this.categoryListRef.nativeElement.style.height == '25px') {
+    if (this.categoryListRef.nativeElement.style.height == '40px') {
       this.categoryListRef.nativeElement.style.height = '180px';
       this.menuNavDirection = 'up';
     } else {
-      this.categoryListRef.nativeElement.style.height = '25px';
+      this.categoryListRef.nativeElement.style.height = '40px';
       this.menuNavDirection = 'down';
     }
   }

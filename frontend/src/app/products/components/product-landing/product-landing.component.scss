@@ -7,10 +7,15 @@
     background-color: $color-dark-pink;
     color: $color-white;
     padding: 5px 20px;
-    height: 25px;
+    height: 40px;
     line-height: 1.24;
     ul>li {
         padding: 5px;
+    }
+    button {
+        border: none;
+        background-color: $color-dark-pink;
+        color: $color-white;
     }
 }
 aside {
@@ -38,7 +43,7 @@ aside {
         ul>li {
             border-bottom: 1px solid $color-grey;
         }
-        .fa {
+        .fa, button {
             display: none;
         }
     } 
