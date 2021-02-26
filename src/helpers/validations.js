@@ -1,11 +1,9 @@
+const mailformat = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+
 export class Validator{
 
-    constructor(){
-        this.mailformat = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-    }
-
     validateEmail(value) {
-        if (!value.match(this.mailformat)) {
+        if (!value.match(mailformat)) {
             return false;
         }
         return true;
@@ -28,6 +26,5 @@ export class Validator{
             }
         }
         return value.length >= 6 && alphabetFound && numberFound && !spaceFound;
-    }
-    
+    }    
 }

@@ -31,19 +31,24 @@ function renderCategories(data) {
             const divElement = document.createElement('div');
             divElement.classList.add('col-12');
             divElement.classList.add('category-item');
+
             const imgDiv = document.createElement('div');
             const image = document.createElement('img');
             image.src = element.imageUrl;
             image.height = '200';
             image.alt = element.key;
             imgDiv.appendChild(image);
+
             const textDiv = document.createElement('div');
             textDiv.classList.add('flexbox-vertical-horizontal-center');
             textDiv.classList.add('px-3');
+
             const h3 = document.createElement('h3');
             h3.textContent = element.name;
+            
             const p = document.createElement('p');
             p.textContent = element.description;
+
             const button = document.createElement('button');
             button.classList.add('btn');  //IE doesn't support multiple arguments
             button.classList.add('btn-danger');
@@ -51,6 +56,7 @@ function renderCategories(data) {
             button.type = 'button';
             button.id = element.id;
             button.textContent = `Explore ${element.key}`;
+
             textDiv.appendChild(h3); //append changed to appendChild for IE support
             textDiv.appendChild(p);
             textDiv.appendChild(button);
@@ -80,10 +86,12 @@ function renderCarousel(data) {
         if (element.isActive) {
             const div = document.createElement('div');
             div.classList.add('carousel-cell');
+
             const img = document.createElement('img');
             img.src = element.bannerImageUrl;
             img.id = element.id;
             img.alt = element.bannerImageAlt;
+
             div.appendChild(img);
             carousel.appendChild(div);
         }
@@ -120,6 +128,3 @@ document.addEventListener("DOMContentLoaded", (event) => {
         }
     });
 });
-
-
-

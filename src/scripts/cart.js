@@ -65,9 +65,11 @@ function addItemCartSession(id, productsData, cartItems) {
 function openCart() {
     const cartModal = document.getElementById('cart-modal');
     cartModal.style.display = 'block';
-    cartModal.classList.add('sample-modal');
-    const opacityElement = document.getElementById('opacity-element');
+    cartModal.classList.add('cart-modal-view');
+
+    const opacityElement = document.getElementById('cart-modal-backdrop');
     opacityElement.classList.add('black-opacity');
+
     const body = document.querySelector('.page-body');
     body.classList.add('body-container');
     renderCartView();
@@ -76,12 +78,15 @@ function openCart() {
 function closeCart() {
     const cartModal = document.getElementById('cart-modal');
     cartModal.style.display = 'none';
-    cartModal.classList.remove('sample-modal');
-    const opacityElement = document.getElementById('opacity-element');
+    cartModal.classList.remove('cart-modal-view');
+
+    const opacityElement = document.getElementById('cart-modal-backdrop');
     opacityElement.classList.remove('black-opacity');
     const body = document.querySelector('.page-body');
+
     body.classList.remove('body-container');
     const cartBody = document.querySelector('.cart-body');
+
     cartBody.innerHTML = '';
 }
 
@@ -94,31 +99,42 @@ function renderCartView() {
     const promoCode = document.querySelector('.promo-code');
     const totalInCart = document.querySelector('.total-in-cart');
     if (!cartCount) {
-        cartBody.style.backgroundColor = '#fff';
         totalInCart.textContent = '';
+
+        cartBody.style.backgroundColor = '#fff';        
         cartBody.style.height = '75%';
         cartBody.classList.add('flexbox-vertical-horizontal-center');
+
         const noItems = document.createElement('strong');
         noItems.textContent = 'No items in your cart';
+
         const favItems = document.createElement('p');
         favItems.textContent = 'Your favourite items are just a click away';
+
         cartBody.appendChild(noItems);
         cartBody.appendChild(favItems);
+
         promoCode.style.display = 'none';
+
         cartButtonContent.textContent = 'Start Shopping';
     }
     else {
         cartBody.style.backgroundColor = '#ecf0f1';
         cartBody.style.height = '65%';
+
         cartButtonContent.textContent = 'Start Shopping';
+
         promoCode.style.display = 'block';
+
         let cartItems = sessionStorageService.getItem('cartItems');
         cartItems = JSON.parse(cartItems);
+
         const row = document.createElement('div');
         row.classList.add('row');
         row.classList.add('mx-0');
         row.classList.add('my-4');
         row.style.backgroundColor = '#fff';
+
         let totalCartAmount = 0;
         let totalItems = 0;
         // Object.entries(cartItems).forEach(([key, value]) => {
@@ -127,21 +143,27 @@ function renderCartView() {
             const col = document.createElement('div');
             col.classList.add('col-12');
             col.classList.add('my-1');
+
             const innerRow = document.createElement('div');
             innerRow.classList.add('row');
+
             const imgDiv = document.createElement('div');
             imgDiv.classList.add('col-2');
+
             const img = document.createElement('img');
             img.src = value.imageURL;
             img.height = '100';
             img.alt = value.name;
             imgDiv.appendChild(img);
+
             const details = document.createElement('div');
             details.classList.add('col-10')
             details.classList.add('pl-4');
             details.classList.add('flexbox-vertical-center');
+
             const strong = document.createElement('strong');
             strong.textContent = value.name;
+
             const innerRow2 = document.createElement('div');
             innerRow2.classList.add('flexbox-space-between');
             innerRow2.innerHTML =
@@ -156,10 +178,13 @@ function renderCartView() {
                 <div>
                     Rs. ${value.totalPrice}
                 </div>`;
+
             details.appendChild(strong);
             details.appendChild(innerRow2);
+
             innerRow.appendChild(imgDiv)
             innerRow.appendChild(details);
+
             col.appendChild(innerRow);
             row.appendChild(col);
 
@@ -172,15 +197,18 @@ function renderCartView() {
         cheapBlock.classList.add('mx-3');
         cheapBlock.classList.add('mb-4');
         cheapBlock.style.backgroundColor = '#fff';
+
         const cheapImg = document.createElement('img');
         cheapImg.classList.add('mx-3');
         cheapImg.src = '/static/images/lowest-price.png';
         cheapImg.alt = `You won't find it cheaper anywhere`;
+
         const cheapBlockText = document.createElement('div');
         cheapBlockText.style.display = 'inline-block';
         cheapBlockText.innerText = "You won't find it cheaper anywhere";
         cheapBlock.appendChild(cheapImg);
         cheapBlock.appendChild(cheapBlockText);
+
         cartBody.appendChild(row);
         cartBody.appendChild(cheapBlock);
 

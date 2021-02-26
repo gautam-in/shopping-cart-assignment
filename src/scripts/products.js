@@ -34,13 +34,16 @@ function renderCategories(data) {
             divElement.classList.add('col-12');
             divElement.classList.add('p-3');
             divElement.classList.add('individual-category');
+
             const anchorElement = document.createElement('a');
             anchorElement.textContent = element.name;
             anchorElement.href = '#';
             anchorElement.classList.add('category-link');
             anchorElement.id = element.id;
+
             divElement.appendChild(anchorElement);
             categoriesPane.appendChild(divElement);
+
             categoryState[element.id] = -1;
         }
     }
@@ -72,23 +75,29 @@ function renderProducts(data) {
         divElement.classList.add('my-3');
         divElement.classList.add('text-center');
         divElement.classList.add('product-box');
+
         const h4 = document.createElement('h4');
         h4.textContent = element.name;
+
         const image = document.createElement('img');
         image.src = element.imageURL;
         image.height = '150';
         image.alt = element.name;
+
         const prodDescription = document.createElement('p');
         prodDescription.classList.add('product-description')
         prodDescription.classList.add('text-left');
         prodDescription.classList.add('mt-2');
         prodDescription.classList.add('px-2');
         prodDescription.textContent = element.description;
+
         const priceBuyDiv = document.createElement('div');
         priceBuyDiv.classList.add('flexbox-space-between');
+
         const priceDiv = document.createElement('div');
         priceDiv.classList.add('mt-1');
         priceDiv.textContent = `MRP Rs. ${element.price}`;
+
         const button = document.createElement('button');
         button.classList.add('btn')
         button.classList.add('btn-danger')
@@ -97,12 +106,15 @@ function renderProducts(data) {
         button.type = 'button';
         button.id = element.id;
         button.textContent = `Buy Now`;
+
         priceBuyDiv.appendChild(priceDiv);
         priceBuyDiv.appendChild(button);
+
         divElement.appendChild(h4);
         divElement.appendChild(image);
         divElement.appendChild(prodDescription);
         divElement.appendChild(priceBuyDiv);
+
         productsRow.appendChild(divElement);
     });
 }

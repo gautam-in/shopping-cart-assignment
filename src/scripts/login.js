@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
         let emailValid = false;
         let passwordValid = false;
         const email = e.target.elements.email;
-        const emailError = document.querySelector('#email-error');
+        const emailError = e.target.querySelector('#email-error');
         if (validator.validateEmail(email.value)) {
             emailError.textContent = '';
             email.setAttribute("aria-invalid", "false");
@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
             emailValid = false;
         }
         const password = e.target.elements.password;
-        const passwordError = document.querySelector('#password-error');
+        const passwordError = e.target.querySelector('#password-error');
         if (validator.validatePassword(password.value)) {
             passwordError.innerHTML = '';
             password.setAttribute("aria-invalid", "false");
@@ -59,5 +59,4 @@ document.addEventListener("DOMContentLoaded", (event) => {
             window.location = 'index.html';
         }
     });
-
 });

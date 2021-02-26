@@ -27,5 +27,4 @@ export class EcommService {
         });
         return await data.json();
     }
-
 }
