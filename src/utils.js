@@ -56,3 +56,7 @@ export const fetch_retry = async (fetch, retryAttempt, retryAfter) => {
         });
     }
 };
+
+export function getViewPortDimensions(){
+    return {width: window.innerWidth,height:window.innerHeight};
+}

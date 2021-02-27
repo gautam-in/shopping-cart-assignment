@@ -75,7 +75,7 @@ class Signin extends React.Component {
     }
   render(){
   return (
-    <div className="App">
+    <div className="App signin-area">
         <Header></Header>
         {/* <div dangerouslySetInnerHTML={{ __html: template(this.state.data) }} /> */}
         <div className="login-area">

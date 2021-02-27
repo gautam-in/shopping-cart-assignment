@@ -53,7 +53,7 @@ class Cart extends React.Component{
         this.setState({totalCartValue: totalValue});
     }
     render(){
-        return(<div>
+        return(<div className="cart-page">
             <div className="cart-header modal-horizontal-space">
                 <h2>My cart {this.state.itemList.length ? " ("+(this.state.itemList.length)+" items)" : " "}</h2>
                 <div className="close-icon" onClick={this.props.closeModal}>

@@ -69,7 +69,7 @@ class Header extends React.Component {
         // const html = ReactDOMServer.renderToString();
         // const hbr=html;
         // const template = Handlebars.compile(hbr);
-        return (<div>
+        return (<div className="header-area">
             <header>
                 <nav className="sticky-nav">
                     <div className="row">

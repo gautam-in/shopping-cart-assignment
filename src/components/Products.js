@@ -80,15 +80,19 @@ class Products extends React.Component{
     };
     getDropDwnSelectedVal=(id,data)=>{
         if(id && data){
-            return data.filter((item)=>{
+            let selItem = data.filter((item)=>{
+                if(item.id)
                 return id == item.id;
-            })[0].id;
+            })
+            if(selItem.length){
+                return selItem[0].id;
+            }
         } else {
             return 'default';
         }
     }
     render(){
-        return(<div>
+        return(<div className="products-page">
             <Header cartClick={this.showCartView} cartInfo={this.props.productInfo.cartItems}></Header>
             <div className="row content-area">
                 <div className="col span-3-of-12 left-menu">
@@ -98,60 +102,21 @@ class Products extends React.Component{
                                 <p>{data.name}</p>
                             </li>)) : null}
                         </ul>  
-                        <div className='dropdown-cat-list'>
-                            <div className="select">
-                                <select onChange={(event)=>{this.makeActiveCategory(event)}} value={this.getDropDwnSelectedVal(this.state.catId,this.state.categoryData)} name="slct" id="slct">
-                                    <option value="default" disabled>Choose an option</option>
-                                    {this.state.categoryData && this.state.categoryData.length ? this.state.categoryData.filter((item) => { return item.order >= 0 }).map((data, i) => (<option value={data.id} className={this.state.catId ? data.id == this.state.catId ? 'selected' : '' : ''} key={i}>
-                                        {data.name}
-                                    </option>)) : null}
-                                    {/* selected={data.id == this.state.catId} */}
-                                    {/* <option value="1">Pure CSS</option>
+                        
+                    </div>
+                </div>
+                <div className='dropdown-cat-list'>
+                    <div className="select">
+                        <select onChange={(event) => { this.makeActiveCategory(event) }} value={this.getDropDwnSelectedVal(this.state.catId, this.state.categoryData)} name="slct" id="slct">
+                            <option value="default" disabled>Choose an option</option>
+                            {this.state.categoryData && this.state.categoryData.length ? this.state.categoryData.filter((item) => { return item.order >= 0 }).map((data, i) => (<option value={data.id} className={this.state.catId ? data.id == this.state.catId ? 'selected' : '' : ''} key={i}>
+                                {data.name}
+                            </option>)) : null}
+                            {/* selected={data.id == this.state.catId} */}
+                            {/* <option value="1">Pure CSS</option>
                                     <option value="2">No JS</option>
                                     <option value="3">Nice!</option> */}
-                                </select>
-                            </div>
-                            
-                            {/* <form>
-
-                                <ul class="select">
-                                    <li>
-                                        <input class="select_close" type="radio" name="awesomeness" id="awesomeness-close" value="" />
-                                        <span class="select_label select_label-placeholder">Awesomeness Level</span>
-                                    </li>
-
-                                    <li class="select_items">
-                                        <input class="select_expand" type="radio" name="awesomeness" id="awesomeness-opener" />
-                                        <label class="select_closeLabel" for="awesomeness-close"></label>
-
-                                        <ul class="select_options">
-                                            <li class="select_option">
-                                                <input class="select_input" type="radio" name="awesomeness" id="awesomeness-ridiculous" />
-                                                <label class="select_label" for="awesomeness-ridiculous">ridiculous</label>
-                                            </li>
-
-                                            <li class="select_option">
-                                                <input class="select_input" type="radio" name="awesomeness" id="awesomeness-reasonable" />
-                                                <label class="select_label" for="awesomeness-reasonable">reasonable</label>
-                                            </li>
-
-                                            <li class="select_option">
-                                                <input class="select_input" type="radio" name="awesomeness" id="awesomeness-lacking" />
-                                                <label class="select_label" for="awesomeness-lacking">lacking</label>
-                                            </li>
-
-                                            <li class="select_option">
-                                                <input class="select_input" type="radio" name="awesomeness" id="awesomeness-awesomeless" />
-                                                <label class="select_label" for="awesomeness-awesomeless">awesomeless</label>
-                                            </li>
-                                        </ul>
-
-                                        <label class="select_expandLabel" for="awesomeness-opener"></label>
-                                    </li>
-                                </ul>
-
-                            </form> */}
-                        </div>
+                        </select>
                     </div>
                 </div>
                 <div className="col span-9-of-12 product-list-area">
@@ -159,22 +124,29 @@ class Products extends React.Component{
                         <ul className="rest-tiles">
                         {this.state.productList && this.state.productList.length ? this.state.productList.filter((data)=>{return this.state.catId ? this.state.catId == data.category : data }).map((item,i)=>(<li key={i}>
                             <p className="prod-name" title={item.name}>{item.name}</p>
+                            <div className="prod-detls">
+                            <div className="prod-img">
                             <LazyLoad height={75} offset={500} once>
                                 <img className={`rocketImg`}
                                     alt={item.name}
                                     src={window.location.origin + item.imageURL}
                                 />
                             </LazyLoad>
+                            </div>
+                            <div className="prod-infodetails">
                             <div className="description-area">
-                                <p className="prod-desc truncate-overflow">{item.description}</p>
+                                <p className="prod-desc truncate-overflow" title={item.description}>{item.description}</p>
                             </div>
                             <div className="buy-area">
-                                <div className="col span-1-of-2">
+                                <div className="col span-1-of-2 price">
                                    <p> MRP Rs.{item.price}</p>
                                 </div>
-                                <div className="col span-1-of-2">
+                                <div className="col span-1-of-2 buy-btn">
                                     <button className="btn" onClick={(event)=>this.addToCart(event,item)}aria-label={`Click on this button to buy ${item.name} for ${item.price} rupees.`}>Buy Now</button>
+                                    <button className="btn small-screen-btn" onClick={(event)=>this.addToCart(event,item)}aria-label={`Click on this button to buy ${item.name} for ${item.price} rupees.`}>Buy Now @ Rs.{item.price}</button>
                                 </div>
+                            </div>
+                            </div>
                             </div>
                         </li>)) : null}
                         </ul>

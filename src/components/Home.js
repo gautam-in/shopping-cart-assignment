@@ -9,6 +9,7 @@ import Handlebars from "handlebars";
 import Header from '../presentations/Header';
 import Footer from '../presentations/Footer';
 import $ from 'jquery';
+import {getViewPortDimensions} from '../utils';
 import LazyLoad, { forceCheck } from 'react-lazyload';
 import Slider from 'react-slick';
 // import 'slick-carousel/slick/slick-theme.css';
@@ -36,20 +37,25 @@ class Home extends React.Component {
         super(props);
         this.state={
           bannerData: [],
-          categoryData: []
+          categoryData: [],
+          dimensions:{}
         }
         this.navigateToPlp = this.navigateToPlp.bind(this);
         this.showCartView = this.showCartView.bind(this);
+        this.doResizeActions = this.doResizeActions.bind(this);
     }
     componentDidMount(){
       this.props.dispatch(getOffers());
       this.props.dispatch(getCategories());
-      // $('body').niceScroll();
+      window.addEventListener('resize',()=>{
+        // console.log('resized');
+        this.doResizeActions();
+      },false);
     }
     static getDerivedStateFromProps(props,state){
-      console.log(props);
+      // console.log(props);
       if(props.homeApi.bannerData && props.homeApi.bannerdata_searching_success){
-        console.log(props.homeApi.bannerData);
+        // console.log(props.homeApi.bannerData);
         state.bannerData = props.homeApi.bannerData;
         setTimeout(()=>{
           forceCheck();
@@ -57,9 +63,14 @@ class Home extends React.Component {
       }
       if(props.homeApi.categoryData && props.homeApi.categorydata_searching_success){
         state.categoryData = props.homeApi.categoryData;
-        console.log('catData',state.categoryData);
+        // console.log('catData',state.categoryData);
       }
       return state;
+    }
+    doResizeActions=()=>{
+      let dimensions = getViewPortDimensions();
+      console.log('Dimensions',dimensions);
+      this.setState({dimensions: dimensions});
     }
     showCartView=()=>{
       console.log('Need to show cart view');
@@ -73,7 +84,7 @@ class Home extends React.Component {
       dots: true
     };
   return (
-    <div className="App">
+    <div className="App home-page">
       <Header cartClick={this.showCartView} cartInfo={this.props.productInfo.cartItems}></Header>
       {/* <div dangerouslySetInnerHTML={{ __html: template(data) }} /> */}
       <div className="offerArea content-seperator">

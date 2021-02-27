@@ -109,10 +109,10 @@ class Signup extends React.Component {
     }
   render(){
   return (
-    <div className="App">
+    <div className="App signup-area">
         <Header></Header>
         {/* <div dangerouslySetInnerHTML={{ __html: template(this.state.data) }} /> */}
-        <div className="signup-area">
+        <div className="signup-page">
             <div className="row">
             <div className="col span-1-of-2">
               <div className="login-info-area">

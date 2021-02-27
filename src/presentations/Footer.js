@@ -1,6 +1,6 @@
 import React from 'react';
 import Handlebars from "handlebars";
-const hbr = `<div class="full-width-footer"><div class="row">
+const hbr = `<div class="full-width-footer footer-area"><div class="row">
 <footer class="space-footer">
 Copyright @ 2011-2018 Sabka Bazaar Grocery Supplies Pvt. Ltd.
 </footer></div><div>
