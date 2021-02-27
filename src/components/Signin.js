@@ -6,7 +6,10 @@ import Handlebars from "handlebars";
 import Header from '../presentations/Header';
 import Footer from '../presentations/Footer';
 import {setUserDetails} from '../actions/singinActions';
+import {getProducts,addToCart,resetCartReduxProcessData,resetCartData} from '../actions/productActions';
 import toastr from 'toastr';
+import { Modal } from "react-responsive-modal";
+import Cart from '../presentations/Cart';
 import $ from 'jquery';
 const hbr = `
 <p>Hello, my name is {{name}}. I am from {{hometown}}. I have " +
@@ -29,11 +32,15 @@ class Signin extends React.Component {
                 kids: [{ name: "Jimmy", age: "12" }, { name: "Sally", age: "4" }],
                 email:'',
                 password:'',
-                loginError: false
+                loginError: false,
+                openModal: false
               }
         }
         this.onSubmitHandler = this.onSubmitHandler.bind(this);
         this.inputHandler = this.inputHandler.bind(this);
+        this.showCartView = this.showCartView.bind(this);
+        this.onCloseModal = this.onCloseModal.bind(this);
+        this.checkoutComplete = this.checkoutComplete.bind(this);
     }
     componentDidMount(){
 
@@ -57,6 +64,23 @@ class Signin extends React.Component {
           return;
       }
     }
+    showCartView=()=>{
+      console.log('cart view has to be shown');
+      this.setState({openModal: true});
+      document.getElementsByTagName('body')[0].style.overflow = 'hidden';
+      document.getElementsByTagName('html')[0].style.overflow = 'hidden';
+  }
+  checkoutComplete=()=>{
+    this.props.dispatch(resetCartData());
+    this.onCloseModal();
+    toastr.success('','Congratulations, Order Placed');
+}
+  
+  onCloseModal = () => {
+      this.setState({ openModal: false });
+      document.getElementsByTagName('body')[0].style.overflow = 'auto';
+      document.getElementsByTagName('html')[0].style.overflow = 'auto';
+  };
     onSubmitHandler=(e)=>{
       e.preventDefault();
       // this.props.dispatch(push('/'));
@@ -76,7 +100,7 @@ class Signin extends React.Component {
   render(){
   return (
     <div className="App signin-area">
-        <Header></Header>
+        <Header cartClick={this.showCartView} cartInfo={this.props.productInfo.cartItems}></Header>
         {/* <div dangerouslySetInnerHTML={{ __html: template(this.state.data) }} /> */}
         <div className="login-area">
             <div className="row">
@@ -111,6 +135,23 @@ class Signin extends React.Component {
             </div>
         </div>
         <Footer></Footer>
+        {this.state.openModal ? (<Modal
+        open={this.state.openModal}
+        onClose={this.onCloseModal}
+        center
+        aria-labelledby={`My Cart(${this.props.productInfo.cartItems.legth} items)`}
+        aria-describedby="Hurry up! You won't find it cheaper anywhere."
+        classNames={{
+          overlayAnimationIn: '',
+          overlayAnimationOut: '',
+          modalAnimationIn: 'customEnterModalAnimation',
+          modalAnimationOut: 'customLeaveModalAnimation',
+        }}
+        animationDuration={800}
+        //   closeIcon={closeIcon}
+        showCloseIcon={false}>
+        <Cart cartData={this.props.productInfo.cartItems} checkoutComplete={this.checkoutComplete} closeModal={this.onCloseModal}></Cart>
+      </Modal>) : null}
     </div>
   );
   }
@@ -118,7 +159,8 @@ class Signin extends React.Component {
 function mapStateToProps(state) {
   return {
     signIn: state.signinReducer,
-    homeApis: state.homeApis
+    homeApis: state.homeApis,
+    productInfo: state.productReducer
   };
 }
 // const mapDispatchToProps = (dispatch) => {

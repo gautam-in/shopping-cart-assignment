@@ -3,10 +3,13 @@ import ReactDOM from "react-dom";
 import Handlebars from "handlebars";
 import { connect } from 'react-redux';
 import { push } from 'react-router-redux';
-import {setUserDetails} from '../actions/signupActions'
+import {setUserDetails} from '../actions/signupActions';
+import {getProducts,addToCart,resetCartReduxProcessData,resetCartData} from '../actions/productActions';
 import Header from '../presentations/Header';
 import Footer from '../presentations/Footer';
 import toastr from 'toastr';
+import { Modal } from "react-responsive-modal";
+import Cart from '../presentations/Cart';
 import $ from 'jquery';
 // const hbr = `
 // <p>Hello, my name is {{name}}. I am from {{hometown}}. I have " +
@@ -38,6 +41,9 @@ class Signup extends React.Component {
         this.onSubmitHandler = this.onSubmitHandler.bind(this);
         this.inputHandler = this.inputHandler.bind(this);
         this.isValidFormState = this.isValidFormState.bind(this);
+        this.showCartView = this.showCartView.bind(this);
+        this.onCloseModal = this.onCloseModal.bind(this);
+        this.checkoutComplete = this.checkoutComplete.bind(this);
     }
     static getDerivedStateFromProps(props,state){
         console.log(props);
@@ -83,6 +89,22 @@ class Signup extends React.Component {
         }
         return isValid;
     }
+    showCartView=()=>{
+        console.log('cart view has to be shown');
+        this.setState({openModal: true});
+        document.getElementsByTagName('body')[0].style.overflow = 'hidden';
+        document.getElementsByTagName('html')[0].style.overflow = 'hidden';
+    }
+    checkoutComplete=()=>{
+        this.props.dispatch(resetCartData());
+        this.onCloseModal();
+        toastr.success('','Congratulations, Order Placed');
+    }
+    onCloseModal = () => {
+        this.setState({ openModal: false });
+        document.getElementsByTagName('body')[0].style.overflow = 'auto';
+        document.getElementsByTagName('html')[0].style.overflow = 'auto';
+    };
     onSubmitHandler=(event)=>{
         event.preventDefault();
         let isValidForm = false;
@@ -110,7 +132,7 @@ class Signup extends React.Component {
   render(){
   return (
     <div className="App signup-area">
-        <Header></Header>
+        <Header cartClick={this.showCartView} cartInfo={this.props.productInfo.cartItems}></Header>
         {/* <div dangerouslySetInnerHTML={{ __html: template(this.state.data) }} /> */}
         <div className="signup-page">
             <div className="row">
@@ -169,6 +191,23 @@ class Signup extends React.Component {
             </div>
         </div>
         <Footer></Footer>
+        {this.state.openModal ? (<Modal
+        open={this.state.openModal}
+        onClose={this.onCloseModal}
+        center
+        aria-labelledby={`My Cart(${this.props.productInfo.cartItems.legth} items)`}
+        aria-describedby="Hurry up! You won't find it cheaper anywhere."
+        classNames={{
+          overlayAnimationIn: '',
+          overlayAnimationOut: '',
+          modalAnimationIn: 'customEnterModalAnimation',
+          modalAnimationOut: 'customLeaveModalAnimation',
+        }}
+        animationDuration={800}
+        //   closeIcon={closeIcon}
+        showCloseIcon={false}>
+        <Cart cartData={this.props.productInfo.cartItems} checkoutComplete={this.checkoutComplete} closeModal={this.onCloseModal}></Cart>
+      </Modal>) : null}
     </div>
   );
   }
@@ -176,7 +215,8 @@ class Signup extends React.Component {
 function mapStateToProps(state) {
     return {
       signUp: state.signUpReducer,
-      homeApis: state.homeApis
+      homeApis: state.homeApis,
+      productInfo: state.productReducer
     };
   }
 

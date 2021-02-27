@@ -3,8 +3,10 @@ import ReactDOMServer from 'react-dom/server';
 import Handlebars from "handlebars";
 import {Link} from 'react-router';
 import {connect} from 'react-redux';
+import {push} from 'react-router-redux';
 import Logo from '../../static/images/logo.png';
-
+import {getViewPortDimensions} from '../utils';
+import Basket from '../components/Basket';
    /*const hbr = `
 <header className="space-header">
         <div class="row">
@@ -36,8 +38,12 @@ class Header extends React.Component {
             clickable: false,
             userName:'',
             itemCount: 0,
+            dimensions:{}
         }
         this.clickEvent = this.clickEvent.bind(this);
+        this.showHome = this.showHome.bind(this);
+        this.doResizeActions = this.doResizeActions.bind(this);
+        this.cartClick = this.cartClick.bind(this);
     }
     componentDidMount(){
         // window.imgClick = this.clickEvent;
@@ -46,7 +52,11 @@ class Header extends React.Component {
         } else if(this.props.signup && this.props.signup.userData && this.props.signup.userData.userEmail){
             this.setState({userName:this.props.signup.userData.userEmail});
         }
-        
+        this.doResizeActions();
+        window.addEventListener('resize',()=>{
+            // console.log('resized');
+            this.doResizeActions();
+        },false);
     }
     static getDerivedStateFromProps(props,state){
         if(props.cartInfo){
@@ -62,8 +72,24 @@ class Header extends React.Component {
         //     this.setState({itemCount:this.props.cartInfo.length})
         // }
     }
+    doResizeActions=()=>{
+        let dimensions = getViewPortDimensions();
+        console.log('Dimensions',dimensions);
+        this.setState({dimensions: dimensions});
+    }
+    cartClick=()=>{
+        if(this.state.dimensions && this.state.dimensions.width && this.state.dimensions.width < 480){ //1024
+            console.log('need to route to cart view');
+            this.props.dispatch(push('/cart'));
+        } else {
+            this.props.cartClick();
+        }
+    }
     clickEvent(event){
         console.log('clicked',event);
+    }
+    showHome=()=>{
+        this.props.dispatch(push('/'));
     }
     render(){
         // const html = ReactDOMServer.renderToString();
@@ -73,7 +99,7 @@ class Header extends React.Component {
             <header>
                 <nav className="sticky-nav">
                     <div className="row">
-                        <img src={Logo} alt="logo" className="logo" />
+                        <img onClick={this.showHome} src={Logo} alt="logo" className="logo" />
                         <ul className="main-nav js--main-nav">
                             <li><Link to={`/home`} >Home</Link></li>
                             <li><Link to="/products">Products</Link></li>
@@ -91,7 +117,7 @@ class Header extends React.Component {
                                 {/* <li><Link to "/signup">Register</Link></li> */}
                             </ul>)}
                             </div>
-                            <div className="cartArea" onClick={this.props.cartClick}>
+                            <div className="cartArea" onClick={this.cartClick}>
                                 <i className="ion-ios-cart"></i><span>{this.state.itemCount} items</span>
                             </div>
                         </div>

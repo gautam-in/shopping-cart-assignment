@@ -50,7 +50,7 @@ html, body{
     overflow: auto;
     user-select: none;
     margin:0;
-    font-family: 'Dosis','Arial','Sans-serif' !important; 
+    font-family: 'Dosis','Arial','sans-serif' !important; //'Dosis','serif','sans-serif' !important; 
     background-color:#fff;// #e2e2e2;
     font-size: 18px;
     text-rendering: optimizeLegibility;
@@ -397,6 +397,12 @@ input:not(:placeholder-shown)~.floating-label{
     -webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 0px rgba(0, 0, 0, 0.1) inset;
     img{
         margin:auto;
+    }
+    .slick-slide{
+        img{
+            width: 100%;
+            height: auto;
+        }
     }
 }
 .slider-container:before, .slider-container:after
@@ -1165,7 +1171,11 @@ input:not(:placeholder-shown)~.floating-label{
             }
         }
     }
-
+.basket-page{
+    .modal-content-area{
+        height: calc(100vh - 156px) !important;
+    }
+}
     .cart-header{ 
         h2{
             font-size: 90%;
@@ -1275,6 +1285,9 @@ input:not(:placeholder-shown)~.floating-label{
 
 /* Medium Devices, Desktops */
 @media only screen and (min-width : 992px) and (min-width : 1024px) {
+    .offerArea{
+        height: auto;
+    }
     .rest-tiles li{ 
         width:32%;
         margin:5px 50px 5px -45px;
@@ -1304,6 +1317,16 @@ input:not(:placeholder-shown)~.floating-label{
                 }
         //     }
         // }
+    }
+    .slider-container::before, .slider-container::after,.category-banners-area .single-banner-area::after{
+        content: none;
+        bottom: auto;
+        right: auto;
+        left:auto;
+        box-shadow: none;
+    }
+    .signup-area{
+        padding-top: 0;;
     }
 }
 

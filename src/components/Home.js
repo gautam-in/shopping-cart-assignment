@@ -5,6 +5,7 @@ import ReactDOM from "react-dom";
 import {connect} from 'react-redux';
 import {push} from 'react-router-redux';
 import {getOffers,getCategories} from '../actions/homeActions';
+import {getProducts,addToCart,resetCartReduxProcessData,resetCartData} from '../actions/productActions';
 import Handlebars from "handlebars";
 import Header from '../presentations/Header';
 import Footer from '../presentations/Footer';
@@ -12,6 +13,8 @@ import $ from 'jquery';
 import {getViewPortDimensions} from '../utils';
 import LazyLoad, { forceCheck } from 'react-lazyload';
 import Slider from 'react-slick';
+import { Modal } from "react-responsive-modal";
+import Cart from '../presentations/Cart';
 // import 'slick-carousel/slick/slick-theme.css';
 // import 'slick-carousel/slick/slick.css';
 // import nicescroll from 'jquery.nicescroll';
@@ -38,19 +41,17 @@ class Home extends React.Component {
         this.state={
           bannerData: [],
           categoryData: [],
-          dimensions:{}
+          dimensions:{},
+          openModal: false
         }
         this.navigateToPlp = this.navigateToPlp.bind(this);
         this.showCartView = this.showCartView.bind(this);
-        this.doResizeActions = this.doResizeActions.bind(this);
+        this.onCloseModal = this.onCloseModal.bind(this);
+        this.checkoutComplete = this.checkoutComplete.bind(this);
     }
     componentDidMount(){
       this.props.dispatch(getOffers());
       this.props.dispatch(getCategories());
-      window.addEventListener('resize',()=>{
-        // console.log('resized');
-        this.doResizeActions();
-      },false);
     }
     static getDerivedStateFromProps(props,state){
       // console.log(props);
@@ -72,9 +73,23 @@ class Home extends React.Component {
       console.log('Dimensions',dimensions);
       this.setState({dimensions: dimensions});
     }
-    showCartView=()=>{
-      console.log('Need to show cart view');
-    }
+  checkoutComplete = () => {
+    this.props.dispatch(resetCartData());
+    this.onCloseModal();
+    toastr.success('', 'Congratulations, Order Placed');
+  }
+  showCartView = () => {
+    console.log('cart view has to be shown');
+    this.setState({ openModal: true });
+    document.getElementsByTagName('body')[0].style.overflow = 'hidden';
+    document.getElementsByTagName('html')[0].style.overflow = 'hidden';
+  }
+
+  onCloseModal = () => {
+    this.setState({ openModal: false });
+    document.getElementsByTagName('body')[0].style.overflow = 'auto';
+    document.getElementsByTagName('html')[0].style.overflow = 'auto';
+  };
     navigateToPlp=(e,data)=>{
       if(data)
       this.props.dispatch(push('/products?cat='+data.name+'&id='+data.id));
@@ -129,6 +144,23 @@ class Home extends React.Component {
           </div>)) : null}
       </div>
       <Footer></Footer>
+      {this.state.openModal ? (<Modal
+        open={this.state.openModal}
+        onClose={this.onCloseModal}
+        center
+        aria-labelledby={`My Cart(${this.props.productInfo.cartItems.legth} items)`}
+        aria-describedby="Hurry up! You won't find it cheaper anywhere."
+        classNames={{
+          overlayAnimationIn: '',
+          overlayAnimationOut: '',
+          modalAnimationIn: 'customEnterModalAnimation',
+          modalAnimationOut: 'customLeaveModalAnimation',
+        }}
+        animationDuration={800}
+        //   closeIcon={closeIcon}
+        showCloseIcon={false}>
+        <Cart cartData={this.props.productInfo.cartItems} checkoutComplete={this.checkoutComplete} closeModal={this.onCloseModal}></Cart>
+      </Modal>) : null}
     </div>
   );
   }

@@ -54,12 +54,12 @@ class Cart extends React.Component{
     }
     render(){
         return(<div className="cart-page">
-            <div className="cart-header modal-horizontal-space">
+            {!this.props.hideHeader ? (<div className="cart-header modal-horizontal-space">
                 <h2>My cart {this.state.itemList.length ? " ("+(this.state.itemList.length)+" items)" : " "}</h2>
                 <div className="close-icon" onClick={this.props.closeModal}>
                     <i className="ion-android-close"></i>
                 </div>
-            </div>
+            </div>) : null }
             
             <div className="row">
                 {this.state.itemList.length ? (<div>
@@ -111,7 +111,7 @@ class Cart extends React.Component{
                     </div>
                     <div className="modal-horizontal-space footer-shop-btn">
                         
-                        <button onClick={this.props.closeModal} className="btn full-width-btn">Start Shopping</button>
+                        <button onClick={!this.props.hideHeader ? this.props.closeModal : this.props.checkoutComplete} className="btn full-width-btn">Start Shopping</button>
                     </div>
                     </div>)}
             </div>

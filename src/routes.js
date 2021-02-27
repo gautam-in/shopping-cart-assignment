@@ -45,6 +45,15 @@ export default () => {
                     });
                 }}
             />
+            <Route
+                // path={`${constants.api_point}/products`}
+                path={"/cart"}
+                getComponent={(location, cb) => {
+                    require.ensure([], require => {
+                        cb(null, require('./components/Basket').default);
+                    });
+                }}
+            />
         </Route>
     )
 }
