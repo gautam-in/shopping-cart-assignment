@@ -7,6 +7,7 @@ import {push} from 'react-router-redux';
 import Logo from '../../static/images/logo.png';
 import {getViewPortDimensions} from '../utils';
 import Basket from '../components/Basket';
+import {resetCartData} from '../actions/productActions';
    /*const hbr = `
 <header className="space-header">
         <div class="row">
@@ -44,6 +45,7 @@ class Header extends React.Component {
         this.showHome = this.showHome.bind(this);
         this.doResizeActions = this.doResizeActions.bind(this);
         this.cartClick = this.cartClick.bind(this);
+        this.resetCart = this.resetCart.bind(this);
     }
     componentDidMount(){
         // window.imgClick = this.clickEvent;
@@ -71,6 +73,9 @@ class Header extends React.Component {
         // if(this.props.cartInfo){
         //     this.setState({itemCount:this.props.cartInfo.length})
         // }
+    }
+    resetCart=()=>{
+        this.props.dispatch(resetCartData());
     }
     doResizeActions=()=>{
         let dimensions = getViewPortDimensions();
@@ -112,8 +117,8 @@ class Header extends React.Component {
                             {this.state.userName && this.state.userName.length ? (<div> 
                                 <p className="useremail">{this.state.userName}</p>
                             </div>) : (<ul className="main-nav js--main-nav">
-                                <li><Link to="/signin">Signin</Link></li>
-                                <li><Link to="/signup">Register</Link></li>
+                                <li onClick={this.resetCart}><Link to="/signin">Signin</Link></li>
+                                <li onClick={this.resetCart}><Link to="/signup">Register</Link></li>
                                 {/* <li><Link to "/signup">Register</Link></li> */}
                             </ul>)}
                             </div>

@@ -17,7 +17,7 @@ class Basket extends React.Component{
     }
     checkoutComplete = () => {
         if(this.props.productInfo.cartItems && this.props.productInfo.cartItems.length){
-            toastr.success('', 'Congratulations, Order Placed');
+            toastr.success('', 'Congratulations, Order Placed',{timeOut:1000});
         }
         this.props.dispatch(resetCartData());
         // this.onCloseModal();

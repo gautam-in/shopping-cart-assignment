@@ -73,7 +73,7 @@ class Signin extends React.Component {
   checkoutComplete=()=>{
     this.props.dispatch(resetCartData());
     this.onCloseModal();
-    toastr.success('','Congratulations, Order Placed');
+    toastr.success('','Congratulations, Order Placed',{timeOut:1000});
 }
   
   onCloseModal = () => {
@@ -87,7 +87,7 @@ class Signin extends React.Component {
       let emailValidRegex=/^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/i;
       if(this.state.email && emailValidRegex.test(this.state.email) && this.state.password && this.state.password.length >= 6){
         this.setState({loginError:false});
-        toastr.success('', 'Tada...you are logged-in');
+        toastr.success('', 'Tada...you are logged-in',{timeOut:1000});
         this.props.dispatch(setUserDetails({userEmail:this.state.email,userPassword:this.state.password}));
       } else {
         this.setState({loginError:true});

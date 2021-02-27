@@ -76,7 +76,7 @@ class Home extends React.Component {
   checkoutComplete = () => {
     this.props.dispatch(resetCartData());
     this.onCloseModal();
-    toastr.success('', 'Congratulations, Order Placed');
+    toastr.success('', 'Congratulations, Order Placed',{timeOut:1000});
   }
   showCartView = () => {
     console.log('cart view has to be shown');

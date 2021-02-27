@@ -46,7 +46,7 @@ class Products extends React.Component{
             console.log('prodLst',state.productList);
         }
         if(props.productInfo.addCartData && props.productInfo.adding_to_cart_success){
-            toastr.success('Click on cart to buy','Item Added!');
+            toastr.success('Click on cart to buy','Item Added!',{timeOut:1000});
             props.dispatch(resetCartReduxProcessData());
         }
         return state;
@@ -64,7 +64,7 @@ class Products extends React.Component{
     checkoutComplete=()=>{
         this.props.dispatch(resetCartData());
         this.onCloseModal();
-        toastr.success('','Congratulations, Order Placed');
+        toastr.success('','Congratulations, Order Placed',{timeOut:1000});
     }
     showCartView=()=>{
         console.log('cart view has to be shown');

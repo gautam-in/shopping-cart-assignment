@@ -50,7 +50,7 @@ class Signup extends React.Component {
         if(props.signUp && props.signUp.userData){
             let title = `${'Hai '+state.fName}`;
             let message = "You are signed-up successfully!";
-            toastr.success(message, title);
+            toastr.success(message, title,{timeOut:1000});
             props.dispatch(push('/Home'));
         }
         return state;
@@ -79,13 +79,22 @@ class Signup extends React.Component {
     isValidFormState=()=>{
         let isValid = true;
         let emailValidRegex=/^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/i;
-        if(this.state.email && !emailValidRegex.test(this.state.email)){
+        // if(!this.state.fName){
+        //     isValid = false;
+        //     // toastr.warning('', 'Enter first name');
+        //     toastr.error('', 'Enter first name');
+        // }
+        // if(isValid && !this.state.lName){
+        //     isValid = false;
+        //     toastr.error('', 'Enter last name');
+        // }
+        if(isValid && this.state.email && !emailValidRegex.test(this.state.email)){
             isValid = false;
-            toastr.warning('', 'Invalid email');
+            toastr.error('', 'Invalid email',{timeOut:1000});
         }
         if(isValid && this.state.password.length < 6 && this.state.password.length !== this.state.confirmPassword){
             isValid = false;
-            toastr.warning('', 'Check password section');
+            toastr.error('', 'Check password section',{timeOut:1000});
         }
         return isValid;
     }
@@ -98,7 +107,7 @@ class Signup extends React.Component {
     checkoutComplete=()=>{
         this.props.dispatch(resetCartData());
         this.onCloseModal();
-        toastr.success('','Congratulations, Order Placed');
+        toastr.success('','Congratulations, Order Placed',{timeOut:1000});
     }
     onCloseModal = () => {
         this.setState({ openModal: false });
@@ -111,6 +120,16 @@ class Signup extends React.Component {
         if(this.state.email && this.state.password && (this.state.password === this.state.confirmPassword) && this.state.fName && this.state.lName && this.isValidFormState()){
             isValidForm = true;
         } else {
+            let isValid = true;
+            if(!this.state.fName){
+                isValid = false;
+                // toastr.warning('', 'Enter first name');
+                toastr.error('', 'Enter first name',{timeOut:1000});
+            }
+            if(isValid && !this.state.lName){
+                isValid = false;
+                toastr.error('', 'Enter last name',{timeOut:1000});
+            }
             // toastr.warning('', 'Invalid form entries found');
             this.setState({formError: true})
             // $('#errorarea').focus();

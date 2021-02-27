@@ -240,6 +240,7 @@ section {
         margin-top:0px;
         margin-bottom: 10px;
         font-size: 90%;
+        margin-right: 10px;
     }
     .main-nav{
         margin: 0 0px 10px;
@@ -1326,7 +1327,8 @@ input:not(:placeholder-shown)~.floating-label{
         box-shadow: none;
     }
     .signup-area{
-        padding-top: 0;;
+        padding-top: 0;
+        height: auto;
     }
 }
 
