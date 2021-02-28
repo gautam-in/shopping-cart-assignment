@@ -7,6 +7,7 @@ import {push} from 'react-router-redux';
 import {getOffers,getCategories} from '../actions/homeActions';
 import {getProducts,addToCart,resetCartReduxProcessData,resetCartData} from '../actions/productActions';
 import Handlebars from "handlebars";
+import SvgLoading from '../presentations/SvgLoading';
 import Header from '../presentations/Header';
 import Footer from '../presentations/Footer';
 import $ from 'jquery';
@@ -100,6 +101,9 @@ class Home extends React.Component {
     };
   return (
     <div className="App home-page">
+      <div className="overlay" style={{display: (this.props.homeApi.bannerdata_searching || this.props.homeApi.categorydata_searching) ? "block" : "none"}}>
+            <div className="loading"><SvgLoading /></div>
+      </div>
       <Header cartClick={this.showCartView} cartInfo={this.props.productInfo.cartItems}></Header>
       {/* <div dangerouslySetInnerHTML={{ __html: template(data) }} /> */}
       <div className="offerArea content-seperator">

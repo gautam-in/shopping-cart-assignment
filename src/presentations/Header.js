@@ -108,6 +108,12 @@ class Header extends React.Component {
                         <ul className="main-nav js--main-nav">
                             <li><Link to={`/home`} >Home</Link></li>
                             <li><Link to="/products">Products</Link></li>
+                            <div className="logo-icon-header">
+                            <li><Link to={`/home`} ><i className="ion-ios-home"></i></Link></li>
+                            <li><Link to="/products"><i className="ion-ios-list"></i></Link></li>
+                            <li><Link to={`/signin`} ><i className="ion-ios-person"></i></Link></li>
+                            <li><Link to="/signup"><i className="ion-ios-personadd"></i></Link></li>
+                            </div>
                             {/* <li><a href="#home">Home</a></li> */}
                             {/* <li><a href="#products">Products</a></li> */}
                         </ul>

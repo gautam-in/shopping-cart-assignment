@@ -5,6 +5,7 @@ import {push} from 'react-router-redux';
 import {getCategories} from '../actions/homeActions';
 import {getProducts,addToCart,resetCartReduxProcessData,resetCartData} from '../actions/productActions';
 import Handlebars from "handlebars";
+import SvgLoading from '../presentations/SvgLoading';
 import Header from '../presentations/Header';
 import Footer from '../presentations/Footer';
 import $ from 'jquery';
@@ -93,6 +94,9 @@ class Products extends React.Component{
     }
     render(){
         return(<div className="products-page">
+            <div className="overlay" style={{display: (this.props.productInfo.searching_productdetails|| this.props.productInfo.adding_to_cart  || this.props.homeApi.categorydata_searching) ? "block" : "none"}}>
+                <div className="loading"><SvgLoading /></div>
+            </div>
             <Header cartClick={this.showCartView} cartInfo={this.props.productInfo.cartItems}></Header>
             <div className="row content-area">
                 <div className="col span-3-of-12 left-menu">
