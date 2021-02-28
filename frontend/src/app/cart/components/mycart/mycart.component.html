@@ -2,24 +2,27 @@
     [ngStyle]="listofProductsInCart.length === 0 ? {'background-color': '#ffffff'} : {'background-color': '#e2e2e2'}">
     <ng-container *ngIf="listofProductsInCart.length === 0">
         <div class="cart-empty">
-            <h2>No items in your cart</h2>
+            <h3>No items in your cart</h3>
             <p>You favourite items are just a click away</p>
         </div>
         <button type="button" class="custom-btn custom-btn-dark-pink" (click)="goToHomePage()">Start Shopping</button>
     </ng-container>
     <ng-container *ngIf="listofProductsInCart.length !== 0">
         <div class="my-cart-item-count-container">
-            <h2>My Cart</h2><label>({{listofProductsInCart.length}} item)</label>
+            <h3>My Cart</h3><span>({{listofProductsInCart.length}} item)</span>
         </div>
         <div class="my-cart" *ngFor="let product of listofProductsInCart">
             <figure>
-                <img src="assets{{product.imageURL}}" alt="{{product.name}}" title="{{product.name}}" />
+                <img src="assets{{product.imageURL}}" alt="{{product.name}}" />
             </figure>
             <article>
                 <h3>{{product.name}}</h3>
                 <div>
-                    <button type="button" (click)="removeProduct(product)"><i class="fas fa-minus" aria-label="decrease product quantity"></i></button>
-                    <span>{{product.count}}</span> <button type="button" (click)="addProduct(product)"><i class="fas fa-plus" aria-label="increase product quantity"></i></button> <span>X</span> <span>Rs. {{product.price}}</span>
+                    <button type="button" (click)="removeProduct(product)" aria-label="decrease product quantity by one"><i class="fas fa-minus"
+                            aria-hidden="true"></i></button>
+                    <span>{{product.count}}</span> <button type="button" (click)="addProduct(product)" aria-label="increase product quantity by one"><i
+                            class="fas fa-plus" aria-hidden="true"></i></button> <span>X</span>
+                    <span>Rs. {{product.price}}</span>
                     <p>Rs.{{product.totalPrice}}</p>
                 </div>
             </article>
@@ -39,7 +42,7 @@
             <p>
                 <button type="button" class="custom-btn custom-btn-dark-pink checkout-btn" (click)="goToCheckoutPage()"
                     aria-valuetext="Proceed to Checkout"><span>Proceed to Checkout</span> <span>Rs.
-                        {{totalProductsPrice}} ></span></button>
+                        {{totalProductsPrice}}</span></button>
         </article>
     </ng-container>
 

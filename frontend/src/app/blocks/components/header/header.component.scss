@@ -32,7 +32,7 @@ nav{
     nav {
         justify-content: space-around;
         .mobile-menu {
-            display: block;
+            display: none;
         }
         .login-menu {
             display: block;
@@ -53,3 +53,29 @@ nav{
     }
     
 }
+
+// @media (min-width: 720px) {
+
+//     nav {
+//         justify-content: space-between;
+//         .mobile-menu {
+//             display: none;
+//         }
+//         .login-menu {
+//             display: block;
+//             position: absolute;
+//             right: 0;
+//             top: 0%;
+//         }
+//         .page-menu {
+//             display: block;
+//             position: absolute;
+//             left: 30%;
+//         }
+    
+//         a {
+//             color: black;
+//             font-weight: 600;
+//         }
+//     }
+// }

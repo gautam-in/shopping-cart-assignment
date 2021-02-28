@@ -11,6 +11,10 @@
     line-height: 1.24;
     ul>li {
         padding: 5px;
+        a {
+            text-decoration: none;
+            color: $color-black;
+        }
     }
     button {
         border: none;
@@ -39,9 +43,12 @@ aside {
         height: auto;
         background-color: $color-light-grey;
         color: $color-black;
-        flex-basis: 10%;
+        // flex-basis: 10%;
         ul>li {
             border-bottom: 1px solid $color-grey;
+            &:focus{
+                border: 1px solid black;
+            }
         }
         .fa, button {
             display: none;

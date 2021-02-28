@@ -94,7 +94,6 @@ export class AddToCartService {
         grandTotal = product.totalPrice + grandTotal;
       });
     });
-    console.log(grandTotal);
     return grandTotal;
   }
 }

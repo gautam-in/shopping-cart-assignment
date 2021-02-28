@@ -5,16 +5,17 @@ section {
     flex-direction: column;
     justify-content: space-evenly;
     margin-top: 10px;
-    .my-cart-item-count-container {
-        background-color: $color-white;
-    }
 }
 .my-cart-item-count-container {
+    background-color: $color-white;
     display: flex;
     flex-direction: row;
     align-items: baseline;
     margin-top: 40px;
     padding: 15px;
+    span {
+        margin-left: 5px;
+    }
 }
 
 .my-cart{

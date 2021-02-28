@@ -22,3 +22,10 @@ a {
         margin-top: 20px;
     }
 }
+
+@media (min-width: 720px) {
+    :host {
+        padding: 30px;
+        margin-top: 30px;
+    }
+}

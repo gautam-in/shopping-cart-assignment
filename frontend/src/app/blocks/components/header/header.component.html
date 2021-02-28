@@ -1,18 +1,18 @@
 <nav>
     <app-logo (click)="toggleMenu()"></app-logo>
     <div class="page-menu">
-        <a [routerLink]="['/home']">Home</a>
-        <a [routerLink]="['/products']">Products</a>
+        <a role="menuitem" [routerLink]="['/home']">Home</a>
+        <a role="menuitem" [routerLink]="['/products']">Products</a>
     </div>
     <div class="login-menu">
-        <a [routerLink]="['/login']">Signin</a>
-        <a [routerLink]="['/signup']">Register</a>
+        <a role="menuitem" [routerLink]="['/login']">Signin</a>
+        <a role="menuitem" [routerLink]="['/signup']">Register</a>
     </div>
-    <div #showMenu class="mobile-menu">
-        <a [routerLink]="['/home']">Home</a>
-        <a [routerLink]="['/products']">Products</a>
-        <a [routerLink]="['/login']">Signin</a>
-        <a [routerLink]="['/signup']">Register</a>
+    <div #showMenu class="mobile-menu" aria-expanded="false">
+        <a role="menuitem" [routerLink]="['/home']">Home</a>
+        <a role="menuitem" [routerLink]="['/products']">Products</a>
+        <a role="menuitem" [routerLink]="['/login']">Signin</a>
+        <a role="menuitem" [routerLink]="['/signup']">Register</a>
     </div>
     <app-cart-counter></app-cart-counter>
 </nav>

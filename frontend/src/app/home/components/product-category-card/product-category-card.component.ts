@@ -11,7 +11,6 @@ export class ProductCategoryCardComponent implements OnInit {
 
   @Input() categories: ProductCategoryDTO[] = [];
   constructor(private readonly router: Router) { }
-
   ngOnInit(): void {
   }
 

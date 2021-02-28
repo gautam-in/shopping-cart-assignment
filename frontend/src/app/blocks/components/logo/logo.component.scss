@@ -12,3 +12,11 @@
         }
     }
 }
+
+@media (min-width: 720px) {
+    :host{
+        img {
+            width: 80%;
+        }
+    }
+}
