@@ -11,25 +11,12 @@ import toastr from 'toastr';
 import { Modal } from "react-responsive-modal";
 import Cart from '../presentations/Cart';
 import $ from 'jquery';
-const hbr = `
-<p>Hello, my name is {{name}}. I am from {{hometown}}. I have " +
-"{{kids.length}} kids:</p>" +
-"<ul>{{#kids}}<li>{{name}} is {{age}}</li>{{/kids}}</ul>
-<form action="" method="POST">
-  <div c>
-</form>(
-`;
-
-const template = Handlebars.compile(hbr);
 
 class Signin extends React.Component {
     constructor(props){
         super(props);
         this.state={
-            data:{
-                name: "Alan",
-                hometown: "Somewhere, TX",
-                kids: [{ name: "Jimmy", age: "12" }, { name: "Sally", age: "4" }],
+            data:{              
                 email:'',
                 password:'',
                 loginError: false,
@@ -46,7 +33,6 @@ class Signin extends React.Component {
 
     }
     static getDerivedStateFromProps(props,state){
-      console.log(props);
       if(props.signIn && props.signIn.userData){
         props.dispatch(push('/Home'));
       }
@@ -65,7 +51,6 @@ class Signin extends React.Component {
       }
     }
     showCartView=()=>{
-      console.log('cart view has to be shown');
       this.setState({openModal: true});
       document.getElementsByTagName('body')[0].style.overflow = 'hidden';
       document.getElementsByTagName('html')[0].style.overflow = 'hidden';
@@ -73,7 +58,7 @@ class Signin extends React.Component {
   checkoutComplete=()=>{
     this.props.dispatch(resetCartData());
     this.onCloseModal();
-    toastr.success('','Congratulations, Order Placed',{timeOut:1000});
+    toastr.success('Cart is emptied','Congratulations, Order Placed',{timeOut:1000});
 }
   
   onCloseModal = () => {
@@ -83,7 +68,6 @@ class Signin extends React.Component {
   };
     onSubmitHandler=(e)=>{
       e.preventDefault();
-      // this.props.dispatch(push('/'));
       let emailValidRegex=/^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/i;
       if(this.state.email && emailValidRegex.test(this.state.email) && this.state.password && this.state.password.length >= 6){
         this.setState({loginError:false});
@@ -101,7 +85,6 @@ class Signin extends React.Component {
   return (
     <div className="App signin-area">
         <Header cartClick={this.showCartView} cartInfo={this.props.productInfo.cartItems}></Header>
-        {/* <div dangerouslySetInnerHTML={{ __html: template(this.state.data) }} /> */}
         <div className="login-area">
             <div className="row">
             <div className="col span-1-of-2">
@@ -163,11 +146,5 @@ function mapStateToProps(state) {
     productInfo: state.productReducer
   };
 }
-// const mapDispatchToProps = (dispatch) => {
-//   return {
-//       // onSubmit: (data) => {
-//       //     dispatch(setAddresses(data))
-//       // }
-//   }
-// }
+
 export default connect(mapStateToProps)(Signin);

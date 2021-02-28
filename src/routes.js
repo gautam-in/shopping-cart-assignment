@@ -37,7 +37,6 @@ export default () => {
                 }}
             />
             <Route
-                // path={`${constants.api_point}/products`}
                 path={`${"/products"}`}
                 getComponent={(location, cb) => {
                     require.ensure([], require => {
@@ -55,8 +54,7 @@ export default () => {
                 }}
             />
             <Route
-                // path={`${constants.api_point}/products`}
-                path={"/error"}
+                path={"*"}
                 getComponent={(location, cb) => {
                     require.ensure([], require => {
                         cb(null, require('./components/Error').default);

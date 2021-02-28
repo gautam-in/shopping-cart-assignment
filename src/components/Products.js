@@ -1,20 +1,14 @@
 import React from "react";
-import ReactDOM from "react-dom";
 import {connect} from 'react-redux';
-import {push} from 'react-router-redux';
 import {getCategories} from '../actions/homeActions';
 import {getProducts,addToCart,resetCartReduxProcessData,resetCartData} from '../actions/productActions';
-import Handlebars from "handlebars";
 import SvgLoading from '../presentations/SvgLoading';
 import Header from '../presentations/Header';
 import Footer from '../presentations/Footer';
-import $ from 'jquery';
-import LazyLoad, { forceCheck } from 'react-lazyload';
-import Slider from 'react-slick';
+import LazyLoad from 'react-lazyload';
 import toastr from 'toastr';
 import { Modal } from "react-responsive-modal";
 import Cart from '../presentations/Cart';
-// import closeIcon from '../assets/images/cancel.png';
 class Products extends React.Component{
     constructor(props){
         super(props);
@@ -23,7 +17,6 @@ class Products extends React.Component{
             productList:[],
             catId: '',
             openModal: false
-            // aliasProdList: []
         }
         this.makeActiveCategory = this.makeActiveCategory.bind(this);
         this.addToCart = this.addToCart.bind(this);
@@ -40,11 +33,9 @@ class Products extends React.Component{
     static getDerivedStateFromProps(props,state){
         if(props.homeApi.categoryData && props.homeApi.categorydata_searching_success){
             state.categoryData = props.homeApi.categoryData;
-            console.log('catData',state.categoryData);
         }
         if(props.productInfo.productData && props.productInfo.searching_productdetails_success){
             state.productList = props.productInfo.productData;
-            console.log('prodLst',state.productList);
         }
         if(props.productInfo.addCartData && props.productInfo.adding_to_cart_success){
             toastr.success('Click on cart to buy','Item Added!',{timeOut:1000});
@@ -53,7 +44,6 @@ class Products extends React.Component{
         return state;
     }
     makeActiveCategory=(e,id)=>{
-        var that = e;
         this.setState({catId:id ? id:e.target.value});
         setTimeout(()=>{
             this.getDropDwnSelectedVal(this.state.catId, this.state.categoryData)
@@ -65,10 +55,9 @@ class Products extends React.Component{
     checkoutComplete=()=>{
         this.props.dispatch(resetCartData());
         this.onCloseModal();
-        toastr.success('','Congratulations, Order Placed',{timeOut:1000});
+        toastr.success('Cart is emptied','Congratulations, Order Placed',{timeOut:1000});
     }
     showCartView=()=>{
-        console.log('cart view has to be shown');
         this.setState({openModal: true});
         document.getElementsByTagName('body')[0].style.overflow = 'hidden';
         document.getElementsByTagName('html')[0].style.overflow = 'hidden';
@@ -115,11 +104,7 @@ class Products extends React.Component{
                             <option value="default" disabled>Choose an option</option>
                             {this.state.categoryData && this.state.categoryData.length ? this.state.categoryData.filter((item) => { return item.order >= 0 }).map((data, i) => (<option value={data.id} className={this.state.catId ? data.id == this.state.catId ? 'selected' : '' : ''} key={i}>
                                 {data.name}
-                            </option>)) : null}
-                            {/* selected={data.id == this.state.catId} */}
-                            {/* <option value="1">Pure CSS</option>
-                                    <option value="2">No JS</option>
-                                    <option value="3">Nice!</option> */}
+                            </option>)) : null}                            
                         </select>
                     </div>
                 </div>
@@ -171,7 +156,6 @@ class Products extends React.Component{
                 modalAnimationOut: 'customLeaveModalAnimation',
               }}
               animationDuration={800}
-            //   closeIcon={closeIcon}
               showCloseIcon={false}>
             <Cart cartData={this.props.productInfo.cartItems} checkoutComplete={this.checkoutComplete} closeModal={this.onCloseModal}></Cart>
         </Modal>):null}

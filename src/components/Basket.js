@@ -1,8 +1,7 @@
 import React from "react";
-import ReactDOM from "react-dom";
 import {connect} from 'react-redux';
 import {push} from 'react-router-redux';
-import {getProducts,addToCart,resetCartReduxProcessData,resetCartData} from '../actions/productActions';
+import {resetCartData} from '../actions/productActions';
 import Cart from '../presentations/Cart';
 import toastr from 'toastr';
 import Header from '../presentations/Header';
@@ -17,17 +16,13 @@ class Basket extends React.Component{
     }
     checkoutComplete = () => {
         if(this.props.productInfo.cartItems && this.props.productInfo.cartItems.length){
-            toastr.success('', 'Congratulations, Order Placed',{timeOut:1000});
+            toastr.success('Cart is emptied', 'Congratulations, Order Placed',{timeOut:1000});
         }
         this.props.dispatch(resetCartData());
-        // this.onCloseModal();
         this.props.dispatch(push('/'));
     }
     showCartView=()=>{
-        console.log('cart view has to be shown');
-        // this.setState({openModal: true});
-        // document.getElementsByTagName('body')[0].style.overflow = 'hidden';
-        // document.getElementsByTagName('html')[0].style.overflow = 'hidden';
+       
     }
     render(){
     return(<div className="basket-page">

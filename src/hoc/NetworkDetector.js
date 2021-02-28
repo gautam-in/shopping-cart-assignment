@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import ErrorComponent from '../components/Error';
+// import ErrorComponent from '../components/Error';
 import LazyLoad from 'react-lazyload';
 import NetworkErrorImg from '../assets/images/no-internet.png';
 export default function (ComposedComponent) {

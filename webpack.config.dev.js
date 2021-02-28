@@ -42,27 +42,7 @@ module.exports = {
     },
 
     module: {
-        rules: [
-            // {
-            //     test: /\.(scss|css)$/,
-            //     loaders: ["style", "css", "sass"]
-            // }, {
-            //     test: /\.jsx?$/,
-            //     exclude: [/node_modules/, /.+\.config.js/],
-            //     loader: 'babel'
-            // }, {
-            //     test: /\.(jpe?g|gif|png)$/i,
-            //     loader: 'url-loader?limit=10000'
-            // }, {
-            //     test: /\.json$/,
-            //     loader: 'json-loader'
-            // }, {
-            //     test: /\.ttf$/,
-            //     loader: "url-loader?limit=10000"
-            // }, {
-            //     test: /\.svg?$/,
-            //     loader: 'svg-sprite?name=[name]_[hash]'
-            // }
+        rules: [            
             {
                 test: /\.(scss|css)$/,
                 loaders: ["style-loader", "css-loader", "sass-loader"]
@@ -97,11 +77,7 @@ module.exports = {
             favicon: './logo-icon.ico'
         }),
         new webpack.HotModuleReplacementPlugin(),
-        // new webpack.optimize.CommonsChunkPlugin({
-        //     name: 'vendor',
-        //     minChunks: Infinity,
-        //     filename: 'vendor.js',
-        // }),
+        
         new webpack.DefinePlugin({
             __CLIENT__: JSON.stringify(true),
             __DEVELOPMENT__: true,

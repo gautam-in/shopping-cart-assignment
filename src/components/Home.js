@@ -1,41 +1,16 @@
-// import require from 'require';
-// const fs = require('fs');
 import React from "react";
-import ReactDOM from "react-dom";
 import {connect} from 'react-redux';
 import {push} from 'react-router-redux';
 import {getOffers,getCategories} from '../actions/homeActions';
-import {getProducts,addToCart,resetCartReduxProcessData,resetCartData} from '../actions/productActions';
-import Handlebars from "handlebars";
+import {resetCartData} from '../actions/productActions';
 import SvgLoading from '../presentations/SvgLoading';
 import Header from '../presentations/Header';
 import Footer from '../presentations/Footer';
-import $ from 'jquery';
 import {getViewPortDimensions} from '../utils';
 import LazyLoad, { forceCheck } from 'react-lazyload';
 import Slider from 'react-slick';
 import { Modal } from "react-responsive-modal";
 import Cart from '../presentations/Cart';
-// import 'slick-carousel/slick/slick-theme.css';
-// import 'slick-carousel/slick/slick.css';
-// import nicescroll from 'jquery.nicescroll';
-// import cartSucc from '../../server/addToCart/index.post.json';
-// var data = JSON.parse(fs.readFileSync(cartSucc).toString());
-// console.log(data);
-// import "./styles.css";
-
-const hbr = `
-<p>Hello, my name is {{name}}. I am from {{hometown}}. I have " +
-"{{kids.length}} kids:</p>" +
-"<ul>{{#kids}}<li>{{name}} is {{age}}</li>{{/kids}}</ul>
-`;
-
-const template = Handlebars.compile(hbr);
-const data = {
-    name: "Alan",
-    hometown: "Somewhere, TX",
-    kids: [{ name: "Jimmy", age: "12" }, { name: "Sally", age: "4" }]
-  };
 class Home extends React.Component {
     constructor(props){
         super(props);
@@ -55,9 +30,7 @@ class Home extends React.Component {
       this.props.dispatch(getCategories());
     }
     static getDerivedStateFromProps(props,state){
-      // console.log(props);
       if(props.homeApi.bannerData && props.homeApi.bannerdata_searching_success){
-        // console.log(props.homeApi.bannerData);
         state.bannerData = props.homeApi.bannerData;
         setTimeout(()=>{
           forceCheck();
@@ -65,22 +38,19 @@ class Home extends React.Component {
       }
       if(props.homeApi.categoryData && props.homeApi.categorydata_searching_success){
         state.categoryData = props.homeApi.categoryData;
-        // console.log('catData',state.categoryData);
       }
       return state;
     }
     doResizeActions=()=>{
       let dimensions = getViewPortDimensions();
-      console.log('Dimensions',dimensions);
       this.setState({dimensions: dimensions});
     }
   checkoutComplete = () => {
     this.props.dispatch(resetCartData());
     this.onCloseModal();
-    toastr.success('', 'Congratulations, Order Placed',{timeOut:1000});
+    toastr.success('Cart is emptied', 'Congratulations, Order Placed',{timeOut:1000});
   }
   showCartView = () => {
-    console.log('cart view has to be shown');
     this.setState({ openModal: true });
     document.getElementsByTagName('body')[0].style.overflow = 'hidden';
     document.getElementsByTagName('html')[0].style.overflow = 'hidden';
@@ -105,7 +75,6 @@ class Home extends React.Component {
             <div className="loading"><SvgLoading /></div>
       </div>
       <Header cartClick={this.showCartView} cartInfo={this.props.productInfo.cartItems}></Header>
-      {/* <div dangerouslySetInnerHTML={{ __html: template(data) }} /> */}
       <div className="offerArea content-seperator">
         <div className="slider-container">
           <Slider {...settings}>
@@ -161,7 +130,6 @@ class Home extends React.Component {
           modalAnimationOut: 'customLeaveModalAnimation',
         }}
         animationDuration={800}
-        //   closeIcon={closeIcon}
         showCloseIcon={false}>
         <Cart cartData={this.props.productInfo.cartItems} checkoutComplete={this.checkoutComplete} closeModal={this.onCloseModal}></Cart>
       </Modal>) : null}
@@ -178,6 +146,3 @@ function mapStateToProps(state){
   }
 }
 export default connect(mapStateToProps)(Home);
-
-// const rootElement = document.getElementById("root");
-// ReactDOM.render(<App />, rootElement);

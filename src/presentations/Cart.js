@@ -1,7 +1,4 @@
 import React from 'react';
-import ReactDOMServer from 'react-dom/server';
-import Handlebars from "handlebars";
-import {Link} from 'react-router';
 import {connect} from 'react-redux';
 import LazyLoad from 'react-lazyload';
 import {resetCartData} from '../actions/productActions';
@@ -82,7 +79,7 @@ class Cart extends React.Component{
                             </div>
                         </div>
                         <div className="cart-item-totalprice">
-                            {item.finalPrice = item.qty * item.price}
+                            <p>{item.finalPrice = item.qty * item.price}</p>
                         </div>
                         </li>))}
                         </ul>
@@ -111,7 +108,7 @@ class Cart extends React.Component{
                     </div>
                     <div className="modal-horizontal-space footer-shop-btn">
                         
-                        <button onClick={!this.props.hideHeader ? this.props.closeModal : this.props.checkoutComplete} className="btn full-width-btn">Start Shopping</button>
+                        <button aria-label="Start shopping" onClick={!this.props.hideHeader ? this.props.closeModal : this.props.checkoutComplete} className="btn full-width-btn">Start Shopping</button>
                     </div>
                     </div>)}
             </div>

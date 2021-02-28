@@ -1,36 +1,11 @@
 import React from 'react';
-import ReactDOMServer from 'react-dom/server';
-import Handlebars from "handlebars";
 import {Link} from 'react-router';
 import {connect} from 'react-redux';
 import {push} from 'react-router-redux';
 import Logo from '../../static/images/logo.png';
 import {getViewPortDimensions} from '../utils';
-import Basket from '../components/Basket';
 import {resetCartData} from '../actions/productActions';
-   /*const hbr = `
-<header className="space-header">
-        <div class="row">
-            <img onClick="{{imgclick}}" src={{state.logo}} />
-        </div>
-    </header>
-`;*/
-
-// const clickEvent = function(event){
-//     console.log('clicked')
-// }
-
-// Handlebars.registerHelper('imgclick', function (event) {
-//     console.log(event);
-//     console.log(this);
-//     if(this.state.clickable){
-//         return this.clickEvent();
-//     } else {
-//         console.log('not clickable,setting now')
-//         setTimeout(()=>this.setState({clickable: true}),0);
-//     }
-// })
-
+import toastr from 'toastr';
 class Header extends React.Component {
      constructor(props) {
         super(props);
@@ -48,7 +23,6 @@ class Header extends React.Component {
         this.resetCart = this.resetCart.bind(this);
     }
     componentDidMount(){
-        // window.imgClick = this.clickEvent;
         if(this.props.signin.userData && this.props.signin.userData.userEmail){
             this.setState({userName:this.props.signin.userData.userEmail});
         } else if(this.props.signup && this.props.signup.userData && this.props.signup.userData.userEmail){
@@ -56,7 +30,6 @@ class Header extends React.Component {
         }
         this.doResizeActions();
         window.addEventListener('resize',()=>{
-            // console.log('resized');
             this.doResizeActions();
         },false);
     }
@@ -69,37 +42,31 @@ class Header extends React.Component {
         }
         return state;
     }
-    componentDidUpdate(nextProps,prevState){
-        // if(this.props.cartInfo){
-        //     this.setState({itemCount:this.props.cartInfo.length})
-        // }
-    }
+   
     resetCart=()=>{
         this.props.dispatch(resetCartData());
     }
     doResizeActions=()=>{
         let dimensions = getViewPortDimensions();
-        console.log('Dimensions',dimensions);
         this.setState({dimensions: dimensions});
     }
     cartClick=()=>{
+        // if(!this.state.userName.length){
+        //     toastr.error('','Please login to view cart.');
+        //     return;
+        // }
         if(this.state.dimensions && this.state.dimensions.width && this.state.dimensions.width < 480){ //1024
-            console.log('need to route to cart view');
             this.props.dispatch(push('/cart'));
         } else {
             this.props.cartClick();
         }
     }
-    clickEvent(event){
-        console.log('clicked',event);
+    clickEvent=(event)=>{
     }
     showHome=()=>{
         this.props.dispatch(push('/'));
     }
-    render(){
-        // const html = ReactDOMServer.renderToString();
-        // const hbr=html;
-        // const template = Handlebars.compile(hbr);
+    render(){        
         return (<div className="header-area">
             <header>
                 <nav className="sticky-nav">
@@ -114,10 +81,8 @@ class Header extends React.Component {
                             <li><Link to={`/signin`} ><i className="ion-ios-person"></i></Link></li>
                             <li><Link to="/signup"><i className="ion-ios-personadd"></i></Link></li>
                             </div>
-                            {/* <li><a href="#home">Home</a></li> */}
-                            {/* <li><a href="#products">Products</a></li> */}
+                           
                         </ul>
-                        {/* <a className="mobile-nav-icon js--nav-icon"><i className="ion-navicon-round"></i></a> */}
                         <div className="guest-info">
                             <div>
                             {this.state.userName && this.state.userName.length ? (<div> 
@@ -125,7 +90,6 @@ class Header extends React.Component {
                             </div>) : (<ul className="main-nav js--main-nav">
                                 <li onClick={this.resetCart}><Link to="/signin">Signin</Link></li>
                                 <li onClick={this.resetCart}><Link to="/signup">Register</Link></li>
-                                {/* <li><Link to "/signup">Register</Link></li> */}
                             </ul>)}
                             </div>
                             <div className="cartArea" onClick={this.cartClick}>
