@@ -6,10 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "canned -p 5000 ./server",
-    "dev": "webpack-dev-server --progress --colors --config ./webpack.config.dev.js",
-    "stage": "webpack-dev-server --progress --colors --config ./webpack.config.stage.js",
-    "//canned-server":"canned -p 5000 --relaxed_accept=true --cors=true ./server",
-    "//dev-build": "webpack -p --define process.env.NODE_ENV='\"development\"' --progress --colors"
+    "dev": "webpack-dev-server --progress --colors --config ./webpack.config.dev.js"
   },
   "author": "",
   "license": "MIT",
