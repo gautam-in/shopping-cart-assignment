@@ -1,0 +1,210 @@
+@media only screen and (max-width: 1199px) {
+  .RRT__panel.panel {
+    .product-details-box {
+      width: 33.33%;
+    }
+  }
+  .RRT__tabs {
+    > div {
+      white-space: inherit;
+    }
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  // responsive css for login page
+  .left-sec {
+    padding-left: 5%;
+  }
+  .inner-footer {
+    text-align: center;
+  }
+  .RRT__tabs {
+    > div {
+      padding: 12px 8px;
+    }
+  }
+  .RRT__panel.panel {
+    .product-details-box {
+      width: 50%;
+    }
+  }
+
+  .RRT__panel.panel {
+    .product-details-box {
+      padding-bottom: 52px;
+      p {
+        min-height: 160px;
+      }
+      h5 {
+        min-height: 50px;
+      }
+      p,
+      img {
+        width: 50%;
+        display: inline-block;
+        vertical-align: middle;
+      }
+      .btn {
+        width: 100%;
+      }
+    }
+  }
+  .desktop-visible,
+  .price-buy-now > span {
+    display: none;
+  }
+  .mobile-visible {
+    display: block;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  // responsive css for Header section
+  .navigation,
+  .signInBar,
+  .registerBar {
+    display: none;
+  }
+  .logo-container {
+    width: 50%;
+    padding: 5px 10px;
+    img {
+      width: 105px;
+    }
+  }
+  .header {
+    padding: 0;
+  }
+  .cart-container {
+    margin: 0;
+    top: 0;
+    & > span {
+      padding: 16px 20px 17px;
+    }
+  }
+  section.product-info-list {
+    overflow: hidden;
+    padding-top: 20px;
+  }
+  // responsive css for login page
+  .left-sec,
+  .right-sec {
+    float: none;
+    width: 100%;
+    text-align: center;
+    padding: 0px 10px 15px;
+  }
+
+  .right-sec {
+    form {
+      max-width: 315px;
+      width: 100%;
+      margin: 0 auto;
+    }
+  }
+
+  // responsive css for Home page
+  .carousel {
+    .control-dots {
+      bottom: -32px;
+    }
+    &.carousel-slider {
+      overflow: visible;
+    }
+    .slide img {
+      min-height: 100px;
+    }
+  }
+  .product-info-list {
+    ul {
+      li {
+        padding: 10px;
+        .product-image,
+        .product-info {
+          display: inline-block;
+          float: none;
+        }
+        .product-info {
+          padding: 15px 10px;
+        }
+        &:nth-child(even) .product-image {
+          height: 47%;
+          img {
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
+          }
+        }
+      }
+    }
+  }
+  // responsive css for Product page
+  .main-product-container {
+    display: block;
+  }
+  .RRT__tabs {
+    width: 100%;
+    padding: 10px 0px 0px;
+    background: #fff;
+    > div {
+      padding: 12px 0px;
+    }
+  }
+  .RRT__accordion .RRT__tab {
+    padding: 12px;
+    position: relative;
+    &:after {
+      position: absolute;
+      top: 10px;
+      right: 18px;
+      content: '>';
+      font-size: 20px;
+      transition: all 0.3s ease;
+    }
+    &.RRT__tab--selected::after {
+      transform: rotate(90deg);
+    }
+  }
+  .RRT__panel.panel {
+    width: 100%;
+    .product-details-box {
+      width: 100%;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      border-bottom: 0;
+      padding-bottom: 0;
+      h5 {
+        min-height: auto;
+      }
+      p {
+        margin: 0px 0px 20px;
+        min-height: auto;
+      }
+      p,
+      img {
+        vertical-align: top;
+      }
+    }
+  }
+  .price-buy-now {
+    width: 49.5%;
+    bottom: 0px;
+    right: 0;
+    border-bottom: 0;
+  }
+  .product-detail-info {
+    position: relative;
+    padding-top: 10px;
+    border-bottom: 2px dotted #c5c1c1;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .product-detail-info {
+    padding-bottom: 50px;
+  }
+  .price-buy-now {
+    bottom: 2%;
+  }
+}

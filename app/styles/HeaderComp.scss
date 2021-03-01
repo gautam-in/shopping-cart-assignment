@@ -1,0 +1,96 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+}
+.header {
+  width: 100%;
+  display: block;
+  padding: 5px;
+  box-shadow: 0px 0px 5px gray;
+  position: relative;
+  z-index: 9;
+}
+.inner-header {
+  width: 100%;
+  max-width: 1200px;
+  display: block;
+  margin: 0 auto;
+  // border: 1px solid red;
+}
+.logo-container {
+  width: 190px;
+  float: left;
+  // display: table;
+}
+.navigation {
+  margin-left: 80px;
+  float: left;
+  // padding-top: 50px;
+}
+.navigation li {
+  // height: 100%;
+  float: left;
+  padding: 53px 20px 0 20px;
+  font-size: $FontSize;
+}
+.navigation-right {
+  float: right;
+}
+.cart-container {
+  display: block;
+  margin-right: 20px;
+  background: $lightGreyColor;
+  margin-top: 15px;
+  font-size: $FontSize;
+  position: relative;
+  top: 6px;
+  & > span {
+    padding: 12px 20px 15px;
+    cursor: pointer;
+    display: block;
+    img{
+      display:inline-block;
+      width:25px;
+      vertical-align: bottom;
+      margin-right: 10px;
+      position: relative;
+      top: 3px;
+    }
+  }
+}
+.signInBar {
+  font-size: $SmallFontSize;
+  display: inline-block;
+  margin-right: 10px;
+  color: #000;
+  font-size: $FontSize;
+  &:hover,
+  &.selected {
+    color: rgba(96, 96, 221, 0.897);
+  }
+}
+.registerBar {
+  font-size: $SmallFontSize;
+  display: inline-block;
+  color: #000;
+  font-size: $FontSize;
+  &:hover,
+  &.selected {
+    color: rgba(96, 96, 221, 0.897);
+  }
+}
+.navigation {
+  li {
+    a {
+      color: #000;
+      font-size: $FontSize;
+      cursor: pointer;
+      &:hover,
+      &.selected {
+        color: rgba(96, 96, 221, 0.897);
+      }
+    }
+  }
+}
