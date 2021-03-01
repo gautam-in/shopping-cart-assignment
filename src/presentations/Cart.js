@@ -72,9 +72,13 @@ class Cart extends React.Component{
                         <div className="cart-item-info">
                             <p>{item.name}</p>
                             <div className="qty-process">
-                                <span onClick={(event)=>this.decreaseQty(event,item,i)}><i className="ion-ios-minus"></i></span>
+                                <span class="process-btn minus" onClick={(event)=>this.decreaseQty(event,item,i)}>
+                                    {/* <p aria-label="increse item quantity">+</p> */}
+                                </span>
                                 <p>{item.qty}</p>
-                                <span onClick={(event)=>this.increaseQty(event,item,i)}><i className="ion-ios-plus"></i></span>
+                                <span class="process-btn plus" onClick={(event)=>this.increaseQty(event,item,i)}>
+                                    {/* <p aria-label="decrease item quantity">-</p> */}
+                                </span>
                                 <span>X {item.price}</span>
                             </div>
                         </div>

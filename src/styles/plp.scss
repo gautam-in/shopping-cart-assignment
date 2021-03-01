@@ -69,6 +69,7 @@
         padding: 0 .5em;
         color: #fff;
         cursor: pointer;
+        font-size: 90%;
         option {
             color:#000;
             background-color: #fff;
@@ -83,13 +84,20 @@
       }
       /* Arrow */
       .select::after {
-        content: '\f123';
-        font-family: 'Ionicons';
+        content: '';
+        // font-family: 'Ionicons';
+        border: solid #fff;
+        border-width: 0 3px 3px 0;
+        display: inline-block;
+        padding: 6px;
+        margin: 15px 15px 0 0;
+        transform: rotate(45deg);
+        -webkit-transform: rotate(45deg);
         position: absolute;
         color:#fff;
         top: 0;
         right: 0;
-        padding: 0 1em;
+        // padding: 0 1em;
         background: $violetpink;
         cursor: pointer;
         pointer-events: none;

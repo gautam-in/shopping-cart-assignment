@@ -61,6 +61,26 @@
                 padding:0 10px;
                 cursor: pointer;
             }
+            .qty-process span.process-btn {
+                width:15px;
+                height: 15px;
+                background-color: $violetpink;
+                // padding:0 10px;
+                color:#fff;
+                cursor: pointer;
+                border-radius: 50%;
+                margin: 0 10px;
+            }
+            .qty-process span.process-btn.plus::after{
+                content: '+';
+                position: absolute;
+                margin: -5px 0px -10px 4px;
+            }
+            .qty-process span.process-btn.minus::after{
+                content: '-';
+                position: absolute;
+                margin: -5px 0px -10px 4px;
+            }
         }
         .qty-process {
             display: flex;
