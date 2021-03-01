@@ -50,10 +50,10 @@ class Cart extends React.Component{
         this.setState({totalCartValue: totalValue});
     }
     render(){
-        return(<div className="cart-page">
+        return(<div id="cart" role="dialog" tabIndex="10" aria-labelledby="dialog-title" className="cart-page">
             {!this.props.hideHeader ? (<div className="cart-header modal-horizontal-space">
-                <h2>My cart {this.state.itemList.length ? " ("+(this.state.itemList.length)+" items)" : " "}</h2>
-                <div className="close-icon" onClick={this.props.closeModal}>
+                <h2 id="dialogue-title">My cart {this.state.itemList.length ? " ("+(this.state.itemList.length)+" items)" : " "}</h2>
+                <div className="close-icon" aria-label="close dialog" onClick={this.props.closeModal}>
                 &times;
                 </div>
             </div>) : null }
@@ -70,20 +70,21 @@ class Cart extends React.Component{
                         </LazyLoad>
                         </div>
                         <div className="cart-item-info">
-                            <p>{item.name}</p>
+                            <p aria-label={item.name}>{item.name}</p>
                             <div className="qty-process">
                                 <span className="process-btn minus" aria-label="decrease item quantity" onClick={(event)=>this.decreaseQty(event,item,i)}>
                                     {/* <p aria-label="increse item quantity">+</p> */}
                                 </span>
                                 <p>{item.qty}</p>
-                                <span className="process-btn plus" aria-label="increse item quantity" onClick={(event)=>this.increaseQty(event,item,i)}>
+                                {/* <input disabled type="text"  onChange={(event)=>{}} value={item.qty} /> */}
+                                <span className="process-btn plus" aria-label="increase item quantity" onClick={(event)=>this.increaseQty(event,item,i)}>
                                     {/* <p aria-label="decrease item quantity">-</p> */}
                                 </span>
-                                <span>X {item.price}</span>
+                                <span className="price-area">X <p aria-label={'Rs.'+item.price} title={item.price}>{item.price}</p></span>
                             </div>
                         </div>
                         <div className="cart-item-totalprice">
-                            <p>{item.finalPrice = item.qty * item.price}</p>
+                            <p aria-label={item.finalPrice}>{item.finalPrice = item.qty * item.price}</p>
                         </div>
                         </li>))}
                         </ul>
@@ -101,9 +102,13 @@ class Cart extends React.Component{
                     </div>
                     <div className="footer-area">
                     <div><p>Promo code can be applied on payment page</p></div>
-                    <div onClick={this.props.checkoutComplete} className="footer-btn modal-horizontal-space">
+                    <div aria-label={` ${'Proceed to checkout with '+this.state.totalCartValue+' rupees.'} `} onClick={this.props.checkoutComplete} className="footer-btn modal-horizontal-space">
                         <div className="checkouttxt">Proceed to checkout</div>
-                        <div className="price-info">Rs.{this.state.totalCartValue} <span><i className="ion-ios-arrow-forward"></i></span></div>
+                        <div className="price-info">Rs.{this.state.totalCartValue} 
+                            <span className="arrow right">
+                                {/* <i className="ion-ios-arrow-forward"></i> */}
+                            </span>
+                        </div>
                     </div>
                     </div>
                 </div>) : (<div>

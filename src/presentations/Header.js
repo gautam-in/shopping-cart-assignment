@@ -89,13 +89,13 @@ class Header extends React.Component {
                         <div className="guest-info">
                             <div>
                             {this.state.userName && this.state.userName.length ? (<div> 
-                                <p className="useremail">{this.state.userName}</p>
+                                <p className="useremail" title={this.state.userName} aria-label={this.state.userName}>{this.state.userName}</p>
                             </div>) : (<ul className="main-nav js--main-nav">
                                 <li onClick={this.resetCart}><Link to="/signin">Signin</Link></li>
                                 <li onClick={this.resetCart}><Link to="/signup">Register</Link></li>
                             </ul>)}
                             </div>
-                            <div className="cartArea" onClick={this.cartClick}>
+                            <div className="cartArea" aria-labelledby="cart" onClick={this.cartClick}>
                                 {/* <i className="ion-ios-cart"></i> */}
                                 <div className="cart-icon">
                                     <LazyLoad height={25} once>

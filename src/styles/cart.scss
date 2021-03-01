@@ -86,9 +86,37 @@
             display: flex;
             justify-content: flex-start;
             align-items: center;
+            .price-area{
+                display: flex;
+                align-items: center;
+                p{padding-left: 10px;}
+            }
+            // input{
+            //     border:none;
+            // }
+            // input:focus{
+            //     border: none;
+            //     outline: none;
+            //     border:solid transparent;
+            // }
+            // input[type="text"]:disabled{
+            //     background: transparent;
+            // }
         }
     }
 }
 .cart-page .footer-area{
     background-color: #fff;
+}
+.price-info span.arrow{
+    right:0;
+    color:#fff;
+    border: solid #fff;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding-left: auto;
+    padding: 5px 5px 5px !important;
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    :before{color: transparent;}
 }
