@@ -72,11 +72,11 @@ class Cart extends React.Component{
                         <div className="cart-item-info">
                             <p>{item.name}</p>
                             <div className="qty-process">
-                                <span class="process-btn minus" onClick={(event)=>this.decreaseQty(event,item,i)}>
+                                <span className="process-btn minus" aria-label="decrease item quantity" onClick={(event)=>this.decreaseQty(event,item,i)}>
                                     {/* <p aria-label="increse item quantity">+</p> */}
                                 </span>
                                 <p>{item.qty}</p>
-                                <span class="process-btn plus" onClick={(event)=>this.increaseQty(event,item,i)}>
+                                <span className="process-btn plus" aria-label="increse item quantity" onClick={(event)=>this.increaseQty(event,item,i)}>
                                     {/* <p aria-label="decrease item quantity">-</p> */}
                                 </span>
                                 <span>X {item.price}</span>
@@ -91,7 +91,7 @@ class Cart extends React.Component{
                         <div className="site-promoto">
                             <div className="promo-img">
                                 <LazyLoad height={25} once>
-                                    <img src={window.location.origin + '/static/images/lowest-price.png'} alt="Lowest Price Guarenteed"></img>
+                                    <img src={window.location.origin + '/static/images/lowest-price.png'} alt="Lowest Price Guaranteed"></img>
                                 </LazyLoad>
                             </div>
                             <div className="promo-text">
