@@ -9,7 +9,7 @@ const initstate = {
 const reducer = (state = initstate, action) => {
   
   switch (action.type) {
-   
+    
 
     case types.ADD_CART_ITEM:
       return { cart: [...state.cart, action.payload] };

@@ -1,9 +1,9 @@
-.register{
+.register {
   font-family: "Oswald";
-    font-size: 2rem;
+  font-size: 2rem;
 }
-.register2{
-  display:flex;
+.register2 {
+  display: flex;
 }
 .form__group {
   position: relative;
@@ -18,21 +18,20 @@
   border-bottom: 2px solid gray;
   outline: 0;
   font-size: 1.3rem;
-  color:black;
+  color: black;
 }
 .form__field:focus {
-  
   border-image: linear-gradient(to right, #11998e, #38ef7d);
   border-image-slice: 1;
 }
-.text-fields{
+.text-fields {
   display: flex;
-    justify-content: flex-end;
-    flex-direction: column;
-    align-items: center;
+  justify-content: flex-end;
+  flex-direction: column;
+  align-items: center;
 }
 .btn {
-  background-color: #d10157; 
+  background-color: #d10157;
   border: none;
   color: white;
   padding: 8px 92px;

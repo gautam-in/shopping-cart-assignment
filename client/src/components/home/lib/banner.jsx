@@ -1,11 +1,11 @@
-import React from 'react'
+import React from "react";
 
-function Banner({o}) {
-    return (
-        <div className="banner">
-             <img src={o.bannerImageUrl} alt=""/>
-        </div>
-    )
+function Banner({ o }) {
+  return (
+    <div className="banner">
+      <img src={o.bannerImageUrl} alt="" />
+    </div>
+  );
 }
 
-export default Banner
+export default Banner;

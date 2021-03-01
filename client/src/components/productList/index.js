@@ -1,118 +1,114 @@
-import React , {useState} from 'react';
-import {useHistory} from "react-router-dom"
-import {GiHamburgerMenu} from "react-icons/gi"
-import "./index.scss"
-import axios from "axios"
-import Card from "./lib/card"
+import React, { useState } from "react";
+import { useHistory } from "react-router-dom";
+import { GiHamburgerMenu } from "react-icons/gi";
+import "./index.scss";
+import Card from "./lib/card";
 
-function Product({categories}){
- 
- 
-  const [menu,setMenu]=useState(false);
-  const [cat,setCat]=useState(null);
-  const history=useHistory();
- 
-  const [itemlist,setList] = useState([])
- 
+function Product({ categories }) {
+  const [menu, setMenu] = useState(false);
+  const [cat, setCat] = useState(null);
+  const history = useHistory();
+
+  const [itemlist, setList] = useState([]);
+
   React.useEffect(() => {
-    var axios = require('axios');
+    var axios = require("axios");
 
     var config = {
-      method: 'get',
-      url: 'http://localhost:5000/products', 
-      headers: { }
+      method: "get",
+      url: "http://localhost:5000/products",
+      headers: {},
     };
-     
+
     axios(config)
-    .then(function (response) {
-    
-     
-      setList(response.data)
-    })
-    .catch(function (error) {
-      console.log(error);
-    });
+      .then(function (response) {
+        setList(response.data);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
 
+    let hash = history.location.hash;
+    hash = hash.split("#");
+    if (hash[1]) {  
+      checkAdult(hash[1]);
+      history.push("products");
+      setCat(hash[1]);
+    }
+  }, []);
 
-    let hash=history.location.hash;
-    hash=hash.split("#");
-    if(hash[1]){
-    checkAdult(hash[1])
-    history.push("products")
-    setCat(hash[1]);}
-  }, [])
-   
-  console.log(history.location.hash)
-  
- 
- 
- 
-  
+  console.log(history.location.hash);
 
   function checkAdult(category) {
     setCat(category);
- 
-   
-   
-    // if (item.id === type){
-    //   console.log(item);
-    //     return item
-    // }
-  //   // else{
-  //   //   return NULL
-  //   // }
-
-  //   // return item >= 18;
   }
-return(
-    
-<div className="productContainer">
-  <div className="sidebar">
-  {categories.sort(function(a, b) {  return a.order - b.order;}).map((p)=>{
-        // return <div onClick={() => setType(p.id)}>{p.name}</div>})
-        return <div style={{
-         backgroundColor:cat===p.id?"lightgray":"transparent"
+  return (
+    <div className="productContainer">
+      <div className="sidebar">
+        {categories
+          .sort(function (a, b) {
+            return a.order - b.order;
+          })
+          .map((p) => {
+            // return <div onClick={() => setType(p.id)}>{p.name}</div>})
+            return (
+              <div
+                style={{
+                  backgroundColor: cat === p.id ? "lightgray" : "transparent",
+                }}
+                onClick={() => checkAdult(p.id)}
+              >
+                {p.name}
+              </div>
+            );
+          })}
+      </div>
 
-        }}  onClick={() => checkAdult(p.id)}>{p.name}</div>})
-           } 
-     
-    </div>
-    
-    <div className="catIcon">
-      <span onClick={()=>setMenu(!menu)}>
-        <GiHamburgerMenu/>
+      <div className="catIcon">
+        <span onClick={() => setMenu(!menu)}>
+          <GiHamburgerMenu />
         </span>
       </div>
-      {menu&&<div className="sidebarMobile">
-  {categories.sort(function(a, b) {  return a.order - b.order;}).map((p)=>{
-        // return <div onClick={() => setType(p.id)}>{p.name}</div>})
-        return <div style={{
-         backgroundColor:cat===p.id?"lightgray":"transparent"
+      {menu && (
+        <div className="sidebarMobile">
+          {categories
+            .sort(function (a, b) {
+              return a.order - b.order;
+            })
+            .map((p) => {
+              // return <div onClick={() => setType(p.id)}>{p.name}</div>})
+              return (
+                <div
+                  style={{
+                    backgroundColor: cat === p.id ? "lightgray" : "transparent",
+                  }}
+                  onClick={() => {
+                    checkAdult(p.id);
+                    setMenu(false);
+                  }}
+                >
+                  {p.name}
+                </div>
+              );
+            })}
+        </div>
+      )}
 
-        }}  onClick={() =>{ checkAdult(p.id);setMenu(false)}}>{p.name}</div>})
-           } 
-     
-    </div>}
+      <div className="mainContainer">
+        {itemlist
+          .filter((item) => (cat == null ? true : item.category === cat))
+          .map((p) => {
+            //   return p.category === type ?
+            //   <Card p={p} />
+            //     // console.log(p.name);)
 
+            //    :null
+            // })}
 
-    <div className="mainContainer">
-
-        {itemlist.filter(item => cat==null?true:item.category === cat).map((p)=>{ 
-        //   return p.category === type ? 
-        //   <Card p={p} />
-        //     // console.log(p.name);)
-        
-        //    :null
-        // })}
-
-
-        return <Card p={p}/>}) 
-            }       
-
+            return <Card p={p} />;
+          })}
       </div>
-</div>
-
-
-);
+    </div>
+  );
 }
 export default Product;

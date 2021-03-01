@@ -122,6 +122,9 @@
     animation: 1s ex ease-in-out;
 
    }
+   .sidebarMobile{
+     display: none;
+   }
 
   @media (max-width:690px){
 
@@ -154,7 +157,7 @@
       position: absolute;
       top:150px;
       left: 0;
-     
+      display: block;
       background-color: white;
 
     }

@@ -7,14 +7,14 @@ const decrementQty = (payload) => ({ type: types.DECREMENT_QTY, payload });
 const cartupate = (payload) => ({ type: types.EMPTY_CART, payload });
 
 export const handleCart = (data) => (dispatch) => {
-  dispatch(addCartItem({ ...data, qty: 1 })); 
+  dispatch(addCartItem({ ...data, qty: 1 }));
 };
 
-export const handleIncrement = (data) => (dispatch) => { 
-  dispatch(incrementQty(data));  
+export const handleIncrement = (data) => (dispatch) => {
+  dispatch(incrementQty(data));
 };
 
-export const handledecrement = (data) => (dispatch) => {     
+export const handledecrement = (data) => (dispatch) => {
   dispatch(decrementQty(data));
 };
 
