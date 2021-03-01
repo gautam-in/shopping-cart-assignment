@@ -1,7 +1,7 @@
 import React from "react";
-import "../index.scss";
 import { useSelector, useDispatch } from "react-redux";
 import { handleCart } from "../../../Redux/action";
+import "../index.scss";
 
 function Card({ p }) {
   const cart = useSelector((store) => store.cart);

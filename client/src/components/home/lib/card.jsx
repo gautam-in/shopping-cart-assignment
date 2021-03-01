@@ -1,6 +1,7 @@
 import React from "react";
-import "../index.scss";
 import { useHistory } from "react-router-dom";
+import "../index.scss";
+
 
 function Card({ c, i }) {
   const history = useHistory();

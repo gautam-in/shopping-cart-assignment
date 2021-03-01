@@ -2,15 +2,13 @@ import React from "react";
 import { useHistory } from "react-router-dom";
 import TextField from "@material-ui/core/TextField";
 import "./index.scss";
+
 function Login() {
   const history = useHistory();
-
   function submit(e) {
     e.preventDefault();
-
     history.push("home");
   }
-
   return (
     <div className={"loginContainer"}>
       <div>

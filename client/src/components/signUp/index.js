@@ -1,7 +1,6 @@
 import React from "react";
-import "../login/index.scss";
 import TextField from "@material-ui/core/TextField";
-
+import "../login/index.scss";
 
 class Register extends React.Component {
   constructor(props) {
@@ -114,7 +113,6 @@ class Register extends React.Component {
   };
 
   render() {
-
     return (
       <div className={"loginContainer"}>
         <div className={"registerMargin"}>

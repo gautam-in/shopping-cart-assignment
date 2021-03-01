@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import { GiHamburgerMenu } from "react-icons/gi";
-import "./index.scss";
 import Card from "./lib/card";
+import "./index.scss";
+
 
 function Product({ categories }) {
   const [menu, setMenu] = useState(false);

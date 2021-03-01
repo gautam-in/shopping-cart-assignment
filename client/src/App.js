@@ -6,14 +6,14 @@ import {
   Route,
   Switch,
 } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { IoMdCart } from "react-icons/io";
 import Login from "./components/login/index";
 import Register from "./components/signUp/index";
-import { IoMdCart } from "react-icons/io";
 import Product from "./components/productList/index";
 import Home from "./components/home/home";
 import Cart from "./components/cart/cart";
 import "./App.scss";
-import { useSelector } from "react-redux";
 
 function App() {
   const [cart, setCart] = useState(false);

@@ -1,8 +1,8 @@
 import React from "react";
-import Card from "./lib/card";
-import Banner from "./lib/banner";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
+import Card from "./lib/card";
+import Banner from "./lib/banner";
 import "./index.scss";
 
 function Home({ categories }) {
