@@ -38,18 +38,24 @@ aside {
         display: flex;
         flex-direction: row;
         justify-content: center;
+        margin-top: -4px;
     }
     .product-category-nav {
         height: auto;
         background-color: $color-light-grey;
         color: $color-black;
-        // flex-basis: 10%;
         ul>li {
             border-bottom: 1px solid $color-grey;
             &:focus{
-                border: 1px solid black;
-            }
+                border: 1px solid $color-black;
+            }           
         }
+        // .product-category-nav-menu-item[aria-pressed="true"]  {
+        //     border: 1px solid black;
+        // }
+        // .product-category-nav-menu-item[aria-pressed="false"]  {
+        //     border: 1px solid #e2e2e2;
+        // }
         .fa, button {
             display: none;
         }

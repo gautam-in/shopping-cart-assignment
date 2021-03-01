@@ -11,6 +11,7 @@ import { baseAPIPath } from 'src/config';
 })
 export class AddToCartService {
   constructor(private http: HttpClient) {}
+
   private numberOfProductsInCart = new BehaviorSubject<CartItem[]>([]);
   productsInCart$ = this.numberOfProductsInCart.asObservable();
 
@@ -50,6 +51,7 @@ export class AddToCartService {
               ) {
                 ++product.count;
                 product.totalPrice = product.price * product.count;
+                this.numberOfProductsInCart.next([...currentValue]);
               }
             });
           } else {
@@ -87,7 +89,7 @@ export class AddToCartService {
     this.numberOfProductsInCart.next([]);
   }
 
-  getTotalPriceToCheckout() {
+  getTotalPriceToCheckout(): number {
     let grandTotal: number = 0;
     this.productsInCart$.subscribe(productList => {
       productList.forEach((product) => {

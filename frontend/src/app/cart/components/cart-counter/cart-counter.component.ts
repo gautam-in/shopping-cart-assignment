@@ -13,8 +13,8 @@ export class CartCounterComponent implements OnInit {
   constructor(readonly addToCartService: AddToCartService) { }
 
   ngOnInit(): void {
-    this.addToCartService.productsInCart$.subscribe(data => {
-      this.productCountInCart = data.length;
+    this.addToCartService.productsInCart$.subscribe(productList => {
+      this.productCountInCart = productList.length;
     });
   }
 

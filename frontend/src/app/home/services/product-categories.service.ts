@@ -28,6 +28,7 @@ export class ProductCategoriesService {
 
   getSortedCategories$(): Observable<ProductCategoryDTO[]> {
     return this.categoriesData$.pipe(
+      // map(categoriesData => categoriesData.filter(categoryData => categoryData.enabled)),
       map(categoriesData => _.sortBy(categoriesData, 'order')),
       map(categoriesData => categoriesData.map(categoryData => this.transformData(categoryData))),
     )

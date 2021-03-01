@@ -13,15 +13,13 @@ export class MycartComponent implements OnInit {
 
   constructor(private readonly addToCartService: AddToCartService,
               private readonly router: Router) { }
+  
   listofProductsInCart: CartItem[] = [];
   totalProductsPrice: number = 0; 
+
   ngOnInit(): void {
    this.addToCartService.productsInCart$.subscribe(data => {
       this.listofProductsInCart = [...data];
-      // this.listofProductsInCart.forEach(product => {
-      //   // To do: need to rectify logic here
-      //   this.totalProductsPrice = product.totalPrice + this.totalProductsPrice;
-      // });
       this.totalProductsPrice = this.addToCartService.getTotalPriceToCheckout();
    });
 

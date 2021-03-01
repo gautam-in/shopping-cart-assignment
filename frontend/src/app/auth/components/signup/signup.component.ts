@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 
@@ -8,7 +8,6 @@ import { Router } from '@angular/router';
   styleUrls: ['./signup.component.scss']
 })
 export class SignupComponent implements OnInit {
-
   constructor(private readonly router: Router) { }
 
   ngOnInit(): void {

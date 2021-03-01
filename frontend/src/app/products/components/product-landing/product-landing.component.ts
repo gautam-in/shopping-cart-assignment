@@ -1,5 +1,4 @@
 import { CartItem } from './../../../cart/cart-items.interface';
-import { ProductsListDTO } from './../../models/products-list';
 import { ProductsDataService } from './../../services/products-data.service';
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { ProductCategoriesService } from 'src/app/home/services/product-categories.service';
@@ -16,7 +15,9 @@ export class ProductLandingComponent implements OnInit {
   allProductsList: CartItem[] = [];
   categories: ProductCategoryDTO[] = [];
   showCategoryMenu: boolean = false;
-  menuNavDirection: string = 'down';
+  readonly UP = 'up';
+  readonly DOWN = 'down';
+  menuNavDirection: string = this.DOWN;
   selectedCategoryId: string = '';
   @ViewChild('categoryList', { static: true }) categoryListRef: any;
 
@@ -27,8 +28,8 @@ export class ProductLandingComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.route.paramMap.subscribe((data) => {
-      this.selectedCategoryId = data.get('categoryId') as string;
+    this.route.paramMap.subscribe((routeParamas) => {
+      this.selectedCategoryId = routeParamas.get('categoryId') as string;
     });
 
     this.productCategoriesService
@@ -44,8 +45,16 @@ export class ProductLandingComponent implements OnInit {
     });
   }
 
-  renderProductByCategory(categoryId: string) {
-    this.productsRenderList = [...this.getFilterProductsByCategory(categoryId)];
+  renderProductByCategory(categoryId: string, e?: any) {
+    if(e) {
+      if(e.srcElement.ariaPressed === 'false') {
+        this.productsRenderList = [...this.getFilterProductsByCategory(categoryId)];
+        e.srcElement.ariaPressed = 'true';
+      } else {
+        this.productsRenderList = [...this.allProductsList];
+        e.srcElement.ariaPressed = 'false';
+      }
+    }
   }
 
   getFilterProductsByCategory(categoryId: string) {
@@ -57,10 +66,10 @@ export class ProductLandingComponent implements OnInit {
   toggleCategoryMenu() {
     if (this.categoryListRef.nativeElement.style.height == '40px') {
       this.categoryListRef.nativeElement.style.height = '180px';
-      this.menuNavDirection = 'up';
+      this.menuNavDirection = this.UP;
     } else {
       this.categoryListRef.nativeElement.style.height = '40px';
-      this.menuNavDirection = 'down';
+      this.menuNavDirection = this.DOWN;
     }
   }
 }
