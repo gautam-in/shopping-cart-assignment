@@ -1,0 +1,35 @@
+/* modal css */
+.react-responsive-modal-modal{
+    height: calc(100vh - 50px);
+    width: calc(100% - 50px);
+    padding:0;
+}
+.modal-horizontal-space{padding:0 20px;}
+.modal-vertical-space{padding:20px 0px;}
+
+.modal-content-area{
+    background-color: #cfcfcf;
+    height: calc(100vh - 270px);
+    overflow:auto;
+}
+.modal-horizontal-space.footer-shop-btn {
+    position: absolute;
+    width: 100%;
+    bottom: 10px;
+}
+@keyframes customEnterModalAnimation {
+    0% {
+      transform: scale(0.2);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  @keyframes customLeaveModalAnimation {
+    0% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(0.2);
+    }
+  }

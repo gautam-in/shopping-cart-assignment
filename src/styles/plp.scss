@@ -1,0 +1,215 @@
+/* productlist css */
+.content-area {
+    display: grid;
+    grid-auto-flow: column;
+} //trail case for left area background to occupy till footer
+.left-menu, .product-list-area{width:100%;} //trail case for left area background to occupy till footer
+.content-area> div:first-child{
+    margin:0;
+    // height: 100vh; //if we add then background grey is not occupying full giving parent, display as grid
+    background-color: #cfcfcf;
+}
+.content-area{
+    // height:81.5vh;
+    .prod-categories{
+        background-color: #cfcfcf;
+        // height: 100%;
+        // position: absolute;
+        .cat-list{
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            li{
+                padding:0px 20px;
+                border-bottom: 1px solid #555;
+                cursor: pointer;
+                font-size: 90%;
+            }
+            
+            li:hover{
+                color: $violetpink;
+            }
+            li.selected{
+                color: $violetpink;
+                font-weight: 600;
+            }
+        }
+    }
+}
+.dropdown-cat-list{
+    position: relative;
+    display: none;
+    select {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        -ms-appearance: none;
+        appearance: none;
+        outline: 0;
+        box-shadow: none;
+        border: 0 !important;
+        background: $violetpink;
+        background-image: none;
+      }
+      /* Remove IE arrow */
+      select::-ms-expand {
+        display: none;
+      }
+      /* Custom Select */
+      .select {
+        position: relative;
+        display: flex;
+        width: 100%;//15em;
+        height: 3em;
+        line-height: 3;
+        background: $violetpink;
+        overflow: hidden;
+      }
+      select {
+        flex: 1;
+        padding: 0 .5em;
+        color: #fff;
+        cursor: pointer;
+        option {
+            color:#000;
+            background-color: #fff;
+        }
+      }
+      select[disabled='disabled']::-ms-value {
+        color: #555;
+      }
+      /*Specific to chrome and firefox*/
+      select[disabled='disabled'] {
+        color: #555;
+      }
+      /* Arrow */
+      .select::after {
+        content: '\f123';
+        font-family: 'Ionicons';
+        position: absolute;
+        color:#fff;
+        top: 0;
+        right: 0;
+        padding: 0 1em;
+        background: $violetpink;
+        cursor: pointer;
+        pointer-events: none;
+        -webkit-transition: .25s all ease;
+        -o-transition: .25s all ease;
+        transition: .25s all ease;
+      }
+      /* Transition */
+      .select:hover::after {
+        color: #8c2e73;
+      }
+}
+.content-area > div:nth-child(2) {
+    margin: 0;
+}
+.prod-list{
+    .rest-tiles {
+        margin-top: 5px;
+        li{
+            margin: 0 4px 10px 0;
+            border-bottom: 1px dashed #cfcfcf;
+            box-shadow: 2px 0px 3px -3px #111;            
+            div{background-color: transparent;}
+            .prod-name{
+                -webkit-line-clamp: 2;
+                overflow: hidden;
+                display: -webkit-box;
+                max-width: 200px;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+                height: 48px;
+                max-height: 48px;
+                font-weight: 800;
+            }
+            .prod-img{
+                display: flex;
+                justify-content: center;
+            }
+            .prod-desc{
+                background-color: #cfcfcf;
+                display: -webkit-box;
+                max-width: 200px;
+                -webkit-line-clamp: 3;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+            }
+            .description-area{
+                background-color: #cfcfcf;
+                padding: 0;
+                margin: 0;
+                height: 50px;
+                overflow: hidden;
+              .prod-desc {
+                padding: 4px;
+                margin: auto;
+                overflow: hidden;
+                position: relative;
+                line-height: 1.2em;
+                max-height: 4.5em;
+                text-align: justify;
+                padding-right: 1em;
+                padding-left: 1em;
+                font-size: 70%;
+                word-break: break-all;
+              }
+              .prod-desc:before {
+                content: '';
+                position: absolute;
+                right: 0;
+                bottom: 0;
+              }
+              .prod-desc:after {
+                content: '';
+                position: absolute;
+                right: 0;
+                width: 1em;
+                height: 0em;
+                margin-top: 0.2em;
+                background: white;
+              }
+            }
+            .buy-area{
+                display: flex;
+                justify-content: space-between;
+                width: 100%;
+                align-items: center;
+                p{
+                    font-size: 70%;
+                    font-weight: 600;
+                }
+                button{
+                    float: right;
+                }
+                .small-screen-btn{
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+
+.rest-tiles{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+.rest-tiles li{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: white;
+    margin: 2px;
+    padding: 10px;
+    width:200px;
+}
+
+.rest-tiles li img {
+    width:75px;
+    height:75px;
+}

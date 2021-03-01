@@ -54,7 +54,7 @@ class Cart extends React.Component{
             {!this.props.hideHeader ? (<div className="cart-header modal-horizontal-space">
                 <h2>My cart {this.state.itemList.length ? " ("+(this.state.itemList.length)+" items)" : " "}</h2>
                 <div className="close-icon" onClick={this.props.closeModal}>
-                    <i className="ion-android-close"></i>
+                &times;
                 </div>
             </div>) : null }
             

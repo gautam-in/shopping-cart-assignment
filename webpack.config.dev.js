@@ -64,7 +64,14 @@ module.exports = {
                 loader: "url-loader?limit=10000"
             }, {
                 test: /\.svg?$/,
-                loader: 'svg-url-loader'
+                use: {
+                    loader: "svg-url-loader",
+                    options: {
+                      // make all svg images to work in IE
+                      iesafe: true,
+                    },
+                },
+                // loader: 'svg-url-loader'
             }
         ],
     },

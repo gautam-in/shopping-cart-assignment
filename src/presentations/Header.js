@@ -5,7 +5,10 @@ import {push} from 'react-router-redux';
 import Logo from '../../static/images/logo.png';
 import {getViewPortDimensions} from '../utils';
 import {resetCartData} from '../actions/productActions';
+import SvgIcon from './SvgIcon';
+import CartIcon from '../../static/images/cart.svg';//'';
 import toastr from 'toastr';
+import LazyLoad from 'react-lazyload';
 class Header extends React.Component {
      constructor(props) {
         super(props);
@@ -93,7 +96,14 @@ class Header extends React.Component {
                             </ul>)}
                             </div>
                             <div className="cartArea" onClick={this.cartClick}>
-                                <i className="ion-ios-cart"></i><span>{this.state.itemCount} items</span>
+                                {/* <i className="ion-ios-cart"></i> */}
+                                <div className="cart-icon">
+                                    <LazyLoad height={25} once>
+                                        <img src={CartIcon} className="fill-purple"></img>
+                                    </LazyLoad>
+                                    {/* <SvgIcon fill="#b1288d" style={{}} glyph={CartIcon} width={'20px'} height={'20px'} /> */}
+                                </div>
+                                <span>{this.state.itemCount} items</span>
                             </div>
                         </div>
                     </div>

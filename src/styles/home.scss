@@ -1,0 +1,108 @@
+/* Home page css */
+.content-seperator{
+    margin-top:2px;
+}
+.offerArea{
+    height: auto;//81.5vh;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+.slider-container
+{ 
+    padding:40px;
+    background: #fff;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 0px rgba(0, 0, 0, 0.1) inset;
+    -webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 0px rgba(0, 0, 0, 0.1) inset;
+    img{
+        margin:auto;
+    }
+    .slick-slide{
+        img{
+            width: 100%;
+            height: auto;
+        }
+    }
+}
+.slider-container:before, .slider-container:after
+    {
+        content:"";
+        position:absolute;
+        z-index:-1;
+        -webkit-box-shadow:0 0 20px rgba(0,0,0,0.8);
+        -moz-box-shadow:0 0 20px rgba(0,0,0,0.8);
+        box-shadow:0 0 20px rgba(0,0,0,0.8);
+        top:50%;
+        bottom:0;
+        left:10px;
+        right:10px;
+        -moz-border-radius:100px / 10px;
+        border-radius:100px / 10px;
+    }
+    .slider-container:after
+    {
+        right:10px;
+        left:auto;
+        -webkit-transform:skew(8deg) rotate(3deg);
+        -moz-transform:skew(8deg) rotate(3deg);
+            -ms-transform:skew(8deg) rotate(3deg);
+            -o-transform:skew(8deg) rotate(3deg);
+                transform:skew(8deg) rotate(3deg);
+    }
+.slick-prev:before{
+    content:'\f3d2';
+    color: #000;
+    font-size: 36px;
+    font-family: "Ionicons";
+}
+.slick-next:before{
+    content:'\f3d3';
+    color: #000;
+    font-size: 36px;
+    font-family: "Ionicons";
+}
+
+.category-banners-area {
+    display: flex;
+    flex-direction: column;
+    .single-banner-area{
+        box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 0px rgba(0, 0, 0, 0.1) inset;
+        -webkit-box-shadow:0 ​1px 4px rgba(0, 0, 0, 0.3), 0 0 0px rgba(0, 0, 0, 0.1) inset;
+        padding:30px 0;
+        img{
+            height:150px;
+            width:auto;
+        }
+        .banner-right-area{
+            margin: 20px 0 0 60px;
+        }
+    }
+    .single-banner-area:before, .single-banner-area:after
+    {
+        content:"";
+        position:absolute;
+        z-index:-1;
+        -webkit-box-shadow:0 0 20px rgba(0,0,0,0.8);
+        -moz-box-shadow:0 0 20px rgba(0,0,0,0.8);
+        box-shadow:0 0 20px rgba(0,0,0,0.8);
+        top:50%;
+        bottom:0;
+        left:10px;
+        right:10px;
+        -moz-border-radius:100px / 10px;
+        border-radius:100px / 10px;
+    }
+    .single-banner-area:after
+    {
+        right:10px;
+        left:auto;
+        -webkit-transform:skew(8deg) rotate(3deg);
+        -moz-transform:skew(8deg) rotate(3deg);
+            -ms-transform:skew(8deg) rotate(3deg);
+            -o-transform:skew(8deg) rotate(3deg);
+                transform:skew(8deg) rotate(3deg);
+    }
+    .login-left-area{
+        line-height: normal;
+    }
+}

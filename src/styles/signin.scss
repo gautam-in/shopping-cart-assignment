@@ -1,0 +1,64 @@
+/* signin */
+.signin-area .login-left-area p{
+    line-height: normal;
+    margin: 10px 0;
+}
+.login-area{
+    height:200px;
+    position: relative;
+    padding-top: 25px;
+}
+.login-info-area{
+    display: flex;
+}
+.login-left-area{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    line-height: 10px;
+    margin: -20px 0 0px 60px;
+}
+
+/* floating input css */
+.floating-input-area{
+    position: relative;
+    margin-bottom: 20px;
+}
+input:focus ~ .floating-label,
+input:not(:focus):valid ~ .floating-label,
+input:not(:placeholder-shown)~.floating-label{
+  top: -20px;
+  bottom: 10px;
+  left: 1px;
+  font-size: 11px;
+  opacity: 1;
+  color:#91cce4;
+}
+.inputText:focus {
+    border: none;
+    background: transparent;
+    outline: none;
+    border-bottom: 1px solid #91cce4;
+}
+.inputText:active{
+    border-bottom: 1px solid rgb(145, 204, 228);
+}
+.inputText {
+  font-size: 14px;
+  width: 200px;
+  height: 35px;
+  border:0;
+  border-bottom: 1px solid #909090;
+  width: 50%;
+}
+
+.floating-label {
+  position: absolute;
+  pointer-events: none;
+  left: 1px;
+  top: 1px;
+  padding:10px 0;
+  transition: 0.2s ease all;
+  color:#909090;
+}
