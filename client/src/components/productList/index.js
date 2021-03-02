@@ -3,6 +3,8 @@ import { useHistory } from "react-router-dom";
 import { GiHamburgerMenu } from "react-icons/gi";
 import Card from "./lib/card";
 import "./index.scss";
+import Aside from "./lib/aside"
+import AsideMobile from "./lib/asideMobile"
 
 function Product({ categories }) {
   const [menu, setMenu] = useState(false);
@@ -28,37 +30,17 @@ function Product({ categories }) {
     let hash = history.location.hash;
     hash = hash.split("#");
     if (hash[1]) {
-      checkAdult(hash[1]);
+     setCat(hash[1]);
       history.push("products");
       setCat(hash[1]);
     }
   }, []);
 
-  console.log(history.location.hash);
 
-  function checkAdult(category) {
-    setCat(category);
-  }
+ 
   return (
     <div className="productContainer">
-      <div className="sidebar">
-        {categories
-          .sort(function (a, b) {
-            return a.order - b.order;
-          })
-          .map((p) => {
-            return (
-              <button
-                style={{
-                  backgroundColor: cat === p.id ? "lightgray" : "transparent",
-                }}
-                onClick={() => checkAdult(p.id)}
-              >
-                {p.name}
-              </button>
-            );
-          })}
-      </div>
+        <Aside cat={cat} categories={categories} setCat={setCat} />
 
       <div className="catIcon">
         <span onClick={() => setMenu(!menu)}>
@@ -66,44 +48,16 @@ function Product({ categories }) {
         </span>
       </div>
       {menu && (
-        <div className="sidebarMobile">
-          {categories
-            .sort(function (a, b) {
-              return a.order - b.order;
-            })
-            .map((p, i) => {
-              // return <div onClick={() => setType(p.id)}>{p.name}</div>})
-              return (
-                <div
-                  style={{
-                    backgroundColor: cat === p.id ? "lightgray" : "transparent",
-                  }}
-                  onClick={() => {
-                    checkAdult(p.id);
-                    setMenu(false);
-                  }}
-                >
-                  {p.name}
-                </div>
-              );
-            })}
-        </div>
+        <AsideMobile cat={cat} categories={categories} setCat={setCat} setMenu={setMenu}/>
       )}
 
-      <div className="mainContainer">
+      <main className="mainContainer">
         {itemlist
           .filter((item) => (cat == null ? true : item.category === cat))
           .map((p) => {
-            //   return p.category === type ?
-            //   <Card p={p} />
-            //     // console.log(p.name);)
-
-            //    :null
-            // })}
-
             return <Card p={p} />;
           })}
-      </div>
+      </main>
     </div>
   );
 }

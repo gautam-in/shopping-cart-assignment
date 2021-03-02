@@ -88,7 +88,14 @@
      width: 100%;
      border-color: lightgray;
      text-align: left;
+     cursor: pointer;
 
+  }
+
+  .sidebar>button:hover{
+
+
+    background-color:rgba(245, 47, 80,0.2) ;
   }
 
   .sidebar>div:hover{
