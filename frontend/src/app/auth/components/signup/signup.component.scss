@@ -3,21 +3,27 @@ section {
     margin: 10px;
     article {
         line-height: 1.25;
-        margin-right: 20px;
     }
     .bazar-signup-form {
         margin-top: 20px;
         flex-basis: 20%;
     }
-    .password-mismatch {
-        display: none;
-        color: red;
-    }
 }
 
 @media (min-width: 1024px) {
     section {
+        justify-content: space-around;
         align-items: baseline;
+        h2 {
+            font-weight: bolder;
+        }
+        article {
+            line-height: 3.25;
+        }
+        .bazar-signup-form {
+            margin-top: 20px;
+            flex-basis: 40%;
+        }
     }
     button {
         width: 100%;

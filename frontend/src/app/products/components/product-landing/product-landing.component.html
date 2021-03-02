@@ -1,10 +1,14 @@
 <section class="product-landing-page-container">
     <aside class="product-category-nav" #categoryList>
         <ul>
-            <li class="product-category-nav-menu-item" role="button" *ngFor="let category of categories" (keyup.enter)="renderProductByCategory(category.id)"
-                (click)="renderProductByCategory(category.id, $event)" tabindex="0" aria-pressed="false">{{category.name}}</li>
+            <li class="product-category-nav-menu-item" role="button" *ngFor="let category of categories"
+                [ngClass]="{'selected-category': selectedCategoryId === category.id}"
+                (keyup.enter)="renderProductByCategory(category.id)"
+                (click)="renderProductByCategory(category.id, $event)" tabindex="0" aria-pressed="false">
+                {{category.name}}</li>
         </ul>
-        <button type="button" (click)="toggleCategoryMenu()" aria-expanded="false" aria-label="category menu dropdown button"><i class="fa"
+        <button type="button" (click)="toggleCategoryMenu()" aria-expanded="false"
+            aria-label="category menu dropdown button"><i class="fa"
                 [class.fa-chevron-down]="menuNavDirection === 'down'" [class.fa-chevron-up]="menuNavDirection === 'up'"
                 aria-hidden="true"></i></button>
     </aside>

@@ -11,11 +11,17 @@ section {
 
 @media (min-width: 1024px) {
     section {
+        justify-content: space-around;
         align-items: baseline;
+        h2 {
+            font-weight: bolder;
+        }
+        article {
+            line-height: 3.25;
+        }
     }
     form {
-        flex-basis: 20%;
-        margin-left: 40px;
+        flex-basis: 40%;
     }
     button {
         width: 100%;

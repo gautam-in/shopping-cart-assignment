@@ -22,15 +22,12 @@ article {
         margin-bottom: 40%;
     }
 }
-// article:nth-child(1) {
-//     margin-top: 20px;
-// }
 
 @media (min-width: 1024px) {
     article {
         border-style: dashed;
-        h2 {
-            height: 150px;
+        h4 {
+            height: 110px;
         }
     }
     :host {
@@ -50,6 +47,11 @@ article {
     .product-card-body {
         flex-direction: column;
         align-items: center;
+        figure {
+            img {
+                width: 210px;
+            }
+        }
         .product-card-content {
             margin-bottom: 10px;
             height: 100px;
