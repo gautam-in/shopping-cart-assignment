@@ -1,19 +1,30 @@
-import { Directive, ElementRef, HostListener, ViewChild } from '@angular/core';
+import {
+  Directive,
+  ElementRef,
+  HostListener,
+  Input,
+  ViewChild,
+} from '@angular/core';
+import { AbstractControl, NG_VALIDATORS, Validator } from '@angular/forms';
 
 @Directive({
-  selector: '[appPasswordCompare]'
+  selector: '[appPasswordCompare]',
+  providers: [
+    {
+      provide: NG_VALIDATORS,
+      useExisting: PasswordCompareDirective,
+      multi: true,
+    },
+  ],
 })
-export class PasswordCompareDirective {
-
-  @ViewChild('password', {static: true}) pass: any;
-  @ViewChild('confirmPassword', {static: true}) confirmPass: any;
-  constructor(private readonly el: ElementRef) { }
-
-  @HostListener('blur') onBlur() {
-    if(this.confirmPass.value !== this.pass.value) {
-      this.el.nativeElement.style.visibility = "visible";
-    } else {
-      this.el.nativeElement.style.display = "hidden";
+export class PasswordCompareDirective implements Validator {
+  @Input() appPasswordCompare: string = '';
+  validate(control: AbstractControl): { [key: string]: any } | null {
+    const controlToCompare = control.parent?.get(this.appPasswordCompare);
+    if (controlToCompare && controlToCompare.value != control.value) {
+      return { notEqual: true };
     }
+
+    return null;
   }
 }

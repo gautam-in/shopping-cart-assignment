@@ -1,25 +1,9 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { render } from '@testing-library/angular';
 import { ProductCategoryCardComponent } from './product-category-card.component';
+describe('ProductCategoryCard Component', () => {
+  it('rendered successfully', async () => {
+    const component = await render(ProductCategoryCardComponent);
 
-describe('ProductCategoryCardComponent', () => {
-  let component: ProductCategoryCardComponent;
-  let fixture: ComponentFixture<ProductCategoryCardComponent>;
-
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [ ProductCategoryCardComponent ]
-    })
-    .compileComponents();
-  });
-
-  beforeEach(() => {
-    fixture = TestBed.createComponent(ProductCategoryCardComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
-
-  it('should create', () => {
     expect(component).toBeTruthy();
-  });
-});
+  })
+})

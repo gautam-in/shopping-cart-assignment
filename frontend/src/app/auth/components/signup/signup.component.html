@@ -53,18 +53,21 @@
             <label for="confirmPassword">Confirm Password</label>
             <input type="password" id="confirmPassword" name="confirmPassword" class="custom-input" minlength="6"
                 #confirmPassword="ngModel" ngModel pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$" required
-                aria-describedby="Please re-enter password to confirm" />
+                aria-describedby="Please re-enter password to confirm" appPasswordCompare="password" />
             <div class="custom-error" *ngIf="confirmPassword.touched && !confirmPassword.valid">
                 <div *ngIf="confirmPassword.errors?.required" aria-live="assertive"><i
                         class="fas fa-exclamation-circle"></i>Please enter password again</div>
                 <div *ngIf="confirmPassword.errors?.minlength" aria-live="assertive"><i
                         class="fas fa-exclamation-circle"></i>Minimum 6 characters are required
                 </div>
-                <div *ngIf="password.errors?.pattern" aria-live="assertive"><i
+                <div *ngIf="confirmPassword.errors?.pattern" aria-live="assertive"><i
                         class="fas fa-exclamation-circle"></i>Please enter alphanumeric password without
                     spaces</div>
+                <div *ngIf="confirmPassword.errors?.notEqual" aria-live="assertive"><i
+                        class="fas fa-exclamation-circle"></i>Password and confirm password should match</div>
             </div>
         </div>
-        <button type="submit" class="custom-btn btn-pink" [disabled]="!signupForm.valid">Signup</button>
+        <button type="submit" class="custom-btn btn-pink"
+            [disabled]="!signupForm.valid">Signup</button>
     </form>
 </section>

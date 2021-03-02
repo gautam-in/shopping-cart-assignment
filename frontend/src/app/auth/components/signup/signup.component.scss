@@ -9,6 +9,10 @@ section {
         margin-top: 20px;
         flex-basis: 20%;
     }
+    .password-mismatch {
+        display: none;
+        color: red;
+    }
 }
 
 @media (min-width: 1024px) {

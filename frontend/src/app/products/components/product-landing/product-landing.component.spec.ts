@@ -1,25 +1,9 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { render } from '@testing-library/angular';
 import { ProductLandingComponent } from './product-landing.component';
+describe('ProductLanding Component', () => {
+  it('rendered successfully', async () => {
+    const component = await render(ProductLandingComponent);
 
-describe('ProductLandingComponent', () => {
-  let component: ProductLandingComponent;
-  let fixture: ComponentFixture<ProductLandingComponent>;
-
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [ ProductLandingComponent ]
-    })
-    .compileComponents();
-  });
-
-  beforeEach(() => {
-    fixture = TestBed.createComponent(ProductLandingComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
-
-  it('should create', () => {
     expect(component).toBeTruthy();
-  });
-});
+  })
+})
