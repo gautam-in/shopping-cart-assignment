@@ -9,10 +9,11 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
 import { SliderComponent } from './components/slider/slider.component';
 import { SharedModule } from '../shared/shared.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { SkipToMainContentComponent } from './components/skip-to-main-content/skip-to-main-content.component';
 
 
 @NgModule({
-  declarations: [HeaderComponent, LogoComponent, FooterComponent, LoaderComponent, PageNotFoundComponent, SliderComponent],
+  declarations: [HeaderComponent, LogoComponent, FooterComponent, LoaderComponent, PageNotFoundComponent, SliderComponent, SkipToMainContentComponent],
   imports: [
     RouterModule,
     SharedModule,
@@ -25,6 +26,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     LoaderComponent,
     PageNotFoundComponent,
     SliderComponent,
+    SkipToMainContentComponent
   ]
 })
 export class BlocksModule { }
