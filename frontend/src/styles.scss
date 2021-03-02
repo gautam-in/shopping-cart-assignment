@@ -16,11 +16,11 @@ $color-black: #000000;
 $color-light-grey: #e2e2e2;
 
 /** style for base elements **/
-.custom-form-group {
+.custom_form-group {
     label{
         display: block;
     }
-    .custom-input {
+    .custom_form-input {
         outline: 0;
         border-width: 0 0 2px;
         border-color: $color-blue;
@@ -28,27 +28,27 @@ $color-light-grey: #e2e2e2;
     }
     margin-bottom: 20px;
 }
-.custom-flex-container {
+.custom_flex-container {
     display: flex;
     flex-direction: column;
 }
-.custom-btn{
+.custom_btn{
     border: none;
     padding: 12px;
     width: 100%;
 }
-.custom-btn:disabled {
+.custom_btn:disabled {
     opacity: 0.5;
 }
-.btn-pink {
+.custom_btn--pink {
     color: white;
     background-color: $color-pink;
 }
-.custom-btn-dark-pink {
+.custom_btn-dark-pink {
     background-color: $color-dark-pink;
     color: white;
 }
-.custom-error{
+.custom_form-error-group{
     div {
         margin: 5px 0;
         color: red;
@@ -69,25 +69,18 @@ $color-light-grey: #e2e2e2;
   }
 
 @media (min-width: 720px) {
-    .custom-btn {
+    .custom_btn {
         width: 50%;
     }
 }
 
 /** media query **/
 @media (min-width: 1024px) {
-    .custom-flex-container {
+    .custom_flex-container {
         display: flex;
         flex-direction: row;
     }
-    .custom-btn {
+    .custom_btn {
         width: 25%;
     }  
-} 
-
-
-// @media (max-width: 720px) {
-//     .custom-btn {
-//         width: 50%;
-//     }
-// }
+}

@@ -1,14 +1,14 @@
 <nav>
     <app-logo (click)="toggleMenu()"></app-logo>
-    <div class="page-menu">
+    <div class="nav_page-menu">
         <a role="menuitem" [routerLink]="['/home']">Home</a>
         <a role="menuitem" [routerLink]="['/products']">Products</a>
     </div>
-    <div class="login-menu">
+    <div class="nav_auth-menu">
         <a role="menuitem" [routerLink]="['/login']">Signin</a>
         <a role="menuitem" [routerLink]="['/signup']">Register</a>
     </div>
-    <div #showMenu class="mobile-menu" aria-expanded="false">
+    <div #showMenu class="nav_mobile-menu" aria-expanded="false">
         <a role="menuitem" [routerLink]="['/home']">Home</a>
         <a role="menuitem" [routerLink]="['/products']">Products</a>
         <a role="menuitem" [routerLink]="['/login']">Signin</a>

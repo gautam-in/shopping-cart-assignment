@@ -11,7 +11,7 @@ nav{
     top: 0;
     background: $color-white;
     z-index: 999;
-    .mobile-menu {
+    .nav_mobile-menu {
         display: none;
         flex-direction: row;
         position: absolute;
@@ -22,7 +22,7 @@ nav{
         left: 5%;
         z-index: 100000;
     }
-    .login-menu, .page-menu {
+    .nav_auth-menu, .nav_page-menu {
         display: none;
     }
     
@@ -34,19 +34,19 @@ nav{
 
 @media (min-width: 768px) {
     nav {
-        .login-menu {
+        .nav_auth-menu {
             display: block;
             position: absolute;
             right: 0;
             top: 0%;
         }
-        .page-menu {
+        .nav_page-menu {
             display: block;
             position: absolute;
             left: 32%;
         }
         a {
-            color: black;
+            color: $color-black;
             font-weight: 600;
         }
     }
@@ -55,23 +55,23 @@ nav{
 @media (min-width: 1024px) {
     nav {
         justify-content: space-around;
-        .mobile-menu {
+        .nav_mobile-menu {
             display: none;
         }
-        .login-menu {
+        .nav_auth-menu {
             display: block;
             position: absolute;
             right: 20%;
             top: 0%;
         }
-        .page-menu {
+        .nav_page-menu {
             display: block;
             position: absolute;
             left: 32%;
         }
     
         a {
-            color: black;
+            color: $color-black;
             font-weight: 600;
         }
     }

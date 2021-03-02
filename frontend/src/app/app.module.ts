@@ -1,7 +1,7 @@
 import { BlocksModule } from './blocks/blocks.module';
 import { SharedModule } from './shared/shared.module';
 import { CoreModule } from './core/core.module';
-import { HomeModule } from './home/home.module';
+import { HomeModule } from './features/home/home.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
