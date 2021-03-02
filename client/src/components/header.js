@@ -3,7 +3,15 @@ import {useSelector} from "react-redux";
 import {  Link } from "react-router-dom";
 import Cart from "./cart/cart";
 import { IoMdCart } from "react-icons/io";
+function noOfItems(cart) {
+   
+    let count=0;
 
+    for (const item of cart) {
+      count=count+item.qty;
+    }
+    return count;
+}
 
 function Header({setCart,cart}) {
 
@@ -39,7 +47,7 @@ function Header({setCart,cart}) {
             <button>
               <IoMdCart style={{ color: "#fd032f", fontSize: "2.5rem" }} />
             </button>
-            <div>{cart1.length} items</div>
+            <div>{noOfItems(cart1)} items</div>
           </div>
         </div>
       </div>

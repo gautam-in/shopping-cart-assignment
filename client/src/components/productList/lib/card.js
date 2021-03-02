@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { handleCart } from "../../../Redux/action";
+import { handleCart,handleIncrement } from "../../../Redux/action";
 import "../index.scss";
 
 function Card({ p }) {
@@ -28,11 +28,13 @@ function Card({ p }) {
       });
   }
 
-  function added() {
+  function addToCart() {
+   
+    add1();
     for (let i of cart) {
-      if (i.id === p.id) return true;
+      if (i.id === p.id) return dispatch(handleIncrement(p));
     }
-    return false;
+    return  dispatch(handleCart(p));
   }
 
   return (
@@ -49,22 +51,18 @@ function Card({ p }) {
 
       <div className={"priceBuy"}>
         <div className={"price"}> MRP Rs.{p.price} </div>
-        {added() ? (
-          <button className="button" type="submit">
-            In Cart
-          </button>
-        ) : (
+         
           <button
             onClick={() => {
-              dispatch(handleCart(p));
-              add1();
+
+            addToCart(p)
             }}
             className="button"
             type="submit"
           >
             Buy Now
           </button>
-        )}
+        
       </div>
     </div>
   );
