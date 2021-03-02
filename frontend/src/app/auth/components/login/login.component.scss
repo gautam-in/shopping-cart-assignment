@@ -6,16 +6,22 @@ section {
     article {
         line-height: 2;
     }
+    h2 {
+        font-weight: bolder;
+    }
     margin: 10px;
+}
+
+@media (min-width: 768px) {
+    button {
+        width: 100%;
+    }
 }
 
 @media (min-width: 1024px) {
     section {
         justify-content: space-around;
         align-items: baseline;
-        h2 {
-            font-weight: bolder;
-        }
         article {
             line-height: 3.25;
         }

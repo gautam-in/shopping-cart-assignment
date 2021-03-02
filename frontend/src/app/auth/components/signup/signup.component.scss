@@ -1,8 +1,11 @@
 section {
     justify-content: center;
     margin: 10px;
+    h2 {
+        font-weight: bolder;
+    }
     article {
-        line-height: 1.25;
+        line-height: 2;
     }
     .bazar-signup-form {
         margin-top: 20px;
@@ -10,13 +13,16 @@ section {
     }
 }
 
+@media (min-width: 768px) {
+    button {
+        width: 100%;
+    }
+}
+
 @media (min-width: 1024px) {
     section {
         justify-content: space-around;
         align-items: baseline;
-        h2 {
-            font-weight: bolder;
-        }
         article {
             line-height: 3.25;
         }

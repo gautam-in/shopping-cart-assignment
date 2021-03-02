@@ -1,4 +1,4 @@
-import { CartItem } from './../../../cart/cart-items.interface';
+import { CartItem } from '../../../cart/cart-items.interface';
 import { ProductsDataService } from './../../services/products-data.service';
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { ProductCategoriesService } from 'src/app/home/services/product-categories.service';

@@ -5,5 +5,14 @@ footer {
     padding: 5px 10px;
     p {
         margin: 0 auto;
+        text-align: center;
+    }
+}
+
+@media (min-width: 1024px) {
+    footer {
+        p {
+            text-align: justify;
+        }
     }
 }

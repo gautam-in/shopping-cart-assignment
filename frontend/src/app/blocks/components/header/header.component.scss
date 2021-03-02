@@ -18,7 +18,7 @@ nav{
         border: 1px solid $color-grey;
         background-color: $color-white;
         padding: 10px;
-        top: 10%;
+        top: 80%;
         left: 5%;
         z-index: 100000;
     }
@@ -29,6 +29,26 @@ nav{
     a {
         text-decoration: none;
         padding: 10px;
+    }
+}
+
+@media (min-width: 768px) {
+    nav {
+        .login-menu {
+            display: block;
+            position: absolute;
+            right: 0;
+            top: 0%;
+        }
+        .page-menu {
+            display: block;
+            position: absolute;
+            left: 32%;
+        }
+        a {
+            color: black;
+            font-weight: 600;
+        }
     }
 }
 

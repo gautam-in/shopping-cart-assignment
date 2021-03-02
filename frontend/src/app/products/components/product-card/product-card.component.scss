@@ -2,7 +2,11 @@
 
 article {
     border-bottom: 1px solid $color-grey;
+    border-style: dashed;
     padding: 5px;
+    h4 {
+        font-weight: bolder;
+    }
 }
 .product-card-body {
     display: flex;
@@ -23,11 +27,25 @@ article {
     }
 }
 
+@media (min-width: 768px) {
+    :host {
+        margin:20px 0;
+        article {
+            flex-basis: 50%;
+            // box-shadow: 1px 0px 1px $color-light-grey;
+        }
+        button {
+            width: 100%;
+        }
+    }
+}
+
 @media (min-width: 1024px) {
     article {
-        border-style: dashed;
+        // border-style: dashed;
         h4 {
             height: 110px;
+            font-weight: normal;
         }
     }
     :host {

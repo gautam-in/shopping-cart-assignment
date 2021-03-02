@@ -1,5 +1,5 @@
-import { CartItem } from './../../cart-items.interface';
-import { AddToCartService } from './../../services/add-to-cart.service';
+import { CartItem } from '../../cart-items.interface';
+import { AddToCartService } from '../../services/add-to-cart.service';
 import { Component, OnInit } from '@angular/core';
 import { ProductsListDTO } from 'src/app/products/models/products-list';
 import { Router } from '@angular/router';

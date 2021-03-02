@@ -1,4 +1,4 @@
-import { CartItem } from './../cart-items.interface';
+import { CartItem } from '../cart-items.interface';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, of, Subject } from 'rxjs';

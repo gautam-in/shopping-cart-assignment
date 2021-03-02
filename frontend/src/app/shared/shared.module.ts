@@ -1,5 +1,5 @@
 import { NgbdModalBasic } from './components/modal-basic/modal-basic.component';
-import { CartModule } from './../cart/cart.module';
+import { CartModule } from '../cart/cart.module';
 import { ProductsModule } from './../products/products.module';
 import { AuthModule } from './../auth/auth.module';
 import { NgModule } from '@angular/core';

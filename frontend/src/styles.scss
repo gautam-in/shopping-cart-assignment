@@ -68,6 +68,12 @@ $color-light-grey: #e2e2e2;
     height: 12px;
   }
 
+@media (min-width: 720px) {
+    .custom-btn {
+        width: 50%;
+    }
+}
+
 /** media query **/
 @media (min-width: 1024px) {
     .custom-flex-container {

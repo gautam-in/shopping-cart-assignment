@@ -1,4 +1,4 @@
-import { AddToCartService } from './../../services/add-to-cart.service';
+import { AddToCartService } from '../../services/add-to-cart.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
