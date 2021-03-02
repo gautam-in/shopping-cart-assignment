@@ -1,17 +1,13 @@
 import React from "react";
-// import ReactDOM from "react-dom";
 import { connect } from 'react-redux';
 import { push } from 'react-router-redux';
-import Handlebars from "handlebars";
 import Header from '../presentations/Header';
 import Footer from '../presentations/Footer';
 import {setUserDetails} from '../actions/singinActions';
-import {getProducts,addToCart,resetCartReduxProcessData,resetCartData} from '../actions/productActions';
+import {resetCartData} from '../actions/productActions';
 import toastr from 'toastr';
 import { Modal } from "react-responsive-modal";
 import Cart from '../presentations/Cart';
-import $ from 'jquery';
-
 class Signin extends React.Component {
     constructor(props){
         super(props);
@@ -74,17 +70,15 @@ class Signin extends React.Component {
         toastr.success('', 'Tada...you are logged-in',{timeOut:1000});
         this.props.dispatch(setUserDetails({userEmail:this.state.email,userPassword:this.state.password}));
       } else {
-        this.setState({loginError:true});
-        setTimeout(()=>{
-          document.getElementById('errorarea').focus();
-          $('#errorarea').trigger('click');
-        },10);
+        this.setState({loginError:true},()=>{
+          document.getElementById('errorarea').click();
+        });        
       }
     }
   render(){
   return (
     <div className="App signin-area">
-        <Header cartClick={this.showCartView} cartInfo={this.props.productInfo.cartItems}></Header>
+        <Header router={this.props.router} cartClick={this.showCartView} cartInfo={this.props.productInfo.cartItems}></Header>
         <div className="login-area">
             <div className="row">
             <div className="col span-1-of-2">

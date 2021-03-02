@@ -44,9 +44,8 @@ class Products extends React.Component{
         return state;
     }
     makeActiveCategory=(e,id)=>{
-        this.setState({catId:id ? id:e.target.value});
-        setTimeout(()=>{
-            this.getDropDwnSelectedVal(this.state.catId, this.state.categoryData)
+        this.setState({catId:id ? id:e.target.value},()=>{
+            this.getDropDwnSelectedVal(this.state.catId, this.state.categoryData);
         });
     }
     addToCart=(event,item)=>{
@@ -86,7 +85,7 @@ class Products extends React.Component{
             <div className="overlay" style={{display: (this.props.productInfo.searching_productdetails|| this.props.productInfo.adding_to_cart  || this.props.homeApi.categorydata_searching) ? "block" : "none"}}>
                 <div className="loading"><SvgLoading /></div>
             </div>
-            <Header cartClick={this.showCartView} cartInfo={this.props.productInfo.cartItems}></Header>
+            <Header router={this.props.router} cartClick={this.showCartView} cartInfo={this.props.productInfo.cartItems}></Header>
             <div className="row content-area">
                 <div className="col span-3-of-12 left-menu">
                     <div className="prod-categories">

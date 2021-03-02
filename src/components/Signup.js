@@ -4,14 +4,12 @@ import Handlebars from "handlebars";
 import { connect } from 'react-redux';
 import { push } from 'react-router-redux';
 import {setUserDetails} from '../actions/signupActions';
-import {getProducts,addToCart,resetCartReduxProcessData,resetCartData} from '../actions/productActions';
+import {resetCartData} from '../actions/productActions';
 import Header from '../presentations/Header';
 import Footer from '../presentations/Footer';
 import toastr from 'toastr';
 import { Modal } from "react-responsive-modal";
 import Cart from '../presentations/Cart';
-import $ from 'jquery';
-
 class Signup extends React.Component {
     constructor(props){
         super(props);
@@ -107,12 +105,8 @@ class Signup extends React.Component {
                 isValid = false;
                 toastr.error('', 'Enter last name',{timeOut:1000});
             }
-            // toastr.warning('', 'Invalid form entries found');
-            this.setState({formError: true})
-            // $('#errorarea').focus();
-            setTimeout(()=>{
-                document.getElementById('errorarea').focus();
-                $('#errorarea').trigger('click');
+            this.setState({formError: true},()=>{
+                document.getElementById('errorarea').click();
             });
         }
         if(isValidForm){
@@ -128,7 +122,7 @@ class Signup extends React.Component {
   render(){
   return (
     <div className="App signup-area">
-        <Header cartClick={this.showCartView} cartInfo={this.props.productInfo.cartItems}></Header>
+        <Header router={this.props.router} cartClick={this.showCartView} cartInfo={this.props.productInfo.cartItems}></Header>
         {/* <div dangerouslySetInnerHTML={{ __html: template(this.state.data) }} /> */}
         <div className="signup-page">
             <div className="row">
@@ -200,7 +194,6 @@ class Signup extends React.Component {
           modalAnimationOut: 'customLeaveModalAnimation',
         }}
         animationDuration={800}
-        //   closeIcon={closeIcon}
         showCloseIcon={false}>
         <Cart cartData={this.props.productInfo.cartItems} checkoutComplete={this.checkoutComplete} closeModal={this.onCloseModal}></Cart>
       </Modal>) : null}

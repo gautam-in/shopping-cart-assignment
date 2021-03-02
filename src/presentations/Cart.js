@@ -16,8 +16,9 @@ class Cart extends React.Component{
     }
     componentDidMount(){
         if(this.props.cartData){
-            this.setState({itemList:this.props.cartData});
-            setTimeout(()=>this.evaluateTotalPrice());
+            this.setState({itemList:this.props.cartData},()=>{
+                this.evaluateTotalPrice();
+            });
         }
     }
     increaseQty=(e,itm,i)=>{
@@ -25,8 +26,10 @@ class Cart extends React.Component{
         itm.qty = itm.qty + 1;
         var itemIdx = tempObj.itemList.indexOf(itm);
         tempObj.itemList[i].qty = itm.qty;
-        this.setState(tempObj);
-        setTimeout(()=>this.evaluateTotalPrice());
+        this.setState(tempObj,()=>{
+            this.evaluateTotalPrice();
+        });
+        // setTimeout(()=>{});
     }
     decreaseQty=(e,itm,i)=>{
         let tempObj = Object.assign({},this.state);
@@ -38,8 +41,10 @@ class Cart extends React.Component{
         if(!tempObj.itemList.length){
             this.props.dispatch(resetCartData());
         }
-        this.setState(tempObj);
-        setTimeout(()=>this.evaluateTotalPrice());
+        this.setState(tempObj,()=>{
+            this.evaluateTotalPrice();
+        });
+        // setTimeout(()=>{});
     }
     evaluateTotalPrice=()=>{
         let itmLst = this.state.itemList;
@@ -72,12 +77,12 @@ class Cart extends React.Component{
                         <div className="cart-item-info">
                             <p aria-label={item.name}>{item.name}</p>
                             <div className="qty-process">
-                                <span className="process-btn minus" aria-label="decrease item quantity" onClick={(event)=>this.decreaseQty(event,item,i)}>
+                                <span className="process-btn minus" aria-label={"decreased item quantity to"+item.qty} onClick={(event)=>this.decreaseQty(event,item,i)}>
                                     {/* <p aria-label="increse item quantity">+</p> */}
                                 </span>
                                 <p>{item.qty}</p>
                                 {/* <input disabled type="text"  onChange={(event)=>{}} value={item.qty} /> */}
-                                <span className="process-btn plus" aria-label="increase item quantity" onClick={(event)=>this.increaseQty(event,item,i)}>
+                                <span className="process-btn plus" aria-label={'increased item quantity to'+item.qty} onClick={(event)=>this.increaseQty(event,item,i)}>
                                     {/* <p aria-label="decrease item quantity">-</p> */}
                                 </span>
                                 <span className="price-area">X <p aria-label={'Rs.'+item.price} title={item.price}>{item.price}</p></span>

@@ -1,11 +1,9 @@
 import React from "react";
 import {connect} from 'react-redux';
-import {push} from 'react-router-redux';
 import {resetCartData} from '../actions/productActions';
 import Cart from '../presentations/Cart';
 import toastr from 'toastr';
 import Header from '../presentations/Header';
-import Footer from '../presentations/Footer';
 class Basket extends React.Component{
     constructor(props){
         super(props);
@@ -19,14 +17,14 @@ class Basket extends React.Component{
             toastr.success('Cart is emptied', 'Congratulations, Order Placed',{timeOut:1000});
         }
         this.props.dispatch(resetCartData());
-        this.props.dispatch(push('/'));
+        this.props.router.push('/');
     }
     showCartView=()=>{
        
     }
     render(){
     return(<div className="basket-page">
-        <Header cartClick={this.showCartView} cartInfo={this.props.productInfo.cartItems} />
+        <Header router={this.props.router} cartClick={this.showCartView} cartInfo={this.props.productInfo.cartItems} />
         <Cart hideHeader={true} cartData={this.props.productInfo.cartItems} checkoutComplete={this.checkoutComplete} />
         </div>)
     }

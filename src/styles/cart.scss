@@ -70,6 +70,7 @@
                 cursor: pointer;
                 border-radius: 50%;
                 margin: 0 10px;
+                position: relative;
             }
             .qty-process span.process-btn.plus::after{
                 content: '+';

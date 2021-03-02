@@ -1,6 +1,6 @@
 import React from "react";
 import {connect} from 'react-redux';
-import {push} from 'react-router-redux';
+import {withRouter} from 'react-router';
 import {getOffers,getCategories} from '../actions/homeActions';
 import {resetCartData} from '../actions/productActions';
 import SvgLoading from '../presentations/SvgLoading';
@@ -15,15 +15,18 @@ class Home extends React.Component {
     constructor(props){
         super(props);
         this.state={
+          currentInstance: this,
           bannerData: [],
           categoryData: [],
           dimensions:{},
-          openModal: false
+          openModal: false,
+          forceCheckSliderImage: false
         }
         this.navigateToPlp = this.navigateToPlp.bind(this);
         this.showCartView = this.showCartView.bind(this);
         this.onCloseModal = this.onCloseModal.bind(this);
         this.checkoutComplete = this.checkoutComplete.bind(this);
+        this.forceCheckSliderImage = this.forceCheckSliderImage.bind(this);
     }
     componentDidMount(){
       this.props.dispatch(getOffers());
@@ -32,14 +35,15 @@ class Home extends React.Component {
     static getDerivedStateFromProps(props,state){
       if(props.homeApi.bannerData && props.homeApi.bannerdata_searching_success){
         state.bannerData = props.homeApi.bannerData;
-        setTimeout(()=>{
-          forceCheck();
-        },0);
+        state.currentInstance.forceCheckSliderImage();
       }
       if(props.homeApi.categoryData && props.homeApi.categorydata_searching_success){
         state.categoryData = props.homeApi.categoryData;
       }
       return state;
+    }
+    forceCheckSliderImage=()=>{
+      forceCheck();
     }
     doResizeActions=()=>{
       let dimensions = getViewPortDimensions();
@@ -63,7 +67,7 @@ class Home extends React.Component {
   };
     navigateToPlp=(e,data)=>{
       if(data)
-      this.props.dispatch(push('/products?cat='+data.name+'&id='+data.id));
+      this.props.router.push('/products?cat='+data.name+'&id='+data.id);
     }
   render(){
     var settings = {
@@ -74,7 +78,7 @@ class Home extends React.Component {
       <div className="overlay" style={{display: (this.props.homeApi.bannerdata_searching || this.props.homeApi.categorydata_searching) ? "block" : "none"}}>
             <div className="loading"><SvgLoading /></div>
       </div>
-      <Header cartClick={this.showCartView} cartInfo={this.props.productInfo.cartItems}></Header>
+      <Header router={this.props.router} cartClick={this.showCartView} cartInfo={this.props.productInfo.cartItems}></Header>
       <div className="offerArea content-seperator">
         <div className="slider-container">
           <Slider {...settings}>
@@ -145,4 +149,11 @@ function mapStateToProps(state){
     productInfo:state.productReducer
   }
 }
-export default connect(mapStateToProps)(Home);
+// const mapDispatchToProps=(dispatch,props)=>{
+//   return{
+//     push: ()=>{
+
+//     }
+//   }
+// }
+export default connect(mapStateToProps)(withRouter(Home));

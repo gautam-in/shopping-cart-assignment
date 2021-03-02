@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import {withRouter} from 'react-router';
 import toastr from 'toastr';
 
 class App extends Component {
@@ -10,17 +11,21 @@ class App extends Component {
         }
     }
     componentDidMount(){
-        window.addEventListener('offline', () => {
-            let errMsg = 'It seems that you are offline. Please check your internet connection.'
-            this.setState({ isOfflineMsg: errMsg });
-            toastr.warning('',errMsg);           
-        });
-        window.addEventListener('online', () => {
-            this.setState({ isOfflineMsg: false });
-            toastr.success('','You are back online');
-            // window.location.reload();
-            // window.history.back();
-        });
+        window.addEventListener('offline', this.offline);
+        window.addEventListener('online', this.online);
+    }
+    componentWillUnmount(){
+        window.removeEventListener('offline',this.offline);
+        window.removeEventListener('online',this.online);
+    }
+    offline=() => {
+        let errMsg = 'It seems that you are offline. Please check your internet connection.'
+        this.setState({ isOfflineMsg: errMsg });
+        toastr.warning('',errMsg);           
+    }
+    online=()=>{
+        this.setState({ isOfflineMsg: false });
+        toastr.success('','You are back online');
     }
     render(){
         return (<div>
@@ -28,11 +33,10 @@ class App extends Component {
         </div>)
     }
 }
-
 function mapStateToProps(state) {
     return {
         signIn: state.signinReducer,
         signUp: state.signUpReducer,
     };
 }
-export default connect(mapStateToProps)(App);
+export default connect(mapStateToProps)(withRouter(App));

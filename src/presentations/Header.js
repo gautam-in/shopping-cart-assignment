@@ -1,13 +1,11 @@
 import React from 'react';
 import {Link} from 'react-router';
 import {connect} from 'react-redux';
-import {push} from 'react-router-redux';
+// import {push} from 'react-router-redux';
 import Logo from '../../static/images/logo.png';
 import {getViewPortDimensions} from '../utils';
 import {resetCartData} from '../actions/productActions';
-import SvgIcon from './SvgIcon';
 import CartIcon from '../../static/images/cart.svg';//'';
-import toastr from 'toastr';
 import LazyLoad from 'react-lazyload';
 class Header extends React.Component {
      constructor(props) {
@@ -24,6 +22,7 @@ class Header extends React.Component {
         this.doResizeActions = this.doResizeActions.bind(this);
         this.cartClick = this.cartClick.bind(this);
         this.resetCart = this.resetCart.bind(this);
+        this.resize = this.resize.bind(this);
     }
     componentDidMount(){
         if(this.props.signin.userData && this.props.signin.userData.userEmail){
@@ -32,10 +31,12 @@ class Header extends React.Component {
             this.setState({userName:this.props.signup.userData.userEmail});
         }
         this.doResizeActions();
-        window.addEventListener('resize',()=>{
-            this.doResizeActions();
-        },false);
+        window.addEventListener('resize',this.resize,false);
     }
+    componentWillUnmount(){
+        window.removeEventListener('resize',this.resize,false);
+    }
+
     static getDerivedStateFromProps(props,state){
         if(props.cartInfo){
             state.itemCount= props.cartInfo.length;
@@ -45,7 +46,9 @@ class Header extends React.Component {
         }
         return state;
     }
-   
+    resize=()=>{
+        this.doResizeActions();
+    }
     resetCart=()=>{
         this.props.dispatch(resetCartData());
     }
@@ -54,12 +57,8 @@ class Header extends React.Component {
         this.setState({dimensions: dimensions});
     }
     cartClick=()=>{
-        // if(!this.state.userName.length){
-        //     toastr.error('','Please login to view cart.');
-        //     return;
-        // }
         if(this.state.dimensions && this.state.dimensions.width && this.state.dimensions.width < 480){ //1024
-            this.props.dispatch(push('/cart'));
+            this.props.router.push('/cart');
         } else {
             this.props.cartClick();
         }
@@ -67,7 +66,7 @@ class Header extends React.Component {
     clickEvent=(event)=>{
     }
     showHome=()=>{
-        this.props.dispatch(push('/'));
+        this.props.router.push('/');
     }
     render(){        
         return (<div className="header-area">
