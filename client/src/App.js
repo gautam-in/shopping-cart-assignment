@@ -13,7 +13,6 @@ function App() {
   const [categories, setCats] = useState([]);
   const cart1 = useSelector((store) => store.cart);
   localStorage.setItem("cart", JSON.stringify(cart1));
-  console.log("cartAPP");
 
   React.useEffect(() => {
     var axios = require("axios");

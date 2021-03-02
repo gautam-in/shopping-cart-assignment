@@ -15,18 +15,18 @@ function Header({setCart,cart}) {
         <div className="logo">
           <img src="./logo_2x.png" alt="" />
         </div>
-        <div className="navOptions">
+        <nav className="navOptions">
           <span>
             <Link to="/home">Home</Link>
           </span>
           <span>
             <Link to="/products">Products</Link>
           </span>
-        </div>
+        </nav>
       </div>
       <div>
         <div className={"cartLogoContainer"}>
-          <div className={"text"}>
+          <nav className={"text"}>
             <span>
               <Link to="/login">SignIn</Link>
             </span>
@@ -34,7 +34,7 @@ function Header({setCart,cart}) {
             <span>
               <Link to="/register">Register</Link>
             </span>
-          </div>
+          </nav>
           <div onClick={() => setCart(true)} className={"cartIcon"}>
             <button>
               <IoMdCart style={{ color: "#fd032f", fontSize: "2.5rem" }} />
