@@ -1,19 +1,12 @@
 import React, { useState } from "react";
-import {
-  BrowserRouter as Router,
-  Link,
-  Redirect,
-  Route,
-  Switch,
-} from "react-router-dom";
+import { BrowserRouter as Router, Link } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { IoMdCart } from "react-icons/io";
-import Login from "./components/login/index";
-import Register from "./components/signUp/index";
-import Product from "./components/productList/index";
-import Home from "./components/home/home";
-import Cart from "./components/cart/cart";
+
+import Routes from "./Routes";
+
 import "./App.scss";
+import Header from "./components/header";
+import Footer from "./components/footer";
 
 function App() {
   const [cart, setCart] = useState(false);
@@ -24,7 +17,6 @@ function App() {
 
   React.useEffect(() => {
     var axios = require("axios");
-
     var config = {
       method: "get",
       url: "http://localhost:5000/categories",
@@ -43,60 +35,13 @@ function App() {
   return (
     <>
       <Router>
-        <div className="header">
-          {cart && <Cart setCart={setCart} />}
-          <div>
-            <div className="logo">
-              <img src="./logo_2x.png" alt="" />
-            </div>
-            <div className="navOptions">
-              <span>
-                <Link to="/home">Home</Link>
-              </span>
-              <span>
-                <Link to="/products">Products</Link>
-              </span>
-            </div>
-          </div>
-          <div>
-            <div className={"cartLogoContainer"}>
-              <div className={"text"}>
-                <span>
-                  <Link to="/login">SignIn</Link>
-                </span>
-
-                <span>
-                  <Link to="/register">Register</Link>
-                </span>
-              </div>
-              <div onClick={() => setCart(true)} className={"cartIcon"}>
-                <div>
-                  <IoMdCart style={{ color: "#fd032f", fontSize: "2.5rem" }} />
-                </div>
-                <div>{cart1.length} items</div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <Switch>
-          <Route exact path="/register" component={Register} />
-          <Route exact path="/login" component={Login} />
-          <Route exact path="/products">
-            <Product categories={categories} setCart={setCart} />
-          </Route>
-          <Route exact path="/home">
-            <Home categories={categories} />
-          </Route>
-
-          <Route path="/">
-            <Redirect to="/home" />
-          </Route>
-        </Switch>
-
-        <div className={"copyrightrow"}>
-          Copyright © 2011-2018 Sabka Bazaar Grocery Supplies Pvt Ltd
-        </div>
+        
+        <Header setCart={setCart} cart={cart} />
+             
+        <Routes categories={categories} setCart={setCart} />
+           
+        <Footer/>
+ 
       </Router>
     </>
   );

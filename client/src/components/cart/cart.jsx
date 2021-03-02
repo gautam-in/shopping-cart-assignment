@@ -1,8 +1,9 @@
 import React, { useState } from "react";
-import "./cart.scss";
 import { useSelector, useDispatch } from "react-redux";
+import "./cart.scss";
 import { handlecartupdate } from "../../Redux/action";
 import Item from "./lib/items";
+
 
 function Cart({ setCart }) {
   const cart = useSelector((store) => store.cart);
@@ -40,7 +41,7 @@ function Cart({ setCart }) {
         </div>
       )}
       <div
-        style={{ height: "600px" }}
+       
         onClick={(e) => e.stopPropagation()}
         className="cart"
       >
@@ -51,7 +52,7 @@ function Cart({ setCart }) {
           </span>{" "}
         </header>
         {cart.length ? (
-          <div style={{ height: "460px", overflow: "auto" }}>
+          <div style={{ height: "80%", overflow: "auto" }}>
             <div className="items">
               {cart.map((i) => (
                 <Item i={i} />

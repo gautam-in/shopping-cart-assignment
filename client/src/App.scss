@@ -17,6 +17,14 @@ body {
   padding: 10px;
 }
 
+.cartIcon button{
+  border-color: lightgray;
+  outline-color: lightgray;
+  // outline: none;
+  border:none;
+  cursor: pointer;
+}
+
 .copyrightrow {
   background-color: #e6e3e3ad;
   display: flex;
