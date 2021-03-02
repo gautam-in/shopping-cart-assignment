@@ -2,10 +2,8 @@ import React from "react";
 import { useHistory } from "react-router-dom";
 import "../index.scss";
 
-
 function Card({ c, i }) {
   const history = useHistory();
-
   return (
     c.enabled && (
       <div
@@ -18,13 +16,13 @@ function Card({ c, i }) {
         <div className="info">
           <h2>{c.name}</h2>
           <div>{c.description}</div>
-          <div
+          <button
             onClick={() => history.push("products#" + c.id)}
             style={{ width: "max-content", padding: "10px 20px" }}
             className="btn"
           >
             Explore {c.key}
-          </div>
+          </button>
         </div>
       </div>
     )

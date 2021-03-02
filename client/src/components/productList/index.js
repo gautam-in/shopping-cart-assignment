@@ -4,17 +4,13 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import Card from "./lib/card";
 import "./index.scss";
 
-
 function Product({ categories }) {
   const [menu, setMenu] = useState(false);
   const [cat, setCat] = useState(null);
   const history = useHistory();
-
   const [itemlist, setList] = useState([]);
-
   React.useEffect(() => {
     var axios = require("axios");
-
     var config = {
       method: "get",
       url: "http://localhost:5000/products",
@@ -31,7 +27,7 @@ function Product({ categories }) {
 
     let hash = history.location.hash;
     hash = hash.split("#");
-    if (hash[1]) {  
+    if (hash[1]) {
       checkAdult(hash[1]);
       history.push("products");
       setCat(hash[1]);
@@ -51,16 +47,15 @@ function Product({ categories }) {
             return a.order - b.order;
           })
           .map((p) => {
-            // return <div onClick={() => setType(p.id)}>{p.name}</div>})
             return (
-              <div
+              <button
                 style={{
                   backgroundColor: cat === p.id ? "lightgray" : "transparent",
                 }}
                 onClick={() => checkAdult(p.id)}
               >
                 {p.name}
-              </div>
+              </button>
             );
           })}
       </div>
@@ -76,7 +71,7 @@ function Product({ categories }) {
             .sort(function (a, b) {
               return a.order - b.order;
             })
-            .map((p) => {
+            .map((p, i) => {
               // return <div onClick={() => setType(p.id)}>{p.name}</div>})
               return (
                 <div

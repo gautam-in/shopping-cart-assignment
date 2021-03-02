@@ -6,9 +6,7 @@ import { handleIncrement, handledecrement } from "../../../Redux/action";
 function Item({ i }) {
   const cart = useSelector((state) => state.cart);
   const dispatch = useDispatch();
-
   let qty = quantity();
-
   function quantity() {
     for (let item of cart) {
       if (item.id === i.id) return item.qty;
@@ -24,19 +22,19 @@ function Item({ i }) {
       <div className="quantity">
         <h3>{i.name}</h3>
         <div>
-          <span
+          <button
             onClick={() => dispatch(handledecrement(i))}
             className={"changeQnt"}
           >
             -
-          </span>{" "}
+          </button>{" "}
           <span>{qty}</span>{" "}
-          <span
+          <button
             onClick={() => dispatch(handleIncrement(i))}
             className={"changeQnt"}
           >
             +
-          </span>{" "}
+          </button>{" "}
           <span>x &nbsp; &nbsp;&nbsp; Rs.{i.price} </span>
         </div>
       </div>

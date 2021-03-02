@@ -22,7 +22,6 @@ function Home({ categories }) {
         setBanners(response.data);
       })
       .catch(function (error) {
-        console.log(error);
       });
   }, []);
 

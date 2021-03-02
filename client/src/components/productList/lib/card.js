@@ -6,13 +6,10 @@ import "../index.scss";
 function Card({ p }) {
   const cart = useSelector((store) => store.cart);
   const [add, setAdd] = React.useState(false);
-
-  console.log("cart");
   const dispatch = useDispatch();
   function add1() {
     var axios = require("axios");
-
-    var config = {
+     var config = {
       method: "post",
       url: "http://localhost:5000/addtocart",
       headers: {},

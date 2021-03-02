@@ -75,16 +75,19 @@
     background-color: rgb(245, 47, 80);
     color: white;
     padding: 10px 20px;
-    outline: none;
+   
     border: none;
 
   }
 
-  .sidebar>div{
+  .sidebar>button{
       border-bottom:0.5px rgb(167, 166, 166) solid;
       padding: 15px 0px 15px 30px;
      font-weight: 600;
      color: gray;
+     width: 100%;
+     border-color: lightgray;
+     text-align: left;
 
   }
 
