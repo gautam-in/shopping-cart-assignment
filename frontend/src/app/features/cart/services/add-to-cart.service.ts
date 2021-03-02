@@ -55,6 +55,8 @@ export class AddToCartService {
             this.numberOfProductsInCart.next([...currentValue, productItem]);
           }
         }
+      } else {
+        console.log('some error occured');
       }
     });
   }
@@ -88,7 +90,7 @@ export class AddToCartService {
 
   getTotalPriceToCheckout(): number {
     let grandTotal: number = 0;
-    this.productsInCart$.subscribe(productList => {
+    this.productsInCart$.subscribe((productList) => {
       productList.forEach((product) => {
         grandTotal = product.totalPrice + grandTotal;
       });
