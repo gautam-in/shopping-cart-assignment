@@ -17,7 +17,8 @@ import { ProductCategoryCardComponent } from './components/product-category-card
     BlocksModule,
     AuthModule,
     HttpClientModule,
-    RouterModule
+    RouterModule,
+    SharedModule
   ],
   exports: [
     HomeComponent

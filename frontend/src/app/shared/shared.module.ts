@@ -1,3 +1,4 @@
+import { NgbdModalBasic } from './components/modal-basic/modal-basic.component';
 import { CartModule } from './../cart/cart.module';
 import { ProductsModule } from './../products/products.module';
 import { AuthModule } from './../auth/auth.module';
@@ -7,7 +8,9 @@ import { CommonModule } from '@angular/common';
 
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    NgbdModalBasic
+  ],
   imports: [
     CommonModule,
     AuthModule,
@@ -18,7 +21,8 @@ import { CommonModule } from '@angular/common';
     CommonModule,
     AuthModule,
     ProductsModule,
-    CartModule
+    CartModule,
+    NgbdModalBasic
   ]
 })
 export class SharedModule { }
