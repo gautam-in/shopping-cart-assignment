@@ -1,8 +1,5 @@
 <article class="product-category-container" *ngFor="let category of categories; let i=index">
     <ng-container *ngIf="i%2==0">
-        <figure>
-            <img src="{{category.imageUrl}}" alt="{{category.name}}" />
-        </figure>
         <div>
             <h2 tabindex="0">{{category.name}}</h2>
             <p tabindex="0">{{category.description}}</p>
@@ -10,8 +7,14 @@
                 (click)="goToProductsPage(category.id)">Explore
                 {{category.key | titlecase}}</button>
         </div>
+        <figure>
+            <img src="{{category.imageUrl}}" alt="{{category.name}}" />
+        </figure>
     </ng-container>
     <ng-container *ngIf="i%2!==0">
+        <figure>
+            <img src="{{category.imageUrl}}" alt="{{category.name}}" />
+        </figure>
         <div>
             <h2 tabindex="0">{{category.name}}</h2>
             <p tabindex="0">{{category.description}}</p>
@@ -19,8 +22,5 @@
                 (click)="goToProductsPage(category.id)">Explore
                 {{category.key | titlecase}}</button>
         </div>
-        <figure>
-            <img src="{{category.imageUrl}}" alt="{{category.name}}" />
-        </figure>
     </ng-container>
 </article>

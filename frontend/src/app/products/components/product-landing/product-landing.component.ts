@@ -46,6 +46,10 @@ export class ProductLandingComponent implements OnInit {
   }
 
   renderProductByCategory(categoryId: string, e?: any) {
+    if(!e && categoryId) {
+      this.productsRenderList = [...this.getFilterProductsByCategory(categoryId)];
+      return;
+    }
     if(e) {
       if(e.srcElement.ariaPressed === 'false') {
         this.productsRenderList = [...this.getFilterProductsByCategory(categoryId)];
