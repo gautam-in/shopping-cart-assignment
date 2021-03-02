@@ -1,3 +1,6 @@
+@import "colors";
+@import "breakpoints";
+
 /* ------- Header -------- */
 .main-header{
   margin-bottom: 15px;
@@ -34,7 +37,7 @@
     // Header Navigation Links 
     &__navlinks {
       display: none;
-      width: 100%;
+      width: 162%;
       flex-direction: column;
       top: 100%;
       right: -20px;
@@ -53,7 +56,7 @@
         list-style: initial;
         padding: 10px 0px;
         font-size: 100%;
-        border-bottom: 1px solid $color-border;
+        border-bottom: 1px solid $color-border-primary;
         text-align: center;
       }
       li:first-child {
@@ -113,7 +116,7 @@
 @media screen and (min-width: $break-mobile-small){
   .main-header{
     #header-nav label{
-      font-size: 180%;
+      font-size: 250%;
     }
     &__navlist > span{
       right: 18%;
@@ -156,12 +159,14 @@
     }
     &__navlinks ul.left li {
       padding-top: 50px;
-      font-size: 140%;
+      font-size: 160%;
+      font-weight: 600;
       text-align: left;
     }
     &__navlinks ul.right li {
-      font-size: 100%;
+      font-size: 120%;
       padding-top: 0px;
+      font-weight: 400;
       text-align: right;
       &:first-child {
         padding-right: 10px;

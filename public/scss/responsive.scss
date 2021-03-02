@@ -1,3 +1,6 @@
+@import "breakpoints";
+@import "colors";
+
 @media screen and (min-width: $break-mobile-small){
   .button-small {
     font-size: 80%;
@@ -6,7 +9,7 @@
   
 @media screen and (min-width: $break-mobile-medium){
   .button-small {
-    font-size: 100%;
+    font-size: 110%;
   }
 }
 

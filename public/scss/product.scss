@@ -1,3 +1,6 @@
+@import "breakpoints";
+@import "colors";
+
 /* ------ Product Description Page ------- */
 
 .product-listing{
@@ -74,6 +77,7 @@
   }
     
   &__prod-pricing{
+    // margin-top: 16px;
     span{
       position: relative;
       color: #fff;
