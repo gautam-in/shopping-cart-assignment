@@ -1,0 +1,17 @@
+
+<section class="container-fluid">
+    <section class="row">
+        <div class="card col-lg-3 p-1" *ngFor="let product of displayProducts">
+            <div class="card-body">
+                <p class="card-title">{{product.name}}</p>
+                <img class="card-img-top" src="assets/{{product.imageURL}}" alt="{{product.name}}"
+                    title="{{product.name}}">
+            </div>
+            <p class="card-text">{{product.description}}</p>
+            <div class="price-container">
+                <p class="price"> MRP Rs.{{product.price}}</p>
+                <button type="button" class="common-btn price-btn" (click)="addProductToCart(product)">Buy Now</button>
+            </div>
+        </div>
+    </section>
+</section>

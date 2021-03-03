@@ -1,0 +1,16 @@
+<section class="container">
+    <section class="row">
+        <aside class="col-lg-2">
+            <ng-container *ngFor="let category of productCategoriesList; let i=index">
+                <div (click)="filterSelectedCategoryList(category.id, i)" class="side-bar"
+                    [ngClass]="{'highlightCategory': selectedCatagory === i}">
+                    {{category.name}}
+                </div>
+            </ng-container>
+        </aside>
+
+        <section class="col-lg-10">
+            <app-product [products]="products" [filteredProducts]="filteredProducts"></app-product>
+        </section>
+    </section>
+</section>

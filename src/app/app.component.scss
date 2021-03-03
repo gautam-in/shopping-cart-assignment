@@ -1,0 +1,52 @@
+
+@import '../styles.scss';
+
+nav{
+    max-height: 20%;
+    .logo{
+        width: 150px;
+    }
+    .leftnav{
+        margin-top: 50px;
+        margin-left: 70px;
+    }
+    .rightnav{
+        margin-left: 500px;
+    }
+    .leftnav, .rightnav{
+        list-style: none;
+    }
+    .navbar-collapse{
+        flex-basis: 100%;
+        flex-grow: 1;
+    }
+    .active {
+        background-color: $color-pink;
+     }
+}
+
+.cart-container{
+    background-color: $color-gray;
+    
+    .cart{
+        width: 100px ;
+        display: inline-block;
+        .cart-logo{
+            color: pink;
+            width: 20px;
+        }
+    }
+}
+
+
+main{
+    max-height: 60%;
+    border-top: 4px solid $color-gray;
+}
+
+.footer{
+    background-color: $color-gray;
+    text-align: center;
+    max-height: 20%;
+}
+

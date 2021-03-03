@@ -1,0 +1,37 @@
+@import '../../styles.scss';
+
+.card{
+    .category-description{
+        .card-title{
+            font-weight: bolder;
+        }
+    }
+    
+}
+
+.card:nth-child(even){
+    .category-img{
+        float: right;
+    }
+    .category-description{
+        float: left;
+    }
+}
+.row{
+    border-bottom: 1px solid $color-gray;
+    box-shadow: 0 0 5px 0 rgba(0,0,0,.1);
+    padding: 20px;
+}
+
+.catagory-btn{
+    width: auto;
+}
+
+.carousel-indicators{
+    li{
+        background-color: black;
+        border-radius: 100%;
+        width: 5px;
+        height: 5px;
+    }
+}

@@ -1,0 +1,33 @@
+/* You can add global styles to this file, and also import other style files */
+@import './assets/partials/colors';
+@import '~font-awesome/scss/font-awesome.scss';
+@import 'https://fonts.googleapis.com/css?family=Dosis:400,600,700';
+
+$color-gray: #f8f9fa;
+$color-blue: #85d8dc;
+$color-pink: #c03e57;
+$color-black: rgb(78, 75, 75);
+$color-white: #cccccc;
+$color-dark-gray: #A9A9A9;
+$color-cyan: cyan;
+
+
+body {
+    font-family: 'Dosis' !important;
+    font-weight: 600;
+    color: $color-black;
+}
+
+.form-control{
+    border: 0;
+    outline: 0;
+    background: transparent;
+    border-bottom: 2px solid $color-black;
+}
+
+.common-btn{
+    background-color: $color-pink;
+    width: 100%;
+    color: white;
+    padding: 5px;
+}

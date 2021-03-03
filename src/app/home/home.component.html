@@ -1,0 +1,40 @@
+
+<section id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+
+    </ol>
+    <div class="carousel-inner">
+        <div class="carousel-item" *ngFor="let banner of bannerList; let i = index" [ngClass]="{'active': i == 0 }">
+            <img class="d-block w-100" src="assets{{banner.bannerImageUrl}}" alt="{{banner.bannerImageAlt}}">
+        </div>
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</section>
+
+<div class="card mb-3">
+    <div class="row no-gutters" *ngFor="let category of catagoryList">
+        <figure class="col-md-4 category-img">
+            <img src="assets/{{category.imageUrl}}" class="card-img" alt="{{category.name}}" title="{{category.name}}">
+        </figure>
+        <div class="col-md-8 category-description">
+            <div class="card-body" style="text-align: center;">
+                <h5 class="card-title">{{category.name}}</h5>
+                <p class="card-text">{{category.description}}</p>
+                <button type="button" class="common-btn catagory-btn" (click)="navigateToProducts(category.id)">Explore
+                    {{category.key | titlecase}}</button>
+            </div>
+        </div>
+    </div>
+</div>

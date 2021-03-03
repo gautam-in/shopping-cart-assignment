@@ -1,0 +1,66 @@
+<div class="modal" id="myModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h4 class="modal-title">My Cart
+                    <span *ngIf="groceryCart.length >0">({{groceryCart.length}}) item</span>
+                    <span *ngIf="!groceryCart.length">0</span>
+                </h4>
+                <button type="button" class="close" data-dismiss="modal" (click)="resetCart()">&times;</button>
+            </div>
+
+            <div class="modal-body" *ngIf="!groceryCart.length; else displayItems">
+                <div class="cart-body">
+                    <h3>No items in your cart</h3>
+                    <p>You favourite items are just a click away</p>
+                </div>
+            </div>
+
+            <ng-template #displayItems>
+                <div class="card mb-3">
+                    <div class="row no-gutters" *ngFor="let product of groceryCart">
+                        <div class="col-md-2">
+                            <img src="assets/{{product.imageURL}}" class="card-img" alt="{{product.name}}"
+                                title="{{product.name}}">
+                        </div>
+                        <div class="col-md-10">
+                            <div class="card-body" style="text-align: center;">
+                                <h5 class="card-title">{{groceryCart.length}}</h5>
+                                <div>
+                                    <i class="fa fa-plus-square icon-fa" (click)="addProduct(product)" aria-label="increase product unit"></i>
+                                    <span>{{product.count}}</span>
+                                    <i class="fa fa-minus-square icon-fa" (click)="removeProduct(product)" aria-label="decrease product unit"></i>
+                                    <span>X Rs. {{product.price}}</span>
+                                    <span>Rs.{{product.totalPrice}}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cart-offer">
+                    <figure class="offer-img">
+                        <img src="../../assets/static/images/lowest-price.png" alt="lowest-price" />
+                    </figure>
+                    <p class="offer-text">You won't find it cheaper anywhere</p>
+                </div>
+            </ng-template>        
+
+            <div class="modal-footer">
+                <section *ngIf="!groceryCart.length; else checkout">
+                    <button type="button" class="common-btn" data-dismiss="modal" (click)="resetCart()">Start
+                        Shopping</button>
+                </section>
+                <ng-template #checkout>
+                    <p>Promo code can be applied on payment page</p>
+                    <button type="button" class="common-btn" (click)="resetCart()"
+                        aria-valuetext="Proceed to Checkout Rs.  /-" data-dismiss="modal">
+                        <span style="float: left;">Proceed to Checkout </span> <span style="float: right;">Rs.{{ totalAmount()}}/- ></span>
+                    </button>
+                </ng-template>
+            </div>
+
+        </div>
+    </div>
+</div>

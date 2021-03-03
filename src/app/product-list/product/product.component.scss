@@ -1,0 +1,24 @@
+@import '../../../styles.scss';
+
+.card {
+    border: none;
+    border-bottom: 1px dashed $color-dark-gray;
+    .card-text{
+        background-color: $color-gray;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 4;
+        -webkit-box-orient: vertical;
+    }
+  }
+
+  .price-container{
+      display: flex;
+      .price{
+          flex: 1;
+      }
+      .price-btn{
+          flex: 1;
+      }
+  }
