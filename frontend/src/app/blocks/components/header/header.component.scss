@@ -1,0 +1,79 @@
+@import '../../../../styles.scss';
+
+nav{
+    display: flex;
+    flex-direction: row;
+    box-shadow: 0px 5px 10px -6px $color-black;  
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    position: sticky;
+    top: 0;
+    background: $color-white;
+    z-index: 999;
+    .nav_mobile-menu {
+        display: none;
+        flex-direction: row;
+        position: absolute;
+        border: 1px solid $color-grey;
+        background-color: $color-white;
+        padding: 10px;
+        top: 80%;
+        left: 5%;
+        z-index: 100000;
+    }
+    .nav_auth-menu, .nav_page-menu {
+        display: none;
+    }
+    
+    a {
+        text-decoration: none;
+        padding: 10px;
+    }
+}
+
+@media (min-width: 768px) {
+    nav {
+        .nav_auth-menu {
+            display: block;
+            position: absolute;
+            right: 0;
+            top: 0%;
+        }
+        .nav_page-menu {
+            display: block;
+            position: absolute;
+            left: 32%;
+        }
+        a {
+            color: $color-black;
+            font-weight: 600;
+        }
+    }
+}
+
+@media (min-width: 1024px) {
+    nav {
+        justify-content: space-around;
+        .nav_mobile-menu {
+            display: none;
+        }
+        .nav_auth-menu {
+            display: block;
+            position: absolute;
+            right: 20%;
+            top: 0%;
+        }
+        .nav_page-menu {
+            display: block;
+            position: absolute;
+            left: 32%;
+        }
+    
+        a {
+            color: $color-black;
+            font-weight: 600;
+        }
+    }
+    
+}

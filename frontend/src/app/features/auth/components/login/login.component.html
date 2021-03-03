@@ -1,0 +1,36 @@
+<section class="custom_flex-container">
+    <article>
+        <h2>Login</h2>
+        <p>Get access to your Orders, Wishlist and Recommendations</p>
+    </article>
+    <form class="custom_login-form" method="POST" #loginForm="ngForm" (ngSubmit)="onSubmit()" novalidate>
+        <div class="custom_form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" class="custom_form-input"
+                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required ngModel #email="ngModel"
+                aria-describedby="Please enter email here" />
+            <div class="custom_form-error-group" *ngIf="email.touched && !email.valid">
+                <div *ngIf="email.errors?.required" aria-live="assertive"><i
+                        class="fas fa-exclamation-circle"></i>Please enter email.</div>
+                <div *ngIf="email.errors?.pattern" aria-live="assertive"><i class="fas fa-exclamation-circle"></i>Please
+                    enter email in correct format</div>
+            </div>
+        </div>
+        <div class="custom_form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" class="custom_form-input" required ngModel
+                #password="ngModel" pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$"
+                aria-describedby="Please enter password here" />
+            <div class="custom_form-error-group" *ngIf="password.touched && !password.valid">
+                <div *ngIf="password.errors?.required" aria-live="assertive"><i
+                        class="fas fa-exclamation-circle"></i>Please enter password.</div>
+                <div *ngIf="password.errors?.minlength" aria-live="assertive"><i
+                        class="fas fa-exclamation-circle"></i>Minimum 6 characters required</div>
+                <div *ngIf="password.errors?.pattern" aria-live="assertive"><i
+                        class="fas fa-exclamation-circle"></i>Please enter alphanumeric password without
+                    spaces</div>
+            </div>
+        </div>
+        <button type="submit" class="custom_btn custom_btn--pink" [disabled]="!loginForm.valid">Login</button>
+    </form>
+</section>

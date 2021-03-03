@@ -1,0 +1,24 @@
+<ng-template #content let-modal> 
+	<div class="modal-header"> 
+		<h4 class="modal-title"
+			id="modal-basic-title"> 
+			Geeks of Geeks 
+		</h4> 
+		<button type="button" class="close"
+				aria-label="Close" (click)= 
+				"modal.dismiss('Cross click')"> 
+
+			<span aria-hidden="true"> 
+				× 
+			</span> 
+		</button> 
+	</div> 
+	<div class="modal-body"> 
+		
+	</div>      
+</ng-template> 
+
+<button class="btn btn-lg btn-outline-primary"
+	(click)="open(content)"> 
+	Popup using Angular and Bootstrap 
+</button> 

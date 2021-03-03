@@ -1,0 +1,23 @@
+:host {
+    padding: 10px;
+    cursor: pointer;
+    img {
+        width: 40%;
+    }
+}
+
+@media (min-width: 1024px) {
+    :host {
+        img {
+            width: 60%;
+        }
+    }
+}
+
+@media (min-width: 720px) {
+    :host{
+        img {
+            width: 80%;
+        }
+    }
+}

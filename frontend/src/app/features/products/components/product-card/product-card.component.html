@@ -1,0 +1,14 @@
+<article *ngFor="let product of products">
+    <h4 tabindex="0">{{product.name}}</h4>
+    <div class="custom_product-card-body">
+        <figure>
+            <img src="assets/{{product.imageURL}}" alt="{{product.name}}"/>
+        </figure>
+        <div>
+            <p class="custom_product-card-content" tabindex="0">{{product.description}}</p>
+            <button type="button" class="custom_btn custom_btn-dark-pink" (click)="addProductToCart(product)"
+            aria-label="Buy Product">Buy Now @
+                MRP Rs.{{product.price}}</button>
+        </div>
+    </div>
+</article>
