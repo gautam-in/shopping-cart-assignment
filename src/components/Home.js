@@ -78,12 +78,12 @@ class Home extends React.Component {
     const {homeApi,productInfo,router} = this.props;
     const {bannerData,categoryData,openModal} = this.state;
   return (
-    <div className="App home-page">
+    <main className="App home-page">
       <div className="overlay" style={{display: (homeApi.bannerdata_searching || homeApi.categorydata_searching) ? "block" : "none"}}>
             <div className="loading"><SvgLoading /></div>
       </div>
       <Header router={router} cartClick={this.showCartView} cartInfo={productInfo.cartItems}></Header>
-      <div className="offerArea content-seperator">
+      <section className="offerArea content-seperator">
         <div className="slider-container">
           <Slider {...settings}>
             {bannerData && bannerData.length ? bannerData.map((data, idx) => (
@@ -95,9 +95,9 @@ class Home extends React.Component {
             )) : null}
           </Slider>
         </div>
-      </div>
+      </section>
       <div className="category-banners-area">
-          {categoryData && categoryData.length ? categoryData.filter((item)=>{return item.order>= 0}).map((data,i)=>(<div className="single-banner-area content-seperator" key={i}>
+          {categoryData && categoryData.length ? categoryData.filter((item)=>{return item.order>= 0}).map((data,i)=>(<section className="single-banner-area content-seperator" key={i}>
             {data.imageUrl && (<div>
             <div className="col span-1-of-2">
               {i%2 != 0 ? (<div className="row login-left-area">
@@ -122,7 +122,7 @@ class Home extends React.Component {
               </div>)}
             </div>
             </div>)}
-          </div>)) : null}
+          </section>)) : null}
       </div>
       <Footer></Footer>
       {openModal ? (<Modal
@@ -141,7 +141,7 @@ class Home extends React.Component {
         showCloseIcon={false}>
         <Cart cartData={productInfo.cartItems} checkoutComplete={this.checkoutComplete} closeModal={this.onCloseModal}></Cart>
       </Modal>) : null}
-    </div>
+    </main>
   );
   }
 }

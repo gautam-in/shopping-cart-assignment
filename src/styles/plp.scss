@@ -3,12 +3,18 @@
     display: grid;
     grid-auto-flow: column;
 } //trail case for left area background to occupy till footer
-.left-menu, .product-list-area{width:100%;} //trail case for left area background to occupy till footer
-.content-area> div:first-child{
+.left-menu, .product-list-area{
+    width:100%;
+    padding:0;
+} //trail case for left area background to occupy till footer
+.content-area> div:first-child, .content-area aside:first-child {
     margin:0;
     // height: 100vh; //if we add then background grey is not occupying full giving parent, display as grid
     background-color: #cfcfcf;
 }
+// section.dropdown-cat-list{
+//     padding:0;
+// }
 .content-area{
     // height:81.5vh;
     .prod-categories{
@@ -39,6 +45,7 @@
 .dropdown-cat-list{
     position: relative;
     display: none;
+    padding:0;
     select {
         -webkit-appearance: none;
         -moz-appearance: none;
@@ -116,6 +123,7 @@
 .prod-list{
     .rest-tiles {
         margin-top: 5px;
+        padding:0;
         li{
             margin: 0 4px 10px 0;
             border-bottom: 1px dashed #cfcfcf;

@@ -80,9 +80,9 @@ class Signin extends React.Component {
     const {router,productInfo} = this.props;
     const {loginError,openModal} = this.state;
   return (
-    <div className="App signin-area">
+    <main className="App signin-area">
         <Header router={router} cartClick={this.showCartView} cartInfo={productInfo.cartItems}></Header>
-        <div className="login-area">
+        <section className="login-area">
             <div className="row">
             <div className="col span-1-of-2">
               <div className="login-info-area">
@@ -113,7 +113,7 @@ class Signin extends React.Component {
                   </form>
             </div>
             </div>
-        </div>
+        </section>
         <Footer></Footer>
         {openModal ? (<Modal
         open={openModal}
@@ -131,7 +131,7 @@ class Signin extends React.Component {
         showCloseIcon={false}>
         <Cart cartData={productInfo.cartItems} checkoutComplete={this.checkoutComplete} closeModal={this.onCloseModal}></Cart>
       </Modal>) : null}
-    </div>
+    </main>
   );
   }
 }

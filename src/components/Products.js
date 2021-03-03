@@ -87,7 +87,7 @@ class Products extends React.Component{
             </div>
             <Header router={router} cartClick={this.showCartView} cartInfo={productInfo.cartItems}></Header>
             <div className="row content-area">
-                <div className="col span-3-of-12 left-menu">
+                <aside className="col span-3-of-12 left-menu">
                     <div className="prod-categories">
                         <ul className="cat-list">
                             {categoryData && categoryData.length ? categoryData.filter((item) => { return item.order >= 0 }).map((data, i) => (<li onClick={(event) => this.makeActiveCategory(event, data.id)} className={this.state.catId ? data.id == this.state.catId ? 'selected' : '' : ''} key={i}>
@@ -96,8 +96,8 @@ class Products extends React.Component{
                         </ul>  
                         
                     </div>
-                </div>
-                <div className='dropdown-cat-list'>
+                </aside>
+                <section className='dropdown-cat-list'>
                     <div className="select">
                         <select onChange={(event) => { this.makeActiveCategory(event) }} value={this.getDropDwnSelectedVal(this.state.catId, categoryData)} name="slct" id="slct">
                             <option value="default" disabled>Choose an option</option>
@@ -106,8 +106,8 @@ class Products extends React.Component{
                             </option>)) : null}                            
                         </select>
                     </div>
-                </div>
-                <div className="col span-9-of-12 product-list-area">
+                </section>
+                <section className="col span-9-of-12 product-list-area">
                     <div className="prod-list">
                         <ul className="rest-tiles">
                         {productList && productList.length ? productList.filter((data)=>{return this.state.catId ? this.state.catId == data.category : data }).map((item,i)=>(<li key={i}>
@@ -123,7 +123,7 @@ class Products extends React.Component{
                             </div>
                             <div className="prod-infodetails">
                             <div className="description-area">
-                                <p className="prod-desc truncate-overflow" title={item.description}>{item.description}</p>
+                                <article className="prod-desc truncate-overflow" title={item.description}>{item.description}</article>
                             </div>
                             <div className="buy-area">
                                 <div className="col span-1-of-2 price">
@@ -139,7 +139,7 @@ class Products extends React.Component{
                         </li>)) : null}
                         </ul>
                     </div>
-                </div>
+                </section>
             </div>
             <Footer></Footer>
             {openModal ? (<Modal 

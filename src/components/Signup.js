@@ -126,10 +126,10 @@ class Signup extends React.Component {
   const {router,productInfo} = this.props;
   const {formError,openModal} = this.state;
   return (
-    <div className="App signup-area">
+    <main className="App signup-area">
         <Header router={router} cartClick={this.showCartView} cartInfo={productInfo.cartItems}></Header>
         {/* <div dangerouslySetInnerHTML={{ __html: template(this.state.data) }} /> */}
-        <div className="signup-page">
+        <section className="signup-page">
             <div className="row">
             <div className="col span-1-of-2">
               <div className="login-info-area">
@@ -184,7 +184,7 @@ class Signup extends React.Component {
                   </form>
             </div>
             </div>
-        </div>
+        </section>
         <Footer></Footer>
         {openModal ? (<Modal
         open={openModal}
@@ -202,7 +202,7 @@ class Signup extends React.Component {
         showCloseIcon={false}>
         <Cart cartData={productInfo.cartItems} checkoutComplete={this.checkoutComplete} closeModal={this.onCloseModal}></Cart>
       </Modal>) : null}
-    </div>
+    </main>
   );
   }
 }

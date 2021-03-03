@@ -14,6 +14,9 @@
             }
         }
     }
+    .signup-area{
+        height: auto !important;
+    }
     .slick-arrow{
         display: none !important;
     }
@@ -37,6 +40,9 @@
     .span-9-of-12 {
 		width: 100%; 
 	}
+    section{
+        padding:20px 0;
+    }
     .launch-container{
         flex-direction: column;
     }
