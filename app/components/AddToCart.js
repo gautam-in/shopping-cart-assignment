@@ -69,7 +69,7 @@ const AddToCart = (props) => {
             }
           </ul>
           <div className="lowest-price">
-            <img src={lowesPrice} alt="" />
+            <img src={lowesPrice} alt="Price" />
             <span>You won't find it cheaper anywhere</span>
           </div>
           </div>
@@ -77,7 +77,7 @@ const AddToCart = (props) => {
             <span className="promo-info"> Promo code can be applied on payment page</span>
             <button className="btn checkout">
               <span className="proceed-checkout">Proceed to Checkout</span>
-              <span className="cart-total-price">Rs. {totalPriceofCart()} <span>></span></span>
+              <span className="cart-total-price">Rs. {totalPriceofCart()} <span></span></span>
             </button>
           </div>
           

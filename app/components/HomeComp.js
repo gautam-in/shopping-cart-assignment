@@ -92,7 +92,7 @@ const HomeComp = () => {
                                 <div className="product-info">
                                     <h2>{item.name}</h2>
                                     <span>{item.description}</span>
-                                    <a href="#" className="btn">Explore {item.key}</a>
+                                    <a href="#" role="button" className="btn">Explore {item.key}</a>
                                 </div>
                             </div>
                         </li>)

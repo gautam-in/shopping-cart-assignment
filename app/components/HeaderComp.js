@@ -14,17 +14,17 @@ const HeaderComp = (props) => {
         <div className="header">
             <div className="inner-header floatcontainer">
                 <div className="logo-container">
-                    <img src={logo} />
+                    <img src={logo} alt="App Logo"/>
                 </div>
                 <ul className="navigation">
-                    <li> <NavLink exact to="/" className="signInBar" activeClassName="selected" >Home</NavLink></li>
-                    <li> <NavLink to="/product" className="signInBar" activeClassName="selected" >Product</NavLink></li>
+                    <li> <NavLink exact to="/" role="button" className="signInBar" activeClassName="selected" >Home</NavLink></li>
+                    <li> <NavLink to="/product" role="button" className="signInBar" activeClassName="selected" >Product</NavLink></li>
                 </ul>
                 <div className="navigation-right">
-                    <NavLink to="/login" className="signInBar" activeClassName="selected" >SignIn</NavLink>
-                    <NavLink to="/ragister" className="registerBar" activeClassName="selected" >Register</NavLink>
+                    <NavLink to="/login" role="button" className="signInBar" activeClassName="selected" >SignIn</NavLink>
+                    <NavLink to="/ragister" role="button" className="registerBar" activeClassName="selected" >Register</NavLink>
                     <div className="cart-container" >
-                        <span onClick={() => openAddtocart(true)}>
+                        <span role="button" tabIndex="0" onClick={() => openAddtocart(true)}>
                             <img src={cart} alt="cart" />
                             {Array.isArray(cartItem) && cartItem.length} item
                         </span>

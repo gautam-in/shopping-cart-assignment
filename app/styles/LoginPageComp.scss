@@ -58,12 +58,16 @@ label {
   -webkit-transition: 0.2s ease all;
 }
 
-input:focus ~ label,
-input:valid ~ label {
+input:focus ~ label{
   top: -20px;
   font-size: 14px;
   color: #4285f4;
 }
+// input:valid ~ label {
+//   top: -20px;
+//   font-size: 14px;
+//   color: #4285f4;
+// }
 
 .bar {
   position: relative;
