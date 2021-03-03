@@ -6,7 +6,7 @@ import {commonHeaders, checkHttpStatus} from '../utils';
 export function getProducts(){
     return function(dispatch){
         dispatch({type:actions.GET_PRODUCT_DETAILS})
-        let url = constants.base_api_url + urls.GET_PRODUCTS
+        const url = constants.base_api_url + urls.GET_PRODUCTS
         return fetch(url,{
             method:'GET',
             headers: {...commonHeaders,accept:'*'}
@@ -30,7 +30,7 @@ export function getProducts(){
 export function addToCart(item){
     return function(dispatch){
         dispatch({type:actions.POST_CART_DATA});
-        let url = constants.base_api_url + urls.ADD_TO_CART
+        const url = constants.base_api_url + urls.ADD_TO_CART
         return fetch(url,{
             method:"POST",
             headers: {...commonHeaders},

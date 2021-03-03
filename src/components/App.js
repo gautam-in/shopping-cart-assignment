@@ -2,12 +2,12 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import {withRouter} from 'react-router';
 import toastr from 'toastr';
-
+import Constants from '../constants';
 class App extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            isOfflineMsg:''
+            isOfflineMsg:false
         }
     }
     componentDidMount(){
@@ -19,13 +19,14 @@ class App extends Component {
         window.removeEventListener('online',this.online);
     }
     offline=() => {
-        let errMsg = 'It seems that you are offline. Please check your internet connection.'
-        this.setState({ isOfflineMsg: errMsg });
-        toastr.warning('',errMsg);           
+        let errMsg = Constants.TEXTS.DEFAULTS.offline_msg;
+        this.setState({ isOfflineMsg: true },()=>{
+            toastr.warning('',errMsg); 
+        });          
     }
     online=()=>{
         this.setState({ isOfflineMsg: false });
-        toastr.success('','You are back online');
+        toastr.success('',Constants.TEXTS.DEFAULTS.online_msg);
     }
     render(){
         return (<div>
@@ -33,10 +34,5 @@ class App extends Component {
         </div>)
     }
 }
-function mapStateToProps(state) {
-    return {
-        signIn: state.signinReducer,
-        signUp: state.signUpReducer,
-    };
-}
-export default connect(mapStateToProps)(withRouter(App));
+
+export default withRouter(App);

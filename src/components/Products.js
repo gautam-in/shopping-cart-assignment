@@ -9,6 +9,7 @@ import LazyLoad from 'react-lazyload';
 import toastr from 'toastr';
 import { Modal } from "react-responsive-modal";
 import Cart from '../presentations/Cart';
+import Constants from '../constants';
 class Products extends React.Component{
     constructor(props){
         super(props);
@@ -27,8 +28,8 @@ class Products extends React.Component{
         if(this.props.location.query.id){
             this.setState({catId:this.props.location.query.id});
         }
-        this.props.dispatch(getCategories());
-        this.props.dispatch(getProducts());
+        this.props.getCategories();
+        this.props.getProducts();
     }
     static getDerivedStateFromProps(props,state){
         if(props.homeApi.categoryData && props.homeApi.categorydata_searching_success){
@@ -38,8 +39,8 @@ class Products extends React.Component{
             state.productList = props.productInfo.productData;
         }
         if(props.productInfo.addCartData && props.productInfo.adding_to_cart_success){
-            toastr.success('Click on cart to buy','Item Added!',{timeOut:1000});
-            props.dispatch(resetCartReduxProcessData());
+            toastr.success(Constants.TEXTS.TOASTS.click_cart,Constants.TEXTS.TOASTS.item_added,{timeOut:1000});
+            props.resetCartReduxProcessData();
         }
         return state;
     }
@@ -49,12 +50,12 @@ class Products extends React.Component{
         });
     }
     addToCart=(event,item)=>{
-        this.props.dispatch(addToCart(item));
+        this.props.addToCart(item);
     }
     checkoutComplete=()=>{
-        this.props.dispatch(resetCartData());
+        this.props.resetCartData();
         this.onCloseModal();
-        toastr.success('Cart is emptied','Congratulations, Order Placed',{timeOut:1000});
+        toastr.success(Constants.TEXTS.TOASTS.cart_emptied,Constants.TEXTS.TOASTS.order_placed,{timeOut:1000});
     }
     showCartView=()=>{
         this.setState({openModal: true});
@@ -81,16 +82,18 @@ class Products extends React.Component{
         }
     }
     render(){
+        const {props} = this;
+        const {state} = this;
         return(<div className="products-page">
-            <div className="overlay" style={{display: (this.props.productInfo.searching_productdetails|| this.props.productInfo.adding_to_cart  || this.props.homeApi.categorydata_searching) ? "block" : "none"}}>
+            <div className="overlay" style={{display: (props.productInfo.searching_productdetails|| props.productInfo.adding_to_cart  || props.homeApi.categorydata_searching) ? "block" : "none"}}>
                 <div className="loading"><SvgLoading /></div>
             </div>
-            <Header router={this.props.router} cartClick={this.showCartView} cartInfo={this.props.productInfo.cartItems}></Header>
+            <Header router={props.router} cartClick={this.showCartView} cartInfo={props.productInfo.cartItems}></Header>
             <div className="row content-area">
                 <div className="col span-3-of-12 left-menu">
                     <div className="prod-categories">
                         <ul className="cat-list">
-                            {this.state.categoryData && this.state.categoryData.length ? this.state.categoryData.filter((item) => { return item.order >= 0 }).map((data, i) => (<li onClick={(event) => this.makeActiveCategory(event, data.id)} className={this.state.catId ? data.id == this.state.catId ? 'selected' : '' : ''} key={i}>
+                            {state.categoryData && state.categoryData.length ? state.categoryData.filter((item) => { return item.order >= 0 }).map((data, i) => (<li onClick={(event) => this.makeActiveCategory(event, data.id)} className={state.catId ? data.id == state.catId ? 'selected' : '' : ''} key={i}>
                                 <p>{data.name}</p>
                             </li>)) : null}
                         </ul>  
@@ -99,9 +102,9 @@ class Products extends React.Component{
                 </div>
                 <div className='dropdown-cat-list'>
                     <div className="select">
-                        <select onChange={(event) => { this.makeActiveCategory(event) }} value={this.getDropDwnSelectedVal(this.state.catId, this.state.categoryData)} name="slct" id="slct">
+                        <select onChange={(event) => { this.makeActiveCategory(event) }} value={this.getDropDwnSelectedVal(state.catId, state.categoryData)} name="slct" id="slct">
                             <option value="default" disabled>Choose an option</option>
-                            {this.state.categoryData && this.state.categoryData.length ? this.state.categoryData.filter((item) => { return item.order >= 0 }).map((data, i) => (<option value={data.id} className={this.state.catId ? data.id == this.state.catId ? 'selected' : '' : ''} key={i}>
+                            {state.categoryData && state.categoryData.length ? state.categoryData.filter((item) => { return item.order >= 0 }).map((data, i) => (<option value={data.id} className={state.catId ? data.id == state.catId ? 'selected' : '' : ''} key={i}>
                                 {data.name}
                             </option>)) : null}                            
                         </select>
@@ -110,7 +113,7 @@ class Products extends React.Component{
                 <div className="col span-9-of-12 product-list-area">
                     <div className="prod-list">
                         <ul className="rest-tiles">
-                        {this.state.productList && this.state.productList.length ? this.state.productList.filter((data)=>{return this.state.catId ? this.state.catId == data.category : data }).map((item,i)=>(<li key={i}>
+                        {state.productList && state.productList.length ? state.productList.filter((data)=>{return state.catId ? state.catId == data.category : data }).map((item,i)=>(<li key={i}>
                             <p className="prod-name" title={item.name}>{item.name}</p>
                             <div className="prod-detls">
                             <div className="prod-img">
@@ -142,21 +145,21 @@ class Products extends React.Component{
                 </div>
             </div>
             <Footer></Footer>
-            {this.state.openModal ? (<Modal 
-            open={this.state.openModal} 
+            {state.openModal ? (<Modal 
+            open={state.openModal} 
             onClose={this.onCloseModal} 
             center
-            aria-labelledby= {`My Cart(${this.props.productInfo.cartItems.legth} items)`}
-            aria-describedby="Hurry up! You won't find it cheaper anywhere."
+            aria-labelledby= {`My Cart(${props.productInfo.cartItems.legth} items)`}
+            aria-describedby={Constants.TEXTS.MODAL.modal_desc}
             classNames={{
-                overlayAnimationIn: '',
-                overlayAnimationOut: '',
-                modalAnimationIn: 'customEnterModalAnimation',
-                modalAnimationOut: 'customLeaveModalAnimation',
-              }}
+            overlayAnimationIn: '',
+            overlayAnimationOut: '',
+            modalAnimationIn: Constants.TEXTS.MODAL.customEnterModalAnimation,
+            modalAnimationOut: Constants.TEXTS.MODAL.customLeaveModalAnimation
+            }}
               animationDuration={800}
               showCloseIcon={false}>
-            <Cart cartData={this.props.productInfo.cartItems} checkoutComplete={this.checkoutComplete} closeModal={this.onCloseModal}></Cart>
+            <Cart cartData={props.productInfo.cartItems} checkoutComplete={this.checkoutComplete} closeModal={this.onCloseModal}></Cart>
         </Modal>):null}
         </div>);
     }
@@ -167,4 +170,13 @@ function mapStateToProps(state){
         productInfo: state.productReducer
     }
 }
-export default connect(mapStateToProps)(Products);
+const mapDispatchToProps=(dispatch,props)=>{
+    return{
+      getProducts: ()=>{dispatch(getProducts())},
+      getCategories: ()=> {dispatch(getCategories())},
+      resetCartData: ()=>{dispatch(resetCartData())},
+      addToCart: (item)=>{dispatch(addToCart(item))},
+      resetCartReduxProcessData: ()=>{dispatch(resetCartReduxProcessData())}
+    }
+  }
+export default connect(mapStateToProps,mapDispatchToProps)(Products);

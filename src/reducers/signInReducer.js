@@ -10,7 +10,7 @@ export default function signInReducer(state = initialState, action){
             return initialState
         }
         case actions.SET_USER:{
-            let tempObj = {
+            const tempObj = {
                 userData: action.data
             }
             return {...state,...tempObj}

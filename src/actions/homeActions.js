@@ -6,7 +6,7 @@ import {commonHeaders, checkHttpStatus} from '../utils';
 export function getOffers(){
     return function(dispatch){
         dispatch({type:actions.GET_BANNER_DETAILS})
-        let url = constants.base_api_url + urls.GET_BANNER_DETAILS
+        const url = constants.base_api_url + urls.GET_BANNER_DETAILS
         return fetch(url,{
             method:'GET',
             headers: {...commonHeaders,accept:'*'}
@@ -29,7 +29,7 @@ export function getOffers(){
 export function getCategories(){
     return function(dispatch){
         dispatch({type:actions.GET_CATEGORY_DETAILS})
-        let url = constants.base_api_url + urls.GET_CATEGORY_DETAILS
+        const url = constants.base_api_url + urls.GET_CATEGORY_DETAILS
         return fetch(url,{
             method:'GET',
             headers: {...commonHeaders,accept:'*'}

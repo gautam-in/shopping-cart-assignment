@@ -16,7 +16,7 @@ export default function homeApis(state = initialState, action){
             return initialState
         }
         case actions.GET_BANNER_DETAILS:{
-            let tempObj = {
+            const tempObj = {
                 bannerdata_searching_failed: false,
                 bannerdata_searching_success: false,
                 bannerdata_searching: true,
@@ -24,7 +24,7 @@ export default function homeApis(state = initialState, action){
             return {...state,...tempObj}
         }
         case actions.GET_BANNER_DETAILS_SUCCESS:{
-            let tempObj = {
+            const tempObj = {
                 bannerData: action.data,
                 bannerdata_searching_failed: false,
                 bannerdata_searching_success: true,
@@ -33,7 +33,7 @@ export default function homeApis(state = initialState, action){
             return {...state,...tempObj}
         }
         case actions.GET_BANNER_DETAILS_FAILURE:{
-            let tempObj = {
+            const tempObj = {
                 bannerdata_searching_failed: true,
                 bannerdata_searching_success: false,
                 bannerdata_searching: false,
@@ -42,7 +42,7 @@ export default function homeApis(state = initialState, action){
             return {...state,...tempObj}
         }
         case actions.GET_CATEGORY_DETAILS:{
-            let tempObj = {
+            const tempObj = {
                 categorydata_searching_failed: false,
                 categorydata_searching_success: false,
                 categorydata_searching: true
@@ -50,7 +50,7 @@ export default function homeApis(state = initialState, action){
             return {...state,...tempObj}
         }
         case actions.GET_CATEGORY_DETAILS_SUCCESS:{
-            let tempObj = {
+            const tempObj = {
                 categoryData: action.data,
                 categorydata_searching_failed: false,
                 categorydata_searching_success: true,
@@ -59,7 +59,7 @@ export default function homeApis(state = initialState, action){
             return {...state,...tempObj}
         }
         case actions.GET_CATEGORY_DETAILS_FAILURE:{
-            let tempObj = {
+            const tempObj = {
                 categorydata_searching_failed: true,
                 categorydata_searching_success: false,
                 categorydata_searching: false,

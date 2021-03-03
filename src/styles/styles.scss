@@ -6,6 +6,8 @@
 
 $violetpink: #b1288d;
 $white: #ffffff;
+$brownish-grey: #636363;
+$greyish-39: #818181;
 $primary-color: #00005c; 
 $error-color: #D0021B;
 $text-color: mix(#000, $primary-color, 64%);
@@ -88,7 +90,33 @@ section {
     align-items: center;
     justify-content: center;
 }
-
+// .toast-message {
+//     left: 0;
+//     right: 0;
+//     width: 70%;
+//     margin: 20px auto;
+//     text-align: center;
+//     z-index: 10;
+//     font-size: 0.75em;
+//     color: $white;
+//     padding: 0.625em 1em;
+//     background: $greyish-39;
+//     border-radius: 100px;
+//     opacity: 1;
+//     display: block;
+//     &.fade-out {
+//         position: fixed;
+//         display: inline;
+//         margin: auto;
+//         -webkit-animation: fadeOut 0s ease-in 4s forwards;
+//         -moz-animation: fadeOut 0s ease-in 4s forwards;
+//         -ms-animation: fadeOut 0s ease-in 4s forwards;
+//         -o-animation: fadeOut 0s ease-in 4s forwards;
+//         animation: fadeOut 0s ease-in 4s forwards;
+//         -webkit-animation-fill-mode: forwards;
+//         animation-fill-mode: forwards;
+//     }
+// }
 /* required grid structure */
 /*  SECTIONS  ============================================================================= */
 

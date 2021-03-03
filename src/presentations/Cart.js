@@ -7,7 +7,6 @@ class Cart extends React.Component{
         super(props);
         this.state={
             itemList: [],
-            cartEmptyMesg: '<h2>No items in your cart</h2><br /> <p>Your favorite items are just a click away.</p>',
             totalCartValue:0
         }
         this.increaseQty = this.increaseQty.bind(this);
@@ -24,27 +23,23 @@ class Cart extends React.Component{
     increaseQty=(e,itm,i)=>{
         let tempObj = Object.assign({},this.state);
         itm.qty = itm.qty + 1;
-        var itemIdx = tempObj.itemList.indexOf(itm);
         tempObj.itemList[i].qty = itm.qty;
         this.setState(tempObj,()=>{
             this.evaluateTotalPrice();
         });
-        // setTimeout(()=>{});
     }
     decreaseQty=(e,itm,i)=>{
         let tempObj = Object.assign({},this.state);
         itm.qty = itm.qty - 1;
         if(itm.qty == 0){
-            // var itemIdx = tempObj.itemList.indexOf(itm);
             tempObj.itemList.splice(i,1);
         }
         if(!tempObj.itemList.length){
-            this.props.dispatch(resetCartData());
+            this.props.resetCartData();
         }
         this.setState(tempObj,()=>{
             this.evaluateTotalPrice();
         });
-        // setTimeout(()=>{});
     }
     evaluateTotalPrice=()=>{
         let itmLst = this.state.itemList;
@@ -55,20 +50,22 @@ class Cart extends React.Component{
         this.setState({totalCartValue: totalValue});
     }
     render(){
+        const {state} = this;
+        const {props} = this;
         return(<div id="cart" role="dialog" tabIndex="10" aria-labelledby="dialog-title" className="cart-page">
-            {!this.props.hideHeader ? (<div className="cart-header modal-horizontal-space">
-                <h2 id="dialogue-title">My cart {this.state.itemList.length ? " ("+(this.state.itemList.length)+" items)" : " "}</h2>
-                <div className="close-icon" aria-label="close dialog" onClick={this.props.closeModal}>
+            {!props.hideHeader ? (<div className="cart-header modal-horizontal-space">
+                <h2 id="dialogue-title">My cart {state.itemList.length ? " ("+(state.itemList.length)+" items)" : " "}</h2>
+                <div className="close-icon" aria-label="close dialog" onClick={props.closeModal}>
                 &times;
                 </div>
             </div>) : null }
             
             <div className="row">
-                {this.state.itemList.length ? (<div>
+                {state.itemList.length ? (<div>
                     <div className="modal-content-area">
                         <div className="itemlist-area">
                         <ul className="cart-items">
-                        {this.state.itemList.map((item,i)=>(<li key={i} className="cart-item modal-horizontal-space">
+                        {state.itemList.map((item,i)=>(<li key={i} className="cart-item modal-horizontal-space">
                         <div className="cart-item-img">
                         <LazyLoad height={10} once>
                             <img src={window.location.origin + item.imageURL} alt="Lowest Price Guarenteed"></img>
@@ -78,12 +75,9 @@ class Cart extends React.Component{
                             <p aria-label={item.name}>{item.name}</p>
                             <div className="qty-process">
                                 <span className="process-btn minus" aria-label={"decreased item quantity to"+item.qty} onClick={(event)=>this.decreaseQty(event,item,i)}>
-                                    {/* <p aria-label="increse item quantity">+</p> */}
                                 </span>
                                 <p>{item.qty}</p>
-                                {/* <input disabled type="text"  onChange={(event)=>{}} value={item.qty} /> */}
                                 <span className="process-btn plus" aria-label={'increased item quantity to'+item.qty} onClick={(event)=>this.increaseQty(event,item,i)}>
-                                    {/* <p aria-label="decrease item quantity">-</p> */}
                                 </span>
                                 <span className="price-area">X <p aria-label={'Rs.'+item.price} title={item.price}>{item.price}</p></span>
                             </div>
@@ -107,22 +101,23 @@ class Cart extends React.Component{
                     </div>
                     <div className="footer-area">
                     <div><p>Promo code can be applied on payment page</p></div>
-                    <div aria-label={` ${'Proceed to checkout with '+this.state.totalCartValue+' rupees.'} `} onClick={this.props.checkoutComplete} className="footer-btn modal-horizontal-space">
+                    <div aria-label={` ${'Proceed to checkout with '+state.totalCartValue+' rupees.'} `} onClick={props.checkoutComplete} className="footer-btn modal-horizontal-space">
                         <div className="checkouttxt">Proceed to checkout</div>
-                        <div className="price-info">Rs.{this.state.totalCartValue} 
+                        <div className="price-info">Rs.{state.totalCartValue} 
                             <span className="arrow right">
-                                {/* <i className="ion-ios-arrow-forward"></i> */}
                             </span>
                         </div>
                     </div>
                     </div>
                 </div>) : (<div>
                     <div className="modal-horizontal-space no-cart-items">
-                        <div dangerouslySetInnerHTML={{__html:this.state.cartEmptyMesg}}></div>
+                        <div>
+                        <h2>No items in your cart</h2><br /> <p>Your favorite items are just a click away.</p>
+                        </div>
                     </div>
                     <div className="modal-horizontal-space footer-shop-btn">
                         
-                        <button aria-label="Start shopping" onClick={!this.props.hideHeader ? this.props.closeModal : this.props.checkoutComplete} className="btn full-width-btn">Start Shopping</button>
+                        <button aria-label="Start shopping" onClick={!props.hideHeader ? props.closeModal : props.checkoutComplete} className="btn full-width-btn">Start Shopping</button>
                     </div>
                     </div>)}
             </div>
@@ -134,4 +129,9 @@ function mapStateToProps(state){
         productInfo: state.productReducer
     }
 }
-export default connect(mapStateToProps)(Cart);
+const mapDispatchToProps = (dispatch,ownProps) => {
+    return {
+        resetCartData: ()=>{dispatch(resetCartData())}
+    }
+}
+export default connect(mapStateToProps,mapDispatchToProps)(Cart);

@@ -1,15 +1,15 @@
 import React from "react";
-import ReactDOM from "react-dom";
-import Handlebars from "handlebars";
+
 import { connect } from 'react-redux';
-import { push } from 'react-router-redux';
 import {setUserDetails} from '../actions/signupActions';
 import {resetCartData} from '../actions/productActions';
+import {validEmail,validPwd} from '../utils';
 import Header from '../presentations/Header';
 import Footer from '../presentations/Footer';
 import toastr from 'toastr';
 import { Modal } from "react-responsive-modal";
 import Cart from '../presentations/Cart';
+import Constants from '../constants';
 class Signup extends React.Component {
     constructor(props){
         super(props);
@@ -30,30 +30,31 @@ class Signup extends React.Component {
         this.onCloseModal = this.onCloseModal.bind(this);
         this.checkoutComplete = this.checkoutComplete.bind(this);
     }
+
     static getDerivedStateFromProps(props,state){
         if(props.signUp && props.signUp.userData){
-            let title = `${'Hai '+state.fName}`;
-            let message = "You are signed-up successfully!";
+            let title = `${Constants.TEXTS.DEFAULTS.hai+', '+state.fName}`;
+            let message = Constants.TEXTS.SIGNUP.signup_success;
             toastr.success(message, title,{timeOut:1000});
-            props.dispatch(push('/Home'));
+            props.router.push('/Home');
         }
         return state;
       }
     inputHandler(event,value){
         switch(value){
-            case 'fname':
+            case Constants.TEXTS.SIGNUP.form_values.fname:
                 this.setState({fName:event.target.value});
                 break;
-            case 'lname':
+            case Constants.TEXTS.SIGNUP.form_values.lname:
                 this.setState({lName:event.target.value});
                 break;
-            case 'email': 
+            case Constants.TEXTS.SIGNUP.form_values.email: 
                 this.setState({email:event.target.value});
                 break;
-            case 'password':
+            case Constants.TEXTS.SIGNUP.form_values.pwd:
                 this.setState({password:event.target.value});
                 break;
-            case 'cpassword':
+            case Constants.TEXTS.SIGNUP.form_values.cpwd:
                 this.setState({confirmPassword:event.target.value});
                 break;
             case 'default':
@@ -62,15 +63,28 @@ class Signup extends React.Component {
     }
     isValidFormState=()=>{
         let isValid = true;
-        let emailValidRegex=/^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/i;
-        
-        if(isValid && this.state.email && !emailValidRegex.test(this.state.email)){
+        if(!this.state.fName){
             isValid = false;
-            toastr.error('', 'Invalid email',{timeOut:1000});
+            // toastr.warning('', 'Enter first name');
+            toastr.error('', Constants.TEXTS.TOASTS.fname,{timeOut:1000});
         }
-        if(isValid && this.state.password.length < 6 && this.state.password.length !== this.state.confirmPassword){
+        if(isValid && !this.state.lName){
             isValid = false;
-            toastr.error('', 'Check password section',{timeOut:1000});
+            toastr.error('',Constants.TEXTS.TOASTS.lname,{timeOut:1000});
+        }
+        if(isValid && (this.state.email || !this.state.email) && !validEmail(this.state.email)){
+            isValid = false;
+            toastr.error('', Constants.TEXTS.TOASTS.invalid_email,{timeOut:1000});
+        }
+        if(isValid && ((this.state.password && this.state.password.length < 6) || (this.state.password !== this.state.confirmPassword) || (!this.state.password || !this.state.confirmPassword))){
+            isValid = false;
+            toastr.error('', Constants.TEXTS.TOASTS.invalid_pwd,{timeOut:1000});
+        }
+        if(isValid && this.state.password && validPwd(this.state.password) && (this.state.password === this.state.confirmPassword)){
+            isValid = true;
+        } else if(isValid) {
+            isValid = false;
+            toastr.error('', Constants.TEXTS.TOASTS.pwdcriteriamismatch,{timeOut:1000});
         }
         return isValid;
     }
@@ -82,7 +96,7 @@ class Signup extends React.Component {
     checkoutComplete=()=>{
         this.props.dispatch(resetCartData());
         this.onCloseModal();
-        toastr.success('Cart is emptied','Congratulations, Order Placed',{timeOut:1000});
+        toastr.success(Constants.TEXTS.TOASTS.cart_emptied,Constants.TEXTS.TOASTS.order_placed,{timeOut:1000});
     }
     onCloseModal = () => {
         this.setState({ openModal: false });
@@ -92,19 +106,9 @@ class Signup extends React.Component {
     onSubmitHandler=(event)=>{
         event.preventDefault();
         let isValidForm = false;
-        if(this.state.email && this.state.password && (this.state.password === this.state.confirmPassword) && this.state.fName && this.state.lName && this.isValidFormState()){
+        if(this.isValidFormState()){
             isValidForm = true;
         } else {
-            let isValid = true;
-            if(!this.state.fName){
-                isValid = false;
-                // toastr.warning('', 'Enter first name');
-                toastr.error('', 'Enter first name',{timeOut:1000});
-            }
-            if(isValid && !this.state.lName){
-                isValid = false;
-                toastr.error('', 'Enter last name',{timeOut:1000});
-            }
             this.setState({formError: true},()=>{
                 document.getElementById('errorarea').click();
             });
@@ -120,9 +124,11 @@ class Signup extends React.Component {
         }
     }
   render(){
+    const {state} = this;
+    const {props} = this;
   return (
     <div className="App signup-area">
-        <Header router={this.props.router} cartClick={this.showCartView} cartInfo={this.props.productInfo.cartItems}></Header>
+        <Header router={props.router} cartClick={this.showCartView} cartInfo={props.productInfo.cartItems}></Header>
         {/* <div dangerouslySetInnerHTML={{ __html: template(this.state.data) }} /> */}
         <div className="signup-page">
             <div className="row">
@@ -133,7 +139,7 @@ class Signup extends React.Component {
                   <h1>Signup</h1>
                   <p>We donot share your personal details with anyone.</p>
                   <div className="">
-                     {this.state.formError && (<div id="errorarea" className="errorArea">
+                     {state.formError && (<div id="errorarea" className="errorArea">
                           <p>Please follow instruction below to fill form:</p>
                           <ul className="form-instrcutions">
                                 <li><p>Make sure no fields are empty when user submits the form. </p></li>
@@ -154,48 +160,48 @@ class Signup extends React.Component {
             <div className="col span-1-of-2">
                   <form method="" action="" onSubmit={this.onSubmitHandler}>  
                   <div className="floating-input-area">
-                    <input type="text" aria-label="Enter your first name" className="inputText" onChange={(event)=>this.inputHandler(event,'fname')} placeholder=" " required/>
-                    <span className="floating-label">First Name*</span>
+                    <input type="text" aria-label={Constants.TEXTS.FORM_INPUTS.fname.label} className="inputText" onChange={(event)=>this.inputHandler(event,Constants.TEXTS.SIGNUP.form_values.fname)} placeholder=" " required/>
+                    <span className="floating-label">{Constants.TEXTS.FORM_INPUTS.fname.value}</span>
                   </div>
                   <div className="floating-input-area">
-                    <input type="text" aria-label="Enter your last name" className="inputText" onChange={(event)=>this.inputHandler(event,'lname')} placeholder=" " required/>
-                    <span className="floating-label">Last Name*</span>
+                    <input type="text" aria-label={Constants.TEXTS.FORM_INPUTS.lname.label} className="inputText" onChange={(event)=>this.inputHandler(event,Constants.TEXTS.SIGNUP.form_values.lname)} placeholder=" " required/>
+                    <span className="floating-label">{Constants.TEXTS.FORM_INPUTS.lname.value}</span>
                   </div>             
                    <div className="floating-input-area">
-                    <input type="email" aria-label="Enter your email" className="inputText" onChange={(event)=>this.inputHandler(event,'email')} placeholder=" " required/>
-                    <span className="floating-label">Email*</span>
+                    <input type="email" aria-label={Constants.TEXTS.FORM_INPUTS.email.label} className="inputText" onChange={(event)=>this.inputHandler(event,Constants.TEXTS.SIGNUP.form_values.email)} placeholder=" " required/>
+                    <span className="floating-label">{Constants.TEXTS.FORM_INPUTS.email.value}</span>
                   </div>
                   <div className="floating-input-area">
-                    <input type="password" aria-label="Enter your password" className="inputText" onChange={(event)=>this.inputHandler(event,'password')} placeholder=" " required/>
-                    <span className="floating-label">Password*</span>
+                    <input type="password" aria-label={Constants.TEXTS.FORM_INPUTS.pwd.label} className="inputText" onChange={(event)=>this.inputHandler(event,Constants.TEXTS.SIGNUP.form_values.pwd)} placeholder=" " required/>
+                    <span className="floating-label">{Constants.TEXTS.FORM_INPUTS.pwd.value}</span>
                   </div>
                   <div className="floating-input-area">
-                    <input type="password" aria-label="Please confirm password by typing again" className="inputText" onChange={(event)=>this.inputHandler(event,'cpassword')} placeholder=" " required/>
-                    <span className="floating-label">Confirm Password*</span>
+                    <input type="password" aria-label={Constants.TEXTS.FORM_INPUTS.cpwd.label} className="inputText" onChange={(event)=>this.inputHandler(event,Constants.TEXTS.SIGNUP.form_values.cpwd)} placeholder=" " required/>
+                    <span className="floating-label">{Constants.TEXTS.FORM_INPUTS.cpwd.value}</span>
                   </div>
                   <div>
-                    <button type="submit" aria-label="Hit enter or click on this button to sign up" onClick={(event)=>this.onSubmitHandler(event) } className="login btn big-btn">Signup</button>
+                    <button type="submit" aria-label={Constants.TEXTS.FORM_INPUTS.signup_submit.label} onClick={(event)=>this.onSubmitHandler(event) } className="login btn big-btn">{Constants.TEXTS.FORM_INPUTS.signup_submit.value}</button>
                   </div>
                   </form>
             </div>
             </div>
         </div>
         <Footer></Footer>
-        {this.state.openModal ? (<Modal
-        open={this.state.openModal}
+        {state.openModal ? (<Modal
+        open={state.openModal}
         onClose={this.onCloseModal}
         center
-        aria-labelledby={`My Cart(${this.props.productInfo.cartItems.legth} items)`}
-        aria-describedby="Hurry up! You won't find it cheaper anywhere."
+        aria-labelledby={`My Cart(${props.productInfo.cartItems.legth} items)`}
+        aria-describedby= {Constants.TEXTS.MODAL.modal_desc}
         classNames={{
           overlayAnimationIn: '',
           overlayAnimationOut: '',
-          modalAnimationIn: 'customEnterModalAnimation',
-          modalAnimationOut: 'customLeaveModalAnimation',
+          modalAnimationIn: Constants.TEXTS.MODAL.customEnterModalAnimation,
+          modalAnimationOut: Constants.TEXTS.MODAL.customLeaveModalAnimation,
         }}
         animationDuration={800}
         showCloseIcon={false}>
-        <Cart cartData={this.props.productInfo.cartItems} checkoutComplete={this.checkoutComplete} closeModal={this.onCloseModal}></Cart>
+        <Cart cartData={props.productInfo.cartItems} checkoutComplete={this.checkoutComplete} closeModal={this.onCloseModal}></Cart>
       </Modal>) : null}
     </div>
   );
@@ -204,7 +210,6 @@ class Signup extends React.Component {
 function mapStateToProps(state) {
     return {
       signUp: state.signUpReducer,
-      homeApis: state.homeApis,
       productInfo: state.productReducer
     };
   }

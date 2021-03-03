@@ -50,7 +50,7 @@ class Header extends React.Component {
         this.doResizeActions();
     }
     resetCart=()=>{
-        this.props.dispatch(resetCartData());
+        this.props.resetCartData();
     }
     doResizeActions=()=>{
         let dimensions = getViewPortDimensions();
@@ -68,7 +68,8 @@ class Header extends React.Component {
     showHome=()=>{
         this.props.router.push('/');
     }
-    render(){        
+    render(){   
+        const {state} = this;
         return (<div className="header-area">
             <header>
                 <nav className="sticky-nav">
@@ -87,22 +88,20 @@ class Header extends React.Component {
                         </ul>
                         <div className="guest-info">
                             <div>
-                            {this.state.userName && this.state.userName.length ? (<div> 
-                                <p className="useremail" title={this.state.userName} aria-label={this.state.userName}>{this.state.userName}</p>
+                            {state.userName && state.userName.length ? (<div> 
+                                <p className="useremail" title={state.userName} aria-label={state.userName}>{state.userName}</p>
                             </div>) : (<ul className="main-nav js--main-nav">
                                 <li onClick={this.resetCart}><Link to="/signin">Signin</Link></li>
                                 <li onClick={this.resetCart}><Link to="/signup">Register</Link></li>
                             </ul>)}
                             </div>
                             <div className="cartArea" aria-labelledby="cart" onClick={this.cartClick}>
-                                {/* <i className="ion-ios-cart"></i> */}
                                 <div className="cart-icon">
                                     <LazyLoad height={25} once>
                                         <img src={CartIcon} className="fill-purple"></img>
                                     </LazyLoad>
-                                    {/* <SvgIcon fill="#b1288d" style={{}} glyph={CartIcon} width={'20px'} height={'20px'} /> */}
                                 </div>
-                                <span>{this.state.itemCount} items</span>
+                                <span>{state.itemCount} items</span>
                             </div>
                         </div>
                     </div>
@@ -118,4 +117,9 @@ function mapStateToProps(state){
         productInfo: state.productReducer
     }
 }
-export default connect(mapStateToProps)(Header);
+const mapDispatchToProps = (dispatch,ownProps) => {
+    return {
+        resetCartData: ()=>{dispatch(resetCartData())}
+    }
+}
+export default connect(mapStateToProps,mapDispatchToProps)(Header);

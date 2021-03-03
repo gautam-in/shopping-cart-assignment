@@ -1,7 +1,6 @@
 import React from 'react';
 import { IndexRoute, Route } from 'react-router';
 import App from './components/App';
-import constants from './constants';
 export default () => {
     return (
         <Route path="/" component={App}>
@@ -45,7 +44,6 @@ export default () => {
                 }}
             />
             <Route
-                // path={`${constants.api_point}/products`}
                 path={"/cart"}
                 getComponent={(location, cb) => {
                     require.ensure([], require => {
