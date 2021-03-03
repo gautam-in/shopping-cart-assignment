@@ -5,7 +5,7 @@
   "scripts": {
     "compile:js-dev": "babel public/assets/js -d public/js/ -w",
     "compile:sass-dev": "node-sass  -rw public/scss -o public/css/ -w",
-    "start:dev": "npm run compile:sass-dev > out.log | npm run compile:js-dev | nodemon ./bin/www"
+    "start": "npm run compile:sass-dev > out.log | npm run compile:js-dev | nodemon ./bin/www"
   },  
   "dependencies": {
     "cookie-parser": "~1.4.3",

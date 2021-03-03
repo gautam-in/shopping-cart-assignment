@@ -6,7 +6,7 @@
     width: 100%;
     margin: 0px auto;
   }
-  &__heading{
+  &__heading {
     text-align: center;
   }
 
@@ -17,9 +17,9 @@
   }
 
   label {
-    position: absolute;
+    // position: absolute;
     top: 18px;
-    color: $color-border-secondary;
+    color: #100707;
     transform-origin: left;
     transition: all 0.3s ease;
   }
@@ -49,22 +49,22 @@
 
 /* ------- Responsive Screens -------- */
 
-@media screen and (min-width: $break-mobile-medium){
+@media screen and (min-width: $break-mobile-medium) {
   .login-info,
   .register-info {
-    form{
+    form {
       width: 50%;
     }
   }
 }
 
-@media screen and (min-width: $break-tablet){
+@media screen and (min-width: $break-tablet) {
   .login-info,
   .register-info {
-    form{
+    form {
       width: 70%;
     }
-    &__heading{
+    &__heading {
       text-align: left;
     }
   }
