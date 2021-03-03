@@ -19,10 +19,7 @@ class Products extends React.Component{
             catId: '',
             openModal: false
         }
-        this.makeActiveCategory = this.makeActiveCategory.bind(this);
-        this.addToCart = this.addToCart.bind(this);
-        this.showCartView = this.showCartView.bind(this);
-        this.checkoutComplete = this.checkoutComplete.bind(this);
+
     }
     componentDidMount(){
         if(this.props.location.query.id){
@@ -82,18 +79,18 @@ class Products extends React.Component{
         }
     }
     render(){
-        const {props} = this;
-        const {state} = this;
+        const {homeApi,productInfo,router} = this.props;
+        const {categoryData,productList,openModal} = this.state;
         return(<div className="products-page">
-            <div className="overlay" style={{display: (props.productInfo.searching_productdetails|| props.productInfo.adding_to_cart  || props.homeApi.categorydata_searching) ? "block" : "none"}}>
+            <div className="overlay" style={{display: (productInfo.searching_productdetails|| productInfo.adding_to_cart  || homeApi.categorydata_searching) ? "block" : "none"}}>
                 <div className="loading"><SvgLoading /></div>
             </div>
-            <Header router={props.router} cartClick={this.showCartView} cartInfo={props.productInfo.cartItems}></Header>
+            <Header router={router} cartClick={this.showCartView} cartInfo={productInfo.cartItems}></Header>
             <div className="row content-area">
                 <div className="col span-3-of-12 left-menu">
                     <div className="prod-categories">
                         <ul className="cat-list">
-                            {state.categoryData && state.categoryData.length ? state.categoryData.filter((item) => { return item.order >= 0 }).map((data, i) => (<li onClick={(event) => this.makeActiveCategory(event, data.id)} className={state.catId ? data.id == state.catId ? 'selected' : '' : ''} key={i}>
+                            {categoryData && categoryData.length ? categoryData.filter((item) => { return item.order >= 0 }).map((data, i) => (<li onClick={(event) => this.makeActiveCategory(event, data.id)} className={this.state.catId ? data.id == this.state.catId ? 'selected' : '' : ''} key={i}>
                                 <p>{data.name}</p>
                             </li>)) : null}
                         </ul>  
@@ -102,9 +99,9 @@ class Products extends React.Component{
                 </div>
                 <div className='dropdown-cat-list'>
                     <div className="select">
-                        <select onChange={(event) => { this.makeActiveCategory(event) }} value={this.getDropDwnSelectedVal(state.catId, state.categoryData)} name="slct" id="slct">
+                        <select onChange={(event) => { this.makeActiveCategory(event) }} value={this.getDropDwnSelectedVal(this.state.catId, categoryData)} name="slct" id="slct">
                             <option value="default" disabled>Choose an option</option>
-                            {state.categoryData && state.categoryData.length ? state.categoryData.filter((item) => { return item.order >= 0 }).map((data, i) => (<option value={data.id} className={state.catId ? data.id == state.catId ? 'selected' : '' : ''} key={i}>
+                            {categoryData && categoryData.length ? categoryData.filter((item) => { return item.order >= 0 }).map((data, i) => (<option value={data.id} className={this.state.catId ? data.id == this.state.catId ? 'selected' : '' : ''} key={i}>
                                 {data.name}
                             </option>)) : null}                            
                         </select>
@@ -113,7 +110,7 @@ class Products extends React.Component{
                 <div className="col span-9-of-12 product-list-area">
                     <div className="prod-list">
                         <ul className="rest-tiles">
-                        {state.productList && state.productList.length ? state.productList.filter((data)=>{return state.catId ? state.catId == data.category : data }).map((item,i)=>(<li key={i}>
+                        {productList && productList.length ? productList.filter((data)=>{return this.state.catId ? this.state.catId == data.category : data }).map((item,i)=>(<li key={i}>
                             <p className="prod-name" title={item.name}>{item.name}</p>
                             <div className="prod-detls">
                             <div className="prod-img">
@@ -133,8 +130,8 @@ class Products extends React.Component{
                                    <p> MRP Rs.{item.price}</p>
                                 </div>
                                 <div className="col span-1-of-2 buy-btn">
-                                    <button className="btn" onClick={(event)=>this.addToCart(event,item)}aria-label={`Click on this button to buy ${item.name} for ${item.price} rupees.`}>Buy Now</button>
-                                    <button className="btn small-screen-btn" onClick={(event)=>this.addToCart(event,item)}aria-label={`Click on this button to buy ${item.name} for ${item.price} rupees.`}>Buy Now @ Rs.{item.price}</button>
+                                    <button className="btn" onClick={(event)=>this.addToCart(event,item)} aria-label={`Click on this button to buy ${item.name} for ${item.price} rupees.`}>Buy Now</button>
+                                    <button className="btn small-screen-btn" onClick={(event)=>this.addToCart(event,item)} aria-label={`Click on this button to buy ${item.name} for ${item.price} rupees.`}>Buy Now @ Rs.{item.price}</button>
                                 </div>
                             </div>
                             </div>
@@ -145,11 +142,11 @@ class Products extends React.Component{
                 </div>
             </div>
             <Footer></Footer>
-            {state.openModal ? (<Modal 
-            open={state.openModal} 
+            {openModal ? (<Modal 
+            open={openModal} 
             onClose={this.onCloseModal} 
             center
-            aria-labelledby= {`My Cart(${props.productInfo.cartItems.legth} items)`}
+            aria-labelledby= {`My Cart(${productInfo.cartItems.legth} items)`}
             aria-describedby={Constants.TEXTS.MODAL.modal_desc}
             classNames={{
             overlayAnimationIn: '',
@@ -159,7 +156,7 @@ class Products extends React.Component{
             }}
               animationDuration={800}
               showCloseIcon={false}>
-            <Cart cartData={props.productInfo.cartItems} checkoutComplete={this.checkoutComplete} closeModal={this.onCloseModal}></Cart>
+            <Cart cartData={productInfo.cartItems} checkoutComplete={this.checkoutComplete} closeModal={this.onCloseModal}></Cart>
         </Modal>):null}
         </div>);
     }

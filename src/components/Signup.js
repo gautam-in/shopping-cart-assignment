@@ -23,24 +23,24 @@ class Signup extends React.Component {
                 formError: false
               }
         }
-        this.onSubmitHandler = this.onSubmitHandler.bind(this);
-        this.inputHandler = this.inputHandler.bind(this);
-        this.isValidFormState = this.isValidFormState.bind(this);
-        this.showCartView = this.showCartView.bind(this);
-        this.onCloseModal = this.onCloseModal.bind(this);
-        this.checkoutComplete = this.checkoutComplete.bind(this);
+        // this.onSubmitHandler = this.onSubmitHandler.bind(this);
+        // this.inputHandler = this.inputHandler.bind(this);
+        // this.isValidFormState = this.isValidFormState.bind(this);
+        // this.showCartView = this.showCartView.bind(this);
+        // this.onCloseModal = this.onCloseModal.bind(this);
+        // this.checkoutComplete = this.checkoutComplete.bind(this);
     }
 
     static getDerivedStateFromProps(props,state){
         if(props.signUp && props.signUp.userData){
-            let title = `${Constants.TEXTS.DEFAULTS.hai+', '+state.fName}`;
+            let title = `${Constants.TEXTS.DEFAULTS.hai}, ${state.fName}`
             let message = Constants.TEXTS.SIGNUP.signup_success;
             toastr.success(message, title,{timeOut:1000});
             props.router.push('/Home');
         }
         return state;
       }
-    inputHandler(event,value){
+    inputHandler=(event,value)=>{
         switch(value){
             case Constants.TEXTS.SIGNUP.form_values.fname:
                 this.setState({fName:event.target.value});
@@ -65,7 +65,6 @@ class Signup extends React.Component {
         let isValid = true;
         if(!this.state.fName){
             isValid = false;
-            // toastr.warning('', 'Enter first name');
             toastr.error('', Constants.TEXTS.TOASTS.fname,{timeOut:1000});
         }
         if(isValid && !this.state.lName){
@@ -124,11 +123,11 @@ class Signup extends React.Component {
         }
     }
   render(){
-    const {state} = this;
-    const {props} = this;
+  const {router,productInfo} = this.props;
+  const {formError,openModal} = this.state;
   return (
     <div className="App signup-area">
-        <Header router={props.router} cartClick={this.showCartView} cartInfo={props.productInfo.cartItems}></Header>
+        <Header router={router} cartClick={this.showCartView} cartInfo={productInfo.cartItems}></Header>
         {/* <div dangerouslySetInnerHTML={{ __html: template(this.state.data) }} /> */}
         <div className="signup-page">
             <div className="row">
@@ -139,7 +138,7 @@ class Signup extends React.Component {
                   <h1>Signup</h1>
                   <p>We donot share your personal details with anyone.</p>
                   <div className="">
-                     {state.formError && (<div id="errorarea" className="errorArea">
+                     {formError && (<div id="errorarea" className="errorArea">
                           <p>Please follow instruction below to fill form:</p>
                           <ul className="form-instrcutions">
                                 <li><p>Make sure no fields are empty when user submits the form. </p></li>
@@ -187,11 +186,11 @@ class Signup extends React.Component {
             </div>
         </div>
         <Footer></Footer>
-        {state.openModal ? (<Modal
-        open={state.openModal}
+        {openModal ? (<Modal
+        open={openModal}
         onClose={this.onCloseModal}
         center
-        aria-labelledby={`My Cart(${props.productInfo.cartItems.legth} items)`}
+        aria-labelledby={`My Cart(${productInfo.cartItems.legth} items)`}
         aria-describedby= {Constants.TEXTS.MODAL.modal_desc}
         classNames={{
           overlayAnimationIn: '',
@@ -201,7 +200,7 @@ class Signup extends React.Component {
         }}
         animationDuration={800}
         showCloseIcon={false}>
-        <Cart cartData={props.productInfo.cartItems} checkoutComplete={this.checkoutComplete} closeModal={this.onCloseModal}></Cart>
+        <Cart cartData={productInfo.cartItems} checkoutComplete={this.checkoutComplete} closeModal={this.onCloseModal}></Cart>
       </Modal>) : null}
     </div>
   );

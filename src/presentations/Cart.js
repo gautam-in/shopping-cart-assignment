@@ -9,9 +9,9 @@ class Cart extends React.Component{
             itemList: [],
             totalCartValue:0
         }
-        this.increaseQty = this.increaseQty.bind(this);
-        this.decreaseQty = this.decreaseQty.bind(this);
-        this.evaluateTotalPrice = this.evaluateTotalPrice.bind(this);
+        // this.increaseQty = this.increaseQty.bind(this);
+        // this.decreaseQty = this.decreaseQty.bind(this);
+        // this.evaluateTotalPrice = this.evaluateTotalPrice.bind(this);
     }
     componentDidMount(){
         if(this.props.cartData){
@@ -50,22 +50,22 @@ class Cart extends React.Component{
         this.setState({totalCartValue: totalValue});
     }
     render(){
-        const {state} = this;
-        const {props} = this;
+        const {itemList,totalCartValue} = this.state;
+        const {hideHeader,closeModal,checkoutComplete} = this.props;
         return(<div id="cart" role="dialog" tabIndex="10" aria-labelledby="dialog-title" className="cart-page">
-            {!props.hideHeader ? (<div className="cart-header modal-horizontal-space">
-                <h2 id="dialogue-title">My cart {state.itemList.length ? " ("+(state.itemList.length)+" items)" : " "}</h2>
-                <div className="close-icon" aria-label="close dialog" onClick={props.closeModal}>
+            {!hideHeader ? (<div className="cart-header modal-horizontal-space">
+                <h2 id="dialogue-title">My cart {itemList.length ? " ("+(itemList.length)+" items)" : " "}</h2>
+                <div className="close-icon" aria-label="close dialog" onClick={closeModal}>
                 &times;
                 </div>
             </div>) : null }
             
             <div className="row">
-                {state.itemList.length ? (<div>
+                {itemList.length ? (<div>
                     <div className="modal-content-area">
                         <div className="itemlist-area">
                         <ul className="cart-items">
-                        {state.itemList.map((item,i)=>(<li key={i} className="cart-item modal-horizontal-space">
+                        {itemList.map((item,i)=>(<li key={i} className="cart-item modal-horizontal-space">
                         <div className="cart-item-img">
                         <LazyLoad height={10} once>
                             <img src={window.location.origin + item.imageURL} alt="Lowest Price Guarenteed"></img>
@@ -101,9 +101,9 @@ class Cart extends React.Component{
                     </div>
                     <div className="footer-area">
                     <div><p>Promo code can be applied on payment page</p></div>
-                    <div aria-label={` ${'Proceed to checkout with '+state.totalCartValue+' rupees.'} `} onClick={props.checkoutComplete} className="footer-btn modal-horizontal-space">
+                    <div aria-label={` ${'Proceed to checkout with '+totalCartValue+' rupees.'} `} onClick={checkoutComplete} className="footer-btn modal-horizontal-space">
                         <div className="checkouttxt">Proceed to checkout</div>
-                        <div className="price-info">Rs.{state.totalCartValue} 
+                        <div className="price-info">Rs.{totalCartValue} 
                             <span className="arrow right">
                             </span>
                         </div>
@@ -117,7 +117,7 @@ class Cart extends React.Component{
                     </div>
                     <div className="modal-horizontal-space footer-shop-btn">
                         
-                        <button aria-label="Start shopping" onClick={!props.hideHeader ? props.closeModal : props.checkoutComplete} className="btn full-width-btn">Start Shopping</button>
+                        <button aria-label="Start shopping" onClick={!hideHeader ? closeModal : checkoutComplete} className="btn full-width-btn">Start Shopping</button>
                     </div>
                     </div>)}
             </div>

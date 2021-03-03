@@ -24,11 +24,11 @@ class Home extends React.Component {
           openModal: false,
           forceCheckSliderImage: false
         }
-        this.navigateToPlp = this.navigateToPlp.bind(this);
-        this.showCartView = this.showCartView.bind(this);
-        this.onCloseModal = this.onCloseModal.bind(this);
-        this.checkoutComplete = this.checkoutComplete.bind(this);
-        this.forceCheckSliderImage = this.forceCheckSliderImage.bind(this);
+        // this.navigateToPlp = this.navigateToPlp.bind(this);
+        // this.showCartView = this.showCartView.bind(this);
+        // this.onCloseModal = this.onCloseModal.bind(this);
+        // this.checkoutComplete = this.checkoutComplete.bind(this);
+        // this.forceCheckSliderImage = this.forceCheckSliderImage.bind(this);
     }
     componentDidMount(){
       this.props.getOffers();
@@ -75,18 +75,18 @@ class Home extends React.Component {
     const settings = {
       dots: true
     };
-    const {props} = this;
-    const {state} = this;
+    const {homeApi,productInfo,router} = this.props;
+    const {bannerData,categoryData,openModal} = this.state;
   return (
     <div className="App home-page">
-      <div className="overlay" style={{display: (props.homeApi.bannerdata_searching || props.homeApi.categorydata_searching) ? "block" : "none"}}>
+      <div className="overlay" style={{display: (homeApi.bannerdata_searching || homeApi.categorydata_searching) ? "block" : "none"}}>
             <div className="loading"><SvgLoading /></div>
       </div>
-      <Header router={props.router} cartClick={this.showCartView} cartInfo={props.productInfo.cartItems}></Header>
+      <Header router={router} cartClick={this.showCartView} cartInfo={productInfo.cartItems}></Header>
       <div className="offerArea content-seperator">
         <div className="slider-container">
           <Slider {...settings}>
-            {state.bannerData && state.bannerData.length ? state.bannerData.map((data, idx) => (
+            {bannerData && bannerData.length ? bannerData.map((data, idx) => (
               <div key={idx}>
                 <LazyLoad height={200} once>
                   <img data-id={data.id} src={window.location.origin + data.bannerImageUrl} alt={data.bannerImageAlt} />
@@ -97,7 +97,7 @@ class Home extends React.Component {
         </div>
       </div>
       <div className="category-banners-area">
-          {state.categoryData && state.categoryData.length ? state.categoryData.filter((item)=>{return item.order>= 0}).map((data,i)=>(<div className="single-banner-area content-seperator" key={i}>
+          {categoryData && categoryData.length ? categoryData.filter((item)=>{return item.order>= 0}).map((data,i)=>(<div className="single-banner-area content-seperator" key={i}>
             {data.imageUrl && (<div>
             <div className="col span-1-of-2">
               {i%2 != 0 ? (<div className="row login-left-area">
@@ -125,11 +125,11 @@ class Home extends React.Component {
           </div>)) : null}
       </div>
       <Footer></Footer>
-      {state.openModal ? (<Modal
-        open={state.openModal}
+      {openModal ? (<Modal
+        open={openModal}
         onClose={this.onCloseModal}
         center
-        aria-labelledby={`My Cart(${props.productInfo.cartItems.legth} items)`}
+        aria-labelledby={`My Cart(${productInfo.cartItems.legth} items)`}
         aria-describedby={Constants.TEXTS.MODAL.modal_desc}
         classNames={{
           overlayAnimationIn: '',
@@ -139,7 +139,7 @@ class Home extends React.Component {
         }}
         animationDuration={800}
         showCloseIcon={false}>
-        <Cart cartData={props.productInfo.cartItems} checkoutComplete={this.checkoutComplete} closeModal={this.onCloseModal}></Cart>
+        <Cart cartData={productInfo.cartItems} checkoutComplete={this.checkoutComplete} closeModal={this.onCloseModal}></Cart>
       </Modal>) : null}
     </div>
   );

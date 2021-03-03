@@ -21,11 +21,11 @@ class Signin extends React.Component {
                 openModal: false
               }
         }
-        this.onSubmitHandler = this.onSubmitHandler.bind(this);
-        this.inputHandler = this.inputHandler.bind(this);
-        this.showCartView = this.showCartView.bind(this);
-        this.onCloseModal = this.onCloseModal.bind(this);
-        this.checkoutComplete = this.checkoutComplete.bind(this);
+        // this.onSubmitHandler = this.onSubmitHandler.bind(this);
+        // this.inputHandler = this.inputHandler.bind(this);
+        // this.showCartView = this.showCartView.bind(this);
+        // this.onCloseModal = this.onCloseModal.bind(this);
+        // this.checkoutComplete = this.checkoutComplete.bind(this);
     }
     componentDidMount(){
 
@@ -36,7 +36,7 @@ class Signin extends React.Component {
       }
       return state;
     }
-    inputHandler(event,value){
+    inputHandler=(event,value)=>{
       switch(value){
         case Constants.TEXTS.SIGNUP.form_values.email: 
         this.setState({email:event.target.value});
@@ -69,7 +69,7 @@ class Signin extends React.Component {
       if(this.state.email && validEmail(this.state.email) && this.state.password && this.state.password.length >= 6){
         this.setState({loginError:false});
         toastr.success('', Constants.TEXTS.TOASTS.login_success,{timeOut:1000});
-        this.props.dispatch(setUserDetails({userEmail:this.state.email,userPassword:this.state.password}));
+        this.props.setUserDetails({userEmail:this.state.email,userPassword:this.state.password});
       } else {
         this.setState({loginError:true},()=>{
           document.getElementById('errorarea').click();
@@ -77,11 +77,11 @@ class Signin extends React.Component {
       }
     }
   render(){
-    const {state} = this;
-    const {props} = this;
+    const {router,productInfo} = this.props;
+    const {loginError,openModal} = this.state;
   return (
     <div className="App signin-area">
-        <Header router={this.props.router} cartClick={this.showCartView} cartInfo={props.productInfo.cartItems}></Header>
+        <Header router={router} cartClick={this.showCartView} cartInfo={productInfo.cartItems}></Header>
         <div className="login-area">
             <div className="row">
             <div className="col span-1-of-2">
@@ -90,7 +90,7 @@ class Signin extends React.Component {
                 <div className="row login-left-area">
                   <h1>Login</h1>
                   <p>Get access to your Orders, Wishlist and Recommendations.</p>
-                  {state.loginError && (<div id="errorarea" className="errorArea">
+                  {loginError && (<div id="errorarea" className="errorArea">
                     <p>Invalid login credentials.</p>
                   </div>)}
                 </div>
@@ -115,11 +115,11 @@ class Signin extends React.Component {
             </div>
         </div>
         <Footer></Footer>
-        {state.openModal ? (<Modal
-        open={state.openModal}
+        {openModal ? (<Modal
+        open={openModal}
         onClose={this.onCloseModal}
         center
-        aria-labelledby={`My Cart(${props.productInfo.cartItems.legth} items)`}
+        aria-labelledby={`My Cart(${productInfo.cartItems.legth} items)`}
         aria-describedby={Constants.TEXTS.MODAL.modal_desc}
         classNames={{
           overlayAnimationIn: '',
@@ -129,7 +129,7 @@ class Signin extends React.Component {
         }}
         animationDuration={800}
         showCloseIcon={false}>
-        <Cart cartData={props.productInfo.cartItems} checkoutComplete={this.checkoutComplete} closeModal={this.onCloseModal}></Cart>
+        <Cart cartData={productInfo.cartItems} checkoutComplete={this.checkoutComplete} closeModal={this.onCloseModal}></Cart>
       </Modal>) : null}
     </div>
   );
@@ -141,5 +141,10 @@ function mapStateToProps(state) {
     productInfo: state.productReducer
   };
 }
+const mapDispatchToProps = (dispatch) => {
+  return {
+    setUserDetails : (data)=>{dispatch(setUserDetails(data))}
+  }
+}
 
-export default connect(mapStateToProps)(Signin);
+export default connect(mapStateToProps,mapDispatchToProps)(Signin);

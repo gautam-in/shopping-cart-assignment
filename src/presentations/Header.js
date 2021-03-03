@@ -17,12 +17,12 @@ class Header extends React.Component {
             itemCount: 0,
             dimensions:{}
         }
-        this.clickEvent = this.clickEvent.bind(this);
-        this.showHome = this.showHome.bind(this);
-        this.doResizeActions = this.doResizeActions.bind(this);
-        this.cartClick = this.cartClick.bind(this);
-        this.resetCart = this.resetCart.bind(this);
-        this.resize = this.resize.bind(this);
+        // this.clickEvent = this.clickEvent.bind(this);
+        // this.showHome = this.showHome.bind(this);
+        // this.doResizeActions = this.doResizeActions.bind(this);
+        // this.cartClick = this.cartClick.bind(this);
+        // this.resetCart = this.resetCart.bind(this);
+        // this.resize = this.resize.bind(this);
     }
     componentDidMount(){
         if(this.props.signin.userData && this.props.signin.userData.userEmail){
@@ -63,13 +63,12 @@ class Header extends React.Component {
             this.props.cartClick();
         }
     }
-    clickEvent=(event)=>{
-    }
+    clickEvent=(event)=>{}
     showHome=()=>{
         this.props.router.push('/');
     }
     render(){   
-        const {state} = this;
+        const {userName,itemCount} = this.state;
         return (<div className="header-area">
             <header>
                 <nav className="sticky-nav">
@@ -88,8 +87,8 @@ class Header extends React.Component {
                         </ul>
                         <div className="guest-info">
                             <div>
-                            {state.userName && state.userName.length ? (<div> 
-                                <p className="useremail" title={state.userName} aria-label={state.userName}>{state.userName}</p>
+                            {userName && userName.length ? (<div> 
+                                <p className="useremail" title={userName} aria-label={userName}>{userName}</p>
                             </div>) : (<ul className="main-nav js--main-nav">
                                 <li onClick={this.resetCart}><Link to="/signin">Signin</Link></li>
                                 <li onClick={this.resetCart}><Link to="/signup">Register</Link></li>
@@ -101,7 +100,7 @@ class Header extends React.Component {
                                         <img src={CartIcon} className="fill-purple"></img>
                                     </LazyLoad>
                                 </div>
-                                <span>{state.itemCount} items</span>
+                                <span>{itemCount} items</span>
                             </div>
                         </div>
                     </div>

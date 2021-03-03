@@ -9,7 +9,7 @@ class Basket extends React.Component{
     constructor(props){
         super(props);
         this.state={}
-        this.checkoutComplete = this.checkoutComplete.bind(this);
+        // this.checkoutComplete = this.checkoutComplete.bind(this);
     }
     checkoutComplete = () => {
         if(this.props.productInfo.cartItems && this.props.productInfo.cartItems.length){
@@ -22,10 +22,10 @@ class Basket extends React.Component{
        
     }
     render(){
-    const {props} = this;
+    const {productInfo,router} = this.props;
     return(<div className="basket-page">
-        <Header router={props.router} cartClick={this.showCartView} cartInfo={props.productInfo.cartItems} />
-        <Cart hideHeader={true} cartData={props.productInfo.cartItems} checkoutComplete={this.checkoutComplete} />
+        <Header router={router} cartClick={this.showCartView} cartInfo={productInfo.cartItems} />
+        <Cart hideHeader={true} cartData={productInfo.cartItems} checkoutComplete={this.checkoutComplete} />
         </div>)
     }
 }

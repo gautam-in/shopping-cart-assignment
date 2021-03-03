@@ -5,7 +5,7 @@ const constants = {
     },
     TEXTS:{
         DEFAULTS:{
-            hai: 'Hai',
+            hai: 'Hi',
             invalid_email: 'Invalid email',
             offline_msg: 'It seems that you are offline. Please check your internet connection.',
             online_msg: 'You are back online'
