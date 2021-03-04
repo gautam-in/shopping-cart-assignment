@@ -64,7 +64,7 @@ typings/
 node_modules
 
 #dist
-dist
+#dist
 
 # Cache
 .cache

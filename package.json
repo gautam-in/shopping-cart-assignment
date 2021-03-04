@@ -8,9 +8,7 @@
     "start": "canned -p 5000 ./server",
     "dev": "parcel src/index.html",
     "build": "parcel build src/index.html",
-    "lint": "eslint ./",
-    "predeploy": "rm -rf dist && canned -p 5000 ./server && parcel build index.html",
-    "deploy": "gh-pages -d dist"
+    "lint": "eslint ./"
   },
   "author": "",
   "license": "MIT",
@@ -27,7 +25,6 @@
     "eslint": "^7.21.0",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-plugin-import": "^2.22.1",
-    "gh-pages": "^3.1.0",
     "jest": "^26.6.3",
     "parcel-bundler": "^1.12.4",
     "parcel-plugin-goodie-bag": "^2.0.0",
