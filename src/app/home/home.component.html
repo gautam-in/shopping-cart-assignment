@@ -25,10 +25,10 @@
 
 <div class="card mb-3">
     <div class="row no-gutters" *ngFor="let category of catagoryList">
-        <figure class="col-md-4 category-img">
+        <figure class="col-md-4 col-sm-4 col-4 category-img">
             <img src="assets/{{category.imageUrl}}" class="card-img" alt="{{category.name}}" title="{{category.name}}">
         </figure>
-        <div class="col-md-8 category-description">
+        <div class="col-md-8 col-sm-8 col-8 category-description">
             <div class="card-body" style="text-align: center;">
                 <h5 class="card-title">{{category.name}}</h5>
                 <p class="card-text">{{category.description}}</p>

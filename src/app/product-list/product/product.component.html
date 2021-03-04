@@ -1,7 +1,6 @@
-
 <section class="container-fluid">
     <section class="row">
-        <div class="card col-lg-3 p-1" *ngFor="let product of displayProducts">
+        <div class="card col-md-3 col-sm-6 col-12 p-1" *ngFor="let product of displayProducts">
             <div class="card-body">
                 <p class="card-title">{{product.name}}</p>
                 <img class="card-img-top" src="assets/{{product.imageURL}}" alt="{{product.name}}"
