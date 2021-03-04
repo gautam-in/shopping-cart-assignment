@@ -7,13 +7,24 @@ import { BehaviorSubject } from 'rxjs';
 export class CartService {
   subject$ = new BehaviorSubject([]);
   itemCount$ = this.subject$.asObservable();
-  cart = [];
+  initialCart = [];
 
   constructor() { }
 
   addProduct(product) {
-    this.cart.push(product);
-    this.subject$.next(this.cart);
+    let newCart = [];
+    let finalCart = [];
+    let index = 0;
+    this.initialCart.push(product);
+    this.initialCart.forEach((prod, i) => {
+      if (prod.id === product.id) {
+        index += 1;
+        prod.count = index;
+      }
+      newCart.push(prod);
+    });
+    finalCart = newCart.filter((val, i) => newCart.indexOf(val) === i);
+    this.subject$.next(finalCart);
     return this.itemCount$;
   }
 }

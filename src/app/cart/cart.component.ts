@@ -24,22 +24,40 @@ export class CartComponent implements OnInit {
   }
 
   removeProduct(product) {
-    const index: number = this.groceryCart.indexOf(product);
-    if (index > -1) {
-      this.groceryCart.splice(index, 1);
+    const productPosition = this.groceryCart.indexOf(product);
+    if (productPosition != -1) {
+      this.groceryCart.forEach(prod => {
+        if (prod.id === product.id) {
+          prod.count -= 1;
+        }
+        if (prod.count === 0) {
+          this.groceryCart.splice(productPosition, 1);
+        }
+      })
     }
     this._cartService.subject$.next(this.groceryCart);
   }
 
-  addProduct(product) {
-    this._cartService.addProduct(product);
+  addProductQuantity(product) {
+    let newCart = [];
+    let finalCart = [];
+
+    this.groceryCart.forEach((prod, i) => {
+      if (prod.id === product.id) {
+        ++prod.count;
+      }
+      newCart.push(prod);
+    });
+    finalCart = newCart.filter((val, i) => newCart.indexOf(val) === i);
+    this._cartService.subject$.next(finalCart);
   }
 
   totalAmount() {
     let total = 0;
     for (const item of this.groceryCart) {
+      const productUnit = item.count;
       if (item.price) {
-        total += item.price;
+        total += item.price * productUnit;
         this.totalPrice = total;
       }
     }
@@ -51,4 +69,5 @@ export class CartComponent implements OnInit {
     this._cartService.subject$.next(this.groceryCart);
     this.router.navigate(['/home']);
   }
+
 }

@@ -26,9 +26,15 @@
     }
 }
 
-    .fa{
-        .fa-plus-square{
-            background-color: $color-pink;
-        }
-        
-    }
+.icon-fa{
+    margin: 0 10px;
+    color: $color-pink;
+    font-size: 20px;
+}
+
+.item-price{
+margin: 0 5px;
+}
+.common-btn{
+    width: 100%;
+}

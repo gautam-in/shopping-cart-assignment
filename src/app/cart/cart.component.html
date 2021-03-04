@@ -24,15 +24,15 @@
                             <img src="assets/{{product.imageURL}}" class="card-img" alt="{{product.name}}"
                                 title="{{product.name}}">
                         </div>
-                        <div class="col-md-10">
+                        <div class="col-md-10" style="margin-left: -100px;">
                             <div class="card-body" style="text-align: center;">
-                                <h5 class="card-title">{{groceryCart.length}}</h5>
+                                <h5 class="card-title">{{groceryCart.name}}</h5>
                                 <div>
-                                    <i class="fa fa-plus-square icon-fa" (click)="addProduct(product)" aria-label="increase product unit"></i>
+                                    <i class="fa fa-plus-square icon-fa" (click)="addProductQuantity(product)" aria-label="increase product unit"></i>
                                     <span>{{product.count}}</span>
                                     <i class="fa fa-minus-square icon-fa" (click)="removeProduct(product)" aria-label="decrease product unit"></i>
-                                    <span>X Rs. {{product.price}}</span>
-                                    <span>Rs.{{product.totalPrice}}</span>
+                                    <span class="item-price">X &nbsp; &nbsp;Rs. {{product.price}}</span>
+                                    <span class="item-price">Rs.{{product.total}}</span>
                                 </div>
                             </div>
                         </div>
@@ -48,7 +48,7 @@
             </ng-template>        
 
             <div class="modal-footer">
-                <section *ngIf="!groceryCart.length; else checkout">
+                <section *ngIf="!groceryCart.length; else checkout" style="width: 100%;">
                     <button type="button" class="common-btn" data-dismiss="modal" (click)="resetCart()">Start
                         Shopping</button>
                 </section>

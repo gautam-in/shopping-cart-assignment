@@ -36,10 +36,10 @@ describe('CartComponent', () => {
     expect(component.ngOnInit).toHaveBeenCalled();
   });
 
-  it('should call addProduct method', () => {
-    spyOn(cartService, 'addProduct').and.callThrough();
-    component.addProduct({});
-    expect(cartService.addProduct).toHaveBeenCalled();
+  it('should call addProductQuantity method', () => {
+    spyOn(component, 'addProductQuantity').and.callThrough();
+    component.addProductQuantity({});
+    expect(component.addProductQuantity).toHaveBeenCalled();
   });
 
   it('should call resetCart method', () => {
