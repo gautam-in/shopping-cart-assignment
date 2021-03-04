@@ -25,7 +25,7 @@ const commonStrings = {
     register:{
         "Register_Heading" : "Signup",
         "Register_Desc" : "We do not share your personal details with anyone.",
-        "Register_Button" : "Login"
+        "Register_Button" : "Signup"
     },
     
     form:{
