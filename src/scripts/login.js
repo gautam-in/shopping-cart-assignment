@@ -1,9 +1,7 @@
 import {
   renderCartQuantity, openCart, closeCart,
 } from './cart';
-// import Validator from '../helpers/validations';
-
-const { Validator } = require('../helpers/validations');
+import Validator from '../helpers/validations';
 
 let validator = null;
 

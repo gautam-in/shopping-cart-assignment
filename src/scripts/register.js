@@ -2,8 +2,7 @@ import 'regenerator-runtime/runtime';
 import {
   renderCartQuantity, openCart, closeCart,
 } from './cart';
-
-const { Validator } = require('../helpers/validations');
+import Validator from '../helpers/validations';
 
 let validator = null;
 

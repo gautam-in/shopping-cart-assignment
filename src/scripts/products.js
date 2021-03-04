@@ -186,3 +186,5 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
+
+export { renderProducts, renderCategories };

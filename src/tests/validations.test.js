@@ -1,4 +1,4 @@
-const { Validator } = require('../helpers/validations');
+import Validator from '../helpers/validations';
 
 describe('Validation tests', () => {
   let validator;

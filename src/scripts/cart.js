@@ -217,21 +217,23 @@ function renderCartView() {
 }
 
 // Event delegation
-const cartBody = document.querySelector('.cart-body');
-cartBody.addEventListener('click', (e) => {
-  if (e.target.classList.contains('change-quantity')) {
-    const button = e.target;
-    const { id } = button;
-    const idList = id.split('-');
-    let coefficient = 1;
-    if (idList[1] === 'decrease') {
-      coefficient = -1;
+document.addEventListener('DOMContentLoaded', () => {
+  const cartBody = document.querySelector('.cart-body');
+  cartBody.addEventListener('click', (e) => {
+    if (e.target.classList.contains('change-quantity')) {
+      const button = e.target;
+      const { id } = button;
+      const idList = id.split('-');
+      let coefficient = 1;
+      if (idList[1] === 'decrease') {
+        coefficient = -1;
+      }
+      setCartCount(coefficient);
+      renderCartQuantity();
+      setCartItems(idList[0], [], coefficient);
+      renderCartView();
     }
-    setCartCount(coefficient);
-    renderCartQuantity();
-    setCartItems(idList[0], [], coefficient);
-    renderCartView();
-  }
+  });
 });
 
 export {
@@ -240,3 +242,5 @@ export {
 };
 
 const sessionStorageService = new SessionStorageService();
+
+export default addItemCartSession;

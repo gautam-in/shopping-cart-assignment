@@ -1,6 +1,6 @@
 const mailformat = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 
-class Validator {
+export default class Validator {
   // eslint-disable-next-line class-methods-use-this
   validateEmail(value) {
     if (!value.match(mailformat)) {
@@ -29,4 +29,4 @@ class Validator {
   }
 }
 
-exports.Validator = Validator;
+// exports.Validator = Validator;
