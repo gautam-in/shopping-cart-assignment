@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import AddToCart from "./AddToCart"
+import { HEADER_LABEL_MESSAGE } from '../constant';
 import logo from '../images/logo.png'
 import cart from '../images/cart.svg'
 
@@ -14,15 +15,15 @@ const HeaderComp = (props) => {
         <div className="header">
             <div className="inner-header floatcontainer">
                 <div className="logo-container">
-                    <img src={logo} alt="App Logo"/>
+                    <img src={logo} alt="App Logo" />
                 </div>
                 <ul className="navigation">
-                    <li> <NavLink exact to="/" role="button" className="signInBar" activeClassName="selected" >Home</NavLink></li>
-                    <li> <NavLink to="/product" role="button" className="signInBar" activeClassName="selected" >Product</NavLink></li>
+                    <li> <NavLink exact to="/" role="button" className="signInBar" activeClassName="selected" >{HEADER_LABEL_MESSAGE.HEADER_LINK1}</NavLink></li>
+                    <li> <NavLink to="/product" role="button" className="signInBar" activeClassName="selected" >{HEADER_LABEL_MESSAGE.HEADER_LINK2}</NavLink></li>
                 </ul>
                 <div className="navigation-right">
-                    <NavLink to="/login" role="button" className="signInBar" activeClassName="selected" >SignIn</NavLink>
-                    <NavLink to="/ragister" role="button" className="registerBar" activeClassName="selected" >Register</NavLink>
+                    <NavLink to="/login" role="button" className="signInBar" activeClassName="selected" >{HEADER_LABEL_MESSAGE.HEADER_LINK3}</NavLink>
+                    <NavLink to="/ragister" role="button" className="registerBar" activeClassName="selected" >{HEADER_LABEL_MESSAGE.HEADER_LINK4}</NavLink>
                     <div className="cart-container" >
                         <span role="button" tabIndex="0" onClick={() => openAddtocart(true)}>
                             <img src={cart} alt="cart" />

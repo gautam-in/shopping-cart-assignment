@@ -1,11 +1,12 @@
 import React, { memo } from 'react';
-import { NavLink } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import lowesPrice from '../images/lowest-price.png';
+import { images } from './common/Common';
+import { CART_LABEL_MESSAGE } from '../constant';
 
 const AddToCart = (props) => {
   const { cartItem, openAddtocart, handleCount } = props;
-
-
+  const history = useHistory();
   const incrementCount = (value, id) => {
     ++value;
     handleCount(value, id)
@@ -24,18 +25,10 @@ const AddToCart = (props) => {
     })
     return totalPrice;
   }
-  /**
-    * Code for load Dyanamic Image Urls without importing each image files
-    */
-  function importAll(r) {
-    let images = {};
-    r.keys().map((item, index) => { images[item.replace('./', '../images/')] = r(item); });
-    return images;
+  const handleStartShopping = () => {
+    openAddtocart(false);
+    history.push('/product');
   }
-  /**
-   * Use Importall and webpack Require.context('directory', useSubdirectories: boolean, regExp)
-   */
-  const images = importAll(require.context('../images/', true, /\.(png|jpe?g|svg)$/));
   return (
     <div className="addtocart">
       <div className="cart-header">
@@ -45,54 +38,51 @@ const AddToCart = (props) => {
       {
         Array.isArray(cartItem) && cartItem.length > 0 ? <div className="cart-with-item">
           <div className="cart-item-inner">
-          <ul>
-            {
-              cartItem.map(item =>
-                <li key={item.id}>
-                  <img src={images[item.imageURL]} alt={item.sku} />
-                  <div className="title-quantity">
-                    <h4>{item.name}</h4>
-                    <div className="quantity-box">
-                      <div className="quantity-action">
-                        <span className="minus-quantity" onClick={() => decrementCount(item.count, item.id)}>-</span>
-                        <input type="text" name="count" min="1" disabled="true" onChange={(e) => handleCount(e.target.value, item.id)} value={item.count} />
-                        <span className="plus-quantity" onClick={() => incrementCount(item.count, item.id)} >+</span>
-                      </div>
-                      <div className="item-price">
-                        X  <span>Rs.{item.price}</span>
+            <ul>
+              {
+                cartItem.map(item =>
+                  <li key={item.id}>
+                    <img src={images[item.imageURL]} alt={item.sku} />
+                    <div className="title-quantity">
+                      <h4>{item.name}</h4>
+                      <div className="quantity-box">
+                        <div className="quantity-action">
+                          <span className="minus-quantity" onClick={() => decrementCount(item.count, item.id)}>-</span>
+                          <input type="text" name="count" min="1" disabled="true" onChange={(e) => handleCount(e.target.value, item.id)} value={item.count} />
+                          <span className="plus-quantity" onClick={() => incrementCount(item.count, item.id)} >+</span>
+                        </div>
+                        <div className="item-price">
+                          X  <span>Rs.{item.price}</span>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                  <div className="product-total-price">Rs.{item.price * item.count}</div>
-                </li>
-              )
-            }
-          </ul>
-          <div className="lowest-price">
-            <img src={lowesPrice} alt="Price" />
-            <span>You won't find it cheaper anywhere</span>
-          </div>
+                    <div className="product-total-price">Rs.{item.price * item.count}</div>
+                  </li>
+                )
+              }
+            </ul>
+            <div className="lowest-price">
+              <img src={lowesPrice} alt="Price" />
+              <span>{CART_LABEL_MESSAGE.CHEAPER_MSG}</span>
+            </div>
           </div>
           <div className="cart-footer">
-            <span className="promo-info"> Promo code can be applied on payment page</span>
+            <span className="promo-info">{CART_LABEL_MESSAGE.PROMO_CODE_TEXT}</span>
             <button className="btn checkout">
-              <span className="proceed-checkout">Proceed to Checkout</span>
+              <span className="proceed-checkout">{CART_LABEL_MESSAGE.CHECKOUT_BTN_TEXT}</span>
               <span className="cart-total-price">Rs. {totalPriceofCart()} <span></span></span>
             </button>
           </div>
-          
+
         </div> :
           <div className="empty-cart">
             <div className="no-items">
-              <strong>No items in your cart</strong>
-              <span>Your favourite items are just a click away</span>
+              <strong>{CART_LABEL_MESSAGE.EMPTY_CART_MSG}</strong>
+              <span>{CART_LABEL_MESSAGE.FAVOURITE_ITEMS_TEXT}</span>
             </div>
-            <NavLink to="/product" className="btn startShopping">Start Shopping</NavLink>
+            <button className="btn startShopping" onClick={handleStartShopping}>{CART_LABEL_MESSAGE.START_SHOPPING_TEXT}</button>
           </div>
       }
-
-
-
     </div>
   )
 }

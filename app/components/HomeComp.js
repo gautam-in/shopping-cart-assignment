@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { Carousel } from 'react-responsive-carousel';
-import axios from 'axios';
+import { getbannersListDetails, getCategoriesListDetails } from '../api/api';
+import { BANNER_ERROR_MSG, CATEGORIES_ERROR_MSG, ERROR } from '../constant';
+import { images } from './common/Common';
+import Swal from 'sweetalert2';
 
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 
@@ -20,54 +23,33 @@ const HomeComp = () => {
     /**
     * function for banners list data
     */
-    const bannerGetCall = () => {
-        axios.get('http://localhost:5000/banners')
-            .then((response) => {
-                // Success 
-                if (response && response.data) {
-                    setBannersObject(
-                        ...bannersObject,
-                        response.data
-                    )
-                }
-            })
-            .catch((error) => {
-                alert("Banner list get Api Failed to fetch Data" + error)
-            })
+    const bannerGetCall = async () => {
+        const response = await getbannersListDetails()
+        if (response && response.status === 200 && response.data) {
+            setBannersObject(
+                ...bannersObject,
+                response.data
+            )
+        }
+        else {
+            Swal.fire(BANNER_ERROR_MSG, response.message, ERROR)
+        }
     }
     /**
     * function for products list Data
     */
-    const productGetCall = () => {
-        axios.get('http://localhost:5000/categories')
-            .then((response) => {
-                // Success 
-                if (response && response.data) {
-                    setProductsObject(
-                        ...productsObject,
-                        response.data
-                    )
-                }
-            })
-            .catch((error) => {
-                alert("Product list get Api Failed to Fetch Data" + error)
-            })
+    const productGetCall = async () => {
+        const response = await getCategoriesListDetails();
+        if (response && response.status === 200 && response.data) {
+            setProductsObject(
+                ...productsObject,
+                response.data
+            )
+        }
+        else {
+            Swal.fire(CATEGORIES_ERROR_MSG, response.message, ERROR)
+        }
     }
-
-
-    /**
-     * Code for load Dyanamic Image Urls without importing each image files
-     */
-    function importAll(r) {
-        let images = {};
-        r.keys().map((item, index) => { images[item.replace('./', '../images/')] = r(item); });
-        return images;
-    }
-    /**
-     * Use Importall and webpack Require.context('directory', useSubdirectories: boolean, regExp)
-     */
-    const images = importAll(require.context('../images/', true, /\.(png|jpe?g|svg)$/));
-
     return (
         <div className="homeWrap">
             <section className="slider-section">
