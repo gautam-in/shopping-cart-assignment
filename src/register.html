@@ -11,27 +11,27 @@
 
 <body class="page-body">
     <div id="cart-modal-backdrop"></div>
-    <nav class="navbar navbar-expand-lg navbar-light">
+    <nav class="navbar navbar-expand-lg navbar-light" role="navigation">
         <a class="navbar-brand" href="index.html">
             <img src="../static/images/logo.png" class="d-inline-block align-top" alt="Sabka Bazaar logo">
         </a>
         <div class="collapse navbar-collapse ml-5 pt-3" id="navbarNavDropdown">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="index.html">Home </a>
+                    <a class="nav-link text-secondary" href="index.html">Home </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="products.html">Products</a>
+                    <a class="nav-link text-secondary" href="products.html">Products</a>
                 </li>
             </ul>
         </div>
         <div class="flexbox-vertical">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="login.html">Sign in</a>
+                    <a class="nav-link text-secondary" href="login.html">Sign in</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="register.html">Register</a>
+                    <a class="nav-link text-secondary" href="register.html">Register</a>
                 </li>
             </ul>
             <button class="btn btn-lg btn-light my-2 my-sm-0 cart-button" type="button" aria-label="Open cart">
@@ -58,7 +58,7 @@
             </div>
         </div>
     </nav>
-    <div class="container flexbox-center my-5">
+    <div class="container flexbox-center my-5" role="main">
         <div class="flex-item mt-4 mr-4">
             <h3><strong>Signup</strong></h3>
             <p>We do not share personal details with anyone.</p>
@@ -67,25 +67,25 @@
             <form id="registerForm" name="registerForm">
                 <!-- action="index.html" method="POST" -->
                 <input type="text" id="fname" name="fname" placeholder=" " required 
-                aria-required="true" aria-describedby="fname-error">
+                aria-required="true" aria-describedby="fname-error" />
                 <label for="fname">First Name</label>
-                <div class="text-danger" id="fname-error" role="alert"></div>
+                <div class="error-message text-danger" id="fname-error" role="alert"></div>
                 <input type="text" id="lname" name="lname" placeholder=" " required 
-                aria-required="true" aria-describedby="lname-error">
+                aria-required="true" aria-describedby="lname-error" />
                 <label for="lname">Last Name</label>
-                <div class="text-danger" id="lname-error" role="alert"></div>
+                <div class="error-message text-danger" id="lname-error" role="alert"></div>
                 <input type="text" id="email" name="email" placeholder=" " required 
-                aria-required="true" aria-describedby="email-error">
+                aria-required="true" aria-describedby="email-error" />
                 <label for="email">Email</label>
-                <div class="text-danger" id="email-error" role="alert"></div>
+                <div class="error-message text-danger" id="email-error" role="alert"></div>
                 <input type="password" id="password" name="password" placeholder=" " required 
-                aria-required="true" aria-describedby="password-error">
+                aria-required="true" aria-describedby="password-error" />
                 <label for="password">Password</label>
-                <div class="text-danger" id="password-error" role="alert"></div>
+                <div class="error-message text-danger" id="password-error" role="alert"></div>
                 <input type="password" id="confirm-password" name="confirmPassword" placeholder=" " required 
-                aria-required="true" aria-describedby="confirm-password-error">
+                aria-required="true" aria-describedby="confirm-password-error" />
                 <label for="confirm-password">Confirm Password</label>
-                <div class="text-danger" id="confirm-password-error" role="alert"></div>
+                <div class="error-message text-danger" id="confirm-password-error" role="alert"></div>
                 <button class="btn btn-danger btn-block" type="submit">Signup</button>
             </form>
         </div>

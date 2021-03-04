@@ -15,7 +15,7 @@ $backgroundColor: #ecf0f1;
             border-bottom: 2px solid rgb(112, 108, 108);
             a:link,
             a:visited {
-                color: rgba(0, 0, 0, 0.5);
+                color: rgba(0, 0, 0, 0.7);
                 text-decoration: none;
                 transition: color 0.5s font-weight 0.5s;
             }
@@ -33,7 +33,16 @@ $backgroundColor: #ecf0f1;
 .product-description {
     background-color: $backgroundColor;
     height: 100px;
+    // overflow: hidden;
+
     overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    &:hover{
+        cursor: help;
+    }
 }
 
 h4 {

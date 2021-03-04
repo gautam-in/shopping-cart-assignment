@@ -1,46 +1,49 @@
 form {
-    width: 30rem;
-    display: block;
-  }
-  
+  width: 30rem;
+  display: block;
+}
+
+label {
+  display: block;
+  transform: translate(0, -2.75rem);
+}
+
+input {
+  width: 100%;
+  margin-top: 1.5rem;
+  padding: 0.25rem;
+  border: none;
+  border-bottom: 2px solid #535c68;
+  transition: border-color 0.2s ease;
+}
+
+input:focus {
+  outline: none;
+  border-color: #81ecec;
+}
+
+button {
+  padding: 0.75rem 1.5rem;
+  border: 2px solid #111;
+  background-color: #111;
+  color: #fff;
+  font-weight: bold;
+}
+
+@supports (not (-ms-ime-align: auto)) {
   label {
-    display: block;
-    transform: translate(0, -2.75rem);
+    color: #535c68;
+    transform: translate(0.25rem, -1.5rem);
+    transition: all 0.2s ease-out;
   }
-  
-  input {
-    width: 100%;
-    margin-top: 1.5rem;
-    padding: 0.25rem;
-    border: none;
-    border-bottom: 2px solid #999;
-    transition: border-color 0.2s ease;
+
+  input:focus + label,
+  input:not(:placeholder-shown) + label {
+    color: #81ecec;
+    transform: translate(0, -3rem);
   }
-  
-  input:focus {
-      outline: none;
-      border-color: #81ecec;
-  }
-  
-  button {
-    padding: 0.75rem 1.5rem;
-    border: 2px solid #111;
-    background-color: #111;
-    color: #fff;
-    font-weight: bold;
-  }
-  
-  
-  @supports (not (-ms-ime-align:auto)) {
-      label {
-        color: #999;
-        transform: translate(0.25rem, -1.5rem);
-        transition: all 0.2s ease-out;
-      }
-      
-      input:focus + label,
-      input:not(:placeholder-shown) + label {
-        color: #81ecec;
-        transform: translate(0, -2.75rem);
-      }
-  }
+}
+
+.error-message {
+  margin-top: -5%;
+}
