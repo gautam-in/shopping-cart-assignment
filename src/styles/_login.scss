@@ -19,7 +19,7 @@ input {
 
 input:focus {
   outline: none;
-  border-color: #81ecec;
+  border-color: blue;
 }
 
 button {
@@ -39,8 +39,8 @@ button {
 
   input:focus + label,
   input:not(:placeholder-shown) + label {
-    color: #81ecec;
-    transform: translate(0, -3rem);
+    color: blue;
+    transform: translate(0, -3.25rem);
   }
 }
 

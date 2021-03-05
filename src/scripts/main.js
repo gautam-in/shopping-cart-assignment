@@ -10,17 +10,22 @@ import EcommService from '../helpers/ecommService';
 function getCategories() {
   let data = sessionStorageService.getItem('categories');
   if (!data) {
-    ecommService.getCategories().then(
-      result => {
-        result.sort((a, b) => a.order - b.order);
-        sessionStorageService.setItem('categories', result, true);
-        renderCategories(data);
-      },
-    );
+    getCategoriesFromApi();
   } else {
     data = JSON.parse(data);
     renderCategories(data);
   }
+}
+
+function getCategoriesFromApi() {
+  ecommService.getCategories().then(
+    (result) => {
+      result.sort((a, b) => a.order - b.order);
+      sessionStorageService.setItem('categories', result, true);
+      renderCategories(result);
+    },
+    // eslint-disable-next-line no-console
+  ).catch((err) => console.log(err));
 }
 
 function renderCategories(data) {
