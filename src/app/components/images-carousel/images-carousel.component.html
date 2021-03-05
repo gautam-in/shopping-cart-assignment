@@ -1,0 +1,17 @@
+<ngb-carousel #ngCarousel
+  *ngIf="banners | async"
+  [interval]="2000"
+  [keyboard]="true"
+  [pauseOnHover]="true"
+  [showNavigationArrows]="false"
+  [showNavigationIndicators]="true">
+  <ng-container *ngFor="let banner of banners | async">
+    <ng-template ngbSlide *ngIf="banner.isActive">
+      <div class="wrapper">
+        <img [src]="banner.bannerImageUrl" [alt]="banner.bannerImageAlt" />
+      </div>
+    </ng-template>
+  </ng-container>
+</ngb-carousel>
+<button class="prev-button d-none d-md-block" (click)="goToPrev()">PREV</button>
+<button class="next-button d-none d-md-block" (click)="goToNext()">NEXT</button>

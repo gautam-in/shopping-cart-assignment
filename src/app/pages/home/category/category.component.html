@@ -1,0 +1,12 @@
+<section class="row align-items-center py-4"
+         [ngClass]="{'flex-row-reverse': isLeftAlign}"
+         *ngIf="categoryDetails">
+    <div class="col-4 col-md-4">
+        <img [src]="categoryDetails.imageUrl" [alt]="categoryDetails.name" class="img-fluid">
+    </div>
+    <div class="col-8 col-md-8 d-flex flex-column align-items-center details-wrapper">
+        <h3 class="text-center">{{ categoryDetails.name }}</h3>
+        <p class="text-center">{{ categoryDetails.description }}</p>
+        <app-button [content]="'Explore ' + categoryDetails.key"></app-button>
+    </div>
+</section>

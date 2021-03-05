@@ -1,0 +1,54 @@
+::ng-deep {
+  ngb-carousel {
+    position: relative;
+
+    .wrapper {
+      position: relative;
+      height: 0;
+      padding-top: 25%; /* Keep ratio for 900x500 images */
+
+      & > img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        width: 100%;
+      }
+    }
+
+    .carousel-indicators {
+      margin-bottom: 0.4rem;
+
+      li {
+        background-color:#bfbfbf;
+        border-radius: 50%;
+        width: 5px;
+        height: 5px;
+        margin: 0 7px;
+      }
+
+      .active {
+        background-color: #000;
+      }
+    }
+  }
+}
+
+.next-button, .prev-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #00000040;
+  color: #fff;
+  border: 0;
+  padding: 0.5rem 1rem;
+}
+
+.next-button {
+  right: 0;
+}
+
+.prev-button {
+  left: 0;
+}

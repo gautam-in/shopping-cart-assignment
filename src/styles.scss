@@ -1,1 +1,29 @@
 /* You can add global styles to this file, and also import other style files */
+@import 'src/assets/scss/variables.scss';
+
+* {
+    font-family: Dosis;
+    font-weight: 600;
+    font-size: 12px;
+}
+
+@media only screen and (min-width: $breakpoint-tablet) {
+    * {
+        font-size: 16px;
+    }
+}
+
+a {
+    cursor: pointer;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+*:focus {
+    outline: 0;
+}
+
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';

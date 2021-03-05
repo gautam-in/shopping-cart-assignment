@@ -1,0 +1,56 @@
+@import 'src/assets/scss/variables.scss';
+
+header {
+    background-color: #fff;
+    box-shadow: 0 2px 2px #d0d0d0;
+
+    .logo-wrapper {
+        padding: 0.5rem auto;
+
+        .logo {
+            height: 42px;
+        }
+    }
+
+    nav {
+        flex: 1;
+        align-self: flex-end;
+    }
+
+    .login, .register {
+        font-size: 0.8rem;
+        margin-left: 0.5rem;
+        color: #000;
+    }
+
+    a {
+        color: #000;
+        transition: color 0.1s;
+    }
+
+    a:hover {
+        color: #777;
+        text-decoration: none;
+    } 
+
+    .cart {
+        background-color: #e8e8e8;
+        padding: 0.75rem 1rem;
+
+        img {
+            width: 25px;
+            margin-right: 0.5rem;
+            filter: invert(21%) sepia(71%) saturate(3296%) hue-rotate(38deg) brightness(97%) contrast(105%);
+        }
+    }
+}
+
+@media only screen and (min-width: $breakpoint-tablet) {
+    header {
+        .logo-wrapper {
+            .logo {
+                height: 60px;
+            }
+        }
+    }
+}

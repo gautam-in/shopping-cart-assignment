@@ -1,1 +1,13 @@
-<p>home works!</p>
+<section class="container my-2">
+  <div class="row">
+    <div class="col-12 p-0">
+      <app-images-carousel [banners]="bannerImages"></app-images-carousel>
+    </div>
+  </div>
+
+  <ng-container *ngFor="let category of categories | async; let i = index">
+    <div class="row" *ngIf="category.enabled">
+      <app-category [categoryDetails]="category" [isLeftAlign]="i%2 === 0"></app-category>
+    </div>
+  </ng-container>
+</section>
