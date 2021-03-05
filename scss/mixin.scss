@@ -1,0 +1,101 @@
+// Mixin scss
+@mixin bg-color($dir: #fff) {
+  background: $dir;
+}
+@mixin anchor($font: 70%, $color: gray, $txtDeco: none, $fontWt: 600) {
+  font-size: $font;
+  color: $color;
+  text-decoration: $txtDeco;
+  font-weight: $fontWt;
+}
+@mixin flex($dir: row, $flow: row wrap) {
+  display: flex;
+  flex-direction: row;
+  flex-flow: row wrap;
+}
+@mixin flex-wrap($dis: flex, $wrap: wrap) {
+  display: $dis;
+  flex-wrap: $wrap;
+}
+@mixin flex-align($align: center, $just: flex-start, $grow: 1) {
+  align-self: $align;
+  justify-content: $just;
+  text-align: center;
+  flex-grow: $grow;
+}
+@mixin col-grid($siz, $flex-basis, $max-width) {
+  -ms-flex-preferred-size: $siz;
+  flex-basis: $flex-basis;
+  max-width: $max-width;
+}
+@mixin button {
+  font-size: 100%;
+  line-height: 1.5;
+  margin-top: 20px;
+  padding: 6px 10px;
+  color: #fff;
+  border: none;
+  background: #d00255;
+  background-size: 200% 100%;
+  background-position: 100% 0;
+  transition: all 0.6s ease;
+  cursor: pointer;
+}
+@mixin margin($margin: 12px 0) {
+  margin: $margin;
+}
+@mixin padding($padding: 6px) {
+  padding: $padding;
+}
+@mixin font-size($size: 100%) {
+  font-size: $size;
+}
+@mixin font-weight($weight: normal) {
+  font-weight: $weight;
+}
+@mixin transform($deg: 0deg, $transition: 0.5s ease-in-out) {
+  -webkit-transform: rotate($deg);
+  -moz-transform: rotate($deg);
+  -o-transform: rotate($deg);
+  transform: rotate($deg);
+  -webkit-transition: $transition;
+  -moz-transition: $transition;
+  -o-transition: $transition;
+  transition: $transition;
+}
+
+/* 
+  ##Device = Tablets, Ipads (portrait)
+  ##Screen = B/w 768px to 1024px
+*/
+@mixin responsive-for-ipad {
+  @media all and (min-width: 768px) and (max-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin responsive-for-ms-mobile {
+  @media all and (min-width: 480px) and (max-width: 768px) {
+    @content;
+  }
+}
+
+/* 
+  ##Device = Most of the Smartphones Mobiles (Portrait)
+  ##Screen =  Max 480px
+*/
+@mixin responsive-for-sm-mobile {
+  @media all and (max-width: 480px) {
+    @content;
+  }
+}
+/* 
+  ##Convert px to rem
+*/
+@function calculateRem($size) {
+  $remSize: $size / 16px;
+  @return #{$remSize}rem;
+}
+@mixin fontSize($size) {
+  font-size: calculateRem($size);
+}
