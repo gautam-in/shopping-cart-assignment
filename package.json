@@ -9,7 +9,9 @@
     "dev": "parcel src/index.html",
     "build": "parcel build src/index.html --public-url ./",
     "lint": "eslint ./",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d dist",
+    "start:heroku": "node server.js",
+    "postinstall": "canned -p 5000 ./server"
   },
   "author": "",
   "license": "MIT",
@@ -17,10 +19,15 @@
     "autoprefixer": "^9.8.6",
     "bootstrap": "^4.6.0",
     "canned": "^0.3.12",
+    "desandro-matches-selector": "^2.0.2",
     "eslint-plugin-jest": "^24.1.5",
+    "express": "^4.17.1",
+    "fizzy-ui-utils": "^3.0.0",
+    "get-size": "^2.0.3",
     "imagesloaded": "^4.1.4",
     "jquery": "^3.5.1",
-    "regenerator-runtime": "^0.13.7"
+    "regenerator-runtime": "^0.13.7",
+    "unipointer": "^2.3.0"
   },
   "devDependencies": {
     "@babel/core": "^7.13.8",

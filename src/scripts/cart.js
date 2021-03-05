@@ -195,7 +195,7 @@ function renderCartView() {
 
     const cheapImg = document.createElement('img');
     cheapImg.classList.add('mx-3');
-    cheapImg.src = '/static/images/lowest-price.png';
+    cheapImg.src = 'static/images/lowest-price.png';
     cheapImg.alt = 'You won\'t find it cheaper anywhere';
 
     const cheapBlockText = document.createElement('div');
