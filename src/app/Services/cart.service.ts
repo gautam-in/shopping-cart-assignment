@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
+import { IProductResponse } from '../model/product.model';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +12,7 @@ export class CartService {
 
   constructor() { }
 
-  addProduct(product) {
+  addProduct(product: IProductResponse) {
     let newCart = [];
     let finalCart = [];
     let index = 0;

@@ -7,7 +7,7 @@
                     <span *ngIf="groceryCart.length >0">({{groceryCart.length}}) item</span>
                     <span *ngIf="!groceryCart.length">0</span>
                 </h4>
-                <button type="button" class="close" data-dismiss="modal" (click)="resetCart()">&times;</button>
+                <button type="button" class="close" data-dismiss="modal" (click)="resetCart()" aria-label="Close Cart Popup">&times;</button>
             </div>
 
             <div class="modal-body" *ngIf="!groceryCart.length; else displayItems">
@@ -49,13 +49,13 @@
 
             <div class="modal-footer">
                 <section *ngIf="!groceryCart.length; else checkout" style="width: 100%;">
-                    <button type="button" class="common-btn" data-dismiss="modal" (click)="resetCart()">Start
+                    <button type="button" class="common-btn" data-dismiss="modal" (click)="resetCart()" aria-label="Start Shopping">Start
                         Shopping</button>
                 </section>
                 <ng-template #checkout>
                     <p>Promo code can be applied on payment page</p>
                     <button type="button" class="common-btn" (click)="resetCart()"
-                        aria-valuetext="Proceed to Checkout Rs.  /-" data-dismiss="modal">
+                        aria-valuetext="Proceed to Checkout Rs.  /-" data-dismiss="modal" aria-label="Checkout">
                         <span style="float: left;">Proceed to Checkout </span> <span style="float: right;">Rs.{{ totalAmount()}}/- ></span>
                     </button>
                 </ng-template>

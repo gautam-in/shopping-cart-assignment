@@ -1,43 +1,6 @@
 
-<nav class="navbar navbar-expand-md navbar-light" aria-label="Main navbar">
-    <div class="container">
-        <a href="#" class="navbar-brand">
-            <img src="../assets/static/images/logo_2x.png" class="logo" alt="SakbaBazzarBrandLogo">
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
-            aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-            <ul class="navbar-nav leftnav">
-                <li class="nav-item" [routerLinkActive]="['active']">
-                    <a class="nav-link" [routerLink]="['/home']">Home</a>
-                </li>
-                <li class="nav-item" [routerLinkActive]="['active']">
-                    <a class="nav-link" [routerLink]="['/products']">Products</a>
-                </li>
-            </ul>
-            <ul class="navbar-nav rightnav">
-                <li class="nav-item" [routerLinkActive]="['active']">
-                    <a class="nav-link" [routerLink]="['/signin']">Signin</a>
-                </li>
-                <li class="nav-item" [routerLinkActive]="['active']">
-                    <a class="nav-link" [routerLink]="['/register']">Register</a>
-                </li>
-            </ul>
-        </div>
-        <div class="cart-container">
-            <ul class="navbar-nav cart">
-                <li class="nav-item">
-                    <a class="nav-link" [routerLink]="['/cart']" data-toggle="modal" data-target="#myModal"
-                        role="button"><img src="../assets/static/images/cart.svg" class="cart-logo" alt="cart-logo"></a>
-                    <span *ngIf="myCart.length >0">{{myCart.length}}</span>
-                    <span *ngIf="!myCart.length">0 items</span>
-                </li>
-            </ul>
-        </div>
-    </div>
-</nav>
+
+<app-header></app-header>
 
 <main>
     <router-outlet></router-outlet>

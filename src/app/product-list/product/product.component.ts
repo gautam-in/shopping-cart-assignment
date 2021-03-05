@@ -1,3 +1,4 @@
+import { IProductResponse } from './../../model/product.model';
 
 import { Component, Input, OnChanges, OnInit } from '@angular/core';
 import { ApidataService } from 'src/app/Services/apidata.service';
@@ -12,7 +13,7 @@ import { DataService } from 'src/app/Services/data.service';
 })
 export class ProductComponent implements OnInit, OnChanges {
 
-  @Input() products;
+  @Input() products: IProductResponse;
   @Input() filteredProducts;
   displayProducts;
 

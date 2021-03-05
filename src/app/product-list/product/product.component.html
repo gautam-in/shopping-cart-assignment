@@ -9,7 +9,8 @@
             <p class="card-text">{{product.description}}</p>
             <div class="price-container">
                 <p class="price"> MRP Rs.{{product.price}}</p>
-                <button type="button" class="common-btn price-btn" (click)="addProductToCart(product)">Buy Now</button>
+                <button type="button" class="common-btn price-btn" (click)="addProductToCart(product)"
+                    aria-label="Buy Product">Buy Now</button>
             </div>
         </div>
     </section>

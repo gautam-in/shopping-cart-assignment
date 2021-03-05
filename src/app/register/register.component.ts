@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 })
 export class RegisterComponent implements OnInit {
   registerForm: FormGroup;
+
   constructor(
     private formBuilder: FormBuilder,
     private router: Router
@@ -30,7 +31,7 @@ export class RegisterComponent implements OnInit {
 
   matchPassword(abs: AbstractControl): { mismatch: boolean } {
     if (abs.get('password').value !== abs.get('confirmPassword').value) {
-      return { mismatch: true }
+      return { mismatch: true };
     }
   }
 

@@ -1,18 +1,14 @@
-import { CartComponent } from './cart/cart.component';
-import { ProductListComponent } from './product-list/product-list.component';
-import { RegisterComponent } from './register/register.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
-import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full' },
   { path: "home", component: HomeComponent },
-  { path: "products", component: ProductListComponent },
-  { path: "signin", component: LoginComponent },
-  { path: "register", component: RegisterComponent },
-  { path: "cart", component: CartComponent },
+  { path: "products", loadChildren: () => import(`../app/product-list/product.module`).then(m => m.ProductModule) },
+  { path: "signin", loadChildren: () => import(`../app/login/login.module`).then(m => m.LoginModule) },
+  { path: "register", loadChildren: () => import(`../app/register/register.module`).then(m => m.RegisterModule) },
+  { path: "cart", loadChildren: () => import(`../app/cart/cart.module`).then(m => m.CartModule) },
   { path: "**", component: HomeComponent }
 ];
 

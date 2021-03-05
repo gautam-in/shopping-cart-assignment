@@ -8,7 +8,7 @@ export class DataService {
   categoriesList;
   productList;
   allProducts;
-
   filteredCategory;
+  
   constructor() { }
 }

@@ -1,4 +1,3 @@
-
 import { ApidataService } from './../Services/apidata.service';
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../Services/data.service';
@@ -10,7 +9,7 @@ import { DataService } from '../Services/data.service';
 })
 export class ProductListComponent implements OnInit {
 
-  selectedCatagory;
+  selectedCatagoryIndex: number;
   productCategoriesList = [];
   products;
   filteredCategory;
@@ -33,7 +32,7 @@ export class ProductListComponent implements OnInit {
   }
 
   filterSelectedCategoryList(selectedCategoryId, index) {
-    this.selectedCatagory = index;
+    this.selectedCatagoryIndex = index;
     this.resetFilter();
     this.productCategoriesList.forEach(category => {
       if (category.id === selectedCategoryId) {
