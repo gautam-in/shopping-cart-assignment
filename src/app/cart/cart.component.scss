@@ -32,8 +32,11 @@
     font-size: 20px;
 }
 
-.item-price{
-margin: 0 5px;
+.item-price, .item-total-price{
+    margin: 0 5px;
+}
+.item-total-price{
+    float: right;
 }
 .common-btn{
     width: 100%;

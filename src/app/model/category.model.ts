@@ -1,4 +1,4 @@
-export interface ICategoryResponse {
+export interface ICategory {
     name: string;
     key: string;
     description: string;

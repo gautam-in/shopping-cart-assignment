@@ -28,11 +28,11 @@
                             <div class="card-body" style="text-align: center;">
                                 <h5 class="card-title">{{groceryCart.name}}</h5>
                                 <div>
-                                    <i class="fa fa-plus-square icon-fa" (click)="addProductQuantity(product)" aria-label="increase product unit"></i>
+                                    <i class="fa fa-plus-square icon-fa" (click)="increaseProductQuantity(product)" aria-label="increase product unit"></i>
                                     <span>{{product.count}}</span>
                                     <i class="fa fa-minus-square icon-fa" (click)="removeProduct(product)" aria-label="decrease product unit"></i>
                                     <span class="item-price">X &nbsp; &nbsp;Rs. {{product.price}}</span>
-                                    <span class="item-price">Rs.{{product.total}}</span>
+                                    <span class="item-total-price">Rs.{{product.totalPrice}}</span>
                                 </div>
                             </div>
                         </div>

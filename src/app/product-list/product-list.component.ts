@@ -1,3 +1,5 @@
+import { ICategory } from './../model/category.model';
+import { IProduct } from './../model/product.model';
 import { ApidataService } from './../Services/apidata.service';
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../Services/data.service';
@@ -10,10 +12,10 @@ import { DataService } from '../Services/data.service';
 export class ProductListComponent implements OnInit {
 
   selectedCatagoryIndex: number;
-  productCategoriesList = [];
-  products;
+  productCategoriesList: ICategory[] = [];
+  products: IProduct[];
   filteredCategory;
-  filteredProducts = [];
+  filteredProducts: IProduct[] = [];
 
   constructor(
     private _dataService: DataService,
@@ -31,7 +33,7 @@ export class ProductListComponent implements OnInit {
     });
   }
 
-  filterSelectedCategoryList(selectedCategoryId, index) {
+  filterSelectedCategoryList(selectedCategoryId: string, index: number) {
     this.selectedCatagoryIndex = index;
     this.resetFilter();
     this.productCategoriesList.forEach(category => {
@@ -39,9 +41,13 @@ export class ProductListComponent implements OnInit {
         this.filteredCategory = category;
       }
     });
-    this.products.forEach(prod => {
+    this.FilterProductsOfSelectedCatagory();
+  }
+
+  FilterProductsOfSelectedCatagory() {
+    this.products.forEach((prod: IProduct) => {
       if (prod.category === this.filteredCategory.id) {
-        this.filteredProducts.push(prod)
+        this.filteredProducts.push(prod);
       }
     });
   }

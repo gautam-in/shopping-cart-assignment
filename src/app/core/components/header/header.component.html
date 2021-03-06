@@ -30,8 +30,8 @@
                 <li class="nav-item">
                     <a class="nav-link" [routerLink]="['/cart']" data-toggle="modal" data-target="#myModal"
                         role="button"><img src="../assets/static/images/cart.svg" class="cart-logo" alt="cart-logo"></a>
-                    <span *ngIf="myCart.length >0">{{myCart.length}}</span>
-                    <span *ngIf="!myCart.length">0 items</span>
+                    <span *ngIf="groceryCart.length >0">{{groceryCart.length}}</span>
+                    <span *ngIf="!groceryCart.length">0 items</span>
                 </li>
             </ul>
         </div>

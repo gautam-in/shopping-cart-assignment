@@ -40,9 +40,4 @@ describe('ProductListComponent', () => {
     expect(apiDataService.getProducts).toHaveBeenCalled();
   });
 
-  xit('should call filterSelectedCategoryList method', () => {
-    spyOn(component, 'resetFilter').and.callThrough();
-    component.filterSelectedCategoryList('123cd', 1);
-    expect(component.resetFilter).toHaveBeenCalled();
-  });
 });

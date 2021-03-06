@@ -1,9 +1,8 @@
-import { IProductResponse } from './../../model/product.model';
+import { IProduct } from './../../model/product.model';
 
 import { Component, Input, OnChanges, OnInit } from '@angular/core';
 import { ApidataService } from 'src/app/Services/apidata.service';
 import { CartService } from 'src/app/Services/cart.service';
-import { DataService } from 'src/app/Services/data.service';
 
 
 @Component({
@@ -13,28 +12,27 @@ import { DataService } from 'src/app/Services/data.service';
 })
 export class ProductComponent implements OnInit, OnChanges {
 
-  @Input() products: IProductResponse;
-  @Input() filteredProducts;
-  displayProducts;
+  @Input() products: IProduct[];
+  @Input() filteredProducts: IProduct[];
+  displayProducts: IProduct[];
 
   constructor(
     private _cartService: CartService,
-    private _apiService: ApidataService,
-    private _dataService: DataService
+    private _apiService: ApidataService
   ) { }
 
   ngOnInit(): void {
   }
 
   ngOnChanges(simpleChanges) {
-    if(this.filteredProducts && !this.filteredProducts.length) {
+    if (this.filteredProducts && !this.filteredProducts.length) {
       this.displayProducts = this.products;
-    } else{
+    } else {
       this.displayProducts = this.filteredProducts;
     }
   }
 
-  addProductToCart(product) {
+  addProductToCart(product: IProduct) {
     this._apiService.addProductsToCart(product.id).subscribe(data => {
       if (data && data.response === 'Success') {
         this._cartService.addProduct(product);

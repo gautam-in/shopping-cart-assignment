@@ -1,4 +1,4 @@
-export interface IBannerResponse {
+export interface IBanner {
     bannerImageUrl: string;
     bannerImageAlt: string;
     isActive: boolean;

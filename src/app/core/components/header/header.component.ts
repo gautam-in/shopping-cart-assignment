@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { IProduct } from 'src/app/model/product.model';
 import { CartService } from 'src/app/Services/cart.service';
 
 @Component({
@@ -8,15 +9,15 @@ import { CartService } from 'src/app/Services/cart.service';
 })
 export class HeaderComponent implements OnInit {
 
-  myCart = [];
-  
+  groceryCart: IProduct[] = [];
+
   constructor(
     private _cartservice: CartService
   ) { }
 
-  ngOnInit() { 
-    this._cartservice.itemCount$.subscribe(
-      data => this.myCart = data
-    );   
+  ngOnInit() {
+    this._cartservice.itemCount$.subscribe(data => {
+      this.groceryCart = data;
+    });
   }
 }

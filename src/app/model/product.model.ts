@@ -1,4 +1,4 @@
-export interface IProductResponse {
+export interface IProduct {
     name: string;
     description: string;
     imageURL: string;
