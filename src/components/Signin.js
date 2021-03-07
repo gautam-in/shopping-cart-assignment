@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from 'react-redux';
 // import { push } from 'react-router-redux';
+import {withRouter} from 'react-router';
 import Header from '../presentations/Header';
 import Footer from '../presentations/Footer';
 import {setUserDetails} from '../actions/singinActions';
@@ -31,7 +32,7 @@ class Signin extends React.Component {
 
     }
     static getDerivedStateFromProps(props,state){
-      if(props.signIn && props.signIn.userData){
+      if(props.signIn && props.signIn.userData && props.router){
         props.router.push('/Home');
       }
       return state;
@@ -72,7 +73,8 @@ class Signin extends React.Component {
         this.props.setUserDetails({userEmail:this.state.email,userPassword:this.state.password});
       } else {
         this.setState({loginError:true},()=>{
-          document.getElementById('errorarea').click();
+          const elem = document.getElementById('errorarea');
+          if(elem){elem.click();}
         });        
       }
     }
@@ -100,11 +102,11 @@ class Signin extends React.Component {
             <div className="col span-1-of-2">
                   <form method="" onSubmit={this.onSubmitHandler}>                 
                    <div className="floating-input-area">
-                    <input type="email" aria-label={Constants.TEXTS.FORM_INPUTS.email.label} className="inputText" onChange={(event)=>this.inputHandler(event,'email')} placeholder=" " required/>
+                    <input type="email" aria-label={Constants.TEXTS.FORM_INPUTS.email.label} className="inputText" id="email-input" value={this.state.email || ''} onChange={(event)=>this.inputHandler(event,'email')} placeholder=" " required/>
                     <span className="floating-label">{Constants.TEXTS.FORM_INPUTS.email.value}</span>
                   </div>
                   <div className="floating-input-area">
-                    <input type="password" aria-label={Constants.TEXTS.FORM_INPUTS.pwd.label} className="inputText" onChange={(event)=>this.inputHandler(event,'password')} placeholder=" " required/>
+                    <input type="password" aria-label={Constants.TEXTS.FORM_INPUTS.pwd.label} className="inputText" id="password-input" value={this.state.password || ''} onChange={(event)=>this.inputHandler(event,'password')} placeholder=" " required/>
                     <span className="floating-label">{Constants.TEXTS.FORM_INPUTS.pwd.value}</span>
                   </div>
                   <div>
@@ -147,4 +149,4 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
-export default connect(mapStateToProps,mapDispatchToProps)(Signin);
+export default connect(mapStateToProps,mapDispatchToProps)(withRouter(Signin));

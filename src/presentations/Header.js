@@ -2,16 +2,16 @@ import React from 'react';
 import {Link} from 'react-router';
 import {connect} from 'react-redux';
 // import {push} from 'react-router-redux';
-import Logo from '../../static/images/logo.png';
+// import Logo from '../../static/images/logo.png';
 import {getViewPortDimensions} from '../utils';
 import {resetCartData} from '../actions/productActions';
-import CartIcon from '../../static/images/cart.svg';//'';
+// import CartIcon from '../../static/images/cart.svg';//'';
 import LazyLoad from 'react-lazyload';
 class Header extends React.Component {
      constructor(props) {
         super(props);
         this.state = {
-            logo: Logo,
+            logo: '',
             clickable: false,
             userName:'',
             itemCount: 0,
@@ -73,7 +73,7 @@ class Header extends React.Component {
             <header>
                 <nav className="sticky-nav">
                     <div className="row">
-                        <img onClick={this.showHome} src={Logo} alt="logo" className="logo" />
+                        <img onClick={this.showHome} src={window.location.origin + '/static/images/logo.png'} alt="logo" className="logo" /> {/* {Logo} */}
                         <ul className="main-nav js--main-nav">
                             <li><Link to={`/home`} >Home</Link></li>
                             <li><Link to="/products">Products</Link></li>
@@ -97,7 +97,7 @@ class Header extends React.Component {
                             <div className="cartArea" aria-labelledby="cart" onClick={this.cartClick}>
                                 <div className="cart-icon">
                                     <LazyLoad height={25} once>
-                                        <img src={CartIcon} className="fill-purple"></img>
+                                        <img src={window.location.origin + '/static/images/cart.svg'} className="fill-purple"></img>
                                     </LazyLoad>
                                 </div>
                                 <span>{itemCount} items</span>

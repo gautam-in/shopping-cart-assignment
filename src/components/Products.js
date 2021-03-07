@@ -114,12 +114,14 @@ class Products extends React.Component{
                             <p className="prod-name" title={item.name}>{item.name}</p>
                             <div className="prod-detls">
                             <div className="prod-img">
+                                <figure>
                             <LazyLoad height={75} offset={500} once>
                                 <img className={`rocketImg`}
                                     alt={item.name}
                                     src={window.location.origin + item.imageURL}
                                 />
                             </LazyLoad>
+                            </figure>
                             </div>
                             <div className="prod-infodetails">
                             <div className="description-area">
