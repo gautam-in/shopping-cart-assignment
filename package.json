@@ -51,7 +51,6 @@
     "handlebars": "^4.7.7",
     "history": "^3.0.0",
     "jest": "^26.6.3",
-    "jquery.nicescroll": "^3.7.6",
     "moment": "^2.29.0",
     "node-sass": "^4.14.1",
     "prop-types": "^15.7.2",
@@ -100,5 +99,11 @@
     "webpack-pwa-manifest": "^4.2.0",
     "workbox-sw": "^5.1.4",
     "workbox-webpack-plugin": "^5.1.4"
+  },
+  "jest":{
+    "collectCoverageFrom":[
+      "src/**/*.js",
+      "!src/index.js"
+    ]
   }
 }

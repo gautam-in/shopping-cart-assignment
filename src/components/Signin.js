@@ -32,7 +32,7 @@ class Signin extends React.Component {
 
     }
     static getDerivedStateFromProps(props,state){
-      if(props.signIn && props.signIn.userData){ //&& props.router
+      if(props.signIn && props.signIn.userData && props.router){
         props.router.push('/Home');
       }
       return state;
@@ -55,7 +55,7 @@ class Signin extends React.Component {
       document.getElementsByTagName('html')[0].style.overflow = 'hidden';
   }
   checkoutComplete=()=>{
-    this.props.dispatch(resetCartData());
+    this.props.resetCartData();
     this.onCloseModal();
     toastr.success(Constants.TEXTS.TOASTS.cart_emptied,Constants.TEXTS.TOASTS.order_placed,{timeOut:1000});
 }
@@ -145,7 +145,8 @@ function mapStateToProps(state) {
 }
 const mapDispatchToProps = (dispatch) => {
   return {
-    setUserDetails : (data)=>{dispatch(setUserDetails(data))}
+    setUserDetails : (data)=>{dispatch(setUserDetails(data))},
+    resetCartData: ()=>{dispatch(resetCartData())}
   }
 }
 

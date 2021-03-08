@@ -93,7 +93,7 @@ class Signup extends React.Component {
         document.getElementsByTagName('html')[0].style.overflow = 'hidden';
     }
     checkoutComplete=()=>{
-        this.props.dispatch(resetCartData());
+        this.props.resetCartData();
         this.onCloseModal();
         toastr.success(Constants.TEXTS.TOASTS.cart_emptied,Constants.TEXTS.TOASTS.order_placed,{timeOut:1000});
     }
@@ -114,12 +114,12 @@ class Signup extends React.Component {
         }
         if(isValidForm){
             this.setState({formError: false});
-            this.props.dispatch(setUserDetails({
+            this.props.setUserDetails({
                 userEmail:this.state.email,
                 userPassword:this.state.password,
                 userFName:this.state.fName,
                 userLName: this.state.lName
-            }));
+            });
         }
     }
   render(){
@@ -211,6 +211,13 @@ function mapStateToProps(state) {
       signUp: state.signUpReducer,
       productInfo: state.productReducer
     };
-  }
+}
 
-export default connect(mapStateToProps)(Signup);
+const mapDispatchToProps = (dispatch) =>{
+  return {
+    resetCartData: ()=>{dispatch(resetCartData())},
+    setUserDetails: (data)=>{dispatch(setUserDetails(data))}
+  }
+}
+
+export default connect(mapStateToProps,mapDispatchToProps)(Signup);

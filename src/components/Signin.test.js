@@ -6,17 +6,21 @@ import configureStore from "redux-mock-store";
 import thunk from "redux-thunk";
 import Signin from './Signin';
 import {act} from 'react-dom/test-utils';
-import { routerReducer } from 'react-router-redux';
-import sinon from 'sinon';
-import App from './App';
-const mockStore = configureStore(); //configureMockStore();
+import Header from '../presentations/Header';
+import Footer from '../presentations/Footer';
+// import {MemoryRouter} from 'react-router';
+// import { routerReducer } from 'react-router-redux';
+// import sinon from 'sinon';
+// import App from './App';
+
+// const mockStore = configureStore(); //configureMockStore();
 const buildStore = configureStore([thunk]);
 const whenStable = async () => {
     await act(async () => {
       await new Promise((resolve) => setTimeout(resolve, 0));
     });
 };
-Enzyme.configure({adapter: new Adapter()});//,disableLifecycleMethods: true
+Enzyme.configure({adapter: new Adapter(),disableLifecycleMethods: false,lifecycleExperimental: true,});
 const simulateChangeInput = (wrapper,inputSelector,newVal)=>{
     const input = wrapper.find(inputSelector).at(0);
     input.simulate('change',{
@@ -24,75 +28,53 @@ const simulateChangeInput = (wrapper,inputSelector,newVal)=>{
     })
     return wrapper.find(inputSelector);
 }
-describe('Signin Page validation',()=>{
-    // const setUpFn = props => {
-    //     return mount(
-    //       <Provider store={store}>
-    //         <App />
-    //       </Provider>
-    //     );
-    //   };
-    
-    //   let wrapper;
-    //   beforeEach(() => {
-    //     wrapper = setUpFn();
-    //   });
-    let fetch;
-    // let routing = routerReducer;
-    const props={productReducer:{cartItems:[]},cartClick:()=>{},signinReducer:{userData:{userEmail:''}},signUpReducer:{userData:{userEmail:''}},router:{push:(data)=>{'/'+data+''}}};//router:{push:()=>{}},
-    let store;// = mockStore({});
 
-    beforeEach(() => {
-      fetch = global.fetch;
+describe('Signin',()=>{
+    // let routing = routerReducer;
+    // let store;// = mockStore({});
+    // const routerProps = {router:{push:()=>{}}};
+    const props={productReducer:{cartItems:[]},cartClick:()=>{},signinReducer:{userData:{userEmail:''}},signUpReducer:{userData:{userEmail:''}},router:{push:(data)=>{'/'+data+''}}};//router:{push:()=>{}},
+    let wrapper,shallowWrapper,store;
+    beforeAll(()=>{
+      shallowWrapper = shallow(<Provider store={store} {...props}>
+        <Signin />
+      </Provider>);
+      // props.router = shallowWrapper.instance().props.router;
       store = buildStore(props);
     });
-    afterEach(() => {
-      global.fetch = fetch;
+    beforeEach(() => {
+      // fetch = global.fetch;
+      wrapper = mount(<Provider store={store} {...props}>
+        <Signin />
+      </Provider>);
     });
-    afterAll(()=>{
+    afterEach(() => {
       wrapper.unmount();
     });
+    afterAll(()=>{
+      shallowWrapper.unmount();
+    });
+    it('Header is available',()=>{
+      // console.warn(shallowWrapper.dive().dive().dive().instance()); //signin instance dive(1) - connect/Provider, dive(2) - withrouter, dive(3) - signin
+      // console.warn(shallowWrapper.instance().props.router); // got router from props - from Provider instance
+      expect(wrapper.find('Header').exists()).toBe(true);
+    });
+    it('Footer is available',()=>{
+      expect(wrapper.find('Footer').exists()).toBe(true);
+    })
     it('Should validate login button after input change', async ()=>{
-        // const foo = true;
-        // const wrapper = shallow(<Signin />,{ context: { store } });
-
-        // const wrapper = shallow(
-        // <Provider store={store}>
-        //     <Signin {...props}>
-        //     </Signin> 
-        // </Provider>);//.props();
-        const wrapper = mount(<Provider store={store} {...props}>
-          <Signin />
-          </Provider>);
-        // const wrapper = shallow(
-        // <Provider store={store} {...props}>
-        //     <Signin {...props} />
-        // </Provider>).dive();
-        // wrapper.setProps({...props});
-        // console.warn(wrapper.children().props());
-        console.warn(wrapper.props());
+        
+        // console.warn(wrapper.props());
         const button = wrapper.find('button');
-        // .childAt(1).dive();
-        // expect(wrapper.contains(<div className="row" />).toBeEqual(true));
-        // const button = wrapper.find('button');
-        // button.simulate('click');
-        // const button = wrapper.find('.login').at(0).simulate('click');
-        // const inputs = wrapper.find('.inputText');
-        // console.warn(button);
-        // console.log(inputs);
-        // button.simulate('click');
-        // // fixture.detectChanges();
-        // await whenStable();
-        // let emailInput = wrapper.find('input.email-input');
+        
         const updatedEmailInput = simulateChangeInput(wrapper,'input#email-input','pkzpavan@gmail.com');
-        // console.warn(updatedEmailInput.props().value);
         expect(updatedEmailInput.props().value).toEqual('pkzpavan@gmail.com');
         const updatedPasswordInput = simulateChangeInput(wrapper,'input#password-input','Pavan1');
         expect(updatedPasswordInput.props().value).toEqual('Pavan1');
         button.simulate('click');
-        // // fixture.detectChanges();
         await whenStable();
         expect(wrapper.find('.errorArea').length).toBe(0);
         // expect(wrapper.find('.errorArea').childAt(0).text()).toBe('Invalid login credentials.');
-    })
-})
+    });
+    
+});
