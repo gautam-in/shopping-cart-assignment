@@ -1023,14 +1023,14 @@ img {
 }
 
 /* Fading animation */
-.fade {
-  -webkit-animation-name: fade;
+.slide {
+  -webkit-animation-name: slide;
   -webkit-animation-duration: 1s;
-  animation-name: fade;
+  animation-name: slide;
   animation-duration: 1s;
 }
 
-@-webkit-keyframes fade {
+@-webkit-keyframes slide {
   0% {
     -webkit-transform: translateX(100%);
   }
@@ -1038,7 +1038,7 @@ img {
     -webkit-transform: translateX(0%);
   }
 }
-@keyframes fade {
+@keyframes slide {
   0% {
     -webkit-transform: translateX(100%);
   }
