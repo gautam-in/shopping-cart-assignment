@@ -56,15 +56,41 @@
 
   &__name {
     font-size: 1rem;
-    height: 4rem;
+    height: 2rem;
+    margin-bottom: 2%;
+  }
+  @include break-point(desktop) {
+    &__name {
+      font-size: 1rem;
+      height: 4rem;
+    }
+  }
+  @include break-point(tablet) {
+    &__name {
+      font-size: 1rem;
+      height: 4rem;
+    }
   }
   &__detail {
+    &--textAndBtn {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
     @include flex-row;
     &--img {
       width: 50%;
-      height: 5.5rem;
+      height: 9.5rem;
+      margin-right: 3px;
     }
     @include break-point(desktop) {
+      @include flex-column;
+      &--img {
+        width: 100%;
+        height: auto;
+      }
+    }
+    @include break-point(tablet) {
       @include flex-column;
       &--img {
         width: 100%;
@@ -95,6 +121,7 @@
     }
     &--btn {
       justify-content: center;
+      align-items: center;
       cursor: pointer;
     }
     &--sm-txt {

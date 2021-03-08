@@ -91,7 +91,9 @@ function loadProductsBasedOnSelection(obj) {
         p.id = obj[key].imgLabel;
         p.classList.add("product-card__detail--description");
         p.innerText = obj[key].pDesc;
-        productCardDetailDiv.appendChild(p);
+        // productCardDetailDiv.appendChild(p);
+
+
         productCardDiv.appendChild(productCardDetailDiv);
         let productCardBuyDiv = document.createElement("div");
         productCardBuyDiv.classList.add("flex-row", "product-card__buy");
@@ -111,7 +113,12 @@ function loadProductsBasedOnSelection(obj) {
         btn.innerHTML = `Buy Now `;
         btn.appendChild(span);
         productCardBuyDiv.appendChild(btn);
-        productCardDiv.appendChild(productCardBuyDiv);
+        // productCardDetailDiv.appendChild(productCardBuyDiv);
+        let divForTextAandButton = document.createElement('div');
+        divForTextAandButton.appendChild(p);
+        divForTextAandButton.appendChild(productCardBuyDiv);
+        productCardDetailDiv.appendChild(divForTextAandButton);
+        divForTextAandButton.classList.add("product-card__detail--textAndButton");
         productListRow.appendChild(productCardDiv);
     });
     setTabIndexAriaLabel();

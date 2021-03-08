@@ -166,8 +166,7 @@ allProducts.beautyHygieneObj.tissues = {
     priceText: "MRP Rs.270",
 };
 allProducts.beautyHygieneObj.dove = {
-    title: `Dove Intense Repair Shampoo 650ml + Bathing Bar Soap Cream Beauty
-    100G Pack of 3`,
+    title: `Dove Intense Repair Shampoo 650ml + Bathing Bar Soap Cream Beauty 100G Pack of 3`,
     imgSrc: "beauty-hygiene/dove.jpg",
     imgAlt:
         "Dove Intense Repair Shampoo 650ml + Bathing Bar Soap Cream Beauty 100G Pack of 3 logo",
