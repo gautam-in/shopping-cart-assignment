@@ -36,11 +36,12 @@ describe('Signin',()=>{
     const props={productReducer:{cartItems:[]},cartClick:()=>{},signinReducer:{userData:{userEmail:''}},signUpReducer:{userData:{userEmail:''}},router:{push:(data)=>{'/'+data+''}}};//router:{push:()=>{}},
     let wrapper,shallowWrapper,store;
     beforeAll(()=>{
+      store = buildStore(props);
+
       shallowWrapper = shallow(<Provider store={store} {...props}>
         <Signin />
       </Provider>);
       // props.router = shallowWrapper.instance().props.router;
-      store = buildStore(props);
     });
     beforeEach(() => {
       // fetch = global.fetch;
