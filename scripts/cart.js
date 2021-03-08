@@ -23,6 +23,7 @@ var span = document.getElementsByClassName("close")[0];
 // When the user clicks the button, open the modal
 btn.onclick = function () {
     let modalBody = document.querySelector(".modal-body");
+    let lowestPriceDiv;
     modal.style.display = "block";
     if (cartCount > 0) {
         modalBody.classList.remove("emptyCart");
@@ -85,6 +86,14 @@ btn.onclick = function () {
             ).classList.add("modal-body__listItems--itemTotal");
         });
 
+        lowestPriceDiv = document.createElement('div');
+        lowestPriceDiv.classList.add('modal-body__lowestPrice');
+        lowestPriceDiv.innerHTML = /*html*/`
+            <div> <img src="../static/images/lowest-price.png" alt="Lowest Price Guaranteed image" width="100" height="40"> </div>
+            <div> <span> You won't find it cheaper anywhere</span> </div>
+        `
+        document
+            .querySelector(".modal-body__listItems").append(lowestPriceDiv);
         document.querySelector(
             ".modal-footer button"
         ).innerHTML = `<div>Proceed to checkout</div>   <div>Rs.${sum}  <span> > </span> </div>`;
@@ -202,7 +211,7 @@ btn.onclick = function () {
                             }
                             if (cartCount == 0) {
                                 document.querySelector(".modal-body").innerHTML = `
-                                <h2 tabindex="0">No item in your cart</h2>
+                                <h2 tabindex="0">No items in your cart</h2>
                                 <p>Your favourite items are just a click away</p>`;
                                 document.querySelector(".modal-footer").innerHTML = `
                         <button onclick="location.href='products.html'">Start Shopping</button>`;
@@ -226,6 +235,10 @@ btn.onclick = function () {
             );
         });
     } else {
+        if (lowestPriceDiv) {
+            document
+                .querySelector(".modal-body__listItems").remove(lowestPriceDiv);
+        }
         modalBody.classList.add("emptyCart");
     }
 };

@@ -555,6 +555,8 @@ body {
   cursor: pointer;
 }
 .modal .modal-content .modal-body {
+  overflow: auto;
+  height: 70%;
   margin: 0;
 }
 .modal .modal-content .modal-body__listItems {
@@ -579,6 +581,7 @@ body {
   margin-bottom: 0.2em;
 }
 .modal .modal-content .modal-body__listItems--itemHead {
+  font-weight: bold;
   margin: 0 0 0.2em 0.5em;
 }
 .modal .modal-content .modal-body__listItems--itemTotal {
@@ -602,6 +605,23 @@ body {
 .modal .modal-content .modal-body__listItems--item img {
   height: 95%;
 }
+.modal .modal-content .modal-body__lowestPrice {
+  display: flex;
+  height: 2.5em;
+  background: #fff;
+  margin-top: 2%;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+.modal .modal-content .modal-body__lowestPrice div:nth-child(2) {
+  margin-left: 2%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.modal .modal-content .modal-body__lowestPrice div:nth-child(2) span {
+  font-weight: normal;
+}
 .modal .modal-content .emptyCart {
   position: absolute;
   /* color: #fff; */
@@ -612,6 +632,9 @@ body {
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 .modal .modal-content .modal-footer {
   padding: 10px 16px;

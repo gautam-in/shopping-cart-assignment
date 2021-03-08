@@ -282,6 +282,8 @@ body {
     }
 
     .modal-body {
+      overflow: auto;
+      height: 70%;
       margin: 0;
       &__listItems {
         list-style: none;
@@ -303,6 +305,7 @@ body {
             margin-bottom: 0.2em;
           }
           &Head {
+            font-weight: bold;
             margin: 0 0 0.2em 0.5em;
           }
           &Total {
@@ -328,6 +331,24 @@ body {
           }
         }
       }
+      &__lowestPrice {
+        display: flex;
+        height: 2.5em;
+        background: #fff;
+        margin-top: 2%;
+        margin-left: 5px;
+        margin-right: 5px;
+
+        div:nth-child(2) {
+          margin-left: 2%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          span {
+            font-weight: normal;
+          }
+        }
+      }
     }
 
     .emptyCart {
@@ -340,6 +361,9 @@ body {
       -webkit-transform: translate(-50%, -50%);
       transform: translate(-50%, -50%);
       text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
     .modal-footer {
       padding: 10px 16px;
