@@ -1,0 +1,7 @@
+@import "reset";
+@import "global";
+@import "../../node_modules/bootstrap/scss/bootstrap";
+// @import "../../node_modules/flickity/dist/flickity.css";
+@import "utils/flexbox-styles";
+@import "carousel-styles", "home", "products", "cart", "login";
+ 

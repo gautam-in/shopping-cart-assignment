@@ -1,0 +1,50 @@
+$backgroundColor: #ecf0f1;
+
+.product-box {
+    box-shadow: 8px 0 6px -8px rgb(90, 90, 90);
+}
+
+.product-box:nth-child(4n) {
+    box-shadow: none;
+}
+
+.categories-pane {
+    background-color: $backgroundColor;
+    .categories-row {
+        .individual-category {
+            border-bottom: 2px solid rgb(112, 108, 108);
+            a:link,
+            a:visited {
+                color: rgba(0, 0, 0, 0.7);
+                text-decoration: none;
+                transition: color 0.5s font-weight 0.5s;
+            }
+            a:hover,
+            a:active,
+            a:focus {
+                color: #000;
+                font-weight: 600;
+                outline: none;
+            }
+        }
+    }
+}
+
+.product-description {
+    background-color: $backgroundColor;
+    height: 100px;
+    // overflow: hidden;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    &:hover{
+        cursor: help;
+    }
+}
+
+h4 {
+    height: 110px;
+}

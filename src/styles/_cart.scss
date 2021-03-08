@@ -1,0 +1,32 @@
+#cart-modal{
+    header{
+        display: flex;
+        justify-content: space-between;
+        background-color: #000;
+        color: #fff;
+        .btn-link{
+            color:white;
+        }
+        .btn-link:hover{
+            text-decoration: none;
+        }
+    }
+    .cart-body{
+        overflow-y: auto;
+    }
+}
+
+.change-quantity{
+    font-size: 125%;
+    &:hover{
+        cursor: pointer;
+    }
+}
+
+.multiply{
+    font-size: 150%;
+}
+
+.total-in-cart{
+    font-size: 70%;
+}

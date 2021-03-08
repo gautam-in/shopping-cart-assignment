@@ -13,3 +13,22 @@ npm run start
 yarn install
 yarn start
 ```
+
+To start a development server, use:
+```
+npm run dev
+```
+For production mode, use:
+```
+npm run build
+```
+To run tests, use:
+```
+npm run test
+```
+
+## Usability enhancements/changes
+
+* Used ellipsis and introduced tooltips to view incomplete product descriptions.
+* Changed a few colors due to contrast issues which were hampering accessibility checks.
+
