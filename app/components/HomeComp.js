@@ -23,17 +23,27 @@ const HomeComp = () => {
     /**
     * function for banners list data
     */
+   const successCallback = response => {
+        setBannersObject(
+            ...bannersObject,
+            response.data
+        )
+   }
+   const failureCallback = error => {
+        Swal.fire(BANNER_ERROR_MSG, response.message, ERROR)
+   }
     const bannerGetCall = async () => {
-        const response = await getbannersListDetails()
-        if (response && response.status === 200 && response.data) {
-            setBannersObject(
-                ...bannersObject,
-                response.data
-            )
-        }
-        else {
-            Swal.fire(BANNER_ERROR_MSG, response.message, ERROR)
-        }
+        getbannersListDetails(successCallback,failureCallback)
+        // const response = await getbannersListDetails()
+        // if (response && response.status === 200 && response.data) {
+        //     setBannersObject(
+        //         ...bannersObject,
+        //         response.data
+        //     )
+        // }
+        // else {
+        //     Swal.fire(BANNER_ERROR_MSG, response.message, ERROR)
+        // }
     }
     /**
     * function for products list Data

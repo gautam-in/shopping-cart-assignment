@@ -3,9 +3,18 @@ import axios from 'axios';
 /**
  * function for get object of banner list details 
  */
-export const getbannersListDetails = () => {
-  return axios.get('http://localhost:5000/banners').then(response => response).catch(error => error)
-
+export const getbannersListDetails = (successCallback, failureCallback) => {
+  axios.get('http://localhost:5000/banners')
+    .then(response =>  {
+      //checks
+      if (response && response.status === 200 && response.data) {
+        successCallback(response)
+      }else{
+        failureCallback(response)
+      }
+    })
+    .catch(error => failureCallback(error))
+  // urls in constants.
 }
 
 /**
@@ -20,8 +29,17 @@ export const getCategoriesListDetails = () => {
  * function for get object of products list details 
  */
 
-export const getProductsDetails = () => {
-  return axios.get('http://localhost:5000/products').then(response => response).catch(error => error)
+export const getProductsDetails = (successCallback , failureCallback) => {
+  return axios.get('http://localhost:5000/products')
+  .then(response =>  {
+    //checks
+    if (response && response.status === 200 && response.data) {
+      successCallback(response)
+    }else{
+      failureCallback(response)
+    }
+  })
+  .catch(error => failureCallback(error))
 }
 
 

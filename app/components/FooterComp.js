@@ -20,11 +20,11 @@ import React from 'react';
 import { FOOTER_TEXT } from '../constant';
 const FooterComp = () => {
     return (
-        <div className="footer">
+        <footer className="footer">
             <div className="inner-footer">
                 {FOOTER_TEXT}
             </div>
-        </div>
+        </footer>
     )
 }
 export default FooterComp;

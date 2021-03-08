@@ -12,7 +12,7 @@ const HeaderComp = (props) => {
         settoggleCart(flag)
     }
     return (
-        <div className="header">
+        <header className="header">
             <div className="inner-header floatcontainer">
                 <div className="logo-container">
                     <img src={logo} alt="App Logo" />
@@ -38,7 +38,7 @@ const HeaderComp = (props) => {
                     </div>
                 </div>
             </div>
-        </div>
+        </header>
     )
 }
 export default HeaderComp;
