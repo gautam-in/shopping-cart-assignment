@@ -32,7 +32,7 @@ class Signin extends React.Component {
 
     }
     static getDerivedStateFromProps(props,state){
-      if(props.signIn && props.signIn.userData && props.router){
+      if(props.signIn && props.signIn.userData){ //&& props.router
         props.router.push('/Home');
       }
       return state;
@@ -91,9 +91,9 @@ class Signin extends React.Component {
                 <div> </div>
                 <div className="row login-left-area">
                   <h1>Login</h1>
-                  <p>Get access to your Orders, Wishlist and Recommendations.</p>
+                  <p>{Constants.TEXTS.DEFAULTS.get_access_signin}</p>
                   {loginError && (<div id="errorarea" className="errorArea">
-                    <p>Invalid login credentials.</p>
+                    <p>{Constants.TEXTS.DEFAULTS.invalid_login}</p>
                   </div>)}
                 </div>
                 <div> </div>

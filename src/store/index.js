@@ -5,8 +5,7 @@ import reducer from '../reducers';
 import configureMockStore from "redux-mock-store";
 export default function configureStore(history, initialState) {
     const middlewares = [routerMiddleware(history), thunk];
-    let finalCreateStore;
-    finalCreateStore = compose(applyMiddleware(...middlewares))(createStore);
+    const finalCreateStore = compose(applyMiddleware(...middlewares))(createStore);
     const store = finalCreateStore(reducer, initialState);
     return store;
 }

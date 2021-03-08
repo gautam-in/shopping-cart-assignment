@@ -1,7 +1,7 @@
 .full-width-footer{
     max-width: 100%;
     padding:10px 0;
-    background-color: #cfcfcf;
+    background-color: $grey;
     .space-footer{
         justify-content: flex-start;
         font-size: 90%;
@@ -12,13 +12,13 @@
 .footer-area{
     position: relative;
     bottom: 0px;
-    background-color: #cfcfcf;
+    background-color: $grey;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    border-top: 1px solid #cfcfcf;
+    border-top: 1px solid $grey;
 .footer-btn{
     font-weight: 600;
     background-color: $violetpink;
@@ -26,19 +26,19 @@
     align-items: center;
     justify-content: space-between;
     cursor: pointer;
-    color:#fff;
+    color:$white;
     padding-top:20px;
     padding-bottom: 20px;
     width: calc(100% - 40px);
     margin: 0px 20px 20px 20px;
     i{
-        color:#fff;
+        color: $white;
     }
     p{
         text-align: center;
     }
-    .price-info span {
-        padding-left: 10px;
-    }
+    // .price-info span {
+    //     padding-left: 10px;
+    // }
 }
 }

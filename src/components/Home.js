@@ -13,6 +13,7 @@ import { Modal } from "react-responsive-modal";
 import Cart from '../presentations/Cart';
 import Constants from '../constants';
 import toastr from 'toastr';
+import CategoryBanner from '../presentations/CategoryBanner';
 class Home extends React.Component {
     constructor(props){
         super(props);
@@ -68,8 +69,12 @@ class Home extends React.Component {
     document.getElementsByTagName('html')[0].style.overflow = 'auto';
   };
     navigateToPlp=(e,data)=>{
-      if(data)
-      this.props.router.push('/products?cat='+data.name+'&id='+data.id);
+      if(data){
+      const productRoute = 'products';
+      const catId = "cat="+data.name;
+      const prodId = "id="+data.id;
+      this.props.router.push(`${'/'+productRoute+'?'+catId+'&'+prodId}`);
+      }
     }
   render(){
     const settings = {
@@ -97,32 +102,9 @@ class Home extends React.Component {
         </div>
       </section>
       <div className="category-banners-area">
-          {categoryData && categoryData.length ? categoryData.filter((item)=>{return item.order>= 0}).map((data,i)=>(<section className="single-banner-area content-seperator" key={i}>
-            {data.imageUrl && (<div>
-            <div className="col span-1-of-2">
-              {i%2 != 0 ? (<div className="row login-left-area">
-                    <h1>{data.name}</h1>
-                    <p>{data.description}</p>
-                    <button className="btn" aria-label={`Click on explore ${data.name} button to view products`} onClick={(event)=>this.navigateToPlp(event,data)}>{'Explore '+data.name}</button>
-              </div>) : (<div className="row banner-right-area">
-                <LazyLoad height={25} once>
-                  <img src={window.location.origin + data.imageUrl} alt={data.name} />
-                </LazyLoad>
-              </div>)}
-            </div>
-            <div className="col span-1-of-2">
-            {i%2 != 0 ? (<div className="row banner-right-area">
-                <LazyLoad height={25} once>
-                  <img src={window.location.origin + data.imageUrl} alt={data.name} />
-                </LazyLoad>
-              </div>) : (<div className="row login-left-area">
-                    <h1>{data.name}</h1>
-                    <p>{data.description}</p>
-                    <button className="btn" aria-label={`Click on explore ${data.name} button to view products`} onClick={(event)=>this.navigateToPlp(event,data)}>{'Explore '+data.name}</button>
-              </div>)}
-            </div>
-            </div>)}
-          </section>)) : null}
+          {categoryData && categoryData.length ? categoryData.filter((item)=>{return item.order>= 0}).map((data,i)=>(<React.Fragment key={i}>
+            <CategoryBanner data={data} index={i} navigateToPlp={this.navigateToPlp} />
+          </React.Fragment>)) : null}
       </div>
       <Footer></Footer>
       {openModal ? (<Modal

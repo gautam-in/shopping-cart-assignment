@@ -19,7 +19,7 @@ export function getViewPortDimensions(){
 
 export function validEmail(email){
     let valid = false;
-    let emailValidRegex=/^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/i;
+    const emailValidRegex=/^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/i;
     if(email){
         valid = emailValidRegex.test(email);
     }
@@ -29,7 +29,7 @@ export function validEmail(email){
 
 export function validPwd(pwd){
     let valid = false;
-    let pwdValidRegex = /^((?!.*[\s])(?=.*[A-Z])(?=.*\d).{6,})$/i; //must have 6 chars and alphabet and numberic and no spaces
+    const pwdValidRegex = /^((?!.*[\s])(?=.*[A-Z])(?=.*\d).{6,})$/i; //must have 6 chars and alphabet and numberic and no spaces
     if(pwd){
         valid = pwdValidRegex.test(pwd);
     }

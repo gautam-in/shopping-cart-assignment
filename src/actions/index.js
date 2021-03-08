@@ -16,4 +16,5 @@ const actions = {
     POST_CART_DATA_FAILURE: 'POST_CART_DATA_FAILURE',
     SET_USER: 'SET_USER'
 }
+
 export default actions;

@@ -44,9 +44,12 @@ class Cart extends React.Component{
     evaluateTotalPrice=()=>{
         let itmLst = this.state.itemList;
         let totalValue = 0;
-        for(let i=0;i<itmLst.length;i++){
-            totalValue += itmLst[i].finalPrice;
-        }
+        // for(let i=0;i<itmLst.length;i++){
+        //     totalValue += itmLst[i].finalPrice;
+        // }
+        itmLst.forEach((item)=>{
+            totalValue+= item.finalPrice;
+        });
         this.setState({totalCartValue: totalValue});
     }
     render(){
@@ -129,9 +132,11 @@ function mapStateToProps(state){
         productInfo: state.productReducer
     }
 }
+
 const mapDispatchToProps = (dispatch,ownProps) => {
     return {
         resetCartData: ()=>{dispatch(resetCartData())}
     }
 }
+
 export default connect(mapStateToProps,mapDispatchToProps)(Cart);

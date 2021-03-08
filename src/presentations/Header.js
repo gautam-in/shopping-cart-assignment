@@ -11,6 +11,7 @@ class Header extends React.Component {
      constructor(props) {
         super(props);
         this.state = {
+            isMobileView: false,
             logo: '',
             clickable: false,
             userName:'',
@@ -53,8 +54,14 @@ class Header extends React.Component {
         this.props.resetCartData();
     }
     doResizeActions=()=>{
-        let dimensions = getViewPortDimensions();
-        this.setState({dimensions: dimensions});
+        const dimensions = getViewPortDimensions();
+        let ismobileview;
+        if(dimensions.width <= 480){
+            ismobileview = true;
+        } else{
+            ismobileview = false;
+        }
+        this.setState({dimensions: dimensions,isMobileView:ismobileview});
     }
     cartClick=()=>{
         if(this.state.dimensions && this.state.dimensions.width && this.state.dimensions.width < 480){ //1024
@@ -75,14 +82,16 @@ class Header extends React.Component {
                     <div className="row">
                         <img onClick={this.showHome} src={window.location.origin + '/static/images/logo.png'} alt="logo" className="logo" /> {/* {Logo} */}
                         <ul className="main-nav js--main-nav">
+                            {!this.state.isMobileView && (<React.Fragment>
                             <li><Link to={`/home`} >Home</Link></li>
                             <li><Link to="/products">Products</Link></li>
-                            <div className="logo-icon-header">
-                            <li><Link to={`/home`} ><i className="ion-ios-home"></i></Link></li>
-                            <li><Link to="/products"><i className="ion-ios-list"></i></Link></li>
-                            <li><Link to={`/signin`} ><i className="ion-ios-person"></i></Link></li>
-                            <li><Link to="/signup"><i className="ion-ios-personadd"></i></Link></li>
-                            </div>
+                            </React.Fragment>)}
+                            {this.state.isMobileView && (<React.Fragment>
+                            <li><Link to={`/home`} >H</Link></li>
+                            <li><Link to="/products">P</Link></li>
+                            <li><Link to={`/signin`} >U</Link></li>
+                            <li><Link to="/signup">NU</Link></li>
+                            </React.Fragment>)}
                            
                         </ul>
                         <div className="guest-info">
@@ -97,7 +106,7 @@ class Header extends React.Component {
                             <div className="cartArea" aria-labelledby="cart" onClick={this.cartClick}>
                                 <div className="cart-icon">
                                     <LazyLoad height={25} once>
-                                        <img src={window.location.origin + '/static/images/cart.svg'} className="fill-purple"></img>
+                                        <img src={window.location.origin + '/static/images/cart.svg'} alt="cart" className="fill-purple"></img>
                                     </LazyLoad>
                                 </div>
                                 <span>{itemCount} items</span>
@@ -109,6 +118,7 @@ class Header extends React.Component {
         </header>
         </div>);
 }}
+
 function mapStateToProps(state){
     return{
         signin:state.signinReducer,
@@ -116,9 +126,11 @@ function mapStateToProps(state){
         productInfo: state.productReducer
     }
 }
+
 const mapDispatchToProps = (dispatch,ownProps) => {
     return {
         resetCartData: ()=>{dispatch(resetCartData())}
     }
 }
+
 export default connect(mapStateToProps,mapDispatchToProps)(Header);

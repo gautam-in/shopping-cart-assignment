@@ -219,13 +219,15 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: white;
+    background: $white;
     margin: 2px;
     padding: 10px;
     width:200px;
 }
 
-.rest-tiles li img {
-    width:75px;
-    height:75px;
+.rest-tiles 
+        li 
+            img {
+                width:4rem;
+                height:4rem;
 }

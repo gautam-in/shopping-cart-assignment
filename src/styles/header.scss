@@ -1,3 +1,4 @@
+$font-weight-mid: 600;
 .cart-icon img.fill-purple {
     filter: invert(23%) sepia(99%) saturate(1675%) hue-rotate(291deg) brightness(85%) contrast(95%);
   }
@@ -6,7 +7,7 @@
 .logo {
     height: 50px;
     width: auto;
-    float: left;
+    // float: left;
     margin-top: 20px;
     margin-left: 10px;
 }
@@ -30,7 +31,7 @@
 .main-nav li {
     display: inline-block;
     margin-left: 40px;
-    font-weight: 600;
+    font-weight: $font-weight-mid;
 }
 
 .main-nav li a:link,
@@ -104,9 +105,9 @@
     width: 20px;
     height: 20px;
     img{
-        width:20px !important;
-        height: auto !important;
-        margin: 0px !important;
+        width:20px;
+        height: auto;
+        margin: 0px;
     }
 }
 .guest-info{

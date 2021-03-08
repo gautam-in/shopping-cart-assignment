@@ -55,11 +55,15 @@ export function addToCart(item){
 
 export function resetCartReduxProcessData(){
     return function(dispatch){
-        dispatch({type:actions.CART_PROCESS_RESET});
+        dispatch({
+            type:actions.CART_PROCESS_RESET
+        });
     }
 }
 export function resetCartData(){
     return function(dispatch){
-        dispatch({type:actions.RESET_CART_DATA});
+        dispatch({
+            type:actions.RESET_CART_DATA
+        });
     }
 }

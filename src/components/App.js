@@ -7,7 +7,7 @@ class App extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            isOfflineMsg:false
+            // isOfflineMsg:false
         }
     }
     componentDidMount(){
@@ -20,12 +20,12 @@ class App extends Component {
     }
     offline=() => {
         let errMsg = Constants.TEXTS.DEFAULTS.offline_msg;
-        this.setState({ isOfflineMsg: true },()=>{
+        // this.setState({ isOfflineMsg: true },()=>{
             toastr.warning('',errMsg); 
-        });          
+        // });          
     }
     online=()=>{
-        this.setState({ isOfflineMsg: false });
+        // this.setState({ isOfflineMsg: false });
         toastr.success('',Constants.TEXTS.DEFAULTS.online_msg);
     }
     render(){

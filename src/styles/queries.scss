@@ -97,7 +97,13 @@
             
         }
     }
-
+    .cartArea .cart-icon{
+        img{
+            width:20px;
+            height:auto;
+            margin:0px;
+        }
+    }
     .guest-info{
         flex-direction: column-reverse;
         position: absolute;

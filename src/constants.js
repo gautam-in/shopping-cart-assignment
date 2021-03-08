@@ -8,7 +8,13 @@ const constants = {
             hai: 'Hi',
             invalid_email: 'Invalid email',
             offline_msg: 'It seems that you are offline. Please check your internet connection.',
-            online_msg: 'You are back online'
+            online_msg: 'You are back online',
+            page_not_found: 'Page Not Found!',
+            get_access_signin: 'Get access to your Orders, Wishlist and Recommendations.',
+            invalid_login: 'Invalid login credentials'
+        },
+        ROUTE_TEXTS:{
+            navigate_to_home: 'Click here to go home page'
         },
         TOASTS: {
             fname: 'Enter first name',

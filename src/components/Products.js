@@ -10,6 +10,7 @@ import toastr from 'toastr';
 import { Modal } from "react-responsive-modal";
 import Cart from '../presentations/Cart';
 import Constants from '../constants';
+import ProductItem from '../presentations/ProductItem';
 class Products extends React.Component{
     constructor(props){
         super(props);
@@ -110,7 +111,10 @@ class Products extends React.Component{
                 <section className="col span-9-of-12 product-list-area">
                     <div className="prod-list">
                         <ul className="rest-tiles">
-                        {productList && productList.length ? productList.filter((data)=>{return this.state.catId ? this.state.catId == data.category : data }).map((item,i)=>(<li key={i}>
+                        {productList && productList.length ? productList.filter((data)=>{return this.state.catId ? this.state.catId == data.category : data }).map((item,i)=>(
+                        <React.Fragment key={i}>
+                            <ProductItem item={item} i={i} addToCart={this.addToCart} />
+                        {/* <li key={i}>
                             <p className="prod-name" title={item.name}>{item.name}</p>
                             <div className="prod-detls">
                             <div className="prod-img">
@@ -138,7 +142,8 @@ class Products extends React.Component{
                             </div>
                             </div>
                             </div>
-                        </li>)) : null}
+                        </li> */}
+                        </React.Fragment>)) : null}
                         </ul>
                     </div>
                 </section>

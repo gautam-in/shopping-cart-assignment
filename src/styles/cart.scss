@@ -4,14 +4,14 @@
     align-items: center;
     justify-content: space-between;
     background-color: #000;
-    h2{color:#fff;}
+    h2{color: $white;}
     i{
-        color:#fff;
+        color: $white;
         cursor: pointer;
         font-size: 36px;
     }
     .close-icon{
-        color: #fff;
+        color: $white;
         font-size: 300%;
         cursor: pointer;
     }
@@ -32,7 +32,7 @@
 .site-promoto {
     display: flex;
     justify-content: flex-start;
-    background: #fff;
+    background: $white;
     padding: 10px;
     margin: 10px 10px;
 }
@@ -47,7 +47,7 @@
         align-items: center;
         font-size: 90%;
         width: 100%;
-        background-color: #fff;
+        background-color: $white;
         margin-bottom: 20px;
         img{
             width:50px;
@@ -66,7 +66,7 @@
                 height: 15px;
                 background-color: $violetpink;
                 // padding:0 10px;
-                color:#fff;
+                color:$white;
                 cursor: pointer;
                 border-radius: 50%;
                 margin: 0 10px;
@@ -107,16 +107,16 @@
     }
 }
 .cart-page .footer-area{
-    background-color: #fff;
+    background-color: $white;
 }
 .price-info span.arrow{
     right:0;
-    color:#fff;
-    border: solid #fff;
+    color:$white;
+    border: solid $white;
     border-width: 0 3px 3px 0;
     display: inline-block;
-    padding-left: auto;
-    padding: 5px 5px 5px !important;
+    // padding-left: auto;
+    padding: 5px 5px 5px;
     transform: rotate(-45deg);
     -webkit-transform: rotate(-45deg);
     :before{color: transparent;}

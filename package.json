@@ -51,7 +51,6 @@
     "handlebars": "^4.7.7",
     "history": "^3.0.0",
     "jest": "^26.6.3",
-    "jquery": "^3.5.1",
     "jquery.nicescroll": "^3.7.6",
     "moment": "^2.29.0",
     "node-sass": "^4.14.1",

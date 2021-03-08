@@ -1,4 +1,5 @@
 /* signin */
+$floating-label-color: #909090;
 .signin-area .login-left-area p{
     line-height: normal;
     margin: 10px 0;
@@ -49,7 +50,7 @@ input:not(:placeholder-shown)~.floating-label{
   width: 200px;
   height: 35px;
   border:0;
-  border-bottom: 1px solid #909090;
+  border-bottom: 1px solid $floating-label-color;
   width: 50%;
 }
 
@@ -58,7 +59,7 @@ input:not(:placeholder-shown)~.floating-label{
   pointer-events: none;
   left: 1px;
   top: 1px;
-  padding:10px 0;
+  padding: 10px 0;
   transition: 0.2s ease all;
-  color:#909090;
+  color: $floating-label-color;
 }

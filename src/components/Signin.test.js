@@ -38,8 +38,8 @@ describe('Signin Page validation',()=>{
     //     wrapper = setUpFn();
     //   });
     let fetch;
-    let routing = routerReducer;
-    const props={productReducer:{cartItems:[]},cartClick:()=>{},signinReducer:{userData:{userEmail:''}},signUpReducer:{userData:{userEmail:''}},...routing};//router:{push:()=>{}},
+    // let routing = routerReducer;
+    const props={productReducer:{cartItems:[]},cartClick:()=>{},signinReducer:{userData:{userEmail:''}},signUpReducer:{userData:{userEmail:''}},router:{push:(data)=>{'/'+data+''}}};//router:{push:()=>{}},
     let store;// = mockStore({});
 
     beforeEach(() => {
@@ -70,7 +70,7 @@ describe('Signin Page validation',()=>{
         // </Provider>).dive();
         // wrapper.setProps({...props});
         // console.warn(wrapper.children().props());
-        // console.warn(wrapper.props().children.props);
+        console.warn(wrapper.props());
         const button = wrapper.find('button');
         // .childAt(1).dive();
         // expect(wrapper.contains(<div className="row" />).toBeEqual(true));
