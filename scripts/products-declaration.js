@@ -83,7 +83,7 @@ allProducts.bakeryObj.paneer = {
     priceText: "MRP Rs.98",
 };
 allProducts.bakeryObj.yogurtBlue = {
-    title: " Epigamia Greek Yogurt - Blueberry, 90 gm Cup",
+    title: "Epigamia Greek Yogurt - Blueberry, 90 gm Cup",
     imgSrc: "bakery-cakes-dairy/yogurt-blue.jpg",
     imgAlt: "Epigamia Greek Yogurt - Blueberry, 90 gm Cup logo",
     imgLabel: "blueberryYogurt",
