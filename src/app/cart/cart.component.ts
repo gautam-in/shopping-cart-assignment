@@ -18,7 +18,7 @@ export class CartComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this._cartService.itemCount$.subscribe(data => {
+    this._cartService.cartItems$.subscribe((data: IProduct[]) => {
       this.groceryCart = data;
     });
     this._cartService.totalItemPrice();
@@ -28,8 +28,8 @@ export class CartComponent implements OnInit {
     return this._cartService.increaseProductQuantity(product);
   }
 
-  removeProduct(product: IProduct) {
-    return this._cartService.removeProduct(product);
+  removeProductFromCart(product: IProduct) {
+    return this._cartService.removeProductFromCart(product);
   }
 
   totalAmount() {

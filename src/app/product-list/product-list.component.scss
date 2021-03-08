@@ -1,17 +1,16 @@
-@import '../../styles.scss';
+@import "../../styles.scss";
 
-
-aside{
+aside {
     background-color: $color-gray;
 }
 
-.side-bar{
+.side-bar {
     border-bottom: 1px solid $color-dark-gray;
     padding: 5px;
     list-style: none;
 }
 
-.highlightCategory{
+.highlightCategory {
     background-color: $color-pink;
     color: $color-white;
 }

@@ -7,13 +7,13 @@ import { IProduct } from '../model/product.model';
 })
 export class CartService {
   subject$ = new BehaviorSubject([]);
-  itemCount$ = this.subject$.asObservable();
+  cartItems$ = this.subject$.asObservable();
   initialCart = [];
   finalCart = [];
 
   constructor() { }
 
-  addProduct(product: IProduct) {
+  addProductToCart(product: IProduct) {
     let newCart = [];
     let index = 0;
     this.initialCart.push(product);
@@ -26,18 +26,18 @@ export class CartService {
     });
     this.finalCart = newCart.filter((val, i) => newCart.indexOf(val) === i);
     this.subject$.next(this.finalCart);
-    return this.itemCount$;
+    return this.cartItems$;
   }
 
-  removeProduct(product: IProduct) {
-    const productPosition = this.finalCart.indexOf(product);
-    if (productPosition != -1) {
+  removeProductFromCart(product: IProduct) {
+    const productIndex = this.finalCart.indexOf(product);
+    if (productIndex != -1) {
       this.finalCart.forEach(prod => {
         if (prod.id === product.id && prod.count > 0) {
           prod.count -= 1;
         }
         if (prod.count === 0) {
-          this.finalCart.splice(productPosition, 1);
+          this.finalCart.splice(productIndex, 1);
         }
       })
     }

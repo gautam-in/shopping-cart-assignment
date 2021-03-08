@@ -30,9 +30,9 @@
                                 <div>
                                     <i class="fa fa-plus-square icon-fa" (click)="increaseProductQuantity(product)" aria-label="increase product unit"></i>
                                     <span>{{product.count}}</span>
-                                    <i class="fa fa-minus-square icon-fa" (click)="removeProduct(product)" aria-label="decrease product unit"></i>
-                                    <span class="item-price">X &nbsp; &nbsp;Rs. {{product.price}}</span>
-                                    <span class="item-total-price">Rs.{{product.totalPrice}}</span>
+                                    <i class="fa fa-minus-square icon-fa" (click)="removeProductFromCart(product)" aria-label="decrease product unit"></i>
+                                    <span class="item-price">X &nbsp; &nbsp;{{product.price | currency: 'INR'}}</span>
+                                    <span class="item-total-price">{{product.totalPrice | currency: 'INR'}}</span>
                                 </div>
                             </div>
                         </div>
@@ -56,7 +56,8 @@
                     <p>Promo code can be applied on payment page</p>
                     <button type="button" class="common-btn" (click)="resetCart()"
                         aria-valuetext="Proceed to Checkout Rs.  /-" data-dismiss="modal" aria-label="Checkout">
-                        <span style="float: left;">Proceed to Checkout </span> <span style="float: right;">Rs.{{ totalAmount()}}/- ></span>
+                        <span class="checkout-text">Proceed to Checkout </span> 
+                        <span class="checkout-price">Rs.{{ totalAmount()}}/- ></span>
                     </button>
                 </ng-template>
             </div>

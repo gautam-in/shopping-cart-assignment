@@ -58,7 +58,7 @@ describe('CartComponent', () => {
     expect(component.resetCart).toHaveBeenCalled();
   });
 
-  it('should call removeProduct method', () => {
+  it('should call removeProductFromCart method', () => {
     const product = {
       name: 'Fresho Kiwi - Green, 3 pcs',
       imageURL: '/static/images/products/fruit-n-veg/kiwi-green.jpg',
@@ -69,8 +69,8 @@ describe('CartComponent', () => {
       sku: 'fnw-kiwi-3',
       id: '5b6c6a7f01a7c38429530883'
     };
-    spyOn(component, 'removeProduct').and.callThrough();
-    component.removeProduct(product);
-    expect(component.removeProduct).toHaveBeenCalled();
+    spyOn(component, 'removeProductFromCart').and.callThrough();
+    component.removeProductFromCart(product);
+    expect(component.removeProductFromCart).toHaveBeenCalled();
   });
 });

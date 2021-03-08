@@ -1,36 +1,37 @@
-@import '../../../../styles.scss';
+@import "../../../../styles.scss";
 
-nav{
+nav {
     max-height: 20%;
-    .logo{
+    .logo {
         width: 150px;
     }
-    .leftnav{
+    .leftnav {
         margin-top: 50px;
         margin-left: 70px;
     }
-    .rightnav{
+    .rightnav {
         margin-left: 500px;
     }
-    .leftnav, .rightnav{
+    .leftnav,
+    .rightnav {
         list-style: none;
     }
-    .navbar-collapse{
+    .navbar-collapse {
         flex-basis: 100%;
         flex-grow: 1;
     }
     .active {
         background-color: $color-pink;
-     }
+    }
 }
 
-.cart-container{
+.cart-container {
     background-color: $color-gray;
-    
-    .cart{
-        width: 100px ;
+
+    .cart {
+        width: 100px;
         display: inline-block;
-        .cart-logo{
+        .cart-logo {
             color: pink;
             width: 20px;
         }

@@ -35,7 +35,7 @@ export class ProductComponent implements OnInit, OnChanges {
   addProductToCart(product: IProduct) {
     this._apiService.addProductsToCart(product.id).subscribe(data => {
       if (data && data.response === 'Success') {
-        this._cartService.addProduct(product);
+        this._cartService.addProductToCart(product);
       }
     })
 
