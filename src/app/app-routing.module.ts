@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent, pathMatch: 'full' },
+  { path: '', pathMatch: 'full' , redirectTo: "home"},
   { path: "home", component: HomeComponent },
   { path: "products", loadChildren: () => import(`../app/product-list/product.module`).then(m => m.ProductModule) },
   { path: "signin", loadChildren: () => import(`../app/login/login.module`).then(m => m.LoginModule) },

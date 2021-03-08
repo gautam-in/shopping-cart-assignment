@@ -47,15 +47,15 @@ describe('CartComponent', () => {
       sku: 'fnw-kiwi-3',
       id: '5b6c6a7f01a7c38429530883'
     };
-    spyOn(component, 'increaseProductQuantity').and.callThrough();
+    spyOn(cartService, 'increaseProductQuantity').and.callThrough();
     component.increaseProductQuantity(product);
-    expect(component.increaseProductQuantity).toHaveBeenCalled();
+    expect(cartService.increaseProductQuantity).toHaveBeenCalled();
   });
 
   it('should call resetCart method', () => {
-    spyOn(component, 'resetCart').and.callThrough();
+    spyOn(cartService, 'resetCart').and.callThrough();
     component.resetCart();
-    expect(component.resetCart).toHaveBeenCalled();
+    expect(cartService.resetCart).toHaveBeenCalled();
   });
 
   it('should call removeProductFromCart method', () => {
@@ -69,8 +69,20 @@ describe('CartComponent', () => {
       sku: 'fnw-kiwi-3',
       id: '5b6c6a7f01a7c38429530883'
     };
-    spyOn(component, 'removeProductFromCart').and.callThrough();
+    spyOn(cartService, 'removeProductFromCart').and.callThrough();
     component.removeProductFromCart(product);
-    expect(component.removeProductFromCart).toHaveBeenCalled();
+    expect(cartService.removeProductFromCart).toHaveBeenCalled();
+  });
+
+  it('should call totalAmount method', () => {
+    spyOn(cartService, 'totalAmount').and.callThrough();
+    component.totalAmount();
+    expect(cartService.totalAmount).toHaveBeenCalled();
+  });
+
+  it('should call totalItemPrice method', () => {
+    spyOn(cartService, 'totalItemPrice').and.callThrough();
+    component.totalItemPrice();
+    expect(cartService.totalItemPrice).toHaveBeenCalled();
   });
 });

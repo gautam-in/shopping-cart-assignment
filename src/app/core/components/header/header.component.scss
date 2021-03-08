@@ -22,6 +22,11 @@ nav {
     }
     .active {
         background-color: $color-pink;
+        color: $color-gray;
+    }
+    .active-cart{
+        background-color: $color-gray;
+        color: $color-black;
     }
 }
 

@@ -1,7 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 @import "./assets/partials/colors";
-@import "~font-awesome/scss/font-awesome";
-@import "https://fonts.googleapis.com/css?family=Dosis:400,600,700";
+@import "./assets//partials/form";
 
 body {
     font-family: "Dosis" !important;
@@ -9,45 +8,10 @@ body {
     color: $color-black;
 }
 
-.form-control {
-    border: 0;
-    outline: 0;
-    background: transparent;
-    border-bottom: 2px solid $color-black;
+.nav-link {
+    color: $color-black;
 }
 
-.custom-group {
-    position: relative;
-    margin-top: 15px;
-    margin-bottom: 25px;
-    .floating-label {
-        color: $color-white;
-        font-size: 16px;
-        position: absolute;
-        pointer-events: none;
-        top: 9px;
-        left: 12px;
-        transition: all 0.1s ease;
-    }
-
-    input:focus ~ .floating-label,
-    input:not(:focus):valid ~ .floating-label {
-        top: -15px;
-        bottom: 0px;
-        left: 0px;
-        font-size: 16px;
-        opacity: 1;
-        color: $color-blue;
-        border: none;
-    }
-
-    input.form-control:focus,
-    input[type="text"]:focus,
-    [type="text"].form-control:focus {
-        box-shadow: inset 0 -1px 0 #ddd;
-        border-bottom: 2px solid $color-blue;
-    }
-}
 
 .common-btn {
     background-color: $color-pink;

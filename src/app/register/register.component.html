@@ -40,7 +40,7 @@
                 </div>
 
                 <div class="form-group custom-group">
-                    <input class="form-control" type="text" formControlName="email" id="email" placeholder=""
+                    <input class="form-control" type="email" formControlName="email" id="email" placeholder=""
                         pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required aria-label="Enter email">
                     <label for="email" class="floating-label">Email</label>
 
@@ -56,7 +56,7 @@
                 </div>
 
                 <div class="form-group custom-group">
-                    <input class="form-control" type="text" formControlName="password" id="password" placeholder=""
+                    <input class="form-control" type="password" formControlName="password" id="password" placeholder=""
                         required minlength="6" pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$"
                         aria-label="Enter password">
                     <label for="password" class="floating-label">Password</label>
@@ -72,7 +72,7 @@
                 </div>
 
                 <div class="form-group custom-group">
-                    <input class="form-control" type="text" formControlName="confirmPassword" id="confirmPassword"
+                    <input class="form-control" type="password" formControlName="confirmPassword" id="confirmPassword"
                         placeholder="" required minlength="6" aria-label="Enter confirmPassword">
                     <label for="confirmPassword" class="floating-label">Confirm Password</label>
                     <div *ngIf="registerForm.controls['confirmPassword'].touched && !registerForm.controls['confirmPassword'].valid"

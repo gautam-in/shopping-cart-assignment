@@ -4,6 +4,9 @@
     .modal-header {
         background-color: $color-black;
         color: $color-white;
+        .close{
+            color: $color-gray;
+        }
     }
     .modal-body {
         height: 500px;
@@ -12,8 +15,20 @@
             text-align: center;
         }
     }
+    .modal-footer{
+        .footer-section{
+            width: 100%;
+        }
+    }
 }
 
+.card-body{
+    text-align: right;
+}
+
+.cart-description{
+    margin-left: -100px;
+}
 .cart-offer {
     margin: 10px;
     display: flex;
