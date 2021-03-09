@@ -8,6 +8,6 @@ Enzyme.configure({adapter: new Adapter()});
 const wrapper = shallow(<Error />);
 
 it('show error message text',()=>{
-    console.log(wrapper.find('.error-info').text());
+    // console.log(wrapper.find('.error-info').text());
     expect(wrapper.find('.error-info').text()).toBe('Page Not Found!<Link />');
 });
