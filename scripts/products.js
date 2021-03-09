@@ -136,7 +136,8 @@ function loadProductsBasedOnSelection(obj) {
         productCardBuyDiv.appendChild(productCardBuyPriceDiv);
         let btn = document.createElement("button");
         btn.classList.add("flex-row", "btn", "product-card__buy--btn");
-        btn.setAttribute("aria-label", h1.innerText);
+        btn.setAttribute("aria-label", `Buy ${h1.innerText}`);
+        btn.setAttribute("data-name", h1.innerText);
         let span = document.createElement("span");
         span.classList.add("product-card__buy--sm-txt");
         span.innerText = obj[key].priceText.replace("MRP ", " @ ");

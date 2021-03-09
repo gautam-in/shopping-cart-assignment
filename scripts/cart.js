@@ -5,7 +5,7 @@ updateCartCount(cartCount);
 let cartItems = [];
 let cartItemsMoreThanZero2;
 document.querySelectorAll(".product-card button").forEach((el) => {
-    cartItems.push({ [el.ariaLabel]: 0 });
+    cartItems.push({ [el.dataset.name]: 0 });
 });
 
 let spanElForCartItems = document.createElement("span");
@@ -70,10 +70,10 @@ if (document.querySelector(".product-list-row")) {
                 cartCount = cartCount + 1;
                 updateCartCount(cartCount);
                 let idx = cartItems.findIndex(
-                    (el) => event.target.ariaLabel == Object.keys(el)[0]
+                    (el) => event.target.dataset.name == Object.keys(el)[0]
                 );
-                cartItems[idx][event.target.ariaLabel] += 1;
-                setPrice(event, event.target.ariaLabel);
+                cartItems[idx][event.target.dataset.name] += 1;
+                setPrice(event, event.target.dataset.name);
             }
         });
 }
@@ -213,9 +213,9 @@ function onCartKeypressOrClick() {
                 <div>
                     <div tabindex="0">${Object.keys(el)[0]} </div>
                     <div>
-                        <div  class="minus"> <a tabindex="0" aria-label="Decrement quantity" class="add">-</a> </div>
+                        <div  class="minus"> <a tabindex="0" aria-label ="Decrement quantity to ${Object.values(el)[0] - 1}" class="add">-</a> </div>
                         <span class="quantity"> ${Object.values(el)[0]}</span>
-                        <div  class="plus"> <a tabindex="0" aria-label="Increment quantity" class="add">+</a> </div>
+                        <div  class="plus"> <a tabindex="0" aria-label ="Increment quantity to ${Object.values(el)[0] + 1}"  class="add">+</a> </div>
                         <span class="close">&times;</span> <span tabindex="0" class="total-rs">Rs. ${el.singleQtyPrice
                 }</span>
                     </div>
@@ -332,6 +332,8 @@ function onCartKeypressOrClick() {
                                 event.target.parentElement.parentElement.previousElementSibling
                                     .innerText
                             );
+                            event.target.parentElement.firstElementChild.ariaLabel = `Increment quantity to ${Number(event.target.parentElement.parentElement.querySelector('.quantity').innerText) + 1}`
+                            event.target.parentElement.parentElement.querySelector('.minus').firstElementChild.ariaLabel = `Decrement quantity to ${Number(event.target.parentElement.parentElement.querySelector('.quantity').innerText) - 1}`
                             let sum = cartItemsMoreThanZero2.reduce((acc, el) => {
                                 acc += el.price;
                                 return acc;
@@ -382,6 +384,8 @@ function onCartKeypressOrClick() {
                                 event.target.parentElement.parentElement.previousElementSibling
                                     .innerText
                             );
+                            event.target.parentElement.firstElementChild.ariaLabel = `Decrement quantity to ${Number(event.target.parentElement.parentElement.querySelector('.quantity').innerText) - 1}`
+                            event.target.parentElement.parentElement.querySelector('.plus').firstElementChild.ariaLabel = `Increment quantity to ${Number(event.target.parentElement.parentElement.querySelector('.quantity').innerText) + 1}`
                             if (
                                 event.target.parentElement.nextElementSibling.innerText == "0"
                             ) {
