@@ -68,10 +68,10 @@ class Products extends React.Component{
     };
     getDropDwnSelectedVal=(id,data)=>{
         if(id && data){
-            let selItem = data.filter((item)=>{
+            const selItem = data.filter((item)=>{
                 if(item.id)
                 return id == item.id;
-            })
+            });
             if(selItem.length){
                 return selItem[0].id;
             }
@@ -82,7 +82,7 @@ class Products extends React.Component{
     render(){
         const {homeApi,productInfo,router} = this.props;
         const {categoryData,productList,openModal} = this.state;
-        return(<div className="products-page">
+        return(<main className="products-page">
             <div className="overlay" style={{display: (productInfo.searching_productdetails|| productInfo.adding_to_cart  || homeApi.categorydata_searching) ? "block" : "none"}}>
                 <div className="loading"><SvgLoading /></div>
             </div>
@@ -91,7 +91,7 @@ class Products extends React.Component{
                 <aside className="col span-3-of-12 left-menu">
                     <div className="prod-categories">
                         <ul className="cat-list">
-                            {categoryData && categoryData.length ? categoryData.filter((item) => { return item.order >= 0 }).map((data, i) => (<li onClick={(event) => this.makeActiveCategory(event, data.id)} className={this.state.catId ? data.id == this.state.catId ? 'selected' : '' : ''} key={i}>
+                            {categoryData && categoryData.length ? categoryData.filter((item) => { return item.order >= 0 }).map((data, i) => (<li onClick={(event) => this.makeActiveCategory(event, data.id)} className={this.state.catId ? data.id == this.state.catId ? 'selected' : '' : ''} key={data.id}>
                                 <p>{data.name}</p>
                             </li>)) : null}
                         </ul>  
@@ -102,7 +102,7 @@ class Products extends React.Component{
                     <div className="select">
                         <select onChange={(event) => { this.makeActiveCategory(event) }} value={this.getDropDwnSelectedVal(this.state.catId, categoryData)} name="slct" id="slct">
                             <option value="default" disabled>Choose an option</option>
-                            {categoryData && categoryData.length ? categoryData.filter((item) => { return item.order >= 0 }).map((data, i) => (<option value={data.id} className={this.state.catId ? data.id == this.state.catId ? 'selected' : '' : ''} key={i}>
+                            {categoryData && categoryData.length ? categoryData.filter((item) => { return item.order >= 0 }).map((data, i) => (<option value={data.id} className={this.state.catId ? data.id == this.state.catId ? 'selected' : '' : ''} key={data.id}>
                                 {data.name}
                             </option>)) : null}                            
                         </select>
@@ -112,8 +112,8 @@ class Products extends React.Component{
                     <div className="prod-list">
                         <ul className="rest-tiles">
                         {productList && productList.length ? productList.filter((data)=>{return this.state.catId ? this.state.catId == data.category : data }).map((item,i)=>(
-                        <React.Fragment key={i}>
-                            <ProductItem item={item} i={i} addToCart={this.addToCart} />
+                        <React.Fragment key={item.id}>
+                            <ProductItem item={item} i={item.id} addToCart={this.addToCart} />
                         {/* <li key={i}>
                             <p className="prod-name" title={item.name}>{item.name}</p>
                             <div className="prod-detls">
@@ -165,7 +165,7 @@ class Products extends React.Component{
               showCloseIcon={false}>
             <Cart cartData={productInfo.cartItems} checkoutComplete={this.checkoutComplete} closeModal={this.onCloseModal}></Cart>
         </Modal>):null}
-        </div>);
+        </main>);
     }
 }
 function mapStateToProps(state){

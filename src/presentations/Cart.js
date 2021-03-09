@@ -55,7 +55,7 @@ class Cart extends React.Component{
     render(){
         const {itemList,totalCartValue} = this.state;
         const {hideHeader,closeModal,checkoutComplete} = this.props;
-        return(<main id="cart" role="dialog" tabIndex="10" aria-labelledby="dialog-title" className="cart-page">
+        return(<section id="cart" role="dialog" tabIndex="10" aria-labelledby="dialog-title" className="cart-page">
             {!hideHeader ? (<section className="cart-header modal-horizontal-space">
                 <h2 id="dialogue-title">My cart {itemList.length ? " ("+(itemList.length)+" items)" : " "}</h2>
                 <div className="close-icon" aria-label="close dialog" onClick={closeModal}>
@@ -68,7 +68,7 @@ class Cart extends React.Component{
                     <div className="modal-content-area">
                         <div className="itemlist-area">
                         <ul className="cart-items">
-                        {itemList.map((item,i)=>(<li key={i} className="cart-item modal-horizontal-space">
+                        {itemList.map((item,i)=>(<li key={item.id} className="cart-item modal-horizontal-space">
                         <div className="cart-item-img">
                         <LazyLoad height={10} once>
                             <img src={window.location.origin + item.imageURL} alt="Lowest Price Guarenteed"></img>
@@ -124,7 +124,7 @@ class Cart extends React.Component{
                     </div>
                     </div>)}
             </section>
-        </main>)
+        </section>)
     }
 }
 function mapStateToProps(state){

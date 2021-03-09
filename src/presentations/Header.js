@@ -87,10 +87,10 @@ class Header extends React.Component {
                             <li><Link to="/products">Products</Link></li>
                             </React.Fragment>)}
                             {this.state.isMobileView && (<React.Fragment>
-                            <li><Link to={`/home`} >H</Link></li>
-                            <li><Link to="/products">P</Link></li>
-                            <li><Link to={`/signin`} >U</Link></li>
-                            <li><Link to="/signup">NU</Link></li>
+                            <li><Link to={`/home`} >&#9751;</Link></li>
+                            <li><Link to="/products">&#9783;</Link></li>
+                            <li><Link to={`/signin`} >&#9731;</Link></li>
+                            <li><Link to="/signup">&reg;</Link></li>
                             </React.Fragment>)}
                            
                         </ul>

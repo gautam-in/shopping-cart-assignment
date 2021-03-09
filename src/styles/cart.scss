@@ -1,4 +1,7 @@
-#cart section:nth-child(2){padding:0;}
+#cart{ 
+    padding:0;
+    section:nth-child(2){padding:0;}
+}
 .cart-header{
     display: flex;
     align-items: center;

@@ -1,6 +1,7 @@
 
 /* for old iphone-4 */
 @media only screen and (max-width: 320px) {
+    .sticky-nav .row .main-nav li a{font-size: 66% !important;}
     .logo-icon-header{
         display: flex;
         justify-content: flex-start;
@@ -79,7 +80,11 @@
             position: relative;
             li{
                 margin-left: 30px;
-                display: none;
+                display: inline-flex;
+                a{
+                    color: $violetpink;
+                    font-size: 135%;
+                }
             }
             .logo-icon-header{
                 display: flex;
@@ -152,6 +157,9 @@
     .signup-area{
         height: 100vh;
         padding-top: 0;
+        .row > div{
+            padding-top: 0px;
+        }
         form{
             margin-top: 30px;
         }
