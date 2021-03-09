@@ -1,0 +1,11 @@
+<div class="product-card-cont">
+  <h2 class="product-card-title">{{product.name}}</h2>
+  <img class="product-card-img" [src]="product.imageURL" [alt]="product.description" width="100%">
+  <div class="product-card-subtext">
+    <p>{{product.description}}</p>
+  </div>
+  <div class="product-buy">
+    <span class="product-card-cost">MRP Rs{{product.price}}</span>
+    <button class="btn">Buy Now</button>
+  </div>
+</div>

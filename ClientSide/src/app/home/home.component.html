@@ -1,0 +1,61 @@
+<div class="home-container">
+  <!-- Slideshow container -->
+  <section *ngIf="caraouseldata" class="caraousel-container" aria-labelledby="carouselheading">
+    <h3 id="carouselheading" class="visuallyhidden">Independence Day Sale</h3>
+    <!-- Full-width images with number and caption text -->
+    <ul>
+      <li class="image-slide fade" *ngFor="let slide of caraouseldata; let i = index"
+        [style.display]="i === slideIndex - 1 ? 'block' : 'none'">
+        <div class="numbertext">{{ i + 1 }} / {{ caraouseldata.length }}</div>
+        <img [alt]="slide.bannerImageAlt" [src]="slide.bannerImageUrl" srcset="
+            {{slide.bannerImageUrl_small}}   320w,
+            {{slide.bannerImageUrl_medium}}  640w,
+            {{slide.bannerImageUrl}}        1024w
+          " sizes="(min-width: 60rem) 80vw,
+               (min-width: 40rem) 90vw,
+               100vw" />
+        <div class="visuallyhidden" aria-live="polite" aria-atomic="true">
+          Item {{ i + 1 }} of {{ caraouseldata.length }}
+        </div>
+      </li>
+    </ul>
+    <!-- Next and previous buttons -->
+    <button aria-label="Previous Item" type="button" class="btn prev" (click)="plusSlides(-1)">
+      &#10094;
+    </button>
+    <button aria-label="Next Item" type="button" class="btn next" (click)="plusSlides(1)">
+      &#10095;
+    </button>
+    <ul class="dots-container">
+      <li *ngFor="let slide of caraouseldata; let i = index" (click)="currentSlide(i + 1)">
+        <button class="btn dot" [ngClass]="{ active: i === slideIndex - 1 }" [attr.data-slide]="i">
+          <span class="visuallyhidden">Sale</span>
+          <span class="visuallyhidden">(Current Slide)</span>
+        </button>
+      </li>
+    </ul>
+  </section>
+
+  <div class="categories-container" [style.flex-direction]="isOdd ? 'row-reverse' : 'row'" *ngFor="
+      let category of categoriesData;
+      let i = index;
+      let isOdd = odd;
+      let isEven = even
+    ">
+    <div class="category-image">
+      <img [src]="category.imageUrl" [alt]="category.name" srcset="
+          {{category.imageUrl_small}}   320w,
+          {{category.imageUrl_medium}}  640w,
+          {{category.imageUrl}}        1024w
+        " sizes="(min-width: 60rem) 80vw,
+           (min-width: 40rem) 90vw,
+           100vw" />
+    </div>
+    <article class="category-desc">
+      <h3>{{ category.name }}</h3>
+      <p>{{ category.description }}</p>
+
+      <button class="btn">Explore {{ category.key }}</button>
+    </article>
+  </div>
+</div>

@@ -1,0 +1,25 @@
+<div class="login-form">
+  <app-form-content [heading]="heading" [subText]="subText">
+    <form [formGroup]="loginform" (ngSubmit)="onFormSubmit()" autocomplete="off">
+      <div class="floating-label">
+        <input aria-required="true" class="floating-input" id="email" name="email" placeholder=" "
+          formControlName="email" type="text" />
+        <label for="email">Email</label>
+        <p role="alert" aria-live="polite" *ngIf="email.invalid && (email.dirty || email.touched)" class="alert-danger">
+          Your entry is invalid</p>
+      </div>
+      <div class="floating-label">
+        <input aria-required="true" class="floating-input" id="password" name="password" placeholder=" "
+          formControlName="password" type="password" />
+        <label for="password">Password</label>
+        <p role="alert" aria-live="polite" *ngIf="password.invalid && (password.dirty || password.touched)"
+          class="alert-danger">Your entry is invalid
+        </p>
+      </div>
+
+      <button class="btn" [disabled]="!loginform.valid || !loginform.dirty" type="submit">Login</button>
+      <p role="alert" aria-live="polite" *ngIf="(!loginform.dirty && submitted)" class="alert-danger">User does not exist</p>
+
+    </form>
+  </app-form-content>
+</div>

@@ -1,0 +1,20 @@
+<section class="wrapper">
+  <div class="sidebar" *ngIf="categoriesData" aria-label="Filter by Categories">
+    <form class="filter-form" [formGroup]="form">
+      <div class="input-container" formArrayName="filters" [ngClass]="{'checked': filtersFormArray.value[i]}"
+        *ngFor="let category of filtersFormArray.controls; let i = index">
+        <input (change)="onCheckboxChange(i)" id="category{{i}}" class="visuallyhidden" type="checkbox" [formControlName]="i">
+        <label for="category{{i}}">
+          {{categoriesData[i].name}}
+        </label>
+      </div>
+    </form>
+  </div>
+  <div class="product-list-container">
+    <ul class="product-list-container-block">
+      <li class="product-card-element" *ngFor="let product of productsList; index as i; trackBy: trackById">
+        <app-product-card [product]="product"> </app-product-card>
+      </li>
+    </ul>
+  </div>
+</section>
