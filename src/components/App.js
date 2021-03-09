@@ -11,17 +11,24 @@ class App extends Component {
         }
     }
     componentDidMount(){
-        window.addEventListener('offline', this.offline);
-        window.addEventListener('online', this.online);
+        window.addEventListener('offline', this.checkBroswerState);
+        window.addEventListener('online', this.checkBroswerState);
     }
     componentWillUnmount(){
-        window.removeEventListener('offline',this.offline);
-        window.removeEventListener('online',this.online);
+        window.removeEventListener('offline',this.checkBroswerState);
+        window.removeEventListener('online',this.checkBroswerState);
+    }
+    checkBroswerState=()=>{
+        if(navigator.onLine == true){
+            this.online()
+        } else if(navigator.onLine == false){
+            this.offline();
+        }
     }
     offline=() => {
-        let errMsg = Constants.TEXTS.DEFAULTS.offline_msg;
+        // let errMsg = Constants.TEXTS.DEFAULTS.offline_msg;
         // this.setState({ isOfflineMsg: true },()=>{
-            toastr.warning('',errMsg); 
+        toastr.warning('',Constants.TEXTS.DEFAULTS.offline_msg); 
         // });          
     }
     online=()=>{
