@@ -141,13 +141,13 @@
     display: none;
   }
 
-  &:after {
+  &::after {
     position: absolute;
-    content: "﹀";
+    content: url("../static/images/chevron-down-solid.svg");
     color: $text-color-secondary;
-    width: 10px;
+    width: 15px;
     height: 10px;
-    top: 9px;
+    top: 12px;
     right: 20px;
     pointer-events: none;
   }

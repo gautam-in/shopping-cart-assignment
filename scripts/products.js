@@ -1,23 +1,53 @@
 let fragmentText = window.location.hash.substring(1);
 
-// Setting Active class for category tabs
+// Setting Active class for category tabs on keypress and click events
 let categoryListDiv = document.querySelector(".category-list");
-let tabs = categoryListDiv.getElementsByClassName("category-list__name");
+let tabs = categoryListDiv.querySelectorAll(".category-list a")
 for (let i = 0; i < tabs.length; i++) {
-    tabs[i].addEventListener("click", function (e) {
-        let current = categoryListDiv.getElementsByClassName("active");
-        if (current.length > 0) {
-            current[0].className = current[0].className.replace(" active", "");
-        }
-        this.className += " active";
-    });
+
+    "click keypress".split(" ").forEach(function (e) {
+        tabs[i].addEventListener(e, (event) => {
+            if (e == "keypress") {
+                if (event.key !== undefined) {
+                    code = event.key;
+                } else if (event.keyIdentifier !== undefined) {
+                    code = event.keyIdentifier;
+                } else if (event.keyCode !== undefined) {
+                    code = event.keyCode;
+                }
+            }
+
+            if (
+                (e == "keypress" && (code == 13 || code == "Enter")) ||
+                e == "click"
+            ) {
+                let current = categoryListDiv.getElementsByClassName("active");
+                if (current.length > 0) {
+                    current[0].className = current[0].className.replace(" active", "");
+                }
+                if (e == "keypress") {
+                    event.target.firstElementChild.className += " active";
+                } else {
+                    if (event.target.tagName == 'H1') {
+                        event.target.className += " active";
+                    } else {
+                        event.target.firstElementChild.className += " active";
+                    }
+
+                }
+
+            }
+        })
+    })
+
+
 }
 
 // Setting tabindex and arialabel for product cards
 function setTabIndexAriaLabel() {
     document
         .querySelectorAll(
-            ".product-card__name, .product-card__detail--description, .product-card__buy--price"
+            " .product-card__detail--img, .product-card__buy--price"
         )
         .forEach((el) => el.setAttribute("tabindex", 0));
     // document.querySelectorAll('.product-card button').forEach(el => el.setAttribute('aria-label', 'Buy ' + productCard.querySelector('h1').innerText));

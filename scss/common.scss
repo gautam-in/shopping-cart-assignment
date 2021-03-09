@@ -121,11 +121,12 @@ body {
     width: 29vw;
     padding: 9.5px 0;
     @include break-point(tablet) {
+      height: 100%;
       margin-left: 0;
-      width: 16vw;
+      width: 11vw;
     }
     @include break-point(desktop) {
-      height: 95%;
+      height: 77px;
     }
   }
   &__bar {
@@ -181,7 +182,18 @@ body {
       @include flex-row;
       justify-content: center;
       align-items: center;
+      margin-right: 2%;
       background-color: $grey-color-3;
+      @include break-point(desktop) {
+        margin-right: 0;
+        margin-left: 22%;
+        width: 80%;
+      }
+      @include break-point(tablet) {
+        margin-right: 0;
+        margin-left: 22%;
+        width: 80%;
+      }
       a,
       a + div {
         cursor: pointer;
@@ -224,13 +236,13 @@ body {
   width: 100%; /* Full width */
   height: 100%; /* Full height */
   overflow: auto; /* Enable scroll if needed */
-  margin-top: 100px;
+  //margin-top: 100px;
   padding-top: 0;
   background-color: unset;
-  max-width: 1121px;
-  left: 0px;
-  right: 0px;
-  margin: 110px auto;
+  //max-width: 1121px;
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+  //margin: 110px auto;
 
   .modal-content {
     position: relative;
@@ -244,11 +256,22 @@ body {
     -webkit-animation-duration: 0.4s;
     animation-name: animatetop;
     animation-duration: 0.4s;
-    height: 80vh;
+    height: 100vh;
     // width: 40%;
     float: right;
+
+    @include break-point(tablet) {
+      width: 75vh;
+      position: absolute;
+      right: 0em;
+      height: 100vh;
+    }
     @include break-point(desktop) {
-      width: 50%;
+      width: 40%;
+      position: absolute;
+      right: 9em;
+      top: 7em;
+      height: 80vh;
     }
     .modal-header {
       padding: 2px 16px;
@@ -366,19 +389,35 @@ body {
       justify-content: center;
     }
     .modal-footer {
-      padding: 10px 16px;
-      background-color: #d00155;
-      color: white;
       position: absolute;
-      width: 94%;
-      bottom: 19px;
-      right: 0;
-      left: 0;
+      width: 100%;
+      bottom: 2%;
       margin: 0 auto;
-      &__button {
-        display: flex;
-        justify-content: space-between;
+      background-color: #fff;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      p {
+        font-weight: normal;
+        margin-bottom: 2%;
+        margin-top: 2%;
       }
+      // &__button {
+      //   padding: 10px 16px;
+      //   background-color: #d00155;
+      //   color: white;
+      //   // position: absolute;
+      //   // width: 94%;
+      //   // bottom: 19px;
+      //   // right: 0;
+      //   // left: 0;
+      //   margin: 0 auto;
+      //   display: flex;
+      //   justify-content: space-between;
+      //   display: flex;
+      //   justify-content: flex-end;
+      // }
       &__span {
         padding-left: 0.5em;
         color: #fff;
@@ -389,13 +428,28 @@ body {
         font-family: Dosis;
       }
       > button {
-        width: 100%;
+        //padding: 10px 16px;
+        width: 94%;
         border: none;
         background-color: #d00155;
         color: white;
         text-align: center;
-        margin-top: 0px;
+        height: 2.2em;
+        //margin-top: 0px;
         cursor: pointer;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .modal-footer__button {
+        padding: 10px 16px;
+        background-color: #d00155;
+        color: white;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
       }
     }
   }
@@ -566,7 +620,7 @@ body {
   width: $menu-width;
   margin: -63px 0 0 $menu-width;
   padding: 50px;
-  padding-top: 125px;
+  padding-top: 90px;
   background: $grey-color-1;
   list-style-type: none;
   -webkit-font-smoothing: antialiased;
@@ -599,7 +653,7 @@ footer {
     text-align: left;
     height: 30px;
     p.app-footer {
-      padding-top: 3px;
+      padding-top: 5px;
     }
   }
 }
