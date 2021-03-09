@@ -14,14 +14,14 @@ class Signup extends React.Component {
     constructor(props){
         super(props);
         this.state={
-            data:{
+            // data:{
                 email:'',
                 password:'',
                 confirmPassword:'',
                 fName:'',
                 lName:'',
                 formError: false
-              }
+              // }
         }
         // this.onSubmitHandler = this.onSubmitHandler.bind(this);
         // this.inputHandler = this.inputHandler.bind(this);
@@ -36,7 +36,9 @@ class Signup extends React.Component {
             let title = `${Constants.TEXTS.DEFAULTS.hai}, ${state.fName}`
             let message = Constants.TEXTS.SIGNUP.signup_success;
             toastr.success(message, title,{timeOut:1000});
-            props.router.push('/Home');
+            if(props.router){
+              props.router.push('/Home');
+            }
         }
         return state;
       }
@@ -159,23 +161,23 @@ class Signup extends React.Component {
             <div className="col span-1-of-2">
                   <form method="" action="" onSubmit={this.onSubmitHandler}>  
                   <div className="floating-input-area">
-                    <input type="text" aria-label={Constants.TEXTS.FORM_INPUTS.fname.label} className="inputText" onChange={(event)=>this.inputHandler(event,Constants.TEXTS.SIGNUP.form_values.fname)} placeholder=" " required/>
+                    <input type="text" maxLength="20" aria-label={Constants.TEXTS.FORM_INPUTS.fname.label} className="inputText" id="fname-input" value={this.state.fName || ''} onChange={(event)=>this.inputHandler(event,Constants.TEXTS.SIGNUP.form_values.fname)} placeholder=" " required/>
                     <span className="floating-label">{Constants.TEXTS.FORM_INPUTS.fname.value}</span>
                   </div>
                   <div className="floating-input-area">
-                    <input type="text" aria-label={Constants.TEXTS.FORM_INPUTS.lname.label} className="inputText" onChange={(event)=>this.inputHandler(event,Constants.TEXTS.SIGNUP.form_values.lname)} placeholder=" " required/>
+                    <input type="text" maxLength="20" aria-label={Constants.TEXTS.FORM_INPUTS.lname.label} className="inputText" id="lname-input" value={this.state.lName || ''} onChange={(event)=>this.inputHandler(event,Constants.TEXTS.SIGNUP.form_values.lname)} placeholder=" " required/>
                     <span className="floating-label">{Constants.TEXTS.FORM_INPUTS.lname.value}</span>
                   </div>             
                    <div className="floating-input-area">
-                    <input type="email" aria-label={Constants.TEXTS.FORM_INPUTS.email.label} className="inputText" onChange={(event)=>this.inputHandler(event,Constants.TEXTS.SIGNUP.form_values.email)} placeholder=" " required/>
+                    <input type="email" aria-label={Constants.TEXTS.FORM_INPUTS.email.label} className="inputText" id="email-input" value={this.state.email || ''} onChange={(event)=>this.inputHandler(event,Constants.TEXTS.SIGNUP.form_values.email)} placeholder=" " required/>
                     <span className="floating-label">{Constants.TEXTS.FORM_INPUTS.email.value}</span>
                   </div>
                   <div className="floating-input-area">
-                    <input type="password" aria-label={Constants.TEXTS.FORM_INPUTS.pwd.label} className="inputText" onChange={(event)=>this.inputHandler(event,Constants.TEXTS.SIGNUP.form_values.pwd)} placeholder=" " required/>
+                    <input type="password" aria-label={Constants.TEXTS.FORM_INPUTS.pwd.label} className="inputText" id="password-input" value={this.state.password || ''} onChange={(event)=>this.inputHandler(event,Constants.TEXTS.SIGNUP.form_values.pwd)} placeholder=" " required/>
                     <span className="floating-label">{Constants.TEXTS.FORM_INPUTS.pwd.value}</span>
                   </div>
                   <div className="floating-input-area">
-                    <input type="password" aria-label={Constants.TEXTS.FORM_INPUTS.cpwd.label} className="inputText" onChange={(event)=>this.inputHandler(event,Constants.TEXTS.SIGNUP.form_values.cpwd)} placeholder=" " required/>
+                    <input type="password" aria-label={Constants.TEXTS.FORM_INPUTS.cpwd.label} className="inputText" id="cpassword-input" value={this.state.confirmPassword || ''} onChange={(event)=>this.inputHandler(event,Constants.TEXTS.SIGNUP.form_values.cpwd)} placeholder=" " required/>
                     <span className="floating-label">{Constants.TEXTS.FORM_INPUTS.cpwd.value}</span>
                   </div>
                   <div>
