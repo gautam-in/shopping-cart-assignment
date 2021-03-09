@@ -1,8 +1,8 @@
 import { IProduct } from './../../model/product.model';
 
 import { Component, Input, OnChanges, OnInit } from '@angular/core';
-import { ApidataService } from 'src/app/Services/apidata.service';
-import { CartService } from 'src/app/Services/cart.service';
+import { ApidataService } from 'src/app/services/apidata.service';
+import { CartService } from 'src/app/services/cart.service';
 
 
 @Component({

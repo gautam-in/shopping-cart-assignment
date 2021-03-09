@@ -17,6 +17,9 @@ nav {
         list-style: none;
     }
     .navbar-collapse {
+        position: absolute;
+        right: 500px;
+        bottom: 0px;
         flex-basis: 100%;
         flex-grow: 1;
     }
@@ -24,21 +27,48 @@ nav {
         background-color: $color-pink;
         color: $color-gray;
     }
-    .active-cart{
+    .active-cart {
         background-color: $color-gray;
         color: $color-black;
     }
 }
 
-.cart-container {
-    background-color: $color-gray;
-
-    .cart {
-        width: 100px;
-        display: inline-block;
-        .cart-logo {
-            color: pink;
-            width: 20px;
+.container {
+    position: relative;
+    .logout {
+        position: absolute;
+        right: 20px;
+        bottom: 30px;
+        .welcome {
+            position: absolute;
+            top: 8px;
+            right: 95px;
+            width: 120px;
+            color: $color-pink;
+            font-weight: bold;
+        }
+        .logout-btn{
+            color: $color-pink;
+        }
+        .logout-btn:hover{
+            background-color: $color-pink;
+            color: white;
+        }
+    }
+    .cart-container {
+        position: absolute;
+        right: -2px;
+        bottom: -12px;
+        .cart {
+            width: 100px;
+            display: inline-block;
+            .cart-link {
+                background-color: $color-gray;
+            }
+            .cart-logo {
+                color: pink;
+                width: 20px;
+            }
         }
     }
 }

@@ -1,5 +1,5 @@
 import { HttpClientModule } from '@angular/common/http';
-import { ApidataService } from './../../Services/apidata.service';
+import { ApidataService } from '../../services/apidata.service';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ProductComponent } from './product.component';

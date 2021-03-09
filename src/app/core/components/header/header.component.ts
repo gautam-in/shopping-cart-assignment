@@ -1,7 +1,7 @@
-import { DataService } from './../../../Services/data.service';
+import { DataService } from '../../../services/data.service';
 import { Component, OnInit } from '@angular/core';
 import { IProduct } from 'src/app/model/product.model';
-import { CartService } from 'src/app/Services/cart.service';
+import { CartService } from 'src/app/services/cart.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -13,6 +13,7 @@ export class HeaderComponent implements OnInit {
 
   groceryCart: IProduct[] = [];
   isLoggedIn: boolean;
+  loggedInUserName: string;
 
   constructor(
     private _cartservice: CartService,
@@ -29,7 +30,8 @@ export class HeaderComponent implements OnInit {
 
   getLoggedInInfo() {
     this._dataService.isLoggedIn$.subscribe(response => {
-      this.isLoggedIn = response
+      this.isLoggedIn = response.isLoggedIn;
+      this.loggedInUserName = response.userName
     })
   }
 

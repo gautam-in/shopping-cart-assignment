@@ -1,9 +1,9 @@
 import { ICategory } from './../model/category.model';
 import { IBanner } from './../model/banner.model';
-import { DataService } from './../Services/data.service';
+import { DataService } from '../services/data.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { ApidataService } from '../Services/apidata.service';
+import { ApidataService } from '../services/apidata.service';
 
 @Component({
   selector: 'app-home',

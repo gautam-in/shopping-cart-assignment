@@ -8,7 +8,7 @@ export class DataService {
 
   categoriesList;
   filteredCategory;
-  isLoggedInSubject = new BehaviorSubject(false);
+  isLoggedInSubject = new BehaviorSubject({ isLoggedIn: false, userName: '' });
   isLoggedIn$ = this.isLoggedInSubject.asObservable();
 
   constructor() { }

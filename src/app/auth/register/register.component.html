@@ -6,10 +6,10 @@
         </div>
 
         <div class="col-lg-6">
-            <form [formGroup]="registerForm" novalidate (ngSubmit)="onSubmit()">
+            <form [formGroup]="registerForm" novalidate (ngSubmit)="onRegister()">
                 <div class="form-group custom-group">
                     <input type="text" id="firstName" class="form-control" formControlName="firstName" placeholder=""
-                        required aria-label="Enter firstName">
+                        required aria-label="Enter firstName" autocomplete>
                     <label for="firstName" class="floating-label">First Name</label>
 
                     <div *ngIf="registerForm.controls['firstName'].touched && !registerForm.controls['firstName'].valid"
@@ -25,7 +25,7 @@
 
                 <div class="form-group custom-group">
                     <input class="form-control" type="text" formControlName="lastName" id="lastName" placeholder=""
-                        required aria-label="Enter lastname">
+                        required aria-label="Enter lastname" autocomplete>
                     <label for="lastName" class="floating-label">Last Name</label>
 
                     <div *ngIf="registerForm.controls['lastName'].touched && !registerForm.controls['lastName'].valid"
@@ -41,7 +41,7 @@
 
                 <div class="form-group custom-group">
                     <input class="form-control" type="email" formControlName="email" id="email" placeholder=""
-                        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required aria-label="Enter email">
+                        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required aria-label="Enter email" autocomplete>
                     <label for="email" class="floating-label">Email</label>
 
                     <div *ngIf="registerForm.controls['email'].touched && !registerForm.controls['email'].valid"
@@ -58,7 +58,7 @@
                 <div class="form-group custom-group">
                     <input class="form-control" type="password" formControlName="password" id="password" placeholder=""
                         required minlength="6" pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$"
-                        aria-label="Enter password">
+                        aria-label="Enter password" autocomplete="off">
                     <label for="password" class="floating-label">Password</label>
                     <div *ngIf="registerForm.controls['password'].touched && !registerForm.controls['password'].valid"
                         class="alert alert-danger">
@@ -73,7 +73,7 @@
 
                 <div class="form-group custom-group">
                     <input class="form-control" type="password" formControlName="confirmPassword" id="confirmPassword"
-                        placeholder="" required minlength="6" aria-label="Enter confirmPassword">
+                        placeholder="" required minlength="6" aria-label="Enter confirmPassword" autocomplete="off">
                     <label for="confirmPassword" class="floating-label">Confirm Password</label>
                     <div *ngIf="registerForm.controls['confirmPassword'].touched && !registerForm.controls['confirmPassword'].valid"
                         class="alert alert-danger">

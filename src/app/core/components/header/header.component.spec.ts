@@ -1,6 +1,6 @@
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { CartService } from 'src/app/Services/cart.service';
+import { CartService } from 'src/app/services/cart.service';
 
 import { HeaderComponent } from './header.component';
 

@@ -1,8 +1,8 @@
 import { ICategory } from './../model/category.model';
 import { IProduct } from './../model/product.model';
-import { ApidataService } from './../Services/apidata.service';
+import { ApidataService } from '../services/apidata.service';
 import { Component, OnInit } from '@angular/core';
-import { DataService } from '../Services/data.service';
+import { DataService } from '../services/data.service';
 
 @Component({
   selector: 'app-product-list',

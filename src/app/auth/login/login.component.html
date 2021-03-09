@@ -11,7 +11,7 @@
 
                     <input type="email" id="email" name="email" class="form-control form-input" placeholder=""
                         pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required ngModel #email="ngModel"
-                        aria-label="Enter email" />
+                        aria-label="Enter email" autocomplete/>
                     <label for="email" class="floating-label">Email</label>
 
                     <div class="custom-error text-danger" *ngIf="email.touched && !email.valid">
@@ -25,7 +25,7 @@
 
                     <input type="password" id="password" name="password" class="form-control form-input" minlength="6"
                         placeholder="" required ngModel #password="ngModel" aria-label="Enter password"
-                        pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$" />
+                        pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$" autocomplete="off"/>
                     <label for="password" class="floating-label">Password</label>
                     <div class="custom-error text-danger" *ngIf="password.touched && !password.valid">
                         <div *ngIf="password.errors?.required" aria-live="assertive">Please enter password.</div>

@@ -25,8 +25,10 @@ export class RegisterComponent implements OnInit {
     }, { validator: this.matchPassword });
   }
 
-  onSubmit() {
-    this.router.navigate(['/home']);
+  onRegister() {
+    localStorage.setItem('registeredUser',JSON.stringify(this.registerForm.value) );
+    alert('User registered successfully. Please login');
+    this.router.navigate(['auth/signin']);
   }
 
   matchPassword(abs: AbstractControl): { mismatch: boolean } {

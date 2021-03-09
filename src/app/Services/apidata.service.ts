@@ -1,4 +1,4 @@
-import { ICartResponse } from './../model/cart.model';
+import { ICartResponse } from '../model/cart.model';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
