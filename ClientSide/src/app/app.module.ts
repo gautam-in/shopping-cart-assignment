@@ -10,7 +10,6 @@ import { LoginComponent } from './login/login.component';
 import { HeaderComponent } from './core/header/header.component';
 import { FormContentComponent } from './shared/form-content/form-content.component';
 import { SignupComponent } from './signup/signup.component';
-import { HomeComponent } from './home/home.component';
 import { CartComponent } from './cart/cart.component';
 
 @NgModule({
@@ -20,7 +19,6 @@ import { CartComponent } from './cart/cart.component';
     HeaderComponent,
     FormContentComponent,
     SignupComponent,
-    HomeComponent,
     CartComponent,
   ],
   imports: [

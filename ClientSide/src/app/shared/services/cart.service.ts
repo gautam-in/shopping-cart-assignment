@@ -34,15 +34,26 @@ export class CartService {
     this.showCartSub.next(false);
   }
 
-  addItemToCart(id: string) {
-    const currProduct = this.productsData.find((x) => x.id === id);
+  addItemToCart(id: string, count: number = 1) {
+    /**
+     * If item is already present in the cart
+     * then find the item and increase the count
+     */
     const productAlreadypresent = this.productsInCart.findIndex(
       (x) => x.id === id
     );
     if (productAlreadypresent > -1) {
-      this.productsInCart[productAlreadypresent].count += 1;
+      this.productsInCart[productAlreadypresent].count += count;
+      if (this.productsInCart[productAlreadypresent].count === 0) {
+        this.productsInCart.splice(productAlreadypresent, 1);
+      }
       this.cartItems.next(this.productsInCart);
     } else {
+      /**
+     * If item is not already present in the cart
+     * then add the item by making API call and increase the count
+     */
+      const currProduct = this.productsData.find((x) => x.id === id);
       this.addToCartPost().then((res) => {
         if (res.response.toUpperCase() === 'SUCCESS') {
           this.productsInCart = [

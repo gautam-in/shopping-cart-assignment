@@ -104,29 +104,3 @@ img {
     display: inline-block;
   }
 }
-
-/** categories css **/
-.categories-container {
-  display: flex;
-  height: 50vh;
-  justify-content: space-between;
-  align-items: center;
-}
-.category-image {
-  height: 100%;
-  @media only screen and (min-width: 700px) {
-    img {
-      width: auto;
-    }
-  }
-}
-.category-desc {
-  text-align: center;
-  * {
-    margin: 10px;
-  }
-  .btn {
-    padding: 5px 10px;
-    width: auto;
-  }
-}

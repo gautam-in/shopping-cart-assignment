@@ -1,0 +1,30 @@
+/** categories css **/
+.categories-container {
+  display: flex;
+  height: 40vh;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 0;
+  box-shadow: 0 8px 6px -6px #d8d8d8;
+}
+.category-image {
+  height: 100%;
+  @media only screen and (min-width: 700px) {
+    img {
+      position: relative;
+      width: auto;
+      overflow: hidden;
+      height: 100%;
+    }
+  }
+}
+.category-desc {
+  text-align: center;
+  * {
+    margin: 10px;
+  }
+  .btn {
+    padding: 5px 10px;
+    width: auto;
+  }
+}

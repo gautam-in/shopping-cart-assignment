@@ -1,50 +1,29 @@
 <div id="myModal" class="modal" [attr.data-show]="showModal">
-  <div
-    [attr.data-empty-cart]="productsInCart.length ? false : true"
-    class="modal-content"
-  >
+  <div [attr.data-empty-cart]="productsInCart.length ? false : true" class="modal-content">
     <div class="modal-header">
       <h2>My cart</h2>
       <!-- Modal content -->
-      <button
-        type="button"
-        (click)="onClose()"
-        aria-label="Close cart"
-        class="close"
-      >
-      <i class="fa fa-times" aria-hidden="true"></i>
-    </button>
+      <button type="button" (click)="onClose()" aria-label="Close cart" class="close">
+        <i class="fa fa-times" aria-hidden="true"></i>
+      </button>
     </div>
-    <ng-container
-      *ngTemplateOutlet="productsInCart.length ? itemsList : emptyCart"
-    ></ng-container>
+    <ng-container *ngTemplateOutlet="productsInCart.length ? itemsList : emptyCart"></ng-container>
   </div>
+
+  <!-- Template when cart has list of items -->
   <ng-template #itemsList>
     <ul *ngIf="productsInCart.length" class="cart-items-warapper">
       <li *ngFor="let product of productsInCart">
         <div class="cart-item-image">
-          <img
-            class="product-card-img"
-            [src]="product.imageURL"
-            [alt]="product.description"
-            width="100%"
-          />
+          <img class="product-card-img" [src]="product.imageURL" [alt]="product.description" width="100%" />
         </div>
         <div class="cart-item-desc">
           <div class="cart-item-title">{{ product.name }}</div>
-          <button
-            class="btn"
-            aria-label="Increase By 1"
-            (click)="modifyItem(1, product.id)"
-          >
+          <button class="btn" aria-label="Increase By 1" (click)="addItemToCart(product.id, 1)">
             <i class="fa fa-plus" aria-hidden="true"></i>
           </button>
           <span>{{ product.count }}</span>
-          <button
-            class="btn"
-            aria-label="Decrease By 1"
-            (click)="modifyItem(-1, product.id)"
-          >
+          <button class="btn" aria-label="Decrease By 1" (click)="addItemToCart(product.id, -1)">
             <i class="fa fa-minus" aria-hidden="true"></i>
           </button>
           <span class="cart-item-price">X Rs.{{ product.price }}</span>
@@ -52,11 +31,7 @@
         <div class="cart-item-total">Rs{{ product.price * product.count }}</div>
       </li>
       <li class="cart-footer-banner">
-        <img
-          src="static/images/lowest-price.png"
-          alt=" "
-          aria-labelledby="banner-tex"
-        />
+        <img src="static/images/lowest-price.png" alt=" " aria-labelledby="banner-tex" />
         <span id="banner-tex">You won't find it cheaper anywhere</span>
       </li>
     </ul>
@@ -70,6 +45,8 @@
       </div>
     </div>
   </ng-template>
+
+  <!-- Template for empty cart -->
   <ng-template #emptyCart>
     <div class="empty-cart-wrapper">
       <div class="empty-cart-text">

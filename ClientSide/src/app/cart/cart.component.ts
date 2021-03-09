@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CartProducts } from '../models/CartProducts';
 import { CartService } from '../shared/services/cart.service';
-import { HomeService } from '../shared/services/home.service';
 
 @Component({
   selector: 'app-cart',
@@ -24,14 +23,14 @@ export class CartComponent implements OnInit {
       this.productsInCart = data;
       this.checkoutAmont = this.productsInCart.reduce(
         (previousVal, currentVal) =>
-          previousVal + (currentVal.price * currentVal.count),
+          previousVal + currentVal.price * currentVal.count,
         0
       );
     });
   }
 
-  modifyItem(count: number, productId: string) {
-    this.cartService.modifyItem(count, productId);
+  addItemToCart(productId: string, count: number) {
+    this.cartService.addItemToCart(productId, count);
   }
 
   onClose() {

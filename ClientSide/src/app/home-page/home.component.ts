@@ -14,8 +14,6 @@ export class HomeComponent implements OnInit {
   caraouseldata: Banners[];
   categoriesData: Categories[];
 
-  slideIndex = 1;
-
   constructor(private dataService: HomeService) {}
 
   ngOnInit(): void {
@@ -32,21 +30,5 @@ export class HomeComponent implements OnInit {
       this.caraouseldata = this.dataService.processData(caraouseldata);
       this.categoriesData = this.dataService.processData(categoriesData);
     });
-  }
-
-
-  currentSlide(n: number) {
-    this.slideIndex = n;
-  }
-
-  // Next/previous controls
-  plusSlides(n: number) {
-    this.slideIndex += n;
-    if (this.slideIndex > this.caraouseldata.length) {
-      this.slideIndex = 1;
-    }
-    if (this.slideIndex < 1) {
-      this.slideIndex = this.caraouseldata.length;
-    }
   }
 }
