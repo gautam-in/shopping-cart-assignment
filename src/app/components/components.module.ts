@@ -1,13 +1,14 @@
 import {CommonModule} from '@angular/common';
 import {NgModule} from '@angular/core';
 import {RouterModule} from '@angular/router';
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import {CarouselModule} from 'ngx-owl-carousel-o';
 
-import {HeaderComponent} from './header/header.component';
+import {ButtonComponent} from './button/button.component';
 import {FooterComponent} from './footer/footer.component';
+import {HeaderComponent} from './header/header.component';
 import {ImagesCarouselComponent} from './images-carousel/images-carousel.component';
 import {InputComponent} from './input/input.component';
-import {ButtonComponent} from './button/button.component';
+import {ItemComponent} from './item/item.component';
 
 @NgModule({
   declarations: [
@@ -16,11 +17,12 @@ import {ButtonComponent} from './button/button.component';
     ImagesCarouselComponent,
     InputComponent,
     ButtonComponent,
+    ItemComponent,
   ],
   imports: [
     CommonModule,
     RouterModule,
-    NgbModule,
+    CarouselModule
   ],
   exports: [
     HeaderComponent,
@@ -28,6 +30,7 @@ import {ButtonComponent} from './button/button.component';
     ImagesCarouselComponent,
     InputComponent,
     ButtonComponent,
+    ItemComponent,
   ]
 })
 export class ComponentsModule {

@@ -1,1 +1,16 @@
-<p>products works!</p>
+<div class="container">
+  <div class="row">
+    <div class="col-12 col-md-3 px-0 pr-md-3">
+      <app-category-filter [categories]="categories"
+                           [activeCategory]="activeCategory"></app-category-filter>
+    </div>
+    <div class="col-12 col-md-9">
+      <div class="row">
+        <div class="col-12 col-md-6 col-lg-3 h-100 bg-white position-relative" *ngFor="let product of activeProducts | async">
+          <div class="box-shadow"></div>
+          <app-item [item]="product" (click)="addToCart(product.id)"></app-item>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,10 +1,11 @@
-import { Component, OnInit } from '@angular/core';
-import { Observable, of } from 'rxjs';
-import { filter } from 'rxjs/operators';
+import {Component, OnInit} from '@angular/core';
+import {Router} from '@angular/router';
+import {Observable, of} from 'rxjs';
 
-import { ShoppingService } from '../../services/shopping/shopping.service';
-import { CategoryModel } from '../../models/home/category.model';
-import {BannersModel} from '../../models/home/banners.model';
+import {BannersModel} from '../../models/banners.model';
+import {CategoryModel} from '../../models/category.model';
+import {SharedService} from '../../services/shared/shared.service';
+import {ShoppingService} from '../../services/shopping/shopping.service';
 
 @Component({
   selector: 'app-home',
@@ -16,10 +17,12 @@ export class HomeComponent implements OnInit {
   bannerImages: Observable<BannersModel[]> = of([]);
   categories: Observable<CategoryModel[]> = of([]);
 
-  constructor(private shoppingService: ShoppingService) { }
+  constructor(private shoppingService: ShoppingService,
+              private router: Router) {
+  }
 
   ngOnInit(): void {
-    this.getAllBanners()
+    this.getAllBanners();
     this.getAllCategories();
   }
 
@@ -29,5 +32,9 @@ export class HomeComponent implements OnInit {
 
   getAllCategories(): void {
     this.categories = this.shoppingService.getAllCategories();
+  }
+
+  redirectToProducts(id: string): void {
+    this.router.navigate(['/products'], {queryParams: {category: id}});
   }
 }

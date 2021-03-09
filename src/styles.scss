@@ -2,28 +2,52 @@
 @import 'src/assets/scss/variables.scss';
 
 * {
-    font-family: Dosis;
-    font-weight: 600;
-    font-size: 12px;
+  font-family: Dosis;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 1.5;
+  box-sizing: border-box;
+}
+
+body, h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+}
+
+p {
+  margin-bottom: 1rem;
+  margin-top: 0;
+}
+
+img {
+  vertical-align: middle;
+}
+
+button {
+  cursor: pointer;
 }
 
 @media only screen and (min-width: $breakpoint-tablet) {
-    * {
-        font-size: 16px;
-    }
+  * {
+    font-size: 16px;
+  }
 }
 
 a {
-    cursor: pointer;
+  cursor: pointer;
+  text-decoration: none;
 }
 
 a:hover {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 *:focus {
-    outline: 0;
+  outline: 0;
 }
 
-/* Importing Bootstrap SCSS file. */
-@import '~bootstrap/scss/bootstrap';
+/* Importing SCSS files */
+@import "src/assets/scss/common";
+@import "src/assets/scss/spacing";
+@import "src/assets/scss/responsive";
+@import '~ngx-owl-carousel-o/lib/styles/scss/owl.carousel';
+@import '~ngx-owl-carousel-o/lib/styles/scss/owl.theme.default';

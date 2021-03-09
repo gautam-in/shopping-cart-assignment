@@ -1,10 +1,12 @@
 import {HttpClient} from '@angular/common/http';
 import {Injectable} from '@angular/core';
 import {Observable} from 'rxjs';
-import {tap} from 'rxjs/operators';
+import {map} from 'rxjs/operators';
 
-import {CategoryModel} from '../../models/home/category.model';
-import {BannersModel} from '../../models/home/banners.model';
+import {AddToCartResponse} from '../../models/add-to-cart-response.model';
+import {BannersModel} from '../../models/banners.model';
+import {CategoryModel} from '../../models/category.model';
+import {ProductModel} from '../../models/product-model';
 
 @Injectable({
   providedIn: 'root'
@@ -18,13 +20,27 @@ export class ShoppingService {
 
   getAllBanners(): Observable<BannersModel[]> {
     return this.httpClient.get<BannersModel[]>(this.serverUrl + 'banners').pipe(
-      tap(banners => banners.sort((banner, previousBanner) => banner.order - previousBanner.order))
+      map(banners => banners
+        .filter(banner => banner.isActive)
+        .sort((banner, previousBanner) => banner.order - previousBanner.order)
+      )
     );
   }
 
   getAllCategories(): Observable<CategoryModel[]> {
     return this.httpClient.get<CategoryModel[]>(this.serverUrl + 'categories').pipe(
-      tap(categories => categories.sort((category, previousCategory) => category.order - previousCategory.order))
+      map(categories => categories
+        .filter(category => category.enabled)
+        .sort((category, previousCategory) => category.order - previousCategory.order)
+      )
     );
+  }
+
+  getAllProducts(): Observable<ProductModel[]> {
+    return this.httpClient.get<ProductModel[]>(this.serverUrl + 'products');
+  }
+
+  addToCart(productId: string): Observable<AddToCartResponse> {
+    return this.httpClient.post<AddToCartResponse>(this.serverUrl + 'addToCart', {productId});
   }
 }

@@ -4,6 +4,6 @@ export interface CategoryModel {
     imageUrl?: string;
     key: string;
     order: number;
-    buttonTitle: string;
     enabled: boolean;
+    id: string;
 }

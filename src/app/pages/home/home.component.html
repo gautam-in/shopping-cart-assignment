@@ -5,9 +5,10 @@
     </div>
   </div>
 
-  <ng-container *ngFor="let category of categories | async; let i = index">
-    <div class="row" *ngIf="category.enabled">
-      <app-category [categoryDetails]="category" [isLeftAlign]="i%2 === 0"></app-category>
-    </div>
-  </ng-container>
+  <div class="row" *ngFor="let category of categories | async; let i = index">
+    <app-category [categoryDetails]="category"
+                  class="col-12"
+                  [isLeftAlign]="i%2 !== 0"
+                  (redirect)="redirectToProducts(category.id)"></app-category>
+  </div>
 </section>

@@ -1,0 +1,107 @@
+@import 'src/assets/scss/variables.scss';
+
+// Common SCSS
+.bg-white {
+  background-color: #fff!important;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.h-100 {
+  height: 100%;
+}
+
+.position-relative {
+  position: relative;
+}
+
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+}
+
+// Display SCSS
+.d-none {
+  display: none !important;
+}
+
+.d-block {
+  display: block!important;
+}
+
+.d-inline {
+  display: inline!important;
+}
+
+@media only screen and (min-width: $breakpoint-tablet) {
+  .d-md-inline-block {
+    display: inline-block!important;
+  }
+
+  .d-md-none {
+    display: none!important;
+  }
+
+  .d-md-block {
+    display: block!important;
+  }
+}
+
+@media only screen and (min-width: $breakpoint-laptop) {
+  .d-lg-block {
+    display: block!important;
+  }
+
+  .d-lg-none {
+    display: none!important;
+  }
+}
+
+// Flexbox SCSS
+.d-flex {
+  display: flex;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.flex-row-reverse {
+  flex-direction: row-reverse;
+}
+
+.align-items-center {
+  align-items: center!important;
+}
+
+.align-items-end {
+  align-items: flex-end!important;
+}
+
+.justify-content-center {
+  justify-content: center!important;
+}
+
+.justify-content-between {
+  justify-content: space-between!important;
+}
+
+.justify-content-end {
+  justify-content: flex-end!important;
+}
+
+@media only screen and (min-width: $breakpoint-laptop) {
+  .justify-content-lg-start {
+    justify-content: flex-start!important;
+  }
+}

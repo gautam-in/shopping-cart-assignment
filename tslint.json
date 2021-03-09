@@ -43,6 +43,7 @@
         ]
       }
     ],
+    "no-consecutive-blank-lines": false,
     "no-console": [
       true,
       "debug",
@@ -59,14 +60,37 @@
     "no-non-null-assertion": true,
     "no-redundant-jsdoc": true,
     "no-switch-case-fall-through": true,
+    "no-var-keyword": true,
     "no-var-requires": false,
     "object-literal-key-quotes": [
       true,
       "as-needed"
     ],
+    "one-line": [
+      true,
+      "check-open-brace",
+      "check-catch",
+      "check-else",
+      "check-finally",
+      "check-whitespace"
+    ],
+    "ordered-imports": [
+      true,
+      {
+        "grouped-imports": true,
+        "groups": [
+          { "name": "relative paths", "match": "^\\.\\.?", "order": 40 },
+          { "name": "absolute paths (testing)", "match": "^testing\/|^testing$", "order": 30 },
+          { "name": "absolute paths (app)", "match": "^app\/|^app$", "order": 20 },
+          { "name": "libraries", "match": ".*", "order": 10 }
+        ]
+      }
+    ],
+    "prefer-const": false,
     "quotemark": [
       true,
-      "single"
+      "single",
+      "avoid-escape"
     ],
     "semicolon": {
       "options": [
@@ -82,6 +106,10 @@
         "named": "never"
       }
     },
+    "triple-equals": [
+      true,
+      "allow-null-check"
+    ],
     "typedef": [
       true,
       "call-signature"

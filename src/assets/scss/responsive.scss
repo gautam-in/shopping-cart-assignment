@@ -1,0 +1,91 @@
+@import 'src/assets/scss/variables.scss';
+
+.container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+}
+
+[class*="col-"] {
+  position: relative;
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.col-4 {
+  flex: 0 0 33.33%;
+  max-width: 33.33%;
+}
+
+.col-6 {
+  flex: 0 0 50%;
+  max-width: 50%;
+}
+
+.col-8 {
+  flex: 0 0 66.67%;
+  max-width: 66.67%;
+}
+
+.col-12 {
+  flex: 0 0 100%;
+  max-width: 100%;
+}
+
+//Media Query for Screen >= 768px
+@media only screen and (min-width: $breakpoint-tablet) {
+  .col-md-3 {
+    flex: 0 0 25%;
+    max-width: 25%;
+  }
+
+  .col-md-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+
+  .col-md-9 {
+    flex: 0 0 75%;
+    max-width: 275%;
+  }
+}
+
+
+//Media Query for Screen >= 992px
+@media only screen and (min-width: $breakpoint-laptop) {
+  .container {
+    max-width: 960px;
+  }
+
+  .col-lg-3 {
+    flex: 0 0 25%;
+    max-width: 25%;
+  }
+
+  .col-lg-12 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
+
+//Media Query for Screen >= 1200px
+@media only screen and (min-width: $breakpoint-large-screen) {
+  .container {
+    max-width: 1140px;
+  }
+
+  .col-lg-12 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}

@@ -7,6 +7,6 @@
     <div class="col-8 col-md-8 d-flex flex-column align-items-center details-wrapper">
         <h3 class="text-center">{{ categoryDetails.name }}</h3>
         <p class="text-center">{{ categoryDetails.description }}</p>
-        <app-button [content]="'Explore ' + categoryDetails.key"></app-button>
+        <app-button [content]="'Explore ' + categoryDetails.key" (click)="redirectToCategory()"></app-button>
     </div>
 </section>

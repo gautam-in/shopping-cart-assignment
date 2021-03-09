@@ -1,24 +1,25 @@
-import { Routes } from "@angular/router";
+import {Routes} from '@angular/router';
 
-import { HomeComponent } from "./pages/home/home.component";
-import { LoginComponent } from "./pages/login/login.component";
-import { ProductsComponent } from "./pages/products/products.component";
-import { RegisterComponent } from "./pages/register/register.component";
-
-export const routes: Routes = [{
+export const routes: Routes = [
+  {
     path: '',
-    component: LoginComponent 
-}, {
+    loadChildren: () => import('./pages/login/login.module')
+      .then(module => module.LoginModule)
+  }, {
     path: 'register',
-    component: RegisterComponent
-}, {
+    loadChildren: () => import('./pages/register/register.module')
+      .then(module => module.RegisterModule)
+  }, {
     path: 'home',
-    component: HomeComponent
-}, {
+    loadChildren: () => import('./pages/home/home.module')
+      .then(module => module.HomeModule)
+  }, {
     path: 'products',
-    component: ProductsComponent
-}, {
+    loadChildren: () => import('./pages/products/products.module')
+      .then(module => module.ProductsModule)
+  }, {
     path: '**',
     redirectTo: '',
     pathMatch: 'full'
-}];
+  }
+];
