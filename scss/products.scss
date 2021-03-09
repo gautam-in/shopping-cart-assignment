@@ -150,6 +150,9 @@
     top: 12px;
     right: 20px;
     pointer-events: none;
+    @include break-point(tablet) {
+      display: none;
+    }
   }
   .mob-category-list {
     width: 100%;

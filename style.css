@@ -1381,6 +1381,11 @@ main.form-container .form .form__input-container .bar:before {
   right: 20px;
   pointer-events: none;
 }
+@media only screen and (min-width: 480px) {
+  .mob-category-list-container::after {
+    display: none;
+  }
+}
 .mob-category-list-container .mob-category-list {
   width: 100%;
   position: relative;
