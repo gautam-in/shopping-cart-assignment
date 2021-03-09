@@ -6,6 +6,6 @@
   </div>
   <div class="product-buy">
     <span class="product-card-cost">MRP Rs{{product.price}}</span>
-    <button class="btn">Buy Now</button>
+    <button type="button" (click)="addItemToCart(product.id)" class="btn">Buy Now</button>
   </div>
 </div>

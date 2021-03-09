@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HomeService } from 'src/app/shared/services/home.service';
+import { CartService } from 'src/app/shared/services/cart.service';
 
 @Component({
   selector: 'app-header',
@@ -7,7 +7,7 @@ import { HomeService } from 'src/app/shared/services/home.service';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements OnInit {
-  constructor(private cartService: HomeService) {}
+  constructor(private cartService: CartService) {}
 
   ngOnInit(): void {}
 

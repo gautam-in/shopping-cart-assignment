@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { forkJoin, Observable } from 'rxjs';
-import { Categories } from '../models/Categories';
-import { FilterData } from '../models/FilterData';
-import { Products } from '../models/Products';
-import { HomeService } from '../shared/services/home.service';
+import { Categories } from '../../models/Categories';
+import { FilterData } from '../../models/FilterData';
+import { Products } from '../../models/Products';
+import { HomeService } from '../../shared/services/home.service';
 
 @Component({
   selector: 'app-product-list',

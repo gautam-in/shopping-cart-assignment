@@ -1,17 +1,84 @@
 <div id="myModal" class="modal" [attr.data-show]="showModal">
-  <!-- Modal content -->
-  <div class="modal-content">
-    <button type="button" (click)="onClose()" aria-label="close cart" click class="close">&times;</button>
-    <p>Some text in the Modal..</p>
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Id enim dignissimos cupiditate tempora. Impedit distinctio
-    suscipit rerum blanditiis, nulla perferendis aperiam expedita nisi enim tenetur nihil incidunt sapiente consectetur.
-    Repellendus?
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia officiis ut omnis cupiditate accusantium assumenda
-    ipsa aut soluta et labore veritatis mollitia asperiores non, maiores quas inventore doloribus dolorem similique?
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam non maiores optio, nesciunt exercitationem obcaecati
-    corrupti quaerat, provident possimus quae, deleniti ratione dolorem omnis itaque nostrum ex nihil libero hic.
-    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Animi quae rerum placeat nam tenetur optio voluptatum
-    quibusdam obcaecati cupiditate sit atque nulla illum fugit eligendi repellat recusandae, perferendis dignissimos
-    quo.
+  <div
+    [attr.data-empty-cart]="productsInCart.length ? false : true"
+    class="modal-content"
+  >
+    <div class="modal-header">
+      <h2>My cart</h2>
+      <!-- Modal content -->
+      <button
+        type="button"
+        (click)="onClose()"
+        aria-label="Close cart"
+        class="close"
+      >
+      <i class="fa fa-times" aria-hidden="true"></i>
+    </button>
+    </div>
+    <ng-container
+      *ngTemplateOutlet="productsInCart.length ? itemsList : emptyCart"
+    ></ng-container>
   </div>
+  <ng-template #itemsList>
+    <ul *ngIf="productsInCart.length" class="cart-items-warapper">
+      <li *ngFor="let product of productsInCart">
+        <div class="cart-item-image">
+          <img
+            class="product-card-img"
+            [src]="product.imageURL"
+            [alt]="product.description"
+            width="100%"
+          />
+        </div>
+        <div class="cart-item-desc">
+          <div class="cart-item-title">{{ product.name }}</div>
+          <button
+            class="btn"
+            aria-label="Increase By 1"
+            (click)="modifyItem(1, product.id)"
+          >
+            <i class="fa fa-plus" aria-hidden="true"></i>
+          </button>
+          <span>{{ product.count }}</span>
+          <button
+            class="btn"
+            aria-label="Decrease By 1"
+            (click)="modifyItem(-1, product.id)"
+          >
+            <i class="fa fa-minus" aria-hidden="true"></i>
+          </button>
+          <span class="cart-item-price">X Rs.{{ product.price }}</span>
+        </div>
+        <div class="cart-item-total">Rs{{ product.price * product.count }}</div>
+      </li>
+      <li class="cart-footer-banner">
+        <img
+          src="static/images/lowest-price.png"
+          alt=" "
+          aria-labelledby="banner-tex"
+        />
+        <span id="banner-tex">You won't find it cheaper anywhere</span>
+      </li>
+    </ul>
+    <div class="cart-payment-footer">
+      <div class="promo-text">Promo can be applied Home Page</div>
+      <div class="cart-payment-checkout">
+        <button (click)="onClose()" class="btn">
+          <span>Proceed to Checkout</span>
+          <span>Rs. {{ checkoutAmont }} ></span>
+        </button>
+      </div>
+    </div>
+  </ng-template>
+  <ng-template #emptyCart>
+    <div class="empty-cart-wrapper">
+      <div class="empty-cart-text">
+        <h2>No items in your cart</h2>
+        <p>Your favorite items are just a click away</p>
+      </div>
+      <div class="empty-cart-button">
+        <button (click)="onClose()" class="btn">Start Shopping</button>
+      </div>
+    </div>
+  </ng-template>
 </div>
