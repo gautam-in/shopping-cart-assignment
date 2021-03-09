@@ -1,3 +1,4 @@
+import { BehaviorSubject } from 'rxjs';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -7,6 +8,8 @@ export class DataService {
 
   categoriesList;
   filteredCategory;
-  
+  isLoggedInSubject = new BehaviorSubject(false);
+  isLoggedIn$ = this.isLoggedInSubject.asObservable();
+
   constructor() { }
 }

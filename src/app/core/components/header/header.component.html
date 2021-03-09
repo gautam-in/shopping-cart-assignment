@@ -8,7 +8,7 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
-            <ul class="navbar-nav leftnav">
+            <ul class="navbar-nav leftnav" *ngIf="isLoggedIn">
                 <li class="nav-item">
                     <a class="nav-link" [routerLink]="['/home']" [routerLinkActive]="['active']">Home</a>
                 </li>
@@ -16,7 +16,7 @@
                     <a class="nav-link" [routerLink]="['/products']" [routerLinkActive]="['active']">Products</a>
                 </li>
             </ul>
-            <ul class="navbar-nav rightnav">
+            <ul class="navbar-nav rightnav" *ngIf="!isLoggedIn">
                 <li class="nav-item">
                     <a class="nav-link" [routerLink]="['/auth/signin']" [routerLinkActive]="['active']">Signin</a>
                 </li>
@@ -26,7 +26,10 @@
             </ul>
         </div>
         <div class="cart-container">
-            <ul class="navbar-nav cart">
+            <ul class="navbar-nav cart" *ngIf="isLoggedIn">
+                <li class="nav-item">
+                    <a role="button" class="nav-link" (click)="loggedOut()">Logout</a>
+                </li>
                 <li class="nav-item">
                     <a class="nav-link" [routerLink]="['/cart']" [routerLinkActive]="['active-cart']" data-toggle="modal" data-target="#cartModal"
                         role="button"><img src="assets/static/images/cart.svg" class="cart-logo" alt="cart-logo">
