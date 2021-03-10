@@ -3,7 +3,7 @@ import { Provider } from "react-redux";
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import fetchMock from 'fetch-mock';
-import Enzyme, {mount, shallow} from 'enzyme';
+import {mount} from 'enzyme';
 import actions from '../actions';
 import constants from '../constants';
 import urls from '../urls';
@@ -11,8 +11,9 @@ import {getOffers,getCategories} from '../actions/homeActions';
 import Header from '../presentations/Header';
 import Footer from '../presentations/Footer';
 import Home from './Home';
+import CategoryBanner from '../presentations/CategoryBanner';
 const createMockStore = configureMockStore([thunk]);
-const props = {homeApis:{bannerData:[]},productReducer:{cartItems:[]},cartClick:()=>{},signinReducer:{userData:{userEmail:''}},signUpReducer:{userData:{userEmail:''}}};
+const props = {homeApis:{bannerData:[],categoryData:[]},productReducer:{cartItems:[]},cartClick:()=>{},signinReducer:{userData:{userEmail:''}},signUpReducer:{userData:{userEmail:''}}};
 const store = createMockStore(props);
 const mockBannerResponse = [{
     "bannerImageUrl": "/static/images/offers/offer1.jpg",
@@ -55,6 +56,10 @@ describe('Initial service calls',()=>{
         return store.dispatch(getCategories()).then(()=>{
             // console.log(store.getActions());
             expect(store.getActions()).toEqual(exptActn);
+            // console.log(wrapper.find('.category-banners-area'));
+            if(exptActn[7].data && !exptActn[7].data.length){
+                expect(wrapper.find('CategoryBanner').length).toEqual(0);
+            }
         });
     });
 });

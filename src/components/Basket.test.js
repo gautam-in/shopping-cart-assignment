@@ -4,17 +4,15 @@ import Adapter from 'enzyme-adapter-react-16';
 import { Provider } from "react-redux";
 import configureStore from "redux-mock-store";
 import thunk from "redux-thunk";
-import {act} from 'react-dom/test-utils';
-import Header from '../presentations/Header';
-import Footer from '../presentations/Footer';
+// import {act} from 'react-dom/test-utils';
 import Basket from './Basket';
 import Cart from '../presentations/Cart';
 const buildStore = configureStore([thunk]);
-const whenStable = async () => {
-    await act(async () => {
-      await new Promise((resolve) => setTimeout(resolve, 0));
-    });
-};
+// const whenStable = async () => {
+//     await act(async () => {
+//       await new Promise((resolve) => setTimeout(resolve, 0));
+//     });
+// };
 Enzyme.configure({adapter: new Adapter(),disableLifecycleMethods: false,lifecycleExperimental: true,});
 let wrapper; let shallowWrapper; let store;
 const props = {productReducer:{cartItems:[]},resetCartData:()=>{},signinReducer:{userData:{userEmail:''}},signUpReducer:{userData:{userEmail:''}}};

@@ -64,7 +64,7 @@ class Header extends React.Component {
         this.setState({dimensions: dimensions,isMobileView:ismobileview});
     }
     cartClick=()=>{
-        if(this.state.dimensions && this.state.dimensions.width && this.state.dimensions.width < 480){ //1024
+        if(this.state.dimensions && this.state.dimensions.width && this.state.dimensions.width < 480 && this.props.router){ //1024
             this.props.router.push('/cart');
         } else {
             this.props.cartClick();
@@ -72,6 +72,7 @@ class Header extends React.Component {
     }
     clickEvent=(event)=>{}
     showHome=()=>{
+        if(this.props.router)
         this.props.router.push('/');
     }
     render(){   
@@ -83,14 +84,14 @@ class Header extends React.Component {
                         <img onClick={this.showHome} src={window.location.origin + '/static/images/logo.png'} alt="logo" className="logo" /> {/* {Logo} */}
                         <ul className="main-nav js--main-nav">
                             {!this.state.isMobileView && (<React.Fragment>
-                            <li><Link to={`/home`} >Home</Link></li>
-                            <li><Link to="/products">Products</Link></li>
+                            <li aria-label="Navigate to Home"><Link to={`/home`} >Home</Link></li>
+                            <li aria-label="Navigate to Product listing page"><Link to="/products">Products</Link></li>
                             </React.Fragment>)}
                             {this.state.isMobileView && (<React.Fragment>
-                            <li><Link to={`/home`} >&#9751;</Link></li>
-                            <li><Link to="/products">&#9783;</Link></li>
-                            <li><Link to={`/signin`} >&#9731;</Link></li>
-                            <li><Link to="/signup">&reg;</Link></li>
+                            <li aria-label="Navigate to Home"><Link to={`/home`} >&#9751;</Link></li>
+                            <li aria-label="Navigate to Product listing page"><Link to="/products">&#9783;</Link></li>
+                            <li aria-label="Navigate to Signin page"><Link to={`/signin`} >&#9731;</Link></li>
+                            <li aria-label="Navigate to Signup page"><Link to="/signup">&reg;</Link></li>
                             </React.Fragment>)}
                            
                         </ul>
@@ -99,8 +100,8 @@ class Header extends React.Component {
                             {userName && userName.length ? (<div> 
                                 <p className="useremail" title={userName} aria-label={userName}>{userName}</p>
                             </div>) : (<ul className="main-nav js--main-nav">
-                                <li onClick={this.resetCart}><Link to="/signin">Signin</Link></li>
-                                <li onClick={this.resetCart}><Link to="/signup">Register</Link></li>
+                                <li aria-label="Navigate to Signin page" onClick={this.resetCart}><Link to="/signin">Signin</Link></li>
+                                <li aria-label="Navigate to Signup page" onClick={this.resetCart}><Link to="/signup">Register</Link></li>
                             </ul>)}
                             </div>
                             <div className="cartArea" aria-labelledby="cart" onClick={this.cartClick}>
@@ -109,7 +110,7 @@ class Header extends React.Component {
                                         <img src={window.location.origin + '/static/images/cart.svg'} alt="cart" className="fill-purple"></img>
                                     </LazyLoad>
                                 </div>
-                                <span>{itemCount} items</span>
+                                <span aria-label={`Cart with ${itemCount} items`}>{itemCount} items</span>
                             </div>
                         </div>
                     </div>

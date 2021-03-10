@@ -5,7 +5,7 @@ import actions from '../actions';
 import constants from '../constants';
 import urls from '../urls';
 import {getCategories} from '../actions/homeActions';
-import {getProducts,addToCart,resetCartReduxProcessData,resetCartData} from '../actions/productActions';
+import {getProducts} from '../actions/productActions';
 const createMockStore = configureMockStore([thunk]);
 const store = createMockStore({homeApis:{bannerData:[]},productReducer:{productData:[]}});
 const mockCategoryResponse = [ {
