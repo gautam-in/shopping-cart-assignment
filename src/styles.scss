@@ -12,6 +12,15 @@ body {
     color: $color-black;
 }
 
+.main-heading{
+    font-size: 24px;
+    font-weight: bolder;
+}
+
+.sub-heading {
+    font-size: 18px;
+    font-weight: bold;
+}
 
 .common-btn {
     background-color: $color-pink;

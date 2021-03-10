@@ -3,16 +3,16 @@
         <div class="modal-content">
 
             <div class="modal-header">
-                <h4 class="modal-title">My Cart
+                <p class="modal-title">My Cart
                     <span *ngIf="groceryCart.length >0">({{groceryCart.length}}) item</span>
                     <span *ngIf="!groceryCart.length">0</span>
-                </h4>
+                </p>
                 <button type="button" class="close" data-dismiss="modal" (click)="resetCart()" aria-label="Close Cart Popup">&times;</button>
             </div>
 
             <div class="modal-body" *ngIf="!groceryCart.length; else displayItems">
                 <div class="cart-body">
-                    <h3>No items in your cart</h3>
+                    <p>No items in your cart</p>
                     <p>You favourite items are just a click away</p>
                 </div>
             </div>
@@ -26,7 +26,7 @@
                         </div>
                         <div class="col-md-10 cart-description">
                             <div class="card-body">
-                                <h5 class="card-title">{{product.name}}</h5>
+                                <p class="card-title">{{product.name}}</p>
                                 <div>
                                     <i class="fa fa-plus-square icon-fa" (click)="increaseProductQuantity(product)" aria-label="increase product unit"></i>
                                     <span>{{product.count}}</span>

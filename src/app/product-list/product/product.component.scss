@@ -22,3 +22,8 @@
         flex: 1;
     }
 }
+
+.product-selected {
+    background-color: $color-light-pink;
+    border: 1px solid $color-dark-gray;
+}
