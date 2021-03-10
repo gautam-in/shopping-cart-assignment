@@ -6,6 +6,7 @@ import {
   Validators,
 } from '@angular/forms';
 import { Router } from '@angular/router';
+import { LoginService } from '../shared/services/login.service';
 
 @Component({
   selector: 'app-login',
@@ -17,7 +18,7 @@ export class LoginComponent implements OnInit {
   subText = 'Get access to your Orders, Wishlist and Recommendations';
   loginform: FormGroup;
   submitted = false;
-  constructor(public router: Router) {}
+  constructor(public router: Router, private loginService: LoginService) {}
 
   ngOnInit(): void {
     this.initForm();
@@ -28,7 +29,7 @@ export class LoginComponent implements OnInit {
       email: new FormControl('', [
         Validators.required,
         Validators.pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$'),
-        Validators.maxLength(15),
+        Validators.maxLength(25),
       ]),
       password: new FormControl('', [
         Validators.required,
@@ -48,10 +49,14 @@ export class LoginComponent implements OnInit {
 
   onFormSubmit() {
     this.submitted = true;
+    const userData = this.loginform.value;
     if (
       this.email.value.indexOf('admin') > -1 &&
       this.password.value === 'admin'
     ) {
+      localStorage.setItem('userEmail', userData.email);
+      localStorage.setItem('isLoggedIn', 'true');
+      this.loginService.login();
       this.router.navigate(['/home']);
     }
     this.loginform.reset();

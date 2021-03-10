@@ -1,22 +1,52 @@
+@import "../../../mixins";
+
 .product-buy {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  @include tablet {
+    grid-column: 1 / span 2;
+  }
   button.btn {
-    flex: 0 0 50%;
+    flex: 1;
     width: auto;
     height: 2.5em;
+    @include desktop {
+      flex: 0 0 50%;
+    }
   }
   .product-card-cost {
     font-weight: 600;
   }
 }
 .product-card-cont {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  @include desktop {
+    display: flex;
+    flex-direction: column;
+  }
+
+  @include tablet {
+    grid-template-rows: 60px 150px;
+  }
+
+  @include mobile {
+    grid-template-columns: 1fr 1.5fr;
+    grid-template-rows: 60px 80px 50px;
+  }
   > * {
     flex: 1 1 60px;
     margin-bottom: 5px;
+  }
+
+  img.product-card-img {
+    @include mobile {
+      grid-row: 2 / span 2;
+    }
+    @include tablet {
+      grid-row: 2 / span 1;
+    }
   }
   .product-card-subtext {
     margin-bottom: 15px;
@@ -30,4 +60,12 @@
 h2.product-card-title {
   font-size: 16px;
   overflow: hidden;
+  @include mobile {
+    grid-column: 1 / span 2;
+    text-align: left;
+  }
+  @include tablet {
+    grid-column: 1 / span 2;
+    text-align: left;
+  }
 }

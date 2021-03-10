@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { forkJoin, Observable } from 'rxjs';
-import { environment } from 'src/environments/environment';
-import { Banners } from '../models/banners';
-import { Categories } from '../models/Categories';
-import { HomeService } from '../shared/services/home.service';
+import { Banners } from 'src/app/models/banners';
+import { Categories } from 'src/app/models/Categories';
+import { SharedService } from 'src/app/shared/services/shared.service';
 
 @Component({
   selector: 'app-home',
@@ -14,7 +13,7 @@ export class HomeComponent implements OnInit {
   caraouseldata: Banners[];
   categoriesData: Categories[];
 
-  constructor(private dataService: HomeService) {}
+  constructor(private dataService: SharedService) {}
 
   ngOnInit(): void {
     this.initData();

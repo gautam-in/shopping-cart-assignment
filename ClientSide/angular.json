@@ -29,7 +29,9 @@
               "src/static"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "src/_mixins.scss",
+              "src/_variables.scss"
             ],
             "scripts": []
           },

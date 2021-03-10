@@ -1,10 +1,9 @@
-import { Component, OnInit } from '@angular/core';
-import { FormArray, FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { forkJoin, Observable } from 'rxjs';
+import { SharedService } from 'src/app/shared/services/shared.service';
 import { Categories } from '../../models/Categories';
 import { FilterData } from '../../models/FilterData';
 import { Products } from '../../models/Products';
-import { HomeService } from '../../shared/services/home.service';
 
 @Component({
   selector: 'app-product-list',
@@ -14,12 +13,15 @@ import { HomeService } from '../../shared/services/home.service';
 export class ProductListComponent implements OnInit {
   productsList: Products[];
   categoriesData: FilterData[];
-  form: FormGroup;
   productsListCopy: Products[];
+  currCategory: string = null;
+
+  currWinSize: any = window.innerWidth;
+  isDesktop: boolean = this.currWinSize > 1024;
+  isMobile: boolean = this.currWinSize < 768;
 
   constructor(
-    private dataService: HomeService,
-    private formBuilder: FormBuilder
+    private dataService: SharedService,
   ) {}
 
   ngOnInit(): void {
@@ -38,14 +40,7 @@ export class ProductListComponent implements OnInit {
       this.categoriesData = this.formatFilterData(
         this.dataService.processData(categoriesData)
       );
-      this.form = this.formBuilder.group({
-        filters: this.addCheckboxes(),
-      });
     });
-  }
-
-  get filtersFormArray() {
-    return this.form.controls.filters as FormArray;
   }
 
   private formatFilterData(data: any[]): FilterData[] {
@@ -53,42 +48,46 @@ export class ProductListComponent implements OnInit {
       const mappedData: FilterData = {
         id: item.id,
         name: item.name,
+        checked: false,
       };
       return mappedData;
     });
   }
 
-  private addCheckboxes() {
-    const arr = new FormArray([]);
-    this.categoriesData.forEach(() => arr.push(new FormControl(false)));
-
-    return arr;
+  onSelectionChnage(categoryId: string) {
+    this.filterProducts(categoryId);
   }
 
-  onCheckboxChange(index: number) {
-    this.filtersFormArray.controls.forEach((control, idx) => {
-      if (idx !== index) {
-        control.setValue(false);
-      }
-    });
-    const selectedOrderId: string = this.form.value.filters
-      .map((checked: any, i: number) =>
-        checked ? this.categoriesData[i].id : null
-      )
-      .find((v: any[]) => v !== null);
+  onCheckboxChange(categoryId: string) {
+    this.currCategory = this.currCategory === categoryId ? null : categoryId;
+    this.filterProducts(this.currCategory);
+  }
 
-    if (selectedOrderId) {
+  private filterProducts(categoryId: string) {
+    if (categoryId) {
+      this.categoriesData.forEach((category, idx) => {
+        if (category.id !== categoryId) {
+          category.checked = false;
+        } else {
+          category.checked = true;
+        }
+      });
       this.productsList = [
-        ...this.productsListCopy.filter(
-          (item) => item.category === selectedOrderId
-        ),
+        ...this.productsListCopy.filter((item) => item.category === categoryId),
       ];
     } else {
+      this.categoriesData.forEach((category) => (category.checked = false));
       this.productsList = [...this.productsListCopy];
     }
   }
 
   trackById(index: number, product: any): string {
     return product.id;
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event) {
+    this.isDesktop = event.target.innerWidth > 1024;
+    this.isMobile = event.target.innerWidth < 768;
   }
 }

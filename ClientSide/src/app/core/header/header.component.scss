@@ -1,3 +1,12 @@
+@import "../../../mixins";
+
+
+.skip {
+  display: none;
+  @include desktop {
+    display: block;
+  }
+}
 .skip a {
   position: absolute;
   left: 10000px;
@@ -33,6 +42,7 @@
     padding: 10px 20px 10px 20px;
     a {
       text-decoration: none;
+      color: black;
     }
   }
   .nav-center {
@@ -51,11 +61,19 @@
       height: 30px;
       background-color: #d8d8d8;
       width: 60%;
-      a {
-        flex: 0 0 30px;
-      }
-      span {
-        flex: 1 1 30px;
+      .btn {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        height: auto;
+        color: black;
+        background-color: #d8d8d8;
+        &:before {
+          content: url(http://localhost:4200/static/images/cart.svg);
+          width: 30px;
+          margin-right: 5px;
+          margin-top: 2px;
+        }
       }
     }
   }

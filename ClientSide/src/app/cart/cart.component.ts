@@ -1,4 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  ElementRef,
+  OnInit,
+  Renderer2,
+  ViewChild,
+} from '@angular/core';
 import { CartProducts } from '../models/CartProducts';
 import { CartService } from '../shared/services/cart.service';
 
@@ -7,16 +14,24 @@ import { CartService } from '../shared/services/cart.service';
   templateUrl: './cart.component.html',
   styleUrls: ['./cart.component.scss'],
 })
-export class CartComponent implements OnInit {
+export class CartComponent implements OnInit, AfterViewInit {
   showModal: boolean;
   productsInCart: CartProducts[];
   checkoutAmont: number;
 
-  constructor(private cartService: CartService) {}
+  @ViewChild('closebtn') closebtn: ElementRef;
+
+  constructor(private cartService: CartService, private renderer: Renderer2) {}
+
+  ngAfterViewInit(): void {
+    // this.renderer.selectRootElement(this.closebtn, true).focus();
+  }
 
   ngOnInit(): void {
     this.cartService.showCart.subscribe((data) => {
       this.showModal = data;
+      // this.renderer.selectRootElement('#closebtn', true).focus();
+
     });
 
     this.cartService.getCartItem.subscribe((data) => {

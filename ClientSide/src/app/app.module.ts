@@ -11,6 +11,7 @@ import { HeaderComponent } from './core/header/header.component';
 import { FormContentComponent } from './shared/form-content/form-content.component';
 import { SignupComponent } from './signup/signup.component';
 import { CartComponent } from './cart/cart.component';
+import { FooterComponent } from './core/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { CartComponent } from './cart/cart.component';
     FormContentComponent,
     SignupComponent,
     CartComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,

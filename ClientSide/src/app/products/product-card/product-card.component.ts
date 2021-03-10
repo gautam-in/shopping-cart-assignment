@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, HostListener, Input, OnInit } from '@angular/core';
 import { Products } from '../../models/Products';
 import { CartService } from '../../shared/services/cart.service';
 
@@ -9,6 +9,7 @@ import { CartService } from '../../shared/services/cart.service';
 })
 export class ProductCardComponent implements OnInit {
   @Input() product: Products;
+  @Input() isDesktop: boolean;
   constructor(private cartService: CartService) {}
 
   ngOnInit(): void {}

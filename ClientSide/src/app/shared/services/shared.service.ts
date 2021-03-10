@@ -14,7 +14,7 @@ import { CartService } from './cart.service';
 @Injectable({
   providedIn: 'root',
 })
-export class HomeService {
+export class SharedService {
   apiURL = environment.serverURL;
 
   constructor(private http: HttpClient, private cartService: CartService) {}
@@ -67,4 +67,6 @@ export class HomeService {
     console.error(err);
     return throwError(errorMessage);
   }
+
+
 }

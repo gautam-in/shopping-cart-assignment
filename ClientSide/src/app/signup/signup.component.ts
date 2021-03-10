@@ -6,6 +6,7 @@ import {
   AbstractControl,
 } from '@angular/forms';
 import { Router } from '@angular/router';
+import { LoginService } from '../shared/services/login.service';
 
 @Component({
   selector: 'app-signup',
@@ -16,7 +17,7 @@ export class SignupComponent implements OnInit {
   heading = 'Signup';
   subText = 'We do not share your personal details with anyone';
   signupForm: FormGroup;
-  constructor(public router: Router) {}
+  constructor(public router: Router, private loginService: LoginService) {}
 
   ngOnInit(): void {
     this.initForm();
@@ -38,7 +39,7 @@ export class SignupComponent implements OnInit {
         email: new FormControl('', [
           Validators.required,
           Validators.pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$'),
-          Validators.maxLength(15),
+          Validators.maxLength(25),
         ]),
         password: new FormControl('', [
           Validators.required,
@@ -81,7 +82,11 @@ export class SignupComponent implements OnInit {
     return password === confirmPassword ? null : { notSame: true };
   }
   onFormSubmit() {
+    localStorage.setItem('userEmail', this.email.value);
+    localStorage.setItem('isLoggedIn', 'true');
+    this.loginService.login();
     this.signupForm.reset();
+    this.router.navigate(['/home']);
     this.router.navigate(['/home']);
   }
 }

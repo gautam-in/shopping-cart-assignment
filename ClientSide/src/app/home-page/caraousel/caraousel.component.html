@@ -1,30 +1,29 @@
-
 <section *ngIf="caraouseldata" class="caraousel-container" aria-labelledby="carouselheading">
   <h3 id="carouselheading" class="visuallyhidden">Independence Day Sale</h3>
   <!-- Full-width images with number and caption text -->
   <ul>
     <li class="image-slide fade" *ngFor="let slide of caraouseldata; let i = index"
       [style.display]="i === slideIndex - 1 ? 'block' : 'none'">
-      <div class="numbertext">{{ i + 1 }} / {{ caraouseldata.length }}</div>
+      <div class="numbertext visuallyhidden">{{ i + 1 }} / {{ caraouseldata.length }}</div>
       <img [alt]="slide.bannerImageAlt" [src]="slide.bannerImageUrl" srcset="
           {{slide.bannerImageUrl_small}}   320w,
           {{slide.bannerImageUrl_medium}}  640w,
           {{slide.bannerImageUrl}}        1024w
-        " sizes="(min-width: 60rem) 80vw,
-             (min-width: 40rem) 90vw,
-             100vw" />
+        " sizes="(min-width: 1024px) 80vw,
+        (min-width: 768px) 80vw,
+        100vw" />
       <div class="visuallyhidden" aria-live="polite" aria-atomic="true">
         Item {{ i + 1 }} of {{ caraouseldata.length }}
       </div>
     </li>
   </ul>
   <!-- Next and previous buttons -->
-  <button aria-label="Previous Item" type="button" class="btn prev" (click)="plusSlides(-1)">
+  <!-- <button aria-label="Previous Item" type="button" class="btn prev" (click)="plusSlides(-1)">
     &#10094;
   </button>
   <button aria-label="Next Item" type="button" class="btn next" (click)="plusSlides(1)">
     &#10095;
-  </button>
+  </button> -->
   <ul class="dots-container">
     <li *ngFor="let slide of caraouseldata; let i = index" (click)="currentSlide(i + 1)">
       <button class="btn dot" [ngClass]="{ active: i === slideIndex - 1 }" [attr.data-slide]="i">

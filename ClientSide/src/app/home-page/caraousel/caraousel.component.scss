@@ -1,20 +1,25 @@
-.caraousel-container,
-.categories-container {
+@import "../../../mixins";
+
+.caraousel-container {
   padding: 5px 0;
   box-shadow: 0 8px 6px -6px #d8d8d8;
+  // height: 25vh;
+  @include desktop {
+    // height: 40vh;
+  }
 }
 
 /* Slideshow container */
 .caraousel-container {
-  max-width: 100%;
-  position: relative;
-  margin: auto;
+  // max-width: 100%;
+  // position: relative;
+  // margin: auto;
 }
 
 /* Hide the images by default */
 .image-slide {
   display: none;
-  height: 40vh;
+  // height: 40vh;
   position: relative;
 }
 /* Fading animation */
@@ -43,9 +48,9 @@
   }
 }
 img {
-  vertical-align: middle;
-  width: 100%;
-  height: 100%;
+  // vertical-align: middle;
+  // width: 100%;
+  // height: 100%;
 }
 
 /* Next & previous buttons */

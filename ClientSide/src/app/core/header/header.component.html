@@ -18,22 +18,36 @@
   </nav>
   <div class="nav-right">
     <ul>
+      <ng-container *ngTemplateOutlet="isLoggedIn ? signOut : singIn"></ng-container>
+    </ul>
+
+    <ng-template #singIn>
       <li>
         <a class="nav-item" routerLink="login" href="javascript: void(0)">
-          Sign in
+          Sign In
         </a>
+
       </li>
       <li>
         <a class="nav-item" routerLink="register" href="javascript: void(0)">
           Register
         </a>
       </li>
-    </ul>
-    <div class="nav-mini-cart">
-      <a href="javascript: void(0)" (click)="onClickCart()">
-        <img class="cart-logo" src="static/images/cart.svg" alt="Mini cart" aria-label="Your cart items" />
-      </a>
-      <span>{{noOfItems}} items</span>
+    </ng-template>
+
+    <ng-template #signOut>
+      <li>
+        <a class="nav-item" (click)="onSignOut()" href="javascript: void(0)">
+          Sign Out
+        </a>
+      </li>
+    </ng-template>
+
+    <div class="nav-mini-cart" [style.width]="isLoggedIn ? '100%' : '60%'">
+      <button class="btn" type="button" aria-label="Your cart items" aria-describedby="itemsInCart"
+        (click)="onClickCart()">
+        <span id="itemsInCart">{{noOfItems}} items</span>
+      </button>
     </div>
   </div>
 </header>
