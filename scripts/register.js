@@ -1,17 +1,18 @@
 let form = document.querySelector(".login-form");
+let errorConstantsObj = errorConstants;
 form.addEventListener("submit", (e) => {
     e.preventDefault();
     if (form.email.value !== "") {
         if (!validateEmail(form.email.value)) {
             document.querySelector("#emailError").innerHTML =
-                "*Please enter valid email*";
+                errorConstantsObj.EMAIL_INVALID_ERROR;
             return false;
         }
     }
     if (form.password.value !== "" && form.confirmPassword.value !== "") {
         if (form.password.value !== form.confirmPassword.value) {
             document.querySelector("#confirmPasswordError").innerHTML =
-                "*Passwords do not match*";
+                errorConstantsObj.PASSWORDS_DO_NOT_MATCH_ERROR;
             return false;
         }
     }
@@ -23,50 +24,35 @@ form.addEventListener("submit", (e) => {
         form.confirmPassword.value == ""
     ) {
         if (form.email.value == "") {
-            document.querySelector("#emailError").innerHTML = "*Please enter email*";
+            document.querySelector("#emailError").innerHTML =
+                errorConstantsObj.EMAIL_REQUIRED_ERROR;
         }
         if (form.password.value == "") {
             document.querySelector("#passwordError").innerHTML =
-                "*Please enter password*";
+                errorConstantsObj.PASSWORD_REQUIRED_ERROR;
         }
         if (form.password.value == "") {
             document.querySelector("#firstNameError").innerHTML =
-                "*Please enter first name*";
+                errorConstantsObj.FIRST_NAME_REQUIRED_ERROR;
         }
         if (form.password.value == "") {
             document.querySelector("#lastNameError").innerHTML =
-                "*Please enter last name*";
+                errorConstantsObj.LAST_NAME_REQUIRED_ERROR;
         }
         if (form.password.value == "") {
             document.querySelector("#confirmPasswordError").innerHTML =
-                "*Please enter confirm password*";
+                errorConstantsObj.CONFIRM_PASSWORD_REQUIRED_ERROR;
         }
         return false;
     }
-
     location.href = "login.html";
 });
 
-function validateEmail(email) {
-    const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    return re.test(String(email).toLowerCase());
-}
-
-function clearValidationsOnKeyDown() {
-    let formElements = [
-        "firstName",
-        "lastName",
-        "email",
-        "password",
-        "confirmPassword",
-    ];
-    formElements.forEach((el) => {
-        form[el].addEventListener("keydown", (e) => {
-            if (e.target.value !== "") {
-                document.querySelector(`#${el}Error`).innerHTML = "";
-            }
-        });
-    });
-}
-
-clearValidationsOnKeyDown();
+let formElementsForRegister = [
+    "firstName",
+    "lastName",
+    "email",
+    "password",
+    "confirmPassword",
+];
+clearValidationsOnKeyDown(formElementsForRegister);

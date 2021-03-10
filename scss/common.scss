@@ -198,6 +198,11 @@ body {
       a + div {
         cursor: pointer;
       }
+      button,
+      button + div {
+        border: none;
+        cursor: pointer;
+      }
 
       &--logo {
         height: 0.37 * $header-height;

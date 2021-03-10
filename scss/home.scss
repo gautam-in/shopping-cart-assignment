@@ -32,9 +32,12 @@ main.home {
     // &:nth-child(odd) {
     //   flex-direction: row-reverse;
     // }
-    .category-logo {
-      height: 200px;
+    figure {
       max-width: 50%;
+      img {
+        height: 200px;
+        width: 90%;
+      }
     }
     .category-detail {
       align-items: center;

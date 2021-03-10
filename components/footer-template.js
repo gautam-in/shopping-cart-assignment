@@ -5,7 +5,7 @@ class FooterTemplate extends HTMLElement {
     connectedCallback() {
         this.innerHTML = /*html*/`
         
-        <footer role="contentinfo">
+        <footer>
         <p class="app-footer">
             Copyright &copy; 2011-2019 Sabka Bazaar Grocery Supplies Pvt Ltd
         </p>

@@ -6,8 +6,10 @@ class CategoryTemplate extends HTMLElement {
 
 
         this.innerHTML = /*html*/`
-        <div class="${this.getAttribute('flexDirection')} category">
+        <section class="${this.getAttribute('flexDirection')} category">
+        <figure>
         <img src="../static/images/category/${this.getAttribute('imgSrc')}.png" alt="${this.getAttribute('imgAlt')}" class="category-logo" />
+        </figure>
         <div class="flex-column category-detail">
             <h1 class="category-detail__main">${this.getAttribute('mainText')}</h1>
             <h2 class="category-detail__sub">
@@ -16,7 +18,7 @@ class CategoryTemplate extends HTMLElement {
             <button class="btn" onclick="location.href='products.html'+ '${this.getAttribute('buttonFragment')}' ">
             ${this.getAttribute('buttonText')}</button>
         </div>
-        </div>
+        </section>
         `
     }
 

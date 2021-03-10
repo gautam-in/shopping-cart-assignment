@@ -71,6 +71,9 @@ function loadAllProducts(ind) {
         case 5:
             loadProductsBasedOnSelection(allProducts.babyCareObj);
             break;
+        case 0:
+            loadProductsBasedOnSelection(allProducts.allObj);
+            break;
         default:
             if (fragmentText.includes("fruits")) {
                 loadProductsBasedOnSelection(allProducts.fruitsVegetablesObj);
@@ -103,7 +106,7 @@ function loadProductsBasedOnSelection(obj) {
     let productListRow = document.querySelector(".product-list-row");
     productListRow.innerHTML = "";
     Object.keys(obj).forEach((key) => {
-        let productCardDiv = document.createElement("div");
+        let productCardDiv = document.createElement("article");
         productCardDiv.classList.add("product-card");
         let h1 = document.createElement("h1");
         h1.classList.add("product-card__name");
@@ -111,12 +114,14 @@ function loadProductsBasedOnSelection(obj) {
         productCardDiv.appendChild(h1);
         let productCardDetailDiv = document.createElement("div");
         productCardDetailDiv.classList.add("product-card__detail");
+        let figureTag = document.createElement('figure');
         let img = document.createElement("img");
         img.classList.add("product-card__detail--img");
         img.src = `../static/images/products/${obj[key].imgSrc}`;
         img.alt = obj[key].imgAlt;
         img.setAttribute("aria-labelledby", obj[key].imgLabel);
-        productCardDetailDiv.appendChild(img);
+        figureTag.appendChild(img);
+        productCardDetailDiv.appendChild(figureTag);
         let p = document.createElement("p");
         p.id = obj[key].imgLabel;
         p.classList.add("product-card__detail--description");

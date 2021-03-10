@@ -114,7 +114,7 @@ function setPrice(event, label) {
         "Rs."
     )[1];
     cartItemsMoreThanZero2[idx].imgSrc =
-        event.target.parentElement.parentElement.parentElement.firstChild.src;
+        event.target.parentElement.parentElement.parentElement.firstChild.firstChild.src;
 }
 
 function setPriceForPlusAndMinus(

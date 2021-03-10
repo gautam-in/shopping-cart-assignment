@@ -27,7 +27,7 @@ class FormTemplate extends HTMLElement {
         this.paramsArray.forEach((el, i) => {
             let temp = /*html*/`
             <div class="form__input-container">
-            <input type="${this.inputTypesArray[i]}" class="form__input--login" required id="${el}" name="${el}"
+            <input type="${this.inputTypesArray[i]}" class="form__input--login" required id="${el}" name="${el}" onblur="validate(event)"
                 aria-describedby="${el}Error" />
             <label for="${el}">${this.textsArray[i]}</label>
             <div class="bar"></div>

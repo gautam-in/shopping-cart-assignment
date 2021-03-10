@@ -462,6 +462,11 @@ body {
 .nav__end-cart a + div {
   cursor: pointer;
 }
+.nav__end-cart button,
+.nav__end-cart button + div {
+  border: none;
+  cursor: pointer;
+}
 .nav__end-cart--logo {
   height: 28.49px;
   fill: #d10157;
@@ -949,9 +954,12 @@ main.home .category:after {
   position: absolute;
   bottom: 0;
 }
-main.home .category .category-logo {
-  height: 200px;
+main.home .category figure {
   max-width: 50%;
+}
+main.home .category figure img {
+  height: 200px;
+  width: 90%;
 }
 main.home .category .category-detail {
   align-items: center;
@@ -1161,7 +1169,7 @@ main.form-container .form .form__input-container [id$=Error] {
 }
 main.form-container .form .form__input-container label {
   position: absolute;
-  top: 14px;
+  top: 0;
   color: #b4a89c;
   font-size: 16px;
   cursor: text;
@@ -1179,17 +1187,12 @@ main.form-container .form .form__input-container input {
   transition: 0.3s ease;
   font-family: "Dosis";
 }
-main.form-container .form .form__input-container input:valid ~ label {
-  top: 0;
-  font-size: 9.6px;
-  color: rgba(0, 0, 0, 0.5);
-}
 main.form-container .form .form__input-container input:focus {
   outline: none;
 }
 main.form-container .form .form__input-container input:focus ~ label {
   top: 0;
-  font: 700 9.6px;
+  font-size: 9.6px;
   color: #93d4d2;
 }
 main.form-container .form .form__input-container input:focus ~ .bar:before {
@@ -1303,21 +1306,12 @@ main.form-container .form .form__input-container .bar:before {
   flex-direction: column;
   justify-content: space-between;
 }
-.product-card__detail--img {
-  width: 50%;
+.product-card__detail figure {
+  width: 65%;
+}
+.product-card__detail figure img {
   height: 9.5rem;
   margin-right: 3px;
-}
-@media only screen and (min-width: 1024px) {
-  .product-card__detail {
-    display: flex;
-    flex: 1;
-    flex-direction: column;
-  }
-  .product-card__detail--img {
-    width: 100%;
-    height: auto;
-  }
 }
 @media only screen and (min-width: 480px) {
   .product-card__detail {
@@ -1325,7 +1319,10 @@ main.form-container .form .form__input-container .bar:before {
     flex: 1;
     flex-direction: column;
   }
-  .product-card__detail--img {
+  .product-card__detail figure {
+    width: 100%;
+  }
+  .product-card__detail figure img {
     width: 100%;
     height: auto;
   }

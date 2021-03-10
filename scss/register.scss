@@ -38,7 +38,7 @@ main.form-container {
 
       label {
         position: absolute;
-        top: 14px;
+        top: 0;
         color: #b4a89c;
         font-size: 16px;
         cursor: text;
@@ -59,18 +59,19 @@ main.form-container {
         transition: 0.3s ease;
         font-family: "Dosis";
 
-        &:valid {
-          ~ label {
-            top: 0;
-            font-size: 240/25 * 1px;
-            color: rgba(black, 0.5);
-          }
-        }
+        // &:valid {
+        //   ~ label {
+        //     top: 0;
+        //     font-size: 240/25 * 1px;
+        //     color: rgba(black, 0.5);
+        //   }
+        // }
         &:focus {
           outline: none;
           ~ label {
             top: 0;
-            font: 700 $width/25;
+            // font: 700 $width/25;
+            font-size: 240/25 * 1px;
             color: $input-theme-color-primary;
           }
 
