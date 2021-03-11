@@ -18,7 +18,7 @@
                   </label>
                 
                   <label for="exampleInputPassword1" class="text-color has-float-label">
-                    <input pattern="^(?=.*\d)[a-zA-Z\d]{6,}$" required formControlName="password"  type="text"  id="exampleInputPassword1" placeholder="" autocomplete="off"/>
+                    <input pattern="^(?=.*\d)[a-zA-Z\d]{6,}$" required formControlName="password"  type="password"  id="exampleInputPassword1" placeholder="" autocomplete="off"/>
                     <span class="field-name">Password</span>
                     <span *ngIf="form.get('password').hasError('pattern')" tabindex="0" aria-label="Minimum passowrd length is 6 and it must have alphabet and number without any spaces">Minimum passowrd length is 6 and it must have alphabet and number without any spaces&nbsp;<span class="materialIcons material-icons">
                         error_outline

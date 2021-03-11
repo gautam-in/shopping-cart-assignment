@@ -1,5 +1,6 @@
 import { Component, ElementRef, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Observable } from 'rxjs';
+import { InMemoryDataService } from 'src/app/services/in-memory-data.service';
 
 @Component({
   selector: 'app-drop-down',
@@ -11,7 +12,7 @@ export class DropDownComponent implements OnInit {
   @Input() $categoryData: Observable<any>;
   @Output() $listData = new EventEmitter();
   showHide = false;
-  constructor() { }
+  constructor(private inMemoryDataService: InMemoryDataService) { }
 
   ngOnInit(): void {
   }
@@ -29,5 +30,24 @@ export class DropDownComponent implements OnInit {
       }
       this.$listData.emit(obj);
     }
+  }
+  ngAfterViewChecked(): void {
+    if (this.inMemoryDataService.productId){
+      const elem =  document.getElementById(this.inMemoryDataService.productId);
+      // const all =  document.getElementById('all');
+     
+      // all.selected = false;
+      if(elem){
+        // elem.selected = true;
+        // elem.setAttribute('selected','selected');
+        // all.setAttribute('selected','false');
+        const obj = {
+          enabled: true,
+          id: this.inMemoryDataService.productId
+        };
+        this.$listData.emit(obj);
+      }
+     }
+    
   }
 }

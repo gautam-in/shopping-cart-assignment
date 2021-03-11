@@ -2,6 +2,7 @@ import { LiveAnnouncer } from '@angular/cdk/a11y';
 import { HttpClient } from '@angular/common/http';
 import { AfterViewInit, Component, OnDestroy, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
+import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { takeWhile } from 'rxjs/operators';
 import { InMemoryDataService } from 'src/app/services/in-memory-data.service';
@@ -18,7 +19,7 @@ export class HomeComponent implements OnInit, OnDestroy{
   // public $bannerData: Observable<any>;
   public $categoryData: Observable<any>;
   public bannerDataArray: any[] = [];
-  constructor(private inMemoryDataService: InMemoryDataService, private titleService: Title) {
+  constructor(private inMemoryDataService: InMemoryDataService, private titleService: Title, private router: Router, ) {
     this.active = true;
     this.titleService.setTitle('Home Page');
    }
@@ -32,6 +33,10 @@ export class HomeComponent implements OnInit, OnDestroy{
     this.inMemoryDataService.banner().pipe(takeWhile(() => this.active)).subscribe((res) => {
       this.bannerDataArray = res;
     })
+  }
+  exploreProductListingPage(productId: string){
+    this.inMemoryDataService.productId = productId;
+    this.router.navigate(['../productLists/productsPage']);
   }
 
 }

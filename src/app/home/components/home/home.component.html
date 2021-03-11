@@ -22,6 +22,6 @@
     <section  class="img-info-section">
         <p class="font-size-med">{{data.name}}</p>
         <p class="font-size-reg">{{data.description}}</p>
-        <button   type="submit"  class="buttoncolor btn btn-primary">Explore <span class="content">{{data.name}}</span></button>
+        <button   type="submit"  class="buttoncolor btn btn-primary"  (click)="exploreProductListingPage(data.id)">Explore <span class="content">{{data.name}}</span></button>
     </section>
   </div>

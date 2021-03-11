@@ -11,7 +11,9 @@ export class InMemoryDataService {
   public cartlistData: any;
   public updateCartCount = new Subject<any>();
   public userLoggedIn: boolean;
+  public productId: string;
   constructor(private httpClient: HttpClient) {
+    this.productId = '';
    }
    getCategoryData(): Observable<any>{
     const headers = new HttpHeaders({

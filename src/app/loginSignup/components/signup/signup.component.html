@@ -22,6 +22,9 @@
                   <span *ngIf="form.get('lastName').touched && form.get('lastName').hasError('required')" tabindex="0" aria-label="Mandatory Field">Last name is mandatory&nbsp;<span class="material-icons materialIcons">
                     error_outline
                     </span></span>
+                    <span *ngIf="form.get('lastName').dirty && form.get('lastName').hasError('whitespace')" tabindex="0" aria-label="Spaces are not allowed">Spaces are not allowed&nbsp;<span class="material-icons materialIcons">
+                      error_outline
+                      </span></span>
                   </label>
                 <label class="has-float-label text-color" for="email">
                     <input required formControlName="email" type="email" id="email" autocomplete="off" placeholder=""/>
@@ -35,7 +38,7 @@
                   </label>
                 
                   <label for="password" class="text-color has-float-label">
-                    <input  pattern="^(?=.*\d)[a-zA-Z\d]{6,}$" required  formControlName="password" autocomplete="off" type="text"  id="password" placeholder=""/>
+                    <input  pattern="^(?=.*\d)[a-zA-Z\d]{6,}$" required  formControlName="password" autocomplete="off" type="password"  id="password" placeholder=""/>
                     <span class="field-name">Password</span>
                     <span *ngIf="form.get('password').hasError('pattern')" tabindex="0" aria-label="Minimum passowrd length is 6 and it must have alphabet and number without any spaces">Minimum passowrd length is 6 and it must have alphabet and number without any spaces&nbsp;<span class="material-icons materialIcons">
                         error_outline
@@ -45,7 +48,7 @@
                     </span></span>
                   </label>
                   <label for="confirm_password" class="text-color has-float-label">
-                    <input pattern="^(?=.*\d)[a-zA-Z\d]{6,}$" required  formControlName="confirmpassword" autocomplete="off" type="text"  id="confirm_password" placeholder=""/>
+                    <input pattern="^(?=.*\d)[a-zA-Z\d]{6,}$" required  formControlName="confirmpassword" autocomplete="off" type="password"  id="confirm_password" placeholder=""/>
                     <span class="field-name">Confirm Password</span>
                     <span *ngIf="form.get('confirmpassword').hasError('pattern')" tabindex="0" aria-label="Minimum passowrd length is 6 and it must have alphabet and number without any spaces">Minimum passowrd length is 6 and it must have alphabet and number without any spaces&nbsp;<span class="material-icons materialIcons ">
                         error_outline
