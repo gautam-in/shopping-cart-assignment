@@ -18,22 +18,22 @@ export class ProductListComponent implements OnInit {
   filteredProducts: IProduct[] = [];
 
   constructor(
-    private _dataService: DataService,
-    private _apiService: ApidataService
+    private dataService: DataService,
+    private apiService: ApidataService
   ) { }
 
   ngOnInit(): void {
-    this.productCategoriesList = this._dataService.categoriesList;
+    this.productCategoriesList = this.dataService.categoriesList;
     this.getAllProducts();
   }
 
-  getAllProducts() {
-    this._apiService.getProducts().subscribe(productResponse => {
+  getAllProducts(): void {
+    this.apiService.getProducts().subscribe(productResponse => {
       this.products = productResponse;
     });
   }
 
-  filterSelectedCategoryList(selectedCategoryId: string, index: number) {
+  filterSelectedCategoryList(selectedCategoryId: string, index: number): void {
     this.selectedCatagoryIndex = index;
     this.resetFilter();
     this.productCategoriesList.forEach(category => {
@@ -44,7 +44,7 @@ export class ProductListComponent implements OnInit {
     this.FilterProductsOfSelectedCatagory();
   }
 
-  FilterProductsOfSelectedCatagory() {
+  FilterProductsOfSelectedCatagory(): void {
     this.products.forEach((prod: IProduct) => {
       if (prod.category === this.filteredCategory.id) {
         this.filteredProducts.push(prod);
@@ -52,8 +52,8 @@ export class ProductListComponent implements OnInit {
     });
   }
 
-  resetFilter() {
-    this._dataService.filteredCategory = [];
+  resetFilter(): void {
+    this.dataService.filteredCategory = [];
     this.filteredCategory = [];
     this.filteredProducts = [];
   }

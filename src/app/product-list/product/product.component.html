@@ -1,9 +1,9 @@
 <section class="container-fluid">
     <section class="row">
         <div class="card col-md-3 col-sm-6 col-12 p-1" *ngFor="let product of displayProducts; let i = index"
-        [ngClass]="{'product-selected': selectedProductIndexes.indexOf(product) != -1}">
+            [ngClass]="{'product-selected': selectedProductIndexes.indexOf(product) != -1}">
             <div class="card-body">
-                <p class="card-title">{{product.name}}</p>
+                <p class="card-title" aria-level="1" role="heading">{{product.name}}</p>
                 <img class="card-img-top" src="assets/{{product.imageURL}}" alt="{{product.name}}"
                     title="{{product.name}}">
             </div>

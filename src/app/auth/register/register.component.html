@@ -1,7 +1,7 @@
 <div class="container my-5">
     <section class="row">
         <div class="col-lg-6">
-            <p class="main-heading">Signup</p>
+            <p class="main-heading" aria-level="1" role="heading">Signup</p>
             <p>We do not share your personal details with anyone.</p>
         </div>
 
@@ -41,7 +41,8 @@
 
                 <div class="form-group custom-group">
                     <input class="form-control" type="email" formControlName="email" id="email" placeholder=""
-                        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required aria-label="Enter email" autocomplete>
+                        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required aria-label="Enter email"
+                        autocomplete>
                     <label for="email" class="floating-label">Email</label>
 
                     <div *ngIf="registerForm.controls['email'].touched && !registerForm.controls['email'].valid"
@@ -66,7 +67,7 @@
                             Please enter a password
                         </div>
                         <div *ngIf="registerForm.controls['password'].hasError('pattern')">
-                            Password should contain a number, alphabet without space
+                            Password should contain a number and an alphabet without space
                         </div>
                     </div>
                 </div>
@@ -80,12 +81,8 @@
                         <div *ngIf="registerForm.controls['confirmPassword'].hasError('required')">
                             Please re-enter the password
                         </div>
-                        <div *ngIf="registerForm.errors?.mismatch">
-                            Password doesn't match
-                        </div>
                     </div>
-                    <div *ngIf="registerForm.controls['confirmPassword'].touched && registerForm.errors?.mismatch"
-                        class="alert alert-danger">
+                    <div *ngIf="registerForm.errors?.mismatch" class="alert alert-danger">
                         Password doesn't match
                     </div>
                 </div>

@@ -15,8 +15,8 @@ export class HomeComponent implements OnInit {
   catagoryList: ICategory[];
 
   constructor(
-    private _apiService: ApidataService,
-    private _dataService: DataService,
+    private apiService: ApidataService,
+    private dataService: DataService,
     private router: Router
   ) { }
 
@@ -25,20 +25,20 @@ export class HomeComponent implements OnInit {
     this.getCatagories();
   }
 
-  getBannerList() {
-    this._apiService.getBanners().subscribe(bannersResponse => {
+  getBannerList(): void {
+    this.apiService.getBanners().subscribe(bannersResponse => {
       this.bannerList = bannersResponse;
     });
   }
 
-  getCatagories() {
-    this._apiService.getCatagories().subscribe(catagoriesResponse => {
-      this._dataService.categoriesList = catagoriesResponse;
+  getCatagories(): void {
+    this.apiService.getCatagories().subscribe(catagoriesResponse => {
+      this.dataService.categoriesList = catagoriesResponse;
       this.catagoryList = catagoriesResponse;
     });
   }
 
-  navigateToProducts() {
+  navigateToProducts(): void {
     this.router.navigate(['/products']);
   }
 }

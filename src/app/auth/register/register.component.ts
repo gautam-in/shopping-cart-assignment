@@ -25,15 +25,22 @@ export class RegisterComponent implements OnInit {
     }, { validator: this.matchPassword });
   }
 
-  onRegister() {
-    localStorage.setItem('registeredUser',JSON.stringify(this.registerForm.value) );
+  onRegister(): void {
+    localStorage.setItem('registeredUser', JSON.stringify(this.registerForm.value));
     alert('User registered successfully. Please login');
     this.router.navigate(['auth/signin']);
   }
 
-  matchPassword(abs: AbstractControl): { mismatch: boolean } {
-    if (abs.get('password').value !== abs.get('confirmPassword').value) {
+  matchPassword(control: AbstractControl): { [key: string]: boolean } | null {
+    const password = control.get('password');
+    const confirmPassword = control.get('confirmPassword');
+    if (password.pristine || confirmPassword.pristine) {
+      return null;
+    }
+    if (password && confirmPassword && password.value !== confirmPassword.value) {
       return { mismatch: true };
+    } else {
+      return null;
     }
   }
 

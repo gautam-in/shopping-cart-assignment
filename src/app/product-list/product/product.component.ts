@@ -18,14 +18,14 @@ export class ProductComponent implements OnInit, OnChanges {
   selectedProductIndexes = [];
 
   constructor(
-    private _cartService: CartService,
-    private _apiService: ApidataService
+    private cartService: CartService,
+    private apiService: ApidataService
   ) { }
 
   ngOnInit(): void {
   }
 
-  ngOnChanges(simpleChanges) {
+  ngOnChanges(simpleChanges): void {
     if (this.filteredProducts && !this.filteredProducts.length) {
       this.displayProducts = this.products;
     } else {
@@ -33,16 +33,16 @@ export class ProductComponent implements OnInit, OnChanges {
     }
   }
 
-  addProductToCart(product: IProduct) {
+  addProductToCart(product: IProduct): void {
     this.highlightSelectedProducts(product);
-    this._apiService.addProductsToCart(product.id).subscribe(data => {
+    this.apiService.addProductsToCart(product.id).subscribe(data => {
       if (data && data.response === 'Success') {
-        this._cartService.addProductToCart(product);
+        this.cartService.addProductToCart(product);
       }
     });
   }
 
-  highlightSelectedProducts(selectedProduct: IProduct) {
+  highlightSelectedProducts(selectedProduct: IProduct): void {
     if (this.selectedProductIndexes.indexOf(selectedProduct) === -1) {
       this.selectedProductIndexes.push(selectedProduct);
     }

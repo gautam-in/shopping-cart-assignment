@@ -9,14 +9,14 @@ import { Component, OnInit } from '@angular/core';
 export class LoginComponent implements OnInit {
 
   constructor(
-    private _authService: AuthService
-    ) { }
+    private authService: AuthService
+  ) { }
 
   ngOnInit(): void {
   }
 
-  onLogin(loginForm) {
-    this._authService.authenticateUser(loginForm.value.email, loginForm.value.password);
+  onLogin(loginForm): void {
+    this.authService.authenticateUser(loginForm.value.email, loginForm.value.password);
   }
 
 }

@@ -8,12 +8,12 @@ import { CanActivate, Router } from '@angular/router';
 export class AuthGuard implements CanActivate {
 
   constructor(
-    private _authService: AuthService,
+    private authService: AuthService,
     private router: Router
   ) { }
 
-  canActivate() {
-    if (this._authService.isAuthenticatedUser) {
+  canActivate(): boolean {
+    if (this.authService.isAuthenticatedUser) {
       return true;
     } else {
       this.router.navigate(['/auth/signin']);

@@ -1,3 +1,4 @@
+import { ProductComponent } from './product/product.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ApidataService } from '../services/apidata.service';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
@@ -11,7 +12,7 @@ describe('ProductListComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ProductListComponent],
+      declarations: [ProductListComponent, ProductComponent],
       providers: [ApidataService],
       imports: [HttpClientModule]
     })

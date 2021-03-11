@@ -8,25 +8,25 @@ import { Router } from '@angular/router';
 export class AuthService {
 
   isAuthenticatedUser = false;
-  registeredUser;
+  registeredUser: any;
   constructor(
-    private _dataService: DataService,
+    private dataService: DataService,
     private router: Router
   ) { }
 
-  authenticateUser(loggedInUserEmail: string, loggedInUserPassword: string) {
+  authenticateUser(loggedInUserEmail: string, loggedInUserPassword: string): void {
     this.registeredUser = JSON.parse(localStorage.getItem('registeredUser'));
     if (loggedInUserEmail === this.registeredUser.email && loggedInUserPassword === this.registeredUser.password) {
       this.isAuthenticatedUser = true;
-      this._dataService.isLoggedInSubject.next({ isLoggedIn: true, userName: this.registeredUser.firstName });
+      this.dataService.isLoggedInSubject.next({ isLoggedIn: true, userName: this.registeredUser.firstName });
       this.router.navigate(['/home']);
     } else if (loggedInUserEmail === 'admin@gmail.com' && loggedInUserPassword === 'admin123') {
       this.isAuthenticatedUser = true;
-      this._dataService.isLoggedInSubject.next({ isLoggedIn: true, userName: 'Admin' });
+      this.dataService.isLoggedInSubject.next({ isLoggedIn: true, userName: 'Admin' });
       this.router.navigate(['/home']);
     } else {
       this.isAuthenticatedUser = false;
-      this._dataService.isLoggedInSubject.next({ isLoggedIn: false, userName: '' });
+      this.dataService.isLoggedInSubject.next({ isLoggedIn: false, userName: '' });
       alert('User not found. Please register');
       this.router.navigate(['auth/register']);
     }

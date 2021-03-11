@@ -7,29 +7,29 @@ const routes: Routes = [
   {
     path: '',
     pathMatch: 'full',
-    redirectTo: "home"
+    redirectTo: 'home'
   },
   {
-    path: "home",
+    path: 'home',
     canActivate: [AuthGuard],
     component: HomeComponent
   },
   {
-    path: "products",
+    path: 'products',
     canActivate: [AuthGuard],
     loadChildren: () => import(`../app/product-list/product.module`).then(m => m.ProductModule)
   },
   {
-    path: "auth",
+    path: 'auth',
     loadChildren: () => import(`./auth/auth.module`).then(m => m.AuthModule)
   },
   {
-    path: "cart",
+    path: 'cart',
     canActivate: [AuthGuard],
     loadChildren: () => import(`../app/cart/cart.module`).then(m => m.CartModule)
   },
   {
-    path: "**", component: HomeComponent
+    path: '**', component: HomeComponent
   }
 ];
 

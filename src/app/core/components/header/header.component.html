@@ -33,11 +33,11 @@
                 </li>
             </ul>
         </div>
-        <div class="cart-container">
+        <div class="cart-container"  role="dialog" id="cart-modal" aria-label="Cart Modal">
             <ul class="navbar-nav cart" *ngIf="isLoggedIn">
                 <li class="nav-item cart-link">
                     <a class="nav-link" [routerLink]="['/cart']" [routerLinkActive]="['active-cart']"
-                        data-toggle="modal" data-target="#cartModal" role="button"><img
+                        data-toggle="modal" data-target="#cartModal"><img
                             src="assets/static/images/cart.svg" class="cart-logo" alt="cart-logo">
 
                         <span *ngIf="groceryCart.length >0">{{groceryCart.length}}</span>

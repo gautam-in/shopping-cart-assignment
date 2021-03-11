@@ -1,3 +1,4 @@
+import { ProductListComponent } from './../product-list/product-list.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ApidataService } from 'src/app/services/apidata.service';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
@@ -13,7 +14,9 @@ describe('HomeComponent', () => {
     await TestBed.configureTestingModule({
       declarations: [ HomeComponent ],
       providers: [ApidataService],
-      imports: [HttpClientModule, RouterTestingModule]
+      imports: [HttpClientModule, RouterTestingModule.withRoutes([
+        { path: 'products', component: ProductListComponent}
+    ])]
     })
     .compileComponents();
   });

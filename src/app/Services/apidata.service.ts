@@ -11,7 +11,7 @@ import { ICategory } from '../model/category.model';
 })
 export class ApidataService {
 
-  baseUrl: string = "http://localhost:5000";
+  baseUrl = 'http://localhost:5000';
 
   constructor(private http: HttpClient) { }
 

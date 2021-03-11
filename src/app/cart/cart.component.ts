@@ -13,35 +13,35 @@ export class CartComponent implements OnInit {
   groceryCart: IProduct[] = [];
 
   constructor(
-    private _cartService: CartService,
+    private cartService: CartService,
     private router: Router
   ) { }
 
-  ngOnInit() {
-    this._cartService.cartItems$.subscribe((data: IProduct[]) => {
+  ngOnInit(): void {
+    this.cartService.cartItems$.subscribe((data: IProduct[]) => {
       this.groceryCart = data;
     });
-    this._cartService.totalItemPrice();
+    this.cartService.totalItemPrice();
   }
 
-  increaseProductQuantity(product: IProduct) {
-    return this._cartService.increaseProductQuantity(product);
+  increaseProductQuantity(product: IProduct): any {
+    return this.cartService.increaseProductQuantity(product);
   }
 
-  removeProductFromCart(product: IProduct) {
-    return this._cartService.removeProductFromCart(product);
+  removeProductFromCart(product: IProduct): any {
+    return this.cartService.removeProductFromCart(product);
   }
 
-  totalAmount() {
-    return this._cartService.totalAmount();
+  totalAmount(): any {
+    return this.cartService.totalAmount();
   }
 
-  totalItemPrice() {
-    return this._cartService.totalItemPrice();
+  totalItemPrice(): any {
+    return this.cartService.totalItemPrice();
   }
 
-  resetCart() {
-    this._cartService.resetCart();
+  resetCart(): void {
+    this.cartService.resetCart();
     this.router.navigate(['/home']);
   }
 }

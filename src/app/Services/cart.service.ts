@@ -13,8 +13,8 @@ export class CartService {
 
   constructor() { }
 
-  addProductToCart(product: IProduct) {
-    let newCart = [];
+  addProductToCart(product: IProduct): any {
+    const newCart = [];
     let index = 0;
     this.initialCart.push(product);
     this.initialCart.forEach((prod, i) => {
@@ -29,9 +29,9 @@ export class CartService {
     return this.cartItems$;
   }
 
-  removeProductFromCart(product: IProduct) {
+  removeProductFromCart(product: IProduct): void {
     const productIndex = this.finalCart.indexOf(product);
-    if (productIndex != -1) {
+    if (productIndex !== -1) {
       this.finalCart.forEach(prod => {
         if (prod.id === product.id && prod.count > 0) {
           prod.count -= 1;
@@ -39,14 +39,14 @@ export class CartService {
         if (prod.count === 0) {
           this.finalCart.splice(productIndex, 1);
         }
-      })
+      });
     }
     this.totalItemPrice();
     this.subject$.next(this.finalCart);
   }
 
-  increaseProductQuantity(product: IProduct) {
-    let newCart = [];
+  increaseProductQuantity(product: IProduct): void {
+    const newCart = [];
     this.finalCart.forEach((prod, i) => {
       if (prod.id === product.id) {
         ++prod.count;
@@ -58,8 +58,8 @@ export class CartService {
     this.subject$.next(this.finalCart);
   }
 
-  totalItemPrice() {
-    let itemTotal = 0;
+  totalItemPrice(): any {
+    const itemTotal = 0;
     for (const item of this.finalCart) {
       const productUnit = item.count;
       if (item.price) {
@@ -69,7 +69,7 @@ export class CartService {
     return itemTotal;
   }
 
-  totalAmount() {
+  totalAmount(): any {
     let total = 0;
     for (const item of this.finalCart) {
       if (item.totalPrice) {
@@ -79,7 +79,7 @@ export class CartService {
     return total;
   }
 
-  resetCart() {
+  resetCart(): void {
     this.initialCart = [];
     this.finalCart = [];
     this.subject$.next(this.finalCart);
