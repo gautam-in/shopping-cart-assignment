@@ -1,0 +1,12 @@
+<div  role="dialog" class="modal-header txt-color-white font-size-15 font-size-med">
+    <h4 class="modal-title pull-left" id="my-modal-title">My Cart [{{this.cartData?.cartCount ? this.cartData?.cartCount:0 }} items]</h4>
+    <button type="button" class="txt-color-white close pull-right" aria-label="Close" (click)="bsModalRef.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body" id="my-modal-description">
+    <app-cart [showHeader]="true" (checkOutItems)="closeModal()"></app-cart>
+  </div>
+  <div class="modal-footer">
+  </div>
+

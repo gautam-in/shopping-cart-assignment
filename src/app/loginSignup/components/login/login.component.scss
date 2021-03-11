@@ -1,0 +1,159 @@
+.flex-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.btn{
+    width:100%;
+    font-weight: bold;
+}
+
+.container{
+    height: 100vh;
+    position: relative;
+}
+
+.login-row{
+    position: absolute;
+    top: 15%;
+    /* justify-content: center; */
+    bottom: 15%;
+    left: 15%;
+    right: 15%;
+}
+
+/* For mobile phones: */
+[class*="col-"] {
+    width: 100%;
+  }
+
+ @mixin float-label-container {
+    display: block;
+    position: relative;
+  }
+  
+  @mixin float-label {
+    label, > .field-name {
+      position: absolute;
+      left: 0;
+      top: 0;
+      cursor: text;
+      // font-size: 110%;
+      opacity: 1;
+      transition: all .2s;
+      @content;
+    }
+  }
+  
+  @mixin float-label-input {
+    &::placeholder {
+      opacity: 1;
+      transition: all .2s;
+    }
+    &:placeholder-shown:not(:focus)::placeholder {
+        opacity: 0;
+    }
+  }
+  
+  @mixin float-label-scaled {
+    &:placeholder-shown:not(:focus) + * {
+        font-size: 150%;
+        opacity: .5;
+        @content;
+    }
+  }
+  
+  /* Default styling
+   * https://github.com/tonystar/float-label-css/blob/master/scss/float-label.scss
+   */
+  .has-float-label {
+    @include float-label-container;
+  
+    @include float-label;
+
+    margin-top:5%;
+  
+    select {
+      -webkit-appearance: none;
+         -moz-appearance: none;
+              appearance: none;
+    }
+  
+    input, select {
+      @include float-label-input;
+      font-size: inherit;
+      padding-top: 1em;
+      margin-bottom: 2px;
+      border: 0;
+      border-radius: 0;
+      border-bottom: 2px solid rgb(0 0 0 / 25%);
+  
+      @include float-label-scaled {
+        top: .25em;
+      }
+  
+      &:focus {
+        outline: none;
+        border-color: #007bff;
+      }
+    }
+  }
+  
+  // Custom styling
+  form {
+    background: white;
+  }
+  input, select {
+    width: 100%;
+    margin-bottom: .5rem;
+  }
+  button {
+    border: 0;
+    padding: .5em 1em;
+    margin-top: 1rem;
+  }
+  a {
+    display: block;
+    padding: 10px;
+    position: absolute;
+    z-index: -1;
+    top: 1rem;
+    left: 100%;
+    margin-left: -65px;
+    transition: all .2s;
+  }
+  a:hover {
+    margin-left: 0;
+  }
+  .input-group {
+    display: table;
+    width: 100%;
+  }
+  .input-group > * {
+    display: table-cell;
+    width: 50%;
+  }
+  
+  @media only screen and (min-width:577px) and (max-width:1023px){
+    .login-row{
+      position: absolute;
+      top: 5%;
+      bottom: 15%;
+      left: 0%;
+      right: 0%;
+  }
+}
+  @media only screen and (max-width:576px){
+    .login-row{
+      position: absolute;
+      top: 5%;
+      bottom: 30%;
+      left: 15%;
+      right: 15%;
+  }
+  .login-form{
+    padding-bottom: 20rem;
+  }
+  }

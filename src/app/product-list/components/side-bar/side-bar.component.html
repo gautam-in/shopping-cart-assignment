@@ -1,0 +1,10 @@
+<nav class="nav-list" aria-label="Side">
+    <ul class="ulist-style">
+        <li  [attr.aria-label]="list.name+'fetched'" class="list-style" [ngClass]="{'active':i===current}" *ngFor="let list of $categoryData | async; let i=index;"  (click)="listClicked(list,i);$event.stopPropagation()">
+            <a href="javascript:void(0);"  class="text-color">{{list.name}}</a>
+            <hr aria-hidden="true"> 
+        </li>
+    </ul>
+</nav>
+
+

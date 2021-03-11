@@ -1,0 +1,4 @@
+<select  class="d-flex menu-bar backGround font-size-15" name="product" id="product"  (change)="listClicked($event)">
+  <option selected value="all">All Products</option>
+  <option [value]="list.id" [id]="list.id" *ngFor="let list of $categoryData | async; let i=index;">{{list.name}}</option>
+</select>

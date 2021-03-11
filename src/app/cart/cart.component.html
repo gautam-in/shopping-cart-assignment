@@ -1,0 +1,46 @@
+<div *ngIf="cartListData?.productArray && cartListData?.productArray.length > 0" class="cart-container font-size-15" >
+    <header *ngIf ="!showHeader" class="font-size-med" tabindex="0" aria-label="Total item in">
+        My Cart [{{this.totalCartCount}} items]
+    </header>
+    <section >
+        <div  tabindex="0" class="cart-detail" *ngFor="let cartData of cartListData?.productArray; let i = index;">
+                <img  [attr.aria-describedby]="cartData.id" [src]="cartData?.imageURL" class="image-width" loading="lazy" alt="">
+            <div class="itemDetail">
+                <h6 [id]="cartData.id"  class="font-size-med">{{cartData.name}}</h6>
+                <div class="" >
+                    <button    [attr.aria-describedby]="cartData.id" aria-label = "decrement total count" (click)="decrement(cartData,i); $event.stopPropagation()"  class="buttoncolor minus">-</button>
+                    <input readonly tabindex="0" type="text" aria-label = "Item count" [attr.aria-describedby]="cartData.id" [(value)]="cartData.count" />
+	                <button  [attr.aria-disabled]="cartData.count >= cartData.stock" [class.disableclass]="cartData.count >= cartData.stock" [attr.aria-describedby]="cartData.id" aria-label = "increment total count" tabindex="0" (click)="increment(cartData,i); $event.stopPropagation()" class="buttoncolor plus">+</button>
+                    <span>X</span> <span>Rs.{{cartData.price}}</span>
+                    <span  class="totalPrice">Rs.{{cartData.count * cartData.price}}</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div tabindex="0" class="lowest-price">
+            <picture>
+                <source srcset="./assets/images/lowest-price.png">
+                <img src="./assets/images/lowest-price.png" alt="Lowest price available" class="image-width" loading="lazy">
+            </picture>
+        </div>
+    </section>
+</div>
+<section *ngIf="cartListData?.productArray && cartListData?.productArray.length > 0" class="promoCode" tabindex="0">
+    Promo Code can be applied on payment page
+</section>
+<button style="cursor:pointer" *ngIf="cartListData?.productArray && cartListData?.productArray.length > 0" class="txt-color-white buttoncolor checkOut"  aria-pressed="false"  (click)="checkOut()">
+        <span>Proceed to checkout</span>
+        <span class="d-flex">
+            Rs.{{this.totalCheckOutAmount}}
+            <span class="material-icons">
+                chevron_right
+                </span>
+        </span>
+</button>
+<div *ngIf="!(cartListData?.productArray && cartListData?.productArray.length > 0)" class="noDataPresent" >
+    <app-empty-cart></app-empty-cart>
+    <button class="txt-color-white buttoncolor startShopping" aria-pressed="false" (click)="startShopping()">
+        <span style="text-align: center;">Start Shopping</span>
+    </button>
+</div>

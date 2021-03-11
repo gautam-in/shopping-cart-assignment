@@ -1,0 +1,27 @@
+.nav-list{
+    padding:5px;
+}   
+.ulist-style{
+    list-style: none;
+    margin-left: -2rem;
+    cursor:pointer;
+}
+.list-style{
+    padding: 10px 0px 0px 10px;
+}
+li:hover {
+    background-color: #2E2EE0;
+    a{
+        color:#fff !important;
+    }
+    
+}
+.active{
+    background-color: #0000FF;
+    a{
+        color:#fff !important;
+    }
+}
+a{
+    text-decoration: none;
+}

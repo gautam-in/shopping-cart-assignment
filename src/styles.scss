@@ -1,0 +1,182 @@
+
+*{
+    box-sizing: border-box;
+}
+
+$buttoncolor:#bf2956;
+$backgroundcolor:#eeeeee;
+$highlightedgreycolor:#919191;
+$text-color:#616161;
+$textColorwhite:#fff;
+$black: black;
+$buttonHover:#ff024e;
+$navigationColor:#0000FF;
+$disableElementColor:#d79cae;
+html, body { height: 100%; }
+body { margin: 5px; font-family: 'Dosis',sans-serif !important; }
+.buttoncolor{
+    background-color:$buttoncolor !important;
+  }
+.backgroundcolor{
+    background: $backgroundcolor !important;
+}
+.highlightedgreycolor{
+    background: $highlightedgreycolor;
+}
+.borderColor{
+    border-color:$buttoncolor;
+}
+.text-color{
+    color: $text-color;
+    font-weight: 600;
+}
+.buttoncolor:hover, .buttoncolor:focus{
+    background-color: $buttonHover !important;
+}
+.backGround{
+    background-color:$buttoncolor !important;
+}
+/* width */
+::-webkit-scrollbar {
+    width: 0px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: $highlightedgreycolor; 
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: $highlightedgreycolor; 
+  }
+/* For mobile phones: */
+[class*="col-"] {
+    width: 100%;
+  }
+
+.materialIcons{
+    position:absolute;
+}
+
+.font-size-15{
+    font-size: 0.8rem !important;
+}
+.font-size-reg{
+    font-weight: 500 !important;
+}
+
+.font-size-med{
+    font-weight: 600 !important;
+}
+
+.font-size-min{
+    font-weight: 400 !important;
+}
+.txt-align-left{
+    text-align: left;
+}
+
+.prod-desc-background {
+    background-color: rgb(240,242,241);
+    padding: 10px;
+}
+
+.carousel-indicators{
+    bottom:0px !important;
+}
+
+.txt-color-white{
+    color:$textColorwhite !important;
+}
+
+.disableclass{
+    background-color: $disableElementColor !important;
+}
+
+modal-container{
+    overflow: hidden !important;
+}
+
+.modal-footer {
+    padding:0rem;
+}
+.modal-header{
+    padding: 10px;
+    background-color: $black;
+}
+.modal-body{
+    padding:0rem;
+}
+
+h4{
+    font-size:1rem;
+}
+a:hover{
+    color: $navigationColor !important;
+}
+.active-route{
+    color: $navigationColor !important;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+}
+@media only screen and (min-width: 1024px) and (max-width: 1440px) {
+    .font-size-15{
+        font-size: 1.2rem !important;
+    }
+    .font-size-reg{
+        font-weight: 500 !important;
+    }
+    
+    .font-size-med{
+        font-weight: 600 !important;
+    }
+    
+    .font-size-min{
+        font-weight: 400 !important;
+    }
+    .font-size-10{
+        font-size: 1rem !important;
+    }
+}
+
+@media only screen and (min-width: 1441px) {
+    .font-size-15{
+        font-size: 1.2rem !important;
+    }
+    .font-size-reg{
+        font-weight: 500 !important;
+    }
+    
+    .font-size-med{
+        font-weight: 600 !important;
+    }
+    
+    .font-size-min{
+        font-weight: 400 !important;
+    }
+    .font-size-10{
+        font-size: 1rem !important;
+    }
+}
+//For hiding liveannouncer text
+.cdk-visually-hidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+    outline: 0;
+}
+.btn{
+    border:1px;
+}
