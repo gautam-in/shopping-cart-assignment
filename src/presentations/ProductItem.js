@@ -17,7 +17,7 @@ export default function ProductItem(props){
         </div>
         <div className="prod-infodetails">
         <div className="description-area">
-            <article className="prod-desc truncate-overflow" title={item.description}>{item.description}</article>
+            <article className="prod-desc truncate-overflow" aria-label={item.description} title={item.description}>{item.description}</article>
         </div>
         <div className="buy-area">
             <div className="col span-1-of-2 price">
