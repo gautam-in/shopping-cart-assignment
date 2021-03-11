@@ -7,12 +7,13 @@
                     <span *ngIf="groceryCart.length >0">({{groceryCart.length}}) item</span>
                     <span *ngIf="!groceryCart.length">0</span>
                 </p>
-                <button type="button" class="close" data-dismiss="modal" (click)="resetCart()" aria-label="Close Cart Popup">&times;</button>
+                <button type="button" class="close" data-dismiss="modal" (click)="resetCart()"
+                    aria-label="Close Cart Popup">&times;</button>
             </div>
 
             <div class="modal-body" *ngIf="!groceryCart.length; else displayItems">
                 <div class="cart-body">
-                    <p>No items in your cart</p>
+                    <p class="no-items main-heading">No items in your cart</p>
                     <p>You favourite items are just a click away</p>
                 </div>
             </div>
@@ -20,17 +21,19 @@
             <ng-template #displayItems>
                 <div class="card mb-3">
                     <div class="row no-gutters" *ngFor="let product of groceryCart">
-                        <div class="col-md-2">
+                        <div class="col-md-2 col-sm-4 cart-image">
                             <img src="assets/{{product.imageURL}}" class="card-img" alt="{{product.name}}"
                                 title="{{product.name}}">
                         </div>
-                        <div class="col-md-10 cart-description">
+                        <div class="col-md-10 col-sm-8 cart-description">
                             <div class="card-body">
                                 <p class="card-title">{{product.name}}</p>
                                 <div>
-                                    <i class="fa fa-plus-square icon-fa" (click)="increaseProductQuantity(product)" aria-label="increase product unit"></i>
+                                    <i class="fa fa-plus-square icon-fa" (click)="increaseProductQuantity(product)"
+                                        aria-label="increase product unit"></i>
                                     <span>{{product.count}}</span>
-                                    <i class="fa fa-minus-square icon-fa" (click)="removeProductFromCart(product)" aria-label="decrease product unit"></i>
+                                    <i class="fa fa-minus-square icon-fa" (click)="removeProductFromCart(product)"
+                                        aria-label="decrease product unit"></i>
                                     <span class="item-price">X &nbsp; &nbsp;{{product.price | currency: 'INR'}}</span>
                                     <span class="item-total-price">{{product.totalPrice | currency: 'INR'}}</span>
                                 </div>
@@ -45,18 +48,19 @@
                     </figure>
                     <p class="offer-text">You won't find it cheaper anywhere</p>
                 </div>
-            </ng-template>        
+            </ng-template>
 
             <div class="modal-footer">
                 <section *ngIf="!groceryCart.length; else checkout" class="footer-section">
-                    <button type="button" class="common-btn" data-dismiss="modal" (click)="resetCart()" aria-label="Start Shopping">Start
+                    <button type="button" class="common-btn" data-dismiss="modal" (click)="resetCart()"
+                        aria-label="Start Shopping">Start
                         Shopping</button>
                 </section>
                 <ng-template #checkout>
                     <p>Promo code can be applied on payment page</p>
-                    <button type="button" class="common-btn" (click)="resetCart()"
-                        data-dismiss="modal" aria-label="Proceed to Checkout Rs.  /-">
-                        <span class="checkout-text">Proceed to Checkout </span> 
+                    <button type="button" class="common-btn" (click)="resetCart()" data-dismiss="modal"
+                        aria-label="Proceed to Checkout Rs.  /-">
+                        <span class="checkout-text">Proceed to Checkout </span>
                         <span class="checkout-price">Rs.{{ totalAmount()}}/- ></span>
                     </button>
                 </ng-template>

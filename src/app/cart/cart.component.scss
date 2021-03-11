@@ -4,7 +4,7 @@
     .modal-header {
         background-color: $color-black;
         color: $color-white;
-        .close{
+        .close {
             color: $color-gray;
         }
     }
@@ -13,10 +13,11 @@
         background-color: $color-gray;
         .cart-body {
             text-align: center;
+            margin-top: 30%;
         }
     }
-    .modal-footer{
-        .footer-section{
+    .modal-footer {
+        .footer-section {
             width: 100%;
         }
     }
@@ -53,5 +54,26 @@
     }
     .checkout-price {
         float: right;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .no-gutters {
+        text-align: center;
+        .card-img {
+            width: 70%;
+        }
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .no-gutters {
+        display: flex;
+        .cart-image {
+            flex: 1;
+        }
+        .cart-description {
+            flex: 1;
+        }
     }
 }

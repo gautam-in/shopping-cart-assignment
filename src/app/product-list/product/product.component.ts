@@ -46,9 +46,5 @@ export class ProductComponent implements OnInit, OnChanges {
     if (this.selectedProductIndexes.indexOf(selectedProduct) === -1) {
       this.selectedProductIndexes.push(selectedProduct);
     }
-    // else {
-    //   const index = this.selectedProductIndexes.indexOf(selectedProduct);
-    //   this.selectedProductIndexes.splice(index, 1);
-    // }
   }
 }

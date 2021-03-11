@@ -8,6 +8,9 @@ aside {
     border-bottom: 1px solid $color-dark-gray;
     padding: 5px;
     list-style: none;
+    a {
+        cursor: pointer;
+    }
 }
 
 .highlightCategory {

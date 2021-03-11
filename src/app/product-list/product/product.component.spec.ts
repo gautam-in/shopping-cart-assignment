@@ -3,6 +3,7 @@ import { ApidataService } from '../../services/apidata.service';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ProductComponent } from './product.component';
+import { CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/core';
 
 describe('ProductComponent', () => {
   let component: ProductComponent;
@@ -13,7 +14,8 @@ describe('ProductComponent', () => {
     await TestBed.configureTestingModule({
       declarations: [ProductComponent],
       providers: [ApidataService],
-      imports: [HttpClientModule]
+      imports: [HttpClientModule],
+      schemas: [NO_ERRORS_SCHEMA, CUSTOM_ELEMENTS_SCHEMA]
     })
       .compileComponents();
   });

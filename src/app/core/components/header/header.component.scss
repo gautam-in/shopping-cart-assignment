@@ -72,3 +72,15 @@ nav {
         }
     }
 }
+
+@media screen and (max-width: 768px) {
+.logout{
+    .rightnav{
+        flex-direction: inherit;
+        .nav-link{
+            padding: 10px;
+        }
+    }
+}    
+}
+

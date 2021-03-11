@@ -27,3 +27,12 @@
     background-color: $color-light-pink;
     border: 1px solid $color-dark-gray;
 }
+
+@media screen and (max-width: 576px) {
+    .card-body {
+        text-align: center;
+        .card-img-top {
+            width: 30%;
+        }
+    }
+}
