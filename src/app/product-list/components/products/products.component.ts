@@ -4,7 +4,7 @@ import { Title } from '@angular/platform-browser';
 import { NavigationEnd, Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { takeWhile } from 'rxjs/operators';
-import { InMemoryDataService } from 'src/app/in-memory-data.service';
+import { InMemoryDataService } from 'src/app/services/in-memory-data.service';
 import { Cart } from 'src/app/util/cart';
 
 @Component({
@@ -21,10 +21,11 @@ export class ProductsComponent implements OnInit, OnDestroy {
   cartData: Cart;
   cartArray: Cart[];
   totalCartCount: number;
-  constructor(private inMemoryService: InMemoryDataService, private announcer: LiveAnnouncer, private titleService: Title, private router: Router) {
+  constructor(private inMemoryService: InMemoryDataService,
+              private announcer: LiveAnnouncer, private titleService: Title, private router: Router) {
     this.active = true;
     this.titleService.setTitle('Product Listing Page');
-      this.router.events.pipe(takeWhile(() => this.active)).subscribe((e: any) => {
+    this.router.events.pipe(takeWhile(() => this.active)).subscribe((e: any) => {
         if (e instanceof NavigationEnd) {
           this.cartArray = [];
           this.totalCartCount = 0;

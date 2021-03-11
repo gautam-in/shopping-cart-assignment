@@ -2,7 +2,8 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { takeWhile } from 'rxjs/operators';
-import { InMemoryDataService } from 'src/app/in-memory-data.service';
+import { InMemoryDataService } from 'src/app/services/in-memory-data.service';
+
 
 @Component({
   selector: 'app-login',
@@ -29,6 +30,7 @@ export class LoginComponent implements OnInit, OnDestroy {
       this.inMemoryService.login().pipe(takeWhile(() => this.active)).subscribe((data) => {
         // tslint:disable-next-line: no-string-literal
         if (data && data['status'] === '200'){
+          this.inMemoryService.userLoggedIn = true;
           this.route.navigateByUrl('/home/homepage');
         }
       },

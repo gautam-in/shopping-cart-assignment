@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
-import { takeWhile } from 'rxjs/operators';
-import { InMemoryDataService } from '../in-memory-data.service';
+import { InMemoryDataService } from '../services/in-memory-data.service';
+
 
 
 @Component({

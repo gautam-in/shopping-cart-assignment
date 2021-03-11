@@ -10,6 +10,7 @@ export class InMemoryDataService {
   public cartSubject = new Subject<any>();
   public cartlistData: any;
   public updateCartCount = new Subject<any>();
+  public userLoggedIn: boolean;
   constructor(private httpClient: HttpClient) {
    }
    getCategoryData(): Observable<any>{

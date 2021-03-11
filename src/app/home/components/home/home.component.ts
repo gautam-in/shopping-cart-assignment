@@ -4,7 +4,8 @@ import { AfterViewInit, Component, OnDestroy, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { Observable } from 'rxjs';
 import { takeWhile } from 'rxjs/operators';
-import { InMemoryDataService } from 'src/app/in-memory-data.service';
+import { InMemoryDataService } from 'src/app/services/in-memory-data.service';
+
 
 @Component({
   selector: 'app-home',

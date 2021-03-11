@@ -1,7 +1,8 @@
 import { Component, Input, OnChanges, OnInit } from '@angular/core';
 import { BsModalRef, BsModalService, ModalOptions } from 'ngx-bootstrap/modal';
 import { CartModalComponent } from '../cart-modal/cart-modal.component';
-import { InMemoryDataService } from '../in-memory-data.service';
+import { InMemoryDataService } from '../services/in-memory-data.service';
+
 
 @Component({
   selector: 'app-header',
