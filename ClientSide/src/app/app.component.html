@@ -1,9 +1,9 @@
 <div class="container">
   <app-header></app-header>
-  <main id="content">
+  <main id="main-content">
     <router-outlet></router-outlet>
     <!-- The Mini Cart Overlay -->
-    <app-cart></app-cart>
+    <app-cart [attr.aria-expanded]="showModal" *ngIf="showModal"></app-cart>
   </main>
   <app-footer></app-footer>
 </div>

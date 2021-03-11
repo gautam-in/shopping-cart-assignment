@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Renderer2 } from '@angular/core';
 import { Router } from '@angular/router';
 import { CartService } from 'src/app/shared/services/cart.service';
 import { LoginService } from 'src/app/shared/services/login.service';
@@ -11,13 +11,17 @@ import { LoginService } from 'src/app/shared/services/login.service';
 export class HeaderComponent implements OnInit {
   noOfItems: number;
   isLoggedIn: boolean;
+  skipLinkPath: string;
   constructor(
     private cartService: CartService,
     private loginService: LoginService,
-    private router: Router
+    private router: Router,
+    private renderer: Renderer2
   ) {}
 
   ngOnInit(): void {
+    this.skipLinkPath = `${this.router.url}#main-content`;
+
     this.loginService.notifyLogin.subscribe((isLoggedIn: boolean) => {
       this.isLoggedIn = isLoggedIn;
     });
@@ -31,13 +35,15 @@ export class HeaderComponent implements OnInit {
   }
 
   onSignOut() {
-    localStorage.clear();
-    this.loginService.isLoggedIn = false;
     this.loginService.logout();
     this.router.navigate(['/login']);
   }
 
   onClickCart() {
     this.cartService.show();
+  }
+
+  setFocusOnMain() {
+    this.renderer.selectRootElement('#content', true).focus();
   }
 }

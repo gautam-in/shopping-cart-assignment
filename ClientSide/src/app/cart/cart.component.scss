@@ -1,6 +1,6 @@
 /* The Modal (background) */
 .modal {
-  display: none; /* Hidden by default */
+  display: block; /* Hidden by default */
   position: fixed; /* Stay in place */
   z-index: 1; /* Sit on top */
   left: 0;
@@ -10,11 +10,11 @@
   overflow: auto; /* Enable scroll if needed */
   background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
 }
-.modal {
-  &[data-show="true"] {
-    display: block;
-  }
-}
+// .modal {
+//   &[data-show="true"] {
+//     display: block;
+//   }
+// }
 
 .modal-header {
   display: flex;

@@ -12,23 +12,14 @@
         " sizes="(min-width: 1024px) 80vw,
         (min-width: 768px) 80vw,
         100vw" />
-      <div class="visuallyhidden" aria-live="polite" aria-atomic="true">
-        Item {{ i + 1 }} of {{ caraouseldata.length }}
-      </div>
+
     </li>
   </ul>
-  <!-- Next and previous buttons -->
-  <!-- <button aria-label="Previous Item" type="button" class="btn prev" (click)="plusSlides(-1)">
-    &#10094;
-  </button>
-  <button aria-label="Next Item" type="button" class="btn next" (click)="plusSlides(1)">
-    &#10095;
-  </button> -->
+
   <ul class="dots-container">
     <li *ngFor="let slide of caraouseldata; let i = index" (click)="currentSlide(i + 1)">
       <button class="btn dot" [ngClass]="{ active: i === slideIndex - 1 }" [attr.data-slide]="i">
-        <span class="visuallyhidden">Sale</span>
-        <span class="visuallyhidden">(Current Slide)</span>
+        <span class="visuallyhidden">Item {{ i + 1 }} of {{ caraouseldata.length }}</span>
       </button>
     </li>
   </ul>

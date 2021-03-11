@@ -1,13 +1,20 @@
 {
   "name": "client-side",
   "version": "0.0.0",
+  "description": "This is a shopping cart coding exercise",
   "scripts": {
     "ng": "ng",
     "start": "ng serve --proxy-config ./src/proxy.conf.json",
-    "build": "ng build",
+    "server:start": "canned -p 5000 ./server",
+    "build": "npm run build:ssr",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "dev:ssr": "ng run ClientSide:serve-ssr",
+    "ssr:serve": "nodemon --watch src/ -e ts,html,scss --exec \"npm run build:ssr && npm run serve:ssr\" ",
+    "serve:ssr": "node dist/ClientSide/server/main.js",
+    "build:ssr": "ng build --prod && ng run ClientSide:server:production",
+    "prerender": "ng run ClientSide:prerender"
   },
   "private": true,
   "dependencies": {
@@ -18,7 +25,12 @@
     "@angular/forms": "~10.1.5",
     "@angular/platform-browser": "~10.1.5",
     "@angular/platform-browser-dynamic": "~10.1.5",
+    "@angular/platform-server": "~10.1.5",
     "@angular/router": "~10.1.5",
+    "@angular/service-worker": "~10.1.5",
+    "@nguniversal/express-engine": "^10.1.0",
+    "express": "^4.15.2",
+    "canned": "^0.3.12",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.2"
@@ -27,6 +39,8 @@
     "@angular-devkit/build-angular": "~0.1001.6",
     "@angular/cli": "~10.1.6",
     "@angular/compiler-cli": "~10.1.5",
+    "@nguniversal/builders": "^10.1.0",
+    "@types/express": "^4.17.0",
     "@types/node": "^12.11.1",
     "@types/jasmine": "~3.5.0",
     "@types/jasminewd2": "~2.0.3",

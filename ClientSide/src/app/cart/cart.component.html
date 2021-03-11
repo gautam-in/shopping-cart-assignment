@@ -1,9 +1,10 @@
-<div id="myModal" class="modal" [attr.data-show]="showModal">
+<div id="myModal" class="modal"  >
   <div [attr.data-empty-cart]="productsInCart.length ? false : true" class="modal-content">
     <div class="modal-header">
       <h2>My cart</h2>
       <!-- Modal content -->
-      <button type="button" id="closebtn" (click)="onClose()" aria-label="Close cart" class="close">
+      <button (keydown)="onCloseBtnKeyDown($event)" type="button" id="closebtn" (click)="onClose()"
+        aria-label="Close cart" class="close">
         <i class="fa fa-times" aria-hidden="true"></i>
       </button>
     </div>
@@ -38,7 +39,7 @@
     <div class="cart-payment-footer">
       <div class="promo-text">Promo can be applied Home Page</div>
       <div class="cart-payment-checkout">
-        <button (click)="onClose()" class="btn">
+        <button id="checkOutBtn" (keydown)="onKeyDown($event)" (click)="onClose()" class="btn">
           <span>Proceed to Checkout</span>
           <span>Rs. {{ checkoutAmont }} ></span>
         </button>
@@ -54,7 +55,7 @@
         <p>Your favorite items are just a click away</p>
       </div>
       <div class="empty-cart-button">
-        <button (click)="onClose()" class="btn">Start Shopping</button>
+        <button id="emptycartBtn" (keydown)="onKeyDown($event)" (click)="onClose()" class="btn">Start Shopping</button>
       </div>
     </div>
   </ng-template>

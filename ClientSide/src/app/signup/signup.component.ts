@@ -82,11 +82,8 @@ export class SignupComponent implements OnInit {
     return password === confirmPassword ? null : { notSame: true };
   }
   onFormSubmit() {
-    localStorage.setItem('userEmail', this.email.value);
-    localStorage.setItem('isLoggedIn', 'true');
-    this.loginService.login();
+    this.loginService.setUserData({ email: this.email.value });
     this.signupForm.reset();
-    this.router.navigate(['/home']);
     this.router.navigate(['/home']);
   }
 }

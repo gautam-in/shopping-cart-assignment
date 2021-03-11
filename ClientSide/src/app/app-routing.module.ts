@@ -1,13 +1,18 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { AuthGuardService } from './shared/services/auth-guard.service';
+import { LoginAuthService } from './shared/services/login-auth.service';
 import { SignupComponent } from './signup/signup.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'login' },
-  { path: 'login', component: LoginComponent },
-  { path: 'register', component: SignupComponent },
+  { path: 'login', component: LoginComponent, canActivate: [LoginAuthService] },
+  {
+    path: 'register',
+    component: SignupComponent,
+    canActivate: [LoginAuthService],
+  },
   {
     path: 'plp',
     loadChildren: () =>
@@ -24,12 +29,17 @@ const routes: Routes = [
   },
   {
     path: '**',
-    redirectTo: '/login',
+    redirectTo: '/home',
   },
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [
+    RouterModule.forRoot(routes, {
+      initialNavigation: 'enabled',
+      preloadingStrategy: PreloadAllModules,
+    }),
+  ],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}

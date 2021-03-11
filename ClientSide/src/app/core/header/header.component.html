@@ -1,5 +1,5 @@
 <div class="skip">
-  <a href="#content">Skip to main content</a>
+  <a [href]="skipLinkPath">Skip to main content</a>
 </div>
 <header class="header">
   <div class="logo">
@@ -44,7 +44,7 @@
     </ng-template>
 
     <div class="nav-mini-cart" [style.width]="isLoggedIn ? '100%' : '60%'">
-      <button class="btn" type="button" aria-label="Your cart items" aria-describedby="itemsInCart"
+      <button id="miniCartBtn" class="btn" type="button" aria-label="Your cart items" aria-describedby="itemsInCart"
         (click)="onClickCart()">
         <span id="itemsInCart">{{noOfItems}} items</span>
       </button>

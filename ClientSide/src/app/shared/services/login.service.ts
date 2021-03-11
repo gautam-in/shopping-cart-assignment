@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
+import { LocalstorageService } from './localstorage.service';
 
 @Injectable({
   providedIn: 'root',
@@ -7,11 +8,9 @@ import { BehaviorSubject } from 'rxjs';
 export class LoginService {
   private loginSub = new BehaviorSubject<boolean>(false);
   public notifyLogin = this.loginSub.asObservable();
-  isLoggedIn: boolean;
 
   constructor() {
     if (localStorage.getItem('isLoggedIn') === 'true') {
-      this.isLoggedIn = true;
       this.login();
     }
   }
@@ -20,7 +19,18 @@ export class LoginService {
     this.loginSub.next(true);
   }
 
+  setUserData(userData?) {
+    localStorage.setItem('userEmail', userData.email);
+    localStorage.setItem('isLoggedIn', 'true');
+    this.login();
+  }
+
+  isLoggedIn() {
+    return localStorage.getItem('isLoggedIn') === 'true';
+  }
+
   logout() {
+    localStorage.clear();
     this.loginSub.next(false);
   }
 }

@@ -12,4 +12,19 @@ npm run start
 # or
 yarn install
 yarn start
+
+It will run the mock server in http://localhost:5000/
+
+Navigate to http://localhost:4000/ for The ClinetSide application.
+
 ```
+
+## Development server
+
+Run npm run ssr:serve for a dev server. Navigate to http://localhost:4000/. The app will automatically reload if you change any of the source files.
+
+# Use the below credentials for login:
+
+## Email: admin@ps.com
+
+## Pass: admin

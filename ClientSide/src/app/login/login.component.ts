@@ -18,7 +18,10 @@ export class LoginComponent implements OnInit {
   subText = 'Get access to your Orders, Wishlist and Recommendations';
   loginform: FormGroup;
   submitted = false;
-  constructor(public router: Router, private loginService: LoginService) {}
+  constructor(
+    public router: Router,
+    private loginService: LoginService,
+  ) {}
 
   ngOnInit(): void {
     this.initForm();
@@ -54,9 +57,7 @@ export class LoginComponent implements OnInit {
       this.email.value.indexOf('admin') > -1 &&
       this.password.value === 'admin'
     ) {
-      localStorage.setItem('userEmail', userData.email);
-      localStorage.setItem('isLoggedIn', 'true');
-      this.loginService.login();
+      this.loginService.setUserData(userData);
       this.router.navigate(['/home']);
     }
     this.loginform.reset();

@@ -40,8 +40,6 @@ export class SharedService {
   }
 
   getProducts(): Observable<Products[]> {
-    console.log(`${this.apiURL}/categories`);
-
     return this.http.get<Products[]>(`${this.apiURL}/products`).pipe(
       tap((res) => (this.cartService.productsData = res)),
       catchError(this.handleError)

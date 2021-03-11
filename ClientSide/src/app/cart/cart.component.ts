@@ -15,7 +15,6 @@ import { CartService } from '../shared/services/cart.service';
   styleUrls: ['./cart.component.scss'],
 })
 export class CartComponent implements OnInit, AfterViewInit {
-  showModal: boolean;
   productsInCart: CartProducts[];
   checkoutAmont: number;
 
@@ -24,16 +23,10 @@ export class CartComponent implements OnInit, AfterViewInit {
   constructor(private cartService: CartService, private renderer: Renderer2) {}
 
   ngAfterViewInit(): void {
-    // this.renderer.selectRootElement(this.closebtn, true).focus();
+    this.renderer.selectRootElement('#closebtn', true).focus();
   }
 
   ngOnInit(): void {
-    this.cartService.showCart.subscribe((data) => {
-      this.showModal = data;
-      // this.renderer.selectRootElement('#closebtn', true).focus();
-
-    });
-
     this.cartService.getCartItem.subscribe((data) => {
       this.productsInCart = data;
       this.checkoutAmont = this.productsInCart.reduce(
@@ -49,7 +42,25 @@ export class CartComponent implements OnInit, AfterViewInit {
   }
 
   onClose() {
-    // showModal = !showModal;
+    this.renderer.selectRootElement('#miniCartBtn', true).focus();
     this.cartService.hide();
+  }
+
+  onCloseBtnKeyDown(event: KeyboardEvent) {
+    if (event.key === 'Tab' && event.shiftKey) {
+      event.preventDefault();
+      if (this.productsInCart.length) {
+        this.renderer.selectRootElement('#checkOutBtn', true).focus();
+      } else {
+        this.renderer.selectRootElement('#emptycartBtn', true).focus();
+      }
+    }
+  }
+
+  onKeyDown(event: KeyboardEvent) {
+    if (event.key === 'Tab' && !event.shiftKey) {
+      event.preventDefault();
+      this.renderer.selectRootElement('#closebtn', true).focus();
+    }
   }
 }
