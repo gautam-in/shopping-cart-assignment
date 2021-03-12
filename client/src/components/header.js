@@ -1,21 +1,19 @@
 import React from "react";
-import {useSelector} from "react-redux";
-import {  Link } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 import Cart from "./cart/cart";
 import { IoMdCart } from "react-icons/io";
 function noOfItems(cart) {
-   
-    let count=0;
+  let count = 0;
 
-    for (const item of cart) {
-      count=count+item.qty;
-    }
-    return count;
+  for (const item of cart) {
+    count = count + item.qty;
+  }
+  return count;
 }
 
-function Header({setCart,cart}) {
-
-    const cart1 = useSelector((store) => store.cart);
+function Header({ setCart, cart }) {
+  const cart1 = useSelector((store) => store.cart);
   return (
     <header className="header">
       {cart && <Cart setCart={setCart} />}
