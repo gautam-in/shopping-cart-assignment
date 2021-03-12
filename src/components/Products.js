@@ -15,8 +15,8 @@ class Products extends React.Component{
     constructor(props){
         super(props);
         this.state={
-            categoryData:[],
-            productList:[],
+            // categoryData:[],
+            // productList:[],
             catId: '',
             openModal: false
         }
@@ -31,10 +31,10 @@ class Products extends React.Component{
     }
     static getDerivedStateFromProps(props,state){
         if(props.homeApi.categoryData && props.homeApi.categorydata_searching_success){
-            state.categoryData = props.homeApi.categoryData;
+            // state.categoryData = props.homeApi.categoryData;
         }
         if(props.productInfo.productData && props.productInfo.searching_productdetails_success){
-            state.productList = props.productInfo.productData;
+            // state.productList = props.productInfo.productData;
         }
         if(props.productInfo.addCartData && props.productInfo.adding_to_cart_success){
             toastr.success(Constants.TEXTS.TOASTS.click_cart,Constants.TEXTS.TOASTS.item_added,{timeOut:1000});
@@ -81,7 +81,9 @@ class Products extends React.Component{
     }
     render(){
         const {homeApi,productInfo,router} = this.props;
-        const {categoryData,productList,openModal} = this.state;
+        const {openModal} = this.state;
+        const {productData:productList} = this.props.productInfo;
+        const {categoryData} = this.props.homeApi;
         return(<main className="products-page">
             <div className="overlay" style={{display: (productInfo.searching_productdetails|| productInfo.adding_to_cart  || homeApi.categorydata_searching) ? "block" : "none"}}>
                 <div className="loading"><SvgLoading /></div>

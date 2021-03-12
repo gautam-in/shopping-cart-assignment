@@ -19,8 +19,8 @@ class Home extends React.Component {
         super(props);
         this.state={
           currentInstance: this,
-          bannerData: [],
-          categoryData: [],
+          // bannerData: [],
+          // categoryData: [],
           dimensions:{},
           openModal: false,
           forceCheckSliderImage: false
@@ -37,12 +37,12 @@ class Home extends React.Component {
     }
     static getDerivedStateFromProps(props,state){
       if(props.homeApi.bannerData && props.homeApi.bannerdata_searching_success){
-        state.bannerData = props.homeApi.bannerData;
+        // state.bannerData = props.homeApi.bannerData;
         state.currentInstance.forceCheckSliderImage();
       }
-      if(props.homeApi.categoryData && props.homeApi.categorydata_searching_success){
-        state.categoryData = props.homeApi.categoryData;
-      }
+      // if(props.homeApi.categoryData && props.homeApi.categorydata_searching_success){
+      //   state.categoryData = props.homeApi.categoryData;
+      // }
       return state;
     }
     forceCheckSliderImage=()=>{
@@ -81,7 +81,8 @@ class Home extends React.Component {
       dots: true
     };
     const {homeApi,productInfo,router} = this.props;
-    const {bannerData,categoryData,openModal} = this.state;
+    const {openModal} = this.state;
+    const {bannerData,categoryData} = this.props.homeApi;
   return (
     <main className="App home-page">
       <div className="overlay" style={{display: (homeApi.bannerdata_searching || homeApi.categorydata_searching) ? "block" : "none"}}>
