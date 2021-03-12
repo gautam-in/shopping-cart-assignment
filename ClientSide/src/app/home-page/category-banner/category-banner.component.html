@@ -17,6 +17,6 @@
     <h3>{{ category.name }}</h3>
     <p>{{ category.description }}</p>
 
-    <button class="btn">Explore {{ category.key }}</button>
+    <button class="btn" (click)="OnExploreClick(category.id)">Explore {{ category.key }}</button>
   </article>
 </div>

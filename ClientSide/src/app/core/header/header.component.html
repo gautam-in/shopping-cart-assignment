@@ -1,9 +1,9 @@
 <div class="skip">
-  <a [href]="skipLinkPath">Skip to main content</a>
+  <a (click)="setFocusOnMain($event)" href="javascript: void(0)">Skip to main content</a>
 </div>
 <header class="header">
   <div class="logo">
-    <img src="static/images/logo_2x.png" sizes="80vw" alt="Sabka Bazaar" aria-label="Home Page" role="button"
+    <img src="static/images/logo_2x.png" sizes="80vw" routerLink="home" alt="Sabka Bazaar" aria-label="Home Page" role="button"
       tabindex="0" />
   </div>
   <nav class="nav-center">
@@ -43,7 +43,7 @@
       </li>
     </ng-template>
 
-    <div class="nav-mini-cart" [style.width]="isLoggedIn ? '100%' : '60%'">
+    <div class="nav-mini-cart" [attr.data-loggedin]="isLoggedIn">
       <button id="miniCartBtn" class="btn" type="button" aria-label="Your cart items" aria-describedby="itemsInCart"
         (click)="onClickCart()">
         <span id="itemsInCart">{{noOfItems}} items</span>

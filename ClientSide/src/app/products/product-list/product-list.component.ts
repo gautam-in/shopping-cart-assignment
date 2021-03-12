@@ -1,4 +1,5 @@
 import { Component, HostListener, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { forkJoin, Observable } from 'rxjs';
 import { SharedService } from 'src/app/shared/services/shared.service';
 import { Categories } from '../../models/Categories';
@@ -20,9 +21,12 @@ export class ProductListComponent implements OnInit {
   isDesktop: boolean = this.currWinSize > 1024;
   isMobile: boolean = this.currWinSize < 768;
 
-  constructor(
-    private dataService: SharedService,
-  ) {}
+  constructor(private dataService: SharedService, private router: Router) {
+    const state = this.router.getCurrentNavigation().extras?.state;
+    if (state && state.id) {
+      this.currCategory = state.id;
+    }
+  }
 
   ngOnInit(): void {
     this.initData();
@@ -40,6 +44,7 @@ export class ProductListComponent implements OnInit {
       this.categoriesData = this.formatFilterData(
         this.dataService.processData(categoriesData)
       );
+      this.filterProducts(this.currCategory);
     });
   }
 

@@ -7,7 +7,7 @@ import {
   ViewChild,
 } from '@angular/core';
 import { CartProducts } from '../models/CartProducts';
-import { CartService } from '../shared/services/cart.service';
+import { CartService } from '../shared/services/cart-services/cart.service';
 
 @Component({
   selector: 'app-cart',

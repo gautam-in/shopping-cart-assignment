@@ -1,6 +1,5 @@
 @import "../../../mixins";
 
-
 .skip {
   display: none;
   @include desktop {
@@ -29,11 +28,16 @@
 
 .header {
   display: flex;
-  justify-content: space-around;
+  padding: 0 10%;
+  justify-content: space-between;
   align-items: center;
   line-height: 1.5;
   box-shadow: 0 8px 6px -6px #d8d8d8;
   margin-bottom: 30px;
+  @include mobile {
+    padding: 0;
+    height: 50px;
+  }
   nav {
     list-style: none;
   }
@@ -55,6 +59,9 @@
   }
   .logo {
     height: 75px;
+    @include mobile {
+      height: 50px;
+    }
   }
   .nav-right {
     display: flex;
@@ -62,8 +69,17 @@
     .nav-mini-cart {
       display: flex;
       height: 30px;
-      background-color: #d8d8d8;
       width: 60%;
+      background-color: #d8d8d8;
+      &[data-loggedin="true"] {
+        width: 100%;
+      }
+
+      @include mobile {
+        padding: 0 5px;
+        height: 50px;
+        width: 100%;
+      }
       .btn {
         display: flex;
         justify-content: space-evenly;
@@ -93,5 +109,12 @@
     &:hover {
       color: #0088a9;
     }
+  }
+}
+
+.nav-center,
+.nav-right > ul {
+  @include mobile {
+    display: none;
   }
 }

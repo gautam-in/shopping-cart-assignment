@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-import { LocalstorageService } from './localstorage.service';
+import { CartService } from '../cart-services/cart.service';
 
 @Injectable({
   providedIn: 'root',

@@ -50,9 +50,9 @@ export class CartService {
       this.cartItems.next(this.productsInCart);
     } else {
       /**
-     * If item is not already present in the cart
-     * then add the item by making API call and increase the count
-     */
+       * If item is not already present in the cart
+       * then add the item by making API call and increase the count
+       */
       const currProduct = this.productsData.find((x) => x.id === id);
       this.addToCartPost().then((res) => {
         if (res.response.toUpperCase() === 'SUCCESS') {
@@ -82,5 +82,9 @@ export class CartService {
       }
       this.cartItems.next(this.productsInCart);
     }
+  }
+
+  clearCartItems() {
+    this.cartItems.next([]);
   }
 }

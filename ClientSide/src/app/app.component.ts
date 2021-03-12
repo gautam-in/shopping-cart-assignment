@@ -1,7 +1,7 @@
 import { isPlatformBrowser } from '@angular/common';
 import { Component, Inject, OnInit, PLATFORM_ID } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-import { CartService } from './shared/services/cart.service';
+import { CartService } from './shared/services/cart-services/cart.service';
 
 @Component({
   selector: 'app-root',

@@ -8,7 +8,7 @@ import { Banners } from 'src/app/models/banners';
 import { Categories } from 'src/app/models/Categories';
 import { Products } from 'src/app/models/Products';
 import { environment } from 'src/environments/environment';
-import { CartService } from './cart.service';
+import { CartService } from './cart-services/cart.service';
 
 
 @Injectable({

@@ -1,4 +1,4 @@
-<div id="myModal" class="modal"  >
+<div id="myModal" class="modal">
   <div [attr.data-empty-cart]="productsInCart.length ? false : true" class="modal-content">
     <div class="modal-header">
       <h2>My cart</h2>
@@ -20,12 +20,12 @@
         </div>
         <div class="cart-item-desc">
           <div class="cart-item-title">{{ product.name }}</div>
-          <button class="btn" aria-label="Increase By 1" (click)="addItemToCart(product.id, 1)">
-            <i class="fa fa-plus" aria-hidden="true"></i>
+          <button class="btn" aria-label="Decrease By 1" (click)="addItemToCart(product.id, 1)">
+            <i class="fa fa-minus" aria-hidden="true"></i>
           </button>
           <span>{{ product.count }}</span>
-          <button class="btn" aria-label="Decrease By 1" (click)="addItemToCart(product.id, -1)">
-            <i class="fa fa-minus" aria-hidden="true"></i>
+          <button class="btn" aria-label="Increase By 1" (click)="addItemToCart(product.id, -1)">
+            <i class="fa fa-plus" aria-hidden="true"></i>
           </button>
           <span class="cart-item-price">X Rs.{{ product.price }}</span>
         </div>
@@ -36,7 +36,7 @@
         <span id="banner-tex">You won't find it cheaper anywhere</span>
       </li>
     </ul>
-    <div class="cart-payment-footer">
+    <div class="cart-footer">
       <div class="promo-text">Promo can be applied Home Page</div>
       <div class="cart-payment-checkout">
         <button id="checkOutBtn" (keydown)="onKeyDown($event)" (click)="onClose()" class="btn">

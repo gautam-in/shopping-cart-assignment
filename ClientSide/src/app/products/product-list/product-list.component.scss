@@ -3,6 +3,7 @@
 .wrapper {
   display: flex;
   flex-direction: row;
+
   width: 100%;
   padding: 0;
   margin-top: -25px;
@@ -51,10 +52,12 @@
 // @include desktop {
 .sidebar {
   width: 20%;
+  flex: 1 0 170px;
   margin-right: 10px;
   background-color: #f5f5f5;
   @include mobile {
     width: 100%;
+    flex: none;
     margin-right: 0px;
   }
 
@@ -84,7 +87,7 @@
     outline: 2px solid limegreen;
   }
 
-  .checked {
+  .checked, .input-container:hover {
     background-color: #d00155;
     color: #fff;
     a {
