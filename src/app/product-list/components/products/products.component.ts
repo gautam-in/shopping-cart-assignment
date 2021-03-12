@@ -14,17 +14,19 @@ import { Cart } from 'src/app/util/cart';
 })
 export class ProductsComponent implements OnInit, OnDestroy {
 
-  public $categoryData: Observable<any>;
+  // public $categoryData: Observable<any>;
   public productArray: any[] = [];
   public copyProductArray: any[] = [];
   active = false;
   cartData: Cart;
   cartArray: Cart[];
   totalCartCount: number;
+  categoryArray: any[] = [];
   constructor(private inMemoryService: InMemoryDataService,
               private announcer: LiveAnnouncer, private titleService: Title, private router: Router) {
     this.active = true;
     this.titleService.setTitle('Product Listing Page');
+    // tslint:disable-next-line: deprecation
     this.router.events.pipe(takeWhile(() => this.active)).subscribe((e: any) => {
         if (e instanceof NavigationEnd) {
           this.cartArray = [];
@@ -37,11 +39,13 @@ export class ProductsComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
   }
   getProductData(){
-    this.$categoryData = this.inMemoryService.getCategoryData();
-    // tslint:disable-next-line: deprecation
     this.inMemoryService.productList().pipe(takeWhile(() => this.active)).subscribe((res) => {
       this.productArray = res;
       this.copyProductArray = res;
+    })
+    // tslint:disable-next-line: deprecation
+    this.inMemoryService.getCategoryData().pipe(takeWhile(() => this.active)).subscribe((res) => {
+      this.categoryArray = res;
     })
   }
   filterProductData($event){
