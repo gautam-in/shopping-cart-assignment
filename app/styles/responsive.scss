@@ -146,7 +146,7 @@
   .RRT__tabs {
     width: 100%;
     padding: 10px 0px 0px;
-    background: #fff;
+    background: $white;
     > div {
       padding: 12px 0px;
     }
@@ -196,7 +196,7 @@
   .product-detail-info {
     position: relative;
     padding-top: 10px;
-    border-bottom: 2px dotted #c5c1c1;
+    border-bottom: 2px dotted $priceBarColor;
   }
 }
 

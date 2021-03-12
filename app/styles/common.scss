@@ -106,6 +106,12 @@ nav,
 section {
   display: block;
 }
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+}
 body {
   line-height: 1;
 }
@@ -164,7 +170,7 @@ button,
   width: 100%;
   display: block;
   background-color: $btnBgColor;
-  color: #fff;
+  color: $white;
   padding: 10px;
   font-size: $FontSize;
   border: 0;

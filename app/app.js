@@ -48,7 +48,7 @@ function App() {
   }
 
   return (
-    <div className="wrapper">
+    <div className="wrapper" role="main">
       <HeaderComp cartItem={cartItem} handleCount={handleCount} />
       <Switch>
         <Route exact path="/" component={HomeComp}></Route>

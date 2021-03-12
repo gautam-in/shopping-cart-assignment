@@ -23,42 +23,33 @@ const HomeComp = () => {
     /**
     * function for banners list data
     */
-   const successCallback = response => {
+   const successBannerCallback = response => {
         setBannersObject(
             ...bannersObject,
             response.data
         )
    }
-   const failureCallback = error => {
-        Swal.fire(BANNER_ERROR_MSG, response.message, ERROR)
+   const failureBannerCallback = error => {
+        Swal.fire(BANNER_ERROR_MSG, error.message, ERROR)
    }
     const bannerGetCall = async () => {
-        getbannersListDetails(successCallback,failureCallback)
-        // const response = await getbannersListDetails()
-        // if (response && response.status === 200 && response.data) {
-        //     setBannersObject(
-        //         ...bannersObject,
-        //         response.data
-        //     )
-        // }
-        // else {
-        //     Swal.fire(BANNER_ERROR_MSG, response.message, ERROR)
-        // }
+        getbannersListDetails(successBannerCallback,failureBannerCallback)
     }
     /**
     * function for products list Data
     */
+   const successCategoryCallback = response => {
+        setProductsObject(
+            ...productsObject,
+            response.data
+        )
+   }
+   const failureCategoryCallback = error => {
+        Swal.fire(CATEGORIES_ERROR_MSG, error.message, ERROR)
+   };
     const productGetCall = async () => {
-        const response = await getCategoriesListDetails();
-        if (response && response.status === 200 && response.data) {
-            setProductsObject(
-                ...productsObject,
-                response.data
-            )
-        }
-        else {
-            Swal.fire(CATEGORIES_ERROR_MSG, response.message, ERROR)
-        }
+        getCategoriesListDetails(successCategoryCallback, failureCategoryCallback);
+        
     }
     return (
         <div className="homeWrap">

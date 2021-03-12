@@ -50,7 +50,7 @@
         span {
           display: block;
           font-size: 16px;
-          color: #000;
+          color: $black;
           padding: 31px 0px;
         }
         .btn {
@@ -79,7 +79,7 @@
   }
   .control-dots {
     .dot {
-      background: #000;
+      background: $black;
       opacity: 0.5;
     }
   }

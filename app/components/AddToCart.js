@@ -31,13 +31,13 @@ const AddToCart = (props) => {
   }
   return (
     <div className="addtocart">
-      <div className="cart-header">
+      <header className="cart-header">
         <h4>My Cart{Array.isArray(cartItem) && cartItem.length > 0 ? '(' + cartItem.length + ' item)' : ''}</h4>
         <i className="cartClose" onClick={() => openAddtocart(false)} >X</i>
-      </div>
+      </header>
       {
         Array.isArray(cartItem) && cartItem.length > 0 ? <div className="cart-with-item">
-          <div className="cart-item-inner">
+          <section className="cart-item-inner">
             <ul>
               {
                 cartItem.map(item =>
@@ -48,7 +48,8 @@ const AddToCart = (props) => {
                       <div className="quantity-box">
                         <div className="quantity-action">
                           <span className="minus-quantity" onClick={() => decrementCount(item.count, item.id)}>-</span>
-                          <input type="text" name="count" min="1" disabled="true" onChange={(e) => handleCount(e.target.value, item.id)} value={item.count} />
+                          <label for="cart-input"></label>
+                          <input id="cart-input" type="text" name="count" min="1" disabled="true" onChange={(e) => handleCount(e.target.value, item.id)} value={item.count} />
                           <span className="plus-quantity" onClick={() => incrementCount(item.count, item.id)} >+</span>
                         </div>
                         <div className="item-price">
@@ -65,23 +66,23 @@ const AddToCart = (props) => {
               <img src={lowesPrice} alt="Price" />
               <span>{CART_LABEL_MESSAGE.CHEAPER_MSG}</span>
             </div>
-          </div>
-          <div className="cart-footer">
+          </section>
+          <footer className="cart-footer">
             <span className="promo-info">{CART_LABEL_MESSAGE.PROMO_CODE_TEXT}</span>
             <button className="btn checkout">
               <span className="proceed-checkout">{CART_LABEL_MESSAGE.CHECKOUT_BTN_TEXT}</span>
               <span className="cart-total-price">Rs. {totalPriceofCart()} <span></span></span>
             </button>
-          </div>
+          </footer>
 
         </div> :
-          <div className="empty-cart">
+          <section className="empty-cart">
             <div className="no-items">
               <strong>{CART_LABEL_MESSAGE.EMPTY_CART_MSG}</strong>
               <span>{CART_LABEL_MESSAGE.FAVOURITE_ITEMS_TEXT}</span>
             </div>
             <button className="btn startShopping" onClick={handleStartShopping}>{CART_LABEL_MESSAGE.START_SHOPPING_TEXT}</button>
-          </div>
+          </section>
       }
     </div>
   )

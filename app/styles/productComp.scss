@@ -11,20 +11,20 @@
 }
 .RRT__tabs {
   width: 25%;
-  background: #eee;
+  background: $lightGreyColor;
   padding: 5px 10px;
   display: block;
   > div {
     border: 0;
-    border-bottom: 1px solid #b9b9b9;
+    border-bottom: 1px solid $productTabBorder; 
     font-size: 17px;
-    color: #5d5d5d;
+    color: $productTabColor;
     padding: 15px 20px;
     display: block;
   }
   .RRT__tab--selected {
-    background: #c03057;
-    color: #fff;
+    background: $productSelectedTab;
+    color: $white;
   }
 }
 
@@ -48,7 +48,7 @@
       bottom: 0;
       right: -2.5px;
       margin: auto;
-      background: #fbfbfb;
+      background: $lightIvoryColor;
       width: 5px;
     }
     img {
@@ -61,7 +61,7 @@
     }
     p {
       padding: 6px 6px;
-      background: #eee;
+      background: $lightGreyColor;
       font-size: 14px;
       min-height: 87px;
       margin-bottom: 15px;
@@ -71,7 +71,7 @@
 
     h5 {
       font-size: 17px;
-      color: #000;
+      color: $black;
       font-weight: 700;
       word-break: break-word;
       min-height: 68px;
@@ -84,7 +84,7 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  border-bottom: 2px dotted #c5c1c1;
+  border-bottom: 2px dotted $priceBarColor;
   padding-bottom: 10px;
   position: absolute;
   width: calc(100% - 20px);

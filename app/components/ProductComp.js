@@ -5,6 +5,7 @@ import { getProductsDetails, getCategoriesListDetails } from '../api/api';
 import { PRODUCTS_ERROR_MSG, CATEGORIES_ERROR_MSG } from '../constant';
 import ProductTileComp from './ProductTileComp';
 import 'react-responsive-tabs/styles.css';
+import Swal from 'sweetalert2';
 
 
 const ProductComp = (props) => {
@@ -39,19 +40,21 @@ const ProductComp = (props) => {
     /**
    * function for products list Tabing list Data
    */
-    const categoriesGetCall = async () => {
-        const response = await getCategoriesListDetails();
-        if (response && response.status === 200 && response.data) {
-            const enabledProductTabsList = response.data.filter(item => item.enabled === true);
-            setProductTabs(
-                ...productTabs,
-                enabledProductTabsList
-            )
-        }
-        else {
-            Swal.fire(CATEGORIES_ERROR_MSG, response.message, ERROR)
-        }
+  const successCategoryCallback = response => {
+    const enabledProductTabsList = response.data.filter(item => item.enabled === true);
+        setProductTabs(
+            ...productTabs,
+            enabledProductTabsList
+        )
     }
+    const failureCategoryCallback = error => {
+        Swal.fire(CATEGORIES_ERROR_MSG, error.message, ERROR)
+    };
+    const categoriesGetCall = async () => {
+        getCategoriesListDetails(successCategoryCallback, failureCategoryCallback);
+        
+    }
+   
 
     /**
      * Function for formation of Tabs and Tabs Content
@@ -80,7 +83,7 @@ const ProductComp = (props) => {
     return (
         <div className="productWrap">
             <section className="main-product-container floatcontainer">
-                <Tabs items={getTabs()} transform={true} transformWidth={760} />
+                <Tabs items={getTabs()} transform={true} transformWidth={760} role="tab"/>
             </section>
 
         </div>

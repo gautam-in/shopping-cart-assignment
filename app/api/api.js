@@ -1,10 +1,10 @@
 import axios from 'axios';
-
+import { BANNER_LIST_API, CATEGORIES_LIST_API, PRODUCTS_LIST_API } from "../api/apiUrls";
 /**
  * function for get object of banner list details 
  */
 export const getbannersListDetails = (successCallback, failureCallback) => {
-  axios.get('http://localhost:5000/banners')
+  axios.get(BANNER_LIST_API)
     .then(response =>  {
       //checks
       if (response && response.status === 200 && response.data) {
@@ -20,8 +20,17 @@ export const getbannersListDetails = (successCallback, failureCallback) => {
 /**
  * function for get object of categories list details 
  */
-export const getCategoriesListDetails = () => {
-  return axios.get('http://localhost:5000/categories').then(response => response).catch(error => error)
+export const getCategoriesListDetails = (successCallback,failureCallback) => {
+  return axios.get(CATEGORIES_LIST_API)
+  .then(response =>  {
+    //checks
+    if (response && response.status === 200 && response.data) {
+      successCallback(response)
+    }else{
+      failureCallback(response)
+    }
+  })
+  .catch(error => failureCallback(error))
 }
 
 
@@ -30,7 +39,7 @@ export const getCategoriesListDetails = () => {
  */
 
 export const getProductsDetails = (successCallback , failureCallback) => {
-  return axios.get('http://localhost:5000/products')
+  return axios.get(PRODUCTS_LIST_API)
   .then(response =>  {
     //checks
     if (response && response.status === 200 && response.data) {

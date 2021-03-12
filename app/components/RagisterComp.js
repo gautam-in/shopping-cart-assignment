@@ -77,7 +77,7 @@ const RagisterComp = () => {
                                         <span className="highlight"></span>
                                         <span className="bar"></span>
                                         <label htmlFor="firstName" id="firstName">
-                                            First Name *
+                                            {LOGIN_SIGNUP_MSG.FIRST_NAME_LABEL}
                                     </label>
                                     </div>
                                     {errors.firstName && touched.firstName && (
@@ -96,8 +96,8 @@ const RagisterComp = () => {
                                         <span className="highlight"></span>
                                         <span className="bar"></span>
                                         <label htmlFor="lastName" id="lastName">
-                                            Last Name*
-                                    </label>
+                                            {LOGIN_SIGNUP_MSG.LAST_NAME_LABEL}
+                                        </label>
                                     </div>
                                     {errors.lastName && touched.lastName && (
                                         <span style={{ color: "red" }}>{errors.lastName}</span>
@@ -115,8 +115,8 @@ const RagisterComp = () => {
                                         <span className="highlight"></span>
                                         <span className="bar"></span>
                                         <label htmlFor="email" id="email">
-                                            Email *
-                                    </label>
+                                            {LOGIN_SIGNUP_MSG.EMAIL_LABEL}
+                                        </label>
                                     </div>
                                     {errors.email && touched.email && (
                                         <span style={{ color: "red" }}>{errors.email}</span>
@@ -134,8 +134,8 @@ const RagisterComp = () => {
                                         <span className="highlight"></span>
                                         <span className="bar"></span>
                                         <label htmlFor="password" id="password">
-                                            Password *
-                                    </label>
+                                            {LOGIN_SIGNUP_MSG.PASSWORD_LABEL}
+                                        </label>
                                     </div>
                                     {errors.password && touched.password && (
                                         <span style={{ color: "red" }}>{errors.password}</span>
@@ -154,8 +154,8 @@ const RagisterComp = () => {
                                         <span className="highlight"></span>
                                         <span className="bar"></span>
                                         <label htmlFor="confirmPassword" id="confirmPassword">
-                                            Confirm Password *
-                                    </label>
+                                            {LOGIN_SIGNUP_MSG.CONFIRM_PASSWORD_LABEL}
+                                        </label>
                                     </div>
                                     {errors.confirmPassword && touched.confirmPassword && (
                                         <span style={{ color: "red" }}>{errors.confirmPassword}</span>
@@ -166,7 +166,7 @@ const RagisterComp = () => {
                                         disabled={isSubmitting}
                                         name="submit"
                                         value="SignUp"
-                                    >SignUp</button>
+                                    >{LOGIN_SIGNUP_MSG.SIGNUP_TEXT}</button>
                                 </form>
                             );
                         }}

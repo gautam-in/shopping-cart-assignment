@@ -14,9 +14,9 @@
   padding-left: 7%;
   padding-top: 80px;
   padding-right: 5%;
-}
-.left-sec h2 {
-  margin-bottom: 10px;
+  h2 {
+    margin-bottom: 10px;
+  }
 }
 .right-sec {
   width: 50%;
@@ -38,7 +38,7 @@ input {
   display: block;
   width: 100%;
   border: none;
-  border-bottom: 1px solid #757575;
+  border-bottom: 1px solid $inputBottomBorder;
 }
 
 input:focus {
@@ -46,7 +46,7 @@ input:focus {
 }
 
 label {
-  color: #999;
+  color: $labelColor;
   font-size: 18px;
   font-weight: normal;
   position: absolute;
@@ -61,39 +61,39 @@ label {
 input:focus ~ label{
   top: -20px;
   font-size: 14px;
-  color: #4285f4;
+  color: $focusableLabelColor;
 }
 // input:valid ~ label {
 //   top: -20px;
 //   font-size: 14px;
-//   color: #4285f4;
+//   color: $focusableLabelColor;
 // }
 
 .bar {
   position: relative;
   display: block;
   width: 100%;
-}
-
-.bar:before,
-.bar:after {
-  content: '';
-  height: 2px;
-  width: 0;
-  bottom: 1px;
-  position: absolute;
-  background: #4285f4;
-  transition: 0.2s ease all;
-  -moz-transition: 0.2s ease all;
-  -webkit-transition: 0.2s ease all;
-}
-
-.bar:before {
-  left: 50%;
-}
-
-.bar:after {
-  right: 50%;
+  
+  &:before,
+  &:after {
+    content: '';
+    height: 2px;
+    width: 0;
+    bottom: 1px;
+    position: absolute;
+    background: $focusableLabelColor;
+    transition: 0.2s ease all;
+    -moz-transition: 0.2s ease all;
+    -webkit-transition: 0.2s ease all;
+  }
+  
+  &:before {
+    left: 50%;
+  }
+  
+  &:after {
+    right: 50%;
+  }
 }
 
 input:focus ~ .bar:before,
@@ -120,7 +120,7 @@ input:focus ~ .highlight {
 /* animations */
 @-webkit-keyframes inputHighlighter {
   from {
-    background: #4285f4;
+    background: $focusableLabelColor;
   }
   to {
     width: 0;
@@ -129,7 +129,7 @@ input:focus ~ .highlight {
 }
 @-moz-keyframes inputHighlighter {
   from {
-    background: #4285f4;
+    background: $focusableLabelColor;
   }
   to {
     width: 0;
@@ -138,7 +138,7 @@ input:focus ~ .highlight {
 }
 @keyframes inputHighlighter {
   from {
-    background: #4285f4;
+    background: $focusableLabelColor;
   }
   to {
     width: 0;

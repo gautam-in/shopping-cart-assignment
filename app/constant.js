@@ -27,6 +27,11 @@ export const LOGIN_SIGNUP_MSG = {
   CONFIRM_PASSWORD_MINCHAR: "Confirm Password is too short - should be 6 chars minimum.",
   CONFIRM_PASSWORD_NUMBER: "Confirm Password must contain a number.",
   CONFIRM_PASSWORD_MATCH: "Passwords must match",
+  FIRST_NAME_LABEL: "First Name *",
+  LAST_NAME_LABEL: "Last Name*",
+  EMAIL_LABEL: "Email *",
+  PASSWORD_LABEL: "Password *",
+  CONFIRM_PASSWORD_LABEL: "Confirm Password *",
 }
 
 // Cart page label and messages
@@ -53,8 +58,4 @@ export const PRODUCT_LABEL_MSG = {
 
 // Footer section label and messages
 
-export const FOOTER_TEXT = "Copyright &copy; 2011-2018 Sabka Bazar Grocery Supplies Pvt Ltd.";
-
-
-
-
+export const FOOTER_TEXT = "Copyright &copy; 2011-currentYear Sabka Bazar Grocery Supplies Pvt Ltd.";
