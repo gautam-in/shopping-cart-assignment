@@ -7,11 +7,12 @@ import { RouterModule } from '@angular/router';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
-import { CartComponent } from './cart/cart.component';
-import { CartModalComponent } from './cart-modal/cart-modal.component';
-import { ModalModule } from "ngx-bootstrap/modal";
-import { EmptyCartComponent } from './empty-cart/empty-cart.component';
-import { HeaderComponent } from './header/header.component';
+import { CartComponent } from './components/cart/cart.component';
+import { CartModalComponent } from './components/cart-modal/cart-modal.component';
+import { EmptyCartComponent } from './components/empty-cart/empty-cart.component';
+import { HeaderComponent } from './components/header/header.component';
+import { ModalModule } from 'ngx-bootstrap/modal';
+
 
 
 
@@ -32,7 +33,6 @@ import { HeaderComponent } from './header/header.component';
     HttpClientModule,
     BrowserAnimationsModule,
     ModalModule.forRoot()
-   
   ],
   providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}],
   entryComponents: [CartModalComponent],

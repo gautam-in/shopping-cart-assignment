@@ -1,16 +1,19 @@
+import { HttpClientModule } from '@angular/common/http';
 import { TestBed, waitForAsync } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
+import { InMemoryDataService } from './services/in-memory-data.service';
 
 describe('AppComponent', () => {
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       imports: [
-        RouterTestingModule
+        RouterTestingModule, HttpClientModule
       ],
       declarations: [
         AppComponent
       ],
+      providers: [InMemoryDataService]
     }).compileComponents();
   }));
 
@@ -20,16 +23,6 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'Sabka-Bazaar'`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('Sabka-Bazaar');
-  });
+  
 
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('Sabka-Bazaar app is running!');
-  });
 });

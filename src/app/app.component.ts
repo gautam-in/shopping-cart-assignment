@@ -8,7 +8,6 @@ import { InMemoryDataService } from './services/in-memory-data.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit, OnDestroy  {
-  title = 'Sabka-Bazaar';
   count: number;
   active: boolean;
   hideFooter = true;

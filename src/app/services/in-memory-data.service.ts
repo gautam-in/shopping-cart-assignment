@@ -2,6 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, of, Subject, throwError } from 'rxjs';
 import { catchError, share } from 'rxjs/operators';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -23,12 +24,13 @@ export class InMemoryDataService {
     return this.httpClient.get('/categories', options).pipe(share(), catchError(this.handleError));
   }
 
-   login(): Observable<any>{
-    const headers = new HttpHeaders({
+   login(email: string, rawPassword: string): Observable<any>{
+     const password = btoa(rawPassword);
+     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
       'Access-Control-Allow-Origin': '*' });
-    const options = { headers };
-    return this.httpClient.post('/login', {}, options).pipe(share(), catchError(this.handleError));
+     const options = { headers };
+     return this.httpClient.post('/login', {email, password}, options).pipe(share(), catchError(this.handleError));
    }
    banner(): Observable<any>{
       return this.httpClient.get('/banners').pipe(share(), catchError(this.handleError));
