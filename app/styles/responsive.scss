@@ -198,6 +198,21 @@
     padding-top: 10px;
     border-bottom: 2px dotted $priceBarColor;
   }
+  .no-items{
+    left: 21%;
+  }
+  .empty-cart{
+    height: 86.5%;
+  }
+  .addtocart{
+    width: 375px;
+    height: 608px;;
+  }
+  .cart-with-item {
+    .cart-item-inner {
+      height: 400px;
+    }
+  }
 }
 
 @media only screen and (max-width: 480px) {
