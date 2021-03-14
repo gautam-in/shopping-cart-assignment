@@ -7,7 +7,8 @@
     "test": "jest",
     "test-watch": "jest --watchAll",
     "start": "canned -p 5000 ./server",
-    "dev": "webpack-dev-server --progress --colors --config ./webpack.config.dev.js"
+    "build": "webpack-dev-server --progress --colors --config ./webpack.config.dev.js",
+    "dev": "start npm start && start npm run-script build"
   },
   "author": "",
   "license": "MIT",
