@@ -1,0 +1,15 @@
+.flex-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height:100vh;
+}
+@media only screen and (min-width: 1024px){
+    .flex-container{
+        height:70vh;
+    }
+  }
+.noData{
+    text-align: center;
+}

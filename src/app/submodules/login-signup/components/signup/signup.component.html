@@ -1,0 +1,65 @@
+<div class="container">
+    <div class="row login-row">
+        <div class="col-sm-6 col-md-6 font-size-15">
+            <p class="mt-3 font-size-med">Signup</p>
+            <p class="mt-3 font-size-reg">We do not share your personal detail with anyone</p>
+        </div>
+        <div class="col-sm-6 col-md-6 font-size-15 login-form">
+            <form [formGroup]="form"  (ngSubmit)="onSubmit()" aria-label="Signup">
+                <label class="has-float-label text-color" for="firstName">
+                    <input required  formControlName="firstName" type="text" id="firstName" autocomplete="off" placeholder=""/>
+                    <span class="field-name">First Name</span>
+                  <span *ngIf="form.get('firstName').touched && form.get('firstName').hasError('required')" tabindex="0" aria-label="Mandatory Field">First name is mandatory&nbsp;<span class="material-icons materialIcons">
+                    error_outline
+                    </span></span><br>
+                    <span *ngIf="form.get('firstName').dirty && form.get('firstName').hasError('whitespace')" tabindex="0" aria-label="Spaces are not allowed">Spaces are not allowed&nbsp;<span class="material-icons materialIcons">
+                      error_outline
+                      </span></span>
+                  </label>
+                  <label class="has-float-label text-color" for="lastName">
+                    <input required  formControlName="lastName" type="text" id="lastName" autocomplete="off" placeholder=""/>
+                    <span class="field-name">Last Name</span>
+                  <span *ngIf="form.get('lastName').touched && form.get('lastName').hasError('required')" tabindex="0" aria-label="Mandatory Field">Last name is mandatory&nbsp;<span class="material-icons materialIcons">
+                    error_outline
+                    </span></span>
+                    <span *ngIf="form.get('lastName').dirty && form.get('lastName').hasError('whitespace')" tabindex="0" aria-label="Spaces are not allowed">Spaces are not allowed&nbsp;<span class="material-icons materialIcons">
+                      error_outline
+                      </span></span>
+                  </label>
+                <label class="has-float-label text-color" for="email">
+                    <input required formControlName="email" type="email" id="email" autocomplete="off" placeholder=""/>
+                    <span class="field-name">Email</span>
+                    <span *ngIf="form.get('email').hasError('pattern')" tabindex="0" aria-label="Please enter valid email address">Please enter valid email address&nbsp;<span class="material-icons materialIcons">
+                        error_outline
+                        </span></span><br>
+                  <span *ngIf="form.get('email').touched && form.get('email').hasError('required')" tabindex="0" aria-label="Mandatory Field">Email address is mandatory&nbsp;<span class="material-icons materialIcons">
+                    error_outline
+                    </span></span>
+                  </label>
+                
+                  <label for="password" class="text-color has-float-label">
+                    <input  pattern="^(?=.*\d)[a-zA-Z\d]{6,}$" required  formControlName="password" autocomplete="off" type="password"  id="password" placeholder=""/>
+                    <span class="field-name">Password</span>
+                    <span *ngIf="form.get('password').hasError('pattern')" tabindex="0" aria-label="Minimum passowrd length is 6 and it must have alphabet and number without any spaces">Minimum passowrd length is 6 and it must have alphabet and number without any spaces&nbsp;<span class="material-icons materialIcons">
+                        error_outline
+                        </span></span>
+                  <span *ngIf="form.get('password').touched && form.get('password').hasError('required')" tabindex="0" aria-label="Mandatory Field">Password is mandatory <span class="material-icons materialIcons">
+                    error_outline
+                    </span></span>
+                  </label>
+                  <label for="confirm_password" class="text-color has-float-label">
+                    <input pattern="^(?=.*\d)[a-zA-Z\d]{6,}$" required  formControlName="confirmpassword" autocomplete="off" type="password"  id="confirm_password" placeholder=""/>
+                    <span class="field-name">Confirm Password</span>
+                    <span *ngIf="form.get('confirmpassword').hasError('pattern')" tabindex="0" aria-label="Minimum passowrd length is 6 and it must have alphabet and number without any spaces">Minimum passowrd length is 6 and it must have alphabet and number without any spaces&nbsp;<span class="material-icons materialIcons ">
+                        error_outline
+                        </span></span>
+                  <span *ngIf="form.get('confirmpassword').touched && form.get('confirmpassword').hasError('required')" tabindex="0" aria-label="Mandatory Field">Confirm password is mandatory&nbsp;<span class="material-icons materialIcons">
+                    error_outline
+                    </span></span>
+                  </label>
+                <button  [attr.aria-disabled]="!form.valid" [class.disableclass]="!form.valid" type="submit" aria-label="Signup button" class="buttoncolor btn btn-primary">Signup</button>
+              </form>
+        </div>
+    </div>
+</div>
+

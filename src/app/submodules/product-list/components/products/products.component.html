@@ -1,0 +1,37 @@
+        <div *ngIf="categoryArray.length > 0"  class="backgroundcolor col-c-2 side-container font-size-10">
+                <app-side-bar [categoryData]="categoryArray" ($listData)="filterProductData($event)"></app-side-bar>
+        </div>
+        <div class="drop-down-menu">
+        <app-drop-down [categoryData]="categoryArray" ($listData)="filterProductData($event)"></app-drop-down>
+        </div>
+        <div class="col-c-10 product-container font-size-15 txt-align-left">
+                        <div tabindex="0" class="col-c-3 product-list product" *ngFor="let product of productArray">
+                                <label  class="prod-name font-size-med  txt-align-left">
+                                    {{product.name}}
+                                </label>
+                                <figure  class="font-size-15 txt-align-left">
+                                    <img [src]="product.imageURL" [alt]="product.name" class="image-width" loading="lazy">
+                                    <figcaption class="fig-caption mt-2 font-size-min font-size-10 prod-desc-background">{{product.description}}</figcaption>
+                                  </figure>
+                                  <div class="buy-now font-size-10" tabindex="0">
+                                    <label class="font-size-reg">MRP Rs.{{product.price}}</label>&nbsp;&nbsp;<button  type="submit"  class="btn btn-primary buttoncolor" (click)="addToCart(product)">Buy Now</button>
+                                  </div>
+                        </div>
+                        <div tabindex="0" class="mt-4 col-c-12 product-list borderBottom" *ngFor="let product of productArray">
+                            <label  class="prod-name font-size-med  txt-align-left">
+                                {{product.name}}
+                            </label>
+                            <div  class="font-size-15 txt-align-left product-sm">
+                                <img [src]="product.imageURL" [alt]="product.name" class="image-width" loading="lazy">
+                                   <div>
+                                    <p class="fig-caption font-size-min prod-desc-background">{{product.description}}</p>
+                                    <div class="buy-now">
+                                        <button   [attr.aria-label]="" class="btn btn-primary font-size-15 buttoncolor" (click)="addToCart(product)">Buy Now @ Rs.{{product.price}}</button>
+                                    </div>
+                                </div>
+                            </div>
+                    </div> 
+        </div>
+
+
+        

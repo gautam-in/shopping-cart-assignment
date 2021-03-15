@@ -1,0 +1,33 @@
+<header class="nav-bar ">
+<picture>
+    <source media="(max-width:768px)" srcset="./assets/images/logo.png">
+    <img src="./assets/images/logo_2x.png" alt="Sabka bazaar.Get access to your orders.Wishlist and Recommendations" class="image-width" loading="lazy">
+  </picture>
+  <nav class="product-nav">
+    <ul class="nav-list">
+      <li class="home">
+        <a   routerLinkActive="active-route" aria-label="Home page" class="text-color font-size-15" href="#" [routerLink]="'./home/homepage'">Home</a>
+      </li>
+      <li >
+        <a  routerLinkActive="active-route" aria-label="Product page" class="text-color font-size-15" href="#" [routerLink]="'./productLists/productsPage'">Products</a>
+      </li>
+    </ul>
+  </nav>
+  <nav class="register-nav">
+    <ul class="login-nav">
+      <li class="sign-in">
+        <a  routerLinkActive="active-route" aria-label="Sign In page" [routerLinkActiveOptions]="{exact:
+          true}" class="text-color font-size-15" href="#" [routerLink]="'./login/'">SignIn</a>
+      </li>
+      <li>
+        <a  routerLinkActive="active-route" aria-label="Registration page" class="text-color font-size-15" href="#" [routerLink]="'./login/signup'">Register</a>
+      </li>
+    </ul>
+    <button  type="submit"  class="font-size-15 cartMobileTablet backgroundcolor"  [routerLink]="'./cartlist'">
+      <span><img src="./assets/images/cart.svg" alt="Add To cart" class="cart-img"></span><span class="font-size-med">{{this.count}} Items</span>
+    </button>
+    <button   type="submit" class="font-size-15 cartDesktop  backgroundcolor"  (click)="openOverlay()">
+      <span><img src="./assets/images/cart.svg" alt="Add To cart" class="cart-img"></span><span class="font-size-med">{{this.count}} Items</span>
+    </button>
+  </nav>
+</header>

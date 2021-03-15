@@ -1,0 +1,29 @@
+  <div aria-roledescription="carousel" data-interval = "false" aria-label="Highlighted deals" id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" tabindex="0">
+    <ol class="carousel-indicators">
+      <li   *ngFor="let data of bannerDataArray" data-target="#carouselExampleIndicators" [attr.data-slide-to]="data.order" [ngClass]="{'active':data.isActive}"></li>
+    </ol>
+    <div class="carousel-inner">
+        <div  data-pause="data.hover"  class="carousel-item" [ngClass]="{'active':data.isActive}" *ngFor="let data of bannerDataArray; let i=index;">
+            <img class="d-block w-100" [src]="data.bannerImageUrl" [alt]="data.bannerImageAlt" style="width:100%;" loading="lazy">
+        </div>
+    <a aria-label="Show previous slide" class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+      <span class="material-icons">
+        navigate_before
+        </span>
+    </a>
+    <a aria-label="Show next slide" class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+      <span class="material-icons">
+        navigate_next
+        </span>
+    </a>
+  </div>
+
+  </div>
+  <div class="category font-size-15" *ngFor="let data of $categoryData | async;let i=index" [ngClass]="{'normal-row':(i%2 == 0),'row-reverse':(i%2 != 0)}">
+    <img  class="img-category" [src]="data.imageUrl" [alt]="data.name" loading="lazy">
+    <section  class="img-info-section">
+        <p class="font-size-med">{{data.name}}</p>
+        <p class="font-size-reg">{{data.description}}</p>
+        <a href="#" [attr.aria-label]="'Explore '+data.name" class="font-size-15 buttoncolor explore" (click)="exploreProductListingPage(data.id)" [routerLink]="'../../productLists/productsPage'">Explore <span class="content">{{data.name}}</span></a>
+    </section>
+  </div>

@@ -1,0 +1,35 @@
+<div class="container">
+    <div class="row login-row">
+        <div class="col-sm-6 col-md-6 font-size-15" >
+            <p class="mt-3 font-size-med">Login</p>
+            <p class="mt-3 font-size-reg">Get access to your orders.Wishlist and Recommendations</p>
+        </div>
+        <div class="col-sm-6 col-md-6 font-size-15 login-form">
+            <form [formGroup]="form"  (ngSubmit)="onSubmit()" aria-label="Login">
+                <label class="has-float-label text-color" for="exampleInputEmail1">
+                    <input required formControlName="email" type="email" id="exampleInputEmail1" placeholder="" autocomplete="off" />
+                    <span class="field-name">Email</span>
+                    <span *ngIf="form.get('email').hasError('pattern')" tabindex="0" aria-label="">Please enter valid email address&nbsp;<span class="materialIcons material-icons">
+                        error_outline
+                        </span></span><br>
+                  <span *ngIf="form.get('email').touched && form.get('email').hasError('required')" tabindex="0" aria-label="Email field is mandatory">Email field is mandatory&nbsp;<span class="materialIcons material-icons">
+                    error_outline
+                    </span></span>
+                  </label>
+                
+                  <label for="exampleInputPassword1" class="text-color has-float-label">
+                    <input pattern="^(?=.*\d)[a-zA-Z\d]{6,}$" required formControlName="password"  type="password"  id="exampleInputPassword1" placeholder="" autocomplete="off"/>
+                    <span class="field-name">Password</span>
+                    <span *ngIf="form.get('password').hasError('pattern')" tabindex="0" aria-label="Minimum passowrd length is 6 and it must have alphabet and number without any spaces">Minimum passowrd length is 6 and it must have alphabet and number without any spaces&nbsp;<span class="materialIcons material-icons">
+                        error_outline
+                        </span></span>
+                  <span *ngIf="form.get('password').touched && form.get('password').hasError('required')" tabindex="0" aria-label="Password field is required">Password field is mandatory&nbsp;<span class="materialIcons material-icons">
+                    error_outline
+                    </span></span>
+                  </label>
+                <button [attr.aria-disabled]="!form.valid" [class.disableclass]="!form.valid" type="submit" aria-label="Login to home page" class="btn btn-primary buttoncolor">Login</button>
+              </form>
+        </div>
+    </div>
+</div>
+

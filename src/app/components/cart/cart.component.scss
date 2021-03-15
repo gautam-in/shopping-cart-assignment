@@ -1,0 +1,163 @@
+.cart-container{
+    margin: 5px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding: 10px 0px 0px 0px;
+    background-color: #eeeeee ;
+    overflow: auto;
+}
+.cart-detail{
+    display: flex;
+    flex-direction: row;
+    background-color: #fff;
+}
+.image-width{
+    width:20%;
+  }
+  .minus, .plus{
+      width:20px;
+      background:#f2f2f2;
+      border-radius:4px;
+      border:1px solid #ddd;
+      display: inline-block;
+      vertical-align: middle;
+      text-align: center;
+      cursor: pointer;
+      color: #fff;
+  }
+  .itemDetail {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: -webkit-fill-available;
+    margin: 2px;
+  }
+  .totalPrice{
+      float:right;
+  }
+  .lowest-price{
+    margin: 5px;
+  }
+  .itemDetail span{
+    margin: 2px;
+  }
+  .itemDetail input{
+    width: 30px;
+    border-radius: 4px;
+    border: none;
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+    cursor: default;
+
+}
+  
+  .promoCode{
+      text-align: center;
+  }
+  header{
+        background-color: #fff;
+        margin: 5px;
+        height: 6vh;
+        justify-content: flex-start;
+        align-items: center;
+        display: flex;
+        padding-left: 10px;
+  }
+  .cart-container section{
+    margin: 5px;
+    background-color: #fff;
+  }
+  .checkOut{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 5px;
+    border: 1px solid #bf2956;
+    border-radius: 5px;
+    margin:5px;
+    width: 98%;
+  }
+  .startShopping{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 5px;
+    border: 1px solid #bf2956;
+    border-radius: 5px;
+    margin: 5px;
+    cursor:pointer;
+    width:98%
+  }
+  @media only screen and (min-width: 768px) and (max-width: 1023px) {
+    .cart-container{
+        margin: 5px;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        padding: 10px 0px 0px 0px;
+        background-color: #eeeeee ;
+        overflow: auto;
+    }
+    .cart-detail{
+        display: flex;
+        flex-direction: row;
+        // margin-bottom: 10px;
+        background-color: #fff;
+    }
+    .image-width{
+        width:10%;
+      }
+      .minus, .plus{
+          width:20px;
+        //   height:20px;
+          background:#f2f2f2;
+          border-radius:4px;
+        //   padding:8px 5px 8px 5px;
+          border:1px solid #ddd;
+          display: inline-block;
+          vertical-align: middle;
+          text-align: center;
+          cursor: pointer;
+          color: #fff;
+      }
+      .itemDetail {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        width: -webkit-fill-available;
+        margin: 5px;
+      }
+      .totalPrice{
+          float:right;
+      }
+      .lowest-price{
+        margin: 5px;
+      }
+      .itemDetail span{
+        margin: 5px;
+      }
+      .promoCode{
+          text-align: center;
+      }
+      .cart-container section{
+        margin: 5px;
+        background-color: #fff;
+      }
+     
+  }
+
+  @media only screen and (min-width: 1024px) and (max-width: 1440px) {
+    .cart-container{
+      height: 70vh;
+      max-height: 90vh;
+    }
+  }
+
+  @media only screen and (min-width: 1441px) {
+    .cart-container{
+      height: 70vh;
+      max-height: 90vh;
+    }
+  }
