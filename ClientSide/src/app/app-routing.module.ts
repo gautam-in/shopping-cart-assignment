@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
+import { CartComponent } from './cart/cart.component';
 import { LoginComponent } from './login/login.component';
 import { AuthGuardService } from './shared/services/auth-guard.service';
 import { LoginAuthService } from './shared/services/login-services/login-auth.service';
@@ -28,6 +29,10 @@ const routes: Routes = [
     canActivate: [AuthGuardService],
   },
   {
+    path: 'cart',
+    component: CartComponent,
+  },
+  {
     path: '**',
     redirectTo: '/home',
   },
@@ -38,6 +43,7 @@ const routes: Routes = [
     RouterModule.forRoot(routes, {
       initialNavigation: 'enabled',
       preloadingStrategy: PreloadAllModules,
+      useHash: true,
     }),
   ],
   exports: [RouterModule],

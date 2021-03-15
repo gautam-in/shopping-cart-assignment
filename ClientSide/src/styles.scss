@@ -74,6 +74,20 @@ img {
   max-height: 100%;
 }
 
+.desktop {
+  display: none !important;
+  @include desktop {
+    display: block !important;
+  }
+}
+
+.mobile {
+  display: block !important;
+  @include desktop {
+    display: none !important;
+  }
+}
+
 ::-webkit-scrollbar {
   width: 0; /* Remove scrollbar space */
   height: 0;

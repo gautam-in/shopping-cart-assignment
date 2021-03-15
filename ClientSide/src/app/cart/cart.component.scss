@@ -1,50 +1,38 @@
-/* The Modal (background) */
-.modal {
-  display: block; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+@import "../../mixins";
+
+.cart-container {
+  margin-top: -30px;
+  height: 80vh;
+  @include desktop {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    margin-top: 0;
+  }
+  &[data-empty-cart="false"] {
+    height: 100vh;
+    background-color: #d8d8d8;
+    padding-top: 30px;
+    @include desktop {
+      padding-top: 0;
+    }
+  }
 }
-// .modal {
-//   &[data-show="true"] {
-//     display: block;
-//   }
-// }
 
 .modal-header {
-  display: flex;
-  justify-content: space-between;
-  background-color: black;
-  color: #fff;
-  align-items: center;
-  padding: 5px;
-  h2 {
-    font-size: 20px;
-  }
-}
+  display: none;
 
-.modal-content {
-  &[data-empty-cart="true"] {
-    background-color: #fff;
+  @include desktop {
+    display: flex;
+    justify-content: space-between;
+    background-color: black;
+    color: #fff;
+    align-items: center;
+    padding: 5px;
+    h2 {
+      font-size: 20px;
+    }
   }
-}
-
-/* Modal Content */
-.modal-content {
-  position: absolute;
-  overflow-y: scroll;
-  background-color: #d8d8d8;
-  margin: auto;
-  border: 1px solid #888;
-  width: 30%;
-  bottom: 2%;
-  right: 10%;
-  height: 90%;
 }
 
 /* The Close Button */
@@ -60,11 +48,14 @@
 .close:focus {
   cursor: pointer;
 }
-ul.cart-items-warapper {
-  height: 75%;
+.cart-items-warapper {
+  height: 70%;
   width: 100%;
+  box-shadow: 0 8px 6px -6px #d8d8d8;
   overflow-y: scroll;
-  top: 5%;
+  @include desktop {
+    flex: 1 1 80%;
+  }
 }
 .cart-items-warapper li {
   &:not(.cart-footer-banner) {
@@ -132,14 +123,11 @@ ul.cart-items-warapper {
 
 .cart-footer {
   text-align: center;
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  width: 100%;
   background: #fff;
-  height: 15%;
-  padding: 5px;
+  padding: 5px 15px;
+  @include desktop {
+    flex: 1;
+  }
   .promo-text {
     margin-bottom: 10px;
   }
@@ -161,15 +149,26 @@ ul.cart-items-warapper {
 }
 .empty-cart-wrapper {
   flex-direction: column;
+  display: flex;
   background-color: #fff;
   padding: 0 5px;
+  height: 70%;
+  @include desktop {
+    flex: 1 1 80%;
+  }
+
+  .empty-cart-text {
+    flex: 1 1 80%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .empty-cart-button {
+    flex: 1;
+  }
   button.btn {
     display: block;
-  }
-  .empty-cart-text {
-    flex: 1;
-    align-self: center;
-    text-align: center;
-    padding: 50% 0;
   }
 }
