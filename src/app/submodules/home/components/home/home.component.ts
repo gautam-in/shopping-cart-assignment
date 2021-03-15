@@ -28,6 +28,7 @@ export class HomeComponent implements OnInit, OnDestroy{
   }
 
   ngOnInit(): void {
+    this.inMemoryDataService.logginSuccessfull.next(true);
     this.$categoryData = this.inMemoryDataService.getCategoryData();
     // this.$bannerData = this.inMemoryDataService.banner();
     this.inMemoryDataService.banner().pipe(takeWhile(() => this.active)).subscribe((res) => {
@@ -36,7 +37,6 @@ export class HomeComponent implements OnInit, OnDestroy{
   }
   exploreProductListingPage(productId: string){
     this.inMemoryDataService.productId = productId;
-    this.router.navigate(['../productLists/productsPage']);
   }
 
 }

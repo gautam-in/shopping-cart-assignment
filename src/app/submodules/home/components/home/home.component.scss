@@ -16,7 +16,7 @@
     height: 10px;
 }
 .category{
-    margin: 2%;
+    margin: 5px;
     box-shadow: 0 8px 6px -6px #999;
     display: flex;
 }
@@ -29,8 +29,10 @@
     justify-content: space-between;
 }
 .img-category{
-
-
+    width: 100%;
+    max-width: 120px;
+    margin-top: 25px;
+    height: 100%;
 }
 .img-info-section{
     text-align: center;
@@ -42,15 +44,30 @@
 h1{
     font-weight: bold;
 }
-.btn {
-    margin-bottom:5%;
-}
 .carousel-control-next-icon, .carousel-control-prev-icon{
     width: 1.5rem;
     height: 1.5rem;
 }
-.carousel-control-prev:focus, .carousel-control-next:focus{
-    border: 4px solid #232325;
+.explore{
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    border: 1px solid transparent;
+    padding: .375rem .75rem;
+    border-radius: .25rem;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    margin-bottom: 10px;
+    color:#fff;
+}
+a{
+    text-decoration: none;
+}
+.explore:hover{
+    color:#fff !important;
+}
+.material-icons{
+    font-size: 30px !important;
+    color:black;
 }
 @media only screen and (max-width:600px){
 
@@ -59,13 +76,8 @@ h1{
     }
 }
 @media only screen and (max-width:475px){
-    .btn {
+    .explore {
         width: 70%;
-    }
-    .img-category{
-        width: 8rem;
-        height: 5rem;
-        margin-top: 8%;
     }
     .content{
         display: none;
@@ -80,16 +92,35 @@ h1{
         font-weight: 600;
     }
     .img-category{
-        width:30rem;
+        width: 100%;
+        max-width: 400px;
+        height: auto;
+        margin-top: 0px;
+    }
+    .material-icons{
+        font-size: 50px !important;
+    }
+    .category{
+        margin: 15px;
     }
 }
 @media only screen and (min-width:768px) and (max-width:1023px){
+
     .img-category{
-        width:20rem;
+        width: 100%;
+        max-width: 300px;
+        height: auto;
+        margin-top: 0px;
     }
     .carousel-control-next-icon, .carousel-control-prev-icon{
         width: 1.5rem;
         height: 1.5rem;
+    }
+    .material-icons{
+        font-size: 40px !important;
+    }
+    .category{
+        margin: 10px;
     }
 }
 @media only screen and (max-width:767px){

@@ -62,6 +62,7 @@ body { margin: 5px; font-family: 'Dosis',sans-serif !important; }
 
 .materialIcons{
     position:absolute;
+    font-size:20px;
 }
 
 .font-size-15{
@@ -125,6 +126,9 @@ a:hover{
 }
 
 @media only screen and (min-width: 768px) and (max-width: 1023px) {
+    .materialIcons{
+        font-size:24px;
+    }
 }
 @media only screen and (min-width: 1024px) and (max-width: 1440px) {
     .font-size-15{
@@ -143,6 +147,9 @@ a:hover{
     }
     .font-size-10{
         font-size: 1rem !important;
+    }
+    .materialIcons{
+        font-size:24px;
     }
 }
 
@@ -163,6 +170,9 @@ a:hover{
     }
     .font-size-10{
         font-size: 1rem !important;
+    }
+    .materialIcons{
+        font-size:24px;
     }
 }
 //For hiding liveannouncer text

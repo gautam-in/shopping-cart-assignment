@@ -30,6 +30,7 @@
  }
  .product-sm{
   display: flex;
+  justify-content: space-between;
  }
  .product-sm button {
    width:100%;
@@ -47,14 +48,12 @@
   border-bottom: 1px dotted grey;
 }
 .image-width{
-  width:15rem;
+  width: 100%;
+  max-width: 150px;
+  height: auto;
 }
 
 @media only screen and (max-width: 320px) {
-  .image-width{
-    width: 10rem;
-    height: 11rem;
-  }
   .fig-caption{
     width: 8rem;
     height: 8rem;
@@ -62,19 +61,10 @@
   }
 }
 @media only screen and (min-width: 321px) and (max-width: 375px) {
-  .image-width{
-    width: 11rem;
-    height: 11rem;
-  }
   .fig-caption{
     width: 10rem;
     height: 8rem;
     overflow-y: auto;
-  }
-}
-@media only screen and (min-width: 375px) and (max-width: 425px) {
-  .image-width{
-    width: 12rem;
   }
 }
 @media only screen and (min-width: 768px) and (max-width: 1023px) {
@@ -122,14 +112,16 @@
         float: left;
         margin-right: 1%;
         margin-bottom: 1%;
-        max-height: 540px;
-        height: 100vh;
+        // max-height: 540px;
+        // height: 100vh;
         // overflow: auto;
         display:block;
       }
-      .image-width{
-        width:14rem;
-      }
+        .image-width{
+          width: 100%;
+          max-width: 300px;
+          height: auto;
+        }
       .side-container{
         display: block;
       }
@@ -199,13 +191,15 @@
         float: left;
         margin-right: 1%;
         margin-bottom: 1%;
-        max-height: 540px;
-        height: 100vh;
+        // max-height: 540px;
+        // height: 100vh;
         // overflow: auto;
         display:block;
       }
       .image-width{
-        width:12.5rem;
+        width: 100%;
+        max-width: 400px;
+        height: auto;
       }
       .side-container{
         display: block;
@@ -275,8 +269,8 @@
         float: left;
         margin-right: 1%;
         margin-bottom: 1%;
-        max-height: 540px;
-        height: 100vh;
+        // max-height: 540px;
+        // height: 100vh;
         // overflow: auto;
         display: block;
       }
@@ -301,5 +295,10 @@
           height: 3.5rem;
           margin-bottom:0.5rem;
           overflow-y: auto;
+        }
+        .image-width{
+          width: 100%;
+          max-width: 400px;
+          height: auto;
         }
 }

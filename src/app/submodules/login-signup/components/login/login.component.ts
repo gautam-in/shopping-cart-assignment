@@ -22,6 +22,7 @@ export class LoginComponent implements OnInit, OnDestroy {
     });
    }
   ngOnInit(): void {
+    this.inMemoryService.updateCartCount.next(0);
   }
   onSubmit(){
     if (this.form.valid){

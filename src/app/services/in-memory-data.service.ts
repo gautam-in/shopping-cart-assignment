@@ -1,6 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, of, Subject, throwError } from 'rxjs';
+import { BehaviorSubject, Observable, of, Subject, throwError } from 'rxjs';
 import { catchError, share } from 'rxjs/operators';
 
 @Injectable({
@@ -13,6 +13,7 @@ export class InMemoryDataService {
   public updateCartCount = new Subject<any>();
   public userLoggedIn: boolean;
   public productId: string;
+  public logginSuccessfull = new BehaviorSubject<any>(false);
   constructor(private httpClient: HttpClient) {
     this.productId = '';
    }
