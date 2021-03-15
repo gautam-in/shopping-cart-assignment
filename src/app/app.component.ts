@@ -14,9 +14,9 @@ export class AppComponent implements OnInit, OnDestroy  {
   constructor(private inMemoryDataService: InMemoryDataService){
     this.count = 0;
     this.active = true;
-    if (screen.width < 768){
-      this.hideFooter = false;
-    }
+    // if (screen.width < 768){
+    //   this.hideFooter = false;
+    // }
   }
   ngOnInit(): void {
     // tslint:disable-next-line: deprecation

@@ -22,11 +22,11 @@
 }
 .normal-row{
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 .row-reverse{
     flex-direction: row-reverse;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 .img-category{
     width: 100%;
@@ -67,8 +67,10 @@ a{
 }
 .material-icons{
     font-size: 30px !important;
-    color:black;
+    color: #fff;
+    background-color: black;
 }
+
 @media only screen and (max-width:600px){
 
     .content{

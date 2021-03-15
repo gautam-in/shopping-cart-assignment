@@ -27,7 +27,7 @@ import { ModalModule } from 'ngx-bootstrap/modal';
     HeaderComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
     RouterModule,
     HttpClientModule,

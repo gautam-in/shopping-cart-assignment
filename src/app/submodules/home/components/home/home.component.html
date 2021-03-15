@@ -1,4 +1,4 @@
-  <div aria-roledescription="carousel" aria-label="Highlighted deals" id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" tabindex="0">
+  <div aria-roledescription="carousel" data-interval = "false" aria-label="Highlighted deals" id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" tabindex="0">
     <ol class="carousel-indicators">
       <li   *ngFor="let data of bannerDataArray" data-target="#carouselExampleIndicators" [attr.data-slide-to]="data.order" [ngClass]="{'active':data.isActive}"></li>
     </ol>
