@@ -1,5 +1,10 @@
 @import "../../styles.scss";
 
+.banner-image{
+    width: 100%;
+    height: inherit;
+}
+
 .card {
     .category-description {
         .card-title {
@@ -11,6 +16,10 @@
 .card:nth-child(even) {
     .category-img {
         float: right;
+        .card-img{
+            width: inherit;
+            height: inherit;
+        }
     }
     .category-description {
         float: left;

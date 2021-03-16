@@ -14,7 +14,7 @@
                         aria-label="Enter email" autocomplete/>
                     <label for="email" class="floating-label">Email</label>
 
-                    <div class="custom-error text-danger" *ngIf="email.touched && !email.valid">
+                    <div class="alert alert-danger" *ngIf="email.touched && !email.valid">
                         <div *ngIf="email.errors?.required" aria-live="assertive">Please enter email.</div>
                         <div *ngIf="email.errors?.pattern" aria-live="assertive">Please enter email in correct format
                         </div>
@@ -27,7 +27,7 @@
                         placeholder="" required ngModel #password="ngModel" aria-label="Enter password"
                         pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$" autocomplete="off"/>
                     <label for="password" class="floating-label">Password</label>
-                    <div class="custom-error text-danger" *ngIf="password.touched && !password.valid">
+                    <div class="alert alert-danger" *ngIf="password.touched && !password.valid">
                         <div *ngIf="password.errors?.required" aria-live="assertive">Please enter password.</div>
                         <div *ngIf="password.errors?.minlength" aria-live="assertive">Minimum 6 characters required
                         </div>

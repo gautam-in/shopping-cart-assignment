@@ -1,5 +1,5 @@
 import { HttpClientModule } from '@angular/common/http';
-import { ApidataService } from '../../services/apidata.service';
+import { CatalogueService } from '../../services/catalogue.service';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ProductComponent } from './product.component';
@@ -8,12 +8,12 @@ import { CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/core';
 describe('ProductComponent', () => {
   let component: ProductComponent;
   let fixture: ComponentFixture<ProductComponent>;
-  let apiDataService: ApidataService;
+  let catalogueService: CatalogueService;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [ProductComponent],
-      providers: [ApidataService],
+      providers: [CatalogueService],
       imports: [HttpClientModule],
       schemas: [NO_ERRORS_SCHEMA, CUSTOM_ELEMENTS_SCHEMA]
     })
@@ -23,7 +23,7 @@ describe('ProductComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(ProductComponent);
     component = fixture.componentInstance;
-    apiDataService = TestBed.inject(ApidataService);
+    catalogueService = TestBed.inject(CatalogueService);
   });
 
   it('should create', () => {
@@ -53,8 +53,8 @@ describe('ProductComponent', () => {
       sku: 'fnw-kiwi-3',
       id: '5b6c6a7f01a7c38429530883'
     };
-    spyOn(apiDataService, 'addProductsToCart').and.callThrough();
+    spyOn(catalogueService, 'addProductsToCart').and.callThrough();
     component.addProductToCart(product);
-    expect(apiDataService.addProductsToCart).toHaveBeenCalled();
+    expect(catalogueService.addProductsToCart).toHaveBeenCalled();
   });
 });

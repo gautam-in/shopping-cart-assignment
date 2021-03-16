@@ -1,7 +1,8 @@
-import { IProduct } from './../model/product.model';
+import { IProduct } from '../../model/product.model';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { CartService } from '../services/cart.service';
+import { CartService } from '../../services/cart.service';
+import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-cart',
@@ -14,8 +15,13 @@ export class CartComponent implements OnInit {
 
   constructor(
     private cartService: CartService,
-    private router: Router
+    private router: Router,
+    public ngbService: NgbActiveModal
   ) { }
+
+  get modal() {
+    return this.ngbService;
+  }
 
   ngOnInit(): void {
     this.cartService.cartItems$.subscribe((data: IProduct[]) => {

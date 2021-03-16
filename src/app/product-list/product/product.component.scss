@@ -3,6 +3,12 @@
 .card {
     border: none;
     border-bottom: 1px dashed $color-dark-gray;
+    .card-body{
+        .card-img-top{
+            width: 100%;
+            height: inherit;
+        }
+    }
     .card-text {
         background-color: $color-gray;
         overflow: hidden;
@@ -29,10 +35,13 @@
 }
 
 @media screen and (max-width: 576px) {
-    .card-body {
-        text-align: center;
-        .card-img-top {
-            width: 30%;
+    .card{
+        .card-body {
+            text-align: center;
+            .card-img-top {
+                width: 30%;
+                height: auto;
+            }
         }
     }
 }

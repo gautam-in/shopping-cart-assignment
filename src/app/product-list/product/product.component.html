@@ -1,6 +1,11 @@
+<div *ngIf="isErrorOccured" class="error-container">
+    <p class="alert alert-danger">An error occured.</p>
+</div>
+
 <section class="container-fluid">
     <section class="row">
-        <div class="card col-md-3 col-sm-6 col-12 p-1" *ngFor="let product of displayProducts; let i = index"
+        <div class="card col-md-3 col-sm-6 col-12 p-1"
+            *ngFor="let product of displayProducts; let i = index"
             [ngClass]="{'product-selected': selectedProductIndexes.indexOf(product) != -1}">
             <div class="card-body">
                 <p class="card-title" aria-level="1" role="heading">{{product.name}}</p>

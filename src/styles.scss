@@ -1,6 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 @import "./assets/partials/colors";
-@import "./assets//partials/form";
+@import "./assets/partials/form";
 
 body {
     font-family: "Dosis" !important;
@@ -12,7 +12,7 @@ body {
     color: $color-black;
 }
 
-.main-heading{
+.main-heading {
     font-size: 24px;
     font-weight: bolder;
 }
@@ -31,4 +31,11 @@ body {
 .common-btn[disabled] {
     background-color: $color-gray;
     color: $color-dark-gray;
+}
+
+.error-container, .not-found {
+    text-align: center;
+    p {
+        font-size: 1.5rem;
+    }
 }

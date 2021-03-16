@@ -1,6 +1,6 @@
 import { ICategory } from './../model/category.model';
 import { IProduct } from './../model/product.model';
-import { ApidataService } from '../services/apidata.service';
+import { CatalogueService } from '../services/catalogue.service';
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../services/data.service';
 
@@ -16,10 +16,11 @@ export class ProductListComponent implements OnInit {
   products: IProduct[];
   filteredCategory;
   filteredProducts: IProduct[] = [];
-
+  isErrorOccured: boolean = false;
+  
   constructor(
     private dataService: DataService,
-    private apiService: ApidataService
+    private catalogueService: CatalogueService
   ) { }
 
   ngOnInit(): void {
@@ -28,8 +29,11 @@ export class ProductListComponent implements OnInit {
   }
 
   getAllProducts(): void {
-    this.apiService.getProducts().subscribe(productResponse => {
+    this.catalogueService.getProducts().subscribe(productResponse => {
       this.products = productResponse;
+    }, error => {
+      console.log('error occured', error)
+      this.isErrorOccured = true;
     });
   }
 
@@ -41,10 +45,10 @@ export class ProductListComponent implements OnInit {
         this.filteredCategory = category;
       }
     });
-    this.FilterProductsOfSelectedCatagory();
+    this.filterProductsOfSelectedCatagory();
   }
 
-  FilterProductsOfSelectedCatagory(): void {
+  filterProductsOfSelectedCatagory(): void {
     this.products.forEach((prod: IProduct) => {
       if (prod.category === this.filteredCategory.id) {
         this.filteredProducts.push(prod);

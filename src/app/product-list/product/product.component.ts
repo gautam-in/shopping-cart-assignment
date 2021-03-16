@@ -1,7 +1,7 @@
 import { IProduct } from './../../model/product.model';
 
 import { Component, Input, OnChanges, OnInit } from '@angular/core';
-import { ApidataService } from 'src/app/services/apidata.service';
+import { CatalogueService } from 'src/app/services/catalogue.service';
 import { CartService } from 'src/app/services/cart.service';
 
 
@@ -16,10 +16,11 @@ export class ProductComponent implements OnInit, OnChanges {
   @Input() filteredProducts: IProduct[];
   displayProducts: IProduct[];
   selectedProductIndexes = [];
+  isErrorOccured: boolean = false;
 
   constructor(
     private cartService: CartService,
-    private apiService: ApidataService
+    private catalogueService: CatalogueService
   ) { }
 
   ngOnInit(): void {
@@ -35,10 +36,13 @@ export class ProductComponent implements OnInit, OnChanges {
 
   addProductToCart(product: IProduct): void {
     this.highlightSelectedProducts(product);
-    this.apiService.addProductsToCart(product.id).subscribe(data => {
+    this.catalogueService.addProductsToCart(product.id).subscribe(data => {
       if (data && data.response === 'Success') {
         this.cartService.addProductToCart(product);
       }
+    }, error => {
+      console.log('error occured', error)
+      this.isErrorOccured = true;
     });
   }
 

@@ -1,26 +1,15 @@
-<section id="carouselIndicators" class="carousel slide" data-ride="carousel">
-    <ol class="carousel-indicators">
-        <li data-target="#carouselIndicators" data-slide-to="0" class="active"></li>
-        <li data-target="#carouselIndicators" data-slide-to="1"></li>
-        <li data-target="#carouselIndicators" data-slide-to="2"></li>
-        <li data-target="#carouselIndicators" data-slide-to="3"></li>
-        <li data-target="#carouselIndicators" data-slide-to="4"></li>
+<div *ngIf="isErrorOccured" class="error-container">
+    <p class="alert alert-danger">An error occured.</p>
+</div>
 
-    </ol>
-    <div class="carousel-inner">
-        <div class="carousel-item" *ngFor="let banner of bannerList; let i = index" [ngClass]="{'active': i == 0 }">
-            <img class="d-block w-100" src="assets{{banner.bannerImageUrl}}" alt="{{banner.bannerImageAlt}}">
+<ngb-carousel>
+    <ng-template ngbSlide *ngFor="let banner of bannerList; let i = index">
+        <div class="picsum-img-wrapper">
+            <img class="banner-image" src="assets{{banner.bannerImageUrl}}" alt="{{banner.bannerImageAlt}}"
+                title="{{banner.bannerImageAlt}}">
         </div>
-    </div>
-    <a class="carousel-control-prev" href="#carouselIndicators" role="button" data-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-    </a>
-    <a class="carousel-control-next" href="#carouselIndicators" role="button" data-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-    </a>
-</section>
+    </ng-template>
+</ngb-carousel>
 
 <div class="card mb-3">
     <div class="row no-gutters" *ngFor="let category of catagoryList">

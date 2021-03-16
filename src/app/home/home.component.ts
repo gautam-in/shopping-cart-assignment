@@ -3,7 +3,7 @@ import { IBanner } from './../model/banner.model';
 import { DataService } from '../services/data.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { ApidataService } from '../services/apidata.service';
+import { CatalogueService } from '../services/catalogue.service';
 
 @Component({
   selector: 'app-home',
@@ -13,9 +13,10 @@ import { ApidataService } from '../services/apidata.service';
 export class HomeComponent implements OnInit {
   bannerList: IBanner[];
   catagoryList: ICategory[];
+  isErrorOccured: boolean = false;
 
   constructor(
-    private apiService: ApidataService,
+    private catalogueService: CatalogueService,
     private dataService: DataService,
     private router: Router
   ) { }
@@ -26,15 +27,21 @@ export class HomeComponent implements OnInit {
   }
 
   getBannerList(): void {
-    this.apiService.getBanners().subscribe(bannersResponse => {
+    this.catalogueService.getBanners().subscribe(bannersResponse => {
       this.bannerList = bannersResponse;
+    }, error => {
+      console.log('error occured', error)
+      this.isErrorOccured = true;
     });
   }
 
   getCatagories(): void {
-    this.apiService.getCatagories().subscribe(catagoriesResponse => {
+    this.catalogueService.getCatagories().subscribe(catagoriesResponse => {
       this.dataService.categoriesList = catagoriesResponse;
       this.catagoryList = catagoriesResponse;
+    }, error => {
+      console.log('error occured', error)
+      this.isErrorOccured = true;
     });
   }
 

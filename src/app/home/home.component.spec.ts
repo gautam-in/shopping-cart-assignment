@@ -1,6 +1,6 @@
 import { ProductListComponent } from './../product-list/product-list.component';
 import { HttpClientModule } from '@angular/common/http';
-import { ApidataService } from 'src/app/services/apidata.service';
+import { CatalogueService } from 'src/app/services/catalogue.service';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { HomeComponent } from './home.component';
@@ -13,7 +13,7 @@ describe('HomeComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [ HomeComponent ],
-      providers: [ApidataService],
+      providers: [CatalogueService],
       imports: [HttpClientModule, RouterTestingModule.withRoutes([
         { path: 'products', component: ProductListComponent}
     ])]

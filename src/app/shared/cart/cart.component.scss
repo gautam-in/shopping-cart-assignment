@@ -1,25 +1,33 @@
-@import "../../styles.scss";
 
-.modal {
-    .modal-header {
-        background-color: $color-black;
-        color: $color-white;
-        .close {
-            color: $color-gray;
-        }
+@import "../../../styles.scss";
+
+.card-img{
+    width: inherit;
+    height: inherit;
+}
+
+.modal-header {
+    background-color: $color-black;
+    color: $color-white;
+    .close {
+        background-color: black;
+        border: none;
+        color: white;
+        font-size: 25px;
+        border: none;
     }
-    .modal-body {
-        height: 500px;
-        background-color: $color-gray;
-        .cart-body {
-            text-align: center;
-            margin-top: 30%;
-        }
+}
+.modal-body {
+    height: 500px;
+    background-color: $color-gray;
+    .cart-body {
+        text-align: center;
+        margin-top: 30%;
     }
-    .modal-footer {
-        .footer-section {
-            width: 100%;
-        }
+}
+.modal-footer {
+    .footer-section {
+        width: 100%;
     }
 }
 
@@ -28,6 +36,10 @@
     display: flex;
     .offer-img {
         flex: 1;
+        .offer-image{
+            width: auto;
+            height: auto;
+        }
     }
     .offer-text {
         flex: 1;
@@ -62,6 +74,7 @@
         text-align: center;
         .card-img {
             width: 70%;
+            height: auto;
         }
     }
 }

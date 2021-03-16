@@ -1,22 +1,14 @@
 import { NgModule } from '@angular/core';
+import { CartComponent } from './cart/cart.component';
 import { CommonModule } from '@angular/common';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
 
 
 
 @NgModule({
-  declarations: [],
+  declarations: [CartComponent],
   imports: [
     CommonModule,
-    HttpClientModule,
-    FormsModule,
-    ReactiveFormsModule
   ],
-  exports: [
-    HttpClientModule,
-    FormsModule,
-    ReactiveFormsModule
-  ]
+  entryComponents: [CartComponent]
 })
 export class SharedModule { }

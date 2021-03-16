@@ -1,6 +1,6 @@
 import { ProductComponent } from './product/product.component';
 import { HttpClientModule } from '@angular/common/http';
-import { ApidataService } from '../services/apidata.service';
+import { CatalogueService } from '../services/catalogue.service';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ProductListComponent } from './product-list.component';
@@ -8,12 +8,12 @@ import { ProductListComponent } from './product-list.component';
 describe('ProductListComponent', () => {
   let component: ProductListComponent;
   let fixture: ComponentFixture<ProductListComponent>;
-  let apiDataService: ApidataService;
+  let catalogueService: CatalogueService;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [ProductListComponent, ProductComponent],
-      providers: [ApidataService],
+      providers: [CatalogueService],
       imports: [HttpClientModule]
     })
       .compileComponents();
@@ -22,7 +22,7 @@ describe('ProductListComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(ProductListComponent);
     component = fixture.componentInstance;
-    apiDataService = TestBed.inject(ApidataService);
+    catalogueService = TestBed.inject(CatalogueService);
   });
 
   it('should create', () => {
@@ -36,9 +36,9 @@ describe('ProductListComponent', () => {
   });
 
   it('should call getAllProducts method', () => {
-    spyOn(apiDataService, 'getProducts').and.callThrough();
+    spyOn(catalogueService, 'getProducts').and.callThrough();
     component.getAllProducts();
-    expect(apiDataService.getProducts).toHaveBeenCalled();
+    expect(catalogueService.getProducts).toHaveBeenCalled();
   });
 
 });

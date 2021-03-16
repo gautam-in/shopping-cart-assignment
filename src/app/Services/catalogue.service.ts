@@ -9,7 +9,7 @@ import { ICategory } from '../model/category.model';
 @Injectable({
   providedIn: 'root'
 })
-export class ApidataService {
+export class CatalogueService {
 
   baseUrl = 'http://localhost:5000';
 

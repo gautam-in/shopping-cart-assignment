@@ -1,18 +1,22 @@
 import { AuthGuard } from './auth.guard';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from './home/home.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 const routes: Routes = [
   {
     path: '',
-    pathMatch: 'full',
-    redirectTo: 'home'
+    redirectTo: 'auth',
+    pathMatch: 'full'
+  },
+  {
+    path: 'auth',
+    loadChildren: () => import(`./auth/auth.module`).then(m => m.AuthModule)
   },
   {
     path: 'home',
     canActivate: [AuthGuard],
-    component: HomeComponent
+    loadChildren: () => import(`../app/home/home.module`).then(m => m.HomeModule)
   },
   {
     path: 'products',
@@ -20,17 +24,9 @@ const routes: Routes = [
     loadChildren: () => import(`../app/product-list/product.module`).then(m => m.ProductModule)
   },
   {
-    path: 'auth',
-    loadChildren: () => import(`./auth/auth.module`).then(m => m.AuthModule)
+    path: '404', component: PageNotFoundComponent
   },
-  {
-    path: 'cart',
-    canActivate: [AuthGuard],
-    loadChildren: () => import(`../app/cart/cart.module`).then(m => m.CartModule)
-  },
-  {
-    path: '**', component: HomeComponent
-  }
+  { path: '**', redirectTo: '404' }
 ];
 
 @NgModule({

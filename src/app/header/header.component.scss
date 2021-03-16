@@ -1,10 +1,14 @@
-@import "../../../../styles.scss";
+@import "../../styles.scss";
 
 nav {
     max-height: 20%;
-    .logo {
-        width: 150px;
+    .navbar-brand{
+        .logo-img {
+            width: 150px;
+            height: inherit;
+        }
     }
+
     .leftnav {
         margin-top: 50px;
         margin-left: 70px;
@@ -47,10 +51,10 @@ nav {
             color: $color-pink;
             font-weight: bold;
         }
-        .logout-btn{
+        .logout-btn {
             color: $color-pink;
         }
-        .logout-btn:hover{
+        .logout-btn:hover {
             background-color: $color-pink;
             color: white;
         }
@@ -68,19 +72,20 @@ nav {
             .cart-logo {
                 color: pink;
                 width: 20px;
+                height: auto;
+                margin-right: 10px;
             }
         }
     }
 }
 
 @media screen and (max-width: 768px) {
-.logout{
-    .rightnav{
-        flex-direction: inherit;
-        .nav-link{
-            padding: 10px;
+    .logout {
+        .rightnav {
+            flex-direction: inherit;
+            .nav-link {
+                padding: 10px;
+            }
         }
     }
-}    
 }
-
