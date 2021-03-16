@@ -1,0 +1,46 @@
+/* You can add global styles to this file, and also import other style files */
+@import "./assets/partials/colors";
+@import "./assets/partials/form";
+
+body {
+    font-family: "Dosis" !important;
+    font-weight: 600;
+    color: $color-black;
+}
+
+.nav-link {
+    color: $color-black;
+}
+
+.main-heading {
+    font-size: 24px;
+    font-weight: bolder;
+}
+
+.sub-heading {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.common-btn {
+    background-color: $color-pink;
+    width: 100%;
+    color: white;
+    padding: 5px;
+}
+.common-btn[disabled] {
+    background-color: $color-gray;
+    color: $color-dark-gray;
+}
+
+.error-container, .not-found {
+    text-align: center;
+    p {
+        font-size: 1.5rem;
+    }
+}
+
+.alert-message{
+    color: $color-pink;
+    font-size: 1.1rem;
+}

@@ -1,0 +1,47 @@
+@import "../../../styles.scss";
+
+.card {
+    border: none;
+    border-bottom: 1px dashed $color-dark-gray;
+    .card-body{
+        .card-img-top{
+            width: 100%;
+            height: inherit;
+        }
+    }
+    .card-text {
+        background-color: $color-gray;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 4;
+        -webkit-box-orient: vertical;
+    }
+}
+
+.price-container {
+    display: flex;
+    .price {
+        flex: 1;
+    }
+    .price-btn {
+        flex: 1;
+    }
+}
+
+.product-selected {
+    background-color: $color-light-pink;
+    border: 1px solid $color-dark-gray;
+}
+
+@media screen and (max-width: 576px) {
+    .card{
+        .card-body {
+            text-align: center;
+            .card-img-top {
+                width: 30%;
+                height: auto;
+            }
+        }
+    }
+}

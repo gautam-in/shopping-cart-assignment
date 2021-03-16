@@ -1,0 +1,42 @@
+<div class="container my-5">
+    <section class="row">
+        <div class="col-lg-6">
+            <p class="main-heading" aria-level="1" role="heading">Login</p>
+            <p>Get access to your Orders, Wishlist and Recommendations</p>
+        </div>
+
+        <div class="col-lg-6">
+            <form class="login-form" #loginForm="ngForm" (ngSubmit)="onLogin(loginForm)" novalidate>
+                <div class="form-group custom-group">
+
+                    <input type="email" id="email" name="email" class="form-control form-input" placeholder=""
+                        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required ngModel #email="ngModel"
+                        aria-label="Enter email" autocomplete/>
+                    <label for="email" class="floating-label">Email</label>
+
+                    <div class="alert alert-danger" *ngIf="email.touched && !email.valid">
+                        <div *ngIf="email.errors?.required" aria-live="assertive">Please enter email.</div>
+                        <div *ngIf="email.errors?.pattern" aria-live="assertive">Please enter email in correct format
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group custom-group">
+
+                    <input type="password" id="password" name="password" class="form-control form-input" minlength="6"
+                        placeholder="" required ngModel #password="ngModel" aria-label="Enter password"
+                        pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$" autocomplete="off"/>
+                    <label for="password" class="floating-label">Password</label>
+                    <div class="alert alert-danger" *ngIf="password.touched && !password.valid">
+                        <div *ngIf="password.errors?.required" aria-live="assertive">Please enter password.</div>
+                        <div *ngIf="password.errors?.minlength" aria-live="assertive">Minimum 6 characters required
+                        </div>
+                        <div *ngIf="password.errors?.pattern" aria-live="assertive">Password should contain a number, alphabet
+                            without space</div>
+                    </div>
+                </div>
+                <button type="submit" class="custom-btn common-btn" [disabled]="!loginForm.valid" aria-label="Login">Login</button>
+            </form>
+        </div>
+    </section>
+</div>

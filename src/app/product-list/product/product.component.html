@@ -1,0 +1,23 @@
+<div *ngIf="isErrorOccured" class="error-container">
+    <p class="alert alert-danger">An error occured.</p>
+</div>
+
+<section class="container-fluid">
+    <section class="row">
+        <div class="card col-md-3 col-sm-6 col-12 p-1"
+            *ngFor="let product of displayProducts; let i = index"
+            [ngClass]="{'product-selected': selectedProductIndexes.indexOf(product) != -1}">
+            <div class="card-body">
+                <p class="card-title" aria-level="1" role="heading">{{product.name}}</p>
+                <img class="card-img-top" src="assets/{{product.imageURL}}" alt="{{product.name}}"
+                    title="{{product.name}}">
+            </div>
+            <p class="card-text">{{product.description}}</p>
+            <div class="price-container">
+                <p class="price"> MRP {{product.price | currency: 'INR'}}</p>
+                <button type="button" class="common-btn price-btn" (click)="addProductToCart(product)"
+                    aria-label="Buy Product">Buy Now</button>
+            </div>
+        </div>
+    </section>
+</section>

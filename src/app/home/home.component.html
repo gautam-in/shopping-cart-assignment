@@ -1,0 +1,29 @@
+<div *ngIf="isErrorOccured" class="error-container">
+    <p class="alert alert-danger">An error occured.</p>
+</div>
+
+<ngb-carousel>
+    <ng-template ngbSlide *ngFor="let banner of bannerList; let i = index">
+        <div class="picsum-img-wrapper">
+            <img class="banner-image" src="assets{{banner.bannerImageUrl}}" alt="{{banner.bannerImageAlt}}"
+                title="{{banner.bannerImageAlt}}">
+        </div>
+    </ng-template>
+</ngb-carousel>
+
+<div class="card mb-3">
+    <div class="row no-gutters" *ngFor="let category of catagoryList">
+        <figure class="col-md-4 col-sm-4 col-4 category-img">
+            <img src="assets/{{category.imageUrl}}" class="card-img" alt="{{category.name}}" title="{{category.name}}">
+        </figure>
+        <div class="col-md-8 col-sm-8 col-8 category-description">
+            <div class="card-body">
+                <p class="card-title main-heading" aria-level="1" role="heading">{{category.name}}</p>
+                <p class="card-text">{{category.description}}</p>
+                <button type="button" class="common-btn catagory-btn" (click)="navigateToProducts()"
+                    aria-label="Explore category">Explore
+                    {{category.key | titlecase}}</button>
+            </div>
+        </div>
+    </div>
+</div>

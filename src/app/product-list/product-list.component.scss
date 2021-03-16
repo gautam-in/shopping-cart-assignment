@@ -1,0 +1,19 @@
+@import "../../styles.scss";
+
+aside {
+    background-color: $color-gray;
+}
+
+.side-bar {
+    border-bottom: 1px solid $color-dark-gray;
+    padding: 5px;
+    list-style: none;
+    a {
+        cursor: pointer;
+    }
+}
+
+.highlightCategory {
+    background-color: $color-pink;
+    color: $color-white;
+}

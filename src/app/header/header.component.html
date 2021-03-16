@@ -1,0 +1,47 @@
+<nav class="navbar navbar-expand-md" aria-label="Main navbar">
+    <div class="container">
+        <a href="#" class="navbar-brand">
+            <img class="logo-img" src="assets/static/images/logo_2x.png" alt="SakbaBazzarBrandLogo">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+            aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav leftnav" *ngIf="isLoggedIn">
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="['/home']" [routerLinkActive]="['active']">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="['/products']" [routerLinkActive]="['active']">Products</a>
+                </li>
+            </ul>
+        </div>
+        <div class="logout">
+            <ul class="navbar-nav rightnav" *ngIf="!isLoggedIn">
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="['/auth/signin']" [routerLinkActive]="['active']">Signin</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="['/auth/register']" [routerLinkActive]="['active']">Register</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav" *ngIf="isLoggedIn">
+                <li class="welcome">Welcome, {{loggedInUserName}}</li>
+                <li class="nav-item">
+                    <a role="button" class="nav-link logout-btn" (click)="loggedOut()">Logout</a>
+                </li>
+            </ul>
+        </div>
+        <div class="cart-container" role="dialog" id="cart-modal" aria-label="Cart Modal">
+            <ul class="navbar-nav cart" *ngIf="isLoggedIn">
+                <li class="nav-item cart-link">
+                    <a role="button" class="nav-link" (click)="openCart()">
+                        <img src="assets/static/images/cart.svg" class="cart-logo" alt="cart-logo">
+                        <span *ngIf="groceryCart.length >0">{{groceryCart.length}}</span>
+                        <span *ngIf="!groceryCart.length">0 items</span></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

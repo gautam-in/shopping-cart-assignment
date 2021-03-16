@@ -1,0 +1,14 @@
+
+@import '../styles.scss';
+
+main{
+    max-height: 60%;
+    border-top: 4px solid $color-gray;
+}
+
+.footer{
+    background-color: $color-gray;
+    text-align: center;
+    padding: 8px;
+}
+
