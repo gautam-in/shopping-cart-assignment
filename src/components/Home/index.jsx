@@ -1,7 +1,10 @@
 import React from 'react';
+import ContentSection from '../Shared/ContentSection';
 
 const Home = () => (
-  <div>Home</div>
+  <>
+    <ContentSection />
+  </>
 );
 
 export default Home;

@@ -4,19 +4,24 @@ import { BrowserRouter, Switch } from 'react-router-dom';
 // import 'bootstrap';
 // import 'bootstrap/dist/css/bootstrap.min.css';
 
+import './assets/styles/styles.scss';
+
 import routes from './routes';
+import Layout from './components/Shared/Layout';
 import { PrivateRoute, PublicRoute } from './components/Routing';
 
 const App = () => (
   <BrowserRouter>
-    <Switch>
-      {
-        map(routes, (r, i) => (r.isProtected === true
-          ? <PrivateRoute key={i} {...r} />
-          : <PublicRoute key={i} {...r} />
-        ))
-      }
-    </Switch>
+    <Layout>
+      <Switch>
+        {
+          map(routes, (r, i) => (r.isProtected === true
+            ? <PrivateRoute key={i} {...r} />
+            : <PublicRoute key={i} {...r} />
+          ))
+        }
+      </Switch>
+    </Layout>
   </BrowserRouter>
 );
 

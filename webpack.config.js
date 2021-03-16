@@ -59,17 +59,7 @@ const config = {
         test: /\.svg$/,
         use: 'file-loader',
       },
-      {
-        test: /\.png$/,
-        use: [
-          {
-            loader: 'url-loader',
-            options: {
-              mimetype: 'image/png',
-            },
-          },
-        ],
-      },
+      { test: /\.(png|woff|woff2|eot|ttf|svg)$/, loader: 'url-loader' }
     ],
   },
   resolve: {

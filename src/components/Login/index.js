@@ -5,27 +5,11 @@ import formHook from '../../hooks/formHook';
 import WEB_PATH from '../../routes/webPath';
 import { EMAIL, PASSWORD } from '../../constants/regex';
 
-import SignUpPage from './SignUpPage';
+import LoginPage from './LoginPage';
 
-const SignUp = () => {
+const Login = () => {
   const history = useHistory();
   const [ fields, setFields ] = React.useState({
-    firstName: {
-      isRequired: true,
-      requiredError: 'Please enter the first name.',
-      value: '',
-      isMatching: false,
-      matchError: '',
-      error: ''
-    },
-    lastName: {
-      isRequired: true,
-      requiredError: 'Please enter the last name.',
-      value: '',
-      isMatching: false,
-      matchError: '.',
-      error: ''
-    },
     email: {
       isRequired: true,
       requiredError: 'Please enter the email.',
@@ -40,16 +24,6 @@ const SignUp = () => {
       value: '',
       isMatching: PASSWORD,
       matchError: 'Invalid password.',
-      error: ''
-    },
-    confirmPassword: {
-      isRequired: true,
-      requiredError: 'Please confirm the password.',
-      value: '',
-      isMatching: PASSWORD,
-      matchError: 'Invalid password.',
-      sameAs: 'password',
-      sameAsError: 'Password and confirm password are not same',
       error: ''
     },
   });
@@ -71,13 +45,13 @@ const SignUp = () => {
   },[validateInputs,history.push]);
 
   return (
-    <SignUpPage
+    <LoginPage
       fields={fields}
       formActions={formActions}
       onInputChange={onInputChange}
       onSubmit={onSubmit}
     />
-  )
-};
+  );
+}
 
-export default SignUp;
+export default Login;

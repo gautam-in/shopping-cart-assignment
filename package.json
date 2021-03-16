@@ -15,6 +15,7 @@
     "server": "canned -p 5000 ./server"
   },
   "dependencies": {
+    "@material-ui/core": "^4.11.3",
     "bootstrap": "^4.6.0",
     "canned": "^0.3.12",
     "jquery": "^3.6.0",
@@ -50,6 +51,7 @@
     "lodash-webpack-plugin": "^0.11.6",
     "mini-css-extract-plugin": "^1.3.9",
     "node-sass": "^5.0.0",
+    "react-test-renderer": "^17.0.1",
     "sass-loader": "^11.0.1",
     "style-loader": "^2.0.0",
     "url-loader": "^4.1.1",
