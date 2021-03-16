@@ -2,7 +2,7 @@ import { TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 
 import { AuthService } from './auth.service';
-import { DataService } from './data.service';
+import { ProductDataService } from './productData.service';
 
 describe('AuthService', () => {
   let service: AuthService;
@@ -12,7 +12,7 @@ describe('AuthService', () => {
       imports: [
         RouterTestingModule
       ],
-      providers: [DataService]
+      providers: [ProductDataService]
     });
     service = TestBed.inject(AuthService);
   });

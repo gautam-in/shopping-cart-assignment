@@ -2,7 +2,7 @@ import { ICategory } from './../model/category.model';
 import { IProduct } from './../model/product.model';
 import { CatalogueService } from '../services/catalogue.service';
 import { Component, OnInit } from '@angular/core';
-import { DataService } from '../services/data.service';
+import { ProductDataService } from '../services/productData.service';
 
 @Component({
   selector: 'app-product-list',
@@ -16,15 +16,15 @@ export class ProductListComponent implements OnInit {
   products: IProduct[];
   filteredCategory;
   filteredProducts: IProduct[] = [];
-  isErrorOccured: boolean = false;
-  
+  isErrorOccured = false;
+
   constructor(
-    private dataService: DataService,
+    private productDataService: ProductDataService,
     private catalogueService: CatalogueService
   ) { }
 
   ngOnInit(): void {
-    this.productCategoriesList = this.dataService.categoriesList;
+    this.productCategoriesList = this.productDataService.categoriesList;
     this.getAllProducts();
   }
 
@@ -32,7 +32,7 @@ export class ProductListComponent implements OnInit {
     this.catalogueService.getProducts().subscribe(productResponse => {
       this.products = productResponse;
     }, error => {
-      console.log('error occured', error)
+      console.log('error occured', error);
       this.isErrorOccured = true;
     });
   }
@@ -57,7 +57,7 @@ export class ProductListComponent implements OnInit {
   }
 
   resetFilter(): void {
-    this.dataService.filteredCategory = [];
+    this.productDataService.filteredCategory = [];
     this.filteredCategory = [];
     this.filteredProducts = [];
   }

@@ -4,12 +4,11 @@ import { Injectable } from '@angular/core';
 @Injectable({
   providedIn: 'root'
 })
-export class DataService {
+export class ProductDataService {
 
   categoriesList;
   filteredCategory;
   isLoggedInSubject = new BehaviorSubject({ isLoggedIn: false, userName: '' });
-  isLoggedIn$ = this.isLoggedInSubject.asObservable();
 
   constructor() { }
 }

@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
+  closeResult: string;
   constructor(
     private authService: AuthService
   ) { }
@@ -18,5 +19,4 @@ export class LoginComponent implements OnInit {
   onLogin(loginForm): void {
     this.authService.authenticateUser(loginForm.value.email, loginForm.value.password);
   }
-
 }

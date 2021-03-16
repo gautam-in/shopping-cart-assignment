@@ -1,65 +1,58 @@
-import { DataService } from '../services/data.service';
-import { Component, OnInit } from '@angular/core';
+import { ProductDataService } from '../services/productData.service';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { IProduct } from 'src/app/model/product.model';
 import { CartService } from 'src/app/services/cart.service';
 import { Router } from '@angular/router';
 import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { CartComponent } from 'src/app/shared/cart/cart.component';
+import { Subscription } from 'rxjs/internal/Subscription';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent implements OnInit, OnDestroy {
 
   groceryCart: IProduct[] = [];
   isLoggedIn: boolean;
   loggedInUserName: string;
   closeResult: string;
-  
+  subscription: Subscription;
+
   constructor(
     private cartService: CartService,
-    private dataService: DataService,
+    private productDataService: ProductDataService,
     private router: Router,
     private modalService: NgbModal
   ) { }
 
   ngOnInit(): void {
     this.getLoggedInInfo();
-    this.cartService.cartItems$.subscribe((data: IProduct[]) => {
+    this.subscription = this.cartService.cartItems$.subscribe((data: IProduct[]) => {
       this.groceryCart = data;
     });
   }
 
-  open() {
-    this.modalService.open(CartComponent, { ariaLabelledBy: 'cartTitle' }).result.then((result) => {
-      this.closeResult = `Closed with: ${result}`;
-    }, (reason) => {
-      this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
-    });
-  }
-
-  private getDismissReason(reason: any): string {
-    if (reason === ModalDismissReasons.ESC) {
-      return 'by pressing ESC';
-    } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
-      return 'by clicking on a backdrop';
-    } else {
-      return `with: ${reason}`;
-    }
+  openCart(): void {
+    this.modalService.open(CartComponent, { ariaLabelledBy: 'cartTitle' });
   }
 
   getLoggedInInfo(): void {
-    this.dataService.isLoggedIn$.subscribe(response => {
+    this.productDataService.isLoggedInSubject.subscribe(response => {
       this.isLoggedIn = response.isLoggedIn;
       this.loggedInUserName = response.userName;
     });
   }
 
   loggedOut(): void {
-    alert('You have successfully logged out');
     this.isLoggedIn = false;
     this.router.navigate(['auth/signin']);
+  }
+
+  ngOnDestroy(): void {
+    if (this.subscription) {
+      this.subscription.unsubscribe();
+    }
   }
 }

@@ -1,6 +1,6 @@
 import { ICategory } from './../model/category.model';
 import { IBanner } from './../model/banner.model';
-import { DataService } from '../services/data.service';
+import { ProductDataService } from '../services/productData.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { CatalogueService } from '../services/catalogue.service';
@@ -13,11 +13,11 @@ import { CatalogueService } from '../services/catalogue.service';
 export class HomeComponent implements OnInit {
   bannerList: IBanner[];
   catagoryList: ICategory[];
-  isErrorOccured: boolean = false;
+  isErrorOccured = false;
 
   constructor(
     private catalogueService: CatalogueService,
-    private dataService: DataService,
+    private productDataService: ProductDataService,
     private router: Router
   ) { }
 
@@ -30,17 +30,17 @@ export class HomeComponent implements OnInit {
     this.catalogueService.getBanners().subscribe(bannersResponse => {
       this.bannerList = bannersResponse;
     }, error => {
-      console.log('error occured', error)
+      console.log('error occured', error);
       this.isErrorOccured = true;
     });
   }
 
   getCatagories(): void {
     this.catalogueService.getCatagories().subscribe(catagoriesResponse => {
-      this.dataService.categoriesList = catagoriesResponse;
+      this.productDataService.categoriesList = catagoriesResponse;
       this.catagoryList = catagoriesResponse;
     }, error => {
-      console.log('error occured', error)
+      console.log('error occured', error);
       this.isErrorOccured = true;
     });
   }

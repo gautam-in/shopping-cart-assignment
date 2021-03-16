@@ -1,3 +1,4 @@
+import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { HomeComponent } from '../../home/home.component';
 import { CartService } from 'src/app/services/cart.service';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
@@ -18,7 +19,7 @@ describe('CartComponent', () => {
           { path: 'home', component: HomeComponent}
       ])
       ],
-      providers: [CartService]
+      providers: [CartService, NgbActiveModal]
     })
       .compileComponents();
   });
@@ -39,7 +40,7 @@ describe('CartComponent', () => {
     expect(component.ngOnInit).toHaveBeenCalled();
   });
 
-  it('should call increaseProductQuantity method', () => {
+  it('should call addProductsToCart method', () => {
     const product = {
       name: 'Fresho Kiwi - Green, 3 pcs',
       imageURL: '/static/images/products/fruit-n-veg/kiwi-green.jpg',
@@ -50,9 +51,9 @@ describe('CartComponent', () => {
       sku: 'fnw-kiwi-3',
       id: '5b6c6a7f01a7c38429530883'
     };
-    spyOn(cartService, 'increaseProductQuantity').and.callThrough();
-    component.increaseProductQuantity(product);
-    expect(cartService.increaseProductQuantity).toHaveBeenCalled();
+    spyOn(cartService, 'addProductsToCart').and.callThrough();
+    component.addProductsToCart(product);
+    expect(cartService.addProductsToCart).toHaveBeenCalled();
   });
 
   it('should call resetCart method', () => {

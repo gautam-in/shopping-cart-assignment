@@ -30,7 +30,7 @@ export class CatalogueService {
     return this.http.get<IProduct[]>(productsUrl);
   }
 
-  addProductsToCart(productId: string): Observable<ICartResponse> {
+  postProductToCart(productId: string): Observable<ICartResponse> {
     const addToCartUrl = `${this.baseUrl}/addToCart`;
     return this.http.post<ICartResponse>(addToCartUrl, productId);
   }

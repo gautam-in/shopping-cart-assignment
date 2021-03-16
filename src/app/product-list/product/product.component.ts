@@ -16,7 +16,7 @@ export class ProductComponent implements OnInit, OnChanges {
   @Input() filteredProducts: IProduct[];
   displayProducts: IProduct[];
   selectedProductIndexes = [];
-  isErrorOccured: boolean = false;
+  isErrorOccured = false;
 
   constructor(
     private cartService: CartService,
@@ -36,12 +36,12 @@ export class ProductComponent implements OnInit, OnChanges {
 
   addProductToCart(product: IProduct): void {
     this.highlightSelectedProducts(product);
-    this.catalogueService.addProductsToCart(product.id).subscribe(data => {
+    this.catalogueService.postProductToCart(product.id).subscribe(data => {
       if (data && data.response === 'Success') {
         this.cartService.addProductToCart(product);
       }
     }, error => {
-      console.log('error occured', error)
+      console.log('error occured', error);
       this.isErrorOccured = true;
     });
   }

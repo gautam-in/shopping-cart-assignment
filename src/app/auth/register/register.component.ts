@@ -1,6 +1,9 @@
+import { AuthService } from './../../services/auth.service';
 import { Component, OnInit } from '@angular/core';
-import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AbstractControl, FormBuilder, FormGroup, ValidationErrors, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { AlertComponent } from 'src/app/shared/alert/alert.component';
 
 @Component({
   selector: 'app-register',
@@ -9,10 +12,13 @@ import { Router } from '@angular/router';
 })
 export class RegisterComponent implements OnInit {
   registerForm: FormGroup;
+  isAlertDisplayed = false;
 
   constructor(
     private formBuilder: FormBuilder,
-    private router: Router
+    private router: Router,
+    private modalService: NgbModal,
+    private authService: AuthService
   ) { }
 
   ngOnInit(): void {
@@ -22,16 +28,21 @@ export class RegisterComponent implements OnInit {
       email: ['', [Validators.required]],
       password: ['', [Validators.required]],
       confirmPassword: ['', [Validators.required]]
-    }, { validator: this.matchPassword });
+    }, { validators: this.matchPassword });
   }
 
   onRegister(): void {
-    localStorage.setItem('registeredUser', JSON.stringify(this.registerForm.value));
-    alert('User registered successfully. Please login');
+    this.authService.setUserDetails(this.registerForm);
+    this.openRegisteredUserPopup();
     this.router.navigate(['auth/signin']);
   }
 
-  matchPassword(control: AbstractControl): { [key: string]: boolean } | null {
+  openRegisteredUserPopup(): void {
+    const modalRef = this.modalService.open(AlertComponent, { ariaLabelledBy: 'alertPopup' });
+    modalRef.componentInstance.message = 'User successfully Registered. Please login';
+  }
+
+  matchPassword(control: AbstractControl): ValidationErrors | null {
     const password = control.get('password');
     const confirmPassword = control.get('confirmPassword');
     if (password.pristine || confirmPassword.pristine) {

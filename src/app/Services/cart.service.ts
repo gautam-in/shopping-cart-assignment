@@ -45,7 +45,7 @@ export class CartService {
     this.subject$.next(this.finalCart);
   }
 
-  increaseProductQuantity(product: IProduct): void {
+  addProductsToCart(product: IProduct): void {
     const newCart = [];
     this.finalCart.forEach((prod, i) => {
       if (prod.id === product.id) {

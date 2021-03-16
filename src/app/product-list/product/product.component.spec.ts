@@ -53,8 +53,8 @@ describe('ProductComponent', () => {
       sku: 'fnw-kiwi-3',
       id: '5b6c6a7f01a7c38429530883'
     };
-    spyOn(catalogueService, 'addProductsToCart').and.callThrough();
+    spyOn(catalogueService, 'postProductToCart').and.callThrough();
     component.addProductToCart(product);
-    expect(catalogueService.addProductsToCart).toHaveBeenCalled();
+    expect(catalogueService.postProductToCart).toHaveBeenCalled();
   });
 });
