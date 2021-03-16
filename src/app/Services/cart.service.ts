@@ -58,7 +58,7 @@ export class CartService {
     this.subject$.next(this.finalCart);
   }
 
-  totalItemPrice(): any {
+  totalItemPrice(): number {
     const itemTotal = 0;
     for (const item of this.finalCart) {
       const productUnit = item.count;
@@ -69,7 +69,7 @@ export class CartService {
     return itemTotal;
   }
 
-  totalAmount(): any {
+  totalAmount(): number {
     let total = 0;
     for (const item of this.finalCart) {
       if (item.totalPrice) {

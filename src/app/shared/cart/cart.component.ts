@@ -36,11 +36,11 @@ export class CartComponent implements OnInit, OnDestroy {
     return this.cartService.removeProductFromCart(product);
   }
 
-  totalAmount(): any {
+  totalAmount(): number {
     return this.cartService.totalAmount();
   }
 
-  totalItemPrice(): any {
+  totalItemPrice(): number {
     return this.cartService.totalItemPrice();
   }
 
