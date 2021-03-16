@@ -1,0 +1,59 @@
+<div class="skip">
+  <a (click)="setFocusOnMain($event)" href="javascript: void(0)">Skip to main content</a>
+</div>
+<header class="header">
+  <div class="logo">
+    <img src="static/images/logo_2x.png" sizes="80vw" routerLink="home" alt="Sabka Bazaar" aria-label="Home Page"
+      role="button" tabindex="0" />
+  </div>
+  <nav class="nav-center">
+    <ul>
+      <li>
+        <a class="nav-item" routerLink="home" href="javascript: void(0)"> Home </a>
+      </li>
+      <li>
+        <a class="nav-item" routerLink="plp" href="javascript: void(0)"> Products </a>
+      </li>
+    </ul>
+  </nav>
+  <div class="nav-right">
+    <ul>
+      <ng-container *ngTemplateOutlet="isLoggedIn ? signOut : singIn"></ng-container>
+    </ul>
+
+    <ng-template #singIn>
+      <li>
+        <a class="nav-item" routerLink="login" href="javascript: void(0)">
+          Sign In
+        </a>
+
+      </li>
+      <li>
+        <a class="nav-item" routerLink="register" href="javascript: void(0)">
+          Register
+        </a>
+      </li>
+    </ng-template>
+
+    <ng-template #signOut>
+      <li>
+        <a class="nav-item" (click)="onSignOut()" href="javascript: void(0)">
+          Sign Out
+        </a>
+      </li>
+    </ng-template>
+
+    <div class="nav-mini-cart desktop" [attr.data-loggedin]="isLoggedIn">
+      <button id="miniCartBtn" class="btn " type="button" aria-label="Your cart items" aria-describedby="itemsInCart"
+        (click)="onClickCart()">
+        <span id="itemsInCart">{{noOfItems}} items</span>
+      </button>
+    </div>
+    <div class="nav-mini-cart mobile" [attr.data-loggedin]="isLoggedIn">
+      <button id="miniCartBtn" class="btn " type="button" aria-label="Your cart items" aria-describedby="itemsInCart"
+        routerLink="cart">
+        <span id="itemsInCart">{{noOfItems}} items</span>
+      </button>
+    </div>
+  </div>
+</header>

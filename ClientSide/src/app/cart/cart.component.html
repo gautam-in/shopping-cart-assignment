@@ -1,0 +1,73 @@
+<div class="cart-container" [attr.data-empty-cart]="productsInCart.length ? false : true">
+  <div class="modal-header">
+    <h2>My cart</h2>
+    <!-- Modal content -->
+    <button (keydown)="onCloseBtnKeyDown($event)" type="button" id="closebtn" (click)="onClose()"
+      aria-label="Close cart" class="close">
+      <i class="fa fa-times" aria-hidden="true"></i>
+    </button>
+  </div>
+  <ng-container *ngTemplateOutlet="productsInCart.length ? itemsList : emptyCart"></ng-container>
+</div>
+
+<!-- Template when cart has list of items -->
+<ng-template #itemsList>
+  <div class="cart-items-warapper">
+    <ul *ngIf="productsInCart.length">
+      <li *ngFor="let product of productsInCart">
+        <div class="cart-item-image">
+          <img class="product-card-img" [src]="product.imageURL" [alt]="product.description" width="100%" />
+        </div>
+        <div class="cart-item-desc">
+          <div class="cart-item-title">{{ product.name }}</div>
+          <button class="btn" aria-label="Decrease By 1" (click)="addItemToCart(product.id, -1)">
+            <i class="fa fa-minus" aria-hidden="true"></i>
+          </button>
+          <span>{{ product.count }}</span>
+          <button class="btn" aria-label="Increase By 1" (click)="addItemToCart(product.id, +1)">
+            <i class="fa fa-plus" aria-hidden="true"></i>
+          </button>
+          <span class="cart-item-price">X Rs.{{ product.price }}</span>
+        </div>
+        <div class="cart-item-total">Rs{{ product.price * product.count }}</div>
+      </li>
+    </ul>
+    <div class="cart-footer-banner">
+      <img src="static/images/lowest-price.png" alt=" " aria-labelledby="banner-tex" />
+      <span id="banner-tex">You won't find it cheaper anywhere</span>
+    </div>
+  </div>
+
+  <div class="cart-footer">
+    <div class="promo-text">Promo can be applied Home Page</div>
+    <div class="cart-payment-checkout desktop">
+      <button id="checkOutBtn" (keydown)="onKeyDown($event)" (click)="onClose()" class="btn">
+        <span>Proceed to Checkout</span>
+        <span>Rs. {{ checkoutAmont }} ></span>
+      </button>
+    </div>
+
+    <div class="cart-payment-checkout mobile">
+      <button id="checkOutBtn" routerLink="home" class="btn">
+        <span>Proceed to Checkout</span>
+        <span>Rs. {{ checkoutAmont }} ></span>
+      </button>
+    </div>
+  </div>
+</ng-template>
+
+<!-- Template for empty cart -->
+<ng-template #emptyCart>
+  <div class="empty-cart-wrapper">
+    <div class="empty-cart-text">
+      <h2>No items in your cart</h2>
+      <p>Your favorite items are just a click away</p>
+    </div>
+    <div class="empty-cart-button desktop">
+      <button id="emptycartBtn" (keydown)="onKeyDown($event)" (click)="onClose()" class="btn">Start Shopping</button>
+    </div>
+    <div class="empty-cart-button mobile">
+      <button id="emptycartBtn" routerLink="home" class="btn">Start Shopping</button>
+    </div>
+  </div>
+</ng-template>

@@ -1,0 +1,44 @@
+<div class="signup-form">
+  <app-form-content [heading]="heading" [subText]="subText">
+    <form [formGroup]="signupForm" (ngSubmit)="onFormSubmit()" autocomplete="off">
+      <div class="floating-label">
+        <input class="floating-input" id="fname" name="fname" formControlName="fname" placeholder=" " type="text" />
+        <label for="fname">First Name</label>
+        <p role="alert" aria-live="polite" *ngIf="fname.invalid && (fname.dirty || fname.touched)" class="alert-danger">
+          Your entry is invalid
+      </div>
+      <div class="floating-label">
+        <input class="floating-input" id="lname" name="lname" formControlName="lname" placeholder=" " type="text" />
+        <label for="lname">Last Name</label>
+        <p role="alert" aria-live="polite" *ngIf="lname.invalid && (lname.dirty || lname.touched)" class="alert-danger">
+          Your entry is invalid
+      </div>
+      <div class="floating-label">
+        <input class="floating-input" id="email" name="email" formControlName="email" placeholder=" " type="text" />
+        <label for="email">Email</label>
+        <p role="alert" aria-live="polite" *ngIf="email.invalid && (email.dirty || email.touched)" class="alert-danger">
+          Your entry is invalid
+      </div>
+      <div class="floating-label">
+        <input class="floating-input" id="password" name="password" formControlName="password" placeholder=" "
+          type="password" />
+        <label for="password">Password</label>
+        <p role="alert" aria-live="polite" *ngIf="password.invalid && (password.dirty || password.touched)"
+          class="alert-danger">Your entry is invalid
+      </div>
+      <div class="floating-label">
+        <input class="floating-input" id="cnfrmpass" name="cnfrmpass" formControlName="cnfrmpass" placeholder=" "
+          type="password" />
+        <label for="cnfrmpass">Confirm Password</label>
+        <p role="alert" aria-live="polite" *ngIf="cnfrmpass.invalid && (cnfrmpass.dirty || cnfrmpass.touched)"
+          class="alert-danger">Your entry is invalid
+      </div>
+      <button class="btn" [disabled]="!signupForm.valid || !signupForm.dirty" type="submit">Signup</button>
+
+      <p role="alert" aria-live="polite" *ngIf="signupForm.hasError('notSame') && cnfrmpass.valid && password.valid"
+        class="alert-danger">
+        Passwords do not match
+      </p>
+    </form>
+  </app-form-content>
+</div>

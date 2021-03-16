@@ -1,0 +1,47 @@
+[
+  {
+    "bannerImageUrl": "static/images/offers/offer1-large.jpg",
+    "bannerImageUrl_medium": "static/images/offers/offer1-medium.jpg",
+    "bannerImageUrl_small": "static/images/offers/offer1-small.jpg",
+    "bannerImageAlt": "Independence Day Deal - 25% off on shampoo",
+    "isActive": true,
+    "order": 1,
+    "id": "5b6c38156cb7d770b7010ccc"
+  },
+  {
+    "bannerImageUrl": "static/images/offers/offer2-large.jpg",
+    "bannerImageUrl_medium": "static/images/offers/offer2-medium.jpg",
+    "bannerImageUrl_small": "static/images/offers/offer2-small.jpg",
+    "bannerImageAlt": "Independence Day Deal - Rs120 off on surf",
+    "isActive": true,
+    "order": 2,
+    "id": "5b6c38336cb7d770b7010ccd"
+  },
+  {
+    "bannerImageUrl": "static/images/offers/offer3-large.jpg",
+    "bannerImageUrl_medium": "static/images/offers/offer3-medium.jpg",
+    "bannerImageUrl_small": "static/images/offers/offer3-small.jpg",
+    "bannerImageAlt": "Independence Day Deal - Rs99 off on domex",
+    "isActive": true,
+    "order": 3,
+    "id": "5b6c38456cb7d770b7010cce"
+  },
+  {
+    "bannerImageUrl": "static/images/offers/offer4-large.jpg",
+    "bannerImageUrl_medium": "static/images/offers/offer4-medium.jpg",
+    "bannerImageUrl_small": "static/images/offers/offer4-small.jpg",
+    "bannerImageAlt": "Independence Day Deal - Rs99 off on bodywash",
+    "isActive": true,
+    "order": 4,
+    "id": "5b6c38576cb7d770b7010ccf"
+  },
+  {
+    "bannerImageUrl": "static/images/offers/offer5-large.jpg",
+    "bannerImageUrl_medium": "static/images/offers/offer5-medium.jpg",
+    "bannerImageUrl_small": "static/images/offers/offer5-small.jpg",
+    "bannerImageAlt": "Independence Day Deal - Rs70 off on tea",
+    "isActive": true,
+    "order": 5,
+    "id": "5b6c386b6cb7d770b7010cd0"
+  }
+]

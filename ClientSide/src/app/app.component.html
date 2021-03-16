@@ -1,0 +1,18 @@
+<div class="container">
+  <app-header></app-header>
+  <main>
+    <span tabIndex="-1" id="main-content"></span>
+    <router-outlet></router-outlet>
+    <div *ngIf="offline">offline</div>
+
+    <!-- The Mini Cart Overlay -->
+    <div *ngIf="showModal" id="myModal" class="modal">
+      <div class="modal-content">
+        <app-cart [attr.aria-expanded]="showModal"></app-cart>
+      </div>
+    </div>
+
+  </main>
+  <app-footer></app-footer>
+</div>
+.

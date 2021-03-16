@@ -1,0 +1,97 @@
+@import "../../../mixins";
+
+.wrapper {
+  display: flex;
+  flex-direction: row;
+
+  width: 100%;
+  padding: 0;
+  margin-top: -25px;
+  @include mobile {
+    flex-direction: column;
+  }
+}
+
+.product-list-container {
+  width: 80%;
+  @include mobile {
+    width: 100%;
+  }
+}
+
+.product-list-container-block {
+  text-align: center;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 1em;
+  @include desktop {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+
+  @include tablet {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.product-card-element {
+  background-color: white;
+  border-radius: 8px;
+  padding: 8px;
+  display: inline-block;
+  border-bottom: 3px dotted #d8d8d8;
+}
+
+.filter-form {
+  .form-control,
+  &:hover,
+  &:focus {
+    background-color: #d00155;
+  }
+}
+
+// @include desktop {
+.sidebar {
+  width: 20%;
+  flex: 1 0 170px;
+  margin-right: 10px;
+  background-color: #f5f5f5;
+  @include mobile {
+    width: 100%;
+    flex: none;
+    margin-right: 0px;
+  }
+
+  .filter-form {
+    display: flex;
+    flex-direction: column;
+  }
+  .input-container {
+    margin: 5px;
+    padding: 5px;
+    border-bottom: 1px solid gray;
+    a,
+    &:hover,
+    &:focus {
+      outline: none;
+      text-decoration: none;
+      color: black;
+    }
+  }
+
+  label {
+    cursor: pointer;
+    position: static;
+  }
+
+  .input-container:focus-within {
+    outline: 2px solid limegreen;
+  }
+
+  .checked, .input-container:hover {
+    background-color: #d00155;
+    color: #fff;
+    a {
+      color: #fff;
+    }
+  }
+}

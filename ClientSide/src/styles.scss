@@ -1,0 +1,95 @@
+/* You can add global styles to this file, and also import other style files */
+@import './variables';
+@import './mixins';
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  &:focus {
+    outline: 2px solid limegreen;
+  }
+}
+
+body,
+html {
+  height: 100%;
+  font-family: "Dosis", sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  overflow-x: hidden;
+}
+
+main {
+  padding: 0 10%;
+  @include mobile {
+    padding: 0
+  }
+}
+
+button[type="submit"],
+.btn {
+  font-family: "Dosis", sans-serif;
+  border: none;
+  height: 2.5em;
+  width: 100%;
+  background-color: #d00155;
+  color: #fff;
+  letter-spacing: 0.5px;
+  &:focus {
+    outline: 2px solid limegreen;
+  }
+  &:hover,
+  &:focus {
+    background-color: #f30363;
+    cursor: pointer;
+  }
+}
+
+button[type="submit"]:disabled {
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #666666;
+  cursor: not-allowed;
+  pointer-events: none;
+  outline: none;
+}
+.alert-danger {
+  color: #ac0246;
+  font-weight: 600;
+}
+
+.visuallyhidden {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+  max-height: 100%;
+}
+
+.desktop {
+  display: none !important;
+  @include desktop {
+    display: block !important;
+  }
+}
+
+.mobile {
+  display: block !important;
+  @include desktop {
+    display: none !important;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 0; /* Remove scrollbar space */
+  height: 0;
+  background: transparent; /* Optional: just make scrollbar invisible */
+}
