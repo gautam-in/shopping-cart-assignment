@@ -4,7 +4,6 @@ import {Observable, of} from 'rxjs';
 
 import {BannersModel} from '../../models/banners.model';
 import {CategoryModel} from '../../models/category.model';
-import {SharedService} from '../../services/shared/shared.service';
 import {ShoppingService} from '../../services/shopping/shopping.service';
 
 @Component({

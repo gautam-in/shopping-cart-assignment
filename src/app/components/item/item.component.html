@@ -8,12 +8,13 @@
         <p class="mb-0 d-none d-lg-block">MRP Rs. {{ item.price }}</p>
         <app-button content="Buy Now"
                     [isFullWidth]="true"
+                    (buttonClick)="onClick()"
                     class="d-block d-md-none d-lg-block w-100"
                     [mobileContent]="'@ Rs ' + item.price"></app-button>
       </div>
     </div>
     <app-button content="Buy Now"
-                (click)="onClick()"
+                (buttonClick)="onClick()"
                 [isFullWidth]="true"
                 class="d-none d-md-block d-lg-none col-12"
                 [mobileContent]="'@ Rs ' + item.price"></app-button>

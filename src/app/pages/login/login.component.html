@@ -1,14 +1,32 @@
 <div class="container">
-  <div class="row">
-    <div class="col-12 col-md-6">
-      <h2>Login</h2>
+  <div class="row align-items-center mt-3">
+    <div class="col-12 col-md-5 offset-md-1">
+      <h2 class="mb-2">Login</h2>
       <p>Get Access to your orders, Wishlist and recommendations</p>
     </div>
-    <div class="col-12 col-md-6">
-      <app-input></app-input>
-      Email
-      Password
-      <app-button content="Login"></app-button>
-    </div>
+    <form class="col-12 col-md-4 mb-4" [formGroup]="loginForm" (ngSubmit)="onLogin()">
+      <div class="input-box">
+        <input name="email" label="Email" type="text" formControlName="email" id="email" />
+        <label class="floating-label" for="email">Email</label>
+      </div>
+
+      <ng-container *ngIf="!loginForm.get('email').valid && loginForm.get('email').touched">
+        <span *ngIf="loginForm.get('email').errors['required']" class="error">Email is required</span>
+        <span *ngIf="loginForm.get('email').errors['email']" class="error">Email is invalid</span>
+      </ng-container>
+
+      <div class="input-box mt-5">
+        <input name="password" label="Password" type="password" formControlName="password" id="password" />
+        <label class="floating-label" for="password">Password</label>
+      </div>
+
+      <ng-container *ngIf="!loginForm.get('password').valid && loginForm.get('password').touched">
+        <span *ngIf="loginForm.get('password').errors['required']" class="error">Password is required</span>
+      </ng-container>
+
+      <div class="mt-4"></div>
+
+      <app-button content="Login" type="submit" [isFullWidth]="true"></app-button>
+    </form>
   </div>
 </div>

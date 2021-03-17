@@ -1,1 +1,63 @@
-<p>register works!</p>
+<div class="container">
+  <div class="row mt-3">
+    <div class="col-12 col-md-5 offset-md-1">
+      <h2 class="mb-2 mt-4">Signup</h2>
+      <p>We do not share your personal details with anyone.</p>
+    </div>
+    <form class="col-12 col-md-4 mb-4" [formGroup]="registerForm" (ngSubmit)="onRegister()">
+      <div class="input-box mt-5">
+        <input name="firstname" type="text" formControlName="firstname" id="firstname" />
+        <label class="floating-label" for="firstname">First Name</label>
+      </div>
+
+      <ng-container *ngIf="!registerForm.get('firstname').valid && registerForm.get('firstname').touched">
+        <span *ngIf="registerForm.get('firstname').errors['required']" class="error">Firstname is required</span>
+      </ng-container>
+
+      <div class="input-box mt-5">
+        <input name="lastname" type="text" formControlName="lastname" id="lastname" />
+        <label class="floating-label" for="lastname">Last Name</label>
+      </div>
+
+      <ng-container *ngIf="!registerForm.get('lastname').valid && registerForm.get('lastname').touched">
+        <span *ngIf="registerForm.get('lastname').errors['required']" class="error">Lastname is required</span>
+      </ng-container>
+
+      <div class="input-box mt-5">
+        <input name="email" type="email" formControlName="email" id="email" />
+        <label class="floating-label" for="email">Email</label>
+      </div>
+
+      <ng-container *ngIf="!registerForm.get('email').valid && registerForm.get('email').touched">
+        <span *ngIf="registerForm.get('email').errors['required']" class="error">Email is required</span>
+        <span *ngIf="registerForm.get('email').errors['email']" class="error">Email is invalid</span>
+      </ng-container>
+
+      <div class="input-box mt-5">
+        <input name="password" type="password" formControlName="password" id="password" />
+        <label class="floating-label" for="password">Password</label>
+      </div>
+
+      <ng-container *ngIf="!registerForm.get('password').valid && registerForm.get('password').touched">
+        <span *ngIf="registerForm.get('password').errors['required']" class="error">Password is required</span>
+        <span *ngIf="registerForm.get('password').errors['hasNumberAndAlphabet']" class="error">Must have number and alphabets</span>
+        <span *ngIf="registerForm.get('password').errors['hasNoSpace']" class="error">Spaces are not allowed</span>
+        <span *ngIf="registerForm.get('password').errors['minlength']" class="error">Minimum length is 6</span>
+      </ng-container>
+
+      <div class="input-box mt-5">
+        <input name="confirmPassword" type="password" formControlName="confirmPassword" id="confirmPassword" />
+        <label class="floating-label" for="confirmPassword">Confirm Password</label>
+      </div>
+
+      <ng-container *ngIf="!registerForm.get('confirmPassword').valid && registerForm.get('confirmPassword').touched">
+        <span *ngIf="registerForm.get('confirmPassword').errors['required']" class="error">Password is required</span>
+        <span *ngIf="registerForm.get('confirmPassword').errors['match']" class="error">Password not match</span>
+      </ng-container>
+
+      <div class="mt-4"></div>
+      <app-button content="Signup" [isFullWidth]="true" type="submit"
+                  [disabled]="registerForm.status === 'INVALID'"></app-button>
+    </form>
+  </div>
+</div>

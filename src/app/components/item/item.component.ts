@@ -10,7 +10,7 @@ import {ProductModel} from '../../models/product-model';
 export class ItemComponent implements OnInit {
 
   @Input() item = {} as ProductModel;
-  @Output() click: EventEmitter<void> = new EventEmitter<void>();
+  @Output() buttonClick: EventEmitter<void> = new EventEmitter<void>();
 
   constructor() {
   }
@@ -19,7 +19,7 @@ export class ItemComponent implements OnInit {
   }
 
   onClick(): void {
-    this.click.emit();
+    this.buttonClick.emit();
   }
 
 }

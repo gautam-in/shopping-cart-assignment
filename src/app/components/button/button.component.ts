@@ -8,9 +8,11 @@ import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 export class ButtonComponent implements OnInit {
 
   @Input() content = '';
+  @Input() type = '';
   @Input() mobileContent = '';
   @Input() isFullWidth = false;
-  @Output() click: EventEmitter<void> = new EventEmitter<void>();
+  @Input() disabled = false;
+  @Output() buttonClick: EventEmitter<void> = new EventEmitter<void>();
 
   constructor() { }
 
@@ -18,7 +20,11 @@ export class ButtonComponent implements OnInit {
   }
 
   onClick(): void {
-    this.click.emit();
+    this.buttonClick.emit();
+  }
+
+  login() {
+
   }
 
 }

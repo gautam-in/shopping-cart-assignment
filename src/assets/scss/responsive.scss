@@ -10,6 +10,7 @@
 
 .row {
   display: flex;
+  position: relative;
   flex-wrap: wrap;
   margin-right: -15px;
   margin-left: -15px;
@@ -44,9 +45,23 @@
 
 //Media Query for Screen >= 768px
 @media only screen and (min-width: $breakpoint-tablet) {
+  .offset-md-1 {
+    margin-left: 8.333333%;
+  }
+
   .col-md-3 {
     flex: 0 0 25%;
     max-width: 25%;
+  }
+
+  .col-md-4 {
+    flex: 0 0 33.33%;
+    max-width: 33.33%;
+  }
+
+  .col-md-5 {
+    flex: 0 0 41.666667%;
+    max-width: 41.666667%;
   }
 
   .col-md-6 {
@@ -72,6 +87,11 @@
     max-width: 25%;
   }
 
+  .col-lg-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+
   .col-lg-12 {
     flex: 0 0 100%;
     max-width: 100%;
@@ -82,10 +102,5 @@
 @media only screen and (min-width: $breakpoint-large-screen) {
   .container {
     max-width: 1140px;
-  }
-
-  .col-lg-12 {
-    flex: 0 0 100%;
-    max-width: 100%;
   }
 }

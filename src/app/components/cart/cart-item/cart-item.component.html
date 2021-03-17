@@ -1,0 +1,17 @@
+<div class="cart-item d-flex justify-content-between align-items-end p-3 mb-2" *ngIf="item">
+  <img [src]="item.imageURL" [alt]="item.name">
+  <div class="details-wrapper d-flex flex-column px-3">
+    <p class="name">{{ item.name }}</p>
+    <div class="d-flex align-items-center">
+      <div class="quantity-buttons d-flex align-items-center">
+        <button class="cursor-pointer" (click)="deleteQuantity(item.id)">-</button>
+        <div class="quantity px-3">{{ item.quantity }}</div>
+        <button class="cursor-pointer" (click)="addQuantity(item.id)">+</button>
+      </div>
+      <span class="px-3 cursor-pointer">X</span> Rs. {{ item.price }}
+    </div>
+  </div>
+  <div class="total-price">
+    Rs. {{ item.price * item.quantity }}
+  </div>
+</div>

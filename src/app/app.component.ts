@@ -1,4 +1,8 @@
 import { Component } from '@angular/core';
+import {Select} from '@ngxs/store';
+import {Observable} from 'rxjs';
+
+import {CartState} from './store/state/cart.state';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +10,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'shopping-cart-assignment';
+
+  @Select(CartState.cartStatus) isCartVisible: Observable<boolean>;
 }

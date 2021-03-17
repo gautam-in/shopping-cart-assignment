@@ -45,7 +45,7 @@
   padding-right: .5rem!important;
 }
 
-.px-3 {
+.pl-3, .px-3 {
   padding-left: 1rem!important;
 }
 
@@ -53,11 +53,19 @@
   padding-right: 1rem!important;
 }
 
+.pt-3, .py-3 {
+  padding-top: 1rem!important;
+}
+
+.pb-3, .py-3 {
+  padding-bottom: 1rem!important;
+}
+
 .py-4 {
   padding-top: 1.5rem!important;
 }
 
-.py-4 {
+.pb-4, .py-4 {
   padding-bottom: 1.5rem!important;
 }
 
@@ -110,21 +118,39 @@
   margin-bottom: 0!important;
 }
 
-.mb-3 {
+.mt-2 {
+  margin-top: 0.5rem!important;
+}
+
+.mb-2 {
+  margin-bottom: 0.5rem!important;
+}
+
+.mb-3, .my-3 {
   margin-bottom: 1rem!important;
 }
 
-.mt-3 {
+.mt-3, .my-3 {
   margin-top: 1rem!important;
 }
 
-.mt-4 {
+.mt-4, .my-4 {
   margin-top: 1.5rem!important;
+}
+
+.mb-4, .my-4 {
+  margin-bottom: 1.5rem!important;
 }
 
 @media only screen and (min-width: $breakpoint-tablet) {
   .mt-md-2 {
     margin-top: .5rem!important;
+  }
+}
+
+@media only screen and (min-width: $breakpoint-laptop) {
+  .mt-lg-0 {
+    margin-top: 0!important;
   }
 }
 

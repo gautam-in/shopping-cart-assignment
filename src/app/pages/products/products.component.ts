@@ -1,12 +1,13 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Params} from '@angular/router';
+import {Select, Store} from '@ngxs/store';
 import {Observable, of} from 'rxjs';
-import {map} from 'rxjs/operators';
 
 import {CategoryModel} from '../../models/category.model';
 import {ProductModel} from '../../models/product-model';
-import {SharedService} from '../../services/shared/shared.service';
 import {ShoppingService} from '../../services/shopping/shopping.service';
+import {AddToCart, FilterProducts, GetAllProducts} from '../../store/actions/cart.action';
+import {CartState} from '../../store/state/cart.state';
 
 @Component({
   selector: 'app-products',
@@ -16,21 +17,21 @@ import {ShoppingService} from '../../services/shopping/shopping.service';
 export class ProductsComponent implements OnInit {
 
   categories: Observable<CategoryModel[]> = of([]);
-  allProducts: Observable<ProductModel[]> = of([]);
-  activeProducts: Observable<ProductModel[]> = of([]);
+  @Select(CartState.activeProducts) activeProducts: Observable<ProductModel[]>;
   activeCategory = '';
 
   constructor(private shoppingService: ShoppingService,
               private route: ActivatedRoute,
-              private sharedService: SharedService) {
+              private store: Store) {
   }
 
   ngOnInit(): void {
     this.getCategories();
-    this.getAllProducts();
-    this.route.queryParams.subscribe((queryParams: Params) => {
-      this.activeCategory = queryParams.category || '';
-      this.filterProducts();
+    this.store.dispatch(new GetAllProducts()).subscribe(_ => {
+      this.route.queryParams.subscribe((queryParams: Params) => {
+        this.activeCategory = queryParams.category || '';
+        this.store.dispatch(new FilterProducts(this.activeCategory));
+      });
     });
   }
 
@@ -38,20 +39,7 @@ export class ProductsComponent implements OnInit {
     this.categories = this.shoppingService.getAllCategories();
   }
 
-  getAllProducts(): void {
-    this.allProducts = this.shoppingService.getAllProducts();
-    this.activeProducts = this.allProducts.pipe(map(products => [...products]));
-  }
-
-  filterProducts(): void {
-    this.activeProducts = this.allProducts.pipe(
-      map(products => products.filter(product => product.category === this.activeCategory || this.activeCategory === ''))
-    );
-  }
-
-  addToCart(productId: string): void {
-    this.shoppingService.addToCart(productId).subscribe(response => {
-      this.sharedService.addToCart(productId);
-    });
+  addToCart(product: ProductModel): void {
+    this.store.dispatch(new AddToCart(product));
   }
 }

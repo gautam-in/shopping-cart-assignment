@@ -1,6 +1,9 @@
 import {Component, OnInit} from '@angular/core';
+import {Select, Store} from '@ngxs/store';
+import {Observable} from 'rxjs';
 
-import {SharedService} from '../../services/shared/shared.service';
+import {ToggleCart} from '../../store/actions/cart.action';
+import {CartState} from '../../store/state/cart.state';
 
 @Component({
   selector: 'app-header',
@@ -9,13 +12,17 @@ import {SharedService} from '../../services/shared/shared.service';
 })
 export class HeaderComponent implements OnInit {
 
-  cartQuantity = 0;
+  @Select(CartState.cartStatus) isCartVisible: Observable<boolean>;
+  @Select(CartState.cartQuantity) cartQuantity: Observable<number>;
 
-  constructor(private sharedService: SharedService) {
+  constructor(private store: Store) {
   }
 
   ngOnInit(): void {
-    this.sharedService.cart.subscribe(cart => this.cartQuantity = cart.length);
+  }
+
+  toggleCart() {
+    this.store.dispatch(new ToggleCart());
   }
 
 }

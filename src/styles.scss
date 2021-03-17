@@ -45,9 +45,14 @@ a:hover {
   outline: 0;
 }
 
+.error {
+  color: red;
+}
+
 /* Importing SCSS files */
 @import "src/assets/scss/common";
 @import "src/assets/scss/spacing";
 @import "src/assets/scss/responsive";
+@import "src/assets/scss/input";
 @import '~ngx-owl-carousel-o/lib/styles/scss/owl.carousel';
 @import '~ngx-owl-carousel-o/lib/styles/scss/owl.theme.default';
