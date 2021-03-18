@@ -4,12 +4,24 @@ This is the base folder for the shopping cart exercise. You will have all the st
 
 ## Getting Started
 
-Clone this repo and run following command for starting the mock server:
+Clone this repo and run following commands
 
 ```
 npm install
-npm run start
+
 # or
 yarn install
-yarn start
+
+```
+
+Run any live server for index.html
+Use sass compiler for modifying scss files.
+
+Check package.json to know the npm scripts
+
+```
+npm i sass
+
+npm run scss
+
 ```

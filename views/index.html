@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Sabka bazaar is one of the best online shopping sites for
+     purchasing fruits, vegetables, bakery items, baby care items and beverages" />
+    <title>Sabka Bazaar</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Dosis:400,600,700" />
+    <link rel="stylesheet" href="../style.css" />
+</head>
+
+<body class="container">
+    <!-- Header reusable -->
+    <header-template></header-template>
+
+    <!--Empty cart reusable-->
+    <cart-modal-template></cart-modal-template>
+
+    <main class="home">
+
+        <div class="slideshow-container">
+            <div class="slideshow-container__mySlides slide">
+                <img src="../static/images/offers/offer5.jpg" tabindex="0" alt="independence day sale offer 5"
+                    class="sale" />
+            </div>
+
+            <div class="slideshow-container__mySlides slide">
+                <img src="../static/images/offers/offer4.jpg" tabindex="0" alt="independence day sale offer 4"
+                    class="sale" />
+            </div>
+
+            <div class="slideshow-container__mySlides slide">
+                <img src="../static/images/offers/offer3.jpg" tabindex="0" alt="independence day sale offer 3"
+                    class="sale" />
+            </div>
+            <div class="slideshow-container__mySlides slide">
+                <img src="../static/images/offers/offer2.jpg" tabindex="0" alt="independence day sale offer 2"
+                    class="sale" />
+            </div>
+            <div class="slideshow-container__mySlides slide">
+                <img src="../static/images/offers/offer1.jpg" tabindex="0" alt="independence day sale offer 1"
+                    class="sale" />
+            </div>
+
+            <a class="prev" onclick="moveSlide(-1)">PREV</a>
+            <a class="next" tabindex="0" onclick="moveSlide(1)">NEXT</a>
+            <div class="slideshow-container__dots">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+                <span class="dot" onclick="currentSlide(4)"></span>
+                <span class="dot" onclick="currentSlide(5)"></span>
+            </div>
+        </div>
+
+
+        <!--Category templates reusable-->
+        <category-template flexDirection="flex-row" imgSrc="fruits" imgAlt="Fruits &amp; Vegetables logo"
+            mainText="Fruits &amp; Vegetables" subText=" A variety of fresh fruits and vegetables."
+            buttonFragment="#fruitsVegetables" buttonText="Explore fruit-and-veg">
+        </category-template>
+
+        <category-template flexDirection="flex-row-reverse" imgSrc="bakery" imgAlt="Bakery Cakes and Dairy logo"
+            mainText="Bakery Cakes and Dairy" subText="The best cupcakes, cookies, cakes, pies, cheesecakes, fresh bread,
+        biscotti, muffins, bagels, fresh coffee, milk and more." buttonFragment="#bakery"
+            buttonText="Explore bakery-cakes-dairy">
+        </category-template>
+
+        <category-template flexDirection="flex-row" imgSrc="beverages" imgAlt="Beverages logo" mainText="Beverages"
+            subText=" Our beverage department will ensure your fridge is always fully
+            stocked. Shop for soda, juice, beer and more." buttonFragment="#beverages" buttonText="Explore beverages">
+        </category-template>
+
+        <category-template flexDirection="flex-row-reverse" imgSrc="beauty" imgAlt="Beauty and Hygiene logo"
+            mainText="Beauty and Hygiene" subText="Buy beauty and personal care products online in India at best
+            prices." buttonFragment="#beautyCare" buttonText="Explore
+            beauty-hygiene">
+        </category-template>
+
+        <category-template flexDirection="flex-row" imgSrc="baby" imgAlt="Baby Care logo" mainText="Baby Care"
+            subText="Shop online for Baby Products, Diapers, Skin Care Products,etc." buttonFragment="#babyCare"
+            buttonText="Explore baby">
+        </category-template>
+
+    </main>
+    <!--Footer reusable-->
+    <footer-template></footer-template>
+    <script type="text/javascript" src="../components/header-template.js"></script>
+    <script type="text/javascript" src="../components/footer-template.js"></script>
+    <script type="text/javascript" src="../components/category-template.js"></script>
+    <script type="text/javascript" src="../scripts/slideshow.js"></script>
+    <script type="text/javascript" src="../scripts/home.js"></script>
+    <script src="../components/cart-modal-template.js" type="text/javascript"></script>
+    <script type="text/javascript" src="../scripts/cart.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,187 @@
+.category-list {
+  width: 25%;
+  padding: 3px 12px 3px 12px;
+  background-color: #eaeaea;
+  margin-top: -10px;
+  display: none;
+
+  @include break-point(tablet) {
+    display: block;
+  }
+
+  @include break-point(desktop) {
+    a h1:hover,
+    a h1.active {
+      background-color: $background-color-secondary;
+      color: white;
+    }
+  }
+
+  &__name {
+    font-size: 1rem;
+    padding: 12px 0 12px 10px;
+    color: #959595;
+    border-bottom: 1px solid #cecccc;
+  }
+}
+
+// product list
+.product-list {
+  width: 75%;
+  padding: 0;
+  @include break-point(tablet) {
+    padding: 5px;
+  }
+
+  .product-list-row {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+  }
+}
+
+// product card
+.product-card {
+  width: 100%;
+  padding: 5px;
+  margin-top: 10px;
+  border-bottom: 1px dashed #d0d0d0;
+  box-shadow: 10px 0 5px -13px #888;
+  @include break-point(tablet) {
+    width: 50%;
+  }
+  @include break-point(desktop) {
+    width: 25%;
+  }
+
+  &__name {
+    font-size: 1rem;
+    height: 2rem;
+    margin-bottom: 2%;
+  }
+  @include break-point(desktop) {
+    &__name {
+      font-size: 1rem;
+      height: 4rem;
+    }
+  }
+  @include break-point(tablet) {
+    &__name {
+      font-size: 1rem;
+      height: 4rem;
+    }
+  }
+  &__detail {
+    &--textAndBtn {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    @include flex-row;
+    figure {
+      width: 65%;
+      img {
+        height: 9.5rem;
+        margin-right: 3px;
+      }
+    }
+    // &--img {
+    //   width: 100%;
+    //   height: 9.5rem;
+    //   margin-right: 3px;
+    // }
+    @include break-point(tablet) {
+      @include flex-column;
+      figure {
+        width: 100%;
+        img {
+          width: 100%;
+          height: auto;
+        }
+      }
+      // &--img {
+      //   width: 100%;
+      //   height: auto;
+      // }
+    }
+    // @include break-point(tablet) {
+    //   @include flex-column;
+    //   figure {
+    //     width: 100%;
+    //   }
+    //   &--img {
+    //     width: 100%;
+    //     height: auto;
+    //   }
+    // }
+
+    &--description {
+      background-color: #f0f0f0;
+      font-size: 0.8rem;
+      padding: 5px;
+      height: 5.5rem;
+      overflow: hidden;
+    }
+  }
+
+  &__buy {
+    height: 40px;
+    margin-top: 20px;
+
+    &--price {
+      align-items: center;
+      display: none;
+      @include break-point(desktop) {
+        display: flex;
+        font-size: 0.8rem;
+      }
+    }
+    &--btn {
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+    }
+    &--sm-txt {
+      color: $text-color-secondary;
+      @include break-point(desktop) {
+        display: none;
+      }
+    }
+  }
+}
+
+// mobile category select dropdown
+.mob-category-list-container {
+  position: relative;
+
+  label {
+    display: none;
+  }
+
+  &::after {
+    position: absolute;
+    content: url("../static/images/chevron-down-solid.svg");
+    color: $text-color-secondary;
+    width: 15px;
+    height: 10px;
+    top: 12px;
+    right: 20px;
+    pointer-events: none;
+    @include break-point(tablet) {
+      display: none;
+    }
+  }
+  .mob-category-list {
+    width: 100%;
+    position: relative;
+    background: #d10157;
+    color: $text-color-secondary;
+    border: 0;
+    padding: 10px;
+    -webkit-appearance: none;
+    appearance: none;
+    @include break-point(tablet) {
+      display: none;
+    }
+  }
+}

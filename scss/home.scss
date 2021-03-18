@@ -1,0 +1,210 @@
+@mixin border-bottom-shadow {
+  position: relative;
+  padding-bottom: 39px;
+  &:after {
+    content: "";
+    bottom: -1rem;
+    background: radial-gradient(
+      farthest-corner at 50% 0px,
+      #d4d2d2 0%,
+      transparent 50%
+    );
+    width: 100%;
+    height: 1rem;
+    position: absolute;
+    bottom: 0;
+  }
+}
+
+main.home {
+  .offer-banner {
+    @include border-bottom-shadow;
+
+    &__img {
+      display: flex;
+      flex: 1;
+      width: 100%;
+    }
+  }
+  .category {
+    @include border-bottom-shadow;
+
+    // &:nth-child(odd) {
+    //   flex-direction: row-reverse;
+    // }
+    figure {
+      max-width: 50%;
+      img {
+        height: 200px;
+        width: 90%;
+      }
+    }
+    .category-detail {
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      flex-wrap: wrap;
+      &__main {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+        line-height: 1.2;
+      }
+      &__sub {
+        font-size: 0.8rem;
+        margin-bottom: 10px;
+      }
+      @include break-point(tablet) {
+        &__main {
+          font-size: 1.8rem;
+          margin-bottom: 10px;
+          line-height: 1;
+        }
+        &__sub {
+          font-size: 0.9rem;
+          margin-bottom: 10px;
+        }
+      }
+      @include break-point(desktop) {
+        &__main {
+          font-size: 1.8rem;
+          margin-bottom: 10px;
+          line-height: 1;
+        }
+        &__sub {
+          font-size: 0.9rem;
+          margin-bottom: 10px;
+        }
+      }
+    }
+  }
+}
+
+.slideshow-container img {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  width: 100%;
+}
+
+img {
+  vertical-align: middle;
+}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+  &__mySlides {
+    display: none;
+  }
+  &__dots {
+    text-align: center;
+  }
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: #000;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.164);
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+  color: $background-color-primary;
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 0.93rem;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 8px;
+  width: 8px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active,
+.dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.slide {
+  -webkit-animation-name: slide;
+  -webkit-animation-duration: 1s;
+  animation-name: slide;
+  animation-duration: 1s;
+  // -webkit-transition: all 2s ease-in;
+  // transition: all 2 ease-in;
+}
+
+@-webkit-keyframes slide {
+  0% {
+    -webkit-transform: translateX(100%);
+  }
+  100% {
+    -webkit-transform: translateX(0%);
+  }
+}
+
+@keyframes slide {
+  0% {
+    -webkit-transform: translateX(100%);
+  }
+  100% {
+    -webkit-transform: translateX(0%);
+  }
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .prev,
+  .next,
+  .text {
+    font-size: 0.625rem;
+  }
+}
