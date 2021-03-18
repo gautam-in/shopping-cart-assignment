@@ -7,7 +7,6 @@ $font-weight-mid: 600;
 .logo {
     height: 50px;
     width: auto;
-    // float: left;
     margin-top: 20px;
     margin-left: 10px;
 }
@@ -37,7 +36,7 @@ $font-weight-mid: 600;
 .main-nav li a:link,
 .main-nav li a:visited {
     padding: 8px 0 2px;
-    color: #555;
+    color: $mild-black;
     text-decoration: none;
     text-transform: capitalize;
     font-size: 90%;
@@ -48,23 +47,8 @@ $font-weight-mid: 600;
 
 .main-nav li a:hover,
 .main-nav li a:active {
-    border-bottom: 2px solid  $violetpink; //#b1288d;//#e67e22;
+    border-bottom: 2px solid  $violetpink;
 }
-
-
-/* Mobile navi */
-// .mobile-nav-icon {
-//     float: right;
-//     margin-top: 30px;
-//     cursor: pointer;
-//     display: none;
-// }
-
-// .mobile-nav-icon i {
-//     font-size: 200%;
-//     color: #fff;
-// }
-
 
 /* Sticky navi */
 .sticky {

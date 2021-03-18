@@ -10,15 +10,13 @@
 .content-area> div:first-child, .content-area aside:first-child {
     margin:0;
     // height: 100vh; //if we add then background grey is not occupying full giving parent, display as grid
-    background-color: #cfcfcf;
+    background-color: $grey;
 }
-// section.dropdown-cat-list{
-//     padding:0;
-// }
+
 .content-area{
     // height:81.5vh;
     .prod-categories{
-        background-color: #cfcfcf;
+        background-color: $grey;
         // height: 100%;
         // position: absolute;
         .cat-list{
@@ -27,7 +25,7 @@
             margin: 0;
             li{
                 padding:0px 20px;
-                border-bottom: 1px solid #555;
+                border-bottom: 1px solid $mild-black;
                 cursor: pointer;
                 font-size: 90%;
             }
@@ -37,7 +35,7 @@
             }
             li.selected{
                 color: $violetpink;
-                font-weight: 600;
+                // font-weight: 600;
             }
         }
     }
@@ -74,26 +72,26 @@
       select {
         flex: 1;
         padding: 0 .5em;
-        color: #fff;
+        color: $white;
         cursor: pointer;
         font-size: 90%;
         option {
             color:#000;
-            background-color: #fff;
+            background-color: $white;
         }
       }
       select[disabled='disabled']::-ms-value {
-        color: #555;
+        color: $mild-black;
       }
       /*Specific to chrome and firefox*/
       select[disabled='disabled'] {
-        color: #555;
+        color: $mild-black;
       }
       /* Arrow */
       .select::after {
         content: '';
         // font-family: 'Ionicons';
-        border: solid #fff;
+        border: solid $white;
         border-width: 0 3px 3px 0;
         display: inline-block;
         padding: 6px;
@@ -101,7 +99,7 @@
         transform: rotate(45deg);
         -webkit-transform: rotate(45deg);
         position: absolute;
-        color:#fff;
+        color:$white;
         top: 0;
         right: 0;
         // padding: 0 1em;
@@ -114,7 +112,7 @@
       }
       /* Transition */
       .select:hover::after {
-        color: #8c2e73;
+        color: $violetpink;
       }
 }
 .content-area > div:nth-child(2) {
@@ -123,10 +121,10 @@
 .prod-list{
     .rest-tiles {
         margin-top: 5px;
-        padding:0;
+        // padding:0;
         li{
             margin: 0 4px 10px 0;
-            border-bottom: 1px dashed #cfcfcf;
+            border-bottom: 1px dashed $grey;
             box-shadow: 2px 0px 3px -3px #111;            
             div{background-color: transparent;}
             .prod-name{
@@ -145,7 +143,7 @@
                 justify-content: center;
             }
             .prod-desc{
-                background-color: #cfcfcf;
+                background-color: $grey;
                 display: -webkit-box;
                 max-width: 200px;
                 -webkit-line-clamp: 3;
@@ -153,7 +151,7 @@
                 overflow: hidden;
             }
             .description-area{
-                background-color: #cfcfcf;
+                background-color: $grey;
                 padding: 0;
                 margin: 0;
                 height: 50px;
@@ -184,7 +182,7 @@
                 width: 1em;
                 height: 0em;
                 margin-top: 0.2em;
-                background: white;
+                background: $white;
               }
             }
             .buy-area{

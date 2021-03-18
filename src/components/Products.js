@@ -15,8 +15,6 @@ class Products extends React.Component{
     constructor(props){
         super(props);
         this.state={
-            // categoryData:[],
-            // productList:[],
             catId: '',
             openModal: false
         }
@@ -30,12 +28,6 @@ class Products extends React.Component{
         this.props.getProducts();
     }
     static getDerivedStateFromProps(props,state){
-        if(props.homeApi.categoryData && props.homeApi.categorydata_searching_success){
-            // state.categoryData = props.homeApi.categoryData;
-        }
-        if(props.productInfo.productData && props.productInfo.searching_productdetails_success){
-            // state.productList = props.productInfo.productData;
-        }
         if(props.productInfo.addCartData && props.productInfo.adding_to_cart_success){
             toastr.success(Constants.TEXTS.TOASTS.click_cart,Constants.TEXTS.TOASTS.item_added,{timeOut:1000});
             props.resetCartReduxProcessData();
@@ -116,35 +108,6 @@ class Products extends React.Component{
                         {productList && productList.length ? productList.filter((data)=>{return this.state.catId ? this.state.catId == data.category : data }).map((item,i)=>(
                         <React.Fragment key={item.id}>
                             <ProductItem item={item} i={item.id} addToCart={this.addToCart} />
-                        {/* <li key={i}>
-                            <p className="prod-name" title={item.name}>{item.name}</p>
-                            <div className="prod-detls">
-                            <div className="prod-img">
-                                <figure>
-                            <LazyLoad height={75} offset={500} once>
-                                <img className={`rocketImg`}
-                                    alt={item.name}
-                                    src={window.location.origin + item.imageURL}
-                                />
-                            </LazyLoad>
-                            </figure>
-                            </div>
-                            <div className="prod-infodetails">
-                            <div className="description-area">
-                                <article className="prod-desc truncate-overflow" title={item.description}>{item.description}</article>
-                            </div>
-                            <div className="buy-area">
-                                <div className="col span-1-of-2 price">
-                                   <p> MRP Rs.{item.price}</p>
-                                </div>
-                                <div className="col span-1-of-2 buy-btn">
-                                    <button className="btn" onClick={(event)=>this.addToCart(event,item)} aria-label={`Click on this button to buy ${item.name} for ${item.price} rupees.`}>Buy Now</button>
-                                    <button className="btn small-screen-btn" onClick={(event)=>this.addToCart(event,item)} aria-label={`Click on this button to buy ${item.name} for ${item.price} rupees.`}>Buy Now @ Rs.{item.price}</button>
-                                </div>
-                            </div>
-                            </div>
-                            </div>
-                        </li> */}
                         </React.Fragment>)) : null}
                         </ul>
                     </div>

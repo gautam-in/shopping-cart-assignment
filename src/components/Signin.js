@@ -22,11 +22,7 @@ class Signin extends React.Component {
                 openModal: false
               }
         }
-        // this.onSubmitHandler = this.onSubmitHandler.bind(this);
-        // this.inputHandler = this.inputHandler.bind(this);
-        // this.showCartView = this.showCartView.bind(this);
-        // this.onCloseModal = this.onCloseModal.bind(this);
-        // this.checkoutComplete = this.checkoutComplete.bind(this);
+        
     }
     componentDidMount(){
 

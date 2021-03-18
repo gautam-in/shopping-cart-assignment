@@ -6,9 +6,7 @@ import Constants from '../constants';
 class App extends Component {
     constructor(props) {
         super(props);
-        this.state = {
-            // isOfflineMsg:false
-        }
+        this.state = {}
     }
     componentDidMount(){
         window.addEventListener('offline', this.checkBroswerState);
@@ -26,13 +24,9 @@ class App extends Component {
         }
     }
     offline=() => {
-        // let errMsg = Constants.TEXTS.DEFAULTS.offline_msg;
-        // this.setState({ isOfflineMsg: true },()=>{
         toastr.warning('',Constants.TEXTS.DEFAULTS.offline_msg); 
-        // });          
     }
     online=()=>{
-        // this.setState({ isOfflineMsg: false });
         toastr.success('',Constants.TEXTS.DEFAULTS.online_msg);
     }
     render(){

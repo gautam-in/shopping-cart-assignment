@@ -14,21 +14,14 @@ class Signup extends React.Component {
     constructor(props){
         super(props);
         this.state={
-            // data:{
                 email:'',
                 password:'',
                 confirmPassword:'',
                 fName:'',
                 lName:'',
                 formError: false
-              // }
         }
-        // this.onSubmitHandler = this.onSubmitHandler.bind(this);
-        // this.inputHandler = this.inputHandler.bind(this);
-        // this.isValidFormState = this.isValidFormState.bind(this);
-        // this.showCartView = this.showCartView.bind(this);
-        // this.onCloseModal = this.onCloseModal.bind(this);
-        // this.checkoutComplete = this.checkoutComplete.bind(this);
+        
     }
 
     static getDerivedStateFromProps(props,state){

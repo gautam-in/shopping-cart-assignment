@@ -8,13 +8,8 @@ import Signup from './Signup';
 import {act} from 'react-dom/test-utils';
 import Header from '../presentations/Header';
 import Footer from '../presentations/Footer';
-import {validEmail,validPwd} from '../utils';
-// import {MemoryRouter} from 'react-router';
-// import { routerReducer } from 'react-router-redux';
-// import sinon from 'sinon';
-// import App from './App';
+import {validEmail} from '../utils';
 
-// const mockStore = configureStore(); //configureMockStore();
 const buildStore = configureStore([thunk]);
 const whenStable = async () => {
     await act(async () => {
@@ -31,9 +26,7 @@ const simulateChangeInput = (wrapper,inputSelector,newVal)=>{
 }
 
 describe('Signup',()=>{
-    // let routing = routerReducer;
-    // let store;// = mockStore({});
-    // const routerProps = {router:{push:()=>{}}};
+    
     const props={productReducer:{cartItems:[]},cartClick:()=>{},signinReducer:{userData:{userEmail:''}},signUpReducer:{userData:{userEmail:''}},router:{push:(data)=>{'/'+data+''}}};//router:{push:()=>{}},
     let wrapper,shallowWrapper,store;
     beforeAll(()=>{
@@ -46,7 +39,6 @@ describe('Signup',()=>{
       store = buildStore(props);
     });
     beforeEach(() => {
-      // fetch = global.fetch;
       wrapper = mount(<Provider store={store} {...props}>
         <Signup />
       </Provider>);

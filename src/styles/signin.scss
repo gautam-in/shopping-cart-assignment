@@ -1,5 +1,6 @@
 /* signin */
 $floating-label-color: #909090;
+$sky-blue: #91cce4;
 .signin-area .login-left-area p{
     line-height: normal;
     margin: 10px 0;
@@ -34,16 +35,16 @@ input:not(:placeholder-shown)~.floating-label{
   left: 1px;
   font-size: 11px;
   opacity: 1;
-  color:#91cce4;
+  color: $sky-blue;
 }
 .inputText:focus {
     border: none;
     background: transparent;
     outline: none;
-    border-bottom: 1px solid #91cce4;
+    border-bottom: 1px solid $sky-blue;
 }
 .inputText:active{
-    border-bottom: 1px solid rgb(145, 204, 228);
+    border-bottom: 1px solid $sky-blue;//rgb(145, 204, 228);
 }
 .inputText {
   font-size: 14px;

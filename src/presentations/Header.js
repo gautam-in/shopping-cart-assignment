@@ -1,11 +1,8 @@
 import React from 'react';
 import {Link} from 'react-router';
 import {connect} from 'react-redux';
-// import {push} from 'react-router-redux';
-// import Logo from '../../static/images/logo.png';
 import {getViewPortDimensions} from '../utils';
 import {resetCartData} from '../actions/productActions';
-// import CartIcon from '../../static/images/cart.svg';//'';
 import LazyLoad from 'react-lazyload';
 class Header extends React.Component {
      constructor(props) {
@@ -18,12 +15,7 @@ class Header extends React.Component {
             itemCount: 0,
             dimensions:{}
         }
-        // this.clickEvent = this.clickEvent.bind(this);
-        // this.showHome = this.showHome.bind(this);
-        // this.doResizeActions = this.doResizeActions.bind(this);
-        // this.cartClick = this.cartClick.bind(this);
-        // this.resetCart = this.resetCart.bind(this);
-        // this.resize = this.resize.bind(this);
+        
     }
     componentDidMount(){
         if(this.props.signin.userData && this.props.signin.userData.userEmail){

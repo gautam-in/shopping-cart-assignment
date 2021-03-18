@@ -1,4 +1,4 @@
-import constants from './constants';
+// import constants from './constants';
 export const commonHeaders = {
     Accept: 'application/json',
     'Content-Type': 'application/json; charset=UTF-8',

@@ -19,17 +19,11 @@ class Home extends React.Component {
         super(props);
         this.state={
           currentInstance: this,
-          // bannerData: [],
-          // categoryData: [],
           dimensions:{},
           openModal: false,
           forceCheckSliderImage: false
         }
-        // this.navigateToPlp = this.navigateToPlp.bind(this);
-        // this.showCartView = this.showCartView.bind(this);
-        // this.onCloseModal = this.onCloseModal.bind(this);
-        // this.checkoutComplete = this.checkoutComplete.bind(this);
-        // this.forceCheckSliderImage = this.forceCheckSliderImage.bind(this);
+        
     }
     componentDidMount(){
       this.props.getOffers();
@@ -37,12 +31,9 @@ class Home extends React.Component {
     }
     static getDerivedStateFromProps(props,state){
       if(props.homeApi.bannerData && props.homeApi.bannerdata_searching_success){
-        // state.bannerData = props.homeApi.bannerData;
         state.currentInstance.forceCheckSliderImage();
       }
-      // if(props.homeApi.categoryData && props.homeApi.categorydata_searching_success){
-      //   state.categoryData = props.homeApi.categoryData;
-      // }
+
       return state;
     }
     forceCheckSliderImage=()=>{

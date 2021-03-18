@@ -4,7 +4,7 @@
     padding:0;
 }
 .offerArea{
-    height: auto;//81.5vh;
+    height: auto;
     overflow-y: hidden;
     overflow-x: hidden;
 }
@@ -12,7 +12,7 @@
 .slider-container
 { 
     padding:40px;
-    background: #fff;
+    background: $white;
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 0px rgba(0, 0, 0, 0.1) inset;
     -webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 0px rgba(0, 0, 0, 0.1) inset;
     img{
@@ -52,13 +52,13 @@
     }
 .slick-prev:before{
     content:'\f3d2';
-    color: #000;
+    color: $black;
     font-size: 36px;
     font-family: "Ionicons";
 }
 .slick-next:before{
     content:'\f3d3';
-    color: #000;
+    color: $black;
     font-size: 36px;
     font-family: "Ionicons";
 }

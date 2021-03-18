@@ -9,7 +9,6 @@ class Basket extends React.Component{
     constructor(props){
         super(props);
         this.state={}
-        // this.checkoutComplete = this.checkoutComplete.bind(this);
     }
     checkoutComplete = () => {
         if(this.props.productInfo.cartItems && this.props.productInfo.cartItems.length){

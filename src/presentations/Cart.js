@@ -9,9 +9,7 @@ class Cart extends React.Component{
             itemList: [],
             totalCartValue:0
         }
-        // this.increaseQty = this.increaseQty.bind(this);
-        // this.decreaseQty = this.decreaseQty.bind(this);
-        // this.evaluateTotalPrice = this.evaluateTotalPrice.bind(this);
+
     }
     componentDidMount(){
         if(this.props.cartData){
@@ -44,9 +42,6 @@ class Cart extends React.Component{
     evaluateTotalPrice=()=>{
         let itmLst = this.state.itemList;
         let totalValue = 0;
-        // for(let i=0;i<itmLst.length;i++){
-        //     totalValue += itmLst[i].finalPrice;
-        // }
         itmLst.forEach((item)=>{
             totalValue+= item.finalPrice;
         });

@@ -46,7 +46,6 @@ describe('Initial service calls',()=>{
     it('get all products list',()=>{
         const productAction = [...expectedAction,{type:actions.GET_PRODUCT_DETAILS},{type:actions.GET_PRODUCT_DETAILS_SUCCESS,data: productListResponse}];
         return store.dispatch(getProducts()).then(()=>{
-            // console.log(store.getActions());
             expect(store.getActions()).toEqual(productAction);
         });
     });

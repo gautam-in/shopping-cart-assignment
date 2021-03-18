@@ -38,9 +38,5 @@ describe('When Componene mounted',()=>{
         instance.offline();
         expect(spyoffline).toHaveBeenCalled();
         spyoffline.mockRestore();
-
-        // expect(instance.offline).toHaveBeenCalled();
-        // expect(mountApp.online()).toBe(true);
-        // expect(elementMock.addEventListener).toBeCalledWith('online', expect.any(Function), false);
     });
 });
