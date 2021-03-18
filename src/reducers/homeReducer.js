@@ -7,7 +7,8 @@ const initialState = {
  categoryData: [],
  categorydata_searching_failed: false,
  categorydata_searching_success: false,
- categorydata_searching: false
+ categorydata_searching: false,
+ error: ''
 };
 
 export default function homeApis(state = initialState, action){

@@ -35,6 +35,7 @@
   "dependencies": {
     "@babel/plugin-proposal-class-properties": "^7.10.4",
     "@babel/plugin-transform-runtime": "^7.11.5",
+    "@babel/polyfill": "^7.12.1",
     "@babel/preset-es2015": "^7.0.0-beta.53",
     "@babel/runtime": "^7.11.2",
     "@testing-library/jest-dom": "^4.2.4",
@@ -54,6 +55,7 @@
     "core-js": "^3.6.5",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.6",
+    "es6-promise": "^4.2.8",
     "fetch-mock": "^9.11.0",
     "handlebars": "^4.7.7",
     "history": "^3.0.0",
@@ -80,7 +82,8 @@
     "redux-thunk": "^2.3.0",
     "require": "^2.4.20",
     "sinon": "^9.2.4",
-    "toastr": "^2.1.4"
+    "toastr": "^2.1.4",
+    "whatwg-fetch": "^3.6.2"
   },
   "devDependencies": {
     "chunk-manifest-webpack-plugin": "^1.1.2",

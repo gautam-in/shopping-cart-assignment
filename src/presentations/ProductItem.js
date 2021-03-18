@@ -3,7 +3,9 @@ import LazyLoad from 'react-lazyload';
 export default function ProductItem(props){
     const {item} = props;
     return(<li key={props.i}>
-        <p className="prod-name" title={item.name}>{item.name}</p>
+        <div className="product-name">
+            <p className="prod-name" title={item.name}>{item.name}</p>
+        </div>
         <div className="prod-detls">
         <div className="prod-img">
             <figure>

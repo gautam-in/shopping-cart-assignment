@@ -74,13 +74,13 @@ class Home extends React.Component {
     const {homeApi,productInfo,router} = this.props;
     const {openModal} = this.state;
     const {bannerData,categoryData} = this.props.homeApi;
-  return (
+  return (<React.Fragment>
     <main className="App home-page">
       <div className="overlay" style={{display: (homeApi.bannerdata_searching || homeApi.categorydata_searching) ? "block" : "none"}}>
             <div className="loading"><SvgLoading /></div>
       </div>
-      <Header router={router} cartClick={this.showCartView} cartInfo={productInfo.cartItems}></Header>
-      <section className="offerArea content-seperator">
+      {/* <Header router={router} cartClick={this.showCartView} cartInfo={productInfo.cartItems}></Header> */}
+      <section className="offerArea">
         <div className="slider-container">
           <Slider {...settings}>
             {bannerData && bannerData.length ? bannerData.map((data, idx) => (
@@ -98,7 +98,7 @@ class Home extends React.Component {
             <CategoryBanner data={data} index={i} navigateToPlp={this.navigateToPlp} />
           </React.Fragment>)) : null}
       </div>
-      <Footer></Footer>
+      {/* <Footer></Footer> */}
       {openModal ? (<Modal
         open={openModal}
         onClose={this.onCloseModal}
@@ -116,7 +116,7 @@ class Home extends React.Component {
         <Cart cartData={productInfo.cartItems} checkoutComplete={this.checkoutComplete} closeModal={this.onCloseModal}></Cart>
       </Modal>) : null}
     </main>
-  );
+    </React.Fragment>);
   }
 }
 function mapStateToProps(state){

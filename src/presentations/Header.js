@@ -71,9 +71,10 @@ class Header extends React.Component {
         const {userName,itemCount} = this.state;
         return (<div className="header-area">
             <header>
-                <nav className="sticky-nav">
+                <div className="sticky-nav">
                     <div className="row">
-                        <img onClick={this.showHome} src={window.location.origin + '/static/images/logo.png'} alt="logo" className="logo" /> {/* {Logo} */}
+                        <img onClick={this.showHome} src={window.location.origin + '/static/images/logo.png'} alt="sabka bazaar" className="logo" /> {/* {Logo} */}
+                        <nav>
                         <ul className="main-nav js--main-nav">
                             {!this.state.isMobileView && (<React.Fragment>
                             <li aria-label="Navigate to Home"><Link to={`/home`} >Home</Link></li>
@@ -87,6 +88,7 @@ class Header extends React.Component {
                             </React.Fragment>)}
                            
                         </ul>
+                        </nav>
                         <div className="guest-info">
                             <div>
                             {userName && userName.length ? (<div> 
@@ -98,15 +100,15 @@ class Header extends React.Component {
                             </div>
                             <div className="cartArea" aria-labelledby="cart" onClick={this.cartClick}>
                                 <div className="cart-icon">
-                                    <LazyLoad height={25} once>
+                                    {/* <LazyLoad height={25} once>
                                         <img src={window.location.origin + '/static/images/cart.svg'} alt="cart" className="fill-purple"></img>
-                                    </LazyLoad>
+                                    </LazyLoad> */}
                                 </div>
                                 <span aria-label={`Cart with ${itemCount} items`}>{itemCount} items</span>
                             </div>
                         </div>
                     </div>
-                </nav>
+                </div>
             
         </header>
         </div>);

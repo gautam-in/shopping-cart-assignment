@@ -71,6 +71,10 @@ $font-weight-mid: 600;
 .sticky-nav{
     box-shadow: 0 2px 2px #efefef;
     z-index: 9999;
+    nav{
+        display: flex;
+        flex: 1;
+    }
 }
 .sticky-nav .row {
     display: flex;
@@ -81,9 +85,12 @@ $font-weight-mid: 600;
     }
 }
 .cartArea .cart-icon{
-    // background-image: url(../../static/images/cart.svg?encoding=base64);
+    background-image: url(../../static/images/cart.svg?encoding=base64);
     background-repeat: no-repeat;
     // background-attachment: fixed;
+    -ms-background-attachment: scroll;
+    -webkit-background-attachment: scroll;
+    background-attachment: scroll;
     background-position: center;
     background-size: contain;
     width: 20px;

@@ -22,10 +22,11 @@ class Basket extends React.Component{
     }
     render(){
     const {productInfo,router} = this.props;
-    return(<main className="basket-page">
-        <Header router={router} cartClick={this.showCartView} cartInfo={productInfo.cartItems} />
+    return(<React.Fragment>
+        <main className="basket-page">
+        {/* <Header router={router} cartClick={this.showCartView} cartInfo={productInfo.cartItems} /> */}
         <Cart hideHeader={true} cartData={productInfo.cartItems} checkoutComplete={this.checkoutComplete} />
-        </main>)
+        </main></React.Fragment>)
     }
 }
 function mapStateToProps(state){

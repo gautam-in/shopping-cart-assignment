@@ -76,11 +76,12 @@ class Products extends React.Component{
         const {openModal} = this.state;
         const {productData:productList} = this.props.productInfo;
         const {categoryData} = this.props.homeApi;
-        return(<main className="products-page">
+        return(<React.Fragment>
+        <main className="products-page">
             <div className="overlay" style={{display: (productInfo.searching_productdetails|| productInfo.adding_to_cart  || homeApi.categorydata_searching) ? "block" : "none"}}>
                 <div className="loading"><SvgLoading /></div>
             </div>
-            <Header router={router} cartClick={this.showCartView} cartInfo={productInfo.cartItems}></Header>
+            {/* <Header router={router} cartClick={this.showCartView} cartInfo={productInfo.cartItems}></Header> */}
             <div className="row content-area">
                 <aside className="col span-3-of-12 left-menu">
                     <div className="prod-categories">
@@ -113,7 +114,7 @@ class Products extends React.Component{
                     </div>
                 </section>
             </div>
-            <Footer></Footer>
+            {/* <Footer></Footer> */}
             {openModal ? (<Modal 
             open={openModal} 
             onClose={this.onCloseModal} 
@@ -130,7 +131,7 @@ class Products extends React.Component{
               showCloseIcon={false}>
             <Cart cartData={productInfo.cartItems} checkoutComplete={this.checkoutComplete} closeModal={this.onCloseModal}></Cart>
         </Modal>):null}
-        </main>);
+        </main></React.Fragment>);
     }
 }
 function mapStateToProps(state){

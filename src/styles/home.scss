@@ -7,12 +7,13 @@
     height: auto;
     overflow-y: hidden;
     overflow-x: hidden;
+    padding:0;
 }
 
 .slider-container
 { 
     padding:40px;
-    background: $white;
+    // background: $white;
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 0px rgba(0, 0, 0, 0.1) inset;
     -webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 0px rgba(0, 0, 0, 0.1) inset;
     img{
@@ -70,12 +71,21 @@
         box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 0px rgba(0, 0, 0, 0.1) inset;
         -webkit-box-shadow:0 ​1px 4px rgba(0, 0, 0, 0.3), 0 0 0px rgba(0, 0, 0, 0.1) inset;
         padding:30px 0;
+        .span-1-of-2{
+            display: flex;
+            .login-left-area{
+                width:80%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        }
         img{
             height:150px;
             width:auto;
         }
         .banner-right-area{
-            margin: 20px 0 0 60px;
+            margin: auto;//20px 0 0 60px;
         }
     }
     .single-banner-area:before, .single-banner-area:after

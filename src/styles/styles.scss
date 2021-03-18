@@ -52,7 +52,7 @@ html, body{
     height: 0;
     visibility: hidden;
 }
-
+main {display: block; unicode-bidi: normal;}
 .row {
     max-width: 1140px;
     margin: 0 auto;

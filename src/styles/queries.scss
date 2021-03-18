@@ -208,8 +208,11 @@
                     height: auto !important;
                     margin-bottom: 10px;
                 }
+                .prod-name{width:auto;max-width: 100%;}
                 .prod-detls{
                     display: flex;
+                    align-items: center;
+                    padding-top: 5px;
                     .prod-infodetails{
                         margin-left: 10px;
                         .buy-area > div:nth-child(1){
@@ -225,19 +228,20 @@
                         }
                     }
                     .prod-img{
-                        right: 10px;
+                        // right: 10px;
                         position: relative;
+                        img{height:8rem;}
                     }
                 }
                 
             }
         }
     }
-.basket-page{
-    .modal-content-area{
-        height: calc(100vh - 156px) !important;
-    }
-}
+// .basket-page{
+//     .modal-content-area{
+//         height: calc(100vh - 156px) !important;
+//     }
+// }
     .cart-header{ 
         h2{
             font-size: 90%;
@@ -322,6 +326,9 @@
                 display: flex;
                 position: relative;
                 height: 125px;
+                justify-content: center;
+                align-items: center;
+                padding-top: 10px;
                 .prod-infodetails{
                     margin-left: 10px;
                     .buy-area > div:nth-child(1){
@@ -340,9 +347,14 @@
                     }
                 }
                 .prod-img{
-                    right: 10px;
+                    // right: 10px;
                     position: relative;
                     bottom: 25px;
+                    figure{
+                        width:6rem;
+                        height:6rem;
+                        img{height: 6rem;}
+                    }
                 }
             }
         }
@@ -372,6 +384,7 @@
                 .prod-detls{
                     display: flex;
                     height: auto;
+                    // padding-top: 5px;
                     .prod-infodetails{
                         margin-left: 10px;
                         .buy-area > div:nth-child(1){
@@ -387,7 +400,7 @@
                         }
                     }
                     .prod-img{
-                        right: 10px;
+                        // right: 10px;
                         position: relative;
                     }
                 }
@@ -429,7 +442,7 @@
                 }
             }
             .prod-img{
-                right: 10px;
+                // right: 10px;
                 position: relative;
                 bottom: 0 !important;
             }

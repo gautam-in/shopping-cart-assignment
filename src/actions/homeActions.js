@@ -21,7 +21,7 @@ export function getOffers(){
         .catch(err=>{
             dispatch({
                 type: actions.GET_BANNER_DETAILS_FAILURE,
-                errorMsg: error
+                errorMsg: err
             })
         })
     }
@@ -44,7 +44,7 @@ export function getCategories(){
         .catch(err=>{
             dispatch({
                 type: actions.GET_CATEGORY_DETAILS_FAILURE,
-                errorMsg: error
+                errorMsg: err
             })
         })
     }

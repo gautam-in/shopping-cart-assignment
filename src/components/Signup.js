@@ -120,9 +120,9 @@ class Signup extends React.Component {
   render(){
   const {router,productInfo} = this.props;
   const {formError,openModal} = this.state;
-  return (
+  return (<React.Fragment>
     <main className="App signup-area">
-        <Header router={router} cartClick={this.showCartView} cartInfo={productInfo.cartItems}></Header>
+        {/* <Header router={router} cartClick={this.showCartView} cartInfo={productInfo.cartItems}></Header> */}
         {/* <div dangerouslySetInnerHTML={{ __html: template(this.state.data) }} /> */}
         <section className="signup-page">
             <div className="row">
@@ -132,21 +132,7 @@ class Signup extends React.Component {
                 <div className="row login-left-area">
                   <h1>Signup</h1>
                   <p>We donot share your personal details with anyone.</p>
-                  <div className="">
-                     {formError && (<div id="errorarea" className="errorArea">
-                          <p>Please follow instruction below to fill form:</p>
-                          <ul className="form-instrcutions">
-                                <li><p>Make sure no fields are empty when user submits the form. </p></li>
-                                <li><p>Make sure email address entered is always valid.</p></li>
-                                <li><p>Password should follow following criteria:<br />
-                                    a. Minimum length 6 characters. <br />
-                                    b. Must have a number and alphabet.<br />
-                                    c. Cannot have spaces.<br /></p>
-                                </li>
-                                <li><p>Confirm password needs to be same as password value.</p></li>
-                          </ul>
-                      </div>) }
-                  </div>
+                  
                 </div>
                 <div> </div>
               </div>
@@ -173,6 +159,21 @@ class Signup extends React.Component {
                     <input type="password" aria-label={Constants.TEXTS.FORM_INPUTS.cpwd.label} className="inputText" id="cpassword-input" value={this.state.confirmPassword || ''} onChange={(event)=>this.inputHandler(event,Constants.TEXTS.SIGNUP.form_values.cpwd)} placeholder=" " required/>
                     <span className="floating-label">{Constants.TEXTS.FORM_INPUTS.cpwd.value}</span>
                   </div>
+                  <div className="">
+                     {formError && (<div id="errorarea" className="errorArea">
+                          <p>Please follow instruction below to fill form:</p>
+                          <ul className="form-instrcutions">
+                                <li><p>Make sure no fields are empty when user submits the form. </p></li>
+                                <li><p>Make sure email address entered is always valid.</p></li>
+                                <li><p>Password should follow following criteria:<br />
+                                    a. Minimum length 6 characters. <br />
+                                    b. Must have a number and alphabet.<br />
+                                    c. Cannot have spaces.<br /></p>
+                                </li>
+                                <li><p>Confirm password needs to be same as password value.</p></li>
+                          </ul>
+                      </div>) }
+                  </div>
                   <div>
                     <button type="submit" aria-label={Constants.TEXTS.FORM_INPUTS.signup_submit.label} onClick={(event)=>this.onSubmitHandler(event) } className="login btn big-btn">{Constants.TEXTS.FORM_INPUTS.signup_submit.value}</button>
                   </div>
@@ -180,7 +181,7 @@ class Signup extends React.Component {
             </div>
             </div>
         </section>
-        <Footer></Footer>
+        {/* <Footer></Footer> */}
         {openModal ? (<Modal
         open={openModal}
         onClose={this.onCloseModal}
@@ -198,7 +199,7 @@ class Signup extends React.Component {
         <Cart cartData={productInfo.cartItems} checkoutComplete={this.checkoutComplete} closeModal={this.onCloseModal}></Cart>
       </Modal>) : null}
     </main>
-  );
+  </React.Fragment>);
   }
 }
 function mapStateToProps(state) {

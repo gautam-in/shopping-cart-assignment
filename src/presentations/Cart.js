@@ -50,7 +50,8 @@ class Cart extends React.Component{
     render(){
         const {itemList,totalCartValue} = this.state;
         const {hideHeader,closeModal,checkoutComplete} = this.props;
-        return(<section id="cart" role="dialog" tabIndex="10" aria-labelledby="dialog-title" className="cart-page">
+        return(<React.Fragment>
+        <section id="cart" role="dialog" tabIndex="10" aria-labelledby="dialog-title" className="cart-page">
             {!hideHeader ? (<section className="cart-header modal-horizontal-space">
                 <h2 id="dialogue-title">My cart {itemList.length ? " ("+(itemList.length)+" items)" : " "}</h2>
                 <div className="close-icon" aria-label="close dialog" onClick={closeModal}>
@@ -58,7 +59,7 @@ class Cart extends React.Component{
                 </div>
             </section>) : null }
             
-            <section className="row">
+            <div className="row">
                 {itemList.length ? (<div>
                     <div className="modal-content-area">
                         <div className="itemlist-area">
@@ -118,8 +119,8 @@ class Cart extends React.Component{
                         <button aria-label="Start shopping" onClick={!hideHeader ? closeModal : checkoutComplete} className="btn full-width-btn">Start Shopping</button>
                     </div>
                     </div>)}
-            </section>
-        </section>)
+            </div>
+        </section></React.Fragment>)
     }
 }
 function mapStateToProps(state){

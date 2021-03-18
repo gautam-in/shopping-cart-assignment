@@ -1,10 +1,10 @@
 /* productlist css */
 .content-area {
-    display: grid;
+    display: flex;//grid;
     grid-auto-flow: column;
 } //trail case for left area background to occupy till footer
 .left-menu, .product-list-area{
-    width:100%;
+    // width:100%;
     padding:0;
 } //trail case for left area background to occupy till footer
 .content-area> div:first-child, .content-area aside:first-child {
@@ -121,12 +121,13 @@
 .prod-list{
     .rest-tiles {
         margin-top: 5px;
-        // padding:0;
+        padding:0;
         li{
             margin: 0 4px 10px 0;
             border-bottom: 1px dashed $grey;
             box-shadow: 2px 0px 3px -3px #111;            
             div{background-color: transparent;}
+            .product-name{width:100%;}
             .prod-name{
                 -webkit-line-clamp: 2;
                 overflow: hidden;
@@ -137,10 +138,19 @@
                 height: 48px;
                 max-height: 48px;
                 font-weight: 800;
+                width: 100%;
+                text-align: left;
             }
             .prod-img{
                 display: flex;
                 justify-content: center;
+                figure{
+                    width: 8rem;
+                    height: 8rem;
+                    position:relative;
+                    bottom: 10px;
+                    margin: 0;
+                }
             }
             .prod-desc{
                 background-color: $grey;
@@ -217,7 +227,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: $white;
+    // background: $white;
     margin: 2px;
     padding: 10px;
     width:200px;
@@ -226,6 +236,6 @@
 .rest-tiles 
         li 
             img {
-                width:4rem;
-                height:4rem;
+                // width:4rem;
+                height:8rem;
 }

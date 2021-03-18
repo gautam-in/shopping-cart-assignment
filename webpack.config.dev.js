@@ -1,6 +1,6 @@
 var webpack             = require('webpack');
 var HtmlWebpackPlugin   = require('html-webpack-plugin');
-
+require("es6-promise").polyfill();
 module.exports = {
     //devtool: 'cheap-module-eval-source-map',
     devtool: 'source-map',
@@ -9,6 +9,7 @@ module.exports = {
     },
     entry: {
         app: [
+            "whatwg-fetch", "@babel/polyfill",
             'webpack-dev-server/client?http://localhost:8080',
             'webpack/hot/dev-server',
             './src/index.js',
@@ -39,6 +40,7 @@ module.exports = {
         historyApiFallback: {
           index: '/'
         },
+        disableHostCheck: true
         // host:'10.46.16.85',
         // port: 8888
     },
@@ -97,5 +99,9 @@ module.exports = {
                 }
             }
         }),
+
+        // new webpack.ProvidePlugin({
+        //     fetch: 'exports-loader?self.fetch!whatwg-fetch/dist/fetch.umd'
+        // })
     ]
 };

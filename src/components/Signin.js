@@ -77,22 +77,17 @@ class Signin extends React.Component {
   render(){
     const {router,productInfo} = this.props;
     const {loginError,openModal} = this.state;
-  return (
+  return (<React.Fragment>
     <main className="App signin-area">
-        <Header router={router} cartClick={this.showCartView} cartInfo={productInfo.cartItems}></Header>
+        {/* <Header router={router} cartClick={this.showCartView} cartInfo={productInfo.cartItems}></Header> */}
         <section className="login-area">
             <div className="row">
             <div className="col span-1-of-2">
               <div className="login-info-area">
-                <div> </div>
                 <div className="row login-left-area">
                   <h1>Login</h1>
                   <p>{Constants.TEXTS.DEFAULTS.get_access_signin}</p>
-                  {loginError && (<div id="errorarea" className="errorArea">
-                    <p>{Constants.TEXTS.DEFAULTS.invalid_login}</p>
-                  </div>)}
                 </div>
-                <div> </div>
               </div>
             </div>
             <div className="col span-1-of-2">
@@ -105,6 +100,9 @@ class Signin extends React.Component {
                     <input type="password" aria-label={Constants.TEXTS.FORM_INPUTS.pwd.label} className="inputText" id="password-input" value={this.state.password || ''} onChange={(event)=>this.inputHandler(event,'password')} placeholder=" " required/>
                     <span className="floating-label">{Constants.TEXTS.FORM_INPUTS.pwd.value}</span>
                   </div>
+                  {loginError && (<div id="errorarea" className="errorArea">
+                    <p>{Constants.TEXTS.DEFAULTS.invalid_login}</p>
+                  </div>)}
                   <div>
                     <button type="submit" aria-label={Constants.TEXTS.FORM_INPUTS.signin_submit.label} onClick={(event)=>this.onSubmitHandler(event)} className="login btn big-btn">{Constants.TEXTS.FORM_INPUTS.signin_submit.value}</button>
                   </div>
@@ -112,7 +110,7 @@ class Signin extends React.Component {
             </div>
             </div>
         </section>
-        <Footer></Footer>
+        {/* <Footer></Footer> */}
         {openModal ? (<Modal
         open={openModal}
         onClose={this.onCloseModal}
@@ -130,7 +128,7 @@ class Signin extends React.Component {
         <Cart cartData={productInfo.cartItems} checkoutComplete={this.checkoutComplete} closeModal={this.onCloseModal}></Cart>
       </Modal>) : null}
     </main>
-  );
+    </React.Fragment>);
   }
 }
 function mapStateToProps(state) {

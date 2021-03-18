@@ -1,7 +1,8 @@
 // import constants from './constants';
 export const commonHeaders = {
-    Accept: 'application/json',
+    'Accept': 'application/json',
     'Content-Type': 'application/json; charset=UTF-8',
+    'Access-Control-Allow-Origin': '*'
 };
 export function checkHttpStatus(response) {
     if (response.status >= 200 && response.status < 300) {
