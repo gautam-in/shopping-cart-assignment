@@ -58,6 +58,7 @@ class Header extends React.Component {
     cartClick=()=>{
         if(this.state.dimensions && this.state.dimensions.width && this.state.dimensions.width < 480 && this.props.router){ //1024
             this.props.router.push('/cart');
+            this.props.type();
         } else {
             this.props.cartClick();
         }
@@ -81,10 +82,10 @@ class Header extends React.Component {
                             <li aria-label="Navigate to Product listing page"><Link to="/products">Products</Link></li>
                             </React.Fragment>)}
                             {this.state.isMobileView && (<React.Fragment>
-                            <li aria-label="Navigate to Home"><Link to={`/home`} >&#9751;</Link></li>
-                            <li aria-label="Navigate to Product listing page"><Link to="/products">&#9783;</Link></li>
-                            <li aria-label="Navigate to Signin page"><Link to={`/signin`} >&#9731;</Link></li>
-                            <li aria-label="Navigate to Signup page"><Link to="/signup">&reg;</Link></li>
+                            <li aria-label="Navigate to Home" onClick={this.props.type}><Link to={`/home`} >&#9751;</Link></li>
+                            <li aria-label="Navigate to Product listing page" onClick={this.props.type}><Link to="/products">&#9783;</Link></li>
+                            <li aria-label="Navigate to Signin page" onClick={this.props.type}><Link to={`/signin`} >&#9731;</Link></li>
+                            <li aria-label="Navigate to Signup page" onClick={this.props.type}><Link to="/signup">&reg;</Link></li>
                             </React.Fragment>)}
                            
                         </ul>

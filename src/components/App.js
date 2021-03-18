@@ -11,9 +11,13 @@ import Footer from '../presentations/Footer';
 class App extends Component {
     constructor(props) {
         super(props);
-        this.state = {openModal:false}
+        this.state = {
+            openModal:false,
+            hideFooter: false
+        }
     }
     componentDidMount(){
+        this.hideFooter();
         window.addEventListener('offline', this.checkBroswerState);
         window.addEventListener('online', this.checkBroswerState);
     }
@@ -32,6 +36,12 @@ class App extends Component {
         this.props.resetCartData();
         this.onCloseModal();
         toastr.success(Constants.TEXTS.TOASTS.cart_emptied,Constants.TEXTS.TOASTS.order_placed,{timeOut:1000});
+    }
+    hideFooter=()=>{
+        if(window.location.pathname.indexOf('cart') == 1)
+        this.setState({hideFooter: true});
+        else
+        this.setState({hideFooter: false});
     }
     showCartView=()=>{
         this.setState({openModal: true});
@@ -53,9 +63,9 @@ class App extends Component {
         const {productInfo,router} = this.props;
         const {openModal} = this.state;
         return (<React.Fragment>
-            <Header router={router} cartClick={this.showCartView} cartInfo={productInfo.cartItems}></Header>
+            <Header type={this.hideFooter} router={router} cartClick={this.showCartView} cartInfo={productInfo.cartItems}></Header>
             {this.props.children}
-            <Footer />
+            {!this.state.hideFooter && <Footer />}
             {openModal ? (<Modal
                 open={openModal}
                 onClose={this.onCloseModal}
