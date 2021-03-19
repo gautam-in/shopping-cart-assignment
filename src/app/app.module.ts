@@ -1,4 +1,4 @@
-import {HttpClientModule} from '@angular/common/http';
+import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 import {NgModule} from '@angular/core';
 import {ReactiveFormsModule} from '@angular/forms';
 import {BrowserModule} from '@angular/platform-browser';
@@ -10,6 +10,7 @@ import {NgxsModule} from '@ngxs/store';
 import {AppComponent} from './app.component';
 import {routes} from './app.routes';
 import {ComponentsModule} from './components/components.module';
+import {HttpConfigInterceptor} from './services/httpConfig.interceptor';
 import {CartState} from './store/state/cart.state';
 
 @NgModule({
@@ -26,7 +27,9 @@ import {CartState} from './store/state/cart.state';
     NgxsReduxDevtoolsPluginModule.forRoot(),
     ReactiveFormsModule,
   ],
-  providers: [],
+  providers: [
+    {provide: HTTP_INTERCEPTORS, useClass: HttpConfigInterceptor, multi: true}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {

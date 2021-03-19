@@ -13,12 +13,12 @@ import {ProductModel} from '../../models/product-model';
 })
 export class ShoppingService {
 
-  serverUrl = 'http://localhost:5000/';
+  serverUrl = 'http://localhost:3000/api/';
 
   constructor(private httpClient: HttpClient) {
   }
 
-  getAllBanners(): Observable<BannersModel[]> {
+  getAllActiveBannersInSortedOrder(): Observable<BannersModel[]> {
     return this.httpClient.get<BannersModel[]>(this.serverUrl + 'banners').pipe(
       map(banners => banners
         .filter(banner => banner.isActive)
@@ -27,7 +27,7 @@ export class ShoppingService {
     );
   }
 
-  getAllCategories(): Observable<CategoryModel[]> {
+  getAllEnabledCategoriesInSortedOrder(): Observable<CategoryModel[]> {
     return this.httpClient.get<CategoryModel[]>(this.serverUrl + 'categories').pipe(
       map(categories => categories
         .filter(category => category.enabled)

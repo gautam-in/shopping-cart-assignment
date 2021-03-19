@@ -26,11 +26,11 @@ export class HomeComponent implements OnInit {
   }
 
   getAllBanners(): void {
-    this.bannerImages = this.shoppingService.getAllBanners();
+    this.bannerImages = this.shoppingService.getAllActiveBannersInSortedOrder();
   }
 
   getAllCategories(): void {
-    this.categories = this.shoppingService.getAllCategories();
+    this.categories = this.shoppingService.getAllEnabledCategoriesInSortedOrder();
   }
 
   redirectToProducts(id: string): void {

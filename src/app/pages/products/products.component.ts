@@ -36,7 +36,7 @@ export class ProductsComponent implements OnInit {
   }
 
   getCategories(): void {
-    this.categories = this.shoppingService.getAllCategories();
+    this.categories = this.shoppingService.getAllEnabledCategoriesInSortedOrder();
   }
 
   addToCart(product: ProductModel): void {
