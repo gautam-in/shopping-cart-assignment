@@ -23,6 +23,24 @@ export class AuthService {
     }
   }
 
+  isAuthenticated(): boolean {
+    const window = this.windowService.getWindow();
+
+    if (typeof window.Storage !== undefined) {
+      let user: string | User =
+        window.sessionStorage.getItem(this.userStorageKey) || '';
+
+      try {
+        user = JSON.parse(user) as User;
+        return user.email ? true : false;
+      } catch (e) {
+        return false;
+      }
+    }
+
+    return false;
+  }
+
   signup(user: User) {
     this.authenticateLocally(user);
     return of(true);
