@@ -1,0 +1,43 @@
+:host ::ng-deep .carousel-indicators li {
+  background-color: #777;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+:host ::ng-deep .carousel-control-prev-icon {
+  background-image: none;
+
+  &::after {
+    padding: 0.5rem;
+    content: "PREV";
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.35);
+  }
+}
+
+:host ::ng-deep .carousel-control-next-icon {
+  background-image: none;
+
+  &::after {
+    padding: 0.5rem;
+    content: "NEXT";
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.35);
+  }
+}
+
+.category {
+  box-shadow: 0px 2px 2px #e1e1e1;
+  margin-top: 1.25rem;
+}
+
+.category-image {
+  display: flex;
+  align-items: center;
+  flex: 0 0 30%;
+}
+
+.category-details {
+  flex-grow: 1;
+}

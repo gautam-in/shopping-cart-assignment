@@ -1,1 +1,29 @@
-<p>home works!</p>
+<main id="main-content" class="py-3" tabindex="-1">
+  <carousel>
+    <slide *ngFor="let banner of banners$ | async">
+      <img
+        [src]="banner?.bannerImageUrl"
+        [alt]="banner?.bannerImageAlt"
+        style="display: block; width: 100%"
+      />
+    </slide>
+  </carousel>
+
+  <div cleass="categories-container ">
+    <div
+      class="category d-flex p-4"
+      *ngFor="let category of categories$ | async; let index = index"
+      [ngClass]="{ 'flex-row-reverse': isOdd(index) }"
+    >
+      <div class="category-image">
+        <img [src]="category.imageUrl" alt="" class="img-fluid" />
+      </div>
+
+      <div class="category-details text-center">
+        <h4>{{ category.name }}</h4>
+        <p>{{ category.description }}</p>
+        <button class="btn btn-primary">Explore {{ category.key }}</button>
+      </div>
+    </div>
+  </div>
+</main>
