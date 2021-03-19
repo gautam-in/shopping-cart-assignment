@@ -1,0 +1,36 @@
+<header class="d-flex justify-content-center">
+  <div class="header-content d-flex">
+    <a routerLink="/" aria-label="Homepage" class="link-logo">
+      <img src="assets/images/logo.png" alt="" width="150px" />
+    </a>
+
+    <div class="d-flex flex-grow flex-column">
+      <div class="flex-grow pb-2">
+        <a [href]="skipLinkPath" class="skip-block"> Skip to main content </a>
+
+        <div class="pull-right">
+          <a routerLink="/user/login">SignIn</a>
+          <a routerLink="/user/register" class="ml-2">Register</a>
+        </div>
+      </div>
+
+      <div class="d-flex justify-content-sb">
+        <nav>
+          <ul>
+            <li>
+              <a>Home</a>
+            </li>
+            <li>
+              <a>Products</a>
+            </li>
+          </ul>
+        </nav>
+
+        <button class="btn-cart">
+          <span class="icon-cart"></span>
+          <span class="ml-2"> 0 items</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</header>

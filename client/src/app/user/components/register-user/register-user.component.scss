@@ -1,0 +1,80 @@
+.register-form-page {
+  width: 1024px;
+  margin: 0 auto;
+}
+
+.register-form-container {
+  width: 80%;
+}
+
+.form-heading-container {
+  flex: 0 1 50%;
+
+  p {
+    font-weight: 600;
+  }
+}
+
+.register-form {
+  flex: 1 0 50%;
+  margin-top: 1.25rem;
+}
+
+.floating-label {
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.floating-label label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: all 200ms;
+  color: #acacac;
+}
+
+.floating-control {
+  border: 0;
+  border-bottom: 1px solid #acacac;
+}
+
+.floating-control:focus {
+  outline: none;
+  border-bottom: 2px solid #58c6ce;
+}
+
+.floating-label .floating-control:focus + label,
+.floating-label .floating-control:not(:placeholder-shown) + label {
+  top: -1.25rem;
+}
+
+.floating-label .floating-control:focus + label {
+  color: #58c6ce;
+}
+
+.floating-control,
+.btn-signup {
+  width: 100%;
+  max-width: 330px;
+}
+
+.btn-signup {
+  background-color: #d10157;
+  color: #fff;
+  border: none;
+}
+
+.alert-danger {
+  color: red;
+}
+
+@media (max-width: 768px) {
+  .register-form-container {
+    flex-wrap: wrap;
+  }
+
+  .form-heading-container,
+  .register-form {
+    flex-basis: 100%;
+  }
+}
