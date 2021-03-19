@@ -1,0 +1,7 @@
+<button [ngClass]="{'w-100': isFullWidth}"
+        (click)="onClick()"
+        [disabled]="disabled"
+        [type]="type">
+  {{ content }}
+  <span class="d-inline d-lg-none">{{ mobileContent }}</span>
+</button>

@@ -1,0 +1,10 @@
+@import 'src/assets/scss/variables.scss';
+
+footer {
+    background-color: rgb(236, 236, 236);
+    padding: 0.25rem 0;
+
+    .content {
+        font-weight: 400;
+    }
+}

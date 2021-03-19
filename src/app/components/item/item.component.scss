@@ -1,0 +1,46 @@
+@import 'src/assets/scss/variables.scss';
+
+.item-wrapper {
+  border-bottom: 2px dotted #545454;
+
+  .heading {
+    font-weight: 700;
+    overflow: hidden;
+  }
+
+  .description {
+    background-color: #e2e2e2;
+    height: 6.7rem;
+    overflow: hidden;
+  }
+
+  .price-wrapper {
+    p {
+      flex: 1;
+    }
+
+    app-button {
+      flex: 1;
+    }
+  }
+}
+
+@media only screen and (min-width: $breakpoint-tablet) {
+  .item-wrapper {
+    .heading {
+      height: 4.8rem;
+    }
+
+    .description {
+      margin-bottom: 0;
+    }
+  }
+}
+
+@media only screen and (min-width: $breakpoint-laptop) {
+  .item-wrapper {
+    .heading {
+      height: 4.8rem;
+    }
+  }
+}

@@ -1,0 +1,28 @@
+section {
+  & > div {
+    position: relative;
+    background-color: white;
+    margin-top: 1rem;
+
+    &:after {
+      content: "";
+      position: absolute;
+      bottom: -14px;
+      left: 0;
+      right: 0;
+      height: 40px;
+      width: 90%;
+      margin: auto;
+      z-index: -2;
+      border-radius: 50%;
+      transform: scaleY(0.3);
+      box-shadow: 0 8px 14px rgba(91, 91, 91, 1);
+    }
+
+    &:last-child {
+      &:after {
+        height: 0;
+      }
+    }
+  }
+}

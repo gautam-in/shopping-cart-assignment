@@ -1,0 +1,58 @@
+/* You can add global styles to this file, and also import other style files */
+@import 'src/assets/scss/variables.scss';
+
+* {
+  font-family: Dosis;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 1.5;
+  box-sizing: border-box;
+}
+
+body, h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+}
+
+p {
+  margin-bottom: 1rem;
+  margin-top: 0;
+}
+
+img {
+  vertical-align: middle;
+}
+
+button {
+  cursor: pointer;
+}
+
+@media only screen and (min-width: $breakpoint-tablet) {
+  * {
+    font-size: 16px;
+  }
+}
+
+a {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+*:focus {
+  outline: 0;
+}
+
+.error {
+  color: red;
+}
+
+/* Importing SCSS files */
+@import "src/assets/scss/common";
+@import "src/assets/scss/spacing";
+@import "src/assets/scss/responsive";
+@import "src/assets/scss/input";
+@import '~ngx-owl-carousel-o/lib/styles/scss/owl.carousel';
+@import '~ngx-owl-carousel-o/lib/styles/scss/owl.theme.default';

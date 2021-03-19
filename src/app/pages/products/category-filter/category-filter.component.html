@@ -1,0 +1,17 @@
+<ul class="h-100 m-0 px-1 d-none d-md-block">
+  <li *ngFor="let category of categories | async" class="px-3 py-2"
+      (click)="updateCategory(category.id)"
+      [ngClass]="{'active': category.id === activeCategory}">
+    {{ category.name }}
+  </li>
+</ul>
+
+<!--Mobile Filter-->
+<select class="d-block d-md-none mt-3 w-100 p-3"
+        #categoryFilter
+        (change)="updateCategory(categoryFilter.value)">
+  <option [selected]="activeCategory === ''" value="">Select Category</option>
+  <option *ngFor="let category of categories | async" class="px-3 py-2"
+          [value]="category.id"
+          [selected]="category.id === activeCategory">{{ category.name }}</option>
+</select>

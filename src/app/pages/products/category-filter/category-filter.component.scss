@@ -1,0 +1,29 @@
+ul {
+  list-style: none;
+  background-color: #e8e8e8;
+
+  li {
+    border-bottom: 1px solid #d4d4d4;
+    color: #989898;
+    cursor: pointer;
+    transition: color 0.2s;
+
+    &:hover, &.active {
+      color: #b13047;
+    }
+  }
+}
+
+select {
+  border: none;
+  color: white;
+  letter-spacing: 1px;
+  background: url(/assets/images/arrow.svg) no-repeat right #b13047;
+  background-size: 20px;
+  -webkit-appearance: none;
+  background-position-x: 95%;
+
+  option {
+    width: 100%;
+  }
+}

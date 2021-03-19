@@ -1,0 +1,11 @@
+.box-shadow {
+  position: absolute;
+  top: 10%;
+  right: 0;
+  width: 34px;
+  height: 80%;
+  z-index: 1;
+  -webkit-box-shadow: 10px 0px 21px -16px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 10px 0px 21px -16px rgba(0, 0, 0, 0.75);
+  box-shadow: 10px 0px 21px -16px rgba(0, 0, 0, 0.75);
+}

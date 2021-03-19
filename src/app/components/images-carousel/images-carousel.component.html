@@ -1,0 +1,28 @@
+<!--<ngb-carousel #ngCarousel-->
+<!--  *ngIf="banners | async"-->
+<!--  [interval]="2000"-->
+<!--  [keyboard]="true"-->
+<!--  [pauseOnHover]="true"-->
+<!--  [showNavigationArrows]="false"-->
+<!--  [showNavigationIndicators]="true">-->
+<!--  <ng-template ngbSlide *ngFor="let banner of banners | async">-->
+<!--    <div class="wrapper">-->
+<!--      <img [src]="banner.bannerImageUrl" [alt]="banner.bannerImageAlt" />-->
+<!--    </div>-->
+<!--  </ng-template>-->
+<!--</ngb-carousel>-->
+<!--<button class="prev-button d-none d-md-block" (click)="goToPrev()">PREV</button>-->
+<!--<button class="next-button d-none d-md-block" (click)="goToNext()">NEXT</button>-->
+
+<!--<mat-carousel>-->
+<!--  <mat-carousel-slide *ngFor="let banner of banners | async">-->
+<!--    <div class="wrapper">-->
+<!--      <img [src]="banner.bannerImageUrl" [alt]="banner.bannerImageAlt"/>-->
+<!--    </div>-->
+<!--  </mat-carousel-slide>-->
+<!--</mat-carousel>-->
+<owl-carousel-o [options]="customOptions">
+  <ng-template carouselSlide *ngFor="let banner of banners | async">
+    <img [src]="banner.bannerImageUrl" [alt]="banner.bannerImageAlt"/>
+  </ng-template>
+</owl-carousel-o>

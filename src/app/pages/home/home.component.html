@@ -1,0 +1,14 @@
+<section class="container my-2">
+  <div class="row">
+    <div class="col-12 p-0">
+      <app-images-carousel [banners]="bannerImages"></app-images-carousel>
+    </div>
+  </div>
+
+  <div class="row" *ngFor="let category of categories | async; let i = index">
+    <app-category [categoryDetails]="category"
+                  class="col-12"
+                  [isLeftAlign]="i%2 !== 0"
+                  (redirect)="redirectToProducts(category.id)"></app-category>
+  </div>
+</section>
