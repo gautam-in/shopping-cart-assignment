@@ -1,0 +1,86 @@
+
+  .main{
+    display: flex;
+    }
+  .title{
+    flex: 0 1 50%;
+    padding-top: 4%;
+    padding-left: 20%;
+  }
+  .regForm{
+    flex: 0 1 50%;
+    padding-top: 2%;
+  }
+  .regForm form div {
+    position: relative;
+    padding-top: 15px;
+  }
+  .regForm form div  label{
+    font-size: 20px;
+  }
+  .regForm form div  input{
+    border: 0;
+    border-bottom: 1.5px solid lightgrey;
+    outline: none;
+    min-width: 250px;
+    font-size: 20px;
+    transition: all .3s ease-out;
+    -webkit-transition: all .3s ease-out;
+    -moz-transition: all .3s ease-out;
+    -webkit-appearance:none;
+    border-radius:0;
+  }
+  
+  .regForm form div  input:focus{
+    border-bottom: 2px solid #00E5EE;
+  }
+  
+  .regForm form div  input::placeholder{
+    color:transparent;
+  }
+  
+  .regForm form div  label{
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-top: 13px;
+    transition: all .3s ease-out;
+    -webkit-transition: all .3s ease-out;
+    -moz-transition: all .3s ease-out;
+  }
+  
+  .regForm form div  input:required:invalid + label{
+    color: red;
+  }
+  .regForm form div  input:focus:required:invalid{
+    border-bottom: 2px solid red;
+  }
+  .regForm form div  input:required:invalid + label:before{
+    content: '*';
+  }
+  .regForm form div  input:focus + label,
+  .regForm form div  input:not(:placeholder-shown) + label{
+    font-size: 12px;
+    margin-top: 0;
+    color: #00E5EE;
+  }
+  .regForm input[type="submit"]{
+    border-bottom: none;
+    cursor: pointer;
+    background: #f7497d;
+    color: #fff;
+    margin-bottom: 0;
+    padding: 0.5%;
+}
+.regForm label{
+  color:gray;
+}
+.help-block{
+    font-size: 10px;
+    color: red;
+}
+.regForm p {
+  font-size: 10px;
+  color: red;
+}
