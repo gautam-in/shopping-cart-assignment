@@ -1,8 +1,3 @@
-.register-form-page {
-  width: 1024px;
-  margin: 0 auto;
-}
-
 .register-form-container {
   width: 80%;
 }
@@ -18,6 +13,7 @@
 .register-form {
   flex: 1 0 50%;
   margin-top: 1.25rem;
+  max-width: 330px;
 }
 
 .floating-label {
@@ -55,7 +51,6 @@
 .floating-control,
 .btn-signup {
   width: 100%;
-  max-width: 330px;
 }
 
 .btn-signup {

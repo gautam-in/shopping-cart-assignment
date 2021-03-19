@@ -1,20 +1,20 @@
-<header class="d-flex justify-content-center">
+<header class="row d-flex justify-content-center">
   <div class="header-content d-flex">
     <a routerLink="/" aria-label="Homepage" class="link-logo">
       <img src="assets/images/logo.png" alt="" width="150px" />
     </a>
 
-    <div class="d-flex flex-grow flex-column">
-      <div class="flex-grow pb-2">
+    <div class="d-flex flex-grow-1 flex-column">
+      <div class="flex-grow-1 pb-2">
         <a [href]="skipLinkPath" class="skip-block"> Skip to main content </a>
 
-        <div class="pull-right">
+        <div class="float-right">
           <a routerLink="/user/login">SignIn</a>
           <a routerLink="/user/register" class="ml-2">Register</a>
         </div>
       </div>
 
-      <div class="d-flex justify-content-sb">
+      <div class="d-flex justify-content-between">
         <nav>
           <ul>
             <li>

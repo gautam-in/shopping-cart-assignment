@@ -3,8 +3,14 @@ header {
 }
 
 .header-content {
-  width: 1024px;
+  width: 992px;
   margin: 0 auto;
+}
+
+@media (max-width: 991.98px) {
+  .header-content {
+    width: 100%;
+  }
 }
 
 .link-logo {

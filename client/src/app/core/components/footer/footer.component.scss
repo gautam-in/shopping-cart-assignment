@@ -5,6 +5,12 @@ footer {
 
 .footer-content {
   // TODO: make variable for size
-  width: 1024px;
+  width: 992px;
   margin: 0 auto;
+}
+
+@media (max-width: 991.98px) {
+  .footer-content {
+    width: 100%;
+  }
 }

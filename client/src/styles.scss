@@ -1,53 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
 
 @import url("https://fonts.googleapis.com/css?family=Dosis:400,600,700");
+@import "~bootstrap/dist/css/bootstrap.css";
 
 * {
   box-sizing: border-box;
   font-family: Dosis, Arial;
-}
-
-body {
-  margin: 0;
-}
-
-// flex based classes
-.d-flex {
-  display: flex;
-}
-
-.justify-content-center {
-  justify-content: center;
-}
-
-.justify-content-sb {
-  justify-content: space-between;
-}
-
-.flex-grow {
-  flex-grow: 1;
-}
-
-.flex-column {
-  flex-direction: column;
-}
-
-// float based classes
-.pull-right {
-  float: right;
-}
-
-// margins and paddings
-@for $size from 0 through 4 {
-  .ml-#{$size} {
-    margin-left: $size * 0.25rem;
-  }
-
-  .p-#{$size} {
-    padding: $size * 0.25rem;
-  }
-
-  .pb-#{$size} {
-    padding-bottom: $size * 0.25rem;
-  }
 }

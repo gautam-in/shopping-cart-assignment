@@ -26,7 +26,9 @@
     "@angular/router": "~11.2.5",
     "@angular/service-worker": "~11.2.5",
     "@nguniversal/express-engine": "^11.2.1",
+    "bootstrap": "^4.6.0",
     "express": "^4.15.2",
+    "ngx-bootstrap": "^6.2.0",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.11.3"
