@@ -1,4 +1,4 @@
-import {AbstractControl, FormGroup, ValidationErrors, ValidatorFn} from "@angular/forms";
+import {AbstractControl, FormGroup, ValidationErrors, ValidatorFn} from '@angular/forms';
 
 export class CustomValidator {
   static patternValidator(regex: RegExp, error: ValidationErrors): ValidatorFn {
@@ -22,6 +22,6 @@ export class CustomValidator {
       if (control1.value !== control2.value) {
         control2.setErrors({match: true});
       }
-    }
+    };
   }
 }

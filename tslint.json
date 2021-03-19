@@ -13,9 +13,6 @@
     "array-type": false,
     "arrow-return-shorthand": true,
     "curly": true,
-    "deprecation": {
-      "severity": "warning"
-    },
     "eofline": true,
     "import-blacklist": [
       true,

@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {Router} from '@angular/router';
 
-import {CustomValidator} from '../../services/validators/match-password';
+import {CustomValidator} from '../../services/validators/custom-validator';
 
 @Component({
   selector: 'app-register',
@@ -34,11 +34,11 @@ export class RegisterComponent implements OnInit {
       confirmPassword: [null, Validators.required]
     }, {
       validator: CustomValidator.match('password', 'confirmPassword')
-    })
+    });
   }
 
   onRegister() {
-    this.router.navigate(['home'])
+    this.router.navigate(['home']);
   }
 
 }

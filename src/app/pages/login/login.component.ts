@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {Router} from '@angular/router';
 
-import {CustomValidator} from '../../services/validators/match-password';
+import {CustomValidator} from '../../services/validators/custom-validator';
 
 @Component({
   selector: 'app-login',
@@ -29,7 +29,7 @@ export class LoginComponent implements OnInit {
           CustomValidator.patternValidator(/^\S*$/, {hasNoSpace: true})
         ]
       ]
-    })
+    });
   }
 
   onLogin() {
