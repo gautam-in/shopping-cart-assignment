@@ -1,0 +1,28 @@
+@import "../../Utilities//SCSS-Variables/variables.scss";
+
+.login > .title {
+  margin-top: 30px;
+}
+
+@media only screen and (max-width: $mobile-max-width) {
+  .login > .title {
+    text-align: center;
+  }
+}
+
+@media only screen and (min-width: $tablet-width) {
+  .login {
+    display: flex;
+    justify-content: space-around;
+    margin: 0px 15% 0px 15%;
+    form {
+      width: 300px;
+    }
+  }
+}
+
+@media only screen and (min-width: $desktop-width) {
+  .login {
+    margin: 0px 24% 0px 20%;
+  }
+}

@@ -1,0 +1,11 @@
+.category-item {
+  display: flex;
+  & article {
+    text-align: center;
+  }
+  & figure {
+    margin: 0;
+    display: flex;
+    align-items: center;
+  }
+}

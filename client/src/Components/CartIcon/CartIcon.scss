@@ -1,0 +1,24 @@
+.cart {
+  display: flex;
+  align-items: flex-end;
+  background-color: #f1f1f1;
+}
+.login-options {
+  display: flex;
+  align-items: flex-start;
+  width: 130px;
+  justify-content: space-around;
+  font-size: 14px;
+  & > a {
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+.header-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-size: 12px;
+}

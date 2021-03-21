@@ -1,0 +1,19 @@
+@import "../../Utilities//SCSS-Variables/variables.scss";
+
+.register {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+@media only screen and (max-width: $mobile-max-width) {
+  .register > form {
+    width: 300px;
+  }
+}
+
+@media only screen and (min-width: $tablet-width) {
+  .register > form {
+    width: 450px;
+  }
+}
