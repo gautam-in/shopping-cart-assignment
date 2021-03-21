@@ -1,0 +1,14 @@
+{
+  "roots": [
+    "<rootDir>/src"
+  ],
+  "setupFilesAfterEnv": [
+    "<rootDir>/src/setupTests.js"
+  ],
+  "transform": {
+    "^.+\\.(js|jsx|mjs|cjs|ts|tsx)$": "<rootDir>/jest/babelTransform.js",
+    "^.+\\.css$": "<rootDir>/jest/cssTransform.js",
+    "^(?!.*\\.(js|jsx|mjs|cjs|ts|tsx|css|json)$)": "<rootDir>/jest/fileTransform.js"
+  },
+  "resetMocks": true
+}

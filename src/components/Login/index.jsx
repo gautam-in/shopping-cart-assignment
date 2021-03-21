@@ -41,7 +41,7 @@ const Login = () => {
     if (!error) {
       history.push(WEB_PATH.HOME);
     }
-  }, [validateInputs, history.push]);
+  }, [validateInputs]);
 
   return (
     <LoginPage
