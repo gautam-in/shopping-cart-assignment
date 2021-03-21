@@ -9,14 +9,14 @@ import SignUpPage from './SignUpPage';
 
 const SignUp = () => {
   const history = useHistory();
-  const [ fields, setFields ] = React.useState({
+  const [fields, setFields] = React.useState({
     firstName: {
       isRequired: true,
       requiredError: 'Please enter the first name.',
       value: '',
       isMatching: false,
       matchError: '',
-      error: ''
+      error: '',
     },
     lastName: {
       isRequired: true,
@@ -24,7 +24,7 @@ const SignUp = () => {
       value: '',
       isMatching: false,
       matchError: '.',
-      error: ''
+      error: '',
     },
     email: {
       isRequired: true,
@@ -32,7 +32,7 @@ const SignUp = () => {
       value: '',
       isMatching: EMAIL,
       matchError: 'Invalid Email',
-      error: ''
+      error: '',
     },
     password: {
       isRequired: true,
@@ -40,7 +40,7 @@ const SignUp = () => {
       value: '',
       isMatching: PASSWORD,
       matchError: 'Invalid password.',
-      error: ''
+      error: '',
     },
     confirmPassword: {
       isRequired: true,
@@ -50,7 +50,7 @@ const SignUp = () => {
       matchError: 'Invalid password.',
       sameAs: 'password',
       sameAsError: 'Password and confirm password are not same',
-      error: ''
+      error: '',
     },
   });
 
@@ -58,17 +58,16 @@ const SignUp = () => {
     validateInputs,
     onInputChange,
     onSubmitValidate,
-    setFormActions,
-    formActions
-  } = formHook({setFields})
+    formActions,
+  } = formHook({ setFields });
 
   const onSubmit = React.useCallback((e, values) => {
     e.preventDefault();
-    let error = onSubmitValidate(values);
-    if(!error) {
+    const error = onSubmitValidate(values);
+    if (!error) {
       history.push(WEB_PATH.HOME);
     }
-  },[validateInputs,history.push]);
+  }, [validateInputs, history.push]);
 
   return (
     <SignUpPage
@@ -77,7 +76,7 @@ const SignUp = () => {
       onInputChange={onInputChange}
       onSubmit={onSubmit}
     />
-  )
+  );
 };
 
 export default SignUp;

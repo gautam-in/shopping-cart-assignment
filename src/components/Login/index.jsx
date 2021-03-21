@@ -9,14 +9,14 @@ import LoginPage from './LoginPage';
 
 const Login = () => {
   const history = useHistory();
-  const [ fields, setFields ] = React.useState({
+  const [fields, setFields] = React.useState({
     email: {
       isRequired: true,
       requiredError: 'Please enter the email.',
       value: '',
       isMatching: EMAIL,
       matchError: 'Invalid Email',
-      error: ''
+      error: '',
     },
     password: {
       isRequired: true,
@@ -24,7 +24,7 @@ const Login = () => {
       value: '',
       isMatching: PASSWORD,
       matchError: 'Invalid password.',
-      error: ''
+      error: '',
     },
   });
 
@@ -32,17 +32,16 @@ const Login = () => {
     validateInputs,
     onInputChange,
     onSubmitValidate,
-    setFormActions,
-    formActions
-  } = formHook({setFields})
+    formActions,
+  } = formHook({ setFields });
 
   const onSubmit = React.useCallback((e, values) => {
     e.preventDefault();
-    let error = onSubmitValidate(values);
-    if(!error) {
+    const error = onSubmitValidate(values);
+    if (!error) {
       history.push(WEB_PATH.HOME);
     }
-  },[validateInputs,history.push]);
+  }, [validateInputs, history.push]);
 
   return (
     <LoginPage
@@ -52,6 +51,6 @@ const Login = () => {
       onSubmit={onSubmit}
     />
   );
-}
+};
 
 export default Login;

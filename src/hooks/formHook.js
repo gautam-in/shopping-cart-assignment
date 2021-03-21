@@ -1,11 +1,11 @@
 import React from 'react';
+import { forEach } from 'lodash';
 import { validateRegex } from '../utils/common';
 
 const formHook = ({ setFields }) => {
-  
-  const [ formActions, setFormActions ] = React.useState({
+  const [formActions, setFormActions] = React.useState({
     isSubmitting: false,
-    hasErrors: false
+    hasErrors: false,
   });
 
   const validateInputs = React.useCallback((field, input, fields) => {
@@ -25,39 +25,38 @@ const formHook = ({ setFields }) => {
   const onInputChange = React.useCallback((e, field, fields) => {
     const input = e.target.value;
     const updated = validateInputs(field, input, fields);
-    setFormActions(a => ({ ...a, isSubmitting:false, hasErrors: !!updated.error }));
-    setFields(v => ({ ...v, [e.target.name]: updated }));
+    setFormActions((a) => ({ ...a, isSubmitting: false, hasErrors: !!updated.error }));
+    setFields((v) => ({ ...v, [e.target.name]: updated }));
   }, [validateInputs]);
 
-  const onSubmitValidate = React.useCallback( values => {
+  const onSubmitValidate = React.useCallback((values) => {
     let error = false;
     let submittedValues = {};
-    for (var k in values) { 
-      let validated = validateInputs(values[k], values[k].value, values);
-      if(validated.error) {
+    forEach(values, (v, i) => {
+      const validated = validateInputs(v, v.value, values);
+      if (validated.error) {
         error = true;
       }
       submittedValues = {
         ...submittedValues,
-        [k]: validated
-      }
-    }
-    setFormActions(a=>({...a, isSubmitting: true, hasErrors: error}));
-    if(error) {
+        [i]: validated,
+      };
+    });
+    setFormActions((a) => ({ ...a, isSubmitting: true, hasErrors: error }));
+    if (error) {
       setFields(submittedValues);
       return true;
-    } else {
-      return false;
     }
-  },[validateInputs]);
+    return false;
+  }, [validateInputs]);
 
   return {
     validateInputs,
     onInputChange,
     onSubmitValidate,
     setFormActions,
-    formActions
-  }
+    formActions,
+  };
 };
 
 export default formHook;

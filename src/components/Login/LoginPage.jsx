@@ -3,7 +3,9 @@ import { TextField } from '@material-ui/core';
 import './LoginPage.scss';
 
 const LoginPage = (props) => {
-  const { fields, formActions, onSubmit, onInputChange } = props;
+  const {
+    fields, formActions, onSubmit, onInputChange,
+  } = props;
   return (
     <section className="section-login">
       <div className="login-info">
@@ -11,7 +13,7 @@ const LoginPage = (props) => {
         <p>Get access to your Orders, Wishlist and Recommendations</p>
       </div>
       <div className="login-action">
-        <form method="post" action="#" className="login-form" autoComplete="off" onSubmit={(e) => onSubmit(e, {...fields})}>
+        <form method="post" action="#" className="login-form" autoComplete="off" onSubmit={(e) => onSubmit(e, { ...fields })}>
           <div className="field-row">
             <TextField
               name="email"
@@ -46,7 +48,7 @@ const LoginPage = (props) => {
         </form>
       </div>
     </section>
-  )
+  );
 };
 
 export default LoginPage;

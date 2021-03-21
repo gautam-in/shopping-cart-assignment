@@ -56,10 +56,14 @@ const config = {
         include: /\.module\.css$/,
       },
       {
-        test: /\.svg$/,
-        use: 'file-loader',
+        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        type: 'asset/resource',
       },
-      { test: /\.(png|woff|woff2|eot|ttf|svg)$/, loader: 'url-loader' }
+      {
+        test: /\.(woff|woff2|eot|ttf|otf)$/i,
+        type: 'asset/resource',
+      },
+      // { test: /\.(png|woff|woff2|eot|ttf|svg)$/, loader: 'url-loader' }
     ],
   },
   resolve: {
@@ -73,7 +77,10 @@ const config = {
   },
   plugins: [
     new CopyPlugin({
-      patterns: [{ from: 'static/images/favicon.ico' }],
+      patterns: [
+        { from: 'static/images/favicon.ico' },
+        { from: 'static/images' },
+      ],
     }),
     new HtmlWebpackPlugin({
       template: `${__dirname}/static/index.html`,
@@ -103,7 +110,7 @@ const config = {
   },
   devServer: {
     historyApiFallback: true,
-    contentBase: './dist',
+    contentBase: './',
     compress: true,
     port: 4000,
   },
