@@ -7,12 +7,6 @@ header {
   margin: 0 auto;
 }
 
-@media (max-width: 991.98px) {
-  .header-content {
-    width: 100%;
-  }
-}
-
 .link-logo {
   align-self: center;
 }
@@ -54,4 +48,16 @@ nav {
   mask: url("../../../../assets/images/cart.svg") no-repeat center;
   width: 25px;
   height: 25px;
+}
+
+@media (max-width: 991.98px) {
+  .header-content {
+    width: 100%;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .btn-cart {
+    padding: 1.5rem;
+  }
 }
