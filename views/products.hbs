@@ -1,0 +1,43 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Shopping App</title>
+    {{!--
+    <meta name="viewport" content="width=device-width" /> --}}
+    <link rel="stylesheet" href="../static/styles/products.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Dosis:400,600,700">
+</head>
+
+<body>
+    <div class="productPage">
+       
+        <nav>
+            {{#each categories}}
+            <a href="/">{{this.name}}</a>
+            {{/each}}
+        </nav>
+        
+        {{#each products}}
+        <div class="product">
+            <h4>{{this.name}}</h4>
+            <div class="products_description">
+                <section>
+                    <img src="{{this.imageURL}}">
+                </section>
+                <section>
+                    <p>{{this.description}}</p>
+                    <button class="displayTablet">Buy Now @ MRP Rs.{{this.price}}</button>
+                </section>
+            </div>
+            <button class="displayMobile">Buy Now @ MRP Rs.{{this.price}}</button>
+
+        </div>
+        {{/each}}
+    </div>
+
+</body>
+
+</html>
