@@ -1,0 +1,82 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* CSS RESET */
+
+@import './app/sass/variables';
+@import './app/sass/mixins';
+@import './app/sass/grid';
+@import './app/sass/typography';
+
+
+/* RESET */
+*{
+    padding : 0;
+    margin : 0;
+    box-sizing: border-box;
+}
+
+/*Normalization */
+
+html{
+    font-size: 75%;   
+    font-weight : 300;
+    line-height: 145%;
+    color : $color-grey-darker;
+    box-sizing: inherit;
+
+    @include responsive(small-tabs){
+        font-size: 62.5%;
+    }
+
+    @include responsive(mobile){
+        font-size: 50%;
+    }
+}
+
+nav ul{
+    list-style: none;
+}
+
+li a {
+    text-decoration: none;
+}
+
+/*Form */
+
+.form-group{
+    padding: .6rem;
+}
+
+.form-group >*{
+    width : 100%;
+    display: block;
+    padding: .6rem;
+}
+
+
+/* Flex Container */
+
+.row{
+    width: 100%;
+    padding : 2rem;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.alert-danger{
+    padding : 1rem 2rem;
+    font-size: 1rem;
+    color : red;
+    background-color: $color-grey-medium
+}
+
+/* Common Styles */
+
+.main-header,.main-content{
+    padding: 5px 10% 0 10%;
+    @include responsive(large-tabs){
+        padding: 5px 0 0 0;
+    }
+}
+
+

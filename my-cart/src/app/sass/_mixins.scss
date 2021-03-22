@@ -1,0 +1,25 @@
+@mixin responsive($device-type) {
+    @if $device-type == desktops {
+        @media screen and (max-width:1200px) {
+            @content;
+        }
+    }
+
+    @if $device-type == large-tabs {
+        @media screen and (max-width:1023px) {
+            @content;
+        }
+    }
+
+    @if $device-type == small-tabs {
+        @media screen and (max-width:767px) {
+            @content;
+        }
+    }
+
+    @if $device-type == mobile {
+        @media screen and (max-width:480px) {
+            @content;
+        }
+    }
+}

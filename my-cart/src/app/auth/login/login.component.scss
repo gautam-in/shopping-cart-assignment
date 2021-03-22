@@ -1,0 +1,40 @@
+@import './../../sass/variables';
+@import './../../sass/mixins';
+
+.form-control-input{
+    border:none;
+    border-bottom: 2px solid $color-grey-dark;
+}
+
+.form-control-input:focus{
+    color: #495057;
+    background-color: #fff;
+    border-bottom: 2px solid #80bdff;
+    outline: 0;
+}
+
+
+.login-info{
+    display: flex;
+    justify-content: flex-end;
+    padding: 2rem 5rem;
+
+    @include responsive(mobile){
+       justify-content: flex-start;
+       padding: 2rem 1rem;
+    }
+}
+
+.login-heading >*{
+    padding : 1rem 0rem;
+}
+
+.login-button{
+    background-color: $color-primary;
+    color: $color-white;
+    width: 100%;
+    padding: 0.60rem;
+    margin-top: 1rem;
+    border: none;
+    border-radius: 5px;
+}

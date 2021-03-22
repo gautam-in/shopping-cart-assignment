@@ -1,0 +1,72 @@
+<section class="login-section row">
+    <div class="col-5-of-12 col-lg-6-of-12  col-md-6-of-12 col-xs-12-of-12  login-info">
+        <div class="login-heading">
+            <h2 class="secondary-heading">Login</h2>
+            <p>Get Access to your Orders,Wishlist and Recommendations</p>
+        </div>
+    </div>
+    <div class="col-4-of-12 col-md-6-of-12 col-xs-12-of-12 login-form">
+        <form class="login-form" #loginForm="ngForm" (ngFormSubmit)="login(loginForm)">
+            <div class="form-group">
+                <label class="form-control-label" for="firstname">FirstName</label>
+                <input class="form-control-input" type="text" name="firstname" id="firstname" ngModel
+                    #firstname="ngModel" required />
+                <div class="alert-danger" *ngIf="firstname?.touched && firstname?.errors">
+                    <div *ngIf="firstname?.errors?.required">
+                        FirstName is required
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="form-control-label" for="lastname">Last Name</label>
+                <input class="form-control-input" type="text" name="lastname" id="lastname" ngModel
+                    #lastname="ngModel" required />
+                <div class="alert-danger" *ngIf="lastname?.touched && lastname?.errors">
+                    <div *ngIf="lastname?.errors?.required">
+                        LastName is required
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="form-control-label" for="firstname">Email</label>
+                <input class="form-control-input" type="text" name="email" id="email" ngModel
+                    #email="ngModel" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" required />
+                <div class="alert-danger" *ngIf="email?.touched && email?.errors">
+                    <div *ngIf="email?.errors?.required">
+                        Email is required
+                    </div>
+                    <div *ngIf="email?.errors?.pattern">
+                        Enter a valid email address
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="form-control-label" for="password">Password</label>
+                <input class="form-control-input" type="text" name="password" id="password" ngModel
+                    #password="ngModel" pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$" required />
+                <div class="alert-danger" *ngIf="password?.touched && password?.errors">
+                    <div *ngIf="password?.errors?.required">
+                        Password is Required
+                    </div>
+                    <div *ngIf="password?.errors?.pattern">
+                        Minimum six characters, atleast one letter and one number:
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="form-control-label" for="firstname">Confirm Password</label>
+                <input class="form-control-input" type="password" name="confirmpassword" id="confirmpassword" ngModel
+                    #confirmpassword="ngModel" pattern="{{password.value}}" required />
+                <div class="alert-danger" *ngIf="confirmpassword?.touched && confirmpassword?.errors">
+                    <div *ngIf="confirmpassword?.errors?.required">
+                        Confirm password
+                    </div>
+                    <div *ngIf="confirmpassword?.errors?.pattern">
+                        Password not matching
+                    </div>
+                </div>
+            </div>
+            <button class="login-button" type="submit">Login</button>
+        </form>
+    </div>
+</section>
