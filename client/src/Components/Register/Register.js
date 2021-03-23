@@ -1,88 +1,89 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import CustomButton from "../CustomButton/CustomButton";
 import FormInput from "../FormInput/FormInput";
+import { RegisterText } from "../../Constants/ConstantText";
 import "./Register.scss";
 
-class Register extends Component {
-  constructor() {
-    super();
-    this.state = {
-      firstName: "",
-      lastName: "",
-      email: "",
-      password: "",
-      confirmPassword: "",
-    };
-  }
-  handleChange = (event) => {
+const Register = () => {
+
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    password: "",
+    confirmPassword: ""
+  })
+
+  const handleChange = (event) => {
     const { value, name } = event.target;
-    this.setState({
+    setFormData((values) => ({
+      ...values,
       [name]: value,
-    });
+    }));
   };
-  handleSubmit = (e) => {
-    e.preventDefault();
+  const handleSubmit = (event) => {
+    debugger;
+    event.preventDefault();
   };
-  render() {
-    return (
-      <main className="register">
-        <h2>Register</h2>
-        <form onSubmit={this.handleSubmit}>
-          <FormInput
-            type="text"
-            name="firstName"
-            value={this.state.firstName}
-            label="First Name"
-            onChange={this.handleChange}
-            htmlFor="firstNameInput"
-            ariaLabel="FirstName Input"
-            required
-          />
-          <FormInput
-            type="text"
-            name="lastName"
-            value={this.state.lastName}
-            label="Last Name"
-            onChange={this.handleChange}
-            htmlFor="lastNameInput"
-            ariaLabel="LastName Input"
-            required
-          />
-          <FormInput
-            type="email"
-            name="email"
-            value={this.state.email}
-            label="Email"
-            onChange={this.handleChange}
-            htmlFor="emailInput"
-            ariaLabel="Email Input"
-            required
-          />
-          <FormInput
-            type="password"
-            name="password"
-            value={this.state.password}
-            label="Password"
-            onChange={this.handleChange}
-            htmlFor="passwordInput"
-            ariaLabel="Password Input"
-            required
-          />
-          <FormInput
-            type="password"
-            name="confirmPassword"
-            value={this.state.confirmPassword}
-            label="Confirm Password"
-            onChange={this.handleChange}
-            htmlFor="confirmPasswordInput"
-            ariaLabel="Confirm Password Input"
-            required
-          />
-          <CustomButton type="submit">Register</CustomButton>
-        </form>
-      </main>
-    );
-  }
+
+  return (
+    <main className="register">
+      <h2>Register</h2>
+      <form onSubmit={handleSubmit}>
+        <FormInput
+          type="text"
+          name="firstName"
+          value={formData.firstName}
+          label="First Name"
+          onChange={handleChange}
+          htmlFor="firstNameInput"
+          ariaLabel="FirstName Input"
+          required
+        />
+        <FormInput
+          type="text"
+          name="lastName"
+          value={formData.lastName}
+          label="Last Name"
+          onChange={handleChange}
+          htmlFor="lastNameInput"
+          ariaLabel="LastName Input"
+          required
+        />
+        <FormInput
+          type="email"
+          name="email"
+          value={formData.email}
+          label="Email"
+          onChange={handleChange}
+          htmlFor="emailInput"
+          ariaLabel="Email Input"
+          required
+        />
+        <FormInput
+          type="password"
+          name="password"
+          value={formData.password}
+          label="Password"
+          onChange={handleChange}
+          htmlFor="passwordInput"
+          ariaLabel="Password Input"
+          required
+        />
+        <FormInput
+          type="password"
+          name="confirmPassword"
+          value={formData.confirmPassword}
+          label="Confirm Password"
+          onChange={handleChange}
+          htmlFor="confirmPasswordInput"
+          ariaLabel="Confirm Password Input"
+          required
+        />
+        <CustomButton type="submit">{RegisterText}</CustomButton>
+      </form>
+    </main>
+  );
 }
 
 export default Register;
