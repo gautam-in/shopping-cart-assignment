@@ -1,0 +1,77 @@
+body{
+    font-family: Dosis;
+    background-color: #dcdcdcde;
+}
+body>div:nth-child(1){
+    background-color: black;
+    color: white;
+    position: relative;
+    padding: 10px;
+}
+body>div:nth-child(1)>p{
+    margin: 0px;
+}
+body>div:nth-child(1)>button{
+    background-color: black;
+    position: absolute;
+    right:7px;
+    top:4px;
+}
+body>div{
+    background-color: white;
+    margin: 10px 0px;
+}
+.cartDetails{
+    display: flex;
+    /* padding:10px; */
+}
+.cartDetails>section{
+    padding:10px
+}
+.cartDetails>section:nth-child(1){
+    height:100px;
+}
+.cartDetails>section:nth-child(1)>img{
+    height: 100%;
+    object-fit: cover;
+}
+/* .itemdetails{
+    position: relative;
+} */
+.total{
+    position: fixed;
+    right:20px;
+    /* top:10px; */
+}
+.round{
+    border-radius: 50%;
+    margin: 10px;;
+}
+button{
+    background-color: #e91e63;
+    background-color: #e91e63;
+    color:white;
+    /* border-radius: 5px; */
+    padding: 5px;
+    font-size: 20px;
+    border:none;
+}
+.promotionLogo{
+    margin: 10px;
+    padding:10px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: left;
+}
+.promotionLogo>p{
+    padding: 0px 30px;
+}
+footer{
+    position: fixed;
+    bottom: 15px;
+    width: 100%;
+    text-align: center;
+}
+footer>button{
+    width: 100%;
+}
