@@ -1,0 +1,74 @@
+body{
+    font-family: Dosis;
+    box-sizing: border-box;
+}
+.product{
+    margin:5%;
+    border-bottom-style: dashed;
+}
+.products_description{
+    display: flex;
+}
+button{
+    width:100%;
+    background-color: #e91e63;
+    color:white;
+    /* border-radius: 5px; */
+    padding: 5px;
+    font-size: 40px;
+    border:none;
+}
+@media only screen and (max-device-width: 600px){
+    /*.products_description>section:nth-child(2)>button{
+         width:100%;
+        background-color: #e91e63;
+        color:white;
+        padding: 5px;
+        font-size: 40px;
+        border:none; 
+    }*/
+    .products_description>section:nth-child(2)>p{
+        background-color: #69696914;
+        height:50%;
+        font-size:30px;
+        overflow-y: hidden;
+        vertical-align:middle;
+        padding:10px;
+        margin: 0px 0px 10%;
+    }
+    .displayMobile{
+        display: none;
+    }
+}
+
+@media only screen and (min-device-width: 600px) and (max-width: 1300px){
+    nav{
+        display: flex;
+        flex-direction: column;;
+    }
+    .displayTablet{
+    display: none;
+}
+.productPage{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    /* order: 2; */
+}
+.product{
+    width:30%;
+    margin:0px;
+}
+.products_description>section:nth-child(2)>p{
+    background-color: #69696914;
+    height:90%;
+    font-size:30px;
+    overflow-y: hidden;
+    vertical-align:middle;
+    padding:10px;
+    margin: 0px 0px 10%;
+}
+button{
+    margin:10px;
+}
+}
