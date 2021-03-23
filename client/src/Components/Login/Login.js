@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import CustomButton from "../CustomButton/CustomButton";
 import FormInput from "../FormInput/FormInput";
 import "./Login.scss";
+import { LoginText } from "../../Constants/ConstantText";
 
 class Login extends Component {
   constructor() {
@@ -49,7 +50,7 @@ class Login extends Component {
               ariaLabel="Password Input"
               required
             />
-            <CustomButton type="submit">Login</CustomButton>
+            <CustomButton type="submit">{LoginText}</CustomButton>
           </form>
         </section>
       </main>

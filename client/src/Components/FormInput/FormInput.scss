@@ -1,9 +1,12 @@
+@import "../../Utilities//SCSS-Variables/variables.scss";
+
 $sub-color: grey;
 $main-color: rgb(88, 161, 185);
+$font-color: black;
 
 @mixin shrinklabel {
   top: -14px;
-  font-size: 12px;
+  font-size: $primary-font-size;
   color: $main-color;
 }
 
@@ -13,7 +16,7 @@ $main-color: rgb(88, 161, 185);
   .form-input {
     background: none;
     background-color: white;
-    color: $sub-color;
+    color: $font-color;
     border: none;
     padding: 10px 10px 10px 5px;
     border-bottom: 1px solid $sub-color;

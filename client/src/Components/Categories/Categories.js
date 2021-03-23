@@ -2,12 +2,13 @@ import React from "react";
 import "./category.scss";
 
 const Categories = ({ categoryList }) => {
-  debugger;
-  let orderedCategories = categoryList
+
+  const orderedCategories = categoryList
     .filter((item) => item.order != -1)
     .sort((item1, item2) => {
       return item1.order - item2.order;
     });
+    
   return (
     <main>
       {orderedCategories.map((item, key) => {

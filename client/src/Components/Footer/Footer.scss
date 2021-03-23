@@ -1,5 +1,6 @@
+@import "../../Utilities//SCSS-Variables//variables.scss";
 footer {
-  background-color: #f1f1f1;
+  background-color: $secondary-color;
   p {
     text-align: center;
     padding: 15px;
