@@ -16,6 +16,7 @@ app.get('/', (req, response) => {
     //res.send("hello worl")
     let data;
     var categories;
+    var products;
     http.get('http://localhost:5000/banners',(resp)=>{
         resp.on('data',(res)=>{
            data = JSON.parse(res.toString())
@@ -35,12 +36,15 @@ app.get('/productsPage',(req,response)=>{
     let data;
     http.get('http://localhost:5000/products',resp=>{
         resp.on('data',res=>{
-            let products = JSON.parse(res.toString())
+            this.products = JSON.parse(res.toString())
            // response.send("products")
-            response.render('products',{products: products,categories:this.categories})
+            response.render('products',{products: this.products,categories:this.categories})
         })
     })
     
+})
+app.get('/cart',(req,res)=>{
+    res.render('cart',{products:this.products})
 })
 
 
