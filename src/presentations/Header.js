@@ -70,8 +70,8 @@ class Header extends React.Component {
     }
     render(){   
         const {userName,itemCount} = this.state;
-        return (<div className="header-area">
-            <header>
+        return (<header className="header-area">
+            {/* <header> */}
                 <div className="sticky-nav">
                     <div className="row">
                         <img onClick={this.showHome} src={window.location.origin + '/static/images/logo.png'} alt="sabka bazaar" className="logo" /> {/* {Logo} */}
@@ -111,8 +111,8 @@ class Header extends React.Component {
                     </div>
                 </div>
             
-        </header>
-        </div>);
+        {/* </header> */}
+        </header>);
 }}
 
 function mapStateToProps(state){
