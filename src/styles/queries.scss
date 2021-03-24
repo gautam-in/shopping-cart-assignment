@@ -214,7 +214,9 @@
                     align-items: center;
                     padding-top: 5px;
                     .prod-infodetails{
-                        margin-left: 10px;
+                        // margin-left: 10px;
+                        margin:0 6px 0 0;
+                        padding-left:10px;
                         .buy-area > div:nth-child(1){
                             display: none;
                         }
@@ -330,7 +332,8 @@
                 align-items: center;
                 padding-top: 10px;
                 .prod-infodetails{
-                    margin-left: 10px;
+                    // margin-left: 10px;
+                    margin:0 6px 0 0;
                     .buy-area > div:nth-child(1){
                         display: none;
                     }
@@ -386,7 +389,8 @@
                     height: auto;
                     // padding-top: 5px;
                     .prod-infodetails{
-                        margin-left: 10px;
+                        // margin-left: 10px;
+                        margin:0 6px 0 0;
                         .buy-area > div:nth-child(1){
                             display: block !important;
                         }
@@ -428,7 +432,8 @@
             display: block !important;
             height: auto !important;
             .prod-infodetails{
-                margin-left: 10px;
+                // margin-left: 10px;
+                margin:0 6px 0 0;
                 .buy-area > div:nth-child(1){
                     display: block !important;
                 }

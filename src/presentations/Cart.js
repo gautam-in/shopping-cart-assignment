@@ -17,6 +17,9 @@ class Cart extends React.Component{
                 this.evaluateTotalPrice();
             });
         }
+        if (!Element.prototype.matches) { //IE-11 modal render fix 
+            Element.prototype.matches = Element.prototype.msMatchesSelector;
+        }
     }
     increaseQty=(e,itm,i)=>{
         let tempObj = Object.assign({},this.state);
