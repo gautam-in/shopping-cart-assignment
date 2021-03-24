@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
+import { forkJoin } from 'rxjs';
+import { tap } from 'rxjs/operators';
 
 import { Banner } from '../../models/banner';
 import { Category } from '../../models/category';
 import { HomeService } from '../../services/home.service';
+import { SEOService } from 'src/app/core/services/seo.service';
 
 @Component({
   selector: 'app-home',
@@ -11,14 +13,24 @@ import { HomeService } from '../../services/home.service';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
-  banners$: Observable<Banner[]> = new Observable();
-  categories$: Observable<Category[]> = new Observable();
+  banners: Banner[] = [];
+  categories: Category[] = [];
+  contentLoadedOnce: boolean = false;
 
-  constructor(private homeService: HomeService) {}
+  constructor(
+    private homeService: HomeService,
+    private seoService: SEOService
+  ) {}
 
   ngOnInit(): void {
-    this.getBanners();
-    this.getCategories();
+    this.seoService.setTitle('Home');
+    this.seoService.setDescription(
+      'Find the best deals on Sabka Bazaar and shop using different categories.'
+    );
+
+    forkJoin(this.getBanners(), this.getCategories()).subscribe(
+      () => (this.contentLoadedOnce = true)
+    );
   }
 
   isOdd(index: number) {
@@ -26,10 +38,14 @@ export class HomeComponent implements OnInit {
   }
 
   getBanners() {
-    this.banners$ = this.homeService.getBanners();
+    return this.homeService
+      .getBanners()
+      .pipe(tap((banners: Banner[]) => (this.banners = banners)));
   }
 
   getCategories() {
-    this.categories$ = this.homeService.getCategories();
+    return this.homeService
+      .getCategories()
+      .pipe(tap((categories: Category[]) => (this.categories = categories)));
   }
 }

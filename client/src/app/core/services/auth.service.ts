@@ -15,7 +15,7 @@ export class AuthService {
   authenticateLocally(user: User) {
     const window = this.windowService.getWindow();
 
-    if (typeof window.Storage !== undefined) {
+    if (window && typeof window.Storage !== undefined) {
       window.sessionStorage.setItem(
         this.userStorageKey,
         JSON.stringify({ email: user.email })
@@ -26,7 +26,7 @@ export class AuthService {
   isAuthenticated(): boolean {
     const window = this.windowService.getWindow();
 
-    if (typeof window.Storage !== undefined) {
+    if (window && typeof window.Storage !== undefined) {
       let user: string | User =
         window.sessionStorage.getItem(this.userStorageKey) || '';
 

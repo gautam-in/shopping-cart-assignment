@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 import { AuthService } from 'src/app/core/services/auth.service';
+import { SEOService } from 'src/app/core/services/seo.service';
 
 @Component({
   selector: 'app-register-user',
@@ -15,9 +15,9 @@ export class RegisterUserComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,
-    private title: Title,
     private router: Router,
-    private authService: AuthService
+    private authService: AuthService,
+    private seoService: SEOService
   ) {
     this.registerForm = this.fb.group(
       {
@@ -45,7 +45,10 @@ export class RegisterUserComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.title.setTitle('Signup | Sabka Bazaar');
+    this.seoService.setTitle('Signup');
+    this.seoService.setDescription(
+      'Register an account on Sabka Bazaar to view your orders, wallet balance, wishlist and to get personalized product recommendations.'
+    );
   }
 
   get f() {

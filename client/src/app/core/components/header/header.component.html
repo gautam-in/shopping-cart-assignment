@@ -1,7 +1,12 @@
 <header class="row d-flex justify-content-center">
   <div class="header-content d-flex">
     <a routerLink="/" aria-label="Homepage" class="link-logo">
-      <img src="assets/images/logo.png" alt="" width="150px" />
+      <img
+        srcset="assets/images/logo.png, assets/images/logo_2x.png 2x"
+        src="assets/images/logo.png"
+        alt=""
+        width="150px"
+      />
     </a>
 
     <div class="d-flex flex-grow-1 flex-column">
@@ -26,7 +31,7 @@
           </ul>
         </nav>
 
-        <button class="btn-cart">
+        <button class="btn-cart" aria-label="cart - 0 items">
           <span class="icon-cart"></span>
           <span class="ml-2"> 0 items</span>
         </button>
