@@ -5,7 +5,7 @@
   [ngClass]="{ 'main-before-load': !contentLoadedOnce }"
 >
   <carousel>
-    <slide *ngFor="let banner of banners">
+    <slide *ngFor="let banner of banners; trackBy: trackById">
       <picture>
         <source [srcset]="banner.bannerImageUrl + '.webp'" type="image/webp" />
         <source

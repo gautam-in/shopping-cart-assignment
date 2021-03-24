@@ -13,4 +13,13 @@
   color: #fff;
   border: none;
   border-radius: 0px;
+
+  &:hover,
+  &:focus,
+  &:not(:disabled):not(.disabled):active,
+  &:not(:disabled):not(.disabled).active {
+    color: #fff;
+    background-color: #a70045;
+    border-color: #a70045;
+  }
 }

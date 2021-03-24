@@ -3,9 +3,10 @@ import { forkJoin } from 'rxjs';
 import { tap } from 'rxjs/operators';
 
 import { Banner } from '../../models/banner';
-import { Category } from '../../models/category';
+import { Category } from 'src/app/shared/models/category';
 import { HomeService } from '../../services/home.service';
 import { SEOService } from 'src/app/core/services/seo.service';
+import { ProductsService } from 'src/app/core/services/products.service';
 
 @Component({
   selector: 'app-home',
@@ -19,6 +20,7 @@ export class HomeComponent implements OnInit {
 
   constructor(
     private homeService: HomeService,
+    private productsService: ProductsService,
     private seoService: SEOService
   ) {}
 
@@ -37,6 +39,10 @@ export class HomeComponent implements OnInit {
     return index % 2 !== 0;
   }
 
+  trackById(_: number, item: Banner | Category) {
+    return item.id;
+  }
+
   getBanners() {
     return this.homeService
       .getBanners()
@@ -44,7 +50,7 @@ export class HomeComponent implements OnInit {
   }
 
   getCategories() {
-    return this.homeService
+    return this.productsService
       .getCategories()
       .pipe(tap((categories: Category[]) => (this.categories = categories)));
   }

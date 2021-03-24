@@ -1,0 +1,78 @@
+<div class="d-flex">
+  <aside>
+    <ul class="list-group list-group-flush">
+      <li
+        class="list-group-item"
+        *ngFor="let category of categories"
+        [ngClass]="{ active: selectedCategoryId === category.id }"
+        (click)="selectCategory(category)"
+      >
+        {{ category.name }}
+      </li>
+    </ul>
+  </aside>
+
+  <main id="main-content" class="pl-3" tabindex="-1">
+    <div class="card-deck py-3 mx-0">
+      <div
+        class="card m-0"
+        *ngFor="let product of products$ | async; trackBy: trackProduct"
+      >
+        <h5 class="card-title font-weight-bold px-2 pt-2">
+          {{ product.name }}
+        </h5>
+
+        <picture>
+          <!-- TODO: Optimize: convert images into webp -->
+          <!-- <source
+            [srcset]="product.imageURL + '.webp'"
+            type="image/webp"
+          /> -->
+          <source
+            [srcset]="product.imageURL + '.' + product.imageType"
+            [type]="'image/' + product.imageType"
+          />
+          <img
+            [src]="product.imageURL + '.' + product.imageType"
+            alt=""
+            class="card-img-top"
+          />
+        </picture>
+
+        <div class="card-body">
+          <p
+            class="card-text product-description p-1"
+            [title]="product.description"
+          >
+            {{ product.description }}
+          </p>
+
+          <div class="d-flex justify-content-between align-items-center">
+            <p class="card-text m-0">MRP Rs {{ product.price }}</p>
+            <button
+              class="btn btn-primary"
+              *ngIf="!product.quantityInCart; else productInCart"
+              (click)="addToCart(product)"
+            >
+              Buy Now
+            </button>
+
+            <ng-template #productInCart>
+              <div>
+                <button class="btn btn-primary" (click)="removeFromCart(product)">
+                  -
+                </button>
+                <span class="quantity-in-cart mx-2">{{
+                  product.quantityInCart
+                }}</span>
+                <button class="btn btn-primary" (click)="addToCart(product)">
+                  +
+                </button>
+              </div>
+            </ng-template>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
