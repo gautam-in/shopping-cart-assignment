@@ -1,10 +1,11 @@
 import React from "react";
 import "./Footer.scss";
+import { CopyrightText } from "../../Constants/ConstantText";
 
 const Footer = () => {
   return (
     <footer>
-      <p>Copyright © 2011-2018 Sabka Bazaar Grocery Supplies Pvt Ltd</p>
+      <p>{CopyrightText}</p>
     </footer>
   );
 };

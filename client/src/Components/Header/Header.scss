@@ -1,6 +1,6 @@
-@import "../../Utilities//SCSS-Variables//variables.scss";
+@import "../../Utilities/SCSS-Variables/variables.scss";
 
-.header {
+header {
   display: flex;
   justify-content: space-between;
   box-shadow: 0px 6px 6px 0px $light-grey;
@@ -11,13 +11,13 @@
 }
 
 @media only screen and (min-width: $desktop-width) {
-  .header {
+  header {
     justify-content: space-around;
   }
 }
 
 @media only screen and (max-width: $mobile-max-width) {
-  .header > img {
+  header > img {
     width: 100px;
     height: 50px;
   }

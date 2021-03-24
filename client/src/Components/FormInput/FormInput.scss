@@ -1,13 +1,9 @@
-@import "../../Utilities//SCSS-Variables/variables.scss";
-
-$sub-color: grey;
-$main-color: rgb(88, 161, 185);
-$font-color: black;
+@import "../../Utilities/SCSS-Variables/variables.scss";
 
 @mixin shrinklabel {
   top: -14px;
-  font-size: $primary-font-size;
-  color: $main-color;
+  font-size: 14px;
+  color: $lbl-primary-color;
 }
 
 .group {
@@ -15,11 +11,11 @@ $font-color: black;
   margin: 45px 0px;
   .form-input {
     background: none;
-    background-color: white;
-    color: $font-color;
+    background-color: $white-color;
+    color: $black-color;
     border: none;
     padding: 10px 10px 10px 5px;
-    border-bottom: 1px solid $sub-color;
+    border-bottom: 1px solid $lbl-secondary-color;
     display: block;
     width: 100%;
     box-sizing: border-box;
@@ -42,7 +38,7 @@ input[type="password"] {
 .form-input-label {
   font-size: 16px;
   font-weight: normal;
-  color: $sub-color;
+  color: $lbl-secondary-color;
   pointer-events: none;
   transition: 300ms ease all;
   position: absolute;

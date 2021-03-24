@@ -5,7 +5,7 @@ import CartIcon from "../CartIcon/CartIcon";
 
 const Header = () => {
   return (
-    <header className="header">
+    <header>
       <img src={logo} alt={"Sabka Bazaar Logo"} height="60" width="140" className="logo" />
       <CartIcon />
     </header>

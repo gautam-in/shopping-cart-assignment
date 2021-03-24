@@ -1,6 +1,8 @@
+@import "../../Utilities/SCSS-Variables/variables.scss";
+
 .custom-button {
-  color: white;
-  background-color: #ce0e55;
+  color: $white-color;
+  background-color: $button-bg-color;
   cursor: pointer;
   border: none;
   text-transform: uppercase;
@@ -12,8 +14,8 @@
   box-sizing: border-box;
 
   &:hover {
-    color: black;
-    background-color: white;
-    border: 1px solid black;
+    color: $black-color;
+    background-color: $white-color;
+    border: 1px solid $black-color;
   }
 }
