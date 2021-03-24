@@ -39,6 +39,15 @@ const config = {
           MiniCssExtractPlugin.loader,
           'css-loader',
           'sass-loader',
+          {
+            loader: 'sass-resources-loader',
+            options: {
+              resources: [
+                './src/assets/styles/colors.scss',
+                './src/assets/styles/variables.scss',
+              ],
+            },
+          },
         ],
       },
       {

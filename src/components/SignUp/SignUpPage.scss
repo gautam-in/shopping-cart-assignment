@@ -1,24 +1,24 @@
 .section-signup {
     display: flex;
+    justify-content: center;
     .signup-info {
-        line-height: 45px;
-        margin-left: 295px;
+        line-height: 2.25rem;
+        flex: 0 0 30%;
         p {
             font-size: 70%;
             font-weight: 600;
         }
     }
     .signup-action {
-        margin-left: 50px;
+        flex: 0 0 25%;
         .signup-form {
             .signup-inputs {
-                label {
-                    font-size: 75%;
-                }
+                width: 100%;
             }
         }
         .field-row {
-            margin-bottom: 10px;
+            margin-bottom: 1rem;
+            width: 12rem;
         }
 
         .btn-signup,
@@ -26,8 +26,8 @@
         .btn-signup:focus {
             font-size: 90%;
             display: block;
-            line-height:40px;
-            margin: 40px 0 0 0;
+            line-height:2rem;
+            margin: 2rem 0 0 0;
             width: 100%;
             outline: none;
             border: none;

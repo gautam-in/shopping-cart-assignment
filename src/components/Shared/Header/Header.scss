@@ -1,18 +1,13 @@
-header {
-    height: 100px;
-}
-
 nav {
     display: flex;
+    justify-content: space-around;
     padding: 10px 0 0 0;
-    height: 100%;
-    background: #fff;
-    box-shadow: 0px 1px 10px 5px #eeeeee;
+    background: $white-color;
+    box-shadow: 0px 1px 10px 5px $grey-color;
+    align-content: center;
     .main-nav {
         display: flex;
         justify-content: space-between;
-        width: 50%;
-        padding: 0 0 0 190px;
         .logo {
             width: 190px;
             height: 80px;
@@ -21,31 +16,30 @@ nav {
             list-style: none;
             display: flex;
             align-items: flex-end;
-            margin-bottom: 10px;
+            margin: 0 0 .625rem 5rem;
             li {
                 padding: 10px;
                 a {
                     text-decoration: none;
-                    color: #6f5d5b;
+                    color: $font-color;
                     font-size: 80%;
                     font-weight: 700;
+                }
+                &.active{
+                    a {
+                        color: $explore-color;
+                        border-bottom: 2px solid $explore-color;
+                    }
                 }
             }
         }
     }
     .action-nav {
-        width: 50%;
-        text-align:right;
-        padding-right: 190px;
-        position: relative;
         .cart-box {
             display: flex;
             align-items: center;
-            background: #eeeeee;
-            right: 190px;
+            background: $grey-color;
             width: 150px;
-            position: absolute;
-            text-align: left;
             padding: 0 0 0 10px;
             height: 65px;
             span {
@@ -56,7 +50,7 @@ nav {
         }
         .cart-link {
             &:visited, &:link {
-                color: #bf2957;
+                color: $explore-color;
                 text-decoration: none;
                 font-size: 150%;
             }
@@ -64,15 +58,13 @@ nav {
         &-list {
             display: flex;
             justify-content: flex-end;
-            align-items: flex-start;
             list-style-type: none;
-            margin-bottom: 30px;
             margin: -15px 0 15px 0;
             li {
                 padding-left: 25px;
                 a {
                     text-decoration: none;
-                    color: #6f5d5b;
+                    color: $font-color;
                     font-size: 70%;
                     font-weight: 600;
                 }

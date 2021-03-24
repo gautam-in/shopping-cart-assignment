@@ -1,42 +1,21 @@
 import React from 'react';
 import { map } from 'lodash';
 
-import axios from '../../utils/axiosConfig';
-import { sortCallback } from '../../utils/common';
+import './Home.scss';
 
+import { sortCallback } from '../../utils/common';
+import useResources from '../../hooks/useResources';
+
+import Banner from '../Shared/Banner';
 import ContentSection from '../Shared/ContentSection';
 
 const Home = () => {
-  const [banners, setBanners] = React.useState([]);
-  const [categories, setCategories] = React.useState([]);
-
-  const fetchBanners = React.useCallback(() => {
-    axios.get('/banners')
-      .then((r) => {
-        setBanners(r.data);
-      })
-      .catch((e) => {
-        console.log(e);
-      });
-  }, []);
-
-  const fetchCategories = React.useCallback(() => {
-    axios.get('/categories')
-      .then((r) => {
-        setCategories(r.data.sort(sortCallback('order')));
-      })
-      .catch((e) => {
-        console.log(e);
-      });
-  }, []);
-
-  React.useEffect(() => {
-    fetchBanners();
-    fetchCategories();
-  }, [fetchBanners, fetchCategories]);
+  const banners = useResources('banners');
+  const categories = useResources('categories').sort(sortCallback('order'));
 
   return (
-    <>
+    <div className="home-content">
+      <Banner banners={banners} />
       {
         map(categories, (category, cidx) => (
           category.order > -1
@@ -49,7 +28,7 @@ const Home = () => {
         ))
       }
 
-    </>
+    </div>
   );
 };
 

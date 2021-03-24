@@ -1,8 +1,6 @@
 import React from 'react';
 import { map } from 'lodash';
 import { BrowserRouter, Switch } from 'react-router-dom';
-// import 'bootstrap';
-// import 'bootstrap/dist/css/bootstrap.min.css';
 
 import './assets/styles/styles.scss';
 

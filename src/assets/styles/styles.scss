@@ -4,7 +4,8 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Dosis:wght@400;600;700;800&display=swap');
 
-@import "variables";
+@use "variables";
+@use "colors";
 
 @font-face {
   font-family: '#{$icomoon-font-family}';
@@ -45,13 +46,12 @@
   box-sizing: border-box;
 }
 
-html,
 body {
   background-color: #ffffff0d;
   color: #555;
   font-family: 'Dosis', 'Arial', sans-serif;
   font-weight: 400;
-  font-size: 20px;
+  font-size: 1.25rem;
   text-rendering: optimizeLegibility;
   margin: 0 auto;
 }
@@ -67,6 +67,7 @@ section {
 
 .MuiFormLabel-root {
   font-family: 'Dosis', 'Arial', sans-serif !important;
+  color: #6f5d5b !important;
   font-size: 80% !important;
   font-weight: 600 !important;
 }
@@ -95,11 +96,16 @@ section {
   font-size: 65%;
   background: #bf2957;
   color: #fff;
-  margin-top: 15px;
+  margin: 15px 0 0 0;
   font-weight: 500;
   padding: 0 10px;
   text-align: center;
   text-decoration: none;
+  border: none;
+  cursor: pointer;
+  &:focus {
+    outline: none;
+  }
 }
 
 .btn:disabled {
@@ -108,7 +114,7 @@ section {
 
 .error-help {
   display: block;
-  font-size: 65%;
+  font-size: .65rem;
   font-weight: 600;
   margin-top: 5px;
   color: #bf2957;

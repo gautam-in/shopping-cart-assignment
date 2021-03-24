@@ -1,0 +1,83 @@
+.section-products {
+    display: flex;
+    justify-content: center;
+    width: 71%;
+    margin: 0 auto;
+    padding: 0;
+    color: $font-color;
+    .product-categories {
+        display: flex;
+        flex-direction: column;
+        flex: 0 0 20%;
+        background-color: $grey-color;
+        &__item {
+            font-weight: 600;
+            height: 3rem;
+            cursor: pointer;
+            outline: none;
+            border: none;
+            border-bottom: 2px solid $light-grey-color;
+            color: $font-color;
+            &:focus {
+                outline: none;
+            }
+            &.active {
+                outline: none;
+                color: $white-color;
+                background-color: $explore-color;
+                border: 0;
+            }
+        }
+    }
+    .product-list {
+        flex: 0 0 80%;
+        display: flex;
+        flex-wrap: wrap;
+        margin: 2rem 0 0 1rem;
+        &__item {
+            display: flex;
+            flex-wrap: wrap;
+            width: calc((100% / 4) - 4px);
+            margin: 0 0.25rem 3rem 0;
+            border-bottom: 0.125rem dotted $grey-color;
+            box-shadow: 1px 0 10px 0 $grey-color;
+            &--title {
+                width: 100%;
+                color: $black-color;
+                font-size: 0.95rem;
+                height: 4.5rem;
+                padding: 0 0 0 0.46rem;
+            }
+            &--image {
+                width: 100%;
+            }
+            &--info {
+                width: 100%;
+                font-size: 0.7rem;
+                font-weight: 700;
+                background-color: $grey-color;
+                height: 4.7rem;
+                overflow: hidden;
+                margin: 0.25rem;
+                padding: 0.46rem;
+                line-height: 1rem;
+            }
+            &--action {
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                line-height: 2rem;
+                margin: 1rem .25rem 0.5rem .25rem;
+                span {
+                    font-size: 0.7rem;
+                    font-weight: 700;
+                }
+                button {
+                    font-size: 0.7rem;
+                    font-weight: 700;
+                    margin: 0;
+                }
+            }
+        }
+    }
+}

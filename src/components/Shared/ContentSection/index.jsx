@@ -8,11 +8,10 @@ const ContentSection = ({ category }) => (
         <img className="content-section__preview--image" src={category.imageUrl} alt={category.name} />
       </div>
       <div className="content-section__details">
-        <h3>{category.name}</h3>
+        <h1>{category.name}</h1>
         <p>{category.description}</p>
         <a className="btn" href="/">
-          Explore
-          {category.key}
+          {`Explore ${category.key}`}
         </a>
       </div>
     </section>

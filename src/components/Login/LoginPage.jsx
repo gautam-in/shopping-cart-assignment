@@ -1,6 +1,7 @@
 import React from 'react';
-import { TextField } from '@material-ui/core';
+
 import './LoginPage.scss';
+import FloatingInput from '../Shared/FloatingInput';
 
 const LoginPage = (props) => {
   const {
@@ -15,7 +16,7 @@ const LoginPage = (props) => {
       <div className="login-action">
         <form method="post" action="#" className="login-form" autoComplete="off" onSubmit={(e) => onSubmit(e, { ...fields })}>
           <div className="field-row">
-            <TextField
+            <FloatingInput
               name="email"
               onChange={(e) => onInputChange(e, fields.email)}
               value={fields.email.value}
@@ -23,11 +24,11 @@ const LoginPage = (props) => {
               id="email"
               type="email"
               label="Email"
+              error={fields.email.error}
             />
-            {fields.email.error && <span className="error-help">{fields.email.error}</span>}
           </div>
           <div className="field-row">
-            <TextField
+            <FloatingInput
               name="password"
               onChange={(e) => onInputChange(e, fields.password)}
               value={fields.password.value}
@@ -35,16 +36,18 @@ const LoginPage = (props) => {
               id="password"
               type="password"
               label="Password"
+              error={fields.password.error}
             />
-            {fields.password.error && <span className="error-help">{fields.password.error}</span>}
           </div>
-          <button
-            type="submit"
-            className="btn btn-login"
-            disabled={formActions.isSubmitting || formActions.hasErrors}
-          >
-            Login
-          </button>
+          <div className="field-row">
+            <button
+              type="submit"
+              className="btn btn-login"
+              disabled={formActions.isSubmitting || formActions.hasErrors}
+            >
+              Login
+            </button>
+          </div>
         </form>
       </div>
     </section>

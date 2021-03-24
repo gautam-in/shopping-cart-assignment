@@ -1,24 +1,24 @@
 .section-login {
     display: flex;
+    justify-content: center;
     .login-info {
-        line-height: 45px;
-        margin-left: 295px;
+        line-height: 2.25rem;
+        flex: 0 0 30%;
         p {
             font-size: 70%;
             font-weight: 600;
         }
     }
     .login-action {
-        margin-left: 50px;
+        flex: 0 0 25%;
         .login-form {
             .login-inputs {
-                label {
-                    font-size: 80%;
-                }
+                width: 100%;
             }
         }
         .field-row {
-            margin-bottom: 20px;
+            margin-bottom: 1rem;
+            width: 12rem;
         }
 
         .btn-login,
@@ -26,8 +26,8 @@
         .btn-login:focus {
             font-size: 90%;
             display: block;
-            line-height:40px;
-            margin: 40px 0 0 0;
+            line-height:2rem;
+            margin: 2rem 0 0 0;
             width: 100%;
             outline: none;
             border: none;

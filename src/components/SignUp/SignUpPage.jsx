@@ -1,7 +1,7 @@
 import React from 'react';
-import { TextField } from '@material-ui/core';
 
 import './SignUpPage.scss';
+import FloatingInput from '../Shared/FloatingInput';
 
 const SignUpPage = (props) => {
   const {
@@ -16,72 +16,72 @@ const SignUpPage = (props) => {
       <div className="signup-action">
         <form method="post" action="#" className="login-form" autoComplete="off" onSubmit={(e) => onSubmit(e, { ...fields })}>
           <div className="field-row">
-            <TextField
+            <FloatingInput
               name="firstName"
-              className="signup-inputs"
-              id="first-name"
-              type="text"
-              label="First Name"
               onChange={(e) => onInputChange(e, fields.firstName)}
               value={fields.firstName.value}
+              className="signup-inputs"
+              id="firstName"
+              label="First Name"
+              error={fields.firstName.error}
             />
-            {fields.firstName.error && <span className="error-help">{fields.firstName.error}</span>}
           </div>
           <div className="field-row">
-            <TextField
+            <FloatingInput
               name="lastName"
-              className="signup-inputs"
-              id="last-name"
-              type="text"
-              label="Last Name"
               onChange={(e) => onInputChange(e, fields.lastName)}
               value={fields.lastName.value}
+              className="signup-inputs"
+              id="lastName"
+              label="Last Name"
+              error={fields.lastName.error}
             />
-            {fields.lastName.error && <span className="error-help">{fields.lastName.error}</span>}
           </div>
           <div className="field-row">
-            <TextField
+            <FloatingInput
               name="email"
+              onChange={(e) => onInputChange(e, fields.email)}
+              value={fields.email.value}
               className="signup-inputs"
               id="email"
               type="email"
               label="Email"
-              onChange={(e) => onInputChange(e, fields.email)}
-              value={fields.email.value}
+              error={fields.email.error}
             />
-            {fields.email.error && <span className="error-help">{fields.email.error}</span>}
           </div>
           <div className="field-row">
-            <TextField
+            <FloatingInput
               name="password"
+              onChange={(e) => onInputChange(e, fields.password)}
+              value={fields.password.value}
               className="signup-inputs"
               id="password"
               type="password"
               label="Password"
-              onChange={(e) => onInputChange(e, fields.password)}
-              value={fields.password.value}
+              error={fields.password.error}
             />
-            {fields.password.error && <span className="error-help">{fields.password.error}</span>}
           </div>
           <div className="field-row">
-            <TextField
+            <FloatingInput
               name="confirmPassword"
-              className="signup-inputs"
-              id="confirm-password"
+              onChange={(e) => onInputChange(e, fields.confirmPassword)}
+              value={fields.confirmPassword.value}
+              className="login-inputs"
+              id="confirmPassword"
               type="password"
               label="Confirm Password"
-              onChange={(e) => onInputChange(e, fields.confirmPassword, fields)}
-              value={fields.confirmPassword.value}
+              error={fields.confirmPassword.error}
             />
-            {fields.confirmPassword.error && <span className="error-help">{fields.confirmPassword.error}</span>}
           </div>
-          <button
-            type="submit"
-            className="btn btn-signup"
-            disabled={formActions.isSubmitting || formActions.hasErrors}
-          >
-            Signup
-          </button>
+          <div className="field-row">
+            <button
+              type="submit"
+              className="btn btn-signup"
+              disabled={formActions.isSubmitting || formActions.hasErrors}
+            >
+              Signup
+            </button>
+          </div>
         </form>
       </div>
     </section>
