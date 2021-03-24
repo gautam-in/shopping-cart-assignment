@@ -3,7 +3,7 @@ import React from 'react';
 import './ProductPage.scss';
 
 const ProductPage = ({
-  categories, products, onCategoryChange, filteredCategory,
+  addToCart, categories, products, onCategoryChange, filteredCategory,
 }) => (
   <section className="section-products">
     <div role="menu" className="product-categories">
@@ -30,7 +30,6 @@ const ProductPage = ({
         map(products, (product) => (
           <div key={product.id} className="product-list__item">
             <h1 className="product-list__item--title">{product.name}</h1>
-
             <img className="product-list__item--image" src={product.imageURL} alt={product.description} />
             <div className="product-list__item--info">
               {product.description}
@@ -39,7 +38,11 @@ const ProductPage = ({
               <span className="product-list__item--action-mrp">
                 {`MRP Rs.${product.price}`}
               </span>
-              <button type="button" className="btn product-list__item--action-buy">
+              <button
+                type="button"
+                className="btn product-list__item--action-buy"
+                onClick={() => addToCart(product)}
+              >
                 Buy Now
               </button>
             </div>

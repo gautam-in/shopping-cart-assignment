@@ -1,4 +1,5 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import { Link, useLocation } from 'react-router-dom';
 import { logo } from '../../../constants/images';
 import WEB_PATH from '../../../routes/webPath';
@@ -7,6 +8,7 @@ import './Header.scss';
 
 const Header = () => {
   const location = useLocation();
+  const cartItems = useSelector((state) => state.miniCart);
   return (
     <header>
       <nav>
@@ -32,7 +34,7 @@ const Header = () => {
           </ul>
           <div className="cart-box">
             <Link to={WEB_PATH.HOME} className="icon-cart cart-link" aria-label="cart" />
-            <span>0 items</span>
+            <span>{`${cartItems.totalItems} items`}</span>
           </div>
         </div>
       </nav>

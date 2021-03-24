@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import WEB_PATH from '../../../routes/webPath';
 import './ContentSection.scss';
 
 const ContentSection = ({ category }) => (
@@ -10,9 +12,9 @@ const ContentSection = ({ category }) => (
       <div className="content-section__details">
         <h1>{category.name}</h1>
         <p>{category.description}</p>
-        <a className="btn" href="/">
+        <Link className="btn" to={{ pathname: WEB_PATH.PRODUCTS, search: `?q=${category.id}` }}>
           {`Explore ${category.key}`}
-        </a>
+        </Link>
       </div>
     </section>
     <hr />
