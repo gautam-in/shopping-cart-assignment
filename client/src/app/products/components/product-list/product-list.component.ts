@@ -17,7 +17,7 @@ export class ProductListComponent implements OnInit {
   categories: Category[] = [];
   products$: Observable<Product[]> = of([]);
 
-  selectedCategoryId: string = '';
+  selectedCategory: Category | null = null;
 
   constructor(
     private router: Router,
@@ -39,7 +39,7 @@ export class ProductListComponent implements OnInit {
         (category: Category) => category.key === map.params.category
       );
 
-      this.selectedCategoryId = category ? category.id : '';
+      this.selectedCategory = category ? category : null;
 
       this.getProducts();
     });
@@ -50,7 +50,16 @@ export class ProductListComponent implements OnInit {
   }
 
   selectCategory(category: Category) {
-    this.router.navigate([], { queryParams: { category: category.key } });
+    let categoryKey = null;
+
+    if (this.selectedCategory?.id !== category.id) {
+      categoryKey = category.key;
+    }
+
+    this.router.navigate([], {
+      queryParams: { category: categoryKey },
+      queryParamsHandling: 'merge',
+    });
   }
 
   addToCart(product: Product) {
@@ -68,6 +77,8 @@ export class ProductListComponent implements OnInit {
   }
 
   getProducts() {
-    this.products$ = this.productsService.getProducts(this.selectedCategoryId);
+    this.products$ = this.productsService.getProducts(
+      this.selectedCategory?.id
+    );
   }
 }

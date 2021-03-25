@@ -22,11 +22,14 @@ export class ProductsService {
 
   addToCart(product: Product) {
     if (product && product.stock > 0) {
-      this.cartService.addToCart(product);
-      product.stock--;
-      product.quantityInCart = product.quantityInCart
-        ? product.quantityInCart + 1
-        : 1;
+      this.cartService.addToCart(product).subscribe((response) => {
+        if (response) {
+          product.stock--;
+          product.quantityInCart = product.quantityInCart
+            ? product.quantityInCart + 1
+            : 1;
+        }
+      });
     }
   }
 
@@ -42,7 +45,7 @@ export class ProductsService {
     return this.http.get<Category[]>(`${this.baseUrl}/${this.categoriesUrl}`);
   }
 
-  getProducts(categoryId: string): Observable<Product[]> {
+  getProducts(categoryId: string | undefined): Observable<Product[]> {
     return this.http.get<Product[]>(`${this.baseUrl}/${this.productsUrl}`).pipe(
       map((products: any) => {
         return (products || []).filter((product: Product) =>

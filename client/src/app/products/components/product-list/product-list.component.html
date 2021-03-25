@@ -1,10 +1,40 @@
-<div class="d-flex">
+<div class="d-flex flex-column flex-md-row">
   <aside>
-    <ul class="list-group list-group-flush">
+    <div class="row mt-3 btn-group d-block d-md-none" dropdown>
+      <button
+        id="category-button"
+        dropdownToggle
+        type="button"
+        class="btn btn-primary dropdown-toggle w-100"
+        aria-controls="category-dropdown"
+      >
+        <span>{{ selectedCategory?.name }}</span>
+        <span class="caret"></span>
+      </button>
+      <ul
+        id="category-dropdown"
+        *dropdownMenu
+        class="dropdown-menu"
+        role="menu"
+        aria-labelledby="category-button"
+      >
+        <li
+          role="menuitem"
+          class="dropdown-item"
+          *ngFor="let category of categories"
+          [ngClass]="{ active: selectedCategory?.id === category.id }"
+          (click)="selectCategory(category)"
+        >
+          {{ category.name }}
+        </li>
+      </ul>
+    </div>
+
+    <ul class="d-none d-md-block list-group list-group-flush">
       <li
         class="list-group-item"
         *ngFor="let category of categories"
-        [ngClass]="{ active: selectedCategoryId === category.id }"
+        [ngClass]="{ active: selectedCategory?.id === category.id }"
         (click)="selectCategory(category)"
       >
         {{ category.name }}
@@ -12,7 +42,7 @@
     </ul>
   </aside>
 
-  <main id="main-content" class="pl-3" tabindex="-1">
+  <main id="main-content" class="pl-md-3" tabindex="-1">
     <div class="card-deck py-3 mx-0">
       <div
         class="card m-0"
@@ -22,44 +52,58 @@
           {{ product.name }}
         </h5>
 
-        <picture>
-          <!-- TODO: Optimize: convert images into webp -->
-          <!-- <source
-            [srcset]="product.imageURL + '.webp'"
-            type="image/webp"
-          /> -->
-          <source
-            [srcset]="product.imageURL + '.' + product.imageType"
-            [type]="'image/' + product.imageType"
-          />
-          <img
-            [src]="product.imageURL + '.' + product.imageType"
-            alt=""
-            class="card-img-top"
-          />
-        </picture>
+        <div class="d-flex d-lg-block align-content-center">
+          <picture class="d-flex t-half-width">
+            <!-- TODO: Optimize: convert images into webp -->
+            <!-- <source
+                  [srcset]="product.imageURL + '.webp'"
+                  type="image/webp"
+                /> -->
+            <source
+              [srcset]="product.imageURL + '.' + product.imageType"
+              [type]="'image/' + product.imageType"
+            />
+            <img
+              [src]="product.imageURL + '.' + product.imageType"
+              alt=""
+              class="card-img-top align-self-center"
+            />
+          </picture>
 
-        <div class="card-body">
-          <p
-            class="card-text product-description p-1"
-            [title]="product.description"
+          <div class="card-body t-half-width">
+            <div class="product-description-container h-100">
+              <p
+                class="card-text product-description p-1"
+                [title]="product.description"
+              >
+                {{ product.description }}
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-body pt-0">
+          <div
+            class="d-flex justify-content-end justify-content-lg-between align-items-center"
           >
-            {{ product.description }}
-          </p>
-
-          <div class="d-flex justify-content-between align-items-center">
-            <p class="card-text m-0">MRP Rs {{ product.price }}</p>
+            <p class="card-text d-lg-block d-none m-0">
+              MRP Rs {{ product.price }}
+            </p>
             <button
               class="btn btn-primary"
               *ngIf="!product.quantityInCart; else productInCart"
               (click)="addToCart(product)"
             >
-              Buy Now
+              <span>Buy Now</span>
+              <span class="d-block d-lg-none"> @ Rs {{ product.price }}</span>
             </button>
 
             <ng-template #productInCart>
-              <div>
-                <button class="btn btn-primary" (click)="removeFromCart(product)">
+              <div class="d-flex">
+                <button
+                  class="btn btn-primary"
+                  (click)="removeFromCart(product)"
+                >
                   -
                 </button>
                 <span class="quantity-in-cart mx-2">{{
