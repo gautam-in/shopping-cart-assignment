@@ -1,8 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { userActions } from '../_actions';
-import Header from '../_components/header/header';
-import '../LoginPage/style.css';
+import { userActions } from '../../_actions';
+import Footer from '../../_components/footer/footer';
+import Header from '../../_components/header/header';
+import '../LoginPage/style.scss';
 
 
 class RegisterPage extends React.Component {
@@ -147,6 +148,9 @@ class RegisterPage extends React.Component {
 
             </div>
 
+        </div>
+        <div className='regFooter'>
+            <Footer />
         </div>
     </div>
         );

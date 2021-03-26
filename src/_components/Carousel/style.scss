@@ -1,0 +1,18 @@
+@import "../../Utilities/SCSS-Variables/variables.scss";
+
+.carouselStyle{
+    box-shadow: 0px 6px 6px 0px lightgray;
+
+    @media only screen and (max-width: $mobile-max-width) {
+        height: 20rem;
+        width: 130%;
+      }
+      @media only screen and (min-width: $tablet-width) {
+        height: 20rem;
+        width: 130%;
+      }
+      @media only screen and (min-width: $desktop-width) {
+        height: 22rem;
+        width: 101%;
+      }
+}

@@ -2,9 +2,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
-import { userActions } from '../_actions';
+import { userActions } from '../../_actions';
 
-class HomePage extends React.Component {
+class MainPage extends React.Component {
     componentDidMount() {
         this.props.getUsers();
     }
@@ -34,5 +34,5 @@ const actionCreators = {
     getUsers: userActions.getAll,
 }
 
-const connectedHomePage = connect(mapState, actionCreators)(HomePage);
-export { connectedHomePage as HomePage };
+const connectedMainPage = connect(mapState, actionCreators)(MainPage);
+export { connectedMainPage as MainPage };

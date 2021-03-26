@@ -11,16 +11,12 @@ module.exports = {
                 test: /\.jsx?$/,
                 loader: 'babel-loader'
             },
-            {          
-                test: /\.css$/,
-                use: [
-                        'style-loader',
-                        'css-loader',
-                        
-                      ]
+            {
+                test: /\.(scss|css)$/i,
+                use: ['style-loader', 'css-loader', 'sass-loader']
             },
             {
-                test: /\.(jpe?g|gif|png|svg)$/i,
+                test: /\.(jpg|gif|png|svg)$/i,
                 use: [
                 {
                   loader: 'url-loader',

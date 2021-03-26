@@ -1,9 +1,9 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { userActions } from '../_actions';
-import Header from '../_components/header/header';
-import './style.css';
+import { userActions } from '../../_actions';
+import Footer from '../../_components/footer/footer';
+import Header from '../../_components/header/header';
+import './style.scss';
 
 class LoginPage extends React.Component {
     constructor(props) {
@@ -11,7 +11,6 @@ class LoginPage extends React.Component {
 
         // reset login status
         this.props.logout();
-
         this.state = {
             email: '',
             password: '',
@@ -72,6 +71,9 @@ class LoginPage extends React.Component {
                         </div>
                     </form>
                 </div>
+                </div>
+                <div className='loginFooter'>
+                <Footer />
                 </div>
            </div>
         );

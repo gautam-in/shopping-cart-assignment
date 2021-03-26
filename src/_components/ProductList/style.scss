@@ -1,0 +1,78 @@
+@import "../../Utilities/SCSS-Variables/variables.scss";
+
+.row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    box-shadow: 0px 6px 6px 0px lightgray;
+    @media only screen and (max-width: $mobile-max-width) {
+      width: 130%;
+    }
+    @media only screen and (min-width: $tablet-width) {
+      width: 130%;
+    }
+    @media only screen and (min-width: $desktop-width) {
+      width: 101%;
+    }
+  }
+  
+  .column {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+    flex: 1;
+  }
+  
+  .desp {
+    height: 22rem;
+  }
+  
+  .img {
+    height: 22rem;
+  }
+.name{
+  text-align:center;
+  padding-top:8%;
+  @media only screen and (max-width: $mobile-max-width) {
+    font-size:30px;
+  }
+  @media only screen and (min-width: $tablet-width) {
+   font-size:30px;
+  }
+  @media only screen and (min-width: $desktop-width) {
+    font-size:20px;
+  }
+}
+.description{
+  text-align:center;
+  padding-bottom:2%;
+  @media only screen and (max-width: $mobile-max-width) {
+    font-size:28px;
+  }
+  @media only screen and (min-width: $tablet-width) {
+   font-size:28px;
+  }
+  @media only screen and (min-width: $desktop-width) {
+    font-size:18px;
+  }
+}
+.button {
+    background-color: #f7497d; 
+    border: none;
+    color: white;
+    padding: 10px 22px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px 2px;
+    cursor: pointer;
+    @media only screen and (max-width: $mobile-max-width) {
+      font-size:30px;
+    }
+    @media only screen and (min-width: $tablet-width) {
+     font-size:30px;
+    }
+    @media only screen and (min-width: $desktop-width) {
+      font-size:18px;
+    }
+  }

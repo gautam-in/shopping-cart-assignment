@@ -1,0 +1,123 @@
+ @import "../../Utilities/SCSS-Variables/variables.scss";
+
+ .headermain{
+        top: 0; 
+        box-shadow: 0px 6px 6px 0px lightgray;
+        display:flex;
+        border:none;
+    @media only screen and (max-width: $mobile-max-width) {
+        height: 8rem;
+        width: 130%;
+    }
+    @media only screen and (min-width: $tablet-width) {
+        height: 8rem;
+        width: 130%;
+    }
+    @media only screen and (min-width: $desktop-width) {
+        height: 4rem;
+        width: 100%;
+        padding-left: 1%;
+    }
+}
+.icon{
+    flex: 0 1 20%
+
+}
+.home{
+    flex: 0 1 10%;
+    padding-top: 2%;
+    text-decoration:none;
+    color: $black-color;
+    @media only screen and (max-width: $mobile-max-width) {
+        font-size:30px;
+    }
+    @media only screen and (min-width: $tablet-width) {
+        font-size: 30px;
+    }
+    @media only screen and (min-width: $desktop-width) {
+        font-size: 20px;
+    }
+}
+.products{
+    flex: 0 2 40%;
+    padding-top: 2%;
+    color: $black-color;
+    text-decoration:none;
+    @media only screen and (max-width: $mobile-max-width) {
+        font-size:30px;
+    }
+    @media only screen and (min-width: $tablet-width) {
+        font-size: 30px;
+    }
+    @media only screen and (min-width: $desktop-width) {
+        font-size: 20px;
+    }
+}
+.login{
+    display: flex;
+    color: $black-color;
+    padding-right: -5rem;
+}
+.Signin{
+    text-decoration:none;
+    color: $black-color;
+    @media only screen and (max-width: $mobile-max-width) {
+        font-size:30px;
+        padding-right:20%;
+    }
+    @media only screen and (min-width: $tablet-width) {
+        font-size: 30px;
+        padding-right:110%;
+    }
+    @media only screen and (min-width: $desktop-width) {
+        font-size: 20px;
+        padding-right:110%;
+    }
+}
+.Register{
+    text-decoration:none;
+    color:$black-color;
+    @media only screen and (max-width: $mobile-max-width) {
+        font-size:30px;
+        padding-left:5rem;
+    }
+    @media only screen and (min-width: $tablet-width) {
+        font-size: 30px;
+        padding-left:5rem;
+    }
+    @media only screen and (min-width: $desktop-width) {
+        font-size: 20px;
+        padding-left:5rem;
+    }
+}
+.Cart{
+    background-color: lightgray;
+    @media only screen and (max-width: $mobile-max-width) {
+        height: 2rem;
+        width: 4rem;
+        margin-right:20rem;
+    }
+    @media only screen and (min-width: $tablet-width) {
+        height: 4rem;
+        width: 8rem;
+        margin-right:12rem;
+    }
+    @media only screen and (min-width: $desktop-width) {
+        height: 2.2rem;
+        width: 5.4rem;
+        margin-right:10rem;
+    }
+    display: flex;
+    margin-top: 1.5%;
+}
+.itemText{
+    @media only screen and (max-width: $mobile-max-width) {
+        font-size: 25px;
+    }
+    @media only screen and (min-width: $tablet-width) {
+        font-size: 25px;
+    }
+    @media only screen and (min-width: $desktop-width) {
+       font-size: 17px;
+    }
+}
