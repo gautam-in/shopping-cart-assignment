@@ -8,28 +8,49 @@ const Categories = ({ categoryList }) => {
     .sort((item1, item2) => {
       return item1.order - item2.order;
     });
-    
+
   return (
-    <main>
-      {orderedCategories.map((item, key) => {
+    <section>
+      {orderedCategories.map(item => {
         return (
-          <section key={key} className="category-item">
-            <article>
-              <h3>{item.name}</h3>
-              <p>{item.description}</p>
-            </article>
-            <figure>
-              <img
-                src={item.imageUrl}
-                alt="image loading"
-                height="100"
-                width="150"
-              />
-            </figure>
+          <section key={item.id} className="category-item">
+            {
+              item.order % 2 == 0 ? (
+                <>
+                  <article>
+                    <h3>{item.name}</h3>
+                    <p>{item.description}</p>
+                  </article>
+                  <figure>
+                    <img
+                      src={item.imageUrl}
+                      alt={item.name + "image"}
+                      height="100"
+                      width="150"
+                    />
+                  </figure>
+                </>) : (
+                <>
+                  <figure>
+                    <img
+                      src={item.imageUrl}
+                      alt={item.name + "image"}
+                      height="100"
+                      width="150"
+                    />
+                  </figure>
+                  <article>
+                    <h3>{item.name}</h3>
+                    <p>{item.description}</p>
+                  </article>
+                </>
+              )
+            }
+
           </section>
         );
       })}
-    </main>
+    </section>
   );
 };
 

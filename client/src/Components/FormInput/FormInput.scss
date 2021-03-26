@@ -49,3 +49,7 @@ input[type="password"] {
     @include shrinklabel();
   }
 }
+
+.error-message{
+  color : $failure-color;
+}

@@ -7,6 +7,8 @@ const FormInput = ({
   label,
   htmlFor,
   ariaLabel,
+  errors = {},
+  name,
   ...otherProps
 }) => {
   return (
@@ -16,19 +18,21 @@ const FormInput = ({
         htmlFor={htmlFor}
         onChange={handleChange}
         aria-label={ariaLabel}
+        name={name}
         {...otherProps}
       />
       {label ? (
         <label
-          className={`${
-            otherProps.value.length ? "shrink" : ""
-          } form-input-label`}
+          className={`${otherProps.value.length ? "shrink" : ""
+            } form-input-label`}
           id={htmlFor}
+          htmlFor={name}
         >
           {" "}
           {label}{" "}
         </label>
       ) : null}
+      {errors[name] && <p className="error-message">{errors[name]}</p>}
     </div>
   );
 };
