@@ -1,0 +1,38 @@
+<div class="loginBody">
+    <section>
+<h1>Sign Up</h1>
+<p>Get access to your orders, wishlist and Recommendations.</p>
+    </section>
+    <section class="loginForm">
+       
+            <form action="/home" name="register" method="POST">
+                <label>
+                    <div id="RegisterFNameError" class="errorMessage"></div>
+                    <input type="text" name="firstName" placeholder="First Name"
+                    onblur="validate('register','firstName','RegisterFNameError')" aria-labelledby="Enter First Name" required>
+                </label>
+                <label>
+                    <div id="RegisterLNameError" class="errorMessage"></div>
+                    <input type="text" name="lastName" placeholder="Last Name" 
+                     onblur="validate('register','lastName','RegisterLNameError')" aria-labelledby="Enter Last Name" required>
+                </label>
+                <label for="email">
+                    <div id="RegisterEmailError" class="errorMessage"></div>
+                    <input type="email" name="email" placeholder="Email" 
+                     onblur="validate('register','email','RegisterEmailError')" aria-labelledby="Enter Email" required>
+                </label>
+                <label for="password">
+                    <div id="RegisterPasswordError" class="errorMessage"></div>
+                    <input type="password" min="6" name="password" placeholder="password" aria-labelledby="Enter Password" required
+                    pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}"  onblur="validate('register','password','RegisterPasswordError')">
+                </label>
+                <label>
+                    <div id="RegisterCPasswordError" class="errorMessage"></div>
+                    <input type="password" name="confirmPassword" placeholder="Confirm Password" aria-labelledby="Re enter password" 
+                     onblur="validate('register','confirmPassword','RegisterCPasswordError')" required>
+                </label>
+                
+                <input type="submit" value="SignUp">
+            </form>
+    </section>
+</div>

@@ -1,0 +1,101 @@
+body {
+    font-family: Dosis;
+    margin:0px;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #e91e63;
+    color:white;
+    padding: 5px;
+    border:none;
+    &:focus-visible {
+        box-shadow: 7px 7px 24px 2px #e91e63;
+    }
+}
+ol,ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+img{
+    width:100%;
+    object-fit: contain;
+}
+.pageLogo {
+    display: flex;
+    justify-content: space-around;
+    box-shadow: 0px 5px 9px -1px rgba(0,0,0,0.75);
+    section {
+        nav {
+            a {
+                text-decoration: none;
+            }
+            ul {
+                li {
+                    &:nth-last-child(){
+                        background-color: #dcdcdcde;
+                        padding: 10px;
+                    }
+                }
+            }
+        }
+    }
+}
+.cartIcon {
+    width: 40px;
+    height: 40px;
+    filter:  invert(21%) sepia(93%) saturate(3714%) hue-rotate(328deg) brightness(94%) contrast(94%);
+}
+.mainFooter {
+    justify-items: center;
+    background-color: #dcdcdcde;
+    padding: 10px;
+    text-align: center;
+    p {
+        margin:0px
+    }
+}
+.loginBody {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 10%;
+    outline:none;
+    .loginForm {
+       form {
+        display: flex;
+        flex-direction: column;
+       }
+    }
+}
+
+
+input {
+    width: 500px;
+    padding: 15px;
+    border: none;
+    margin:10px;
+    border-bottom: 2px solid #dcdcdcde;
+    &:focus-visible {
+        border:none;
+        outline:none;
+        border-bottom:2px solid aqua;
+        
+    }
+    input[type="submit"] {
+      background-color: #e91e63;
+      
+    }
+}
+.errorMessage {
+    color:red
+}
+.successMessage {
+    position: fixed;
+    top:10%;
+    background-color: yellowgreen;
+    border: 1px solid green;
+    color: green;
+    padding:10px;
+}

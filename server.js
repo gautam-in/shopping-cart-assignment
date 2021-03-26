@@ -1,44 +1,77 @@
 const express = require('express');
 const path = require('path');
-const hbs = require('hbs');
+//const hbs = require('hbs');
 const http = require('http');
 const { response } = require('express');
-
+const exphbs = require('express-handlebars');
 const app = express();
+const config = require('./environment.json')
 
 app.use('/static',express.static(path.join(__dirname,'static/')));
 
 // set view engine 
+app.engine('hbs',exphbs({
+    defaultLayout:'index',
+    partialsDir: __dirname + '/views/partials/',
+    extname:'.hbs',
+    helpers:{
+        ifOrder : function(value,options){
+            if(value >= 1)
+            return options.fn(this)
+
+            else return options.inverse(this)
+        },
+        json : function(context){
+            return JSON.stringify(context);
+        }
+    }
+}))
 app.set('view engine','hbs')
 app.set('views', path.join(__dirname,'views/'))
 
+var data;
+var categories;
 app.get('/', (req, response) => {
-    //res.send("hello worl")
-    let data;
-    var categories;
-    var products;
-    http.get('http://localhost:5000/banners',(resp)=>{
+    http.get(config.url+'/banners',(resp)=>{
         resp.on('data',(res)=>{
-           data = JSON.parse(res.toString())
-           data.sort
-           //res.render('banners',{data : data})
-          // response.render('banners',{data:data})
+           this.data = JSON.parse(res.toString())
         })
     })
-    http.get('http://localhost:5000/categories',resp =>{
+    http.get(config.url+'/categories',resp =>{
         resp.on('data',res =>{
             this.categories = JSON.parse(res.toString())
-            response.render('banners',{data: data, categories:this.categories})
+            response.render('banners',{data: this.data, categories:this.categories})
         })
     })
 })
+app.post('/home',(req,response)=>{
+    response.redirect('/')
+})
+app.get('/login',(req,response)=>{
+    response.render('login')
+})
+app.get('/register',(req,response)=>{
+    response.render('register')
+})
 app.get('/productsPage',(req,response)=>{
     let data;
-    http.get('http://localhost:5000/products',resp=>{
+    let queryParam    
+    http.get(config.url+'/products',resp=>{
+        var productsArray = new Array()
         resp.on('data',res=>{
             this.products = JSON.parse(res.toString())
-           // response.send("products")
+            this.products.map((val, index,arr)=>{
+                //console.log(val)
+                if(val.category === req.query.category){
+                    productsArray.push(val)
+                }
+            })
+           if(req.query.category === undefined){
             response.render('products',{products: this.products,categories:this.categories})
+           }else{
+            response.render('products',{products: productsArray,categories:this.categories})
+           }
+            
         })
     })
     
@@ -46,6 +79,7 @@ app.get('/productsPage',(req,response)=>{
 app.get('/cart',(req,res)=>{
     res.render('cart',{products:this.products})
 })
+
 
 
 app.listen(process.env.PORT || 4000, ()=> console.log('Server Started on port 4000'))

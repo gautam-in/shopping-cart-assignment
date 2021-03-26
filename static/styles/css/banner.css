@@ -1,0 +1,51 @@
+.bannerBody {
+  margin-top: 15px; }
+
+@media (min-width: 1025px) {
+  .bannerBody {
+    max-width: 80%;
+    padding: 0 15%; } }
+
+.carousel {
+  overflow-x: hidden; }
+
+.carousel_viewport {
+  box-shadow: 0 6px 15px -4px rgba(0, 0, 0, 0.7); }
+  .carousel_viewport .item {
+    display: flex;
+    position: relative; }
+    .carousel_viewport .item img {
+      width: 100%;
+      object-fit: cover; }
+    .carousel_viewport .item a {
+      color: #e91e63;
+      opacity: 0.5;
+      text-decoration: none;
+      font-size: 5em;
+      position: absolute;
+      top: 25%;
+      right: 0px; }
+      .carousel_viewport .item a:nth-child(2) {
+        left: 0px; }
+      .carousel_viewport .item a:hover {
+        opacity: 1; }
+
+.categories ul li {
+  width: 100%;
+  margin: 0px 0px;
+  box-shadow: 0 6px 15px -4px rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: space-around; }
+  .categories ul li:nth-child(2n) {
+    flex-direction: row-reverse; }
+  .categories ul li img {
+    width: 30%;
+    padding: 10px;
+    object-fit: contain; }
+  .categories ul li section {
+    padding: 10px; }
+    .categories ul li section a button {
+      text-align: center;
+      padding: 10px; }
+      .categories ul li section a button:focus {
+        outline-color: #e91e63; }
