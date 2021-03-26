@@ -1,0 +1,26 @@
+.sideBar{
+    height:100%;
+    width: 300px;
+    background-color:lightgray;
+}
+.sideBarList{
+    height: auto;
+    padding: 0;
+    width: 100%;
+}
+.sideBarList .row{
+    width: 100%;
+    height: 50px;
+    border: 1px solid black;
+    list-style-type: none;
+    margin: 0%;
+    display: flex;
+    flex-direction: row;
+    color: black;
+    justify-content: center;
+    align-items: center;
+}
+.sideBarList .row:hover{
+    cursor: pointer;
+    background-color:gray;
+}

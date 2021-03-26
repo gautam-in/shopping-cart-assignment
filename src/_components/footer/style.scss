@@ -1,0 +1,34 @@
+ @import "../../Utilities/SCSS-Variables/variables.scss";
+
+ .myFooter{
+    background-color:lightgray;
+    text-align:center;
+    position: relative;
+    width: 100%;
+    @media only screen and (max-width: $mobile-max-width) {
+        height: 8rem;
+        width: 79rem;
+        font-size: 30px;
+    }
+    @media only screen and (min-width: $tablet-width) {
+        height: 8rem;
+        width: 79rem;
+        font-size: 30px;
+    }
+    @media only screen and (min-width: $desktop-width) {
+        height: 4rem;
+        width: 120rem;
+        font-size: 20px;
+    }
+}
+.footerText{
+    @media only screen and (max-width: $mobile-max-width) {
+        padding-top: 2%;
+    }
+    @media only screen and (min-width: $tablet-width) {
+        padding-top: 2%;
+    }
+    @media only screen and (min-width: $desktop-width) {
+        padding-top: 1%;
+    }
+}

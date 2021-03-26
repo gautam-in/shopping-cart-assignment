@@ -1,0 +1,33 @@
+@import "../../../Utilities/SCSS-Variables/variables.scss";
+
+.sideBarNavs{
+    position: relative;
+    padding-right: 10%;
+    height: 80vh;
+    }
+    .mains{
+        position: relative;
+        width: 200vh;
+        height: 90vh;
+    }
+    .contents{
+
+        @media only screen and (max-width: $mobile-max-width) {
+            width: 170vh;
+            background-color:aqua;
+            margin-top:-40%;
+            height: 80vh;
+            margin-left: 19%;          }
+          @media only screen and (min-width: $tablet-width) {
+            width: 45vh;
+            background-color:aqua;
+            margin-top:-40%;
+            height: 80vh;
+            margin-left: 8%;          }
+          @media only screen and (min-width: $desktop-width) {
+            width: 170vh;
+            background-color:aqua;
+            margin-top:-40%;
+            height: 80vh;
+            margin-left: 19%;          }
+    }
