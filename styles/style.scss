@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css?family=Dosis:400,600,700');
+$font:'Dosis', sans-serif;
+$buy-now-button-color: rgb(204, 0, 82);
+$header-shadow:0px 1px 2px 2px rgba(0,0,0,0.2);
+$cart-background:#efefef;
+
+body {
+    font-family:$font ;
+  }
+button:focus {
+    outline: none;
+}
+.content{
+  width:80%;
+  margin:auto;
+  position:relative;
+  // background-color: $cart-background;
+}
+.header{
+  width:100%;
+  position:fixed;
+  height:100px;
+  z-index:10;
+  top:0;
+  left:0;
+  right:0;
+  justify-content:center;
+  align-items:"center";
+  box-shadow:$header-shadow;
+  background:#fff
+}
+
+.footer{
+  width:100%;
+  z-index:10;
+  position: relative;
+  display: flex;
+  justify-content:flex-start;
+  align-content:"center";
+  background:$cart-background}
+.header-content{
+  width:80%;
+  margin:auto;
+  display:flex;
+  height:100px;
+  justify-content:center;
+  align-items: center;
+}
+.header-nav{
+  flex:1;
+  align-self:flex-end;
+  padding:0px 0px 20px 120px
+}
+.header-nav-link{
+  text-decoration:none;
+  color:#000;
+  margin-right:10px
+}
+.header-cart{
+  display:grid;
+  grid-template-rows:47% auto;
+}
+.header-login{
+  display:"grid";
+  grid-template-columns:auto auto;
+  grid-gap: 10px;
+}
+.cart{
+  display:flex;
+  flex:1;
+  min-width:100px;
+  flex-direction:row;
+  justify-content:space-evenly;
+  background:$cart-background;
+}
+.logout{
+  height: 30px;
+  border: none;
+}
+.btn-explore {
+    color: $buy-now-button-color;
+}
+.example::-webkit-scrollbar {
+  display: none;
+}
+.logo{
+width: 150px;
+}
+@media screen and (max-width: 1199px) {
+   .content {
+    width: 100%;
+   }
+   .header-content{
+     width:100%;
+   }
+   
+} 
+@media screen and (max-width: 767px) {
+  .header-login{
+    display: none;
+  }  
+  .header-nav{
+    padding:0px
+  }
+  .cart{
+    display:flex;
+    flex:1;
+    height: 100px;
+    flex-direction:row;
+    align-items: center;
+    background:$cart-background;
+  }
+} 

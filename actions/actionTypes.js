@@ -1,0 +1,10 @@
+export const ADD_ITEM_TO_CART = "ADD_ITEM_TO_CART"
+export const GET_BANNERS = "GET_BANNERS"
+export const GET_CATEGORIES = "GET_CATEGORIES"
+export const REGISTER_USER = "REGISTER_USER"
+export const GET_PRODUCTS = "GET_PRODUCTS"
+export const DECREMENT_ITEM_COUNT = "DECREMENT_ITEM_COUNT"
+export const REMOVE_ITEM_FROM_CART = "REMOVE_ITEM_FROM_CART"
+export const TOGGLE_CART ='TOGGLE_CART'
+export const LOG_IN = 'LOG_IN'
+export const LOG_OUT = 'LOG_OUT'
