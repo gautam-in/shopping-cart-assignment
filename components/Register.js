@@ -27,7 +27,8 @@ let isUserRegistered = props.registeredUsers.findIndex(email => email === inputs
             checkUserRegistered("User Already registered")
             return null;
         }
-        checkUserRegistered(false)
+        checkUserRegistered(`Account created with the email ${inputs.email}.${'\n'}Please login`)
+
         return props.actions.registerUser(inputs) 
     }
         return(

@@ -5,7 +5,7 @@ import BannerItem from './BannerItem'
 
 export default class extends React.Component {
   render() {
-  const{carouselData } = this.props
+  const{carouselData,styles} = this.props
     return (
       <CarouselProvider 
         infinite
@@ -15,7 +15,9 @@ export default class extends React.Component {
         totalSlides={carouselData?.length}
         >
         <ButtonBack
-        style={{position:"absolute",width:100,height:50,zIndex:2,top:"15%",background:"rgba(0,0,0,0.4)",fontSize:16,border:"none"}}>Back</ButtonBack>
+          className={styles.carouselback}>
+          Back
+        </ButtonBack>
         <Slider>
         {carouselData?.length && carouselData.map((bannerItem,i)=>{
                 return (
@@ -24,9 +26,12 @@ export default class extends React.Component {
                 </Slide>)
             })}
         </Slider>
+        <div style={{display:"flex",justifyContent:'center',alignItems:"center"}}>
         <DotGroup />
+        </div>
         <ButtonNext
-        style={{position:"absolute",width:100,height:50,zIndex:2,top:"15%",background:"rgba(0,0,0,0.4)",fontSize:16,border:"none",left:"80%"}}>Next</ButtonNext>
+        className={styles.carouselfront}
+        >Next</ButtonNext>
       </CarouselProvider>
     );
   }

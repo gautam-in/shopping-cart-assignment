@@ -1,12 +1,12 @@
 import { useRouter } from "next/dist/client/router";
-export default function CategoryItem({categoryItem,index}) {
+export default function CategoryItem({categoryItem,index,styles}) {
     const router = useRouter()
     return(
-        <div style={{display:'flex',flexDirection: index % 2 === 0 ?"row" :'row-reverse'}}>
-            <img style={{width:"30%"}} src={categoryItem?.imageUrl} />
-            <div style={{display:"flex", flex:1, flexDirection:"column", justifyContent:"center",alignItems:"center"}}>
-                <p style={{fontSize:24,fontWeight:'bold'}}>{categoryItem?.name}</p>
-                <p>{categoryItem?.description}</p>
+        <div className={styles.categoryitem} style={{flexDirection: index % 2 === 0 ?"row" :'row-reverse'}}>
+            <img className={styles.bannerimage} src={categoryItem?.imageUrl} />
+            <div className={styles.catdetails}>
+                <p className={styles.categoryname}>{categoryItem?.name}</p>
+                <p className={styles.catdescription} >{categoryItem?.description}</p>
                 <button onClick={()=>{
                         router.push({
                             pathname:"/products",
@@ -14,7 +14,7 @@ export default function CategoryItem({categoryItem,index}) {
                                 id:categoryItem.id
                             }
                         })
-                }} style={{background:"rgb(204, 0, 82)",padding:"0px 8px",minWidth:100,height:40,border:"none",color:"#fff"}}>{`exlpore ${categoryItem.key}`}</button>
+                }} className={styles.catbutton}>{`exlpore ${categoryItem.key}`}</button>
             </div>
         </div>
     )

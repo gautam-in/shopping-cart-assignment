@@ -85,12 +85,10 @@ const initialState ={
                   })
         case types.REMOVE_ITEM_FROM_CART: 
         const allItemsInCart= Object.create(state?.cartData) ;
-        console.log(allItemsInCart,"1",action?.item);
-        const itemToBeRemoved = allItemsInCart.findIndex((product)=>product.id  === action.item.id)
-        console.log(allItemsInCart,"2",itemToBeRemoved);
+        
+        const itemToBeRemoved = allItemsInCart&&allItemsInCart.length&&allItemsInCart.findIndex((product)=>product.id  === action.item.id)
 
         allItemsInCart.splice(itemToBeRemoved,1)
-        console.log(allItemsInCart,"3",itemToBeRemoved);
         //remove item from cart
             return Object.assign({}, state, {
                     cartData:allItemsInCart&&allItemsInCart.length ?allItemsInCart :[]

@@ -1,9 +1,9 @@
 import CartItem from "./CartItem"
 function CartEmptyState() {
     return(
-        <div style={{display:"flex",height:"100vh",width:"100%",backgroundColor:"#fff",justifyContent:"center",alignItems:"c"}}>
-                    No items in cart
-                Your favourite item are just a click away
+        <div style={{display:"flex",height:"90vh",width:"100%",backgroundColor:"#fff",justifyContent:"center",alignItems:"center",flexDirection:'column'}}>
+                <p style={{fontSize:20,fontWeight:'bold'}}>No items in cart.</p>
+                <p>Your favourite item are just a click away</p>
         </div>
     )
     
@@ -15,9 +15,10 @@ const totalPrice = cartData?.length&&cartData.reduce((tally,cartItem)=>{
         },0)
 return(
     <div style={{position:"fixed",background:"rgba(0,0,0,0.4)",top:0,bottom:0,right:0,left:0,zIndex:11,overflowY:"hidden"}}>
-        <div style={{width:"80%",margin:"auto",position:"relative"}}>
-        <div className="example" style={{width:"400px",minHeight:400,background:"rgb(240,240,255)",position:"absolute",top:100,right:0,overflowY:"scroll"}}>
-            <header style={{display:"flex",background:"#000",height:40,width:"400px",justifyContent:"center",alignItems:"center",position:"fixed",top:100,zIndex:11}}>
+        <div style={{width:"80%",margin:"auto",position:"relative",display:"flex",justifyContent:"flex-end"}}>
+        <div className="example" style={{width:"400px",maxHeight:500,background:"rgb(240,240,255)",position:"relative",top:100,right:0,overflowY:"scroll",zIndex:12}}>
+
+            <header style={{display:"flex",background:"#000",height:40,width:"400px",justifyContent:"center",alignItems:"center",position:"fixed",zIndex:1}}>
             <div style={{flex:1}}>
             <p style={{marginBlockStart:0,marginBlockEnd:0,color:"#fff"}}>My Cart ({cartData?.length}) items</p> 
             </div>
@@ -31,8 +32,8 @@ return(
                     return(
                         <CartItem item={item} actions={actions}/>)
                     })
-                :
-                <CartEmptyState />
+                    :
+                    <CartEmptyState />
                 }
             </div>
             {cartData&&cartData.lenght&&
@@ -41,7 +42,7 @@ return(
                 <p>You wont find it cheaper any where</p>
             </div>}
 
-            <footer style={{display:"flex",flexDirection:"column",background:"#fff",height:100,width:"400px",justifyContent:"center",alignItems:"center",position:"fixed",bottom:0,zIndex:11}}>
+            <footer style={{display:"flex",flexDirection:"column",background:"#fff",height:100,width:"400px",justifyContent:"center",alignItems:"center",position:"fixed",bottom:0,marginTop:140}}>
                 <div>
                     <p style={{marginBlockStart:0,marginBlockEnd:"10px"}}>Promo code can be applied on payment page</p> 
                 </div>
