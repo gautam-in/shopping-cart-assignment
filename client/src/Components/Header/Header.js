@@ -9,9 +9,13 @@ import { Link } from "react-router-dom";
 const Header = () => {
   return (
     <header>
-      <img src={logo} alt={"Sabka Bazaar Logo"} height="60" width="140" className="logo" />
-      <Link to={routes.home}>{HomeLink}</Link>
-      <Link to={routes.products}>{ProductsLink}</Link>
+      <div className="navbar-section">
+        <img src={logo} alt={"Sabka Bazaar Logo"} height="60" width="140" className="logo" />
+        <nav>
+          <Link to={routes.home}>{HomeLink}</Link>
+          <Link to={routes.products}>{ProductsLink}</Link>
+        </nav>
+      </div>
       <CartIcon />
     </header>
   );

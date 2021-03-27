@@ -10,15 +10,43 @@ header {
   }
 }
 
-@media only screen and (min-width: $desktop-width) {
+@mixin toggleNavbar {
   header {
     justify-content: space-around;
-  }
+    .navbar-section{
+      display: flex;
+      nav{
+        display: flex;
+        align-items: flex-end;
+        margin: 10px;
+          & a{
+            padding: 0px 25px;
+            text-decoration: none;
+              &:hover{
+                text-decoration: underline;
+            }
+          }
+        }
+      }
+    }
+}
+
+@media only screen and (min-width: $desktop-width) {
+  @include toggleNavbar();
 }
 
 @media only screen and (max-width: $mobile-max-width) {
-  header > img {
-    width: 100px;
-    height: 50px;
+  header {
+    &.navbar-section > img{
+      width: 100px;
+      height: 50px;
+    }
+    nav{
+      display: none;
+    }
   }
+}
+
+@media only screen and (min-width: $tablet-width) {
+  @include toggleNavbar();
 }
