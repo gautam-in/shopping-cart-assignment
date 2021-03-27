@@ -1,5 +1,7 @@
-import logoImage from '../../static/images/logo.png';
+import logoImage from '../assets/images/logo.png';
+import lowestPriceImage from '../assets/images/lowest-price.png';
 
-export const logo = {
-    logoImage
+export default {
+  logoImage,
+  lowestPriceImage,
 };
