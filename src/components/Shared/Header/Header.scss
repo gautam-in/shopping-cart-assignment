@@ -5,8 +5,9 @@ nav {
     background: $white-color;
     box-shadow: 0px 1px 10px 5px $grey-color;
     align-content: center;
-    position: fixed;
-    width: 100%;
+    // position: fixed;
+    // width: 100%;
+    // top:0;
     .main-nav {
         display: flex;
         justify-content: space-between;

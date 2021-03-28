@@ -40,6 +40,7 @@ const ProductPage = ({
               </span>
               <button
                 type="button"
+                disabled={product.stock - product.count === 0}
                 className="btn product-list__item--action-buy"
                 onClick={() => addToCart(product)}
               >

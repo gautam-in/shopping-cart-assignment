@@ -4,6 +4,7 @@
     padding: 0;
     width: 28rem;
     background-color: $grey-color;
+    // position: absolute;
     .cart-header {
         display: flex;
         background-color: $black-color;
@@ -29,18 +30,21 @@
         flex-wrap: wrap;
         justify-content: center;
         align-items: center;
-        // height: 25rem;
+        height: 20rem;
         align-content: center;
         h1 {
             font-size: 1.5rem;
         }
-        h3 {
+        h2 {
             font-size: 1rem;
             font-weight: 600;
         }
     }
     .cart-content {
         margin: 1rem 0;
+        height: 18rem;
+        overflow: hidden;
+        overflow-y: scroll;
         &__container {
             display: flex;
             padding: 1rem;
@@ -58,7 +62,8 @@
                     display: flex;
                     flex-wrap: wrap;
                     width: 80%;
-                    h3 {
+                    padding: 0 0 0 .5rem;
+                    h2 {
                         align-self: flex-end;
                     }
                 }
@@ -76,6 +81,9 @@
                         border-radius: 100%;
                         font-size: 1rem;
                         cursor: pointer;
+                        &.no-stock{
+                            opacity: 0.5;
+                        }
                     }
                     .cart-content-cross {
                         font-size: 1rem;

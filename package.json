@@ -12,8 +12,9 @@
     "build-prod": "webpack --mode production",
     "test": "jest --config ./jest.config.json",
     "start": "webpack serve --hot --mode development",
-    "server": "canned -p 5000 ./server"
+    "server": "canned --headers \"Content-Type\" -p 5000 ./server"
   },
+  "proxy": "http://localhost:5000",
   "dependencies": {
     "@material-ui/core": "^4.11.3",
     "@material-ui/icons": "^4.11.2",
