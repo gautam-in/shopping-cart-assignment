@@ -10,11 +10,11 @@ const LoginPage = (props) => {
   return (
     <section className="section-login">
       <div className="login-info">
-        <h2>Login</h2>
+        <h2 data-testid="login">Login</h2>
         <p>Get access to your Orders, Wishlist and Recommendations</p>
       </div>
       <div className="login-action">
-        <form method="post" action="#" className="login-form" autoComplete="off" onSubmit={(e) => onSubmit(e, { ...fields })}>
+        <form data-testid="form" method="post" action="#" className="login-form" autoComplete="off" onSubmit={(e) => onSubmit(e, { ...fields })}>
           <div className="field-row">
             <FloatingInput
               name="email"
