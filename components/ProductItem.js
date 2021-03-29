@@ -23,7 +23,7 @@ export default function ProductItem({product,actions,cartData,currentLogedInUser
             <p style={{fontSize:20,fontWeight:"bold"}}>{product.name}</p>
             </div>
             <div className={styles.itemimage}>
-            <img width="100%" height="150" src={product?.imageURL} />
+            <img className={styles.productimage}  src={product?.imageURL} />
             </div>
             <div className={styles.itemdescription}>
             <p className={styles.description}>{product.description}</p>

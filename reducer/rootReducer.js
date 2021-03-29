@@ -44,13 +44,13 @@ const initialState ={
         case types.LOG_OUT: 
         return {
             ...state,
-            currentLogedInUser:false
+            currentLogedInUser:false,
+            cartData:[]
         }
         case types.ADD_ITEM_TO_CART: 
         const currentCartData = state?.cartData;
         const itemAlreadyInCart = currentCartData&&currentCartData.length ? 
         currentCartData.findIndex((product)=>product.id  === action.item.id):-1
-        console.log(itemAlreadyInCart,"red");
         //increasing the count of items in cart
         if (itemAlreadyInCart>= 0) {
             return Object.assign({}, state, {

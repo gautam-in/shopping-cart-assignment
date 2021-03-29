@@ -17,7 +17,7 @@
     background:rgba(0,0,0,0.4);
     font-size:16px;
     border:none;
-    left: 80%;
+    left: 90%;
  }
 .categoryitem{
     display:flex;
@@ -57,6 +57,7 @@
     border:none;
     color:#fff;
 }
+
 @media screen and (max-width:1199px){
     .categoryitem{
         height:auto

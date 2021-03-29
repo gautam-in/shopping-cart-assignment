@@ -5,7 +5,7 @@ import PageLayout from './PageLayout'
 import loginStyles from '../styles/login.module.scss'
 
 function Register (props) {
-    const {inputs,handleChange,errors} = useForm({
+    const {inputs,handleChange,errors,clearForm} = useForm({
         first_name:'',
         last_name:'',
         email:'',
@@ -28,7 +28,7 @@ let isUserRegistered = props.registeredUsers.findIndex(email => email === inputs
             return null;
         }
         checkUserRegistered(`Account created with the email ${inputs.email}.${'\n'}Please login`)
-
+        clearForm()
         return props.actions.registerUser(inputs) 
     }
         return(

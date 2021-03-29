@@ -54,7 +54,7 @@ const router = useRouter()
                         Logout
                         </button>}
                 </div>
-                <div onClick={()=>actions.toggleCart()} className="cart">
+                <div onClick={()=>actions.toggleCart()} className="carticon">
                     <img  src='../static/images/cart.svg' width={30}/>
                     <p >{totalItemsInCart||0} items</p>
                 </div>

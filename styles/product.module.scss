@@ -28,6 +28,10 @@ $primary-color: rgb(204, 0, 82);
     grid-template-columns:auto auto auto auto;
     padding:0px 10px
 }
+.productimage{
+    width: 100%;
+    height: 150px;
+}
 .itemname { grid-area: name;padding:0px 4px;align-self: start; }
 .itemimage { grid-area: image; }
 .itemdescription {grid-area: description;}
@@ -40,6 +44,8 @@ $primary-color: rgb(204, 0, 82);
     grid-row-gap: 2px;
     margin: 5px;
     border-bottom:2px dotted #ccc;
+    justify-content: center;
+    align-items: center;
 }
 .description{
     background:#ccc;
@@ -66,6 +72,9 @@ $primary-color: rgb(204, 0, 82);
     .item{
      grid-template-areas: 'name''image description''button';
     }
+    .productimage{
+        height: 160px;
+    }
 
 }
 @media screen and (max-width:767px){
@@ -90,7 +99,10 @@ $primary-color: rgb(204, 0, 82);
     }
     .item{
     grid-template-areas: 'name''image description''button';
-}
+    }
+    .productimage{
+        width: 60%;
+    }
 
 
 }

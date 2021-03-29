@@ -1,12 +1,12 @@
 export default function CartItem({item,actions}) {
     return(
-    <div  style={{display:"flex",position:"relative",justifyContent:"space-between",alignItems:"center",height:100,margin:"10px 0",background:"#fff",padding:"0 10px"}}>
+    <div className="cartitem">
         <div style={{flex:0.2}}> 
         <img src={item.imageURL}  width="100px" />
         </div>
-        <div style={{flex:1,marginLeft:10}}>
+        <div className="cartitemcontent">
             <p>{item.name}</p>
-            <div style={{display:"flex",justifyContent:"flex-start",alignContent:'flex-start'}}>
+            <div className="cartcount">
             <div>
                 <button 
                         onClick={()=>{
@@ -16,12 +16,12 @@ export default function CartItem({item,actions}) {
                                 actions.decrementItemCount(item)
                             } 
                         }} 
-                        style={{height:20,background:"rgb(204,0,82)",border:0}} type="button" name="button">
+                         type="button" name="button">
                     -
                 </button>
             </div>
-            <div style={{height:20,width:20,textAlign:'center'}}>
-                <p style={{marginBlockStart:0,marginBlockEnd:0}}>
+            <div className="itemcount">
+                <p >
                     {item.count}
                 </p>
             </div>
@@ -29,20 +29,19 @@ export default function CartItem({item,actions}) {
                 <button 
                     onClick={()=>{
                         actions.addItemToCart(item) 
-                    }} 
-                    style={{height:20,background:"rgb(204,0,82)",border:0}} type="button" name="button">
+                    }} type="button" name="button">
                     +
                 </button>
             </div>
-            <div style={{height:20, flex:1,textAlign:'center'}}>
-                <p style={{marginBlockStart:0,marginBlockEnd:0}}>
+            <div className="itemmultiplier">
+                <p >
                    x Rs.{item.price}
                 </p>
             </div>
     </div>
 
         </div>
-        <div style={{alignSelf:"flex-end"}}> 
+        <div className="itemprice"> 
         <p>Rs.{item.price *item.count}</p>
         </div>
     </div>)
