@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="../styles/main.scss">
+    <title>Sabka Bazaar</title>
+</head>
+
+<body>
+    <header>
+        <div class="shadow">
+            <div class="container">
+                <nav class="navbar navbar-expand-sm navbar-light"">
+                <a class=" navbar-brand" href="/index.html">
+                    <img src="../../static/images/logo.png" class="img-fluid" alt="Sabka bazzar Logo" />
+                    </a>
+                    <div>
+                        <ul class="navbar-nav nav ml-4">
+                            <li class="nav-item">
+                                <a class="nav-link" href="/index.html">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/products.html">Product</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="ml-auto flex-column">
+                        <ul class="navbar-nav align-self-end">
+                            <li class="nav-item"><a href="./login.html" class="nav-link">Login</a></li>
+                            <li class="nav-item"><a href="./register.html" class="nav-link">Register</a></li>
+                        </ul>
+                        <button class="btn btn-lg btn-light" type="button" aria-label="View cart">
+                            <img src="../../static/images/cart.svg" class="img-fluid" width="40" height="40"
+                                alt="cart image" />
+                            <span id="cartValue display-5"></span>&nbsp;<small>Item(s)</small>
+                        </button>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="">
+            <h4 class="card">My Cart <span id="cartCount">1</span> item(s)</h4>
+            <ul class="card cart-items-list list-group">
+                <li class="cart-item list-group-item">
+                    <img src="../../static/images/products/baby/baby-dove.jpg">
+                    <span>Apple -Washington</span>
+                    <button class="btn btn-pink btn-sm"><i class="bi bi-dash-square-fill"></i></button>
+                    <span id="cartCount">1</span>
+                    <button class="btn btn-pink btn-sm"><i class="bi bi-plus-square-fill"></i></button>
+                    &times; 187
+                </li>
+                <li class="cart-item list-group-item">
+                    <img src="../../static/images/products/baby/baby-dove.jpg">
+                    <span>Apple -Washington</span>
+                    <button class="btn btn-pink btn-sm"><i class="bi bi-dash-square-fill"></i></button>
+                    <span id="cartCount">1</span>
+                    <button class="btn btn-pink btn-sm"><i class="bi bi-plus-square-fill"></i></button>
+                    &times; 187
+                </li>
+            </ul>
+            <div class="card"></div>
+        </div>
+    </main>
+
+    <footer class="footer" role="contentinfo">
+        <span>Promocode can be applied on payment page</span>
+        <button class="btn btn-pink"><span class="text-left">Proceed to checkout</span><span id="cartPrice"
+                class="text-right">Rs 187</span><i class="bi bi-chevron-right"></i></button>
+    </footer>
+
+<script src="../scripts/cart.js"></script>
+</body>
+
+</html>

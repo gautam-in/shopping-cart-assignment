@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="../styles/main.scss">
+    <title>Sabka Bazaar</title>
+</head>
+
+<body>
+    <header>
+        <div class="shadow">
+            <div class="container">
+                <nav class="navbar navbar-expand-sm navbar-light"">
+                <a class=" navbar-brand" href="/index.html">
+                    <img src="../../static/images/logo.png" class="img-fluid" alt="Sabka bazzar Logo" />
+                    </a>
+                    <div>
+                        <ul class="navbar-nav nav ml-4">
+                            <li class="nav-item">
+                                <a class="nav-link" href="/index.html">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/products.html">Product</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="ml-auto flex-column">
+                        <ul class="navbar-nav align-self-end">
+                            <li class="nav-item"><a href="./login.html" class="nav-link">Login</a></li>
+                            <li class="nav-item"><a href="./register.html" class="nav-link">Register</a></li>
+                        </ul>
+                        <button class="btn btn-lg btn-light" type="button" aria-label="View cart">
+                            <img src="../../static/images/cart.svg" class="img-fluid" width="40" height="40"
+                                alt="cart image" />
+                            <span id="cartValue display-5"></span>&nbsp;<small>Item(s)</small>
+                        </button>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="products row m-0 p-0">
+           <div class="col-sm-2 categories-pane list-group pr-0"></div> 
+           <div class="col-12 col-sm-10 products-view row p-0 m-0"></div>
+        </div>
+    </main>
+
+    <footer class="footer text-center bg-light" role="contentinfo">
+        Copyright &#169; 2011-2018 Sabka Bazaar Grocery Supplies Pvt Ltd
+    </footer>
+
+    <script src="../scripts/product.js"></script>
+</body>
+
+</html>

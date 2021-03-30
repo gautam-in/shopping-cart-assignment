@@ -2,14 +2,33 @@
   "name": "code-exercise",
   "version": "1.0.0",
   "description": "This is a shopping cart coding exercise",
-  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "canned -p 5000 ./server"
+    "start": "canned -p 5000 ./server",
+    "dev": "parcel src/views/index.html",
+    "build": "parcel build src/views/index.html --public-url ./"
   },
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "canned": "^0.3.12"
+    "bootstrap": "^4.6.0",
+    "canned": "^0.3.12",
+    "jquery": "^3.6.0",
+    "regenerator-runtime": "^0.13.7"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.13.8",
+    "parcel-bundler": "^1.12.4",
+    "parcel-plugin-goodie-bag": "^2.0.0",
+    "parcel-plugin-static-files-copy": "^2.5.1",
+    "sass": "^1.32.8"
+  },
+  "staticFiles": {
+    "staticPath": [
+      {
+        "staticPath": "static",
+        "staticOutDir": "static/"
+      }
+    ]
   }
 }

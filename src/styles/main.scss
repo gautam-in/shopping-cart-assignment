@@ -1,0 +1,99 @@
+@import "../../node_modules/bootstrap/scss/bootstrap";
+@import "./variables.scss";
+@import url(https://fonts.googleapis.com/css?family=Dosis:400,600,700);
+
+body {
+    font-family: "Dosis";
+}
+
+input.form-control {
+    outline: none;
+    border-width: 0 0 2px;
+    border-color: #000;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    box-shadow: none;
+}
+
+input.form-control:focus {
+    border-color: $font-color-blue;
+    box-shadow: none;
+}
+
+.was-validated input.form-control:invalid:focus,
+.was-validated input.form-control:valid:focus {
+    box-shadow: none;
+}
+
+.was-validated:focus-within:invalid {
+    label {
+        color: $font-color-black;
+    }
+}
+
+.form-group {
+    &:focus-within {
+        label {
+            color: $font-color-blue;
+        }
+    }
+
+}
+
+.btn-pink {
+    background-color: #c41489;
+    color: $font-color-white;
+    width: 100%;
+}
+
+
+#carouselBanner {
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.carousel-control-prev {
+    color: $font-color-black;
+    margin-left: -25px;
+}
+
+.carousel-control-next {
+    color: $font-color-black;
+    margin-right: -25px;
+}
+
+.carousel-control-prev:hover,
+.carousel-control-prev:focus {
+    color: $font-color-black;
+}
+
+.carousel-control-next:hover,
+.carousel-control-next:focus {
+    color: $font-color-black;
+}
+
+.bg-hightlight {
+    background-color: $color-grey;
+    border: 1px solid $color-grey;
+}
+
+.product-item {
+    p {
+        height: 100px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    h4 {
+        height: 100px;
+        font-size: 1.25rem;
+    }
+
+    box-shadow: 0 0.5rem 0.5rem rgb(0 0 0 / 25%);
+}
+
+.categories-pane {
+    .list-group-item:hover {
+        background-color: $color-grey;
+    }
+}

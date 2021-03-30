@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="../styles/main.scss">
+    <title>Sabka Bazaar</title>
+</head>
+
+<body>
+    <header>
+        <div class="shadow">
+            <div class="container">
+                <nav class="navbar navbar-expand-sm navbar-light"">
+                <a class=" navbar-brand" href="/index.html">
+                    <img src="../../static/images/logo.png" class="img-fluid" alt="Sabka bazzar Logo" />
+                    </a>
+                    <div>
+                        <ul class="navbar-nav nav ml-4">
+                            <li class="nav-item">
+                                <a class="nav-link" href="/index.html">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/products.html">Product</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="ml-auto flex-column">
+                        <ul class="navbar-nav align-self-end">
+                            <li class="nav-item"><a href="./login.html" class="nav-link">Login</a></li>
+                            <li class="nav-item"><a href="./register.html" class="nav-link">Register</a></li>
+                        </ul>
+                        <button class="btn btn-lg btn-light" type="button" aria-label="View cart">
+                            <img src="../../static/images/cart.svg" class="img-fluid" width="40" height="40"
+                                alt="cart image" />
+                            <span id="cartValue display-5"></span>&nbsp;<small>Item(s)</small>
+                        </button>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="container d-flex mt-2">
+            <div>
+                <h3><strong>Register</strong></h3>
+                <p>We do not share your details with anyone</p>
+            </div>
+            <div class="ml-4 col-md-4">
+                <form method="Post" id="registerForm" novalidate>
+                    <div class="form-group">
+                        <label for="firstName">First Name</label>
+                        <input type="text" class="form-control" name="firstName" required aria-required="true" autocomplete="off">
+                        <div class="invalid-feedback">
+                            Please enter First Name.
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="lastName">Last Name</label>
+                        <input type="text" class="form-control" name="lastName" required aria-required="true" autocomplete="off">
+                        <div class="invalid-feedback">
+                            Please enter Last Name.
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control" name="email" pattern="\S+@\S+\.\S+" required
+                            aria-required="true" autocomplete="off">
+                        <div class="invalid-feedback">
+                            Please enter a valid email.
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" class="form-control" name="password" aria-required="true" required
+                            minlength="6" pattern="(?=.*[0-9])(?=.*[a-zA-Z])([a-zA-Z0-9]+)"
+                            title="Password must have minimum six characters, atleast one number, atleast one character no spaces" autocomplete="off">
+                        <div class="invalid-feedback">
+                            Please enter a valid password.
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="confirmPassword">Confirm Password</label>
+                        <input type="password" class="form-control" name="confirmPassword" aria-required="true" required autocomplete="off">
+                        <div class="invalid-feedback">
+                            Confirm Password is required and should match password.
+                        </div>
+                    </div>
+                    <button class="btn btn-pink mt-2" type="submit">Register</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer text-center bg-light" role="contentinfo">
+        Copyright &#169; 2011-2018 Sabka Bazaar Grocery Supplies Pvt Ltd
+    </footer>
+
+    <script src="../scripts/register.js"></script>
+</body>
+
+</html>
