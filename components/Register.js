@@ -39,15 +39,17 @@ let isUserRegistered = props.registeredUsers.findIndex(email => email === inputs
                 <div style={{flex:1}}>
                     <form onSubmit={UserSignUp} 
                         className={loginStyles.formrightcontent}>
-                            <label className={loginStyles.inputlabel}>
+                            <label  className={loginStyles.inputlabel}>
                                 First name
-                                <input onChange={handleChange} name="first_name" className={loginStyles.inputbox} type="name"/>
+                                <input aria-label="First name" onChange={handleChange} name="first_name" className={loginStyles.inputbox} type="name"/>
                             {errors.first_name&& <p className={loginStyles.inputerror}>{errors.first_name}</p>}
                             </label>
                             <label className={loginStyles.inputlabel}>
                                 Last name
                                 <input
-                                    onChange={handleChange} 
+                                    onChange={handleChange}
+                                    aria-required="true" 
+                                    aria-label="last name"
                                     name="last_name" 
                                     className={loginStyles.inputbox} 
                                     type="name"/>
@@ -55,17 +57,22 @@ let isUserRegistered = props.registeredUsers.findIndex(email => email === inputs
                             </label>
                             <label className={loginStyles.inputlabel}>
                                  Email
-                                <input onChange={handleChange} name="email" className={loginStyles.inputbox} type="email"/>
+                                <input 
+                                 aria-label="Email"
+                                 aria-required="true"
+                                 onChange={handleChange} name="email" aria-required="true" className={loginStyles.inputbox} type="email"/>
                                 {errors.email&& <p className={loginStyles.inputerror}>{errors.email}</p>}
                             </label>
                             <label className={loginStyles.inputlabel}>
                                 Password
-                                <input onChange={handleChange} name="password" className={loginStyles.inputbox} type="password"/>
+                                <input aria-label="Password" aria-required="true" onChange={handleChange} name="password" className={loginStyles.inputbox} type="password"/>
                                 {errors.password&& <p className={loginStyles.inputerror}>{errors.password}</p>}
                             </label>
                             <label className={loginStyles.inputlabel}>
                                Confirm password
-                                <input onChange={handleChange} name="confirm_password" className={loginStyles.inputbox} type="password"/>
+                                <input
+                                 aria-label="Confirm password"
+                                 onChange={handleChange} aria-required="true" name="confirm_password" className={loginStyles.inputbox} type="password"/>
                             </label>
                             {errors.confirm_password&& <p className={loginStyles.inputerror}>{errors.confirm_password}</p>}
                             <button

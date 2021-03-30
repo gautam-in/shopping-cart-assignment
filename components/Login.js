@@ -33,12 +33,12 @@ function Login(props) {
                         {/* <fieldset> */}
                             <label className={loginStyles.inputlabel}>
                                 Email
-                                <input onChange={handleChange} name="email" className={loginStyles.inputbox} type="email"/>
+                                <input aria-label="Email" aria-required="true" onChange={handleChange} name="email" className={loginStyles.inputbox} type="email"/>
                             </label>
                             {errors.email&& <p className={loginStyles.inputerror}>{errors.email}</p>}
                             <label  className={loginStyles.inputlabel}>
                                 Password
-                                <input name="password" onChange={handleChange} className={loginStyles.inputbox}  type="password"/>
+                                <input aria-label="Password" aria-required="true" name="password" onChange={handleChange} className={loginStyles.inputbox}  type="password"/>
                             </label>
                             {errors.password&& <p className={loginStyles.inputerror}>{errors.password}</p>}
                             <button disabled={errors.email ||errors.password||!inputs.password||!inputs.email} 

@@ -2,7 +2,7 @@ export default function CartItem({item,actions}) {
     return(
     <div className="cartitem">
         <div style={{flex:0.2}}> 
-        <img src={item.imageURL}  width="100px" />
+        <img src={item.imageURL} alt={item.name}  width="100px" />
         </div>
         <div className="cartitemcontent">
             <p>{item.name}</p>
