@@ -1,5 +1,6 @@
 import { map } from 'lodash';
 import React from 'react';
+import CustomSelect from '../Shared/CustomSelect';
 import './ProductPage.scss';
 
 const ProductPage = ({
@@ -9,22 +10,21 @@ const ProductPage = ({
     <div role="menu" className="product-categories">
       {
         map(categories, (category) => (
-          category.order > -1
-            && (
-              <button
-                type="button"
-                tabIndex={0}
-                role="menuitem"
-                key={category.key}
-                className={`product-categories__item${filteredCategory === category.id ? ' active' : ''}`}
-                onClick={() => onCategoryChange(category.id, filteredCategory)}
-              >
-                {category.name}
-              </button>
-            )
+
+          <button
+            type="button"
+            tabIndex={0}
+            role="menuitem"
+            key={category.key}
+            className={`product-categories__item${filteredCategory === category.id ? ' active' : ''}`}
+            onClick={() => onCategoryChange(category.id, filteredCategory)}
+          >
+            {category.name}
+          </button>
         ))
       }
     </div>
+    <CustomSelect categories={categories} selected={filteredCategory} onSelect={onCategoryChange} />
     <div className="product-list">
       {
         map(products, (product) => (

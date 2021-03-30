@@ -16,7 +16,9 @@ export default function Products() {
   const filteredCategory = React.useMemo(() => new URLSearchParams(history.location.search).get('q') || '');
 
   const products = useSelector((state) => state.products);
-  const categories = useResources('categories').sort(sortCallback('order'));
+  const categories = useResources('categories')
+    .filter((category) => category.order > -1)
+    .sort(sortCallback('order'));
 
   const fetchProducts = React.useCallback((category) => {
     dispatch(productActions.productList(category));

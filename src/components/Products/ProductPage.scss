@@ -126,6 +126,7 @@
     }
 
     @media only screen and (max-width: 600px) {
+        flex-wrap: wrap;
         .product-categories {
             display: none;
         }
