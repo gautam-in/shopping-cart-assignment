@@ -1,10 +1,10 @@
 .section-products {
     display: flex;
     justify-content: center;
-    width: 71%;
     margin: 0 auto;
     padding: 0;
     color: $font-color;
+    width: 73%;
     .product-categories {
         display: flex;
         flex-direction: column;
@@ -18,6 +18,9 @@
             border: none;
             border-bottom: 2px solid $light-grey-color;
             color: $font-color;
+            width: 100%;
+            text-align: start;
+            padding: 1rem;
             &:focus {
                 outline: none;
             }
@@ -37,10 +40,10 @@
         &__item {
             display: flex;
             flex-wrap: wrap;
-            width: calc((100% / 4) - 4px);
             margin: 0 0.25rem 3rem 0;
             border-bottom: 0.125rem dotted $grey-color;
             box-shadow: 1px 0 10px 0 $grey-color;
+            width: calc((100% / 4) - 4px);
             &--title {
                 width: 100%;
                 color: $black-color;
@@ -77,6 +80,76 @@
                     font-weight: 700;
                     margin: 0;
                 }
+            }
+            .m-btn-buy,
+            .s-btn-buy {
+                display: none;
+            }
+        }
+    }
+
+
+    @media only screen and (max-width: 991px) {
+        width: 100%;
+        .product-categories {
+            flex: 0 0 23%;
+        }
+        .product-list {
+            flex: 0 0 75%;
+            &__item {
+                width: calc((100% / 2) - 4px);
+                &-description {
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: center;
+                }
+                &--image {
+                    width: 45%;
+                    height: 80%;
+                }
+                &--info {
+                    width: 45%;
+                    height: 80%;
+                }
+                .m-btn-buy {
+                    width: 90%;
+                    height: 2.5rem;
+                    margin: 0.5rem 0 0 0;
+                    display: block;
+                }
+                &--action,
+                .s-btn-buy {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    @media only screen and (max-width: 600px) {
+        .product-categories {
+            display: none;
+        }
+        .product-list {
+            flex: 1;
+            margin: 2rem 1rem 0 1rem;
+            &__item {
+                width: calc((100%) - 4px);
+                &-description {
+                    justify-content: flex-end;
+                    height: 9rem;
+                }
+                &--info {
+                    width: 50%;
+                    height: 4.65rem;
+                }
+                &--image {
+                    width: 45%;
+                    height: 100%;
+                }
+            }
+            .m-btn-buy {
+                width: 50%;
+                margin: -3rem 0.25rem 0 0;
             }
         }
     }

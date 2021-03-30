@@ -95,7 +95,7 @@ const MiniCart = ({ isOpen, toggle, miniCart }) => {
           hasItems && (
             <div className="cart-footer">
               <p>Promo code can be applied on payment page</p>
-              <div className="cart-footer-action">
+              <div role="button" className="cart-footer-action" onClick={closeModal} tabIndex={0} aria-hidden="true">
                 <span className="cart-footer-action__left">
                   Proceed to Checkout
                 </span>

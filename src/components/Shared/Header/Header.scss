@@ -1,7 +1,6 @@
 nav {
     display: flex;
     justify-content: space-around;
-    padding: 10px 0 0 0;
     background: $white-color;
     box-shadow: 0px 1px 10px 5px $grey-color;
     align-content: center;
@@ -11,9 +10,10 @@ nav {
     .main-nav {
         display: flex;
         justify-content: space-between;
+        align-items: center;
         .logo {
-            width: 190px;
-            height: 80px;
+            width: 75%;
+            height: 71%;
         }
         .page-nav {
             list-style: none;
@@ -42,9 +42,9 @@ nav {
             display: flex;
             align-items: center;
             background: $grey-color;
-            width: 150px;
+            width: 9.375rem;
             padding: 0 0 0 10px;
-            height: 65px;
+            height: 4.0625rem;
             span {
                 padding: 0 0 0 10px;
                 font-size: 80%;
@@ -62,7 +62,7 @@ nav {
             display: flex;
             justify-content: flex-end;
             list-style-type: none;
-            margin: -15px 0 15px 0;
+            margin: 0 0 15px 0;
             li {
                 padding-left: 25px;
                 a {
@@ -71,6 +71,24 @@ nav {
                     font-size: 70%;
                     font-weight: 600;
                 }
+            }
+        }
+    }
+
+    @media only screen and (max-width: 991px) {
+        justify-content: space-between;
+        .main-nav {
+            .page-nav {
+                margin: 0 0 .625rem 1rem;
+            }
+        }
+    }
+
+    @media only screen and (max-width: 600px) {
+        justify-content: space-between;
+        .main-nav {
+            .page-nav {
+                display: none;
             }
         }
     }
