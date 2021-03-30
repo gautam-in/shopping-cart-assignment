@@ -12,6 +12,7 @@ function Login(props) {
     })
     
     const [userNotRegistered,checkUserRegistered] = useState(false)
+    const [showpassword,togglepassword] = useState(false)
 
     async function signIn(e) {
             e.preventDefault()
@@ -38,8 +39,12 @@ function Login(props) {
                             {errors.email&& <p className={loginStyles.inputerror}>{errors.email}</p>}
                             <label  className={loginStyles.inputlabel}>
                                 Password
-                                <input aria-label="Password" aria-required="true" name="password" onChange={handleChange} className={loginStyles.inputbox}  type="password"/>
+                                <input aria-label="Password" aria-required="true" name="password" onChange={handleChange} className={loginStyles.inputbox}  type={showpassword?"text":"password"}/>
                             </label>
+                            <div style={{display:"flex",flexDirection:"row",fontSize:12,marginTop:"16px"}}>
+                                <input  type="checkbox" id="showpass" onChange={()=>togglepassword(!showpassword)} name="Show password" value={showpassword} />
+                                <label fdr="showpass">Show password</label>
+                            </div>
                             {errors.password&& <p className={loginStyles.inputerror}>{errors.password}</p>}
                             <button disabled={errors.email ||errors.password||!inputs.password||!inputs.email} 
                             className={loginStyles.submitbutton}>Log In</button>

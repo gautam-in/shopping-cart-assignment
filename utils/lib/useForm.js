@@ -26,7 +26,7 @@ export default function useForm(initial ={}) {
 
     function handleChange(e) {
         let {value,name,type} = e.target;
-        if (type == "text") {
+        if (type == "text" &&(name!=="password" &&name!== "confirm_password")) {
             if (!value) {
                 setErrors({
                     ...errors,
@@ -67,19 +67,19 @@ export default function useForm(initial ={}) {
             }
         }
         else if (name === 'confirm_password') {
-            if (value != inputs.password ) {
-             return   setErrors({
+            if (value !== inputs.password ) {
+              setErrors({
                     ...errors,
                     [e.target.name]:'password does not match'
-                })  
-                  
+                })      
             }
-          return  setErrors({
+            else{
+            setErrors({
                 ...errors,
                 [e.target.name]:''
-            })
+            })}
         }
-        else if (type == "password") {
+        else if (name === "password") {
             if (value.length < 6) {
                 setErrors({
                     ...errors,

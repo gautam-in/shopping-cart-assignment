@@ -13,9 +13,12 @@ function Register (props) {
         confirm_password:''
     })
     const [userRegistered,checkUserRegistered] = useState(false)
+    const [showpassword,togglepassword] = useState(false)
     function isValid() {
         if (errors.email||errors.first_name||
-            errors.last_name||errors.confirm_password||errors.password) {
+            errors.last_name||errors.confirm_password||
+            errors.password||!inputs.email||
+            !inputs.first_name||!inputs.password||!inputs.confirm_password) {
             return false
         }
     return true
@@ -65,16 +68,20 @@ let isUserRegistered = props.registeredUsers.findIndex(email => email === inputs
                             </label>
                             <label className={loginStyles.inputlabel}>
                                 Password
-                                <input aria-label="Password" aria-required="true" onChange={handleChange} name="password" className={loginStyles.inputbox} type="password"/>
+                                <input aria-label="Password" aria-required="true" onChange={handleChange} name="password" className={loginStyles.inputbox} type={showpassword?"text":"password"}/>
                                 {errors.password&& <p className={loginStyles.inputerror}>{errors.password}</p>}
                             </label>
                             <label className={loginStyles.inputlabel}>
                                Confirm password
                                 <input
                                  aria-label="Confirm password"
-                                 onChange={handleChange} aria-required="true" name="confirm_password" className={loginStyles.inputbox} type="password"/>
+                                 onChange={handleChange} aria-required="true" name="confirm_password" className={loginStyles.inputbox} type={showpassword?"text":"password"}/>
                             </label>
                             {errors.confirm_password&& <p className={loginStyles.inputerror}>{errors.confirm_password}</p>}
+                            <div style={{display:"flex",flexDirection:"row",fontSize:12}}>
+                                <input  type="checkbox" id="showpass" onChange={()=>togglepassword(!showpassword)} name="Show password" value={showpassword} />
+                                <label fdr="showpass">Show password</label>
+                            </div>
                             <button
                                 disabled={!isValid()}
                                 className={loginStyles.submitbutton}>
