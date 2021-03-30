@@ -1,0 +1,7 @@
+const BannerActionTypes = {
+  GET_BANNERS_START: "GET_BANNERS_START",
+  GET_BANNERS_SUCCESS: "GET_BANNERS_SUCCESS",
+  GET_BANNERS_FAILURE: "GET_BANNERS_FAILURE",
+};
+
+export default BannerActionTypes;
