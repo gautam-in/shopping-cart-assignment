@@ -1,25 +1,22 @@
 import styled from "styled-components";
 
 const CategoryStyles =styled.div`
-    display:grid;
-    grid-template-columns:35% auto;
+    display:flex;
+    flex-direction:${props => props.flexDirection};
     box-shadow: 0px 15px 10px -15px #111;
     padding:5px;
+    text-align:center;
     img {
         width:100px;
         height:100px;
     }
     .category-img{
-        margin: 0 auto;
+        flex:0 0 35%;
     }
     .category-details{
-        text-align:center;
-        font-family:sans-serif;
+        flex:1 1 auto;
         h5{
             margin:0;
-        }
-        p{
-            font-family:monospace;
         }
     }
     button {

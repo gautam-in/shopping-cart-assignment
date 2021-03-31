@@ -67,7 +67,7 @@ export default class Home extends Component {
             <div className="banner-container">
                 <Carousel slides={this.state.slides}/>
             </div>
-            <div>
+            <div role="main">
                 <Categories/>
             </div>
         </HomeStyles>

@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import CategoryStyles from "../styles/category";
 
 
-export default function Category({category}) {
+export default function Category({category,flexDirection}) {
     const route = useRouter();
     function categoryHandler(){
         route.push({
@@ -11,12 +11,12 @@ export default function Category({category}) {
         })
     }
     return (
-        <CategoryStyles>
+        <CategoryStyles flexDirection ={flexDirection}>
             <div className="category-img">
                 <img src={category.imageUrl} alt={category.name}/>
             </div>
             <div className="category-details">
-                <h5>{category.name}</h5>                
+                <h2>{category.name}</h2>                
                 <p>{category.description}</p>
                 <Button onClick={categoryHandler} size="small" variant="contained" color="secondary"> Explore {category.key}</Button>
             </div>

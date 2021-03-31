@@ -7,6 +7,7 @@ import Form from "../styles/Form";
 import * as actionTypes from '../store/actions';
 import * as credentials from '../utils/userInfo';
 import { PinDropSharp } from "@material-ui/icons";
+import SignInStyles from "../styles/signIn";
 const ErrorStyles = styled.div`
   background: white;
   margin: 1rem 0;
@@ -21,32 +22,32 @@ const ErrorStyles = styled.div`
   }
 `;
 function SignIn(props) {
-    const route =useRouter();
+    const route = useRouter();
     const [inputs, setInputs] = useState({
         email: '',
         password: ''
     });
-    const [errorState,setErrorState] = useState({
-        error:false
+    const [errorState, setErrorState] = useState({
+        error: false
     })
 
     function handleSubmit(e) {
-        console.log("HANDLE SUBMIT",inputs)
+        console.log("HANDLE SUBMIT", inputs)
         setErrorState({
-            error:false
+            error: false
         })
         e.preventDefault();
-        if(inputs.email == credentials.USERNAME && 
-            inputs.password==credentials.PASSWORD){
-                setErrorState({
-                    error:false
-                })
-                props.login();
-                route.push({
-                    pathname:'/home'
-                })
-            }
-        else{
+        if (inputs.email == credentials.USERNAME &&
+            inputs.password == credentials.PASSWORD) {
+            setErrorState({
+                error: false
+            })
+            props.login();
+            route.push({
+                pathname: '/home'
+            })
+        }
+        else {
             setErrorState({
                 error: true
             })
@@ -61,51 +62,45 @@ function SignIn(props) {
     }
 
     return (
-        <div>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr' }}>
-                <div style={{display:'grid'}}>
-                    <div style={{display:'grid',margin:'auto',alignItems:'center'}}>
-                        <h5>LOGIN</h5>
-                        <p>Get access to your Orders, Wishlist and Recommendations</p>
-                    </div>
-                </div>
-                <Form method="POST" onSubmit={handleSubmit}>
-                    <ErrorStyles>
-                        {errorState.error && <p>UserName & Password did not match</p>}
-                    </ErrorStyles>
-                    
-                    <fieldset>
-                        <label htmlFor="email">Email</label>
-                        <input
-                            type="email"
-                            id="email"
-                            name="email"
-                            placeholder="Your email Address"
-                            value={inputs.email}
-                            required
-                            onChange={handleChange}
-                        />
-                        <label htmlFor="password">Password</label>
-                        <input
-                            type="password"
-                            id="password"
-                            name="password"
-                            placeholder="Password"
-                            value={inputs.password}
-                            required
-                            onChange={handleChange} />
-                        <Button
-                            variant="contained"
-                            color="secondary"
-                            size="small" 
-                            type="submit"
-                            >Log In</Button>
-                    </fieldset>
-                </Form>
-
-
+        <SignInStyles>
+            <div style={{ margin: 'auto' }}>
+                <h1>LOGIN</h1>
+                <p>Get access to your Orders, Wishlist and Recommendations</p>
             </div>
-        </div>
+            <Form method="POST" onSubmit={handleSubmit}>
+                <ErrorStyles>
+                    {errorState.error && <p>UserName & Password did not match</p>}
+                </ErrorStyles>
+
+                <fieldset>
+                    <label htmlFor="email">Email</label>
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="Your email Address"
+                        value={inputs.email}
+                        required
+                        onChange={handleChange}
+                    />
+                    <label htmlFor="password">Password</label>
+                    <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        placeholder="Password"
+                        value={inputs.password}
+                        required
+                        onChange={handleChange} />
+                    <Button
+                        variant="contained"
+                        color="secondary"
+                        size="small"
+                        type="submit"
+                    >Log In</Button>
+                </fieldset>
+            </Form>
+        </SignInStyles>
     )
 }
 
@@ -114,7 +109,7 @@ const mapStateToProps = state => {
 }
 const mapDispatchToProps = (dispatch) => {
     return {
-        login: () =>  dispatch({ type: actionTypes.LOGIN})
+        login: () => dispatch({ type: actionTypes.LOGIN })
     }
 }
-export default connect(mapStateToProps,mapDispatchToProps)(SignIn)
+export default connect(mapStateToProps, mapDispatchToProps)(SignIn)

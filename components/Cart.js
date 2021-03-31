@@ -4,13 +4,28 @@ import CartContainer from './CartContainer'
 import { connect } from "react-redux";
 import * as actionTypes from '../store/actions'
 import React from "react";
-const useStyles = makeStyles(() => ({
-  button: {
-    borderRadius: '0',
-    fontSize:'12px',
-    fontFamily:'Dosis',
-    margin:'12px'
+const useStyles = makeStyles(theme  => ({
+  root: {
+    width: 100,
+    textAlign:'center'
   },
+  drawerPaper:{
+    
+    [theme.breakpoints.up('xs')]: {
+      width: '100%',
+      flexShrink: 0,
+    },
+    [theme.breakpoints.up('sm')]: {
+      width: '50%',
+      flexShrink: 0,
+    }
+    
+  },
+  button: {
+    borderRadius: 0,
+    color: "white",
+    fontFamily:'Dosis'
+  }
 }));
 function Cart(props) {
   const classes = useStyles();
@@ -30,7 +45,7 @@ function Cart(props) {
 
 
   return (
-    <div>
+    <div className={classes.root}>
       {
         props.isLogIn &&
         <div>
@@ -48,7 +63,7 @@ function Cart(props) {
             <img src='../static/images/cart.svg' width={30} />
             <p>0 items</p>
           </div> */}
-          <Drawer className="Cart-Drawer" classes="cart-draw" anchor='right' open={state['right']} onClose={toggleDrawer('right', false)}>
+          <Drawer className="Cart-Drawer"   anchor='right' open={state['right']} onClose={toggleDrawer('right', false)}>
             <CartContainer />
           </Drawer>
         </div>

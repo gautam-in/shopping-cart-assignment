@@ -27,9 +27,13 @@ body{
     margin:0;
     padding:0;
 }
-@media (max-width: 380px) {
+button{
+    text-transform:none;
+    border-radius:0;
+}
+@media (max-width: 420px) {
     body {
-        width: 100vw;
+        font-size:10px;
     }
   }
 `;

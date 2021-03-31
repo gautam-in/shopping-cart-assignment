@@ -3,13 +3,14 @@ import Link from 'next/link';
 import NavBar from "./NavBar";
 import Cart from "./Cart";
 import CartContainer from "./CartContainer";
+import HeaderStyles from "../styles/header";
 const Logo = styled.div`
     {        
         margin:0;
     }
     img  {
         width:100px;
-        margin:0 24px;
+        margin:0 2em;
     }
     a {
         color:white;
@@ -17,30 +18,15 @@ const Logo = styled.div`
         text-transform:uppercase;
         padding: 0.5rem 1rem;
     }
-    `;
-
-const HeaderStyles = styled.header`
-    display:grid;
-    grid-template-columns:auto 1fr;
-    justify-items: self-end;
-    padding:0 1rem;
-    border-bottom: 2px solid black;
-    .bar{
-        display:grid;
-        grid-template-columns:auto 1fr;
-        justify-content:space-between;
-        align-items:center;
-    }
-    .sub-bar{
-        a{            
-            padding:12px;
-            font-weight:700;
-            &:hover{
-                color: #c51162;
-            }
+    
+    @media (max-width: 420px) {
+        img {
+            width:50px;
+            margin:0;
         }
     }
-`;
+    `;
+
 
 export default function Header() {
     return (
@@ -48,7 +34,7 @@ export default function Header() {
             <div className="bar">
                 <Logo>
                     <Link href="/home">
-                        <img src="static/images/logo.png" />
+                        <img src="static/images/logo.png" alt="brand logo" />
                     </Link>
                 </Logo>
                 <NavBar />

@@ -54,8 +54,8 @@ ul {
       width:100%;
     }
 
-  @media (max-width: $breakpoint-desktop - 1px) {
-    font-size: 18px;
+  @media (max-width: 420px) {
+    height: 100px;
   }
 }
 

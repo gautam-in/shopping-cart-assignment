@@ -48,14 +48,12 @@ const carouselSlidesData = [
 class CarouselLeftArrow extends Component {
   render() {
     return (      
-      <Button
-        variant="contained"
-        color="default"
+      <span
         className="carousel__arrow carousel__arrow--left"
         onClick={this.props.onClick}
       >
         <ArrowBackIcon/>
-      </Button>
+      </span>
       // <a
       //   href="#"
       //   className="carousel__arrow carousel__arrow--left"
@@ -71,14 +69,12 @@ class CarouselRightArrow extends Component {
   render() {
     return (
          
-      <Button
-        variant="contained"
-        color="default"
+      <span
         className="carousel__arrow carousel__arrow--right"
         onClick={this.props.onClick}
       >
         <ArrowForwardIcon/>
-      </Button>
+      </span>
       // <a
       //   href="#"
       //   className="carousel__arrow carousel__arrow--right"
@@ -195,7 +191,7 @@ class Carousel extends Component {
   render() {
     return (
       <CarouselStyles>
-          <div className="carousel">
+          <div className="carousel" role="banner">
         <CarouselLeftArrow onClick={e => this.goToPrevSlide(e)} />
 
         <ul className="carousel__slides">

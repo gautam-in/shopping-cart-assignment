@@ -19,7 +19,7 @@ function CartContainer(props) {
     })
   }
   return (
-    <div style={{ width: '450px' }}>
+    <div style={{ width: '100%' }}>
       <div style={{ padding: '10px', backgroundColor: 'rgba(0,0,0,0.1)' }}>
         <div style={{ padding: '10px', marginBottom: '1rem', backgroundColor: 'black' , color:'white' }}>
           <p style={{ fontWeight: 700, fontFamily: 'sans-serif', margin: 0 }}>My Cart ( {props.total} items )</p>
