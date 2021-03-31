@@ -25,8 +25,9 @@ $primary-color: rgb(204, 0, 82);
 }
 .productitems{
     display:grid;
-    grid-template-columns:auto auto auto auto;
-    padding:0px 10px
+    grid-template-columns:repeat(4,1fr);
+    padding:0px 10px;
+    grid-gap: 10px;
 }
 .productimage{
     width: 100%;
@@ -38,11 +39,10 @@ $primary-color: rgb(204, 0, 82);
 .itembutton { grid-area: button;display: grid;grid-template-columns: auto auto; }
 .item{
     display:grid;
+    grid-template-columns:  auto;
     grid-template-areas: "name""image""description""button";
-    grid-template-rows:20% 30% 40% 10%;
+    grid-template-rows:2fr 150px 4fr 1fr;
     background-color:#fff; 
-    grid-row-gap: 2px;
-    margin: 5px;
     border-bottom:2px dotted #ccc;
     justify-content: center;
     align-items: center;
@@ -63,23 +63,39 @@ $primary-color: rgb(204, 0, 82);
 }
 
 @media screen and (max-width:1199px){
+    .itembutton{
+        grid-column: 1/-1;
+        justify-content: center;
+        align-items:center;
+        align-content: center;
+        align-self: center;
+    }
+    .buynow{
+        width: 100%;
+    }
     .productitems{
-        grid-template-columns:auto auto;
+        grid-template-columns:repeat(2,1fr);
+        grid-gap: 10px;
     }
     .product_content{
         grid-template-columns:150px auto;
     }
     .item{
-     grid-template-areas: 'name''image description''button';
+     grid-template-rows:20% 70% 10%;
+     grid-template-areas: 'name name'
+                          'image description'
+                          'button button';
     }
     .productimage{
+        width: auto;
         height: 160px;
     }
 
 }
 @media screen and (max-width:767px){
     .productitems{
-        grid-template-columns: auto;
+        grid-template-columns: 1fr;
+        grid-gap: 5px;
     }
     .product_content{
         grid-template-columns:auto;
@@ -98,10 +114,20 @@ $primary-color: rgb(204, 0, 82);
         margin-bottom:10px
     }
     .item{
-    grid-template-areas: 'name''image description''button';
+        grid-template-rows:20% 70% 10%;
+        grid-template-areas:'name name '
+                            'image description'
+                            'image button';
+    }
+    .itembutton{
+        grid-column: 1/-1;
+        justify-content: flex-end;
     }
     .productimage{
-        width: 60%;
+        width: auto;
+    }
+    .buynow{
+        width: 50%;
     }
 
 

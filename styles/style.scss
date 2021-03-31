@@ -37,7 +37,8 @@ button:focus {
   display: flex;
   justify-content:flex-start;
   align-content:"center";
-  background:$cart-background}
+  background:$cart-background
+}
 .header-content{
   width:80%;
   margin:auto;
@@ -58,7 +59,8 @@ button:focus {
 }
 .header-cart{
   display:grid;
-  grid-template-rows:47% auto;
+  height: 100%;
+  grid-template-rows:1fr 50px;
 }
 .header-login{
   display:"grid";

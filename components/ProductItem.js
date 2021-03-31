@@ -29,14 +29,15 @@ export default function ProductItem({product,actions,cartData,currentLogedInUser
                 <p className={styles.description}>{product.description}</p>
             </div>
             <div className={styles.itembutton}>
+                {window.innerWidth > 1199&&
                 <div role="button">
                 <p style={{flex:1}}>MRP Rs.{product.price}</p>
-                </div>
+                </div>}
                 <div>
                 <button onClick={()=>{
                     addToCart(product)
                 }} className={styles.buynow}>
-                    Buy Now
+                    Buy Now {window.innerWidth < 1199 && `@ Rs.${product.price}`}
                 </button>
             </div>
             </div>
