@@ -2,42 +2,32 @@
     window.categories = JSON.parse('{{{json categories}}}');
 </script>
 <div class="bannerBody">
-    <div class="carousel">
         <div class="carousel_viewport">
-            {{#each data}}
-            <div class="item">
-                <img id="offers" src="{{this.bannerImageUrl}}">
-                <a id="prevOffer" class="arrow arrow-prev" href="#{{this.bannerImageUrl}}">&#60;</a>
-                <a id="nextOffer" class="arrow arrow-next" href="#{{this.bannerImageUrl}}">&#62;</a>
+            <div id="item" class="item">
+                
+                 <section id="pictureContainer" class="pictureContainer">
+                {{#each data}}
+                    <img class="offers{{this.order}}" id="offers{{this.order}}" alt="{{this.bannerImageAlt}}" src="{{this.bannerImageUrl}}" >
+                 {{/each}}
+                 <a id="prevOffer" class="arrow arrow-prev" onclick="prev()">&#60;</a>
+                <a id="nextOffer" class="arrow arrow-next" >&#62;</a>
+                 </section>
+                
             </div>
-            {{/each}}
-            {{!--
-        </div>../static/images/offers/offer1.jpg --}}
-    </div>
-
-    {{!-- <section class="carousel">
-        <ol class="carousel_viewport">
-            {{#each data}}
-            <li class="carousel_slide1" tabindex="0" class="carousel__slide">
-                <img src="{{this.bannerImageUrl}}">
-            </li>
-            {{/each}}
-        </ol>
-    </section> --}}
+        </div>
     <div class="categories">
-        <ul>
+        <ul class="categories_wrapper">
             {{#each categories}}
             {{#ifOrder this.order}}
-            <li>
-                <img aria-label="Available Categories" src="{{this.imageUrl}}">
-                <section>
+            <li class="categories_list">
+                <img aria-label="Available Categories" class="categories_img" alt="{{this.name}}" src="{{this.imageUrl}}">
+                <section class="categories_description">
                     <h1>{{this.name}}</h1>
                     <p>{{this.description}}</p>
                     <a href="/productsPage?category={{this.id}}">
                         <button tabindex="0" aria-label="Go to {{this.name}} category">Explore {{this.key}}</button>
                     </a>
                 </section>
-                {{!-- <span>{{this.description}}</span> --}}
             </li>
             {{/ifOrder}}
             {{/each}}

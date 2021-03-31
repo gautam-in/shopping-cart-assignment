@@ -1,39 +1,55 @@
 .cartbody {
-  font-family: Dosis;
-  background-color: #dcdcdcde; }
-  .cartbody div:nth-child(1) {
+  background-color: #dcdcdcde;
+  position: absolute;
+  bottom: 0px;
+  right: 0;
+  width: 25em;
+  height: 30em; }
+  .cartbody .cartHeader {
     background-color: black;
     color: white;
     position: relative;
-    padding: 10px; }
-    .cartbody div:nth-child(1) p {
+    padding: 15px;
+    margin: 0px 0px 10px; }
+    .cartbody .cartHeader p {
       margin: 0px; }
-    .cartbody div:nth-child(1) button {
+    .cartbody .cartHeader .cart_close {
       background-color: black;
       position: absolute;
       right: 7px;
-      top: 4px; }
+      top: 0px; }
+  .cartbody .cart_content {
+    height: calc(100% - 7.5em); }
   .cartbody div {
     background-color: white;
     margin: 10px 0px; }
+  .cartbody .cart_images {
+    width: 5em;
+    height: 5em; }
 
 @media screen and (max-device-width: 600px) {
-  .cartbody div:nth-child(1) {
-    background-color: white;
-    color: black; }
-    .cartbody div:nth-child(1) button {
+  .cartbody {
+    width: 100%;
+    height: 100%; }
+    .cartbody div:nth-child(1) {
       background-color: white;
-      color: black; } }
+      color: black; }
+      .cartbody div:nth-child(1) .cart_close {
+        background-color: white;
+        color: black; } }
+
+@media only screen and (min-device-width: 600px) and (max-width: 1270px) {
+  .cartbody {
+    width: 100%;
+    height: 100%; } }
 
 .cartDetails {
-  display: flex; }
-  .cartDetails section {
-    padding: 10px; }
-    .cartDetails section:nth-child(1) {
-      height: 100px; }
-      .cartDetails section:nth-child(1) img {
-        height: 100%;
-        object-fit: cover; }
+  display: flex;
+  padding: 5px; }
+  .cartDetails section:nth-child(1) {
+    height: 100px; }
+    .cartDetails section:nth-child(1) img {
+      height: 100%; }
 
 .total {
   position: fixed;
@@ -43,13 +59,6 @@
   border-radius: 50%;
   margin: 10px; }
 
-.cartbutton {
-  background-color: #e91e63;
-  color: white;
-  padding: 5px;
-  font-size: 20px;
-  border: none; }
-
 .promotionLogo {
   margin: 10px;
   padding: 10px;
@@ -57,12 +66,9 @@
   display: flex;
   justify-content: left; }
   .promotionLogo p {
-    padding: 0px 30px; }
+    padding: 10px 30px; }
 
 .cartFooter {
-  position: fixed;
-  bottom: 15px;
-  width: 100%;
   text-align: center; }
   .cartFooter button {
     width: 100%; }

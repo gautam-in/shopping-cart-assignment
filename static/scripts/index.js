@@ -2,19 +2,7 @@
 
 window.addEventListener('onload',()=>{
     console.log(window.categories)
-    var offerImage=document.getElementById('offers')
-    var next = document.getElementById('nextOffer')
-    var prev = document.getElementById('prevOffer')
-    next.addEventListener('click',nextOffer())
-    prev.addEventListener('click', prevOffer())
 })
-
-function nextOffer(){
-
-}
-function prevOffer(){
-
-}
 
 function validate(formName, elementName,errorId){
     let element = document.forms[formName][elementName]
@@ -33,13 +21,14 @@ function validate(formName, elementName,errorId){
 }
 
 var cartItems = new Array();
+
 function addToCart(data){
-    document.getElementById('successMessage').innerHTML= ''
-    // console.log(data)
-   cartItems.push(data)
+    data = JSON.parse(data)
+
+    this.cartItems.push(data)
     const url = 'http://localhost:5000/addToCart'
     const cartId ={
-        id : data
+        id : data.id
     }
     const params ={
         body: cartId,
@@ -48,13 +37,36 @@ function addToCart(data){
     fetch(url,params)
     .then(data => {return data.json()})
     .then(res=>{
+        let alertParent = document.getElementById('alert')
         let alert = document.createElement('div')
-        alert.className ="successMessage"+data;
-        alert.innerHTML = res.responseMessage
+        alert.className ="alertMessages"+data.id;
+        //console.log(alert)
+        alert.innerHTML = data.name +" "+res.responseMessage;
+        alertParent.appendChild(alert)
+        let updateEle = document.getElementById('totalCartItems')
+        updateEle.setAttribute('role','alert')
+        updateEle.innerHTML = cartItems.length+' items'
         setTimeout(()=>{
-            document.getElementsByClassName('successMessage'+data)[0].remove();
+            document.getElementsByClassName('alertMessages'+data.id)[0].remove();
         },4000)
     }).catch(err=> {
-        document.getElementsByClassName("successMessage"+data).innerHTML = err;
+        document.getElementsByClassName("alertMessages"+data.id).innerHTML = err;
     })
+}
+
+
+function loadCart(){
+    let overlay = document.getElementById('overlay');
+    let cartTemplate = Handlebars.compile(document.getElementById('cartBody').innerHTML)
+    console.log(cartTemplate)
+    console.log(this.cartItems)
+    var render = cartTemplate({cart:"this.cartItems"})
+    console.log(render)
+    overlay.innerHTML = render
+    overlay.style.display = 'block';
+}
+
+function closeCart(){
+    let overlay = document.getElementById('overlay');
+    overlay.style.display = 'none';
 }
