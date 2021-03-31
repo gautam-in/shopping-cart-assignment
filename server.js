@@ -23,6 +23,9 @@ app.engine('hbs',exphbs({
         },
         json : function(context){
             return JSON.stringify(context);
+        },
+        filter : function(data,options){
+
         }
     }
 }))
@@ -61,7 +64,6 @@ app.get('/productsPage',(req,response)=>{
         resp.on('data',res=>{
             this.products = JSON.parse(res.toString())
             this.products.map((val, index,arr)=>{
-                //console.log(val)
                 if(val.category === req.query.category){
                     productsArray.push(val)
                 }
@@ -76,9 +78,10 @@ app.get('/productsPage',(req,response)=>{
     })
     
 })
-app.get('/cart',(req,res)=>{
-    res.render('cart',{products:this.products})
-})
+
+// app.get('/cart',(req,res)=>{
+//     res.render('cart',{products:this.products})
+// })
 
 
 
