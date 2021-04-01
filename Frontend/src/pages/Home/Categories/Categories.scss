@@ -1,0 +1,52 @@
+@import '../../../styles/global';
+
+.card-wrap {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  display: flex;
+  margin: 5px 0px;
+  background-color: $white-color;
+  > .image-wrap img {
+    position: relative;
+    overflow: hidden;
+    width: 450px;
+    height: 350px;
+  }
+  > .text-wrap {
+    margin: auto;
+    h2,
+    p {
+      text-align: center;
+      color: $black-color;
+    }
+    h2 {
+      font-weight: 800;
+    }
+    p {
+      font-size: 1.2rem;
+    }
+  }
+}
+
+.categories-wrap {
+  ul {
+    list-style: none;
+    li:nth-child(even) {
+      flex-direction: row-reverse;
+    }
+    li::after {
+      @extend cardShadow;
+    }
+  }
+}
+
+.explore-btn {
+  margin: 0 auto;
+  display: table;
+  color: $white-color;
+  padding: 10px;
+  font-size: 1.2rem;
+  background: $pink-color;
+  border: 2px solid $pink-color;
+}
