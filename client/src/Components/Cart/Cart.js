@@ -16,21 +16,24 @@ const Cart = ({
 }) => {
 
     const [header, setHeader] = useState("My Cart");
+    const totalCartPrice = cartDetails.reduce((accumulator, item) => {
+        return accumulator + (item.count * item.price)
+    }, 0);
 
     return (
         <>
             <div className={show ? 'show-div' : 'hide-div'}>
-                <div id="myModal" className="modal">
+                <div id="myModal" className="modal" aria-label="cart modal">
 
                     <div className="modal-content">
-                        <div className="modal-header">
+                        <div className="modal-header" aria-label="cart header">
                             <h2 aria-label="cart header title">{header}</h2>
                             <div role="close button" className="close" onClick={handleClose} aria-label="cart close icon" >X</div>
                         </div>
-                        <div className="modal-body">
+                        <div className="modal-body" aria-label="Added Product details in the cart">
                             {
                                 cartItem == 0 ? (
-                                    <article>
+                                    <article aria-label="No cart item description">
                                         <strong>No items in your cart</strong>
                                         <p> Your Favourite items are just a click away</p>
                                     </article>
@@ -39,10 +42,10 @@ const Cart = ({
                                         return (
                                             <div className="cart-item" key={item.id}>
                                                 <figure>
-                                                    <img src={item.imageURL} className="cart-item-img" alt={item.name + "image"} height="100" width="100" aria-label={item.name + "image"} />
+                                                    <img src={item.imageURL} className="cart-item-img" alt={item.name + "image"} height="100" width="100" aria-label={"Image of product" + item.name} />
                                                     <div className="cart-item-details">
-                                                        <figcaption><strong>{item.name}</strong></figcaption>
-                                                        <div className="cart-item-count">
+                                                        <figcaption aria-label={"Product name is" + item.name}><strong>{item.name}</strong></figcaption>
+                                                        <div className="cart-item-count" aria-label={"selected count details for product is" + item.name}>
                                                             <>
                                                                 <CustomButton width="30px" height="25px" onClick={() => removeFromCart(item)}><FaMinusSquare /></CustomButton>
                                                                 <div className="count" aria-label={"count of" + item.name + "is" + item.count}>{item.count}</div>
@@ -60,7 +63,7 @@ const Cart = ({
                             }
                         </div>
                         <div className="modal-footer">
-                            <CustomButton >{cartItem == 0 ? cartConstants.START_SHOPPING : cartConstants.CHECK_OUT}</CustomButton>
+                            <CustomButton onClick={handleClose}><span style={cartItem == 0 ? {} : { display: "flex", justifyContent: "space-around" }}>{cartItem == 0 ? cartConstants.START_SHOPPING : (cartConstants.CHECK_OUT)}<output>{"Rs." + totalCartPrice}<span className="way-checkout-icon">{">"}</span></output></span></CustomButton>
                         </div>
                     </div>
                 </div>
