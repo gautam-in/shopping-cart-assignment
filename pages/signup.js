@@ -1,16 +1,7 @@
 import React from 'react'
 import Register from '../components/Register'
 import { connect } from 'react-redux'
-import {bindActionCreators} from 'redux';
-import * as actions from '../actions/userActions'
-
-function mapStateToProps(state) {
-    return state
-  }
-  
-function mapDispatchToProps(dispatch) {
-    return {actions: bindActionCreators(actions, dispatch)}
-  }
+import {mapDispatchToProps,mapStateToProps} from '../container/container'
 
 class SignUpPage extends React.Component{
     render(){

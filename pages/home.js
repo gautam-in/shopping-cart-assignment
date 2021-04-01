@@ -1,16 +1,8 @@
 import React from 'react'
 import Home from '../components/Home'
 import { connect } from 'react-redux'
-import {bindActionCreators} from 'redux';
-import * as actions from '../actions/userActions'
+import {mapDispatchToProps,mapStateToProps} from '../container/container'
 
-function mapStateToProps(state) {
-    return state
-  }
-  
-function mapDispatchToProps(dispatch) {
-    return {actions: bindActionCreators(actions, dispatch)}
-  }
  class HomePage extends React.Component {
    componentDidMount(){
      this.props.actions.getBanners()

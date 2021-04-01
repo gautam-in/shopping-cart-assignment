@@ -1,16 +1,7 @@
 import React, { Fragment } from 'react'
 import Products from '../components/Products';
 import { connect } from 'react-redux'
-import {bindActionCreators} from 'redux';
-import * as actions from '../actions/userActions'
-
-function mapStateToProps(state) {
-    return state
-  }
-  
-function mapDispatchToProps(dispatch) {
-    return {actions: bindActionCreators(actions, dispatch)}
-  }
+import {mapDispatchToProps,mapStateToProps} from '../container/container'
 
  class ProductPage extends React.Component {
    componentDidMount(){
