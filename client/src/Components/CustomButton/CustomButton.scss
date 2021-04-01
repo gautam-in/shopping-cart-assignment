@@ -5,13 +5,14 @@
   background-color: $button-bg-color;
   cursor: pointer;
   border: none;
-  text-transform: uppercase;
+  // text-transform: uppercase;
   // min-width: 100px;
   width: 100%;
   height: 50px;
   font-weight: bolder;
   letter-spacing: 0.5px;
   box-sizing: border-box;
+  font-size: $primary-font-size;
 
   &:hover {
     color: $black-color;

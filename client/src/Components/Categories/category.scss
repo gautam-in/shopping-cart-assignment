@@ -29,3 +29,9 @@
     margin: 0 15%;
   }
 }
+
+@media only screen and (max-width: $mobile-max-width){
+  .category-item{
+    justify-content: space-between;
+  }
+}

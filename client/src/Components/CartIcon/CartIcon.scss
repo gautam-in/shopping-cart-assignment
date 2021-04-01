@@ -13,7 +13,7 @@
   align-items: flex-start;
   width: 130px;
   justify-content: space-around;
-  font-size: 14px;
+  font-size: $primary-font-size;
   & > a {
     text-decoration: none;
     &:hover {

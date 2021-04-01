@@ -1,8 +1,8 @@
 @import "../../Utilities/SCSS-Variables/variables.scss";
 
 @mixin shrinklabel {
-  top: -14px;
-  font-size: 14px;
+  top: -$primary-font-size;
+  font-size: $primary-font-size;
   color: $lbl-primary-color;
 }
 
