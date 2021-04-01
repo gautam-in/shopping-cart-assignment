@@ -63,7 +63,19 @@ const Cart = ({
                             }
                         </div>
                         <div className="modal-footer">
-                            <CustomButton onClick={handleClose}><span style={cartItem == 0 ? {} : { display: "flex", justifyContent: "space-around" }}>{cartItem == 0 ? cartConstants.START_SHOPPING : (cartConstants.CHECK_OUT)}<output>{"Rs." + totalCartPrice}<span className="way-checkout-icon">{">"}</span></output></span></CustomButton>
+                            <CustomButton onClick={handleClose}>
+                                <span style={cartItem == 0 ? {} : { display: "flex", justifyContent: "space-around" }}>
+                                    {cartItem == 0 ? cartConstants.START_SHOPPING : (
+                                        <>
+                                            <span>{cartConstants.CHECK_OUT}</span>
+                                            <output>
+                                                <span>Rs.</span>{totalCartPrice}
+                                                <span className="way-checkout-icon">{">"}</span>
+                                            </output>
+                                        </>)
+                                    }
+                                </span>
+                            </CustomButton>
                         </div>
                     </div>
                 </div>
