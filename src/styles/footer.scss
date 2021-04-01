@@ -1,0 +1,42 @@
+.full-width-footer{
+    max-width: 100%;
+    padding:10px 0;
+    background-color: $grey;
+    .space-footer{
+        justify-content: flex-start;
+        font-size: 90%;
+        font-weight: 300;
+        padding:0;
+    }
+}
+.footer-area{
+    position: relative;
+    bottom: 0px;
+    background-color: $grey;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    border-top: 1px solid $grey;
+.footer-btn{
+    font-weight: 600;
+    background-color: $violetpink;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    color:$white;
+    padding-top:20px;
+    padding-bottom: 20px;
+    width: calc(100% - 40px);
+    margin: 0px 20px 20px 20px;
+    i{
+        color: $white;
+    }
+    p{
+        text-align: center;
+    }
+    
+}
+}

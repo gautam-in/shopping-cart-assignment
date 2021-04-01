@@ -1,0 +1,118 @@
+.basket-page{
+    position: relative;
+    height: calc(100vh - 50px);
+}
+#cart{ 
+    padding:0;
+    section:nth-child(2){padding:0;}
+}
+.cart-header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: $black;
+    h2{color: $white;}
+    i{
+        color: $white;
+        cursor: pointer;
+        font-size: 36px;
+    }
+    .close-icon{
+        color: $white;
+        font-size: 300%;
+        cursor: pointer;
+    }
+}
+
+.no-cart-items{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    line-height: 0.5em;
+    text-align: center;
+    p{
+        margin:0;
+    }
+}
+
+.site-promoto {
+    display: flex;
+    justify-content: flex-start;
+    background: $white;
+    padding: 10px;
+    margin: 10px 10px;
+}
+.cart-items{
+    display: flex;
+    list-style: none;
+    padding:0;
+    flex-direction: column;
+    .cart-item{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 90%;
+        width: 100%;
+        background-color: $white;
+        margin-bottom: 20px;
+        img{
+            width:50px;
+            height:50px;
+        }
+        .cart-item-info{
+            margin-right: auto;
+            padding-left: 20px;
+            i{
+                color:$violetpink;
+                padding:0 10px;
+                cursor: pointer;
+            }
+            .qty-process span.process-btn {
+                width:15px;
+                height: 15px;
+                background-color: $violetpink;
+                color:$white;
+                cursor: pointer;
+                border-radius: 50%;
+                margin: 0 10px;
+                position: relative;
+            }
+            .qty-process span.process-btn.plus::after{
+                content: '+';
+                position: absolute;
+                margin: -5px 0px -10px 4px;
+            }
+            .qty-process span.process-btn.minus::after{
+                content: '-';
+                position: absolute;
+                margin: -5px 0px -10px 4px;
+            }
+        }
+        .qty-process {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            .price-area{
+                display: flex;
+                align-items: center;
+                p{padding-left: 10px;}
+            }
+            
+        }
+    }
+}
+.cart-page .footer-area{
+    background-color: $white;
+}
+.price-info span.arrow{
+    right:0;
+    color:$white;
+    border: solid $white;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 5px 5px 5px;
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    :before{color: transparent;}
+}

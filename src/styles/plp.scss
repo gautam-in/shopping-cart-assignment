@@ -1,0 +1,242 @@
+/* productlist css */
+.content-area {
+    display: flex;//grid;
+    grid-auto-flow: column;
+} //trail case for left area background to occupy till footer
+.left-menu, .product-list-area{
+    // width:100%;
+    padding:0;
+} //trail case for left area background to occupy till footer
+.content-area> div:first-child, .content-area aside:first-child {
+    margin:0;
+    // height: 100vh; //if we add then background grey is not occupying full giving parent, display as grid
+    background-color: $grey;
+}
+
+.content-area{
+    // height:81.5vh;
+    .prod-categories{
+        background-color: $grey;
+        // height: 100%;
+        // position: absolute;
+        .cat-list{
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            li{
+                padding:0px 20px;
+                border-bottom: 1px solid $mild-black;
+                cursor: pointer;
+                font-size: 90%;
+            }
+            
+            li:hover{
+                color: $violetpink;
+            }
+            li.selected{
+                color: $violetpink;
+                font-weight: 600;
+            }
+        }
+    }
+}
+.dropdown-cat-list{
+    position: relative;
+    display: none;
+    padding:0;
+    select {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        -ms-appearance: none;
+        appearance: none;
+        outline: 0;
+        box-shadow: none;
+        border: 0 !important;
+        background: $violetpink;
+        background-image: none;
+      }
+      /* Remove IE arrow */
+      select::-ms-expand {
+        display: none;
+      }
+      /* Custom Select */
+      .select {
+        position: relative;
+        display: flex;
+        width: 100%;//15em;
+        height: 3em;
+        line-height: 3;
+        background: $violetpink;
+        overflow: hidden;
+      }
+      select {
+        flex: 1;
+        padding: 0 .5em;
+        color: $white;
+        cursor: pointer;
+        font-size: 90%;
+        option {
+            color:#000;
+            background-color: $white;
+        }
+      }
+      select[disabled='disabled']::-ms-value {
+        color: $mild-black;
+      }
+      /*Specific to chrome and firefox*/
+      select[disabled='disabled'] {
+        color: $mild-black;
+      }
+      /* Arrow */
+      .select::after {
+        content: '';
+        // font-family: 'Ionicons';
+        border: solid $white;
+        border-width: 0 3px 3px 0;
+        display: inline-block;
+        padding: 6px;
+        margin: 15px 15px 0 0;
+        transform: rotate(45deg);
+        -webkit-transform: rotate(45deg);
+        position: absolute;
+        color:$white;
+        top: 0;
+        right: 0;
+        // padding: 0 1em;
+        background: $violetpink;
+        cursor: pointer;
+        pointer-events: none;
+        -webkit-transition: .25s all ease;
+        -o-transition: .25s all ease;
+        transition: .25s all ease;
+      }
+      /* Transition */
+      .select:hover::after {
+        color: $violetpink;
+      }
+}
+.content-area > div:nth-child(2) {
+    margin: 0;
+}
+.prod-list{
+    .rest-tiles {
+        margin-top: 5px;
+        padding:0;
+        li{
+            // margin: 0 4px 10px 0;
+            border-bottom: 1px dashed $grey;
+            box-shadow: 2px 0px 3px -3px #111;            
+            div{background-color: transparent;}
+            .product-name{width:100%;}
+            .prod-name{
+                -webkit-line-clamp: 2;
+                overflow: hidden;
+                display: -webkit-box;
+                max-width: 200px;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+                height: 48px;
+                max-height: 48px;
+                font-weight: 800;
+                width: 100%;
+                text-align: left;
+            }
+            .prod-img{
+                display: flex;
+                justify-content: center;
+                figure{
+                    // width: 8rem;
+                    // height: 8rem;
+                    position:relative;
+                    // bottom: 10px;
+                    margin: 0;
+                }
+            }
+            .prod-desc{
+                background-color: $grey;
+                display: -webkit-box;
+                max-width: 200px;
+                -webkit-line-clamp: 3;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+            }
+            .description-area{
+                background-color: $grey;
+                padding: 0;
+                margin: 0;
+                height: 50px;
+                overflow: hidden;
+              .prod-desc {
+                padding: 4px;
+                margin: auto;
+                overflow: hidden;
+                position: relative;
+                line-height: 1.2em;
+                max-height: 4.5em;
+                text-align: justify;
+                padding-right: 1em;
+                padding-left: 1em;
+                font-size: 70%;
+                word-break: break-all;
+              }
+              .prod-desc:before {
+                content: '';
+                position: absolute;
+                right: 0;
+                bottom: 0;
+              }
+              .prod-desc:after {
+                content: '';
+                position: absolute;
+                right: 0;
+                width: 1em;
+                height: 0em;
+                margin-top: 0.2em;
+                background: $white;
+              }
+            }
+            .buy-area{
+                display: flex;
+                justify-content: space-between;
+                width: 100%;
+                align-items: center;
+                p{
+                    font-size: 70%;
+                    font-weight: 600;
+                }
+                button{
+                    float: right;
+                }
+                .small-screen-btn{
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+
+.rest-tiles{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+.rest-tiles li{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    // background: $white;
+    margin: 4px;
+    padding: 10px;
+    width:200px;
+}
+
+.rest-tiles 
+        li 
+            img {
+                // width:4rem;
+                height:8rem;
+                width:100%;
+}
