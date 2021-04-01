@@ -7,6 +7,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: "bundle.js",
+    publicPath: '/',
   },
   resolve: {
     extensions: [".js", ".jsx", ".json"],
@@ -52,4 +53,10 @@ module.exports = {
       template: path.resolve(__dirname, "public", "index.html"),
     }),
   ],
+  externals: {
+    // global app config object
+    config: JSON.stringify({
+      apiUrl: 'http://localhost:3000'
+    })
+  }
 };
