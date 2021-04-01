@@ -1,9 +1,6 @@
 .home-content {
-    // padding: 0 8.5rem;
+    width: $default-width;
     margin: 0 auto;
-    @media only screen and (max-width: 991px) {
-        width: $default-width;
-    }
     @media only screen and (max-width: 600px) {
         width: 100% ;
     }
