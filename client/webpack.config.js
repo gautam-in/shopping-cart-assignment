@@ -12,10 +12,7 @@ const config = {
     filename: "bundle.[hash].js",
     path: path.resolve(__dirname, "build"),
   },
-  devServer: {
-    historyApiFallback: true,
-    hot: true,
-  },
+
   plugins: [
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, "src/index.html"),
@@ -33,6 +30,8 @@ const config = {
     port: 3000,
     contentBase: path.resolve(__dirname, "public"),
     hot: true,
+    publicPath: "/",
+    historyApiFallback: true,
   },
   module: {
     rules: [

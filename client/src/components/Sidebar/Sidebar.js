@@ -18,7 +18,20 @@ function Sidebar({ filter, selectedcategory }) {
   };
   return (
     <div className="sidebar">
-      <nav className="nav">
+      <div>
+        <select
+          className="select"
+          onChange={(e) => handleFilter(e.target.value)}
+        >
+          {banners?.length > 0 &&
+            banners.map((banner) => (
+              <option key={banner.id} value={banner.id}>
+                {banner.name}
+              </option>
+            ))}
+        </select>
+      </div>
+      <nav className="nav hide-sm">
         {banners?.length > 0 &&
           banners.map((banner) => (
             <a

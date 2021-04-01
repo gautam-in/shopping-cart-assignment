@@ -1,5 +1,7 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
+import { getLoginStart } from "./LoginActions";
 
 const INITIAL_FORM = {
   email: "",
@@ -7,24 +9,24 @@ const INITIAL_FORM = {
 };
 function Login() {
   const [form, setForm] = useState(INITIAL_FORM);
-  const [error, setError] = useState("");
+  const [register, setRegister] = useState(false);
+
+  const { isError = false } = useSelector((state) => state.login);
+
+  const dispatch = useDispatch();
   const history = useHistory();
+
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    if (params.get("register")) {
+      setRegister(true);
+    }
+  }, []);
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    const user =
-      window.localStorage.getItem("user") &&
-      JSON.parse(window.localStorage.getItem("user"));
-    if (user && user.email === form.email && user.password === form.password) {
-      setError("");
-      window.localStorage.setItem(
-        "access-token",
-        JSON.stringify(user.email + Date.now())
-      );
-      history.push("/home");
-    } else {
-      setError("The Username or Password is incorrect.");
-    }
+    dispatch(getLoginStart(form));
+    history.push("/home");
   };
 
   // handle input change
@@ -40,7 +42,14 @@ function Login() {
           <p>Get access to your Orders, Wishlist and Recommendations</p>
         </div>
         <div className="col-md-5">
-          {error && <div className="alert">{error}</div>}
+          {isError && (
+            <div className="alert">Invalid Username or Password </div>
+          )}
+          {register && (
+            <div className="alert success">
+              Your Registration Completed Successfully.
+            </div>
+          )}
           <form autoComplete="off" onSubmit={handleSubmit}>
             <div className="form-group">
               <input

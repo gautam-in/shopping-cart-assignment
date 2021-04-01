@@ -3,13 +3,23 @@ import Product from "../Product/Product";
 import { useDispatch, useSelector } from "react-redux";
 import { getProductsStart, getAddToCartStart } from "./ProductActions";
 import Sidebar from "../Sidebar/Sidebar";
+import { useLocation } from "react-router";
 function Products() {
   const [selectedCategory, setSelectedCategory] = useState("");
   const { products = [] } = useSelector((state) => state.product);
   const dispatch = useDispatch();
+  const location = useLocation();
+
   useEffect(() => {
     dispatch(getProductsStart());
   }, []);
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const category = params.get("category");
+    if (category) {
+      onFilter(category);
+    }
+  }, [location.pathname]);
 
   const handleCart = (payload) => {
     dispatch(getAddToCartStart(payload));

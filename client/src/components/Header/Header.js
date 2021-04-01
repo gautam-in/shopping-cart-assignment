@@ -2,19 +2,24 @@ import React, { useEffect } from "react";
 import { NavLink, useHistory } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { getProductsSuccess } from "../Products/ProductActions";
+import { getLogoutStart } from "../Login/LoginActions";
 function Header() {
   const dispatch = useDispatch();
   const history = useHistory();
+
   useEffect(() => {
     dispatch(getProductsSuccess());
   }, []);
 
-  const { cartItems } = useSelector((state) => state.product);
+  const {
+    product: { cartItems = [] },
+    login: { isLoggedIn = false },
+  } = useSelector((state) => state);
 
   // logout
   const handleLogout = () => {
+    dispatch(getLogoutStart());
     history.push("/login");
-    window.localStorage.setItem("access-token", "");
   };
   return (
     <header className="header">
@@ -26,21 +31,20 @@ function Header() {
         </div>
         <div className="header-right">
           <nav className="header-right-top">
-            {/* {localStorage.getItem("access-token") &&
-            JSON.parse(localStorage.getItem("access-token")) ? (
+            {isLoggedIn ? (
               <a className="nav-link hide-sm" onClick={handleLogout}>
                 Logout
               </a>
-            ) : ( */}
-            <>
-              <NavLink to="/login" className="nav-link hide-sm">
-                Login
-              </NavLink>
-              <NavLink to="/register" className="nav-link hide-sm">
-                Register
-              </NavLink>
-            </>
-            {/* )} */}
+            ) : (
+              <>
+                <NavLink to="/login" className="nav-link hide-sm">
+                  Login
+                </NavLink>
+                <NavLink to="/register" className="nav-link hide-sm">
+                  Register
+                </NavLink>
+              </>
+            )}
           </nav>
           <nav className="header-right-bottom">
             <NavLink to="/home" className="nav-link hide-sm">

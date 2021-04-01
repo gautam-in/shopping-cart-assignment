@@ -14,7 +14,6 @@ const BannerReducer = (state = INITIAL_STATE, action) => {
         loading: true,
       };
     case BannerActionTypes.GET_BANNERS_SUCCESS:
-      console.log(action.payload);
       const payload = action.payload
         .filter((item) => item.enabled)
         .sort((a, b) => a.order - b.order);

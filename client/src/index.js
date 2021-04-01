@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { HashRouter as Router } from "react-router-dom";
+import { BrowserRouter as Router } from "react-router-dom";
 
 import "./styles/main.scss";
 
@@ -12,7 +12,7 @@ function Index() {
   return (
     <Provider store={Store}>
       <Router>
-          <App/>
+        <App />
       </Router>
     </Provider>
   );

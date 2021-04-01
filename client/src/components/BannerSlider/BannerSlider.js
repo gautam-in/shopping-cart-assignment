@@ -1,7 +1,7 @@
-import React, { useEffect, useState, useRef, useCallback } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import instance from "../../axios/axios";
 
-function sliderSlider() {
+function Slider() {
   const [sliders, setsliders] = useState([]);
   const [selectedIndex, setSelectedIndex] = useState(0);
   const sliderRef = useRef();
@@ -9,36 +9,40 @@ function sliderSlider() {
     instance.get("/banners").then((res) => setsliders(res.data));
   }, []);
 
-    useEffect(() => {
-      // auto slide
-      const timerId = setInterval(() => {
-        if (sliders.length > 1 && selectedIndex < sliders.length - 1) {
-          const nextIndex = selectedIndex + 1;
-          handleSlide(nextIndex);
-        } else {
-          const nextIndex = 0;
-          handleSlide(nextIndex);
-        }
-      }, 3000);
-      return () => clearInterval(timerId);
-    });
+  useEffect(() => {
+    // auto slide
+    const timerId = setInterval(() => {
+      if (sliders.length > 1 && selectedIndex < sliders.length - 1) {
+        const nextIndex = selectedIndex + 1;
+        handleSlide(nextIndex);
+      } else {
+        const nextIndex = 0;
+        handleSlide(nextIndex);
+      }
+    }, 3000);
+    return () => clearInterval(timerId);
+  });
 
   // handle slide next/prev
   const handleSlide = (index) => {
-    sliderRef.current.children[index].scrollIntoView();
+    sliderRef.current.style.transform = `translate(-${
+      index * sliderRef.current.offsetWidth
+    }px)`;
     setSelectedIndex(index);
   };
 
   return (
-    <div className="slider-container shadow-row">
-      <div className="sliders" ref={sliderRef}>
-        {sliders &&
-          sliders.length > 0 &&
-          sliders.map((slider) => (
-            <div className="slider" key={slider.id}>
-              <img src={slider.bannerImageUrl} alt={slider.bannerImageAlt} />
-            </div>
-          ))}
+    <div className="shadow-row">
+      <div className="slider-container ">
+        <div className="sliders" ref={sliderRef}>
+          {sliders &&
+            sliders.length > 0 &&
+            sliders.map((slider) => (
+              <div className="slider" key={slider.id}>
+                <img src={slider.bannerImageUrl} alt={slider.bannerImageAlt} />
+              </div>
+            ))}
+        </div>{" "}
         <div className="indicators">
           {sliders &&
             sliders.length > 0 &&
@@ -59,4 +63,4 @@ function sliderSlider() {
   );
 }
 
-export default sliderSlider;
+export default Slider;

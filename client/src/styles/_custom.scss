@@ -383,13 +383,15 @@ body {
 .slider-container {
   padding-top: 1rem;
   position: relative;
+  overflow: hidden;
 }
 .sliders {
   display: flex;
-  overflow: hidden;
+  // overflow: hidden;
   flex-wrap: nowrap;
   height: 300px;
-  scroll-behavior: smooth;
+  transition: transform 0.4s linear;
+  // scroll-behavior: smooth;
 
   .slider {
     max-width: 100%;
@@ -399,23 +401,24 @@ body {
       max-width: 100%;
     }
   }
-  .indicators {
-    position: absolute;
-    left: 50%;
-    bottom: 1rem;
-    transform: translateX(-50%);
-    z-index: 9;
-    white-space: nowrap;
-    .dot {
-      cursor: pointer;
-      color: #00000040;
-      margin: 0 1rem;
-      &.active {
-        color: inherit;
-      }
+}
+.indicators {
+  position: absolute;
+  left: 50%;
+  bottom: 1rem;
+  transform: translateX(-50%);
+  z-index: 9;
+  white-space: nowrap;
+  .dot {
+    cursor: pointer;
+    color: #00000040;
+    margin: 0 1rem;
+    &.active {
+      color: inherit;
     }
   }
 }
+
 .flex-center {
   display: flex;
   align-items: center;
@@ -559,6 +562,11 @@ body {
   color: $primary;
   background-color: lighten($primary, 52%);
   border: 1px solid $primary;
+  &.success {
+    color: $success;
+    background-color: lighten($success, 55%);
+    border: 1px solid $success;
+  }
 }
 
 @media (max-width: 767px) {
@@ -574,6 +582,15 @@ body {
   [class*="col-md-"] {
     flex: 0 0 100%;
     max-width: 100%;
+  }
+  .banner-img {
+    text-align: center;
+    img {
+      margin-bottom: 1rem;
+    }
+  }
+  .shadow-row {
+    padding: 1rem 0;
   }
 }
 
@@ -625,6 +642,22 @@ body {
       }
     }
   }
+  .products-container {
+    flex-direction: column;
+    .sidebar {
+      flex: unset;
+      padding: 0.5rem 0;
+      background-color: white;
+      position: sticky;
+      top: 0;
+      z-index: 9;
+    }
+  }
+}
+@media (min-width: 576px) {
+  .sidebar .select {
+    display: none !important;
+  }
 }
 @media (min-width: 1600px) {
   .container {
@@ -638,5 +671,21 @@ body {
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
+  }
+}
+.select {
+  width: 100%;
+  padding: 0.5rem 1rem;
+  appearance: none;
+  color: white;
+  border-color: $primary;
+  background-color: $primary;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='white' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  background-size: 16px 12px;
+  outline: none;
+  option {
+    padding: 0.5rem 1rem;
   }
 }
