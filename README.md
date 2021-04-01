@@ -9,7 +9,9 @@ Clone this repo and run following command for starting the mock server:
 ```
 npm install
 npm run start
+npm run dev // to run client and server same time
 # or
 yarn install
 yarn start
+yarn run dev // to run client and server same time
 ```
