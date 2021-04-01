@@ -1,6 +1,25 @@
+@import "./Utilities/SCSS-Variables/variables.scss";
+
 * {
   font-family: "Dosis";
 }
+
+.alert {
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  margin: 2% 35% 0% 35%;
+  width: 25%;
+  text-align: center;
+}
+
+.alert-danger{
+  color: $failure-color;
+  background-color: $alert-danger-bg;
+  border-color: $alert-danger-color;
+}
+
 // .footer {
 //   display: flex;
 //   align-items: flex-end;
