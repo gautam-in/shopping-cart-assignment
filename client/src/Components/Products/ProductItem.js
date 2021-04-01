@@ -1,5 +1,6 @@
 import React from "react";
 import { useDispatch } from "react-redux";
+import { productConstants } from "../../Constants";
 import { cartActions } from "../../_actions";
 import CustomButton from "../CustomButton/CustomButton";
 import "./ProductItem.scss";
@@ -20,8 +21,8 @@ const ProductItem = ({ product }) => {
                 <figcaption aria-label={"product description is" + product.description}>{product.description}</figcaption>
             </figure>
             <section>
-                <span aria-label={"Product price for" + product.name + "is" + product.price}>MRP Rs.{product.price}</span>
-                <CustomButton price={product.price} height="30px" onClick={() => dispatchCart(product)} >Buy Now</CustomButton>
+                <span aria-label={"Product price for" + product.name + "is" + product.price}>{productConstants.MRP_RS + product.price}</span>
+                <CustomButton price={product.price} height="30px" onClick={() => dispatchCart(product)} >{productConstants.BUY_NOW}</CustomButton>
             </section>
         </div>
     )

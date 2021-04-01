@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
-import { cartConstants } from "../../Constants";
+import { cartConstants, productConstants } from "../../Constants";
 import { cartActions } from "../../_actions";
 import CustomButton from "../CustomButton/CustomButton";
 import "./Cart.scss";
@@ -69,7 +69,7 @@ const Cart = ({
                                         <>
                                             <span>{cartConstants.CHECK_OUT}</span>
                                             <output>
-                                                <span>Rs.</span>{totalCartPrice}
+                                                <span>{productConstants.RS}</span>{totalCartPrice}
                                                 <span className="way-checkout-icon">{">"}</span>
                                             </output>
                                         </>)
