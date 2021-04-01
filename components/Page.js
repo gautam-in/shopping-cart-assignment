@@ -1,5 +1,6 @@
 import styled, { createGlobalStyle } from "styled-components";
 import CartContainer from "./CartContainer";
+import CopyRight from "./CopyRight";
 import Header from "./Header";
 const GlobalStyles =createGlobalStyle`
 html {
@@ -37,7 +38,7 @@ button{
     }
   }
 `;
-const InnerStyles =styled.div`
+const InnerStyles =styled.main`
     // max-width: var(--max-width);
     margin:0 auto;
     padding: 0 1rem;
@@ -51,6 +52,7 @@ const InnerStyles =styled.div`
         <InnerStyles>
             {props.children}
         </InnerStyles>
+        <CopyRight/>
         </div>
     )
 }

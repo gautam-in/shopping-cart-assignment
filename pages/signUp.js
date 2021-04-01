@@ -3,8 +3,7 @@ import SignUpPage from '../components/SignUp'
 export default function SignUp(props){
     return (
         <div>
-            <SignUpPage/>        
-            <CopyRight/>
+            <SignUpPage/> 
         </div>
     )
 }
