@@ -1,44 +1,36 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
-import {
-  GET_BANNERS_API,
-  GET_CATEGORIES_API,
-  PRIMARY_SERVER,
-} from "../../Constants/ServerUrl";
+import React, { useEffect } from "react";
 import Categories from "../Categories/Categories";
+import Slider from "../Carousel/Slider";
+import "./Home.scss";
+import { connect } from "react-redux";
+import { homeAction } from "../../_actions";
 
-const Home = () => {
-  const [banners, setBanners] = useState([]);
-  const [categories, setCategories] = useState([]);
+const Home = (props) => {
 
   useEffect(() => {
-    getBanners();
-    getCategories();
+    props.getCategories();
+    props.getBanners();
   }, []);
 
-  const getBanners = async () => {
-    debugger;
-    try {
-      const result = await axios.get(PRIMARY_SERVER + GET_BANNERS_API);
-      debugger;
-      console.log(result.data);
-      setBanners(result.data);
-    } catch (e) {}
-  };
-
-  const getCategories = async () => {
-    try {
-      const result = await axios.get(PRIMARY_SERVER + GET_CATEGORIES_API);
-      setCategories(result.data);
-    } catch (e) {}
-  };
+  const { banners, categories } = props;
 
   return (
-    <div>
-      Welcome to Homepage!
-      {categories.length ? <Categories categoryList={categories} /> : ""}
-    </div>
+    <main className="home-content">
+      { banners.length ? <Slider slides={banners} /> : ""}
+      { categories.length ? <Categories categoryList={categories} /> : ""}
+    </main>
   );
 };
 
-export default Home;
+const mapStateToProps = (state) => {
+  const { banners, categories } = state.home;
+  const bannerImages = banners.map(item => item.bannerImageUrl);
+  return { banners: bannerImages, categories };
+}
+
+const mapDispatchToProps = {
+  getCategories: homeAction.getCategories,
+  getBanners: homeAction.getBanners
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Home);

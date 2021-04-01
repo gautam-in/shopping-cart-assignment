@@ -32,7 +32,7 @@ const FormInput = ({
           {label}{" "}
         </label>
       ) : null}
-      {errors[name] && <p className="error-message">{errors[name]}</p>}
+      {errors[name] && <p role="alert" className="error-message">{errors[name]}</p>}
     </div>
   );
 };

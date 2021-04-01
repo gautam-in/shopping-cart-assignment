@@ -12,7 +12,6 @@ header {
 
 @mixin toggleNavbar {
   header {
-    justify-content: space-around;
     .navbar-section{
       display: flex;
       nav{
@@ -33,6 +32,9 @@ header {
 
 @media only screen and (min-width: $desktop-width) {
   @include toggleNavbar();
+  header{
+    justify-content: space-around!important;
+  }
 }
 
 @media only screen and (max-width: $mobile-max-width) {
@@ -49,4 +51,7 @@ header {
 
 @media only screen and (min-width: $tablet-width) {
   @include toggleNavbar();
+  header{
+    justify-content: space-between;
+  }
 }

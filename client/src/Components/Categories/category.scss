@@ -1,3 +1,5 @@
+@import "../../Utilities/SCSS-Variables/variables.scss";
+
 .category-item {
   display: flex;
   & article {
@@ -7,5 +9,23 @@
     margin: 0;
     display: flex;
     align-items: center;
+  }
+  @media only screen and (min-width: $tablet-width) {
+    & article {
+      width: 70%;
+    }
+    & figure {
+      margin: 0;
+      width: 60%;
+      display: flex;
+      justify-content: center;
+    }
+  }
+}
+
+
+@media only screen and (min-width: $desktop-width) {
+  .category-item{
+    margin: 0 15%;
   }
 }

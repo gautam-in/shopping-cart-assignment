@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React from "react";
 import "./Header.scss";
 import logo from "../../../public/static/images/logo.png";
 import CartIcon from "../CartIcon/CartIcon";
@@ -10,10 +10,10 @@ const Header = () => {
   return (
     <header>
       <div className="navbar-section">
-        <img src={logo} alt={"Sabka Bazaar Logo"} height="60" width="140" className="logo" />
+        <img src={logo} alt={"Sabka Bazaar Logo"} height="60" width="140" className="logo" aria-label={"Sabka Bazaar Logo"} />
         <nav>
-          <Link to={routes.home}>{HomeLink}</Link>
-          <Link to={routes.products}>{ProductsLink}</Link>
+          <Link to={routes.home} aria-label={"Nav bar for home"}>{HomeLink}</Link>
+          <Link to={routes.products} aria-label={"Nav bar for products"}>{ProductsLink}</Link>
         </nav>
       </div>
       <CartIcon />

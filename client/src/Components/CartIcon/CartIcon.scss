@@ -4,6 +4,9 @@
   display: flex;
   align-items: flex-end;
   background-color: $secondary-color;
+  &:hover{
+    cursor: pointer;
+  }
 }
 .login-options {
   display: flex;

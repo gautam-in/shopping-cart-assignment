@@ -1,0 +1,81 @@
+@import "../../Utilities/SCSS-Variables/variables.scss";
+
+.product-item {
+    & h4{
+        height: 30px;
+    }
+    & figure{
+        margin: 0;
+    }
+    & section{
+        border-bottom: 2.5px dashed $secondary-color;
+        padding-bottom: 10px;
+    }
+}
+
+@media only screen and (min-width: $tablet-width) and (max-width: $desktop-width) {
+    .product-item{
+        width: 49%;
+        display: flex;
+        flex-direction: column;
+        & figure{
+            display: flex;
+            flex: 1;
+            & figcaption{
+                flex: 1;
+                background-color: $secondary-color;
+                margin-bottom: 10px;
+            }
+        }
+        & section {
+            & span {
+                display: none;
+            }
+            & button{
+                width:100%;
+                &::after{
+                    content: " @ Rs." attr(price);
+                }
+            }
+        }
+    }
+    .product-img{
+        width: 140px;
+    }
+  }
+  
+  @media only screen and (min-width: $desktop-width) {
+    .product-item{
+        width: 25%;
+        display: flex;
+        flex-direction: column;
+        & figure {
+            margin: 0;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            & figcaption{
+                flex: 1;
+                background-color: $secondary-color;
+                width: 200px;
+                margin-bottom: 10px;
+            }
+        }
+        & section{
+            display: flex;
+            width: 200px;
+            justify-content: space-around;
+            & span {
+                display: flex;
+                align-items: center;
+            }
+            & button{
+                width:40%;
+            }
+        }
+    }
+    .product-img{
+        height:250px;
+        width:200px;
+    }
+  }

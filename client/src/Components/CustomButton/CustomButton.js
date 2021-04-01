@@ -4,9 +4,9 @@ import "./CustomButton.scss";
 
 const CustomButton = ({ children, ...otherProps }) => {
   return (
-    <button className={"custom-button"} {...otherProps}>
-      {children}
-    </button>
+    <button className={"custom-button"} {...otherProps} style={otherProps.width ? (otherProps.height ? { width: otherProps.width, height: otherProps.height } : { width: otherProps.width }) : (otherProps.height ? { height: otherProps.height } : {})}>
+      { children}
+    </button >
   );
 };
 
