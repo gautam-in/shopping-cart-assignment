@@ -1,0 +1,68 @@
+<html lang="en">
+
+<head>
+    <!-- <meta> tags> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../static/styles/css/banner.css">
+    <link rel="stylesheet" href="../../static/styles/css/cart.css">
+    <link rel="stylesheet" href="../../static/styles/css/product.css">
+    <link rel="stylesheet" href="../../static/styles/css/main.css">
+    <title>Shopping Application</title>
+    <script src="../../static/scripts/index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+</head>
+
+
+<body>
+    {{>header}}
+    <div tabindex="0" class="container">
+        {{{body}}}
+    </div>       
+   {{>footer}}
+   <div id="overlay"class="overlay">
+      
+<script id="cartBody" type="text/x-handlebars-template">
+    <div class="cartBody ">
+    <div class="cartHeader">
+        <p>
+            My Cart({{cart.name}})
+        </p>
+        <button class="cart_close" onclick="closeCart()" aria-label="Close Cart">X</button>
+    </div>
+   <div class="cart_content">
+        <div class="cartDetails" >
+        <section aria-label="cart items image" class="cart_images">
+            <img src='../static/images/products/fruit-n-veg/apple.jpg' style="">
+        </section>
+        <section class="itemdetails">
+            <span aria-label="cart items Name">Apple- washington Regular - 4pcs</span>
+            <section>
+                <button aria-label="Add one of this item" class="round cartbutton">+</button>
+                <span aria-label="Quantity of items in cart">1</span>
+                <button aria-label="Reduce one from this item" class="round cartbutton">-</button>
+                <span>X</span>
+                <span aria-label="Price of single item">Rs.187</span>
+                
+            </section>
+        </section>
+        <section><span aria-label="Total Price for item" class="total">Total</span></section>
+    </div>
+    <div class="promotionLogo">
+        <div>
+            <img aria-label="" src="../static/images/lowest-price.png">        
+        </div>
+        <p>You won't find it cheaper anywhere</p>
+    </div>
+   </div>
+   <footer class="cartFooter">
+    <span aria-label="Promo code can be applied on payment page">
+        Promo code can be applied on payment page
+    </span>
+    <button aria-label="Checkout" class="cartbutton">Proceed to Checkout </button>
+</footer>
+</div>
+</script>
+ </div>
+</body>
+
+</html>

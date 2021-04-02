@@ -1,0 +1,44 @@
+<div class="productPage">
+    <nav class="displayMobile productNav">
+        {{#each categories}}
+         {{#ifOrder this.order}}
+        <a aria-label="go to {{this.name}}" href="/productsPage?category={{this.id}}">{{this.name}}</a>
+        {{/ifOrder}}
+        {{/each}}
+    </nav>
+    <div class="select ">
+        <select name="select" class="displayDesktop displayTablet" id="mobileselect" onchange="location = this.value;">
+            {{!-- <option selected disabled>Choose an option</option> --}}
+            {{#each categories}}
+            {{#ifOrder this.order}}
+            {{!-- <a href="/productsPage?category={{this.id}}"> --}}
+                <option value="/productsPage?category={{this.id}}">{{this.name}}</option>
+            {{!-- </a> --}}
+            {{/ifOrder}}
+            {{/each}}
+        </select>
+    </div>
+    <div class="products_container">
+         {{!-- <div id="successMessage" class="successMessage"></div> --}}
+        {{#each products}}
+        <div class="product">
+            <h4 class="displayDesktop displayTablet">{{this.name}}</h4>
+            <h2 class="displayMobile">{{this.name}}</h2>
+            <div class="products_description">
+                <section>
+                    <img aria-label="Product Image" src="{{this.imageURL}}">
+                </section>
+                <section aria-label="Product Description">
+                    <p>{{this.description}}</p>
+                    <button aria-label="Add {{this.name}} to cart" class="displayTablet productButton" onclick="addToCart('{{this.id}}')">Buy Now @ MRP Rs.{{this.price}}</button>
+                </section>
+            </div>
+            <button aria-label="Add {{this.name}} to cart" class="displayMobile displayDesktop productButton" onclick="addToCart('{{this.id}}')">Buy Now @ MRP Rs.{{this.price}}</button>
+            <section class="desktop_buttonGroup displayMobile displayTablet ">
+                <span>MRP Rs.{{this.price}}</span>
+                <button aria-label="Add {{this.name}} to cart" class="productButton" onclick="addToCart('{{this.id}}')">Buy Now</button>
+            </section>
+        </div>
+        {{/each}}
+    </div>
+</div>
