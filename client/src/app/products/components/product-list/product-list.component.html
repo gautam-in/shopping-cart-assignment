@@ -20,24 +20,34 @@
       >
         <li
           role="menuitem"
-          class="dropdown-item"
+          class="dropdown-item p-0"
           *ngFor="let category of categories"
           [ngClass]="{ active: selectedCategory?.id === category.id }"
-          (click)="selectCategory(category)"
         >
-          {{ category.name }}
+          <a
+            class="d-block p-3"
+            [routerLink]=""
+            (click)="selectCategory(category)"
+          >
+            {{ category.name }}
+          </a>
         </li>
       </ul>
     </div>
 
     <ul class="d-none d-md-block list-group list-group-flush">
       <li
-        class="list-group-item"
+        class="list-group-item p-0"
         *ngFor="let category of categories"
         [ngClass]="{ active: selectedCategory?.id === category.id }"
-        (click)="selectCategory(category)"
       >
-        {{ category.name }}
+        <a
+          class="d-block p-3"
+          [routerLink]=""
+          (click)="selectCategory(category)"
+        >
+          {{ category.name }}
+        </a>
       </li>
     </ul>
   </aside>
@@ -46,29 +56,34 @@
     <div class="card-deck py-3 mx-0">
       <div
         class="card m-0"
-        *ngFor="let product of products$ | async; trackBy: trackProduct"
+        *ngFor="
+          let product of filteredProducts;
+          let index = index;
+          trackBy: trackProduct
+        "
       >
-        <h5 class="card-title font-weight-bold px-2 pt-2">
+        <h5
+          class="card-title font-weight-bold px-2 pt-2"
+          id="name-{{ product.id }}"
+        >
           {{ product.name }}
         </h5>
 
         <div class="d-flex d-lg-block align-content-center">
-          <picture class="d-flex t-half-width">
-            <!-- TODO: Optimize: convert images into webp -->
-            <!-- <source
-                  [srcset]="product.imageURL + '.webp'"
-                  type="image/webp"
-                /> -->
-            <source
-              [srcset]="product.imageURL + '.' + product.imageType"
-              [type]="'image/' + product.imageType"
-            />
-            <img
-              [src]="product.imageURL + '.' + product.imageType"
-              alt=""
-              class="card-img-top align-self-center"
-            />
-          </picture>
+          <div class="image-container t-half-width">
+            <picture>
+              <source [srcset]="product.imageURL + '.webp'" type="image/webp" />
+              <source
+                [srcset]="product.imageURL + '.' + product.imageType"
+                [type]="'image/' + product.imageType"
+              />
+              <img
+                alt=""
+                class="card-img-top align-self-center"
+                [src]="product.imageURL + '.' + product.imageType"
+              />
+            </picture>
+          </div>
 
           <div class="card-body t-half-width">
             <div class="product-description-container h-100">
@@ -89,9 +104,15 @@
             <p class="card-text d-lg-block d-none m-0">
               MRP Rs {{ product.price }}
             </p>
+
+            <span class="sr-only" aria-live="assertive">
+              {{ product.quantityInCart }} items of {{ product.name }} in cart
+            </span>
+
             <button
               class="btn btn-primary"
               *ngIf="!product.quantityInCart; else productInCart"
+              [attr.aria-describedby]="'name-' + product.id"
               (click)="addToCart(product)"
             >
               <span>Buy Now</span>
@@ -102,14 +123,21 @@
               <div class="d-flex">
                 <button
                   class="btn btn-primary"
+                  aria-label="Remove item from cart"
+                  [attr.aria-describedby]="'name-' + product.id"
                   (click)="removeFromCart(product)"
                 >
                   -
                 </button>
-                <span class="quantity-in-cart mx-2">{{
-                  product.quantityInCart
-                }}</span>
-                <button class="btn btn-primary" (click)="addToCart(product)">
+                <span class="quantity-in-cart mx-2">
+                  {{ product.quantityInCart }}
+                </span>
+                <button
+                  class="btn btn-primary"
+                  aria-label="Add item to cart"
+                  [attr.aria-describedby]="'name-' + product.id"
+                  (click)="addToCart(product)"
+                >
                   +
                 </button>
               </div>

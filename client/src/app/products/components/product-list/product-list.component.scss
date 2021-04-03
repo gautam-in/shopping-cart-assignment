@@ -62,10 +62,40 @@ main {
   border-color: #a70045;
 }
 
+.image-container {
+  width: 100%;
+  padding-top: 100%;
+  position: relative;
+
+  picture {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+}
+
+.list-group-item a,
+.dropdown-item a {
+  color: #777;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.dropdown-item a {
+  font-size: 14px;
+}
+
 // for tablet view
 @media (max-width: 991.98px) {
   .t-half-width {
     width: 50%;
+  }
+
+  .image-container {
+    width: 50%;
+    padding-top: 50%;
   }
 
   .card-body,
@@ -103,6 +133,7 @@ main {
     height: 36px;
     display: flex;
     align-items: center;
+    justify-content: space-between;
   }
 
   .dropdown-menu {
@@ -112,6 +143,10 @@ main {
   .dropdown-item.active,
   .dropdown-item:active {
     background-color: #a70045;
+
+    a {
+      color: #fff;
+    }
   }
 
   .card {

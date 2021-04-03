@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Observable, of } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { combineLatest } from 'rxjs';
+import { tap } from 'rxjs/operators';
 
 import { Category } from 'src/app/shared/models/category';
 import { Product } from 'src/app/shared/models/product';
@@ -15,7 +15,8 @@ import { SEOService } from 'src/app/core/services/seo.service';
 })
 export class ProductListComponent implements OnInit {
   categories: Category[] = [];
-  products$: Observable<Product[]> = of([]);
+  products: Product[] = [];
+  filteredProducts: Product[] = [];
 
   selectedCategory: Category | null = null;
 
@@ -32,16 +33,12 @@ export class ProductListComponent implements OnInit {
       'Find a range of great products at unbelievable discounts.'
     );
 
-    this.getCategories();
-
-    this.activatedRoute.queryParamMap.subscribe((map: any) => {
-      const category = this.categories.find(
-        (category: Category) => category.key === map.params.category
-      );
-
-      this.selectedCategory = category ? category : null;
-
-      this.getProducts();
+    combineLatest([
+      this.getCategories(),
+      this.getProducts(),
+      this.activatedRoute.queryParamMap,
+    ]).subscribe(([_, __, map]: [Category[], Product[], any]) => {
+      this.filterProducts(map.params.category);
     });
   }
 
@@ -62,6 +59,20 @@ export class ProductListComponent implements OnInit {
     });
   }
 
+  filterProducts(categoryKey: string) {
+    const category = this.categories.find(
+      (category: Category) => category.key === categoryKey
+    );
+
+    this.selectedCategory = category ? category : null;
+
+    this.filteredProducts = (this.products || []).filter((product: Product) =>
+      this.selectedCategory && this.selectedCategory.id
+        ? this.selectedCategory.id === product.category
+        : true
+    );
+  }
+
   addToCart(product: Product) {
     this.productsService.addToCart(product);
   }
@@ -71,14 +82,16 @@ export class ProductListComponent implements OnInit {
   }
 
   getCategories() {
-    this.productsService.getCategories().subscribe((categories) => {
-      this.categories = categories;
-    });
+    return this.productsService.getCategories().pipe(
+      tap((categories) => {
+        this.categories = categories;
+      })
+    );
   }
 
   getProducts() {
-    this.products$ = this.productsService.getProducts(
-      this.selectedCategory?.id
-    );
+    return this.productsService
+      .getProducts()
+      .pipe(tap((products: Product[]) => (this.products = products)));
   }
 }

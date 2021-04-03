@@ -16,8 +16,6 @@ export class ProductsService {
   categoriesUrl = 'categories';
   productsUrl = 'products';
 
-  products: Product[] = [];
-
   constructor(private http: HttpClient, private cartService: CartService) {}
 
   addToCart(product: Product) {
@@ -45,15 +43,7 @@ export class ProductsService {
     return this.http.get<Category[]>(`${this.baseUrl}/${this.categoriesUrl}`);
   }
 
-  getProducts(categoryId: string | undefined): Observable<Product[]> {
-    return this.http.get<Product[]>(`${this.baseUrl}/${this.productsUrl}`).pipe(
-      map((products: any) => {
-        return (products || []).filter((product: Product) =>
-          categoryId ? categoryId === product.category : true
-        );
-      }),
-      // keep reference of products in the service
-      tap((products) => (this.products = products))
-    );
+  getProducts(): Observable<Product[]> {
+    return this.http.get<Product[]>(`${this.baseUrl}/${this.productsUrl}`);
   }
 }
