@@ -1,4 +1,4 @@
-export default function FormLeftContent({heading,description,styles}) {
+export default function FormStaticContent({heading,description,styles}) {
     return (
         <div className={styles.formleftcontent}>
                     <h2>{heading}</h2>

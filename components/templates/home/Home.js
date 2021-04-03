@@ -1,12 +1,12 @@
 import React from "react";
-import CategoryItem from "./CategoryItem";
-import Carousel from "./Carousel";
-import PageLayout from "./PageLayout";
-import homeStyles  from '../styles/home.module.scss'
+import CategoryItem from "../../organism/Category/CategoryItem";
+import Carousel from "../../organism/Carousel/Carousel";
+import PageLayout from "../../organism/PageLayout";
+import homeStyles  from '../../../styles/home.module.scss'
 
 class Home extends React.Component {
 render(){
-const {bannerData,unfilteredCategoryData,cartData,currentLogedInUser,isCartOpen} = this.props
+const {bannerData,unfilteredCategoryData} = this.props
 const categoryData = unfilteredCategoryData.filter((data)=> data?.enabled)
     return(
         <PageLayout >

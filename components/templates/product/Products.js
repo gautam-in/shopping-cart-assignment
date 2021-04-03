@@ -1,10 +1,9 @@
-import PageLayout from "./PageLayout";
 import React from "react";
-import ProductItem from "./ProductItem";
-import filterProduct from '../utils/lib/filterProduct'
 import Router  from "next/router";
-import productStyles from '../styles/product.module.scss'
-
+import ProductItem from "../../organism/Product/ProductItem";
+import PageLayout from '../../organism/PageLayout'
+import filterProduct from '../../../utils/lib/filterProduct'
+import productStyles from '../../../styles/product.module.scss'
 
 class Products extends React.Component {
     constructor(){
@@ -16,28 +15,30 @@ class Products extends React.Component {
     }
     
     componentDidMount(){
-        if (this.props?.query?.id) {
-            const filteredProducts = this.props?.products.filter((product)=>product.category === this.props.query.id)
+        const {productReducer,query}= this.props
+        if (query?.id) {
+            const filteredProducts = productReducer?.products.filter((product)=>product.category === query.id)
             this.setState({
                 products:filteredProducts,
-                filteredKey:this.props?.query?.id
+                filteredKey:query?.id
             })
         }
         else{
         this.setState({
-            products:this.props.products
+            products:productReducer.products
         })}
     }
+
     filterProductByType = (key) =>{
     if (key == this.state.filteredKey) {
         this.setState({
             filteredKey:"",
-            products:this.props.products
+            products:this.props?.productReducer?.products
         }) 
         Router.push({pathname:"/products" })
     }
     else {
-        const filteredproducts = filterProduct(key,this.props.products)
+        const filteredproducts = filterProduct(key,this.props?.productReducer?.products)
         this.setState({
             filteredKey:key,
             products:filteredproducts
@@ -47,10 +48,9 @@ class Products extends React.Component {
     }
 render(){
     const {products,filteredKey} = this.state;
-    //data reducer
-    const{availableCategories,cartData,currentLogedInUser} = this.props;
+    const{availableCategories,cartReducer,userReducer} = this.props;
     return(
-        <PageLayout actions={this.props.actions} totalItemsInCart={cartData?.length} currentLogedInUser={currentLogedInUser}>
+        <PageLayout actions={this.props.actions}>
             <div style={{height:100}} />
             <div>
             <select
@@ -79,7 +79,7 @@ render(){
                 <div className={productStyles.productitems}>
                     {products.map((product,index)=>{
                         return(
-                            <ProductItem styles={productStyles} currentLogedInUser={currentLogedInUser}  key={index} product={product} actions={this.props.actions} cartData={cartData} />
+                            <ProductItem styles={productStyles} currentLogedInUser={userReducer?.currentLogedInUser}  key={index} product={product} actions={this.props.actions} cartData={cartReducer?.cartData} />
                         )
                     })}
                 </div>}

@@ -1,7 +1,22 @@
 import React, { Fragment } from 'react'
-import Products from '../components/Products';
+import Products from '../components/templates/product/Products';
 import { connect } from 'react-redux'
-import {mapDispatchToProps,mapStateToProps} from '../container/container'
+import {bindActionCreators} from 'redux';
+import {ActionCreators} from '../reducer/actions'
+
+export function mapStateToProps(state) {
+    return {
+      productReducer:state.productReducer,
+      homeReducer:state.homeReducer,
+      cartReducer:state.cartReducer,
+      userReducer:state.userReducer
+
+    }
+  }
+  
+export function mapDispatchToProps(dispatch) {
+    return {actions: bindActionCreators(ActionCreators, dispatch)}
+  }
 
  class ProductPage extends React.Component {
    componentDidMount(){
@@ -9,9 +24,10 @@ import {mapDispatchToProps,mapStateToProps} from '../container/container'
      this.props.actions.getCategories()
    }
    render(){
-     const availableCategories =  this.props?.categories.filter((category)=>category.enabled)
+     const {homeReducer,productReducer} = this.props
+     const availableCategories =  homeReducer.categories.filter((category)=>category.enabled)
         return(
-          this.props?.products&&this.props?.products.length? 
+          productReducer?.products?.length? 
         <Products availableCategories={availableCategories} query={this.props.query} {...this.props} />
         :<Fragment />
     ) }

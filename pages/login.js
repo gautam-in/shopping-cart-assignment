@@ -1,7 +1,18 @@
 import React from 'react'
-import Login from '../components/Login'
+import Login from '../components/templates/login/Login'
 import { connect } from 'react-redux'
-import {mapDispatchToProps,mapStateToProps} from '../container/container'
+import {bindActionCreators} from 'redux';
+import {ActionCreators} from '../reducer/actions'
+
+export function mapStateToProps(state) {
+    return {
+      userReducer:state.userReducer
+    }
+  }
+  
+export function mapDispatchToProps(dispatch) {
+    return {actions: bindActionCreators(ActionCreators, dispatch)}
+  }
 
 class LoginPage extends React.Component{
     render(){

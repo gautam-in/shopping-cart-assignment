@@ -3,9 +3,8 @@ import thunk from "redux-thunk";
 import reducer from '../reducer/rootReducer'
 // create a simple reducer
 
-
 const makeStore = (initialState, options) => {
-    return createStore(reducer, applyMiddleware(thunk));
+    return createStore(reducer,{}, applyMiddleware(thunk));
 };
 
 export default makeStore;

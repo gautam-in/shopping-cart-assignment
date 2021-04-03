@@ -1,7 +1,7 @@
 import React from 'react';
 import { CarouselProvider, Slider, Slide, ButtonBack, ButtonNext, DotGroup, Dot } from 'pure-react-carousel';
 import 'pure-react-carousel/dist/react-carousel.es.css';
-import BannerItem from './BannerItem'
+import BannerItem from '../Banner/BannerItem'
 
 export default class extends React.Component {
   render() {
