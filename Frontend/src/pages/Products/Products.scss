@@ -1,0 +1,15 @@
+@import '../../styles/global';
+
+.product-page-main {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  .product-filter-wrap {
+    flex-basis: 20%;
+    background-color: $grey-color;
+  }
+  .product-page-list-wrap {
+    flex-basis: 80%;
+  }
+}
