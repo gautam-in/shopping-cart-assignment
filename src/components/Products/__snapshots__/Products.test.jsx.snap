@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Renders Products Page should render product page 1`] = `
+<section
+  className="section-products"
+>
+  <div
+    className="product-categories"
+    role="menu"
+  />
+  <div
+    className="category-dropdown-container"
+  >
+    <div
+      aria-hidden="true"
+      className="dropdown-header"
+      onClick={[Function]}
+    >
+      Select Category
+      <svg
+        aria-hidden={true}
+        className="MuiSvgIcon-root drop-down-icon"
+        focusable="false"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"
+        />
+      </svg>
+    </div>
+  </div>
+  <div
+    className="product-list"
+  />
+</section>
+`;

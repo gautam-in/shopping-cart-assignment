@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Login form  should render correclty 1`] = `ShallowWrapper {}`;

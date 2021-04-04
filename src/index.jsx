@@ -10,7 +10,7 @@ import store from './redux/store';
 
 const mountNode = document.getElementById('app');
 ReactDOM.render(
-  <Provider store={store}>
+  <Provider store={store()}>
     <App />
   </Provider>,
   mountNode,
