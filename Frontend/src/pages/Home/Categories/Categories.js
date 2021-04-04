@@ -1,28 +1,23 @@
 /* eslint-disable global-require */
 /* eslint-disable import/no-dynamic-require */
 
-import {useEffect, useState} from 'react';
+import {useEffect} from 'react';
 import './Categories.scss';
-import Api from '../../../services/Api';
+import {useDispatch, useSelector} from 'react-redux';
+import {fetchCategoriesDataRequest} from '../../../actions';
+import {allCategoriesData} from '../../../selector';
 
 const Categories = () => {
-  const [loading, setLoading] = useState(false);
-  const [categories, setCategories] = useState([]);
-  const [error, setError] = useState(false);
-
+  const dispatch = useDispatch();
   useEffect(() => {
-    setLoading(true);
-    Api.categories()
-      .then((data) => {
-        setLoading(false);
-        setCategories(data);
-      })
-      .catch(() => {
-        setLoading(false);
-        setError(true);
-      });
-  }, []);
-  const categoriesList = categories.map((category) => {
+    dispatch(fetchCategoriesDataRequest());
+  }, [dispatch]);
+
+  const {loading, data, error} = useSelector((state) =>
+    allCategoriesData(state),
+  );
+
+  const categoriesList = data.map((category) => {
     const {id, name, imageUrl, description, key} = category;
     return (
       <li key={id} className="card-wrap">

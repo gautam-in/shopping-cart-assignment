@@ -1,0 +1,14 @@
+@import '../../../styles/global';
+
+.categories-filter-data-wrap {
+  li {
+    border-bottom: 1px solid $black-color;
+    padding: 10px;
+    display: block;
+    span {
+      font-size: 1rem;
+      font-weight: normal;
+      padding-left: 5px;
+    }
+  }
+}

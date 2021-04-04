@@ -1,6 +1,6 @@
 import {useEffect} from 'react';
 import {useDispatch} from 'react-redux';
-import {fetchProductsDataRequest} from '../../actions/action';
+import {fetchProductsDataRequest} from '../../actions';
 import ProductFilter from './ProductFilter';
 import ProductsList from './ProductsList';
 import './Products.scss';
