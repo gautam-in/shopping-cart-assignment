@@ -1,14 +1,12 @@
 import React from 'react';
 
 const ProductItem = ({ product, addToCart }) => (
-  <div key={product.id} className="product-list__item">
+  <div className="product-list__item">
     <h1 className="product-list__item--title">{product.name}</h1>
     <div className="product-list__item-description">
       <img className="product-list__item--image" src={product.imageURL} alt={product.description} />
       <div className="product-list__item--info">
-        {/* <div> */}
         {product.description}
-        {/* </div> */}
       </div>
       <button
         type="button"

@@ -13,6 +13,7 @@ const ProductPage = ({
       {
         map(categories, (category) => (
           <CategoryItem
+            key={category.key}
             category={category}
             filteredCategory={filteredCategory}
             onCategoryChange={onCategoryChange}
@@ -24,7 +25,7 @@ const ProductPage = ({
     <div className="product-list">
       {
         map(products, (product) => (
-          <ProductItem product={product} addToCart={addToCart} />
+          <ProductItem key={product.id} product={product} addToCart={addToCart} />
         ))
       }
     </div>

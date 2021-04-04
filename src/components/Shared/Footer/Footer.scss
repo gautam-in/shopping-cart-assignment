@@ -1,16 +1,17 @@
 footer {
+    width: $default-width;
     height: 2.5rem;
     background-color: $grey-color;
     align-content: center;
-    margin-bottom: 0;
+    margin: 0 auto;
     display: flex;
     align-items: center;
     p {
         font-size: 70%;
         font-weight: 600;
-        margin: 50px;
     }
     @media only screen and (max-width: 991px) {
+        width: 100%;
         justify-content: center;
     }
 }

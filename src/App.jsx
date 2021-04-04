@@ -1,6 +1,8 @@
 import React from 'react';
 import { map } from 'lodash';
-import { BrowserRouter, Switch } from 'react-router-dom';
+import {
+  BrowserRouter, Redirect, Switch,
+} from 'react-router-dom';
 
 import './assets/styles/styles.scss';
 
@@ -18,6 +20,7 @@ const App = () => (
             : <PublicRoute key={i} {...r} />
           ))
         }
+        <Redirect from="*" to="/" />
       </Switch>
     </Layout>
   </BrowserRouter>
