@@ -1,11 +1,12 @@
 import React from 'react';
-import { CarouselProvider, Slider, Slide, ButtonBack, ButtonNext, DotGroup, Dot } from 'pure-react-carousel';
+import { CarouselProvider, Slider, Slide, ButtonBack, ButtonNext, DotGroup } from 'pure-react-carousel';
 import 'pure-react-carousel/dist/react-carousel.es.css';
 import BannerItem from '../Banner/BannerItem'
+import styles from './carousel.module.scss'
 
 export default class extends React.Component {
   render() {
-  const{carouselData,styles} = this.props
+  const{carouselData} = this.props
     return (
       <CarouselProvider 
         infinite
@@ -15,7 +16,7 @@ export default class extends React.Component {
         totalSlides={carouselData?.length}
         >
         <ButtonBack
-          className={styles.carouselback}>
+          className={styles.prevbutton}>
           Back
         </ButtonBack>
         <Slider>
@@ -26,11 +27,11 @@ export default class extends React.Component {
                 </Slide>)
             })}
         </Slider>
-        <div style={{display:"flex",justifyContent:'center',alignItems:"center"}}>
+        <div className={styles.dots}>
         <DotGroup />
         </div>
         <ButtonNext
-        className={styles.carouselfront}
+        className={styles.nextbutton}
         >Next</ButtonNext>
       </CarouselProvider>
     );

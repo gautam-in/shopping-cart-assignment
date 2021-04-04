@@ -1,9 +1,9 @@
 import React from "react";
 import Router  from "next/router";
 import ProductItem from "../../organism/Product/ProductItem";
-import PageLayout from '../../organism/PageLayout'
+import PageLayout from '../../organism/layout/PageLayout'
 import filterProduct from '../../../utils/lib/filterProduct'
-import productStyles from '../../../styles/product.module.scss'
+import styles from './product.module.scss'
 
 class Products extends React.Component {
     constructor(){
@@ -51,10 +51,10 @@ render(){
     const{availableCategories,cartReducer,userReducer} = this.props;
     return(
         <PageLayout actions={this.props.actions}>
-            <div style={{height:100}} />
+            <div className="empty" />
             <div>
             <select
-                className={productStyles.dropdown}
+                className={styles.dropdown}
                 onChange={(e)=>{
                     this.filterProductByType(e.target.value)
                 }}
@@ -65,9 +65,9 @@ render(){
                     })}
             </select>
             </div>
-            <div className={productStyles.product_content}>
-                <div className={productStyles.sidebar}>
-                   <ul className={productStyles.filterlist}>
+            <div className={styles.product_content}>
+                <div className={styles.sidebar}>
+                   <ul className={styles.filterlist}>
                     {availableCategories&&availableCategories.map((item)=>{
                         return <li onClick={()=>this.filterProductByType(item.id)} style={{background:filteredKey === item.id ?"#eee":""}} >
                                     {item.name}
@@ -76,10 +76,10 @@ render(){
                     </ul> 
                 </div>
                 {products&&products.length &&
-                <div className={productStyles.productitems}>
+                <div className={styles.productitems}>
                     {products.map((product,index)=>{
                         return(
-                            <ProductItem styles={productStyles} currentLogedInUser={userReducer?.currentLogedInUser}  key={index} product={product} actions={this.props.actions} cartData={cartReducer?.cartData} />
+                            <ProductItem currentLogedInUser={userReducer?.currentLogedInUser}  key={index} product={product} actions={this.props.actions} cartData={cartReducer?.cartData} />
                         )
                     })}
                 </div>}

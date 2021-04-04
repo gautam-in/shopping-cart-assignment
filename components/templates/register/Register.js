@@ -1,13 +1,12 @@
 import React, { useState } from 'react'
 import useForm from '../../../utils/lib/useForm'
 import FormStaticContent from '../../molecules/Form/FormStaticContent'
-import PageLayout from '../../organism/PageLayout'
-import loginStyles from '../../../styles/login.module.scss'
-import ErrorMessage from '../../atoms/Text/ErrorMessage'
+import PageLayout from '../../organism/layout/PageLayout'
+import loginStyles from '../login/login.module.scss'
 import Form from '../../molecules/Form/Form'
 import Input from '../../atoms/Input/Input'
 import Checkbox from '../../atoms/Input/Checkbox'
-
+import SuccessMessage from '../../atoms/Text/SuccessMessage'
 function Register (props) {
     const {inputs,handleChange,errors,clearForm} = useForm({
         first_name:'',
@@ -29,14 +28,15 @@ function Register (props) {
     }
     function UserSignUp(e) {
         e.preventDefault()
-let isUserRegistered = props?.userReducer?.registeredUsers.findIndex(email => email === inputs.email); 
+        let isUserRegistered = props?.userReducer?.registeredUsers.findIndex(email => email === inputs.email); 
+
         if (isUserRegistered >= 0) {
             checkUserRegistered("User Already registered")
             return null;
         }
-        checkUserRegistered(`Account created with the email ${inputs.email}.${'\n'}Please login`)
-        clearForm()
-        return props.actions.registerUser(inputs) 
+            checkUserRegistered(`Account created with the email ${inputs.email}.${'\n'}Please login`);
+            clearForm()
+            return props.actions.registerUser(inputs);
     }
         return(
             <PageLayout>
@@ -98,7 +98,7 @@ let isUserRegistered = props?.userReducer?.registeredUsers.findIndex(email => em
 
                         <Checkbox toggle={()=>togglepassword(!showpassword)} name="Show password" value={showpassword} />
                     </Form>
-                    {userRegistered &&<p>{userRegistered}</p>}
+                    {userRegistered &&<SuccessMessage text={userRegistered}/>}
                 </div>
             </div>
 

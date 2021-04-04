@@ -1,12 +1,13 @@
+import styles from './cart.module.scss'
 export default function CartItem({item,actions}) {
     return(
-    <div className="cartitem">
+    <div className={styles.cartitem}>
         <div style={{flex:0.2}}> 
         <img src={item.imageURL} alt={item.name}  width="100px" />
         </div>
-        <div className="cartitemcontent">
+        <div className={styles.cartitemcontent}>
             <p>{item.name}</p>
-            <div className="cartcount">
+            <div className={styles.cartcount}>
             <div>
                 <button 
                         onClick={()=>{
@@ -20,7 +21,7 @@ export default function CartItem({item,actions}) {
                     -
                 </button>
             </div>
-            <div className="itemcount">
+            <div className={styles.itemcount}>
                 <p >
                     {item.count}
                 </p>
@@ -33,7 +34,7 @@ export default function CartItem({item,actions}) {
                     +
                 </button>
             </div>
-            <div className="itemmultiplier">
+            <div className={styles.itemmultiplier}>
                 <p >
                    x Rs.{item.price}
                 </p>

@@ -1,22 +1,26 @@
 import { useRouter } from "next/router"
+import styles from './productitem.module.scss'
 
-export default function ProductItem({product,actions,cartData,currentLogedInUser,styles}) {
+export default function ProductItem({product,actions,cartData,currentLogedInUser}) {
   const router= useRouter()
+
     function addToCart(item) {
         if (currentLogedInUser) {
         const itemAlreadyInCart = cartData&&cartData.length ? 
-        cartData.findIndex((cartItem)=>cartItem.id === item.id):-1
+        cartData.findIndex((cartItem)=>cartItem.id === item.id):-1;
+
         if (itemAlreadyInCart >= 0) {
-         return actions.addItemToCart(item)     
+         return actions.addItemToCart(item);   
         }
         item.count = 1
-        return actions.addItemToCart(item)   
+        return actions.addItemToCart(item);   
         }    
         else {
-         alert('log in to buy the products')
-         return router.push({pathname:"/login"})
+         alert('log in to buy the products');
+         return router.push({pathname:"/login"});
+     }
     }
-    }
+
     return(
         <div className={styles.item}>
             <div className={styles.itemname}>

@@ -1,7 +1,8 @@
 import CartItem from "./CartItem"
+import styles from './cart.module.scss'
 function EmptyCart () {
     return(
-        <div className="cartempty">
+        <div className={styles.cartempty}>
                 <p style={{fontSize:20,fontWeight:'bold'}}>No items in cart.</p>
                 <p>Your favourite item are just a click away</p>
         </div>
@@ -14,20 +15,20 @@ const totalPrice = cartData?.length&&cartData.reduce((tally,cartItem)=>{
     return tally + cartItem.count * cartItem.price
         },0)
 return(
-    <div className="cartmain">
-        <div className="cartwrapper">
-        <div className="cartcontent">
-            <header className="cartheader">
-                <div className="cartheadercount">
+    <div className={styles.cartmain}>
+        <div className={styles.cartwrapper}>
+        <div className={styles.cartcontent}>
+            <header className={styles.cartheader}>
+                <div className={styles.cartheadercount}>
                     <p>
                         My Cart ({cartData?.length}) items
                     </p> 
                 </div>
-                <button className="cartclosebutton" onClick={()=>actions.toggleCart()}>
+                <button className={styles.cartclosebutton} onClick={()=>actions.toggleCart()}>
                     X
                 </button>
             </header>
-            <div className="cartitemcontainer">
+            <div className={styles.cartitemcontainer}>
                 {cartData&&cartData.length?
                     cartData.map((item)=>{
                         return(
@@ -37,16 +38,16 @@ return(
                 }
             </div>
             {cartData&&cartData.lenght&&
-            <div className="cartbanner">
+            <div className={styles.cartbanner}>
                 <img src="../static/images/lowest-price.png" width="100px" />
                 <p>You wont find it cheaper any where</p>
             </div>}
 
-            <footer className="cartfooter">
+            <footer className={styles.cartfooter}>
                 <div>
-                    <p className="cartpromo">Promo code can be applied on payment page</p> 
+                    <p className={styles.cartpromo}>Promo code can be applied on payment page</p> 
                 </div>
-                <button className="cartpaymentbutton" onClick={()=>actions.toggleCart()}>
+                <button className={styles.cartpaymentbutton} onClick={()=>actions.toggleCart()}>
                      {cartData&&cartData.length ?`Proceed to checkout Rs.${totalPrice}`: "Start Shopping"}
                 </button>
             </footer>
