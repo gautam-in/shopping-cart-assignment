@@ -1,0 +1,74 @@
+.sidebar {
+	position: fixed;
+	width: 250px;
+	height: 100%;
+	background-color: #eaeaea;
+	transition: 0.5s;
+	overflow: hidden;
+	margin-left: -1rem;
+	top: 6rem;
+	z-index: 93;
+	ul {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		li {
+			position: relative;
+			width: 100%;
+			list-style: none;
+			border-bottom: 1px solid #d1d1d1;
+			&:hover {
+				background-color: #fff;
+			}
+			a {
+				position: relative;
+				display: block;
+				width: 100%;
+				display: flex;
+				text-decoration: none;
+				color: #888;
+				padding: 0px 15px 0px 15px;
+				.icon {
+					font-size: 24px;
+					position: relative;
+					display: block;
+					min-width: 60px;
+					height: 60px;
+					line-height: 60px;
+					text-align: center;
+				}
+				.title {
+					position: relative;
+					display: block;
+					min-width: 60px;
+					height: 60px;
+					line-height: 60px;
+					text-align: start;
+					white-space: nowrap;
+				}
+			}
+		}
+	}
+}
+@media screen and (max-width: 700px) {
+	.sidebar {
+		width: 0%;
+		height: auto;
+		position: fixed;
+		a {
+			float: left;
+		}
+	}
+	.product_area_container {
+		margin-left: 0;
+	}
+}
+@media screen and (max-width: 400px) {
+	.sidebar {
+		a {
+			text-align: center;
+			float: none;
+		}
+	}
+}
