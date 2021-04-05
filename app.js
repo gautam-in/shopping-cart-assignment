@@ -9,6 +9,13 @@ var cartRouter = require('./routes/cart');
 var app = express();
 var hbs = require('hbs');
 
+var port = 3000;
+
+// start the server
+app.listen(port, function() {
+  console.log('app started');
+});
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');

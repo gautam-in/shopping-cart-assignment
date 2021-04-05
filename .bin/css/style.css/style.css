@@ -558,7 +558,7 @@ section:nth-child(even) .category-section__image {
 /* ------- Cart Page -------- */
 .cart-info {
   background: #eeeeee;
-  padding: 50px 0px; }
+  padding: 40px 0px; }
   .cart-info__title {
     background: #ffffff;
     margin: 20px 0px; }

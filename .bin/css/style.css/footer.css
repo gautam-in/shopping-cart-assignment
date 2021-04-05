@@ -1,0 +1,12 @@
+/* ------- Footer -------- */
+footer {
+  background-color: #f0f0f0;
+  padding: 10px 0;
+  text-align: center; }
+  footer p {
+    padding: 0px; }
+
+/* ------- Responsive Screens -------- */
+@media screen and (min-width: 1024px) {
+  footer {
+    text-align: left; } }
