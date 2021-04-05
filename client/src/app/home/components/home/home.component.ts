@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { forkJoin } from 'rxjs';
 import { tap } from 'rxjs/operators';
 
@@ -19,6 +20,7 @@ export class HomeComponent implements OnInit {
   contentLoadedOnce: boolean = false;
 
   constructor(
+    private router: Router,
     private homeService: HomeService,
     private productsService: ProductsService,
     private seoService: SEOService
@@ -41,6 +43,12 @@ export class HomeComponent implements OnInit {
 
   trackById(_: number, item: Banner | Category) {
     return item.id;
+  }
+
+  exploreCategory(categoryKey: string) {
+    this.router.navigate(['/products'], {
+      queryParams: { category: categoryKey },
+    });
   }
 
   getBanners() {

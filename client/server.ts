@@ -7,6 +7,7 @@ import { join } from 'path';
 import { AppServerModule } from './src/main.server';
 import { APP_BASE_HREF } from '@angular/common';
 import { existsSync } from 'fs';
+import * as cookieParser from 'cookie-parser';
 
 // The Express app is exported so that it can be used by serverless Functions.
 export function app(): express.Express {
@@ -18,6 +19,8 @@ export function app(): express.Express {
 
   const gzipStatic = require('connect-gzip-static');
   const oneDay = 86400000;
+
+  server.use(cookieParser());
 
   // Our Universal express-engine (found @ https://github.com/angular/universal/tree/master/modules/express-engine)
   server.engine(
@@ -59,6 +62,12 @@ export function app(): express.Express {
     res.sendFile(distFolder + '/robots.txt');
   });
 
+  // Authenticate user (DUMMY)
+  server.post('/authenticate', (_, res) => {
+    res.cookie('id', '12345', { httpOnly: true, secure: true });
+    res.send();
+  });
+
   server.get(
     '*.*',
     express.static(distFolder, {
@@ -68,6 +77,15 @@ export function app(): express.Express {
 
   // All regular routes use the Universal engine
   server.get('*', (req, res) => {
+    // check if user is authenticated. If not, redirect to login page
+    if (
+      (!req.cookies || !req.cookies.id) &&
+      !(req.url.includes('/login') || req.url.includes('/signup'))
+    ) {
+      res.redirect('/user/login');
+      return;
+    }
+
     res.render(indexHtml, {
       req,
       providers: [{ provide: APP_BASE_HREF, useValue: req.baseUrl }],

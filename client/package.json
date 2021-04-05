@@ -29,6 +29,7 @@
     "@nguniversal/express-engine": "^11.2.1",
     "bootstrap": "^4.6.0",
     "connect-gzip-static": "^2.1.1",
+    "cookie-parser": "^1.4.5",
     "express": "^4.15.2",
     "ngx-bootstrap": "^6.2.0",
     "rxjs": "~6.6.0",

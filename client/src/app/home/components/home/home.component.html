@@ -45,7 +45,7 @@
       <div class="category-details text-center">
         <h4>{{ category.name }}</h4>
         <p>{{ category.description }}</p>
-        <button class="btn btn-primary">Explore {{ category.key }}</button>
+        <button class="btn btn-primary" (click)="exploreCategory(category.key)">Explore {{ category.key }}</button>
       </div>
     </div>
   </div>

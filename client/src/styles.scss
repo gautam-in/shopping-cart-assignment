@@ -2,6 +2,7 @@
 
 // @import url("https://fonts.googleapis.com/css?family=Dosis:400,600,700");
 @import "~bootstrap/dist/css/bootstrap.css";
+@import "variables";
 
 /* dosis-regular - latin */
 @font-face {
@@ -72,8 +73,8 @@
 }
 
 .btn-primary {
-  background-color: #d10157;
-  color: #fff;
+  background-color: $dark-pink;
+  color: $white;
   border: none;
   border-radius: 0px;
 
@@ -81,8 +82,8 @@
   &:focus,
   &:not(:disabled):not(.disabled):active,
   &:not(:disabled):not(.disabled).active {
-    color: #fff;
-    background-color: #a70045;
-    border-color: #a70045;
+    color: $white;
+    background-color: $light-wine;
+    border-color: $light-wine;
   }
 }

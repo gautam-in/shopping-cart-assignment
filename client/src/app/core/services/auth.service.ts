@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { of } from 'rxjs';
 
@@ -10,20 +11,25 @@ import { WindowService } from './window.service';
 export class AuthService {
   userStorageKey = 'user';
 
-  constructor(private windowService: WindowService) {}
+  constructor(private http: HttpClient, private windowService: WindowService) {}
 
-  authenticateLocally(user: User) {
-    const window = this.windowService.getWindow();
+  authenticate(user: User) {
+    // just to set the auth cookie
+    this.http.post(`http://localhost:4200/authenticate`, user).subscribe(() => {
+      // if authenticated, set the user in storage
+      const window = this.windowService.getWindow();
 
-    if (window && typeof window.Storage !== undefined) {
-      window.sessionStorage.setItem(
-        this.userStorageKey,
-        JSON.stringify({ email: user.email })
-      );
-    }
+      if (window && typeof window.Storage !== undefined) {
+        window.sessionStorage.setItem(
+          this.userStorageKey,
+          JSON.stringify({ email: user.email })
+        );
+      }
+    });
   }
 
   isAuthenticated(): boolean {
+    // check if the user is in the storage
     const window = this.windowService.getWindow();
 
     if (window && typeof window.Storage !== undefined) {
@@ -42,12 +48,12 @@ export class AuthService {
   }
 
   signup(user: User) {
-    this.authenticateLocally(user);
+    this.authenticate(user);
     return of(true);
   }
 
   login(user: User) {
-    this.authenticateLocally(user);
+    this.authenticate(user);
     return of(true);
   }
 }

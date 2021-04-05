@@ -18,7 +18,7 @@
       "prefix": "app",
       "architect": {
         "build": {
-          "builder":"@angular-builders/custom-webpack:browser",
+          "builder": "@angular-builders/custom-webpack:browser",
           "options": {
             "customWebpackConfig": {
               "path": "./custom-webpack.config.js"
@@ -35,9 +35,10 @@
               "src/manifest.webmanifest",
               "src/robots.txt"
             ],
-            "styles": [
-              "src/styles.scss"
-            ],
+            "styles": ["src/styles.scss"],
+            "stylePreprocessorOptions": {
+              "includePaths": ["src/"]
+            },
             "scripts": []
           },
           "configurations": {
@@ -101,9 +102,7 @@
               "src/assets",
               "src/manifest.webmanifest"
             ],
-            "styles": [
-              "src/styles.scss"
-            ],
+            "styles": ["src/styles.scss"],
             "scripts": []
           }
         },
@@ -116,9 +115,7 @@
               "e2e/tsconfig.json",
               "tsconfig.server.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         },
         "e2e": {
@@ -172,9 +169,7 @@
           "options": {
             "browserTarget": "shopping-cart-client:build:production",
             "serverTarget": "shopping-cart-client:server:production",
-            "routes": [
-              "/"
-            ]
+            "routes": ["/"]
           },
           "configurations": {
             "production": {}

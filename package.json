@@ -11,5 +11,8 @@
   "license": "MIT",
   "dependencies": {
     "canned": "^0.3.12"
+  },
+  "devDependencies": {
+    "@types/cookie-parser": "^1.4.2"
   }
 }
