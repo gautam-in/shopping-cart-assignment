@@ -1,9 +1,5 @@
 @import "../../Utilities/SCSS-Variables/variables.scss";
 
-.product-container{
-    display: flex;
-    flex-wrap: wrap;
-}
 .products{
     display: flex;
 }
@@ -13,6 +9,8 @@
     .product-container{
         margin: 0% 5% 0% 1%;
         width: 80%;
+        display: flex;
+        flex-wrap: wrap;
     }
 }
 
@@ -20,6 +18,16 @@
     .product-container{
         margin: 0% 2%;
         width: 75%;
+        justify-content: space-between;
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
+
+@media only screen and (max-width: $mobile-max-width) {
+    .product-container{
+        margin: 0% 2%;
+        width: 100%;
         justify-content: space-between;
     }
 }

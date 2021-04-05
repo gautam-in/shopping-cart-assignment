@@ -18,7 +18,10 @@ const ProductItem = ({ product }) => {
                     src={product.imageURL}
                     alt={product.name + "image"}
                 />
-                <figcaption aria-label={"product description is" + product.description}>{product.description}</figcaption>
+                <span className="product-wrapper">
+                    <figcaption aria-label={"product description is" + product.description}>{product.description}</figcaption>
+                    <CustomButton price={product.price} height="30px" onClick={() => dispatchCart(product)} >{productConstants.BUY_NOW}</CustomButton>
+                </span>
             </figure>
             <section>
                 <span aria-label={"Product price for" + product.name + "is" + product.price}>{productConstants.MRP_RS + product.price}</span>
