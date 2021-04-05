@@ -1,11 +1,11 @@
 @import "../../Utilities/SCSS-Variables/variables.scss";
 
 .modal { /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    padding-top: 100%; /* Location of the box */
+    position: fixed;
+    z-index: 1;
+    padding-top: 100%;
     bottom: 0;
-    width: 100%; /* Full width */
+    width: 100%;
     overflow: auto; /* Enable scroll if needed */
     background-color: rgb(0,0,0); /* Fallback color */
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
@@ -15,26 +15,30 @@
 .modal-content {
     position: relative;
     background-color: #fefefe;
-    margin-left: 50%;
     padding: 0;
     border: 1px solid #888;
-    width: 30%;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
-    -webkit-animation-name: animatetop;
-    -webkit-animation-duration: 0.3s;
     animation-name: animatetop;
     animation-duration: 0.3s
-}
- 
-/* Add Animation */
-@-webkit-keyframes animatetop {
-    from {bottom:-300px; opacity:0} 
-    to {bottom:0; opacity:1}
 }
  
 @keyframes animatetop {
     from {bottom:-300px; opacity:0}
     to {bottom:0; opacity:1}
+}
+
+@media only screen and (min-width: $tablet-width){
+    .modal-content{
+        margin-left: 25%;
+        width:50%;
+    }
+}
+
+@media only screen and (min-width: $desktop-width){
+    .modal-content{
+        margin-left: 50%;
+        width:30%;
+    }
 }
  
 .modal-header {
@@ -72,11 +76,17 @@
         height: 90%;
     }
 }
-.cart-item{
+.cart-item-list{
+    list-style-type: none;
     figure{
         margin:0;
         display: flex;
     }
+}
+
+.cart-list{
+    margin: 0;
+    padding: 0;
 }
 
 .cart-item-count{

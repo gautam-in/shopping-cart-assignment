@@ -34,31 +34,34 @@ const Cart = ({
                             {
                                 cartItem == 0 ? (
                                     <article aria-label="No cart item description">
-                                        <strong>No items in your cart</strong>
-                                        <p> Your Favourite items are just a click away</p>
+                                        <strong>{cartConstants.EMPTY_CART}</strong>
+                                        <p>{cartConstants.EMPTY_CART_DESCRIPTION}</p>
                                     </article>
                                 ) : (
-                                    cartDetails.map(item => {
-                                        return (
-                                            <div className="cart-item" key={item.id}>
-                                                <figure>
-                                                    <img src={item.imageURL} className="cart-item-img" alt={item.name + "image"} height="100" width="100" aria-label={"Image of product" + item.name} />
-                                                    <div className="cart-item-details">
-                                                        <figcaption aria-label={"Product name is" + item.name}><strong>{item.name}</strong></figcaption>
-                                                        <div className="cart-item-count" aria-label={"selected count details for product is" + item.name}>
-                                                            <>
-                                                                <CustomButton width="30px" height="25px" onClick={() => removeFromCart(item)}><FaMinusSquare /></CustomButton>
-                                                                <div className="count" aria-label={"count of" + item.name + "is" + item.count}>{item.count}</div>
-                                                                <CustomButton width="30px" height="25px" onClick={() => addToCart(item)}><FaPlusSquare /></CustomButton>
-                                                                <div className="count">X Rs.{item.price}</div>
-                                                            </>
+                                    <ol className="cart-list">
+                                        { cartDetails.map(item => {
+                                            return (
+                                                <li className="cart-item-list" key={item.id}>
+                                                    <figure>
+                                                        <img src={item.imageURL} className="cart-item-img" alt={item.name + "image"} height="100" width="100" aria-label={"Image of product" + item.name} />
+                                                        <div className="cart-item-details">
+                                                            <figcaption aria-label={"Product name is" + item.name}><strong>{item.name}</strong></figcaption>
+                                                            <div className="cart-item-count" aria-label={"selected count details for product is" + item.name}>
+                                                                <>
+                                                                    <CustomButton width="30px" height="25px" onClick={() => removeFromCart(item)}><FaMinusSquare /></CustomButton>
+                                                                    <div className="count" aria-label={"count of" + item.name + "is" + item.count}>{item.count}</div>
+                                                                    <CustomButton width="30px" height="25px" onClick={() => addToCart(item)}><FaPlusSquare /></CustomButton>
+                                                                    <div className="count">X Rs.{item.price}</div>
+                                                                </>
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                    <div className="cart-item-total" aria-label={"total price for" + item.name + "is" + item.count * item.price}>{item.count * item.price}</div>
-                                                </figure>
-                                            </div>
-                                        )
-                                    })
+                                                        <div className="cart-item-total" aria-label={"total price for" + item.name + "is" + item.count * item.price}>{item.count * item.price}</div>
+                                                    </figure>
+                                                </li>
+                                            )
+                                        })
+                                        }
+                                    </ol>
                                 )
                             }
                         </div>
