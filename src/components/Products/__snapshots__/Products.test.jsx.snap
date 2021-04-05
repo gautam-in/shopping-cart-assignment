@@ -31,6 +31,1207 @@ exports[`Renders Products Page should render product page 1`] = `
   </div>
   <div
     className="product-list"
-  />
+  >
+    <div
+      className="product-list__item"
+    >
+      <h1
+        className="product-list__item--title"
+      >
+        Fresho Kiwi - Green, 3 pcs
+      </h1>
+      <div
+        className="product-list__item-description"
+      >
+        <img
+          alt="Kiwis are oval shaped with a brownish outer skin. The flesh is bright green and juicy with tiny, edible black seeds."
+          className="product-list__item--image"
+          src="/static/images/products/fruit-n-veg/kiwi-green.jpg"
+        />
+        <div
+          className="product-list__item--info"
+        >
+          Kiwis are oval shaped with a brownish outer skin. The flesh is bright green and juicy with tiny, edible black seeds.
+        </div>
+        <button
+          className="btn m-btn-buy"
+          disabled={false}
+          onClick={[Function]}
+          type="button"
+        >
+          Buy Now @ Rs.87
+        </button>
+      </div>
+      <div
+        className="product-list__item--action"
+      >
+        <span
+          className="product-list__item--action-mrp"
+        >
+          MRP Rs.87
+        </span>
+        <button
+          className="btn product-list__item--action-buy"
+          disabled={false}
+          onClick={[Function]}
+          type="button"
+        >
+          Buy Now
+        </button>
+      </div>
+    </div>
+    <div
+      className="product-list__item"
+    >
+      <h1
+        className="product-list__item--title"
+      >
+        Apple - Washington, Regular, 4 pcs
+      </h1>
+      <div
+        className="product-list__item-description"
+      >
+        <img
+          alt="The bright red coloured and heart shaped Washington apples are crunchy, juicy and slightly sweet. Washington Apples are a natural source of fibre and are fat free."
+          className="product-list__item--image"
+          src="/static/images/products/fruit-n-veg/apple.jpg"
+        />
+        <div
+          className="product-list__item--info"
+        >
+          The bright red coloured and heart shaped Washington apples are crunchy, juicy and slightly sweet. Washington Apples are a natural source of fibre and are fat free.
+        </div>
+        <button
+          className="btn m-btn-buy"
+          disabled={false}
+          onClick={[Function]}
+          type="button"
+        >
+          Buy Now @ Rs.187
+        </button>
+      </div>
+      <div
+        className="product-list__item--action"
+      >
+        <span
+          className="product-list__item--action-mrp"
+        >
+          MRP Rs.187
+        </span>
+        <button
+          className="btn product-list__item--action-buy"
+          disabled={false}
+          onClick={[Function]}
+          type="button"
+        >
+          Buy Now
+        </button>
+      </div>
+    </div>
+    <div
+      className="product-list__item"
+    >
+      <h1
+        className="product-list__item--title"
+      >
+        Fresho Pomegrante Peeled, 500 gm 
+      </h1>
+      <div
+        className="product-list__item-description"
+      >
+        <img
+          alt="Pomegranate variety has a glossy, vibrant and soft ruby-red skin. The inside of the fruit is divided into compartments by thin white membranes."
+          className="product-list__item--image"
+          src="/static/images/products/fruit-n-veg/pomegrante.jpg"
+        />
+        <div
+          className="product-list__item--info"
+        >
+          Pomegranate variety has a glossy, vibrant and soft ruby-red skin. The inside of the fruit is divided into compartments by thin white membranes.
+        </div>
+        <button
+          className="btn m-btn-buy"
+          disabled={false}
+          onClick={[Function]}
+          type="button"
+        >
+          Buy Now @ Rs.88
+        </button>
+      </div>
+      <div
+        className="product-list__item--action"
+      >
+        <span
+          className="product-list__item--action-mrp"
+        >
+          MRP Rs.88
+        </span>
+        <button
+          className="btn product-list__item--action-buy"
+          disabled={false}
+          onClick={[Function]}
+          type="button"
+        >
+          Buy Now
+        </button>
+      </div>
+    </div>
+    <div
+      className="product-list__item"
+    >
+      <h1
+        className="product-list__item--title"
+      >
+        Capsicum - Green, 1 kg
+      </h1>
+      <div
+        className="product-list__item-description"
+      >
+        <img
+          alt="Leaving a moderately pungent taste on the tongue, Green capsicums, also known as green peppers are bell shaped, medium-sized fruit pods."
+          className="product-list__item--image"
+          src="/static/images/products/fruit-n-veg/capsicum-green.jpg"
+        />
+        <div
+          className="product-list__item--info"
+        >
+          Leaving a moderately pungent taste on the tongue, Green capsicums, also known as green peppers are bell shaped, medium-sized fruit pods.
+        </div>
+        <button
+          className="btn m-btn-buy"
+          disabled={false}
+          onClick={[Function]}
+          type="button"
+        >
+          Buy Now @ Rs.137
+        </button>
+      </div>
+      <div
+        className="product-list__item--action"
+      >
+        <span
+          className="product-list__item--action-mrp"
+        >
+          MRP Rs.137
+        </span>
+        <button
+          className="btn product-list__item--action-buy"
+          disabled={false}
+          onClick={[Function]}
+          type="button"
+        >
+          Buy Now
+        </button>
+      </div>
+    </div>
+    <div
+      className="product-list__item"
+    >
+      <h1
+        className="product-list__item--title"
+      >
+        Tomato - Local, Organically Grown, 500 gm
+      </h1>
+      <div
+        className="product-list__item-description"
+      >
+        <img
+          alt="Fresho brings to you an exquisite range of locally grown organic tomatoes, which are now available at bigbasket. These organic tomatoes are free from harmful pesticides and insecticides."
+          className="product-list__item--image"
+          src="/static/images/products/fruit-n-veg/capsicum-green.jpg"
+        />
+        <div
+          className="product-list__item--info"
+        >
+          Fresho brings to you an exquisite range of locally grown organic tomatoes, which are now available at bigbasket. These organic tomatoes are free from harmful pesticides and insecticides.
+        </div>
+        <button
+          className="btn m-btn-buy"
+          disabled={false}
+          onClick={[Function]}
+          type="button"
+        >
+          Buy Now @ Rs.12
+        </button>
+      </div>
+      <div
+        className="product-list__item--action"
+      >
+        <span
+          className="product-list__item--action-mrp"
+        >
+          MRP Rs.12
+        </span>
+        <button
+          className="btn product-list__item--action-buy"
+          disabled={false}
+          onClick={[Function]}
+          type="button"
+        >
+          Buy Now
+        </button>
+      </div>
+    </div>
+    <div
+      className="product-list__item"
+    >
+      <h1
+        className="product-list__item--title"
+      >
+        Sandwich Bread - White, Chemical Free, 400 gm
+      </h1>
+      <div
+        className="product-list__item-description"
+      >
+        <img
+          alt="Freshly Baked bread is one of lifes greatest simple pleasures and at Bigbasket we decided to give you just that. We start baking our breads once you order using the finest ingredients available."
+          className="product-list__item--image"
+          src="/static/images/products/bakery-cakes-dairy/bread.jpg"
+        />
+        <div
+          className="product-list__item--info"
+        >
+          Freshly Baked bread is one of lifes greatest simple pleasures and at Bigbasket we decided to give you just that. We start baking our breads once you order using the finest ingredients available.
+        </div>
+        <button
+          className="btn m-btn-buy"
+          disabled={false}
+          onClick={[Function]}
+          type="button"
+        >
+          Buy Now @ Rs.32
+        </button>
+      </div>
+      <div
+        className="product-list__item--action"
+      >
+        <span
+          className="product-list__item--action-mrp"
+        >
+          MRP Rs.32
+        </span>
+        <button
+          className="btn product-list__item--action-buy"
+          disabled={false}
+          onClick={[Function]}
+          type="button"
+        >
+          Buy Now
+        </button>
+      </div>
+    </div>
+    <div
+      className="product-list__item"
+    >
+      <h1
+        className="product-list__item--title"
+      >
+        Organic Fresh Paneer, 200 gm 
+      </h1>
+      <div
+        className="product-list__item-description"
+      >
+        <img
+          alt="Freshly Baked bread is one of lifes greatest simple pleasures and at Bigbasket we deFresho Organic Milk is sourced from farms that have been certified organic for over 8 years. All feed is naturally grown with no pesticides or fertilizers."
+          className="product-list__item--image"
+          src="/static/images/products/bakery-cakes-dairy/paneer.jpg"
+        />
+        <div
+          className="product-list__item--info"
+        >
+          Freshly Baked bread is one of lifes greatest simple pleasures and at Bigbasket we deFresho Organic Milk is sourced from farms that have been certified organic for over 8 years. All feed is naturally grown with no pesticides or fertilizers.
+        </div>
+        <button
+          className="btn m-btn-buy"
+          disabled={false}
+          onClick={[Function]}
+          type="button"
+        >
+          Buy Now @ Rs.98
+        </button>
+      </div>
+      <div
+        className="product-list__item--action"
+      >
+        <span
+          className="product-list__item--action-mrp"
+        >
+          MRP Rs.98
+        </span>
+        <button
+          className="btn product-list__item--action-buy"
+          disabled={false}
+          onClick={[Function]}
+          type="button"
+        >
+          Buy Now
+        </button>
+      </div>
+    </div>
+    <div
+      className="product-list__item"
+    >
+      <h1
+        className="product-list__item--title"
+      >
+        Epigamia Greek Yogurt - Blueberry, 90 gm Cup
+      </h1>
+      <div
+        className="product-list__item-description"
+      >
+        <img
+          alt="Epigama means in Ancient Greek meant a way to Formalize the relationship between different nations. Epigamia greek yogurt is one of the most authentic yoghurts which advocates a healthy lifestyle with delicious taste. An excellent source of protein without the added fat."
+          className="product-list__item--image"
+          src="/static/images/products/bakery-cakes-dairy/yogurt-blue.jpg"
+        />
+        <div
+          className="product-list__item--info"
+        >
+          Epigama means in Ancient Greek meant a way to Formalize the relationship between different nations. Epigamia greek yogurt is one of the most authentic yoghurts which advocates a healthy lifestyle with delicious taste. An excellent source of protein without the added fat.
+        </div>
+        <button
+          className="btn m-btn-buy"
+          disabled={false}
+          onClick={[Function]}
+          type="button"
+        >
+          Buy Now @ Rs.40
+        </button>
+      </div>
+      <div
+        className="product-list__item--action"
+      >
+        <span
+          className="product-list__item--action-mrp"
+        >
+          MRP Rs.40
+        </span>
+        <button
+          className="btn product-list__item--action-buy"
+          disabled={false}
+          onClick={[Function]}
+          type="button"
+        >
+          Buy Now
+        </button>
+      </div>
+    </div>
+    <div
+      className="product-list__item"
+    >
+      <h1
+        className="product-list__item--title"
+      >
+        Epigamia Greek Yogurt - Strawberry, 90 gm
+      </h1>
+      <div
+        className="product-list__item-description"
+      >
+        <img
+          alt="Low Fat and High protein delicious and thick Greek Yogurt."
+          className="product-list__item--image"
+          src="/static/images/products/bakery-cakes-dairy/yogurt-red.jpg"
+        />
+        <div
+          className="product-list__item--info"
+        >
+          Low Fat and High protein delicious and thick Greek Yogurt.
+        </div>
+        <button
+          className="btn m-btn-buy"
+          disabled={false}
+          onClick={[Function]}
+          type="button"
+        >
+          Buy Now @ Rs.40
+        </button>
+      </div>
+      <div
+        className="product-list__item--action"
+      >
+        <span
+          className="product-list__item--action-mrp"
+        >
+          MRP Rs.40
+        </span>
+        <button
+          className="btn product-list__item--action-buy"
+          disabled={false}
+          onClick={[Function]}
+          type="button"
+        >
+          Buy Now
+        </button>
+      </div>
+    </div>
+    <div
+      className="product-list__item"
+    >
+      <h1
+        className="product-list__item--title"
+      >
+        Tata Tea Gold Leaf Tea, 500 gm
+      </h1>
+      <div
+        className="product-list__item-description"
+      >
+        <img
+          alt="Tata Tea Gold is a unique blend of fine Assam tea leaves with special 15%  long leaf."
+          className="product-list__item--image"
+          src="/static/images/products/beverages/tata-tea.jpg"
+        />
+        <div
+          className="product-list__item--info"
+        >
+          Tata Tea Gold is a unique blend of fine Assam tea leaves with special 15%  long leaf.
+        </div>
+        <button
+          className="btn m-btn-buy"
+          disabled={false}
+          onClick={[Function]}
+          type="button"
+        >
+          Buy Now @ Rs.165
+        </button>
+      </div>
+      <div
+        className="product-list__item--action"
+      >
+        <span
+          className="product-list__item--action-mrp"
+        >
+          MRP Rs.165
+        </span>
+        <button
+          className="btn product-list__item--action-buy"
+          disabled={false}
+          onClick={[Function]}
+          type="button"
+        >
+          Buy Now
+        </button>
+      </div>
+    </div>
+    <div
+      className="product-list__item"
+    >
+      <h1
+        className="product-list__item--title"
+      >
+        Red Label Tea, 500 gm Carton
+      </h1>
+      <div
+        className="product-list__item-description"
+      >
+        <img
+          alt="Brooke Bond Red Label is one of Indias largest selling packaged tea brands. Brooke Bond Red Label Tea is a blend CTC tea with best quality leaves."
+          className="product-list__item--image"
+          src="/static/images/products/beverages/red-label.jpg"
+        />
+        <div
+          className="product-list__item--info"
+        >
+          Brooke Bond Red Label is one of Indias largest selling packaged tea brands. Brooke Bond Red Label Tea is a blend CTC tea with best quality leaves.
+        </div>
+        <button
+          className="btn m-btn-buy"
+          disabled={false}
+          onClick={[Function]}
+          type="button"
+        >
+          Buy Now @ Rs.205
+        </button>
+      </div>
+      <div
+        className="product-list__item--action"
+      >
+        <span
+          className="product-list__item--action-mrp"
+        >
+          MRP Rs.205
+        </span>
+        <button
+          className="btn product-list__item--action-buy"
+          disabled={false}
+          onClick={[Function]}
+          type="button"
+        >
+          Buy Now
+        </button>
+      </div>
+    </div>
+    <div
+      className="product-list__item"
+    >
+      <h1
+        className="product-list__item--title"
+      >
+        Bournvita Pro-Health Drink - Chocolate, 2x750 gm
+      </h1>
+      <div
+        className="product-list__item-description"
+      >
+        <img
+          alt="Cadbury Bournvita is a delicious chocolate health drink which is enriched with Vitamin (D,B2,B9,B12). It combines the great taste of chocolate, and goodness of essential nutrients that aid growth and development."
+          className="product-list__item--image"
+          src="/static/images/products/beverages/bournvita.jpg"
+        />
+        <div
+          className="product-list__item--info"
+        >
+          Cadbury Bournvita is a delicious chocolate health drink which is enriched with Vitamin (D,B2,B9,B12). It combines the great taste of chocolate, and goodness of essential nutrients that aid growth and development.
+        </div>
+        <button
+          className="btn m-btn-buy"
+          disabled={false}
+          onClick={[Function]}
+          type="button"
+        >
+          Buy Now @ Rs.572
+        </button>
+      </div>
+      <div
+        className="product-list__item--action"
+      >
+        <span
+          className="product-list__item--action-mrp"
+        >
+          MRP Rs.572
+        </span>
+        <button
+          className="btn product-list__item--action-buy"
+          disabled={false}
+          onClick={[Function]}
+          type="button"
+        >
+          Buy Now
+        </button>
+      </div>
+    </div>
+    <div
+      className="product-list__item"
+    >
+      <h1
+        className="product-list__item--title"
+      >
+        Coca Cola Soft Drink, 2x1.75 L
+      </h1>
+      <div
+        className="product-list__item-description"
+      >
+        <img
+          alt="Cadbury Bournvita is a delicious chocolate health drink which is enriched with Vitamin (D,B2,B9,B12). It combines the great taste of chocolate, and goodness of essential nutrients that aid growth and development."
+          className="product-list__item--image"
+          src="/static/images/products/beverages/bournvita.jpg"
+        />
+        <div
+          className="product-list__item--info"
+        >
+          Cadbury Bournvita is a delicious chocolate health drink which is enriched with Vitamin (D,B2,B9,B12). It combines the great taste of chocolate, and goodness of essential nutrients that aid growth and development.
+        </div>
+        <button
+          className="btn m-btn-buy"
+          disabled={false}
+          onClick={[Function]}
+          type="button"
+        >
+          Buy Now @ Rs.150
+        </button>
+      </div>
+      <div
+        className="product-list__item--action"
+      >
+        <span
+          className="product-list__item--action-mrp"
+        >
+          MRP Rs.150
+        </span>
+        <button
+          className="btn product-list__item--action-buy"
+          disabled={false}
+          onClick={[Function]}
+          type="button"
+        >
+          Buy Now
+        </button>
+      </div>
+    </div>
+    <div
+      className="product-list__item"
+    >
+      <h1
+        className="product-list__item--title"
+      >
+        Listerine Mouthwash - Cool Mint, 250 ml
+      </h1>
+      <div
+        className="product-list__item-description"
+      >
+        <img
+          alt="Listerine Cool mint Antibacterial Mouthwash is rapid & easy to use, a 30 second \\"slosh\\" with Listerine after brushing and flossing reaches parts of the mouth that may be missed. Used two times daily, Listerine provides 24-hour defence against plaque and lasting bright breath assurance."
+          className="product-list__item--image"
+          src="/static/images/products/beauty-hygiene/listerine.jpg"
+        />
+        <div
+          className="product-list__item--info"
+        >
+          Listerine Cool mint Antibacterial Mouthwash is rapid & easy to use, a 30 second "slosh" with Listerine after brushing and flossing reaches parts of the mouth that may be missed. Used two times daily, Listerine provides 24-hour defence against plaque and lasting bright breath assurance.
+        </div>
+        <button
+          className="btn m-btn-buy"
+          disabled={false}
+          onClick={[Function]}
+          type="button"
+        >
+          Buy Now @ Rs.109
+        </button>
+      </div>
+      <div
+        className="product-list__item--action"
+      >
+        <span
+          className="product-list__item--action-mrp"
+        >
+          MRP Rs.109
+        </span>
+        <button
+          className="btn product-list__item--action-buy"
+          disabled={false}
+          onClick={[Function]}
+          type="button"
+        >
+          Buy Now
+        </button>
+      </div>
+    </div>
+    <div
+      className="product-list__item"
+    >
+      <h1
+        className="product-list__item--title"
+      >
+        TRESemme Shampoo - Keratin Smooth With Argan Oil, 580 ml 
+      </h1>
+      <div
+        className="product-list__item-description"
+      >
+        <img
+          alt="For the first time, at TRESemme , Our Professional combines luxurious ingredients to give you gorgeously smoother shiny hair every day , infused with keratin protein and lightweight argan oil , our advanced keratin smooth system gently nourishes hair and controls frizz for up to 3 days."
+          className="product-list__item--image"
+          src="/static/images/products/beauty-hygiene/shampoo.jpg"
+        />
+        <div
+          className="product-list__item--info"
+        >
+          For the first time, at TRESemme , Our Professional combines luxurious ingredients to give you gorgeously smoother shiny hair every day , infused with keratin protein and lightweight argan oil , our advanced keratin smooth system gently nourishes hair and controls frizz for up to 3 days.
+        </div>
+        <button
+          className="btn m-btn-buy"
+          disabled={false}
+          onClick={[Function]}
+          type="button"
+        >
+          Buy Now @ Rs.410
+        </button>
+      </div>
+      <div
+        className="product-list__item--action"
+      >
+        <span
+          className="product-list__item--action-mrp"
+        >
+          MRP Rs.410
+        </span>
+        <button
+          className="btn product-list__item--action-buy"
+          disabled={false}
+          onClick={[Function]}
+          type="button"
+        >
+          Buy Now
+        </button>
+      </div>
+    </div>
+    <div
+      className="product-list__item"
+    >
+      <h1
+        className="product-list__item--title"
+      >
+        Dove Intense Repair Shampoo 650ml + Bathing Bar Soap Cream Beauty 100G Pack of 3
+      </h1>
+      <div
+        className="product-list__item-description"
+      >
+        <img
+          alt="Dove Cream Beauty Bar combines a gentle cleansing formula with Doves signature 1/4 moisturizing cream to give you softer, smoother and more glowing skin."
+          className="product-list__item--image"
+          src="/static/images/products/beauty-hygiene/dove.jpg"
+        />
+        <div
+          className="product-list__item--info"
+        >
+          Dove Cream Beauty Bar combines a gentle cleansing formula with Doves signature 1/4 moisturizing cream to give you softer, smoother and more glowing skin.
+        </div>
+        <button
+          className="btn m-btn-buy"
+          disabled={false}
+          onClick={[Function]}
+          type="button"
+        >
+          Buy Now @ Rs.622
+        </button>
+      </div>
+      <div
+        className="product-list__item--action"
+      >
+        <span
+          className="product-list__item--action-mrp"
+        >
+          MRP Rs.622
+        </span>
+        <button
+          className="btn product-list__item--action-buy"
+          disabled={false}
+          onClick={[Function]}
+          type="button"
+        >
+          Buy Now
+        </button>
+      </div>
+    </div>
+    <div
+      className="product-list__item"
+    >
+      <h1
+        className="product-list__item--title"
+      >
+        Premier Facial Tissue - Special, 400 pcs
+      </h1>
+      <div
+        className="product-list__item-description"
+      >
+        <img
+          alt="Let your beautiful face stay clean Here Premier Special Face Tissues are available, mostly prepared targeting to care for your face which has spongy and delicate skin."
+          className="product-list__item--image"
+          src="/static/images/products/beauty-hygiene/tissues.jpg"
+        />
+        <div
+          className="product-list__item--info"
+        >
+          Let your beautiful face stay clean Here Premier Special Face Tissues are available, mostly prepared targeting to care for your face which has spongy and delicate skin.
+        </div>
+        <button
+          className="btn m-btn-buy"
+          disabled={false}
+          onClick={[Function]}
+          type="button"
+        >
+          Buy Now @ Rs.270
+        </button>
+      </div>
+      <div
+        className="product-list__item--action"
+      >
+        <span
+          className="product-list__item--action-mrp"
+        >
+          MRP Rs.270
+        </span>
+        <button
+          className="btn product-list__item--action-buy"
+          disabled={false}
+          onClick={[Function]}
+          type="button"
+        >
+          Buy Now
+        </button>
+      </div>
+    </div>
+    <div
+      className="product-list__item"
+    >
+      <h1
+        className="product-list__item--title"
+      >
+        Close Up Ever Fresh Red Hot Gel Toothpaste, 150 gm
+      </h1>
+      <div
+        className="product-list__item-description"
+      >
+        <img
+          alt=" Closeup's unique Active Zinc Mouthwash not only cleans deep corners of your mouth of residual germs it also gives you upto 12 Hours Fresh Breath."
+          className="product-list__item--image"
+          src="/static/images/products/beauty-hygiene/closeup.jpg"
+        />
+        <div
+          className="product-list__item--info"
+        >
+           Closeup's unique Active Zinc Mouthwash not only cleans deep corners of your mouth of residual germs it also gives you upto 12 Hours Fresh Breath.
+        </div>
+        <button
+          className="btn m-btn-buy"
+          disabled={false}
+          onClick={[Function]}
+          type="button"
+        >
+          Buy Now @ Rs.82
+        </button>
+      </div>
+      <div
+        className="product-list__item--action"
+      >
+        <span
+          className="product-list__item--action-mrp"
+        >
+          MRP Rs.82
+        </span>
+        <button
+          className="btn product-list__item--action-buy"
+          disabled={false}
+          onClick={[Function]}
+          type="button"
+        >
+          Buy Now
+        </button>
+      </div>
+    </div>
+    <div
+      className="product-list__item"
+    >
+      <h1
+        className="product-list__item--title"
+      >
+        Pampers Diapers Pants - Large Size, Monthly Box Pack, New, 128's pack
+      </h1>
+      <div
+        className="product-list__item-description"
+      >
+        <img
+          alt="Pampers dry, pants style diapers are the only pants in India with new air channels that provides your baby with breathable dryness overnight."
+          className="product-list__item--image"
+          src="/static/images/products/baby/pampers.jpg"
+        />
+        <div
+          className="product-list__item--info"
+        >
+          Pampers dry, pants style diapers are the only pants in India with new air channels that provides your baby with breathable dryness overnight.
+        </div>
+        <button
+          className="btn m-btn-buy"
+          disabled={false}
+          onClick={[Function]}
+          type="button"
+        >
+          Buy Now @ Rs.1999
+        </button>
+      </div>
+      <div
+        className="product-list__item--action"
+      >
+        <span
+          className="product-list__item--action-mrp"
+        >
+          MRP Rs.1999
+        </span>
+        <button
+          className="btn product-list__item--action-buy"
+          disabled={false}
+          onClick={[Function]}
+          type="button"
+        >
+          Buy Now
+        </button>
+      </div>
+    </div>
+    <div
+      className="product-list__item"
+    >
+      <h1
+        className="product-list__item--title"
+      >
+        Mamypoko Pants Style Diapers - Large, 62 pcs
+      </h1>
+      <div
+        className="product-list__item-description"
+      >
+        <img
+          alt="MamyPoko Pants Extra Absorb is a Pant Style diaper that can be used most comfortably for the baby at night Because of Powerful slim core that can absorb up to 12 hours, it prevents leakage till morning."
+          className="product-list__item--image"
+          src="/static/images/products/baby/mamy.jpg"
+        />
+        <div
+          className="product-list__item--info"
+        >
+          MamyPoko Pants Extra Absorb is a Pant Style diaper that can be used most comfortably for the baby at night Because of Powerful slim core that can absorb up to 12 hours, it prevents leakage till morning.
+        </div>
+        <button
+          className="btn m-btn-buy"
+          disabled={false}
+          onClick={[Function]}
+          type="button"
+        >
+          Buy Now @ Rs.930
+        </button>
+      </div>
+      <div
+        className="product-list__item--action"
+      >
+        <span
+          className="product-list__item--action-mrp"
+        >
+          MRP Rs.930
+        </span>
+        <button
+          className="btn product-list__item--action-buy"
+          disabled={false}
+          onClick={[Function]}
+          type="button"
+        >
+          Buy Now
+        </button>
+      </div>
+    </div>
+    <div
+      className="product-list__item"
+    >
+      <h1
+        className="product-list__item--title"
+      >
+        Johnson & Johnson Baby skincare wipes, 20 pcs
+      </h1>
+      <div
+        className="product-list__item-description"
+      >
+        <img
+          alt="Johnsons Baby wipes gently cleanse and care for babys delicate skin. As mild as pure water, they can be used safely all over the body, even around eyes."
+          className="product-list__item--image"
+          src="/static/images/products/baby/wipes.jpg"
+        />
+        <div
+          className="product-list__item--info"
+        >
+          Johnsons Baby wipes gently cleanse and care for babys delicate skin. As mild as pure water, they can be used safely all over the body, even around eyes.
+        </div>
+        <button
+          className="btn m-btn-buy"
+          disabled={false}
+          onClick={[Function]}
+          type="button"
+        >
+          Buy Now @ Rs.70
+        </button>
+      </div>
+      <div
+        className="product-list__item--action"
+      >
+        <span
+          className="product-list__item--action-mrp"
+        >
+          MRP Rs.70
+        </span>
+        <button
+          className="btn product-list__item--action-buy"
+          disabled={false}
+          onClick={[Function]}
+          type="button"
+        >
+          Buy Now
+        </button>
+      </div>
+    </div>
+    <div
+      className="product-list__item"
+    >
+      <h1
+        className="product-list__item--title"
+      >
+        Nestle Cerelac Stage - 4 Multi Grain & Fruits, 2x300 gm
+      </h1>
+      <div
+        className="product-list__item-description"
+      >
+        <img
+          alt="Nestle Multigrain Cerelac enriched with the goodness of five fruits is a complementary food which is given to babies above the age of six months."
+          className="product-list__item--image"
+          src="/static/images/products/baby/cerelac.jpg"
+        />
+        <div
+          className="product-list__item--info"
+        >
+          Nestle Multigrain Cerelac enriched with the goodness of five fruits is a complementary food which is given to babies above the age of six months.
+        </div>
+        <button
+          className="btn m-btn-buy"
+          disabled={false}
+          onClick={[Function]}
+          type="button"
+        >
+          Buy Now @ Rs.478
+        </button>
+      </div>
+      <div
+        className="product-list__item--action"
+      >
+        <span
+          className="product-list__item--action-mrp"
+        >
+          MRP Rs.478
+        </span>
+        <button
+          className="btn product-list__item--action-buy"
+          disabled={false}
+          onClick={[Function]}
+          type="button"
+        >
+          Buy Now
+        </button>
+      </div>
+    </div>
+    <div
+      className="product-list__item"
+    >
+      <h1
+        className="product-list__item--title"
+      >
+        Baby Dove Baby Bar - Rich Moisture, 50 gm
+      </h1>
+      <div
+        className="product-list__item-description"
+      >
+        <img
+          alt="Gentler and more nourishing than any other baby soap bar, Baby Dove Rich Moisture Baby Bar has a hypoallergenic and pH neutral formula thats ophthalmologist, dermatologist and pediatrician tested too."
+          className="product-list__item--image"
+          src="/static/images/products/baby/baby-dove.jpg"
+        />
+        <div
+          className="product-list__item--info"
+        >
+          Gentler and more nourishing than any other baby soap bar, Baby Dove Rich Moisture Baby Bar has a hypoallergenic and pH neutral formula thats ophthalmologist, dermatologist and pediatrician tested too.
+        </div>
+        <button
+          className="btn m-btn-buy"
+          disabled={false}
+          onClick={[Function]}
+          type="button"
+        >
+          Buy Now @ Rs.30
+        </button>
+      </div>
+      <div
+        className="product-list__item--action"
+      >
+        <span
+          className="product-list__item--action-mrp"
+        >
+          MRP Rs.30
+        </span>
+        <button
+          className="btn product-list__item--action-buy"
+          disabled={false}
+          onClick={[Function]}
+          type="button"
+        >
+          Buy Now
+        </button>
+      </div>
+    </div>
+    <div
+      className="product-list__item"
+    >
+      <h1
+        className="product-list__item--title"
+      >
+        Johnson's Active Kids Shampoo - Shiny Drops With Argan Oil, 100 ml
+      </h1>
+      <div
+        className="product-list__item-description"
+      >
+        <img
+          alt="A hair care product range specifically for kids aged 2 years and above. This mild shiny drops shampoo formula has been developed to boost natural shine & help reduce frizz, leaving hair silky smooth and healthy looking."
+          className="product-list__item--image"
+          src="/static/images/products/baby/shampoo.jpg"
+        />
+        <div
+          className="product-list__item--info"
+        >
+          A hair care product range specifically for kids aged 2 years and above. This mild shiny drops shampoo formula has been developed to boost natural shine & help reduce frizz, leaving hair silky smooth and healthy looking.
+        </div>
+        <button
+          className="btn m-btn-buy"
+          disabled={false}
+          onClick={[Function]}
+          type="button"
+        >
+          Buy Now @ Rs.95
+        </button>
+      </div>
+      <div
+        className="product-list__item--action"
+      >
+        <span
+          className="product-list__item--action-mrp"
+        >
+          MRP Rs.95
+        </span>
+        <button
+          className="btn product-list__item--action-buy"
+          disabled={false}
+          onClick={[Function]}
+          type="button"
+        >
+          Buy Now
+        </button>
+      </div>
+    </div>
+    <div
+      className="product-list__item"
+    >
+      <h1
+        className="product-list__item--title"
+      >
+        Baby Wipes - Cherry Blossom, 2x80 pcs
+      </h1>
+      <div
+        className="product-list__item-description"
+      >
+        <img
+          alt="These Wipes have aloe vera as key ingredient which makes it the best choice for baby hygiene, make-up remover, sanitizing your face and hand after a long drive, sports or any other situation where you need a quick hygiene solution."
+          className="product-list__item--image"
+          src="/static/images/products/baby/red-wipes.jpg"
+        />
+        <div
+          className="product-list__item--info"
+        >
+          These Wipes have aloe vera as key ingredient which makes it the best choice for baby hygiene, make-up remover, sanitizing your face and hand after a long drive, sports or any other situation where you need a quick hygiene solution.
+        </div>
+        <button
+          className="btn m-btn-buy"
+          disabled={false}
+          onClick={[Function]}
+          type="button"
+        >
+          Buy Now @ Rs.300
+        </button>
+      </div>
+      <div
+        className="product-list__item--action"
+      >
+        <span
+          className="product-list__item--action-mrp"
+        >
+          MRP Rs.300
+        </span>
+        <button
+          className="btn product-list__item--action-buy"
+          disabled={false}
+          onClick={[Function]}
+          type="button"
+        >
+          Buy Now
+        </button>
+      </div>
+    </div>
+  </div>
 </section>
 `;

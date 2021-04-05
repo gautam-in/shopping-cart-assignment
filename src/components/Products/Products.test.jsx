@@ -9,6 +9,7 @@ import ProductItem from './ProductItem';
 import CategoryItem from './CategoryItem';
 
 import store from '../../redux/store';
+import { productActions } from '../../redux/reducers/products';
 
 function mockFunction() {
   const original = jest.requireActual('react-router');
@@ -43,9 +44,11 @@ describe('Renders Products Page', () => {
     };
     wrapper = shallow(<Provider store={store()}><Products {...props} /></Provider>);
   });
-  it('should render product page', () => {
+  it('should render product page', async () => {
+    const st = store();
+    await st.dispatch(productActions.productList());
     const tree = renderer.create(
-      <Provider store={store()}><Products {...props} /></Provider>,
+      <Provider store={st}><Products {...props} /></Provider>,
     ).toJSON();
     expect(tree).toMatchSnapshot();
   });

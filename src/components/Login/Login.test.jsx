@@ -6,10 +6,12 @@ import {
   render,
   fireEvent,
   screen,
+  cleanup,
 } from '@testing-library/react';
 import Login from '.';
 
 afterEach(() => {
+  cleanup();
   jest.clearAllMocks();
 });
 describe('Login form ', () => {

@@ -16,7 +16,7 @@ export default function FloatingInput(props) {
         onChange={onChange}
         value={value}
       />
-      <label htmlFor={id || name} className="floating-label">
+      <label aria-labelledby={id || name} htmlFor={id || name} className="floating-label">
         {label}
       </label>
       {error && <span className="error-help">{error}</span>}
