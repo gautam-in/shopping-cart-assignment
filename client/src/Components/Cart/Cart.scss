@@ -65,7 +65,7 @@
     padding: 20px 0px;
     overflow: auto;
     background-color: $secondary-color;
-    & article {
+    article {
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -77,7 +77,7 @@
 
 @media only screen and (max-width: $mobile-max-width){
     .modal-body{
-        min-height: 320px;
+        height: 320px;
     }
     .cart-item-img{
         width: 65px;
@@ -88,7 +88,7 @@
 
 @media only screen and (min-width: $tablet-width){
     .modal-body{
-        min-height: 450px;
+        height: 450px;
     }
     .cart-item-img{
         width: 100px;
