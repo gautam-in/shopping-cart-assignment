@@ -4,9 +4,6 @@ const routes: Routes = [
   {
     path:'' , redirectTo: 'app' , pathMatch: "full"
   },
-  // {
-  //   path:'app' , component: HeaderComponent
-  // },
   {
     path:'app' , loadChildren : ()=>import('./header/header.module').then(h=>h.HeaderModule)
   }

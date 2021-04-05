@@ -1,8 +1,5 @@
-.row{
-    max-width: 100%;
-}
 .col-2{
-    background-color: rgb(252, 245, 245);
+   background-color: rgb(252, 245, 245);
    margin-left:3%;
    margin-right: 2%
 }
@@ -31,7 +28,6 @@
     display: contents;
 }
 .col-4{
-    //display: inline-block;
     padding: 0px 10px;
     border-right: 2px solid rgb(252, 241, 241) ;
     border-bottom:  3px dotted  rgb(231, 224, 224) ;
@@ -56,31 +52,28 @@ img{
     padding-top: 20%;
     margin-bottom: 20%;
 }
+
 h1{
     font-size: 110%;
     font-weight: 1000;
     text-align: center;
 }
+
 h2{
-    font-size:90% ;
     text-align: center;
     margin-top: 20%;
-    font-weight: 500;
 }
 
-
 .btn-danger{
-  font-size: 80%;
-  background-color: #c02345 !important;
-  margin-left: 50%;
+    margin-left: 50%;
 }
 
 .description{
     background-color:rgb(245, 237, 237);
     height: 150px;
 }
+
 p{
-   
     padding: 5% 10% 5% 5%;
     font-size: 80%;
     line-height: 145%;
