@@ -66,7 +66,7 @@ const Products = () => {
     return (
         <>
             {
-                isMobile ? <> <Accordion categories={categoriesList} products={filteredProducts} /> </> :
+                isMobile ? <> <Accordion categories={categoriesList} products={productList} /> </> :
                     <div className="products" aria-label="Product page">
                         <Sidebar categories={categoriesList} />
                         <div className="product-container" aria-label="products section with each product">

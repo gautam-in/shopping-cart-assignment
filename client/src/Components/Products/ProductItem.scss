@@ -106,7 +106,6 @@
             display: flex;
             flex: 1;
             figcaption{
-                flex: 1;
                 background-color: $secondary-color;
                 margin-bottom: 10px;
             }
@@ -121,7 +120,7 @@
     .product-wrapper{
         display: flex;
         flex-direction: column;
-
+        justify-content: space-around;
         button{
             &::after{
                 content: " @ Rs." attr(price);

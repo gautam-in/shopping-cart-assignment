@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from 'react';
+import React, { Fragment, useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { IconContext } from 'react-icons';
 import { BsChevronRight, BsChevronDown } from 'react-icons/bs';
@@ -15,11 +15,10 @@ const Wrap = styled.div`
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  text-align: center;
   cursor: pointer;
   h1{
     letter-spacing: 0.5px;
-    font-size:14px;
+    font-size:18px;
     padding-left:2rem;
   }
   span {
@@ -29,6 +28,10 @@ const Wrap = styled.div`
 
 const Accordion = ({ categories, products }) => {
     const [clicked, setClicked] = useState(false);
+
+    useEffect(() => {
+        setClicked(0);
+    }, [])
 
     const toggle = index => {
         if (clicked === index) {
