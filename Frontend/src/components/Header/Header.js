@@ -1,4 +1,7 @@
-import {useState} from 'react';
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+import React, {useState} from 'react';
+import PropTypes from 'prop-types';
 import {Link} from 'react-router-dom';
 import {
   Navbar,
@@ -13,7 +16,7 @@ import {faShoppingCart} from '@fortawesome/free-solid-svg-icons';
 import Logo from '../../../static/images/logo.png';
 import './Header.scss';
 
-const Header = () => {
+const Header = React.memo(({cartSideNav}) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggle = () => setIsOpen(!isOpen);
@@ -45,7 +48,7 @@ const Header = () => {
               </Nav>
             </NavbarText>
           </Collapse>
-          <div className="cart-header-wrap">
+          <div className="cart-header-wrap" onClick={cartSideNav}>
             <div className="cart-header-main">
               <FontAwesomeIcon icon={faShoppingCart} />
               <span> 0 Items</span>
@@ -55,6 +58,10 @@ const Header = () => {
       </Navbar>
     </header>
   );
+});
+
+Header.propTypes = {
+  cartSideNav: PropTypes.func.isRequired,
 };
 
 export default Header;

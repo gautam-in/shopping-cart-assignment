@@ -42,13 +42,13 @@ const Categories = () => {
 
   return (
     <div className="categories-wrap">
-      <div className="container">
+      <>
         <ul className="clearfix">
           {loading && <h5>Loading....</h5>}
           {!loading && !error && categoriesList}
         </ul>
         {!loading && error && <h1>Something went wrong!</h1>}
-      </div>
+      </>
     </div>
   );
 };
