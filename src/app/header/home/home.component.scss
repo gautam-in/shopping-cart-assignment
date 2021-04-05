@@ -1,0 +1,53 @@
+.row {
+    width: 100%;
+}
+
+.col-6 {
+    height: 200px;
+    float: left;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    
+}
+
+.image{
+    // width:10%;
+    width:300px;
+}
+
+.desciption{
+    width: 70%;
+    text-align: right;
+    line-height:145% ; /* The line-height property specifies the height of a line. */
+}
+img{
+     width: 280px !important;
+}
+
+h1{
+    font-size: 200%;
+}
+
+h2{
+    font-size: 90%;
+    //font-weight: 100;
+    padding-bottom: 25px;
+    font-style: "Roboto";
+}
+
+.btn-warning{
+    background-color: #c02345 !important;
+    color: white;
+    font-size: 90%;
+    padding : 7px 7px;
+    border: 0;
+}
+.inner-container{
+    border-bottom: 5px solid rgb(233, 221, 221);
+    border-radius: 10%;
+   //  box-shadow: 0px 5px 5px  rgb(233, 221, 221);
+   // box-shadow: 0px 5px 5px -25px rgba(233, 221, 221, 0.918);
+    margin-left: 15%;
+    margin-right: 15%
+}
+

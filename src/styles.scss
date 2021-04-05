@@ -1,0 +1,17 @@
+/* You can add global styles to this file, and also import other style files */
+*{
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+    
+}
+
+html , body{
+    font-size: 13px;
+    font-weight: 500;
+    font-family: 'Lato' , Arial, Helvetica, sans-serif;
+    background-color: white;
+    text-rendering: optimizeLegibility;  
+    /* The text-rendering property in CSS allows you to choose quality of text over speed (or vice versa) allowing you to fine tune optimization by suggesting to the browser as to how it should render text */
+    overflow-x:hidden; /* The content is clipped - and no scrolling mechanism is provided */    
+}

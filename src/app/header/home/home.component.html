@@ -1,0 +1,20 @@
+<div class="container">
+    <div class="row" *ngFor="let cat of categories; let i=index;" #category>
+        <ng-container *ngIf="cat.enabled ">
+            <div class="inner-container">
+            <div class="col-6 image">
+
+                <img src={{cat.imageUrl}}>
+            </div>
+
+            <div class="col-6 desciption" >
+                <h1>{{cat.name}}</h1>
+                <h2>{{cat.description}}</h2>
+                <button type="button" class="btn btn-warning" id={{cat.id}}>Explore {{cat.key}} </button>
+
+
+            </div>
+        </div>
+        </ng-container>
+    </div>
+</div>
