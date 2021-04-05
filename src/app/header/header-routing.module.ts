@@ -8,35 +8,40 @@ import { ProductComponent } from './product/product.component';
 import { RegisterComponent } from './register/register.component';
 
 const routes: Routes = [
-
   {
-    path: '' , component: HeaderComponent,
-    children:[
+    path: '',
+    component: HeaderComponent,
+    children: [
       {
-        path: 'login' , component:LoginComponent
+        path: 'login',
+        component: LoginComponent,
       },
       {
-        path:'register' , component: RegisterComponent
-      }
-      ,{
-        path:'home' , component: HomeComponent
+        path: 'register',
+        component: RegisterComponent,
       },
       {
-        path:'product' , component: ProductComponent
+        path: 'home',
+        component: HomeComponent,
       },
       {
-        path: 'product/:category', component: ProductComponent
+        path: 'product',
+        component: ProductComponent,
       },
       {
-        path:'cart' , component: CartComponent
-      }
-    ]
-  }
-  
+        path: 'product/:category',
+        component: ProductComponent,
+      },
+      {
+        path: 'cart',
+        component: CartComponent,
+      },
+    ],
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class HeaderRoutingModule { }
+export class HeaderRoutingModule {}

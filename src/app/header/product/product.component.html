@@ -1,57 +1,65 @@
 <div class="container">
-    <div class="row">
-        <div class="col-2">
-            <nav class="nav flex-column">
-            
-                <a class="nav-link active" aria-current="page" >
-                    <button (click)="getProductByCategory('Fruits & Vegetables')">
-                    Fruits & Vegetables
-                </button></a>
-           
-                <a class="nav-link" >
-                    <button (click)="getProductByCategory('Bakery Cakes and Dairy')">
-                        Bakery Cakes and Dairy
-                        </button>
-                   </a>
-                <a class="nav-link" >
-                    <button (click)="getProductByCategory('Beverages')">
-                        Beverages
-                        </button></a>
-                <a class="nav-link" >
-                    <button (click)="getProductByCategory('Beauty and Hygiene')">
-                        Beauty and Hygiene
-                        </button></a>
-                <a class="nav-link " >
-                    <button (click)="getProductByCategory('Baby Care')">
-                        Baby Care
-                        </button></a>
-            </nav>
-        </div>
-        <div class="col-10">
-            <div class="row" *ngFor="let row of productPerRow">
-                <div class="inner-row" *ngFor=" let p of row">
-                    <div class="col-4">
-                        <div class="name">
-                            <h1>{{p.name}}</h1>
-                        </div>
-                       
-                        <div class="productImage">
-                            <img src={{p.imageURL}}>
-                        </div>
-                        <div class="description">
-                            <p>{{p.description}}</p>
-                        </div>
+  <div class="row">
+    <div class="col-2">
+      <nav class="nav flex-column">
+        <a class="nav-link active" aria-current="page">
+          <button (click)="getProductByCategory('Fruits & Vegetables')">
+            Fruits & Vegetables
+          </button></a
+        >
 
-                        <div class="price">
-                            <h2>MRP Rs.{{p.price}}</h2>
-                        </div>
-                        <div class="price ">
-                            <button type="submit" class="btn btn-danger btn-raised" id={{p.id}}>Buy Now</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
+        <a class="nav-link">
+          <button (click)="getProductByCategory('Bakery Cakes and Dairy')">
+            Bakery Cakes and Dairy
+          </button>
+        </a>
+        <a class="nav-link">
+          <button (click)="getProductByCategory('Beverages')">
+            Beverages
+          </button></a
+        >
+        <a class="nav-link">
+          <button (click)="getProductByCategory('Beauty and Hygiene')">
+            Beauty and Hygiene
+          </button></a
+        >
+        <a class="nav-link">
+          <button (click)="getProductByCategory('Baby Care')">
+            Baby Care
+          </button></a
+        >
+      </nav>
     </div>
+    <div class="col-10">
+      <div class="row" *ngFor="let row of productPerRow">
+        <div class="inner-row" *ngFor="let p of row">
+          <div class="col-4">
+            <div class="name">
+              <h1>{{ p.name }}</h1>
+            </div>
+
+            <div class="productImage">
+              <img src="{{ p.imageURL }}" />
+            </div>
+            <div class="description">
+              <p>{{ p.description }}</p>
+            </div>
+
+            <div class="price">
+              <h2>MRP Rs.{{ p.price }}</h2>
+            </div>
+            <div class="price">
+              <button
+                type="submit"
+                class="btn btn-danger btn-raised"
+                id="{{ p.id }}"
+              >
+                Buy Now
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

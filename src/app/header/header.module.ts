@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {HttpClientModule} from '@angular/common/http'
+import { HttpClientModule } from '@angular/common/http';
 import { HeaderRoutingModule } from './header-routing.module';
 import { LoginComponent } from './login/login.component';
 import { HeaderComponent } from './header.component';
@@ -10,7 +10,6 @@ import { ProductComponent } from './product/product.component';
 import { CartComponent } from './cart/cart.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-
 @NgModule({
   declarations: [
     LoginComponent,
@@ -18,14 +17,14 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     RegisterComponent,
     HomeComponent,
     ProductComponent,
-    CartComponent
+    CartComponent,
   ],
   imports: [
     CommonModule,
     HeaderRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
-  ]
+    ReactiveFormsModule,
+  ],
 })
-export class HeaderModule { }
+export class HeaderModule {}

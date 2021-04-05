@@ -1,94 +1,76 @@
-.container{
-    max-width:1274px;
-    border-bottom: 1px solid rgb(245, 234, 234);
-    box-shadow:0px 5px 5px rgb(241, 238, 238) ;/*  x axis , y axis , blur , color */
+.container {
+  border-bottom: 1px solid rgb(245, 234, 234);
+  box-shadow: 0px 5px 5px rgb(241, 238, 238); /*  x axis , y axis , blur , color */
 }
 
-
-.row{
-    width: 100%;
-}
-.col-4{
-     width: 33%;
-    float: left;
-    height: auto;
+.col-4 {
+  width: 33%;
+  float: left;
+  height: auto;
 }
 
-.sabkabazaarimage{
-    width:265px;
-    padding: 6px  5px 4px 90px; // top right bottom  left
+.sabkabazaarimage {
+  width: 265px;
+  padding: 6px 5px 4px 90px; // top right bottom  left
 }
 
 .mid-container ul li,
-.end-container ul li 
- {
-    display: inline-block;
-    list-style: none;
-    padding-right: 10px;
-    padding-top: 5px;
+.end-container ul li {
+  display: inline-block;
+  list-style: none;
+  padding-right: 10px;
+  padding-top: 5px;
 }
 
 .mid-container ul li a,
-.end-container ul li a{
-    text-decoration: none;
-    color:grey;
-}
-.mid-container ul li{
-    padding-top: 50px;
-    padding-bottom:-100px;
-    text-align: center;
-    font-size: 100%;
-    padding-right: 40px;
-    font-weight: 540;
-    
+.end-container ul li a {
+  text-decoration: none;
+  color: grey;
 }
 
-.end-container  {
-    display: inline-block;
-    padding-right: 175px;
-}
-.end-container ul:first-child{
-   padding-left: 100px;
-   padding-right: 0px;
-   text-align: right;
+.mid-container ul li {
+  text-align: center;
+  padding: 50px 40px -100px 0;
 }
 
-.end-container ul li a{
-     padding-top: -100px;
-     font-size: 90%;
-     color:black
-  
-    
+.end-container {
+  display: inline-block;
+  padding-right: 175px;
 }
 
-.cart a{
-    text-decoration: none;
-    padding-top: 20px;
-    padding-left: 20px;
-    padding-bottom: 0px;
-    color:black;
-    font-size: 100%;
-    text-align: center;
+.end-container ul:first-child {
+  padding-left: 100px;
+  padding-right: 0px;
+  text-align: right;
 }
 
-.cart{
-    background-color: rgb(240, 236, 236);
-    width: 60%;
-     padding-top: 25px;
-    text-align: middle;
-    float: right;
+.end-container ul li a {
+  padding-top: -100px;
+  font-size: 90%;
+  color: black;
 }
 
-.cartimage{
-    width:30px;
-    fill: red !important;
-    padding-left:5px
+.cart a {
+  color: black;
+  text-align: center;
+  padding: 20px 0px 0px 20px;
 }
 
-.footer{
-    background-color: rgb(236, 230, 230);
-    padding:10px 10px;
-    padding-left: 50px;
-    font-size: 90%;
-    font-weight: 500;
+.cart {
+  background-color: rgb(240, 236, 236);
+  width: 60%;
+  padding-top: 25px;
+  text-align: middle;
+  float: right;
+}
+
+.cartimage {
+  width: 30px;
+  fill: red !important;
+  padding-left: 5px;
+}
+
+.footer {
+  background-color: rgb(236, 230, 230);
+  padding: 10px 10px 10px 50px;
 }
