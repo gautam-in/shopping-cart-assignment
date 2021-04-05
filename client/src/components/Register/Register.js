@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 
 import { EMAIL_REGEX } from "../../constants";
@@ -15,35 +15,37 @@ function Register() {
   const [error, setError] = useState(INITIAL_FORM);
   const history = useHistory();
 
-  const errorMessage = (name, message) => {
-    setError((prev) => ({ ...prev, [name]: message }));
-  };
-
   const handleSubmit = (event) => {
     event.preventDefault();
+    let formErrors = { ...INITIAL_FORM };
 
-    // email validatio
+    // email validation
     if (form.email.match(EMAIL_REGEX)) {
-      errorMessage("email", "");
+      formErrors.email = "";
     } else {
-      errorMessage("email", "Invalid Email!");
+      formErrors.email = "Invalid Email!";
     }
 
     // password validation
     if (form.password === form.confirmPassword) {
-      errorMessage("confirmPassword", "");
+      formErrors.confirmPassword = "";
     } else {
-      errorMessage("confirmPassword", "Passwords don't match!. Try again");
+      formErrors.confirmPassword = "Passwords don't match!. Try again";
     }
 
     // error checking
-    const hasError = Object.values(error).every((item) => item.trim() !== "");
-    if (hasError) {
+    const hasError = Object.values(formErrors).every(
+      (item) => item.trim() === ""
+    );
+    if (!hasError) {
+      setError({ ...formErrors });
       return;
     }
     window.localStorage.setItem("user", JSON.stringify(form));
     history.push("/login?register=true");
+    setError(INITIAL_FORM);
     setForm(INITIAL_FORM);
+    formErrors = { ...INITIAL_FORM };
   };
 
   // handle input change
@@ -52,7 +54,7 @@ function Register() {
     setForm((prevForm) => ({ ...prevForm, [name]: value }));
   };
   return (
-    <div className="col-md-10 mx-auto">
+    <div className="col-md-10 mx-auto login-container">
       <div className="row pt-5">
         <div className="col-md-7">
           <h1>Signup</h1>
@@ -68,6 +70,7 @@ function Register() {
                 required
                 value={form.firstName}
                 onChange={handleInputChange}
+                autoFocus={true}
               />
               <label htmlFor="firstName">First Name</label>
             </div>

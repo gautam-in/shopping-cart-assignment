@@ -3,7 +3,7 @@ import { useHistory } from "react-router-dom";
 
 function Product({ product, handlecart }) {
   const history = useHistory();
-  const handleBuy = (product) => {
+  const handleBuy = () => {
     handlecart(product);
     history.push("/cart");
   };
@@ -26,10 +26,7 @@ function Product({ product, handlecart }) {
           </div>
           <div className="card-footer">
             <div className="price">MRP Rs. {product.price}</div>
-            <button
-              className="btn btn-primary my-1"
-              onClick={() => handleBuy(product)}
-            >
+            <button className="btn btn-primary my-1" onClick={handleBuy}>
               Buy Now
             </button>
           </div>

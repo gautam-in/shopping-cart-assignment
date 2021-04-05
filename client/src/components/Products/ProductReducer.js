@@ -95,6 +95,19 @@ const ProductsReducer = (state = INITIAL_STATE, action) => {
         cartItems: updatedIncrementItems,
       };
     }
+    case ProductActionTypes.RESET_PRODUCTS_START: {
+      return {
+        ...state,
+        loading: true,
+      };
+    }
+    case ProductActionTypes.RESET_PRODUCTS_SUCCESS: {
+      return {
+        ...state,
+        loading: false,
+        cartItems: [],
+      };
+    }
 
     default:
       return {

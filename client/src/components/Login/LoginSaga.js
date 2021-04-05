@@ -5,6 +5,7 @@ import {
   getLoginFailure,
   getLogoutSuccess,
 } from "./LoginActions";
+import { resetProductsStart } from "../Products/ProductActions";
 
 // get login
 export function* getLoginStart({ payload }) {
@@ -26,6 +27,7 @@ export function* getLogin() {
 // get products
 
 export function* getLogoutStart() {
+  yield put(resetProductsStart());
   yield window.localStorage.setItem("isLoggedIn", JSON.stringify(false));
   yield put(getLogoutSuccess());
 }

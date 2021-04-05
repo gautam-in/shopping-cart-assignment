@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
+import { EMAIL_REGEX } from "../../constants";
 import { getLoginStart } from "./LoginActions";
 
 const INITIAL_FORM = {
@@ -10,6 +11,7 @@ const INITIAL_FORM = {
 function Login() {
   const [form, setForm] = useState(INITIAL_FORM);
   const [register, setRegister] = useState(false);
+  const [error, setError] = useState(INITIAL_FORM);
 
   const { isError = false } = useSelector((state) => state.login);
 
@@ -25,8 +27,29 @@ function Login() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+
+    let formErrors = { ...INITIAL_FORM };
+
+    // email validation
+    if (form.email.match(EMAIL_REGEX)) {
+      formErrors.email = "";
+    } else {
+      formErrors.email = "Invalid Email!";
+    }
+
+    // error checking
+    const hasError = Object.values(formErrors).every(
+      (item) => item.trim() === ""
+    );
+    if (!hasError) {
+      setError({ ...formErrors });
+      return;
+    }
     dispatch(getLoginStart(form));
     history.push("/home");
+    setError(INITIAL_FORM);
+    setForm(INITIAL_FORM);
+    formErrors = { ...INITIAL_FORM };
   };
 
   // handle input change
@@ -35,7 +58,7 @@ function Login() {
     setForm((prevForm) => ({ ...prevForm, [name]: value }));
   };
   return (
-    <div className="col-md-10 mx-auto">
+    <div className="col-md-10 mx-auto login-container">
       <div className="row pt-5">
         <div className="col-md-7">
           <h1>Login</h1>
@@ -55,12 +78,14 @@ function Login() {
               <input
                 type="text"
                 name="email"
-                className="form-control"
+                className={`form-control ${error.email ? "error" : ""}`}
                 required
                 value={form.email}
                 onChange={handleInputChange}
+                autoFocus={true}
               />
               <label htmlFor="email">Email</label>
+              {error.email && <span className="form-error">{error.email}</span>}
             </div>
             <div className="form-group">
               <input

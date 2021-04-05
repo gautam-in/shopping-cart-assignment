@@ -8,6 +8,7 @@ import {
   getAddToCartFailure,
   incrementQtySuccess,
   decrementQtySuccess,
+  resetProductsSuccess,
 } from "./ProductActions";
 
 // get products
@@ -63,11 +64,22 @@ export function* decrementQty() {
   yield takeLatest(ProductActionTypes.DECREMENT_QTY_START, decrementQtyStart);
 }
 
+// reset products
+export function* resetProductsStart() {
+  yield window.localStorage.setItem("cartItems", JSON.stringify([]));
+  yield put(resetProductsSuccess());
+}
+
+export function* resetProducts() {
+  yield takeLatest(ProductActionTypes.RESET_PRODUCTS_START, resetProductsStart);
+}
+
 export function* ProductSaga() {
   yield all([
     call(getProducts),
     call(getAddToCart),
     call(incrementQty),
     call(decrementQty),
+    call(resetProducts),
   ]);
 }

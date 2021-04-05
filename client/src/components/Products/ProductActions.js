@@ -52,3 +52,11 @@ export const decrementQtySuccess = (data) => ({
   type: ProductActionTypes.DECREMENT_QTY_SUCCESS,
   payload: data,
 });
+
+// reset
+export const resetProductsStart = () => ({
+  type: ProductActionTypes.RESET_PRODUCTS_START,
+});
+export const resetProductsSuccess = () => ({
+  type: ProductActionTypes.RESET_PRODUCTS_SUCCESS,
+});
