@@ -43,7 +43,7 @@ const Cart = ({
                                             return (
                                                 <li className="cart-item-list" key={item.id}>
                                                     <figure>
-                                                        <img src={item.imageURL} className="cart-item-img" alt={item.name + "image"} height="100" width="100" aria-label={"Image of product" + item.name} />
+                                                        <img src={item.imageURL} className="cart-item-img" alt={item.name + "image"} aria-label={"Image of product" + item.name} />
                                                         <div className="cart-item-details">
                                                             <figcaption aria-label={"Product name is" + item.name}><strong>{item.name}</strong></figcaption>
                                                             <div className="cart-item-count" aria-label={"selected count details for product is" + item.name}>
@@ -66,6 +66,9 @@ const Cart = ({
                             }
                         </div>
                         <div className="modal-footer">
+                            {cartItem == 0 ? "" :
+                                <p>{cartConstants.PROMO_CODE}</p>
+                            }
                             <CustomButton onClick={handleClose}>
                                 <span style={cartItem == 0 ? {} : { display: "flex", justifyContent: "space-around" }}>
                                     {cartItem == 0 ? cartConstants.START_SHOPPING : (
