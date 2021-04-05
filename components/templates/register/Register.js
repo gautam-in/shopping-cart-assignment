@@ -40,7 +40,7 @@ function Register (props) {
     }
         return(
             <PageLayout>
-            <div style={{height:100}} />
+            <div className="empty" />
             <div className={loginStyles.formcontent}>
                 <FormStaticContent styles={loginStyles} heading="Signup" description="We do not share your personal details with anyone" />
                 <div style={{flex:1}}>

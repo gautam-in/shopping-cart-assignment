@@ -31,7 +31,7 @@ function Login(props) {
         }
         return(
             <PageLayout>
-            <div className={styles.empty}/>
+            <div className="empty"/>
             <div className={styles.formcontent}>
                 <FormStaticContent heading="Login" description="Get access to your Orders,Wishlist and Recomendations" />
                 <div className={styles.main}>

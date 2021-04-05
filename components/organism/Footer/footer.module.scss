@@ -1,11 +1,14 @@
 $cart-background:#efefef;
 
 .footer{
-    width:100%;
-    z-index:10;
-    position: relative;
-    display: flex;
-    justify-content:flex-start;
-    align-content:"center";
-    background:$cart-background
+  z-index: 10;
+  position: fixed;
+  margin: 10px 0px 0px 0px;
+  padding: 10px 20px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: flex-start;
+  background:$cart-background
   }

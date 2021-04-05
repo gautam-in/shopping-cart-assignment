@@ -57,10 +57,10 @@ const router = useRouter()
                         Logout
                         </button>}
                 </div>
-                <div role="button" aria-label="carticon" onClick={()=>actions.toggleCart()} className={styles.carticon}>
+                <button role="button" aria-label="carticon" onClick={()=>actions.toggleCart()} className={styles.carticon}>
                     <img  src='../static/images/cart.svg' width={30}/>
                     <p >{totalItemsInCart||0} items</p>
-                </div>
+                </button>
                 </div>
             </div>
         </div>
