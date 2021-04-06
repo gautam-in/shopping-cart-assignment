@@ -88,7 +88,6 @@ const config = {
     new CopyPlugin({
       patterns: [
         { from: 'static/images/favicon.ico' },
-        { from: 'static/images' },
       ],
     }),
     new HtmlWebpackPlugin({
