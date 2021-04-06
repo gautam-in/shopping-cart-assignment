@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 $bgColor:e6e3e3ad;
 
 .card {
@@ -187,4 +188,178 @@ $bgColor:e6e3e3ad;
     
 
 
+=======
+
+
+.card {
+    
+    padding: 10px;
+    width: 200px;
+    border-bottom: dashed gray 0.5px;
+  }
+  .card>div{
+    width: 100%;
+    cursor: pointer;
+  }
+
+ .card img{
+   width: 100%;
+ } 
+  
+  .card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  }
+  
+  
+  
+
+.productContainer{
+  padding: 0 10%;
+  display: flex;
+  font-family: "dosis";
+  flex-wrap: wrap;
+}
+.description{
+   background-color:  #bbbbbbad;  
+   padding: 10px;
+   box-sizing: border-box;
+   height: 90px;
+   font-size: 0.8rem;
+   font-weight: 600;
+   letter-spacing: 0.3px;
+   line-height: 17px;
+   
+}
+.description>div{
+  overflow: hidden;
+  height: 100%;
+}
+
+  .sidebar{
+   background-color: #e6e3e3ad;
+   width: 25%;
+  
+
+  }
+
+  .card h3{
+    height: 50px;
+  }
+
+
+  .price{
+    padding: 10px;
+  }
+  .priceBuy{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 20px;
+    
+  }
+  .button{
+    background-color: rgb(245, 47, 80);
+    color: white;
+    padding: 10px 20px;
+    outline: none;
+    border: none;
+
+  }
+
+  .sidebar>div{
+      border-bottom:0.5px rgb(167, 166, 166) solid;
+      padding: 15px 0px 15px 30px;
+     font-weight: 600;
+     color: gray;
+
+  }
+  .mainContainer{
+    background-color: white;
+    height: 100%;
+    width: 75%;
+    box-sizing: border-box;
+    justify-content: space-between;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 1.5rem;
+    padding-right: 0;
+  }
+  .catIcon{
+    display: none;
+  }
+
+  @keyframes ex{
+     from{
+         right: -150px;
+     }
+
+    to{
+          right: 0;
+     }
+    
+
+  }
+
+   .addtocart{
+     
+    padding: 7px 15px;
+    background-color: palevioletred;
+    font-weight: bold;
+    color: white;
+    font-size: 1.1rem;
+    position: fixed;
+    top: 150px;
+    right: 0;
+    width: 150px !important;
+    animation: 1s ex ease-in-out;
+
+   }
+   .sidebarMobile{
+     display: none;
+   }
+
+  @media (max-width:690px){
+
+    .productContainer{
+      padding: 0%;
+      
+    }
+
+    .mainContainer{
+          width: 100%;
+          justify-content: center;
+    }
+    .sidebar{
+      display: none;
+    }
+    .mainContainer>div{
+      width:80%;
+    }
+    .catIcon{
+      padding-top: 10px;
+      display: flex;
+      
+    }
+    .catIcon>span{
+      padding: 1rem;
+      background-color: rgb(248, 20, 96);
+      border-radius: 5px;
+    }
+    .sidebarMobile{
+      position: absolute;
+      top:150px;
+      left: 0;
+      display: block;
+      background-color: white;
+
+    }
+    .sidebarMobile>div{
+      border: palevioletred 0.5px solid;
+      padding: 10px;
+      border-radius: 5px;
+     
+
+    }
+
+
+>>>>>>> 5c61fa810bfdac7324f5508c516b2d7a14df4d81
   }

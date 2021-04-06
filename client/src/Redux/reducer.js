@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import * as types from "./actionTypes";
 
 const initstate = {
@@ -33,3 +34,40 @@ const reducer = (state = initstate, action) => {
 };
 
 export default reducer;
+=======
+import * as types from "./actionTypes";
+
+const initstate = {
+  cart: JSON.parse(localStorage.getItem("cart"))?JSON.parse(localStorage.getItem("cart")):[],
+ 
+};
+
+
+const reducer = (state = initstate, action) => {
+  
+  switch (action.type) {
+    
+
+    case types.ADD_CART_ITEM:
+      return { cart: [...state.cart, action.payload] };
+
+    case types.INCREMENT_QTY:
+      let new_cart = state.cart.map((item) =>
+        item.id === action.payload.id ? { ...item, qty: item.qty + 1 } : item
+      );
+      return { cart: new_cart };
+    case types.DECREMENT_QTY:
+      let dec_cart = state.cart.map((item, i) =>
+        item.id === action.payload.id ? { ...item, qty: item.qty - 1 } : item
+      );
+      dec_cart = dec_cart.filter((item) => item.qty > 0);
+      return { cart: dec_cart };
+    case types.EMPTY_CART:
+      return { cart: [] };
+    default:
+      return state;
+  }
+};
+
+export default reducer;
+>>>>>>> 5c61fa810bfdac7324f5508c516b2d7a14df4d81
