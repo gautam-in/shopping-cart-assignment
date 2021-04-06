@@ -3,7 +3,6 @@ import "../styles/index.scss"
 
 import Sidebar from "./Sidebar"
 import ProductsSection from "./ProductsSection"
-import Footer from "./Footer"
 
 
 
@@ -17,7 +16,6 @@ class Home extends Component {
                 <ProductsSection />
             </div>
         </section>
-        <Footer />
         </>
     );
   }

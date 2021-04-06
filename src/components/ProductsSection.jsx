@@ -14,19 +14,15 @@ function ProductCard(props) {
     const imageAlign = props.imageAlign;
 
     return (
-        <div class="col-md-4">
-            <div class="product-card">
-                <div class="product-title"><span>{name}</span></div>
-                <div class="product-image"><img src={imageUrl} alt={name} /></div>
-                <div class="product-short-description"><span>{description}</span></div>
-                <div class="row">
-                    <div class="col-md-5"><span class="product-price">MRP Rs.{price}</span></div>
-                    <div class="col-md-7">
-                        <button class="btn-primary">Buy Now</button>
-                    </div>
-                </div>
+        <div className="product-card">
+            <div className="product-title"><h3>{name}</h3></div>
+            <div className="product-image"><img src={imageUrl} alt={name} /></div>
+            <div className="product-short-description" alt={description}><span>{description.toString().split('').slice(0, 115).join('')}</span></div>
+            <div className="product-card-footer">
+                <div className="product-price"><span>MRP Rs.{price}</span></div>
+                <div className="buy-button-container"><button className="btn-primary">Buy Now</button></div>
             </div>
-        </div>
+        </div>      
     );
   }
 
@@ -78,7 +74,7 @@ export default class ProductsSection extends React.Component{
         return (
           <>
             <div className="container product_area_container" >
-                <div class="row">
+                <div className="grid">
                     {this.state.products.map((product, index) =>
                             <ProductCard key={product.id.toString()} id={product.id.toString()} name={product.name} imageUrl={product.imageURL} description={product.description} price={product.price} />
                     )}

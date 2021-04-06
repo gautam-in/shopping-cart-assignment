@@ -32,7 +32,7 @@ export default class SlickSlider extends React.Component{
         }).filter(a => a.isActive == true);
         
         this.setState({loading: false, banners: responseJSON});
-        console.log(responseJSON);
+        //console.log(responseJSON);
     }
 
     render() {

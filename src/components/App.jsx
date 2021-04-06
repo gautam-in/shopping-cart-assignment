@@ -1,15 +1,14 @@
 import React, { Component } from 'react';
-import TopHeader from "./TopHeader"
 import Header from "./Header"
+import Footer from "./Footer"
 import Home from './Home';
 
 class App extends Component {
   render() {
     return (
         <>
-        <TopHeader /> 
         <Header />
-        
+        <Footer />
         </>
     );
   }
