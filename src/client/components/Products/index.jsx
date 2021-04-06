@@ -9,7 +9,7 @@ import categoryAction from '../../redux/actions/category';
 import ProductPage from './ProductPage';
 import WEB_PATH from '../../constants/webPath';
 
-const Products = () => {
+export const Products = () => {
   const history = useHistory();
   const dispatch = useDispatch();
   const filteredCategory = useMemo(() => new URLSearchParams(history.location.search).get('q') || '');

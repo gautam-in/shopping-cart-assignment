@@ -12,13 +12,9 @@ import StyleContext from 'isomorphic-style-loader/StyleContext';
 
 import Routes from './Routes';
 import storeConfig from './redux/storeConfig';
+import { insertCss } from './utils/common';
 
 const store = storeConfig(window.INITIAL_STATE);
-
-const insertCss = (...styles) => {
-  const removeCss = styles.map((style) => style._insertCss());
-  return () => removeCss.forEach((dispose) => dispose());
-};
 
 ReactDOM.hydrate(
   <Provider store={store}>

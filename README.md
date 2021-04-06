@@ -3,30 +3,20 @@
 First install dependencies:
 
 ```sh
-npm install
+npm install --force
 ```
 
-To run in hot module reloading mode:
+To create a production build and run server:
 
 ```sh
 npm start
 ```
 
-To create a production build:
+To create a development build and run server:
 
 ```sh
-npm run build-prod
+npm run dev
 ```
-
-To create a development build:
-
-```sh
-npm run build-dev
-```
-
-## Running
-
-Open the file `dist/index.html` in your browser
 
 ## Testing
 

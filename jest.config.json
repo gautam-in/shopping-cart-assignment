@@ -15,7 +15,8 @@
     "!src/client/index.js"
   ],
   "moduleNameMapper": {
-    ".+\\.(css|styl|less|sass|scss|png|jpg|ttf|woff|woff2)$": "identity-obj-proxy"
+    ".+\\.(css|styl|less|sass|scss|png|jpg|ttf|woff|woff2)$": "identity-obj-proxy",
+    "isomorphic-style-loader/withStyles": "<rootDir>/jest/withStyles.js"
   },
   "resetMocks": true
 }

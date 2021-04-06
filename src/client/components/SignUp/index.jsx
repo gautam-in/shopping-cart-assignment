@@ -7,7 +7,7 @@ import { EMAIL, PASSWORD } from '../../constants/regex';
 
 import SignUpPage from './SignUpPage';
 
-const SignUp = () => {
+export const SignUp = () => {
   const history = useHistory();
   const [fields, setFields] = useState({
     firstName: {

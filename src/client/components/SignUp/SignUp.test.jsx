@@ -4,7 +4,6 @@ import { act } from 'react-dom/test-utils';
 import { render, fireEvent, cleanup } from '@testing-library/react';
 import { SignUp } from '.';
 
-console.log(SignUp);
 function mockFunction() {
   const original = jest.requireActual('react-router');
   return {

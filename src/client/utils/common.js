@@ -1,4 +1,10 @@
+/* eslint-disable no-underscore-dangle */
 /* eslint-disable no-prototype-builtins */
+export const insertCss = (...styles) => {
+  const removeCss = styles.map((style) => style._insertCss());
+  return () => removeCss.forEach((dispose) => dispose());
+};
+
 export function validateRegex(v, r) {
   return r.test(String(v).toLowerCase());
 }
