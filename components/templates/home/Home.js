@@ -5,6 +5,7 @@ import PageLayout from "../../organism/layout/PageLayout";
 
 class Home extends React.Component {
 render(){
+//data from api and reducer
 const {bannerData,unfilteredCategoryData} = this.props
 const categoryData = unfilteredCategoryData.filter((data)=> data?.enabled)
     return(

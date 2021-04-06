@@ -6,8 +6,8 @@ import filterProduct from '../../../utils/lib/filterProduct'
 import styles from './product.module.scss'
 
 class Products extends React.Component {
-    constructor(){
-        super()
+    constructor(props){
+        super(props)
         this.state = {
             products:this.props?.products||[],
             filteredKey : this.props?.query?.id
@@ -16,6 +16,7 @@ class Products extends React.Component {
     
     componentDidMount(){
         const {productReducer,query}= this.props
+        // filtering products based on id from url
         if (query?.id) {
             const filteredProducts = productReducer?.products.filter((product)=>product.category === query.id)
             this.setState({
@@ -30,6 +31,7 @@ class Products extends React.Component {
     }
 
     filterProductByType = (key) =>{
+    // filtering products based on key
     if (key == this.state.filteredKey) {
         this.setState({
             filteredKey:"",
@@ -37,6 +39,7 @@ class Products extends React.Component {
         }) 
         Router.push({pathname:"/products" })
     }
+    // showing all products when same category is clicked
     else {
         const filteredproducts = filterProduct(key,this.props?.productReducer?.products)
         this.setState({
@@ -53,6 +56,7 @@ render(){
         <PageLayout actions={this.props.actions}>
             <div className="empty" />
             <div>
+        {/* dropdown only for mobile view */}
             <select
                 className={styles.dropdown}
                 onChange={(e)=>{

@@ -40,22 +40,21 @@ const initialState ={
               return Object.assign({}, state, {
                       cartData:Object.assign([],
                                       state.cartData,{
-                      [itemInCart]:Object.assign({},
-                                      state.cartData[itemInCart],{
+                      [itemInCart]:Object.assign({},state.cartData[itemInCart],{
                       count :item?.count - 1
                               })
                         })
                         
                   })
         case types.REMOVE_ITEM_FROM_CART: 
-        const allItemsInCart= Object.create(state?.cartData) ;
-        
+        const allItemsInCart= JSON.parse(JSON.stringify(state?.cartData));
         const itemToBeRemoved = allItemsInCart&&allItemsInCart.length&&allItemsInCart.findIndex((product)=>product.id  === action.item.id)
 
         allItemsInCart.splice(itemToBeRemoved,1)
+
         //remove item from cart
             return Object.assign({}, state, {
-                    cartData:allItemsInCart&&allItemsInCart.length ?allItemsInCart :[]
+                    cartData:state?.cartData?.length ?allItemsInCart :[]
                 })
         default:
             return state

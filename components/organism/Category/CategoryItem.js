@@ -9,6 +9,7 @@ export default function CategoryItem({categoryItem,index}) {
                 <p className={styles.name}>{categoryItem?.name}</p>
                 <p className={styles.description} >{categoryItem?.description}</p>
                 <button onClick={()=>{
+                    // navigating to products page based on category
                         router.push({
                             pathname:"/products",
                             query:{

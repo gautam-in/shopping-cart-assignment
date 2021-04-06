@@ -11,6 +11,7 @@ function EmptyCart () {
 }
 
 export default function Cart({cartData,actions}) {
+    // calculating the total price
 const totalPrice = cartData?.length&&cartData.reduce((tally,cartItem)=>{
     return tally + cartItem.count * cartItem.price
         },0)

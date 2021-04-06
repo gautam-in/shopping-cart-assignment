@@ -97,8 +97,8 @@ function Register (props) {
                                 errorMessage={errors.confirm_password} />
 
                         <Checkbox toggle={()=>togglepassword(!showpassword)} name="Show password" value={showpassword} />
+                        {userRegistered &&<SuccessMessage text={userRegistered}/>}
                     </Form>
-                    {userRegistered &&<SuccessMessage text={userRegistered}/>}
                 </div>
             </div>
 
