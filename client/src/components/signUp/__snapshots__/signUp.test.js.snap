@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should validate login button after input change 1`] = `ShallowWrapper {}`;
+
+exports[`Should validate login button after no change in input fields 1`] = `ShallowWrapper {}`;

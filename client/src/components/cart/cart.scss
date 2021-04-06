@@ -36,6 +36,7 @@
   background-color: rgb(216, 215, 215);
   right: 200px;
   bottom: 0;
+  height: 600px;
   top: 100px;
   width: 350px;
 }
@@ -46,18 +47,24 @@
   justify-content: space-between;
   align-items: center;
   margin-top: 10px;
+  background-color: #e83583;
+  color: white;
+  width:100%;
 }
 
-.cart header {
-  display: flex;
-  background-color: rgb(3, 2, 66);
-  justify-content: space-between;
-  align-items: center;
-  height: 50px;
-  color: white;
-  font-weight: 600;
-  padding: 0 20px;
-  font-size: 1.2rem;
+
+.cart {
+  header {
+    display: flex;
+    background-color: rgb(3, 2, 66);
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+    color: white;
+    font-weight: 600;
+    padding: 0 20px;
+    font-size: 1.2rem;
+  }
 }
 .checkout {
   position: absolute;
@@ -68,6 +75,9 @@
   background-color: white;
   text-align: center;
   box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .cross {
   cursor: pointer;
@@ -79,20 +89,46 @@
   background-color: white;
   font-size: 0.7rem;
   padding: 0 20px;
+  img {
+    height: 40px;
+    padding-right: 1rem;
+  }
 }
-.lowest img {
+
+
+.empty-cart{
+  display: flex;
+  width:100%;
+  flex-direction: column;
+  background-color: white;
+  align-items: center;
+  height: inherit;
+  justify-content: center;
+  font-size: 0.7rem;
+  position: relative;
+}
+
+.startShoppingBtn{
+  padding: 0 20px;
+  bottom: 5px;
+  position: absolute;
   height: 40px;
-  padding-right: 1rem;
+  width: 100% ;
+  border-radius: 2%;
+  box-sizing: border-box;
+  text-align: center;
+  background-color: #e83583;
+  color: white;
 }
 
 .cross:hover {
   color: rgb(245, 27, 63);
 }
-.item {
-  display: flex;
-}
-.icon img {
-  height: 60px;
+
+.icon {
+  img {
+    height: 60px;
+  }
 }
 .item {
   height: 100px;
@@ -125,23 +161,27 @@
   flex-direction: column;
   padding-left: 1rem;
   width: 200px;
+
+  span {
+    margin: 0 10px;
+  }
+
+  h3 {
+    margin-top: 0;
+    margin-bottom: 7px;
+  }
 }
-.quantity span {
-  margin-right: 15px;
-}
+
 .quantity > div {
   display: flex;
 }
-.quantity h3 {
-  margin-top: 0;
-  margin-bottom: 7px;
-}
+
 
 @media (max-width: 690px) {
   .cart {
-    width: 100vw;
-    height: 100vh;
-    top: 0;
-    left: 0;
+    width: 80vw;
+    height: 80vh;
+    top: 20px;
+    left: 20px;
   }
 }

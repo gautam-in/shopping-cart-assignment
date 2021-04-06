@@ -1,7 +1,25 @@
 import React from "react";
-import "../login/index.scss";
 import TextField from "@material-ui/core/TextField";
+import "./index.scss";
+function postData(data) {
+  var axios = require("axios");
+  var config = {
+    method: "post",
+    url: "http://localhost:5000/signup",
+    headers: {},
+  };
 
+  axios(config)
+    .then(function (response) {})
+    .catch(function (error) {
+      console.log(error);
+    });
+}
+
+function errorMessage(field, error) {
+  if (!field && error) return true;
+  else return false;
+}
 
 class Register extends React.Component {
   constructor(props) {
@@ -11,10 +29,14 @@ class Register extends React.Component {
       lastName: "",
       pass: "",
       cPass: "",
+      email: "",
+      error: false,
       errors: {
         email: false,
         pass: false,
         confirmPass: false,
+        firstName: false,
+        lastName: false,
       },
     };
   }
@@ -110,11 +132,26 @@ class Register extends React.Component {
         this.state.errors.confirmPass
       )
     )
-      this.props.history.push("home");
+      postData(this.state);
+    this.props.history.push("home");
+  };
+
+  handler = () => {
+    if (
+      !this.state.email ||
+      !this.state.password ||
+      !this.state.cPass ||
+      !this.state.firstName ||
+      !this.state.lastName
+    ) {
+      this.setState({
+        error: true,
+      });
+      return;
+    }
   };
 
   render() {
-
     return (
       <div className={"loginContainer"}>
         <div className={"registerMargin"}>
@@ -124,53 +161,96 @@ class Register extends React.Component {
           </span>
         </div>
         <div className="text-fields">
-          <form onSubmit={this.handleSubmit} className={"form"}>
+          <form onSubmit={this.handleSubmit} className={"form"} data-test ="sign-up">
             <TextField
               required
+              onChange={(e) => this.setState({ firstName: e.target.value })}
               id="standard-basic"
               label="First Name"
               name="firstName"
-              helperText="Please enter First Name."
+              data-test ="firstname"
+              helperText={
+                errorMessage(this.state.firstName, this.state.error)
+                  ? "Please enter First Name."
+                  : null
+              }
+              error={errorMessage(this.state.firstName, this.state.error)}
             />
             <TextField
               required
+              onChange={(e) => this.setState({ lastName: e.target.value })}
               id="standard-basic"
               label="Last Name"
               name="lastName"
-              helperText="Please enter Last Name."
+              data-test="lastname"
+              helperText={
+                errorMessage(this.state.lastName, this.state.error)
+                  ? "Please enter Last Name."
+                  : null
+              }
+              error={errorMessage(this.state.lastName, this.state.error)}
             />
             <TextField
-              onChange={this.checkEmail}
+              onChange={(e) => {
+                this.setState({ email: e.target.value });
+                this.checkEmail(e);
+              }}
               required
               id="standard-basic"
               label="Email"
               type="email"
               name="email"
+              data-test="email"
               error={this.state.errors.email}
+              helperText={
+                (errorMessage(this.state.email, this.state.error)||this.state.errors.email)
+                  ? "Please enter a valid Email."
+                  : null
+              }
+              error={errorMessage(this.state.email, this.state.error)||this.state.errors.email}
             />
             <TextField
-              onChange={this.checkPassword}
               required
+              onChange={(e) => {
+                this.setState({ password: e.target.value });
+                this.checkPassword(e);
+              }}
               id="standard-basic"
               label="Password"
               name="password"
               type="password"
+              data-test= "password"
               value={this.state.pass}
               error={this.state.errors.pass}
-              helperText="Must be of 6 characters(number&alphabets)"
+              helperText={
+                (errorMessage(this.state.pass, this.state.error)||this.state.errors.pass)
+                  ? "Must be of atleast 6 characters(number&alphabets)"
+                  : null
+              }
+              error={errorMessage(this.state.pass, this.state.error)||this.state.errors.pass}
             />
             <TextField
-              onChange={this.checkPasswordC}
+              onChange={(e) => {
+                this.setState({ cPass: e.target.value });
+                this.checkPasswordC(e);
+              }}
               type="password"
               required
               id="standard-basic"
               label="Confirm Password"
               value={this.state.cPass}
               name="confirmPassword"
+              data-test="cpassword"
               error={this.state.errors.confirmPass}
+              helperText={
+                errorMessage(this.state.cPass, this.state.error)
+                  ? "Please confirm the Password."
+                  : null
+              }
+              error={errorMessage(this.state.cPass, this.state.error)}
             />
 
-            <button class="btn" type="submit">
+            <button onClick={this.handler} class="btn" type="submit" data-test="submitButton">
               SignUp
             </button>
           </form>

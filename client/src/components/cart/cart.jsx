@@ -1,13 +1,18 @@
 import React, { useState } from "react";
-import "./cart.scss";
 import { useSelector, useDispatch } from "react-redux";
+import "./cart.scss";
 import { handlecartupdate } from "../../Redux/action";
-import Item from "./lib/items";
+import Item from "./atoms/items";
+import { useHistory } from "react-router-dom";
 
 function Cart({ setCart }) {
   const cart = useSelector((store) => store.cart);
+  const ref = React.useRef();
   const dispatch = useDispatch();
   const [confirm, setConfrm] = useState(false);
+
+  const history = useHistory();
+
   function close(e) {
     e.stopPropagation();
     setCart(false);
@@ -15,12 +20,21 @@ function Cart({ setCart }) {
 
   function confirmOrder() {
     setConfrm(true);
-
     setTimeout(() => {
       setConfrm(false);
       setCart(false);
       dispatch(handlecartupdate());
-    }, 3000);
+      history.push("home");
+    }, 1000);
+  }
+
+  function startShopping(){
+    setTimeout(() => {
+      setConfrm(false);
+      setCart(false);
+      dispatch(handlecartupdate());
+      history.push("home");
+    }, 500);
   }
 
   function price() {
@@ -30,28 +44,29 @@ function Cart({ setCart }) {
     }
     return p;
   }
+
+  React.useEffect(() => {
+    ref.current.focus();
+  }, []);
+
   return (
     <div onClick={close} className="container">
       {confirm && (
         <div className={"dialog"}>
           <div>
-            <h2>Thank you for shopping !!! </h2>
+            <h2>Thank you for shopping !!!</h2>
           </div>
         </div>
       )}
-      <div
-        style={{ height: "600px" }}
-        onClick={(e) => e.stopPropagation()}
-        className="cart"
-      >
+      <div onClick={(e) => e.stopPropagation()} className="cart">
         <header>
           <span> My Cart({cart.length})</span>
-          <span className={"cross"} onClick={close}>
+          <button ref={ref} className={"cross"} onClick={close}>
             x
-          </span>{" "}
+          </button>{" "}
         </header>
         {cart.length ? (
-          <div style={{ height: "460px", overflow: "auto" }}>
+          <div style={{ height: "100%", overflow: "auto",position:"relative" }}>
             <div className="items">
               {cart.map((i) => (
                 <Item i={i} />
@@ -65,18 +80,24 @@ function Cart({ setCart }) {
             </div>
             <div className={"checkout"}>
               <small>Promo code can be applied on payment page.</small>
-              <div onClick={confirmOrder} className="btn checkoutBtn">
+              <button onClick={confirmOrder} className="btn checkoutBtn">
                 <span>Proceed to checkout</span>
                 <span>
                   Rs. {price()} &nbsp;&nbsp;&nbsp; <b>{"  >"}</b>
                 </span>
-              </div>
+              </button>
             </div>
           </div>
         ) : (
-          <div className="lowest">
-            <span>No items in your cart</span>
-            <span>Your favourite items are just a click away</span>
+          <div style={{ height: "100%",position:"relative" }}>
+          <div className="empty-cart">
+            <h2>No items in your cart</h2>
+            <h5>Your favourite items are just a click away</h5>
+            
+            <button onClick ={startShopping} className = "btn startShoppingBtn" >
+              Start Shopping
+            </button>
+          </div>
           </div>
         )}
       </div>

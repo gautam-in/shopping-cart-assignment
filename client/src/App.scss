@@ -1,3 +1,5 @@
+$bgColor:e6e3e3ad;
+
 body {
   margin: 0;
   box-sizing: border-box;
@@ -9,16 +11,41 @@ body {
   /* text-align: center; */
   justify-content: center;
   align-items: flex-end;
+   > span {
+    padding: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 0.9rem;
+    color: rgb(112, 112, 112);
+  
+   :hover {
+    color: rgb(255, 7, 48);
+  }
+}
 }
 .cartIcon {
-  background-color: #e6e3e3ad;
+  background-color:$bgColor;
   display: flex;
   justify-content: space-evenly;
   padding: 10px;
+  button{
+    border-color: lightgray;
+    outline-color: lightgray;
+    // outline: none;
+    border:none;
+    cursor: pointer;
+    background-color: transparent;
+  }
+  div {
+    display: flex;
+    align-items: center;
+  }
 }
 
+
+
 .copyrightrow {
-  background-color: #e6e3e3ad;
+  background-color: $bgColor;
   display: flex;
   justify-content: space-evenly;
   padding: 10px;
@@ -33,41 +60,33 @@ a {
   text-decoration: none;
   font-weight: 600;
   color: gray;
-}
-a:hover {
-  color: rgb(255, 7, 48);
+  :hover {
+    color: rgb(255, 7, 48);
+  }
 }
 
-.cartLogoContainer span {
-  padding: 5px;
-  text-align: right;
-  text-decoration: none;
-}
-.cartIcon div {
-  display: flex;
-  align-items: center;
-}
 
 .cartLogoContainer {
   display: flex;
   width: 140px;
   flex-direction: column;
   justify-content: space-between;
-}
-.navOptions > span {
-  padding: 10px;
-  font-weight: 600;
-  cursor: pointer;
-  font-size: 0.9rem;
-  color: rgb(112, 112, 112);
-}
-.navOptions > span:hover {
-  color: rgb(255, 7, 48);
+  span {
+    padding: 5px;
+    text-align: right;
+    text-decoration: none;
+  }
 }
 
-.logo img {
+
+
+
+
+.logo {
+  img {
   width: 185px;
   margin: 10px;
+}
 }
 
 .header {
@@ -79,37 +98,36 @@ a:hover {
   border-bottom: rgb(180, 180, 180) 0.5px solid;
   display: flex;
   padding: 0 10%;
-}
-
-.header {
   justify-content: space-between;
   z-index: 100;
-}
-
-.header > div {
-  display: flex;
-  justify-content: center;
+  > div {
+    display: flex;
+    justify-content: center;
+  }
 }
 
 @media (max-width: 690px) {
   .navOptions {
-    display: none;
+    display: block;
   }
   .text {
-    display: none;
+    display: block;
   }
   .cartIcon {
-    height: 100%;
+    height: 50%;
   }
-  .header > div {
-    width: max-content;
-  }
-  .logo img {
+  .logo {
+    img {
     width: 125px;
   }
+}
 
   .header {
     padding: 0;
     height: 70px;
+    width:148%;
+    > div {
+      width: max-content;
+    }
   }
 }
