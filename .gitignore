@@ -63,6 +63,8 @@ typings/
 .cache/
 coverage/
 dist/*
+build/*
+public/*
 !dist/index.html
 node_modules/
 *.log

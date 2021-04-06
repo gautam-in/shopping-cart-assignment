@@ -1,9 +1,9 @@
 {
   "roots": [
-    "<rootDir>/src"
+    "<rootDir>/src/client"
   ],
   "setupFilesAfterEnv": [
-    "<rootDir>/src/setupTests.js"
+    "<rootDir>/src/client/setupTests.js"
   ],
   "transform": {
     "^.+\\.(js|jsx|mjs|cjs|ts|tsx)$": "<rootDir>/jest/babelTransform.js",
@@ -11,8 +11,8 @@
     "^(?!.*\\.(js|jsx|mjs|cjs|ts|tsx|css|json)$)": "<rootDir>/jest/fileTransform.js"
   },
   "collectCoverageFrom": [
-    "src/**/*.js",
-    "!src/index.js"
+    "src/client/**/*.js",
+    "!src/client/index.js"
   ],
   "moduleNameMapper": {
     ".+\\.(css|styl|less|sass|scss|png|jpg|ttf|woff|woff2)$": "identity-obj-proxy"
