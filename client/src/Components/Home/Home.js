@@ -15,10 +15,12 @@ const Home = (props) => {
   const { banners, categories } = props;
 
   return (
-    <main className="home-content">
+    <>
       { banners.length ? <Slider slides={banners} /> : ""}
-      { categories.length ? <Categories categoryList={categories} /> : ""}
-    </main>
+      <main className="home-content">
+        {categories.length ? <Categories categoryList={categories} /> : ""}
+      </main>
+    </>
   );
 };
 

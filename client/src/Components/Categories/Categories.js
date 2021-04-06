@@ -18,8 +18,8 @@ const Categories = ({ categoryList }) => {
                     <h3 aria-label={"category name is" + item.name}>{item.name}</h3>
                     <p aria-label={item.description}>{item.description}</p>
                     <Link to={routes.productById.replace(":id", item.id)} role="button" aria-label={item.name + 'category button'}>
-                      <CustomButton width="200px" >
-                        {item.name}
+                      <CustomButton width="auto" >
+                        {item.key}
                       </CustomButton>
                     </Link>
                   </article>
@@ -47,7 +47,7 @@ const Categories = ({ categoryList }) => {
                     <h3 aria-label={"category name is" + item.name}>{item.name}</h3>
                     <p aria-label={item.description}>{item.description}</p>
                     <Link to={routes.productById.replace(":id", item.id)} role="button" aria-label={item.name + 'category button'}>
-                      <CustomButton width="200px" >{item.name}</CustomButton>
+                      <CustomButton width="auto" >{item.key}</CustomButton>
                     </Link>
                   </article>
                 </>

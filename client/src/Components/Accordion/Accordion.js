@@ -27,11 +27,7 @@ const Wrap = styled.div`
 `;
 
 const Accordion = ({ categories, products }) => {
-    const [clicked, setClicked] = useState(false);
-
-    useEffect(() => {
-        setClicked(0);
-    }, [])
+    const [clicked, setClicked] = useState(0);
 
     const toggle = index => {
         if (clicked === index) {
