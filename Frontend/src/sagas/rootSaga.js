@@ -1,11 +1,10 @@
-import {takeLatest} from 'redux-saga/effects';
-import {FETCH_PRODUCTS_REQUEST, FETCH_CATEGORIES_REQUEST} from '../types';
-import fetchProductsSaga from './productSaga';
-import fetchCategoriesSaga from './categoriesSaga';
+import {all, call} from 'redux-saga/effects';
+import {categoriesSaga} from './categoriesSaga';
+import {cartSaga} from './cartSaga';
+import {productSaga} from './productSaga';
 
 function* rootSaga() {
-  yield takeLatest(FETCH_PRODUCTS_REQUEST, fetchProductsSaga);
-  yield takeLatest(FETCH_CATEGORIES_REQUEST, fetchCategoriesSaga);
+  yield all([call(productSaga), call(categoriesSaga), call(cartSaga)]);
 }
 
 export default rootSaga;

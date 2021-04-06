@@ -7,4 +7,8 @@ export default {
     axios.get(`${process.env.Base_URL}/categories`).then((res) => res.data),
   getProducts: () =>
     axios.get(`${process.env.Base_URL}/products`).then((res) => res.data),
+  addToCart: (product) =>
+    axios
+      .post(`${process.env.Base_URL}/addToCart`, {product})
+      .then((res) => res.data),
 };

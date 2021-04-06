@@ -3,6 +3,7 @@
 import React, {useState} from 'react';
 import PropTypes from 'prop-types';
 import {Link} from 'react-router-dom';
+import {useSelector} from 'react-redux';
 import {
   Navbar,
   NavbarToggler,
@@ -14,10 +15,13 @@ import {
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faShoppingCart} from '@fortawesome/free-solid-svg-icons';
 import Logo from '../../../static/images/logo.png';
+import {allCartData} from '../../selector';
 import './Header.scss';
 
 const Header = React.memo(({cartSideNav}) => {
   const [isOpen, setIsOpen] = useState(false);
+
+  const {data} = useSelector((state) => allCartData(state));
 
   const toggle = () => setIsOpen(!isOpen);
   return (
@@ -51,7 +55,7 @@ const Header = React.memo(({cartSideNav}) => {
           <div className="cart-header-wrap" onClick={cartSideNav}>
             <div className="cart-header-main">
               <FontAwesomeIcon icon={faShoppingCart} />
-              <span> 0 Items</span>
+              <span> {data.length ? data.length : 0} Items</span>
             </div>
           </div>
         </div>

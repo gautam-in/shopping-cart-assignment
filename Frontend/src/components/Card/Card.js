@@ -4,8 +4,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './Card.scss';
 
-const Card = React.memo((data) => {
-  const {name, imageURL, sku, description, price} = data;
+const Card = React.memo(({product, addCart}) => {
+  const {name, imageURL, sku, description, price} = product;
+
   return (
     <div className="product-wrap">
       <div className="product-header-wrapper">
@@ -24,7 +25,7 @@ const Card = React.memo((data) => {
             <span>MRP RS.{price}</span>
           </div>
           <div className="product-buy-out">
-            <button type="button" disabled>
+            <button type="button" onClick={() => addCart(product)}>
               Buy Now
             </button>
           </div>
@@ -35,7 +36,7 @@ const Card = React.memo((data) => {
 });
 
 Card.propTypes = {
-  data: PropTypes.shape({
+  product: PropTypes.shape({
     id: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
     imageURL: PropTypes.string.isRequired,
@@ -45,6 +46,7 @@ Card.propTypes = {
     category: PropTypes.string.isRequired,
     sku: PropTypes.string.isRequired,
   }).isRequired,
+  addCart: PropTypes.func.isRequired,
 };
 
 export default Card;
