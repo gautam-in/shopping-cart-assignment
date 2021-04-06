@@ -12,3 +12,9 @@
   min-height: calc(100vh - 44px);
   padding-top: 125px;
 }
+
+button {
+  &:disabled {
+    opacity: 0.5;
+  }
+}
