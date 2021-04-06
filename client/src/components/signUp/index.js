@@ -1,5 +1,4 @@
 import React from "react";
-<<<<<<< HEAD
 import TextField from "@material-ui/core/TextField";
 import "./index.scss";
 function postData(data) {
@@ -21,11 +20,6 @@ function errorMessage(field, error) {
   if (!field && error) return true;
   else return false;
 }
-=======
-import "../login/index.scss";
-import TextField from "@material-ui/core/TextField";
-
->>>>>>> 5c61fa810bfdac7324f5508c516b2d7a14df4d81
 
 class Register extends React.Component {
   constructor(props) {
@@ -35,20 +29,14 @@ class Register extends React.Component {
       lastName: "",
       pass: "",
       cPass: "",
-<<<<<<< HEAD
       email: "",
       error: false,
-=======
->>>>>>> 5c61fa810bfdac7324f5508c516b2d7a14df4d81
       errors: {
         email: false,
         pass: false,
         confirmPass: false,
-<<<<<<< HEAD
         firstName: false,
         lastName: false,
-=======
->>>>>>> 5c61fa810bfdac7324f5508c516b2d7a14df4d81
       },
     };
   }
@@ -144,7 +132,6 @@ class Register extends React.Component {
         this.state.errors.confirmPass
       )
     )
-<<<<<<< HEAD
       postData(this.state);
     this.props.history.push("home");
   };
@@ -165,13 +152,6 @@ class Register extends React.Component {
   };
 
   render() {
-=======
-      this.props.history.push("home");
-  };
-
-  render() {
-
->>>>>>> 5c61fa810bfdac7324f5508c516b2d7a14df4d81
     return (
       <div className={"loginContainer"}>
         <div className={"registerMargin"}>
@@ -181,7 +161,6 @@ class Register extends React.Component {
           </span>
         </div>
         <div className="text-fields">
-<<<<<<< HEAD
           <form onSubmit={this.handleSubmit} className={"form"} data-test ="sign-up">
             <TextField
               required
@@ -216,31 +195,11 @@ class Register extends React.Component {
                 this.setState({ email: e.target.value });
                 this.checkEmail(e);
               }}
-=======
-          <form onSubmit={this.handleSubmit} className={"form"}>
-            <TextField
-              required
-              id="standard-basic"
-              label="First Name"
-              name="firstName"
-              helperText="Please enter First Name."
-            />
-            <TextField
-              required
-              id="standard-basic"
-              label="Last Name"
-              name="lastName"
-              helperText="Please enter Last Name."
-            />
-            <TextField
-              onChange={this.checkEmail}
->>>>>>> 5c61fa810bfdac7324f5508c516b2d7a14df4d81
               required
               id="standard-basic"
               label="Email"
               type="email"
               name="email"
-<<<<<<< HEAD
               data-test="email"
               error={this.state.errors.email}
               helperText={
@@ -256,18 +215,10 @@ class Register extends React.Component {
                 this.setState({ password: e.target.value });
                 this.checkPassword(e);
               }}
-=======
-              error={this.state.errors.email}
-            />
-            <TextField
-              onChange={this.checkPassword}
-              required
->>>>>>> 5c61fa810bfdac7324f5508c516b2d7a14df4d81
               id="standard-basic"
               label="Password"
               name="password"
               type="password"
-<<<<<<< HEAD
               data-test= "password"
               value={this.state.pass}
               error={this.state.errors.pass}
@@ -283,21 +234,12 @@ class Register extends React.Component {
                 this.setState({ cPass: e.target.value });
                 this.checkPasswordC(e);
               }}
-=======
-              value={this.state.pass}
-              error={this.state.errors.pass}
-              helperText="Must be of 6 characters(number&alphabets)"
-            />
-            <TextField
-              onChange={this.checkPasswordC}
->>>>>>> 5c61fa810bfdac7324f5508c516b2d7a14df4d81
               type="password"
               required
               id="standard-basic"
               label="Confirm Password"
               value={this.state.cPass}
               name="confirmPassword"
-<<<<<<< HEAD
               data-test="cpassword"
               error={this.state.errors.confirmPass}
               helperText={
@@ -309,12 +251,6 @@ class Register extends React.Component {
             />
 
             <button onClick={this.handler} class="btn" type="submit" data-test="submitButton">
-=======
-              error={this.state.errors.confirmPass}
-            />
-
-            <button class="btn" type="submit">
->>>>>>> 5c61fa810bfdac7324f5508c516b2d7a14df4d81
               SignUp
             </button>
           </form>
@@ -323,8 +259,4 @@ class Register extends React.Component {
     );
   }
 }
-<<<<<<< HEAD
 export default Register;
-=======
-export default Register;
->>>>>>> 5c61fa810bfdac7324f5508c516b2d7a14df4d81
