@@ -65,6 +65,7 @@ export function app(): express.Express {
   // Authenticate user (DUMMY)
   server.post('/authenticate', (_, res) => {
     res.cookie('id', '12345', { httpOnly: true, secure: true });
+    res.cookie('XSRF-TOKEN', Math.random() * 100000, { secure: true });
     res.send();
   });
 

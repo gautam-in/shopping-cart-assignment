@@ -15,7 +15,7 @@ export class AuthService {
 
   authenticate(user: User) {
     // just to set the auth cookie
-    this.http.post(`http://localhost:4200/authenticate`, user).subscribe(() => {
+    this.http.post(`/authenticate`, user).subscribe(() => {
       // if authenticated, set the user in storage
       const window = this.windowService.getWindow();
 
