@@ -1,0 +1,61 @@
+<section class="wrapper">
+  <div class="sidebar" *ngIf="categoriesData" aria-label="Filter by Categories">
+    <ng-container
+      *ngTemplateOutlet="isMobile ? filterDropdown : filtersList"
+    ></ng-container>
+  </div>
+
+  <ng-template #filterDropdown>
+    <form #filterForm="ngForm" class="filter-form">
+      <div class="form-group">
+        <select
+          #flterdd
+          (change)="
+            onSelectionChnage(flterdd.value == 'null' ? null : flterdd.value)
+          "
+          id="category"
+          name="category"
+          class="btn form-control"
+          [(ngModel)]="currCategory"
+        >
+          <option value="null">All</option>
+          <option
+            *ngFor="let category of categoriesData; let i = index"
+            [value]="category.id"
+          >
+            {{ category.name }}
+          </option>
+        </select>
+      </div>
+    </form>
+  </ng-template>
+
+  <ng-template #filtersList>
+    <div
+      class="input-container"
+      [ngClass]="{ checked: currCategory === category.id }"
+      *ngFor="let category of categoriesData; let i = index"
+    >
+      <a
+        href="javascript: void(0)"
+        aria-labelledby="category-type"
+        (click)="onCheckboxChange(category.id)"
+        >{{ category.name }}</a
+      >
+      <span class="visuallyhidden" id="category-type">
+        Filter by {{ category.name }}</span
+      >
+    </div>
+  </ng-template>
+  <div class="product-list-container">
+    <ul class="product-list-container-block">
+      <li
+        class="product-card-element"
+        *ngFor="let product of productsList; index as i; trackBy: trackById"
+      >
+        <app-product-card [isDesktop]="isDesktop" [product]="product">
+        </app-product-card>
+      </li>
+    </ul>
+  </div>
+</section>

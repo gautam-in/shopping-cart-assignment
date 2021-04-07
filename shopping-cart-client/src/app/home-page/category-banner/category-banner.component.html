@@ -1,0 +1,36 @@
+<div
+  class="categories-container"
+  [style.flex-direction]="isOdd ? 'row-reverse' : 'row'"
+  *ngFor="
+    let category of categoriesData;
+    let i = index;
+    let isOdd = odd;
+    let isEven = even
+  "
+>
+  <div class="category-image">
+    <img
+      src="assets{{ category.imageUrl }}"
+      [alt]="category.name"
+      srcset="
+        {{category.imageUrl_small}}   320w,
+        {{category.imageUrl_medium}}  640w,
+        assets{{category.imageUrl}}  1024w
+      "
+      sizes="(min-width: 1024px) 40vw,
+           (min-width: 768px) 50vw,
+           50vw"
+    />
+  </div>
+  <article class="category-desc">
+    <h3>{{ category.name }}</h3>
+    <p>{{ category.description }}</p>
+
+    <a
+      href="javascript: void(0)"
+      class="btn explore-link"
+      (click)="OnExploreClick(category.id)"
+      >Explore {{ category.key }}</a
+    >
+  </article>
+</div>

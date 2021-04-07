@@ -1,0 +1,69 @@
+/* You can add global styles to this file, and also import other style files */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+body{
+  min-height:100%;
+}
+
+.visuallyhidden {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+  }
+ 
+  button[type="submit"],.btn {
+  font-family: "Dosis", sans-serif;
+  border: none;
+  height: 2.5em;
+  width: 100%;
+  background-color: #d00155;
+  color: #fff;
+  letter-spacing: 0.5px;
+ 
+}
+
+.btn:hover
+{
+    outline: 2px solid #16a085;
+    cursor: pointer;
+}
+.btn:focus{
+    background-color: #f30363;
+    cursor: pointer;
+}
+.visuallyhidden {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+  }
+  
+  img {
+    max-width: 100%;
+    display: block;
+    max-height: 100%;
+  }
+  
+
+  body,
+  html {
+    height: 100%;
+    font-family: "Dosis", sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    overflow-x: hidden;
+  }
+  ::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+    background: transparent;
+}

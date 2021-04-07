@@ -1,0 +1,29 @@
+<div class="product-card-cont">
+  <h2 class="product-card-title">{{ product.name }}</h2>
+  <img
+    class="product-card-img"
+    src="assets{{ product.imageURL }}"
+    sizes="(min-width: 1024px) 40vw,
+  (min-width: 768px) 50vw,
+  50vw"
+    [alt]="product.description"
+    width="100%"
+  />
+  <div class="product-card-subtext">
+    <p>{{ product.description }}</p>
+  </div>
+  <div class="product-buy">
+    <span *ngIf="isDesktop" class="product-card-cost"
+      >MRP Rs{{ product.price }}</span
+    >
+    <button
+      [attr.data-price]="product.price"
+      type="button"
+      (click)="addItemToCart(product.id)"
+      class="btn"
+    >
+      {{ isDesktop ? "Buy Now" : "Buy Now@" }}
+      <span *ngIf="!isDesktop">{{ product.price }}</span>
+    </button>
+  </div>
+</div>

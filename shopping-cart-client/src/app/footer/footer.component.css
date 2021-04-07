@@ -1,0 +1,25 @@
+footer {
+  background-color: #d8d8d8;
+  display: flex;
+
+  align-items: center;
+  height: 50px;
+}
+
+
+p {
+  margin-left: 100px;
+}
+@media (max-width: 767px) {
+  p {
+    text-align: center;
+    justify-content: center;
+    margin: 0;
+  }
+}
+@media (max-width: 360px) {
+  p {
+    margin: 0;
+    word-wrap: break-word;
+  }
+}

@@ -1,0 +1,45 @@
+.wrapper {
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+a {
+  cursor: pointer;
+}
+.logo {
+  height: 50px;
+}
+.header-content {
+  align-items: center;
+  text-decoration-skip: unset;
+}
+a {
+  color: black;
+}
+a:link {
+  text-decoration: none;
+  color: black;
+}
+a:active {
+  color: black;
+}
+.home {
+  padding: 10px;
+  margin: 10px;
+}
+.header-right {
+  display: flex;
+  align-items: center;
+}
+.header-right > a {
+  margin-right: 10px;
+}
+.cart {
+  display: flex;
+  margin-top: 5px;
+  background-color: grey;
+  height: 30px;
+  align-items: center;
+  width: 100px;
+}

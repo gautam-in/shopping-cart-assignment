@@ -1,0 +1,36 @@
+/** categories css **/
+.categories-container {
+  display: flex;
+  height: auto;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 0;
+  box-shadow: 0 8px 6px -6px #d8d8d8;
+}
+
+.category-image {
+  height: auto;
+  margin: 15px 0;
+}
+.category-desc {
+  text-align: center;
+  margin: 10px;
+}
+.btn {
+  height: auto;
+  display: inline-block;
+  padding: 5px 10px;
+  width: auto;
+}
+
+h3 {
+  margin: 15px 0;
+}
+
+p {
+  margin: 15px 0;
+}
+
+.explore-link {
+  text-decoration: none;
+}

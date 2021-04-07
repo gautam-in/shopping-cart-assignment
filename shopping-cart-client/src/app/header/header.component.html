@@ -1,0 +1,33 @@
+<nav
+  class="wrapper"
+  style="box-shadow: 0 10px 10px -10px #000000; margin-bottom: 40px"
+>
+  <div class="logo">
+    <a routerLink="home"
+      ><img
+        src="../../assets/logo.png"
+        alt="header logo"
+        style="height: auto; width: auto"
+    /></a>
+  </div>
+  <div class="header-content wrapper">
+    <div class="home">
+      <a routerLink="/home">Home</a>
+    </div>
+    <div class="product">
+      <a routerLink="/plp">Products</a>
+    </div>
+  </div>
+  <div class="header-right">
+    <a *ngIf="setLogOut" (click)="logOut()">Log out</a>
+    <a (click)="logIn()" *ngIf="!setLogOut">log in</a>
+    <a *ngIf="!setLogOut" (click)="register()">Sign up</a>
+    <div *ngIf="setLogOut">
+      <a class="cart" (click)="onClickCart()">
+        <img src="assets/static/images/cart.svg" alt="" />
+        <span id="itemsInCart">{{ noOfItems }} items</span>
+      </a>
+    </div>
+  </div>
+</nav>
+<app-modal *ngIf="isModal"></app-modal>

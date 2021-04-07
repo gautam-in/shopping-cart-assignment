@@ -1,0 +1,48 @@
+<section
+  *ngIf="caraouseldata"
+  class="caraousel-container"
+  aria-labelledby="carouselheading"
+>
+  <h3 id="carouselheading" class="visuallyhidden">Independence Day Sale</h3>
+  <!-- Full-width images with number and caption text -->
+  <ul>
+    <li
+      class="image-slide fade"
+      *ngFor="let slide of caraouseldata; let i = index"
+      [style.display]="i === slideIndex - 1 ? 'block' : 'none'"
+    >
+      <div class="numbertext visuallyhidden">
+        {{ i + 1 }} / {{ caraouseldata.length }}
+      </div>
+      <img
+        [alt]="slide.bannerImageAlt"
+        src="assets{{ slide.bannerImageUrl }}"
+        srcset="
+          assets{{slide.bannerImageUrl_small}}   320w,
+          assets{{slide.bannerImageUrl_medium}}  768w,
+          assets{{slide.bannerImageUrl}}        1024w
+        "
+        sizes="(min-width: 1024px) 80vw,
+        (min-width: 768px) 80vw,
+        100vw"
+      />
+    </li>
+  </ul>
+
+  <ul class="dots-container">
+    <li
+      *ngFor="let slide of caraouseldata; let i = index"
+      (click)="currentSlide(i + 1)"
+    >
+      <button
+        class="btn dot"
+        [ngClass]="{ active: i === slideIndex - 1 }"
+        [attr.data-slide]="i"
+      >
+        <span class="visuallyhidden"
+          >Item {{ i + 1 }} of {{ caraouseldata.length }}</span
+        >
+      </button>
+    </li>
+  </ul>
+</section>

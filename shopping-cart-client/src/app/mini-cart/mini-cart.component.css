@@ -1,0 +1,38 @@
+.mini-cart{
+    background-color: white;
+    width: 100%;
+    height: 100%;
+}
+.header{
+    background-color: black;
+    height: 50px;
+}
+
+.heading-data{
+    float: left;
+    color:white;
+    position:relative;
+    left:10px;
+    top:10px;
+}
+.cancel{
+    float: right;
+    color:white;
+    position:relative;
+    right:10px;
+    top:10px;
+    text-decoration: none;
+}
+footer{
+    width:384px;
+    position: fixed;
+    bottom: 0;
+}
+
+button{
+    width: 100%;
+    padding: 10px;
+    background-color: #d00155;
+    cursor: pointer;
+    border: none;
+}

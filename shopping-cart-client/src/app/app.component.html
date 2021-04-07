@@ -1,0 +1,10 @@
+<app-header></app-header>
+<div class="container">
+  <router-outlet></router-outlet>
+</div>
+<div *ngIf="showModal" id="myModal" class="modal">
+    <div class="modal-content">
+      <app-cart [attr.aria-expanded]="showModal"></app-cart>
+    </div>
+  </div>
+<app-footer></app-footer>
