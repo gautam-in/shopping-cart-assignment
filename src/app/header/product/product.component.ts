@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-product',
@@ -10,24 +11,42 @@ export class ProductComponent implements OnInit {
   product: any = [];
   categories: any = [];
   productPerRow: any = [];
+  sub: any;
+  categoryName: any;
 
-  constructor(private _http: HttpClient) {}
+  constructor(
+    private _http: HttpClient,
+    private Activatedroute: ActivatedRoute
+  ) {
+
+    this.categoryName= this.Activatedroute.snapshot.paramMap.get("category");
+    console.log("pagenum=======" , this.sub)
+  }
 
   ngOnInit(): void {
     this.fetchCategories();
-    this.fetchProduct();
+    // this.fetchProduct();
+    // if(this.categoryName){
+    //   this.getProductByCategory(this.categoryName)
+    // }
   }
 
   fetchCategories() {
     this._http.get('server/categories/index.get.json').subscribe((data) => {
       this.categories = data;
+      this.fetchProduct();
     });
   }
 
   fetchProduct() {
     this._http.get('server/products/index.get.json').subscribe((data) => {
       this.product = data;
-      this.buildProductArr(this.product);
+      if(this.categoryName){
+        this.getProductByCategory(this.categoryName)
+      }else{
+        this.buildProductArr(this.product);
+      }
+     
     });
   }
 

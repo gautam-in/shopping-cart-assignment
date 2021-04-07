@@ -5,22 +5,55 @@
       <h2>Get access to your Orders, Wishlist and Recommendations</h2>
     </div>
     <div class="col-6">
-      <form>
+      <form [formGroup]="loginForm" (submit)="submitLoginForm()">
         <div class="form-group">
-          <label for="exampleInputEmail1" class="bmd-label-floating"
+          <label for="login" formControl="email" class="bmd-label-floating"
             >Email</label
           >
-          <input type="email" class="form-control" id="exampleInputEmail1" />
+          <input
+            type="email"
+            class="form-control"
+            formControlName="email"
+            id="email"
+            
+          />
+        </div>
+        <div
+          *ngIf="
+            (loginForm.get('email').touched || loginForm.get('email').dirty) &&
+            loginForm.get('email').invalid
+          "
+          class="error-msg"
+        >
+          {{
+            loginForm.get("email")?.errors?.required
+              ? validationMessages.email.required
+              : validationMessages.email.pattern
+          }}
         </div>
         <div class="form-group">
-          <label for="exampleInputPassword1" class="bmd-label-floating"
-            >Password</label
-          >
+          <label for="password" class="bmd-label-floating">Password</label>
           <input
             type="password"
             class="form-control"
-            id="exampleInputPassword1"
+            id="password"
+            formControlName="password"
+           
           />
+        </div>
+        <div
+          *ngIf="
+            (loginForm.get('password').touched ||
+              loginForm.get('password').dirty) &&
+            loginForm.get('password').invalid
+          "
+          class="error-msg"
+        >
+          {{
+            loginForm.get("password")?.errors?.required
+              ? validationMessages.password.required
+              : validationMessages.password.pattern
+          }}
         </div>
         <button type="submit" class="btn btn-danger btn-raised">Login</button>
       </form>

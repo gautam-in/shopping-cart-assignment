@@ -9,7 +9,7 @@
         <div class="col-6 desciption">
           <h1>{{ cat.name }}</h1>
           <h2>{{ cat.description }}</h2>
-          <button type="button" class="btn btn-danger" id="{{ cat.id }}">
+          <button type="button" class="btn btn-danger"  (click)="exploreProduct(cat.name)">
             Explore {{ cat.key }}
           </button>
         </div>

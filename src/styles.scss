@@ -58,6 +58,10 @@ a {
   text-decoration: none;
 }
 
+.error-msg{
+  color: red;
+  padding-bottom : 2%;
+}
 //------------------------------------------------
 // LOGIN and SIGNUP Page CSS
 //------------------------------------------------
@@ -69,13 +73,32 @@ a {
 }
 
 .form-group label,
-input[type="password"],
-input[type="email"] {
+// input[type="password"]:active,
+// input[type="email"]:active 
+input:active
+{
   font-size: 90%;
+  //border-bottom:  2px solid rgb(18, 212, 238) !important;
+  //color: red;
 }
+
+// input[type="firstName"]:focus,
+// input[type="lastName"]:focus,
+// input[type="email"]:focus,
+// input[type="password"]:focus,
+// input[type="confirmPassword"]:focus
+input:focus
+{
+border-bottom: 2px solid rgb(18, 212, 238) !important;
+}
+
 
 .col-6 Form {
   padding-top: 3%;
   max-width: 75%;
   padding-right: 20%;
+}
+
+.form-group.is-focused label .form-group.is-focused label.control-label{
+  color: rgb(181, 214, 34); // any color that you want
 }
