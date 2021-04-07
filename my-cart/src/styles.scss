@@ -13,6 +13,7 @@
     padding : 0;
     margin : 0;
     box-sizing: border-box;
+    line-height: 120%;
 }
 
 /*Normalization */
@@ -20,10 +21,9 @@
 html{
     font-size: 75%;   
     font-weight : 300;
-    line-height: 145%;
     color : $color-grey-darker;
     box-sizing: inherit;
-
+    font-family: Dosis;
     @include responsive(small-tabs){
         font-size: 62.5%;
     }
@@ -31,6 +31,10 @@ html{
     @include responsive(mobile){
         font-size: 50%;
     }
+}
+
+h1,h2,h3,h4,h5,h6{
+    line-height: 145%;
 }
 
 nav ul{
@@ -63,6 +67,10 @@ li a {
     flex-wrap: wrap;
 }
 
+.no-padding-row{
+    padding: 0;
+}
+
 .alert-danger{
     padding : 1rem 2rem;
     font-size: 1rem;
@@ -79,4 +87,54 @@ li a {
     }
 }
 
+/* Reusable card */
 
+.card{
+    padding: 1rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,.2);
+    background-color: $color-white;
+}
+
+
+/*Primary button */
+
+.primary-button{
+    background-color: $color-primary;
+    color: $color-white;
+    width: 100%;
+    padding: 1rem;
+    margin-top: 1rem;
+    border: none;
+    border-radius: 5px;
+}
+
+/* Active Navigation */
+
+.active-link{
+    background-color: $color-grey-medium;
+    padding-bottom: .5rem;
+    border-bottom: 1px solid $color-primary;
+}
+
+a{
+    cursor: pointer;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888; 
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+  }

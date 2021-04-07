@@ -1,0 +1,42 @@
+<div class="no-padding-row cart-items" *ngIf="productList.length;else noItemsInCart">
+    <div class="col-12 card header-card">
+      <h1 class="shoppincart-heading">My Cart</h1>
+      <span class="shopping-cart-close" (click)="closeModel()">&#10005;</span>
+    </div>
+    <div class="no-padding-row scrollable-items">
+        <div class="col-12 card image-card" *ngFor="let product of productList">
+            <img class="cart-item-image" src="assets{{product.imageURL}}" alt="product.description" />
+            <div class="cart-item-details">
+                <h3>{{product.name}}</h3>
+                <div class="cart-item-addition">
+                    <button class="button-add" (click)="increaseQuantity(product)">+</button>
+                    <span class="product-quantity">{{product.quantity}}</span>
+                    <button class="button-subtract" (click)="decreaseQuantity(product)">-</button>
+                    <span class="unit-price">X RS.{{product.price}}</span>
+                    <span class="total-price">RS. {{product.totalPrice}}</span>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 card lowest-price-card">
+            <img class="lowest-price-icon" src="../../assets/lowest-price.png" alt="product.description" />
+        </div>
+    </div>
+    <div class="col-12 card checkout-card">
+        <p class="promo-paragraph">Promo code can be applied on payment page</p>
+        <button class="primary-button">Checkout</button>
+    </div>
+</div>
+
+<ng-template #noItemsInCart>
+    <div class="col-12 no-padding-row no-items-card">
+        <div class="col-12 card header-card">
+            <h1 class="shoppincart-heading">My Cart</h1>
+            <span class="shopping-cart-close" (click)="closeModel()">&#10005;</span>
+        </div>
+        <div class="col-12 no-padding-row empty-cart-description">
+            <p class="no-items">No items in your cart</p>
+            <p class="add-fav-items">Your favourite items are just a click away</p>
+        </div>
+        <button class="primary-button start-button">Start Shopping</button>
+    </div>
+</ng-template>

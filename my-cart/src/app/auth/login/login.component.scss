@@ -17,7 +17,7 @@
 .login-info{
     display: flex;
     justify-content: flex-end;
-    padding: 2rem 5rem;
+    padding: 2rem;
 
     @include responsive(mobile){
        justify-content: flex-start;
@@ -29,12 +29,3 @@
     padding : 1rem 0rem;
 }
 
-.login-button{
-    background-color: $color-primary;
-    color: $color-white;
-    width: 100%;
-    padding: 0.60rem;
-    margin-top: 1rem;
-    border: none;
-    border-radius: 5px;
-}

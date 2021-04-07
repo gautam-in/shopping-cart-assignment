@@ -1,0 +1,15 @@
+<div class="product-item">
+    <h3 class="product-item-heading" title="{{product.name}}">{{product.name}}</h3>
+    <img class="product-item-image" src="assets{{product.imageURL}}" />
+    <p class="product-item-description">{{product.description | ellipsis : 128}}</p> 
+    <footer class="product-item-footer">
+        <div class="footer-desktop">
+            <span>MRP Rs.{{product.price}}</span>
+            <button class="primary-button buy-now-buttom" (click)="addToCart()">Buy Now</button>
+        </div>
+        <div class="footer-mobiles">
+            <button class="primary-button buy-now-price" (click)="addToCart()">Buy Now @ Rs.{{product.price}}</button>
+        </div>
+    </footer>
+</div>
+

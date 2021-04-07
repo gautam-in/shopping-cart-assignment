@@ -1,0 +1,116 @@
+@import './../sass/variables';
+
+.cart-items{
+    background-color: #e1dada;
+}
+
+.cart-item-image{
+    width : 6rem;
+    height: 6rem
+}
+
+.image-card{
+    display: flex;
+    margin-bottom: .5rem;
+    padding: .2rem;
+}
+
+.button-subtract, .button-add{
+    width : 2rem;
+    height: 2rem;
+    border : none;
+    border-radius: 100%;
+    color : $color-white;
+    background-color: $color-primary;
+}
+
+.cart-item-image{
+    display:flex;
+}
+
+.cart-item-details {
+    padding: .5rem;
+    flex:1;
+}
+
+.cart-item-addition {
+  margin-top : 1rem;
+  >*{
+    margin-right: 1rem;
+  }
+}
+
+.product-quantity,.unit-price,.total-price{
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.total-price{
+    float:right;
+}
+
+.header-card{
+    display: flex;
+    align-items: baseline;
+    position: relative;
+    background-color: black;
+    color: white;
+}
+
+.shoppincart-heading{
+    flex:1;
+}
+
+.shopping-cart-close{
+    font-size: 2rem;
+}
+
+.lowest-price-icon{
+    width : 13rem;
+    height : 3rem
+}
+
+.checkout-card{
+    position: absolute;
+    width: 100%;
+    top: 82%;
+}
+
+.scrollable-items{
+    height: 60vh;
+    overflow-y: auto;
+}
+
+.promo-paragraph{
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.no-items-card{
+    background-color: $color-white;
+}
+
+.start-button{
+    width : 85%;
+    position: absolute;
+    bottom: 2%;
+    margin-left: 8%;
+}
+
+.no-items{
+    font-size: 1.4rem;
+    font-weight: 800;
+}
+
+.empty-cart-description{
+   font-size: 1.1rem;
+   font-weight: 600;
+   position: absolute;
+   top : 40%;
+   width: 100%;
+   text-align : center;
+}
+
+
+

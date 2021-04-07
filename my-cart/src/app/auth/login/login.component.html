@@ -6,8 +6,8 @@
         </div>
     </div>
     <div class="col-4-of-12 col-md-6-of-12 col-xs-12-of-12 login-form">
-        <form class="login-form" #loginForm="ngForm" (ngFormSubmit)="login(loginForm)">
-            <div class="form-group">
+        <form class="login-form" #loginForm="ngForm" (ngSubmit)="login(loginForm)">
+            <div class="form-group" *ngIf="!isLogin">
                 <label class="form-control-label" for="firstname">FirstName</label>
                 <input class="form-control-input" type="text" name="firstname" id="firstname" ngModel
                     #firstname="ngModel" required />
@@ -17,7 +17,7 @@
                     </div>
                 </div>
             </div>
-            <div class="form-group">
+            <div class="form-group" *ngIf="!isLogin">
                 <label class="form-control-label" for="lastname">Last Name</label>
                 <input class="form-control-input" type="text" name="lastname" id="lastname" ngModel
                     #lastname="ngModel" required />
@@ -53,7 +53,7 @@
                     </div>
                 </div>
             </div>
-            <div class="form-group">
+            <div class="form-group"  *ngIf="!isLogin">
                 <label class="form-control-label" for="firstname">Confirm Password</label>
                 <input class="form-control-input" type="password" name="confirmpassword" id="confirmpassword" ngModel
                     #confirmpassword="ngModel" pattern="{{password.value}}" required />
@@ -66,7 +66,7 @@
                     </div>
                 </div>
             </div>
-            <button class="login-button" type="submit">Login</button>
+            <button class="primary-button" type="submit">Login</button>
         </form>
     </div>
 </section>
