@@ -1,7 +1,6 @@
 import { homeConstants } from '../Constants';
 import { GET_BANNERS_API, GET_CATEGORIES_API } from '../Constants/ServerUrl';
 import { appService } from '../_services';
-import { alertActions } from '.';
 
 const retreiveCategories = json => {
     const categoriesList = json.data;
