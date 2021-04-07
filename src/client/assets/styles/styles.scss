@@ -62,11 +62,11 @@
 }
 
 body {
-  background-color: #ffffff0d;
-  color: #555;
-  font-family: 'Dosis', 'Arial', sans-serif;
-  font-weight: 400;
-  font-size: 1.25rem;
+  background-color: $body-background;
+  color: $body-color;
+  font-family: $font-family;
+  font-weight: $font-weight;
+  font-size: $font-size;
   text-rendering: optimizeLegibility;
   margin: 0 auto;
 }
@@ -81,18 +81,18 @@ section {
 }
 
 .MuiFormLabel-root {
-  font-family: 'Dosis', 'Arial', sans-serif !important;
-  color: #6f5d5b !important;
+  font-family: $font-family !important;
+  color: $font-color !important;
   font-size: 80% !important;
   font-weight: 600 !important;
 }
 
 .MuiInput-underline:hover:not(.Mui-disabled):before {
-  border-bottom: 2px solid #46c1cc !important;
+  border-bottom: 2px solid $input-focus-color !important;
 }
 
 .MuiFormLabel-root.Mui-focused {
-  color: #46c1cc !important;
+  color: $input-focus-color !important;
 }
 
 .MuiInput-underline:after {
@@ -103,14 +103,14 @@ section {
   position: absolute;
   transform: scaleX(0);
   transition: transform 200ms cubic-bezier(0.0, 0, 0.2, 1) 0ms;
-  border-bottom: 2px solid #46c1cc !important;
+  border-bottom: 2px solid $input-focus-color !important;
   pointer-events: none;
 }
 
 .btn {
   font-size: 65%;
-  background: #bf2957;
-  color: #fff;
+  background: $explore-color;
+  color: $white-color;
   margin: 15px 0 0 0;
   font-weight: 500;
   padding: 0 10px;
@@ -132,5 +132,5 @@ section {
   font-size: .65rem;
   font-weight: 600;
   margin-top: 5px;
-  color: #bf2957;
+  color: $explore-color;
 }
