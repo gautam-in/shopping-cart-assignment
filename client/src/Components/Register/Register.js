@@ -6,6 +6,7 @@ import "./Register.scss";
 import { userActions } from '../../_actions';
 import { connect } from "react-redux";
 import { formFieldValidations } from "../../_helpers";
+import { labels } from "../../Constants";
 
 const Register = (props) => {
 
@@ -52,13 +53,13 @@ const Register = (props) => {
 
   return (
     <main className="register">
-      <h2>Register</h2>
+      <h2>{RegisterText}</h2>
       <form onSubmit={handleSubmit}>
         <FormInput
           type="text"
           name="firstName"
           value={formData.user.firstName}
-          label="First Name"
+          label={labels.FIRST_NAME}
           onChange={handleChange}
           htmlFor="firstNameInput"
           ariaLabel="FirstName Input"
@@ -69,7 +70,7 @@ const Register = (props) => {
           type="text"
           name="lastName"
           value={formData.user.lastName}
-          label="Last Name"
+          label={labels.LAST_NAME}
           onChange={handleChange}
           htmlFor="lastNameInput"
           ariaLabel="LastName Input"
@@ -80,7 +81,7 @@ const Register = (props) => {
           type="email"
           name="email"
           value={formData.user.email}
-          label="Email"
+          label={labels.EMAIL}
           onChange={handleChange}
           htmlFor="emailInput"
           ariaLabel="Email Input"
@@ -91,7 +92,7 @@ const Register = (props) => {
           type="password"
           name="password"
           value={formData.user.password}
-          label="Password"
+          label={labels.PASSWORD}
           onChange={handleChange}
           htmlFor="passwordInput"
           ariaLabel="Password Input"
@@ -102,7 +103,7 @@ const Register = (props) => {
           type="password"
           name="confirmPassword"
           value={formData.user.confirmPassword}
-          label="Confirm Password"
+          label={labels.CONFIRM_PASSWORD}
           onChange={handleChange}
           htmlFor="confirmPasswordInput"
           ariaLabel="Confirm Password Input"

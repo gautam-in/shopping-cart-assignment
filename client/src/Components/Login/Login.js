@@ -3,6 +3,7 @@ import CustomButton from "../CustomButton/CustomButton";
 import FormInput from "../FormInput/FormInput";
 import "./Login.scss";
 import { LoginText, LoginDescription } from "../../Constants/ConstantText";
+import { labels } from "../../Constants";
 import { userActions } from '../../_actions';
 import { connect } from "react-redux";
 
@@ -41,7 +42,7 @@ const Login = (props) => {
             type="email"
             name="email"
             value={formData.email}
-            label="Email"
+            label={labels.EMAIL}
             onChange={handleChange}
             htmlFor="emailInput"
             ariaLabel="Email Input"
@@ -51,7 +52,7 @@ const Login = (props) => {
             type="password"
             name="password"
             value={formData.password}
-            label="Password"
+            label={labels.PASSWORD}
             onChange={handleChange}
             htmlFor="passwordInput"
             ariaLabel="Password Input"
