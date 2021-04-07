@@ -29,13 +29,13 @@ export default function ProductItem({product,actions,cartData,currentLogedInUser
             <div className={styles.itemname}>
             <p style={{fontSize:20,fontWeight:"bold"}}>{product.name}</p>
             </div>
-            <div className={styles.itemimage}>
+            <div role="button" className={styles.itemimage}>
                 <img className={styles.productimage}  src={product?.imageURL} alt={product.name} />
             </div>
-            <div className={styles.itemdescription}>
+            <div role="button"  className={styles.itemdescription}>
                 <p className={styles.description}>{product.description}</p>
             </div>
-            <div className={styles.itembutton}>
+            <div role="button"  className={styles.itembutton}>
                 {window.innerWidth > 1199&&
                 <div role="button">
                 <p style={{flex:1}}>MRP Rs.{product.price}</p>

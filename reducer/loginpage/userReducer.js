@@ -2,7 +2,7 @@ import * as types  from "../../constants/actionTypes";
 
 const initialState ={
     registeredUsers:[],
-    currentLogedInUser:'jamaluddinshaik6@gmail.com',
+    currentLogedInUser:'',
 }
  const userReducer = (state = initialState, action) => {
     switch (action.type) {

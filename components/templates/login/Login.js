@@ -19,7 +19,6 @@ function Login(props) {
     const [showpassword,togglepassword] = useState(false)
 
     async function signIn(e) {
-        console.log(e,"e");
             e.preventDefault()
             let isUserRegistered = props?.userReducer?.registeredUsers.findIndex(email => email === inputs.email);
             console.log(isUserRegistered,"isUserRegistered");
