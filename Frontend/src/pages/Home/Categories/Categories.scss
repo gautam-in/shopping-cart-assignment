@@ -6,12 +6,13 @@
   width: 100%;
   display: flex;
   margin: 5px 0px;
+  padding: 20px 0px;
   background-color: $white-color;
   > .image-wrap img {
     position: relative;
     overflow: hidden;
-    width: 450px;
-    height: 350px;
+    width: 30rem;
+    height: 20rem;
   }
   > .text-wrap {
     margin: auto;
@@ -53,5 +54,39 @@
   &:hover {
     color: $white-color;
     text-decoration: none;
+  }
+}
+
+@media only screen and (max-width: $tab-max-width) {
+  .card-wrap {
+    .image-wrap img {
+      width: 10rem;
+      height: 8rem;
+      padding: 10px 0px;
+    }
+  }
+  .card-wrap {
+    .text-wrap h2 {
+      font-size: 1rem;
+    }
+  }
+  .card-wrap {
+    .text-wrap p {
+      font-size: 0.8rem;
+      margin-bottom: 0px;
+    }
+  }
+  .explore-btn {
+    padding: 5px;
+    font-size: 0.8rem;
+  }
+}
+
+@media only screen and (max-width: $mobile-max-width) {
+  .card-wrap {
+    .image-wrap img {
+      width: 5rem;
+      height: 5rem;
+    }
   }
 }

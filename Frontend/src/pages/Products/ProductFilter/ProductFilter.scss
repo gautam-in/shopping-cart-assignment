@@ -19,3 +19,9 @@
 .is-active {
   border-left: 2px solid $pink-color;
 }
+
+@media only screen and (max-width: $mobile-max-width) {
+  .page-wrap {
+    padding-top: 85px;
+  }
+}

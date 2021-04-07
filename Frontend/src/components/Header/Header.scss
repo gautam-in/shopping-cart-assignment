@@ -12,6 +12,12 @@ header {
   }
 }
 
+.logo-wrap {
+  img {
+    width: 10rem;
+  }
+}
+
 .navbar-nav {
   list-style: none;
   li a {
@@ -37,5 +43,46 @@ header {
   span {
     font-weight: 800;
     font-size: 0.8rem;
+  }
+}
+
+@media only screen and (max-width: $mobile-max-width) {
+  .logo-wrap {
+    img {
+      width: 6rem;
+    }
+  }
+  .navbar {
+    padding: 0.6rem 1rem;
+  }
+  .navbar-nav {
+    li {
+      padding: 5px 0px;
+    }
+  }
+  .navbar-text {
+    padding-bottom: 0px;
+    padding-top: 0px;
+    width: 100%;
+    li {
+      padding: 5px 0px;
+      display: block;
+    }
+  }
+  .navbar-toggler {
+    // background-color: $pink-color;
+    // border: 1px solid $pink-color;
+    position: absolute;
+    top: 10px;
+    left: 115px;
+    border-radius: 0px;
+  }
+
+  .cart-header-wrap {
+    position: absolute;
+    right: 10px;
+    top: 0.3rem;
+    bottom: 0.5rem;
+    max-height: 50px;
   }
 }

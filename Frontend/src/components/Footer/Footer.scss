@@ -11,3 +11,10 @@
     margin: auto 0;
   }
 }
+
+@media only screen and (max-width: $mobile-max-width) {
+  .footer-wrap p {
+    font-size: 0.8rem;
+    text-align: center;
+  }
+}

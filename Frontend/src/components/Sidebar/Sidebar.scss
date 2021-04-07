@@ -129,3 +129,17 @@
     }
   }
 }
+
+@media only screen and (max-width: $tab-max-width) {
+  .no-cart-items-found-wrap {
+    margin: 0;
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: $mobile-max-width) {
+  .modal {
+    top: 0px;
+    width: 100%;
+  }
+}

@@ -28,7 +28,7 @@ const Header = React.memo(({cartSideNav}) => {
     <header>
       <Navbar color="light" expand="md" fixed="top">
         <div className="container">
-          <Link to="/">
+          <Link to="/" className="logo-wrap">
             <img src={Logo} alt="Sabka Bazaar" />
           </Link>
           <NavbarToggler onClick={toggle} />

@@ -41,6 +41,7 @@ const ProductFilter = React.memo(({filterId}) => {
       </li>
     );
   });
+
   return (
     <div className="categories-filter-data-wrap">
       <ul className="clearfix">
