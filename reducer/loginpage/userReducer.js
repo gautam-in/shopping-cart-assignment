@@ -7,6 +7,7 @@ const initialState ={
  const userReducer = (state = initialState, action) => {
     switch (action.type) {
         case types.REGISTER_USER: 
+        // storing all the registered users
         return {
             ...state,
             registeredUsers: state.registeredUsers.concat(action.userEmail)

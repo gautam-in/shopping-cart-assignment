@@ -1,4 +1,5 @@
 import { useState } from "react";
+
 function validateEmail(email) {
     const re = /\S+@\S+\.\S+/;
     return re.test(email);
@@ -26,6 +27,7 @@ export default function useForm(initial ={}) {
 
     function handleChange(e) {
         let {value,name,type} = e.target;
+        //validting all input types
         if (type == "text" &&(name!=="password" &&name!== "confirm_password")) {
             if (!value) {
                 setErrors({
@@ -99,7 +101,7 @@ export default function useForm(initial ={}) {
                 })    
             }
         }
-        
+        //updating the input values
         setInputs({
             // copy existing state
             ...inputs,

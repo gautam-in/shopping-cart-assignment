@@ -24,7 +24,6 @@ export function mapDispatchToProps(dispatch) {
    }
    render(){
      const {homeReducer,productReducer} = this.props
-     console.log(this.props,"rpops");
      const availableCategories =  homeReducer.categories.filter((category)=>category.enabled)
         return(
           productReducer?.products?.length? 
