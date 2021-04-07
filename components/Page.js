@@ -1,7 +1,6 @@
 import styled, { createGlobalStyle } from "styled-components";
-import CartContainer from "./CartContainer";
-import CopyRight from "./CopyRight";
-import Header from "./Header";
+import Footer from "../components/organisms/footer/index";
+import Header from "../components/organisms/header/index";
 const GlobalStyles =createGlobalStyle`
 html {
 --red :#ff0000;
@@ -52,7 +51,7 @@ const InnerStyles =styled.main`
         <InnerStyles>
             {props.children}
         </InnerStyles>
-        <CopyRight/>
+        <Footer/>
         </div>
     )
 }

@@ -1,10 +1,8 @@
-import CopyRight from "../components/CopyRight";
-import SignIn from "../components/SignIn";
-
+import SignInPage from "../components/templates/signIn/index";
 function signIn(props) {
     return (
         <div>
-            <SignIn/>      
+            <SignInPage/>      
         </div>
     )
 }

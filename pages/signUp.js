@@ -1,5 +1,5 @@
-import CopyRight from '../components/CopyRight'
-import SignUpPage from '../components/SignUp'
+import SignUpPage from "../components/templates/signUp";
+
 export default function SignUp(props){
     return (
         <div>
