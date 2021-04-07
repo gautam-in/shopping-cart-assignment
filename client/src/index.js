@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import { App } from "./App";
 import { Provider } from 'react-redux';
 import "./index.scss";
+import "./reset.scss";
 
 import { store } from './_helpers';
 

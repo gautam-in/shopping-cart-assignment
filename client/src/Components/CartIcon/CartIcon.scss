@@ -7,6 +7,12 @@
   &:hover{
     cursor: pointer;
   }
+  img{
+    padding: 5px;
+  }
+  p{
+    margin: 12px 2px;
+  }
 }
 .login-options {
   display: flex;

@@ -8,3 +8,7 @@ export const GET_BANNERS_API = "/banners";
 export const GET_CATEGORIES_API = "/categories";
 
 export const GET_PRODUCTS = "/products";
+
+export const config = {
+    apiUrl: "http://localhost:3000"
+}
