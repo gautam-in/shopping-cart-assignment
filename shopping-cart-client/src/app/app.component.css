@@ -1,0 +1,28 @@
+.container {
+  margin: 0 100px;
+}
+.modal {
+    display: block; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+  }
+  
+  /* Modal Content */
+  .modal-content {
+    position: absolute;
+    overflow-y: scroll;
+    background-color: #d8d8d8;
+    margin: auto;
+    border: 1px solid #888;
+    width: 30%;
+    bottom: 2%;
+    right: 10%;
+    height: 90%;
+  }
+  

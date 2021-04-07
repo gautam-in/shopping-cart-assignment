@@ -1,0 +1,46 @@
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loginText {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  justify-content: space-around;
+}
+
+.formFlex {
+  display: flex;
+  flex-direction: column;
+}
+
+.inputBox {
+  border: none;
+  border-bottom: 1px solid grey;
+}
+
+input {
+  width: 250px;
+  display: block;
+}
+input:focus {
+  outline: none;
+  border: none;
+  border-bottom: 1px solid #00cec9;
+}
+input:focus::placeholder {
+  color: #00cec9;
+}
+
+.login {
+  width: 250px;
+  background-color: #e84393;
+  display: block;
+  margin: 25px 0 10px;
+  outline: none;
+  border: none;
+  height: 30px;
+  cursor: pointer;
+}

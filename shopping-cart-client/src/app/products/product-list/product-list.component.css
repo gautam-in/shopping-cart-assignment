@@ -1,0 +1,86 @@
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  padding: 0;
+  margin-top: -25px;
+}
+
+.product-list-container {
+  width: 80%;
+}
+
+@media (max-width: 767px) {
+  .product-list-container {
+    width: 100%;
+  }
+}
+
+.product-list-container-block {
+  text-align: center;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 1em;
+}
+@media (min-width: 1024px) {
+  .product-list-container-block {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
+@media (max-width: 767px) {
+  .wrapper {
+    flex-direction: column;
+  }
+}
+
+.product-card-element {
+  background-color: white;
+  border-radius: 8px;
+  padding: 8px;
+  display: inline-block;
+  border-bottom: 3px dotted #d8d8d8;
+}
+.sidebar {
+  width: 20%;
+  flex: 1 0 170px;
+  margin-right: 10px;
+  background-color: #f5f5f5;
+}
+
+.sidebar > .filter-form {
+  display: flex;
+  flex-direction: column;
+}
+a,
+a:hover,
+a:focus {
+  outline: none;
+  text-decoration: none;
+  color: black;
+}
+.sidebar > label {
+  cursor: pointer;
+  position: static;
+}
+@media (max-width: 767px) {
+  .sidebar {
+    width: 100%;
+    flex: none;
+    margin-right: 0;
+    background-color: #f5f5f5;
+  }
+}
+.input-container:focus-within {
+  outline: 2px solid limegreen;
+}
+.input-container:hover {
+  background-color: #d00155;
+  color: #fff;
+}
+
+.sidebar .input-container {
+  margin: 5px;
+  padding: 5px;
+  color: black;
+  border-bottom: 1px solid gray;
+}

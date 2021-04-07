@@ -1,0 +1,55 @@
+<div class="main">
+  <div class="loginText">
+    <h2>Login</h2>
+    <p class="sub-text">
+      Get Access to your orders. Wishlist and recommendations
+    </p>
+  </div>
+
+  <form
+    class="formFlex"
+    (ngSubmit)="submitLogin(f)"
+    #f="ngForm"
+    autocomplete="off"
+  >
+    <div class="error" *ngIf="isLoginError">
+      <span>Wrong credential entered</span>
+    </div>
+    <div class="email">
+      <label for="name" style="margin-bottom: 10px"></label>
+      <div style="margin: 40px 0 10px">
+        <input
+          type="text"
+          name="email"
+          placeholder="Email"
+          class="inputBox"
+          required
+          ngModel
+          email
+          #email="ngModel"
+        />
+      </div>
+      <div class="errorfName error" *ngIf="!email.valid && email.touched">
+        <span>PLease enter valid email</span>
+      </div>
+    </div>
+    <div class="password">
+      <label for="name"></label>
+      <div style="margin-top: 40px">
+        <input
+          type="password"
+          name="password"
+          placeholder="Password"
+          class="inputBox"
+          required
+          ngModel
+          #password="ngModel"
+        />
+      </div>
+      <div class="errorfName error" *ngIf="!password.valid && password.touched">
+        <span>PLease enter password</span>
+      </div>
+    </div>
+    <button type="submit" [disabled]="!f.valid" class="login">Login</button>
+  </form>
+</div>

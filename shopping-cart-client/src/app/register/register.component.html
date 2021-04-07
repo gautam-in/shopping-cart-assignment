@@ -1,0 +1,115 @@
+<div class="main">
+  <div class="loginText">
+    <h2>Signup</h2>
+    <p>We do not share your personal details with anyone</p>
+  </div>
+  <form
+    class="formFlex"
+    #f="ngForm"
+    (ngSubmit)="submitForm(f)"
+    autocomplete="off"
+  >
+    <div class="fName" style="margin-bottom: 40px">
+      <label for="name" style="margin-bottom: 10px"></label>
+      <div>
+        <input
+          type="text"
+          name="name"
+          placeholder="First Name"
+          class="inputBox"
+          required
+          ngModel
+          #fName="ngModel"
+        />
+      </div>
+      <div class="errorfName error" *ngIf="!fName.valid && fName.touched">
+        <span>fName is not valid</span>
+      </div>
+    </div>
+    <div class="lName" style="margin-bottom: 40px">
+      <label for="lName"></label>
+      <div>
+        <input
+          type="text"
+          name="lName"
+          placeholder="Last Name"
+          class="inputBox"
+          required
+          ngModel
+          #lName="ngModel"
+        />
+      </div>
+      <div class="errorfName error" *ngIf="!lName.valid && lName.touched">
+        <span>Last name is not valid</span>
+      </div>
+    </div>
+
+    <div class="email" style="margin-bottom: 40px">
+      <label for="email"></label>
+      <div>
+        <input
+          type="text"
+          name="email"
+          placeholder="Email"
+          class="inputBox"
+          required
+          email
+          #email="ngModel"
+          ngModel
+        />
+      </div>
+      <div class="errorfName error" *ngIf="!email.valid && email.touched">
+        <span>Email is not valid</span>
+      </div>
+    </div>
+    <div class="password" style="margin-bottom: 40px">
+      <label for="password"></label>
+      <div>
+        <input
+          type="password"
+          name="password"
+          placeholder="password"
+          class="inputBox"
+          required
+          ngModel
+          #password="ngModel"
+          [(ngModel)]="pass"
+        />
+      </div>
+      <div class="errorfName error" *ngIf="!password.valid && password.touched">
+        <span>Please enter password</span>
+      </div>
+    </div>
+    <div class="cPassword" style="margin-bottom: 40px">
+      <label for="cPswword"></label>
+      <div>
+        <input
+          type="password"
+          [(ngModel)]="confirmPassword"
+          name="cPassword"
+          placeholder="Confirm Password"
+          class="inputBox"
+          required
+          ngModel
+          #cPassword="ngModel"
+        />
+      </div>
+      <div
+        class="errorfName error"
+        *ngIf="
+          (!cPassword.valid && cPassword.touched && cPassword) ||
+          (pass != confirmPassword && cPassword.touched)
+        "
+      >
+        <span>Password is not matching</span>
+      </div>
+    </div>
+    <button
+      type="submit"
+      [disabled]="!f.valid || pass != confirmPassword"
+      class="login"
+    >
+      Sign up
+    </button>
+  </form>
+</div>
