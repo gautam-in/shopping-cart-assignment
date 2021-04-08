@@ -5,8 +5,6 @@ export default function ProductItem({product,actions,cartData,currentLogedInUser
   const router= useRouter()
 
     function addToCart(item) {
-        // checking if user is logged in
-        if (currentLogedInUser) {
         const itemAlreadyInCart = cartData&&cartData.length ? 
         cartData.findIndex((cartItem)=>cartItem.id === item.id):-1;
         // if item in cart increase the count
@@ -16,12 +14,7 @@ export default function ProductItem({product,actions,cartData,currentLogedInUser
         // if item not in cart add item to cart
         item.count = 1
         return actions.addItemToCart(item);   
-        } 
-        // prompting user to login to buy the product   
-        else {
-         alert('log in to buy the products');
-         return router.push({pathname:"/login"});
-     }
+       
     }
 
     return(
