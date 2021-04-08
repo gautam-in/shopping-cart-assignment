@@ -5,9 +5,10 @@ import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 
 import { ProductsRoutingModule } from './products-routing.module';
 import { ProductListComponent } from './components/product-list/product-list.component';
+import { ProductCardComponent } from './components/product-card/product-card.component';
 
 @NgModule({
-  declarations: [ProductListComponent],
+  declarations: [ProductListComponent, ProductCardComponent],
   imports: [
     CommonModule,
     RouterModule,

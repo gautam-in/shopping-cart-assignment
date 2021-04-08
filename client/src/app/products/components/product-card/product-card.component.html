@@ -1,0 +1,79 @@
+<div class="card m-0">
+  <h5 class="card-title font-weight-bold px-2 pt-2" id="name-{{ product.id }}">
+    {{ product.name }}
+  </h5>
+
+  <div class="d-flex d-lg-block align-content-center">
+    <div class="image-container t-half-width">
+      <picture>
+        <source [srcset]="product.imageURL + '.webp'" type="image/webp" />
+        <source
+          [srcset]="product.imageURL + '.' + product.imageType"
+          [type]="'image/' + product.imageType"
+        />
+        <img
+          alt=""
+          class="card-img-top align-self-center"
+          [src]="product.imageURL + '.' + product.imageType"
+        />
+      </picture>
+    </div>
+
+    <div class="card-body t-half-width">
+      <div class="product-description-container h-100">
+        <p
+          class="card-text product-description p-1"
+          [title]="product.description"
+        >
+          {{ product.description }}
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="card-body pt-0">
+    <div
+      class="d-flex justify-content-end justify-content-lg-between align-items-center"
+    >
+      <p class="card-text d-lg-block d-none m-0">MRP Rs {{ product.price }}</p>
+
+      <span class="sr-only" aria-live="assertive">
+        {{ product.quantityInCart }} items of {{ product.name }} in cart
+      </span>
+
+      <button
+        class="btn btn-primary"
+        *ngIf="!product.quantityInCart; else productInCart"
+        [attr.aria-describedby]="'name-' + product.id"
+        (click)="addToCart.emit(product)"
+      >
+        <span>Buy Now</span>
+        <span class="d-block d-lg-none"> @ Rs {{ product.price }}</span>
+      </button>
+
+      <ng-template #productInCart>
+        <div class="d-flex">
+          <button
+            class="btn btn-primary"
+            aria-label="Remove item from cart"
+            [attr.aria-describedby]="'name-' + product.id"
+            (click)="removeFromCart.emit(product)"
+          >
+            -
+          </button>
+          <span class="quantity-in-cart mx-2">
+            {{ product.quantityInCart }}
+          </span>
+          <button
+            class="btn btn-primary"
+            aria-label="Add item to cart"
+            [attr.aria-describedby]="'name-' + product.id"
+            (click)="addToCart.emit(product)"
+          >
+            +
+          </button>
+        </div>
+      </ng-template>
+    </div>
+  </div>
+</div>
