@@ -57,8 +57,12 @@ export class HeaderService {
   fetchCategories() {
     this._http.get('server/categories/index.get.json').subscribe((data) => {
       this.categories = data;
+     this.categories = this.categories.sort((a, b)=>{
+        return a.order - b.order
+       })
       console.log('cat==========', this.categories);
-      return this.categories;
+      return this.categories
+    //  return this.categories;
     });
   }
 }

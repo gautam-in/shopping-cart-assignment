@@ -2,9 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CartComponent } from './cart/cart.component';
 import { HeaderComponent } from './header.component';
-import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
-import { ProductComponent } from './product/product.component';
 import { RegisterComponent } from './register/register.component';
 
 const routes: Routes = [
@@ -22,16 +20,18 @@ const routes: Routes = [
       },
       {
         path: 'home',
-        component: HomeComponent,
+        loadChildren: ()=>import('../home/home.module').then(module=>module.HomeModule)
+        //component: HomeComponent,
       },
       {
         path: 'product',
-        component: ProductComponent,
+        loadChildren: ()=>import('../product/product.module').then(module=>module.ProductModule)
+        //component: ProductComponent,
       },
-      {
-        path: 'product/:category',
-        component: ProductComponent,
-      },
+      // {
+      //   path: 'product/:category',
+      //   component: ProductComponent,
+      // },
       {
         path: 'cart',
         component: CartComponent,

@@ -1,0 +1,61 @@
+.inner-row {
+    max-width: 100%;
+    display: contents;
+  }
+  .col-4 {
+    padding: 0px 10px;
+    border-right: 2px solid rgb(252, 241, 241);
+    border-bottom: 3px dotted rgb(231, 224, 224);
+    box-shadow: 3px 0px 3px rgb(252, 241, 241);
+    margin-left: 17px;
+    max-width: 25%;
+    margin: 0;
+  }
+  
+  img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+    padding-bottom: 5px;
+  }
+  
+  .name {
+    height: 50px;
+    padding-top: 20%;
+    margin-bottom: 20%;
+  }
+  
+  h1 {
+    font-size: 110%;
+    font-weight: 1000;
+    text-align: center;
+  }
+  
+  h2 {
+    text-align: center;
+    margin-top: 20%;
+  }
+  
+  .btn-danger {
+    margin-left: 50%;
+  }
+  
+  .description {
+    background-color: rgb(245, 237, 237);
+    height: 150px;
+  }
+  
+  p {
+    padding: 5% 10% 5% 5%;
+    font-size: 80%;
+    line-height: 145%;
+    text-align: left;
+    margin-top: 10%;
+  }
+  
+  .price {
+    float: left;
+    padding: 10px 2px;
+  }
+  

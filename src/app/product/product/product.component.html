@@ -1,36 +1,15 @@
 <div class="container">
-  <div class="row">
+ <div class="row">
     <div class="col-2">
-      <nav class="nav flex-column">
-        <a class="nav-link active" aria-current="page">
-          <button (click)="getProductByCategory('Fruits & Vegetables')">
-            Fruits & Vegetables
-          </button></a
-        >
-
-        <a class="nav-link">
-          <button (click)="getProductByCategory('Bakery Cakes and Dairy')">
-            Bakery Cakes and Dairy
-          </button>
-        </a>
-        <a class="nav-link">
-          <button (click)="getProductByCategory('Beverages')">
-            Beverages
-          </button></a
-        >
-        <a class="nav-link">
-          <button (click)="getProductByCategory('Beauty and Hygiene')">
-            Beauty and Hygiene
-          </button></a
-        >
-        <a class="nav-link">
-          <button (click)="getProductByCategory('Baby Care')">
-            Baby Care
-          </button></a
-        >
+      <nav class="nav flex-column" *ngFor="let category of categoryList" >
+        <a class="nav-link" *ngIf ="category.enabled">
+          <button (click)="getProductByCategory(category.id)">
+           {{category.name}}
+          </button></a>
       </nav>
     </div>
     <div class="col-10">
+      <ng-container *ngIf="!hideShowProductList">
       <div class="row" *ngFor="let row of productPerRow">
         <div class="inner-row" *ngFor="let p of row">
           <div class="col-4">
@@ -60,6 +39,9 @@
           </div>
         </div>
       </div>
+    </ng-container>
+
+      <app-product-list  *ngIf="hideShowProductList"  [filterCategory]="filteredProduct"></app-product-list>
     </div>
-  </div>
+  </div> 
 </div>
