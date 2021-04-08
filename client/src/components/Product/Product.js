@@ -1,5 +1,6 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
+import Button from "../Button/Button";
 
 function Product({ product, handlecart }) {
   const history = useHistory();
@@ -26,9 +27,9 @@ function Product({ product, handlecart }) {
           </div>
           <div className="card-footer">
             <div className="price">MRP Rs. {product.price}</div>
-            <button className="btn btn-primary my-1" onClick={handleBuy}>
+            <Button className="my-1" variant="primary" onClick={handleBuy}>
               Buy Now
-            </button>
+            </Button>
           </div>
         </div>
       </div>

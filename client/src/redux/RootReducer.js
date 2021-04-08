@@ -1,7 +1,7 @@
 import { combineReducers } from "redux";
 import BannerReducer from "../components/Banner/BannerReducer";
-import LoginReducer from "../components/Login/LoginReducer";
-import ProductReducer from "../components/Products/ProductReducer";
+import LoginReducer from "../containers/Login/LoginReducer";
+import ProductReducer from "../containers/Products/ProductReducer";
 
 const appReducer = combineReducers({
   login: LoginReducer,

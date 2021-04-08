@@ -1,29 +1,22 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
-import { useSelector, useDispatch } from "react-redux";
-import {
-  incrementQtyStart,
-  decrementQtyStart,
-} from "../Products/ProductActions";
+import { useSelector } from "react-redux";
+import CartItem from "../../components/CartItem/CartItem";
+import Button from "../../components/Button/Button";
+
 function Cart() {
   const { cartItems } = useSelector((state) => state.product);
   const history = useHistory();
-  const dispatch = useDispatch();
 
   // close cart
   const handleCloseCart = () => {
     history.push("/products");
   };
 
-  // increment cart item qty
-  const handleIncrementItemQty = (payload) => {
-    dispatch(incrementQtyStart(payload));
+  const handleStarShopping = () => {
+    history.push("/products");
   };
 
-  // decrement cart item qty
-  const handleDecrementItemQty = (payload) => {
-    dispatch(decrementQtyStart(payload));
-  };
   return (
     <div className="cart-overlay">
       <div className="container cart-container">
@@ -49,41 +42,7 @@ function Cart() {
           </div>
           <div className="cart-body">
             {cartItems?.length > 0 ? (
-              cartItems.map((item) => (
-                <div className="cart-item" key={item.id}>
-                  <div className="cart-item-image">
-                    <img
-                      className="img-fluid"
-                      src={item.imageURL}
-                      alt={item.name}
-                    />
-                  </div>
-                  <div className="cart-item-info">
-                    <div className="cart-item-title">{item.name}</div>
-                    <div className="cart-item-calculation">
-                      <button
-                        className="button btn btn-primary btn-rounded"
-                        onClick={() => handleDecrementItemQty(item)}
-                        disabled={item.count <= 1}
-                      >
-                        -
-                      </button>
-                      <span>{item.count}</span>
-                      <button
-                        className="button btn btn-primary btn-rounded"
-                        onClick={() => handleIncrementItemQty(item)}
-                      >
-                        +
-                      </button>
-                      <span>x</span>
-                      <span>Rs.{item.price}</span>
-                      <div className="total ml-auto">
-                        Rs.{item.count * item.price}
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              ))
+              cartItems.map((item) => <CartItem item={item} key={item.id} />)
             ) : (
               <div className="m-auto text-center">
                 <div className="cart-item-title">No items in your cart</div>
@@ -103,7 +62,7 @@ function Cart() {
                 <div className="mb-1 text-center">
                   Promo can be applied on payment page
                 </div>
-                <button className="btn btn-primary btn-block btn-checkout">
+                <Button variant="primary" className=" btn-block btn-checkout">
                   Proceed to Checkout
                   <span className="price">
                     Rs.
@@ -115,15 +74,29 @@ function Cart() {
                       )}{" "}
                     {">"}
                   </span>
-                </button>{" "}
+                </Button>
+                {/* <button >
+                  Proceed to Checkout
+                  <span className="price">
+                    Rs.
+                    {cartItems?.length > 0 &&
+                      cartItems.reduce(
+                        (total, current) =>
+                          total + current.count * current.price,
+                        0
+                      )}{" "}
+                    {">"}
+                  </span>
+                </button>{" "} */}
               </>
             ) : (
-              <button
-                className="btn btn-primary btn-block"
-                onClick={() => history.push("/products")}
+              <Button
+                variant="primary"
+                className=" btn-block "
+                onClick={handleStarShopping}
               >
                 Start Shopping
-              </button>
+              </Button>
             )}
           </div>
         </div>

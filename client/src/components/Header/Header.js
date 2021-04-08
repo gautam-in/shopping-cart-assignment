@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { NavLink, useHistory, useLocation } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import { getProductsSuccess } from "../Products/ProductActions";
-import { getLogoutStart } from "../Login/LoginActions";
+import { getProductsSuccess } from "../../containers/Products/ProductActions";
+import { getLogoutStart } from "../../containers/Login/LoginActions";
 
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);

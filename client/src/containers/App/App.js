@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import { Switch, useLocation } from "react-router-dom";
-import Footer from "../Footer/Footer";
-import Header from "../Header/Header";
+import Footer from "../../components/Footer/Footer";
+import Header from "../../components/Header/Header";
 import Routes from "../../routes/Routes";
 
 function App() {

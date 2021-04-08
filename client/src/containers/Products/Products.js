@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
-import Product from "../Product/Product";
+import Product from "../../components/Product/Product";
 import { useDispatch, useSelector } from "react-redux";
 import { getProductsStart, getAddToCartStart } from "./ProductActions";
-import Sidebar from "../Sidebar/Sidebar";
+import Sidebar from "../../components/Sidebar/Sidebar";
 import { useLocation } from "react-router";
 function Products() {
   const [selectedCategory, setSelectedCategory] = useState("");

@@ -1,10 +1,9 @@
 import React from "react";
-import { Route } from "react-router-dom";
-import Cart from "../components/Cart/Cart";
-import Home from "../components/Home/Home";
-import Login from "../components/Login/Login";
-import Products from "../components/Products/Products";
-import Register from "../components/Register/Register";
+import Cart from "../containers/Cart/Cart";
+import Home from "../containers/Home/Home";
+import Login from "../containers/Login/Login";
+import Products from "../containers/Products/Products";
+import Register from "../containers/Register/Register";
 import ProtectedRoute from "./ProtectedRoute";
 import RestrictedRoute from "./RestrictedRoute";
 

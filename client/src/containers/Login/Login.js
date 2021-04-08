@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
+import Button from "../../components/Button/Button";
 import { EMAIL_REGEX } from "../../constants";
 import { getLoginStart } from "./LoginActions";
 
@@ -99,9 +100,9 @@ function Login() {
               />
               <label htmlFor="password">Password</label>
             </div>
-            <button type="submit" className="btn btn-primary btn-block">
+            <Button type="submit" variant="primary" className="btn-block">
               Login
-            </button>
+            </Button>
           </form>
         </div>
       </div>

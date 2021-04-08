@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router";
+import Button from "../Button/Button";
 import { getBannersStart } from "./BannerActions";
 function Banner() {
   const { banners = [] } = useSelector((state) => state.banner);
@@ -11,6 +12,9 @@ function Banner() {
     dispatch(getBannersStart());
   }, []);
 
+  const handleCategory = (e) => {
+    history.push(`/products?category=${e.target.id}`);
+  };
   return (
     <div>
       {banners &&
@@ -32,14 +36,11 @@ function Banner() {
               <div className="space text-center">
                 <h4 className="title-xl">{banner.name}</h4>
                 <p className="title">{banner.description}</p>
-                <button
-                  className="btn btn-primary"
-                  onClick={() =>
-                    history.push(`/products?category=${banner.id}`)
-                  }
-                >
-                  Explore {banner.name}
-                </button>
+                <Button
+                  variant="primary"
+                  onClick={handleCategory}
+                  id={banner.id}
+                >{`Explore ${banner.name}`}</Button>
               </div>
             </div>
           </div>

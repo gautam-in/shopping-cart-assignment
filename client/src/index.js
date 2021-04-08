@@ -6,7 +6,7 @@ import "./styles/main.scss";
 
 import { Provider } from "react-redux";
 import Store from "./redux/Store";
-import App from "./components/App/App";
+import App from "./containers/App/App";
 
 function Index() {
   return (

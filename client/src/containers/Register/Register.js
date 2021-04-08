@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
+import Button from "../../components/Button/Button";
 
 import { EMAIL_REGEX } from "../../constants";
 
@@ -126,9 +127,9 @@ function Register() {
                 <span className="form-error">{error.confirmPassword}</span>
               )}
             </div>
-            <button type="submit" className="btn btn-primary btn-block">
+            <Button type="submit" variant="primary" className="btn-block">
               Signup
-            </button>
+            </Button>
           </form>
         </div>
       </div>
