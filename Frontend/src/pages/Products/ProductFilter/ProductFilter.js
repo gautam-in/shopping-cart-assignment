@@ -1,11 +1,12 @@
 import React, {useEffect, useState} from 'react';
 import {useSelector} from 'react-redux';
-import {Link} from 'react-router-dom';
+import {useHistory} from 'react-router-dom';
 import PropTypes from 'prop-types';
 import {allCategoriesData} from '../../../selector';
 import './ProductFilter.scss';
 
 const ProductFilter = React.memo(({filterId}) => {
+  const history = useHistory();
   const [activeId, setActiveId] = useState(null);
 
   const {loading, data, error} = useSelector((state) =>
@@ -16,28 +17,25 @@ const ProductFilter = React.memo(({filterId}) => {
     setActiveId(filterId);
   }, [filterId]);
 
-  const handleClick = (id) => {
-    if (activeId === id) {
-      setActiveId(null);
-    } else {
-      setActiveId(id);
-    }
+  const handleClick = (value) => {
+    const state = {id: activeId === value ? null : value};
+    history.push({
+      pathname: '/products',
+      state,
+    });
+    setActiveId(state.id);
   };
 
   const categoriesList = data.map((category) => {
     const {id, name} = category;
     return (
-      <li key={id}>
-        <Link
-          to={{
-            pathname: '/products',
-            state: {id: activeId === id ? null : id},
-          }}
-          className={activeId === id ? 'is-active' : ''}
-          onClick={() => handleClick(id)}
-        >
-          {name}
-        </Link>
+      <li
+        aria-hidden="true"
+        key={id}
+        className={activeId === id ? 'is-active' : ''}
+        onClick={() => handleClick(id)}
+      >
+        <span>{name}</span>
       </li>
     );
   });

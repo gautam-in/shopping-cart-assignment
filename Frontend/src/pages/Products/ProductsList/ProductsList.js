@@ -52,7 +52,7 @@ const ProductList = React.memo(({filterId}) => {
   return (
     <div className="product-list-wrap">
       {loading && <h1>Loading....</h1>}
-      {!!data && data.length && <ul className="clearfix row">{productList}</ul>}
+      {!loading && !error && <ul className="clearfix row">{productList}</ul>}
       {error && <h1>Something went wrong!</h1>}
     </div>
   );

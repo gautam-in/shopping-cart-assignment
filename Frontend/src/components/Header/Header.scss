@@ -1,6 +1,6 @@
 @import '../../styles/global';
 
-.header-wrap {
+header {
   @extend parentElement;
   background-color: $white-color;
 }
@@ -18,10 +18,15 @@ header {
   }
 }
 
+.navbar {
+  padding: 0px;
+}
+
 .navbar-nav {
   list-style: none;
+  margin: 0 5rem;
   li a {
-    color: $black-color;
+    color: $dark-grey-color;
     font-size: 1rem;
     font-weight: 800;
     padding: 0px 10px;
@@ -30,10 +35,14 @@ header {
 }
 .navbar-text {
   padding-bottom: 4.5rem;
+  li a {
+    color: $black-color;
+  }
 }
 .cart-header-wrap {
-  right: 5rem;
-  bottom: 1rem;
+  position: absolute;
+  right: 1rem;
+  bottom: 0;
   background-color: $grey-color;
   padding: 15px;
   cursor: pointer;
@@ -79,10 +88,6 @@ header {
   }
 
   .cart-header-wrap {
-    position: absolute;
-    right: 10px;
-    top: 0.3rem;
-    bottom: 0.5rem;
-    max-height: 50px;
+    padding: 10px;
   }
 }

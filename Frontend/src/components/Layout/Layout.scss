@@ -18,7 +18,7 @@ body {
   @extend parentElement;
   overflow: hidden;
   min-height: calc(100vh - 44px);
-  padding-top: 125px;
+  padding-top: 106px;
 }
 
 button {
@@ -36,4 +36,8 @@ button {
     margin: 0;
     padding: 0;
   }
+}
+
+.container-wrap {
+  position: relative;
 }

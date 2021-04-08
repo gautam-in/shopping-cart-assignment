@@ -18,8 +18,8 @@ import {
 export function* createAddToCart(data) {
   const {product} = data;
   try {
-    yield put(createAddToCartSuccess(normalize([product], [schema])));
     // const productData = yield call(Api.addToCart, product);
+    yield put(createAddToCartSuccess(normalize([product], [schema])));
   } catch (err) {
     yield put(createAddToCartFailure());
   }

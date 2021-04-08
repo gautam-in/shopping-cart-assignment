@@ -7,7 +7,10 @@
     "dev": "webpack serve --mode development",
     "build": "webpack --mode production",
     "lint": "eslint ./src --cache && echo \"No linting errors\"",
-    "lint:fix": "eslint ./src --fix"
+    "lint:fix": "eslint ./src --fix",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage"
   },
   "author": "",
   "license": "ISC",
@@ -20,6 +23,8 @@
     "axios": "^0.21.1",
     "bootstrap": "^4.6.0",
     "dotenv-webpack": "^7.0.2",
+    "eslint-plugin-testing-library": "^3.10.2",
+    "identity-obj-proxy": "^3.0.0",
     "image-webpack-loader": "^7.0.1",
     "jquery": "^3.6.0",
     "normalizr": "^3.6.1",
@@ -44,7 +49,11 @@
     "@babel/plugin-proposal-class-properties": "^7.12.1",
     "@babel/preset-env": "^7.12.1",
     "@babel/preset-react": "^7.12.5",
+    "@testing-library/jest-dom": "^5.11.10",
+    "@testing-library/react": "^11.2.6",
+    "@testing-library/user-event": "^13.1.1",
     "babel-eslint": "^10.1.0",
+    "babel-jest": "^26.6.3",
     "babel-loader": "^8.2.1",
     "clean-webpack-plugin": "^3.0.0",
     "css-loader": "^5.2.0",
@@ -53,6 +62,7 @@
     "eslint-config-prettier": "^6.15.0",
     "eslint-loader": "^4.0.2",
     "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jest-dom": "^3.7.0",
     "eslint-plugin-jsx-a11y": "^6.4.1",
     "eslint-plugin-prettier": "^3.1.4",
     "eslint-plugin-react": "^7.21.5",
@@ -60,6 +70,7 @@
     "eslint-webpack-plugin": "^2.3.0",
     "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.0.0-alpha.14",
+    "jest": "^26.6.3",
     "prettier": "^2.1.2",
     "sass": "^1.32.8",
     "sass-loader": "^11.0.1",
@@ -67,5 +78,22 @@
     "webpack": "^5.4.0",
     "webpack-cli": "^4.2.0",
     "webpack-dev-server": "^3.11.0"
+  },
+  "jest": {
+    "setupFilesAfterEnv": [
+      "@testing-library/jest-dom/extend-expect"
+    ],
+    "collectCoverageFrom": [
+      "src/**/*.{ts,tsx,js,jsx}",
+      "!src/index.js",
+      "!src/index.js",
+      "!src/types.js",
+      "!src/serviceWorker.js",
+      "!src/**/*.d.js"
+    ],
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/assetsTransformer.js",
+      "\\.(css|less|scss|sass)$": "<rootDir>/assetsTransformer.js"
+    }
   }
 }

@@ -43,9 +43,14 @@
 
 .sidebar-cart-body-wrap {
   background-color: $grey-color;
-  padding: 15px;
-  height: calc(100vh - 235px);
-  overflow: auto;
+  height: calc(100vh - 170px);
+  overflow: hidden;
+}
+
+.sidebar-cart-body-main {
+  overflow-y: auto;
+  height: calc(100% - 60px);
+  padding: 0px 15px;
 }
 
 .cart-list-wrap {
