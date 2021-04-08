@@ -10,6 +10,7 @@ import { Product } from 'src/app/model/Products.model';
 export class SidebarComponent implements OnInit {
   @Input() categories : Category[] = []
   @Output() selectedItem = new EventEmitter<Category>();
+  isExpanded : boolean = false;
   selectedCategory : Category = {} as Category
   constructor() { }
 
@@ -19,6 +20,11 @@ export class SidebarComponent implements OnInit {
   setSelectedCategory(category:Category){
       this.selectedCategory =  category;
       this.selectedItem.emit(category);
+      this.openAndCloseDropdown();
+  }
+
+  openAndCloseDropdown(){
+    this.isExpanded = !this.isExpanded
   }
 
 }

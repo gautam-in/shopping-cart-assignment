@@ -2,7 +2,7 @@ import { Injectable } from "@angular/core";
 import { Router } from "@angular/router";
 import { Effect ,Actions, ofType } from "@ngrx/effects";
 import { of } from "rxjs";
-import { catchError, map, switchMap, tap } from "rxjs/operators";
+import { catchError, filter, map, switchMap, tap } from "rxjs/operators";
 import { BackendInteractionService } from "../backend-interaction.service";
 import * as authActions from './auth.actions'
 
@@ -44,9 +44,11 @@ signInUser = this.actions.pipe(
  refresh = this.actions.pipe(
    ofType(authActions.SIGN_IN,authActions.SIGN_UP),
    tap((authDetails:authActions.SignIn)=>{
-    let expiryTime = this.getExpiryDate(Number(authDetails.payload.expiresIn))
-    let userDetails = {...authDetails,expiresIn : expiryTime} 
-    localStorage.setItem('user',JSON.stringify(userDetails.payload))
+    if(!localStorage.getItem('user')){
+      let expiryTime = this.getExpiryDate(Number(authDetails.payload.expiresIn))
+      let userDetails = {...authDetails.payload,expiresIn : expiryTime} 
+      localStorage.setItem('user',JSON.stringify(userDetails))
+    }
    })
 )
 
@@ -68,7 +70,7 @@ redirectToLogin = this.actions.pipe(
 
 
 getExpiryDate(milliSeconds:number){
-    return new Date(new Date().getTime() + milliSeconds);
+    return new Date(new Date().getTime() + milliSeconds*1000);
 }
 constructor(private actions:Actions,private dataService:BackendInteractionService,private route:Router){
          

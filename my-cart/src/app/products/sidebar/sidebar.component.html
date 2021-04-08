@@ -1,4 +1,4 @@
-<aside>
+<ng-template #navigation>
     <nav class="side-navigation" >
         <ul class="side-navigation-items">
             <li class="side-navigation-item" *ngFor="let category of categories;let i=index" [class.active-category]="selectedCategory.name === category.name">
@@ -6,4 +6,24 @@
             </li>
         </ul>
     </nav>
+</ng-template>
+
+<aside>
+    <div class="categories" class="mobile-navigation">
+        <input class="category-dropdown" type="text" [(ngModel)]="selectedCategory.name" (click)="openAndCloseDropdown()" name="category-dropdown" id="category-dropdown"readonly />
+        <span class="material-icons expand-icon-up" (click)="openAndCloseDropdown()" *ngIf="!isExpanded">
+            expand_less
+        </span>
+        <span class="material-icons expand-icon-down" (click)="openAndCloseDropdown()" *ngIf="isExpanded">
+            expand_more
+        </span>
+        <ng-container *ngIf="isExpanded">
+           <ng-container *ngTemplateOutlet="navigation"></ng-container>
+        </ng-container> 
+    </div>
+    <div class="categories" class="desktop-navigation">
+        <ng-container *ngTemplateOutlet="navigation"></ng-container>
+    </div>
 </aside>
+
+

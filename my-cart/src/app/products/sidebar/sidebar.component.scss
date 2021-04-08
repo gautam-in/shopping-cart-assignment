@@ -1,4 +1,5 @@
 @import './../../sass/variables';
+@import './../../sass/mixins';
 
 .side-navigation{
     &-item{
@@ -13,10 +14,46 @@
     }
 }
 
+.mobile-navigation{
+    display : none;
+
+    @include responsive(mobile){
+        display: inherit;
+    }
+}
+
+.desktop-navigation{
+    display: inherit;
+    @include responsive(mobile){
+        display: none;
+    }
+}
+
 
 .active-category{
     background-color: $color-primary;
     .side-navigation-link{
-        color:white;
+        color: $color-white
     }
 }
+
+.categories{
+    position: relative;
+}
+
+.category-dropdown{
+    width : 100%;
+    padding: 1rem 2rem;
+    background-color: $color-primary;
+    border:none;
+    color : $color-white
+}
+
+
+.expand-icon-up,.expand-icon-down{
+    position: absolute;
+    right: 2%;
+    color : white;
+}
+
+

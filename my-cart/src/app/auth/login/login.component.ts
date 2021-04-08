@@ -18,7 +18,6 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.store.dispatch(new productActions.FetchCategories());
     this.getQueryParams();
   }
 
@@ -29,12 +28,12 @@ export class LoginComponent implements OnInit {
     }else{
       this.store.dispatch(new authActions.SignUpStart({email,password,returnSecureToken:true}));
     }
-    
+    this.store.dispatch(new productActions.FetchCategories());
   }
 
   getQueryParams(){
-      this.router.queryParams.subscribe(params=>{
-         this.isLogin = params['action'] === 'login' ? true : false
+      this.router.queryParamMap.subscribe(params=>{
+         this.isLogin = params.get('action') === 'login' ? true : false
       })
   }
 

@@ -1,4 +1,7 @@
 <section class="category-section">
+    <div class="col-12  carousal">
+      <app-carousal [bannersList]="bannerItems"></app-carousal>
+    </div>
     <div class="col-12 categories" *ngFor="let category of categoryItems | order : 'order';let bannerIndex=index">
       <figure class="category-fighure">
           <img class="category-image" src="assets{{category.imageUrl}}" [alt]="category.description" [title]="category.description"/>
