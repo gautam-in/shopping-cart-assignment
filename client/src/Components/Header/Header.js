@@ -12,8 +12,8 @@ const Header = () => {
       <div className="navbar-section">
         <img src={logo} alt={"Sabka Bazaar Logo"} height="60" width="140" className="logo" aria-label={"Sabka Bazaar Logo"} />
         <nav>
-          <Link to={routes.home} aria-label={"Nav bar for home"}>{HomeLink}</Link>
-          <Link to={routes.products} aria-label={"Nav bar for products"}>{ProductsLink}</Link>
+          <Link to={routes.home} aria-label={"Navigation link for home"}>{HomeLink}</Link>
+          <Link to={routes.products} aria-label={"Navigation link for products"}>{ProductsLink}</Link>
         </nav>
       </div>
       <CartIcon />

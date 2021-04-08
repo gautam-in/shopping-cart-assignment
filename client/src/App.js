@@ -14,9 +14,12 @@ import Products from "./Components/Products/Products";
 import "./App.scss";
 import { alertActions } from "./_actions";
 import Cart from "./Components/Cart/Cart";
+import LoadingIndicator from "./Components/LoadingIndicator/LoadingIndicator";
 
 const App = ({
   loggedIn = false,
+  loggingIn,
+  registering,
   alert = {},
   showModal,
   ...otherProps
@@ -29,6 +32,10 @@ const App = ({
   }, [history.location])
   return (
     <div className="App">
+      {
+        loggingIn || registering ? <LoadingIndicator />
+          : ""
+      }
       <Router history={history}>
         <Header />
         {alert.message &&
@@ -50,9 +57,9 @@ const App = ({
               <Login />
             )
           } />
+          <PrivateRoute exact path={routes.productById} component={Products} />
+          <PrivateRoute path={routes.products} component={Products} />
           <Route exact path={routes.register} component={Register} />
-          <Route exact path={routes.productById} component={Products} />
-          <Route path={routes.products} component={Products} />
         </Switch>
       </Router>
       <Footer />
@@ -61,10 +68,11 @@ const App = ({
 };
 
 const mapStateToProps = (state) => {
-  const { authentication, alert, cart } = state;
-  const { loggedIn } = authentication;
+  const { authentication, alert, cart, registration } = state;
+  const { registering } = registration;
+  const { loggedIn, loggingIn } = authentication;
   const { showModal } = cart;
-  return { loggedIn, alert, showModal };
+  return { loggedIn, alert, showModal, loggingIn, registering };
 }
 
 const mapDispatchToProps = {

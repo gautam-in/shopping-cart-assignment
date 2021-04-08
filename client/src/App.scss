@@ -1,5 +1,9 @@
 @import "./Utilities/SCSS-Variables/variables.scss";
 
+.App{
+  position: relative;
+}
+
 .alert {
   padding: 15px;
   margin-bottom: 20px;
