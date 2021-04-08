@@ -43,13 +43,13 @@
             <div class="form-group">
                 <label class="form-control-label" for="password">Password</label>
                 <input class="form-control-input" type="text" name="password" id="password" ngModel
-                    #password="ngModel" pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$" required />
+                    #password="ngModel" pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{6,}" required />
                 <div class="alert-danger" *ngIf="password?.touched && password?.errors">
                     <div *ngIf="password?.errors?.required">
                         Password is Required
                     </div>
                     <div *ngIf="password?.errors?.pattern">
-                        Minimum six characters, atleast one letter and one number:
+                        Minimum six characters, atleast one letter , one special character and one number
                     </div>
                 </div>
             </div>

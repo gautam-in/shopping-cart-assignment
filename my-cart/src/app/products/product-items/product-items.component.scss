@@ -1,3 +1,10 @@
+@import './../../sass/variables';
+
 .product-card{
-    position: relative
+    position: relative;
+    border-bottom: 2px solid $color-grey-medium;
+    border-style: dotted;
+    border-left: none;
+    border-right: none;
+    border-top: none;
 }

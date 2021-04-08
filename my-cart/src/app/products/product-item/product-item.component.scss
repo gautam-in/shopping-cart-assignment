@@ -44,13 +44,19 @@
 .product-item-description{
     width: 100%;
     background-color :$color-grey-medium;
-    height: 12rem;
+    height: 10rem;
     overflow: hidden;
     font-weight: 400;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
+
+    @include responsive(large-tabs){
+        height: 8rem;
+    }
+    
     @include responsive(small-tabs){
         width : 50%;
-        height: 17rem;
+        height: 16rem;
+        font-size: 1.2rem;
     }
 
     @include responsive(mobile){

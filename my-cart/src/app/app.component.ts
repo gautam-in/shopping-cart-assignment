@@ -20,6 +20,8 @@ export class AppComponent {
        let userAuthDetails:AuthState = JSON.parse(userDetails);
        if(new Date(userAuthDetails.expiresIn).getTime() - new Date().getTime() > 0){
          this.store.dispatch(new authActions.SignIn(userAuthDetails))
+       }else{
+        localStorage.removeItem('user');
        }
     }
   }

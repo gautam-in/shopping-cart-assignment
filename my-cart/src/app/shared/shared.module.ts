@@ -6,7 +6,7 @@ import { EllipsisPipe } from './elipsis-pipe/ellipsis.pipe';
 import { OrderPipe } from './order-pipe/order.pipe';
 import { ModalBackdropComponent } from '../modal-backdrop/modal-backdrop.component';
 import { ShoppingCartComponent } from '../shopping-cart/shopping-cart.component';
-import { FilterPipe } from './filter-pipe/filter.pipe';
+import { FilterPipe } from './filter-pipd/filter.pipe';
 
 @NgModule({
   declarations: [

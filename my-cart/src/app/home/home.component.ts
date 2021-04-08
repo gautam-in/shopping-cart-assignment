@@ -15,7 +15,9 @@ import * as productActions from './../products/productions-actions';
 export class HomeComponent implements OnInit {
   bannerItems : Banner[] = [];
   categoryItems : Category[] = []
-  constructor(private backendApi : BackendInteractionService,private store:Store<AppState>) { }
+  constructor(private backendApi : BackendInteractionService,private store:Store<AppState>) { 
+    
+  }
 
   ngOnInit(): void {
     this.getBanners();

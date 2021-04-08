@@ -23,15 +23,15 @@ export class AddCartItems{
     }
 }
 
-export class AddCartQuantity{
-    readonly type = ProductActionTypes.ADD_CART_QUANTITY;
+export class IncrementCartItemQuantity{
+    readonly type = ProductActionTypes.INC_CART_ITEM_QTY;
     constructor(public payload:Product){
         this.payload = payload;
     }
 }
 
-export class RemoveCartQuantity{
-    readonly type = ProductActionTypes.REDUCE_CART_QUANTITY;
+export class DecrementCartItemQuantity{
+    readonly type = ProductActionTypes.DEC_CART_ITEM_QTY;
     constructor(public payload:Product){
         this.payload = payload;
     }

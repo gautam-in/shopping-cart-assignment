@@ -3,6 +3,7 @@ import { ComponentFixture, fakeAsync, TestBed, tick } from '@angular/core/testin
 import { By } from '@angular/platform-browser';
 import { Store } from '@ngrx/store';
 import { RouterLinkStubDirective } from 'src/app/testing/routerLink-stub.directive';
+import { StoreStub } from 'src/app/testing/store.stub';
 
 import { MainHeaderComponent } from './main-header.component';
 
@@ -21,7 +22,7 @@ describe('MainHeaderComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [ MainHeaderComponent,RouterLinkStubDirective ],
-      providers : [{provide :Store , useValue : null},]
+      providers : [{provide :Store , useClass : StoreStub },]
     })
     .compileComponents();
   });

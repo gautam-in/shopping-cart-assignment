@@ -19,12 +19,12 @@ export function productReducer(state=InitialState,action:{type:string,payload?:a
               newCartItems = { ...state.addedProducts,[action.payload.id] : action.payload};
               return {...state,addedProducts:newCartItems}
 
-          case productActionTypes.ADD_CART_QUANTITY : 
+          case productActionTypes.INC_CART_ITEM_QTY : 
               increasedQuantity = state.addedProducts[action.payload.id].quantity + 1;
               newCartItems = {...state.addedProducts,[action.payload.id] : {...action.payload,quantity: increasedQuantity}}
               return {...state,addedProducts:newCartItems}
 
-          case productActionTypes.REDUCE_CART_QUANTITY : 
+          case productActionTypes.DEC_CART_ITEM_QTY : 
               if(state.addedProducts[action.payload.id].quantity > 1){
                 increasedQuantity = state.addedProducts[action.payload.id].quantity - 1;
                 newCartItems = {...state.addedProducts,[action.payload.id] : {...action.payload,quantity: increasedQuantity}}

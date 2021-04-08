@@ -1,6 +1,8 @@
 import { TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
+import { Store } from '@ngrx/store';
 import { AppComponent } from './app.component';
+import { StoreStub } from './testing/store.stub';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
@@ -11,6 +13,7 @@ describe('AppComponent', () => {
       declarations: [
         AppComponent
       ],
+      providers : [{provide : Store , useClass:StoreStub}]
     }).compileComponents();
   });
 
@@ -24,12 +27,5 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
     expect(app.title).toEqual('my-cart');
-  });
-
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('my-cart app is running!');
   });
 });

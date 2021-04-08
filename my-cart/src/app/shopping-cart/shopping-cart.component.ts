@@ -31,11 +31,11 @@ export class ShoppingCartComponent implements OnInit {
   }
 
   increaseQuantity(product:Product){
-     this.store.dispatch(new productActions.AddCartQuantity(product))
+     this.store.dispatch(new productActions.IncrementCartItemQuantity(product))
   }
 
   decreaseQuantity(product:Product){
-    this.store.dispatch(new productActions.RemoveCartQuantity(product))
+    this.store.dispatch(new productActions.DecrementCartItemQuantity(product))
   }
 
 }
