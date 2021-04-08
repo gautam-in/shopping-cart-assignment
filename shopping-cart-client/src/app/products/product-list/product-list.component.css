@@ -10,6 +10,11 @@
   width: 80%;
 }
 
+.checked{
+  background-color:#d00155;
+  color:#fff;
+}
+
 @media (max-width: 767px) {
   .product-list-container {
     width: 100%;

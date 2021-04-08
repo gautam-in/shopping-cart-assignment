@@ -16,6 +16,7 @@ export class ProductListComponent implements OnInit {
   categoriesData: FilterData[];
   productsListCopy: Products[];
   currCategory: string = null;
+  maintainCategoryId:any;
 
   currWinSize: any = window.innerWidth;
   isDesktop: boolean = this.currWinSize > 1024;
@@ -30,6 +31,11 @@ export class ProductListComponent implements OnInit {
 
   ngOnInit(): void {
     this.initData();
+    
+    this.maintainCategoryId=JSON.parse(localStorage.getItem('productId'));
+    if(this.maintainCategoryId){
+    this.onCheckboxChange(this.maintainCategoryId);
+    }
   }
 
   initData() {
@@ -41,9 +47,7 @@ export class ProductListComponent implements OnInit {
     forkJoin(observables).subscribe(([productsList, categoriesData]) => {
       this.productsList = productsList;
       this.productsListCopy = JSON.parse(JSON.stringify(this.productsList));
-      this.categoriesData = this.formatFilterData(
-        this.dataService.processData(categoriesData)
-      );
+      this.categoriesData = this.formatFilterData(categoriesData);
       this.filterProducts(this.currCategory);
     });
   }
@@ -60,16 +64,21 @@ export class ProductListComponent implements OnInit {
   }
 
   onSelectionChnage(categoryId: string) {
+    // this.maintainCategoryId =categoryId;
+    // localStorage.setItem('productId',JSON.stringify(this.maintainCategoryId))
     this.filterProducts(categoryId);
   }
 
   onCheckboxChange(categoryId: string) {
     this.currCategory = this.currCategory === categoryId ? null : categoryId;
+    this.maintainCategoryId =categoryId;
+    localStorage.setItem('productId',JSON.stringify(this.maintainCategoryId))
     this.filterProducts(this.currCategory);
   }
 
   private filterProducts(categoryId: string) {
     if (categoryId) {
+      setTimeout(()=>{
       this.categoriesData.forEach((category, idx) => {
         if (category.id !== categoryId) {
           category.checked = false;
@@ -80,7 +89,7 @@ export class ProductListComponent implements OnInit {
       this.productsList = [
         ...this.productsListCopy.filter((item) => item.category === categoryId),
       ];
-    } else {
+    },0) }else {
       this.categoriesData.forEach((category) => (category.checked = false));
       this.productsList = [...this.productsListCopy];
     }
@@ -94,5 +103,9 @@ export class ProductListComponent implements OnInit {
   onResize(event) {
     this.isDesktop = event.target.innerWidth > 1024;
     this.isMobile = event.target.innerWidth < 768;
+  }
+
+  ngOnDestroy(){
+    localStorage.removeItem('productId')
   }
 }

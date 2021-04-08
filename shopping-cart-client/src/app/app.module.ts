@@ -11,27 +11,15 @@ import { RegisterComponent } from './register/register.component';
 import { CaraouselComponent } from './home-page/caraousel/caraousel.component';
 import { CategoryBannerComponent } from './home-page/category-banner/category-banner.component';
 import { HttpClientModule } from '@angular/common/http';
-import { ProductCardComponent } from './products/product-card/product-card.component';
-import { ProductListComponent } from './products/product-list/product-list.component';
-import { MiniCartComponent } from './mini-cart/mini-cart.component';
-import { ModalComponent } from './modal/modal.component';
 import { CartComponent } from './cart/cart.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    HomeComponent,
-    HomeComponent,
     SigninComponent,
     FooterComponent,
     RegisterComponent,
-    CaraouselComponent,
-    CategoryBannerComponent,
-    ProductCardComponent,
-    ProductListComponent,
-    MiniCartComponent,
-    ModalComponent,
     CartComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],

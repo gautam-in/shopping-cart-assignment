@@ -20,10 +20,10 @@
   </div>
   <div class="header-right">
     <a *ngIf="setLogOut" (click)="logOut()">Log out</a>
-    <a (click)="logIn()" *ngIf="!setLogOut">log in</a>
+    <a *ngIf="!setLogOut" (click)="logIn()">log in</a>
     <a *ngIf="!setLogOut" (click)="register()">Sign up</a>
     <div *ngIf="setLogOut">
-      <a class="cart" (click)="onClickCart()">
+      <a id="miniCartBtn" class="cart" (click)="onClickCart()">
         <img src="assets/static/images/cart.svg" alt="" />
         <span id="itemsInCart">{{ noOfItems }} items</span>
       </a>

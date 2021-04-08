@@ -23,14 +23,14 @@
     />
   </div>
   <article class="category-desc">
-    <h3>{{ category.name }}</h3>
-    <p>{{ category.description }}</p>
+    <h3>{{ category?.name }}</h3>
+    <p>{{ category?.description }}</p>
 
     <a
       href="javascript: void(0)"
       class="btn explore-link"
       (click)="OnExploreClick(category.id)"
-      >Explore {{ category.key }}</a
+      >Explore {{ category?.key }}</a
     >
   </article>
 </div>

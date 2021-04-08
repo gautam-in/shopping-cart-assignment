@@ -22,14 +22,13 @@ isLoggedIn:boolean = false;
   }
   submitLogin(form:NgForm){
     this.user.email=form.value.email;
-    this.user.password=form.value.password
+    this.user.password=form.value.password;
 
      if(this.loginService.checckLoginCred(this.user)){
         this.loginService.setLoginFlag(true);
         localStorage.setItem('isLoggedIn','true');
         this.router.navigate(['/home']);
-        
-     }
+        }
       else
       this.isLoginError=true;    
   }

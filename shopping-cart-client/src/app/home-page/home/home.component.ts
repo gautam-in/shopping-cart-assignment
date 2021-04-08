@@ -26,8 +26,8 @@ export class HomeComponent implements OnInit {
     ];
 
     forkJoin(observables).subscribe(([caraouseldata, categoriesData]) => {
-      this.caraouseldata = this.dataService.processData(caraouseldata);
-      this.categoriesData = this.dataService.processData(categoriesData);
+      this.caraouseldata = caraouseldata;
+      this.categoriesData = categoriesData;
     });
   }
 }

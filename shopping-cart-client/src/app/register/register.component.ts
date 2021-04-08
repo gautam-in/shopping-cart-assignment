@@ -14,6 +14,7 @@ export class RegisterComponent implements OnInit {
     email: '',
     password: '',
   };
+  userData={}
   pass = '';
   confirmPassword = '';
   cPassword: boolean = false;
@@ -28,7 +29,8 @@ export class RegisterComponent implements OnInit {
   submitForm(form: NgForm) {
     this.user.email = form.value.email;
     this.user.password = form.value.password;
-    this.loginService.saveRegisterationData(this.user);
+    this.userData[this.user.email]=this.user;
+    this.loginService.saveRegisterationData(this.userData);
     this.loginService.setLoginFlag(true);
     localStorage.setItem('isLoggedIn', 'true');
     this.routerLink.navigate(['/home']);

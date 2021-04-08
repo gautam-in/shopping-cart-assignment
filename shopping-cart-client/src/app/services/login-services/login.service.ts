@@ -7,11 +7,11 @@ import { Register } from 'src/app/register/register.model';
 })
 export class LoginService {
   setClosingFlag = new Subject<boolean>();
-  dataArray: Register[] = [];
+  dataArray = [];
   isLoginFlag: boolean = false;
   setLogout = new Subject<boolean>();
   constructor() {}
-  saveRegisterationData(user: Register) {
+  saveRegisterationData(user) {
     if (localStorage.getItem('userData')) {
       this.dataArray = JSON.parse(localStorage.getItem('userData') || '{}');
     }
@@ -19,6 +19,9 @@ export class LoginService {
     localStorage.setItem('userData', JSON.stringify(this.dataArray));
   }
 
+  setLogOutFlag(){
+    localStorage.setItem('isLoggedIn', JSON.stringify(false));
+  }
   isLoggedIn() {
     let flag = localStorage.getItem('isLoggedIn') === 'true';
     return flag;
@@ -34,19 +37,13 @@ export class LoginService {
       : '';
 
     if (userDetails) {
-      for (let user of userDetails) {
-        if (
-          user.email === userLogin.email &&
-          user.password === userLogin.password
-        ) {
-          return true;
-        }
+      var first = userDetails.find(data=>{
+          return data[userLogin.email]
+        });
+      if(first){
+      return first[userLogin.email].password === userLogin.password;
       }
+      return false;
     }
-    return false;
-  }
-
-  setCloseFlag(flag) {
-    this.setClosingFlag.next(flag);
   }
 }

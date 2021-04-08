@@ -1,8 +1,8 @@
-<div class="cart-container" [attr.data-empty-cart]="productsInCart.length ? false : true">
+<div class="cart-container">
   <div class="modal-header">
     <h2>My cart</h2>
     <!-- Modal content -->
-    <button (keydown)="onCloseBtnKeyDown($event)" type="button" id="closebtn" (click)="onClose()"
+    <button type="button" id="closebtn" (click)="onClose()"
       aria-label="Close cart" class="close">
       <i class="fa fa-times" aria-hidden="true"></i>
     </button>
@@ -16,7 +16,7 @@
     <ul *ngIf="productsInCart.length">
       <li *ngFor="let product of productsInCart">
         <div class="cart-item-image">
-          <img class="product-card-img" [src]="product.imageURL" [alt]="product.description" width="100%" />
+          <img class="product-card-img" src="assets{{ product.imageURL }}" [alt]="product.description" width="100%" />
         </div>
         <div class="cart-item-desc">
           <div class="cart-item-title">{{ product.name }}</div>
@@ -33,7 +33,7 @@
       </li>
     </ul>
     <div class="cart-footer-banner">
-      <img src="static/images/lowest-price.png" alt=" " aria-labelledby="banner-tex" />
+      <img src="assets/static/images/lowest-price.png" alt="lower price image" aria-labelledby="banner-tex" />
       <span id="banner-tex">You won't find it cheaper anywhere</span>
     </div>
   </div>
@@ -41,18 +41,18 @@
   <div class="cart-footer">
     <div class="promo-text">Promo can be applied Home Page</div>
     <div class="cart-payment-checkout desktop">
-      <button id="checkOutBtn" (keydown)="onKeyDown($event)" (click)="onClose()" class="btn">
+      <button id="checkOutBtn" (click)="onClose()" class="btn">
         <span>Proceed to Checkout</span>
         <span>Rs. {{ checkoutAmont }} ></span>
       </button>
     </div>
 
-    <div class="cart-payment-checkout mobile">
+    <!-- <div class="cart-payment-checkout mobile">
       <button id="checkOutBtn" routerLink="home" class="btn">
         <span>Proceed to Checkout</span>
         <span>Rs. {{ checkoutAmont }} ></span>
       </button>
-    </div>
+    </div> -->
   </div>
 </ng-template>
 
@@ -63,11 +63,11 @@
       <h2>No items in your cart</h2>
       <p>Your favorite items are just a click away</p>
     </div>
-    <div class="empty-cart-button desktop">
-      <button id="emptycartBtn" (keydown)="onKeyDown($event)" (click)="onClose()" class="btn">Start Shopping</button>
-    </div>
-    <div class="empty-cart-button mobile">
+    <!-- <div class="empty-cart-button mobile">
       <button id="emptycartBtn" routerLink="home" class="btn">Start Shopping</button>
+    </div> -->
+    <div class="empty-cart-button desktop">
+      <button id="emptycartBtn" (click)="onClose()" class="btn">Start Shopping</button>
     </div>
-  </div>
+    </div>
 </ng-template>

@@ -46,12 +46,6 @@ export class SharedService {
     );
   }
 
-  public processData(data: { order: number }[]): any[] {
-    return data
-      .filter((data) => data.order > 0)
-      .sort((a, b) => a.order - b.order);
-  }
-
   private handleError(err) {
     let errorMessage: string;
     if (err.error instanceof ErrorEvent) {

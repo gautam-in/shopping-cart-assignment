@@ -26,10 +26,6 @@ export class HeaderComponent implements OnInit {
       this.setLogOut = flag;
     });
 
-    this.loginService.setClosingFlag.subscribe((modal) => {
-      this.isModal = modal;
-    });
-
     this.cartService.getCartItem.subscribe((data) => {
       this.noOfItems = data.reduce(
         (previousVal, currentVal) => previousVal + currentVal.count,
@@ -37,13 +33,8 @@ export class HeaderComponent implements OnInit {
       );
     });
   }
-
-  openModal() {
-    this.isModal = true;
-  }
-
   logOut() {
-    localStorage.setItem('isLoggedIn', JSON.stringify(false));
+    this.loginService.setLogOutFlag();
     this.setLogOut = false;
     this.router.navigate(['/signin']);
   }
@@ -52,7 +43,7 @@ export class HeaderComponent implements OnInit {
     this.router.navigate(['/signin']);
   }
   register() {
-    this.setLogOut = localStorage.getItem('isLoggedIn') == 'true';
+    //this.setLogOut = localStorage.getItem('isLoggedIn') == 'true';
     this.setLogOut = false;
     this.router.navigate(['/register']);
   }

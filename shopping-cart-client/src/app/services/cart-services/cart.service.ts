@@ -4,10 +4,10 @@ import { CartProducts } from 'src/app/models/CartProducts';
 import { Products } from 'src/app/models/Products';
 import { environment } from 'src/environments/environment';
 
-interface Res {
-  response: string;
-  responseMessage: string;
-}
+const Res = {
+  response: '',
+  responseMessage: '',
+};
 
 @Injectable({
   providedIn: 'root',
@@ -66,25 +66,10 @@ export class CartService {
     }
   }
 
-  async addToCartPost(): Promise<Res> {
+  async addToCartPost(): Promise<any> {
     const res = await fetch(`${this.apiURL}/addToCart`, {
       method: 'POST',
     }).then((res) => res.json());
     return res;
-  }
-
-  modifyItem(count: number, id: string) {
-    const currProduct = this.productsInCart.findIndex((x) => x.id === id);
-    if (currProduct > -1) {
-      this.productsInCart[currProduct].count += count;
-      if (this.productsInCart[currProduct].count === 0) {
-        this.productsInCart.splice(currProduct, 1);
-      }
-      this.cartItems.next(this.productsInCart);
-    }
-  }
-
-  clearCartItems() {
-    this.cartItems.next([]);
   }
 }

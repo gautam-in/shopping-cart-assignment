@@ -62,7 +62,7 @@ input.ng-invalid.ng-touched {
 }
 .error {
   color: red;
-  font-size: 10px;
+  font-size: 14px;
 }
 
 .sub-text {

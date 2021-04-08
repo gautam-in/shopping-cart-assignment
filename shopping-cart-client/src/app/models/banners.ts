@@ -1,4 +1,4 @@
-export interface Banners {
+export class Banners {
   bannerImageUrl: string;
   bannerImageUrl_medium: string;
   bannerImageUrl_small: string;

@@ -18,6 +18,11 @@ body{
     overflow: hidden;
   }
  
+  button[type=submit]:hover, button[type=submit]:focus, .btn:hover, .btn:focus {
+    background-color: #f30363;
+    cursor: pointer;
+  }
+
   button[type="submit"],.btn {
   font-family: "Dosis", sans-serif;
   border: none;
@@ -67,3 +72,4 @@ body{
     height: 0;
     background: transparent;
 }
+

@@ -1,5 +1,5 @@
 import { Products } from './Products';
 
-export interface CartProducts extends Products {
+export class CartProducts extends Products {
   count: number;
 }
