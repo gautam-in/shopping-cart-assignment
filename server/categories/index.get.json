@@ -6,7 +6,8 @@
     "enabled": true,
     "order": 3,
     "imageUrl": "/static/images/category/beverages.png",
-    "id": "5b675e5e5936635728f9fc30"
+    "id": "5b675e5e5936635728f9fc30",
+    "link":"/products"
   },
   {
     "name": "Bakery Cakes and Dairy",
@@ -15,7 +16,8 @@
     "enabled": true,
     "order": 2,
     "imageUrl": "/static/images/category/bakery.png",
-    "id": "5b6899123d1a866534f516de"
+    "id": "5b6899123d1a866534f516de",
+    "link":"/products"
   },
   {
     "name": "Beauty and Hygiene",
@@ -24,7 +26,8 @@
     "enabled": true,
     "order": 4,
     "imageUrl": "/static/images/category/beauty.png",
-    "id": "5b68994e3d1a866534f516df"
+    "id": "5b68994e3d1a866534f516df",
+    "link":"/products"
   },
   {
     "name": "Baby Care",
@@ -33,7 +36,8 @@
     "enabled": true,
     "order": 5,
     "imageUrl": "/static/images/category/baby.png",
-    "id": "5b6899683d1a866534f516e0"
+    "id": "5b6899683d1a866534f516e0",
+    "link":"/products"
   },
   {
     "name": "Seafood",
@@ -41,7 +45,8 @@
     "description": "Great place to buy fresh seafood.",
     "enabled": false,
     "order": -1,
-    "id": "5b68997d3d1a866534f516e1"
+    "id": "5b68997d3d1a866534f516e1",
+    "link":"/products"
   },
   {
     "name": "Fruits & Vegetables",
@@ -50,6 +55,7 @@
     "enabled": true,
     "order": 1,
     "imageUrl": "/static/images/category/fruits.png",
-    "id": "5b6899953d1a866534f516e2"
+    "id": "5b6899953d1a866534f516e2",
+    "link":"/products"
   }
 ]
