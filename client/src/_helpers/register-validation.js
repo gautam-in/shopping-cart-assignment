@@ -1,5 +1,4 @@
 export const formFieldValidations = (formData) => {
-    debugger;
     let errors = {};
     let isValid = true;
 
