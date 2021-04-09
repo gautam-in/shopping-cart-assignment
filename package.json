@@ -1,5 +1,6 @@
 {
   "name": "code-exercise",
+  "homepage":"http://snehaKums.github.io/shopping-cart-assignment",
   "version": "1.0.0",
   "description": "This is a shopping cart coding exercise",
   "main": "index.js",
@@ -8,7 +9,9 @@
     "backend": "canned -p 5000 ./server",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -58,6 +61,7 @@
   },
   "devDependencies": {
     "@testing-library/react": "^11.2.6",
+    "gh-pages": "^3.1.0",
     "jest-dom": "^4.0.0",
     "react-test-renderer": "^15.6.1"
   }
