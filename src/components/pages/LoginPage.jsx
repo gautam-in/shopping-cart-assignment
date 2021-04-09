@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import LoginForm from "./LoginForm";
+import LoginForm from "../Molecules/LoginForm";
 
 class LoginPage extends Component {
   render() {

@@ -1,16 +1,24 @@
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import React, { useState, useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { Link } from "react-router-dom";
 
-import Home from './Home';
-import LoginPage from './LoginPage'
-import RegisterPage from './RegisterPage'
-import ProductsPage from './ProductsPage';
+import Cart from "./Cart"
+import LogoImage from "../../images/logo.png"
+import CartImage from "../../images/cart.svg"
 
-import LogoImage from "../images/logo.png"
-import CartImage from "../images/cart.svg"
+function itemsCount(cart){
+    let cnt = 0;
 
-const Header = () => {
+    for (const i of cart)
+        cnt += i.qnty;
+
+    return cnt;
+}
+
+const Header = ({setCart, cart}) => {
+    const this_cart = useSelector((store) => store.cart);
     return (
-        <Router>
+        <>
         <section className="top_header">
             <div className="container">
                 <ul>
@@ -33,21 +41,16 @@ const Header = () => {
                             <li><Link to={'/products'} className="nav-link"> Products </Link></li>
                         </ul>
                     </div>
+                    {cart && <Cart setCart={setCart} />}
                     <div className="col-md-3">
-                        <div className="nav_cart">
-                            <p><img src={CartImage} alt="cart" /> 0 items</p>
+                        <div className="nav_cart" onClick={() => setCart(true)}>
+                            <p><img src={CartImage} alt="cart" /> {itemsCount(this_cart)} items</p>
                         </div>
                     </div>
                 </div>
             </div>
         </header>
-            <Switch>
-              <Route exact path='/' component={Home} />
-              <Route path='/products' component={ProductsPage} />
-              <Route path='/signin' component={LoginPage} />
-              <Route path='/signup' component={RegisterPage} />
-            </Switch>
-        </Router>
+        </>
     )
 }
 
