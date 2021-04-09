@@ -1,0 +1,42 @@
+.bannerBody {
+  margin-top: 1.5rem; }
+
+@media (min-width: 1025px) {
+  .bannerBody {
+    padding: 0 15rem; } }
+
+.carousel_viewport {
+  overflow-x: hidden;
+  box-shadow: 0 0.6rem 1.5rem -0.4rem rgba(0, 0, 0, 0.7);
+  position: relative; }
+  .carousel_viewport .visible {
+    display: inline; }
+  .carousel_viewport .hidden {
+    display: none; }
+  .carousel_viewport .pictureContainer {
+    display: flex; }
+  .carousel_viewport .arrow {
+    color: #e91e63;
+    opacity: 0.5;
+    text-decoration: none;
+    font-size: 5rem;
+    position: absolute;
+    top: 25%; }
+    .carousel_viewport .arrow:hover {
+      opacity: 1; }
+  .carousel_viewport .arrow-next {
+    right: 0; }
+
+.categories .categories_wrapper .categories_list {
+  width: 100%;
+  margin: 0;
+  box-shadow: 0 0.6rem 1.5rem -0.4rem rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: space-around; }
+  .categories .categories_wrapper .categories_list:nth-child(2n) {
+    flex-direction: row-reverse; }
+  .categories .categories_wrapper .categories_list .categories_img {
+    width: 30%;
+    padding: 1rem; }
+  .categories .categories_wrapper .categories_list .categories_description {
+    padding: 1rem; }

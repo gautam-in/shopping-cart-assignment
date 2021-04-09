@@ -1,0 +1,19 @@
+<div class="loginBody">
+    <section>
+<h1>Login</h1>
+<p>Get access to your orders, wishlist and Recommendations.</p>
+    </section>
+    <section class="loginForm">
+            <form name="login" action="/home" method="POST">
+                <label for="email">
+                    <input tabindex="0" type="email" name="email" placeholder="Email" onblur="validate('login','email','LoginEmailError')" aria-labelledby="Enter Email" required>
+                </label>
+                 <p role="alert" id="LoginEmailError" class="errorMessage"></p>
+                <label for="password">
+                    <input tabindex="0" type="password" name="password" placeholder="password" onblur="validate('login','password','LoginPasswordError')" aria-labelledby="Enter Password" required>
+                </label>
+                  <p role="alert" id="LoginPasswordError" class="errorMessage"></p>
+                <input tabindex="0" type="submit" value="Login">
+            </form>
+    </section>
+</div>
