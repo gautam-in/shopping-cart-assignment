@@ -38,7 +38,7 @@ section {
 
 button, button:focus {
   border: none;
-  outline: none; }
+ }
 
 img {
   max-width: 100%;
@@ -111,7 +111,15 @@ h3 {
   color: #ffffff;
   border: none;
   width: 100%;
-  margin-top: 20px; }
+  margin-top: 20px; 
+}
+
+/* #error-msg{
+  background-color: #fce4e4;
+  border: 1px solid #fcc2c3;
+  float: left;
+  padding: 20px 30px;
+} */
 
 .wrapper {
   width: 85%;

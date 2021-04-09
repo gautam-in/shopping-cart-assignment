@@ -1,0 +1,46 @@
+/* ------ Hero Slider --------- */
+.bx-wrapper {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  margin-bottom: 20px; }
+
+.hero-banner-slider {
+  background: #ffffff;
+  margin-bottom: 20px; }
+
+.bx-wrapper .bx-controls-direction a {
+  display: none; }
+
+/* -------- Product Section ------- */
+.category-section__image, .category-section__description {
+  display: flex;
+  align-items: center; }
+
+.category-section__description {
+  flex-direction: column;
+  justify-content: center; }
+
+.category-section p {
+  text-align: center; }
+
+.category-section .button-small {
+  width: 70%;
+  text-align: center; }
+
+section:nth-child(even) .category-section__image {
+  -ms-flex-order: 2;
+  order: 2; }
+
+/* ------- Responsive Screens -------- */
+@media screen and (min-width: 480px) {
+  .category-section .button-small {
+    width: 50%; } }
+
+@media screen and (min-width: 767px) {
+  .bx-wrapper .bx-controls-direction a {
+    display: block;
+    font-size: 160%;
+    border-radius: 50%;
+    margin: 0 -33px; }
+  .category-section .button-small {
+    width: 30%; } }

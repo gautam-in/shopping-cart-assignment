@@ -8,14 +8,20 @@ $(document).ready(function () {
 
 // Login & register
 function validateLogin() {
-  let email = document.getElementById("email").value;
-  let password = document.getElementById("password").value;
+  var form = document.getElementById('login-form');
+  const email = document.getElementById("email").value;
+  const password = document.getElementById("password").value;
   if (email == "sabka@gmail.com" && password == "sabkabazar") {
+    document.getElementById("error-msg").innerHTML = "Welcome back!";
     alert('Welcome back!');
     return true;
   } else {
-    alert("Email and password are incorrect.");
+    document.getElementById("error-msg").innerHTML = "Email and password are incorrect.";
+    document.getElementById("error-msg").setAttribute(
+      "style", "background-color: #fce4e4;width:100%; font-size: 12px; border: 1px solid #fcc2c3; float: left;padding: 20px 30px;");
+    return false;
   }
+  // window.location.reload();
 }
 
 function validateRegister() {
@@ -27,15 +33,20 @@ function validateRegister() {
   let letterNumber = /^[0-9a-zA-Z]+$/;
   let emailCheck = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
   if (fname == '' || lname == '' || email == '' || password == '' || cpassword == '') {
-    alert("Please fill all the fields");
+    document.getElementById("error-msg-register").innerHTML = "Please fill all the fields";
+    document.getElementById("error-msg-register").setAttribute("style", "background-color: #fce4e4;width:100%; font-size: 12px; border: 1px solid #fcc2c3; float: left;padding: 20px 30px;");
   } else if (!email.match(emailCheck)) {
-    alert("Enter valid Email Id");
+    document.getElementById("error-msg-register").innerHTML = "Enter valid Email Id";
+    document.getElementById("error-msg-register").setAttribute("style", "background-color: #fce4e4;width:100%; font-size: 12px; border: 1px solid #fcc2c3; float: left;padding: 20px 30px;");
   } else if (password.length < 6) {
-    alert("Password must be greater or equal to 6");
+    document.getElementById("error-msg-register").innerHTML = "Password must be greater or equal to 6";
+    document.getElementById("error-msg-register").setAttribute("style", "background-color: #fce4e4;width:100%; font-size: 12px; border: 1px solid #fcc2c3; float: left;padding: 20px 30px;");
   } else if (!password.match(letterNumber)) {
-    alert("Password must only have numbers and letters");
+    document.getElementById("error-msg-register").innerHTML = "Password must only have numbers and letters";
+    document.getElementById("error-msg-register").setAttribute("style", "background-color: #fce4e4;width:100%; font-size: 12px; border: 1px solid #fcc2c3; float: left;padding: 20px 30px;");
   } else if (password != cpassword) {
-    alert("Your passwords don't match. Try again.");
+    document.getElementById("error-msg-register").innerHTML = "Your passwords don't match. Try again.";
+    document.getElementById("error-msg-register").setAttribute("style", "background-color: #fce4e4;width:100%; font-size: 12px; border: 1px solid #fcc2c3; float: left;padding: 20px 30px;");
   } else {
     let registerObj = {
       name: fname,

@@ -26,6 +26,11 @@ body {
   }
 }
 
+.button-small:focus{
+  border: none;
+  outline: none;
+}
+
 a {
   color: inherit;
   text-decoration: none;
@@ -46,7 +51,6 @@ section {
 
 button,button:focus{
   border: none;
-  outline: none;
 }
 
 img{
@@ -102,9 +106,9 @@ h3 {
   border-radius: 290px/8px;
   -moz-border-radius: 290px/8px;
   -webkit-border-radius: 290px/8px;
-  box-shadow: 0px 10px 17px #000000d9;
-  -moz-box-shadow: 0px 10px 17px #000000d9;
-  -webkit-box-shadow: 0px 10px 17px #000000d9;
+  box-shadow: 0px 10px 17px $color-black;
+  -moz-box-shadow: 0px 10px 17px $color-black;
+  -webkit-box-shadow: 0px 10px 17px $color-black;
   z-index: -3;
   -webkit-transform: translate(-50%);
   -ms-transform: translate(-50%);

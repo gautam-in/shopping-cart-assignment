@@ -23,6 +23,10 @@ body {
     height: 0;
     visibility: hidden; }
 
+.button-small:focus {
+  border: none;
+  outline: none; }
+
 a {
   color: inherit;
   text-decoration: none;
@@ -37,8 +41,7 @@ section {
   padding: 6% 0; }
 
 button, button:focus {
-  border: none;
-  outline: none; }
+  border: none; }
 
 img {
   max-width: 100%;

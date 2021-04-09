@@ -6,7 +6,7 @@
                 <p>{{registerDesc}}</p>
             </div>
             <div class="col-xs-12 col-sm-8 col-md-6 col-lg-6 register-info__form">
-                <form action="#" autocomplete="off">
+                <form autocomplete="off" onsubmit="validateRegister()">
                     <fieldset>
                         <label for="firstname">{{firstName}}</label>
                         <input id="firstname" type="text" name="firstname" required>
@@ -28,7 +28,8 @@
                         <input id="conf-password" type="password" name="conf-password" required>
 
                         <div class="after"></div>
-                        <button class="button-large" onclick="validateRegister()">{{registerBtn}}</button>
+                        <div id="error-msg-register" class="error-msgs"></div>
+                        <button class="button-large" type="submit" value="Submit" onclick="validateRegister()">{{registerBtn}}</button>
 
                     </fieldset>
                 </form>

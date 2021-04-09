@@ -1,5 +1,5 @@
 <div class="cart-info">
-    <div class="wrapper">
+    <section class="wrapper">
         <div class="row">
             <div class="col-xs-12 cart-info__title">
                 <h2>{{cartTitle}} (<span id="prod_totcount">{{totalCounter}}</span> item)</h2>
@@ -36,17 +36,17 @@
                 </div>
             {{/if}}
         </div>
-        <div class="row cart-info__guarantee">
+        <article class="row cart-info__guarantee">
             <div class="col-xs-4 col-sm-4 col-md-2">
                 <img src="static/images/lowest-price.png" alt="">
             </div>
             <div class="col-xs-8 col-sm-8 col-md-10">
                 <p>{{priceGuarantee}}</p>
             </div>
-        </div>
+        </article>
         <div class="row cart-info__checkout">
             <p class="width-100">{{cartPromocode}}</p>
             <button class="button-large"><span>{{checkoutBtn}}</span><span id="prod_checkoutprice">Rs.{{checkoutAmount}} ></span></button>
         </div>
-    </div>
+    </section>
 </div>
