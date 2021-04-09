@@ -18,7 +18,7 @@ yarn start
 
 for starting the angular application
 ```
-Move to my-cart folder then
+Move to my-cart folder and
 
 npm install
 npm run start
