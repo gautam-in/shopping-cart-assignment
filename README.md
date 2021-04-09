@@ -27,3 +27,31 @@ yarn install
 yarn start
 
 ```
+
+Functionality overview
+The example application is a Shopping cart site called Sabka Bazzar. It uses mock server for all requests. Authentication is implemented using firebase authentication based on Email Id Password. 
+
+General functionality:
+
+Authenticate users via Firebase auth API (login/signup pages + logout)
+
+Home page (URL: /Home )
+List of Offers available is diaplyed in a carousal
+List Categories Avilable
+
+Navigation 
+
+Home and Product Navigation to see home page and products page
+Login and Register Navigation to authenticate user
+
+Product Page(URL : /Products)
+
+List of items availble to purchase
+Filter items based on category
+Options to Add Items in Cart
+
+Cart
+
+List of items added in the cart with quantity and price
+User can increase and decrease the quantity of item
+
