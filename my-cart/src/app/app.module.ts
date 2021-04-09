@@ -26,7 +26,7 @@ import { ToastrModule } from 'ngx-toastr';
     NotFoundComponent,
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
     SharedModule,
     AuthModule,
