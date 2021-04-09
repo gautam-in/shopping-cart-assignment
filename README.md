@@ -7,9 +7,14 @@ This is the base folder for the shopping cart exercise. You will have all the st
 Clone this repo and run following command for starting the mock server:
 
 ```
-npm install
-npm run start
-# or
-yarn install
-yarn start
+#Simple Node/Express with EJS SASS  and Gulp
+
+$ npm install
+$ npm install -g gulp
 ```
+
+gulp scss-css
+npm run start
+
+
+branches-> setup -> contains code setup 
