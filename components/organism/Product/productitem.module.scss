@@ -16,18 +16,21 @@ $primary-color: rgb(204, 0, 82);
     display:grid;
     grid-template-columns:  auto;
     grid-template-areas: "name""image""description""button";
-    grid-template-rows:2fr 150px 4fr 1fr;
+    grid-template-rows: 80px 150px 4fr 1fr;
     background-color:#fff; 
     border-bottom:2px dotted #ccc;
     justify-content: center;
     align-items: center;
+    grid-column-gap: 10px;
+    padding: 5px 0px
 }
 .description{
     background:#ccc;
     padding:5px;
     overflow-y:hidden;
     text-overflow:ellipsis;
-    max-height:150px
+    max-height:150px;
+    margin-bottom: 10px;
 }
 .buynow{
     background:rgb(204, 0, 82);
@@ -47,6 +50,12 @@ $primary-color: rgb(204, 0, 82);
         align-self: center;
         margin: 10px 0px;
     }
+    .description{
+        overflow-y:scroll;
+        max-height:inherit;
+
+
+    }
     .buynow{
         width: 100%;
     }
@@ -64,7 +73,7 @@ $primary-color: rgb(204, 0, 82);
 }
 @media screen and (max-width:767px){
     .item{
-        grid-template-rows:20% 70% 10%;
+        grid-template-rows:20% 60% 20%;
         grid-template-areas:'name name '
                             'image description'
                             'image button';

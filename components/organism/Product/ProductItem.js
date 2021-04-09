@@ -1,8 +1,7 @@
 import { useRouter } from "next/router"
 import styles from './productitem.module.scss'
 
-export default function ProductItem({product,actions,cartData,currentLogedInUser}) {
-  const router= useRouter()
+export default function ProductItem({product,actions,cartData}) {
 
     function addToCart(item) {
         const itemAlreadyInCart = cartData&&cartData.length ? 
@@ -16,7 +15,6 @@ export default function ProductItem({product,actions,cartData,currentLogedInUser
         return actions.addItemToCart(item);   
        
     }
-
     return(
         <div className={styles.item}>
             <div className={styles.itemname}>

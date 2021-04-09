@@ -146,11 +146,14 @@ $cart-background:#efefef;
 }
   @media screen and (max-width: 1199px) {
     .cartwrapper{
+      position: fixed;
       width: 100%;
+      height: calc(100% - 100px);
     }
     .cartcontent{
       width:100%;
       height:calc(100% - 100px);
+      max-height: none;
     }
     .cartheader{
       width: 100%;

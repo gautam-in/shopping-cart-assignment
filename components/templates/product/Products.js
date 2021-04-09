@@ -10,18 +10,21 @@ class Products extends React.Component {
         super(props)
         this.state = {
             products:this.props?.products||[],
-            filteredKey : this.props?.query?.id
+            filteredKey : this.props?.query?.id||'',
+            filteredName : ''
         }
     }
     
     componentDidMount(){
-        const {productReducer,query}= this.props
+        const {productReducer,query,availableCategories}= this.props
         // filtering products based on id from url
         if (query?.id) {
             const filteredProducts = productReducer?.products.filter((product)=>product.category === query.id)
+            const currentCategory = availableCategories.filter((category)=> category.id === query.id)
             this.setState({
                 products:filteredProducts,
-                filteredKey:query?.id
+                filteredKey:query?.id,
+                filteredName:currentCategory?.[0]?.name
             })
         }
         else{
@@ -30,12 +33,14 @@ class Products extends React.Component {
         })}
     }
 
-    filterProductByType = (key) =>{
+    filterProductByType = (key,name) =>{
+    const currentCategory =this.props?.availableCategories.filter((category)=> category.id === key)
     // filtering products based on key
     if (key == this.state.filteredKey) {
         this.setState({
             filteredKey:"",
-            products:this.props?.productReducer?.products
+            products:this.props?.productReducer?.products,
+            filteredName:'All'
         }) 
         Router.push({pathname:"/products" })
     }
@@ -44,13 +49,14 @@ class Products extends React.Component {
         const filteredproducts = filterProduct(key,this.props?.productReducer?.products)
         this.setState({
             filteredKey:key,
-            products:filteredproducts
+            products:filteredproducts,
+            filteredName:currentCategory?.[0]?.name
         })  
         Router.push({pathname:"/products",query:{ id:key }})
     }
     }
 render(){
-    const {products,filteredKey} = this.state;
+    const {products,filteredKey,filteredName} = this.state;
     const{availableCategories,cartReducer,userReducer} = this.props;
     return(
         <PageLayout actions={this.props.actions}>
@@ -63,9 +69,9 @@ render(){
                     this.filterProductByType(e.target.value)
                 }}
             >
-            <option value={this.state.filteredKey}>All</option>
+            <option  selected={!filteredKey} value={filteredKey}>All</option>
             {availableCategories&&availableCategories.map((item)=>{
-                        return <option  value={item.id}>{item.name}</option>
+                        return <option selected={filteredKey === item.id} value={item.id}>{item.name}</option>
                     })}
             </select>
             </div>

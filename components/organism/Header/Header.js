@@ -5,7 +5,7 @@ import styles from './header.module.scss'
 export default function Header({totalItemsInCart,currentLogedInUser,actions}) {
 const router = useRouter()
     return (
-        <div className={styles.header}>
+        <header className={styles.header}>
             <div className={styles.headercontent}>
                 <div>
                 <img className={styles.logo}  
@@ -63,7 +63,7 @@ const router = useRouter()
                 </button>
                 </div>
             </div>
-        </div>
+        </header>
     )
     
 }

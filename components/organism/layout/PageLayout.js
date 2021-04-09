@@ -24,9 +24,9 @@ class PageLayout extends React.Component {
     return(
         <div>
             <Header actions={actions} totalItemsInCart={cartReducer?.cartData?.length} currentLogedInUser={userReducer?.currentLogedInUser} />
-            <div className={styles.content} >
+            <main className={styles.content} >
             {children}
-            </div>
+            </main>
             <Footer actions={actions} totalItemsInCart={cartReducer?.cartData?.length} currentLogedInUser={userReducer?.currentLogedInUser} />
             {cartReducer?.isCartOpen && <Cart cartData={cartReducer?.cartData} actions={actions}  />}
         </div>

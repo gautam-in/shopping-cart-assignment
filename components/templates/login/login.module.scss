@@ -63,4 +63,15 @@ $input_color:#ccc;
 .main{
     flex: 1;
 }
-
+@media screen and (max-width: 1199px) {
+    .formcontent{
+        grid-template-columns: auto auto;
+        width: 90%;
+        }
+ } 
+ @media screen and (max-width: 767px) {
+    .formcontent{
+        grid-template-columns: auto;
+        width: 100%;
+        }
+ }

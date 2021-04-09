@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import useForm from '../../../utils/lib/useForm'
+import useForm from '../../../customhooks/useForm'
 import FormStaticContent from '../../molecules/Form/FormStaticContent'
 import PageLayout from '../../organism/layout/PageLayout'
 import loginStyles from '../login/login.module.scss'
@@ -8,7 +8,7 @@ import Input from '../../atoms/Input/Input'
 import Checkbox from '../../atoms/Input/Checkbox'
 import SuccessMessage from '../../atoms/Text/SuccessMessage'
 function Register (props) {
-    const {inputs,handleChange,errors,clearForm} = useForm({
+    const {inputs,handleChange,errors,clearForm,handleBlur} = useForm({
         first_name:'',
         last_name:'',
         email:'',
@@ -17,6 +17,7 @@ function Register (props) {
     })
     const [userRegistered,checkUserRegistered] = useState(false)
     const [showpassword,togglepassword] = useState(false)
+    const [submitErrors,handleSubmitErrors] = useState({})
     function isValid() {
         if (errors.email||errors.first_name||
             errors.last_name||errors.confirm_password||
@@ -28,9 +29,18 @@ function Register (props) {
     }
     function UserSignUp(e) {
         e.preventDefault()
-        let isUserRegistered = props?.userReducer?.registeredUsers.findIndex(email => email === inputs.email); 
+        let isUserRegistered = props?.userReducer?.registeredUsers.findIndex(email => email === inputs.email);
+        if (inputs.password !== inputs.confirm_password) {
+               return handleSubmitErrors({
+                    ...submitErrors,
+                    confirm_password:'password doesnt match'
+                })
+            }
+        else if (inputs.password !== inputs.confirm_password) {
+           return errors.confirm_password = "password doesn't match"
+        } 
 
-        if (isUserRegistered >= 0) {
+       else if (isUserRegistered >= 0) {
             checkUserRegistered("User Already registered")
             return null;
         }
@@ -56,8 +66,15 @@ function Register (props) {
                                 name="first_name" 
                                 lablestyle={loginStyles.inputlabel} 
                                 inputStyle={loginStyles.inputbox} 
-                                type="name" 
-                                handleChange={handleChange}
+                                type="name"
+                                handleChange={(e)=>{
+                                    handleChange(e)
+                                    handleSubmitErrors({
+                                        ...submitErrors,
+                                        first_name:''
+                                    })
+                                }} 
+                                handleBlur={handleBlur}
                                 errorMessage={errors.first_name} />
 
                             <Input 
@@ -66,7 +83,14 @@ function Register (props) {
                                 lablestyle={loginStyles.inputlabel} 
                                 inputStyle={loginStyles.inputbox} 
                                 type="name" 
-                                handleChange={handleChange}
+                                handleChange={(e)=>{
+                                    handleChange(e)
+                                    handleSubmitErrors({
+                                        ...submitErrors,
+                                        last_name:''
+                                    })
+                                }}                                 
+                                handleBlur={handleBlur}
                                 errorMessage={errors.last_name} />
 
                             <Input 
@@ -75,7 +99,14 @@ function Register (props) {
                                 lablestyle={loginStyles.inputlabel} 
                                 inputStyle={loginStyles.inputbox} 
                                 type="email" 
-                                handleChange={handleChange}
+                                handleChange={(e)=>{
+                                    handleChange(e)
+                                    handleSubmitErrors({
+                                        ...submitErrors,
+                                        email:''
+                                    })
+                                }}                                 
+                                handleBlur={handleBlur}
                                 errorMessage={errors.email} />
 
                             <Input 
@@ -84,7 +115,14 @@ function Register (props) {
                                 lablestyle={loginStyles.inputlabel} 
                                 inputStyle={loginStyles.inputbox} 
                                 type={showpassword?"text":"password"}
-                                handleChange={handleChange}
+                                handleChange={(e)=>{
+                                    handleChange(e)
+                                    handleSubmitErrors({
+                                        ...submitErrors,
+                                        password:''
+                                    })
+                                }}                                 
+                                handleBlur={handleBlur}
                                 errorMessage={errors.password} />
 
                             <Input 
@@ -93,8 +131,15 @@ function Register (props) {
                                 lablestyle={loginStyles.inputlabel} 
                                 inputStyle={loginStyles.inputbox} 
                                 type={showpassword?"text":"password"}
-                                handleChange={handleChange}
-                                errorMessage={errors.confirm_password} />
+                                handleChange={(e)=>{
+                                    handleChange(e)
+                                    handleSubmitErrors({
+                                        ...submitErrors,
+                                        confirm_password:''
+                                    })
+                                }}                                
+                                handleBlur={handleBlur}
+                                errorMessage={errors.confirm_password||submitErrors.confirm_password} />
 
                         <Checkbox toggle={()=>togglepassword(!showpassword)} name="Show password" value={showpassword} />
                         {userRegistered &&<SuccessMessage text={userRegistered}/>}
