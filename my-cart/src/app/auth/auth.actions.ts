@@ -5,7 +5,8 @@ export const SIGN_IN = "SIGN_IN";
 export const SIGN_IN_START = "SIGN_IN_START";
 export const SIGN_UP = "SIGN_UP";
 export const SIGN_UP_START = "SIGN_UP_START";
-export const LOG_OUT = "LOG_OUT"
+export const LOG_OUT = "LOG_OUT";
+export const AUTH_ERROR = "AUTH_ERROR";
 
 
 export class SignIn {
@@ -38,6 +39,13 @@ export class SignUpStart {
 
 export class Logout {
     readonly type = LOG_OUT
+}
+
+export class AuthError {
+    readonly type = AUTH_ERROR;
+    constructor(public payload:string){
+       this.payload = payload;
+    }
 }
 
 

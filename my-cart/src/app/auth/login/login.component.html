@@ -6,6 +6,9 @@
         </div>
     </div>
     <div class="col-4-of-12 col-md-6-of-12 col-xs-12-of-12 login-form">
+        <div class="col-12 alert-danger" *ngIf="error">
+            {{error}}
+        </div>
         <form class="login-form" #loginForm="ngForm" (ngSubmit)="login(loginForm)">
             <div class="form-group" *ngIf="!isLogin">
                 <label class="form-control-label" for="firstname">FirstName</label>

@@ -1,3 +1,4 @@
+import { HttpErrorResponse } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Router } from "@angular/router";
 import { Effect ,Actions, ofType } from "@ngrx/effects";
@@ -5,6 +6,8 @@ import { of } from "rxjs";
 import { catchError, filter, map, switchMap, tap } from "rxjs/operators";
 import { BackendInteractionService } from "../backend-interaction.service";
 import * as authActions from './auth.actions'
+
+
 
 @Injectable()
 export class AuthEffect{
@@ -17,7 +20,7 @@ signUpUser = this.actions.pipe(
    map((authResponse)=>{
       return new authActions.SignUp(authResponse)
    }),
-   catchError(()=> of(12,3))
+   catchError((errorDetails) => of(new authActions.AuthError(errorDetails.error.error.message)))
 )
 
 @Effect()
@@ -29,7 +32,7 @@ signInUser = this.actions.pipe(
    map((authResponse)=>{
       return new authActions.SignIn(authResponse)
    }),
-   catchError(()=> of(12,3))
+   catchError((errorDetails) => of(new authActions.AuthError(errorDetails.error.error.message)))
 )
 
  @Effect({dispatch:false})
@@ -72,8 +75,13 @@ redirectToLogin = this.actions.pipe(
 getExpiryDate(milliSeconds:number){
     return new Date(new Date().getTime() + milliSeconds*1000);
 }
+
+handleError(error:HttpErrorResponse){
+   console.log(error)
+}
 constructor(private actions:Actions,private dataService:BackendInteractionService,private route:Router){
          
 }
+
     
 }

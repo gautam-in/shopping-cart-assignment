@@ -1,7 +1,11 @@
+import { CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { Store } from '@ngrx/store';
 import { BackendInteractionService } from '../backend-interaction.service';
 import { Product } from '../model/Products.model';
+import { EllipsisPipe } from '../shared/elipsis-pipe/ellipsis.pipe';
+import { FilterPipe } from '../shared/filter-pipd/filter.pipe';
+import { OrderPipe } from '../shared/order-pipe/order.pipe';
 import { StoreStub } from '../testing/store.stub';
 
 import { ProductsComponent } from './products.component';
@@ -29,10 +33,13 @@ describe('ProductsComponent', () => {
     backEndInteractionSpy.getProducts.and.returnValue(products);
     await TestBed.configureTestingModule({
       declarations: [ 
-        ProductsComponent ,
+        ProductsComponent , FilterPipe,OrderPipe,EllipsisPipe
+      ],
+      providers : [
         {provide: BackendInteractionService, useValue: backEndInteractionSpy},
         {provide: Store, useClass : StoreStub}
-      ]
+      ],
+      schemas : [NO_ERRORS_SCHEMA,CUSTOM_ELEMENTS_SCHEMA]
     })
     .compileComponents();
   });
@@ -40,14 +47,9 @@ describe('ProductsComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(ProductsComponent);
     component = fixture.componentInstance;
-    fixture.detectChanges();
   });
 
   it('should create', () => {
-    expect(component).toBeTruthy();
-  });
-
-  it('Should receive products', () => {
     expect(component).toBeTruthy();
   });
 });

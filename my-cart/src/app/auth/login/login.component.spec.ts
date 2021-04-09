@@ -3,6 +3,7 @@ import { FormsModule } from '@angular/forms';
 import { ActivatedRoute, ActivatedRouteSnapshot } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { ActivatedRouteStube } from 'src/app/testing/activated-route.stub';
+import { StoreStub } from 'src/app/testing/store.stub';
 
 import { LoginComponent } from './login.component';
 
@@ -18,7 +19,7 @@ describe('LoginComponent', () => {
       imports : [FormsModule],
       declarations: [ LoginComponent ],
       providers : [
-        {provide :Store , useValue : null},
+        {provide :Store , useValue : StoreStub},
         {provide : ActivatedRoute,useClass:ActivatedRouteStube}
        ]}
       )
@@ -31,7 +32,6 @@ describe('LoginComponent', () => {
     template = fixture.nativeElement
     store = TestBed.inject(Store);
     route = TestBed.inject(ActivatedRoute) as any;
-    fixture.detectChanges();
   });
 
   it('should create', () => {
@@ -49,12 +49,14 @@ describe('LoginComponent', () => {
 
   it('it should get query parameters from activated route(Login)',fakeAsync(() =>{
       route.setParamMap({action:'login'})
+      component.getQueryParams();
       tick();
       expect(component.isLogin).toBe(true)
   }))
 
   it('it should get query parameters from activated route(SignUp)',fakeAsync(() =>{
       route.setParamMap({action:'signUp'});
+      component.getQueryParams()
       tick();
       expect(component.isLogin).toBe(false);
   }))

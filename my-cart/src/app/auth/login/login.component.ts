@@ -13,12 +13,14 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
   isLogin : boolean = false;
+  error:string = '';
   constructor(private store:Store<AppState>,private router :ActivatedRoute) { 
     
   }
 
   ngOnInit(): void {
     this.getQueryParams();
+    this.getAuthDetails();
   }
 
   login(form:NgForm){
@@ -35,6 +37,12 @@ export class LoginComponent implements OnInit {
       this.router.queryParamMap.subscribe(params=>{
          this.isLogin = params.get('action') === 'login' ? true : false
       })
+  }
+
+  getAuthDetails(){
+    this.store.select('auth').subscribe(authDetails=>{
+      this.error = authDetails.error;
+    })
   }
 
 }

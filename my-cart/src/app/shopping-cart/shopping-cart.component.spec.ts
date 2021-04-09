@@ -11,7 +11,7 @@ describe('ShoppingCartComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [ ShoppingCartComponent ],
-      imports : [{provide : Store,useClass:StoreStub}]
+      providers : [{provide : Store,useClass:StoreStub}]
     })
     .compileComponents();
   });
@@ -19,7 +19,6 @@ describe('ShoppingCartComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(ShoppingCartComponent);
     component = fixture.componentInstance;
-    fixture.detectChanges();
   });
 
   it('should create', () => {

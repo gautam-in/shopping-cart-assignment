@@ -17,8 +17,7 @@ export class AppEffect{
             }),
             map((items: Category[]) => {
                 return new productActions.AddCategories(items)
-            }),
-            catchError((error)=> of(1,2,3))
+            })
     );
 
     @Effect({dispatch:false})
