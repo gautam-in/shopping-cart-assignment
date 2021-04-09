@@ -1,4 +1,5 @@
-import config from 'config';
+import { config } from '../Constants/ServerUrl';
+//import config from "config";
 
 const login = (email, password) => {
     const requestOptions = {

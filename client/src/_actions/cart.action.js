@@ -26,9 +26,16 @@ const removeFromCart = (product) => {
     }
 }
 
+const clearCart = () => {
+    return {
+        type: cartConstants.CLEAR_CART,
+    }
+}
+
 export const cartActions = {
     showCart,
     hideCart,
     addToCart,
-    removeFromCart
+    removeFromCart,
+    clearCart
 }

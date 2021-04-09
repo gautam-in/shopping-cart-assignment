@@ -5,6 +5,7 @@ export const cartConstants = {
     CHECK_OUT: "Proceed to Checkout",
     ADD_TO_CART: "ADD_TO_CART",
     REMOVE_FROM_CART: "REMOVE_FROM_CART",
+    CLEAR_CART: "CLEAR_CART",
 
 
     EMPTY_CART: "No items in your cart",

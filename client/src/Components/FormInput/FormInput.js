@@ -15,7 +15,7 @@ const FormInput = ({
     <div className="group">
       <input
         className="form-input"
-        htmlFor={htmlFor}
+        id={htmlFor}
         onChange={handleChange}
         aria-label={ariaLabel}
         name={name}
@@ -25,8 +25,7 @@ const FormInput = ({
         <label
           className={`${otherProps.value.length ? "shrink" : ""
             } form-input-label`}
-          id={htmlFor}
-          htmlFor={name}
+          htmlFor={htmlFor}
         >
           {" "}
           {label}{" "}

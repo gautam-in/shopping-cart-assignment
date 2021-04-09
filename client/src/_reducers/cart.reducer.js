@@ -52,6 +52,12 @@ export const cart = (state = initialState, action) => {
                 cartDetails: removedCarts,
                 cartItem: state.cartItem - 1
             }
+        case cartConstants.CLEAR_CART:
+            return {
+                ...state,
+                cartItem: 0,
+                cartDetails: []
+            }
         default:
             return state;
     }

@@ -4,10 +4,16 @@ import { Link } from "react-router-dom";
 import cartLogo from "../../../public/static/images/cart.svg";
 import routes from "../../routes/routes";
 import { RegisterText, SignInText } from "../../Constants/ConstantText";
-import { connect, useSelector } from "react-redux";
+import { connect } from "react-redux";
 import { cartActions, userActions } from "../../_actions";
 
-const CartIcon = ({ cartItem = 0, loggedIn = false, user = {}, logOut, showCart }) => {
+const CartIcon = ({ cartItem = 0, loggedIn = false, user = {}, logOut, showCart, clearCart }) => {
+
+  const logOutClear = () => {
+    clearCart();
+    logOut();
+  }
+
   return (
     <section className="header-section">
       <div className="login-options">
@@ -15,7 +21,7 @@ const CartIcon = ({ cartItem = 0, loggedIn = false, user = {}, logOut, showCart 
           loggedIn ? (
             <>
               <strong aria-label={"Logged in user is" + user.firstName}>Hi {user.firstName}!</strong>
-              <Link to={routes.signIn} onClick={logOut} aria-label="logout link">Logout</Link>
+              <Link to={routes.signIn} onClick={() => logOutClear()} aria-label="logout link">Logout</Link>
             </>
           ) : (
             <>
@@ -42,7 +48,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = {
   logOut: userActions.logout,
-  showCart: cartActions.showCart
+  showCart: cartActions.showCart,
+  clearCart: cartActions.clearCart
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(CartIcon);

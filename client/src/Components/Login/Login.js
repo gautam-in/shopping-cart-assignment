@@ -37,7 +37,7 @@ const Login = (props) => {
         <p>{LoginDescription}</p>
       </section>
       <section>
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} data-testid='login-form'>
           <FormInput
             type="email"
             name="email"
