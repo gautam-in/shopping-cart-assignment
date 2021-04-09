@@ -1,0 +1,33 @@
+<div class="bannerBody">
+        <div class="carousel_viewport">
+           {{!-- <div id="item" class="item"> --}}
+                {{#each data}}
+                 <section  class="pictureContainer">
+                    <img class="offers{{this.order}}" id="offers{{this.order}}" alt="{{this.bannerImageAlt}}" src="{{this.bannerImageUrl}}" >
+                  </section>
+                   {{/each}}
+                 <a id="prevOffer" class="arrow arrow-prev displayMobile" onclick="showslides(-1)">&#60;</a>
+                <a id="nextOffer" class="arrow arrow-next displayMobile" onclick="showslides(1)">&#62;</a>
+                
+                
+            {{!-- </div> --}}
+        </div>
+    <div class="categories">
+        <ul class="categories_wrapper">
+            {{#each categories}}
+            {{#ifOrder this.order}}
+            <li class="categories_list">
+                <img aria-label="Available Categories" class="categories_img" alt="{{this.name}}" src="{{this.imageUrl}}">
+                <section class="categories_description">
+                    <h1>{{this.name}}</h1>
+                    <p>{{this.description}}</p>
+                    <a href="/productsPage?category={{this.id}}">
+                        <button tabindex="0" aria-label="Go to {{this.name}} category">Explore {{this.key}}</button>
+                    </a>
+                </section>
+            </li>
+            {{/ifOrder}}
+            {{/each}}
+        </ul>
+    </div>
+</div>

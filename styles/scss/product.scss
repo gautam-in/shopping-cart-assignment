@@ -1,0 +1,125 @@
+.product {
+    margin:3rem;
+    border-bottom-style: dashed;
+}
+.products_description {
+    display: flex;
+    section {
+        width:50%;
+        height:10rem;
+        &:nth-child(2){
+            p{
+                background-color: #69696914;
+                height:50%;
+                font-size:1.5rem;
+                overflow-y: hidden;
+                vertical-align:middle;
+                padding:1rem;
+                margin: 0 0 10%;
+            }
+        }
+    }
+}
+#alert{
+    position: fixed;
+    right:.5rem;
+    color:lightgreen;
+}
+div[class^="alertMessages"]{
+    background-color: #247503;
+    padding: 1rem;
+    margin:1rem;
+}
+.productButton {
+    width:100%;
+}
+.products_container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+.productPage{
+    display: flex;
+    flex-direction: row;
+}
+
+@media only screen and (min-width:600px){
+    .productNav    {
+        width:30%;
+        display: flex;
+        flex-direction: column;
+        background-color: #dcdcdcde;
+    }
+    .productNav {
+        .product_categories{
+        width:18rem;
+        color: inherit;
+        font-size: 2rem;
+        text-decoration: none;
+        padding:2rem;
+        border-bottom: .1rem solid #b0abab;
+        &:hover{
+           background-color: #e91e63;
+        }
+        &:target{
+           background-color: #e91e63;
+       }
+        }
+    
+    }
+}
+
+//Tablet CSS
+@media only screen and (min-device-width: 600px) and (max-width: 1270px) {
+    .displayTablet{
+        display: none;
+    }
+.product {
+    width:20rem;
+    margin:3rem;
+}
+.productButton {
+    margin:1rem;
+}
+}
+
+@media only screen and (min-device-width: 1271px){
+    .displayDesktop {
+        display: none;
+    }
+    .product {
+        width:20%;
+        margin:2rem;
+    }
+    .products_description {
+        display: block;
+    }
+    .products_description>section {
+        width:100%;
+        height:auto;
+    }
+    .productButton {
+        width:50%;
+        margin:1rem 0;
+    }
+    .desktop_buttonGroup {
+        display: flex ;
+        justify-content: space-between;
+    }
+    .desktop_buttonGroup{
+        span{
+        padding-top:1.6rem;
+        }
+    }
+    .products_description{
+        section:nth-child(2){
+        height:10rem;
+        overflow-y:hidden;
+        }
+    }
+}
+@media only screen and (max-device-width: 600px) {
+    .displayMobile {
+        display: none;
+    }
+}

@@ -1,0 +1,145 @@
+html {
+  font-family: 'Dosis';
+  font-size: 62.5%; }
+
+body {
+  margin: 0;
+  box-sizing: border-box;
+  font-size: 1.6rem; }
+
+.container:focus {
+  outline: none; }
+
+button {
+  background-color: #e91e63;
+  color: white;
+  border: none;
+  text-align: center;
+  padding: 1rem;
+  font-size: 1rem; }
+  button:focus-visible {
+    box-shadow: .7rem .7rem 2.4rem .2rem #e91e63;
+    outline-color: #e91e63; }
+
+ol, ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: center; }
+
+img {
+  width: 100%;
+  object-fit: scale-down; }
+
+input {
+  width: 50rem;
+  padding: 1.5rem;
+  border: none;
+  margin: 0.1rem;
+  border-bottom: 0.2rem solid #dcdcdcde; }
+  input:focus-visible {
+    border: none;
+    outline: none;
+    border-bottom: 0.2rem solid aqua; }
+  input input[type="submit"] {
+    background-color: #e91e63; }
+
+a {
+  text-decoration: none;
+  color: black;
+  cursor: pointer; }
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  outline: 0;
+  box-shadow: none;
+  border: 0 !important;
+  background: #e91e63;
+  background-image: none; }
+
+/* Remove IE arrow */
+select::-ms-expand {
+  display: none; }
+
+/* Custom Select */
+.select {
+  position: relative;
+  display: flex;
+  height: 3rem;
+  background: #e91e63;
+  overflow: hidden; }
+
+select {
+  flex: 1;
+  padding: 0 .5rem;
+  color: #fff;
+  cursor: pointer; }
+
+/* Arrow */
+.select::after {
+  content: '\25BC';
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0 1rem;
+  background: #e91e63;
+  cursor: pointer;
+  pointer-events: none;
+  -webkit-transition: .25s all ease;
+  -o-transition: .25s all ease;
+  transition: .25s all ease; }
+
+.pageLogo {
+  display: flex;
+  justify-content: space-around;
+  box-shadow: 0 0.5rem 0.9rem -0.1rem rgba(0, 0, 0, 0.75); }
+  .pageLogo section nav a {
+    text-decoration: none; }
+  .pageLogo section nav ul li:nth-last-child() {
+    background-color: #dcdcdcde;
+    padding: 1rem; }
+
+.cartIcon {
+  width: 4rem;
+  height: 4rem;
+  filter: invert(21%) sepia(93%) saturate(3714%) hue-rotate(328deg) brightness(94%) contrast(94%); }
+
+.mainFooter {
+  justify-items: center;
+  background-color: #dcdcdcde;
+  padding: 1rem;
+  text-align: center; }
+  .mainFooter p {
+    margin: 0; }
+
+.loginBody {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 10%;
+  outline: none; }
+  .loginBody .loginForm form {
+    display: flex;
+    flex-direction: column; }
+
+.overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none; }
+
+.errorMessage {
+  color: red; }
+
+.successMessage {
+  position: fixed;
+  top: 2rem;
+  background-color: yellowgreen;
+  border: 1px solid green;
+  color: green;
+  padding: 1rem; }
