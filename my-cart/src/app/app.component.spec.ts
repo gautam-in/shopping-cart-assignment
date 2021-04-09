@@ -13,7 +13,7 @@ describe('AppComponent', () => {
       declarations: [
         AppComponent
       ],
-      providers : [{provide : Store , useClass:StoreStub}]
+      providers: [{ provide: Store, useClass: StoreStub }]
     }).compileComponents();
   });
 

@@ -1,37 +1,37 @@
 import { Observable, Subject } from "rxjs"
 
-export class StoreStub{
+export class StoreStub {
     subject = new Subject();
-    categories = { 
+    categories = {
         categories:
-        [{
-        category: "5b6899953d1a866534f516e2",
-        description: "Kiwis are oval shaped with a brownish outer skin. The flesh is bright green and juicy with tiny, edible black seeds.",
-        id: "5b6c6a7f01a7c38429530883",
-        imageURL: "/static/images/products/fruit-n-veg/kiwi-green.jpg",
-        name: "Fresho Kiwi - Green, 3 pcs",
-        price: 87,
-        sku: "fnw-kiwi-3",
-        stock: 50
-       }]   
+            [{
+                category: "5b6899953d1a866534f516e2",
+                description: "Kiwis are oval shaped with a brownish outer skin. The flesh is bright green and juicy with tiny, edible black seeds.",
+                id: "5b6c6a7f01a7c38429530883",
+                imageURL: "/static/images/products/fruit-n-veg/kiwi-green.jpg",
+                name: "Fresho Kiwi - Green, 3 pcs",
+                price: 87,
+                sku: "fnw-kiwi-3",
+                stock: 50
+            }]
     }
-        
+
     cart = {
-        addedProducts : {
-        "5b6c6d3201a7c38429530888":{
-            category: "5b6899123d1a866534f516de",
-            description: "Freshly Baked bread is one of lifes greatest simple pleasures and at Bigbasket we decided to give you just that. We start baking our breads once you order using the finest ingredients available.",
-            id: "5b6c6d3201a7c38429530888",
-            imageURL: "/static/images/products/bakery-cakes-dairy/bread.jpg",
-            name: "Sandwich Bread - White, Chemical Free, 400 gm",
-            price: 32,
-            quantity: 1,
-            sku: "bcd-bread-400",
-            stock: 50
-           }
-        } 
-    }   
-    
+        addedProducts: {
+            "5b6c6d3201a7c38429530888": {
+                category: "5b6899123d1a866534f516de",
+                description: "Freshly Baked bread is one of lifes greatest simple pleasures and at Bigbasket we decided to give you just that. We start baking our breads once you order using the finest ingredients available.",
+                id: "5b6c6d3201a7c38429530888",
+                imageURL: "/static/images/products/bakery-cakes-dairy/bread.jpg",
+                name: "Sandwich Bread - White, Chemical Free, 400 gm",
+                price: 32,
+                quantity: 1,
+                sku: "bcd-bread-400",
+                stock: 50
+            }
+        }
+    }
+
 
     auth = {
         displayName: "",
@@ -44,18 +44,18 @@ export class StoreStub{
         registered: true
     }
 
-    select(type:string){
-        switch(type){
-            case 'categories' :
+    select(type: string) {
+        switch (type) {
+            case 'categories':
                 this.subject.next(this.categories);
                 return this.subject
-            case 'auth' : 
+            case 'auth':
                 this.subject.next(this.auth)
                 return this.subject
-            case 'cart' : 
+            case 'cart':
                 this.subject.next(this.cart)
                 return this.subject
-            default :
+            default:
                 this.subject.next(null);
                 return this.subject
         }

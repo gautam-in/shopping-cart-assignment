@@ -13,9 +13,9 @@ import { ProductsComponent } from './products.component';
 describe('ProductsComponent', () => {
   let component: ProductsComponent;
   let fixture: ComponentFixture<ProductsComponent>;
-  let backEndInteractionSpy:any;
-  const products:Product[] =
-    [ 
+  let backEndInteractionSpy: any;
+  const products: Product[] =
+    [
       {
         category: "5b6899953d1a866534f516e2",
         description: "Kiwis are oval shaped with a brownish outer skin. The flesh is bright green and juicy with tiny, edible black seeds.",
@@ -26,22 +26,22 @@ describe('ProductsComponent', () => {
         sku: "fnw-kiwi-3",
         stock: 50
       }
-  ];
+    ];
 
   beforeEach(async () => {
-    backEndInteractionSpy = jasmine.createSpyObj('BackendInteractionService',['getProducts'])
+    backEndInteractionSpy = jasmine.createSpyObj('BackendInteractionService', ['getProducts'])
     backEndInteractionSpy.getProducts.and.returnValue(products);
     await TestBed.configureTestingModule({
-      declarations: [ 
-        ProductsComponent , FilterPipe,OrderPipe,EllipsisPipe
+      declarations: [
+        ProductsComponent, FilterPipe, OrderPipe, EllipsisPipe
       ],
-      providers : [
-        {provide: BackendInteractionService, useValue: backEndInteractionSpy},
-        {provide: Store, useClass : StoreStub}
+      providers: [
+        { provide: BackendInteractionService, useValue: backEndInteractionSpy },
+        { provide: Store, useClass: StoreStub }
       ],
-      schemas : [NO_ERRORS_SCHEMA,CUSTOM_ELEMENTS_SCHEMA]
+      schemas: [NO_ERRORS_SCHEMA, CUSTOM_ELEMENTS_SCHEMA]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {

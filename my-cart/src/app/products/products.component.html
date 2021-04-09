@@ -1,12 +1,13 @@
 <section class="product-section">
    <div class="row no-padding-row">
-       <div class="col-3-of-12 col-xs-12-of-12 side-bar">
-         <sidebar (selectedItem)="setSelectedCategory($event)" [categories]="categoryList"></sidebar>
-       </div>
-       <div class="col-9-of-12 col-xs-12-of-12">
-          <product-items [productList]="productList | filter : 'category' : selectedCategoryCode"></product-items>
-       </div>
+      <div class="col-3-of-12 col-xs-12-of-12 side-bar">
+         <sidebar (selectedItem)="setSelectedCategory($event)" [categories]="categoryList"
+            [selectedCategoryId]="selectedCategoryCode">
+         </sidebar>
+      </div>
+      <div class="col-9-of-12 col-xs-12-of-12">
+         <product-items [productList]="productList | filter : 'category' : selectedCategoryCode"></product-items>
+      </div>
    </div>
 </section>
 <router-outlet></router-outlet>
-

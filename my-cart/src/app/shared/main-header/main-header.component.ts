@@ -12,42 +12,42 @@ import * as authActions from './../../auth/auth.actions';
 })
 export class MainHeaderComponent implements OnInit {
 
-  islogin : boolean = false;
-  user : AuthState = {} as AuthState;
-  isOpenShoppingCart : boolean = false;
-  totalItemsInCart:number = 0;
+  islogin: boolean = false;
+  user: AuthState = {} as AuthState;
+  isOpenShoppingCart: boolean = false;
+  totalItemsInCart: number = 0;
   constructor(
-    private store:Store<AppState>
-    ) { }
+    private store: Store<AppState>
+  ) { }
 
   ngOnInit(): void {
     this.getUserAuth();
     this.getCartItems()
   }
 
-  getUserAuth(){
-    this.store.select('auth').subscribe(userAuth=>{
+  getUserAuth() {
+    this.store.select('auth').subscribe(userAuth => {
       this.user = userAuth
-   })
+    })
   }
 
-  getCartItems(){
-     this.store.select('cart').subscribe(productList=>{
-       console.log(productList);
-       this.getTotalItemsAdded(productList);
-     })
+  getCartItems() {
+    this.store.select('cart').subscribe(productList => {
+      console.log(productList);
+      this.getTotalItemsAdded(productList);
+    })
   }
 
-  logout(){
+  logout() {
     this.store.dispatch(new authActions.Logout())
   }
 
-  getTotalItemsAdded(itemsInCart:CartState){
-    if(itemsInCart && itemsInCart.addedProducts){
-      this.totalItemsInCart = Object.keys(itemsInCart.addedProducts).reduce((totalItems:any,productId)=>{
+  getTotalItemsAdded(itemsInCart: CartState) {
+    if (itemsInCart && itemsInCart.addedProducts) {
+      this.totalItemsInCart = Object.keys(itemsInCart.addedProducts).reduce((totalItems: any, productId) => {
         return totalItems = totalItems + itemsInCart.addedProducts[productId].quantity
-      },0)
-    } 
+      }, 0)
+    }
   }
 
 }

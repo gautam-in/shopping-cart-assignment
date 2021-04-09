@@ -5,12 +5,12 @@ import { map } from "rxjs/operators";
 import { AppState } from "../appState";
 
 @Injectable()
-export class AuthGuard implements CanActivate{
-   constructor(private store:Store<AppState>){
+export class AuthGuard implements CanActivate {
+    constructor(private store: Store<AppState>) {
 
-   }
+    }
 
-   canActivate(route:ActivatedRouteSnapshot,state:RouterStateSnapshot){
-       return this.store.select('auth').pipe(map(authentication=> !!authentication.idToken))
-   }
+    canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
+        return this.store.select('auth').pipe(map(authentication => !!authentication.idToken))
+    }
 }

@@ -12,49 +12,49 @@ import { User } from './model/userModel';
   providedIn: 'root'
 })
 export class BackendInteractionService {
-  hostUrl : string = '';
-  constructor(private http:HttpClient) { }
+  hostUrl: string = '';
+  constructor(private http: HttpClient) { }
 
-  getBanners():Observable<Banner[]>{
+  addParms(paramsObj: Array<any>) {
+    let httpParams = new HttpParams();
+    paramsObj.forEach(param => {
+      httpParams = httpParams.set(param.key, param.value)
+    });
+    return {
+      params: httpParams
+    }
+  }
+
+  getBanners(): Observable<Banner[]> {
     this.hostUrl = environment.baseUrl + '/banners'
     return this.http.get<Banner[]>(this.hostUrl)
   }
 
-  getCategories(){
+  getCategories() {
     this.hostUrl = environment.baseUrl + '/categories'
     return this.http.get<Category[]>(this.hostUrl)
   }
 
 
-  getProducts(){
+  getProducts() {
     this.hostUrl = environment.baseUrl + '/products'
     return this.http.get<Product[]>(this.hostUrl)
   }
 
-  signIn(userDetails:User){
+  signIn(userDetails: User) {
     this.hostUrl = environment.environment.authUrl + "signInWithPassword";
     let httpOptions = this.addParms([environment.firebaseAuthKey])
-    return this.http.post<AuthState>(this.hostUrl,userDetails,httpOptions)
+    return this.http.post<AuthState>(this.hostUrl, userDetails, httpOptions)
   }
 
-  signUp(userDetails:User){
+  signUp(userDetails: User) {
     this.hostUrl = environment.environment.authUrl + "signUp";
     let httpOptions = this.addParms([environment.firebaseAuthKey])
-    return this.http.post<AuthState>(this.hostUrl,userDetails,httpOptions)
+    return this.http.post<AuthState>(this.hostUrl, userDetails, httpOptions)
   }
 
-  addParms(paramsObj:Array<any>){
-     let httpParams = new HttpParams();
-     paramsObj.forEach(param => {
-       httpParams = httpParams.set(param.key,param.value)
-     });
-     return  {
-       params : httpParams
-     }
-  }
-
-  addToCart(product:Product){
+  addToCart(product: Product) {
     this.hostUrl = environment.baseUrl + '/addToCart';
-    return this.http.post(this.hostUrl,product,{})
+    return this.http.post(this.hostUrl, product, {})
   }
 }

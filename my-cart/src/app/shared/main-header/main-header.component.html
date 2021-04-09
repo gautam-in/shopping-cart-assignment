@@ -14,13 +14,15 @@
         <nav class="navigation side_navigation">
             <ul class="auth-navigation-items">
                 <li class="navigation-item auth-navigation-item" *ngIf="!user?.idToken">
-                    <a class="navigation-link auth-navigation-link"  routerLink="login" [queryParams]="{action:'login'}">Sign in</a>
+                    <a class="navigation-link auth-navigation-link" routerLink="login"
+                        [queryParams]="{action:'login'}">Sign in</a>
                 </li>
                 <li class="navigation-item auth-navigation-item" *ngIf="!user?.idToken">
-                    <a class="navigation-link auth-navigation-link"  routerLink="login" [queryParams]="{action:'signUp'}">Register</a>
+                    <a class="navigation-link auth-navigation-link" routerLink="login"
+                        [queryParams]="{action:'signUp'}">Register</a>
                 </li>
                 <li class="navigation-item auth-navigation-item" *ngIf="user?.idToken">
-                    <a class="navigation-link auth-navigation-link"  (click)="logout()">Logout</a>
+                    <a class="navigation-link auth-navigation-link" (click)="logout()">Logout</a>
                 </li>
             </ul>
         </nav>
@@ -33,5 +35,5 @@
     </div>
 </header>
 <modal-backdrop id="shoppincart" *ngIf="isOpenShoppingCart">
-   <shopping-cart></shopping-cart>
+    <shopping-cart></shopping-cart>
 </modal-backdrop>

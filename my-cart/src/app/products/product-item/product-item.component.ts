@@ -11,13 +11,13 @@ import * as productActions from './../productions-actions'
 })
 export class ProductItemComponent implements OnInit {
   @Input() product!: Product;
-  constructor(private store:Store<AppState>) { }
+  constructor(private store: Store<AppState>) { }
 
   ngOnInit(): void {
   }
 
-  addToCart(){
-    this.store.dispatch(new productActions.AddCartItems({...this.product,quantity:1}))
+  addToCart() {
+    this.store.dispatch(new productActions.IncrementCartItemQuantity({ ...this.product, quantity: 1 }))
   }
 
 }

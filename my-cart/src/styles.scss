@@ -26,6 +26,7 @@ html{
     color : $color-grey-darker;
     box-sizing: inherit;
     font-family: Dosis;
+    line-height: 145%;
     @include responsive(small-tabs){
         font-size: 62.5%;
     }
@@ -33,10 +34,6 @@ html{
     @include responsive(mobile){
         font-size: 50%;
     }
-}
-
-h1,h2,h3,h4,h5,h6{
-    line-height: 145%;
 }
 
 nav ul{
@@ -72,6 +69,8 @@ li a {
 .no-padding-row{
     padding: 0;
 }
+
+/* Validation */
 
 .alert-danger{
     padding : 1rem 2rem;
@@ -110,6 +109,13 @@ li a {
     border-radius: 5px;
 }
 
+.primary-button:focus,
+.primary-button:checked,
+.primary-button:active
+{
+    border:none;
+}
+
 /* Active Navigation */
 
 .active-link{
@@ -121,6 +127,8 @@ li a {
 a{
     cursor: pointer;
 }
+
+/* Scroll Bar */
 
 ::-webkit-scrollbar {
     width: 10px;

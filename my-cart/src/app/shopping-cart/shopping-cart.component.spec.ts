@@ -10,10 +10,10 @@ describe('ShoppingCartComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ShoppingCartComponent ],
-      providers : [{provide : Store,useClass:StoreStub}]
+      declarations: [ShoppingCartComponent],
+      providers: [{ provide: Store, useClass: StoreStub }]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {

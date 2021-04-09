@@ -1,20 +1,20 @@
 import { Directive, HostListener, Input } from "@angular/core";
 
 @Directive({
-    selector : '[routerLink]'
+    selector: '[routerLink]'
 })
 
-export class RouterLinkStubDirective{
+export class RouterLinkStubDirective {
     routingPath!: string;
     navigatedTo!: string;
-    constructor(){
+    constructor() {
 
     }
-    @Input() set routerLink(routerLink:string){
+    @Input() set routerLink(routerLink: string) {
         this.routingPath = routerLink
     }
 
-    @HostListener('click') navigateTo(){
+    @HostListener('click') navigateTo() {
         this.navigatedTo = this.routingPath
     }
 }

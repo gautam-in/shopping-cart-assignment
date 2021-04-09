@@ -1,15 +1,18 @@
 <section class="category-section">
-    <div class="col-12  carousal">
-      <app-carousal [bannersList]="bannerItems"></app-carousal>
+  <div class="col-12  carousal">
+    <app-carousal [bannersList]="bannerItems"></app-carousal>
+  </div>
+  <div class="col-12 categories" *ngFor="let category of categoryItems | order : 'order';let bannerIndex=index">
+    <figure class="category-fighure">
+      <img class="category-image" src="assets{{category.imageUrl}}" [alt]="category.description"
+        [title]="category.description" />
+    </figure>
+    <div class="category-description">
+      <h3 class="category-heading">{{category.name}}</h3>
+      <p class="category-para">{{category.description}}</p>
+      <button class="primary-button inline-primary" routerLink="/products"
+        [queryParams]="{category:category.id}">Explore
+        {{category.key}}</button>
     </div>
-    <div class="col-12 categories" *ngFor="let category of categoryItems | order : 'order';let bannerIndex=index">
-      <figure class="category-fighure">
-          <img class="category-image" src="assets{{category.imageUrl}}" [alt]="category.description" [title]="category.description"/>
-      </figure>
-      <div class="category-description">
-        <h3 class="category-heading">{{category.name}}</h3>
-        <p class="category-para">{{category.description}}</p>
-        <button class="primary-button inline-primary">Explore {{category.key}}</button>
-      </div>
-    </div>
+  </div>
 </section>

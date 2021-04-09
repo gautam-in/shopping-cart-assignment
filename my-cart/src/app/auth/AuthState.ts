@@ -4,5 +4,5 @@ export interface AuthState {
   "refreshToken": string,
   "expiresIn": string,
   "localId": string,
-  "error" : string
+  "error": string
 }

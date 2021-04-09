@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Banner } from '../model/Banner.model';
-import { MatCarousel, MatCarouselComponent, Orientation } from '@ngmodule/material-carousel';
+import { Orientation } from '@ngmodule/material-carousel';
 import { ThemePalette } from '@angular/material/core';
 
 @Component({
@@ -30,14 +30,14 @@ export class CarousalComponent implements OnInit {
   public useMouseWheel = false;
   public orientation: Orientation = 'ltr';
   public log: string[] = [];
-  
-  @Input() set bannersList(banners: Banner[]){
-    this.slidesList = banners.map(banner=>{
-      return {image: 'assets'+ banner.bannerImageUrl};
+
+  @Input() set bannersList(banners: Banner[]) {
+    this.slidesList = banners.map(banner => {
+      return { image: 'assets' + banner.bannerImageUrl };
     })
   }
 
-  constructor() { }  
+  constructor() { }
 
   ngOnInit(): void {
 

@@ -12,7 +12,6 @@ import { EffectsModule } from '@ngrx/effects';
 import { AppEffect } from './app.effect';
 import { reducer } from './reducers/app.reducer';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatDialogModule } from '@angular/material/dialog';
 import { AuthEffect } from './auth/auth.effect';
 import { AuthGuard } from './auth/auth.guard';
 import { CarousalComponent } from './carousal/carousal.component';
@@ -33,7 +32,7 @@ import { ToastrModule } from 'ngx-toastr';
     AuthModule,
     HttpClientModule,
     StoreModule.forRoot(reducer),
-    EffectsModule.forRoot([AuthEffect,AppEffect]),
+    EffectsModule.forRoot([AuthEffect, AppEffect]),
     BrowserAnimationsModule,
     MatCarouselModule.forRoot(),
     ToastrModule.forRoot()

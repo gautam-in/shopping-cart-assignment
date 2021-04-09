@@ -1,11 +1,13 @@
 <div class="no-padding-row cart-items" *ngIf="productList.length;else noItemsInCart">
     <div class="col-12 card header-card">
-      <h1 class="shoppincart-heading">My Cart</h1>
-      <span class="shopping-cart-close" (click)="closeModel()">&#10005;</span>
+        <h1 class="shoppincart-heading">My Cart</h1>
+        <span class="shopping-cart-close" (click)="closeModel()">&#10005;</span>
     </div>
     <div class="no-padding-row scrollable-items">
         <div class="col-12 card image-card" *ngFor="let product of productList">
-            <img class="cart-item-image" src="assets{{product.imageURL}}" alt="product.description" />
+            <figure>
+                <img class="cart-item-image" src="assets{{product.imageURL}}" alt="product.description" />
+            </figure>
             <div class="cart-item-details">
                 <h3>{{product.name}}</h3>
                 <div class="cart-item-addition">
@@ -23,7 +25,7 @@
     </div>
     <div class="col-12 card checkout-card">
         <p class="promo-paragraph">Promo code can be applied on payment page</p>
-        <button class="primary-button">Checkout</button>
+        <button class="primary-button" (click)="closeModel()">Checkout</button>
     </div>
 </div>
 
@@ -37,6 +39,6 @@
             <p class="no-items">No items in your cart</p>
             <p class="add-fav-items">Your favourite items are just a click away</p>
         </div>
-        <button class="primary-button start-button">Start Shopping</button>
+        <button (click)="closeModel()" class="primary-button start-button">Start Shopping</button>
     </div>
 </ng-template>

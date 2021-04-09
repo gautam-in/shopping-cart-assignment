@@ -6,11 +6,11 @@ import { HomeComponent } from './home/home.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 
 const routes: Routes = [
-  {path : '',redirectTo : '/login',pathMatch:'full'},
+  { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
-  { path: 'home', component: HomeComponent , canActivate : [AuthGuard] },
-  { path: 'products', loadChildren : () => import ('./products/products.module').then(module=> module.ProductsModule) },
-  {path:'**',component : NotFoundComponent}
+  { path: 'home', component: HomeComponent, canActivate: [AuthGuard] },
+  { path: 'products', loadChildren: () => import('./products/products.module').then(module => module.ProductsModule) },
+  { path: '**', component: NotFoundComponent }
 ];
 
 @NgModule({

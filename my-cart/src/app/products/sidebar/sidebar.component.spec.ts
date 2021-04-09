@@ -9,9 +9,9 @@ describe('SidebarComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SidebarComponent ]
+      declarations: [SidebarComponent]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {
@@ -24,8 +24,8 @@ describe('SidebarComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('Should get the emited value',()=>{
-    let category : Category = {
+  it('Should get the emited value', () => {
+    let category: Category = {
       description: 'Our beverage department will ensure your fridge is always fully stocked. Shop for soda, juice, beer and more.',
       enabled: true,
       id: "5b675e5e5936635728f9fc30",
@@ -34,7 +34,7 @@ describe('SidebarComponent', () => {
       name: "Beverages",
       order: 3
     }
-    component.selectedItem.subscribe(selectedCategory=> expect(selectedCategory).toBe(category,'category selected'))
+    component.selectedItem.subscribe(selectedCategory => expect(selectedCategory).toBe(category.id, 'category selected'))
     component.setSelectedCategory(category);
   })
 });

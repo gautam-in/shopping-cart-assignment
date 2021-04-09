@@ -11,7 +11,7 @@ import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
-  declarations: [ProductsComponent, ProductItemsComponent,ProductItemComponent, SidebarComponent,],
+  declarations: [ProductsComponent, ProductItemsComponent, ProductItemComponent, SidebarComponent,],
   imports: [
     CommonModule,
     ProductsRoutingModule,

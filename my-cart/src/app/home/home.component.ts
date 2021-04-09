@@ -12,26 +12,26 @@ import * as productActions from './../products/productions-actions';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  bannerItems : Banner[] = [];
-  categoryItems : Category[] = []
-  constructor(private backendApi : BackendInteractionService,private store:Store<AppState>) {}
+  bannerItems: Banner[] = [];
+  categoryItems: Category[] = []
+  constructor(private backendApi: BackendInteractionService, private store: Store<AppState>) { }
 
   ngOnInit(): void {
     this.getBanners();
     this.getCaterories();
   }
 
-  getBanners(){
-    this.backendApi.getBanners().subscribe((bannersList:Banner[])=>{
+  getBanners() {
+    this.backendApi.getBanners().subscribe((bannersList: Banner[]) => {
       this.bannerItems = bannersList;
-    },error=>{
+    }, error => {
     })
   }
 
-  getCaterories(){
-    this.store.select("categories").subscribe(categories=>{
+  getCaterories() {
+    this.store.select("categories").subscribe(categories => {
       this.categoryItems = categories['categories'];
-      if(!this.categoryItems.length) this.store.dispatch(new productActions.FetchCategories());
+      if (!this.categoryItems.length) this.store.dispatch(new productActions.FetchCategories());
     })
   }
 

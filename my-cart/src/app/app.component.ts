@@ -10,19 +10,19 @@ import * as authActions from './auth/auth.actions';
 })
 export class AppComponent {
   title = 'my-cart';
-  constructor(private store:Store<AuthState>){
+  constructor(private store: Store<AuthState>) {
     this.autoLogin();
   }
 
-  autoLogin(){
+  autoLogin() {
     let userDetails = localStorage.getItem('user');
-    if(userDetails){
-       let userAuthDetails:AuthState = JSON.parse(userDetails);
-       if(new Date(userAuthDetails.expiresIn).getTime() - new Date().getTime() > 0){
-         this.store.dispatch(new authActions.SignIn(userAuthDetails))
-       }else{
+    if (userDetails) {
+      let userAuthDetails: AuthState = JSON.parse(userDetails);
+      if (new Date(userAuthDetails.expiresIn).getTime() - new Date().getTime() > 0) {
+        this.store.dispatch(new authActions.SignIn(userAuthDetails))
+      } else {
         localStorage.removeItem('user');
-       }
+      }
     }
   }
 }

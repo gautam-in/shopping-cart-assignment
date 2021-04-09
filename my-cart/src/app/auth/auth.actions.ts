@@ -11,29 +11,29 @@ export const AUTH_ERROR = "AUTH_ERROR";
 
 export class SignIn {
     readonly type = SIGN_IN
-    constructor(public payload:AuthState){
-       this.payload = payload;
+    constructor(public payload: AuthState) {
+        this.payload = payload;
     }
 }
 
 export class SignInStart {
     readonly type = SIGN_IN_START;
-    constructor(public payload:User){
-       this.payload = payload;
+    constructor(public payload: User) {
+        this.payload = payload;
     }
 }
 
 export class SignUp {
     readonly type = SIGN_UP
-    constructor(public payload:AuthState){
-       this.payload = payload;
+    constructor(public payload: AuthState) {
+        this.payload = payload;
     }
 }
 
 export class SignUpStart {
     readonly type = SIGN_UP_START
-    constructor(public payload:User){
-       this.payload = payload;
+    constructor(public payload: User) {
+        this.payload = payload;
     }
 }
 
@@ -43,8 +43,8 @@ export class Logout {
 
 export class AuthError {
     readonly type = AUTH_ERROR;
-    constructor(public payload:string){
-       this.payload = payload;
+    constructor(public payload: string) {
+        this.payload = payload;
     }
 }
 

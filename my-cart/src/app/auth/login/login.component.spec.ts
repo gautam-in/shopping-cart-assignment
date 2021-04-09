@@ -10,20 +10,21 @@ import { LoginComponent } from './login.component';
 describe('LoginComponent', () => {
   let component: LoginComponent;
   let fixture: ComponentFixture<LoginComponent>;
-  let template:HTMLElement;
-  let store : Store;
-  let route : any;
+  let template: HTMLElement;
+  let store: Store;
+  let route: any;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports : [FormsModule],
-      declarations: [ LoginComponent ],
-      providers : [
-        {provide :Store , useValue : StoreStub},
-        {provide : ActivatedRoute,useClass:ActivatedRouteStube}
-       ]}
-      )
-    .compileComponents();
+      imports: [FormsModule],
+      declarations: [LoginComponent],
+      providers: [
+        { provide: Store, useValue: StoreStub },
+        { provide: ActivatedRoute, useClass: ActivatedRouteStube }
+      ]
+    }
+    )
+      .compileComponents();
   });
 
   beforeEach(() => {
@@ -39,26 +40,26 @@ describe('LoginComponent', () => {
   });
 
   it('should contain heading Login and paragraph', () => {
-      let loginHeadingText = 'Login';
-      let loginParagraphText = 'Get Access to your Orders,Wishlist and Recommendations';
-      let loginHeading = template.querySelector('.secondary-heading');
-      let loginParagraph = template.querySelector('.secondary-paragraph');
-      expect(loginHeading?.textContent).toEqual(loginHeadingText);
-      expect(loginParagraph?.textContent).toBe(loginParagraphText)
+    let loginHeadingText = 'Login';
+    let loginParagraphText = 'Get Access to your Orders,Wishlist and Recommendations';
+    let loginHeading = template.querySelector('.secondary-heading');
+    let loginParagraph = template.querySelector('.secondary-paragraph');
+    expect(loginHeading?.textContent).toEqual(loginHeadingText);
+    expect(loginParagraph?.textContent).toBe(loginParagraphText)
   });
 
-  it('it should get query parameters from activated route(Login)',fakeAsync(() =>{
-      route.setParamMap({action:'login'})
-      component.getQueryParams();
-      tick();
-      expect(component.isLogin).toBe(true)
+  it('it should get query parameters from activated route(Login)', fakeAsync(() => {
+    route.setParamMap({ action: 'login' })
+    component.getQueryParams();
+    tick();
+    expect(component.isLogin).toBe(true)
   }))
 
-  it('it should get query parameters from activated route(SignUp)',fakeAsync(() =>{
-      route.setParamMap({action:'signUp'});
-      component.getQueryParams()
-      tick();
-      expect(component.isLogin).toBe(false);
+  it('it should get query parameters from activated route(SignUp)', fakeAsync(() => {
+    route.setParamMap({ action: 'signUp' });
+    component.getQueryParams()
+    tick();
+    expect(component.isLogin).toBe(false);
   }))
 
 });

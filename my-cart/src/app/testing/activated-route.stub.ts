@@ -4,11 +4,11 @@ import { ReplaySubject } from "rxjs";
 export class ActivatedRouteStube implements Partial<ActivatedRoute>{
     private subject = new ReplaySubject<ParamMap>();
     readonly queryParamMap = this.subject.asObservable();
-    constructor(){
+    constructor() {
 
     }
 
-    setParamMap(params:Params){
-       this.subject.next(convertToParamMap(params))
+    setParamMap(params: Params) {
+        this.subject.next(convertToParamMap(params))
     }
 }

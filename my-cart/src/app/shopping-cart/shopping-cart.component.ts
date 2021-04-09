@@ -9,32 +9,32 @@ import * as productActions from './../products/productions-actions'
   styleUrls: ['./shopping-cart.component.scss']
 })
 export class ShoppingCartComponent implements OnInit {
-  productList : Product[] = []
-  constructor(private store:Store<AppState>) { }
-  
+  productList: Product[] = []
+  constructor(private store: Store<AppState>) { }
+
   ngOnInit(): void {
     this.getAddedProducts()
   }
 
-  getAddedProducts(){
+  getAddedProducts() {
     let totalPrice
-    this.store.select('cart').subscribe(cart=>{
-      this.productList = Object.keys(cart.addedProducts).map(productId=>{
+    this.store.select('cart').subscribe(cart => {
+      this.productList = Object.keys(cart.addedProducts).map(productId => {
         totalPrice = cart.addedProducts[productId].quantity * cart.addedProducts[productId].price
-        return { ...cart.addedProducts[productId],totalPrice}
+        return { ...cart.addedProducts[productId], totalPrice }
       })
     })
   }
 
-  closeModel(){
+  closeModel() {
     (<HTMLElement>document.querySelector('.modal-backdrop')).style.display = 'none';
   }
 
-  increaseQuantity(product:Product){
-     this.store.dispatch(new productActions.IncrementCartItemQuantity(product))
+  increaseQuantity(product: Product) {
+    this.store.dispatch(new productActions.IncrementCartItemQuantity(product))
   }
 
-  decreaseQuantity(product:Product){
+  decreaseQuantity(product: Product) {
     this.store.dispatch(new productActions.DecrementCartItemQuantity(product))
   }
 

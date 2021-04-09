@@ -29,3 +29,6 @@
     padding : 1rem 0rem;
 }
 
+input.ng-invalid.ng-touched{
+    border-bottom: 2px solid $color-alert;
+}
