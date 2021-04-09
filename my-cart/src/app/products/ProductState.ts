@@ -1,6 +1,9 @@
 import { Category } from "../model/category.model";
 
-export interface ProductState {
-    categories : Category [],
+export interface CartState {
     addedProducts : any
+}
+
+export interface CategoryState{
+    categories : Category[]
 }

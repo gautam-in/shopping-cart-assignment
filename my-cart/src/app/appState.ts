@@ -1,7 +1,8 @@
 import { AuthState } from "./auth/AuthState";
-import { ProductState } from "./products/ProductState";
+import { CartState, CategoryState} from "./products/ProductState";
 
 export interface AppState {
-    products : ProductState,
+    cart : CartState,
+    categories : CategoryState,
     auth : AuthState
 }

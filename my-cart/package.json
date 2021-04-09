@@ -11,7 +11,7 @@
   },
   "private": true,
   "dependencies": {
-    "@angular/animations": "~11.2.3",
+    "@angular/animations": "^11.2.9",
     "@angular/cdk": "^11.2.7",
     "@angular/common": "~11.2.3",
     "@angular/compiler": "~11.2.3",
@@ -25,6 +25,7 @@
     "@ngrx/effects": "^11.0.1",
     "@ngrx/store": "^11.0.1",
     "lodash": "^4.17.21",
+    "ngx-toastr": "^13.2.1",
     "rxjs": "^6.6.7",
     "tslib": "^2.0.0",
     "zone.js": "~0.11.3"

@@ -1,19 +1,16 @@
 import { Product } from "../model/Products.model";
-import { ProductState } from "../products/ProductState";
-import * as productActionTypes from './../products/product-actions-types';
+import { CartState } from "../products/ProductState";
+import * as productActionTypes from '../products/product-actions-types';
 
 
-const InitialState:ProductState = {
-   categories : [],
+const InitialState:CartState = {
    addedProducts : null
 }
 
-export function productReducer(state=InitialState,action:{type:string,payload?:any}){
+export function CartReducer(state=InitialState,action:{type:string,payload?:any}){
       let newCartItems: any;
       let increasedQuantity;
       switch(action.type){
-          case productActionTypes.ADD_CATEGORIES :
-              return {...state,categories:action.payload}
 
           case productActionTypes.ADD_CART_ITEMS :
               newCartItems = { ...state.addedProducts,[action.payload.id] : action.payload};

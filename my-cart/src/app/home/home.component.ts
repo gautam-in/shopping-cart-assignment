@@ -6,7 +6,6 @@ import { Store } from '@ngrx/store';
 import { AppState } from '../appState';
 import * as productActions from './../products/productions-actions';
 
-
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -15,9 +14,7 @@ import * as productActions from './../products/productions-actions';
 export class HomeComponent implements OnInit {
   bannerItems : Banner[] = [];
   categoryItems : Category[] = []
-  constructor(private backendApi : BackendInteractionService,private store:Store<AppState>) { 
-    
-  }
+  constructor(private backendApi : BackendInteractionService,private store:Store<AppState>) {}
 
   ngOnInit(): void {
     this.getBanners();
@@ -32,8 +29,8 @@ export class HomeComponent implements OnInit {
   }
 
   getCaterories(){
-    this.store.select("products").subscribe(products=>{
-      this.categoryItems = products['categories'];
+    this.store.select("categories").subscribe(categories=>{
+      this.categoryItems = categories['categories'];
       if(!this.categoryItems.length) this.store.dispatch(new productActions.FetchCategories());
     })
   }

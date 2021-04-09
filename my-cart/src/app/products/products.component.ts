@@ -25,8 +25,8 @@ export class ProductsComponent implements OnInit {
   }
   
   getCategories(){
-    this.store.select("products").subscribe(products=>{
-      this.categoryList = products.categories
+    this.store.select("categories").subscribe(categories=>{
+      this.categoryList = categories.categories
     })
   }
 

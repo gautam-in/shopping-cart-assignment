@@ -18,10 +18,10 @@ export class ShoppingCartComponent implements OnInit {
 
   getAddedProducts(){
     let totalPrice
-    this.store.select('products').subscribe(productList=>{
-      this.productList = Object.keys(productList.addedProducts).map(productId=>{
-        totalPrice = productList.addedProducts[productId].quantity * productList.addedProducts[productId].price
-        return { ...productList.addedProducts[productId],totalPrice}
+    this.store.select('cart').subscribe(cart=>{
+      this.productList = Object.keys(cart.addedProducts).map(productId=>{
+        totalPrice = cart.addedProducts[productId].quantity * cart.addedProducts[productId].price
+        return { ...cart.addedProducts[productId],totalPrice}
       })
     })
   }

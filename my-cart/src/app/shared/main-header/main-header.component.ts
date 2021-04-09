@@ -1,10 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
-import { ActivatedRoute, Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { AppState } from 'src/app/appState';
 import { AuthState } from 'src/app/auth/AuthState';
-import { ProductState } from 'src/app/products/ProductState';
+import { CartState } from 'src/app/products/ProductState';
 import * as authActions from './../../auth/auth.actions';
 
 @Component({
@@ -34,7 +32,7 @@ export class MainHeaderComponent implements OnInit {
   }
 
   getCartItems(){
-     this.store.select('products').subscribe(productList=>{
+     this.store.select('cart').subscribe(productList=>{
        console.log(productList);
        this.getTotalItemsAdded(productList);
      })
@@ -44,7 +42,7 @@ export class MainHeaderComponent implements OnInit {
     this.store.dispatch(new authActions.Logout())
   }
 
-  getTotalItemsAdded(itemsInCart:ProductState){
+  getTotalItemsAdded(itemsInCart:CartState){
     if(itemsInCart && itemsInCart.addedProducts){
       this.totalItemsInCart = Object.keys(itemsInCart.addedProducts).reduce((totalItems:any,productId)=>{
         return totalItems = totalItems + itemsInCart.addedProducts[productId].quantity

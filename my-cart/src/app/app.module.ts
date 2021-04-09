@@ -17,11 +17,14 @@ import { AuthEffect } from './auth/auth.effect';
 import { AuthGuard } from './auth/auth.guard';
 import { CarousalComponent } from './carousal/carousal.component';
 import { MatCarouselModule } from '@ngmodule/material-carousel';
+import { NotFoundComponent } from './not-found/not-found.component';
+import { ToastrModule } from 'ngx-toastr';
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     CarousalComponent,
+    NotFoundComponent,
   ],
   imports: [
     BrowserModule,
@@ -32,8 +35,8 @@ import { MatCarouselModule } from '@ngmodule/material-carousel';
     StoreModule.forRoot(reducer),
     EffectsModule.forRoot([AuthEffect,AppEffect]),
     BrowserAnimationsModule,
-    MatDialogModule,
     MatCarouselModule.forRoot(),
+    ToastrModule.forRoot()
   ],
   providers: [AuthGuard],
   bootstrap: [AppComponent]
