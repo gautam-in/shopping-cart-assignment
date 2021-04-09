@@ -45,7 +45,7 @@ const App = ({
           showModal ? <Cart /> : ""
         }
         <Switch>
-          <PrivateRoute exact path="/" component={Home} />
+          <Route exact path="/" component={Home} />
           <Route exact path={routes.signIn} render={() =>
             loggedIn ? (
               <Redirect
@@ -57,8 +57,8 @@ const App = ({
               <Login />
             )
           } />
-          <PrivateRoute exact path={routes.productById} component={Products} />
-          <PrivateRoute path={routes.products} component={Products} />
+          <Route exact path={routes.productById} component={Products} />
+          <Route path={routes.products} component={Products} />
           <Route exact path={routes.register} component={Register} />
         </Switch>
       </Router>
