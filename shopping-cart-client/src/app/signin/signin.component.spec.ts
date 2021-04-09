@@ -19,7 +19,27 @@ describe('SigninComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+  // it('should create', () => {
+  //   expect(component).toBeTruthy();
+  // });
+//   it("Check if credentials are valid", ()=>{
+//     expect(component.test("abc@gmail.com",12345678)).toBe(true);
+//  });
+//  it("Check if credentials are valid", ()=> {
+//     expect(component.test('','')).toBe(false);
+//  });
+//  it("Check if credentials are valid", ()=> {
+//     expect(component.test("abc@gmail.com",'')).toBe(false);
+//  });
+//  it("Check if credentials are valid", ()=> {
+//     expect(component.test("abc",12345678)).toBe(false);
+//  });
+//  it("Check if credentials are valid", ()=> {
+//     expect(component.test("aac@gmail.com",12345678)).toBe(true);
+//  });
+
+ it("Check if credentials are valid", ()=> {
+    expect(component.test("aac@gmail.com",123458)).toBe(true);
+ });
+
 });

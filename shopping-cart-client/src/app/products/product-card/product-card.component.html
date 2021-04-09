@@ -21,6 +21,7 @@
       type="button"
       (click)="addItemToCart(product.id)"
       class="btn"
+      role="button"
     >
       {{ isDesktop ? "Buy Now" : "Buy Now@" }}
       <span *ngIf="!isDesktop">{{ product.price }}</span>

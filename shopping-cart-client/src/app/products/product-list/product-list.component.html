@@ -38,13 +38,13 @@
     >
       <a
         href="javascript: void(0)"
-        aria-labelledby="category-type"
+        aria-labelledby="category-type{{i}}"
         (click)="onCheckboxChange(category.id)"
         >{{ category.name }}</a
       >
-      <span class="visuallyhidden" id="category-type">
+      <!-- <span class="visuallyhidden" id="category-type-{{i}}" aria-labelledby="Category filter">
         Filter by {{ category.name }}</span
-      >
+      > -->
     </div>
   </ng-template>
   <div class="product-list-container">

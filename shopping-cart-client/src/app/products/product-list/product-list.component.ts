@@ -1,6 +1,7 @@
 import { Component, HostListener, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { forkJoin, Observable } from 'rxjs';
+import { ProductServiceService } from 'src/app/services/product-service.service';
 import { SharedService } from 'src/app/services/shared.service';
 import { Categories } from '../../models/Categories';
 import { FilterData } from '../../models/FilterData';
@@ -22,7 +23,8 @@ export class ProductListComponent implements OnInit {
   isDesktop: boolean = this.currWinSize > 1024;
   isMobile: boolean = this.currWinSize < 768;
 
-  constructor(private dataService: SharedService, private router: Router) {
+  constructor(private dataService: SharedService, private router: Router,
+    private productServiceService:ProductServiceService) {
     const state = this.router.getCurrentNavigation().extras?.state;
     if (state && state.id) {
       this.currCategory = state.id;
@@ -41,13 +43,15 @@ export class ProductListComponent implements OnInit {
   initData() {
     const observables: [Observable<Products[]>, Observable<Categories[]>] = [
       this.dataService.getProducts(),
-      this.dataService.getCategories(),
+      this.productServiceService.getCategories(),
     ];
 
     forkJoin(observables).subscribe(([productsList, categoriesData]) => {
       this.productsList = productsList;
       this.productsListCopy = JSON.parse(JSON.stringify(this.productsList));
-      this.categoriesData = this.formatFilterData(categoriesData);
+      this.categoriesData = this.formatFilterData(
+        this.dataService.processData(categoriesData)
+      );
       this.filterProducts(this.currCategory);
     });
   }
@@ -89,7 +93,7 @@ export class ProductListComponent implements OnInit {
       this.productsList = [
         ...this.productsListCopy.filter((item) => item.category === categoryId),
       ];
-    },0) }else {
+    },100) }else {
       this.categoriesData.forEach((category) => (category.checked = false));
       this.productsList = [...this.productsListCopy];
     }

@@ -32,4 +32,14 @@ isLoggedIn:boolean = false;
       else
       this.isLoginError=true;    
   }
+  test(email:string,password:any){
+    if(email=='' && password=='')
+      return false;
+    if(email == 'abc@gmail.com' && password=='')
+      return false;
+    if(email=='abc' && password==1234)
+      return false;
+      if(email!='' && password.length>0)
+      return true;
+  }
 }

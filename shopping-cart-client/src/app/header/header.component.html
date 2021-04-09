@@ -24,7 +24,7 @@
     <a *ngIf="!setLogOut" (click)="register()">Sign up</a>
     <div *ngIf="setLogOut">
       <a id="miniCartBtn" class="cart" (click)="onClickCart()">
-        <img src="assets/static/images/cart.svg" alt="" />
+        <img src="assets/static/images/cart.svg" alt="cart image" style="height:auto;width:auto;" />
         <span id="itemsInCart">{{ noOfItems }} items</span>
       </a>
     </div>

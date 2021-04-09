@@ -12,6 +12,8 @@ import { CaraouselComponent } from './home-page/caraousel/caraousel.component';
 import { CategoryBannerComponent } from './home-page/category-banner/category-banner.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CartComponent } from './cart/cart.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
