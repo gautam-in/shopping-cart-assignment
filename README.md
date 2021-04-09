@@ -57,7 +57,7 @@ Cart
 List of items added in the cart with quantity and price
 User can increase and decrease the quantity of item
 
-# login
+# Login
 
 ![alt text](https://github.com/athul-narayanan/shopping-cart-assignment/blob/develop-1/login.jpg)
 
