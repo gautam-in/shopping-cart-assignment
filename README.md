@@ -65,5 +65,14 @@ User can increase and decrease the quantity of item
 
 ![alt text](https://github.com/athul-narayanan/shopping-cart-assignment/blob/develop-1/Signup.jpg)
 
+# Home
+
+![alt text](https://github.com/athul-narayanan/shopping-cart-assignment/blob/develop-1/Home.jpg)
+
+# Product
+
+![alt text](https://github.com/athul-narayanan/shopping-cart-assignment/blob/develop-1/product.jpg)
+
+
 
 
