@@ -7,7 +7,7 @@ width: 100%;
 
 const Slide = ({ content }) => {
     return (
-        <BannerImage src={content} />
+        <BannerImage src={content} alt="banner image" />
     )
 }
 
