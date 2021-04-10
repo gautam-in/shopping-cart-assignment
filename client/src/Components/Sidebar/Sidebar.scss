@@ -15,6 +15,10 @@
     }
 }
 
+.selected-item{
+    color: $button-bg-color;
+}
+
 @media only screen and (min-width: $desktop-width) {
     .sidebar{
         margin: 0px 0px 0px 17%;
