@@ -9,11 +9,12 @@
         <div class="col-12 alert-danger" *ngIf="error">
             {{error}}
         </div>
-        <form class="login-form" #loginForm="ngForm" (ngSubmit)="login(loginForm)">
+        <form class="login-form" role="form" aria-label="User details" #loginForm="ngForm"
+            (ngSubmit)="login(loginForm)">
             <div class="form-group" *ngIf="!isLogin">
                 <label class="form-control-label" for="firstname">FirstName</label>
                 <input class="form-control-input" type="text" name="firstname" id="firstname" ngModel
-                    #firstname="ngModel" required aria-describedby="Please Enter First Name Here" />
+                    #firstname="ngModel" required aria-label="Your first Name" />
                 <div class="alert-danger" *ngIf="firstname?.touched && firstname?.errors">
                     <div *ngIf="firstname?.errors?.required">
                         FirstName is required
@@ -23,7 +24,7 @@
             <div class="form-group" *ngIf="!isLogin">
                 <label class="form-control-label" for="lastname">Last Name</label>
                 <input class="form-control-input" type="text" name="lastname" id="lastname" ngModel #lastname="ngModel"
-                    required aria-describedby="Please Enter Last Name Here" />
+                    required aria-label="Your last Name" />
                 <div class="alert-danger" *ngIf="lastname?.touched && lastname?.errors">
                     <div *ngIf="lastname?.errors?.required">
                         LastName is required
@@ -31,10 +32,9 @@
                 </div>
             </div>
             <div class="form-group">
-                <label class="form-control-label" for="firstname">Email</label>
+                <label class="form-control-label" for="email">Email</label>
                 <input class="form-control-input" type="text" name="email" id="email" ngModel #email="ngModel"
-                    pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" required
-                    aria-describedby="Please Enter Email Name Here" />
+                    pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" required aria-label="Your email address" />
                 <div class="alert-danger" *ngIf="email?.touched && email?.errors">
                     <div *ngIf="email?.errors?.required">
                         Email is required
@@ -48,7 +48,7 @@
                 <label class="form-control-label" for="password">Password</label>
                 <input class="form-control-input" type="text" name="password" id="password" ngModel #password="ngModel"
                     pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{6,}" required
-                    aria-describedby="Please Enter Password Here" />
+                    aria-label="Password for your account" />
                 <div class="alert-danger" *ngIf="password?.touched && password?.errors">
                     <div *ngIf="password?.errors?.required">
                         Password is Required
@@ -59,10 +59,10 @@
                 </div>
             </div>
             <div class="form-group" *ngIf="!isLogin">
-                <label class="form-control-label" for="firstname">Confirm Password</label>
+                <label class="form-control-label" for="confirmpassword">Confirm Password</label>
                 <input class="form-control-input" type="password" name="confirmpassword" id="confirmpassword" ngModel
                     #confirmpassword="ngModel" pattern="{{password.value}}" required
-                    aria-describedby="Please confirm password here" />
+                    aria-label="Confirm your password" />
                 <div class="alert-danger" *ngIf="confirmpassword?.touched && confirmpassword?.errors">
                     <div *ngIf="confirmpassword?.errors?.required">
                         Confirm password

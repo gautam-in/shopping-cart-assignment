@@ -1,7 +1,7 @@
-<div class="no-padding-row cart-items" *ngIf="productList.length;else noItemsInCart">
+<div class="no-padding-row cart-items" *ngIf="productList.length;else noItemsInCart" role="shopping-cart">
     <div class="col-12 card header-card">
         <h1 class="shoppincart-heading">My Cart</h1>
-        <span class="shopping-cart-close" (click)="closeModel()">&#10005;</span>
+        <span aria-label="close shopping cart" class="shopping-cart-close" (click)="closeModel()">&#10005;</span>
     </div>
     <div class="col-12 no-padding-row">
         <div class="no-padding-row scrollable-items">
