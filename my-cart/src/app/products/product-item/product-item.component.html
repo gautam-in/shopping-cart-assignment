@@ -1,8 +1,6 @@
 <div class="product-item">
     <h3 class="product-item-heading" title="{{product.name}}">{{product.name}}</h3>
-    <figure>
-        <img class="product-item-image" src="assets{{product.imageURL}}" />
-    </figure>
+    <img class="product-item-image" src="assets{{product.imageURL}}" />
     <p class="product-item-description">{{product.description | ellipsis : 128}}</p>
     <footer class="product-item-footer">
         <div class="footer-desktop">
