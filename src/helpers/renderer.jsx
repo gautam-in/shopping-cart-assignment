@@ -14,9 +14,10 @@ export default (req, store, context) => {
   const insertCss = (...styles) => (
     styles ? styles.forEach((style) => css.add(style._getCss())) : []
   );
+  const path = `${req.path}?${new URLSearchParams(req.query)}`;
   const content = renderToString(
     <Provider store={store}>
-      <StaticRouter location={req.path} context={context}>
+      <StaticRouter location={path} context={context}>
         <StyleContext.Provider value={{ insertCss }}>
           {renderRoutes(Routes)}
         </StyleContext.Provider>
