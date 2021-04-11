@@ -1,0 +1,63 @@
+<main
+  class="login-form-page d-flex justify-content-center p-3"
+  id="main-content"
+  tabindex="-1"
+>
+  <div class="login-form-container d-flex">
+    <div class="form-heading-container">
+      <h2>Login</h2>
+      <p>Get access to your Orders, Wishlist and Recommendations</p>
+    </div>
+
+    <form
+      [formGroup]="loginForm"
+      class="login-form ml-md-3"
+      (ngSubmit)="onSubmit()"
+    >
+      <div class="floating-label">
+        <input
+          class="floating-control"
+          id="email"
+          name="email"
+          formControlName="email"
+          placeholder=" "
+          type="email"
+        />
+        <label for="email">Email</label>
+        <p
+          role="alert"
+          aria-live="polite"
+          *ngIf="f.email.invalid && (f.email.dirty || f.email.touched)"
+          class="alert-danger"
+        >
+          Enter a valid email address
+        </p>
+      </div>
+
+      <div class="floating-label">
+        <input
+          class="floating-control"
+          id="password"
+          name="password"
+          formControlName="password"
+          placeholder=" "
+          type="password"
+        />
+        <label for="password">Password</label>
+        <p
+          role="alert"
+          aria-live="polite"
+          *ngIf="
+            f.password.errors?.required &&
+            (f.password.dirty || f.password.touched)
+          "
+          class="alert-danger"
+        >
+          Password is a required field
+        </p>
+      </div>
+
+      <button type="submit" class="btn btn-primary w-100 p-2">Login</button>
+    </form>
+  </div>
+</main>

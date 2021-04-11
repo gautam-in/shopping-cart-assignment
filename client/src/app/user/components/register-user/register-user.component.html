@@ -1,0 +1,130 @@
+<main
+  class="register-form-page d-flex justify-content-center p-3"
+  id="main-content"
+  tabindex="-1"
+>
+  <div class="register-form-container d-flex">
+    <div class="form-heading-container">
+      <h2>Signup</h2>
+      <p>We do not share your personal details with anyone.</p>
+    </div>
+
+    <form
+      [formGroup]="registerForm"
+      class="register-form ml-md-3"
+      (ngSubmit)="onSubmit()"
+    >
+      <div class="floating-label">
+        <input
+          class="floating-control"
+          id="firstname"
+          name="firstname"
+          formControlName="firstname"
+          placeholder=" "
+          type="text"
+        />
+        <label for="firstname">First Name</label>
+        <p
+          role="alert"
+          aria-live="polite"
+          *ngIf="
+            f.firstname.errors?.required &&
+            (f.firstname.dirty || f.firstname.touched)
+          "
+          class="alert-danger"
+        >
+          First name is a required field
+        </p>
+      </div>
+
+      <div class="floating-label">
+        <input
+          class="floating-control"
+          id="lastname"
+          name="lastname"
+          formControlName="lastname"
+          placeholder=" "
+          type="text"
+        />
+        <label for="lastname">Last Name</label>
+        <p
+          role="alert"
+          aria-live="polite"
+          *ngIf="
+            f.lastname.errors?.required &&
+            (f.lastname.dirty || f.lastname.touched)
+          "
+          class="alert-danger"
+        >
+          Last name is a required field
+        </p>
+      </div>
+
+      <div class="floating-label">
+        <input
+          class="floating-control"
+          id="email"
+          name="email"
+          formControlName="email"
+          placeholder=" "
+          type="email"
+        />
+        <label for="email">Email</label>
+        <p
+          role="alert"
+          aria-live="polite"
+          *ngIf="f.email.invalid && (f.email.dirty || f.email.touched)"
+          class="alert-danger"
+        >
+          Enter a valid email address
+        </p>
+      </div>
+
+      <div class="floating-label">
+        <input
+          class="floating-control"
+          id="password"
+          name="password"
+          formControlName="password"
+          placeholder=" "
+          type="password"
+        />
+        <label for="password">Password</label>
+        <p
+          role="alert"
+          aria-live="polite"
+          *ngIf="f.password.invalid && (f.password.dirty || f.password.touched)"
+          class="alert-danger"
+        >
+          Password should be more than 6 characters long and have at least a
+          character and a number
+        </p>
+      </div>
+
+      <div class="floating-label">
+        <input
+          class="floating-control"
+          id="confirmPassword"
+          name="confirmPassword"
+          formControlName="confirmPassword"
+          placeholder=" "
+          type="password"
+        />
+        <label for="confirmPassword">Confirm Password</label>
+        <p
+          role="alert"
+          aria-live="polite"
+          *ngIf="
+            registerForm?.errors?.pwdNotMatching &&
+            (f.confirmPassword.dirty || f.confirmPassword.touched)
+          "
+          class="alert-danger"
+        >
+          Password and confirm password should match
+        </p>
+      </div>
+
+      <button type="submit" class="btn btn-primary w-100 p-2">Signup</button>
+    </form>
+  </div>
+</main>

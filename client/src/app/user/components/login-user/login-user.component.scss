@@ -1,0 +1,66 @@
+@import "variables";
+
+.login-form-container {
+  width: 80%;
+}
+
+.form-heading-container {
+  flex: 0 1 50%;
+
+  p {
+    font-weight: 600;
+  }
+}
+
+.login-form {
+  flex: 1 0 50%;
+  margin-top: 1.25rem;
+  max-width: 330px;
+}
+
+.floating-label {
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.floating-label label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: all 200ms;
+  color: $dark-gray;
+}
+
+.floating-control {
+  border: 0;
+  border-bottom: 1px solid $light-gray-mid;
+}
+
+.floating-control:focus {
+  outline: none;
+  border-bottom: 2px solid $blue-aqua;
+}
+
+.floating-label .floating-control:focus + label,
+.floating-label .floating-control:not(:placeholder-shown) + label {
+  top: -1.25rem;
+}
+
+.floating-label .floating-control:focus + label {
+  color: $blue-aqua;
+}
+
+.floating-control {
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .login-form-container {
+    flex-wrap: wrap;
+  }
+
+  .form-heading-container,
+  .login-form {
+    flex-basis: 100%;
+  }
+}

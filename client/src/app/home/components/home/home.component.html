@@ -1,0 +1,52 @@
+<main
+  id="main-content"
+  class="py-3"
+  tabindex="-1"
+  [ngClass]="{ 'main-before-load': !contentLoadedOnce }"
+>
+  <carousel [pauseOnFocus]="true">
+    <slide *ngFor="let banner of banners; trackBy: trackById">
+      <picture>
+        <source [srcset]="banner.bannerImageUrl + '.webp'" type="image/webp" />
+        <source
+          [srcset]="banner.bannerImageUrl + '.' + banner.imageType"
+          [type]="'image/' + banner.imageType"
+        />
+        <img
+          [src]="banner.bannerImageUrl + '.' + banner.imageType"
+          [alt]="banner.bannerImageAlt"
+          class="d-block w-100"
+        />
+      </picture>
+    </slide>
+  </carousel>
+
+  <div cleass="categories-container ">
+    <div
+      class="category d-flex p-4"
+      *ngFor="let category of categories; let index = index"
+      [ngClass]="{ 'flex-row-reverse': isOdd(index) }"
+    >
+      <div class="category-image">
+        <picture>
+          <source [srcset]="category.imageUrl + '.webp'" type="image/webp" />
+          <source
+            [srcset]="category.imageUrl + '.' + category.imageType"
+            [type]="'image/' + category.imageType"
+          />
+          <img
+            [src]="category.imageUrl + '.' + category.imageType"
+            alt=""
+            class="img-fluid"
+          />
+        </picture>
+      </div>
+
+      <div class="category-details text-center">
+        <h4>{{ category.name }}</h4>
+        <p>{{ category.description }}</p>
+        <button class="btn btn-primary" (click)="exploreCategory(category.key)">Explore {{ category.key }}</button>
+      </div>
+    </div>
+  </div>
+</main>

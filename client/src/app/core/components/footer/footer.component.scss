@@ -1,0 +1,16 @@
+@import "variables";
+
+footer {
+  background-color: $lighter-gray;
+}
+
+.footer-content {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+@media (max-width: 1199.98px) {
+  .footer-content {
+    width: 100%;
+  }
+}
