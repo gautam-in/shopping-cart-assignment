@@ -1,71 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
 
-// @import url("https://fonts.googleapis.com/css?family=Dosis:400,600,700");
+@import url("https://fonts.googleapis.com/css?family=Dosis:400,600,700&display=swap");
 @import "~bootstrap/dist/css/bootstrap.css";
 @import "variables";
-
-/* dosis-regular - latin */
-@font-face {
-  font-family: "Dosis";
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url("./assets/dosis-v19-latin/dosis-v19-latin-regular.eot"); /* IE9 Compat Modes */
-  src: local(""),
-    url("./assets/dosis-v19-latin/dosis-v19-latin-regular.eot?#iefix")
-      format("embedded-opentype"),
-    /* IE6-IE8 */ url("./assets/dosis-v19-latin/dosis-v19-latin-regular.woff2")
-      format("woff2"),
-    /* Super Modern Browsers */
-      url("./assets/dosis-v19-latin/dosis-v19-latin-regular.woff")
-      format("woff"),
-    /* Modern Browsers */
-      url("./assets/dosis-v19-latin/dosis-v19-latin-regular.ttf")
-      format("truetype"),
-    /* Safari, Android, iOS */
-      url("./assets/dosis-v19-latin/dosis-v19-latin-regular.svg#Dosis")
-      format("svg"); /* Legacy iOS */
-}
-/* dosis-600 - latin */
-@font-face {
-  font-family: "Dosis";
-  font-style: normal;
-  font-weight: 600;
-  font-display: swap;
-  src: url("./assets/dosis-v19-latin/dosis-v19-latin-600.eot"); /* IE9 Compat Modes */
-  src: local(""),
-    url("./assets/dosis-v19-latin/dosis-v19-latin-600.eot?#iefix")
-      format("embedded-opentype"),
-    /* IE6-IE8 */ url("./assets/dosis-v19-latin/dosis-v19-latin-600.woff2")
-      format("woff2"),
-    /* Super Modern Browsers */
-      url("./assets/dosis-v19-latin/dosis-v19-latin-600.woff") format("woff"),
-    /* Modern Browsers */
-      url("./assets/dosis-v19-latin/dosis-v19-latin-600.ttf") format("truetype"),
-    /* Safari, Android, iOS */
-      url("./assets/dosis-v19-latin/dosis-v19-latin-600.svg#Dosis")
-      format("svg"); /* Legacy iOS */
-}
-/* dosis-700 - latin */
-@font-face {
-  font-family: "Dosis";
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-  src: url("./assets/dosis-v19-latin/dosis-v19-latin-700.eot"); /* IE9 Compat Modes */
-  src: local(""),
-    url("./assets/dosis-v19-latin/dosis-v19-latin-700.eot?#iefix")
-      format("embedded-opentype"),
-    /* IE6-IE8 */ url("./assets/dosis-v19-latin/dosis-v19-latin-700.woff2")
-      format("woff2"),
-    /* Super Modern Browsers */
-      url("./assets/dosis-v19-latin/dosis-v19-latin-700.woff") format("woff"),
-    /* Modern Browsers */
-      url("./assets/dosis-v19-latin/dosis-v19-latin-700.ttf") format("truetype"),
-    /* Safari, Android, iOS */
-      url("./assets/dosis-v19-latin/dosis-v19-latin-700.svg#Dosis")
-      format("svg"); /* Legacy iOS */
-}
 
 * {
   box-sizing: border-box;

@@ -31,6 +31,7 @@ export class HomeComponent implements OnInit {
     this.seoService.setDescription(
       'Find the best deals on Sabka Bazaar and shop using different categories.'
     );
+    this.seoService.updateCanonicalUrl(this.router.url.split('?')[0]);
 
     forkJoin(this.getBanners(), this.getCategories()).subscribe(
       () => (this.contentLoadedOnce = true)

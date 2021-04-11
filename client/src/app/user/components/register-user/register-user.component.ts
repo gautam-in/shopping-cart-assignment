@@ -49,6 +49,7 @@ export class RegisterUserComponent implements OnInit {
     this.seoService.setDescription(
       'Register an account on Sabka Bazaar to view your orders, wallet balance, wishlist and to get personalized product recommendations.'
     );
+    this.seoService.updateCanonicalUrl(this.router.url.split('?')[0]);
   }
 
   get f() {

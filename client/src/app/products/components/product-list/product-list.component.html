@@ -6,7 +6,8 @@
         dropdownToggle
         type="button"
         class="btn btn-primary dropdown-toggle w-100"
-        aria-controls="category-dropdown"
+        aria-label="Select Category"
+        aria-describedby="category-dropdown"
       >
         <span>{{ selectedCategory?.name }}</span>
         <span class="caret"></span>
@@ -15,18 +16,23 @@
         id="category-dropdown"
         *dropdownMenu
         class="dropdown-menu"
-        role="menu"
+        role="listbox"
+        tabindex="0"
         aria-labelledby="category-button"
+        [attr.aria-activedescendant]="selectedCategory?.id"
       >
         <li
-          role="menuitem"
+          role="none"
           class="dropdown-item p-0"
           *ngFor="let category of categories"
           [ngClass]="{ active: selectedCategory?.id === category.id }"
         >
           <a
+            role="option"
             class="d-block p-3"
             [routerLink]=""
+            [id]="category.id"
+            [attr.aria-selected]="selectedCategory?.id === category.id"
             (click)="selectCategory(category)"
           >
             {{ category.name }}

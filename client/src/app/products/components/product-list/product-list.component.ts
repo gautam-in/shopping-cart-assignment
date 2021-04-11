@@ -32,6 +32,7 @@ export class ProductListComponent implements OnInit {
     this.seoService.setDescription(
       'Find a range of great products at unbelievable discounts.'
     );
+    this.seoService.updateCanonicalUrl(this.router.url.split('?')[0]);
 
     combineLatest([
       this.getCategories(),

@@ -36,6 +36,7 @@ export class LoginUserComponent implements OnInit {
     this.seoService.setDescription(
       'Login to Sabka Bazaar to view your orders, wallet balance, wishlist and to get personalized product recommendations.'
     );
+    this.seoService.updateCanonicalUrl(this.router.url.split('?')[0]);
   }
 
   get f() {
