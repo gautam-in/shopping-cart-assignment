@@ -52,4 +52,5 @@ input[type="password"] {
 
 .error-message{
   color : $failure-color;
+  white-space: pre;
 }

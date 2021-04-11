@@ -26,12 +26,13 @@ export const formFieldValidations = (formData) => {
     }
 
     if (typeof formData.user["password"] !== "undefined") {
-
-        // var pattern = new RegExp(/^(?=.*[a-z])(?=.*[0-9])(?=.{7,})/i);
-        var pattern = new RegExp(/^(?=.*[a-z])(?=.*[0-9])(?=.{7,})/i);
+        var pattern = new RegExp(/^(?=.*[a-z])(?=.*[0-9])(?=.{7,})(\S+$)/i);
         if (!pattern.test(formData.user["password"])) {
             isValid = false;
-            errors["password"] = "Please enter valid password.";
+            errors["password"] = `Please enter valid password with these format.
+             Minimum length 7 characters 
+             Must have a number and alphabet 
+             Cannot have spaces`;
         }
     }
     if (!formData.user["confirmPassword"]) {
