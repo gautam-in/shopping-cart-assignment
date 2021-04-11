@@ -64,8 +64,15 @@ export function app(): express.Express {
 
   // Authenticate user (DUMMY)
   server.post('/authenticate', (_, res) => {
-    res.cookie('id', '12345', { httpOnly: true, secure: true });
-    res.cookie('XSRF-TOKEN', Math.random() * 100000, { secure: true });
+    res.cookie('id', '12345', {
+      httpOnly: true,
+      secure: true,
+      sameSite: 'strict',
+    });
+    res.cookie('XSRF-TOKEN', Math.random() * 100000, {
+      secure: true,
+      sameSite: 'strict',
+    });
     res.send();
   });
 
@@ -81,7 +88,7 @@ export function app(): express.Express {
     // check if user is authenticated. If not, redirect to login page
     if (
       (!req.cookies || !req.cookies.id) &&
-      !(req.url.includes('/login') || req.url.includes('/signup'))
+      !(req.url.includes('/login') || req.url.includes('/register'))
     ) {
       res.redirect('/user/login');
       return;
