@@ -4,8 +4,6 @@ import Slide from './Slide'
 import Arrow from './Arrow'
 import Dots from './Dots'
 
-const getWidth = () => window.innerWidth;
-
 const SliderComponent = styled.div`
     max-width: 1000px;
     position: relative;
@@ -39,8 +37,6 @@ const Slider = props => {
             <Slide content={imgUrls[currentImageIndex]} />
             <Arrow direction="left" handleClick={previousSlide} />
             <Arrow direction="right" handleClick={nextSlide} />
-
-            {/* <Dots slides={imgUrls} activeSlide={activeSlide} /> */}
         </SliderComponent>
     )
 }
