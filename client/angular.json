@@ -37,7 +37,7 @@
             ],
             "styles": ["src/styles.scss"],
             "stylePreprocessorOptions": {
-              "includePaths": ["src/"]
+              "includePaths": ["./src"]
             },
             "scripts": []
           },
@@ -135,7 +135,10 @@
           "options": {
             "outputPath": "dist/shopping-cart-client/server",
             "main": "server.ts",
-            "tsConfig": "tsconfig.server.json"
+            "tsConfig": "tsconfig.server.json",
+            "stylePreprocessorOptions": {
+              "includePaths": ["./src"]
+            }
           },
           "configurations": {
             "production": {
