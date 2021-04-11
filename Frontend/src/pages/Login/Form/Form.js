@@ -2,18 +2,23 @@ import {useForm} from 'react-hook-form';
 import {Form, Label, Input} from 'reactstrap';
 import {withRouter} from 'react-router-dom';
 import PropTypes from 'prop-types';
+import {useDispatch} from 'react-redux';
 import ErrorMessage from '../../../components/ErrorMessage';
 import {emailValidation, passwordValidation} from '../../../constant';
 import '../../../styles/Form.scss';
+import {fetchUserDataSuccess} from '../../../actions/user';
 
 const LoginForm = ({history}) => {
+  const dispatch = useDispatch();
   const {register, handleSubmit, errors, reset, watch, formState} = useForm({
     mode: 'onChange',
   });
   const email = watch('email');
   const password = watch('password');
   const onSubmit = (data) => {
-    console.log(data);
+    const emailid = data.email;
+    localStorage.setItem('sabkaBazar', JSON.stringify({emailid}));
+    dispatch(fetchUserDataSuccess({emailid}));
     history.push('/');
     reset();
   };
@@ -111,7 +116,7 @@ const LoginForm = ({history}) => {
 
 LoginForm.propTypes = {
   history: PropTypes.shape({
-    push: PropTypes.string.isRequired,
+    push: PropTypes.func.isRequired,
   }).isRequired,
 };
 

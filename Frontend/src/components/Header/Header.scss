@@ -65,6 +65,7 @@ header {
     padding: 0.6rem 1rem;
   }
   .navbar-nav {
+    margin: 0;
     li {
       padding: 5px 0px;
     }
@@ -89,5 +90,17 @@ header {
 
   .cart-header-wrap {
     padding: 10px;
+    top: 0px;
+    bottom: auto;
+  }
+}
+.user-info {
+  h5 {
+    display: inline-block;
+    font-weight: 800;
+  }
+  span {
+    display: inline-block;
+    cursor: pointer;
   }
 }

@@ -3,7 +3,7 @@
 import React, {useState} from 'react';
 import PropTypes from 'prop-types';
 import {Link} from 'react-router-dom';
-import {useSelector} from 'react-redux';
+import {useDispatch, useSelector} from 'react-redux';
 import {
   Navbar,
   NavbarToggler,
@@ -17,13 +17,16 @@ import {faShoppingCart} from '@fortawesome/free-solid-svg-icons';
 import Logo from '../../../static/images/logo.png';
 import {allCartData} from '../../selector';
 import './Header.scss';
+import {userLogout} from '../../actions';
 
 const Header = React.memo(({cartSideNav}) => {
+  const dispatch = useDispatch();
   const [isOpen, setIsOpen] = useState(false);
 
   const {data} = useSelector((state) => allCartData(state));
-
+  const {data: userInfo} = useSelector((state) => state.user);
   const toggle = () => setIsOpen(!isOpen);
+  const userLogOut = () => dispatch(userLogout());
   return (
     <header>
       <Navbar color="light" expand="md" fixed="top">
@@ -48,15 +51,25 @@ const Header = React.memo(({cartSideNav}) => {
                 </Link>
               </NavItem>
             </Nav>
+
             <NavbarText>
-              <Nav className="mr-auto" navbar>
-                <NavItem>
-                  <Link to="/login">SignIn</Link>
-                </NavItem>
-                <NavItem>
-                  <Link to="/signup">Register</Link>
-                </NavItem>
-              </Nav>
+              {userInfo.emailid ? (
+                <div className="user-info">
+                  <h5>Welcome {userInfo.emailid} </h5>
+                  <span onClick={userLogOut} aria-hidden="true">
+                    ( Logout )
+                  </span>
+                </div>
+              ) : (
+                <Nav className="mr-auto" navbar>
+                  <NavItem>
+                    <Link to="/login">SignIn</Link>
+                  </NavItem>
+                  <NavItem>
+                    <Link to="/signup">Register</Link>
+                  </NavItem>
+                </Nav>
+              )}
             </NavbarText>
           </Collapse>
           <div className="cart-header-wrap" onClick={cartSideNav}>

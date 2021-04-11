@@ -2,6 +2,8 @@ import React, {useEffect, useState} from 'react';
 import {useSelector} from 'react-redux';
 import {useHistory} from 'react-router-dom';
 import PropTypes from 'prop-types';
+import {SkeletonProductFilter} from '../../../components/SkeltonLoaders';
+import AlertInfo from '../../../components/Alert';
 import {allCategoriesData} from '../../../selector';
 import './ProductFilter.scss';
 
@@ -43,10 +45,10 @@ const ProductFilter = React.memo(({filterId}) => {
   return (
     <div className="categories-filter-data-wrap">
       <ul className="clearfix">
-        {loading && <h5>Loading....</h5>}
+        {loading && <SkeletonProductFilter />}
         {!loading && !error && categoriesList}
       </ul>
-      {!loading && error && <h1>Something went wrong!</h1>}
+      {!loading && error && <AlertInfo />}
     </div>
   );
 });

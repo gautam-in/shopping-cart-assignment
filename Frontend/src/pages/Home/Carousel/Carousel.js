@@ -1,6 +1,9 @@
 import {useEffect, useState} from 'react';
+import AlertInfo from '../../../components/Alert';
+import {SkeletonImage} from '../../../components/SkeltonLoaders';
 import Slider from '../../../components/Slider';
 import Api from '../../../services/Api';
+import './Carousel.scss';
 
 const Carousel = () => {
   const [loading, setLoading] = useState(false);
@@ -22,9 +25,9 @@ const Carousel = () => {
 
   return (
     <>
-      {loading && <h5>Loading...</h5>}
+      <div className="skeletonImage-wrap">{loading && <SkeletonImage />}</div>
       {!loading && !error && <Slider carouselImages={carouselImages} />}
-      {!loading && error && <h1>Something went wrong!</h1>}
+      {!loading && error && <AlertInfo />}
     </>
   );
 };

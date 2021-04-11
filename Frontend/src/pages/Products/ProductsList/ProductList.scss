@@ -1,8 +1,11 @@
+@import '../../../styles/global';
+
 .product-list-wrap {
+  margin-left: 15px;
   ul {
     list-style: none;
-    li {
-      margin-bottom: 40px;
-    }
   }
+}
+.product-wrap {
+  background-color: $white-color;
 }

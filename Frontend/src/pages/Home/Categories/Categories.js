@@ -1,12 +1,13 @@
 /* eslint-disable global-require */
 /* eslint-disable import/no-dynamic-require */
-
 import {useEffect} from 'react';
 import './Categories.scss';
 import {useDispatch, useSelector} from 'react-redux';
 import {Link} from 'react-router-dom';
 import {fetchCategoriesDataRequest} from '../../../actions';
 import {allCategoriesData} from '../../../selector';
+import AlertInfo from '../../../components/Alert';
+import {SkeletonImage} from '../../../components/SkeltonLoaders';
 
 const Categories = () => {
   const dispatch = useDispatch();
@@ -47,14 +48,19 @@ const Categories = () => {
     );
   });
 
+  const SkeletonImageList = [...Array(4)].map((i) => (
+    <li key={i} className="skeleton-card-wrap">
+      <SkeletonImage />
+    </li>
+  ));
   return (
     <div className="categories-wrap">
       <>
         <ul className="clearfix">
-          {loading && <h5>Loading....</h5>}
+          {loading && SkeletonImageList}
           {!loading && !error && categoriesList}
         </ul>
-        {!loading && error && <h1>Something went wrong!</h1>}
+        {!loading && error && <AlertInfo />}
       </>
     </div>
   );

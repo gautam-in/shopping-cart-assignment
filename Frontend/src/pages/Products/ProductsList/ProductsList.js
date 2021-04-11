@@ -1,6 +1,8 @@
 import {useSelector, useDispatch} from 'react-redux';
 import React, {useCallback, useEffect, useState} from 'react';
 import PropTypes from 'prop-types';
+import AlertInfo from '../../../components/Alert';
+import {SkeletonProduct} from '../../../components/SkeltonLoaders';
 import Card from '../../../components/Card';
 import {selectCartProductIds, allProductsData} from '../../../selector';
 import {createAddToCartRequest} from '../../../actions';
@@ -25,14 +27,10 @@ const ProductList = React.memo(({filterId}) => {
   }, [data]);
 
   const productFilter = useCallback(() => {
-    if (filterId) {
-      const filterProducts = data.filter(
-        (product) => product.category === filterId.toString(),
-      );
-      setProducts(filterProducts);
-    } else {
-      setProducts(data);
-    }
+    const productsData = filterId
+      ? data.filter((product) => product.category === filterId.toString())
+      : data;
+    setProducts(productsData);
   }, [data, filterId]);
 
   useEffect(() => {
@@ -49,11 +47,19 @@ const ProductList = React.memo(({filterId}) => {
     );
   });
 
+  const skeletonproductList = [...Array(12)].map((i) => (
+    <li key={i} className="col-sm-12 col-md-6 col-lg-3 col-xs-3">
+      <SkeletonProduct />
+    </li>
+  ));
+
   return (
     <div className="product-list-wrap">
-      {loading && <h1>Loading....</h1>}
-      {!loading && !error && <ul className="clearfix row">{productList}</ul>}
-      {error && <h1>Something went wrong!</h1>}
+      <ul className="clearfix row">
+        {loading && skeletonproductList}
+        {!loading && !error && productList}
+      </ul>
+      {error && <AlertInfo />}
     </div>
   );
 });
