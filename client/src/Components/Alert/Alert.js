@@ -4,7 +4,6 @@ import { useDispatch } from "react-redux";
 import { alertActions } from "../../_actions";
 
 const Alert = ({ type, children }) => {
-    debugger;
     const [show, setShow] = useState(true);
     const dispatch = useDispatch();
 
