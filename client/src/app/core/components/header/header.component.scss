@@ -1,9 +1,11 @@
+@import "variables";
+
 header {
-  border-bottom: 2px solid #efefef;
+  border-bottom: 2px solid $lighter-gray;
 }
 
 .header-content {
-  width: 992px;
+  width: 1200px;
   margin: 0 auto;
 }
 
@@ -34,23 +36,28 @@ nav {
   }
 }
 
+a {
+  color: $dark-gray;
+  font-weight: 600;
+}
+
 .btn-cart {
   display: flex;
   align-items: center;
   padding: 1rem;
-  background-color: #eee;
+  background-color: $lighter-gray;
   border: none;
 }
 
 .icon-cart {
-  background-color: #d10156;
+  background-color: $dark-pink;
   -webkit-mask: url("../../../../assets/images/cart.svg") no-repeat center;
   mask: url("../../../../assets/images/cart.svg") no-repeat center;
   width: 25px;
   height: 25px;
 }
 
-@media (max-width: 991.98px) {
+@media (max-width: 1199.98px) {
   .header-content {
     width: 100%;
   }

@@ -1,16 +1,26 @@
 /* You can add global styles to this file, and also import other style files */
 
-@import url("https://fonts.googleapis.com/css?family=Dosis:400,600,700");
+@import url("https://fonts.googleapis.com/css?family=Dosis:400,600,700&display=swap");
 @import "~bootstrap/dist/css/bootstrap.css";
+@import "variables";
 
 * {
   box-sizing: border-box;
-  font-family: Dosis, Arial;
+  font-family: Dosis, "Times New Roman";
 }
 
 .btn-primary {
-  background-color: #d10157;
-  color: #fff;
+  background-color: $dark-pink;
+  color: $white;
   border: none;
   border-radius: 0px;
+
+  &:hover,
+  &:focus,
+  &:not(:disabled):not(.disabled):active,
+  &:not(:disabled):not(.disabled).active {
+    color: $white;
+    background-color: $light-wine;
+    border-color: $light-wine;
+  }
 }

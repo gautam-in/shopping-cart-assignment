@@ -1,0 +1,71 @@
+<div class="d-flex flex-column flex-md-row">
+  <aside>
+    <div class="row mt-3 btn-group d-block d-md-none" dropdown>
+      <button
+        id="category-button"
+        dropdownToggle
+        type="button"
+        class="btn btn-primary dropdown-toggle w-100"
+        aria-label="Select Category"
+        aria-describedby="category-dropdown"
+      >
+        <span>{{ selectedCategory?.name }}</span>
+        <span class="caret"></span>
+      </button>
+      <ul
+        id="category-dropdown"
+        *dropdownMenu
+        class="dropdown-menu"
+        role="listbox"
+        tabindex="0"
+        aria-labelledby="category-button"
+        [attr.aria-activedescendant]="selectedCategory?.id"
+      >
+        <li
+          role="none"
+          class="dropdown-item p-0"
+          *ngFor="let category of categories"
+          [ngClass]="{ active: selectedCategory?.id === category.id }"
+        >
+          <a
+            role="option"
+            class="d-block p-3"
+            [routerLink]=""
+            [id]="category.id"
+            [attr.aria-selected]="selectedCategory?.id === category.id"
+            (click)="selectCategory(category)"
+          >
+            {{ category.name }}
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <ul class="d-none d-md-block list-group list-group-flush">
+      <li
+        class="list-group-item p-0"
+        *ngFor="let category of categories"
+        [ngClass]="{ active: selectedCategory?.id === category.id }"
+      >
+        <a
+          class="d-block p-3"
+          [routerLink]=""
+          (click)="selectCategory(category)"
+        >
+          {{ category.name }}
+        </a>
+      </li>
+    </ul>
+  </aside>
+
+  <main id="main-content" class="pl-md-3" tabindex="-1">
+    <div class="card-deck py-3 mx-0">
+      <app-product-card
+        *ngFor="let product of filteredProducts; trackBy: trackProduct"
+        [product]="product"
+        (addToCart)="addToCart($event)"
+        (removeFromCart)="removeFromCart($event)"
+      ></app-product-card>
+    </div>
+  </main>
+</div>

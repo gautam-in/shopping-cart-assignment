@@ -1,4 +1,5 @@
-import { Injectable } from '@angular/core';
+import { isPlatformBrowser, isPlatformServer } from '@angular/common';
+import { Inject, Injectable, PLATFORM_ID } from '@angular/core';
 import {
   CanActivate,
   ActivatedRouteSnapshot,
@@ -14,7 +15,11 @@ import { AuthService } from '../services/auth.service';
   providedIn: 'root',
 })
 export class AuthGuard implements CanActivate {
-  constructor(private router: Router, private authService: AuthService) {}
+  constructor(
+    @Inject(PLATFORM_ID) private platformId: Object,
+    private router: Router,
+    private authService: AuthService
+  ) {}
 
   canActivate(
     route: ActivatedRouteSnapshot,
@@ -24,11 +29,20 @@ export class AuthGuard implements CanActivate {
     | Promise<boolean | UrlTree>
     | boolean
     | UrlTree {
-    if (this.authService.isAuthenticated()) {
+    if (isPlatformBrowser(this.platformId)) {
+      if (this.authService.isAuthenticated()) {
+        return true;
+      }
+
+      this.router.navigate(['/user/login']);
+      return false;
+    }
+
+    // let server handle the authentication
+    if (isPlatformServer(this.platformId)) {
       return true;
     }
 
-    this.router.navigate(['/user/login']);
     return false;
   }
 }

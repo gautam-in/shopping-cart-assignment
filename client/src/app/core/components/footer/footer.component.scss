@@ -1,15 +1,15 @@
+@import "variables";
+
 footer {
-  // TODO: make variables for colors
-  background-color: #eaeaea;
+  background-color: $lighter-gray;
 }
 
 .footer-content {
-  // TODO: make variable for size
-  width: 992px;
+  width: 1200px;
   margin: 0 auto;
 }
 
-@media (max-width: 991.98px) {
+@media (max-width: 1199.98px) {
   .footer-content {
     width: 100%;
   }

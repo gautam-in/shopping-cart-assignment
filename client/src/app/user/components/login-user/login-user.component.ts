@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 import { AuthService } from 'src/app/core/services/auth.service';
+import { SEOService } from 'src/app/core/services/seo.service';
 
 @Component({
   selector: 'app-login-user',
@@ -15,9 +15,9 @@ export class LoginUserComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,
-    private title: Title,
     private router: Router,
-    private authService: AuthService
+    private authService: AuthService,
+    private seoService: SEOService
   ) {
     this.loginForm = this.fb.group({
       email: [
@@ -32,7 +32,11 @@ export class LoginUserComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.title.setTitle('Login | Sabka Bazaar');
+    this.seoService.setTitle('Login');
+    this.seoService.setDescription(
+      'Login to Sabka Bazaar to view your orders, wallet balance, wishlist and to get personalized product recommendations.'
+    );
+    this.seoService.updateCanonicalUrl(this.router.url.split('?')[0]);
   }
 
   get f() {

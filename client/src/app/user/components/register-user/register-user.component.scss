@@ -1,3 +1,5 @@
+@import "variables";
+
 .register-form-container {
   width: 80%;
 }
@@ -26,17 +28,17 @@
   top: 0;
   left: 0;
   transition: all 200ms;
-  color: #acacac;
+  color: $dark-gray;
 }
 
 .floating-control {
   border: 0;
-  border-bottom: 1px solid #acacac;
+  border-bottom: 1px solid $light-gray-mid;
 }
 
 .floating-control:focus {
   outline: none;
-  border-bottom: 2px solid #58c6ce;
+  border-bottom: 2px solid $blue-aqua;
 }
 
 .floating-label .floating-control:focus + label,
@@ -45,7 +47,7 @@
 }
 
 .floating-label .floating-control:focus + label {
-  color: #58c6ce;
+  color: $blue-aqua;
 }
 
 .floating-control {

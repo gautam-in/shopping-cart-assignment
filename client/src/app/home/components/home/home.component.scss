@@ -1,5 +1,7 @@
+@import "variables";
+
 :host ::ng-deep .carousel-indicators li {
-  background-color: #777;
+  background-color: $dark-gray;
   width: 10px;
   height: 10px;
   border-radius: 50%;
@@ -11,7 +13,7 @@
   &::after {
     padding: 0.5rem;
     content: "PREV";
-    color: #fff;
+    color: $white;
     background-color: rgba(0, 0, 0, 0.35);
   }
 }
@@ -22,13 +24,17 @@
   &::after {
     padding: 0.5rem;
     content: "NEXT";
-    color: #fff;
+    color: $white;
     background-color: rgba(0, 0, 0, 0.35);
   }
 }
 
+.main-before-load {
+  min-height: 100vh;
+}
+
 .category {
-  box-shadow: 0px 2px 2px #e1e1e1;
+  box-shadow: 0px 2px 2px $light-gray;
   margin-top: 1.25rem;
 }
 
