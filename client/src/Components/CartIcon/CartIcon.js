@@ -32,7 +32,7 @@ const CartIcon = ({ cartItem = 0, loggedIn = false, user = {}, logOut, showCart,
         }
       </div>
       <div className="cart" onClick={showCart} role="button" aria-label={"cart item button to open the cart page. Total selected cart item is" + cartItem}>
-        <img src={cartLogo} alt={"Cart Icon Logo"} height="30" />
+        <img src={cartLogo} alt={"Cart Icon Logo"} height="30" width="30" />
         <p aria-label={"selected cart item total is" + cartItem}>{cartItem} items</p>
       </div>
     </section>

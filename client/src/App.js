@@ -10,6 +10,7 @@ import "./App.scss";
 import { alertActions } from "./_actions";
 import Cart from "./Components/Cart/Cart";
 import LoadingIndicator from "./Components/LoadingIndicator/LoadingIndicator";
+import Alert from "./Components/Alert/Alert";
 const Home = lazy(() => import("./Components/Home/Home"));
 const Products = lazy(() => import("./Components/Products/Products"));
 const Register = lazy(() => import("./Components/Register/Register"));
@@ -38,7 +39,7 @@ const App = ({
       <Router history={history}>
         <Header />
         {alert.message &&
-          <div className={`alert ${alert.type}`}>{alert.message}</div>
+          <Alert type={alert.type}>{alert.message}</Alert>
         }
         {
           showModal ? <Cart /> : ""
