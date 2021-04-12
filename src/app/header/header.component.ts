@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { CartComponent } from '../shared/component/cart/cart.component';
+import { CartService } from '../shared/services/cart/cart.service';
 
 @Component({
   selector: 'app-header',
@@ -6,7 +9,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements OnInit {
-  constructor() {}
+  productsInCart: any;
 
-  ngOnInit(): void {}
+  constructor(
+    private _modalService: NgbModal,
+    private _cartService: CartService
+  ) {}
+
+  ngOnInit(): void {
+    this._cartService.getCartList.subscribe((item) => {
+      this.productsInCart = item;
+    });
+  }
+
+  openCart(): void {
+    this._modalService.open(CartComponent, { ariaLabelledBy: 'cartTitle' });
+  }
 }

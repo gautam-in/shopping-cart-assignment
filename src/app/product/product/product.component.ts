@@ -1,9 +1,12 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute, Router } from '@angular/router';
+import { CartComponent } from 'src/app/shared/component/cart/cart.component';
 import { HeaderService } from 'src/app/header/header.service';
-import { AppService } from 'src/app/services/app.service';
+import { AppService } from 'src/app/shared/services/app.service';
 import { ProductService } from '../product.service';
+import { CartService } from 'src/app/shared/services/cart/cart.service';
 
 @Component({
   selector: 'app-product',
@@ -19,14 +22,16 @@ export class ProductComponent implements OnInit {
   hideShowProductList: boolean = false;
   categoryList: any = [];
   filteredProduct: any = [];
+  showCartModal: boolean = false;
+
+  addTocart: any = {};
 
   constructor(
-    private _http: HttpClient,
     private _activatedroute: ActivatedRoute,
     private _productService: ProductService,
-    private _route: Router,
-    private _headerService: HeaderService,
-    private _appService: AppService
+    private _appService: AppService,
+    public dialog: MatDialog,
+    private _cartService: CartService
   ) {}
 
   ngOnInit(): void {
@@ -49,7 +54,6 @@ export class ProductComponent implements OnInit {
       this.product = data;
       this._productService.product = data;
       this.productPerRow = this.buildProductArr(data);
-      console.log('product per roe===', this.productPerRow);
     }
   }
 
@@ -64,7 +68,6 @@ export class ProductComponent implements OnInit {
         }
         row.push(value);
       }
-      console.log('the result========', result);
       result.push(row);
     }
     return result;
@@ -73,32 +76,15 @@ export class ProductComponent implements OnInit {
   getProductByCategory(id: any) {
     this.hideShowProductList = true;
     let prod: any = [];
-    // prod = this.product.filter((p) => {
-    //   p.category === id;
-    // });
-    this.product.forEach(element => {
-      if( element.category === id)
-      prod.push(element)
-     
+    this.product.forEach((element) => {
+      if (element.category === id) prod.push(element);
     });
     console.log('product per prod =============', prod);
-    this.filteredProduct= this.buildProductArr(prod);
+    this.filteredProduct = this.buildProductArr(prod);
     console.log('product per category =============', this.filteredProduct);
   }
 
-  // buildProductArr(product: any) : void {
-  //   for (var i = 0; i < product.length; i += 4) {
-  //     var row = [];
-  //     for (var x = 0; x < 4; x++) {
-  //       var value = product[i + x];
-  //       if (!value) {
-  //         break;
-  //       }
-  //       row.push(value);
-  //     }
-  //     console.log("the result========", this.filteredProduct)
-  //     this.filteredProduct.push(row);
-
-  //   }
-  // }
+  buyProduct(product: any) {
+    this._cartService.addProductToCart(product);
+  }
 }

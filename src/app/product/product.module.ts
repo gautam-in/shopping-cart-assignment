@@ -5,18 +5,27 @@ import { ProductComponent } from './product/product.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { ProductService } from './product.service';
 import { ProductsResolver } from './product.resolver';
-import { CartComponent } from './cart/cart.component';
+//import { CartComponent } from '../header/cart/cart.component';
+import { MaterialModule } from '../material.module';
+
+
+//import { MaterialModule } from './materail.module';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+
 
 
 @NgModule({
   declarations: [
     ProductComponent,
     ProductListComponent,
-    CartComponent,
+    //CartComponent,
   ],
   imports: [
     CommonModule,
-    ProductRoutingModule
+    ProductRoutingModule,
+    MaterialModule,
+    //MatDialogModule
+   // NgbModal
   ],
   providers:[ProductService ,
   ProductsResolver

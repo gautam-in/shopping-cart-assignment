@@ -1,27 +1,27 @@
 
 <!-- <h1>product list</h1> -->
  <div class="row" *ngFor="let row of filterCategory">
-    <div class="inner-row" *ngFor="let p of row">
+    <div class="inner-row" *ngFor="let product of row">
       <div class="col-4">
         <div class="name">
-          <h1>{{ p.name }}</h1>
+          <h1>{{ product.name }}</h1>
         </div>
 
         <div class="productImage">
-          <img src="{{ p.imageURL }}" />
+          <img src="{{ product.imageURL }}" />
         </div>
         <div class="description">
-          <p>{{ p.description }}</p>
+          <p>{{ product.description }}</p>
         </div>
 
         <div class="price">
-          <h2>MRP Rs.{{ p.price }}</h2>
+          <h2>MRP Rs.{{ product.price }}</h2>
         </div>
         <div class="price">
           <button
-            type="submit"
+           (click) ="buyProduct(product)"
             class="btn btn-danger btn-raised"
-            id="{{ p.id }}"
+            id="{{ product.id }}"
           >
             Buy Now
           </button>

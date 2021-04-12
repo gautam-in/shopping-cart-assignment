@@ -5,7 +5,7 @@ import { HeaderRoutingModule } from './header-routing.module';
 import { LoginComponent } from './login/login.component';
 import { HeaderComponent } from './header.component';
 import { RegisterComponent } from './register/register.component';
-import { CartComponent } from './cart/cart.component';
+import { CartComponent } from '../shared/component/cart/cart.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HeaderService } from './header.service';
 
@@ -14,8 +14,6 @@ import { HeaderService } from './header.service';
     LoginComponent,
     HeaderComponent,
     RegisterComponent,
-   // HomeComponent,
-   // ProductComponent,
     CartComponent,
   ],
   imports: [

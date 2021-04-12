@@ -28,9 +28,9 @@
           </li>
         </ul>
       </div>
-      <div class="cart">
+      <div class="cart" (click)="openCart()">
         <img src="/assets/img/cart.svg" alt="cart" class="cartimage" />
-        <a data-target="#exampleModal">0 items</a>
+        <a data-target="#exampleModal">{{productsInCart.length >=1 ? productsInCart.length : 0}} items</a>
       </div>
     </div>
   </div>

@@ -5,7 +5,7 @@ import {
   Resolve,
   RouterStateSnapshot,
 } from '@angular/router';
-import { AppService } from '../services/app.service';
+import { AppService } from '../shared/services/app.service';
 import { ProductService } from './product.service';
 import { catchError, map } from 'rxjs/operators';
 import { Observable, forkJoin, of } from 'rxjs';
