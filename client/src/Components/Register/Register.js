@@ -120,6 +120,5 @@ const actionCreators = {
   register: userActions.register
 }
 
-const connectedRegisterPage = connect(null, actionCreators)(Register);
-export { connectedRegisterPage as Register };
+export default connect(null, actionCreators)(Register);
 

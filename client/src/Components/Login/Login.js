@@ -70,5 +70,5 @@ const actionCreators = {
   logout: userActions.logout
 };
 
-const connectedLoginPage = connect(null, actionCreators)(Login);
-export { connectedLoginPage as Login };
+export default connect(null, actionCreators)(Login);
+

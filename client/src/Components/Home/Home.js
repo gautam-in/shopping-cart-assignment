@@ -1,9 +1,10 @@
-import React, { useEffect } from "react";
-import Categories from "../Categories/Categories";
-import Slider from "../Carousel/Slider";
+import React, { useEffect, Suspense, lazy } from "react";
 import "./Home.scss";
 import { connect } from "react-redux";
 import { homeAction } from "../../_actions";
+import LoadingIndicator from "../LoadingIndicator/LoadingIndicator";
+const LazySlider = lazy(() => import('../Carousel/Slider'));
+const LazyCategory = lazy(() => import('../Categories/Categories'));
 
 const Home = (props) => {
 
@@ -16,9 +17,15 @@ const Home = (props) => {
 
   return (
     <>
-      { banners.length ? <Slider slides={banners} /> : ""}
+      <Suspense fallback={<LoadingIndicator />}>
+        {banners.length ? <LazySlider slides={banners} /> : ""}
+      </Suspense>
       <main className="home-content">
-        {categories.length ? <Categories categoryList={categories} /> : ""}
+        <Suspense fallback={<LoadingIndicator />}>
+          {
+            categories.length ? <LazyCategory categoryList={categories} /> : ""
+          }
+        </Suspense>
       </main>
     </>
   );
