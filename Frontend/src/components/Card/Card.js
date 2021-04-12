@@ -15,7 +15,7 @@ const Card = React.memo(({product, addCart}) => {
       <div className="product-detail-wrap">
         <img
           src={require(`../../../static/images/products/${imageURL}`).default}
-          alt={sku}
+          alt={`${sku} productimg`}
         />
         <div className="product-description">
           <p>{description}</p>

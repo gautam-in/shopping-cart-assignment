@@ -45,7 +45,7 @@ const SliderImages = React.memo(({carouselImages}) => {
           src={
             require(`../../../static/images/offers/${bannerImageUrl}`).default
           }
-          alt={bannerImageAlt}
+          alt={`${bannerImageAlt} carouselimg`}
         />
       </CarouselItem>
     );

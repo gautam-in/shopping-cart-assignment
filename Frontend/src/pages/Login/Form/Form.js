@@ -47,16 +47,20 @@ const LoginForm = ({history}) => {
               >
                 Email
               </Label>
-              <span className="required-label" role="alert" aria-atomic="true">
-                {errors.email && (
+              {errors.email && (
+                <span
+                  className="required-label"
+                  role="alert"
+                  aria-atomic="true"
+                >
                   <ErrorMessage
                     type={errors.email.type}
                     minLength={emailValidation.minLength}
                     maxLength={emailValidation.maxLength}
                     field="email-id"
                   />
-                )}
-              </span>
+                </span>
+              )}
             </div>
           </div>
         </div>
@@ -83,16 +87,20 @@ const LoginForm = ({history}) => {
               >
                 Password
               </Label>
-              <span className="required-label" role="alert" aria-atomic="true">
-                {errors.password && (
+              {errors.password && (
+                <span
+                  className="required-label"
+                  role="alert"
+                  aria-atomic="true"
+                >
                   <ErrorMessage
                     type={errors.password.type}
                     minLength={passwordValidation.minLength}
                     maxLength={passwordValidation.maxLength}
                     field="password"
                   />
-                )}
-              </span>
+                </span>
+              )}
             </div>
           </div>
         </div>

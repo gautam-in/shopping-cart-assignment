@@ -10,7 +10,7 @@ const AlertInfo = ({message, color}) => (
 
 AlertInfo.propTypes = {
   message: PropTypes.string,
-  color: PropTypes.oneOfType(['danger', 'warning', 'info']),
+  color: PropTypes.string,
 };
 
 AlertInfo.defaultProps = {

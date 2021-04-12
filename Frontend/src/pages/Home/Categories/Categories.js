@@ -1,3 +1,4 @@
+/* eslint-disable react/no-array-index-key */
 /* eslint-disable global-require */
 /* eslint-disable import/no-dynamic-require */
 import {useEffect} from 'react';
@@ -28,7 +29,7 @@ const Categories = () => {
             src={
               require(`../../../../static/images/category/${imageUrl}`).default
             }
-            alt={name}
+            alt={`${name} categoriesimg`}
           />
         </div>
         <div className="text-wrap">
@@ -48,8 +49,8 @@ const Categories = () => {
     );
   });
 
-  const SkeletonImageList = [...Array(4)].map((i) => (
-    <li key={i} className="skeleton-card-wrap">
+  const SkeletonImageList = [...Array(4)].map((item, index) => (
+    <li key={index} className="skeleton-card-wrap">
       <SkeletonImage />
     </li>
   ));
