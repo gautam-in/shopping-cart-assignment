@@ -105,7 +105,7 @@ function Cart(props) {
             type="button"
             name="button"
             className="btn-cart-checkout checkout-button"
-            onClick={checkout}
+            onClick={closeCart}
           >
             <span className="checkout-text">Start Shopping</span>
           </button>

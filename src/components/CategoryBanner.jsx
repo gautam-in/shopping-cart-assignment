@@ -1,5 +1,6 @@
 import React from "react";
 import "./CategoryBanner.scss";
+import { Link } from 'react-router-dom'
 
 function CategoryBanner(props) {
   const { category } = props;
@@ -16,10 +17,10 @@ function CategoryBanner(props) {
       <div className="content">
         <h2 className="heading"> {category.name} </h2>
         <p className="desc"> {category.description} </p>
-        <button className="link-button" onClick={()=>{ window.location.pathname = category.link }}>
-        {" "}
-          Explore {category.key}{" "}
-        </button>
+        <span className="link-button">
+        <Link to='/products'>{" "}
+          Explore {category.key}{" "}</Link>
+        </span>
       </div>
     </div>
   );
