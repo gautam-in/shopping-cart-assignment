@@ -1,0 +1,15 @@
+  
+  .sidebarMobile{
+    position: absolute;
+    top: 150px;
+    left: 0;
+    display: inline-block;
+    background-color: white;
+    margin: 0  10px;
+  }
+
+  .sidebarMobile>div{
+    border: palevioletred 0.5px solid;
+    padding: 10px;
+    border-radius: 5px;
+  }

@@ -1,0 +1,33 @@
+ .categoryCard {
+    display: flex;
+    justify-content: space-between;
+    height: 250px;
+    align-items: center;
+    border-bottom: solid 0.5px lightgray;
+  }
+
+  .categoryCard img {
+    width: 300px;
+  }
+  
+  .shadow {
+    box-shadow: black 0 0 10px 1px;
+    border-radius: 50%;
+  }
+  
+  .info {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  @media (max-width: 690px) {
+    .categoryCard img {
+      width: 200px;
+    }
+    .categoryCard {
+      height: 300px;
+    }
+  }
