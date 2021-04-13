@@ -1,0 +1,10 @@
+{
+  "editor.defaultFormatter": "esbenp.prettier-vscode", // Use prettier as default formatter
+  "editor.formatOnPaste": true, // format code on paste
+  "editor.formatOnType": true, // format code as you type
+  "editor.formatOnSave": true, // format code when you hit save
+  "files.trimTrailingWhitespace": true, // remove trailing white spaces from all lines
+  "files.trimFinalNewlines": true, // Ensures there's only one blank line at the end of the file
+  "breadcrumbs.enabled": true,
+  "javascript.updateImportsOnFileMove.enabled": "always"
+}
