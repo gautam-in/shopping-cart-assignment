@@ -14,7 +14,7 @@ export class ProductListComponent implements OnInit {
   @Input() filterCategory;
   
   constructor(private _cartService: CartService ,
-   private _http : HttpClient) {}
+   ) {}
 
   ngOnInit(): void {
   }

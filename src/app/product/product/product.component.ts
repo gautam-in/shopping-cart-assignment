@@ -17,14 +17,11 @@ export class ProductComponent implements OnInit {
   product: any = [];
   categories: any = [];
   productPerRow: any = [];
-  sub: any;
-  categoryName: any;
   hideShowProductList: boolean = false;
   categoryList: any = [];
   filteredProduct: any = [];
-  showCartModal: boolean = false;
 
-  addTocart: any = {};
+  //addTocart: any = {};
 
   constructor(
     private _activatedroute: ActivatedRoute,

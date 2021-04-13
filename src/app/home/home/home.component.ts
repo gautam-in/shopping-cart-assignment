@@ -11,31 +11,38 @@ import { AppService } from 'src/app/shared/services/app.service';
 export class HomeComponent implements OnInit {
   @Input() category: any;
   categories: any = [];
-  banners : any =[];
+  banners: any = [];
 
-  constructor(private _http: HttpClient,
+  constructor(
     private router: Router,
-    private _appService : AppService) {}
+    private _appService: AppService
+  ) {}
 
   ngOnInit(): void {
-    this.fetchBanners()
+    this.fetchBanners();
     this.fetchCategories();
   }
 
   fetchCategories() {
     this._appService.getCatagories().subscribe((data) => {
-      this.categories = data;
+      data.forEach((x) => {
+        if (x.enabled) {
+          this.categories.push(x);
+        }
+      });
+      this.categories = this.categories.sort((a, b) => {
+        return a.order - b.order;
+      });
     });
   }
 
-  exploreProduct(name:any):void{
-    this.router.navigate(['app/product' ])
-
+  exploreProduct(name: any): void {
+    this.router.navigate(['app/product']);
   }
 
-  fetchBanners(){
-    this._appService.getBanners().subscribe((data)=>{
-      this.banners = data
-    })
+  fetchBanners() {
+    this._appService.getBanners().subscribe((data) => {
+      this.banners = data;
+    });
   }
 }

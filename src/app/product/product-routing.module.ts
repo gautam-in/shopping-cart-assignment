@@ -18,10 +18,10 @@ const routes: Routes = [
     //   },
     // ]
   },
-  // {
-  //   path: 'productList',
-  //   component: ProductListComponent,
-  // },
+  {
+    path: 'list',
+    component: ProductListComponent,
+  },
 ];
 
 @NgModule({

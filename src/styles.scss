@@ -1,3 +1,5 @@
+@import "./assets/scss/color";
+
 /* You can add global styles to this file, and also import other style files */
 * {
   margin: 0;
@@ -7,8 +9,8 @@
 
 html,
 body {
-  font-size: 13px;
-  font-weight: 500;
+  font-size: 15px;
+  font-weight: 800;
   font-family: "Lato", Arial, Helvetica, sans-serif;
   background-color: white;
   text-rendering: optimizeLegibility;
@@ -16,42 +18,50 @@ body {
   overflow-x: hidden; /* The content is clipped - and no scrolling mechanism is provided */
 }
 
-.container {
-  max-width: 1274px;
-  line-height: 145%;
-  font-size: 100%;
-  font-weight: 500;
+.main-heading {
+  font-size: 24px;
+  font-weight: bolder;
+ 
 }
 
-h1 {
-  font-size: 200%;
-  text-align: left;
-}
+// .container {
+//   max-width: 1274px;
+//   line-height: 145%;
+//   font-size: 100%;
+//   font-weight: 500;
+// }
 
-h2 {
-  font-size: 90%;
-  font-weight: 500;
-  text-align: left;
-}
+// h1 {
+//   font-size: 200%;
+//   text-align: left;
+// }
 
-.row {
-  max-width: 100%;
-}
+// h2 {
+//   font-size: 90%;
+//   font-weight: 500;
+//   text-align: left;
+// }
 
-.col-6 {
-  height: 100%;
-  float: left;
-  padding: 2% 0;
-  margin: 1% 0;
-}
+// .row {
+//   max-width: 100%;
+// }
 
-.btn-danger {
+// .col-6 {
+//   height: 100%;
+//   float: left;
+//   padding: 2% 0;
+//   margin: 1% 0;
+// }
+
+.action-btn {
   width: 100%;
-  font-size: 90%;
-  background-color: #c02345 !important;
+  font-size: 70%;
+  background-color: $mergenta !important;
   color: white !important;
   border: 0;
-  padding: 7px 7px;
+ // padding: 7px 7px;
+  text-transform: none;
+  margin: auto;
 }
 
 a {
