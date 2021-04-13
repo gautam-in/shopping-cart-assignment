@@ -25,12 +25,8 @@ export class HeaderComponent implements OnInit {
   }
 
   openCart(): void {
-    debugger
-    // if(this.productsInCart.length == 0){
-    //   this._modalService.open(CartComponent, { ariaLabelledBy: 'cartTitle' });
-    // }else{
-      this._route.navigate['app/cart']
-    //}
-    
+
+    //this._modalService.open(CartComponent, { ariaLabelledBy: 'cartTitle' });
+    this._route.navigate(['app/cart'])
   }
 }

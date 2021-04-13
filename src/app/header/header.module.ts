@@ -14,7 +14,7 @@ import { HeaderService } from './header.service';
     LoginComponent,
     HeaderComponent,
     RegisterComponent,
-    CartComponent,
+    //CartComponent,
   ],
   imports: [
     CommonModule,

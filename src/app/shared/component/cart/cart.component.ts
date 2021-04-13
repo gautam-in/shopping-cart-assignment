@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 //import { MatDialogRef } from '@angular/material/dialog/dialog-ref';
 import {
   ModalDismissReasons,
-  NgbActiveModal,
+  //NgbActiveModal,
   NgbModal,
 } from '@ng-bootstrap/ng-bootstrap';
 import { CartService } from '../../services/cart/cart.service';
@@ -26,7 +26,7 @@ export class CartComponent implements OnInit {
   constructor(
     private modalService: NgbModal,
     private _cartService: CartService,
-    public modal: NgbActiveModal,
+    //public modal: NgbActiveModal,
     private _route: Router
   ) {}
   ngOnInit(): void {
