@@ -24,7 +24,7 @@ const signUpForm = ({history}) => {
   const confirmPassword = watch('confirm_password');
   const onSubmit = (data) => {
     console.log(data);
-    history.push('/');
+    history.push('/login');
     reset();
   };
   return (
@@ -54,16 +54,20 @@ const signUpForm = ({history}) => {
               >
                 First Name
               </Label>
-              <span className="required-label" role="alert" aria-atomic="true">
-                {errors.firstname && (
+              {errors.firstname && (
+                <span
+                  className="required-label"
+                  role="alert"
+                  aria-atomic="true"
+                >
                   <ErrorMessage
                     type={errors.firstname.type}
                     minLength={nameValidation.minLength}
                     maxLength={nameValidation.maxLength}
                     field="first name"
                   />
-                )}
-              </span>
+                </span>
+              )}
             </div>
           </div>
         </div>
@@ -90,16 +94,20 @@ const signUpForm = ({history}) => {
               >
                 Last Name
               </Label>
-              <span className="required-label" role="alert" aria-atomic="true">
-                {errors.lastname && (
+              {errors.lastname && (
+                <span
+                  className="required-label"
+                  role="alert"
+                  aria-atomic="true"
+                >
                   <ErrorMessage
                     type={errors.lastname.type}
                     minLength={nameValidation.minLength}
                     maxLength={nameValidation.maxLength}
                     field="lastname"
                   />
-                )}
-              </span>
+                </span>
+              )}
             </div>
           </div>
         </div>
@@ -125,16 +133,16 @@ const signUpForm = ({history}) => {
             >
               Email
             </Label>
-            <span className="required-label" role="alert" aria-atomic="true">
-              {errors.email && (
+            {errors.email && (
+              <span className="required-label" role="alert" aria-atomic="true">
                 <ErrorMessage
                   type={errors.email.type}
                   minLength={emailValidation.minLength}
                   maxLength={emailValidation.maxLength}
                   field="email-id"
                 />
-              )}
-            </span>
+              </span>
+            )}
           </div>
         </div>
       </div>
@@ -161,16 +169,17 @@ const signUpForm = ({history}) => {
             >
               Password
             </Label>
-            <span className="required-label" role="alert" aria-atomic="true">
-              {errors.password && (
+
+            {errors.password && (
+              <span className="required-label" role="alert" aria-atomic="true">
                 <ErrorMessage
                   type={errors.password.type}
                   minLength={passwordValidation.minLength}
                   maxLength={passwordValidation.maxLength}
                   field="password"
                 />
-              )}
-            </span>
+              </span>
+            )}
           </div>
         </div>
       </div>
@@ -201,17 +210,21 @@ const signUpForm = ({history}) => {
             >
               Confirm Password
             </Label>
-            <span className="required-label" role="alert" aria-atomic="true">
-              {errors.confirm_password &&
-                (errors.confirm_password.message || (
+            {errors.confirm_password &&
+              (errors.confirm_password.message || (
+                <span
+                  className="required-label"
+                  role="alert"
+                  aria-atomic="true"
+                >
                   <ErrorMessage
                     type={errors.confirm_password.type}
                     minLength={passwordValidation.minLength}
                     maxLength={passwordValidation.maxLength}
                     field="confirm_password"
                   />
-                ))}
-            </span>
+                </span>
+              ))}
           </div>
         </div>
       </div>
@@ -234,7 +247,7 @@ const signUpForm = ({history}) => {
 
 signUpForm.propTypes = {
   history: PropTypes.shape({
-    push: PropTypes.string.isRequired,
+    push: PropTypes.func.isRequired,
   }).isRequired,
 };
 

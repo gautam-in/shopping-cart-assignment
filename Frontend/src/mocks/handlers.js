@@ -78,6 +78,28 @@ const handlers = [
           sku: 'fnw-apple-4',
           id: '5b6c6aeb01a7c38429530884',
         },
+        {
+          name: 'Tata Tea Gold Leaf Tea, 500 gm',
+          imageURL: 'beverages/tata-tea.jpg',
+          description:
+            'Tata Tea Gold is a unique blend of fine Assam tea leaves with special 15%  long leaf.',
+          price: 165,
+          stock: 50,
+          category: '5b675e5e5936635728f9fc30',
+          sku: 'bev-tata-tea-500',
+          id: '5b6c6f4a01a7c3842953088c',
+        },
+        {
+          name: 'Organic Fresh Paneer, 200 gm ',
+          imageURL: 'bakery-cakes-dairy/paneer.jpg',
+          description:
+            'Freshly Baked bread is one of lifes greatest simple pleasures and at Bigbasket we deFresho Organic Milk is sourced from farms that have been certified organic for over 8 years. All feed is naturally grown with no pesticides or fertilizers.',
+          price: 98,
+          stock: 50,
+          category: '5b6899123d1a866534f516de',
+          sku: 'bcd-paneer-200',
+          id: '5b6c6d6201a7c38429530889',
+        },
       ]),
     );
   }),

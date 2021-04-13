@@ -1,3 +1,4 @@
+/* eslint-disable react/no-array-index-key */
 import {useSelector, useDispatch} from 'react-redux';
 import React, {useCallback, useEffect, useState} from 'react';
 import PropTypes from 'prop-types';
@@ -5,7 +6,10 @@ import AlertInfo from '../../../components/Alert';
 import {SkeletonProduct} from '../../../components/SkeltonLoaders';
 import Card from '../../../components/Card';
 import {selectCartProductIds, allProductsData} from '../../../selector';
-import {createAddToCartRequest} from '../../../actions';
+import {
+  createAddToCartRequest,
+  fetchProductsDataRequest,
+} from '../../../actions';
 import './ProductList.scss';
 
 const ProductList = React.memo(({filterId}) => {
@@ -14,6 +18,10 @@ const ProductList = React.memo(({filterId}) => {
 
   const {loading, data, error} = useSelector((state) => allProductsData(state));
   const cartProduct = useSelector((state) => selectCartProductIds(state));
+
+  useEffect(() => {
+    dispatch(fetchProductsDataRequest());
+  }, [dispatch]);
 
   const addCart = useCallback(
     (product) => {
@@ -47,14 +55,14 @@ const ProductList = React.memo(({filterId}) => {
     );
   });
 
-  const skeletonproductList = [...Array(12)].map((i) => (
-    <li key={i} className="col-sm-12 col-md-6 col-lg-3 col-xs-3">
+  const skeletonproductList = [...Array(12)].map((_data, index) => (
+    <li key={index} className="col-sm-12 col-md-6 col-lg-3 col-xs-3">
       <SkeletonProduct />
     </li>
   ));
 
   return (
-    <div className="product-list-wrap">
+    <div className="product-list-wrap" data-testid="products-list">
       <ul className="clearfix row">
         {loading && skeletonproductList}
         {!loading && !error && productList}

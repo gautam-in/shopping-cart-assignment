@@ -1,15 +1,22 @@
 import React, {useEffect, useState} from 'react';
-import {useSelector} from 'react-redux';
+import {useDispatch, useSelector} from 'react-redux';
 import {useHistory} from 'react-router-dom';
 import PropTypes from 'prop-types';
 import {SkeletonProductFilter} from '../../../components/SkeltonLoaders';
 import AlertInfo from '../../../components/Alert';
 import {allCategoriesData} from '../../../selector';
 import './ProductFilter.scss';
+import {fetchCategoriesDataRequest} from '../../../actions';
 
 const ProductFilter = React.memo(({filterId}) => {
   const history = useHistory();
+  const dispatch = useDispatch();
+
   const [activeId, setActiveId] = useState(null);
+
+  useEffect(() => {
+    dispatch(fetchCategoriesDataRequest());
+  }, [dispatch]);
 
   const {loading, data, error} = useSelector((state) =>
     allCategoriesData(state),
@@ -43,7 +50,10 @@ const ProductFilter = React.memo(({filterId}) => {
   });
 
   return (
-    <div className="categories-filter-data-wrap">
+    <div
+      className="categories-filter-data-wrap"
+      data-testid="product-categories"
+    >
       <ul className="clearfix">
         {loading && <SkeletonProductFilter />}
         {!loading && !error && categoriesList}

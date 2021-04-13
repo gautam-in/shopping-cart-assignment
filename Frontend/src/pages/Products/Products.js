@@ -1,25 +1,14 @@
 import {useEffect, useState} from 'react';
-import {useDispatch} from 'react-redux';
 import {useLocation} from 'react-router-dom';
-import {
-  fetchCategoriesDataRequest,
-  fetchProductsDataRequest,
-} from '../../actions';
 import ProductFilter from './ProductFilter';
 import ProductsList from './ProductsList';
 import './Products.scss';
 
 const Products = () => {
-  const dispatch = useDispatch();
   const {
     state: {id},
   } = useLocation();
   const [filterId, setFilterId] = useState(null);
-
-  useEffect(() => {
-    dispatch(fetchProductsDataRequest());
-    dispatch(fetchCategoriesDataRequest());
-  }, [dispatch]);
 
   useEffect(() => {
     setFilterId(id);

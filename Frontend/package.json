@@ -25,6 +25,7 @@
     "dotenv": "^8.2.0",
     "dotenv-webpack": "^7.0.2",
     "eslint-plugin-testing-library": "^3.10.2",
+    "history": "^5.0.0",
     "identity-obj-proxy": "^3.0.0",
     "image-webpack-loader": "^7.0.1",
     "jquery": "^3.6.0",
