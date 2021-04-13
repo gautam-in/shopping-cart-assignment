@@ -31,6 +31,10 @@
   }
 }
 
+.category-item:nth-child(odd) {
+  flex-direction: row-reverse;
+}
+
 .category-item::before{
   content: '';
   background-color: $black-color;
