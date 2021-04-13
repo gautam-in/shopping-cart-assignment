@@ -1,7 +1,3 @@
-<!-- <div class="o">
-<h1> pooja</h1>
-</div> -->
-
 <div class="modal-header" role="dialog" aria-labelledby="cartTitle">
     <p class="modal-title" id="cartTitle">My Cart
         <span *ngIf="cartList.length >0">({{cartList.length}} item)</span>
@@ -52,13 +48,13 @@
 
 <div class="modal-footer">
     <section *ngIf="!cartList.length; else checkout" class="footer-section">
-        <button type="button" class="common-btn" data-dismiss="modal" (click)="resetCart();modal.close('Save click')"
+        <button type="button" class="btn action-btn" data-dismiss="modal" (click)="startShopping();modal.close('Save click')"
             aria-label="Start Shopping">Start
             Shopping</button>
     </section>
     <ng-template #checkout>
         <p>Promo code can be applied on payment page</p>
-        <button type="button" class="common-btn" (click)="resetCart();modal.close('Save click')" data-dismiss="modal"
+        <button type="button" class="btn action-btn" (click)="resetCart();modal.close('Save click')" data-dismiss="modal"
             aria-label="Proceed to Checkout Rs.  /-">
             <span class="checkout-text">Proceed to Checkout </span>
              <span class="checkout-price">Rs.{{ cartList.totalAmount}}/- ></span>

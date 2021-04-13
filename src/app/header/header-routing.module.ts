@@ -28,7 +28,7 @@ const routes: Routes = [
       },
       {
         path: 'cart',
-        component: CartComponent,
+        loadChildren: ()=>import('../shared/shared.module').then(module =>module.SharedModule)
       },
     ],
   },

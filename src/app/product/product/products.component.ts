@@ -9,19 +9,14 @@ import { ProductService } from '../product.service';
 import { CartService } from 'src/app/shared/services/cart/cart.service';
 
 @Component({
-  selector: 'app-product',
-  templateUrl: './product.component.html',
-  styleUrls: ['./product.component.scss'],
+  selector: 'app-products',
+  templateUrl: './products.component.html',
+  styleUrls: ['./products.component.scss'],
 })
-export class ProductComponent implements OnInit {
+export class ProductsComponent implements OnInit {
   product: any = [];
-  categories: any = [];
   productPerRow: any = [];
-  hideShowProductList: boolean = false;
-  categoryList: any = [];
-  filteredProduct: any = [];
 
-  //addTocart: any = {};
 
   constructor(
     private _activatedroute: ActivatedRoute,
@@ -32,20 +27,10 @@ export class ProductComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.fetchCategories();
     this.fetchProduct(this._activatedroute.snapshot.data['productDetail']);
   }
 
-  fetchCategories() {
-    this._appService.getCatagories().subscribe((data) => {
-      this.categories = data;
-      this._productService.category = data;
-      this.categoryList = this.categories.sort((a, b) => {
-        return a.order - b.order;
-      });
-    });
-  }
-
+  
   fetchProduct(data) {
     if (data.length > 0) {
       this.product = data;
@@ -68,17 +53,6 @@ export class ProductComponent implements OnInit {
       result.push(row);
     }
     return result;
-  }
-
-  getProductByCategory(id: any) {
-    this.hideShowProductList = true;
-    let prod: any = [];
-    this.product.forEach((element) => {
-      if (element.category === id) prod.push(element);
-    });
-    console.log('product per prod =============', prod);
-    this.filteredProduct = this.buildProductArr(prod);
-    console.log('product per category =============', this.filteredProduct);
   }
 
   buyProduct(product: any) {

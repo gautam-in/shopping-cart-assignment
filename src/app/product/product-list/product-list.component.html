@@ -1,31 +1,27 @@
-
-<!-- <h1>product list</h1> -->
- <div class="row" *ngFor="let row of filterCategory">
-    <div class="inner-row" *ngFor="let product of row">
-      <div class="col-4">
-        <div class="name">
-          <h1>{{ product.name }}</h1>
-        </div>
-
-        <div class="productImage">
-          <img src="{{ product.imageURL }}" />
-        </div>
-        <div class="description">
-          <p>{{ product.description }}</p>
-        </div>
-
-        <div class="price">
-          <h2>MRP Rs.{{ product.price }}</h2>
-        </div>
-        <div class="price">
-          <button
-           (click) ="buyProduct(product)"
-            class="btn btn-danger btn-raised"
-            id="{{ product.id }}"
-          >
-            Buy Now
-          </button>
-        </div>
-      </div>
-    </div>
-  </div> 
+<div class="container">
+  <div class="row">
+     <div class="col-2">
+       <app-product-nav></app-product-nav>
+     </div>
+     <div class="col-10">
+       <div class="row" *ngFor="let row of filterCategory">
+         <div class="inner-row" *ngFor="let product of row">
+           <div class="card product-card" >
+             <div class="card-body product-body">
+               <h5 class="card-title product-title">{{product.name}}</h5>
+               <img class="card-img-top product-img" src={{product.imageURL}} alt="Card image cap">
+               <p class="card-text product-description">{{ product.description }}</p>
+               <div class="product-footer">
+                 <h2 class="product-price">MRP Rs.{{ product.price }}</h2>
+                 <button  (click)="buyProduct(product)"
+                 class="btn btn-danger btn-raised product-buy"> Buy Now</button>
+               </div>
+               
+             </div>
+           </div>
+         </div>
+       </div>
+     </div>
+   </div> 
+ </div>
+ 

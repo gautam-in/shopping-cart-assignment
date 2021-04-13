@@ -1,4 +1,5 @@
 import { Component, Inject, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 //import {  MAT_DIALOG_DATA,MatDialogRef } from '@angular/material/dialog';
 //import { MatDialogRef } from '@angular/material/dialog/dialog-ref';
 import {
@@ -25,7 +26,8 @@ export class CartComponent implements OnInit {
   constructor(
     private modalService: NgbModal,
     private _cartService: CartService,
-    public modal: NgbActiveModal
+    public modal: NgbActiveModal,
+    private _route: Router
   ) {}
   ngOnInit(): void {
     this.getCartList();
@@ -45,5 +47,8 @@ export class CartComponent implements OnInit {
     this._cartService.removeProductsFromCart(product);
   }
 
+  startShopping() {
+    this._route.navigate(['app/home']);
+  }
   resetCart() {}
 }

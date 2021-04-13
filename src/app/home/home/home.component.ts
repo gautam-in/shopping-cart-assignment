@@ -14,7 +14,7 @@ export class HomeComponent implements OnInit {
   banners: any = [];
 
   constructor(
-    private router: Router,
+    private _route: Router,
     private _appService: AppService
   ) {}
 
@@ -36,8 +36,8 @@ export class HomeComponent implements OnInit {
     });
   }
 
-  exploreProduct(name: any): void {
-    this.router.navigate(['app/product']);
+  exploreProduct(id: any): void {
+    this._route.navigate(['app/product/list' , id])
   }
 
   fetchBanners() {

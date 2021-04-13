@@ -37,7 +37,6 @@ export class ProductService {
      this._cartService.setCartList(this.itemInCart)
 
   }
- 
 
 
  

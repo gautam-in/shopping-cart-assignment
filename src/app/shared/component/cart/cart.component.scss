@@ -1,3 +1,5 @@
+
+@import '../../../../assets/scss/color.scss';
 .card-img {
   width: inherit;
   height: inherit;
@@ -25,7 +27,7 @@
 .modal-body {
   height: 500px;
 
-  background-color: grey;
+ // background-color: grey;
   .cart-body {
     text-align: center;
     margin-top: 30%;
@@ -79,6 +81,7 @@
 }
 .common-btn {
   width: 100%;
+  background-color: $mergenta;
   .checkout-text {
     float: left;
   }
