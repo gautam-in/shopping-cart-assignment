@@ -1,43 +1,64 @@
-const HtmlWebPackPlugin = require("html-webpack-plugin");
-
-const htmlWebpackPlugin = new HtmlWebPackPlugin({
-  template: "./src/index.html",
-  filename: "./index.html"
-});
+const path = require('path');
+const webpack = require('webpack');
+const ESLintPlugin = require('eslint-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const {CleanWebpackPlugin} = require('clean-webpack-plugin');
+const Dotenv = require('dotenv-webpack');
 
 module.exports = {
+  entry: path.resolve(__dirname, './src/index.js'),
   module: {
     rules: [
       {
-        test: /\.js$/,
+        test: /\.(js|jsx)$/,
         exclude: /node_modules/,
-        use: {
-          loader: "babel-loader"
-        }
-      },
-      {
-        test: /\.css$/,
-        use: [
-          {
-            loader: "style-loader"
-          },
-          {
-            loader: "css-loader",
-            options: {
-              modules: true,
-              importLoaders: 1,
-              localIdentName: "[name]_[local]_[hash:base64]",
-              sourceMap: true,
-              minimize: true
-            }
-          }
-        ]
+        use: ['babel-loader'],
       },
       {
         test: /\.scss$/,
         use: ['style-loader', 'css-loader', 'sass-loader'],
       },
-    ]
+      {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader'],
+      },
+      {
+        test: /\.(gif|png|jpe?g|svg)$/i,
+        use: [
+          'file-loader',
+          {
+            loader: 'image-webpack-loader',
+            options: {
+              bypassOnDebug: true,
+              disable: true,
+            },
+          },
+        ],
+      },
+    ],
   },
-  plugins: [htmlWebpackPlugin]
+  resolve: {
+    extensions: ['*', '.js', '.jsx'],
+  },
+  output: {
+    path: path.resolve(__dirname, './dist'),
+    filename: '[name].js',
+    publicPath: '/',
+  },
+  devServer: {
+    contentBase: path.resolve(__dirname, './dist'),
+    historyApiFallback: true,
+    hot: true,
+    publicPath: '/',
+  },
+  plugins: [
+    new webpack.HotModuleReplacementPlugin(),
+    new ESLintPlugin(),
+    new HtmlWebpackPlugin({
+      template: path.join('./src', 'index.html'),
+      filename: 'index.html',
+    }),
+    new CleanWebpackPlugin(),
+    new Dotenv(),
+  ],
 };

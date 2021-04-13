@@ -1,0 +1,72 @@
+@import './global';
+
+input {
+  border-radius: 0px !important;
+  border-top: 0px !important;
+  border-left: 0px !important;
+  border-right: 0px !important;
+  border-color: $grey-color;
+  font-size: 1.2rem;
+  &::placeholder {
+    color: $grey-color;
+    font-size: 1.2rem;
+  }
+}
+
+input:focus {
+  border-color: inherit;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+
+  &::placeholder {
+    color: transparent;
+  }
+  ~ .floating-label,
+  .floating-label-has-text {
+    opacity: 1;
+    color: $green-color;
+  }
+}
+
+.form-control:focus {
+  border-color: inherit;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  border-bottom: 1px solid $green-color;
+}
+
+.floating-group {
+  margin: 20px 0px 5px;
+
+  .floating-label,
+  .floating-label-has-text {
+    position: absolute;
+    top: -5px;
+    font-size: 1.2rem;
+    color: $green-color;
+  }
+
+  .floating-label {
+    opacity: 0;
+  }
+}
+
+.form-submit-btn {
+  width: 100%;
+  overflow: hidden;
+  background-color: $pink-color;
+  color: $white-color;
+  padding: 5px 0px;
+  border: 1px solid $pink-color;
+}
+
+.required-label {
+  color: $pink-color !important;
+}
+.input-error {
+  border-color: $pink-color !important;
+}
+
+.form-submit-btn:disabled {
+  opacity: 0.6;
+}
