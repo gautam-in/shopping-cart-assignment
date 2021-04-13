@@ -8,112 +8,119 @@ class Register extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      firstName: "",
-      lastName: "",
-      pass: "",
-      cPass: "",
       errors: {
+        first_name: false,
+        last_name: false,
         email: false,
         pass: false,
-        confirmPass: false,
+        confirm_password: false,
       },
+      input : {},
+      errorMsg : {}
     };
   }
 
-  checkEmail = (e) => {
 
-    if (!e.target.value.length) {
-      return this.setState({
-        errors: { email: false },
-      });
-    }
-
-    if (
-      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(
-        e.target.value
-      )
-    ) {
-      this.setState({
-        errors: { email: false },
-      });
-    } else {
-      this.setState({
-        errors: { email: true },
-      });
-    }
-  };
-
-  checkPassword = (e) => {
-    if (e.target.value.includes(" ")) {
-      return;
-    } else {
-      this.setState({
-        pass: e.target.value,
-      });
-    }
-
-    if (
-      /^(?:[0-9]+[a-z]|[a-z]+[0-9])[a-z0-9]*$/i.test(e.target.value) &&
-      e.target.value.length >= 6
-    ) {
-      this.setState({
-        errors: { pass: false },
-      });
-    } else {
-      this.setState({
-        errors: { pass: true },
-      });
-    }
-  };
-
-  confirmPassword = (e) => {
+  handleChange =(event)=> {
+    let input = this.state.input;
+    input[event.target.name] = event.target.value;
+  
     this.setState({
-      cPass: e.target.value,
+      input
+    });
+  }
+
+  validate =()=>{
+    let errorMsg = {};
+    let input = this.state.input;
+    let isValid = true;
+ 
+    if (!input["first_name"]) {
+      isValid = false;
+      errorMsg["first_name"] = "Please enter your first name.";
+    }
+
+    if (typeof input["first_name"] !== "undefined") {
+      const re = /^\S*$/;
+      if(input["first_name"].length < 6 || !re.test(input["first_name"])){
+          isValid = false;
+          errorMsg["first_name"] = "Please enter valid first name.";
+      }
+    }
+
+    if (!input["last_name"]) {
+      isValid = false;
+      errorMsg["last_name"] = "Please enter your last name.";
+    }
+
+    if (typeof input["last_name"] !== "undefined") {
+      const re = /^\S*$/;
+      if(input["last_name"].length < 6 || !re.test(input["last_name"])){
+          isValid = false;
+          errorMsg["last_name"] = "Please enter valid last name.";
+      }
+    }
+
+    if (!input["email"]) {
+      isValid = false;
+      errorMsg["email"] = "Please enter your email Address.";
+    }
+
+    if (typeof input["email"] !== "undefined") {
+        
+      var pattern = new RegExp(/^(("[\w-\s]+")|([\w-]+(?:\.[\w-]+)*)|("[\w-\s]+")([\w-]+(?:\.[\w-]+)*))(@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$)|(@\[?((25[0-5]\.|2[0-4][0-9]\.|1[0-9]{2}\.|[0-9]{1,2}\.))((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){2}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\]?$)/i);
+      if (!pattern.test(input["email"])) {
+        isValid = false;
+        errorMsg["email"] = "Please enter valid email address.";
+      }
+    }
+
+    if (!input["password"]) {
+      isValid = false;
+      errorMsg["password"] = "Please enter your password.";
+    }
+
+    if (!input["confirm_password"]) {
+      isValid = false;
+      errorMsg["confirm_password"] = "Please enter your confirm password.";
+    }
+
+    if (typeof input["password"] !== "undefined") {
+      if(input["password"].length < 6){
+          isValid = false;
+          errorMsg["password"] = "Please add at least 6 charachter.";
+      }
+    }
+
+    if (typeof input["password"] !== "undefined" && typeof input["confirm_password"] !== "undefined") {
+        
+      if (input["password"] !== input["confirm_password"]) {
+        isValid = false;
+        errorMsg["password"] = "Passwords don't match.";
+      }
+    }
+
+    this.setState({
+      errorMsg: errorMsg
     });
 
-    if (this.state.pass === e.target.value) {
-      this.setState({
-        errors: { confirmPass: false },
-      });
-    } else {
-      this.setState({
-        errors: { confirmPass: true },
-      });
-    }
-  };
+    return isValid;
+  }
 
-  handleUserName = (e) => {
-    const { name, value } = e.target;
-    this.setState((prevState) => ({
-      [name]: value,
-      error: {
-        ...prevState.error,
-        [name]: false,
-      },
-    }));
-  };
 
   handleSubmit = (e) => {
     e.preventDefault();
-    
-    if (this.state.pass !== this.state.cPass) {
-      this.setState({
-        cPass: "",
-        errors: {
-          confirmPass: true,
-        },
-      });
-      return;
-    }
 
-    if (
-      !(
-        this.state.errors.email ||
-        this.state.errors.pass ||
-        this.state.errors.confirmPass
-      )
-    )
+    if(this.validate()){
+      let input = {};
+      input["last_name"] = "";
+      input["first_name"] = "";
+      input["email"] = "";
+      input["password"] = "";
+      input["confirm_password"] = "";
+      this.setState({input:input});
       this.props.history.push("home");
+    }
   };
 
   render() {
@@ -129,48 +136,57 @@ class Register extends React.Component {
         <div className="text-fields">
           <form onSubmit={this.handleSubmit} className={"form"}>
             <TextField
+              onChange = {this.handleChange}
               required
               id="standard-basic"
               label="First Name"
-              name="firstName"
-              helperText="Please enter First Name."
+              name="first_name"
+              value={this.state.input.first_name}
+              error = {this.state.errorMsg.first_name===""? false : this.state.errorMsg.first_name}
+              helperText= {this.state.errorMsg.first_name}
             />
             <TextField
+              onChange = {this.handleChange}
               required
               id="standard-basic"
               label="Last Name"
-              name="lastName"
-              helperText="Please enter Last Name."
+              name="last_name"
+              value={this.state.input.last_name}
+              error = {this.state.errorMsg.last_name === "" ? false : this.state.errorMsg.last_name}
+              helperText={this.state.errorMsg.last_name}
             />
             <TextField
-              onChange={this.checkEmail}
+              onChange = {this.handleChange}
               required
               id="standard-basic"
               label="Email"
               type="email"
               name="email"
-              error={this.state.errors.email}
+              value={this.state.input.email}
+              error={this.state.errorMsg.email === "" ? false : this.state.errorMsg.email }
+              helperText = {this.state.errorMsg.email}
             />
             <TextField
-              onChange={this.checkPassword}
+              onChange = {this.handleChange}
               required
               id="standard-basic"
               label="Password"
               name="password"
               type="password"
-              value={this.state.pass}
-              error={this.state.errors.pass}
-              helperText="Must be of 6 characters(number&alphabets)"
+              value={this.state.input.password}
+              error={this.state.errorMsg.password === "" ? false : this.state.errorMsg.password}
+              helperText={this.state.errorMsg.password}
             />
             <TextField
-              onChange={this.confirmPassword}
+              onChange = {this.handleChange}
               type="password"
               required
               id="standard-basic"
               label="Confirm Password"
-              value={this.state.cPass}
-              name="confirmPassword"
-              error={this.state.errors.confirmPass}
+              value={this.state.input.confirm_password}
+              name="confirm_password"
+              error={this.state.errorMsg.confirm_password === "" ? false : this.state.errorMsg.confirm_password}
+              helperText={this.state.errorMsg.confirm_password}
             />
 
             <button class="btn" type="submit">
