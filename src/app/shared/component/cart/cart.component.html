@@ -3,24 +3,24 @@
   <div class="cart-header">
     <p class="title" id="cartTitle">
       My Cart
-      <span *ngIf="cartList.length > 0" class="count"
-        >({{ cartList.length }} item)</span
+      <span *ngIf="cartList?.length > 0" class="count"
+        >({{ cartList?.length }} item)</span
       >
     </p>
   </div>
   <div class="row product" *ngFor="let product of cartList; let i = index">
-    <div class="col-md-2 col-sm-4 cart-image">
+    <div class="cart-image">
       <img
-        src="assets/{{ product.imageURL }}"
+        src="assets/{{ product?.imageURL }}"
         class="card-img"
-        alt="{{ product.name }}"
-        title="{{ product.name }}"
+        alt="{{ product?.name }}"
+        title="{{ product?.name }}"
       />
     </div>
-    <div class="col-md-10 col-sm-8 cart-description">
+    <div class="cart-description">
       <div class="card-body">
         <p class="card-title" aria-level="1" role="heading">
-          {{ product.name }}
+          {{ product?.name }}
         </p>
         <div>
           <i
@@ -28,17 +28,17 @@
             (click)="removeProductFromCart(product)"
             aria-label="decrease product unit"
           ></i>
-          <span class="count">{{ product.count }}</span>
+          <span class="count">{{ product?.count }}</span>
           <i
             class="fa fa-plus-square icon-fa icon-action"
             (click)="addProductsToCart(product)"
             aria-label="increase product unit"
           ></i>
           <span class="item-price"
-            >X &nbsp; &nbsp;{{ product.price | currency: "Rs " }}</span
+            >X &nbsp; &nbsp;{{ product?.price | currency: "Rs " }}</span
           >
           <span class="item-total-price">{{
-            product.productPrice | currency: "Rs "
+            product?.productPrice | currency: "Rs "
           }}</span>
         </div>
       </div>
@@ -58,14 +58,14 @@
 </div>
 
 <div class="card-footer cart-footer">
-  <p>Promo code can be applied on payment page</p>
+  <p class="promo-code">Promo code can be applied on payment page</p>
   <button
     type="button"
     class="btn action-btn"
     aria-label="Proceed to Checkout Rs.  /-"
   >
     <span class="checkout-text">Proceed to Checkout </span>
-    <span class="checkout-price">Rs.{{ cartList.totalAmount }}/- ></span>
+    <span class="checkout-price">Rs.{{ cartList?.totalAmount }}/- ></span>
   </button>
 </div>
 

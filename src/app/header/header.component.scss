@@ -29,7 +29,7 @@ nav {
   color: $grey;
 }
 
-.container {
+.main-container {
   position: relative;
   //border-bottom: 1px solid rgb(245, 234, 234);
   // box-shadow: 0px 5px 5px rgb(241, 238, 238); /*  x axis , y axis , blur , color */
@@ -107,7 +107,7 @@ nav {
     }
   }
 
-  .container {
+  .main-container {
     .end-container {
       position: relative;
       right: 0;

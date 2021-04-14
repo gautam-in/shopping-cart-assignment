@@ -15,7 +15,7 @@ import { CartService } from 'src/app/shared/services/cart/cart.service';
 })
 export class ProductsComponent implements OnInit {
   product: any = [];
-  productPerRow: any = [];
+  finalProduct: any = [];
 
 
   constructor(
@@ -35,7 +35,7 @@ export class ProductsComponent implements OnInit {
     if (data.length > 0) {
       this.product = data;
       this._productService.product = data;
-      this.productPerRow = this.buildProductArr(data);
+      this.finalProduct = this.buildProductArr(data);
     }
   }
 

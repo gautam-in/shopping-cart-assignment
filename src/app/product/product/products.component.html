@@ -4,23 +4,23 @@
       <app-product-nav></app-product-nav>
     </div>
     <div class="col-10 product">
-      <div class="row" *ngFor="let row of productPerRow">
+      <div class="row" *ngFor="let row of finalProduct">
         <div class="inner-row" *ngFor="let product of row">
           <div class="card product-card">
             <div class="card-body product-body">
-              <h5 class="card-title product-title">{{ product.name }}</h5>
+              <h5 class="card-title product-title">{{ product?.name }}</h5>
               <div class="inner-body">
                 <img
                   class="card-img-top product-img small-screen"
-                  src="{{ product.imageURL }}"
+                  src="{{ product?.imageURL }}"
                   alt="Card image cap"
                 />
                 <p class="card-text product-description small-screen">
-                  {{ product.description }}
+                  {{ product?.description }}
                 </p>
               </div>
               <div class="product-footer">
-                <h2 class="product-price">MRP Rs.{{ product.price }}</h2>
+                <h2 class="product-price">MRP Rs.{{ product?.price }}</h2>
                 <button
                   (click)="buyProduct(product)"
                   class="btn btn-danger btn-raised product-buy"

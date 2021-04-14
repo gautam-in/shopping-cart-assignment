@@ -12,3 +12,13 @@
     padding-right: 0;
   }
 }
+
+@media only screen and (max-width: 767px) {
+  .register-row{
+    display: block;
+  }
+
+  form{
+    max-width: 100%;
+  }
+}
