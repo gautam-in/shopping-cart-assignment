@@ -1,6 +1,5 @@
 import React, {useEffect, useState} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
-import {useHistory} from 'react-router-dom';
 import PropTypes from 'prop-types';
 import {SkeletonProductFilter} from '../../../components/SkeltonLoaders';
 import AlertInfo from '../../../components/Alert';
@@ -8,8 +7,7 @@ import {allCategoriesData} from '../../../selector';
 import './ProductFilter.scss';
 import {fetchCategoriesDataRequest} from '../../../actions';
 
-const ProductFilter = React.memo(({filterId}) => {
-  const history = useHistory();
+const ProductFilter = React.memo(({filterId, setFilterId}) => {
   const dispatch = useDispatch();
 
   const [activeId, setActiveId] = useState(null);
@@ -27,12 +25,9 @@ const ProductFilter = React.memo(({filterId}) => {
   }, [filterId]);
 
   const handleClick = (value) => {
-    const state = {id: activeId === value ? null : value};
-    history.push({
-      pathname: '/products',
-      state,
-    });
-    setActiveId(state.id);
+    const id = activeId === value ? null : value;
+    setFilterId(id);
+    setActiveId(id);
   };
 
   const categoriesList = data.map((category) => {
@@ -65,6 +60,7 @@ const ProductFilter = React.memo(({filterId}) => {
 
 ProductFilter.propTypes = {
   filterId: PropTypes.string,
+  setFilterId: PropTypes.func.isRequired,
 };
 
 ProductFilter.defaultProps = {

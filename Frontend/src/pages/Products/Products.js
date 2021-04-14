@@ -1,4 +1,4 @@
-import {useEffect, useState} from 'react';
+import {useEffect, useState, useCallback} from 'react';
 import {useLocation} from 'react-router-dom';
 import ProductFilter from './ProductFilter';
 import ProductsList from './ProductsList';
@@ -14,15 +14,19 @@ const Products = () => {
     setFilterId(id);
   }, [id]);
 
+  const productFilterId = useCallback((productId) => {
+    setFilterId(productId);
+  }, []);
+
   return (
     <div className="page-wrap">
       <div className="container">
         <div className="product-page-main">
           <div className="product-filter-wrap">
-            <ProductFilter filterId={filterId} />
+            <ProductFilter filterId={filterId} setFilterId={productFilterId} />
           </div>
           <div className="product-page-list-wrap">
-            <ProductsList filterId={filterId} />
+            <ProductsList filterId={filterId} setFilterId={productFilterId} />
           </div>
         </div>
       </div>
