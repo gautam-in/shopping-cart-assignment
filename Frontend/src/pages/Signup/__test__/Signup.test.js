@@ -3,12 +3,12 @@ import {screen, waitFor} from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import 'regenerator-runtime/runtime';
 import {render} from '../../../test-utils/wrapper';
-import Form from '../Form';
+import Signup from '../Signup';
 
 test('should display matching error when signup form is invalid', async () => {
   render(
     <BrowserRouter>
-      <Form />
+      <Signup />
     </BrowserRouter>,
   );
   userEvent.type(screen.getByRole('textbox', {name: /enter first name/i}), '1');
@@ -31,7 +31,7 @@ test('should display matching error when signup form is invalid', async () => {
 test('should not display error when value is valid', async () => {
   render(
     <BrowserRouter>
-      <Form />
+      <Signup />
     </BrowserRouter>,
   );
 
@@ -57,6 +57,12 @@ test('should not display error when value is valid', async () => {
     expect(screen.queryByRole('alert')).not.toBeInTheDocument(),
   );
 
-  const signupButton = screen.getByRole('button', {name: /signup/i});
+  const signupButton = screen.getByRole('button');
   expect(signupButton).toBeInTheDocument();
+
+  userEvent.click(signupButton);
+
+  await waitFor(() =>
+    expect(screen.queryByRole('alert')).not.toBeInTheDocument(),
+  );
 });

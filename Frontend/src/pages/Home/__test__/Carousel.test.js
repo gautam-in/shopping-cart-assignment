@@ -1,5 +1,6 @@
 import {render, cleanup, screen} from '@testing-library/react';
 import 'regenerator-runtime/runtime';
+import userEvent from '@testing-library/user-event';
 import Carousel from '../Carousel';
 
 afterEach(() => {
@@ -18,4 +19,16 @@ test('render carousel images', async () => {
     'Independence Day Deal - 25% off on shampoo carouselimg',
     'Independence Day Deal - Rs120 off on surf carouselimg',
   ]);
+
+  userEvent.click(
+    screen.getByRole('button', {
+      name: /previous/i,
+    }),
+  );
+
+  userEvent.click(
+    screen.getByRole('button', {
+      name: /next/i,
+    }),
+  );
 });
