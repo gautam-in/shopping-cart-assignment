@@ -1,0 +1,14 @@
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  .LoginRegText {
+    .title{
+      font-size: 25px;
+    }
+    .title-description{
+      font-size: 11px;
+    }
+  }
+  Form {
+    padding-right: 0;
+  }
+}

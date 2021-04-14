@@ -1,25 +1,23 @@
 @import "../../../assets/scss/color.scss";
 
+// .category{
+//   .category-row:nth-child(even) {
+//     .image {
+//       float: left;
+//       img {
+//         width: 18rem;
+//         height: inherit;
+//       }
+//     }
+//     .description {
+//       float: right;
+//       .category-body {
+//         text-align: center;
 
-.category{
-  .category-row:nth-child(even) {
-    .image {
-      float: left;
-      img {
-        width: 18rem;
-        height: inherit;
-      }
-    }
-    .description {
-      float: right;
-      .category-body {
-        text-align: center;
-       
-      }
-    }
-  }
-}
-
+//       }
+//     }
+//   }
+// }
 
 .category {
   margin: 0 10rem;
@@ -33,22 +31,106 @@
       height: inherit;
     }
     .description {
-      .category-body{
-        .name-des{
+      padding-bottom: 5px;
+      .category-body {
+        .name-des {
           text-align: center;
         }
-        button{
+        button {
           text-align: center;
         }
       }
-     
     }
   }
 }
-
 
 .btn-danger {
   width: inherit;
   align-items: center;
 }
 
+/* Large devices (laptops/desktops, 992px and up) */
+// @media only screen and (min-width: 992px) {
+@media (max-width: 1199px) {
+  .category {
+    margin: 0 10rem;
+    .category-row {
+      margin-top: 10px;
+      img {
+        width: 14rem;
+      }
+    }
+  }
+
+  .main-heading {
+    font-size: 18px;
+  }
+
+  .action-btn {
+    font-size: 0.7rem;
+    margin-bottom: 35px;
+  }
+
+  .name-des {
+    font-size: 13px;
+  }
+}
+
+// @media only screen and (min-width: 768px) {
+@media (max-width: 992px) {
+  .container {
+    max-width: 1000px;
+    margin: 0;
+  }
+  .category {
+    margin: 0;
+    .category-row {
+      img {
+        width: 10rem;
+      }
+    }
+  }
+
+  .main-heading {
+    font-size: 15px;
+  }
+
+  .name-des {
+    font-size: 10px;
+  }
+  .action-btn {
+    font-size: 0.7rem;
+    margin-bottom: 35px;
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+// @media only screen and (min-width: 600px) {
+//   @media (max-width: 767px) {
+//
+// }
+
+/* Extra small devices (phones, 600px and down) */
+// @media only screen and (max-width: 600px) {
+@media only screen and (max-width: 575px) {
+  .category {
+    margin: 0;
+    .category-row {
+      img {
+        width: 6rem;
+      }
+    }
+  }
+
+  .main-heading {
+    font-size: 9px;
+  }
+
+  .name-des {
+    font-size: 6px;
+  }
+  .action-btn {
+    font-size: 0.4rem;
+    margin-bottom: 18px;
+  }
+}

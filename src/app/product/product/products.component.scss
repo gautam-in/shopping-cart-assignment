@@ -1,11 +1,11 @@
-@import '../../../assets/scss/color.scss';
-.col-2 {
+@import "../../../assets/scss/color.scss";
+.product-nav {
   background-color: rgb(252, 245, 245);
   margin-left: 3%;
   margin-right: 2%;
 }
 
-.col-10 {
+.product {
   max-width: 70%;
   padding: 10px 0px;
 }
@@ -14,7 +14,7 @@
   width: 13rem;
   height: 410px;
   //border: 0;
-  border-bottom: 1px dotted $grey ;
+  border-bottom: 1px dotted $grey;
   .product-body {
     .product-title {
       font-size: 1rem;
@@ -24,22 +24,22 @@
     .product-img {
       margin-bottom: 1rem;
     }
-    .product-description{
+    .product-description {
       height: 5rem;
       background-color: $grey;
-      font-size: .7rem;
-      padding : 8px 7px;
+      font-size: 0.7rem;
+      padding: 8px 7px;
       overflow: hidden;
     }
     .product-footer {
       margin-bottom: 3rem;
       display: flex;
-      .product-price{
+      .product-price {
         font-size: 12px;
         width: 50%;
-        padding-top:10px;
+        padding-top: 10px;
       }
-      .product-buy{
+      .product-buy {
         font-size: 12px;
         float: right;
         background-color: $mergenta;
@@ -47,64 +47,137 @@
     }
   }
 }
+/* Large devices (laptops/desktops, 992px and up) */
+// @media only screen and (min-width: 992px) {
+//   .product-nav {
+//     margin-left: 0;
+//   }
 
-// .inner-row {
-//   max-width: 100%;
-//   display: contents;
-// }
-// .col-4 {
-//   padding: 0px 10px;
-//   border-right: 2px solid rgb(252, 241, 241);
-//   border-bottom: 3px dotted rgb(231, 224, 224);
-//   box-shadow: 3px 0px 3px rgb(252, 241, 241);
-//   margin-left: 17px;
-//   max-width: 25%;
-//   margin: 0;
-// }
+//   .product {
+//     max-width: 80%;
+//     padding: 0px 0px;
+//   }
 
-// img {
-//   display: block;
-//   margin-left: auto;
-//   margin-right: auto;
-//   width: 70%;
-//   padding-bottom: 5px;
-// }
-
-// .name {
-//   height: 50px;
-//   padding-top: 20%;
-//   margin-bottom: 20%;
-// }
-
-// h1 {
-//   font-size: 110%;
-//   font-weight: 1000;
-//   text-align: center;
+//   .product-card {
+//     width: 25rem;
+//     height: 245px;
+//     .product-body {
+//       .product-title {
+//         height: 2rem;
+//       }
+//       .product-img {
+//         width: 8rem;
+//       }
+//       .product-description {
+//         height: 8rem;
+//       }
+//     }
+//   }
+//   // .inner-body {
+//   //   display: flex;
+//   // }
 // }
 
-// h2 {
-//   text-align: center;
-//   margin-top: 20%;
-// }
+// @media only screen and (min-width: 768px) {
+@media only screen and (max-width: 991px) and (min-width: 768px) {
+  .product-nav {
+    margin-left: 0;
+  }
 
-// .btn-danger {
-//   margin-left: 50%;
-// }
+  .product {
+    max-width: 80%;
+    padding: 0px 0px;
+  }
 
-// .description {
-//   background-color: rgb(245, 237, 237);
-//   height: 150px;
-// }
+  .product-card {
+    width: 20rem;
+    height: 245px;
+    .product-body {
+      .product-title {
+        height: 2.5rem;
+        font-size: 0.8rem;
+      }
+      .product-img {
+        width: 8rem;
+      }
+      .product-description {
+        height: 8rem;
+      }
+    }
+  }
+  .inner-body {
+    display: flex;
+  }
+}
 
-// p {
-//   padding: 5% 10% 5% 5%;
-//   font-size: 80%;
-//   line-height: 145%;
-//   text-align: left;
-//   margin-top: 10%;
-// }
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) and (max-width: 767px) {
+  .main-row {
+    margin: 0;
+  }
+  .product-nav {
+    margin: 0;
+  }
 
-// .price {
-//   float: left;
-//   padding: 10px 2px;
-// }
+  .product {
+    // max-width: 80%;
+    padding: 0px 0px;
+    margin: 0;
+  }
+
+  .product-card {
+    width: 13rem;
+    height: 245px;
+    .product-body {
+      .product-title {
+        height: 2.5rem;
+        font-size: 0.8rem;
+      }
+      .product-img {
+        width: 4rem;
+      }
+      .product-description {
+        height: 8rem;
+      }
+    }
+  }
+  .inner-body {
+    display: flex;
+    height: 9rem;
+  }
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .product-nav {
+    display: none;
+  }
+
+  .product {
+    max-width: 100%;
+    padding: 0px 0px;
+  }
+
+  .product-card {
+    width: 34rem;
+    height: 245px;
+    .product-body {
+      .product-title {
+        height: 1.5rem;
+        font-size: 0.8rem;
+      }
+      .product-img {
+        width: 9rem;
+      }
+      .product-description {
+        height: 4rem;
+        margin-top: 30px;
+        margin-right: 0rem;
+      }
+    }
+  }
+  .inner-body {
+    display: flex;
+    height: 9rem;
+  }
+}
