@@ -16,7 +16,7 @@ export class HeaderComponent implements OnInit {
   constructor(
     private _modalService: NgbModal,
     private _cartService: CartService,
-    private _route : Router
+    private _route: Router
   ) {}
 
   ngOnInit(): void {
@@ -26,12 +26,12 @@ export class HeaderComponent implements OnInit {
   }
 
   openCart(): void {
-if(this.productsInCart.length>0){
-  this._route.navigate(['app/cart'])
-}else{
-  this._modalService.open(EmptyCartComponent, { ariaLabelledBy: 'cartTitle' });
-
-}
-   
+    if (this.productsInCart.length > 0) {
+      this._route.navigate(['app/cart']);
+    } else {
+      this._modalService.open(EmptyCartComponent, {
+        ariaLabelledBy: 'cartTitle',
+      });
+    }
   }
 }

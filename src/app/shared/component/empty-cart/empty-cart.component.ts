@@ -8,18 +8,17 @@ import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
   styleUrls: ['./empty-cart.component.scss'],
 })
 export class EmptyCartComponent implements OnInit {
-  constructor(private _route: Router,
-    public modal: NgbActiveModal) {}
+  constructor(private _route: Router, public modal: NgbActiveModal) {}
 
   ngOnInit(): void {}
 
   startShopping() {
     this._route.navigate(['app/home']);
-    this.modal.dismiss('Cross click')
+    this.modal.dismiss('Cross click');
   }
 
   resetCart() {
     this._route.navigate(['app/home']);
-    this.modal.dismiss('Cross click')
+    this.modal.dismiss('Cross click');
   }
 }

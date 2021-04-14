@@ -1,6 +1,7 @@
-<nav class="nav flex-column" *ngFor="let category of categoryList" >
-    <a class="nav-link" *ngIf ="category.enabled">
-      <button (click)="getProductByCategory(category?.id)">
-       {{category?.name}}
-      </button></a>
-  </nav>
+<nav class="nav flex-column" *ngFor="let category of categoryList">
+  <a class="nav-link" *ngIf="category.enabled">
+    <button (click)="getProductByCategory(category?.id)">
+      {{ category?.name }}
+    </button></a
+  >
+</nav>

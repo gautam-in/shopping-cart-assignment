@@ -14,7 +14,7 @@ export class ProductNavComponent implements OnInit {
   constructor(
     private _appService: AppService,
     private _productService: ProductService,
-    private _route : Router
+    private _route: Router
   ) {}
 
   ngOnInit(): void {
@@ -32,6 +32,6 @@ export class ProductNavComponent implements OnInit {
   }
 
   getProductByCategory(id: any) {
-    this._route.navigate(['app/product/list' , id])
+    this._route.navigate(['app/product/list', id]);
   }
 }

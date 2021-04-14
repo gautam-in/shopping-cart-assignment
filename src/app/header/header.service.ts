@@ -19,7 +19,8 @@ export class HeaderService {
     'Password should have a lower case, upper case, special character and number. ';
   public CONFIRMPASSWORD_ERROR: string =
     'Confirm Password should match to Password';
-  public PASSWORD_COMPARE_ERROR: string = "Password and Confirm Password must be match.";
+  public PASSWORD_COMPARE_ERROR: string =
+    'Password and Confirm Password must be match.';
   public PASSWORD_LENGTH_ERROR: string = 'Minimum 8 characters are required';
 
   public INVALID_ACCOUNT_ERROR: string =
@@ -27,8 +28,8 @@ export class HeaderService {
 
   public SERVER_ERROR: string = 'Something went wrong, please try again';
 
-  public NAME_PATTERN_ERROR :string = "Name should only contain alphabet"
-  public NAME_LENGTH_ERROR :string = "Name should have minimum 2 char"
+  public NAME_PATTERN_ERROR: string = 'Name should only contain alphabet';
+  public NAME_LENGTH_ERROR: string = 'Name should have minimum 2 char';
 
   //---------------------
   //---REGEX PATTERN-----
@@ -57,10 +58,10 @@ export class HeaderService {
   fetchCategories() {
     this._http.get('server/categories/index.get.json').subscribe((data) => {
       this.categories = data;
-     this.categories = this.categories.sort((a, b)=>{
-        return a.order - b.order
-       })
-      return this.categories
+      this.categories = this.categories.sort((a, b) => {
+        return a.order - b.order;
+      });
+      return this.categories;
     });
   }
 }

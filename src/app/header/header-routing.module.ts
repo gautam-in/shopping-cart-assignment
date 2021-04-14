@@ -20,15 +20,22 @@ const routes: Routes = [
       },
       {
         path: 'home',
-        loadChildren: ()=>import('../home/home.module').then(module=>module.HomeModule)
+        loadChildren: () =>
+          import('../home/home.module').then((module) => module.HomeModule),
       },
       {
         path: 'product',
-        loadChildren: ()=>import('../product/product.module').then(module=>module.ProductModule)
+        loadChildren: () =>
+          import('../product/product.module').then(
+            (module) => module.ProductModule
+          ),
       },
       {
         path: 'cart',
-        loadChildren: ()=>import('../shared/shared.module').then(module =>module.SharedModule)
+        loadChildren: () =>
+          import('../shared/shared.module').then(
+            (module) => module.SharedModule
+          ),
       },
     ],
   },

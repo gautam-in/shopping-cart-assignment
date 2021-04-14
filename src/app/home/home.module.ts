@@ -5,16 +5,8 @@ import { HomeComponent } from './home/home.component';
 import { CarouselComponent } from './carousel/carousel.component';
 import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
 
-
 @NgModule({
-  declarations: [
-    HomeComponent,
-    CarouselComponent
-  ],
-  imports: [
-    CommonModule,
-    HomeRoutingModule,
-    NgbCarouselModule
-  ]
+  declarations: [HomeComponent, CarouselComponent],
+  imports: [CommonModule, HomeRoutingModule, NgbCarouselModule],
 })
-export class HomeModule { }
+export class HomeModule {}

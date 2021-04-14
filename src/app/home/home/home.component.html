@@ -1,27 +1,28 @@
 <div class="container main-container">
-    <app-carousel></app-carousel>
+  <app-carousel></app-carousel>
 
   <div class="category">
-    <div class="row category-row" *ngFor="let category of categories; let i = index">
-      <!-- <ng-container *ngIf="category.enabled"> -->
-          <figure class="col-md-4 col-sm-4 col-4 image">
-            <img src="{{ category.imageUrl }}" />
-          </figure>
+    <div
+      class="row category-row"
+      *ngFor="let category of categories; let i = index"
+    >
+      <figure class="col-md-4 col-sm-4 col-4 image">
+        <img src="{{ category.imageUrl }}" />
+      </figure>
 
-          <div class="col-md-8 col-sm-8 col-8 desciption">
-            <div class="category-body">
-              <p class="main-heading">{{ category.name }}</p>
-              <p class="name-des">{{ category.description }}</p>
-              <button
-                type="button"
-                class="btn btn-danger action-btn"
-                (click)="exploreProduct(category.id)"
-              >
-                Explore {{ category.key }}
-              </button>
-            </div>
+      <div class="col-md-8 col-sm-8 col-8 desciption">
+        <div class="category-body">
+          <p class="main-heading">{{ category.name }}</p>
+          <p class="name-des">{{ category.description }}</p>
+          <button
+            type="button"
+            class="btn btn-danger action-btn"
+            (click)="exploreProduct(category.id)"
+          >
+            Explore {{ category.key }}
+          </button>
         </div>
-      <!-- </ng-container> -->
+      </div>
     </div>
   </div>
 </div>

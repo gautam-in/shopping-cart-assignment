@@ -8,20 +8,9 @@ import { ProductsResolver } from './product.resolver';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ProductNavComponent } from './product-nav/product-nav.component';
 
-
-
 @NgModule({
-  declarations: [
-    ProductsComponent,
-    ProductListComponent,
-    ProductNavComponent,
-  ],
-  imports: [
-    CommonModule,
-    ProductRoutingModule,
-  ],
-  providers:[ProductService ,
-  ProductsResolver
-]
+  declarations: [ProductsComponent, ProductListComponent, ProductNavComponent],
+  imports: [CommonModule, ProductRoutingModule],
+  providers: [ProductService, ProductsResolver],
 })
-export class ProductModule { }
+export class ProductModule {}

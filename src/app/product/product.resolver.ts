@@ -22,7 +22,7 @@ export class ProductsResolver implements Resolve<Observable<any>> {
     state: RouterStateSnapshot
   ): Observable<any> {
     this.getProducts();
-    return this.getProducts()
+    return this.getProducts();
   }
 
   getProducts(): any {

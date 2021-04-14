@@ -13,10 +13,7 @@ export class HomeComponent implements OnInit {
   categories: any = [];
   banners: any = [];
 
-  constructor(
-    private _route: Router,
-    private _appService: AppService
-  ) {}
+  constructor(private _route: Router, private _appService: AppService) {}
 
   ngOnInit(): void {
     this.fetchBanners();
@@ -37,7 +34,7 @@ export class HomeComponent implements OnInit {
   }
 
   exploreProduct(id: any): void {
-    this._route.navigate(['app/product/list' , id])
+    this._route.navigate(['app/product/list', id]);
   }
 
   fetchBanners() {
