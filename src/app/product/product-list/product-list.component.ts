@@ -13,7 +13,6 @@ export class ProductListComponent implements OnInit {
   category: string;
   filterCategory: any = [];
   categoryId: any;
-  // @Input() filterCategory;
 
   constructor(
     private _cartService: CartService,
@@ -22,20 +21,18 @@ export class ProductListComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this._activatedroute.params.subscribe(
-      (params: Params) => {
-        this.categoryId = params['id']
-        this.fetchProductList(this._activatedroute.snapshot.data['productDetail']);
-        console.log(params['id']);
-      }
-    );
+    this._activatedroute.params.subscribe((params: Params) => {
+      this.categoryId = params['id'];
+      this.fetchProductList(
+        this._activatedroute.snapshot.data['productDetail']
+      );
+    });
   }
 
-
   fetchProductList(data) {
-    let prod =[]
+    let prod = [];
     if (data.length > 0) {
-      data.forEach(element => {
+      data.forEach((element) => {
         if (element.category === this.categoryId) {
           prod.push(element);
         }

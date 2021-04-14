@@ -1,6 +1,5 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, Input, OnInit } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CartComponent } from 'src/app/shared/component/cart/cart.component';
 import { HeaderService } from 'src/app/header/header.service';
@@ -17,12 +16,10 @@ export class ProductsComponent implements OnInit {
   product: any = [];
   finalProduct: any = [];
 
-
   constructor(
     private _activatedroute: ActivatedRoute,
     private _productService: ProductService,
     private _appService: AppService,
-    public dialog: MatDialog,
     private _cartService: CartService
   ) {}
 
@@ -30,7 +27,6 @@ export class ProductsComponent implements OnInit {
     this.fetchProduct(this._activatedroute.snapshot.data['productDetail']);
   }
 
-  
   fetchProduct(data) {
     if (data.length > 0) {
       this.product = data;

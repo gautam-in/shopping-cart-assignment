@@ -1,4 +1,4 @@
-@import '../../../assets/scss/color.scss';
+@import "../../../assets/scss/color.scss";
 .col-2 {
   background-color: rgb(252, 245, 245);
   margin-left: 3%;
@@ -13,8 +13,7 @@
 .product-card {
   width: 13rem;
   height: 410px;
-  //border: 0;
-  border-bottom: 1px dotted $grey ;
+  border-bottom: 1px dotted $grey;
   .product-body {
     .product-title {
       font-size: 1rem;
@@ -24,27 +23,26 @@
     .product-img {
       margin-bottom: 1rem;
     }
-    .product-description{
+    .product-description {
       height: 5rem;
       background-color: $grey;
-      font-size: .7rem;
-      padding : 8px 7px;
+      font-size: 0.7rem;
+      padding: 8px 7px;
       overflow: hidden;
     }
     .product-footer {
       margin-bottom: 3rem;
       display: flex;
-      .product-price{
+      .product-price {
         font-size: 12px;
         width: 50%;
-        padding-top:10px;
+        padding-top: 10px;
       }
-      .product-buy{
+      .product-buy {
         font-size: 12px;
         float: right;
         background-color: $mergenta;
       }
     }
   }
-  
 }

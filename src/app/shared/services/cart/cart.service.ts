@@ -15,8 +15,7 @@ export class CartService {
     this.items.next(itm);
   }
 
-  constructor(private _appService: AppService) {
-  }
+  constructor(private _appService: AppService) {}
 
   getSubscribedCartList() {
     this.getCartList.subscribe((p) => {
@@ -52,7 +51,6 @@ export class CartService {
     }
   }
 
- 
   removeProductsFromCart(product) {
     this.itemInCart.forEach((element) => {
       if (element.id == product.id && element.count > 1) {
@@ -64,14 +62,13 @@ export class CartService {
       } else if (element.id == product.id) {
         this.itemInCart.pop(element);
       }
-      this.getTotalAmount()
+      this.getTotalAmount();
     });
     this.getTotalAmount();
   }
 
   getProductPrice(price, count): any {
     let totalPrice = price * count;
-    console.log('222====', totalPrice);
     return totalPrice;
   }
 
@@ -83,6 +80,5 @@ export class CartService {
     this.itemInCart.totalAmount = amount;
     this.setCartList(this.itemInCart);
     this.getSubscribedCartList();
-    console.log('==3====', this.itemInCart);
   }
 }

@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { HeaderService } from '../header.service';
-//import { configuration } from '../../shared/configuration';
 
 @Component({
   selector: 'app-login',
@@ -56,7 +55,6 @@ export class LoginComponent implements OnInit {
 
   submitLoginForm(): void {
     if (this.loginForm.valid) {
-      console.log(this.loginForm.value);
       this._router.navigate(['app/home']);
     } else {
       this.headerService.validateAllFormFields(this.loginForm);

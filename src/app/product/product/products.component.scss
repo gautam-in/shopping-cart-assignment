@@ -47,36 +47,6 @@
     }
   }
 }
-/* Large devices (laptops/desktops, 992px and up) */
-// @media only screen and (min-width: 992px) {
-//   .product-nav {
-//     margin-left: 0;
-//   }
-
-//   .product {
-//     max-width: 80%;
-//     padding: 0px 0px;
-//   }
-
-//   .product-card {
-//     width: 25rem;
-//     height: 245px;
-//     .product-body {
-//       .product-title {
-//         height: 2rem;
-//       }
-//       .product-img {
-//         width: 8rem;
-//       }
-//       .product-description {
-//         height: 8rem;
-//       }
-//     }
-//   }
-//   // .inner-body {
-//   //   display: flex;
-//   // }
-// }
 
 // @media only screen and (min-width: 768px) {
 @media only screen and (max-width: 991px) and (min-width: 768px) {
@@ -120,7 +90,6 @@
   }
 
   .product {
-    // max-width: 80%;
     padding: 0px 0px;
     margin: 0;
   }

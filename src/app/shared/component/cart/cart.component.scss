@@ -123,21 +123,20 @@
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (max-width: 600px) {
   .card {
-  .cart-header {
-    .title {
-      font-size: 1.2rem;
-      margin: auto;
+    .cart-header {
+      .title {
+        font-size: 1.2rem;
+        margin: auto;
+      }
+      .count {
+        font-size: 0.8rem;
+      }
     }
-    .count {
-      font-size: .8rem;
-    }
-  }
     .product {
       .cart-description {
         width: 80%;
         .card-title {
           font-size: 0.9rem;
-         // font-weight: 600;
         }
       }
     }
@@ -159,14 +158,14 @@
 
   .cart-footer {
     .promo-code {
-      font-size: .7rem;
+      font-size: 0.7rem;
     }
 
     .checkout-text {
-      font-size: .7rem;
+      font-size: 0.7rem;
     }
     .checkout-price {
-      font-size: .7rem;
+      font-size: 0.7rem;
     }
   }
 
@@ -186,7 +185,6 @@
   .card {
     .product {
       .cart-description {
-     //   width: 80%;
         .card-title {
           font-size: 0.7rem;
           font-weight: 500;
@@ -201,25 +199,7 @@
     font-size: 0.7rem;
   }
 
-  // .cart-image {
-  //   width: 12%;
-  //   margin-left: 1rem;
-  // }
-
   .icon-action {
     font-size: 1rem;
   }
-
-  // .cart-footer {
-  //   .promo-code {
-  //     font-size: .7rem;
-  //   }
-
-  //   .checkout-text {
-  //     font-size: .7rem;
-  //   }
-  //   .checkout-price {
-  //     font-size: .7rem;
-  //   }
-  // }
 }

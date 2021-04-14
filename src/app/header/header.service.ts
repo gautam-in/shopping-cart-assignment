@@ -60,9 +60,7 @@ export class HeaderService {
      this.categories = this.categories.sort((a, b)=>{
         return a.order - b.order
        })
-      console.log('cat==========', this.categories);
       return this.categories
-    //  return this.categories;
     });
   }
 }

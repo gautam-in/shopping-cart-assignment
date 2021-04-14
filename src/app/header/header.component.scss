@@ -19,11 +19,6 @@ nav {
   }
 }
 
-// .nav-bar-left,
-// .nav-bar-right {
-//     list-style: none;
-// }
-
 .active {
   background-color: $mergenta;
   color: $grey;
@@ -31,8 +26,6 @@ nav {
 
 .main-container {
   position: relative;
-  //border-bottom: 1px solid rgb(245, 234, 234);
-  // box-shadow: 0px 5px 5px rgb(241, 238, 238); /*  x axis , y axis , blur , color */
   .end-container {
     position: absolute;
     right: 4rem;
@@ -83,9 +76,8 @@ nav {
         height: inherit;
       }
     }
-  
   }
-  .footer{
+  .footer {
     font-size: 10px;
     padding: 5px 5px 5px 25px;
   }
@@ -122,8 +114,6 @@ nav {
       right: -2rem;
     }
   }
-
-
 }
 
 /* Large devices (laptops/desktops, 992px and up) */

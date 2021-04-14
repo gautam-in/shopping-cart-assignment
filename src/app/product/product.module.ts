@@ -5,7 +5,6 @@ import { ProductsComponent } from './product/products.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { ProductService } from './product.service';
 import { ProductsResolver } from './product.resolver';
-import { MaterialModule } from '../material.module';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ProductNavComponent } from './product-nav/product-nav.component';
 
@@ -20,8 +19,6 @@ import { ProductNavComponent } from './product-nav/product-nav.component';
   imports: [
     CommonModule,
     ProductRoutingModule,
-    MaterialModule,
-   // NgbModal
   ],
   providers:[ProductService ,
   ProductsResolver

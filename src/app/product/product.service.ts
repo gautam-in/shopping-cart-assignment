@@ -10,34 +10,33 @@ import { ProductModule } from './product.module';
 export class ProductService {
   product: any = [];
   productId: any;
-  category :any=[]
-  result : any =[]
-  itemInCart: any =[]
- 
+  category: any = [];
+  result: any = [];
+  itemInCart: any = [];
+
   product_server_url = 'server/products/index.get.json';
   category_server_url = 'server/categories/index.get.json';
 
-  constructor(private _http: HttpClient,
-    private _appService : AppService ,
-    private _cartService : CartService) {
-  }
+  constructor(
+    private _http: HttpClient,
+    private _appService: AppService,
+    private _cartService: CartService
+  ) {}
 
-  addProductToCart(product){
-    this.itemInCart = JSON.parse(this._appService.getSessionItem('cartItem'))
-    console.log("product in cart ==" ,this.itemInCart)
+  addProductToCart(product) {
+    this.itemInCart = JSON.parse(this._appService.getSessionItem('cartItem'));
     if (this.itemInCart && this.itemInCart != null) {
       this.itemInCart.push(product);
-      this._appService.setSessionItem('cartItem', JSON.stringify(this.itemInCart));
+      this._appService.setSessionItem(
+        'cartItem',
+        JSON.stringify(this.itemInCart)
+      );
     } else {
-      let y: any = []
+      let y: any = [];
       y.push(product);
       this._appService.setSessionItem('cartItem', JSON.stringify(y));
     }
 
-     this._cartService.setCartList(this.itemInCart)
-
+    this._cartService.setCartList(this.itemInCart);
   }
-
-
- 
 }

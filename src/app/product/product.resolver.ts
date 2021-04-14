@@ -23,9 +23,6 @@ export class ProductsResolver implements Resolve<Observable<any>> {
   ): Observable<any> {
     this.getProducts();
     return this.getProducts()
-    // let response1 = this.getProducts();
-    // let response2 = this.getCategory();
-    // return forkJoin([response1, response2]);
   }
 
   getProducts(): any {

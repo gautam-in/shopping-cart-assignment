@@ -93,7 +93,6 @@ export class RegisterComponent implements OnInit {
 
   submitRegistrationForm(): void {
     if (this.registrationForm.valid) {
-      console.log(this.registrationForm.value);
       this._router.navigate(['app/login']);
     } else {
       this._headerService.validateAllFormFields(this.registrationForm);
