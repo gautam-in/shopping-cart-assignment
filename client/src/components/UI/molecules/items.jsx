@@ -1,9 +1,8 @@
 import React from "react";
 import { useSelector} from "react-redux";
-import "../cart.scss";
 import { handleIncrement, handledecrement } from "../../../Redux/action";
-import ActionButton from "./actionButton";
-import ItemImage from "./itemImage"
+import ActionButton from "../atoms/actionButton/actionButton";
+import ItemImage from "../atoms/itemImage/itemImage"
 
 function Item({ i }) {
   const cart = useSelector((state) => state.cart);

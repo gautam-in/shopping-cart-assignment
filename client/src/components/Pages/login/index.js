@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
-import TextField from "@material-ui/core/TextField";
 import "./index.scss";
+import TextFieldComponent from '../../UI/atoms/textField/TextField'
+import SubmitButton from '../../UI/atoms/submitButton/submitButton'
 
 function errorMessage(field, error) {
   if (!field && error) return true;
@@ -54,35 +55,27 @@ function Login() {
       </div>
       <div>
         <form onSubmit={submit} className={"form"} data-test="sign-in">
-          <TextField
-            onChange={(e) => setEmail(e.target.value)}
-            helperText={
-              errorMessage(email, error) ? "Please enter Email." : null
-            }
-            type={"email"}
-            required
-            id="standard-basic"
-            label="Email"
-            data-test="email"
-            error={errorMessage(email, error)}
-            value ={email}
+          <TextFieldComponent 
+          setField={setEmail} 
+          errorMessage={errorMessage} 
+          data={email} 
+          error ={error} 
+          type= "email" 
+          id="standard-basic"
+          label="Email"
+          data-test="email"
           />
-          <TextField
-            onChange={(e) => setPassword(e.target.value)}
-            helperText={
-              errorMessage(password, error) ? "Please enter Password." : null
-            }
-            type="password"
-            required
-            id="standard-basic"
-            label="Password"
-            data-test="password"
-            error={errorMessage(password, error)}
-            value ={password}
+          <TextFieldComponent
+          setField={setPassword}
+          errorMessage={errorMessage}
+          data={password}
+          error={error}
+          type="password"
+          id="standard-basic"
+          label="Password"
+          data-test="password"
           />
-          <button onClick={handler} class="btn" type="submit" data-test='submitButton'>
-            Login
-          </button>
+          <SubmitButton handler={handler} text ="Login"/>
         </form>
       </div>
     </div>

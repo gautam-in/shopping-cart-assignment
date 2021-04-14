@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import "./cart.scss";
-import { handlecartupdate } from "../../Redux/action";
-import Item from "./atoms/items";
+import { handlecartupdate } from "../../../Redux/action";
 import { useHistory } from "react-router-dom";
+import NonEmptyCart from '../../UI/molecules/cart/NonEmptyCart';
+import EmptyCart from '../../UI/molecules/cart/EmptyCart';
 
 function Cart({ setCart }) {
   const cart = useSelector((store) => store.cart);
@@ -66,39 +67,9 @@ function Cart({ setCart }) {
           </button>{" "}
         </header>
         {cart.length ? (
-          <div style={{ height: "100%", overflow: "auto",position:"relative" }}>
-            <div className="items">
-              {cart.map((i) => (
-                <Item i={i} />
-              ))}
-            </div>
-            <div className="lowest">
-              <div>
-                <img src="./static/images/lowest-price.png" alt="" />
-              </div>
-              <div>You won't find it cheaper anywhere.</div>
-            </div>
-            <div className={"checkout"}>
-              <small>Promo code can be applied on payment page.</small>
-              <button onClick={confirmOrder} className="btn checkoutBtn">
-                <span>Proceed to checkout</span>
-                <span>
-                  Rs. {price()} &nbsp;&nbsp;&nbsp; <b>{"  >"}</b>
-                </span>
-              </button>
-            </div>
-          </div>
+          <NonEmptyCart cart ={cart} confirmOrder ={confirmOrder} price ={price}/>
         ) : (
-          <div style={{ height: "100%",position:"relative" }}>
-          <div className="empty-cart">
-            <h2>No items in your cart</h2>
-            <h5>Your favourite items are just a click away</h5>
-            
-            <button onClick ={startShopping} className = "btn startShoppingBtn" >
-              Start Shopping
-            </button>
-          </div>
-          </div>
+          <EmptyCart startShopping ={startShopping}/>
         )}
       </div>
     </div>

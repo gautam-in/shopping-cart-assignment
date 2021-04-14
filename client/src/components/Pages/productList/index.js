@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import { IoMdArrowDropdown } from "react-icons/all";
-import Card from "./utility/card";
+import Card from "../UI/atoms/productList//card";
 import "./index.scss";
-import Aside from "./utility/aside"
-import AsideMobile from "./utility/asideMobile"
+import Aside from "../UI/atoms/productList/aside"
+import AsideMobile from "../UI/atoms/productList/asideMobile"
 import serviceWrapper from "../../serviceWrapper";
 
 function Product({ categories }) {

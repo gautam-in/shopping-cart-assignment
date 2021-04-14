@@ -1,10 +1,10 @@
 import React from "react";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-import Card from "./utility/card";
-import Banner from "./utility/banner";
+import Card from "../../UI/molecules/categoryNavigateCard";
+import Banner from "../../UI/atoms/corousel/banner";
 import "./index.scss";
-import serviveWrapper from '../../serviceWrapper';
+import serviveWrapper from '../../../serviceWrapper';
 
 function Home({ categories }) {
   const [banners, setBanners] = React.useState([]);
