@@ -18,5 +18,8 @@ export class EmptyCartComponent implements OnInit {
     this.modal.dismiss('Cross click')
   }
 
-  resetCart() {}
+  resetCart() {
+    this._route.navigate(['app/home']);
+    this.modal.dismiss('Cross click')
+  }
 }
