@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { CartComponent } from '../shared/component/cart/cart.component';
+import { EmptyCartComponent } from '../shared/component/empty-cart/empty-cart.component';
 import { CartService } from '../shared/services/cart/cart.service';
 
 @Component({
@@ -25,8 +26,12 @@ export class HeaderComponent implements OnInit {
   }
 
   openCart(): void {
+if(this.productsInCart.length>0){
+  this._route.navigate(['app/cart'])
+}else{
+  this._modalService.open(EmptyCartComponent, { ariaLabelledBy: 'cartTitle' });
 
-    //this._modalService.open(CartComponent, { ariaLabelledBy: 'cartTitle' });
-    this._route.navigate(['app/cart'])
+}
+   
   }
 }

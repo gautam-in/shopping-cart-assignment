@@ -8,6 +8,7 @@ import {
   NgbModal,
 } from '@ng-bootstrap/ng-bootstrap';
 import { CartService } from '../../services/cart/cart.service';
+import { EmptyCartComponent } from '../empty-cart/empty-cart.component';
 //import { MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 
 // interface DialogData {
@@ -27,6 +28,7 @@ export class CartComponent implements OnInit {
     private modalService: NgbModal,
     private _cartService: CartService,
     //public modal: NgbActiveModal,
+    private _modalService: NgbModal,
     private _route: Router
   ) {}
   ngOnInit(): void {
@@ -36,7 +38,11 @@ export class CartComponent implements OnInit {
   getCartList() {
     this._cartService.getCartList.subscribe((data) => {
       this.cartList = data;
+      if(this.cartList.length== 0){
+        this._modalService.open(EmptyCartComponent, { ariaLabelledBy: 'cartTitle' });
+      }
     });
+   
   }
 
   addProductsToCart(product) {

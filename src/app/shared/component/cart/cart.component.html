@@ -1,3 +1,4 @@
+<div *ngIf="cartList.length>0">
 <div class="card mb-3">
   <div class="cart-header">
     <p class="title" id="cartTitle">
@@ -66,4 +67,6 @@
     <span class="checkout-text">Proceed to Checkout </span>
     <span class="checkout-price">Rs.{{ cartList.totalAmount }}/- ></span>
   </button>
+</div>
+
 </div>
