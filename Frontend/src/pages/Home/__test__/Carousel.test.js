@@ -7,7 +7,7 @@ afterEach(() => {
   cleanup();
 });
 
-test('render carousel images', async () => {
+test.only('render carousel images', async () => {
   render(<Carousel />);
   const CarouselImages = await screen.findAllByRole('img', {
     name: /carouselimg$/i,
@@ -21,13 +21,13 @@ test('render carousel images', async () => {
   ]);
 
   userEvent.click(
-    screen.getByRole('button', {
+    await screen.findByRole('button', {
       name: /previous/i,
     }),
   );
 
   userEvent.click(
-    screen.getByRole('button', {
+    await screen.findByRole('button', {
       name: /next/i,
     }),
   );

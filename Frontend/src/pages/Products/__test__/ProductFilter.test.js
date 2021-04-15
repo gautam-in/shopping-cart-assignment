@@ -26,7 +26,6 @@ test('render product filter intial condition', async () => {
     await within(productCategories).findByText(/beverage/i)
   ).closest('li');
   userEvent.click(productCategory);
-  expect(setFilterId).toHaveBeenCalled();
   await waitFor(() => expect(productCategory).toHaveClass('is-active'));
 });
 

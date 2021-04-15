@@ -58,6 +58,7 @@ const SliderImages = React.memo(({carouselImages}) => {
           items={carouselImages}
           activeIndex={activeIndex}
           onClickHandler={goToIndex}
+          data-testid="carousel-indicator"
         />
         {slides}
         <CarouselControl
