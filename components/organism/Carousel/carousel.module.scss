@@ -1,0 +1,34 @@
+.prevbutton{
+    position:absolute;
+    width:100px;
+    height:50px;
+    z-index:2;
+    top:15%;
+    background:rgba(0,0,0,0.4);
+    font-size:16px;
+    border:none
+}
+.nextbutton{
+    position:absolute;
+    width:100px;
+    height:50px;
+    z-index:2;
+    top:15%;
+    background:rgba(0,0,0,0.4);
+    font-size:16px;
+    border:none;
+    left: 90%;
+ }
+.dots{
+    display:flex;
+    justify-content:center;
+    align-items:center
+ }
+ @media screen and (max-width:1199px){
+    .prevbutton{
+        display: none;
+    }
+    .nextbutton{
+        display: none;
+    }
+}

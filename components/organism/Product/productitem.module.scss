@@ -1,0 +1,95 @@
+$primary-color: rgb(204, 0, 82);
+.productimage{
+    width: 100%;
+    height: 150px;
+}
+.itemname { grid-area: name;padding:0px 4px;align-self: start; }
+.itemimage { grid-area: image; }
+.itemdescription {grid-area: description;}
+.itembutton { 
+    grid-area: button;
+    display: grid;
+    grid-template-columns: auto auto;
+    align-items: center;
+    margin-bottom: 10px; }
+.item{
+    display:grid;
+    grid-template-columns:  auto;
+    grid-template-areas: "name""image""description""button";
+    grid-template-rows: 80px 150px 4fr 1fr;
+    background-color:#fff; 
+    border-bottom:2px dotted #ccc;
+    justify-content: center;
+    align-items: center;
+    grid-column-gap: 10px;
+    padding: 5px 0px
+}
+.description{
+    background:#ccc;
+    padding:5px;
+    overflow-y:hidden;
+    text-overflow:ellipsis;
+    max-height:150px;
+    margin-bottom: 10px;
+}
+.buynow{
+    background:rgb(204, 0, 82);
+    padding:0px 8px;
+    min-width:100px;
+    height:40px;
+    border:none;color:#fff
+}
+
+@media screen and (max-width:1199px){
+    .itembutton{
+        display: inline;
+        // grid-column: 1/-1;
+        justify-content: stretch;
+        align-items:center;
+        align-content: center;
+        align-self: center;
+        margin: 10px 0px;
+    }
+    .description{
+        overflow-y:scroll;
+        max-height:inherit;
+
+
+    }
+    .buynow{
+        width: 100%;
+    }
+    .item{
+     grid-template-rows:20% 70% 10%;
+     grid-template-areas: 'name name'
+                          'image description'
+                          'button button';
+    }
+    .productimage{
+        width: auto;
+        height: 160px;
+    }
+
+}
+@media screen and (max-width:767px){
+    .item{
+        grid-template-rows:20% 60% 20%;
+        grid-template-areas:'name name '
+                            'image description'
+                            'image button';
+    }
+    .itembutton{
+        display: flex;
+        grid-column: auto;
+        justify-content: center;
+        align-items: center;
+
+    }
+    .productimage{
+        width: auto;
+    }
+    .buynow{
+        margin: 10px 0px;
+        width:100%;
+    }
+}

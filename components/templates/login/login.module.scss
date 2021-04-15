@@ -1,0 +1,77 @@
+$input_focus_color:rgb(153, 204, 255);
+$input_color:#ccc;
+
+.formcontent{
+    display:grid;
+    grid-template-columns: auto auto;
+    width:70%
+}
+.formleftcontent{
+    display:flex;
+    flex-direction:column;
+    flex:1;
+    justify-content:flex-start;
+    align-items:flex-start;
+    padding-left:40px
+}
+.formrightcontent{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 5px solid white;
+    padding: 20px;
+    font-size: 1.5rem;
+    line-height: 1.5;
+    font-weight: 600;
+}
+.inputlabel{
+    color: $input_color;
+}
+.inputbox{
+    width: 100%;
+    padding: 5px;
+    font-size: 1rem;
+    border: none;
+    border-bottom:2px solid #ccc;
+    &:focus {
+        outline: none;
+        border-color: $input_focus_color;
+        +label {
+          color: $input_focus_color;
+        }
+      }
+}
+.inputerror{
+    color:red;
+    font-size:14px;
+}
+.submitbutton{
+    background:rgb(204, 0, 82);
+    width:100%;
+    height:40px;
+    border:none;
+    color:#fff;
+    margin-top: 20px;
+    &:disabled{
+        background-color: #ccc;
+        color:#000;
+    }
+}
+.empty{
+    height: 150px;
+}
+.main{
+    flex: 1;
+}
+@media screen and (max-width: 1199px) {
+    .formcontent{
+        grid-template-columns: auto auto;
+        width: 90%;
+        }
+ } 
+ @media screen and (max-width: 767px) {
+    .formcontent{
+        grid-template-columns: auto;
+        width: 100%;
+        }
+ }
