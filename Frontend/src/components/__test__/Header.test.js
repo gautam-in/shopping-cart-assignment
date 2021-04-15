@@ -1,13 +1,13 @@
 import {BrowserRouter} from 'react-router-dom';
 import {cleanup, screen} from '@testing-library/react';
 import 'regenerator-runtime/runtime';
+import userEvent from '@testing-library/user-event';
 import {render} from '../../test-utils/wrapper';
 import Header from '../Header';
 
 afterEach(() => {
   cleanup();
 });
-
 test('render Header initial condition', async () => {
   const cartSideNav = jest.fn(() => false);
   render(
@@ -37,6 +37,9 @@ test('render Header initial condition', async () => {
     '/signup',
   );
 
-  const cartItemNav = screen.getByText(/0 items/i);
-  expect(cartItemNav).toBeInTheDocument();
+  const cartBtn = screen.getByTestId('cart-btn');
+  expect(cartBtn).toBeInTheDocument();
+  expect(cartBtn).toHaveTextContent(/0 items/i);
+  userEvent.click(cartBtn);
+  expect(cartSideNav).toBeCalled();
 });

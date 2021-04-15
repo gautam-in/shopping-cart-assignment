@@ -72,7 +72,11 @@ const Header = React.memo(({cartSideNav}) => {
               )}
             </NavbarText>
           </Collapse>
-          <div className="cart-header-wrap" onClick={cartSideNav}>
+          <div
+            className="cart-header-wrap"
+            onClick={cartSideNav}
+            data-testid="cart-btn"
+          >
             <div className="cart-header-main">
               <FontAwesomeIcon icon={faShoppingCart} />
               <span> {data.length ? data.length : 0} Items</span>

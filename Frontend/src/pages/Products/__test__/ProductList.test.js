@@ -1,9 +1,14 @@
-import {cleanup, screen} from '@testing-library/react';
+/* eslint-disable react/jsx-boolean-value */
+import {cleanup, screen, within} from '@testing-library/react';
 import 'regenerator-runtime/runtime';
 import {rest} from 'msw';
+import {BrowserRouter} from 'react-router-dom';
+import userEvent from '@testing-library/user-event';
 import server from '../../../mocks/server';
 import {render} from '../../../test-utils/wrapper';
 import ProductsList from '../ProductsList';
+import Header from '../../../components/Header';
+import Sidebar from '../../../components/Sidebar/Sidebar';
 
 afterEach(() => {
   cleanup();
@@ -126,4 +131,75 @@ test('render product cards intial condition', async () => {
   expect(buttons[1]).toBeEnabled();
   expect(buttons[2]).toBeEnabled();
   expect(buttons[3]).toBeEnabled();
+});
+
+test('render cart modal ', async () => {
+  const cartSideNav = jest.fn(() => false);
+  render(
+    <>
+      <BrowserRouter>
+        <Header cartSideNav={cartSideNav} />
+      </BrowserRouter>
+      ,
+      <ProductsList filterId={null} />
+      <Sidebar isSlideOpen={true} cartSideNav={cartSideNav} />
+    </>,
+  );
+  const cartBtn = screen.getByTestId('cart-btn');
+  expect(cartBtn).toBeInTheDocument();
+  const productbuttons = await screen.findAllByRole('button', {
+    name: /buy now/i,
+  });
+  expect(productbuttons).toHaveLength(4);
+
+  const cartSlider = screen.queryByTestId('cart-slider');
+  expect(cartSlider).toBeInTheDocument();
+
+  userEvent.click(cartBtn);
+  const cartSliderAgain = await screen.findByTestId('cart-slider');
+  expect(cartSliderAgain).toBeInTheDocument();
+  expect(
+    within(cartSliderAgain).getByRole('heading', {
+      name: /no item in your cart/i,
+    }),
+  ).toBeInTheDocument();
+
+  userEvent.click(productbuttons[0]);
+
+  expect(
+    await screen.findByRole('img', {name: /fresho kiwi - green, 3 pcs/i}),
+  ).toBeInTheDocument();
+
+  expect(
+    await screen.findByRole('button', {
+      name: /proceed to checkout rs\.87/i,
+    }),
+  ).toBeInTheDocument();
+  userEvent.click(screen.getByRole('button', {name: /\+/i}));
+
+  expect(
+    await screen.findByRole('button', {
+      name: /proceed to checkout rs\.174/i,
+    }),
+  ).toBeInTheDocument();
+
+  userEvent.click(screen.getByRole('button', {name: /-/i}));
+  expect(
+    await screen.findByRole('button', {
+      name: /proceed to checkout rs\.87/i,
+    }),
+  ).toBeInTheDocument();
+
+  userEvent.click(screen.getByRole('button', {name: /-/i}));
+  expect(
+    within(cartSliderAgain).getByRole('heading', {
+      name: /no item in your cart/i,
+    }),
+  ).toBeInTheDocument();
+
+  const closeButton = screen.getByRole('button', {
+    name: /close/i,
+  });
+  userEvent.click(closeButton);
+  expect(cartSideNav).toBeCalled();
 });

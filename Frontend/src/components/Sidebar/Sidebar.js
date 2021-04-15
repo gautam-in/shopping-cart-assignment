@@ -76,8 +76,9 @@ const Sidebar = React.memo(({isSlideOpen, cartSideNav}) => {
       <div className="sidebar-main">
         <Modal
           className="sidebar sidebar-wrap-modal"
-          modal
+          modal="true"
           isOpen={isSlideOpen}
+          data-testid="cart-slider"
         >
           <div className="sidebar-cart-header-wrap">
             <div className="sidebar-cart-header-main">
