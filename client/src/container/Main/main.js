@@ -11,8 +11,8 @@ import Cart from "../../components/Cart/Cart";
 const Main = () => {
   const [categories, setCats] = useState([]);
 
-  const cart1 = useSelector((store) => store.cart);
-  localStorage.setItem("cart", JSON.stringify(cart1));
+  const cartItem = useSelector((store) => store.cart);
+  localStorage.setItem("cart", JSON.stringify(cartItem));
 
   React.useEffect(() => {
     instance

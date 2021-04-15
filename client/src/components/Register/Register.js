@@ -27,8 +27,9 @@ const Register = () => {
     }
 
     if (typeof form.firstName !== "undefined") {
+      console.log(form.firstName)
       const re = /^\S*$/;
-      if (form.firstName.length < 6 || !re.test(form.firstName)) {
+      if (!re.test(form.firstName)) {
         formErrors.firstName = "Please enter valid first name.";
       }
     }
@@ -39,8 +40,9 @@ const Register = () => {
     }
 
     if (typeof form.lastName !== "undefined") {
+      console.log(form.lastName)
       const re = /^\S*$/;
-      if (form.lastName.length < 6 || !re.test(form.lastName)) {
+      if (!re.test(form.lastName)) {
         formErrors.lastName = "Please enter valid last name.";
       }
     }
@@ -50,6 +52,11 @@ const Register = () => {
       formErrors.email = "";
     } else {
       formErrors.email = "Invalid Email!";
+    }
+
+    let isValid = isAlphaNumeric(form.password);
+    if(!isValid){
+      formErrors.password = "invalid password";
     }
 
     // password validation
@@ -67,11 +74,35 @@ const Register = () => {
       setError({ ...formErrors });
       return;
     }
-    window.localStorage.setItem("user", JSON.stringify(form));
+
     history.push("/login?register=true");
     setError(INITIAL_FORM);
     setForm(INITIAL_FORM);
     formErrors = { ...INITIAL_FORM };
+  };
+
+  const isAlphaNumeric =(str) => {
+    var code, i, len;
+    let hasNumber = false;
+    let hasAlphabet = false;
+
+
+    if(str.length<6){
+      return false;
+    }
+
+    for (i = 0, len = str.length; i < len; i++) {
+      code = str.charCodeAt(i);
+
+      if((code > 47 && code < 58)){
+        hasNumber = true;
+      }
+      if( (code > 64 && code < 91) || (code > 96 && code < 123)){
+        hasAlphabet = true;
+      }
+
+    }
+    return hasNumber && hasAlphabet;
   };
 
   // handle input change
@@ -136,6 +167,7 @@ const Register = () => {
                 autoComplete="new-password"
               />
               <label htmlFor="password">Password</label>
+              {error.password && <span className="form-error">{error.password}</span>}
             </div>
             <div className="form-group">
               <input
