@@ -9,12 +9,17 @@ Clone this repo and run following command for starting the mock server:
 ```
 #Simple Node/Express with EJS SASS  and Gulp
 
+//Using Gulp to compile scss to css and using live sass compiler extension in local
+// using ejs as a template engine
+
 $ npm install
 $ npm install -g gulp
 ```
+Run following command in terminal
+gulp scss-css -> to run scss
+npm run start -> to compile code 
 
-gulp scss-css
-npm run start
-
-
+//Git branches
 branches-> setup -> contains code setup 
+branches->develop-> contains sabka bazaar assignment
+

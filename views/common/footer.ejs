@@ -1,5 +1,13 @@
-<footer class="footer">
-    <div class="container">
+<footer class="product-footer">
+    <div class="container clearfix">
         Copyright &copy; 2011-2018 Sabka Bazaar Grocery Suplies Pvt Ltd
     </div>
 </footer>
+
+<!-- to load all scripts files -->
+<script type="text/javascript" src="static/js/constants.js"></script>
+<script type="text/javascript" src="static/js/api.js"></script>
+<script type="text/javascript" src="static/js/config.js"></script>
+<% if(scripts && scripts.length) { scripts.forEach(script => { %>
+<script type="text/javascript" src="<%= script %>"></script>
+<% });} %>

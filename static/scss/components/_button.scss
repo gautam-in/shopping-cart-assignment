@@ -1,0 +1,29 @@
+.btn {
+    height: 47px;
+    cursor: pointer;
+    padding: 0 15px;
+    line-height: 47px;
+    border-color: transparent;
+    border-radius: 2px;
+    @include responsive-for-ipad {
+      height: 50px;
+      line-height: 50px;
+      width: 50%;
+    }
+    @include responsive-for-sm-mobile {
+      border-radius: 0;
+      margin-right: 7px;
+      text-align: center;
+      margin-bottom: 7px;
+      width: 97%;
+    }
+  }
+  
+  .btn-block {
+    width: 100%;
+  }
+  .btn-primary {
+    background-color: map-get($site_colors, btn-pink-color);
+    color: map-get($site_colors, primary-color-white);
+  }
+  

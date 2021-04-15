@@ -1,0 +1,25 @@
+.registration {
+    max-width: 860px;
+    margin: 30px auto;
+    &__info {
+      padding-right: 30px;
+      @include responsive-for-ipad {
+        margin-left: 27px;
+      }
+      @include responsive-for-sm-mobile {
+        padding: 10px 10px;
+      }
+    }
+    &__info,
+    &__form {
+      float: left;
+      width: 50%;
+      @include responsive-for-ipad {
+        width: 46%;
+      }
+      @include responsive-for-sm-mobile {
+        width: 48%;
+      }
+    }
+  }
+  

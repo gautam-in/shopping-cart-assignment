@@ -1,0 +1,20 @@
+footer {
+    background-color: map-get($site_colors, box-grey-color);
+    padding: 20px 0;
+    &.product-footer {
+        padding: 15px 0;
+        height: 40px; 
+        background-color: map-get($site_colors, footer-bg-color);
+        @include responsive-for-sm-mobile {
+            padding: 11px 0;
+            height: 40px;
+            @include fontSize(12px);
+            text-align: center;
+        } 
+        @include responsive-for-ipad {
+            text-align: center;
+            height: 40px;
+            @include fontSize(12px);
+        }
+    }
+}

@@ -1,2 +1,13 @@
+@import "abstracts/variables";
+@import "abstracts/mixins";
+@import "abstracts/functions";
 @import "base/base";
-
+@import "layout/header";
+@import "layout/footer";
+@import "components/registration";
+@import "components/login";
+@import "components/input-form";
+@import "components/button";
+@import "components/carousel";
+@import "components/home";
+@import "components/product-list";

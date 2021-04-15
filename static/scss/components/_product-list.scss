@@ -1,0 +1,113 @@
+.product-list {
+    float: right;
+    width: 75%;
+    background-color: map-get($site_colors, primary-color-white);
+    @include responsive-for-sm-mobile {
+        width: 100%;
+    }
+    &__products {
+        float: left;
+        margin: 20px 20px;
+        width: 20%;
+        border-bottom: 2px dashed map-get($site_colors, box-grey-color);
+        margin-bottom: 20px;
+        @include responsive-for-ipad {
+            width: 42%;
+            padding-bottom: 15px;
+        }
+        @include responsive-for-ms-mobile {
+            width: 42%;
+        }
+        @include responsive-for-sm-mobile {
+            width: 100%;
+            border: none;
+            margin: 0;
+            padding-left: 2%;
+            height: 230px;
+            float: left;
+            border-bottom: 5px dashed map-get($site_colors, box-grey-color);
+        }
+        &--img {
+            width: 100%;
+            height: 170px;
+            @include responsive-for-ipad {
+                height: 109px;
+                width: 40%;
+                float: left;
+                margin-right: 6px;
+            }
+            @include responsive-for-sm-mobile {
+                height: 75%;
+                width: 43%;
+                float: left;
+                padding-right: 7px;
+            }
+        }
+        p {
+            background-color: map-get($site_colors, box-grey-color);
+            padding: 2px 5px;
+            height: 120px;
+            overflow: hidden;
+            @include responsive-for-ipad {
+                @include fontSize(13px);
+                margin-top: 0;
+                text-align: justify;
+                padding-left: 2px;
+            }
+            @include responsive-for-sm-mobile {
+                margin-top: 0;
+                @include fontSize(13px);
+                text-align: justify;
+                margin-right: 7px;
+            }
+        }
+        h3 {
+            height: 55px;
+            @include responsive-for-sm-mobile {
+                @include fontSize(12px);
+                height: 18px;
+            }
+        }
+    }
+    &__products--button {
+        @include responsive-for-ipad {
+            display: none;
+        }
+        @include responsive-for-sm-mobile {
+            display: none;
+        }
+        .price {
+            float: left;
+            padding: 13px 6px;
+        }
+        button {
+            float: right;
+            margin-bottom: 5px;
+        }
+    }
+    &__products--mob-button {
+        display: none;
+        @include responsive-for-ipad {
+            display: block;
+            margin: 0;
+        }
+        @include responsive-for-sm-mobile {
+            display: block;
+            margin: 0;
+            float: right;
+            width: 57%;
+        }
+    }
+    &__products--item {
+        @include responsive-for-ipad {
+            width: 100%;
+        }
+    }
+}
+// General Class
+.product-list-block {
+    background-color: map-get($site_colors, box-grey-color);
+    @include responsive-for-sm-mobile {
+        margin-top: 10px;
+    }
+}
