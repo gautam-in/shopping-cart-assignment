@@ -4,12 +4,42 @@
   "description": "This is a shopping cart coding exercise",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "canned -p 5000 ./server"
+    "server:dev": "npm run clean && webpack serve",
+    "server:prod": "npm run clean && webpack",
+    "clean": "rimraf ./dist/* -Recurse -Force",
+    "start": "canned -p 3000 ./server"
   },
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "canned": "^0.3.12"
+    "@babel/core": "^7.13.14",
+    "@babel/preset-env": "^7.13.12",
+    "@babel/preset-react": "^7.13.13",
+    "@types/axios": "^0.14.0",
+    "@types/react-router-dom": "^5.1.7",
+    "axios": "^0.21.1",
+    "babel-loader": "^8.2.2",
+    "canned": "^0.3.12",
+    "clean-webpack-plugin": "^3.0.0",
+    "css-loader": "^5.2.0",
+    "file-loader": "^6.2.0",
+    "html-webpack-plugin": "^5.3.1",
+    "node-sass": "^5.0.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-router-dom": "^5.2.0",
+    "sass-loader": "^11.0.1",
+    "style-loader": "^2.0.0",
+    "ts-loader": "^8.1.0",
+    "webpack": "^5.30.0",
+    "webpack-dev-server": "^3.11.2"
+  },
+  "devDependencies": {
+    "@babel/preset-typescript": "^7.13.0",
+    "@types/react": "^17.0.3",
+    "@types/react-dom": "^17.0.3",
+    "@types/webpack-env": "^1.16.0",
+    "typescript": "^4.2.4",
+    "webpack-cli": "^4.6.0"
   }
 }

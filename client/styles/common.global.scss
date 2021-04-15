@@ -1,0 +1,68 @@
+$display-properties: (
+  "flex": "flex",
+  "block": "block",
+  "in-blk": "inline-block",
+);
+
+$flex-properties: (
+  "flex-strt": "flex-start",
+  "flex-end": "flex-end",
+  "center": "center",
+);
+
+$position-properties: (
+  "abs": "absolute",
+  "rel": "relative",
+);
+
+@each $key, $value in $display-properties {
+  .disp-#{$key} {
+    display: #{$value};
+  }
+}
+
+@each $key, $value in $position-properties {
+  .pos-#{$key} {
+    position: #{$value};
+  }
+}
+
+@each $key, $value in $flex-properties {
+  .jstf-ctnt-#{$key} {
+    justify-content: #{$value};
+  }
+  .align-items-#{$key} {
+    align-items: #{$value};
+  }
+}
+
+.right-0 {
+  right: 0;
+}
+.top-0 {
+  top: 0;
+}
+
+.high-100-perc {
+  height: 100%;
+}
+
+.wid-100-perc {
+  width: 100%;
+}
+
+.ovrflow-hid {
+  overflow: hidden;
+}
+
+.zIndex-1 {
+  z-index: 1;
+}
+
+.flex-dir-col {
+  flex-direction: column;
+}
+
+.txt-align-cent {
+  text-align: center;
+}

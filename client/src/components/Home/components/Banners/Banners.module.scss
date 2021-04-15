@@ -1,0 +1,27 @@
+.BannerContainer {
+  height: 300px;
+  border-bottom: 1px solid #efefef;
+  box-shadow: 2px 4px 16px 3px #efefef;
+}
+
+.Banner-nav-btn {
+  border: 0;
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  font-size: 70%;
+  padding: 5px 10px;
+  letter-spacing: 1px;
+  font-weight: 500;
+  visibility: visible;
+  transition: 0.3s all;
+  &:hover {
+    background: rgba(0, 0, 0, 0.7);
+  }
+  &[type="button"]:disabled {
+    visibility: hidden;
+  }
+}
+
+.Banner-cont-trans {
+  transition: 0.3s transform ease-in-out;
+}

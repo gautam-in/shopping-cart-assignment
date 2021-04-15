@@ -1,0 +1,16 @@
+.btn-style,
+.btn-style:visited {
+  background: #c33761;
+  height: 40px;
+  padding: 5px 13px;
+  color: #fff;
+  font-size: 70%;
+  font-weight: 600;
+  border: 0px;
+  transition: all 0.3s;
+}
+
+.btn-style:hover,
+.btn-style:active {
+  background: #df1350;
+}
