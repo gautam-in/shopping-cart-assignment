@@ -46,6 +46,7 @@ header {
   background-color: $grey-color;
   padding: 15px;
   cursor: pointer;
+  border: unset;
   .cart-header-main svg {
     color: $pink-color;
   }

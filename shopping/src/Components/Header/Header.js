@@ -59,12 +59,12 @@ const Header = React.memo(({cartSideNav}) => {
               </Nav>
             </NavbarText>
           </Collapse>
-          <div className="cart-header-wrap" onClick={cartSideNav}>
+          <button aria-label={`${data.length ? data.length : 0} Items in Cart`} className="cart-header-wrap" onClick={cartSideNav}  >
             <div className="cart-header-main">
-              <FontAwesomeIcon icon={faShoppingCart} />
-              <span> {data.length ? data.length : 0} Items</span>
+              <FontAwesomeIcon icon={faShoppingCart} tabIndex={0} />
+              <span  > {data.length ? data.length : 0} Items</span>
             </div>
-          </div>
+          </button>
         </div>
       </Navbar>
     </header>

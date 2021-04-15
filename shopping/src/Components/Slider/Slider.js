@@ -53,7 +53,7 @@ const SliderImages = React.memo(({carouselImages}) => {
   });
 
   return (
-    <div className="carousel-wrap">
+    <section className="carousel-wrap" aria-roledescription="carousel" aria-label="Highlighted Independece Sale">
       <Carousel activeIndex={activeIndex} next={next} previous={previous}>
         <CarouselIndicators
           items={carouselImages}
@@ -72,7 +72,7 @@ const SliderImages = React.memo(({carouselImages}) => {
           onClickHandler={next}
         />
       </Carousel>
-    </div>
+    </section>
   );
 });
 

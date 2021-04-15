@@ -7,9 +7,9 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faTimes, faGreaterThan} from '@fortawesome/free-solid-svg-icons';
 import {cartProductQuantity, removeCartProduct} from '../../actions';
 import {allCartData} from '../../selector';
-import './Sidebar.scss';
+import './Cart.scss';
 
-const Sidebar = React.memo(({isSlideOpen, cartSideNav}) => {
+const Cart = React.memo(({isSlideOpen, cartSideNav}) => {
   const dispatch = useDispatch();
 
   const {data} = useSelector((state) => allCartData(state));
@@ -28,9 +28,12 @@ const Sidebar = React.memo(({isSlideOpen, cartSideNav}) => {
     const {quantity, price} = cartProduct;
     return acc + quantity * price;
   }, 0);
-
-  const cartList = data.map((cartProduct) => {
+  
+    const cartList = data.map((cartProduct) => {
     const {id, name, imageURL, quantity, price} = cartProduct;
+    const temp = imageURL.split('/').reverse()
+    const imageURLAt1 = temp[1]
+     const imageURLAt2 = temp[0]
     return (
       <li key={id} className="cart-item-wrap">
         <div className="cart-item-main">
@@ -38,13 +41,13 @@ const Sidebar = React.memo(({isSlideOpen, cartSideNav}) => {
             <img
               src={
                 // eslint-disable-next-line import/no-dynamic-require
-                require(`../../../static/images/products/${imageURL}`).default
+              require(`../../../static/images/products/${imageURLAt1}/${imageURLAt2}`).default
               }
               alt={name}
             />
           </div>
           <div className="cart-item-details-wrap">
-            <h5>{name}</h5>
+            <h5 tabIndex={0}>{name}</h5>
             <div>
               <span>
                 <button
@@ -54,7 +57,7 @@ const Sidebar = React.memo(({isSlideOpen, cartSideNav}) => {
                 >
                   -
                 </button>
-                {quantity}
+                <span tabIndex={0} >{quantity}</span>
                 <button
                   type="button"
                   className="circle-btn"
@@ -125,8 +128,8 @@ const Sidebar = React.memo(({isSlideOpen, cartSideNav}) => {
   );
 });
 
-Sidebar.propTypes = {
+Cart.propTypes = {
   isSlideOpen: PropTypes.bool.isRequired,
   cartSideNav: PropTypes.func.isRequired,
 };
-export default Sidebar;
+export default Cart;

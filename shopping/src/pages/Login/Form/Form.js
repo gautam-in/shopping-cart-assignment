@@ -95,6 +95,8 @@ const LoginForm = () => {
                 type="submit"
                 className="form-submit-btn"
                 disabled={!formState.isValid}
+                tabIndex={0}
+                onClick={()=>window.location.href='/'}
               >
                 Login
               </button>

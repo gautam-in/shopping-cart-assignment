@@ -3,7 +3,7 @@ import {useState} from 'react';
 import Header from '../Header/Header';
 import Footer from '../Footer';
 import Routes from '../Routes';
-import Sidebar from '../Sidebar';
+import Cart from '../Cart';
 import './Layout.scss';
 
 const Layout = () => {
@@ -13,11 +13,11 @@ const Layout = () => {
   };
   return (
     <div>
-      <Header cartSideNav={cartSlideOpen} />
+      
       <Router>
-        
+      <Header cartSideNav={cartSlideOpen} />
         <div>
-          <Sidebar isSlideOpen={isSlideOpen} cartSideNav={cartSlideOpen} />
+          <Cart isSlideOpen={isSlideOpen} cartSideNav={cartSlideOpen} />
           <Routes />
         </div>
         <Footer />

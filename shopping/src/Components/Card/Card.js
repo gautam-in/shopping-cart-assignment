@@ -2,6 +2,7 @@
 /* eslint-disable global-require */
 import React from 'react';
 import PropTypes from 'prop-types';
+import './Card.scss';
 
 
 const Card = React.memo(({product, addCart}) => {
@@ -12,7 +13,7 @@ const Card = React.memo(({product, addCart}) => {
   return (
     <div className="product-wrap">
       <div className="product-header-wrapper">
-        <h4>{name}</h4>
+        <h4 tabindex={0}>{name}</h4>
       </div>
       <div className="product-detail-wrap">
         <img
@@ -20,14 +21,15 @@ const Card = React.memo(({product, addCart}) => {
           alt={sku}
         />
         <div className="product-description">
-          <p>{description}</p>
+          <p tabindex={0}>{description}</p>
         </div>
         <div className="product-price-wrap">
           <div className="product-price">
-            <span>MRP RS.{price}</span>
+            <p tabindex={0}>MRP RS.{price}</p>
+            
           </div>
           <div className="product-buy-out">
-            <button
+          <button
               type="button"
               onClick={() => addCart(product)}
               disabled={!!disabled}
