@@ -12,6 +12,7 @@ const login = (email, password) => {
                 user => {
                     dispatch(success(user));
                     history.push('/');
+                    dispatch(alertActions.success('Successfully Logged In'));
                 },
                 error => {
                     dispatch(failure(error.toString()));
