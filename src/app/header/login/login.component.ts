@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AppService } from 'src/app/shared/services/app.service';
 import { HeaderService } from '../header.service';
 
 @Component({
@@ -10,24 +11,28 @@ import { HeaderService } from '../header.service';
 })
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
+  existingUser: object = [];
+  errormsg: string = '';
+  errorExist: boolean = false;
 
   validationMessages: { [key: string]: { [key: string]: string } };
 
   constructor(
     private _fb: FormBuilder,
-    private headerService: HeaderService,
-    private _router: Router
+    private _headerService: HeaderService,
+    private _router: Router,
+    private _appService: AppService
   ) {
     this.validationMessages = {
       email: {
-        required: this.headerService.REQUIRED_ERROR,
-        minLength: this.headerService.EMAIL_MINLENGTH_ERROR,
-        pattern: this.headerService.EMAIL_PATTERN,
+        required: this._headerService.REQUIRED_ERROR,
+        minLength: this._headerService.EMAIL_MINLENGTH_ERROR,
+        pattern: this._headerService.EMAIL_PATTERN,
       },
       password: {
-        required: this.headerService.REQUIRED_ERROR,
-        minLength: this.headerService.PASSWORD_LENGTH_ERROR,
-        pattern: this.headerService.PASSWORD_PATTERN,
+        required: this._headerService.REQUIRED_ERROR,
+        minLength: this._headerService.PASSWORD_LENGTH_ERROR,
+        pattern: this._headerService.PASSWORD_PATTERN,
       },
     };
   }
@@ -39,7 +44,7 @@ export class LoginComponent implements OnInit {
         [
           Validators.required,
           Validators.minLength(8),
-          Validators.pattern(this.headerService.EMAIL_REGEX),
+          Validators.pattern(this._headerService.EMAIL_REGEX),
         ],
       ],
       password: [
@@ -47,17 +52,34 @@ export class LoginComponent implements OnInit {
         [
           Validators.required,
           Validators.minLength(8),
-          Validators.pattern(this.headerService.PASSWORD_REGEX),
+          Validators.pattern(this._headerService.PASSWORD_REGEX),
         ],
       ],
     });
   }
 
   submitLoginForm(): void {
+    this.errorExist = false;
+    let user = this.loginForm.value;
     if (this.loginForm.valid) {
-      this._router.navigate(['app/home']);
+      let status = this._headerService.isLoggedInUser(user);
+      if (status == '2') {
+        this._router.navigate(['app/home']);
+      } else {
+        if (status == '0') {
+          this.errormsg = this._headerService.INVALID_ACCOUNT_ERROR;
+        } else {
+          this.errormsg = this._headerService.PASSWORD_MATCH_ERROR;
+        }
+        this.errorExist = true;
+        setTimeout(() => {
+          this.errorExist = false;
+        }, 5000);
+      }
+      console.log('errr=====', this.errormsg);
     } else {
-      this.headerService.validateAllFormFields(this.loginForm);
+      this.errorExist = false;
+      this._headerService.validateAllFormFields(this.loginForm);
     }
   }
 }

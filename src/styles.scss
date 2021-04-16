@@ -85,6 +85,10 @@ border-bottom: 2px solid rgb(18, 212, 238) !important;
 .form-group.is-focused label .form-group.is-focused label.control-label{
   color: rgb(181, 214, 34); // any color that you want
 }
+
+.margin10{
+  margin-top: 10px;
+}
 /* Importing Bootstrap SCSS file. */
 @import '~bootstrap/scss/bootstrap';
 

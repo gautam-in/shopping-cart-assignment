@@ -1,7 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { FormGroup } from '@angular/forms';
-import { HeaderModule } from './header.module';
+import { AppService } from '../shared/services/app.service';
+//import { HeaderModule } from './header.module';
 
 @Injectable({
   providedIn: 'root',
@@ -22,9 +23,12 @@ export class HeaderService {
   public PASSWORD_COMPARE_ERROR: string =
     'Password and Confirm Password must be match.';
   public PASSWORD_LENGTH_ERROR: string = 'Minimum 8 characters are required';
+  public PASSWORD_MATCH_ERROR : string = 'Password does not match';
 
   public INVALID_ACCOUNT_ERROR: string =
     'This email does not match any account. Please try another email.';
+  public USER_EXIST_ERROR: string =
+    'This email has already been registered with other user';
 
   public SERVER_ERROR: string = 'Something went wrong, please try again';
 
@@ -42,8 +46,9 @@ export class HeaderService {
   public NAME_REGEX: string = "^[a-zA-Z]{1}[ *a-zA-Z0-9-'s.]*";
 
   categories: any = [];
+  existingUser: any = [];
 
-  constructor(private _http: HttpClient) {}
+  constructor(private _http: HttpClient, private _appService: AppService) {}
 
   validateAllFormFields(formGroup: FormGroup) {
     (<any>Object).values(formGroup.controls).forEach((control) => {
@@ -63,5 +68,48 @@ export class HeaderService {
       });
       return this.categories;
     });
+  }
+
+  isUserAlreadyExist(user): any {
+    debugger;
+    let exist = false;
+    this.existingUser = JSON.parse(
+      this._appService.getSessionItem('registeredUser')
+    );
+    if (this.existingUser && this.existingUser != null) {
+      this.existingUser.forEach((element) => {
+        console.log(element);
+        if (element.email == user.email) {
+          exist = true;
+        }
+      });
+    }
+    return exist;
+  }
+
+  isLoggedInUser(user): any {
+    debugger;
+    let status;
+    this.existingUser = JSON.parse(
+      this._appService.getSessionItem('registeredUser')
+    );
+    if (this.existingUser && this.existingUser != null) {
+      let accountExist = this.existingUser.find((u) => {
+        if ((u.email = user.email)) {
+          return u;
+        }
+      });
+      if (accountExist && accountExist.email) {
+        if (accountExist.password == user.password) {
+          status = '2';
+        } else {
+          status = '1';
+        }
+      } else {
+        status = '0';
+      }
+    }
+    console.log("status===" , status)
+    return status;
   }
 }

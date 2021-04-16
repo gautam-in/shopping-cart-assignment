@@ -5,6 +5,9 @@
       <p class="title-description">We do not share your personal details with anyone.<p>
     </div>
     <div class="col-lg-6 col-sm-12">
+      <div *ngIf="errorExist" id="error" class="error-msg margin10">
+        {{ errormsg }}
+      </div>
       <form [formGroup]="registrationForm" (submit)="submitRegistrationForm()">
         <div class="form-group">
           <label for="firstName" class="bmd-label-floating">First Name</label>

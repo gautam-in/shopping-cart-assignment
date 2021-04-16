@@ -2,9 +2,14 @@
   <div class="row login-row">
     <div class="col-lg-6 col-sm-12 col-md-12 LoginRegText">
       <h1 class="title">Login</h1>
-      <p class="title-description">Get access to your Orders, Wishlist and Recommendations</p>
+      <p class="title-description">
+        Get access to your Orders, Wishlist and Recommendations
+      </p>
     </div>
     <div class="col-lg-6 col-sm-12 col-md-12">
+      <div *ngIf="errorExist" id="error" class="error-msg margin10">
+        {{ errormsg }}
+      </div>
       <form [formGroup]="loginForm" (submit)="submitLoginForm()">
         <div class="form-group">
           <label for="login" formControl="email" class="bmd-label-floating"
@@ -15,7 +20,6 @@
             class="form-control"
             formControlName="email"
             id="email"
-            
           />
         </div>
         <div
@@ -26,7 +30,7 @@
           class="error-msg"
         >
           {{
-            loginForm.get("email")?.errors?.required
+            loginForm.get('email')?.errors?.required
               ? validationMessages.email.required
               : validationMessages.email.pattern
           }}
@@ -38,24 +42,24 @@
             class="form-control"
             id="password"
             formControlName="password"
-           
+            autocomplete="off"
           />
         </div>
-        <div
-          *ngIf="
+        <div *ngIf="
             (loginForm.get('password').touched ||
               loginForm.get('password').dirty) &&
-            loginForm.get('password').invalid
-          "
+            loginForm.get('password').invalid"
           class="error-msg"
         >
           {{
-            loginForm.get("password")?.errors?.required
+            loginForm.get('password')?.errors?.required
               ? validationMessages.password.required
               : validationMessages.password.pattern
           }}
         </div>
-        <button type="submit" class="btn btn-danger btn-raised action-btn">Login</button>
+        <button type="submit" class="btn btn-danger btn-raised action-btn">
+          Login
+        </button>
       </form>
     </div>
   </div>
