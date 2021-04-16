@@ -1,0 +1,98 @@
+@import '../../styles/global';
+
+.header-wrap {
+  @extend parentElement;
+  background-color: $white-color;
+}
+
+header {
+  .bg-light {
+    background-color: $white-color !important;
+    @extend headerBoxShadow;
+    @media only screen and (min-width: 600px) {
+      height: 80px;
+    }
+  }
+ 
+}
+
+.logo-wrap {
+  img {
+    width: 10rem;
+  }
+}
+
+.navbar-nav {
+  list-style: none;
+  li a {
+    color: $black-color;
+    font-size: 1rem;
+    font-weight: 800;
+    padding: 0px 10px;
+    text-decoration: none;
+  }
+}
+.navbar-text {
+  padding-bottom: 4rem;
+  .navbar-nav {
+    li a {
+      font-size:.8rem;
+    }
+  }
+}
+.cart-header-wrap {
+  right: 5rem;
+  bottom: 1rem;
+  background-color: $grey-color;
+  padding: 15px;
+  cursor: pointer;
+  border: unset;
+  .cart-header-main svg {
+    color: $pink-color;
+  }
+  span {
+    font-weight: 800;
+    font-size: 0.8rem;
+  }
+}
+
+@media only screen and (max-width: $mobile-max-width) {
+  .logo-wrap {
+    img {
+      width: 6rem;
+    }
+  }
+  .navbar {
+    padding: 0.6rem 1rem;
+  }
+  .navbar-nav {
+    li {
+      padding: 5px 0px;
+    }
+  }
+  .navbar-text {
+    padding-bottom: 0px;
+    padding-top: 0px;
+    width: 100%;
+    li {
+      padding: 5px 0px;
+      display: block;
+    }
+  }
+  .navbar-toggler {
+    // background-color: $pink-color;
+    // border: 1px solid $pink-color;
+    position: absolute;
+    top: 10px;
+    left: 115px;
+    border-radius: 0px;
+  }
+
+  .cart-header-wrap {
+    position: absolute;
+    right: 10px;
+    top: 0.3rem;
+    bottom: 0.5rem;
+    max-height: 50px;
+  }
+}

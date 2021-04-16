@@ -1,0 +1,10 @@
+#login-page.container{
+    @media (min-width: 1200px){
+        width: 750px;
+    }
+    .login-text{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
