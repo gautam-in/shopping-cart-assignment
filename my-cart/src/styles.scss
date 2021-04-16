@@ -1,0 +1,151 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* CSS RESET */
+
+
+@import '~ngx-toastr/toastr';
+@import './app/sass/variables';
+@import './app/sass/mixins';
+@import './app/sass/grid';
+@import './app/sass/typography';
+
+
+/* RESET */
+*{
+    padding : 0;
+    margin : 0;
+    box-sizing: border-box;
+    line-height: 120%;
+}
+
+/*Normalization */
+
+html{
+    font-size: 75%;   
+    font-weight : 300;
+    color : $color-grey-darker;
+    box-sizing: inherit;
+    font-family: Dosis;
+    line-height: 145%;
+    @include responsive(small-tabs){
+        font-size: 62.5%;
+    }
+
+    @include responsive(mobile){
+        font-size: 50%;
+    }
+}
+
+nav ul{
+    list-style: none;
+}
+
+li a {
+    text-decoration: none;
+}
+
+/*Form */
+
+.form-group{
+    padding: .6rem 0rem;
+}
+
+.form-group >*{
+    width : 100%;
+    display: block;
+    padding: .3rem 0rem;
+}
+
+
+/* Flex Container */
+
+.row{
+    width: 100%;
+    padding : 2rem;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.no-padding-row{
+    padding: 0;
+}
+
+/* Validation */
+
+.alert-danger{
+    padding : 1rem 2rem;
+    font-size: 1rem;
+    color : red;
+    background-color: $color-grey-medium
+}
+
+/* Common Styles */
+
+.main-header,.main-content{
+    padding: 5px 10% 0 10%;
+    @include responsive(large-tabs){
+        padding: 5px 0 0 0;
+    }
+}
+
+/* Reusable card */
+
+.card{
+    padding: 1rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,.2);
+    background-color: $color-white;
+}
+
+
+/*Primary button */
+
+.primary-button{
+    background-color: $color-primary;
+    color: $color-white;
+    width: 100%;
+    padding: 1rem;
+    margin-top: 1rem;
+    border: none;
+    border-radius: 5px;
+}
+
+.primary-button:focus,
+.primary-button:checked,
+.primary-button:active
+{
+    border:none;
+}
+
+/* Active Navigation */
+
+.active-link{
+    background-color: $color-grey-medium;
+    padding-bottom: .5rem;
+    border-bottom: 3px solid $color-primary;
+}
+
+a{
+    cursor: pointer;
+}
+
+/* Scroll Bar */
+
+::-webkit-scrollbar {
+    width: 5px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888; 
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+  }
+

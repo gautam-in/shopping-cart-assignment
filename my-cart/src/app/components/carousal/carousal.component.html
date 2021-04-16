@@ -1,0 +1,25 @@
+<mat-carousel
+#matCarousel
+[timings]="timings"
+[autoplay]="autoplay"
+[interval]="interval"
+[loop]="loop"
+[hideArrows]="hideArrows"
+[hideIndicators]="hideIndicators"
+[color]="color"
+[maxWidth]="maxWidth"
+[proportion]="proportion"
+[useKeyboard]="useKeyboard"
+[useMouseWheel]="useMouseWheel"
+[orientation]="orientation"
+[slides]="slides"
+[maintainAspectRatio]="maintainAspectRatio"
+[slideHeight]="slideHeight"
+>
+<mat-carousel-slide
+  #matCarouselSlide
+  *ngFor="let slide of slidesList; let i = index"
+  [image]="slide.image"
+  [overlayColor]="overlayColor"
+  [hideOverlay]="hideOverlay"
+>

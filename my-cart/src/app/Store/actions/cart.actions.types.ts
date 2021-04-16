@@ -1,0 +1,5 @@
+export const FETCH_CATEGORIES = "FETCH_CATEGORIES";
+export const ADD_CATEGORIES = "ADD_CATEGORIES";
+export const INC_CART_ITEM_QTY = "INC_CART_ITEM_QTY";
+export const DEC_CART_ITEM_QTY = "DEC_CART_ITEM_QTY";
+export const RESET_CART = "RESET_CART";

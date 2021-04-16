@@ -1,0 +1,296 @@
+.col-1-of-12{
+    width : 8.32%
+}
+
+.col-2-of-12{
+    width : 16.64%
+}
+
+.col-3-of-12{
+    width : 24.9%;
+}
+
+.col-4-of-12{
+    width : 33.2%;
+}
+
+.col-5-of-12{
+    width : 41.5%;
+}
+
+.col-6-of-12{
+    width : 49.8%
+}
+
+.col-7-of-12{
+    width : 58.2%;
+}
+
+.col-8-of-12{
+    width : 66.5%;
+}
+
+.col-9-of-12{
+    width : 74.9%;
+}
+
+.col-10-of-12{
+    width : 83.2%;
+}
+
+.col-11-of-12{
+    width : 91.5%
+}
+
+.col-12-of-12{
+    width : 99.9%
+}
+
+.col-lg-1-of-12{
+    @include responsive(large-tabs){
+        width : 8.32%
+    }  
+}
+
+.col-lg-2-of-12{
+    @include responsive(large-tabs){
+        width : 16.64%
+    } 
+}
+
+.col-lg-3-of-12{
+    @include responsive(large-tabs){
+        width : 24.9%;
+    }
+}
+    
+
+.col-lg-4-of-12{
+    @include responsive(large-tabs){
+        width : 33.2%;
+    }
+    
+}
+
+.col-lg-5-of-12{
+    @include responsive(large-tabs){
+        width : 41.5%;
+    }
+    
+}
+
+.col-lg-6-of-12{
+    @include responsive(large-tabs){
+        width : 49.8%
+    }
+    
+}
+
+.col-lg-7-of-12{
+    @include responsive(large-tabs){
+        width : 58.2%;
+    }
+    
+}
+
+.col-lg-8-of-12{
+    @include responsive(large-tabs){
+        width : 66.5%;
+    }
+    
+}
+
+.col-lg-9-of-12{
+    @include responsive(large-tabs){
+        width : 74.9%;
+    }
+    
+}
+
+.col-lg-10-of-12{
+    @include responsive(large-tabs){
+        width : 83.2%;
+    }
+    
+}
+
+.col-lg-11-of-12{
+    @include responsive(large-tabs){
+        width : 91.5%
+    }
+    
+}
+
+.col-lg-12-of-12{
+    @include responsive(large-tabs){
+        width : 99.9%
+    }
+    
+}
+
+.col-md-1-of-12{
+    @include responsive(small-tabs){
+        width : 8.32%
+    }  
+}
+
+.col-md-2-of-12{
+    @include responsive(small-tabs){
+        width : 16.64%
+    } 
+}
+
+.col-md-3-of-12{
+    @include responsive(small-tabs){
+        width : 24.9%;
+    }
+}
+    
+
+.col-md-4-of-12{
+    @include responsive(small-tabs){
+        width : 33.2%;
+    }
+    
+}
+
+.col-md-5-of-12{
+    @include responsive(small-tabs){
+        width : 41.5%;
+    }
+    
+}
+
+.col-md-6-of-12{
+    @include responsive(small-tabs){
+        width : 49.8%
+    }
+    
+}
+
+.col-md-7-of-12{
+    @include responsive(small-tabs){
+        width : 58.2%;
+    }
+    
+}
+
+.col-md-8-of-12{
+    @include responsive(small-tabs){
+        width : 66.5%;
+    }
+    
+}
+
+.col-md-9-of-12{
+    @include responsive(small-tabs){
+        width : 74.9%;
+    }
+    
+}
+
+.col-md-10-of-12{
+    @include responsive(small-tabs){
+        width : 83.2%;
+    }
+    
+}
+
+.col-md-11-of-12{
+    @include responsive(small-tabs){
+        width : 91.5%
+    }
+    
+}
+
+.col-md-12-of-12{
+    @include responsive(small-tabs){
+        width : 99.9%
+    }
+    
+}
+
+.col-xs-1-of-12{
+    @include responsive(mobile){
+        width : 8.32%
+    }  
+}
+
+.col-xs-2-of-12{
+    @include responsive(mobile){
+        width : 16.64%
+    } 
+}
+
+.col-xs-3-of-12{
+    @include responsive(mobile){
+        width : 24.9%;
+    }
+}
+    
+
+.col-xs-4-of-12{
+    @include responsive(mobile){
+        width : 33.2%;
+    }
+    
+}
+
+.col-xs-5-of-12{
+    @include responsive(mobile){
+        width : 41.5%;
+    }
+    
+}
+
+.col-xs-6-of-12{
+    @include responsive(mobile){
+        width : 49.8%
+    }
+    
+}
+
+.col-xs-7-of-12{
+    @include responsive(mobile){
+        width : 58.2%;
+    }
+    
+}
+
+.col-xs-8-of-12{
+    @include responsive(mobile){
+        width : 66.5%;
+    }
+    
+}
+
+.col-xs-9-of-12{
+    @include responsive(mobile){
+        width : 74.9%;
+    }
+    
+}
+
+.col-xs-10-of-12{
+    @include responsive(mobile){
+        width : 83.2%;
+    }
+    
+}
+
+.col-xs-11-of-12{
+    @include responsive(mobile){
+        width : 91.5%
+    }
+    
+}
+
+.col-xs-12-of-12{
+    @include responsive(mobile){
+        width : 99.9%
+    }
+    
+}
+
+
+
