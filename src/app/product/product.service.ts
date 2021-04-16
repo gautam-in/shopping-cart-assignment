@@ -24,17 +24,17 @@ export class ProductService {
   ) {}
 
   addProductToCart(product) {
-    this.itemInCart = JSON.parse(this._appService.getSessionItem('cartItem'));
+    this.itemInCart = JSON.parse(this._appService.getLocalItem('cartItem'));
     if (this.itemInCart && this.itemInCart != null) {
       this.itemInCart.push(product);
-      this._appService.setSessionItem(
+      this._appService.setLocalItem(
         'cartItem',
         JSON.stringify(this.itemInCart)
       );
     } else {
       let y: any = [];
       y.push(product);
-      this._appService.setSessionItem('cartItem', JSON.stringify(y));
+      this._appService.setLocalItem('cartItem', JSON.stringify(y));
     }
 
     this._cartService.setCartList(this.itemInCart);

@@ -43,7 +43,7 @@ export class CartComponent implements OnInit {
   }
 
   startShopping() {
-    this._route.navigate(['app/home']);
+    this._route.navigate(['/home']);
   }
   resetCart() {}
 }

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AppService } from 'src/app/shared/services/app.service';
-import { HeaderService } from '../header.service';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-login',
@@ -19,20 +19,20 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private _fb: FormBuilder,
-    private _headerService: HeaderService,
+    private _authService: AuthService,
     private _router: Router,
     private _appService: AppService
   ) {
     this.validationMessages = {
       email: {
-        required: this._headerService.REQUIRED_ERROR,
-        minLength: this._headerService.EMAIL_MINLENGTH_ERROR,
-        pattern: this._headerService.EMAIL_PATTERN,
+        required: this._authService.REQUIRED_ERROR,
+        minLength: this._authService.EMAIL_MINLENGTH_ERROR,
+        pattern: this._authService.EMAIL_PATTERN,
       },
       password: {
-        required: this._headerService.REQUIRED_ERROR,
-        minLength: this._headerService.PASSWORD_LENGTH_ERROR,
-        pattern: this._headerService.PASSWORD_PATTERN,
+        required: this._authService.REQUIRED_ERROR,
+        minLength: this._authService.PASSWORD_LENGTH_ERROR,
+        pattern: this._authService.PASSWORD_PATTERN,
       },
     };
   }
@@ -44,7 +44,7 @@ export class LoginComponent implements OnInit {
         [
           Validators.required,
           Validators.minLength(8),
-          Validators.pattern(this._headerService.EMAIL_REGEX),
+          Validators.pattern(this._authService.EMAIL_REGEX),
         ],
       ],
       password: [
@@ -52,7 +52,7 @@ export class LoginComponent implements OnInit {
         [
           Validators.required,
           Validators.minLength(8),
-          Validators.pattern(this._headerService.PASSWORD_REGEX),
+          Validators.pattern(this._authService.PASSWORD_REGEX),
         ],
       ],
     });
@@ -62,24 +62,23 @@ export class LoginComponent implements OnInit {
     this.errorExist = false;
     let user = this.loginForm.value;
     if (this.loginForm.valid) {
-      let status = this._headerService.isLoggedInUser(user);
+      let status = this._authService.isLoggedInUser(user);
       if (status == '2') {
-        this._router.navigate(['app/home']);
+        this._router.navigate(['/home']);
       } else {
         if (status == '0') {
-          this.errormsg = this._headerService.INVALID_ACCOUNT_ERROR;
+          this.errormsg = this._authService.INVALID_ACCOUNT_ERROR;
         } else {
-          this.errormsg = this._headerService.PASSWORD_MATCH_ERROR;
+          this.errormsg = this._authService.PASSWORD_MATCH_ERROR;
         }
         this.errorExist = true;
         setTimeout(() => {
           this.errorExist = false;
         }, 5000);
       }
-      console.log('errr=====', this.errormsg);
     } else {
       this.errorExist = false;
-      this._headerService.validateAllFormFields(this.loginForm);
+      this._authService.validateAllFormFields(this.loginForm);
     }
   }
 }

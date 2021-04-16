@@ -13,12 +13,12 @@ export class EmptyCartComponent implements OnInit {
   ngOnInit(): void {}
 
   startShopping() {
-    this._route.navigate(['app/home']);
+    this._route.navigate(['/home']);
     this.modal.dismiss('Cross click');
   }
 
   resetCart() {
-    this._route.navigate(['app/home']);
+    this._route.navigate(['/home']);
     this.modal.dismiss('Cross click');
   }
 }

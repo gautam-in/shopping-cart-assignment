@@ -1,13 +1,13 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, JsonpClientBackend } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { AppService } from '../shared/services/app.service';
-//import { HeaderModule } from './header.module';
+import { UserService } from '../user/user.service';
 
 @Injectable({
   providedIn: 'root',
 })
-export class HeaderService {
+export class AuthService {
   public REQUIRED_ERROR: string = 'This field is required';
   public EMAIL_ERROR: string = 'Email is required';
   public EMAIL_MINLENGTH_ERROR: string = 'Minimum 8 characters are required';
@@ -23,7 +23,7 @@ export class HeaderService {
   public PASSWORD_COMPARE_ERROR: string =
     'Password and Confirm Password must be match.';
   public PASSWORD_LENGTH_ERROR: string = 'Minimum 8 characters are required';
-  public PASSWORD_MATCH_ERROR : string = 'Password does not match';
+  public PASSWORD_MATCH_ERROR: string = 'Password does not match';
 
   public INVALID_ACCOUNT_ERROR: string =
     'This email does not match any account. Please try another email.';
@@ -47,8 +47,13 @@ export class HeaderService {
 
   categories: any = [];
   existingUser: any = [];
+  isValidUser: boolean = false;
 
-  constructor(private _http: HttpClient, private _appService: AppService) {}
+  constructor(
+    private _http: HttpClient,
+    private _appService: AppService,
+    private _userService: UserService
+  ) {}
 
   validateAllFormFields(formGroup: FormGroup) {
     (<any>Object).values(formGroup.controls).forEach((control) => {
@@ -71,28 +76,14 @@ export class HeaderService {
   }
 
   isUserAlreadyExist(user): any {
-    debugger;
     let exist = false;
-    this.existingUser = JSON.parse(
-      this._appService.getSessionItem('registeredUser')
-    );
-    if (this.existingUser && this.existingUser != null) {
-      this.existingUser.forEach((element) => {
-        console.log(element);
-        if (element.email == user.email) {
-          exist = true;
-        }
-      });
-    }
+    exist = this._userService.getLoggedInUser(user);
     return exist;
   }
 
   isLoggedInUser(user): any {
-    debugger;
-    let status;
-    this.existingUser = JSON.parse(
-      this._appService.getSessionItem('registeredUser')
-    );
+    let status ='0';
+    this.existingUser = this._userService.getRegisteredUsers();
     if (this.existingUser && this.existingUser != null) {
       let accountExist = this.existingUser.find((u) => {
         if ((u.email = user.email)) {
@@ -102,6 +93,7 @@ export class HeaderService {
       if (accountExist && accountExist.email) {
         if (accountExist.password == user.password) {
           status = '2';
+          this._userService.setLoggedInUser(accountExist)
         } else {
           status = '1';
         }
@@ -109,7 +101,6 @@ export class HeaderService {
         status = '0';
       }
     }
-    console.log("status===" , status)
     return status;
   }
 }

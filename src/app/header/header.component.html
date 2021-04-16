@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container main-container">
-    <a class="navbar-brand" routerLink="['/app/home']">
+    <a class="navbar-brand" routerLink="['/home']">
       <img
         src="/assets/img/logo_2x.png"
         class="logo-image"
@@ -24,7 +24,7 @@
         <li class="nav-item">
           <a
             class="nav-link"
-            [routerLink]="['home']"
+            [routerLink]="['/home']"
             [routerLinkActive]="['active']"
             >Home</a
           >
@@ -32,7 +32,7 @@
         <li class="nav-item">
           <a
             class="nav-link"
-            [routerLink]="['product']"
+            [routerLink]="['/products']"
             [routerLinkActive]="['active']"
             >Product</a
           >
@@ -40,11 +40,11 @@
       </ul>
     </div>
     <div class="end-container">
-      <ul class="navbar-nav nav-bar-right">
+      <ul class="navbar-nav nav-bar-right" *ngIf="!isLoggedIn">
         <li class="nav-item">
           <a
             class="nav-link"
-            [routerLink]="['login']"
+            [routerLink]="['/auth/login']"
             [routerLinkActive]="['active']"
             >SignIn</a
           >
@@ -52,12 +52,22 @@
         <li class="nav-item">
           <a
             class="nav-link"
-            [routerLink]="['register']"
+            [routerLink]="['/auth/register']"
             [routerLinkActive]="['active']"
             >Register</a
           >
         </li>
+      </ul> 
+      <ul class="navbar-nav nav-bar-right" *ngIf="isLoggedIn">
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            (click)="logoutUser()"
+            >Logout</a
+          >
+        </li>
       </ul>
+
     </div>
     <div class="cart" (click)="openCart()">
       <img src="/assets/img/cart.svg" alt="cart" class="cart-logo" />
@@ -67,8 +77,8 @@
     </div>
   </div>
 </nav>
-<router-outlet></router-outlet>
+<!-- <router-outlet></router-outlet> -->
 
-<div class="footer">
+<!-- <div class="footer">
   CopyRight @ 2011-2018 Sabka Bazzar Grocery Supplies Pvt Ltd
-</div>
+</div> -->

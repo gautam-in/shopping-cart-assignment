@@ -36,15 +36,15 @@ export class AppService {
   //   return this.http.post<ICartResponse>(addToCartUrl, productId);
   // }
 
-  getSessionItem(key: string): any {
-    return sessionStorage.getItem(key) || null;
+  getLocalItem(key: string): any {
+    return localStorage.getItem(key) || null;
   }
 
-  setSessionItem(key: string, value: any): any {
-    return sessionStorage.setItem(key, value);
+  setLocalItem(key: string, value: any): any {
+    return localStorage.setItem(key, value);
   }
 
-  removeSessionItem(key: string): any {
-    return sessionStorage.removeItem(key);
+  removeLocalItem(key: string): any {
+    return localStorage.removeItem(key);
   }
 }

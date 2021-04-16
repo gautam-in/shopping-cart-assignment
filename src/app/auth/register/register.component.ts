@@ -7,7 +7,8 @@ import {
 } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AppService } from 'src/app/shared/services/app.service';
-import { HeaderService } from '../header.service';
+import { UserService } from 'src/app/user/user.service';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-register',
@@ -23,35 +24,36 @@ export class RegisterComponent implements OnInit {
 
   constructor(
     private _router: Router,
-    private _headerService: HeaderService,
+    private _authService: AuthService,
     private _fb: FormBuilder,
-    private _appService: AppService
+    private _appService: AppService,
+    private _userService : UserService
   ) {
     this.validationMessages = {
       firstName: {
-        required: this._headerService.REQUIRED_ERROR,
-        pattern: this._headerService.NAME_PATTERN_ERROR,
-        minlength: this._headerService.NAME_LENGTH_ERROR,
+        required: this._authService.REQUIRED_ERROR,
+        pattern: this._authService.NAME_PATTERN_ERROR,
+        minlength: this._authService.NAME_LENGTH_ERROR,
       },
       lastName: {
-        required: this._headerService.REQUIRED_ERROR,
-        pattern: this._headerService.NAME_PATTERN_ERROR,
-        minlength: this._headerService.NAME_LENGTH_ERROR,
+        required: this._authService.REQUIRED_ERROR,
+        pattern: this._authService.NAME_PATTERN_ERROR,
+        minlength: this._authService.NAME_LENGTH_ERROR,
       },
       email: {
-        required: this._headerService.REQUIRED_ERROR,
-        minLength: this._headerService.EMAIL_MINLENGTH_ERROR,
-        pattern: this._headerService.EMAIL_PATTERN,
+        required: this._authService.REQUIRED_ERROR,
+        minLength: this._authService.EMAIL_MINLENGTH_ERROR,
+        pattern: this._authService.EMAIL_PATTERN,
       },
       password: {
-        required: this._headerService.REQUIRED_ERROR,
-        minLength: this._headerService.PASSWORD_LENGTH_ERROR,
-        pattern: this._headerService.PASSWORD_PATTERN,
+        required: this._authService.REQUIRED_ERROR,
+        minLength: this._authService.PASSWORD_LENGTH_ERROR,
+        pattern: this._authService.PASSWORD_PATTERN,
       },
       confirmPassword: {
-        required: this._headerService.REQUIRED_ERROR,
-        minLength: this._headerService.PASSWORD_LENGTH_ERROR,
-        compare: this._headerService.PASSWORD_COMPARE_ERROR,
+        required: this._authService.REQUIRED_ERROR,
+        minLength: this._authService.PASSWORD_LENGTH_ERROR,
+        compare: this._authService.PASSWORD_COMPARE_ERROR,
       },
     };
   }
@@ -63,14 +65,14 @@ export class RegisterComponent implements OnInit {
           '',
           [
             Validators.required,
-            Validators.pattern(this._headerService.NAME_REGEX),
+            Validators.pattern(this._authService.NAME_REGEX),
           ],
         ],
         lastName: [
           '',
           [
             Validators.required,
-            Validators.pattern(this._headerService.NAME_REGEX),
+            Validators.pattern(this._authService.NAME_REGEX),
           ],
         ],
         email: [
@@ -78,7 +80,7 @@ export class RegisterComponent implements OnInit {
           [
             Validators.required,
             Validators.minLength(8),
-            Validators.pattern(this._headerService.EMAIL_REGEX),
+            Validators.pattern(this._authService.EMAIL_REGEX),
           ],
         ],
         password: [
@@ -86,7 +88,7 @@ export class RegisterComponent implements OnInit {
           [
             Validators.required,
             Validators.minLength(8),
-            Validators.pattern(this._headerService.PASSWORD_REGEX),
+            Validators.pattern(this._authService.PASSWORD_REGEX),
           ],
         ],
         confirmPassword: [
@@ -94,7 +96,7 @@ export class RegisterComponent implements OnInit {
           [
             Validators.required,
             Validators.minLength(8),
-            Validators.pattern(this._headerService.PASSWORD_REGEX),
+            Validators.pattern(this._authService.PASSWORD_REGEX),
           ],
         ],
       },
@@ -104,11 +106,9 @@ export class RegisterComponent implements OnInit {
 
   submitRegistrationForm(): void {
     if (this.registrationForm.valid) {
-      // this._router.navigate(['app/login']);
-
       this.registerNewUser();
     } else {
-      this._headerService.validateAllFormFields(this.registrationForm);
+      this._authService.validateAllFormFields(this.registrationForm);
     }
   }
 
@@ -116,30 +116,23 @@ export class RegisterComponent implements OnInit {
     this.errorExist = false;
     let existingUser = [];
     let user = this.registrationForm.value;
-    console.log(this.registrationForm.value);
-    if (!this._headerService.isUserAlreadyExist(user)) {
-      existingUser = JSON.parse(
-        this._appService.getSessionItem('registeredUser')
-      );
+    if (!this._authService.isUserAlreadyExist(user)) {
+      existingUser = this._userService.getRegisteredUsers();
       if (existingUser && existingUser != null) {
         existingUser.push(user);
-        this._appService.setSessionItem(
-          'registeredUser',
-          JSON.stringify(existingUser)
-        );
+        this._userService.setUsers('registeredUser', existingUser)
       } else {
-        let y: any = [];
-        y.push(user);
-        this._appService.setSessionItem('registeredUser', JSON.stringify(y));
+        let newUser: any = [];
+        newUser.push(user);
+        this._userService.setUsers('registeredUser', newUser)
       }
-      this._router.navigate(['app/login']);
+      this._router.navigate(['/auth/login']);
     } else {
       this.errorExist = true;
       setTimeout(() => {
         this.errorExist = false;
       }, 5000);
-      this.errormsg = this._headerService.USER_EXIST_ERROR;
-      console.log(this.errormsg);
+      this.errormsg = this._authService.USER_EXIST_ERROR;
     }
   }
 

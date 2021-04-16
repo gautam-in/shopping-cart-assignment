@@ -34,7 +34,7 @@ export class HomeComponent implements OnInit {
   }
 
   exploreProduct(id: any): void {
-    this._route.navigate(['app/product/list', id]);
+    this._route.navigate(['/products/list', id]);
   }
 
   fetchBanners() {

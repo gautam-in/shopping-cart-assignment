@@ -2,7 +2,6 @@ import { HttpClient } from '@angular/common/http';
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CartComponent } from 'src/app/shared/component/cart/cart.component';
-import { HeaderService } from 'src/app/header/header.service';
 import { AppService } from 'src/app/shared/services/app.service';
 import { ProductService } from '../product.service';
 import { CartService } from 'src/app/shared/services/cart/cart.service';

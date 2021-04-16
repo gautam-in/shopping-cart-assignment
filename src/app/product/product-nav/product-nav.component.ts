@@ -32,6 +32,6 @@ export class ProductNavComponent implements OnInit {
   }
 
   getProductByCategory(id: any) {
-    this._route.navigate(['app/product/list', id]);
+    this._route.navigate(['/products/list', id]);
   }
 }
