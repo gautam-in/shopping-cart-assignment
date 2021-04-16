@@ -20,18 +20,18 @@ const CartIcon = ({ cartItem = 0, loggedIn = false, user = {}, logOut, showCart,
         {
           loggedIn ? (
             <>
-              <strong aria-label={"Logged in user is" + user.firstName}>Hi {user.firstName}!</strong>
-              <Link to={routes.signIn} onClick={() => logOutClear()} aria-label="logout link">Logout</Link>
+              <strong tabIndex="2" aria-label={"Logged in user is" + user.firstName}>Hi {user.firstName}!</strong>
+              <Link to={routes.signIn} tabIndex="3" onClick={() => logOutClear()} aria-label="logout link">Logout</Link>
             </>
           ) : (
             <>
-              <Link to={routes.signIn} aria-label="sign in link">{SignInText}</Link>
-              <Link to={routes.register} aria-label="register link" > {RegisterText}</Link>
+              <Link tabIndex="2" to={routes.signIn} aria-label="sign in link">{SignInText}</Link>
+              <Link tabIndex="3" to={routes.register} aria-label="register link" > {RegisterText}</Link>
             </>
           )
         }
       </div>
-      <div className="cart" onClick={showCart} role="button" aria-label={"cart item button to open the cart page. Total selected cart item is" + cartItem}>
+      <div className="cart" tabIndex="6" onClick={showCart} role="button" aria-label={"cart item button to open the cart page. Total selected cart item is" + cartItem}>
         <img src={cartLogo} alt={"Cart Icon Logo"} height="30" width="30" />
         <p aria-label={"selected cart item total is" + cartItem}>{cartItem} items</p>
       </div>

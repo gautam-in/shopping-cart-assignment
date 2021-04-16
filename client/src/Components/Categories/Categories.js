@@ -7,16 +7,16 @@ import "./category.scss";
 const Categories = ({ categoryList }) => {
 
   return (
-    <section>
-      {categoryList.map(item => {
+    <section aria-label="List of categories" tabIndex="7">
+      {categoryList.map((item, index) => {
         return (
-          <section key={item.id} className="category-item">
+          <section key={item.id} className="category-item" aria-label={"This is" + item.name + "category section"} tabIndex={8 + index}>
             {
               <>
                 <article>
-                  <h3 aria-label={"category name is" + item.name}>{item.name}</h3>
-                  <p aria-label={item.description}>{item.description}</p>
-                  <Link to={routes.productById.replace(":id", item.id)} role="button" aria-label={item.name + 'category button'}>
+                  <h3 aria-label={"category name is" + item.name} tabIndex={8 + index} >{item.name}</h3>
+                  <p aria-label={item.description} tabIndex={8 + index} >{item.description}</p>
+                  <Link to={routes.productById.replace(":id", item.id)} role="button" tabIndex={8 + index} aria-label={item.name + 'category button, click if you want to go through the products under this category'}>
                     <CustomButton width="auto" >
                       {item.key}
                     </CustomButton>

@@ -33,11 +33,11 @@ const Login = (props) => {
   return (
     <main className="login">
       <section className="title">
-        <h2>{LoginText}</h2>
+        <h2 ariaLabel="Login header" tabIndex="7">{LoginText}</h2>
         <p>{LoginDescription}</p>
       </section>
       <section>
-        <form onSubmit={handleSubmit} data-testid='login-form'>
+        <form onSubmit={handleSubmit} tabIndex="8" data-testid='login-form' aria-label="Login form for user to log in">
           <FormInput
             type="email"
             name="email"
@@ -46,6 +46,7 @@ const Login = (props) => {
             onChange={handleChange}
             htmlFor="emailInput"
             ariaLabel="Email Input"
+            tabIndex="9"
             required
           />
           <FormInput
@@ -56,9 +57,10 @@ const Login = (props) => {
             onChange={handleChange}
             htmlFor="passwordInput"
             ariaLabel="Password Input"
+            tabIndex="10"
             required
           />
-          <CustomButton type="submit">{LoginText}</CustomButton>
+          <CustomButton type="submit" tabIndex="11" >{LoginText}</CustomButton>
         </form>
       </section>
     </main>

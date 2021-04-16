@@ -53,8 +53,8 @@ const Register = (props) => {
 
   return (
     <main className="register">
-      <h2>{RegisterText}</h2>
-      <form onSubmit={handleSubmit}>
+      <h2 ariaLabel="Register header title" tabIndex="7">{RegisterText}</h2>
+      <form onSubmit={handleSubmit} ariaLabel="Register form to register a new user" tabIndex="8">
         <FormInput
           type="text"
           name="firstName"
@@ -63,6 +63,7 @@ const Register = (props) => {
           onChange={handleChange}
           htmlFor="firstNameInput"
           ariaLabel="FirstName Input"
+          tabIndex="9"
           errors={formData.errors}
           required
         />
@@ -74,6 +75,7 @@ const Register = (props) => {
           onChange={handleChange}
           htmlFor="lastNameInput"
           ariaLabel="LastName Input"
+          tabIndex="10"
           errors={formData.errors}
           required
         />
@@ -85,6 +87,7 @@ const Register = (props) => {
           onChange={handleChange}
           htmlFor="emailInput"
           ariaLabel="Email Input"
+          tabIndex="11"
           errors={formData.errors}
           required
         />
@@ -96,6 +99,7 @@ const Register = (props) => {
           onChange={handleChange}
           htmlFor="passwordInput"
           ariaLabel="Password Input"
+          tabIndex="12"
           errors={formData.errors}
           required
         />
@@ -107,10 +111,11 @@ const Register = (props) => {
           onChange={handleChange}
           htmlFor="confirmPasswordInput"
           ariaLabel="Confirm Password Input"
+          tabIndex="13"
           errors={formData.errors}
           required
         />
-        <CustomButton type="submit">{RegisterText}</CustomButton>
+        <CustomButton type="submit" tabIndex="14">{RegisterText}</CustomButton>
       </form>
     </main>
   );
