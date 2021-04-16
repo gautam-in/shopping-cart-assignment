@@ -13,7 +13,7 @@ import {
   NavbarText,
 } from 'reactstrap';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import {faShoppingCart} from '@fortawesome/free-solid-svg-icons';
+import {faShoppingCart, faBars} from '@fortawesome/free-solid-svg-icons';
 import Logo from '../../../static/images/logo.png';
 import {allCartData} from '../../selector';
 import './Header.scss';
@@ -34,7 +34,11 @@ const Header = React.memo(({cartSideNav}) => {
           <Link to="/" className="logo-wrap">
             <img src={Logo} alt="Sabka Bazaar logo" />
           </Link>
-          <NavbarToggler onClick={toggle} />
+          <NavbarToggler onClick={toggle}>
+            <span>
+              <FontAwesomeIcon icon={faBars} />
+            </span>
+          </NavbarToggler>
           <Collapse isOpen={isOpen} navbar>
             <Nav className="mr-auto" navbar>
               <NavItem>

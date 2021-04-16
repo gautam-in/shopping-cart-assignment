@@ -44,6 +44,15 @@ const ProductFilter = React.memo(({filterId, setFilterId}) => {
     );
   });
 
+  const categoriesOptionList = data.map((category) => {
+    const {id, name} = category;
+    return (
+      <option key={id} value={id}>
+        {name}
+      </option>
+    );
+  });
+
   return (
     <div
       className="categories-filter-data-wrap"
@@ -53,6 +62,17 @@ const ProductFilter = React.memo(({filterId, setFilterId}) => {
         {loading && <SkeletonProductFilter />}
         {!loading && !error && categoriesList}
       </ul>
+      <div className="product-categories-dropdown">
+        {!loading && !error && (
+          <select
+            value={activeId || ''}
+            onChange={(e) => handleClick(e.target.value)}
+          >
+            <option value="">select Categories</option>
+            {categoriesOptionList}
+          </select>
+        )}
+      </div>
       {!loading && error && <AlertInfo />}
     </div>
   );

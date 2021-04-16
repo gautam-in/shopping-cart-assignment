@@ -17,7 +17,6 @@ const LoginForm = ({history}) => {
   const password = watch('password');
   const onSubmit = (data) => {
     const emailid = data.email;
-    localStorage.setItem('sabkaBazar', JSON.stringify({emailid}));
     dispatch(fetchUserDataSuccess({emailid}));
     history.push('/');
     reset();

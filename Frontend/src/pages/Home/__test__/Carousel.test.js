@@ -7,7 +7,7 @@ afterEach(() => {
   cleanup();
 });
 
-test.only('render carousel images', async () => {
+test('render carousel images', async () => {
   render(<Carousel />);
   const CarouselImages = await screen.findAllByRole('img', {
     name: /carouselimg$/i,

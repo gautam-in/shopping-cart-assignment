@@ -23,9 +23,48 @@
 .is-active {
   border-left: 2px solid $pink-color;
 }
+.categories-filter-data-wrap {
+  .product-categories-dropdown {
+    position: relative;
+    overflow: hidden;
+    display: none;
+    select {
+      position: relative;
+      padding: 5px 0px;
+      width: 100%;
+      color: $white-color;
+      background-color: $pink-color;
+      border: 2px solid $pink-color;
+      option {
+        position: relative;
+        overflow: hidden;
+      }
+      &:active {
+        border: 2px solid $pink-color;
+        border-radius: 0px;
+      }
+    }
+  }
+}
 
 @media only screen and (max-width: $mobile-max-width) {
   .page-wrap {
-    padding-top: 85px;
+    padding-top: 70px;
+  }
+  .product-page-list-wrap {
+    .product-list-wrap {
+      margin-left: 0px;
+    }
+  }
+
+  .categories-filter-data-wrap {
+    position: relative;
+    overflow: hidden;
+    ul {
+      display: none;
+    }
+    .product-categories-dropdown {
+      display: block;
+    }
   }
 }

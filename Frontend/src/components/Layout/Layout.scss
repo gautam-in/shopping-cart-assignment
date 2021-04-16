@@ -27,14 +27,20 @@ button {
   }
 }
 
-@media only screen and (max-width: $mobile-max-width) {
-  .page-wrap {
-    padding-top: 85px;
-  }
+@media only screen and (max-width: $tab-max-width) {
   .container {
     max-width: 100%;
     margin: 0;
     padding: 0;
+  }
+}
+
+@media only screen and (max-width: $mobile-max-width) {
+  .page-wrap {
+    padding-top: 65px;
+  }
+  .cantainer {
+    padding: 0 5px;
   }
 }
 
