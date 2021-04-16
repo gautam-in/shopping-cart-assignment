@@ -71,8 +71,8 @@ const Products = () => {
                         <Sidebar categories={categoriesList} />
                         <div className="product-container" aria-label="products section with each product">
                             {
-                                filteredProducts.length ? filteredProducts.map(product => {
-                                    return <ProductItem key={product.id} product={product} />
+                                filteredProducts.length ? filteredProducts.map((product, index) => {
+                                    return <ProductItem key={product.id} product={product} index={index} />
                                 }) : ""
                             }
                         </div>

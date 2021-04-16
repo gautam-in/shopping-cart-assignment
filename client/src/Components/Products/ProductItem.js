@@ -5,27 +5,29 @@ import { cartActions } from "../../_actions";
 import CustomButton from "../CustomButton/CustomButton";
 import "./ProductItem.scss";
 
-const ProductItem = ({ product }) => {
+const ProductItem = ({ product, index }) => {
     const dispatch = useDispatch();
     const dispatchCart = (product) => {
         dispatch(cartActions.addToCart(product));
     }
     return (
-        <div className="product-item" aria-label={"Product card for" + product.name}>
-            <h4 aria-label={"product name is" + product.name}>{product.name}</h4>
+        <div className="product-item" aria-label={"Product card for" + product.name} tabIndex={13 + index}>
+            <h4 aria-label={"product name is" + product.name} tabIndex={13 + index} >{product.name}</h4>
             <figure>
                 <img className="product-img"
                     src={product.imageURL}
                     alt={product.name + "image"}
+                    aria-label={"image of" + product.name}
+                    tabIndex={13 + index}
                 />
                 <span className="product-wrapper">
-                    <figcaption aria-label={"product description is" + product.description}>{product.description}</figcaption>
-                    <CustomButton price={product.price} height="30px" onClick={() => dispatchCart(product)} >{productConstants.BUY_NOW}</CustomButton>
+                    <figcaption aria-label={"product description is" + product.description} tabIndex={13 + index}>{product.description}</figcaption>
+                    <CustomButton aria-label={productConstants.BUY_NOW + "button, the product price is" + product.price} tabIndex={13 + index} price={product.price} height="30px" onClick={() => dispatchCart(product)} >{productConstants.BUY_NOW}</CustomButton>
                 </span>
             </figure>
             <section>
-                <span aria-label={"Product price for" + product.name + "is" + product.price}>{productConstants.MRP_RS + product.price}</span>
-                <CustomButton price={product.price} height="30px" onClick={() => dispatchCart(product)} >{productConstants.BUY_NOW}</CustomButton>
+                <span aria-label={"Product price for" + product.name + "is" + product.price} tabIndex={13 + index}>{productConstants.MRP_RS + product.price}</span>
+                <CustomButton aria-label={productConstants.BUY_NOW + "button"} tabIndex={13 + index} price={product.price} height="30px" onClick={() => dispatchCart(product)} >{productConstants.BUY_NOW}</CustomButton>
             </section>
         </div>
     )
