@@ -13,3 +13,8 @@ npm run start
 yarn install
 yarn start
 ```
+
+for the react app - 
+cd shopping
+npm install
+npm run start
