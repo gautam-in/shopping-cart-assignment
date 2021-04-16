@@ -1,15 +1,27 @@
-# XT Shopping Cart Assignment
+## Building and running on localhost
 
-This is the base folder for the shopping cart exercise. You will have all the static assets and mock server responses available in this repo.
+First install dependencies:
 
-## Getting Started
-
-Clone this repo and run following command for starting the mock server:
-
+```sh
+npm install --force
 ```
-npm install
-npm run start
-# or
-yarn install
-yarn start
+
+To create a production build and run server:
+
+```sh
+npm start
+```
+
+To create a development build and run server:
+
+```sh
+npm run dev
+```
+
+## Testing
+
+To run unit tests:
+
+```sh
+npm test
 ```

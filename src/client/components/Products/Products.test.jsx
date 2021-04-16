@@ -1,0 +1,63 @@
+/* eslint-disable no-undef */
+import React from 'react';
+import { shallow } from 'enzyme';
+import { Provider } from 'react-redux';
+import renderer from 'react-test-renderer';
+
+import { Products } from '.';
+import ProductItem from './ProductItem';
+import CategoryItem from './CategoryItem';
+
+import storeConfig from '../../redux/storeConfig';
+import productActions from '../../redux/actions/product';
+
+function mockFunction() {
+  const original = jest.requireActual('react-router');
+  return {
+    ...original,
+    useHistory: () => ({
+      push: jest.fn(),
+      location: {
+        pathname: '/products',
+        search: '',
+        hash: '',
+        state: null,
+        key: '5nvxpbdafa',
+      },
+    }),
+  };
+}
+
+jest.mock('react-router', () => mockFunction());
+
+afterEach(() => {
+  jest.clearAllMocks();
+});
+
+describe('Renders Products Page', () => {
+  let wrapper;
+  let props;
+
+  beforeEach(() => {
+    props = {
+      dispatch: jest.fn(),
+    };
+    wrapper = shallow(<Provider store={storeConfig()}><Products {...props} /></Provider>);
+  });
+  it('should render product page', async () => {
+    const st = storeConfig();
+    await st.dispatch(productActions.productList());
+    const tree = renderer.create(
+      <Provider store={st}><Products {...props} /></Provider>,
+    ).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  it('should contain product item', () => {
+    expect(wrapper.contains(<ProductItem />));
+  });
+
+  it('should contain category item', () => {
+    expect(wrapper.contains(<CategoryItem />));
+  });
+});

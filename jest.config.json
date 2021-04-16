@@ -1,0 +1,22 @@
+{
+  "roots": [
+    "<rootDir>/src/client"
+  ],
+  "setupFilesAfterEnv": [
+    "<rootDir>/src/client/setupTests.js"
+  ],
+  "transform": {
+    "^.+\\.(js|jsx|mjs|cjs|ts|tsx)$": "<rootDir>/jest/babelTransform.js",
+    "^.+\\.css$": "<rootDir>/jest/cssTransform.js",
+    "^(?!.*\\.(js|jsx|mjs|cjs|ts|tsx|css|json)$)": "<rootDir>/jest/fileTransform.js"
+  },
+  "collectCoverageFrom": [
+    "src/client/**/*.js",
+    "!src/client/index.js"
+  ],
+  "moduleNameMapper": {
+    ".+\\.(css|styl|less|sass|scss|png|jpg|ttf|woff|woff2)$": "identity-obj-proxy",
+    "isomorphic-style-loader/withStyles": "<rootDir>/jest/withStyles.js"
+  },
+  "resetMocks": true
+}

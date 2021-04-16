@@ -1,0 +1,95 @@
+nav {
+    display: flex;
+    justify-content: space-around;
+    background: $white-color;
+    box-shadow: 0px 1px 10px 5px $grey-color;
+    align-content: center;
+    // position: fixed;
+    // width: 100%;
+    // top:0;
+    .main-nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .logo {
+            width: 75%;
+            height: 71%;
+        }
+        .page-nav {
+            list-style: none;
+            display: flex;
+            align-items: flex-end;
+            margin: 0 0 .625rem 5rem;
+            li {
+                padding: 10px;
+                a {
+                    text-decoration: none;
+                    color: $font-color;
+                    font-size: 80%;
+                    font-weight: 700;
+                }
+                &.active{
+                    a {
+                        color: $explore-color;
+                        border-bottom: 2px solid $explore-color;
+                    }
+                }
+            }
+        }
+    }
+    .action-nav {
+        .cart-box {
+            display: flex;
+            align-items: center;
+            background: $grey-color;
+            width: 9.375rem;
+            padding: 0 0 0 10px;
+            height: 4.0625rem;
+            span {
+                padding: 0 0 0 10px;
+                font-size: 80%;
+                font-weight: 600;
+            }
+        }
+        .cart-link {
+            &:visited, &:link {
+                color: $explore-color;
+                text-decoration: none;
+                font-size: 150%;
+            }
+        }
+        &-list {
+            display: flex;
+            justify-content: flex-end;
+            list-style-type: none;
+            margin: 0 0 15px 0;
+            li {
+                padding-left: 25px;
+                a {
+                    text-decoration: none;
+                    color: $font-color;
+                    font-size: 70%;
+                    font-weight: 600;
+                }
+            }
+        }
+    }
+
+    @media only screen and (max-width: 991px) {
+        justify-content: space-between;
+        .main-nav {
+            .page-nav {
+                margin: 0 0 .625rem 1rem;
+            }
+        }
+    }
+
+    @media only screen and (max-width: 600px) {
+        justify-content: space-between;
+        .main-nav {
+            .page-nav {
+                display: none;
+            }
+        }
+    }
+}

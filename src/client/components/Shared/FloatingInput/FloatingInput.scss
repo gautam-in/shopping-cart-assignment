@@ -1,0 +1,80 @@
+.floating-label-wrap {
+  font-family: $font-family;
+  color: $font-color;
+  font-size: 80%;
+  font-weight: 600;
+  .floating-label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    user-select: none;
+    z-index: 1;
+  }
+  
+  .floating-label-field {
+    color: $font-color;
+    border-width: 0;
+    z-index: 2;
+    transition: border-color 0.25s ease-in-out;
+    border-bottom: 1px solid $border-bottom-color;
+    background-color: transparent;
+    &:focus {
+      outline: 0;
+      box-shadow: 0;
+      border-bottom: 2px solid $input-focus-color !important;
+    }
+  }
+}
+
+.floating-label-field::placeholder {
+  color: $font-color;
+}
+
+/* Make the label and field look identical on every browser */
+.floating-label,
+.floating-label-field {
+  font: inherit;
+  line-height: 1;
+  display: block;
+  width: 100%;
+}
+
+.floating-label-field,
+.floating-label-wrap {
+  position: relative;
+}
+
+.floating-label-field + .floating-label {
+  transition: transform 0.25s, opacity 0.25s ease-in-out;
+  transform-origin: 0 0;
+}
+
+.floating-label-field:focus + .floating-label,
+.floating-label-field:not(:placeholder-shown) + .floating-label {
+  transform: translate(0, -30%) scale(0.8);
+  color: $input-focus-color;
+}
+
+.floating-label-field:valid:not(:placeholder-shown) {
+  border-bottom: 2px solid $input-focus-color;
+}
+
+.floating-label-field:invalid {
+  border-bottom: 2px solid $explore-color;
+}
+
+/* Common Styles */
+/* Identical inputs on all browsers */
+.floating-label-field:not(textarea) {
+  max-height: 3em;
+}
+
+.floating-label-field,
+.floating-label-field + .floating-label {
+  padding: 1em 0 .25em 0;
+}
+
+.floating-label-field::placeholder {
+  color: transparent;
+}
+  

@@ -1,0 +1,136 @@
+/* ----------------------------------------------- */
+/* BASIC SETUP */
+/* ----------------------------------------------- */
+
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@400;600;700;800&display=swap');
+
+@use "variables";
+@use "colors";
+
+@font-face {
+  font-family: '#{$icomoon-font-family}';
+  src:  url('#{$icomoon-font-path}/#{$icomoon-font-family}.eot?rnvsy');
+  src:  url('#{$icomoon-font-path}/#{$icomoon-font-family}.eot?rnvsy#iefix') format('embedded-opentype'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.ttf?rnvsy') format('truetype'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.woff?rnvsy') format('woff'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.svg?rnvsy##{$icomoon-font-family}') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: '#{$icomoon-font-family}' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-cart {
+  &:before {
+    content: $icon-cart; 
+  }
+}
+.icon-plus {
+  &:before {
+    content: $icon-plus; 
+  }
+}
+.icon-minus {
+  &:before {
+    content: $icon-minus; 
+  }
+}
+.icon-cross {
+  &:before {
+    content: $icon-cross; 
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: $body-background;
+  color: $body-color;
+  font-family: $font-family;
+  font-weight: $font-weight;
+  font-size: $font-size;
+  text-rendering: optimizeLegibility;
+  margin: 0 auto;
+}
+
+.row {
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+section {
+  padding: 30px 0;
+}
+
+.MuiFormLabel-root {
+  font-family: $font-family !important;
+  color: $font-color !important;
+  font-size: 80% !important;
+  font-weight: 600 !important;
+}
+
+.MuiInput-underline:hover:not(.Mui-disabled):before {
+  border-bottom: 2px solid $input-focus-color !important;
+}
+
+.MuiFormLabel-root.Mui-focused {
+  color: $input-focus-color !important;
+}
+
+.MuiInput-underline:after {
+  left: 0;
+  right: 0;
+  bottom: 0;
+  content: "";
+  position: absolute;
+  transform: scaleX(0);
+  transition: transform 200ms cubic-bezier(0.0, 0, 0.2, 1) 0ms;
+  border-bottom: 2px solid $input-focus-color !important;
+  pointer-events: none;
+}
+
+.btn {
+  font-size: 65%;
+  background: $explore-color;
+  color: $white-color;
+  margin: 15px 0 0 0;
+  font-weight: 500;
+  padding: 0 10px;
+  text-align: center;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  &:focus {
+    outline: none;
+  }
+}
+
+.btn:disabled {
+  opacity: 0.7;
+}
+
+.error-help {
+  display: block;
+  font-size: .65rem;
+  font-weight: 600;
+  margin-top: 5px;
+  color: $explore-color;
+}
