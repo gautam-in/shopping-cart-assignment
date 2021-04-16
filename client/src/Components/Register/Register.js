@@ -53,8 +53,8 @@ const Register = (props) => {
 
   return (
     <main className="register">
-      <h2 ariaLabel="Register header title" tabIndex="7">{RegisterText}</h2>
-      <form onSubmit={handleSubmit} ariaLabel="Register form to register a new user" tabIndex="8">
+      <h2 aria-label="Register header title" tabIndex="7">{RegisterText}</h2>
+      <form onSubmit={handleSubmit} aria-label="Register form to register a new user" tabIndex="8">
         <FormInput
           type="text"
           name="firstName"

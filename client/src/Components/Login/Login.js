@@ -33,7 +33,7 @@ const Login = (props) => {
   return (
     <main className="login">
       <section className="title">
-        <h2 ariaLabel="Login header" tabIndex="7">{LoginText}</h2>
+        <h2 aria-label="Login header" tabIndex="7">{LoginText}</h2>
         <p>{LoginDescription}</p>
       </section>
       <section>
