@@ -1,5 +1,7 @@
 export const environment = {
-  production: true
+  production: true,
+  authUrl: "https://identitytoolkit.googleapis.com/v1/accounts:",
 };
 
-const baseUrl = "http://localhost:5000"
+export const baseUrl = "http://localhost:5000";
+export const firebaseAuthKey = { "key": "key", "value": "AIzaSyBqwkLIibbZGvqgVaeTcOpNTMUyg9bomtI" }

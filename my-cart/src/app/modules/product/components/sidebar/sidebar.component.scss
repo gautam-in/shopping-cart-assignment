@@ -1,0 +1,59 @@
+@import './../../../../sass/variables';
+@import './../../../../sass/mixins';
+
+.side-navigation{
+    &-item{
+        font-size: 1.4rem;
+        padding: 1.2rem 2rem;
+        border-bottom: 1px solid $color-grey-medium;
+    }
+
+    &-link{
+        color : $color-grey-contrast;
+        font-weight: 600;
+    }
+}
+
+.mobile-navigation{
+    display : none;
+
+    @include responsive(mobile){
+        display: inherit;
+    }
+}
+
+.desktop-navigation{
+    display: inherit;
+    @include responsive(mobile){
+        display: none;
+    }
+}
+
+
+.active-category{
+    background-color: $color-primary;
+    .side-navigation-link{
+        color: $color-white
+    }
+}
+
+.categories{
+    position: relative;
+}
+
+.category-dropdown{
+    width : 100%;
+    padding: 1rem 2rem;
+    background-color: $color-primary;
+    border:none;
+    color : $color-white
+}
+
+
+.expand-icon-up,.expand-icon-down{
+    position: absolute;
+    right: 2%;
+    color : white;
+}
+
+
