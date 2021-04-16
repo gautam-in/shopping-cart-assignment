@@ -1,0 +1,11 @@
+@import "../../variables.scss";
+
+footer {
+  color: $primary-black;
+  background-color: $primary-grey;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 10px;
+  padding-left: 200px;
+  margin-top: 20px;
+}
