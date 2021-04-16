@@ -18,7 +18,7 @@ const Layout = () => {
       <Header cartSideNav={cartSlideOpen} />
         <div>
           <Cart isSlideOpen={isSlideOpen} cartSideNav={cartSlideOpen} />
-          <Routes />
+          <Routes  cartSideNav={cartSlideOpen}/>
         </div>
         <Footer />
       </Router>

@@ -9,7 +9,7 @@ import ProductFilter from './ProductFilter';
 import ProductsList from './ProductsList';
 import './Products.scss';
 
-const Products = () => {
+const Products = ({cartSideNav}) => {
   const dispatch = useDispatch();
   const {
     state: {id},
@@ -33,7 +33,7 @@ const Products = () => {
             <ProductFilter filterId={filterId} />
           </div>
           <div className="product-page-list-wrap">
-            <ProductsList filterId={filterId} />
+            <ProductsList filterId={filterId} cartSideNav={cartSideNav} />
           </div>
         </div>
       </div>

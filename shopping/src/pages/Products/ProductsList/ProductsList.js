@@ -6,7 +6,7 @@ import {selectCartProductIds, getProducts} from '../../../selector';
 import {createAddToCartRequest} from '../../../actions';
 import './ProductList.scss';
 
-const ProductList = React.memo(({filterId}) => {
+const ProductList = React.memo(({filterId,cartSideNav }) => {
   const dispatch = useDispatch();
   const [products, setProducts] = useState([]);
 
@@ -45,7 +45,7 @@ const ProductList = React.memo(({filterId}) => {
     const disabled = !!cartProduct.includes(id);
     return (
       <li key={id} className="col-sm-12 col-md-6 col-lg-3 col-xs-3">
-        <Card product={{...product, disabled}} addCart={addCart} />
+        <Card product={{...product, disabled}} addCart={addCart} cartSideNav={cartSideNav} />
       </li>
     );
   });

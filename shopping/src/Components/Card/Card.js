@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import './Card.scss';
 
 
-const Card = React.memo(({product, addCart}) => {
+const Card = React.memo(({product, addCart,cartSideNav}) => {
   const {name, imageURL, sku, description, price, disabled} = product;
   const temp = imageURL.split('/').reverse()
   const imageURLAt1 = temp[1]
@@ -31,10 +31,9 @@ const Card = React.memo(({product, addCart}) => {
           <div className="product-buy-out">
           <button
               type="button"
-              onClick={() => addCart(product)}
-              disabled={!!disabled}
+              onClick={() => !disabled ? addCart(product):cartSideNav()}
             >
-              {!disabled ? `Buy Now` : `In Cart`}
+              {!disabled ? `Buy Now` : `Cart`}
             </button>
           </div>
         </div>
