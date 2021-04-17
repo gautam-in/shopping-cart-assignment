@@ -1,4 +1,10 @@
-import {cleanup, screen, within, waitFor} from '@testing-library/react';
+import {
+  cleanup,
+  screen,
+  within,
+  waitFor,
+  fireEvent,
+} from '@testing-library/react';
 import 'regenerator-runtime/runtime';
 import userEvent from '@testing-library/user-event';
 import {rest} from 'msw';
@@ -15,18 +21,35 @@ const setFilterId = jest.fn();
 test('render product filter intial condition', async () => {
   render(<ProductFilter filterId={null} setFilterId={setFilterId} />);
 
-  const textListItemOne = await screen.findByText(/beverage/i);
-  const textListItemTwo = await screen.findByText(/bakery cakes and dairy/i);
+  // product filter categories list
+  const productFilterList = screen.getByTestId('product-filter-list');
+  const textListItemOne = await within(productFilterList).findByText(
+    /beverage/i,
+  );
+  const textListItemTwo = await within(productFilterList).findByText(
+    /bakery cakes and dairy/i,
+  );
 
   expect(textListItemOne).toBeInTheDocument();
   expect(textListItemTwo).toBeInTheDocument();
 
-  const productCategories = screen.getByTestId('product-categories');
   const productCategory = await (
-    await within(productCategories).findByText(/beverage/i)
+    await within(productFilterList).findByText(/beverage/i)
   ).closest('li');
   userEvent.click(productCategory);
   await waitFor(() => expect(productCategory).toHaveClass('is-active'));
+});
+
+test('product categories select dropdown', async () => {
+  // product categories select dropdown
+  render(<ProductFilter filterId={null} setFilterId={setFilterId} />);
+  fireEvent.change(await screen.findByTestId('select'), {
+    target: {value: '5b675e5e5936635728f9fc30'},
+  });
+  const options = await screen.findAllByTestId('select-option');
+  expect(options[0].selected).toBeFalsy();
+  expect(options[1].selected).toBeTruthy();
+  expect(options[2].selected).toBeFalsy();
 });
 
 test('handle error for product filter', async () => {

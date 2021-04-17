@@ -25,7 +25,7 @@ test('render product cards intial condition', async () => {
 
 test('check product filter ', async () => {
   render(<Products />);
-  const productCategories = screen.getByTestId('product-categories');
+  const productCategories = screen.getByTestId('product-filter-list');
   const products = screen.getByTestId('products-list');
   // event on product filter
   const productCategory = await (
