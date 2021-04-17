@@ -321,6 +321,7 @@ footer.product-footer {
   position: relative;
   -webkit-box-shadow: 0px 5px 4px 4px #ccc;
           box-shadow: 0px 5px 4px 4px #ccc;
+  will-change: transform;
 }
 
 .carousel__wrapper {
@@ -685,5 +686,74 @@ footer.product-footer {
   .product-list-block {
     margin-top: 10px;
   }
+}
+
+.sidebar {
+  float: left;
+  background-color: #eeeeee;
+  width: 25%;
+  height: 100%;
+}
+
+@media all and (max-width: 480px) {
+  .sidebar {
+    float: none;
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+}
+
+.sidebar__action {
+  background-color: #d10157;
+  padding: 12px 15px;
+  color: #ffffff;
+  display: none;
+}
+
+@media all and (max-width: 480px) {
+  .sidebar__action {
+    display: block;
+  }
+  .sidebar__action--img {
+    font-size: 0.625rem;
+    width: 15px;
+    height: 15px;
+    float: right;
+    margin-top: 4px;
+    margin-right: 2px;
+  }
+}
+
+@media all and (max-width: 480px) {
+  .sidebar__items {
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    background-color: #eeeeee;
+    display: none;
+  }
+}
+
+.sidebar__items--menu {
+  border-bottom: 2px solid #ccc;
+  cursor: pointer;
+}
+
+.sidebar__items--menu:hover {
+  background-color: #aaa;
+  color: #ffffff;
+}
+
+.sidebar__items--menu p {
+  line-height: 25px;
+  margin-left: 30px;
+  margin: 0;
+  padding: 15px 15px 15px 30px;
+}
+
+.sidebar__items--menu.active {
+  background-color: #d10157;
+  color: #ffffff;
 }
 /*# sourceMappingURL=main.css.map */

@@ -23,3 +23,26 @@ npm run start -> to compile code
 branches-> setup -> contains code setup 
 branches->develop-> contains sabka bazaar assignment
 
+
+// key points for seo
+canonical url
+meta tags-> meta title,description,keywords
+schema
+sitemap.xml
+robots.txt-> http://localhost:3000/robots.txt 
+
+// key points for performance
+Used will-change:translate in carousel to reduce paint in layers
+Used async to load js scripts
+gzip compression
+gulp - to minimize css
+
+// key points for accessibility
+aria-label & aria-labelledby
+skip to main content
+h1 tags
+tab click check
+alt tags
+
+//key points for security
+

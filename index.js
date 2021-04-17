@@ -15,6 +15,11 @@ app.get("/", (req, res) => {
     };
     res.render("pages/home", data);
 });
+//added robots.txt file for seo
+app.use('/robots.txt', function (req, res, next) {
+    res.type('text/plain')
+    res.send("User-agent: *\nDisallow: /");
+});
 
 // post Router for Home Page
 app.post("/", (req, res) => {

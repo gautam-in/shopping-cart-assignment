@@ -5,9 +5,9 @@
 </footer>
 
 <!-- to load all scripts files -->
-<script type="text/javascript" src="static/js/constants.js"></script>
-<script type="text/javascript" src="static/js/api.js"></script>
-<script type="text/javascript" src="static/js/config.js"></script>
+<script async type="text/javascript" src="static/js/constants.js"></script>
+<script async  type="text/javascript" src="static/js/api.js"></script>
+<script async type="text/javascript" src="static/js/config.js"></script>
 <% if(scripts && scripts.length) { scripts.forEach(script => { %>
-<script type="text/javascript" src="<%= script %>"></script>
+<script async type="text/javascript" src="<%= script %>"></script>
 <% });} %>

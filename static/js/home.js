@@ -182,6 +182,7 @@ home = ((carousel)=> {
         },
     }
 })('.carousel');
+
 // for bottom horizontal and horizontal reverse card
     getCategories() {
         apiService.getCategories({ url: END_POINTS.CATEGORIES })

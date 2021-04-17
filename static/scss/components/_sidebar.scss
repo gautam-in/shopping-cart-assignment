@@ -1,0 +1,56 @@
+.sidebar {
+    float: left;
+    background-color: map-get($site_colors, box-grey-color);
+    width: 25%;
+    height: 100%;
+    @include responsive-for-sm-mobile {
+      float: none;
+      width: 100%;
+      height: auto;
+      position: relative;
+    }
+    &__action {
+      background-color : map-get($site_colors, btn-pink-color);
+      padding: 12px 15px;
+      color: map-get($site_colors, primary-color-white);
+      display: none;
+      @include responsive-for-sm-mobile {
+        display: block;
+        &--img {
+          @include fontSize(10px);
+          width: 15px;
+          height: 15px;
+          float: right;
+          margin-top: 4px;
+          margin-right: 2px;
+        }
+      }
+    }
+    &__items {
+      @include responsive-for-sm-mobile {
+        position: absolute;
+        top: 100%;
+        width: 100%;
+        background-color: map-get($site_colors, box-grey-color);
+        display: none;
+      }
+      &--menu {
+        border-bottom: 2px solid map-get($site_colors, bullet-bg-color);
+        cursor: pointer;
+        &:hover {
+          background-color: map-get($site_colors, bullet-bg-color-active);
+          color: map-get($site_colors, primary-color-white);
+        }
+        p {
+          line-height: 25px;
+          margin-left: 30px;
+          margin: 0;
+          padding: 15px 15px 15px 30px;
+        } 
+        &.active {
+          background-color: map-get($site_colors, btn-pink-color);
+          color: map-get($site_colors, primary-color-white);
+        }    
+      }
+    }
+  }

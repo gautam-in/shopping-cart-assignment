@@ -2,6 +2,8 @@
   overflow: hidden;
   position: relative;
   box-shadow: 0px 5px 4px 4px map-get($site_colors, bullet-bg-color);
+  //will-change property for performance to decrease the paint count in layers
+  will-change:transform;
   &__wrapper {
     white-space: nowrap;
     transition: 1s all ease;
