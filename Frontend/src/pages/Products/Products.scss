@@ -1,0 +1,31 @@
+@import '../../styles/global';
+
+.product-page-main {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  .product-filter-wrap {
+    flex-basis: 20%;
+    background-color: $grey-color;
+  }
+  .product-page-list-wrap {
+    flex-basis: 80%;
+  }
+}
+@media only screen and (max-width: $tab-max-width) {
+  .product-page-main {
+    .product-filter-wrap {
+      flex-basis: 25%;
+    }
+    .product-page-list-wrap {
+      flex-basis: 75%;
+    }
+  }
+}
+
+@media only screen and (max-width: $mobile-max-width) {
+  .product-page-main {
+    display: block;
+  }
+}

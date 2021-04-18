@@ -1,0 +1,110 @@
+@import '../../styles/global';
+
+header {
+  @extend parentElement;
+  background-color: $white-color;
+}
+
+header {
+  .bg-light {
+    background-color: $white-color !important;
+    @extend headerBoxShadow;
+  }
+}
+
+.logo-wrap {
+  img {
+    width: 10rem;
+  }
+}
+
+.navbar {
+  padding: 0px;
+}
+
+.navbar-nav {
+  list-style: none;
+  margin: 0 5rem;
+  li a {
+    color: $dark-grey-color;
+    font-size: 1rem;
+    font-weight: 800;
+    padding: 0px 10px;
+    text-decoration: none;
+  }
+}
+.navbar-text {
+  padding-bottom: 4.5rem;
+  li a {
+    color: $black-color;
+  }
+}
+.cart-header-wrap {
+  position: absolute;
+  right: 1rem;
+  bottom: 0;
+  background-color: $grey-color;
+  padding: 15px;
+  cursor: pointer;
+  .cart-header-main svg {
+    color: $pink-color;
+  }
+  span {
+    font-weight: 800;
+    font-size: 0.8rem;
+  }
+}
+
+@media only screen and (max-width: $mobile-max-width) {
+  .logo-wrap {
+    img {
+      width: 6rem;
+    }
+  }
+  .navbar {
+    padding: 0.6rem 1rem;
+  }
+  .navbar-nav {
+    margin: 0;
+    li {
+      padding: 5px 0px;
+    }
+  }
+  .navbar-text {
+    padding-bottom: 0px;
+    padding-top: 0px;
+    width: 100%;
+    li {
+      padding: 5px 0px;
+      display: block;
+    }
+  }
+  .navbar-toggler {
+    background-color: $pink-color;
+    border: 1px solid $pink-color;
+    position: absolute;
+    right: 100px;
+    top: 6px;
+    border-radius: 0px;
+    svg {
+      color: $white-color;
+    }
+  }
+
+  .cart-header-wrap {
+    padding: 10px;
+    top: 0px;
+    right: 0px;
+    bottom: auto;
+  }
+}
+.user-info {
+  h5 {
+    display: inline-block;
+    font-weight: 800;
+  }
+  span {
+    display: inline-block;
+    cursor: pointer;
+  }
+}

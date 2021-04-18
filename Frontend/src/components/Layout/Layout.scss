@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css?family=Dosis:400,600,700');
+@import '../../styles/global';
+
+* {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Dosis';
+}
+
+.page-wrap {
+  @extend parentElement;
+  overflow: hidden;
+  min-height: calc(100vh - 44px);
+  padding-top: 106px;
+}
+
+button {
+  &:disabled {
+    opacity: 0.5;
+  }
+}
+
+@media only screen and (max-width: $tab-max-width) {
+  .container {
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width: $mobile-max-width) {
+  .page-wrap {
+    padding-top: 65px;
+  }
+  .cantainer {
+    padding: 0 5px;
+  }
+}
+
+.container-wrap {
+  position: relative;
+}
