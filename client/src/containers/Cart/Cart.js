@@ -51,7 +51,11 @@ function Cart() {
             )}
             {cartItems?.length > 0 && (
               <div className="cart-banner">
-                <img src="static/images/lowest-price.png" alt="lowest-price" />
+                <img
+                  loading="lazy"
+                  src="static/images/lowest-price.png"
+                  alt="lowest-price"
+                />
                 <span>You won't find it cheaper anywhere</span>
               </div>
             )}

@@ -1,0 +1,35 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+.card {
+  display: flex;
+  flex-direction: column;
+  background: white;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  border-bottom: 2px dashed $light-gray-1;
+  margin-bottom: 1rem;
+  &:not(:nth-child(4n)) {
+    box-shadow: 33px 0px 1px -28px $light-gray-1;
+  }
+
+  .title {
+    min-height: 80px;
+  }
+  .description {
+    padding: 0.4rem;
+    font-size: 0.75rem;
+    flex: 1;
+  }
+  &Footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  @include max-width(575px) {
+    .card .title {
+      min-height: unset;
+      margin-bottom: 0.5rem;
+    }
+  }
+}

@@ -14,6 +14,7 @@ function Product({ product, handlecart }) {
       <div className="row h-100">
         <div className="col-sm-5 col-md-12">
           <img
+            loading="lazy"
             className="img-fluid"
             src={product.imageURL}
             alt={product.name}

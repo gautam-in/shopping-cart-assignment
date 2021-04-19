@@ -39,7 +39,11 @@ function Slider() {
             sliders.length > 0 &&
             sliders.map((slider) => (
               <div className="slider" key={slider.id}>
-                <img src={slider.bannerImageUrl} alt={slider.bannerImageAlt} />
+                <img
+                  loading="lazy"
+                  src={slider.bannerImageUrl}
+                  alt={slider.bannerImageAlt}
+                />
               </div>
             ))}
         </div>{" "}

@@ -27,6 +27,7 @@ function Banner() {
           >
             <div className="col-md-6 banner-img">
               <img
+                loading="lazy"
                 className="img-fluid"
                 src={banner.imageUrl}
                 alt={banner.name}

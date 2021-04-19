@@ -4,18 +4,14 @@ import { getBannersStart } from "../Banner/BannerActions";
 
 function Sidebar({ filter, selectedcategory }) {
   const { banners } = useSelector((state) => state.banner);
-
   const dispatch = useDispatch();
+
   useEffect(() => {
     if (!(banners?.length > 0)) {
       dispatch(getBannersStart());
     }
   }, [banners.length]);
 
-  //   filter
-  const handleFilter = (id) => {
-    filter(id);
-  };
   return (
     <div className="sidebar">
       <div>
@@ -37,9 +33,10 @@ function Sidebar({ filter, selectedcategory }) {
             <a
               className={`nav-link ${
                 banner.id === selectedcategory ? "active" : ""
-              }`}
+              } ${banner.key}`}
               key={banner.id}
-              onClick={() => handleFilter(banner.id)}
+              onClick={filter}
+              id={banner.id}
             >
               {banner.name}
             </a>

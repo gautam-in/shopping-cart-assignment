@@ -38,7 +38,7 @@ function Header() {
       <div className="container header-container">
         <div className="header-left">
           <NavLink to="/" className="logo">
-            <img src="static/images/logo.png" alt="" />
+            <img loading="lazy" src="static/images/logo.png" alt="" />
           </NavLink>
         </div>
 
@@ -47,7 +47,7 @@ function Header() {
         )}
         <div className="header-right mobile">
           <NavLink to="/cart" className="nav-link ml-auto">
-            <img src="static/images/cart.svg" alt="" />
+            <img loading="lazy" src="static/images/cart.svg" alt="" />
             {cartItems && cartItems.length > 0 ? cartItems.length : 0} Items
           </NavLink>
           <div className="nav-link" onClick={toggleMenu}>
@@ -102,7 +102,7 @@ function Header() {
               Products
             </NavLink>
             <NavLink to="/cart" className="nav-link ml-auto">
-              <img src="static/images/cart.svg" alt="" />
+              <img loading="lazy" src="static/images/cart.svg" alt="" />
               {cartItems && cartItems.length > 0 ? cartItems.length : 0} Items
             </NavLink>
           </nav>

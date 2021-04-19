@@ -20,14 +20,19 @@ function CartItem({ item }) {
   return (
     <div className="cart-item" key={item.id}>
       <div className="cart-item-image">
-        <img className="img-fluid" src={item.imageURL} alt={item.name} />
+        <img
+          loading="lazy"
+          className="img-fluid"
+          src={item.imageURL}
+          alt={item.name}
+        />
       </div>
       <div className="cart-item-info">
         <div className="cart-item-title">{item.name}</div>
         <div className="cart-item-calculation">
           <Button
             variant="primary"
-            className="button btn-rounded"
+            className="button btn-rounded cart-decrement"
             onClick={handleDecrementItemQty}
             id={item.id}
             disabled={item.count <= 1}
@@ -35,10 +40,10 @@ function CartItem({ item }) {
             -
           </Button>
 
-          <span>{item.count}</span>
+          <span className="cart-qty">{item.count}</span>
           <Button
             variant="primary"
-            className="button btn-rounded"
+            className="button btn-rounded cart-increment"
             onClick={handleIncrementItemQty}
             id={item.id}
           >

@@ -20,4 +20,4 @@ function Index() {
 
 export default Index;
 
-ReactDOM.render(<Index />, document.getElementById("app"));
+ReactDOM.render(<Index />, document.getElementById("root"));

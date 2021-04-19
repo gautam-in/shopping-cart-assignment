@@ -8,7 +8,7 @@ function Products() {
   const [selectedCategory, setSelectedCategory] = useState("");
   const { products = [] } = useSelector((state) => state.product);
   const dispatch = useDispatch();
-  const location = useLocation();
+  // const location = useLocation();
 
   useEffect(() => {
     dispatch(getProductsStart());
@@ -17,15 +17,15 @@ function Products() {
     const params = new URLSearchParams(window.location.search);
     const category = params.get("category");
     if (category) {
-      onFilter(category);
+      setSelectedCategory(category);
     }
   }, [location.pathname]);
 
   const handleCart = (payload) => {
     dispatch(getAddToCartStart(payload));
   };
-  const onFilter = (category) => {
-    setSelectedCategory(category);
+  const onFilter = (e) => {
+    setSelectedCategory(e.target.id);
   };
   return (
     <div className="products-container">
