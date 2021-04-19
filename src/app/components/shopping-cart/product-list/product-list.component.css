@@ -1,0 +1,109 @@
+.border {
+    border-bottom: 2px solid #000;
+    text-shadow: red;
+}
+
+/*Baby*/
+
+.baby {
+    width: 150px;
+    height: auto;
+    float: left;
+}
+
+.baby-info{
+    display: block;
+    float: right;
+    text-align: center;
+}
+
+.baby-btn {
+    font-size: small;
+    margin-top: 10px;
+    color: honeydew;
+    background-color:rgb(155, 9, 9);
+}
+
+/*Bakery*/
+
+.bakery {
+    width: 150px;
+    height: auto;
+    float: right;
+}
+
+.bakery-info{
+    display: block;
+    float: left;
+    text-align: center;
+}
+
+.bakery-btn {
+    font-size: small;
+    margin-top: 10px;
+    color: honeydew;
+    background-color:rgb(155, 9, 9);
+}
+
+/*Beauty*/
+
+.beauty {
+    width: 150px;
+    height: auto;
+    float: right;
+}
+
+.beauty-info{
+    display: block;
+    float: left;
+    text-align: center;
+}
+
+.beauty-btn {
+    font-size: small;
+    margin-top: 10px;
+    color: honeydew;
+    background-color:rgb(155, 9, 9);
+}
+
+/*Beverages*/
+
+.beverages {
+    width: 150px;
+    height: auto;
+    float: right;
+}
+
+.beverages-info{
+    display: block;
+    float: left;
+    text-align: center;
+}
+
+.beverages-btn {
+    font-size: small;
+    margin-top: 10px;
+    color: honeydew;
+    background-color:rgb(155, 9, 9);
+}
+
+/*Fruits*/
+
+.fruits {
+    width: 150px;
+    height: auto;
+    float: left;
+}
+
+.fruits-info{
+    display: block;
+    float: right;
+    text-align: center;
+}
+
+.fruits-btn {
+    font-size: small;
+    margin-top: 10px;
+    color: honeydew;
+    background-color:rgb(155, 9, 9);
+}

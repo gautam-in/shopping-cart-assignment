@@ -1,0 +1,15 @@
+
+
+.filter ul {
+    list-style: none;
+}
+
+.filter ul li a{
+    text-decoration: none;
+    color: grey;
+    font-size: 10px;
+}
+
+.border {    
+    border-bottom: 2px solid grey;
+}

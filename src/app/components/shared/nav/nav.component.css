@@ -1,0 +1,21 @@
+.main-nav {
+    background-color: aqua;
+}
+
+.main-nav ul {
+    float: right;
+    padding-left: 900px;
+}
+
+.main-nav ul li{
+    display: inline-block;
+    padding-top: 15px;
+    padding-left: 10px;
+}
+
+.logo {
+    width: 100px;
+    height: auto;
+    padding-left: 30px;
+    padding-top: 10px;
+}
