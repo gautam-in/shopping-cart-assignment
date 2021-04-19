@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import Card from '../../../components/Card';
-import { allProductsData } from '../../../selector/products';
+import { allProductsData } from '../../../selector';
 import './ProductList.scss';
 
 const ProductList = () => {
