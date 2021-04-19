@@ -1,6 +1,7 @@
 import { Component, Inject, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { IProduct } from 'src/models/product.model';
 import { CartService } from '../../services/cart/cart.service';
 import { EmptyCartComponent } from '../empty-cart/empty-cart.component';
 @Component({
@@ -11,8 +12,7 @@ import { EmptyCartComponent } from '../empty-cart/empty-cart.component';
 export class CartComponent implements OnInit {
   closeModal: string;
 
-  cart: any = 'ad';
-  cartList: any = [];
+  cartList: Array<{}> = [];
   constructor(
     private modalService: NgbModal,
     private _cartService: CartService,
@@ -34,11 +34,11 @@ export class CartComponent implements OnInit {
     });
   }
 
-  addProductsToCart(product) {
+  addProductsToCart(product: IProduct) {
     this._cartService.addProductToCart(product);
   }
 
-  removeProductFromCart(product) {
+  removeProductFromCart(product: IProduct) {
     this._cartService.removeProductsFromCart(product);
   }
 

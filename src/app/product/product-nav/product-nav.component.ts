@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AppService } from 'src/app/shared/services/app.service';
+import { ICategory } from 'src/models/category.model';
 import { ProductService } from '../product.service';
 
 @Component({
@@ -9,8 +10,8 @@ import { ProductService } from '../product.service';
   styleUrls: ['./product-nav.component.scss'],
 })
 export class ProductNavComponent implements OnInit {
-  categoryList: any = [];
-  categories: any = [];
+  categoryList: ICategory[] = [];
+  categories: ICategory[] = [];
   constructor(
     private _appService: AppService,
     private _productService: ProductService,
@@ -31,7 +32,7 @@ export class ProductNavComponent implements OnInit {
     });
   }
 
-  getProductByCategory(id: any) {
+  getProductByCategory(id: String) {
     this._route.navigate(['/products/list', id]);
   }
 }

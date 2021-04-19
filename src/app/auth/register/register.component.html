@@ -1,11 +1,15 @@
 <div class="container">
   <div class="row register-row">
-    <div class="col-lg-6 col-sm-12  LoginRegText">
+    <div class="col-lg-6 col-sm-12 LoginRegText">
       <h1 class="title">Signup</h1>
-      <p class="title-description">We do not share your personal details with anyone.<p>
+      <p class="title-description">
+        We do not share your personal details with anyone.
+      </p>
+      <p></p>
     </div>
+
     <div class="col-lg-6 col-sm-12">
-      <div *ngIf="errorExist" id="error" class="error-msg margin10">
+      <div *ngIf="errorUserExists" id="error" class="error-msg margin10">
         {{ errormsg }}
       </div>
       <form [formGroup]="registrationForm" (submit)="submitRegistrationForm()">
@@ -44,19 +48,19 @@
           />
         </div>
         <div
-        *ngIf="
-          (registrationForm.get('lastName').touched ||
-            registrationForm.get('lastName').dirty) &&
-          registrationForm.get('lastName').invalid
-        "
-        class="error-msg"
-      >
-        {{
-          registrationForm.get("lastName")?.errors.required
-            ? validationMessages.lastName.required
-            : validationMessages.lastName.pattern
-        }}
-      </div>
+          *ngIf="
+            (registrationForm.get('lastName').touched ||
+              registrationForm.get('lastName').dirty) &&
+            registrationForm.get('lastName').invalid
+          "
+          class="error-msg"
+        >
+          {{
+            registrationForm.get("lastName")?.errors.required
+              ? validationMessages.lastName.required
+              : validationMessages.lastName.pattern
+          }}
+        </div>
         <div class="form-group">
           <label for="email" class="bmd-label-floating">Email</label>
           <input
@@ -68,19 +72,18 @@
           />
         </div>
         <div
-        *ngIf="
-          (registrationForm.get('email').touched ||
-            registrationForm.get('email').dirty) &&
-          registrationForm.get('email').invalid
-        "
-        class="error-msg"
-      >
-        {{
-          registrationForm.get("email")?.errors.required
-            ? validationMessages.email.required
-            : validationMessages.email.pattern
-        }}
-      </div>
+          *ngIf="
+            registrationForm.get('email').touched &&
+            registrationForm.get('email').invalid
+          "
+          class="error-msg"
+        >
+          {{
+            registrationForm.get("email")?.errors.required
+              ? validationMessages.email.required
+              : validationMessages.email.pattern
+          }}
+        </div>
         <div class="form-group">
           <label for="password" class="bmd-label-floating">Password</label>
           <input
@@ -92,19 +95,18 @@
           />
         </div>
         <div
-        *ngIf="
-          (registrationForm.get('password').touched ||
-            registrationForm.get('password').dirty) &&
-          registrationForm.get('password').invalid
-        "
-        class="error-msg"
-      >
-        {{
-          registrationForm.get("password")?.errors.required
-            ? validationMessages.password.required
-            : validationMessages.password.pattern
-        }}
-      </div>
+          *ngIf="
+            registrationForm.get('password').touched &&
+            registrationForm.get('password').invalid
+          "
+          class="error-msg"
+        >
+          {{
+            registrationForm.get("password")?.errors.required
+              ? validationMessages.password.required
+              : validationMessages.password.pattern
+          }}
+        </div>
         <div class="form-group">
           <label for="confirmPassword" class="bmd-label-floating"
             >Confirm Password</label
@@ -118,21 +120,23 @@
           />
         </div>
         <div
-        *ngIf="
-          (registrationForm.get('confirmPassword').touched ||
-            registrationForm.get('confirmPassword').dirty) &&
-          registrationForm.get('confirmPassword').invalid
-        "
-        class="error-msg"
-      >
-        {{
-          registrationForm.get("confirmPassword")?.errors.required
-            ? validationMessages.confirmPassword.required
-            : validationMessages.confirmPassword.compare
-        }}
-      </div>
+          *ngIf="
+            (registrationForm.get('confirmPassword').touched ||
+              registrationForm.get('confirmPassword').dirty) &&
+            registrationForm.get('confirmPassword').invalid
+          "
+          class="error-msg"
+        >
+          {{
+            registrationForm.get("confirmPassword")?.errors.required
+              ? validationMessages.confirmPassword.required
+              : validationMessages.confirmPassword.compare
+          }}
+        </div>
 
-        <button type="submit" class="btn btn-danger btn-raised action-btn">Signup</button>
+        <button type="submit" class="btn btn-danger btn-raised action-btn">
+          Signup
+        </button>
       </form>
     </div>
   </div>

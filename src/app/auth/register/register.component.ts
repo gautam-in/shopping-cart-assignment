@@ -9,6 +9,9 @@ import { Router } from '@angular/router';
 import { AppService } from 'src/app/shared/services/app.service';
 import { UserService } from 'src/app/user/user.service';
 import { AuthService } from '../auth.service';
+import{ AppConstants} from 'src/app/constants'
+import { IUser } from 'src/models/user.model';
+
 
 @Component({
   selector: 'app-register',
@@ -20,7 +23,7 @@ export class RegisterComponent implements OnInit {
 
   registrationForm: FormGroup;
   errormsg: string = '';
-  errorExist : boolean = false;
+  errorUserExists : boolean = false;
 
   constructor(
     private _router: Router,
@@ -31,29 +34,29 @@ export class RegisterComponent implements OnInit {
   ) {
     this.validationMessages = {
       firstName: {
-        required: this._authService.REQUIRED_ERROR,
-        pattern: this._authService.NAME_PATTERN_ERROR,
-        minlength: this._authService.NAME_LENGTH_ERROR,
+        required: AppConstants.REQUIRED_ERROR,
+        pattern: AppConstants.NAME_PATTERN_ERROR,
+        minlength: AppConstants.NAME_LENGTH_ERROR,
       },
       lastName: {
-        required: this._authService.REQUIRED_ERROR,
-        pattern: this._authService.NAME_PATTERN_ERROR,
-        minlength: this._authService.NAME_LENGTH_ERROR,
+        required: AppConstants.REQUIRED_ERROR,
+        pattern: AppConstants.NAME_PATTERN_ERROR,
+        minlength: AppConstants.NAME_LENGTH_ERROR,
       },
       email: {
-        required: this._authService.REQUIRED_ERROR,
-        minLength: this._authService.EMAIL_MINLENGTH_ERROR,
-        pattern: this._authService.EMAIL_PATTERN,
+        required: AppConstants.REQUIRED_ERROR,
+        minLength: AppConstants.EMAIL_MINLENGTH_ERROR,
+        pattern: AppConstants.EMAIL_PATTERN,
       },
       password: {
-        required: this._authService.REQUIRED_ERROR,
-        minLength: this._authService.PASSWORD_LENGTH_ERROR,
-        pattern: this._authService.PASSWORD_PATTERN,
+        required: AppConstants.REQUIRED_ERROR,
+        minLength: AppConstants.PASSWORD_LENGTH_ERROR,
+        pattern: AppConstants.PASSWORD_PATTERN,
       },
       confirmPassword: {
-        required: this._authService.REQUIRED_ERROR,
-        minLength: this._authService.PASSWORD_LENGTH_ERROR,
-        compare: this._authService.PASSWORD_COMPARE_ERROR,
+        required: AppConstants.REQUIRED_ERROR,
+        minLength: AppConstants.PASSWORD_LENGTH_ERROR,
+        compare: AppConstants.PASSWORD_COMPARE_ERROR,
       },
     };
   }
@@ -65,14 +68,14 @@ export class RegisterComponent implements OnInit {
           '',
           [
             Validators.required,
-            Validators.pattern(this._authService.NAME_REGEX),
+            Validators.pattern(AppConstants.NAME_REGEX),
           ],
         ],
         lastName: [
           '',
           [
             Validators.required,
-            Validators.pattern(this._authService.NAME_REGEX),
+            Validators.pattern(AppConstants.NAME_REGEX),
           ],
         ],
         email: [
@@ -80,7 +83,7 @@ export class RegisterComponent implements OnInit {
           [
             Validators.required,
             Validators.minLength(8),
-            Validators.pattern(this._authService.EMAIL_REGEX),
+            Validators.pattern(AppConstants.EMAIL_REGEX),
           ],
         ],
         password: [
@@ -88,7 +91,7 @@ export class RegisterComponent implements OnInit {
           [
             Validators.required,
             Validators.minLength(8),
-            Validators.pattern(this._authService.PASSWORD_REGEX),
+            Validators.pattern(AppConstants.PASSWORD_REGEX),
           ],
         ],
         confirmPassword: [
@@ -96,7 +99,7 @@ export class RegisterComponent implements OnInit {
           [
             Validators.required,
             Validators.minLength(8),
-            Validators.pattern(this._authService.PASSWORD_REGEX),
+            Validators.pattern(AppConstants.PASSWORD_REGEX),
           ],
         ],
       },
@@ -113,7 +116,7 @@ export class RegisterComponent implements OnInit {
   }
 
   registerNewUser() {
-    this.errorExist = false;
+    this.errorUserExists = false;
     let existingUser = [];
     let user = this.registrationForm.value;
     if (!this._authService.isUserAlreadyExist(user)) {
@@ -122,22 +125,22 @@ export class RegisterComponent implements OnInit {
         existingUser.push(user);
         this._userService.setUsers('registeredUser', existingUser)
       } else {
-        let newUser: any = [];
+        let newUser: IUser[] = [];
         newUser.push(user);
         this._userService.setUsers('registeredUser', newUser)
       }
       this._router.navigate(['/auth/login']);
     } else {
-      this.errorExist = true;
+      this.errorUserExists = true;
       setTimeout(() => {
-        this.errorExist = false;
+        this.errorUserExists = false;
       }, 5000);
-      this.errormsg = this._authService.USER_EXIST_ERROR;
+      this.errormsg = AppConstants.USER_EXIST_ERROR;
     }
   }
 
-  passwordConfirming(c: AbstractControl): { compare: boolean } {
-    if (c.get('password').value !== c.get('confirmPassword').value) {
+  passwordConfirming(control: AbstractControl): { compare: boolean } {
+    if (control.get('password').value !== control.get('confirmPassword').value) {
       return { compare: true };
     }
   }

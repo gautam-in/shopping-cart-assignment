@@ -9,6 +9,7 @@ import { AppService } from '../shared/services/app.service';
 import { ProductService } from './product.service';
 import { catchError, map } from 'rxjs/operators';
 import { Observable, forkJoin, of } from 'rxjs';
+import { IProduct } from 'src/models/product.model';
 
 @Injectable()
 export class ProductsResolver implements Resolve<Observable<any>> {
@@ -20,7 +21,7 @@ export class ProductsResolver implements Resolve<Observable<any>> {
   resolve(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
-  ): Observable<any> {
+  ): Observable<IProduct[]> {
     this.getProducts();
     return this.getProducts();
   }

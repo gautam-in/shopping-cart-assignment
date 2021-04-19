@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { IProduct } from 'src/models/product.model';
+import { IUser } from 'src/models/user.model';
 import { AuthService } from '../auth/auth.service';
 import { CartComponent } from '../shared/component/cart/cart.component';
 import { EmptyCartComponent } from '../shared/component/empty-cart/empty-cart.component';
@@ -14,9 +16,9 @@ import { UserService } from '../user/user.service';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements OnInit {
-  productsInCart: any;
+  productsInCart: IProduct[] =[];
   isLoggedIn: boolean = false;
-  user: any;
+  user: IUser;
 
   constructor(
     private _modalService: NgbModal,
@@ -55,7 +57,7 @@ export class HeaderComponent implements OnInit {
 
   openCart(): void {
     if (this.productsInCart.length > 0) {
-      this._route.navigate(['app/cart']);
+      this._route.navigate(['/auth/cart']);
     } else {
       this._modalService.open(EmptyCartComponent, {
         ariaLabelledBy: 'cartTitle',

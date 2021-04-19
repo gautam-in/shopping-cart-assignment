@@ -1,17 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { AuthGuard } from './user/auth.guard';
 const routes: Routes = [
-  // {
-  //   path: '',
-  //   redirectTo: 'app',
-  //   pathMatch: 'full',
-  // },
-  // {
-  //   path: 'app',
-  //   loadChildren: () =>
-  //     import('./header/header.module').then((h) => h.HeaderModule),
-  // },
   {
     path: '',
     redirectTo: 'auth',
@@ -31,10 +22,10 @@ const routes: Routes = [
     canActivate: [AuthGuard],
     loadChildren: () => import(`../app/product/product.module`).then(m => m.ProductModule)
   },
-  // {
-  //   path: '404', component: PageNotFoundComponent
-  // },
-  // { path: '**', redirectTo: '404' }
+  {
+    path: '404', component: PageNotFoundComponent
+  },
+  { path: '**', redirectTo: '404' }
 ];
 
 @NgModule({

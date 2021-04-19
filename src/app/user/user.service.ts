@@ -2,17 +2,18 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
+import { IUser } from 'src/models/user.model';
 import { AppService } from '../shared/services/app.service';
 
 @Injectable({
   providedIn: 'root',
 })
 export class UserService {
-  currentUser: any;
+  currentUser: IUser;
   currentUserEmail: any;
   redirectUrl: string;
-  id: any;
-  existingUsers: any;
+  id: String;
+  existingUsers: IUser[];
 
   private user = new BehaviorSubject<boolean>(false);
   public getUser = this.user.asObservable();
@@ -33,7 +34,7 @@ export class UserService {
     return JSON.parse(this._appService.getLocalItem('registeredUser'));
   }
 
-  getLoggedInUser(user): any {
+  getLoggedInUser(user : IUser): any {
     let exist = false;
     this.existingUsers = this.getRegisteredUsers();
     if (this.existingUsers && this.existingUsers != null) {
@@ -48,7 +49,7 @@ export class UserService {
     return exist;
   }
 
-  setLoggedInUser(user): any{
+  setLoggedInUser(user : IUser): any{
    this._appService.setLocalItem('loggedInUser' , JSON.stringify(user))
   }
 

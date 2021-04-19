@@ -2,16 +2,14 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { AppService } from '../shared/services/app.service';
 import { CartService } from '../shared/services/cart/cart.service';
-import { ProductModule } from './product.module';
+import { IProduct } from '../../models/product.model';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ProductService {
   product: any = [];
-  productId: any;
   category: any = [];
-  result: any = [];
   itemInCart: any = [];
 
   product_server_url = 'server/products/index.get.json';
@@ -23,7 +21,7 @@ export class ProductService {
     private _cartService: CartService
   ) {}
 
-  addProductToCart(product) {
+  addProductToCart(product: IProduct) {
     this.itemInCart = JSON.parse(this._appService.getLocalItem('cartItem'));
     if (this.itemInCart && this.itemInCart != null) {
       this.itemInCart.push(product);
@@ -32,7 +30,7 @@ export class ProductService {
         JSON.stringify(this.itemInCart)
       );
     } else {
-      let y: any = [];
+      let y: IProduct[] = [];
       y.push(product);
       this._appService.setLocalItem('cartItem', JSON.stringify(y));
     }

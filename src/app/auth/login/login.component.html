@@ -7,7 +7,7 @@
       </p>
     </div>
     <div class="col-lg-6 col-sm-12 col-md-12">
-      <div *ngIf="errorExist" id="error" class="error-msg margin10">
+      <div *ngIf="errorUserExists" id="error" class="error-msg margin10">
         {{ errormsg }}
       </div>
       <form [formGroup]="loginForm" (submit)="submitLoginForm()">
@@ -25,13 +25,12 @@
         </div>
         <div
           *ngIf="
-            (loginForm.get('email').touched || loginForm.get('email').dirty) &&
-            loginForm.get('email').invalid
+            loginForm.get('email').touched && loginForm.get('email').invalid
           "
           class="error-msg"
         >
           {{
-            loginForm.get('email')?.errors.required
+            loginForm.get("email")?.errors.required
               ? validationMessages.email.required
               : validationMessages.email.pattern
           }}
@@ -47,14 +46,15 @@
             ngDefaultControl
           />
         </div>
-        <div *ngIf="
-            (loginForm.get('password').touched ||
-              loginForm.get('password').dirty) &&
-            loginForm.get('password').invalid"
+        <div
+          *ngIf="
+            loginForm.get('password').touched &&
+            loginForm.get('password').invalid
+          "
           class="error-msg"
         >
           {{
-            loginForm.get('password')?.errors.required
+            loginForm.get("password")?.errors.required
               ? validationMessages.password.required
               : validationMessages.password.pattern
           }}

@@ -5,6 +5,7 @@ import { CartComponent } from 'src/app/shared/component/cart/cart.component';
 import { AppService } from 'src/app/shared/services/app.service';
 import { ProductService } from '../product.service';
 import { CartService } from 'src/app/shared/services/cart/cart.service';
+import { IProduct } from 'src/models/product.model';
 
 @Component({
   selector: 'app-products',
@@ -12,8 +13,8 @@ import { CartService } from 'src/app/shared/services/cart/cart.service';
   styleUrls: ['./products.component.scss'],
 })
 export class ProductsComponent implements OnInit {
-  product: any = [];
-  finalProduct: any = [];
+  product: IProduct[] = [];
+  finalProduct:  IProduct[] = [];
 
   constructor(
     private _activatedroute: ActivatedRoute,
@@ -34,7 +35,7 @@ export class ProductsComponent implements OnInit {
     }
   }
 
-  buildProductArr(product: any): any {
+  buildProductArr(product:  IProduct[]): any {
     let result = [];
     for (var i = 0; i < product.length; i += 4) {
       var row = [];
@@ -50,7 +51,7 @@ export class ProductsComponent implements OnInit {
     return result;
   }
 
-  buyProduct(product: any) {
+  buyProduct(product: IProduct) {
     this._cartService.addProductToCart(product);
   }
 }

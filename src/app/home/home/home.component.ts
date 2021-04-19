@@ -2,6 +2,8 @@ import { HttpClient } from '@angular/common/http';
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AppService } from 'src/app/shared/services/app.service';
+import { IBanner } from 'src/models/banner.model';
+import { ICategory } from 'src/models/category.model';
 
 @Component({
   selector: 'app-home',
@@ -9,9 +11,8 @@ import { AppService } from 'src/app/shared/services/app.service';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
-  @Input() category: any;
-  categories: any = [];
-  banners: any = [];
+  categories: ICategory[] = [];
+  banners: IBanner[] = [];
 
   constructor(private _route: Router, private _appService: AppService) {}
 
@@ -21,10 +22,10 @@ export class HomeComponent implements OnInit {
   }
 
   fetchCategories() {
-    this._appService.getCatagories().subscribe((data) => {
-      data.forEach((x) => {
-        if (x.enabled) {
-          this.categories.push(x);
+    this._appService.getCatagories().subscribe((Categories) => {
+      Categories.forEach((category) => {
+        if (category.enabled) {
+          this.categories.push(category);
         }
       });
       this.categories = this.categories.sort((a, b) => {
@@ -33,7 +34,7 @@ export class HomeComponent implements OnInit {
     });
   }
 
-  exploreProduct(id: any): void {
+  exploreProduct(id: String): void {
     this._route.navigate(['/products/list', id]);
   }
 

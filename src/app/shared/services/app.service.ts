@@ -31,11 +31,6 @@ export class AppService {
     return this.http.get<IProduct[]>(productsUrl);
   }
 
-  // postProductToCart(productId: string): Observable<ICartResponse> {
-  //   const addToCartUrl = `${this.baseUrl}/addToCart`;
-  //   return this.http.post<ICartResponse>(addToCartUrl, productId);
-  // }
-
   getLocalItem(key: string): any {
     return localStorage.getItem(key) || null;
   }

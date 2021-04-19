@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AppService } from 'src/app/shared/services/app.service';
+import { IBanner } from 'src/models/banner.model';
 
 @Component({
   selector: 'app-carousel',
@@ -7,7 +8,7 @@ import { AppService } from 'src/app/shared/services/app.service';
   styleUrls: ['./carousel.component.scss'],
 })
 export class CarouselComponent implements OnInit {
-  bannerList: any = [];
+  bannerList: IBanner[] = [];
   isErrorOccured: boolean = false;
   constructor(private _appService: AppService) {}
 

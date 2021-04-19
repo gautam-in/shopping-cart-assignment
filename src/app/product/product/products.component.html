@@ -13,14 +13,14 @@
                 <img
                   class="card-img-top product-img small-screen"
                   src="{{ product?.imageURL }}"
-                  alt="Card image cap"
+                  alt="{{product?.name}}"
                 />
                 <p class="card-text product-description small-screen">
                   {{ product?.description }}
                 </p>
               </div>
               <div class="product-footer">
-                <h2 class="product-price">MRP Rs.{{ product?.price }}</h2>
+                <h2 class="product-price">MRP Rs.{{ product?.price | currency: "Rs "}}</h2>
                 <button
                   (click)="buyProduct(product)"
                   class="btn btn-danger btn-raised product-buy"

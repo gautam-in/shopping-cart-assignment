@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AppService } from 'src/app/shared/services/app.service';
 import { AuthService } from '../auth.service';
+import{ AppConstants} from 'src/app/constants'
 
 @Component({
   selector: 'app-login',
@@ -13,7 +14,7 @@ export class LoginComponent implements OnInit {
   loginForm: FormGroup;
   existingUser: object = [];
   errormsg: string = '';
-  errorExist: boolean = false;
+  errorUserExists: boolean = false;
 
   validationMessages: { [key: string]: { [key: string]: string } };
 
@@ -25,14 +26,14 @@ export class LoginComponent implements OnInit {
   ) {
     this.validationMessages = {
       email: {
-        required: this._authService.REQUIRED_ERROR,
-        minLength: this._authService.EMAIL_MINLENGTH_ERROR,
-        pattern: this._authService.EMAIL_PATTERN,
+        required: AppConstants.REQUIRED_ERROR,
+        minLength: AppConstants.EMAIL_MINLENGTH_ERROR,
+        pattern: AppConstants.EMAIL_PATTERN,
       },
       password: {
-        required: this._authService.REQUIRED_ERROR,
-        minLength: this._authService.PASSWORD_LENGTH_ERROR,
-        pattern: this._authService.PASSWORD_PATTERN,
+        required: AppConstants.REQUIRED_ERROR,
+        minLength: AppConstants.PASSWORD_LENGTH_ERROR,
+        pattern: AppConstants.PASSWORD_PATTERN,
       },
     };
   }
@@ -44,7 +45,7 @@ export class LoginComponent implements OnInit {
         [
           Validators.required,
           Validators.minLength(8),
-          Validators.pattern(this._authService.EMAIL_REGEX),
+          Validators.pattern(AppConstants.EMAIL_REGEX),
         ],
       ],
       password: [
@@ -52,32 +53,32 @@ export class LoginComponent implements OnInit {
         [
           Validators.required,
           Validators.minLength(8),
-          Validators.pattern(this._authService.PASSWORD_REGEX),
+          Validators.pattern(AppConstants.PASSWORD_REGEX),
         ],
       ],
     });
   }
 
   submitLoginForm(): void {
-    this.errorExist = false;
+    this.errorUserExists = false;
     let user = this.loginForm.value;
     if (this.loginForm.valid) {
       let status = this._authService.isLoggedInUser(user);
-      if (status == '2') {
+      if (status == 'validUser') {
         this._router.navigate(['/home']);
       } else {
-        if (status == '0') {
-          this.errormsg = this._authService.INVALID_ACCOUNT_ERROR;
+        if (status == 'wrongEmail') {
+          this.errormsg = AppConstants.INVALID_ACCOUNT_ERROR;
         } else {
-          this.errormsg = this._authService.PASSWORD_MATCH_ERROR;
+          this.errormsg = AppConstants.PASSWORD_MATCH_ERROR;
         }
-        this.errorExist = true;
+        this.errorUserExists = true;
         setTimeout(() => {
-          this.errorExist = false;
+          this.errorUserExists = false;
         }, 5000);
       }
     } else {
-      this.errorExist = false;
+      this.errorUserExists = false;
       this._authService.validateAllFormFields(this.loginForm);
     }
   }
