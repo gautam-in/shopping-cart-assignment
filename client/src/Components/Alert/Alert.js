@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import { useState, useEffect } from 'react'
 import { useDispatch } from "react-redux";
 import { alertActions } from "../../_actions";
@@ -6,6 +6,7 @@ import { alertActions } from "../../_actions";
 const Alert = ({ type, children }) => {
     const [show, setShow] = useState(true);
     const dispatch = useDispatch();
+    const errorRef = useRef(null);
 
     useEffect(() => {
         const timeId = setTimeout(() => {
@@ -19,9 +20,15 @@ const Alert = ({ type, children }) => {
         }
     }, []);
 
+    useEffect(() => {
+        if (show) {
+            errorRef.current.focus();
+        }
+    }, [show])
+
     return (
         show ?
-            <div className={`alert ${type}`}>
+            <div className={`alert ${type}`} tabIndex="-1" ref={errorRef}>
                 {children}
             </div>
             :

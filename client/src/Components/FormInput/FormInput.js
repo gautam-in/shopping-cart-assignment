@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 
 import "./FormInput.scss";
 
@@ -11,6 +11,15 @@ const FormInput = ({
   name,
   ...otherProps
 }) => {
+
+  const errorRef = useRef(null);
+
+  useEffect(() => {
+    if (errors[name] != undefined && name == Object.keys(errors)[0]) {
+      errorRef.current.focus();
+    }
+  }, [errors])
+
   return (
     <div className="group">
       <input
@@ -31,7 +40,7 @@ const FormInput = ({
           {label}{" "}
         </label>
       ) : null}
-      {errors[name] && <p role="alert" className="error-message">{errors[name]}</p>}
+      {errors[name] && <div role="alert" className="error-message" tabIndex="-1" ref={errorRef} >{errors[name]}</div>}
     </div>
   );
 };
