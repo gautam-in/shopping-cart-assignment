@@ -1,0 +1,13 @@
+@import '../../styles/global';
+
+.footer-wrap {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background-color: $grey-color;
+  padding: 10px 0px;
+  p {
+    font-weight: 800;
+    margin: auto 0;
+  }
+}

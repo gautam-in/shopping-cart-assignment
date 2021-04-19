@@ -1,0 +1,41 @@
+@import '../../styles/global';
+
+.header-wrap {
+  @extend parentElement;
+  background-color: $white-color;
+}
+
+header {
+  .bg-light {
+    background-color: $white-color !important;
+    @extend headerBoxShadow;
+  }
+}
+
+.navbar-nav {
+  list-style: none;
+  li a {
+    color: $black-color;
+    font-size: 1rem;
+    font-weight: 800;
+    padding: 0px 10px;
+    text-decoration: none;
+  }
+}
+.navbar-text {
+  padding-bottom: 4.5rem;
+}
+.cart-header-wrap {
+  position: absolute;
+  right: 6rem;
+  bottom: 1rem;
+  background-color: $grey-color;
+  padding: 15px;
+  .cart-header-main svg {
+    color: $pink-color;
+  }
+  span {
+    font-weight: 800;
+    font-size: 0.8rem;
+  }
+}

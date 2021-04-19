@@ -1,0 +1,14 @@
+@import './variable';
+@import './mixins';
+@import './extends';
+
+.clearfix {
+  @include clearfix();
+}
+
+.page-wrap {
+  @extend parentElement;
+  overflow: hidden;
+  min-height: calc(100vh - 44px);
+  padding-top: 115px;
+}
