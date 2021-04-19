@@ -14,17 +14,15 @@ export class UserService {
   id: any;
   existingUsers: any;
 
-  private user = new BehaviorSubject<any>('');
-  getUser = this.user.asObservable();
+  private user = new BehaviorSubject<boolean>(false);
+  public getUser = this.user.asObservable();
 
   setUser(u: any) {
     this.user.next(u);
   }
 
   constructor(
-    private _httpService: HttpClient,
-    private _routerService: Router,
-    private _appService: AppService
+    private _appService: AppService,
   ) {}
 
   isLoggedIn(): boolean {
@@ -58,11 +56,6 @@ export class UserService {
    return this._appService.getLocalItem('loggedInUser')
   }
 
-  logout(): void {
-    this.currentUser = null;
-    this._appService.removeLocalItem('loggedInUser');
-    this._routerService.navigateByUrl('/auth/login');
-  }
 
   setUsers(key, value) {
     this._appService.setLocalItem(key, JSON.stringify(value));

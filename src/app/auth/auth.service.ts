@@ -1,6 +1,7 @@
 import { HttpClient, JsonpClientBackend } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 import { AppService } from '../shared/services/app.service';
 import { UserService } from '../user/user.service';
 
@@ -52,7 +53,9 @@ export class AuthService {
   constructor(
     private _http: HttpClient,
     private _appService: AppService,
-    private _userService: UserService
+    private _userService: UserService,
+    private _router : Router
+
   ) {}
 
   validateAllFormFields(formGroup: FormGroup) {
@@ -94,6 +97,7 @@ export class AuthService {
         if (accountExist.password == user.password) {
           status = '2';
           this._userService.setLoggedInUser(accountExist)
+          this.isUserAuthenticated();
         } else {
           status = '1';
         }
@@ -102,5 +106,21 @@ export class AuthService {
       }
     }
     return status;
+  }
+
+  logout(): void {
+    this._appService.removeLocalItem('loggedInUser');
+    this.isUserAuthenticated();
+    this._router.navigateByUrl('/auth/login');
+  }
+
+  isUserAuthenticated(){
+    console.log("isUserAuthenticated called ==")
+    if(this._userService.getSignedInUser()){
+      this._userService.setUser(true)
+    }else{
+      this._userService.setUser(false)
+    }
+
   }
 }

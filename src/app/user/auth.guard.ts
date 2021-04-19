@@ -3,11 +3,8 @@ import {
   CanActivate,
   ActivatedRouteSnapshot,
   RouterStateSnapshot,
-  UrlTree,
   Router,
-  Route,
 } from '@angular/router';
-import { Observable } from 'rxjs';
 import { UserService } from './user.service';
 
 @Injectable({
@@ -19,33 +16,19 @@ export class AuthGuard implements CanActivate {
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
-  ):
-    | Observable<boolean | UrlTree>
-    | Promise<boolean | UrlTree>
-    | boolean
-    | UrlTree {
+  ): boolean {
     if (this.checkLoggedIn(state.url)) {
-      console.log("CAN ACTIAVTE CALLED ===========")
-      this.router.navigate(['/home']);
+      return true;
+    } else {
+      this.router.navigate(['/auth/login']);
       return false;
     }
-    return true;
   }
 
-  canActivateChild(
-    route: ActivatedRouteSnapshot,
-    state: RouterStateSnapshot
-  ): boolean {
-    return this.checkLoggedIn(state.url);
-  }
-
-  canLoad(route: Route): boolean {
-    return this.checkLoggedIn(route.path);
-  }
-
-  checkLoggedIn(url: string): boolean {
-    if (this._userService.isLoggedIn()) {
-      return true;
+  checkLoggedIn(url: string): any {
+   
+    if(this._userService.getSignedInUser()){
+      return true
     }
     return false;
   }

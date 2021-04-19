@@ -31,7 +31,7 @@
           class="error-msg"
         >
           {{
-            loginForm.get('email')?.errors?.required
+            loginForm.get('email')?.errors.required
               ? validationMessages.email.required
               : validationMessages.email.pattern
           }}
@@ -54,7 +54,7 @@
           class="error-msg"
         >
           {{
-            loginForm.get('password')?.errors?.required
+            loginForm.get('password')?.errors.required
               ? validationMessages.password.required
               : validationMessages.password.pattern
           }}

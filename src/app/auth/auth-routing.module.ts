@@ -24,20 +24,6 @@ const routes: Routes = [
       },
     ],
   },
-  // {
-  //   path: 'home',
-  //  // canActivate: [AuthGuard],
-  //   loadChildren: () =>
-  //     import('../home/home.module').then((module) => module.HomeModule),
-  // },
-  // {
-  //   path: 'product',
-  //  // canActivate: [AuthGuard],
-  //   loadChildren: () =>
-  //     import('../product/product.module').then(
-  //       (module) => module.ProductModule
-  //     ),
-  // },
   {
     path: 'cart',
     loadChildren: () =>

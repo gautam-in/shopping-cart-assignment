@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { AuthService } from '../auth/auth.service';
 import { CartComponent } from '../shared/component/cart/cart.component';
 import { EmptyCartComponent } from '../shared/component/empty-cart/empty-cart.component';
 import { AppService } from '../shared/services/app.service';
@@ -21,28 +22,35 @@ export class HeaderComponent implements OnInit {
     private _modalService: NgbModal,
     private _cartService: CartService,
     private _route: Router,
-    private _userService: UserService
-  ) {}
+    private _userService: UserService,
+    private _authService: AuthService
+  ) {
+
+  }
 
   ngOnInit(): void {
     this.getUser();
     this._cartService.getCartList.subscribe((item) => {
       this.productsInCart = item;
     });
+
+     this._userService.getUser.subscribe(user=>{
+      this.isLoggedIn = user
+    })
   }
 
   getUser() {
-    // this._userService.getUser.subscribe((u) => {
-    //   this.user = u;
-    // });
-    this.user= this._userService.getSignedInUser()
-    if (this.user !== '' || this.user != null) {
+    this.user = this._userService.getSignedInUser();
+    if (this.user) {
       this.isLoggedIn = true;
     }
+   
   }
 
   logoutUser() {
-    this._userService.logout();
+    this.isLoggedIn = false;
+    this._authService.logout();
+    
   }
 
   openCart(): void {
