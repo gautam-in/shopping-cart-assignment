@@ -1,0 +1,40 @@
+<header class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container main-container">
+        
+        <div class="navbar-brand">
+            <img src="/assets/img/logo_2x.png" class="logo-image" alt="Sabka bazaar" />
+        </div>
+
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav nav-bar-left">
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="['home']" [routerLinkActive]="['active']">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="['product']" [routerLinkActive]="['active']">Products</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="end-container">
+            <ul class="navbar-nav nav-bar-right">
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="['login']" [routerLinkActive]="['active']">SignIn</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="['signup']" [routerLinkActive]="['active']">Register</a>
+                </li>
+            </ul>
+        </div>
+
+        <button aria-label="cart" class="cart" (click)="openCart()">
+            <img src="/assets/img/cart.svg" alt="cart" class="cart-logo" />
+            <a data-target="#cartModal">{{ productsInCart.length >= 1 ? productsInCart.length : 0 }} items</a>
+        </button>
+    </div>
+</header>
+<router-outlet></router-outlet>
+
+<footer class="footer">
+    CopyRight @ 2011-2018 Sabka Bazzar Grocery Supplies Pvt Ltd
+</footer>

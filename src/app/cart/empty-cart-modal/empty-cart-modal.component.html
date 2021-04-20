@@ -1,0 +1,35 @@
+<div class="modal-header" role="dialog" aria-labelledby="cartTitle">
+    <p class="modal-title" id="cartTitle">My Cart</p>
+    <button
+      class="close"
+      aria-label="Close"
+      (click)="resetCart(); modal.dismiss('Cross click')"
+      aria-label="Close Cart Popup"
+    >
+      &times;
+    </button>
+  </div>
+  
+  <div class="modal-body">
+    <div class="cart-body">
+      <p class="no-items main-heading" aria-level="1" role="heading">
+        No items in your cart
+      </p>
+      <p>You favourite items are just a click away</p>
+    </div>
+  </div>
+  
+  <div class="modal-footer">
+    <section class="footer-section">
+      <button
+        type="button"
+        class="btn action-btn"
+        data-dismiss="modal"
+        (click)="startShopping(); modal.close('Save click')"
+        aria-label="Start Shopping"
+      >
+        Start Shopping
+      </button>
+    </section>
+  </div>
+  

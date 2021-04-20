@@ -1,0 +1,26 @@
+@import "../../../assets/scss/color.scss";
+
+.modal-header {
+  background-color: $black;
+  color: $white;
+  .close {
+    background-color: $black;
+    border: none;
+    color: $white;
+    font-size: 25px;
+    border: none;
+  }
+}
+.modal-body {
+  height: 500px;
+  background-color: $grey;
+  .cart-body {
+    text-align: center;
+    margin-top: 30%;
+  }
+}
+.modal-footer {
+  .footer-section {
+    width: 100%;
+  }
+}

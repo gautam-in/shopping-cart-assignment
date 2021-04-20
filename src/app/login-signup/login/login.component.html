@@ -1,0 +1,43 @@
+<div class="container">
+    <div class="row login-row">
+        <div class="col-lg-6 col-sm-12 col-md-12 LoginRegText">
+            <h1 class="title">Login</h1>
+            <p class="title-description">Get access to your Orders, Wishlist and Recommendations</p>
+        </div>
+        <div class="col-lg-6 col-sm-12 col-md-12">
+            <form [formGroup]="loginForm" (submit)="submitLoginForm()">
+                <div class="form-group">
+                    <label for="email" class="bmd-label-floating">Email</label>
+                    <input type="email" class="form-control" formControlName="email" id="email" />
+                </div>
+                <div *ngIf="
+              (loginForm.get('email').touched || loginForm.get('email').dirty) &&
+              loginForm.get('email').invalid
+            " class="error-msg">
+                    {{
+                    loginForm.get("email")?.errors?.required
+                    ? validationMessages.email.required
+                    : validationMessages.email.pattern
+                    }}
+                </div>
+                <div class="form-group">
+                    <label for="password" class="bmd-label-floating">Password</label>
+                    <input type="password" class="form-control" id="password" formControlName="password" />
+                </div>
+                <div *ngIf="
+              (loginForm.get('password').touched ||
+                loginForm.get('password').dirty) &&
+              loginForm.get('password').invalid
+            " class="error-msg">
+                    {{
+                    loginForm.get("password")?.errors?.required
+                    ? validationMessages.password.required
+                    : validationMessages.password.pattern
+                    }}
+                </div>
+                <div *ngIf="loginError" class="error-msg">{{headerService.INVALID_EMAIL_PASSWORD}}</div>
+                <button aria-label="Login" type="submit" class="btn btn-danger btn-raised action-btn">Login</button>
+            </form>
+        </div>
+    </div>
+</div>
