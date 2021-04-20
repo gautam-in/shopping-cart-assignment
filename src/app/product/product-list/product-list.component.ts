@@ -28,9 +28,9 @@ export class ProductListComponent implements OnInit {
         this.fetchProductList(
           this._activatedroute.snapshot.data['productDetail'], categoryId
         );
-        this.isFilterApplied = true;
+        this.isFilterApplied = true; 
       } else {
-        this.isFilterApplied = false;
+        this.isFilterApplied = null;
         this.fetchAllProduct(this._activatedroute.snapshot.data['productDetail']);
       }
       this.fetchCategories(this._activatedroute.snapshot.data['productDetail']);
@@ -81,11 +81,11 @@ export class ProductListComponent implements OnInit {
   }
 
   getProductByCategory(id: any) {
-    this._appService.activeCategoryId = id;
     if(this._appService.activeCategoryId === id) {
       this.isFilterApplied = !this.isFilterApplied;
     }
-    if(this.isFilterApplied) {
+    this._appService.activeCategoryId = id;
+    if(this.isFilterApplied || this.isFilterApplied === null) {
       this._route.navigate(['SabkaBaZaar/product/list', id]);
     } else {
       this._route.navigate(['SabkaBaZaar/product']);

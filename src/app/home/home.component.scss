@@ -2,15 +2,18 @@
 
 .banner {
     box-shadow: 0 8px 6px -6px #d8d8d8;
-    margin: 0 15%;
     .banner-image {
       width: 100%;
       height: inherit;
     }
   }
 
+  .name-des {
+    text-align: center;
+    font-size: 0.85rem;
+  }
+
   .category {
-    margin: 0 10rem;
     .category-row {
       box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.1);
       text-align-last: center;
@@ -22,9 +25,6 @@
       .description {
         padding-bottom: 5px;
         .category-body {
-          .name-des {
-            text-align: center;
-          }
           button {
             text-align: center;
           }
@@ -61,7 +61,7 @@
     }
   
     .name-des {
-      font-size: 13px;
+      font-size: 0.85rem;
     }
   }
   
@@ -85,7 +85,7 @@
     }
   
     .name-des {
-      font-size: 10px;
+      font-size: 0.85rem;
     }
     .action-btn {
       font-size: 0.7rem;
