@@ -1,6 +1,10 @@
 <div class="container main-container">
 
-    <ngb-carousel>
+    <ngb-carousel [showNavigationArrows]="true" 
+    [showNavigationIndicators]="true"
+    interval="10000"
+    [keyboard]="true"
+    [wrap]="true">
         <ng-template ngbSlide *ngFor="let banner of bannerList; let i = index">
             <div class="picsum-img-wrapper banner">
                 <img class="banner-image" src="assets{{ banner.bannerImageUrl }}" alt="{{ banner.bannerImageAlt }}"
@@ -19,7 +23,7 @@
                 <div class="category-body">
                     <p class="main-heading">{{ category.name }}</p>
                     <p class="name-des">{{ category.description }}</p>
-                    <button type="button" class="btn btn-danger action-btn" (click)="exploreProduct(category.id)">
+                    <button attr.aria-label="Explore {{ category.key }}" type="button" class="btn btn-danger action-btn" (click)="exploreProduct(category.id)">
                         Explore {{ category.key }}
                     </button>
                 </div>

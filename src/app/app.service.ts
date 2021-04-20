@@ -14,6 +14,7 @@ export class AppService {
   product: any = [];
   category: any = [];
   itemInCart: any = [];
+  activeCategoryId: any;
   private items = new BehaviorSubject<any>([]);
   getCartList = this.items.asObservable();
 
@@ -73,8 +74,8 @@ export class AppService {
   }
 
   addToCart(product) {
-    this.getSubscribedCartList();
-
+    this.addProductToCart(product);
+    // this.getSubscribedCartList();
     if (this.itemInCart != null && this.itemInCart.length > 0) {
       this.itemInCart.forEach((element) => {
         if (element.id == product.id && element.count) {
@@ -110,6 +111,7 @@ export class AppService {
         );
       } else if (element.id == product.id) {
         this.itemInCart.pop(element);
+        
       }
       this.getTotalAmount();
     });

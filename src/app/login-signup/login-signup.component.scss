@@ -1,6 +1,6 @@
 @import "../../assets/scss/color.scss";
 
-nav {
+header {
   max-height: 20rem;
   width: auto;
   .navbar-brand {
@@ -11,17 +11,22 @@ nav {
     }
   }
   .nav-bar-left {
-    margin-left: 15rem;
+    flex-direction: row  !important;
+    // margin-left: 15rem;
   }
 
   .nav-bar-right {
-    margin-right: 5rem;
+    flex-direction: row  !important;
+    // margin-right: 5rem;
+  }
+
+  .nav-item {
+    margin-left: 10px;
   }
 }
 
 .active {
-  background-color: $mergenta;
-  color: $grey;
+  color: $mergenta !important;
 }
 
 .main-container {
@@ -43,8 +48,9 @@ nav {
     background-color: $grey;
     width: 8rem;
     height: 4rem;
-    right: 9rem;
+    right: 3rem;
     bottom: -7px;
+    border: none !important;
 
     a {
       color: black;
@@ -66,7 +72,7 @@ nav {
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
-  nav {
+  header {
     max-height: 20rem;
     width: auto;
     .navbar-brand {
@@ -76,20 +82,39 @@ nav {
         height: inherit;
       }
     }
+    .nav-bar-left {
+      flex-direction: row  !important;
+      margin-left: 0;
+    }
   }
   .footer {
     font-size: 10px;
     padding: 5px 5px 5px 25px;
   }
+  .cart {
+    height: 2rem !important;
+    right: 0 !important;
+  }
 }
 
-/* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (max-width: 600px) {
+@media only screen and (min-width: 300px) {
+  .navbar-expand-lg .navbar-collapse {
+    display: flex !important;
+    flex-wrap: nowrap;
+    flex-basis: auto;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 768px) {
+  .cart {
+    height: 3rem !important;
+    right: 0 !important;
+  }
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (max-width: 768px) {
-  nav {
+  header {
     margin: 0;
     .navbar-brand {
       margin-left: 0;
@@ -102,24 +127,12 @@ nav {
   .main-container {
     .end-container {
       position: relative;
-      right: 0;
+      right: 12px;
       bottom: 0;
-      .nav-bar-right {
-        display: inline-block;
-      }
-    }
-
-    .cart {
-      height: 3rem;
-      right: -2rem;
+      // .nav-bar-right {
+      //   display: inline-block;
+      // }
     }
   }
 }
 
-/* Large devices (laptops/desktops, 992px and up) */
-@media only screen and (max-width: 992px) {
-}
-
-/* Extra large devices (large laptops and desktops, 1200px and up) */
-@media only screen and (min-width: 1200px) {
-}

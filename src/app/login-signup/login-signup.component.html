@@ -1,10 +1,11 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<header class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container main-container">
+        
         <div class="navbar-brand">
             <img src="/assets/img/logo_2x.png" class="logo-image" alt="Sabka bazaar" />
         </div>
 
-        <div class="collapse navbar-collapse" id="navbarNav">
+        <div class="collapse navbar-collapse">
             <ul class="navbar-nav nav-bar-left">
                 <li class="nav-item">
                     <a class="nav-link" [routerLink]="['home']" [routerLinkActive]="['active']">Home</a>
@@ -14,6 +15,7 @@
                 </li>
             </ul>
         </div>
+
         <div class="end-container">
             <ul class="navbar-nav nav-bar-right">
                 <li class="nav-item">
@@ -24,14 +26,15 @@
                 </li>
             </ul>
         </div>
-        <div class="cart" (click)="openCart()">
+
+        <button aria-label="cart" class="cart" (click)="openCart()">
             <img src="/assets/img/cart.svg" alt="cart" class="cart-logo" />
             <a data-target="#cartModal">{{ productsInCart.length >= 1 ? productsInCart.length : 0 }} items</a>
-        </div>
+        </button>
     </div>
-</nav>
+</header>
 <router-outlet></router-outlet>
 
-<div class="footer">
+<footer class="footer">
     CopyRight @ 2011-2018 Sabka Bazzar Grocery Supplies Pvt Ltd
-</div>
+</footer>

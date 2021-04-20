@@ -12,7 +12,7 @@
 
 .product-card {
   width: 13rem;
-  height: 410px;
+  height: 470px;
   //border: 0;
   border-bottom: 1px dotted $grey;
   .product-body {
@@ -25,11 +25,12 @@
       margin-bottom: 1rem;
     }
     .product-description {
-      height: 5rem;
+      height: 10rem;
       background-color: $grey;
       font-size: 0.7rem;
       padding: 8px 7px;
       overflow: hidden;
+      margin-bottom: 5px;
     }
     .product-footer {
       margin-bottom: 3rem;
@@ -61,7 +62,7 @@
 
   .product-card {
     width: 20rem;
-    height: 245px;
+    height: 265px;
     .product-body {
       .product-title {
         height: 2.5rem;
@@ -71,7 +72,7 @@
         width: 8rem;
       }
       .product-description {
-        height: 8rem;
+        height: 10rem;
       }
     }
   }
@@ -139,9 +140,9 @@
         width: 9rem;
       }
       .product-description {
-        height: 4rem;
-        margin-top: 30px;
-        margin-right: 0rem;
+        height: 8rem;
+        width: 14rem;
+        margin-left: 5px;
       }
     }
   }
@@ -182,4 +183,14 @@
     font-size : 38%
   }
 }
+
+.menu-active {
+  color: $mergenta !important;
+}
+
+.nav a button:hover {
+  color: $mergenta;
+}
+
+
 

@@ -2,8 +2,8 @@
     <div class="row main-row">
         <div class="col-2 product-nav">
             <nav class="nav flex-column" *ngFor="let category of categoryList">
-                <a class="nav-link" *ngIf="category.enabled">
-                    <button (click)="getProductByCategory(category?.id)">
+                <a class="nav-link" *ngIf="category.enabled" >
+                    <button attr.aria-label="{{category.name}}" [ngClass]="{'menu-active': activeCategoryId === category.id}" (click)="getProductByCategory(category?.id)">
                         {{ category?.name }}
                     </button></a>
             </nav>
@@ -22,12 +22,12 @@
                                     {{ product?.description }}
                                 </p>
                             </div>
-                            <div class="product-footer">
+                            <footer class="product-footer">
                                 <h2 class="product-price">MRP Rs.{{ product?.price }}</h2>
-                                <button (click)="buyProduct(product)" class="btn btn-danger btn-raised product-buy">
+                                <button aria-label="Buy Now" (click)="buyProduct(product)" class="btn btn-danger btn-raised product-buy">
                                     Buy Now
                                 </button>
-                            </div>
+                            </footer>
                         </div>
                     </div>
                 </div>
