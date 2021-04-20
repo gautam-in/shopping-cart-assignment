@@ -3,7 +3,7 @@
         <div class="col-2 product-nav">
             <nav class="nav flex-column" *ngFor="let category of categoryList">
                 <a class="nav-link" *ngIf="category.enabled" >
-                    <button attr.aria-label="{{category.name}}" [ngClass]="{'menu-active': activeCategoryId === category.id}" (click)="getProductByCategory(category?.id)">
+                    <button attr.aria-label="{{category.name}}" [ngClass]="{'menu-active': _appService.activeCategoryId === category.id}" (click)="getProductByCategory(category?.id)">
                         {{ category?.name }}
                     </button></a>
             </nav>

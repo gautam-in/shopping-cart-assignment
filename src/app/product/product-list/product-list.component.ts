@@ -81,7 +81,7 @@ export class ProductListComponent implements OnInit {
   }
 
   getProductByCategory(id: any) {
-    // this._appService.activeCategoryId = id;
+    this._appService.activeCategoryId = id;
     if(this._appService.activeCategoryId === id) {
       this.isFilterApplied = !this.isFilterApplied;
     }
