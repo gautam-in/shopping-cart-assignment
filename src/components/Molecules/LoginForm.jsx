@@ -86,7 +86,10 @@ class LoginForm extends React.Component {
               name="email" 
               value={this.state.input.email}
               onChange={this.handleChange}
-              id="email" required="required" />
+              id="email" required="required"
+              aria-label="Email"
+              aria-required="true"
+              />
             <span className="highlight"></span><span className="bar"></span>
             <label>Email</label>
             <div className="text-danger">{this.state.errors.email}</div>
@@ -99,14 +102,19 @@ class LoginForm extends React.Component {
               value={this.state.input.password}
               onChange={this.handleChange}
               id="password" 
-              required="required"/>
+              required="required"
+              aria-label="password"
+              aria-required="true"
+              />
             <span className="highlight"></span><span className="bar"></span>
             <label>Password</label>
             <div className="text-danger">{this.state.errors.password}</div>
           </div>
 
 
-          <input type="submit" value="Login" className="btn-primary btn-lg" />
+          <button type="submit" className="btn-primary btn-lg"
+          aria-label="Submit Button"
+          aria-required="true" > Login </button>
         </form>
       </div>
     );

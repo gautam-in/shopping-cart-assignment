@@ -10,8 +10,9 @@ import CategoriesCard from "../Molecules/CategoriesCard"
 
 const Home = ({ categories }) =>{
   const [banners, setBanners] = useState([]);
-
+  
   useEffect(()=>{
+    document.title = 'Home -Sabka Bazar';
     let axios = require("axios");
 
     let config = {

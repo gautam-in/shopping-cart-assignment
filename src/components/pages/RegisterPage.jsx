@@ -1,8 +1,10 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react'
 import RegisterForm from "../Molecules/RegisterForm";
 
-class RegisterPage extends Component {
-  render() {
+const RegisterPage = () => {
+    useEffect(() => {
+      document.title = 'Signup - Sabka Bazar'
+  }, []);
     return (
         <>
         <div className="container top-container">
@@ -21,7 +23,6 @@ class RegisterPage extends Component {
         </div>
         </>
     );
-  }
 }
 
 export default RegisterPage;

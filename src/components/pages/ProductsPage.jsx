@@ -13,6 +13,8 @@ const ProductsPage = ({categories}) => {
   const [productsList, setproductsList] = useState([]);
 
   React.useEffect(()=>{
+    document.title = 'Home -Sabka Bazar';
+    
     let axios = require("axios");
     let configurations = {
       method: "GET",

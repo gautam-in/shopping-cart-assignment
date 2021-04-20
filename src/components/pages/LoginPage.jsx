@@ -1,8 +1,10 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react'
 import LoginForm from "../Molecules/LoginForm";
 
-class LoginPage extends Component {
-  render() {
+const LoginPage = () => {
+    useEffect(() => {
+        document.title = 'Login - Sabka Bazar'
+    }, []);
     return (
         <>
         <div className="container top-container">
@@ -21,7 +23,6 @@ class LoginPage extends Component {
         </div>
         </>
     );
-  }
 }
 
 export default LoginPage;

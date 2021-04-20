@@ -1,5 +1,6 @@
 import React from "react";
 import {useSelector, useDispatch } from "react-redux"
+import LazyLoad from 'react-lazyload';
 
 import "../../styles/product-card.scss"
 
@@ -52,7 +53,11 @@ const ProductCard = ({product}) => {
     return (
         <div className="product-card">
             <div className="product-title"><h3>{name}</h3></div>
-            <div className="product-image"><img src={imageUrl} alt={name} /></div>
+            <div className="product-image">
+                <LazyLoad >
+                    <img src={imageUrl} alt={name} />
+                </LazyLoad>
+            </div>
             <div className="product-short-description" alt={description}><span>{description.toString().split('').slice(0, 115).join('')}</span></div>
             <div className="product-card-footer">
                 <div className="product-price"><span>MRP Rs.{price}</span></div>

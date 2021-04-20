@@ -3,6 +3,7 @@ import {useHistory } from "react-router-dom"
 import Slider from "react-slick";
 import "../../styles/slick.scss";
 import "../../styles/slick-theme.scss";
+import LazyLoad from 'react-lazyload';
 
 import * as Endpoints from '../Endpoints'
 
@@ -27,7 +28,9 @@ const SlickSlider = ({banners}) => {
                             banners.map((banner)=>{
                                 return(
                                     <div key={banner.id}>
-                                        <img src={Endpoints.base_uri+banner.bannerImageUrl} alt={banner.bannerImageAlt} />
+                                        <LazyLoad >
+                                            <img alt={banner.bannerImageAlt} src={Endpoints.base_uri+banner.bannerImageUrl}/>
+                                        </LazyLoad>
                                     </div>
                                 )
                             })

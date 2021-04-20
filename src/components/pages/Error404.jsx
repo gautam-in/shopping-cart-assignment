@@ -5,7 +5,7 @@ class Error404 extends Component {
     return (
         <>
         <div className="container top-container">
-          <div className="row">
+          <article className="row">
               <div className="col-md-12 pd-3">
                 <h1>404: Not Found</h1>
                 <br/>
@@ -13,7 +13,7 @@ class Error404 extends Component {
                     The page you're looking for is not found!
                 </p>
               </div>
-          </div>
+          </article>
         </div>
         </>
     );

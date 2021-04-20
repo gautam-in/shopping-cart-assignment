@@ -1,5 +1,6 @@
 import React from "react";
 import {useHistory } from "react-router-dom"
+import LazyLoad from 'react-lazyload';
 
 import * as Endpoints from '../Endpoints'
 
@@ -14,41 +15,45 @@ const CategoryCard = ({category, index}) => {
 
     if(imageAlign === 'left'){
         return (
-            <div className="banner_card">
+            <article className="banner_card">
                 <div className="row">
                     <div className="col col-md-4">
                         <div className="product_img">
-                            <img src={imageUrl} alt={name} />
+                            <LazyLoad >
+                                <img src={imageUrl} alt={name} />
+                            </LazyLoad>
                         </div>
                     </div>
                     <div className="col col-md-8">
                         <div className="product_content">
-                            <h3>{name}</h3>
+                            <h2>{name}</h2>
                             <p>{description}</p>
-                            <button onClick={() => history.push("products#" + id)} className="btn-primary">Explore {name}</button>
+                            <button onClick={() => history.push("products#" + id)} className="btn-primary " aria-label={'Link to '+name} >Explore {name}</button>
                         </div>
                     </div>
                 </div>
-            </div>
+            </article>
         );
     }else{
         return (
-            <div className="banner_card">
+            <article className="banner_card">
                 <div className="row">
                     <div className="col col-md-8">
                         <div className="product_content">
-                            <h3>{name}</h3>
+                            <h2>{name}</h2>
                             <p>{description}</p>
-                            <button  onClick={() => history.push("products#" + id)} className="btn-primary">Explore {name}</button>
+                            <button  onClick={() => history.push("products#" + id)} className="btn-primary" aria-label={'Link to '+name}>Explore {name}</button>
                         </div>
                     </div>
                     <div className="col col-md-4">
                         <div className="product_img">
-                            <img src={imageUrl} alt={name} />
+                            <LazyLoad >
+                                <img src={imageUrl} alt={name} />
+                            </LazyLoad>
                         </div>
                     </div>
                 </div>
-            </div>
+            </article>
         );
     }
   }

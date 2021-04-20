@@ -43,11 +43,11 @@ const Cart = ({setCart}) => {
     }, []);
 
     return (
-        <div className="modal">
+        <div className="modal" aria-label="Shopping Cart">
             <div className="modal-content cart-container" onClick={(e) => e.stopPropagation()} >
                 <div className="modal-header cart-head">
                     <span className="cart-title"> My Cart({cart.length})</span>
-                    <button ref={ref} className="cart-close-button .close" onClick={close}>
+                    <button ref={ref} className="cart-close-button .close" onClick={close} aria-label="Close" >
                         X
                     </button>
                 </div>

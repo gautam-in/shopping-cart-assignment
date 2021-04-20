@@ -12,6 +12,7 @@ import RegisterPage from './pages/RegisterPage'
 import Error404 from './pages/Error404'
 
 function App(){
+    const [menuOpen, setMenuOpen] = useState(false)
     const [cart, setCart] = useState(false);
     const [categories, setCategories] = useState([]);
     const this_cart = useSelector((store) => store.cart);
@@ -36,17 +37,15 @@ function App(){
           setCategories(activeCategories);
         })
         .catch((err)=>{
-          console.log(error);
+          console.log(err);
         })
     }, []);
 
     return (
       <>
-        
-
         <Router>
-          <Header setCart={setCart} cart={cart}/>
-
+          <Header setCart={setCart} cart={cart}  menuOpen={menuOpen} setMenuOpen={() => setMenuOpen(!menuOpen)} />
+          <main>
           <Switch>
                 <Route exact path='/'>
                     <Redirect to="/home" />
@@ -62,6 +61,7 @@ function App(){
                 <Route component={Error404} />
                 
           </Switch>
+          </main>
           
           <Footer />
         </Router>

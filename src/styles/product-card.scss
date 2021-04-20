@@ -2,7 +2,6 @@
 .grid {
     display: flex;
     flex-wrap: wrap;
-    display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     grid-auto-rows: minmax(150px, auto);
     grid-gap: 1em;
@@ -73,3 +72,25 @@
     right: 0px;
     top: 15%;
   }
+
+@media (max-width: 767px) {
+  .product-card .product-image {
+    margin: 0px auto;
+    float: left;
+    display: flex;
+    max-width: 40%;
+    flex-direction: row;
+    align-items: stretch;
+  }
+
+  .product-card .product-short-description {
+    float: right;
+    display: flex;
+    flex-direction: row;
+    max-width: 55%;
+    margin-left: 5%;
+    span {
+        overflow: hidden;
+    }
+  }
+}
