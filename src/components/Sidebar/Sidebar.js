@@ -73,7 +73,7 @@ const Sidebar = React.memo(({ isSlideOpen, cartSideNav }) => {
   return (
     <div className='sidebar-wrap'>
       <div className='sidebar-main'>
-        <Modal className='sidebar sidebar-wrap-modal' modal isOpen={isSlideOpen}>
+        <Modal className='sidebar sidebar-wrap-modal' isOpen={isSlideOpen}>
           <div className='sidebar-cart-header-wrap'>
             <div className='sidebar-cart-header-main'>
               <h6>My Cart</h6> <span>( {data.length ? data.length : 0} Items )</span>
@@ -85,29 +85,31 @@ const Sidebar = React.memo(({ isSlideOpen, cartSideNav }) => {
             </div>
           </div>
           <div className='sidebar-cart-body-wrap'>
-            {data.length ? (
-              <div className='cart-list-wrap'>
-                <ul className='clearfix'>{cartList}</ul>
-              </div>
-            ) : (
-              <div className='no-cart-items-found-wrap'>
-                <div className='no-cart-items-found-main'>
-                  <h5>No item in your cart</h5>
-                  <p>Your favourite items are just a click away</p>
+            <div className='sidebar-cart-body-main'>
+              {data.length ? (
+                <div className='cart-list-wrap'>
+                  <ul className='clearfix'>{cartList}</ul>
                 </div>
+              ) : (
+                <div className='no-cart-items-found-wrap'>
+                  <div className='no-cart-items-found-main'>
+                    <h5>No item in your cart</h5>
+                    <p>Your favourite items are just a click away</p>
+                  </div>
+                </div>
+              )}
+            </div>
+            {!!data.length && (
+              <div className='sidebar-cart-footer-wrap'>
+                <button type='button' onClick={cartSideNav}>
+                  <span className='checkout-text-wrap'>Proceed to checkout</span>
+                  <span className='checkout-price-wrap'>
+                    RS.{totalPrice} <FontAwesomeIcon icon={faGreaterThan} />{' '}
+                  </span>
+                </button>
               </div>
             )}
           </div>
-          {!!data.length && (
-            <div className='sidebar-cart-footer-wrap'>
-              <button type='button' onClick={cartSideNav}>
-                <span className='checkout-text-wrap'>Proceed to checkout</span>
-                <span className='checkout-price-wrap'>
-                  RS.{totalPrice} <FontAwesomeIcon icon={faGreaterThan} />{' '}
-                </span>
-              </button>
-            </div>
-          )}
         </Modal>
       </div>
     </div>

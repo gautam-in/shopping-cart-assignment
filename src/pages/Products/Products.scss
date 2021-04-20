@@ -13,3 +13,9 @@
     flex-basis: 80%;
   }
 }
+
+@media only screen and (max-width: $mobile-max-width) {
+  .product-page-main {
+    display: block;
+  }
+}

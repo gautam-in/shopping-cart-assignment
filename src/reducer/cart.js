@@ -17,15 +17,13 @@ const cart = (state = intialState, action) => {
     case CREATE_ADD_TO_CART_REQUEST: {
       return {
         ...state,
-        loading: true,
-        error: false
+        loading: true
       };
     }
     case CREATE_ADD_TO_CART_SUCCESS: {
       return {
-        loading: false,
-        data: { ...state.data, ...action.cartProduct.entities.data },
-        error: false
+        ...state,
+        data: { ...state.data, ...action.cartProduct.entities.data }
       };
     }
     case CREATE_ADD_TO_CART_FAILURE: {
@@ -37,9 +35,8 @@ const cart = (state = intialState, action) => {
     }
     case MODIFY_PRODUCT_CART_QUANTITY: {
       return {
-        loading: false,
-        data: { ...state.data, ...action.product.entities.data },
-        error: false
+        ...state,
+        data: { ...state.data, ...action.product.entities.data }
       };
     }
     case DELETE_PRODUCT_CART: {

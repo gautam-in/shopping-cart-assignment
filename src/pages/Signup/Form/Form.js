@@ -1,11 +1,13 @@
 import React, { useRef } from 'react';
+import PropTypes from 'prop-types';
+import { withRouter } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { Form, Label, Input } from 'reactstrap';
 import ErrorMessage from '../../../components/ErrorMessage';
 import { emailValidation, nameValidation, passwordValidation } from '../../../constant';
 import '../../../styles/Form.scss';
 
-const signUpForm = () => {
+const signUpForm = ({ history }) => {
   const { register, handleSubmit, errors, reset, watch, formState } = useForm({
     mode: 'onChange'
   });
@@ -17,6 +19,7 @@ const signUpForm = () => {
   const confirmPassword = watch('confirm_password');
   const onSubmit = (data) => {
     console.log(data);
+    history.push('/');
     reset();
   };
   return (
@@ -208,4 +211,10 @@ const signUpForm = () => {
   );
 };
 
-export default signUpForm;
+signUpForm.propTypes = {
+  history: PropTypes.shape({
+    push: PropTypes.isRequired
+  }).isRequired
+};
+
+export default withRouter(signUpForm);

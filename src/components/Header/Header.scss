@@ -1,6 +1,6 @@
 @import '../../styles/global';
 
-.header-wrap {
+header {
   @extend parentElement;
   background-color: $white-color;
 }
@@ -12,10 +12,21 @@ header {
   }
 }
 
+.logo-wrap {
+  img {
+    width: 10rem;
+  }
+}
+
+.navbar {
+  padding: 0px;
+}
+
 .navbar-nav {
   list-style: none;
+  margin: 0 5rem;
   li a {
-    color: $black-color;
+    color: $dark-grey-color;
     font-size: 1rem;
     font-weight: 800;
     padding: 0px 10px;
@@ -24,10 +35,14 @@ header {
 }
 .navbar-text {
   padding-bottom: 4.5rem;
+  li a {
+    color: $black-color;
+  }
 }
 .cart-header-wrap {
-  right: 5rem;
-  bottom: 1rem;
+  position: absolute;
+  right: 1rem;
+  bottom: 0;
   background-color: $grey-color;
   padding: 15px;
   cursor: pointer;
@@ -37,5 +52,42 @@ header {
   span {
     font-weight: 800;
     font-size: 0.8rem;
+  }
+}
+
+@media only screen and (max-width: $mobile-max-width) {
+  .logo-wrap {
+    img {
+      width: 6rem;
+    }
+  }
+  .navbar {
+    padding: 0.6rem 1rem;
+  }
+  .navbar-nav {
+    li {
+      padding: 5px 0px;
+    }
+  }
+  .navbar-text {
+    padding-bottom: 0px;
+    padding-top: 0px;
+    width: 100%;
+    li {
+      padding: 5px 0px;
+      display: block;
+    }
+  }
+  .navbar-toggler {
+    // background-color: $pink-color;
+    // border: 1px solid $pink-color;
+    position: absolute;
+    top: 10px;
+    left: 115px;
+    border-radius: 0px;
+  }
+
+  .cart-header-wrap {
+    padding: 10px;
   }
 }

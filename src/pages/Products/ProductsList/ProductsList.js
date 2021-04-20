@@ -42,7 +42,7 @@ const ProductList = React.memo(({ filterId }) => {
     const { id } = product;
     const disabled = !!cartProduct.includes(id);
     return (
-      <li key={id}>
+      <li key={id} className='col-sm-12 col-md-6 col-lg-3 col-xs-3'>
         <Card product={{ ...product, disabled }} addCart={addCart} />
       </li>
     );
@@ -51,7 +51,7 @@ const ProductList = React.memo(({ filterId }) => {
   return (
     <div className='product-list-wrap'>
       {loading && <h1>Loading....</h1>}
-      {!!data && data.length && <ul className='clearfix'>{productList}</ul>}
+      {!loading && !error && <ul className='clearfix row'>{productList}</ul>}
       {error && <h1>Something went wrong!</h1>}
     </div>
   );
