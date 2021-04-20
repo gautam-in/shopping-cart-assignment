@@ -1,17 +1,24 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import Card from '../../../components/Card';
 import { allProductsData } from '../../../selector';
+import { createAddToCartRequest } from '../../../actions';
 import './ProductList.scss';
 
 const ProductList = () => {
+  const dispatch = useDispatch();
+
   const { loading, data, error } = useSelector((state) => allProductsData(state));
+
+  const addCart = (product) => {
+    dispatch(createAddToCartRequest({ ...product, quantity: 1 }));
+  };
 
   const productList = data.map((product) => {
     const { id } = product;
     return (
       <li key={id}>
-        <Card {...product} />
+        <Card product={product} addCart={addCart} />
       </li>
     );
   });
