@@ -1,0 +1,15 @@
+<div class="row">
+    <div class="col-md-3" *ngFor= "let babyproduct of babyproducts">
+    <div class="card mb-4 shadow-sm">
+      <h6>{{ babyproduct.name }}</h6>
+      <img [src]="babyproduct.imageURL" class="product-image">
+      <div class="card-body">
+        <p class="product-desc">{{ babyproduct.description }}</p>
+        <div class="item-info">  
+          <small>MRP Rs. {{ babyproduct.price }}</small>
+              <button type="button" class="item-btn">Buy Now</button> 
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>  

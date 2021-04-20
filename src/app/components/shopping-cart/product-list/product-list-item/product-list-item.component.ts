@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
+import { HttpClient } from '@angular/common/http';
+import { MessengerService } from 'src/app/service/messenger.service';
+
+
 @Component({
   selector: 'app-product-list-item',
   templateUrl: './product-list-item.component.html',
@@ -7,9 +11,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductListItemComponent implements OnInit {
 
-  constructor() { }
+  products: any = [];
 
-  ngOnInit(): void {
+  constructor(private httpClient: HttpClient, private msg:MessengerService) { }
+
+    ngOnInit(): void {
+    this.httpClient.get("assets/data.json").subscribe(data =>{
+      console.log(data);
+      this.products = data;
+    })
+  }
+
+  handleAddtoCart(){
+    this.msg.sendMsg(this.products)
   }
 
 }
