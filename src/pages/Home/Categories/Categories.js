@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import './Categories.scss';
 import { useDispatch, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { fetchCategoriesDataRequest } from '../../../actions';
 import { allCategoriesData } from '../../../selector';
 
@@ -23,9 +24,15 @@ const Categories = () => {
         <div className='text-wrap'>
           <h2>{name}</h2>
           <p>{description}</p>
-          <button className='explore-btn' type='button'>
+          <Link
+            className='explore-btn'
+            to={{
+              pathname: '/products',
+              state: { id }
+            }}
+          >
             Explore {key}
-          </button>
+          </Link>
         </div>
       </li>
     );

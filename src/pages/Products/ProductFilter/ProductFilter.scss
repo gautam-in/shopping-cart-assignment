@@ -3,12 +3,19 @@
 .categories-filter-data-wrap {
   li {
     border-bottom: 1px solid $black-color;
-    padding: 10px;
-    display: block;
-    span {
+    a {
       font-size: 1rem;
       font-weight: normal;
       padding-left: 5px;
+      text-decoration: none;
+      color: $black-color;
+      font-weight: normal;
+      display: block;
+      padding: 10px;
     }
   }
+}
+
+.is-active {
+  border-left: 2px solid $pink-color;
 }

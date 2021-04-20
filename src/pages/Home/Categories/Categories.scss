@@ -44,9 +44,14 @@
 .explore-btn {
   margin: 0 auto;
   display: table;
+  text-decoration: none;
   color: $white-color;
   padding: 10px;
   font-size: 1.2rem;
   background: $pink-color;
   border: 2px solid $pink-color;
+  &:hover {
+    color: $white-color;
+    text-decoration: none;
+  }
 }

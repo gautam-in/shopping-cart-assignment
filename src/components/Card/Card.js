@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import './Card.scss';
 
 const Card = React.memo(({ product, addCart }) => {
-  const { name, imageURL, sku, description, price } = product;
+  const { name, imageURL, sku, description, price, disabled } = product;
 
   return (
     <div className='product-wrap'>
@@ -20,8 +20,8 @@ const Card = React.memo(({ product, addCart }) => {
             <span>MRP RS.{price}</span>
           </div>
           <div className='product-buy-out'>
-            <button type='button' onClick={() => addCart(product)}>
-              Buy Now
+            <button type='button' onClick={() => addCart(product)} disabled={!!disabled}>
+              {!disabled ? `Buy Now` : `In Cart`}
             </button>
           </div>
         </div>
@@ -40,8 +40,9 @@ Card.propTypes = {
     stock: PropTypes.number.isRequired,
     category: PropTypes.string.isRequired,
     sku: PropTypes.string.isRequired,
-    addCart: PropTypes.func.isRequired
-  })
+    disabled: PropTypes.bool.isRequired
+  }),
+  addCart: PropTypes.func.isRequired
 };
 
 export default Card;

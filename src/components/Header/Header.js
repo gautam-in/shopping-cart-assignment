@@ -29,7 +29,14 @@ const Header = React.memo(({ cartSideNav }) => {
                 <Link to='/'>Home</Link>
               </NavItem>
               <NavItem>
-                <Link to='/products'>Products</Link>
+                <Link
+                  to={{
+                    pathname: '/products',
+                    state: { id: null }
+                  }}
+                >
+                  Products
+                </Link>
               </NavItem>
             </Nav>
             <NavbarText>
