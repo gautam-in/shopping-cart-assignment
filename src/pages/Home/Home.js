@@ -6,8 +6,10 @@ import './Home.scss';
 const Home = () => {
   return (
     <div className='page-wrap'>
-      <Carousel />
-      <Categories />
+      <div className='container'>
+        <Carousel />
+        <Categories />
+      </div>
     </div>
   );
 };

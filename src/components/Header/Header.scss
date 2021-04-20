@@ -26,11 +26,11 @@ header {
   padding-bottom: 4.5rem;
 }
 .cart-header-wrap {
-  position: absolute;
-  right: 6rem;
+  right: 5rem;
   bottom: 1rem;
   background-color: $grey-color;
   padding: 15px;
+  cursor: pointer;
   .cart-header-main svg {
     color: $pink-color;
   }

@@ -1,0 +1,43 @@
+@import '../../styles/global';
+
+.sidebar-wrap-modal {
+  .modal-content {
+    border-radius: 0px;
+    height: calc(100vh - 60px);
+  }
+}
+
+.modal {
+  top: 6rem;
+  right: 0;
+  left: auto;
+  width: 50%;
+}
+
+.sidebar-cart-header-wrap {
+  position: relative;
+  overflow: hidden;
+  background-color: $black-color;
+  h6 {
+    color: $white-color;
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: 800;
+    display: inline-block;
+    left: 0;
+  }
+  .close {
+    right: 0;
+    display: inline-block;
+    opacity: initial;
+    span {
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: $white-color;
+    }
+  }
+}
+
+.sidebar-cart-header-main {
+  padding: 10px;
+}

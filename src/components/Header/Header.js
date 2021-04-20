@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { Navbar, NavbarToggler, Collapse, Nav, NavItem, NavbarText } from 'reactstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -6,7 +7,7 @@ import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import Logo from '../../../static/images/logo.png';
 import './Header.scss';
 
-const Header = () => {
+const Header = React.memo(({ cartSideNav }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggle = () => setIsOpen(!isOpen);
@@ -38,7 +39,7 @@ const Header = () => {
               </Nav>
             </NavbarText>
           </Collapse>
-          <div className='cart-header-wrap'>
+          <div className='cart-header-wrap' onClick={cartSideNav}>
             <div className='cart-header-main'>
               <FontAwesomeIcon icon={faShoppingCart} />
               <span> 0 Items</span>
@@ -48,6 +49,10 @@ const Header = () => {
       </Navbar>
     </header>
   );
+});
+
+Header.propTypes = {
+  cartSideNav: PropTypes.func.isRequired
 };
 
 export default Header;
