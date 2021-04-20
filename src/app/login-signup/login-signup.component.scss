@@ -1,0 +1,125 @@
+@import "../../assets/scss/color.scss";
+
+nav {
+  max-height: 20rem;
+  width: auto;
+  .navbar-brand {
+    margin-left: 5rem;
+    .logo-image {
+      width: 150px;
+      height: inherit;
+    }
+  }
+  .nav-bar-left {
+    margin-left: 15rem;
+  }
+
+  .nav-bar-right {
+    margin-right: 5rem;
+  }
+}
+
+.active {
+  background-color: $mergenta;
+  color: $grey;
+}
+
+.main-container {
+  position: relative;
+  .end-container {
+    position: absolute;
+    right: 4rem;
+    bottom: 4rem;
+    top: -1rem;
+    .nav-link {
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: $black;
+    }
+  }
+
+  .cart {
+    position: absolute;
+    background-color: $grey;
+    width: 8rem;
+    height: 4rem;
+    right: 9rem;
+    bottom: -7px;
+
+    a {
+      color: black;
+      text-align: center;
+    }
+    .cart-logo {
+      width: 2rem;
+      height: inherit;
+      color: $mergenta;
+      margin-left: 1rem;
+    }
+  }
+}
+
+.footer {
+  background-color: rgb(236, 230, 230);
+  padding: 10px 10px 10px 50px;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  nav {
+    max-height: 20rem;
+    width: auto;
+    .navbar-brand {
+      margin-left: 0;
+      .logo-image {
+        width: 70px;
+        height: inherit;
+      }
+    }
+  }
+  .footer {
+    font-size: 10px;
+    padding: 5px 5px 5px 25px;
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (max-width: 600px) {
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (max-width: 768px) {
+  nav {
+    margin: 0;
+    .navbar-brand {
+      margin-left: 0;
+    }
+    .nav-bar-right {
+      margin-right: 0;
+    }
+  }
+
+  .main-container {
+    .end-container {
+      position: relative;
+      right: 0;
+      bottom: 0;
+      .nav-bar-right {
+        display: inline-block;
+      }
+    }
+
+    .cart {
+      height: 3rem;
+      right: -2rem;
+    }
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (max-width: 992px) {
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+}

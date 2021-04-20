@@ -1,0 +1,207 @@
+@import "../../assets/scss/color.scss";
+
+.card {
+  background-color: $grey;
+  min-height: 100%;
+  margin-bottom: 0rem;
+  box-shadow: 0 1px 1px $grey;
+  .cart-header {
+    margin: 1rem 1rem;
+    margin-top: 2rem;
+    background-color: $white;
+
+    padding-left: 2rem;
+    vertical-align: middle;
+    .title {
+      font-size: 1.6rem;
+      font-weight: 600;
+    }
+    .count {
+      font-size: 1rem;
+      font-weight: 500;
+    }
+  }
+
+  .product {
+    margin: 1rem 1rem;
+    background-color: $white;
+
+    .cart-image {
+      width: 15%;
+      .card-img {
+        width: 65%;
+      }
+    }
+
+    .cart-description {
+      width: 85%;
+      .card-title {
+        font-size: 1.5rem;
+        font-weight: 700;
+      }
+    }
+  }
+
+  .cart-offer {
+    margin: 1rem 1rem;
+    background-color: $white;
+    display: flex;
+    .offer-img {
+      flex: 0.3;
+      padding: 20px 20px;
+      .offer-image {
+        width: auto;
+        height: auto;
+      }
+    }
+    .offer-text {
+      flex: 1.7;
+      padding-top: 30px;
+      font-size: 1.3rem;
+    }
+  }
+}
+
+.icon-action {
+  color: $mergenta;
+  font-size: 1.5rem;
+  margin: 0 10px;
+  cursor: pointer;
+}
+
+.cart-footer {
+  margin: 1rem 1rem;
+  background-color: $white;
+  margin-block-start: -15px;
+}
+.item-price,
+.item-total-price,
+.count {
+  margin: 0 5px;
+  font-size: 1.2rem;
+}
+.item-total-price {
+  float: right;
+}
+
+@media (max-width: 1199px) {
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (max-width: 992px) {
+  .card {
+    .product {
+      .cart-image {
+        width: 15%;
+        .card-img {
+          width: 100%;
+        }
+      }
+      .cart-description {
+        width: 85%;
+        .card-title {
+          font-size: 1.3rem;
+          font-weight: 600;
+        }
+      }
+    }
+
+    .cart-offer {
+      margin: 1rem 1rem;
+      .offer-img {
+        .offer-image {
+          width: 8rem;
+          height: auto;
+        }
+      }
+      .offer-text {
+        padding-top: 30px;
+        font-size: 1rem;
+      }
+    }
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (max-width: 600px) {
+  .card {
+    .cart-header {
+      .title {
+        font-size: 1.2rem;
+        margin: auto;
+      }
+      .count {
+        font-size: 0.8rem;
+      }
+    }
+    .product {
+      .cart-description {
+        width: 80%;
+        .card-title {
+          font-size: 0.9rem;
+        }
+      }
+    }
+
+    .cart-offer {
+      .offer-img {
+        padding: 10px 10px;
+        .offer-image {
+          width: 6rem;
+          height: auto;
+        }
+      }
+      .offer-text {
+        padding-top: 18px;
+        font-size: 0.7rem;
+      }
+    }
+  }
+
+  .cart-footer {
+    .promo-code {
+      font-size: 0.7rem;
+    }
+
+    .checkout-text {
+      font-size: 0.7rem;
+    }
+    .checkout-price {
+      font-size: 0.7rem;
+    }
+  }
+
+  .item-price,
+  .item-total-price,
+  .count {
+    font-size: 1rem;
+  }
+
+  .cart-image {
+    width: 10%;
+    margin-left: 1rem;
+  }
+}
+
+@media only screen and (max-width: 575px) {
+  .card {
+    .product {
+      .cart-description {
+        .card-title {
+          font-size: 0.7rem;
+          font-weight: 500;
+        }
+      }
+    }
+  }
+
+  .item-price,
+  .item-total-price,
+  .count {
+    font-size: 0.7rem;
+  }
+
+  .icon-action {
+    font-size: 1rem;
+  }
+}

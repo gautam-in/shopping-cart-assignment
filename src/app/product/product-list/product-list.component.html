@@ -1,0 +1,37 @@
+<div class="container">
+    <div class="row main-row">
+        <div class="col-2 product-nav">
+            <nav class="nav flex-column" *ngFor="let category of categoryList">
+                <a class="nav-link" *ngIf="category.enabled">
+                    <button (click)="getProductByCategory(category?.id)">
+                        {{ category?.name }}
+                    </button></a>
+            </nav>
+
+        </div>
+        <div class="col-10 product">
+            <div class="row" *ngFor="let row of finalProduct">
+                <div class="inner-row" *ngFor="let product of row">
+                    <div class="card product-card">
+                        <div class="card-body product-body">
+                            <h5 class="card-title product-title">{{ product?.name }}</h5>
+                            <div class="inner-body">
+                                <img class="card-img-top product-img small-screen" src="{{ product?.imageURL }}"
+                                    alt="Card image cap" />
+                                <p class="card-text product-description small-screen">
+                                    {{ product?.description }}
+                                </p>
+                            </div>
+                            <div class="product-footer">
+                                <h2 class="product-price">MRP Rs.{{ product?.price }}</h2>
+                                <button (click)="buyProduct(product)" class="btn btn-danger btn-raised product-buy">
+                                    Buy Now
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

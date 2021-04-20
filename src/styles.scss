@@ -1,0 +1,96 @@
+@import "./assets/scss/color";
+
+/* You can add global styles to this file, and also import other style files */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-size: 15px;
+  font-weight: 800;
+  font-family: "Lato", Arial, Helvetica, sans-serif;
+  background-color: white;
+  text-rendering: optimizeLegibility;
+  /* The text-rendering property in CSS allows you to choose quality of text over speed (or vice versa) allowing you to fine tune optimization by suggesting to the browser as to how it should render text */
+  overflow-x: hidden; /* The content is clipped - and no scrolling mechanism is provided */
+}
+
+.main-heading {
+  font-size: 24px;
+  font-weight: bolder;
+ 
+}
+
+.LoginRegText{
+  height: 100%;
+  float: left;
+  padding: 2% 0;
+  margin: 1% 0;
+}
+
+.action-btn {
+  width: 100%;
+  font-size: 70%;
+  background-color: $mergenta !important;
+  color: white !important;
+  border: 0;
+  text-transform: none;
+  margin: auto;
+}
+
+a {
+  text-decoration: none;
+}
+
+.error-msg{
+  color: red;
+  font-size: 10px;
+  padding-bottom : 2%;
+}
+//------------------------------------------------
+// LOGIN and SIGNUP Page CSS
+//------------------------------------------------
+
+.LoginRegText {
+   padding-left: 15%;
+
+  .title{
+    font-size: 25px;
+  }
+  .title-description{
+    font-size: 15px;
+  }
+}
+
+.form-group label,
+input:active
+{
+  font-size: 90%;
+}
+
+input:focus
+{
+border-bottom: 2px solid rgb(18, 212, 238) !important;
+}
+
+
+.col-lg-6 Form {
+  padding-top: 3%;
+  max-width: 75%;
+  padding-right: 20%;
+}
+
+.form-group.is-focused label .form-group.is-focused label.control-label{
+  color: rgb(181, 214, 34); // any color that you want
+}
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';
