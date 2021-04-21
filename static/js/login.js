@@ -34,9 +34,8 @@ checkValidation = ((formSelector)=> {
             document.querySelectorAll(formSelector)[0].addEventListener(eventType, (e) => validateForm(e));
         }
     }
-})(CONSTANTS.FORM);
+})('.form');
 
 }
 let login = new Login();
 login.checkValidation.validate('submit');
-

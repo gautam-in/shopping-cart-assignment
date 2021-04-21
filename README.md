@@ -38,20 +38,21 @@ branches->develop-> contains sabka bazaar assignment
 **canonical url
 **robots.txt-> http://localhost:3000/robots.txt 
 ** robots meta tag that instructs web crawlers to not index the page and to not crawl any of the links on the page -> "noindex, nofollow" added in meta tag
+**sitemap.xml
 
 meta tags-> meta title,description,keywords
 schema
-sitemap.xml
+
 
 
 // key points for accessibility
-aria-label & aria-labelledby
-skip to main content
-h1 tags
-tab click check
-alt tags
+**aria-label & aria-labelledby
+**skip to main content
+**h1 tags
+**tab click check
+**alt tags
 AA OR AAA 
 5:1 contrast ratio
 
-//key points for security
+
 

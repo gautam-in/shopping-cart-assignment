@@ -70,6 +70,19 @@ app.post("/api/addToCart", (req, res) => {
       }).status(200).sendFile( __dirname + "/server/addToCart/index.post.json");
 });
 
+
+//added robots.txt file for seo
+app.use('/robots.txt', function (req, res, next) {
+    res.type('text/plain')
+    res.send("User-agent: *\n Allow: /");
+});
+
+app.use('/sitemap.xml', function (req, res, next) {
+    // res.type('text/xml')
+    res.send('<?xml version="1.0" encoding="UTF-8"?> <urlset xmlns:xhtml="http://www.w3.org/1999/xhtml"> <url><loc>http://localhost:3000 </loc><xhtml:link rel="alternate" hreflang="en-us" href="http://localhost:3000"/></url><url><loc>http://localhost:3000/registration </loc><xhtml:link rel="alternate" hreflang="en-us" href="http://localhost:3000/registration"/></url> <url><loc>http://localhost:3000/login </loc><xhtml:link rel="alternate" hreflang="en-us" href="http://localhost:3000/login"/></url><url><loc>http://localhost:3000/product-list </loc><xhtml:link rel="alternate" hreflang="en-us" href="http://localhost:3000/product-list"/></url>');
+});
+
+
 //error page
 app.use(function(req, res, next){
     res.status(404);
@@ -89,13 +102,6 @@ app.use(function(req, res, next){
     // default to plain-text. send()
     res.type('txt').send('Not found');
   });
-
-//added robots.txt file for seo
-app.use('/robots.txt', function (req, res, next) {
-    res.type('text/plain')
-    res.send("User-agent: *\nDisallow: /");
-});
-
 // start port at 3000
 app.listen(portNumber, function(){
     console.log("App started on localhost:" + portNumber);
