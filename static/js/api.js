@@ -1,5 +1,5 @@
 /**
- * API services to make ajax request
+ * API services
  */
  var apiService = {
     getRequest: async function (requestObj) {
@@ -15,7 +15,9 @@
         return this.getRequest(obj);
     },
     getProductList: function(obj){
-        console.log("hello",obj)
         return this.getRequest(obj);
+    },
+    addToCart: function(obj){
+        return this.postRequest(obj.url,`{"product_id": ${obj.id}}`);
     }
 };

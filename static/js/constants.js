@@ -14,5 +14,8 @@ var CONSTANTS = {
     PRODUCT_BTN : '.product-list__products--item',
     next: 'next',
     prev : 'prev',
-    buy : 'Buy Now'
+    buy : 'Buy Now',
+    MINI_CART : '.mini-cart',
+    CART_ID : 'cart',
+    CART_ITEM_QUANTITY : 'cart-item-quantity'
 };

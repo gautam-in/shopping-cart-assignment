@@ -1,26 +1,27 @@
 .carousel {
   overflow: hidden;
   position: relative;
-  box-shadow: 0px 5px 4px 4px map-get($site_colors, bullet-bg-color);
+  box-shadow: 0px 4px 6px 0px map-get($site_colors, bullet-bg-color);
   //will-change property for performance to decrease the paint count in layers
   will-change:transform;
   &__wrapper {
     white-space: nowrap;
     transition: 1s all ease;
+    max-width: 100%;
   }
   &__img {
     display: inline-block;
     width: $body-width;
     height: 292.5px;
     max-width: 100%;
-    @include responsive-for-ipad {
+    @include media-lg-screen {
       width: 768px;
     }
-    @include responsive-for-sm-mobile {
+    @include media-sm-screen {
       width: 100%;
       height: 150px;
     }
-    @include responsive-for-desktop {
+    @include media-xl-screen {
       // width:auto;
       
     }

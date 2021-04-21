@@ -3,11 +3,14 @@
         Copyright &copy; 2011-2018 Sabka Bazaar Grocery Suplies Pvt Ltd
     </div>
 </footer>
-
+<% include ../common/mini-cart %>
 <!-- to load all scripts files -->
+<script src="https://unpkg.com/mitt/dist/mitt.umd.js"></script>
 <script async type="text/javascript" src="static/js/constants.js"></script>
 <script async  type="text/javascript" src="static/js/api.js"></script>
 <script async type="text/javascript" src="static/js/config.js"></script>
+<script type="text/javascript" src="static/js/cart.js"></script>
+<script type="text/javascript" src="static/js/common.js"></script>
 <% if(scripts && scripts.length) { scripts.forEach(script => { %>
 <script async type="text/javascript" src="<%= script %>"></script>
 <% });} %>

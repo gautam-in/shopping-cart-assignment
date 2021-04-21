@@ -1,27 +1,27 @@
 //breakpoints- 480px ,768px and 1024 px
 
 
-@mixin responsive-for-sm-mobile {
+@mixin media-sm-screen {
     @media all and (max-width: 480px){
         @content;
     }
 }
 
-@mixin responsive-for-ms-mobile {
+@mixin media-md-screen {
     @media all and (min-width: 480px) and (max-width: 768px) {
         @content;
     }
 }
 
 
-@mixin responsive-for-ipad {
+@mixin media-lg-screen {
     @media all and (min-width: 768px) and (max-width: 1024px) {
         @content;
     }
 }
 
-@mixin responsive-for-desktop {
-    @media all and (min-width: 1024) {
+@mixin media-xl-screen {
+    @media all and (min-width: 1025) {
         @content;
     }
 }

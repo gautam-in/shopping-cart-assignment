@@ -17,7 +17,6 @@ var registration = (function (formSelector) {
                     errorMsg = CONSTANTS.EMPTY_ERROR_MSG;
                     flag = false;
                 } else {
-                    console.log(item.value, (item.value).length);
                     if (item.type === 'password' && ((item.value).length < 5 || !item.value.match(CONSTANTS.PASSWORD_VALIDATION))) {
                         errorMsg = CONSTANTS.PASSWORD_ERROR_MSG;
                         flag = false;

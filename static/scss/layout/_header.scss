@@ -6,7 +6,7 @@
       height: 88px;
       float: left;
       padding: 10px 0;
-      @include responsive-for-sm-mobile {
+      @include media-sm-screen {
         height: 50px;
       }
       &--img {
@@ -24,7 +24,7 @@
         float: left;
         margin: 55px 0px 15px 30px;
       }
-      @include responsive-for-sm-mobile {
+      @include media-sm-screen {
         display: none;
       }
     }
@@ -35,7 +35,7 @@
         list-style: none;
         margin: 10px 0;
         padding: 0;
-        @include responsive-for-sm-mobile {
+        @include media-sm-screen {
           display: none;
         }
       }

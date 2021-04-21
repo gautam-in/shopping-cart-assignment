@@ -1,14 +1,14 @@
 //Used class Inheritance
 //Parent class Product
-class Product {
-    constructor(){
-        var products = []
+class Product { 
+    constructor() {
+        let products=[]
                 this.products = products
-                console.log("hello product",products)
         }
+    
         //card template created for fetch data
     getProductCard = (response) => {
-        console.log("hello response", response)
+        localStorage.setItem('product', JSON.stringify(response));
        let contentBlock = "";
         response.forEach(element => {
             contentBlock += `<div class="product-list__products">
@@ -17,10 +17,10 @@ class Product {
                                 <p>${element.description}</p>
                                 <div class="product-list__products--button">
                                 <div class="price">MRP Rs.${element.price}</div>
-                                <button id="buy-now" aria-label="Byu Now" class="btn btn-primary product-list__products--item" value=${element.id}>${CONSTANTS.buy}</button>
+                                <button id="buy-now" aria-label="Buy Now" class="btn btn-primary product-list__products--item" value=${element.id}>${CONSTANTS.buy}</button>
                             </div>
                             <div class="product-list__products--mob-button">
-                                <button id="buy-now" aria-label="Byu Now" class="btn btn-primary product-list__products--item" value=${element.id}>${CONSTANTS.buy} @ MRP Rs.${element.price}</button>
+                                <button id="buy-now" aria-label="Buy Now" class="btn btn-primary product-list__products--item" value=${element.id}>${CONSTANTS.buy} @ MRP Rs.${element.price}</button>
                             </div>
                             </div>`;     
                         });
@@ -41,9 +41,37 @@ class ProductList extends Product{
             .then(res => {
                 this.products = res;
                 document.getElementsByClassName("product-list")[0].innerHTML = this.getProductCard(this.products);
-               
+                this.registerListenerForBuyNowButton();
             })
         }
+
+        registerListenerForBuyNowButton = () =>{
+            var addToCartButton = document.querySelectorAll("button#buy-now.btn.btn-primary.product-list__products--item"); 
+            addToCartButton.forEach(function(addToCartButton){
+                addToCartButton.addEventListener("click", 
+               function(e){
+                apiService.addToCart({url: END_POINTS.ADDTOCART, id: (e.target.value)})
+                .then(res => {
+                    if(res.status === 200){
+                        this.product=localStorage.getItem('product');
+                        if(this.product){
+                           this.product =JSON.parse(this.product)
+                        }
+                        let quantity = parseInt(document.getElementById(CONSTANTS.CART_ITEM_QUANTITY).textContent)+1
+                        document.getElementById(CONSTANTS.CART_ITEM_QUANTITY).textContent = quantity;
+                        var filtered = (this.product || []).filter(item => {
+                            return item.id == e.target.value;
+                        });
+                        if(filtered && filtered.length>0){ 
+                        cart.setSession(filtered[0]);
+                        } //Set Session
+                    }
+                });
+               })
+               
+            });
+        };
+
 
          // Call get Categories List method to fetch data from API for side menu
    
@@ -62,7 +90,6 @@ class ProductList extends Product{
 
       //filter product categories
         filterProducts( id, name){
-            console.log("id", id)
             let status = productList.addClass(id);
             if(window.matchMedia("screen and (max-width: 767px)").matches){
                 document.querySelector(".sidebar__action--mobile").textContent = name;
@@ -70,10 +97,12 @@ class ProductList extends Product{
             }
             // Retrun the value according to categories id
             let filtered = this.products.filter(item => {
-                console.log("category id", item.category, id)
                 return item.category == id;
             });
+            
             document.getElementsByClassName("product-list")[0].innerHTML = this.getProductCard(status===true ? filtered : products);
+            this.registerListenerForBuyNowButton();
+            
         }
         
        // add active class when selected category
@@ -97,7 +126,9 @@ class ProductList extends Product{
 const productList = new ProductList()
 productList.getProductList();
 productList.getCategories();
+productList.registerListenerForBuyNowButton();
 
 document.querySelector(".sidebar__action").addEventListener("click", function() {
     document.querySelector(".sidebar__items").style.display = "block";
 });
+

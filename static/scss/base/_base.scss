@@ -16,15 +16,34 @@ body {
     display: block;
 }
 .container {
-    width: $body-width;
+    width: 90%;
     margin: 0 auto;
-    @include responsive-for-ipad {
+    // @include media-xl-screen{
+    //     width: 80%;
+    // }
+    @include media-lg-screen {
+        width: $body-width;
         max-width: 1024px;
     }
-    @include responsive-for-ms-mobile {
+    @include media-md-screen {
+        width: $body-width;
         max-width: 100%;
     }
-    @include responsive-for-sm-mobile {
+    @include media-sm-screen {
+        width: $body-width;
         max-width: 100%;
+    }
+   
+}
+
+// .container__homepage{
+//     width:80%
+// }
+
+.error{
+    text-align: center;
+    background-color: map-get($site_colors,  box-grey-color);
+    &__heading{
+    font-size: 20px;
     }
 }

@@ -1,0 +1,44 @@
+ 
+  .items {
+    height: calc(100% - 129px);
+    position: absolute;
+    background: map-get($site_colors, box-grey-color);
+    width: 100%;
+    top: 51px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    &__no-items {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      @include media-sm-screen {
+        width: 62%;
+      }
+      h2 {
+        @include media-sm-screen {
+          text-align: center;
+        }
+      }
+    }
+    &__cart{
+        background-color: map-get($site_colors, primary-color-white);
+        margin-bottom: 15px;
+        &--img {
+          margin-right: 15px;
+          float: left;
+          @include media-sm-screen {
+            margin-right: 0;
+          }
+        }
+        &--img {
+          width: 100px;
+          height: 100px;
+          float: left;
+          @include media-sm-screen {
+            width: 70px;
+            height: 70px;
+          }
+        }
+    }
+  }

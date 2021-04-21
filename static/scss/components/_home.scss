@@ -7,7 +7,7 @@
       width: 40%;
       height: 258px;
       margin-left: 1%;
-      @include responsive-for-sm-mobile {
+      @include media-sm-screen {
         width: 47%;
         height: 195px;
         padding: 6% 3%;
@@ -17,17 +17,17 @@
       float: right;
       text-align: center;
       margin: 50px auto;
-      @include responsive-for-ipad {
+      @include media-lg-screen {
         margin: 0;
         margin-right: 23px;
         margin-top: 50px;
         width: 49%;
       }
-      @include responsive-for-ms-mobile {
+      @include media-md-screen {
         width: 49%;
         margin-right: 1px;
       }
-      @include responsive-for-sm-mobile {
+      @include media-sm-screen {
         width: 49%;
         margin: 0;
         margin-right: 1px;
@@ -37,22 +37,22 @@
       float: left;
       text-align: center;
       margin: 50px auto;
-      @include responsive-for-ipad {
+      @include media-lg-screen {
         width: 49%;
         margin-left: 1%;
       }
-      @include responsive-for-ms-mobile {
+      @include media-md-screen {
         width: 49%;
         margin-left: 1%;
       }
-      @include responsive-for-sm-mobile {
+      @include media-sm-screen {
         width: 49%;
         margin: 0;
         padding: 0 5px;
       }
     }
     &__btn {
-      @include responsive-for-ipad {
+      @include media-lg-screen {
         height: 50px;
         padding: 0;
         line-height: 50px;
@@ -65,7 +65,7 @@
       width: 40%;
       height: 258px;
       margin-left: 1%;
-      @include responsive-for-sm-mobile {  
+      @include media-sm-screen {  
         width: 47%;
         height: 195px;
         padding: 6% 3%;

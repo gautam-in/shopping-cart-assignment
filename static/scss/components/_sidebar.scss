@@ -3,7 +3,7 @@
     background-color: map-get($site_colors, box-grey-color);
     width: 25%;
     height: 100%;
-    @include responsive-for-sm-mobile {
+    @include media-sm-screen {
       float: none;
       width: 100%;
       height: auto;
@@ -14,7 +14,7 @@
       padding: 12px 15px;
       color: map-get($site_colors, primary-color-white);
       display: none;
-      @include responsive-for-sm-mobile {
+      @include media-sm-screen {
         display: block;
         &--img {
           @include fontSize(10px);
@@ -27,7 +27,7 @@
       }
     }
     &__items {
-      @include responsive-for-sm-mobile {
+      @include media-sm-screen {
         position: absolute;
         top: 100%;
         width: 100%;

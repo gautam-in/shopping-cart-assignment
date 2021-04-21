@@ -12,8 +12,8 @@ const settings = {
     }
 };
 
-gulp.task('default', function(){
-    console.log("default task");
+gulp.task('default', async function(){
+    return console.log("default task");
 });
 
 // Add task to compile scss code inot css code

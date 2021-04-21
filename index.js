@@ -15,11 +15,6 @@ app.get("/", (req, res) => {
     };
     res.render("pages/home", data);
 });
-//added robots.txt file for seo
-app.use('/robots.txt', function (req, res, next) {
-    res.type('text/plain')
-    res.send("User-agent: *\nDisallow: /");
-});
 
 // post Router for Home Page
 app.post("/", (req, res) => {
@@ -68,7 +63,41 @@ app.get("/product-list",(req,res)=>{
       }).status(200).sendFile( __dirname + "/server/products/index.get.json");
 });
 
+//add to cart
+app.post("/api/addToCart", (req, res) => {
+    res.set({
+        'Content-Type': 'application/json'
+      }).status(200).sendFile( __dirname + "/server/addToCart/index.post.json");
+});
+
+//error page
+app.use(function(req, res, next){
+    res.status(404);
+  
+    // respond with html page
+    if (req.accepts('html')) {
+        res.render("pages/404");
+      return;
+    }
+  
+    // respond with json
+    if (req.accepts('json')) {
+      res.send({ error: 'Not found' });
+      return;
+    }
+  
+    // default to plain-text. send()
+    res.type('txt').send('Not found');
+  });
+
+//added robots.txt file for seo
+app.use('/robots.txt', function (req, res, next) {
+    res.type('text/plain')
+    res.send("User-agent: *\nDisallow: /");
+});
+
 // start port at 3000
 app.listen(portNumber, function(){
     console.log("App started on localhost:" + portNumber);
 });
+

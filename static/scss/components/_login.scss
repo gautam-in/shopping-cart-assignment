@@ -3,10 +3,10 @@
     margin: 30px auto;
     &__info {
         padding-right: 30px;
-        @include responsive-for-ipad {
+        @include media-lg-screen {
             margin-left: 24px;
         }
-        @include responsive-for-sm-mobile {
+        @include media-sm-screen {
         padding-left: 11px;
         }
     }
@@ -14,7 +14,7 @@
     float: left;
     width: 48%;
     margin-left: 1%;
-    @include responsive-for-ipad {
+    @include media-lg-screen {
       width: 43%;
       margin-left: 1%;
     }
