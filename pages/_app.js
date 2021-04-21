@@ -3,6 +3,7 @@ import {Provider} from 'react-redux';
 import React from 'react';
 import withRedux from "next-redux-wrapper";
 import store from '../redux_store';
+import 'bootstrap/dist/css/bootstrap.css';
 
 class MyApp extends App {
 

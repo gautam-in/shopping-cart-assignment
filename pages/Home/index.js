@@ -46,7 +46,6 @@ class Home extends Component {
 
     constructor(props)
     {   super(props);
-        
         this.state.slides = items.map((item) => {
             return (
             <CarouselItem
