@@ -12,11 +12,9 @@ import { configureFakeBackend } from './_helpers';
 configureFakeBackend();
 
 ReactDOM.render(
-  // <Router history={history}>
   <Provider store={store}>
     <App />
   </Provider>
-  // </Router>
   ,
   document.getElementById("root")
 );

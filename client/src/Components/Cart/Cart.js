@@ -27,7 +27,7 @@ const Cart = ({
 
                     <div className="modal-content" aria-label="cart modal" tabIndex="7">
                         <div className="modal-header" aria-label="cart header">
-                            <h2 aria-label="My Cart header" tabIndex="8">{header + "(" + cartItem + "items)"}</h2>
+                            <h2 aria-label="My Cart header" tabIndex="8">{header + " (" + cartItem + "items)"}</h2>
                             <div role="close button" className="close" onClick={handleClose} aria-label="cart close icon, click if you want to close the cart modal" tabIndex="9" >X</div>
                         </div>
                         <div className="modal-body" aria-label="Added Product details in the cart">
