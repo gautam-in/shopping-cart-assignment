@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Calculator Snapshots should render our Snapshots correctly 1`] = `ShallowWrapper {}`;
+
+exports[`Footer Snapshots should render our Snapshots correctly 1`] = `ShallowWrapper {}`;
