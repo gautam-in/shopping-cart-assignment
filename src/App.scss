@@ -1,3 +1,5 @@
+@import './SCSS-Variables/variables.scss';
+
 body {
   margin: 0px;
   font-size: 14px;
@@ -9,12 +11,12 @@ body a {
 }
 .app-footer {
   padding: 15px;
-  background: #f3f3f3;
+  background:$white-color;
 }
 .app-footer span {
   display: block;
   margin: 0px auto;
   width: 75vw;
-  color: black;
+  color:$black-color;
   font-weight: 500;
 }
