@@ -71,10 +71,18 @@ header {
   }
 }
 
-@media only screen and (min-width: $tab-max-width) {
+@media only screen and (min-width: $desktop-min-width) {
   .logo-wrap {
     img {
       width: 100%;
+    }
+  }
+}
+
+@media only screen and (min-width: $tab-max-width) {
+  .logo-wrap {
+    img {
+      width: 75%;
     }
   }
   .navbar-text .navbar-nav,

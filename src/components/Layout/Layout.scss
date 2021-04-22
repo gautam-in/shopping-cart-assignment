@@ -18,7 +18,7 @@ body {
   @extend parentElement;
   overflow: hidden;
   min-height: calc(100vh - 44px);
-  padding-top: 106px;
+  padding-top: 100px;
 }
 
 button {
@@ -27,14 +27,20 @@ button {
   }
 }
 
-@media only screen and (max-width: $mobile-max-width) {
+@media only screen and (max-width: $tab-max-width) {
   .page-wrap {
-    padding-top: 85px;
+    padding-top: 100px;
   }
   .container {
     max-width: 100%;
     margin: 0;
     padding: 0;
+  }
+}
+
+@media only screen and (max-width: $mobile-max-width) {
+  .page-wrap {
+    padding-top: 80px;
   }
 }
 
