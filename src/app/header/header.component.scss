@@ -16,9 +16,12 @@ nav {
 
   .nav-bar-right {
     margin-right: 5rem;
+    .nav-item {
+      margin: 0 1rem;
+    }
   }
 
-  .nav-item{
+  .nav-item {
     cursor: pointer;
   }
 }
@@ -68,6 +71,10 @@ nav {
   nav {
     max-height: 20rem;
     width: auto;
+    .nav-bar-right {
+      display: -webkit-inline-box;
+      margin: 0 1rem;
+    }
     .navbar-brand {
       margin-left: 0;
       .logo-image {
@@ -76,11 +83,19 @@ nav {
       }
     }
   }
-
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (max-width: 600px) {
+  nav {
+    .nav-bar-right {
+      display: -webkit-inline-box;
+      margin: 1rem 0;
+    }
+    .nav-item {
+      margin: 0 0.5rem;
+    }
+  }
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
@@ -90,9 +105,6 @@ nav {
     .navbar-brand {
       margin-left: 0;
     }
-    .nav-bar-right {
-      margin-right: 0;
-    }
   }
 
   .main-container {
@@ -101,21 +113,23 @@ nav {
       right: 0;
       bottom: 0;
       .nav-bar-right {
-        display: inline-block;
+        display: -webkit-inline-box;
+        margin: 1rem 0;
       }
     }
 
     .cart {
-      height: 3rem;
+      height: 2rem;
       right: -2rem;
+
+      a {
+        font-size: 13px;
+        padding-left: 8px;
+      }
+      .cart-logo {
+        width: 1.5rem;
+      }
     }
   }
 }
 
-/* Large devices (laptops/desktops, 992px and up) */
-@media only screen and (max-width: 992px) {
-}
-
-/* Extra large devices (large laptops and desktops, 1200px and up) */
-@media only screen and (min-width: 1200px) {
-}

@@ -11,13 +11,12 @@ import { ProductService } from '../product.service';
   styleUrls: ['./product-list.component.scss'],
 })
 export class ProductListComponent implements OnInit {
-  filterProduct: IProduct[] = [];
+  filteredProducts: IProduct[] = [];
   categoryId: string;
 
   constructor(
     private _cartService: CartService,
     private _activatedroute: ActivatedRoute,
-    private _productService: ProductService
   ) {}
 
   ngOnInit(): void {
@@ -37,25 +36,10 @@ export class ProductListComponent implements OnInit {
           prod.push(product);
         }
       });
-      this.filterProduct = this.buildProductArr(prod);
+      this.filteredProducts = prod
     }
   }
 
-  buildProductArr(product: IProduct[]): any {
-    let result = [];
-    for (var i = 0; i < product.length; i += 4) {
-      var row = [];
-      for (var x = 0; x < 4; x++) {
-        var value = product[i + x];
-        if (!value) {
-          break;
-        }
-        row.push(value);
-      }
-      result.push(row);
-    }
-    return result;
-  }
 
   buyProduct(product: IProduct) {
     this._cartService.addProductToCart(product);

@@ -27,13 +27,14 @@
 
     .cart-image {
       width: 15%;
+      margin: 1rem;
       .card-img {
         width: 65%;
       }
     }
 
     .cart-description {
-      width: 85%;
+      width: 80%;
       .card-title {
         font-size: 1.5rem;
         font-weight: 700;
@@ -93,12 +94,14 @@
         width: 15%;
         .card-img {
           width: 100%;
+          margin: 1rem;
         }
       }
       .cart-description {
         width: 85%;
+       // margin: 1rem;
         .card-title {
-          font-size: 1.3rem;
+          font-size: 1.1rem;
           font-weight: 600;
         }
       }
@@ -118,6 +121,12 @@
       }
     }
   }
+
+  .item-price,
+.item-total-price,
+.count {
+  font-size: 1rem;
+}
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
@@ -125,7 +134,7 @@
   .card {
     .cart-header {
       .title {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
         margin: auto;
       }
       .count {
@@ -183,8 +192,18 @@
 
 @media only screen and (max-width: 575px) {
   .card {
+    .cart-header {
+      margin-top: 1rem;
+    }
     .product {
+      height: 6rem;
+      .cart-image{
+        .cart-img{
+          margin: 0 1rem;
+        }
+      }
       .cart-description {
+        width: 75%;
         .card-title {
           font-size: 0.7rem;
           font-weight: 500;

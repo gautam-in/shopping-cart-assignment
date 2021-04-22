@@ -13,13 +13,12 @@ import { IProduct } from 'src/models/product.model';
   styleUrls: ['./products.component.scss'],
 })
 export class ProductsComponent implements OnInit {
-  product: IProduct[] = [];
-  finalProduct:  IProduct[] = [];
+  products: IProduct[] = [];
+  // finalProduct:  IProduct[] = [];
+  // showFooter: boolean =true;
 
   constructor(
     private _activatedroute: ActivatedRoute,
-    private _productService: ProductService,
-    private _appService: AppService,
     private _cartService: CartService
   ) {}
 
@@ -29,26 +28,9 @@ export class ProductsComponent implements OnInit {
 
   fetchProduct(data) {
     if (data.length > 0) {
-      this.product = data;
-      this._productService.product = data;
-      this.finalProduct = this.buildProductArr(data);
+      this.products = data;
+      // this._productService.product = data;
     }
-  }
-
-  buildProductArr(product:  IProduct[]): any {
-    let result = [];
-    for (var i = 0; i < product.length; i += 4) {
-      var row = [];
-      for (var x = 0; x < 4; x++) {
-        var value = product[i + x];
-        if (!value) {
-          break;
-        }
-        row.push(value);
-      }
-      result.push(row);
-    }
-    return result;
   }
 
   buyProduct(product: IProduct) {

@@ -4,28 +4,41 @@
       <app-product-nav></app-product-nav>
     </div>
     <div class="col-10 product">
-      <div class="row" *ngFor="let row of finalProduct">
-        <div class="inner-row" *ngFor="let product of row">
-          <div class="card product-card">
-            <div class="card-body product-body">
-              <h5 class="card-title product-title">{{ product?.name }}</h5>
-              <div class="inner-body">
-                <img
-                  class="card-img-top product-img small-screen"
-                  src="{{ product?.imageURL }}"
-                  alt="{{product?.name}}"
-                />
-                <p class="card-text product-description small-screen">
-                  {{ product?.description }}
-                </p>
-              </div>
-              <div class="product-footer">
-                <h2 class="product-price">MRP Rs.{{ product?.price | currency: "Rs "}}</h2>
+      <div class="row">
+        <div
+          class="card col-lg-3 col-md-6 col-sm-12 product-card"
+          *ngFor="let product of products"
+        >
+          <div class="card-body product-body">
+            <h5 class="card-title product-title">{{ product?.name }}</h5>
+            <div class="inner-body">
+              <img
+                class="card-img-top product-img small-screen"
+                src="{{ product?.imageURL }}"
+                alt="{{ product?.name }}"
+              />
+              <p class="card-text product-description small-screen">
+                {{ product?.description }}
+              </p>
+            </div>
+            <div class="product-footer">
+              <div class="big-screen"  >
+                <h2 class="product-price">
+                  MRP {{ product?.price.toFixed(1) | currency: "Rs " }}
+                </h2>
                 <button
                   (click)="buyProduct(product)"
                   class="btn btn-danger btn-raised product-buy"
                 >
                   Buy Now
+                </button>
+              </div>
+              <div class="small-screen" >
+                <button
+                  (click)="buyProduct(product)"
+                  class="btn btn-danger btn-raised product-buy"
+                >
+                  Buy Now @ {{ product?.price.toFixed(1) | currency: "Rs " }}
                 </button>
               </div>
             </div>
