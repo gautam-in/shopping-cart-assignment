@@ -1,3 +1,46 @@
-.cart-item {
-    font-size: small;
+.i-item-btn {
+  display: block;
+  margin-left: 75px;
+  background-color: rgb(197, 29, 85);
+  color: #fff;
+  font-size: 10px;
+  padding: 5px 20px
 }
+
+.i-product-image {
+  width: 200px;
+  height: auto;
+  padding-left: 50px;
+}
+
+.i-product-desc {
+  font-size: 12px;    
+}
+
+/* You can add global styles to this file, and also import other style files 
+.cart-item {
+  font-size: small;
+}
+
+.filters {
+  font-size: small;
+}
+
+.card, .form-control, .btn {
+  border-radius: 0;
+}
+
+.list-group-item:first-child {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.list-group-item:last-child {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.product-btn {
+  font-size: smaller;
+}
+*/

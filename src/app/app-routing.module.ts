@@ -1,13 +1,14 @@
-import { ProductListItemComponent } from 'src/app/components/shopping-cart/product-list/product-list-item/product-list-item.component';
-import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.component';
-import { BabyItemComponent } from 'src/app/components/shopping-cart/product-list/baby-item/baby-item.component'
+import { ProductListComponent } from 'src/app/components/shopping-cart/product-list/product-list.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.component';
+import { BabyProductListComponent } from './components/shopping-cart/baby-product-list/baby-product-list.component';
+
 
 const routes: Routes = [
-  { path: 'products', component: ProductListItemComponent},
+  { path: 'products', component: ProductListComponent},
   { path: 'home', component: ShoppingCartComponent},
-  { path: 'baby', component: BabyItemComponent}
+  { path: 'baby', component: BabyProductListComponent }
 ];
 
 @NgModule({
@@ -15,6 +16,6 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
-export const routingComponents = [ ProductListItemComponent,
-   ShoppingCartComponent,
-   BabyItemComponent ]
+export const routingComponents = [ ProductListComponent,
+  ShoppingCartComponent, 
+  BabyProductListComponent ]

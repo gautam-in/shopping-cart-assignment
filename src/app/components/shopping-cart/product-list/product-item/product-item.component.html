@@ -1,0 +1,15 @@
+<div class="card mb-4 shadow-sm">
+  <h6>{{ productItem.name }}</h6>
+  <img class="product-image" [src]="productItem.imageURL" />
+
+  <div class="card-body">
+    <p class="card-text">
+      <strong>{{ productItem.price | currency:'INR' }}</strong>
+    </p>
+    <p class="product-desc">{{ productItem.description | slice: 0:80 }}...</p>
+      <div class="item-info">
+        <small>MRP Rs. {{ productItem.price }}</small>
+        <button type="button" class="item-btn" (click)="handleAddToCart()">Buy Now</button>
+      </div>
+  </div>
+</div> 
