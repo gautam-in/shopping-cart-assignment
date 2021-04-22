@@ -3,7 +3,7 @@ import { render } from "@testing-library/react";
 import '@testing-library/jest-dom';
 import configureStore from 'redux-mock-store';
 import { Provider } from "react-redux";
-import Register from "../Register";
+import Register from "../Components/Register/Register";
 
 const mockStore = configureStore([]);
 

@@ -1,7 +1,7 @@
 import React from "react";
 import { render } from "@testing-library/react";
 import '@testing-library/jest-dom';
-import Login from "../Login";
+import Login from "../Components/Login/Login";
 import configureStore from 'redux-mock-store';
 import { Provider } from "react-redux";
 
