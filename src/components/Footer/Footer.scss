@@ -1,20 +1,15 @@
 @import '../../styles/global';
 
 .footer-wrap {
-  position: relative;
-  width: 100%;
-  overflow: hidden;
-  background-color: $grey-color;
+  background-color: $dark-grey-color;
   padding: 10px 0px;
-  p {
-    font-weight: 800;
-    margin: auto 0;
-  }
+  text-align: center;
+  font-size: 12px;
+  font-weight: 600;
 }
 
-@media only screen and (max-width: $mobile-max-width) {
-  .footer-wrap p {
-    font-size: 0.8rem;
-    text-align: center;
+@media only screen and (min-width: $desktop-min-width) {
+  .footer-wrap {
+    text-align: left;
   }
 }

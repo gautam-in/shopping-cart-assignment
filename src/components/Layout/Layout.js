@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
+
 import Header from '../Header';
 import Footer from '../Footer';
 import Routes from '../Routes';
-import Sidebar from '../Sidebar';
+import CartDrawer from '../CartDrawer';
 import './Layout.scss';
 
 const Layout = () => {
@@ -17,7 +18,7 @@ const Layout = () => {
       <Router>
         <Header cartSideNav={cartSlideOpen} />
         <>
-          <Sidebar isSlideOpen={isSlideOpen} cartSideNav={cartSlideOpen} />
+          <CartDrawer isSlideOpen={isSlideOpen} cartSideNav={cartSlideOpen} />
           <Routes />
         </>
         <Footer />

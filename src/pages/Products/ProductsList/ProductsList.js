@@ -1,10 +1,11 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
+
 import Card from '../../../components/Card';
 import { selectCartProductIds, allProductsData } from '../../../selector';
 import { createAddToCartRequest } from '../../../actions';
-import './ProductList.scss';
+import './ProductsList.scss';
 
 const ProductList = React.memo(({ filterId }) => {
   const dispatch = useDispatch();
@@ -42,16 +43,16 @@ const ProductList = React.memo(({ filterId }) => {
     const { id } = product;
     const disabled = !!cartProduct.includes(id);
     return (
-      <li key={id} className='col-sm-12 col-md-6 col-lg-3 col-xs-3'>
+      <div key={id} className='col-sm-12 col-md-6 col-lg-3 col-xs-3'>
         <Card product={{ ...product, disabled }} addCart={addCart} />
-      </li>
+      </div>
     );
   });
 
   return (
     <div className='product-list-wrap'>
       {loading && <h1>Loading....</h1>}
-      {!loading && !error && <ul className='clearfix row'>{productList}</ul>}
+      {!loading && !error && <div className='clearfix row'>{productList}</div>}
       {error && <h1>Something went wrong!</h1>}
     </div>
   );

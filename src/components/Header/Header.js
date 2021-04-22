@@ -5,6 +5,7 @@ import { useSelector } from 'react-redux';
 import { Navbar, NavbarToggler, Collapse, Nav, NavItem, NavbarText } from 'reactstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
+
 import Logo from '../../../static/images/logo.png';
 import { allCartData } from '../../selector';
 import './Header.scss';
@@ -40,7 +41,7 @@ const Header = React.memo(({ cartSideNav }) => {
               </NavItem>
             </Nav>
             <NavbarText>
-              <Nav className='mr-auto' navbar>
+              <Nav navbar>
                 <NavItem>
                   <Link to='/login'>SignIn</Link>
                 </NavItem>
@@ -51,10 +52,8 @@ const Header = React.memo(({ cartSideNav }) => {
             </NavbarText>
           </Collapse>
           <div className='cart-header-wrap' onClick={cartSideNav}>
-            <div className='cart-header-main'>
-              <FontAwesomeIcon icon={faShoppingCart} />
-              <span> {data.length ? data.length : 0} Items</span>
-            </div>
+            <FontAwesomeIcon icon={faShoppingCart} />
+            <span> {data.length ? data.length : 0} Items</span>
           </div>
         </div>
       </Navbar>

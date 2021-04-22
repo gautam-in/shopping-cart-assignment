@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import Slider from '../../../components/Slider';
+
+import ImageSlider from '../../../components/ImageSlider';
 import Api from '../../../services/Api';
 
 const Carousel = () => {
@@ -23,7 +24,7 @@ const Carousel = () => {
   return (
     <>
       {loading && <h5>Loading...</h5>}
-      {!loading && !error && <Slider carouselImages={carouselImages} />}
+      {!loading && !error && <ImageSlider carouselImages={carouselImages} />}
       {!loading && error && <h1>Something went wrong!</h1>}
     </>
   );

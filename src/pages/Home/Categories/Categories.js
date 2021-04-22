@@ -1,9 +1,10 @@
 import React, { useEffect } from 'react';
-import './Categories.scss';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+
 import { fetchCategoriesDataRequest } from '../../../actions';
 import { allCategoriesData } from '../../../selector';
+import './Categories.scss';
 
 const Categories = () => {
   const dispatch = useDispatch();

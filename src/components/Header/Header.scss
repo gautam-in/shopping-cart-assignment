@@ -14,80 +14,104 @@ header {
 
 .logo-wrap {
   img {
-    width: 10rem;
+    width: 50%;
   }
 }
 
-.navbar {
-  padding: 0px;
+.navbar-toggler {
+  position: absolute;
+  top: 10px;
+  width: 60%;
+  margin: 0 20%;
 }
 
+.navbar-text .navbar-nav,
 .navbar-nav {
   list-style: none;
-  margin: 0 5rem;
-  li a {
-    color: $dark-grey-color;
-    font-size: 1rem;
-    font-weight: 800;
-    padding: 0px 10px;
-    text-decoration: none;
-  }
-}
-.navbar-text {
-  padding-bottom: 4.5rem;
-  li a {
-    color: $black-color;
-  }
-}
-.cart-header-wrap {
-  position: absolute;
-  right: 1rem;
-  bottom: 0;
-  background-color: $grey-color;
-  padding: 15px;
-  cursor: pointer;
-  .cart-header-main svg {
-    color: $pink-color;
-  }
-  span {
-    font-weight: 800;
-    font-size: 0.8rem;
+  margin: 0 30%;
+  li {
+    width: 50%;
+    border-top: 1px solid $dark-grey-color;
+    a {
+      color: $black-color;
+      font-size: 12px;
+      line-height: 16px;
+      font-weight: 600;
+      text-decoration: none;
+    }
+    &:hover {
+      background: $grey-color;
+    }
   }
 }
 
-@media only screen and (max-width: $mobile-max-width) {
+.navbar-text {
+  display: block;
+  padding: 0;
+}
+
+.cart-header-wrap {
+  background: $dark-grey-color;
+  cursor: pointer;
+  position: absolute;
+  right: -18px;
+  top: -8px;
+  padding: 15px 30px 15px 10px;
+  display: flex;
+  align-items: center;
+  svg {
+    width: 30px;
+    height: 30px;
+    color: $pink-color;
+    margin-right: 10px;
+  }
+  span {
+    font-size: 16px;
+    font-weight: 700;
+  }
+}
+
+@media only screen and (min-width: $tab-max-width) {
   .logo-wrap {
     img {
-      width: 6rem;
+      width: 100%;
     }
   }
-  .navbar {
-    padding: 0.6rem 1rem;
-  }
+  .navbar-text .navbar-nav,
   .navbar-nav {
+    margin: 0 10%;
     li {
-      padding: 5px 0px;
+      width: 50px;
+      border-top: none;
+      margin-bottom: -25%;
+      a {
+        color: #666666;
+        font-size: 14px;
+        font-weight: 700;
+      }
+      &:hover {
+        background: $white-color;
+      }
     }
   }
+
   .navbar-text {
-    padding-bottom: 0px;
-    padding-top: 0px;
-    width: 100%;
-    li {
-      padding: 5px 0px;
-      display: block;
+    margin-right: -4%;
+    .navbar-nav {
+      display: flex;
+      li {
+        width: 60px;
+        margin-bottom: 60px;
+        a {
+          color: $black-color;
+          font-weight: 900;
+        }
+      }
     }
-  }
-  .navbar-toggler {
-    // background-color: $pink-color;
-    // border: 1px solid $pink-color;
-    position: absolute;
-    top: 10px;
-    left: 115px;
-    border-radius: 0px;
   }
 
   .cart-header-wrap {
-    padding: 10px;
+    top: 32px;
+    padding: 16px 30px 16px 10px;
   }
 }

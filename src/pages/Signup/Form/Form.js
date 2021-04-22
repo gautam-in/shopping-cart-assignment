@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { Form, Label, Input } from 'reactstrap';
+
 import ErrorMessage from '../../../components/ErrorMessage';
 import { emailValidation, nameValidation, passwordValidation } from '../../../utils/validation';
 import '../../../styles/Form.scss';

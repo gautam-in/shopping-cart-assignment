@@ -19,7 +19,6 @@
 }
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
-  background-color: $grey-color;
   padding: 18px;
 }
 .carousel-control-next,
@@ -28,10 +27,9 @@
 }
 
 .carousel-indicators li {
-  background-color: $grey-color;
-  height: 10px;
-  width: 10px;
-  margin-bottom: 5px;
+  background-color: $black-color;
+  height: 6px;
+  width: 6px;
 }
 
 @media only screen and (max-width: $mobile-max-width) {
@@ -40,6 +38,6 @@
     display: none;
   }
   .carousel-indicators {
-    bottom: -18px;
+    bottom: -40px;
   }
 }

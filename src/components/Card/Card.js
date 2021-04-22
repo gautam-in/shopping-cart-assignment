@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+
 import './Card.scss';
 
 const Card = React.memo(({ product, addCart }) => {
@@ -7,19 +8,20 @@ const Card = React.memo(({ product, addCart }) => {
 
   return (
     <div className='product-wrap'>
-      <div className='product-header-wrapper'>
-        <h4>{name}</h4>
-      </div>
+      <div className='product-header'>{name}</div>
       <div className='product-detail-wrap'>
-        <img src={require(`../../../static/images/products/${imageURL}`).default} alt={sku} />
-        <div className='product-description'>
-          <p>{description}</p>
+        <div className='product-image'>
+          <img src={require(`../../../static/images/products/${imageURL}`).default} alt={sku} />
         </div>
-        <div className='product-price-wrap'>
-          <div className='product-price'>
-            <span>MRP RS.{price}</span>
+        <div className='product-description-wrap'>
+          <div className='product-description'>{description}</div>
+          <div className='product-price-wrap'>
+            <button type='button' onClick={() => addCart(product)} disabled={!!disabled}>
+              {!disabled ? `Buy Now @ RS.${price}` : `In Cart @ RS.${price}`}
+            </button>
           </div>
-          <div className='product-buy-out'>
+          <div className='desktop-product-price-wrap'>
+            <div className='desktop-product-price'>MRP RS.{price}</div>
             <button type='button' onClick={() => addCart(product)} disabled={!!disabled}>
               {!disabled ? `Buy Now` : `In Cart`}
             </button>

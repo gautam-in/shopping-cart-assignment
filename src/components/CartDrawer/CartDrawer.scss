@@ -1,6 +1,6 @@
 @import '../../styles/global';
 
-.sidebar-wrap-modal {
+.cart-drawer-wrap-modal {
   .modal-content {
     border-radius: 0px;
     height: calc(100vh - 60px);
@@ -14,7 +14,7 @@
   width: 50%;
 }
 
-.sidebar-cart-header-wrap {
+.cart-drawer-cart-header-wrap {
   position: relative;
   overflow: hidden;
   background-color: $black-color;
@@ -37,17 +37,17 @@
   }
 }
 
-.sidebar-cart-header-main {
+.cart-drawer-cart-header-main {
   color: $white-color;
 }
 
-.sidebar-cart-body-wrap {
+.cart-drawer-cart-body-wrap {
   background-color: $grey-color;
   height: calc(100vh - 170px);
   overflow: hidden;
 }
 
-.sidebar-cart-body-main {
+.cart-drawer-cart-body-main {
   overflow-y: auto;
   height: calc(100% - 60px);
   padding: 0px 15px;
@@ -113,7 +113,7 @@
   width: 25px;
 }
 
-.sidebar-cart-footer-wrap {
+.cart-drawer-cart-footer-wrap {
   position: relative;
   overflow: hidden;
   margin: 10px;

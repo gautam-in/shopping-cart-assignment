@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useLocation } from 'react-router-dom';
+
 import { fetchCategoriesDataRequest, fetchProductsDataRequest } from '../../actions';
 import ProductFilter from './ProductFilter';
 import ProductsList from './ProductsList';

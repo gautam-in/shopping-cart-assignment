@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { Carousel, CarouselItem, CarouselControl, CarouselIndicators } from 'reactstrap';
-import './Slider.scss';
 
-const SliderImages = React.memo(({ carouselImages }) => {
+import './ImageSlider.scss';
+
+const ImageSlider = React.memo(({ carouselImages }) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [animating, setAnimating] = useState(false);
 
@@ -56,7 +57,7 @@ const SliderImages = React.memo(({ carouselImages }) => {
   );
 });
 
-SliderImages.propTypes = {
+ImageSlider.propTypes = {
   carouselImages: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.string.isRequired,
@@ -66,4 +67,4 @@ SliderImages.propTypes = {
   ).isRequired
 };
 
-export default SliderImages;
+export default ImageSlider;

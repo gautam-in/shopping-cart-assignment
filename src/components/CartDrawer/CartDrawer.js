@@ -6,9 +6,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes, faGreaterThan } from '@fortawesome/free-solid-svg-icons';
 import { cartProductQuantity, removeCartProduct } from '../../actions';
 import { allCartData } from '../../selector';
-import './Sidebar.scss';
+import './CartDrawer.scss';
 
-const Sidebar = React.memo(({ isSlideOpen, cartSideNav }) => {
+const CartDrawer = React.memo(({ isSlideOpen, cartSideNav }) => {
   const dispatch = useDispatch();
 
   const { data } = useSelector((state) => allCartData(state));
@@ -71,11 +71,11 @@ const Sidebar = React.memo(({ isSlideOpen, cartSideNav }) => {
   });
 
   return (
-    <div className='sidebar-wrap'>
-      <div className='sidebar-main'>
-        <Modal className='sidebar sidebar-wrap-modal' isOpen={isSlideOpen}>
-          <div className='sidebar-cart-header-wrap'>
-            <div className='sidebar-cart-header-main'>
+    <div className='cart-drawer-wrap'>
+      <div className='cart-drawer-main'>
+        <Modal className='cart-drawer cart-drawer-wrap-modal' isOpen={isSlideOpen}>
+          <div className='cart-drawer-cart-header-wrap'>
+            <div className='cart-drawer-cart-header-main'>
               <h6>My Cart</h6> <span>( {data.length ? data.length : 0} Items )</span>
               <button type='button' className='close' aria-label='Close' onClick={cartSideNav}>
                 <span aria-hidden='true'>
@@ -84,8 +84,8 @@ const Sidebar = React.memo(({ isSlideOpen, cartSideNav }) => {
               </button>
             </div>
           </div>
-          <div className='sidebar-cart-body-wrap'>
-            <div className='sidebar-cart-body-main'>
+          <div className='cart-drawer-cart-body-wrap'>
+            <div className='cart-drawer-cart-body-main'>
               {data.length ? (
                 <div className='cart-list-wrap'>
                   <ul className='clearfix'>{cartList}</ul>
@@ -100,7 +100,7 @@ const Sidebar = React.memo(({ isSlideOpen, cartSideNav }) => {
               )}
             </div>
             {!!data.length && (
-              <div className='sidebar-cart-footer-wrap'>
+              <div className='cart-drawer-cart-footer-wrap'>
                 <button type='button' onClick={cartSideNav}>
                   <span className='checkout-text-wrap'>Proceed to checkout</span>
                   <span className='checkout-price-wrap'>
@@ -116,8 +116,8 @@ const Sidebar = React.memo(({ isSlideOpen, cartSideNav }) => {
   );
 });
 
-Sidebar.propTypes = {
+CartDrawer.propTypes = {
   isSlideOpen: PropTypes.bool.isRequired,
   cartSideNav: PropTypes.func.isRequired
 };
-export default Sidebar;
+export default CartDrawer;
