@@ -4,7 +4,7 @@ import {
   CREATE_ADD_TO_CART_FAILURE,
   MODIFY_PRODUCT_CART_QUANTITY,
   DELETE_PRODUCT_CART
-} from '../types';
+} from '../utils/types';
 
 const intialState = {
   loading: false,

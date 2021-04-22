@@ -1,9 +1,10 @@
 import axios from 'axios';
 
+const baseUrl = 'http://localhost:5000/';
+
 export default {
-  banners: () => axios.get(`http://localhost:5000/banners`).then((res) => res.data),
-  getCategories: () => axios.get(`http://localhost:5000/categories`).then((res) => res.data),
-  getProducts: () => axios.get(`http://localhost:5000/products`).then((res) => res.data),
-  addToCart: (product) =>
-    axios.post(`http://localhost:5000/addToCart`, { product }).then((res) => res.data)
+  banners: () => axios.get(`${baseUrl}banners`).then((res) => res.data),
+  getCategories: () => axios.get(`${baseUrl}categories`).then((res) => res.data),
+  getProducts: () => axios.get(`${baseUrl}products`).then((res) => res.data),
+  addToCart: (product) => axios.post(`${baseUrl}addToCart`, { product }).then((res) => res.data)
 };

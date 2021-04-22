@@ -6,7 +6,7 @@ import {
   MODIFY_PRODUCT_CART_QUANTITY,
   REMOVE_PRODUCT_CART,
   DELETE_PRODUCT_CART
-} from '../types';
+} from '../utils/types';
 
 export const createAddToCartRequest = (product) => ({
   type: CREATE_ADD_TO_CART_REQUEST,

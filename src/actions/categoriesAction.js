@@ -2,7 +2,7 @@ import {
   FETCH_CATEGORIES_REQUEST,
   FETCH_CATEGORIES_SUCCESS,
   FETCH_CATEGORIES_FAILURE
-} from '../types';
+} from '../utils/types';
 
 export const fetchCategoriesDataRequest = () => ({
   type: FETCH_CATEGORIES_REQUEST

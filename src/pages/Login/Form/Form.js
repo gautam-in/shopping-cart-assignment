@@ -4,7 +4,7 @@ import { Form, Label, Input } from 'reactstrap';
 import { withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import ErrorMessage from '../../../components/ErrorMessage';
-import { emailValidation, passwordValidation } from '../../../constant';
+import { emailValidation, passwordValidation } from '../../../utils/validation';
 import '../../../styles/Form.scss';
 
 const LoginForm = ({ history }) => {

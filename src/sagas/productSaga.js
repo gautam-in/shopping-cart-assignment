@@ -1,9 +1,10 @@
 import { call, put, takeLatest } from 'redux-saga/effects';
 import { normalize } from 'normalizr';
+
+import { fetchProductDataSuccess, fetchProductsDataFailure } from '../actions';
+import { FETCH_PRODUCTS_REQUEST } from '../utils/types';
 import Api from '../services/Api';
 import schema from '../schema';
-import { fetchProductDataSuccess, fetchProductsDataFailure } from '../actions';
-import { FETCH_PRODUCTS_REQUEST } from '../types';
 
 export function* fetchProducts() {
   try {
