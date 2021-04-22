@@ -1,7 +1,7 @@
 /**
  * API services
  */
- var apiService = {
+ let apiService = {
     getRequest: async function (requestObj) {
         return fetch(requestObj.url).then(res => res.json());
     },

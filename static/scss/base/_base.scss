@@ -46,14 +46,14 @@ body {
 .skip__to__content {
     padding: 1em;
     position: absolute;
-    top: -40px;
+    top: -56px;
     left: 1em;
     z-index: 1000;
     color: white;
     &:focus {
         position: absolute;
         top: 0;
-        background: map-get($site_colors, secondary-color-black);
+        background: #222;
       }
   }
   

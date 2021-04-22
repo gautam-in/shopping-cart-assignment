@@ -1,4 +1,4 @@
-var CONSTANTS = {
+const CONSTANTS = {
     FORM: '.form',
     FORM_INPUT_FIELD : '.form .form__group input',
     FORM_ERROR_CLASS : 'p.form__error',

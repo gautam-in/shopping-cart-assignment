@@ -1,17 +1,17 @@
 /**
  * Create immediately invoked function expression (IIFE)
  */
-var registration = (function (formSelector) {
+registration = ( (formSelector)=> {
 
     var formSelector = formSelector;
     var form = document.querySelectorAll(formSelector)[0];
     var formInput = document.querySelectorAll(CONSTANTS.FORM_INPUT_FIELD);
 
-    var validate = (eventType) => {
+     validate = (eventType) => {
         form.addEventListener(eventType, validateForm = (e) => {
             e.preventDefault();
-            var errorMsg = '';
-            var flag = true;
+            let errorMsg = '';
+            let flag = true;
             formInput.forEach(function (item) {
                 if (item.value === "" || !item.value) {
                     errorMsg = CONSTANTS.EMPTY_ERROR_MSG;
@@ -30,7 +30,7 @@ var registration = (function (formSelector) {
                         flag = false;
                     }
                 }
-                var msgElement = item.offsetParent.querySelectorAll(CONSTANTS.FORM_ERROR_CLASS)[0];
+                let msgElement = item.offsetParent.querySelectorAll(CONSTANTS.FORM_ERROR_CLASS)[0];
                 msgElement.innerText = errorMsg;
                 errorMsg = '';
             });

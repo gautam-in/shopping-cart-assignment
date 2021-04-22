@@ -1,7 +1,7 @@
  var cart = (function() {
  
     let emitter = window.mitt();
-    var CONSTANTS ={
+    const CONSTANTS ={
       CART_QUANTITY : 'cart-item-quantity',
       TOTAL : 'totalPrice'
     }
@@ -20,7 +20,7 @@
        * @param  {Object} data The selected cart Items data. 
        */
       setSession: data => {
-        var cartItems = [];
+        let cartItems = [];
         if (localStorage.getItem("cart") !== "undefined" && localStorage.getItem("cart") !== null && JSON.parse(localStorage.getItem("cart")).length > 0 ) {
           cartItems = JSON.parse(localStorage.getItem("cart"));
         }

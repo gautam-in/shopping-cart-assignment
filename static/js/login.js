@@ -1,10 +1,10 @@
 class Login{
 checkValidation = ((formSelector)=> {
-    var validateForm = (e) => {
+    const validateForm = (e) => {
         e.preventDefault();  
-        var formFields = document.querySelectorAll(CONSTANTS.FORM_INPUT_FIELD);
-        var errorMsg = '';
-        var flag = true;
+        let formFields = document.querySelectorAll(CONSTANTS.FORM_INPUT_FIELD);
+        let errorMsg = '';
+        let flag = true;
         formFields.forEach(function(item){
             if(item.value === "" || !item.value){
                 errorMsg = CONSTANTS.EMPTY_ERROR_MSG;
@@ -19,7 +19,7 @@ checkValidation = ((formSelector)=> {
                     flag = false;
                 }
             }
-            var msgElement = item.offsetParent.querySelectorAll(CONSTANTS.FORM_ERROR_CLASS)[0];
+            let msgElement = item.offsetParent.querySelectorAll(CONSTANTS.FORM_ERROR_CLASS)[0];
             msgElement.innerText = errorMsg;
             errorMsg = '';
         });
