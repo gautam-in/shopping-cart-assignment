@@ -1,18 +1,25 @@
 .sidebar {
-	position: fixed;
-	width: 250px;
-	height: 100%;
-	background-color: #eaeaea;
-	transition: 0.5s;
-	overflow: hidden;
-	margin-left: -1rem;
-	top: 6.4rem;
-	z-index: 93;
+	position: sticky;
+    width: 250px;
+    background-color: #eaeaea;
+    transition: 0.5s;
+    overflow: hidden;
+    margin-top: -0.6rem;
+    z-index: 93;
+	top: 0;
+    float: left;
+    min-height: 100vh;
 	ul {
 		position: absolute;
 		top: 0;
 		left: 0;
 		width: 100%;
+		button{
+			background: transparent;
+			border:none;
+			display: block;
+			width: 100%;
+		}
 		li {
 			position: relative;
 			width: 100%;
@@ -29,6 +36,7 @@
 					color: #FFF;
 				}
 			}
+			
 			.item-title {
 				position: relative;
 				display: block;
@@ -44,6 +52,7 @@
 }
 @media screen and (max-width: 700px) {
 	.sidebar {
+		display: none;
 		width: 0%;
 		height: auto;
 		position: fixed;

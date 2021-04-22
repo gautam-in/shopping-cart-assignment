@@ -48,7 +48,7 @@ const Cart = ({setCart}) => {
                 <div className="modal-header cart-head">
                     <span className="cart-title"> My Cart({cart.length})</span>
                     <button ref={ref} className="cart-close-button .close" onClick={close} aria-label="Close" >
-                        X
+                        x
                     </button>
                 </div>
 

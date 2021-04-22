@@ -17,6 +17,7 @@
 			justify-content: space-between;
 			background: #000;
 			padding: 15px;
+			width: 100%;
 		}
 		.close {
 			color: #aaaaaa;
@@ -51,17 +52,22 @@
 .cart-container {
 	padding: 0px;
 	max-width: 550px;
+    min-height: 50vh;
+    display: flex;
+    flex-direction: column;
+	align-items: stretch;
+    justify-content: flex-start;
 	.cart-head {
 		padding: 15px;
 		.cart-title {
 			color: #FFF;
 		}
 		.cart-close-button.\.close {
-			padding: 2px 5px;
+			font-size: x-large;
 			border: none;
 			border-radius: 0px;
 			font-family: monospace;
-			background: #d05151;
+			background: transparent;
 			color: #FFF;
 			&:hover {
 				background: #a53434;
@@ -73,17 +79,22 @@
 		width: 100%;
 		max-width: 100%;
 		background-color: #eaeaea;
-		max-width: 100%;
-		height: 70%;
 		display: flex;
 		flex-direction: column;
-		justify-content: space-between;
-		margin: auto;
+		align-content: flex-start;
+		justify-content: flex-start;
+		min-height: 370px;
 		.cart-items-container {
+			width: 100%;
 			height: 100%;
 			overflow: auto;
+			display: flex;
+			justify-content: stretch;
+			align-items: stretch;
+			flex-direction: column;
 		}
 		.cart-item {
+			width: 100%;
 			height: 100px;
 			display: flex;
 			padding: 20px;
@@ -105,7 +116,7 @@
 				}
 				.update-item {
 					background-color: #e91e63;
-					border-radius: 50%;
+					border-radius: 15%;
 					color: white;
 					text-align: center;
 					height: 20px;
@@ -133,6 +144,7 @@
 		.lowest-price-container {
 			display: flex;
 			height: 50px;
+			width: 100%;
 			align-items: center;
 			background-color: white;
 			font-size: 0.7rem;
@@ -149,6 +161,7 @@
 		justify-content: center;
 	}
 	.cart-footer {
+		display: block;
 		padding: 15px;
 		border-top: 2px solid #eaeaea;
 		.promo-info {

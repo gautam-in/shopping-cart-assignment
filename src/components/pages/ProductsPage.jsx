@@ -4,7 +4,7 @@ import { useHistory } from "react-router-dom";
 import "../../styles/index.scss"
 
 import * as Endpoints from "../Endpoints"
-import Sidebar from "../Molecules/Sidebar"
+import Sidebar from "../Molecules/Filters"
 import ProductsSection from "../Molecules/ProductsSection"
 
 const ProductsPage = ({categories}) => {

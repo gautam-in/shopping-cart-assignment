@@ -46,18 +46,20 @@ const Home = ({ categories }) =>{
 
   return (
     <>
-      {
-         banners.length > 0 && ( <SlickSlider banners={banners} /> ) 
-      }
+      <section className="home-sec">
+        {
+          banners.length > 0 && ( <SlickSlider banners={banners} /> ) 
+        }
 
-      <section className="categories_banner_sec">
-            <div className="container">
-                    {
-                      categories.map((category, index) => {
-                        return <CategoriesCard key= {category.id} category={category} index={index} />
-                      })
-                    }
-            </div>
+        <section className="categories_banner_sec">
+              <div className="container">
+                      {
+                        categories.map((category, index) => {
+                          return <CategoriesCard key= {category.id} category={category} index={index} />
+                        })
+                      }
+              </div>
+        </section>
       </section>
     </>
   );
