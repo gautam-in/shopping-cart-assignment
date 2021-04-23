@@ -72,19 +72,19 @@ app.post("/api/addToCart", (req, res) => {
 
 
 //added robots.txt file for seo
-app.use('/robots.txt', function (req, res, next) {
+app.use('/robots.txt',(req, res, next)=> {
     res.type('text/plain')
     res.send("User-agent: *\n Allow: /");
 });
 
-app.use('/sitemap.xml', function (req, res, next) {
+app.use('/sitemap.xml', (req, res, next) =>{
     // res.type('text/xml')
     res.send('<?xml version="1.0" encoding="UTF-8"?> <urlset xmlns:xhtml="http://www.w3.org/1999/xhtml"> <url><loc>http://localhost:3000 </loc><xhtml:link rel="alternate" hreflang="en-us" href="http://localhost:3000"/></url><url><loc>http://localhost:3000/registration </loc><xhtml:link rel="alternate" hreflang="en-us" href="http://localhost:3000/registration"/></url> <url><loc>http://localhost:3000/login </loc><xhtml:link rel="alternate" hreflang="en-us" href="http://localhost:3000/login"/></url><url><loc>http://localhost:3000/product-list </loc><xhtml:link rel="alternate" hreflang="en-us" href="http://localhost:3000/product-list"/></url>');
 });
 
 
 //error page
-app.use(function(req, res, next){
+app.use((req, res, next)=>{
     res.status(404);
   
     // respond with html page
@@ -103,7 +103,7 @@ app.use(function(req, res, next){
     res.type('txt').send('Not found');
   });
 // start port at 3000
-app.listen(portNumber, function(){
+app.listen(portNumber, ()=>{
     console.log("App started on localhost:" + portNumber);
 });
 

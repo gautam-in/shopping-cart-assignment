@@ -5,7 +5,7 @@ checkValidation = ((formSelector)=> {
         let formFields = document.querySelectorAll(CONSTANTS.FORM_INPUT_FIELD);
         let errorMsg = '';
         let flag = true;
-        formFields.forEach(function(item){
+        formFields.forEach((item)=>{
             if(item.value === "" || !item.value){
                 errorMsg = CONSTANTS.EMPTY_ERROR_MSG;
                 flag = false;

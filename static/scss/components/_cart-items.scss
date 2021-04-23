@@ -37,7 +37,7 @@
           float: left;
           @include media-sm-screen {
             width: 70px;
-            height: 70px;
+            @include height(70px);
           }
         }
     }

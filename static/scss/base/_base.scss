@@ -18,9 +18,6 @@ body {
 .container {
     width: 90%;
     margin: 0 auto;
-    // @include media-xl-screen{
-    //     width: 80%;
-    // }
     @include media-lg-screen {
         width: $body-width;
         max-width: 1024px;
@@ -33,21 +30,18 @@ body {
         width: $body-width;
         max-width: 100%;
     }
-   
+    
 }
 
-// .container__homepage{
-//     width:80%
-// }
 .accessibility__hidden {
     display: none;
 }
 
 .skip__to__content {
-    padding: 1em;
+    padding: 1rem;
     position: absolute;
     top: -56px;
-    left: 1em;
+    left: 1rem;
     z-index: 1000;
     color: white;
     &:focus {
@@ -57,8 +51,6 @@ body {
       }
   }
   
- 
-
 .error{
     text-align: center;
     background-color: map-get($site_colors,  box-grey-color);

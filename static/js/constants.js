@@ -17,5 +17,6 @@ const CONSTANTS = {
     buy : 'Buy Now',
     MINI_CART : '.mini-cart',
     CART_ID : 'cart',
-    CART_ITEM_QUANTITY : 'cart-item-quantity'
+    CART_ITEM_QUANTITY : 'cart-item-quantity',
+    TOTAL : 'totalPrice',
 };

@@ -19,7 +19,7 @@
     }
     @include media-sm-screen {
       width: 100%;
-      height: 150px;
+      @include height(150px);
     }
     @include media-xl-screen {
       // width:auto;
@@ -41,7 +41,7 @@
       }
       button {
         width: 10px;
-        height: 10px;
+        @include height(10px);
         background-color: map-get($site_colors, bullet-bg-color);
         display: inline-block;
         border: 0 none;
@@ -72,7 +72,7 @@
     }
   }
   &__arrow {
-    height: 30px;
+    @include height(30px);
     background-color: rgba(0, 0, 0, 0.5);
     color: map-get($site_colors, primary-color-white);
     border: 0;

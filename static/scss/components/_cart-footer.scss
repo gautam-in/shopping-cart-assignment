@@ -9,7 +9,7 @@
         right: 7px;
     }
     &__cheaper {
-        height: 80px;
+        @include height(80px);
         background-color: map-get($site_colors, primary-color-white);
         margin: 15px;
         border-radius: 5px;

@@ -19,7 +19,7 @@
         &--img {
           @include fontSize(10px);
           width: 15px;
-          height: 15px;
+          @include height(15px);
           float: right;
           margin-top: 4px;
           margin-right: 2px;

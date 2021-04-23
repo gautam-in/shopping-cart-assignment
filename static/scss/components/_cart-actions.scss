@@ -10,13 +10,13 @@
     }
     &__qty &__update {
         width: 30px;
-        height: 30px;
+        @include height(30px);
         border: 0;
         border-radius: 30px;
         @include fontSize(24px);
         @include media-sm-screen {
           width: 25px;
-          height: 25px;
+          @include height(25px);
           border-radius: 25px;
           @include fontSize(19px);
           margin-top: 12px;

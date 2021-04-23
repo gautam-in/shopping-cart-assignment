@@ -30,3 +30,7 @@
 @mixin fontSize($size) {
     font-size: toRem($size);
 } 
+
+@mixin height($size){
+    height: toRem($size)
+}

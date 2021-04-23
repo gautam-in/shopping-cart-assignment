@@ -49,13 +49,13 @@ home = ((carousel)=> {
 
         // Bind nav functions
         var navs = carousel.querySelectorAll(".carousel__arrow");
-        navs.forEach(function (nav) {
+        navs.forEach((nav)=> {
             nav.addEventListener("click", (e) => navigate(e));
         });
 
         // Bind Dot functions
         var goToLi = document.querySelectorAll(".goto-li");
-        goToLi.forEach(function (goToLi) {
+        goToLi.forEach((goToLi)=> {
             goToLi.addEventListener("click", (e) => gotoSlide(e));
         });
 
@@ -103,14 +103,11 @@ home = ((carousel)=> {
         slides.current++;
         activeDot(slides.current, previousState); // Call method for dot active
         if (timeout !== null) clearTimeout(timeout);
-        timeout = setTimeout(function () {
+        timeout = setTimeout(() =>{
             play(5000);
         });
     }
 
-    /**
-     * private prev method to navigate the slider into backword direction 
-     */
     var prev = () => {
         let previousState = slides.current;
         if (interval !== null) clearInterval(interval);
@@ -119,32 +116,24 @@ home = ((carousel)=> {
         activeDot(slides.current - 1, previousState); // Call method for dot active
         slides.current--;
         if (timeout !== null) clearTimeout(timeout);
-        timeout = setTimeout(function () {
+        timeout = setTimeout(() =>{
             play(5000);
         });
     };
 
-    /**
-     * method gotoSlide method to jump specific slider
-     * @param (object) e contain the reference of active html element
-     */
     var gotoSlide = (e) => {
         let previousState = slides.current;
         slides.current = parseInt(e.target.id);
         wrapper.style.transform = "translateX(-" + (slides.width * (slides.current)) + "px)";
         activeDot(slides.current, previousState); // Call method for dot active
         if (interval !== null) clearInterval(interval);
-        setTimeout(function () {
+        setTimeout(() =>{
             play(4000);
         });
     };
 
-    /**
-     * method to play method to rotate slider
-     * @param (Number) delay Number of milisecond to move slider
-     */
     var play = (delay) => {
-        interval = setInterval(function () {
+        interval = setInterval(()=> {
             let previousState = slides.current;
             if (slides.current < (slides.count - 1)) {
                 slides.current++;
@@ -157,19 +146,14 @@ home = ((carousel)=> {
         }, delay);
     };
 
-    /**
-     * method to add active class in dot dynamically
-     * @param (Number) current position of active slider
-     * @param (Number) previousState next position of the slider
-     */
-    var activeDot = function (current, previousState) {
+    var activeDot = (current, previousState)=> {
         document.getElementsByClassName('goto-li')[previousState].children.item(0).classList.remove("goto__active");
         document.getElementsByClassName('goto-li')[current].children.item(0).classList.add("goto__active");
     };
 
     return {
         
-        getBanners: function () {
+        getBanners:  () =>{
             apiService.getBanner({ url: END_POINTS.BANNER })
                 .then(res => {
                     let img = "";

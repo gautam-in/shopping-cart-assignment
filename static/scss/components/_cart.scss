@@ -21,7 +21,7 @@
     }
     &__header {
       background-color: map-get($site_colors, secondary-color-black);
-      height: 50px;
+      @include height(50px);
       &--title {
         float: left;
         color: rgb(234, 239, 241);
@@ -35,7 +35,7 @@
         padding: 15px 15px;
         cursor: pointer;
         img {
-          height: 15px;
+          @include height(15px);
           width: 15px;
           margin-right: 6px;
         }

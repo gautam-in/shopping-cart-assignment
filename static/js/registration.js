@@ -1,6 +1,3 @@
-/**
- * Create immediately invoked function expression (IIFE)
- */
 registration = ( (formSelector)=> {
 
     var formSelector = formSelector;
@@ -12,7 +9,7 @@ registration = ( (formSelector)=> {
             e.preventDefault();
             let errorMsg = '';
             let flag = true;
-            formInput.forEach(function (item) {
+            formInput.forEach((item) => {
                 if (item.value === "" || !item.value) {
                     errorMsg = CONSTANTS.EMPTY_ERROR_MSG;
                     flag = false;
@@ -41,4 +38,3 @@ registration = ( (formSelector)=> {
     }
     validate('submit');
 })(CONSTANTS.FORM);
-

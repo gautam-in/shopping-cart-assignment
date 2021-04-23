@@ -1,12 +1,12 @@
 .btn {
-    height: 49px;
+  @include height(49px);
     cursor: pointer;
     padding: 0 15px;
     line-height: 47px;
     border-color: transparent;
     border-radius: 2px;
     @include media-lg-screen {
-      height: 50px;
+      @include height(50px);
       line-height: 50px;
       width: 50%;
     }

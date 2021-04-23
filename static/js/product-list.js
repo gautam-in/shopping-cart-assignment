@@ -36,7 +36,7 @@ class ProductList extends Product{
     }
     
      //Call get category list API to fetch the data from API
-        getProductList(){
+        getProductList = () => {
             apiService.getProductList({url: END_POINTS.PRODUCTS})
             .then(res => {
                 this.products = res;
@@ -47,9 +47,9 @@ class ProductList extends Product{
 
         registerListenerForBuyNowButton = () =>{
             var addToCartButton = document.querySelectorAll("button#buy-now.btn.btn-primary.product-list__products--item"); 
-            addToCartButton.forEach(function(addToCartButton){
+            addToCartButton.forEach((addToCartButton)=>{
                 addToCartButton.addEventListener("click", 
-               function(e){
+               (e)=>{
                 apiService.addToCart({url: END_POINTS.ADDTOCART, id: (e.target.value)})
                 .then(res => {
                     if(res.status === 200){
@@ -75,7 +75,7 @@ class ProductList extends Product{
 
          // Call get Categories List method to fetch data from API for side menu
    
-        getCategories(){
+        getCategories=()=>{
             apiService.getCategories({url: END_POINTS.CATEGORIES})
             .then(res => {
                 let contentBlock = "";
@@ -89,7 +89,7 @@ class ProductList extends Product{
         }
 
       //filter product categories
-        filterProducts( id, name){
+        filterProducts=( id, name)=>{
             let status = productList.addClass(id);
             if(window.matchMedia("screen and (max-width: 767px)").matches){
                 document.querySelector(".sidebar__action--mobile").textContent = name;
@@ -106,7 +106,7 @@ class ProductList extends Product{
         }
         
        // add active class when selected category
-    addClass(id) {
+    addClass=(id)=> {
             var els = document.querySelectorAll('.sidebar__items--menu.active');
             var previous_id = 0;
             var status = false;
@@ -128,7 +128,8 @@ productList.getProductList();
 productList.getCategories();
 productList.registerListenerForBuyNowButton();
 
-document.querySelector(".sidebar__action").addEventListener("click", function() {
+//for mobile sidemenu
+document.querySelector(".sidebar__action").addEventListener("click", ()=> {
     document.querySelector(".sidebar__items").style.display = "block";
 });
 

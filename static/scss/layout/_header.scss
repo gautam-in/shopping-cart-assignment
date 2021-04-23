@@ -3,11 +3,11 @@
     z-index: map-get($z-index, header);
     position: relative;
     &__logo {
-      height: 88px;
+      @include height(88px);
       float: left;
       padding: 10px 0;
       @include media-sm-screen {
-        height: 50px;
+        @include height(50px);
       }
       &--img {
         height: 100%;
@@ -62,7 +62,7 @@
         display: inline-block;
         vertical-align: middle;
         margin-right: 10px;
-        height: 20px;
+        @include height(20px);
         width:20px;
     }
   }

@@ -23,15 +23,15 @@
             border: none;
             margin: 0;
             padding-left: 2%;
-            height: 230px;
+            @include height(230px);
             float: left;
             border-bottom: 5px dashed map-get($site_colors, box-grey-color);
         }
         &--img {
             width: 100%;
-            height: 170px;
+            @include height(170px);
             @include media-lg-screen {
-                height: 109px;
+                @include height(109px);
                 width: 40%;
                 float: left;
                 margin-right: 6px;
@@ -46,7 +46,7 @@
         p {
             background-color: map-get($site_colors, box-grey-color);
             padding: 2px 5px;
-            height: 120px;
+            @include height(120px);
             overflow: hidden;
             @include media-lg-screen {
                 @include fontSize(13px);
@@ -62,10 +62,10 @@
             }
         }
         h3 {
-            height: 55px;
+            @include height(55px);
             @include media-sm-screen {
                 @include fontSize(12px);
-                height: 18px;
+                @include height(18px);
             }
         }
     }

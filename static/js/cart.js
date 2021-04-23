@@ -1,12 +1,12 @@
- var cart = (function() {
- 
+ var cart = (()=> {
+
     let emitter = window.mitt();
     const CONSTANTS ={
       CART_QUANTITY : 'cart-item-quantity',
       TOTAL : 'totalPrice'
     }
   
-     // Subscriber for cart element binding
+     // Subscriber for cart
     emitter.on('cart', e =>{
       cart.showCart();
     });
@@ -15,12 +15,8 @@
       cart.itemsCalculation();
     });
     return {
-      /**
-       * Set Product in the session
-       * @param  {Object} data The selected cart Items data. 
-       */
       setSession: data => {
-        let cartItems = [];
+         cartItems = [];
         if (localStorage.getItem("cart") !== "undefined" && localStorage.getItem("cart") !== null && JSON.parse(localStorage.getItem("cart")).length > 0 ) {
           cartItems = JSON.parse(localStorage.getItem("cart"));
         }
@@ -83,9 +79,6 @@
         cart.cartUpdate(JSON.parse(localStorage.getItem("cart")), data, type);
       },
   
-      /**
-       * Bind cart items with HTML element
-       */
       showCart: () => {
         let content = "";
         let buttonBlock = "";
@@ -148,6 +141,7 @@
       }
     };
   })();
+
   cart.showCart();
   cart.itemsCalculation();
   

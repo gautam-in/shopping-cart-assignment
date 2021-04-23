@@ -3,7 +3,7 @@
      margin-bottom: 15px;
     }
     &__control{
-     height: 47px;
+      @include height(47px);
      border: 1px map-get($site_colors, bullet-bg-color) solid;
      background: none;
      width: 100%;
