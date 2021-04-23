@@ -12,6 +12,8 @@ import { ProductService } from '../product.service';
 export class ProductNavComponent implements OnInit {
   categoryList: ICategory[] = [];
   categories: ICategory[] = [];
+  selectedValue: string = 'Select Category';
+   selectedId: string;
   constructor(
     private _appService: AppService,
     private _productService: ProductService,
@@ -35,4 +37,9 @@ export class ProductNavComponent implements OnInit {
   getProductByCategory(id: String) {
     this._route.navigate(['/products/list', id]);
   }
+
+  selectValue(catgory: ICategory) {
+    this.selectedValue = catgory.name ;
+    this.selectedId = catgory.id;
+ }
 }

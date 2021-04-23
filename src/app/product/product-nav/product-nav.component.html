@@ -5,3 +5,27 @@
     </button></a
   >
 </nav>
+<div class="btn-group product-dropdown">
+  <button
+    type="button"
+    class="btn btn-secondary dropdown-toggle drpdwn-btn"
+    data-toggle="dropdown"
+    aria-haspopup="true"
+    aria-expanded="false"
+  >
+  {{selectedValue}}
+  </button>
+
+  <div class="dropdown-menu product-menu" aria-labelledby="dropdownMenuButton" 
+ >
+    <ng-container *ngFor="let category of categoryList">
+      <a
+        *ngIf="category.enabled"
+        class="dropdown-item menu-item"
+        (click)="getProductByCategory(category?.id); selectValue(category)"
+      >
+        {{ category?.name }}</a
+      >
+    </ng-container>
+  </div>
+</div>

@@ -5,6 +5,7 @@
   margin-right: 2%;
 }
 
+
 .product {
   max-width: 70%;
   padding: 10px 0px;
@@ -68,7 +69,6 @@
   }
 
   .product-card {
-    // width: 20rem;
     width: 50rem;
     height: 245px;
     .product-body {
@@ -160,8 +160,25 @@
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
-  .product-nav {
-    display: none;
+  .product-dropdown{
+    display: inline-block !important;
+    .drpdwn-btn{
+      width: 24rem;
+      margin-top: 2rem;
+      background-color: $mergenta !important;
+      border: 0;
+    }
+
+    .dropdown-toggle::after{
+     margin-left: 12rem;
+    }
+    .product-menu{
+      width: 23rem;
+      background-color: $mergenta;
+    }
+    .menu-item{
+      color : $white
+    }
   }
 
   .product {

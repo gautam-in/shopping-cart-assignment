@@ -14,8 +14,6 @@ import { IProduct } from 'src/models/product.model';
 })
 export class ProductsComponent implements OnInit {
   products: IProduct[] = [];
-  // finalProduct:  IProduct[] = [];
-  // showFooter: boolean =true;
 
   constructor(
     private _activatedroute: ActivatedRoute,
