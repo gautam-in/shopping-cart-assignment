@@ -1,0 +1,40 @@
+@import "../../styles/variables";
+@import "../../styles/mq-mixin";
+
+.header_container {
+  display: flex;
+  /* width: 95%;
+  margin: 0 auto; */
+
+  // desktop screens
+  @include mq($l-width) {
+    width: 80%;
+    margin: 0 auto;
+  }
+}
+.bottom_grad {
+  text-align: center;
+  //padding-bottom: 5px;
+  width: 100%;
+  height: 8px;
+  background: linear-gradient(#c5c5c5, #ffffff);
+  //background-size: 100% 15px;
+}
+
+.header_content_alignment {
+  display: flex;
+  justify-content: flex-end;
+
+  height: 100%;
+  // tablet screens
+  @include mq($s-width) {
+    justify-content: space-between;
+    height: calc(100% - 20px);
+  }
+}
+
+.entry_access {
+  height: 20px;
+  text-align: right;
+  font-size: $primary-font-size;
+}

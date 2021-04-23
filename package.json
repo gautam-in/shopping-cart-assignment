@@ -3,10 +3,12 @@
   "version": "1.0.0",
   "description": "This is a shopping cart coding exercise",
   "main": "index.js",
+  "private": true,
   "scripts": {
-    "start": "webpack-dev-server --hot --open",
-    "build": "webpack --config webpack.config.js --mode production",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "webpack-dev-server --env.ENVIRONMENT=development --hot",
+    "start": "concurrently --kill-others \"webpack-dev-server --env.ENVIRONMENT=development --hot\" \"npm run server\"",
+    "build": "webpack --config webpack.prod.config.js --env.ENVIRONMENT=production ",
+    "test": "jest --config=jest.config.json --watch",
     "server": "canned -p 5000 ./server"
   },
   "author": "",
@@ -17,10 +19,16 @@
     "@babel/preset-react": "^7.10.4",
     "babel-loader": "^8.1.0",
     "canned": "^0.3.12",
+    "clean-webpack-plugin": "^4.0.0-alpha.0",
     "css-loader": "^4.2.0",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.6",
     "file-loader": "^6.0.0",
+    "html-loader": "^0.5.5",
     "html-webpack-plugin": "^4.3.0",
+    "jest": "^26.6.3",
     "node-sass": "^5.0.0",
+    "raf": "^3.4.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-router-dom": "^5.2.0",
@@ -29,5 +37,16 @@
     "webpack": "^4.44.1",
     "webpack-cli": "^3.3.12",
     "webpack-dev-server": "^3.11.0"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^5.11.10",
+    "@testing-library/react": "^11.2.6",
+    "concurrently": "^6.0.2",
+    "copy-webpack-plugin": "^6.4.1",
+    "dotenv": "^8.2.0",
+    "dotenv-webpack": "^7.0.2",
+    "eslint": "^7.24.0",
+    "eslint-webpack-plugin": "^2.5.4",
+    "identity-obj-proxy": "^3.0.0"
   }
 }

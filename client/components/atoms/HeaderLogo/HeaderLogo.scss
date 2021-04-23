@@ -1,0 +1,12 @@
+@import "/client/components/styles/variables";
+@import "/client/components/styles/mq-mixin";
+
+.header_logo {
+  width: 100px;
+  margin: 5px 0px;
+  margin-left: 10px;
+
+  // mobile screens
+  width: 150px;
+  height: 69px;
+}

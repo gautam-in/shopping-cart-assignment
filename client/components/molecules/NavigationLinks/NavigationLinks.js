@@ -1,10 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "./NavigationLinks.scss";
 
 function NavigationLinks() {
   return (
-    <nav>
-      <ul>
+    <nav className="nav_links">
+      <ul className="flexed">
         <li>
           <Link to="/">Home</Link>
         </li>

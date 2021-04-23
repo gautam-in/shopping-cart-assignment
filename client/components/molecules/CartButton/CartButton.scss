@@ -1,0 +1,21 @@
+@import "/client/components/styles/variables";
+@import "/client/components/styles/mq-mixin";
+
+.cart_button {
+  height: 100%;
+  display: flex;
+  align-items: center;
+
+  padding: 5px;
+  background: #ececec;
+  border: 0;
+
+  // tablet screens
+  @include mq($s-width) {
+    height: 100%;
+  }
+}
+
+.cart_img {
+  width: 30px;
+}

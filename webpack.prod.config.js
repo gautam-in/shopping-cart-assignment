@@ -1,10 +1,9 @@
-const path = require("path");
-const fs = require("fs");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 const webpack = require("webpack");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
-const Dotenv = require("dotenv-webpack");
-const dotenv = require("dotenv");
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const CopyWebpackPlugin = require("copy-webpack-plugin");
+const path = require("path");
 
 const envFile = require("./environments/env");
 
@@ -13,25 +12,30 @@ module.exports = (env) => {
   const envKeys = envFile(ENV);
 
   return {
-    mode: ENV,
+    mode: "production",
     entry: "./client/index.js",
-    // output: {
-    //   filename: "bundle.[hash].js",
-    //   path: path.resolve(__dirname, "build"),
-    //   publicPath: "/",
-    // },
+    output: {
+      filename: "bundle.[hash].js",
+      path: path.resolve(__dirname, "build"),
+      publicPath: "https://ecom-bazaar.netlify.app/",
+    },
     plugins: [
+      new webpack.DefinePlugin(envKeys),
+      new CleanWebpackPlugin(),
       new HtmlWebpackPlugin({
         template: "./client/index.html",
       }),
-
-      new webpack.DefinePlugin(envKeys),
-      // new webpack.DefinePlugin({
-      //   "process.env": {
-      //     NODE_ENV: JSON.stringify("production"),
-      //   },
-      // }),
-      // new Dotenv(),
+      new CopyWebpackPlugin({
+        patterns: [
+          {
+            from: path.resolve(__dirname, "_redirects"),
+          },
+          {
+            from: path.resolve(__dirname + "/static"),
+            to: "static/",
+          },
+        ],
+      }),
     ],
     resolve: {
       modules: [__dirname, "client", "node_modules"],
@@ -39,7 +43,6 @@ module.exports = (env) => {
     },
     devServer: {
       historyApiFallback: true,
-      port: 3000,
     },
     module: {
       rules: [

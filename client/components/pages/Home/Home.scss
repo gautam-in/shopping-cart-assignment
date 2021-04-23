@@ -1,0 +1,41 @@
+@import "/client/components/styles/variables";
+@import "/client/components/styles/mq-mixin";
+
+.home_container {
+  .categories_dropdown_mobile {
+    margin: 20px 0;
+    text-align: center;
+    padding: 10px;
+    background-color: $pimary_bg_color;
+    color: white;
+    cursor: pointer;
+    div {
+      padding: 10px;
+    }
+  }
+}
+
+@include mq($s-width) {
+  .home_container {
+    display: flex;
+    .categories_dropdown_mobile {
+      margin: 0;
+      text-align: left;
+      padding: 10px;
+      background-color: $primary-grey;
+      color: $font-secondary-color;
+
+      min-width: 250px;
+      /* flex-grow: 1; */
+      div {
+        border-bottom: 1px solid $font-secondary-color;
+      }
+    }
+    /* .products_list {
+      flex-grow: 4;
+    } */
+    .product {
+      padding: 10px;
+    }
+  }
+}

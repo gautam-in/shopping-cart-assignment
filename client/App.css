@@ -3,3 +3,22 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+.border {
+  border: 1px solid black;
+}
+.width_full {
+  width: 100%;
+}
+.flexed {
+  display: flex;
+}
+.flexed_center_all {
+  justify-content: center;
+  align-items: center;
+}
+
+.flexed_jc_sb_ai_cneter {
+  justify-content: space-between;
+  align-items: center;
+}

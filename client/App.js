@@ -1,28 +1,16 @@
 import React, { useEffect } from "react";
-import { Redirect, Route, Switch } from "react-router";
-import thumb from "./thumb1.jpg";
+import { Redirect, Route, Switch } from "react-router-dom";
 
-import Home from "./components/pages/Home";
-import Header from "./components/organisms/Header";
+import Home from "./components/pages/Home/Home";
+import Header from "./components/organisms/Header/Header";
 import ProductsListing from "./components/pages/ProductsListing";
 import Login from "./components/pages/Login";
 import Register from "./components/pages/Register";
 import Footer from "./components/organisms/Footer/Footer";
 
 import "App.css";
-const App = () => {
-  useEffect(() => {
-    fetch("http://localhost:5000/", {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-        "Access-Control-Allow-Origin": "*",
-      },
-    })
-      .then((response) => response.json())
-      .then((data) => console.log(data));
-  }, []);
 
+const App = () => {
   return (
     <div className="App">
       <Header />

@@ -1,0 +1,16 @@
+@import "/client/components/styles/variables";
+
+nav {
+  padding-left: 20px;
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+    height: 100%;
+  }
+  a {
+    text-decoration: none;
+    color: $font-secondary-color;
+  }
+}
