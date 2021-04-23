@@ -1,0 +1,27 @@
+
+<carousel>
+    <div *ngFor="let offer of offers">
+            <slide>
+                <img [src]="'../../assets'+offer.bannerImageUrl" class="d-block w-100 bannerImg" [alt]="offer.bannerImageAlt">
+            </slide>
+    </div>
+  </carousel>
+
+<div class="homeContent">
+    <div *ngFor="let categery of SortCategeries; let even = even; let odd = odd">
+        <ng-container *ngIf="categery.enabled">
+            <div class="items">
+                <div>
+                    <img [src]="'../../assets'+ categery.imageUrl" alt="" class="categeryImage" [ngClass]="{categeryImageRight: even}">
+                </div>
+                <div class="details" [ngClass]="{detailsEven: even}">
+                    <h4>{{categery.name}}</h4>
+                    <p>{{categery.description}}</p>
+                    <a (click)="exploreProducts(categery.id)" >Explore {{categery.key}}</a>
+                </div>
+            </div>
+
+        </ng-container>
+
+    </div>
+</div>

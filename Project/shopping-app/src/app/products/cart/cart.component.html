@@ -1,0 +1,49 @@
+<div class="">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">My Cart</h5> &nbsp; <span class="modalCart">({{cartList}})</span>
+        </div>
+        <div class="modal-body"  *ngIf="cartItems.length>0; else cartEmpty">
+            <div class="row">
+                <div class="Item" *ngFor="let product of cartItemDetails">
+                    <img [src]="'../../assets'+product.imageURL" alt="Product Image" class="modalImage">
+                    <div class="content">
+                        <h4 class="modalProductName">{{product.name}}</h4>
+                        <div class="modalProductDetails">
+                            <a class="modalIcon" (click)="decreament(product)"> &#x2212;</a>
+                            <span class="modalMultiplier">{{product.quantity}}</span> 
+                            <a class="modalIcon" (click)="increament(product)"> &#x2b; </a>
+                            <span class="modalMultiplier">&#xd7;</span>
+                            <span>Rs.{{product.price}}</span>
+
+                            <span class="Modalprice">Rs.{{product.price * product.quantity}}</span>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="loweprice">
+                    <img src="../../assets/static/images/lowest-price.png" alt="lowest price avertisement">
+                </div>
+                
+            </div>
+            
+        </div>
+        <ng-template #cartEmpty>
+            <div class="modal-body emptyCart">
+                <h2>No items in your cart</h2>
+                <p>Your favourate items are just a click away</p>
+            </div>
+            
+        </ng-template>
+        <div class="modal-footer">
+            <div *ngIf="cartItems.length>0; else cartEmptyFooter">
+                <span>Promo code can be applied on payment page</span>
+                <div class="footerContent">
+                    <a class="modalCheckout">Proceed to Checkout</a>
+                    <span class="totalAmount">{{totalProductPrice}}</span>
+                </div>
+            </div>
+            <ng-template #cartEmptyFooter>
+                <span class="footerContent">Start shopping</span>
+            </ng-template>
+        </div>
+  </div>
