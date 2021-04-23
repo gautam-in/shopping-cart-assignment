@@ -26,6 +26,12 @@ npm start
 npm run dev
 ```
 
+> **`Starting only mock server`**
+
+```sh
+npm run server
+```
+
 > **`Running test`**
 
 ```sh
