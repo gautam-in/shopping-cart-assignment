@@ -11,6 +11,10 @@ module.exports = {
     },
     module: {
         rules: [
+            {
+                test: /\.(png|jpe?g|gif|svg)$/i,
+                type: "asset/resource"
+            },
             { 
                 test: /\.(js)$/, 
                 use: 'babel-loader' 
@@ -22,6 +26,9 @@ module.exports = {
         ]
     },
     mode: 'development',
+    devServer: {
+      historyApiFallback: true,
+    },
     plugins: [
 
         new HtmlWebpackPlugin({
