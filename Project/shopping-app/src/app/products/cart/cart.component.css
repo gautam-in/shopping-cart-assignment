@@ -1,0 +1,118 @@
+.modal-header {
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.modal-title {
+    font-size: 85%;
+}
+
+.modalCart {
+    font-size: 60%;
+}
+
+.modal-footer {
+    padding: 0 1% 1%;
+}
+
+.modal-footer > *{
+    font-size: 80%;
+    width: 100%;
+    text-align: center;
+}
+
+.footerContent{
+    border: 1px solid #d00255;
+    background-color: #d00255;
+    color: #FFF !important;
+    padding: 2%;
+}
+
+.modalCheckout {
+    text-decoration: none;
+    color: #fff;
+    float: left;
+}
+
+.modal-body {
+    background-color: #eee;
+    padding-top: 2%;
+    min-height: 500px;
+}
+
+.modalImage {
+    width: 10%;
+    margin-right: 3%;
+}
+
+.Item {
+    display: flex;
+    margin-bottom: 2%;
+    box-shadow: 0 10px 10px -10px #dad0d0;
+    background-color: #fff;
+    padding: 2%;
+    width: 100%;
+    height: 90px;
+    padding-bottom: 5px;
+}
+
+.modalProductName {
+    font-size: 80%;
+    font-weight: 700;
+}
+
+.modalIcon{
+    border: 1px solid #d00255;
+    background-color: #d00255;
+    border-radius: 50%;
+    color: #fff;
+    line-height: 18px;
+    display: inline-block;
+}
+
+.modalProductDetails {
+    font-size: 80%;
+    width: 100%;
+    display: flex;
+}
+.content {
+    width: 86%;
+}
+
+.Modalprice {
+    margin-left: auto;
+}
+
+.modalMultiplier {
+    margin: 0 12px;
+}
+
+.loweprice {
+    width: 96%;
+    background-color: #fff;
+    margin: 0 auto;
+}
+
+.emptyCart {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    background-color: #fff;
+}
+
+.emptyCart h2{
+    font-size: 100%;
+    font-weight: 600;
+}
+
+.emptyCart p {
+    font-size: 80%;
+}
+
+.totalAmount {
+    display: flex;
+    justify-content: flex-end;
+}

@@ -1,0 +1,9 @@
+.mainContent{
+    margin: 0 auto;
+    max-width: 1140px;
+}
+
+.main-header {
+    box-shadow: 0 10px 10px -10px #dad0d0;
+    /* border-bottom: 1px solid rgb(228, 222, 222); */
+}

@@ -1,0 +1,71 @@
+
+::ng-deep .carousel-indicators li {
+    width: 1px;
+    height: 1px;
+    border-radius: 100%;
+    border: 2px solid #000;
+    box-sizing: border-box;
+  }
+
+::ng-deep .carousel-control-next-icon {
+    background-color: #2f2e2e;
+}
+::ng-deep .carousel-control-prev-icon {
+    background-color: #2f2e2e;
+}
+
+::ng-deep .carousel{
+    box-shadow: 0 10px 10px -10px #dad0d0;
+    margin-top: 15px;
+} 
+
+.bannerImg {
+    width: 90%;
+    height: auto;
+}
+.items {
+    height: 230px;
+    box-shadow: 0 10px 10px -10px #dad0d0;
+    position: relative;
+    width: 100%;
+}
+
+.details {
+    width: 60%;
+    position: absolute;
+    top: 20%;
+    right: 10px;
+    text-align: center;
+}
+ .detailsEven{
+     left: 2%;
+ }
+
+.categeryImage{
+    height: 170px;
+    width: 30%;
+    display: inline-block;
+    margin: 2%;
+}
+
+ .categeryImageRight {
+     float: right;
+ }
+
+
+h4{
+    font-size: 100%;
+}
+.details p {
+    font-size: 65%;
+}
+
+.details a {
+    text-decoration: none;
+    font-size: 60%;
+    border: 1px solid #ed4456;
+    background-color: #dc0f25;
+    color: #FFF;
+    padding: 8px;
+    cursor: pointer;
+}

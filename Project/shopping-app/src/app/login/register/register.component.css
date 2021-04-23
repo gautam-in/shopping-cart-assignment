@@ -1,0 +1,70 @@
+.login {
+    display: flex;
+    max-width: 95%;
+    margin: 5% auto 0;
+}
+
+
+.loginHeader h3 {
+    font-size: 120%;
+}
+
+.loginHeader p {
+    font-size: 80%;
+}
+
+.loginForm {
+    font-size: 70%;
+}
+
+input {
+    width: 300px;
+    display: block;
+    border: none;
+    border-bottom: 1px solid #555;
+    margin-bottom: 35px;
+}
+
+form > div:first-child > input {
+    margin-top: 0;
+}
+
+input:hover,
+input:focus,
+input:active {
+    outline: none;
+    border: none;
+    border-bottom: 3px solid #50dae2;
+}
+
+button {
+    background-color: #d00255;
+    border: 1px solid #d00255;
+    width: 300px;
+    color: #fff;
+    height: 38px;
+}
+
+.error {
+    color: red;
+}
+
+form {
+    margin: 0px 50px 40px;
+}
+
+input::placeholder {
+    font-size: 110%;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+}
+
+@media screen and (max-width: 575px){
+    input, button {
+        width: 85%;
+    }
+    .loginHeader {
+        margin-left: 5%;
+    }
+}

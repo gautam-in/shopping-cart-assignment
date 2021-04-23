@@ -1,0 +1,28 @@
+<div class="login">
+    <div class="row">
+        <div class="col col-lg-6 col-md-4 col-sm-4 col-0 loginHeader">
+            <h3>Login</h3>
+            <p>Get access to your Orders, Wishlist and Recommendations</p>
+
+        </div>
+        <div class="col col-lg-6 col-md-8 col-sm-8 col-12 loginForm">
+            <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                <span class="error" *ngIf="!isValidUser">Invalid Credentails</span>
+                <div class="form-group">
+                    <input type="email" placeholder="Email" formControlName="userEmail"  [ngClass]="{ 'is-invalid': submitted && f.userEmail.errors }" />
+                    <div *ngIf="submitted && f.userEmail.errors" class="error">
+                        <div *ngIf="f.userEmail.errors.required" >Email is required</div>
+                        <div *ngIf="f.userEmail.errors.pattern">Please provide valid email</div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <input type="password" placeholder="Password" formControlName="password"  [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+                    <div *ngIf="submitted && f.password.errors" class="error">
+                        <div *ngIf="f.password.errors.required">Password is required</div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <button  type="submit" >Login</button>
+                </div>
+            </form>
+</div> 

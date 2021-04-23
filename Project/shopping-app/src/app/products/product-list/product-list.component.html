@@ -1,0 +1,73 @@
+<div class="products container">
+    <div class="row ">
+        <div class="col col-lg-2 col-md-3 col-sm-3 col-0 categoryList">
+            <div *ngFor="let categery of SortCategeries" class="desktopCategoryList">
+                <ng-container *ngIf="categery.enabled">
+                    <ul>
+                        <li (click)="filterItems(categery.id)">{{categery.name}}</li>
+                    </ul>
+                </ng-container>
+            </div>
+            <div class="mobileDropdown">
+                <select name="categoryDropdown" id="categoryDropdown" (change)="selectCategory()">
+                    <option value="">Please select Items category</option>
+                    <ng-container *ngFor="let categery of SortCategeries">
+                        <option *ngIf="categery.enabled"  [value]="categery.id" >{{categery.name}}</option>
+                      </ng-container>
+                </select>
+            </div>
+        </div>
+        <div class="col col-lg-10 col-md-9 col-sm-9 col-12 ">
+            <div class="row desktopProducts"  >
+                <div class="col col-lg-3 col-md-6 col-sm-6 col-12 item" *ngFor="let product of productList">
+                    <h4>{{product.name}}</h4>
+                    <div>
+                        <img [src]="'../../assets'+product.imageURL" alt="Product Image">
+                        <p class="description">{{product.description}}</p>
+                    </div>                    
+                    <div class="bottomContent">
+                        <span class="price">MRP Rs.{{product.price}}</span>
+                        <a (click)="buyProduct(product.id)"> Buy Now</a>
+                    </div>
+
+                </div>
+            </div>
+            <div class="row tablet">
+                <div class="col col-md-6 col-sm-6 col-12 item" *ngFor="let product of productList">
+                    <h4>{{product.name}}</h4>
+                    <div class="productImgDes">
+                        <img [src]="'../../assets'+product.imageURL" alt="Product Image">
+                        <p class="description">{{product.description}}</p>
+                    </div>                    
+                    <div class="bottomContent" (click)="buyProduct(product.id)">
+                        <!-- <span class="price">MRP Rs.{{product.price}}</span> -->
+                        <a > Buy Now @ Rs.{{product.price}}</a>
+                    </div>
+
+                </div>
+            </div>
+            <div class="row mobile">
+                <div class="col col-md-6 col-sm-6 col-12 item" *ngFor="let product of productList">
+                    <h4>{{product.name}}</h4>
+                    <div class="productImgDes">
+                        <img [src]="'../../assets'+product.imageURL" alt="Product Image">
+                        <div>
+                            <p class="description">{{product.description}}</p>
+                            <div class="bottomContent" (click)="buyProduct(product.id)">
+                                <a > Buy Now @ Rs.{{product.price}}</a>
+                            </div>
+                        </div>
+                        
+                    </div>                    
+                    
+
+                </div>
+            </div>
+        </div>
+        <div>
+
+        </div>
+
+    </div>
+   
+</div>
