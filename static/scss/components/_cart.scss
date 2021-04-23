@@ -24,7 +24,7 @@
       @include height(50px);
       &--title {
         float: left;
-        color: rgb(234, 239, 241);
+        color: map-get($site_colors, primary-color-white);
         h2 {
           margin: 0;
           padding: 10px 5px;

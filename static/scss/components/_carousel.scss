@@ -21,10 +21,6 @@
       width: 100%;
       @include height(150px);
     }
-    @include media-xl-screen {
-      // width:auto;
-      
-    }
   }
   &__bullet {
     position: absolute;

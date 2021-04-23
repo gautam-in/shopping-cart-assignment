@@ -93,7 +93,7 @@ home = ((carousel)=> {
     }
 
     /**
-     * Create next method to navigate the slider into forword direction 
+     * Create next method to navigate the slider into forward direction 
      */
     var next = () => {
         let previousState = slides.current;

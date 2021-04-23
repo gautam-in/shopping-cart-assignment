@@ -1,8 +1,7 @@
 registration = ( (formSelector)=> {
 
-    var formSelector = formSelector;
-    var form = document.querySelectorAll(formSelector)[0];
-    var formInput = document.querySelectorAll(CONSTANTS.FORM_INPUT_FIELD);
+    let form = document.querySelectorAll(formSelector)[0];
+    let formInput = document.querySelectorAll(CONSTANTS.FORM_INPUT_FIELD);
 
      validate = (eventType) => {
         form.addEventListener(eventType, validateForm = (e) => {

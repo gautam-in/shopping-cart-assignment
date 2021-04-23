@@ -61,15 +61,8 @@
       }
     }
     &__img-left {
+      @extend &__img-right;
       float: right;
-      width: 40%;
-      @include height(258px);
-      margin-left: 1%;
-      @include media-sm-screen {  
-        width: 47%;
-        @include height(195px);
-        padding: 6% 3%;
-      }
     }
   }
   
