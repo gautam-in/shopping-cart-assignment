@@ -13,6 +13,27 @@ npm run start
 yarn install
 yarn start
 ```
+
+# Full install
 ```
-npm install next react react-dom redux react-redux next-redux-wrapper --save
+npm install next react react-dom redux react-redux next-redux-wrapper bootstrap react-redux reactstrap --save
+```
+## Proxy Setting ./next.config.js
+1. Add new entry to 
+```javascript
+module.exports = {
+      /* config options here */
+      async rewrites() {
+            const server_routes = [
+                  "/banners",
+                  "/new-url" // <---- ADD HERE
+            ]
+            return server_routes.map((item) => {
+                  return {
+                        source: `${item}`,
+                        destination: `${PROXY}/${item}`,
+                  }
+            })
+      }
+}
 ```

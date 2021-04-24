@@ -113,7 +113,7 @@ class ProductList extends Component {
                                     <Button>But Now</Button>
                                 </CardBody>
                             </Card>
-                        </Col>                        
+                        </Col>
                     </Row>
                 </Col>
             </Row>

@@ -21,10 +21,10 @@ import {
   gotoSlideIndex,
   animatingSlide,
   animationDone,
-} from '../../redux_store/pages/Home/actions/homePageActions';
-import LogIn from '../LogIn';
-import SignUp from '../SignUp';
-import ProductList from '../ProductList';
+} from '../../redux_store/pages/HomePage/actions/homePageActions';
+import LogIn from '../login';
+import SignUp from '../signup';
+import ProductList from '../product-list';
 
 // Redux State Configutration
 const mapStateToProps = state => ({
@@ -58,7 +58,7 @@ class HomePage extends Component {
   }
 
   componentDidMount() {
-    // this.props.fetchBanner();
+    this.props.fetchBanner();
   }
 
   toggleHamburger = () => {
@@ -168,4 +168,4 @@ class HomePage extends Component {
 
 export default connect(mapStateToProps, mapDispatchToProps)(HomePage);
 
-    // File: pages/HomePage/index.js
+// File: pages/HomePage/index.js

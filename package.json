@@ -12,7 +12,6 @@
     "dev": "npm-run-all -p server client_dev",
     "start": "npm-run-all -p server client_start"
   },
-  "proxy": "http://localhost:5000",
   "author": "TaniyaPaul",
   "license": "MIT",
   "dependencies": {
