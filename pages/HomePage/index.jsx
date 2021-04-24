@@ -74,9 +74,6 @@ class HomePage extends Component {
       <>
         <div class="container">
           <PageHeader/>
-          <ProductList/>
-          <LogIn/>
-          <SignUp/>
           {/* {Banner} */}
           <Carousel
             activeIndex={activeIndex}
@@ -85,7 +82,7 @@ class HomePage extends Component {
             <CarouselIndicators items={items} activeIndex={activeIndex} onClickHandler={this.props.gotoSlideIndex} />
             {/* {Banner Images} */}
             {
-              items.map((item) => {
+              items && items.map((item) => {
                 return (
                   <CarouselItem key={item.id}
                     onExiting={this.props.animatingSlide}

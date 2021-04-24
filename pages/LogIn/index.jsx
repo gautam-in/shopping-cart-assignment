@@ -1,10 +1,15 @@
 import React, {Component} from "react";
 import {Row, Col,Button} from 'reactstrap';
+import PageHeader from '../PageHeader';
+import Pagefooter from "../PageFooter";
 
 class LogIn extends Component {
     render(){
         return(
-                <Row>
+            <>
+            <div class="container">
+            <PageHeader/>
+                <Row className="mb-4">
                     <Col md={6} className="pt-3 pl-5">
                         <h2>Login</h2>
                         <p>Get access to your Orders, Wishlist and recommendations</p>
@@ -33,6 +38,9 @@ class LogIn extends Component {
                         </Row>
                     </Col>
                 </Row>
+                <Pagefooter/>
+                </div>
+                </>
             )
     }
 }

@@ -40,7 +40,16 @@ input{
     margin: 40px 3%; 
     position: relative;
 }
-
+.cartModal.modal-dialog{
+    position: absolute;
+    right: 94px;
+    bottom: -27px;
+    width: 360px;
+}
+.cartModal .modal-content{
+    height: 81vh;
+    border: none;
+}
 .inputAnimation{
     border: 0; 
     padding: 4px 0; 
@@ -67,6 +76,21 @@ input{
     font-size: 12px; 
     color: #40eaea; 
     transition: 0.3s; 
-    /* border-bottom: 1px solid #40eaea; */
 }
+
+.product-card .card-text{
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;  
+    overflow: hidden;
+}
+.truncate {
+    width: 250px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .cursor-pointer{
+      cursor: pointer;
+  }
 

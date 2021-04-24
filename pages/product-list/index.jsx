@@ -2,10 +2,36 @@ import React, {Component} from "react";
 import {Row, Col,Button,
     Card, CardImg, CardText, CardBody,
     CardTitle, CardSubtitle, } from 'reactstrap';
+import PageHeader from '../PageHeader';
+import Pagefooter from "../PageFooter";
+import {fetchProduct} from '../../redux_store/pages/ProductListPage/actions/productListPageActions';
+import { connect } from 'react-redux';
+
+// Redux State Configutration
+const mapStateToProps = state => ({
+    loadingProduct: state.ProductListPage.loadingProducts,
+    items: state.ProductListPage.items,
+  });
+  
+  // Redux Dispatch Configutration
+  const mapDispatchToProps = {
+    fetchProduct: fetchProduct,
+  };
 
 class ProductList extends Component {
+    constructor(props) {
+        super(props);
+      }
+    componentDidMount() {
+        this.props.fetchProduct();
+      }
+
     render(){
+        const {items} = this.props
         return(
+            <>
+            <div class="container">
+            <PageHeader/>
             <Row>
                 <Col md={3} className='bg-light'>
                     <ul>
@@ -19,105 +45,30 @@ class ProductList extends Component {
                 </Col>
                 <Col md={9}>
                     <Row>
-                        <Col md={3}>
-                            <Card className="mb-3">
-                                <CardText>Apple</CardText>
-                                <CardImg top width="100%" src="/static/images/products/fruit-n-veg/apple.jpg" alt="Card image cap" />
-                                <CardBody>
-                                    {/* <CardTitle tag="h5">Card title</CardTitle> */}
-                                    {/* <CardSubtitle tag="h6" className="mb-2 text-muted">Card subtitle</CardSubtitle> */}
-                                    <CardText>The bright red coloured and heart shaped ,Washington apples are crunchy.</CardText>
-                                    <Button>But Now</Button>
-                                </CardBody>
-                            </Card>
-                        </Col>
-                        <Col md={3}>
-                            <Card className="mb-3">
-                                <CardText>Apple</CardText>
-                                <CardImg top width="100%" src="/static/images/products/fruit-n-veg/apple.jpg" alt="Card image cap" />
-                                <CardBody>
-                                    {/* <CardTitle tag="h5">Card title</CardTitle> */}
-                                    {/* <CardSubtitle tag="h6" className="mb-2 text-muted">Card subtitle</CardSubtitle> */}
-                                    <CardText>The bright red coloured and heart shaped ,Washington apples are crunchy.</CardText>
-                                    <Button>But Now</Button>
-                                </CardBody>
-                            </Card>
-                        </Col>
-                        <Col md={3}>
-                            <Card className="mb-3">
-                                <CardText>Apple</CardText>
-                                <CardImg top width="100%" src="/static/images/products/fruit-n-veg/apple.jpg" alt="Card image cap" />
-                                <CardBody>
-                                    {/* <CardTitle tag="h5">Card title</CardTitle> */}
-                                    {/* <CardSubtitle tag="h6" className="mb-2 text-muted">Card subtitle</CardSubtitle> */}
-                                    <CardText>The bright red coloured and heart shaped ,Washington apples are crunchy.</CardText>
-                                    {/* <Row>
-                                        <Col md={6}>
-                                           <small>MRP Rs.200</small> 
-                                        </Col>
-                                        <Col md={6}>
-                                            <Button><small>But Now</small></Button>
-                                        </Col>
-                                    </Row> */}
-                                    <span>
-                                    <small>MRP Rs.200</small> 
-                                    <Button><small>But Now</small></Button>
-                                    </span>
-                                </CardBody>
-                            </Card>
-                        </Col>
-                        <Col md={3}>
-                            <Card className="mb-3">
-                                <CardText>Apple</CardText>
-                                <CardImg top width="100%" src="/static/images/products/fruit-n-veg/apple.jpg" alt="Card image cap" />
-                                <CardBody>
-                                    {/* <CardTitle tag="h5">Card title</CardTitle> */}
-                                    {/* <CardSubtitle tag="h6" className="mb-2 text-muted">Card subtitle</CardSubtitle> */}
-                                    <CardText>The bright red coloured and heart shaped ,Washington apples are crunchy.</CardText>
-                                    <Button>But Now</Button>
-                                </CardBody>
-                            </Card>
-                        </Col>
-                        <Col md={3}>
-                            <Card className="mb-3">
-                                <CardText>Apple</CardText>
-                                <CardImg top width="100%" src="/static/images/products/fruit-n-veg/apple.jpg" alt="Card image cap" />
-                                <CardBody>
-                                    {/* <CardTitle tag="h5">Card title</CardTitle> */}
-                                    {/* <CardSubtitle tag="h6" className="mb-2 text-muted">Card subtitle</CardSubtitle> */}
-                                    <CardText>The bright red coloured and heart shaped ,Washington apples are crunchy.</CardText>
-                                    <Button>But Now</Button>
-                                </CardBody>
-                            </Card>
-                        </Col>
-                        <Col md={3}>
-                            <Card className="mb-3">
-                                <CardText>Apple</CardText>
-                                <CardImg top width="100%" src="/static/images/products/fruit-n-veg/apple.jpg" alt="Card image cap" />
-                                <CardBody>
-                                    {/* <CardTitle tag="h5">Card title</CardTitle> */}
-                                    {/* <CardSubtitle tag="h6" className="mb-2 text-muted">Card subtitle</CardSubtitle> */}
-                                    <CardText>The bright red coloured and heart shaped ,Washington apples are crunchy.</CardText>
-                                    <Button>But Now</Button>
-                                </CardBody>
-                            </Card>
-                        </Col>
-                        <Col md={3}>
-                            <Card className="mb-3">
-                                <CardText>Apple</CardText>
-                                <CardImg top width="100%" src="/static/images/products/fruit-n-veg/apple.jpg" alt="Card image cap" />
-                                <CardBody>
-                                    {/* <CardTitle tag="h5">Card title</CardTitle> */}
-                                    {/* <CardSubtitle tag="h6" className="mb-2 text-muted">Card subtitle</CardSubtitle> */}
-                                    <CardText>The bright red coloured and heart shaped ,Washington apples are crunchy.</CardText>
-                                    <Button>But Now</Button>
-                                </CardBody>
-                            </Card>
-                        </Col>
+                        {items && items.map((item) =>{
+                            return(
+                                <Col md={3} className="pl-1 pr-1">
+                                    <Card className="mb-3 product-card">
+                                        <CardText>{item.name}</CardText>
+                                        <CardImg top width="100%" src={item.imageURL} alt="Card image cap" />
+                                        <CardBody>
+                                            <CardText className="desc">{item.description}</CardText>
+                                            <span>
+                                            <small>MRP {item.price}</small> 
+                                            <Button><small>Buy Now</small></Button>
+                                            </span>
+                                        </CardBody>
+                                    </Card>
+                                </Col>
+                            )
+                        })}
                     </Row>
                 </Col>
             </Row>
+            <Pagefooter/>
+            </div>
+            </>
         )
     }
 }
-export default ProductList;
+export default connect(mapStateToProps, mapDispatchToProps)(ProductList);

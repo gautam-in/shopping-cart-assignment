@@ -13,6 +13,7 @@ import {
       NavbarText,
 } from 'reactstrap';
 import { connect } from 'react-redux';
+import CartModal from '../CartModal';
 // import {
 //       fetchBanner,
 //       nextSlide,
@@ -44,6 +45,7 @@ const mapDispatchToProps = {
 class PageHeader extends Component {
       state = {
             isOpen: false,
+            showModal: false
       }
 
       static getInitialProps({ store }) {
@@ -63,8 +65,15 @@ class PageHeader extends Component {
             })
       }
 
+      toggleCart = () =>{
+            this.setState({
+                showModal : !this.state.showModal
+            })
+        }
+
+
       render() {
-            const {isOpen} = this.state
+            const {isOpen,showModal} = this.state
             return (
                   <>
                         <Navbar className="shadow_grey mb-3" light expand="lg">
@@ -78,7 +87,7 @@ class PageHeader extends Component {
                                                 <NavLink href="/">Home</NavLink>
                                           </NavItem>
                                           <NavItem>
-                                                <NavLink href="/products-page/">Products</NavLink>
+                                                <NavLink href="/product-list/">Products</NavLink>
                                           </NavItem>
                                     </Nav>
                                     <NavbarText>
@@ -86,20 +95,25 @@ class PageHeader extends Component {
                                                 <div className="row-1">
                                                       <Nav className="mr-auto" navbar>
                                                             <NavItem>
-                                                                  <NavLink href="/signup/">Signup</NavLink>
+                                                                  <NavLink href="/login/">Signup</NavLink>
                                                             </NavItem>
                                                             <NavItem>
-                                                                  <NavLink href="/register/">Register</NavLink>
+                                                                  <NavLink href="/signup/">Register</NavLink>
                                                             </NavItem>
                                                       </Nav>
                                                 </div>
-                                                <Navbar bg="light" expand="md">
+                                                <Navbar bg="light" expand="md" onClick={() =>this.toggleCart()} className="cursor-pointer">
                                                       <img src="/static/images/cart.svg" alt="me" width="auto" height="24" />&nbsp; 0 items
                                                 </Navbar>
                                           </div>
                                     </NavbarText>
                               </Collapse>
                         </Navbar>
+                        {showModal ? 
+                              <CartModal
+                                    modalStatus = {() =>this.toggleCart()}
+                              /> : null
+                        }
                   </>
             )
       }

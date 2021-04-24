@@ -5,6 +5,7 @@ module.exports = {
       async rewrites() {
             const server_routes = [
                   "/banners",
+                  "/products"
             ]
             return server_routes.map((item) => {
                   return {
