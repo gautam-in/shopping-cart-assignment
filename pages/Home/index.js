@@ -103,7 +103,7 @@ class Home extends Component {
             <div>
             <Navbar color="light" light expand="md">
                 <NavbarBrand href="/">
-                  <Image src="/images/logo.png" alt="me" width="64" height="64" />
+                  <Image src="/images/logo.png" alt="me" width="128" height="58"/>
                 </NavbarBrand>
               <NavbarToggler onClick={this.toggleHamburger} />
               <Collapse isOpen={isOpen} navbar>
@@ -128,7 +128,7 @@ class Home extends Component {
                 </Nav>
                     </div>
                     <Navbar bg="light" expand="md">
-                    <Image src="/images/cart.svg" alt="me" width="64" height="64" /> 0 items
+                    <Image src="/images/cart.svg" alt="me" width="20" height="20" /> 0 items
                     </Navbar>
                 </div>
                 </NavbarText>
@@ -149,7 +149,7 @@ class Home extends Component {
          </Carousel>
          </>
         )
-    }
+    } 
 }
 
 export default Home;

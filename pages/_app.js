@@ -4,12 +4,11 @@ import React from 'react';
 import withRedux from "next-redux-wrapper";
 import store from '../redux_store';
 import 'bootstrap/dist/css/bootstrap.css';
-
+import "../styles/header.css";
 class MyApp extends App {
 
     static async getInitialProps({Component, ctx}) {
         const pageProps = Component.getInitialProps ? await Component.getInitialProps(ctx) : {};
-
         //Anything returned here can be accessed by the client
         return {pageProps: pageProps};
     }

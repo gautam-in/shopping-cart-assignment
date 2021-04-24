@@ -13,3 +13,6 @@ npm run start
 yarn install
 yarn start
 ```
+```
+npm install next react react-dom redux react-redux next-redux-wrapper --save
+```

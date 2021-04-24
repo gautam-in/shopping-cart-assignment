@@ -1,8 +1,12 @@
+import { combineReducers } from 'redux';
+
+// import reducers
 import counterReducer from './counterReducer';
-import {combineReducers} from 'redux';
+import homePageReducer from '../pages/Home/reducers/homePageReducer';
 
 const rootReducer = combineReducers({
-    counter: counterReducer
+    counter: counterReducer,
+    HomePage: homePageReducer,
 });
 
 export default rootReducer;
