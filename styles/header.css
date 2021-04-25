@@ -77,20 +77,7 @@ input{
     color: #40eaea; 
     transition: 0.3s; 
 }
-
-.product-card .card-text{
-    display: -webkit-box;
-    -webkit-line-clamp: 4;
-    -webkit-box-orient: vertical;  
-    overflow: hidden;
+.cursor-pointer{
+    cursor: pointer;
 }
-.truncate {
-    width: 250px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-  .cursor-pointer{
-      cursor: pointer;
-  }
 

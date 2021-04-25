@@ -5,6 +5,7 @@ import withRedux from "next-redux-wrapper";
 import store from '../redux_store';
 import 'bootstrap/dist/css/bootstrap.css';
 import "../styles/header.css";
+import "../styles/productcard.css";
 class MyApp extends App {
 
     static async getInitialProps({Component, ctx}) {

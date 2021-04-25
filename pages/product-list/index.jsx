@@ -24,7 +24,7 @@ class ProductList extends Component {
       }
     componentDidMount() {
         this.props.fetchProduct();
-      }
+    }
 
     render(){
         const {items} = this.props
@@ -47,16 +47,17 @@ class ProductList extends Component {
                     <Row>
                         {items && items.map((item) =>{
                             return(
-                                <Col md={3} className="pl-1 pr-1">
+                                <Col md={3} className="pl-1 pr-1 mt-3">
                                     <Card className="mb-3 product-card">
-                                        <CardText>{item.name}</CardText>
+                                        <CardText className="truncate">{item.name}</CardText>
                                         <CardImg top width="100%" src={item.imageURL} alt="Card image cap" />
                                         <CardBody>
                                             <CardText className="desc">{item.description}</CardText>
-                                            <span>
-                                            <small>MRP {item.price}</small> 
-                                            <Button><small>Buy Now</small></Button>
-                                            </span>
+                                            <div className="d-flex justify-content-between">
+                                                <small>MRP {item.price}</small> 
+                                                <Button><small>Buy Now</small></Button>
+                                            </div>
+                                            
                                         </CardBody>
                                     </Card>
                                 </Col>
