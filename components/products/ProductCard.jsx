@@ -1,8 +1,14 @@
 import Link from 'next/link';
+import { connect } from 'react-redux';
 import styled from 'styled-components';
+import { buyNow } from '../../redux/actions/index'
 
-export default function ProductCard(props) {    
-    const productObj = props.product;  
+function ProductCard(props) {    
+    const productObj = props.product;
+
+    const buyNowClickHandler = (productObj) => {              
+        props.buyNow(productObj)
+    }
 
     return (
         <ProductContainer>
@@ -11,13 +17,19 @@ export default function ProductCard(props) {
                 <ProductDetails> {productObj.description} </ProductDetails>
                 <MrpBuyNowContainer>
                     <MRP> {`MRP Rs.${productObj.price}`} </MRP>
-                    <BuyNow>
-                        <Link href = '#'> Buy Now </Link>
-                    </BuyNow>
+                    <div onClick = { () => buyNowClickHandler(productObj)}>
+                        <BuyNow> Buy Now </BuyNow>
+                    </div>
                 </MrpBuyNowContainer>
         </ProductContainer>
     )
 }
+
+const mapStateToProps = (state) => {
+    return {}
+}
+
+
 
 const ProductContainer = styled.div.attrs({
     className : 'col span-1-of-4 box'
@@ -28,8 +40,9 @@ const ProductContainer = styled.div.attrs({
     border-bottom: 2px dashed #cec8c85c;
 `
 
-const ProductHeading =  styled.h4`
-    height : 24px;
+const ProductHeading =  styled.h6`
+    height : 15px;
+    font-size : 15px;
 `
 
 const ProductDetails = styled.p`
@@ -51,7 +64,8 @@ const MRP =  styled.p`
 `
 
 const BuyNow = styled.p`
-    float : right, 
+    color : #fff;
+    float : right; 
     background-color : #c31fa2; 
     width : 50%;
     text-align : center;
@@ -61,28 +75,4 @@ const BuyNow = styled.p`
         color : #fff;
     }
 `
-
-//col span-1-of-4 box
-
-// {/* <div className = {styles.productCard}>
-//             <ProductHeading> {productObj.name} </ProductHeading>
-//             <img src = {productObj.imageURL} alt = 'pic' />                   
-//             <ProductPara> {productObj.description} </ProductPara>     
-            // <div style = {{ padding : '0 auto' }}>                
-            //     <MRPPara>{`MRP Rs.${productObj.price}`}</MRPPara>
-            //     <BuyNowPara>
-            //         <Link href = '#'> Buy Now </Link>
-            //     </BuyNowPara>
-            // </div>
-//         </div> */}
-
-
-// const RootContainer = styled.div`
-//     background-color: #fff;
-//     max-width : 23%;
-//     float : left; 
-//     margin : 2px;
-//     padding: 17px; 
-//     height: 380px;
-//     border-bottom: 2px dotted #cec8c8;   
-// `
+export default connect(null, {buyNow})(ProductCard);
