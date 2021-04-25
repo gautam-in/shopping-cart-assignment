@@ -33,7 +33,7 @@ const BannerCarousel = () => {
 
   return (
     <div className="shadow-row">
-      <div className="slider-container ">
+      <div className="slider-container">
         <div className="sliders" ref={sliderRef}>
           {sliders &&
             sliders.length > 0 &&

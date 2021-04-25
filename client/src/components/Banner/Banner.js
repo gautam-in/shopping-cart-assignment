@@ -33,12 +33,11 @@ const Banner = () => {
         categories.map((banner, i) => (
           <div
             key={banner.id}
-            className="row shadow-row"
-            style={{ flexDirection: i % 2 === 0 ? "row" : "row-reverse" }}
+            className="row shadow-row row-direction"
           >
             <div className="col-md-6 banner-img">
               <img
-                className="img-fluid"
+                className="banner-img-fluid"
                 src={banner.imageUrl}
                 alt={banner.name}
               />

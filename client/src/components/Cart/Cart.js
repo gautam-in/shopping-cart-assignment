@@ -77,10 +77,10 @@ const Cart = () => {
                 </div>
                 <Button variant="primary" className=" btn-block btn-checkout">
                   Proceed to Checkout
-                  <span className="price">
+                  <output className="price">
                     Rs.
                     {price()} {">"}
-                  </span>
+                  </output>
                 </Button>
               </>
             ) : (

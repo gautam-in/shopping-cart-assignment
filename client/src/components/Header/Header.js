@@ -5,11 +5,13 @@ import { useSelector } from "react-redux";
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const cartItems = useSelector((store) => store.cart);
+
+
   useEffect(() => {
     if (isMenuOpen) {
       toggleMenu();
     }
-  }, [isMenuOpen]);
+  }, []);// eslint-disable-line react-hooks/exhaustive-deps
 
   const toggleMenu = () => {
     setIsMenuOpen((prev) => !prev);
@@ -17,11 +19,11 @@ const Header = () => {
   return (
     <header className="header">
       <div className="container header-container">
-        <div className="header-left">
+        {/* <div className="header-left"> */}
           <NavLink to="/" className="logo">
             <img src="static/images/logo.png" alt="" />
           </NavLink>
-        </div>
+        {/* </div> */}
 
         {isMenuOpen && (
           <div className="overlay-block" onClick={toggleMenu}></div>

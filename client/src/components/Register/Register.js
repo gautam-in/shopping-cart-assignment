@@ -117,7 +117,7 @@ const Register = () => {
           <h1>Signup</h1>
           <p>We do not share your personal details with anyone</p>
         </div>
-        <div className="col-md-5">
+        <div className="col-md-5 top-margin">
           <form autoComplete="off" onSubmit={handleSubmit} name="register">
             <div className="form-group">
               <input

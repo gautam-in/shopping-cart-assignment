@@ -53,7 +53,7 @@ const CartItem = ({ item }) => {
           </Button>
           <span>x</span>
           <span>Rs.{item.price}</span>
-          <div className="total ml-auto">Rs.{qty * item.price}</div>
+          <output className="total ml-auto">Rs.{qty * item.price}</output>
         </div>
       </div>
     </div>

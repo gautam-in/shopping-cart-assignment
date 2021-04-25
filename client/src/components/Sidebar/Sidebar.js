@@ -6,7 +6,7 @@ const Sidebar = ({ categories, filter, selectedcategory }) => {
   };
   return (
     <div className="sidebar">
-      <div>
+      {/* <div> */}
         <select
           className="select"
           onChange={(e) => handleFilter(e.target.value)}
@@ -18,7 +18,7 @@ const Sidebar = ({ categories, filter, selectedcategory }) => {
               </option>
             ))}
         </select>
-      </div>
+      {/* </div> */}
       <nav className="nav hide-sm">
         {categories?.length > 0 &&
           categories.map((banner) => (

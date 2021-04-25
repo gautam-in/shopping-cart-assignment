@@ -40,14 +40,14 @@ const Login = () => {
     setForm((prevForm) => ({ ...prevForm, [name]: value }));
   };
   return (
-    <div>
+    <>
       <div className="col-md-10 mx-auto login-container">
         <div className="row pt-5">
           <div className="col-md-7">
             <h1>Login</h1>
             <p>Get access to your Orders, Wishlist and Recommendations</p>
           </div>
-          <div className="col-md-5">
+          <div className="col-md-5 top-margin">
             <form autoComplete="off" onSubmit={handleSubmit}>
               <div className="form-group">
                 <input
@@ -83,7 +83,7 @@ const Login = () => {
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
