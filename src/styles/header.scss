@@ -1,0 +1,197 @@
+@use "variables";
+$bgPrimaryColor: #e91e63;
+$headerShadowColor: #737373;
+$headerShadow: 0 15px 15px -21px $headerShadowColor;
+$headerPadding: 0 14%;
+$linkTextColor: #888;
+$linkTextColorHover: #111;
+$mobileMenuLinkHoverTextColour: white;
+$greyColor: #ddd;
+$lightgray: lightgray;
+$headerHeightDesktop: 100px;
+$headerHeightMobile: 70px;
+
+header {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: $headerHeightDesktop;
+    width: 100%;
+    padding: $headerPadding;
+    z-index: 100;
+    justify-content: space-between;
+    box-shadow: $headerShadow;
+    background: #fff;
+    
+    div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .hamburger-button{
+        display: none;
+        background: transparent;
+        padding: 0 0.2rem;
+        border: none;
+    }
+
+    .nav_logo {
+        img {
+            width: 185px;
+            margin: 10px;   
+        }
+    }
+
+    .menu_list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: width 0.8s;
+        li {
+            a {
+                text-decoration: none;
+                padding: 1rem;
+                display: block;
+                color:   $linkTextColor;
+
+                &:hover {
+                    color: $linkTextColorHover;
+                }
+            }
+        }
+    }
+
+    .cart-area {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        .menu_list{
+            font-size: 0.8rem;
+            padding-top: 1rem;
+        }
+    }
+
+
+    .nav_cart {
+        cursor: pointer;
+        background-color: #e6e3e3ad;
+        display: flex;
+        justify-content: space-evenly;
+        padding: 5% 15%;
+        margin-bottom: 10%;
+        font-family: "Ropa Sans", sans-serif;
+        button {
+            border-color: $lightgray;
+            outline-color: $lightgray;
+            border: none;
+            cursor: pointer;
+            background-color: transparent;
+            margin-right: 1rem;
+
+            img{
+                width: 40px;
+            }
+        }
+
+        .cartItemCount{
+            margin-right:0.3rem;
+        }
+
+        &:focus{
+            box-shadow: 2px -1px 5px 0px $headerShadowColor;
+        }
+    }
+}
+
+@media only screen and (max-width: 769px) {
+    header{
+        padding: 0 1%;
+        height: $headerHeightMobile;
+        .hamburger-button {
+            background: transparent;
+            margin: 0.5rem;
+            display: block;
+            float: left;
+            width: 25px;
+            height: 25px;
+            border: 1px solid #c1c1c1;
+            &:focus{
+                background-color: $lightgray;
+            }
+        }
+        .hamburger-button:hover{
+            cursor: pointer;
+        }
+        .nav_logo img{
+            width: 7rem;
+            margin: 0.5rem;
+        }
+        .menu_list{
+            display: none;
+        }
+        .cart-area{
+            height: 100%;
+            nav{
+                display: none;
+            }
+            .nav_cart {
+                cursor: pointer;
+                background-color: #e6e3e3ad;
+                display: flex;
+                justify-content: center;
+                padding: 30% 15%;
+                height: 100%;
+                align-items: center;
+            }
+        }
+
+        nav .primary-navigation.open{
+            display: block;
+            position: fixed;
+            width: 250px;
+            height: 100%;
+            background-color: #eaeaea;
+            overflow: hidden;
+            margin-left: 0rem;
+            top: $headerHeightMobile;
+            left: 0;
+            z-index: 93;
+            
+        }
+
+        .menu_list {
+            top: 0;
+            left: 0;
+            width: 100%;
+            li {
+                position: relative;
+                width: 100%;
+                list-style: none;
+                border-bottom: 1px solid #d1d1d1;
+                a{
+                    color: $linkTextColorHover;  
+                }
+                &:hover,&:focus-within {
+                    background-color: $bgPrimaryColor;
+                    cursor: pointer;
+                    a{
+                        color: $mobileMenuLinkHoverTextColour;
+                    }
+                }
+                
+                &.active{
+                    background-color: $bgPrimaryColor;
+                    a{
+                        color: $mobileMenuLinkHoverTextColour;
+                    }
+                }
+
+            }
+        }
+    }
+}
