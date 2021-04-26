@@ -1,4 +1,5 @@
 // Reset
+@import url("https://fonts.googleapis.com/css2?family=Dosis:wght@400;600;700&display=swap");
 
 *,
 *::before,
@@ -183,7 +184,6 @@ body {
     border: none;
     background-color: white;
     border-bottom: 2px solid $light-gray;
-    padding: 8px 0px; //un-effective
     height: 48px;
     outline: none;
     width: 100%;
@@ -221,7 +221,6 @@ button {
   padding: 10px 0;
   text-align: left;
   color: $button_text_color;
-  // outline: none;
 }
 
 button:focus {outline:none;}
@@ -376,19 +375,10 @@ button:focus-visible {
 }
 
 .space {
-  // * + * {
-  //   margin-top: 0.5rem;
-  // }
   .title {
     margin: 8px 0 8px 0;
   }
 }
-
-// .img-fluid {
-//   height: auto;
-//   max-width: 100%;
-// }
-
 
 /*----------------------------------*/
 /*  PRODUCTS CONTAINER              */
@@ -423,9 +413,6 @@ button:focus-visible {
     .nav {
       display: flex;
       flex-direction: column;
-      // position: sticky;
-      // top: 0;
-      // z-index: 1;
       .nav-link {
         cursor: pointer;
         margin-bottom: 5px;
@@ -476,7 +463,7 @@ button:focus-visible {
   .description {
     padding: 6px;
     font-size: 0.75rem;
-    flex: 1; //not Effective
+
   }
 
   &-footer {
@@ -567,7 +554,6 @@ button:focus-visible {
 
   &-title {
     font-weight: 500;
-    margin-bottom: 0;// un effective
   }
 
   &-item {
@@ -607,7 +593,6 @@ button:focus-visible {
     padding: 8px 16px;
     font-size: 0.65rem;
     margin: 8px;
-    width: calc(100% - 1rem);// un effective
     background-color: white;
     img {
       max-width: 100px;
@@ -618,7 +603,6 @@ button:focus-visible {
   }
 
   &-footer {
-    flex-shrink: 0; //un-effective
     padding: 8px;
     border-top: 1px solid #00000020;
   }
@@ -627,7 +611,7 @@ button:focus-visible {
 }
 
 .login-container{
-  height: calc(100vh - 172px);
+  height: calc(100vh - 145px);
 }
 
 
@@ -714,7 +698,6 @@ button:focus-visible {
 
     &-bottom {
       flex-direction: column;
-      // flex: none;
     }
 
     .nav-link {
@@ -800,7 +783,7 @@ button:focus-visible {
 
   .cart-container {
     position: relative;
-    height: calc(100vh - 140px);
+    height: calc(100vh - 100px);
   }
 
   footer {
