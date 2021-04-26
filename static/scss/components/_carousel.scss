@@ -1,0 +1,88 @@
+.carousel {
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0px 4px 6px 0px map-get($site_colors, bullet-bg-color);
+  //will-change property for performance to decrease the paint count in layers
+  will-change:transform;
+  &__wrapper {
+    white-space: nowrap;
+    transition: 1s all ease;
+    max-width: 100%;
+  }
+  &__img {
+    display: inline-block;
+    width: $body-width;
+    height: 292.5px;
+    max-width: 100%;
+    @include media-lg-screen {
+      width: 768px;
+    }
+    @include media-sm-screen {
+      width: 100%;
+      @include height(150px);
+    }
+  }
+  &__bullet {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: map-get($z-index, carousel);
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      li {
+        display: inline-block;
+      }
+      button {
+        width: 10px;
+        @include height(10px);
+        background-color: map-get($site_colors, bullet-bg-color);
+        display: inline-block;
+        border: 0 none;
+        border-radius: 10px;
+        padding: 0;
+        margin: 0 5px;
+        &.goto__active {
+          background-color:map-get($site_colors, secondary-color-black);
+        }
+      }
+    }
+  }
+  &__bullet-area ul li.active button {
+    background-color: map-get($site_colors, bullet-bg-color-active);
+  }
+  &__nav-area {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: map-get($z-index, carousel);
+    width: 100%;
+    top: 50%;
+    margin-top: -15px;
+    cursor: pointer;
+    &::before,&::after{
+      content: "";
+      clear: both;
+    }
+  }
+  &__arrow {
+    @include height(30px);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: map-get($site_colors, primary-color-white);
+    border: 0;
+    text-transform: uppercase;
+    padding: 0 15px;
+    text-align: center;
+    &.next {
+      float: right;
+    }
+  }
+  &__goto{ 
+    li button {
+      cursor: pointer;    
+    }
+  }
+}
+

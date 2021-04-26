@@ -1,0 +1,70 @@
+.header {
+    box-shadow: 0 0 5px map-get($site_colors, bullet-bg-color);
+    z-index: map-get($z-index, header);
+    position: relative;
+    &__logo {
+      @include height(88px);
+      float: left;
+      padding: 10px 0;
+      @include media-sm-screen {
+        @include height(50px);
+      }
+      &--img {
+        height: 100%;
+      }
+    }
+    &__left-navbar {
+      float: left;
+      ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+      li {
+        float: left;
+        margin: 55px 0px 15px 30px;
+      }
+      @include media-sm-screen {
+        display: none;
+      }
+    }
+    &__right-navbar {
+      float: right;
+      width: 150px;
+      ul {
+        list-style: none;
+        margin: 10px 0;
+        padding: 0;
+        @include media-sm-screen {
+          display: none;
+        }
+      }
+      ul li {
+        float: right;
+        margin: 0 0 0 15px;
+      }
+    }
+    a {
+      text-decoration: none;
+      color: map-get($site_colors, secondary-color-black);
+    }
+  }
+
+.mini-cart {
+  background-color: map-get($site_colors, box-grey-color);
+  cursor: pointer;
+  position: relative;
+  width:120px;
+  &__info {
+    padding: 15px 15px;
+    text-align: center;
+    img {
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: 10px;
+        @include height(20px);
+        width:20px;
+    }
+  }
+}
+

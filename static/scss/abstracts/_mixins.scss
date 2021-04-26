@@ -1,0 +1,36 @@
+//breakpoints- 480px ,768px and 1024 px
+
+
+@mixin media-sm-screen {
+    @media all and (max-width: 480px){
+        @content;
+    }
+}
+
+@mixin media-md-screen {
+    @media all and (min-width: 480px) and (max-width: 768px) {
+        @content;
+    }
+}
+
+
+@mixin media-lg-screen {
+    @media all and (min-width: 768px) and (max-width: 1024px) {
+        @content;
+    }
+}
+
+@mixin media-xl-screen {
+    @media all and (min-width: 1025) {
+        @content;
+    }
+}
+
+// px to rem convertion
+@mixin fontSize($size) {
+    font-size: toRem($size);
+} 
+
+@mixin height($size){
+    height: toRem($size)
+}

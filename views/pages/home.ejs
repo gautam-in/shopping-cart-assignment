@@ -1,0 +1,37 @@
+<head>
+    <link rel="canonical" href="http://localhost:3000" />
+    <!-- schema added for seo  -->
+    <script type="application/ld+json">
+        {                            
+          "@context": "http://schema.org/",
+          "@type": "WebSite",
+          "name": "Sabka Bazaar",
+          "alternateName": "Sabka Bazar shopping",
+          "url": "http://localhost:3000"
+        }
+        </script>
+        <script type="application/ld+json">
+            {                            
+              "@context": "http://schema.org/",
+              "@type": "Organization",
+              "name": "Sabka Bazaar",
+              "alternateName": "Sabka Bazar shopping",
+              "url": "http://localhost:3000",
+              "logo": "http://localhost:3000/static/images/logo.png"
+            }
+            </script>
+   </head>
+<% include ../common/header %>
+    <div class="container clearfix">
+        <h1 class="accessibility__hidden">HomePage</h1>
+        <!-- start carousel container -->
+        <div class="carousel product-block">
+            <div class="carousel__wrapper"></div>
+        </div>
+        <!-- end carousel container -->
+        <!-- start horizontal and horizontal-reverse card container -->
+        <div class="product-wrapper"></div>
+        <!-- end horizontal and horizontal-reverse card containe -->
+    </div>
+<% include ../common/footer %>
+

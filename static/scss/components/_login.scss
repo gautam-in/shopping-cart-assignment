@@ -1,0 +1,22 @@
+.login {
+    max-width: 860px;
+    margin: 30px auto;
+    &__info {
+        padding-right: 30px;
+        @include media-lg-screen {
+            margin-left: 24px;
+        }
+        @include media-sm-screen {
+        padding-left: 11px;
+        }
+    }
+    &__info,&__form {
+    float: left;
+    width: 48%;
+    margin-left: 1%;
+    @include media-lg-screen {
+      width: 43%;
+      margin-left: 1%;
+    }
+  }
+}

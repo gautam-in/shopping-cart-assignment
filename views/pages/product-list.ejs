@@ -1,0 +1,22 @@
+<head>
+  <link rel="canonical" href="http://localhost:3000/product-list" />
+</head>
+<% include ../common/header %>
+<!-- start main container for product page -->
+<div class="container clearfix product-list-block">
+  <h1 class="accessibility__hidden">ProductList</h1>
+  <!-- start sidebar container -->
+  <div class="sidebar">
+    <div class="sidebar__action">
+      <span class="sidebar__action--mobile">Fruits &amp; Vegetables </span>
+      <img src="static/images/down-arrow.svg" class="sidebar__action--img" alt="arrow" />
+    </div>
+    <div class="sidebar__items"></div>
+  </div>
+  <!-- end sidebar container -->
+  <!-- start product list container -->
+  <div class="product-list"></div>
+  <!-- end product list container -->
+</div>
+<!-- end main container for product page -->
+<% include ../common/footer %>

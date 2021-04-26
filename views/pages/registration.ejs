@@ -1,0 +1,81 @@
+<head>
+    <link rel="canonical" href="http://localhost:3000/registration" />
+  </head>
+
+<% include ../common/header %>
+<!-- start registration container -->
+<div class="container">
+    <div class="registration clearfix">
+        <div class="registration__info" aria-labelledby="registration information">
+            <h1>Signup</h1>
+            <p>We do not share your personal details with anyone.</p>
+        </div>
+        <div class="registration__form">
+            <form action="/" class="form" novalidate method="POST" id="signup">
+                <div class="form__group">
+                    <input 
+                        type="text" 
+                        class="form__control" 
+                        name="firstName" 
+                        id="firstName" 
+                        aria-label= "firstName"
+                        required
+                    />
+                    <label for="firstName" class="form__label">First Name</label>
+                    <p class="form__error"></p>
+                </div>
+                <div class="form__group">
+                    <input 
+                        type="text" 
+                        class="form__control" 
+                        name="lastName" 
+                        id="lastName" 
+                        aria-label= "lastName"
+                        required
+                    />
+                    <label for="lastName" class="form__label">Last Name</label>
+                    <p class="form__error"></p>
+                </div>
+                <div class="form__group">
+                    <input 
+                        type="email" 
+                        class="form__control" 
+                        name="email" 
+                        id="email" 
+                        aria-label= "email"
+                        required
+                    />
+                    <label for="email" class="form__label">Email</label>
+                    <p class="form__error"></p>
+                </div>
+                <div class="form__group">
+                    <input 
+                        type="password" 
+                        class="form__control" 
+                        name="password" 
+                        id="password" 
+                        aria-label= "password"
+                        required
+                    />
+                    <label for="password" class="form__label">Password</label>
+                    <p class="form__error"></p>
+                </div>
+                <div class="form__group">
+                    <input 
+                        type="password" 
+                        class="form__control" 
+                        name="confirmPassword" 
+                        id="confirmPassword"
+                        aria-label= "confirmPassword"
+                         required
+                    />
+                    <label for="confirmPassword" class="form__label">Confirm Password</label>
+                    <p class="form__error"></p>
+                </div>
+                <button type="submit" class="btn btn-block btn-primary" aria-label="Signup">Signup</button>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- end registration container -->
+<% include ../common/footer %>

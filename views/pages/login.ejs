@@ -1,0 +1,46 @@
+<head>
+    <link rel="canonical" href="http://localhost:3000/login" />
+</head>
+<% include ../common/header %>
+
+<!-- start login container -->
+<div class="container clearfix">
+    <div class="login clearfix" id="login-area">
+        <div class="login__info" aria-labelledby="login information">
+            <h1>Login</h1>
+            <p>Get access to your orders. Whishlist and Recommendations</p>
+        </div>
+        <section class="login__form">
+            <form  action="/" class="form" method="POST" novalidate>
+                <div class="form__group">
+                    <input 
+                        type="email" 
+                        class="form__control" 
+                        id="email" 
+                        name="email"
+                        aria-label= "name"
+                        required 
+                    />
+                    <label for="email" class="form__label">Email</label>
+                    <p class="form__error"></p>
+                </div>
+                <div class="form__group">
+                    <input 
+                        type="password" 
+                        class="form__control" 
+                        id="password" 
+                        name="password"
+                        aria-label= "password"
+                        required 
+                    />
+                    <label for="password" class="form__label">Password</label>
+                    <p class="form__error"></p>
+                </div>
+                <button type="submit" class="btn btn-block btn-primary" 
+                aria-label="Login">Login</button>
+            </form>
+        </section>
+    </div>
+</div>
+<!-- end login container -->
+<% include ../common/footer %>

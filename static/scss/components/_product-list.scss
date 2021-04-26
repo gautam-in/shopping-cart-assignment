@@ -1,0 +1,113 @@
+.product-list {
+    float: right;
+    width: 75%;
+    background-color: map-get($site_colors, primary-color-white);
+    @include media-sm-screen {
+        width: 100%;
+    }
+    &__products {
+        float: left;
+        margin: 20px 20px;
+        width: 20%;
+        border-bottom: 2px dashed map-get($site_colors, box-grey-color);
+        margin-bottom: 20px;
+        @include media-lg-screen {
+            width: 42%;
+            padding-bottom: 15px;
+        }
+        @include media-md-screen {
+            width: 42%;
+        }
+        @include media-sm-screen {
+            width: 100%;
+            border: none;
+            margin: 0;
+            padding-left: 2%;
+            @include height(230px);
+            float: left;
+            border-bottom: 5px dashed map-get($site_colors, box-grey-color);
+        }
+        &--img {
+            width: 100%;
+            @include height(170px);
+            @include media-lg-screen {
+                @include height(109px);
+                width: 40%;
+                float: left;
+                margin-right: 6px;
+            }
+            @include media-sm-screen {
+                height: 75%;
+                width: 43%;
+                float: left;
+                padding-right: 7px;
+            }
+        }
+        p {
+            background-color: map-get($site_colors, box-grey-color);
+            padding: 2px 5px;
+            @include height(120px);
+            overflow: hidden;
+            @include media-lg-screen {
+                @include fontSize(13px);
+                margin-top: 0;
+                text-align: justify;
+                padding-left: 2px;
+            }
+            @include media-sm-screen {
+                margin-top: 0;
+                @include fontSize(13px);
+                text-align: justify;
+                margin-right: 7px;
+            }
+        }
+        h3 {
+            @include height(55px);
+            @include media-sm-screen {
+                @include fontSize(12px);
+                @include height(18px);
+            }
+        }
+    }
+    &__products--button {
+        @include media-lg-screen {
+            display: none;
+        }
+        @include media-sm-screen {
+            display: none;
+        }
+        .price {
+            float: left;
+            padding: 13px 6px;
+        }
+        button {
+            float: right;
+            margin-bottom: 5px;
+        }
+    }
+    &__products--mob-button {
+        display: none;
+        @include media-lg-screen {
+            display: block;
+            margin: 0;
+        }
+        @include media-sm-screen {
+            display: block;
+            margin: 0;
+            float: right;
+            width: 57%;
+        }
+    }
+    &__products--item {
+        @include media-lg-screen {
+            width: 100%;
+        }
+    }
+}
+
+.product-list-block {
+    background-color: map-get($site_colors, box-grey-color);
+    @include media-sm-screen {
+        margin-top: 10px;
+    }
+}
