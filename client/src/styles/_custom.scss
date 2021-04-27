@@ -1,6 +1,7 @@
-// Reset
+
 @import url("https://fonts.googleapis.com/css2?family=Dosis:wght@400;600;700&display=swap");
 
+// Reset
 *,
 *::before,
 *::after {
@@ -10,12 +11,12 @@
 }
 
 *:focus {
-  outline-style: 1px  solid;
-  outline-color: #32a1ce;;
+  outline-style: 1px solid;
+  outline-color: $outline_color;
 }
 
 body {
-  font-family: "Dosis",sans-serif;
+  font-family: "Dosis", sans-serif;
   color: $text-color;
   font-size: 0.875rem;
 }
@@ -39,6 +40,8 @@ body {
     .logo {
       img {
         padding: 8px 0;
+        width: 190px;
+        height: 86px;
       }
     }
   }
@@ -64,16 +67,21 @@ body {
       }
     }
 
+    //cart icon image
     img {
-      height: 1.8rem;
       vertical-align: middle;
+      width: 29px;
+      height: 29px;
     }
+
     &-top {
       display: flex;
       justify-content: flex-end;
     }
+
     &-bottom {
       display: flex;
+
       .nav-link {
         margin-right: 2px;
         padding: 12px 16px;
@@ -122,9 +130,9 @@ body {
   flex-wrap: wrap;
 }
 
-.col { 
+.col {
   flex: 1;
-  
+
   @media (min-width: 768px) {
     &-md-12 {
       flex: 0 0 100%;
@@ -202,6 +210,15 @@ body {
       border-color: $primary !important;
     }
   }
+  &-error {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    font-size: 0.7rem;
+    font-weight: 500;
+    transform: translateY(100%);
+    color: $primary;
+  }
 }
 
 .text-center {
@@ -223,12 +240,14 @@ button {
   color: $button_text_color;
 }
 
-button:focus {outline:none;}
+button:focus {
+  outline: none;
+}
 button:focus-visible {
-  outline: 2px solid #32a1ce;;
+  outline: 2px solid $outline_color;
 }
 
-// banner button 
+// banner button
 .btn {
   appearance: none;
   padding: 8px 16px;
@@ -241,7 +260,7 @@ button:focus-visible {
   cursor: pointer;
   outline: none;
   transition: color 0.15s, background-color 0.15s ease-in-out;
-  
+
   &[disabled] {
     pointer-events: none;
     opacity: 0.4;
@@ -275,7 +294,7 @@ button:focus-visible {
   }
 }
 
-// Main content 
+// Main content
 
 .content {
   flex: 1;
@@ -322,10 +341,12 @@ button:focus-visible {
   flex-wrap: nowrap;
   height: 300px;
   transition: transform 0.4s linear;
+
   .slider {
     max-width: 100%;
     height: 100%;
     flex: 0 0 100%;
+
     img {
       max-width: 100%;
     }
@@ -353,10 +374,10 @@ button:focus-visible {
 /*  Banner section */
 /*----------------------------------*/
 
-
 .banner-img-fluid {
-  height: 250px;
+  // height: 250px;
   max-width: 100%;
+  // width: 400px;
 }
 
 .flex-center {
@@ -364,8 +385,6 @@ button:focus-visible {
   align-items: center;
   justify-content: center;
 }
-
-
 
 .title {
   font-size: 1.1rem;
@@ -380,6 +399,13 @@ button:focus-visible {
   }
 }
 
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical; 
+  overflow: hidden;
+}
+
 /*----------------------------------*/
 /*  PRODUCTS CONTAINER              */
 /*----------------------------------*/
@@ -389,7 +415,7 @@ button:focus-visible {
   height: fit-content;
 
   .sidebar {
-    flex : 0 0 220px;
+    flex: 0 0 220px;
     padding: 8px;
     background-color: $light-gray;
 
@@ -438,7 +464,7 @@ button:focus-visible {
 .products {
   display: grid;
   grid-column-gap: 0.4rem;
-  grid-template-columns: repeat(4,25%);
+  grid-template-columns: repeat(4, 25%);
   padding: 16px 0 16px 16px;
 }
 
@@ -463,7 +489,6 @@ button:focus-visible {
   .description {
     padding: 6px;
     font-size: 0.75rem;
-
   }
 
   &-footer {
@@ -487,7 +512,7 @@ button:focus-visible {
 .text-clamp-3 {
   display: -webkit-box;
   -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;  
+  -webkit-box-orient: vertical;
   overflow: hidden;
 }
 
@@ -504,7 +529,6 @@ button:focus-visible {
 /*----------------------------------*/
 
 .cart {
-
   &-overlay {
     position: fixed;
     top: 0;
@@ -557,7 +581,7 @@ button:focus-visible {
   }
 
   &-item {
-    display:flex;
+    display: flex;
     align-items: center;
     padding: 8px;
     margin: 0 8px;
@@ -606,14 +630,11 @@ button:focus-visible {
     padding: 8px;
     border-top: 1px solid #00000020;
   }
-
-
 }
 
-.login-container{
+.login-container {
   height: calc(100vh - 145px);
 }
-
 
 /*----------------------------------*/
 /*  FOOTER SECTION */
@@ -651,10 +672,24 @@ button:focus-visible {
   }
 }
 
-
-
 // When screen size is atmost 575px
 @media (max-width: 575px) {
+
+  .mt-auto {
+    height: 100%;
+    flex-direction: column;
+    display: flex;
+    justify-content: space-between;
+
+    .description {
+        height: 55%;
+        font-weight: 600;
+        font-size: 0.98rem;
+        margin-top: 0 !important;
+    
+    }
+  }
+
   .col-sm-5 {
     flex: 0 0 41.666667%;
     max-width: 41.666667%;
@@ -664,8 +699,20 @@ button:focus-visible {
     max-width: 58.333333%;
   }
 
+  // HEADER
+  .header {
+    &-container {
+      display: flex;
+      // Logo inside header container
+      .logo {
+        img {
+          width: 120px;
+          height: 70px;
+        }
+      }
+    }
+  }
 
-// HEADER
   .header-right {
     &.mobile {
       flex-direction: row;
@@ -707,14 +754,28 @@ button:focus-visible {
         margin-left: unset !important;
       }
     }
+  }
 
-    // Banner 
-    .sliders {
-      height: 150px;
-      .indicators .dot {
+
+    // Banner slider
+  .sliders {
+    height: 150px;
+
+    .indicators .dot {
         margin: 0 8px;
+    }
+
+    .slider {
+      img {
+        width: 483px;
+        height: 121px;
       }
     }
+  }
+
+  .banner-img-fluid{
+    width: 375px;
+    height: 211px;
   }
 
   .hide-sm {
@@ -789,7 +850,6 @@ button:focus-visible {
   footer {
     margin-top: 1px;
   }
-
 }
 
 // When screen size is atleast 575px
@@ -801,17 +861,63 @@ button:focus-visible {
     display: none;
   }
   .top-margin {
-    margin-top : 24px;
+    margin-top: 24px;
   }
   .login-container {
     padding-left: 16px;
     padding-right: 16px;
     margin-bottom: 32px;
   }
+
+  .sliders {
+
+    .slider {
+
+      img {
+      width: 559px;
+      height: 140px;
+      }
+    }
+  }
+
+  .banner-img-fluid{
+    width: 450px;
+    height: 253px;
+  }
 }
 
 @media (min-width: 767px) {
   .top-margin {
     margin-top: 0px;
+  }
+
+  .sliders {
+
+    .slider {
+
+      img {
+      width: 1200px;
+      height: 300px;
+      }
+    }
+  }
+
+  .banner-img-fluid{
+    width: 450px;
+    height: 253px;
+  }
+}
+
+@media (min-width: 990px) {
+  .banner-img-fluid{
+    width: 510px;
+    height: 287px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .banner-img-fluid{
+    width: 592px;
+    height: 333px;
   }
 }

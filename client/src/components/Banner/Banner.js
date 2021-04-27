@@ -45,7 +45,7 @@ const Banner = () => {
             <div className="col-md-6 flex-center">
               <div className="space text-center">
                 <h4 className="title-xl">{banner.name}</h4>
-                <p className="title">{banner.description}</p>
+                <p className="title line-clamp-2">{banner.description}</p>
                 <Button
                   variant="primary"
                   onClick={handleCategory}

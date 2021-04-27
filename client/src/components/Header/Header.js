@@ -19,12 +19,9 @@ const Header = () => {
   return (
     <header className="header">
       <div className="container header-container">
-        {/* <div className="header-left"> */}
-          <NavLink to="/" className="logo">
-            <img src="static/images/logo.png" alt="" />
+          <NavLink aria-label="Logo" to="/" className="logo">
+            <img src="static/images/logo.png" alt=""/>
           </NavLink>
-        {/* </div> */}
-
         {isMenuOpen && (
           <div className="overlay-block" onClick={toggleMenu}></div>
         )}
@@ -65,7 +62,7 @@ const Header = () => {
             {
               <>
                 <NavLink to="/login" className="nav-link ">
-                  Login
+                  SignIn
                 </NavLink>
                 <NavLink to="/register" className="nav-link">
                   Register

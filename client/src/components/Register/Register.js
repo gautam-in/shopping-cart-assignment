@@ -27,7 +27,6 @@ const Register = () => {
     }
 
     if (typeof form.firstName !== "undefined") {
-      console.log(form.firstName)
       const re = /^\S*$/;
       if (!re.test(form.firstName)) {
         formErrors.firstName = "Please enter valid first name.";
@@ -40,7 +39,6 @@ const Register = () => {
     }
 
     if (typeof form.lastName !== "undefined") {
-      console.log(form.lastName)
       const re = /^\S*$/;
       if (!re.test(form.lastName)) {
         formErrors.lastName = "Please enter valid last name.";
@@ -74,6 +72,15 @@ const Register = () => {
       setError({ ...formErrors });
       return;
     }
+
+    fetch('http://localhost:3000/login?register=true', {
+      method: 'POST',
+      // Convert the React state to JSON and send it as the POST body
+      body: JSON.stringify(form)
+    }).then(function(response) {
+      console.log(response)
+      return response.json();
+    }).catch(error => console.log(error));
 
     history.push("/login?register=true");
     setError(INITIAL_FORM);
