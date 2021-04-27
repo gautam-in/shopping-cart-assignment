@@ -1,12 +1,26 @@
 import React from "react";
-import "./index.css";
+import ReactDOM from "react-dom";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+
+import Home from "./containers/home";
+
+import "./index.scss";
 
 const App = () => {
-    return (
-        <div className="container-fluid">
-            <h1>Hello Ashish, Welcome to our board.</h1>
-        </div>
-    );
+  return (
+    <Switch>
+      <Route exact path="/">
+        <Home />
+      </Route>
+    </Switch>
+  );
 };
 
-export default App;
+ReactDOM.render(
+  <BrowserRouter>
+    <App />
+  </BrowserRouter>,
+  document.getElementById("root")
+);
+
+module.hot.accept();

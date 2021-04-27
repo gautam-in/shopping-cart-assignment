@@ -1,11 +1,12 @@
 body {
     background-color: #fff;
     box-sizing: border-box;
+    margin: 0;
 }
 h1 {
-    color: rgb(0, 0, 0);
+    color: #000;
 }
 .container-fluid{
     max-width: 1024px;
-    margin: auto;
+    margin: 0 auto;
 }

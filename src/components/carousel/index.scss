@@ -1,0 +1,35 @@
+.carousel {
+  display: flex;
+  position: relative;
+  box-sizing: border-box;
+  max-width: 1024px;
+  margin-top: 10px;
+
+  & .slide-arrow {
+    display: inline;
+    font-size: 14px;
+    color: #fff;
+    cursor: pointer;
+    border: 1px solid rgba(0, 0, 0, 0.288);
+    padding: 5px;
+    background-color: rgba(0, 0, 0, 0.288);
+    text-transform: uppercase;
+  }
+  & .banner_avatar {
+    width: 100%;
+    -webkit-transition: opacity 5s ease-in-out;
+    -moz-transition: opacity 5s ease-in-out;
+    -o-transition: opacity 5s ease-in-out;
+    transition: opacity 5s ease-in-out;
+  }
+  & .left {
+    position: absolute;
+    left: 0;
+    top: 45%;
+  }
+  & .right {
+    position: absolute;
+    top: 45%;
+    right: 0;
+  }
+}

@@ -2,13 +2,26 @@
   "name": "code-exercise",
   "version": "1.0.0",
   "description": "This is a shopping cart coding exercise",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "jestest": "jest",
     "dev": "webpack serve --hot --open chrome",
     "build": "webpack --mode production",
     "server": "canned -p 5000 ./server",
     "start": "concurrently \"npm run server\" \"npm run dev\""
+  },
+  "jest": {
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ],
+    "collectCoverageFrom": [
+      "client/**/*.js",
+      "!client/app.js"
+    ],
+    "coverageReporters": [
+      "text"
+    ]
   },
   "author": "Ashish Kumar Singh",
   "license": "MIT",
@@ -20,15 +33,26 @@
     "canned": "^0.3.12",
     "clean-webpack-plugin": "^4.0.0-alpha.0",
     "concurrently": "^6.0.2",
-    "css-loader": "^5.2.1",
+    "css-loader": "^5.2.4",
     "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.3.1",
     "mini-css-extract-plugin": "^1.4.1",
+    "node-sass": "^5.0.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-hot-loader": "^4.13.0",
+    "react-router-dom": "^5.2.0",
+    "sass-loader": "^11.0.1",
+    "style-loader": "^2.0.0",
+    "url-loader": "^4.1.1",
     "webpack": "^5.32.0",
     "webpack-cli": "^4.6.0",
     "webpack-dev-server": "^3.11.2"
+  },
+  "devDependencies": {
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.6",
+    "enzyme-to-json": "^3.6.2",
+    "jest": "^26.6.3"
   }
 }
