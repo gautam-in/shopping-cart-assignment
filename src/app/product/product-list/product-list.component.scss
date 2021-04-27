@@ -5,16 +5,25 @@
   margin-right: 2%;
 }
 
+.side-nav{
+  background-color: $grey;
+}
 .product {
   max-width: 70%;
   padding: 10px 0px;
+  .product-row{
+    margin-left: 0px;
+  }
 }
 
 .product-card {
   width: calc(25% - 10px);
   height: 410px;
-  border-bottom: 1px dashed $grey;
+  border:0;
+  border-right: 2px solid $grey;
+  margin-top: 3rem;
   .product-body {
+    border-bottom: 3px dashed $grey;
     .product-title {
       font-size: 1rem;
       font-weight: 700;
@@ -145,7 +154,7 @@
         .product-buy {
           font-size: 10px;
           background-color: $mergenta;
-          padding: 0.3rem 4.7rem;
+          padding: 0.3rem 7.2rem;
         }
       }
     }
@@ -196,7 +205,7 @@
         .product-buy {
           font-size: 9px;
           background-color: $mergenta;
-          padding: 0.1rem 2rem;
+          padding: 0.1rem 2.6rem;
           margin-left: 11rem;
           margin-top: -5rem;
         }

@@ -1,31 +1,13 @@
 @import "../../../assets/scss/color.scss";
 
-// .category{
-//   .category-row:nth-child(even) {
-//     .image {
-//       float: left;
-//       img {
-//         width: 18rem;
-//         height: inherit;
-//       }
-//     }
-//     .description {
-//       float: right;
-//       .category-body {
-//         text-align: center;
-
-//       }
-//     }
-//   }
-// }
-
 .category {
   margin: 0 10rem;
   .category-row {
-    border-bottom: 3px solid $grey;
-    box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.1);
+    border-top: 4px solid $grey;
+  //  box-shadow: 0px 4px 0px rgba(233, 217, 217, 0.4);
     text-align-last: center;
     margin: 30px 0;
+    padding-top: 2rem;
     img {
       width: 18rem;
       height: inherit;
@@ -42,7 +24,19 @@
       }
     }
   }
+ 
 }
+
+
+  .category:nth-child(odd) {
+    .image {
+      float: right;
+    }
+    .description {
+      float: left;
+    }
+  }
+
 
 .btn-danger {
   width: inherit;
@@ -104,11 +98,6 @@
   }
 }
 
-/* Small devices (portrait tablets and large phones, 600px and up) */
-// @media only screen and (min-width: 600px) {
-//   @media (max-width: 767px) {
-//
-// }
 
 /* Extra small devices (phones, 600px and down) */
 // @media only screen and (max-width: 600px) {

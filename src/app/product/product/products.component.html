@@ -1,11 +1,11 @@
 <div class="container">
   <div class="row main-row">
-    <div class="col-2 col-xs-0">
+    <div class="col-2 col-xs-0 side-nav">
       <app-product-nav></app-product-nav>
     </div>
    
     <div class="col-10 col-xs-12 product">
-      <div class="row">
+      <div class="row product-row">
         <div
           class="card col-lg-3 col-md-6 col-sm-12 product-card"
           *ngFor="let product of products"
@@ -25,7 +25,7 @@
             <div class="product-footer">
               <div class="big-screen"  >
                 <h2 class="product-price">
-                  MRP {{ product?.price.toFixed(1) | currency: "Rs " }}
+                  MRP {{ product?.price | currency: "Rs." : 'symbol' : '1.0-0' }}
                 </h2>
                 <button
                   (click)="buyProduct(product)"
@@ -39,7 +39,7 @@
                   (click)="buyProduct(product)"
                   class="btn btn-danger btn-raised product-buy"
                 >
-                  Buy Now @ {{ product?.price.toFixed(1) | currency: "Rs " }}
+                  Buy Now @ {{ product?.price | currency: "Rs." : 'symbol' : '1.0-0' }}
                 </button>
               </div>
             </div>
