@@ -27,7 +27,6 @@ export class ProductsComponent implements OnInit {
   fetchProduct(data) {
     if (data.length > 0) {
       this.products = data;
-      // this._productService.product = data;
     }
   }
 
