@@ -1,5 +1,11 @@
-import localInstance from '../../components/apis/localhost';
-
+import localInstance from '../apis/localhost';
+///////////////////////// Fetching Banners /////////////////////////////////////
+export const fetchBanners = () => {
+  return async (dispatch) => {
+    const resp = await localInstance.get('/api/banners');      
+    dispatch({  type : 'FETCH_BANNERS', payload : resp.data })
+  }
+}
 
 ///////////////////////// Fetching Categories /////////////////////////////////////
 

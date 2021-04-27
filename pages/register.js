@@ -2,19 +2,19 @@ import styled from 'styled-components'
 import Form from "../components/form/Form"
 import Button from "../components/form/Button"
 import Input from "../components/form/Input"
-import { FooterGrayStripe } from "../components/styled";
+import { FooterGrayStripe } from "../components/footer";
 
 export default function Register(){    
 
     return (
-        <DivContainer>
+        <div>
             <SignupContainer>
-                <DivContainer>
+                <LeftDivContainer>
                     <h2> Signup</h2>
                     <p>We do not share your personal details with anyone</p>
-                </DivContainer>
+                </LeftDivContainer>
 
-                <DivContainer>
+                <div>
                     <Form name = 'registerForm' targetPage = 'http://localhost:3000/login'>
                         <Input type = 'text' placeholder = 'First Name' name = 'firstname'/>
                         <Input type = 'text' placeholder = 'Last Name' name = 'lastname'/>  
@@ -23,21 +23,22 @@ export default function Register(){
                         <Input type= 'password' placeholder = 'Confirm password' name = 'password' />
                         <Button name = "Signup" type = "submit" />
                     </Form>
-                </DivContainer>
+                </div>
             </SignupContainer>
             <FooterGrayStripe>
                 <p>
-                    Copyright <span>&copy</span> 2011-2018 Sabka Bazaar Grocery Supplies Pvt Ltd
+                    Copyright <span>&copy;</span> 2011-2018 Sabka Bazaar Grocery Supplies Pvt Ltd
                 </p>
             </FooterGrayStripe>
-        </DivContainer>
+        </div>
     )
 }
 
 
 <Button name = "Signup" type = "submit" onClickMethod = {(e) => cb(e)}/> 
 
-const DivContainer = styled.div` 
+const LeftDivContainer = styled.div`
+    width : 65%;
 `
 
 const SignupContainer = styled.div`

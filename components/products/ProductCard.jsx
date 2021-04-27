@@ -12,23 +12,20 @@ function ProductCard(props) {
 
     return (
         <ProductContainer>
-                <ProductHeading> {productObj.name} </ProductHeading>
-                <img src = {productObj.imageURL} alt = 'pic' />
-                <ProductDetails> {productObj.description} </ProductDetails>
-                <MrpBuyNowContainer>
-                    <MRP> {`MRP Rs.${productObj.price}`} </MRP>
-                    <div onClick = { () => buyNowClickHandler(productObj)}>
-                        <BuyNow> Buy Now </BuyNow>
-                    </div>
-                </MrpBuyNowContainer>
+            <ProductHeading> {productObj.name} </ProductHeading>
+            <img src = {productObj.imageURL} alt = 'pic' />
+            <ProductDetails> {productObj.description} </ProductDetails>
+            <MrpBuyNowContainer>
+                <MRP> {`MRP Rs.${productObj.price}`} </MRP>
+                <div onClick = { () => buyNowClickHandler(productObj)}>
+                    <BuyNow> Buy Now </BuyNow>
+                </div>
+            </MrpBuyNowContainer>
         </ProductContainer>
     )
 }
 
-const mapStateToProps = (state) => {
-    return {}
-}
-
+export default connect(null, { buyNow })(ProductCard);
 
 
 const ProductContainer = styled.div.attrs({
@@ -48,7 +45,7 @@ const ProductHeading =  styled.h6`
 const ProductDetails = styled.p`
     font-size : 10px;
     height : 60px; 
-    background-color : #f3efef66;
+    background-color : #f3efefbf;
     overflow: hidden;   
     -webkit-line-clamp: 4; 
 `
@@ -71,8 +68,8 @@ const BuyNow = styled.p`
     text-align : center;
     display : inline-block;
     background-color : #f31a82;
+    cursor: pointer;
     a {
         color : #fff;
     }
 `
-export default connect(null, {buyNow})(ProductCard);

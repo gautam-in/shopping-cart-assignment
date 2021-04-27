@@ -2,10 +2,9 @@ import { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { fetchProductsList } from '../../redux/actions'
 import ProductCard from './ProductCard'
-import styles from './productsList.module.css';
 
-function ProductsList(props) {
-   
+function ProductsList(props) {       
+    
     useEffect(() => {
         props.fetchProductsList()
     }, [])
@@ -16,8 +15,8 @@ function ProductsList(props) {
         })
     }
     return (
-        <div className = {styles.productsList}>             
-            {renderContent()}
+        <div>             
+            { renderContent() }
         </div>
     )
 }

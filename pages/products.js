@@ -28,17 +28,14 @@ const HeaderContainer = styled.div`
     z-index : 1; 
     top: 0;
 `
-
 const RootContainer = styled.div`
     margin: 0px auto;
     width: 80%;    
 `
-
 const CategoryContainer = styled.div`
     float: left;
     width: 15%;
 `
-
 const ProductsListContainer = styled.div`
     width: 80%;  
     float: right;

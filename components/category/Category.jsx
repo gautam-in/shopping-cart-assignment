@@ -23,7 +23,6 @@ export default function Category({ categoryObj, index }) {
     )
 }
 
-
 const CategoryContainer = styled.div`
     box-shadow: 0 3px 2px #e6e3e3;
     display : flex;
@@ -62,13 +61,3 @@ const ExploreNow = styled.div`
         padding : 7px;
     }
 `
-
-
-{/* <div className = {styles.category} >
-    <img src = {categoryObj.imageUrl} alt = {categoryObj.description} style = {{ order : order}}/>
-    <div style = {{ backgroundColor : 'aliceblue'}}>
-        <CataHeading>{categoryObj.name}</CataHeading>
-        <CataPara>{categoryObj.description}</CataPara>
-        <p style = {{color : 'white', display : 'inline-block'}}><Link href = '#'>  Explore  </Link></p>
-    </div>
-</div> */}

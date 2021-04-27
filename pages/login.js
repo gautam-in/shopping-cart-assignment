@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import Button from "../components/form/Button"
 import Input from "../components/form/Input"
 import Form from "../components/form/Form"
-import { FooterGrayStripe } from "../components/styled";
+import { FooterGrayStripe } from "../components/footer";
 
 export default function LoginPage(){    
    
@@ -24,7 +24,7 @@ export default function LoginPage(){
                 </DivContainer>
             </LoginContainer>
             <FooterGrayStripe>
-                <p>Copyright <span>&copy</span> 2011-2018 Sabka Bazaar Grocery Supplies Pvt Ltd</p>
+                <p>Copyright <span>&copy;</span> 2011-2018 Sabka Bazaar Grocery Supplies Pvt Ltd</p>
             </FooterGrayStripe>
         </DivContainer>
     )

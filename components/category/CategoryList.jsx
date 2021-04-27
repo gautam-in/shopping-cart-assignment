@@ -16,7 +16,7 @@ function CategoryList(props) {
 
     return (
         <div>
-            {renderContent()}
+            { renderContent() }
         </div>
     )
 }
@@ -24,7 +24,5 @@ function CategoryList(props) {
 const mapStateToProps = (state) => {
     return { categoryList : state.categoryList}
 }
-
-
 
 export default connect(mapStateToProps, {fetchCategoryList} )(CategoryList);
