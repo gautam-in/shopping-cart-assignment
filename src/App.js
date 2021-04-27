@@ -8,7 +8,7 @@ export default function App() {
     },[])
     return (
         <div className="test">
-            webpacks setup
+            webpack setup
         </div>
     )
 }
