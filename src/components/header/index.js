@@ -8,7 +8,7 @@ import cartIcon from "../../../static/images/cart.svg";
 
 const Header = () => {
   return (
-    <div className="header">
+    <header className="header">
       <div className="container-fluid">
         <HeaderLogo />
         <div className="nav_container">
@@ -23,7 +23,7 @@ const Header = () => {
           </div>
         </div>
       </div>
-    </div>
+    </header>
   );
 };
 

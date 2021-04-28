@@ -81,7 +81,8 @@ module.exports = {
   //Config for webpack-dev-server module
   devServer: {
     historyApiFallback: true,
-    contentBase: path.resolve(__dirname, "src/dist"),
+    contentBase: path.resolve(__dirname, "public"),
+    publicPath: "/",
     hot: true,
     port: 3033,
   },

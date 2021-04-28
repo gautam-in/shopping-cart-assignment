@@ -44,8 +44,8 @@ const Carousel = () => {
   const Slide = (data) => {
     if (Object.keys(data).length) {
       const bannerImageProps = {
-        src_2x: `${data.bannerImageUrl}`,
-        src: `${data.bannerImageUrl}`,
+        src_2x: data.bannerImageUrl,
+        src: data.bannerImageUrl,
         alt: data.bannerImageAlt,
         imgClassName: "banner",
       };

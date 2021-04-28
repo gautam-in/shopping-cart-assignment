@@ -1,12 +1,22 @@
 body {
-    background-color: #fff;
-    box-sizing: border-box;
-    margin: 0;
-}
-h1 {
+  background-color: #fff;
+  box-sizing: border-box;
+  margin: 0;
+
+  & h1 {
     color: #000;
-}
-.container-fluid{
+  }
+
+  & .container-fluid {
     max-width: 1024px;
     margin: 0 auto;
+  }
+
+  &.title {
+    font-size: 1.1rem;
+  }
+
+  & .title-xl {
+    font-size: 1.4rem;
+  }
 }
