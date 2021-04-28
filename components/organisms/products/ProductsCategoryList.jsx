@@ -1,7 +1,7 @@
 import { useEffect } from  'react';
 import { connect } from 'react-redux'
 import styled from 'styled-components'
-import { fetchCategoryList, fetchProductsList } from '../../redux/actions'
+import { fetchCategoryList, fetchProductsList } from '../../../redux/actions'
 
 function ProductsCategoryList(props) {
     useEffect(() => {
@@ -31,6 +31,9 @@ const mapStateToProps = (state) => {
     return { categoryList : state.categoryList}
 }
 
+export default connect(mapStateToProps, {fetchCategoryList, fetchProductsList})(ProductsCategoryList);
+
+
 const CategoryTile = styled.div`
     height: 35px;
     box-shadow: 0 2px 1px #dad3d3d1;
@@ -40,7 +43,6 @@ const CategoryTile = styled.div`
     cursor: pointer;
 `
 
-export default connect(mapStateToProps, {fetchCategoryList, fetchProductsList})(ProductsCategoryList);
 
 
 

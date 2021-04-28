@@ -30,10 +30,17 @@ function Cart(props) {
                     <BlackStripe>
                         My Cart ( {`${props.numberOfItemsInCart} items`}) <span onClick = {onCloseButtonClick} style ={{ float : 'right', cursor : 'pointer'}}> X </span>
                     </BlackStripe>
-                    <CartItemsList />
-                    <CheckOutContainer>
-                        Proceed to Checkout <span style = {{ float : 'right'}}>{`Rs. ${props.amountToBePaid} `}</span>
-                    </CheckOutContainer>
+                    {
+                        props.amountToBePaid === 0 ?
+                        <h6 style = {{width : '50%', margin : '10px auto'}}> No items in your cart </h6> :
+                        <div>
+                            <CartItemsList />
+                            <CheckOutContainer>
+                                Proceed to Checkout <span style = {{ float : 'right'}}>{`Rs. ${props.amountToBePaid} `}</span>
+                            </CheckOutContainer>
+                        </div>
+                    
+                    }
                 </OrderDetailsContainer>                
             </div>
 

@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { connect } from 'react-redux';
-import { fetchProductsList } from '../../redux/actions'
+import { fetchProductsList } from '../../../redux/actions'
 import ProductCard from './ProductCard'
 
 function ProductsList(props) {       

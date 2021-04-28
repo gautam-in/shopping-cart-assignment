@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components'
 import { connect } from 'react-redux'
-import DivButton from '../form/DivButton';
-import { increment, decrement } from '../../redux/actions'
+import DivButton from '../../atoms/form/DivButton';
+import { increment, decrement } from '../../../redux/actions'
 
 function CartItem({ productObj, increment, decrement}) {
     const { name, quantity, price, imageURL , description, id} = productObj;

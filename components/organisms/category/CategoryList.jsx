@@ -1,7 +1,7 @@
 import { useEffect } from "react"
 import { connect } from 'react-redux'
 import Category from "./Category"
-import { fetchCategoryList } from '../../redux/actions'
+import { fetchCategoryList } from '../../../redux/actions'
 
 function CategoryList(props) {   
     useEffect(() => {

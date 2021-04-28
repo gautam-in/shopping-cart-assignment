@@ -1,10 +1,15 @@
+@import url('https://fonts.googleapis.com/css?family=Dosis:400,600,700');
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: 'Lato', 'Arial', 'sans-serif';
+  font-family: 'Dosis', 'Lato', 'Arial';
   line-height: 1.6;
   font-size: 12px;
+}
+
+h1,h1,h3,h4,h5,h6 {
+  font-family: 'Dosis', 'Lato', 'Arial';
 }
 
 * {

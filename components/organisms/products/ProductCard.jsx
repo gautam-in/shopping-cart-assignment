@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { connect } from 'react-redux';
 import styled from 'styled-components';
-import { buyNow } from '../../redux/actions/index'
+import { buyNow } from '../../../redux/actions'
 
 function ProductCard(props) {    
     const productObj = props.product;
@@ -32,7 +32,7 @@ const ProductContainer = styled.div.attrs({
     className : 'col span-1-of-4 box'
 })` 
     margin : 2px;
-    padding: 17px;
+    padding: 10px;
     height: 380px;
     border-bottom: 2px dashed #cec8c85c;
 `
@@ -40,10 +40,10 @@ const ProductContainer = styled.div.attrs({
 const ProductHeading =  styled.h6`
     height : 15px;
     font-size : 15px;
+    font-weight : 600;
 `
 
-const ProductDetails = styled.p`
-    font-size : 10px;
+const ProductDetails = styled.p`    
     height : 60px; 
     background-color : #f3efefbf;
     overflow: hidden;   

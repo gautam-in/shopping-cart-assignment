@@ -46,10 +46,10 @@ const CategorySecondColumn = styled.div.attrs({
 
 const CataHeading = styled.h3`    
     text-align : center;    
+    font-weight : 600;
 `
 const CataPara = styled.p`    
     text-align : center;
-    font-size : 90%;
     margin : 0 5%;
 `
 const ExploreNow = styled.div`    
