@@ -7,19 +7,7 @@
         alt="Sabka bazaar"
       />
     </a>
-    <!-- <button
-      class="navbar-toggler"
-      type="button"
-      data-toggle="collapse"
-      data-target="#navbarNav"
-      aria-controls="navbarNav"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
-    >
-      <span class="navbar-toggler-icon"></span>
-    </button> -->
-
-    <div class="mid-container" >
+    <div class="mid-container">
       <ul class="navbar-nav nav-bar-left">
         <li class="nav-item">
           <a
@@ -49,7 +37,7 @@
             >SignIn</a
           >
         </li>
-       
+
         <li class="nav-item">
           <a
             class="nav-link"
@@ -58,17 +46,12 @@
             >Register</a
           >
         </li>
-      </ul> 
+      </ul>
       <ul class="navbar-nav nav-bar-right" *ngIf="isLoggedIn">
         <li class="nav-item">
-          <a
-            class="nav-link"
-            (click)="logoutUser()"
-            >Logout</a
-          >
+          <a class="nav-link" (click)="logoutUser()">Logout</a>
         </li>
       </ul>
-
     </div>
     <div class="cart" (click)="openCart()">
       <img src="/assets/img/cart.svg" alt="cart" class="cart-logo" />
@@ -78,4 +61,3 @@
     </div>
   </div>
 </nav>
-

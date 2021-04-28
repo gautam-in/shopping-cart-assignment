@@ -1,9 +1,7 @@
-import { HttpClient } from '@angular/common/http';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { CartService } from 'src/app/shared/services/cart/cart.service';
 import { IProduct } from 'src/models/product.model';
-import { ProductService } from '../product.service';
 
 @Component({
   selector: 'app-product-list',
@@ -16,7 +14,7 @@ export class ProductListComponent implements OnInit {
 
   constructor(
     private _cartService: CartService,
-    private _activatedroute: ActivatedRoute,
+    private _activatedroute: ActivatedRoute
   ) {}
 
   ngOnInit(): void {
@@ -36,10 +34,9 @@ export class ProductListComponent implements OnInit {
           prod.push(product);
         }
       });
-      this.filteredProducts = prod
+      this.filteredProducts = prod;
     }
   }
-
 
   buyProduct(product: IProduct) {
     this._cartService.addProductToCart(product);

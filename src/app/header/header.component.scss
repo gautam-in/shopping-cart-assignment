@@ -35,7 +35,7 @@ nav {
 
 .main-container {
   position: relative;
-  .mid-container{
+  .mid-container {
     position: absolute;
     right: 26rem;
     bottom: 0rem;
@@ -45,7 +45,7 @@ nav {
       font-size: 0.8rem;
       font-weight: 700;
       color: $black;
-      margin-right: 1rem;;
+      margin-right: 1rem;
     }
   }
   .end-container {
@@ -86,7 +86,8 @@ nav {
   nav {
     max-height: 20rem;
     width: auto;
-    .nav-bar-right, .nav-bar-left {
+    .nav-bar-right,
+    .nav-bar-left {
       display: -webkit-inline-box;
       margin: 0 1rem;
     }
@@ -101,7 +102,7 @@ nav {
 
   .main-container {
     position: relative;
-    .mid-container{
+    .mid-container {
       right: 26rem;
       bottom: 0rem;
       top: 1rem;
@@ -110,17 +111,17 @@ nav {
         font-size: 0.6rem;
         font-weight: 700;
         color: $black;
-        margin-right: .8rem;;
+        margin-right: 0.8rem;
       }
     }
-   
   }
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (max-width: 600px) {
   nav {
-    .nav-bar-right , .nav-bar-left{
+    .nav-bar-right,
+    .nav-bar-left {
       display: -webkit-inline-box;
       margin: 1rem 0;
     }
@@ -131,13 +132,13 @@ nav {
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
- @media only screen and (max-width: 768px) {
-  .mid-conatiner{
-    .nav-link{
+@media only screen and (max-width: 768px) {
+  .mid-conatiner {
+    .nav-link {
       margin-right: 1rem;
     }
   }
- }
+}
 
 @media only screen and (max-width: 992px) {
   nav {
@@ -148,19 +149,20 @@ nav {
   }
 
   .main-container {
-    .end-container, .mid-conatiner {
+    .end-container,
+    .mid-conatiner {
       position: relative;
       right: 0;
       bottom: 0;
-      .nav-bar-right , .nav-bar-left{
+      .nav-bar-right,
+      .nav-bar-left {
         display: -webkit-inline-box;
         margin: 1rem 0;
       }
-    
     }
 
-    .mid-conatiner{
-      .nav-link{
+    .mid-conatiner {
+      .nav-link {
         margin-right: 1rem;
       }
     }
@@ -179,4 +181,3 @@ nav {
     }
   }
 }
-

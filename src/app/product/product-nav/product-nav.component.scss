@@ -13,10 +13,9 @@
   font-weight: 1000;
 }
 
-.product-dropdown{
+.product-dropdown {
   display: none;
 }
-
 
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (max-width: 992px) {
@@ -35,28 +34,26 @@
   .nav {
     display: none;
   }
-  
-  
-  .product-dropdown{
-    display: inline-block ;
-    .drpdwn-btn{
+
+  .product-dropdown {
+    display: inline-block;
+    .drpdwn-btn {
       width: 24rem;
       margin-top: 2rem;
-      background-color: $mergenta ;
+      background-color: $mergenta;
       border: 0;
       margin-left: -1rem;
     }
 
-    .dropdown-toggle::after{
-     margin-left: 11rem;
+    .dropdown-toggle::after {
+      margin-left: 11rem;
     }
-    .product-menu{
+    .product-menu {
       width: 23rem;
       background-color: $mergenta;
     }
-    .menu-item{
-      color : $white
+    .menu-item {
+      color: $white;
     }
   }
- 
 }

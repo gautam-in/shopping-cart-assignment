@@ -4,9 +4,7 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { IProduct } from 'src/models/product.model';
 import { IUser } from 'src/models/user.model';
 import { AuthService } from '../auth/auth.service';
-import { CartComponent } from '../shared/component/cart/cart.component';
 import { EmptyCartComponent } from '../shared/component/empty-cart/empty-cart.component';
-import { AppService } from '../shared/services/app.service';
 import { CartService } from '../shared/services/cart/cart.service';
 import { UserService } from '../user/user.service';
 
@@ -16,7 +14,7 @@ import { UserService } from '../user/user.service';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements OnInit {
-  productsInCart: IProduct[] =[];
+  productsInCart: IProduct[] = [];
   isLoggedIn: boolean = false;
   user: IUser;
 
@@ -26,9 +24,7 @@ export class HeaderComponent implements OnInit {
     private _route: Router,
     private _userService: UserService,
     private _authService: AuthService
-  ) {
-
-  }
+  ) {}
 
   ngOnInit(): void {
     this.getUser();
@@ -36,9 +32,9 @@ export class HeaderComponent implements OnInit {
       this.productsInCart = item;
     });
 
-     this._userService.getUser.subscribe(user=>{
-      this.isLoggedIn = user
-    })
+    this._userService.getUser.subscribe((user) => {
+      this.isLoggedIn = user;
+    });
   }
 
   getUser() {
@@ -46,13 +42,11 @@ export class HeaderComponent implements OnInit {
     if (this.user) {
       this.isLoggedIn = true;
     }
-   
   }
 
   logoutUser() {
     this.isLoggedIn = false;
     this._authService.logout();
-    
   }
 
   openCart(): void {

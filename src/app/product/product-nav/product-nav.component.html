@@ -13,11 +13,10 @@
     aria-haspopup="true"
     aria-expanded="false"
   >
-  {{selectedValue}}
+    {{ selectedValue }}
   </button>
 
-  <div class="dropdown-menu product-menu" aria-labelledby="dropdownMenuButton" 
- >
+  <div class="dropdown-menu product-menu" aria-labelledby="dropdownMenuButton">
     <ng-container *ngFor="let category of categoryList">
       <a
         *ngIf="category.enabled"

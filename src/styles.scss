@@ -21,10 +21,9 @@ body {
 .main-heading {
   font-size: 24px;
   font-weight: bolder;
- 
 }
 
-.LoginRegText{
+.LoginRegText {
   height: 100%;
   float: left;
   padding: 2% 0;
@@ -46,36 +45,33 @@ a {
   text-decoration: none;
 }
 
-.error-msg{
+.error-msg {
   color: red;
-  padding-bottom : 2%;
+  padding-bottom: 2%;
 }
 //------------------------------------------------
 // LOGIN and SIGNUP Page CSS
 //------------------------------------------------
 
 .LoginRegText {
-   padding-left: 15%;
+  padding-left: 15%;
 
-  .title{
+  .title {
     font-size: 25px;
   }
-  .title-description{
+  .title-description {
     font-size: 15px;
   }
 }
 
 .form-group label,
-input:active
-{
+input:active {
   font-size: 90%;
 }
 
-input:focus
-{
-border-bottom: 2px solid rgb(18, 212, 238) !important;
+input:focus {
+  border-bottom: 2px solid rgb(18, 212, 238) !important;
 }
-
 
 .col-lg-6 Form {
   padding-top: 3%;
@@ -83,18 +79,20 @@ border-bottom: 2px solid rgb(18, 212, 238) !important;
   padding-right: 20%;
 }
 
-// .form-group.is-focused label .form-group.is-focused label.control-label{
-//   color: rgb(181, 214, 34); // any color that you want
-// }
-
-.margin10{
+.margin10 {
   margin-top: 10px;
 }
 /* Importing Bootstrap SCSS file. */
-@import '~bootstrap/scss/bootstrap';
+@import "~bootstrap/scss/bootstrap";
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
 
 /* Importing Bootstrap SCSS file. */
-@import '~bootstrap/scss/bootstrap';
+@import "~bootstrap/scss/bootstrap";

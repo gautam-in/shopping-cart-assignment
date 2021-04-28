@@ -6,26 +6,30 @@ const routes: Routes = [
   {
     path: '',
     redirectTo: 'auth',
-    pathMatch: 'full'
+    pathMatch: 'full',
   },
   {
     path: 'auth',
-    loadChildren: () => import(`../app/auth/auth.module`).then(m => m.AuthModule)
+    loadChildren: () =>
+      import(`../app/auth/auth.module`).then((m) => m.AuthModule),
   },
   {
     path: 'home',
     canActivate: [AuthGuard],
-    loadChildren: () => import(`../app/home/home.module`).then(m => m.HomeModule)
+    loadChildren: () =>
+      import(`../app/home/home.module`).then((m) => m.HomeModule),
   },
   {
     path: 'products',
     canActivate: [AuthGuard],
-    loadChildren: () => import(`../app/product/product.module`).then(m => m.ProductModule)
+    loadChildren: () =>
+      import(`../app/product/product.module`).then((m) => m.ProductModule),
   },
   {
-    path: '404', component: PageNotFoundComponent
+    path: '404',
+    component: PageNotFoundComponent,
   },
-  { path: '**', redirectTo: '404' }
+  { path: '**', redirectTo: '404' },
 ];
 
 @NgModule({

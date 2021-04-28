@@ -23,19 +23,16 @@
       }
     }
   }
- 
 }
 
-
-  .category:nth-child(odd) {
-    .image {
-      float: right;
-    }
-    .description {
-      float: left;
-    }
+.category:nth-child(odd) {
+  .image {
+    float: right;
   }
-
+  .description {
+    float: left;
+  }
+}
 
 .btn-danger {
   width: inherit;
@@ -96,7 +93,6 @@
     margin-bottom: 35px;
   }
 }
-
 
 /* Extra small devices (phones, 600px and down) */
 // @media only screen and (max-width: 600px) {

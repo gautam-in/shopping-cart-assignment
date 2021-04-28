@@ -11,18 +11,15 @@ import { RouterModule } from '@angular/router';
 import { AuthComponent } from './auth.component';
 
 @NgModule({
-  declarations: [LoginComponent,
-     RegisterComponent,
-    AuthComponent],
+  declarations: [LoginComponent, RegisterComponent, AuthComponent],
   imports: [
     CommonModule,
     AuthRoutingModule,
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    RouterModule
+    RouterModule,
   ],
-  providers: [AuthService,
-  UserService],
+  providers: [AuthService, UserService],
 })
 export class AuthModule {}

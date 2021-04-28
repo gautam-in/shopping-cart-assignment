@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SharedModule } from './shared/shared.module';
 import { FooterComponent } from './footer/footer.component';
@@ -24,14 +23,10 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     HttpClientModule,
     BrowserAnimationsModule,
     SharedModule,
-    RouterModule
+    RouterModule,
   ],
-  exports:[
-    SharedModule,
-    RouterModule],
-  providers: [
-
-  ],
-  bootstrap: [AppComponent]
+  exports: [SharedModule, RouterModule],
+  providers: [],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

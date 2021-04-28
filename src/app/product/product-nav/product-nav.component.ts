@@ -13,7 +13,7 @@ export class ProductNavComponent implements OnInit {
   categoryList: ICategory[] = [];
   categories: ICategory[] = [];
   selectedValue: string = 'Select Category';
-   selectedId: string;
+  selectedId: string;
   constructor(
     private _appService: AppService,
     private _productService: ProductService,
@@ -39,7 +39,7 @@ export class ProductNavComponent implements OnInit {
   }
 
   selectValue(catgory: ICategory) {
-    this.selectedValue = catgory.name ;
+    this.selectedValue = catgory.name;
     this.selectedId = catgory.id;
- }
+  }
 }

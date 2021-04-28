@@ -122,10 +122,10 @@
   }
 
   .item-price,
-.item-total-price,
-.count {
-  font-size: 1rem;
-}
+  .item-total-price,
+  .count {
+    font-size: 1rem;
+  }
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
@@ -196,8 +196,8 @@
     }
     .product {
       height: 6rem;
-      .cart-image{
-        .cart-img{
+      .cart-image {
+        .cart-img {
           margin: 0 1rem;
         }
       }

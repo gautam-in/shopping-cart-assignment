@@ -9,9 +9,8 @@ import { Router } from '@angular/router';
 import { AppService } from 'src/app/shared/services/app.service';
 import { UserService } from 'src/app/user/user.service';
 import { AuthService } from '../auth.service';
-import{ AppConstants} from 'src/app/constants'
+import { AppConstants } from 'src/app/constants';
 import { IUser } from 'src/models/user.model';
-
 
 @Component({
   selector: 'app-register',
@@ -23,14 +22,14 @@ export class RegisterComponent implements OnInit {
 
   registrationForm: FormGroup;
   errormsg: string = '';
-  errorUserExists : boolean = false;
+  errorUserExists: boolean = false;
 
   constructor(
     private _router: Router,
     private _authService: AuthService,
     private _fb: FormBuilder,
     private _appService: AppService,
-    private _userService : UserService
+    private _userService: UserService
   ) {
     this.validationMessages = {
       firstName: {
@@ -66,17 +65,11 @@ export class RegisterComponent implements OnInit {
       {
         firstName: [
           '',
-          [
-            Validators.required,
-            Validators.pattern(AppConstants.NAME_REGEX),
-          ],
+          [Validators.required, Validators.pattern(AppConstants.NAME_REGEX)],
         ],
         lastName: [
           '',
-          [
-            Validators.required,
-            Validators.pattern(AppConstants.NAME_REGEX),
-          ],
+          [Validators.required, Validators.pattern(AppConstants.NAME_REGEX)],
         ],
         email: [
           '',
@@ -123,11 +116,11 @@ export class RegisterComponent implements OnInit {
       existingUser = this._userService.getRegisteredUsers();
       if (existingUser && existingUser != null) {
         existingUser.push(user);
-        this._userService.setUsers('registeredUser', existingUser)
+        this._userService.setUsers('registeredUser', existingUser);
       } else {
         let newUser: IUser[] = [];
         newUser.push(user);
-        this._userService.setUsers('registeredUser', newUser)
+        this._userService.setUsers('registeredUser', newUser);
       }
       this._router.navigate(['/auth/login']);
     } else {
@@ -140,7 +133,9 @@ export class RegisterComponent implements OnInit {
   }
 
   passwordConfirming(control: AbstractControl): { compare: boolean } {
-    if (control.get('password').value !== control.get('confirmPassword').value) {
+    if (
+      control.get('password').value !== control.get('confirmPassword').value
+    ) {
       return { compare: true };
     }
   }

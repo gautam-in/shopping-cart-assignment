@@ -1,4 +1,4 @@
 export interface ICartResponse {
-    response: string;
-    responseMessage: string;
+  response: string;
+  responseMessage: string;
 }

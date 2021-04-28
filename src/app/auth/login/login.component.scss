@@ -1,33 +1,32 @@
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
   .LoginRegText {
-   .title{
-     font-size: 25px;
-   }
-   .title-description{
-     font-size: 11px;
-   }
- }
- Form {
-  padding-right: 0;
-}
-
+    .title {
+      font-size: 25px;
+    }
+    .title-description {
+      font-size: 11px;
+    }
+  }
+  Form {
+    padding-right: 0;
+  }
 }
 
 @media only screen and (max-width: 767px) {
-  .login-row{
+  .login-row {
     display: block;
     .LoginRegText {
-      .title{
+      .title {
         font-size: 20px;
       }
-      .title-description{
+      .title-description {
         font-size: 10px;
       }
     }
   }
 
-  form{
+  form {
     max-width: 100%;
   }
 }

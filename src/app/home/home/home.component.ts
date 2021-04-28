@@ -1,5 +1,4 @@
-import { HttpClient } from '@angular/common/http';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AppService } from 'src/app/shared/services/app.service';
 import { IBanner } from 'src/models/banner.model';
