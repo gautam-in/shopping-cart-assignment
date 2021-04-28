@@ -13,9 +13,12 @@ export class HomeComponent implements OnInit {
   categories: ICategory[] = [];
   banners: IBanner[] = [];
 
-  constructor(private _route: Router, private _appService: AppService) {}
+  constructor(private _route: Router, private _appService: AppService) {
+    
+  }
 
   ngOnInit(): void {
+    
     this.fetchBanners();
     this.fetchCategories();
   }

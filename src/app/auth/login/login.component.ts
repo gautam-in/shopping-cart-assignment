@@ -4,6 +4,8 @@ import { Router } from '@angular/router';
 import { AppService } from 'src/app/shared/services/app.service';
 import { AuthService } from '../auth.service';
 import { AppConstants } from 'src/app/constants';
+import { UserService } from 'src/app/user/user.service';
+import { IUser } from 'src/models/user.model';
 
 @Component({
   selector: 'app-login',
@@ -15,6 +17,7 @@ export class LoginComponent implements OnInit {
   existingUser: object = [];
   errormsg: string = '';
   errorUserExists: boolean = false;
+  user: IUser;
 
   validationMessages: { [key: string]: { [key: string]: string } };
 
@@ -22,7 +25,7 @@ export class LoginComponent implements OnInit {
     private _fb: FormBuilder,
     private _authService: AuthService,
     private _router: Router,
-    private _appService: AppService
+    private _userService: UserService
   ) {
     this.validationMessages = {
       email: {
@@ -57,6 +60,19 @@ export class LoginComponent implements OnInit {
         ],
       ],
     });
+
+    this.user = this._userService.getSignedInUser();
+    if (this.user) {
+      this.navigateUser(true);
+    } else {
+      this.navigateUser(false);
+    }
+  }
+
+  navigateUser(isLoggedIn: boolean): void {
+    isLoggedIn
+      ? this._router.navigate(['/home'])
+      : this._router.navigate(['/auth']);
   }
 
   submitLoginForm(): void {
@@ -65,6 +81,7 @@ export class LoginComponent implements OnInit {
     if (this.loginForm.valid) {
       let status = this._authService.isLoggedInUser(user);
       if (status == 'validUser') {
+        this._userService.setUser(true);
         this._router.navigate(['/home']);
       } else {
         if (status == 'wrongEmail') {

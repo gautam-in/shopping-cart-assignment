@@ -14,6 +14,7 @@
             class="nav-link"
             [routerLink]="['/home']"
             [routerLinkActive]="['active']"
+            #rla="routerLinkActive"
             >Home</a
           >
         </li>
@@ -22,6 +23,7 @@
             class="nav-link"
             [routerLink]="['/products']"
             [routerLinkActive]="['active']"
+            #rla="routerLinkActive"
             >Product</a
           >
         </li>
@@ -53,7 +55,7 @@
         </li>
       </ul>
     </div>
-    <div class="cart" (click)="openCart()">
+    <div class="cart" (click)="openCart()" *ngIf="isLoggedIn">
       <img src="/assets/img/cart.svg" alt="cart" class="cart-logo" />
       <a data-target="#exampleModal"
         >{{ productsInCart.length >= 1 ? productsInCart.length : 0 }} items</a
