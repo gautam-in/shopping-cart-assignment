@@ -5,6 +5,17 @@
   max-width: 1024px;
   margin-top: 10px;
 
+  &::after {
+    content: "";
+    width: 50%;
+    box-shadow: 0 5px 5px -5px #00000060;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    height: 15px;
+  }
+
   & .slide-arrow {
     display: inline;
     font-size: 14px;
@@ -17,10 +28,10 @@
   }
   & .banner_avatar {
     width: 100%;
-    -webkit-transition: opacity 5s ease-in-out;
-    -moz-transition: opacity 5s ease-in-out;
-    -o-transition: opacity 5s ease-in-out;
-    transition: opacity 5s ease-in-out;
+    -webkit-transition: transform 0.4s linear;
+    -moz-transition: transform 0.4s linear;
+    -o-transition: transform 0.4s linear;
+    transition: transform 0.4s linear;
   }
   & .left {
     position: absolute;

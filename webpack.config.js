@@ -3,8 +3,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const { HotModuleReplacementPlugin } = require("webpack");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
-
-console.log('env',process.env)
+const CopyPlugin = require("copy-webpack-plugin");
 
 module.exports = {
   //our index file
@@ -37,16 +36,23 @@ module.exports = {
       },
       //Allows use of images
       {
-        test: /\.(png|jpg|svg)$/i,
-        loader: "file-loader",
+        test: /\.(eot|otf|ttf|woff|woff2)$/,
+        loader: require.resolve("file-loader"),
+        options: {
+          name: "static/media/[name].[hash:8].[ext]",
+        },
       },
       //Allows use search url of images
-      // {
-      //   test: /\.(jpg|jpeg|png)$/,
-      //   use: {
-      //     loader: "url-loader",
-      //   },
-      // },
+      {
+        test: /\.(png|jpg|gif|svg)$/i,
+        use: {
+          loader: "url-loader",
+          options: {
+            limit: 8192,
+            name: "static/media/[name].[hash:8].[ext]",
+          },
+        },
+      },
     ],
   },
   plugins: [
@@ -61,6 +67,15 @@ module.exports = {
     //This get all our css and put in a unique file
     new MiniCssExtractPlugin({
       filename: "styles.[contentHash].css",
+    }),
+    // Copies individual files or entire directories, which already exist, to the build directory.
+    new CopyPlugin({
+      patterns: [
+        {
+          from: "public/static/images",
+          to: "static/images",
+        },
+      ],
     }),
   ],
   //Config for webpack-dev-server module

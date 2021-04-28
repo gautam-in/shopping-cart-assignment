@@ -6,12 +6,6 @@ import Arrow from "../common/arrow";
 import Image from "../common/image";
 import FetchData from "../common/fetch-data";
 
-import offer1 from "../../../static/images/offers/offer1.jpg";
-import offer2 from "../../../static/images/offers/offer2.jpg";
-import offer3 from "../../../static/images/offers/offer3.jpg";
-import offer4 from "../../../static/images/offers/offer4.jpg";
-import offer5 from "../../../static/images/offers/offer5.jpg";
-
 const Carousel = () => {
   const [carouselData, setCarouselData] = useState([]);
   const [activeCarouselData, setActiveCarouselData] = useState({});
@@ -48,21 +42,10 @@ const Carousel = () => {
   };
 
   const Slide = (data) => {
-    const imageFileList = {
-      0: offer1,
-      1: offer2,
-      2: offer3,
-      3: offer4,
-      4: offer5,
-    };
     if (Object.keys(data).length) {
-      const indexValue = carouselData.findIndex(
-        (singleData) => singleData.id === activeCarouselData.id
-      );
-      const imageFile = imageFileList[indexValue];
       const bannerImageProps = {
-        src_2x: imageFile,
-        src: imageFile,
+        src_2x: `${data.bannerImageUrl}`,
+        src: `${data.bannerImageUrl}`,
         alt: data.bannerImageAlt,
         imgClassName: "banner",
       };
