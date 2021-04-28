@@ -27,7 +27,6 @@ export class HeaderComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    console.log("called header===")
     this.getUser();
     this._cartService.getCartList.subscribe((item) => {
       this.productsInCart = item;

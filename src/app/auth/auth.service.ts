@@ -85,7 +85,6 @@ export class AuthService {
   }
 
   isUserAuthenticated() {
-    console.log('isUserAuthenticated called ==');
     if (this._userService.getSignedInUser()) {
       this._userService.setUser(true);
     } else {
