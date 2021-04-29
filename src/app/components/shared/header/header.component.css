@@ -2,3 +2,19 @@
     width: 100px;
     height: auto;
 }
+
+.links {
+    display: block;
+    float: right;
+}
+
+.links ul li{
+    display: inline-block;
+    padding-left: 15px;
+}
+
+.links ul li a {
+    color: #000;
+    text-decoration: none;
+    font-size: 15px;
+}

@@ -1,0 +1,10 @@
+<div class="card mb-4 shadow-sm">
+    <h6>{{ bakeryproductItem.name }}</h6>
+    <img class="i-product-image" [src]="bakeryproductItem.imageURL" />
+  
+    <div class="item-info">
+      <p class="i-product-desc">{{ bakeryproductItem.description | slice: 0:80 }}...</p>
+        
+          <button type="button" class="i-item-btn" (click)="handleAddToCart">Buy Now @ Rs. {{ bakeryproductItem.price }}</button>
+    </div>
+</div>

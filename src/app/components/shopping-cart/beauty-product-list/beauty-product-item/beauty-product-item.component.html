@@ -1,0 +1,11 @@
+<div class="card mb-4 shadow-sm">
+    <h6>{{ beautyproductItem.name }}</h6>
+    <img class="i-product-image" [src]="beautyproductItem.imageURL" />
+  
+    <div class="item-info">
+      <p class="i-product-desc">{{ beautyproductItem.description | slice: 0:80 }}...</p>
+        
+          <button type="button" class="i-item-btn" (click)="handleAddToCart()">
+              Buy Now @ Rs. {{ beautyproductItem.price }}</button>
+    </div>
+</div>
