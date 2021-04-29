@@ -1,0 +1,17 @@
+.signin-text {
+    margin-left: 80px;
+}
+
+.signin-info {
+    color:rgb(11, 212, 226);
+    font-size: 12px;
+    font-weight: 100;
+}
+
+.login-btn {
+    padding: 3px 79px;
+    background-color: rgb(212, 68, 92);
+    color: #fff;
+    font-size: 12px;
+    font-weight: 100;
+}
