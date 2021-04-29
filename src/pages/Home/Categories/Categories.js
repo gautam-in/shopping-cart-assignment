@@ -20,7 +20,11 @@ const Categories = () => {
     return (
       <li key={id} className='card-wrap'>
         <div className='image-wrap'>
-          <img src={require(`../../../../static/images/category/${imageUrl}`).default} alt={name} />
+          <img
+            loading='lazy'
+            src={require(`../../../../static/images/category/${imageUrl}`).default}
+            alt={name}
+          />
         </div>
         <div className='text-wrap'>
           <h2>{name}</h2>

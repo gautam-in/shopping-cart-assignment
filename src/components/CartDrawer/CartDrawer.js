@@ -37,7 +37,11 @@ const CartDrawer = React.memo(({ isSlideOpen, cartSideNav }) => {
     return (
       <li key={id} className='cart-item-wrap'>
         <div className='cart-image-wrap'>
-          <img src={require(`../../../static/images/products/${imageURL}`).default} alt={name} />
+          <img
+            loading='lazy'
+            src={require(`../../../static/images/products/${imageURL}`).default}
+            alt={name}
+          />
         </div>
         <div className='cart-item-details-wrap'>
           <h5>{name}</h5>
@@ -76,7 +80,7 @@ const CartDrawer = React.memo(({ isSlideOpen, cartSideNav }) => {
           <div className='cart-list-wrap'>
             <ul className='clearfix'>{cartList}</ul>
             <div className='lowest-price-wrpper'>
-              <img src={LowestPriceTag} alt='Lowest Price' />
+              <img loading='lazy' src={LowestPriceTag} alt='Lowest Price' />
               <span>You won't find it cheaper anywhere</span>
             </div>
           </div>

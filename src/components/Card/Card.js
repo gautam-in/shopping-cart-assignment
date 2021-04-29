@@ -11,7 +11,11 @@ const Card = React.memo(({ product, addCart }) => {
       <div className='product-header'>{name}</div>
       <div className='product-detail-wrap'>
         <div className='product-image'>
-          <img src={require(`../../../static/images/products/${imageURL}`).default} alt={sku} />
+          <img
+            loading='lazy'
+            src={require(`../../../static/images/products/${imageURL}`).default}
+            alt={sku}
+          />
         </div>
         <div className='product-description-wrap'>
           <div className='product-description'>{description}</div>
