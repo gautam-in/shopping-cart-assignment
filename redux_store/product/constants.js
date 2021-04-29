@@ -1,0 +1,5 @@
+//Action Types
+export const FETCH_PRODUCT_START = "FETCH_PRODUCT_START";
+export const FETCH_PRODUCT_OK = "FETCH_PRODUCT_OK";
+export const FETCH_PRODUCT_ERROR = "FETCH_PRODUCT_ERROR";
+
