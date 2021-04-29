@@ -1,0 +1,30 @@
+.listItem {
+  display: block;
+  width: max-content;
+  margin: auto 20px;
+  margin-top: 10px;
+  font-size: 70%;
+  border-bottom: 2px solid transparent;
+  -webkit-transition: border-bottom 0.2s, color 0.2s;
+  transition: border-bottom 0.2s, color 0.2s;
+  color: #807b81;
+
+  &:first-child {
+    margin-top: 0px;
+  }
+}
+
+.listContainer {
+  padding-top: 20px;
+  background: #e6e6e6;
+
+  a:hover,
+  a:active {
+    color: #555;
+    border-bottom: 2px solid #e67e22;
+  }
+}
+.activeLink {
+  color: #252525;
+  border-bottom: 2px solid #df1350;
+}

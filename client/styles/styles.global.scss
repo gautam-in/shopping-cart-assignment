@@ -1,0 +1,35 @@
+@font-face {
+  font-family: "Dosis";
+  font-style: normal;
+  src: url("../assets/fonts/Dosis-Medium.ttf") format("truetype");
+}
+
+html,
+body {
+  background-color: #fff;
+  color: #4d5050;
+  font-family: Dosis, "Arial";
+  font-weight: 600;
+  font-size: 20px;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+  height: 100vh;
+}
+
+a:link,
+a:visited {
+  text-decoration: none;
+}
+a {
+  cursor: pointer;
+}
+
+input,
+button {
+  outline: none;
+}
+
+ul {
+  list-style: none;
+  padding: 0px;
+}

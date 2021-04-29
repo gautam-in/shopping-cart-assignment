@@ -1,0 +1,39 @@
+.registerContainer {
+  margin: 40px auto;
+}
+
+.registerAside {
+  margin-left: 100px;
+  margin-right: 50px;
+  margin-top: 20px;
+  h3 {
+    margin: 0px;
+    font-weight: 900;
+    margin-bottom: 10px;
+    color: #010101;
+  }
+  p {
+    margin: 0px;
+    font-size: 70%;
+    white-space: nowrap;
+    color: #464646;
+  }
+}
+
+.btn-style,
+.btn-style:visited {
+  background: #c33761;
+  height: 40px;
+  padding: 5px 13px;
+  color: #fff;
+  font-size: 70%;
+  font-weight: 500;
+  border: 0px;
+  transition: all 0.3s;
+  width: 300px;
+}
+
+.btn-style:hover,
+.btn-style:active {
+  background: #df1350;
+}
