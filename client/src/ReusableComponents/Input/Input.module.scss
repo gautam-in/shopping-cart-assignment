@@ -1,0 +1,41 @@
+.container {
+  position: relative;
+  font-size: 70%;
+}
+
+.inputBox {
+  border: 0px;
+  border-bottom: 2px solid #c1c1c1;
+  padding: 10px 0px 5px;
+  transition: all 0.3s;
+  color: #636262;
+  &::placeholder {
+    color: transparent;
+  }
+}
+
+.label {
+  position: absolute;
+  left: 0px;
+  transition: all 0.3s;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: text;
+  color: #b4b4b4;
+  font-weight: 500;
+}
+
+.inputBox:focus + label,
+.inputBox:not(:placeholder-shown) + label {
+  top: 0;
+  left: 0;
+  transform: translateY(-50%);
+  color: #8fd7dc;
+  font-size: 85.7%;
+  cursor: default;
+}
+
+.inputBox:focus,
+.inputBox:not(:placeholder-shown) {
+  border-bottom: 2px solid #8fd7dc;
+}

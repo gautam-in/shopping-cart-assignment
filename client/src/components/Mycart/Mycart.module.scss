@@ -1,0 +1,48 @@
+.cartHeaderContainer {
+  background: #1d2124;
+  color: #fafafa;
+  display: flex;
+  height: 50px;
+  align-items: center;
+  justify-content: space-between;
+  width: 500px;
+  padding: 0px 15px;
+  div:first-child span:first-child {
+    font-size: 70%;
+  }
+  div:first-child span:last-child {
+    font-size: 50%;
+    color: #dddee2;
+  }
+}
+
+.dialogContent {
+  height: 90vh;
+}
+
+.cartBodyContainer {
+  background: #eeeeee;
+  height: calc(100% - 50px);
+  overflow-y: auto;
+}
+
+.cartBtn {
+  width: 90%;
+  margin: auto;
+}
+
+.cartPara {
+  font-size: 60%;
+  margin: 10px 0px;
+  color: #6f6f6f;
+  padding-top: 10px;
+}
+
+.cartPaymentCont {
+  padding-bottom: 10px;
+  background: #fff;
+  text-align: center;
+  position: sticky;
+  bottom: -1px;
+  top: 80%;
+}

@@ -9,7 +9,7 @@ import styles from "./MainContainer.module.scss";
 
 const MainContainer: any = () => {
   return (
-    <section className={styles.main_container}>
+    <main className={styles.main_container}>
       <Switch>
         <Route exact path="/" component={Home} />
         <Route exact path="/products" component={Products} />
@@ -17,7 +17,7 @@ const MainContainer: any = () => {
         <Route path="/register" component={Register} />
         <Route render={() => <div> Page Not Found</div>} />
       </Switch>
-    </section>
+    </main>
   );
 };
 

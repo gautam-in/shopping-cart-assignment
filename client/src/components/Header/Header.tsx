@@ -1,11 +1,36 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import logo from "@images/logo.png";
 import cart from "@images/cart.svg";
 import styles from "./Header.module.scss";
 import { Link } from "react-router-dom";
+import Mycart from "../Mycart/Mycart";
+import { useStore } from "@src/customHooks/useContext";
 
 const Header: any = () => {
-  const [itemsCount, setItemsCount] = useState(0);
+  const [state, dispatch] = useStore();
+  const dialogRef: any = useRef();
+
+  useEffect(() => {
+    let clicker = dialogRef.current.addEventListener(
+      "click",
+      function (event: any) {
+        if (event.target === dialogRef.current) dialogRef.current.close();
+      }
+    );
+
+    return () => {
+      dialogRef.current.removeEventListener(clicker);
+    };
+  }, []);
+
+  const handleClick = (e: any) => {
+    e.stopPropagation();
+    dialogRef.current.showModal();
+  };
+
+  const handleClose = (e: any) => {
+    dialogRef.current.close();
+  };
 
   return (
     <header className={`${styles.header}`}>
@@ -18,16 +43,41 @@ const Header: any = () => {
           <Link to="/products">Products</Link>
         </nav>
         <nav className={`pos-abs right-0 top-0 ${styles.sub_nav_container}`}>
-          <Link to="/login">SignIn</Link>
-          <Link to="/register">Register</Link>
+          {state.logedInUserDetails ? (
+            <>
+              <span>{state.logedInUserDetails?.Email}</span>
+              <Link
+                to="/login"
+                onClick={() =>
+                  dispatch({
+                    type: "SET_LOGIN_DETAILS",
+                    payload: null,
+                  })
+                }
+              >
+                LogOut
+              </Link>
+            </>
+          ) : (
+            <>
+              <Link to="/login">SignIn</Link>
+              <Link to="/register">Register</Link>
+            </>
+          )}
         </nav>
+
         <aside
           className={`disp-flex pos-abs right-0 align-items-center ${styles.cart_container}`}
+          onClick={handleClick}
         >
           <img src={cart} alt="cart_icon" height="25" width="25" />
-          <span>{itemsCount} items</span>
+          <span>{state.myCartItems.length} items</span>
         </aside>
       </section>
+
+      <dialog className={styles.dialogContainer} ref={dialogRef}>
+        <Mycart handleClose={handleClose} />
+      </dialog>
     </header>
   );
 };

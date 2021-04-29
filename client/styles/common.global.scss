@@ -8,6 +8,7 @@ $flex-properties: (
   "flex-strt": "flex-start",
   "flex-end": "flex-end",
   "center": "center",
+  "sp-btwn": "space-between",
 );
 
 $position-properties: (
@@ -43,6 +44,10 @@ $position-properties: (
   top: 0;
 }
 
+.bottom-0 {
+  bottom: 0;
+}
+
 .high-100-perc {
   height: 100%;
 }
@@ -65,4 +70,20 @@ $position-properties: (
 
 .txt-align-cent {
   text-align: center;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.mar-0 {
+  margin: 0;
+}
+
+.mar-top-20 {
+  margin-top: 20px;
+}
+
+.cur-pointer {
+  cursor: pointer;
 }

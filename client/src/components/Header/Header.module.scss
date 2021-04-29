@@ -1,16 +1,26 @@
 .header {
   height: 80px;
   border-bottom: 1px solid #efefef;
-  box-shadow: 9px 8px 15px 3px #efefef;
+  box-shadow: 2px 2px 15px 1px #efefef;
+}
+
+.cart_container {
+  font-size: 70%;
+  top: 40px;
+  color: #38403b;
+  background: #e2e2e2;
+  padding: 10px;
+  bottom: 0px;
+  cursor: pointer;
+  transition: background 0.3s;
+  &:hover {
+    background: #d6d6d6;
+  }
 }
 
 .header_main_contents {
   max-width: 1140px;
   margin: 0 auto;
-}
-
-.cart_container {
-  top: 40px;
 }
 
 .main_nav_container {
@@ -55,9 +65,23 @@
   a:first-child {
     margin-right: 10px;
   }
+  span {
+    font-size: 60%;
+    margin-right: 10px;
+  }
 }
 
-.cart_container {
-  font-size: 70%;
-  color: #38403b;
+.dialogContainer {
+  position: fixed;
+  z-index: 1;
+  padding: 0;
+  border: 0;
+  &::backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+  }
 }

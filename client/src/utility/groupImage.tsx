@@ -13,3 +13,7 @@ export const offerImages: any = importAll(
 export const categoryImages: any = importAll(
   require.context("../../assets/images/category", false, /\.(png|jpe?g|svg)$/)
 );
+
+export const productImages: any = importAll(
+  require.context("../../assets/images/products/", false, /\.(png|jpe?g|svg)$/)
+);

@@ -1,0 +1,37 @@
+.productContainer {
+  max-width: 21.5%;
+  padding: 10px;
+  margin: auto 5px;
+  margin-top: 20px;
+  border: 0.5px solid #f1f1f1;
+  box-shadow: 3px 3px 9px 1px #f1f1f1;
+}
+
+.description {
+  font-size: 70%;
+  background: #eaeaea;
+  padding: 4px 10px;
+  height: 72px;
+  overflow-y: hidden;
+}
+
+.heading {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.productImg {
+  margin-top: 10px;
+}
+
+.paymentCont {
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+.priceTag {
+  font-size: 80%;
+  vertical-align: sub;
+  display: inline;
+}

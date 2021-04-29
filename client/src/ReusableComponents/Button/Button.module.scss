@@ -5,12 +5,13 @@
   padding: 5px 13px;
   color: #fff;
   font-size: 70%;
-  font-weight: 600;
+  font-weight: 500;
   border: 0px;
   transition: all 0.3s;
 }
 
 .btn-style:hover,
-.btn-style:active {
+.btn-style:active,
+.btn-style:focus {
   background: #df1350;
 }

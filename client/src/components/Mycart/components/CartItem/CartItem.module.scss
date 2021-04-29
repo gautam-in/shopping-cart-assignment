@@ -1,0 +1,34 @@
+.itemContainer {
+  background: #fff;
+  padding: 10px 15px;
+  margin-top: 10px;
+}
+
+.ItemNavContainer {
+  margin-left: 20px;
+  font-size: 70%;
+  width: 100%;
+  p {
+    margin-bottom: 10px;
+  }
+}
+
+.icon_nav {
+  border-radius: 50%;
+  height: 23px;
+  width: 24px;
+  padding: 0px;
+  justify-content: center;
+  display: inline-flex;
+  align-items: center;
+  font-size: 14px;
+  span {
+    transform: translate(0.3px, -1.8px);
+    pointer-events: none;
+  }
+}
+
+.itemCount {
+  margin: 0px 10px;
+  font-weight: 500;
+}
