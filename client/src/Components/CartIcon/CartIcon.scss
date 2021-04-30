@@ -1,0 +1,35 @@
+@import "../../Utilities/SCSS-Variables/variables.scss";
+
+.cart {
+  display: flex;
+  align-items: flex-end;
+  background-color: $secondary-color;
+  &:hover{
+    cursor: pointer;
+  }
+  img{
+    padding: 5px;
+  }
+  p{
+    margin: 12px 2px;
+  }
+}
+.login-options {
+  display: flex;
+  align-items: flex-start;
+  width: 130px;
+  justify-content: space-around;
+  font-size: $primary-font-size;
+  & > a {
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+.header-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-size: $primary-font-size;
+}

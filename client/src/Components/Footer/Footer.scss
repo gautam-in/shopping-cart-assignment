@@ -1,0 +1,9 @@
+@import "../../Utilities/SCSS-Variables/variables.scss";
+
+footer {
+  background-color: $secondary-color;
+  p {
+    text-align: center;
+    padding: 15px;
+  }
+}

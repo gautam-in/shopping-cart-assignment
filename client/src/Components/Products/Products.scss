@@ -1,0 +1,33 @@
+@import "../../Utilities/SCSS-Variables/variables.scss";
+
+.products{
+    display: flex;
+}
+
+
+@media only screen and (min-width: $desktop-width) {
+    .product-container{
+        margin: 0% 5% 0% 1%;
+        width: 80%;
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
+
+@media only screen and (min-width: $tablet-width) and (max-width: $desktop-width) {
+    .product-container{
+        margin: 0% 2%;
+        width: 75%;
+        justify-content: space-between;
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
+
+@media only screen and (max-width: $mobile-max-width) {
+    .product-container{
+        margin: 0% 2%;
+        width: 100%;
+        justify-content: space-between;
+    }
+}

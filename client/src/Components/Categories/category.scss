@@ -1,0 +1,70 @@
+@import "../../Utilities/SCSS-Variables/variables.scss";
+
+.category-item {
+  display: flex;
+  position: relative;
+  background-color: $white-color;
+  article {
+    text-align: center;
+    button::before{
+      content: 'Explore ';
+    }
+    h3,p{
+      margin:15px 0px;
+    }
+  }
+  figure {
+    margin: 0;
+    display: flex;
+    align-items: center;
+  }
+  @media only screen and (min-width: $tablet-width) {
+    article {
+      width: 70%;
+    }
+    figure {
+      margin: 0;
+      width: 60%;
+      display: flex;
+      justify-content: center;
+    }
+  }
+}
+
+.category-item:nth-child(odd) {
+  flex-direction: row-reverse;
+}
+
+.category-item::before{
+  content: '';
+  background-color: $black-color;
+  top: 0px;
+  position: absolute;
+  filter: blur(5px);
+  z-index: -1;
+  height: 50px;
+  width: 90%;
+}
+
+
+@media only screen and (min-width: $desktop-width) {
+  .category-item{
+    margin: 0% 15% 2% 15%;
+    padding: 1% 0%;
+  }
+  .category-item::before{
+    border-radius: 50%;
+    margin: 0% 5%;
+  }
+}
+
+@media only screen and (max-width: $mobile-max-width){
+  .category-item{
+    justify-content: space-between;
+    padding: 5% 0%;
+    margin: 0% 0% 1% 0%;
+  }
+  .category-item::before{
+    border-radius: 40%;
+  }
+}

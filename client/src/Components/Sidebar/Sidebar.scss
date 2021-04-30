@@ -1,0 +1,33 @@
+@import "../../Utilities/SCSS-Variables/variables.scss";
+
+.sidebar {
+    background-color: $secondary-color;
+    & a {
+        display: flex;
+        padding: 15px 15px 15px 10px;
+        border-bottom: 1px solid #c4c0c0;
+        margin-left: 5px;
+        text-decoration: none;
+        &:hover{
+            text-decoration: underline;
+            cursor: pointer;
+        }
+    }
+}
+
+.selected-item{
+    color: $button-bg-color;
+}
+
+@media only screen and (min-width: $desktop-width) {
+    .sidebar{
+        margin: 0px 0px 0px 17%;
+        width: 20%;
+    }
+}
+
+@media only screen and (min-width: $tablet-width) and (max-width: $desktop-width) {
+    .sidebar{
+        width: 25%;
+    }
+}
