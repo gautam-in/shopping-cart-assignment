@@ -12,6 +12,19 @@
     "clean": "rimraf ./src/dist",
     "start": "concurrently \"npm run server\" \"npm run dev\""
   },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version",
+      "ie 11"
+    ]
+  },
   "jest": {
     "snapshotSerializers": [
       "enzyme-to-json/serializer"
@@ -28,6 +41,7 @@
   "license": "MIT",
   "dependencies": {
     "react": "^17.0.2",
+    "react-app-polyfill": "^2.0.0",
     "react-dom": "^17.0.2",
     "react-router-dom": "^5.2.0"
   },

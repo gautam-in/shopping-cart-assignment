@@ -1,0 +1,15 @@
+{
+  "title": "Create Your Account",
+  "description": "We do not share your personal details with anyone.",
+  "firstNameLabel": "First Name",
+  "lastNameLabel": "Last Name",
+  "emailLabel": "Email",
+  "passwordLabel": "Password",
+  "confirmPasswordLabel": "Confirm Password",
+  "submitButtonLabel": "Create your account",
+  "services": {
+    "urls": {
+      "registerApi": ""
+    }
+  }
+}

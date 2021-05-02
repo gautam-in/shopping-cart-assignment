@@ -7,13 +7,9 @@ import Footer from "../../components/footer";
 
 const Home = () => {
   return (
-    <div>
-      <Header />
-      <div className="container-fluid">
-        <Carousel />
-        <Categories />
-      </div>
-      <Footer />
+    <div className="container-fluid">
+      <Carousel />
+      <Categories />
     </div>
   );
 };

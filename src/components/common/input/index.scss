@@ -1,0 +1,49 @@
+.form {
+  & .form-group {
+    margin-bottom: 1.5rem;
+    position: relative;
+    label {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      z-index: 2;
+      transform: translateY(-50%);
+      pointer-events: none;
+      transition: all 0.15s ease-in-out;
+      color: #9a9a9a;
+    }
+  }
+  & .form-control {
+    border: none;
+    background-color: white;
+    border-bottom: 2px solid #eeeeee;
+    padding: 0.5rem 0rem;
+    // height: 3rem;
+    outline: none;
+    width: 100%;
+    font-weight: 500;
+    font-size: inherit;
+    &:focus,
+    &:valid,
+    &:-webkit-autofill {
+      border-color: #50dae4;
+      & ~ label {
+        font-size: 0.875rem;
+        color: #50dae4;
+        transform: translateY(-150%);
+      }
+    }
+    &.error {
+      border-color: #d10157 !important;
+    }
+  }
+  & .form-error {
+    position: absolute;
+    bottom: 0%;
+    left: 0;
+    font-size: 0.7rem;
+    font-weight: 500;
+    transform: translateY(100%);
+    color: #d10157;
+  }
+}
