@@ -12,7 +12,6 @@ import {
 
 // Redux State Configutration
 const mapStateToProps = state => {
-   debugger
    return {
       bannerItems: state.banner.items,
       categoryData: state.category.items,

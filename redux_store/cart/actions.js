@@ -3,7 +3,11 @@ import {
   } from './constants';
 
 //Action Creator
-export const toggleCart = () => ({
+export const toggleCartModal = () => ({
   type: TOGGLE_CART,
 });
-
+export function toggleCart() {
+  return dispatch => {
+     dispatch(toggleCartModal());
+  }
+}

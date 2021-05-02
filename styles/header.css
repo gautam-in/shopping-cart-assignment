@@ -8,12 +8,7 @@
     background-color: #eee;
     padding: 20px 10px;
 }
-.carousel-indicators li{
-    width: 5px;
-    height: 5px;
-    background-color: #4e4d4d;
-    border-radius: 50%;
-}
+
 .btn.btn-secondary{
     background-color: #c7417b;
     border-color : #c7417b;

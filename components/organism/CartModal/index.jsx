@@ -9,8 +9,8 @@ import {
 
 // Redux State Configutration
 const mapStateToProps = state => ({
-   cartItems: state.Cart.cartItems,
-   showModal: state.Cart.showModal,
+   cartItems: state.cart.cartItems,
+   showModal: state.cart.showModal,
 });
 
 // Redux Dispatch Configutration
@@ -27,7 +27,7 @@ class CartModal extends Component {
                <p className="mb-0">My Cart({cartItems?.length} items)</p></ModalHeader>
             <ModalBody>
                No item found // TODO  render cart items
-                </ModalBody>
+            </ModalBody>
             <ModalFooter>
                <small>Promo code can be applied on payment page</small>
                <Button color="secondary" className="col-md-12 text-left"
@@ -40,4 +40,4 @@ class CartModal extends Component {
    }
 }
 
-export default CartModal;
+export default connect(mapStateToProps, mapDispatchToProps)(CartModal);

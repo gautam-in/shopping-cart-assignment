@@ -69,7 +69,7 @@ class Navigation extends Component {
                            </NavigationItem>
                         </Nav>
                      </div>
-                     <Navbar bg="light" expand="md" onClick={this.props.toggleCart} className="cursor-pointer">
+                     <Navbar bg="light" expand="md" onClick={() => {this.props.toggleCart()}} className="cursor-pointer">
                         <img src="/static/images/cart.svg" alt="me" width="auto" height="24" />&nbsp; {this.props.cartItems?.length} items
                      </Navbar>
                   </div>

@@ -6,7 +6,7 @@ import {
    CarouselIndicators,
    CarouselCaption,
 } from 'reactstrap';
-
+import style from "./banner.module.scss";
 // Next Component
 class Banner extends Component {
    state = {
@@ -63,7 +63,8 @@ class Banner extends Component {
             previous={this.prevSlide} >
             <CarouselIndicators items={bannerItems}
                activeIndex={activeIndex}
-               onClickHandler={this.gotoSlideIndex} />
+               onClickHandler={this.gotoSlideIndex}
+               className={style.bannerIndicator} />
             {/* {Banner Images} */}
             {
                bannerItems && bannerItems.map((item) => {
