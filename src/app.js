@@ -12,12 +12,13 @@ const Footer = lazy(() => import("./components/footer"));
 
 import "./index.scss";
 
+const Sppiner = () => {
+  return <h1>Loading...</h1>;
+};
+
 const App = () => {
-  const Sppiner = () => {
-    return <h1>Loading...</h1>;
-  };
   return (
-    <Suspense fallback={Sppiner}>
+    <Suspense fallback={<Sppiner />}>
       <Header />
       <Switch>
         <Routes />
