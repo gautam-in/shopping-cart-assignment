@@ -1,8 +1,4 @@
-import {
-  FETCH_BANNERS_REQUEST,
-  FETCH_BANNERS_SUCCESS,
-  FETCH_BANNERS_FAILURE
-} from '../types';
+import { FETCH_BANNERS_REQUEST, FETCH_BANNERS_SUCCESS, FETCH_BANNERS_FAILURE } from '../types';
 
 const intialState = {
   loading: false,

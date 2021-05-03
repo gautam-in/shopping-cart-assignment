@@ -5,8 +5,8 @@ import categoriesReducer from './categoriesReducer';
 import productsReducer from './productsReducer';
 
 export default combineReducers({
-    bannersReducer,
-    cartReducer,
-    categoriesReducer,
-    productsReducer
+  bannersReducer,
+  cartReducer,
+  categoriesReducer,
+  productsReducer
 });

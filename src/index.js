@@ -12,8 +12,8 @@ render(
   <Provider store={store}>
     <PersistGate loading={null} persistor={persistStore(store)}>
       <App />
-      </PersistGate>
-    </Provider>,
+    </PersistGate>
+  </Provider>,
 
   document.getElementById('app')
 );
