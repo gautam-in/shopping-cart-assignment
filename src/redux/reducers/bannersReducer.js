@@ -6,7 +6,7 @@ const intialState = {
   error: false
 };
 
-const bannersReducer = (state = intialState, action) => {
+const banners = (state = intialState, action) => {
   switch (action.type) {
     case FETCH_BANNERS_REQUEST: {
       return {
@@ -35,4 +35,4 @@ const bannersReducer = (state = intialState, action) => {
   }
 };
 
-export default bannersReducer;
+export default banners;

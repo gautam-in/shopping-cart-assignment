@@ -1,5 +1,13 @@
 import React from 'react';
 
-const Home = () => <h1>Home</h1>;
+import Banners from '../../organisms/Banners';
+
+const Home = () => {
+  return (
+    <div className='container'>
+      <Banners />
+    </div>
+  );
+};
 
 export default Home;

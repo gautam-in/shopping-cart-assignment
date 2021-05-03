@@ -12,7 +12,7 @@ import './Header.scss';
 const Header = React.memo(({ toogleCart }) => {
   const [isOpen, setIsOpen] = useState(false);
 
-  const { data } = []; //useSelector((state) => allCartData(state));
+  const { data } = useSelector((state) => allCartData(state));
 
   const toggle = () => setIsOpen(!isOpen);
 

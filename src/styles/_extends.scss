@@ -16,6 +16,7 @@ cardShadow {
   content: '';
   display: block;
   position: absolute;
+  z-index: -5;
   bottom: 0rem;
   background: radial-gradient(farthest-corner at 50% 0px, grey 0%, transparent 50%);
   width: 100%;
@@ -32,4 +33,29 @@ button {
   height: 45px;
   font-size: $medium-font;
   font-weight: 500;
+}
+
+fadeImages {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
 }

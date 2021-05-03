@@ -15,7 +15,7 @@ const CartDrawer = React.memo(({ isOpen, toogleCart }) => {
   const dispatch = useDispatch();
   const history = useHistory();
 
-  const { data } = []; //useSelector((state) => allCartData(state));
+  const { data } = useSelector((state) => allCartData(state));
 
   const cartQuantity = (status, cartProduct) => {
     const { quantity } = cartProduct;
