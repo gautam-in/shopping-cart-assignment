@@ -15,6 +15,7 @@
 .carousel {
   width: 100%;
   position: relative;
+  z-index: -1;
   margin-top: $m;
   &:after {
     @extend cardShadow;
