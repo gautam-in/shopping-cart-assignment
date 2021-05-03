@@ -7,8 +7,11 @@ export default class ProductList extends React.Component {
         const { productItems} = this.props
         return(
             <Row>
-                {/* productItems.map((item, index) =>) */}
-                <ProductListItems/>
+                {productItems &&productItems.map((item, index) =>{
+                    return(
+                    <ProductListItems item={item} index={index} />
+                    )
+                })}
             </Row>
         )
     }

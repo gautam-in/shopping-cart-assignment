@@ -12,7 +12,6 @@ const initialState = {
 const banner = (state = initialState, action) => {
    switch (action.type) {
       case FETCH_BANNER_OK:
-      debugger
       let s =  {
          ...state,
          loading: false,

@@ -2,6 +2,7 @@ import {
    FETCH_CATEGORY_START,
    FETCH_CATEGORY_OK,
    FETCH_CATEGORY_ERROR,
+   SELECT_PRODUCT_CATEGORY,
 } from './constants';
 import axios from "axios"
 
@@ -21,6 +22,11 @@ export const fetchCategoryError = (error) => ({
 });
 
 
+export const selecteCategory = (id) => ({
+   type: SELECT_PRODUCT_CATEGORY,
+   payload: {id}
+});
+
 // API Calls
 export function fetchCategory() {
    return dispatch => {
@@ -34,11 +40,16 @@ export function fetchCategory() {
          }
       })
       .then(function (response) {
-         debugger
          dispatch(fetchCategoryOk(response.data));
       })
       .catch(function (error) {
          dispatch(fetchCategoryError(error))
       });
+   }
+}
+
+export function selectCategoryId (id){
+   return dispatch =>{
+       dispatch(selecteCategory(id))
    }
 }

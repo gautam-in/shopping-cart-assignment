@@ -2,17 +2,18 @@ import {
    FETCH_CATEGORY_START,
    FETCH_CATEGORY_OK,
    FETCH_CATEGORY_ERROR,
+   SELECT_PRODUCT_CATEGORY,
 } from './constants';
 
 const initialState = {
    loading: false,
    items: [],
+   selectedId : null
 }
 
 const category = (state = initialState, action) => {
    switch (action.type) {
       case FETCH_CATEGORY_OK:
-      debugger
       let s =  {
          ...state,
          loading: false,
@@ -29,6 +30,12 @@ const category = (state = initialState, action) => {
       return {
          ...state,
          loading: false,
+         items: [...state.items],
+      }
+      case SELECT_PRODUCT_CATEGORY:
+      return {
+         ...state,
+         selectedId: action.payload.id,
          items: [...state.items],
       }
       default:

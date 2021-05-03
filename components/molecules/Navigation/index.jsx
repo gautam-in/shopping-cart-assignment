@@ -64,7 +64,7 @@ class Navigation extends Component {
                            <NavigationItem link="/login/"  >
                               Signup
                            </NavigationItem>
-                           <NavigationItem link="/signup/" >
+                           <NavigationItem link="/register/" >
                               Register
                            </NavigationItem>
                         </Nav>
