@@ -1,4 +1,5 @@
 import { combineReducers } from 'redux';
+
 import bannersReducer from './bannersReducer';
 import cartReducer from './cartReducer';
 import categoriesReducer from './categoriesReducer';

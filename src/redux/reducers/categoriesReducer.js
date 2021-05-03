@@ -10,7 +10,7 @@ const intialState = {
   error: false
 };
 
-const categories = (state = intialState, action) => {
+const categoriesReducer = (state = intialState, action) => {
   switch (action.type) {
     case FETCH_CATEGORIES_REQUEST: {
       return {
@@ -22,7 +22,7 @@ const categories = (state = intialState, action) => {
     case FETCH_CATEGORIES_SUCCESS: {
       return {
         loading: false,
-        data: action.categories,
+        data: action.categories.entities.data,
         error: false
       };
     }
@@ -39,4 +39,4 @@ const categories = (state = intialState, action) => {
   }
 };
 
-export default categories;
+export default categoriesReducer;

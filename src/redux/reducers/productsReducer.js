@@ -6,7 +6,7 @@ const intialState = {
   error: false
 };
 
-const products = (state = intialState, action) => {
+const productsReducer = (state = intialState, action) => {
   switch (action.type) {
     case FETCH_PRODUCTS_REQUEST: {
       return {
@@ -18,7 +18,7 @@ const products = (state = intialState, action) => {
     case FETCH_PRODUCTS_SUCCESS: {
       return {
         loading: false,
-        data: action.products,
+        data: action.products.entities.data,
         error: false
       };
     }
@@ -35,4 +35,4 @@ const products = (state = intialState, action) => {
   }
 };
 
-export default products;
+export default productsReducer;

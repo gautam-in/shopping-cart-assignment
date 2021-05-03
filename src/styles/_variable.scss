@@ -5,6 +5,12 @@ $dark-grey-color: #eaeaea;
 $grey-color: #f0f0f0;
 $pink-color: #bf2957;
 
-//responsivness width
-$tab-min-width: 430px;
-$desktop-min-width: 770px;
+//screen size
+$tab: 575px;
+$desktop: 770px;
+
+//font-size
+$small-font: 12px;
+
+//padding
+$padding: 10px 0;

@@ -1,1 +1,29 @@
+@import url('https://fonts.googleapis.com/css?family=Dosis:400,500,600,700,800,900&display=swap');
 @import './variable';
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Dosis';
+}
+
+.container {
+  max-width: 100%;
+  margin: auto;
+  @media screen and (min-width: 576px) {
+    max-width: 540px;
+  }
+  @media screen and (min-width: 768px) {
+    max-width: 720px;
+  }
+  @media screen and (min-width: 992px) {
+    max-width: 960px;
+  }
+  @media screen and (min-width: 1200px) {
+    max-width: 1140px;
+  }
+}

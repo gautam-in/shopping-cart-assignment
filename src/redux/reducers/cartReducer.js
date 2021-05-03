@@ -12,7 +12,7 @@ const intialState = {
   error: false
 };
 
-const cart = (state = intialState, action) => {
+const cartReducer = (state = intialState, action) => {
   switch (action.type) {
     case CREATE_ADD_TO_CART_REQUEST: {
       return {
@@ -23,7 +23,7 @@ const cart = (state = intialState, action) => {
     case CREATE_ADD_TO_CART_SUCCESS: {
       return {
         ...state,
-        data: { ...state.data, ...action.product }
+        data: { ...state.data, ...action.product.entities.data }
       };
     }
     case CREATE_ADD_TO_CART_FAILURE: {
@@ -36,7 +36,7 @@ const cart = (state = intialState, action) => {
     case MODIFY_PRODUCT_CART_QUANTITY: {
       return {
         ...state,
-        data: { ...state.data, ...action.product }
+        data: { ...state.data, ...action.product.entities.data }
       };
     }
     case DELETE_PRODUCT_CART: {
@@ -54,4 +54,4 @@ const cart = (state = intialState, action) => {
   }
 };
 
-export default cart;
+export default cartReducer;
