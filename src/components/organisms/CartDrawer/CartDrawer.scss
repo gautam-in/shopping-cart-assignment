@@ -1,0 +1,131 @@
+@import '../../../styles/global';
+
+.cart-modal {
+  display: none;
+  position: fixed;
+  z-index: 10;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  margin: auto;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+  background-color: $white-color;
+  width: 100vw;
+  height: 100vh;
+  border: 1px solid $black-color;
+}
+
+.show-modal {
+  display: block;
+}
+
+.cart-header {
+  background: $black-color;
+  color: $white-color;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: $large-ctr-padding;
+  h6 {
+    color: $white-color;
+    font-size: $semi-large-font;
+    font-weight: 700;
+    margin: 0;
+    span {
+      font-size: $medium-font;
+      font-weight: 500;
+    }
+  }
+  .close {
+    font-size: $semi-large-font;
+    color: $white-color;
+    cursor: pointer;
+  }
+}
+
+.cart-body {
+  background: $grey-color;
+  overflow-y: auto;
+  .lowest-price {
+    margin: $m $ms;
+    padding: $large-ctr-padding;
+    background-color: $white-color;
+    border-radius: $extra-small-font;
+    font-size: $medium-font;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    img {
+      width: 35%;
+      margin: $m;
+    }
+  }
+}
+
+.no-cart-items-body {
+  margin: 40vh auto;
+  color: $black-color;
+  text-align: center;
+  h5 {
+    font-size: $large-font;
+    font-weight: 800;
+    margin-bottom: $ms;
+  }
+  p {
+    font-size: $small-font;
+    font-weight: 600;
+  }
+}
+
+.cart-footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  .cart-footer-text {
+    text-align: center;
+    font-weight: 700;
+  }
+  button {
+    @extend button;
+    width: calc(100% - 20px);
+    .text {
+      float: left;
+      margin-left: 20px;
+    }
+    .price {
+      float: right;
+      margin-right: 20px;
+      svg {
+        width: 8px;
+        margin-left: 10px;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: $desktop) {
+  .modal-container {
+    max-width: 720px;
+    margin: auto;
+    @media screen and (min-width: 992px) {
+      max-width: 960px;
+    }
+    @media screen and (min-width: 1200px) {
+      max-width: 1140px;
+    }
+  }
+  .modal-content {
+    margin-top: 95px;
+    width: 40vw;
+    height: calc(100vh - 95px);
+    float: right;
+  }
+  .cart-footer {
+    width: 40%;
+  }
+}
