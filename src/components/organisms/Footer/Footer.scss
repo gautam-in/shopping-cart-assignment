@@ -1,15 +1,15 @@
 @import '../../../styles/global';
 
-.footer-ctr {
+footer {
   background-color: $dark-grey-color;
-  padding: $padding;
+  padding: $text-padding;
   text-align: center;
   font-size: $small-font;
   font-weight: 600;
 }
 
 @media only screen and (min-width: $desktop) {
-  .footer-ctr {
+  footer {
     text-align: left;
   }
 }

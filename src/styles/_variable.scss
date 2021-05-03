@@ -1,6 +1,7 @@
 //colors
 $white-color: #ffffff;
 $black-color: #000000;
+$light-black-color: #999999;
 $dark-grey-color: #eaeaea;
 $grey-color: #f0f0f0;
 $pink-color: #bf2957;
@@ -11,6 +12,17 @@ $desktop: 770px;
 
 //font-size
 $small-font: 12px;
+$medium-font: 16px;
+$large-font: 20px;
+$extra-large-font: 24px;
 
 //padding
-$padding: 10px 0;
+$text-padding: 10px 0;
+$ctr-padding: 10px;
+$small-vert-padding: 8px 10px;
+$large-vert-padding: 18px 10px;
+
+//margin
+$m: 10px;
+$m-tb: 10px 0;
+$m-lr: 0 10px;

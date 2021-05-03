@@ -1,0 +1,117 @@
+@import '../../../styles/global';
+
+header {
+  position: sticky;
+  top: 0;
+  background-color: $white-color;
+  @extend headerBoxShadow;
+}
+.header-nav {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+.navbar {
+  @extend transitions;
+  position: absolute;
+  z-index: 5;
+  top: 61px;
+  width: 100%;
+  ul {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    margin-right: auto;
+    background: $white-color;
+    li {
+      border-bottom: 1px solid $dark-grey-color;
+      padding: $small-vert-padding;
+      a {
+        color: $black-color;
+        font-size: $small-font;
+        line-height: $medium-font;
+        font-weight: 600;
+        text-decoration: none;
+      }
+      &:hover {
+        background: $grey-color;
+      }
+    }
+  }
+}
+.collapse {
+  display: none;
+}
+.logo-wrap {
+  padding: $ctr-padding;
+  width: 100px;
+  a img {
+    width: 100%;
+  }
+}
+.cart-wrap {
+  cursor: pointer;
+  background: $dark-grey-color;
+  padding: $large-vert-padding;
+  display: flex;
+  align-items: center;
+  svg {
+    font-size: $extra-large-font;
+    color: $pink-color;
+    margin-right: $m;
+  }
+  span {
+    font-size: $medium-font;
+    font-weight: 700;
+  }
+}
+.toggler {
+  padding: $ctr-padding;
+  font-size: $medium-font;
+  color: $light-black-color;
+  cursor: pointer;
+}
+
+@media only screen and (min-width: $tab) {
+  .collapse {
+    display: block;
+  }
+  .toggler {
+    display: none;
+  }
+  .logo-wrap {
+    width: 170px;
+  }
+  .navbar {
+    position: unset;
+    width: unset;
+    ul {
+      flex-direction: row;
+      li {
+        border-bottom: unset;
+        &:hover {
+          background: unset;
+        }
+      }
+    }
+    .main-links {
+      position: absolute;
+      left: 30%;
+      li a {
+        font-size: $medium-font;
+        line-height: $large-font;
+        font-weight: 700;
+      }
+    }
+    .side-links {
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+  }
+  .cart-wrap {
+    margin-top: 35px;
+  }
+}

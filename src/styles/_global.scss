@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Dosis:400,500,600,700,800,900&display=swap');
 @import './variable';
+@import './extends';
 
 * {
   box-sizing: border-box;
@@ -9,6 +10,11 @@
 
 body {
   font-family: 'Dosis';
+}
+
+.flex {
+  display: flex;
+  align-items: center;
 }
 
 .container {
