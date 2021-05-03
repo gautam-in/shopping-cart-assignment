@@ -1,9 +1,9 @@
-import { checkLoggedIn } from "../../services/LoginService";
+import { userInfo } from "../../utils/constants";
 import LoginActionTypes from "./LoginTypes";
 
 const INITIAL_STATE = {
   loading: false,
-  isLoggedIn: checkLoggedIn(),
+  isLoggedIn: userInfo.isAuthenticated(),
   isError: false,
 };
 

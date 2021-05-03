@@ -38,7 +38,12 @@ function Header() {
       <div className="container header-container">
         <div className="header-left">
           <NavLink to="/" className="logo">
-            <img loading="lazy" src="static/images/logo.png" alt="" />
+            <img
+              loading="lazy"
+              src="static/images/logo.png"
+              alt="logo"
+              height="86"
+            />
           </NavLink>
         </div>
 

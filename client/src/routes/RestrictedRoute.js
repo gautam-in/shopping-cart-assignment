@@ -1,9 +1,9 @@
 import React from "react";
 import { Route, Redirect } from "react-router-dom";
-import { checkLoggedIn } from "../services/LoginService";
+import { userInfo } from "../utils/constants";
 
 function RestrictedRoute({ component: Component, ...rest }) {
-  const isAuthenticated = checkLoggedIn();
+  const isAuthenticated = userInfo.isAuthenticated();
   return (
     <Route
       {...rest}

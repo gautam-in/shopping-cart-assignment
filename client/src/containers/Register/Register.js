@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 import Button from "../../components/Button/Button";
-
-import { EMAIL_REGEX } from "../../constants";
+import { EMAIL_REGEX } from "../../utils/constants";
 
 const INITIAL_FORM = {
   firstName: "",
@@ -67,6 +66,7 @@ function Register() {
               <input
                 type="text"
                 name="firstName"
+                id="firstName"
                 className="form-control"
                 required
                 value={form.firstName}
@@ -79,6 +79,7 @@ function Register() {
               <input
                 type="text"
                 name="lastName"
+                id="lastName"
                 className="form-control"
                 required
                 value={form.lastName}
@@ -90,6 +91,7 @@ function Register() {
               <input
                 type="text"
                 name="email"
+                id="email"
                 className={`form-control ${error.email ? "error" : ""}`}
                 required
                 value={form.email}
@@ -102,6 +104,7 @@ function Register() {
               <input
                 type="password"
                 name="password"
+                id="password"
                 className="form-control"
                 required
                 value={form.password}
@@ -114,6 +117,7 @@ function Register() {
               <input
                 type="password"
                 name="confirmPassword"
+                id="confirmPassword"
                 className={`form-control ${
                   error.confirmPassword ? "error" : ""
                 }`}

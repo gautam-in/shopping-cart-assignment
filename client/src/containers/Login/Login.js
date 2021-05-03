@@ -2,7 +2,8 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import Button from "../../components/Button/Button";
-import { EMAIL_REGEX } from "../../constants";
+import { EMAIL_REGEX } from "../../utils/constants";
+
 import { getLoginStart } from "./LoginActions";
 
 const INITIAL_FORM = {
@@ -79,6 +80,7 @@ function Login() {
               <input
                 type="text"
                 name="email"
+                id="email"
                 className={`form-control ${error.email ? "error" : ""}`}
                 required
                 value={form.email}
@@ -92,6 +94,7 @@ function Login() {
               <input
                 type="password"
                 name="password"
+                id="password"
                 className="form-control"
                 required
                 autoComplete="new-password"
