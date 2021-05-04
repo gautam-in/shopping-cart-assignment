@@ -25,7 +25,7 @@
   margin-top: 3rem;
   .product-body {
     border-bottom: 3px dashed $grey;
-    padding:0;
+    padding: 0;
     .product-title {
       font-size: 1rem;
       font-weight: 700;
@@ -143,6 +143,8 @@
       }
       .product-description {
         height: 8rem;
+        font-size: 11px;
+        font-weight: 600;
       }
     }
 
@@ -171,11 +173,14 @@
 @media only screen and (max-width: 600px) {
   .product-dropdown {
     display: inline-block !important;
+    margin-top: -2rem !important;
+  // margin-bottom: -3rem i !important;
     .drpdwn-btn {
       width: 24rem;
-      margin-top: 2rem;
+      margin-top: 0  !important;
       background-color: $mergenta !important;
       border: 0;
+      margin-bottom: -3rem;
     }
 
     .dropdown-toggle::after {
@@ -193,25 +198,33 @@
   .product {
     max-width: 100%;
     padding: 0px 0px;
+    .product-row {
+      margin-top: -3rem;
+    }
   }
 
   .product-card {
-    width: 34rem;
-    height: 200px;
+    width: 24rem;
+    height: 14rem;
     .product-body {
+      max-height: 13px;
       .product-title {
-        height: 1.5rem;
-        font-size: 0.8rem;
+        height: auto;
+        font-size: 1.3rem;
+        padding-top: 2rem;
       }
       .product-img {
-        width: 9rem;
+        width: 10rem;
+        height: 11rem;
         margin-bottom: 0;
       }
       .product-description {
-        height: 4rem;
-        margin-top: 30px;
+        height: 6rem;
+        margin-top: 1rem;
         margin-right: 0rem;
-        margin-left: 1rem;
+        margin-left: 0rem;
+        font-size: 11px;
+        font-weight: 600;
       }
     }
     .product-footer {
@@ -222,11 +235,11 @@
       .small-screen {
         display: block !important;
         .product-buy {
-          font-size: 9px;
+          font-size: 11px;
           background-color: $mergenta;
           padding: 0.1rem 2.6rem;
           margin-left: 11rem;
-          margin-top: -5rem;
+          margin-top: -2rem;
         }
       }
     }
