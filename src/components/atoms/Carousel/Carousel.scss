@@ -15,7 +15,7 @@
 .carousel {
   width: 100%;
   position: relative;
-  margin-top: $m;
+  margin-top: $small;
   &::after {
     @extend cardShadow;
     z-index: -5;
@@ -27,7 +27,7 @@
   cursor: pointer;
   position: absolute;
   top: 30%;
-  padding: $ctr-padding;
+  padding: $small;
   color: $white-color;
   font-weight: bold;
   font-size: $medium-font;
@@ -49,7 +49,7 @@
   cursor: pointer;
   height: 4px;
   width: 4px;
-  margin: 0 8px;
+  margin: 0 $semi-small;
   background-color: #bbb;
   border-radius: 50%;
   display: inline-block;
@@ -76,7 +76,7 @@
   .dot {
     height: 6px;
     width: 6px;
-    margin: 0 10px;
+    margin: 0 $small;
   }
 }
 

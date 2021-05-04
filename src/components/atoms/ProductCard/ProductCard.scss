@@ -1,14 +1,14 @@
 @import '../../../styles/global';
 
 .product-wrap {
-  margin: $ml $m;
-  padding-bottom: $ctr-padding;
+  margin: $large $small;
+  padding-bottom: $small;
   border-bottom: 2px dashed $grey-color;
   .product-header {
     font-size: $medium-font;
     line-height: $large-font;
     font-weight: 800;
-    margin-bottom: $ml;
+    margin-bottom: $large;
   }
   .product-detail-wrap {
     display: flex;
@@ -21,19 +21,19 @@
       width: 50%;
       .product-description {
         height: fit-content;
-        padding: 5px;
+        padding: $extra-small;
         font-size: $extra-small-font;
         line-height: $small-font;
         font-weight: 600;
         background: $grey-color;
-        margin-bottom: $m;
+        margin-bottom: $small;
       }
       .product-price {
         position: absolute;
         bottom: 0;
         width: 100%;
         button {
-          @extend button;
+          @extend customButton;
           margin: 0;
           border-radius: 0;
           font-size: $extra-small-font;
@@ -44,19 +44,19 @@
   .product-footer {
     display: none;
     position: absolute;
-    bottom: 10px;
+    bottom: $small;
     align-items: center;
     justify-content: space-between;
     width: 100%;
     .price-text {
       width: 50%;
-      margin: $ms;
+      margin: $extra-small;
       font-size: $small-font;
       line-height: $medium-font;
       font-weight: 500;
     }
     button {
-      @extend button;
+      @extend customButton;
       width: 50%;
       margin: 0;
       border-radius: 0;
@@ -68,14 +68,14 @@
 @media only screen and (min-width: $tab) {
   .product-wrap {
     width: calc(50% - 10px);
-    margin: $ml 0 $ml $m;
+    margin: $large 0 $large $small;
     .product-header {
-      margin-bottom: $m;
+      margin-bottom: $small;
       height: 60px;
     }
     .product-detail-wrap {
       height: calc(100% - 110px);
-      margin-bottom: 40px;
+      margin-bottom: $extra-large;
       .product-description-wrap {
         .product-description {
           height: 100%;
@@ -83,7 +83,7 @@
         }
         .product-price {
           width: 200%;
-          bottom: -40px;
+          bottom: -$extra-large;
           left: -100%;
         }
       }
@@ -108,7 +108,7 @@
         width: 100%;
         .product-description {
           height: fit-content;
-          margin-bottom: $m;
+          margin-bottom: $small;
         }
         .product-price {
           display: none;

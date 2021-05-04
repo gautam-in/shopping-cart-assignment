@@ -26,7 +26,7 @@ header {
     background: $white-color;
     li {
       border-bottom: 1px solid $dark-grey-color;
-      padding: $small-vert-padding;
+      padding: $semi-small $small;
       a {
         color: $black-color;
         font-size: $small-font;
@@ -41,7 +41,7 @@ header {
   }
 }
 .logo-wrap {
-  padding: $ctr-padding;
+  padding: $small;
   width: 100px;
   a img {
     width: 100%;
@@ -50,13 +50,13 @@ header {
 .cart-wrap {
   cursor: pointer;
   background: $dark-grey-color;
-  padding: $large-vert-padding;
+  padding: $semi-large $small;
   display: flex;
   align-items: center;
   svg {
     font-size: $extra-large-font;
     color: $pink-color;
-    margin-right: $m;
+    margin-right: $small;
   }
   span {
     font-size: $medium-font;
@@ -64,7 +64,7 @@ header {
   }
 }
 .toggler {
-  padding: $ctr-padding;
+  padding: $small;
   font-size: $medium-font;
   color: $light-black-color;
   cursor: pointer;

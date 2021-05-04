@@ -30,7 +30,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: $large-ctr-padding;
+  padding: $medium;
   h6 {
     color: $white-color;
     font-size: $semi-large-font;
@@ -55,8 +55,8 @@
   height: calc(100% - 125px);
   border-bottom: 2px solid $dark-grey-color;
   .lowest-price {
-    margin: $m $ms;
-    padding: $ctr-padding;
+    margin: $small $extra-small;
+    padding: $small;
     background: $white-color;
     border-radius: 4px;
     font-size: $extra-small-font;
@@ -65,7 +65,7 @@
     align-items: center;
     img {
       width: 15%;
-      margin-right: $m;
+      margin-right: $small;
     }
   }
 }
@@ -77,7 +77,7 @@
   h5 {
     font-size: $large-font;
     font-weight: 800;
-    margin-bottom: $ms;
+    margin-bottom: $extra-small;
   }
   p {
     font-size: $small-font;
@@ -95,19 +95,19 @@
     font-size: $extra-small-font;
   }
   button {
-    @extend button;
+    @extend customButton;
     font-size: $small-font;
     width: calc(100% - 20px);
     .text {
       float: left;
-      margin-left: $ml;
+      margin-left: $large;
     }
     .price {
       float: right;
-      margin-right: $ml;
+      margin-right: $large;
       svg {
         font-size: $extra-small-font;
-        margin-left: $m;
+        margin-left: $small;
       }
     }
   }

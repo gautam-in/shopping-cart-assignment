@@ -6,8 +6,8 @@
   justify-content: space-between;
   align-items: center;
   width: calc(100% - 10px);
-  margin: $ms;
-  padding: 20px 0 40px;
+  margin: $extra-small;
+  padding: $large 0 $extra-large;
   background: $white-color;
   &:nth-child(even) {
     flex-direction: row-reverse;
@@ -27,13 +27,13 @@
       font-weight: 800;
     }
     p {
-      margin: $m auto;
+      margin: $small auto;
       font-size: $small-font;
       font-weight: 600;
     }
     .explore-btn {
-      @extend button;
-      padding: $small-vert-padding;
+      @extend customButton;
+      padding: $semi-small $small;
       font-size: $small-font;
     }
   }
@@ -47,7 +47,7 @@
         font-size: $large-font;
       }
       p {
-        margin: $mm auto;
+        margin: $medium auto;
         font-size: $medium-font;
       }
       .explore-btn {

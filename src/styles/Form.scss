@@ -1,10 +1,10 @@
 @import './global';
 
 .header-wrapper {
-  margin: $m;
+  margin: $small;
   color: $black-color;
   h1 {
-    margin: $ml 0;
+    margin: $large 0;
     font-size: $extra-large-font;
   }
   p {
@@ -13,7 +13,7 @@
   }
 }
 form {
-  margin: $m;
+  margin: $small;
 }
 .input-error {
   border-bottom: 2px solid $pink-color !important;
@@ -27,8 +27,8 @@ form {
 }
 
 .form-submit-btn {
-  @extend button;
-  margin: 20px 0;
+  @extend customButton;
+  margin: $large 0;
   border-radius: 0;
   font-size: $small-font;
 }
@@ -36,10 +36,10 @@ form {
 @media only screen and (min-width: $tab) {
   .form-wrapper {
     display: flex;
-    margin: $ml 0;
+    margin: $large 0;
   }
   .header-wrapper {
-    margin: $m 50px;
+    margin: $small 50px;
   }
   form {
     width: 40%;

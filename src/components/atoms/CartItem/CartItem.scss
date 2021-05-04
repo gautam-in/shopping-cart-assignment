@@ -3,15 +3,15 @@
 .cart-item-wrap {
   display: flex;
   background: $white-color;
-  padding: $ctr-padding;
-  margin: $m 0;
+  padding: $small;
+  margin: $small 0;
   .cart-image-wrap {
     width: 8%;
   }
   .cart-item-details-wrap {
     width: 92%;
     h5 {
-      margin-left: $m;
+      margin-left: $small;
       font-size: $small-font;
       font-weight: 800;
     }
@@ -21,7 +21,7 @@
       font-size: $small-font;
       font-weight: 600;
       button {
-        @extend button;
+        @extend customButton;
         width: fit-content;
         padding: 4px 6px;
         font-size: 6px;
@@ -30,7 +30,7 @@
         }
       }
       span {
-        margin-right: $m;
+        margin-right: $small;
       }
     }
     .price-wrap {

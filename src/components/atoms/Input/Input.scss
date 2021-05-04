@@ -3,7 +3,7 @@
 .input-field {
   display: flex;
   flex-flow: column-reverse;
-  margin-bottom: 15px;
+  margin-bottom: $medium;
   position: relative;
 }
 
@@ -20,7 +20,7 @@ input {
   border: 0;
   border-bottom: 2px solid $dark-grey-color;
   border-radius: 0;
-  padding: 8px 0;
+  padding: $semi-small 0;
   cursor: text;
 }
 

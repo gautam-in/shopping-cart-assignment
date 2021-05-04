@@ -1,7 +1,7 @@
 @import '../../../styles/global';
 
 .product-filter-wrap {
-  margin: $m 0;
+  margin: $small 0;
   background: $grey-color;
   width: 100%;
   color: $black-color;
@@ -10,7 +10,7 @@
 }
 .filter-header {
   cursor: pointer;
-  padding: $ctr-padding;
+  padding: $small;
   border-bottom: 1px solid #cccccc;
   display: flex;
   justify-content: space-between;
@@ -23,7 +23,7 @@
 }
 .list-item {
   cursor: pointer;
-  padding: $ctr-padding;
+  padding: $small;
   border-bottom: 1px solid #cccccc;
   &:hover {
     background: $dark-grey-color;
