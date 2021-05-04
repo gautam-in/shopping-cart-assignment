@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+import { IProduct } from 'src/models/product.model';
 import { CartService } from '../../services/cart/cart.service';
 
 @Component({
@@ -13,6 +14,7 @@ import { CartService } from '../../services/cart/cart.service';
 export class EmptyCartComponent implements OnInit {
 
   cartList: Array<{}> = [];
+  totalAmount : number
 
   constructor(private _route: Router, public modal: NgbActiveModal,
     private _cartService: CartService,
@@ -20,13 +22,25 @@ export class EmptyCartComponent implements OnInit {
 
   ngOnInit(): void {
     this.getCartList();
+    this.totalAmountOfProduct();
   }
 
   getCartList() {
-    this._cartService.getCartList.subscribe((data) => {
-      this.cartList = data;
-    
-    });
+    this.cartList = this._cartService.itemInCart
+  }
+
+  addProductsToCart(product: IProduct) {
+    this._cartService.addProductToCart(product);
+    this.totalAmountOfProduct();
+  }
+
+  removeProductFromCart(product: IProduct) {
+    this._cartService.removeProductsFromCart(product);
+    this.totalAmountOfProduct();
+  }
+
+  totalAmountOfProduct() {
+    this.totalAmount = this._cartService.getTotalAmount();
   }
 
   startShopping() {

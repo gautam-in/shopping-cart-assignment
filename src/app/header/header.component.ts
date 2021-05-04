@@ -18,7 +18,7 @@ export class HeaderComponent implements OnInit {
   productsInCart: IProduct[] = [];
   isLoggedIn: boolean = false;
   user: IUser;
-    
+
   public screenWidth: any;
 
   constructor(
@@ -31,11 +31,9 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit(): void {
     this.getUser();
-    this._cartService.getCartList.subscribe((item) => {
-      this.productsInCart = item;
-    });
    
 
+    this.productsInCart = this._cartService.itemInCart;
   }
 
   getUser() {
@@ -52,10 +50,12 @@ export class HeaderComponent implements OnInit {
 
   openCart(): void {
     this.screenWidth = window.innerWidth;
-    if (this.screenWidth<= 1024 && this.screenWidth >= 768){
+    if (this.screenWidth <= 1024 && this.screenWidth >= 768) {
       this._route.navigate(['/auth/cart']);
-    }else{
-      this._modalService.open(EmptyCartComponent, { ariaLabelledBy: 'cartTitle' });
+    } else {
+      this._modalService.open(EmptyCartComponent, {
+        ariaLabelledBy: 'cartTitle',
+      });
     }
   }
 }

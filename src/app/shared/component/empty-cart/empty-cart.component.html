@@ -58,13 +58,13 @@
               <div class="card-body">
                   <p class="card-title" aria-level="1" role="heading">{{product.name}}</p>
                   <div>
-                      <i class="fa fa-plus-square icon-fa" (click)="addProductsToCart(product)"
+                      <i  class="fa fa-minus-square icon-fa icon-action" (click)="removeProductFromCart(product)"
                           aria-label="increase product unit"></i>
                       <span>{{product.count}}</span>
-                      <i class="fa fa-minus-square icon-fa" (click)="removeProductFromCart(product)"
+                      <i  class="fa fa-plus-square icon-fa icon-action" (click)="addProductsToCart(product)"
                           aria-label="decrease product unit"></i>
                       <span class="item-price">X &nbsp; &nbsp;{{product.price | currency: 'INR'}}</span>
-                      <span class="item-total-price">{{product.totalPrice | currency: 'INR'}}</span>
+                      <span class="item-total-price">{{product.productPrice | currency: 'INR'}}</span>
                   </div>
               </div>
           </div>
@@ -87,10 +87,10 @@
   </section>
   <ng-template #checkout>
       <p>Promo code can be applied on payment page</p>
-      <button type="button" class="common-btn" (click)="resetCart();modal.close('Save click')" data-dismiss="modal"
+      <button type="button" class="common-btn action-btn" (click)="resetCart();modal.close('Save click')" data-dismiss="modal"
           aria-label="Proceed to Checkout Rs.  /-">
           <span class="checkout-text">Proceed to Checkout </span>
-          <!-- <span class="checkout-price">Rs.{{ totalAmount()}}/- ></span> -->
+          <span class="checkout-price">Rs.{{ totalAmount }} </span>
       </button>
   </ng-template>
 </div> 
