@@ -1,0 +1,50 @@
+.card_container {
+  min-height: 450px;
+  & .card_wrapper {
+    display: flex;
+    flex-direction: column;
+    background: white;
+    padding: 0px 5px;
+    border-bottom: 1px dashed #eeeeee;
+    border-right: 2px solid #eeeeee;
+    margin-bottom: 1rem;
+    box-shadow: -2px 0px 2px -1px #eeeeee;
+    // &:not(:nth-child(4n)) {
+    // box-shadow: 33px 0px 1px -28px #eeeeee;
+    // }
+
+    & .title {
+      min-height: 65px;
+    }
+
+    & .img-fluid_avatar {
+      width: 100%;
+    }
+
+    & .description {
+      padding: 0.4rem;
+      font-size: 0.75rem;
+      flex: 1;
+      background: #eeeeee;
+      min-height: 190px;
+    }
+    & .card-footer {
+      margin: 10px 0px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+
+      & .price {
+        width: 50%;
+        font-size: 15px;
+        font-weight: 600;
+      }
+
+      & .add_to_cart {
+        width: 50%;
+        font-size: 12px;
+      }
+    }
+  }
+}

@@ -1,0 +1,19 @@
+.product_list_container {
+  display: flex;
+  margin-top: 10px !important;
+  position: relative;
+  margin-bottom: 30px !important; 
+  &.sidebar {
+    width: 25%;
+  }
+
+  & .products {
+    display: flex;
+    flex-wrap: wrap;
+
+    & .card_container {
+      width: 25%;
+      // border: 1px solid #eeeeee;
+    }
+  }
+}

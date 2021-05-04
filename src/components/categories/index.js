@@ -1,4 +1,5 @@
 import React, { Fragment, useEffect, useState } from "react";
+import { useHistory } from "react-router-dom";
 
 import Button from "../common/button";
 import FetchData from "../common/fetch-data";
@@ -7,6 +8,7 @@ import Image from "../common/image";
 import "./index.scss";
 
 const Banner = () => {
+  const history = useHistory();
   const [categories, setCategories] = useState([]);
 
   useEffect(() => {
@@ -24,7 +26,10 @@ const Banner = () => {
       });
   }, []);
 
-  const handleCategory = (e) => {debugger};
+  const handleCategory = (e) => {
+    const categoryId = e.target.id;
+    history.push(`/products?category=${categoryId}`);
+  };
 
   return (
     <Fragment>

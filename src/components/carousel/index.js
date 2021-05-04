@@ -11,6 +11,28 @@ const Carousel = () => {
   const [activeCarouselData, setActiveCarouselData] = useState({});
 
   useEffect(() => {
+    // auto slide
+    const timerId = setInterval(() => {
+      const indexValue = carouselData.findIndex(
+        (singleData) => singleData.id === activeCarouselData.id
+      );
+      if (carouselData.length > 1 && indexValue < carouselData.length - 1) {
+        const nextIndex = indexValue + 1;
+        handleSlide(nextIndex);
+      } else {
+        const nextIndex = 0;
+        handleSlide(nextIndex);
+      }
+    }, 5000);
+    return () => clearInterval(timerId);
+  });
+
+  // handle slide next/prev
+  const handleSlide = (index) => {
+    setActiveCarouselData(carouselData[index]);
+  };
+
+  useEffect(() => {
     FetchData("http://localhost:5000/banners/")
       .then((res) => {
         setCarouselData(res);

@@ -1,37 +1,30 @@
-import React, { useEffect } from "react";
+import React from "react";
+import "./index.scss";
 
-const Sidebar = ({ filter, selectedcategory }) => {
+const Sidebar = ({ categories, selectedCategory, onClick }) => {
   return (
-    <div className="sidebar">
-      <div>
-        <select
-          className="select"
-          onChange={(e) => handleFilter(e.target.value)}
-        >
-          {banners?.length > 0 &&
-            banners.map((banner) => (
-              <option key={banner.id} value={banner.id}>
-                {banner.name}
-              </option>
-            ))}
-        </select>
-      </div>
-      <nav className="nav hide-sm">
-        {banners?.length > 0 &&
-          banners.map((banner) => (
+    <ul className="sidebar">
+      {categories.length > 0 &&
+        categories.map((singleCategory, index) => (
+          <li
+            className={`nav_link_container item_${index}`}
+            key={singleCategory.id}
+          >
             <a
-              className={`nav-link ${
-                banner.id === selectedcategory ? "active" : ""
-              } ${banner.key}`}
-              key={banner.id}
-              onClick={filter}
-              id={banner.id}
+              className={`nav_link ${
+                Object.keys(selectedCategory).length &&
+                singleCategory.id === selectedCategory
+                  ? "active"
+                  : ""
+              } ${singleCategory.key}`}
+              onClick={onClick}
+              id={singleCategory.id}
             >
-              {banner.name}
+              {singleCategory.name}
             </a>
-          ))}
-      </nav>
-    </div>
+          </li>
+        ))}
+    </ul>
   );
 };
 
