@@ -51,18 +51,21 @@
 .cart-body {
   background: $grey-color;
   overflow-y: auto;
+  width: calc(100% - 20px);
+  height: calc(100% - 125px);
+  border-bottom: 2px solid $dark-grey-color;
   .lowest-price {
     margin: $m $ms;
-    padding: $large-ctr-padding;
-    background-color: $white-color;
+    padding: $ctr-padding;
+    background: $white-color;
     border-radius: 4px;
-    font-size: $medium-font;
+    font-size: $extra-small-font;
     font-weight: 600;
     display: flex;
     align-items: center;
     img {
-      width: 35%;
-      margin: $m;
+      width: 15%;
+      margin-right: $m;
     }
   }
 }
@@ -88,21 +91,23 @@
   width: 100%;
   .cart-footer-text {
     text-align: center;
-    font-weight: 700;
+    font-weight: 600;
+    font-size: $extra-small-font;
   }
   button {
     @extend button;
+    font-size: $small-font;
     width: calc(100% - 20px);
     .text {
       float: left;
-      margin-left: 20px;
+      margin-left: $ml;
     }
     .price {
       float: right;
-      margin-right: 20px;
+      margin-right: $ml;
       svg {
-        width: 8px;
-        margin-left: 10px;
+        font-size: $extra-small-font;
+        margin-left: $m;
       }
     }
   }

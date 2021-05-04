@@ -37,38 +37,12 @@ const CartDrawer = React.memo(({ isOpen, toogleCart }) => {
   const cartList =
     data &&
     data.map((cartProduct) => {
-      // const { id, name, imageURL, quantity, price } = cartProduct;
       return (
         <CartItem
           key={cartProduct.id}
           product={cartProduct}
           onClick={(status, product) => cartQuantity(status, product)}
         />
-        // <li key={id} className='cart-item-wrap'>
-        //   <div className='cart-image-wrap'>
-        //     <img
-        //       loading='lazy'
-        //       src={require(`../../../../static/images/products/${imageURL}`).default}
-        //       alt={name}
-        //     />
-        //   </div>
-        //   <div className='cart-item-details-wrap'>
-        //     <h5>{name}</h5>
-        //     <div className='cart-item-price-wrap'>
-        //       <span>
-        //         <button type='button' onClick={() => cartQuantity('decrement', cartProduct)}>
-        //           <FontAwesomeIcon icon={faMinus} />
-        //         </button>
-        //         {quantity}
-        //         <button type='button' onClick={() => cartQuantity('increment', cartProduct)}>
-        //           <FontAwesomeIcon icon={faPlus} />
-        //         </button>
-        //       </span>
-        //       <span>X</span> Rs.{price}
-        //     </div>
-        //     <div className='price-wrap'>Rs. {quantity * price}</div>
-        //   </div>
-        // </li>
       );
     });
 

@@ -2,42 +2,41 @@
 
 .cart-item-wrap {
   display: flex;
-  min-height: 100px;
+  background: $white-color;
+  padding: $ctr-padding;
+  margin: $m 0;
   .cart-image-wrap {
-    img {
-      width: 80px;
-      height: 80px;
-    }
+    width: 8%;
   }
   .cart-item-details-wrap {
-    width: 85%;
+    width: 92%;
     h5 {
-      margin-left: 10px;
+      margin-left: $m;
+      font-size: $small-font;
       font-weight: 800;
     }
     .cart-item-price-wrap {
-      font-size: 1.15rem;
+      display: flex;
+      align-items: center;
+      font-size: $small-font;
       font-weight: 600;
       button {
-        background: #bf2957;
-        color: white;
-        border: 0;
-        border-radius: 4px;
-        width: 30px;
-        height: 25px;
-        margin: 0 10px;
-        svg {
-          width: 0.7rem;
+        @extend button;
+        width: fit-content;
+        padding: 4px 6px;
+        font-size: 6px;
+        &:hover {
+          padding: 3px 5px;
         }
       }
       span {
-        margin-right: 5px;
+        margin-right: $m;
       }
     }
     .price-wrap {
       float: right;
       margin-top: -25px;
-      font-size: 1.2rem;
+      font-size: $small-font;
       font-weight: 600;
     }
   }
