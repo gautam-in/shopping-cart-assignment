@@ -1,0 +1,47 @@
+@import './global';
+
+.header-wrapper {
+  margin: $m;
+  color: $black-color;
+  h1 {
+    margin: $ml 0;
+    font-size: $extra-large-font;
+  }
+  p {
+    font-size: $small-font;
+    font-weight: 600;
+  }
+}
+form {
+  margin: $m;
+}
+.input-error {
+  border-bottom: 2px solid $pink-color !important;
+}
+
+.error-message {
+  color: $pink-color;
+  font-size: $extra-small-font;
+  position: absolute;
+  margin-top: -14px;
+}
+
+.form-submit-btn {
+  @extend button;
+  margin: 20px 0;
+  border-radius: 0;
+  font-size: $small-font;
+}
+
+@media only screen and (min-width: $tab) {
+  .form-wrapper {
+    display: flex;
+    margin: $ml 0;
+  }
+  .header-wrapper {
+    margin: $m 50px;
+  }
+  form {
+    width: 40%;
+  }
+}

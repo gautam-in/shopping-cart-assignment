@@ -5,10 +5,10 @@ import Categories from '../../molecules/Categories';
 
 const Home = () => {
   return (
-    <div className='container'>
+    <main className='container'>
       <Banners />
       <Categories />
-    </div>
+    </main>
   );
 };
 
