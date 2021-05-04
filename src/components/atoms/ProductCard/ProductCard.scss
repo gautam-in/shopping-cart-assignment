@@ -1,0 +1,122 @@
+@import '../../../styles/global';
+
+.product-wrap {
+  margin: $ml $m;
+  padding-bottom: $ctr-padding;
+  border-bottom: 2px dashed $grey-color;
+  .product-header {
+    font-size: $medium-font;
+    line-height: $large-font;
+    font-weight: 800;
+    margin-bottom: $ml;
+  }
+  .product-detail-wrap {
+    display: flex;
+    .product-image {
+      width: 50%;
+      padding: 4px;
+    }
+    .product-description-wrap {
+      position: relative;
+      width: 50%;
+      .product-description {
+        height: fit-content;
+        padding: 5px;
+        font-size: $extra-small-font;
+        line-height: $small-font;
+        font-weight: 600;
+        background: $grey-color;
+        margin-bottom: $m;
+      }
+      .product-price {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        button {
+          @extend button;
+          margin: 0;
+          border-radius: 0;
+          font-size: $extra-small-font;
+        }
+      }
+    }
+  }
+  .product-footer {
+    display: none;
+    position: absolute;
+    bottom: 10px;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    .price-text {
+      width: 50%;
+      margin: $ms;
+      font-size: $small-font;
+      line-height: $medium-font;
+      font-weight: 500;
+    }
+    button {
+      @extend button;
+      width: 50%;
+      margin: 0;
+      border-radius: 0;
+      font-size: $extra-small-font;
+    }
+  }
+}
+
+@media only screen and (min-width: $tab) {
+  .product-wrap {
+    width: calc(50% - 10px);
+    margin: $ml 0 $ml $m;
+    .product-header {
+      margin-bottom: $m;
+      height: 60px;
+    }
+    .product-detail-wrap {
+      height: calc(100% - 110px);
+      margin-bottom: 40px;
+      .product-description-wrap {
+        .product-description {
+          height: 100%;
+          margin-bottom: 0;
+        }
+        .product-price {
+          width: 200%;
+          bottom: -40px;
+          left: -100%;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: $desktop) {
+  .product-wrap {
+    width: calc(25% - 10px);
+    position: relative;
+    .product-header {
+      height: 80px;
+    }
+    .product-detail-wrap {
+      display: block;
+      height: fit-content;
+      .product-image {
+        width: 100%;
+      }
+      .product-description-wrap {
+        width: 100%;
+        .product-description {
+          height: fit-content;
+          margin-bottom: $m;
+        }
+        .product-price {
+          display: none;
+        }
+      }
+    }
+    .product-footer {
+      display: flex;
+    }
+  }
+}

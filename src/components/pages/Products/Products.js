@@ -4,6 +4,7 @@ import { useLocation } from 'react-router-dom';
 
 import { fetchCategoriesDataRequest, fetchProductsDataRequest } from '../../../redux/actions';
 import ProductFilter from '../../molecules/ProductFilter';
+import ProductList from '../../molecules/ProductList';
 
 const Products = () => {
   const dispatch = useDispatch();
@@ -24,6 +25,7 @@ const Products = () => {
     <main className='container'>
       <div className='page-wrapper'>
         <ProductFilter filterId={filterId} />
+        <ProductList filterId={filterId} />
       </div>
     </main>
   );

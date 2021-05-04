@@ -37,8 +37,7 @@
   .product-filter-wrap {
     margin: 0;
     width: 20%;
-    height: 100%;
-    min-height: calc(100vh - 130px);
+    height: inherit;
   }
   .filter-header {
     display: none;
