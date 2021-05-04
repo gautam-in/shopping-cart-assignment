@@ -18,11 +18,13 @@ const LoginForm = ({ history }) => {
   } = useForm({
     mode: 'onChange'
   });
+
   const onSubmit = (data) => {
     console.log(data);
     history.push('/');
     reset();
   };
+
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <Input
@@ -40,7 +42,7 @@ const LoginForm = ({ history }) => {
             type={errors.email.type}
             minLength={emailValidation.minLength}
             maxLength={emailValidation.maxLength}
-            field='email-id'
+            field='email'
           />
         </div>
       )}

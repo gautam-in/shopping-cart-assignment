@@ -2,13 +2,13 @@ import React from 'react';
 
 import './Input.scss';
 
-const Input = (props) => {
+const Input = React.forwardRef((props, ref) => {
   return (
     <div className='input-field'>
-      <input id={props.id} {...props} />
+      <input ref={ref} {...props} />
       <label htmlFor={props.id}>{props.placeholder}</label>
     </div>
   );
-};
+});
 
 export default Input;
