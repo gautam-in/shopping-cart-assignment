@@ -1,6 +1,6 @@
 import { Component, Inject, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { ModalDismissReasons, NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { IProduct } from 'src/models/product.model';
 import { CartService } from '../../services/cart/cart.service';
 import { EmptyCartComponent } from '../empty-cart/empty-cart.component';
@@ -17,7 +17,9 @@ export class CartComponent implements OnInit {
     private modalService: NgbModal,
     private _cartService: CartService,
     private _modalService: NgbModal,
-    private _route: Router
+    private _route: Router,
+  
+
   ) {}
 
   // make one component for cart in stead of two .. show it based on condition.

@@ -1,26 +1,91 @@
 @import "../../../../assets/scss/color.scss";
 
+.card-img{
+  width: inherit;
+  height: inherit;
+}
+
 .modal-header {
   background-color: $black;
   color: $white;
   .close {
-    background-color: $black;
-    border: none;
-    color: $white;
-    font-size: 25px;
-    border: none;
+      background-color: black;
+      border: none;
+      color: white;
+      font-size: 25px;
+      border: none;
   }
 }
 .modal-body {
   height: 500px;
   background-color: $grey;
   .cart-body {
-    text-align: center;
-    margin-top: 30%;
+      text-align: center;
+      margin-top: 30%;
   }
 }
 .modal-footer {
   .footer-section {
-    width: 100%;
+      width: 100%;
+  }
+}
+
+.cart-offer {
+  margin: 10px;
+  display: flex;
+  .offer-img {
+      flex: 1;
+      .offer-image{
+          width: auto;
+          height: auto;
+      }
+  }
+  .offer-text {
+      flex: 1;
+  }
+}
+
+.icon-fa {
+  margin: 0 10px;
+  color: $mergenta;
+  font-size: 20px;
+}
+
+.item-price,
+.item-total-price {
+  margin: 0 5px;
+}
+.item-total-price {
+  float: right;
+}
+.common-btn {
+  width: 100%;
+  .checkout-text {
+      float: left;
+  }
+  .checkout-price {
+      float: right;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .no-gutters {
+      text-align: center;
+      .card-img {
+          width: 70%;
+          height: auto;
+      }
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .no-gutters {
+      display: flex;
+      .cart-image {
+          flex: 1;
+      }
+      .cart-description {
+          flex: 1;
+      }
   }
 }
