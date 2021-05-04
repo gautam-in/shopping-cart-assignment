@@ -40,9 +40,6 @@ header {
     }
   }
 }
-.collapse {
-  display: none;
-}
 .logo-wrap {
   padding: $ctr-padding;
   width: 100px;
@@ -74,9 +71,6 @@ header {
 }
 
 @media only screen and (min-width: $tab) {
-  .collapse {
-    display: block;
-  }
   .toggler {
     display: none;
   }

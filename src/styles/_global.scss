@@ -21,6 +21,13 @@ ul {
   align-items: center;
 }
 
+.collapse {
+  display: none;
+  @media only screen and (min-width: $tab) {
+    display: block;
+  }
+}
+
 .container {
   max-width: 100%;
   margin: auto;

@@ -1,0 +1,46 @@
+@import '../../../styles/global';
+
+.product-filter-wrap {
+  margin: $m 0;
+  background: $grey-color;
+  width: 100%;
+  color: $black-color;
+  font-size: $small-font;
+  font-weight: 500;
+}
+.filter-header {
+  cursor: pointer;
+  padding: $ctr-padding;
+  border-bottom: 1px solid #cccccc;
+  display: flex;
+  justify-content: space-between;
+  @extend transitions;
+}
+.active-header {
+  background: $pink-color;
+  color: $white-color;
+  border-bottom: 1px solid $pink-color;
+}
+.list-item {
+  cursor: pointer;
+  padding: $ctr-padding;
+  border-bottom: 1px solid #cccccc;
+  &:hover {
+    background: $dark-grey-color;
+  }
+}
+.active-item {
+  border-left: 2px solid $pink-color;
+}
+
+@media only screen and (min-width: $tab) {
+  .product-filter-wrap {
+    margin: 0;
+    width: 20%;
+    height: 100%;
+    min-height: calc(100vh - 130px);
+  }
+  .filter-header {
+    display: none;
+  }
+}
