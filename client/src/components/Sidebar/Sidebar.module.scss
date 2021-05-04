@@ -1,0 +1,34 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+.sidebar {
+  flex: 0 0 220px;
+  padding: 0.5rem;
+  background-color: $light-gray-1;
+  .nav {
+    display: flex;
+    flex-direction: column;
+    position: sticky;
+    top: 0;
+    z-index: 9;
+
+    .navLink {
+      cursor: pointer;
+      display: block;
+      padding: 0.5rem 1rem;
+      border-bottom: 1px solid #00000015;
+      transition: background-color 0.1s ease-in;
+      &:hover {
+        background-color: #00000010;
+      }
+      &.active {
+        color: white;
+        background-color: $primary;
+      }
+    }
+  }
+  @include min-width(576px) {
+    .select {
+      display: none !important;
+    }
+  }
+}

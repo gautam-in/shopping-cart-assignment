@@ -1,0 +1,75 @@
+@import "../../styles/variables";
+.cart {
+  &Overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #00000090;
+    z-index: 9999;
+  }
+  &Container {
+    position: relative;
+    height: 100%;
+  }
+  &Card {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 360px;
+    max-width: 100%;
+    background: $light-gray-1;
+    top: 100px;
+    z-index: 9;
+    border-radius: 0.1rem 0.1rem 0 0;
+  }
+  &Header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: $text-color;
+    color: white;
+    padding: 1rem;
+    border-radius: inherit;
+    .close {
+      cursor: pointer;
+      padding: 0.3rem;
+      box-sizing: content-box;
+    }
+  }
+  &Title {
+    font-weight: 500;
+    margin-bottom: 0;
+  }
+  &Body {
+    padding: 0.5rem 0;
+    overflow-y: auto;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &Banner {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    background: white;
+    font-size: 0.65rem;
+    margin: 0.5rem;
+    width: calc(100% - 1rem);
+    img {
+      max-width: 100px;
+    }
+    * + * {
+      margin-left: 0.5rem;
+    }
+  }
+  &Footer {
+    flex-shrink: 0;
+    padding: 0.5rem;
+    border-top: 1px solid #00000020;
+  }
+}
