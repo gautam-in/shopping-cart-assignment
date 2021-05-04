@@ -2,7 +2,6 @@ import { HttpClient, JsonpClientBackend } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
-import { ICategory } from 'src/models/category.model';
 import { IUser } from 'src/models/user.model';
 import { AppService } from '../shared/services/app.service';
 import { UserService } from '../user/user.service';
@@ -38,17 +37,10 @@ export class AuthService {
     });
   }
 
-  fetchCategories() {
-    this._http.get('server/categories/index.get.json').subscribe((data) => {
-      this.categories = data;
-      this.categories = this.categories.sort((a, b) => {
-        return a.order - b.order;
-      });
-      return this.categories;
-    });
-  }
-
+ 
   isUserAlreadyExist(user): any {
+
+    // return this._userService.getLoggedInUser(user);
     let exist = false;
     exist = this._userService.getLoggedInUser(user);
     return exist;
@@ -56,9 +48,9 @@ export class AuthService {
 
   isLoggedInUser(user): any {
     let status = Status.wrongEmail;
-    this.existingUser = this._userService.getRegisteredUsers();
+    this.existingUser = this._userService.getRegisteredUsers(); //existingUsers
     if (this.existingUser && this.existingUser != null) {
-      let accountExist = this.existingUser.find((u) => {
+      let accountExist = this.existingUser.find((u) => {  // accountExists
         if (u.email == user.email) {
           return u;
         }

@@ -16,14 +16,8 @@ export class CarouselComponent implements OnInit {
     this.getBanners();
   }
   getBanners() {
-    this._appService.getBanners().subscribe(
-      (data) => {
-        this.bannerList = data;
-      },
-      (error) => {
-        console.log('error occured', error);
-        this.isErrorOccured = true;
-      }
-    );
+    this._appService.getBanners().subscribe((data : IBanner[]) => {
+      this.bannerList = data;
+    });
   }
 }

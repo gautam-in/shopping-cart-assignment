@@ -25,9 +25,8 @@ export class ProductNavComponent implements OnInit {
   }
 
   fetchCategories() {
-    this._appService.getCatagories().subscribe((data) => {
+    this._appService.getCatagories().subscribe((data : ICategory[]) => {
       this.categories = data;
-      this._productService.category = data;
       this.categoryList = this.categories.sort((a, b) => {
         return a.order - b.order;
       });
@@ -35,7 +34,7 @@ export class ProductNavComponent implements OnInit {
   }
 
   getProductByCategory(id: String) {
-    this._route.navigate(['/products/list', id]);
+   this._route.navigate(['/products', id]);
   }
 
   selectValue(catgory: ICategory) {

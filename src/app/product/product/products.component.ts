@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Params } from '@angular/router';
+import { AppService } from 'src/app/shared/services/app.service';
 import { CartService } from 'src/app/shared/services/cart/cart.service';
 import { IProduct } from 'src/models/product.model';
 
@@ -10,21 +11,43 @@ import { IProduct } from 'src/models/product.model';
 })
 export class ProductsComponent implements OnInit {
   products: IProduct[] = [];
+  totalProducts: IProduct[] = [];
+  categoryId : string
 
   constructor(
+    private _cartService: CartService,
+    private _appService: AppService,
     private _activatedroute: ActivatedRoute,
-    private _cartService: CartService
   ) {}
 
   ngOnInit(): void {
-    this.fetchProduct(this._activatedroute.snapshot.data['productDetail']);
+    this._activatedroute.params.subscribe((params: Params) => {
+      this.categoryId = params['id'];
+      this.fetchProducts();
+    });
   }
 
-  fetchProduct(data) {
-    if (data.length > 0) {
+  fetchProducts() : any {
+    this._appService.getProducts().subscribe((data : IProduct[]) => {
       this.products = data;
+      if(this.categoryId){
+        this.getFilteredList(this.products)
+      }
+    });
+  }
+
+  getFilteredList(products: IProduct[]) {
+    let prod = [];
+    if (products.length > 0) {
+      products.forEach((product) => {
+        if (product.category === this.categoryId) {
+          prod.push(product);
+        }
+      });
+      this.products = prod;
     }
   }
+
 
   buyProduct(product: IProduct) {
     this._cartService.addProductToCart(product);

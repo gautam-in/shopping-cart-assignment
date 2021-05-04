@@ -23,7 +23,8 @@ export class CartService {
       this.itemInCart = p;
     });
   }
-
+//make fields optional 
+//refactor this code
   addProductToCart(product) {
     this.getSubscribedCartList();
 

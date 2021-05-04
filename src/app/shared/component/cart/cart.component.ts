@@ -19,6 +19,8 @@ export class CartComponent implements OnInit {
     private _modalService: NgbModal,
     private _route: Router
   ) {}
+
+  // make one component for cart in stead of two .. show it based on condition.
   ngOnInit(): void {
     this.getCartList();
   }
