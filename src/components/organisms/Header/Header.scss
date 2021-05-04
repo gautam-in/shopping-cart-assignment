@@ -2,6 +2,7 @@
 
 header {
   position: sticky;
+  z-index: 10;
   top: 0;
   background-color: $white-color;
   @extend headerBoxShadow;
@@ -16,7 +17,6 @@ header {
 .navbar {
   @extend transitions;
   position: absolute;
-  z-index: 5;
   top: 61px;
   width: 100%;
   ul {

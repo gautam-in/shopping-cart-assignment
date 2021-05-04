@@ -1,0 +1,58 @@
+@import '../../../styles/global';
+
+.card-wrap {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: calc(100% - 10px);
+  margin: $ms;
+  padding: 20px 0 40px;
+  background: $white-color;
+  &:nth-child(even) {
+    flex-direction: row-reverse;
+  }
+  &::after {
+    @extend cardShadow;
+  }
+  .image-wrap {
+    width: 35%;
+  }
+  .text-wrap {
+    width: 60%;
+    text-align: center;
+    color: $black-color;
+    h1 {
+      font-size: $semi-large-font;
+      font-weight: 800;
+    }
+    p {
+      margin: $m auto;
+      font-size: $small-font;
+      font-weight: 600;
+    }
+    .explore-btn {
+      @extend button;
+      padding: $small-vert-padding;
+      font-size: $small-font;
+    }
+  }
+}
+
+@media only screen and (min-width: $tab) {
+  .card-wrap {
+    padding: 30px 0 60px;
+    .text-wrap {
+      h1 {
+        font-size: $large-font;
+      }
+      p {
+        margin: $mm auto;
+        font-size: $medium-font;
+      }
+      .explore-btn {
+        font-size: $medium-font;
+      }
+    }
+  }
+}

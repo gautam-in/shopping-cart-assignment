@@ -37,7 +37,7 @@ const CartItem = React.memo(({ product, onClick }) => {
 });
 
 CartItem.propTypes = {
-  product: PropTypes.isRequired,
+  product: PropTypes.object.isRequired,
   onClick: PropTypes.func.isRequired
 };
 export default CartItem;
