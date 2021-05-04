@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import CategoryCard from '../../molecules/CategoryCard';
+import CategoryCard from '../../atoms/CategoryCard';
 import { fetchCategoriesDataRequest } from '../../../redux/actions';
 import { allCategoriesData } from '../../../redux/selector';
 

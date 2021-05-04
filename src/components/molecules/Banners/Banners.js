@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import Carousel from '../../molecules/Carousel';
+import Carousel from '../../atoms/Carousel';
 import { fetchBannersDataRequest } from '../../../redux/actions';
 import { allBannersData } from '../../../redux/selector';
 

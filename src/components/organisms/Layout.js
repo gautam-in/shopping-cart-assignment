@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 
-import Header from '../organisms/Header';
-import Footer from '../organisms/Footer';
-import CartDrawer from '../organisms/CartDrawer';
+import Header from '../molecules/Header';
+import Footer from '../molecules/Footer';
+import CartDrawer from '../molecules/CartDrawer';
 import Routes from './Routes';
 import '../../styles/_global.scss';
 

@@ -8,7 +8,7 @@ import { faTimes, faGreaterThan, faPlus, faMinus } from '@fortawesome/free-solid
 import { cartProductQuantity, removeCartProduct } from '../../../redux/actions';
 import { allCartData } from '../../../redux/selector';
 import LowestPriceTag from '../../../../static/images/lowest-price.png';
-import CartItem from '../../molecules/CartItem';
+import CartItem from '../../atoms/CartItem';
 import './CartDrawer.scss';
 
 const CartDrawer = React.memo(({ isOpen, toogleCart }) => {
