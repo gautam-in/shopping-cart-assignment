@@ -1,12 +1,15 @@
 .footer {
   background-color: rgb(236, 230, 230);
   padding: 10px 10px 10px 50px;
+  font-weight: 600;
+  font-size: 12px;
 }
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
   .footer {
     font-size: 10px;
+    font-weight: 600;
     padding: 5px 5px 5px 25px;
   }
 }

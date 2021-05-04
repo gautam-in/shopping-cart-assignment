@@ -63,6 +63,7 @@
 
   .name-des {
     font-size: 13px;
+    font-weight: 700;
   }
 }
 
@@ -75,21 +76,23 @@
   .category {
     margin: 0;
     .category-row {
+      margin-bottom: 0;
       img {
-        width: 10rem;
+        width: 15rem;
       }
     }
   }
 
   .main-heading {
-    font-size: 15px;
+    font-size: 25px;
   }
 
   .name-des {
-    font-size: 10px;
+    font-size: 14px;
+    font-weight: 700;
   }
   .action-btn {
-    font-size: 0.7rem;
+    font-size: 0.9rem;
     margin-bottom: 35px;
   }
 }
@@ -101,20 +104,22 @@
     margin: 0;
     .category-row {
       img {
-        width: 6rem;
+        width: 8rem;
+        padding-top: 1rem;
       }
     }
   }
 
   .main-heading {
-    font-size: 9px;
+    font-size: 15px;
+    font-weight: 900;
   }
 
   .name-des {
-    font-size: 6px;
+    font-size: 11px;
   }
   .action-btn {
-    font-size: 0.4rem;
+    font-size: 0.8rem;
     margin-bottom: 18px;
   }
 }

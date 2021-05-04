@@ -10,8 +10,8 @@
 html,
 body {
   font-size: 15px;
-  font-weight: 800;
-  font-family: "Dosis", Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  font-family: "Dosis";
   background-color: white;
   text-rendering: optimizeLegibility;
   /* The text-rendering property in CSS allows you to choose quality of text over speed (or vice versa) allowing you to fine tune optimization by suggesting to the browser as to how it should render text */
@@ -23,7 +23,7 @@ body {
   font-weight: bolder;
 }
 
-.LoginRegText {
+.login-reg-text {
   height: 100%;
   float: left;
   padding: 2% 0;
@@ -32,7 +32,7 @@ body {
 
 .action-btn {
   width: 100%;
-  font-size: 70%;
+  font-size: 80%;
   background-color: $mergenta !important;
   color: white !important;
   border: 0;
@@ -53,15 +53,22 @@ a {
 // LOGIN and SIGNUP Page CSS
 //------------------------------------------------
 
-.LoginRegText {
+.login-reg-text {
   padding-left: 15%;
+  margin-left:12rem;
 
   .title {
     font-size: 25px;
+    font-weight: 800;
   }
   .title-description {
     font-size: 15px;
   }
+}
+
+.login-reg-form{
+  // margin-left:-3rem;
+  margin-left: -8rem !important;
 }
 
 .form-group label,
@@ -83,7 +90,7 @@ input:focus {
   margin-top: 10px;
 }
 /* Importing Bootstrap SCSS file. */
-@import "~bootstrap/scss/bootstrap";
+//@import "~bootstrap/scss/bootstrap";
 
 html,
 body {
@@ -91,8 +98,8 @@ body {
 }
 body {
   margin: 0;
-  font-family: Dosis, "Helvetica Neue", sans-serif;
+  font-family: "Dosis", ;
 }
 
 /* Importing Bootstrap SCSS file. */
-@import "~bootstrap/scss/bootstrap";
+//@import "~bootstrap/scss/bootstrap";

@@ -1,16 +1,16 @@
 @import "../../../assets/scss/color.scss";
 .nav a {
   color: grey;
-  border-bottom: 1px solid rgb(221, 218, 218);
+  border-bottom: 2px solid rgb(224, 220, 220);
   font-size: 80%;
-  padding: 20px 0px;
+  padding: 12px 0px;
 }
 
 .nav a button {
   border: 0;
   background-color: $grey;
-  color: rgb(168, 161, 161);
-  font-weight: 1000;
+  color: rgb(133, 131, 131);
+  font-weight: 600;
 }
 
 .product-dropdown {

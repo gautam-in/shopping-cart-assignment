@@ -1,6 +1,8 @@
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
-  .LoginRegText {
+  .login-reg-text {
+    margin-left: 0;
+    padding-left:2%;
     .title {
       font-size: 25px;
     }
@@ -11,12 +13,18 @@
   Form {
     padding-right: 0;
   }
+
+  .login-reg-form{
+    margin-left:0 !important;
+  }
 }
 
 @media only screen and (max-width: 767px) {
   .register-row {
     display: block;
-    .LoginRegText {
+    .login-reg-text {
+      margin-left: 0;
+      padding-left:5%;
       .title {
         font-size: 20px;
       }
@@ -28,5 +36,9 @@
 
   form {
     max-width: 100%;
+  }
+
+  .login-reg-form{
+    margin-left:0 !important;
   }
 }
