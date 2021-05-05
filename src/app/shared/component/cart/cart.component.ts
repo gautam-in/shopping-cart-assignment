@@ -1,8 +1,6 @@
 import { Component, Inject, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import {
-  ModalDismissReasons,
-  NgbActiveModal,
   NgbModal,
 } from '@ng-bootstrap/ng-bootstrap';
 import { IProduct } from 'src/models/product.model';
@@ -29,13 +27,13 @@ export class CartComponent implements OnInit {
   }
 
   getCartList() {
-      this.cartList = this._cartService.itemInCart;
-      this.totalAmountOfProduct();
-      if (this.cartList.length == 0) {
-        this._modalService.open(EmptyCartComponent, {
-          ariaLabelledBy: 'cartTitle',
-        });
-      }
+    this.cartList = this._cartService.itemInCart;
+    this.totalAmountOfProduct();
+    if (this.cartList.length == 0) {
+      this._modalService.open(EmptyCartComponent, {
+        ariaLabelledBy: 'cartTitle',
+      });
+    }
   }
 
   addProductsToCart(product: IProduct) {
@@ -55,6 +53,8 @@ export class CartComponent implements OnInit {
   startShopping() {
     this._route.navigate(['/home']);
   }
-  
-  resetCart() {}
+
+  resetCart() {
+    this._route.navigate(['/home']);
+  }
 }

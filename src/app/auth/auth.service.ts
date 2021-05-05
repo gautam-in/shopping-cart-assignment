@@ -16,12 +16,8 @@ enum Status {
   providedIn: 'root',
 })
 export class AuthService {
-  categories: any = [];
-  existingUser: IUser[] = [];
-  isValidUser: boolean = false;
-
+  existingUsers: IUser[] = [];
   constructor(
-    private _http: HttpClient,
     private _appService: AppService,
     private _userService: UserService,
     private _router: Router
@@ -39,27 +35,22 @@ export class AuthService {
 
  
   isUserAlreadyExist(user): any {
-
-    // return this._userService.getLoggedInUser(user);
-    let exist = false;
-    exist = this._userService.getLoggedInUser(user);
-    return exist;
+     return this._userService.getLoggedInUser(user);
   }
 
   isLoggedInUser(user): any {
     let status = Status.wrongEmail;
-    this.existingUser = this._userService.getRegisteredUsers(); //existingUsers
-    if (this.existingUser && this.existingUser != null) {
-      let accountExist = this.existingUser.find((u) => {  // accountExists
+    this.existingUsers = this._userService.getRegisteredUsers(); 
+    if (this.existingUsers && this.existingUsers != null) {
+      let userExist = this.existingUsers.find((u) => { 
         if (u.email == user.email) {
           return u;
         }
       });
-      if (accountExist && accountExist.email) {
-        if (accountExist.password == user.password) {
+      if (userExist && userExist.email) {
+        if (userExist.password == user.password) {
           status = Status.validUser;
-          this._userService.setLoggedInUser(accountExist);
-          this.isUserAuthenticated();
+          this._userService.setLoggedInUser(userExist);
         } else {
           status = Status.wrongPassword;
         }
@@ -72,15 +63,7 @@ export class AuthService {
 
   logout(): void {
     this._appService.removeLocalItem('loggedInUser');
-    this.isUserAuthenticated();
     this._router.navigateByUrl('/auth/login');
   }
 
-  isUserAuthenticated() {
-    if (this._userService.getSignedInUser()) {
-      this._userService.setUser(true);
-    } else {
-      this._userService.setUser(false);
-    }
-  }
 }

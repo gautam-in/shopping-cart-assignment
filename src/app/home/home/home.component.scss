@@ -1,7 +1,9 @@
-
-@media only screen and (max-width: 768px) {
-.main-container{
-    padding:0;
+.main-container {
+  min-height: 40rem;
 }
 
+@media only screen and (max-width: 768px) {
+  .main-container {
+    padding: 0;
+  }
 }

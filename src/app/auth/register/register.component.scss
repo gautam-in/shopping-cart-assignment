@@ -2,7 +2,7 @@
 @media only screen and (min-width: 768px) {
   .login-reg-text {
     margin-left: 0;
-    padding-left:2%;
+    padding-left: 13rem !important;
     .title {
       font-size: 25px;
     }
@@ -14,8 +14,8 @@
     padding-right: 0;
   }
 
-  .login-reg-form{
-    margin-left:0 !important;
+  .login-reg-form {
+    margin-left: 0 !important;
   }
 }
 
@@ -24,7 +24,7 @@
     display: block;
     .login-reg-text {
       margin-left: 0;
-      padding-left:5%;
+      padding-left: 1rem !important;
       .title {
         font-size: 20px;
       }
@@ -38,7 +38,7 @@
     max-width: 100%;
   }
 
-  .login-reg-form{
-    margin-left:0 !important;
+  .login-reg-form {
+    margin-left: 0 !important;
   }
 }

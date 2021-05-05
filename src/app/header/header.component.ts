@@ -31,8 +31,6 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit(): void {
     this.getUser();
-   
-
     this.productsInCart = this._cartService.itemInCart;
   }
 

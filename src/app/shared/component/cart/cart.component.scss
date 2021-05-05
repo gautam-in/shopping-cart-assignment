@@ -98,11 +98,15 @@
         }
       }
       .cart-description {
-        width: 85%;
-        .card-title {
-          font-size: 1.1rem;
-          font-weight: 600;
+        width: 80%;
+        .card-body{
+          padding: 3.25rem;
+          .card-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+          }
         }
+      
       }
     }
 
@@ -124,7 +128,8 @@
   .item-price,
   .item-total-price,
   .count {
-    font-size: 1rem;
+    margin: 0 5px;
+    font-size: 1.3rem;
   }
 }
 
@@ -165,13 +170,8 @@
   }
 
   .cart-footer {
-    .promo-code {
-      font-size: 0.7rem;
-    }
-
-    .checkout-text {
-      font-size: 0.7rem;
-    }
+    .promo-code,
+    .checkout-text,
     .checkout-price {
       font-size: 0.7rem;
     }
@@ -204,7 +204,7 @@
       .cart-description {
         width: 75%;
         .card-title {
-          font-size: 0.7rem;
+          font-size: 0.7rem !important;
           font-weight: 500;
         }
       }
@@ -214,14 +214,10 @@
   .item-price,
   .item-total-price,
   .count {
-    font-size: 0.7rem;
+    font-size: 0.7rem !important;
   }
 
   .icon-action {
     font-size: 1rem;
   }
 }
-
-
-
-

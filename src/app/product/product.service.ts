@@ -1,7 +1,4 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { AppService } from '../shared/services/app.service';
-import { CartService } from '../shared/services/cart/cart.service';
 import { IProduct } from '../../models/product.model';
 
 @Injectable({

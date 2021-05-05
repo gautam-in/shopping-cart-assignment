@@ -1,15 +1,11 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
-import { IProduct } from 'src/models/product.model';
-import { AppService } from '../app.service';
-
 @Injectable({
   providedIn: 'root',
 })
 export class CartService {
   itemInCart: any = [];
 
-  constructor(private _appService: AppService) {}
+  constructor() {}
 
   addProductToCart(product) {
     if (this.itemInCart != null && this.itemInCart.length > 0) {

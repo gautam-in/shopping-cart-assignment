@@ -1,47 +1,54 @@
 @import "../../../../assets/scss/color.scss";
 
-.card-img{
-  width: inherit;
-  height: inherit;
+.card {
+  background-color: $grey;
+  min-height: 25rem;
+  margin-bottom: 0rem !important;
+  box-shadow: 0 1px 1px $grey;
+  .card-img {
+    width: inherit;
+    height: inherit;
+  }
 }
 
 .modal-header {
   background-color: $black;
   color: $white;
   .close {
-      background-color: black;
-      border: none;
-      color: white;
-      font-size: 25px;
-      border: none;
+    background-color: black;
+    border: none;
+    color: white;
+    font-size: 25px;
+    border: none;
   }
 }
 .modal-body {
   height: 500px;
-  background-color: $grey;
+  background-color: $white;
   .cart-body {
-      text-align: center;
-      margin-top: 30%;
+    text-align: center;
+    margin-top: 30%;
   }
 }
 .modal-footer {
   .footer-section {
-      width: 100%;
+    width: 100%;
   }
 }
 
 .cart-offer {
   margin: 10px;
   display: flex;
+  margin: 1rem 0;
   .offer-img {
-      flex: 1;
-      .offer-image{
-          width: auto;
-          height: auto;
-      }
+    flex: 1;
+    .offer-image {
+      width: auto;
+      height: auto;
+    }
   }
   .offer-text {
-      flex: 1;
+    flex: 1;
   }
 }
 
@@ -61,31 +68,77 @@
 .common-btn {
   width: 100%;
   .checkout-text {
-      float: left;
+    float: left;
   }
   .checkout-price {
-      float: right;
+    float: right;
   }
 }
 
 @media screen and (max-width: 768px) {
   .no-gutters {
-      text-align: center;
-      .card-img {
-          width: 70%;
-          height: auto;
+    margin: .5rem 0;
+    text-align: center;
+    background-color: white;
+    .card-img {
+      width: 25%;
+      height: auto;
+      margin: 1rem -5rem;
+    }
+    .cart-description {
+      flex: 1;
+      .card-body {
+        margin-left: -1rem;
+        .card-title {
+          font-weight: 700;
+          font-size: 14px;
+        }
       }
+    }
+  }
+
+  .cart-offer {
+    margin: .5rem 0;
+    background-color: $white;
+    .offer-image {
+      width: 6rem !important;
+      padding-top: 1rem;
+    }
+    .offer-text {
+      margin-left: -6rem;
+      font-size: 15px;
+      font-weight: 600;
+      padding-top: 1rem;
+    }
+  }
+
+  .modal-footer {
+    padding: .5rem;
+    display: inline-block !important;
+    width: -webkit-fill-available;
+    .action-btn {
+      padding: 0.7rem;
+      font-size: 15px;
+    }
+    .promo{
+      margin-left: 4rem;
+      font-size: 12px;
+      font-weight: 600;
+    }
   }
 }
 
 @media screen and (max-width: 576px) {
   .no-gutters {
-      display: flex;
-      .cart-image {
-          flex: 1;
-      }
-      .cart-description {
-          flex: 1;
-      }
+    display: flex;
+    margin: .5rem 0;
+    background-color: white;
+    .cart-image {
+      flex: 1;
+      margin-right: -6rem;
+      margin-left: -6rem;
+    }
+    
+    
   }
 }

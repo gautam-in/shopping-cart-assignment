@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AppService } from 'src/app/shared/services/app.service';
 import { ICategory } from 'src/models/category.model';
-import { ProductService } from '../product.service';
 
 @Component({
   selector: 'app-product-nav',
@@ -14,9 +13,9 @@ export class ProductNavComponent implements OnInit {
   categories: ICategory[] = [];
   selectedValue: string = 'Select Category';
   selectedId: string;
+  
   constructor(
     private _appService: AppService,
-    private _productService: ProductService,
     private _route: Router
   ) {}
 

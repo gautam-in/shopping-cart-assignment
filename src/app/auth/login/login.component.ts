@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { AppService } from 'src/app/shared/services/app.service';
 import { AuthService } from '../auth.service';
 import { AppConstants } from 'src/app/constants';
 import { UserService } from 'src/app/user/user.service';
@@ -14,7 +13,6 @@ import { IUser } from 'src/models/user.model';
 })
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
-  existingUser: object = [];
   errormsg: string = '';
   errorUserExists: boolean = false;
   user: IUser;
@@ -81,7 +79,6 @@ export class LoginComponent implements OnInit {
     if (this.loginForm.valid) {
       let status = this._authService.isLoggedInUser(user);
       if (status == 'validUser') {
-        this._userService.setUser(true);
         this._router.navigate(['/home']);
       } else {
         if (status == 'wrongEmail') {

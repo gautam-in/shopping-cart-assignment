@@ -18,7 +18,7 @@ export class CategoryComponent implements OnInit {
   }
 
   fetchCategories() {
-    this._appService.getCatagories().subscribe((Categories : ICategory[]) => {
+    this._appService.getCatagories().subscribe((Categories: ICategory[]) => {
       Categories.forEach((category) => {
         if (category.enabled) {
           this.categories.push(category);
@@ -32,6 +32,5 @@ export class CategoryComponent implements OnInit {
 
   exploreProduct(id: String): void {
     this._route.navigate(['/products', id]);
-
   }
 }

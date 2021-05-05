@@ -9,16 +9,15 @@ import { CartService } from '../../services/cart/cart.service';
   templateUrl: './empty-cart.component.html',
   styleUrls: ['./empty-cart.component.scss'],
 })
-
-
 export class EmptyCartComponent implements OnInit {
-
   cartList: Array<{}> = [];
-  totalAmount : number
+  totalAmount: number;
 
-  constructor(private _route: Router, public modal: NgbActiveModal,
-    private _cartService: CartService,
-    ) {}
+  constructor(
+    private _route: Router,
+    public modal: NgbActiveModal,
+    private _cartService: CartService
+  ) {}
 
   ngOnInit(): void {
     this.getCartList();
@@ -26,7 +25,7 @@ export class EmptyCartComponent implements OnInit {
   }
 
   getCartList() {
-    this.cartList = this._cartService.itemInCart
+    this.cartList = this._cartService.itemInCart;
   }
 
   addProductsToCart(product: IProduct) {
