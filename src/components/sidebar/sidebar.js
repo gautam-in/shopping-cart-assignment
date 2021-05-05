@@ -47,7 +47,7 @@ const Sidebar = () =>{
                           <div className="sidebar" id="sidebarcategory">
                           {categoryList.map((d, i) => {
                             return (
-                            <a tabindex="0" role="button" aria-pressed="false" id={d.id} key={d.id} onClick={(event) => myCategory(event, d.id, 0)}>{d.name}</a>
+                            <a tabIndex="1" role="button" aria-pressed="false" id={d.id} key={d.id} onClick={(event) => myCategory(event, d.id, 0)}>{d.name}</a>
                             );
                           })}
                           </div>
@@ -60,7 +60,7 @@ const Sidebar = () =>{
                               <div className="dropdown-menu" aria-labelledby="dropdownMenuLink" id="dropdownitems">
                               {categoryList.map((d, i) => {
                                 return (
-                                <span className="dropdown-item"><a tabIndex="1" role="button" aria-pressed="false" id={d.id} key={d.id} onClick={(event) => myCategory(event, d.id, 1)}>{d.name}</a></span>
+                                <span className="dropdown-item" key={d.id}><a tabIndex="1" role="button" aria-pressed="false" id={d.id} key={d.id} onClick={(event) => myCategory(event, d.id, 1)}>{d.name}</a></span>
                                 );
                               })}
                               </div>

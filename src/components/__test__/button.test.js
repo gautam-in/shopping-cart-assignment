@@ -17,3 +17,7 @@ it("renders form correctly", () => {
     expect(getByTestId('button'));
 
 })
+it("matches snapshot", () => {
+    const tree = renderer.create(<Button></Button>).toJSON();
+    expect(tree).toMatchSnapshot();
+})

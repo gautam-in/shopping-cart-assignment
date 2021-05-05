@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'; 
-import "./product/_grid.scss"
-import "./button/_button.scss"
-import { getCategorydata } from "../store/actions";
+import "../product/_grid.scss"
+import "../button/_button.scss"
+import { getCategorydata } from "../../store/actions";
 import { useDispatch, useSelector } from 'react-redux';
 const Category = () =>
 {
@@ -11,7 +11,7 @@ const Category = () =>
     }, []);
     const categoryData = useSelector(state => state.indexReducer.categoryData);
     return (
-            <section className="carousel-section">
+            <section className="carousel-section" data-testid="category">
                 <div className="container" id="gridviewcontainer">
                     {categoryData.map((d, i) => {
                         if(i%2 === 0){

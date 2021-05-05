@@ -59,7 +59,7 @@ const Products = (props) =>
     }
   return (
     <>
-    <div className="flex-container" id="flexdata" aria-label="product List">
+    <div className="flex-container" id="flexdata" aria-label="product List" data-testid="product">
     {ProductFilteredData.map((d, i) => {
       return (
         <div className="flex-item" id={d.id} key={d.id} aria-label={d.name}>

@@ -12,7 +12,7 @@ it("renders without crashing", () => {
     ReactDom.render(<Input></Input>, div)
 })
 
-it("renders form correctly", () => {
+it("renders textbox correctly", () => {
     const { getByTestId } = render(<Input></Input>)
     expect(getByTestId('input'));
 

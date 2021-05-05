@@ -12,7 +12,7 @@ it("renders without crashing", () => {
     ReactDom.render(<Footer></Footer>, div)
 })
 
-it("renders form correctly", () => {
+it("renders element correctly", () => {
     const { getByTestId } = render(<Footer></Footer>)
     expect(getByTestId('footer'));
 

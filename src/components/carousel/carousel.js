@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import "./_carousel.scss"
 import {GetCarouseldata} from "../../store/actions";
 import { useDispatch, useSelector } from 'react-redux';
-const $ = window.$
 
 const Carousel = (props) =>
 {
@@ -52,7 +51,7 @@ const Carousel = (props) =>
                       </ol>
                     <div className="carousel-inner" id="carouseldata"> 
                     {carouselData.map((v, i) => (
-                      <div className={`carousel-item ${(i == 0) ? " active" : ""}`}  id={v.id} key={v.id}>
+                      <div className={`carousel-item ${(i === 0) ? " active" : ""}`}  id={v.id} key={v.id}>
                       <img className="d-block w-100" src={v.bannerImageUrl} alt={v.bannerImageAlt} />
                       </div>
                     ))}

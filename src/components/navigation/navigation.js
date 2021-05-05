@@ -26,7 +26,7 @@ const Navigation = (props) =>
                             </div>
                         </div>
                     </nav>
-                    <div id="mySidenav" class="mobilenav">
+                    <div id="mySidenav" className="mobilenav">
                         <Link to="/" aria-current="page" id="home">Home</Link>
                         <Link to="/products" id="product">Products</Link>
                         <Link to="/login" id="signin">SignIn</Link>

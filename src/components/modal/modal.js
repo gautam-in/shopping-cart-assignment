@@ -47,7 +47,7 @@ const Modal = (props) =>
   }
   return (
             <>
-                <div className="products">
+                <div className="products" data-testid="modal">
                 {cartList.map((d, i) => (
                     <div className="grid-container">
                             {d.product.map((d1, i) => (<>

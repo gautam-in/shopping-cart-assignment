@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDom from 'react-dom';
-import Navigation from "../navigation";
+import Modal from "../modal/modal";
 import { render, cleanup } from '@testing-library/react';
 import "@testing-library/jest-dom/extend-expect";
 import * as renderer from 'react-test-renderer';
@@ -9,15 +9,15 @@ afterEach(cleanup);
 
 it("renders without crashing", () => {
     const div = document.createElement("div");
-    ReactDom.render(<Navigation></Navigation>, div)
+    ReactDom.render(<Modal></Modal>, div)
 })
 
-it("renders links correctly", () => {
-    const { getByTestId } = render(<Navigation></Navigation>)
-    expect(getByTestId('navigation'));
+it("renders element correctly", () => {
+    const { getByTestId } = render(<Modal></Modal>)
+    expect(getByTestId('modal'));
 
 })
 it("matches snapshot", () => {
-    const tree = renderer.create(<Navigation></Navigation>).toJSON();
+    const tree = renderer.create(<Modal></Modal>).toJSON();
     expect(tree).toMatchSnapshot();
 })

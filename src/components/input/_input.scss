@@ -3,12 +3,12 @@
 .label-float{
     position: relative;
     padding-top: 5px;
-    margin-top: 5px;
+    margin: 10px 0px;
   }
   
   .label-float input{
     border: 0;
-    border-bottom: 2px solid lightgrey;
+    border-bottom: 2px solid $color-gray;
     outline: none;
     min-width: 180px;
     font-size: 16px;
@@ -18,11 +18,7 @@
     -webkit-appearance:none;
     border-radius:0;
     width: 100%;
-    padding: 10px;
-  }
-  
-  .label-float input:focus{
-    border-bottom: 2px solid #3951b2;
+    padding: 10px 0px 0px 0px;
   }
   
   .label-float input::placeholder{

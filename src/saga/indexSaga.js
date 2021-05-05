@@ -4,7 +4,7 @@ import * as actionType from "../store/actionType";
 import axios from 'axios';
 
 function getCarouselData () {
-    let carouselData = axios.get("../../server/banners/index.get.json")
+    let carouselData = axios.get("/server/banners/index.get.json")
     .then( response => {
         return response.data;
     })
@@ -14,7 +14,7 @@ function getCarouselData () {
     return carouselData;
 }
 function getCategoryData () {
-    let categoryData = axios.get("../../server/categories/index.get.json")
+    let categoryData = axios.get("/server/categories/index.get.json")
     .then( response => {
         return response.data.filter(function(x) { return x.enabled==true });
     })
@@ -24,7 +24,7 @@ function getCategoryData () {
     return categoryData;
 }
 function getProductData () {
-    let categoryData = axios.get("../../server/products/index.get.json")
+    let categoryData = axios.get("/server/products/index.get.json")
     .then( response => {
         return response.data;
     })
@@ -34,7 +34,7 @@ function getProductData () {
     return categoryData;
 }
 function getCartData () {
-    let cartData = axios.get("../../server/addToCart/index.post.json")
+    let cartData = axios.get("/server/addToCart/index.post.json")
     .then( response => {
        alert(response.data.responseMessage);
     })
