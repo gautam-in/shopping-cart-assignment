@@ -1,0 +1,66 @@
+.modal_design {
+  padding: 20px;
+  background: #fff;
+  border-radius: 2px;
+  display: inline-block;
+  position: relative;
+  min-width: 400px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  justify-self: center;
+  overflow: auto;
+  height: 80vh;
+}
+.checkout {
+  position: absolute;
+  width: 90%;
+  bottom: 10px;
+  background: red;
+  border: none;
+  padding: 10px 20px;
+  color: white;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.modal_riseup {
+  bottom: -600px;
+
+  animation: slideModal 0.5s forwards;
+  -webkit-animation: slideModal 0.5s forwards;
+}
+
+@-webkit-keyframes slideModal {
+  100% {
+    bottom: 0px;
+  }
+}
+
+@keyframes slideModal {
+  100% {
+    bottom: 0px;
+  }
+}
+
+.modal_godown {
+  bottom: 0px;
+  -webkit-animation-name: animatebottom;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatebottom;
+  animation-duration: 0.4s;
+  & .modal_design {
+    opacity: 0;
+  }
+}
+
+@keyframes animatebottom {
+  100% {
+    bottom: -600px;
+    opacity: 0;
+  }
+}
+
+/* @-webkit-keyframes animatebottom {
+  100% {
+    bottom: -600px;
+  }
+} */

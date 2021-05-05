@@ -7,11 +7,22 @@
   margin: 0 auto; */
 
   // desktop screens
-  @include mq($l-width) {
+  @include mq(desktop) {
     width: 80%;
     margin: 0 auto;
   }
 }
+
+.quantity_change_button {
+  display: inline-block;
+  background: red;
+  color: white;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
 .bottom_grad {
   text-align: center;
   //padding-bottom: 5px;
@@ -27,7 +38,7 @@
 
   height: 100%;
   // tablet screens
-  @include mq($s-width) {
+  @include mq(tab) {
     justify-content: space-between;
     height: calc(100% - 20px);
   }

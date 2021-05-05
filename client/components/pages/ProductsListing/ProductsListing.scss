@@ -1,0 +1,98 @@
+@import "/client/components/styles/variables";
+@import "/client/components/styles/mq-mixin";
+
+/*     width: 100%;
+    background-color: #b71d60;
+    color: white;
+    padding: 7px; */
+
+.home_container {
+  .categories_dropdown_mobile {
+    margin: 20px 0;
+    text-align: center;
+    /* padding: 10px; */
+    background-color: $pimary_bg_color;
+    /* color: white; */
+    cursor: pointer;
+    div {
+      display: none;
+      padding: 10px;
+    }
+    select {
+      display: inline-block;
+      width: 100%;
+      background-color: $pimary_bg_color;
+      color: white;
+      padding: 7px;
+      option {
+        width: 100%;
+      }
+      &:after {
+        color: red;
+        background-color: red;
+      }
+    }
+  }
+
+  .products_list {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .aside_filter {
+    text-decoration: none;
+    color: $bg-secondary-color;
+  }
+}
+
+// Medis-query CSS
+
+@include mq(tab) {
+  .home_container {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    .categories_dropdown_mobile {
+      margin: 0;
+      text-align: left;
+      padding: 10px;
+      background-color: $bg-secondary-color;
+      color: $font-secondary-color;
+
+      //min-width: 250px;
+      div {
+        display: block;
+        border-bottom: 1px solid $font-secondary-color;
+      }
+      select {
+        display: none;
+      }
+    }
+    .products_list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .product {
+      padding: 10px;
+    }
+    .aside_filter {
+      color: $font-secondary-color;
+    }
+  }
+}
+
+@include mq(desktop) {
+  .home_container {
+    .products_list {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}
+
+@include mq(big-desktop) {
+  .home_container {
+    .products_list {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+}

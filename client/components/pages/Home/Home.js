@@ -1,72 +1,125 @@
 import React, { useEffect, useState } from "react";
 
-import * as service from "./Home.service";
+import * as service from "../Home/Home.service";
 
 import "./Home.scss";
 
-function Home() {
-  const [productDetails, setProductDetails] = useState([]);
-  const [displayProductList, setDisplayProductList] = useState([]);
-  const [categoriesDetails, setCategoriesDetails] = useState([]);
+const intialState = {
+  data: [],
+  loading: false,
+  error: false,
+};
 
-  useEffect(() => {
+function Home(props) {
+  const [offers, setOffers] = useState([]);
+  const [carouselCurrentIndex, setCarouselCurrentIndex] = useState(-1);
+
+  const getOffers = () => {
+    /* getOffersForCarousel({ ...intialState, loading: true }); */
     service
-      .getProducts()
+      .getOffersForCarousel()
       .then((data) => {
-        setProductDetails(data);
-
-        filterProductsBasedOnCategory("5b6899953d1a866534f516e2", data);
+        setOffers(data);
+        setCarouselCurrentIndex(0);
+        /* setProductDetails({ ...intialState, data, loading: false }); */
       })
-      .catch((err) => console.log("ERROR detected fetching products", err));
-
-    service
-      .getCategories()
-      .then((data) => {
-        //Filtering only enabled
-        let temp = data.filter((category) => category.enabled);
-        //Sorting based on order
-        temp.sort((a, b) => a.order - b.order);
-        setCategoriesDetails(temp);
-      })
-      .catch((err) => console.log("ERROR detected fetching categories", err));
-  }, []);
-
-  const filterProductsBasedOnCategory = (id, products) => {
-    setDisplayProductList(() =>
-      products.filter((product) => product.category === id)
-    );
+      .catch((err) => {
+        console.log("ERROR detected fetching products", err);
+        /*  setProductDetails({ ...intialState, loading: false, error: true }); */
+      });
   };
 
+  const prevCarouselImg = () => {
+    setCarouselCurrentIndex((prev) => {
+      if (prev === 0) return offers.length - 1;
+      return prev - 1;
+    });
+  };
+
+  const nextCarouselImg = () => {
+    setCarouselCurrentIndex((prev) => {
+      if (prev === offers.length - 1) return 0;
+      return prev + 1;
+    });
+  };
+
+  useEffect(() => {
+    /* dispatch(fetchProducts()); */
+    /* getProductsList(); */
+    getOffers();
+  }, []);
+
+  useEffect(() => {
+    const interval = setTimeout(() => {
+      nextCarouselImg();
+    }, 2000);
+    return () => clearInterval(interval);
+  }, [carouselCurrentIndex]);
+
   return (
-    <div className="home_container">
-      <div className="categories_dropdown_mobile">
-        {categoriesDetails.map((category) => (
-          <div
-            key={category.id}
-            onClick={() =>
-              filterProductsBasedOnCategory(category.id, productDetails)
-            }
+    <div
+      className=""
+      style={
+        {
+          //height: "250px"
+        }
+      }
+    >
+      {carouselCurrentIndex > -1 && (
+        <div
+          style={{
+            position: "relative",
+            display: "flex",
+            alignItems: "center",
+          }}
+        >
+          <button
+            className="carousel__buttton carousel__buttton--left"
+            onClick={prevCarouselImg}
           >
-            {category.name}
-          </div>
-        ))}
-      </div>
-      <div className="products_list">
-        {displayProductList.map(
-          ({ id, name, description, imageURL, price, stock }) => (
-            <div key={id} className="product">
-              {name}
-              <div className="flexed">
-                <img src={imageURL} alt={name} width="40%" height="auto" />
-                <section>
-                  <div>{description}</div>
-                  <span>Buy now @Rs.{price}</span>
-                </section>
-              </div>
+            &#10094;
+          </button>
+          <button
+            className="carousel__buttton carousel__buttton--right"
+            onClick={nextCarouselImg}
+          >
+            &#10095;
+          </button>
+          <div className="wrapper">
+            <img
+              className="carousel_image_easein"
+              key={offers[carouselCurrentIndex]?.id}
+              src={offers[carouselCurrentIndex]?.bannerImageUrl}
+              alt={offers[carouselCurrentIndex]?.bannerImageAlt}
+            />
+            <div
+              className="flexed_jc_sb width_full"
+              style={{
+                position: "absolute",
+                bottom: "15px",
+              }}
+            >
+              {offers.map((offer, index) => (
+                <div
+                  key={offer.id}
+                  className="carousel_tracker"
+                  style={{
+                    width: "10px",
+                    height: "10px",
+                    display: "inline-block",
+                    background:
+                      carouselCurrentIndex === index ? "#8c8c8c" : "#e0e0e0",
+                    borderRadius: "50%",
+                    marginRight: "26px",
+                    cursor: "pointer",
+                  }}
+                  onClick={() => setCarouselCurrentIndex(index)}
+                ></div>
+              ))}
             </div>
-          )
-        )}
-      </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

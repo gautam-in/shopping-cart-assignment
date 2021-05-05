@@ -1,14 +1,16 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import "./CartButton.scss";
 /* import { cart } from "/client/static/index"; */
 
 import cart from "/static/images/cart.svg";
 
-function CartButton() {
+function CartButton({ handleOpen }) {
+  const itemsCount = useSelector((state) => state.addItems.itemsCount);
   return (
-    <button className="cart_button">
+    <button className="cart_button" onClick={handleOpen}>
       <img src={cart} alt="Cart" className="cart_img" />
-      <span>0 items</span>
+      <span>{itemsCount} items</span>
     </button>
   );
 }

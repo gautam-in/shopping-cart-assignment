@@ -1,21 +1,26 @@
-// font colors
-$primary-black: #000000;
-$primary-grey: hsla(0, 0%, 80%, 0.51);
-
+// basic site color
 $pimary_bg_color: #b71d60;
 
-$primary-font-size: 14px;
+//background colors
+$bg-primary-color: #ffffff;
+$bg-secondary-color: hsla(0, 0%, 80%, 0.51);
 
-$secondary-color: #efefef;
-$white-color: #ffffff;
-$pink-color: #e83583;
-$light-blue: #00ffe7;
-$border-color: #ccc;
-
+//font colors
+$primary-black: #000000;
 $font-primary-color: #363636;
 $font-secondary-color: #6e6e6e;
-// responsive size
 
+//font sizes
+$primary-font-size: 14px;
+
+// button color
+$button-bg-color: #ce0e55;
+
+// form label
+$lbl-primary-color: #1ad1e3;
+$lbl-secondary-color: grey;
+
+// responsive size
 /* Small devices (portrait tablets and large phones, 600px and up) */
 $s-width: 600px;
 /* Medium devices (landscape tablets, 768px and up) */
@@ -25,18 +30,14 @@ $l-width: 992px;
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 $xl-width: 1200px;
 
-// font sizes
-$primary-font-size: 1rem;
-
-// button
-$button-bg-color: #ce0e55;
-
-// form label
-$lbl-primary-color: #1ad1e3;
-$lbl-secondary-color: grey;
+/* $secondary-color: #efefef;
+$white-color: #ffffff;
+$pink-color: #e83583;
+$light-blue: #00ffe7;
+$border-color: #ccc; */
 
 // the :export directive is the magic sauce for webpack
 :export {
   primaryBlack: $primary-black;
-  primaryGrey: $primary-grey;
+  primaryGrey: bg-secondary-color;
 }

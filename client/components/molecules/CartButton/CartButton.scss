@@ -11,7 +11,7 @@
   border: 0;
 
   // tablet screens
-  @include mq($s-width) {
+  @include mq(tab) {
     height: 100%;
   }
 }
