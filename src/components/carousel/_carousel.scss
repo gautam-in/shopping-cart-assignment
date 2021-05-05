@@ -1,0 +1,32 @@
+@import "../../sass/_mainStyle";
+
+.carousel {
+    box-shadow: 0 5px 5px $shadow;
+  }
+  .carousel-indicators li {
+    display: $display1;
+    @include htwd(10px, 10px);
+    text-indent: -999px;
+    border: 1px solid $color-white;
+    border-radius: 10px;
+    cursor: $cursor;
+    @include backgroundClr($color-gray);
+  }
+  
+  .carousel-indicators .active {
+    @include backgroundClr($color-black !important);
+  }
+  
+  .carousel-inner img {
+    @include htwd($width, 50vh);
+  }
+  
+  .carousel-control-next, .carousel-control-prev {
+    justify-content: normal !important;
+    width: inherit !important;
+  
+    & span {
+      padding: 15px;
+      @include backgroundClr($shadow);
+    }
+  }

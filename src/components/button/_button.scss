@@ -1,0 +1,20 @@
+@import "../../sass/_mainStyle";
+
+.btn-dark, .btn-success {
+    @include backgroundClr($theme-color !important);
+    cursor: $cursor;
+}
+  
+.btnwid {
+    width: $width;
+    cursor: $cursor;
+    font-size: 10px;
+}
+
+@media only screen and (max-width: 450px) {
+  .btn-dark
+  {
+    font-size: 10px !important;
+  }
+}
+  

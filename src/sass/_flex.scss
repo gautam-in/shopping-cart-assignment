@@ -1,0 +1,13 @@
+@import "_mainStyle";
+
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: $text;
+}
+  
+.flex-item {
+    padding: 10px;
+    flex: $width / 4;
+    max-width: $width / 4;
+}

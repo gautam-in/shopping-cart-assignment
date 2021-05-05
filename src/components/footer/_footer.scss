@@ -1,0 +1,15 @@
+@import "../../sass/_mainStyle";
+
+footer {
+  margin-top: 10px;
+  text-align: left;
+  padding-left: 150px;
+  padding-right: 150px;
+}
+@media only screen and (max-width: 600px) {
+  footer {
+    text-align: $text;
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+}

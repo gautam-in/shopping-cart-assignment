@@ -1,0 +1,36 @@
+@import "_mainStyle";
+
+.cart-logo1
+{
+    @include htwd(50px, 50px);
+}
+.cart-alter
+{
+    margin: 10px
+}
+.cart-back
+{
+    @include backgroundClr($color-white);
+    margin: 20px 0px;
+    padding: 20px 5px;
+}
+.cart-footer
+{
+    position: fixed;
+    bottom: 0;
+    width: $width;
+    @include backgroundClr($color-white);
+    text-align: $text;
+}
+@media only screen and (max-width: 1090px) {
+    .cart-logo1
+    {
+        @include htwd(150px, 150px);
+    }
+}
+@media only screen and (max-width: 530px) {
+    .cart-logo1
+    {
+        @include htwd(50px, 50px);
+    }
+}
