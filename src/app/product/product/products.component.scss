@@ -26,8 +26,9 @@
   .product-body {
     border-bottom: 3px dashed $grey;
     padding: 0;
+    height: 90%;
     .product-title {
-      font-size: 1rem;
+      font-size: 1.1rem;
       font-weight: 700;
       height: 5rem;
     }
@@ -42,6 +43,7 @@
       padding: 8px 7px;
       overflow: hidden;
       text-overflow: ellipsis;
+      font-weight: 600;
     }
     .product-footer {
       margin-bottom: 3rem;
@@ -49,12 +51,13 @@
       .big-screen {
         width: 100%;
         .product-price {
-          font-size: 10px;
+          font-size: 12px;
+          font-weight: 600;
           width: 50%;
           padding-top: 20px;
         }
         .product-buy {
-          font-size: 10px;
+          font-size: 13px;
           float: right;
           background-color: $mergenta;
           margin-block: -28px;
