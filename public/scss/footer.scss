@@ -1,0 +1,20 @@
+@import 'colors';
+@import 'breakpoints';
+
+/* ------- Footer -------- */
+footer {
+  background-color: $color-grey;
+  padding: 10px 0;
+  text-align: center;
+  p {
+    padding: 0px;
+  }
+}
+
+/* ------- Responsive Screens -------- */
+@media screen and (min-width: $break-medium){
+  footer {
+    text-align: left;
+    // font-size: 120%;
+  }
+}

@@ -1,0 +1,58 @@
+/* ------ Login Page -------*/
+.login-info form,
+.register-info form {
+  width: 100%;
+  margin: 0px auto; }
+
+.login-info__heading,
+.register-info__heading {
+  text-align: center; }
+
+.login-info fieldset,
+.register-info fieldset {
+  position: relative;
+  border: none;
+  padding-bottom: 20px; }
+
+.login-info label,
+.register-info label {
+  top: 18px;
+  color: #100707;
+  transform-origin: left;
+  transition: all 0.3s ease; }
+
+.login-info input,
+.register-info input {
+  font-size: 15px;
+  width: 100%;
+  border: none;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding-top: 10px;
+  border-bottom: 2px solid #2e2e2e4a; }
+  .login-info input:focus ~ label,
+  .register-info input:focus ~ label {
+    color: #65dbe3;
+    top: 0;
+    transform: scale(0.8, 0.8); }
+  .login-info input:valid ~ label,
+  .register-info input:valid ~ label {
+    top: 0;
+    transform: scale(0.8, 0.8); }
+  .login-info input:focus,
+  .register-info input:focus {
+    outline: none; }
+
+/* ------- Responsive Screens -------- */
+@media screen and (min-width: 600px) {
+  .login-info form,
+  .register-info form {
+    width: 50%; } }
+
+@media screen and (min-width: 991px) {
+  .login-info form,
+  .register-info form {
+    width: 70%; }
+  .login-info__heading,
+  .register-info__heading {
+    text-align: left; } }

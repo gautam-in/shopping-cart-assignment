@@ -1,0 +1,26 @@
+<section class="login-info">
+    <div class="wrapper">
+        <div class="row">
+            <div class="col-xs-12 cols-sm-12 col-md-6 col-lg-6 login-info__heading">
+                <h1>{{loginHeading}}</h1>
+                <p>{{loginDesc}}</p>
+            </div>
+            <div class="col-xs-12 cols-sm-12 col-md-6 col-lg-6 login-info__form">
+                <form id="login-form" onsubmit="return validateLogin()">
+                    <fieldset>
+                        <label for="email">{{Email}}</label>
+                        <input id="email" type="email" name="email" required>
+
+                        <div class="after"></div>
+                        <label for="password">{{Password}}</label>
+                        <input id="password" type="password" name="password" required>
+
+                        <div class="after"></div>
+                        <div id="error-msg" class="error-msgs"></div>
+                        <button type="submit" class="button-large" value="Submit">{{loginBtn}}</button>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

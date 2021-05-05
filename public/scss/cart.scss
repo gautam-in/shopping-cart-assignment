@@ -1,0 +1,100 @@
+@import 'colors';
+@import 'breakpoints';
+
+/* ------- Cart Page -------- */
+.cart-info{  
+  background: $color-bg;
+  padding: 40px 0px;
+  &__title{
+    background: $secondary-color;
+    margin: 20px 0px;
+    h2{
+      padding: 10px 0px;
+    }
+  }
+  &__image, &__details, &__total-price{
+    background-color: $secondary-color;
+  }
+  &__details, &__total-price{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  &__total-price{
+    align-items: center;
+    font-size: 150%;
+  }
+  &__details{
+    .item-count{
+      align-items: center;
+    }
+    h3{
+      padding-bottom: 20px;
+    }
+    .minus-btn, .plus-btn{ 
+      background: none;
+      svg {
+        fill: $primary-color;
+        width: 15px;
+      }
+    }
+    input{
+      width: 25%;
+      border: none;
+      text-align: center;
+    }
+  }
+  &__prod-price{
+    position: relative;
+    font-size: 100%;
+    width: 50%;
+    text-align: right;
+    &:before{
+      content: 'x';
+      position: absolute;
+      top: 0px;
+      left: 50%;
+    }
+  }
+  &__guarantee{
+    margin: 20px 0px;
+    background-color: $secondary-color;
+    padding: 10px 0px;
+    img{
+      max-width: 100%;
+    }
+  }
+  &__checkout{
+    background: #fff;
+    box-shadow: 1px 1px 10px 1px #b7b3b3;
+    p{
+      text-align: center;
+    }
+    button{
+      margin-top: 0px;
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+}
+
+/* ------- Responsive Screens -------- */
+@media screen and (min-width: $break-mobile-small){
+  .cart-info{
+    &__prod-price{
+      width: 40%;
+    }
+  }
+}
+
+@media screen and (min-width: $break-mobile-large){
+  .cart-info{
+    &__details input{
+      width: 10%;
+    }
+    &__prod-price{
+      width: 20%;
+      font-size: 125%;
+    }
+  }
+}

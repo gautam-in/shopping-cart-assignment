@@ -1,0 +1,39 @@
+<section class="register-info">
+    <div class="wrapper">
+        <div class="row">
+            <div class="col-xs-12 col-sm-4 col-md-6 col-lg-6 register-info__heading">
+                <h1>{{registerHeading}}</h1>
+                <p>{{registerDesc}}</p>
+            </div>
+            <div class="col-xs-12 col-sm-8 col-md-6 col-lg-6 register-info__form">
+                <form autocomplete="off" onsubmit="validateRegister()">
+                    <fieldset>
+                        <label for="firstname">{{firstName}}</label>
+                        <input id="firstname" type="text" name="firstname" required>
+
+                        <div class="after"></div>
+                        <label for="lastname">{{lastName}}</label>
+                        <input id="lastname" type="text" name="lastname" required>
+
+                        <div class="after"></div>
+                        <label for="email">{{Email}}</label>
+                        <input id="email" type="email" name="email" required>
+
+                        <div class="after"></div>
+                        <label for="password">{{Password}}</label>
+                        <input id="password" type="password" name="password" required>
+
+                        <div class="after"></div>
+                        <label for="conf-password">{{confPassword}}</label>
+                        <input id="conf-password" type="password" name="conf-password" required>
+
+                        <div class="after"></div>
+                        <div id="error-msg-register" class="error-msgs"></div>
+                        <button class="button-large" type="submit" value="Submit" onclick="validateRegister()">{{registerBtn}}</button>
+
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

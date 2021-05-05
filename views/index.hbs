@@ -1,0 +1,27 @@
+<!-- Banner -->
+<section class="hero-banner-slider">
+    <div class="wrapper">
+        <div class="bxslider">
+            {{#each banners}}
+                <div><img src="{{this.bannerImageUrl}}" alt="{{this.bannerImageAlt}}"></div>
+            {{/each}}
+        </div>
+    </div>        
+</section>
+<!-- Product Category -->
+{{#each categories}}
+    <section class="category-section box">
+        <div class="wrapper">
+            <div class="row">
+                <div class="col-xs-5 col-sm-4 category-section__image">
+                    <img src="{{this.imageUrl}}" alt="{{this.name}}">
+                </div>
+                <div class="col-xs-7 col-sm-8 category-section__description">
+                    <h2>{{this.name}}</h2>
+                    <p>{{this.description}}</p>
+                    <a href="" class="button-small"><span>Explore {{this.name}}</span></a>
+                </div>
+            </div>
+        </div>
+    </section>
+{{/each}}
