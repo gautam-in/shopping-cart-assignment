@@ -1,9 +1,11 @@
 import { Injectable } from '@angular/core';
+import { IProduct } from 'src/models/product.model';
 @Injectable({
   providedIn: 'root',
 })
 export class CartService {
   itemInCart: any = [];
+  totalAmount: number = 0;
 
   constructor() {}
 
@@ -16,15 +18,17 @@ export class CartService {
         }
       });
       if (!this.itemInCart.find((x) => x.id == product.id)) {
-        product.count = 1;
-        product.productPrice = product.price;
-        this.itemInCart.push(product);
+        this.pushNewItem(product);
       }
     } else {
-      product.count = 1;
-      product.productPrice = product.price;
-      this.itemInCart.push(product);
+      this.pushNewItem(product);
     }
+  }
+
+  pushNewItem(product) {
+    product.count = 1;
+    product.productPrice = product.price;
+    this.itemInCart.push(product);
   }
 
   removeProductsFromCart(product) {
@@ -38,11 +42,8 @@ export class CartService {
     });
   }
 
-  getTotalAmount() {
-    let amount = 0;
-    this.itemInCart.forEach((element) => {
-      amount += element.productPrice;
-    });
-    return amount;
+  getTotalAmount(product: IProduct): any {
+    this.totalAmount += product.price;
+    return this.totalAmount;
   }
 }

@@ -28,7 +28,7 @@ export class CartComponent implements OnInit {
 
   getCartList() {
     this.cartList = this._cartService.itemInCart;
-    this.totalAmountOfProduct();
+    this.totalAmount = this._cartService.totalAmount;
     if (this.cartList.length == 0) {
       this._modalService.open(EmptyCartComponent, {
         ariaLabelledBy: 'cartTitle',
@@ -38,16 +38,16 @@ export class CartComponent implements OnInit {
 
   addProductsToCart(product: IProduct) {
     this._cartService.addProductToCart(product);
-    this.totalAmountOfProduct();
+    this.totalAmountOfProduct(product);
   }
 
   removeProductFromCart(product: IProduct) {
     this._cartService.removeProductsFromCart(product);
-    this.totalAmountOfProduct();
+    this.totalAmountOfProduct(product);
   }
 
-  totalAmountOfProduct() {
-    this.totalAmount = this._cartService.getTotalAmount();
+  totalAmountOfProduct(product : IProduct) {
+    this.totalAmount = this._cartService.getTotalAmount(product);
   }
 
   startShopping() {

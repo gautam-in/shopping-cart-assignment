@@ -29,9 +29,10 @@ export class ProductsComponent implements OnInit {
 
   fetchProducts() : any {
     this._appService.getProducts().subscribe((data : IProduct[]) => {
-      this.products = data;
       if(this.categoryId){
-        this.getFilteredList(this.products)
+        this.getFilteredList(data)
+      }else{
+        this.products = data;
       }
     });
   }
@@ -51,5 +52,6 @@ export class ProductsComponent implements OnInit {
 
   buyProduct(product: IProduct) {
     this._cartService.addProductToCart(product);
+    this._cartService.getTotalAmount(product);
   }
 }

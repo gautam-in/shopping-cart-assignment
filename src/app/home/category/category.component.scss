@@ -1,7 +1,7 @@
 @import "../../../assets/scss/color.scss";
 
-.category {
-  margin: 0 10rem;
+// .category {
+//   margin: 0 10rem;
   .category-row {
     border-top: 4px solid $grey;
     text-align-last: center;
@@ -23,16 +23,7 @@
       }
     }
   }
-}
-
-.category:nth-child(odd) {
-  .image {
-    float: right;
-  }
-  .description {
-    float: left;
-  }
-}
+//}
 
 .btn-danger {
   width: inherit;
@@ -43,14 +34,14 @@
 /* Large devices (laptops/desktops, 992px and up) */
 // @media only screen and (min-width: 992px) {
 @media (max-width: 1199px) {
-  .category {
-    margin: 0 10rem;
+  // .category {
+  //   margin: 0 10rem;
     .category-row {
       margin-top: 10px;
       img {
         width: 14rem;
       }
-    }
+    //}
   }
 
   .main-heading {
@@ -74,15 +65,15 @@
     max-width: 1000px;
     margin: 0;
   }
-  .category {
-    margin: 0;
+  // .category {
+  //   margin: 0;
     .category-row {
       margin-bottom: 0;
       img {
         width: 15rem;
       }
     }
-  }
+  //}
 
   .main-heading {
     font-size: 25px;
@@ -101,8 +92,8 @@
 /* Extra small devices (phones, 600px and down) */
 // @media only screen and (max-width: 600px) {
 @media only screen and (max-width: 575px) {
-  .category {
-    margin: 0;
+  // .category {
+  //   margin: 0;
     .category-row {
       img {
         width: 8rem;
@@ -110,7 +101,7 @@
         padding-top: 1rem;
       }
     }
-  }
+  //}
 
   .main-heading {
     font-size: 20px;

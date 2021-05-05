@@ -1,9 +1,27 @@
 .main-container {
   min-height: 40rem;
+  .category {
+    margin: 0 10rem;
+  }
+}
+
+@media (max-width: 1199px) {
+  .category {
+    margin: 0 10rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .category {
+    margin: 0;
+  }
 }
 
 @media only screen and (max-width: 768px) {
   .main-container {
     padding: 0;
+    .category {
+      margin: 0;
+    }
   }
 }
