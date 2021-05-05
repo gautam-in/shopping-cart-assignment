@@ -10,7 +10,7 @@
     margin: 0.5rem 0;
     background-color: white;
     .card-img {
-      width: inherit;
+      width: 5rem ;
       height: inherit;
       margin: 1rem 0.5rem;
     }
@@ -133,7 +133,7 @@
     }
     .offer-text {
       margin-left: -6rem;
-      font-size: 15px;
+      font-size: 12px;
       font-weight: 600;
       padding-top: 1rem;
     }
@@ -164,6 +164,12 @@
       flex: 1;
       margin-right: -6rem;
       margin-left: -6rem;
+    }
+  }
+  .card-offer{
+    .card-img {
+      width: 6rem !important;
+      padding-top: 1rem;
     }
   }
 }
