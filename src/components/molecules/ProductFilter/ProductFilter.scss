@@ -11,7 +11,7 @@
 .filter-header {
   cursor: pointer;
   padding: $small;
-  border-bottom: 1px solid #cccccc;
+  border-bottom: 0.1rem solid #cccccc;
   display: flex;
   justify-content: space-between;
   @extend transitions;
@@ -19,18 +19,18 @@
 .active-header {
   background: $pink-color;
   color: $white-color;
-  border-bottom: 1px solid $pink-color;
+  border-bottom: 0.1rem solid $pink-color;
 }
 .list-item {
   cursor: pointer;
   padding: $small;
-  border-bottom: 1px solid #cccccc;
+  border-bottom: 0.1rem solid #cccccc;
   &:hover {
     background: $dark-grey-color;
   }
 }
 .active-item {
-  border-left: 2px solid $pink-color;
+  border-left: 0.2rem solid $pink-color;
 }
 
 @media only screen and (min-width: $tab) {

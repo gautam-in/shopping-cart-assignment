@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 
+import { prevArrow, nextArrow } from '../Constants';
 import './Carousel.scss';
 
 const Carousel = React.memo(({ images }) => {
@@ -59,11 +60,11 @@ const Carousel = React.memo(({ images }) => {
 
   return (
     <div className='carousel'>
-      <Arrow direction='prev' clickFunction={previous} symbol='&#10094;' />
+      <Arrow direction='prev' clickFunction={previous} symbol={prevArrow} />
 
       {slides}
 
-      <Arrow direction='next' clickFunction={next} symbol='&#10095;' />
+      <Arrow direction='next' clickFunction={next} symbol={nextArrow} />
 
       <div className='carousel-indicators'>{indicators}</div>
     </div>

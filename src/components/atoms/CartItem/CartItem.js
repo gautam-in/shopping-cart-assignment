@@ -1,8 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPlus, faMinus } from '@fortawesome/free-solid-svg-icons';
 
+import { plus, minus, multiple } from '../Constants';
 import './CartItem.scss';
 
 const CartItem = React.memo(({ product, onClick }) => {
@@ -21,13 +20,13 @@ const CartItem = React.memo(({ product, onClick }) => {
         <h5>{name}</h5>
         <div className='cart-item-price-wrap'>
           <button type='button' onClick={() => onClick('decrement', product)}>
-            <FontAwesomeIcon icon={faMinus} />
+            {minus}
           </button>
           {quantity}
           <button type='button' onClick={() => onClick('increment', product)}>
-            <FontAwesomeIcon icon={faPlus} />
+            {plus}
           </button>
-          <span>X</span> Rs.{price}
+          {multiple} Rs.{price}
         </div>
         <div className='price-wrap'>Rs. {quantity * price}</div>
       </div>

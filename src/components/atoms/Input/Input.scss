@@ -18,7 +18,7 @@ input {
   line-height: $medium-font;
   font-weight: 500;
   border: 0;
-  border-bottom: 2px solid $dark-grey-color;
+  border-bottom: 0.2rem solid $dark-grey-color;
   border-radius: 0;
   padding: $semi-small 0;
   cursor: text;
@@ -27,7 +27,7 @@ input {
 input:focus {
   outline: 0;
   color: $black-color;
-  border-bottom: 2px solid $blue-color;
+  border-bottom: 0.2rem solid $blue-color;
 }
 
 label {
@@ -35,7 +35,7 @@ label {
   line-height: $small-font;
   font-weight: 500;
   color: #999999;
-  padding: 4px 0;
+  padding: 0.4rem 0;
 }
 
 input:placeholder-shown + label {

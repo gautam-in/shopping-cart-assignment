@@ -17,7 +17,7 @@ header {
 .navbar {
   @extend transitions;
   position: absolute;
-  top: 61px;
+  top: 6.1rem;
   width: 100%;
   ul {
     display: flex;
@@ -25,7 +25,7 @@ header {
     margin-right: auto;
     background: $white-color;
     li {
-      border-bottom: 1px solid $dark-grey-color;
+      border-bottom: 0.1rem solid $dark-grey-color;
       padding: $semi-small $small;
       a {
         color: $black-color;
@@ -42,7 +42,7 @@ header {
 }
 .logo-wrap {
   padding: $small;
-  width: 100px;
+  width: 10rem;
   a img {
     width: 100%;
   }
@@ -75,7 +75,7 @@ header {
     display: none;
   }
   .logo-wrap {
-    width: 170px;
+    width: 17rem;
   }
   .navbar {
     position: unset;
@@ -105,6 +105,6 @@ header {
     }
   }
   .cart-wrap {
-    margin-top: 35px;
+    margin-top: 3.5rem;
   }
 }

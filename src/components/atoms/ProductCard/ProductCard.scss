@@ -3,7 +3,7 @@
 .product-wrap {
   margin: $large $small;
   padding-bottom: $small;
-  border-bottom: 2px dashed $grey-color;
+  border-bottom: 0.2rem dashed $grey-color;
   .product-header {
     font-size: $medium-font;
     line-height: $large-font;
@@ -14,7 +14,7 @@
     display: flex;
     .product-image {
       width: 50%;
-      padding: 4px;
+      padding: 0.4rem;
     }
     .product-description-wrap {
       position: relative;
@@ -67,14 +67,14 @@
 
 @media only screen and (min-width: $tab) {
   .product-wrap {
-    width: calc(50% - 10px);
+    width: calc(50% - 1rem);
     margin: $large 0 $large $small;
     .product-header {
       margin-bottom: $small;
-      height: 60px;
+      height: 6rem;
     }
     .product-detail-wrap {
-      height: calc(100% - 110px);
+      height: calc(100% - 11rem);
       margin-bottom: $extra-large;
       .product-description-wrap {
         .product-description {
@@ -93,10 +93,10 @@
 
 @media only screen and (min-width: $desktop) {
   .product-wrap {
-    width: calc(25% - 10px);
+    width: calc(25% - 1rem);
     position: relative;
     .product-header {
-      height: 80px;
+      height: 8rem;
     }
     .product-detail-wrap {
       display: block;

@@ -2,13 +2,12 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTimes, faGreaterThan, faPlus, faMinus } from '@fortawesome/free-solid-svg-icons';
 
 import { cartProductQuantity, removeCartProduct } from '../../../redux/actions';
 import { allCartData } from '../../../redux/selector';
 import LowestPriceTag from '../../../../static/images/lowest-price.png';
 import CartItem from '../../atoms/CartItem';
+import { nextArrow, multiple } from '../../atoms/Constants';
 import './CartDrawer.scss';
 
 const CartDrawer = React.memo(({ isOpen, toogleCart }) => {
@@ -55,7 +54,7 @@ const CartDrawer = React.memo(({ isOpen, toogleCart }) => {
               My Cart <span>{data && data.length ? ` ( ${data.length} Items )` : ''}</span>{' '}
             </h6>
             <div className='close' onClick={toogleCart}>
-              <FontAwesomeIcon icon={faTimes} />
+              {multiple}
             </div>
           </div>
           {data && data.length ? (
@@ -79,7 +78,7 @@ const CartDrawer = React.memo(({ isOpen, toogleCart }) => {
                 <button type='button' onClick={toogleCart}>
                   <span className='text'>Proceed to Checkout</span>
                   <span className='price'>
-                    Rs.{totalPrice} <FontAwesomeIcon icon={faGreaterThan} />
+                    Rs.{totalPrice} {nextArrow}
                   </span>
                 </button>
               </>

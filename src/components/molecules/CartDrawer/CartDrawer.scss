@@ -15,9 +15,9 @@
 
 .modal-content {
   background-color: $white-color;
-  width: 100vw;
+  width: calc(100vw - 1.5rem);
   height: 100vh;
-  border: 1px solid $black-color;
+  border: 0.1rem solid $black-color;
 }
 
 .show-modal {
@@ -51,14 +51,14 @@
 .cart-body {
   background: $grey-color;
   overflow-y: auto;
-  width: calc(100% - 20px);
-  height: calc(100% - 125px);
-  border-bottom: 2px solid $dark-grey-color;
+  width: 100%;
+  height: calc(100% - 12.5rem);
+  border-bottom: 0.2rem solid $dark-grey-color;
   .lowest-price {
     margin: $small $extra-small;
     padding: $small;
     background: $white-color;
-    border-radius: 4px;
+    border-radius: 0.4rem;
     font-size: $extra-small-font;
     font-weight: 600;
     display: flex;
@@ -97,7 +97,7 @@
   button {
     @extend customButton;
     font-size: $small-font;
-    width: calc(100% - 20px);
+    width: calc(100% - 1.5rem);
     .text {
       float: left;
       margin-left: $large;
@@ -125,9 +125,9 @@
     }
   }
   .modal-content {
-    margin-top: 95px;
+    margin-top: 9.5rem;
     width: 40vw;
-    height: calc(100vh - 95px);
+    height: calc(100vh - 9.5rem);
     float: right;
   }
   .cart-footer {

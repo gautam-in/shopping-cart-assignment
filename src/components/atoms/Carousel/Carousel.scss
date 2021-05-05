@@ -4,7 +4,7 @@
   @extend fadeImages;
   display: none;
   img {
-    height: 100px;
+    height: $small-height;
   }
 }
 
@@ -32,12 +32,12 @@
   font-weight: bold;
   font-size: $medium-font;
   transition: 0.6s ease;
-  border-radius: 0 3px 3px 0;
+  border-radius: 0 0.3rem 0.3rem 0;
 }
 
 .next {
   right: 0;
-  border-radius: 3px 0 0 3px;
+  border-radius: 0.3rem 0 0 0.3rem;
 }
 
 .prev:hover,
@@ -47,8 +47,8 @@
 
 .dot {
   cursor: pointer;
-  height: 4px;
-  width: 4px;
+  height: 0.4rem;
+  width: 0.4rem;
   margin: 0 $semi-small;
   background-color: #bbb;
   border-radius: 50%;
@@ -67,21 +67,21 @@
 
 @media only screen and (min-width: $tab) {
   .carousel-item img {
-    height: 150px;
+    height: $medium-height;
   }
   .prev,
   .next {
     font-size: $semi-large-font;
   }
   .dot {
-    height: 6px;
-    width: 6px;
+    height: 0.6rem;
+    width: 0.6rem;
     margin: 0 $small;
   }
 }
 
 @media only screen and (min-width: $desktop) {
   .carousel-item img {
-    height: 200px;
+    height: $large-height;
   }
 }

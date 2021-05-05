@@ -23,10 +23,10 @@
       button {
         @extend customButton;
         width: fit-content;
-        padding: 4px 6px;
-        font-size: 6px;
+        padding: 0.4rem 0.6rem;
+        font-size: $semi-small;
         &:hover {
-          padding: 3px 5px;
+          padding: 0.3rem 0.5rem;
         }
       }
       span {
@@ -35,7 +35,7 @@
     }
     .price-wrap {
       float: right;
-      margin-top: -25px;
+      margin-top: -2.5rem;
       font-size: $small-font;
       font-weight: 600;
     }

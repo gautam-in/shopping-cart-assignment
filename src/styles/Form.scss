@@ -12,18 +12,20 @@
     font-weight: 600;
   }
 }
+
 form {
   margin: $small;
 }
+
 .input-error {
-  border-bottom: 2px solid $pink-color !important;
+  border-bottom: 0.2rem solid $pink-color !important;
 }
 
 .error-message {
   color: $pink-color;
   font-size: $extra-small-font;
   position: absolute;
-  margin-top: -14px;
+  margin-top: -1.4rem;
 }
 
 .form-submit-btn {
@@ -39,7 +41,7 @@ form {
     margin: $large 0;
   }
   .header-wrapper {
-    margin: $small 50px;
+    margin: $small 5rem;
   }
   form {
     width: 40%;

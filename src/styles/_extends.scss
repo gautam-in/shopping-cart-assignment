@@ -27,7 +27,7 @@ customButton {
   background: $pink-color;
   color: $white-color;
   border: 0;
-  border-radius: 2px;
+  border-radius: 0.2rem;
   margin: $small;
   padding: $small;
   width: 100%;
@@ -39,7 +39,7 @@ customButton {
   &:hover {
     background: $white-color;
     color: $pink-color;
-    border: 1px solid $pink-color;
+    border: 0.1rem solid $pink-color;
   }
   &:disabled {
     cursor: not-allowed;
