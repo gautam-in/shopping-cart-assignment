@@ -24,7 +24,7 @@ export class CartService {
     }
   }
 
-  pushNewItem(product: IProduct) {
+  private pushNewItem(product: IProduct) {
     product.count = 1;
     product.productPrice = product.price;
     this.itemInCart.push(product);

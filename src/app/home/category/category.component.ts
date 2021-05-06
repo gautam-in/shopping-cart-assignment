@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { AppService } from 'src/app/shared/services/app.service';
 import { ICategory } from 'src/models/category.model';
 
 @Component({
@@ -9,26 +8,11 @@ import { ICategory } from 'src/models/category.model';
   styleUrls: ['./category.component.scss'],
 })
 export class CategoryComponent implements OnInit {
-  categories: ICategory[] = [];
+  @Input() category: ICategory;
 
-  constructor(private _route: Router, private _appService: AppService) {}
+  constructor(private _route : Router) {}
 
-  ngOnInit(): void {
-    this.fetchCategories();
-  }
-
-  fetchCategories() {
-    this._appService.getCatagories().subscribe((Categories: ICategory[]) => {
-      Categories.forEach((category) => {
-        if (category.enabled) {
-          this.categories.push(category);
-        }
-      });
-      this.categories = this.categories.sort((a, b) => {
-        return a.order - b.order;
-      });
-    });
-  }
+  ngOnInit(): void {}
 
   exploreProduct(id: String): void {
     this._route.navigate(['/products', id]);
