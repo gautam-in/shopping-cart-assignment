@@ -11,7 +11,7 @@
         <div class="span-1-of-2">
             <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" novalidate>
                 <div class="user-input-wrp">
-                    <input type="email" class="inputText" formControlName="email" required />
+                    <input type="email" class="inputText" formControlName="email" required  aria-label="email" />
                     <span class="floating-label">Email</span>
                     <div *ngIf="!email?.valid && (email?.dirty ||email?.touched)">
                         <div class="error-class"  [hidden]="!email.errors.required">
@@ -24,7 +24,7 @@
                     </div>
                 </div>
                 <div class="user-input-wrp">
-                    <input type="password" class="inputText" required formControlName="password" />
+                    <input type="password" class="inputText" required formControlName="password"  aria-label="Password" />
                     <span class="floating-label">Password</span>
                     <div *ngIf="!password?.valid && (password?.dirty ||password?.touched)">
                         <div class="error-class"  [hidden]="!password.errors.required">
