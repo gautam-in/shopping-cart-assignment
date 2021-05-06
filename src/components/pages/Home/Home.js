@@ -1,7 +1,7 @@
 import React from 'react';
 
-import Banners from '../../molecules/Banners';
-import Categories from '../../molecules/Categories';
+import Banners from '../../organisms/Banners';
+import Categories from '../../organisms/Categories';
 
 const Home = () => {
   return (

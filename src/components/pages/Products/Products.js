@@ -3,8 +3,8 @@ import { useDispatch } from 'react-redux';
 import { useLocation } from 'react-router-dom';
 
 import { fetchCategoriesDataRequest, fetchProductsDataRequest } from '../../../redux/actions';
-import ProductFilter from '../../molecules/ProductFilter';
-import ProductList from '../../molecules/ProductList';
+import ProductFilter from '../../organisms/ProductFilter';
+import ProductList from '../../organisms/ProductList';
 
 const Products = () => {
   const dispatch = useDispatch();
@@ -23,10 +23,10 @@ const Products = () => {
 
   return (
     <main className='container'>
-      <div className='page-wrapper'>
+      <section className='page-wrapper'>
         <ProductFilter filterId={filterId} />
         <ProductList filterId={filterId} />
-      </div>
+      </section>
     </main>
   );
 };

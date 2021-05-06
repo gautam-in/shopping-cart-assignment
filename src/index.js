@@ -4,7 +4,7 @@ import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import 'regenerator-runtime/runtime';
 
-import Layout from './components/organisms/Layout';
+import Layout from './components/templates/Layout';
 import store from './redux/store';
 
 render(

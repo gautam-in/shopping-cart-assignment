@@ -23,22 +23,19 @@ cardShadow {
 }
 
 customButton {
-  cursor: pointer;
   background: $pink-color;
   color: $white-color;
-  border: 0;
   border-radius: 0.2rem;
   margin: $small;
   padding: $small;
   width: 100%;
   font-size: $medium-font;
   font-weight: 500;
-  outline: 0;
-  text-decoration: none;
   transition: all 0.1s ease-in;
   &:hover {
     background: $white-color;
     color: $pink-color;
+    padding: 0.9rem;
     border: 0.1rem solid $pink-color;
   }
   &:disabled {

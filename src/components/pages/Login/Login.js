@@ -6,13 +6,13 @@ import '../../../styles/Form.scss';
 const Login = () => {
   return (
     <main className='container'>
-      <div className='form-wrapper'>
-        <div className='header-wrapper'>
+      <section className='form-wrapper'>
+        <section className='header-wrapper'>
           <h1>Login</h1>
           <p>Get access to your Orders, Wishlist and Recommendations</p>
-        </div>
+        </section>
         <LoginForm />
-      </div>
+      </section>
     </main>
   );
 };

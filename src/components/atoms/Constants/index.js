@@ -8,3 +8,4 @@ export const nextArrow = <>&#10095;</>;
 export const multiple = <>&#215;</>;
 export const plus = <>&#43;</>;
 export const minus = <>&#8722;</>;
+export const dot = <>&#8226;</>;

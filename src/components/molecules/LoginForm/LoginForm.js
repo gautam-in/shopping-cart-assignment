@@ -37,14 +37,14 @@ const LoginForm = ({ history }) => {
         className={errors.email ? 'input-error' : ''}
       />
       {errors.email && (
-        <div className='error-message'>
+        <p className='error-message'>
           <ErrorMessage
             type={errors.email.type}
             minLength={emailValidation.minLength}
             maxLength={emailValidation.maxLength}
             field='email'
           />
-        </div>
+        </p>
       )}
       <Input
         type='password'
@@ -55,14 +55,14 @@ const LoginForm = ({ history }) => {
         className={errors.password ? 'input-error' : ''}
       />
       {errors.password && (
-        <div className='error-message'>
+        <p className='error-message'>
           <ErrorMessage
             type={errors.password.type}
             minLength={passwordValidation.minLength}
             maxLength={passwordValidation.maxLength}
             field='password'
           />
-        </div>
+        </p>
       )}
       <button type='submit' className='form-submit-btn' disabled={!formState.isValid}>
         Login

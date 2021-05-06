@@ -1,0 +1,44 @@
+@import '../../../styles/global';
+
+.cart-body {
+  background: $grey-color;
+  overflow-y: auto;
+  width: 100%;
+  height: calc(100% - 12.5rem);
+  border-bottom: 0.2rem solid $dark-grey-color;
+  .lowest-price {
+    margin: $small $extra-small;
+    padding: $semi-small;
+    background: $white-color;
+    border-radius: 0.4rem;
+    font-size: $extra-small-font;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    img {
+      width: 15%;
+      margin-right: $small;
+    }
+  }
+}
+
+.no-cart-items-body {
+  margin: 40vh auto;
+  color: $black-color;
+  text-align: center;
+  h5 {
+    font-size: $large-font;
+    font-weight: 800;
+    margin-bottom: $extra-small;
+  }
+  p {
+    font-size: $small-font;
+    font-weight: 600;
+  }
+}
+
+@media only screen and (min-width: $desktop) {
+  .no-cart-items-body {
+    margin: 30vh auto;
+  }
+}

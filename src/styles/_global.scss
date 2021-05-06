@@ -20,6 +20,15 @@ ul {
   list-style: none;
 }
 
+button {
+  outline: 0;
+  border: 0;
+  text-decoration: none;
+  color: $black-color;
+  font-size: $small-font;
+  cursor: pointer;
+}
+
 .flex {
   display: flex;
   align-items: center;

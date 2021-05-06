@@ -6,13 +6,13 @@ import '../../../styles/Form.scss';
 const Signup = () => {
   return (
     <main className='container'>
-      <div className='form-wrapper'>
-        <div className='header-wrapper'>
+      <section className='form-wrapper'>
+        <section className='header-wrapper'>
           <h1>Signup</h1>
           <p>We do not share your personal details with anyone.</p>
-        </div>
+        </section>
         <SignupForm />
-      </div>
+      </section>
     </main>
   );
 };

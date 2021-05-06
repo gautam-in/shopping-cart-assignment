@@ -1,0 +1,57 @@
+@import '../../../styles/global';
+
+.navbar {
+  position: absolute;
+  top: 6.1rem;
+  width: 100%;
+  ul {
+    display: flex;
+    flex-direction: column;
+    margin-right: auto;
+    background: $white-color;
+    li {
+      border-bottom: 0.1rem solid $dark-grey-color;
+      padding: $semi-small $small;
+      a {
+        color: $black-color;
+        font-size: $small-font;
+        line-height: $medium-font;
+        font-weight: 600;
+        text-decoration: none;
+      }
+      &:hover {
+        background: $grey-color;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: $tab) {
+  .navbar {
+    position: unset;
+    width: unset;
+    ul {
+      flex-direction: row;
+      li {
+        border-bottom: unset;
+        &:hover {
+          background: unset;
+        }
+      }
+    }
+    .main-links {
+      position: absolute;
+      left: 30%;
+      li a {
+        font-size: $medium-font;
+        line-height: $large-font;
+        font-weight: 700;
+      }
+    }
+    .side-links {
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+  }
+}
