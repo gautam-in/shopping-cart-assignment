@@ -1,0 +1,11 @@
+{
+  "title": "MY BASKET",
+  "itemLabel": "items",
+  "cartItemEmptyLabel": "No items in your cart.",
+  "favoriteItemLabel": "Your favorite items are just a click away.",
+  "bestBuyLabel": "You won't find it cheaper anywhere.",
+  "promoCodeApplyLabel": "Promo can be applied on payment page.",
+  "proceedToCheckoutLabel": "Proceed to Checkout",
+  "priceLabel": "Total Amount ₹",
+  "continueShoppingLabel": "Start Shopping"
+}

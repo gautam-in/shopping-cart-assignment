@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
+import Header from "../../components/header";
 import FetchData from "../../components/common/fetch-data";
 import Sidebar from "../../components/sidebar";
 import Product from "../../components/product";
@@ -60,30 +61,33 @@ const ProductList = () => {
   const handleCart = () => {};
 
   return (
-    <div className="product_list_container container-fluid">
-      <Sidebar
-        categories={categories}
-        selectedCategory={selectedCategory}
-        onClick={handleClick}
-      />
-      <div className="products">
-        {products &&
-          products.length > 0 &&
-          products
-            .filter((singleProduct) =>
-              Object.keys(selectedCategory).length
-                ? singleProduct.category === selectedCategory
-                : true
-            )
-            .map((product) => (
-              <Product
-                product={product}
-                key={product.id}
-                handlecart={handleCart}
-              />
-            ))}
+    <>
+      <Header />
+      <div className="product_list_container container-fluid">
+        <Sidebar
+          categories={categories}
+          selectedCategory={selectedCategory}
+          onClick={handleClick}
+        />
+        <div className="products">
+          {products &&
+            products.length > 0 &&
+            products
+              .filter((singleProduct) =>
+                Object.keys(selectedCategory).length
+                  ? singleProduct.category === selectedCategory
+                  : true
+              )
+              .map((product) => (
+                <Product
+                  product={product}
+                  key={product.id}
+                  handlecart={handleCart}
+                />
+              ))}
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 

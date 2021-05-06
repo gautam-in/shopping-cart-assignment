@@ -4,12 +4,13 @@
   position: relative;
   margin-bottom: 30px !important; 
   &.sidebar {
-    width: 25%;
+    width: 22%;
   }
 
   & .products {
     display: flex;
     flex-wrap: wrap;
+    width: 78%;
 
     & .card_container {
       width: 25%;

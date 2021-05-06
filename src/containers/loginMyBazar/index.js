@@ -1,6 +1,7 @@
 import React, { Fragment, useState } from "react";
-import Button from "../../components/common/button";
 
+import Header from "../../components/header";
+import Button from "../../components/common/button";
 import Input from "../../components/common/input";
 
 import "./index.scss";
@@ -48,6 +49,7 @@ const LoginMyBazar = () => {
 
   return (
     <Fragment>
+      <Header />
       <div className="login_form_container">
         <div className="login_description">
           <h1>{label.title}</h1>

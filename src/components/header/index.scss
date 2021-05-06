@@ -10,6 +10,7 @@
     display: flex;
     align-items: center;
     width: 100%;
+    justify-content: space-between;
   }
 
   & .logo_container {
@@ -22,34 +23,55 @@
 
   & .nav_container {
     display: flex;
-    justify-content: flex-end;
-    width: 100%;
+    flex-direction: column;
     & .nav_primary {
       display: flex;
+      justify-content: space-evenly;
+      font-size: 14px;
       padding: 0;
       margin: 0;
-      & li {
-        list-style: none;
-        width: 50px;
-        padding: 0px 10px;
+      min-height: 25px;
+      & a {
+        text-decoration: none;
+        color: #000;
+
+        &:hover {
+          color: #d10157;
+        }
+
+        &:visited {
+          color: #000;
+        }
       }
     }
     & .nav_secondary {
-      min-height: 69px;
+      min-height: 40px;
       display: flex;
       align-items: center;
       background-color: #00000012;
       padding: 5px 15px 5px 10px;
-      & .cart_logo_container {
-        display: flex;
-        align-items: center;
-        & .cart_logo {
-          height: 25px;
-          width: 25px;
-          margin-right: 10px;
+      & a {
+        text-decoration: none;
+
+        &:hover {
+          color: #d10157;
         }
-        & span {
-          font-size: 22px;
+
+        &:visited {
+          color: #000;
+        }
+
+        & .cart_logo_container {
+          display: flex;
+          align-items: center;
+          & .cart_logo {
+            height: 25px;
+            width: 25px;
+            margin-right: 10px;
+          }
+          & span {
+            font-size: 22px;
+          }
         }
       }
     }

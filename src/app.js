@@ -19,7 +19,6 @@ const Sppiner = () => {
 const App = () => {
   return (
     <Suspense fallback={<Sppiner />}>
-      <Header />
       <Switch>
         <Routes />
       </Switch>
