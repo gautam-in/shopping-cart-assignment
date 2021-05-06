@@ -17,7 +17,7 @@
     height: 15px;
   }
 
-  &:last-child{
+  &:last-child {
     margin-bottom: 50px;
   }
 
@@ -26,13 +26,24 @@
     justify-content: center;
     width: 30%;
     & .category_avatar {
-      height: 100px;
+      height: 150px;
       width: 100%;
     }
   }
 
-  & .category_description{
+  & .category_description {
     width: 70%;
     text-align: center;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  /* For mobile phones: */
+  .category_container {
+    & .category-img {
+      & .category_avatar {
+        height: 100px;
+      }
+    }
   }
 }

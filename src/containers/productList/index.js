@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useHistory } from "react-router-dom";
 
 import Header from "../../components/header";
 import FetchData from "../../components/common/fetch-data";
+import LocalStorage from "../../components/common/local-storage";
 import Sidebar from "../../components/sidebar";
 import Product from "../../components/product";
 
@@ -12,6 +13,7 @@ import label from "./data/index.json";
 
 const ProductList = () => {
   const location = useLocation;
+  const history = useHistory;
   const {
     urls: { getCategoryApi, getProductApi },
   } = label.services;
@@ -58,7 +60,23 @@ const ProductList = () => {
     setSelectedCategory(id);
   };
 
-  const handleCart = () => {};
+  const handleCart = (product) => {
+    const cartItems = LocalStorage.getItem("cartItems") || [];
+    let alreadyAvailableInCart = false;
+    cartItems.length &&
+      cartItems.map((singleCartItem, index) => {
+        if (singleCartItem.id === product.id) {
+          singleCartItem.count = singleCartItem.count + 1;
+          alreadyAvailableInCart = true;
+        }
+      });
+    if (!alreadyAvailableInCart) {
+      product.count = 1;
+      cartItems.push(product);
+    }
+    LocalStorage.setItem("cartItems", cartItems);
+    window.location.reload();
+  };
 
   return (
     <>

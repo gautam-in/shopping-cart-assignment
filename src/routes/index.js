@@ -15,7 +15,7 @@ const Routes = () => {
   return (
     <>
       <CustomRoute path="/" exact component={Home} />
-      <ProtectedRoute path="/home" exact component={Home} />
+      <CustomRoute path="/home" exact component={Home} />
       <RestrictedRoute path="/login-your-account" component={LoginMyBazar} />
       <RestrictedRoute path="/create-your-account" component={Register} />
       <CustomRoute path="/products" component={ProductList} />

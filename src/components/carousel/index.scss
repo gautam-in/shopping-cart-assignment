@@ -28,10 +28,11 @@
   }
   & .banner_avatar {
     width: 100%;
-    -webkit-transition: transform 0.4s linear;
-    -moz-transition: transform 0.4s linear;
-    -o-transition: transform 0.4s linear;
-    transition: transform 0.4s linear;
+    -webkit-transition: transform 0.5s linear;
+    -moz-transition: transform 0.5s linear;
+    -o-transition: transform 0.5s linear;
+    transition: transform 0.5s linear;
+    // transition: 0.5s;
   }
   & .left {
     position: absolute;

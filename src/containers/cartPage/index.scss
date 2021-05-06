@@ -56,8 +56,17 @@
         line-height: 40px;
         background: #eeeeee;
       }
-      & .btn-checkout {
-        // margin-top: 10px;
+    }
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  /* For mobile phones: */
+  .cart-container {
+    & .cart-card {
+      & .cart-header {
+        background: #000;
+        color: #eeeeee;
       }
     }
   }

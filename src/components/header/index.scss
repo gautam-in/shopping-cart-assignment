@@ -13,11 +13,32 @@
     justify-content: space-between;
   }
 
-  & .logo_container {
-    & .logo_avatar {
-      height: 55px;
-      width: auto;
-      margin: 5px 0px;
+  & .logo_container_nav {
+    display: flex;
+    flex-direction: row;
+    & .logo_container {
+      & .logo_avatar {
+        height: 55px;
+        width: auto;
+        margin: 5px 0px;
+      }
+    }
+    & .nav_links {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin: 0px 0px 10px 50px;
+      min-width: 50%;
+
+      & a {
+        text-decoration: none;
+        color: #000;
+
+        &:visited {
+          color: #000;
+        }
+      }
     }
   }
 
@@ -41,6 +62,18 @@
 
         &:visited {
           color: #000;
+        }
+      }
+
+      & .my_account_container {
+        display: flex;
+        cursor: pointer;
+        & .user_logo {
+          height: 20px;
+          width: 20px;
+        }
+        & span {
+          margin-left: 5px;
         }
       }
     }
@@ -73,6 +106,18 @@
             font-size: 22px;
           }
         }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  /* For mobile phones: */
+  .header {
+    & .logo_container_nav {
+      & .nav_links {
+        margin: 0px 0px 10px 10px;
+        min-width: 50%;
       }
     }
   }

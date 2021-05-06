@@ -8,9 +8,9 @@ import "./index.scss";
 import label from "./data/index.json";
 
 const Product = ({ product, handlecart }) => {
-  //   const history = useHistory();
+    const history = useHistory();
   const handleBuy = () => {
-    // handlecart(product);
+    handlecart(product);
     // history.push("/cart");
   };
   return (
