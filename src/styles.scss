@@ -131,3 +131,9 @@ body {
   margin: 0;
   font-family: "Dosis";
 }
+
+.modal-dialog{
+  @include big-desktop{
+    margin-left:40rem;
+  }
+}
