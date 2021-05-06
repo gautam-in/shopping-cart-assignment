@@ -32,7 +32,7 @@ const Header = React.memo(({ toggleCart }) => {
               <FontAwesomeIcon icon={faShoppingCart} />
               <span> {data && data.length ? data.length : 0} Items</span>
             </button>
-            <button className='toggler' onClick={toggle}>
+            <button className='toggler' onClick={toggle} aria-label='toggler'>
               <FontAwesomeIcon icon={faBars} />
             </button>
           </section>
