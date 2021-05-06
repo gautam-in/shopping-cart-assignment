@@ -23,14 +23,6 @@ body {
   font-weight: bolder;
 }
 
-.login-reg-text {
-  height: 100%;
-  float: left;
-  padding-left: 25% !important;
-  padding-top: 2rem;
-  margin: 1% 0;
-}
-
 .action-btn {
   width: 100%;
   font-size: 80%;
@@ -53,22 +45,69 @@ a {
 //------------------------------------------------
 // LOGIN and SIGNUP Page CSS
 //------------------------------------------------
-
-.login-reg-text {
-  padding-left: 15%;
-  margin-left:12rem;
-
-  .title {
-    font-size: 25px;
-    font-weight: 800;
+.login-register-row {
+  @include tablet-portarait {
+    display: block;
   }
-  .title-description {
-    font-size: 15px;
+  .login-reg-text {
+    padding-left: 8rem;
+    margin-left: 2rem;
+    padding-top: 2rem;
+    @include desktop {
+      margin-left: 0;
+      padding-left: 8rem ;
+    }
+    @include tablet-landscape{
+      padding-left: 1rem;
+    }
+    @include tablet-portarait{
+      padding-left: 1rem ;
+    }
+
+    .title {
+      font-size: 25px;
+      font-weight: 800;
+      @include tablet-portarait{
+        font-size: 25px;
+      }
+    }
+    .title-description {
+      font-size: 15px;
+      @include tablet-portarait{
+        font-size: 13px;
+      }
+    }
   }
 }
 
-.login-reg-form{
+.login-reg-form {
   margin-left: -8rem !important;
+ 
+  @include desktop {
+    margin-left: 0 !important;
+  }
+  form {
+    padding-top: 3%;
+    max-width: 75%;
+    padding-right: 20%;
+    margin-left: 4rem;
+    @include desktop{
+      padding-right: 0rem;
+    }
+    @include tablet-landscape{
+      margin-left: 0rem;
+    }
+    @include tablet-portarait{
+      max-width: 100%;
+     
+    }
+    .action-btn{
+      @include tablet-landscape{
+        font-size: 1rem;
+      }
+    }
+   
+  }
 }
 
 .form-group label,
@@ -78,12 +117,6 @@ input:active {
 
 input:focus {
   border-bottom: 2px solid rgb(18, 212, 238) !important;
-}
-
-.col-lg-6 Form {
-  padding-top: 3%;
-  max-width: 75%;
-  padding-right: 20%;
 }
 
 .margin10 {
@@ -96,5 +129,5 @@ body {
 }
 body {
   margin: 0;
-  font-family: "Dosis", ;
+  font-family: "Dosis";
 }

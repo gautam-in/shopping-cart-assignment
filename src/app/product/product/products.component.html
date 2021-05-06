@@ -19,7 +19,7 @@
                 alt="{{ product?.name }}"
               />
               <p class="card-text product-description small-screen">
-                {{ product?.description }}
+                {{ product?.description | slice:0:130}}
               </p>
             </div>
             <div class="product-footer">

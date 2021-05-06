@@ -3,17 +3,46 @@
   background-color: rgb(252, 245, 245);
   margin-left: 3%;
   margin-right: 2%;
+  @include tablet-landscape {
+    margin-left: 0;
+  }
+  @include tablet-portarait {
+    margin: 0;
+  }
 }
-
+.main-row {
+  @include tablet-portarait {
+    margin: 0;
+  }
+}
 .side-nav {
   background-color: $grey;
+  @include mobile {
+    background-color: $white;
+  }
 }
 
 .product {
   max-width: 70%;
   padding: 10px 0px;
+  @include tablet-landscape {
+    max-width: 80%;
+    padding: 0px 0px;
+  }
+  @include tablet-portarait {
+    margin: 0;
+  }
   .product-row {
     margin-left: 0px;
+    @include tablet-landscape {
+      margin-left: 0rem;
+    }
+    @include big-mobile {
+      margin-top: -3rem;
+    }
+  }
+  @include big-mobile {
+    max-width: 100%;
   }
 }
 
@@ -23,18 +52,51 @@
   border: 0;
   border-right: 2px solid $grey;
   margin-top: 3rem;
+  @include tablet-landscape {
+    width: 50rem;
+    height: 245px;
+  }
+
+  @include big-mobile {
+    width: 24rem;
+    height: 14rem;
+  }
   .product-body {
     border-bottom: 3px dashed $grey;
     padding: 0;
     height: 90%;
+
+    @include big-mobile {
+      max-height: 13px;
+    }
     .product-title {
       font-size: 1.1rem;
       font-weight: 700;
       height: 5rem;
+      @include tablet-landscape {
+        height: 3rem;
+      }
+
+      @include big-mobile {
+        padding-top: 2rem;
+        height: 5rem;
+      }
     }
     .product-img {
       margin-bottom: 1rem;
       margin-right: 1rem;
+      @include tablet-landscape {
+        width: 8rem;
+      }
+      @include tablet-portarait {
+        width: 7rem;
+        height: 9rem;
+      }
+      @include big-mobile {
+        width: 8rem;
+        height: 10rem;
+        margin-bottom: 0;
+      }
     }
     .product-description {
       height: 5rem;
@@ -44,12 +106,32 @@
       overflow: hidden;
       text-overflow: ellipsis;
       font-weight: 600;
+      @include tablet-landscape {
+        height: 8rem;
+      }
+      @include tablet-portarait {
+        height: 8rem;
+        font-size: 11px;
+        font-weight: 600;
+      }
+      @include big-mobile {
+        height: 6rem;
+        margin-top: 1rem;
+        margin-right: 0rem;
+        margin-left: 0rem;
+      }
     }
     .product-footer {
       margin-bottom: 3rem;
       display: flex;
       .big-screen {
         width: 100%;
+        @include tablet-landscape {
+          display: none;
+        }
+        @include tablet-portarait {
+          display: none;
+        }
         .product-price {
           font-size: 12px;
           font-weight: 600;
@@ -65,122 +147,40 @@
       }
       .small-screen {
         display: none;
+        @include tablet-landscape {
+          display: block !important;
+          .product-buy {
+            font-size: 12px;
+            background-color: $mergenta;
+            padding: 0.3rem 5rem;
+            @include big-mobile {
+              font-size: 10px;
+              padding: 0.3rem 3rem;
+              margin-left: 10rem;
+              margin-top: -1rem;
+            }
+          }
+        }
       }
     }
   }
 }
 
-// @media only screen and (min-width: 768px) {
-@media only screen and (max-width: 991px) and (min-width: 768px) {
-  .product-nav {
-    margin-left: 0;
-  }
-
-  .product {
-    max-width: 80%;
-    padding: 0px 0px;
-  }
-
-  .product-card {
-    width: 50rem;
-    height: 245px;
-    .product-body {
-      padding: 1rem;
-      .product-title {
-        height: 2.5rem;
-        font-size: 0.8rem;
-      }
-      .product-img {
-        width: 8rem;
-        margin-right: 1rem;
-      }
-      .product-description {
-        height: 8rem;
-      }
-    }
-
-    .product-footer {
-      .big-screen {
-        display: none;
-      }
-
-      .small-screen {
-        display: block !important;
-        .product-buy {
-          font-size: 10px;
-          background-color: $mergenta;
-          padding: 0.3rem 5rem;
-        }
-      }
-    }
-  }
-  .inner-body {
+.inner-body {
+  @include tablet-landscape {
     display: flex;
   }
-}
-
-/* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 600px) and (max-width: 767px) {
-  .main-row {
-    margin: 0;
-  }
-  .product-nav {
-    margin: 0;
-  }
-
-  .product {
-    padding: 0px 0px;
-    margin: 0;
-  }
-
-  .product-card {
-    width: 50rem;
-    height: 245px;
-    .product-body {
-      .product-title {
-        height: 2.5rem;
-        font-size: 0.8rem;
-      }
-      .product-img {
-        width: 4rem;
-      }
-      .product-description {
-        height: 8rem;
-        font-size: 11px;
-        font-weight: 600;
-      }
-    }
-
-    .product-footer {
-      .big-screen {
-        display: none;
-      }
-
-      .small-screen {
-        display: block !important;
-        .product-buy {
-          font-size: 10px;
-          background-color: $mergenta;
-          padding: 0.3rem 4.7rem;
-        }
-      }
-    }
-  }
-  .inner-body {
-    display: flex;
+  @include tablet-portarait {
     height: 9rem;
   }
 }
-
-/* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 600px) {
-  .product-dropdown {
+.product-dropdown {
+  @include big-mobile {
     display: inline-block !important;
     margin-top: -2rem !important;
-  // margin-bottom: -3rem i !important;
     .drpdwn-btn {
       width: 24rem;
-      margin-top: 0  !important;
+      margin-top: 0 !important;
       background-color: $mergenta !important;
       border: 0;
       margin-bottom: -3rem;
@@ -196,59 +196,5 @@
     .menu-item {
       color: $white;
     }
-  }
-
-  .product {
-    max-width: 100%;
-    padding: 0px 0px;
-    .product-row {
-      margin-top: -3rem;
-    }
-  }
-
-  .product-card {
-    width: 24rem;
-    height: 14rem;
-    .product-body {
-      max-height: 13px;
-      .product-title {
-        height: auto;
-        font-size: 1.3rem;
-        padding-top: 2rem;
-      }
-      .product-img {
-        width: 10rem;
-        height: 11rem;
-        margin-bottom: 0;
-      }
-      .product-description {
-        height: 6rem;
-        margin-top: 1rem;
-        margin-right: 0rem;
-        margin-left: 0rem;
-        font-size: 11px;
-        font-weight: 600;
-      }
-    }
-    .product-footer {
-      .big-screen {
-        display: none;
-      }
-
-      .small-screen {
-        display: block !important;
-        .product-buy {
-          font-size: 11px;
-          background-color: $mergenta;
-          padding: 0.1rem 2.6rem;
-          margin-left: 11rem;
-          margin-top: -2rem;
-        }
-      }
-    }
-  }
-  .inner-body {
-    display: flex;
-    height: 9rem;
   }
 }
