@@ -12,4 +12,9 @@ npm run start
 # or
 yarn install
 yarn start
+
+Inside Bazzar folder 
+1 ) npm install 
+2) ng serve
+
 ```
