@@ -1,50 +1,12 @@
 @import "../../../assets/scss/color.scss";
-.product-nav {
-  background-color: rgb(252, 245, 245);
-  margin-left: 3%;
-  margin-right: 2%;
-  @include tablet-landscape {
-    margin-left: 0;
-  }
-  @include tablet-portarait {
-    margin: 0;
-  }
-}
-.main-row {
-  @include tablet-portarait {
-    margin: 0;
-  }
-}
-.side-nav {
-  background-color: $grey;
-  @include mobile {
-    background-color: $white;
-  }
-}
 
-.product {
-  max-width: 70%;
-  padding: 10px 0px;
-  @include tablet-landscape {
-    max-width: 80%;
-    padding: 0px 0px;
-  }
-  @include tablet-portarait {
-    margin: 0;
-  }
   .product-row {
-    margin-left: 0px;
-    @include tablet-landscape {
-      margin-left: 0rem;
-    }
+    margin-left: 1rem;
     @include big-mobile {
       margin-top: -3rem;
+      margin-left: -4rem;
     }
   }
-  @include big-mobile {
-    max-width: 100%;
-  }
-}
 
 .product-card {
   width: calc(25% - 10px);
@@ -53,13 +15,14 @@
   border-right: 2px solid $grey;
   margin-top: 3rem;
   @include tablet-landscape {
-    width: 50rem;
+    width: 42rem;
     height: 245px;
   }
 
   @include big-mobile {
     width: 24rem;
-    height: 14rem;
+    height: 11rem;
+    margin-top: 6rem;
   }
   .product-body {
     border-bottom: 3px dashed $grey;

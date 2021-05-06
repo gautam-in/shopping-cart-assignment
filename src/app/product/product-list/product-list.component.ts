@@ -5,11 +5,11 @@ import { CartService } from 'src/app/shared/services/cart/cart.service';
 import { IProduct } from 'src/models/product.model';
 
 @Component({
-  selector: 'app-products',
-  templateUrl: './products.component.html',
-  styleUrls: ['./products.component.scss'],
+  selector: 'app-product-list',
+  templateUrl: './product-list.component.html',
+  styleUrls: ['./product-list.component.scss']
 })
-export class ProductsComponent implements OnInit {
+export class ProductListComponent implements OnInit {
   products: IProduct[] = [];
   totalProducts: IProduct[] = [];
   categoryId : string
@@ -54,4 +54,5 @@ export class ProductsComponent implements OnInit {
     this._cartService.addProductToCart(product);
     this._cartService.getTotalAmount(product);
   }
+
 }
