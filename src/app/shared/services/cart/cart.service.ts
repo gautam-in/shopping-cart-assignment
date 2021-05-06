@@ -15,17 +15,16 @@ export class CartService {
         if (element.id == product.id && element.count) {
           element.count++;
           element.productPrice = element.price * element.count;
+        } else if (!this.itemInCart.find((x) => x.id == product.id)) {
+          this.pushNewItem(product);
         }
       });
-      if (!this.itemInCart.find((x) => x.id == product.id)) {
-        this.pushNewItem(product);
-      }
     } else {
       this.pushNewItem(product);
     }
   }
 
-  pushNewItem(product) {
+  pushNewItem(product: IProduct) {
     product.count = 1;
     product.productPrice = product.price;
     this.itemInCart.push(product);
