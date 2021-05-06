@@ -1,0 +1,108 @@
+@import './variable'; 
+.row {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+}
+.span-1-of-2 {
+    width: 50%;
+ vertical-align: top;
+}
+
+.span-1-of-2:first-child{
+    padding-left: 16%;
+    padding-top: 2.5%;
+}
+
+p {
+    margin-top: 10px;
+    margin-bottom: 15px;
+    font-size: 90%;
+    font-weight: 600;
+    color: $hedernav;
+}
+
+a {
+
+    font-size: 80%;
+    padding: 8px 25px;
+}
+
+
+.user-input-wrp {
+	position: relative;
+	width: 75%;
+}
+.user-input-wrp .inputText{
+	width: 100%;
+	outline: none;
+	border:none;
+	border-bottom: 1px solid #777;
+ 	-webkit-box-shadow: none !important;
+ 	        box-shadow: none !important;
+     padding: 20px 10px 5px 0px;
+}
+.user-input-wrp .inputText:focus{
+	border-color: rgb(94, 94, 197);
+	border-width: medium medium 2px;
+}
+.user-input-wrp .floating-label {
+	position: absolute;
+	pointer-events: none;
+	top: 18px;
+    left: 0;
+    font-size: 80%;
+	-webkit-transition: 0.2s ease all;
+	-o-transition: 0.2s ease all;
+	transition: 0.2s ease all;
+}
+.user-input-wrp input:focus ~ .floating-label,
+.user-input-wrp input:not(:focus):valid ~ .floating-label{
+	top: 0px;
+	left: 0px;
+	font-size: 13px;
+	opacity: 1;
+    color: $formAnimationColor;
+    font-weight: 500;
+}
+
+
+.submit-btn {
+    width: 75%;
+    border: 0;
+    margin-bottom: 10px;
+}
+
+.error-class {
+    color: $primarycolor;
+    font-size: 80%;
+}
+
+
+@media only screen and (max-width: 768px) {
+    .span-1-of-2 {
+     width: 50%;
+     vertical-align: top;
+    
+    }
+    
+    .span-1-of-2:first-child{
+        padding-left: 10px;
+    }
+  }
+
+
+@media only screen and (max-width: 468px) {
+    .span-1-of-2 {
+        width: 100%;
+        text-align: -webkit-center;
+    }
+    
+    .span-1-of-2:first-child{
+       padding: 0;
+       text-align: center;
+    }
+  }

@@ -1,0 +1,135 @@
+@import './variable';
+
+li , a {
+    display: inline-block;
+    margin-left: 10px;
+    font-size: 90%;
+    font-weight: 600;
+    color: $hedernav;
+}
+
+.dekstop-header {
+    display: block;
+}
+.mobile-header {
+    display: none;
+     nav {
+         display: -webkit-box;
+         display: -ms-flexbox;
+         display: flex;
+         grid-gap: 29%;
+
+         img {
+             width: 30%;
+         }
+
+         div {
+             display: -webkit-box;
+             display: -ms-flexbox;
+             display: flex;
+
+             .menu {
+                padding-right: 10px;
+                padding-left: 10px;
+                padding-top: 15px;
+                background: transparent;
+                border: 0;
+                outline: none;
+                font-size: 120%;
+             }
+         }
+     }
+}
+
+header {
+    -webkit-box-shadow:  2px  0 2px 2px $secondarycolor;
+            box-shadow:  2px  0 2px 2px $secondarycolor;
+}
+
+.nav-container {
+    width: 100%;
+    padding: 0 2% ;
+}
+
+.nav-div {
+    width: 32%;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.nav-div:first-child img {
+    max-width: 100%;
+    width: inherit;
+}
+
+.nav-div:last-child ul, 
+.nav-div:last-child div {
+    text-align: right;
+}
+
+.middle-div ul {
+    margin-top: 34px;
+}
+
+
+.cart-img {
+    font-size: 10%;
+}
+
+.cart {
+    padding: 12px 24px 4px 24px;
+    margin-top: 14px;
+    border: 0;
+
+    img {
+        height: 23px;
+        width: 25px;
+    }
+
+    span {
+        vertical-align: super;
+        padding-top: 13px;
+    }
+}
+
+
+section  {
+    margin: 0;
+    .logo-class {
+        width: 39% !important;
+        margin-left: 24%;
+    }
+}
+
+.active {
+    color: $primarycolor;
+}
+
+
+.menu-links  {
+    display: none;
+li {
+    text-align: center;
+    border: 0.5px solid $secondarycolor;
+    margin: 0;
+    padding: 5px;
+    display: block;
+}
+    
+}
+
+
+@media only screen and (min-width: 469px) {
+  .menu-links li {
+      display: none;
+  }
+  }
+
+@media only screen and (max-width: 468px) {
+    .dekstop-header {
+        display: none;
+    }
+    .mobile-header {
+        display: block;
+    }
+  }

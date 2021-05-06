@@ -1,0 +1,60 @@
+<section>
+    <aside>
+        <ul>
+           
+           <ng-container *ngFor="let data of categoryData"><li  *ngIf="data.enabled" [ngClass]="data.id == categoryId ? 'active' : 'normal' " (click)="filterData(data.id)" ><a href="javascript:void(0)"  routerLinkActive="active"  >
+                {{data.name}}
+            </a></li>
+        </ng-container> 
+           
+
+        </ul>
+    </aside>
+    <div class="category-dropdown">
+        <select
+          class="dropdown_select"
+          name="dropdown"
+          [(ngModel)]="keyName"
+          (change)="selected()"
+        >
+          <option value="" aria-label="select a category" selected disabled hidden>
+            Select a category
+          </option>
+          <ng-container *ngFor="let item of categoryData">
+            <option
+              *ngIf="item.enabled"
+              [selected]="categoryId === item.key"
+              [value]="item.key"
+            >
+              {{ item.name }}
+            </option>
+          </ng-container>
+        </select>
+    </div>
+    <article>
+        <div class="row">
+            <div class="span-1-of-4" *ngFor="let data of productData">
+                <div class="card">
+                        <h3>{{data.name}}</h3>
+                        <div class="card-body">
+                        <img [src]="data.imageURL">
+                        <div class="item-desc">
+                        <p>{{data.description}}</p>
+                        <div class="price-div">
+                            <span> MRP Rs {{data.price}}</span>
+                            <span><button type="button" class="btn "  (click)="addItem(data)">Buy Now
+                                <cite>@Rs {{data.price}}</cite>
+                            </button></span>
+                        </div>
+                    </div>
+                    </div>
+                    <button type="button" class="btn buy-now"  (click)="addItem(data)">Buy Now @Rs {{data.price}}</button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </article>
+</section>

@@ -1,0 +1,72 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import './variable';
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: $bgcolor;
+    font-size: $fontsize;
+    font-family: $fontfamily
+  }
+
+
+  .btn {
+    color: $bgcolor;
+    background-color: $primarycolor;
+    text-decoration: none;
+    padding: 6px;
+    margin-top: 10px;
+    border: 0;
+  }
+
+  li {
+    list-style: none;
+    cursor: pointer;
+  }
+   a {
+     text-decoration: none;
+   }
+
+   section {
+     width: 80%;
+     margin: 10px auto 0 auto;
+   }
+
+  //  @media only screen and (max-width: 1200px) {
+  //   section {
+  //     width: 100%;
+  //     margin: 10px auto;
+  //   }
+  //     body {
+  //       font-size: $fontsize;
+  //     }
+  //  }
+
+   @media only screen and (max-width: 768px) {
+    section {
+      width: 100%;
+    
+    }
+      body {
+        font-size: $fontsize;
+      }
+   }
+
+   @media only screen and (max-width: 469px) {
+    section {
+      width: 100%;
+      
+    }
+      body {
+        font-size: $fontsize;
+      }
+   }
+

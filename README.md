@@ -1,15 +1,9 @@
-# XT Shopping Cart Assignment
+For start Project 
 
-This is the base folder for the shopping cart exercise. You will have all the static assets and mock server responses available in this repo.
+1) first Install all dependencies use command 'ng install '
+2) To run use 'ng serve'
 
-## Getting Started
+For start Server go to the shopping-cart-assignment-server 
+1 ) npm install 
+2) npm run start
 
-Clone this repo and run following command for starting the mock server:
-
-```
-npm install
-npm run start
-# or
-yarn install
-yarn start
-```
