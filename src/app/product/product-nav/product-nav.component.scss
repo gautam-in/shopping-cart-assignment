@@ -1,0 +1,57 @@
+@import "../../../assets/scss/color.scss";
+
+.nav {
+@include big-mobile{
+  display: none;
+}
+
+a {
+  color: grey;
+  border-bottom: 2px solid rgb(224, 220, 220);
+  font-size: 80%;
+  padding: 12px 0px;
+  @include tablet-landscape{
+    font-size: 70%;
+  }
+  @include tablet-portarait{
+    font-size: 50%;
+  }
+  button {
+    border: 0;
+    background-color: $grey;
+    color: rgb(133, 131, 131);
+    font-weight: 600;
+    font-size: 14px;
+
+    @include big-mobile{
+      background-color: $white;
+    }
+  }
+  
+}
+}
+
+.product-dropdown {
+  display: none;
+  @include big-mobile{
+    display: inline-block;
+    .drpdwn-btn {
+      width: 24rem;
+      margin-top: 0rem;
+      background-color: $mergenta;
+      border: 0;
+      margin-left: -1rem;
+    }
+
+    .dropdown-toggle::after {
+      margin-left: 11rem;
+    }
+    .product-menu {
+      width: 23rem;
+      background-color: $mergenta;
+    }
+    .menu-item {
+      color: $white;
+    }
+  }
+}

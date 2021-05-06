@@ -1,0 +1,139 @@
+@import "./assets/scss/color";
+
+/* You can add global styles to this file, and also import other style files */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-size: 15px;
+  font-weight: 500;
+  font-family: "Dosis";
+  background-color: white;
+  text-rendering: optimizeLegibility;
+  /* The text-rendering property in CSS allows you to choose quality of text over speed (or vice versa) allowing you to fine tune optimization by suggesting to the browser as to how it should render text */
+  overflow-x: hidden; /* The content is clipped - and no scrolling mechanism is provided */
+}
+
+.main-heading {
+  font-size: 24px;
+  font-weight: bolder;
+}
+
+.action-btn {
+  width: 100%;
+  font-size: 80%;
+  background-color: $mergenta !important;
+  color: white !important;
+  border: 0;
+  text-transform: none;
+  margin: auto;
+  margin-bottom: 1rem;
+}
+
+a {
+  text-decoration: none;
+}
+
+.error-msg {
+  color: red;
+  padding-bottom: 2%;
+}
+//------------------------------------------------
+// LOGIN and SIGNUP Page CSS
+//------------------------------------------------
+.login-register-row {
+  @include tablet-portarait {
+    display: block;
+  }
+  .login-reg-text {
+    padding-left: 8rem;
+    margin-left: 2rem;
+    padding-top: 2rem;
+    @include desktop {
+      margin-left: 0;
+      padding-left: 8rem ;
+    }
+    @include tablet-landscape{
+      padding-left: 1rem;
+    }
+    @include tablet-portarait{
+      padding-left: 1rem ;
+    }
+
+    .title {
+      font-size: 25px;
+      font-weight: 800;
+      @include tablet-portarait{
+        font-size: 25px;
+      }
+    }
+    .title-description {
+      font-size: 15px;
+      @include tablet-portarait{
+        font-size: 13px;
+      }
+    }
+  }
+}
+
+.login-reg-form {
+  margin-left: -8rem !important;
+ 
+  @include desktop {
+    margin-left: 0 !important;
+  }
+  form {
+    padding-top: 3%;
+    max-width: 75%;
+    padding-right: 20%;
+    margin-left: 4rem;
+    @include desktop{
+      padding-right: 0rem;
+    }
+    @include tablet-landscape{
+      margin-left: 0rem;
+    }
+    @include tablet-portarait{
+      max-width: 100%;
+     
+    }
+    .action-btn{
+      @include tablet-landscape{
+        font-size: 1rem;
+      }
+    }
+   
+  }
+}
+
+.form-group label,
+input:active {
+  font-size: 90%;
+}
+
+input:focus {
+  border-bottom: 2px solid rgb(18, 212, 238) !important;
+}
+
+.margin10 {
+  margin-top: 10px;
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: "Dosis";
+}
+
+.modal-dialog{
+  @include big-desktop{
+    margin-left:40rem;
+  }
+}

@@ -1,0 +1,12 @@
+<ngb-carousel>
+  <ng-template ngbSlide *ngFor="let banner of bannerList;">
+    <div class="picsum-img-wrapper banner">
+      <img
+        class="banner-image"
+        src="assets{{ banner.bannerImageUrl }}"
+        alt="{{ banner.bannerImageAlt }}"
+        title="{{ banner.bannerImageAlt }}"
+      />
+    </div>
+  </ng-template>
+</ngb-carousel>

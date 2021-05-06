@@ -1,0 +1,173 @@
+@import "../../../../assets/scss/color.scss";
+
+.card {
+  background-color: $grey;
+  min-height: 100%;
+  margin-bottom: 0rem;
+  box-shadow: 0 1px 1px $grey;
+  .cart-header {
+    margin-top: 2rem;
+    background-color: $white;
+    padding-left: 2rem;
+    vertical-align: middle;
+    @include mobile{
+      margin-top: 1rem;
+    }
+    .title {
+      font-size: 1.6rem;
+      font-weight: 600;
+      @include big-mobile{
+        font-size: 1.1rem;
+        margin: auto;
+      }
+    }
+    .count {
+      font-size: 1rem;
+      font-weight: 500;
+      @include big-mobile{
+        font-size: 0.8rem;
+      }
+    }
+  }
+
+  .product {
+    margin-top: 1rem;
+    background-color: $white;
+    @include mobile{
+      height: 6rem;
+    }
+
+    .cart-image {
+      width: 15%;
+      margin: 1rem;
+      @include big-mobile{
+        width: 10%;
+        margin-left: 1rem;
+      }
+      .card-img {
+        width: 65%;
+        @include tablet-landscape{
+          width: 100%;
+          margin: 1rem;
+        }
+        @include mobile{
+          margin: 0 1rem;
+        }
+      }
+    }
+
+    .cart-description {
+      width: 80%;
+      @include mobile{
+        width: 75%;
+      }
+
+      .card-body{
+        @include tablet-landscape{
+          padding: 3.25rem;
+        }
+        .card-title {
+          font-size: 1.5rem;
+          font-weight: 700;
+          @include tablet-landscape{
+            font-weight: 600;
+          }
+          @include big-mobile{
+            font-size: 0.9rem;
+          }
+          @include mobile{
+            font-size: 0.7rem !important;
+            font-weight: 500;
+          }
+        }
+      }
+     
+    }
+  }
+
+  .cart-offer {
+    margin: 1rem 1rem;
+    background-color: $white;
+    display: flex;
+    @include tablet-landscape{
+    }
+    .offer-img {
+      flex: 0.3;
+      padding: 20px 20px;
+      @include big-mobile{
+        padding: 10px 10px;
+      }
+      .offer-image {
+        width: auto;
+        height: auto;
+        @include tablet-landscape{
+          width: 8rem;
+        }
+        @include big-mobile{
+          width: 6rem;
+        }
+      }
+    }
+    .offer-text {
+      flex: 1.7;
+      padding-top: 30px;
+      font-size: 1.3rem;
+      @include tablet-landscape{
+        font-size: 1rem;
+      }
+      @include big-mobile{
+        padding-top: 18px;
+        font-size: 0.7rem;
+      }
+    }
+  }
+}
+
+.icon-action {
+  color: $mergenta;
+  font-size: 1.5rem;
+  margin: 0 10px;
+  cursor: pointer;
+  @include mobile{
+    font-size: 1rem;
+  }
+}
+
+.cart-footer {
+  background-color: $white;
+  margin-block-start: -15px;
+  .promo-code,
+    .checkout-text,
+    .checkout-price {
+      @include big-mobile{
+        font-size: 0.7rem;
+      }
+     
+    }
+}
+.item-price,
+.item-total-price,
+.count {
+  margin: 0 5px;
+  font-size: 1.2rem;
+  @include tablet-landscape{
+    font-size: 1.3rem;
+  }
+  @include big-mobile{
+    font-size: 1rem;
+  }
+  @include mobile{
+    font-size: 0.7rem !important;
+  }
+}
+.item-total-price {
+  float: right;
+}
+
+
+
+
+
+
+
+

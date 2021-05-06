@@ -1,0 +1,71 @@
+<div *ngIf="cartList.length > 0">
+  <div class="card mb-3">
+    <div class="cart-header">
+      <p class="title" id="cartTitle">
+        My Cart
+        <span *ngIf="cartList?.length > 0" class="count"
+          >({{ cartList?.length }} item)</span
+        >
+      </p>
+    </div>
+    <div class="row product" *ngFor="let product of cartList; let i = index">
+      <div class="cart-image">
+        <img
+          src="assets/{{ product?.imageURL }}"
+          class="card-img"
+          alt="{{ product?.name }}"
+          title="{{ product?.name }}"
+        />
+      </div>
+      <div class="cart-description">
+        <div class="card-body">
+          <p class="card-title" aria-level="1" role="heading">
+            {{ product?.name }}
+          </p>
+          <div>
+            <i
+              class="fa fa-minus-square icon-fa icon-action"
+              (click)="removeProductFromCart(product)"
+              aria-label="decrease product unit"
+            ></i>
+            <span class="count">{{ product?.count }}</span>
+            <i
+              class="fa fa-plus-square icon-fa icon-action"
+              (click)="addProductsToCart(product)"
+              aria-label="increase product unit"
+            ></i>
+            <span class="item-price"
+              >X &nbsp; &nbsp;{{ product?.price | currency: "Rs " }}</span
+            >
+            <span class="item-total-price">{{
+              product?.productPrice | currency: "Rs "
+            }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cart-offer">
+      <figure class="offer-img">
+        <img
+          class="offer-image"
+          src="assets/static/images/lowest-price.png"
+          alt="lowest-price"
+        />
+      </figure>
+      <p class="offer-text">You won't find it cheaper anywhere</p>
+    </div>
+  </div>
+
+  <div class="card-footer cart-footer">
+    <p class="promo-code">Promo code can be applied on payment page</p>
+    <button
+      type="button"
+      class="btn action-btn"
+      aria-label="Proceed to Checkout Rs.  /-"
+    >
+      <span class="checkout-text">Proceed to Checkout </span>
+      <span class="checkout-price">Rs.{{ totalAmount }} ></span>
+    </button>
+  </div>
+</div>

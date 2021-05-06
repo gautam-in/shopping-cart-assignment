@@ -1,0 +1,37 @@
+@import "../../assets/scss/color.scss";
+.product-nav {
+  background-color: rgb(252, 245, 245);
+  margin-left: 3%;
+  margin-right: 2%;
+  @include tablet-landscape {
+    margin-left: 0;
+  }
+  @include tablet-portarait {
+    margin: 0;
+  }
+}
+.main-row {
+  @include tablet-portarait {
+    margin: 0;
+  }
+}
+.side-nav {
+  background-color: $grey;
+  @include mobile {
+    background-color: $white;
+  }
+}
+
+.product {
+  max-width: 70%;
+  padding: 10px 0px;
+  @include tablet-landscape {
+    max-width: 80%;
+    padding: 0px 0px;
+  }
+  @include tablet-portarait {
+    margin: 0;
+  }
+ 
+}
+

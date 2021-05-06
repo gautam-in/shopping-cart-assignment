@@ -1,0 +1,18 @@
+@import "../../../assets/scss/color.scss";
+
+.main-container {
+  min-height: 40rem;
+  @include tablet-landscape{
+    padding: 0;
+  }
+  .category {
+    margin: 0 10rem;
+    @include desktop{
+      margin: 0 10rem;
+    }
+    @include tablet-landscape {
+      margin: 0;
+    }
+    
+  }
+}

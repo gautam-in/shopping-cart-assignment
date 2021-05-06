@@ -1,0 +1,13 @@
+@import "../../assets/scss/color.scss";
+
+.footer {
+  background-color: rgb(236, 230, 230);
+  padding: 10px 10px 10px 50px;
+  font-weight: 600;
+  font-size: 12px;
+  @include big-mobile{
+    font-size: 10px;
+    padding: 5px 5px 5px 25px;
+  }
+}
+

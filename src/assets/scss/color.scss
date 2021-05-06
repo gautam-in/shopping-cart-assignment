@@ -1,0 +1,27 @@
+$mergenta : #c02345;
+$grey : rgb(240, 236, 236);
+$black : black;
+$white : white;
+$pink: #c03e57;
+
+@mixin mobile {
+    @media (max-width: 575px) { @content; }
+  }
+  @mixin big-mobile {
+    @media (max-width: 600px) { @content; }
+  }
+  @mixin tablet-portarait {
+    @media (max-width: 767px) { @content; }
+  }
+  
+  @mixin tablet-landscape {
+    @media (max-width: 991px) { @content; }
+  }
+  
+  @mixin desktop {
+    @media (max-width: 1199px) { @content; }
+  }
+  @mixin big-desktop {
+    @media (min-width: 1200px) { @content; }
+  }
+

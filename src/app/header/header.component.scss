@@ -1,0 +1,145 @@
+@import "../../assets/scss/color.scss";
+
+nav {
+  max-height: 20rem;
+  width: auto;
+  box-shadow: 0px 0px 2px 4px $grey;
+  @include tablet-landscape{
+    margin: 0;
+  }
+  .navbar-brand {
+    margin-left: 5rem;
+    @include tablet-landscape{
+      margin-left: 0;
+    }
+    .logo-image {
+      width: 150px;
+      height: inherit;
+      @include big-mobile{
+        width: 70px;
+      }
+    }
+  }
+  .nav-bar-left {
+    margin-left: 15rem;
+    display: -webkit-inline-box;
+    @include tablet-landscape{
+        margin: 1rem 0;
+    }
+    @include big-mobile{
+      margin: 2% 1rem;
+    }
+  }
+
+  .nav-bar-right {
+    margin-right: 5rem;
+    margin-top:2%;
+    @include tablet-landscape{
+       display: -webkit-inline-box;
+         margin: 1rem 0;
+     }
+    @include big-mobile{
+       margin: 2% 1rem;
+     }
+    .nav-item {
+      margin: 0 1rem;
+      @include big-mobile{
+          margin: 0 0.5rem;
+      }
+    }
+  }
+
+  .nav-item {
+    cursor: pointer;
+  }
+}
+
+.active {
+  background-color: $mergenta;
+  color: $grey;
+}
+
+.main-container {
+  position: relative;
+  .mid-container {
+    position: absolute;
+    right: 26rem;
+    bottom: 0rem;
+    top: 1rem;
+    left: 5rem;
+    @include tablet-landscape{
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      margin-left: 7rem;
+    }
+    @include big-mobile{
+      position: absolute;
+      right: 26rem;
+      margin-left: 1rem;
+    }
+    .nav-link {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: $black;
+      margin-right: 1rem;
+     
+    }
+  }
+  .end-container {
+    position: absolute;
+    right: 4rem;
+    bottom: 4rem;
+    top: -1rem;
+    @include big-mobile{
+      right: -1rem;
+    }
+    .nav-link {
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: $black;
+      @include big-mobile{
+        font-size: 0.6rem;
+        margin-right: 0.8rem;
+      }
+    }
+  }
+
+  .cart {
+    position: absolute;
+    background-color: $grey;
+    width: 8rem;
+    height: 4rem;
+    right: 9rem;
+    bottom: -7px;
+    @include tablet-landscape{
+      height: 2rem;
+      right: -2rem;
+    }
+
+    a {
+      color: black;
+      text-align: center;
+      @include tablet-landscape{
+        font-size: 13px;
+        padding-left: 8px;
+      }
+    }
+    .cart-logo {
+      width: 2rem;
+      height: inherit;
+      color: $mergenta;
+      margin-left: 1rem;
+      @include tablet-landscape{
+        width: 1.5rem;
+      }
+    }
+  }
+}
+
+
+
+
+
+
+

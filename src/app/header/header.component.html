@@ -1,0 +1,65 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container main-container">
+    <a class="navbar-brand" routerLink="['/home']">
+      <img
+        src="/assets/img/logo_2x.png"
+        class="logo-image"
+        alt="Sabka bazaar"
+      />
+    </a>
+    <div class="mid-container">
+      <ul class="navbar-nav nav-bar-left">
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            [routerLink]="['/home']"
+            [routerLinkActive]="['active']"
+            #rla="routerLinkActive"
+            >Home</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            [routerLink]="['/products']"
+            [routerLinkActive]="['active']"
+            #rla="routerLinkActive"
+            >Products</a
+          >
+        </li>
+      </ul>
+    </div>
+    <div class="end-container">
+      <ul class="navbar-nav nav-bar-right" *ngIf="!isLoggedIn">
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            [routerLink]="['/auth/login']"
+            [routerLinkActive]="['active']"
+            >SignIn</a
+          >
+        </li>
+
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            [routerLink]="['/auth/register']"
+            [routerLinkActive]="['active']"
+            >Register</a
+          >
+        </li>
+      </ul>
+      <ul class="navbar-nav nav-bar-right" *ngIf="isLoggedIn">
+        <li class="nav-item">
+          <a class="nav-link" (click)="logoutUser()">Logout</a>
+        </li>
+      </ul>
+    </div>
+    <div class="cart" (click)="openCart()" *ngIf="isLoggedIn">
+      <img src="/assets/img/cart.svg" alt="cart" class="cart-logo" />
+      <a data-target="#exampleModal"
+        >{{ productsInCart.length >= 1 ? productsInCart.length : 0 }} items</a
+      >
+    </div>
+  </div>
+</nav>

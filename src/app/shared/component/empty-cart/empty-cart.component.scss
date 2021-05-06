@@ -1,0 +1,143 @@
+@import "../../../../assets/scss/color.scss";
+
+.card {
+  background-color: $grey;
+  min-height: 25rem;
+  margin-bottom: 0rem !important;
+  box-shadow: 0 1px 1px $grey;
+  .no-gutters {
+    display: flex;
+    margin: 0.5rem 0;
+    background-color: white;
+    @include tablet-portarait {
+      text-align: center;
+    }
+  
+    .card-image{
+      @include mobile{
+        flex: 1;
+        margin-right: -6rem;
+        margin-left: -6rem;
+        width: 25%
+      }
+      .card-img {
+        width: 5rem;
+        height: inherit;
+        margin: 1rem 0.5rem;
+        @include tablet-portarait {
+          width: 25%;
+          height: auto;
+          margin: 1rem -5rem;
+        }
+        @include big-mobile{
+          width: 30% !important;
+          padding-top: 1rem;
+          float : left !important;
+        }
+      }
+    }
+   
+  }
+}
+
+.modal-header {
+  background-color: $black;
+  color: $white;
+  .close {
+    background-color: black;
+    border: none;
+    color: white;
+    font-size: 25px;
+    border: none;
+  }
+}
+.modal-body {
+  height: 500px;
+  background-color: $white;
+  text-align: center;
+  padding-top: 12rem;
+  .cart-description {
+    @include tablet-portarait {
+      flex: 1;
+    }
+    .cart-body {
+      text-align: center;
+      margin-top: 30%;
+      @include tablet-portarait{
+        margin-left: -1rem;
+      }
+      .card-title {
+        font-size: 14px;
+        font-weight: 700 !important;
+       
+      }
+    }
+  }
+}
+.modal-footer {
+  padding: 0.5rem;
+  display: inline-block !important;
+  width: -webkit-fill-available;
+  .footer-section {
+    width: 100%;
+  }
+  .action-btn {
+    padding: 0.7rem;
+    font-size: 15px;
+  }
+  .promo {
+    margin-left: 8rem;
+    font-size: 12px;
+    font-weight: 600;
+    @include tablet-portarait{
+      margin-left: 4rem;
+    }
+  }
+}
+
+.cart-offer {
+  display: flex;
+  margin: 0.5rem 0;
+  background-color: $white;
+  .offer-img {
+    flex: 1;
+    .offer-image {
+      width: 6rem !important;
+      padding-top: 1rem;
+      padding-left: 1rem;
+    }
+  }
+  .offer-text {
+    flex: 1;
+    margin-left: -17rem;
+    font-size: 12px;
+    font-weight: 600;
+    padding-top: 1rem;
+    @include tablet-portarait{
+      margin-left: -6rem;
+    }
+  }
+}
+
+.icon-fa {
+  margin: 0 10px;
+  color: $mergenta;
+  font-size: 20px;
+}
+
+.item-price,
+.item-total-price {
+  margin: 0 5px;
+}
+.item-total-price {
+  float: right;
+}
+.common-btn {
+  width: 100%;
+  .checkout-text {
+    float: left;
+  }
+  .checkout-price {
+    float: right;
+  }
+}

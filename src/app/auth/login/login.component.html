@@ -1,0 +1,64 @@
+<div class="container">
+  <div class="row login-register-row">
+    <div class="col-lg-6 col-sm-12 col-md-12 login-reg-text">
+      <h1 class="title">Login</h1>
+      <p class="title-description">
+        Get access to your Orders, Wishlist and Recommendations
+      </p>
+    </div>
+    <div class="col-lg-6 col-sm-12 col-md-12 login-reg-form">
+      <div *ngIf="errorUserExists" id="error" class="error-msg margin10">
+        {{ errormsg }}
+      </div>
+      <form [formGroup]="loginForm" (submit)="submitLoginForm()">
+        <div class="form-group">
+          <label for="login" class="bmd-label-floating">Email</label>
+          <input
+            type="email"
+            class="form-control"
+            formControlName="email"
+            id="email"
+          />
+        </div>
+        <div
+          *ngIf="
+            loginForm.get('email').touched && loginForm.get('email').invalid
+          "
+          class="error-msg"
+        >
+          {{
+            loginForm.get("email")?.errors.required
+              ? validationMessages.email.required
+              : validationMessages.email.pattern
+          }}
+        </div>
+        <div class="form-group">
+          <label for="password" class="bmd-label-floating">Password</label>
+          <input
+            type="password"
+            class="form-control"
+            id="password"
+            formControlName="password"
+            autocomplete="off"
+          />
+        </div>
+        <div
+          *ngIf="
+            loginForm.get('password').touched &&
+            loginForm.get('password').invalid
+          "
+          class="error-msg"
+        >
+          {{
+            loginForm.get("password")?.errors.required
+              ? validationMessages.password.required
+              : validationMessages.password.pattern
+          }}
+        </div>
+        <button type="submit" class="btn btn-danger btn-raised action-btn">
+          Login
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
