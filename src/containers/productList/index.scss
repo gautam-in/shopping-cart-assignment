@@ -2,7 +2,8 @@
   display: flex;
   margin-top: 10px !important;
   position: relative;
-  margin-bottom: 30px !important; 
+  margin-bottom: 30px !important;
+  word-break: break-word;
   &.sidebar {
     width: 22%;
   }
@@ -15,6 +16,37 @@
     & .card_container {
       width: 25%;
       // border: 1px solid #eeeeee;
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  /* For tablet phones: */
+  .product_list_container {
+    & .products {
+      width: 70%;
+
+      & .card_container {
+        width: 50%;
+        // border: 1px solid #eeeeee;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  /* For mobile phones: */
+  .product_list_container {
+    flex-direction: column;
+
+    & .products {
+      flex-direction: column;
+      width: 100%;
+
+      & .card_container {
+        width: 100%;
+        // border: 1px solid #eeeeee;
+      }
     }
   }
 }

@@ -58,7 +58,7 @@ const LoginMyBazar = () => {
         <div className="form_container">
           <form
             className="form "
-            autoComplete="off"
+            autoComplete={false}
             onSubmit={handleSubmit}
             name="login"
           >

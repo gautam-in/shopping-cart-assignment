@@ -7,7 +7,6 @@
   margin: 0px 10px 0px 0px;
   position: sticky;
   top: 0;
-  // z-index: 9;
 
   & .nav_link_container {
     list-style: none;
@@ -32,10 +31,18 @@
       }
     }
   }
+}
 
-  // @include min-width(576px) {
-  //   .select {
-  //     display: none !important;
-  //   }
-  // }
+@media only screen and (max-width: 768px) {
+  /* For tablet phones: */
+  .sidebar {
+    width: 30%;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  /* For mobile phones: */
+  .sidebar {
+    width: 100%;
+  }
 }
