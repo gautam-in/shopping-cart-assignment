@@ -5,7 +5,7 @@ import "./NavigationLinks.scss";
 function NavigationLinks() {
   return (
     <nav className="nav_links">
-      <ul className="flexed">
+      <ul className="flexed_jc_sa">
         <li>
           <Link to="/">Home</Link>
         </li>

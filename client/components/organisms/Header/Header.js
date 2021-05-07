@@ -37,8 +37,8 @@ function Header() {
   }, []);
 
   return (
-    <>
-      <header className="header_container">
+    <div className="header_container">
+      <header>
         <HeaderLogo />
 
         <div className="width_full">
@@ -97,8 +97,7 @@ function Header() {
           </div>
         </div>
       </header>
-      <div className="bottom_grad"></div>
-    </>
+    </div>
   );
 }
 

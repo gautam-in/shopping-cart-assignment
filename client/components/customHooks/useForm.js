@@ -6,7 +6,6 @@ export default function useForm(initial = {}) {
   const initialValues = Object.values(initial).join("");
 
   useEffect(() => {
-    // This function runs when the things we are watching change
     setInputs(initial);
   }, [initialValues]);
 
@@ -14,9 +13,6 @@ export default function useForm(initial = {}) {
     let { value, name, type } = e.target;
     if (type === "number") {
       value = parseInt(value);
-    }
-    if (type === "file") {
-      [value] = e.target.files;
     }
     setInputs((prev) => ({
       ...prev,
@@ -35,7 +31,6 @@ export default function useForm(initial = {}) {
     setInputs(blankState);
   }
 
-  // return the things we want to surface from this custom hook
   return {
     inputs,
     handleChange,

@@ -137,27 +137,31 @@ function ProductsListing(props) {
           {displayProductList.map((list) => {
             let { id, name, description, imageURL, price, stock } = list;
             return (
-              <div key={id} className="product">
-                {name}
-                <div className="flexed">
-                  <img src={imageURL} alt={name} width="40%" height="100%" />
-                  <section>
+              <div key={id} className="product_area">
+                <div class="product_name"> {name}</div>
+                <img src={imageURL} alt={name} width="100%" height="auto" />
+                <div className="product_desc">{description}</div>
+                <div
+                  onClick={() => {
+                    dispatch(addItem(list));
+                  }}
+                  className="buy_button"
+                >
+                  <div className="noselect">Buy again now @Rs.{price}</div>
+                  {/* <div className="noselect">Buy again now </div>
+                  <div className={"noselect"}>@Rs.{price}</div> */}
+                </div>
+                {/* <section>
                     <div>{description}</div>
                     <div
                       onClick={() => {
                         dispatch(addItem(list));
                       }}
-                      className="noselect"
-                      style={{
-                        cursor: "pointer",
-                        background: "black",
-                        color: "white",
-                      }}
+                      className="noselect buy_button"
                     >
                       Buy again now @Rs.{price}
                     </div>
-                  </section>
-                </div>
+                  </section> */}
               </div>
             );
           })}
