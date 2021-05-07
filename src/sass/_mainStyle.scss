@@ -1,0 +1,113 @@
+@import "./variable";
+
+html, body{
+    font-family: 'Dosis' !important;
+    font-style: normal !important;
+    font-weight: 400 !important;
+    src: url(https://fonts.gstatic.com/s/dosis/v19/HhyaU5sn9vOmLzlnC_W6EQ.woff2) format('woff2') !important;
+    unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB !important;
+}
+
+@mixin backgroundClr($color) {
+  background-color: $color;
+}
+
+@mixin htwd($height, $width) {
+    height: $height;
+    width: $width;
+}
+@mixin gridlayout($column, $row) {
+  grid-column: $column;
+  grid-row: $row;
+}
+
+body {
+  @include backgroundClr($color-gray);
+}
+
+header, .carousel-section, .grid-section, .section {
+  @include backgroundClr($color-white);
+  padding-left: 150px;
+  padding-right: 150px;
+}
+
+.home-left-img{
+  @include htwd(150px, 200px);
+}
+.error
+{
+  color: red;
+}
+@media only screen and (max-width: 450px) {
+  .home-left-img, .left-img
+  {
+    width: 100px;
+  }
+  .carousel-indicators
+  {
+    top:70px;
+  }
+}
+@media only screen and (max-width: 1090px) {
+  .flex-item {
+    flex: $width / 2;
+    max-width: $width / 2;
+  }
+
+  .item_g3 {
+    display: $display;
+  }
+
+  .item_g1 {
+    @include gridlayout(1, 1);
+  }
+
+  .item_g2 {
+    @include gridlayout(2, 1);
+  }
+
+  .item_g4 {
+    @include gridlayout((1 / span) 2, 2);
+  }
+
+  header, .carousel-section, .grid-section, footer, .section {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+
+  .left-img, .item_g2 p {
+    height: 200px;
+  }
+
+  .item_g2 p {
+    @include backgroundClr($color-gray);
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .flex-item {
+    flex: $width;
+    max-width: $width;
+  }
+
+  .item_g3 {
+    display: $display;
+  }
+
+  .item_g1 {
+    @include gridlayout(1, (1 / span) 2);
+  }
+
+  .item_g2 {
+    @include gridlayout(2, 1);
+  }
+
+  .item_g4 {
+    @include gridlayout(2, 2);
+  }
+
+  .item_g2 p {
+    height: 140px;
+  }
+}
+

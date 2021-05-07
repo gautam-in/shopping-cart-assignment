@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+<div
+  className="form-group"
+  data-testid="input"
+>
+  <label
+    className="bmd-label-floating"
+  />
+  <input
+    aria-errormessage="d1"
+    aria-invalid="true"
+    aria-required="true"
+    className="form-control"
+    onChange={[Function]}
+    required={true}
+  />
+  <span
+    aria-live="assertive"
+    id="d1"
+    style={
+      Object {
+        "display": "none",
+      }
+    }
+  />
+</div>
+`;

@@ -1,0 +1,53 @@
+@import "../../sass/_mainStyle";
+
+.mobilenav, .mobile-logo
+{
+    display: $display;
+}
+
+@media only screen and (max-width: 550px) {
+.mobilenav, .mobile-logo
+{
+    display: block;
+}
+.logo
+{
+    display: $display;
+}
+#mySidenav a {
+    position: absolute;
+    left: -80px;
+    transition: 0.3s;
+    padding: 15px;
+    width: $width/4;
+    text-decoration: $display;
+    font-size: 16px;
+    color: $color-white;
+    border-radius: 0 5px 5px 0;
+    z-index: 1;
+  }
+  
+  #mySidenav a:hover {
+    left: 0;
+  }
+  
+  #home {
+    top: 150px;
+    background-color: $theme-color;
+  }
+  
+  #product {
+    top: 210px;
+    background-color: #f44336;
+  }
+  
+  #signin {
+    top: 270px;
+    background-color: #04AA6D;
+  }
+  
+  #register {
+    top: 330px;
+    background-color: rgb(97, 230, 223)
+  }
+}

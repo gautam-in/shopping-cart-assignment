@@ -1,0 +1,107 @@
+@import "../../sass/_mainStyle";
+@import "../../sass/_flex";
+
+.grid-container {
+  display: grid;
+  padding: 10px;
+  box-shadow: 0 0px 1px 0px $shadow;
+}
+
+.grid-container1 {
+  display: grid;
+  padding: 25px;
+  box-shadow: 0 4px 2px -2px $shadow;
+
+  &:nth-last-child(1) {
+    box-shadow: $display;
+  }
+}  
+.grid-item {
+  text-align: $text;
+}
+
+.grid-item1 {
+  padding: 5px;
+}
+
+.item1, .item4 {
+  @include gridlayout(1, 1);
+}
+
+.item2, .item3 {
+  @include gridlayout(2, 1);
+}
+
+.cartitem1 {
+  @include gridlayout(1, (1 / span) 2);
+}
+
+.cartitem2 {
+  @include gridlayout((2 / span) 3, 1);
+}
+
+.cartitem3 {
+  @include gridlayout(2, 2);
+  & a
+  {
+    @include htwd(25px, 25px);
+    border-radius: $width;
+    padding: 5px;
+    @include backgroundClr($theme-color);
+    text-align: $text;
+    line-height: 10px;
+    margin: 0px 5px;
+  }
+  & p
+  {
+      margin: 0px 10px;
+  }
+}
+
+.cartitem4 {
+  @include gridlayout(3, 2);
+}
+
+.cartitem5 {
+  @include gridlayout(4, 2);
+}
+
+.item_g1 {
+  @include gridlayout((1 / span) 2, 1);
+}
+
+.item_g2 {
+  @include gridlayout((1 / span) 2, 2);
+  & p {
+    margin-top: 7px;
+    font-size: 15px;
+    padding: 10px;
+    height: 145px;
+    overflow: hidden;
+    @include backgroundClr($color-gray);
+  }
+}
+
+.pro-name {
+    height: 40px;
+    overflow: hidden; 
+}
+
+.item_g4 {
+  height: 35px;
+}
+
+.item_g3 h6 {
+  line-height: 25px;
+  padding: 5px;
+  font-size: 12px;
+  height: 35px;
+}
+
+.span-tab {
+  display: $display;
+}
+.left-img 
+{
+  @include htwd(150px, 150px);
+}
