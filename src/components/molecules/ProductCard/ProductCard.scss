@@ -1,0 +1,122 @@
+@import '../../../styles/global';
+
+.product-wrap {
+  margin: $large $small;
+  padding-bottom: $small;
+  border-bottom: 0.2rem dashed $grey-color;
+  .product-header {
+    font-size: $medium-font;
+    line-height: $large-font;
+    font-weight: 800;
+    margin-bottom: $large;
+  }
+  .product-detail-wrap {
+    display: flex;
+    .product-image {
+      width: 50%;
+      padding: 0.4rem;
+    }
+    .product-description-wrap {
+      position: relative;
+      width: 50%;
+      .product-description {
+        height: fit-content;
+        padding: $extra-small;
+        font-size: $extra-small-font;
+        line-height: $small-font;
+        font-weight: 600;
+        background: $grey-color;
+        margin-bottom: $small;
+      }
+      .product-price {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        button {
+          @extend customButton;
+          margin: 0;
+          border-radius: 0;
+          font-size: $extra-small-font;
+        }
+      }
+    }
+  }
+  .product-footer {
+    display: none;
+    position: absolute;
+    bottom: $small;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    .price-text {
+      width: 50%;
+      margin: $extra-small;
+      font-size: $small-font;
+      line-height: $medium-font;
+      font-weight: 500;
+    }
+    button {
+      @extend customButton;
+      width: 50%;
+      margin: 0;
+      border-radius: 0;
+      font-size: $extra-small-font;
+    }
+  }
+}
+
+@media only screen and (min-width: $tab) {
+  .product-wrap {
+    width: calc(50% - 1rem);
+    margin: $large 0 $large $small;
+    .product-header {
+      margin-bottom: $small;
+      height: 6rem;
+    }
+    .product-detail-wrap {
+      height: calc(100% - 11rem);
+      margin-bottom: $extra-large;
+      .product-description-wrap {
+        .product-description {
+          height: 100%;
+          margin-bottom: 0;
+        }
+        .product-price {
+          width: 200%;
+          bottom: -$extra-large;
+          left: -100%;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: $desktop) {
+  .product-wrap {
+    width: calc(25% - 1rem);
+    position: relative;
+    .product-header {
+      height: 8rem;
+    }
+    .product-detail-wrap {
+      display: block;
+      height: fit-content;
+      .product-image {
+        width: 100%;
+      }
+      .product-description-wrap {
+        width: 100%;
+        .product-description {
+          height: fit-content;
+          margin-bottom: $small;
+        }
+        .product-price {
+          display: none;
+        }
+      }
+    }
+    .product-footer {
+      display: flex;
+    }
+  }
+}

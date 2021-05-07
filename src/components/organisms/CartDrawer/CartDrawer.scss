@@ -1,0 +1,44 @@
+@import '../../../styles/global';
+
+.cart-modal {
+  display: none;
+  position: fixed;
+  z-index: 10;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  margin: auto;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+  background-color: $white-color;
+  width: calc(100vw - 1.5rem);
+  height: 100vh;
+  border: 0.1rem solid $black-color;
+}
+
+.show-modal {
+  display: block;
+}
+
+@media only screen and (min-width: $desktop) {
+  .modal-container {
+    max-width: 720px;
+    margin: auto;
+    @media screen and (min-width: 992px) {
+      max-width: 960px;
+    }
+    @media screen and (min-width: 1200px) {
+      max-width: 1140px;
+    }
+  }
+  .modal-content {
+    margin-top: 9.5rem;
+    width: 40vw;
+    height: calc(100vh - 9.5rem);
+    float: right;
+  }
+}

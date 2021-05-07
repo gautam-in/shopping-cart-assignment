@@ -1,0 +1,48 @@
+@import '../../../styles/global';
+
+.cart-item-wrap {
+  display: flex;
+  background: $white-color;
+  margin: $small 0;
+  .cart-image-wrap {
+    width: 15%;
+    padding: $semi-small;
+  }
+  .cart-item-details-wrap {
+    width: 85%;
+    h5 {
+      margin: $semi-small $small 0;
+      font-size: $small-font;
+      font-weight: 800;
+    }
+    .cart-item-price-wrap {
+      display: flex;
+      align-items: center;
+      font-size: $small-font;
+      font-weight: 600;
+      button {
+        @extend customButton;
+        width: fit-content;
+        padding: 0.2rem 0.4rem;
+        font-size: $small;
+        font-weight: 600;
+        transition: unset;
+        &:hover {
+          padding: 0.1rem 0.3rem;
+        }
+      }
+      span {
+        font-size: $large-font;
+        margin-right: $small;
+        margin-bottom: 0.4rem;
+      }
+    }
+    .price-wrap {
+      float: right;
+      margin-top: -2.5rem;
+      margin-right: $small;
+      font-size: $small-font;
+      font-weight: 600;
+    }
+  }
+}

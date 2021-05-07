@@ -1,0 +1,53 @@
+@import '../../../styles/global';
+
+header {
+  position: sticky;
+  z-index: 10;
+  top: 0;
+  background-color: $white-color;
+  @extend headerBoxShadow;
+}
+.header-nav {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+.logo-wrap {
+  padding: $small;
+  width: 10rem;
+}
+.cart-wrap {
+  background: $dark-grey-color;
+  padding: $semi-large $small;
+  display: flex;
+  align-items: center;
+  svg {
+    font-size: $extra-large-font;
+    color: $pink-color;
+    margin-right: $small;
+  }
+  span {
+    font-size: $small-font;
+    font-weight: 600;
+  }
+}
+.toggler {
+  padding: $small;
+  font-size: $medium-font;
+  color: $light-black-color;
+  background: $white-color;
+}
+
+@media only screen and (min-width: $tab) {
+  .toggler {
+    display: none;
+  }
+  .logo-wrap {
+    width: 17rem;
+  }
+  .cart-wrap {
+    margin-top: 3.5rem;
+  }
+}

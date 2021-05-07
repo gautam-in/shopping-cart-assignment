@@ -1,0 +1,67 @@
+@import '../../../styles/global';
+
+.input-field {
+  display: flex;
+  flex-flow: column-reverse;
+  margin-bottom: $medium;
+  position: relative;
+}
+
+label,
+input {
+  transition: all 0.2s;
+  touch-action: manipulation;
+}
+
+input {
+  font-size: $small-font;
+  line-height: $medium-font;
+  font-weight: 500;
+  border: 0;
+  border-bottom: 0.2rem solid $dark-grey-color;
+  border-radius: 0;
+  padding: $semi-small 0;
+  cursor: text;
+}
+
+input:focus {
+  outline: 0;
+  color: $black-color;
+  border-bottom: 0.2rem solid $blue-color;
+}
+
+label {
+  font-size: $extra-small-font;
+  line-height: $small-font;
+  font-weight: 500;
+  color: $light-black-color;
+  padding: 0.4rem 0;
+}
+
+input:placeholder-shown + label {
+  cursor: pointer;
+  width: fit-content;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transform-origin: left bottom;
+  transform: translate(0, 2.125rem) scale(1.5);
+}
+
+::-webkit-input-placeholder {
+  opacity: 0;
+  transition: inherit;
+}
+
+input:focus::-webkit-input-placeholder {
+  opacity: 1;
+}
+
+input:not(:placeholder-shown) + label,
+input:focus + label {
+  transform: translate(0, 0) scale(1);
+  cursor: pointer;
+  color: $blue-color;
+  font-size: $small-font;
+  font-weight: 600;
+}

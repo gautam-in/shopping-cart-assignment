@@ -1,0 +1,73 @@
+transitions {
+  -webkit-transition: all 0.6s ease-out;
+  -moz-transition: all 0.6s ease-out;
+  -o-transition: all 0.6s ease-out;
+  -ms-transition: all 0.6s ease-out;
+  transition: all 0.6s ease-out;
+}
+
+headerBoxShadow {
+  -webkit-box-shadow: 0 8px 6px -6px $dark-grey-color;
+  -moz-box-shadow: 0 8px 6px -6px $dark-grey-color;
+  box-shadow: 0 8px 6px -6px $dark-grey-color;
+}
+
+cardShadow {
+  content: '';
+  display: block;
+  position: absolute;
+  bottom: 0rem;
+  background: radial-gradient(farthest-corner at 50% 0px, grey 0%, transparent 50%);
+  width: 100%;
+  height: 1rem;
+}
+
+customButton {
+  background: $pink-color;
+  color: $white-color;
+  border-radius: 0.2rem;
+  margin: $small;
+  padding: $small;
+  width: 100%;
+  font-size: $medium-font;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.1s ease-in;
+  &:hover {
+    background: $white-color;
+    color: $pink-color;
+    padding: 0.9rem;
+    border: 0.1rem solid $pink-color;
+  }
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+    background: $pink-color;
+    color: $white-color;
+  }
+}
+
+fadeImages {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}

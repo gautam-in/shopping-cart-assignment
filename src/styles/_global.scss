@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css?family=Dosis:400,500,600,700,800,900&display=swap');
+@import './variable';
+@import './extends';
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 10px;
+}
+
+body {
+  font-family: 'Dosis';
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  outline: 0;
+  border: 0;
+  text-decoration: none;
+  color: $black-color;
+  font-size: $small-font;
+  cursor: pointer;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+}
+
+.collapse {
+  display: none;
+  @media only screen and (min-width: $tab) {
+    display: block;
+  }
+}
+
+.container {
+  max-width: 100%;
+  margin: auto;
+  @media screen and (min-width: 576px) {
+    max-width: 540px;
+  }
+  @media screen and (min-width: 768px) {
+    max-width: 720px;
+  }
+  @media screen and (min-width: 992px) {
+    max-width: 960px;
+  }
+  @media screen and (min-width: 1200px) {
+    max-width: 1140px;
+  }
+}
+
+.page-wrapper {
+  @media only screen and (min-width: $tab) {
+    display: flex;
+  }
+}
+
+.flex-row {
+  display: flex;
+  flex-wrap: wrap;
+  @media only screen and (min-width: $tab) {
+    width: 80%;
+  }
+}

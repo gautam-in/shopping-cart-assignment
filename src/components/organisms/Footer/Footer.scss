@@ -1,0 +1,15 @@
+@import '../../../styles/global';
+
+footer {
+  background-color: $dark-grey-color;
+  padding: $semi-small 0;
+  text-align: center;
+  font-size: $small-font;
+  font-weight: 600;
+}
+
+@media only screen and (min-width: $desktop) {
+  footer {
+    text-align: left;
+  }
+}

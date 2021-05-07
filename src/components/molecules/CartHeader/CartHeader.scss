@@ -1,0 +1,25 @@
+@import '../../../styles/global';
+
+.cart-header {
+  background: $black-color;
+  color: $white-color;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: $medium;
+  h6 {
+    color: $white-color;
+    font-size: $semi-large-font;
+    font-weight: 700;
+    margin: 0;
+    span {
+      font-size: $medium-font;
+      font-weight: 500;
+    }
+  }
+  .close {
+    font-size: $large-font;
+    color: $white-color;
+    background: $black-color;
+  }
+}

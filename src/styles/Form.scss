@@ -1,0 +1,49 @@
+@import './global';
+
+.header-wrapper {
+  margin: $small;
+  color: $black-color;
+  h1 {
+    margin: $large 0;
+    font-size: $extra-large-font;
+  }
+  p {
+    font-size: $small-font;
+    font-weight: 600;
+  }
+}
+
+form {
+  margin: $small;
+}
+
+.input-error {
+  border-bottom: 0.2rem solid $pink-color !important;
+}
+
+.error-message {
+  color: $pink-color;
+  font-size: $extra-small-font;
+  position: absolute;
+  margin-top: -1.4rem;
+}
+
+.form-submit-btn {
+  @extend customButton;
+  margin: $large 0;
+  border-radius: 0;
+  font-size: $small-font;
+}
+
+@media only screen and (min-width: $tab) {
+  .form-wrapper {
+    display: flex;
+    margin: $large 0;
+  }
+  .header-wrapper {
+    margin: $small 5rem;
+  }
+  form {
+    width: 40%;
+  }
+}
