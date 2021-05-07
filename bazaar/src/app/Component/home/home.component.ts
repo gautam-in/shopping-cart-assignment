@@ -41,7 +41,7 @@ export class HomeComponent implements OnInit {
 showSlides(slideIndex) {
   var i;
   var slides = document.getElementsByClassName(
-    'mySlides'
+    'slides-screen'
   ) as HTMLCollectionOf<HTMLElement>;
   
   var dots = document.getElementsByClassName('dot');

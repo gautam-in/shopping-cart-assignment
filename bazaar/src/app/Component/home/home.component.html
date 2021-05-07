@@ -1,11 +1,11 @@
 <section>
 <div class="slideshow-container">
 
-    <div class="mySlides fade" *ngFor="let data of bannerData">
-      <!-- <div class="numbertext">1 / 3</div> -->
-      <img [src]="data.bannerImageUrl" style="width:100%" [alt]="data.bannerImageAlt">
-      <a class="prev" (click)="changeSlide(-1)" aria-label="previous banner">prev</a>
-      <a class="next" (click)="changeSlide(1)" aria-label="next banner">next</a>
+    <div class="slides-screen fade" *ngFor="let data of bannerData">
+     
+      <img [src]="data?.bannerImageUrl" style="width:100%" [alt]="data?.bannerImageAlt">
+      <a class="prev" (click)="changeSlide(-1)" aria-label="previous banner button">prev</a>
+      <a class="next" (click)="changeSlide(1)" aria-label="next banner button">next</a>
     </div>
     </div>
     <br>
@@ -23,14 +23,14 @@
         <ng-container  *ngFor="let data of categoryData" >
             <div *ngIf="data.enabled" class="category-section">
             <div class="span-32">
-                <img [src]="data.imageUrl" alt="{{data.name}}">
+                <img [src]="data?.imageUrl" alt="{{data?.name}}">
             </div>
             <div class="span-64">
-                <h3>{{data.name}}</h3>
+                <h3>{{data?.name}}</h3>
                 <p>
-                    {{data.description}}
+                    {{data?.description}}
                 </p>
-                <a href="javascript:void(0)" class="btn" [routerLink]="['/products',  {id :  data.id}]"   >Explore {{data.name}}</a>
+                <a href="javascript:void(0)" class="btn" [routerLink]="['/products',  {id :  data?.id}]"   >Explore {{data?.name}}</a>
             </div>
         </div>
         </ng-container>

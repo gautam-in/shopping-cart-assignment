@@ -7,21 +7,19 @@
         <li  *ngFor="let data of cartItem">
             <div class="row">
                 <div class="span-1-of-3">
-                <img [src]="data.imageURL" alt="{{data.name}}">
+                <img [src]="data?.imageURL" alt="{{data?.name}}">
             </div>
             <div class="span-2-of-3">
-                    <h4>{{data.name}}</h4>
+                    <h4>{{data?.name}}</h4>
                     <a href="javascript:void(0)" class="btn" (click)="removeItem(data)">-</a>
-                    <span class="quantity-class">{{data.quantity}}</span>
+                    <span class="quantity-class">{{data?.quantity}}</span>
                     <a href="javascript:void(0)" class="btn" (click)="addItem(data)">+</a>
                     <span>
-                        * {{data.price}}
+                        * {{data?.price}}
                     </span>
-
-
             </div>
             <div class="span-1-of-3">
-                RS {{data.quantity * data.price}}
+                RS {{data?.quantity * data?.price}}
             </div></div>
         </li>
     </ul>
@@ -48,7 +46,7 @@
     
       
     </div>
-    <button class="btn" type="button">Start Shopping</button>
+    <button class="btn" type="button" routerLink="/home">Start Shopping</button>
     </section> 
     </ng-template>
 </div>
