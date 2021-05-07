@@ -33,6 +33,24 @@ a {
       margin-bottom: 2rem;
       box-shadow: 0 13px 25px -23px #a5a5a5ad;
     }
+    .productCard{
+      display:flex;
+      flex-wrap: wrap;
+      padding: 2rem 0;
+      margin-top: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 13px 25px -23px #a5a5a5ad;
+      .cardImage{
+        align-self: center;
+        flex:50%;
+        img {
+          width: 100%;
+      }}
+      .cardContent{
+        flex:50%;
+        text-align: left;
+      }
+    }
     .cardImage{
       align-self: center;
       img {
