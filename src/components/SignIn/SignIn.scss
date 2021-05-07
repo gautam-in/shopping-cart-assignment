@@ -1,0 +1,19 @@
+.login-form{
+float:left
+}
+
+.login-text{
+float:left
+
+}
+
+.main1{
+    display: flex;
+    height: 50%;
+    margin-top: 50px;
+}
+.main1::after{
+    content: "";
+    display: table;
+    clear: both;
+}

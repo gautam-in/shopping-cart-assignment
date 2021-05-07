@@ -1,0 +1,37 @@
+.left{
+width: 16%;
+float: left;
+background-color: #d3d3d3;
+height: 220vw;
+
+}
+
+.right{
+    float: left;
+    margin-left: 20px;
+
+}
+
+.right::after{
+    content: "";
+  display: table;
+  clear: both;
+}
+.main2{
+    width: 100%;
+}
+
+.align{
+   border-bottom: 1px solid black;
+   margin: 10px;
+   text-align: center;
+   cursor: pointer;
+   pointer-events: auto;
+}
+
+.column {
+    float: left;
+    width: 25%;
+    padding: 10px;
+    height: 300px; /* Should be removed. Only for demonstration */
+  }

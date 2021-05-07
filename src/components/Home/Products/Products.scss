@@ -1,0 +1,34 @@
+$myheight:100px;
+$mycolor:#8B0000;
+.img-class{
+    height: $myheight;
+}
+
+.textcolor{
+color:$mycolor
+}
+.explore{
+    color: white;
+    background-color: $mycolor;
+    padding: 17px;
+   border: none;
+}
+
+.image{
+    float: left;
+}
+
+.desc{
+    float: left;
+    margin-left: 100px;
+}
+.clear-fix{
+    content:'';
+    display:table;
+    clear: both;
+}
+
+.line{
+   border-image: linear-gradient(to right,grey),40% 100%;;
+}
+

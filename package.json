@@ -13,22 +13,38 @@
   "license": "MIT",
   "dependencies": {
     "@babel/core": "^7.13.16",
-    "@babel/preset-env": "^7.13.15",
     "@babel/preset-react": "^7.13.13",
+    "@fortawesome/fontawesome-svg-core": "^1.2.35",
+    "@fortawesome/free-solid-svg-icons": "^5.15.3",
+    "@fortawesome/react-fontawesome": "^0.1.14",
     "axios": "^0.21.1",
     "babel-loader": "^8.2.2",
     "canned": "^0.3.12",
+    "clean-webpack-plugin": "^4.0.0-alpha.0",
     "concurrently": "^6.0.2",
+    "copy-webpack-plugin": "^8.1.1",
     "css-loader": "^5.2.4",
+    "file-loader": "^6.2.0",
+    "html-webpack-plugin": "^5.3.1",
+    "image-webpack-loader": "^7.0.1",
+    "mini-css-extract-plugin": "^1.6.0",
     "node-sass": "^5.0.0",
+    "path-browserify": "^1.0.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-responsive-carousel": "^3.2.18",
+    "react-router-dom": "^5.2.0",
     "sass-loader": "^11.0.1",
-    "style-loader": "^2.0.0",
-    "webpack": "^5.35.1",
-    "webpack-cli": "^4.6.0"
+    "style-loader": "^2.0.0"
   },
   "devDependencies": {
+    "@babel/plugin-transform-runtime": "^7.13.15",
+    "@babel/preset-env": "^7.14.1",
+    "@babel/runtime": "^7.14.0",
+    "babel-polyfill": "^6.26.0",
+    "url-loader": "^4.1.1",
+    "webpack": "^5.36.2",
+    "webpack-cli": "^4.6.0",
     "webpack-dev-server": "^3.11.2"
   }
 }
