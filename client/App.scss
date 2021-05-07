@@ -1,3 +1,5 @@
+@import "/client/components/styles/mq-mixin";
+
 * {
   margin: 0;
   padding: 0;
@@ -9,7 +11,12 @@ a {
   color: inherit;
   font-size: inherit;
 }
-
+.App {
+  @include mq(desktop) {
+    width: 80%;
+    margin: 0 auto;
+  }
+}
 .border {
   border: 1px solid black;
 }
@@ -26,12 +33,6 @@ a {
 .flexed_jc_sa {
   display: flex;
   justify-content: space-around;
-}
-
-.flexed_jc_sb {
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .flexed_center_all {

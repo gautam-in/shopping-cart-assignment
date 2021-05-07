@@ -66,6 +66,14 @@ function Header() {
                       <div>{item.name}</div>
                       <div className="flexed">
                         <span
+                          onClick={() => dispatch(decrementItem(item))}
+                          className="flexed_center_all quantity_change_button noselect"
+                          aria-label="Decrement button"
+                        >
+                          -
+                        </span>
+                        <span>{item.quantity}</span>
+                        <span
                           onClick={() => dispatch(incrementItem(item))}
                           className="flexed_center_all quantity_change_button noselect"
                           aria-label="Increment button"
@@ -73,14 +81,6 @@ function Header() {
                           +
                         </span>
 
-                        <span>{item.quantity}</span>
-                        <span
-                          onClick={() => dispatch(decrementItem(item))}
-                          className="flexed_center_all quantity_change_button noselect"
-                          aria-label="Decrement button"
-                        >
-                          -
-                        </span>
                         <span
                           onClick={() => dispatch(removeItem(item))}
                           aria-label="Remove item"

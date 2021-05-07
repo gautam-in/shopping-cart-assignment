@@ -8,10 +8,12 @@ import cart from "/static/images/cart.svg";
 function CartButton({ handleOpen }) {
   const itemsCount = useSelector((state) => state.addItems.itemsCount);
   return (
-    <button className="cart_button" onClick={handleOpen}>
-      <img src={cart} alt="Cart" className="cart_img" />
-      <span>{itemsCount} items</span>
-    </button>
+    <div>
+      <button className="cart_button" onClick={handleOpen}>
+        <img src={cart} alt="Cart" className="cart_img" />
+        <span>{itemsCount} items</span>
+      </button>
+    </div>
   );
 }
 

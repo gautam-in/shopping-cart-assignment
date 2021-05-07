@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import ReactDOM from "react-dom";
+import Button from "../../atoms/Button/Button";
 
 import "./Modal.scss";
 
@@ -38,20 +39,6 @@ function Modal({ children, title, isOpen, handleClose }) {
       onClick={closeModal}
     >
       <div
-        // style={{
-        //   padding: 20,
-        //   background: "#fff",
-        //   borderRadius: "2px",
-        //   display: "inline-block",
-        //   position: "relative",
-        //   minWidth: "400px",
-        //   boxShadow: "0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23)",
-        //   justifySelf: "center",
-        //   overflow: "auto",
-        //   height: "80vh",
-        // }}
-        // className="modal_riseup"
-        // className="modal_godown"
         className={`modal_design ${
           animateClose ? "modal_godown" : "modal_riseup"
         }`}
@@ -65,10 +52,14 @@ function Modal({ children, title, isOpen, handleClose }) {
           <hr />
         </div>
         {children}
-        <button className="checkout flexed_jc_sb_ai_center">
-          <span>Proceed to Checkout</span>
-          <span>Rs. 123</span>
-        </button>
+        <div className="checkout">
+          <Button>
+            <div className="flexed_jc_sb_ai_center">
+              <span>Proceed to Checkout</span>
+              Rs. 123
+            </div>
+          </Button>
+        </div>
       </div>
     </div>,
     modalRoot

@@ -1,0 +1,38 @@
+@import "/client/components/styles/variables";
+@import "/client/components/styles/mq-mixin";
+
+.form_field {
+  margin-bottom: 30px;
+  position: relative;
+
+  input {
+    border: none;
+    outline: none;
+    border-bottom: 2px solid $form-unfocused-color;
+    padding: 8px 0px;
+    font-size: $primary-font-size;
+    width: 100%;
+
+    &:focus {
+      border-bottom: 2px solid $form-focus-color;
+    }
+    &:focus ~ label,
+    &:valid ~ label {
+      top: -14px;
+      left: 0;
+      color: $form-focus-color;
+      font-size: 12px;
+    }
+    &:valid:not(:focus) ~ label {
+      color: $form-unfocused-color;
+    }
+  }
+  label {
+    position: absolute;
+    top: 10;
+    left: 10;
+    cursor: text;
+    transition: 0.2s;
+    font-size: $primary-font-size;
+  }
+}

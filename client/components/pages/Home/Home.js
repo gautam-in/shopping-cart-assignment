@@ -93,7 +93,7 @@ function Home(props) {
               alt={offers[carouselCurrentIndex]?.bannerImageAlt}
             />
             <div
-              className="flexed_jc_sb width_full"
+              className="flexed_center_all width_full"
               style={{
                 position: "absolute",
                 bottom: "15px",

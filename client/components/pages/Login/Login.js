@@ -1,5 +1,9 @@
 import React from "react";
+import Button from "../../atoms/Button/Button";
+import FormField from "../../atoms/FormField/FormField";
 import useForm from "../../customHooks/useForm";
+
+import "./Login.scss";
 
 function Login() {
   const { inputs, handleChange } = useForm({
@@ -7,34 +11,37 @@ function Login() {
     password: "",
   });
 
+  const handleLogin = (e) => {
+    e.preventDefault();
+    console.log("submit called");
+  };
+
   return (
-    <div className="flexed">
+    <div className="flexed login">
       <div>
-        <span>Login </span>
-        <span>Get access to your Orders, Wishlist and Recommendations</span>
+        <h3>Login </h3>
+        <div>Get access to your Orders, Wishlist and Recommendations</div>
       </div>
-      <form>
-        <div>
-          <label>Email</label>
-          <input
-            type="text"
-            name="email"
-            value={inputs.email}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div>
-          <label>Password</label>
-          <input
-            type="password"
-            name="password"
-            value={inputs.password}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <button type="submit">Login</button>
+      <form onSubmit={handleLogin}>
+        <FormField
+          label="Email"
+          type="text"
+          name="email"
+          id="email"
+          value={inputs.email}
+          onChange={handleChange}
+          required
+        />
+        <FormField
+          label="Password"
+          type="password"
+          name="password"
+          id="password"
+          value={inputs.password}
+          onChange={handleChange}
+          required
+        />
+        <Button>Login</Button>
       </form>
     </div>
   );

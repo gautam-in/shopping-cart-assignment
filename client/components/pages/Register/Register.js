@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router";
+import Button from "../../atoms/Button/Button";
+import FormField from "../../atoms/FormField/FormField";
 import useForm from "../../customHooks/useForm";
 
 function Register() {
@@ -14,10 +16,11 @@ function Register() {
   });
 
   const [confirmPwBlurred, setConfirmPwBlurred] = useState(false);
+
   return (
-    <div className="flexed">
+    <div className="flexed login">
       <div>
-        <span>Register </span>
+        <h3>Signup </h3>
         <span>We do not share your personal details with anyone.</span>
       </div>
       <form
@@ -29,63 +32,52 @@ function Register() {
           }
         }}
       >
-        <div>
-          <label>First Name</label>
-          <input
-            type="text"
-            name="firstName"
-            value={inputs.firstName}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div>
-          <label>Last Name</label>
-          <input
-            type="text"
-            name="lastName"
-            value={inputs.lastName}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div>
-          <label>Email</label>
-          <input
-            type="email"
-            name="email"
-            value={inputs.email}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div>
-          <label>Password</label>
-          <input
-            type="password"
-            name="password"
-            value={inputs.password}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div>
-          <label>Confirm Password</label>
-          <input
-            type="password"
-            name="confirmPassword"
-            value={inputs.confirmPassword}
-            onChange={handleChange}
-            required
-            onBlur={() => {
-              setConfirmPwBlurred(true);
-            }}
-          />
-          {confirmPwBlurred && inputs.password !== inputs.confirmPassword && (
-            <div>Passwords don't match</div>
-          )}
-        </div>
-        <button type="submit">Signup</button>
+        <FormField
+          label="First Name"
+          type="text"
+          name="firstName"
+          id="firstName"
+          value={inputs.firstName}
+          onChange={handleChange}
+          required
+        />
+        <FormField
+          label="Last Name"
+          type="text"
+          name="lastName"
+          id="lastName"
+          value={inputs.lastName}
+          onChange={handleChange}
+          required
+        />
+        <FormField
+          label="Email"
+          type="text"
+          name="email"
+          id="email"
+          value={inputs.email}
+          onChange={handleChange}
+          required
+        />
+        <FormField
+          label="Password"
+          type="password"
+          name="password"
+          id="password"
+          value={inputs.password}
+          onChange={handleChange}
+          required
+        />
+        <FormField
+          label="Confirm Password"
+          type="password"
+          name="confirmPassword"
+          id="confirmPassword"
+          value={inputs.confirmPassword}
+          onChange={handleChange}
+          required
+        />
+        <Button>Signup</Button>
       </form>
     </div>
   );

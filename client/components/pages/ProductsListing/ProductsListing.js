@@ -8,6 +8,7 @@ import { addItem, fetchProducts } from "client/components/redux";
 import * as service from "./ProductsListing.service";
 
 import "./ProductsListing.scss";
+import Button from "../../atoms/Button/Button";
 
 const intialState = {
   data: [],
@@ -138,30 +139,20 @@ function ProductsListing(props) {
             let { id, name, description, imageURL, price, stock } = list;
             return (
               <div key={id} className="product_area">
-                <div class="product_name"> {name}</div>
+                <div className="product_name"> {name}</div>
                 <img src={imageURL} alt={name} width="100%" height="auto" />
                 <div className="product_desc">{description}</div>
-                <div
-                  onClick={() => {
-                    dispatch(addItem(list));
-                  }}
-                  className="buy_button"
-                >
-                  <div className="noselect">Buy again now @Rs.{price}</div>
+                <div className="buy_button">
+                  <Button
+                    onClick={() => {
+                      dispatch(addItem(list));
+                    }}
+                  >
+                    Buy again now @Rs.{price}
+                  </Button>
                   {/* <div className="noselect">Buy again now </div>
                   <div className={"noselect"}>@Rs.{price}</div> */}
                 </div>
-                {/* <section>
-                    <div>{description}</div>
-                    <div
-                      onClick={() => {
-                        dispatch(addItem(list));
-                      }}
-                      className="noselect buy_button"
-                    >
-                      Buy again now @Rs.{price}
-                    </div>
-                  </section> */}
               </div>
             );
           })}

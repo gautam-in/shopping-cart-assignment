@@ -1,0 +1,17 @@
+.login {
+  width: 80%;
+  margin: 30px auto;
+  margin-top: 60px;
+  h3 {
+    margin-bottom: 20px;
+    font-size: 30px;
+  }
+  > div,
+  > form {
+    margin-left: 50px;
+    width: 380px;
+  }
+  > form {
+    width: 300px;
+  }
+}
