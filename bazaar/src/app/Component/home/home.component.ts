@@ -7,10 +7,10 @@ import { HttpService } from 'src/app/service/http.service';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  bannerData: any
+  bannerData =[]
   slideIndex = 1;
   timer;
-  categoryData: any;
+  categoryData = [];
   
   constructor(private _httpService : HttpService) { }
 
@@ -27,7 +27,7 @@ export class HomeComponent implements OnInit {
   }
 
   getBanners() {
-    this._httpService.getBannerService().subscribe(res=>{
+    this._httpService.getBannerService().subscribe((res:any)=>{
         //console.log(res);
         this.bannerData = res
         

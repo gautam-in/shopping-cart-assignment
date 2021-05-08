@@ -11,11 +11,11 @@ import { ShareServiceService } from 'src/app/service/share-service.service';
 export class ProductComponent implements OnInit {
 
 
-  categoryData: any;
-  productData: any;
+  categoryData = [];
+  productData = [];
   keyName: string
-  categoryId: any;
-  allProductData: any;
+  categoryId: string;
+  allProductData= [];
  
   constructor(private _httpService: HttpService, private _route: ActivatedRoute, private _shareService : ShareServiceService ) { }
 
@@ -42,7 +42,7 @@ export class ProductComponent implements OnInit {
 
   getProducts() {
 
-    this._httpService.getProductService().subscribe(res => {
+    this._httpService.getProductService().subscribe((res: any) => {
       //console.log(res);
       this.allProductData = res
       this.filterData(this.categoryId);

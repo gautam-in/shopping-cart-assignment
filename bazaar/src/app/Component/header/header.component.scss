@@ -57,7 +57,6 @@ header {
 
 .nav-div:first-child img {
     max-width: 100%;
-    width: inherit;
 }
 
 .nav-div:last-child ul, 
@@ -91,8 +90,8 @@ header {
 section  {
     margin: 0;
     .logo-class {
-        width: 39% !important;
         margin-left: 24%;
+        width: 40%;
     }
 }
 
@@ -116,6 +115,7 @@ li {
 @media only screen and (max-width: 768px) {
     .nav-div .logo-class {
         margin-left: 0;
+        width: 60%;
     }
 }
 

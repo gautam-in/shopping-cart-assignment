@@ -27,11 +27,14 @@ button {
     width: 100%;
 }
 
-.checkout-btn {
-    text-align: left !important;
+.cart-footer >.checkout-btn {
+    text-align: left;
     padding: 1.2% 1%;
     margin-bottom: 0.2rem;
     width: 100%;
+    span {
+        float: right;
+    }
 }
 
 .cart-container {
@@ -95,6 +98,9 @@ h1 {
   }
 
   .cart-footer {
+    //   position: fixed;
+    //   bottom: 0;
+    //   width: 100%;
     -webkit-box-shadow: 0 0.4rem 0.6rem 0.1rem $secondarycolor;
             box-shadow: 0 0.4rem 0.6rem 0.1rem $secondarycolor;
       p {

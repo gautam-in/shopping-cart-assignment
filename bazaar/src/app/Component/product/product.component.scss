@@ -24,6 +24,10 @@ section {
                     background-color: #ccc;
                     height: 10rem;
                     font-size: 85%;
+                    display: -webkit-box;
+                    -webkit-line-clamp: 9;
+                    -webkit-box-orient: vertical;
+                    overflow: hidden;
                 }
 
                 span {
@@ -154,7 +158,8 @@ li {
     .item-desc {
         p{
             font-size: 80%;
-            height: 20rem !important;
+          
+        
         }
     }
 
@@ -198,8 +203,8 @@ li {
 
     .item-desc {
         p{
-            font-size: 80%;
-            height: 20rem !important;
+            font-size: 85%;
+            
         }
     }
 
@@ -230,5 +235,9 @@ li {
 
 .category-dropdown {
     display: block;
+}
+
+.card> h3 {
+    min-height: 3.5rem;
 }
 }

@@ -8,7 +8,7 @@ import { ShareServiceService } from 'src/app/service/share-service.service';
 })
 export class CartComponent implements OnInit {
 
-   cartItem : any
+   cartItem  = [];
    totalItem : number = 0;
    totalPrice : number = 0;
 
