@@ -19,12 +19,10 @@ export class HeaderComponent implements OnInit {
   
   ngOnInit(): void {
     
-    this.totalItem = JSON.parse(localStorage.getItem('cartItem')) ? JSON.parse(localStorage.getItem('cartItem')).reduce(function (prev, cur) {
+    this.totalItem = JSON.parse(atob(localStorage.getItem('cartItem'))) ? JSON.parse(atob(localStorage.getItem('cartItem'))).reduce(function (prev, cur) {
       return prev  + cur.quantity;
     }, 0) : '0' ;
     this._shareService.getCartCount().subscribe((count:any) => {
-        //this.totalItem= count.reduce;
-
         let quantityCalculate = count;
         this.totalItem = quantityCalculate.reduce(function (prev, cur) {
           return prev  + cur.quantity;

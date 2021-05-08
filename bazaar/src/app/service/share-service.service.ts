@@ -18,7 +18,7 @@ cartValueCount = new Subject();
     let itemQuantity = [];
     
     if (localStorage.getItem('cartItem')) {
-      itemQuantity = JSON.parse(localStorage.getItem('cartItem'));
+      itemQuantity = JSON.parse(atob(localStorage.getItem('cartItem')));
     }
    
     if (itemQuantity.length === 0) {
@@ -38,7 +38,7 @@ cartValueCount = new Subject();
         itemQuantity[itemIndex].quantity = itemQuantity[itemIndex].quantity + 1;
       }
     }
-    localStorage.setItem('cartItem', JSON.stringify(itemQuantity));
+    localStorage.setItem('cartItem', btoa(JSON.stringify(itemQuantity)));
       this.updateValue(itemQuantity);
    
   }
@@ -47,18 +47,18 @@ cartValueCount = new Subject();
 
     let itemQuantity = [];
    
-    if (localStorage.getItem('cartItem')) {
-      itemQuantity = JSON.parse(localStorage.getItem('cartItem'));
+    if (localStorage.getItem('cartItem')){
+      itemQuantity = JSON.parse(atob(localStorage.getItem('cartItem')));
     }
     
     const itemIndex = itemQuantity.findIndex((itemQuantity) => itemQuantity.id === item.id);
    if(itemQuantity[itemIndex].quantity > 1){
     itemQuantity[itemIndex].quantity = itemQuantity[itemIndex].quantity - 1;
-     localStorage.setItem('cartItem', JSON.stringify(itemQuantity));
+     localStorage.setItem('cartItem', btoa(JSON.stringify(itemQuantity)));
     
    } else{
     itemQuantity = itemQuantity.filter(itemQuantity => itemQuantity.id !== item.id );
-     localStorage.setItem('cartItem', JSON.stringify(itemQuantity));
+     localStorage.setItem('cartItem', btoa(JSON.stringify(itemQuantity)));
   
    }
 

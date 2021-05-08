@@ -2,7 +2,7 @@
 
 li , a {
     display: inline-block;
-    margin-left: 10px;
+    margin-left: 1rem;
     font-size: 90%;
     font-weight: 600;
     color: $hedernav;
@@ -29,9 +29,7 @@ li , a {
              display: flex;
 
              .menu {
-                padding-right: 10px;
-                padding-left: 10px;
-                padding-top: 15px;
+                padding: 0.9rem 0.6rem 0.4rem 0.6rem;
                 background: transparent;
                 border: 0;
                 outline: none;
@@ -42,8 +40,8 @@ li , a {
 }
 
 header {
-    -webkit-box-shadow:  2px  0 2px 2px $secondarycolor;
-            box-shadow:  2px  0 2px 2px $secondarycolor;
+    -webkit-box-shadow:  0.4rem 0 0.4rem 0.3rem  $secondarycolor;
+            box-shadow:  0.4rem 0 0.4rem 0.3rem $secondarycolor;
 }
 
 .nav-container {
@@ -68,27 +66,24 @@ header {
 }
 
 .middle-div ul {
-    margin-top: 34px;
+    margin-top: 2rem;
 }
-
 
 .cart-img {
     font-size: 10%;
 }
 
 .cart {
-    padding: 12px 24px 4px 24px;
-    margin-top: 14px;
+    padding: 0.7rem 1.2rem 0.4rem 1.2rem;
+    margin-top: 0.6rem;
     border: 0;
 
     img {
-        height: 23px;
-        width: 25px;
+        height: 1.5rem;
     }
 
     span {
         vertical-align: super;
-        padding-top: 13px;
     }
 }
 
@@ -110,12 +105,18 @@ section  {
     display: none;
 li {
     text-align: center;
-    border: 0.5px solid $secondarycolor;
+    border: 0.01rem solid $secondarycolor;
     margin: 0;
-    padding: 5px;
+    padding: 0.2rem;
     display: block;
 }
     
+}
+
+@media only screen and (max-width: 768px) {
+    .nav-div .logo-class {
+        margin-left: 0;
+    }
 }
 
 
@@ -131,5 +132,9 @@ li {
     }
     .mobile-header {
         display: block;
+
+        .cart {
+            padding: 0.5rem;
+        }
     }
   }

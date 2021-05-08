@@ -9,12 +9,13 @@ import { ShareServiceService } from 'src/app/service/share-service.service';
 export class CartComponent implements OnInit {
 
    cartItem : any
-   totalItem : any;
+   totalItem : number = 0;
+   totalPrice : number = 0;
 
   constructor( private _shareService : ShareServiceService) { }
 
   ngOnInit(): void {
-    this.cartItem = JSON.parse(localStorage.getItem('cartItem'));
+    this.cartItem = JSON.parse(atob(localStorage.getItem('cartItem')));
     this.calculateTotal();
     this._shareService.getCartValue().subscribe((res:any) => {
       //console.log("test");
@@ -31,6 +32,10 @@ export class CartComponent implements OnInit {
     this.totalItem = this.cartItem.reduce(function (prev, cur) {
       return prev  + cur.quantity;
     }, 0);
+
+    this.totalPrice = this.cartItem.reduce(function(prev , cur){
+      return prev + cur.quantity * cur.price
+    }, 0)
   }
 
 
