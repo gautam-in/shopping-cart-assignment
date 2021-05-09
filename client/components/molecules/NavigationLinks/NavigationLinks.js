@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./NavigationLinks.scss";
 
 function NavigationLinks() {
+  const [search, setSearch] = useState("");
+
   return (
     <nav className="nav_links">
       <ul className="flexed_jc_sa">

@@ -1,0 +1,16 @@
+@import "/client/components/styles/variables";
+
+.quantity_change_button {
+  display: inline-block;
+  background: red;
+  color: white;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  border-radius: 50%;
+}
+.selected_card {
+  padding: 0 $side_margin;
+  background: white;
+  margin: 10px 0px;
+}

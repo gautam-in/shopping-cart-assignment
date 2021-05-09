@@ -1,0 +1,196 @@
+@import "/client/components/styles/mq-mixin";
+
+.carousel {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 150px;
+
+  .carousel__button {
+    /* width: 25px; */
+    display: inline-block;
+    padding: 10px;
+    border: none;
+    font-size: 36px;
+    color: #545454;
+    background: transparent;
+    position: absolute;
+    z-index: 10;
+    cursor: pointer;
+    &--left {
+      margin-left: 10px;
+    }
+    &--right {
+      right: 0;
+      margin-right: 10px;
+    }
+  }
+
+  .carousel_indicators_wrapper {
+    position: absolute;
+    bottom: 15px;
+    .carousel_indicators {
+      width: 10px;
+      height: 10px;
+      display: inline-block;
+      border-radius: 50%;
+      margin-right: 26px;
+      cursor: pointer;
+    }
+  }
+  @include mq(tab) {
+    height: 250px;
+    .carousel__button--left {
+      margin-left: 20px;
+    }
+    .carousel__button--right {
+      margin-right: 20px;
+    }
+  }
+}
+.carousel_image_wrapper {
+  position: relative;
+  /*   width: 100%;
+  height: 250px; */
+  /* border: 1px solid black; */
+}
+
+.carousel_image_easein {
+  -webkit-animation: slideLeft 0.5s;
+  animation: slideLeft 0.5s;
+}
+
+@-webkit-keyframes slideLeft {
+  0% {
+    opacity: 0;
+    transform: opacity linear;
+  }
+  10% {
+    opacity: 0.1;
+    transform: opacity linear;
+  }
+  20% {
+    opacity: 0.2;
+    transform: opacity linear;
+  }
+  30% {
+    opacity: 0.3;
+    transform: opacity linear;
+  }
+
+  40% {
+    opacity: 0.4;
+    transform: opacity linear;
+  }
+  50% {
+    opacity: 0.5;
+    transform: opacity linear;
+  }
+  60% {
+    opacity: 0.6;
+    transform: opacity linear;
+  }
+  70% {
+    opacity: 0.7;
+    transform: opacity linear;
+  }
+  80% {
+    opacity: 0.8;
+    transform: opacity linear;
+  }
+  90% {
+    opacity: 0.9;
+    transform: opacity linear;
+  }
+  100% {
+    opacity: 1;
+    transform: opacity linear;
+  }
+}
+
+@keyframes slideLeft {
+  0% {
+    opacity: 0;
+    transform: opacity linear;
+  }
+  10% {
+    opacity: 0.1;
+    transform: opacity linear;
+  }
+  20% {
+    opacity: 0.2;
+    transform: opacity linear;
+  }
+  30% {
+    opacity: 0.3;
+    transform: opacity linear;
+  }
+
+  40% {
+    opacity: 0.4;
+    transform: opacity linear;
+  }
+  50% {
+    opacity: 0.5;
+    transform: opacity linear;
+  }
+  60% {
+    opacity: 0.6;
+    transform: opacity linear;
+  }
+  70% {
+    opacity: 0.7;
+    transform: opacity linear;
+  }
+  80% {
+    opacity: 0.8;
+    transform: opacity linear;
+  }
+  90% {
+    opacity: 0.9;
+    transform: opacity linear;
+  }
+  100% {
+    opacity: 1;
+    transform: opacity linear;
+  }
+}
+
+/* .carousel_image {
+  position: absolute;
+  left: -600px;
+  width: 100%;
+  height: 100%;
+  -webkit-animation: slide 0.5s forwards;
+  animation: slide 0.5s forwards;
+}
+
+@-webkit-keyframes slide {
+  100% {
+    left: 0;
+  }
+}
+
+@keyframes slide {
+  100% {
+    left: 0;
+  }
+} */
+
+/* .carousel_indicators {
+  -webkit-animation: roundSlide linear;
+  animation: roundSlide linear 5s;
+}
+
+@-webkit-keyframes roundSlide {
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes roundSlide {
+  100% {
+    opacity: 1;
+  }
+} */

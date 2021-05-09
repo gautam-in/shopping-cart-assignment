@@ -5,10 +5,11 @@ import { connect, useDispatch, useSelector } from "react-redux";
 import DisplayProductsCard from "../../organisms/DisplayProductsCard/DisplayProductsCard";
 import { addItem, fetchProducts } from "client/components/redux";
 
-import * as service from "./ProductsListing.service";
+import * as service from "../services";
 
 import "./ProductsListing.scss";
 import Button from "../../atoms/Button/Button";
+import { categories } from "../../../../server/productsList";
 
 const intialState = {
   data: [],

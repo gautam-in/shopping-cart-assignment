@@ -1,5 +1,23 @@
+@import "/client/components/styles/variables";
+
+.modal_container {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  padding-right: 125px;
+
+  display: grid;
+  justify-content: right;
+  align-items: end;
+
+  .modal_header {
+    color: white;
+    background: black;
+    padding: $side_margin;
+  }
+}
+
 .modal_design {
-  padding: 20px;
   background: #fff;
   border-radius: 2px;
   display: inline-block;
@@ -8,12 +26,7 @@
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   justify-self: center;
   overflow: auto;
-  height: 80vh;
-}
-.checkout {
-  position: absolute;
-  width: 90%;
-  bottom: 10px;
+  height: $cart_height;
 }
 
 .modal_riseup {

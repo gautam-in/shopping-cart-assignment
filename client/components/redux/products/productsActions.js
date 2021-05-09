@@ -1,5 +1,7 @@
 import * as types from "./productsTypes";
-import * as service from "../../pages/ProductsListing/ProductsListing.service";
+import * as service from "../../pages/services";
+
+import { products } from "../../../../server/productsList";
 
 export const fetchProductsRequest = () => {
   return {
@@ -24,6 +26,14 @@ export const fetchProductsError = (error = "Nothing") => {
 export const fetchProducts = () => {
   return (dispatch) => {
     dispatch(fetchProductsRequest);
+    /* products()
+      .then((data) => {
+        dispatch(fetchProductsSuccess(data));
+      })
+      .catch((err) => {
+        dispatch(fetchProductsError(err));
+      }); */
+    console.log("env ", process.env.NODE_ENV);
     service
       .getProducts()
       .then((data) => {

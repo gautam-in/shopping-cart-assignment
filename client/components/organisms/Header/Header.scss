@@ -2,10 +2,10 @@
 @import "../../styles/mq-mixin";
 
 .header_container {
-  box-shadow: 0px 11px 9px -8px $bg-secondary-color;
 }
 header {
   display: flex;
+  box-shadow: 0px 11px 9px -8px $bg-secondary-color;
   /* width: 95%;
   margin: 0 auto; */
 
@@ -14,16 +14,6 @@ header {
     width: 80%;
     margin: 0 auto;
   } */
-}
-
-.quantity_change_button {
-  display: inline-block;
-  background: red;
-  color: white;
-  width: 20px;
-  height: 20px;
-  cursor: pointer;
-  border-radius: 50%;
 }
 
 .header_content_alignment {

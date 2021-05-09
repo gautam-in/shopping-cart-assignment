@@ -9,6 +9,7 @@ const initialState = {
   items: [],
   itemsCount: 0,
   traceDistinctItem: [],
+  total: 0,
 };
 
 const addItemReducer = (state = initialState, action) => {
@@ -27,12 +28,14 @@ const addItemReducer = (state = initialState, action) => {
         return {
           ...state,
           items: [...itemsTemp],
+          total: state.total + action.payload.price,
         };
       } else {
         return {
           items: [...state.items, { ...action.payload, quantity: 1 }],
           itemsCount: state.itemsCount + 1,
           traceDistinctItem: [...state.traceDistinctItem, action.payload.id],
+          total: state.total + action.payload.price,
         };
       }
     }
@@ -46,21 +49,35 @@ const addItemReducer = (state = initialState, action) => {
         }
         return false;
       });
-      return { ...state, items: [...itemsTemp] };
+      return {
+        ...state,
+        items: [...itemsTemp],
+        total: state.total + action.payload.price,
+      };
     }
 
     case DECREMENT_ITEM: {
       let itemsTemp = [...state.items];
-      itemsTemp.some((item) => {
+      let removeTrace = [...state.traceDistinctItem];
+      itemsTemp.some((item, i) => {
         if (item.id === action.payload.id) {
-          item["quantity"] -= 1;
+          if (item["quantity"] === 1) {
+            itemsTemp.splice(i, 1);
+
+            removeTrace.splice(removeTrace.indexOf(action.payload.id), 1);
+          } else item["quantity"] -= 1;
+
           return true;
         }
         return false;
       });
+
       return {
         ...state,
         items: [...itemsTemp],
+        itemsCount: itemsTemp.length,
+        traceDistinctItem: removeTrace,
+        total: state.total - action.payload.price,
       };
     }
 

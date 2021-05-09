@@ -1,0 +1,39 @@
+@import "/client/components/styles/variables";
+
+.cart_container {
+  display: grid;
+  grid-template-rows: 65vh auto;
+  /* width */
+  ::-webkit-scrollbar {
+    width: 10px;
+    width: 6px;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+}
+.card_content {
+  overflow: auto;
+  background: $bg-secondary-color;
+}
+.checkout {
+  padding: 0 $side_margin;
+  border-top: 1px solid #9c9c9c;
+  > div {
+    text-align: center;
+    padding: 10px;
+  }
+}

@@ -1,0 +1,13 @@
+@import "/client/components/styles/variables";
+
+.cart_page_container {
+  height: $cart_height;
+  background: white;
+
+  .cart_page_header {
+    margin: 0 $side_margin;
+    padding: 10px 0;
+    // color: white;
+    // background: black;
+  }
+}

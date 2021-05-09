@@ -145,6 +145,14 @@
     .products_list {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: 100px 150px auto 50px;
+      grid-gap: 0px;
+      grid-auto-rows: minmax(15px, auto);
+      height: 100%;
+      /* border: 1px solid red; */
+      border-bottom: 2px dashed rgba(204, 204, 204, 0.51);
+      padding: 14px;
+      padding-top: 0px;
     }
     .product_area {
       box-shadow: 9px 0px 6px -7px #d9d9d9;
