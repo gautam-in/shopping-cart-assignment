@@ -28,23 +28,33 @@ import {withRouter} from "react-router-dom"
     return (
         <div>
            <Gallery/>
-            {products.length > 0 && <ul>{products.map(prd => {
+            {products.length > 0 && <ul>{products.map((prd,index) => {
                 console.log(prd, "../../../.." + prd.imageUrl)
+                if (prd.hasOwnProperty('imageUrl')){
+                const imageurl=prd.imageUrl.split("/").reverse()
+                var imageurl1=imageurl[0]
+                var imageurl2=imageurl[1]}
+
                 if (prd.hasOwnProperty('imageUrl'))
+                //if(index%2===0)
                     return <li key={prd.key} style={{ listStyle: 'none' }}>
                         <div style={{ textAlign: 'justify' }}>
-                            <div className="image"><img className="img-class" src={require("../../../../static/images/category/bakery.png").default} /></div>
+                        <div className="image"><img className="img-class" src={require(`../../../../static/images/${imageurl2}/${imageurl1}`).default} /></div>
+                           
                             <div className="desc"> <h2>{prd.name}</h2>
                                 <p>{prd.description}</p>
                                 <button className="explore" onClick={clickHandler}>{`Explore ${prd.name}`}</button></div>
                             <div className="clear-fix"></div>
                             <div className="line"></div>
-
-                            {/* <img src={require("../../../.."+prd.imageUrl)}/> */}
+                            {/* eslint-disable-next-line import/no-dynamic-require */}
+                            {/* <img src={ require(`../../../../static/images/category/${imageurl1}/${imageurl2}`).default}/> */}
+                            {/* <img src={prd.imageUrl}/> */}
                             {/* <img src={require(`../../../..${prd.imageUrl}`).default}/> */}
                             {/* <img src={path+`${prd.imageUrl.default}`} />
                         <img src={require(`${path}${prd.imageUrl}`).default} /> */}</div>
                     </li>
+               
+
             })}</ul>}
         </div>
     )

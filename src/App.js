@@ -13,16 +13,14 @@ export default function App() {
         method: "GET",
         credentials: "same-origin",
       };
-    useEffect(()=>{
-        axios.get('http://localhost:5000/banners')
-       
-    },[])
+   
     return (
        <Switch>
+           <Route path="/products" component={Products} exact/>
+
            <Route path="/" component={Home} exact/>
            <Route path="/register" component={Signup} exact/>
            <Route path="/login" component={SignIn} exact/>
-           <Route path="/products" component={Products} exact/>
        </Switch>
     )
 }

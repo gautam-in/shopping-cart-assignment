@@ -17,9 +17,12 @@ export default function Gallery() {
         <div>
              { baners.length > 0 && <div><Carousel showThumbs={false}>
                 {baners.map(ban => {
-                    return <div><img src={require("../../../../static/images/offers/offer2.jpg").default} /></div>
+                    const imageurl=ban.bannerImageUrl.split("/").reverse()
+                    const url1=imageurl[1]
+                    const url2=imageurl[0]
+                    return <div><img src={require(`../../../../static/images/${url1}/${url2}`).default} /></div>
                 })}
             </Carousel></div>}
         </div>
-    )
+    )   
 }

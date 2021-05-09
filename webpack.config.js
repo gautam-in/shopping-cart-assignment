@@ -16,7 +16,8 @@ module.exports = {
     devServer: {
         contentBase: path.resolve(__dirname, 'dist'),
         open: true,
-        port: 9000
+        port: 9000,
+        historyApiFallback:true
     },
     
     module: {
@@ -44,21 +45,18 @@ module.exports = {
                 test: /\.(css|scss)$/,
                 use: ["style-loader", "css-loader", "sass-loader"],
               },
-            {
-                test: /\.(png|jpg|jpe?g|gif|svg)$/,
+              {
+                test: /\.(png|jpg|gif|svg)$/i,
                 use: [
-                    'file-loader',
-                    {
                    
-                    loader: 'image-webpack-loader'
-                    , options: {
-                        bypassOnDebug: true,
-                        disable: true,
-                      },
-                      
+                  {
+                    loader: 'url-loader',
+                    options: {
+                      limit: 8192,
                     }
-                  ]
-                
+                  },
+                ],
+               type: 'javascript/auto'
               },
              
              
@@ -68,7 +66,7 @@ module.exports = {
         extensions: ['*', '.js', '.jsx'],
       },
       plugins:[
-        new CleanWebpackPlugin(),
+        new CleanWebpackPlugin({cleanStaleWebpackAssets: false}),
 new HotModuleReplacementPlugin(),
 new HtmlWebpackPlugin({
     template: path.resolve(__dirname, "dist/index.html"), //we put the file that we created in public folder

@@ -1,8 +1,10 @@
+
+$mycolor:#8B0000;
 .left{
 width: 16%;
 float: left;
 background-color: #d3d3d3;
-height: 220vw;
+height: 250vw;
 
 }
 
@@ -31,7 +33,28 @@ height: 220vw;
 
 .column {
     float: left;
-    width: 25%;
+    width: 18%;
     padding: 10px;
-    height: 300px; /* Should be removed. Only for demonstration */
+    height: 500px; /* Should be removed. Only for demonstration */
+  }
+  .product{
+    width:200px;
+  }
+
+  .mrp{
+      float: left;
+      margin-top: 6px;
+  }
+  .buynow{
+      background-color: $mycolor;
+      color: white;
+      padding: 10px
+  }
+  .wrapper{
+      margin: 10px;
+  }
+
+  .description{
+      background-color: #d3d3d3d3;
+      padding: 5px;
   }
