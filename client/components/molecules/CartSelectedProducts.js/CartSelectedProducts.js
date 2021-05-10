@@ -26,7 +26,7 @@ function CartSelectedProducts({ item, dispatch }) {
       <div className="width_full">
         <div>{item.name}</div>
         <div className="flexed_jc_sb_ai_center">
-          <div className="flexed_ai_center">
+          <div className="flexed_jc_sb_ai_center" style={{ width: "140px" }}>
             <CartAlterationBtn
               icon="-"
               label="Decrement button"
@@ -44,9 +44,9 @@ function CartSelectedProducts({ item, dispatch }) {
             >
               &#10006;
             </span>
-            x {item.price}
+            Rs.{item.price}
           </div>
-          <div>{item.quantity * item.price}</div>
+          <div>Rs.{item.quantity * item.price}</div>
         </div>
       </div>
     </div>

@@ -30,7 +30,6 @@ function Modal({ children, title, isOpen, handleClose }) {
         <button onClick={closeModal} aria-label="Close cart modal">
           &#10006;
         </button>
-        <hr />
       </div>
     );
   };

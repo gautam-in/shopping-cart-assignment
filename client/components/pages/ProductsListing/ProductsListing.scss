@@ -1,12 +1,11 @@
 @import "/client/components/styles/variables";
 @import "/client/components/styles/mq-mixin";
 
-.home_container {
+.products_container {
   .categories_dropdown_mobile {
     margin: 20px 0;
     text-align: center;
     background-color: $pimary_bg_color;
-    cursor: pointer;
 
     div {
       display: none;
@@ -25,6 +24,9 @@
         color: red;
         background-color: red;
       }
+    }
+    .category_item {
+      cursor: pointer;
     }
   }
 
@@ -89,7 +91,7 @@
 // Medis-query CSS
 
 @include mq(tab) {
-  .home_container {
+  .products_container {
     display: grid;
     grid-template-columns: auto 1fr;
     .categories_dropdown_mobile {
@@ -136,7 +138,7 @@
 }
 
 /* @include mq(desktop) {
-  .home_container {
+  .products_container {
     .products_list {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -145,7 +147,7 @@
 }
  */
 @include mq(big-desktop) {
-  .home_container {
+  .products_container {
     .products_list {
       display: grid;
       grid-template-columns: repeat(4, 1fr);

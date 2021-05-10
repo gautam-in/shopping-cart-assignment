@@ -17,14 +17,8 @@ function DisplayProductsCard({
       ) : (
         children
       )}
-      {/* {loading && <div>Loading...</div>}
-      {!loading && error && <div>Error fetching data.</div>}
-      {!loading && !error && dataList.length === 0 && (
-        <div>No data present.</div>
-      )}
-      {!loading && !error && children} */}
     </>
   );
 }
 
-export default DisplayProductsCard;
+export default React.memo(DisplayProductsCard);

@@ -10,6 +10,8 @@ import * as service from "../services";
 import "./ProductsListing.scss";
 import Button from "../../atoms/Button/Button";
 import { categories } from "../../../../server/productsList";
+import Toast from "../../molecules/Toast/Toast";
+import ProductCard from "../../molecules/ProductCard/ProductCard";
 
 const intialState = {
   data: [],
@@ -98,7 +100,7 @@ function ProductsListing(props) {
   };
 
   return (
-    <div className="home_container">
+    <div className="products_container">
       <aside className="categories_dropdown_mobile">
         {/* {window.innerWidth < 600 ? ( */}
         <select
@@ -128,7 +130,7 @@ function ProductsListing(props) {
               /* setQuery(category.id); */
               setQueryValues(category.id);
             }}
-            className="category_not_mobile"
+            className="category_item"
           >
             {category.name}
           </div>
@@ -136,27 +138,9 @@ function ProductsListing(props) {
       </aside>
       <div className="products_list">
         <DisplayProductsCard dataList={displayProductList} status={products}>
-          {displayProductList.map((list) => {
-            let { id, name, description, imageURL, price, stock } = list;
-            return (
-              <div key={id} className="product_area">
-                <div className="product_name"> {name}</div>
-                <img src={imageURL} alt={name} width="100%" height="auto" />
-                <div className="product_desc">{description}</div>
-                <div className="buy_button">
-                  <Button
-                    onClick={() => {
-                      dispatch(addItem(list));
-                    }}
-                  >
-                    Buy again now @Rs.{price}
-                  </Button>
-                  {/* <div className="noselect">Buy again now </div>
-                  <div className={"noselect"}>@Rs.{price}</div> */}
-                </div>
-              </div>
-            );
-          })}
+          {displayProductList.map((list) => (
+            <ProductCard key={list.id} list={list} />
+          ))}
         </DisplayProductsCard>
       </div>
     </div>
