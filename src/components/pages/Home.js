@@ -7,12 +7,13 @@ const Home = ()=>{
   const categoriesList = useSelector(state => state.categoriesLis);
 
     //const [categories,setCategories] = useState([]);
+   
     const dispatch = useDispatch();
     React.useEffect(()=>{
       dispatch(getCategories());
     },[])
     return (<>
-            
+    
             <div className="categoryContainer">
             {categoriesList.categories?.map(a=>{return <CategoryCard key={a.key} categoryName={a.name} imgUrl={a.imageUrl} desc={a.description}/>})}
             </div>

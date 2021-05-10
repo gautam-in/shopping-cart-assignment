@@ -4,6 +4,7 @@ import Home from './components/pages/Home';
 import SignInPage from './components/pages/SignInPage';
 import RegisterPage from './components/pages/RegisterPage';
 import ProductListingPage from './components/pages/ProductListingPage';
+import Cart from './components/molecules/Cart';
 import { Route, Switch, BrowserRouter as Router, Redirect } from  'react-router-dom';
 function App (){
     
@@ -22,6 +23,9 @@ function App (){
                 </Route>
                 <Route exact path='/products'>
                     <ProductListingPage/>
+                </Route>
+                <Route exact path='/cart'>
+                        <Cart/>
                 </Route>
                 <Route exact path='/signin' component={SignInPage} />
                 <Route exact path='/register' component={RegisterPage} />

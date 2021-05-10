@@ -1,11 +1,13 @@
 import React from 'react';
+import {useDispatch} from 'react-redux';
+import {addToCart} from '../../actions/actionCreators';
 
-
-export default function ProductCard(props) {    
-    const productObj = props.product;
-
-    const buyNowClickHandler = (productObj) => {              
-        
+export default function ProductCard({product}) {    
+    const productObj = product;
+    const dispatch = useDispatch();
+    const buyNowClickHandler = (item) => {   
+        console.log(item);           
+        dispatch(addToCart(item));
     }
 
     return (

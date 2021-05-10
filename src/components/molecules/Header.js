@@ -1,9 +1,25 @@
 import React from 'react';
+import {useSelector,useDispatch} from 'react-redux';
 import { Link } from "react-router-dom";
 import LogoImage from "../../images/logo.png";
 import CartImage from "../../images/cart.svg";
-const Header = () =>{
+import {showModal} from '../../actions/actionCreators';
 
+import Cart from '../molecules/Cart';
+    
+
+
+
+
+    
+const Header = () =>{
+    const dispatch = useDispatch();
+    const itemCount = useSelector(state => state.cart.cartItem);
+    const showModalFlag = useSelector(state => state.cart.showModal);
+   const showCart = ()=>{
+       console.log("called");
+       dispatch({ type: "SHOW_MODAL"});
+   }
     return (<>
             <section>
             <div className="top_bar">
@@ -25,10 +41,15 @@ const Header = () =>{
                         </ul>
 
                     </div>
-                    <div className="nav_cart">
-                        
-                            <p><img src={CartImage} alt="cart" /> 0 items</p>
-                        
+                    {showModalFlag?
+            <div className="cartContainer">
+              <Cart />
+            </div>:""}
+                    <div className="nav_cart" >
+                    <Link to={'/cart'}>
+                            <img src={CartImage} alt="cart" /> 
+                            <p>{itemCount} items</p>
+                        </Link>
                     </div>
 
                 </div>
