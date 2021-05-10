@@ -52,54 +52,59 @@ class Navigation extends Component {
    render() {
       const { isOpen } = this.state
       return (
-         <Navbar className="shadow_grey mb-3" light expand="lg">
-            <ActiveLink href='/' className={"navbar-brand"}>
-               <img src="/static/images/logo.png" alt="Sabka Bazar" width="120" height="60" />
-            </ActiveLink>
-            <NavbarToggler onClick={this.toggleHamburger} />
-            <Collapse isOpen={isOpen} navbar>
-               <Nav className="mr-auto" navbar>
-                  <NavigationItem link="/" >
-                     Home
-                  </NavigationItem>
-                  <NavigationItem link="/product-list/" >
-                     Products
-                  </NavigationItem>
-               </Nav>
-               <NavbarText>
-                  <div className="header">
-                     <div className="row-1">
+         <>
+            <div className="shadow_grey">
+               <div className="container">
+                  <Navbar className=" mb-2" light expand="lg">
+                     <ActiveLink href='/' className={"navbar-brand"}>
+                        <img src="/static/images/logo.png" alt="Sabka Bazar" width="120" height="60" />
+                     </ActiveLink>
+                     <NavbarToggler onClick={this.toggleHamburger} />
+                     <Collapse isOpen={isOpen} navbar>
                         <Nav className="mr-auto" navbar>
-                           {
-                              this.props.loggedIn === null ?
-                                 <>
-                                    <NavigationItem link="/login/"  >
-                                       Signup
-                                    </NavigationItem>
-                                    <NavigationItem link="/register/" >
-                                       Register
-                                    </NavigationItem>
-                                 </>
-                                 :
-                                 <>
-                                    <span>{this.props.loggedIn}</span>
-                                    <Button onClick={() => {
-                                       this.props.logoutProcess()
-                                    }}>
-                                       Logout
-                                    </Button>
-                                 </>
-                           }
+                           <NavigationItem link="/" >
+                              Home
+                  </NavigationItem>
+                           <NavigationItem link="/product-list/" >
+                              Products
+                  </NavigationItem>
                         </Nav>
-                     </div>
-                     <Navbar bg="light" expand="md" onClick={() => { this.props.toggleCart() }} className="cursor-pointer">
-                        <img src="/static/images/cart.svg" alt="me" width="auto" height="24" />&nbsp; {this.props.totalCartItems} items
+                        <NavbarText>
+                           <div className="header">
+                              <div className="row-1">
+                                 <Nav className="mr-auto" navbar>
+                                    {
+                                       this.props.loggedIn === null ?
+                                          <>
+                                             <NavigationItem link="/login/"  >
+                                                Signup
+                                    </NavigationItem>
+                                             <NavigationItem link="/register/" >
+                                                Register
+                                    </NavigationItem>
+                                          </>
+                                          :
+                                          <>
+                                             <span>{this.props.loggedIn}</span>
+                                             <Button onClick={() => {
+                                                this.props.logoutProcess()
+                                             }}>
+                                                Logout
+                                    </Button>
+                                          </>
+                                    }
+                                 </Nav>
+                              </div>
+                              <Navbar bg="light" expand="md" onClick={() => { this.props.toggleCart() }} className="cursor-pointer">
+                                 <img src="/static/images/cart.svg" alt="me" width="auto" height="24" />&nbsp; {this.props.totalCartItems} items
                      </Navbar>
-                  </div>
-               </NavbarText>
-            </Collapse>
-         </Navbar>
-
+                           </div>
+                        </NavbarText>
+                     </Collapse>
+                  </Navbar>
+               </div>
+            </div>
+         </>
       )
    }
 }

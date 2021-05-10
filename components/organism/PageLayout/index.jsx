@@ -6,13 +6,16 @@ import PageFooter from "../PageFooter";
 class PageLayout extends Component {
    render() {
       return (
-         <div className="container">
+         <>
             <PageHeader />
             <main className="main" >
-               {this.props.children}
+               <div className="container">
+                  {this.props.children}
+               </div>
             </main>
             <PageFooter />
-         </div>
+         </>
+
       )
 
    }

@@ -48,7 +48,7 @@ const LoginForm = ({ user_store, loginProcess}) => {
          router.push('/')
       }
    }
-   const { register, handleSubmit, formState: { errors } } = useForm();
+   const { register, handleSubmit, formState: { errors }, watch } = useForm();
    return (
       <form onSubmit={handleSubmit(onSubmit)}>
       <Row>
@@ -56,6 +56,7 @@ const LoginForm = ({ user_store, loginProcess}) => {
                <EmailInput name="email"
                   label="Email"
                   register={register}
+                  watch={watch}
                   className="inputAnimation"
                   errors={errors} required />
 
@@ -64,6 +65,7 @@ const LoginForm = ({ user_store, loginProcess}) => {
                <PasswordInput name="password"
                   label="Password"
                   register={register}
+                  watch={watch}
                   className="inputAnimation"
                   errors={errors} required />
             </Col>

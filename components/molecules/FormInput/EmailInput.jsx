@@ -8,13 +8,14 @@ const emailValidation = {
 }
 
 
-const EmailInput = ({ name, label, className, errors, register, required, rules }) => (
+const EmailInput = ({ name, label, className, errors, register,watch, required, rules }) => (
    <>
       <InputValidate
          type="email"
          name={name}
          label={label}
          register={register}
+         watch={watch}
          className={className}
          rules={{ ...emailValidation, ...rules, required: required ? (typeof required === "string" ? required : `${label} is required`) : false }}
          errors={errors} />

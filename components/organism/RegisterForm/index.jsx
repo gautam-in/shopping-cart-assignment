@@ -59,10 +59,6 @@ const RegisterForm = ({ user_store, registerProcess }) => {
       }
    }
    const { register, handleSubmit, formState: { errors }, watch } = useForm();
-   // Confirm password code-snippet - start
-   const password = useRef({});
-   password.current = watch("password", "");
-   // Confirm password code-snippet-end
    return (
 
       <form onSubmit={handleSubmit(onSubmit)}>
@@ -71,7 +67,8 @@ const RegisterForm = ({ user_store, registerProcess }) => {
                <TextInput name="firstname"
                   label="First Name"
                   register={register}
-                  className="inputAnimation"
+                  watch={watch}
+                  className={`inputAnimation`}
                   errors={errors}
                   required="First Name is required" />
             </Col>
@@ -79,6 +76,7 @@ const RegisterForm = ({ user_store, registerProcess }) => {
                <TextInput name="lastname"
                   label="Last Name"
                   register={register}
+                  watch={watch}
                   className="inputAnimation"
                   errors={errors}
                   required />
@@ -87,6 +85,7 @@ const RegisterForm = ({ user_store, registerProcess }) => {
                <EmailInput name="email"
                   label="Email"
                   register={register}
+                  watch={watch}
                   className="inputAnimation"
                   errors={errors}
                   rules={{ validate: (email) => isEmailAvailable(email) ? msgEmailError : true }}
@@ -96,6 +95,7 @@ const RegisterForm = ({ user_store, registerProcess }) => {
                <PasswordInput name="password"
                   label="Password"
                   register={register}
+                  watch={watch}
                   className="inputAnimation"
                   errors={errors}
                   required />
@@ -104,9 +104,10 @@ const RegisterForm = ({ user_store, registerProcess }) => {
                <PasswordInput name="confirm_password"
                   label="Confirm Password"
                   register={register}
+                  watch={watch}
                   className="inputAnimation"
                   errors={errors}
-                  match={password} />
+                  match={watch("password","")} />
             </Col>
             <Col md={9} className="mt-4">
                <span className={registrationState == FAILED ? "text-danger" : (registrationState == OK ? "text-success" : "text-muted")}>

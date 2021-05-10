@@ -77,7 +77,7 @@ input{
     border-bottom: 1px solid #40eaea;
 }
 
-.inputAnimation ~ label{
+.inputAnimation + label{
     position: absolute; 
     left: 14px; 
     width: 100%; 
@@ -87,7 +87,7 @@ input{
     z-index: -1; 
     letter-spacing: 0.5px;
 }
-.inputAnimation:focus ~ label, .has-content.inputAnimation ~ label{
+.inputAnimation:focus + label, .has-content.inputAnimation + label{
     top: -16px; 
     font-size: 12px; 
     color: #40eaea; 
