@@ -41,7 +41,7 @@ function Header({ isMobile, isDesktop }) {
           <Modal
             isOpen={showModal}
             handleClose={() => setShowModal(false)}
-            title={`My Cart ${itemsCount}`}
+            title={`My Cart (${itemsCount} items)`}
           >
             <Cart />
           </Modal>

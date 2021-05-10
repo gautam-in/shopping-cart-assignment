@@ -12,7 +12,7 @@ a {
   font-size: inherit;
 }
 .App {
-  @include mq(desktop) {
+  @include mq(big-desktop) {
     width: 80%;
     margin: 0 auto;
   }

@@ -5,6 +5,7 @@
   inset: 0;
   background: rgba(0, 0, 0, 0.6);
   padding-right: 125px;
+  z-index: 2;
 
   display: grid;
   justify-content: right;
@@ -14,6 +15,13 @@
     color: white;
     background: black;
     padding: $side_margin;
+    button {
+      color: white;
+      background: black;
+      border: none;
+      font-size: 16px;
+      cursor: pointer;
+    }
   }
 }
 
@@ -26,7 +34,7 @@
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   justify-self: center;
   overflow: auto;
-  height: $cart_height;
+  /* height: $cart_height; */
 }
 
 .modal_riseup {
