@@ -33,9 +33,10 @@ const category = (state = initialState, action) => {
          items: [...state.items],
       }
       case SELECT_PRODUCT_CATEGORY:
+      const currentId = action.payload.id
       return {
          ...state,
-         selectedId: action.payload.id,
+         selectedId: state.selectedId != currentId?currentId:null,
          items: [...state.items],
       }
       default:

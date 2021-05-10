@@ -2,8 +2,9 @@ import { Component } from 'react';
 
 import {
    NavItem,
-   NavLink,
 } from 'reactstrap';
+
+import ActiveLink from "../ActiveLink"
 
 class NavigationItem extends Component {
 
@@ -11,7 +12,7 @@ class NavigationItem extends Component {
       const { children, link } = this.props
       return (
          <NavItem>
-            <NavLink href={link}>{children}</NavLink>
+            <ActiveLink href={link}>{children}</ActiveLink>
          </NavItem>
       )
    }

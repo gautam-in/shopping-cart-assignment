@@ -11,17 +11,19 @@ const passwordValidation = {
 
 class PasswordInput extends Component {
    render() {
-      const { name, label, className, errors, register, required, match } = this.props
+      const { name, label, className, errors, register, required, match, rules } = this.props
       const required_rule = required ? (typeof required === "string" ? required : `${label} is required`) : false
-      const rules = match ?
+      const _rules = match ?
          {
             ...passwordValidation,
+            ...rules,
             required: required_rule,
             validate: value => value === match.current || "The passwords do not match"
          }
          :
          {
             ...passwordValidation,
+            ...rules,
             required: required_rule,
          }
       return (<>
@@ -31,7 +33,7 @@ class PasswordInput extends Component {
             label={label}
             register={register}
             className={className}
-            rules={rules}
+            rules={_rules}
             errors={errors} />
       </>)
    }

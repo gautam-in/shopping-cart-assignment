@@ -7,7 +7,7 @@ const InputValidate = ({ name, label, type, className, rules, errors, register }
          className={className} />
       <label>{label}</label>
       <span className={style.error_message}>
-         {errors[name] ? errors[name].message : ""}
+         {errors[name] ? errors[name].message : <>&nbsp;</>}
       </span>
    </>
 );

@@ -8,12 +8,19 @@
     font-size: 13px;
     height: 88px;
 } 
+.truncate {
+    width: 200px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
 .productHeading{
     display: -webkit-box;
-    -webkit-line-clamp: 1;
+    -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;  
     overflow: hidden;
-    font-size: 13px;
+    font-weight: 600;
+    height: 46px;
 } 
 // .truncate {
 //     width: 250px;
@@ -21,3 +28,15 @@
 //     overflow: hidden;
 //     text-overflow: ellipsis;
 //   }
+
+.productCardBody{
+    border-radius: 0%;
+    border: none;
+    border-bottom: 2px dashed gray;
+    box-shadow: 12px 0 15px -4px rgba(218, 218, 218, 0.8), -12px 0 8px -4px rgba(218, 218, 218, 0.8);
+    padding: 10px;
+    margin-bottom: 10px;
+}
+.cardBody{
+    padding: 1.25rem 0;   
+}
