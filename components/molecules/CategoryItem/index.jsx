@@ -1,15 +1,37 @@
 import React, { Component } from 'react';
-
+import { connect } from 'react-redux';
+import { selectCategoryId } from "../../../redux_store/category/actions";
+// import { useRouter } from 'next/router';
 import {
    Row,
    Col,
    Button,
 } from 'reactstrap';
 
+// Redux State Configutration
+const mapStateToProps = state => {
+   return {
+      selectedCategoryId: state.category.selectedId,
+   }
+}
+
+// Redux Dispatch Configutration
+const mapDispatchToProps = {
+   selectCategoryId: selectCategoryId,
+};
+
 class CategoryItem extends Component {
    
+   handleClick = (event) =>{
+      // const router = useRouter()
+      this.props.selectCategoryId(event)
+      // router.push('/product-list')
+   }
+   
    render() {
-      const { item, index } = this.props
+      const { item, index, selectedCategoryId } = this.props
+      // console.log(this.props.item,"categ _ item home");
+      console.log(selectedCategoryId,"selectedCategoryId");
       return (
          <section className="mt-4 mb-4 box-bottom-shadow">
             <Row>
@@ -19,7 +41,7 @@ class CategoryItem extends Component {
                <Col md={6} className="mt-4">
                   <h3>{item.name}</h3>
                   <p>{item.description}</p>
-                  <Button data-index={ index}>Explore {item.name}</Button>
+                  <Button data-index={ index} onClick={(event) => {this.handleClick(item.id)}}>Explore {item.name}</Button>
                </Col>
             </Row>
          </section>
@@ -27,4 +49,4 @@ class CategoryItem extends Component {
    }
 }
 
-export default CategoryItem
+export default connect(mapStateToProps, mapDispatchToProps) (CategoryItem)

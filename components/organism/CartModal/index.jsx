@@ -34,7 +34,6 @@ class CartModal extends Component {
    prepareCartList = () => {
       this.total = 0
       const pro = Object.keys(this.props.cartItems)
-      console.log(this.props.cartItems, "cartItems");
       let list = pro.map((product_id, index) => {
          let product = this.getProduct(product_id)
          if (product) {

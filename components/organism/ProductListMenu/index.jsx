@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{Component} from 'react';
 import { connect } from 'react-redux';
 import { selectCategoryId } from "../../../redux_store/category/actions";
 import style from './productListMenu.module.scss';
@@ -15,7 +15,7 @@ const mapDispatchToProps = {
    selectCategoryId: selectCategoryId,
 };
 
-class ProductListMenu extends React.Component {
+class ProductListMenu extends Component {
 
    render() {
       const { categoryItems, selectedCategoryId } = this.props
