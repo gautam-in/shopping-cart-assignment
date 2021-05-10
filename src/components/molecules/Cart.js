@@ -15,7 +15,9 @@ const Cart = React.memo(() => {
   const itemCount = useSelector(state => state.cart.cartItem);
  
 
- 
+ var totalPrice = data.reduce((acc, item) => {
+    return acc + (item.count * item.price)
+}, 0);
 
 
 
@@ -59,7 +61,7 @@ const Cart = React.memo(() => {
             <button type='button' className="custom-button" >
               <span className='checkout-text-wrap'>Proceed to Checkout</span>
               <span className='checkout-price-wrap'>
-                Rs.
+                Rs. {totalPrice}
               </span>
             </button>
           </>
