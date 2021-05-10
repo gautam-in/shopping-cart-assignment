@@ -1,6 +1,7 @@
 import { Component } from 'react';
 import { connect } from 'react-redux';
 import NavigationItem from '../../atom/NavigationItem'
+import ActiveLink from "../../atom/ActiveLink"
 import {
    Collapse,
    Navbar,
@@ -52,9 +53,9 @@ class Navigation extends Component {
       const { isOpen } = this.state
       return (
          <Navbar className="shadow_grey mb-3" light expand="lg">
-            <NavbarBrand href="/">
+            <ActiveLink href='/' className={"navbar-brand"}>
                <img src="/static/images/logo.png" alt="Sabka Bazar" width="120" height="60" />
-            </NavbarBrand>
+            </ActiveLink>
             <NavbarToggler onClick={this.toggleHamburger} />
             <Collapse isOpen={isOpen} navbar>
                <Nav className="mr-auto" navbar>
