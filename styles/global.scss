@@ -47,16 +47,26 @@ input{
     margin: 40px 3%; 
     position: relative;
 }
-.cartModal.modal-dialog{
+.cartModal{
+    &.modal-dialog{
     position: absolute;
     right: 94px;
     bottom: -27px;
-    width: 360px;
+    width: 485px;
+    }
+    .close{
+        font-size: 30px;
+        color: #fff;
+        text-shadow: none;
+        opacity: 1;
+    }
 }
-.cartModal .modal-content{
+.cartModal{
+    .modal-content{
     height: 81vh;
     border: none;
-}
+    }
+} 
 .inputAnimation{
     border: 0; 
     padding: 4px 0; 
@@ -66,7 +76,6 @@ input{
 .inputAnimation:focus{
     border-bottom: 1px solid #40eaea;
 }
-
 
 .inputAnimation ~ label{
     position: absolute; 

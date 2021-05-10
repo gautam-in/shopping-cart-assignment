@@ -6,14 +6,14 @@ export default function CartItem({ item, actions, count }) {
             <img src={item.imageURL} alt={item.name} width="100px" />
          </div>
          <div className={styles.cartitemcontent}>
-            <p>{item.name}</p>
+            <p><b>{item.name}</b></p>
             <div className={styles.cartcount}>
                <div>
                   <button
                      onClick={() => {
                         actions.removeFromCart(item.id)
                      }}
-                     type="button" name="removebutton">-</button>
+                     type="button" name="removebutton"><b>-</b></button>
                </div>
                <div className={styles.itemcount}>
                   <p>{count}</p>
@@ -24,7 +24,7 @@ export default function CartItem({ item, actions, count }) {
                         actions.addToCart(item.id)
                      }}
                      type="button"
-                     name="addbutton">+</button>
+                     name="addbutton"><b>+</b></button>
                </div>
                <div className={styles.itemmultiplier}>
                   <p>
