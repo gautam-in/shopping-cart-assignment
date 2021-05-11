@@ -17,6 +17,11 @@ function Header({ isMobile, isDesktop }) {
 
   const [showModal, setShowModal] = useState(false);
 
+  const onCardClick = () => {
+    if (isDesktop) setShowModal(true);
+    else history.push("/cart");
+  };
+
   return (
     <header>
       <HeaderLogo />
@@ -31,19 +36,16 @@ function Header({ isMobile, isDesktop }) {
 
         <div className="header_content_alignment">
           {isMobile && <NavigationLinks />}
-          <CartButton
-            handleOpen={() => {
-              if (isDesktop) setShowModal(true);
-              else history.push("/cart");
-            }}
-          />
+          <CartButton handleOpen={onCardClick} />
           {/* {showModal && ( */}
           <Modal
             isOpen={showModal}
             handleClose={() => setShowModal(false)}
-            title={`My Cart (${itemsCount} items)`}
+            title={
+              itemsCount === 0 ? `My Cart` : `My Cart (${itemsCount} items)`
+            }
           >
-            <Cart />
+            <Cart handleClose={() => setShowModal(false)} />
           </Modal>
           {/* )} */}
         </div>

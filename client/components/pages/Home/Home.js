@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from "react";
+import { useHistory } from "react-router";
 
-/* import * as service from "../Home/Home.service"; */
+import Carousel from "../../organisms/Carousel/Carousel";
+import Explore from "../../organisms/Explore/Explore";
+
 import * as service from "../services";
 
 import "./Home.scss";
-/* import "../../organisms/Carousel/Carousel.scss"; */
-import Carousel from "../../organisms/Carousel/Carousel";
-import Button from "../../atoms/Button/Button";
-import { useHistory } from "react-router";
 
 const intialState = {
   data: [],
@@ -36,7 +35,6 @@ function Home() {
       .then((data) => {
         let temp = data.filter((ele) => ele.enabled);
         temp.sort((a, b) => a.order - b.order);
-        console.log("fssjfksf", temp);
         setCategories(temp);
       })
       .catch((err) => {
@@ -55,29 +53,8 @@ function Home() {
       {/* To-do Gradient bottom */}
       {/* <div className="gradient_shadow"></div> */}
       <div className="explore">
-        {categories.map((ele, i) => (
-          <div key={ele.id} className="flexed_ai_center">
-            {i % 2 === 0 && (
-              <img src={ele.imageUrl} alt={ele.name} width="100" />
-            )}
-            <div className="explore_caption">
-              <h4>{ele.name}</h4>
-              <div>{ele.description}</div>
-              <Button
-                onClick={() => {
-                  history.push({
-                    pathname: "/products",
-                    search: "?category=" + ele.id,
-                  });
-                }}
-              >
-                Explore {ele.name}
-              </Button>
-            </div>
-            {i % 2 !== 0 && (
-              <img src={ele.imageUrl} alt={ele.name} width="100" />
-            )}
-          </div>
+        {categories.map((category, i) => (
+          <Explore key={category.id} index={i} category={category} />
         ))}
       </div>
     </div>

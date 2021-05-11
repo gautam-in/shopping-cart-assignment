@@ -102,7 +102,6 @@ function ProductsListing(props) {
   return (
     <div className="products_container">
       <aside className="categories_dropdown_mobile">
-        {/* {window.innerWidth < 600 ? ( */}
         <select
           name="query"
           onChange={(e) => {
@@ -113,6 +112,7 @@ function ProductsListing(props) {
           value={query}
           className="category_mobile"
         >
+          {/* For mobile view */}
           <option value="null" disabled>
             Please select
           </option>
@@ -122,19 +122,21 @@ function ProductsListing(props) {
             </option>
           ))}
         </select>
-
-        {categoriesDetails?.data?.map((category) => (
-          <div
-            key={category.id}
-            onClick={() => {
-              /* setQuery(category.id); */
-              setQueryValues(category.id);
-            }}
-            className="category_item"
-          >
-            {category.name}
-          </div>
-        ))}
+        {/* For tab and desktop view */}
+        <ul>
+          {categoriesDetails?.data?.map((category) => (
+            <li
+              key={category.id}
+              onClick={() => {
+                /* setQuery(category.id); */
+                setQueryValues(category.id);
+              }}
+              className="category_item"
+            >
+              {category.name}
+            </li>
+          ))}
+        </ul>
       </aside>
       <div className="products_list">
         <DisplayProductsCard dataList={displayProductList} status={products}>

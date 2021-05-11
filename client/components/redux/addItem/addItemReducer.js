@@ -82,17 +82,21 @@ const addItemReducer = (state = initialState, action) => {
     }
 
     case REMOVE_ITEM: {
+      let total;
       let removedItem = state.items.filter((item) => {
+        if (item.id === action.payload.id) {
+          total = item.price * item.quantity;
+        }
         return item.id !== action.payload.id;
       });
 
       let removeTrace = [...state.traceDistinctItem];
       removeTrace.splice(removeTrace.indexOf(action.payload.id), 1);
-
       return {
         items: [...removedItem],
         itemsCount: state.itemsCount - 1,
         traceDistinctItem: removeTrace,
+        total: state.total - total,
       };
     }
 

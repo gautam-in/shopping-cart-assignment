@@ -23,12 +23,12 @@ module.exports = (env) => {
       new webpack.DefinePlugin(envKeys),
       new CleanWebpackPlugin(),
       new HtmlWebpackPlugin({
-        template: "./client/index.html",
+        template: "./public/index.html",
       }),
       new CopyWebpackPlugin({
         patterns: [
           {
-            from: path.resolve(__dirname, "_redirects"),
+            from: path.resolve(__dirname + "/public"),
           },
           {
             from: path.resolve(__dirname + "/static"),

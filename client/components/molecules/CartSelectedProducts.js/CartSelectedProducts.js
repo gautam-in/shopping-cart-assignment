@@ -6,27 +6,16 @@ import {
 } from "client/components/redux";
 
 import "./CartSelectedProducts.scss";
+import CartAlterationBtn from "../../atoms/CartAlterationBtn/CartAlterationBtn";
 
 function CartSelectedProducts({ item, dispatch }) {
-  const CartAlterationBtn = ({ icon, handleClick, label }) => {
-    return (
-      <span
-        onClick={handleClick}
-        className="flexed_center_all quantity_change_button noselect"
-        aria-label={label}
-      >
-        {icon}
-      </span>
-    );
-  };
-
   return (
     <div key={item.id} className="flexed_ai_center selected_card">
       <img src={item.imageURL} alt={item.name} width="80" />
       <div className="width_full">
         <div>{item.name}</div>
         <div className="flexed_jc_sb_ai_center">
-          <div className="flexed_jc_sb_ai_center" style={{ width: "140px" }}>
+          <div className="flexed_jc_sb_ai_center" style={{ width: "54%" }}>
             <CartAlterationBtn
               icon="-"
               label="Decrement button"

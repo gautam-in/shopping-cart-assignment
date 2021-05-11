@@ -1,5 +1,5 @@
 import * as service from "../../../../server/productsList";
-/* let getOffersForCarousel;
+let getOffersForCarousel;
 let getProducts;
 let getCategories;
 
@@ -29,8 +29,8 @@ if (process.env.NODE_ENV === "production") {
   };
 }
 
-export { getOffersForCarousel, getProducts, getCategories }; */
+export { getOffersForCarousel, getProducts, getCategories };
 
-export const getOffersForCarousel = service.banners;
+/* export const getOffersForCarousel = service.banners;
 export const getProducts = service.products;
-export const getCategories = service.categories;
+export const getCategories = service.categories; */

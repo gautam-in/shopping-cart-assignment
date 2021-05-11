@@ -22,7 +22,7 @@ module.exports = (env) => {
     // },
     plugins: [
       new HtmlWebpackPlugin({
-        template: "./client/index.html",
+        template: "./public/index.html",
       }),
 
       new webpack.DefinePlugin(envKeys),

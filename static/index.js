@@ -1,2 +1,3 @@
-import cart from "./images/cart.svg";
+/* import cart from "./images/cart.svg";
 export { cart };
+ */

@@ -1,21 +1,12 @@
 @import "/client/components/styles/variables";
 @import "/client/components/styles/mq-mixin";
 
-.quantity_change_button {
-  display: inline-block;
-  background: $button-bg-color;
-  color: white;
-  height: 20px;
-  cursor: pointer;
-  width: 26px;
-  border-radius: 4px;
-  @include mq(tab) {
-    width: 20px;
-    border-radius: 50%;
-  }
-}
 .selected_card {
   padding: 0 $side_margin;
   background: white;
   margin: 10px 0px;
+  gap: 15px;
+  > img + div > div {
+    margin-bottom: 8px;
+  }
 }

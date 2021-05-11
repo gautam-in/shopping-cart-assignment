@@ -2,12 +2,15 @@
 
 .cart_page_container {
   height: $cart_height;
-  background: white;
-
+  background: $bg-secondary-color;
+  margin-top: 10px;
   .cart_page_header {
-    margin: 0 $side_margin;
-    padding: 10px 0;
-    // color: white;
-    // background: black;
+    padding: 15px $side_margin;
+    border-top: 2px solid #cacaca;
+    background: white;
+    margin-bottom: 15px;
+  }
+  .cart_container > div {
+    background: white;
   }
 }

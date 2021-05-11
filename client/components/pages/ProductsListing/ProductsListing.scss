@@ -7,7 +7,7 @@
     text-align: center;
     background-color: $pimary_bg_color;
 
-    div {
+    li {
       display: none;
       padding: 10px;
     }
@@ -101,7 +101,7 @@
       background-color: $bg-secondary-color;
       color: $font-secondary-color;
       min-width: 197px;
-      div {
+      li {
         display: block;
         border-bottom: 1px solid $font-secondary-color;
       }

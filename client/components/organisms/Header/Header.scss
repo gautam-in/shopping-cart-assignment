@@ -1,35 +1,25 @@
 @import "../../styles/variables";
 @import "../../styles/mq-mixin";
 
-.header_container {
-}
 header {
   display: flex;
   box-shadow: 0px 11px 9px -8px $bg-secondary-color;
-  /* width: 95%;
-  margin: 0 auto; */
 
-  // desktop screens
-  /*   @include mq(desktop) {
-    width: 80%;
-    margin: 0 auto;
-  } */
-}
+  .header_content_alignment {
+    display: flex;
+    justify-content: flex-end;
+    height: 100%;
 
-.header_content_alignment {
-  display: flex;
-  justify-content: flex-end;
-
-  height: 100%;
-  // tablet screens
-  @include mq(tab) {
-    justify-content: space-between;
-    height: calc(100% - 20px);
+    // tablet screens
+    @include mq(tab) {
+      justify-content: space-between;
+      height: calc(100% - 20px);
+    }
   }
-}
 
-.entry_access {
-  height: 20px;
-  text-align: right;
-  font-size: $primary-font-size;
+  .entry_access {
+    height: 20px;
+    text-align: right;
+    font-size: $primary-font-size;
+  }
 }
