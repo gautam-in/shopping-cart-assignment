@@ -84,6 +84,6 @@ module.exports = {
     contentBase: path.resolve(__dirname, "public"),
     publicPath: "/",
     hot: true,
-    port: 3033,
+    port: 3030,
   },
 };
