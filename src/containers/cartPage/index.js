@@ -5,7 +5,7 @@ import CartItem from "../../components/cartItem";
 import Button from "../../components/common/button";
 import Loader from "../../components/loader";
 
-import { pubsub } from "../../utils";
+import { LocalStorage, pubsub } from "../../utils";
 import topic from "../../constant/topic";
 
 import "./index.scss";
@@ -22,13 +22,15 @@ import {
 } from "../../constant";
 
 const Cart = () => {
-  const cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+  const initialCart = JSON.parse(localStorage.getItem("cartItems")) || [];
   const history = useHistory();
 
+  const [cartItems, setCartItems] = useState(initialCart);
   const [noOfItemInCart, setNoOfItemInCart] = useState(cartItems.length);
   const listenCartCount = (msg, data) => {
     setNoOfItemInCart(data);
   };
+
   useEffect(() => {
     pubsub.subscribe(topic.ADD_TO_CART, listenCartCount);
   });
@@ -42,14 +44,46 @@ const Cart = () => {
     history.push("/products");
   };
 
-  if (true) {
-    return (
-      <div className="throbberOverlay">
-        <Loader show={true} />
-        {/* <p className="throbberOverlay__text">Loading please wait.</p> */}
-      </div>
-    );
-  }
+  // increment cart item qty
+  const handleIncrementItemQty = (item) => {
+    const cartItems = LocalStorage.getItem("cartItems");
+    cartItems.length &&
+      cartItems.map((singleCartItem, index) => {
+        if (singleCartItem.id === item.id) {
+          singleCartItem.count = singleCartItem.count + 1;
+        }
+      });
+    LocalStorage.setItem("cartItems", cartItems);
+    setCartItems(cartItems);
+    pubsub.publish(topic.ADD_TO_CART, cartItems.length);
+  };
+
+  // decrement cart item qty
+  const handleDecrementItemQty = (item) => {
+    const cartItems = LocalStorage.getItem("cartItems");
+    cartItems.length &&
+      cartItems.map((singleCartItem, index) => {
+        if (singleCartItem.id === item.id) {
+          singleCartItem.count = singleCartItem.count - 1;
+        }
+      });
+    LocalStorage.setItem("cartItems", cartItems);
+    setCartItems(cartItems);
+    pubsub.publish(topic.ADD_TO_CART, cartItems.length);
+  };
+
+  // remove item from cart
+  const handleRemoveItem = (item) => {
+    let cartItems = LocalStorage.getItem("cartItems");
+    cartItems = cartItems.length
+      ? cartItems.filter((singleCartItem, index) => {
+          return singleCartItem.id !== item.id;
+        })
+      : [];
+    LocalStorage.setItem("cartItems", cartItems);
+    setCartItems(cartItems);
+    pubsub.publish(topic.ADD_TO_CART, cartItems.length);
+  };
 
   return (
     <div className="container-fluid cart-container">
@@ -79,7 +113,15 @@ const Cart = () => {
         </div>
         <div className="cart-body">
           {cartItems?.length > 0 ? (
-            cartItems.map((item) => <CartItem item={item} key={item.id} />)
+            cartItems.map((item) => (
+              <CartItem
+                handleIncrementItem={handleIncrementItemQty}
+                handleDecrementItem={handleDecrementItemQty}
+                handleRemoveItem={handleRemoveItem}
+                item={item}
+                key={item.id}
+              />
+            ))
           ) : (
             <div className="empty_cart_title_container">
               <h4 className="empty_cart_title">{cartItemEmptyLabel}</h4>

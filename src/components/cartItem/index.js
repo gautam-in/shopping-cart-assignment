@@ -3,50 +3,29 @@ import React from "react";
 import Button from "../common/button";
 import Image from "../common/image";
 
-import { LocalStorage, pubsub } from "../../utils";
-import topic from "../../constant/topic";
-
 import "./index.scss";
 
 import { priceLabel } from "../../constant";
 
-const CartItem = ({ item }) => {
+const CartItem = ({
+  item,
+  handleIncrementItem,
+  handleDecrementItem,
+  handleRemoveItem,
+}) => {
   // increment cart item qty
   const handleIncrementItemQty = () => {
-    const cartItems = LocalStorage.getItem("cartItems");
-    cartItems.length &&
-      cartItems.map((singleCartItem, index) => {
-        if (singleCartItem.id === item.id) {
-          singleCartItem.count = singleCartItem.count + 1;
-        }
-      });
-    LocalStorage.setItem("cartItems", cartItems);
-    pubsub.publish(topic.ADD_TO_CART, cartItems.length);
+    handleIncrementItem && handleIncrementItem(item);
   };
 
   // decrement cart item qty
   const handleDecrementItemQty = () => {
-    const cartItems = LocalStorage.getItem("cartItems");
-    cartItems.length &&
-      cartItems.map((singleCartItem, index) => {
-        if (singleCartItem.id === item.id) {
-          singleCartItem.count = singleCartItem.count - 1;
-        }
-      });
-    LocalStorage.setItem("cartItems", cartItems);
-    pubsub.publish(topic.ADD_TO_CART, cartItems.length);
+    handleDecrementItem && handleDecrementItem(item);
   };
 
   // remove item from cart
-  const handleRemoveItem = () => {
-    let cartItems = LocalStorage.getItem("cartItems");
-    cartItems = cartItems.length
-      ? cartItems.filter((singleCartItem, index) => {
-          return singleCartItem.id !== item.id;
-        })
-      : [];
-    LocalStorage.setItem("cartItems", cartItems);
-    pubsub.publish(topic.ADD_TO_CART, cartItems.length);
+  const handleRemoveItemQty = () => {
+    handleRemoveItem && handleRemoveItem(item);
   };
 
   return (
@@ -66,7 +45,7 @@ const CartItem = ({ item }) => {
             variant="primary"
             className="button btn-rounded cart-decrement"
             onClick={
-              item.count <= 1 ? handleRemoveItem : handleDecrementItemQty
+              item.count <= 1 ? handleRemoveItemQty : handleDecrementItemQty
             }
             id={item.id}
             // disabled={item.count <= 1}
