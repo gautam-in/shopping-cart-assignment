@@ -4,7 +4,8 @@ import "./index.scss";
 
 import Arrow from "../common/arrow";
 import Image from "../common/image";
-import FetchData from "../common/fetch-data";
+
+import { FetchData } from "../../utils";
 
 const Carousel = () => {
   const [carouselData, setCarouselData] = useState([]);

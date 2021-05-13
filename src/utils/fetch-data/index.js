@@ -1,7 +1,5 @@
 "use strict";
 
-import config from "../../../config";
-
 const defaults = {
   mode: "cors",
   cache: "default",
@@ -24,7 +22,7 @@ export default function (url, opts = {}) {
 
   let apiUrl = url;
   if (apiUrl.indexOf("http") == -1 || apiUrl.indexOf("https") == -1) {
-    apiUrl = `${config.apiUrlPrefix}${url}`;
+    apiUrl = `http://localhost:5000${url}`;
   }
 
   return fetch(url, options)

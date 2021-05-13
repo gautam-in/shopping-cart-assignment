@@ -5,10 +5,10 @@ import Image from "../common/image";
 
 import "./index.scss";
 
-import label from "./data/index.json";
+import { addToCartLabel, priceLabel } from "../../constant";
 
 const Product = ({ product, handlecart }) => {
-    const history = useHistory();
+  const history = useHistory();
   const handleBuy = () => {
     handlecart(product);
     // history.push("/cart");
@@ -32,9 +32,9 @@ const Product = ({ product, handlecart }) => {
         </div>
 
         <div className="card-footer">
-          <div className="price">{`${label.priceLabel} ${product.price}`}</div>
+          <div className="price">{`${priceLabel} ${product.price}`}</div>
           <Button className="add_to_cart" variant="primary" onClick={handleBuy}>
-            {label.addToCartLabel}
+            {addToCartLabel}
           </Button>
         </div>
       </div>

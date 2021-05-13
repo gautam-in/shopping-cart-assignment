@@ -6,6 +6,7 @@ import ReactDOM from "react-dom";
 import { BrowserRouter, Switch } from "react-router-dom";
 
 import Routes from "./routes";
+import Loader from "./components/loader";
 
 const Header = lazy(() => import("./components/header"));
 const Footer = lazy(() => import("./components/footer"));
@@ -13,12 +14,18 @@ const Footer = lazy(() => import("./components/footer"));
 import "./index.scss";
 
 const Sppiner = () => {
-  return <h1>Loading...</h1>;
+  return (
+    <div className="throbberOverlay">
+      <Loader show={true} />
+      {/* <p className="throbberOverlay__text">Loading please wait.</p> */}
+    </div>
+  );
 };
 
 const App = () => {
   return (
     <Suspense fallback={<Sppiner />}>
+      <Header />
       <Switch>
         <Routes />
       </Switch>

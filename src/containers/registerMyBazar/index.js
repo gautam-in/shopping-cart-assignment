@@ -1,12 +1,20 @@
 import React, { Fragment, useState } from "react";
 
-import Header from "../../components/header";
 import Button from "../../components/common/button";
 import Input from "../../components/common/input";
 
 import "./index.scss";
 
-import label from "./data/index.json";
+import {
+  registerTitleLabel,
+  registerDescriptionLabel,
+  firstNameLabel,
+  lastNameLabel,
+  emailLabel,
+  passwordLabel,
+  confirmPasswordLabel,
+  registerSubmitCtaLabel,
+} from "../../constant";
 
 const INITIAL_FORM = {
   firstName: "",
@@ -58,77 +66,74 @@ const Register = () => {
   };
 
   return (
-    <Fragment>
-      <Header />
-      <div className="register_form_container">
-        <div className="sign_up_description">
-          <h1>{label.title}</h1>
-          <p>{label.description}</p>
-        </div>
-        <div className="form_container">
-          <form
-            className="form "
-            autoComplete="off"
-            onSubmit={handleSubmit}
-            name="register"
-          >
-            <Input
-              type="text"
-              name="firstName"
-              className="form-control"
-              required
-              value={form.firstName}
-              onChange={handleInputChange}
-              autoFocus={true}
-              label={label.firstNameLabel}
-            />
-            <Input
-              type="text"
-              name="lastName"
-              className="form-control"
-              required
-              value={form.lastName}
-              onChange={handleInputChange}
-              label={label.lastNameLabel}
-            />
-            <Input
-              type="text"
-              name="email"
-              className={`${error.email ? "error" : ""}`}
-              required
-              value={form.email}
-              onChange={handleInputChange}
-              label={label.emailLabel}
-              errorLabel={error.email}
-            />
-            <Input
-              type="password"
-              name="password"
-              className="form-control"
-              required
-              value={form.password}
-              onChange={handleInputChange}
-              autoComplete="new-password"
-              label={label.passwordLabel}
-            />
-            <Input
-              type="password"
-              name="confirmPassword"
-              className={`${error.confirmPassword ? "error" : ""}`}
-              required
-              value={form.confirmPassword}
-              onChange={handleInputChange}
-              autoComplete="new-password"
-              label={label.confirmPasswordLabel}
-              errorLabel={error.confirmPassword}
-            />
-            <Button type="submit" variant="primary" className="btn-block">
-              {label.submitButtonLabel}
-            </Button>
-          </form>
-        </div>
+    <div className="register_form_container">
+      <div className="sign_up_description">
+        <h1>{registerTitleLabel}</h1>
+        <p>{registerDescriptionLabel}</p>
       </div>
-    </Fragment>
+      <div className="form_container">
+        <form
+          className="form "
+          autoComplete="off"
+          onSubmit={handleSubmit}
+          name="register"
+        >
+          <Input
+            type="text"
+            name="firstName"
+            className="form-control"
+            required
+            value={form.firstName}
+            onChange={handleInputChange}
+            autoFocus={true}
+            label={firstNameLabel}
+          />
+          <Input
+            type="text"
+            name="lastName"
+            className="form-control"
+            required
+            value={form.lastName}
+            onChange={handleInputChange}
+            label={lastNameLabel}
+          />
+          <Input
+            type="text"
+            name="email"
+            className={`${error.email ? "error" : ""}`}
+            required
+            value={form.email}
+            onChange={handleInputChange}
+            label={emailLabel}
+            errorLabel={error.email}
+          />
+          <Input
+            type="password"
+            name="password"
+            className="form-control"
+            required
+            value={form.password}
+            onChange={handleInputChange}
+            autoComplete="new-password"
+            label={passwordLabel}
+          />
+          <Input
+            type="password"
+            name="confirmPassword"
+            className={`${error.confirmPassword ? "error" : ""}`}
+            required
+            value={form.confirmPassword}
+            onChange={handleInputChange}
+            autoComplete="new-password"
+            label={confirmPasswordLabel}
+            errorLabel={error.confirmPassword}
+          />
+          <Button type="submit" variant="primary" className="btn-block">
+            {registerSubmitCtaLabel}
+          </Button>
+        </form>
+      </div>
+    </div>
   );
 };
 

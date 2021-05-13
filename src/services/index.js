@@ -5,3 +5,15 @@ export const checkLoggedIn = () => {
     false
   );
 };
+
+// All Api required for the "MY BAZAR APPLICATION"
+
+const baseUrl = "http://localhost:5000";
+
+export const registerApi = "";
+export const loginApi = "";
+export const getCategoryApi = `${baseUrl}/categories/`;
+export const getProductApi = `${baseUrl}/products/`;
+export const getBannerApi = `${baseUrl}/banners/`;
+export const getCartApi = "";
+export const postCartApi = "";

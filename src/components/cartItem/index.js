@@ -2,11 +2,13 @@ import React from "react";
 
 import Button from "../common/button";
 import Image from "../common/image";
-import LocalStorage from "../common/local-storage";
+
+import { LocalStorage, pubsub } from "../../utils";
+import topic from "../../constant/topic";
 
 import "./index.scss";
 
-import label from "./data/index.json";
+import { priceLabel } from "../../constant";
 
 const CartItem = ({ item }) => {
   // increment cart item qty
@@ -19,7 +21,7 @@ const CartItem = ({ item }) => {
         }
       });
     LocalStorage.setItem("cartItems", cartItems);
-    window.location.reload();
+    pubsub.publish(topic.ADD_TO_CART, cartItems.length);
   };
 
   // decrement cart item qty
@@ -32,7 +34,7 @@ const CartItem = ({ item }) => {
         }
       });
     LocalStorage.setItem("cartItems", cartItems);
-    window.location.reload();
+    pubsub.publish(topic.ADD_TO_CART, cartItems.length);
   };
 
   // remove item from cart
@@ -44,7 +46,7 @@ const CartItem = ({ item }) => {
         })
       : [];
     LocalStorage.setItem("cartItems", cartItems);
-    window.location.reload();
+    pubsub.publish(topic.ADD_TO_CART, cartItems.length);
   };
 
   return (
@@ -84,11 +86,11 @@ const CartItem = ({ item }) => {
 
           <span>X</span>
           <span>
-            {`${label.priceLabel} `}
+            {`${priceLabel} `}
             {item.price}
           </span>
           <div className="total ml-auto">
-            {`${label.priceLabel} `}
+            {`${priceLabel} `}
             {item.count * item.price}
           </div>
         </div>

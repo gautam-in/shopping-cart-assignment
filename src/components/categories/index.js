@@ -2,8 +2,9 @@ import React, { Fragment, useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 
 import Button from "../common/button";
-import FetchData from "../common/fetch-data";
 import Image from "../common/image";
+
+import { FetchData } from "../../utils";
 
 import "./index.scss";
 

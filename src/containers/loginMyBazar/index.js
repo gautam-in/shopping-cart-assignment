@@ -1,12 +1,15 @@
-import React, { Fragment, useState } from "react";
+import React, { useState } from "react";
 
-import Header from "../../components/header";
 import Button from "../../components/common/button";
 import Input from "../../components/common/input";
 
 import "./index.scss";
 
-import label from "./data/index.json";
+import {
+  loginTitleLabel,
+  loginDescriptionLabel,
+  loginSubmitCtaLabel,
+} from "../../constant";
 
 const INITIAL_FORM = {
   email: "",
@@ -48,46 +51,43 @@ const LoginMyBazar = () => {
   };
 
   return (
-    <Fragment>
-      <Header />
-      <div className="login_form_container">
-        <div className="login_description">
-          <h1>{label.title}</h1>
-          <p>{label.description}</p>
-        </div>
-        <div className="form_container">
-          <form
-            className="form "
-            autoComplete={false}
-            onSubmit={handleSubmit}
-            name="login"
-          >
-            <Input
-              type="text"
-              name="email"
-              className={`${error.email ? "error" : ""}`}
-              required
-              value={form.email}
-              onChange={handleInputChange}
-              label={label.emailLabel}
-              errorLabel={error.email}
-            />
-            <Input
-              type="password"
-              name="password"
-              className="form-control"
-              required
-              value={form.password}
-              onChange={handleInputChange}
-              label={label.passwordLabel}
-            />
-            <Button type="submit" variant="primary" className="btn-block">
-              {label.submitButtonLabel}
-            </Button>
-          </form>
-        </div>
+    <div className="login_form_container">
+      <div className="login_description">
+        <h1>{loginTitleLabel}</h1>
+        <p>{loginDescriptionLabel}</p>
       </div>
-    </Fragment>
+      <div className="form_container">
+        <form
+          className="form "
+          autoComplete={false}
+          onSubmit={handleSubmit}
+          name="login"
+        >
+          <Input
+            type="text"
+            name="email"
+            className={`${error.email ? "error" : ""}`}
+            required
+            value={form.email}
+            onChange={handleInputChange}
+            label={label.emailLabel}
+            errorLabel={error.email}
+          />
+          <Input
+            type="password"
+            name="password"
+            className="form-control"
+            required
+            value={form.password}
+            onChange={handleInputChange}
+            label={label.passwordLabel}
+          />
+          <Button type="submit" variant="primary" className="btn-block">
+            {loginSubmitCtaLabel}
+          </Button>
+        </form>
+      </div>
+    </div>
   );
 };
 

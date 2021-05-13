@@ -1,22 +1,19 @@
 import React, { useState, useEffect } from "react";
 import { useLocation, useHistory } from "react-router-dom";
 
-import Header from "../../components/header";
-import FetchData from "../../components/common/fetch-data";
-import LocalStorage from "../../components/common/local-storage";
 import Sidebar from "../../components/sidebar";
 import Product from "../../components/product";
 
+import { FetchData, LocalStorage, pubsub } from "../../utils";
+
 import "./index.scss";
 
-import label from "./data/index.json";
+import { getCategoryApi, getProductApi } from "../../services";
+import topic from "../../constant/topic";
 
 const ProductList = () => {
   const location = useLocation;
   const history = useHistory;
-  const {
-    urls: { getCategoryApi, getProductApi },
-  } = label.services;
 
   const [categories, setCategories] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState("");
@@ -31,6 +28,7 @@ const ProductList = () => {
   }, [location.pathname]);
 
   useEffect(() => {
+    // pubsub.subscribe(topic.ADD_TO_CART, listenCartCount);
     FetchData(getCategoryApi)
       .then((res) => {
         const categoryList = res
@@ -75,37 +73,34 @@ const ProductList = () => {
       cartItems.push(product);
     }
     LocalStorage.setItem("cartItems", cartItems);
-    window.location.reload();
+    pubsub.publish(topic.ADD_TO_CART, cartItems.length);
   };
 
   return (
-    <>
-      <Header />
-      <div className="product_list_container container-fluid">
-        <Sidebar
-          categories={categories}
-          selectedCategory={selectedCategory}
-          onClick={handleClick}
-        />
-        <div className="products">
-          {products &&
-            products.length > 0 &&
-            products
-              .filter((singleProduct) =>
-                Object.keys(selectedCategory).length
-                  ? singleProduct.category === selectedCategory
-                  : true
-              )
-              .map((product) => (
-                <Product
-                  product={product}
-                  key={product.id}
-                  handlecart={handleCart}
-                />
-              ))}
-        </div>
+    <div className="product_list_container container-fluid">
+      <Sidebar
+        categories={categories}
+        selectedCategory={selectedCategory}
+        onClick={handleClick}
+      />
+      <div className="products">
+        {products &&
+          products.length > 0 &&
+          products
+            .filter((singleProduct) =>
+              Object.keys(selectedCategory).length
+                ? singleProduct.category === selectedCategory
+                : true
+            )
+            .map((product) => (
+              <Product
+                product={product}
+                key={product.id}
+                handlecart={handleCart}
+              />
+            ))}
       </div>
-    </>
+    </div>
   );
 };
 
