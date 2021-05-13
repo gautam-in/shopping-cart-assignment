@@ -9,6 +9,8 @@ import {
   loginTitleLabel,
   loginDescriptionLabel,
   loginSubmitCtaLabel,
+  emailLabel,
+  passwordLabel,
 } from "../../constant";
 
 const INITIAL_FORM = {
@@ -24,7 +26,7 @@ const LoginMyBazar = () => {
     let formErrors = { ...INITIAL_FORM };
 
     // email validation
-    if (form.email.match(label.services.constants.emailRegex)) {
+    if (form.email.match("label.services.constants.emailRegex")) {
       formErrors.email = "";
     } else {
       formErrors.email = "Invalid Email!";
@@ -59,7 +61,6 @@ const LoginMyBazar = () => {
       <div className="form_container">
         <form
           className="form "
-          autoComplete={false}
           onSubmit={handleSubmit}
           name="login"
         >
@@ -70,7 +71,7 @@ const LoginMyBazar = () => {
             required
             value={form.email}
             onChange={handleInputChange}
-            label={label.emailLabel}
+            label={emailLabel}
             errorLabel={error.email}
           />
           <Input
@@ -80,7 +81,7 @@ const LoginMyBazar = () => {
             required
             value={form.password}
             onChange={handleInputChange}
-            label={label.passwordLabel}
+            label={passwordLabel}
           />
           <Button type="submit" variant="primary" className="btn-block">
             {loginSubmitCtaLabel}

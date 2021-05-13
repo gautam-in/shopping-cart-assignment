@@ -1,5 +1,6 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
+
 import Button from "../common/button";
 import Image from "../common/image";
 
@@ -11,7 +12,7 @@ const Product = ({ product, handlecart }) => {
   const history = useHistory();
   const handleBuy = () => {
     handlecart(product);
-    // history.push("/cart");
+    history.push("/cart");
   };
   return (
     <div className="card_container">

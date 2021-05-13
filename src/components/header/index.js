@@ -22,7 +22,6 @@ const Header = () => {
   const cartItems = LocalStorage.getItem("cartItems") || [];
   const [noOfItemInCart, setNoOfItemInCart] = useState(cartItems.length);
   const listenCartCount = (msg, data) => {
-    // console.log("header", data);
     setNoOfItemInCart(data);
   };
   useEffect(() => {
