@@ -35,7 +35,7 @@ export class ProductComponent implements OnInit {
     this._httpService.getCategoriesService().subscribe(res => {
      this.categoryData = res;
     }, err => {
-      //console.log(err);
+      console.error('error in product page')
     })
   }
 
@@ -43,12 +43,12 @@ export class ProductComponent implements OnInit {
   getProducts() {
 
     this._httpService.getProductService().subscribe((res: any) => {
-      //console.log(res);
+     
       this.allProductData = res
       this.filterData(this.categoryId);
 
     }, err => {
-      //console.log(err);
+      console.error('error in product page')
     })
   }
 
@@ -75,9 +75,8 @@ export class ProductComponent implements OnInit {
   }
 
 
-    //selected will trigger when category is selected from category dropdown > 468px view
+  
     selected() {
-      //console.log('test');
       this.categoryData.forEach((category) => {
         if (category.key === this.keyName) {
           this.categoryId = category.id;

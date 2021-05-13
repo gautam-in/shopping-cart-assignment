@@ -28,11 +28,9 @@ export class HomeComponent implements OnInit {
 
   getBanners() {
     this._httpService.getBannerService().subscribe((res:any)=>{
-        //console.log(res);
         this.bannerData = res
-        
     }, err=>{
-      //console.log(err);
+      console.error('error in home page')
     })
   }
 

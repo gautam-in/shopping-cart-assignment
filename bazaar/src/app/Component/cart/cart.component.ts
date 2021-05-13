@@ -18,10 +18,8 @@ export class CartComponent implements OnInit {
     this.cartItem = JSON.parse(atob(localStorage.getItem('cartItem')));
     this.calculateTotal();
     this._shareService.getCartValue().subscribe((res:any) => {
-      //console.log("test");
       this.cartItem = res;
      this.calculateTotal();
-      //console.log(this.totalItem);
     })
 
     this._shareService.updateFooterStatus(false);

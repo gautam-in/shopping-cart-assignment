@@ -32,7 +32,6 @@ export class HeaderComponent implements OnInit {
 
 
   displayMobileMenu(){
-    //console.log('test');
     var links = document.getElementById("menu-links");
 
     if (links.style.display === "block") {
@@ -40,8 +39,6 @@ export class HeaderComponent implements OnInit {
      
     } else {
       links.style.display = "block";
-    
-
     }
   }
 
