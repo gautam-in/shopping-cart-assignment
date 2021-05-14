@@ -4,41 +4,59 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sabka Bazaar Groceries Pvt. Ltd. </title>
+    
     <link rel="stylesheet" type="text/css" href="resources/css/style.css"/>
     <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;1,300&display=swap" rel="stylesheet">
+    <link href="resources/css/queries.css" type="text/css" rel="stylesheet">
+    <link href="vendors/css/Grid.css" rel="stylesheet" type="text/css">
+    <link href="vendors/css/normalize.css" rel="stylesheet" type="text/css">
+
+    
     <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" data-auto-replace-svg="nest"></script>
+
+    <title>Sabka Bazaar Groceries Pvt. Ltd. </title>
 </head>
 <body>
-<div class="wrapper">
+    <header>
+ <div class="row">
         <!--Top Navigation-->
-        <div class="TopNav">
-            <div class="column1">
+            <div class="col span-1-of-2">
+                &nbsp;
             </div>
             
-            <div class="column2">
-               <a href="Login.html">SignIn</a>
-               <a href="SignUp.html">Register</a>
+            <div class="col span-1-of-2">
+                <ul class="TopNav">
+              <li> <a href="Login.html">SignIn</a> </li>
+               <li> <a href="SignUp.html">Register</a></li>
+               </ul>
            </div>
         </div>
+    </div>
        <!--Top navigation Ends-->
 
         <!--Main Navigation-->
-<div class="Navbar">
-     <div class="logo">
-          <a href="index.html"> <img alt="Logo" src="resources/img/logo.png" max-width="100%" height="auto" class="logoimage"> </a> </li>
-     </div>
-        <div class="main-nav">
+
+        <nav class="navi">
+        <div class="row">  
+          <div class="col span-1-of-3">
+            <a href="index.html"> <img alt="Logo" src="resources/img/logo.png" class="logo-image"> </a> </li>
+          </div>
+
+          <div class="col span-1-of-3">
            
-                <ul>
+                <ul class="main-nav">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="#">Products</a></li>   
                 </ul>
-        </div>
-    <div class="cart">
-      <a href="#" style="color:rgb(51, 49, 49);"> <i class="fas fa-shopping-cart" style="color: rgb(199, 6, 6); font-size:16px;"></i> 0 items </a>
-    </div>
-</div>
+         </div>
+          <div class="col span-1-of-3">
+              <div class="cart">
+            <a href="#" class="cart-link"><img src="resources/img/cart.svg" alt="cart" class="cart-img"> 0 items </a>
+         </div>
+         </div>
+        </nav>
+
+</header>
         <!-- Main Navigation Ends-->
 <!--Login Form-->
 <div class="loginform">
@@ -47,27 +65,29 @@
       <span>Get access to your Orders, Wishlist, Recommendations</span>
     </div>
     <div class="right">
-       <form method="post" action="#">
+       <form method="post" action="index.html" name="loginform">
        <div class="txt-field">
-          <input type="email" required>
+          <input type="email" id="email" required>
           <span></span>
-          <label>Email</label>
+          <label for="email">Email</label>
         </div>
         <div class="txt-field">
-          <input type="password" required>
+          <input type="password" id="password" required>
           <span></span>
-          <label>Password</label>
+          <label for="password">Password</label>
         </div>
-        <input type="submit" value="Login" class="btn login" />
+        <input type="submit" value="Login" class="btn-login" />
         </form>
     </div>
 </div>
 <div style="clear: both; margin-top:200px;"></div>
 <!--Login Form Ends -->
 <!--Footer Section-->
+<div class="row">
 <footer class="bottom">
     <span>  Copyright &#169; 2011-2018 Sabka Bazaar Groceries Supplies Pvt. Ltd. </span>
   </footer>
+</div>
 <!--Footer Section Ends-->
 </div>
 </body>

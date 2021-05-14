@@ -4,171 +4,133 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sabka Bazaar Groceries Pvt. Ltd. </title>
+    
     <link rel="stylesheet" type="text/css" href="resources/css/style.css"/>
     <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;1,300&display=swap" rel="stylesheet">
-    <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" data-auto-replace-svg="nest"></script>
+    <link href="resources/css/queries.css" type="text/css" rel="stylesheet">
+    <link href="vendors/css/Grid.css" rel="stylesheet" type="text/css">
+    <link href="vendors/css/normalize.css" rel="stylesheet" type="text/css">
+    <title>Sabka Bazaar Groceries Pvt. Ltd. </title>
 </head>
 <body>
-    <div class="wrapper">
+    <header>
+ <div class="row">
         <!--Top Navigation-->
-        <div class="TopNav">
-            <div class="column1">
+            <div class="col span-1-of-2">
+                &nbsp;
             </div>
             
-            <div class="column2">
-               <a href="Login.html">SignIn</a>
-               <a href="SignUp.html">Register</a>
+            <div class="col span-1-of-2">
+                <ul class="TopNav">
+              <li> <a href="Login.html">SignIn</a> </li>
+               <li> <a href="SignUp.html">Register</a></li>
+               </ul>
            </div>
         </div>
+    </div>
        <!--Top navigation Ends-->
 
         <!--Main Navigation-->
-<div class="Navbar">
-     <div class="logo">
-          <a href="index.html"> <img alt="Logo" src="resources/img/logo.png" max-width="100%" height="auto" class="logoimage"> </a> </li>
-     </div>
-        <div class="main-nav">
+
+        <nav class="navi" style="z-index: 1;">
+        <div class="row">  
+          <div class="col span-1-of-3">
+            <a href="index.html"> <img alt="Logo" src="resources/img/logo.png" class="logo-image"> </a> </li>
+          </div>
+
+          <div class="col span-1-of-3">
            
-                <ul>
+                <ul class="main-nav">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="#">Products</a></li>   
                 </ul>
-        </div>
-    <div class="cart">
- <a href="#" style="color:rgb(51, 49, 49);"> <i class="fas fa-shopping-cart" style="color: rgb(199, 6, 6); font-size:16px;"></i> 0 items </a>
-    </div>
-        </div>
+         </div>
+          <div class="col span-1-of-3">
+              <div class="cart">
+            <a href="#" class="cart-link"><img src="resources/img/cart.svg" alt="cart" class="cart-img"> 0 items </a>
+         </div>
+         </div>
+        </nav>
+
+</header>
         <!-- Main Navigation Ends-->
 <!-- Slider-->
-<div class="projectslider">
-
-    <div class="w3-content w3-display-container" style="max-width:100%;">
-        <img class="mySlides" src="resources/img/offers/offer1.jpg" style="width:100%">
-        <img class="mySlides" src="resources/img/offers/offer2.jpg" style="width:100%">
-        <img class="mySlides" src="resources/img/offers/offer3.jpg" style="width:100%">
-        <img class="mySlides" src="resources/img/offers/offer4.jpg" style="width:100%">
-        <img class="mySlides" src="resources/img/offers/offer5.jpg" style="width:100%">
-        <div class="w3-center w3-container w3-section w3-large w3-text-white w3-display-bottommiddle" style="width:100%">
-          <div class="w3-left w3-hover-text-khaki" onclick="plusDivs(-1)">&#10094;</div>
-          <div class="w3-right w3-hover-text-khaki" onclick="plusDivs(1)">&#10095;</div>
-          <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(1)"></span>
-          <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(2)"></span>
-          <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(3)"></span>
-          <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(4)"></span>
-          <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(5)"></span>
-        </div>
-        <button class="w3-button w3-display-left w3-black" onclick="plusDivs(-1)">PREV</button>
-<button class="w3-button w3-display-right w3-black" onclick="plusDivs(1)">NEXT</button>
+<div class="row" style="margin-top: 3px;">
+<div id="container" class="slide-container">
+            
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
     </div>
-      
-      <script>
-      var slideIndex = 1;
-      showDivs(slideIndex);
-      
-      function plusDivs(n) {
-        showDivs(slideIndex += n);
-      }
-      
-      function currentDiv(n) {
-        showDivs(slideIndex = n);
-      }
-      
-      function showDivs(n) {
-        var i;
-        var x = document.getElementsByClassName("mySlides");
-        var dots = document.getElementsByClassName("demo");
-        if (n > x.length) {slideIndex = 1}
-        if (n < 1) {slideIndex = x.length}
-        for (i = 0; i < x.length; i++) {
-          x[i].style.display = "none";  
-        }
-        for (i = 0; i < dots.length; i++) {
-          dots[i].className = dots[i].className.replace(" w3-white", "");
-        }
-        x[slideIndex-1].style.display = "block";  
-        dots[slideIndex-1].className += " w3-white";
-      }
-     
-      </script>
-      
-
+    <br>
+    <div id="dots">
+        
+    </div>
 </div>
 <!--Slider Ends-->
 <!--Container-->
-<section class="container">
-    <!--Box1-->
-    <div class="flexbox">
-        <div class="flex-child">
-    <img src="resources/img/category/fruits.png" alt="Fruits" height="200px" width="300px"/>
-        </div>
-    <div class="flex-child">
-        <h1> Fruits and Vegetables</h1>
-        <p>A variety of fresh fruits and vegetables. </p>
-        <a href="#" class="btn">Explore fruit-and-veg</a>
+<div class="row">
+    <div id="categories-container"> 
+    
+    
     </div>
+      
     </div>
-<!--Box 1 Ends-->
-    <!--Box 2-->
-<div class="flexbox">
-    <div class="flex-child">
-        <h1> Bakery Cakes And Dairy </h1>
-        <p> The best cupcakes, cookies, cakes, pies, cheescakes, fresh bread, biscotti, muffins, bagels, fresh coffee, milk and more. </p>
-        <a href="#" class="btn">Explore bakery-cakes-dairy</a>
+
+    
+
+
+<script id="categoriesTemplate" type="text/x-handlebars-template">
+{{#each categories}}
+{{#if odd}}
+<div class="pet">
+    <div class="photo-column">
+      <img src="{{photo}}">
     </div>
-    <div class="flex-child">
-    <img src="resources/img/category/bakery.png" alt="Bakery" height="200px" width="300px"/>
+    <div class="info-column">
+      <h2>{{name}}</h2>
+      <p>{{description}} </p>
+      <a href="#" class="btn">Explore {{key}}</a>
+      <p>{{checkorder}} </p>
     </div>
-    </div>
-<!-- Box 2 Ends-->
-<!-- Box 3 -->
-<div class="flexbox">
-    <div class="flex-child">
-    <img src="resources/img/category/beverages.png" alt="Beverages" height="200px" width="300px"/>
-    </div>
-    <div class="flex-child">
-        <h1>Beverages</h1>
-        <p>Our beverage department will ensure your fridge is always fully stocked. Shop for soda, juice, beer and more.</p>
-        <a href="#" class="btn">Explore beverages</a>
-    </div>
+  </div>
+  {{else}}
+  
+<div class="pet2">
+  <div class="info-column">
+    <h2>{{name}}</h2>
+    <p>{{description}} </p>
+    <a href="#" class="btn">Explore {{key}}</a>
+    <p>{{checkorder}} </p>
+  </div>
+
+  <div class="photo-column">
+    <img src="{{photo}}">
+  </div>
+
 </div>
-<!--Box 3 Ends-->
-<!--Box 4-->
-<div class="flexbox">
-    <div class="flex-child">
-        <h1> Beauty and Hygiene</h1>
-        <p>Buy beauty and personal care products online in India at best prices. </p>
-        <a href="#" class="btn">Explore beauty-hygiene</a>
-    </div>
-    <div class="flex-child">
-    <img src="resources/img/category/beauty.png" alt="Beauty" height="200px" width="300px"/>
-    </div>
-</div>
-<!--Box 4 Ends-->
-<!-- Box 5-->
-<div class="flexbox">
-    <div class="flex-child">
-    <img src="resources/img/category/baby.png" alt="Baby" height="200px" width="300px"/>
-    </div>
-    <div class="flex-child">
-        <h1>Baby Care </h1>
-        <p>Shop online for Baby Products, Diapers, Skin Care Products etc.  </p>
-        <a href="#" class="btn">Explore baby</a>
-    </div>
-</div>
-<!--Box 5 Ends-->
-</section>
+{{/if}}
+{{/each}}
+</script>
+
+<!--Container Ends -->
 
 <div class="clearfix">
 
 </div>
+
 <!-- Section Ends-->
 <!--Footer Section-->
 <footer class="bottom">
-    <span>  Copyright &#169; 2011-2018 Sabka Bazaar Groceries Supplies Pvt. Ltd. </span>
+    <div class="row">
+    <span>Copyright &copy; 2011-2018 Sabka Bazaar Groceries Supplies Pvt. Ltd. </span>
+    </div>
   </footer>
 <!--Footer Section Ends-->
     </div>
     <!--Wrapper Ends-->
 </body>
+<script src="vendors/js/handlebars.min-v4.7.7.js"></script>
+<script src="vendors/js/myjs.js"></script>
+<script src="resources/js/categories.js"></script>  
+
 </html>

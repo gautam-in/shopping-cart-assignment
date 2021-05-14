@@ -4,41 +4,59 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sabka Bazaar Groceries Pvt. Ltd. </title>
+    
     <link rel="stylesheet" type="text/css" href="resources/css/style.css"/>
     <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;1,300&display=swap" rel="stylesheet">
+    <link href="resources/css/queries.css" type="text/css" rel="stylesheet">
+    <link href="vendors/css/Grid.css" rel="stylesheet" type="text/css">
+    <link href="vendors/css/normalize.css" rel="stylesheet" type="text/css">
+
+    
     <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" data-auto-replace-svg="nest"></script>
+
+    <title>Sabka Bazaar Groceries Pvt. Ltd. </title>
 </head>
 <body>
-<div class="wrapper">
+    <header>
+ <div class="row">
         <!--Top Navigation-->
-        <div class="TopNav">
-            <div class="column1">
+            <div class="col span-1-of-2">
+                &nbsp;
             </div>
             
-            <div class="column2">
-               <a href="Login.html">SignIn</a>
-               <a href="SignUp.html">Register</a>
+            <div class="col span-1-of-2">
+                <ul class="TopNav">
+              <li> <a href="Login.html">SignIn</a> </li>
+               <li> <a href="SignUp.html">Register</a></li>
+               </ul>
            </div>
         </div>
+    </div>
        <!--Top navigation Ends-->
 
         <!--Main Navigation-->
-<div class="Navbar">
-     <div class="logo">
-          <a href="index.html"> <img alt="Logo" src="resources/img/logo.png" max-width="100%" height="auto" class="logoimage"> </a> </li>
-     </div>
-        <div class="main-nav">
+
+        <nav class="navi">
+        <div class="row">  
+          <div class="col span-1-of-3">
+            <a href="index.html"> <img alt="Logo" src="resources/img/logo.png" class="logo-image"> </a> </li>
+          </div>
+
+          <div class="col span-1-of-3">
            
-                <ul>
+                <ul class="main-nav">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="#">Products</a></li>   
                 </ul>
-        </div>
-    <div class="cart">
-      <a href="#" style="color:rgb(51, 49, 49);"> <i class="fas fa-shopping-cart" style="color: rgb(199, 6, 6); font-size:16px;"></i> 0 items </a>
-    </div>
-</div>
+         </div>
+          <div class="col span-1-of-3">
+              <div class="cart">
+            <a href="#" class="cart-link"><img src="resources/img/cart.svg" alt="cart" class="cart-img"> 0 items </a>
+         </div>
+         </div>
+        </nav>
+
+</header>
         <!-- Main Navigation Ends-->
 <!--Login Form-->
 <div class="loginform">
@@ -47,78 +65,87 @@
       <span>We do not share your personal details with anyone.</span>
     </div>
     <div class="right">
-       <form method="post" action="#" onsubmit="return validateform(), return validation();">
+       <form method="post" name="signupform" id="signupform" autocomplete="off">
        <div class="txt-field">
-          <input type="text" required>
+          <input type="text" id="name" required>
           <span></span>
-          <label>First Name</label>
+          <label for="name">First Name</label>
         </div>
         <div class="txt-field">
-            <input type="text" required>
+            <input type="text"  id="lastname" required> 
             <span></span>
-            <label>Last Name</label>
+            <label for="lastname">Last Name</label>
           </div>
           <div class="txt-field">
-            <input type="email" required>
+            <input type="email" id="email" required>
             <span></span>
-            <label>Email</label>
+            <label for="email">Email</label>
           </div>
           <div class="txt-field">
-            <input type="password" id="password" required>
+            <input type="password" id="password" pattern="^.*(?=.{6,})(?=.*[a-zA-Z])[a-zA-Z0-9]+$" title="Password must have minimum length 6 characters, a number and alphabet
+            and cannot have spaces." required>
             <span></span>
-            <label>Password</label>
+        
+            <label for="password">Password</label>
           </div>
         <div class="txt-field">
-          <input type="password"  id="confirmpassword" required>
+          <input type="password" id="confirmpassword" required>
           <span></span>
-          <label> Confirm Password</label>
+          <label for="confirmpassword"> Confirm Password</label>
         </div>
-        <input type="submit" value="Signup" class="btn login"/>
-        </form>
+        <input type="submit" value="Signup" class="btn-login"/>
+      </form>
     </div>
 </div>
-<div style="clear: both; margin-top:400px;"></div>
+<div class="clearfix">
+</div>
+<div style="margin-top:420px;">
+
+</div>
 <!--Login Form Ends -->
 <!--Footer Section-->
+<div class="row">
 <footer class="bottom">
     <span>  Copyright &#169; 2011-2018 Sabka Bazaar Groceries Supplies Pvt. Ltd. </span>
   </footer>
+</div>
 <!--Footer Section Ends-->
 </div>
 </body>
 </html>
 <script>
-function validateform()
-{
-var pwd=document.getElementById('password').value;
-var confrmpwd=document.getElementById('confirmpassword').value;
-if(pwd!=confrmpwd)
-{
-  alert('Password must match confirm password');
-}
+var password = document.getElementById("password")
+  , confirm_password = document.getElementById("confirmpassword");
+
+function validatePassword(){
+  if(password.value != confirm_password.value) {
+    confirm_password.setCustomValidity("Passwords Don't Match");
+  } else {
+    confirm_password.setCustomValidity('');
+  }
 }
 
-function validate(password) {
-    var minMaxLength = /^[\s\S]{6,32}$/,
-        upper = /[A-Z]/,
-        lower = /[a-z]/,
-        number = /[0-9]/
-        
-    if (minMaxLength.test(password) &&
-        upper.test(password) &&
-        lower.test(password) &&
-        number.test(password)
-    ) {
-        return true;
-    }
+password.onchange = validatePassword;
+confirm_password.onkeyup = validatePassword;
 
-    return false;
-}
-window.addEventListener('load', function(){
-  /// you could improve the way you target your form, this is just a quick eg.
-  var form;
-  form = document.getElementsByTagName('form')[0];
-  form.addEventListener('submit', validateform);
-  form.addEventListener('submit', validate);
+
+const signupform=document.getElementById('signupform');
+signupform.addeventlistener('submit', function(e)
+{
+  e.preventDefault();
+const formData = new FormData(this);
+fetch('login.php',{
+method:'post',
+body:formData
+}).then(function(response){
+  return response.text();
+}).then(function(text){
+console.log(text);
+}).catch(function(error){
+  console.error(error);
+})
 });
+
+
+}
 </script>

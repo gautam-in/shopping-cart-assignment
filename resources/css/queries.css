@@ -1,0 +1,240 @@
+/* Big tablet to 1200px (widths smaller taht the 1140px row) */
+@media only screen and (max-width: 1200px) {
+ .row { padding: 0 2%; }
+}
+
+
+/* Small tablet to big tablet: from 768px to 1023px */
+@media only screen and (max-width: 1023px) {
+
+    body{
+        font-size:80%;
+    }
+    .cart a{
+        font-size:80%;
+        text-decoration:none;
+        margin-left:200px;
+     }
+     .btn{
+        margin-left:60px;
+      }
+      .loginform
+     {
+   display:flex; 
+   flex-direction: row;
+   position:absolute;
+   top:25%;
+   left:15%;
+     }
+
+ .bottom
+     {
+       padding:5px;
+    }
+
+    .bottom span
+
+    {
+     margin-left:110px;
+    }
+    .photo-column img {
+        width:250px;
+        height:220px;
+    }
+}
+
+
+
+/* Small phones to small tablets: from 481px to 767px */
+@media only screen and (max-width: 767px) {
+
+    body{
+        font-size:70%;
+    }
+    .cart a{
+        font-size:70%;
+        text-decoration:none;
+        display: block;
+        margin-left:100px;
+    
+     }
+     .btn{
+         display: block;
+         margin-left:10px;
+      }
+      .info-column h2{
+        font-size:8px;
+      }
+
+footer.bottom {
+    font-size:90%;
+    padding:5px;
+
+}
+.loginform
+{
+display:flex; 
+flex-direction: row;
+position:absolute;
+top:25%;
+left:15%;
+}
+
+.bottom span
+
+    {
+     margin-left:80px;
+    }
+
+}
+/* Small phones: from 0 to 480px */
+@media only screen and (max-width: 480px) {
+
+
+   body {
+       margin-top:50px;
+}
+    .main-nav { display: none; }
+    .TopNav {display:none}
+    .logo-image {
+        width:120px;
+        margin-left:2%;
+        height:60px;
+    }
+
+    .pet{
+        width:100%;
+        height:190px;
+        padding:5px;
+    }
+    .pet2 {
+        width:100%;
+        height:190px;
+        padding:5px;
+    }
+
+    .photo-column
+    {  
+       width:50%;
+       margin-left:2px;
+       height:inherit;
+       float:left;
+       padding-top:5px;
+       padding-left: 5px;
+
+
+    }
+    .info-column
+    {  
+       width:49%;
+       margin:0;
+       float:left;
+       height:inherit;
+       line-height: 1.4;
+       padding-top:5px;
+       padding-left: 5px;
+    }
+    .photo-column img {
+        width:140px;
+        height:120px;
+    }
+   .info-column .btn{
+        padding:0.2rem 0.8rem;
+        display:block;
+        margin-top:30px;
+        width:140px;
+        margin-left:10px;
+        padding:2px;
+      }
+
+    .info-column a
+{
+display: inline-block;
+margin-top: 40px;
+margin-left: 20px;
+}
+.info-column h2 {
+  margin-top: 0;
+  font-size:12px;
+  font-weight:bold;
+}
+
+.info-column p {
+  font-size: 0.8rem;
+}
+
+    body{
+       font-size:70%;
+       line-height:1.2;
+      }
+
+	.navi .span-1-of-3 {
+		width:50%;
+        padding:0;
+        margin: 0;
+
+	}
+    .cart
+    {
+        width:100%;
+        height:50px;
+    }
+    .cart a{
+        font-size:65%;
+        margin-left:130px;
+        display:block;
+        margin-top:40px;
+        width:70px;
+        padding:6px;
+     }
+     
+       .cart-img {
+        height:20px; 
+        width:auto; 
+        display:inline-block;
+        vertical-align:middle;
+        text-align:center;
+        line-height:90%;
+        margin-right:0; 
+        }
+        .loginform
+       {
+         display:flex; 
+         flex-direction: row;
+         position:absolute;
+         top:25%;
+        left:8%;
+       }
+
+    
+
+    .btn-login{
+        width:200px;
+        padding:0.6rem 1.3rem;
+        display: block;
+        margin-top:30px;
+        margin-bottom: 30px;
+      }
+
+      footer
+      {
+      width: 100%;
+      text-align:center;
+      }
+      footer.bottom {
+        font-size:80%;
+        padding:10px;
+    
+    }
+
+    .bottom span
+    {
+        display: block;
+        position: relative;
+     margin-right:0px;
+     margin-left:0px;
+    }
+
+}
+
+
