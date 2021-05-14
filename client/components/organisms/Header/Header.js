@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import HeaderLogo from "../../atoms/HeaderLogo/HeaderLogo";
 import NavigationLinks from "../../molecules/NavigationLinks/NavigationLinks";
 import CartButton from "../../molecules/CartButton/CartButton";
@@ -7,11 +7,12 @@ import Modal from "../../molecules/Modal/Modal";
 
 import "./Header.scss";
 import { useSelector } from "react-redux";
-
+import { DeviceContext } from "../../../App";
 import Cart from "../../molecules/Cart/Cart";
 import { useHistory } from "react-router";
 
-function Header({ isMobile, isDesktop }) {
+function Header() {
+  const { isMobile, isDesktop } = useContext(DeviceContext);
   const history = useHistory();
   const itemsCount = useSelector((state) => state.addItems.itemsCount);
 
@@ -25,9 +26,8 @@ function Header({ isMobile, isDesktop }) {
   return (
     <header>
       <HeaderLogo />
-
       <div className="width_full">
-        {isMobile && (
+        {!isMobile && (
           <div className="entry_access">
             <EntryAccessButton linkTo="/login">SignIn</EntryAccessButton>
             <EntryAccessButton linkTo="/register">Register</EntryAccessButton>
@@ -35,7 +35,7 @@ function Header({ isMobile, isDesktop }) {
         )}
 
         <div className="header_content_alignment">
-          {isMobile && <NavigationLinks />}
+          {!isMobile && <NavigationLinks />}
           <CartButton handleOpen={onCardClick} />
           {/* {showModal && ( */}
           <Modal

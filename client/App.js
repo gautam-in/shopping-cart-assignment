@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Redirect, Route, Switch, useLocation } from "react-router-dom";
 import { Provider } from "react-redux";
 
@@ -12,32 +12,37 @@ import Register from "./components/pages/Register/Register";
 import CartPage from "./components/pages/CartPage/CartPage";
 import Footer from "./components/organisms/Footer/Footer";
 
-import "App.scss";
 import useDevice from "./components/customHooks/useDevice";
+
+import "App.scss";
+
+export const DeviceContext = React.createContext();
 
 const App = () => {
   const location = useLocation();
-  const { isMobile, isDesktop } = useDevice();
+  const { isMobile, isTablet, isDesktop } = useDevice();
 
   return (
     <div className="App">
       <Provider store={store}>
-        <Header isMobile={isMobile} isDesktop={isDesktop} />
-        <Switch>
-          <Route path="/home" component={Home} />
-          <Route path="/products" component={ProductsListing} />
-          <Route path="/login" component={Login} />
-          <Route path="/register" component={Register} />
-          <Route
-            path="/cart"
-            render={() => {
-              if (isDesktop) return <Redirect to="/home" />;
-              else return <CartPage />;
-            }}
-          />
-          <Redirect path="/" to="home" />
-        </Switch>
-        {location.pathname !== "/cart" && <Footer />}
+        <DeviceContext.Provider value={{ isMobile, isTablet, isDesktop }}>
+          <Header />
+          <Switch>
+            <Route path="/home" component={Home} />
+            <Route path="/products" component={ProductsListing} />
+            <Route path="/login" component={Login} />
+            <Route path="/register" component={Register} />
+            <Route
+              path="/cart"
+              render={() => {
+                if (isDesktop) return <Redirect to="/home" />;
+                else return <CartPage />;
+              }}
+            />
+            <Redirect path="/" to="home" />
+          </Switch>
+          {location.pathname !== "/cart" && <Footer />}{" "}
+        </DeviceContext.Provider>
       </Provider>
     </div>
   );

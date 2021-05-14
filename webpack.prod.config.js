@@ -18,6 +18,7 @@ module.exports = (env) => {
       filename: "bundle.[hash].js",
       path: path.resolve(__dirname, "build"),
       publicPath: "https://ecom-bazaar.netlify.app/",
+      /* publicPath: "http://192.168.43.143:8080/", */
     },
     plugins: [
       new webpack.DefinePlugin(envKeys),
@@ -64,7 +65,7 @@ module.exports = (env) => {
         //   loader: "html-loader",
         // },
         {
-          test: /\.png|svg|jpg|gif$/,
+          test: /\.(png|svg|jpe?g|gif)$/i,
           use: {
             loader: "file-loader",
             options: {

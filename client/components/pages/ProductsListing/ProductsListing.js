@@ -1,17 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { useHistory, useLocation } from "react-router-dom";
-import { connect, useDispatch, useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
-import DisplayProductsCard from "../../organisms/DisplayProductsCard/DisplayProductsCard";
-import { addItem, fetchProducts } from "client/components/redux";
+import ProductsState from "../../organisms/ProductsState/ProductsState";
+import ProductCard from "../../molecules/ProductCard/ProductCard";
+
+import { fetchProducts } from "client/components/redux";
 
 import * as service from "../services";
 
 import "./ProductsListing.scss";
-import Button from "../../atoms/Button/Button";
-import { categories } from "../../../../server/productsList";
-import Toast from "../../molecules/Toast/Toast";
-import ProductCard from "../../molecules/ProductCard/ProductCard";
 
 const intialState = {
   data: [],
@@ -105,8 +103,6 @@ function ProductsListing(props) {
         <select
           name="query"
           onChange={(e) => {
-            /* setQuery(e.target.value);
-            history.push({ search: "?category=" + e.target.value }); */
             setQueryValues(e.target.value);
           }}
           value={query}
@@ -139,11 +135,11 @@ function ProductsListing(props) {
         </ul>
       </aside>
       <div className="products_list">
-        <DisplayProductsCard dataList={displayProductList} status={products}>
+        <ProductsState dataList={displayProductList} status={products}>
           {displayProductList.map((list) => (
             <ProductCard key={list.id} list={list} />
           ))}
-        </DisplayProductsCard>
+        </ProductsState>
       </div>
     </div>
   );
