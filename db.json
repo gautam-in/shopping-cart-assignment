@@ -1,6 +1,7 @@
+
 {
   "categories":
-[
+  [
   {
     "name": "Fruits & Vegetables",
     "key": "fruit-and-veg",
@@ -53,7 +54,12 @@
     "odd":true
 
   }
+<<<<<<< HEAD:db.json
 
   
 ]
 }
+=======
+]
+}
+>>>>>>> 127d721fc0d58fccb500aeb2da9310f4751ba565:server/categories/index.get.json
