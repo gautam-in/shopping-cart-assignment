@@ -10,7 +10,6 @@ function useDevice() {
   const [isDesktop, setIsDesktop] = useState(false);
 
   const handleWindowResize = () => {
-    console.log("Resize called");
     setIsMobile(window.innerWidth < mobileSize);
     setIsTablet(
       window.innerWidth > mobileSize && window.innerWidth < tabletSize

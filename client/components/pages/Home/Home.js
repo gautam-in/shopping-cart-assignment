@@ -8,12 +8,6 @@ import * as service from "../services";
 
 import "./Home.scss";
 
-const intialState = {
-  data: [],
-  loading: false,
-  error: false,
-};
-
 function Home() {
   const history = useHistory();
   const [offers, setOffers] = useState([]);

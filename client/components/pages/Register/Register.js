@@ -16,6 +16,13 @@ function Register() {
   });
 
   const [confirmPwBlurred, setConfirmPwBlurred] = useState(false);
+  const handleRegister = (e) => {
+    e.preventDefault();
+    if (inputs.password === inputs.confirmPassword) {
+      localStorage.setItem("userLoggedIn", true);
+      history.push("/home");
+    }
+  };
 
   return (
     <div className="flexed login">
@@ -23,15 +30,7 @@ function Register() {
         <h3>Signup </h3>
         <span>We do not share your personal details with anyone.</span>
       </div>
-      <form
-        onSubmit={(e) => {
-          e.preventDefault();
-          if (inputs.password === inputs.confirmPassword) {
-            localStorage.setItem("userLoggedIn", true);
-            history.push("/home");
-          }
-        }}
-      >
+      <form onSubmit={handleRegister}>
         <FormField
           label="First Name"
           type="text"

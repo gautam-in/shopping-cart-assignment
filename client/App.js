@@ -10,6 +10,7 @@ import ProductsListing from "./components/pages/ProductsListing/ProductsListing"
 import Login from "./components/pages/Login/Login";
 import Register from "./components/pages/Register/Register";
 import CartPage from "./components/pages/CartPage/CartPage";
+import NotFound from "./components/pages/NotFound";
 import Footer from "./components/organisms/Footer/Footer";
 
 import useDevice from "./components/customHooks/useDevice";
@@ -39,7 +40,8 @@ const App = () => {
                 else return <CartPage />;
               }}
             />
-            <Redirect path="/" to="home" />
+            <Redirect exact path="/" to="home" />
+            <Route path="/" component={NotFound} />
           </Switch>
           {location.pathname !== "/cart" && <Footer />}{" "}
         </DeviceContext.Provider>

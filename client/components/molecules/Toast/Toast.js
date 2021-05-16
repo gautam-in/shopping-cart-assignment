@@ -8,9 +8,13 @@ function Toast({ duration = 1000, handleClose }) {
   /* const [showToast, show] = useState(true); */
 
   useEffect(() => {
-    setTimeout(() => {
+    let storedTimeout;
+    storedTimeout = setTimeout(() => {
       handleClose(false);
     }, duration);
+    return () => {
+      clearTimeout(storedTimeout);
+    };
   }, []);
 
   /* if (!showToast) return null; */

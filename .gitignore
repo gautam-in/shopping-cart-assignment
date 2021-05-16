@@ -60,6 +60,6 @@ typings/
 # next.js build output
 .next
 
-# production build
+# production build folder
 build/
 dist/
