@@ -1,6 +1,7 @@
 import React from "react";
 import { useDispatch } from 'react-redux';
 import { addToCart, removeFromCart } from '../../../redux/actions/actionCreators';
+import './CartItem.scss'
 const CartItem = ({ item }) => {
     const dispatch = useDispatch();
     const handleIncrementItemQty = (product) => {

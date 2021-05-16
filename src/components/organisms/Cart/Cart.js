@@ -16,7 +16,7 @@ const Cart = React.memo(({ showCart, toggleCartModal }) => {
   }, 0);
 
   return (
-    <div className={`cartContainer ${showCart ? 'show-modal' : ''}`}>
+    <div className={`cart-container ${showCart ? 'show-modal' : ''}`}>
       <div className='cart-drawer-modal' >
         <div className='cart-drawer-header-wrap'>
           <h3>
