@@ -4,24 +4,37 @@ import { useHistory } from 'react-router-dom';
 const CategoryCard = (props) => {
     const history = useHistory();
     const handleClicks = (value) => {
-        console.log(value);
         const state = { id: value };
         history.push({
             pathname: '/products',
             state
         });
-
     };
 
     return (<>
         <div className="category-card">
             <div className="card-image">
-                <img src={props.imgUrl} alt={props.categoryName} />
+                <img
+                    src={props.imgUrl}
+                    alt={props.categoryName}
+                    aria-label={props.categoryName + "image"}
+                />
             </div>
             <div className="card-content">
-                <h3>{props.categoryName}</h3>
-                <p>{props.desc}</p>
-                <button className="btn-primary" onClick={() => handleClicks(props.id)}>Explore {props.name}</button>
+                <h3
+                    aria-label={"category name is" + props.categoryName}>
+                    {props.categoryName}
+                </h3>
+                <p
+                    aria-label={props.desc}>
+                    {props.desc}
+                </p>
+                <button
+                    className="btn-primary"
+                    aria-label={props.categoryName + 'category button, click to explore the products of this category'}
+                    onClick={() => handleClicks(props.id)}>
+                    Explore {props.name}
+                </button>
             </div>
         </div>
     </>)

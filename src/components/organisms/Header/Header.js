@@ -11,16 +11,16 @@ const Header = ({ toggleCartModal }) => {
         <header>
             <div className="container nav_bar">
                 <div className="nav_logo">
-                    <Link to={'/'}><img src={LogoImage} alt="Logo" /></Link>
+                    <Link to={'/'}><img src={LogoImage} alt="Logo" aria-label={"Sabka Bazaar Logo"} /></Link>
                 </div>
                 <div className="nav_menu">
                     <ul>
-                        <li><Link to={'/home'}>Home</Link></li>
-                        <li><Link to={'/products'}>Products</Link></li>
+                        <li><Link to={'/home'} aria-label={"Navigation link for home"}>Home</Link></li>
+                        <li><Link to={'/products'} aria-label={"Navigation link for products"}>Products</Link></li>
                     </ul>
                     <ul className="top_links">
-                        <li><Link to={'/signin'}> SignIn </Link></li>
-                        <li><Link to={'/register'}> Register </Link></li>
+                        <li><Link to={'/signin'} aria-label={"Navigation link for login"}> SignIn </Link></li>
+                        <li><Link to={'/register'} aria-label={"Navigation link for register"}> Register </Link></li>
                     </ul>
                 </div>
                 <div>

@@ -10,15 +10,28 @@ export default function ProductCard({ product }) {
     }
 
     return (
-        <div className="product-card">
-            <h3 className="product-header">{productObj.name}</h3>
+        <div className="product-card" aria-label={"Product card for" + productObj.name}>
+            <h3
+                aria-label={"product name is" + productObj.name}
+                className="product-header">
+                {productObj.name}
+            </h3>
             <div className="product-content">
                 <div className="product-image">
-                    <img src={productObj.imageURL} alt='pic' />
+                    <img
+                        src={productObj.imageURL}
+                        aria-label={"image of" + productObj.name}
+                        alt='pic' />
                 </div>
                 <div className="product-detail">
-                    <p> {productObj.description} </p>
-                    <button className="btn-primary product-mobile-button" onClick={() => buyNowClickHandler(productObj)}>
+                    <p
+                        aria-label={"product description is" + productObj.description}>
+                        {productObj.description}
+                    </p>
+                    <button
+                        aria-label={"BUY NOW button, the product price is" + productObj.price}
+                        className="btn-primary product-mobile-button"
+                        onClick={() => buyNowClickHandler(productObj)}>
                         Buy Now @ {`MRP Rs.${productObj.price}`}
                     </button>
 
@@ -26,10 +39,16 @@ export default function ProductCard({ product }) {
 
             </div>
             <div className='product-footer'>
-                <p>MRP Rs.{productObj.price}</p>
-                <button type='button' className="btn-primary" onClick={() => buyNowClickHandler(productObj)} >
+                <p aria-label={"Product price for" + productObj.name + "is" + productObj.price}>
+                    MRP Rs.{productObj.price}
+                </p>
+                <button
+                    type='button'
+                    aria-label={"BUY NOW button"}
+                    className="btn-primary"
+                    onClick={() => buyNowClickHandler(productObj)} >
                     Buy Now
-                    </button>
+                </button>
             </div>
         </div>
     )

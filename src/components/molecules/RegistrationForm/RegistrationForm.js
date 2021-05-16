@@ -111,6 +111,7 @@ const RegistrationForm = () => {
         value={inputs.firstname}
         onChange={onChangeHandler}
         errorLabel={errors.firstname}
+        ariaLabel="First Name Input"
       />
       <Input
         type='text'
@@ -120,6 +121,7 @@ const RegistrationForm = () => {
         value={inputs.lastname}
         onChange={onChangeHandler}
         errorLabel={errors.lastname}
+        ariaLabel="Last Name Input"
       />
 
       <Input
@@ -130,6 +132,7 @@ const RegistrationForm = () => {
         value={inputs.email}
         onChange={onChangeHandler}
         errorLabel={errors.email}
+        ariaLabel="Email Input"
       />
 
       <Input
@@ -140,6 +143,7 @@ const RegistrationForm = () => {
         value={inputs.password}
         onChange={onChangeHandler}
         errorLabel={errors.password}
+        ariaLabel="Password Input"
       />
 
       <Input
@@ -148,12 +152,15 @@ const RegistrationForm = () => {
         id='confirmPassword'
         placeholder='Confirm Password'
         value={inputs.confirmPassword}
-
+        ariaLabel="Confirm Password Input"
         onChange={onChangeHandler}
         errorLabel={errors.confirmPassword}
       />
 
-      <button type='submit' className='form-submit-btn' >
+      <button
+        type='submit'
+        ariaLabel="Signup Button"
+        className='form-submit-btn' >
         Signup
       </button>
     </form>
