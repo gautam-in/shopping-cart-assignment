@@ -7,7 +7,6 @@ const Carousel = React.memo(({ images }) => {
   const next = <>&#10095;</>;
   const dot = <>&#8226;</>;
   const [activeIndex, setActiveIndex] = useState(0);
-
   useEffect(() => {
     const interval = setInterval(() => {
       nextSlide();
@@ -19,16 +18,13 @@ const Carousel = React.memo(({ images }) => {
     const nextIndex = activeIndex === images.length - 1 ? 0 : activeIndex + 1;
     setActiveIndex(nextIndex);
   };
-
   const previousSlide = () => {
     const nextIndex = activeIndex === 0 ? images.length - 1 : activeIndex - 1;
     setActiveIndex(nextIndex);
   };
-
   const goToIndex = (id) => {
     setActiveIndex(id);
   };
-
   const slides = images.map((image, index) => {
     const { id, bannerImageUrl, bannerImageAlt } = image;
     return (
@@ -37,7 +33,6 @@ const Carousel = React.memo(({ images }) => {
       </li>
     );
   });
-
   const indicators = images.map((image, index) => {
     return (
       <li

@@ -1,22 +1,25 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useHistory } from "react-router-dom"
+import { useHistory, useLocation } from "react-router-dom"
 import CartItem from '../../molecules/CartItem/CartItem';
 import LowestPrice from "../../../images/lowest-price.png";
 import './Cart.scss';
 
 const Cart = React.memo(({ showCart, toggleCartModal }) => {
   const dispatch = useDispatch();
+  const location = useLocation();
   const history = useHistory();
   const cartData = useSelector(state => state.cart.cartList);
   const itemCount = useSelector(state => state.cart.cartItem);
-
+  useEffect(() => {
+    console.log(location.pathname);
+  }, []);
   var totalPrice = cartData.reduce((acc, item) => {
     return acc + (item.count * item.price)
   }, 0);
 
   return (
-    <div className={`cart-container ${showCart ? 'show-modal' : ''}`}>
+    <div className={`cart-container ${showCart || (location.pathname == "/cart") ? 'show-modal' : ''}`}>
       <div className='cart-drawer-modal' >
         <div className='cart-drawer-header-wrap'>
           <h3>
@@ -35,7 +38,7 @@ const Cart = React.memo(({ showCart, toggleCartModal }) => {
                 <ul className='clearfix'>{cartData.map((item, index) => {
                   return <CartItem item={item} key={index} />
                 })}</ul>
-                <div className='lowest-price-wrpper'>
+                <div className='lowest-price'>
                   <img src={LowestPrice} alt='Lowest Price' />
                   <span>You won't find it cheaper anywhere</span>
                 </div>
@@ -50,7 +53,7 @@ const Cart = React.memo(({ showCart, toggleCartModal }) => {
         <div className='cart-footer-wrap'>
           {cartData.length ? (
             <>
-              <div className='cart-footer-text'>Promo code can be applied on payment page</div>
+              <p className='cart-footer-text'>Promo code can be applied on payment page</p>
               <button type='button' className="custom-button" >
                 <span className='checkout-text-wrap'>Proceed to Checkout</span>
                 <span className='checkout-price-wrap'>
@@ -61,7 +64,7 @@ const Cart = React.memo(({ showCart, toggleCartModal }) => {
           ) : (
             <button
               type='button'
-              className="custom-button"
+              className="custom-button empty-cart-button"
               onClick={() => {
                 history.push('/products');
               }}

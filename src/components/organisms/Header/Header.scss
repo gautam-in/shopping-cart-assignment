@@ -8,7 +8,6 @@ header {
   box-shadow: 0 8px 6px -6px #eaeaea;
 }
   .nav_bar{
-
     position: relative;
     display: flex;
     flex-wrap: wrap;
@@ -26,11 +25,12 @@ header {
         margin-right: auto;
         background: white;
         list-style: none;
-      
         li{
           margin-right: 10px;
           a{
             text-decoration: none;
+            font-size: 1.5rem;
+            color:black;
           }
         }
       }
