@@ -20,7 +20,6 @@ const CategoryCard = (props) => {
             </div>
             <div className="card-content">
                 <h3>{props.categoryName}</h3>
-                <br></br>
                 <p>{props.desc}</p>
                 <button className="btn-primary" onClick={() => handleClicks(props.id)}>Explore {props.name}</button>
             </div>
