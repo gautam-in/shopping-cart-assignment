@@ -5,6 +5,7 @@ import SignInPage from './components/pages/SignInPage';
 import RegisterPage from './components/pages/RegisterPage';
 import ProductListingPage from './components/pages/ProductListingPage';
 import Cart from './components/organisms/Cart/Cart';
+import Footer from './components/organisms/Footer/Footer';
 import { Route, Switch, BrowserRouter as Router, Redirect, useHistory } from 'react-router-dom';
 
 function App() {
@@ -33,6 +34,7 @@ function App() {
                 <Route exact path='/cart' render={() => <Cart showCart={showModal} toggleCartModal={toggleModal} />} />
                 <Route exact path='/register' component={RegisterPage} />
             </Switch>
+            <Footer />
         </>
     )
 }
