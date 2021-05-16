@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Input from '../../atoms/Input/Input';
 import './SigninForm.scss';
+import { useHistory } from 'react-router-dom';
 const initial = {
   email: "",
   password: ""
@@ -8,11 +9,12 @@ const initial = {
 const SigninForm = () => {
   const [inputs, setInputs] = useState(initial);
   const [errors, setErrors] = useState(initial);
-
+  const history = useHistory();
   const handleSubmit = (event) => {
     event.preventDefault();
     if (validate()) {
       resetForm();
+      history.push('/home')
     }
 
   };

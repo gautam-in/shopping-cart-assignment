@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Input from '../../atoms/Input/Input';
+import { useHistory } from 'react-router-dom';
 import '../SigninForm/SigninForm.scss';
 const initial = {
   firstname: "",
@@ -11,10 +12,12 @@ const initial = {
 const RegistrationForm = () => {
   const [inputs, setInputs] = useState(initial);
   const [errors, setErrors] = useState(initial);
+  const history = useHistory();
   const handleSubmit = (event) => {
     event.preventDefault();
     if (validate()) {
       resetForm();
+      history.push('/home');
     }
 
   };
