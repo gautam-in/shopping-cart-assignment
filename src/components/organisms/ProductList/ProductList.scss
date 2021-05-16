@@ -1,0 +1,14 @@
+@import '../../../variable.scss';
+.product-list{
+    flex-wrap: wrap;
+    width:100%;
+    display: flex;
+}
+@media only screen and (min-width: $tab) {
+   
+
+}
+
+@media only screen and (min-width: $desktop) { .product-list{
+    width: 80%;
+}}

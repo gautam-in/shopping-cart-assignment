@@ -1,59 +1,33 @@
-import React,{useState} from 'react';
+import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from "react-redux";
-import {getCategories,getProducts} from '../../actions/actionCreators';
-import ProductCard from '../../components/molecules/ProductCard';
-const ProductListingPage = () =>{
-    const categoriesList = useSelector(state => state.categoriesLis);
-    const productsList = useSelector(state => state.products.productsList)
-    const [selectedCategory,setSelectedCategory] = useState('');
-    const [showDropdown,setShowDropdown] = useState(false);
-    const [displayList,setDisplayList] = useState([]);
-    const dispatch = useDispatch();
-    React.useEffect(()=>{
-      dispatch(getCategories());
-      dispatch(getProducts());
+import { useLocation } from 'react-router-dom';
+import { getCategories, getProducts } from '../../redux/actions/actionCreators';
+import ProductList from '../organisms/ProductList/ProductList';
+import CategoryFilter from '../organisms/CategoryFilter/CategoryFilter';
+const ProductListingPage = () => {
 
-    },[])
-    React.useEffect(() => {
-      setDisplayList(productsList);
-    }, [productsList]);
+  const dispatch = useDispatch();
+  const { state } = useLocation();
+  const id = (state && state.id) || null;
+  const [filterId, setFilterId] = useState(null);
 
-    const categoriesDropdown = categoriesList.categories?.map((category) => {
-        const {id, name} = category;
-        return (
-          <li key={id} data-testid="select-option" onClick={()=>onClickHandler(id,name)} value={id}>
-            {name}
-          </li>
-        );
-      });
+  useEffect(() => {
+    dispatch(getCategories());
+    dispatch(getProducts());
+  }, [dispatch]);
 
-     
-
-      const onClickHandler = (id,name)=>{
-        console.log(id);
-        console.log(name);
-        setSelectedCategory(name);
-        setShowDropdown(false);
-        filterProductsBasedOnCategory(id);
-      }
-     
-      const filterProductsBasedOnCategory = (id) => {
-        setDisplayList(() =>
-        productsList.filter((product) => product.category === id)
-        );
-      };
-      
-      const productsContent = displayList?.map((item,i) =>{
-        return <ProductCard product={item} key={i}/>
-  }) 
-    return (<>
-        <div className="categoriesDropdownHeader"  onClick={()=>setShowDropdown(true)} >{selectedCategory || "Select Category"}</div>
-        {showDropdown && <ul className="categoriesDropdown">
-            {categoriesDropdown}
-            </ul>}
-            <div className="categoryContainer">
-            {productsContent}</div>
-    </>)
+  useEffect(() => {
+    console.log(id);
+    setFilterId(id);
+  }, [id]);
+  return (<>
+    <main className='container'>
+      <section className='container-section'>
+        <CategoryFilter filterId={filterId} />
+        <ProductList filterId={filterId} />
+      </section>
+    </main>
+  </>)
 }
 
 export default ProductListingPage;

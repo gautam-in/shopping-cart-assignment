@@ -1,27 +1,16 @@
 import React from "react";
 import { useDispatch } from 'react-redux';
-import { addToCart, removeFromCart } from '../../actions/actionCreators';
-
-
-
-
-
+import { addToCart, removeFromCart } from '../../../redux/actions/actionCreators';
 const CartItem = ({ item }) => {
     const dispatch = useDispatch();
-
-
-
     const handleIncrementItemQty = (product) => {
         console.log(product);
         dispatch(addToCart(product));
     };
 
-
     const handleDecrementItemQty = (product) => {
         dispatch(removeFromCart(product));
     };
-
-
 
     return (
         <div className="cart-item" key={item.id}>
@@ -42,7 +31,6 @@ const CartItem = ({ item }) => {
                             () => handleDecrementItemQty(item)
                         }
                         id={item.id}
-                    // disabled={item.count <= 1}
                     >
                         {item.count <= 1 ? "x" : "-"}
                     </button>
@@ -56,7 +44,6 @@ const CartItem = ({ item }) => {
                     >
                         +
           </button>
-
                     <span>X</span>
                     <span>
                         ₹

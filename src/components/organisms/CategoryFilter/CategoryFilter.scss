@@ -1,0 +1,31 @@
+@import '../../../variable.scss';
+.list-item{
+    cursor: pointer;
+  padding: 1rem;
+  border-bottom: 0.1rem solid #cccccc;
+ 
+}
+.filter-header{
+    padding: 1rem;
+    color: white;
+    background: #C70039;
+}
+.category-filter{
+    width:100%;
+    background: gainsboro;
+}
+@media only screen and (min-width: 575px) {
+
+    .category-filter{
+        width:20%;
+        .filter-header{
+            display:none;
+        }
+    }
+
+}
+
+@media only screen and (min-width: $desktop) {
+
+
+}

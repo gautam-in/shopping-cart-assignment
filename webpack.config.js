@@ -15,11 +15,11 @@ module.exports = {
                 test: /\.(png|jpe?g|gif|svg)$/i,
                 type: "asset/resource"
             },
-            { 
-                test: /\.(js)$/, 
-                use: 'babel-loader' 
+            {
+                test: /\.(js)$/,
+                use: 'babel-loader'
             },
-            { 
+            {
                 test: /\.(scss|css)$/,
                 use: ['style-loader', 'css-loader', 'postcss-loader', 'sass-loader'],
             }
@@ -27,12 +27,16 @@ module.exports = {
     },
     mode: 'development',
     devServer: {
-      historyApiFallback: true,
+        historyApiFallback: true,
+        contentBase: path.resolve(__dirname, "public"),
+        publicPath: "/",
+        hot: true,
+        port: 3030,
     },
     plugins: [
 
         new HtmlWebpackPlugin({
-            template: 'src/index.html'
+            template: path.resolve(__dirname, "public/index.html"),
         }),
         new webpack.HotModuleReplacementPlugin(),
     ]

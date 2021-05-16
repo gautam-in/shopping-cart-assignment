@@ -1,0 +1,53 @@
+header {
+  position: sticky;
+  z-index: 10;
+  top: 0;
+  background-color:white;
+  -webkit-box-shadow: 0 8px 6px -6px #eaeaea;
+  -moz-box-shadow: 0 8px 6px -6px #eaeaea;
+  box-shadow: 0 8px 6px -6px #eaeaea;
+}
+  .nav_bar{
+
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    .nav_logo{
+      margin-top:4px;
+      img{
+        width:10rem;
+      }
+    }
+    .nav_menu{
+      ul{
+        display: flex;
+        margin-right: auto;
+        background: white;
+        list-style: none;
+      
+        li{
+          margin-right: 10px;
+          a{
+            text-decoration: none;
+          }
+        }
+      }
+      .top_links{
+        position: absolute;
+        top: 0;
+        right: 0;
+      }
+    
+  }
+    .nav_cart{
+    padding: 3px 5rem 3px 4px;
+    background: gainsboro;
+    display: flex;
+    align-items: center;
+    margin-top: 19px;
+    }
+  }
+
+  

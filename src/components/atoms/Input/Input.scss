@@ -1,0 +1,74 @@
+.input-field {
+  display: flex;
+  flex-flow: column-reverse;
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+label,
+input {
+  transition: all 0.2s;
+  touch-action: manipulation;
+}
+
+input {
+  font-size: 1.2rem;
+  line-height: 1.6rem;
+  font-weight: 500;
+  border: 0;
+  border-bottom: 0.2rem solid #eaeaea;
+  border-radius: 0;
+  padding: 0.8 0;
+  cursor: text;
+}
+
+input:focus {
+  outline: 0;
+  color: #000000;
+  border-bottom: 0.2rem solid #50dae2;
+}
+
+label {
+  font-size: 1rem;
+  line-height: 1.2rem;
+  font-weight: 500;
+  color: #999999;
+  padding: 0.4rem 0;
+}
+
+input:placeholder-shown + label {
+  cursor: pointer;
+  width: fit-content;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transform-origin: left bottom;
+  transform: translate(0, 2.125rem) scale(1.5);
+}
+
+::-webkit-input-placeholder {
+  opacity: 0;
+  transition: inherit;
+}
+
+input:focus::-webkit-input-placeholder {
+  opacity: 1;
+}
+
+input:not(:placeholder-shown) + label,
+input:focus + label {
+  transform: translate(0, 0) scale(1);
+  cursor: pointer;
+  color: #50dae2;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+.form-error {
+  position: absolute;
+  bottom: 0%;
+  left: 0;
+  font-size: 1.2rem;
+  font-weight: 500;
+  transform: translateY(100%);
+  color: #d10157;
+}
