@@ -65,7 +65,7 @@
       <span>Get access to your Orders, Wishlist, Recommendations</span>
     </div>
     <div class="right">
-       <form method="post" action="index.html" name="loginform">
+       <form method="post" action="index.html" name="loginform" autocomplete="off"  onsubmit="return login()">
        <div class="txt-field">
           <input type="email" id="email" required>
           <span></span>
@@ -91,4 +91,19 @@
 <!--Footer Section Ends-->
 </div>
 </body>
+<script>
+ /*function login() 
+ {
+ var email = localStorage.getItem("Email");
+ var password = localStorage.getItem("Password");
+
+ if (Email != "undefined" || Email != "null" || Password != "undefined" || Password !="null")
+ {
+    alert( "Welcome " + email + "!");
+    } 
+    else
+     alert ( "Hello!");
+     }
+*/
+</script>
 </html>

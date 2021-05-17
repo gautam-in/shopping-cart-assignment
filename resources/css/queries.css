@@ -3,7 +3,6 @@
  .row { padding: 0 2%; }
 }
 
-
 /* Small tablet to big tablet: from 768px to 1023px */
 @media only screen and (max-width: 1023px) {
 
@@ -13,7 +12,7 @@
     .cart a{
         font-size:80%;
         text-decoration:none;
-        margin-left:200px;
+        margin-left:130px;
      }
      .btn{
         margin-left:60px;
@@ -46,7 +45,7 @@
 
 
 /* Small phones to small tablets: from 481px to 767px */
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width:767px) {
 
     body{
         font-size:70%;
@@ -55,7 +54,7 @@
         font-size:70%;
         text-decoration:none;
         display: block;
-        margin-left:100px;
+        margin-left:70px;
     
      }
      .btn{
@@ -69,7 +68,7 @@
 footer.bottom {
     font-size:90%;
     padding:5px;
-
+    
 }
 .loginform
 {
@@ -85,7 +84,6 @@ left:15%;
     {
      margin-left:80px;
     }
-
 }
 /* Small phones: from 0 to 480px */
 @media only screen and (max-width: 480px) {

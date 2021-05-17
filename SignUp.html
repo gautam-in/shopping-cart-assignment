@@ -65,41 +65,41 @@
       <span>We do not share your personal details with anyone.</span>
     </div>
     <div class="right">
-       <form method="post" name="signupform" id="signupform" autocomplete="off">
+       <form method="post" name="signupform" id="signupform" autocomplete="false" action="#" onsubmit="return store(this);">
        <div class="txt-field">
-          <input type="text" id="name" required>
+          <input type="text" id="name"  autocomplete="false" required>
           <span></span>
           <label for="name">First Name</label>
         </div>
         <div class="txt-field">
-            <input type="text"  id="lastname" required> 
+            <input type="text"  id="lastname" autocomplete="false" required> 
             <span></span>
             <label for="lastname">Last Name</label>
           </div>
           <div class="txt-field">
-            <input type="email" id="email" required>
+            <input type="email" id="email" autocomplete="false" required>
             <span></span>
             <label for="email">Email</label>
           </div>
           <div class="txt-field">
-            <input type="password" id="password" pattern="^.*(?=.{6,})(?=.*[a-zA-Z])[a-zA-Z0-9]+$" title="Password must have minimum length 6 characters, a number and alphabet
+            <input type="password" id="password" autocomplete="false" pattern="^.*(?=.{6,})(?=.*[a-zA-Z])[a-zA-Z0-9]+$" title="Password must have minimum length 6 characters, a number and alphabet
             and cannot have spaces." required>
             <span></span>
         
             <label for="password">Password</label>
           </div>
         <div class="txt-field">
-          <input type="password" id="confirmpassword" required>
+          <input type="password" id="confirmpassword"  autocomplete="false" required>
           <span></span>
           <label for="confirmpassword"> Confirm Password</label>
         </div>
-        <input type="submit" value="Signup" class="btn-login"/>
+        <input type="submit" value="Signup" class="btn-login" onClick="clickedButton()"/>
       </form>
     </div>
 </div>
 <div class="clearfix">
 </div>
-<div style="margin-top:420px;">
+<div style="margin-top:480px;" class="extradiv">
 
 </div>
 <!--Login Form Ends -->
@@ -110,7 +110,6 @@
   </footer>
 </div>
 <!--Footer Section Ends-->
-</div>
 </body>
 </html>
 <script>
@@ -129,23 +128,24 @@ password.onchange = validatePassword;
 confirm_password.onkeyup = validatePassword;
 
 
-const signupform=document.getElementById('signupform');
-signupform.addeventlistener('submit', function(e)
-{
-  e.preventDefault();
-const formData = new FormData(this);
-fetch('login.php',{
-method:'post',
-body:formData
-}).then(function(response){
-  return response.text();
-}).then(function(text){
-console.log(text);
-}).catch(function(error){
-  console.error(error);
-})
-});
-
-
+function store() 
+{ 
+    var Name= document.getElementById('name').value;
+    var LastName= document.getElementById('lastname').value;
+    var Email= document.getElementById('email').value;
+    var Password= document.getElementById('password').value;
+    var ConfirmPassword= document.getElementById('confirmpassword').value;;
+    var user = 
+    {
+    Name:Name, 
+    LastName:LastName, 
+    Email:Email, 
+    Password:Password, 
+    ConfirmPassword:ConfirmPassword
+    };
+    localStorage.setItem('user', JSON.stringify(user));
+    var array = JSON.parse(localStorage.getItem('user'));
+    console.log(array);
 }
+
 </script>

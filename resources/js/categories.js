@@ -12,15 +12,11 @@ ourRequest.onload = function() {
 ourRequest.onerror = function() {
   console.log("Connection error");
 };
-
 ourRequest.send();
-
-
 function createHTML(categoriesData) {
   var categoriesTemplate = document.getElementById("categoriesTemplate").innerHTML;
   var compiledTemplate = Handlebars.compile(categoriesTemplate);
   var ourGeneratedHTML = compiledTemplate(categoriesData);
-
   var categoriesContainer = document.getElementById("categories-container");
   categoriesContainer.innerHTML = ourGeneratedHTML;
 }
