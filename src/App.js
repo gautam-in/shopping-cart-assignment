@@ -12,7 +12,6 @@ import { Route, Switch, BrowserRouter as Router, Redirect, useHistory } from 're
 function App() {
     let history = useHistory();
     const [showModal, setShowModal] = useState(false);
-
     const toggleModal = () => {
         setShowModal(!showModal);
         if (window.innerWidth < 770) {
@@ -22,9 +21,10 @@ function App() {
     };
 
     return (
-        <>
+        <>-
             <Header toggleCartModal={toggleModal} />
             {window.innerWidth > 770 ? <Cart showCart={showModal} toggleCartModal={toggleModal} /> : null}
+
             <Switch>
                 <Route exact path='/'>
                     <Redirect to="/home" />
@@ -35,8 +35,8 @@ function App() {
                 <Route exact path='/cart' render={() => <Cart showCart={showModal} toggleCartModal={toggleModal} />} />
                 <Route exact path='/register' component={RegisterPage} />
                 <Route component={NotFound} />
-
             </Switch>
+
             <Footer />
         </>
     )

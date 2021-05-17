@@ -70,6 +70,31 @@
     .product-card{
         width:calc(50% - 2rem);
         position: relative;
+        display: flex;
+        flex-direction: column;
+        .product-header{
+            height: 4rem;
+        }
+        .product-content{
+            position:relative;
+            flex-direction: column;
+            flex:1;
+            .product-image{
+                width:100%;
+                flex:1;
+            }
+            .product-detail{
+                flex-grow:1;
+                p{
+                    flex:1;
+                    width:100%;
+                    height: fit-content;
+                }
+            }
+            .product-mobile-button{
+                display:none;
+            }
+        }
         .product-footer{
             display: flex;
             p{
@@ -80,26 +105,6 @@
             }
             button{
                 width:50%;
-            }
-        }
-        .product-header{
-            height: 4rem;
-        }
-        .product-content{
-            position:relative;
-            flex-direction: column;
-            .product-image{
-                width:100%;
-            }
-            .product-detail{
-                flex-grow:1;
-                p{
-                    width:100%;
-                    height: fit-content;
-                }
-            }
-            .product-mobile-button{
-                display:none;
             }
         }
     }
@@ -111,8 +116,11 @@
     .product-card{
         width:calc(25% - 2rem);
         position: relative;
+        display: flex;
+        flex-direction: column;
         .product-footer{
             display: flex;
+            
             p{
                 align-self: center;
                 font-size: 1.5rem;
@@ -128,13 +136,16 @@
         }
         .product-content{
             position:relative;
+            flex:1;
             flex-direction: column;
             .product-image{
                 width:100%;
+                flex: 1;
             }
             .product-detail{
-                flex-grow:1;
+                flex:1;
                 p{
+                    flex:1;
                     width:100%;
                     height: fit-content;
                 }

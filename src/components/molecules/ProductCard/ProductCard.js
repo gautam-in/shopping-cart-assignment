@@ -38,7 +38,7 @@ export default function ProductCard({ product }) {
                 </div>
 
             </div>
-            <div className='product-footer'>
+            <section className='product-footer'>
                 <p aria-label={"Product price for" + productObj.name + "is" + productObj.price}>
                     MRP Rs.{productObj.price}
                 </p>
@@ -49,7 +49,7 @@ export default function ProductCard({ product }) {
                     onClick={() => buyNowClickHandler(productObj)} >
                     Buy Now
                 </button>
-            </div>
+            </section>
         </div>
     )
 }
