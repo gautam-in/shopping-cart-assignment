@@ -17,20 +17,8 @@ function useDevice() {
     setIsDesktop(window.innerWidth > tabletSize);
   };
 
-  /* const savedDebounced = useCallback(
-    debounce(() => handleWindowResize(), 100),
-    []
-  );
-
   useEffect(() => {
     handleWindowResize();
-    window.addEventListener("resize", savedDebounced);
-    return () => {
-      window.removeEventListener("resize", savedDebounced);
-    };
-  }, []); */
-
-  useEffect(() => {
     // Debounce
     let timeoutId = null;
     const resizeListener = () => {
@@ -43,6 +31,19 @@ function useDevice() {
       window.removeEventListener("resize", resizeListener);
     };
   }, []);
+
+  /* const savedDebounced = useCallback(
+    debounce(() => handleWindowResize(), 100),
+    []
+  );
+
+  useEffect(() => {
+    handleWindowResize();
+    window.addEventListener("resize", savedDebounced);
+    return () => {
+      window.removeEventListener("resize", savedDebounced);
+    };
+  }, []); */
 
   return { isMobile, isTablet, isDesktop };
 }
