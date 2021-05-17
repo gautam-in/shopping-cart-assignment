@@ -26,9 +26,9 @@ const CartItem = ({ item }) => {
             <div className="cart-item-info">
                 <div className="cart-item-title" aria-label={"Product name is" + item.name}>{item.name}</div>
                 <div className="cart-item-calculation">
-                    <button
+                    <div
                         variant="primary"
-                        className="button btn-rounded"
+                        className="btn-rounded"
                         onClick={
                             () => handleDecrementItemQty(item)
                         }
@@ -36,18 +36,18 @@ const CartItem = ({ item }) => {
                         aria-label={"Minus button to decrease the product count"}
                     >
                         {item.count <= 1 ? "x" : "-"}
-                    </button>
+                    </div>
 
                     <span className="cart-qty" aria-label={"count of" + item.name + "is" + item.count}>{item.count}</span>
-                    <button
+                    <div
                         variant="primary"
-                        className="button btn-rounded"
+                        className="btn-rounded"
                         onClick={() => handleIncrementItemQty(item)}
                         id={item.id}
                         aria-label={"Plus button to increase the product count"}
                     >
                         +
-          </button>
+          </div>
                     <span>X</span>
                     <span aria-label={"price for " + item.name + "is" + item.price}>
                         ₹

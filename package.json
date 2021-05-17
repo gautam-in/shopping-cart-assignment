@@ -11,7 +11,7 @@
   },
   "scripts": {
     "start": "concurrently --kill-others \"webpack serve --open\" \"npm run server\"",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "server": "canned -p 5000 ./server",
     "create": "webpack serve --open",
     "build": "webpack --mode production"
@@ -32,22 +32,29 @@
     "@babel/preset-env": "^7.13.15",
     "@babel/preset-react": "^7.13.13",
     "axios": "^0.21.1",
+    "babel-jest": "^26.6.3",
     "babel-loader": "^8.2.2",
+    "canned": "^0.3.12",
+    "clean-webpack-plugin": "^4.0.0-alpha.0",
     "concurrently": "^6.1.0",
     "css-loader": "^5.2.2",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.2",
     "html-webpack-plugin": "^5.3.1",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^26.6.3",
+    "jest-enzyme": "^7.1.2",
     "node-sass": "^5.0.0",
     "npm-run-all": "^4.1.5",
     "postcss-loader": "^5.2.0",
     "postcss-preset-env": "^6.7.0",
     "prettier": "^2.3.0",
     "react-router-dom": "^5.2.0",
+    "redux-mock-store": "^1.5.4",
     "sass-loader": "^11.0.1",
     "style-loader": "^2.0.0",
     "webpack": "^5.33.2",
     "webpack-cli": "^4.6.0",
-    "webpack-dev-server": "^3.11.2",
-    "canned": "^0.3.12",
-    "clean-webpack-plugin": "^4.0.0-alpha.0"
+    "webpack-dev-server": "^3.11.2"
   }
 }

@@ -1,16 +1,18 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import CategoryCard from '../../molecules/CategoryCard/CategoryCard';
-import { useDispatch, useSelector } from "react-redux";
-import { getCategories } from '../../../redux/actions/actionCreators';
+import { GET_CATEGORIES_API } from "../../../apis";
+import { getData } from '../../../getService';
 const Categories = () => {
-    const categoriesList = useSelector(state => state.categoriesLis);
-    const dispatch = useDispatch();
-    React.useEffect(() => {
-        dispatch(getCategories());
-    }, [])
+    const [categoriesList, setCategoriesList] = useState([]);
+    useEffect(() => {
+        getData(GET_CATEGORIES_API).then(json => setCategoriesList(json.data)).catch((err) => {
+            console.log(err);
+        });
+    }, []);
+
     return <>
         <div className="category-container">
-            {categoriesList.categories?.map(a => {
+            {categoriesList?.map(a => {
                 return <CategoryCard
                     key={a.key}
                     name={a.key}

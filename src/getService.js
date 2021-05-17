@@ -5,7 +5,6 @@ export const getData = endpoint => {
     const reqUrl = BASE_URI + endpoint;
 
     return new Promise((resolve, reject) => {
-        console.log(reqUrl);
         axios.get(reqUrl)
             .then(data => {
                 resolve(data);

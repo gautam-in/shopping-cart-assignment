@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from "react-redux";
 import { useLocation } from 'react-router-dom';
-import { getCategories, getProducts } from '../../redux/actions/actionCreators';
+import { getProducts } from '../../redux/actions/actionCreators';
 import ProductList from '../organisms/ProductList/ProductList';
 import CategoryFilter from '../organisms/CategoryFilter/CategoryFilter';
 const ProductListingPage = () => {
@@ -12,12 +12,10 @@ const ProductListingPage = () => {
   const [filterId, setFilterId] = useState(null);
 
   useEffect(() => {
-    dispatch(getCategories());
     dispatch(getProducts());
   }, [dispatch]);
 
   useEffect(() => {
-    console.log(id);
     setFilterId(id);
   }, [id]);
   return (<>

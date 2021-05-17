@@ -33,6 +33,11 @@ module.exports = {
         hot: true,
         port: 3030,
     },
+    resolve: {
+        alias: {
+            'react-redux': require.resolve('react-redux'),
+        },
+    },
     plugins: [
 
         new HtmlWebpackPlugin({

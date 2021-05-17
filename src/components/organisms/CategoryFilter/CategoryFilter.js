@@ -3,19 +3,22 @@ import { useDispatch, useSelector } from "react-redux";
 import { getCategories } from '../../../redux/actions/actionCreators';
 import { useHistory } from 'react-router-dom';
 import PropTypes from 'prop-types';
-
-
+import { GET_CATEGORIES_API } from "../../../apis";
+import { getData } from '../../../getService';
 import './CategoryFilter.scss';
 
 const CategoryFilter = React.memo(({ filterId }) => {
+
     const history = useHistory();
     const [activeId, setActiveId] = useState(null);
     const [activeCategory, setActiveCategory] = useState(null);
     const [isOpen, setIsOpen] = useState(false);
-    const dispatch = useDispatch();
-    const categoriesList = useSelector(state => state.categoriesLis.categories);
-
-
+    const [categoriesList, setCategoriesList] = useState([]);
+    useEffect(() => {
+        getData(GET_CATEGORIES_API).then(json => setCategoriesList(json.data)).catch((err) => {
+            console.log(err);
+        });
+    }, []);
     useEffect(() => {
         setActiveId(filterId);
     }, [filterId]);

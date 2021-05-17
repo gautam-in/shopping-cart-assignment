@@ -62,7 +62,7 @@ const SigninForm = () => {
         required
         onChange={onChangeHandler}
         errorLabel={errors.email}
-        ariaLabel="Email Input"
+        aria-label="Email Input"
       />
       <Input
         type='password'
@@ -73,7 +73,7 @@ const SigninForm = () => {
         required
         onChange={onChangeHandler}
         errorLabel={errors.password}
-        ariaLabel="Password Input"
+        aria-label="Password Input"
       />
       <button type='submit' className='form-submit-btn' >
         Login

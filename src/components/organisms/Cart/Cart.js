@@ -20,12 +20,12 @@ const Cart = React.memo(({ showCart, toggleCartModal }) => {
 
   return (
     <div className={`cart-container ${showCart || (location.pathname == "/cart") ? 'show-modal' : ''}`}>
-      <div className='cart-drawer-modal' >
-        <div className='cart-drawer-header-wrap'>
-          <h3>
+      <div className='cart-drawer-modal' aria-label="cart modal">
+        <div className='cart-drawer-header-wrap' aria-label="cart header">
+          <h3 aria-label="My Cart header">
             My Cart <span>{itemCount ? itemCount : ''}</span>
           </h3>
-          {window.innerWidth >= 770 ? <button type='button' className='close' aria-label='Close' onClick={toggleCartModal}>
+          {window.innerWidth >= 770 ? <button type='button' className='close' aria-label='Close Icon' onClick={toggleCartModal}>
             <span aria-hidden='true'>
               X
           </span>
@@ -45,9 +45,9 @@ const Cart = React.memo(({ showCart, toggleCartModal }) => {
               </div>
             </div>
           ) : (
-            <article className='cart-body-wrap'>
-              <h5>No item in your cart</h5>
-              <p>Your favourite items are just a click away</p>
+            <article className='cart-body-wrap' aria-label="No cart item description">
+              <h5 aria-label="No item in your cart">No item in your cart</h5>
+              <p aria-label="Your favourite items are just a click away">Your favourite items are just a click away</p>
             </article>
           )}</div>
         <div className='cart-footer-wrap'>
