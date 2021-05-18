@@ -1,4 +1,9 @@
 .header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: #fff;
+  z-index: 99;
   display: flex;
   align-items: center;
   min-height: 50px;
@@ -33,10 +38,10 @@
 
       & a {
         text-decoration: none;
-        color: #000;
+        color: #00000094;
 
         &:visited {
-          color: #000;
+          color: #00000094;
         }
       }
     }
@@ -47,21 +52,23 @@
     flex-direction: column;
     & .nav_primary {
       display: flex;
-      justify-content: space-evenly;
+      justify-content: flex-end;
       font-size: 14px;
       padding: 0;
       margin: 0;
       min-height: 25px;
       & a {
         text-decoration: none;
-        color: #000;
+        color: #00000094;
+        width: 50%;
+        text-align: end;
 
         &:hover {
           color: #d10157;
         }
 
         &:visited {
-          color: #000;
+          color: #00000094;
         }
       }
 
@@ -91,7 +98,7 @@
         }
 
         &:visited {
-          color: #000;
+          color: #00000094;
         }
 
         & .cart_logo_container {

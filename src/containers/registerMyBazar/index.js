@@ -66,7 +66,7 @@ const Register = () => {
   };
 
   return (
-    <div className="register_form_container">
+    <div className="register_form_container wrapper">
       <div className="sign_up_description">
         <h1>{registerTitleLabel}</h1>
         <p>{registerDescriptionLabel}</p>

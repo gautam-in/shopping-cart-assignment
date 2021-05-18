@@ -77,7 +77,7 @@ const ProductList = () => {
   };
 
   return (
-    <div className="product_list_container container-fluid">
+    <div className="product_list_container container-fluid wrapper">
       <Sidebar
         categories={categories}
         selectedCategory={selectedCategory}

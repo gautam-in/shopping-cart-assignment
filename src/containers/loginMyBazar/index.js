@@ -53,7 +53,7 @@ const LoginMyBazar = () => {
   };
 
   return (
-    <div className="login_form_container">
+    <div className="login_form_container wrapper">
       <div className="login_description">
         <h1>{loginTitleLabel}</h1>
         <p>{loginDescriptionLabel}</p>

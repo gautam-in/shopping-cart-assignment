@@ -86,7 +86,7 @@ const Cart = () => {
   };
 
   return (
-    <div className="container-fluid cart-container">
+    <div className="container-fluid wrapper cart-container">
       <div className="cart-card">
         <div className="cart-header">
           <h4 className="cart-title">

@@ -1,10 +1,11 @@
 // common label
 export const addToCartLabel = "BUY NOW";
-export const priceLabel = "₹";
+export const priceLabel = "MRP Rs.";
+export const newPriceLabel = "₹";
 export const homeCtaLabel = "Home";
 export const productCtaLabel = "Products";
-export const loginCtaLabel = "LogIn";
-export const registerCtaLabel = "SignUp";
+export const loginCtaLabel = "signIn";
+export const registerCtaLabel = "register";
 export const myAccountLabel = "My Account";
 export const itemLabel = "Items";
 export const emailLabel = "Email";

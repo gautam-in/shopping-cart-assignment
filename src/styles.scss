@@ -36,6 +36,7 @@ select:-webkit-autofill:focus {
 }
 
 body {
+  position: relative;
   background-color: #fff;
   box-sizing: border-box;
   margin: 0;
@@ -49,6 +50,10 @@ body {
   & .container-fluid {
     max-width: 1024px;
     margin: 0 auto;
+  }
+
+  & .wrapper {
+    margin-top: 80px !important;
   }
 
   &.title {

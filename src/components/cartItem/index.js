@@ -65,11 +65,11 @@ const CartItem = ({
 
           <span>X</span>
           <span>
-            {`${priceLabel} `}
+            {`${priceLabel}`}
             {item.price}
           </span>
           <div className="total ml-auto">
-            {`${priceLabel} `}
+            {`${priceLabel}`}
             {item.count * item.price}
           </div>
         </div>
