@@ -1,0 +1,30 @@
+.banner-div,
+.category-div {
+  // border: 1px solid black;
+  text-align: center;
+  min-height: 60px;
+}
+
+.banner-img {
+  width: 50%;
+}
+
+.category-div {
+  margin: 25px 0;
+}
+.category-img {
+  width: 15%;
+}
+
+.button {
+  background-color:lightseagreen;
+  border: none;
+  color: white;
+  padding: 8px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 7px 2px 0;
+  cursor: pointer;
+}

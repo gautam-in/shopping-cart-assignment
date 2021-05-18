@@ -1,0 +1,15 @@
+<app-header></app-header>
+
+<div class="container">
+  <label for="email">
+    Email
+    <input type="text" [formControl]="email" name="email" />
+  </label>
+
+  <label for="password">
+    Password
+    <input type="text" [formControl]="password" name="password" />
+  </label>
+
+  <button type="submit" (click)="onClick()">Login</button>
+</div>

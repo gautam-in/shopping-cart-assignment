@@ -1,0 +1,30 @@
+<app-header></app-header>
+
+<!-- <div class="banner-div" *ngFor="let banner of allBanners">
+  <img 
+    src="{{ './../../../assets/' + banner.bannerImageUrl }}"
+    alt="{{ banner.bannerImageAlt }}"
+  />
+</div> -->
+
+<div class="banner-div">
+  <img
+    class="banner-img"
+    src="./../../../assets/static/images/offers/offer1.jpg"
+  />
+</div>
+<div class="category-div">
+  <div *ngFor="let category of allCategories">
+    <img
+      class="category-img"
+      src="{{ './../../../assets/' + category.imageUrl }}"
+      alt="category"
+    />
+
+    <!-- <span>{{ category.name }}</span> -->
+    <!-- <span>{{ category.description }}</span> -->
+    <button class="button" type="button" (click)="navigateToExplore()">
+      Explore {{ category.name }}
+    </button>
+  </div>
+</div>
