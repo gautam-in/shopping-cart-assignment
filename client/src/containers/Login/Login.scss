@@ -1,0 +1,119 @@
+$primary: #58c6ce;
+$secondary: #38ef7d;
+$white: #fff;
+$gray: #9b9b9b;
+
+.formContainer {
+  width: 80%;
+  display: flex;
+  margin: auto;
+  padding: 20px;
+}
+.inputContainer {
+  width: 60%;
+}
+.form-heading-container {
+  flex: 0 1 50%;
+
+  p {
+    font-weight: 600;
+  }
+}
+.buttonStyle {
+  margin: 20px 0px;
+  width: 60%;
+}
+.form__group {
+  position: relative;
+  padding: 15px 0 0;
+  margin-top: 10px;
+  //   width: 50%;
+}
+
+.form__field {
+  font-family: inherit;
+  width: 60%;
+  border: 0;
+  border-bottom: 2px solid $gray;
+  outline: 0;
+  //   font-size: 1.3rem;
+  color: $white;
+  padding: 7px 0;
+  background: transparent;
+  transition: border-color 0.2s;
+
+  &::placeholder {
+    color: transparent;
+  }
+
+  &:placeholder-shown ~ .form__label {
+    // font-size: 1.3rem;
+    cursor: text;
+    top: 20px;
+  }
+}
+
+.form__label {
+  position: absolute;
+  top: 0;
+  display: block;
+  transition: 0.2s;
+  font-size: 1rem;
+  color: $gray;
+}
+
+.form__field:focus {
+  ~ .form__label {
+    position: absolute;
+    top: 0;
+    display: block;
+    transition: 0.2s;
+    font-size: 0.8rem;
+    color: $primary;
+    font-weight: 700;
+  }
+  padding-bottom: 6px;
+  font-weight: 700;
+  border-width: 3px;
+  border-image: linear-gradient(to right, $primary, $secondary);
+  border-image-slice: 1;
+}
+/* reset input */
+.form__field {
+  &:required,
+  &:invalid {
+    box-shadow: none;
+  }
+}
+@media only screen and (max-width: 502px) {
+  .formContainer {
+    display: block;
+  }
+  .inputContainer {
+    width: 100%;
+  }
+}
+// @media only screen and (min-width: 992px) and (max-width: 992px) {
+//     .buttonStyle {
+//       width: 200px;
+//     }
+//   }
+// @media only screen and (min-width: 768px) {
+//   .buttonStyle {
+//     width: 200px;
+//   }
+// }
+
+// /* Large devices (laptops/desktops, 992px and up) */
+// @media only screen and (min-width: 992px) {
+//   .buttonStyle {
+//     width: 300px;
+//   }
+// }
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+// @media only screen and (min-width: 1200px) {
+//   .buttonStyle {
+//     width: 250px;
+//   }
+// }

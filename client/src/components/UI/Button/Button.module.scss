@@ -1,0 +1,25 @@
+$white: #fafafa;
+$fontSize: 11px;
+.button {
+  background-color: #e83583;
+  height: 40px;
+  border: none;
+}
+.label {
+  font-weight: 600;
+  line-height: 24px;
+  color: $white;
+  cursor: pointer;
+  font-family: "Dosis";
+}
+@media (max-width: "767px") {
+  .label {
+    font-weight: 600;
+    font-size: $fontSize;
+    line-height: 24px;
+    color: $white;
+    cursor: pointer;
+    font-size: 12px;
+    font-family: "Dosis";
+  }
+}
