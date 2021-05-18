@@ -1,0 +1,29 @@
+<section>
+  <div class="slideshow-container">
+    <div class="slides-screen fade" *ngFor="let banner of bannerItems">
+      <img
+        [src]="banner?.bannerImageUrl"
+        style="width: 100%"
+        [alt]="banner?.bannerImageAlt"
+      />
+      <a
+        class="prev"
+        (click)="changeSlide(-1)"
+        aria-label="previous banner button"
+        >prev</a
+      >
+      <a class="next" (click)="changeSlide(1)" aria-label="next banner button"
+        >next</a
+      >
+    </div>
+  </div>
+  <br />
+  <div class="dots">
+    <span
+      class="dot"
+      *ngFor="let banner of bannerItems; let i = index"
+      (click)="slideatDot(i + 1)"
+      attr.aria-label="slide to carousel image {{ i + 1 }}"
+    ></span>
+  </div>
+</section>

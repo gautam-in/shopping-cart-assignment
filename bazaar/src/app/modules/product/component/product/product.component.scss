@@ -1,0 +1,71 @@
+@import "./variable";
+section {
+    display: flex;
+    aside {
+        width: 22%;
+        background: #ccc;
+    }
+    article {
+        width: 78%;
+    }
+}
+
+li {
+    padding: 0.7rem 0 0.7rem 1.5rem;
+    box-shadow: 0 0.08rem 0.3rem 0px $hedernav;
+
+    a {
+        color: $blackcolor;
+    }
+}
+
+.active {
+    background-color: $primarycolor;
+    a {
+        color: $bgcolor;
+    }
+}
+
+.normal {
+    background-color: inherit;
+}
+
+.category-dropdown {
+    display: none;
+    padding: 1rem;
+}
+
+.dropdown_select {
+    width: 100%;
+    font-size: 1.6rem;
+    padding: 0.8rem 0rem;
+    border: none;
+    background-color: $primarycolor;
+    color: white;
+}
+
+option {
+    max-width: 50%;
+    background-color: white;
+    color: black;
+}
+
+@media only screen and (max-width: $mobile) {
+    section {
+        width: 100%;
+        flex-wrap: wrap;
+        article {
+            width: 100%;
+        }
+    }
+    .category-dropdown {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        flex-direction: row;
+        display: block;
+    }
+
+    aside {
+        display: none;
+    }
+}

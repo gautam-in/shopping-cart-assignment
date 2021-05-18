@@ -1,0 +1,18 @@
+<app-slider></app-slider>
+<section>
+    <ng-container *ngFor="let category of categoryItems">
+        <div *ngIf="category?.enabled" class="category-section">
+            <div class="span-32">
+                <img [src]="category?.imageUrl" alt="{{category?.name}}">
+            </div>
+            <div class="span-64">
+                <h3>{{category?.name}}</h3>
+                <p>
+                    {{category?.description}}
+                </p>
+                <a href="javascript:void(0)" class="btn"
+                    [routerLink]="['/products/product-details',  {id :  category?.id}]">Explore {{category?.name}}</a>
+            </div>
+        </div>
+    </ng-container>
+</section>

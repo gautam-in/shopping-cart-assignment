@@ -20,18 +20,14 @@
     "@angular/platform-browser": "~11.2.10",
     "@angular/platform-browser-dynamic": "~11.2.10",
     "@angular/router": "~11.2.10",
-    "@fortawesome/angular-fontawesome": "^0.8.2",
-    "@fortawesome/fontawesome-free": "^5.15.3",
     "@fortawesome/fontawesome-svg-core": "^1.2.35",
     "@fortawesome/free-solid-svg-icons": "^5.15.3",
-    "@ng-bootstrap/ng-bootstrap": "^9.1.0",
-    "angular-responsive-carousel": "^2.0.2",
-    "bootstrap": "^4.5.0",
     "font-awesome": "^4.7.0",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.11.3"
   },
+  
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.1102.9",
     "@angular/cli": "~11.2.9",
@@ -52,3 +48,4 @@
     "typescript": "~4.1.5"
   }
 }
+

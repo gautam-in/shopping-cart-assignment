@@ -1,73 +1,115 @@
 /* You can add global styles to this file, and also import other style files */
 
-@import './variable';
-
-
+@import "./variable";
 
 * {
-    margin: 0;
-    padding: 0;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    background-color: $bgcolor;
-    font-size: $fontsize;
-    font-family: $fontfamily
-  }
+  background-color: $bgcolor;
+  font-size: $fontsize;
+  font-family: $fontfamily;
+}
+
+.btn {
+  color: $bgcolor;
+  background-color: $primarycolor;
+  text-decoration: none;
+  padding: 0.38rem;
+  margin-top: 1rem;
+  border: 0;
+  cursor: pointer;
+}
+
+li {
+  list-style: none;
+  cursor: pointer;
+}
+a {
+  text-decoration: none;
+}
+
+section {
+  width: 80%;
+  margin: 0.6rem auto 0 auto;
+}
 
 
-  .btn {
-    color: $bgcolor;
-    background-color: $primarycolor;
-    text-decoration: none;
-    padding: 0.38rem;
-    margin-top: 1rem;
-    border: 0;
-    cursor: pointer;
-  }
 
-  li {
-    list-style: none;
-    cursor: pointer;
-  }
-   a {
-     text-decoration: none;
-   }
+// Generic Form Field Style  Start
+.user-input-wrp {
+  position: relative;
+  width: 75%;
+}
+.user-input-wrp .inputText {
+  width: 100%;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid $hedernav;
+  padding: 1.2rem 0.8rem 0.4rem 0px;
+}
+.user-input-wrp .inputText:focus {
+  border-color: $formAnimationColor;
+  border-width: medium medium 0.02rem;
+}
+.user-input-wrp .floating-label {
+  position: absolute;
+  pointer-events: none;
+  top: 1rem;
+  left: 0;
+  font-size: 80%;
+  transition: 0.2s ease all;
+}
+.user-input-wrp input:focus ~ .floating-label,
+.user-input-wrp input:not(:focus):valid ~ .floating-label {
+  top: 0;
+  left: 0;
+  font-size: 70%;
+  opacity: 1;
+  color: $formAnimationColor;
+  font-weight: 500;
+}
 
-   section {
-     width: 80%;
-     margin: 0.6rem auto 0 auto;
-   }
 
-  //  @media only screen and (max-width: 1200px) {
-  //   section {
-  //     width: 100%;
-  //     margin: 10px auto;
-  //   }
-  //     body {
-  //       font-size: $fontsize;
-  //     }
-  //  }
+// /* Generic Form Field Style  end*/
 
-   @media only screen and (max-width: 768px) {
-    section {
+
+// Generic Class for display errror
+.error-msg {
+  color: $primarycolor;
+  font-size: 80%;
+}
+
+
+section {
+
+
+  @media only screen and (max-width: $ipad) {
+  
       width: 100%;
     
-    }
-      body {
-        font-size: $fontsize;
-      }
-   }
-
-   @media only screen and (max-width: 469px) {
-    section {
+  }
+  @media only screen and (max-width: $mobile) {
+    
       width: 100%;
-      
-    }
-      body {
-        font-size: $fontsize;
-      }
-   }
+    
+  }
 
+}
+
+body {
+  @media only screen and (max-width: $ipad) {
+   
+  
+    font-size: $fontsize;
+  
+  }
+  @media only screen and (max-width: $mobile) {
+    
+      font-size: $fontsize;
+  }
+
+}

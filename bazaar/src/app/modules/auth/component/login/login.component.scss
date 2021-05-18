@@ -1,0 +1,53 @@
+@import "./variable";
+.row {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+.span-1-of-2 {
+    width: 50%;
+    vertical-align: top;
+}
+
+.span-1-of-2:first-child {
+    padding-left: 16%;
+    padding-top: 2.5%;
+}
+
+h3 {
+    margin-bottom: 1.2rem;
+}
+
+p {
+    font-size: 90%;
+    font-weight: 600;
+    color: $hedernav;
+}
+
+.submit-btn {
+    width: 75%;
+    border: 0;
+    margin-bottom: 1rem;
+}
+
+.span-1-of-2 {
+    @media only screen and (max-width: $ipad) {
+        width: 50%;
+        vertical-align: top;
+    }
+    @media only screen and (max-width: $mobile) {
+        width: 100%;
+        text-align: -webkit-center;
+    }
+}
+
+.span-1-of-2:first-child {
+    @media only screen and (max-width: $ipad) {
+        padding-left: 1.8rem;
+    }
+
+    @media only screen and (max-width: $mobile) {
+        padding: 0;
+        text-align: center;
+    }
+}

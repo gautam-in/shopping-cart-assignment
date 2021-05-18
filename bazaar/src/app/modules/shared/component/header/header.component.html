@@ -1,0 +1,55 @@
+<header class="dekstop-header">
+    <nav class="nav-container">
+        <section class="nav-block">
+            <img src="./../../../assets/images/logo.png" alt="logo image" class="logo-image">
+        </section>
+
+        <section class="nav-block middle-section">
+            <ul>
+                <li> <a href="javscript:void(0)" routerLink="/home" routerLinkActive="active">Home</a></li>
+                <li><a href="javscript:void(0)" routerLink="/products/product-details" routerLinkActive="active">Products</a> </li>
+            </ul>
+        </section>
+        <section class="nav-block">
+                   
+       <ul>
+        <li><a href="javscript:void(0)" routerLink="/auth/login" routerLinkActive="active">Sign In</a></li>
+        <li><a href="javscript:void(0)" routerLink="/auth/signup" routerLinkActive="active">Register</a></li>
+    </ul>
+    <div>
+        <button  routerLink="cart" class="cart" routerLink="cart">
+            <img src="../../../assets/images/cart.svg" alt="Cart image" />
+            <span>{{totalItem}} items</span>
+        </button>
+    </div>
+
+</section>
+      
+ 
+    </nav>
+</header>
+
+<header class="mobile-header">
+    <nav>
+        <img src="./../../../assets/images/logo_2x.png" alt="logo image" class="logo-image">
+        <div>
+            <button  routerLink="cart" class="cart" routerLink="cart">
+                <img src="../../../assets/images/cart.svg" alt="Cart image" />
+                <span>{{totalItem}} items</span>
+            </button>
+
+            <button class="menu" aria-label="Menu icon"  (click)="displayMobileMenu()" ><fa-icon [icon]="['fas', 'bars']"></fa-icon></button>
+    
+           
+        </div>
+
+
+    </nav>
+</header>
+
+<ul id="menu-links" class="menu-links" (click)="displayMobileMenu()">
+    <li routerLink="/home">Home</li>
+    <li routerLink="/products/product-details">Products</li>
+    <li routerLink="/auth/login">Signin</li>
+    <li routerLink="/auth/signup">Register</li>
+</ul> 

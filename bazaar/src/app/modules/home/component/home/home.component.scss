@@ -1,0 +1,37 @@
+@import "./variable";
+
+.span-32 {
+  width: 32%;
+  img {
+    width: 100%;
+  }
+}
+.span-64 {
+  width: 64%;
+}
+
+.category-section {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  box-shadow: 0 0.4rem 0.6rem -0.3rem $secondarycolor;
+  padding: 1.8rem 1rem;
+  p {
+    margin: 1rem;
+    font-size: 90%;
+    font-weight: 600;
+  }
+
+  a {
+    font-size: 80%;
+    padding: 1.5% 6.5%;
+  }
+}
+
+.category-section:nth-child(odd) {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+  flex-direction: row-reverse;
+}
+
+
