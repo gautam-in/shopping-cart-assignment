@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from "react";
+import React, { useState } from "react";
 
 import Button from "../../components/common/button";
 import Input from "../../components/common/input";
@@ -31,19 +31,25 @@ const Register = () => {
     event.preventDefault();
     let formErrors = { ...INITIAL_FORM };
 
-    // email validation
-    if (form.email.match(label.services.constants.emailRegex)) {
-      formErrors.email = "";
+    if (form.firstName !== "" && form.firstName !== void 0) {
+      formErrors.firstName = "";
     } else {
-      formErrors.email = "Invalid Email!";
+      formErrors.firstName = "Invalid Name";
     }
 
-    // password validation
-    if (form.password === form.confirmPassword) {
-      formErrors.confirmPassword = "";
-    } else {
-      formErrors.confirmPassword = "Passwords don't match!. Try again";
-    }
+    // // email validation
+    // if (form.email.match(label.services.constants.emailRegex)) {
+    //   formErrors.email = "";
+    // } else {
+    //   formErrors.email = "Invalid Email!";
+    // }
+
+    // // password validation
+    // if (form.password === form.confirmPassword) {
+    //   formErrors.confirmPassword = "";
+    // } else {
+    //   formErrors.confirmPassword = "Passwords don't match!. Try again";
+    // }
 
     // error checking
     const hasError = Object.values(formErrors).every(
@@ -66,7 +72,7 @@ const Register = () => {
   };
 
   return (
-    <div className="register_form_container wrapper">
+    <div className="register_form_container">
       <div className="sign_up_description">
         <h1>{registerTitleLabel}</h1>
         <p>{registerDescriptionLabel}</p>
@@ -82,17 +88,16 @@ const Register = () => {
             type="text"
             name="firstName"
             className="form-control"
-            required
             value={form.firstName}
             onChange={handleInputChange}
             autoFocus={true}
             label={firstNameLabel}
+            errorLabel={error.firstName}
           />
           <Input
             type="text"
             name="lastName"
             className="form-control"
-            required
             value={form.lastName}
             onChange={handleInputChange}
             label={lastNameLabel}
@@ -101,7 +106,6 @@ const Register = () => {
             type="text"
             name="email"
             className={`${error.email ? "error" : ""}`}
-            required
             value={form.email}
             onChange={handleInputChange}
             label={emailLabel}
@@ -111,7 +115,6 @@ const Register = () => {
             type="password"
             name="password"
             className="form-control"
-            required
             value={form.password}
             onChange={handleInputChange}
             autoComplete="new-password"
@@ -121,7 +124,6 @@ const Register = () => {
             type="password"
             name="confirmPassword"
             className={`${error.confirmPassword ? "error" : ""}`}
-            required
             value={form.confirmPassword}
             onChange={handleInputChange}
             autoComplete="new-password"

@@ -53,22 +53,17 @@ const LoginMyBazar = () => {
   };
 
   return (
-    <div className="login_form_container wrapper">
+    <div className="login_form_container">
       <div className="login_description">
         <h1>{loginTitleLabel}</h1>
         <p>{loginDescriptionLabel}</p>
       </div>
       <div className="form_container">
-        <form
-          className="form "
-          onSubmit={handleSubmit}
-          name="login"
-        >
+        <form className="form " onSubmit={handleSubmit} name="login">
           <Input
             type="text"
             name="email"
             className={`${error.email ? "error" : ""}`}
-            required
             value={form.email}
             onChange={handleInputChange}
             label={emailLabel}
@@ -78,7 +73,6 @@ const LoginMyBazar = () => {
             type="password"
             name="password"
             className="form-control"
-            required
             value={form.password}
             onChange={handleInputChange}
             label={passwordLabel}

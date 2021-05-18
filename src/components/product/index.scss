@@ -1,5 +1,5 @@
 .card_container {
-  min-height: 450px;
+  // min-height: 450px;
   display: flex;
   flex-direction: column;
   background: white;
@@ -22,7 +22,7 @@
       font-size: 0.75rem;
       flex: 1;
       background: #eeeeee;
-      min-height: 150px;
+      min-height: 130px;
     }
 
     & .mobile_info_container {

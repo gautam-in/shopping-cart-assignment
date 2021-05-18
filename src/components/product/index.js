@@ -1,6 +1,4 @@
 import React from "react";
-import { useHistory } from "react-router-dom";
-
 import Button from "../common/button";
 import Image from "../common/image";
 
@@ -12,10 +10,8 @@ import { addToCartLabel, priceLabel } from "../../constant";
 
 const Product = ({ product, handlecart }) => {
   const { isMobile, isTablet, isDesktop } = useDevice();
-  const history = useHistory();
   const handleBuy = () => {
     handlecart(product);
-    // history.push("/cart");
   };
 
   const returnButton = (ctaLabel) => {

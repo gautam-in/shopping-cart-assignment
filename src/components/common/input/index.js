@@ -19,10 +19,15 @@ const Input = ({
         onChange={handleInputChange}
         name={name}
         value={value}
+        aria-label={label}
         {...rest}
       />
-      <label htmlFor={name}>{label}</label>
-      <span className="form-error">{errorLabel}</span>
+      <label htmlFor={name} aria-label={label}>
+        {label}
+      </label>
+      <span className="form-error" aria-label={errorLabel}>
+        {errorLabel}
+      </span>
     </div>
   );
 };

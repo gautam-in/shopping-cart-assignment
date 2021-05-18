@@ -1,8 +1,6 @@
 import React, { lazy } from "react";
 import { Route } from "react-router-dom";
 
-import ProtectedRoute from "./protectedRoute";
-import RestrictedRoute from "./restrictedRoute";
 import CustomRoute from "./customRoute";
 
 const Home = lazy(() => import("../containers/home"));

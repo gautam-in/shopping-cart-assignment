@@ -3,7 +3,6 @@ import { useHistory } from "react-router-dom";
 
 import CartItem from "../../components/cartItem";
 import Button from "../../components/common/button";
-import Loader from "../../components/loader";
 
 import { LocalStorage, pubsub } from "../../utils";
 import topic from "../../constant/topic";
@@ -48,7 +47,7 @@ const Cart = () => {
   const handleIncrementItemQty = (item) => {
     const cartItems = LocalStorage.getItem("cartItems");
     cartItems.length &&
-      cartItems.map((singleCartItem, index) => {
+      cartItems.map((singleCartItem) => {
         if (singleCartItem.id === item.id) {
           singleCartItem.count = singleCartItem.count + 1;
         }
@@ -62,7 +61,7 @@ const Cart = () => {
   const handleDecrementItemQty = (item) => {
     const cartItems = LocalStorage.getItem("cartItems");
     cartItems.length &&
-      cartItems.map((singleCartItem, index) => {
+      cartItems.map((singleCartItem) => {
         if (singleCartItem.id === item.id) {
           singleCartItem.count = singleCartItem.count - 1;
         }
@@ -76,7 +75,7 @@ const Cart = () => {
   const handleRemoveItem = (item) => {
     let cartItems = LocalStorage.getItem("cartItems");
     cartItems = cartItems.length
-      ? cartItems.filter((singleCartItem, index) => {
+      ? cartItems.filter((singleCartItem) => {
           return singleCartItem.id !== item.id;
         })
       : [];

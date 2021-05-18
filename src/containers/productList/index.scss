@@ -4,7 +4,7 @@
   position: relative;
   margin-bottom: 30px !important;
   word-break: break-word;
-  &.sidebar {
+  & .sidebar {
     width: 22%;
   }
 
@@ -38,6 +38,11 @@
   /* For mobile phones: */
   .product_list_container {
     flex-direction: column;
+
+    & .select {
+      position: fixed;
+      top: 72px;
+    }
 
     & .products {
       flex-direction: column;

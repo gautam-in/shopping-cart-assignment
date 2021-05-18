@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-
 import HeaderLogo from "../common/headerLogo";
 
 import { LocalStorage, pubsub } from "../../utils";
@@ -41,15 +40,11 @@ const Header = () => {
           <div className="nav_primary">
             <Link to="/login-your-account">{loginCtaLabel}</Link>
             <Link to="/create-your-account">{registerCtaLabel}</Link>
-            {/* <div className="my_account_container">
-              <img className="user_logo" src={userIcon} />
-              <span>{label.myAccountLabel}</span>
-            </div> */}
           </div>
           <div className="nav_secondary">
             <Link to="/cart">
               <div className="cart_logo_container">
-                <img className="cart_logo" src={cartIcon} />
+                <img className="cart_logo" src={cartIcon} alt="cart-logo" />
                 <span>{`${noOfItemInCart} ${itemLabel}`}</span>
               </div>
             </Link>

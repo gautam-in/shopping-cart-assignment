@@ -12,7 +12,6 @@ const CustomRoute = ({ component: Component, ...rest }) => {
       render={(props) => {
         const pathName = props.location.pathname;
         const isAvailable = props.location.pathname == props.match.path;
-        // debugger;
         if (isDesktop && pathName == "/cart") {
           return <Redirect to="/products" />;
         } else {

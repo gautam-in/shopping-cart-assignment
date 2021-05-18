@@ -6,6 +6,7 @@ const Button = ({ onClick, className = "", children, variant, ...rest }) => {
     <button
       className={`btn ${className} btn-${variant}`}
       onClick={onClick}
+      aria-label="button"
       {...rest}
     >
       {children}

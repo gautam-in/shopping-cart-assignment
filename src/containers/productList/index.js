@@ -12,8 +12,8 @@ import { getCategoryApi, getProductApi } from "../../services";
 import topic from "../../constant/topic";
 
 const ProductList = () => {
-  const location = useLocation;
-  const history = useHistory;
+  const location = useLocation();
+  const history = useHistory();
 
   const [categories, setCategories] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState("");
@@ -25,7 +25,7 @@ const ProductList = () => {
     if (category) {
       setSelectedCategory(category);
     }
-  }, [location.pathname]);
+  }, [location.search]);
 
   useEffect(() => {
     // pubsub.subscribe(topic.ADD_TO_CART, listenCartCount);
@@ -53,16 +53,16 @@ const ProductList = () => {
       });
   }, []);
 
-  const handleClick = (e) => {
-    const id = e.target.id;
-    setSelectedCategory(id);
+  const handleClick = (value) => {
+    const id = value;
+    history.push(`/products?category=${id}`);
   };
 
   const handleCart = (product) => {
     const cartItems = LocalStorage.getItem("cartItems") || [];
     let alreadyAvailableInCart = false;
     cartItems.length &&
-      cartItems.map((singleCartItem, index) => {
+      cartItems.map((singleCartItem) => {
         if (singleCartItem.id === product.id) {
           singleCartItem.count = singleCartItem.count + 1;
           alreadyAvailableInCart = true;
@@ -75,7 +75,6 @@ const ProductList = () => {
     LocalStorage.setItem("cartItems", cartItems);
     pubsub.publish(topic.ADD_TO_CART, cartItems.length);
   };
-
   return (
     <div className="product_list_container container-fluid wrapper">
       <Sidebar
@@ -88,7 +87,7 @@ const ProductList = () => {
           products.length > 0 &&
           products
             .filter((singleProduct) =>
-              Object.keys(selectedCategory).length
+              selectedCategory.length
                 ? singleProduct.category === selectedCategory
                 : true
             )

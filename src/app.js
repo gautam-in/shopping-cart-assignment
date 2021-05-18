@@ -17,7 +17,6 @@ const Sppiner = () => {
   return (
     <div className="throbberOverlay">
       <Loader show={true} />
-      {/* <p className="throbberOverlay__text">Loading please wait.</p> */}
     </div>
   );
 };
