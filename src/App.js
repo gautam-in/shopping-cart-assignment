@@ -24,7 +24,6 @@ function App() {
         <div className="app-container">
             <Header toggleCartModal={toggleModal} />
             {window.innerWidth > 770 ? <Cart showCart={showModal} toggleCartModal={toggleModal} /> : null}
-
             <Switch>
                 <Route exact path='/'>
                     <Redirect to="/home" />
@@ -36,7 +35,6 @@ function App() {
                 <Route exact path='/register' component={RegisterPage} />
                 <Route path="*" ><NotFound /></Route>
             </Switch>
-
             <Footer />
         </div>
     )

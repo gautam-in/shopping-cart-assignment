@@ -1,4 +1,4 @@
-import { GET_PRODUCTS, ADD_TO_CART, REMOVE_FROM_CART, SHOW_MODAL, HIDE_MODAL } from "./action-types";
+import { GET_PRODUCTS, ADD_TO_CART, REMOVE_FROM_CART } from "./action-types";
 import { GET_PRODUCTS_API } from "../../apis";
 import { getData } from '../../getService';
 
@@ -14,12 +14,4 @@ export function addToCart(product) {
 
 export function removeFromCart(product) {
   return { type: REMOVE_FROM_CART, product }
-}
-
-export function showModal() {
-  return { type: SHOW_MODAL }
-}
-
-export function hideModal() {
-  return { type: HIDE_MODAL }
 }

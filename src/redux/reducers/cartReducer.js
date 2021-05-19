@@ -1,22 +1,12 @@
 import { ADD_TO_CART, REMOVE_FROM_CART, SHOW_MODAL, HIDE_MODAL } from "../actions/action-types";
 const initialState = {
-    showModal: false,
     cartItem: 0,
     cartList: []
 }
 
 export const cart = (state = initialState, action) => {
     switch (action.type) {
-        case SHOW_MODAL:
-            return {
-                ...state, showModal: true
-            }
-        case HIDE_MODAL:
-            return {
-                ...state, showModal: false
-            }
         case ADD_TO_CART:
-            console.log(action.product);
             const duplicateObj = state.cartList.find(item => item.id === action.product.id);
             let result = [];
             if (duplicateObj == undefined) {
@@ -29,8 +19,6 @@ export const cart = (state = initialState, action) => {
                     return item;
                 })
             }
-            console.log(result);
-            console.log(state);
             return {
                 ...state,
                 cartList: result,
