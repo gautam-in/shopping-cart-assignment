@@ -46,7 +46,7 @@ class ProductList extends Product{
         }
 
         registerListenerForBuyNowButton = () =>{
-            var addToCartButton = document.querySelectorAll("button#buy-now.btn.btn-primary.product-list__products--item"); 
+            let addToCartButton = document.querySelectorAll("button#buy-now.btn.btn-primary.product-list__products--item"); 
             addToCartButton.forEach((addToCartButton)=>{
                 addToCartButton.addEventListener("click", 
                (e)=>{
@@ -59,7 +59,7 @@ class ProductList extends Product{
                         }
                         let quantity = parseInt(document.getElementById(CONSTANTS.CART_ITEM_QUANTITY).textContent)+1
                         document.getElementById(CONSTANTS.CART_ITEM_QUANTITY).textContent = quantity;
-                        var filtered = (this.product || []).filter(item => {
+                        let filtered = (this.product || []).filter(item => {
                             return item.id == e.target.value;
                         });
                         if(filtered && filtered.length>0){ 
@@ -107,15 +107,15 @@ class ProductList extends Product{
         
        // add active class when selected category
     addClass=(id)=> {
-            var els = document.querySelectorAll('.sidebar__items--menu.active');
-            var previous_id = 0;
-            var status = false;
-            for (var i = 0; i < els.length; i++) {
+            let els = document.querySelectorAll('.sidebar__items--menu.active');
+            let previous_id = 0;
+            let status = false;
+            for (let i = 0; i < els.length; i++) {
                 els[i].classList.remove('active');
                 previous_id = els[i].id;
             }
             if(previous_id !== id){
-                var element = document.getElementById(id);
+                let element = document.getElementById(id);
                 element.classList.add("active");
                 status = true;
             }
@@ -128,7 +128,7 @@ productList.getProductList();
 productList.getCategories();
 productList.registerListenerForBuyNowButton();
 
-//for mobile sidemenu
+//for mobile sidemenu dropdown open
 document.querySelector(".sidebar__action").addEventListener("click", ()=> {
     document.querySelector(".sidebar__items").style.display = "block";
 });

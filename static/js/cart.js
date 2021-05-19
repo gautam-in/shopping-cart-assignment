@@ -1,4 +1,4 @@
- var cart = (()=> {
+ let cart = (()=> {
 
     let emitter = window.mitt();
     const CONSTANTS ={
@@ -57,14 +57,16 @@
        * Calculate total quantity of cart items
        */
       itemsCalculation: () => {
-        var count = 0;
-        var totalPrice = 0;
-        if (localStorage.getItem("cart") !== "undefined" && localStorage.getItem("cart") !== null && JSON.parse(localStorage.getItem("cart")).length > 0 ) {
+        let count = 0;
+        let totalPrice = 0;
+        if (localStorage.getItem("cart") !== "undefined" && localStorage.getItem("cart") !== null && JSON.parse(localStorage.getItem("cart")).length >= 0 ) {
           JSON.parse(localStorage.getItem("cart")).forEach(element => {
             count += element.count;
             totalPrice += element.price * element.count;
           });
+          // cart count 
           document.getElementById(CONSTANTS.CART_QUANTITY).textContent = count;
+          document.getElementById('cart-item-quantity-count').textContent = '('+count ;
           document.getElementById(CONSTANTS.TOTAL).textContent = totalPrice;
         }
       },
@@ -75,7 +77,7 @@
        * @param  {String} type Cart item increment(+) or decrement(-) value
        */
       cartQuantityIncOrDec: (obj, type) => {
-        var data = { id: obj.getAttribute("id") };
+        let data = { id: obj.getAttribute("id") };
         cart.cartUpdate(JSON.parse(localStorage.getItem("cart")), data, type);
       },
   

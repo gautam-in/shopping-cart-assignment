@@ -19,7 +19,7 @@
         <section class="container clearfix">
             <a href="/" aria-label="Sabka Bazar">
                 <div class="header__logo">
-                    <img class="header__logo--img" src="static/images/logo.png" alt="Sabka Bazar shopping logo">
+                    <img class="header__logo--img" src="static/images/logo.png" alt="Homepage">
                 </div>
             </a>
             <nav class="header__left-navbar">
@@ -33,7 +33,7 @@
                     <li><a href="/registration" aria-label="registration">Register</a></li>
                     <li><a href="/login" aria-label="login">Signin</a></li>
                 </ul>
-                <section class="mini-cart" onclick="common.openShoppingCart()" >
+                <section class="mini-cart" onclick="common.openShoppingCart()" tabindex="0" role="button">
                     <div class="mini-cart__info">
                         <img src="static/images/cart.svg" class="cart-icon" alt="shoppping cart">
                         <span id="cart-item-quantity">0</span> Items

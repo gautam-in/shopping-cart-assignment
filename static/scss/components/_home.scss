@@ -17,19 +17,14 @@
       float: right;
       text-align: center;
       margin: 50px auto;
-      @include media-lg-screen {
-        margin: 0;
-        margin-right: 23px;
-        margin-top: 50px;
-        width: 49%;
-      }
+      margin: 0;
+      margin-right: 23px;
+      margin-top: 50px;
+      width: 49%;
       @include media-md-screen {
-        width: 49%;
         margin-right: 1px;
       }
       @include media-sm-screen {
-        width: 49%;
-        margin: 0;
         margin-right: 1px;
       }
     }
@@ -37,16 +32,9 @@
       float: left;
       text-align: center;
       margin: 50px auto;
-      @include media-lg-screen {
-        width: 49%;
+      width: 49%;
         margin-left: 1%;
-      }
-      @include media-md-screen {
-        width: 49%;
-        margin-left: 1%;
-      }
       @include media-sm-screen {
-        width: 49%;
         margin: 0;
         padding: 0 5px;
       }
@@ -61,8 +49,15 @@
       }
     }
     &__img-left {
-      @extend &__img-right;
       float: right;
+      width: 40%;
+      @include height(258px);
+      margin-left: 1%;
+      @include media-sm-screen {
+        width: 47%;
+        @include height(195px);
+        padding: 6% 3%;
+      }
     }
   }
   

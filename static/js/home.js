@@ -2,17 +2,17 @@ class Card {
 
 home = ((carousel)=> {
     var carousel = document.querySelector(carousel);
-    var interval = null;
-    var timeout = null;
-    var wrapper = carousel.querySelector(CONSTANTS.CAROUSEL_WRAPPER);
-    var slides = {
+    let interval = null;
+    let timeout = null;
+    let wrapper = carousel.querySelector(CONSTANTS.CAROUSEL_WRAPPER);
+    let slides = {
         count: 0,
         items: [],
         width: 'auto',
         current: 0
     };
-    var getBullets = (itemCount) => {
-        var ul = "<ul class='carousel__goto'>";
+    let getBullets = (itemCount) => {
+        let ul = "<ul class='carousel__goto'>";
         for (let i = 0; i < itemCount; i++) {
             let className = i === 0 ? 'goto__active' : '';
             ul += `<li class='goto-li'><button class='${className}' id='${i}' aria-label="bullets"></button></li>`
@@ -21,12 +21,12 @@ home = ((carousel)=> {
         return ul;
     }
 
-    var getNavigation = () => {
+    let getNavigation = () => {
         return `<button class="prev carousel__arrow">${CONSTANTS.prev}</button><button class="next carousel__arrow">${CONSTANTS.next}</button>`;
     }
 
-    var navigate = (e) => {
-        var element = e.target;
+    let navigate = (e) => {
+        let element = e.target;
         if (element.className.includes("prev")) {
             prev();
         } else {
@@ -35,8 +35,8 @@ home = ((carousel)=> {
     }
 
       //init method to initalize the slider 
-    var init = (options) => {
-        var delay = options.delay || 3000;
+    let init = (options) => {
+        let delay = options.delay || 3000;
         slides.count = wrapper.children.length; //Count of the slider
         slides.items = wrapper.children; //Elements of the slider
         slides.width = wrapper.children.item(0).width; //Get the width of 1st Item
@@ -48,13 +48,13 @@ home = ((carousel)=> {
         navigations();
 
         // Bind nav functions
-        var navs = carousel.querySelectorAll(".carousel__arrow");
+        let navs = carousel.querySelectorAll(".carousel__arrow");
         navs.forEach((nav)=> {
             nav.addEventListener("click", (e) => navigate(e));
         });
 
         // Bind Dot functions
-        var goToLi = document.querySelectorAll(".goto-li");
+        let goToLi = document.querySelectorAll(".goto-li");
         goToLi.forEach((goToLi)=> {
             goToLi.addEventListener("click", (e) => gotoSlide(e));
         });
@@ -75,8 +75,8 @@ home = ((carousel)=> {
     /**
      * Append Bullets
      */
-    var bulletArea = () => {
-        var bulletArea = document.createElement("div");
+    let bulletArea = () => {
+        let bulletArea = document.createElement("div");
         carousel.appendChild(bulletArea);
         bulletArea.classList.add("carousel__bullet");
         bulletArea.innerHTML = getBullets(slides.count);
@@ -85,8 +85,8 @@ home = ((carousel)=> {
     /**
      * Append Navigations inside the slider area
      */
-    var navigations = () => {
-        var navArea = document.createElement("div");
+    let navigations = () => {
+        let navArea = document.createElement("div");
         navArea.className = "carousel__nav-area";
         navArea.innerHTML = getNavigation();
         carousel.appendChild(navArea);
@@ -95,7 +95,7 @@ home = ((carousel)=> {
     /**
      * Create next method to navigate the slider into forward direction 
      */
-    var next = () => {
+    let next = () => {
         let previousState = slides.current;
         if (interval !== null) clearInterval(interval);
         if (slides.current === (slides.count - 1)) slides.current = -1;
@@ -108,7 +108,7 @@ home = ((carousel)=> {
         });
     }
 
-    var prev = () => {
+    let prev = () => {
         let previousState = slides.current;
         if (interval !== null) clearInterval(interval);
         if (slides.current === 0) { slides.current = (slides.count); previousState = 0; }
@@ -121,7 +121,7 @@ home = ((carousel)=> {
         });
     };
 
-    var gotoSlide = (e) => {
+    let gotoSlide = (e) => {
         let previousState = slides.current;
         slides.current = parseInt(e.target.id);
         wrapper.style.transform = "translateX(-" + (slides.width * (slides.current)) + "px)";
@@ -132,7 +132,7 @@ home = ((carousel)=> {
         });
     };
 
-    var play = (delay) => {
+    let play = (delay) => {
         interval = setInterval(()=> {
             let previousState = slides.current;
             if (slides.current < (slides.count - 1)) {
@@ -146,7 +146,7 @@ home = ((carousel)=> {
         }, delay);
     };
 
-    var activeDot = (current, previousState)=> {
+    let activeDot = (current, previousState)=> {
         document.getElementsByClassName('goto-li')[previousState].children.item(0).classList.remove("goto__active");
         document.getElementsByClassName('goto-li')[current].children.item(0).classList.add("goto__active");
     };

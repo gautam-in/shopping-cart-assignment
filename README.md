@@ -24,7 +24,7 @@ branches-> setup -> contains code setup
 branches->develop-> contains complete sabka bazaar assignment code
 
 
-//Checked the post api call using Advanced REST client in chrome extension
+//Checked the api call using Advanced REST client in chrome extension
 
 // wrong url will show error page content with error meta title
 
@@ -44,11 +44,17 @@ branches->develop-> contains complete sabka bazaar assignment code
 
 // key points for accessibility
 **aria-label & aria-labelledby
-**skip to main content
+**skip to main content or Bypass blocks
 **h1 tags
 **tab click check
 **alt tags
+**tab-index = "0"
+** role="button"
+**outline-property
+**semantic tags used like-header,footer,main,section
+**aria-hidden="true" for svg images so screen readers cant read
 AA OR AAA 
+tab-index="-1"
 5:1 contrast ratio
 
 
