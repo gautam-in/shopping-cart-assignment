@@ -47,7 +47,7 @@
 
     .product_name {
       font-size: 18px;
-      font-weight: 600;
+      font-weight: 700;
       padding: 8px 0px;
 
       grid-column: 1/5;
@@ -68,19 +68,23 @@
     .buy_button {
       display: flex;
       align-items: flex-end;
-
+      gap: 10px;
       grid-column: 3/5;
       grid-row: 3/4;
+
+      &.desktop_buy {
+        display: none;
+      }
     }
   }
-  .buy_button div {
+  /*   .buy_button + .not_desktop_buy {
     cursor: pointer;
     background: $pimary_bg_color;
     color: white;
     width: 100%;
     text-align: center;
     padding: 10px 0px;
-  }
+  } */
 
   .aside_filter {
     text-decoration: none;
@@ -103,7 +107,7 @@
       min-width: 197px;
       li {
         display: block;
-        border-bottom: 1px solid $font-secondary-color;
+        border-bottom: 1px solid #d6d6d6;
       }
       select {
         display: none;
@@ -118,6 +122,12 @@
       padding: 10px;
     } */
     .product_area {
+      box-shadow: 9px 0px 6px -7px #f3f3f3;
+
+      &:nth-child(2n) {
+        box-shadow: none;
+      }
+
       img {
         grid-column: 1/3;
         grid-row: 2/3;
@@ -129,6 +139,9 @@
       .buy_button {
         grid-column: 1/5;
         grid-row: 3/4;
+        align-items: center;
+
+        justify-content: space-between;
       }
     }
     .aside_filter {
@@ -146,18 +159,21 @@
   }
 }
  */
-@include mq(big-desktop) {
+@include mq(desktop) {
   .products_container {
     .products_list {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       grid-auto-rows: minmax(15px, auto);
-      border-bottom: 2px dashed rgba(204, 204, 204, 0.51);
+      /* border-bottom: 2px dashed rgba(204, 204, 204, 0.51); */
     }
     .product_area {
-      box-shadow: 9px 0px 6px -7px #d9d9d9;
-      grid-template-rows: 100px 150px auto 50px;
+      box-shadow: 9px 0px 6px -7px #e6e6e6;
+      grid-template-rows: 100px 150px auto 40px;
       grid-gap: 14px;
+      &:nth-child(2n) {
+        box-shadow: 9px 0px 6px -7px #f3f3f3;
+      }
       .product_name {
         grid-column: 1/5;
         grid-row: 1/2;
@@ -173,7 +189,14 @@
       .buy_button {
         grid-column: 1/5;
         grid-row: 4/5;
+        &.desktop_buy {
+          display: flex;
+        }
+        &.not_desktop_buy {
+          display: none;
+        }
         .button {
+          max-width: 50%;
           height: 100%;
         }
       }

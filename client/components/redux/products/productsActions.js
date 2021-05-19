@@ -1,7 +1,7 @@
 import * as types from "./productsTypes";
 import * as service from "../../pages/services";
 
-import { products } from "../../../../server/productsList";
+import { products } from "../../../../server/jsonToPromise";
 
 export const fetchProductsRequest = () => {
   return {

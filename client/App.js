@@ -24,26 +24,36 @@ const App = () => {
   const { isMobile, isTablet, isDesktop } = useDevice();
 
   return (
-    <div className="App">
+    <div>
       <Provider store={store}>
         <DeviceContext.Provider value={{ isMobile, isTablet, isDesktop }}>
-          <Header />
-          <Switch>
-            <Route path="/home" component={Home} />
-            <Route path="/products" component={ProductsListing} />
-            <Route path="/login" component={Login} />
-            <Route path="/register" component={Register} />
-            <Route
-              path="/cart"
-              render={() => {
-                if (isDesktop) return <Redirect to="/home" />;
-                else return <CartPage />;
-              }}
-            />
-            <Redirect exact path="/" to="home" />
-            <Route path="/" component={NotFound} />
-          </Switch>
-          {location.pathname !== "/cart" && <Footer />}{" "}
+          <div
+            style={{
+              boxShadow: "0px 11px 9px -8px #cccccc82",
+            }}
+          >
+            <Header />
+          </div>
+          <main className="parent_spacing">
+            <Switch>
+              <Route exact path="/" component={Home} />
+              <Route path="/products" component={ProductsListing} />
+              <Route path="/login" component={Login} />
+              <Route path="/register" component={Register} />
+              <Route
+                path="/cart"
+                render={() => {
+                  if (isDesktop) return <Redirect to="/home" />;
+                  else return <CartPage />;
+                }}
+              />
+
+              <Routes>
+                <NotFound />
+              </Routes>
+            </Switch>
+          </main>
+          {location.pathname !== "/cart" && <Footer />}
         </DeviceContext.Provider>
       </Provider>
     </div>

@@ -1,9 +1,10 @@
 @import "/client/components/styles/variables";
 
 .cart_page_container {
-  height: $cart_height;
+  $marginTop: 15px;
+  margin-top: $marginTop;
+  height: calc(#{$desktop-cart-height} - #{$marginTop});
   background: $bg-secondary-color;
-  margin-top: 10px;
   .cart_page_header {
     padding: 15px $side_margin;
     border-top: 2px solid #cacaca;

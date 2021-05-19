@@ -7,7 +7,7 @@ function NavigationLinks() {
 
   return (
     <nav className="nav_links">
-      <ul className="flexed_jc_sa">
+      <ul className="flexed">
         <li>
           <Link to="/">Home</Link>
         </li>

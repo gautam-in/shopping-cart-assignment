@@ -9,7 +9,7 @@ function Carousel({ offers = [] }) {
     if (offers.length > 0) {
       interval = setTimeout(() => {
         nextCarouselImg();
-      }, 2000);
+      }, 6000);
       return () => clearInterval(interval);
     }
   }, [offers, carouselCurrentIndex]);

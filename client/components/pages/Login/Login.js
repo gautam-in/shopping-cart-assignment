@@ -1,19 +1,26 @@
 import React from "react";
+import { useHistory } from "react-router";
 import Button from "../../atoms/Button/Button";
 import FormField from "../../atoms/FormField/FormField";
 import useForm from "../../customHooks/useForm";
 
 import "./Login.scss";
 
-function Login() {
-  const { inputs, handleChange } = useForm({
-    email: "",
-    password: "",
-  });
+const initialState = { email: "", password: "" };
 
+function Login() {
+  const history = useHistory();
+  const { inputs, errors, handleChange } = useForm(
+    initialState,
+    Object.keys(initialState)
+  );
+  /* console.log("errors", errors); */
   const handleLogin = (e) => {
     e.preventDefault();
-    console.log("submit called");
+    const keys = Object.keys(inputs);
+    console.log("submit called", keys);
+
+    history.push("/home");
   };
 
   return (
@@ -41,7 +48,12 @@ function Login() {
           onChange={handleChange}
           required
         />
-        <Button>Login</Button>
+        <Button
+          ariaLabel="Login button. All field are required to login"
+          disabled={errors.length !== 0}
+        >
+          Login
+        </Button>
       </form>
     </div>
   );

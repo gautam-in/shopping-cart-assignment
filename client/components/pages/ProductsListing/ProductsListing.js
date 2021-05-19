@@ -64,6 +64,10 @@ function ProductsListing(props) {
       });
   };
 
+  /**
+   * For fetching data using redux-thunk
+   */
+
   useEffect(() => {
     dispatch(fetchProducts());
     /* getProductsList(); */
@@ -71,8 +75,16 @@ function ProductsListing(props) {
   }, []);
 
   /**
-   * For fetching data using redux-thunk
+   * When clicked on products navigation, all the products list should be displayed
+   * useEffect will detect /products?category=5b68 -> /products and setQuery would be changed
+   * the next useEffect will detect the query change and reload all products.
    */
+  useEffect(() => {
+    if (!props.location.search) {
+      setQuery("");
+    }
+  }, [props.location.search]);
+
   useEffect(() => {
     if (query) filterProductsBasedOnCategory(query, products.data);
     else setDisplayProductList(products.data);

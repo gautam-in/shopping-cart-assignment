@@ -4,7 +4,9 @@ import "./Footer.scss";
 function Footer() {
   return (
     <footer role="footer" data-test="component-footer">
-      Copyright @ 2011-2018 Sabka Bazaar Grocery Supplies Pvt Ltd
+      <div className="parent_spacing">
+        Copyright @ 2011-2018 Sabka Bazaar Grocery Supplies Pvt Ltd
+      </div>
     </footer>
   );
 }

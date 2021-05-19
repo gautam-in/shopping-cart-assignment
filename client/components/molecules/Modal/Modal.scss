@@ -1,10 +1,10 @@
 @import "/client/components/styles/variables";
+@import "/client/components/styles/mq-mixin";
 
 .modal_container {
   position: fixed;
   inset: 0;
   background: rgba(0, 0, 0, 0.6);
-  padding-right: 125px;
   z-index: 2;
 
   display: grid;
@@ -23,6 +23,12 @@
       cursor: pointer;
     }
   }
+  @include mq(tab) {
+    padding-right: 0px;
+  }
+  @include mq(desktop) {
+    padding-right: 125px;
+  }
 }
 
 .modal_design {
@@ -34,12 +40,16 @@
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   justify-self: center;
   overflow: auto;
-  /* height: $cart_height; */
+  @include mq(tab) {
+    height: $desktop-cart-height;
+  }
+  @include mq(desktop) {
+    height: $desktop-cart-height;
+  }
 }
 
 .modal_riseup {
   bottom: -600px;
-
   animation: slideModal 0.5s forwards;
   -webkit-animation: slideModal 0.5s forwards;
 }

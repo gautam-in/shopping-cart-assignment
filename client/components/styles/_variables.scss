@@ -3,7 +3,7 @@ $pimary_bg_color: #b71d60;
 
 //background colors
 $bg-primary-color: #ffffff;
-$bg-secondary-color: hsla(0, 0%, 80%, 0.51);
+$bg-secondary-color: #cccccc82;
 
 //font colors
 $primary-black: #000000;
@@ -21,7 +21,10 @@ $form-focus-color: #5fc0ca;
 $form-unfocused-color: grey;
 
 $side_margin: 10px;
-$cart_height: 86vh;
+$mobile-header-height: 60px;
+$tab-header-height: 90px;
+$mobile-cart-height: calc(100vh - #{$mobile-header-height});
+$desktop-cart-height: calc(100vh - #{$tab-header-height});
 
 // responsive size
 /* Small devices (portrait tablets and large phones, 600px and up) */

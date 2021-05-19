@@ -16,23 +16,30 @@
     &:focus {
       border-bottom: 2px solid $form-focus-color;
     }
-    &:focus ~ label,
-    &:valid ~ label {
+    &:focus + label,
+    &:valid + label {
       top: -14px;
-      left: 0;
+      left: 0px;
       color: $form-focus-color;
       font-size: 12px;
     }
-    &:valid:not(:focus) ~ label {
+    &:valid:not(:focus) + label {
       color: $form-unfocused-color;
     }
   }
-  label {
+  input + label {
     position: absolute;
-    top: 10;
-    left: 10;
+    top: 10px;
+    left: 10px;
     cursor: text;
     transition: 0.2s;
     font-size: $primary-font-size;
   }
+}
+
+.form_error {
+  color: rgb(252, 118, 118);
+  font-weight: 600;
+  margin-top: 10px;
+  display: inline-block;
 }

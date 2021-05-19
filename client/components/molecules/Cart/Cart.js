@@ -4,6 +4,8 @@ import { useHistory } from "react-router";
 import Button from "../../atoms/Button/Button";
 import CartSelectedProducts from "../CartSelectedProducts.js/CartSelectedProducts";
 
+import lowestOffer from "../../../../static/images/lowest-price.png";
+
 import "./Cart.scss";
 
 function Cart({ handleClose }) {
@@ -50,13 +52,21 @@ function Cart({ handleClose }) {
                 />
               );
             })}
+            <div className="flexed_ai_center cheap_offer">
+              <img src={lowestOffer} alt="Lowest offers" width="80" />
+              <span>You won't find it cheaper anywhere</span>
+            </div>
           </div>
           <div className="checkout">
             <div>Promo code can be applied on payment page</div>
-            <Button>
+            <Button
+              onClick={() => {
+                if (handleClose) handleClose();
+              }}
+            >
               <div className="flexed_jc_sb_ai_center">
                 <span>Proceed to Checkout</span>
-                Rs. {total}
+                Rs. {total} &nbsp;&nbsp;&nbsp;&gt;
               </div>
             </Button>
           </div>

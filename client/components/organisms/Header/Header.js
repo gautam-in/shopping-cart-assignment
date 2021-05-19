@@ -24,7 +24,7 @@ function Header() {
   };
 
   return (
-    <header>
+    <header className="parent_spacing">
       <HeaderLogo />
       <div className="width_full">
         {!isMobile && (

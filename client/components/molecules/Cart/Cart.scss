@@ -2,7 +2,7 @@
 
 .cart_container {
   display: grid;
-  grid-template-rows: 65vh auto;
+  grid-template-rows: 62vh auto;
   /* width */
   ::-webkit-scrollbar {
     width: 10px;
@@ -25,13 +25,24 @@
     background: #555;
   }
 }
+
 .card_content {
   overflow: auto;
   background: $bg-secondary-color;
+  .cheap_offer {
+    margin: 10px;
+    background-color: white;
+    padding: 5px 10px;
+    border-radius: 2px;
+    img {
+      margin-right: 20px;
+    }
+  }
 }
+
 .checkout {
   padding: 0 $side_margin;
-  border-top: 1px solid #9c9c9c;
+  border-top: 1px solid #d6d6d6;
   > div {
     text-align: center;
     padding: 10px;

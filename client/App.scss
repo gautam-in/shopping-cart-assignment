@@ -6,12 +6,19 @@
   box-sizing: border-box;
 }
 
+html,
+button {
+  font-family: "Dosis", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+}
+
 a {
   text-decoration: none;
   color: inherit;
   font-size: inherit;
 }
-.App {
+.parent_spacing {
   @include mq(big-desktop) {
     width: 80%;
     margin: 0 auto;
@@ -45,6 +52,19 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.truncate {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.line_clamp {
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .noselect {

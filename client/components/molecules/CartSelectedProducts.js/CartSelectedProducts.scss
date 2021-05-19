@@ -8,5 +8,8 @@
   gap: 15px;
   > img + div > div {
     margin-bottom: 8px;
+    &:first-child {
+      font-weight: 600;
+    }
   }
 }

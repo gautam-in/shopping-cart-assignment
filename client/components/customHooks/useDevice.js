@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import debounce from "lodash.debounce";
 
 function useDevice() {
+  /* const mobileSize = 480; */
   const mobileSize = 600;
   const tabletSize = 768;
 
@@ -10,11 +11,13 @@ function useDevice() {
   const [isDesktop, setIsDesktop] = useState(false);
 
   const handleWindowResize = () => {
-    setIsMobile(window.innerWidth < mobileSize);
+    const width = self.innerWidth;
+    console.log(width);
+    setIsMobile(width <= mobileSize);
     setIsTablet(
-      window.innerWidth > mobileSize && window.innerWidth < tabletSize
+      width > mobileSize && width <= tabletSize && !width <= mobileSize
     );
-    setIsDesktop(window.innerWidth > tabletSize);
+    setIsDesktop(width > tabletSize);
   };
 
   useEffect(() => {

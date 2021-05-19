@@ -3,23 +3,28 @@
 
 header {
   display: flex;
-  box-shadow: 0px 11px 9px -8px $bg-secondary-color;
+  /* box-shadow: 0px 11px 9px -8px $bg-secondary-color; */
+  height: $mobile-header-height;
+
+  $entry_access_height: 30px;
+  .entry_access {
+    height: $entry_access_height;
+    text-align: right;
+    font-size: $primary-font-size;
+    font-weight: 600;
+  }
 
   .header_content_alignment {
     display: flex;
     justify-content: flex-end;
     height: 100%;
-
-    // tablet screens
-    @include mq(tab) {
-      justify-content: space-between;
-      height: calc(100% - 20px);
-    }
   }
 
-  .entry_access {
-    height: 20px;
-    text-align: right;
-    font-size: $primary-font-size;
+  @include mq(tab) {
+    height: $tab-header-height;
+    .header_content_alignment {
+      justify-content: space-between;
+      height: calc(100% - #{$entry_access_height});
+    }
   }
 }
