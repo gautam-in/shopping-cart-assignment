@@ -2,7 +2,7 @@
 
 article {
   margin-top: 0.65rem;
-  
+
   .span-1-of-4 {
     margin-bottom: 1%;
     p {
@@ -81,34 +81,30 @@ li {
   display: none;
 }
 
-@media only screen and (max-width: $ipad) {
-  .card-body {
+.card-body {
+  @media only screen and (max-width: $ipad) {
     display: flex;
-    p {
+  }
+  p {
+    @media only screen and (max-width: $ipad) {
       font-size: 80%;
     }
-
-    img {
-      width: 50%;
-    }
-    .card__price-box {
-      display: none;
-    }
-  }
-}
-
-@media only screen and (max-width: $mobile) {
-  .card-body {
-    display: flex;
-    p {
+    @media only screen and (max-width: $mobile) {
       font-size: 85%;
     }
-    img {
+  }
+  img {
+    @media only screen and (max-width: $ipad) {
       width: 50%;
     }
-    .card__price-box {
-      display: block;
+  }
+  .card__price-box {
+    @media only screen and (max-width: $ipad) {
+      display: none;
+    }
 
+    @media only screen and (max-width: $mobile) {
+      display: block;
       span:first-child {
         display: none;
       }
