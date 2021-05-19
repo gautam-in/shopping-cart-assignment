@@ -47,6 +47,9 @@ const App = () => {
                   else return <CartPage />;
                 }}
               />
+              <Route path="*">
+                <NotFound />
+              </Route>
             </Switch>
           </main>
           {location.pathname !== "/cart" && <Footer />}
