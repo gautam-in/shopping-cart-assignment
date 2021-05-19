@@ -16,7 +16,6 @@
 @media (max-width: "767px") {
   .label {
     font-weight: map-get($fontWeight, semibold);
-    font-size: map-get($fontSize, exsmall);
     line-height: 24px;
     color: $white;
     cursor: pointer;
