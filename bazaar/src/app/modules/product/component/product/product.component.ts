@@ -12,10 +12,12 @@ export class ProductComponent implements OnInit {
   categoryItems: Categories[] = [];
   keyName: string = '';
   categoryId: string;
+
   constructor(
     private _httpService: HttpService,
     private _route: ActivatedRoute
   ) {}
+
   ngOnInit(): void {
     this.getCategories();
     this._route.params.subscribe((parms) => {
@@ -39,7 +41,7 @@ export class ProductComponent implements OnInit {
     this.categoryId = categoryId;
   }
 
-  selected() {
+  selectedCategory() {
     this.categoryItems.forEach((category) => {
       if (category.key === this.keyName) {
         this.categoryId = category.id;

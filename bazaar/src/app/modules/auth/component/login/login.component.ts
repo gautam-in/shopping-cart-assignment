@@ -25,8 +25,7 @@ export class LoginComponent implements OnInit {
     return this.loginForm.get('password');
   }
 
-  onSubmit() {
-    console.log(this.loginForm.value);
+  onSubmit(): void {
     this._route.navigate(['/home']);
   }
 }

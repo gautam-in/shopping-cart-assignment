@@ -2,53 +2,49 @@ import { Component, OnInit } from '@angular/core';
 import { Product } from 'src/app/modules/shared/Interface/product';
 import { ShareService } from 'src/app/modules/shared/service/share.service';
 
-
 @Component({
   selector: 'app-cart',
   templateUrl: './cart.component.html',
-  styleUrls: ['./cart.component.scss']
+  styleUrls: ['./cart.component.scss'],
 })
 export class CartComponent implements OnInit {
+  cartItem: Product[] = [];
+  totalItem: number = 0;
+  totalPrice: number = 0;
 
-   cartItem  :Product[] = []
-   totalItem : number = 0;
-   totalPrice : number = 0;
-
-  constructor( private _shareService : ShareService) { }
+  constructor(private _shareService: ShareService) {}
 
   ngOnInit(): void {
     this.cartItem = JSON.parse(localStorage.getItem('cartItem'));
-    if(this.cartItem) {
-    this.calculateTotal();
+    if (this.cartItem) {
+      this.calculateTotal();
     }
-    this._shareService.getCartValue().subscribe((res:Product[]) => {
+    this._shareService.getCartValue().subscribe((res: Product[]) => {
       this.cartItem = res;
-     this.calculateTotal();
-    })
+      this.calculateTotal();
+    });
     this._shareService.updateFooterStatus(false);
-
   }
 
-  calculateTotal(){
+  calculateTotal() {
     this.totalItem = this.cartItem.reduce(function (prev, cur) {
-      return prev  + cur.quantity;
+      return prev + cur.quantity;
     }, 0);
 
-    this.totalPrice = this.cartItem.reduce(function(prev , cur){
-      return prev + cur.quantity * cur.price
-    }, 0)
+    this.totalPrice = this.cartItem.reduce(function (prev, cur) {
+      return prev + cur.quantity * cur.price;
+    }, 0);
   }
 
-  addItem(item){
+  addItem(item) {
     this._shareService.addCart(item);
   }
 
-  removeItem(item){
+  removeItem(item) {
     this._shareService.removeCart(item);
   }
 
-  ngOnDestroy(){
+  ngOnDestroy() {
     this._shareService.updateFooterStatus(true);
   }
-
 }

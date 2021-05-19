@@ -79,6 +79,15 @@ li {
 
 .buy-now {
   display: none;
+  @media only screen and (max-width: $ipad) {
+    display: block;
+    width: 100%;
+  }
+
+  @media only screen and (max-width: $mobile) {
+    display: none;
+    width: 100%;
+  }
 }
 
 .card-body {
@@ -117,18 +126,6 @@ li {
         }
       }
     }
-  }
-}
-
-.buy-now {
-  @media only screen and (max-width: $ipad) {
-    display: block;
-    width: 100%;
-  }
-
-  @media only screen and (max-width: $mobile) {
-    display: none;
-    width: 100%;
   }
 }
 

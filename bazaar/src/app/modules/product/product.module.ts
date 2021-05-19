@@ -6,18 +6,8 @@ import { ProductDetailsComponent } from './component/product-details/product-det
 import { ProductComponent } from './component/product/product.component';
 import { FormsModule } from '@angular/forms';
 
-
-
 @NgModule({
-  declarations: [
-    ProductDetailsComponent,
-    ProductComponent
-  ],
-  imports: [
-    CommonModule,
-    ProductRoutingModule,
-    FormsModule,
-    
-  ]
+  declarations: [ProductDetailsComponent, ProductComponent],
+  imports: [CommonModule, ProductRoutingModule, FormsModule],
 })
-export class ProductModule { }
+export class ProductModule {}

@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, SimpleChanges } from '@angular/core';
+import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { Product } from 'src/app/modules/shared/Interface/product';
 import { HttpService } from 'src/app/modules/shared/service/http.service';
 import { ShareService } from 'src/app/modules/shared/service/share.service';
@@ -8,7 +8,7 @@ import { ShareService } from 'src/app/modules/shared/service/share.service';
   templateUrl: './product-details.component.html',
   styleUrls: ['./product-details.component.scss'],
 })
-export class ProductDetailsComponent implements OnInit {
+export class ProductDetailsComponent implements OnInit, OnChanges {
   productItems: Product[] = [];
   keyName: string;
   allProduct: Product[] = [];
@@ -31,7 +31,6 @@ export class ProductDetailsComponent implements OnInit {
   getProducts() {
     this._httpService.getProductService().subscribe(
       (res: Product[]) => {
-        console.log(res);
         this.allProduct = res;
         this.filterItems(this.categoryId);
       },
@@ -42,7 +41,7 @@ export class ProductDetailsComponent implements OnInit {
   }
 
   filterItems(categoryId) {
-    if (categoryId == null || categoryId == undefined || categoryId == '') {
+    if (!categoryId) {
       this.productItems = this.allProduct;
     } else {
       this.productItems = this.allProduct.filter((res) => {

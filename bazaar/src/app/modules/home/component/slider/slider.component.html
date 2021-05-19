@@ -3,18 +3,12 @@
     <div class="slideshow__screen fade" *ngFor="let banner of bannerItems">
       <img
         [src]="banner?.bannerImageUrl"
-        style="width: 100%"
-        [alt]="banner?.bannerImageAlt"
-      />
+        [alt]="banner?.bannerImageAlt"/>
       <a
         class="slideshow__prev-btn"
         (click)="changeSlide(-1)"
-        aria-label="previous banner button"
-        >prev</a
-      >
-      <a class="slideshow__next-btn" (click)="changeSlide(1)" aria-label="next banner button"
-        >next</a
-      >
+        aria-label="previous banner button">prev</a>
+      <a class="slideshow__next-btn" (click)="changeSlide(1)" aria-label="next banner button">next</a>
     </div>
   </div>
   <br />

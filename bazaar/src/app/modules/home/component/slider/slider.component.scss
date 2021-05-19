@@ -1,21 +1,17 @@
 @import "./variable";
 
-.slideshow__screen {
-  display: none;
-}
-
-
 .slideshow {
   position: relative;
-}
-
-.slideshow__dots {
-  text-align: center;
-}
-
-.slideshow__screen {
-  display: none;
-  transition: opacity 1s ease-in-out;
+  &__dots {
+    text-align: center;
+  }
+  &__screen {
+    display: none;
+    transition: opacity 1s ease-in-out;
+    img {
+      width: 100%;
+    }
+  }
 }
 
 .slideshow__prev-btn,
@@ -80,5 +76,3 @@
     opacity: 1;
   }
 }
-
-

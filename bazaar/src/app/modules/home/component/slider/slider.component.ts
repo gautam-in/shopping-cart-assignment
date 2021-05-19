@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit } from '@angular/core';
+import { AfterViewChecked, Component, ElementRef, OnDestroy, OnInit } from '@angular/core';
 import { Banner } from 'src/app/modules/shared/Interface/banner';
 import { HttpService } from 'src/app/modules/shared/service/http.service';
 
@@ -7,7 +7,7 @@ import { HttpService } from 'src/app/modules/shared/service/http.service';
   templateUrl: './slider.component.html',
   styleUrls: ['./slider.component.scss'],
 })
-export class SliderComponent implements OnInit {
+export class SliderComponent implements OnInit, OnDestroy, AfterViewChecked {
   bannerItems: Banner[] = [];
   slideIndex: number = 1;
   timer: any;
@@ -16,7 +16,6 @@ export class SliderComponent implements OnInit {
 
   ngOnInit(): void {
     this.getBanners();
-
     this.timer = setInterval(() => {
       this.changeSlide(1);
     }, 2000);
@@ -65,7 +64,6 @@ export class SliderComponent implements OnInit {
     this.showSlides(this.slideIndex);
   }
 
- 
   slideatDot(number) {
     this.slideIndex = number;
     this.showSlides(this.slideIndex);
