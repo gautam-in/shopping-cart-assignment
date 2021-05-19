@@ -1,24 +1,24 @@
 <section>
-  <div class="slideshow-container">
-    <div class="slides-screen fade" *ngFor="let banner of bannerItems">
+  <div class="slideshow">
+    <div class="slideshow__screen fade" *ngFor="let banner of bannerItems">
       <img
         [src]="banner?.bannerImageUrl"
         style="width: 100%"
         [alt]="banner?.bannerImageAlt"
       />
       <a
-        class="prev"
+        class="slideshow__prev-btn"
         (click)="changeSlide(-1)"
         aria-label="previous banner button"
         >prev</a
       >
-      <a class="next" (click)="changeSlide(1)" aria-label="next banner button"
+      <a class="slideshow__next-btn" (click)="changeSlide(1)" aria-label="next banner button"
         >next</a
       >
     </div>
   </div>
   <br />
-  <div class="dots">
+  <div class="slideshow__dots">
     <span
       class="dot"
       *ngFor="let banner of bannerItems; let i = index"

@@ -6,103 +6,103 @@
     </div>
     <div class="span-1-of-2">
       <form [formGroup]="signUpForm" (ngSubmit)="onSubmit()" novalidate>
-        <div class="user-input-wrp">
+        <div class="form-field">
           <input
             type="text"
-            class="inputText"
+            class="form-field__input"
             required
             formControlName="firstname"
             aria-label="first name"
           />
-          <span class="floating-label">First Name</span>
+          <span class="form-field__label">First Name</span>
           <div
             *ngIf="
               !firstname?.valid && (firstname?.dirty || firstname?.touched)
             "
           >
-            <div class="error-class" [hidden]="!firstname.errors.required">
+            <div class="error-msg" [hidden]="!firstname.errors.required">
               First Name is required
             </div>
-            <div class="error-class" [hidden]="!firstname.errors.pattern">
+            <div class="error-msg" [hidden]="!firstname.errors.pattern">
               Only characters are allowed
             </div>
-            <div class="error-class" [hidden]="!firstname.errors.minlength">
+            <div class="error-msg" [hidden]="!firstname.errors.minlength">
               Min Length is 4
             </div>
           </div>
         </div>
-        <div class="user-input-wrp">
+        <div class="form-field">
           <input
             type="text"
-            class="inputText"
+            class="form-field__input"
             required
             formControlName="lastname"
             aria-label="last name"
           />
-          <span class="floating-label">Last Name</span>
+          <span class="form-field__label">Last Name</span>
 
           <div *ngIf="!lastname.valid && (lastname.dirty || lastname.touched)">
-            <div class="error-class" [hidden]="!lastname.errors.pattern">
+            <div class="error-msg" [hidden]="!lastname.errors.pattern">
               Only characters are allowed
             </div>
-            <div class="error-class" [hidden]="!lastname.errors.maxLength">
+            <div class="error-msg" [hidden]="!lastname.errors.maxLength">
               Max length allowed is
               {{ lastname.errors.maxlength?.requiredLength }}
             </div>
-            <div class="error-class" [hidden]="!lastname.errors.required">
+            <div class="error-msg" [hidden]="!lastname.errors.required">
               Last Name is required
             </div>
           </div>
         </div>
-        <div class="user-input-wrp">
+        <div class="form-field">
           <input
             type="email"
-            class="inputText"
+            class="form-field__input"
             required
             formControlName="email"
             aria-label="email"
           />
-          <span class="floating-label">Email</span>
+          <span class="form-field__label">Email</span>
           <div *ngIf="!email?.valid && (email?.dirty || email?.touched)">
-            <div class="error-class" [hidden]="!email.errors.required">
+            <div class="error-msg" [hidden]="!email.errors.required">
               Email is required
             </div>
-            <div class="error-class" [hidden]="!email.errors.email">
+            <div class="error-msg" [hidden]="!email.errors.email">
               Please enter correct email
             </div>
           </div>
         </div>
-        <div class="user-input-wrp">
+        <div class="form-field">
           <input
             type="password"
-            class="inputText"
+            class="form-field__input"
             required
             formControlName="password"
             aria-label="password"
           />
-          <span class="floating-label">Password</span>
+          <span class="form-field__label">Password</span>
           <div
             *ngIf="!password?.valid && (password?.dirty || password?.touched)"
           >
-            <div class="error-class" [hidden]="!password.errors.required">
+            <div class="error-msg" [hidden]="!password.errors.required">
               password Name is required
             </div>
 
-            <div class="error-class" [hidden]="!password.errors.pattern">
+            <div class="error-msg" [hidden]="!password.errors.pattern">
               Minimum six characters, at least one letter, one number and one
               special character:
             </div>
           </div>
         </div>
-        <div class="user-input-wrp">
+        <div class="form-field">
           <input
             type="password"
-            class="inputText"
+            class="form-field__input"
             required
             formControlName="confirmPassword"
             aria-label="confirmPassword"
           />
-          <span class="floating-label">Confirm Password</span>
+          <span class="form-field__label">Confirm Password</span>
           <div
             *ngIf="
               !confirmPassword?.valid &&
@@ -110,19 +110,19 @@
             "
           >
             <div
-              class="error-class"
+              class="error-msg"
               [hidden]="!confirmPassword.errors.required"
             >
               Confirm password is required
             </div>
             <div
-              class="error-class"
+              class="error-msg"
               [hidden]="!confirmPassword.errors.minlength"
             >
               Min Length is 6
             </div>
             <div
-              class="error-class"
+              class="error-msg"
               [hidden]="!confirmPassword.errors.confirmedValidator"
             >
               Password and Confirm Password must be match.

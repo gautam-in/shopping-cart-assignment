@@ -37,25 +37,30 @@ section {
   margin: 0.6rem auto 0 auto;
 }
 
-
-
 // Generic Form Field Style  Start
-.user-input-wrp {
+
+.form__submit-btn {
+  width: 75%;
+  border: 0;
+  margin-bottom: 1rem;
+}
+
+.form-field {
   position: relative;
   width: 75%;
 }
-.user-input-wrp .inputText {
+.form-field .form-field__input {
   width: 100%;
   outline: none;
   border: none;
   border-bottom: 1px solid $hedernav;
   padding: 1.2rem 0.8rem 0.4rem 0px;
 }
-.user-input-wrp .inputText:focus {
+.form-field .form-field__input:focus {
   border-color: $formAnimationColor;
   border-width: medium medium 0.02rem;
 }
-.user-input-wrp .floating-label {
+.form-field .form-field__label {
   position: absolute;
   pointer-events: none;
   top: 1rem;
@@ -63,8 +68,8 @@ section {
   font-size: 80%;
   transition: 0.2s ease all;
 }
-.user-input-wrp input:focus ~ .floating-label,
-.user-input-wrp input:not(:focus):valid ~ .floating-label {
+.form-field input:focus ~ .form-field__label,
+.form-field input:not(:focus):valid ~ .form-field__label {
   top: 0;
   left: 0;
   font-size: 70%;
@@ -73,43 +78,65 @@ section {
   font-weight: 500;
 }
 
-
 // /* Generic Form Field Style  end*/
 
-
-// Generic Class for display errror
 .error-msg {
   color: $primarycolor;
   font-size: 80%;
 }
 
+.row {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+.span-1-of-2 {
+  width: 50%;
+  vertical-align: top;
+}
+
+.span-1-of-4 {
+  width: 25%;
+}
 
 section {
-
-
   @media only screen and (max-width: $ipad) {
-  
-      width: 100%;
-    
+    width: 100%;
   }
   @media only screen and (max-width: $mobile) {
-    
-      width: 100%;
-    
+    width: 100%;
   }
-
 }
 
 body {
   @media only screen and (max-width: $ipad) {
-   
-  
     font-size: $fontsize;
-  
   }
   @media only screen and (max-width: $mobile) {
-    
-      font-size: $fontsize;
+    font-size: $fontsize;
+  }
+}
+
+.span-1-of-2 {
+  @media only screen and (max-width: $ipad) {
+    width: 50%;
+    vertical-align: top;
+  }
+  @media only screen and (max-width: $mobile) {
+    width: 100%;
+    text-align: -webkit-center;
+  }
+}
+
+.span-1-of-4 {
+  @media only screen and (max-width: $laptop) {
+    width: 33.33%;
   }
 
+  @media only screen and (max-width: $ipad) {
+    width: 50%;
+  }
+  @media only screen and (max-width: $mobile) {
+    width: 100%;
+  }
 }

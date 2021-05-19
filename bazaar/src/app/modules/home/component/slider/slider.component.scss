@@ -1,33 +1,25 @@
 @import "./variable";
 
-.slides-screen {
+.slideshow__screen {
   display: none;
 }
 
-img {
-  vertical-align: middle;
-}
 
-.slideshow-container {
+.slideshow {
   position: relative;
 }
 
-.dots {
+.slideshow__dots {
   text-align: center;
 }
 
-.slides-screen {
+.slideshow__screen {
   display: none;
   transition: opacity 1s ease-in-out;
-  img {
-    width: 100%;
-    vertical-align: middle;
-    object-fit: contain;
-  }
 }
 
-.prev,
-.next {
+.slideshow__prev-btn,
+.slideshow__next-btn {
   cursor: pointer;
   position: absolute;
   top: 50%;
@@ -45,10 +37,10 @@ img {
   }
 }
 
-.next {
+.slideshow__next-btn {
   right: 0;
 }
-.prev {
+.slideshow__prev-btn {
   left: 0;
 }
 

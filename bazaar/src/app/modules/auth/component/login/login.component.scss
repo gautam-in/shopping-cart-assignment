@@ -1,13 +1,5 @@
 @import "./variable";
-.row {
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-}
-.span-1-of-2 {
-    width: 50%;
-    vertical-align: top;
-}
+
 
 .span-1-of-2:first-child {
     padding-left: 16%;
@@ -24,22 +16,7 @@ p {
     color: $hedernav;
 }
 
-.submit-btn {
-    width: 75%;
-    border: 0;
-    margin-bottom: 1rem;
-}
 
-.span-1-of-2 {
-    @media only screen and (max-width: $ipad) {
-        width: 50%;
-        vertical-align: top;
-    }
-    @media only screen and (max-width: $mobile) {
-        width: 100%;
-        text-align: -webkit-center;
-    }
-}
 
 .span-1-of-2:first-child {
     @media only screen and (max-width: $ipad) {

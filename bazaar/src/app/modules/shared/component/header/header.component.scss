@@ -1,5 +1,13 @@
 @import "./variable";
 
+header {
+  box-shadow: 0.4rem 0 0.4rem 0.3rem $secondarycolor;
+}
+
+.nav__container {
+  display: flex;
+}
+
 li,
 a {
   display: inline-block;
@@ -9,10 +17,41 @@ a {
   color: $hedernav;
 }
 
-.dekstop-header {
+.dekstop__header {
   display: block;
 }
-.mobile-header {
+
+.nav__logo-image {
+  width: 50%;
+}
+
+.nav__block:last-child {
+  text-align: right;
+}
+
+.nav__middle-block ul {
+  margin-top: 2rem;
+}
+
+.nav__cart-block {
+  padding: 0.7rem 1.2rem 0.4rem 1.2rem;
+  margin-top: 0.8rem;
+  border: 0;
+
+  img {
+    height: 1.5rem;
+  }
+
+  span {
+    vertical-align: super;
+  }
+}
+
+.active {
+  color: $primarycolor;
+}
+
+.mobile__header {
   display: none;
   nav {
     display: flex;
@@ -25,7 +64,7 @@ a {
     div {
       display: flex;
 
-      .menu {
+      .nav__menu {
         padding: 0.9rem 0.6rem 0.4rem 0.6rem;
         background: transparent;
         border: 0;
@@ -36,65 +75,7 @@ a {
   }
 }
 
-header {
-  box-shadow: 0.4rem 0 0.4rem 0.3rem $secondarycolor;
-}
-
-.nav-container {
-  width: 100%;
-  padding: 0 2%;
-}
-
-.nav-block {
-  width: 32%;
-  display: inline-block;
-  vertical-align: top;
-}
-
-.nav-block:first-child img {
-  max-width: 100%;
-}
-
-.nav-block:last-child ul,
-.nav-block:last-child div {
-  text-align: right;
-}
-
-.middle-section ul {
-  margin-top: 2rem;
-}
-
-.cart-img {
-  font-size: 10%;
-}
-
-.cart {
-  padding: 0.7rem 1.2rem 0.4rem 1.2rem;
-  margin-top: 0.6rem;
-  border: 0;
-
-  img {
-    height: 1.5rem;
-  }
-
-  span {
-    vertical-align: super;
-  }
-}
-
-section {
-  margin: 0;
-  .logo-image {
-    margin-left: 24%;
-    width: 40%;
-  }
-}
-
-.active {
-  color: $primarycolor;
-}
-
-.menu-links {
+.nav__menu-links {
   display: none;
   li {
     text-align: center;
@@ -105,27 +86,27 @@ section {
   }
 }
 
-@media only screen and (max-width: 768px) {
-  .nav-block .logo-image {
+@media only screen and (max-width: $ipad) {
+  .nav__logo-image {
     margin-left: 0;
     width: 60%;
   }
 }
 
-@media only screen and (min-width: 469px) {
-  .menu-links li {
+@media only screen and (min-width: $mobilemin) {
+  .nav__menu-links li {
     display: none;
   }
 }
 
-@media only screen and (max-width: 468px) {
-  .dekstop-header {
+@media only screen and (max-width: $mobile) {
+  .dekstop__header {
     display: none;
   }
-  .mobile-header {
+  .mobile__header {
     display: block;
 
-    .cart {
+    .nav__cart-block {
       padding: 0.5rem;
     }
   }

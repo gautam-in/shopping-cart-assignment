@@ -1,16 +1,16 @@
 @import "./variable";
 
-.span-32 {
+.category__img-block {
   width: 32%;
   img {
     width: 100%;
   }
 }
-.span-64 {
+.category__des-block {
   width: 64%;
 }
 
-.category-section {
+.category {
   display: flex;
   text-align: center;
   align-items: center;
@@ -28,9 +28,7 @@
   }
 }
 
-.category-section:nth-child(odd) {
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: reverse;
+.category:nth-child(odd) {
   flex-direction: row-reverse;
 }
 
