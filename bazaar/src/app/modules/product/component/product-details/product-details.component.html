@@ -1,0 +1,27 @@
+<article>
+  <div class="row">
+    <div class="span-1-of-4" *ngFor="let product of productItems">
+      <div class="card">
+        <h3>{{ product?.name }}</h3>
+        <div class="card-body">
+          <img [src]="product?.imageURL" [alt]="product?.name" />
+          <div class="card__desc">
+            <p>{{ product?.description }}</p>
+            <div class="card__price-box">
+              <span> MRP Rs {{ product?.price }}</span>
+              <span>
+                <button type="button" class="btn" (click)="addItem(product)">
+                  Buy Now
+                  <cite>@Rs {{ product?.price }}</cite>
+                </button>
+              </span>
+            </div>
+          </div>
+        </div>
+        <button type="button" class="btn buy-now" (click)="addItem(product)">
+          Buy Now @Rs {{ product?.price }}
+        </button>
+      </div>
+    </div>
+  </div>
+</article>

@@ -1,0 +1,131 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import "./variable";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.btn {
+  color: $bgcolor;
+  background-color: $primarycolor;
+  text-decoration: none;
+  padding: 0.38rem;
+  margin-top: 1rem;
+  border: 0;
+  cursor: pointer;
+}
+
+li {
+  list-style: none;
+  cursor: pointer;
+}
+a {
+  text-decoration: none;
+}
+
+// Generic Form Field Style  Start
+.form__submit-btn {
+  width: 75%;
+  border: 0;
+  margin-bottom: 1rem;
+}
+
+.form-field {
+  position: relative;
+  width: 75%;
+}
+.form-field .form-field__input {
+  width: 100%;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid $hedernav;
+  padding: 1.2rem 0.8rem 0.4rem 0px;
+}
+.form-field .form-field__input:focus {
+  border-color: $formAnimationColor;
+  border-width: medium medium 0.02rem;
+}
+.form-field .form-field__label {
+  position: absolute;
+  pointer-events: none;
+  top: 1rem;
+  left: 0;
+  font-size: 80%;
+  transition: 0.2s ease all;
+}
+.form-field input:focus ~ .form-field__label,
+.form-field input:not(:focus):valid ~ .form-field__label {
+  top: 0;
+  left: 0;
+  font-size: 70%;
+  opacity: 1;
+  color: $formAnimationColor;
+  font-weight: 500;
+}
+
+/* Generic Form Field Style  end*/
+.error-msg {
+  color: $primarycolor;
+  font-size: 80%;
+}
+
+.row {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+section {
+  width: 80%;
+  margin: 0.6rem auto 0 auto;
+
+  @media only screen and (max-width: $ipad) {
+    width: 100%;
+  }
+  @media only screen and (max-width: $mobile) {
+    width: 100%;
+  }
+}
+
+body {
+  background-color: $bgcolor;
+  font-size: $fontsize;
+  font-family: $fontfamily;
+
+  @media only screen and (max-width: $ipad) {
+    font-size: $fontsize;
+  }
+  @media only screen and (max-width: $mobile) {
+    font-size: $fontsize;
+  }
+}
+
+.span-1-of-2 {
+  width: 50%;
+  vertical-align: top;
+  @media only screen and (max-width: $ipad) {
+    width: 50%;
+    vertical-align: top;
+  }
+  @media only screen and (max-width: $mobile) {
+    width: 100%;
+    text-align: -webkit-center;
+  }
+}
+
+.span-1-of-4 {
+  width: 25%;
+  @media only screen and (max-width: $laptop) {
+    width: 33.33%;
+  }
+
+  @media only screen and (max-width: $ipad) {
+    width: 50%;
+  }
+  @media only screen and (max-width: $mobile) {
+    width: 100%;
+  }
+}

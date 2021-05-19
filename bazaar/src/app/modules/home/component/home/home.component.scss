@@ -1,0 +1,35 @@
+@import "./variable";
+
+.category__img-block {
+  width: 32%;
+  img {
+    width: 100%;
+  }
+}
+.category__des-block {
+  width: 64%;
+}
+
+.category {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  box-shadow: 0 0.4rem 0.6rem -0.3rem $secondarycolor;
+  padding: 1.8rem 1rem;
+  p {
+    margin: 1rem;
+    font-size: 90%;
+    font-weight: 600;
+  }
+
+  a {
+    font-size: 80%;
+    padding: 1.5% 6.5%;
+  }
+}
+
+.category:nth-child(odd) {
+  flex-direction: row-reverse;
+}
+
+

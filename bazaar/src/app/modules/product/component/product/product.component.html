@@ -1,0 +1,27 @@
+<section>
+  <aside>
+    <ul>
+      <ng-container *ngFor="let category of categoryItems">
+        <li *ngIf="category?.enabled" [ngClass]="category?.id == categoryId ? 'active' : 'normal' "
+          (click)="filterItems(category?.id)"><a href="javascript:void(0)" routerLinkActive="active">
+            {{category?.name}}
+          </a></li>
+      </ng-container>
+    </ul>
+  </aside>
+  <div class="category-dropdown">
+    <select class="dropdown_select" name="dropdown" [(ngModel)]="keyName" (change)="selectedCategory()">
+      <option value="" aria-label="select a category" selected disabled>
+        Select a category
+      </option>
+      <ng-container *ngFor="let category of categoryItems">
+        <option *ngIf="category?.enabled" [selected]="categoryId === category?.key" [value]="category?.key">
+          {{ category?.name }}
+        </option>
+      </ng-container>
+    </select>
+  </div>
+  <article>
+    <app-product-details [categoryId]="categoryId"></app-product-details>
+  </article>
+</section>

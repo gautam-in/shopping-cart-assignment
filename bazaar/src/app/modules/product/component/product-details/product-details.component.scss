@@ -1,0 +1,142 @@
+@import "./variable";
+
+article {
+  margin-top: 0.65rem;
+
+  .span-1-of-4 {
+    margin-bottom: 1%;
+    p {
+      background-color: #ccc;
+      height: 10rem;
+      font-size: 85%;
+      display: -webkit-box;
+      -webkit-line-clamp: 9;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    span {
+      font-size: 80%;
+      width: 50%;
+    }
+
+    span:last-child {
+      text-align: end;
+    }
+  }
+}
+
+.card {
+  padding: 2%;
+  box-shadow: 0 0.4rem 0.6rem 0.1rem $secondarycolor;
+
+  h3 {
+    min-height: 8rem;
+  }
+
+  .card__price-box {
+    display: flex;
+    padding: 10px 2px;
+    span:first-child {
+      padding: 0.6rem 0 0 0.4rem;
+      font-weight: 600;
+    }
+    button {
+      margin: 0.3rem 0.1rem 0 0;
+      font-size: 90%;
+      padding: 0.4rem 0.5rem;
+      cite {
+        display: none;
+      }
+    }
+  }
+}
+
+.card img {
+  width: 100%;
+}
+
+li {
+  border-bottom: 0.11rem solid $hedernav;
+  padding: 0.7rem 0 0.7rem 1.5rem;
+  box-shadow: 0 0.08rem 0.3rem 0px $hedernav;
+
+  a {
+    color: #7c7171;
+  }
+}
+
+.active {
+  background-color: $primarycolor;
+  a {
+    color: $bgcolor;
+  }
+}
+
+.normal {
+  background-color: inherit;
+}
+
+.buy-now {
+  display: none;
+  @media only screen and (max-width: $ipad) {
+    display: block;
+    width: 100%;
+  }
+
+  @media only screen and (max-width: $mobile) {
+    display: none;
+    width: 100%;
+  }
+}
+
+.card-body {
+  @media only screen and (max-width: $ipad) {
+    display: flex;
+  }
+  p {
+    @media only screen and (max-width: $ipad) {
+      font-size: 80%;
+    }
+    @media only screen and (max-width: $mobile) {
+      font-size: 85%;
+    }
+  }
+  img {
+    @media only screen and (max-width: $ipad) {
+      width: 50%;
+    }
+  }
+  .card__price-box {
+    @media only screen and (max-width: $ipad) {
+      display: none;
+    }
+
+    @media only screen and (max-width: $mobile) {
+      display: block;
+      span:first-child {
+        display: none;
+      }
+      span:last-child {
+        .btn {
+          width: 100%;
+          cite {
+            display: inline-block;
+          }
+        }
+      }
+    }
+  }
+}
+
+aside {
+  @media only screen and (max-width: $mobile) {
+    display: none;
+  }
+}
+
+.card > h3 {
+  @media only screen and (max-width: $mobile) {
+    min-height: 3.5rem;
+  }
+}

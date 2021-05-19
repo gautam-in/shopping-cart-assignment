@@ -1,0 +1,60 @@
+<header class="dekstop__header">
+    <section>
+        <nav class="nav__container">
+            <section>
+                <img src="./../../../assets/images/logo.png" alt="logo image" class="nav__logo-image" />
+            </section>
+
+            <section class="nav__middle-block">
+                <ul>
+                    <li>
+                        <a href="javscript:void(0)" routerLink="/home" routerLinkActive="active">Home</a>
+                    </li>
+                    <li>
+                        <a href="javscript:void(0)" routerLink="/products/product-details"
+                            routerLinkActive="active">Products</a>
+                    </li>
+                </ul>
+            </section>
+            <section class="nav__block">
+                <ul>
+                    <li>
+                        <a href="javscript:void(0)" routerLink="/auth/login" routerLinkActive="active">Sign In</a>
+                    </li>
+                    <li>
+                        <a href="javscript:void(0)" routerLink="/auth/signup" routerLinkActive="active">Register</a>
+                    </li>
+                </ul>
+                <div>
+                    <button routerLink="cart" class="nav__cart-block" routerLink="cart">
+                        <img src="../../../assets/images/cart.svg" alt="Cart image" />
+                        <span>{{ totalItem }} items</span>
+                    </button>
+                </div>
+            </section>
+        </nav>
+    </section>
+</header>
+
+<header class="mobile__header">
+    <nav>
+        <img src="assets/images/logo_2x.png" alt="logo image" class="nav__logo-image" />
+        <div>
+            <button routerLink="cart" class="nav__cart-block" routerLink="cart">
+                <img src="assets/images/cart.svg" alt="Cart image" />
+                <span>{{ totalItem }} items</span>
+            </button>
+
+            <button class="nav__menu" aria-label="Menu icon" (click)="displayMobileMenu()">
+                <fa-icon [icon]="['fas', 'bars']"></fa-icon>
+            </button>
+        </div>
+    </nav>
+</header>
+
+<ul id="menu-links" class="nav__menu-links" (click)="displayMobileMenu()">
+    <li routerLink="/home">Home</li>
+    <li routerLink="/products/product-details">Products</li>
+    <li routerLink="/auth/login">Signin</li>
+    <li routerLink="/auth/signup">Register</li>
+</ul>

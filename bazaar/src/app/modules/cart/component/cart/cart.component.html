@@ -1,0 +1,54 @@
+<div class="container">
+    <section class="cart__container" *ngIf=" cartItem != null && cartItem.length> 0; else empty">
+        <div>
+            <h1>My Cart <span> ( {{totalItem}} item) </span></h1>
+            <ul>
+                <li *ngFor="let item of cartItem">
+                    <div class="row">
+                        <div class="span-1-of-3">
+                            <img [src]="item?.imageURL" alt="{{item?.name}}">
+                        </div>
+                        <div class="span-2-of-3">
+                            <h2 [aria-labelledby]="item?.name">{{item?.name}}</h2>
+                            <div class="cart__details">
+                                <button type="button" class="btn" (click)="removeItem(item)">-</button>
+                                <span class="cart__quantity">{{item?.quantity}}</span>
+                                <button type="button" class="btn" (click)="addItem(item)">+</button>
+                                <span>
+                                    * {{item?.price}}
+                                </span>
+                            </div>
+                        </div>
+                        <div class="span-1-of-3">
+                            RS {{item?.quantity * item?.price}}
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <aside class="cart__tag-line">
+                <img src="assets/images/lowest-price.png"
+                    alt="Banner displaying, You wont find it cheaper anywhere" />
+                <p>You wont find it cheaper anywhere</p>
+            </aside>
+        </div>
+        <div class="cart__footer">
+            <p>Promo code can be apply on payment page</p>
+            <button class="btn checkout-btn" type="button" routerLink="/home">Proceed to Checkout
+                <span>
+                    {{totalPrice}} >
+                </span>
+            </button>
+
+        </div>
+    </section>
+
+    <ng-template #empty>
+        <section>
+            <div class="cart__empty">
+                <h3>No Items in your cart</h3>
+                <p> Your favourite items are just a click away</p>
+            </div>
+            <button class="btn" type="button" routerLink="/home">Start Shopping</button>
+        </section>
+    </ng-template>
+</div>

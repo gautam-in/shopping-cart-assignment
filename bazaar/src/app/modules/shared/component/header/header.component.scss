@@ -1,0 +1,104 @@
+@import "./variable";
+
+header {
+  box-shadow: 0.4rem 0 0.4rem 0.3rem $secondarycolor;
+}
+
+.nav__container {
+  display: flex;
+}
+
+li,
+a {
+  display: inline-block;
+  margin-left: 1rem;
+  font-size: 90%;
+  font-weight: 600;
+  color: $hedernav;
+}
+
+.dekstop__header {
+  display: block;
+  @media only screen and (max-width: $mobile) {
+    display: none;
+  }
+}
+
+.nav__logo-image {
+  width: 50%;
+  @media only screen and (max-width: $ipad) {
+    margin-left: 0;
+    width: 60%;
+  }
+}
+
+.nav__block:last-child {
+  text-align: right;
+}
+
+.nav__middle-block ul {
+  margin-top: 2rem;
+}
+
+.nav__cart-block {
+  padding: 0.7rem 1.2rem 0.4rem 1.2rem;
+  margin-top: 0.8rem;
+  border: 0;
+
+  img {
+    height: 1.5rem;
+  }
+
+  span {
+    vertical-align: super;
+  }
+}
+
+.active {
+  color: $primarycolor;
+}
+
+.mobile__header {
+  display: none;
+  nav {
+    display: flex;
+    grid-gap: 29%;
+
+    img {
+      width: 30%;
+    }
+
+    div {
+      display: flex;
+
+      .nav__menu {
+        padding: 0.9rem 0.6rem 0.4rem 0.6rem;
+        background: transparent;
+        border: 0;
+        outline: none;
+        font-size: 120%;
+      }
+    }
+  }
+  @media only screen and (max-width: $mobile) {
+    display: block;
+
+    .nav__cart-block {
+      padding: 0.5rem;
+    }
+  }
+}
+
+.nav__menu-links {
+  display: none;
+  li {
+    text-align: center;
+    border: 0.01rem solid $secondarycolor;
+    margin: 0;
+    padding: 0.2rem;
+    display: block;
+    @media only screen and (min-width: $mobilemin) {
+      display: none;
+    }
+  }
+}
