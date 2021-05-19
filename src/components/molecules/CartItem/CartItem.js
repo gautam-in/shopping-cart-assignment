@@ -48,8 +48,8 @@ const CartItem = ({ item }) => {
                     >
                         +
           </div>
-                    <span class="cart-multiplication">&#x2715;</span>
-                    <span class="cart-item-price" aria-label={"price for " + item.name + "is" + item.price}>
+                    <span className="cart-multiplication">&#x2715;</span>
+                    <span className="cart-item-price" aria-label={"price for " + item.name + "is" + item.price}>
                         ₹
             {item.price}
                     </span>

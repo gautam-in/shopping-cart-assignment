@@ -153,7 +153,6 @@
 
 @media only screen and (max-width: 574px){
   .cart-drawer-header-wrap{
-    margin-top: 15px;
     padding: 15px 10px 15px 15px;
     background-color: white;
     display: -webkit-box;
@@ -167,6 +166,9 @@
     }
     .empty-cart-body{
       height: calc(100% - 91px);
+    }
+    .filled-cart-body{
+      height: calc(100% - 126px);
     }
     .cart-item-img{
         width: 65px;
