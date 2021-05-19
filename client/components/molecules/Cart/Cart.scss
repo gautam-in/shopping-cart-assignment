@@ -25,7 +25,9 @@
     background: #555;
   }
 }
-
+.empty_card {
+  grid-template-rows: 68vh auto;
+}
 .card_content {
   overflow: auto;
   background: $bg-secondary-color;

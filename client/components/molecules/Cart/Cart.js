@@ -20,7 +20,7 @@ function Cart({ handleClose }) {
   };
 
   return (
-    <div className="cart_container">
+    <div className={`cart_container ${items.length === 0 && "empty_card"}`}>
       {/* Empty Cart */}
       {items.length === 0 && (
         <>
