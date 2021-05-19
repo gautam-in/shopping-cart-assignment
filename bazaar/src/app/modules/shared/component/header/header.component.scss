@@ -19,10 +19,17 @@ a {
 
 .dekstop__header {
   display: block;
+  @media only screen and (max-width: $mobile) {
+    display: none;
+  }
 }
 
 .nav__logo-image {
   width: 50%;
+  @media only screen and (max-width: $ipad) {
+    margin-left: 0;
+    width: 60%;
+  }
 }
 
 .nav__block:last-child {
@@ -73,6 +80,13 @@ a {
       }
     }
   }
+  @media only screen and (max-width: $mobile) {
+    display: block;
+
+    .nav__cart-block {
+      padding: 0.5rem;
+    }
+  }
 }
 
 .nav__menu-links {
@@ -83,31 +97,8 @@ a {
     margin: 0;
     padding: 0.2rem;
     display: block;
-  }
-}
-
-@media only screen and (max-width: $ipad) {
-  .nav__logo-image {
-    margin-left: 0;
-    width: 60%;
-  }
-}
-
-@media only screen and (min-width: $mobilemin) {
-  .nav__menu-links li {
-    display: none;
-  }
-}
-
-@media only screen and (max-width: $mobile) {
-  .dekstop__header {
-    display: none;
-  }
-  .mobile__header {
-    display: block;
-
-    .nav__cart-block {
-      padding: 0.5rem;
+    @media only screen and (min-width: $mobilemin) {
+      display: none;
     }
   }
 }

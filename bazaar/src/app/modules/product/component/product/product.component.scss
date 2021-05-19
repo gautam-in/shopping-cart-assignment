@@ -1,71 +1,66 @@
 @import "./variable";
-section {
-    display: flex;
-    aside {
-        width: 22%;
-        background: #ccc;
-    }
-    article {
-        width: 78%;
-    }
-}
 
 li {
-    padding: 0.7rem 0 0.7rem 1.5rem;
-    box-shadow: 0 0.08rem 0.3rem 0px $hedernav;
+  padding: 0.7rem 0 0.7rem 1.5rem;
+  box-shadow: 0 0.08rem 0.3rem 0px $hedernav;
 
-    a {
-        color: $blackcolor;
-    }
+  a {
+    color: $blackcolor;
+  }
 }
 
 .active {
-    background-color: $primarycolor;
-    a {
-        color: $bgcolor;
-    }
+  background-color: $primarycolor;
+  a {
+    color: $bgcolor;
+  }
 }
 
 .normal {
-    background-color: inherit;
-}
-
-.category-dropdown {
-    display: none;
-    padding: 1rem;
+  background-color: inherit;
 }
 
 .dropdown_select {
-    width: 100%;
-    font-size: 1rem;
-    padding: 0.8rem 3rem;
-    border: none;
-    background-color: $primarycolor;
-    color: white;
+  width: 100%;
+  font-size: 1rem;
+  padding: 0.8rem 3rem;
+  border: none;
+  background-color: $primarycolor;
+  color: white;
 }
 
 option {
-    max-width: 50%;
-    background-color: white;
-    color: black;
+  max-width: 50%;
+  background-color: white;
+  color: black;
 }
 
-@media only screen and (max-width: $mobile) {
-    section {
-        width: 100%;
-        flex-wrap: wrap;
-        article {
-            width: 100%;
-        }
+section {
+  display: flex;
+  aside {
+    width: 22%;
+    background: #ccc;
+  }
+  article {
+    width: 78%;
+  }
+  @media only screen and (max-width: $mobile) {
+    width: 100%;
+    flex-wrap: wrap;
+    article {
+      width: 100%;
     }
-    .category-dropdown {
-        -webkit-box-orient: vertical;
-        -webkit-box-direction: normal;
-        flex-direction: row;
-        display: block;
-    }
-
     aside {
-        display: none;
+      display: none;
     }
+  }
+}
+
+.category-dropdown {
+  display: none;
+  padding: 1rem;
+  @media only screen and (max-width: $mobile) {
+    flex-direction: row;
+    display: block;
+  }
 }

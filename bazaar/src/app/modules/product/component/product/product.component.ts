@@ -28,7 +28,6 @@ export class ProductComponent implements OnInit {
   getCategories() {
     this._httpService.getCategoriesService().subscribe(
       (res) => {
-        console.log(res);
         this.categoryItems = res;
       },
       (err) => {
