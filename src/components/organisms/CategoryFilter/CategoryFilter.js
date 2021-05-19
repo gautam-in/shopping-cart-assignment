@@ -15,7 +15,12 @@ const CategoryFilter = React.memo(({ filterId }) => {
     const [isOpen, setIsOpen] = useState(false);
     const [categoriesList, setCategoriesList] = useState([]);
     useEffect(() => {
-        getData(GET_CATEGORIES_API).then(json => setCategoriesList(json.data)).catch((err) => {
+        getData(GET_CATEGORIES_API).then(json => {
+            let filtereCategories = json.data.filter((item) => item.order != -1)
+                .sort((item1, item2) => {
+                    return item1.order - item2.order;
+                }); setCategoriesList(filtereCategories)
+        }).catch((err) => {
             console.log(err);
         });
     }, []);
@@ -31,17 +36,21 @@ const CategoryFilter = React.memo(({ filterId }) => {
     }, [filterId, categoriesList]);
 
     const handleClicks = (value) => {
-
-        const state = { id: value };
-        history.push({
-            pathname: '/products',
-            state
-        });
-        setActiveId(state.id);
+        if (activeId != value) {
+            const state = { id: value };
+            history.push({
+                pathname: '/products',
+                state
+            });
+            setActiveId(state.id);
+        }
+        else {
+            history.push({
+                pathname: '/products'
+            });
+        }
     };
-
     const toggle = () => setIsOpen(!isOpen);
-
     const categoriesContent = categoriesList.map((category) => {
         const { id, name } = category;
         return (
@@ -54,7 +63,6 @@ const CategoryFilter = React.memo(({ filterId }) => {
             </li>
         );
     });
-
 
 
     return (

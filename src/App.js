@@ -21,7 +21,7 @@ function App() {
     };
 
     return (
-        <>-
+        <div className="app-container">
             <Header toggleCartModal={toggleModal} />
             {window.innerWidth > 770 ? <Cart showCart={showModal} toggleCartModal={toggleModal} /> : null}
 
@@ -34,11 +34,11 @@ function App() {
                 <Route exact path='/signin' component={SignInPage} />
                 <Route exact path='/cart' render={() => <Cart showCart={showModal} toggleCartModal={toggleModal} />} />
                 <Route exact path='/register' component={RegisterPage} />
-                <Route component={NotFound} />
+                <Route path="*" ><NotFound /></Route>
             </Switch>
 
             <Footer />
-        </>
+        </div>
     )
 }
 

@@ -1,3 +1,11 @@
+@media only screen and (min-width: 770px){
+  .btn-rounded{
+    height:20px;
+    width:20px;
+    border-radius:50%;
+  }
+
+} 
 .cart-item {
     display: flex;
     align-items: center;
@@ -8,38 +16,57 @@
     }
     & .cart-item-info {
       flex: 1;
-      padding: 0px 20px;
     }
     & .cart-item-title {
-      font-weight: 600;
+      color: darkslategray;
+      font-weight: 800;
+      font-family: 'Dosis';
+      font-size: 1.2rem;
     }
     & .cart-item-calculation {
       display: flex;
       align-items: center;
       font-weight: 500;
       margin-top: 10px;
-      * + * {
-        margin-left: 0.5rem;
-      }
   
       & .btn-rounded {
-        padding: 2px;
+        color: white;
+        padding: -4px;
         text-align: center;
-        height: 25px;
+        height: 20px;
         font-size: 16px;
         width: 25px;
-        background: #C70039;
-        border-radius: 2px;
+        background: #bf2957;
+        border-radius: 4px;
       }
   
       & .total{
+          font-family: 'Dosis';
+          font-weight: 600;
+          font-size: 1.3rem;
           margin-left: auto;
       }
+    }
+
+    .cart-qty{
+      font-weight: 600;
+      font-size: 1.3rem;
+      margin: 0 12px;
+    }
+    .cart-multiplication{
+      font-weight: 600;
+      font-size: 1.3rem;
+      margin:0 12px
     }
   }
   .cart-item-image{
     img{
     width: 65px;
-    height: 50px;
+    height: 65px;
     }
+    
+  }
+  .cart-item-price{
+    font-size:1.3rem;
+    font-weight: 600;
   }

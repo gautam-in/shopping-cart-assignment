@@ -29,11 +29,11 @@ const Carousel = React.memo(({ images }) => {
     const { id, bannerImageUrl, bannerImageAlt } = image;
     return (
       <li className={`carousel-item ${activeIndex === index ? 'show' : ''}`} key={id}>
-        <img src={bannerImageUrl} alt={bannerImageAlt} />
+        <img src={bannerImageUrl} alt={bannerImageAlt} loading="lazy" />
       </li>
     );
   });
-  const indicators = images.map((image, index) => {
+  const indicators = images.map((index) => {
     return (
       <li
         key={index}

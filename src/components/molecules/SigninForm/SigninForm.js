@@ -75,7 +75,7 @@ const SigninForm = () => {
         errorLabel={errors.password}
         aria-label="Password Input"
       />
-      <button type='submit' className='form-submit-btn' >
+      <button type='submit' className='custom-button form-submit-btn' >
         Login
       </button>
     </form>

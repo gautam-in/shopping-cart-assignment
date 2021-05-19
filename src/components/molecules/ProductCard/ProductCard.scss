@@ -3,11 +3,11 @@
     width:100%;
     padding-bottom: 1rem;
     margin: 2rem 1rem;
-    box-shadow: 0 13px 25px -23px #a5a5a5ad;
+    border-bottom: 2.5px dashed #f1f1f1;
     .product-header {
-        font-size: 1.6rem;
+        font-size: 1.4rem;
         line-height: 2rem;
-        font-weight: 600;
+        font-weight: 800;
         margin-bottom: 2rem;
         
       }
@@ -31,8 +31,8 @@
             height:fit-content;
             margin-bottom: 1rem;
             padding: 0.5rem;
-            line-height: 1.4rem;
-            background-color: gainsboro;
+            line-height: 1.6rem;
+            background-color: #f1f1f1;
             font-size: 1.2rem;
             font-weight: 600;
             }
@@ -44,6 +44,9 @@
     
 }
   }
+  .product-tablet-button{
+    display:none
+}
   .product-footer{
   display: none;
   bottom: 0.2rem;
@@ -76,37 +79,24 @@
             height: 4rem;
         }
         .product-content{
-            position:relative;
-            flex-direction: column;
-            flex:1;
-            .product-image{
-                width:100%;
-                flex:1;
-            }
+            flex:1 1 auto;
             .product-detail{
-                flex-grow:1;
                 p{
-                    flex:1;
-                    width:100%;
-                    height: fit-content;
+                    flex: auto;
+                    display: flex;
                 }
             }
             .product-mobile-button{
                 display:none;
             }
         }
-        .product-footer{
-            display: flex;
-            p{
-                align-self: center;
-                font-size: 1.5rem;
-                padding-left: 0.6rem;
-                width:50%;
-            }
+        .product-tablet-button{
+            display:flex;
             button{
-                width:50%;
+                width:100%
             }
         }
+        
     }
 
 
@@ -114,18 +104,20 @@
 
 @media only screen and (min-width: $desktop) {
     .product-card{
-        width:calc(25% - 2rem);
+        width:calc(25% - 2.2rem);
         position: relative;
         display: flex;
         flex-direction: column;
         .product-footer{
             display: flex;
-            
             p{
+                font-weight: 500;
+                font-family: 'Dosis';
+                -ms-flex-item-align: center;
                 align-self: center;
-                font-size: 1.5rem;
+                font-size: 1.1rem;
                 padding-left: 0.6rem;
-                width:50%;
+                width: 50%;
             }
             button{
                 width:50%;
@@ -154,6 +146,15 @@
                 display:none;
             }
         }
+        .product-tablet-button{
+            display:none
+        }
+    }
+    .separatorline{
+        display: inline-block;
+        border-left: 1px solid #ccc;
+       
+        height: 125px;
     }
 
 

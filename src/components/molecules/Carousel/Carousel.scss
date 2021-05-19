@@ -17,6 +17,7 @@
   
   position: relative;
   margin-top: 1rem;
+  box-shadow: 0px 10px 11px -12px #c1c1c1;
   &::after {
     cardShadow {
         content: '';
@@ -53,7 +54,7 @@
 
 .dot {
   cursor: pointer;
-  margin: 0 0.5rem 1.5;
+  margin: 0 0.5rem 1.5rem;
   color: #bbb;
   font-size: 1.8rem;
   line-height: 1rem;
@@ -84,5 +85,9 @@
 @media only screen and (min-width: 770px) {
   .carousel-item img {
     height: 20rem;
+  }
+  .carousel{
+    width:1024px;
+    margin: auto;
   }
 }

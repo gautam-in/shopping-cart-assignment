@@ -1,19 +1,31 @@
 @import '../../../variable.scss';
 .list-item{
-    cursor: pointer;
+  font-weight: 600;
+  color: slategrey;
+  cursor: pointer;
   padding: 1rem;
   border-bottom: 0.1rem solid #cccccc;
+  font-family: "Dosis";
+  &:hover {
+    background: #eaeaea;
+  }
  
 }
+
 .filter-header{
     padding: 1rem;
     color: white;
-    background: #C70039;
+    background: #bf2957;
 }
 .category-filter{
     width:100%;
-    background: gainsboro;
+    background: #f0f0f0;
+    font-size: 1.2rem;
+    font-weight: 500;
 }
+.active-item {
+    border-left: 0.2rem solid #bf2957;
+  }
 @media only screen and (min-width: 575px) {
 
     .category-filter{

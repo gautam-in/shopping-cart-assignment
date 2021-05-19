@@ -9,7 +9,7 @@ export default function ProductCard({ product }) {
         dispatch(addToCart(item));
     }
 
-    return (
+    return (<>
         <div className="product-card" aria-label={"Product card for" + productObj.name}>
             <h3
                 aria-label={"product name is" + productObj.name}
@@ -21,7 +21,11 @@ export default function ProductCard({ product }) {
                     <img
                         src={productObj.imageURL}
                         aria-label={"image of" + productObj.name}
-                        alt='pic' />
+                        alt='pic'
+                        width="100%"
+                        height="auto"
+                        loading="lazy"
+                    />
                 </div>
                 <div className="product-detail">
                     <p
@@ -38,6 +42,14 @@ export default function ProductCard({ product }) {
                 </div>
 
             </div>
+            <section className="product-tablet-button"><button
+                aria-label={"BUY NOW button, the product price is" + productObj.price}
+                className="btn-primary product-mobile-button"
+                onClick={() => buyNowClickHandler(productObj)}>
+                Buy Now @ {`MRP Rs.${productObj.price}`}
+            </button>
+
+            </section>
             <section className='product-footer'>
                 <p aria-label={"Product price for" + productObj.name + "is" + productObj.price}>
                     MRP Rs.{productObj.price}
@@ -45,12 +57,14 @@ export default function ProductCard({ product }) {
                 <button
                     type='button'
                     aria-label={"BUY NOW button"}
-                    className="btn-primary"
+                    className="custom-button"
                     onClick={() => buyNowClickHandler(productObj)} >
                     Buy Now
                 </button>
             </section>
         </div>
+        <span className="separatorline"></span>
+    </>
     )
 }
 

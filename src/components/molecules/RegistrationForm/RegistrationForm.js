@@ -86,9 +86,10 @@ const RegistrationForm = () => {
     }
 
     if (typeof input["password"] !== "undefined") {
-      if (input["password"].length < 6) {
+      var pwdPattern = new RegExp(/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$/i);
+      if (!pwdPattern.test(input["password"])) {
         isValid = false;
-        errors["password"] = "Please use at least 6 charachter!";
+        errors["password"] = "Password must contain atleast 6 characters,1 alphabet and 1 number!";
       }
     }
     if (typeof input["password"] !== "undefined" && typeof input["confirmPassword"] !== "undefined") {
@@ -160,7 +161,7 @@ const RegistrationForm = () => {
       <button
         type='submit'
         aria-label="Signup Button"
-        className='form-submit-btn' >
+        className='custom-button form-submit-btn' >
         Signup
       </button>
     </form>

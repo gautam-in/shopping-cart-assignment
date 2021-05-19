@@ -18,6 +18,8 @@ const CategoryCard = (props) => {
                     src={props.imgUrl}
                     alt={props.categoryName}
                     aria-label={props.categoryName + "image"}
+                    loading="lazy"
+                    width="100"
                 />
             </div>
             <div className="card-content">

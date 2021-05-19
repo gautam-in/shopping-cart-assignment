@@ -2,10 +2,16 @@ import React, { useState, useEffect } from 'react';
 import CategoryCard from '../../molecules/CategoryCard/CategoryCard';
 import { GET_CATEGORIES_API } from "../../../apis";
 import { getData } from '../../../getService';
+import './Categories.scss';
 const Categories = () => {
     const [categoriesList, setCategoriesList] = useState([]);
     useEffect(() => {
-        getData(GET_CATEGORIES_API).then(json => setCategoriesList(json.data)).catch((err) => {
+        getData(GET_CATEGORIES_API).then(json => {
+            let filtereCategories = json.data.filter((item) => item.order != -1)
+                .sort((item1, item2) => {
+                    return item1.order - item2.order;
+                }); setCategoriesList(filtereCategories)
+        }).catch((err) => {
             console.log(err);
         });
     }, []);
