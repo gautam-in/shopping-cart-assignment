@@ -27,11 +27,7 @@ const App = () => {
     <div>
       <Provider store={store}>
         <DeviceContext.Provider value={{ isMobile, isTablet, isDesktop }}>
-          <div
-            style={{
-              boxShadow: "0px 11px 9px -8px #cccccc82",
-            }}
-          >
+          <div className="header_container">
             <Header />
           </div>
           <main className="parent_spacing">

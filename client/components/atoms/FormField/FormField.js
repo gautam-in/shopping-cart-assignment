@@ -27,13 +27,13 @@ function FormField({
     } else setError(true);
   };
 
-  const ErrorMsg = ({ children }) => {
+  const ErrorMsg = ({ id, children, error, label }) => {
     return (
       <label
         htmlFor={id}
         className="form_error"
-        aria-label="Field cannot be empty"
-        aria-live="polite"
+        aria-label={children}
+        aria-live="assertive"
       >
         {children}
       </label>
@@ -47,6 +47,9 @@ function FormField({
         id={id}
         value={value}
         onChange={onChange}
+        onFocus={() => {
+          setVisited(false);
+        }}
         autoComplete="off"
         aria-required={required}
         required={required}
@@ -57,15 +60,15 @@ function FormField({
         aria-live="assertive"
       />
       <label htmlFor={id}>{label}</label>
-      <label
+      {/* <label
         htmlFor={id}
         className="form_error"
-        aria-label={error ? `${name} field cannot be empty` : ""}
+        aria-label={error ? `${label} field cannot be empty` : ""}
         aria-live="assertive"
       >
-        {error ? `${name} field cannot be empty` : ""}
-      </label>
-      {/* {error && <ErrorMsg>{label} cannot be empty</ErrorMsg>} */}
+        {error ? `${label} field cannot be empty` : ""}
+      </label> */}
+      {error && visited && <ErrorMsg>{label} cannot be empty</ErrorMsg>}
 
       {name === "email" && validate && (
         <ErrorMsg>Provide a validate email</ErrorMsg>

@@ -139,7 +139,11 @@ function ProductsListing(props) {
                 /* setQuery(category.id); */
                 setQueryValues(category.id);
               }}
-              className="category_item"
+              className={
+                query === category.id
+                  ? "category_item category_item--active"
+                  : "category_item"
+              }
             >
               {category.name}
             </li>

@@ -124,7 +124,14 @@ function Register() {
           required
         />
         {passwordMatchError && (
-          <span className="form_error">Passwords don't match</span>
+          <span
+            className="form_error"
+            style={{ marginBottom: "10px" }}
+            aria-label={"Passwords don't match"}
+            aria-live="assertive"
+          >
+            Passwords don't match
+          </span>
         )}
         <Button disabled={errors.length !== 0 || emailError}>Signup</Button>
       </form>
