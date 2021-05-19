@@ -33,7 +33,7 @@ function App() {
                 <Route exact path='/signin' component={SignInPage} />
                 <Route exact path='/cart' render={() => <Cart showCart={showModal} toggleCartModal={toggleModal} />} />
                 <Route exact path='/register' component={RegisterPage} />
-                <Route path="*" ><NotFound /></Route>
+                <Route><NotFound /></Route>
             </Switch>
             <Footer />
         </div>

@@ -12,10 +12,9 @@
   "scripts": {
     "start": "concurrently --kill-others \"webpack serve --open\" \"npm run server\"",
     "test": "jest",
-    "clean": "rm -rf dist/*",
     "server": "canned -p 5000 ./server",
     "create": "webpack serve --open",
-    "build": "npm run clean & webpack --mode production"
+    "build": "webpack --mode production"
   },
   "author": "Vikram Singla",
   "license": "MIT",

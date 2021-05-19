@@ -1,13 +1,14 @@
 var path = require('path');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 var HtmlWebpackPlugin = require('html-webpack-plugin');
-const webpack = require('webpack')
+const webpack = require('webpack');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 module.exports = function (_env, argv) {
     const isProduction = argv.mode === "production";
     const isDevelopment = !isProduction;
 
     return {
+        devtool: isDevelopment && "cheap-module-source-map",
         entry: path.resolve(__dirname, `src`, `index.js`),
         output: {
             path: path.resolve(__dirname, 'dist'),
@@ -59,7 +60,7 @@ module.exports = function (_env, argv) {
             extensions: ["*", ".js", ".jsx", ".tsx", ".ts"]
         },
         plugins: [
-            new webpack.HotModuleReplacementPlugin(),
+
             isProduction &&
             new MiniCssExtractPlugin({
                 filename: "css/[name].[contenthash:8].css",
@@ -70,6 +71,13 @@ module.exports = function (_env, argv) {
                 favicon: './favicon.ico'
             }),
             new CleanWebpackPlugin(),
-        ]
+            new webpack.HotModuleReplacementPlugin()
+            ,
+            new webpack.DefinePlugin({
+                "process.env.NODE_ENV": JSON.stringify(
+                    isProduction ? "production" : "development"
+                ),
+            }),
+        ].filter(Boolean)
     }
 }

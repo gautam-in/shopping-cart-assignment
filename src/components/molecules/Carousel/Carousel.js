@@ -33,10 +33,11 @@ const Carousel = React.memo(({ images }) => {
       </li>
     );
   });
-  const indicators = images.map((index) => {
+  const indicators = images.map((image, index) => {
+    const { id } = image;
     return (
       <li
-        key={index}
+        key={id}
         className={`dot ${activeIndex === index ? 'active' : ''}`}
         onClick={() => goToIndex(index)}
       >
