@@ -7,7 +7,6 @@ import { Provider } from "react-redux";
 
 const mockStore = configureStore([]);
 let store = mockStore({
-    showModal: false,
     cartItem: 0,
     cartList: []
 });

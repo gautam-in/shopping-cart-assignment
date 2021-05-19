@@ -3,7 +3,7 @@ import CategoryCard from '../../molecules/CategoryCard/CategoryCard';
 import { GET_CATEGORIES_API } from "../../../apis";
 import { getData } from '../../../getService';
 import './Categories.scss';
-const Categories = () => {
+const Categories = React.memo(() => {
     const [categoriesList, setCategoriesList] = useState([]);
     useEffect(() => {
         getData(GET_CATEGORIES_API).then(json => {
@@ -15,7 +15,9 @@ const Categories = () => {
             console.log(err);
         });
     }, []);
-
+    if (!categoriesList) {
+        return <h1>Loading....</h1>
+    }
     return <>
         <div className="category-container">
             {categoriesList?.map(a => {
@@ -31,6 +33,6 @@ const Categories = () => {
             }
         </div>
     </>
-}
+})
 
 export default Categories;

@@ -36,7 +36,8 @@ build/Release
 node_modules/
 jspm_packages/
 dist/
-
+__snapshots__/
+build/
 # TypeScript v1 declaration files
 typings/
 
