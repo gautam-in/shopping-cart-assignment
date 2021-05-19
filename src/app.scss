@@ -108,28 +108,27 @@ ul {
       display: block;
     }
   }
-  
-
-
-
-.custom-button {
-  color: white;
-  background-color: #bf2957;
-  cursor: pointer;
-  border: none;
-  padding: 6px 10px;
-  border-radius: 2px;
-  cursor: pointer;
-  height: auto;
-  width: 100%;
-  letter-spacing: 0.5px;
-  box-sizing: border-box;
-  font-size: 1rem;
-  &:hover {
-    color: black;
-    border: 1px solid black;
+  .form-wrapper{
+    height: calc(100vh - 4rem - 102px);
   }
-}
+  .custom-button {
+    color: white;
+    background-color: #bf2957;
+    cursor: pointer;
+    border: none;
+    padding: 6px 10px;
+    border-radius: 2px;
+    cursor: pointer;
+    height: auto;
+    width: 100%;
+    letter-spacing: 0.5px;
+    box-sizing: border-box;
+    font-size: 1rem;
+    &:hover {
+      color: black;
+      border: 1px solid black;
+    }
+  }
 
 
 
