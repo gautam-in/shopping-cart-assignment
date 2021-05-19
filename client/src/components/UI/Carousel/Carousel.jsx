@@ -3,11 +3,11 @@ import "./Carousel.scss";
 
 export default function Carousel(props) {
   const { banners } = props;
-  var slideIndex = 0;
+  let slideIndex = 0;
   function showSlides() {
-    var i;
-    var slides = document.getElementsByClassName("mySlides");
-    var dots = document.getElementsByClassName("dot");
+    let i;
+    let slides = document.getElementsByClassName("mySlides");
+    let dots = document.getElementsByClassName("dot");
     if (slides.length > 0 && dots.length > 0) {
       for (i = 0; i < slides.length; i++) {
         slides[i].style.display = "none";
@@ -29,7 +29,7 @@ export default function Carousel(props) {
   }, []);
   return (
     <div>
-      <div class="slideshow-container">
+      <div class="slideShowContainer">
         {banners.map((banner) => {
           return (
             <div class="mySlides fade" key={banner.id}>

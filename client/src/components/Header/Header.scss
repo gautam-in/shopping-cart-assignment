@@ -1,4 +1,5 @@
-$bgColor: #e6e3e3ad;
+@import "../../styles/Colors.scss";
+@import "../../styles/Fonts.scss";
 
 .container {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
@@ -11,28 +12,28 @@ $bgColor: #e6e3e3ad;
     align-items: flex-end;
     > span {
       padding: 10px;
-      font-weight: 600;
+      font-weight: map-get($fontWeight, semibold);
       cursor: pointer;
-      font-size: 0.9rem;
-      color: rgb(112, 112, 112);
+      font-size: map-get($fontSize, medium);
+      color: $grey;
 
       :hover {
-        color: rgb(255, 7, 48);
+        color: $primary;
       }
     }
   }
   .cartIcon {
-    background-color: $bgColor;
+    background-color: $grey;
     display: flex;
     justify-content: center;
     padding: 10px;
     button {
-      border-color: lightgray;
-      outline-color: lightgray;
+      border-color: $grey;
+      outline-color: $grey;
       border: none;
       cursor: pointer;
       background-color: transparent;
-      font-size: 2.5rem;
+      font-size: map-get($fontSize, heading2);
       width: 45%;
     }
     div {
@@ -42,7 +43,7 @@ $bgColor: #e6e3e3ad;
   }
 
   .copyrightrow {
-    background-color: $bgColor;
+    background-color: $grey;
     display: flex;
     justify-content: space-evenly;
     padding: 10px;
@@ -51,14 +52,14 @@ $bgColor: #e6e3e3ad;
   .text {
     display: flex;
     justify-content: flex-end;
-    font-size: 0.7rem;
+    font-size: map-get($fontSize, exsmall);
   }
   a {
     text-decoration: none;
-    font-weight: 600;
-    color: gray;
+    font-weight: map-get($fontWeight, semibold);
+    color: $darkgrey;
     :hover {
-      color: rgb(255, 7, 48);
+      color: $primary;
     }
   }
 
@@ -87,7 +88,7 @@ $bgColor: #e6e3e3ad;
     left: 0;
     height: 100px;
     background-color: white;
-    border-bottom: rgb(180, 180, 180) 0.5px solid;
+    border-bottom: $grey 0.5px solid;
     display: flex;
     padding: 0 10%;
     justify-content: space-between;

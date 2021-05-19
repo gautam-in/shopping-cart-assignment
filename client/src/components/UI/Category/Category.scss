@@ -1,9 +1,10 @@
-.category-container {
+@import "../../../styles/Colors.scss";
+.categoryContainer {
   display: flex;
   justify-content: space-between;
   height: 280px;
   align-items: center;
-  border-bottom: solid 0.5px lightgray;
+  border-bottom: solid 0.5px $grey;
   margin: 30px;
 }
 .info {

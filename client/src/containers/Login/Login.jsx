@@ -4,38 +4,38 @@ import Button from "../../components/UI/Button/Button";
 export default function Login() {
   return (
     <div className="formContainer">
-      <div className="form-heading-container">
+      <div className="formHeadingContainer">
         <h2>Login</h2>
         <p>Get access to your Orders, Wishlist and Recommendations</p>
       </div>
       <div className="inputContainer">
-        <div className="form__group field">
+        <div className="formGroup field">
           <input
             type="input"
-            className="form__field"
+            className="formField"
             placeholder="Email"
             name="email"
             id="email"
             required
           />
-          <label for="name" className="form__label">
+          <label for="name" className="formLabel">
             Email
           </label>
         </div>
-        <div class="form__group field">
+        <div class="formGroup field">
           <input
             type="password"
-            className="form__field"
+            className="formField"
             placeholder="Password"
             name="password"
             id="password"
             required
           />
-          <label for="name" className="form__label">
+          <label for="name" className="formLabel">
             Password
           </label>
         </div>
-        <div className="form__group field">
+        <div className="formGroup field">
           <Button text="Login" className="buttonStyle" />
         </div>
       </div>

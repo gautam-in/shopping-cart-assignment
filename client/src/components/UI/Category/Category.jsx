@@ -6,7 +6,7 @@ export default function Category(props) {
   return categories.map((category, index) => {
     return (
       <div
-        className="category-container"
+        className="categoryContainer"
         style={{ flexDirection: index % 2 === 0 ? null : "row-reverse" }}
         key={category.id}
       >

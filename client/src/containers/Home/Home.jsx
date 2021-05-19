@@ -1,21 +1,20 @@
 import React from "react";
 import Carousel from "../../components/UI/Carousel/Carousel";
 import { connect } from "react-redux";
-import axios from "axios";
 import Category from "../../components/UI/Category/Category";
+import * as AuthenticateAPI from "../../axios/AuthenticationAPI";
 
 function Home(props) {
   const [banners, setBanners] = React.useState([]);
   const [categories, setCategories] = React.useState([]);
 
   React.useEffect(() => {
-    axios
-      .get("http://localhost:5001/banners")
-      .then((res) => setBanners(res.data))
+    AuthenticateAPI.getData(`${process.env.REACT_APP_BASE_URL}/banners`)
+      .then((res) => setBanners(res))
       .catch((err) => console.log(err));
-    axios
-      .get("http://localhost:5001/categories")
-      .then((res) => setCategories(res.data))
+
+    AuthenticateAPI.getData(`${process.env.REACT_APP_BASE_URL}/categories`)
+      .then((res) => setCategories(res))
       .catch((err) => console.log(err));
   }, []);
 
