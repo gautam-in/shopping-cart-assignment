@@ -8,12 +8,6 @@
   box-sizing: border-box;
 }
 
-body {
-  background-color: $bgcolor;
-  font-size: $fontsize;
-  font-family: $fontfamily;
-}
-
 .btn {
   color: $bgcolor;
   background-color: $primarycolor;
@@ -32,13 +26,7 @@ a {
   text-decoration: none;
 }
 
-section {
-  width: 80%;
-  margin: 0.6rem auto 0 auto;
-}
-
 // Generic Form Field Style  Start
-
 .form__submit-btn {
   width: 75%;
   border: 0;
@@ -78,8 +66,7 @@ section {
   font-weight: 500;
 }
 
-// /* Generic Form Field Style  end*/
-
+/* Generic Form Field Style  end*/
 .error-msg {
   color: $primarycolor;
   font-size: 80%;
@@ -90,16 +77,11 @@ section {
   display: flex;
   flex-wrap: wrap;
 }
-.span-1-of-2 {
-  width: 50%;
-  vertical-align: top;
-}
-
-.span-1-of-4 {
-  width: 25%;
-}
 
 section {
+  width: 80%;
+  margin: 0.6rem auto 0 auto;
+
   @media only screen and (max-width: $ipad) {
     width: 100%;
   }
@@ -109,6 +91,10 @@ section {
 }
 
 body {
+  background-color: $bgcolor;
+  font-size: $fontsize;
+  font-family: $fontfamily;
+
   @media only screen and (max-width: $ipad) {
     font-size: $fontsize;
   }
@@ -118,6 +104,8 @@ body {
 }
 
 .span-1-of-2 {
+  width: 50%;
+  vertical-align: top;
   @media only screen and (max-width: $ipad) {
     width: 50%;
     vertical-align: top;
@@ -129,6 +117,7 @@ body {
 }
 
 .span-1-of-4 {
+  width: 25%;
   @media only screen and (max-width: $laptop) {
     width: 33.33%;
   }
