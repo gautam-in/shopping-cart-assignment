@@ -74,8 +74,8 @@ const Register = () => {
   return (
     <div className="register_form_container">
       <div className="sign_up_description">
-        <h1>{registerTitleLabel}</h1>
-        <p>{registerDescriptionLabel}</p>
+        <h1 aria-label={registerTitleLabel}>{registerTitleLabel}</h1>
+        <p aria-label={registerDescriptionLabel}>{registerDescriptionLabel}</p>
       </div>
       <div className="form_container">
         <form

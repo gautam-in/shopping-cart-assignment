@@ -4,6 +4,7 @@ import { useHistory } from "react-router-dom";
 import CartItem from "../../components/cartItem";
 import Button from "../../components/common/button";
 
+import useDevice from "../../utils/customHooks/useDevices";
 import { LocalStorage, pubsub } from "../../utils";
 import topic from "../../constant/topic";
 
@@ -18,9 +19,11 @@ import {
   proceedToCheckoutLabel,
   totalAmountLabel,
   continueShoppingLabel,
+  itemLabel
 } from "../../constant";
 
-const Cart = () => {
+const Cart = (props) => {
+  const { isDesktop } = useDevice();
   const initialCart = JSON.parse(localStorage.getItem("cartItems")) || [];
   const history = useHistory();
 
@@ -36,11 +39,19 @@ const Cart = () => {
 
   // close cart
   const handleCloseCart = () => {
-    history.push("/products");
+    if (isDesktop) {
+      props.handleClose && props.handleClose();
+    } else {
+      history.push("/products");
+    }
   };
 
   const handleStartShopping = () => {
-    history.push("/products");
+    if (isDesktop) {
+      props.handleClose && props.handleClose();
+    } else {
+      history.push("/products");
+    }
   };
 
   // increment cart item qty
@@ -85,7 +96,11 @@ const Cart = () => {
   };
 
   return (
-    <div className="container-fluid wrapper cart-container">
+    <div
+      className={`${
+        !isDesktop ? "container-fluid wrapper " : ""
+      } cart-container`}
+    >
       <div className="cart-card">
         <div className="cart-header">
           <h4 className="cart-title">
@@ -93,7 +108,7 @@ const Cart = () => {
             {cartItems?.length > 0 && (
               <span className="item-count">{`( ${
                 cartItems ? noOfItemInCart : 0
-              } ${totalAmountLabel} )`}</span>
+              } ${itemLabel} )`}</span>
             )}
           </h4>
           <span className="close_button_container">
@@ -110,7 +125,12 @@ const Cart = () => {
             </svg>
           </span>
         </div>
-        <div className="cart-body">
+        <div
+          className="cart-body"
+          onScroll={(e) => {
+            e.stopPropagation();
+          }}
+        >
           {cartItems?.length > 0 ? (
             cartItems.map((item) => (
               <CartItem

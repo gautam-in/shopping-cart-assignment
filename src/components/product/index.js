@@ -6,7 +6,7 @@ import useDevice from "../../utils/customHooks/useDevices";
 
 import "./index.scss";
 
-import { addToCartLabel, priceLabel } from "../../constant";
+import { addToCartLabel, mrpLabel, ruppeeLabel } from "../../constant";
 
 const Product = ({ product, handlecart }) => {
   const { isMobile, isTablet, isDesktop } = useDevice();
@@ -42,7 +42,7 @@ const Product = ({ product, handlecart }) => {
   };
 
   const returnPrice = (price) => {
-    return <div className="price">{`${priceLabel}${price}`}</div>;
+    return <div className="price">{`${mrpLabel} ${ruppeeLabel}${price}`}</div>;
   };
 
   return (

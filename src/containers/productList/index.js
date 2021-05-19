@@ -3,8 +3,13 @@ import { useLocation, useHistory } from "react-router-dom";
 
 import Sidebar from "../../components/sidebar";
 import Product from "../../components/product";
+import Modal from "../../components/common/modal";
+
+import Cart from "../cartPage";
 
 import { FetchData, LocalStorage, pubsub } from "../../utils";
+
+import useDevice from "../../utils/customHooks/useDevices";
 
 import "./index.scss";
 
@@ -12,18 +17,22 @@ import { getCategoryApi, getProductApi } from "../../services";
 import topic from "../../constant/topic";
 
 const ProductList = () => {
+  const { isDesktop } = useDevice();
   const location = useLocation();
   const history = useHistory();
 
   const [categories, setCategories] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState("");
   const [products, setProducts] = useState([]);
+  const [showModal, setShowModal] = useState(false);
 
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
     const category = params.get("category");
     if (category) {
       setSelectedCategory(category);
+    } else {
+      setSelectedCategory("");
     }
   }, [location.search]);
 
@@ -55,7 +64,15 @@ const ProductList = () => {
 
   const handleClick = (value) => {
     const id = value;
-    history.push(`/products?category=${id}`);
+    if (selectedCategory === id) {
+      history.push(`/products`);
+    } else {
+      history.push(`/products?category=${id}`);
+    }
+  };
+
+  const handleCloseCart = () => {
+    isDesktop && setShowModal(false);
   };
 
   const handleCart = (product) => {
@@ -74,6 +91,7 @@ const ProductList = () => {
     }
     LocalStorage.setItem("cartItems", cartItems);
     pubsub.publish(topic.ADD_TO_CART, cartItems.length);
+    isDesktop && setShowModal(true);
   };
   return (
     <div className="product_list_container container-fluid wrapper">
@@ -99,6 +117,11 @@ const ProductList = () => {
               />
             ))}
       </div>
+      {showModal && isDesktop && (
+        <Modal showModal={showModal}>
+          <Cart handleClose={handleCloseCart} />
+        </Modal>
+      )}
     </div>
   );
 };

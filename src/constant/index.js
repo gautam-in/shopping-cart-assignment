@@ -1,6 +1,7 @@
 // common label
 export const addToCartLabel = "BUY NOW";
-export const priceLabel = "MRP Rs.";
+export const mrpLabel = "MRP";
+export const ruppeeLabel = "Rs.";
 export const newPriceLabel = "₹";
 export const homeCtaLabel = "Home";
 export const productCtaLabel = "Products";
@@ -17,7 +18,7 @@ export const errorDescriptionLabel = "404- THE PAGE CAN'T BE FOUND.";
 export const goToHomeCtaLabel = "GO TO HOMEPAGE";
 
 // Cart Page label
-export const cartTitleLabel = "MY BASKET";
+export const cartTitleLabel = "MY CART";
 export const cartItemEmptyLabel = "No items in your cart.";
 export const favoriteItemLabel = "Your favorite items are just a click away.";
 export const bestBuyLabel = "You won't find it cheaper anywhere.";

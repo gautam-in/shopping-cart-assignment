@@ -5,7 +5,7 @@ import Image from "../common/image";
 
 import "./index.scss";
 
-import { priceLabel } from "../../constant";
+import { mrpLabel, ruppeeLabel } from "../../constant";
 
 const CartItem = ({
   item,
@@ -65,11 +65,11 @@ const CartItem = ({
 
           <span>X</span>
           <span>
-            {`${priceLabel}`}
+            {`${mrpLabel} ${ruppeeLabel}`}
             {item.price}
           </span>
           <div className="total ml-auto">
-            {`${priceLabel}`}
+            {`${ruppeeLabel}`}
             {item.count * item.price}
           </div>
         </div>
