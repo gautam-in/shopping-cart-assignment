@@ -10,7 +10,7 @@
     ]
   },
   "scripts": {
-    "start": "concurrently --kill-others \"webpack serve --open --hot"\" \"npm run server\"",
+    "start": "concurrently --kill-others \"webpack serve --open \" \"npm run server\"",
     "test": "jest",
     "server": "canned -p 5000 ./server",
     "create": "webpack serve --open",
