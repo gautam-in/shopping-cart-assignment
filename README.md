@@ -29,6 +29,7 @@ branches->develop-> contains complete sabka bazaar assignment code
 // wrong url will show error page content with error meta title
 
 // key points for performance
+**Used will-change:translate in carousel to reduce paint in layers
 **Used async to load js scripts
 gzip compression
 **gulp - to minimize css

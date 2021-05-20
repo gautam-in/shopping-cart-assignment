@@ -81,7 +81,7 @@ class ProductList extends Product{
                 let contentBlock = "";
                 res.forEach(element => {
                     if(element.enabled){
-                        contentBlock+= `<div class="sidebar__items--menu" id=${element.id} onclick="productList.filterProducts('${element.id}', '${element.name}')"><p>${element.name}</p></div>`
+                        contentBlock+= `<div tabindex="0" class="sidebar__items--menu" id=${element.id} onclick="productList.filterProducts('${element.id}', '${element.name}')"><p>${element.name}</p></div>`
                     }
                 });
                 document.getElementsByClassName("sidebar__items")[0].innerHTML = contentBlock;
