@@ -64,7 +64,7 @@ function Cart({ handleClose }) {
                 if (handleClose) handleClose();
               }}
             >
-              <div className="flexed_jc_sb_ai_center">
+              <div onClick={continueShoping} className="flexed_jc_sb_ai_center">
                 <span>Proceed to Checkout</span>
                 Rs. {total} &nbsp;&nbsp;&nbsp;&gt;
               </div>

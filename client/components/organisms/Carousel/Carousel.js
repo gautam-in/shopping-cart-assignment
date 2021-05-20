@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 import "./Carousel.scss";
-
+import useTouch from "../../customHooks/useTouch";
 function Carousel({ offers = [] }) {
   const [carouselCurrentIndex, setCarouselCurrentIndex] = useState(0);
+  const { touchStart, touchMove, touchEnd } = useTouch();
 
   useEffect(() => {
     let interval;
@@ -31,7 +32,12 @@ function Carousel({ offers = [] }) {
   return (
     <>
       {offers.length > 0 && (
-        <div className="carousel">
+        <div
+          className="carousel"
+          onTouchStart={touchStart}
+          onTouchMove={touchMove}
+          onTouchEnd={() => touchEnd(nextCarouselImg, prevCarouselImg)}
+        >
           {/* Carousel left controls */}
           <button
             className="carousel__button carousel__button--left"
@@ -48,6 +54,7 @@ function Carousel({ offers = [] }) {
           </button>
           <div className="carousel_image_wrapper">
             {/* Carousel image */}
+            {carouselCurrentIndex}
             <img
               className="carousel_image_easein"
               key={offers[carouselCurrentIndex]?.id}

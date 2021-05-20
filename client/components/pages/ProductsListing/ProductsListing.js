@@ -105,13 +105,21 @@ function ProductsListing(props) {
   };
 
   const setQueryValues = (id) => {
+    if (!id) {
+      queryParams.delete("category");
+      history.replace({
+        search: queryParams.toString(),
+      });
+    } else {
+      history.push({ search: "?category=" + id });
+    }
+
     setQuery(id);
-    history.push({ search: "?category=" + id });
   };
 
   return (
     <div className="products_container">
-      <aside className="categories_dropdown_mobile">
+      <aside className="categories_list">
         <select
           name="query"
           onChange={(e) => {
@@ -121,9 +129,7 @@ function ProductsListing(props) {
           className="category_mobile"
         >
           {/* For mobile view */}
-          <option value="null" disabled>
-            Please select
-          </option>
+          <option value="">All Products</option>
           {categoriesDetails?.data?.map((category) => (
             <option key={category.id} value={category.id}>
               {category.name}

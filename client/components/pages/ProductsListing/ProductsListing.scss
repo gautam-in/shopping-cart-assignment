@@ -2,10 +2,10 @@
 @import "/client/components/styles/mq-mixin";
 
 .products_container {
-  .categories_dropdown_mobile {
+  .categories_list {
     margin: 20px 0;
     text-align: center;
-    background-color: $pimary_bg_color;
+    //background-color: $pimary_bg_color;
 
     li {
       display: none;
@@ -17,6 +17,7 @@
       background-color: $pimary_bg_color;
       color: white;
       padding: 7px;
+      margin-top: 5px;
       option {
         width: 100%;
       }
@@ -102,7 +103,7 @@
   .products_container {
     display: grid;
     grid-template-columns: auto 1fr;
-    .categories_dropdown_mobile {
+    .categories_list {
       margin: 0;
       text-align: left;
       padding: 10px;
