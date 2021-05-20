@@ -3,9 +3,6 @@ import { useLocation, useHistory } from "react-router-dom";
 
 import Sidebar from "../../components/sidebar";
 import Product from "../../components/product";
-import Modal from "../../components/common/modal";
-
-import Cart from "../cartPage";
 
 import { FetchData, LocalStorage, pubsub } from "../../utils";
 
@@ -24,7 +21,6 @@ const ProductList = () => {
   const [categories, setCategories] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState("");
   const [products, setProducts] = useState([]);
-  const [showModal, setShowModal] = useState(false);
 
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
@@ -71,10 +67,6 @@ const ProductList = () => {
     }
   };
 
-  const handleCloseCart = () => {
-    isDesktop && setShowModal(false);
-  };
-
   const handleCart = (product) => {
     const cartItems = LocalStorage.getItem("cartItems") || [];
     let alreadyAvailableInCart = false;
@@ -91,7 +83,7 @@ const ProductList = () => {
     }
     LocalStorage.setItem("cartItems", cartItems);
     pubsub.publish(topic.ADD_TO_CART, cartItems.length);
-    isDesktop && setShowModal(true);
+    isDesktop && pubsub.publish(topic.OPEN_CART_OVERLAY, true);
   };
   return (
     <div className="product_list_container container-fluid wrapper">
@@ -117,11 +109,6 @@ const ProductList = () => {
               />
             ))}
       </div>
-      {showModal && isDesktop && (
-        <Modal showModal={showModal}>
-          <Cart handleClose={handleCloseCart} />
-        </Modal>
-      )}
     </div>
   );
 };

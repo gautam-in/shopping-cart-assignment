@@ -3,6 +3,8 @@ import { Route } from "react-router-dom";
 
 import CustomRoute from "./customRoute";
 
+import useDevice from "../utils/customHooks/useDevices";
+
 const Home = lazy(() => import("../containers/home"));
 const Register = lazy(() => import("../containers/registerMyBazar"));
 const LoginMyBazar = lazy(() => import("../containers/loginMyBazar"));
@@ -11,6 +13,7 @@ const Cart = lazy(() => import("../containers/cartPage"));
 const NotFound = lazy(() => import("../containers/404"));
 
 const Routes = () => {
+  const { isDesktop } = useDevice();
   return (
     <>
       <CustomRoute path="/" exact component={Home} />
@@ -18,7 +21,7 @@ const Routes = () => {
       <CustomRoute path="/login-your-account" component={LoginMyBazar} />
       <CustomRoute path="/create-your-account" component={Register} />
       <CustomRoute path="/products" component={ProductList} />
-      <CustomRoute path="/cart" component={Cart} />
+      {!isDesktop && <CustomRoute path="/cart" component={Cart} />}
       <Route path="/not-found" component={NotFound} />
     </>
   );
