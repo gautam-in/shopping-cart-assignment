@@ -61,6 +61,16 @@
       margin-right: 20px;
     }
   }
+
+  @media only screen and (max-width: 480px) {
+    min-height: 108px;
+    .carousel_button + .left {
+      margin-left: 20px;
+    }
+    .carousel_button + .right {
+      margin-right: 20px;
+    }
+  }
 }
 
 @-webkit-keyframes slideLeft {

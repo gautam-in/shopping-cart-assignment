@@ -68,12 +68,12 @@ const Product = ({ product, handlecart }) => {
         {isMobile && (
           <div className="mobile_info_container">
             {returnDescription(product.description)}
-            {returnButton(`${addToCartLabel} @ ${priceLabel}${product.price}`)}
+            {returnButton(`${addToCartLabel} @ ${mrpLabel} ${ruppeeLabel}${product.price}`)}
           </div>
         )}
       </div>
       {isTablet &&
-        returnButton(`${addToCartLabel} @ ${priceLabel}${product.price}`)}
+        returnButton(`${addToCartLabel} @ ${mrpLabel} ${ruppeeLabel}${product.price}`)}
       {isDesktop && (
         <div className="card-footer">
           {returnPrice(product.price)}

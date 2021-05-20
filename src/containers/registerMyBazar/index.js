@@ -92,7 +92,7 @@ const Register = () => {
             onChange={handleInputChange}
             autoFocus={true}
             label={firstNameLabel}
-            errorLabel={error.firstName}
+            errorLabel={"First Name Can not be empty"}
           />
           <Input
             type="text"

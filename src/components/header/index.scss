@@ -90,16 +90,16 @@
       align-items: center;
       background-color: #00000012;
       padding: 5px 15px 5px 10px;
-      & a {
+      & span {
         text-decoration: none;
 
-        &:hover {
-          color: #d10157;
-        }
+        // &:hover {
+        //   color: #d10157;
+        // }
 
-        &:visited {
-          color: #00000094;
-        }
+        // &:visited {
+        //   color: #00000094;
+        // }
 
         & .cart_logo_container {
           display: flex;

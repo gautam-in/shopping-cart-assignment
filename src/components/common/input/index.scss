@@ -24,7 +24,6 @@
     font-weight: 500;
     font-size: inherit;
     &:focus,
-    // &:valid,
     &:-webkit-autofill {
       border-color: #50dae4;
       & ~ label {
@@ -33,10 +32,18 @@
         transform: translateY(-150%);
       }
     }
+
     &.error {
       border-color: #d10157 !important;
     }
   }
+
+  & .filled {
+    & ~ label {
+      transform: translateY(-150%);
+    }
+  }
+
   & .form-error {
     position: absolute;
     bottom: 0%;

@@ -67,12 +67,12 @@ const Header = () => {
               <Link to="/create-your-account">{registerCtaLabel}</Link>
             </div>
             <div className="nav_secondary">
-              <a href="#" onClick={handleCartClick}>
+              <span onClick={handleCartClick}>
                 <div className="cart_logo_container">
                   <img className="cart_logo" src={cartIcon} alt="cart-logo" />
                   <span>{`${noOfItemInCart} ${itemLabel}`}</span>
                 </div>
-              </a>
+              </span>
             </div>
           </div>
         </div>
