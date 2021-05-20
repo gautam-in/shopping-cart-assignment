@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useHistory } from "react-router";
 import Button from "../../atoms/Button/Button";
 import FormField from "../../atoms/FormField/FormField";
@@ -14,60 +14,36 @@ const initialState = {
 
 function Register() {
   const history = useHistory();
+  const emailRegex =
+    /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+  const passwordRegex =
+    /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$/;
 
-  const { inputs, errors, handleChange } = useForm(
-    initialState,
-    Object.keys(initialState)
-  );
-  const [confirmPwBlurred, setConfirmPwBlurred] = useState(false);
-  const [emailError, setEmailError] = useState(true);
+  let rules = {
+    firstName: ["required"],
+    lastName: ["required"],
+    email: ["required", emailRegex, "Please provide a valid email"],
+    password: [
+      "required",
+      passwordRegex,
+      "Passwords should consists 6-16 characters with atleast one alphabet, number and special character",
+    ],
+    confirmPassword: ["required"],
+  };
+
+  const { inputs, errors, handleChange } = useForm(initialState, rules);
   const [passwordMatchError, setpasswordMatchError] = useState(false);
 
   const handleRegister = (e) => {
     e.preventDefault();
+    console.log("Register called", inputs);
     if (inputs.password === inputs.confirmPassword) {
-      /* setpasswordMatchError(false) */
       localStorage.setItem("userLoggedIn", true);
-      history.push("/home");
+      history.push("/");
     } else {
       setpasswordMatchError(true);
     }
   };
-
-  const passwordStrengthValidation = (e) => {
-    /* let strongRegex = new RegExp(passwordRegex) */
-    /* return strongRegex.test(inputs.password); */
-    /* if (strongRegex.test(inputs.password))
-      console.log("validated strength", inputs.password);
-    else console.log("Not validated strength", inputs.password); */
-  };
-
-  const emailRegex =
-    /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-  /*   const emailValidation = useCallback(() => {
-    console.log("callback function");
-    const emailExp = new RegExp(emailRegex);
-    if (emailExp.test(inputs.email)) {
-      return true;
-    }
-    return false;
-  }, [inputs.email]); */
-  const emailValidation = () => {
-    console.log("Normal function");
-    const emailExp = new RegExp(emailRegex);
-    return emailExp.test(inputs.email);
-  };
-
-  useEffect(() => {
-    console.log("useffect function");
-    let a = emailValidation();
-    console.log("sdhfjsfk", a);
-    setEmailError(!a);
-  }, [inputs.email]);
-
-  useEffect(() => {
-    passwordStrengthValidation();
-  }, [inputs.password]);
 
   return (
     <div className="flexed login">
@@ -83,6 +59,7 @@ function Register() {
           id="firstName"
           value={inputs.firstName}
           onChange={handleChange}
+          errors={errors.firstName}
           required
         />
         <FormField
@@ -92,27 +69,28 @@ function Register() {
           id="lastName"
           value={inputs.lastName}
           onChange={handleChange}
+          errors={errors.lastName}
           required
         />
         <FormField
           label="Email"
           type="text"
           name="email"
-          id="email"
+          id="registerEmail"
           value={inputs.email}
           onChange={handleChange}
+          errors={errors.email}
           required
-          validate={!errors.includes("email") && emailError}
         />
         <FormField
           label="Password"
           type="password"
           name="password"
-          id="password"
+          id="registerPassword"
           value={inputs.password}
           onChange={handleChange}
+          errors={errors.password}
           required
-          validate
         />
         <FormField
           label="Confirm Password"
@@ -121,6 +99,7 @@ function Register() {
           id="confirmPassword"
           value={inputs.confirmPassword}
           onChange={handleChange}
+          errors={errors.confirmPassword}
           required
         />
         {passwordMatchError && (
@@ -133,10 +112,10 @@ function Register() {
             Passwords don't match
           </span>
         )}
-        <Button disabled={errors.length !== 0 || emailError}>Signup</Button>
+        <Button disabled={Object.keys(errors).length !== 0}>Signup</Button>
       </form>
     </div>
   );
 }
 
-export default React.memo(Register);
+export default Register;

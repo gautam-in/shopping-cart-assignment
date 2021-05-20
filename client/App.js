@@ -39,7 +39,7 @@ const App = () => {
               <Route
                 path="/cart"
                 render={() => {
-                  if (isDesktop) return <Redirect to="/home" />;
+                  if (isDesktop) return <Redirect to="/" />;
                   else return <CartPage />;
                 }}
               />

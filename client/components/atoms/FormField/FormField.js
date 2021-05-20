@@ -9,25 +9,11 @@ function FormField({
   value,
   onChange,
   required,
-  validate,
+  errors,
 }) {
-  const strongRegex = new RegExp(
-    /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$/
-  );
-
-  const emailExp = new RegExp(
-    /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
-  );
-
-  const [error, setError] = useState(false);
   const [visited, setVisited] = useState(false);
-  const checkEmptyInput = () => {
-    if (value) {
-      setError(false);
-    } else setError(true);
-  };
 
-  const ErrorMsg = ({ id, children, error, label }) => {
+  const ErrorMsg = ({ id, children }) => {
     return (
       <label
         htmlFor={id}
@@ -47,41 +33,20 @@ function FormField({
         id={id}
         value={value}
         onChange={onChange}
-        onFocus={() => {
-          setVisited(false);
-        }}
-        autoComplete="off"
-        aria-required={required}
-        required={required}
+        // onFocus={() => {
+        //   setVisited(false);
+        // }}
         onBlur={() => {
           setVisited(true);
-          if (required) checkEmptyInput();
         }}
+        autoComplete="off"
         aria-live="assertive"
+        aria-required={required}
+        required={required}
       />
       <label htmlFor={id}>{label}</label>
-      {/* <label
-        htmlFor={id}
-        className="form_error"
-        aria-label={error ? `${label} field cannot be empty` : ""}
-        aria-live="assertive"
-      >
-        {error ? `${label} field cannot be empty` : ""}
-      </label> */}
-      {error && visited && <ErrorMsg>{label} cannot be empty</ErrorMsg>}
-
-      {name === "email" && validate && (
-        <ErrorMsg>Provide a validate email</ErrorMsg>
-      )}
-      {validate &&
-        type === "password" &&
-        visited &&
-        !strongRegex.test(value) && (
-          <ErrorMsg>
-            Password should be minimum 6 character with atleast one alphabet,
-            number and a special character.
-          </ErrorMsg>
-        )}
+      {visited &&
+        errors?.map((error) => <ErrorMsg key={error}>{error}</ErrorMsg>)}
     </div>
   );
 }

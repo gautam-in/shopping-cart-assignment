@@ -1,8 +1,10 @@
 import React from "react";
 import { useHistory } from "react-router";
+
+import useForm from "../../customHooks/useForm";
+
 import Button from "../../atoms/Button/Button";
 import FormField from "../../atoms/FormField/FormField";
-import useForm from "../../customHooks/useForm";
 
 import "./Login.scss";
 
@@ -10,17 +12,21 @@ const initialState = { email: "", password: "" };
 
 function Login() {
   const history = useHistory();
-  const { inputs, errors, handleChange } = useForm(
-    initialState,
-    Object.keys(initialState)
+  const emailExp = new RegExp(
+    /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
   );
-  /* console.log("errors", errors); */
+
+  let rules = {
+    email: ["required", emailExp, "Please provide a valid email"],
+    password: ["required"],
+  };
+
+  const { inputs, errors, handleChange } = useForm(initialState, rules);
+
   const handleLogin = (e) => {
     e.preventDefault();
-    const keys = Object.keys(inputs);
-    console.log("submit called", keys);
-
-    history.push("/home");
+    console.log("Login called", inputs);
+    history.push("/");
   };
 
   return (
@@ -36,6 +42,7 @@ function Login() {
           name="email"
           id="email"
           value={inputs.email}
+          errors={errors.email}
           onChange={handleChange}
           required
         />
@@ -45,12 +52,13 @@ function Login() {
           name="password"
           id="password"
           value={inputs.password}
+          errors={errors.password}
           onChange={handleChange}
           required
         />
         <Button
-          ariaLabel="Login button. All field are required to login"
-          disabled={errors.length !== 0}
+          aria-label="Login button. All field are required to login"
+          disabled={Object.keys(errors).length !== 0}
         >
           Login
         </Button>
