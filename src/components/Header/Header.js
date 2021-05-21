@@ -1,3 +1,4 @@
+import { memo } from "react";
 import Navigation from "components/Shared/Navigation";
 import CartIcon from "components/Shared/CartIcon";
 import SignRegister from "components/Shared/SignRegister";
@@ -16,4 +17,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default memo(Header);

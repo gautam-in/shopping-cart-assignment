@@ -1,3 +1,4 @@
+import { memo } from "react";
 import { Container } from "./CartIcon.styles";
 import Cart from "images/cart.svg";
 
@@ -10,4 +11,4 @@ const CartIcon = () => {
   );
 };
 
-export default CartIcon;
+export default memo(CartIcon);

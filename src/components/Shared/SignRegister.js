@@ -1,3 +1,4 @@
+import { memo } from "react";
 import { Container } from "./SignRegister.styles";
 import { Link } from "react-router-dom";
 
@@ -14,4 +15,4 @@ const SignRegister = () => {
   );
 };
 
-export default SignRegister;
+export default memo(SignRegister);
