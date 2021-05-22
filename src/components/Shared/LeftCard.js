@@ -4,7 +4,7 @@ import { Container } from "./LeftCard.styles";
 const LeftCard = ({ title, description }) => {
   return (
     <Container>
-      <h4>{title}</h4>
+      <h2>{title}</h2>
       <div>{description}</div>
     </Container>
   );
