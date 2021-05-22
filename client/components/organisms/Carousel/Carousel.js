@@ -1,7 +1,13 @@
-import React, { useEffect, useState } from "react";
-import "./Carousel.scss";
+import React, { useContext, useEffect, useState } from "react";
+import { DeviceContext } from "../../../App";
+
 import useTouch from "../../customHooks/useTouch";
+
+import "./Carousel.scss";
+
 function Carousel({ offers = [] }) {
+  const { isMobile } = useContext(DeviceContext);
+
   const [carouselCurrentIndex, setCarouselCurrentIndex] = useState(0);
   const { touchStart, touchMove, touchEnd } = useTouch();
 
@@ -16,17 +22,15 @@ function Carousel({ offers = [] }) {
   }, [offers, carouselCurrentIndex]);
 
   const prevCarouselImg = () => {
-    setCarouselCurrentIndex((prev) => {
-      if (prev === 0) return offers.length - 1;
-      return prev - 1;
-    });
+    setCarouselCurrentIndex((prev) =>
+      prev === 0 ? offers.length - 1 : prev - 1
+    );
   };
 
   const nextCarouselImg = () => {
-    setCarouselCurrentIndex((prev) => {
-      if (prev === offers.length - 1) return 0;
-      return prev + 1;
-    });
+    setCarouselCurrentIndex((prev) =>
+      prev === offers.length - 1 ? 0 : prev + 1
+    );
   };
 
   return (
@@ -38,45 +42,79 @@ function Carousel({ offers = [] }) {
           onTouchMove={touchMove}
           onTouchEnd={() => touchEnd(nextCarouselImg, prevCarouselImg)}
         >
-          {/* Carousel left controls */}
-          <button
-            className="carousel__button carousel__button--left"
-            onClick={prevCarouselImg}
-          >
-            &#10094;
-          </button>
-          {/* Carousel right controls */}
-          <button
-            className="carousel__button carousel__button--right"
-            onClick={nextCarouselImg}
-          >
-            &#10095;
-          </button>
-          <div className="carousel_image_wrapper">
-            {/* Carousel image */}
-            {carouselCurrentIndex}
-            <img
-              className="carousel_image_easein"
-              key={offers[carouselCurrentIndex]?.id}
-              src={offers[carouselCurrentIndex]?.bannerImageUrl}
-              alt={offers[carouselCurrentIndex]?.bannerImageAlt}
-              width="100%"
-              height="100%"
-            />
-            {/* Carousel indicators */}
-            <div className="flexed_center_all width_full carousel_indicators_wrapper">
-              {offers.map((offer, index) => (
-                <div
+          {!isMobile && (
+            <>
+              {/* Carousel left controls */}
+              <button
+                className="carousel__button carousel__button--left"
+                onClick={prevCarouselImg}
+              >
+                &#10094;
+              </button>
+              {/* Carousel right controls */}
+              <button
+                className="carousel__button carousel__button--right"
+                onClick={nextCarouselImg}
+              >
+                &#10095;
+              </button>
+            </>
+          )}
+
+          {/* Carousel image with zoom in animation*/}
+          <div className="carousel_appear_wrapper">
+            {offers.map((offer, i) => (
+              <div
+                key={offer.id}
+                className={
+                  carouselCurrentIndex === i
+                    ? "carousel_appear active"
+                    : "carousel_appear"
+                }
+              >
+                <img
+                  src={offer.bannerImageUrl}
+                  alt={offer.bannerImageAlt}
+                  width="100%"
+                  height="100%"
+                />
+              </div>
+            ))}
+          </div>
+
+          {/* Carousel image with slide animation*/}
+          {/* <div className="carousel_slide_wrapper">
+            <div
+              className="carousel_slide flexed"
+              style={{
+                transform: `translate(${-(carouselCurrentIndex * 100)}%)`,
+              }}
+            >
+              {offers.map((offer, i) => (
+                <img
                   key={offer.id}
-                  className="carousel_indicators"
-                  style={{
-                    background:
-                      carouselCurrentIndex === index ? "#8c8c8c" : "#e0e0e0",
-                  }}
-                  onClick={() => setCarouselCurrentIndex(index)}
-                ></div>
+                  src={offer.bannerImageUrl}
+                  alt={offer.bannerImageAlt}
+                  width="100%"
+                  height="100%"
+                />
               ))}
             </div>
+          </div> */}
+
+          {/* Carousel indicators */}
+          <div className="flexed_center_all width_full carousel_indicators_wrapper">
+            {offers.map((offer, index) => (
+              <div
+                key={offer.id}
+                className={
+                  carouselCurrentIndex === index
+                    ? "carousel_indicators carousel_indicators--active"
+                    : "carousel_indicators"
+                }
+                onClick={() => setCarouselCurrentIndex(index)}
+              ></div>
+            ))}
           </div>
         </div>
       )}

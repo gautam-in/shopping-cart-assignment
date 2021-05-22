@@ -43,7 +43,9 @@ function Home() {
 
   return (
     <div className="home_container">
-      <Carousel offers={offers} />
+      <div>
+        <Carousel offers={offers} />
+      </div>
       {/* To-do Gradient bottom */}
       {/* <div className="gradient_shadow"></div> */}
       <div className="explore">
