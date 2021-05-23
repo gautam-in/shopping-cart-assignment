@@ -1,12 +1,14 @@
 import { useState, memo } from "react";
 import TextField from "@material-ui/core/TextField";
 import { useForm, Controller } from "react-hook-form";
+import { useHistory } from "react-router-dom";
 
 import LeftCard from "components/Shared/LeftCard";
 import CustomButton from "components/Shared/CustomButton";
 import { Container, RightBody } from "./SignUpBody.styles";
 
 const SignUpBody = () => {
+  const history = useHistory();
   const {
     control,
     formState: { errors },
@@ -18,8 +20,10 @@ const SignUpBody = () => {
     setCommonErr("");
     if (data.password != data.confirm_password) {
       setCommonErr("Password must be same.");
+      return;
     }
     console.log(commonErr, data);
+    history.replace("/home");
   };
 
   console.log({ errors });
