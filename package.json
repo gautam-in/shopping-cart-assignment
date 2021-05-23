@@ -3,6 +3,25 @@
   "version": "1.0.0",
   "description": "This is the base folder for the shopping cart exercise. You will have all the static assets and mock server responses available in this repo.",
   "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "webpack serve --mode development --progress",
+    "build": "webpack --mode production --progress",
+    "server": "canned -p 5000 ./server",
+    "clean": "rimraf ./src/dist",
+    "start": "concurrently \"npm run server\" \"npm run dev\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ashishya11/shopping-cart-assignment.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ashishya11/shopping-cart-assignment/issues"
+  },
+  "homepage": "https://github.com/ashishya11/shopping-cart-assignment#readme",
   "dependencies": {
     "autoprefixer": "^10.2.5",
     "canned": "^0.3.12",
@@ -48,24 +67,5 @@
       "last 1 safari version",
       "ie 11"
     ]
-  },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "webpack serve --mode development --progress",
-    "build": "webpack --mode production --progress",
-    "server": "canned -p 5000 ./server",
-    "clean": "rimraf ./src/dist",
-    "start": "concurrently \"npm run server\" \"npm run dev\""
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ashishya11/shopping-cart-assignment.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/ashishya11/shopping-cart-assignment/issues"
-  },
-  "homepage": "https://github.com/ashishya11/shopping-cart-assignment#readme"
+  }
 }
