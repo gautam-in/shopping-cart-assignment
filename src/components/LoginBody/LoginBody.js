@@ -12,7 +12,10 @@ const LoginBody = () => {
     formState: { errors },
     handleSubmit,
   } = useForm();
-  const onSubmit = (data) => console.log(data);
+
+  const onSubmit = (data) => {
+    console.log(data);
+  };
 
   console.log({ errors });
   return (
@@ -28,11 +31,18 @@ const LoginBody = () => {
             control={control}
             rules={{
               required: "Email is required",
+              pattern: {
+                value: /^[a-zA-Z0-9]+[a-zA-Z0-9._]+@[a-z]+\.[a-z.]{2,5}$/,
+                message: "Email is not valid",
+              },
             }}
             render={({ field }) => (
               <TextField {...field} type="email" label="Email" />
             )}
           />
+          {errors.email && (
+            <span className="err-msg">{errors.email.message}</span>
+          )}
           <Controller
             name="password"
             control={control}
@@ -42,15 +52,18 @@ const LoginBody = () => {
                 value: 6,
                 message: "Password must have at least 6 characters",
               },
-              // pattern: {
-              //   value: /^(?=.*?[a-z])(?=.*?[0-9])$/,
-              //   message: "Must have a number and alphabet & cannot have spaces",
-              // },
+              pattern: {
+                value: /^\S+(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$/,
+                message: "Password must be alphanumeric without spaces",
+              },
             }}
             render={({ field }) => (
               <TextField {...field} type="password" label="Password" />
             )}
           />
+          {errors.password && (
+            <span className="err-msg">{errors.password.message}</span>
+          )}
           <CustomButton title="Login" />
         </form>
       </RightBody>
