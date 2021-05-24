@@ -1,0 +1,49 @@
+// Color
+$primary-color: #fff;
+$seconday-color: #eeeeee;
+$f-heading: #3c4852;
+$f-text: #5f6368;
+$black-color: #000;
+$default-transition: all 0.3s;
+$btn-color: #bf2957;
+$gray-color: #eeeeee;
+
+// Font size
+$f-small: 12px;
+$f-medium: 14px;
+$f-large: 16px;
+
+// button
+// % this is called placeholder selector, this will not be created in css
+%btn {
+  background-color: $btn-color;
+  appearance: none;
+  cursor: pointer;
+  border: 0;
+  padding: 8px;
+  border-radius: 5px;
+  transition: $default-transition;
+  min-width: 80px;
+  color: $primary-color;
+  font-size: $f-medium;
+  &:hover {
+    transform: translate(0px, -2px);
+  }
+}
+
+%flex {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+/* Remove outline for non-keyboard :focus */
+*:focus:not(.focus-visible) {
+  outline: none;
+}
+
+/* Optional: Customize .focus-visible */
+.focus-visible {
+  outline: 2px solid $black-color;
+  // outline-color: lightgreen;
+}

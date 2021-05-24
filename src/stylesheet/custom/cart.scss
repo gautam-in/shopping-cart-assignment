@@ -1,0 +1,115 @@
+@import "../generic/_settings.scss";
+
+.app {
+  &-cart {
+    position: fixed;
+    z-index: 10;
+    background: #030303e6;
+    opacity: 1;
+    transition-delay: 0s;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    .cart {
+      &-block {
+        background: $gray-color;
+        width: 30%;
+        float: right;
+        min-height: 86vh;
+        max-height: 100vh;
+        position: relative;
+        margin-top: 82px;
+      }
+      &-head {
+        padding: 0px 15px;
+        background-color: $black-color;
+        color: $primary-color;
+        @extend %flex;
+        span,
+        p {
+          color: $primary-color;
+          margin: 10px;
+        }
+        span {
+          cursor: pointer;
+          display: block;
+          &:hover {
+            transform: scale(0.88);
+          }
+        }
+      }
+      &-mid {
+        overflow: auto;
+        height: 360px;
+        .product-block {
+          @extend %flex;
+          align-items: center;
+          padding: 5px 20px;
+          background-color: $primary-color;
+          border-bottom: 2px solid #eeeeee;
+          .prod-detail {
+            flex-basis: 50%;
+          }
+          p {
+            font-size: 12px;
+          }
+          .quantity {
+            @extend %flex;
+            justify-content: space-evenly;
+            .cart-btn {
+              position: relative;
+              width: 20px;
+              height: 20px;
+              background: $btn-color;
+              border-radius: 50%;
+              cursor: pointer;
+              span {
+                color: $primary-color;
+                transform: translate(-50%, -50%);
+                left: 50%;
+                top: 44%;
+                position: absolute;
+              }
+            }
+          }
+        }
+        .block2 {
+          @extend %flex;
+          margin-top: 10px;
+          background: $primary-color;
+          padding: 5px 10px;
+          p {
+            align-self: center;
+          }
+        }
+      }
+      &-foot {
+        background: $primary-color;
+        text-align: center;
+        padding: 15px;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+
+        .app-btn {
+          @extend %flex;
+          width: 100%;
+          span {
+            color: $primary-color;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .app-cart {
+    .cart-block {
+      width: 100%;
+      height: 100%;
+      margin-top: 0px;
+    }
+  }
+}
