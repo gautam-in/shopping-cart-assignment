@@ -1,0 +1,5 @@
+//Action Types
+export const FETCH_BANNER_START = "FETCH_BANNER_START";
+export const FETCH_BANNER_OK = "FETCH_BANNER_OK";
+export const FETCH_BANNER_ERROR = "FETCH_BANNER_ERROR";
+
