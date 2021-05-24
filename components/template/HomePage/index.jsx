@@ -1,5 +1,5 @@
 import React from "react";
-import CategoryItem from "../../molecules/CategoryItem";
+import CategoryList from "../../organism/CategoryList";
 import Banner from "../../organism/Banner";
 import PageLayout from "../../organism/PageLayout";
 import { connect } from 'react-redux';
@@ -44,11 +44,7 @@ class HomePage extends React.Component {
       return (
          <PageLayout>
             <Banner bannerItems={bannerItemsEnabled} />
-            {
-               categoryDataEnabled?.length && categoryDataEnabled.map((categoryItem, index) => {
-                  return <CategoryItem key={categoryItem.key} item={categoryItem} index={index} />
-               })
-            }
+            <CategoryList categoryData={categoryDataEnabled}/>
          </PageLayout>
       )
    }
