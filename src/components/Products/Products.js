@@ -3,14 +3,17 @@ import axios from 'axios'
 import Navbar from "../Navbar/Navbar"
 import {useDispatch,useSelector} from "react-redux"
 import * as actions from "../../store/actions"
+import Backdrop from "../Backdrop/Backdrop"
+import Cart from "../Cart/Cart"
 import "./Products.scss"
 export default function Products() {
     const dispatch=useDispatch()
+    const show = useSelector(state => state.showCart)
     const [products,setProducts]=React.useState([])
     const [productsCopy,setProductsCopy]=React.useState([])
     const apiCall=async()=>{
 let res=await  axios.get('http://localhost:5000/products')
-setProducts(res.data)
+setProducts(res.data.map(dt=>({...dt,count:0})))
 setProductsCopy(res.data)
     }
 const filterProducts=(id)=>{
@@ -25,6 +28,8 @@ const filterProducts=(id)=>{
     return (
         <div>
            <div> <Navbar/></div>
+           <Backdrop />
+           {show&&<div  className="cart-align"><Cart/></div>}
             <div className="main2">
         <div className="left" >
         <div className="align" onClick={()=>filterProducts('5b6899953d1a866534f516e2')}>Fruits & Vegetables</div>

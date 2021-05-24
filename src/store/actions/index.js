@@ -1,1 +1,1 @@
-export {addToCart} from "./cart"
+export {addToCart,incrementProduct,decrementProduct,showCart} from "./cart"

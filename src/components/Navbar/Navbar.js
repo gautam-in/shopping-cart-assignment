@@ -4,11 +4,19 @@ import "./Navbar.css"
 import { Link } from "react-router-dom"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faShoppingCart } from "@fortawesome/free-solid-svg-icons"
-import {useSelector} from "react-redux"
+import {useSelector,useDispatch} from "react-redux"
+import * as actions from "../../store/actions/index"
 import Logo from "../../../static/images/logo.png"
-export default function Navbar() {
+import {withRouter} from "react-router-dom"
+ function Navbar(props) {
+     const dispatch=useDispatch()
     const cartItems=useSelector(state=>state.cartItems)
+    const show=useSelector(state=>state.showCart)
     debugger
+    const countCartItems=()=>{
+        const length=cartItems?.reduce((acc,item)=>item.count+acc,0)
+        return length
+    }
     return (
         <div>
             <nav className="main">
@@ -21,7 +29,8 @@ export default function Navbar() {
                     <div className="signin"><Link className="nocolor" to="/login">SignIn</Link></div>
                     <div className="register"><Link className="nocolor" to="/register">Register</Link></div>
                 </div>
-                <div className="divide2"><FontAwesomeIcon icon={faShoppingCart}/>({cartItems.length}) Items</div>
+                {/* <div className="divide2" onClick={()=>props.history.push("/cart")}><FontAwesomeIcon icon={faShoppingCart}/>({countCartItems()}) Items</div> */}
+                <div className="divide2" onClick={()=>dispatch(actions.showCart(!show))}><FontAwesomeIcon icon={faShoppingCart}/>({countCartItems()}) Items</div>
 
                     </div>  
         
@@ -31,3 +40,4 @@ export default function Navbar() {
 
     )
 }
+export default withRouter(Navbar)

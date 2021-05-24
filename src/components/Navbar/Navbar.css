@@ -50,6 +50,9 @@
     background-color: #d3d3d3;
     padding:10px;
     text-align: center;
+    cursor: pointer;
+    color: #D58E10;
+    text-decoration: none;
 }
 .divide2 svg{
     color: #8b0000;

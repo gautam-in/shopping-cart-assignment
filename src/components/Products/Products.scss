@@ -58,3 +58,13 @@ height: 250vw;
       background-color: #d3d3d3d3;
       padding: 5px;
   }
+
+  .cart-align{
+    z-index:1000;
+    position:fixed;
+    background-color:#fff;
+    width:45vw;
+    left:20%;
+    height:80vw;
+    border:0.5px solid black
+  }

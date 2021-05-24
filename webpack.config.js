@@ -69,7 +69,7 @@ module.exports = {
         new CleanWebpackPlugin({cleanStaleWebpackAssets: false}),
 new HotModuleReplacementPlugin(),
 new HtmlWebpackPlugin({
-    template: path.resolve(__dirname, "dist/index.html"), //we put the file that we created in public folder
+    template: path.resolve(__dirname, "dist/index.html"), //we put the file that we created in public/dist folder
   }),
   //This get all our css and put in a unique file
   new MiniCssExtractPlugin({
