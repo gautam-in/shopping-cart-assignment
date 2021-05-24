@@ -81,7 +81,7 @@ function Navbar() {
           <Route path="/product" component={Product} />
           <Route path="/login" component={Login} />
           <Route path="/signUp" component={SignUp} />
-          <Route path="*" component={wildRoute} />
+          <Route path="*" exact={true} component={wildRoute} />
         </Switch>
       </Suspense>
     </Router>
