@@ -1,14 +1,14 @@
-.category-container{
-    display:flex;
-    width:100%;
-    flex-direction: column;
-    margin-right: auto;
-    margin-left: auto;
-    padding:0;
+.category-container {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 0;
 }
 
 @media only screen and (min-width: 770px) {
-    .category-container{
-        width: 70%;
-    }
+  .category-container {
+    width: 1024px;
+  }
 }
