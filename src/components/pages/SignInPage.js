@@ -1,16 +1,19 @@
 import React from 'react';
 import '../molecules/SigninForm/SigninForm.scss';
 import SignInForm from '../molecules/SigninForm/SigninForm';
-const SignInPage =()=>{
-    return (<main className='container'>
-    <section className='form-wrapper'>
-      <section className='header-wrapper'>
-        <h1>Login</h1>
-        <p>Get access to your Orders, Wishlist and Recommendations</p>
+import * as Constants from '../../constants';
+const SignInPage = () => {
+  return (
+    <main className='container'>
+      <section className='form-wrapper'>
+        <section className='header-wrapper'>
+          <h1>{Constants.LoginTitle}</h1>
+          <p>{Constants.LoginDescription}</p>
+        </section>
+        <SignInForm />
       </section>
-      <SignInForm />
-    </section>
-  </main>)
-}
+    </main>
+  );
+};
 
 export default SignInPage;

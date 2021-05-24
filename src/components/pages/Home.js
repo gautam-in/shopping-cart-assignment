@@ -1,13 +1,13 @@
 import React from 'react';
-import Banners from '../organisms/Banners/Banners';
-import Categories from '../organisms/Categories/Categories';
+const Banners = React.lazy(() => import('../organisms/Banners/Banners'));
+const Categories = React.lazy(() => import('../organisms/Categories/Categories'));
 const Home = () => {
-  return (<>
-    <Banners />
-    <Categories />
-  </>)
-}
-
-
+  return (
+    <>
+      <Banners />
+      <Categories />
+    </>
+  );
+};
 
 export default Home;

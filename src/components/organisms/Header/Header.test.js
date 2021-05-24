@@ -20,3 +20,4 @@ test('should test Header component', () => {
     const wrpper = shallow(<Wrapper><Header /></Wrapper>);
     expect(wrpper).toMatchSnapshot();
 });
+

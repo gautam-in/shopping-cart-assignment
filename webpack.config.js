@@ -19,7 +19,7 @@ module.exports = function (_env, argv) {
         module: {
             rules: [
                 {
-                    test: /\.(png|jpe?g|gif|svg)$/i,
+                    test: /\.(png|jpe?g|gif|svg|ico)$/i,
                     type: "asset/resource"
                 },
                 {
@@ -56,7 +56,7 @@ module.exports = function (_env, argv) {
             alias: {
                 'react-redux': require.resolve('react-redux'),
             },
-            modules: [__dirname, "client", "node_modules"],
+            modules: [__dirname, "node_modules"],
             extensions: ["*", ".js", ".jsx", ".tsx", ".ts"]
         },
         plugins: [
@@ -68,7 +68,7 @@ module.exports = function (_env, argv) {
             }),
             new HtmlWebpackPlugin({
                 template: path.resolve(__dirname, "public/index.html"),
-                favicon: './favicon.ico'
+                favicon: 'public/favicon.ico'
             }),
             new CleanWebpackPlugin(),
             new webpack.HotModuleReplacementPlugin()

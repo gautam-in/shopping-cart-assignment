@@ -5,9 +5,9 @@ import './Input.scss';
 const Input = ({ errorLabel, ...props }) => {
   return (
     <section className='input-field'>
-      <input  {...props} />
+      <input {...props} />
       <label htmlFor={props.id}>{props.placeholder}</label>
-      <span className="form-error">{errorLabel}</span>
+      <span className='form-error'>{errorLabel}</span>
     </section>
   );
 };

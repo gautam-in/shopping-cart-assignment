@@ -3,12 +3,12 @@ import Input from '../../atoms/Input/Input';
 import { useHistory } from 'react-router-dom';
 import '../SigninForm/SigninForm.scss';
 const initial = {
-  firstname: "",
-  lastname: "",
-  email: "",
-  password: "",
-  confirmPassword: ""
-}
+  firstname: '',
+  lastname: '',
+  email: '',
+  password: '',
+  confirmPassword: ''
+};
 const RegistrationForm = () => {
   const [inputs, setInputs] = useState(initial);
   const [errors, setErrors] = useState(initial);
@@ -19,7 +19,6 @@ const RegistrationForm = () => {
       resetForm();
       history.push('/home');
     }
-
   };
   function resetForm() {
     setErrors(initial);
@@ -35,72 +34,76 @@ const RegistrationForm = () => {
     let errors = {};
     let isValid = true;
 
-    if (!input["firstname"]) {
+    if (!input['firstname']) {
       isValid = false;
-      errors["firstname"] = "Please enter your first name!";
+      errors['firstname'] = 'Please enter your first name!';
     }
 
-    if (typeof input["firstname"] !== "undefined") {
+    if (typeof input['firstname'] !== 'undefined') {
       const re = /^\S*$/;
-      if (input["firstname"].length < 6 || !re.test(input["firstname"])) {
+      if (input['firstname'].length < 6 || !re.test(input['firstname'])) {
         isValid = false;
-        errors["firstname"] = "Please enter valid first name!";
+        errors['firstname'] = 'Please enter valid first name!';
       }
     }
 
-    if (!input["lastname"]) {
+    if (!input['lastname']) {
       isValid = false;
-      errors["lastname"] = "Please enter your last name!";
+      errors['lastname'] = 'Please enter your last name!';
     }
 
-    if (typeof input["lastname"] !== "undefined") {
+    if (typeof input['lastname'] !== 'undefined') {
       const re = /^\S*$/;
-      if (input["lastname"].length < 6 || !re.test(input["lastname"])) {
+      if (input['lastname'].length < 6 || !re.test(input['lastname'])) {
         isValid = false;
-        errors["lastname"] = "Please enter valid last name!";
+        errors['lastname'] = 'Please enter valid last name!';
       }
     }
 
-    if (!input["email"]) {
+    if (!input['email']) {
       isValid = false;
-      errors["email"] = "Please enter your email Address!";
+      errors['email'] = 'Please enter your email Address!';
     }
 
-    if (typeof input["email"] !== "undefined") {
-
-      var pattern = new RegExp(/^(("[\w-\s]+")|([\w-]+(?:\.[\w-]+)*)|("[\w-\s]+")([\w-]+(?:\.[\w-]+)*))(@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$)|(@\[?((25[0-5]\.|2[0-4][0-9]\.|1[0-9]{2}\.|[0-9]{1,2}\.))((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){2}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\]?$)/i);
-      if (!pattern.test(input["email"])) {
+    if (typeof input['email'] !== 'undefined') {
+      var pattern = new RegExp(
+        /^(("[\w-\s]+")|([\w-]+(?:\.[\w-]+)*)|("[\w-\s]+")([\w-]+(?:\.[\w-]+)*))(@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$)|(@\[?((25[0-5]\.|2[0-4][0-9]\.|1[0-9]{2}\.|[0-9]{1,2}\.))((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){2}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\]?$)/i
+      );
+      if (!pattern.test(input['email'])) {
         isValid = false;
-        errors["email"] = "Please enter valid email address!";
+        errors['email'] = 'Please enter valid email address!';
       }
     }
 
-    if (!input["password"]) {
+    if (!input['password']) {
       isValid = false;
-      errors["password"] = "Please enter your password!";
+      errors['password'] = 'Please enter your password!';
     }
 
-    if (!input["confirmPassword"]) {
+    if (!input['confirmPassword']) {
       isValid = false;
-      errors["confirmPassword"] = "Please enter your confirm password!";
+      errors['confirmPassword'] = 'Please enter your confirm password!';
     }
 
-    if (typeof input["password"] !== "undefined") {
+    if (typeof input['password'] !== 'undefined') {
       var pwdPattern = new RegExp(/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$/i);
-      if (!pwdPattern.test(input["password"])) {
+      if (!pwdPattern.test(input['password'])) {
         isValid = false;
-        errors["password"] = "Password must contain atleast 6 characters,1 alphabet and 1 number!";
+        errors['password'] = 'Password must contain atleast 6 characters,1 alphabet and 1 number!';
       }
     }
-    if (typeof input["password"] !== "undefined" && typeof input["confirmPassword"] !== "undefined") {
-      if (input["password"] != input["confirmPassword"]) {
+    if (
+      typeof input['password'] !== 'undefined' &&
+      typeof input['confirmPassword'] !== 'undefined'
+    ) {
+      if (input['password'] != input['confirmPassword']) {
         isValid = false;
-        errors["password"] = "Passwords don't match!";
+        errors['password'] = "Passwords don't match!";
       }
     }
     setErrors(errors);
     return isValid;
-  }
+  };
 
   return (
     <form onSubmit={handleSubmit}>
@@ -112,7 +115,7 @@ const RegistrationForm = () => {
         value={inputs.firstname}
         onChange={onChangeHandler}
         errorLabel={errors.firstname}
-        aria-label="First Name Input"
+        aria-label='First Name Input'
       />
       <Input
         type='text'
@@ -122,7 +125,7 @@ const RegistrationForm = () => {
         value={inputs.lastname}
         onChange={onChangeHandler}
         errorLabel={errors.lastname}
-        aria-label="Last Name Input"
+        aria-label='Last Name Input'
       />
 
       <Input
@@ -133,7 +136,7 @@ const RegistrationForm = () => {
         value={inputs.email}
         onChange={onChangeHandler}
         errorLabel={errors.email}
-        aria-label="Email Input"
+        aria-label='Email Input'
       />
 
       <Input
@@ -144,7 +147,7 @@ const RegistrationForm = () => {
         value={inputs.password}
         onChange={onChangeHandler}
         errorLabel={errors.password}
-        aria-label="Password Input"
+        aria-label='Password Input'
       />
 
       <Input
@@ -153,21 +156,16 @@ const RegistrationForm = () => {
         id='confirmPassword'
         placeholder='Confirm Password'
         value={inputs.confirmPassword}
-        aria-label="Confirm Password Input"
+        aria-label='Confirm Password Input'
         onChange={onChangeHandler}
         errorLabel={errors.confirmPassword}
       />
 
-      <button
-        type='submit'
-        aria-label="Signup Button"
-        className='custom-button form-submit-btn' >
+      <button type='submit' aria-label='Signup Button' className='custom-button form-submit-btn'>
         Signup
       </button>
     </form>
   );
 };
-
-
 
 export default RegistrationForm;

@@ -29,7 +29,7 @@ const Carousel = React.memo(({ images }) => {
     const { id, bannerImageUrl, bannerImageAlt } = image;
     return (
       <li className={`carousel-item ${activeIndex === index ? 'show' : ''}`} key={id}>
-        <img src={bannerImageUrl} alt={bannerImageAlt} loading="lazy" />
+        <img src={bannerImageUrl} alt={bannerImageAlt} loading='lazy' />
       </li>
     );
   });

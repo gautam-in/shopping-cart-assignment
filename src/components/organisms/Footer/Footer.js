@@ -1,11 +1,12 @@
 import './Footer.scss';
-import React from 'react'
+import React from 'react';
+import * as Constants from '../../../constants';
 const Footer = () => {
-    return (
-        <footer className="footer-wrap">
-            <p>Copyright © 2011-2018 Sabka Bazaar Grocery Supplies Pvt Ltd</p>
-        </footer>
-    );
+  return (
+    <footer className='footer-wrap'>
+      <p>{Constants.Copyright}</p>
+    </footer>
+  );
 };
 
 export default Footer;

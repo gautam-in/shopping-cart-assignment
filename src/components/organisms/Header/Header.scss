@@ -7,6 +7,10 @@ header {
   -moz-box-shadow: 0 8px 6px -6px #eaeaea;
   box-shadow: 0 8px 6px -6px #eaeaea;
 }
+.header-link-active{
+  border-bottom: 0.2em solid #242424;;
+  cursor: pointer;
+}
   .nav_bar{
     position: relative;
     display: flex;
@@ -26,7 +30,7 @@ header {
         list-style: none;
         li{
           a{
-            color: black;
+            color: #242424;
             line-height: 1.5rem;
             font-weight: 600;
             text-decoration: none;
@@ -69,7 +73,7 @@ header {
         list-style: none;
         li{
           a{
-            color: black;
+            color: #242424;
             line-height: 1.5rem;
             font-weight: 600;
             text-decoration: none;
