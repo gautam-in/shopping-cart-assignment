@@ -21,3 +21,5 @@ ReactDOM.render(
   </ErrorBoundary>,
   document.getElementById('root')
 );
+
+module.hot.accept();
