@@ -1,15 +1,33 @@
 <app-header></app-header>
 
 <div class="container">
-  <label for="email">
-    Email
-    <input type="text" [formControl]="email" name="email" />
-  </label>
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <label for="email"> Email </label>
+    <input type="email" formControlName="email" />
+    <div
+      *ngIf="
+        formControl.email.invalid &&
+        (formControl.email.dirty || formControl.email.touched)
+      "
+    >
+      <div *ngIf="formControl.email.errors?.required" class="has-error">
+        Email is required.
+      </div>
+    </div>
 
-  <label for="password">
-    Password
-    <input type="text" [formControl]="password" name="password" />
-  </label>
+    <label for="password"> Password </label>
+    <input type="password" formControlName="password" name="password" />
+    <div
+      *ngIf="
+        formControl.password.invalid &&
+        (formControl.password.dirty || formControl.password.touched)
+      "
+    >
+      <div *ngIf="formControl.password.errors?.required" class="has-error">
+        Password is required.
+      </div>
+    </div>
 
-  <button type="submit" (click)="onClick()">Login</button>
+    <button [disabled]="loginForm.invalid" type="submit">Login</button>
+  </form>
 </div>

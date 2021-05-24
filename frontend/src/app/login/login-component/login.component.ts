@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import {
+  FormBuilder,
+  FormControl,
+  FormGroup,
+  Validators,
+} from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
@@ -8,15 +13,22 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent implements OnInit {
-  email = new FormControl('');
-  password = new FormControl('');
+  loginForm: FormGroup = new FormGroup({});
+  submitted: boolean = false;
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private fb: FormBuilder) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.loginForm = this.fb.group({
+      email: ['', Validators.required],
+      password: ['', Validators.required],
+    });
+  }
 
-  onClick(): void {
-    console.log(this.email.value, this.password.value);
+  get formControl() {
+    return this.loginForm.controls;
+  }
+  onSubmit(): void {
     this.router.navigate(['/home']);
   }
 }
