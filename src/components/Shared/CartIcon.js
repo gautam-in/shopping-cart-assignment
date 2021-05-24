@@ -1,6 +1,6 @@
 import { memo } from "react";
 import { Container } from "./CartIcon.styles";
-import Cart from "images/cart.svg";
+import Cart from "static/images/cart.svg";
 
 const CartIcon = () => {
   return (

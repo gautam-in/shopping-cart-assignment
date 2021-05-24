@@ -4,7 +4,7 @@ import CartIcon from "components/Shared/CartIcon";
 import SignRegister from "components/Shared/SignRegister";
 
 import { Container } from "./Header.styles";
-import Logo from "images/logo.png";
+import Logo from "static/images/logo.png";
 
 const Header = () => {
   return (
