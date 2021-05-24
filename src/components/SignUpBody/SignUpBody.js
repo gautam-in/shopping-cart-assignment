@@ -22,11 +22,9 @@ const SignUpBody = () => {
       setCommonErr("Password must be same.");
       return;
     }
-    console.log(commonErr, data);
     history.replace("/home");
   };
 
-  console.log({ errors });
   return (
     <Container>
       <LeftCard

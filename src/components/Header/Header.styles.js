@@ -7,6 +7,7 @@ export const Container = styled.div`
   align-items: flex-end;
   font-size: 0.8rem;
   position: relative;
+  height: 90px;
   .logo {
     width: 15%;
     margin-bottom: 0.5rem;

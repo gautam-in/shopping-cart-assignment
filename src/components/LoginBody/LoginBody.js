@@ -20,7 +20,6 @@ const LoginBody = () => {
     history.replace("/home");
   };
 
-  console.log({ errors });
   return (
     <Container>
       <LeftCard
