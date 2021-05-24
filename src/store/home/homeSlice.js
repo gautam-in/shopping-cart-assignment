@@ -2,7 +2,7 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 // import fetchOffers from "services/home";
 
 import { banner } from "server/banners/banner-demo";
-import { category } from "./categories-demo";
+import { category } from "server/categories/category-demo";
 
 // fetch all the offers
 export const getOffers = createAsyncThunk(
@@ -18,7 +18,7 @@ export const getOffers = createAsyncThunk(
   }
 );
 
-// fetch all the offers
+// fetch all the categories
 export const getCategories = createAsyncThunk(
   "childProfile/getCategories",
   async () => {

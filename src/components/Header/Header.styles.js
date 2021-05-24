@@ -6,8 +6,11 @@ export const Container = styled.div`
   justify-content: space-evenly;
   align-items: flex-end;
   font-size: 0.8rem;
-  position: relative;
+  position: fixed;
   height: 90px;
+  width: 100%;
+  background-color: #ffffff;
+  z-index: 1;
   .logo {
     width: 15%;
     margin-bottom: 0.5rem;
