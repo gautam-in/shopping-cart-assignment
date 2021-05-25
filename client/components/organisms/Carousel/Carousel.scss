@@ -68,13 +68,13 @@
     height: 100%;
     width: 100%;
     visibility: hidden;
-    opacity: 0;
-    /* transform: scale(0); */
-    transition: transform 0.1s ease-in-out;
+    /* opacity: 0;
+    transform: scale(0); 
+    transition: transform 0.5s ease-in-out;*/
     &.active {
       visibility: visible;
-      opacity: 1;
-      /* transform: scale(1); */
+      /* opacity: 1;
+      transform: scale(1); */
     }
   }
 
