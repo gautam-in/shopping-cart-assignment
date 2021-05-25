@@ -13,6 +13,7 @@ export const CategoryRow = styled.div`
   /* box-shadow: inset 0 2px 7px rgba(0, 0, 0, 0.3); */
   flex-direction: ${(props) => props.reverse && "row-reverse"};
   position: relative;
+  border-top: 1px solid #d3d3d3;
   .detail-img {
     text-align: center;
   }

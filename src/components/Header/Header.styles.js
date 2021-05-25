@@ -11,7 +11,7 @@ export const Container = styled.div`
   height: 90px;
   width: 100%;
   background-color: #ffffff;
-  z-index: 1;
+  z-index: 2;
   padding-top: 1rem;
   .logo {
     width: 15%;
