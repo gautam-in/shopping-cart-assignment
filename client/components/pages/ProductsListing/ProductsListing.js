@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import ProductsState from "../../organisms/ProductsState/ProductsState";
 import ProductCard from "../../molecules/ProductCard/ProductCard";
 
-import { fetchProducts } from "client/components/redux";
+import { fetchProducts } from "../../redux";
 
 import * as service from "../services";
 

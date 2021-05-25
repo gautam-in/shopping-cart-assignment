@@ -97,5 +97,11 @@
     /* border: 2px solid rgb(86, 87, 86); */
     transition: all 500ms ease-in-out;
     height: 100%;
+
+    width: 90%;
+  }
+  img {
+    border: 2px solid rgb(86, 87, 86);
+    transition: transform 500ms ease-in-out, transform-origin 500ms ease-in-out;
   }
 }

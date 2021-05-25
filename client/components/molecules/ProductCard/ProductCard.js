@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import Button from "../../atoms/Button/Button";
 import Toast from "../Toast/Toast";
-import { addItem, fetchProducts } from "client/components/redux";
+import { addItem } from "../../../components/redux";
 import { useDispatch } from "react-redux";
 import { DeviceContext } from "../../../App";
 import { postAddToCart } from "../../pages/services";

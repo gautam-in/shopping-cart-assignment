@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import "./NavigationLinks.scss";
 
 function NavigationLinks() {
@@ -9,10 +9,14 @@ function NavigationLinks() {
     <nav className="nav_links">
       <ul className="flexed">
         <li>
-          <Link to="/">Home</Link>
+          <NavLink activeClassName="linkActive" exact to="/">
+            Home
+          </NavLink>
         </li>
         <li>
-          <Link to="/products">Products</Link>
+          <NavLink activeClassName="linkActive" to="/products">
+            Products
+          </NavLink>
         </li>
       </ul>
     </nav>

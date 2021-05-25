@@ -3,7 +3,7 @@ import {
   incrementItem,
   decrementItem,
   removeItem,
-} from "client/components/redux";
+} from "../../../components/redux";
 
 import "./CartSelectedProducts.scss";
 import CartAlterationBtn from "../../atoms/CartAlterationBtn/CartAlterationBtn";
