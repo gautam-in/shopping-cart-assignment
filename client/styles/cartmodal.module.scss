@@ -1,0 +1,104 @@
+.cartmodal {
+    position:absolute;
+    right: 10%;
+    background-color: lightgray;
+    top: 89px;
+    width: 430px;
+    z-index: 500;
+    height: calc(100vh - 90px);
+
+    header {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        padding: 15px 15px;
+        align-items: center;
+        background-color: black;
+        color: #fff;
+
+        p {
+            font-weight: bold;
+        }
+    }
+
+    .lowestPrice {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        margin: 10px;
+        background-color: #fff;
+        font-size: 14px;
+        
+        
+        img {
+            margin-right: 10px;
+            padding: 5px;
+            width: 100px;
+            object-fit: contain;
+        }
+    }
+
+    .main {
+        overflow: scroll;
+        // height: 300px;
+        height: 523px;
+    }
+
+    footer {
+        text-align: center;
+        background-color: #fff;
+        position: absolute;
+        width: 100%;
+        bottom: 0;
+        .checkoutButton {
+            display: flex;
+            justify-content: space-between;
+            background-color: #d10157;
+            color: #fff;
+            margin: 10px;
+            padding: 10px 5px;
+        }
+    }
+}
+
+.backdrop {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+@media only screen and (max-width: 768px) {
+
+    .backdrop {
+        background-color: rgba(0, 0, 0, 0);
+    }
+
+    .cartmodal {
+        right: 0;
+        width: 100%;
+        z-index: 500;
+         
+        header {
+            margin-top: 2rem;
+            background-color: #fff;
+            color: black;
+
+        }
+    
+        .main {
+            overflow: scroll;
+            height: calc(100vh - 16rem);
+        }
+    }
+}
+
+@media only screen and (min-width : 320px) and (max-width : 767px) {
+    .cartmodal{
+        top: 59px;
+        height: calc(100vh - 59px);
+    }
+}

@@ -1,0 +1,29 @@
+.imgContainer {
+    margin-top: 2rem;
+    border-bottom: 1px solid lightgray;
+    padding-bottom: 10px;
+    & button {
+        height: 100%;
+        width: 5vw;
+        z-index: 1;
+        opacity: 0;
+
+        &:hover {
+            opacity:0.5;
+            background: lightgray;
+            transition: opacity 0.2s ease 0s;
+        }
+    }
+}
+
+
+@media only screen and (min-width : 320px) and (max-width : 767px) {
+    .imgContainer {
+        & > div > div {
+            overflow: visible !important;
+            & > ul {
+                top: 95px !important;
+            }
+        }
+    }
+}
