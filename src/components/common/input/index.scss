@@ -22,8 +22,9 @@
     outline: none;
     width: 100%;
     font-weight: 500;
-    font-size: inherit;
+    font-size: 14px;
     &:focus,
+    // &:valid,
     &:-webkit-autofill {
       border-color: #50dae4;
       & ~ label {
@@ -38,7 +39,8 @@
     }
   }
 
-  & .filled {
+  & .filled,
+  & .invaild {
     & ~ label {
       transform: translateY(-150%);
     }

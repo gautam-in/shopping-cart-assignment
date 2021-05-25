@@ -23,6 +23,10 @@
 @media only screen and (max-width: 768px) {
   /* For tablet phones: */
   .product_list_container {
+    & .sidebar {
+      width: 30%;
+    }
+
     & .products {
       width: 70%;
 

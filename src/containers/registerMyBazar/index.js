@@ -14,7 +14,17 @@ import {
   passwordLabel,
   confirmPasswordLabel,
   registerSubmitCtaLabel,
+  // error msg label
+  firstNameErrorLabel,
+  lastNameErrorLabel,
+  emailErrorLabel,
+  passwordErrorLabel,
+  confirmPasswordErrorLabel,
+  emailInvaildErrorLabel,
+  passwordInvaildErrorLabel,
 } from "../../constant";
+
+import { emailRegex, passwordRegex } from "../../constant/regex";
 
 const INITIAL_FORM = {
   firstName: "",
@@ -30,26 +40,6 @@ const Register = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     let formErrors = { ...INITIAL_FORM };
-
-    if (form.firstName !== "" && form.firstName !== void 0) {
-      formErrors.firstName = "";
-    } else {
-      formErrors.firstName = "Invalid Name";
-    }
-
-    // // email validation
-    // if (form.email.match(label.services.constants.emailRegex)) {
-    //   formErrors.email = "";
-    // } else {
-    //   formErrors.email = "Invalid Email!";
-    // }
-
-    // // password validation
-    // if (form.password === form.confirmPassword) {
-    //   formErrors.confirmPassword = "";
-    // } else {
-    //   formErrors.confirmPassword = "Passwords don't match!. Try again";
-    // }
 
     // error checking
     const hasError = Object.values(formErrors).every(
@@ -92,7 +82,7 @@ const Register = () => {
             onChange={handleInputChange}
             autoFocus={true}
             label={firstNameLabel}
-            errorLabel={"First Name Can not be empty"}
+            errorLabel={firstNameErrorLabel}
           />
           <Input
             type="text"
@@ -101,6 +91,7 @@ const Register = () => {
             value={form.lastName}
             onChange={handleInputChange}
             label={lastNameLabel}
+            errorLabel={lastNameErrorLabel}
           />
           <Input
             type="text"
@@ -109,7 +100,9 @@ const Register = () => {
             value={form.email}
             onChange={handleInputChange}
             label={emailLabel}
-            errorLabel={error.email}
+            errorLabel={emailErrorLabel}
+            invalidErrorLabel={emailInvaildErrorLabel}
+            regex={emailRegex}
           />
           <Input
             type="password"
@@ -119,6 +112,9 @@ const Register = () => {
             onChange={handleInputChange}
             autoComplete="new-password"
             label={passwordLabel}
+            errorLabel={passwordErrorLabel}
+            invalidErrorLabel={passwordInvaildErrorLabel}
+            regex={passwordRegex}
           />
           <Input
             type="password"
@@ -128,7 +124,7 @@ const Register = () => {
             onChange={handleInputChange}
             autoComplete="new-password"
             label={confirmPasswordLabel}
-            errorLabel={error.confirmPassword}
+            errorLabel={confirmPasswordErrorLabel}
           />
           <Button type="submit" variant="primary" className="btn-block">
             {registerSubmitCtaLabel}

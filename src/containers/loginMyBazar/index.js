@@ -11,7 +11,14 @@ import {
   loginSubmitCtaLabel,
   emailLabel,
   passwordLabel,
+  // error msg label
+  emailErrorLabel,
+  passwordErrorLabel,
+  emailInvaildErrorLabel,
+  passwordInvaildErrorLabel,
 } from "../../constant";
+
+import { emailRegex, passwordRegex } from "../../constant/regex";
 
 const INITIAL_FORM = {
   email: "",
@@ -25,21 +32,14 @@ const LoginMyBazar = () => {
     event.preventDefault();
     let formErrors = { ...INITIAL_FORM };
 
-    // email validation
-    if (form.email.match("label.services.constants.emailRegex")) {
-      formErrors.email = "";
-    } else {
-      formErrors.email = "Invalid Email!";
-    }
-
-    // error checking
-    const hasError = Object.values(formErrors).every(
-      (item) => item.trim() === ""
-    );
-    if (!hasError) {
-      setError({ ...formErrors });
-      return;
-    }
+    // // error checking
+    // const hasError = Object.values(formErrors).every(
+    //   (item) => item.trim() === ""
+    // );
+    // if (!hasError) {
+    //   setError({ ...formErrors });
+    //   return;
+    // }
     window.localStorage.setItem("user", JSON.stringify(form));
     setError(INITIAL_FORM);
     setForm(INITIAL_FORM);
@@ -67,7 +67,9 @@ const LoginMyBazar = () => {
             value={form.email}
             onChange={handleInputChange}
             label={emailLabel}
-            errorLabel={error.email}
+            errorLabel={emailErrorLabel}
+            invalidErrorLabel={emailInvaildErrorLabel}
+            regex={emailRegex}
           />
           <Input
             type="password"
@@ -76,6 +78,9 @@ const LoginMyBazar = () => {
             value={form.password}
             onChange={handleInputChange}
             label={passwordLabel}
+            errorLabel={passwordErrorLabel}
+            invalidErrorLabel={passwordInvaildErrorLabel}
+            regex={passwordRegex}
           />
           <Button type="submit" variant="primary" className="btn-block">
             {loginSubmitCtaLabel}

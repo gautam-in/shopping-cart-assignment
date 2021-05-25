@@ -39,3 +39,16 @@ export const firstNameLabel = "First Name";
 export const lastNameLabel = "Last Name";
 export const confirmPasswordLabel = "Confirm Password";
 export const registerSubmitCtaLabel = "Create your account";
+
+
+// Error Message Label
+export const firstNameErrorLabel = "First Name can not be empty.";
+export const lastNameErrorLabel = "Last Name can not be empty.";
+export const emailErrorLabel = "Email can not be empty.";
+export const passwordErrorLabel = "Password can not be empty.";
+export const confirmPasswordErrorLabel = "Confirm password can not be empty.";
+
+// Error Message Label for invaild field
+export const emailInvaildErrorLabel = "Please provide vaild email address.";
+export const passwordInvaildErrorLabel = "Password can not match our guidelines.";
+export const confirmPasswordInvaildErrorLabel = "Confirm password not matched.";
