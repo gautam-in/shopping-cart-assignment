@@ -1,6 +1,6 @@
-/* @import "/client/components/styles/variables"; */
-@import "../../styles/variables";
-@import "/client/components/styles/mq-mixin";
+/* @import "/client/styles/variables"; */
+@import "../../../styles/variables";
+@import "/client/styles/mq-mixin";
 
 footer {
   color: $primary-black;
@@ -8,9 +8,11 @@ footer {
   font-size: $primary-font-size;
   font-weight: 600;
   padding: 10px;
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
   /* margin-top: 20px; */
   text-align: center;
-  font-size: $primary-font-size;
 
   @include mq(desktop) {
     text-align: left;

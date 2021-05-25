@@ -13,7 +13,7 @@ import CartPage from "./components/pages/CartPage/CartPage";
 import NotFound from "./components/pages/NotFound";
 import Footer from "./components/organisms/Footer/Footer";
 
-import useDevice from "./components/customHooks/useDevice";
+import useDevice from "./customHooks/useDevice";
 
 import "App.scss";
 

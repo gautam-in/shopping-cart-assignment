@@ -1,4 +1,4 @@
-@import "/client/components/styles/mq-mixin";
+@import "/client/styles/mq-mixin";
 
 .carousel {
   position: relative;
@@ -69,12 +69,12 @@
     width: 100%;
     visibility: hidden;
     opacity: 0;
-    transform: scale(0);
-    transition: transform 0.3s ease-in-out;
+    /* transform: scale(0); */
+    transition: transform 0.1s ease-in-out;
     &.active {
       visibility: visible;
       opacity: 1;
-      transform: scale(1);
+      /* transform: scale(1); */
     }
   }
 

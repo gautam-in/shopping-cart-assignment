@@ -1,10 +1,17 @@
 import React from "react";
 import { useHistory } from "react-router";
 
-import useForm from "../../customHooks/useForm";
+import useForm from "../../../customHooks/useForm";
 
 import Button from "../../atoms/Button/Button";
 import FormField from "../../atoms/FormField/FormField";
+import {
+  loginButton,
+  emailRegex,
+  loginEmailLabel,
+  loginPasswordLabel,
+  emailRegexError,
+} from "../../../constant";
 
 import "./Login.scss";
 
@@ -12,12 +19,9 @@ const initialState = { email: "", password: "" };
 
 function Login() {
   const history = useHistory();
-  const emailExp = new RegExp(
-    /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
-  );
 
   let rules = {
-    email: ["required", emailExp, "Please provide a valid email"],
+    email: ["required", emailRegex, emailRegexError],
     password: ["required"],
   };
 
@@ -26,18 +30,20 @@ function Login() {
   const handleLogin = (e) => {
     e.preventDefault();
     console.log("Login called", inputs);
-    history.push("/");
+    if (Object.keys(errors).length === 0) {
+      history.push("/");
+    }
   };
 
   return (
     <div className="flexed login">
       <div>
-        <h3>Login </h3>
-        <div>Get access to your Orders, Wishlist and Recommendations</div>
+        <h1>Login </h1>
+        <h2>Get access to your Orders, Wishlist and Recommendations</h2>
       </div>
-      <form onSubmit={handleLogin}>
+      <form onSubmit={handleLogin} method="POST">
         <FormField
-          label="Email"
+          label={loginEmailLabel}
           type="text"
           name="email"
           id="email"
@@ -47,7 +53,7 @@ function Login() {
           required
         />
         <FormField
-          label="Password"
+          label={loginPasswordLabel}
           type="password"
           name="password"
           id="password"
@@ -57,10 +63,9 @@ function Login() {
           required
         />
         <Button
-          aria-label="Login button. All field are required to login"
-          disabled={Object.keys(errors).length !== 0}
+        //disabled={Object.keys(errors).length !== 0}
         >
-          Login
+          {loginButton}
         </Button>
       </form>
     </div>

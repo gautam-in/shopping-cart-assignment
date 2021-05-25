@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import logo from "../../../../static/images/logo.png";
 import logo_2x from "/static/images/logo_2x.png";
 
-import { primaryBlack, primaryGrey } from "../../styles/_variables.scss";
+import { primaryBlack, primaryGrey } from "../../../styles/_variables.scss";
 import "./HeaderLogo.scss";
 
 function HeaderLogo() {

@@ -2,7 +2,19 @@ import React, { useState } from "react";
 import { useHistory } from "react-router";
 import Button from "../../atoms/Button/Button";
 import FormField from "../../atoms/FormField/FormField";
-import useForm from "../../customHooks/useForm";
+import useForm from "../../../customHooks/useForm";
+import {
+  emailRegex,
+  passwordRegex,
+  emailRegexError,
+  RegisterPasswordRegexError,
+  RegisterFirstNameLabel,
+  RegisterLastNameLabel,
+  RegisterEmailLabel,
+  RegisterPasswordLabel,
+  RegisterConfirmPasswordLabel,
+  RegisterButton,
+} from "../../../constant";
 
 const initialState = {
   firstName: "",
@@ -14,20 +26,12 @@ const initialState = {
 
 function Register() {
   const history = useHistory();
-  const emailRegex =
-    /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-  const passwordRegex =
-    /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$/;
 
-  let rules = {
+  const rules = {
     firstName: ["required"],
     lastName: ["required"],
-    email: ["required", emailRegex, "Please provide a valid email"],
-    password: [
-      "required",
-      passwordRegex,
-      "Passwords should consists 6-16 characters with atleast one alphabet, number and special character",
-    ],
+    email: ["required", emailRegex, emailRegexError],
+    password: ["required", passwordRegex, RegisterPasswordRegexError],
     confirmPassword: ["required"],
   };
 
@@ -36,24 +40,26 @@ function Register() {
 
   const handleRegister = (e) => {
     e.preventDefault();
-    console.log("Register called", inputs);
-    if (inputs.password === inputs.confirmPassword) {
-      localStorage.setItem("userLoggedIn", true);
-      history.push("/");
-    } else {
+
+    if (Object.keys(errors).length !== 0) return;
+    if (inputs.password !== inputs.confirmPassword) {
       setpasswordMatchError(true);
+      return;
     }
+
+    localStorage.setItem("userLoggedIn", true);
+    history.push("/");
   };
 
   return (
     <div className="flexed login">
       <div>
-        <h3>Signup </h3>
-        <span>We do not share your personal details with anyone.</span>
+        <h1>Signup </h1>
+        <h2>We do not share your personal details with anyone.</h2>
       </div>
-      <form onSubmit={handleRegister}>
+      <form onSubmit={handleRegister} method="POST">
         <FormField
-          label="First Name"
+          label={RegisterFirstNameLabel}
           type="text"
           name="firstName"
           id="firstName"
@@ -63,7 +69,7 @@ function Register() {
           required
         />
         <FormField
-          label="Last Name"
+          label={RegisterLastNameLabel}
           type="text"
           name="lastName"
           id="lastName"
@@ -73,7 +79,7 @@ function Register() {
           required
         />
         <FormField
-          label="Email"
+          label={RegisterEmailLabel}
           type="text"
           name="email"
           id="registerEmail"
@@ -83,7 +89,7 @@ function Register() {
           required
         />
         <FormField
-          label="Password"
+          label={RegisterPasswordLabel}
           type="password"
           name="password"
           id="registerPassword"
@@ -93,7 +99,7 @@ function Register() {
           required
         />
         <FormField
-          label="Confirm Password"
+          label={RegisterConfirmPasswordLabel}
           type="password"
           name="confirmPassword"
           id="confirmPassword"
@@ -112,7 +118,11 @@ function Register() {
             Passwords don't match
           </span>
         )}
-        <Button disabled={Object.keys(errors).length !== 0}>Signup</Button>
+        <Button
+        //disabled={Object.keys(errors).length !== 0}
+        >
+          {RegisterButton}
+        </Button>
       </form>
     </div>
   );

@@ -8,7 +8,5 @@ describe("HeaderLogo", () => {
 
 test("ENZYME : Should render HeaderLogo correctly", () => {
   const wrapper = shallow(<HeaderLogo />);
-  /* expect(wrapper.find("footer").text()).to.equal(
-    "Copyright @ 2011-2018 Sabka Bazaar Grocery Supplies Pvt Ltd"
-  ); */
+  expect(wrapper.exists()).toBe(true);
 });

@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { DeviceContext } from "../../../App";
 
-import useTouch from "../../customHooks/useTouch";
+import useTouch from "../../../customHooks/useTouch";
 
 import "./Carousel.scss";
 
@@ -88,7 +88,7 @@ function Carousel({ offers = [] }) {
             <div
               className="carousel_slide flexed"
               style={{
-                transform: `translate(${-(carouselCurrentIndex * 100) + 5}%)`,
+                transform: `translate(${-(carouselCurrentIndex * 100)}%)`,
               }}
             >
               {offers.map((offer, i) => (
@@ -98,12 +98,12 @@ function Carousel({ offers = [] }) {
                   alt={offer.bannerImageAlt}
                   width="100%"
                   height="100%"
-                  style={{
-                    transform:
-                      carouselCurrentIndex === i ? "scale(1)" : "scale(0.6)",
-                    transformOrigin:
-                      carouselCurrentIndex > i ? "right" : "left",
-                  }}
+                  // style={{
+                  //   transform:
+                  //     carouselCurrentIndex === i ? "scale(1)" : "scale(0.6)",
+                  //   transformOrigin:
+                  //     carouselCurrentIndex > i ? "right" : "left",
+                  // }}
                 />
               ))}
             </div>

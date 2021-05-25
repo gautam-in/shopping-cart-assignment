@@ -1,5 +1,5 @@
-@import "/client/components/styles/variables";
-@import "/client/components/styles/mq-mixin";
+@import "/client/styles/variables";
+@import "/client/styles/mq-mixin";
 
 .products_container {
   .categories_list {
@@ -37,6 +37,7 @@
 
   .products_list {
     margin: 20px;
+    margin-top: 0px;
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     grid-gap: 0px;

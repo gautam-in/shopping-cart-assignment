@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { requiredError } from "../constant";
 
 /**
  *
@@ -15,7 +16,7 @@ export default function useForm(initial = {}, rules = {}) {
   }, [initialValues]);
 
   const [errors, setErrors] = useState({});
-  const emptyFieldMesssage = "Field cannot be empty.";
+  const emptyFieldMesssage = requiredError;
 
   useEffect(() => {
     let validationRules = {};
@@ -28,39 +29,47 @@ export default function useForm(initial = {}, rules = {}) {
     setErrors(validationRules);
   }, []);
 
+  const requiredValidation = ({ value, name }) => {
+    setErrors((prev) => {
+      if (value.trim()) {
+        if (prev[name]?.length === 1) delete prev[name];
+        else if (prev[name]?.length === 2) prev[name][0] = "";
+        return prev;
+      }
+      if (!value) {
+        return { ...prev, [name]: [emptyFieldMesssage] };
+      }
+      return prev;
+    });
+  };
+
+  const regexValidation = ({ value, name }) => {
+    const regexExp = new RegExp(rules[name][1]);
+    setErrors((prev) => {
+      if (regexExp.test(value) && prev[name]) {
+        if (prev[name][0]) prev[name].splice(1, 1);
+        else delete prev[name];
+        return prev;
+      }
+      if (!regexExp.test(value)) {
+        return {
+          ...prev,
+          [name]: [prev[name]?.[0] || "", rules[name]?.[2]],
+        };
+      }
+      return prev;
+    });
+  };
+
   const fieldValidation = ({ value, name }) => {
     //If "required" is passed in 0th index
     if (rules[name]?.[0] === "required") {
-      setErrors((prev) => {
-        if (value.trim()) {
-          if (prev[name]?.length === 1) delete prev[name];
-          else if (prev[name]?.length === 2) prev[name][0] = "";
-          return prev;
-        }
-        if (!value) {
-          return { ...prev, [name]: [emptyFieldMesssage] };
-        }
-        return prev;
-      });
+      requiredValidation({ value, name });
     }
     //If field is required or value is not empty and regex is passed in 1th index
     //The Regex will be checked only if the value is not empty
     if ((!rules[name]?.[0] || value.trim()) && rules[name]?.[1]) {
-      const regexExp = new RegExp(rules[name][1]);
-      setErrors((prev) => {
-        if (regexExp.test(value) && prev[name]) {
-          if (prev[name][0]) prev[name].splice(1, 1);
-          else delete prev[name];
-          return prev;
-        }
-        if (!regexExp.test(value)) {
-          return {
-            ...prev,
-            [name]: [prev[name]?.[0] || "", rules[name]?.[2]],
-          };
-        }
-        return prev;
-      });
+      regexValidation({ value, name });
     }
   };
 
@@ -78,6 +87,7 @@ export default function useForm(initial = {}, rules = {}) {
       [name]: value,
     }));
 
+    //If rules in not empty
     if (Object.keys(rules).length > 0) fieldValidation({ value, name });
   }
 

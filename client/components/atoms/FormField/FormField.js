@@ -40,8 +40,6 @@ function FormField({
           setVisited(true);
         }}
         autoComplete="off"
-        aria-live="assertive"
-        aria-required={required}
         required={required}
       />
       <label htmlFor={id}>{label}</label>

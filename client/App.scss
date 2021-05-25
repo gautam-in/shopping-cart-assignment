@@ -1,5 +1,5 @@
-@import "/client/components/styles/mq-mixin";
-@import "/client/components/styles/variables";
+@import "/client/styles/mq-mixin";
+@import "/client/styles/variables";
 
 * {
   margin: 0;
@@ -27,6 +27,8 @@ a {
 }
 .header_container + main {
   margin-top: calc(#{$mobile-header-height});
+
+  margin-bottom: 38px;
   @include mq(tab) {
     margin-top: calc(#{$tab-header-height} + 10px);
   }

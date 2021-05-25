@@ -1,4 +1,5 @@
-@import "/client/components/styles/mq-mixin";
+@import "/client/styles/variables";
+@import "/client/styles/mq-mixin";
 
 .login {
   width: 80%;
@@ -7,9 +8,14 @@
 
   flex-direction: column;
   /* margin-top: 60px; */
-  h3 {
+  h1 {
     margin-bottom: 20px;
     font-size: 30px;
+  }
+  h2 {
+    font-size: $primary-font-size;
+    color: $font-secondary-color;
+    font-weight: 500;
   }
   > div,
   > form {
