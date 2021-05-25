@@ -15,6 +15,7 @@ function SignUp() {
   } = useForm();
   const history = useHistory();
   const dispatch = useDispatch();
+
   const onSubmit = (data) => {
     dispatch(signUp(data));
     history.push("/login");

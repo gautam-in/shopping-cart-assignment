@@ -25,8 +25,8 @@ function CarouselHome() {
                 src={data.bannerImageUrl}
                 alt={data.bannerImageAlt}
                 loading="lazy"
-                width="1260"
-                height="310"
+                width="1200"
+                height="300"
               />
             </div>
           ))}

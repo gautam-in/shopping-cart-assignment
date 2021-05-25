@@ -4,8 +4,8 @@ import { useSelector, useDispatch } from "react-redux";
 import { addRemoveToCart } from "../redux/cart/actionCreator";
 function Cart(props) {
   const cartData = useSelector((state) => state.getCartDetail.cartItems);
-
   const dispatch = useDispatch();
+
   const closeCart = () => {
     props.status(false);
   };
@@ -62,8 +62,8 @@ function Cart(props) {
           {cartData.length > 0 ? (
             <div className="block2">
               <img
-                src="/static/images/lowest-price.png"
-                alt="lowest-price-logo"
+                src="/static/images/lowest-price.webp"
+                alt="lowest Price Logo"
                 loading="lazy"
                 width="100"
               ></img>
@@ -78,7 +78,7 @@ function Cart(props) {
             </div>
           )}
         </div>
-        <div className="cart-foot">
+        <div className="cart-foot centre">
           <p>Promo Code can be applied to payment page</p>
           <button className="app-btn">
             <span>Proceed to Checkout</span>
@@ -96,4 +96,4 @@ function Cart(props) {
   );
 }
 
-export default Cart;
+export default React.memo(Cart);

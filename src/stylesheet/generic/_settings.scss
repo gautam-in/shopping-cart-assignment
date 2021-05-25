@@ -36,14 +36,3 @@ $f-large: 16px;
   justify-content: space-between;
   flex-wrap: wrap;
 }
-
-/* Remove outline for non-keyboard :focus */
-*:focus:not(.focus-visible) {
-  outline: none;
-}
-
-/* Optional: Customize .focus-visible */
-.focus-visible {
-  outline: 2px solid $black-color;
-  // outline-color: lightgreen;
-}

@@ -1,23 +1,24 @@
 import React, { Suspense, useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
-import { getCategory } from "../redux/category/actionCreator";
 import "../stylesheet/custom/product.scss";
+import { getCategory } from "../redux/category/actionCreator";
 const ProductList = React.lazy(() => import("./ProductList"));
 
 function Product() {
   let hashID;
+  const dispatch = useDispatch();
+  const history = useHistory();
+  const [screenSize, setscreenSize] = useState(window.screen.width);
+  const categoryData = useSelector((state) => state.getCatDetail.category);
+
   if (window.location.hash.split("#")[1]) {
     hashID = window.location.hash.split("#")[1];
   }
-
-  const [screenSize, setscreenSize] = useState(window.screen.width);
-
-  const dispatch = useDispatch();
-  const categoryData = useSelector((state) => state.getCatDetail.category);
   const windowSize = () => {
     setscreenSize(window.screen.width);
   };
+
   useEffect(() => {
     dispatch(getCategory());
   }, [dispatch]);
@@ -26,7 +27,6 @@ function Product() {
     window.addEventListener("resize", windowSize);
   });
 
-  const history = useHistory();
   const loadCategory = (e) => {
     if (screenSize < 480) {
       history.push("/product#" + e.target.value);

@@ -9,6 +9,7 @@ function ProductList(props) {
   const productData = useSelector((state) => state.getProdDetail.product);
   const updatedProduct = productData.filter((data) => urlID === data.category);
   const dispatch = useDispatch();
+
   useEffect(() => {
     dispatch(getProducts());
   }, [dispatch]);

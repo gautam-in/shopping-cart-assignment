@@ -24,8 +24,8 @@ function Navbar() {
           <div className="app-block left">
             <Link to="/" className="app-logo">
               <img
-                src="/static/images/logo.png"
-                srcSet="/static/images/logo_2x.png 1.5x, /static/images/logo_2x.png 2x"
+                src="/static/images/logo.webp"
+                srcSet="/static/images/logo_2x.webp 1.5x, /static/images/logo_2x.webp 2x"
                 alt="sabka-bazar-logo"
                 loading="lazy"
                 width="130"
