@@ -8,6 +8,7 @@ import Copyright from "components/Shared/Copyright";
 import Login from "pages/Login";
 import Register from "pages/Register";
 import Home from "pages/Home";
+import Product from "pages/Product";
 import NotFound from "components/Shared/NotFound";
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
           <Route exact path="/" component={Login} />
           <Route exact path="/register" component={Register} />
           <Route exact path="/home" component={Home} />
+          <Route exact path="/products" component={Product} />
           <Route path="*" exact={true} component={NotFound} />
         </Switch>
         <Copyright />

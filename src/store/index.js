@@ -3,6 +3,7 @@ import { combineReducers } from "redux";
 import { createLogger } from "redux-logger";
 
 import homeReducer from "store/home/homeSlice";
+import productReducer from "store/product/productSlice";
 
 const middleware = [
   /* YOUR CUSTOM MIDDLEWARES HERE */
@@ -14,6 +15,7 @@ middleware.push(logger);
 
 const combinedReducer = combineReducers({
   home: homeReducer,
+  product: productReducer
 });
 
 const rootReducer = (state, action) => {
