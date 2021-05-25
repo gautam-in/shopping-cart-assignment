@@ -1,17 +1,14 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-// import fetchOffers from "services/home";
-
-import { banner } from "server/banners/banner-demo";
-import { category } from "server/categories/category-demo";
+import fetchOffers, { fetchCategories } from "services/home";
 
 // fetch all the offers
 export const getOffers = createAsyncThunk(
   "childProfile/getOffers",
   async () => {
     try {
-      // const res = await fetchOffers();
-      // console.log({ res });
-      return banner;
+      const res = await fetchOffers();
+      console.log({ res });
+      return res;
     } catch (error) {
       throw new Error(error?.message ?? "Get offer details failed");
     }
@@ -23,8 +20,8 @@ export const getCategories = createAsyncThunk(
   "childProfile/getCategories",
   async () => {
     try {
-      //   const res = await fetchOffers();
-      return category;
+      const res = await fetchCategories();
+      return res;
     } catch (error) {
       throw new Error(error?.message ?? "Get categories failed");
     }
