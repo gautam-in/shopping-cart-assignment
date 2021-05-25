@@ -7,10 +7,12 @@ export const Container = styled.div`
   align-items: flex-end;
   font-size: 0.8rem;
   position: fixed;
+  top: 0;
   height: 90px;
   width: 100%;
   background-color: #ffffff;
   z-index: 1;
+  padding-top: 1rem;
   .logo {
     width: 15%;
     margin-bottom: 0.5rem;
