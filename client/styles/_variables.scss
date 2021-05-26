@@ -1,0 +1,49 @@
+// basic site color
+$pimary_bg_color: #b71d60;
+
+//background colors
+$bg-primary-color: #ffffff;
+$bg-secondary-color: #e6e6e6;
+
+//font colors
+$primary-black: #000000;
+$font-primary-color: #363636;
+$font-secondary-color: #6e6e6e;
+
+//font sizes
+$primary-font-size: 14px;
+
+// button color
+$button-bg-color: #ce0e55;
+
+// form label
+$form-focus-color: #5fc0ca;
+$form-unfocused-color: grey;
+
+$side_margin: 10px;
+$mobile-header-height: 60px;
+$tab-header-height: 90px;
+$mobile-cart-height: calc(100vh - #{$mobile-header-height});
+$desktop-cart-height: calc(100vh - #{$tab-header-height});
+
+// responsive size
+/* Small devices (portrait tablets and large phones, 600px and up) */
+$s-width: 600px;
+/* Medium devices (landscape tablets, 768px and up) */
+$m-width: 768px;
+/* Large devices (laptops/desktops, 992px and up) */
+$l-width: 992px;
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+$xl-width: 1200px;
+
+/* $secondary-color: #efefef;
+$white-color: #ffffff;
+$pink-color: #e83583;
+$light-blue: #00ffe7;
+$border-color: #ccc; */
+
+// the :export directive is the magic sauce for webpack
+:export {
+  primaryBlack: $primary-black;
+  primaryGrey: bg-secondary-color;
+}

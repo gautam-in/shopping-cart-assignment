@@ -1,0 +1,31 @@
+@import "/client/styles/variables";
+@import "/client/styles/mq-mixin";
+
+.login {
+  width: 80%;
+  margin: 30px auto;
+  padding-top: 30px;
+
+  flex-direction: column;
+  /* margin-top: 60px; */
+  h1 {
+    margin-bottom: 20px;
+    font-size: 30px;
+  }
+  h2 {
+    font-size: $primary-font-size;
+    color: $font-secondary-color;
+    font-weight: 500;
+  }
+  > div,
+  > form {
+    margin-bottom: 20px;
+    width: 100%;
+  }
+  > form {
+    max-width: 300px;
+  }
+  @include mq(tab) {
+    flex-direction: row;
+  }
+}

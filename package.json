@@ -3,13 +3,69 @@
   "version": "1.0.0",
   "description": "This is a shopping cart coding exercise",
   "main": "index.js",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "canned -p 5000 ./server"
+    "dev": "webpack-dev-server --env.ENVIRONMENT=development --hot",
+    "start": "concurrently --kill-others \"webpack-dev-server --env.ENVIRONMENT=development --hot\" \"npm run server\"",
+    "build": "webpack --config webpack.prod.config.js --env.ENVIRONMENT=production ",
+    "test": "jest --config=jest.config.json --watch",
+    "server": "canned -p 5000 ./server",
+    "http": "http-server build"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version",
+      "ie 11",
+      "ie 10"
+    ]
   },
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "canned": "^0.3.12"
+    "react": "^16.13.1",
+    "react-app-polyfill": "^2.0.0",
+    "react-dom": "^16.13.1",
+    "react-redux": "^7.2.4",
+    "react-router-dom": "^5.2.0",
+    "redux": "^4.1.0",
+    "redux-devtools-extension": "^2.13.9",
+    "redux-thunk": "^2.3.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.11.0",
+    "@babel/preset-env": "^7.11.0",
+    "@babel/preset-react": "^7.10.4",
+    "babel-loader": "^8.1.0",
+    "canned": "^0.3.12",
+    "clean-webpack-plugin": "^4.0.0-alpha.0",
+    "concurrently": "^6.0.2",
+    "copy-webpack-plugin": "^6.4.1",
+    "css-loader": "^4.2.0",
+    "dotenv": "^8.2.0",
+    "dotenv-webpack": "^7.0.2",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.5.0",
+    "eslint": "^7.24.0",
+    "eslint-webpack-plugin": "^2.5.4",
+    "file-loader": "^6.0.0",
+    "html-loader": "^0.5.5",
+    "html-webpack-plugin": "^4.3.0",
+    "http-server": "^0.12.3",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^26.6.3",
+    "node-sass": "^5.0.0",
+    "raf": "^3.4.1",
+    "sass-loader": "^10.1.1",
+    "style-loader": "^1.2.1",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0"
   }
 }

@@ -1,0 +1,30 @@
+@import "./variables";
+
+/* @mixin mq($size) {
+  @media only screen and (min-width: $size) {
+    @content;
+  }
+} */
+
+@mixin mq($breakpoint) {
+  @if $breakpoint == tab {
+    @media only screen and (min-width: $s-width) {
+      @content;
+    }
+  }
+  @if $breakpoint == tab-land {
+    @media only screen and (min-width: $m-width) {
+      @content;
+    }
+  }
+  @if $breakpoint == desktop {
+    @media only screen and (min-width: $l-width) {
+      @content;
+    }
+  }
+  @if $breakpoint == big-desktop {
+    @media only screen and (min-width: $xl-width) {
+      @content;
+    }
+  }
+}

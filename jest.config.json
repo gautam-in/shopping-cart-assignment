@@ -1,0 +1,9 @@
+{
+  "setupFiles": [
+    "raf/polyfill",
+    "<rootDir>/client/components/tests/setupTests.js"
+  ],
+  "moduleNameMapper": {
+    ".+\\.(css|styl|less|sass|scss|png|svg|jpg|ttf|woff|woff2|json)$": "identity-obj-proxy"
+  }
+}

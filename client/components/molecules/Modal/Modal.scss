@@ -1,0 +1,91 @@
+@import "/client/styles/variables";
+@import "/client/styles/mq-mixin";
+
+.modal_container {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 2;
+
+  display: grid;
+  justify-content: right;
+  align-items: end;
+
+  .modal_header {
+    color: white;
+    background: black;
+    padding: $side_margin;
+    button {
+      color: white;
+      background: black;
+      border: none;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  }
+  @include mq(tab) {
+    padding-right: 0px;
+  }
+  @include mq(desktop) {
+    padding-right: 125px;
+  }
+}
+
+.modal_design {
+  background: #fff;
+  border-radius: 2px;
+  display: inline-block;
+  position: relative;
+  min-width: 400px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  justify-self: center;
+  overflow: auto;
+  @include mq(tab) {
+    height: $desktop-cart-height;
+  }
+  @include mq(desktop) {
+    height: $desktop-cart-height;
+  }
+}
+
+.modal_riseup {
+  bottom: -600px;
+  animation: slideModal 0.5s forwards;
+  -webkit-animation: slideModal 0.5s forwards;
+}
+
+@-webkit-keyframes slideModal {
+  100% {
+    bottom: 0px;
+  }
+}
+
+@keyframes slideModal {
+  100% {
+    bottom: 0px;
+  }
+}
+
+.modal_godown {
+  bottom: 0px;
+  -webkit-animation-name: animatebottom;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatebottom;
+  animation-duration: 0.4s;
+  & .modal_design {
+    opacity: 0;
+  }
+}
+
+@keyframes animatebottom {
+  100% {
+    bottom: -600px;
+    opacity: 0;
+  }
+}
+
+/* @-webkit-keyframes animatebottom {
+  100% {
+    bottom: -600px;
+  }
+} */

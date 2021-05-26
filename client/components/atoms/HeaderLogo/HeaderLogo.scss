@@ -1,0 +1,14 @@
+@import "/client/styles/variables";
+@import "/client/styles/mq-mixin";
+
+.header_logo {
+  width: 100px;
+  margin: 5px 0px;
+  margin-left: 10px;
+
+  // mobile screens
+  @include mq(tab) {
+    width: 180px;
+    height: 80px;
+  }
+}

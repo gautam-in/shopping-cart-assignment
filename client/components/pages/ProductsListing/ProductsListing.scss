@@ -1,0 +1,211 @@
+@import "/client/styles/variables";
+@import "/client/styles/mq-mixin";
+
+.products_container {
+  .categories_list {
+    margin: 20px 0;
+    text-align: center;
+    //background-color: $pimary_bg_color;
+
+    li {
+      display: none;
+      padding: 10px;
+    }
+    select {
+      display: inline-block;
+      width: 100%;
+      background-color: $pimary_bg_color;
+      color: white;
+      padding: 7px;
+      margin-top: 5px;
+      option {
+        width: 100%;
+      }
+      &:after {
+        color: red;
+        background-color: red;
+      }
+    }
+    .category_item {
+      cursor: pointer;
+      &--active {
+        background: #b71d60;
+        color: white;
+      }
+    }
+  }
+
+  .products_list {
+    margin: 20px;
+    margin-top: 0px;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 0px;
+  }
+  .product_area {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 5px;
+    grid-auto-rows: minmax(15px, auto);
+    height: 100%;
+    border-bottom: 2px dashed $bg-secondary-color;
+    padding: 14px;
+
+    .product_name {
+      font-size: 18px;
+      font-weight: 700;
+      padding: 8px 0px;
+
+      grid-column: 1/5;
+      grid-row: 1/2;
+    }
+    img {
+      grid-column: 1/3;
+      grid-row: 2/4;
+    }
+    .product_desc {
+      background-color: $bg-secondary-color;
+      padding: 10px;
+      border-radius: 2px;
+
+      grid-column: 3/5;
+      grid-row: 2/3;
+    }
+    .buy_button {
+      display: flex;
+      align-items: flex-end;
+      gap: 10px;
+      grid-column: 3/5;
+      grid-row: 3/4;
+
+      &.desktop_buy {
+        display: none;
+      }
+    }
+  }
+  /*   .buy_button + .not_desktop_buy {
+    cursor: pointer;
+    background: $pimary_bg_color;
+    color: white;
+    width: 100%;
+    text-align: center;
+    padding: 10px 0px;
+  } */
+
+  .aside_filter {
+    text-decoration: none;
+    color: $bg-secondary-color;
+  }
+}
+
+// Medis-query CSS
+
+@include mq(tab) {
+  .products_container {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    .categories_list {
+      margin: 0;
+      text-align: left;
+      padding: 10px;
+      background-color: $bg-secondary-color;
+      color: $font-secondary-color;
+      min-width: 197px;
+      li {
+        display: block;
+        border-bottom: 1px solid #d6d6d6;
+      }
+      select {
+        display: none;
+      }
+    }
+    .products_list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 16px;
+    }
+    /*     .product {
+      padding: 10px;
+    } */
+    .product_area {
+      box-shadow: 9px 0px 6px -7px #f3f3f3;
+
+      &:nth-child(2n) {
+        box-shadow: none;
+      }
+
+      img {
+        grid-column: 1/3;
+        grid-row: 2/3;
+      }
+      .product_desc {
+        grid-column: 3/5;
+        grid-row: 2/3;
+      }
+      .buy_button {
+        grid-column: 1/5;
+        grid-row: 3/4;
+        align-items: center;
+
+        justify-content: space-between;
+      }
+    }
+    .aside_filter {
+      color: $font-secondary-color;
+    }
+  }
+}
+
+/* @include mq(desktop) {
+  .products_container {
+    .products_list {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}
+ */
+@include mq(desktop) {
+  .products_container {
+    .products_list {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-auto-rows: minmax(15px, auto);
+      /* border-bottom: 2px dashed rgba(204, 204, 204, 0.51); */
+    }
+    .product_area {
+      box-shadow: 9px 0px 6px -7px #e6e6e6;
+      grid-template-rows: 100px 150px auto 40px;
+      grid-gap: 14px;
+      &:nth-child(2n) {
+        box-shadow: 9px 0px 6px -7px #f3f3f3;
+      }
+      .product_name {
+        grid-column: 1/5;
+        grid-row: 1/2;
+      }
+      img {
+        grid-column: 1/5;
+        grid-row: 2/3;
+      }
+      .product_desc {
+        grid-column: 1/5;
+        grid-row: 3/4;
+      }
+      .buy_button {
+        grid-column: 1/5;
+        grid-row: 4/5;
+        &.desktop_buy {
+          display: flex;
+        }
+        &.not_desktop_buy {
+          display: none;
+        }
+        .button {
+          max-width: 50%;
+          height: 100%;
+        }
+      }
+    }
+  }
+}

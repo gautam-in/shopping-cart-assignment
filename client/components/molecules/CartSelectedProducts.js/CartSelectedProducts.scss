@@ -1,0 +1,15 @@
+@import "/client/styles/variables";
+@import "/client/styles/mq-mixin";
+
+.selected_card {
+  padding: 0 $side_margin;
+  background: white;
+  margin: 10px 0px;
+  gap: 15px;
+  > img + div > div {
+    margin-bottom: 8px;
+    &:first-child {
+      font-weight: 600;
+    }
+  }
+}

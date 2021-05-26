@@ -1,0 +1,18 @@
+@import "/client/styles/variables";
+@import "/client/styles/mq-mixin";
+
+.quantity_change_button {
+  display: inline-block;
+  background: $button-bg-color;
+  color: white;
+  height: 20px;
+  cursor: pointer;
+  width: 26px;
+  border-radius: 4px;
+
+  border: none;
+  @include mq(tab) {
+    width: 20px;
+    border-radius: 50%;
+  }
+}

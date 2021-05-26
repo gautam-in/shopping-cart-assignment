@@ -1,15 +1,51 @@
-# XT Shopping Cart Assignment
+# Sabka Bazaar
 
-This is the base folder for the shopping cart exercise. You will have all the static assets and mock server responses available in this repo.
+_Project on E-commerce site._
 
 ## Getting Started
 
-Clone this repo and run following command for starting the mock server:
+**Installation**  
+  
+Clone the repository and install the dependencies:
 
+```sh
+npm i
 ```
-npm install
-npm run start
-# or
-yarn install
-yarn start
+
+**Development**
+
+> **`Starting both frontend and mock API servers`**
+
+```sh
+npm start
 ```
+
+> **`Starting only frontend server`**
+
+```sh
+npm run dev
+```
+
+> **`Starting only mock server`**
+
+```sh
+npm run server
+```
+
+> **`Running test`**
+
+```sh
+npm test
+```
+
+#### Production
+
+For production release:
+
+```sh
+npm run build
+```
+
+## License
+
+MIT

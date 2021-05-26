@@ -1,0 +1,21 @@
+/* @import "/client/styles/variables"; */
+@import "../../../styles/variables";
+@import "/client/styles/mq-mixin";
+
+footer {
+  color: $primary-black;
+  background-color: $bg-secondary-color;
+  font-size: $primary-font-size;
+  font-weight: 600;
+  padding: 10px;
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  /* margin-top: 20px; */
+  text-align: center;
+
+  @include mq(desktop) {
+    text-align: left;
+    padding-left: 0px;
+  }
+}

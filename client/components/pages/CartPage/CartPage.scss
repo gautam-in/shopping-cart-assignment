@@ -1,0 +1,17 @@
+@import "/client/styles/variables";
+
+.cart_page_container {
+  $marginTop: 15px;
+  margin-top: $marginTop;
+  height: calc(#{$desktop-cart-height} - #{$marginTop});
+  background: $bg-secondary-color;
+  .cart_page_header {
+    padding: 15px $side_margin;
+    border-top: 2px solid #cacaca;
+    background: white;
+    margin-bottom: 15px;
+  }
+  .cart_container > div {
+    background: white;
+  }
+}

@@ -1,0 +1,94 @@
+@import "/client/styles/mq-mixin";
+@import "/client/styles/variables";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+button {
+  font-family: "Dosis", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  font-size: inherit;
+}
+.parent_spacing {
+  @include mq(big-desktop) {
+    width: 80%;
+    margin: 0 auto;
+  }
+}
+.header_container + main {
+  margin-top: calc(#{$mobile-header-height});
+
+  margin-bottom: 38px;
+  @include mq(tab) {
+    margin-top: calc(#{$tab-header-height} + 10px);
+  }
+}
+.header_container {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: white;
+  z-index: 2;
+  box-shadow: 0px 11px 9px -8px $bg-secondary-color;
+}
+.border {
+  border: 1px solid black;
+}
+.width_full {
+  width: 100%;
+}
+.flexed {
+  display: flex;
+}
+.flexed_ai_center {
+  display: flex;
+  align-items: center;
+}
+.flexed_jc_sa {
+  display: flex;
+  justify-content: space-around;
+}
+
+.flexed_center_all {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flexed_jc_sb_ai_center {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.truncate {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.line_clamp {
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Chrome, Edge, Opera and Firefox */
+}

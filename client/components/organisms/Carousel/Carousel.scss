@@ -1,0 +1,107 @@
+@import "/client/styles/mq-mixin";
+
+.carousel {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  //height: 150px;
+
+  .carousel__button {
+    display: inline-block;
+    border: none;
+    font-size: 36px;
+    color: #545454;
+    background: transparent;
+    position: absolute;
+    z-index: 1;
+    cursor: pointer;
+    &--left {
+      margin-left: 20px;
+    }
+    &--right {
+      right: 0;
+      margin-right: 20px;
+    }
+  }
+
+  .carousel_indicators_wrapper {
+    position: absolute;
+    bottom: 15px;
+    .carousel_indicators {
+      width: 10px;
+      height: 10px;
+      display: inline-block;
+      border-radius: 50%;
+      margin-right: 26px;
+      cursor: pointer;
+      background: #e0e0e0;
+
+      transform: scale(1);
+      transition: transform 0.2s;
+      &--active {
+        background: #8c8c8c;
+        transform: scale(1.2);
+      }
+    }
+  }
+  @include mq(tab) {
+    /* height: 250px; */
+    .carousel__button--left {
+      margin-left: 20px;
+    }
+    .carousel__button--right {
+      margin-right: 20px;
+    }
+  }
+}
+
+.carousel_appear_wrapper {
+  /* position: relative; */
+  /* border: 1px solid black; */
+  width: 100%;
+  height: 150px;
+  /*  height: 100%; */
+  .carousel_appear {
+    position: absolute;
+    /* border: 1px solid black; */
+    height: 100%;
+    width: 100%;
+    visibility: hidden;
+    /* opacity: 0;
+    transform: scale(0); 
+    transition: transform 0.5s ease-in-out;*/
+    &.active {
+      visibility: visible;
+      /* opacity: 1;
+      transform: scale(1); */
+    }
+  }
+
+  @include mq(tab) {
+    height: 200px;
+  }
+  @include mq(desktop) {
+    height: 250px;
+  }
+  /* @include mq(big-desktop) {
+    height: 350px;
+  } */
+}
+
+.carousel_slide_wrapper {
+  /* border: 2px solid red; */
+  overflow-x: hidden;
+  height: 100%;
+  .carousel_slide {
+    /* border: 2px solid rgb(86, 87, 86); */
+    transition: all 500ms ease-in-out;
+    height: 100%;
+
+    width: 90%;
+  }
+  img {
+    border: 2px solid rgb(86, 87, 86);
+    transition: transform 500ms ease-in-out, transform-origin 500ms ease-in-out;
+  }
+}
