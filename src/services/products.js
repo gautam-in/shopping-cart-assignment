@@ -19,23 +19,25 @@ const fetchProducts = () => {
 };
 
 export const postProduct = (id) => {
-  return fetch(`${baseUrl}addToCart/index.post.json/${id}`, {
-    method: "POST",
+  console.log({ id });
+  return fetch(`${baseUrl}addToCart/index.post.json`, {
+    method: "GET",
     headers: {
       "Content-type": "application/json",
+      Accept: "appliation/json",
     },
   })
     .then(handleResponse)
     .then((resp) => {
       console.log({ resp });
       if (resp.isError) {
-        throw new Error("Get products failed");
+        throw new Error("Add products failed");
       } else {
         return resp;
       }
     })
     .catch((err) => {
-      throw new Error(err?.message ?? "Get products failed"); // eslint-disable-line
+      throw new Error(err?.message ?? "Add products failed"); // eslint-disable-line
     });
 };
 

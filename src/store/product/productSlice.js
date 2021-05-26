@@ -3,7 +3,7 @@ import fetchproducts, { postProduct } from "services/products";
 
 // fetch the products
 export const getProducts = createAsyncThunk(
-  "childProfile/getProducts",
+  "productPage/getProducts",
   async () => {
     try {
       const res = await fetchproducts();
@@ -16,8 +16,9 @@ export const getProducts = createAsyncThunk(
 
 // add product
 export const addProduct = createAsyncThunk(
-  "childProfile/addProduct",
+  "productPage/addProduct",
   async (id) => {
+    console.log({ id });
     try {
       const res = await postProduct(id);
       return res;
@@ -31,7 +32,7 @@ const initialState = {
   isLoading: false,
   isError: null,
   products: [],
-  cartItems: []
+  cartItems: [],
 };
 
 const productSlice = createSlice({
