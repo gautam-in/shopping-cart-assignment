@@ -1,12 +1,17 @@
 import React from "react";
 import useDevice from "../../utils/customHooks/useDevices";
 
+import { selectCategoryLabel } from "../../constant";
+
 import "./index.scss";
 
 const Sidebar = ({ categories, selectedCategory, onClick }) => {
   const { isMobile } = useDevice();
   return isMobile ? (
     <select className="select" onChange={(e) => onClick(e.target.value)}>
+      <option key="#001" value="">
+        {selectCategoryLabel}
+      </option>
       {categories.length > 0 &&
         categories.map((singleCategory) => (
           <option key={singleCategory.id} value={singleCategory.id}>
@@ -23,12 +28,11 @@ const Sidebar = ({ categories, selectedCategory, onClick }) => {
             key={singleCategory.id}
           >
             <a
-              className={`nav_link ${
-                Object.keys(selectedCategory).length &&
+              className={`nav_link ${Object.keys(selectedCategory).length &&
                 singleCategory.id === selectedCategory
-                  ? "active"
-                  : ""
-              } ${singleCategory.key}`}
+                ? "active"
+                : ""
+                } ${singleCategory.key}`}
               onClick={(e) => onClick(singleCategory.id)}
               id={singleCategory.id}
             >
