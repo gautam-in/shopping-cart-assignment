@@ -33,12 +33,22 @@ const initialState = {
   isError: null,
   products: [],
   cartItems: [],
+  isCartShow: true,
 };
 
 const productSlice = createSlice({
   name: "product",
   initialState,
-  reducers: {},
+  reducers: {
+    filterProduct: (state, action) => {
+      state.products = state.products.filter(
+        (item) => item.category === action.payload
+      );
+    },
+    toggleCart: (state, action) => {
+      state.isCartShow = action.payload;
+    },
+  },
   extraReducers: {
     [getProducts.pending]: (state) => {
       state.isLoading = true;
@@ -70,5 +80,6 @@ const productSlice = createSlice({
   },
 });
 
-const { reducer } = productSlice;
+const { reducer, actions } = productSlice;
+export const { filterProduct, toggleCart } = actions;
 export default reducer;

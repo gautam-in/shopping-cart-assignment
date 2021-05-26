@@ -8,11 +8,10 @@ export const Container = styled.div`
   font-size: 0.8rem;
   position: fixed;
   top: 0;
-  height: 70px;
+  height: 85px;
   width: 100%;
   background-color: #ffffff;
   z-index: 2;
-  padding-top: 1rem;
   .logo {
     width: 12%;
     margin-bottom: 0.5rem;

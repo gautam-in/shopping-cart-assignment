@@ -1,12 +1,12 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  width: 90px;
-  height: 25px;
+  width: 110px;
   background: lightgray;
   padding: 1rem 0.7rem;
   align-items: center;
   display: flex;
+  cursor: pointer;
   img {
     width: 24px;
     margin-right: 0.2rem;
