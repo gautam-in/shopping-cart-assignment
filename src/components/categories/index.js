@@ -5,6 +5,7 @@ import Button from "../common/button";
 import Image from "../common/image";
 
 import { FetchData } from "../../utils";
+import { getCategoryApi } from "../../services";
 
 import "./index.scss";
 
@@ -13,7 +14,7 @@ const Banner = () => {
   const [categories, setCategories] = useState([]);
 
   useEffect(() => {
-    FetchData("http://localhost:5000/categories/")
+    FetchData(getCategoryApi)
       .then((res) => {
         const categoryList = res
           .sort((a, b) => a.order - b.order)

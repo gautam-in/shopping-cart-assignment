@@ -6,12 +6,13 @@ import Categories from "../../components/categories";
 import "./index.scss";
 
 import { FetchData } from "../../utils";
+import { getBannerApi } from "../../services";
 
 const Home = () => {
   const [offers, setOffers] = useState([]);
 
   const getOffers = () => {
-    FetchData("http://localhost:5000/banners/")
+    FetchData(getBannerApi)
       .then((res) => {
         setOffers(res);
       })
