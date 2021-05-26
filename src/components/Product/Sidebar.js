@@ -1,14 +1,20 @@
 import { memo } from "react";
 import { useSelector } from "react-redux";
-import { Container } from "./Sidebar.styles";
+import { Container, CategoryItem } from "./Sidebar.styles";
 
-const Sidebar = () => {
+const Sidebar = ({ active, changeFilter }) => {
   const { categories } = useSelector((state) => state.home);
-  console.log({ categories });
+  
   return (
     <Container>
       {categories.map((item) => (
-        <div key={item.id}>{item.name}</div>
+        <CategoryItem
+          active={active === item.id}
+          key={item.id}
+          onClick={() => changeFilter(item.id)}
+        >
+          {item.name}
+        </CategoryItem>
       ))}
     </Container>
   );

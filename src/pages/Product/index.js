@@ -1,5 +1,6 @@
-import { useEffect, memo } from "react";
-import { useDispatch } from "react-redux";
+import { useEffect, memo, useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
+
 import { getCategories } from "store/home/homeSlice";
 import { getProducts } from "store/product/productSlice";
 
@@ -9,15 +10,37 @@ import { Container } from "./Product.styles";
 
 const Product = () => {
   const dispatch = useDispatch();
+  const { products } = useSelector((state) => state.product);
+  const [filProducts, setFilProducts] = useState([]);
+  const [activeCategory, setActiveCategory] = useState("");
+
   useEffect(() => {
     dispatch(getCategories());
     dispatch(getProducts());
   }, []);
 
+  useEffect(() => {
+    if (activeCategory != "") {
+      let temp = [];
+      temp = products.filter((item) => item.category === activeCategory);
+      setFilProducts(temp);
+    } else {
+      setFilProducts(products);
+    }
+  }, [products, activeCategory]);
+
+  const changeCategory = (id) => {
+    if (id === activeCategory) {
+      setActiveCategory("");
+      return;
+    }
+    setActiveCategory(id);
+  };
+
   return (
     <Container>
-      <Sidebar />
-      <ProductView />
+      <Sidebar active={activeCategory} changeFilter={changeCategory} />
+      <ProductView product={filProducts} />
     </Container>
   );
 };
