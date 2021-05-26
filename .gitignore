@@ -4,7 +4,12 @@ logs
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+src/components/Products/Products copy.scss
+
 src/components/SignIn copy/
+src/components/Products copy/
+
+
 # Runtime data
 pids
 *.pid

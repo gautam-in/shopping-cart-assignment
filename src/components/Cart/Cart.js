@@ -4,7 +4,7 @@ import {withRouter} from "react-router-dom"
 import { useSelector, useDispatch } from "react-redux"
 import Navbar from "../Navbar/Navbar"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faPlusSquare, faMinusSquare, faTimes, faArrowLeft } from "@fortawesome/free-solid-svg-icons"
+import { faPlusSquare, faMinusSquare, faTimes, faCaretRight } from "@fortawesome/free-solid-svg-icons"
 import "./cart.scss"
 function Cart(props) {
     const dispatch = useDispatch()
@@ -67,9 +67,10 @@ const clickHandler=()=>{
                 <div className="style-checkout">
                     <span > Promo code can be applied on payment page .</span>
                     <button className="style-button">
-                       {cartItems.length>0? <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                       {cartItems.length>0? <div style={{ display: 'flex', justifyContent: 'space-between' ,position:'relative'}}>
                         <div onClick={clickHandler}>proceed to checkout</div><div>Rs.{calculateTotalPrice()}
-                        <FontAwesomeIcon icon={faArrowLeft} /></div></div>:
+                        {"  "}
+                        <FontAwesomeIcon icon={faCaretRight} /></div></div>:
                         <div onClick={clickHandler}>Start Shopping</div> }   
                     </button>
 

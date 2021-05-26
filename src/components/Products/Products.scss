@@ -1,63 +1,92 @@
 
-$mycolor:#8B0000;
-.left{
-width: 16%;
-float: left;
-background-color: #d3d3d3;
-height: 250vw;
+$red:#8B0000;
 
+.products{
+    display: flex;
+   
+
+ }
+ 
+
+.right-pane{
+    display: flex;
+    flex-wrap: wrap;
+    // flex-wrap: wrap;
+    flex: 8;
+    .each-item {
+        /* percent per item in row. 
+        33% = limit to 3 per row. */
+        flex-basis: 32%; 
+        margin: 5px;
+        height: auto;
+       
+      }
+    .column {
+        
+    margin: 5px;
+  
+   h3{
+       display: inline;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 1.17em;
+    width: auto;
+    font-weight: bold;
+   }
+    //    flex-basis: 24%;
+    //    padding: 10px;
+       height: 500px; /* Should be removed. Only for demonstration */
+     }
+     .product{
+     width:200px;
+     }
+   
+     
+    
+     .item-buy{
+         margin: 4px;
+         display: flex;
+        justify-content: space-around;
+         .mrp{
+           
+          margin-top: 20px; 
+        }
+        .buynow{
+            background-color: $red;
+            color: white;
+            padding: 10px;
+            margin-right: 20px;
+        }
+     }
+   
+     .description{
+         background-color: #d3d3d3d3;
+         padding: 5px;
+         width: 20vw;
+     }
 }
+.left-pane{
+    flex:2;
+    
+     background-color: #d3d3d3;
+   
+     .align{
+         border-bottom: 1px solid black;
+         margin: 10px;
+         text-align: center;
+         cursor: pointer;
+         pointer-events: auto;
+      }
+      .highlight:hover,.selected-category{
+          color: white;
+          background-color: $red;
+ 
+      }
+     
+     }
 
-.right{
-    float: left;
-    margin-left: 20px;
 
-}
 
-.right::after{
-    content: "";
-  display: table;
-  clear: both;
-}
-.main2{
-    width: 100%;
-}
-
-.align{
-   border-bottom: 1px solid black;
-   margin: 10px;
-   text-align: center;
-   cursor: pointer;
-   pointer-events: auto;
-}
-
-.column {
-    float: left;
-    width: 18%;
-    padding: 10px;
-    height: 500px; /* Should be removed. Only for demonstration */
-  }
-  .product{
-    width:200px;
-  }
-
-  .mrp{
-      float: left;
-      margin-top: 6px;
-  }
-  .buynow{
-      background-color: $mycolor;
-      color: white;
-      padding: 10px
-  }
-  .wrapper{
-      margin: 10px;
-  }
-
-  .description{
-      background-color: #d3d3d3d3;
-      padding: 5px;
-  }
 
   .cart-align{
     z-index:1000;
@@ -68,3 +97,10 @@ height: 250vw;
     height:80vw;
     border:0.5px solid black
   }
+ 
+//   .parent {
+//     display: flex;
+//     flex-wrap: wrap;
+//   }
+
+  
