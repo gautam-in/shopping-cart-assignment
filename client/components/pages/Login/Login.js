@@ -36,7 +36,7 @@ function Login() {
   };
 
   return (
-    <div className="flexed login">
+    <div className="flexed login" data-test="component-login">
       <div>
         <h1>Login </h1>
         <h2>Get access to your Orders, Wishlist and Recommendations</h2>

@@ -47,6 +47,7 @@ function Carousel({ offers = [] }) {
             <>
               {/* Carousel left controls */}
               <button
+                data-test="previous-button"
                 className="carousel__button carousel__button--left"
                 onClick={prevCarouselImg}
               >
@@ -54,6 +55,7 @@ function Carousel({ offers = [] }) {
               </button>
               {/* Carousel right controls */}
               <button
+                data-test="next-button"
                 className="carousel__button carousel__button--right"
                 onClick={nextCarouselImg}
               >
@@ -74,6 +76,7 @@ function Carousel({ offers = [] }) {
                 }
               >
                 <img
+                  data-test={"carousel-image-" + i}
                   src={offer.bannerImageUrl}
                   alt={offer.bannerImageAlt}
                   width="100%"

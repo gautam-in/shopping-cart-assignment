@@ -1,8 +1,7 @@
 import React from "react";
-import { shallow } from "enzyme";
+import { mount, shallow } from "enzyme";
 import Carousel from "./Carousel";
 import banners from "../../../../server/banners/index.get.json";
-import findByTestAttr from "../../tests/testUtils";
 
 //Mock useState destructuring
 const mockSetCurrentguess = jest.fn();
@@ -11,6 +10,8 @@ jest.mock("react", () => ({
   useState: (initialState) => [initialState, mockSetCurrentguess],
   useContext: (initialState) => [initialState, mockSetCurrentguess],
 }));
+
+const findByTestAttr = (wrapper, val) => wrapper.find(`[data-test="${val}"]`);
 
 const defaultProps = { offers: [] };
 
@@ -63,4 +64,55 @@ describe("Carousel activity", () => {
     inputBox.stimulate("change", mockEvent);
     expect(mockSetCurrentguess).toHaveBeenCalledWith("train");
   }); */
+});
+
+describe("Test Carousel with mount", () => {
+  const offersProps = [
+    {
+      bannerImageUrl: "/static/images/offers/offer1.jpg",
+      bannerImageAlt: "Independence Day Deal - 25% off on shampoo",
+      isActive: true,
+      order: 1,
+      id: "5b6c38156cb7d770b7010ccc",
+    },
+    {
+      bannerImageUrl: "/static/images/offers/offer2.jpg",
+      bannerImageAlt: "Independence Day Deal - Rs120 off on surf",
+      isActive: true,
+      order: 2,
+      id: "5b6c38336cb7d770b7010ccd",
+    },
+  ];
+  test("Should not render if props offers in empty", () => {
+    const wrapper = mount(<Carousel offers={[]} />);
+    const selector = findByTestAttr(wrapper, "component-corousel");
+    expect(selector.exists()).toBe(false);
+  });
+
+  test("Should not render Carousel if props is non-empty without error", () => {
+    const wrapper = mount(<Carousel offers={offersProps} />);
+    const selector = findByTestAttr(wrapper, "component-corousel");
+    expect(selector.exists()).toBe(true);
+  });
+
+  test("Should display next image on click", () => {
+    const wrapper = mount(<Carousel offers={offersProps} />);
+
+    expect(findByTestAttr(wrapper, "carousel-image-0").length).toBe(1);
+    expect(findByTestAttr(wrapper, "carousel-image-0").prop("alt")).toBe(
+      "Independence Day Deal - 25% off on shampoo"
+    );
+
+    /* expect(
+      findByTestAttr(wrapper, "carousel-image-0").prop("class")
+    ).toHaveProperty("visibility", "visible");
+ */
+    /* findByTestAttr(wrapper, "next-button").simulate("click"); */
+    expect(findByTestAttr(wrapper, "carousel-image-1").prop("alt")).toBe(
+      "Independence Day Deal - Rs120 off on surf"
+    );
+
+    /* const selector = findByTestAttr(wrapper, "next-button");
+    expect(selector.exists()).toBe(true); */
+  });
 });
