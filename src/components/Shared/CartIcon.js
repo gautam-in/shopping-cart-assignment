@@ -6,13 +6,13 @@ import Cart from "static/images/cart.svg";
 
 const CartIcon = () => {
   const dispatch = useDispatch();
-  const { cartItems } = useSelector((state) => state.product);
+  const { totalProducts } = useSelector((state) => state.product);
   const openCart = () => dispatch(toggleCart(true));
 
   return (
     <Container onClick={openCart}>
       <img src={Cart} alt="cart-icon" />
-      <span>{cartItems.length} items</span>
+      <span>{totalProducts} items</span>
     </Container>
   );
 };

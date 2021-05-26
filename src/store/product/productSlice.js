@@ -17,11 +17,14 @@ export const getProducts = createAsyncThunk(
 // add product
 export const addProduct = createAsyncThunk(
   "productPage/addProduct",
-  async (id) => {
-    console.log({ id });
+  async (data) => {
     try {
-      const res = await postProduct(id);
-      return res;
+      const res = await postProduct(data.id);
+      return {
+        res,
+        data,
+        id: data.id,
+      };
     } catch (error) {
       throw new Error(error?.message ?? "Get products failed");
     }
@@ -32,18 +35,26 @@ const initialState = {
   isLoading: false,
   isError: null,
   products: [],
-  cartItems: [],
-  isCartShow: true,
+  cartItems: {},
+  isCartShow: false,
+  totalProducts: 0,
+  totalPrice: 0,
 };
 
 const productSlice = createSlice({
   name: "product",
   initialState,
   reducers: {
-    filterProduct: (state, action) => {
-      state.products = state.products.filter(
-        (item) => item.category === action.payload
-      );
+    removeProduct: (state, action) => {
+      const id = action.payload;
+      const item = state.cartItems[id];
+      if (item.totalItem > 1) {
+        state.cartItems[id].totalItem = state.cartItems[id].totalItem - 1;
+      } else {
+        delete state.cartItems[id];
+      }
+      state.totalProducts = state.totalProducts - 1;
+      state.totalPrice = state.totalPrice - item.price;
     },
     toggleCart: (state, action) => {
       state.isCartShow = action.payload;
@@ -69,8 +80,20 @@ const productSlice = createSlice({
       state.isError = null;
     },
     [addProduct.fulfilled]: (state, action) => {
+      const id = action.payload.id;
+      const data = action.payload.data;
       state.isLoading = false;
-      state.cartItems.push(action.productId);
+      if (state.cartItems[id] != undefined) {
+        state.cartItems[id].totalItem = state.cartItems[id].totalItem + 1;
+      } else {
+        state.cartItems[id] = data;
+        state.cartItems[id] = {
+          ...data,
+          totalItem: 1,
+        };
+      }
+      state.totalProducts = state.totalProducts + 1;
+      state.totalPrice = state.totalPrice + data.price;
       state.isError = null;
     },
     [addProduct.rejected]: (state, action) => {
@@ -81,5 +104,5 @@ const productSlice = createSlice({
 });
 
 const { reducer, actions } = productSlice;
-export const { filterProduct, toggleCart } = actions;
+export const { removeProduct, toggleCart } = actions;
 export default reducer;

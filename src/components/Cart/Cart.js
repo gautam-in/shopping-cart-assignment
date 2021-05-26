@@ -8,23 +8,23 @@ import CartFooter from "./CartFooter";
 
 const Cart = () => {
   const dispatch = useDispatch();
-  const { isCartShow } = useSelector((state) => state.product);
+  const { totalProducts, totalPrice, cartItems } = useSelector(
+    (state) => state.product
+  );
 
   const closeCart = () => {
     dispatch(toggleCart(false));
   };
-  console.log({ isCartShow });
-  const a = 5;
   return (
     <Container>
       <div className="wrapper">
-        <CartHeader closeCart={closeCart} totalItems={23} />
-        {a > 5 ? (
+        <CartHeader closeCart={closeCart} totalItems={totalProducts} />
+        {totalProducts < 1 ? (
           <NoItem closeCart={closeCart} />
         ) : (
           <>
-            <CartBody />
-            <CartFooter closeCart={closeCart} totalprice={187} />
+            <CartBody data={cartItems} />
+            <CartFooter closeCart={closeCart} totalprice={totalPrice} />
           </>
         )}
       </div>

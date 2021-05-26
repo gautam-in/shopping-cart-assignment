@@ -7,10 +7,8 @@ import { Container } from "./Item.styles";
 const Item = ({ data }) => {
   const dispatch = useDispatch();
   const image = require(`static/${data.imageURL}`).default;
-  // console.log({ data });
   const addToCart = () => {
-    
-    dispatch(addProduct(data.id));
+    dispatch(addProduct(data));
   };
   return (
     <Container>
