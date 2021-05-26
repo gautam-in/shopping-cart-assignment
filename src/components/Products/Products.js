@@ -64,7 +64,7 @@ export default function Products() {
         apiCall()
     }, [])
     const options=filterItems.map(category=><option
-        data-catid={JSON.stringify(category)}
+        data-catid={category.id}
                 className={selctecdCategory === category.name && category.visited ? "selected-category align" : "align highlight"}
                 >{category.name}</option>)
     return (
@@ -79,7 +79,7 @@ export default function Products() {
                         className={selctecdCategory === category.name && category.visited ? "selected-category align" : "align highlight"}
                         onClick={() => filterProducts(category)}>{category.name}</div>)}
                 </div>
-                {/* <div><select onChange={clickHandler} >{options}</select></div> */}
+                <div><select onChange={clickHandler} >{options}</select></div>
                 <div className="right-pane">
 
                     {/* <div class="parent"> */}

@@ -5,7 +5,8 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 src/components/Products/Products copy.scss
-
+src/components/Navbar/Navbar copy.css
+src/components/Navbar/Navbar copy.js
 src/components/SignIn copy/
 src/components/Products copy/
 

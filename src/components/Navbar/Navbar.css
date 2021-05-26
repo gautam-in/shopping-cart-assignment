@@ -41,11 +41,11 @@
     text-align:center;
 }
 
-.divide1{
+.top-container{
     height: 18px;
     margin-top: 10px;
 }
-.divide2{
+.bottom-container{
     height: 28px;
     background-color: #d3d3d3;
     padding:10px;
@@ -54,7 +54,7 @@
     color: #D58E10;
     text-decoration: none;
 }
-.divide2 svg{
+.bottom-container svg{
     color: #8b0000;
 }
 
