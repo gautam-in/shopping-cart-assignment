@@ -2,6 +2,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { toggleCart } from "store/product/productSlice";
 import { Container } from "./Cart.styles";
 import CartHeader from "./CartHeader";
+import NoItem from "./NoItem";
 import CartBody from "./CartBody";
 import CartFooter from "./CartFooter";
 
@@ -13,12 +14,19 @@ const Cart = () => {
     dispatch(toggleCart(false));
   };
   console.log({ isCartShow });
+  const a = 5;
   return (
     <Container>
       <div className="wrapper">
         <CartHeader closeCart={closeCart} totalItems={23} />
-        <CartBody />
-        <CartFooter closeCart={closeCart} totalprice={187} />
+        {a > 5 ? (
+          <NoItem closeCart={closeCart} />
+        ) : (
+          <>
+            <CartBody />
+            <CartFooter closeCart={closeCart} totalprice={187} />
+          </>
+        )}
       </div>
     </Container>
   );

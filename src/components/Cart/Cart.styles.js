@@ -23,6 +23,5 @@ export const Container = styled.div`
     position: fixed;
     bottom: 0;
     right: 10%;
-    overflow-x: hidden;
   }
 `;
