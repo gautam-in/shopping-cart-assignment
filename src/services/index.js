@@ -8,9 +8,6 @@ export const checkLoggedIn = () => {
 
 // All Api required for the "MY BAZAR APPLICATION"
 
-const process = process.NODE_ENV;
-debugger
-
 // const baseUrl = "http://localhost:5000";
 const baseUrl = "https://sabka-bazar-server.netlify.app/.netlify/functions/api";
 
