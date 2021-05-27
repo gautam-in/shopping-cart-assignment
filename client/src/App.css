@@ -590,6 +590,13 @@ footer.dialog-footer {
   display: block !important;
 }
 
+.not-found-section {
+  text-align: center;
+  height: 100%;
+}
+
+/* styling for tablet */
+
 @media screen and (max-width: 1024px) {
   .header-wrapper {
     width: 100%;
@@ -745,6 +752,8 @@ footer.dialog-footer {
   }
 
 }
+
+/* styling for mobile */
 
 @media screen and (max-width: 480px) {
   .header-wrapper {
