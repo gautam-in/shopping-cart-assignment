@@ -7,6 +7,7 @@ export const Container = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  border-bottom: 1px solid #d3d3d3;
   .title {
     font-size: 0.8rem;
     font-weight: 600;
@@ -18,5 +19,12 @@ export const Container = styled.div`
   .close-cart {
     font-size: 0.8rem;
     cursor: pointer;
+  }
+  @media (max-width: 990px) {
+    background-color: #ffffff;
+    color: #000000;
+    .close-cart {
+      display: none;
+    }
   }
 `;

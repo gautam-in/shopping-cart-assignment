@@ -4,6 +4,10 @@ export const Container = styled.div`
   display: flex;
   justify-content: center;
   margin-bottom: 2rem;
+  @media (max-width: 650px) {
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 export const RightBody = styled.div`
@@ -21,5 +25,13 @@ export const RightBody = styled.div`
   }
   .confirm-btn {
     margin-top: 2rem;
+  }
+  @media (max-width: 990px) {
+    margin-left: 2rem;
+    width: 35%;
+  }
+  @media (max-width: 650px) {
+    margin-left: 0rem;
+    width: 80%;
   }
 `;

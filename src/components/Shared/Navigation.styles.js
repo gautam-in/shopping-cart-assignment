@@ -10,4 +10,7 @@ export const Container = styled.div`
     font-weight: 600;
     margin-right: 1rem;
   }
+  @media (max-width: 650px) {
+    display: none;
+  }
 `;

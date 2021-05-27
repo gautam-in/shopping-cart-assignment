@@ -24,4 +24,12 @@ export const Container = styled.div`
     bottom: 0;
     right: 10%;
   }
+  @media (max-width: 990px) {
+    background-color: transparent;
+    pointer-events: none;
+    .wrapper {
+      width: 100%;
+      right: 0;
+    }
+  }
 `;

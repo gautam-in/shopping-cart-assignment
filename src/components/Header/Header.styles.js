@@ -13,7 +13,19 @@ export const Container = styled.div`
   background-color: #ffffff;
   z-index: 2;
   .logo {
-    width: 12%;
+    width: 9rem;
     margin-bottom: 0.5rem;
+  }
+  @media (max-width: 990px) {
+    justify-content: space-between;
+    .logo {
+      width: 8rem;
+    }
+  }
+  @media (max-width: 650px) {
+    height: auto;
+    .logo {
+      width: 6rem;
+    }
   }
 `;

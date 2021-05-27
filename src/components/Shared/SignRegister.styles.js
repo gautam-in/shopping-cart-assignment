@@ -11,4 +11,10 @@ export const Container = styled.div`
     color: #000000;
     margin-right: 1rem;
   }
+  @media (max-width: 990px) {
+    right: 0;
+  }
+  @media (max-width: 650px) {
+    display: none;
+  }
 `;
