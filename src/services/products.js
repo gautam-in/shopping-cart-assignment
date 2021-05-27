@@ -1,9 +1,9 @@
 import handleResponse from "helpers/handleAPIResponse";
 
-const baseUrl = "http://localhost:3000/servers/";
+const baseUrl = "http://localhost:5000/";
 
 const fetchProducts = () => {
-  return fetch(`${baseUrl}products/index.get.json`)
+  return fetch(`${baseUrl}products`)
     .then(handleResponse)
     .then((resp) => {
       console.log({ resp });
@@ -20,10 +20,10 @@ const fetchProducts = () => {
 
 export const postProduct = (id) => {
   console.log({ id });
-  return fetch(`${baseUrl}addToCart/index.post.json`, {
-    method: "GET",
+  return fetch(`${baseUrl}addToCart`, {
+    method: "POST",
     headers: {
-      "Content-type": "application/json",
+      "Content-type": "application/x-www-form-urlencoded; charset=UTF-8",
       Accept: "appliation/json",
     },
   })

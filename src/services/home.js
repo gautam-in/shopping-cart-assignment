@@ -1,9 +1,9 @@
 import handleResponse from "helpers/handleAPIResponse";
 
-const baseUrl = "http://localhost:3000/servers/";
+const baseUrl = "http://localhost:5000/";
 
 const fetchOffers = () => {
-  return fetch(`${baseUrl}banners/index.get.json`)
+  return fetch(`${baseUrl}banners`)
     .then(handleResponse)
     .then((resp) => {
       console.log({ resp });
@@ -19,7 +19,7 @@ const fetchOffers = () => {
 };
 
 export const fetchCategories = () => {
-  return fetch(`${baseUrl}categories/index.get.json`)
+  return fetch(`${baseUrl}categories`)
     .then(handleResponse)
     .then((resp) => {
       if (resp.isError) {

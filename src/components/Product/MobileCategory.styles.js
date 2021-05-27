@@ -21,4 +21,7 @@ export const Container = styled.div`
   .MuiSelect-icon {
     color: #ffffff;
   }
+  @media (min-width: 650px) {
+    display: none;
+  }
 `;
