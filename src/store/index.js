@@ -15,7 +15,7 @@ middleware.push(logger);
 
 const combinedReducer = combineReducers({
   home: homeReducer,
-  product: productReducer
+  product: productReducer,
 });
 
 const rootReducer = (state, action) => {

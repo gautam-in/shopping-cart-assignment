@@ -1,24 +1,20 @@
 import { memo } from "react";
 import TextField from "@material-ui/core/TextField";
 import { useForm, Controller } from "react-hook-form";
-import { useHistory } from "react-router-dom";
 
 import LeftCard from "components/Shared/LeftCard";
 import CustomButton from "components/Shared/CustomButton";
 import { Container, RightBody } from "./LoginBody.styles";
+import { signIn } from "helpers/saveUser";
 
 const LoginBody = () => {
-  const history = useHistory();
   const {
     control,
     formState: { errors },
     handleSubmit,
   } = useForm();
 
-  const onSubmit = (data) => {
-    console.log(data);
-    history.replace("/home");
-  };
+  const onSubmit = (data) => signIn(data);
 
   return (
     <Container>
