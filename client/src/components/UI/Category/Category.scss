@@ -1,7 +1,7 @@
 @import "../../../styles/Colors.scss";
 .categoryContainer {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   height: 280px;
   align-items: center;
   border-bottom: solid 0.5px $grey;
@@ -13,4 +13,20 @@
   text-align: center;
   flex-direction: column;
   align-items: center;
+}
+.categoryImage {
+  width: 300px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+@media (max-width: 690px) {
+  .categoryImage {
+    width: 200px;
+  }
+  .categoryContainer {
+    height: 300px;
+  }
 }

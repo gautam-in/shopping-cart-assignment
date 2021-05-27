@@ -7,7 +7,8 @@
   margin: auto;
   padding: 20px;
 }
-.inputContainer {
+
+.loginForm {
   width: 60%;
 }
 .formHeadingContainer {
@@ -29,15 +30,16 @@
 }
 
 .formField {
+  color: $black;
   font-family: inherit;
   width: 60%;
   border: 0;
   border-bottom: 2px solid $darkgrey;
   outline: 0;
-  color: $white;
   padding: 7px 0;
   background: transparent;
   transition: border-color 0.2s;
+  background-color: $white !important;
 
   &::placeholder {
     color: transparent;
@@ -74,6 +76,10 @@
   border-image: linear-gradient(to right, $blue, $green);
   border-image-slice: 1;
 }
+.error {
+  color: $red;
+  font-weight: 600;
+}
 /* reset input */
 .formField {
   &:required,
@@ -85,7 +91,8 @@
   .formContainer {
     display: block;
   }
-  .inputContainer {
+
+  .loginForm {
     width: 100%;
   }
 }

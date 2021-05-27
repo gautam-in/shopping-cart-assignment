@@ -7,7 +7,8 @@
   margin: auto;
   padding: 20px;
 }
-.inputContainer {
+
+.registerForm {
   width: 60%;
 }
 .formHeadingContainer {
@@ -34,7 +35,7 @@
   border: 0;
   border-bottom: 2px solid $darkgrey;
   outline: 0;
-  color: $white;
+  color: $black;
   padding: 7px 0;
   background: transparent;
   transition: border-color 0.2s;
@@ -85,7 +86,8 @@
   .formContainer {
     display: block;
   }
-  .inputContainer {
-    width: 100%;
+
+  .registerForm {
+    width: 60%;
   }
 }

@@ -4,4 +4,5 @@ export const LABEL = {
   HOME: "Home",
   PRODUCTS: "Products",
   COPYRIGHT: "Copyright © 2011-2018 Sabka Bazaar Grocery Supplies Pvt Ltd",
+  LOGOUT: "Logout",
 };

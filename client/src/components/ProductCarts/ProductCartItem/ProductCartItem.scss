@@ -1,0 +1,28 @@
+@import "../../../styles/Colors.scss";
+@import "../../../styles/Fonts.scss";
+.itemContainer {
+  display: flex;
+  padding: 20px;
+  background-color: $white;
+  align-items: center;
+  margin-bottom: 10px;
+  font-size: map-get($fontSize, small);
+  font-weight: map-get($fontWeight, bold);
+  .priceItem {
+    position: absolute;
+    right: 20px;
+    margin-top: 13%;
+  }
+}
+.itemDescription {
+  padding-left: 16px;
+  span {
+    margin: 0px 10px;
+  }
+}
+.buttonAction {
+  background-color: $primary;
+  color: $white;
+  height: 20px;
+  width: 20px;
+}

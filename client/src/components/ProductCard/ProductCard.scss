@@ -1,0 +1,53 @@
+@import "../../styles/Colors.scss";
+@import "../../styles/Fonts.scss";
+.productCard {
+  padding: 10px;
+  width: 200px;
+  border-bottom: dashed $darkgrey 0.5px;
+}
+.productName {
+  min-height: 72px;
+}
+.productDescription {
+  background-color: $grey;
+  padding: 10px;
+  box-sizing: border-box;
+  height: 90px;
+  font-size: map-get($fontSize, small);
+  font-weight: map-get($fontWeight, semibold);
+  letter-spacing: 0.3px;
+  line-height: 17px;
+  margin-top: 10px;
+  .desc {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 4; /* number of lines to show */
+    -webkit-box-orient: vertical;
+  }
+}
+.productPriceContainer {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 20px;
+}
+.productPrice {
+  margin-top: 5px;
+}
+.productPriceButton {
+  background-color: $primary;
+  color: $white;
+  padding: 10px 20px;
+  border: none;
+}
+@media (min-width: 600px) and (max-width: 767px) {
+  .productCard {
+    width: 250px;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .productCard {
+    width: 100%;
+    padding: 50px;
+  }
+}

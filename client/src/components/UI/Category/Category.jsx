@@ -1,8 +1,17 @@
 import React from "react";
+import { withRouter } from "react-router";
 import Button from "../Button/Button";
+
 import "./Category.scss";
-export default function Category(props) {
+function Category(props) {
   const { categories } = props;
+
+  const handleClick = (data) => {
+    props.history.push({
+      pathname: `/products`,
+      data,
+    });
+  };
   return categories.map((category, index) => {
     return (
       <div
@@ -12,15 +21,19 @@ export default function Category(props) {
       >
         <img
           src={category.imageUrl}
-          style={{ width: "300px" }}
+          className="categoryImage"
           alt="Not found"
         />
         <div className="info">
           <h2>{category.name}</h2>
           <div style={{ marginBottom: "10px" }}>{category.description}</div>
-          <Button text={`Explore ${category.key}`} />
+          <Button
+            text={`Explore ${category.key}`}
+            onClick={() => handleClick(category.id)}
+          />
         </div>
       </div>
     );
   });
 }
+export default withRouter(Category);

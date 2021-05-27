@@ -7,10 +7,12 @@ function Button(props) {
       class={cx(classes.button, "btn", props.className)}
       onClick={props.onClick}
       disabled={props.disabled}
+      type={props.type}
+      id="submit"
     >
-      <label className={cx(classes.label, props.labelClassName)}>
+      <span className={cx(classes.label, props.labelClassName)}>
         {props.text}
-      </label>
+      </span>
     </button>
   );
 }

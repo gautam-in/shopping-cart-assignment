@@ -1,14 +1,31 @@
 import React from "react";
 import "./Header.scss";
-import { Link } from "react-router-dom";
-import { ReactComponent as Cart } from "../../assets/images/cart.svg";
+import { Link, withRouter } from "react-router-dom";
+import { ReactComponent as CartLogo } from "../../assets/images/cart.svg";
 import Logo from "../../assets/images/logo_2x.png";
 import ApplicationUrls from "../../router/ApplicationRoutes";
 import { LABEL } from "../../constants/constant";
+import { connect } from "react-redux";
+import Cart from "../../containers/Cart/Cart";
+function Header(props) {
+  const { cartDialog, setCartDialog, cart } = props;
+  const [user, setUser] = React.useState(null);
+  React.useState(() => {
+    const user = JSON.parse(localStorage.getItem("registered_user"));
+    setUser(user);
+  }, [JSON.parse(localStorage.getItem("registered_user"))]);
 
-export default function Header() {
+  const handleLogout = () => {
+    localStorage.removeItem("registered_user");
+    props.history.push("/");
+    window.location.reload();
+  };
+  console.log(localStorage.getItem("registered_user"));
   return (
-    <header>
+    <header className="header">
+      {cartDialog && (
+        <Cart setCartDialog={setCartDialog} cartDialog={cartDialog} />
+      )}
       <div className="container">
         <div className="logo">
           <img src={Logo} alt="Sabka Bazaar" />
@@ -21,22 +38,32 @@ export default function Header() {
             <Link to="/products">Products</Link>
           </span>
         </nav>
-        <div style={{ position: "absolute", right: "50px" }}>
-          <div className={"cartLogoContainer"}>
-            <nav className={"text"}>
-              <span>
-                <Link to={ApplicationUrls.LOGIN}>{LABEL.SIGNIN}</Link>
-              </span>
+        <div className="cartLogoC">
+          <div className="cartLogoContainer">
+            <nav className="text">
+              {user && <span>HI! {user.first_name}</span>}
+              {user && (
+                <span>
+                  <Link onClick={handleLogout}>{LABEL.LOGOUT}</Link>
+                </span>
+              )}
+              {!user && (
+                <span>
+                  <Link to={ApplicationUrls.LOGIN}>{LABEL.SIGNIN}</Link>
+                </span>
+              )}
 
-              <span>
-                <Link to={ApplicationUrls.REGISTER}>{LABEL.REGISTER}</Link>
-              </span>
+              {!user && (
+                <span>
+                  <Link to={ApplicationUrls.REGISTER}>{LABEL.REGISTER}</Link>
+                </span>
+              )}
             </nav>
-            <div className={"cartIcon"}>
+            <div className="cartIcon" onClick={() => setCartDialog(true)}>
               <button className="cartbtn">
-                <Cart name="cartButton" fill="#e83583" />
+                <CartLogo name="cartButton" fill="#e83583" />
               </button>
-              <div>0 items</div>
+              <div>{props.count} items</div>
             </div>
           </div>
         </div>
@@ -44,3 +71,9 @@ export default function Header() {
     </header>
   );
 }
+const mapStateToProps = (store) => {
+  return {
+    count: store.count,
+  };
+};
+export default withRouter(connect(mapStateToProps, null)(Header));

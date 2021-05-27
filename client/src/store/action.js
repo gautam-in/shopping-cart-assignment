@@ -1,8 +1,9 @@
 export const initializeCart = (data) => {
   return (dispatch) => {
-    return dispatch(
-      addCartItem({ type: "ADD_CART_ITEM", payload: { ...data, qty: 1 } })
-    );
+    return dispatch({
+      type: "ADD_CART_ITEM",
+      payload: { ...data, quantity: 1 },
+    });
   };
 };
 
@@ -20,6 +21,6 @@ export const handleDecrement = (payload) => {
 
 export const handleReset = () => {
   return (dispatch) => {
-    return dispatch({ type: "RESET_CART", payload });
+    return dispatch({ type: "RESET_CART" });
   };
 };

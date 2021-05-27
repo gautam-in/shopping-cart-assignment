@@ -1,6 +1,17 @@
 @import "../../styles/Colors.scss";
 @import "../../styles/Fonts.scss";
 
+.header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  height: 100px;
+  background-color: $white;
+  justify-content: space-between;
+  z-index: 100;
+  margin-bottom: 10px;
+}
+
 .container {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
   display: flex;
@@ -27,6 +38,7 @@
     display: flex;
     justify-content: center;
     padding: 10px;
+    cursor: pointer;
     button {
       border-color: $grey;
       outline-color: $grey;
@@ -62,10 +74,14 @@
       color: $primary;
     }
   }
-
+  .cartLogoC {
+    position: absolute;
+    right: 20px;
+    top: 13px;
+  }
   .cartLogoContainer {
     display: flex;
-    width: 100px;
+    width: 110px;
     flex-direction: column;
     justify-content: space-between;
     span {
@@ -122,6 +138,10 @@
       > div {
         width: max-content;
       }
+    }
+    .cartLogoC {
+      right: 0px;
+      top: 0px;
     }
   }
 }
