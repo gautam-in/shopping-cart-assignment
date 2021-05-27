@@ -1,7 +1,12 @@
 import React from "react";
 import TextInput from "../common/TextInput";
 import { useForm } from "react-hook-form";
-import { emailValidation } from "../../utils/validationRules";
+import {
+  emailValidation,
+  firstName,
+  lastName,
+  password,
+} from "../../utils/validationRules";
 import "./loginsignUp.scss";
 import { useDispatch } from "react-redux";
 import { signUp } from "../../redux/auth/actionCreator";
@@ -17,6 +22,11 @@ function SignUp() {
   const dispatch = useDispatch();
 
   const onSubmit = (data) => {
+    if (data.password !== data.confirmPassword) {
+      alert("Your Password and Confirm password are not same");
+      return;
+    }
+
     dispatch(signUp(data));
     history.push("/login");
   };
@@ -31,33 +41,15 @@ function SignUp() {
           type="text"
           name="firstName"
           label="First Name"
-          rules={{
-            minLength: {
-              value: 2,
-              message: `Your  First Name is too Short`,
-            },
-            maxLength: {
-              value: 20,
-              message: `Your  First Name is too Short`,
-            },
-          }}
+          rules={firstName}
           register={register}
           errors={errors}
         />
         <TextInput
           type="text"
-          name="LastName"
+          name="lastName"
           label="Last Name"
-          rules={{
-            minLength: {
-              value: 2,
-              message: "Your Last Name is too Short",
-            },
-            maxLength: {
-              value: 20,
-              message: "Your Last Name is too Big",
-            },
-          }}
+          rules={lastName}
           register={register}
           errors={errors}
         />
@@ -73,12 +65,7 @@ function SignUp() {
           type="password"
           name="password"
           label="Password"
-          rules={{
-            minLength: {
-              value: 5,
-              message: "Your Password is too Short",
-            },
-          }}
+          rules={password}
           register={register}
           errors={errors}
         />
@@ -86,12 +73,7 @@ function SignUp() {
           type="password"
           name="confirmPassword"
           label="Confirm Password"
-          rules={{
-            minLength: {
-              value: 5,
-              message: "Your Password is too Short",
-            },
-          }}
+          rules={password}
           register={register}
           errors={errors}
         />

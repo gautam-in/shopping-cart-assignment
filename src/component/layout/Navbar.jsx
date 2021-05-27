@@ -1,13 +1,8 @@
-import React, { Suspense, useState, lazy } from "react";
+import React, { Suspense, useState } from "react";
+import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
 import "./layout.scss";
 const Cart = React.lazy(() => import("../common/Cart"));
-const Home = lazy(() => import("../home/Home"));
-const Product = lazy(() => import("../product/Product"));
-const wildRoute = lazy(() => import("../common/wildRoute"));
-const Login = lazy(() => import("../authentication/Login"));
-const SignUp = lazy(() => import("../authentication/SignUp"));
 
 function Navbar() {
   const [cartSatus, setcartSatus] = useState(false);
@@ -18,7 +13,7 @@ function Navbar() {
     (state) => state.getCartDetail.cartItems.length
   );
   return (
-    <Router>
+    <>
       <nav className="app-navbar">
         <div className="app-header">
           <div className="app-block left">
@@ -69,22 +64,7 @@ function Navbar() {
           <Cart status={openCart} />
         </Suspense>
       )}
-      <Suspense
-        fallback={
-          <div className="loader-block">
-            <div className="loader"></div>
-          </div>
-        }
-      >
-        <Switch>
-          <Route exact path="/" component={Home} />
-          <Route path="/product" component={Product} />
-          <Route path="/login" component={Login} />
-          <Route path="/signUp" component={SignUp} />
-          <Route path="*" exact={true} component={wildRoute} />
-        </Switch>
-      </Suspense>
-    </Router>
+    </>
   );
 }
 

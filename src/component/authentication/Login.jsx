@@ -1,7 +1,7 @@
 import React from "react";
 import "./loginsignUp.scss";
 import TextInput from "../common/TextInput";
-import { emailValidation } from "../../utils/validationRules";
+import { emailValidation, password } from "../../utils/validationRules";
 import { useForm } from "react-hook-form";
 import { useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
@@ -45,12 +45,7 @@ function Login() {
           type="password"
           name="password"
           label="Password"
-          rules={{
-            minLength: {
-              value: 5,
-              message: "Your Password is too Short",
-            },
-          }}
+          rules={password}
           register={register}
           errors={errors}
         />

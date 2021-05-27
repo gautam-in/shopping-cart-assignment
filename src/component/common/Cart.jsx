@@ -1,14 +1,19 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "../../stylesheet/cart.scss";
 import { useSelector, useDispatch } from "react-redux";
 import { addRemoveToCart } from "../../redux/cart/actionCreator";
 function Cart(props) {
   const cartData = useSelector((state) => state.getCartDetail.cartItems);
   const dispatch = useDispatch();
-
   const closeCart = () => {
     props.status(false);
   };
+
+  // If cart is open then block background Scroll
+  useEffect(() => {
+    document.body.style.overflow = "hidden";
+    return () => (document.body.style.overflow = "unset");
+  }, []);
   const manageCartItems = (productData, type) => {
     let prodObj = {
       id: productData.id,

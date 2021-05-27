@@ -1,5 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 function TextInput({ type, label, name, rules, register, errors }) {
+  const [value, setValue] = useState("");
+
   return (
     <>
       <label htmlFor={name}>{label}</label>
@@ -12,6 +14,8 @@ function TextInput({ type, label, name, rules, register, errors }) {
           required: `${label} is mandatory`,
           ...rules,
         })}
+        value={value}
+        onChange={(e) => setValue(e.target.value.trim())}
       />
       <span
         style={{
