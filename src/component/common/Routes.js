@@ -1,14 +1,14 @@
 import React, { Suspense, lazy } from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-const Home = lazy(() => import("./home/Home"));
-const Product = lazy(() => import("./product/Product"));
-const wildRoute = lazy(() => import("./common/wildRoute"));
-const Login = lazy(() => import("./authentication/Login"));
-const SignUp = lazy(() => import("./authentication/SignUp"));
+import { Route, Switch } from "react-router-dom";
+const Home = lazy(() => import("../home/Home"));
+const Product = lazy(() => import("../product/Product"));
+const wildRoute = lazy(() => import("./wildRoute"));
+const Login = lazy(() => import("../authentication/Login"));
+const SignUp = lazy(() => import("../authentication/SignUp"));
 
 function Routes() {
   return (
-    <Router>
+    <>
       <Suspense
         fallback={
           <div className="loader-block">
@@ -24,7 +24,7 @@ function Routes() {
           <Route path="*" exact={true} component={wildRoute} />
         </Switch>
       </Suspense>
-    </Router>
+    </>
   );
 }
 

@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import "../../stylesheet/cart.scss";
+import "./cart.scss";
 import { useSelector, useDispatch } from "react-redux";
 import { addRemoveToCart } from "../../redux/cart/actionCreator";
 function Cart(props) {

@@ -2,7 +2,7 @@ import React, { Suspense, useState } from "react";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import "./layout.scss";
-const Cart = React.lazy(() => import("../common/Cart"));
+const Cart = React.lazy(() => import("../cart/Cart"));
 
 function Navbar() {
   const [cartSatus, setcartSatus] = useState(false);

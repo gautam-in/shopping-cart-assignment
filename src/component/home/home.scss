@@ -3,6 +3,15 @@
   &-carousel {
     min-height: 310px;
     margin-top: 10px;
+
+    .control-dots {
+      .dot {
+        background: lighten($color: $black-color, $amount: 40%) !important;
+        &.selected {
+          background-color: $black-color;
+        }
+      }
+    }
   }
   &-category {
     @extend %flex;

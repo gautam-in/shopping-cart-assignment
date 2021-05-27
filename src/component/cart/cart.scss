@@ -1,4 +1,4 @@
-@import "./generic/_settings.scss";
+@import "../../stylesheet/generic/_settings";
 
 .app {
   &-cart {
@@ -112,7 +112,7 @@
     .cart-block {
       width: 100%;
       height: 100%;
-      margin-top: 0px;
+      margin: 0px;
     }
   }
 }

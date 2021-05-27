@@ -59,8 +59,7 @@
 
 @media screen and (max-width: 480px) {
   .app-header {
-    .app-block.left,
-    .app-auth {
+    .app-block.left {
       a {
         display: none;
       }
