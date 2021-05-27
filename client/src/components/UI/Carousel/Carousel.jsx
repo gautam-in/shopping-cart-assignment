@@ -9,15 +9,15 @@ export default function Carousel(props) {
     let slides = document.getElementsByClassName("mySlides");
     let dots = document.getElementsByClassName("dot");
     if (slides.length > 0 && dots.length > 0) {
-      for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
+      for (i of slides) {
+        i.style.display = "none";
       }
       slideIndex++;
       if (slideIndex > slides.length) {
         slideIndex = 1;
       }
-      for (i = 0; i < dots.length; i++) {
-        dots[i].className = dots[i].className.replace(" active", "");
+      for (i of dots) {
+        i.className = i.className.replace(" active", "");
       }
       slides[slideIndex - 1].style.display = "block";
       dots[slideIndex - 1].className += " active";
