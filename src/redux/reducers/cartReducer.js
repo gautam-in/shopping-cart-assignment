@@ -1,5 +1,5 @@
-import { ADD_TO_CART, REMOVE_FROM_CART, SHOW_MODAL, HIDE_MODAL } from '../actions/action-types';
-const initialState = {
+import { ADD_TO_CART, REMOVE_FROM_CART } from '../actions/action-types';
+export const initialState = {
   cartItem: 0,
   cartList: []
 };

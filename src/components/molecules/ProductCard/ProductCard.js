@@ -63,7 +63,6 @@ export default function ProductCard({ product }) {
           </button>
         </section>
       </div>
-      <span className='separatorline'></span>
     </>
   );
 }

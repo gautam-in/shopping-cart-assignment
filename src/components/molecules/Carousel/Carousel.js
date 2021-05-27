@@ -48,11 +48,11 @@ const Carousel = React.memo(({ images }) => {
 
   return (
     <section className='carousel'>
-      <button className={'prev'} onClick={previousSlide}>
+      <button className={'prev carousel_button'} onClick={previousSlide}>
         {prev}
       </button>
       <ul>{slides}</ul>
-      <button className={'next'} onClick={nextSlide}>
+      <button className={'next carousel_button'} onClick={nextSlide}>
         {next}
       </button>
       <ul className='carousel-indicators'>{indicators}</ul>

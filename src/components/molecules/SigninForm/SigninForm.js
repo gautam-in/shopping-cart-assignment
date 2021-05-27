@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Input from '../../atoms/Input/Input';
 import './SigninForm.scss';
+import * as Constants from '../../../constants';
 import { useHistory } from 'react-router-dom';
 const initial = {
   email: '',
@@ -23,7 +24,6 @@ const SigninForm = () => {
   }
   const onChangeHandler = (e) => {
     const { name, value } = e.target;
-    console.log(value);
     setInputs((prevInput) => ({ ...prevInput, [name]: value }));
   };
 
@@ -33,26 +33,25 @@ const SigninForm = () => {
     let isValid = true;
     if (!inputForm['email']) {
       isValid = false;
-      errorForm['email'] = 'Please enter your email Address.';
+      errorForm['email'] = Constants.FieldRequired;
     }
-    if (typeof inputForm['email'] !== 'undefined') {
-      var pattern = new RegExp(
-        /^(("[\w-\s]+")|([\w-]+(?:\.[\w-]+)*)|("[\w-\s]+")([\w-]+(?:\.[\w-]+)*))(@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$)|(@\[?((25[0-5]\.|2[0-4][0-9]\.|1[0-9]{2}\.|[0-9]{1,2}\.))((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){2}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\]?$)/i
-      );
+    if (inputForm['email']) {
+      var pattern = new RegExp(Constants.EmailRegex);
+      console.log(!pattern.test(inputForm['email']));
       if (!pattern.test(inputForm['email'])) {
         isValid = false;
-        errorForm['email'] = 'Please enter valid email address.';
+        errorForm['email'] = Constants.EmailValid;
       }
     }
     if (!inputForm['password']) {
       isValid = false;
-      errorForm['password'] = 'Please enter your password.';
+      errorForm['password'] = Constants.FieldRequired;
     }
     setErrors(errorForm);
     return isValid;
   };
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} method='post'>
       <Input
         type='email'
         name='email'

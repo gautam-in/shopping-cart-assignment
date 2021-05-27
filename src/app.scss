@@ -52,7 +52,7 @@ ul {
 }
 
 .container {
-  max-width: 100%;
+  width: 100%;
   @media only screen and (min-width: $desktop) {
     width: 80%;
     margin: auto;
@@ -97,6 +97,7 @@ ul {
   text-align: center;
   padding: 10px;
   vertical-align: middle;
+  cursor: pointer;
 }
 .collapse {
   display: none;

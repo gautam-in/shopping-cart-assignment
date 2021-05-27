@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Input from '../../atoms/Input/Input';
 import { useHistory } from 'react-router-dom';
 import '../SigninForm/SigninForm.scss';
+import * as Constants from '../../../constants';
 const initial = {
   firstname: '',
   lastname: '',
@@ -36,33 +37,33 @@ const RegistrationForm = () => {
 
     if (!input['firstname']) {
       isValid = false;
-      errors['firstname'] = 'Please enter your first name!';
+      errors['firstname'] = Constants.FieldRequired;
     }
 
     if (typeof input['firstname'] !== 'undefined') {
       const re = /^\S*$/;
       if (input['firstname'].length < 6 || !re.test(input['firstname'])) {
         isValid = false;
-        errors['firstname'] = 'Please enter valid first name!';
+        errors['firstname'] = Constants.FirstNameValid;
       }
     }
 
     if (!input['lastname']) {
       isValid = false;
-      errors['lastname'] = 'Please enter your last name!';
+      errors['lastname'] = Constants.FieldRequired;
     }
 
     if (typeof input['lastname'] !== 'undefined') {
       const re = /^\S*$/;
       if (input['lastname'].length < 6 || !re.test(input['lastname'])) {
         isValid = false;
-        errors['lastname'] = 'Please enter valid last name!';
+        errors['lastname'] = Constants.LastNameValid;
       }
     }
 
     if (!input['email']) {
       isValid = false;
-      errors['email'] = 'Please enter your email Address!';
+      errors['email'] = Constants.FieldRequired;
     }
 
     if (typeof input['email'] !== 'undefined') {
@@ -71,25 +72,25 @@ const RegistrationForm = () => {
       );
       if (!pattern.test(input['email'])) {
         isValid = false;
-        errors['email'] = 'Please enter valid email address!';
+        errors['email'] = Constants.EmailValid;
       }
     }
 
     if (!input['password']) {
       isValid = false;
-      errors['password'] = 'Please enter your password!';
+      errors['password'] = Constants.FieldRequired;
     }
 
     if (!input['confirmPassword']) {
       isValid = false;
-      errors['confirmPassword'] = 'Please enter your confirm password!';
+      errors['confirmPassword'] = Constants.FieldRequired;
     }
 
     if (typeof input['password'] !== 'undefined') {
       var pwdPattern = new RegExp(/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$/i);
       if (!pwdPattern.test(input['password'])) {
         isValid = false;
-        errors['password'] = 'Password must contain atleast 6 characters,1 alphabet and 1 number!';
+        errors['password'] = Constants.PasswordValid;
       }
     }
     if (
@@ -98,7 +99,7 @@ const RegistrationForm = () => {
     ) {
       if (input['password'] != input['confirmPassword']) {
         isValid = false;
-        errors['password'] = "Passwords don't match!";
+        errors['password'] = Constants.PasswordUnmatch;
       }
     }
     setErrors(errors);
@@ -106,7 +107,7 @@ const RegistrationForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} method='post'>
       <Input
         type='text'
         name='firstname'

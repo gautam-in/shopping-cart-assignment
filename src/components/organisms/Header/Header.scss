@@ -3,12 +3,9 @@ header {
   z-index: 10;
   top: 0;
   background-color: white;
-  -webkit-box-shadow: 0 8px 6px -6px #eaeaea;
-  -moz-box-shadow: 0 8px 6px -6px #eaeaea;
-  box-shadow: 0 8px 6px -6px #eaeaea;
 }
 .header-link-active {
-  border-bottom: 0.2em solid #242424;
+  color: #bf2957;
   cursor: pointer;
 }
 .nav_bar {
@@ -30,11 +27,11 @@ header {
       list-style: none;
       li {
         a {
-          color: #242424;
+          color: #6e6e6e;
           line-height: 1.5rem;
           font-weight: 600;
           text-decoration: none;
-          font-size: 1.2rem;
+          font-size: 1.4rem;
         }
       }
     }
@@ -71,7 +68,7 @@ header {
     list-style: none;
     li {
       a {
-        color: #242424;
+        color: #6e6e6e;
         line-height: 1.5rem;
         font-weight: 600;
         text-decoration: none;
@@ -84,6 +81,9 @@ header {
   }
 }
 @media only screen and (min-width: 575px) {
+  header {
+    box-shadow: 0 8px 6px -6px #eaeaea;
+  }
   .side-links {
     position: absolute;
     left: 25%;

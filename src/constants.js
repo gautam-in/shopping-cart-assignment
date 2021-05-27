@@ -1,3 +1,11 @@
+//Error Messages
+export const FieldRequired = 'Field cannot be empty.';
+export const EmailValid = 'Please enter valid email address.';
+export const FirstNameValid = 'Please enter valid first name!';
+export const PasswordValid = 'Password must contain atleast 6 characters,1 alphabet and 1 number!';
+export const LastNameValid = 'Please enter valid last name!';
+export const PasswordUnmatch = "Passwords don't match!";
+export const EmailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 //Text
 export const Copyright = 'Copyright \u00A9 2011-2019 Sabka Bazaar Grocery Supplies Pvt. Ltd';
 export const NoAvailableProducts = 'No Product Available';

@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { Link, NavLink } from 'react-router-dom';
+import { Link, NavLink, Route } from 'react-router-dom';
 import './Header.scss';
 const Header = ({ toggleCartModal }) => {
   const itemCount = useSelector((state) => state.cart.cartItem);
@@ -10,10 +10,19 @@ const Header = ({ toggleCartModal }) => {
         <div className='container nav_bar'>
           <div className='nav_logo'>
             <Link to={'/'}>
-              <img src='static/images/logo.png' alt='Logo' aria-label={'Sabka Bazaar Logo'} />
+              <picture>
+                <source media='(min-width:576px)' srcSet='static/images/logo_2x.png' />
+                <source media='(max-width:574px)' srcSet='static/images/logo.png' />
+                <img
+                  src='static/images/logo.png'
+                  loading='lazy'
+                  alt='Sabka Baazar Logo'
+                  className='header_logo'
+                />
+              </picture>
             </Link>
           </div>
-          <div className='nav_menu'>
+          <nav className='nav_menu'>
             <ul className='side-links'>
               <li>
                 <NavLink
@@ -34,7 +43,7 @@ const Header = ({ toggleCartModal }) => {
                 </NavLink>
               </li>
             </ul>
-          </div>
+          </nav>
           <div className='side-nav'>
             <ul className='top_links'>
               <li>

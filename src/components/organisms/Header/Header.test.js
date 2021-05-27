@@ -1,23 +1,31 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { render } from '@testing-library/react';
+import '@testing-library/jest-dom';
 import Header from './Header';
 import configureStore from 'redux-mock-store';
-import { Provider } from "react-redux";
-
+import * as reactRedux from 'react-redux';
+import { Provider } from 'react-redux';
+import { Link, NavLink, Route, BrowserRouter } from 'react-router-dom';
 
 const mockStore = configureStore([]);
 let store = mockStore({
-    cartItem: 0,
-    cartList: []
+  cartItem: 0,
+  cartList: []
 });
-jest.mock("react-redux", () => ({
-    useSelector: jest.fn(fn => fn())
-}));
-const Wrapper = ({ children }) => (
-    <Provider store={store}>{children}</Provider>
-);
-test('should test Header component', () => {
-    const wrpper = shallow(<Wrapper><Header /></Wrapper>);
-    expect(wrpper).toMatchSnapshot();
-});
+const Wrapper = ({ children }) => <Provider store={store}>{children}</Provider>;
+const useSelectorMock = jest.spyOn(reactRedux, 'useSelector');
+useSelectorMock.mockReturnValue(0);
+//jest.mock('react-redux', () => ({
+//useSelector: jest.fn((fn) => fn())
+//}));
 
+test('should test Header component', () => {
+  const tree = render(
+    <Wrapper>
+      <BrowserRouter>
+        <Header />
+      </BrowserRouter>
+    </Wrapper>
+  );
+  expect(tree).toMatchSnapshot();
+});
