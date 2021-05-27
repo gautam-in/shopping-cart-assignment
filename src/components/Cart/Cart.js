@@ -12,9 +12,7 @@ const Cart = () => {
     (state) => state.product
   );
 
-  const closeCart = () => {
-    dispatch(toggleCart(false));
-  };
+  const closeCart = () => dispatch(toggleCart());
   return (
     <Container>
       <div className="wrapper">

@@ -56,8 +56,8 @@ const productSlice = createSlice({
       state.totalProducts = state.totalProducts - 1;
       state.totalPrice = state.totalPrice - item.price;
     },
-    toggleCart: (state, action) => {
-      state.isCartShow = action.payload;
+    toggleCart: (state) => {
+      state.isCartShow = !state.isCartShow;
     },
   },
   extraReducers: {

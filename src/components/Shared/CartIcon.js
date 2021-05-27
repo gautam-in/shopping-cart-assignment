@@ -7,7 +7,7 @@ import Cart from "static/images/cart.svg";
 const CartIcon = () => {
   const dispatch = useDispatch();
   const { totalProducts } = useSelector((state) => state.product);
-  const openCart = () => dispatch(toggleCart(true));
+  const openCart = () => dispatch(toggleCart());
 
   return (
     <Container onClick={openCart}>
