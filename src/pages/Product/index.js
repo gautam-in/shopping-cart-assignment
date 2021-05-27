@@ -5,6 +5,7 @@ import { getCategories } from "store/home/homeSlice";
 import { getProducts } from "store/product/productSlice";
 
 import Sidebar from "components/Product/Sidebar";
+import MobileCategory from "components/Product/MobileCategory";
 import ProductView from "components/Product/ProductView";
 import { Container } from "./Product.styles";
 
@@ -30,6 +31,7 @@ const Product = () => {
   }, [products, activeCategory]);
 
   const changeCategory = (id) => {
+    console.log({ id });
     if (id === activeCategory) {
       setActiveCategory("");
       return;
@@ -40,6 +42,7 @@ const Product = () => {
   return (
     <Container>
       <Sidebar active={activeCategory} changeFilter={changeCategory} />
+      <MobileCategory active={activeCategory} changeFilter={changeCategory} />
       <ProductView product={filProducts} />
     </Container>
   );

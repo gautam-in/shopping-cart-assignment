@@ -11,6 +11,18 @@ export const Container = styled.div`
   align-items: flex-start;
   position: fixed;
   z-index: 2;
+  @media (max-width: 1100px) {
+    width: 200px;
+  }
+  @media (max-width: 990px) {
+    width: 180px;
+  }
+  @media (max-width: 800px) {
+    width: 160px;
+  }
+  @media (max-width: 650px) {
+    display: none;
+  }
 `;
 
 export const CategoryItem = styled.div`

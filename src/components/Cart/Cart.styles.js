@@ -29,7 +29,9 @@ export const Container = styled.div`
     pointer-events: none;
     .wrapper {
       width: 100%;
+      height: 84%;
       right: 0;
+      pointer-events: auto;
     }
   }
 `;
