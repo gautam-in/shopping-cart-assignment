@@ -17,7 +17,21 @@ $red:#8b0000;
     justify-content: space-around;
     margin-top:50px
 }
+.login-name{
+    text-align: left;
+}
 
+@media screen and (max-width:750px){
+    .login-name{
+        text-align: center;
+    } 
+}
+@media screen and (max-width:750px){
+    .login{
+      display: flex;
+      flex-direction: column;
+    }
+  }
 .wrapper{
   width: $prism-length;
   height: $prism-height;

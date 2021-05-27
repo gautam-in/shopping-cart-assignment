@@ -7,11 +7,12 @@ import Products from "./Products/Products"
 export default function Home() {
     const show=useSelector(state=>state.showCart)
     return (
-        <div>
+         <div>
+         <Navbar/>
+
               <Backdrop />
            {show&&<div  className="cart-align"><Cart/></div>}
 
-         <Navbar/>
         <Products/>
         </div>
     )

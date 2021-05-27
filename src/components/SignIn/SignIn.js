@@ -22,7 +22,7 @@ function SignIn(props) {
            
             <div className="login">
                 <div className="login-desc">
-                    <div><h2>Login</h2></div>
+                    <div className="login-name"><h2>Login</h2></div>
                     <div><p>Get access to your Orders, Wishlists and Recommendations</p></div>
                 </div>
 

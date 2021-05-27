@@ -15,12 +15,7 @@ export default function Products() {
     const [filter, setfilter] = useState(false)
     const [filterItems, setfilterItems] = useState([])
     const [category, setcategory] = useState('select')
-    const clickHandler=(e)=>{
-        debugger
-        setcategory(e.target.value)
-        const p=e.target.options[e.target.selectedIndex].dataset
-        console.log(JSON.parse(p))
-    }
+    
     useEffect(() => {
 
         setfilterItems([
@@ -35,6 +30,16 @@ export default function Products() {
         let res = await axios.get('http://localhost:5000/products')
         setProducts(res.data.map(dt => ({ ...dt, count: 0 })))
         setProductsCopy(res.data)
+    }
+    const clickHandler=(e)=>{
+        debugger
+        const prds = productsCopy;
+
+        setcategory(e.target.value)
+        const optionattribute=e.target.options[e.target.selectedIndex].dataset
+      
+        const filteredproducts = prds.filter(p => p.category === optionattribute.catid)
+        setProducts(filteredproducts)
     }
     const filterProducts = (category) => {
         const { id, name, visited } = category
@@ -65,7 +70,7 @@ export default function Products() {
     }, [])
     const options=filterItems.map(category=><option
         data-catid={category.id}
-                className={selctecdCategory === category.name && category.visited ? "selected-category align" : "align highlight"}
+               // className={selctecdCategory === category.name && category.visited ? "selected-category align" : "align highlight"}
                 >{category.name}</option>)
     return (
         <div>
@@ -79,7 +84,7 @@ export default function Products() {
                         className={selctecdCategory === category.name && category.visited ? "selected-category align" : "align highlight"}
                         onClick={() => filterProducts(category)}>{category.name}</div>)}
                 </div>
-                <div><select onChange={clickHandler} >{options}</select></div>
+                <div className="cat-dropdown"><select onChange={clickHandler} >{options}</select></div>
                 <div className="right-pane">
 
                     {/* <div class="parent"> */}

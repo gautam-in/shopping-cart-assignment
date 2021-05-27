@@ -8,3 +8,9 @@
     background-color: rgba(0,0,0,0.5);
    
 }
+
+@media screen and (max-width:750px){
+    .backdrop{
+        display: none;
+    }
+}

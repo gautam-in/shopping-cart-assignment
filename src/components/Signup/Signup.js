@@ -43,8 +43,8 @@ function SignUp(props) {
 
             <div className="login">
                 <div className="login-desc">
-                    <div><h2>Sigup</h2></div>
-                    <div><p>We dont share your personal details with anyone</p></div>
+                    <div className="signup-name"><h2>Sigup</h2></div>
+                    <div className="signup-name"><p>We dont share your personal details with anyone</p></div>
                 </div>
 
                 <div>

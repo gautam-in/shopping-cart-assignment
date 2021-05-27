@@ -39,12 +39,15 @@ import {withRouter} from "react-router-dom"
                 //if(index%2===0)
                     return <li key={prd.key} style={{ listStyle: 'none' }}>
                         <div style={{ textAlign: 'justify' }}>
-                        <div className="image"><img className="img-class" src={require(`../../../../static/images/${imageurl2}/${imageurl1}`).default} /></div>
+                        <div className="product-detail">
+                           <div className="image"> <img className="img-class" src={require(`../../../../static/images/${imageurl2}/${imageurl1}`).default} /></div>
                            
                             <div className="desc"> <h2>{prd.name}</h2>
                                 <p>{prd.description}</p>
                                 <button className="explore" onClick={clickHandler}>{`Explore ${prd.name}`}</button></div>
-                            <div className="clear-fix"></div>
+                               
+                            {/* <div className="clear-fix"></div> */}
+                            </div>
                             <div className="line"></div>
                             {/* eslint-disable-next-line import/no-dynamic-require */}
                             {/* <img src={ require(`../../../../static/images/category/${imageurl1}/${imageurl2}`).default}/> */}
