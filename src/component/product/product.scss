@@ -1,4 +1,4 @@
-@import "../generic/_settings.scss";
+@import "../../stylesheet/generic/settings";
 
 .app {
   &-product {
@@ -29,13 +29,14 @@
       flex-basis: 80%;
       flex-wrap: wrap;
       justify-content: flex-start;
+      margin-bottom: 40px;
     }
   }
 
   &-productList {
     padding: 10px;
     flex-basis: 250px;
-    height: 300px;
+    height: 345px;
     margin-top: 10px;
     border-right: 2px solid $gray-color;
     border-bottom: 2px dashed $gray-color;
@@ -94,7 +95,7 @@
         flex-direction: row;
 
         .des {
-          width: 76%;
+          width: 60%;
           margin-bottom: 8px;
         }
         .buynow {

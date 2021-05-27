@@ -1,5 +1,5 @@
 import React, { Suspense } from "react";
-import "../stylesheet/custom/home.scss";
+import "./home.scss";
 const CarouselHome = React.lazy(() => import("./CarouselHome"));
 const Categories = React.lazy(() => import("./Categories"));
 

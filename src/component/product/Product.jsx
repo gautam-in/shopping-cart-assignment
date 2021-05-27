@@ -1,8 +1,8 @@
 import React, { Suspense, useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
-import "../stylesheet/custom/product.scss";
-import { getCategory } from "../redux/category/actionCreator";
+import "./product.scss";
+import { getCategory } from "../../redux/category/actionCreator";
 const ProductList = React.lazy(() => import("./ProductList"));
 
 function Product() {

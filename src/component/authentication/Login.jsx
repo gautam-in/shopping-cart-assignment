@@ -1,7 +1,7 @@
 import React from "react";
-import "../stylesheet/custom/loginsignUp.scss";
-import TextInput from "./reusable/TextInput";
-import { emailValidation } from "../utils/validationRules";
+import "./loginsignUp.scss";
+import TextInput from "../common/TextInput";
+import { emailValidation } from "../../utils/validationRules";
 import { useForm } from "react-hook-form";
 import { useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";

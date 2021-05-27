@@ -1,4 +1,4 @@
-@import "../generic/_settings.scss";
+@import "../../stylesheet/generic/settings";
 
 .app {
   &-navbar {
@@ -47,6 +47,13 @@
     &:hover {
       background-color: darken($color: $gray-color, $amount: 20%);
     }
+  }
+
+  &-footer {
+    text-align: center;
+    background-color: $gray-color;
+    padding: 15px;
+    width: 100%;
   }
 }
 

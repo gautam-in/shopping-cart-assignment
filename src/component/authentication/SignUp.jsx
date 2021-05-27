@@ -1,10 +1,10 @@
 import React from "react";
-import TextInput from "./reusable/TextInput";
+import TextInput from "../common/TextInput";
 import { useForm } from "react-hook-form";
-import { emailValidation } from "../utils/validationRules";
-import "../stylesheet/custom/loginsignUp.scss";
+import { emailValidation } from "../../utils/validationRules";
+import "./loginsignUp.scss";
 import { useDispatch } from "react-redux";
-import { signUp } from "../redux/auth/actionCreator";
+import { signUp } from "../../redux/auth/actionCreator";
 import { useHistory } from "react-router-dom";
 
 function SignUp() {

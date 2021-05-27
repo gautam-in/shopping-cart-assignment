@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
-import { getCategory } from "../redux/category/actionCreator";
+import { getCategory } from "../../redux/category/actionCreator";
 function Categories() {
   const categoryData = useSelector((state) => state.getCatDetail.category);
   const dispatch = useDispatch();

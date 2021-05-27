@@ -1,13 +1,13 @@
 import React, { Suspense, useState, lazy } from "react";
 import { useSelector } from "react-redux";
 import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
-import "../stylesheet/custom/navbar.scss";
-const Cart = React.lazy(() => import("./Cart"));
-const Home = lazy(() => import("./Home"));
-const Product = lazy(() => import("./Product"));
-const wildRoute = lazy(() => import("./wildRoute"));
-const Login = lazy(() => import("./Login"));
-const SignUp = lazy(() => import("./SignUp"));
+import "./layout.scss";
+const Cart = React.lazy(() => import("../common/Cart"));
+const Home = lazy(() => import("../home/Home"));
+const Product = lazy(() => import("../product/Product"));
+const wildRoute = lazy(() => import("../common/wildRoute"));
+const Login = lazy(() => import("../authentication/Login"));
+const SignUp = lazy(() => import("../authentication/SignUp"));
 
 function Navbar() {
   const [cartSatus, setcartSatus] = useState(false);
@@ -37,14 +37,14 @@ function Navbar() {
             <Link to="/product">Product</Link>
           </div>
           <div className="app-block right">
-            <ol className="app-auth">
+            <ul className="app-auth">
               <li>
                 <Link to="/login">Sign In</Link>
               </li>
               <li>
                 <Link to="/signUp">Register</Link>
               </li>
-            </ol>
+            </ul>
             <div className="app-cartBlock" onClick={openCart}>
               <img
                 src="/static/images/cart.svg"

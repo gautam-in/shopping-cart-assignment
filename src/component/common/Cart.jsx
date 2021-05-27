@@ -1,7 +1,7 @@
 import React from "react";
-import "../stylesheet/custom/cart.scss";
+import "../../stylesheet/cart.scss";
 import { useSelector, useDispatch } from "react-redux";
-import { addRemoveToCart } from "../redux/cart/actionCreator";
+import { addRemoveToCart } from "../../redux/cart/actionCreator";
 function Cart(props) {
   const cartData = useSelector((state) => state.getCartDetail.cartItems);
   const dispatch = useDispatch();
@@ -59,7 +59,7 @@ function Cart(props) {
               </div>
             ))}
 
-          {cartData.length > 0 ? (
+          {cartData.length ? (
             <div className="block2">
               <img
                 src="/static/images/lowest-price.webp"
@@ -79,17 +79,23 @@ function Cart(props) {
           )}
         </div>
         <div className="cart-foot centre">
-          <p>Promo Code can be applied to payment page</p>
-          <button className="app-btn">
-            <span>Proceed to Checkout</span>
-            <span>
-              Rs :
-              {Object.values(cartData).reduce(
-                (t, { price, count }) => t + price * count,
-                0
-              )}
-            </span>
-          </button>
+          {cartData.length ? (
+            <>
+              <p>Promo Code can be applied to payment page</p>
+              <button className="app-btn">
+                <span>Proceed to Checkout</span>
+                <span>
+                  Rs :
+                  {Object.values(cartData).reduce(
+                    (t, { price, count }) => t + price * count,
+                    0
+                  )}
+                </span>
+              </button>
+            </>
+          ) : (
+            <button className="app-btn centre">Start Shopping</button>
+          )}
         </div>
       </div>
     </div>

@@ -102,14 +102,6 @@ label::after {
     @extend %btn;
   }
 
-  // class for footer
-  &-footer {
-    text-align: center;
-    background-color: $gray-color;
-    padding: 15px;
-    width: 100%;
-  }
-
   // class for WildRoute
 
   &-wildPage {

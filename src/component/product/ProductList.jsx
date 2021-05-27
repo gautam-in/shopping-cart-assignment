@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { getProducts } from "../redux/product/actionCreator";
-import { addRemoveToCart } from "../redux/cart/actionCreator";
+import { getProducts } from "../../redux/product/actionCreator";
+import { addRemoveToCart } from "../../redux/cart/actionCreator";
 function ProductList(props) {
   // const urlID = props.categoryId || window.location.hash.split("#")[1];
   // Now getting cat id from url only for both home and product page
@@ -37,8 +37,8 @@ function ProductList(props) {
               src={data.imageURL}
               alt={data.sku}
               loading="lazy"
-              width="70"
-              height="70"
+              width="115"
+              height="115"
             ></img>
             <span className="des">{data.description}</span>
             <div className="buynow">
