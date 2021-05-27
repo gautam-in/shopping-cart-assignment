@@ -10,7 +10,7 @@ src/components/Navbar/Navbar copy.js
 src/components/SignIn copy/
 src/components/Products copy/
 
-
+src/components/Home/Carousel/Carousel copy.js
 # Runtime data
 pids
 *.pid
