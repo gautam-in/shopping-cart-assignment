@@ -13,3 +13,11 @@ npm run start
 yarn install
 yarn start
 ```
+
+## Steps to start React app
+
+```
+cd client
+npm install
+npm start
+```
