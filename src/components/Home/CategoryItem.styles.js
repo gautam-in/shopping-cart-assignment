@@ -31,6 +31,11 @@ export const CategoryRow = styled.div`
       font-weight: 600;
       font-size: 1rem;
     }
+    @media (max-width: 650px) {
+      div {
+        font-size: 0.5rem;
+      }
+    }
   }
   .home-btn {
     text-transform: initial;

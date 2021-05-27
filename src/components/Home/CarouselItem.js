@@ -1,10 +1,12 @@
+import { Container } from "./CarouselItem.styles";
+
 const CarouselItem = ({ item }) => {
   console.log({ item });
   const image = require(`static/${item.bannerImageUrl}`).default;
   return (
-    <div>
-      <img height="200" src={image} alt={item.bannerImageAlt} loading="lazy" />
-    </div>
+    <Container>
+      <img src={image} alt={item.bannerImageAlt} loading="lazy" />
+    </Container>
   );
 };
 
