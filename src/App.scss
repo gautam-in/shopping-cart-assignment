@@ -29,7 +29,7 @@ input[type="password"] {
   }
 }
 
-label::after {
+.label::after {
   content: "*";
   color: red;
   margin-left: 5px;

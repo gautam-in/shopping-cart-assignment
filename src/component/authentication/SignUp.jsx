@@ -44,6 +44,7 @@ function SignUp() {
           rules={firstName}
           register={register}
           errors={errors}
+          mandatory={true}
         />
         <TextInput
           type="text"
@@ -60,6 +61,7 @@ function SignUp() {
           register={register}
           errors={errors}
           label="Email"
+          mandatory={true}
         />
         <TextInput
           type="password"
@@ -68,6 +70,7 @@ function SignUp() {
           rules={password}
           register={register}
           errors={errors}
+          mandatory={true}
         />
         <TextInput
           type="password"
@@ -76,6 +79,7 @@ function SignUp() {
           rules={password}
           register={register}
           errors={errors}
+          mandatory={true}
         />
         <button className="app-btn"> Login</button>
       </form>

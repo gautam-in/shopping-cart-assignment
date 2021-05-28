@@ -1,7 +1,8 @@
 import React, { useEffect } from "react";
-import "./cart.scss";
 import { useSelector, useDispatch } from "react-redux";
 import { addRemoveToCart } from "../../redux/cart/actionCreator";
+import "./cart.scss";
+
 function Cart(props) {
   const cartData = useSelector((state) => state.getCartDetail.cartItems);
   const dispatch = useDispatch();

@@ -12,40 +12,47 @@ function Product() {
   const [screenSize, setscreenSize] = useState(window.screen.width);
   const categoryData = useSelector((state) => state.getCatDetail.category);
 
-  if (window.location.hash.split("#")[1]) {
-    hashID = window.location.hash.split("#")[1];
-  }
-  const windowSize = () => {
-    setscreenSize(window.screen.width);
-  };
+  hashID = history.location.hash && history.location.hash;
 
   useEffect(() => {
     dispatch(getCategory());
   }, [dispatch]);
 
   useEffect(() => {
-    window.addEventListener("resize", windowSize);
-  });
+    window.addEventListener("resize", () => {
+      setscreenSize(window.screen.width);
+    });
+  }, [screenSize]);
 
   const loadCategory = (e) => {
-    if (screenSize < 480) {
-      history.push("/product#" + e.target.value);
-    } else {
-      history.push("/product#" + e);
-    }
+    //Here e is working as event is there is not data binded
+    e === "showAll"
+      ? history.push("/product")
+      : screenSize < 480
+      ? history.push("/product#" + e.target.value)
+      : history.push("/product#" + e);
   };
 
   return (
     <div className="app-product">
       {screenSize > 480 ? (
         <div className="category-bar">
+          <span
+            onClick={loadCategory.bind(null, "showAll")}
+            role="button"
+            tabIndex="0"
+            className={`items ${!Boolean(hashID) && "active"}`}
+          >
+            Show All
+          </span>
           {categoryData.map(
             (data) =>
               data.enabled && (
                 <span
                   role="button"
+                  tabIndex="0"
                   className={`items ${
-                    hashID === data.id ? "active" : "not-active"
+                    hashID === "#" + data.id ? "active" : "not-active"
                   }`}
                   key={data.id}
                   onClick={loadCategory.bind(null, data.id)}

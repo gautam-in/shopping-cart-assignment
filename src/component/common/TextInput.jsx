@@ -1,17 +1,20 @@
 import React, { useState } from "react";
-function TextInput({ type, label, name, rules, register, errors }) {
+
+function TextInput({ type, label, name, rules, register, errors, mandatory }) {
   const [value, setValue] = useState("");
 
   return (
     <>
-      <label htmlFor={name}>{label}</label>
+      <label htmlFor={name} className={mandatory && "label"}>
+        {label}
+      </label>
       <input
         id={name}
         name={name}
         type={type}
         autoComplete="off"
         {...register(`${name}`, {
-          required: `${label} is mandatory`,
+          required: mandatory && `${label} is mandatory`,
           ...rules,
         })}
         value={value}

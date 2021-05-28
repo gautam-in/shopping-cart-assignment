@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { getCategory } from "../../redux/category/actionCreator";
+
 function Categories() {
   const categoryData = useSelector((state) => state.getCatDetail.category);
   const dispatch = useDispatch();
@@ -35,7 +36,6 @@ function Categories() {
                 <button
                   className="app-btn"
                   onClick={routeTo.bind(null, data.id)}
-                  catid={data.id}
                 >
                   Explore {data.name}
                 </button>
