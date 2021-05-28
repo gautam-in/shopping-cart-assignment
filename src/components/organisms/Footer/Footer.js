@@ -1,6 +1,6 @@
 import './Footer.scss';
 import React from 'react';
-import * as Constants from '../../../constants';
+import * as Constants from '../../../shared/constants';
 const Footer = () => {
   return (
     <footer className='footer-wrap'>

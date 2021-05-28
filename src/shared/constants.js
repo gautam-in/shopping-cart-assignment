@@ -5,7 +5,9 @@ export const FirstNameValid = 'Please enter valid first name!';
 export const PasswordValid = 'Password must contain atleast 6 characters,1 alphabet and 1 number!';
 export const LastNameValid = 'Please enter valid last name!';
 export const PasswordUnmatch = "Passwords don't match!";
-export const EmailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+export const EmailRegex =
+  "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@([a-zA-Z0-9-]{3,})(?:.[a-zA-Z0-9-]{2,})+$";
+export const PasswordRegex = '/^(?=.*[A-Za-z])(?=.*d)[A-Za-zd]{6,}$/i';
 //Text
 export const Copyright = 'Copyright \u00A9 2011-2019 Sabka Bazaar Grocery Supplies Pvt. Ltd';
 export const NoAvailableProducts = 'No Product Available';

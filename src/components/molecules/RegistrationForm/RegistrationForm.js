@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Input from '../../atoms/Input/Input';
 import { useHistory } from 'react-router-dom';
 import '../SigninForm/SigninForm.scss';
-import * as Constants from '../../../constants';
+import * as Constants from '../../../shared/constants';
 const initial = {
   firstname: '',
   lastname: '',
@@ -27,7 +27,6 @@ const RegistrationForm = () => {
   }
   const onChangeHandler = (e) => {
     const { name, value } = e.target;
-    console.log(value);
     setInputs((prevInput) => ({ ...prevInput, [name]: value }));
   };
   const validate = () => {
@@ -67,9 +66,7 @@ const RegistrationForm = () => {
     }
 
     if (typeof input['email'] !== 'undefined') {
-      var pattern = new RegExp(
-        /^(("[\w-\s]+")|([\w-]+(?:\.[\w-]+)*)|("[\w-\s]+")([\w-]+(?:\.[\w-]+)*))(@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$)|(@\[?((25[0-5]\.|2[0-4][0-9]\.|1[0-9]{2}\.|[0-9]{1,2}\.))((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){2}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\]?$)/i
-      );
+      var pattern = new RegExp(Constants.EmailRegex);
       if (!pattern.test(input['email'])) {
         isValid = false;
         errors['email'] = Constants.EmailValid;
@@ -87,7 +84,7 @@ const RegistrationForm = () => {
     }
 
     if (typeof input['password'] !== 'undefined') {
-      var pwdPattern = new RegExp(/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$/i);
+      var pwdPattern = new RegExp(Constants.PasswordRegex);
       if (!pwdPattern.test(input['password'])) {
         isValid = false;
         errors['password'] = Constants.PasswordValid;

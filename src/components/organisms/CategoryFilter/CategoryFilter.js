@@ -1,12 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { getCategories } from '../../../redux/actions/actionCreators';
 import { useHistory } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { GET_CATEGORIES_API } from '../../../apis';
 import { getData } from '../../../getService';
 import './CategoryFilter.scss';
-import * as Constants from '../../../constants';
+import * as Constants from '../../../shared/constants';
 const CategoryFilter = React.memo(({ filterId }) => {
   const history = useHistory();
   const [activeId, setActiveId] = useState(null);

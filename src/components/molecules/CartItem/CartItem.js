@@ -5,7 +5,6 @@ import './CartItem.scss';
 const CartItem = ({ item }) => {
   const dispatch = useDispatch();
   const handleIncrementItemQty = (product) => {
-    console.log(product);
     dispatch(addToCart(product));
   };
 

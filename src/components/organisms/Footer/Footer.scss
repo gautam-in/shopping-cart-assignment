@@ -1,37 +1,35 @@
 .footer-wrap {
-    position: sticky;
-    width: 100%;
-    overflow: hidden;
-    background-color: #eaeaea;
-    padding: 10px 0px;
-    bottom: 0;
-    z-index: 10;
-    p {
-      font-weight: 800;
-      margin: auto 0;
-    }
+  position: sticky;
+  width: 100%;
+  overflow: hidden;
+  background-color: #eaeaea;
+  padding: 10px 0px;
+  bottom: 0;
+  z-index: 10;
+  p {
+    font-weight: 800;
+    margin: auto 0;
   }
-  
-  @media only screen and (max-width: 574px) {
-    .footer-wrap p {
-      font-size: 1.3rem;
-      text-align: center;
-      font-weight: 600;
-    }
+}
+
+@media only screen and (max-width: 574px) {
+  .footer-wrap p {
+    font-size: 1.3rem;
+    text-align: center;
+    font-weight: 600;
   }
-  @media only screen and (min-width: 575px) and ( max-width: 769px) {
-    .footer-wrap p {
-      text-align: center;
-      font-weight: 600;
-    }
+}
+@media only screen and (min-width: 575px) and (max-width: 769px) {
+  .footer-wrap p {
+    text-align: center;
+    font-weight: 600;
   }
-  
+}
+
 @media only screen and (min-width: 770px) {
-          .footer-wrap p {
-            padding-left: 15%;
-            font-weight: 600;
-            font-size: 1.2rem;
-          }
-
-
+  .footer-wrap p {
+    padding-left: 15%;
+    font-weight: 600;
+    font-size: 1.2rem;
+  }
 }

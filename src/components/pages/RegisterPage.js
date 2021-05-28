@@ -1,6 +1,6 @@
 import React from 'react';
 import RegistrationForm from '../molecules/RegistrationForm/RegistrationForm';
-import * as Constants from '../../constants';
+import * as Constants from '../../shared/constants';
 const RegisterPage = () => {
   return (
     <main className='container'>

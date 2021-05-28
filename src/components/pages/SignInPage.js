@@ -1,7 +1,7 @@
 import React from 'react';
 import '../molecules/SigninForm/SigninForm.scss';
 import SignInForm from '../molecules/SigninForm/SigninForm';
-import * as Constants from '../../constants';
+import * as Constants from '../../shared/constants';
 const SignInPage = () => {
   return (
     <main className='container'>

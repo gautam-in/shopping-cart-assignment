@@ -10,7 +10,7 @@ const Carousel = React.memo(({ images }) => {
   useEffect(() => {
     const interval = setInterval(() => {
       nextSlide();
-    }, 3000);
+    }, 5000);
     return () => clearInterval(interval);
   }, [activeIndex]);
 

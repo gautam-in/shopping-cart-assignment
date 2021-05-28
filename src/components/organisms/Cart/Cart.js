@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 import { useHistory, useLocation } from 'react-router-dom';
 import CartItem from '../../molecules/CartItem/CartItem';
 import './Cart.scss';
-import * as Constants from '../../../constants';
+import * as Constants from '../../../shared/constants';
 
 const Cart = React.memo(({ showCart, toggleCartModal }) => {
   const location = useLocation();
@@ -13,18 +13,29 @@ const Cart = React.memo(({ showCart, toggleCartModal }) => {
   var totalPrice = cartData.reduce((acc, item) => {
     return acc + item.count * item.price;
   }, 0);
-
+  const cartItemList =
+    cartData &&
+    cartData.map((item, index) => {
+      return <CartItem item={item} key={index} />;
+    });
   return (
-    <div
+    <section
       className={`cart-container ${showCart || location.pathname == '/cart' ? 'show-modal' : ''}`}
     >
-      <div className='cart-drawer-modal' aria-label='cart modal'>
-        <div
+      <section className='cart-drawer-modal' aria-label='cart modal'>
+        <header
           className={`${cartData.length ? 'cart-drawer-header-wrap' : 'empty-cart-drawer-header'}`}
           aria-label='cart header'
         >
           <h3 aria-label='My Cart header'>
-            {Constants.MyCart} <span>{itemCount ? itemCount : ''}</span>
+            {Constants.MyCart}{' '}
+            <span>
+              {itemCount
+                ? itemCount === 1
+                  ? ` ( ${itemCount} Item )`
+                  : ` ( ${itemCount} Items )`
+                : ''}
+            </span>
           </h3>
           {window.innerWidth >= 770 ? (
             <button
@@ -38,36 +49,25 @@ const Cart = React.memo(({ showCart, toggleCartModal }) => {
           ) : (
             ''
           )}
-        </div>
-
+        </header>
         {cartData.length ? (
-          <div className='modal-body filled-cart-body'>
-            <div className='cart-body-main'>
-              <div className='cart-list-wrap'>
-                <ul className='clearfix'>
-                  {cartData.map((item, index) => {
-                    return <CartItem item={item} key={index} />;
-                  })}
-                </ul>
-                <div className='lowest-price'>
-                  <img src='static/images/lowest-price.png' alt='Lowest Price' />
-                  <span>{Constants.LowestPrice}</span>
-                </div>
-              </div>
-            </div>
-          </div>
+          <section className='modal-body filled-cart-body'>
+            <ul className='clearfix'>{cartItemList}</ul>
+            <section className='lowest-price'>
+              <img src='static/images/lowest-price.png' alt='Lowest Price' loading='lazy' />
+              <span>{Constants.LowestPrice}</span>
+            </section>
+          </section>
         ) : (
-          <div className='modal-body empty-cart-body'>
-            <article className='cart-body-wrap' aria-label='No cart item description'>
-              <h5 aria-label='No item in your cart'>{Constants.CartEmpty}</h5>
-              <p aria-label='Your favourite items are just a click away'>
-                {Constants.CartEmptyFavItems}
-              </p>
-            </article>
-          </div>
+          <section className='modal-body empty-cart-body'>
+            <h5 aria-label='No item in your cart'>{Constants.CartEmpty}</h5>
+            <p aria-label='Your favourite items are just a click away'>
+              {Constants.CartEmptyFavItems}
+            </p>
+          </section>
         )}
         {cartData.length ? (
-          <div className='cart-footer-wrap'>
+          <footer className='cart-footer-wrap'>
             <p className='cart-footer-text'>{Constants.PromoCode}</p>
             <button
               type='button'
@@ -84,9 +84,9 @@ const Cart = React.memo(({ showCart, toggleCartModal }) => {
                 <span className='arrow-checkout-icon'>{'>'}</span>
               </output>
             </button>
-          </div>
+          </footer>
         ) : (
-          <div className='empty-cart-footer-wrap'>
+          <footer className='empty-cart-footer-wrap'>
             <button
               type='button'
               className='custom-button empty-cart-button'
@@ -97,10 +97,10 @@ const Cart = React.memo(({ showCart, toggleCartModal }) => {
             >
               {Constants.StartShopping}
             </button>
-          </div>
+          </footer>
         )}
-      </div>
-    </div>
+      </section>
+    </section>
   );
 });
 

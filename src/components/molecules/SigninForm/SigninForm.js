@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Input from '../../atoms/Input/Input';
 import './SigninForm.scss';
-import * as Constants from '../../../constants';
+import * as Constants from '../../../shared/constants';
 import { useHistory } from 'react-router-dom';
 const initial = {
   email: '',
@@ -37,7 +37,6 @@ const SigninForm = () => {
     }
     if (inputForm['email']) {
       var pattern = new RegExp(Constants.EmailRegex);
-      console.log(!pattern.test(inputForm['email']));
       if (!pattern.test(inputForm['email'])) {
         isValid = false;
         errorForm['email'] = Constants.EmailValid;
@@ -53,7 +52,7 @@ const SigninForm = () => {
   return (
     <form onSubmit={handleSubmit} method='post'>
       <Input
-        type='email'
+        type='text'
         name='email'
         id='email'
         placeholder='Email'
