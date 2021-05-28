@@ -40,7 +40,7 @@ const RegistrationForm = () => {
     }
 
     if (typeof input['firstname'] !== 'undefined') {
-      const re = /^\S*$/;
+      const re = /^\S$/;
       if (input['firstname'].length < 6 || !re.test(input['firstname'])) {
         isValid = false;
         errors['firstname'] = Constants.FirstNameValid;
@@ -53,7 +53,7 @@ const RegistrationForm = () => {
     }
 
     if (typeof input['lastname'] !== 'undefined') {
-      const re = /^\S*$/;
+      const re = /^\S$/;
       if (input['lastname'].length < 6 || !re.test(input['lastname'])) {
         isValid = false;
         errors['lastname'] = Constants.LastNameValid;

@@ -12,7 +12,7 @@ const Header = ({ toggleCartModal }) => {
             <Link to={'/'}>
               <picture>
                 <source media='(min-width:576px)' srcSet='static/images/logo_2x.png' />
-                <source media='(max-width:574px)' srcSet='static/images/logo.png' />
+                <source media='(max-width:575px)' srcSet='static/images/logo.png' />
                 <img
                   src='static/images/logo.png'
                   loading='lazy'

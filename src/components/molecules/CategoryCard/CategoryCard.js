@@ -13,8 +13,8 @@ const CategoryCard = (props) => {
 
   return (
     <>
-      <div className='category-card'>
-        <div className='card-image'>
+      <li className='category-card'>
+        <figure className='card-image'>
           <img
             src={props.imgUrl}
             alt={props.categoryName}
@@ -22,8 +22,8 @@ const CategoryCard = (props) => {
             loading='lazy'
             width='100'
           />
-        </div>
-        <div className='card-content'>
+        </figure>
+        <figcaption className='card-content'>
           <h3 aria-label={'category name is' + props.categoryName}>{props.categoryName}</h3>
           <p aria-label={props.desc}>{props.desc}</p>
           <button
@@ -35,8 +35,8 @@ const CategoryCard = (props) => {
           >
             Explore {props.name}
           </button>
-        </div>
-      </div>
+        </figcaption>
+      </li>
     </>
   );
 };

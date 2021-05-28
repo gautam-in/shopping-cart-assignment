@@ -59,37 +59,6 @@ ul {
   }
 }
 
-.top_bar {
-  ul {
-    justify-content: flex-end;
-    display: flex;
-    list-style: none;
-    flex-direction: row;
-    li {
-      margin-right: 10px;
-      a {
-        text-decoration: none;
-      }
-    }
-  }
-}
-
-.categoriesDropdown {
-  margin: 0px;
-  font-size: 24px;
-
-  li {
-    background-color: gainsboro;
-    border-bottom: 1px solid black;
-    padding: 15px;
-  }
-}
-.categoriesDropdownHeader {
-  color: white;
-  background-color: #bf2957;
-  padding: 15px;
-  font-size: 24px;
-}
 .btn-primary {
   color: white;
   background: #bf2957;

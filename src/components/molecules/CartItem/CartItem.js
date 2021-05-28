@@ -13,20 +13,20 @@ const CartItem = ({ item }) => {
   };
 
   return (
-    <div className='cart-item' aria-label={'cart list detail of product is' + item.name}>
-      <div className='cart-item-image'>
+    <section className='cart-item' aria-label={'cart list detail of product is' + item.name}>
+      <figure className='cart-item-image'>
         <img
           className='img-fluid'
           src={item.imageURL}
           alt={item.name}
           aria-label={'Image of product' + item.name}
         />
-      </div>
-      <div className='cart-item-info'>
-        <div className='cart-item-title' aria-label={'Product name is' + item.name}>
+      </figure>
+      <figcaption className='cart-item-info'>
+        <h5 className='cart-item-title' aria-label={'Product name is' + item.name}>
           {item.name}
-        </div>
-        <div className='cart-item-calculation'>
+        </h5>
+        <section className='cart-item-calculation'>
           <div
             variant='primary'
             className='btn-rounded'
@@ -56,15 +56,15 @@ const CartItem = ({ item }) => {
           >
             ₹{item.price}
           </span>
-          <div
+          <section
             className='total'
             aria-label={'total price for' + item.name + 'is' + item.count * item.price}
           >
             ₹{item.count * item.price}
-          </div>
-        </div>
-      </div>
-    </div>
+          </section>
+        </section>
+      </figcaption>
+    </section>
   );
 };
 

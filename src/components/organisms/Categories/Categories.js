@@ -19,25 +19,24 @@ const Categories = React.memo(() => {
         console.log(err);
       });
   }, []);
+  const categoriesContent = categoriesList?.map((a) => {
+    return (
+      <CategoryCard
+        key={a.key}
+        name={a.key}
+        id={a.id}
+        categoryName={a.name}
+        imgUrl={a.imageUrl}
+        desc={a.description}
+      />
+    );
+  });
   if (!categoriesList) {
     return <h1>Loading....</h1>;
   }
   return (
     <>
-      <div className='category-container'>
-        {categoriesList?.map((a) => {
-          return (
-            <CategoryCard
-              key={a.key}
-              name={a.key}
-              id={a.id}
-              categoryName={a.name}
-              imgUrl={a.imageUrl}
-              desc={a.description}
-            />
-          );
-        })}
-      </div>
+      <ul className='category-container'>{categoriesContent}</ul>
     </>
   );
 });

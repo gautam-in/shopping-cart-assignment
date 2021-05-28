@@ -12,12 +12,12 @@ export default function ProductCard({ product }) {
 
   return (
     <>
-      <div className='product-card' aria-label={'Product card for' + productObj.name}>
+      <article className='product-card' aria-label={'Product card for' + productObj.name}>
         <h3 aria-label={'product name is' + productObj.name} className='product-header'>
           {productObj.name}
         </h3>
-        <div className='product-content'>
-          <div className='product-image'>
+        <section className='product-content'>
+          <figure className='product-image'>
             <img
               src={productObj.imageURL}
               aria-label={'image of' + productObj.name}
@@ -26,8 +26,8 @@ export default function ProductCard({ product }) {
               height='auto'
               loading='lazy'
             />
-          </div>
-          <div className='product-detail'>
+          </figure>
+          <figcaption className='product-detail'>
             <p aria-label={'product description is' + productObj.description}>
               {productObj.description}
             </p>
@@ -38,8 +38,8 @@ export default function ProductCard({ product }) {
             >
               {Constants.BuyNow} @ {`${Constants.MRP} ${Constants.INR}.${productObj.price}`}
             </button>
-          </div>
-        </div>
+          </figcaption>
+        </section>
         <section className='product-tablet-button'>
           <button
             aria-label={'BUY NOW button, the product price is' + productObj.price}
@@ -62,7 +62,7 @@ export default function ProductCard({ product }) {
             {Constants.BuyNow}
           </button>
         </section>
-      </div>
+      </article>
     </>
   );
 }
