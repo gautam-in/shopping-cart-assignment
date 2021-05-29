@@ -6,6 +6,7 @@ import {
   Validators,
 } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -16,9 +17,17 @@ export class LoginComponent implements OnInit {
   loginForm: FormGroup = new FormGroup({});
   submitted: boolean = false;
 
-  constructor(private router: Router, private fb: FormBuilder) {}
+  constructor(
+    private router: Router,
+    private fb: FormBuilder,
+    private auth: AuthService
+  ) {}
 
   ngOnInit(): void {
+    this.createLoginForm();
+  }
+
+  createLoginForm(): void {
     this.loginForm = this.fb.group({
       email: ['', Validators.required],
       password: ['', Validators.required],
@@ -28,7 +37,12 @@ export class LoginComponent implements OnInit {
   get formControl() {
     return this.loginForm.controls;
   }
+
   onSubmit(): void {
-    this.router.navigate(['/home']);
+    if (this.auth.isLoggedIn()) {
+      this.router.navigate(['/home']);
+    } else {
+      this.router.navigate(['/login']);
+    }
   }
 }

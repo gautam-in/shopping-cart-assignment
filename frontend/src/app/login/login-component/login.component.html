@@ -1,33 +1,42 @@
 <app-header></app-header>
-
-<div class="container">
-  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-    <label for="email"> Email </label>
-    <input type="email" formControlName="email" />
-    <div
-      *ngIf="
-        formControl.email.invalid &&
-        (formControl.email.dirty || formControl.email.touched)
-      "
-    >
-      <div *ngIf="formControl.email.errors?.required" class="has-error">
-        Email is required.
+<section class="login-container">
+  <div class="text-container">
+    <p class="login-header">Login</p>
+    <p class="login-desc">
+      Get access to your Orders, Wishlist and Recommendations.
+    </p>
+  </div>
+  <div class="form-container">
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" name="login-form" class="form">
+      <label for="email"> Email </label>
+      <input type="email" formControlName="email" />
+      <div
+        *ngIf="
+          formControl.email.invalid &&
+          (formControl.email.dirty || formControl.email.touched)
+        "
+      >
+        <div *ngIf="formControl.email.errors?.required" class="has-error">
+          Email is required.
+        </div>
       </div>
-    </div>
 
-    <label for="password"> Password </label>
-    <input type="password" formControlName="password" name="password" />
-    <div
-      *ngIf="
-        formControl.password.invalid &&
-        (formControl.password.dirty || formControl.password.touched)
-      "
-    >
-      <div *ngIf="formControl.password.errors?.required" class="has-error">
-        Password is required.
+      <label for="password"> Password </label>
+      <input type="password" formControlName="password" name="password" />
+      <div
+        *ngIf="
+          formControl.password.invalid &&
+          (formControl.password.dirty || formControl.password.touched)
+        "
+      >
+        <div *ngIf="formControl.password.errors?.required" class="has-error">
+          Password is required.
+        </div>
       </div>
-    </div>
 
-    <button [disabled]="loginForm.invalid" type="submit">Login</button>
-  </form>
-</div>
+      <button [disabled]="loginForm.invalid" type="submit">Login</button>
+    </form>
+  </div>
+</section>
+
+<app-footer></app-footer>
