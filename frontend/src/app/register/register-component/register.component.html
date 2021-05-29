@@ -9,7 +9,7 @@
   </div>
 
   <div class="form-container">
-    <div class="form" [formGroup]="registerForm">
+    <form class="form" [formGroup]="registerForm" name="register-form">
       <label for="fName"> First Name</label>
       <input type="text" formControlName="fName" name="fName" />
 
@@ -90,6 +90,8 @@
       </div>
 
       <button type="submit" (click)="onSubmit()">Register</button>
-    </div>
+    </form>
   </div>
 </section>
+
+<app-footer></app-footer>
