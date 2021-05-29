@@ -14,37 +14,11 @@ export class HomePageComponent implements OnInit {
   customOptions: any = {
     loop: true,
     autoplay: true,
-
     dots: true,
     navSpeed: 500,
-    // center: true,
-    items: 1,
-
+    items: 1.7,
     margin: 4,
     autoWidth: true,
-
-    // responsiveClass: true,
-    // responsive: {
-    //   0: {
-    //     items: 1,
-    //     nav: true,
-    //   },
-    //   600: {
-    //     items: 1,
-    //     nav: true,
-    //   },
-    //   1000: {
-    //     items: 2,
-    //     nav: true,
-    //     loop: false,
-    //   },
-    //   1500: {
-    //     items: 3,
-    //     nav: true,
-    //     loop: false,
-    //   },
-    // },
-    // nav: true,
   };
 
   constructor(
