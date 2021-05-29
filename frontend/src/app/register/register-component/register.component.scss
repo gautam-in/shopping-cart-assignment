@@ -1,36 +1,69 @@
-.container {
-  border-radius: 5px;
-  background-color: #fdfdfd02;
-  // margin-top: 50px;
-  width: 30%;
-  height: 30%;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  /* bring your own prefixes */
-  transform: translate(-50%, -50%);
+@import "./../../../styles/variable";
+
+.signup-container {
+  padding: 0 9px;
+  text-align: center;
+  min-height: 400px;
+  margin: auto;
+  display: flex;
 }
 
-input[type="text"],
-input[type="email"],
-input[type="password"] {
-  width: 100%;
-  margin: 8px 0;
-  box-sizing: border-box;
-  border: none;
-  border-bottom: 2px solid lightgrey;
-}
-button[type="submit"] {
-  width: 100%;
-  background-color: rgba(150, 21, 45, 2);
-  color: white;
-  padding: 14px 20px;
-  margin: 10px 0;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
+.text-container {
+  width: 45%;
+  margin-top: 50px;
+
+  .signup-header {
+    font-size: $header-font-size;
+    font-weight: $header-font-weight;
+    margin: 50px 100px 10px 0;
+  }
+
+  .signup-desc {
+    font-size: $text-desc-size;
+    font-weight: $text-desc-weight;
+    margin: 8px 0 0 100px;
+  }
 }
 
-.has-error {
-  color: red;
+.form-container {
+  width: 50%;
+
+  .form {
+    width: $form-width;
+    margin-top: 30px;
+  }
+
+  label {
+    float: left;
+    margin-left: 0;
+  }
+
+  input {
+    width: $input-width;
+    margin: 35px 0 12px 0;
+    border: none;
+    border-bottom: 2px solid lightgrey;
+    outline: none;
+    display: block;
+    height: 25px;
+    background: none !important;
+  }
+  button {
+    width: 45%;
+    background-color: $button-color;
+    color: white;
+    padding: 12px 20px;
+    margin-top: 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: none !important;
+  }
+
+  .has-error {
+    color: $error-text-color;
+    font-size: $error-text-font;
+    float: right;
+    height: 0 !important;
+  }
 }

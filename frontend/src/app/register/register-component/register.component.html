@@ -1,75 +1,95 @@
 <app-header></app-header>
-<div class="container" [formGroup]="registerForm">
-  <label for="fName"> First Name</label>
-  <input type="text" formControlName="fName" name="fName" />
 
-  <div
-    *ngIf="
-      formControl.fName.invalid &&
-      (formControl.fName.dirty || formControl.fName.touched)
-    "
-  >
-    <div *ngIf="formControl.fName.errors?.required" class="has-error">
-      First name is required.
-    </div>
-  </div>
-  <label for="lName"> Last Name</label>
-  <input type="text" formControlName="lName" name="lName" />
-  <div
-    *ngIf="
-      formControl.lName.invalid &&
-      (formControl.lName.dirty || formControl.lName.touched)
-    "
-  >
-    <div *ngIf="formControl.lName.errors?.required" class="has-error">
-      Last name is required.
-    </div>
+<section class="signup-container">
+  <div class="text-container">
+    <p class="signup-header">Signup</p>
+    <p class="signup-desc">
+      We do not share your personal details with anyone.
+    </p>
   </div>
 
-  <label for="email"> Email</label>
-  <input type="email" formControlName="email" name="email" />
-  <div
-    *ngIf="
-      formControl.email.invalid &&
-      (formControl.email.dirty || formControl.email.touched)
-    "
-  >
-    <div *ngIf="formControl.email.errors?.required" class="has-error">
-      Email is required.
+  <div class="form-container">
+    <div class="form" [formGroup]="registerForm">
+      <label for="fName"> First Name</label>
+      <input type="text" formControlName="fName" name="fName" />
+
+      <div
+        *ngIf="
+          formControl.fName.invalid &&
+          (formControl.fName.dirty || formControl.fName.touched)
+        "
+      >
+        <p *ngIf="formControl.fName.errors?.required" class="has-error">
+          First name is required.
+        </p>
+      </div>
+      <label for="lName"> Last Name</label>
+      <input type="text" formControlName="lName" name="lName" />
+      <div
+        *ngIf="
+          formControl.lName.invalid &&
+          (formControl.lName.dirty || formControl.lName.touched)
+        "
+      >
+        <div *ngIf="formControl.lName.errors?.required" class="has-error">
+          Last name is required.
+        </div>
+      </div>
+
+      <label for="email"> Email</label>
+      <input type="email" formControlName="email" name="email" />
+      <div
+        *ngIf="
+          formControl.email.invalid &&
+          (formControl.email.dirty || formControl.email.touched)
+        "
+      >
+        <div *ngIf="formControl.email.errors?.required" class="has-error">
+          Email is required.
+        </div>
+      </div>
+
+      <label for="password"> Password </label>
+      <input type="password" formControlName="password" name="password" />
+      <div
+        *ngIf="
+          formControl.password.invalid &&
+          (formControl.password.dirty || formControl.password.touched)
+        "
+      >
+        <div *ngIf="formControl.password.errors?.required" class="has-error">
+          Password is required.
+        </div>
+      </div>
+
+      <label for="cPassword"> Confirm Password</label>
+      <input
+        type="password"
+        formControlName="confirmPassword"
+        name="cPassword"
+      />
+      <div
+        *ngIf="
+          formControl.confirmPassword.invalid &&
+          (formControl.confirmPassword.dirty ||
+            formControl.confirmPassword.touched)
+        "
+      >
+        <div
+          *ngIf="formControl.confirmPassword.errors?.required"
+          class="has-error"
+        >
+          Confirm Password is required.
+        </div>
+        <div
+          *ngIf="formControl.confirmPassword.errors?.mustMatch"
+          class="has-error"
+        >
+          Passwords must match
+        </div>
+      </div>
+
+      <button type="submit" (click)="onSubmit()">Register</button>
     </div>
   </div>
-
-  <label for="password"> Password </label>
-  <input type="password" formControlName="password" name="password" />
-  <div
-    *ngIf="
-      formControl.password.invalid &&
-      (formControl.password.dirty || formControl.password.touched)
-    "
-  >
-    <div *ngIf="formControl.password.errors?.required" class="has-error">
-      Password is required.
-    </div>
-  </div>
-
-  <label for="cPassword"> Confirm Password</label>
-  <input type="password" formControlName="confirmPassword" name="cPassword" />
-  <div
-    *ngIf="
-      formControl.confirmPassword.invalid &&
-      (formControl.confirmPassword.dirty || formControl.confirmPassword.touched)
-    "
-  >
-    <div *ngIf="formControl.confirmPassword.errors?.required" class="has-error">
-      Confirm Password is required.
-    </div>
-    <div
-      *ngIf="formControl.confirmPassword.errors?.mustMatch"
-      class="has-error"
-    >
-      Passwords must match
-    </div>
-  </div>
-
-  <button type="submit" (click)="onSubmit()">Register</button>
-</div>
+</section>
