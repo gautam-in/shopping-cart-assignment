@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useHistory } from "react-router-dom";
 
 import Button from "../../components/common/button";
 import Input from "../../components/common/input";
@@ -25,6 +26,7 @@ const INITIAL_FORM = {
   password: "",
 };
 const LoginMyBazar = () => {
+  const history = useHistory();
   const [form, setForm] = useState(INITIAL_FORM);
   const [error, setError] = useState(INITIAL_FORM);
 
@@ -32,18 +34,20 @@ const LoginMyBazar = () => {
     event.preventDefault();
     let formErrors = { ...INITIAL_FORM };
 
-    // // error checking
-    // const hasError = Object.values(formErrors).every(
-    //   (item) => item.trim() === ""
-    // );
+    // error checking
+    const hasError = Object.values(form).every((item) => item.trim() === "");
+
     // if (!hasError) {
     //   setError({ ...formErrors });
     //   return;
     // }
+
     window.localStorage.setItem("user", JSON.stringify(form));
     setError(INITIAL_FORM);
     setForm(INITIAL_FORM);
     formErrors = { ...INITIAL_FORM };
+
+    !hasError && history.push("/home");
   };
 
   // handle input change
