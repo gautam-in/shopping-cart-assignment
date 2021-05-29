@@ -1,7 +1,14 @@
 <app-header></app-header>
 
 <mat-sidenav-container class="sidenav-container">
-  <mat-sidenav mode="side" opened>
+  <mat-sidenav
+    mode="side"
+    opened
+    class="sidenav"
+    [fixedInViewport]="options.value.fixed"
+    [fixedTopGap]="options.value.top"
+    [fixedBottomGap]="options.value.bottom"
+  >
     <mat-nav-list *ngFor="let category of allCategories">
       <a class="mat-list" mat-list-item (click)="showProducts($event)">{{
         category.name
@@ -12,8 +19,9 @@
   <mat-sidenav-content
     ><mat-card class="product-card" *ngFor="let products of allProducts">
       <mat-card-header>
-        <mat-card-title>{{ products.name }}</mat-card-title>
+        <mat-card-subtitle>{{ products.name }}</mat-card-subtitle>
       </mat-card-header>
+
       <img
         class="product-img"
         mat-card-image
@@ -21,15 +29,15 @@
         alt="Product image"
       />
       <mat-card-content>
-        <p>
+        <p class="product-desc">
           {{ products.description | slice: 0:100
           }}{{ products.description.length > 100 ? "..." : "" }}
         </p>
       </mat-card-content>
-      <mat-card-actions>
-        <span>MRP Rs.{{ products.price }}</span>
-        <button mat-button>Buy Now</button>
-      </mat-card-actions>
+      <div mat-card-actions class="action-btn">
+        <button class="mrp-btn" mat-button>MRP Rs.{{ products.price }}</button>
+        <button class="buy-btn" mat-raised-button>Buy Now</button>
+      </div>
     </mat-card>
   </mat-sidenav-content>
 </mat-sidenav-container>
