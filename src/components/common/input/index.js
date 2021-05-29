@@ -97,7 +97,6 @@ const Input = ({
         aria-label={label}
         onBlur={handleBlur}
         onFocus={handleOnFocus}
-        // required
         {...rest}
       />
       <label htmlFor={name} aria-label={label}>
