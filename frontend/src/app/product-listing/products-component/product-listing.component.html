@@ -1,2 +1,35 @@
 <app-header></app-header>
-<p>product-listing works!</p>
+
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav mode="side" opened>
+    <mat-nav-list *ngFor="let category of allCategories">
+      <a class="mat-list" mat-list-item (click)="showProducts($event)">{{
+        category.name
+      }}</a>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content
+    ><mat-card class="product-card" *ngFor="let products of allProducts">
+      <mat-card-header>
+        <mat-card-title>{{ products.name }}</mat-card-title>
+      </mat-card-header>
+      <img
+        class="product-img"
+        mat-card-image
+        src="{{ './../../../assets/' + products.imageURL }}"
+        alt="Product image"
+      />
+      <mat-card-content>
+        <p>
+          {{ products.description | slice: 0:100
+          }}{{ products.description.length > 100 ? "..." : "" }}
+        </p>
+      </mat-card-content>
+      <mat-card-actions>
+        <span>MRP Rs.{{ products.price }}</span>
+        <button mat-button>Buy Now</button>
+      </mat-card-actions>
+    </mat-card>
+  </mat-sidenav-content>
+</mat-sidenav-container>

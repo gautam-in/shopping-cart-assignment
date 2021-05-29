@@ -1,0 +1,27 @@
+.sidenav-container {
+  position: absolute;
+  top: 68px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #eee;
+  margin-left: 10px;
+}
+mat-card-image {
+  text-align: center;
+  background-position: center;
+}
+
+.sidenav-container mat-sidenav {
+  width: 20%;
+  background-color: antiquewhite;
+}
+
+.product-card {
+  max-width: 27%;
+
+  display: inline-block;
+  margin: 2px 10px;
+  border-bottom: 1px dotted black;
+  box-sizing: border-box;
+}
