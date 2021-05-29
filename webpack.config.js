@@ -62,13 +62,13 @@ module.exports = (env, mode) => {
         patterns: [
           "static",
           {
-            from: __dirname + "/static",
+            from: __dirname + "/static/**/*",
             to: __dirname + "/public",
           },
-          // {
-          //     from: __dirname + '/static/**/*',
-          //     to: __dirname + '/dist',
-          // }
+          {
+              from: __dirname + '/static/**/*',
+              to: __dirname + '/dist',
+          }
         ],
         options: {
           concurrency: 100,

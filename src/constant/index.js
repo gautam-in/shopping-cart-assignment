@@ -1,4 +1,5 @@
 // common label
+export const selectCategoryLabel = "Select Category";
 export const addToCartLabel = "BUY NOW";
 export const mrpLabel = "MRP";
 export const ruppeeLabel = "Rs.";

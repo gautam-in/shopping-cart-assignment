@@ -60,7 +60,7 @@ const ProductList = () => {
 
   const handleClick = (value) => {
     const id = value;
-    if (selectedCategory === id) {
+    if (selectedCategory === id || id == "") {
       history.push(`/products`);
     } else {
       history.push(`/products?category=${id}`);

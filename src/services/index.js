@@ -8,7 +8,8 @@ export const checkLoggedIn = () => {
 
 // All Api required for the "MY BAZAR APPLICATION"
 
-const baseUrl = "http://localhost:5000";
+// const baseUrl = "http://localhost:5000";
+const baseUrl = "https://sabka-bazar-server.netlify.app/.netlify/functions/api";
 
 export const registerApi = "";
 export const loginApi = "";
