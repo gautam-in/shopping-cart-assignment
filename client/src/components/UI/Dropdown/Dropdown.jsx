@@ -15,12 +15,18 @@ export default function Dropdown(props) {
       return;
     } else {
       setProductCategory(id);
+      setValue(id);
     }
   };
-
+  console.log(value);
   return (
-    <div className="dropdownContainer">
-      <select value={value} className="selectBox" onClick={handleSelectClick}>
+    <div className="dropdownContainer" data-test="component-dropdown">
+      <select
+        value={value}
+        className="selectBox"
+        onChange={handleSelectClick}
+        data-test="dropdown-select"
+      >
         {categories.map((category) => {
           return (
             <option

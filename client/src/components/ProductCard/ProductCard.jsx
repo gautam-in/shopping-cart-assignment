@@ -55,18 +55,18 @@ function Card(props) {
   };
 
   return (
-    <div className="productCard">
+    <main className="productCard">
       <h3 className="productName">{product.name}</h3>
-      <div>
+      <figure>
         <img src={product.imageURL} alt={product.name} width="100%" />
-      </div>
+      </figure>
 
-      <div className="productDescription">
+      <section className="productDescription">
         <div className="desc">{product.description}</div>
-      </div>
+      </section>
 
-      <div className="productPriceContainer">
-        <div className="productPrice"> MRP Rs.{product.price} </div>
+      <section className="productPriceContainer">
+        <section className="productPrice"> MRP Rs.{product.price} </section>
 
         <button
           className="productPriceButton"
@@ -75,8 +75,8 @@ function Card(props) {
         >
           Buy Now
         </button>
-      </div>
-    </div>
+      </section>
+    </main>
   );
 }
 const mapStateToProps = (store) => {

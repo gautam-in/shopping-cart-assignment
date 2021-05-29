@@ -9,8 +9,12 @@ function Button(props) {
       disabled={props.disabled}
       type={props.type}
       id="submit"
+      data-test="component-button"
     >
-      <span className={cx(classes.label, props.labelClassName)}>
+      <span
+        className={cx(classes.label, props.labelClassName)}
+        data-text="button-span"
+      >
         {props.text}
       </span>
     </button>

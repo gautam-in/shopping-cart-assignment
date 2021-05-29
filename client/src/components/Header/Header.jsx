@@ -20,16 +20,16 @@ function Header(props) {
     props.history.push("/");
     window.location.reload();
   };
-  console.log(localStorage.getItem("registered_user"));
+
   return (
     <header className="header">
       {cartDialog && (
         <Cart setCartDialog={setCartDialog} cartDialog={cartDialog} />
       )}
-      <div className="container">
-        <div className="logo">
+      <section className="container">
+        <figure className="logo">
           <img src={Logo} alt="Sabka Bazaar" />
-        </div>
+        </figure>
         <nav className="navOptions">
           <span>
             <Link to={ApplicationUrls.HOME}>{LABEL.HOME}</Link>
@@ -38,8 +38,8 @@ function Header(props) {
             <Link to="/products">Products</Link>
           </span>
         </nav>
-        <div className="cartLogoC">
-          <div className="cartLogoContainer">
+        <section className="cartLogoC">
+          <section className="cartLogoContainer">
             <nav className="text">
               {user && <span>HI! {user.first_name}</span>}
               {user && (
@@ -59,15 +59,15 @@ function Header(props) {
                 </span>
               )}
             </nav>
-            <div className="cartIcon" onClick={() => setCartDialog(true)}>
+            <section className="cartIcon" onClick={() => setCartDialog(true)}>
               <button className="cartbtn">
                 <CartLogo name="cartButton" fill="#e83583" />
               </button>
               <div>{props.count} items</div>
-            </div>
-          </div>
-        </div>
-      </div>
+            </section>
+          </section>
+        </section>
+      </section>
     </header>
   );
 }

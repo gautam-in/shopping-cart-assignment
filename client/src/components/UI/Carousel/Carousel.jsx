@@ -28,7 +28,7 @@ export default function Carousel(props) {
     showSlides();
   }, []);
   return (
-    <div>
+    <div data-test="component-carousel">
       <div class="slideShowContainer">
         {banners.map((banner) => {
           return (
@@ -37,6 +37,7 @@ export default function Carousel(props) {
                 src={banner.bannerImageUrl}
                 style={{ width: "100%" }}
                 alt={banner.bannerImageAlt}
+                data-test="carousel-image"
               />
             </div>
           );

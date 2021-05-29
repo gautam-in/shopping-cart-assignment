@@ -15,25 +15,27 @@ function ProductCartItems(props) {
     props.history.push("/");
   };
   return (
-    <>
+    <main>
       <Dialog
         dialog={dialog}
         setDialog={setDialog}
         onDialogConfirm={onDialogConfirm}
       />
-      <div style={{ height: "100%", overflow: "auto", position: "relative" }}>
-        <div className="items">
+      <section
+        style={{ height: "100%", overflow: "auto", position: "relative" }}
+      >
+        <section className="items">
           {cart.map((item) => (
             <ProductCartItem item={item} key={item.id} />
           ))}
-        </div>
-        <div className="checkoutBanner">
-          <div>
+        </section>
+        <section className="checkoutBanner">
+          <figure>
             <img src="./static/images/lowest-price.png" alt="" height="40px" />
-          </div>
-          <div>You won't find it cheaper anywhere.</div>
-        </div>
-        <div className="checkoutButtonContainer">
+          </figure>
+          <figcaption>You won't find it cheaper anywhere.</figcaption>
+        </section>
+        <section className="checkoutButtonContainer">
           <small>Promo code can be applied on payment page.</small>
           <button className="checkoutButton" onClick={() => setDialog(true)}>
             <span>Proceed to checkout</span>
@@ -41,9 +43,9 @@ function ProductCartItems(props) {
             Rs. {price()} &nbsp;&nbsp;&nbsp; <b>{"  >"}</b>
           </span> */}
           </button>
-        </div>
-      </div>
-    </>
+        </section>
+      </section>
+    </main>
   );
 }
 export default withRouter(connect(null, { handleReset })(ProductCartItems));

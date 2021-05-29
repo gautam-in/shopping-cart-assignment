@@ -40,7 +40,6 @@ function Product(props) {
   const FilterProducts = productItems.filter((item) =>
     productCategory ? productCategory === item.category : true
   );
-  console.log(windowDimensions.width, isMobile);
   return (
     <main className="productContainer">
       {windowDimensions.width >= 600 && (
