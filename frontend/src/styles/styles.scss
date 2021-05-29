@@ -39,11 +39,16 @@ body {
   width: auto;
 }
 .owl-stage-outer {
-  height: 130%;
-  position: relative;
-  overflow: hidden;
+  height: 190px;
+  background-color: whitesmoke;
 }
 
 .owl-item img {
-  height: 140px;
+  height: 173px;
+  width: 250px;
+  margin-top: 0 !important;
+}
+
+.owl-dots {
+  margin: 0 !important;
 }

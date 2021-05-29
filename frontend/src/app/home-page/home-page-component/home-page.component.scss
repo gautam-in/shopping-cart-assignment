@@ -4,17 +4,16 @@
 .owl-item {
   height: 40vh;
   margin: auto;
-  width: 60%;
-  padding: 0 9px;
+  width: 58%;
+  background-color: whitesmoke;
 }
-
 //for different categories
 .category-container {
   width: 60%;
-  padding: 0 9px;
+  padding: 10px 9px;
   text-align: center;
   min-height: 60px;
-  margin: auto;
+  margin: 20px auto auto auto;
 }
 
 .sub-container {
@@ -22,38 +21,39 @@
   height: 350%;
   display: flex;
   margin: 10px 0;
-  //border: 1px solid black;
-}
+  box-shadow: 0 100px 80px rgba(0, 0, 0, 0.04);
 
-.sub-container .img-container {
-  width: 30%;
-}
-.category-img {
-  width: 100%;
-  float: left;
-}
+  .img-container {
+    width: 30%;
+  }
+  .category-img {
+    width: 100%;
+    float: left;
+    margin-left: 0;
+  }
 
-.sub-container .btn-container {
-  width: 70%;
-}
-.navigate-button {
-  background-color: $button-color;
-  border: none;
-  color: white;
-  padding: 6px 12px;
-  font-size: 10px;
-  text-decoration: none;
-  margin: 10px 0;
-  cursor: pointer;
-}
+  .btn-container {
+    width: 70%;
+  }
+  .navigate-button {
+    background-color: $button-color;
+    border: none;
+    color: white;
+    padding: 6px 12px;
+    font-size: 10px;
+    text-decoration: none;
+    margin: 10px 0;
+    cursor: pointer;
+  }
 
-.category-name {
-  font-size: 15px;
-  font-weight: bold;
-  margin: 8px 0 5px 0;
-}
+  .category-name {
+    font-size: 15px;
+    font-weight: bold;
+    margin: 8px 0 5px 0;
+  }
 
-.category-desc {
-  font-size: 12px;
-  margin: 8px 0;
+  .category-desc {
+    font-size: 14px;
+    margin: 8px 0;
+  }
 }
