@@ -9,6 +9,7 @@ import { RegisterModule } from './register/register.module';
 import { SharedModule } from './shared/shared.module';
 import { HttpClientModule } from '@angular/common/http';
 import { ProductListingModule } from './product-listing/product-listing.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [AppComponent],
@@ -21,6 +22,7 @@ import { ProductListingModule } from './product-listing/product-listing.module';
     ProductListingModule,
     SharedModule,
     HttpClientModule,
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
