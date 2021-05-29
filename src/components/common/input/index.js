@@ -11,6 +11,7 @@ const Input = ({
   errorLabel,
   invalidErrorLabel,
   regex,
+  showAsterisk,
   ...rest
 }) => {
   const [error, setError] = useState(false);
