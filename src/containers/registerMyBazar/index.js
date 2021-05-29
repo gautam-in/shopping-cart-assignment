@@ -36,24 +36,22 @@ const INITIAL_FORM = {
 };
 const Register = () => {
   const history = useHistory();
+  const [checkValidation, setCheckValidation] = useState(false);
   const [form, setForm] = useState(INITIAL_FORM);
-  const [error, setError] = useState(INITIAL_FORM);
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    let formErrors = { ...INITIAL_FORM };
-
+    
     // error checking
-    const hasError = Object.values(form).every((item) => item.trim() === "");
-    // if (!hasError) {
-    //   setError({ ...formErrors });
-    //   return;
-    // }
-    window.localStorage.setItem("user", JSON.stringify(form));
-    setError(INITIAL_FORM);
-    setForm(INITIAL_FORM);
-    formErrors = { ...INITIAL_FORM };
-    !hasError && history.push(`/home`);
+    const hasError = Object.values(form).some((item) => item.trim() === "");
+
+    if (!hasError) {
+      window.localStorage.setItem("user", JSON.stringify(form));
+      setForm(INITIAL_FORM);
+      history.push(`/home`);
+    } else {
+      setCheckValidation(true);
+    }
   };
 
   // handle input change
@@ -73,6 +71,7 @@ const Register = () => {
           className="form "
           autoComplete="off"
           onSubmit={handleSubmit}
+          method="POST"
           name="register"
         >
           <Input
@@ -83,6 +82,7 @@ const Register = () => {
             onChange={handleInputChange}
             autoFocus={true}
             label={firstNameLabel}
+            checkValidation={checkValidation}
             errorLabel={firstNameErrorLabel}
           />
           <Input
@@ -92,16 +92,18 @@ const Register = () => {
             value={form.lastName}
             onChange={handleInputChange}
             label={lastNameLabel}
+            checkValidation={checkValidation}
             errorLabel={lastNameErrorLabel}
           />
           <Input
             type="text"
             name="email"
-            className={`${error.email ? "error" : ""}`}
+            className="form-control"
             value={form.email}
             onChange={handleInputChange}
             label={emailLabel}
             errorLabel={emailErrorLabel}
+            checkValidation={checkValidation}
             invalidErrorLabel={emailInvaildErrorLabel}
             regex={emailRegex}
           />
@@ -113,6 +115,7 @@ const Register = () => {
             onChange={handleInputChange}
             autoComplete="new-password"
             label={passwordLabel}
+            checkValidation={checkValidation}
             errorLabel={passwordErrorLabel}
             invalidErrorLabel={passwordInvaildErrorLabel}
             regex={passwordRegex}
@@ -120,10 +123,11 @@ const Register = () => {
           <Input
             type="password"
             name="confirmPassword"
-            className={`${error.confirmPassword ? "error" : ""}`}
+            className="form-control"
             value={form.confirmPassword}
             onChange={handleInputChange}
             autoComplete="new-password"
+            checkValidation={checkValidation}
             label={confirmPasswordLabel}
             errorLabel={confirmPasswordErrorLabel}
           />

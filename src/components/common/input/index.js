@@ -11,7 +11,7 @@ const Input = ({
   errorLabel,
   invalidErrorLabel,
   regex,
-  showAsterisk,
+  checkValidation,
   ...rest
 }) => {
   const [error, setError] = useState(false);
@@ -19,9 +19,9 @@ const Input = ({
   const [valueChanged, setValueChanged] = useState(false);
   const regexValue = new RegExp(regex);
 
-  // useEffect(() => {
-  //   validate();
-  // }, [valueChanged]);
+  useEffect(() => {
+    validate();
+  }, [checkValidation]);
 
   /**
    * getError - handles errors
@@ -29,6 +29,11 @@ const Input = ({
    */
   const getError = (e) => {
     if (value.length === 0 && valueChanged && errorLabel) {
+      return {
+        error: true,
+        errorMsg: errorLabel,
+      };
+    } else if (value.length === 0 && checkValidation && errorLabel) {
       return {
         error: true,
         errorMsg: errorLabel,

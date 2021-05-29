@@ -19,7 +19,7 @@ import {
   proceedToCheckoutLabel,
   totalAmountLabel,
   continueShoppingLabel,
-  itemLabel
+  itemLabel,
 } from "../../constant";
 
 const Cart = (props) => {
@@ -103,14 +103,14 @@ const Cart = (props) => {
     >
       <div className="cart-card">
         <div className="cart-header">
-          <h4 className="cart-title">
+          <h1 className="cart-title">
             {`${cartTitleLabel} `}
             {cartItems?.length > 0 && (
               <span className="item-count">{`( ${
                 cartItems ? noOfItemInCart : 0
               } ${itemLabel} )`}</span>
             )}
-          </h4>
+          </h1>
           <span className="close_button_container">
             <svg
               viewBox="0 0 329.26933 329"
@@ -158,7 +158,7 @@ const Cart = (props) => {
             </div>
           )}
         </div>
-        <div className="cart-footer">
+        <div className={`cart-footer ${cartItems.length ? "" : "empty-cart"}`}>
           {cartItems?.length > 0 ? (
             <>
               <div className="promo_code_desc">{promoCodeApplyLabel}</div>

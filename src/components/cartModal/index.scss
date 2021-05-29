@@ -40,8 +40,15 @@
           }
         }
 
-        & .cart-footer {
+        & .cart-footer.empty-cart {
           margin-top: 0px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          & .btn-primary {
+            width: 90%;
+          }
         }
       }
     }
