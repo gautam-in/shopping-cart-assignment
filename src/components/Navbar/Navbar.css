@@ -62,11 +62,11 @@
 }
 
 .signin{
-    float:left;
+    
     margin: 0px 10px;
 }
 .register{
-    float: left;
+  
     margin: 0px 10px;
 
 }
@@ -76,12 +76,58 @@
   
 }
 
-@media (max-width:414px){
+@media (min-width:414px){
     .img-style{
         width: 50px;
         height: 50px;
         justify-self: start;
         margin-left: 50px;
         margin-top: 60px;
+    }
+}
+
+@media(min-width:320px)and (max-width:413px){
+    .img-style{
+        width: 50px;
+        height: 50px;
+        justify-self: start;
+        margin-left: 150px;
+        margin-top: 60px;
+    }
+    .container{
+        margin-right: 100px;
+        
+    }
+    .bottom-container{
+        height: 40px;
+        padding: 10px;
+        width: 80px;
+        font-size: 12px
+    }
+    
+.signin{
+    display: none;
+   
+}
+.register{
+    display: none;
+  
+  
+
+}
+.links{
+    margin-left: 0px;
+}
+}
+
+@media (max-width:413px){
+   
+    .signin{
+        display: none;
+       
+    }
+    .register{
+        display: none;
+     
     }
 }

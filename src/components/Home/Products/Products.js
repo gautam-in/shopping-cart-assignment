@@ -40,7 +40,7 @@ import {withRouter} from "react-router-dom"
                     return <li key={prd.key} style={{ listStyle: 'none' }}>
                         <div style={{ textAlign: 'justify' }}>
                         <div className="product-detail">
-                           <div className="image"> <img className="img-class" src={require(`../../../../static/images/${imageurl2}/${imageurl1}`).default} /></div>
+                           <div className="product-image"> <img className="img-class" src={require(`../../../../static/images/${imageurl2}/${imageurl1}`).default} /></div>
                            
                             <div className="desc"> <h2>{prd.name}</h2>
                                 <p>{prd.description}</p>
