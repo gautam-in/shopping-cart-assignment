@@ -35,7 +35,7 @@ const LoginBody = () => {
               },
             }}
             render={({ field }) => (
-              <TextField {...field} type="email" label="Email" />
+              <TextField {...field} type="email" label="Email" id="Email" />
             )}
           />
           {errors.email && (
@@ -56,7 +56,12 @@ const LoginBody = () => {
               },
             }}
             render={({ field }) => (
-              <TextField {...field} type="password" label="Password" />
+              <TextField
+                {...field}
+                type="password"
+                label="Password"
+                id="Password"
+              />
             )}
           />
           {errors.password && (

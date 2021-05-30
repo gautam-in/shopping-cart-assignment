@@ -14,8 +14,6 @@ const Home = () => {
     dispatch(getOffers());
     dispatch(getCategories());
   }, []);
-
-  console.log({ offers, categories });
   return (
     <Container>
       <Banner data={offers} />
