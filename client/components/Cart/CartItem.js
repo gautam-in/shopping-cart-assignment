@@ -1,4 +1,4 @@
-import styles from '../styles/cartItem.module.scss';
+import styles from '../../styles/cartItem.module.scss';
 
 const CartItem = ({ name, imageURL, price, id, quantity, inc, dec }) => {
 
@@ -12,9 +12,9 @@ const CartItem = ({ name, imageURL, price, id, quantity, inc, dec }) => {
                 <div className={styles.info}>
                     <p>{name}</p>
                     <div className={styles.quantity}>
-                        <p className={styles.incBtn} onClick={() => dec(id)}>-</p>
+                        <div className={styles.incBtn} onClick={() => dec(id)}>-</div>
                         {quantity}
-                        <p className={styles.decBtn} onClick={() => inc(id)}>+</p>
+                        <div className={styles.decBtn} onClick={() => inc(id)}>+</div>
                         <p> {`x Rs.${price}`} </p>
                     </div>
                 </div>

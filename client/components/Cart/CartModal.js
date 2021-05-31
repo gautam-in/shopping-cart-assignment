@@ -1,7 +1,6 @@
-import axios from 'axios';
-import { useEffect } from 'react';
-import styles from '../styles/cartmodal.module.scss';
-import { useCart } from '../util/cartState';
+
+import styles from '../../styles/cartmodal.module.scss';
+import { useCart } from '../../util/cartState';
 import CartItem from './CartItem';
 
 const CartModal = ({ show, close }) => {
@@ -44,17 +43,35 @@ const CartModal = ({ show, close }) => {
           {
             cart.map(item => <CartItem key={item.id + Math.random()} {...item} inc={onIncrementHandler} dec={onDecrementHandler} />)
           }
-          <div className={styles.lowestPrice} >
-            <img src="/static/images/lowest-price.png" alt="Cart" />
-            <small>You won't find it cheaper anywhere</small>
-          </div>
+          {
+            cart.length > 0 ? (
+              <div className={styles.lowestPrice} >
+                <img src="/static/images/lowest-price.png" alt="Cart" />
+                <small>You won't find it cheaper anywhere</small>
+              </div>
+            ) : (
+              <div className={styles.emptyCart} >
+                <h4>No items in your cart</h4>
+                <p>Your favourite items are just a click away</p>
+              </div>
+            )
+          }
+          
         </div>
 
-        <footer>
-          <small>Promo code can be applied on payment page</small>
-          <div className={styles.checkoutButton}>
-            <p>Proceed to Checkout</p>
-            <p>Rs.{totalCartPrice} > </p>
+        <footer style={{backgroundColor: cart.length > 0 ? "#fff" : "lightgray"}} >
+          {cart.length > 0 ? <small>Promo code can be applied on payment page</small> : null}
+          <div className={styles.checkoutButton} onClick={close}>
+            {
+              cart.length > 0 ? (
+                <>
+                  <p>Proceed to Checkout</p>
+                  <p>Rs.{totalCartPrice} &gt; </p>
+                </>
+              ) : (
+                <p style={{textAlign: "center", width:"100%"}}>Start Shopping</p>
+              )
+            }
           </div>
         </footer>
       </div>

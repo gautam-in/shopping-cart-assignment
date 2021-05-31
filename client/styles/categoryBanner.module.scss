@@ -1,3 +1,5 @@
+@use "variables";
+
 .container {
     display: flex;
     justify-content: space-between;
@@ -5,7 +7,26 @@
     height: 19rem;
     // max-height: 300px;
     padding: 1rem;
-    border-bottom: 1px solid lightgray;
+    // border-bottom: 1px solid lightgray;
+
+    position: relative;
+
+    &:after, &:before {
+        content: "";
+        left: 0;
+        position: absolute;
+        border-radius: 50%;
+        box-shadow: 0 0 15px gray;
+        width: 100%;
+        height: 20px;
+        display: none;
+    }
+
+    &:after {
+        display: block;
+        bottom: 0px;
+        clip: rect(20px auto 40px auto);
+    }
 
     &:last-child {
         margin-bottom: 0;
@@ -27,7 +48,7 @@
         button {
             padding: 10px 15px;
             color: #fff;
-            background-color: #D10157;
+            background-color: variables.$bgButton;
             border: none;
         }
 
@@ -93,7 +114,6 @@
             button {
                 padding: 8px 10px;
                 color: #fff;
-                background-color: #D10157;
                 border: none;
                 font-size: 10px;
             }

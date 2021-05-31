@@ -1,8 +1,8 @@
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import CartModal from './CartModal';
-import styles from '../styles/nav.module.scss';
+import styles from '../../styles/nav.module.scss';
 import { useState } from 'react';
-import { useCart } from '../util/cartState';
+import { useCart } from '../../util/cartState';
 
 const Cart = () => {
 
@@ -22,7 +22,7 @@ const Cart = () => {
 
   return (
     <div className={styles.cart} onClick={openModal}>
-      <ShoppingCartIcon color="error" fontSize="large" />
+      <ShoppingCartIcon color="secondary" fontSize="large" />
       <span>{cart.length} Items</span>
       <CartModal show={show} close={closeModal} />
     </div >

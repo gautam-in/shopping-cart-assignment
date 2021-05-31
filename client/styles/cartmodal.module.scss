@@ -40,8 +40,20 @@
 
     .main {
         overflow: scroll;
-        // height: 300px;
-        height: 523px;
+        height: 530px;
+        // height: calc(100vh - 16.1rem);
+
+        .emptyCart {
+            h4, p {
+                margin: 0;
+                padding: 0;
+            }
+            height: 100%;
+           display: flex;
+           flex-direction: column;
+           justify-content: center;
+           align-items: center;
+        }
     }
 
     footer {
@@ -71,7 +83,7 @@
     background-color: rgba(0, 0, 0, 0.5);
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 1024px) {
 
     .backdrop {
         background-color: rgba(0, 0, 0, 0);
@@ -88,11 +100,15 @@
             color: black;
 
         }
-    
         .main {
-            overflow: scroll;
             height: calc(100vh - 16rem);
         }
+    }
+}
+
+@media only screen and (min-width : 768px) and (max-width : 1024px) {
+    .main {
+        height: calc(100vh - 16rem);
     }
 }
 
@@ -100,5 +116,10 @@
     .cartmodal{
         top: 59px;
         height: calc(100vh - 59px);
+
+        .main {
+            height: calc(100vh - 14rem);
+        }
     }
+    
 }

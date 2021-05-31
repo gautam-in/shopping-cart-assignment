@@ -1,6 +1,5 @@
-import styles from '../styles/categoryBanner.module.scss';
+import styles from '../../styles/categoryBanner.module.scss';
 import { useRouter } from 'next/router';
-import { Link } from 'next/link'
 
 
 const CategoryBanner = ({ name, description, enabled, imageUrl, id }) => {

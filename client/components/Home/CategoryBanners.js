@@ -1,5 +1,3 @@
-import axios from 'axios';
-import { useEffect, useState } from 'react';
 import CategoryBanner from './CategoryBanner';
 
 const CategoryBanners = ({ categories }) => {

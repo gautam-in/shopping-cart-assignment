@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router';
 import { useState } from 'react';
-import styles from '../styles/products.module.scss'
+import styles from '../../styles/products.module.scss'
 import Product from './Product';
 
 const Products = ({ categories, products }) => {
@@ -10,7 +10,7 @@ const Products = ({ categories, products }) => {
 
   const catSelectHandler = (id) => {
 
-    if (catId == id || router.query?.id == id) {
+    if (catId == id || router.query?.id == id || id =="") {
 
       router.replace({
         pathname: "/products"

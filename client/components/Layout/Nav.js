@@ -1,8 +1,7 @@
-import React from 'react'
 import Link from 'next/link';
 
-import styles from '../styles/nav.module.scss';
-import Cart from './Cart';
+import styles from '../../styles/nav.module.scss';
+import Cart from '../Cart/Cart';
 
 
 const Nav = () => {

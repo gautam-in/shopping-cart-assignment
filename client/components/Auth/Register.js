@@ -1,14 +1,15 @@
-import styles from '../styles/login.module.scss';
+import styles from '../../styles/login.module.scss';
 import TextField from '@material-ui/core/TextField';
 import { useRouter } from 'next/router'
 import { useState } from 'react';
-import { validate } from '../util/validate';
+import { validate } from '../../util/validate';
+import useForm from '../../util/useForm';
 
 const Register = () => {
 
     const router = useRouter();
 
-    const [formData, setFormData] = useState({
+    const { inputs, handleChange, resetForm } = useForm({
         firstName: '',
         lastName: '',
         email: '',
@@ -18,27 +19,14 @@ const Register = () => {
 
     const [error, setError] = useState({});
 
-    const onChangeHandler = (event) => {
-        const formInputs = { ...formData };
-        formInputs[event.target.name] = event.target.value
-
-        setFormData(formInputs);
-    }
-
     const onSubmitHandler = (event) => {
         event.preventDefault();
-        const { isValid, error } = validate(formData);
+        console.log(inputs);
+        const { isValid, error } = validate(inputs);
         if (!isValid) {
             setError(error);
         } else {
-            const resetForm = {
-                firstName: '',
-                lastName: '',
-                email: '',
-                password: '',
-                cnfPassword: ''
-            }
-            setFormData(resetForm);
+            resetForm();
             router.push('/')
         }
     }
@@ -50,15 +38,16 @@ const Register = () => {
                 <p>We do not share your personal details with anyone</p>
             </div>
             <div className={styles.loginForm}>
-                <form onSubmit={onSubmitHandler}>
+                <form onSubmit={onSubmitHandler} method="POST">
                     <TextField
                         type="text"
                         required
                         label="First Name"
+                        id="First Name"
                         size="small"
                         name="firstName"
-                        value={formData.firstName}
-                        onChange={onChangeHandler}
+                        value={inputs.firstName}
+                        onChange={handleChange}
                         error={!!error.firstName}
                         helperText={error.firstName}
                     />
@@ -66,11 +55,12 @@ const Register = () => {
                         type="text"
                         required
                         label="Last Name"
+                        id="Last Name"
                         size="small"
                         margin="normal"
                         name="lastName"
-                        value={formData.lastName}
-                        onChange={onChangeHandler}
+                        value={inputs.lastName}
+                        onChange={handleChange}
                         error={!!error.lastName}
                         helperText={error.lastName}
                     />
@@ -78,21 +68,23 @@ const Register = () => {
                         type="email"
                         required
                         label="Email"
+                        id="Email"
                         size="small"
                         margin="normal"
                         name="email"
-                        value={formData.email}
-                        onChange={onChangeHandler}
+                        value={inputs.email}
+                        onChange={handleChange}
                     />
                     <TextField
                         type="password"
                         required
                         label="Password"
+                        id="Password"
                         size="small"
                         margin="normal"
                         name="password"
-                        value={formData.password}
-                        onChange={onChangeHandler}
+                        value={inputs.password}
+                        onChange={handleChange}
                         error={!!error.password}
                         helperText={error.password}
                     />
@@ -100,11 +92,12 @@ const Register = () => {
                         type="password"
                         required
                         label="Confirm Password"
+                        id="Confirm Password"
                         size="small"
                         margin="normal"
                         name="cnfPassword"
-                        value={formData.cnfPassword}
-                        onChange={onChangeHandler}
+                        value={inputs.cnfPassword}
+                        onChange={handleChange}
                         error={!!error.cnfPassword}
                         helperText={error.cnfPassword}
                     />

@@ -3,7 +3,7 @@
     width: 80%;
     margin: 2rem auto;
     justify-content: center;
-    font-size: 15px;
+    font-size: 13px;
 
     .login {
         flex: 1;
@@ -15,11 +15,12 @@
         .loginTitle {
             font-weight: bold;
             font-size: 30px;
-            
+            margin: 10px 0;
         }
     }
 
     .loginForm {
+        
         flex: 1;
         padding-left: 20px;
         form {
@@ -40,6 +41,15 @@
                 color: #fff;
                 border: none;
             }
+        }
+    }
+}
+
+@media only screen and (min-width : 320px) and (max-width : 767px) {
+    .loginContainer {
+        flex-direction: column;
+        .loginForm {
+            margin-top: 10px;
         }
     }
 }

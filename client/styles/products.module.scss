@@ -1,3 +1,5 @@
+@use "variables";
+
 .container {
     display: flex;
     .filter {
@@ -49,20 +51,24 @@
         .filter {
             background-color: #fff;
             position: relative;
+            width: 100%;
             .category {
                 width: 100%;
                 border: none;
             }
             .mobileCat {
-                display: block;
-                background-color: #d10157;
+                display: inline-block;
+                background-color: variables.$bgButton;
                 margin-top: 10px;
                 color: #fff;
                 font-size: 18px;
+               
+                
             }
             select {
                 -moz-appearance:none; /* Firefox */
                 -webkit-appearance:none; /* Safari and Chrome */
+               
 
                 option {
                     background-color: lightgray;

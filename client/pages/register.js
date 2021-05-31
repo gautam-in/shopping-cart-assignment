@@ -1,9 +1,14 @@
-import React from 'react'
-import Register from '../components/Register'
+import Head from 'next/head';
+import Register from '../components/Auth/Register'
 
 const register = () => {
     return (
-        <Register />
+        <>
+            <Head>
+                <title>Sabka Bazaar | Register</title>
+            </Head>
+            <Register />
+        </>
     )
 }
 

@@ -14,9 +14,9 @@ export const validate = ({ firstName, lastName, email, password, cnfPassword }) 
         isValid = false;
         error.password = 'Length should be atleast 6'
     }
-    if (cnfPassword.trim().length < 6) {
+    if (cnfPassword.trim() !== password) {
         isValid = false;
-        error.cnfPassword = 'Length should be atleast 6'
+        error.cnfPassword = 'Confirm password is not same'
     }
 
     return { isValid, error };
