@@ -20,13 +20,7 @@ body {
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
-// .owl-theme {
-//   // Styling Next and Prev buttons
-//   .owl-nav {
-//     margin-top: 0 !important;
-//   }
-// }
-
+//Overriden owl-carousel styles
 .owl-carousel {
   display: none;
   width: 100% !important;
@@ -45,10 +39,32 @@ body {
 
 .owl-item img {
   height: 173px;
-  width: 280px;
+  width: 260px;
   margin-top: 0 !important;
 }
 
 .owl-dots {
   margin: 0 !important;
 }
+
+//mat-sidenav
+
+//removed scrollbar
+.mat-drawer-inner-container::-webkit-scrollbar {
+  display: none !important;
+}
+
+.mat-drawer-inner-container {
+  margin: 0 !important;
+  text-align: left !important;
+}
+
+.mat-list-base {
+  display: contents !important;
+}
+
+.mat-card-image {
+  width: 75% !important;
+  margin: 0 25px 0 !important;
+}
+
