@@ -5,7 +5,7 @@ import CartItem from './CartItem';
 
 const CartModal = ({ show, close }) => {
 
-  const { cart, setCart, totalCartPrice } = useCart();
+  const { cart, setCart, totalCartPrice, clearCart } = useCart();
 
   const onIncrementHandler = (id) => {
     const newCart = [...cart];
@@ -61,7 +61,7 @@ const CartModal = ({ show, close }) => {
 
         <footer style={{backgroundColor: cart.length > 0 ? "#fff" : "lightgray"}} >
           {cart.length > 0 ? <small>Promo code can be applied on payment page</small> : null}
-          <div className={styles.checkoutButton} onClick={close}>
+          <div className={styles.checkoutButton} onClick={(e) => {close(e);clearCart()}}>
             {
               cart.length > 0 ? (
                 <>

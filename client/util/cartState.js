@@ -9,8 +9,13 @@ const CartStateProvider = ({ children }) => {
 
   let totalCartPrice = cart.reduce((sum, el) => sum + (+el.price * +el.quantity), 0);
 
+  const clearCart = () => {
+    setCart([]);
+  }
+
+
   return (
-    <LocalStateProvider value={{ cart, setCart, totalCartPrice }}>
+    <LocalStateProvider value={{ cart, setCart, totalCartPrice, clearCart }}>
       {children}
     </LocalStateProvider>
   )
