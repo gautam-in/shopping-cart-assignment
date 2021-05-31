@@ -89,7 +89,13 @@
         </div>
       </div>
 
-      <button type="submit" (click)="onSubmit()">Register</button>
+      <button
+        type="submit"
+        [disabled]="registerForm.invalid"
+        (click)="onSubmit()"
+      >
+        Register
+      </button>
     </form>
   </div>
 </section>
