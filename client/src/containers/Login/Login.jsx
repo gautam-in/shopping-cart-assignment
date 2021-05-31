@@ -10,7 +10,7 @@ function Login(props) {
   const handleValidation = () => {
     let errorField = {};
     let formIsValid = true;
-    console.log(fields["email"]);
+
     //Email
     if (!fields["email"]) {
       formIsValid = false;

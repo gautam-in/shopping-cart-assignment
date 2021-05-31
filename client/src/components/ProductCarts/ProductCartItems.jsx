@@ -22,7 +22,6 @@ function ProductCartItems(props) {
     }
     return initialPrice;
   };
-  console.log(cart);
   return (
     <section>
       <Dialog

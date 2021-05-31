@@ -18,7 +18,7 @@ export default function Dropdown(props) {
       setValue(id);
     }
   };
-  console.log(value);
+
   return (
     <section className="dropdownContainer" data-test="component-dropdown">
       <select
