@@ -7,7 +7,12 @@
     </p>
   </div>
   <div class="form-container">
-    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" name="login-form" class="form">
+    <form
+      [formGroup]="loginForm"
+      (ngSubmit)="onSubmit()"
+      name="login-form"
+      class="form"
+    >
       <label for="email"> Email </label>
       <input type="email" formControlName="email" />
       <div
