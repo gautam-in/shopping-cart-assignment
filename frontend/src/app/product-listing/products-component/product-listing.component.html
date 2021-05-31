@@ -10,9 +10,12 @@
     [fixedBottomGap]="options.value.bottom"
   >
     <mat-nav-list *ngFor="let category of allCategories">
-      <a class="mat-list" mat-list-item (click)="showProducts($event)">{{
-        category.name
-      }}</a>
+      <a
+        class="mat-list"
+        mat-list-item
+        (click)="getSelectedProducts(category.id)"
+        >{{ category.name }}</a
+      >
     </mat-nav-list>
   </mat-sidenav>
 
@@ -36,7 +39,13 @@
       </mat-card-content>
       <div mat-card-actions class="action-btn">
         <button class="mrp-btn" mat-button>MRP Rs.{{ products.price }}</button>
-        <button class="buy-btn" mat-raised-button>Buy Now</button>
+        <button
+          class="buy-btn"
+          mat-raised-button
+          (click)="buyProduct(products)"
+        >
+          Buy Now
+        </button>
       </div>
     </mat-card>
   </mat-sidenav-content>
