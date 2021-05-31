@@ -1,0 +1,51 @@
+.product
+    width: 25%
+    position: relative
+    box-sizing: border-box
+    overflow: hidden
+    margin-bottom: 1%
+    float: left
+    &:after
+        content: " "
+        position: absolute
+        top: 0
+        right: 0
+        font-size: 20px
+        height: 80%
+        margin: 10% 0
+        border-right: 1px solid #eee
+
+    .container
+        margin: 20px
+        .title
+            font-size: 100%
+            font-weight: 600
+            height: 55px
+            padding-bottom: 30px
+            overflow: hidden
+        img
+            width: 100%
+        .desc
+            background: #eeeeee
+            padding: 10px
+            p
+                height: 3.4rem
+                overflow: hidden
+                font-size: 78%
+        .product-footer
+            display: flex
+            justify-content: space-between
+            align-items: center
+            border-bottom: 2px dashed #ccc
+            padding: 15px 0
+            .price
+                font-size: 90
+            .buy-now
+                background: #d00255
+                padding: 10px
+                cursor: pointer
+                font-size: 90%
+                color: white
+                border: none
+                &:hover
+                    background: #91013a

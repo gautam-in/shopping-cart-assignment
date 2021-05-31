@@ -1,0 +1,18 @@
+{
+  "/categories": {
+    "target": "http://localhost:5000",
+    "secure": false
+  },
+  "/addToCart": {
+    "target": "http://localhost:5000",
+    "secure": false
+  },
+  "/banners": {
+    "target": "http://localhost:5000",
+    "secure": false
+  },
+  "/products": {
+    "target": "http://localhost:5000",
+    "secure": false
+  }
+}
