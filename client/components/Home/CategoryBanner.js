@@ -15,7 +15,7 @@ const CategoryBanner = ({ name, description, enabled, imageUrl, id }) => {
 
   if (enabled) {
     return (
-      <div className={styles.container} >
+      <section className={styles.container} >
         <div className={styles.info}>
           <p className={styles.name}>
             {name}
@@ -28,7 +28,7 @@ const CategoryBanner = ({ name, description, enabled, imageUrl, id }) => {
         <div className={styles.catImg}>
           <img className={styles.img} src={imageUrl} />
         </div>
-      </div >
+      </section >
     )
   }
 

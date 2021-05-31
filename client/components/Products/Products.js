@@ -51,7 +51,7 @@ const Products = ({ categories, products }) => {
   )
 
   return (
-    <div className={styles.container}>
+    <section className={styles.container}>
       <div className={styles.filter} >
         {
           categories.map((cat, i) => (
@@ -72,7 +72,7 @@ const Products = ({ categories, products }) => {
 
         )}
       </div>
-    </div>
+    </section>
   )
 }
 
