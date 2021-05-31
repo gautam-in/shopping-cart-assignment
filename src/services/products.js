@@ -6,7 +6,6 @@ const fetchProducts = () => {
   return fetch(`${baseUrl}products`)
     .then(handleResponse)
     .then((resp) => {
-      console.log({ resp });
       if (resp.isError) {
         throw new Error("Get products failed");
       } else {
@@ -18,8 +17,7 @@ const fetchProducts = () => {
     });
 };
 
-export const postProduct = (id) => {
-  console.log({ id });
+export const postProduct = () => {
   return fetch(`${baseUrl}addToCart`, {
     method: "POST",
     headers: {
@@ -29,7 +27,6 @@ export const postProduct = (id) => {
   })
     .then(handleResponse)
     .then((resp) => {
-      console.log({ resp });
       if (resp.isError) {
         throw new Error("Add products failed");
       } else {

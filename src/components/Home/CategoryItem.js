@@ -2,7 +2,6 @@ import CustomButton from "components/Shared/CustomButton";
 import { CategoryRow } from "./CategoryItem.styles";
 
 const CategoryItem = ({ item, index }) => {
-  console.log({ item });
   const image = require(`static/${item.imageUrl}`).default;
   return (
     <CategoryRow reverse={index % 2 != 0}>

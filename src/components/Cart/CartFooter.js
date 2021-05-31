@@ -1,7 +1,6 @@
 import { Container } from "./CartFooter.styles";
 
 const CartFooter = ({ closeCart, totalprice }) => {
-  console.log({ totalprice });
   return (
     <Container>
       <div className="promo">Promo code can be applied on payment page</div>

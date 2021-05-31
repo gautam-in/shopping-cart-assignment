@@ -1,6 +1,5 @@
 import { Container } from "./CartHeader.styles";
 const CartHeader = ({ closeCart, totalItems }) => {
-  console.log({ totalItems });
   return (
     <Container>
       <div className="title">

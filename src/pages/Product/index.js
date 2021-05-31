@@ -31,7 +31,6 @@ const Product = () => {
   }, [products, activeCategory]);
 
   const changeCategory = (id) => {
-    console.log({ id });
     if (id === activeCategory) {
       setActiveCategory("");
       return;

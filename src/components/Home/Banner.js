@@ -4,7 +4,6 @@ import { Carousel } from "react-responsive-carousel";
 import CarouselItem from "./CarouselItem";
 
 const Banner = ({ data }) => {
-  console.log({ data });
   return (
     <Carousel className="banner-top" showStatus={false} showThumbs={false}>
       {data.map((item) => (

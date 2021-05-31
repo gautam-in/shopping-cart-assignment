@@ -6,7 +6,6 @@ const fetchOffers = () => {
   return fetch(`${baseUrl}banners`)
     .then(handleResponse)
     .then((resp) => {
-      console.log({ resp });
       if (resp.isError) {
         throw new Error("Get offer details failed");
       } else {

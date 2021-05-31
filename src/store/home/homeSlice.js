@@ -5,7 +5,6 @@ import fetchOffers, { fetchCategories } from "services/home";
 export const getOffers = createAsyncThunk("homepage/getOffers", async () => {
   try {
     const res = await fetchOffers();
-    console.log({ res });
     return res;
   } catch (error) {
     throw new Error(error?.message ?? "Get offer details failed");

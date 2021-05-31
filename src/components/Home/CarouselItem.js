@@ -1,7 +1,6 @@
 import { Container } from "./CarouselItem.styles";
 
 const CarouselItem = ({ item }) => {
-  console.log({ item });
   const image = require(`static/${item.bannerImageUrl}`).default;
   return (
     <Container>
