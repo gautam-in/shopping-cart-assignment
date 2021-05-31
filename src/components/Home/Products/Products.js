@@ -1,25 +1,19 @@
 import React, { useEffect, useState } from 'react'
-import axios from "axios"
 import Gallery from "../Carousel/Carousel"
 import "./Products.scss"
 import { withRouter } from "react-router-dom"
+import {getCategories} from "../../../apiCalls/restCalls"
 function Products(props) {
     const [products, setProducts] = useState([])
 
+const asyncCall=async()=>{
+    const data= await getCategories()
+      setProducts(data)
 
+}
     useEffect(() => {
-        const apiCall = async () => {
-            let result = await axios.get(`http://localhost:5000/categories`)
-            setProducts(result.data.sort((a, b) => {
-                if (a.order < b.order) return -1
-                else if (a.order > b.order) return 1
-                return 0
-            }))
-
-
-
-        }
-        apiCall()
+        
+      asyncCall()
     }, [])
     const clickHandler = () => {
         props.history.push("/products")

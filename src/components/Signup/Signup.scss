@@ -19,11 +19,19 @@ $red:#8b0000;
 }
 .signup-name{
   text-align: left;
+  header{
+    font-weight: bold;
+    font-size: 20px;
+}
 }
 
 @media screen and (max-width:750px){
   .signup-name{
       text-align: center;
+      header{
+        font-weight: bold;
+        font-size: 20px;
+    }
   } 
 }
 @media screen and (max-width:750px){

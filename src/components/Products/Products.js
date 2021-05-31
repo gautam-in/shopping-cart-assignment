@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react'
-import axios from 'axios'
 import Navbar from "../Navbar/Navbar"
 import { useDispatch, useSelector } from "react-redux"
 import * as actions from "../../store/actions"
 import Backdrop from "../Backdrop/Backdrop"
 import Cart from "../Cart/Cart"
+import {getProducts} from "../../apiCalls/restCalls"
 import "./Products.scss"
 export default function Products() {
     const dispatch = useDispatch()
@@ -26,8 +26,8 @@ export default function Products() {
             { id: '5b6899683d1a866534f516e0', name: 'Baby Care', visited: false },
         ])
     }, [])
-    const apiCall = async () => {
-        let res = await axios.get('http://localhost:5000/products')
+    const asyncCall = async () => {
+        let res = await getProducts()
         setProducts(res.data.map(dt => ({ ...dt, count: 0 })))
         setProductsCopy(res.data)
     }
@@ -66,7 +66,7 @@ export default function Products() {
 
     }
     useEffect(() => {
-        apiCall()
+        asyncCall()
     }, [])
     const options = filterItems.map(category => <option
         data-catid={category.id}

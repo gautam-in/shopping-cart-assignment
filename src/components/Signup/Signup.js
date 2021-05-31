@@ -9,31 +9,45 @@ function SignUp(props) {
     const [firstName, setfirstname] = useState('')
     const [lastName, setlastname] = useState('')
     const [confirmPassword, setconfirmPassword] = useState('')
-    const loginHandler = (e) => {
-        e.preventDefault();
+    const validateData=()=>{
         if (email.length === 0 ||
             password.length === 0 ||
             firstName.length === 0 ||
             lastName.length === 0 ||
             confirmPassword.length === 0) {
             seterror("No Field can be Empty")
+            return false
 
         }
         else if (!(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(email))) {
             seterror('Please enter valid email address')
+            return false
+
         }
         //else if (password.length < 6 ||!(/^(?=.*[0-9])(?=.*[a-zA-Z])([a-zA-Z0-9]+)$/).test(password)) {
         else if (password.length < 6 || !(/^(?=.*\d)(?=.*[a-zA-Z])\S{6,}$/).test(password)) {
             seterror(`Password should have minumum 6 characters and atleast 
             a number and a alphabet and should not have any spaces`)
+            return false
+
         }
         else if (password !== confirmPassword) {
             seterror("Password and confirm password should be same")
+            return false
+
         }
         else {
             seterror("")
-            props.history.push("/")
+            return true
+
         }
+    }
+    const loginHandler = (e) => {
+        e.preventDefault();
+       const isValid=validateData()
+       if(isValid)
+       props.history.push("/")
+
 
 
     }
@@ -43,8 +57,8 @@ function SignUp(props) {
 
             <div className="login">
                 <div className="login-desc">
-                    <div className="signup-name"><h2>Sigup</h2></div>
-                    <div className="signup-name"><p>We dont share your personal details with anyone</p></div>
+                    <div className="signup-name"><header>Signup</header></div>
+                    <div ><p>We dont share your personal details with anyone</p></div>
                 </div>
 
                 <div>

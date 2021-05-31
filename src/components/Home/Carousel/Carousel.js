@@ -1,19 +1,18 @@
 import React, { useEffect, useState } from 'react'
-import axios from "axios"
-import "react-responsive-carousel/lib/styles/carousel.min.css"
+import {getBanners} from "../../../apiCalls/restCalls"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faArrowAltCircleLeft, faArrowAltCircleRight } from '@fortawesome/free-solid-svg-icons'
 import "./Carousel.scss"
 export default function Gallery() {
     const [baners, setBaners] = useState([])
     const [current, setcurrent] = useState(0)
-    const apicall = async () => {
-        let res = await axios.get(`http://localhost:5000/banners`)
+    const asyncCall = async () => {
+        let res = await getBanners()
         setBaners(res.data)
         
     }
     useEffect(() => {
-        apicall()
+        asyncCall()
 
     }, [])
  

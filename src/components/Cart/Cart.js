@@ -2,7 +2,7 @@ import React from 'react'
 import * as actions from "../../store/actions/index"
 import { withRouter } from "react-router-dom"
 import { useSelector, useDispatch } from "react-redux"
-import Navbar from "../Navbar/Navbar"
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faPlusSquare, faMinusSquare, faTimes, faCaretRight } from "@fortawesome/free-solid-svg-icons"
 import "./cart.scss"
@@ -31,7 +31,7 @@ function Cart(props) {
                     <div onClick={() => dispatch(actions.showCart(!showCart))}><FontAwesomeIcon icon={faTimes} /></div> </div>
 
                 {cartItems.length > 0 ? <div className="cart-container">{cartItems?.map(item => {
-                    console.log('cartItems', cartItems)
+                   
                     const imageurl = item.imageURL.split("/").reverse()
                     
                     const url1 = imageurl[1]
