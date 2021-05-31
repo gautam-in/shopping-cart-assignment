@@ -10,9 +10,15 @@ export const validate = ({ firstName, lastName, email, password, cnfPassword }) 
         isValid = false;
         error.lastName = 'Length should be atleast 6'
     }
-    if (password.trim().length < 6) {
+    if (password.trim().length < 6 ) {
         isValid = false;
         error.password = 'Length should be atleast 6'
+    }else {
+        const regularExpression = /[a-zA-Z][0-9]/;
+        if(!regularExpression.test(password)) {
+            isValid = false;
+            error.password = 'Password should be alphanumeric'
+        }
     }
     if (cnfPassword.trim() !== password) {
         isValid = false;
