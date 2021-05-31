@@ -1,10 +1,11 @@
 import { useDispatch } from "react-redux";
 import { addProduct, removeProduct } from "store/product/productSlice";
 import { CartProduct } from "./ProductCard.styles";
+import getImage from "helpers/getImage";
 
 const ProductCard = ({ data }) => {
   const dispatch = useDispatch();
-  const image = require(`static/${data.imageURL}`).default;``
+  const image = getImage(data.imageURL);
 
   const add = () => dispatch(addProduct(data));
 
@@ -12,7 +13,7 @@ const ProductCard = ({ data }) => {
 
   return (
     <CartProduct key={data.id}>
-      <img src={image} alt={data.name} />
+      <img src={image} alt={data.name} loading="lazy" />
 
       <div className="details">
         <div className="item-name">{data.name}</div>

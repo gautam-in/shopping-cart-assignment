@@ -1,4 +1,5 @@
 import { Container } from "./CartHeader.styles";
+
 const CartHeader = ({ closeCart, totalItems }) => {
   return (
     <Container>

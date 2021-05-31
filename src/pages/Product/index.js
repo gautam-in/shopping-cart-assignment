@@ -15,11 +15,13 @@ const Product = () => {
   const [filProducts, setFilProducts] = useState([]);
   const [activeCategory, setActiveCategory] = useState("");
 
+  // fetch categories and products
   useEffect(() => {
     dispatch(getCategories());
     dispatch(getProducts());
   }, []);
 
+  // filter products when category is selected
   useEffect(() => {
     if (activeCategory != "") {
       let temp = [];

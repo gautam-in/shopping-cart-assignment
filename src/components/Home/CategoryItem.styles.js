@@ -10,7 +10,6 @@ export const CategoryRow = styled.div`
   align-items: center;
   padding: 1rem 0.2rem;
   height: 200px;
-  /* box-shadow: inset 0 2px 7px rgba(0, 0, 0, 0.3); */
   flex-direction: ${(props) => props.reverse && "row-reverse"};
   position: relative;
   border-top: 1px solid #d3d3d3;

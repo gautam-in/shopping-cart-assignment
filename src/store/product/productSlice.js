@@ -26,7 +26,7 @@ export const addProduct = createAsyncThunk(
         id: data.id,
       };
     } catch (error) {
-      throw new Error(error?.message ?? "Get products failed");
+      throw new Error(error?.message ?? "Add product failed");
     }
   }
 );

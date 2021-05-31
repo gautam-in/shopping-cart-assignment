@@ -10,10 +10,12 @@ const Home = () => {
   const dispatch = useDispatch();
   const { offers, categories } = useSelector((state) => state.home);
 
+  // fetch offers and categories
   useEffect(() => {
     dispatch(getOffers());
     dispatch(getCategories());
   }, []);
+
   return (
     <Container>
       <Banner data={offers} />

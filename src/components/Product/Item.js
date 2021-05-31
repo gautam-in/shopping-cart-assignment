@@ -3,10 +3,11 @@ import { useDispatch } from "react-redux";
 import { addProduct } from "store/product/productSlice";
 import CustomButton from "components/Shared/CustomButton";
 import { Container } from "./Item.styles";
+import getImage from "helpers/getImage";
 
 const Item = ({ data }) => {
   const dispatch = useDispatch();
-  const image = require(`static/${data.imageURL}`).default;
+  const image = getImage(data.imageURL);
   const addToCart = () => {
     dispatch(addProduct(data));
   };
