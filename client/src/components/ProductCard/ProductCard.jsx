@@ -9,23 +9,23 @@ import { handleIncrement, initializeCart } from "../../store/action";
 function Card(props) {
   const { product, cart, handleIncrement, initializeCart } = props;
   const [message, setMessage] = React.useState("");
-  
+
   const addItemToCart = async (product) => {
     AuthenticationApi.postData(
       `${process.env.REACT_APP_BASE_URL}/addtocart`
     ).then((res) => {
       setMessage(res.responseMessage);
 
-    for (let item of cart) {
-      if (item.id === product.id) return handleIncrement(product);
-    }
-    return initializeCart(product);
+      for (let item of cart) {
+        if (item.id === product.id) return handleIncrement(product);
+      }
+      return initializeCart(product);
+    });
   };
-
   return (
     <section className="productCard">
       <h3 className="productName">{product.name}</h3>
-      <figure>
+      <figure style={{ margin: "0px" }}>
         <img src={product.imageURL} alt={product.name} width="100%" />
       </figure>
 

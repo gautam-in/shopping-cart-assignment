@@ -30,7 +30,7 @@ function ProductCartItems(props) {
           ))}
         </section>
         <section className="checkoutBanner">
-          <figure>
+          <figure style={{ margin: "0px" }}>
             <img src="./static/images/lowest-price.png" alt="" height="40px" />
           </figure>
           <figcaption>You won't find it cheaper anywhere.</figcaption>

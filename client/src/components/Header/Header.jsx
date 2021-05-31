@@ -27,7 +27,7 @@ function Header(props) {
         <Cart setCartDialog={setCartDialog} cartDialog={cartDialog} />
       )}
       <section className="container">
-        <figure className="logo">
+        <figure className="logo" style={{ margin: "0px" }}>
           <img src={Logo} alt="Sabka Bazaar" />
         </figure>
         <nav className="navOptions">

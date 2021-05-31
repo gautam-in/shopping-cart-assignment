@@ -32,7 +32,11 @@ export default function Carousel(props) {
       <section class="slideShowContainer">
         {banners.map((banner) => {
           return (
-            <figure class="mySlides fade" key={banner.id}>
+            <figure
+              class="mySlides fade"
+              key={banner.id}
+              style={{ margin: "0px" }}
+            >
               <img
                 src={banner.bannerImageUrl}
                 style={{ width: "100%" }}

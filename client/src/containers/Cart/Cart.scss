@@ -63,3 +63,17 @@
     position: unset;
   }
 }
+@media (min-width: 575px) and (max-width: 690px) {
+  .cartMain {
+    margin: auto;
+    margin-top: 20%;
+    position: unset;
+  }
+}
+@media (max-width: 575px) {
+  .cartMain {
+    margin: auto;
+    margin-top: 30%;
+    position: unset;
+  }
+}
