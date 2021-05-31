@@ -1,0 +1,20 @@
+<div class="wrapper">
+  <div class="left">
+    <nav
+      class="nav flex-column"
+      *ngFor="let category of (categories$ | async)?.categories"
+    >
+      <a class="nav-link">
+        <button
+          attr.aria-label="{{ category.name }}"
+          [ngClass]="{ 'menu-active': true }"
+        >
+          {{ category?.name }}
+        </button></a
+      >
+    </nav>
+  </div>
+  <div class="right">
+    <router-outlet></router-outlet>
+  </div>
+</div>

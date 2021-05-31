@@ -1,0 +1,28 @@
+<div class="wrapper">
+  <div
+    class="card"
+    *ngFor="let product of (products$ | async)?.currentProducts"
+  >
+    <h3 class="card-title product-title">{{ product?.name }}</h3>
+    <div class="inner-body">
+      <img
+        class="card-img-top product-img small-screen"
+        src="{{ product?.imageURL }}"
+        alt="Card image cap"
+      />
+      <p class="card-text">
+        {{ product?.description }}
+      </p>
+    </div>
+    <footer class="product-footer">
+      <h6 class="product-price">MRP Rs.{{ product?.price }}</h6>
+      <button
+        aria-label="Buy Now"
+        (click)="buyProduct(product)"
+        class="btn btn-danger btn-raised product-buy"
+      >
+        Buy Now
+      </button>
+    </footer>
+  </div>
+</div>
