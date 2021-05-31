@@ -19,11 +19,12 @@
   padding: 0 20px;
   height: 40px;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   margin-top: 10px;
   background-color: $primary;
   color: $white;
   width: 100%;
   border: none;
+  cursor: pointer;
 }

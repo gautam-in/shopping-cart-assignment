@@ -8,12 +8,21 @@ import "./ProductCartItems.scss";
 function ProductCartItems(props) {
   const { cart, setCartDialog, handleReset } = props;
   const [dialog, setDialog] = React.useState(false);
+
   const onDialogConfirm = () => {
     setDialog(false);
     setCartDialog(false);
     handleReset();
     props.history.push("/");
   };
+  const total_price = () => {
+    let initialPrice = 0;
+    for (let item of cart) {
+      initialPrice = item.price * item.quantity + initialPrice;
+    }
+    return initialPrice;
+  };
+  console.log(cart);
   return (
     <section>
       <Dialog
@@ -39,9 +48,9 @@ function ProductCartItems(props) {
           <small>Promo code can be applied on payment page.</small>
           <button className="checkoutButton" onClick={() => setDialog(true)}>
             <span>Proceed to checkout</span>
-            {/* <span>
-            Rs. {price()} &nbsp;&nbsp;&nbsp; <b>{"  >"}</b>
-          </span> */}
+            <span>
+              &nbsp;Rs.&nbsp; {total_price()}&nbsp;{">"}
+            </span>
           </button>
         </section>
       </section>
