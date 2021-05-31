@@ -15,7 +15,7 @@ export default function Products() {
     const [filter, setfilter] = useState(false)
     const [filterItems, setfilterItems] = useState([])
     const [category, setcategory] = useState('select')
-    
+
     useEffect(() => {
 
         setfilterItems([
@@ -31,13 +31,13 @@ export default function Products() {
         setProducts(res.data.map(dt => ({ ...dt, count: 0 })))
         setProductsCopy(res.data)
     }
-    const clickHandler=(e)=>{
-        debugger
+    const clickHandler = (e) => {
+        
         const prds = productsCopy;
 
         setcategory(e.target.value)
-        const optionattribute=e.target.options[e.target.selectedIndex].dataset
-      
+        const optionattribute = e.target.options[e.target.selectedIndex].dataset
+
         const filteredproducts = prds.filter(p => p.category === optionattribute.catid)
         setProducts(filteredproducts)
     }
@@ -68,10 +68,10 @@ export default function Products() {
     useEffect(() => {
         apiCall()
     }, [])
-    const options=filterItems.map(category=><option
+    const options = filterItems.map(category => <option
         data-catid={category.id}
-               // className={selctecdCategory === category.name && category.visited ? "selected-category align" : "align highlight"}
-                >{category.name}</option>)
+    // className={selctecdCategory === category.name && category.visited ? "selected-category align" : "align highlight"}
+    >{category.name}</option>)
     return (
         <div>
 
@@ -84,34 +84,38 @@ export default function Products() {
                         className={selctecdCategory === category.name && category.visited ? "selected-category align" : "align highlight"}
                         onClick={() => filterProducts(category)}>{category.name}</div>)}
                 </div>
-                <div className="cat-dropdown"><select onChange={clickHandler} >{options}</select></div>
+                <div className="cat-dropdown">
+                    <select onChange={clickHandler} aria-label="cat-dropdown">{options}</select>
+                </div>
                 <div className="right-pane">
 
                     {/* <div class="parent"> */}
-                        {products.length > 0 && products.map(prd => {
-                            if (prd.hasOwnProperty('imageURL')) {
-                                const imageurl = prd.imageURL.split("/").reverse()
-                                const url1 = imageurl[0]
-                                const url2 = imageurl[1]
+                    {products.length > 0 && products.map(prd => {
+                        if (prd.hasOwnProperty('imageURL')) {
+                            const imageurl = prd.imageURL.split("/").reverse()
+                            const url1 = imageurl[0]
+                            const url2 = imageurl[1]
 
-                                return <div className="each-item">
-                                    <h3> {prd.name}</h3>
-                                    <div >
-                                        <img className="product" src={require(`../../../static/images/products/${url2}/${url1}`).default} />
-                                    </div>
-                                    <div
-                                        className="description"
-                                    >{prd.description}</div>
-                                    <div
-                                        className="item-buy"
-                                    >
-                                        <div className="mrp">MRP Rs.{prd.price}</div>
-                                        <div className="buy"><button className="buynow" onClick={() => dispatch(actions.addToCart(prd))}>Buy Now</button></div>
-                                    </div>
+                            return <div className="each-item">
+                                <h3> {prd.name}</h3>
+                                <div >
+                                    <img className="product"
+                                        src={require(`../../../static/images/products/${url2}/${url1}`).default}
+                                        alt={url1} />
                                 </div>
-                            }
-                        })}
-                    </div></div>
+                                <div
+                                    className="description"
+                                >{prd.description}</div>
+                                <div
+                                    className="item-buy"
+                                >
+                                    <div className="mrp">MRP Rs.{prd.price}</div>
+                                    <div className="buy"><button className="buynow" onClick={() => dispatch(actions.addToCart(prd))}>Buy Now</button></div>
+                                </div>
+                            </div>
+                        }
+                    })}
+                </div></div>
 
             {/* </div> */}
 

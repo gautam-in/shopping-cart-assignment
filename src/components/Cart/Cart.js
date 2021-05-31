@@ -1,6 +1,6 @@
 import React from 'react'
 import * as actions from "../../store/actions/index"
-import {withRouter} from "react-router-dom"
+import { withRouter } from "react-router-dom"
 import { useSelector, useDispatch } from "react-redux"
 import Navbar from "../Navbar/Navbar"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
@@ -10,10 +10,10 @@ function Cart(props) {
     const dispatch = useDispatch()
     const cartItems = useSelector(state => state.cartItems)
     const showCart = useSelector(state => state.showCart)
-const clickHandler=()=>{
-   dispatch(actions.showCart(false))
-    
-}
+    const clickHandler = () => {
+        dispatch(actions.showCart(false))
+
+    }
     const calculateTotalPrice = () => {
         const cartItems = useSelector(state => state.cartItems)
 
@@ -26,12 +26,14 @@ const clickHandler=()=>{
         <div>
             {/* <Navbar /> */}
             <div className="parent" >
-                <div className="cart-heading"><div>My Cart ({cartItems?.length})</div><div onClick={() => dispatch(actions.showCart(!showCart))}><FontAwesomeIcon icon={faTimes} /></div> </div>
-                {/* <div>{cartItems?.map(item=><div>{item.description}</div>)}</div> */}
-                {cartItems.length>0?<div className="cart-container">{cartItems?.map(item => {
+                <div className="cart-heading">
+                    <header>My Cart ({cartItems?.length})</header>
+                    <div onClick={() => dispatch(actions.showCart(!showCart))}><FontAwesomeIcon icon={faTimes} /></div> </div>
+
+                {cartItems.length > 0 ? <div className="cart-container">{cartItems?.map(item => {
                     console.log('cartItems', cartItems)
                     const imageurl = item.imageURL.split("/").reverse()
-                    debugger
+                    
                     const url1 = imageurl[1]
                     const url2 = imageurl[0]
 
@@ -63,15 +65,15 @@ const clickHandler=()=>{
 
                         <br />
                     </div>
-                })}</div>:<div className="no-items"><div><h2>No Items in your Cart</h2> </div><p>Your favorite items are just a click away</p></div>}
+                })}</div> : <div className="no-items"><div><h2>No Items in your Cart</h2> </div><p>Your favorite items are just a click away</p></div>}
                 <div className="style-checkout">
                     <span > Promo code can be applied on payment page .</span>
                     <button className="style-button">
-                       {cartItems.length>0? <div style={{ display: 'flex', justifyContent: 'space-between' ,position:'relative'}}>
-                        <div onClick={clickHandler}>proceed to checkout</div><div>Rs.{calculateTotalPrice()}
-                        {"  "}
-                        <FontAwesomeIcon icon={faCaretRight} /></div></div>:
-                        <div onClick={clickHandler}>Start Shopping</div> }   
+                        {cartItems.length > 0 ? <div style={{ display: 'flex', justifyContent: 'space-between', position: 'relative' }}>
+                            <div onClick={clickHandler}>proceed to checkout</div><div>Rs.{calculateTotalPrice()}
+                                {"  "}
+                                <FontAwesomeIcon icon={faCaretRight} /></div></div> :
+                            <div onClick={clickHandler}>Start Shopping</div>}
                     </button>
 
                 </div>

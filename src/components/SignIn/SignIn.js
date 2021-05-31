@@ -1,25 +1,25 @@
-import React,{useState} from 'react'
+import React, { useState } from 'react'
 import Navbar from "../Navbar/Navbar"
-import {withRouter} from "react-router-dom"
+import { withRouter } from "react-router-dom"
 import "./SignIn.scss"
 function SignIn(props) {
     const [email, setemail] = useState('')
     const [password, setpassword] = useState('')
     const [error, seterror] = useState('')
-    const loginHandler=(e)=>{
+    const loginHandler = (e) => {
         e.preventDefault();
-        if(email==='test'&&password==="test")
-       { 
-          seterror("") 
-        props.history.push("/")}
+        if (email === 'test' && password === "test") {
+            seterror("")
+            props.history.push("/")
+        }
         else
-        seterror('Invalid Credentials')
+            seterror('Invalid Credentials')
 
     }
     return (
         <div>
             <Navbar />
-           
+
             <div className="login">
                 <div className="login-desc">
                     <div className="login-name"><h2>Login</h2></div>
@@ -34,12 +34,12 @@ function SignIn(props) {
                             <form onSubmit={loginHandler}>
                                 <div className="field-wrapper">
                                     <input type="text" name="Email" placeholder="Email" value={email}
-                                    onChange={(e)=>setemail(e.target.value)}/>
-                                    <label>Email</label>
+                                        onChange={(e) => setemail(e.target.value)} />
+                                    <label htmlFor="Email">Email</label>
                                 </div>
                                 <div className="field-wrapper">
-                                    <input type="password" name="password" placeholder="password" autocomplete="new-password" value={password} onChange={(e)=>setpassword(e.target.value)}/>
-                                    <label>Password</label>
+                                    <input type="password" name="password" placeholder="password" autocomplete="new-password" value={password} onChange={(e) => setpassword(e.target.value)} />
+                                    <label htmlFor="Password">Password</label>
                                 </div>
                                 <div className="field-wrapper">
                                     <input type="submit" name="Login" />

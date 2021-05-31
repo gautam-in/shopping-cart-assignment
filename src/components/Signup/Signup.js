@@ -27,7 +27,7 @@ function SignUp(props) {
             seterror(`Password should have minumum 6 characters and atleast 
             a number and a alphabet and should not have any spaces`)
         }
-        else if (password!==confirmPassword) {
+        else if (password !== confirmPassword) {
             seterror("Password and confirm password should be same")
         }
         else {
@@ -56,29 +56,29 @@ function SignUp(props) {
                                 <div className="field-wrapper">
                                     <input type="text" name="First Name" placeholder="First Name" value={firstName}
                                         onChange={(e) => setfirstname(e.target.value)} />
-                                    <label>First Name</label>
+                                    <label htmlFor="First Name">First Name</label>
                                 </div>
                                 <div className="field-wrapper">
                                     <input type="text" name="Last Name" placeholder="Last Name" value={lastName}
                                         onChange={(e) => setlastname(e.target.value)} />
-                                    <label>Last Name</label>
+                                    <label htmlFor="Last Name">Last Name</label>
                                 </div>
                                 <div className="field-wrapper">
                                     <input type="text" name="Email" placeholder="Email" value={email}
                                         onChange={(e) => setemail(e.target.value)} />
-                                    <label>Email</label>
+                                    <label htmlFor="Email">Email</label>
                                 </div>
                                 <div className="field-wrapper">
                                     <input type="password" name="password" placeholder="password"
                                         autocomplete="new-password" value={password}
                                         onChange={(e) => setpassword(e.target.value)} />
-                                    <label>Password</label>
+                                    <label htmlFor="Password">Password</label>
                                 </div>
                                 <div className="field-wrapper">
                                     <input type="password" name="password" placeholder="Confirm password"
                                         autocomplete="new-password" value={confirmPassword}
                                         onChange={(e) => setconfirmPassword(e.target.value)} />
-                                    <label>Confirm password</label>
+                                    <label htmlFor="Confirm password">Confirm password</label>
                                 </div>
                                 <div className="field-wrapper">
                                     <input type="submit" name="Login" value="Signup" />

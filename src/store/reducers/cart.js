@@ -9,7 +9,7 @@ const reducer = (state = initstate, action) => {
         case actionTypes.ADD_TO_CART: {
             const items = [...state.cartItems]
             const index = items.findIndex(it => it.id === action.product.id)
-            debugger
+            
             if (index === -1)
                 return {
                     ...state,
@@ -45,7 +45,7 @@ const reducer = (state = initstate, action) => {
             item.count = item.count - 1
             // if (item.count === 0){
             //     const items1=items.filter(it=>it.id!==items[index].id)
-            //     debugger
+            //     
             //     return{
             //         ...state,
             //         cartItems:items1
@@ -66,7 +66,7 @@ const reducer = (state = initstate, action) => {
         }
 
         case actionTypes.SHOW_CART:{
-            debugger
+            
             return{
                 ...state,
                 showCart:action.show
