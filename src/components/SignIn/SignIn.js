@@ -8,7 +8,7 @@ function SignIn(props) {
     const [error, seterror] = useState('')
     const loginHandler = (e) => {
         e.preventDefault();
-        if (email === 'test' && password === "test") {
+        if (email === 'test@gmail.com' && password === "test81!") {
             seterror("")
             props.history.push("/")
         }
@@ -34,7 +34,7 @@ function SignIn(props) {
                             <form onSubmit={loginHandler}>
                                 <div className="field-wrapper">
                                     <input type="text" name="Email" placeholder="Email" value={email}
-                                        onChange={(e) => setemail(e.target.value)} />
+                                        onChange={(e) => setemail(e.target.value)} className="invalid" />
                                     <label htmlFor="Email">Email</label>
                                 </div>
                                 <div className="field-wrapper">

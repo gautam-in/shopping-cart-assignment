@@ -68,6 +68,9 @@ $red:#8b0000;
     .field-wrapper{
       margin-top: $spacing*1.5;
       position: relative;
+      [aria-invalid]{
+        border-right:  5px solid red;
+      }
 
       label{
         position: absolute;
