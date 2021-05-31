@@ -11,12 +11,13 @@ export class HomePageComponent implements OnInit {
   allBanners: any[] = [];
   allCategories: any[] = [];
 
+  //ngx-carousel settings
   customOptions: any = {
     loop: true,
     autoplay: true,
     dots: true,
     navSpeed: 500,
-    items: 1.7,
+    items: 1.5,
     margin: 4,
     autoWidth: true,
   };
@@ -33,15 +34,21 @@ export class HomePageComponent implements OnInit {
 
   getAllBanners(): void {
     this.fetchBanners.getBanners().subscribe((res: any) => {
-      this.allBanners = res;
-      console.log(this.allBanners);
+      if (res) {
+        this.allBanners = res;
+      } else {
+        this.allBanners = [];
+      }
     });
   }
 
   getAllCategories(): void {
     this.fetchBanners.getCategories().subscribe((res: any) => {
-      this.allCategories = res;
-      console.log(this.allCategories);
+      if (res) {
+        this.allCategories = res;
+      } else {
+        this.allCategories = [];
+      }
     });
   }
 
