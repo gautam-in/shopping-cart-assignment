@@ -38,12 +38,11 @@ const CategoryFilter = React.memo(({ filterId }) => {
 
   const handleClicks = (value) => {
     if (activeId != value) {
-      const state = { id: value };
       history.push({
         pathname: '/products',
-        state
+        search: `?category=${value}`
       });
-      setActiveId(state.id);
+      setActiveId(value);
     } else {
       history.push({
         pathname: '/products'

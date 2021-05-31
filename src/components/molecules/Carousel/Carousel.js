@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import PropTypes from 'prop-types';
 import './Carousel.scss';
 
@@ -25,17 +25,17 @@ const Carousel = React.memo(({ images }) => {
   const goToIndex = (id) => {
     setActiveIndex(id);
   };
-  const slides = images.map((image, index) => {
+  const indicators = [];
+  const slides = [];
+
+  images.forEach((image, index) => {
     const { id, bannerImageUrl, bannerImageAlt } = image;
-    return (
+    slides.push(
       <li className={`carousel-item ${activeIndex === index ? 'show' : ''}`} key={id}>
         <img src={bannerImageUrl} alt={bannerImageAlt} />
       </li>
     );
-  });
-  const indicators = images.map((image, index) => {
-    const { id } = image;
-    return (
+    indicators.push(
       <li
         key={id}
         className={`dot ${activeIndex === index ? 'active' : ''}`}

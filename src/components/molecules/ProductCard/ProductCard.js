@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux';
 import { addToCart } from '../../../redux/actions/actionCreators';
 import './ProductCard.scss';
 import * as Constants from '../../../shared/constants';
+
 export default function ProductCard({ product }) {
   const productObj = product;
   const dispatch = useDispatch();

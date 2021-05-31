@@ -1,16 +1,11 @@
 import React, { useCallback, useEffect, useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
-import { getProducts } from '../../../redux/actions/actionCreators';
 import ProductCard from '../../molecules/ProductCard/ProductCard';
 import './ProductList.scss';
-const ProductList = ({ filterId }) => {
-  const dispatch = useDispatch();
+const ProductList = React.memo(({ filterId }) => {
   const productsList = useSelector((state) => state.products.productsList);
   const [displayList, setDisplayList] = useState([]);
-  useEffect(() => {
-    dispatch(getProducts());
-  }, []);
   useEffect(() => {
     if (filterId) {
       setDisplayList(() =>
@@ -26,7 +21,7 @@ const ProductList = ({ filterId }) => {
   });
 
   return <section className='product-list'>{productsContent}</section>;
-};
+});
 
 ProductList.propTypes = {
   filterId: PropTypes.string

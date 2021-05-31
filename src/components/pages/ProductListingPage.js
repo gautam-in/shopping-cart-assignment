@@ -4,19 +4,19 @@ import { useLocation } from 'react-router-dom';
 import { getProducts } from '../../redux/actions/actionCreators';
 const ProductList = React.lazy(() => import('../organisms/ProductList/ProductList'));
 const CategoryFilter = React.lazy(() => import('../organisms/CategoryFilter/CategoryFilter'));
-const ProductListingPage = () => {
+const ProductListingPage = React.memo(() => {
   const dispatch = useDispatch();
-  const { state } = useLocation();
-  const id = (state && state.id) || null;
+  const { search } = useLocation();
   const [filterId, setFilterId] = useState(null);
-
+  const searchParams = new URLSearchParams(search);
+  const categorySelected = searchParams.get('category');
   useEffect(() => {
     dispatch(getProducts());
   }, [dispatch]);
 
   useEffect(() => {
-    setFilterId(id);
-  }, [id]);
+    setFilterId(categorySelected);
+  }, [categorySelected]);
   return (
     <>
       <main className='container'>
@@ -27,6 +27,6 @@ const ProductListingPage = () => {
       </main>
     </>
   );
-};
+});
 
 export default ProductListingPage;

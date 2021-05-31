@@ -4,9 +4,9 @@ import { getData } from '../../getService';
 
 export function getProducts() {
   return function (dispatch) {
-    return getData(GET_PRODUCTS_API).then((json) =>
-      dispatch({ type: GET_PRODUCTS, payload: json.data })
-    );
+    return getData(GET_PRODUCTS_API).then((json) => {
+      dispatch({ type: GET_PRODUCTS, payload: json.data });
+    });
   };
 }
 

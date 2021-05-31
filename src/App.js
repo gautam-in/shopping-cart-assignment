@@ -15,7 +15,7 @@ function App() {
   const [showModal, setShowModal] = useState(false);
   const toggleModal = () => {
     setShowModal(!showModal);
-    if (window.innerWidth < 770) {
+    if (window?.innerWidth < 770) {
       setShowModal(true);
       history.push('/cart');
     }
@@ -24,7 +24,9 @@ function App() {
   return (
     <div className='app-container'>
       <Header toggleCartModal={toggleModal} />
-      {window.innerWidth > 770 ? <Cart showCart={showModal} toggleCartModal={toggleModal} /> : null}
+      {window?.innerWidth > 770 ? (
+        <Cart showCart={showModal} toggleCartModal={toggleModal} />
+      ) : null}
       <Switch>
         <Route exact path='/' render={() => <Home />} />
         <Route exact path='/home' render={() => <Home />} />

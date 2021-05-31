@@ -5,7 +5,7 @@ header {
   background-color: white;
 }
 .header-link-active {
-  color: #bf2957;
+  color: #bf2957 !important;
   cursor: pointer;
 }
 .nav_bar {
@@ -38,6 +38,7 @@ header {
   }
 
   .nav_cart {
+    cursor: pointer;
     padding-left: 6px;
     padding-top: 10px;
     padding-bottom: 10px;

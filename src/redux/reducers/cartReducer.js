@@ -10,11 +10,7 @@ export const cart = (state = initialState, action) => {
       const duplicateObj = state.cartList.find((item) => item.id === action.product.id);
       let result = [];
       if (duplicateObj == undefined) {
-        result = Object.assign(
-          [],
-          state.cartList,
-          state.cartList.push({ ...action.product, count: 1 })
-        );
+        result = [...state.cartList, { ...action.product, count: 1 }];
       } else {
         result = state.cartList.map((item) => {
           if (item.id == duplicateObj.id) {
@@ -29,18 +25,11 @@ export const cart = (state = initialState, action) => {
         cartItem: state.cartItem + 1
       };
     case REMOVE_FROM_CART:
-      const duplicates = state.cartList.find((item) => item.id === action.product.id);
-      let removedCarts = [];
-      if (duplicates.count == 1) {
-        removedCarts = state.cartList.filter((item) => item.id !== action.product.id);
-      } else {
-        removedCarts = state.cartList.map((item) => {
-          if (item.id == duplicates.id) {
-            item.count = item.count - 1;
-          }
-          return item;
-        });
-      }
+      let removedCarts = state.cartList
+        .map((product) =>
+          product.id === action.product.id ? { ...product, count: product.count - 1 } : product
+        )
+        .filter((item) => item.count != 0);
       return {
         ...state,
         cartList: removedCarts,

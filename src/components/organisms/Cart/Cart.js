@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useHistory, useLocation } from 'react-router-dom';
 import CartItem from '../../molecules/CartItem/CartItem';
@@ -10,13 +10,18 @@ const Cart = React.memo(({ showCart, toggleCartModal }) => {
   const history = useHistory();
   const cartData = useSelector((state) => state.cart.cartList);
   const itemCount = useSelector((state) => state.cart.cartItem);
-  var totalPrice = cartData.reduce((acc, item) => {
-    return acc + item.count * item.price;
-  }, 0);
+  const [totalPrice, setTotalPrice] = useState(0);
+  useEffect(() => {
+    var total = cartData.reduce((acc, item) => {
+      return acc + item.count * item.price;
+    }, 0);
+    setTotalPrice(total);
+  }, [itemCount]);
+
   const cartItemList =
     cartData &&
-    cartData.map((item, index) => {
-      return <CartItem item={item} key={index} />;
+    cartData.map((item) => {
+      return <CartItem item={item} key={item.id} />;
     });
   return (
     <section

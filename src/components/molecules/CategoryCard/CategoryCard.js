@@ -3,11 +3,10 @@ import './CategoryCard.scss';
 import { useHistory } from 'react-router-dom';
 const CategoryCard = (props) => {
   const history = useHistory();
-  const handleClicks = (value) => {
-    const state = { id: value };
+  const handleClicks = (value, key) => {
     history.push({
       pathname: '/products',
-      state
+      search: `?category=${value}`
     });
   };
 
@@ -31,7 +30,7 @@ const CategoryCard = (props) => {
             aria-label={
               props.categoryName + 'category button, click to explore the products of this category'
             }
-            onClick={() => handleClicks(props.id)}
+            onClick={() => handleClicks(props.id, props.name)}
           >
             Explore {props.name}
           </button>
