@@ -3,13 +3,13 @@ import "./Dialog.scss";
 export default function Dialog(props) {
   const { dialog, setDialog, onDialogConfirm } = props;
   return (
-    <div
+    <section
       id="myModal"
       className="modal"
       style={{ display: dialog ? "block" : "none" }}
       data-test="component-dialog"
     >
-      <div className="modal-content">
+      <section className="modal-content">
         <span
           className="close"
           onClick={() => setDialog(false)}
@@ -19,7 +19,7 @@ export default function Dialog(props) {
           &times;
         </span>
         <p>Are you sure you want to place order ?</p>
-        <div className="buttonContainer">
+        <section className="buttonContainer">
           <button
             className="button"
             onClick={() => setDialog(false)}
@@ -34,8 +34,8 @@ export default function Dialog(props) {
           >
             confirm
           </button>
-        </div>
-      </div>
-    </div>
+        </section>
+      </section>
+    </section>
   );
 }

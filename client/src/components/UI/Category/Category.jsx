@@ -13,10 +13,10 @@ function Category(props) {
     });
   };
   return (
-    <div data-test="component-category">
+    <section data-test="component-category">
       {categories.map((category, index) => {
         return (
-          <div
+          <section
             className="categoryContainer"
             style={{ flexDirection: index % 2 === 0 ? null : "row-reverse" }}
             key={category.id}
@@ -27,18 +27,18 @@ function Category(props) {
               alt="Not found"
               data-test="category-image"
             />
-            <div className="info">
+            <section className="info">
               <h2>{category.name}</h2>
-              <div style={{ marginBottom: "10px" }}>{category.description}</div>
+              <section style={{ marginBottom: "10px" }}>{category.description}</section>
               <Button
                 text={`Explore ${category.key}`}
                 onClick={() => handleClick(category.id)}
               />
-            </div>
-          </div>
+            </section>
+          </section>
         );
       })}
-    </div>
+    </section>
   );
 }
 export default withRouter(Category);

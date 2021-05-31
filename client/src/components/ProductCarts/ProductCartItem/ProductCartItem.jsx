@@ -10,11 +10,11 @@ function ProductCartItem(props) {
   const { item, handleDecrement, handleIncrement } = props;
 
   return (
-    <div className="itemContainer">
+    <section className="itemContainer">
       <img src={item.imageURL} width="60px" height="60px" />
-      <div className="itemDescription">
+      <section className="itemDescription">
         <h3>{item.name}</h3>
-        <div>
+        <section>
           <button
             onClick={() => handleDecrement(item)}
             className="buttonAction"
@@ -29,10 +29,10 @@ function ProductCartItem(props) {
             +
           </button>
           <span>X&nbsp;&nbsp; Rs.{item.price} </span>
-        </div>
-      </div>
-      <div className="priceItem"> Rs. {item.price * item.quantity} </div>
-    </div>
+        </section>
+      </section>
+      <section className="priceItem"> Rs. {item.price * item.quantity} </section>
+    </section>
   );
 }
 

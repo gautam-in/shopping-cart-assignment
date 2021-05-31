@@ -28,28 +28,28 @@ export default function Carousel(props) {
     showSlides();
   }, []);
   return (
-    <div data-test="component-carousel">
-      <div class="slideShowContainer">
+    <section data-test="component-carousel">
+      <section class="slideShowContainer">
         {banners.map((banner) => {
           return (
-            <div class="mySlides fade" key={banner.id}>
+            <figure class="mySlides fade" key={banner.id}>
               <img
                 src={banner.bannerImageUrl}
                 style={{ width: "100%" }}
                 alt={banner.bannerImageAlt}
                 data-test="carousel-image"
               />
-            </div>
+            </figure>
           );
         })}
-      </div>
+      </section>
       <br />
 
-      <div style={{ textAlign: "center" }}>
+      <section style={{ textAlign: "center" }}>
         {banners.map((banner) => {
           return <span class="dot" key={banner.id}></span>;
         })}
-      </div>
-    </div>
+      </section>
+    </section>
   );
 }

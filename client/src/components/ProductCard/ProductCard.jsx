@@ -9,44 +9,12 @@ import { handleIncrement, initializeCart } from "../../store/action";
 function Card(props) {
   const { product, cart, handleIncrement, initializeCart } = props;
   const [message, setMessage] = React.useState("");
-  // console.log(props);
-  //   function add1() {
-  //     var axios = require("axios");
-  //      var config = {
-  //       method: "post",
-  //       url: "http://localhost:5000/addtocart",
-  //       headers: {},
-  //     };
-
-  //     axios(config)
-  //       .then(function (response) {
-  //         setAdd(true);
-
-  //         setTimeout(() => {
-  //           setAdd(false);
-  //         }, 3000);
-  //       })
-  //       .catch(function (error) {
-
-  //       });
-  //   }
-
+  
   const addItemToCart = async (product) => {
     AuthenticationApi.postData(
       `${process.env.REACT_APP_BASE_URL}/addtocart`
     ).then((res) => {
       setMessage(res.responseMessage);
-      // if (cart) {
-      //   cart.map((result) => {
-      //     console.log(result, product);
-      //     if (result.id === product.id) return handleIncrement(product);
-      //     return initializeCart(product);
-      //   });
-      // } else {
-      //   console.log("else");
-      //   return initializeCart(product);
-      // }
-    });
 
     for (let item of cart) {
       if (item.id === product.id) return handleIncrement(product);
@@ -55,7 +23,7 @@ function Card(props) {
   };
 
   return (
-    <main className="productCard">
+    <section className="productCard">
       <h3 className="productName">{product.name}</h3>
       <figure>
         <img src={product.imageURL} alt={product.name} width="100%" />
@@ -76,7 +44,7 @@ function Card(props) {
           Buy Now
         </button>
       </section>
-    </main>
+    </section>
   );
 }
 const mapStateToProps = (store) => {

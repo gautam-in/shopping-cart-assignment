@@ -7,16 +7,16 @@ function EmptyCart(props) {
     props.history.push("/products");
   };
   return (
-    <div className="emptyCartContainer" style={{}}>
-      <div className="cartData">
+    <section className="emptyCartContainer" style={{}}>
+      <section className="cartData">
         <h2>No items in your cart</h2>
         <h5>Your favourite items are just a click away</h5>
 
         <button className="emptyCartButton" onClick={handleClick}>
           Start Shopping
         </button>
-      </div>
-    </div>
+      </section>
+    </section>
   );
 }
 export default withRouter(EmptyCart);

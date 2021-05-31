@@ -15,7 +15,7 @@ function ProductCartItems(props) {
     props.history.push("/");
   };
   return (
-    <main>
+    <section>
       <Dialog
         dialog={dialog}
         setDialog={setDialog}
@@ -45,7 +45,7 @@ function ProductCartItems(props) {
           </button>
         </section>
       </section>
-    </main>
+    </section>
   );
 }
 export default withRouter(connect(null, { handleReset })(ProductCartItems));

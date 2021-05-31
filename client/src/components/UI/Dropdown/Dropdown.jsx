@@ -20,7 +20,7 @@ export default function Dropdown(props) {
   };
   console.log(value);
   return (
-    <div className="dropdownContainer" data-test="component-dropdown">
+    <section className="dropdownContainer" data-test="component-dropdown">
       <select
         value={value}
         className="selectBox"
@@ -39,10 +39,6 @@ export default function Dropdown(props) {
           );
         })}
       </select>
-      {/* <div
-        className="dropdownContent"
-        style={{ display: menu ? "inline" : "none" }}
-      ></div> */}
-    </div>
+    </section>
   );
 }
