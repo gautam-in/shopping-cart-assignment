@@ -14,7 +14,7 @@ module.exports = (env, mode) => {
     output: {
       filename: "[name].[contenthash].js",
       publicPath: ASSET_PATH,
-      path: path.resolve(__dirname, "./dist"),
+      path: path.resolve(__dirname, "dist"),
       clean: true, // Cleaning up the /dist folder
     },
 
@@ -66,9 +66,9 @@ module.exports = (env, mode) => {
             to: __dirname + "/public",
           },
           {
-              from: __dirname + '/static/**/*',
-              to: __dirname + '/dist',
-          }
+            from: __dirname + "/static/**/*",
+            to: __dirname + "/dist",
+          },
         ],
         options: {
           concurrency: 100,

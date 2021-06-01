@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useHistory } from "react-router-dom";
 
 import Button from "../../components/common/button";
 import Input from "../../components/common/input";
@@ -25,25 +26,23 @@ const INITIAL_FORM = {
   password: "",
 };
 const LoginMyBazar = () => {
+  const history = useHistory();
   const [form, setForm] = useState(INITIAL_FORM);
-  const [error, setError] = useState(INITIAL_FORM);
+  const [checkValidation, setCheckValidation] = useState(false);
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    let formErrors = { ...INITIAL_FORM };
 
-    // // error checking
-    // const hasError = Object.values(formErrors).every(
-    //   (item) => item.trim() === ""
-    // );
-    // if (!hasError) {
-    //   setError({ ...formErrors });
-    //   return;
-    // }
-    window.localStorage.setItem("user", JSON.stringify(form));
-    setError(INITIAL_FORM);
-    setForm(INITIAL_FORM);
-    formErrors = { ...INITIAL_FORM };
+    // error checking
+    const hasError = Object.values(form).some((item) => item.trim() === "");
+
+    if (!hasError) {
+      window.localStorage.setItem("user", JSON.stringify(form));
+      setForm(INITIAL_FORM);
+      history.push(`/home`);
+    } else {
+      setCheckValidation(true);
+    }
   };
 
   // handle input change
@@ -59,16 +58,22 @@ const LoginMyBazar = () => {
         <p>{loginDescriptionLabel}</p>
       </div>
       <div className="form_container">
-        <form className="form " onSubmit={handleSubmit} name="login">
+        <form
+          className="form "
+          method="post"
+          onSubmit={handleSubmit}
+          name="login"
+        >
           <Input
             type="text"
             name="email"
-            className={`${error.email ? "error" : ""}`}
+            className="form-control"
             value={form.email}
             onChange={handleInputChange}
             label={emailLabel}
             errorLabel={emailErrorLabel}
             invalidErrorLabel={emailInvaildErrorLabel}
+            checkValidation={checkValidation}
             regex={emailRegex}
           />
           <Input
@@ -80,6 +85,7 @@ const LoginMyBazar = () => {
             label={passwordLabel}
             errorLabel={passwordErrorLabel}
             invalidErrorLabel={passwordInvaildErrorLabel}
+            checkValidation={checkValidation}
             regex={passwordRegex}
           />
           <Button type="submit" variant="primary" className="btn-block">
