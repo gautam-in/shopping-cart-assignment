@@ -23,10 +23,45 @@ header
                 li
                     display: inline-block
                     margin-left: 10px
+                    position: relative
                     a
                         font-weight: 500
                         &:hover
                             color: #d00255
+                            &:before
+                                content: ' '
+                                width: 90%
+                                border-bottom: 1px solid #ff297e
+                                height: 1px
+                                position: absolute
+                                top: -7px
+                                left: 5%
+                            &:after
+                                content: ' '
+                                width: 90%
+                                border-bottom: 1px solid #ff297e
+                                height: 1px
+                                position: absolute
+                                bottom: -7px
+                                left: 5%
+                    .active
+                        color: #d00255
+                        &:before
+                            content: ' '
+                            width: 90%
+                            border-bottom: 1px solid #d00255
+                            height: 1px
+                            position: absolute
+                            top: -7px
+                            left: 5%
+                        &:after
+                            content: ' '
+                            width: 90%
+                            border-bottom: 1px solid #d00255
+                            height: 1px
+                            position: absolute
+                            bottom: -7px
+                            left: 5%
         .cart-btn
             display: flex
             align-items: center

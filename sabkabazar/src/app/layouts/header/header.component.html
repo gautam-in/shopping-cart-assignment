@@ -11,8 +11,20 @@
       <div class="menu">
         <nav class="main-nav">
           <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Products</a></li>
+            <li>
+              <a
+                [routerLinkActiveOptions]="{ exact: true }"
+                routerLinkActive="active"
+                routerLink="/"
+                href="#"
+                >Home</a
+              >
+            </li>
+            <li>
+              <a routerLinkActive="active" routerLink="/products" href="#"
+                >Products</a
+              >
+            </li>
           </ul>
         </nav>
         <div class="cart-btn">

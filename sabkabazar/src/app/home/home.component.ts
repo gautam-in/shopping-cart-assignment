@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { IBanner } from '../models/banner.model';
-import { IProduct } from '../models/product.model';
 import { AppService } from '../services/app.service';
 import { Slider } from 'ngx-slider';
 
