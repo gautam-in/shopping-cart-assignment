@@ -2,3 +2,22 @@ $bgButton: #D10157;
 $maxWidth: 767px;
 $minWidthTab: 768px;
 $maxWidthTab: 1024px;
+
+@mixin shadow {
+    position: relative;
+    &:after, &:before {
+        content: "";
+        left: 0;
+        position: absolute;
+        border-radius: 50%;
+        box-shadow: 0 0 15px gray;
+        width: 100%;
+        height: 20px;
+        display: none;
+    }
+    &:after {
+        display: block;
+        bottom: 0px;
+        clip: rect(20px auto 40px auto);
+    }
+}

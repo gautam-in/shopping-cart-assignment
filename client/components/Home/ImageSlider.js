@@ -1,25 +1,10 @@
 
 import { Carousel } from 'react-responsive-carousel';
-import { useEffect, useState } from 'react';
 import styles from '../../styles/imageSlider.module.scss';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 
 const ImageSlider = ({ banners }) => {
-
-    // const [banners, setBanners] = useState([]);
-
-    // useEffect(async () => {
-    //     const res = await axios.get('http://localhost:5000/banners');
-    //     const data = res.data;
-    //     const banners_arr = data.map(banner => (
-    //         <div key={banner.id}>
-    //             <img src={banner.bannerImageUrl} />
-    //         </div>
-
-    //     ));
-    //     setBanners(banners_arr);
-    // }, []);
 
     return (
         <section className={styles.imgContainer}>

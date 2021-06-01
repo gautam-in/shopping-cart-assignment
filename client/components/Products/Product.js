@@ -1,15 +1,12 @@
 import styles from '../../styles/product.module.scss';
 import { useCart } from '../../util/cartState';
 import axios from 'axios';
-import {useApiRequest} from '../../util/useApiRequest';
 
 const Product = ({ name, description, imageURL, price, id }) => {
 
     const { cart, setCart } = useCart()
 
     const addToCartHandler = () => {
-        // const {data, isLoading, error} = useApiRequest("http://localhost:5000/addToCart");
-        // console.log(data, isLoading, error);
         const cartItem = {
             id,
             name,

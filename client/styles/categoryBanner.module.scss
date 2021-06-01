@@ -5,28 +5,10 @@
     justify-content: space-between;
     width: 100%;
     height: 19rem;
-    // max-height: 300px;
     padding: 1rem;
-    // border-bottom: 1px solid lightgray;
-
     position: relative;
 
-    &:after, &:before {
-        content: "";
-        left: 0;
-        position: absolute;
-        border-radius: 50%;
-        box-shadow: 0 0 15px gray;
-        width: 100%;
-        height: 20px;
-        display: none;
-    }
-
-    &:after {
-        display: block;
-        bottom: 0px;
-        clip: rect(20px auto 40px auto);
-    }
+    @include variables.shadow;
 
     &:last-child {
         margin-bottom: 0;
