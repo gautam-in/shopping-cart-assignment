@@ -9,15 +9,17 @@ import { HeaderComponent } from './layouts/header/header.component';
 import { FooterComponent } from './layouts/footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { SliderModule } from 'ngx-slider';
-
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    HomeComponent
+    HomeComponent,
+    PageNotFoundComponent
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule, SliderModule],
+  imports: [BrowserModule,BrowserAnimationsModule, AppRoutingModule, HttpClientModule, SliderModule],
   providers: [],
   bootstrap: [AppComponent],
 })

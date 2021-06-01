@@ -1,10 +1,65 @@
 section
     margin-top: 1px
     .row
-        background: #eeeeee
         .content
-            padding: 20px 0
+            padding: 0
             width: 100%
-            background: white
+            background: #ffffff
             .slider
-                height: 400px
+                height: 280px
+                width: 100%
+                position: relative
+                &:after
+                    content: ""
+                    position: absolute
+                    z-index: -1
+                    -webkit-box-shadow: 0 0 20px rgba(0,0,0,0.8)
+                    box-shadow: 0 0 20px rgba(0,0,0,0.8)
+                    bottom: 0px
+                    left: 10%
+                    right: 10%
+                    width: 80%
+                    height: 50%
+                    -moz-border-radius: 100%
+                    border-radius: 100%
+
+    .banner
+        display: flex
+        align-items: center
+        height: 280px
+        text-align: center
+        padding: 20px 40px
+        position: relative
+        background: white
+        margin: 60px
+        &:after
+            content: ""
+            position: absolute
+            z-index: -1
+            -webkit-box-shadow: 0 0 20px rgba(0,0,0,0.8)
+            box-shadow: 0 0 20px rgba(0,0,0,0.8)
+            bottom: 0px
+            left: 10%
+            right: 10%
+            width: 80%
+            height: 50%
+            -moz-border-radius: 100%
+            border-radius: 100%
+        .image-section
+            width: 25%
+            img
+                width: 100%
+        .content-section
+            width: 75%
+            p
+                padding: 20px 0
+            button
+                padding: 10px 20px
+                background: #d00255
+                color: #ffffff
+                border: none
+                cursor: pointer
+                &:hover
+                    background: #960841
+    .reverse
+        flex-flow: row-reverse

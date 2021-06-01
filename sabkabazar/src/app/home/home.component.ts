@@ -9,11 +9,16 @@ import { Slider } from 'ngx-slider';
   styleUrls: ['./home.component.sass'],
 })
 export class HomeComponent implements OnInit {
+  categories!: any;
   slider!: Slider;
   banners!: IBanner[];
   constructor(private appService: AppService) {}
 
   ngOnInit(): void {
+    this.appService.getAllCategories().subscribe((categories: any) => {
+      console.log(categories)
+      this.categories = categories.filter((item: any) => item.imageUrl);
+    });
     this.appService.getAllBanners().subscribe((banners) => {
       this.slider = new Slider();
       this.slider.config.loop = true;
