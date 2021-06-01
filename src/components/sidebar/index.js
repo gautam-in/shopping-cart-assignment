@@ -1,5 +1,5 @@
 import React from "react";
-import useDevice from "../../utils/customHooks/useDevices";
+import { useDevice } from "../../utils";
 
 import { selectCategoryLabel } from "../../constant";
 

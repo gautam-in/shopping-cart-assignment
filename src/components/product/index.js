@@ -2,7 +2,7 @@ import React from "react";
 import Button from "../common/button";
 import Image from "../common/image";
 
-import useDevice from "../../utils/customHooks/useDevices";
+import { useDevice } from "../../utils";
 
 import "./index.scss";
 

@@ -3,7 +3,7 @@ import { Route } from "react-router-dom";
 
 import CustomRoute from "./customRoute";
 
-import useDevice from "../utils/customHooks/useDevices";
+import { useDevice } from "../utils";
 
 const Home = lazy(() => import("../containers/home"));
 const Register = lazy(() => import("../containers/registerMyBazar"));

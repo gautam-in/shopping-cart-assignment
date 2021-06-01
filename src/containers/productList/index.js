@@ -4,9 +4,7 @@ import { useLocation, useHistory } from "react-router-dom";
 import Sidebar from "../../components/sidebar";
 import Product from "../../components/product";
 
-import { FetchData, LocalStorage, pubsub } from "../../utils";
-
-import useDevice from "../../utils/customHooks/useDevices";
+import { FetchData, LocalStorage, pubsub, useDevice } from "../../utils";
 
 import "./index.scss";
 

@@ -28,6 +28,14 @@ const CartItem = ({
     handleRemoveItem && handleRemoveItem(item);
   };
 
+  const handleDecideClick = () => {
+    if (item?.count <= 1) {
+      handleRemoveItemQty();
+    } else {
+      handleDecrementItemQty();
+    }
+  }
+
   return (
     <div className="cart-item" key={item.id}>
       <div className="cart-item-image">
@@ -44,11 +52,9 @@ const CartItem = ({
           <Button
             variant="primary"
             className="button btn-rounded cart-decrement"
-            onClick={
-              item.count <= 1 ? handleRemoveItemQty : handleDecrementItemQty
-            }
+            onClick={handleDecideClick}
             id={item.id}
-            // disabled={item.count <= 1}
+          // disabled={item.count <= 1}
           >
             {item.count <= 1 ? "x" : "-"}
           </Button>

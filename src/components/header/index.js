@@ -4,9 +4,8 @@ import HeaderLogo from "../common/headerLogo";
 
 import CartModal from "../cartModal";
 
-import { LocalStorage, pubsub } from "../../utils";
+import { LocalStorage, pubsub, useDevice } from "../../utils";
 import topic from "../../constant/topic";
-import useDevice from "../../utils/customHooks/useDevices";
 
 import "./index.scss";
 

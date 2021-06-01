@@ -4,8 +4,7 @@ import { useHistory } from "react-router-dom";
 import CartItem from "../../components/cartItem";
 import Button from "../../components/common/button";
 
-import useDevice from "../../utils/customHooks/useDevices";
-import { LocalStorage, pubsub } from "../../utils";
+import { LocalStorage, pubsub, useDevice } from "../../utils";
 import topic from "../../constant/topic";
 
 import "./index.scss";
@@ -87,8 +86,8 @@ const Cart = (props) => {
     let cartItems = LocalStorage.getItem("cartItems");
     cartItems = cartItems.length
       ? cartItems.filter((singleCartItem) => {
-          return singleCartItem.id !== item.id;
-        })
+        return singleCartItem.id !== item.id;
+      })
       : [];
     LocalStorage.setItem("cartItems", cartItems);
     setCartItems(cartItems);
@@ -97,18 +96,16 @@ const Cart = (props) => {
 
   return (
     <div
-      className={`${
-        !isDesktop ? "container-fluid wrapper " : ""
-      } cart-container`}
+      className={`${!isDesktop ? "container-fluid wrapper " : ""
+        } cart-container`}
     >
       <div className="cart-card">
         <div className="cart-header">
           <h1 className="cart-title">
             {`${cartTitleLabel} `}
             {cartItems?.length > 0 && (
-              <span className="item-count">{`( ${
-                cartItems ? noOfItemInCart : 0
-              } ${itemLabel} )`}</span>
+              <span className="item-count">{`( ${cartItems ? noOfItemInCart : 0
+                } ${itemLabel} )`}</span>
             )}
           </h1>
           <span className="close_button_container">

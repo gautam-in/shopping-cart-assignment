@@ -8,7 +8,7 @@ const Carousel = ({ offers = [] }) => {
 
   useEffect(() => {
     let interval;
-    if (offers.length > 0) {
+    if (offers?.length > 0) {
       interval = setTimeout(() => {
         nextCarouselImg();
       }, 5000);
@@ -32,7 +32,7 @@ const Carousel = ({ offers = [] }) => {
 
   return (
     <>
-      {offers.length > 0 && (
+      {offers?.length > 0 && (
         <div className="carousel">
           <button className="carousel_button left" onClick={prevCarouselImg}>
             &#10094;
