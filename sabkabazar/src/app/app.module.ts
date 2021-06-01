@@ -11,6 +11,7 @@ import { HomeComponent } from './home/home.component';
 import { SliderModule } from 'ngx-slider';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,7 +20,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HomeComponent,
     PageNotFoundComponent
   ],
-  imports: [BrowserModule,BrowserAnimationsModule, AppRoutingModule, HttpClientModule, SliderModule],
+  imports: [BrowserModule, ToastrModule.forRoot(), BrowserAnimationsModule, AppRoutingModule, HttpClientModule, SliderModule],
   providers: [],
   bootstrap: [AppComponent],
 })

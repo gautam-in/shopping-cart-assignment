@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-auth',
@@ -8,10 +9,19 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class AuthComponent implements OnInit {
   auth: boolean = false;
-  constructor(private router: Router, private activatedRoute: ActivatedRoute) {}
+  constructor(
+    private ngxToastrService: ToastrService,
+    private activatedRoute: ActivatedRoute
+  ) {}
 
   ngOnInit(): void {
     this.auth =
       this.activatedRoute.snapshot.url[0].path === 'register' ? true : false;
+  }
+  submitForm(): void {
+    this.ngxToastrService.success(
+      'Registration done succesfully!',
+      'Registered!'
+    );
   }
 }
