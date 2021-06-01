@@ -1,3 +1,5 @@
+@use "variables";
+
 .cartmodal {
     position:absolute;
     right: 10%;
@@ -5,7 +7,7 @@
     top: 89px;
     width: 430px;
     z-index: 500;
-    height: calc(100vh - 90px);
+    height: calc(100vh - 89px);
 
     header {
         width: 100%;
@@ -40,8 +42,8 @@
 
     .main {
         overflow: scroll;
+        overscroll-behavior: contain;
         height: 530px;
-        // height: calc(100vh - 16.1rem);
 
         .emptyCart {
             h4, p {
@@ -65,7 +67,7 @@
         .checkoutButton {
             display: flex;
             justify-content: space-between;
-            background-color: #d10157;
+            background-color: variables.$bgButton;
             color: #fff;
             margin: 10px;
             padding: 10px 5px;
@@ -83,7 +85,7 @@
     background-color: rgba(0, 0, 0, 0.5);
 }
 
-@media only screen and (max-width: 1024px) {
+@media only screen and (max-width: variables.$maxWidthTab) {
 
     .backdrop {
         background-color: rgba(0, 0, 0, 0);
@@ -92,7 +94,6 @@
     .cartmodal {
         right: 0;
         width: 100%;
-        z-index: 500;
          
         header {
             margin-top: 2rem;
@@ -106,13 +107,7 @@
     }
 }
 
-@media only screen and (min-width : 768px) and (max-width : 1024px) {
-    .main {
-        height: calc(100vh - 16rem);
-    }
-}
-
-@media only screen and (min-width : 320px) and (max-width : 767px) {
+@media only screen and (max-width : variables.$maxWidth) {
     .cartmodal{
         top: 59px;
         height: calc(100vh - 59px);

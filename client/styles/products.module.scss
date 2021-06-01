@@ -30,16 +30,15 @@
 }
 
 
-@media only screen and (max-width: 768px) and (min-width: 481px){
+@media only screen and (min-width: variables.$minWidthTab) and (max-width: variables.$maxWidthTab){
     .container {
         .filter {
-            width: 37%;
-            
+            width: 40%;   
         }
     }
 }
 
-@media only screen and (min-width : 320px) and (max-width : 767px) {
+@media only screen and (max-width : variables.$maxWidth) {
     .container {
         flex-direction: column;
         justify-content: center;
@@ -68,8 +67,7 @@
             select {
                 -moz-appearance:none; /* Firefox */
                 -webkit-appearance:none; /* Safari and Chrome */
-               
-
+            
                 option {
                     background-color: lightgray;
                     color: black;  
@@ -78,7 +76,6 @@
 
             .downArrow {
                 position: absolute;
-                
                 bottom: calc(50% - 10px);
                 right: 20px;
                 border: solid #fff;

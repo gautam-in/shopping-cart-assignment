@@ -1,3 +1,5 @@
+@use "variables";
+
 .loginContainer {
     display: flex;
     width: 80%;
@@ -37,7 +39,7 @@
                 width: 100%;
                 margin-top: 5vh;
                 padding: 0.5rem;
-                background-color: #d10157;
+                background-color: variables.$bgButton;
                 color: #fff;
                 border: none;
             }
@@ -45,7 +47,7 @@
     }
 }
 
-@media only screen and (min-width : 320px) and (max-width : 767px) {
+@media only screen and (max-width : variables.$maxWidth) {
     .loginContainer {
         flex-direction: column;
         .loginForm {

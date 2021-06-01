@@ -29,7 +29,6 @@
             padding: 10px;
             height: 85px;
             overflow: hidden;
-            // width: 100%;
         }
         
     }
@@ -56,9 +55,9 @@
 }
 
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: variables.$maxWidthTab) {
     .container {
-        width: 260px;
+         width: 260px;
         padding: 0;
         .details {
             display: flex;
@@ -70,13 +69,13 @@
                 img {
                     height: 100%;
                     width: 100%;
-                    // object-fit: contain;
                 }
             }
-            p {
+            .description {
+                background-color: lightgray;
                 padding: 10px;
-                height: 100%;
-                text-overflow:ellipsis;
+                height: 80px;
+                overflow: hidden;
             }
         }
         .foot {
@@ -100,7 +99,7 @@
 }
 
 
-@media only screen and (min-width : 320px) and (max-width : 767px) {
+@media only screen and (max-width : variables.$maxWidth) {
     .container {
         padding: 10px;
         width: 100%;

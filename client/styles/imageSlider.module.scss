@@ -1,3 +1,5 @@
+@use "variables";
+
 .imgContainer {
     margin-top: 2rem;
     // border-bottom: 1px solid lightgray;
@@ -36,7 +38,7 @@
 }
 
 
-@media only screen and (min-width : 320px) and (max-width : 767px) {
+@media only screen and (max-width : variables.$maxWidth) {
     .imgContainer {
         & > div > div {
             overflow: visible !important;

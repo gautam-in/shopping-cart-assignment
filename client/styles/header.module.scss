@@ -1,3 +1,5 @@
+@use "variables";
+
 .headerContainer {
     width: 100%;
     border-bottom: 3px solid lightgray;
@@ -22,21 +24,20 @@
 }
 
 
-@media only screen and (max-width: 768px) {
+@media only screen and (min-width: variables.$minWidthTab) and (max-width: variables.$maxWidthTab) {
     .header {
         width: 100%;
     }
 }
 
-@media only screen and (min-width : 320px) and (max-width : 767px) {
+@media only screen and (max-width : variables.$maxWidth) {
     .headerContainer {
         
         height: 60px;
         .header {
-            .logo {
-                
-                img {
-                    
+            width: 100%;
+            .logo {            
+                img {                 
                     height: auto;
                     width: 100px;
                 }

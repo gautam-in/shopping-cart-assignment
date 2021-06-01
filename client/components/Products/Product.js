@@ -34,7 +34,6 @@ const Product = ({ name, description, imageURL, price, id }) => {
                     <img src={imageURL} alt={name} />
                 </div>
                 <p className={styles.description}>{description}</p>
-
             </div>
             <div className={styles.foot}>
                 <p className={styles.price}>MRP Rs.{price}</p>
