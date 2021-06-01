@@ -13,7 +13,7 @@ const Footer = lazy(() => import("./components/footer"));
 
 import "./index.scss";
 
-const Sppiner = () => {
+const Spinner = () => {
   return (
     <div className="throbberOverlay">
       <Loader show={true} />
@@ -23,7 +23,7 @@ const Sppiner = () => {
 
 const App = () => {
   return (
-    <Suspense fallback={<Sppiner />}>
+    <Suspense fallback={<Spinner />}>
       <Header />
       <Switch>
         <Routes />
@@ -40,4 +40,4 @@ ReactDOM.render(
   document.getElementById("root")
 );
 
-module.hot.accept();
+// module.hot.accept();
