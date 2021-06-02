@@ -9,6 +9,9 @@ import { environment } from '../../../environments/environment';
 import * as AuthActions from './auth.actions';
 import { User } from '../user.model';
 import { AuthService } from '../auth.service';
+import 'firebase/auth';
+import firebase from 'firebase';
+import { UtilService } from 'src/app/services/util.service';
 
 export interface AuthResponseData {
   kind: string;
@@ -149,7 +152,7 @@ export class AuthEffects {
           id: string;
           _token: string;
           _tokenExpirationDate: string;
-        } = JSON.parse(localStorage.getItem('userData') || '{}');
+        } = JSON.parse(localStorage.getItem('userData') || '0');
         if (!userData) {
           return { type: 'DUMMY' };
         }
@@ -162,7 +165,6 @@ export class AuthEffects {
         );
 
         if (loadedUser.token) {
-          // this.user.next(loadedUser);
           const expirationDuration =
             new Date(userData._tokenExpirationDate).getTime() -
             new Date().getTime();
@@ -174,11 +176,6 @@ export class AuthEffects {
             expirationDate: new Date(userData._tokenExpirationDate),
             redirect: false,
           });
-
-          // const expirationDuration =
-          //   new Date(userData._tokenExpirationDate).getTime() -
-          //   new Date().getTime();
-          // this.autoLogout(expirationDuration);
         }
         return { type: 'DUMMY' };
       })
@@ -191,8 +188,20 @@ export class AuthEffects {
         ofType(AuthActions.LOGOUT),
         tap(() => {
           this.authService.clearLogoutTimer();
+          this.util.openSnackBar('You have successfully logged out');
           localStorage.removeItem('userData');
           this.router.navigate(['/auth']);
+        })
+      ),
+    { dispatch: false }
+  );
+
+  authFailAction$ = createEffect(
+    () =>
+      this.actions$.pipe(
+        ofType(AuthActions.AUTHENTICATE_FAIL),
+        tap((e: AuthActions.AuthenticateFail) => {
+          this.util.openSnackBar(e.payload);
         })
       ),
     { dispatch: false }
@@ -202,6 +211,7 @@ export class AuthEffects {
     private actions$: Actions,
     private http: HttpClient,
     private router: Router,
-    private authService: AuthService
+    private authService: AuthService,
+    private util: UtilService
   ) {}
 }

@@ -1,23 +1,24 @@
 import {
-  APPLY_CATEGORY_FILTER,
+  FILTER_BY,
   Product,
-  REMOVE_CATEGORY_FILTER,
+  REMOVE_FILTER_BY,
   SET_PRODUCTS,
 } from './product.actions';
 
 export interface State {
+  allProducts: Product[];
   currentProducts: Product[];
   error: string | null;
   loading: boolean;
-  filter: Map<string, string[]>;
   categoryWiseProducts: Map<string, Product[]>;
+  filterBy?: string | null;
 }
 
 const initialState: State = {
+  allProducts: [],
   currentProducts: [],
   error: null,
   loading: false,
-  filter: new Map().set('category', []),
   categoryWiseProducts: new Map(),
 };
 
@@ -39,58 +40,40 @@ export function productReducer(state = initialState, action: any) {
         ...state,
         authError: null,
         currentProducts: action.payload.slice(),
+        allProducts: action.payload.slice(),
         loading: false,
         filter: new Map(),
         categoryWiseProducts: categoryMap,
+        filterBy: null,
       } as State;
+    case FILTER_BY: {
+      let filteredProduct: Product[] = [];
+      if (action.payload) {
+        filteredProduct = [
+          ...(state.categoryWiseProducts.get(action.payload) || []),
+        ];
+      } else {
+        filteredProduct = [...state.allProducts];
+      }
 
-    case APPLY_CATEGORY_FILTER: {
-      let tobeAppliedFilter = new Set([
-        ...(state.filter.get('category') || []),
-        ...action.payload,
-      ]);
-      let resultProduct: Product[] = [];
-      Array.from(tobeAppliedFilter.values())
-        .filter((e) => !!state.categoryWiseProducts.get(e))
-        .map((e) => state.categoryWiseProducts.get(e))
-        .forEach((e) => {
-          if (e instanceof Array) {
-            resultProduct.push(...e);
-          }
-        });
       return {
         ...state,
-        currentProducts: resultProduct,
-        loading: false,
         authError: null,
-        filter: state.filter.set(
-          'category',
-          Array.from(tobeAppliedFilter.values())
-        ),
-      } as State;
+        currentProducts: filteredProduct,
+        loading: false,
+        filterBy: action.payload ? action.payload : null,
+      };
     }
 
-    case REMOVE_CATEGORY_FILTER: {
-      // a-b;
-      let a = new Set(state.filter.get('category'));
-      let b = new Set([...action.payload]);
-      let tobeAppliedFilter = [...a].filter((x) => !b.has(x));
-      let resultProduct: Product[] = [];
-      Array.from(tobeAppliedFilter.values())
-        .filter((e) => !!state.categoryWiseProducts.get(e))
-        .map((e) => state.categoryWiseProducts.get(e))
-        .forEach((e) => {
-          if (e instanceof Array) {
-            resultProduct.push(...e);
-          }
-        });
+    case REMOVE_FILTER_BY: {
+      let filteredProduct: Product[] = state.allProducts.slice();
       return {
         ...state,
-        currentProducts: resultProduct,
-        loading: false,
         authError: null,
-        filter: state.filter.set('categoty', tobeAppliedFilter),
-      } as State;
+        currentProducts: filteredProduct,
+        loading: false,
+        filterBy: null,
+      };
     }
 
     default:

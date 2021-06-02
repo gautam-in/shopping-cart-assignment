@@ -1,0 +1,21 @@
+.wrapper {
+    display: flex;
+    flex-direction: row;
+    padding-top: 6em;
+    .left {
+        padding-right: 3em;
+    }
+    .left,
+    .right {
+        width: 50%;
+        &::ng-deep .mat-form-field {
+            max-width: 75%;
+        }
+    }
+    .action-btn {
+        margin-top: 2em;
+        display: block;
+        width: 100%;
+        max-width: 75%;
+    }
+}

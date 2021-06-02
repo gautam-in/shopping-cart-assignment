@@ -20,9 +20,13 @@
         aria-label="Buy Now"
         (click)="buyProduct(product)"
         class="btn btn-danger btn-raised product-buy"
+        *ngIf="!product?.productInCart"
       >
-        Buy Now
+        Add to Cart
       </button>
+      <span *ngIf="product?.productInCart" class="cart-success">
+        Added in Cart</span
+      >
     </footer>
   </div>
 </div>

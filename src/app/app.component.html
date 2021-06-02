@@ -13,27 +13,29 @@
           <li class="nav-item">
             <a
               class="nav-link"
-              [routerLink]="['home']"
-              [routerLinkActive]="['active']"
+              routerLink="/"
+              routerLinkActive="active"
+              [routerLinkActiveOptions]="{ exact: true }"
               >Home</a
             >
           </li>
           <li class="nav-item">
             <a
               class="nav-link"
-              [routerLink]="['products']"
-              [routerLinkActive]="['active']"
+              routerLink="/products"
+              [routerLinkActiveOptions]="{ exact: true }"
+              routerLinkActive="active"
               >Products</a
             >
           </li>
         </ul>
       </div>
       <div class="end-container">
-        <ul class="navbar">
+        <ul class="navbar" *ngIf="!(user$ | async)?.user">
           <li class="nav-item">
             <a
               class="nav-link"
-              [routerLink]="['login']"
+              [routerLink]="['/auth', 'login']"
               [routerLinkActive]="['active']"
               >SignIn</a
             >
@@ -41,16 +43,22 @@
           <li class="nav-item">
             <a
               class="nav-link"
-              [routerLink]="['signup']"
+              [routerLink]="['/auth', 'register']"
               [routerLinkActive]="['active']"
               >Register</a
             >
           </li>
         </ul>
+        <p *ngIf="(user$ | async)?.user" class="user-info">
+          Hi there!! {{ (user$ | async)?.user?.displayName }}
+          <i class="material-icons logout" (click)="logout()" title="Log out"
+            >logout</i
+          >
+        </p>
         <button aria-label="cart" class="cart" (click)="openCart()">
           <img src="static/images/cart.svg" alt="cart" class="cart-logo" />
           <a data-target="#cartModal"
-            >{{ productsInCart?.length || 0 }} items</a
+            >{{ (cart$ | async)?.products?.length || 0 }} items</a
           >
         </button>
       </div>
@@ -60,7 +68,7 @@
     <router-outlet></router-outlet>
   </div>
   <footer>
-    <div class="copyright common-padding">
+    <div class="copyright common-padding container">
       CopyRight @ 2011-2021 Sabka Bazzar Grocery Supplies Pvt Ltd
     </div>
   </footer>

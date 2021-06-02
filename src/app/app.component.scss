@@ -24,6 +24,9 @@ header {
   }
   .nav-item {
     margin-left: 1em;
+    .active {
+      color: $mergenta;
+    }
   }
   .container {
     display: flex;
@@ -54,6 +57,7 @@ header {
       flex-direction: column;
       height: 100%;
       position: relative;
+      min-width: 8em;
       .navbar {
         height: 20%;
         display: flex;
@@ -67,9 +71,14 @@ header {
         position: absolute;
         bottom: 0;
         width: 100%;
+        cursor: pointer;
+
         img {
           height: 3em;
           width: 3em;
+        }
+        a {
+          color: $mergenta;
         }
       }
     }
@@ -84,8 +93,20 @@ footer {
   background-color: $grey;
   padding-bottom: 24px;
   padding-left: 2em;
+  .copyright {
+    width: 100%;
+  }
 }
-
+.logout {
+  cursor: pointer;
+  margin: 0.3em;
+}
+.user-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
 footer a {
   display: flex;
   align-items: center;

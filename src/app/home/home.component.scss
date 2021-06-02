@@ -27,6 +27,12 @@ carousel ::ng-deep .carousel-wrapper {
     .btn-prev {
         left: 12px;
     }
+
+    ::ng-deep .carousel-item img {
+        width: 100%;
+        object-fit: contain;
+        background-color: $grey;
+    }
 }
 
 ul.categories {
@@ -54,6 +60,7 @@ ul.categories {
         .btn-explore {
             background-color: $mergenta;
             color: white;
+            cursor: pointer;
         }
 
         .name,
@@ -66,6 +73,7 @@ ul.categories {
             margin: 0 auto;
             display: block;
             margin-top: 1.5em;
+            margin-bottom: 1.5em;
         }
     }
 }

@@ -1,10 +1,4 @@
-import {
-  Banner,
-  BannerActions,
-  FetchBanner,
-  FETCH_BANNER,
-  SET_BANNER,
-} from './banner.actions';
+import { Banner, SET_BANNER } from './banner.actions';
 
 export interface State {
   banners: Banner[];

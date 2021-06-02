@@ -1,39 +1,34 @@
 import { Injectable } from '@angular/core';
 import { Actions, ofType, createEffect } from '@ngrx/effects';
-import { switchMap, catchError, map, withLatestFrom } from 'rxjs/operators';
+import {
+  switchMap,
+  catchError,
+  map,
+  withLatestFrom,
+  tap,
+} from 'rxjs/operators';
 import { of } from 'rxjs';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { environment } from '../../../environments/environment';
 import {
   Banner,
-  FetchBanner,
   FetchBannerError,
   FETCH_BANNER,
+  FETCH_BANNER_ERROR,
   SetBanners,
 } from './banner.actions';
-import { AppState } from 'src/app/store/app.reducer';
-import { Store } from '@ngrx/store';
+import { UtilService } from 'src/app/services/util.service';
 
 const handleSucess = (banners: Banner[]) => {
   return new SetBanners(banners);
 };
 
-const handleError = (errorRes: any) => {
-  let errorMessage = 'An unknown error occurred!';
+const handleError = (errorRes: HttpErrorResponse) => {
+  let errorMessage = errorRes.message || 'An unknown error occurred!';
   if (!errorRes.error || !errorRes.error.error) {
     return of(new FetchBannerError(errorMessage));
   }
-  switch (errorRes.error.error.message) {
-    case 'EMAIL_EXISTS':
-      errorMessage = 'This email exists already';
-      break;
-    case 'EMAIL_NOT_FOUND':
-      errorMessage = 'This email does not exist.';
-      break;
-    case 'INVALID_PASSWORD':
-      errorMessage = 'This password is not correct.';
-      break;
-  }
+
   return of(new FetchBannerError(errorMessage));
 };
 
@@ -55,5 +50,20 @@ export class BannerEffects {
     )
   );
 
-  constructor(private actions$: Actions, private http: HttpClient) {}
+  restApiFailAction$ = createEffect(
+    () =>
+      this.actions$.pipe(
+        ofType(FETCH_BANNER_ERROR),
+        tap((e: any) => {
+          this.util.openSnackBar(e.payload);
+        })
+      ),
+    { dispatch: false }
+  );
+
+  constructor(
+    private actions$: Actions,
+    private http: HttpClient,
+    private util: UtilService
+  ) {}
 }

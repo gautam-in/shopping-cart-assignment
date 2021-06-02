@@ -1,36 +1,29 @@
 import { Injectable } from '@angular/core';
 import { Actions, ofType, createEffect } from '@ngrx/effects';
-import { switchMap, catchError, map } from 'rxjs/operators';
+import { switchMap, catchError, map, filter } from 'rxjs/operators';
 import { of } from 'rxjs';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { environment } from '../../../environments/environment';
 import {
   FetchProductsError,
   FETCH_PRODUCTS,
+  FilterBy,
   Product,
   SetProducts,
 } from './product.actions';
+import { ROUTER_NAVIGATION } from '@ngrx/router-store';
+import { UtilService } from 'src/app/services/util.service';
 
 const handleSucess = (banners: Product[]) => {
   return new SetProducts(banners);
 };
 
-const handleError = (errorRes: any) => {
+const handleError = (errorRes: HttpErrorResponse) => {
   let errorMessage = 'An unknown error occurred!';
   if (!errorRes.error || !errorRes.error.error) {
     return of(new FetchProductsError(errorMessage));
   }
-  switch (errorRes.error.error.message) {
-    case 'EMAIL_EXISTS':
-      errorMessage = 'This email exists already';
-      break;
-    case 'EMAIL_NOT_FOUND':
-      errorMessage = 'This email does not exist.';
-      break;
-    case 'INVALID_PASSWORD':
-      errorMessage = 'This password is not correct.';
-      break;
-  }
+  errorMessage = errorRes.message;
   return of(new FetchProductsError(errorMessage));
 };
 
@@ -52,5 +45,23 @@ export class ProductEffects {
     )
   );
 
-  constructor(private actions$: Actions, private http: HttpClient) {}
+  loadProductsByCategoryActions$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(ROUTER_NAVIGATION),
+      map((r: any) => {
+        return {
+          url: r.payload.routerState.url,
+          filterBy: r.payload.routerState.queryParams['categoryId'],
+        };
+      }),
+      filter(({ url, filterBy }) => url.startsWith('/products')),
+      map(({ filterBy }) => new FilterBy(filterBy))
+    )
+  );
+
+  constructor(
+    private actions$: Actions,
+    private http: HttpClient,
+    private util: UtilService
+  ) {}
 }

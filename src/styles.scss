@@ -1,5 +1,42 @@
 /* You can add global styles to this file, and also import other style files */
 /* You can add global styles to this file, and also import other style files */
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use '~@angular/material' as shopping-cart;
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include shopping-cart.core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://shopping-carterial.io/design/color/
+$shopping-cart-primary: shopping-cart.define-palette(shopping-cart.$indigo-palette);
+$shopping-cart-accent: shopping-cart.define-palette(shopping-cart.$pink-palette, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$shopping-cart-warn: shopping-cart.define-palette(shopping-cart.$red-palette);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$shopping-cart-theme: shopping-cart.define-light-theme(
+  (
+    color: (
+      primary: $shopping-cart-primary,
+      accent: $shopping-cart-accent,
+      warn: $shopping-cart-warn,
+    ),
+  )
+);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include shopping-cart.all-component-themes($shopping-cart-theme);
+
 @import "src/variables";
 html {
   width: 100%;
@@ -15,8 +52,7 @@ body {
 }
 
 :host {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji",
-    "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: Roboto, "Helvetica Neue", sans-serif;
   font-size: 1em;
   color: $grey;
   box-sizing: border-box;
@@ -58,10 +94,17 @@ img {
   margin: 0 auto;
 }
 
+.material-icons.action {
+  cursor: pointer;
+}
+
 button {
   border: none;
   padding: 1em 1.2em;
   border-radius: 4px;
+  &:not(:disabled) {
+    cursor: pointer;
+  }
 }
 .container {
   max-width: 1680px;
@@ -70,6 +113,15 @@ button {
 .common-padding {
   padding-left: 2em;
   padding-right: 2em;
+}
+
+.cart-model .mat-dialog-container {
+  padding: 0px;
+}
+
+.form-group .mat-form-field {
+  display: block;
+  max-width: 75%;
 }
 /* Responsive Styles */
 

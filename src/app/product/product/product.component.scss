@@ -10,6 +10,17 @@
         width: 190px;
         height: auto;
         background-color: $grey;
+        .filter {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            padding-left: 2em;
+            padding-right: 2em;
+            margin-top: 2em;
+            i {
+                cursor: pointer;
+            }
+        }
     }
     .right {
         width: calc(100% - 190px);
@@ -19,10 +30,14 @@
         border-bottom: 1px solid rgba($color: #000000, $alpha: 0.26);
         display: inline-block;
         width: 100%;
+        &.active button {
+            color: $mergenta;
+        }
         button {
             cursor: pointer;
             text-align: left;
             padding-left: 2em;
+            width: 100%;
         }
     }
 }

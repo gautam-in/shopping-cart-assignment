@@ -15,8 +15,6 @@
   </div>
 </div>
 
-<!--<button (click)="addSlide()">Add Slide</button>-->
-
 <ul class="categories">
   <li *ngFor="let category of (categories$ | async)?.categories">
     <section class="category">
@@ -26,7 +24,13 @@
       <div class="right">
         <h3 [innerHtml]="category.name" class="name"></h3>
         <div [innerHtml]="category.description" class="desc"></div>
-        <button class="btn-explore">Explore {{ category.key }}</button>
+        <a
+          routerLink="/products"
+          [queryParams]="{ categoryId: category?.id }"
+          queryParamsHandling="merge"
+        >
+          <button class="btn-explore">Explore {{ category.key }}</button>
+        </a>
       </div>
     </section>
   </li>
