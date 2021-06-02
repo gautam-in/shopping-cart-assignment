@@ -10,7 +10,7 @@ export default function Home() {
          <div>
          <Navbar/>
 
-              <Backdrop />
+          <Backdrop />
            {show&&<div  className="cart-align"><Cart/></div>}
 
         <Products/>

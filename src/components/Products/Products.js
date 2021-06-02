@@ -92,16 +92,12 @@ export default function Products() {
                     {/* <div class="parent"> */}
                     {products.length > 0 && products.map(prd => {
                         if (prd.hasOwnProperty('imageURL')) {
-                            const imageurl = prd.imageURL.split("/").reverse()
-                            const url1 = imageurl[0]
-                            const url2 = imageurl[1]
-
                             return <div className="each-item">
                                 <h3> {prd.name}</h3>
                                 <div >
                                     <img className="product"
-                                        src={require(`../../../static/images/products/${url2}/${url1}`).default}
-                                        alt={url1} />
+                                        src={prd.imageURL}
+                                        alt={prd.name} />
                                 </div>
                                 <div
                                     className="description"

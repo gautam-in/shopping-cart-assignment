@@ -4,16 +4,15 @@
   "description": "This is a shopping cart coding exercise",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "client": "webpack serve",
-    "server": "canned -p 5000 ./server",
-    "start": "concurrently \"npm run client\" \"npm run server\""
+    "start": "concurrently --kill-others \"npm run client\" \"npm run server\"",
+
+    "test": "jest",
+    "client": "webpack serve --open --hot",
+    "server": "canned -p 5000 ./server"
   },
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "@babel/core": "^7.13.16",
-    "@babel/preset-react": "^7.13.13",
     "@fortawesome/fontawesome-svg-core": "^1.2.35",
     "@fortawesome/free-solid-svg-icons": "^5.15.3",
     "@fortawesome/react-fontawesome": "^0.1.14",
@@ -40,11 +39,24 @@
     "style-loader": "^2.0.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.14.3",
     "@babel/plugin-transform-runtime": "^7.13.15",
     "@babel/preset-env": "^7.14.1",
+    "@babel/preset-react": "^7.13.13",
     "@babel/runtime": "^7.14.0",
+    "@testing-library/jest-dom": "^5.12.0",
+    "@testing-library/react": "^11.2.7",
+    "@testing-library/user-event": "^13.1.9",
+    "babel-plugin-transform-es2015-destructuring": "^6.23.0",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-polyfill": "^6.26.0",
     "canned": "^0.3.13",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-15": "^1.4.3",
+    "enzyme-adapter-react-16": "^1.15.6",
+    "eslint-config-airbnb": "^18.2.1",
+    "jest": "^27.0.3",
+    "jest-enzyme": "^7.1.2",
     "url-loader": "^4.1.1",
     "webpack": "^5.36.2",
     "webpack-cli": "^4.6.0",

@@ -11,4 +11,4 @@ const store = createStore(cartReducer,composeEnhancers)
 ReactDOM.render(<Provider store={store}>
     <BrowserRouter>
 <App /></BrowserRouter>
-</Provider>, document.getElementById('app'))
+</Provider>, document.getElementById('root'))

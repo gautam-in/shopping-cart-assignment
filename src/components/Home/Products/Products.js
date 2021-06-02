@@ -23,27 +23,22 @@ const asyncCall=async()=>{
             <Gallery />
             {products.length > 0 && <ul>{products.map((prd, index) => {
                 console.log(prd, "../../../.." + prd.imageUrl)
-                if (prd.hasOwnProperty('imageUrl')) {
-                    const imageurl = prd.imageUrl.split("/").reverse()
-                    var imageurl1 = imageurl[0]
-                    var imageurl2 = imageurl[1]
-                }
-
                 if (prd.hasOwnProperty('imageUrl'))
                     //if(index%2===0)
-                    return <li key={prd.key} style={{ listStyle: 'none' }}>
-                        <div style={{ textAlign: 'justify' }}>
+                    return <li key={index} style={{ listStyle: 'none' }}>
+                        
                             <div className="product-detail">
                                 <div className="product-image">
-                                    <img className="img-class" alt={imageurl2} src={require(`../../../../static/images/${imageurl2}/${imageurl1}`).default} />
+                                    <img className="img-class" alt={prd.name} src={prd.imageUrl} />
                                 </div>
 
-                                <div className="desc"> <h2>{prd.name}</h2>
-                                    <p>{prd.description}</p>
+                                <div className="desc">
+                                   <h3 aria-label={prd.name}>{prd.name}</h3>
+                                    <p aria-label={prd.description}>{prd.description}</p>
                                     <button className="explore" onClick={clickHandler}>{`Explore ${prd.name}`}</button></div>
                             </div>
                             <div className="line"></div>
-                        </div>
+                       
                     </li>
 
 

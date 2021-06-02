@@ -21,13 +21,16 @@ color:$red
     // float: left;
 }
 .product-detail{
+    position: relative;
+    padding: 14px 0;
     display: flex;
-   
-}
+    flex-direction: row;
+ }
 
 .desc{
    display: flex;
    flex-direction: column;
+   margin-left: 3%;
 }
 .clear-fix{
     content:'';

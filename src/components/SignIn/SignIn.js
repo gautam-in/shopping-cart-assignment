@@ -6,10 +6,19 @@ function SignIn(props) {
     const [email, setemail] = useState('')
     const [password, setpassword] = useState('')
     const [error, seterror] = useState('')
+    const validateLogin = () => {
+        if (email === 'test@gmail.com' && password === "Test81!") {
+            seterror("")
+            return true
+        }
+        else return false
+    }
     const loginHandler = (e) => {
         e.preventDefault();
-        if (email === 'test@gmail.com' && password === "test81!") {
+
+        if (validateLogin()) {
             seterror("")
+
             props.history.push("/")
         }
         else
@@ -34,12 +43,25 @@ function SignIn(props) {
                             <form onSubmit={loginHandler}>
                                 <div className="field-wrapper">
                                     <input type="text" name="Email" placeholder="Email" value={email}
-                                        onChange={(e) => setemail(e.target.value)} className="invalid" />
+                                        onChange={(e) => {setemail(e.target.value)
+                                            seterror("")
+                                        }}
+                                        //className={error===""?'':"invalid"} 
+                                        />
                                     <label htmlFor="Email">Email</label>
+                                   {/* {error.length>0&& <p className="invalid-msg">Email incorrect</p>} */}
+
                                 </div>
                                 <div className="field-wrapper">
-                                    <input type="password" name="password" placeholder="password" autocomplete="new-password" value={password} onChange={(e) => setpassword(e.target.value)} />
+                                    <input type="password" name="password" placeholder="password" 
+                                     value={password} onChange={(e) => {
+                                         seterror("")
+                                         setpassword(e.target.value)}} 
+                                     //className={error===""?'':"invalid"} 
+                                     />
                                     <label htmlFor="Password">Password</label>
+                                   {/* {error.length>0&& <p className="invalid-msg">Password incorrect</p>} */}
+
                                 </div>
                                 <div className="field-wrapper">
                                     <input type="submit" name="Login" />

@@ -25,18 +25,14 @@ export default function Gallery() {
    
     return (
         <div>
-            { baners.length > 0 && <div>
+            { baners.length > 0 && <div className="carousel">
                 <span className="left-arrow" onClick={slideLeft}><FontAwesomeIcon icon={faArrowAltCircleLeft} /></span>
                 <span className="right-arrow" onClick={slideRight}>  <FontAwesomeIcon icon={faArrowAltCircleRight} /></span>
 
                 {baners.map((ban, index) => {
-                    const imageurl = ban.bannerImageUrl.split("/").reverse()
-                    const url1 = imageurl[1]
-                    const url2 = imageurl[0]
                     return <div className={index === current ? 'slide active' : 'slide'} key={index}>
-
                         {index === current && <img
-                            src={require(`../../../../static/images/${url1}/${url2}`).default}
+                            src={ban.bannerImageUrl}
                             alt="cart Images"
                             className="image" />}
 

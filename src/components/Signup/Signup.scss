@@ -73,7 +73,15 @@ $red:#8b0000;
     .field-wrapper{
       margin-top: $spacing*1.5;
       position: relative;
-
+      .invalid{
+        border:2px solid red  !important;
+        border-radius: 5px;
+      }
+      .invalid-msg{
+        text-align: end;
+        margin:2px;
+        color: red;
+      }
       label{
         position: absolute;
         pointer-events: none;

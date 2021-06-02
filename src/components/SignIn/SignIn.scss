@@ -66,6 +66,15 @@ $red:#8b0000;
       color: $red;
     }
     .field-wrapper{
+      .invalid{
+        border:2px solid red  !important;
+        border-radius: 5px;
+      }
+      .invalid-msg{
+        text-align: end;
+        margin:2px;
+        color: red;
+      }
       margin-top: $spacing*1.5;
       position: relative;
       [aria-invalid]{
@@ -89,6 +98,7 @@ $red:#8b0000;
           outline: none;
         }
       }
+      
       input[type="text"], input[type="password"]{
         width: 100%;
         border: none;

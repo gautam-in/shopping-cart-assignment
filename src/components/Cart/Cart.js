@@ -31,15 +31,8 @@ function Cart(props) {
                     <div onClick={() => dispatch(actions.showCart(!showCart))}><FontAwesomeIcon icon={faTimes} /></div> </div>
 
                 {cartItems.length > 0 ? <div className="cart-container">{cartItems?.map(item => {
-                   
-                    const imageurl = item.imageURL.split("/").reverse()
-                    
-                    const url1 = imageurl[1]
-                    const url2 = imageurl[0]
-
-
-                    return <div className="cart-item inner-container" key={item.id}>
-                        <div><img style={{ height: '90x', width: '50px' }} src={require(`../../../static/images/products/${url1}/${url2}`).default} /></div>
+                  return <div className="cart-item inner-container" key={item.id}>
+                        <div><img style={{ height: '90x', width: '50px' }} src={item.imageURL} alt={item.name}/></div>
 
 
                         <div className="innermost-container">

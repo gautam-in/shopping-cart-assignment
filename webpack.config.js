@@ -10,11 +10,11 @@ module.exports = {
     mode:'development',
     entry: path.resolve(__dirname, 'src', 'index.js'),
     output: {
-        path: path.resolve(__dirname, 'dist'),
+        path: path.resolve(__dirname, 'public'),
         filename: 'bundle.js'
     },
     devServer: {
-        contentBase: path.resolve(__dirname, 'dist'),
+        contentBase: path.resolve(__dirname, 'public'),
         open: true,
         port: 9000,
         historyApiFallback:true
@@ -24,15 +24,17 @@ module.exports = {
         rules: [
             {
                 test:/\.(js|jsx)$/,
-                include:path.resolve(__dirname,'src'),
+               
                 exclude:/node_modules/,
                 use:[
                     {
                         loader:'babel-loader',
                         options:{
                             presets:[
-                                ["@babel/preset-env",{"targets":"defaults"}],
-                                "@babel/preset-react",
+                              ["@babel/preset-env",{"targets":"defaults"}],
+
+                              ['@babel/preset-react', {targets: {node: 'current'}}],
+                                
                             ],
                             "plugins": [
                                 "@babel/plugin-transform-runtime"
@@ -69,7 +71,7 @@ module.exports = {
         new CleanWebpackPlugin({cleanStaleWebpackAssets: false}),
 new HotModuleReplacementPlugin(),
 new HtmlWebpackPlugin({
-    template: path.resolve(__dirname, "dist/index.html"), //we put the file that we created in public/dist folder
+    template: path.resolve(__dirname, "public/index.html"), //we put the file that we created in public/public folder
   }),
   //This get all our css and put in a unique file
   new MiniCssExtractPlugin({
