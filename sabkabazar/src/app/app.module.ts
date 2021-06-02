@@ -12,15 +12,28 @@ import { SliderModule } from 'ngx-slider';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
+import { NgxUiLoaderHttpModule, NgxUiLoaderModule, NgxUiLoaderRouterModule } from 'ngx-ui-loader';
+
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     FooterComponent,
     HomeComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
   ],
-  imports: [BrowserModule, ToastrModule.forRoot(), BrowserAnimationsModule, AppRoutingModule, HttpClientModule, SliderModule],
+  imports: [
+    BrowserModule,
+    ToastrModule.forRoot(),
+    BrowserAnimationsModule,
+    AppRoutingModule,
+    HttpClientModule,
+    SliderModule,
+    NgxUiLoaderModule,
+    NgxUiLoaderRouterModule,
+    NgxUiLoaderHttpModule
+
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

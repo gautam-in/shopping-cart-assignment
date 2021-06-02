@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { NgxUiLoaderService } from 'ngx-ui-loader';
 
 @Component({
   selector: 'app-auth',
@@ -11,7 +12,8 @@ export class AuthComponent implements OnInit {
   auth: boolean = false;
   constructor(
     private ngxToastrService: ToastrService,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private ngxLoader: NgxUiLoaderService
   ) {}
 
   ngOnInit(): void {
@@ -19,6 +21,7 @@ export class AuthComponent implements OnInit {
       this.activatedRoute.snapshot.url[0].path === 'register' ? true : false;
   }
   submitForm(): void {
+    this.ngxLoader.start();
     this.ngxToastrService.success(
       'Registration done succesfully!',
       'Registered!'

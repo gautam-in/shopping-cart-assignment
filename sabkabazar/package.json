@@ -23,6 +23,7 @@
     "font-awesome": "^4.7.0",
     "ngx-slider": "0.0.5",
     "ngx-toastr": "^14.0.0",
+    "ngx-ui-loader": "^11.0.0",
     "rxjs": "~6.6.0",
     "tslib": "^2.1.0",
     "zone.js": "~0.11.4"
