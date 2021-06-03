@@ -1,5 +1,4 @@
 /* You can add global styles to this file, and also import other style files */
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
 
 //npm package for carousel
 @import "~ngx-owl-carousel-o/lib/styles/scss/owl.carousel";
@@ -9,18 +8,16 @@
   margin: 0 30px;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Roboto", sans-serif;
   font-size: 14px;
   font-weight: 300;
-  // background-color: beige;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
 body {
   margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
-//Overriden owl-carousel styles
+// Overriden owl-carousel styles
 .owl-carousel {
   display: none;
   width: 100% !important;
@@ -67,4 +64,3 @@ body {
   width: 75% !important;
   margin: 0 25px 0 !important;
 }
-
