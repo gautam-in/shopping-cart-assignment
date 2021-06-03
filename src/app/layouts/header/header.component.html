@@ -36,3 +36,7 @@
   </div>
   <div class="clearfix"></div>
 </header>
+<div *ngIf="showCart" class="row showCart">
+  <app-cart (close)="closeCart()"></app-cart>
+</div>
+<div *ngIf="showCart" class="overlay"></div>

@@ -1,11 +1,10 @@
-.row
+.container
+    width: 450px
+    background: #000
+    border: 1px solid
+    position: absolute
     right: 0
-    position: relative
-    .container
-        right: 0
-        background: #000
-        border: 1px solid
-        position: absolute
+    z-index: 999
 .header
     background: black
     color: #fff
@@ -13,6 +12,8 @@
     justify-content: space-between
     align-items: center
     padding: 10px
+    .close
+        cursor: pointer
 .footer
     text-align: center
     padding: 10px
@@ -30,12 +31,13 @@
 .content
     padding: 20px 0
     background: #ccc
-    min-height: 400px
+    height: 500px
     .cart-item
         background: white
         display: flex
         align-items: center
-        padding: 10px 0
+        padding: 10px
+        margin: 0 3px
         .left-section
             width: 20%
             img

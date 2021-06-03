@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { ICategory } from '../models/category.model';
 
 @Component({
   selector: 'app-sidebar',
@@ -6,7 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./sidebar.component.sass'],
 })
 export class SidebarComponent implements OnInit {
-  @Input() categories: any;
+  @Input() categories!: ICategory[];
   constructor() {}
 
   ngOnInit(): void {}

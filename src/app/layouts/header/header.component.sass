@@ -5,7 +5,8 @@ header
 .left-section
     float: left
     width: 193px
-
+.showCart
+    position: relative
 .right-section
     float: right
     text-align: right
@@ -58,6 +59,16 @@ header
             display: flex
             align-items: center
             background: #eeeeee
+            cursor: pointer
             padding: 10px 5px
             img
                 width: 30px
+.overlay
+    position: fixed
+    background: black
+    opacity: 0.5
+    height: 100%
+    left: 0
+    top: 0
+    width: 100%
+    z-index: 99

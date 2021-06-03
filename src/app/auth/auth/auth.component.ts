@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, NgForm } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { NgxUiLoaderService } from 'ngx-ui-loader';
@@ -36,7 +36,7 @@ export class AuthComponent implements OnInit {
     );
   }
 
-  onSubmit(form: any) {
+  onSubmit(form: NgForm) {
     console.log(form);
   }
 

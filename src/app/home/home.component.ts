@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { IBanner } from '../models/banner.model';
 import { AppService } from '../services/app.service';
 import { Slider } from 'ngx-slider';
+import { ICategory } from '../models/category.model';
 
 @Component({
   selector: 'app-home',
@@ -9,15 +10,14 @@ import { Slider } from 'ngx-slider';
   styleUrls: ['./home.component.sass'],
 })
 export class HomeComponent implements OnInit {
-  categories!: any;
+  categories!: ICategory[];
   slider!: Slider;
   banners!: IBanner[];
   constructor(private appService: AppService) {}
 
   ngOnInit(): void {
-    this.appService.getAllCategories().subscribe((categories: any) => {
-      console.log(categories)
-      this.categories = categories.filter((item: any) => item.imageUrl);
+    this.appService.getAllCategories().subscribe((categories: ICategory[]) => {
+      this.categories = categories.filter((item: any) => item.enabled);
     });
     this.appService.getAllBanners().subscribe((banners) => {
       this.slider = new Slider();

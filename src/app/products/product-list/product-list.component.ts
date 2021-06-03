@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { ICategory } from '../models/category.model';
 import { IProduct } from '../models/product.model';
 import { ProductService } from '../services/product.service';
 
@@ -13,17 +14,18 @@ export class ProductListComponent implements OnInit {
     private productService: ProductService,
     private activeRouter: ActivatedRoute
   ) {}
-  categories!: any[];
+  categories!: ICategory[];
   products!: IProduct[];
 
   ngOnInit(): void {
     this.activeRouter.params.subscribe((val) => {
       this.getProducts(val.id);
     });
-    this.productService.getAllCategories().subscribe((categories: any[]) => {
-      console.log(categories);
-      this.categories = categories.filter((item) => item.imageUrl);
-    });
+    this.productService
+      .getAllCategories()
+      .subscribe((categories: ICategory[]) => {
+        this.categories = categories.filter((item) => item.enabled);
+      });
   }
 
   getProducts(id: string) {

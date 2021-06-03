@@ -4,11 +4,9 @@ import { MatInputModule } from '@angular/material/input';
 import { AuthRoutingModule } from './auth-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AuthComponent } from './auth/auth.component';
-import { PasswordPatternDirective } from './directives/password-pattern.directive';
-import { MatchPasswordDirective } from './directives/match-password.directive';
 
 @NgModule({
-  declarations: [AuthComponent, PasswordPatternDirective, MatchPasswordDirective],
+  declarations: [AuthComponent],
   imports: [
     CommonModule,
     MatInputModule,
