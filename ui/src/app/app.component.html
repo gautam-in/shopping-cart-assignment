@@ -1,0 +1,10 @@
+<app-header></app-header>
+<div class="container">
+  <router-outlet></router-outlet>
+</div>
+<div *ngIf="showModal" id="myModal" class="modal">
+  <div *ngIf="showModal" >
+      <app-mini-cart-page ></app-mini-cart-page>
+    </div>
+  </div>
+<app-footer></app-footer>
