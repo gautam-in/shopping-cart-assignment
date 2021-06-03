@@ -1,5 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import {
+  AbstractControl,
+  AbstractControlOptions,
+  FormBuilder,
+  FormGroup,
+  ValidationErrors,
+  ValidatorFn,
+  Validators,
+} from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 
@@ -20,7 +28,7 @@ export class RegisterComponent implements OnInit {
     this.createRegisterForm();
   }
 
-  createRegisterForm() {
+  createRegisterForm(): void {
     this.registerForm = this.fb.group(
       {
         fName: ['', Validators.required],
@@ -30,18 +38,20 @@ export class RegisterComponent implements OnInit {
         confirmPassword: ['', Validators.required],
       },
       {
-        validator: this.mustMatch('password', 'confirmPassword'),
+        validators: this.mustMatch('password', 'confirmPassword'),
       }
     );
   }
 
   mustMatch(controlName: string, matchingControlName: string) {
-    return (formGroup: FormGroup) => {
+    return (group: AbstractControl): ValidationErrors | null => {
+      const formGroup = group as FormGroup;
       const control = formGroup.controls[controlName];
       const matchingControl = formGroup.controls[matchingControlName];
 
       if (matchingControl.errors && !matchingControl.errors.mustMatch) {
-        return;
+        // return if another validator has already found an error on the matching control
+        return null;
       }
 
       if (control.value !== matchingControl.value) {
@@ -49,6 +59,7 @@ export class RegisterComponent implements OnInit {
       } else {
         matchingControl.setErrors(null);
       }
+      return null;
     };
   }
 
@@ -57,7 +68,7 @@ export class RegisterComponent implements OnInit {
   }
 
   onSubmit(): void {
-    this.auth.signedIn(this.registerForm.controls['email'].value);
+    this.auth.signedIn(this.registerForm.controls.email.value);
     this.router.navigate(['/login']);
   }
 }
