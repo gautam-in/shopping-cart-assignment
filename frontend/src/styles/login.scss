@@ -1,0 +1,74 @@
+// Both login form and registera form will share same style
+
+@import "./variable";
+
+.block {
+  padding: 0 9px;
+  text-align: center;
+  min-height: 280px;
+  margin: auto;
+  display: flex;
+}
+
+.block__text {
+  width: 45%;
+  margin-top: 50px;
+
+  .block--size-bold {
+    font-size: $header-font-size;
+    font-weight: $header-font-weight;
+  }
+  .block__header {
+    margin: 50px 100px 10px 0;
+  }
+
+  .block__desc {
+    font-size: $text-desc-size;
+    font-weight: $text-desc-weight;
+    margin: 8px 0 0 100px;
+  }
+}
+
+.form {
+  width: 60%;
+
+  .form__layout {
+    width: $form-width;
+    margin-top: 30px;
+  }
+
+  .form__label {
+    float: left;
+    margin-left: 0;
+  }
+
+  .form__input {
+    width: $input-width;
+    margin: 35px 0 12px 0;
+    border: none;
+    border-bottom: 2px solid lightgrey;
+    outline: none;
+    display: block;
+    height: 25px;
+    background: none !important;
+  }
+  .btn__submit {
+    width: 100%;
+    background-color: $button-color;
+    color: white;
+    padding: 12px 20px;
+    margin-top: 15px;
+    margin-left: 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: none !important;
+  }
+
+  .has-error {
+    color: $error-text-color;
+    font-size: $error-text-font;
+    float: right;
+    height: 0 !important;
+  }
+}

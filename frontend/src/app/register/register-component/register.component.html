@@ -1,17 +1,22 @@
 <app-header></app-header>
 
-<section class="signup-container">
-  <div class="text-container">
-    <p class="signup-header">Signup</p>
-    <p class="signup-desc">
+<section class="block">
+  <div class="block__text">
+    <p class="block__header block--size-bold">Signup</p>
+    <p class="block__desc">
       We do not share your personal details with anyone.
     </p>
   </div>
 
-  <div class="form-container">
-    <form class="form" [formGroup]="registerForm" name="register-form">
-      <label for="fName"> First Name</label>
-      <input type="text" formControlName="fName" name="fName" />
+  <div class="form">
+    <form class="form__layout" [formGroup]="registerForm" name="register-form">
+      <label for="fName" class="form__label"> First Name</label>
+      <input
+        type="text"
+        formControlName="fName"
+        name="fName"
+        class="form__input"
+      />
 
       <div
         *ngIf="
@@ -23,8 +28,13 @@
           First name is required.
         </p>
       </div>
-      <label for="lName"> Last Name</label>
-      <input type="text" formControlName="lName" name="lName" />
+      <label for="lName" class="form__label"> Last Name</label>
+      <input
+        type="text"
+        formControlName="lName"
+        name="lName"
+        class="form__input"
+      />
       <div
         *ngIf="
           formControl.lName.invalid &&
@@ -36,8 +46,13 @@
         </div>
       </div>
 
-      <label for="email"> Email</label>
-      <input type="email" formControlName="email" name="email" />
+      <label for="email" class="form__label"> Email</label>
+      <input
+        type="email"
+        formControlName="email"
+        name="email"
+        class="form__input"
+      />
       <div
         *ngIf="
           formControl.email.invalid &&
@@ -49,8 +64,13 @@
         </div>
       </div>
 
-      <label for="password"> Password </label>
-      <input type="password" formControlName="password" name="password" />
+      <label for="password" class="form__label"> Password </label>
+      <input
+        type="password"
+        formControlName="password"
+        name="password"
+        class="form__input"
+      />
       <div
         *ngIf="
           formControl.password.invalid &&
@@ -62,11 +82,12 @@
         </div>
       </div>
 
-      <label for="cPassword"> Confirm Password</label>
+      <label for="cPassword" class="form__label"> Confirm Password</label>
       <input
         type="password"
         formControlName="confirmPassword"
         name="cPassword"
+        class="form__input"
       />
       <div
         *ngIf="
@@ -93,6 +114,7 @@
         type="submit"
         [disabled]="registerForm.invalid"
         (click)="onSubmit()"
+        class="btn__submit"
       >
         Register
       </button>
