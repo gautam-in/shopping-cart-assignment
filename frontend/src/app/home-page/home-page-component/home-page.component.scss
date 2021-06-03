@@ -4,56 +4,6 @@
 .owl-item {
   height: 40vh;
   margin: auto;
-  width: 58%;
-  background-color: whitesmoke;
-}
-//for different categories
-.category-container {
   width: 60%;
-  padding: 10px 9px;
-  text-align: center;
-  min-height: 60px;
-  margin: 20px auto auto auto;
-}
-
-.sub-container {
-  width: 100%;
-  height: 350%;
-  display: flex;
-  margin: 10px 0;
-  box-shadow: 0 100px 80px rgba(0, 0, 0, 0.04);
-
-  .img-container {
-    width: 30%;
-  }
-  .category-img {
-    width: 100%;
-    float: left;
-    margin-left: 0;
-  }
-
-  .btn-container {
-    width: 70%;
-  }
-  .navigate-button {
-    background-color: $button-color;
-    border: none;
-    color: white;
-    padding: 6px 12px;
-    font-size: 10px;
-    text-decoration: none;
-    margin: 10px 0;
-    cursor: pointer;
-  }
-
-  .category-name {
-    font-size: 15px;
-    font-weight: bold;
-    margin: 8px 0 5px 0;
-  }
-
-  .category-desc {
-    font-size: 14px;
-    margin: 8px 0;
-  }
+  background-color: whitesmoke;
 }

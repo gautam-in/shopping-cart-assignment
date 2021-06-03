@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { FetchProductsService } from 'src/app/services/fetch-products.service';
+import { ProductsService } from 'src/app/services/product.service';
+import { Banner } from './../../interfaces/banner';
+import { carouselConfig } from './../../ngx-carousel-config/carousel-config';
 
 @Component({
   selector: 'app-home-page',
@@ -8,51 +10,22 @@ import { FetchProductsService } from 'src/app/services/fetch-products.service';
   styleUrls: ['./home-page.component.scss'],
 })
 export class HomePageComponent implements OnInit {
-  allBanners: any[] = [];
-  allCategories: any[] = [];
+  allBanners: Banner[] = [];
 
-  //ngx-carousel settings
-  customOptions: any = {
-    loop: true,
-    autoplay: true,
-    dots: true,
-    navSpeed: 500,
-    items: 1.5,
-    margin: 4,
-    autoWidth: true,
-  };
+  // ngx-carousel settings
+  customOptions = carouselConfig;
 
-  constructor(
-    private fetchBanners: FetchProductsService,
-    private router: Router
-  ) {}
+  constructor(private fetchBanners: ProductsService, private router: Router) {}
 
   ngOnInit(): void {
     this.getAllBanners();
-    this.getAllCategories();
   }
 
   getAllBanners(): void {
-    this.fetchBanners.getBanners().subscribe((res: any) => {
+    this.fetchBanners.getBanners().subscribe((res) => {
       if (res) {
         this.allBanners = res;
-      } else {
-        this.allBanners = [];
       }
     });
-  }
-
-  getAllCategories(): void {
-    this.fetchBanners.getCategories().subscribe((res: any) => {
-      if (res) {
-        this.allCategories = res;
-      } else {
-        this.allCategories = [];
-      }
-    });
-  }
-
-  navigateToExplore(): void {
-    this.router.navigate(['/products']);
   }
 }

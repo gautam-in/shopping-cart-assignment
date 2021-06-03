@@ -13,25 +13,23 @@
   </owl-carousel-o>
 </div>
 
-<section class="category-container">
-  <div class="sub-container" *ngFor="let category of allCategories">
-    <div class="img-container">
+<app-category></app-category>
+<!-- 
+<section class="category">
+  <div class="sub__category" *ngFor="let category of allCategories">
+    <div class="category__img">
       <img
-        class="category-img"
+        class="img"
         src="{{ './../../../assets/' + category?.imageUrl }}"
         alt="category"
       />
     </div>
-    <div class="btn-container">
-      <p class="category-name">{{ category?.name }}</p>
-      <p class="category-desc">{{ category?.description }}</p>
-      <button
-        class="navigate-button"
-        type="button"
-        (click)="navigateToExplore()"
-      >
+    <div class="btn">
+      <p class="category__name">{{ category?.name }}</p>
+      <p class="category__desc">{{ category?.description }}</p>
+      <button class="btn__navigate" type="button" (click)="navigateToExplore()">
         Explore {{ category?.name }}
       </button>
     </div>
   </div>
-</section>
+</section> -->
