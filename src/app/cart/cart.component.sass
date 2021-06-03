@@ -1,0 +1,68 @@
+.row
+    right: 0
+    position: relative
+    .container
+        right: 0
+        background: #000
+        border: 1px solid
+        position: absolute
+.header
+    background: black
+    color: #fff
+    display: flex
+    justify-content: space-between
+    align-items: center
+    padding: 10px
+.footer
+    text-align: center
+    padding: 10px
+    background: #fff
+    > a
+        background: #d00255
+        color: white
+        padding: 10px 20px
+        display: flex
+        margin-top: 15px
+        justify-content: space-between
+        &:hover
+            background: #af1653
+
+.content
+    padding: 20px 0
+    background: #ccc
+    min-height: 400px
+    .cart-item
+        background: white
+        display: flex
+        align-items: center
+        padding: 10px 0
+        .left-section
+            width: 20%
+            img
+                width: 90%
+        .right-section
+            width: 80%
+            h4
+                margin: 20px 0
+            .detail
+                display: flex
+                justify-content: space-between
+                margin-right: 30px
+            .count, .multiplier, .per-piece-price
+                margin: 0px 10px
+            .circle
+                padding: 0px 5px
+                background: #af1653
+                color: white
+                border-radius: 50%
+            .minus
+                padding: 0 7px
+    .lowest-price
+        display: flex
+        align-items: center
+        margin: 10px
+        background: white
+        img
+            padding: 6px 0
+            margin: 0 15px
+            font-size: 90%

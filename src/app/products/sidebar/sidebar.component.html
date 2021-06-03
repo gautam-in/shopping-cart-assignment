@@ -1,0 +1,7 @@
+<div class="container">
+  <ul class="categories">
+    <li routerLinkActive="active" *ngFor="let item of categories">
+      <a [routerLink]="'/products/' + item.id" href="#">{{ item.name }}</a>
+    </li>
+  </ul>
+</div>

@@ -1,0 +1,13 @@
+<div class="product">
+  <div class="container">
+    <div class="title">{{ product.name }}</div>
+    <img [src]="'../../assets/' + product.imageURL" />
+    <div class="desc">
+      <p>{{ product.description }}</p>
+    </div>
+    <div class="product-footer">
+      <div class="price">MRP Rs.{{ product.price }}</div>
+      <button (click)="addToCart(product)" class="buy-now">Buy Now</button>
+    </div>
+  </div>
+</div>

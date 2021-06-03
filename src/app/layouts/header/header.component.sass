@@ -1,0 +1,63 @@
+
+header
+    box-shadow: 0 4px 3px -2px #eeeeee
+    margin-top: 7px
+.left-section
+    float: left
+    width: 193px
+
+.right-section
+    float: right
+    text-align: right
+    width: calc(100% - 193px)
+    .auth-section
+        font-size: 90%
+    .menu
+        display: flex
+        align-items: center
+        justify-content: space-between
+        padding-top: 25px
+        .main-nav
+            ul
+                list-style: none
+                li
+                    display: inline-block
+                    margin-left: 10px
+                    position: relative
+                    a
+                        font-weight: 500
+                        &:hover
+                            color: #08ffde
+                            &:after
+                                content: ' '
+                                width: 90%
+                                border-bottom: 1px solid #08ffde
+                                height: 1px
+                                position: absolute
+                                bottom: -7px
+                                left: 5%
+                    .active
+                        color: #d00255
+                        // &:before
+                        //     content: ' '
+                        //     width: 90%
+                        //     border-bottom: 1px solid #d00255
+                        //     height: 1px
+                        //     position: absolute
+                        //     top: -7px
+                        //     left: 5%
+                        &:after
+                            content: ' '
+                            width: 90%
+                            border-bottom: 1px solid #d00255
+                            height: 1px
+                            position: absolute
+                            bottom: -7px
+                            left: 5%
+        .cart-btn
+            display: flex
+            align-items: center
+            background: #eeeeee
+            padding: 10px 5px
+            img
+                width: 30px

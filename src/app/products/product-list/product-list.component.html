@@ -1,0 +1,15 @@
+<section>
+  <div class="row">
+    <div class="siderbar">
+      <app-sidebar [categories]="categories"></app-sidebar>
+    </div>
+    <div class="content">
+      <app-product-item
+        *ngFor="let product of products"
+        class="product-item"
+        [product]="product"
+      ></app-product-item>
+    </div>
+    <div class="clearfix"></div>
+  </div>
+</section>
