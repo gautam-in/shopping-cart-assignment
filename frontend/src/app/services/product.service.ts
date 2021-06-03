@@ -4,6 +4,7 @@ import { BehaviorSubject, Observable, ReplaySubject, Subject } from 'rxjs';
 import { Product } from '../interfaces/product';
 import { Banner } from '../interfaces/banner';
 import { Category } from '../interfaces/category';
+import { environment } from './../../environments/environment';
 
 @Injectable({
   providedIn: 'root',
@@ -16,24 +17,24 @@ export class ProductsService {
   private productList = new Subject<any>();
   private selectedList: BehaviorSubject<any> = new BehaviorSubject<any>(null);
 
-  port = 'http://localhost:3000';
-
   // GET method to get all banners for carousel
   getBanners(): Observable<Banner[]> {
-    return this.http.get<Banner[]>(`${this.port}` + '/banners');
+    return this.http.get<Banner[]>(`${environment.port}` + '/banners');
   }
 
   // GET method to get all categories
   getCategories(): Observable<Category[]> {
-    return this.http.get<Category[]>(`${this.port}` + '/categories');
+    return this.http.get<Category[]>(`${environment.port}` + '/categories');
   }
 
   // GET method to get all products
   getProducts(): Observable<Product[]> {
-    this.http.get<Product[]>(`${this.port}` + '/products').subscribe((res) => {
-      this.allProducts = res;
-      this.productList.next(this.allProducts);
-    });
+    this.http
+      .get<Product[]>(`${environment.port}` + '/products')
+      .subscribe((res) => {
+        this.allProducts = res;
+        this.productList.next(this.allProducts);
+      });
     return this.productList.asObservable();
   }
 
