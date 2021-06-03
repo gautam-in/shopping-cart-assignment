@@ -25,7 +25,7 @@ function App() {
   return (
     <div className='app-container'>
       <Header toggleCartModal={toggleModal} />
-      {isDesktop ? <Cart showCart={showModal} toggleCartModal={toggleModal} /> : null}
+      {isDesktop && showModal ? <Cart showCart={showModal} toggleCartModal={toggleModal} /> : null}
       <Switch>
         <Route exact path='/' render={() => <Home />} />
         <Route exact path='/home' render={() => <Home />} />

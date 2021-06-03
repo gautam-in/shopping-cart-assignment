@@ -1,4 +1,5 @@
 import { ADD_TO_CART, REMOVE_FROM_CART } from '../actions/action-types';
+import { findItemIndex } from '../../shared/utils';
 export const initialState = {
   cartItem: 0,
   cartList: []
@@ -7,17 +8,13 @@ export const initialState = {
 export const cart = (state = initialState, action) => {
   switch (action.type) {
     case ADD_TO_CART:
-      const duplicateObj = state.cartList.find((item) => item.id === action.product.id);
+      const index = findItemIndex(state.cartList, action.product.id);
       let result = [];
-      if (duplicateObj == undefined) {
+      if (index == -1) {
         result = [...state.cartList, { ...action.product, count: 1 }];
       } else {
-        result = state.cartList.map((item) => {
-          if (item.id == duplicateObj.id) {
-            item.count = item.count + 1;
-          }
-          return item;
-        });
+        result = [...state.cartList];
+        result[index]['count'] += 1;
       }
       return {
         ...state,
@@ -25,11 +22,14 @@ export const cart = (state = initialState, action) => {
         cartItem: state.cartItem + 1
       };
     case REMOVE_FROM_CART:
-      let removedCarts = state.cartList
-        .map((product) =>
-          product.id === action.product.id ? { ...product, count: product.count - 1 } : product
-        )
-        .filter((item) => item.count != 0);
+      let removedCarts = [...state.cartList];
+      const itemidx = findItemIndex(removedCarts, action.product.id);
+      if (itemidx != -1) {
+        removedCarts[itemidx]['count'] -= 1;
+        if (removedCarts[itemidx]['count'] == 0) {
+          removedCarts.splice(itemidx, 1);
+        }
+      }
       return {
         ...state,
         cartList: removedCarts,

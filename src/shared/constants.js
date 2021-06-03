@@ -1,14 +1,8 @@
 //Error Messages
-export const FieldRequired = 'Field cannot be empty.';
-export const EmailValid = 'Please enter valid email address.';
-export const FirstNameValid = 'Please enter valid first name!';
-export const PasswordValid = 'Password must contain atleast 6 characters,1 alphabet and 1 number!';
-export const LastNameValid = 'Please enter valid last name!';
-export const PasswordUnmatch = "Passwords don't match!";
+export const ErrorRequired = 'Field cannot be empty.';
 export const EmailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
 export const PasswordRegex = '/^(?=.*[A-Za-z])(?=.*d)[A-Za-zd]{6,}$/i';
-export const ErrorRequired = 'Required';
-export const ErrorEmail = 'Invalid email address';
+export const ErrorEmail = 'Please enter valid email address.';
 export const ErrorPassword =
   'Password should be minimum 6 characters long, alphanumeric and without spaces.';
 export const ErrorConfirmPassword = 'Password and Confirm Password must match';

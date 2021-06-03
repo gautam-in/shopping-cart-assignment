@@ -10,8 +10,8 @@ const password = (value) =>
 const confirmPassword = (value1, value2) =>
   value1.valueOf().trim() === value2.valueOf().trim() ? '' : Constants.ErrorConfirmPassword;
 
-export const validate = (checkIf, value, ...otherValues) => {
-  switch (checkIf) {
+export const validate = (validation, value, ...otherValues) => {
+  switch (validation) {
     case Constants.Required:
       return required(value);
     case Constants.Email:

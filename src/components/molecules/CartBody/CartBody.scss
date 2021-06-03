@@ -1,0 +1,25 @@
+@media only screen and (max-width: 574px) {
+  .modal-body {
+    padding-top: 1rem;
+    background: #eaeaea;
+  }
+
+  .filled-cart-body {
+    height: calc(100% - 126px);
+  }
+  .cart-item-img {
+    width: 65px;
+    height: 50px;
+  }
+}
+@media only screen and (min-width: 576px) {
+  .filled-cart-body {
+    height: calc(100% - 126px);
+  }
+}
+
+@media only screen and (min-width: 770px) {
+  .filled-cart-body {
+    height: calc(100% - 134px);
+  }
+}

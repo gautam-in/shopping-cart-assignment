@@ -32,7 +32,7 @@ const Carousel = React.memo(({ images }) => {
     const { id, bannerImageUrl, bannerImageAlt } = image;
     slides.push(
       <li className={`carousel-item ${activeIndex === index ? 'show' : ''}`} key={id}>
-        <img src={bannerImageUrl} alt={bannerImageAlt} />
+        <img src={bannerImageUrl} alt={bannerImageAlt} loading='lazy' />
       </li>
     );
     indicators.push(

@@ -21,11 +21,11 @@ const Form = (props) => {
   };
   const validateForm = (inputData, value) => {
     if (inputData.validations && inputData.validations.length > 0) {
-      inputData.errorMessage = inputData.validations.reduce((cumulativeMessage, checkIf) => {
+      inputData.errorMessage = inputData.validations.reduce((cumulativeMessage, validation) => {
         const errorMessage =
           inputData.name === Constants.ConfirmPassword
-            ? validate(checkIf, value, input.password)
-            : validate(checkIf, value);
+            ? validate(validation, value, input.password)
+            : validate(validation, value);
         return (
           cumulativeMessage +
           (cumulativeMessage !== '' && errorMessage !== '' ? ', ' : '') +
