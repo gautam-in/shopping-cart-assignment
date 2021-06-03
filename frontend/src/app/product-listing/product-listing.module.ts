@@ -8,9 +8,10 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
+import { ProductCardComponent } from './product-card/product-card.component';
 
 @NgModule({
-  declarations: [ProductListingComponent],
+  declarations: [ProductListingComponent, ProductCardComponent],
   imports: [
     CommonModule,
     ProductListingRoutingModule,
