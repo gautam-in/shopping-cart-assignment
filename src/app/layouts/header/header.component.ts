@@ -1,22 +1,20 @@
 import { Component, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
-import { CartService } from 'src/app/services/cart.service';
-import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
-import { CartComponent } from 'src/app/cart/cart.component';
-
+import { Store } from '@ngrx/store';
+import { ICartItem } from 'src/app/models/cart-item.model';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.sass'],
 })
 export class HeaderComponent implements OnInit {
-  constructor(private cartService: CartService, public dialog: MatDialog) {}
-  count = 0;
+  constructor(private store: Store<{ cartList: ICartItem[] }>) {}
+  cartItem = 0;
   showCart = false;
   @ViewChild('cartContainer', { read: ViewContainerRef })
   cartContainer!: ViewContainerRef;
   ngOnInit(): void {
-    this.cartService.getCartItems$().subscribe(() => {
-      this.count = this.cartService.getCart().length;
+    this.store.select('cartList').subscribe((val) => {
+      this.cartItem = val.length;
     });
   }
 

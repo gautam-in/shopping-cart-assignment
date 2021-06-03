@@ -12,12 +12,15 @@ import { SliderModule } from 'ngx-slider';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
+import { StoreModule } from '@ngrx/store';
+
 import {
   NgxUiLoaderHttpModule,
   NgxUiLoaderModule,
   NgxUiLoaderRouterModule,
 } from 'ngx-ui-loader';
 import { CartComponent } from './cart/cart.component';
+import { cartReducer } from './store/cart.reducer';
 
 @NgModule({
   declarations: [
@@ -39,6 +42,7 @@ import { CartComponent } from './cart/cart.component';
     NgxUiLoaderModule,
     NgxUiLoaderRouterModule,
     NgxUiLoaderHttpModule,
+    StoreModule.forRoot({ cartList: cartReducer }),
   ],
   providers: [],
   bootstrap: [AppComponent],
