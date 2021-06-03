@@ -3,7 +3,7 @@ import Header from './components/organisms/Header/Header';
 import Footer from './components/organisms/Footer/Footer';
 import NotFound from './components/pages/NotFound';
 import { Route, Switch, useHistory } from 'react-router-dom';
-
+import useDevice from '../src/shared/useDevice';
 const Home = React.lazy(() => import('./components/pages/Home'));
 const SignInPage = React.lazy(() => import('./components/pages/SignInPage'));
 const RegisterPage = React.lazy(() => import('./components/pages/RegisterPage'));
@@ -12,10 +12,11 @@ const Cart = React.lazy(() => import('./components/organisms/Cart/Cart'));
 
 function App() {
   let history = useHistory();
+  const { isDesktop } = useDevice();
   const [showModal, setShowModal] = useState(false);
   const toggleModal = () => {
     setShowModal(!showModal);
-    if (window?.innerWidth < 770) {
+    if (!isDesktop) {
       setShowModal(true);
       history.push('/cart');
     }
@@ -24,9 +25,7 @@ function App() {
   return (
     <div className='app-container'>
       <Header toggleCartModal={toggleModal} />
-      {window?.innerWidth > 770 ? (
-        <Cart showCart={showModal} toggleCartModal={toggleModal} />
-      ) : null}
+      {isDesktop ? <Cart showCart={showModal} toggleCartModal={toggleModal} /> : null}
       <Switch>
         <Route exact path='/' render={() => <Home />} />
         <Route exact path='/home' render={() => <Home />} />

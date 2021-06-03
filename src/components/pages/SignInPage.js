@@ -1,17 +1,22 @@
 import React from 'react';
 import '../molecules/SigninForm/SigninForm.scss';
-import SignInForm from '../molecules/SigninForm/SigninForm';
+import formInputs from '../../shared/Login.json';
 import * as Constants from '../../shared/constants';
+import FormPage from '../templates/FormPage/FormPage';
+import { useHistory } from 'react-router-dom';
 const SignInPage = () => {
+  const history = useHistory();
+  const loginUser = () => {
+    history.push('/home');
+  };
   return (
     <main className='container'>
-      <section className='form-wrapper'>
-        <section className='header-wrapper'>
-          <h1>{Constants.LoginTitle}</h1>
-          <p>{Constants.LoginDescription}</p>
-        </section>
-        <SignInForm />
-      </section>
+      <FormPage
+        title={Constants.LoginTitle}
+        desc={Constants.LoginDescription}
+        formInputs={formInputs}
+        formSubmit={loginUser}
+      />
     </main>
   );
 };

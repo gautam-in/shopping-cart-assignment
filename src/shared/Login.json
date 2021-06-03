@@ -1,0 +1,24 @@
+[
+    {
+      "name": "email",
+      "type": "email",
+      "label": "Email",
+      "validations": [
+        "required",
+        "email"
+      ],
+      "valid": false,
+      "errorMessage": ""
+    },
+    {
+      "name": "password",
+      "type": "password",
+      "label": "Password",
+      "validations": [
+        "required",
+        "password"
+      ],
+      "valid": false,
+      "errorMessage": ""
+    }
+  ]

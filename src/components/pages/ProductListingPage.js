@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { useLocation } from 'react-router-dom';
 import { getProducts } from '../../redux/actions/actionCreators';
 const ProductList = React.lazy(() => import('../organisms/ProductList/ProductList'));
