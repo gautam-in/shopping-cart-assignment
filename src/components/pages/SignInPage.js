@@ -1,5 +1,4 @@
 import React from 'react';
-import '../molecules/SigninForm/SigninForm.scss';
 import formInputs from '../../shared/Login.json';
 import * as Constants from '../../shared/constants';
 import FormPage from '../templates/FormPage/FormPage';
