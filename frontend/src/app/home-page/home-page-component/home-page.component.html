@@ -5,8 +5,8 @@
     <ng-container *ngFor="let banner of allBanners">
       <ng-template carouselSlide [id]="banner.id">
         <img
-          src="{{ './../../../assets/' + banner.bannerImageUrl }}"
-          [alt]="banner.bannerImageAlt"
+          src="{{ './../../../assets/' + banner?.bannerImageUrl }}"
+          [alt]="banner?.bannerImageAlt"
         />
       </ng-template>
     </ng-container>
@@ -18,19 +18,19 @@
     <div class="img-container">
       <img
         class="category-img"
-        src="{{ './../../../assets/' + category.imageUrl }}"
+        src="{{ './../../../assets/' + category?.imageUrl }}"
         alt="category"
       />
     </div>
     <div class="btn-container">
-      <p class="category-name">{{ category.name }}</p>
-      <p class="category-desc">{{ category.description }}</p>
+      <p class="category-name">{{ category?.name }}</p>
+      <p class="category-desc">{{ category?.description }}</p>
       <button
         class="navigate-button"
         type="button"
         (click)="navigateToExplore()"
       >
-        Explore {{ category.name }}
+        Explore {{ category?.name }}
       </button>
     </div>
   </div>

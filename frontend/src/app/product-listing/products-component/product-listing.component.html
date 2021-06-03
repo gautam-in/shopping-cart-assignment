@@ -22,23 +22,23 @@
   <mat-sidenav-content
     ><mat-card class="product-card" *ngFor="let products of allProducts">
       <mat-card-header>
-        <mat-card-subtitle>{{ products.name }}</mat-card-subtitle>
+        <mat-card-subtitle>{{ products?.name }}</mat-card-subtitle>
       </mat-card-header>
 
       <img
         class="product-img"
         mat-card-image
-        src="{{ './../../../assets/' + products.imageURL }}"
+        src="{{ './../../../assets/' + products?.imageURL }}"
         alt="Product image"
       />
       <mat-card-content>
         <p class="product-desc">
-          {{ products.description | slice: 0:100
-          }}{{ products.description.length > 100 ? "..." : "" }}
+          {{ products?.description | slice: 0:100
+          }}{{ products?.description.length > 100 ? "..." : "" }}
         </p>
       </mat-card-content>
       <div mat-card-actions class="action-btn">
-        <button class="mrp-btn" mat-button>MRP Rs.{{ products.price }}</button>
+        <button class="mrp-btn" mat-button>MRP Rs.{{ products?.price }}</button>
         <button
           class="buy-btn"
           mat-raised-button
