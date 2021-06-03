@@ -63,14 +63,14 @@
     position: unset;
   }
 }
-@media (min-width: 575px) and (max-width: 690px) {
+@media (min-width: 444px) and (max-width: 690px) {
   .cartMain {
     margin: auto;
     margin-top: 20%;
     position: unset;
   }
 }
-@media (max-width: 575px) {
+@media (max-width: 443px) {
   .cartMain {
     margin: auto;
     margin-top: 30%;

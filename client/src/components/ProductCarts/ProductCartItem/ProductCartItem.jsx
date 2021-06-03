@@ -6,11 +6,11 @@ import "./ProductCartItem.scss";
 // import ActionButton from "../atoms/actionButton/actionButton";
 // import ItemImage from "../atoms/itemImage/itemImage"
 
-function ProductCartItem(props) {
+export function ProductCartItem(props) {
   const { item, handleDecrement, handleIncrement } = props;
 
   return (
-    <section className="itemContainer">
+    <section className="itemContainer" data-test="component-productCartItem">
       <img src={item.imageURL} width="60px" height="60px" />
       <section className="itemDescription">
         <h3>{item.name}</h3>
@@ -18,6 +18,7 @@ function ProductCartItem(props) {
           <button
             onClick={() => handleDecrement(item)}
             className="buttonAction"
+            data-test="button-decrement"
           >
             -
           </button>
@@ -31,7 +32,10 @@ function ProductCartItem(props) {
           <span>X&nbsp;&nbsp; Rs.{item.price} </span>
         </section>
       </section>
-      <section className="priceItem"> Rs. {item.price * item.quantity} </section>
+      <section className="priceItem" data-test="cartItem-price">
+        {" "}
+        <span> Rs. {item.price * item.quantity} </span>
+      </section>
     </section>
   );
 }

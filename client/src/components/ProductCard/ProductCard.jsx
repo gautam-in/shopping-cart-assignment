@@ -6,7 +6,7 @@ import { handleIncrement, initializeCart } from "../../store/action";
 // import { useSelector, useDispatch } from "react-redux";
 // import { handleCart, handleIncrement } from "../../../../Redux/action";
 
-function Card(props) {
+export function ProductCard(props) {
   const { product, cart, handleIncrement, initializeCart } = props;
   const [message, setMessage] = React.useState("");
 
@@ -23,10 +23,15 @@ function Card(props) {
     });
   };
   return (
-    <section className="productCard">
+    <section className="productCard" data-test="component-product-card">
       <h3 className="productName">{product.name}</h3>
       <figure style={{ margin: "0px" }}>
-        <img src={product.imageURL} alt={product.name} width="100%" />
+        <img
+          src={product.imageURL}
+          alt={product.name}
+          width="100%"
+          data-test="product-image"
+        />
       </figure>
 
       <section className="productDescription">
@@ -40,6 +45,7 @@ function Card(props) {
           className="productPriceButton"
           type="submit"
           onClick={() => addItemToCart(product)}
+          data-test="product-button"
         >
           Buy Now
         </button>
@@ -53,5 +59,5 @@ const mapStateToProps = (store) => {
   };
 };
 export default connect(mapStateToProps, { handleIncrement, initializeCart })(
-  Card
+  ProductCard
 );

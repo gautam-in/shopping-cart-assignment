@@ -7,14 +7,14 @@ import EmptyCart from "../../components/ProductCarts/EmptyCart/EmptyCart";
 // import NonEmptyCart from "../../UI/molecules/cart/NonEmptyCart";
 // import EmptyCart from "../../UI/molecules/cart/EmptyCart";
 
-function Cart(props) {
+export function Cart(props) {
   const { setCartDialog, cart } = props;
   const handleCloseCart = () => {
     setCartDialog(false);
   };
 
   return (
-    <main className="cartContainer">
+    <main className="cartContainer" data-test="component-cart">
       <section className="cartMain">
         <header>
           <span> My Cart</span>

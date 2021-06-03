@@ -3,7 +3,7 @@ import { withRouter } from "react-router";
 import Button from "../Button/Button";
 
 import "./Category.scss";
-function Category(props) {
+export function Category(props) {
   const { categories } = props;
 
   const handleClick = (data) => {
@@ -29,7 +29,9 @@ function Category(props) {
             />
             <section className="info">
               <h2>{category.name}</h2>
-              <section style={{ marginBottom: "10px" }}>{category.description}</section>
+              <section style={{ marginBottom: "10px" }}>
+                {category.description}
+              </section>
               <Button
                 text={`Explore ${category.key}`}
                 onClick={() => handleClick(category.id)}

@@ -14,7 +14,7 @@ function getWindowDimensions() {
   };
 }
 
-function Product(props) {
+export function Product(props) {
   const { categories } = props;
   const initialCategory = props.history.location.data
     ? props.history.location.data
@@ -24,7 +24,6 @@ function Product(props) {
   const [windowDimensions, setWindowDimensions] = useState(
     getWindowDimensions()
   );
-  const [isMobile, setMobileBoolean] = useState(windowDimensions.width < 600);
 
   React.useEffect(async () => {
     await AuthenticateAPI.getData(`${process.env.REACT_APP_BASE_URL}/products`)
@@ -41,7 +40,7 @@ function Product(props) {
     productCategory ? productCategory === item.category : true
   );
   return (
-    <main className="productContainer">
+    <main className="productContainer" data-test="component-product">
       {windowDimensions.width >= 600 && (
         <Sidebar
           categories={categories}

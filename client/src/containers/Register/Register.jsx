@@ -2,7 +2,7 @@ import React from "react";
 import "./Register.scss";
 import Button from "../../components/UI/Button/Button";
 import { withRouter } from "react-router";
-function Register(props) {
+export function Register(props) {
   const [fields, setFields] = React.useState({});
   const [errors, setErrors] = React.useState({});
 
@@ -82,7 +82,7 @@ function Register(props) {
   };
 
   return (
-    <>
+    <section data-test="component-register">
       <main className="formContainer">
         <section className="formHeadingContainer">
           <h2>Signup</h2>
@@ -102,6 +102,7 @@ function Register(props) {
                 name="first_name"
                 id="first_name"
                 onChange={handleChange}
+                data-test="register-input-firstname"
               />
               <label for="first_name" className="formLabel">
                 First Name
@@ -116,6 +117,7 @@ function Register(props) {
                 name="last_name"
                 id="last_name"
                 onChange={handleChange}
+                data-test="register-input-lastname"
               />
               <label for="last_name" className="formLabel">
                 Last Name
@@ -130,6 +132,7 @@ function Register(props) {
                 name="email"
                 id="email"
                 onChange={handleChange}
+                data-test="register-input-email"
               />
               <label for="name" className="formLabel">
                 Email
@@ -144,6 +147,7 @@ function Register(props) {
                 name="password"
                 id="password"
                 onChange={handleChange}
+                data-test="register-input-password"
               />
               <label for="name" className="formLabel">
                 Password
@@ -158,6 +162,7 @@ function Register(props) {
                 name="confirm_password"
                 id="confirm_password"
                 onChange={handleChange}
+                data-test="register-input-cfpassword"
               />
               <label for="name" className="formLabel">
                 Confirm Password
@@ -170,7 +175,7 @@ function Register(props) {
           </section>
         </form>
       </main>
-    </>
+    </section>
   );
 }
 export default withRouter(Register);

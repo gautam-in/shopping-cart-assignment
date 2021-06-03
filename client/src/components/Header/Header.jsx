@@ -7,7 +7,7 @@ import ApplicationUrls from "../../router/ApplicationRoutes";
 import { LABEL } from "../../constants/constant";
 import { connect } from "react-redux";
 import Cart from "../../containers/Cart/Cart";
-function Header(props) {
+export function Header(props) {
   const { cartDialog, setCartDialog, cart } = props;
   const [user, setUser] = React.useState(null);
   React.useState(() => {
@@ -22,7 +22,7 @@ function Header(props) {
   };
 
   return (
-    <header className="header">
+    <header className="header" data-test="component-header">
       {cartDialog && (
         <Cart setCartDialog={setCartDialog} cartDialog={cartDialog} />
       )}
@@ -40,7 +40,7 @@ function Header(props) {
         </nav>
         <section className="cartLogoC">
           <section className="cartLogoContainer">
-            <nav className="text">
+            <nav className="text" data-test="header-nav">
               {user && <span>HI! {user.first_name}</span>}
               {user && (
                 <span>
@@ -71,6 +71,7 @@ function Header(props) {
     </header>
   );
 }
+
 const mapStateToProps = (store) => {
   return {
     count: store.count,

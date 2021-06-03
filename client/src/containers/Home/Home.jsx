@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import Category from "../../components/UI/Category/Category";
 import * as AuthenticateAPI from "../../axios/AuthenticationAPI";
 
-function Home(props) {
+export function Home(props) {
   const [banners, setBanners] = React.useState([]);
   const { categories } = props;
   React.useEffect(() => {
@@ -15,7 +15,7 @@ function Home(props) {
 
   return (
     banners.length > 0 && (
-      <main>
+      <main data-test="component-home">
         <Carousel banners={banners} />
         <Category categories={categories} />
       </main>

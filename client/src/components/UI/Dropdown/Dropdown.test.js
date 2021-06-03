@@ -32,31 +32,16 @@ test("Dropdown renders without error", () => {
   expect(dropdown.length).toBe(1);
 });
 
-// test("check if dialog closes when clicking on icon", () => {
+// test("check if dropdown value changes when keydown ", () => {
 //   const clickMock = jest.fn();
 //   const wrapper = setup({
 //     setProductCategory: clickMock,
 //     categories: categories,
+//     productCategory: "5b675e5e5936635728f9fc30",
 //   });
 //   const button = wrapper.find("select");
 //   button.simulate("change", { target: { value: "5b6899123d1a866534f516de" } });
 //   expect(button.prop("value")).toBe("5b6899123d1a866534f516de");
 //   button.simulate("keydown", { keyCode: 13 });
 //   expect(button.prop("value")).toBe("5b6899123d1a866534f516de");
-// });
-
-// test("check if dialog closes when clicking on cancel", () => {
-//   const clickMock = jest.fn();
-//   const wrapper = setup({ setDialog: clickMock });
-//   const button = findByTestAttr(wrapper, "dialog-cancel");
-//   button.simulate("click");
-//   expect(clickMock.mock.calls.length).toBe(1);
-// });
-
-// test("check if callback working onclick of confirm button", () => {
-//   const clickMock = jest.fn();
-//   const wrapper = setup({ onDialogConfirm: clickMock });
-//   const button = findByTestAttr(wrapper, "dialog-confirm");
-//   button.simulate("click");
-//   expect(clickMock.mock.calls.length).toBe(1);
 // });

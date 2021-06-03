@@ -2,7 +2,7 @@ import React from "react";
 import "./Login.scss";
 import Button from "../../components/UI/Button/Button";
 import { withRouter } from "react-router";
-function Login(props) {
+export function Login(props) {
   const [fields, setFields] = React.useState({});
   const [errors, setErrors] = React.useState({});
   const [errorMessage, setErrorMessage] = React.useState("");
@@ -81,7 +81,7 @@ function Login(props) {
   };
 
   return (
-    <>
+    <section data-test="component-login">
       <span style={{ color: "red", fontWeight: "600", marginLeft: "5%" }}>
         {errorMessage}
       </span>
@@ -100,6 +100,7 @@ function Login(props) {
                 name="email"
                 id="email"
                 onChange={handleChange}
+                data-test="login-input-email"
               />
               <label for="name" className="formLabel">
                 Email
@@ -114,6 +115,7 @@ function Login(props) {
                 name="password"
                 id="password"
                 onChange={handleChange}
+                data-test="login-input-password"
               />
               <label for="name" className="formLabel">
                 Password
@@ -126,7 +128,7 @@ function Login(props) {
           </section>
         </form>
       </main>
-    </>
+    </section>
   );
 }
 export default withRouter(Login);
