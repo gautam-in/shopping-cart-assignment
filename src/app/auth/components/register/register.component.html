@@ -1,0 +1,78 @@
+<section>
+  <div class="row">
+    <div class="container">
+      <div class="left-section">
+        <h1>Signup</h1>
+        <p>We do not share your personal details with anyone</p>
+      </div>
+      <div class="right-section">
+        <form [formGroup]="registerForm" (ngSubmit)="submitForm()">
+          <div class="form-group">
+            <mat-form-field class="mat-form-field">
+              <mat-label>Email</mat-label>
+              <input
+                formControlName="email"
+                email
+                required
+                ngModel
+                matInput
+                placeholder="Placeholder"
+              />
+            </mat-form-field>
+          </div>
+          <div class="form-group">
+            <mat-form-field class="mat-form-field">
+              <mat-label>First Name</mat-label>
+              <input
+                formControlName="firstName"
+                required
+                ngModel
+                matInput
+                placeholder="Placeholder"
+              />
+            </mat-form-field>
+          </div>
+          <div class="form-group">
+            <mat-form-field class="mat-form-field">
+              <mat-label>Last Name</mat-label>
+              <input
+                formControlName="lastName"
+                ngModel
+                matInput
+                placeholder="Placeholder"
+              />
+            </mat-form-field>
+          </div>
+          <div class="form-group">
+            <mat-form-field class="mat-form-field">
+              <mat-label>Password</mat-label>
+              <input
+                formControlName="password"
+                required
+                ngModel
+                matInput
+                placeholder="Placeholder"
+              />
+            </mat-form-field>
+          </div>
+          <div class="form-group">
+            <mat-form-field class="mat-form-field">
+              <mat-label>Confirm Password</mat-label>
+              <input
+                formControlName="confirmPassword"
+                required
+                matInput
+                placeholder="Placeholder"
+              />
+            </mat-form-field>
+          </div>
+          <input
+            [disabled]="!registerForm.valid"
+            type="submit"
+            value="Signup"
+          />
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

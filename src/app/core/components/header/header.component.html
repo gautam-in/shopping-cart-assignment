@@ -1,0 +1,49 @@
+<header>
+  <div class="row">
+    <div routerLink="/" class="left-section">
+      <img src="../../../assets/static/images/logo.png" />
+    </div>
+    <div class="right-section">
+      <div *ngIf="user; else UserInfo" class="auth-section">
+        <a href="#" routerLink="/authentication/login">SignIn</a>
+        <a href="#" routerLink="authentication/register">Register</a>
+      </div>
+      <ng-template #UserInfo>
+        <div class="auth-section">
+          <a>{{ user.firstName }}</a>
+          <a (click)="logout()">Logout</a>
+        </div>
+      </ng-template>
+
+      <div class="menu">
+        <nav class="main-nav">
+          <ul>
+            <li>
+              <a
+                [routerLinkActiveOptions]="{ exact: true }"
+                routerLinkActive="active"
+                routerLink="/home"
+                href="#"
+                >Home</a
+              >
+            </li>
+            <li>
+              <a routerLinkActive="active" routerLink="/products" href="#"
+                >Products</a
+              >
+            </li>
+          </ul>
+        </nav>
+        <div class="cart-btn">
+          <img src="../../../assets/static/images/cart.svg" />
+          <a (click)="openDialog()">{{ cartItem }} Items</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="clearfix"></div>
+</header>
+<div *ngIf="showCart" class="row showCart">
+  <app-cart (close)="closeCart()"></app-cart>
+</div>
+<div *ngIf="showCart" class="overlay"></div>

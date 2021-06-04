@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { CartComponent } from './cart/cart.component';
-import { HomeComponent } from './home/home.component';
-import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { CartComponent } from './core/components/cart/cart.component';
+import { HomeComponent } from './features/home/components/home/home.component';
+import { PageNotFoundComponent } from './core/components/page-not-found/page-not-found.component';
 
 const routes: Routes = [
   {
@@ -16,7 +16,7 @@ const routes: Routes = [
   {
     path: 'products',
     loadChildren: () =>
-      import('./products/products.module').then((m) => m.ProductsModule),
+      import('./features/products/products.module').then((m) => m.ProductsModule),
   },
   {
     path: 'cart',

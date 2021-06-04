@@ -1,0 +1,31 @@
+<section>
+  <div class="row">
+    <div *ngIf="slider" class="content">
+      <div class="slider">
+        <ngx-slider [init]="slider"></ngx-slider>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="content-2">
+      <div
+        *ngFor="let item of categories; let i = index"
+        class="banner"
+        [class.reverse]="i % 2 !== 0"
+      >
+        <div *ngIf="item.imageUrl" class="image-section">
+          <img [src]="'../../assets' + item.imageUrl" />
+        </div>
+        <div class="content-section">
+          <h1>{{ item.name }}</h1>
+          <p>
+            {{ item.description }}
+          </p>
+          <button [routerLink]="'/products/' + item.id">
+            Explore {{ item.key }}
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

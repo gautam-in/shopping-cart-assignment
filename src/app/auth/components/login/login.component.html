@@ -1,0 +1,41 @@
+<section>
+  <div class="row">
+    <div class="container">
+      <div class="left-section">
+        <h1>Login</h1>
+        <p>Get access to your Orders. Whishlist and Recommendations</p>
+      </div>
+      <div class="right-section">
+        <form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)">
+          <div class="form-group">
+            <mat-form-field class="mat-form-field">
+              <mat-label>Email</mat-label>
+              <input
+                matInput
+                required
+                name="email"
+                email
+                ngModel
+                placeholder="test@test.com"
+              />
+            </mat-form-field>
+          </div>
+          <div class="form-group">
+            <mat-form-field class="mat-form-field">
+              <mat-label>Password</mat-label>
+              <input
+                matInput
+                required
+                type="password"
+                name="password"
+                ngModel
+                placeholder="Must be atleast 8 char"
+              />
+            </mat-form-field>
+          </div>
+          <input [disabled]="!loginForm.valid" type="submit" value="Login" />
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,4 +1,4 @@
-import { ICartItem } from '../models/cart-item.model';
+import { ICartItem } from '../shared/models/cart-item.model';
 import { Action, createReducer, on } from '@ngrx/store';
 import { addProduct, deleteProduct } from './cart.actions';
 
