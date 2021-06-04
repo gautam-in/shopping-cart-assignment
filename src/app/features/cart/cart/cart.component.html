@@ -1,7 +1,9 @@
 <div class="container">
   <div class="header">
     <h3>My Cart({{ cartItem.length }} Item)</h3>
-    <span (click)="closeCart()" class="close">X</span>
+    <span aria-colspan="close-button" (click)="closeCart()" class="close"
+      >X</span
+    >
   </div>
   <div *ngIf="!cartItem.length; else cartContentItem" class="content">
     <div class="no-items">
@@ -15,7 +17,10 @@
     <div class="content">
       <div *ngFor="let item of cartItem" class="cart-item">
         <div class="left-section">
-          <img [src]="'../../assets/' + item.product.imageURL" />
+          <img
+            [src]="'../../assets/' + item.product.imageURL"
+            [alt]="item.product.name"
+          />
         </div>
         <div class="right-section">
           <h4>{{ item.product.name }}</h4>
@@ -32,7 +37,10 @@
         </div>
       </div>
       <div class="lowest-price">
-        <img src="../../assets/static/images/lowest-price.png" />
+        <img
+          src="../../assets/static/images/lowest-price.png"
+          alt="lowest prive tag"
+        />
         <div class="lowest-price-txt">You won't find it cheaper anywhere</div>
       </div>
     </div>

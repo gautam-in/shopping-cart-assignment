@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
-import { CartComponent } from './components/cart/cart.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HeaderComponent } from './components/header/header.component';
 import { SharedModule } from '../shared/shared.module';
-const components = [CartComponent, FooterComponent, HeaderComponent];
+import { CartModule } from '../features/cart/cart.module';
+const components = [FooterComponent, HeaderComponent];
 @NgModule({
   declarations: components,
   exports: components,
-  imports: [SharedModule],
+  imports: [SharedModule, CartModule],
 })
 export class CoreModule {}

@@ -1,8 +1,8 @@
 import { Component, Input } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { ICartItem } from 'src/app/shared/models/cart-item.model';
-import { addProduct } from 'src/app/core/store/actions/cart.actions';
+import { addProduct } from 'src/app/features/cart/store/actions/cart.actions';
 import { IProduct } from 'src/app/shared/models/product.model';
+import { AppState } from 'src/app/store/app.reducer';
 
 @Component({
   selector: 'app-product-item',
@@ -11,9 +11,9 @@ import { IProduct } from 'src/app/shared/models/product.model';
 })
 export class ProductItemComponent {
   @Input() product!: IProduct;
-  constructor(private store: Store<{ cartList: ICartItem[] }>) {}
+  constructor(private store: Store<AppState>) {}
   addToCart(item: IProduct) {
-    const cartItem: ICartItem = {
+    const cartItem = {
       product: item,
       quantity: 1,
     };

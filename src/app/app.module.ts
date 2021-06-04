@@ -6,15 +6,16 @@ import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { StoreModule } from '@ngrx/store';
-
+import { EffectsModule } from '@ngrx/effects';
 import {
   NgxUiLoaderHttpModule,
   NgxUiLoaderModule,
   NgxUiLoaderRouterModule,
 } from 'ngx-ui-loader';
-import { cartReducer } from './core/store/reducer/cart.reducer';
 import { CoreModule } from './core/core.module';
 import { HomeModule } from './features/home/home.module';
+import { appReducer } from './store/app.reducer';
+import { effects } from './store/app.effects';
 
 @NgModule({
   declarations: [AppComponent],
@@ -28,7 +29,8 @@ import { HomeModule } from './features/home/home.module';
     NgxUiLoaderModule,
     NgxUiLoaderRouterModule, // shows loader on each navigation.
     NgxUiLoaderHttpModule, // shows loader for each http request.
-    StoreModule.forRoot({ cartList: cartReducer }),
+    StoreModule.forRoot(appReducer),
+    EffectsModule.forRoot(effects),
     HomeModule, // initial page module
   ],
   providers: [],

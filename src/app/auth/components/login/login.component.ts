@@ -1,29 +1,31 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { Router } from '@angular/router';
+import { Store } from '@ngrx/store';
 import { ToastrService } from 'ngx-toastr';
-import { LOGGED_IN } from 'src/app/constants/messages.constant';
-import { SessionStorageService } from 'src/app/storage/session-storage.service';
+import { AppState } from 'src/app/store/app.reducer';
+import * as AuthActions from '../../store/actions/auth.actions';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.sass'],
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit {
+  isLoading!: boolean;
   constructor(
-    private sessionStorage: SessionStorageService,
     private ngxToastrService: ToastrService,
-    private router: Router
+    private store: Store<AppState>
   ) {}
 
+  ngOnInit() {
+    this.store.select('auth').subscribe((authState) => {
+      this.isLoading = authState.loading;
+      if (authState.authError) this.ngxToastrService.error(authState.authError);
+    });
+  }
+
   onSubmit(form: NgForm) {
-    const response = this.sessionStorage.get(form.value);
-    if (response.code === 200) {
-      this.ngxToastrService.success(LOGGED_IN);
-      this.router.navigate(['/products']);
-    } else {
-      this.ngxToastrService.error(response.message);
-    }
+    this.store.dispatch(AuthActions.LoginStart(form.value));
+    form.reset();
   }
 }

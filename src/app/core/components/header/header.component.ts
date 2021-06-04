@@ -1,7 +1,8 @@
-import { Component, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { ICartItem } from 'src/app/shared/models/cart-item.model';
-
+import { map } from 'rxjs/operators';
+import { AppState } from 'src/app/store/app.reducer';
+import * as AuthActions from 'src/app/auth/store/actions/auth.actions';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -10,12 +11,19 @@ import { ICartItem } from 'src/app/shared/models/cart-item.model';
 export class HeaderComponent implements OnInit {
   cartItem = 0;
   showCart = false;
-
-  constructor(private store: Store<{ cartList: ICartItem[] }>) {}
+  isAuthenticated = false;
+  constructor(private store: Store<AppState>) {}
 
   ngOnInit(): void {
+    this.store
+      .select('auth')
+      .pipe(map((authState) => authState.user))
+      .subscribe((user) => {
+        debugger;
+        this.isAuthenticated = !!user;
+      });
     this.store.select('cartList').subscribe((cartList) => {
-      this.cartItem = cartList.length;
+      this.cartItem = cartList.cart.length;
     });
   }
 
@@ -25,5 +33,9 @@ export class HeaderComponent implements OnInit {
 
   openCart() {
     this.showCart = true;
+  }
+
+  logout() {
+    this.store.dispatch(AuthActions.Logout());
   }
 }

@@ -2,40 +2,47 @@ import { ICartItem } from 'src/app/shared/models/cart-item.model';
 import { Action, createReducer, on } from '@ngrx/store';
 import { addProduct, deleteProduct } from '../actions/cart.actions';
 
-export const initialState: ICartItem[] = [];
+export interface State {
+  cart: ICartItem[];
+}
+
+export const initialState: State = {
+  cart: [],
+};
 
 const _cartReducer = createReducer(
   initialState,
   on(addProduct, (state, item) => {
-    const productIndex = state.findIndex(
+    const productIndex = state.cart.findIndex(
       (cartItem) => cartItem.product.id === item.product.id
     );
     if (productIndex > -1) {
-      const product = state[productIndex];
-      const quantity = state[productIndex].quantity + 1;
+      const product = state.cart[productIndex];
+      const quantity = state.cart[productIndex].quantity + 1;
       const updateProduct = { ...product, quantity };
-      const updateProducts = [...state];
-      updateProducts[productIndex] = updateProduct;
-      return updateProducts;
+      const cart = [...state.cart];
+      cart[productIndex] = updateProduct;
+      return { ...state, cart };
     } else {
-      return [...state, item];
+      const cart = [...state.cart, item];
+      return { ...state, cart };
     }
   }),
   on(deleteProduct, (state, item) => {
-    const productIndex = state.findIndex(
+    const productIndex = state.cart.findIndex(
       (cartItem) => cartItem.product.id === item.id
     );
     if (productIndex > -1) {
-      const product = state[productIndex];
-      const quantity = state[productIndex].quantity - 1;
+      const product = state.cart[productIndex];
+      const quantity = state.cart[productIndex].quantity - 1;
       const updateProduct = { ...product, quantity };
-      const updateProducts = [...state];
+      const cart = [...state.cart];
       if (quantity > 0) {
-        updateProducts[productIndex] = updateProduct;
+        cart[productIndex] = updateProduct;
       } else {
-        updateProducts.splice(productIndex, 1);
+        cart.splice(productIndex, 1);
       }
-      return updateProducts;
+      return { ...state, cart };
     }
     return state;
   })

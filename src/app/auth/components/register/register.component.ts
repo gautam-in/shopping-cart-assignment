@@ -1,10 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {
   FormBuilder,
   FormControl,
   FormGroup,
   Validators,
 } from '@angular/forms';
+import { Store } from '@ngrx/store';
 import { ToastrService } from 'ngx-toastr';
 import { NgxUiLoaderService } from 'ngx-ui-loader';
 import {
@@ -12,20 +13,21 @@ import {
   USER_REGISTERED,
 } from 'src/app/constants/messages.constant';
 import { ConfirmedValidator } from 'src/app/shared/validator/match-password.validator';
-import { SessionStorageService } from 'src/app/storage/session-storage.service';
+import * as AuthActions from '../../store/actions/auth.actions';
+import { AppState } from 'src/app/store/app.reducer';
 
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.sass'],
 })
-export class RegisterComponent {
+export class RegisterComponent implements OnInit {
   registerForm: FormGroup;
+  isLoading!: boolean;
   constructor(
     private fb: FormBuilder,
-    private ngxLoader: NgxUiLoaderService,
-    private ngxToastrService: ToastrService,
-    private sessionStorage: SessionStorageService
+    private store: Store<AppState>,
+    private ngxToastrService: ToastrService
   ) {
     this.registerForm = this.fb.group(
       {
@@ -43,18 +45,16 @@ export class RegisterComponent {
       }
     );
   }
-
-  onSubmit(): void {
-    this.ngxLoader.start();
-    const user = this.registerForm.value;
-    const registerRequest = { user };
-    const response = this.sessionStorage.set(registerRequest);
-    if (response) {
-      this.ngxToastrService.success(USER_REGISTERED);
-      this.registerForm.reset();
-    } else {
-      this.ngxToastrService.error(USER_EXISTS);
-    }
-    this.ngxLoader.stop();
+  ngOnInit() {
+    this.store.select('auth').subscribe((authState) => {
+      this.isLoading = authState.loading;
+      if (authState.authError) {
+        this.ngxToastrService.error(authState.authError);
+      }
+    });
+  }
+  onSubmit() {
+    this.store.dispatch(AuthActions.SignupStart(this.registerForm.value));
+    this.registerForm.reset();
   }
 }
