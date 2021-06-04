@@ -22,12 +22,15 @@ export class CartComponent implements OnInit {
   closeCart() {
     this.close.emit('');
   }
+
   plusQuantity(item: ICartItem) {
     this.store.dispatch(addProduct(item));
   }
+
   minusQuantity(item: ICartItem) {
     this.store.dispatch(deleteProduct({ id: item.product.id }));
   }
+
   get totalAmount(): number {
     let total = 0;
     for (let item of this.cartItem) {

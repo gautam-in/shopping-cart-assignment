@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import {
   FormBuilder,
   FormControl,
@@ -7,6 +7,10 @@ import {
 } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 import { NgxUiLoaderService } from 'ngx-ui-loader';
+import {
+  USER_EXISTS,
+  USER_REGISTERED,
+} from 'src/app/constants/messages.constant';
 import { ConfirmedValidator } from 'src/app/shared/validator/match-password.validator';
 import { SessionStorageService } from 'src/app/storage/session-storage.service';
 
@@ -15,7 +19,7 @@ import { SessionStorageService } from 'src/app/storage/session-storage.service';
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.sass'],
 })
-export class RegisterComponent implements OnInit {
+export class RegisterComponent {
   registerForm: FormGroup;
   constructor(
     private fb: FormBuilder,
@@ -40,24 +44,17 @@ export class RegisterComponent implements OnInit {
     );
   }
 
-  ngOnInit(): void {}
-
-  submitForm(): void {
+  onSubmit(): void {
     this.ngxLoader.start();
     const user = this.registerForm.value;
-    setTimeout(() => {
-      const registerRequest = { user };
-      const response = this.sessionStorage.set(registerRequest);
-      if (response) {
-        this.ngxToastrService.success(
-          'Registration done succesfully!',
-          'Registered!'
-        );
-        this.registerForm.reset();
-      } else {
-        this.ngxToastrService.error('User already exists!', 'Error!');
-      }
-      this.ngxLoader.stop();
-    }, 1000);
+    const registerRequest = { user };
+    const response = this.sessionStorage.set(registerRequest);
+    if (response) {
+      this.ngxToastrService.success(USER_REGISTERED);
+      this.registerForm.reset();
+    } else {
+      this.ngxToastrService.error(USER_EXISTS);
+    }
+    this.ngxLoader.stop();
   }
 }

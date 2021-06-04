@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { ICartItem } from 'src/app/shared/models/cart-item.model';
 import { addProduct } from 'src/app/core/store/actions/cart.actions';
@@ -9,12 +9,9 @@ import { IProduct } from 'src/app/shared/models/product.model';
   templateUrl: './product-item.component.html',
   styleUrls: ['./product-item.component.sass'],
 })
-export class ProductItemComponent implements OnInit {
+export class ProductItemComponent {
   @Input() product!: IProduct;
   constructor(private store: Store<{ cartList: ICartItem[] }>) {}
-
-  ngOnInit(): void {}
-
   addToCart(item: IProduct) {
     const cartItem: ICartItem = {
       product: item,

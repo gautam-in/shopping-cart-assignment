@@ -28,7 +28,7 @@ export class ProductListComponent implements OnInit {
       });
   }
 
-  getProducts(id: string) {
+  private getProducts(id: string) {
     this.productService.getAllProducts().subscribe((products: IProduct[]) => {
       this.products = id
         ? products.filter((item) => item.category === id)

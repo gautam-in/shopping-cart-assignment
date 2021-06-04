@@ -1,3 +1,5 @@
+@import '../../../../../colors'
+
 .product
     width: 25%
     position: relative
@@ -13,7 +15,7 @@
         font-size: 20px
         height: 80%
         margin: 10% 0
-        border-right: 1px solid #eee
+        border-right: 1px solid $greyEEE
 
     .container
         margin: 20px
@@ -26,7 +28,7 @@
         img
             width: 100%
         .desc
-            background: #eeeeee
+            background: $greyEEE
             padding: 10px
             p
                 height: 3.6rem
@@ -36,16 +38,16 @@
             display: flex
             justify-content: space-between
             align-items: center
-            border-bottom: 2px dashed #ccc
+            border-bottom: 2px dashed $greyCCC
             padding: 15px 0
             .price
                 font-size: 90
             .buy-now
-                background: #d00255
+                background: $pinkLight
                 padding: 10px
                 cursor: pointer
                 font-size: 90%
-                color: white
+                color: $white
                 border: none
                 &:hover
-                    background: #91013a
+                    background: $pinkDart

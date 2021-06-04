@@ -6,7 +6,7 @@
         <p>We do not share your personal details with anyone</p>
       </div>
       <div class="right-section">
-        <form [formGroup]="registerForm" (ngSubmit)="submitForm()">
+        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
           <div class="form-group">
             <mat-form-field class="mat-form-field">
               <mat-label>Email</mat-label>
@@ -14,7 +14,6 @@
                 formControlName="email"
                 email
                 required
-                ngModel
                 matInput
                 placeholder="Placeholder"
               />
@@ -26,7 +25,6 @@
               <input
                 formControlName="firstName"
                 required
-                ngModel
                 matInput
                 placeholder="Placeholder"
               />
@@ -37,7 +35,6 @@
               <mat-label>Last Name</mat-label>
               <input
                 formControlName="lastName"
-                ngModel
                 matInput
                 placeholder="Placeholder"
               />
@@ -49,7 +46,6 @@
               <input
                 formControlName="password"
                 required
-                ngModel
                 matInput
                 placeholder="Placeholder"
               />

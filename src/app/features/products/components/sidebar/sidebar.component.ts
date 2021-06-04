@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { ICategory } from 'src//app/shared/models/category.model';
 
 @Component({
@@ -6,9 +6,6 @@ import { ICategory } from 'src//app/shared/models/category.model';
   templateUrl: './sidebar.component.html',
   styleUrls: ['./sidebar.component.sass'],
 })
-export class SidebarComponent implements OnInit {
+export class SidebarComponent {
   @Input() categories!: ICategory[];
-  constructor() {}
-
-  ngOnInit(): void {}
 }

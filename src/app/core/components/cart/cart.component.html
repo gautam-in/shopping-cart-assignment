@@ -1,9 +1,9 @@
 <div class="container">
   <div class="header">
-    <h3>My Cart(0 Item)</h3>
+    <h3>My Cart({{ cartItem.length }} Item)</h3>
     <span (click)="closeCart()" class="close">X</span>
   </div>
-  <div *ngIf="cartItem.length === 0" class="content">
+  <div *ngIf="!cartItem.length; else cartContentItem" class="content">
     <div class="no-items">
       <div>
         <h3>No items in cart</h3>
@@ -11,40 +11,44 @@
       </div>
     </div>
   </div>
-  <div *ngIf="cartItem.length > 0" class="content">
-    <div *ngFor="let item of cartItem" class="cart-item">
-      <div class="left-section">
-        <img [src]="'../../assets/' + item.product.imageURL" />
-      </div>
-      <div class="right-section">
-        <h4>{{ item.product.name }}</h4>
-        <div class="detail">
-          <div class="quantity">
-            <span (click)="minusQuantity(item)" class="minus circle">-</span>
-            <span class="count">{{ item.quantity }}</span>
-            <span (click)="plusQuantity(item)" class="circle">+</span>
-            <span class="multiplier"> x </span>
-            <span class="per-piece-price">Rs.{{ item.product.price }}</span>
+  <ng-template #cartContentItem>
+    <div class="content">
+      <div *ngFor="let item of cartItem" class="cart-item">
+        <div class="left-section">
+          <img [src]="'../../assets/' + item.product.imageURL" />
+        </div>
+        <div class="right-section">
+          <h4>{{ item.product.name }}</h4>
+          <div class="detail">
+            <div class="quantity">
+              <span (click)="minusQuantity(item)" class="minus circle">-</span>
+              <span class="count">{{ item.quantity }}</span>
+              <span (click)="plusQuantity(item)" class="circle">+</span>
+              <span class="multiplier"> x </span>
+              <span class="per-piece-price">Rs.{{ item.product.price }}</span>
+            </div>
+            <h3 class="total">Rs.{{ item.product.price * item.quantity }}</h3>
           </div>
-          <h3 class="total">Rs.{{ item.product.price * item.quantity }}</h3>
         </div>
       </div>
+      <div class="lowest-price">
+        <img src="../../assets/static/images/lowest-price.png" />
+        <div class="lowest-price-txt">You won't find it cheaper anywhere</div>
+      </div>
     </div>
-    <div class="lowest-price">
-      <img src="../../assets/static/images/lowest-price.png" />
-      <div class="lowest-price-txt">You won't find it cheaper anywhere</div>
-    </div>
-  </div>
-  <div *ngIf="cartItem.length > 0" class="footer">
+  </ng-template>
+  <div *ngIf="cartItem.length; else startShopping" class="footer">
     <div class="promo-code">Promo code can be appplied on payment page</div>
     <a href="#" class="checkout">
       <span> Proceed to Checkout</span>
       <span> Rs.{{ totalAmount }}</span>
     </a>
   </div>
-  <div *ngIf="cartItem.length === 0" class="footer">
-    <a href="#" class="start-shopping">
-      <span> Start Shopping</span>
-    </a>
-  </div>
+  <ng-template #startShopping>
+    <div class="footer">
+      <a href="#" class="start-shopping">
+        <span> Start Shopping</span>
+      </a>
+    </div>
+  </ng-template>
 </div>

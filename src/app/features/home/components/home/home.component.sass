@@ -1,10 +1,12 @@
+@import '../../../../../colors'
+
 section
     margin-top: 3px
     .row
         .content
             padding: 0
             width: 100%
-            background: #ffffff
+            background: $white
             .slider
                 height: 280px
                 width: 100%
@@ -30,7 +32,7 @@ section
         text-align: center
         padding: 20px 40px
         position: relative
-        background: white
+        background: $white
         margin: 60px
         &:after
             content: ""
@@ -55,11 +57,11 @@ section
                 padding: 20px 0
             button
                 padding: 10px 20px
-                background: #d00255
-                color: #ffffff
+                background: $pinkLight
+                color: $white
                 border: none
                 cursor: pointer
                 &:hover
-                    background: #960841
+                    background: $pinkDart
     .reverse
         flex-flow: row-reverse

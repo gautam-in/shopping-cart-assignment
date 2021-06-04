@@ -1,6 +1,7 @@
+@import '../../../../colors'
 
 header
-    box-shadow: 0 4px 3px -2px #eeeeee
+    box-shadow: 0 4px 3px -2px $greyEEE
     margin-top: 7px
 .left-section
     float: left
@@ -28,29 +29,21 @@ header
                     a
                         font-weight: 500
                         &:hover
-                            color: #08ffde
+                            color: $disabled
                             &:after
                                 content: ' '
                                 width: 90%
-                                border-bottom: 1px solid #08ffde
+                                border-bottom: 1px solid $disabled
                                 height: 1px
                                 position: absolute
                                 bottom: -7px
                                 left: 5%
                     .active
-                        color: #d00255
-                        // &:before
-                        //     content: ' '
-                        //     width: 90%
-                        //     border-bottom: 1px solid #d00255
-                        //     height: 1px
-                        //     position: absolute
-                        //     top: -7px
-                        //     left: 5%
+                        color: $pinkLight
                         &:after
                             content: ' '
                             width: 90%
-                            border-bottom: 1px solid #d00255
+                            border-bottom: 1px solid $pinkLight
                             height: 1px
                             position: absolute
                             bottom: -7px
@@ -58,14 +51,14 @@ header
         .cart-btn
             display: flex
             align-items: center
-            background: #eeeeee
+            background: $greyEEE
             cursor: pointer
             padding: 10px 5px
             img
                 width: 30px
 .overlay
     position: fixed
-    background: black
+    background: $black
     opacity: 0.5
     height: 100%
     left: 0

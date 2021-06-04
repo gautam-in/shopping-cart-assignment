@@ -1,13 +1,15 @@
+@import '../../../../colors'
+
 .container
     width: 450px
-    background: #000
+    background: $black
     border: 1px solid
     position: absolute
     right: 0
     z-index: 999
 .header
     background: black
-    color: #fff
+    color: $white
     display: flex
     justify-content: space-between
     align-items: center
@@ -17,19 +19,19 @@
 .footer
     text-align: center
     padding: 10px
-    background: #fff
+    background: $white
     > a
-        background: #d00255
+        background: $pinkLight
         color: white
         padding: 10px 20px
         display: flex
         margin-top: 15px
         justify-content: space-between
         &:hover
-            background: #af1653
+            background: $pinkDart
 
 .content
-    background: #ccc
+    background: $greyCCC
     overflow: auto
     height: 500px
     .cart-item
@@ -54,7 +56,7 @@
                 margin: 0px 10px
             .circle
                 padding: 0px 5px
-                background: #af1653
+                background: $pinkLight
                 color: white
                 cursor: pointer
                 border-radius: 50%

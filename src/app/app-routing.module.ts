@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { CartComponent } from './core/components/cart/cart.component';
 import { HomeComponent } from './features/home/components/home/home.component';
 import { PageNotFoundComponent } from './core/components/page-not-found/page-not-found.component';
 
@@ -16,11 +15,9 @@ const routes: Routes = [
   {
     path: 'products',
     loadChildren: () =>
-      import('./features/products/products.module').then((m) => m.ProductsModule),
-  },
-  {
-    path: 'cart',
-    component: CartComponent,
+      import('./features/products/products.module').then(
+        (m) => m.ProductsModule
+      ),
   },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent },

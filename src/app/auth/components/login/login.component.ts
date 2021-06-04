@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { LOGGED_IN } from 'src/app/constants/messages.constant';
 import { SessionStorageService } from 'src/app/storage/session-storage.service';
 
 @Component({
@@ -9,21 +10,17 @@ import { SessionStorageService } from 'src/app/storage/session-storage.service';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.sass'],
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent {
   constructor(
     private sessionStorage: SessionStorageService,
     private ngxToastrService: ToastrService,
     private router: Router
   ) {}
 
-  ngOnInit(): void {}
   onSubmit(form: NgForm) {
     const response = this.sessionStorage.get(form.value);
     if (response.code === 200) {
-      this.ngxToastrService.success(
-        `Welcome ${response.result.user.firstName}`,
-        'Logged In!'
-      );
+      this.ngxToastrService.success(LOGGED_IN);
       this.router.navigate(['/products']);
     } else {
       this.ngxToastrService.error(response.message);
