@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "concurrently --kill-others \"npm run client\" \"npm run server\"",
-
+    "build":"webpack --mode production",
     "test": "jest",
     "client": "webpack serve --open --hot",
     "server": "canned -p 5000 ./server"

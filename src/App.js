@@ -1,12 +1,13 @@
 import React ,{useEffect}from 'react'
+import "./App.css"
 
 import {Route,Switch} from 'react-router-dom'
-import Signup from "./components/Signup/Signup"
-import SignIn from "./components/SignIn/SignIn"
-import Products from "./components/Products/Products"
-import Home from "./components/Home/Home"
-import Cart from "./components/Cart/Cart"
-import "./App.css"
+const Signup=React.lazy(()=>import ('./components/Signup/Signup'))
+const SignIn=React.lazy(()=>import ('./components/SignIn/SignIn'))
+const Products=React.lazy(()=>import ('./components/Products/Products'))
+const Home=React.lazy(()=>import ('./components/Home/Home'))
+const Cart=React.lazy(()=>import ('./components/Cart/Cart'))
+
 export default function App() {
    
    
