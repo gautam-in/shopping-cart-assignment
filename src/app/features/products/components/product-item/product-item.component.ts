@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { ICartItem } from 'src/app/shared/models/cart-item.model';
-import { addProduct } from 'src/app/store/cart.actions';
+import { addProduct } from 'src/app/core/store/actions/cart.actions';
 import { IProduct } from 'src/app/shared/models/product.model';
 
 @Component({

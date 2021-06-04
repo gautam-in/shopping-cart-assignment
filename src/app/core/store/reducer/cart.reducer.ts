@@ -1,6 +1,6 @@
-import { ICartItem } from '../shared/models/cart-item.model';
+import { ICartItem } from 'src/app/shared/models/cart-item.model';
 import { Action, createReducer, on } from '@ngrx/store';
-import { addProduct, deleteProduct } from './cart.actions';
+import { addProduct, deleteProduct } from '../actions/cart.actions';
 
 export const initialState: ICartItem[] = [];
 

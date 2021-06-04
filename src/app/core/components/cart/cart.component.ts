@@ -1,7 +1,7 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { ICartItem } from '../../../shared/models/cart-item.model';
-import { addProduct, deleteProduct } from '../../../store/cart.actions';
+import { addProduct, deleteProduct } from '../../store/actions/cart.actions';
 
 @Component({
   selector: 'app-cart',
