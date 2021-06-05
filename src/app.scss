@@ -1,0 +1,97 @@
+@import './variable';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+label,
+input,
+button,
+a {
+  font-family: 'Dosis', sans-serif;
+}
+
+html {
+  font-size: 10px;
+  position: relative;
+}
+
+ul {
+  list-style: none;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+}
+.not-found {
+  flex-direction: column;
+  justify-content: center;
+  display: flex;
+  justify-content: auto;
+  align-items: center;
+  height: calc(100vh - 100px);
+}
+@media screen and (min-width: 576px) {
+  .container-section {
+    display: flex;
+  }
+  .app-container {
+    width: 100%;
+    margin: auto;
+  }
+}
+
+.container {
+  width: 100%;
+  @media only screen and (min-width: $desktop) {
+    width: 80%;
+    margin: auto;
+  }
+}
+
+.btn-primary {
+  color: white;
+  background: #bf2957;
+  border: 1px solid transparent;
+  text-align: center;
+  padding: 10px;
+  vertical-align: middle;
+  cursor: pointer;
+}
+.collapse {
+  display: none;
+  @media only screen and (min-width: 576px) {
+    display: block;
+  }
+}
+.form-wrapper {
+  height: calc(100vh - 4rem - 102px);
+}
+.custom-button {
+  color: white;
+  background-color: #bf2957;
+  cursor: pointer;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 2px;
+  cursor: pointer;
+  height: auto;
+  width: 100%;
+  letter-spacing: 0.5px;
+  box-sizing: border-box;
+  font-size: 1rem;
+  &:hover {
+    color: black;
+    border: 1px solid black;
+  }
+}

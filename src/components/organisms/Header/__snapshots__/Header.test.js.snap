@@ -1,0 +1,252 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should test Header component 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <header>
+        <div
+          class="container nav_bar"
+        >
+          <div
+            class="nav_logo"
+          >
+            <a
+              href="/"
+            >
+              <picture>
+                <source
+                  media="(min-width:576px)"
+                  srcset="static/images/logo_2x.png"
+                />
+                <source
+                  media="(max-width:574px)"
+                  srcset="static/images/logo.png"
+                />
+                <img
+                  alt="Sabka Baazar Logo"
+                  class="header_logo"
+                  loading="lazy"
+                  src="static/images/logo.png"
+                />
+              </picture>
+            </a>
+          </div>
+          <nav
+            class="nav_menu"
+          >
+            <ul
+              class="side-links"
+            >
+              <li>
+                <a
+                  aria-label="Navigation link for home"
+                  href="/home"
+                >
+                  Home
+                </a>
+              </li>
+              <li>
+                <a
+                  aria-label="Navigation link for products"
+                  href="/products"
+                >
+                  Products
+                </a>
+              </li>
+            </ul>
+          </nav>
+          <div
+            class="side-nav"
+          >
+            <ul
+              class="top_links"
+            >
+              <li>
+                <a
+                  aria-label="Navigation link for login"
+                  href="/signin"
+                >
+                   
+                  SignIn
+                   
+                </a>
+              </li>
+              <li>
+                <a
+                  aria-label="Navigation link for register"
+                  href="/register"
+                >
+                   
+                  Register
+                   
+                </a>
+              </li>
+            </ul>
+            <div
+              class="nav_cart"
+            >
+              <img
+                alt="cart"
+                src="static/images/cart.svg"
+              />
+              <span>
+                0
+                 items
+              </span>
+            </div>
+          </div>
+        </div>
+      </header>
+    </div>
+  </body>,
+  "container": <div>
+    <header>
+      <div
+        class="container nav_bar"
+      >
+        <div
+          class="nav_logo"
+        >
+          <a
+            href="/"
+          >
+            <picture>
+              <source
+                media="(min-width:576px)"
+                srcset="static/images/logo_2x.png"
+              />
+              <source
+                media="(max-width:574px)"
+                srcset="static/images/logo.png"
+              />
+              <img
+                alt="Sabka Baazar Logo"
+                class="header_logo"
+                loading="lazy"
+                src="static/images/logo.png"
+              />
+            </picture>
+          </a>
+        </div>
+        <nav
+          class="nav_menu"
+        >
+          <ul
+            class="side-links"
+          >
+            <li>
+              <a
+                aria-label="Navigation link for home"
+                href="/home"
+              >
+                Home
+              </a>
+            </li>
+            <li>
+              <a
+                aria-label="Navigation link for products"
+                href="/products"
+              >
+                Products
+              </a>
+            </li>
+          </ul>
+        </nav>
+        <div
+          class="side-nav"
+        >
+          <ul
+            class="top_links"
+          >
+            <li>
+              <a
+                aria-label="Navigation link for login"
+                href="/signin"
+              >
+                 
+                SignIn
+                 
+              </a>
+            </li>
+            <li>
+              <a
+                aria-label="Navigation link for register"
+                href="/register"
+              >
+                 
+                Register
+                 
+              </a>
+            </li>
+          </ul>
+          <div
+            class="nav_cart"
+          >
+            <img
+              alt="cart"
+              src="static/images/cart.svg"
+            />
+            <span>
+              0
+               items
+            </span>
+          </div>
+        </div>
+      </div>
+    </header>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;

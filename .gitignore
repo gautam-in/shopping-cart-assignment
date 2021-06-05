@@ -35,7 +35,9 @@ build/Release
 # Dependency directories
 node_modules/
 jspm_packages/
-
+dist/
+__snapshots__/
+build/
 # TypeScript v1 declaration files
 typings/
 
@@ -59,3 +61,8 @@ typings/
 
 # next.js build output
 .next
+
+# package modules
+package-lock.json
+package-lock.json
+*.snap

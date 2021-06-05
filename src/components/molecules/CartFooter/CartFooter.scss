@@ -1,0 +1,25 @@
+.cart-footer-wrap {
+  padding: 2px 10px 10px 10px;
+  border-top: 1px solid #e3e4e4;
+  background-color: white;
+
+  p {
+    font-size: 1.3rem;
+    margin: 10px 0px;
+    text-align: center;
+    font-weight: 600;
+  }
+  .checkout-button {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 10px;
+    .arrow-checkout-icon {
+      padding-left: 7px;
+    }
+  }
+}
+@media only screen and (min-width: 576px) {
+  .cart-footer-wrap {
+    padding: 4px 16px;
+  }
+}

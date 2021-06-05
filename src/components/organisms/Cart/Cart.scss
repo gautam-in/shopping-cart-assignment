@@ -1,0 +1,74 @@
+@import '../../../variable.scss';
+.cart-container {
+  display: none;
+  height: calc(100vh - 107px);
+  z-index: 10;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  margin: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+  .cart-drawer-modal {
+    height: 100%;
+    position: relative;
+    padding: 0;
+    .modal-body {
+      padding: 10px 0px;
+      overflow: auto;
+      background-color: #f0f0f0;
+      .lowest-price {
+        padding: 4px 0 4px 10px;
+        background: white;
+        margin: 1rem;
+        justify-content: flex-start;
+        display: flex;
+        align-items: center;
+        img {
+          padding: 4px;
+          width: 81px;
+          height: auto;
+        }
+        span {
+          font-weight: 500;
+          margin-left: 18px;
+        }
+      }
+    }
+  }
+}
+
+.show-modal {
+  display: block;
+}
+
+@media only screen and (max-width: 574px) {
+  .modal-body {
+    padding-top: 1rem;
+    background: #eaeaea;
+  }
+
+  .cart-item-img {
+    width: 65px;
+    height: 50px;
+  }
+}
+
+@media only screen and (min-width: $tab) {
+  .cart-footer-wrap {
+    padding: 4px 16px;
+  }
+}
+
+@media only screen and (min-width: $desktop) {
+  .cart-container {
+    position: fixed;
+    z-index: 12;
+    height: 100vh;
+    .cart-drawer-modal {
+      height: calc(100vh - 76.67px);
+      left: 56%;
+      margin-top: 6.8rem;
+      width: 360px;
+    }
+  }
+}

@@ -1,0 +1,60 @@
+.empty-cart-drawer-header {
+  padding: 15px 10px 15px 15px;
+  background-color: #000;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  h3 {
+    align-self: center;
+  }
+  .close {
+    cursor: pointer;
+    background-color: #000;
+    display: flex;
+    align-items: center;
+    color: white;
+    font-size: 15px;
+    font-weight: 800;
+    text-decoration: none;
+    border: 1px solid transparent;
+    @media only screen and (max-width: 769px) {
+      display: none;
+    }
+  }
+}
+.cart-drawer-header-wrap {
+  padding: 15px 10px 15px 15px;
+  background-color: #000;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  h3 {
+    align-self: center;
+  }
+  .close {
+    cursor: pointer;
+    background-color: #000;
+    display: flex;
+    align-items: center;
+    color: white;
+    font-size: 15px;
+    font-weight: 800;
+    text-decoration: none;
+    border: 1px solid transparent;
+    @media only screen and (max-width: 769px) {
+      display: none;
+    }
+  }
+}
+
+@media only screen and (max-width: 574px) {
+  .cart-drawer-header-wrap {
+    padding: 15px 10px 15px 15px;
+    color: black;
+    background-color: white;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    justify-content: space-between;
+  }
+}
