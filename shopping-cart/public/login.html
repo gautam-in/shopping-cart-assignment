@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Cart</title>
+    <link  rel="stylesheet" href="../css/login.css">
+    <link  rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></link>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="../js/login.js"></script>
+</head>
+<body>
+  <div class="container-fluid header move">
+    <div class="row align-items-end">
+       <div class="col-6 col-sm-3 col-md-3 col-lg-3 p-0 logo">
+          <img src="../static/images/logo.png"/>
+       </div>
+       <div class="d-none d-sm-block col-sm-6 col-md-6 col-lg-7">
+        <p class="header-action-1">
+          <span class="" onclick="location.href = 'category.html'">Home</span>
+          <span class="" onclick="location.href = 'product.html'">Products</span>
+        </p>
+       </div>
+       <div class="col-6 col-sm-3 col-sm-3 col-md-3 col-lg-2 p-0">
+        <p class="header-action-2">
+          <span class="" onclick="location.href = 'login.html'">SignIn</span>
+          <span class="" onclick="location.href = 'register.html'">Register</span>
+        </p>
+        <p class="header-notification-icon" data-toggle="modal" data-target="#exampleModal" onclick="getCartItem()">
+          <span><i class="fa fa-shopping-cart"></i></span>
+          <span><span  class="total-item-count">0</span> items</span>
+        </p>
+      </div>
+    </div>
+  </div>
+    <div class="container-fluid login mt-0 mt-sm-5">
+      <div class="row">
+        <div class="col-sm-6 col-md-6 col-lg-6">
+         <h1>Login</h1>      
+         <p>Get access to your Orders,Wishlist and Recommendation </p>
+        </div>
+        <div class="col-sm-6 col-md-6 col-lg-4">
+            <form> 
+                <div class="form-group border-0">
+                  <input type="text" id="email" class="input-modify" id="formGroupExampleInput" placeholder="Email">
+                  <small id="email-alert" class="text-danger" style="display: none;">Enter valid email</small>
+                </div>
+                <div class="form-group">
+                  <input type="password" id="password" class="input-modify" id="formGroupExampleInput2" placeholder="Password">
+                  <small id="password-alert" class="text-danger" style="display: none;">Enter valid passord</small>
+                </div>
+                <div class="form-group">
+                   <button class="button-modify">Login</button>
+                </div> 
+              </form>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid footer move">
+      <div class="row" >
+        <div class="col-sm-12">
+         <p>  Copyright &copy; 2011-2018 Sabka Bazar Grocery Supplies Pvt Ltd</p>
+        </div>
+     </div>
+    </div>
+</body>
+</html>

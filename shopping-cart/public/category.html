@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Cart</title>
+    <link  rel="stylesheet" href="../css/category.css">
+    <link  rel="stylesheet" href="../css/common.css">
+    <link  rel="stylesheet" href="../css/modal.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></link>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="../js/category.js"></script>
+<script src="../js/cart.js"></script>
+
+    
+  
+</head>
+<body>
+    <div class="container-fluid header move">
+        <div class="row align-items-end">
+           <div class="col-6 col-sm-3 col-md-3 col-lg-3 p-0 logo">
+              <img src="../static/images/logo.png"/>
+           </div>
+           <div class="d-none d-sm-block col-sm-6 col-md-6 col-lg-7">
+            <p class="header-action-1">
+                <span class="" onclick="location.href = 'category.html'">Home</span>
+                <span class="" onclick="location.href = 'product.html'">Products</span>
+            </p>
+           </div>
+           <div class="col-6 col-sm-3 col-sm-3 col-md-3 col-lg-2 p-0">
+            <p class="header-action-2">
+                <span class="" onclick="location.href = 'login.html'">SignIn</span>
+                <span class="" onclick="location.href = 'register.html'">Register</span>
+            </p>
+            <span id="desktop-cart-icon">
+              <p class="header-notification-icon" onclick="getCartItem()" data-toggle="modal" data-target="#cart-modal">
+                <span><i class="fa fa-shopping-cart"></i></span>
+                <span><span  class="total-item-count">0</span> items</span>
+              </p>
+             </span>
+             <span id="non-desktop-cart-icon">
+              <p class="header-notification-icon" onclick="getCartItem()">
+                <span><i class="fa fa-shopping-cart"></i></span>
+                <span><span  class="total-item-count">0</span> items</span>
+              </p>
+          </div>
+        </div>
+      </div>
+    <div class="container-fluid move">
+        <div class="row">
+          <div class="col-12 p-0" >
+              <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators" id="carousel-indicator-list">
+
+                </ol>
+                <div class="carousel-inner" id="carousel-img-list">
+                
+                </div>
+              </div>
+          </div>
+        </div>
+        <div class="row mt-1" id="category-list">
+
+        </div>
+        <div class="row cart" id="cart-content" style="display: none;">
+          <div class="col-12"></div>
+          <div class="col-12 non-desktop-cart-header">
+            <h1>My Cart (<span  class="total-item-count">0</span>item)</h1>
+         </div>
+          <div class="col-12 non-desktop-cart-body p-0 mt-0">
+
+          </div>
+         <div class="col-12 non-desktop-cart-footer">
+          <span class="item-footer">
+            <div><p>Promocode can be applied on payment page</p></div>
+            <div>
+               <button class="button-modify">
+                 <span>Proceed to Checkout</span>
+                 <span><span class="grand-total"></span> &nbsp;<i class="fa fa-angle-right"></i></span>
+               </button>
+             </div>
+          </span>    
+          <span class="no-item-footer">
+            <div>
+              <button class="button-modify justify-content-center">
+                Start Shopping
+              </button> 
+         </div>
+          </span>
+         </div>
+         </div>
+    </div>
+    <div class="container-fluid move footer">
+        <div class="row">
+            <div class="col-12 ">
+             Copyright &copy; 2011-2018 Sabka Bazar Grocery Supplies Pvt Ltd
+            </div>
+         </div>
+    </div>
+    <!-- Modal -->
+<div class="modal fade" id="cart-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop="static">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalLabel">My Cart (<span class="total-item-count">0</span> item)</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body" id="cart-item-list">
+  
+        </div>
+        <div class="modal-footer d-block">
+          <span class="item-footer">
+            <div><p>Promocode can be applied on payment page</p></div>
+            <div>
+               <button class="button-modify">
+                 <span>Proceed to Checkout</span>
+                 <span><span class="grand-total"></span> &nbsp;<i class="fa fa-angle-right"></i></span>
+               </button>
+             </div>
+          </span>    
+          <span class="no-item-footer">
+            <div>
+              <button class="button-modify justify-content-center">
+                Start Shopping
+              </button> 
+         </div>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

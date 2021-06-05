@@ -1,0 +1,76 @@
+h1{
+  font-size: 2rem !important;
+}
+
+/* .logo img{
+    width:9rem;
+} */
+
+/* .notification-icon{
+    background-color: #e7e7e7;
+    padding:1rem 1.5rem;
+    color:#c0392b;
+    width:max-content;
+}
+
+
+.header{
+    border-bottom: 0.3rem solid #e7e7e7;
+} */
+
+.input-modify{
+  border : 0 !important;
+  outline: 0 !important;
+  border-bottom: 2px solid #bdb6b6 !important;
+  padding : 10px 0px !important;
+  margin-bottom: 15px !important;
+  width:100% !important;
+}
+
+.button-modify{
+  background:#c44569 !important;
+  color: white !important;
+  font-size: 15px !important ;
+  padding: 3px 20px !important;
+  border: 2px solid #c0392b !important;
+  display: block !important;
+  margin-top:10px !important;
+  width:100% !important;
+  cursor:pointer !important;
+}
+
+.footer{
+  background-color: #e7e7e7;
+}
+
+.footer p{
+  margin: 0;
+  padding: 0.4rem;
+}
+
+@media (min-width: 576px){
+ 
+}
+
+@media (min-width: 768px){
+/* .login{
+  width:70% !important;
+  margin:0 auto !important;
+} */
+
+}
+
+@media (min-width: 992px){
+  .login{
+    width:68% !important;
+    margin:0 auto !important;
+  }
+}
+
+@media (min-width: 1200px){
+
+}
+
+@media (min-width: 1400px){
+
+}
