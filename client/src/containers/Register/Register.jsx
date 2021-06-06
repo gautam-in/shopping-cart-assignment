@@ -98,7 +98,6 @@ export function Register(props) {
               <input
                 type="input"
                 className="formField"
-                placeholder="first_name"
                 name="first_name"
                 id="first_name"
                 onChange={handleChange}
@@ -113,7 +112,6 @@ export function Register(props) {
               <input
                 type="input"
                 className="formField"
-                placeholder="last_name"
                 name="last_name"
                 id="last_name"
                 onChange={handleChange}
@@ -128,7 +126,6 @@ export function Register(props) {
               <input
                 type="input"
                 className="formField"
-                placeholder="Email"
                 name="email"
                 id="email"
                 onChange={handleChange}
@@ -143,7 +140,6 @@ export function Register(props) {
               <input
                 type="password"
                 className="formField"
-                placeholder="Password"
                 name="password"
                 id="password"
                 onChange={handleChange}
@@ -158,7 +154,6 @@ export function Register(props) {
               <input
                 type="password"
                 className="formField"
-                placeholder="confirm_password"
                 name="confirm_password"
                 id="confirm_password"
                 onChange={handleChange}

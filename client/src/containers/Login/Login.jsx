@@ -96,7 +96,6 @@ export function Login(props) {
               <input
                 type="input"
                 className="formField"
-                placeholder="Email"
                 name="email"
                 id="email"
                 onChange={handleChange}
@@ -111,7 +110,6 @@ export function Login(props) {
               <input
                 type="password"
                 className="formField"
-                placeholder="Password"
                 name="password"
                 id="password"
                 onChange={handleChange}
