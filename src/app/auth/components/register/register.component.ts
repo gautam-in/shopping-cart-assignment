@@ -15,6 +15,8 @@ import {
 import { ConfirmedValidator } from 'src/app/shared/validator/match-password.validator';
 import * as AuthActions from '../../store/actions/auth.actions';
 import { AppState } from 'src/app/store/app.reducer';
+import { takeUntil } from 'rxjs/operators';
+import { Subject, Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-register',
@@ -24,6 +26,8 @@ import { AppState } from 'src/app/store/app.reducer';
 export class RegisterComponent implements OnInit {
   registerForm: FormGroup;
   isLoading!: boolean;
+  private storeSub!: Subscription;
+
   constructor(
     private fb: FormBuilder,
     private store: Store<AppState>,
@@ -46,15 +50,22 @@ export class RegisterComponent implements OnInit {
     );
   }
   ngOnInit() {
-    this.store.select('auth').subscribe((authState) => {
+    this.storeSub = this.store.select('auth').subscribe((authState) => {
       this.isLoading = authState.loading;
       if (authState.authError) {
         this.ngxToastrService.error(authState.authError);
+        this.store.dispatch(AuthActions.ClearError());
       }
     });
   }
   onSubmit() {
     this.store.dispatch(AuthActions.SignupStart(this.registerForm.value));
     this.registerForm.reset();
+  }
+
+  ngOnDestroy() {
+    if (this.storeSub) {
+      this.storeSub.unsubscribe();
+    }
   }
 }

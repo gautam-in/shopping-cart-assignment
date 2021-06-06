@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { ToastrService } from 'ngx-toastr';
+import { Subject, Subscription } from 'rxjs';
 import { AppState } from 'src/app/store/app.reducer';
 import * as AuthActions from '../../store/actions/auth.actions';
 
@@ -12,6 +13,8 @@ import * as AuthActions from '../../store/actions/auth.actions';
 })
 export class LoginComponent implements OnInit {
   isLoading!: boolean;
+  private storeSub!: Subscription;
+  destroyed$ = new Subject<boolean>();
   constructor(
     private ngxToastrService: ToastrService,
     private store: Store<AppState>
@@ -20,12 +23,22 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
     this.store.select('auth').subscribe((authState) => {
       this.isLoading = authState.loading;
-      if (authState.authError) this.ngxToastrService.error(authState.authError);
+      if (authState.authError) {
+        console.log('login');
+        this.ngxToastrService.error(authState.authError);
+        this.store.dispatch(AuthActions.ClearError());
+      }
     });
   }
 
   onSubmit(form: NgForm) {
     this.store.dispatch(AuthActions.LoginStart(form.value));
     form.reset();
+  }
+
+  ngOnDestroy() {
+    if (this.storeSub) {
+      this.storeSub.unsubscribe();
+    }
   }
 }

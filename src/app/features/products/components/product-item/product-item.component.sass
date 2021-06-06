@@ -51,3 +51,47 @@
                 border: none
                 &:hover
                     background: $pinkDart
+@media screen and (max-width: 768px)
+    .product
+        width: 50%
+        .container
+            font-size: 80%
+            .title
+                padding-bottom: 0
+        .sub-container
+            display: flex
+            img
+                width: 50%
+        .buy-now
+            width: 100%
+    .desktop, .mobile
+        display: none !important
+    .tablet
+        display: block
+
+@media only screen and (max-width: 480px)
+    .product
+        width: 100%
+    .desc
+        padding: 0!important
+        position: relative !important
+        background: transparent !important
+        p
+            background: #ccc!important
+            padding: 10px!important
+        .buy-now
+            width: 100%
+            background: #d00245
+            color: white
+            border: none
+            position: absolute
+            padding: 10px
+            display: flex
+            justify-content: inherit
+            bottom: 0
+
+    .tablet, .desktop
+        display: none !important
+
+    .mobile
+        display: block !important

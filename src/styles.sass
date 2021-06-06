@@ -20,6 +20,7 @@
 a
     padding: 0 10px
     text-decoration: none
+    cursor: pointer
     color: $black
 
 .slide
@@ -29,3 +30,37 @@ a
     padding: 0!important
     background: transparent !important
     box-shadow: none !important
+
+.mobile
+    display: none
+
+.tablet
+    display: none
+
+.desktop
+    display: block
+
+@media screen and (max-width: 768px)
+    .desktop, .mobile
+        display: none !important
+    .tablet
+        display: block!important
+@media only screen and (max-width: 480px)
+    .tablet, .desktop
+        display: none !important
+    .mobile
+        display: block !important
+    .desc
+        width: 100%
+        p
+            span
+                height: 3.6rem
+                overflow: hidden
+                position: absolute
+                width: calc(90% - 10px)
+                word-break: break-all
+    .left-section
+        float: left
+        width: 150px!important
+        img
+            width: 100%!important

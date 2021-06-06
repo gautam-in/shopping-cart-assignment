@@ -1,13 +1,23 @@
 <div *ngIf="product" class="product">
   <div class="container">
     <div class="title">{{ product.name }}</div>
-    <img [src]="'../../assets/' + product.imageURL" />
-    <div class="desc">
-      <p>{{ product.description }}</p>
+    <div class="sub-container">
+      <img [src]="'../../assets/' + product.imageURL" alt="product image" />
+      <div class="desc">
+        <p><span>{{ product.description }}</span></p>
+        <button (click)="addToCart(product)" class="buy-now tablet mobile">
+          Buy Now @ Rs.{{ product.price }}
+        </button>
+      </div>
     </div>
-    <div class="product-footer">
-      <div class="price">MRP Rs.{{ product.price }}</div>
-      <button (click)="addToCart(product)" class="buy-now">Buy Now</button>
+    <div class="product-footer tablet">
+      <div class="price desktop">MRP Rs.{{ product.price }}</div>
+      <button (click)="addToCart(product)" class="buy-now desktop">
+        Buy Now
+      </button>
+      <button (click)="addToCart(product)" class="buy-now tablet">
+        Buy Now @ Rs.{{ product.price }}
+      </button>
     </div>
   </div>
 </div>

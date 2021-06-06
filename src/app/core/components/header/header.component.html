@@ -9,11 +9,13 @@
         <a href="#" routerLink="authentication/register">Register</a>
       </div>
       <ng-template #loggedInUser>
-        <a>Welcome</a>
-        <a (click)="logout()">Logout</a>
+        <div class="auth-section">
+          <a>{{ user && user.firstName | titlecase }}</a>
+          <a (click)="logout()">Logout</a>
+        </div>
       </ng-template>
       <div class="menu">
-        <nav class="main-nav">
+        <nav class="main-nav tablet desktop">
           <ul>
             <li>
               <a

@@ -12,3 +12,24 @@ section
             width: 80%
             float: left
             background: $white
+
+@media screen and (max-width: 768px)
+    section
+        .row
+            .siderbar
+                width: 30%
+            .content
+                width: 70%
+    .desktop, .mobile
+        display: none !important
+@media only screen and (max-width: 480px)
+    section
+        .row
+            .siderbar
+                display: none
+            .content
+                width: 100%
+    .tablet, .desktop
+        display: none !important
+    .mobile
+        display: block !important
