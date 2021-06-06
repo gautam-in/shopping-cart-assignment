@@ -9,12 +9,8 @@ import { SharedModule } from './shared/shared.module';
 import { HttpClientModule } from '@angular/common/http';
 import { ProductListingModule } from './product-listing/product-listing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {
-  MatDialogModule,
-  MAT_DIALOG_DEFAULT_OPTIONS,
-} from '@angular/material/dialog';
+import { MatDialogModule } from '@angular/material/dialog';
 import { ProductCartModalComponent } from './product-cart-modal/product-cart-modal.component';
-import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [AppComponent, ProductCartModalComponent],
@@ -28,7 +24,6 @@ import { MatIconModule } from '@angular/material/icon';
     SharedModule,
     HttpClientModule,
     MatDialogModule,
-    MatIconModule,
     BrowserAnimationsModule,
   ],
 
