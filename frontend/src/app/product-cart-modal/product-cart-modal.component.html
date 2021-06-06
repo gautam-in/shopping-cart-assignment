@@ -1,0 +1,77 @@
+<div class="dialog">
+  <h1 mat-dialog-title class="dialog__header">My cart</h1>
+
+  <div mat-dialog-content class="dialog__content">
+    <ng-container *ngIf="cartItems.length !== 0; else emptyCart">
+      <div class="product" *ngFor="let item of cartItems">
+        <figure class="product__fig">
+          <img
+            class="product__img"
+            src="{{ './../../../assets/' + item?.imageURL }}"
+            alt="Product image"
+          />
+        </figure>
+
+        <div class="product__sub">
+          <span class="product__name">{{ item?.name }}</span>
+          <div class="product__btn">
+            <button
+              type="button"
+              class="product__increment"
+              (click)="increment(item)"
+            >
+              +
+            </button>
+            <span class="product__qty">{{ item?.count }}</span>
+            <button
+              type="button"
+              class="product__decrement"
+              (click)="decrement(item)"
+            >
+              -
+            </button>
+            <span class="product__price"> × Rs. {{ item?.price }}</span>
+          </div>
+        </div>
+
+        <span class="product__totalPrice"
+          >Rs.{{ item.totalPrice ? item.totalPrice : item.price }}</span
+        >
+      </div>
+
+      <section class="product__discount">
+        <figure class="discount__fig">
+          <img
+            class="discount__img"
+            src="{{ './../../../../assets/static/images/lowest-price.png"
+            alt="offer image"
+          />
+        </figure>
+        <span class="discount__text">You won't find it cheaper anywhere.</span>
+      </section>
+    </ng-container>
+    <ng-template #emptyCart>
+      <div class="empty__cart">
+        <p class="cart__p1">No items in your cart</p>
+        <p class="cart__p2">Your favourite items are just a click away</p>
+      </div>
+    </ng-template>
+  </div>
+</div>
+<div
+  mat-dialog-actions
+  class="product__btn"
+  *ngIf="cartItems.length !== 0; else startBtn"
+>
+  <p class="product__promocode">Promocode can be applied on payment page.</p>
+  <button class="btn__checkout" type="button">
+    <span class="checkout__text">Proceed to checkout</span
+    ><span class="mrp__text">MRP 1111</span>
+  </button>
+</div>
+
+<ng-template #startBtn>
+  <button class="startBtn__checkout" type="button">
+    <span class="startBtn__text"> Start shopping </span>
+  </button>
+</ng-template>

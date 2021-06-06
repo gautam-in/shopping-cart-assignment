@@ -1,0 +1,128 @@
+.dialog__header {
+  background-color: black;
+  padding: 10px;
+  font-size: 15px;
+  font-weight: bold;
+  color: white;
+}
+.product {
+  padding: 0;
+  margin: 32px 0 0 0;
+  background-color: whitesmoke;
+  display: flex;
+}
+
+.product__fig {
+  margin: 0;
+  .product__img {
+    width: 80px;
+    margin: 0;
+  }
+}
+
+.product__sub {
+  display: grid;
+  margin-left: 0;
+}
+.product__qty,
+.product__price {
+  margin: 7px;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.product__name {
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.product__increment,
+.product__decrement {
+  padding: 4px 6px;
+  color: white;
+  background-color: #c31b3a;
+  margin-left: 10px;
+  margin-right: 0;
+  border-color: #c31b3a;
+}
+
+.product__totalPrice {
+  margin-left: 40px;
+  margin-top: 38px;
+}
+
+.product__discount {
+  background-color: whitesmoke;
+  display: flex;
+  margin-top: 16px;
+  margin-left: 0;
+  margin-right: 0;
+}
+.discount__fig {
+  margin: 0;
+}
+.discount__text {
+  margin-top: 16px;
+}
+
+.discount__img {
+  margin: 0;
+}
+
+.product__btn {
+  margin-left: 0;
+  width: 100%;
+  background-color: whitesmoke;
+}
+.btn__checkout {
+  display: block;
+  margin-top: 2px;
+  height: 40px;
+  width: 100%;
+  background-color: #c31b3a;
+  color: white;
+  border-color: #c31b3a;
+}
+
+.product__promocode {
+  text-align: center;
+  margin-top: 0;
+  margin-left: 72px;
+}
+.checkout__text {
+  float: left;
+}
+.mrp__text {
+  float: right;
+}
+
+//else condition
+
+.empty__cart {
+  margin-top: 180px;
+}
+
+.cart__p1 {
+  margin-left: 120px;
+  font-weight: bold;
+  font-size: medium;
+}
+
+.cart__p2 {
+  margin-left: 60px;
+}
+
+//start shopping button
+
+.startBtn__checkout {
+  display: block;
+  margin-top: 30px;
+  height: 40px;
+  width: 85%;
+  background-color: #c31b3a;
+  color: white;
+  border-color: #c31b3a;
+}
+.startBtn__text {
+  text-align: center;
+}
