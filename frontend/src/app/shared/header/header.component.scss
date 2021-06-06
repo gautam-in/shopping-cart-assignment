@@ -1,7 +1,5 @@
 nav {
-  box-shadow: 0 12.5px 10px rgba(0, 0, 0, 0.03),
-    0 100px 80px rgba(0, 0, 0, 0.06);
-
+  box-shadow: 0 4px 6px -6px black;
   min-height: 60px;
   border-radius: 5px;
 }
@@ -13,35 +11,37 @@ nav {
   margin: 0;
 }
 
-.left-nav li {
+.nav__left {
+  float: left;
+  list-style: none;
+}
+.nav__left li {
   display: inline-block;
   margin: 20px 0 0 0;
 }
 
-.left-nav {
-  float: left;
-  list-style: none;
-}
-
-.right-nav li {
+.nav__right li {
   list-style: none;
   float: right;
-
   margin: 20px 0 0 0;
-  a {
-    margin: 10px;
-  }
 }
 
-.cart-nav li {
+.nav--margin {
+  margin: 10px;
+}
+
+.nav__cart li {
   list-style: none;
   float: right;
-  margin: 15px 0 0 0;
-  a {
-    margin: 10px;
-  }
-  img {
+  margin: 14px 28px 0 0;
+
+  .cart {
+    margin: 0;
     height: 28px;
-    float: right;
+    float: left;
+  }
+  .count {
+    margin: 4px;
+    float: left;
   }
 }

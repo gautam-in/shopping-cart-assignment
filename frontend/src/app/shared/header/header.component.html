@@ -1,22 +1,27 @@
-<nav>
+<nav class="nav">
   <img
     src="./../../../assets/static/images/logo.png"
     alt="website logo"
     class="logo"
   />
-  <ul class="left-nav">
-    <li><a routerLink="/home">Home</a></li>
-    <li><a routerLink="/products">Products</a></li>
+  <ul class="nav__left">
+    <li><a routerLink="/home" class="nav--margin">Home</a></li>
+    <li><a routerLink="/products" class="nav--margin">Products</a></li>
   </ul>
-  <ul class="right-nav">
-    <li><a routerLink="/login">Login</a></li>
-    <li><a routerLink="/register">Register</a></li>
+  <ul class="nav__right">
+    <li><a routerLink="/login" class="nav--margin">Login</a></li>
+    <li><a routerLink="/register" class="nav--margin">Register</a></li>
   </ul>
-  <ul class="cart-nav">
+  <ul class="nav__cart">
     <li>
-      <a routerLink="/cart">
-        <img src="./../../../assets/static/images/cart.svg" />
+      <a (click)="openCartModal()" class="nav--margin">
+        <img
+          class="cart"
+          src="./../../../assets/static/images/cart.svg"
+          alt="cart-icon"
+        />
       </a>
+      <span class="count">{{ productCount }} items</span>
     </li>
   </ul>
 </nav>
