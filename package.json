@@ -1,20 +1,16 @@
 {
   "name": "sabkabazar",
   "version": "0.0.0",
-  "engines": {
-    "node": "14.15.1",
-    "npm": "6.14.8"
-  },
   "scripts": {
     "ng": "ng",
-    "start": "node ./dist/sabkabazar/server/main.js",
-    "build": "ng build --prod",
-    "test:report": "ng test --code-coverage",
-    "watch": "ng build --watch --configuration development",
+    "dev": "ng serve",
     "test": "ng test",
+    "test:report": "ng test --code-coverage",
+    "lint": "ng lint",
+    "e2e": "ng e2e",
     "dev:ssr": "ng run sabkabazar:serve-ssr",
-    "serve:ssr": "node dist/sabkabazar/server/main.js",
-    "build:ssr": "ng build && ng run sabkabazar:server",
+    "start": "node dist/sabkabazar/server/main.js",
+    "build": "ng build --prod && ng run sabkabazar:server:production",
     "prerender": "ng run sabkabazar:prerender"
   },
   "private": true,
