@@ -8,5 +8,6 @@ export interface Product {
   sku: string;
   id: string;
   count?: number;
-  totalPrice?: number;
+  pricePerQty?: number;
+  totalAmount?: number; // total amount of product per quantity
 }
