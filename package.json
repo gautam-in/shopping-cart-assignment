@@ -7,8 +7,8 @@
   },
   "scripts": {
     "ng": "ng",
-    "start": "node ../../dist/sabkabazar/server/main.js",
-    "build": "ng build",
+    "start": "ng build && node ../../dist/sabkabazar/server/main.js",
+    "build": "ng build --prod && ng run sabkabazar",
     "test:report": "ng test --code-coverage",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
