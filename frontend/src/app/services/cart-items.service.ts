@@ -64,12 +64,12 @@ export class CartItemsService {
   }
 
   // calculate price per quantity of product
-  calculatePricePerQty(count, price) {
+  calculatePricePerQty(count, price): number {
     return count * price;
   }
 
   // Calculate total product amount per quantity(after incrementing the quantity)
-  getTotalPrice() {
+  getTotalPrice(): void {
     let amount = 0;
     this.cartProducts.forEach((element) => {
       amount += element.pricePerQty;
