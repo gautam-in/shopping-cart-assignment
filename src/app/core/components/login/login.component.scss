@@ -1,0 +1,49 @@
+.wrapper {
+    display: flex;
+    flex-direction: row;
+    padding-top: 6em;
+    .left {
+        padding-right: 3em;
+    }
+
+    .LoginRegText {
+        float: right;
+    }
+    .left,
+    .right {
+        width: 50%;
+    }
+    .action-btn {
+        margin-top: 2em;
+        display: block;
+        width: 100%;
+        max-width: 75%;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .wrapper {
+        padding-top: 4em;
+        flex-direction: column;
+        .left {
+            padding-right: 0em;
+            padding-bottom: 2.5em;
+        }
+        .LoginRegText {
+            float: left;
+            text-align: center;
+            width: 100%;
+        }
+        form {
+            max-width: 75%;
+            margin: 0 auto;
+        }
+        .left,
+        .right {
+            width: 100%;
+        }
+        .action-btn {
+            max-width: 100%;
+        }
+    }
+}

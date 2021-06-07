@@ -1,0 +1,39 @@
+@import "src/variables";
+footer {
+    padding-top: 1.5em;
+    // margin-top: 16px;
+    display: flex;
+    line-height: 1.25em;
+    background-color: $grey;
+    padding-bottom: 1.5em;
+    padding-left: 2em;
+    .copyright {
+        width: 100%;
+    }
+}
+.logout {
+    cursor: pointer;
+    margin: 0.3em;
+}
+.user-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+footer a {
+    display: flex;
+    align-items: center;
+}
+
+i.fa {
+    cursor: pointer;
+}
+@media screen and (max-width: 767px) {
+    footer {
+        padding-left: 1em;
+        .copyright {
+            padding: 0;
+        }
+    }
+}
