@@ -17,39 +17,41 @@
           (ngSubmit)="onSubmit(loginForm)"
         >
           <div class="form-group">
-            <mat-form-field class="mat-form-field">
-              <mat-label aria-label="Email Label">Email</mat-label>
+            <div class="floating-label">
               <input
-                matInput
+                class="floating-input"
+                type="text"
+                placeholder=" "
                 required
                 name="email"
                 aria-label="Email Input field"
                 email
                 ngModel
-                placeholder="test@test.com"
               />
-            </mat-form-field>
-          </div>
-          <div class="form-group">
-            <mat-form-field class="mat-form-field">
-              <mat-label aria-label="password label">Password</mat-label>
+              <span class="highlight"></span>
+              <label for="password" aria-label="password label">Email</label>
+            </div>
+            <div class="floating-label">
               <input
-                matInput
+                class="floating-input"
+                placeholder=" "
                 required
+                ngModel
+                minlength="8"
                 aria-label="Password input field"
                 type="password"
                 name="password"
-                ngModel
-                placeholder="Must be atleast 8 char"
               />
-            </mat-form-field>
+              <span class="highlight"></span>
+              <label for="password" aria-label="password label">Password</label>
+            </div>
+            <input
+              aria-label="Submit Login Form"
+              [disabled]="!loginForm.valid"
+              type="submit"
+              value="Login"
+            />
           </div>
-          <input
-            aria-label="Submit Login Form"
-            [disabled]="!loginForm.valid"
-            type="submit"
-            value="Login"
-          />
         </form>
       </div>
     </div>

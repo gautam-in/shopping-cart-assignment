@@ -13,7 +13,6 @@ import * as AuthActions from '../../store/actions/auth.actions';
 })
 export class LoginComponent implements OnInit {
   private storeSub!: Subscription;
-  @ViewChild('loginForm') loginForm!: ElementRef;
   destroyed$ = new Subject<boolean>();
   constructor(
     private ngxToastrService: ToastrService,
@@ -24,6 +23,7 @@ export class LoginComponent implements OnInit {
     this.storeSub = this.store.select('auth').subscribe((authState) => {
       if (authState.authError) {
         this.ngxToastrService.error(authState.authError);
+        this.store.dispatch(AuthActions.ClearError());
       }
     });
   }

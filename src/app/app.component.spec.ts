@@ -1,9 +1,7 @@
 import { HttpClientModule } from '@angular/common/http';
 import { TestBed } from '@angular/core/testing';
-import { MatInputModule } from '@angular/material/input';
 import { RouterTestingModule } from '@angular/router/testing';
 import { StoreModule } from '@ngrx/store';
-import { SliderModule } from 'ngx-slider';
 import { ToastrModule } from 'ngx-toastr';
 import {
   NgxUiLoaderHttpModule,
@@ -12,7 +10,7 @@ import {
 } from 'ngx-ui-loader';
 import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
-import { cartReducer } from './core/store/reducer/cart.reducer';
+import { cartReducer } from './features/cart/store/reducer/cart.reducer';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
@@ -28,9 +26,7 @@ describe('AppComponent', () => {
         NgxUiLoaderHttpModule,
         StoreModule.forRoot({ cartList: cartReducer }),
       ],
-      declarations: [
-        AppComponent
-      ],
+      declarations: [AppComponent],
     }).compileComponents();
   });
 

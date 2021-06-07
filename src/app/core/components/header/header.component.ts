@@ -26,9 +26,11 @@ export class HeaderComponent implements OnInit, OnDestroy {
         this.user = user;
         this.isAuthenticated = !!user;
       });
-    this.store.select('cartList').subscribe((cartList) => {
-      this.cartItem = cartList.cart.length;
-    });
+    this.storeSub.add(
+      this.store.select('cartList').subscribe((cartList) => {
+        this.cartItem = cartList.cart.length;
+      })
+    );
   }
 
   closeCart() {

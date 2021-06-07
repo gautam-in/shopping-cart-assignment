@@ -7,16 +7,10 @@ import {
 } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { ToastrService } from 'ngx-toastr';
-import { NgxUiLoaderService } from 'ngx-ui-loader';
-import {
-  USER_EXISTS,
-  USER_REGISTERED,
-} from 'src/app/constants/messages.constant';
 import { ConfirmedValidator } from 'src/app/shared/validator/match-password.validator';
 import * as AuthActions from '../../store/actions/auth.actions';
 import { AppState } from 'src/app/store/app.reducer';
-import { takeUntil } from 'rxjs/operators';
-import { Subject, Subscription } from 'rxjs';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-register',

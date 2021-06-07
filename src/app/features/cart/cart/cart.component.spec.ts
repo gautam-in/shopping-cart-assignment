@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { StoreModule } from '@ngrx/store';
-import { cartReducer } from '../store/cart.reducer';
+import { cartReducer } from '../store/reducer/cart.reducer';
 
 import { CartComponent } from './cart.component';
 
