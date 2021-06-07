@@ -1,0 +1,25 @@
+<mat-card class="product" *ngFor="let product of allProducts">
+  <mat-card-header class="product__header">
+    <mat-card-subtitle class="product__subtitle">{{
+      product?.name
+    }}</mat-card-subtitle>
+  </mat-card-header>
+
+  <img
+    mat-card-image
+    src="{{ './../../../assets/' + product?.imageURL }}"
+    alt="Product image"
+  />
+  <mat-card-content class="product__content">
+    <p class="product__desc">
+      {{ product?.description | slice: 0:100
+      }}{{ product.description.length > 100 ? "..." : "" }}
+    </p>
+  </mat-card-content>
+  <div mat-card-actions class="btn">
+    <button class="btn__price" mat-button>MRP Rs.{{ product?.price }}</button>
+    <button class="btn__buy" mat-raised-button (click)="buyProduct(product)">
+      Buy Now
+    </button>
+  </div>
+</mat-card>

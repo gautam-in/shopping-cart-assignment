@@ -1,0 +1,47 @@
+nav {
+  box-shadow: 0 4px 6px -6px black;
+  min-height: 60px;
+  border-radius: 5px;
+}
+
+.logo {
+  height: 50px;
+  width: 100px;
+  float: left;
+  margin: 0;
+}
+
+.nav__left {
+  float: left;
+  list-style: none;
+}
+.nav__left li {
+  display: inline-block;
+  margin: 20px 0 0 0;
+}
+
+.nav__right li {
+  list-style: none;
+  float: right;
+  margin: 20px 0 0 0;
+}
+
+.nav--margin {
+  margin: 10px;
+}
+
+.nav__cart li {
+  list-style: none;
+  float: right;
+  margin: 14px 28px 0 0;
+
+  .cart {
+    margin: 0;
+    height: 28px;
+    float: left;
+  }
+  .count {
+    margin: 4px;
+    float: left;
+  }
+}

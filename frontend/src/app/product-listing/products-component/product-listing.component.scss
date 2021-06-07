@@ -1,0 +1,23 @@
+@import "./../../../styles/variable";
+.sidenav {
+  position: absolute;
+  top: 80px;
+  bottom: 0;
+  left: 22px;
+  right: 10px;
+  background-color: whitesmoke;
+  margin-left: 20px;
+}
+.sidenav__bar {
+  width: 18%;
+  margin: 0;
+  background-color: lightgray;
+}
+.navlist {
+  margin: 0;
+  width: 120%;
+  border-bottom: 1px solid rgb(192, 192, 192);
+}
+.sidenav__content {
+  margin-left: 10px;
+}

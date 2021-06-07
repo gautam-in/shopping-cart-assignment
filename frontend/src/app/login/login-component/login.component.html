@@ -1,0 +1,54 @@
+<app-header></app-header>
+<section class="block">
+  <div class="block__text">
+    <p class="block__header block--size-bold">Login</p>
+    <p class="block__desc">
+      Get access to your Orders, Wishlist and Recommendations.
+    </p>
+  </div>
+  <div class="form">
+    <form
+      [formGroup]="loginForm"
+      (ngSubmit)="onSubmit()"
+      name="login-form"
+      class="form__layout"
+    >
+      <label for="email" class="form__label"> Email </label>
+      <input type="email" formControlName="email" class="form__input" />
+      <div
+        *ngIf="
+          formControl.email.invalid &&
+          (formControl.email.dirty || formControl.email.touched)
+        "
+      >
+        <div *ngIf="formControl.email.errors?.required" class="has-error">
+          Email is required.
+        </div>
+      </div>
+
+      <label for="password" class="form__label"> Password </label>
+      <input
+        type="password"
+        formControlName="password"
+        name="password"
+        class="form__input"
+      />
+      <div
+        *ngIf="
+          formControl.password.invalid &&
+          (formControl.password.dirty || formControl.password.touched)
+        "
+      >
+        <div *ngIf="formControl.password.errors?.required" class="has-error">
+          Password is required.
+        </div>
+      </div>
+
+      <button [disabled]="loginForm.invalid" type="submit" class="btn__submit">
+        Login
+      </button>
+    </form>
+  </div>
+</section>
+
+<app-footer></app-footer>

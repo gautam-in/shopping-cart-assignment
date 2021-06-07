@@ -1,0 +1,125 @@
+<app-header></app-header>
+
+<section class="block">
+  <div class="block__text">
+    <p class="block__header block--size-bold">Signup</p>
+    <p class="block__desc">
+      We do not share your personal details with anyone.
+    </p>
+  </div>
+
+  <div class="form">
+    <form class="form__layout" [formGroup]="registerForm" name="register-form">
+      <label for="fName" class="form__label"> First Name</label>
+      <input
+        type="text"
+        formControlName="fName"
+        name="fName"
+        class="form__input"
+      />
+
+      <div
+        *ngIf="
+          formControl.fName.invalid &&
+          (formControl.fName.dirty || formControl.fName.touched)
+        "
+      >
+        <p *ngIf="formControl.fName.errors?.required" class="has-error">
+          First name is required.
+        </p>
+      </div>
+      <label for="lName" class="form__label"> Last Name</label>
+      <input
+        type="text"
+        formControlName="lName"
+        name="lName"
+        class="form__input"
+      />
+      <div
+        *ngIf="
+          formControl.lName.invalid &&
+          (formControl.lName.dirty || formControl.lName.touched)
+        "
+      >
+        <div *ngIf="formControl.lName.errors?.required" class="has-error">
+          Last name is required.
+        </div>
+      </div>
+
+      <label for="email" class="form__label"> Email</label>
+      <input
+        type="email"
+        formControlName="email"
+        name="email"
+        class="form__input"
+      />
+      <div
+        *ngIf="
+          formControl.email.invalid &&
+          (formControl.email.dirty || formControl.email.touched)
+        "
+      >
+        <div *ngIf="formControl.email.errors?.required" class="has-error">
+          Email is required.
+        </div>
+      </div>
+
+      <label for="password" class="form__label"> Password </label>
+      <input
+        type="password"
+        formControlName="password"
+        name="password"
+        class="form__input"
+      />
+      <div
+        *ngIf="
+          formControl.password.invalid &&
+          (formControl.password.dirty || formControl.password.touched)
+        "
+      >
+        <div *ngIf="formControl.password.errors?.required" class="has-error">
+          Password is required.
+        </div>
+      </div>
+
+      <label for="cPassword" class="form__label"> Confirm Password</label>
+      <input
+        type="password"
+        formControlName="confirmPassword"
+        name="cPassword"
+        class="form__input"
+      />
+      <div
+        *ngIf="
+          formControl.confirmPassword.invalid &&
+          (formControl.confirmPassword.dirty ||
+            formControl.confirmPassword.touched)
+        "
+      >
+        <div
+          *ngIf="formControl.confirmPassword.errors?.required"
+          class="has-error"
+        >
+          Confirm Password is required.
+        </div>
+        <div
+          *ngIf="formControl.confirmPassword.errors?.mustMatch"
+          class="has-error"
+        >
+          Passwords must match
+        </div>
+      </div>
+
+      <button
+        type="submit"
+        [disabled]="registerForm.invalid"
+        (click)="onSubmit()"
+        class="btn__submit"
+      >
+        Register
+      </button>
+    </form>
+  </div>
+</section>
+
+<app-footer></app-footer>

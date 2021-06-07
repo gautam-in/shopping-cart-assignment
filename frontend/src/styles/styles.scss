@@ -1,0 +1,93 @@
+/* You can add global styles to this file, and also import other style files */
+
+//npm package for carousel
+@import "~ngx-owl-carousel-o/lib/styles/scss/owl.carousel";
+@import "~ngx-owl-carousel-o/lib/styles/scss/owl.theme.default";
+// below import is required for mat-dialog pop up -don't not remove
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+* {
+  margin: 0 30px;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 14px;
+  font-weight: 300;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+body {
+  margin: 0;
+}
+
+// Overriden owl-carousel styles
+.owl-carousel {
+  display: none;
+  width: 100% !important;
+  height: 60% !important;
+  margin: 0;
+  padding: 0;
+}
+.owl-stage {
+  display: inline-flex;
+  width: auto;
+}
+.owl-stage-outer {
+  height: 190px;
+  background-color: whitesmoke;
+}
+
+.owl-item img {
+  height: 173px;
+  width: 260px;
+  margin-top: 0 !important;
+}
+
+.owl-dots {
+  margin: 0 !important;
+}
+
+//mat-sidenav
+
+//removed scrollbar
+.mat-drawer-inner-container::-webkit-scrollbar {
+  display: none !important;
+}
+
+.mat-drawer-inner-container {
+  margin: 0 !important;
+  text-align: left !important;
+}
+
+.mat-list-base {
+  display: contents !important;
+}
+
+.mat-card-image {
+  width: 75% !important;
+  margin: 0 25px 0 !important;
+}
+
+// mat-dialog
+
+.mat-dialog-container {
+  padding: 0 !important;
+}
+
+mat-h1,
+.mat-headline,
+.mat-typography h1 {
+  margin: -20px -30px !important;
+}
+
+.cdk-overlay-dark-backdrop {
+  margin-left: 0 !important;
+}
+
+.mat-card {
+  background: none !important;
+}
+
+.mat-dialog-content {
+  padding: 0 !important;
+  min-height: 428px !important;
+}

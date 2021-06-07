@@ -1,0 +1,25 @@
+<app-header></app-header>
+
+<mat-sidenav-container class="sidenav">
+  <mat-sidenav
+    mode="side"
+    opened
+    class="sidenav__bar"
+    [fixedInViewport]="options.value.fixed"
+    [fixedTopGap]="options.value.top"
+    [fixedBottomGap]="options.value.bottom"
+  >
+    <mat-nav-list *ngFor="let category of allCategories">
+      <a
+        class="navlist"
+        mat-list-item
+        (click)="sendSelectedProducts(category.id)"
+        >{{ category?.name }}</a
+      >
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content class="sidenav__content">
+    <app-product-card [allProducts]="allProducts"></app-product-card>
+  </mat-sidenav-content>
+</mat-sidenav-container>
