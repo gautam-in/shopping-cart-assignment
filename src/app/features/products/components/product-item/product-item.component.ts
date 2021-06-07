@@ -11,7 +11,9 @@ import { AppState } from 'src/app/store/app.reducer';
 })
 export class ProductItemComponent {
   @Input() product!: IProduct;
+
   constructor(private store: Store<AppState>) {}
+
   addToCart(item: IProduct) {
     const cartItem = {
       product: item,

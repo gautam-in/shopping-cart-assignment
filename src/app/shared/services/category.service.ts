@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { environment } from 'src/environments/environment';
 import { ICategory } from '../models/category.model';
 
 @Injectable({
@@ -9,8 +10,6 @@ export class CategoryService {
   constructor(private httpClient: HttpClient) {}
 
   getAllCategories() {
-    return this.httpClient.get<ICategory[]>(
-      '../../assets/server/categories/index.get.json'
-    );
+    return this.httpClient.get<ICategory[]>(environment.url.categories);
   }
 }

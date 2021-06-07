@@ -20,16 +20,19 @@ section
                 width: 30%
             .content
                 width: 70%
-    .desktop, .mobile
-        display: none !important
 @media only screen and (max-width: 480px)
     section
         .row
-            .siderbar
-                display: none
             .content
                 width: 100%
-    .tablet, .desktop
-        display: none !important
-    .mobile
-        display: block !important
+
+    .sidebar.mobile
+        width: 100%
+        select
+            width: 100%
+            background: $pinkDart
+            color: $white
+            padding: 10px
+            option
+                background: $white
+                color: $pinkDart

@@ -31,7 +31,6 @@ import { effects } from './store/app.effects';
     NgxUiLoaderHttpModule, // shows loader for each http request.
     StoreModule.forRoot(appReducer),
     EffectsModule.forRoot(effects),
-    HomeModule, // initial page module
   ],
   providers: [],
   bootstrap: [AppComponent],

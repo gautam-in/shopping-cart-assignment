@@ -5,7 +5,7 @@
       <img [src]="'../../assets/' + product.imageURL" alt="product image" />
       <div class="desc">
         <p><span>{{ product.description }}</span></p>
-        <button (click)="addToCart(product)" class="buy-now tablet mobile">
+        <button (click)="addToCart(product)" class="buy-now mobile">
           Buy Now @ Rs.{{ product.price }}
         </button>
       </div>

@@ -25,6 +25,7 @@ export class HomeComponent implements OnInit {
       .subscribe((categories: ICategory[]) => {
         this.categories = categories.filter((item: any) => item.enabled);
       });
+
     this.homeService.getAllBanners().subscribe((banners) => {
       this.slider = new Slider();
       this.slider.config.loop = true;

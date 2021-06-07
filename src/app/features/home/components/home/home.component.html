@@ -14,7 +14,7 @@
         [class.reverse]="i % 2 !== 0"
       >
         <div *ngIf="item.imageUrl" class="image-section">
-          <img [src]="'../../assets' + item.imageUrl" />
+          <img [src]="'../../assets' + item.imageUrl" alt="product merge" />
         </div>
         <div class="content-section">
           <h1>{{ item.name }}</h1>

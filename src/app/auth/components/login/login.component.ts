@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { ToastrService } from 'ngx-toastr';
@@ -12,8 +12,8 @@ import * as AuthActions from '../../store/actions/auth.actions';
   styleUrls: ['./login.component.sass'],
 })
 export class LoginComponent implements OnInit {
-  isLoading!: boolean;
   private storeSub!: Subscription;
+  @ViewChild('loginForm') loginForm!: ElementRef;
   destroyed$ = new Subject<boolean>();
   constructor(
     private ngxToastrService: ToastrService,
@@ -21,12 +21,9 @@ export class LoginComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.store.select('auth').subscribe((authState) => {
-      this.isLoading = authState.loading;
+    this.storeSub = this.store.select('auth').subscribe((authState) => {
       if (authState.authError) {
-        console.log('login');
         this.ngxToastrService.error(authState.authError);
-        this.store.dispatch(AuthActions.ClearError());
       }
     });
   }

@@ -23,14 +23,14 @@
           />
         </div>
         <div class="right-section">
-          <h4>{{ item.product.name }}</h4>
+          <h4>{{ item?.product?.name }}</h4>
           <div class="detail">
             <div class="quantity">
               <span (click)="minusQuantity(item)" class="minus circle">-</span>
-              <span class="count">{{ item.quantity }}</span>
+              <span class="count">{{ item?.quantity }}</span>
               <span (click)="plusQuantity(item)" class="circle">+</span>
               <span class="multiplier"> x </span>
-              <span class="per-piece-price">Rs.{{ item.product.price }}</span>
+              <span class="per-piece-price">Rs.{{ item?.product?.price }}</span>
             </div>
             <h3 class="total">Rs.{{ item.product.price * item.quantity }}</h3>
           </div>

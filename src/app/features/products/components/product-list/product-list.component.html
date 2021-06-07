@@ -1,7 +1,15 @@
 <section>
   <div class="row">
-    <div class="siderbar">
+    <div class="siderbar tablet desktop">
       <app-sidebar [categories]="categories"></app-sidebar>
+    </div>
+    <div class="sidebar mobile">
+      <select [ngModel]="defaultCategory" (change)="onCategoryChange($event)">
+        <option value="">Select Category</option>
+        <option [value]="category.id" *ngFor="let category of categories">
+          {{ category.name }}
+        </option>
+      </select>
     </div>
     <div class="content">
       <app-product-item
