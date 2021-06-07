@@ -1,4 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ReactiveFormsModule } from '@angular/forms';
+import { Store, StoreModule } from '@ngrx/store';
+import { ToastrModule } from 'ngx-toastr';
+import { appReducer } from 'src/app/store/app.reducer';
 
 import { RegisterComponent } from './register.component';
 
@@ -8,9 +12,13 @@ describe('RegisterComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ RegisterComponent ]
-    })
-    .compileComponents();
+      declarations: [RegisterComponent],
+      imports: [
+        ReactiveFormsModule,
+        ToastrModule.forRoot(),
+        StoreModule.forRoot(appReducer),
+      ],
+    }).compileComponents();
   });
 
   beforeEach(() => {
