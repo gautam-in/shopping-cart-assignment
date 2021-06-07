@@ -19,8 +19,7 @@ export class ProductCartModalComponent implements OnInit {
     this.getCartItems();
   }
 
-  getCartItems() {
-    console.log('product retrieved');
+  getCartItems(): void {
     this.cartItems = this.miniCart.getCartList();
 
     // calculate total amount before incrementing the quantity of any product
