@@ -1,20 +1,19 @@
 import { Injectable } from '@angular/core';
-import { Observable, Subject } from 'rxjs';
+import { BehaviorSubject, Observable,  } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Banners } from '../models/Banners';
-import { Categories } from '../models/Categories';
+import { Category } from '../models/Category';
 import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
-export class HomeServiceService {
+export class HomeService {
 
   constructor(private httpClient: HttpClient) { }
-  apiURL: string = environment.apiUrl;
-  bannerUrl: string = `${this.apiURL}/banners`;
-  categoriesUrl: string = `${this.apiURL}/categories`;
-  categoryId = new Subject<string>();
+  bannerUrl: string = `${environment.apiUrl}/banners`;
+  categoriesUrl: string = `${environment.apiUrl}/categories`;
+  categoryId = new BehaviorSubject<any>(null);
   setCategoryId(value: string) {
     this.categoryId.next(value);
   }
@@ -22,8 +21,8 @@ export class HomeServiceService {
     return this.httpClient.get<Banners[]>(this.bannerUrl)
       .pipe(response => response);
   }
-  getCategories(): Observable<Categories[]> {
-    return this.httpClient.get<Categories[]>(this.categoriesUrl)
+  getCategories(): Observable<Category[]> {
+    return this.httpClient.get<Category[]>(this.categoriesUrl)
       .pipe(response => response);
   }
 }

@@ -1,9 +1,10 @@
-import { Component, HostListener, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Categories } from 'src/Shared/models/Categories';
-import { Products } from 'src/Shared/models/Products';
-import { HomeServiceService } from 'src/Shared/services/home-service.service';
-import { ProductsListingServiceService } from 'src/Shared/services/products-listing-service.service';
+import { Category } from 'src/Shared/models/Category';
+import { Product } from 'src/Shared/models/Product';
+import { HomeService } from 'src/Shared/services/home.service';
+import { LoginService } from 'src/Shared/services/login.service';
+import { ProductsListingService } from 'src/Shared/services/products-listing.service';
 
 @Component({
   selector: 'app-products-listing-page',
@@ -12,72 +13,40 @@ import { ProductsListingServiceService } from 'src/Shared/services/products-list
 })
 export class ProductsListingPageComponent implements OnInit {
 
-  constructor(private productSListingService: ProductsListingServiceService, private router: Router, private homeService: HomeServiceService) {
+  constructor(private loginService: LoginService, private productSListingService: ProductsListingService,
+    private router: Router, private homeService: HomeService) {
   }
-  categoriesData: Categories[] = [];
-  productsList: Products[] = [];
-  productsListCopy: Products[] = [];
+  categoriesData: Category[] = [];
+  productsList: Product[] = [];
   currWinSize: any = window.innerWidth;
-  isDesktop: boolean = this.currWinSize > 1024;
-  isMobile: boolean = this.currWinSize < 768;
   currCategory: any = null;
+  isLoggedIn: boolean = false;
   ngOnInit(): void {
-    if (sessionStorage.getItem('isLoggedIn') && sessionStorage.getItem('isLoggedIn') == 'true') {
-      this.homeService.categoryId.subscribe((response) => {
-        this.currCategory = response;
-        console.log(this.currCategory);
-        
-         this.filterProducts(this.currCategory);
-      });
-      this.getData();
-    }
-    else
-      this.router.navigate(['login']);
+    this.loginService.checkLoggedIn().subscribe((response) => {
+      this.isLoggedIn = response;
+      if (this.isLoggedIn) {
+        this.homeService.categoryId.subscribe((response) => {
+          this.currCategory = response;
+          this.getData();
+        });
+      }
+      else {
+        this.router.navigate(['login']);
+      }
+    });
   }
   getData() {
     this.productSListingService.getCategories().subscribe((response) => {
       this.categoriesData = response;
-    }, (errorResponse) => {
-      console.log(errorResponse);
     });
     this.productSListingService.getProducts().subscribe((response) => {
       this.productsList = response;
-      this.productsListCopy=response;
-    }, (errorResponse) => {
-      console.log(errorResponse);
     });
   }
-  @HostListener('window:resize', ['$event'])
-  onResize(event: any) {
-    this.isDesktop = event.target.innerWidth > 1024;
-    this.isMobile = event.target.innerWidth < 768;
+  onSelectionChange(categoryId: any) {
+    this.currCategory = this.currCategory === categoryId ? null : categoryId;
   }
-  onSelectionChange(categoryId: string) {
-     this.filterProducts(categoryId);
-  }
-
   onCheckboxChange(categoryId: string) {
-     this.currCategory = this.currCategory === categoryId ? null : categoryId;
-     this.filterProducts(this.currCategory);
+    this.currCategory = this.currCategory === categoryId ? null : categoryId;
   }
-  private filterProducts(categoryId: string) {
-    console.log(categoryId);
-    if (categoryId) {
-      setTimeout(()=>{
-      this.categoriesData.forEach((category, idx) => {
-        if (category.id !== categoryId) {
-          category.checked = false;
-        } else {
-          category.checked = true;
-        }
-      });
-      this.productsList = [
-        ...this.productsListCopy.filter((item) => item.category === categoryId),
-      ];
-    },100) }else {
-      this.categoriesData.forEach((category) => (category.checked = false));
-      this.productsList = [...this.productsListCopy];
-    }
-  }
-
 }

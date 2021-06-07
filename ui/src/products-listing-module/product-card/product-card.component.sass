@@ -1,19 +1,11 @@
-.product-buy
-    display: flex
-    align-items: center
-    justify-content: space-between
 
 button.btn
     flex: 1
-    width: auto
-    height: 3em
     line-height: 18px
     background-color: #F44669
     font-weight: bold
     color: white
-
-.product-card-cost
-    font-weight: 600
+    margin-left: 10px
 
 .product-card-cont
     flex: 1 1 60px
@@ -31,30 +23,6 @@ button.btn
 h2.product-card-title
     font-size: 16px
     overflow: hidden
-
-@media (min-width: 1024px)
-    .product-card-cont
-        display: flex
-        flex-direction: column
-
-@media (max-width: 767px)
-    h2.product-card-title
-        grid-column: 1 / span 2
-        text-align: left
-    .product-card-cont
-        grid-template-columns: 1fr 1.5fr
-        grid-template-rows: 60px 80px 50px
-        display: grid
-        grid-row: 2 / span 2
-
-@media (max-width: 767px)
-    img.product-card-img
-        grid-row: 2 / span 2
-
 .product-card-cont > *
     flex: 1 1 60px
     margin-bottom: 5px
-
-@media (min-width: 1024px)
-    .product-buy button.btn
-        flex: 0 0 50%

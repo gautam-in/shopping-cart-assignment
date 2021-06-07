@@ -1,9 +1,3 @@
-.wrapper
-    display: flex
-    flex-direction: row
-    width: 100%
-    padding: 0
-    margin-top: -25px
 
 .product-list-container
     width: 80%
@@ -12,23 +6,15 @@
     background-color: #d00155
     color: #fff
 
-@media (max-width: 767px)
-    .product-list-container
-        width: 100%
-
 .product-list-container-block
+    display: flex
+    flex-wrap: wrap
     text-align: center
-    display: grid
-    grid-template-columns: 1fr
-    grid-gap: 1em
-
-@media (min-width: 1024px)
-    .product-list-container-block
-        grid-template-columns: 1fr 1fr 1fr 1fr
-
-@media (max-width: 767px)
-    .wrapper
-        flex-direction: column
+    flex-direction: row
+    width: 100%
+.product-list-container-block::after
+    content: ''
+    flex: auto
 
 .product-card-element
     background-color: white
@@ -36,13 +22,6 @@
     padding: 8px
     display: inline-block
     border-bottom: 3px dotted #d8d8d8
-
-.sidebar
-    width: 20%
-    flex: 1 0 170px
-    margin-right: 10px
-    background-color: #f5f5f5
-
 
 .sidebar > .filter-form
     display: flex
@@ -53,17 +32,9 @@ a,a:hover,a:focus
     text-decoration: none
     color: black
 
-
-.sidebar > label 
+.sidebar > label
     cursor: pointer
     position: static
-
-@media (max-width: 767px)
-    .sidebar
-        width: 100%
-        flex: none
-        margin-right: 0
-        background-color: #f5f5f5
 
 .input-container:focus-within
     outline: 2px solid limegreen

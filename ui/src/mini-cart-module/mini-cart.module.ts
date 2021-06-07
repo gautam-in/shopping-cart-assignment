@@ -15,6 +15,6 @@ import { MiniCartModuleComponent } from './mini-cart-module.component';
     CommonModule,
     MiniCartModuleRoutingModule
   ],
-  exports:[MiniCartPageComponent]
+  exports: [MiniCartPageComponent]
 })
-export class MiniCartModuleModule { }
+export class MiniCartModule { }

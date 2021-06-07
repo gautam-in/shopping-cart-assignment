@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Products } from 'src/Shared/models/Products';
+import { Product } from 'src/Shared/models/Product';
 import { CartService } from 'src/Shared/services/cart.service';
 
 @Component({
@@ -9,12 +9,20 @@ import { CartService } from 'src/Shared/services/cart.service';
 })
 export class ProductCardComponent implements OnInit {
 
-  constructor(private cartService:CartService) { }
-  @Input() product: Products = {id:'0'};
-  @Input() isDesktop: boolean = false;
+  constructor(private cartService: CartService) { }
+  @Input() product: Product = {
+    name: '',
+    imageURL: '',
+    description: '',
+    price: 0,
+    stock: 0,
+    category: '',
+    sku: '',
+    id: ''
+  };
   ngOnInit(): void {
   }
-  addItemToCart(id: string) {
-     this.cartService.addItemToCart(id);
+  addItemToCart(id: string, count: number) {
+    this.cartService.addItemToCart(id, count, this.product);
   }
 }

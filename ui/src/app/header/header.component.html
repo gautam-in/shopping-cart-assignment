@@ -1,14 +1,6 @@
-<nav
-  class="wrapper"
-  style="box-shadow: 0 10px 10px -10px #000000; margin-bottom: 40px"
->
+<nav class="wrapper">
   <div class="logo">
-    <a routerLink="home"
-      ><img
-        src="../../assets/static/images/logo.png"
-        alt="header logo"
-        style="height: auto; width: auto"
-    /></a>
+    <a routerLink="home"><img src="../../assets/static/images/logo.png" alt="header logo" /></a>
   </div>
   <div class="header-content wrapper">
     <div class="home">
@@ -19,12 +11,12 @@
     </div>
   </div>
   <div class="header-right">
-    <a *ngIf="setLogOut" (click)="logOut()">SignOut</a>
-    <a *ngIf="!setLogOut" (click)="logIn()">SignIn</a>
-    <a *ngIf="!setLogOut" (click)="register()">Register</a>
-    <div *ngIf="setLogOut">
+    <a *ngIf="isLoggedIn" (click)="logOut()">SignOut</a>
+    <a *ngIf="!isLoggedIn" (click)="logIn()">SignIn</a>
+    <a *ngIf="!isLoggedIn" (click)="register()">Register</a>
+    <div *ngIf="isLoggedIn">
       <a id="miniCartBtn" class="cart" (click)="onClickCart()">
-        <img src="assets/static/images/cart.svg" alt="cart image" style="height:auto;width:50%;" />
+        <img src="assets/static/images/cart.svg" alt="cart image" class="cart-btn" />
         <span id="itemsInCart">{{ noOfItems }} items</span>
       </a>
     </div>

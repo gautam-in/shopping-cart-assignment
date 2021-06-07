@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Banners } from 'src/Shared/models/Banners';
-import { Categories } from 'src/Shared/models/Categories';
-import { HomeServiceService } from 'src/Shared/services/home-service.service';
+import { Category } from 'src/Shared/models/Category';
+import { HomeService } from 'src/Shared/services/home.service';
+import { LoginService } from 'src/Shared/services/login.service';
 
 @Component({
   selector: 'app-home-page',
@@ -11,31 +12,27 @@ import { HomeServiceService } from 'src/Shared/services/home-service.service';
 })
 export class HomePageComponent implements OnInit {
 
-  constructor(private homeService: HomeServiceService, private router: Router) { }
+  constructor(private homeService: HomeService, private router: Router, private loginService: LoginService) { }
   bannerData: Banners[] = [];
-  categoriesData: Categories[] = [];
+  categoriesData: Category[] = [];
+  isLoggedIn: boolean = false;
   ngOnInit(): void {
-    if (sessionStorage.getItem('isLoggedIn') && sessionStorage.getItem('isLoggedIn') === 'true') {
-      this.getData();
-    }
-    else
-      this.router.navigate(['login'])
-
+    this.loginService.checkLoggedIn().subscribe((response) => {
+      this.isLoggedIn = response;
+      if (this.isLoggedIn) {
+        this.getData();
+      }
+      else {
+        this.router.navigate(['login']);
+      }
+    });
   }
   getData() {
     this.homeService.getBanners().subscribe((response) => {
       this.bannerData = response;
-    }, (errorResponse) => {
-      console.log(errorResponse);
     });
     this.homeService.getCategories().subscribe((response) => {
       this.categoriesData = response;
-    }, (errorResponse) => {
-      console.log(errorResponse);
     });
-  }
-  OnExploreClick(id: string) {
-    this.homeService.setCategoryId(id);
-    this.router.navigate(['/products']);
   }
 }

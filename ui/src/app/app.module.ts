@@ -7,7 +7,7 @@ import { FormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
-import { MiniCartModuleModule } from 'src/mini-cart-module/mini-cart-module.module';
+import { MiniCartModule } from 'src/mini-cart-module/mini-cart.module';
 
 @NgModule({
   declarations: [
@@ -21,7 +21,7 @@ import { MiniCartModuleModule } from 'src/mini-cart-module/mini-cart-module.modu
     HttpClientModule,
     FormsModule,
     NgbModule,
-    MiniCartModuleModule
+    MiniCartModule
   ],
   providers: [],
   bootstrap: [AppComponent]

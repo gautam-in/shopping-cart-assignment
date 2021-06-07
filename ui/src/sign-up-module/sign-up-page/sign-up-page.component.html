@@ -1,11 +1,11 @@
 <div class="main">
-  <div class="loginText">
+  <div class="signUpText">
     <h2>Signup</h2>
     <p>We do not share your personal details with anyone</p>
   </div>
   <form class="formFlex" #f="ngForm" (ngSubmit)="submitForm(f)" autocomplete="off">
-    <div class="fName" style="margin-bottom: 40px">
-      <label for="name" style="margin-bottom: 10px"></label>
+    <div class="fName input-margin-bottom">
+      <label for="name"></label>
       <div>
         <input type="text" name="fName" placeholder="First Name" class="inputBox" required ngModel #fName="ngModel" />
       </div>
@@ -13,7 +13,7 @@
         <span>First Name is not valid</span>
       </div>
     </div>
-    <div class="lName" style="margin-bottom: 40px">
+    <div class="lName input-margin-bottom">
       <label for="lName"></label>
       <div>
         <input type="text" name="lName" placeholder="Last Name" class="inputBox" required ngModel #lName="ngModel" />
@@ -23,7 +23,7 @@
       </div>
     </div>
 
-    <div class="email" style="margin-bottom: 40px">
+    <div class="email input-margin-bottom">
       <label for="email"></label>
       <div>
         <input type="text" name="email" placeholder="Email" class="inputBox" required email #email="ngModel" ngModel />
@@ -32,7 +32,7 @@
         <span>Email is not valid</span>
       </div>
     </div>
-    <div class="password" style="margin-bottom: 40px">
+    <div class="password input-margin-bottom">
       <label for="password"></label>
       <div>
         <input type="password" name="password" placeholder="password" class="inputBox" required ngModel
@@ -50,7 +50,7 @@
         </div>
       </div>
     </div>
-    <div class="cPassword" style="margin-bottom: 40px">
+    <div class="cPassword input-margin-bottom">
       <label for="cPswword"></label>
       <div>
         <input type="password" [(ngModel)]="confirmPassword" name="cPassword" placeholder="Confirm Password"
@@ -74,7 +74,7 @@
         <span>Password is not matching</span>
       </div>
     </div>
-    <button type="submit" [disabled]="!f.valid || password != confirmPassword" class="login">
+    <button type="submit" [disabled]="!f.valid || password != confirmPassword" class="submitButton">
       Sign up
     </button>
   </form>

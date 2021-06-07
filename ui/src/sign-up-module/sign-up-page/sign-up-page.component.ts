@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { User } from 'src/Shared/models/user';
-import { LoginServiceService } from 'src/Shared/services/login-service.service';
+import { LoginService } from 'src/Shared/services/login.service';
 
 @Component({
   selector: 'app-sign-up-page',
@@ -10,8 +10,8 @@ import { LoginServiceService } from 'src/Shared/services/login-service.service';
 })
 export class SignUpPageComponent implements OnInit {
 
-  constructor(private router: Router,private loginService:LoginServiceService) { }
-  userData: User = { email: '', password: '' }
+  constructor(private router: Router, private loginService: LoginService) { }
+  userData: User = { email: '', password: '' };
   password = '';
   confirmPassword = '';
   ngOnInit(): void {
@@ -21,9 +21,8 @@ export class SignUpPageComponent implements OnInit {
     this.userData.password = this.password;
     this.userData.firstName = signUpData.value.fName;
     this.userData.lastName = signUpData.value.lName;
-    this.loginService.saveRegisterationData(this.userData);
-    this.loginService.logOutFlag(true);
-    sessionStorage.setItem('isLoggedIn',String(true));
+    this.loginService.saveRegistrationData(this.userData);
+    this.loginService.isLoggedIn.next(true);
     this.router.navigate(['/home']);
   }
 }

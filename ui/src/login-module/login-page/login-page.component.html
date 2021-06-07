@@ -11,8 +11,8 @@
       <span>Wrong credential entered</span>
     </div>
     <div class="email">
-      <label for="name" style="margin-bottom: 10px"></label>
-      <div style="margin: 30px 0 10px">
+      <label for="name"></label>
+      <div>
         <input type="text" name="email" placeholder="Email" class="inputBox" required ngModel email #email="ngModel" />
       </div>
       <div class="errorfName error" *ngIf="!email.valid && email.touched">
@@ -21,7 +21,7 @@
     </div>
     <div class="password">
       <label for="name"></label>
-      <div style="margin-top: 40px">
+      <div>
         <input type="password" name="password" placeholder="Password" class="inputBox" required ngModel minlength="6"
           #password="ngModel" pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$" />
       </div>
@@ -30,13 +30,13 @@
           <span>Please enter password</span>
         </div>
         <div *ngIf="password.errors?.pattern">
-          <span>a. Minimum length 6 characters<br/>
-            b. Must have a number and alphabet<br/>
+          <span>a. Minimum length 6 characters<br />
+            b. Must have a number and alphabet<br />
             c. Cannot have spaces
           </span>
         </div>
       </div>
     </div>
-    <button type="submit" [disabled]="!f.valid" class="login">Login</button>
+    <button type="submit" [disabled]="!f.valid" class="submitButton">Login</button>
   </form>
 </div>

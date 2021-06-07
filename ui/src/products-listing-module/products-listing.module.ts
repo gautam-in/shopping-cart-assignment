@@ -6,13 +6,15 @@ import { ProductsListingPageComponent } from './products-listing-page/products-l
 import { ProductsListingModuleComponent } from './products-listing-module.component';
 import { FormsModule } from '@angular/forms';
 import { ProductCardComponent } from './product-card/product-card.component';
+import { ProductListFilterPipe } from 'src/Shared/pipes/productsListFilter';
 
 
 @NgModule({
   declarations: [
     ProductsListingPageComponent,
     ProductsListingModuleComponent,
-    ProductCardComponent
+    ProductCardComponent,
+    ProductListFilterPipe
   ],
   imports: [
     CommonModule,
@@ -20,4 +22,4 @@ import { ProductCardComponent } from './product-card/product-card.component';
     FormsModule
   ]
 })
-export class ProductsListingModuleModule { }
+export class ProductsListingModule { }

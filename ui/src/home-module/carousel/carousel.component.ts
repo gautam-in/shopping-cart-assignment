@@ -1,7 +1,7 @@
 import { Component, HostListener, Input, OnInit } from '@angular/core';
 import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
 import { Banners } from 'src/Shared/models/Banners';
-import { transpileModule } from 'typescript';
+
 
 @Component({
   selector: 'app-carousel-banner',
@@ -11,7 +11,7 @@ import { transpileModule } from 'typescript';
 export class CarouselComponent implements OnInit {
   currWinSize: any = window.innerWidth;
   isMobile: boolean = this.currWinSize < 768;
-  isDesktop: boolean = this.currWinSize > 1024;
+  isDesktop: boolean = this.currWinSize >= 768;
   constructor(private config: NgbCarouselConfig) {
     config.interval = 10000;
     config.wrap = true;
@@ -29,7 +29,7 @@ export class CarouselComponent implements OnInit {
   }
   @HostListener('window:resize', ['$event'])
   onResize(event: any) {
-    this.isDesktop = event.target.innerWidth > 1024;
+    this.isDesktop = event.target.innerWidth >= 768;
     this.isMobile = event.target.innerWidth < 768;
     if (this.isMobile) {
       this.config.showNavigationArrows = false;
@@ -37,7 +37,7 @@ export class CarouselComponent implements OnInit {
       this.config.keyboard = true;
       this.config.pauseOnHover = false;
     }
-    if(this.isDesktop){
+    else if (this.isDesktop) {
       this.config.showNavigationArrows = true;
       this.config.showNavigationIndicators = true;
       this.config.keyboard = false;

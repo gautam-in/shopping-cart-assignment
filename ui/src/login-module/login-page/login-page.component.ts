@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { User } from 'src/Shared/models/user';
-import { LoginServiceService } from 'src/Shared/services/login-service.service';
+import { LoginService } from 'src/Shared/services/login.service';
 
 @Component({
   selector: 'app-login-page',
@@ -13,20 +13,27 @@ export class LoginPageComponent implements OnInit {
     email: '',
     password: ''
   };
-  constructor(private router: Router, private loginService: LoginServiceService) { }
+  constructor(private router: Router, private loginService: LoginService) { }
   isLoginError: boolean = false;
+  isLoggedIn: boolean = false;
   ngOnInit(): void {
+    this.loginService.checkLoggedIn().subscribe((response) => {
+      this.isLoggedIn = response;
+      if (this.isLoggedIn) {
+        this.router.navigate(['/home']);
+      }
+    });
   }
   submitLogin(loginData: any) {
     this.user.email = loginData.value.email;
     this.user.password = loginData.value.password;
     if (this.loginService.checkLoginCred(this.user)) {
-      sessionStorage.setItem('isLoggedIn', String(true));
+      this.loginService.isLoggedIn.next(true);
       this.router.navigate(['/home']);
     }
     else {
       this.isLoginError = true;
-      sessionStorage.setItem('isLoggedIn', String(false));
+      this.loginService.isLoggedIn.next(false);
     }
 
   }

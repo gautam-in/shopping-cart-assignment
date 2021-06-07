@@ -17,24 +17,26 @@
 <ng-template #itemsList>
     <div class="cart-items-warapper">
         <ul *ngIf="productsInCart.length">
-            <li *ngFor="let product of productsInCart" class="li">
-                <div *ngIf="product.price">
+            <li *ngFor="let products of productsInCart" class="li">
+                <div *ngIf="products.product.price">
                     <div class="cart-item-image">
-                        <img class="product-card-img" src="assets{{ product.imageURL }}" [alt]="product.description"
-                            width="100%" />
+                        <img class="product-card-img" src="assets{{ products.product.imageURL }}"
+                            [alt]="products.product.description" width="100%" />
                     </div>
                     <div class="cart-item-desc">
-                        <div class="cart-item-title">{{ product.name }}</div>
-                        <button class="btn" aria-label="Decrease By 1" (click)="addItemToCart(product.id || '', -1)">
+                        <div class="cart-item-title">{{ products.product.name }}</div>
+                        <button class="btn" aria-label="Decrease By 1"
+                            (click)="removeItemToCart(products.product.id || '', 1)">
                             <i class="fa fa-minus" aria-hidden="true"></i>
                         </button>
-                        <span>{{ product.count }}</span>
-                        <button class="btn" aria-label="Increase By 1" (click)="addItemToCart(product.id || '', +1)">
+                        <span>{{ products.count }}</span>
+                        <button class="btn" aria-label="Increase By 1"
+                            (click)="addItemToCart(products.product.id || '', 1, products.product)">
                             <i class="fa fa-plus" aria-hidden="true"></i>
                         </button>
-                        <span class="cart-item-price">X Rs.{{ product.price }}</span>
+                        <span class="cart-item-price">X Rs.{{ products.product.price }}</span>
                     </div>
-                    <div class="cart-item-total">Rs{{ product.price * product.count }}</div>
+                    <div class="cart-item-total">Rs{{ products.product.price * (products.count || 0) }}</div>
                 </div>
             </li>
             <li>
