@@ -9,7 +9,7 @@ module.exports = {
     new WebpackNotifierPlugin({
       alwaysNotify: true,
       title: "Shopping Cart",
-      contentImage: path.join(__dirname, "src/static/images/logo_2x.png"),
+      contentImage: path.join(__dirname, "src/assets/images/logo_2x.png"),
     }),
   ],
   devServer: {

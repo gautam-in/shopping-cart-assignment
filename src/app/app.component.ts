@@ -1,41 +1,35 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { MatSidenav } from '@angular/material/sidenav';
 import { Store } from '@ngrx/store';
-// import firebase from 'firebase';
 import { Observable } from 'rxjs';
-import { AppState } from './store/app.reducer';
-import { State as CartState } from 'src/app/cart/store/cart-list.reducer';
-import { CartComponent } from './cart/cart/cart.component';
-import { MatDialog } from '@angular/material/dialog';
-import { AutoLogin, Logout } from './auth/store/auth.actions';
-import { State as AuthState } from './auth/store/auth.reducer';
-import { FetchLocalCart } from './cart/store/cart-list.actions';
+import { Constants } from 'src/app/core/common/constants/constants';
+import { Enter } from './core/common/animations/enter.animation';
+import { AuthState } from './core/models/auth-state.model';
+import { Logout } from './core/store/actions/auth.actions';
+import { AppState } from './models/app-state.model';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
+  animations: [Enter],
+  host: { '[@Enter]': '' },
 })
-export class AppComponent {
-  cart$!: Observable<CartState>;
+export class AppComponent implements OnInit {
+  @ViewChild(MatSidenav, { static: true }) sideNav!: MatSidenav;
   user$!: Observable<AuthState>;
-  constructor(private store: Store<AppState>, public dialog: MatDialog) {
-    // firebase.initializeApp(environment.firebaseConfig);
-    this.cart$ = this.store.select('cart');
+
+  constructor(private store: Store<AppState>) {
     this.user$ = this.store.select('auth');
-    this.store.dispatch(new AutoLogin());
-    this.store.dispatch(new FetchLocalCart());
   }
 
-  openCart() {
-    this.dialog.open(CartComponent, {
-      minWidth: '50vw',
-      minHeight: '60vh',
-      maxHeight: 'initial',
-      panelClass: 'cart-model',
-      height: '60%',
-      width: '50%',
-    });
+  ngOnInit() {
+    Constants.SIDENAV = this.sideNav;
   }
+
   logout() {
     this.store.dispatch(new Logout());
+  }
+  closeNav() {
+    Constants.SIDENAV.close();
   }
 }

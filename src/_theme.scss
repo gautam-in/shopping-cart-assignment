@@ -1,0 +1,46 @@
+@use '~@angular/material' as shopping-cart;
+@import "src/variables";
+@include shopping-cart.core();
+
+$primary: (
+    Main: $primaryColor,
+    Light: $primaryLightColor,
+    Dark: $primaryDarkColor,
+    contrast: (
+        Main: $primaryTextColor,
+        Light: $primaryTextColor,
+        Dark: $primaryTextColor,
+    ),
+);
+
+$accent: (
+    Main: $secondaryColor,
+    Light: $secondaryLightColor,
+    Dark: $secondaryDarkColor,
+    contrast: (
+        Main: $secondaryTextColor,
+        Light: $secondaryTextColor,
+        Dark: $secondaryTextColor,
+    ),
+);
+
+$shopping-cart-primary: shopping-cart.define-palette($primary, Main, Light, Dark);
+$shopping-cart-accent: shopping-cart.define-palette($accent, Main, Light, Dark);
+$shopping-cart-warn: shopping-cart.define-palette(shopping-cart.$red-palette);
+
+$shopping-cart-theme: shopping-cart.define-light-theme(
+    (
+        color: (
+            primary: $shopping-cart-primary,
+            accent: $shopping-cart-accent,
+            warn: $shopping-cart-warn,
+        ),
+    )
+);
+
+// @include shopping-cart.all-component-themes($shopping-cart-theme);
+
+@include shopping-cart.core-theme($shopping-cart-theme);
+@include shopping-cart.button-theme($shopping-cart-theme);
+@include shopping-cart.snack-bar-theme($shopping-cart-theme);
+@include shopping-cart.form-field-theme($shopping-cart-theme);

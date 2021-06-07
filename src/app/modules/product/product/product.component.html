@@ -1,0 +1,61 @@
+<div class="wrapper">
+  <mat-form-field appearance="fill" *ngIf="isMobile" color="accent">
+    <mat-label>Filter By Category </mat-label>
+    <mat-select
+      (selectionChange)="changeFilter($event)"
+      class="select-panel"
+      [aria-label]="'Filter By Category'"
+    >
+      <mat-option *ngIf="(products$ | async)?.filterBy" [value]="'-1'">
+        Clear All filter
+      </mat-option>
+      <mat-option
+        *ngFor="let category of (categories$ | async)?.categories"
+        [value]="category?.id"
+      >
+        {{ category?.name }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <div class="left" *ngIf="!isMobile">
+    <p class="filter">
+      <ng-container *ngIf="!(products$ | async)?.filterBy">
+        <b> Filter By Category </b>
+      </ng-container>
+      <ng-container *ngIf="(products$ | async)?.filterBy">
+        Clear All filter
+        <i
+          class="material-icons"
+          routerLink="/products"
+          [queryParams]="{ categoryId: undefined }"
+          queryParamsHandling="merge"
+          role="button"
+          aria-label="Cancel Filter"
+        >
+          cancel
+        </i>
+      </ng-container>
+    </p>
+
+    <nav
+      class="nav flex-column"
+      *ngFor="let category of (categories$ | async)?.categories"
+    >
+      <a
+        class="nav-link"
+        routerLink="/products"
+        [queryParams]="{ categoryId: category?.id }"
+        queryParamsHandling="merge"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
+        <button attr.aria-label="{{ category.name }}" role="navigation">
+          {{ category?.name }}
+        </button>
+      </a>
+    </nav>
+  </div>
+  <div class="right">
+    <router-outlet></router-outlet>
+  </div>
+</div>

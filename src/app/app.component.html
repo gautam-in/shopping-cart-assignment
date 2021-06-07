@@ -1,75 +1,64 @@
-<div class="wrapper">
-  <header>
-    <div class="container common-padding">
-      <div class="left">
-        <a class="logo" routerLink="/">
-          <img
-            src="static/images/logo_2x.png"
-            class="logo-image"
-            alt="Sabka bazaar"
-          />
-        </a>
-        <ul class="navbar">
-          <li class="nav-item">
-            <a
-              class="nav-link"
-              routerLink="/"
-              routerLinkActive="active"
-              [routerLinkActiveOptions]="{ exact: true }"
-              >Home</a
-            >
-          </li>
-          <li class="nav-item">
-            <a
-              class="nav-link"
-              routerLink="/products"
-              [routerLinkActiveOptions]="{ exact: true }"
-              routerLinkActive="active"
-              >Products</a
-            >
-          </li>
-        </ul>
-      </div>
-      <div class="end-container">
-        <ul class="navbar" *ngIf="!(user$ | async)?.user">
-          <li class="nav-item">
-            <a
-              class="nav-link"
-              [routerLink]="['/auth', 'login']"
-              [routerLinkActive]="['active']"
-              >SignIn</a
-            >
-          </li>
-          <li class="nav-item">
-            <a
-              class="nav-link"
-              [routerLink]="['/auth', 'register']"
-              [routerLinkActive]="['active']"
-              >Register</a
-            >
-          </li>
-        </ul>
-        <p *ngIf="(user$ | async)?.user" class="user-info">
-          Hi there!! {{ (user$ | async)?.user?.displayName }}
+<div class="app-container">
+  <app-header></app-header>
+  <mat-sidenav-container class="app-sidenav-container">
+    <mat-sidenav
+      #snav
+      mode="over"
+      fixedTopGap="18vh"
+      class="side-nav"
+      (click)="closeNav()"
+    >
+      <mat-nav-list
+        routerLink="/"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
+        <a class="nav-link">Home</a>
+      </mat-nav-list>
+      <mat-nav-list
+        routerLink="/products"
+        [routerLinkActiveOptions]="{ exact: true }"
+        routerLinkActive="active"
+      >
+        <a class="nav-link">Products</a>
+      </mat-nav-list>
+      <ng-container *ngIf="!(user$ | async)?.user">
+        <mat-nav-list
+          class="nav-link"
+          [routerLink]="['/auth', 'login']"
+          [routerLinkActive]="['active']"
+        >
+          <a>SignIn</a>
+        </mat-nav-list>
+        <mat-nav-list
+          class="nav-link"
+          [routerLink]="['/auth', 'register']"
+          [routerLinkActive]="['active']"
+        >
+          <a>Register</a>
+        </mat-nav-list>
+      </ng-container>
+
+      <ng-container *ngIf="(user$ | async)?.user">
+        <mat-nav-list>
+          Hi there!! {{ (user$ | async)?.user?.email }}
+        </mat-nav-list>
+        <mat-nav-list class="logout-nav">
+          Logout
           <i class="material-icons logout" (click)="logout()" title="Log out"
             >logout</i
           >
-        </p>
-        <button aria-label="cart" class="cart" (click)="openCart()">
-          <img src="static/images/cart.svg" alt="cart" class="cart-logo" />
-          <a data-target="#cartModal"
-            >{{ (cart$ | async)?.products?.length || 0 }} items</a
-          >
-        </button>
+        </mat-nav-list>
+      </ng-container>
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+      <div class="wrapper">
+        <div class="content-body container">
+          <router-outlet></router-outlet>
+        </div>
+        <app-footer></app-footer>
       </div>
-    </div>
-  </header>
-  <div class="content-body container">
-    <router-outlet></router-outlet>
-  </div>
-  <footer>
-    <div class="copyright common-padding container">
-      CopyRight @ 2011-2021 Sabka Bazzar Grocery Supplies Pvt Ltd
-    </div>
-  </footer>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
 </div>

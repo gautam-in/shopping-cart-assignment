@@ -7,17 +7,19 @@ import { environment } from '../environments/environment';
 import { HttpClientModule } from '@angular/common/http';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
-import * as fromApp from './store/app.reducer';
+import * as fromApp from './store/reducers/app.reducer';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgrxRouterStoreModule } from './ngrx-router.module';
 import { SharedModule } from './shared/shared.module';
-import { CartModule } from './cart/cart.module';
 import { MAT_DIALOG_DEFAULT_OPTIONS } from '@angular/material/dialog';
 import {
   MAT_SNACK_BAR_DEFAULT_OPTIONS,
   MatSnackBar,
 } from '@angular/material/snack-bar';
-import { AppEffectModule } from './app.effects.module';
+import { AppEffectModule } from './store/effects/app.effects.module';
+import { CoreModule } from './core/core.module';
+import { BREAKPOINT } from '@angular/flex-layout';
+import { MY_CUSTOM_BREAKPOINTS } from './core/common/constants/constants';
 
 @NgModule({
   declarations: [AppComponent],
@@ -27,17 +29,15 @@ import { AppEffectModule } from './app.effects.module';
     NgrxRouterStoreModule,
     AppRoutingModule,
     HttpClientModule,
+    CoreModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production,
-      // Register the ServiceWorker as soon as the app is stable
-      // or after 30 seconds (whichever comes first).
       registrationStrategy: 'registerWhenStable:30000',
     }),
     StoreModule.forRoot(fromApp.appReducer),
     AppEffectModule,
     StoreDevtoolsModule.instrument({ logOnly: environment.production }),
     SharedModule,
-    CartModule,
   ],
   providers: [
     {
@@ -45,6 +45,7 @@ import { AppEffectModule } from './app.effects.module';
       useValue: { hasBackdrop: true, disableClose: true },
     },
     { provide: MAT_SNACK_BAR_DEFAULT_OPTIONS, useValue: { duration: 4000 } },
+    { provide: BREAKPOINT, useValue: MY_CUSTOM_BREAKPOINTS, multi: true },
     MatSnackBar,
   ],
   bootstrap: [AppComponent],

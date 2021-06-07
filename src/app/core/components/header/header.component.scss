@@ -1,0 +1,98 @@
+@import "src/variables";
+header {
+    text-decoration: dashed;
+    font-weight: bolder;
+    color: rgba($color: #000000, $alpha: 0.87);
+    position: sticky;
+    z-index: 100;
+    background-color: white;
+    top: 0;
+    box-shadow: 0px 0px 6px lightgrey;
+    line-height: 2;
+    width: calc(100%);
+    height: 14vh;
+    max-height: 140px;
+    min-height: 70px;
+
+    .logo-image {
+        max-width: 150px;
+        height: inherit;
+    }
+    .logo {
+        display: flex;
+        align-items: center;
+    }
+    .nav-item {
+        margin-left: 1em;
+        .active {
+            color: $mergenta;
+        }
+    }
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 100%;
+
+        ul {
+            list-style: none;
+            margin-block-start: 0;
+            margin-block-end: 0;
+            padding-inline-start: 0;
+        }
+        .left {
+            display: flex;
+            height: 100%;
+
+            .navbar {
+                display: flex;
+                flex-direction: row;
+                align-items: flex-end;
+                padding-bottom: 1em;
+                padding-left: 3em;
+            }
+        }
+        .end-container {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            position: relative;
+            min-width: 8em;
+            .navbar {
+                height: 20%;
+                display: flex;
+                flex-direction: row;
+            }
+            .cart {
+                height: 80%;
+                display: flex;
+                align-items: center;
+                max-height: 71px;
+                position: absolute;
+                bottom: 0;
+                width: 100%;
+                cursor: pointer;
+
+                img {
+                    height: 3em;
+                    width: 3em;
+                }
+                a {
+                    color: $mergenta;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 767px) {
+    header {
+        height: 10vh;
+        .container {
+            padding-left: 0;
+        }
+        .logo-image {
+            max-width: 100px;
+        }
+    }
+}

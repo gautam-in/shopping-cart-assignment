@@ -1,120 +1,4 @@
 @import "src/variables";
-header {
-  text-decoration: dashed;
-  font-weight: bolder;
-  color: darkgreen;
-  position: sticky;
-  z-index: 100;
-  background-color: white;
-  top: 0;
-  box-shadow: 0px 0px 6px lightgrey;
-  line-height: 2;
-  width: calc(100%);
-  height: 14vh;
-  max-height: 140px;
-  min-height: 70px;
-
-  .logo-image {
-    max-width: 150px;
-    height: inherit;
-  }
-  .logo {
-    display: flex;
-    align-items: center;
-  }
-  .nav-item {
-    margin-left: 1em;
-    .active {
-      color: $mergenta;
-    }
-  }
-  .container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 100%;
-
-    ul {
-      list-style: none;
-      margin-block-start: 0;
-      margin-block-end: 0;
-      padding-inline-start: 0;
-    }
-    .left {
-      display: flex;
-      height: 100%;
-
-      .navbar {
-        display: flex;
-        flex-direction: row;
-        align-items: flex-end;
-        padding-bottom: 1em;
-        padding-left: 3em;
-      }
-    }
-    .end-container {
-      display: flex;
-      flex-direction: column;
-      height: 100%;
-      position: relative;
-      min-width: 8em;
-      .navbar {
-        height: 20%;
-        display: flex;
-        flex-direction: row;
-      }
-      .cart {
-        height: 80%;
-        display: flex;
-        align-items: center;
-        max-height: 71px;
-        position: absolute;
-        bottom: 0;
-        width: 100%;
-        cursor: pointer;
-
-        img {
-          height: 3em;
-          width: 3em;
-        }
-        a {
-          color: $mergenta;
-        }
-      }
-    }
-  }
-}
-
-footer {
-  padding-top: 24px;
-  // margin-top: 16px;
-  display: flex;
-  line-height: 20px;
-  background-color: $grey;
-  padding-bottom: 24px;
-  padding-left: 2em;
-  .copyright {
-    width: 100%;
-  }
-}
-.logout {
-  cursor: pointer;
-  margin: 0.3em;
-}
-.user-info {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-}
-footer a {
-  display: flex;
-  align-items: center;
-}
-
-i.fa {
-  cursor: pointer;
-}
 
 .wrapper {
   min-height: 100%;
@@ -132,3 +16,45 @@ i.fa {
     // padding: 8px 24px 24px 24px;
   }
 }
+.app-container {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.app-sidenav-container {
+  flex: 1;
+  color: rgba(0, 0, 0, 0.87);
+  background-color: #fff;
+}
+
+.side-nav {
+  min-width: 40vw;
+  max-width: 320px;
+}
+.mat-nav-list {
+  text-align: left;
+  padding-left: 2em;
+  margin-top: 1em;
+  border-bottom: 1px solid #f6f6f6;
+  padding-bottom: 8px;
+  &.active {
+    background: $mergenta;
+    color: white;
+  }
+}
+
+.logout-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-right: 2em;
+}
+// .app-is-mobile .app-sidenav-container {
+//   /* When the sidenav is fixed, don't constrain the height of the sidenav container. This allows the
+//      `<body>` to be our scrolling element for mobile layouts. */
+//   flex: 1 0 auto;
+// }
