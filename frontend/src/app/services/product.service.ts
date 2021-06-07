@@ -14,8 +14,8 @@ export class ProductsService {
 
   allProducts: Product[] = [];
   selectedCategory: Product[] = [];
-  private productList = new Subject<any>();
-  private selectedList: BehaviorSubject<any> = new BehaviorSubject<any>(null);
+  private productList = new Subject<Product[]>();
+  private selectedList = new BehaviorSubject<Product[]>([]);
 
   // GET method to get all banners for carousel
   getBanners(): Observable<Banner[]> {

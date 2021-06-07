@@ -34,7 +34,7 @@ export class CartItemsService {
     return this.cartProductList.asObservable();
   }
 
-  getCartList(): Product {
+  getCartList(): Product[] {
     this.cartProductList.subscribe((itemInCart: Product[]) => {
       this.cartProducts = itemInCart;
     });
