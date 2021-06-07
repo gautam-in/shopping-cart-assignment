@@ -29,6 +29,7 @@
     "@nguniversal/express-engine": "^12.0.1",
     "express": "^4.15.2",
     "font-awesome": "^4.7.0",
+    "localstorage-polyfill": "^1.0.1",
     "ngx-slider": "0.0.5",
     "ngx-toastr": "^14.0.0",
     "ngx-ui-loader": "^11.0.0",

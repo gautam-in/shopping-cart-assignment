@@ -36,7 +36,10 @@ export class AuthService {
       );
       if (userexists) {
         if (userexists.password === user.password) {
-          return of({email:userexists.email, firstName: userexists.firstName});
+          return of({
+            email: userexists.email,
+            firstName: userexists.firstName,
+          });
         } else {
           return throwError({
             error: { error: { message: 'EMAIL_NOT_FOUND' } },
