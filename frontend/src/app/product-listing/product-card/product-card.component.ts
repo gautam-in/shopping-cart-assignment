@@ -32,8 +32,8 @@ export class ProductCardComponent implements OnInit, OnDestroy {
       });
   }
 
-  buyProduct(products: Product): void {
-    this.cartItem.addProduct(products);
+  buyProduct(product: Product): void {
+    this.cartItem.addProduct(product);
   }
 
   ngOnDestroy(): void {
