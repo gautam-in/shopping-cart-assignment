@@ -1,0 +1,35 @@
+<section class="product-list-wrapper">
+  <div class="sidebar" *ngIf="categoriesData" aria-label="Filter by Categories">
+    <ng-container>
+      <div class="filterDropdown">
+        <form #filterForm="ngForm" class="filter-form">
+          <select #flterdd (change)="
+                onSelectionChange(flterdd.value == 'null' ? null : flterdd.value)
+                " id="category" name="category" class="btn form-control" [(ngModel)]="currCategory">
+            <option value="null">All</option>
+            <option *ngFor="let category of categoriesData; let i = index" [value]="category.id">
+              {{ category.name }}
+            </option>
+          </select>
+        </form>
+      </div>
+      <div class="filtersList">
+        <div class="input-container" [ngClass]="{ checked: currCategory === category.id }"
+          *ngFor="let category of categoriesData; let i = index">
+          <a href="javascript: void(0)" attr.aria-labelledby="category-type{{i}}"
+            (click)="onCheckboxChange(category.id)">{{
+            category.name }}</a>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+  <div class="product-list-container">
+    <ul class="product-list-container-block">
+      <li class="product-card-element"
+        *ngFor="let product of productsList | productListFilterPipe:currCategory;let i = index;">
+        <app-product-card [product]="product">
+        </app-product-card>
+      </li>
+    </ul>
+  </div>
+</section>

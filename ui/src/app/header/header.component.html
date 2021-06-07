@@ -1,0 +1,24 @@
+<nav class="wrapper">
+  <div class="logo">
+    <a routerLink="home"><img src="../../assets/static/images/logo.png" alt="header logo" /></a>
+  </div>
+  <div class="header-content wrapper">
+    <div class="home">
+      <a routerLink="/home">Home</a>
+    </div>
+    <div class="product">
+      <a routerLink="/products">Products</a>
+    </div>
+  </div>
+  <div class="header-right">
+    <a *ngIf="isLoggedIn" (click)="logOut()">SignOut</a>
+    <a *ngIf="!isLoggedIn" (click)="logIn()">SignIn</a>
+    <a *ngIf="!isLoggedIn" (click)="register()">Register</a>
+    <div *ngIf="isLoggedIn">
+      <a id="miniCartBtn" class="cart" (click)="onClickCart()">
+        <img src="assets/static/images/cart.svg" alt="cart image" class="cart-btn" />
+        <span id="itemsInCart">{{ noOfItems }} items</span>
+      </a>
+    </div>
+  </div>
+</nav>

@@ -1,0 +1,73 @@
+Linting "shoppingApp"...
+C:/Users/parmitta1/Documents/shopping-cart-assignment/ui/src/Shared/services/cart.service.ts:12:17
+ERROR: 12:17  no-inferrable-types      Type string trivially inferred from a string literal, remove type annotation
+ERROR: 13:16  no-inferrable-types      Type string trivially inferred from a string literal, remove type annotation
+ERROR: 24:3   typedef                  expected call-signature: 'show' to have a typedef
+ERROR: 28:3   typedef                  expected call-signature: 'hide' to have a typedef
+ERROR: 31:3   typedef                  expected call-signature: 'removeItemToCart' to have a typedef
+ERROR: 43:3   typedef                  expected call-signature: 'addItemToCart' to have a typedef
+
+C:/Users/parmitta1/Documents/shopping-cart-assignment/ui/src/Shared/services/home.service.ts:14:14
+ERROR: 14:14  no-inferrable-types      Type string trivially inferred from a string literal, remove type annotation
+ERROR: 15:18  no-inferrable-types      Type string trivially inferred from a string literal, remove type annotation
+ERROR: 17:3   typedef                  expected call-signature: 'setCategoryId' to have a typedef
+
+C:/Users/parmitta1/Documents/shopping-cart-assignment/ui/src/Shared/services/login.service.ts:13:3
+ERROR: 13:3   typedef                  expected call-signature: 'checkLoginCred' to have a typedef
+ERROR: 30:3   typedef                  expected call-signature: 'saveRegistrationData' to have a typedef
+ERROR: 37:3   typedef                  expected call-signature: 'checkLoggedIn' to have a typedef
+
+C:/Users/parmitta1/Documents/shopping-cart-assignment/ui/src/Shared/services/products-listing.service.ts:14:16
+ERROR: 14:16  no-inferrable-types      Type string trivially inferred from a string literal, remove type annotation
+ERROR: 15:18  no-inferrable-types      Type string trivially inferred from a string literal, remove type annotation
+ERROR: 16:17  no-inferrable-types      Type string trivially inferred from a string literal, remove type annotation
+
+C:/Users/parmitta1/Documents/shopping-cart-assignment/ui/src/app/app.component.ts:11:14
+ERROR: 11:14  no-inferrable-types      Type boolean trivially inferred from a boolean literal, remove type annotation
+ERROR: 12:12  no-inferrable-types      Type boolean trivially inferred from a boolean literal, remove type annotation
+ERROR: 14:3   use-lifecycle-interface  Lifecycle interface OnInit should be implemented for method ngOnInit. (https://angular.io/styleguide#style-09-01)
+
+C:/Users/parmitta1/Documents/shopping-cart-assignment/ui/src/app/header/header.component.ts:12:12
+ERROR: 12:12  no-inferrable-types      Type boolean trivially inferred from a boolean literal, remove type annotation
+ERROR: 13:14  no-inferrable-types      Type number trivially inferred from a number literal, remove type annotation
+ERROR: 14:15  no-inferrable-types      Type boolean trivially inferred from a boolean literal, remove type annotation
+ERROR: 28:3   typedef                  expected call-signature: 'logOut' to have a typedef
+ERROR: 33:3   typedef                  expected call-signature: 'logIn' to have a typedef
+ERROR: 36:3   typedef                  expected call-signature: 'register' to have a typedef
+ERROR: 40:3   typedef                  expected call-signature: 'onClickCart' to have a typedef
+
+C:/Users/parmitta1/Documents/shopping-cart-assignment/ui/src/home-module/carousel/carousel.component.ts:31:3
+ERROR: 31:3   typedef                  expected call-signature: 'onResize' to have a typedef
+
+C:/Users/parmitta1/Documents/shopping-cart-assignment/ui/src/home-module/category-banner/category-banner.component.ts:17:3
+ERROR: 17:3   typedef                  expected call-signature: 'onExploreClick' to have a typedef
+
+C:/Users/parmitta1/Documents/shopping-cart-assignment/ui/src/home-module/home-page/home-page.component.ts:18:15
+ERROR: 18:15  no-inferrable-types      Type boolean trivially inferred from a boolean literal, remove type annotation
+ERROR: 30:3   typedef                  expected call-signature: 'getData' to have a typedef
+
+C:/Users/parmitta1/Documents/shopping-cart-assignment/ui/src/login-module/login-page/login-page.component.ts:17:17
+ERROR: 17:17  no-inferrable-types      Type boolean trivially inferred from a boolean literal, remove type annotation
+ERROR: 18:15  no-inferrable-types      Type boolean trivially inferred from a boolean literal, remove type annotation
+ERROR: 27:3   typedef                  expected call-signature: 'submitLogin' to have a typedef
+
+C:/Users/parmitta1/Documents/shopping-cart-assignment/ui/src/mini-cart-module/mini-cart-page/mini-cart-page.component.ts:13:18
+ERROR: 13:18  no-inferrable-types      Type number trivially inferred from a number literal, remove type annotation
+ERROR: 26:3   typedef                  expected call-signature: 'onClose' to have a typedef
+ERROR: 29:3   typedef                  expected call-signature: 'removeItemToCart' to have a typedef
+ERROR: 32:3   typedef                  expected call-signature: 'addItemToCart' to have a typedef
+
+C:/Users/parmitta1/Documents/shopping-cart-assignment/ui/src/products-listing-module/product-card/product-card.component.ts:25:3
+ERROR: 25:3   typedef                  expected call-signature: 'addItemToCart' to have a typedef
+
+C:/Users/parmitta1/Documents/shopping-cart-assignment/ui/src/products-listing-module/products-listing-page/products-listing-page.component.ts:17:5
+ERROR: 17:5   align                    parameters are not aligned
+ERROR: 23:15  no-inferrable-types      Type boolean trivially inferred from a boolean literal, remove type annotation
+ERROR: 28:48  no-shadowed-variable     Shadowed name: 'response'
+ERROR: 38:3   typedef                  expected call-signature: 'getData' to have a typedef
+ERROR: 46:3   typedef                  expected call-signature: 'onSelectionChange' to have a typedef
+ERROR: 49:3   typedef                  expected call-signature: 'onCheckboxChange' to have a typedef
+
+C:/Users/parmitta1/Documents/shopping-cart-assignment/ui/src/sign-up-module/sign-up-page/sign-up-page.component.ts:19:3
+ERROR: 19:3   typedef                  expected call-signature: 'submitForm' to have a typedef
+

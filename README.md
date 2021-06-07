@@ -1,4 +1,4 @@
-# XT Shopping Cart Assignment
+# XT Shopping Cart Assignment by paras mittal
 
 This is the base folder for the shopping cart exercise. You will have all the static assets and mock server responses available in this repo.
 

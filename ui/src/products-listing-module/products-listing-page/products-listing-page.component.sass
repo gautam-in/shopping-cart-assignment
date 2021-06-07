@@ -1,0 +1,50 @@
+
+.product-list-container
+    width: 80%
+
+.checked
+    background-color: #d00155
+    color: #fff
+
+.product-list-container-block
+    display: flex
+    flex-wrap: wrap
+    text-align: center
+    flex-direction: row
+    width: 100%
+.product-list-container-block::after
+    content: ''
+    flex: auto
+
+.product-card-element
+    background-color: white
+    border-radius: 8px
+    padding: 8px
+    display: inline-block
+    border-bottom: 3px dotted #d8d8d8
+
+.sidebar > .filter-form
+    display: flex
+    flex-direction: column
+
+a,a:hover,a:focus
+    outline: none
+    text-decoration: none
+    color: black
+
+.sidebar > label
+    cursor: pointer
+    position: static
+
+.input-container:focus-within
+    outline: 2px solid limegreen
+
+.input-container:hover
+    background-color: #d00155
+    color: #fff
+
+.sidebar .input-container
+    margin: 5px
+    padding: 5px
+    color: black
+    border-bottom: 1px solid gray

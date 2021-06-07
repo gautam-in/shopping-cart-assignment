@@ -1,0 +1,78 @@
+<div class="modal-content">
+    <div class="cart-container">
+        <div class="modal-header">
+            <div class="center">
+                <h2>My cart</h2>
+            </div>
+            <!-- Modal content -->
+            <button type="button" id="closebtn" (click)="onClose()" aria-label="Close cart" class="close">
+                <i class="fa fa-lg fa-times" aria-hidden="true"></i>
+            </button>
+        </div>
+        <ng-container *ngTemplateOutlet="productsInCart.length ? itemsList : emptyCart"></ng-container>
+    </div>
+</div>
+
+<!-- Template when cart has list of items -->
+<ng-template #itemsList>
+    <div class="cart-items-warapper">
+        <ul *ngIf="productsInCart.length">
+            <li *ngFor="let products of productsInCart" class="li">
+                <div *ngIf="products.product.price">
+                    <div class="cart-item-image">
+                        <img class="product-card-img" src="assets{{ products.product.imageURL }}"
+                            [alt]="products.product.description" width="100%" />
+                    </div>
+                    <div class="cart-item-desc">
+                        <div class="cart-item-title">{{ products.product.name }}</div>
+                        <button class="btn" aria-label="Decrease By 1"
+                            (click)="removeItemToCart(products.product.id || '', 1)">
+                            <i class="fa fa-minus" aria-hidden="true"></i>
+                        </button>
+                        <span>{{ products.count }}</span>
+                        <button class="btn" aria-label="Increase By 1"
+                            (click)="addItemToCart(products.product.id || '', 1, products.product)">
+                            <i class="fa fa-plus" aria-hidden="true"></i>
+                        </button>
+                        <span class="cart-item-price">X Rs.{{ products.product.price }}</span>
+                    </div>
+                    <div class="cart-item-total">Rs{{ products.product.price * (products.count || 0) }}</div>
+                </div>
+            </li>
+            <li>
+                <div class="cart-footer-banner">
+                    <img src="assets/static/images/lowest-price.png" alt="lower price image"
+                        aria-labelledby="banner-tex" />
+                    <span id="banner-tex">You won't find it cheaper anywhere</span>
+                </div>
+            </li>
+            <li>
+                <div class="cart-footer">
+                    <div class="promo-text">Promo can be applied Home Page</div>
+                    <div class="cart-payment-checkout desktop">
+                        <button id="checkOutBtn" (click)="onClose()" class="btn">
+                            <span>Proceed to Checkout</span>
+                            <span>Rs. {{ checkoutAmont }} ></span>
+                        </button>
+                    </div>
+                </div>
+            </li>
+        </ul>
+
+    </div>
+
+
+</ng-template>
+
+<!-- Template for empty cart -->
+<ng-template #emptyCart>
+    <div class="empty-cart-wrapper">
+        <div class="empty-cart-text">
+            <h2>No items in your cart</h2>
+            <p>Your favorite items are just a click away</p>
+        </div>
+        <div class="empty-cart-button desktop">
+            <button id="emptycartBtn" (click)="onClose()" class="btn">Start Shopping</button>
+        </div>
+    </div>
+</ng-template>

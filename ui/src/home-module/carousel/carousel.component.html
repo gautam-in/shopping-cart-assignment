@@ -1,0 +1,17 @@
+<section *ngIf="caraouselData" class="caraousel-container" aria-labelledby="Carousel Heading">
+    <h3 id="carouselheading" class="visuallyhidden">Independence Day Sale</h3>
+    <ngb-carousel *ngIf="caraouselData.length >0">
+        <ng-container *ngFor="let slide of caraouselData; let i = index">
+            <ng-template ngbSlide id="{{i}}">
+                  <img
+                    [alt]="slide.bannerImageAlt"
+                    src="assets{{ slide.bannerImageUrl}}" 
+                    class="slide-width"
+                    sizes="(min-width: 1024px) 80vw,
+                    (min-width: 768px) 80vw,
+                    200vw"          
+                  />
+            </ng-template>
+        </ng-container>
+    </ngb-carousel>
+</section>

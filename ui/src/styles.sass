@@ -1,0 +1,128 @@
+/* You can add global styles to this file, and also import other style files */
+
+.formFlex
+    display: flex
+    flex-direction: column
+
+@media (max-width: 767px)
+    .main
+        flex-direction: column
+    .loginText
+        width: 100%
+        justify-content: center
+    h2.product-card-title
+        grid-column: 1 / span 2
+        text-align: left
+    .product-card-cont
+        display: flex
+        flex-direction: column
+    .sidebar
+        width: 100%
+        flex: none
+        margin-right: 0
+        background-color: #f5f5f5
+    .product-list-wrapper
+        flex-direction: column
+    .product-card-element
+        flex-direction: column
+        display: flex
+        width: 100%
+    .sidebar
+        width: 80%
+        margin-bottom: 1rem
+    .footer-paragraph
+        text-align: center
+        margin: 0
+        word-wrap: break-word
+    .logo
+        margin-left: 200px
+    .filtersList
+        display: none
+    .product-card-cost
+        display: none
+
+@media ( min-width: 767px)
+    .product-list-wrapper
+        display: flex
+        flex-direction: row
+        width: 100%
+        padding: 0
+        margin-top: -25px
+    .product-card-element
+        width: 50%
+        flex-direction: column
+        display: flex
+    .sidebar
+        width: 20%
+        margin-bottom: 1rem
+    .product-buy
+        display: flex
+        align-items: center
+        justify-content: space-between
+    .filterDropdown
+        display: none
+    .product-card-cost
+        font-weight: 600
+    .product-card-price
+        display: none
+    .product-card-cont
+        display: flex
+        flex-direction: column
+@media (min-width: 1024px)
+    .modal-header h2
+        font-size: 20px
+    .desktop
+        display: block !important
+    .empty-cart-wrapper
+        flex: 1 1 80%
+    .product-buy button.btn
+        flex: 0 0 50%
+    .product-list-container-block
+        grid-template-columns: 1fr 1fr 1fr 1fr
+    .product-card-element
+        width: 25%
+        flex-direction: column
+        display: flex
+
+.inputBox
+    border: none
+    border-bottom: 1px solid grey
+
+input
+    width: 250px
+    display: block
+
+input:focus
+    outline: none
+    border: none
+    border-bottom: 2px solid #0b5c60
+
+input:focus::placeholder
+    color: #0b5c60
+
+.submitButton
+    width: 250px
+    display: block
+    margin: 25px 0 10px
+    outline: none
+    border: none
+    height: 40px
+    cursor: pointer
+    line-height: 18px
+    background-color: #F44669
+    font-weight: bold
+    color: white
+
+input.ng-invalid.ng-touched
+    border-bottom: 1px solid red
+    color: red
+
+.error
+    color: red
+    font-size: 18px
+
+.sub-text
+    font-weight: 600
+img
+    height: auto
+    width: 100%
