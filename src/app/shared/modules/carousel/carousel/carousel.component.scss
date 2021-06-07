@@ -1,0 +1,51 @@
+@import "src/variables";
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 6000px;
+}
+
+.carousel-wrapper {
+  overflow: hidden;
+}
+.carousel-inner {
+  display: flex;
+}
+.indicators-container {
+  position: absolute;
+  z-index: 2;
+  text-align: center;
+  display: grid;
+  place-content: center;
+  height: 1em;
+  bottom: 1em;
+  width: 100%;
+}
+.indicator {
+  cursor: pointer;
+  margin-left: 1em;
+  height: 0.5em;
+  width: 0.5em;
+  background-color: $grey;
+  border-radius: 50%;
+  display: inline-block;
+  opacity: 0.56;
+
+  &:hover {
+    background-color: $mergenta;
+    opacity: 1;
+  }
+}
+.indicator-highlighted {
+  border-width: 10px;
+}
+.selected {
+  border-width: 10px;
+  background-color: $mergenta;
+}
+
+.unselected {
+  border-width: 2px;
+}

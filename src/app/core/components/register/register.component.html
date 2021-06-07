@@ -1,0 +1,89 @@
+<div class="wrapper container common-padding">
+  <div class="left">
+    <div class="LoginRegText">
+      <h1 class="title">Signup</h1>
+      <p class="title-description">
+        We do not share your personal details with anyone.
+      </p>
+      <p></p>
+    </div>
+  </div>
+  <div class="right">
+    <form [formGroup]="registrationForm" (submit)="submitRegistrationForm()">
+      <div class="form-group">
+        <mat-form-field appearance="standard">
+          <mat-label>First Name</mat-label>
+          <input
+            matInput
+            type="text"
+            class="form-control"
+            formControlName="firstName"
+          />
+          <mat-error>{{ displayMessage.firstName }}</mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="form-group">
+        <mat-form-field appearance="standard">
+          <mat-label>Last Name</mat-label>
+          <input
+            matInput
+            type="text"
+            class="form-control"
+            formControlName="lastName"
+          />
+          <mat-error>{{ displayMessage.lastName }}</mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="form-group">
+        <mat-form-field appearance="standard">
+          <mat-label>Email</mat-label>
+          <input
+            matInput
+            type="email"
+            class="form-control"
+            formControlName="email"
+          />
+          <mat-error>{{ displayMessage.email }}</mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="form-group">
+        <mat-form-field appearance="standard">
+          <mat-label>Password</mat-label>
+          <input
+            matInput
+            type="password"
+            class="form-control"
+            formControlName="password"
+          />
+          <mat-error>{{ displayMessage.password }}</mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="form-group">
+        <mat-form-field appearance="standard">
+          <mat-label>Confirm Password</mat-label>
+          <input
+            matInput
+            type="password"
+            class="form-control"
+            formControlName="confirmPassword"
+          />
+          <mat-error>{{ displayMessage.confirmPassword }}</mat-error>
+        </mat-form-field>
+      </div>
+      <button
+        aria-label="Sign up"
+        type="submit"
+        class="action-btn"
+        mat-flat-button
+        color="accent"
+        [disabled]="registrationForm.invalid"
+      >
+        Signup
+      </button>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,58 @@
+@import "src/variables";
+
+.wrapper {
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+
+    .left {
+        width: 190px;
+        height: auto;
+        background-color: $grey;
+        .filter {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            padding-left: 2em;
+            padding-right: 2em;
+            margin-top: 2em;
+            i {
+                cursor: pointer;
+            }
+        }
+    }
+    .right {
+        width: calc(100% - 190px);
+        height: auto;
+    }
+    .nav-link {
+        border-bottom: 1px solid rgba($color: #000000, $alpha: 0.26);
+        display: inline-block;
+        width: 100%;
+        &.active button {
+            color: $mergenta;
+        }
+        button {
+            cursor: pointer;
+            text-align: left;
+            padding-left: 2em;
+            width: 100%;
+        }
+    }
+}
+.mat-select-panel {
+    background: #fff;
+}
+
+@media screen and (max-width: 767px) {
+    .wrapper {
+        flex-direction: column;
+        .left {
+            display: none;
+        }
+        .right {
+            width: 100%;
+        }
+    }
+}
