@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { Product } from '../interfaces/product';
+import { CartItemsService } from '../services/cart-items.service';
 
 @Component({
   selector: 'app-product-cart-modal',
@@ -7,33 +9,35 @@ import { Product } from '../interfaces/product';
   styleUrls: ['./product-cart-modal.component.scss'],
 })
 export class ProductCartModalComponent implements OnInit {
-  constructor() {}
-  cartItems: any[] = [];
+  cartItems: any = [];
+  cartSubscription = new Subscription();
+  totalAmt = 0;
+
+  constructor(private miniCart: CartItemsService) {}
 
   ngOnInit(): void {
-    this.cartItems = [
-      {
-        category: '5b6899953d1a866534f516e2',
-        description:
-          'Kiwis are oval shaped with a brownish outer skin. The flesh is bright green and juicy with tiny, edible black seeds.',
-        id: '5b6c6a7f01a7c38429530883',
-        imageURL: '/static/images/products/fruit-n-veg/kiwi-green.jpg',
-        name: 'Fresho Kiwi - Green, 3 pcs',
-        price: 87,
-        sku: 'fnw-kiwi-3',
-        stock: 50,
-      },
-    ];
+    this.getCartItems();
   }
 
-  increment(item: any): void {
-    // item.count++;
-    // item.totalPrice = item.price * item.count;
-    //this.getCartItems.incrementCartItem(item);
+  getCartItems() {
+    console.log('product retrieved');
+    this.cartItems = this.miniCart.getCartList();
+
+    // calculate total amount before incrementing the quantity of any product
+    this.cartItems.forEach((res: Product) => {
+      this.totalAmt += res.pricePerQty;
+    });
   }
 
-  decrement(item: any): void {
-    // item.count--;
-    // item.totalPrice = item.price * item.count;
+  increment(index): void {
+    this.miniCart.incrementCartItem(index);
+    this.cartItems = this.miniCart.getCartList();
+    this.totalAmt = this.cartItems.totalAmount;
+  }
+
+  decrement(index): void {
+    this.miniCart.decrementCartItem(index);
+    this.cartItems = this.miniCart.getCartList();
+    this.totalAmt = this.cartItems.totalAmount;
   }
 }
