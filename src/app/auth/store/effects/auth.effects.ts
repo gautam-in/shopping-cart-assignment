@@ -47,7 +47,7 @@ export class AuthEffects {
     this.actions$.pipe(
       ofType(AuthActions.SignupStart),
       switchMap((payload) => {
-        return this.authService.addNewUser(payload).pipe(
+        return this.authService.addNewUser(payload as User).pipe(
           map((resData) => {
             return handleAuthentication(resData);
           }),
@@ -63,7 +63,7 @@ export class AuthEffects {
     this.actions$.pipe(
       ofType(AuthActions.LoginStart),
       switchMap((payload) => {
-        return this.authService.loginUser(payload).pipe(
+        return this.authService.loginUser(payload as User).pipe(
           map((resData) => {
             return handleAuthentication(resData);
           }),

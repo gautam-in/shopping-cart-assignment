@@ -21,7 +21,7 @@ import { effects } from './store/app.effects';
   declarations: [AppComponent],
   imports: [
     CoreModule,
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     ToastrModule.forRoot(), // Toastr Module for showing messages on ui
     BrowserAnimationsModule,
     AppRoutingModule,
