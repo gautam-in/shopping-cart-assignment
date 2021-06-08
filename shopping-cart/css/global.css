@@ -1,0 +1,23 @@
+:root {
+    --primary-color: #c44569;
+    --secondary-color: #e7e7e7;
+    --text-color:black;
+    --side-bar-color:#dad5d5;
+    --border-color: whitesmoke;
+    --input-border-color:#bdb6b6;
+    --sidebar-item-list-border-color : #d0cbcb;
+  }
+  
+
+h1{
+    font-size: 2rem !important;
+}
+
+p{
+    font-size: 1rem !important;
+}
+
+.display-none{
+    display: none;
+}
+

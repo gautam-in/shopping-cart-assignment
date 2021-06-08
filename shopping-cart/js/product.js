@@ -5,52 +5,22 @@ $(document).ready(function(){
     $.get("http://localhost:3000/categories", function(data, status){
         createSidebar(data)
       });
-    $('#nav-icon').click(()=>{
-        console.log($('#check').prop('checked'))
+    $('.sidebar-icon').click(()=>{
         if($('#check').prop('checked') == true){
-            $('.sidebar').hide();
+            $('#category-list').hide();
         }else{
-            $('.sidebar').show();
+            $('#category-list').show();
         }
     })
     totalItemInCart();
 });
 
-
-
-function createProductList(data){
-    $('#product-list').empty()
-    for(var i=0; i<data.length;i++){
-        var product = `<div class="col-sm-6 col-md-6 col-lg-3 p-0">
-        <div class="card">
-            <div class="card-body card-body-container">
-              <h5 class="card-title">${data[i].name}</h5>
-               <div class="description-container">
-                 <div><img src="..${data[i].imageURL}" width="100%"/></div>
-                <div class="button-mobile"><p class="card-text description">${data[i].description}</p><button class="button-modify" id=${data[i].id} onclick="addItemToCart(this)" data-toggle="modal" data-target="#alert-modal">Buy Now @ Rs.${data[i].price}</button></div>
-              </div>
-            </div>
-            <div class="card-footer card-footer-tab">
-                <span><button class="button-modify" onclick="addItemToCart(this)" data-toggle="modal" id=${data[i].id} data-target="#alert-modal">Buy Now @ Rs.${data[i].price}</button></span>
-              </div>
-            <div class="card-footer card-footer-desktop">
-            <span>Rs.${data[i].price}</span>
-            <span><button class="button-modify" onclick="addItemToCart(this)" id=${data[i].id} data-toggle="modal" data-target="#alert-modal">Buy Now</button></span>
-            </div>
-          </div>
-        </div>`
-        $('#product-list').append(product)
-    }
-
-}
-
-
 function setNavItemName(current){
+    var id =$(current).attr('id');
     var categoryName = $(current).html();
     $('#category-name').html(categoryName);
     $('.list-item').removeClass('list-item-active');
     $(current).addClass('list-item-active');
-    var id =$(current).attr('id');
     var filteredList = productList.filter((product)=> product.category == id)
     createProductList(filteredList);
 }
@@ -61,11 +31,8 @@ function createSidebar(data){
              if(i == 0){
                 $('#category-name').html(data[i].name);
                 localStorage.setItem('categoryType',data[i].id)
-                var sidebarItem = `<div class="list-item list-item-active" onclick="setNavItemName(this)" id=${data[i].id}>${data[i].name}</div>`
-             }else{
-              var sidebarItem = `<div class="list-item" onclick="setNavItemName(this)" id=${data[i].id}>${data[i].name}</div>`
              }
-            $('#sidebar-list').append(sidebarItem);
+            $('#category-list').append(getSidebarItem(data[i]));
         }
     }
 }
@@ -114,3 +81,33 @@ function totalItemInCart(){
   }
 }
 
+
+
+function getSidebarItem(data){
+    return `<div class="sidebar-item-list" onclick="setNavItemName(this)" id=${data.id}>${data.name}</div>`
+}
+
+function createProductList(data){
+    $('#product-list').empty()
+    for(var i=0; i<data.length;i++){
+        var product = `<div class="col-sm-6 col-md-6 col-lg-3 p-0">
+        <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">${data[i].name}</h5>
+               <div class="card-description-container d-flex d-sm-flex d-md-flex d-lg-block">
+                 <div><img src="..${data[i].imageURL}" width="100%" alt="product logo"/></div>
+                <div><p class="card-text card-description">${data[i].description}</p><button class="modified-button d-block d-sm-none" id=${data[i].id} onclick="addItemToCart(this)" data-toggle="modal" data-target="#alert-modal">Buy Now @ Rs.${data[i].price}</button></div>
+              </div>
+            </div>
+            <div class="card-footer border-top-0 bg-white d-none d-sm-block d-md-block d-lg-none">
+                <span><button class="modified-button" onclick="addItemToCart(this)" data-toggle="modal" id=${data[i].id} data-target="#alert-modal">Buy Now @ Rs.${data[i].price}</button></span>
+              </div>
+            <div class="card-footer border-top-0 bg-white d-none d-sm-none d-md-none d-lg-flex justify-content-between align-items-end">
+            <span>Rs.${data[i].price}</span>
+            <span><button class="modified-button p-1" onclick="addItemToCart(this)" id=${data[i].id} data-toggle="modal" data-target="#alert-modal">Buy Now</button></span>
+            </div>
+          </div>
+        </div>`
+        $('#product-list').append(product)
+    }
+}

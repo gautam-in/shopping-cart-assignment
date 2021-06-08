@@ -1,110 +1,64 @@
+@import "global.css";
 
-.header{
-    border-bottom: 0.3rem solid whitesmoke;
-}
-.header-action-2{
-    text-align: end;
-    padding: 0;
-    margin:0;
-    margin-bottom: 0.8rem;
-}
+.modified-button{
+    background:var(--primary-color);
+    color: white;
+    font-size: 0.93rem;
+    padding:0.18rem 1.25rem;
+    display: block;
+    margin-top:0.62rem;
+    width:100% ;
+    cursor:pointer;
+    border: 1px solid var(--primary-color);
+  }
 
-.header-action-2 span{
-    margin-left: 1rem;
-    cursor: pointer;
-}
-
-.header-action-1 span{
-    margin-right: 2rem;
-    cursor: pointer;
-}
-.header-action-2, .header-action-1{
-    display: none;
+nav li{
+   list-style-type: none; 
+   display: inline-block;
 }
 
+nav  a{
+    text-decoration: none !important;
+    color: var(--text-color) !important;
+}
 
-.header-notification-icon{
-    float: right;
-    background-color: #e7e7e7;
+.cart-icon{
+    background-color: var(--secondary-color);
     padding:1rem 1.5rem;
-    color:#c0392b;
-    margin-bottom: 0;
+    color:var(--primary-color);
     cursor: pointer;
+    width: max-content;
+    float: right;
 }
 
-
-.move > div{
-    width: 100% !important;
-    margin: 0 auto;
-}
-.move{
-    padding: 0 !important;
-}
-
-.logo img{
+#logo{
     width: 7.5rem;
 }
-#desktop{
-    display: none;
-  }
-#non-desktop{
-    display: block;
+
+header{
+    border-bottom: 0.3rem solid var(--border-color);
 }
 
-#desktop-cart-icon{
-  display: none;
+footer{
+    background-color:var(--secondary-color);
 }
 
-#non-desktop-cart-icon{
- display: block;
+.modified-container > div{
+    width: 100%;
+    margin: 0 auto; 
 }
+
 
 /* media query */
 @media (min-width: 576px){
- .header-action-2, .header-action-1{
-    display: block;
-}
-.logo img{
-    width: 10rem;
-}
-}
-
-@media (min-width: 768px){
-
-.logo img{
-    width: 12rem;
-}
+    #logo{
+        width: 10rem;
+    }
 }
 
 @media (min-width: 992px){
-.header-action-2 span{
-    margin-left: 0.5rem;
+    .modified-container > div{
+        width: 76%;
+        margin: 0 auto; 
+    }
 }
-.move > div{
-    width: 76% !important;
-}
-#desktop{
-  display: block;
-}
-#non-desktop{
-display: none;
-}
-#desktop-cart-icon{
- display: block;
-}
-  
-#non-desktop-cart-icon{
-   display: none;
-}
-}
-
-@media (min-width: 1200px){
-}
-
-@media (min-width: 1400px){
-}
-
-#category-name{
-    font-size: 1.5rem;
-}
-

@@ -1,186 +1,69 @@
-body{
-    overflow-x: hidden;
-}
-
-.list-item{
-    padding:1rem 0.5rem;
-    border-bottom:0.1rem solid #dad5d5;
+.sidebar-icon{
+    position: absolute;
+    right: 1rem ;
+    top:0;
     cursor: pointer;
-}
-
-.list-item-active{
-
-}
-
-.list-item:hover{
-    background:#d0cbcb !important;
-    color: black;
-    transition: 2sec;
-}
+ }
 
 .sidebar{
-    color:#696666;
-    background-color: #e7e7e7;
-}
-
-.button-modify{
-    background:#c44569 !important;
-    color: white !important;
-    font-size: 0.75rem !important ;
-    padding: 2px 10px !important;
-    border: 2px solid #c0392b !important;
-    margin-top:10px !important;
-    width:65% !important;
-    cursor:pointer !important;
-  }
-
-  .card-footer{
-      background-color: #fff !important;
-      border-top: 0 !important;
-  }
-  
-  .description{
-      background-color:#e7e7e7 !important;
-      height: 9rem;
-      text-overflow: ellipsis;
-      overflow: hidden;
-      margin-top: 0rem;
-  }
-
- .card{
-     border-radius: 0 !important;
-     border-right: 0.2rem solid whitesmoke !important;
-     border-left: 0.2rem solid whitesmoke !important;
-     border-bottom: 0.2rem dashed whitesmoke !important;
- }
-
-
- .card-title{
-     height: 3rem;
-     text-overflow: ellipsis;
-     overflow: hidden;
-
- }
-
- .footer{
-     background-color: #e7e7e7;
- }
- .card-footer-tab,.card-footer-desktop {
-     display: none;
- }
- .description-container{
-    display: flex;
-}
-.description-container > div{
-    width: 50% !important;
-}
-.description-container img{
-    height: 100%;
-    width: 100%;
-}
-
-.button-mobile{
-    display: flex;
-    flex-flow: column;
-    justify-content: space-between;
-}
-.button-mobile > button{
-    display: block;
-    width: 100% !important;
-   }
-
-   .navigation{
-    background-color:#c44569;
+    background-color:var(--primary-color);
     height:2rem;
     justify-content:space-between;
     color:white;
     font-size:1.5rem;
-    cursor:pointer !important; 
-   }
-   #nav-icon{
-      position: absolute !important;
-      right: 1rem !important;
-      top:0 !important;
-   }
+    cursor:pointer; 
+}
 
-   #check{
-       display: none;
-   }
+.sidebar-item-list:hover{
+    background:var(--sidebar-item-list-border-color);
+    color:var(--text-color);
+    transition: 2sec;
+}
 
+.sidebar-item-list{
+    padding:1rem 0.5rem;
+    border-bottom:0.1rem solid var(--side-bar-color);
+    cursor: pointer;
+}
 
- @media (min-width: 576px){
-    .button-modify{
-        font-size: 15px;
-    }
-    .list-item{
-        padding:1rem 2rem;
-        border-bottom:0.1rem solid #dad5d5;
-    }
-    .button-mobile{
-        display: block;
-       }
-    .button-mobile > button{
-     display: none;
-    }
-    .navigation{
-        display: none !important;
-    }
-     .card-body-container{
-         padding: 0 0.4rem !important;
-     }
- .card-title{
-     height: 3rem;
+#category-list{
+    background-color: var(--secondary-color);
+}
+
+.card-title{
+    height: 3rem;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.card-description{
+    background-color:var(--secondary-color);
+    height: 9rem;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    margin-top: 0rem;
+}
+
+ .card{
+     border-radius: 0;
+     border-right: 0.2rem solid var(--border-color) !important;
+     border-left: 0.2rem solid var(--border-color) !important;
  }
-  .card-footer-tab{
-      display: block;
-  }
-  .card-footer-desktop{
-      display: none;
-  }
-  .card-footer button{
-    width: 100% !important;
-}
-}
 
-@media (min-width: 768px){
-
+ .card-description-container > div{
+    width: 50% !important;
 }
-
-@media (min-width: 992px){
-.description{
-    margin-top: 1rem;
-}
-.description-container{
-    display: block;
-}
-
-.description-container > div{
-    width: 100% !important;
-}
-.description-container img{
+.card-description-container img{
     height: 100%;
     width: 100%;
 }
-.card-title{
-    height: 6rem;
-}
-.card-footer-tab{
-    display: none;
-}
-.card-footer-desktop{
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    border-top: 0 !important;
-}
 
+@media (min-width: 992px){
+.card-description-container > div{
+    width: 100% !important;
 }
-
-@media (min-width: 1200px){
-
+.card-description-container img{
+    height: 100%;
+    width: 100%;
 }
-
-@media (min-width: 1400px){
-
 }
-
