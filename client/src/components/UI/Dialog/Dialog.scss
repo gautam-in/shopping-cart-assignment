@@ -1,0 +1,52 @@
+@import "../../../styles/Colors.scss";
+@import "../../../styles/Fonts.scss";
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 25%;
+  top: 25%;
+  width: 50%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: $transparent;
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: $white;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid $grey;
+  width: 50%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+  color: $grey;
+  float: right;
+  font-size: map-get($fontSize, heading4);
+  font-weight: map-get($fontWeight, bold);
+}
+
+.close:hover,
+.close:focus {
+  color: $black;
+  text-decoration: none;
+  cursor: pointer;
+}
+.buttonContainer {
+  display: flex;
+  justify-content: space-around;
+}
+.button {
+  background-color: $primary;
+  color: $white;
+  padding: 10px 20px;
+  border: none;
+}
+@media (max-width: 690px) {
+  .button {
+    padding: 10px;
+  }
+}

@@ -1,0 +1,22 @@
+@import "../../../styles/Fonts.scss";
+@import "../../../styles/Colors.scss";
+.sidebar {
+  width: 20%;
+  cursor: pointer;
+}
+.sidebar > button {
+  border-bottom: 0.5px $grey solid;
+  padding: 15px 0px 15px 30px;
+  font-weight: 600;
+  color: $darkgrey;
+  width: 100%;
+  border-color: $grey;
+  text-align: left;
+  cursor: pointer;
+}
+@media only screen and (max-width: 502px) {
+  .sidebar > button {
+    text-align: center;
+    padding: 15px;
+  }
+}
