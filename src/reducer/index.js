@@ -1,26 +1,33 @@
+import {
+  ADD_TO_CART,
+  OPEN_CART_OVERLAY,
+  CLOSE_CART_OVERLAY,
+  CART_ITEMS,
+} from "../constant/topic";
+
 const Reducer = (state, action) => {
   console.log("state", state);
   console.log("action", action);
   switch (action.type) {
-    case "addedToCartProduct":
+    case ADD_TO_CART:
       return {
         ...state,
         ...action.payload,
       };
 
-    case "openCartOverlay":
+    case OPEN_CART_OVERLAY:
       return {
         ...state,
         ...action.payload,
       };
 
-    case "closeCartOverlay":
+    case CLOSE_CART_OVERLAY:
       return {
         ...state,
         ...action.payload,
       };
 
-    case "cartItems":
+    case CART_ITEMS:
       return {
         ...state,
         ...action.payload,

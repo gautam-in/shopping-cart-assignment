@@ -10,7 +10,12 @@ import { Context } from "../../store";
 import "./index.scss";
 
 import { getCategoryApi, getProductApi } from "../../services";
-import topic from "../../constant/topic";
+import {
+  ADD_TO_CART,
+  OPEN_CART_OVERLAY,
+  CLOSE_CART_OVERLAY,
+  CART_ITEMS,
+} from "../../constant/topic";
 
 const ProductList = () => {
   const [state, dispatch] = useContext(Context);
@@ -34,7 +39,6 @@ const ProductList = () => {
   }, [location.search]);
 
   useEffect(() => {
-    // pubsub.subscribe(topic.ADD_TO_CART, listenCartCount);
     FetchData(getCategoryApi)
       .then((res) => {
         const categoryList = res
@@ -83,15 +87,15 @@ const ProductList = () => {
       cartItems.push(product);
     }
     dispatch({
-      type: topic.CART_ITEMS,
+      type: CART_ITEMS,
       payload: { cartItems: cartItems },
     });
     dispatch({
-      type: topic.ADD_TO_CART,
+      type: ADD_TO_CART,
       payload: { itemCount: cartItems.length },
     });
     isDesktop &&
-      dispatch({ type: topic.OPEN_CART_OVERLAY, payload: { showPopup: true } });
+      dispatch({ type: OPEN_CART_OVERLAY, payload: { showPopup: true } });
   };
   return (
     <div className="product_list_container container-fluid wrapper">

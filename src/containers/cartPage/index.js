@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useContext } from "react";
 import { useHistory } from "react-router-dom";
 
 import CartItem from "../../components/cartItem";
@@ -6,7 +6,10 @@ import Button from "../../components/common/button";
 import { Context } from "../../store";
 
 import { useDevice } from "../../utils";
-import topic from "../../constant/topic";
+import {
+  ADD_TO_CART,
+  CART_ITEMS,
+} from "../../constant/topic";
 
 import "./index.scss";
 
@@ -54,11 +57,11 @@ const Cart = (props) => {
         }
       });
     dispatch({
-      type: topic.CART_ITEMS,
+      type: CART_ITEMS,
       payload: { cartItems: cartItems },
     });
     dispatch({
-      type: topic.ADD_TO_CART,
+      type: ADD_TO_CART,
       payload: { itemCount: cartItems.length },
     });
   };
@@ -73,11 +76,11 @@ const Cart = (props) => {
         }
       });
     dispatch({
-      type: topic.CART_ITEMS,
+      type: CART_ITEMS,
       payload: { cartItems: cartItems },
     });
     dispatch({
-      type: topic.ADD_TO_CART,
+      type: ADD_TO_CART,
       payload: { itemCount: cartItems.length },
     });
   };
@@ -91,11 +94,11 @@ const Cart = (props) => {
         })
       : [];
     dispatch({
-      type: topic.CART_ITEMS,
+      type: CART_ITEMS,
       payload: { cartItems: cartItems },
     });
     dispatch({
-      type: topic.ADD_TO_CART,
+      type: ADD_TO_CART,
       payload: { itemCount: cartItems.length },
     });
   };
@@ -163,7 +166,11 @@ const Cart = (props) => {
             </div>
           )}
         </div>
-        <div className={`cart-footer ${state.cartItems.length ? "" : "empty-cart"}`}>
+        <div
+          className={`cart-footer ${
+            state.cartItems.length ? "" : "empty-cart"
+          }`}
+        >
           {state.cartItems?.length > 0 ? (
             <>
               <div className="promo_code_desc">{promoCodeApplyLabel}</div>

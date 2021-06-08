@@ -1,11 +1,14 @@
-import React, { useEffect, useState, useContext } from "react";
+import React, { useContext } from "react";
 import { Link, useHistory } from "react-router-dom";
 import HeaderLogo from "../common/headerLogo";
 import { Context } from "../../store";
 import CartModal from "../cartModal";
 
 import { useDevice } from "../../utils";
-import topic from "../../constant/topic";
+import {
+  OPEN_CART_OVERLAY,
+  CLOSE_CART_OVERLAY,
+} from "../../constant/topic";
 
 import "./index.scss";
 
@@ -27,7 +30,7 @@ const Header = () => {
   const handleCloseCart = () => {
     isDesktop &&
       dispatch({
-        type: topic.CLOSE_CART_OVERLAY,
+        type: CLOSE_CART_OVERLAY,
         payload: { showPopup: false },
       });
   };
@@ -35,7 +38,7 @@ const Header = () => {
   const handleCartModal = () => {
     isDesktop &&
       dispatch({
-        type: topic.OPEN_CART_OVERLAY,
+        type: OPEN_CART_OVERLAY,
         payload: { showPopup: true },
       });
   };
