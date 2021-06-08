@@ -9,7 +9,7 @@ import { cartReducer } from '../store/reducer/cart.reducer';
 
 import { CartComponent } from './cart.component';
 
-fdescribe('CartComponent', () => {
+describe('CartComponent', () => {
   let component: CartComponent;
   let fixture: ComponentFixture<CartComponent>;
   let store: MockStore<AppState>;

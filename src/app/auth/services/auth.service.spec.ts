@@ -5,7 +5,7 @@ import { mockUser } from '../mock/user.mock';
 
 import { AuthService } from './auth.service';
 
-fdescribe('AuthService', () => {
+describe('AuthService', () => {
   let service: AuthService;
 
   beforeEach(() => {

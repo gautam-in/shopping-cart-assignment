@@ -5,7 +5,7 @@ import { ICategory } from '../models/category.model';
 
 import { CategoryService } from './category.service';
 
-fdescribe('CategoryService', () => {
+describe('CategoryService', () => {
   let service: CategoryService;
   let httpClient: HttpClient;
   beforeEach(() => {

@@ -22,7 +22,7 @@ import { SidebarComponent } from '../sidebar/sidebar.component';
 
 import { ProductListComponent } from './product-list.component';
 
-fdescribe('ProductListComponent', () => {
+describe('ProductListComponent', () => {
   let component: ProductListComponent;
   let fixture: ComponentFixture<ProductListComponent>;
   let activatedRoute: ActivatedRoute;

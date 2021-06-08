@@ -4,7 +4,7 @@ import { of } from 'rxjs';
 
 import { ProductService } from './product.service';
 
-fdescribe('ProductService', () => {
+describe('ProductService', () => {
   let service: ProductService;
   let httpClient: HttpClient;
 

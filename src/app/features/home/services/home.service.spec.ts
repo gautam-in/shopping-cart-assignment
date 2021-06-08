@@ -4,7 +4,7 @@ import { of } from 'rxjs';
 
 import { HomeService } from './home.service';
 
-fdescribe('HomeService', () => {
+describe('HomeService', () => {
   let service: HomeService;
   let httpClient: HttpClient;
 

@@ -5,7 +5,7 @@ import { mockUser } from 'src/app/auth/mock/user.mock';
 import { AppState } from 'src/app/store/app.reducer';
 import { HeaderComponent } from './header.component';
 
-fdescribe('HeaderComponent', () => {
+describe('HeaderComponent', () => {
   let component: HeaderComponent;
   let fixture: ComponentFixture<HeaderComponent>;
   let store: MockStore<AppState>;

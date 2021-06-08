@@ -8,7 +8,7 @@ import { appReducer } from 'src/app/store/app.reducer';
 import { LoginComponent } from './login.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-fdescribe('LoginComponent', () => {
+describe('LoginComponent', () => {
   let component: LoginComponent;
   let fixture: ComponentFixture<LoginComponent>;
   let store: MockStore<AppState>;

@@ -7,7 +7,7 @@ import { mockProduct } from '../mock/product.mock';
 
 import { ProductItemComponent } from './product-item.component';
 
-fdescribe('ProductItemComponent', () => {
+describe('ProductItemComponent', () => {
   let component: ProductItemComponent;
   let fixture: ComponentFixture<ProductItemComponent>;
 
