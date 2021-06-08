@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { useHistory } from "react-router-dom";
 
 import CartItem from "../../components/cartItem";
 import Button from "../../components/common/button";
+import { Context } from "../../store";
 
-import { LocalStorage, pubsub, useDevice } from "../../utils";
+import { useDevice } from "../../utils";
 import topic from "../../constant/topic";
 
 import "./index.scss";
@@ -23,18 +24,8 @@ import {
 
 const Cart = (props) => {
   const { isDesktop } = useDevice();
-  const initialCart = JSON.parse(localStorage.getItem("cartItems")) || [];
+  const [state, dispatch] = useContext(Context);
   const history = useHistory();
-
-  const [cartItems, setCartItems] = useState(initialCart);
-  const [noOfItemInCart, setNoOfItemInCart] = useState(cartItems.length);
-  const listenCartCount = (msg, data) => {
-    setNoOfItemInCart(data);
-  };
-
-  useEffect(() => {
-    pubsub.subscribe(topic.ADD_TO_CART, listenCartCount);
-  });
 
   // close cart
   const handleCloseCart = () => {
@@ -55,57 +46,74 @@ const Cart = (props) => {
 
   // increment cart item qty
   const handleIncrementItemQty = (item) => {
-    const cartItems = LocalStorage.getItem("cartItems");
+    const cartItems = state.cartItems;
     cartItems.length &&
       cartItems.map((singleCartItem) => {
         if (singleCartItem.id === item.id) {
           singleCartItem.count = singleCartItem.count + 1;
         }
       });
-    LocalStorage.setItem("cartItems", cartItems);
-    setCartItems(cartItems);
-    pubsub.publish(topic.ADD_TO_CART, cartItems.length);
+    dispatch({
+      type: topic.CART_ITEMS,
+      payload: { cartItems: cartItems },
+    });
+    dispatch({
+      type: topic.ADD_TO_CART,
+      payload: { itemCount: cartItems.length },
+    });
   };
 
   // decrement cart item qty
   const handleDecrementItemQty = (item) => {
-    const cartItems = LocalStorage.getItem("cartItems");
+    const cartItems = state.cartItems;
     cartItems.length &&
       cartItems.map((singleCartItem) => {
         if (singleCartItem.id === item.id) {
           singleCartItem.count = singleCartItem.count - 1;
         }
       });
-    LocalStorage.setItem("cartItems", cartItems);
-    setCartItems(cartItems);
-    pubsub.publish(topic.ADD_TO_CART, cartItems.length);
+    dispatch({
+      type: topic.CART_ITEMS,
+      payload: { cartItems: cartItems },
+    });
+    dispatch({
+      type: topic.ADD_TO_CART,
+      payload: { itemCount: cartItems.length },
+    });
   };
 
   // remove item from cart
   const handleRemoveItem = (item) => {
-    let cartItems = LocalStorage.getItem("cartItems");
+    let cartItems = state.cartItems;
     cartItems = cartItems.length
       ? cartItems.filter((singleCartItem) => {
-        return singleCartItem.id !== item.id;
-      })
+          return singleCartItem.id !== item.id;
+        })
       : [];
-    LocalStorage.setItem("cartItems", cartItems);
-    setCartItems(cartItems);
-    pubsub.publish(topic.ADD_TO_CART, cartItems.length);
+    dispatch({
+      type: topic.CART_ITEMS,
+      payload: { cartItems: cartItems },
+    });
+    dispatch({
+      type: topic.ADD_TO_CART,
+      payload: { itemCount: cartItems.length },
+    });
   };
 
   return (
     <div
-      className={`${!isDesktop ? "container-fluid wrapper " : ""
-        } cart-container`}
+      className={`${
+        !isDesktop ? "container-fluid wrapper " : ""
+      } cart-container`}
     >
       <div className="cart-card">
         <div className="cart-header">
           <h1 className="cart-title">
             {`${cartTitleLabel} `}
-            {cartItems?.length > 0 && (
-              <span className="item-count">{`( ${cartItems ? noOfItemInCart : 0
-                } ${itemLabel} )`}</span>
+            {state.cartItems?.length > 0 && (
+              <span className="item-count">{`( ${
+                state.cartItems ? state.itemCount : 0
+              } ${itemLabel} )`}</span>
             )}
           </h1>
           <span className="close_button_container">
@@ -128,8 +136,8 @@ const Cart = (props) => {
             e.stopPropagation();
           }}
         >
-          {cartItems?.length > 0 ? (
-            cartItems.map((item) => (
+          {state.cartItems?.length > 0 ? (
+            state.cartItems.map((item) => (
               <CartItem
                 handleIncrementItem={handleIncrementItemQty}
                 handleDecrementItem={handleDecrementItemQty}
@@ -144,7 +152,7 @@ const Cart = (props) => {
               <p>{favoriteItemLabel}</p>
             </div>
           )}
-          {cartItems?.length > 0 && (
+          {state.cartItems?.length > 0 && (
             <div className="cart-banner">
               <img
                 loading="lazy"
@@ -155,16 +163,16 @@ const Cart = (props) => {
             </div>
           )}
         </div>
-        <div className={`cart-footer ${cartItems.length ? "" : "empty-cart"}`}>
-          {cartItems?.length > 0 ? (
+        <div className={`cart-footer ${state.cartItems.length ? "" : "empty-cart"}`}>
+          {state.cartItems?.length > 0 ? (
             <>
               <div className="promo_code_desc">{promoCodeApplyLabel}</div>
               <Button variant="primary" className=" btn-block btn-checkout">
                 {proceedToCheckoutLabel}
                 <span className="price">
                   {`${totalAmountLabel} `}
-                  {cartItems?.length > 0 &&
-                    cartItems.reduce(
+                  {state.cartItems?.length > 0 &&
+                    state.cartItems.reduce(
                       (total, current) => total + current.count * current.price,
                       0
                     )}

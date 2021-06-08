@@ -4,6 +4,7 @@ import Reducer from "./reducer";
 const initialState = {
   itemCount: 0,
   showPopup: false,
+  cartItems: [],
 };
 
 const Store = ({ children }) => {

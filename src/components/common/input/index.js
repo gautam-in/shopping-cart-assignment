@@ -97,6 +97,7 @@ const Input = ({
             ? "filled"
             : ""
         }`}
+        id={`form-control-${name}`}
         onChange={handleInputChange}
         name={name}
         value={value}

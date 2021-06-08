@@ -35,8 +35,7 @@ const Banner = () => {
 
   return (
     <Fragment>
-      {categories &&
-        categories.length > 0 &&
+      {categories?.length > 0 &&
         categories.map((category, i) => (
           <div
             key={category.id}

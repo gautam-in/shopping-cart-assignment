@@ -5,6 +5,7 @@ import { Context } from "../../store";
 import CartModal from "../cartModal";
 
 import { useDevice } from "../../utils";
+import topic from "../../constant/topic";
 
 import "./index.scss";
 
@@ -22,18 +23,21 @@ const Header = () => {
   const [state, dispatch] = useContext(Context);
   const { isDesktop } = useDevice();
   const history = useHistory();
-  const [showModal, setShowModal] = useState(false);
-
-  useEffect(() => {
-    state.showPopup && handleCartModal();
-  }, [state.showPopup]);
 
   const handleCloseCart = () => {
-    isDesktop && setShowModal(false);
+    isDesktop &&
+      dispatch({
+        type: topic.CLOSE_CART_OVERLAY,
+        payload: { showPopup: false },
+      });
   };
 
   const handleCartModal = () => {
-    isDesktop && setShowModal(true);
+    isDesktop &&
+      dispatch({
+        type: topic.OPEN_CART_OVERLAY,
+        payload: { showPopup: true },
+      });
   };
 
   const handleCartClick = () => {
@@ -70,8 +74,8 @@ const Header = () => {
           </div>
         </div>
       </header>
-      {showModal && isDesktop && (
-        <CartModal showModal={showModal} handleClose={handleCloseCart} />
+      {state.showPopup && isDesktop && (
+        <CartModal showModal={state.showPopup} handleClose={handleCloseCart} />
       )}
     </>
   );

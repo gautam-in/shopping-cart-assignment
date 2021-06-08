@@ -4,7 +4,7 @@ import { useLocation, useHistory } from "react-router-dom";
 import Sidebar from "../../components/sidebar";
 import Product from "../../components/product";
 
-import { FetchData, LocalStorage, pubsub, useDevice } from "../../utils";
+import { FetchData, useDevice } from "../../utils";
 import { Context } from "../../store";
 
 import "./index.scss";
@@ -69,7 +69,7 @@ const ProductList = () => {
   };
 
   const handleCart = (product) => {
-    const cartItems = LocalStorage.getItem("cartItems") || [];
+    const cartItems = state.cartItems;
     let alreadyAvailableInCart = false;
     cartItems.length &&
       cartItems.map((singleCartItem) => {
@@ -82,13 +82,14 @@ const ProductList = () => {
       product.count = 1;
       cartItems.push(product);
     }
-    LocalStorage.setItem("cartItems", cartItems);
+    dispatch({
+      type: topic.CART_ITEMS,
+      payload: { cartItems: cartItems },
+    });
     dispatch({
       type: topic.ADD_TO_CART,
       payload: { itemCount: cartItems.length },
     });
-    // pubsub.publish(topic.ADD_TO_CART, cartItems.length);
-    // isDesktop && pubsub.publish(topic.OPEN_CART_OVERLAY, true);
     isDesktop &&
       dispatch({ type: topic.OPEN_CART_OVERLAY, payload: { showPopup: true } });
   };

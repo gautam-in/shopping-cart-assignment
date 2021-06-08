@@ -9,4 +9,6 @@ export default {
   ADD_TO_CART: "addedToCartProduct",
   ORDER_ID: "orderId",
   OPEN_CART_OVERLAY: "openCartOverlay",
+  CLOSE_CART_OVERLAY: "closeCartOverlay",
+  CART_ITEMS: "cartItems",
 };
