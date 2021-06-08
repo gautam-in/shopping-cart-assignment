@@ -2,21 +2,22 @@ import React from "react";
 import Button from "../common/button";
 import Image from "../common/image";
 
-import { useDevice } from "../../utils";
-
 import "./index.scss";
 
 import { addToCartLabel, mrpLabel, ruppeeLabel } from "../../constant";
 
 const Product = ({ product, handlecart }) => {
-  const { isMobile, isTablet, isDesktop } = useDevice();
   const handleBuy = () => {
     handlecart(product);
   };
 
-  const returnButton = (ctaLabel) => {
+  const returnButton = (ctaLabel, type) => {
     return (
-      <Button className="add_to_cart" variant="primary" onClick={handleBuy}>
+      <Button
+        className={`add_to_cart ${type}`}
+        variant="primary"
+        onClick={handleBuy}
+      >
         {ctaLabel}
       </Button>
     );
@@ -59,27 +60,32 @@ const Product = ({ product, handlecart }) => {
             alt={product.name}
           />
         </div>
-        {isDesktop && returnDescription(product.description)}
-        {isTablet && (
+        {returnDescription(product.description)}
+        {
           <div className="tablet_info_container">
             {returnDescription(product.description)}
           </div>
-        )}
-        {isMobile && (
+        }
+        {
           <div className="mobile_info_container">
             {returnDescription(product.description)}
-            {returnButton(`${addToCartLabel} @ ${mrpLabel} ${ruppeeLabel}${product.price}`)}
+            {returnButton(
+              `${addToCartLabel} @ ${mrpLabel} ${ruppeeLabel}${product.price}`,
+              "mobile"
+            )}
           </div>
-        )}
+        }
       </div>
-      {isTablet &&
-        returnButton(`${addToCartLabel} @ ${mrpLabel} ${ruppeeLabel}${product.price}`)}
-      {isDesktop && (
+      {returnButton(
+        `${addToCartLabel} @ ${mrpLabel} ${ruppeeLabel}${product.price}`,
+        "tablet"
+      )}
+      {
         <div className="card-footer">
           {returnPrice(product.price)}
-          {returnButton(addToCartLabel)}
+          {returnButton(addToCartLabel, "desktop")}
         </div>
-      )}
+      }
     </div>
   );
 };

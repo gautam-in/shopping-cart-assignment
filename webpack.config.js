@@ -61,14 +61,14 @@ module.exports = (env, mode) => {
       new CopyPlugin({
         patterns: [
           "static",
-          {
-            from: __dirname + "/static/**/*",
-            to: __dirname + "/public",
-          },
-          {
-            from: __dirname + "/static/**/*",
-            to: __dirname + "/dist",
-          },
+          // {
+          //   from: __dirname + "/static/**/*",
+          //   to: __dirname + "/public",
+          // },
+          // {
+          //   from: __dirname + "/static/**/*",
+          //   to: __dirname + "/dist",
+          // },
         ],
         options: {
           concurrency: 100,

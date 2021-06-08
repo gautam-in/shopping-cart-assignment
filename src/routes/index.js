@@ -1,8 +1,6 @@
 import React, { lazy } from "react";
 import { Route } from "react-router-dom";
 
-import CustomRoute from "./customRoute";
-
 import { useDevice } from "../utils";
 
 const Home = lazy(() => import("../containers/home"));
@@ -16,12 +14,12 @@ const Routes = () => {
   const { isDesktop } = useDevice();
   return (
     <>
-      <CustomRoute path="/" exact component={Home} />
-      <CustomRoute path="/home" exact component={Home} />
-      <CustomRoute path="/login-your-account" component={LoginMyBazar} />
-      <CustomRoute path="/create-your-account" component={Register} />
-      <CustomRoute path="/products" component={ProductList} />
-      {!isDesktop && <CustomRoute path="/cart" component={Cart} />}
+      <Route path="/" exact component={Home} />
+      <Route path="/home" exact component={Home} />
+      <Route path="/login-your-account" component={LoginMyBazar} />
+      <Route path="/create-your-account" component={Register} />
+      <Route path="/products" component={ProductList} />
+      {!isDesktop && <Route path="/cart" component={Cart} />}
       <Route path="/not-found" component={NotFound} />
     </>
   );

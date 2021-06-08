@@ -1,11 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { Link, useHistory } from "react-router-dom";
 import HeaderLogo from "../common/headerLogo";
-
+import { Context } from "../../store";
 import CartModal from "../cartModal";
 
-import { LocalStorage, pubsub, useDevice } from "../../utils";
-import topic from "../../constant/topic";
+import { useDevice } from "../../utils";
 
 import "./index.scss";
 
@@ -20,33 +19,28 @@ import {
 } from "../../constant";
 
 const Header = () => {
+  const [state, dispatch] = useContext(Context);
   const { isDesktop } = useDevice();
   const history = useHistory();
-  const cartItems = LocalStorage.getItem("cartItems") || [];
-  const [noOfItemInCart, setNoOfItemInCart] = useState(cartItems.length);
   const [showModal, setShowModal] = useState(false);
 
-  const listenCartCount = (msg, data) => {
-    setNoOfItemInCart(data);
-  };
   useEffect(() => {
-    pubsub.subscribe(topic.ADD_TO_CART, listenCartCount);
-    pubsub.subscribe(topic.OPEN_CART_OVERLAY, handleCartModal);
-  });
+    state.showPopup && handleCartModal();
+  }, [state.showPopup]);
 
   const handleCloseCart = () => {
     isDesktop && setShowModal(false);
   };
 
   const handleCartModal = () => {
-    !isDesktop && setShowModal(true);
+    isDesktop && setShowModal(true);
   };
 
   const handleCartClick = () => {
     if (!isDesktop) {
       history.push("/cart");
     } else {
-      pubsub.publish(topic.OPEN_CART_OVERLAY, true);
+      handleCartModal();
     }
   };
   return (
@@ -69,7 +63,7 @@ const Header = () => {
               <span onClick={handleCartClick}>
                 <div className="cart_logo_container">
                   <img className="cart_logo" src={cartIcon} alt="cart-logo" />
-                  <span>{`${noOfItemInCart} ${itemLabel}`}</span>
+                  <span>{`${state.itemCount} ${itemLabel}`}</span>
                 </div>
               </span>
             </div>

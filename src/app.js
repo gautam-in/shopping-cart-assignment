@@ -5,6 +5,7 @@ import React, { lazy, Suspense } from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter, Switch } from "react-router-dom";
 
+import Store from "./store";
 import Routes from "./routes";
 import Loader from "./components/loader";
 
@@ -35,7 +36,9 @@ const App = () => {
 
 ReactDOM.render(
   <BrowserRouter>
-    <App />
+    <Store>
+      <App />
+    </Store>
   </BrowserRouter>,
   document.getElementById("root")
 );

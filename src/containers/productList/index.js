@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { useLocation, useHistory } from "react-router-dom";
 
 import Sidebar from "../../components/sidebar";
 import Product from "../../components/product";
 
 import { FetchData, LocalStorage, pubsub, useDevice } from "../../utils";
+import { Context } from "../../store";
 
 import "./index.scss";
 
@@ -12,6 +13,8 @@ import { getCategoryApi, getProductApi } from "../../services";
 import topic from "../../constant/topic";
 
 const ProductList = () => {
+  const [state, dispatch] = useContext(Context);
+
   const { isDesktop } = useDevice();
   const location = useLocation();
   const history = useHistory();
@@ -80,8 +83,14 @@ const ProductList = () => {
       cartItems.push(product);
     }
     LocalStorage.setItem("cartItems", cartItems);
-    pubsub.publish(topic.ADD_TO_CART, cartItems.length);
-    isDesktop && pubsub.publish(topic.OPEN_CART_OVERLAY, true);
+    dispatch({
+      type: topic.ADD_TO_CART,
+      payload: { itemCount: cartItems.length },
+    });
+    // pubsub.publish(topic.ADD_TO_CART, cartItems.length);
+    // isDesktop && pubsub.publish(topic.OPEN_CART_OVERLAY, true);
+    isDesktop &&
+      dispatch({ type: topic.OPEN_CART_OVERLAY, payload: { showPopup: true } });
   };
   return (
     <div className="product_list_container container-fluid wrapper">

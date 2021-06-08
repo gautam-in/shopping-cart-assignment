@@ -37,9 +37,11 @@ const LoginMyBazar = () => {
     const hasError = Object.values(form).some((item) => item.trim() === "");
 
     if (!hasError) {
-      window.localStorage.setItem("user", JSON.stringify(form));
-      setForm(INITIAL_FORM);
-      history.push(`/home`);
+      const user = window.localStorage.getItem("user");
+      if (user && JSON.parse(user)) {
+        setForm(INITIAL_FORM);
+        history.push(`/home`);
+      }
     } else {
       setCheckValidation(true);
     }
