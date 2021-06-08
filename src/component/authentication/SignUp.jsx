@@ -81,7 +81,7 @@ function SignUp() {
           errors={errors}
           mandatory={true}
         />
-        <button className="app-btn"> Login</button>
+        <button className="app-btn"> Signup</button>
       </form>
     </div>
   );

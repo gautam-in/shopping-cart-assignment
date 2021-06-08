@@ -10,9 +10,7 @@ function App() {
     <Provider store={store}>
       <Router>
         <div className="container">
-          <header>
-            <Navbar />
-          </header>
+          <Navbar />
           <Routes />
           <Footer />
         </div>

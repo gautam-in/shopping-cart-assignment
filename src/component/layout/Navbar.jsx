@@ -13,7 +13,7 @@ function Navbar() {
     (state) => state.getCartDetail.cartItems.length
   );
   return (
-    <>
+    <header>
       <nav className="app-navbar">
         <div className="app-header">
           <div className="app-block left">
@@ -64,7 +64,7 @@ function Navbar() {
           <Cart status={openCart} />
         </Suspense>
       )}
-    </>
+    </header>
   );
 }
 
