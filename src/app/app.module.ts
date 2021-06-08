@@ -13,7 +13,6 @@ import {
   NgxUiLoaderRouterModule,
 } from 'ngx-ui-loader';
 import { CoreModule } from './core/core.module';
-import { HomeModule } from './features/home/home.module';
 import { appReducer } from './store/app.reducer';
 import { effects } from './store/app.effects';
 

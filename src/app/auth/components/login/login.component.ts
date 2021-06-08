@@ -1,8 +1,8 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { ToastrService } from 'ngx-toastr';
-import { Subject, Subscription } from 'rxjs';
+import { Subscription } from 'rxjs';
 import { AppState } from 'src/app/store/app.reducer';
 import * as AuthActions from '../../store/actions/auth.actions';
 
@@ -13,7 +13,6 @@ import * as AuthActions from '../../store/actions/auth.actions';
 })
 export class LoginComponent implements OnInit {
   private storeSub!: Subscription;
-  destroyed$ = new Subject<boolean>();
   constructor(
     private ngxToastrService: ToastrService,
     private store: Store<AppState>
@@ -21,7 +20,7 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
     this.storeSub = this.store.select('auth').subscribe((authState) => {
-      if (authState.authError) {
+      if (authState && authState.authError) {
         this.ngxToastrService.error(authState.authError);
         this.store.dispatch(AuthActions.ClearError());
       }
@@ -34,8 +33,6 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnDestroy() {
-    if (this.storeSub) {
-      this.storeSub.unsubscribe();
-    }
+    this.storeSub.unsubscribe();
   }
 }

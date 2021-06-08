@@ -19,7 +19,6 @@ import { Subscription } from 'rxjs';
 })
 export class RegisterComponent implements OnInit {
   registerForm: FormGroup;
-  isLoading!: boolean;
   private storeSub!: Subscription;
 
   constructor(
@@ -43,23 +42,22 @@ export class RegisterComponent implements OnInit {
       }
     );
   }
+
   ngOnInit() {
     this.storeSub = this.store.select('auth').subscribe((authState) => {
-      this.isLoading = authState.loading;
-      if (authState.authError) {
+      if (authState && authState.authError) {
         this.ngxToastrService.error(authState.authError);
         this.store.dispatch(AuthActions.ClearError());
       }
     });
   }
+
   onSubmit() {
     this.store.dispatch(AuthActions.SignupStart(this.registerForm.value));
     this.registerForm.reset();
   }
 
   ngOnDestroy() {
-    if (this.storeSub) {
-      this.storeSub.unsubscribe();
-    }
+    this.storeSub.unsubscribe();
   }
 }

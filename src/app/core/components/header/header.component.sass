@@ -66,8 +66,17 @@ header
     width: 100%
     z-index: 99
 
+.cart-btn.tablet.desktop
+    display: flex!important
+.cart-btn.mobile
+    display: none!important
+
 @media only screen and (max-width: 480px)
     .row
         .right-section
             .menu
                 justify-content: flex-end!important
+    .cart-btn.tablet.desktop
+        display: none!important
+    .cart-btn.mobile
+        display: flex!important

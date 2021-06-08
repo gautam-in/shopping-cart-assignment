@@ -47,10 +47,8 @@ export class CartComponent implements OnInit, OnDestroy {
     }
     return total;
   }
-  
+
   ngOnDestroy() {
-    if (this.storeSub) {
-      this.storeSub.unsubscribe();
-    }
+    this.storeSub.unsubscribe();
   }
 }

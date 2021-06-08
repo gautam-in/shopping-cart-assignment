@@ -1,7 +1,7 @@
 import { HttpClientModule } from '@angular/common/http';
-import { TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
-import { StoreModule } from '@ngrx/store';
+import { provideMockStore, MockStore } from '@ngrx/store/testing';
 import { ToastrModule } from 'ngx-toastr';
 import {
   NgxUiLoaderHttpModule,
@@ -10,32 +10,48 @@ import {
 } from 'ngx-ui-loader';
 import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
-import { cartReducer } from './features/cart/store/reducer/cart.reducer';
+import { AppState } from './store/app.reducer';
 
-describe('AppComponent', () => {
+fdescribe('AppComponent', () => {
+  let component: AppComponent;
+  let fixture: ComponentFixture<AppComponent>;
+  let store: MockStore<AppState>;
+
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [
         RouterTestingModule,
         NgxUiLoaderModule,
+        NgxUiLoaderHttpModule,
+        NgxUiLoaderRouterModule,
         ToastrModule.forRoot(),
         CoreModule,
         HttpClientModule,
-        StoreModule.forRoot({ cartList: cartReducer }),
       ],
       declarations: [AppComponent],
+      providers: [provideMockStore()],
     }).compileComponents();
   });
 
+  beforeEach(() => {
+    fixture = TestBed.createComponent(AppComponent);
+    component = fixture.componentInstance;
+    store = TestBed.inject(MockStore);
+    store.setState({
+      auth: { authError: 'error', user: null, loading: false },
+      cartList: { cart: [] },
+    });
+    fixture.detectChanges();
+    
+  });
+
   it('should create the app', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app).toBeTruthy();
+    const storeSpy = spyOn(store, 'dispatch');
+    expect(component).toBeTruthy();
   });
 
   it(`should have as title 'sabkabazar'`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app.title).toEqual('sabkabazar');
+    const storeSpy = spyOn(store, 'dispatch');
+    expect(component.title).toEqual('sabkabazar');
   });
 });

@@ -1,5 +1,5 @@
 <div class="container">
-  <div class="header">
+  <div class="header tablet desktop">
     <h3>My Cart({{ cartItem.length }} Item)</h3>
     <span aria-colspan="close-button" (click)="closeCart()" class="close"
       >X</span
@@ -47,14 +47,14 @@
   </ng-template>
   <div *ngIf="cartItem.length; else startShopping" class="footer">
     <div class="promo-code">Promo code can be appplied on payment page</div>
-    <a href="#" class="checkout">
+    <a href="/home" class="checkout">
       <span> Proceed to Checkout</span>
       <span> Rs.{{ totalAmount }}</span>
     </a>
   </div>
   <ng-template #startShopping>
     <div class="footer">
-      <a href="#" class="start-shopping">
+      <a href="/home" class="start-shopping">
         <span> Start Shopping</span>
       </a>
     </div>

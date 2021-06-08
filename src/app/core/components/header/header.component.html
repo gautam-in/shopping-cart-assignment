@@ -1,6 +1,6 @@
 <header>
   <div class="row">
-    <div routerLink="/" class="left-section">
+    <div routerLink="/home" class="left-section">
       <img src="../../../assets/static/images/logo.png" alt="Sabka Bazar" />
     </div>
     <div class="right-section">
@@ -33,7 +33,11 @@
             </li>
           </ul>
         </nav>
-        <div class="cart-btn">
+        <div class="cart-btn mobile">
+          <img src="../../../assets/static/images/cart.svg" alt="cart image" />
+          <a routerLink="/cart">{{ cartItem }} Items</a>
+        </div>
+        <div class="cart-btn tablet desktop">
           <img src="../../../assets/static/images/cart.svg" alt="cart image" />
           <a (click)="openCart()">{{ cartItem }} Items</a>
         </div>
@@ -42,7 +46,7 @@
   </div>
   <div class="clearfix"></div>
 </header>
-<div *ngIf="showCart" class="row showCart">
+<div *ngIf="showCart" class="row showCart tablet desktop">
   <app-cart (close)="closeCart()"></app-cart>
 </div>
-<div *ngIf="showCart" class="overlay"></div>
+<div *ngIf="showCart" class="overlay tablet desktop"></div>

@@ -15,7 +15,7 @@ export class AuthService {
         (item: any) => item.email === value.email
       );
       if (userexists !== -1) {
-        return throwError({ error: { error: { message: 'EMAIL_EXISTS' } } });
+        return throwError({ error: { error: { message: 'EMAIL_NOT_FOUND' } } });
       } else {
         userArray.push(value);
         sessionStorage.setItem('Users', JSON.stringify(userArray));
@@ -42,13 +42,13 @@ export class AuthService {
           });
         } else {
           return throwError({
-            error: { error: { message: 'EMAIL_NOT_FOUND' } },
+            error: { error: { message: 'INVALID_PASSWORD' } },
           });
         }
       }
     }
     return throwError({
-      error: { error: { message: 'INVALID_PASSWORD' } },
+      error: { error: { message: 'EMAIL_NOT_FOUND' } },
     });
   }
 }

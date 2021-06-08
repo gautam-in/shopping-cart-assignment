@@ -2,11 +2,20 @@
   <div class="row">
     <div class="container">
       <div class="left-section">
-        <h1>Signup</h1>
-        <p>We do not share your personal details with anyone</p>
+        <h1 aria-label="Page Title 'Signup'">Signup</h1>
+        <p
+          aria-label="paragraph"
+          aria-describedat="We do not share your personal details with anyone"
+        >
+          We do not share your personal details with anyone
+        </p>
       </div>
       <div class="right-section">
-        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+        <form
+          aria-label="User Registration Form"
+          [formGroup]="registerForm"
+          (ngSubmit)="onSubmit()"
+        >
           <div class="form-group">
             <div class="floating-label">
               <input
@@ -27,10 +36,10 @@
                 type="text"
                 formControlName="firstName"
                 placeholder=" "
-                aria-label="First Name Input field"
+                aria-label="First name input field"
               />
               <span class="highlight"></span>
-              <label for="firstName" aria-label="first name label"
+              <label for="firstName" aria-label="First name label"
                 >First Name</label
               >
             </div>
@@ -42,10 +51,10 @@
                 type="text"
                 formControlName="lastName"
                 placeholder=" "
-                aria-label="Last Name Input field"
+                aria-label="Last name input field"
               />
               <span class="highlight"></span>
-              <label for="lastName" aria-label="last name label"
+              <label for="lastName" aria-label="Last name label"
                 >Last Name</label
               >
             </div>
@@ -57,10 +66,10 @@
                 type="password"
                 formControlName="password"
                 placeholder=" "
-                aria-label="Password Input field"
+                aria-label="Password input field"
               />
               <span class="highlight"></span>
-              <label for="password" aria-label="password label">Password</label>
+              <label for="password" aria-label="Password label">Password</label>
             </div>
           </div>
           <div class="form-group">
@@ -70,15 +79,16 @@
                 type="password"
                 formControlName="confirmPassword"
                 placeholder=" "
-                aria-label="Confirm Password Input field"
+                aria-label="Confirm password input field"
               />
               <span class="highlight"></span>
-              <label for="confirmPassword" aria-label="confirm password label"
+              <label for="confirmPassword" aria-label="Confirm password label"
                 >Confirm Password</label
               >
             </div>
           </div>
           <input
+            aria-label="registration form submit button"
             [disabled]="!registerForm.valid"
             type="submit"
             value="Signup"
