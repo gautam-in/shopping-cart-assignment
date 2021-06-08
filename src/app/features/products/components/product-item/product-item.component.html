@@ -10,7 +10,11 @@
         <p>
           <span>{{ product.product.description }}</span>
         </p>
-        <button (click)="addToCart(product)" class="buy-now mobile">
+        <button
+          *ngIf="product.quantity == 0"
+          (click)="addToCart(product)"
+          class="buy-now mobile"
+        >
           Buy Now @ Rs.{{ product.product.price }}
         </button>
         <div *ngIf="product.quantity > 0" class="mobile">
