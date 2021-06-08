@@ -4,6 +4,7 @@ import { IProduct } from 'src/app/shared/models/product.model';
 import { ICategory } from 'src/app/shared/models/category.model';
 import { ProductService } from '../../services/product.service';
 import { CategoryService } from 'src/app/shared/services/category.service';
+import { ICartItem } from 'src/app/shared/models/cart-item.model';
 
 @Component({
   selector: 'app-product-list',
@@ -18,7 +19,7 @@ export class ProductListComponent implements OnInit {
     private router: Router
   ) {}
   categories!: ICategory[];
-  products!: IProduct[];
+  products!: ICartItem[];
   defaultCategory = '';
   ngOnInit(): void {
     this.activeRouter.params.subscribe((val) => {
@@ -45,8 +46,10 @@ export class ProductListComponent implements OnInit {
   private getProducts(id: string): void {
     this.productService.getAllProducts().subscribe((products: IProduct[]) => {
       this.products = id
-        ? products.filter((item) => item.category === id)
-        : products;
+        ? products
+            .filter((item) => item.category === id)
+            .map((item) => ({ product: item, quantity: 0 }))
+        : products.map((item) => ({ product: item, quantity: 0 }));
     });
   }
 }

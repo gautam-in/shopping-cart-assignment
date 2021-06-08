@@ -42,7 +42,7 @@ const _cartReducer = createReducer(
       } else {
         cart.splice(productIndex, 1);
       }
-      return { ...state, cart };
+      return { ...state, cart: [...cart] };
     }
     return state;
   })

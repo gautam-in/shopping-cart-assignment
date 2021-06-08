@@ -1,8 +1,10 @@
-import { Component, Input } from '@angular/core';
+import { AfterViewInit, Component, Input } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { ToastrService } from 'ngx-toastr';
-import { addProduct } from 'src/app/features/cart/store/actions/cart.actions';
-import { IProduct } from 'src/app/shared/models/product.model';
+import {
+  addProduct,
+  deleteProduct,
+} from 'src/app/features/cart/store/actions/cart.actions';
+import { ICartItem } from 'src/app/shared/models/cart-item.model';
 import { AppState } from 'src/app/store/app.reducer';
 
 @Component({
@@ -10,17 +12,25 @@ import { AppState } from 'src/app/store/app.reducer';
   templateUrl: './product-item.component.html',
   styleUrls: ['./product-item.component.sass'],
 })
-export class ProductItemComponent {
-  @Input() product!: IProduct;
+export class ProductItemComponent implements AfterViewInit {
+  @Input() product!: ICartItem;
+  constructor(private store: Store<AppState>) {}
 
-  constructor(private store: Store<AppState>, private toasterService: ToastrService) {}
+  ngAfterViewInit() {
+    this.store.select('cartList').subscribe((val) => {
+      const productItem = val.cart.find(
+        (item) => item.product.id === this.product.product.id
+      );
+      this.product.quantity = productItem ? productItem.quantity : 0;
+    });
+  }
 
-  addToCart(item: IProduct) {
-    const cartItem = {
-      product: item,
-      quantity: 1,
-    };
-    this.toasterService.success('Product added to cart!');
+  addToCart(cartItem: ICartItem) {
+    cartItem.quantity = 1;
     this.store.dispatch(addProduct(cartItem));
+  }
+
+  minusQuantity(item: ICartItem) {
+    this.store.dispatch(deleteProduct({ id: item.product.id }));
   }
 }
