@@ -1,0 +1,140 @@
+
+// Dimensions
+$prism-height: 350px;
+$prism-length: 350px;
+$prism-depth: $prism-length;
+$spacing: 20px;
+$br: 3px;
+
+// Colors
+$text-light: #fff;
+$text-dark: #666;
+
+$red:#8b0000;
+
+.login{
+    display: flex;
+    justify-content: space-around;
+    margin-top:50px
+}
+.login-name{
+    text-align: left;
+    header{
+        font-weight: bold;
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width:750px){
+    .login-name{
+        text-align: center;
+    } 
+}
+@media screen and (max-width:750px){
+    .login{
+      display: flex;
+      flex-direction: column;
+    }
+  }
+.wrapper{
+  width: $prism-length;
+  height: $prism-height;
+  margin: 60px auto;
+//   perspective: 600px;
+  text-align: left;
+}
+
+
+
+.face {
+//   position: relative;
+  
+  width: $prism-length;
+  height: $prism-height;
+  padding: $spacing;
+//   background: rgba(250,250,250,0.96);
+//   border: 3px solid $green;
+//   border-radius: 3px;
+  
+  .content{
+    color: $text-dark;
+    .error{
+        color: red;
+    }
+    h2{
+      font-size: 1.2em;
+      color: $red;
+    }
+    .field-wrapper{
+      .invalid{
+        border:2px solid red  !important;
+        border-radius: 5px;
+      }
+      .invalid-msg{
+        text-align: end;
+        margin:2px;
+        color: red;
+      }
+      margin-top: $spacing*1.5;
+      position: relative;
+      [aria-invalid]{
+        border-right:  5px solid red;
+      }
+
+      label{
+        position: absolute;
+        pointer-events: none;
+        font-size: 0.85em;
+        top: 40%;
+        left: 0;
+        transform: translateY(-50%);
+        transition: all ease-in 0.25s;
+        color: lighten($text-dark, 20%);
+      }
+      input[type="text"], input[type="password"], input[type="submit"]{
+        -webkit-appearance: none;
+        // appearance: none;
+        &:focus{
+          outline: none;
+        }
+      }
+      
+      input[type="text"], input[type="password"]{
+        width: 100%;
+        border: none;
+        background: transparent;
+        line-height: 2em;
+        border-bottom: 1px solid $red;
+        color: $text-dark;
+
+        &::-webkit-input-placeholder{
+          opacity: 0;
+        }
+        &::-moz-placeholder{
+          opacity: 0;
+        }
+        &:-ms-input-placeholder{
+          opacity: 0;
+        }
+        &:-moz-placeholder { 
+          opacity: 0;
+        }
+        &:focus, &:not(:placeholder-shown){
+          + label{
+            top: -35%;
+            color: $red;
+          }
+        }
+      }
+      input[type="submit"]{
+          background-color: $red;
+          color: white;
+          padding: $spacing/4;
+          width: 100%
+      }
+    
+    }
+  }
+  
+}
+

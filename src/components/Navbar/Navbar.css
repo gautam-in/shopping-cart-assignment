@@ -1,0 +1,134 @@
+.main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20px;
+   
+}
+.line{
+    border-bottom: 2px solid #d3d3d3;
+    /* box-shadow:0px 0px #d3d3d3; */
+    display: block;
+    padding-bottom:45px
+}
+.img-style{
+    width: 80px;
+    height: 70px;
+    justify-self: start;
+    margin-left: 0px;
+    margin-top: 40px;
+}
+
+.links{
+   display: grid;
+   grid-template-columns: repeat(2,auto);
+   gap: 20px;
+   width: 70vw;
+   list-style: none;
+   justify-content: left;
+   margin-top: 70px;
+   margin-left: 20px;
+}
+.item1{
+    text-decoration: none;
+    color: black;
+}
+
+.container{
+    width:150px;
+    margin-top: 40px;
+    padding:20px;
+    text-align:center;
+    display: flex;
+    flex-direction: column;
+}
+
+.top-container{
+    height: 18px;
+    margin-top: 10px;
+    display: flex;
+}
+.bottom-container{
+    height: 28px;
+    background-color: #d3d3d3;
+    padding:10px;
+    text-align: center;
+    cursor: pointer;
+    color: #D58E10;
+    text-decoration: none;
+    font-weight: normal;
+}
+.bottom-container svg{
+    color: #8b0000;
+}
+
+.signin{
+    
+    margin: 0px 10px;
+}
+.register{
+  
+    margin: 0px 10px;
+
+}
+
+.nocolor{
+    text-decoration: none;
+  
+}
+
+@media (min-width:414px){
+    .img-style{
+        width: 50px;
+        height: 50px;
+        justify-self: start;
+        margin-left: 50px;
+        margin-top: 60px;
+    }
+}
+
+@media(min-width:320px)and (max-width:413px){
+    .img-style{
+        width: 50px;
+        height: 50px;
+        justify-self: start;
+        margin-left: 150px;
+        margin-top: 60px;
+    }
+    .container{
+        margin-right: 100px;
+        
+    }
+    .bottom-container{
+        height: 40px;
+        padding: 10px;
+        width: 80px;
+        font-size: 12px
+    }
+    
+.signin{
+    display: none;
+   
+}
+.register{
+    display: none;
+  
+  
+
+}
+.links{
+    margin-left: 0px;
+}
+}
+
+@media (max-width:413px){
+   
+    .signin{
+        display: none;
+       
+    }
+    .register{
+        display: none;
+     
+    }
+}
