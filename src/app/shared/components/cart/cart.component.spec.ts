@@ -1,98 +1,105 @@
+import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { MatDialogRef } from '@angular/material/dialog';
+import { RouterTestingModule } from '@angular/router/testing';
 import { Store } from '@ngrx/store';
-import { autoSpy } from 'auto-spy';
-import { AppState } from 'src/app/store/app.reducer';
-
 import { CartComponent } from './cart.component';
 
 describe('CartComponent', () => {
   let component: CartComponent;
   let fixture: ComponentFixture<CartComponent>;
 
-  beforeEach(async () => {
-    const a = setup().default();
-    await TestBed.configureTestingModule({
-      declarations: [CartComponent],
-    })
-      .configureTestingModule({
-        providers: [
-          { provide: Store, useValue: a.store },
-          { provide: MatDialogRef, useValue: a.dialogRef },
-        ],
-      })
-      .compileComponents();
-  });
-
   beforeEach(() => {
+    const storeStub = () => ({
+      select: (string: any) => ({}),
+      dispatch: (arg: any) => ({}),
+    });
+    TestBed.configureTestingModule({
+      imports: [RouterTestingModule],
+      schemas: [NO_ERRORS_SCHEMA],
+      declarations: [CartComponent],
+      providers: [{ provide: Store, useFactory: storeStub }],
+    });
     fixture = TestBed.createComponent(CartComponent);
     component = fixture.componentInstance;
-    fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('can load instance', () => {
     expect(component).toBeTruthy();
   });
-  it('when ngOnInit is called it should', () => {
-    // arrange
-    const { build } = setup().default();
-    const c = build();
-    // act
-    c.ngOnInit();
-    // assert
-    // expect(c).toEqual
+
+  it(`outSideClickedFirstTime has default value`, () => {
+    expect(component.outSideClickedFirstTime).toEqual(false);
   });
-  it('when closeDialog is called it should', () => {
-    // arrange
-    const { build } = setup().default();
-    const c = build();
-    // act
-    c.closeDialog();
-    // assert
-    // expect(c).toEqual
+
+  it(`inside has default value`, () => {
+    expect(component.inside).toEqual(false);
   });
-  it('when removeProductFromCart is called it should', () => {
-    // arrange
-    const { build } = setup().default();
-    const c = build();
-    // act
-    // c.removeProductFromCart();
-    // assert
-    // expect(c).toEqual
+
+  describe('clickedOut', () => {
+    it('makes expected calls', () => {
+      spyOn(component, 'closeDialog').and.callThrough();
+      component.clickedOut();
+      expect(component.inside).toBe(false);
+    });
   });
-  it('when addProductsToCart is called it should', () => {
-    // arrange
-    const { build } = setup().default();
-    const c = build();
-    // act
-    // c.addProductsToCart();
-    // assert
-    // expect(c).toEqual
+
+  describe('ngOnInit', () => {
+    it('makes expected calls', () => {
+      const storeStub: Store = fixture.debugElement.injector.get(Store);
+      spyOn(storeStub, 'select').and.callThrough();
+      component.ngOnInit();
+      expect(storeStub.select).toHaveBeenCalled();
+    });
   });
-  it('when placeOrder is called it should', () => {
-    // arrange
-    const { build } = setup().default();
-    const c = build();
-    // act
-    c.placeOrder();
-    // assert
-    // expect(c).toEqual
+
+  describe('placeOrder', () => {
+    it('makes expected calls', () => {
+      const storeStub: Store = fixture.debugElement.injector.get(Store);
+      spyOn(component, 'closeDialog').and.callThrough();
+      spyOn(storeStub, 'dispatch').and.callThrough();
+      component.placeOrder();
+      expect(component.closeDialog).toHaveBeenCalled();
+      expect(storeStub.dispatch).toHaveBeenCalled();
+    });
+  });
+
+  describe('addProductsToCart', () => {
+    it('makes expected calls', () => {
+      const storeStub: Store = fixture.debugElement.injector.get(Store);
+      spyOn(storeStub, 'dispatch').and.callThrough();
+      component.addProductsToCart(0);
+      expect(storeStub.dispatch).toHaveBeenCalled();
+    });
+  });
+
+  describe('removeProductFromCart', () => {
+    it('makes expected calls', () => {
+      const storeStub: Store = fixture.debugElement.injector.get(Store);
+      spyOn(storeStub, 'dispatch').and.callThrough();
+      component.removeProductFromCart(0);
+      expect(storeStub.dispatch).toHaveBeenCalled();
+    });
+  });
+
+  describe('closeDialog', () => {
+    it('makes expected calls', () => {
+      spyOn(component.close, 'emit').and.callThrough();
+      component.closeDialog();
+      expect(component.close.emit).toHaveBeenCalled();
+    });
+  });
+
+  describe('clicked', () => {
+    it('clicks inside component', () => {
+      fixture.debugElement.nativeElement.dispatchEvent(new Event('click'));
+      expect(component.inside).toBe(true);
+    });
+  });
+
+  describe('clickedOut', () => {
+    it('clicks on document', () => {
+      document.dispatchEvent(new Event('click'));
+      expect(component.inside).toBe(false);
+    });
   });
 });
-
-function setup() {
-  let ref: MatDialogRef<CartComponent>;
-  const store = autoSpy(Store);
-  const dialogRef = autoSpy(MatDialogRef);
-  const builder = {
-    store,
-    dialogRef,
-    default() {
-      return builder;
-    },
-    build() {
-      return new CartComponent(store, dialogRef);
-    },
-  };
-  return builder;
-}

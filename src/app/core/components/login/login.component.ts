@@ -13,7 +13,7 @@ import {
   Validators,
 } from '@angular/forms';
 import { Store } from '@ngrx/store';
-import { Observable, fromEvent, merge } from 'rxjs';
+import { fromEvent, merge, Observable } from 'rxjs';
 import { debounceTime } from 'rxjs/operators';
 import { ErrorMsg } from 'src/app/core/common/constants/error.constants';
 import { REGEX } from 'src/app/core/common/constants/regex.constants';
@@ -60,14 +60,15 @@ export class LoginComponent implements OnInit, AfterViewInit, OnDestroy {
       email: ['', [Validators.required, Validators.pattern(REGEX.EMAIL_REGEX)]],
       password: ['', [Validators.required]],
     });
+  }
+
+  ngOnInit() {
     this.seo.setMetaData(
       'Sabka Bazar | Login',
       'login',
       'Login here to access premium services'
     );
   }
-
-  ngOnInit() {}
   @ViewChildren(FormControlName, { read: ElementRef })
   formInputElements!: ElementRef[];
   /**
@@ -75,12 +76,12 @@ export class LoginComponent implements OnInit, AfterViewInit, OnDestroy {
    */
   ngAfterViewInit(): void {
     // Watch for the blur event from any input element on the form.
-    const controlBlurs: Observable<any>[] = this.formInputElements.map(
+    const controlBlurs: Observable<any>[] = this.formInputElements?.map(
       (formControl: ElementRef) => fromEvent(formControl.nativeElement, 'blur')
     );
 
     // Merge the blur event observable with the valueChanges observable
-    merge(this.loginForm.valueChanges, ...controlBlurs)
+    merge(this.loginForm.valueChanges, ...(controlBlurs || []))
       .pipe(debounceTime(800))
       .subscribe(() => {
         this.displayMessage = this.genericValidator.processMessages(

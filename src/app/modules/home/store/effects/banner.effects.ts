@@ -1,17 +1,17 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Actions, ofType, createEffect } from '@ngrx/effects';
-import { switchMap, catchError, map, tap } from 'rxjs/operators';
+import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { of } from 'rxjs';
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-import { environment } from 'src/environments/environment';
+import { catchError, map, switchMap, tap } from 'rxjs/operators';
+import { UtilService } from 'src/app/core/services/util.service';
+import { ProductService } from 'src/app/modules/product/service/product.service';
+import { Banner } from '../../models/banner.model';
 import {
   FetchBannerError,
   FETCH_BANNER,
   FETCH_BANNER_ERROR,
   SetBanners,
 } from '../actions/banner.actions';
-import { UtilService } from 'src/app/core/services/util.service';
-import { Banner } from '../../models/banner.model';
 
 const handleSucess = (banners: Banner[]) => {
   return new SetBanners(banners);
@@ -30,32 +30,18 @@ const handleError = (errorRes: HttpErrorResponse) => {
 export class BannerEffects {
   constructor(
     private actions$: Actions,
-    private http: HttpClient,
-    private util: UtilService
+    private util: UtilService,
+    private productService: ProductService
   ) {}
   fetchBanners = createEffect(() =>
     this.actions$.pipe(
       ofType(FETCH_BANNER),
-      switchMap(() => {
-        return this.http.get<Banner[]>(environment.server + '/banners').pipe(
-          map((resData: Banner[]) => {
-            return resData.map((e) => {
-              if (e?.bannerImageUrl?.startsWith('/static')) {
-                e.bannerImageUrl = e.bannerImageUrl.replace(
-                  '/static',
-                  'assets'
-                );
-              }
-              return e;
-            });
-          }),
-          map((resData) => {
-            return handleSucess(resData);
-          }),
-          catchError((errorRes) => {
-            return handleError(errorRes);
-          })
-        );
+      switchMap((_) => this.productService.fetchBanners()),
+      map((resData) => {
+        return handleSucess(resData);
+      }),
+      catchError((errorRes) => {
+        return handleError(errorRes);
       })
     )
   );

@@ -27,7 +27,7 @@
         height: auto;
     }
     .nav-link {
-        border-bottom: 1px solid rgba($color: #000000, $alpha: 0.26);
+        border-bottom: 1px solid rgba($color: $black, $alpha: 0.26);
         display: inline-block;
         width: 100%;
         &.active button {
@@ -42,7 +42,12 @@
     }
 }
 .mat-select-panel {
-    background: #fff;
+    background: $white;
+}
+
+.title {
+    text-align: center;
+    padding-top: 0.5em;
 }
 
 @media screen and (max-width: 767px) {

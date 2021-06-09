@@ -1,4 +1,4 @@
-import { AbstractControl, ValidatorFn } from '@angular/forms';
+import { AbstractControl } from '@angular/forms';
 
 export class ConfirmFieldValidators {
   //  static  passwordConfirming(field1:string,field2:string,c: AbstractControl): { compare: boolean } | null {

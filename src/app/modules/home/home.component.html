@@ -1,4 +1,4 @@
-<div class="carousel-wrapper" role="banner" aria-label="Banner of Home Page">
+<div class="carousel-wrapper" aria-label="Banner of Home Page">
   <carousel #carousel="carousel">
     <ng-container
       *ngFor="let item of (banners$ | async)?.banners; let i = index"
@@ -21,6 +21,9 @@
       role="button"
       aria-label="Go to Next Item"
       class="btn-next"
+      [class.disabled]="
+        carousel.currentSlideIndex >= carousel.carouselSlidelength - 1
+      "
       >Next</a
     >
     <a
@@ -28,16 +31,13 @@
       role="button"
       aria-label="Go to Previous Item"
       class="btn-prev"
+      [class.disabled]="carousel.currentSlideIndex <= 0"
       >Prev</a
     >
   </div>
 </div>
 
-<ul
-  class="categories"
-  role="banner"
-  aria-label="List of Categories Available in Store"
->
+<ul class="categories" aria-label="List of Categories Available in Store">
   <li *ngFor="let category of (categories$ | async)?.categories">
     <section class="category">
       <div class="left">
@@ -48,7 +48,7 @@
         />
       </div>
       <div class="right">
-        <h3 [innerHtml]="category.name" class="name"></h3>
+        <h2 [innerHtml]="category.name" class="name"></h2>
         <div [innerHtml]="category.description" class="desc"></div>
         <a
           routerLink="/products"

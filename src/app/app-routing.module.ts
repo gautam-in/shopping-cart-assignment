@@ -5,7 +5,7 @@ import { RegisterComponent } from './core/components/register/register.component
 import { CategoryResolver } from './modules/home/service/category.resolver';
 import { ProductResolver } from './modules/product/service/product.resolver';
 
-const routes: Routes = [
+export const routes: Routes = [
   {
     path: '',
     pathMatch: 'full',

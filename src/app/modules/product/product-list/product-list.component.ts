@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
+import { MediaObserver } from '@angular/flex-layout';
 import { Store } from '@ngrx/store';
 import { combineLatest, Observable } from 'rxjs';
-import * as CartListActions from 'src/app/shared/store/actions/cart-list.actions';
-import { SeoService } from 'src/app/core/services/seo.service';
 import { map } from 'rxjs/operators';
-import { ProductState } from '../models/product-state.model';
+import { Enter } from 'src/app/core/common/animations/enter.animation';
+import { SeoService } from 'src/app/core/services/seo.service';
 import { AppState } from 'src/app/models/app-state.model';
 import { CartState } from 'src/app/shared/models/cart-state.model';
-import { MediaObserver } from '@angular/flex-layout';
-import { Enter } from 'src/app/core/common/animations/enter.animation';
+import * as CartListActions from 'src/app/shared/store/actions/cart-list.actions';
+import { ProductState } from '../models/product-state.model';
 
 @Component({
   selector: 'app-product-list',

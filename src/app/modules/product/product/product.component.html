@@ -18,7 +18,7 @@
     </mat-select>
   </mat-form-field>
   <div class="left" *ngIf="!isMobile">
-    <p class="filter">
+    <p class="filter" title="Filter By Category">
       <ng-container *ngIf="!(products$ | async)?.filterBy">
         <b> Filter By Category </b>
       </ng-container>
@@ -40,6 +40,8 @@
     <nav
       class="nav flex-column"
       *ngFor="let category of (categories$ | async)?.categories"
+      role="navigation"
+      attr.aria-label="{{ category?.name }}"
     >
       <a
         class="nav-link"
@@ -49,13 +51,14 @@
         routerLinkActive="active"
         [routerLinkActiveOptions]="{ exact: true }"
       >
-        <button attr.aria-label="{{ category.name }}" role="navigation">
+        <button attr.aria-label="{{ category.name }}">
           {{ category?.name }}
         </button>
       </a>
     </nav>
   </div>
   <div class="right">
+    <h1 class="title">Products at Sabka Bazar</h1>
     <router-outlet></router-outlet>
   </div>
 </div>

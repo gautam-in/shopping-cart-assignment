@@ -1,25 +1,20 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { ServiceWorkerModule } from '@angular/service-worker';
-import { environment } from '../environments/environment';
 import { HttpClientModule } from '@angular/common/http';
+import { NgModule } from '@angular/core';
+import { BREAKPOINT } from '@angular/flex-layout';
+import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ServiceWorkerModule } from '@angular/service-worker';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
-import * as fromApp from './store/reducers/app.reducer';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { environment } from '../environments/environment';
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+import { MY_CUSTOM_BREAKPOINTS } from './core/common/constants/constants';
+import { CoreModule } from './core/core.module';
 import { NgrxRouterStoreModule } from './ngrx-router.module';
 import { SharedModule } from './shared/shared.module';
-import { MAT_DIALOG_DEFAULT_OPTIONS } from '@angular/material/dialog';
-import {
-  MAT_SNACK_BAR_DEFAULT_OPTIONS,
-  MatSnackBar,
-} from '@angular/material/snack-bar';
 import { AppEffectModule } from './store/effects/app.effects.module';
-import { CoreModule } from './core/core.module';
-import { BREAKPOINT } from '@angular/flex-layout';
-import { MY_CUSTOM_BREAKPOINTS } from './core/common/constants/constants';
+import * as fromApp from './store/reducers/app.reducer';
 
 @NgModule({
   declarations: [AppComponent],
@@ -40,13 +35,7 @@ import { MY_CUSTOM_BREAKPOINTS } from './core/common/constants/constants';
     SharedModule,
   ],
   providers: [
-    {
-      provide: MAT_DIALOG_DEFAULT_OPTIONS,
-      useValue: { hasBackdrop: true, disableClose: true },
-    },
-    { provide: MAT_SNACK_BAR_DEFAULT_OPTIONS, useValue: { duration: 4000 } },
     { provide: BREAKPOINT, useValue: MY_CUSTOM_BREAKPOINTS, multi: true },
-    MatSnackBar,
   ],
   bootstrap: [AppComponent],
 })

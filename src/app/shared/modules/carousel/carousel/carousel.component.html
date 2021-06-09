@@ -5,7 +5,11 @@
   (mouseleave)="startRotation()"
 >
   <ul class="carousel-inner" #carousel>
-    <li *ngFor="let item of items" class="carousel-item">
+    <li
+      *ngFor="let item of items"
+      class="carousel-item"
+      [ngStyle]="carouselWrapperStyle"
+    >
       <ng-container [ngTemplateOutlet]="item.tpl"></ng-container>
     </li>
   </ul>

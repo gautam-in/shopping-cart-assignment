@@ -1,14 +1,22 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Actions, ofType, createEffect } from '@ngrx/effects';
+import { Actions, createEffect, ofType } from '@ngrx/effects';
+import { Store } from '@ngrx/store';
+import { of } from 'rxjs';
 import {
-  switchMap,
   catchError,
   map,
-  withLatestFrom,
+  switchMap,
   tap,
+  withLatestFrom,
 } from 'rxjs/operators';
-import { of } from 'rxjs';
-import { HttpClient } from '@angular/common/http';
+import { ErrorMsg } from 'src/app/core/common/constants/error.constants';
+import { UtilService } from 'src/app/core/services/util.service';
+import { AppState } from 'src/app/models/app-state.model';
+import { ProductService } from 'src/app/modules/product/service/product.service';
+import { environment } from 'src/environments/environment';
+import { CartResponse } from '../../models/cart-response.model';
+import { CartState } from '../../models/cart-state.model';
 import {
   AddCartError,
   AddCartSuccess,
@@ -25,13 +33,6 @@ import {
   PLACE_ORDER,
   UPDATE_PRODUCT,
 } from '../actions/cart-list.actions';
-import { Store } from '@ngrx/store';
-import { UtilService } from 'src/app/core/services/util.service';
-import { environment } from 'src/environments/environment';
-import { AppState } from 'src/app/models/app-state.model';
-import { CartResponse } from '../../models/cart-response.model';
-import { CartState } from '../../models/cart-state.model';
-import { ErrorMsg } from 'src/app/core/common/constants/error.constants';
 
 const handleSucess = (response: CartResponse) => {
   return new AddCartSuccess(response.responseMessage);
@@ -51,22 +52,18 @@ export class CartEffects {
     private actions$: Actions,
     private http: HttpClient,
     private store: Store<AppState>,
-    private util: UtilService
+    private util: UtilService,
+    private productService: ProductService
   ) {}
   addProductAction = createEffect(() =>
     this.actions$.pipe(
       ofType(ADD_PRODUCT, ADD_PRODUCTS, DELETE_PRODUCT, UPDATE_PRODUCT),
-      switchMap(() => {
-        return this.http
-          .post<CartResponse>(environment.server + '/addToCart', null)
-          .pipe(
-            map((resData) => {
-              return handleSucess(resData);
-            }),
-            catchError((errorRes) => {
-              return handleError(errorRes);
-            })
-          );
+      switchMap((_) => this.productService.addToCart()),
+      map((resData) => {
+        return handleSucess(resData);
+      }),
+      catchError((errorRes) => {
+        return handleError(errorRes);
       })
     )
   );

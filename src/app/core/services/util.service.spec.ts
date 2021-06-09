@@ -1,41 +1,24 @@
 import { TestBed } from '@angular/core/testing';
-
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { UtilService } from './util.service';
-import { MatSnackBar } from '@angular/material/snack-bar';
 
 describe('UtilService', () => {
   let service: UtilService;
-
   beforeEach(() => {
-    const a = setup().default();
-    TestBed.configureTestingModule({}).configureTestingModule({ providers: [{ provide: MatSnackBar, useValue: a.snackBar }] });
+    TestBed.configureTestingModule({
+      providers: [UtilService],
+      imports: [MatSnackBarModule, BrowserAnimationsModule],
+    });
     service = TestBed.inject(UtilService);
   });
 
-  it('should be created', () => {
+  it('can load instance', () => {
     expect(service).toBeTruthy();
   });
-    it('when openSnackBar is called it should', () => {
-        // arrange
-        const { build } = setup().default();
-        const u = build();
-        // act
-        u.openSnackBar();
-        // assert
-        // expect(u).toEqual
-    });
-});
 
-function setup() {
-    const snackBar = autoSpy(MatSnackBar);
-    const builder = {
-        snackBar,
-        default() {
-            return builder;
-        },
-        build() {
-            return new UtilService(snackBar);
-        }
-    }
-    return builder;
-}
+  it('should call openSnackBar ', () => {
+    service.openSnackBar('Hi There', '');
+    expect(document.querySelector('snack-bar-container')).toBeTruthy();
+  });
+});

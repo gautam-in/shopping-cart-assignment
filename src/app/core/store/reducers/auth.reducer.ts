@@ -1,6 +1,6 @@
-import { User } from '../../models/user.model';
 import * as AuthActions from 'src/app/core/store/actions/auth.actions';
 import { AuthState } from '../../models/auth-state.model';
+import { User } from '../../models/user.model';
 
 const initialState: AuthState = {
   user: null,

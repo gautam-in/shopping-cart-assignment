@@ -2,7 +2,7 @@
 header {
     text-decoration: dashed;
     font-weight: bolder;
-    color: rgba($color: #000000, $alpha: 0.87);
+    color: rgba($color: $black, $alpha: 0.87);
     position: sticky;
     z-index: 100;
     background-color: white;
@@ -63,6 +63,17 @@ header {
                 display: flex;
                 flex-direction: row;
             }
+            .user-info {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                .greet {
+                    max-width: 6em;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                }
+            }
             .cart {
                 height: 80%;
                 display: flex;
@@ -90,6 +101,9 @@ header {
         height: 10vh;
         .container {
             padding-left: 0;
+            .left {
+                align-items: center;
+            }
         }
         .logo-image {
             max-width: 100px;

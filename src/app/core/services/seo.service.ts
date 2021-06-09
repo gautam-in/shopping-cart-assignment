@@ -1,6 +1,6 @@
-import { Injectable, PLATFORM_ID, Inject } from '@angular/core';
-import { Meta, Title } from '@angular/platform-browser';
 import { isPlatformBrowser, Location } from '@angular/common';
+import { Inject, Injectable, PLATFORM_ID } from '@angular/core';
+import { Meta, Title } from '@angular/platform-browser';
 
 @Injectable({
   providedIn: 'root',
@@ -48,9 +48,10 @@ export class SeoService {
     description: string,
     img_url: string = 'assets/images/logo_2x.png'
   ) {
+    console.log(this.firstTime);
     let baseUrl = <any>this.loc;
     if (isPlatformBrowser(this.platformId)) {
-      baseUrl = baseUrl._platformStrategy._platformLocation.location.href;
+      baseUrl = baseUrl?._platformStrategy?._platformLocation?.location?.href;
     } else {
       baseUrl = 'https://wwww.sabkabajar.com';
     }
@@ -75,5 +76,6 @@ export class SeoService {
     } else {
       this.updateMetaData(title, keyword, description, img_url, baseUrl);
     }
+    console.log(this.firstTime);
   }
 }

@@ -1,35 +1,78 @@
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
-
-import { BannerResolver } from './banner.resolver';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
+import { RouterTestingModule } from '@angular/router/testing';
 import { Actions } from '@ngrx/effects';
+import { provideMockActions } from '@ngrx/effects/testing';
+import { Action, StoreModule } from '@ngrx/store';
+import { MockStore, provideMockStore } from '@ngrx/store/testing';
+import { Observable } from 'rxjs';
+import { take } from 'rxjs/operators';
+import { MaterialModule } from 'src/app/shared/modules/material.module';
+import { AppEffectModule } from 'src/app/store/effects/app.effects.module';
+import { appReducer } from 'src/app/store/reducers/app.reducer';
+import { FetchBanner } from '../store/actions/banner.actions';
+import { BannerResolver } from './banner.resolver';
 
 describe('BannerResolver', () => {
-  let resolver: BannerResolver;
+  let service: BannerResolver;
+  let store: MockStore;
+  let actions$ = new Observable<Action>();
+  const initialState = {
+    banners: [
+      {
+        bannerImageUrl: '/static/images/offers/offer1.jpg',
+        bannerImageAlt: 'Independence Day Deal - 25% off on shampoo',
+        isActive: true,
+        order: 1,
+        id: '5b6c38156cb7d770b7010ccc',
+      },
+    ],
+    error: '',
+    loading: false,
+  };
 
   beforeEach(() => {
-    const a = setup().default();
-    TestBed.configureTestingModule({}).configureTestingModule({ providers: [{ provide: Store<fromApp.AppState>, useValue: a.store },
-            { provide: Actions, useValue: a.actions$ }] });
-    resolver = TestBed.inject(BannerResolver);
+    TestBed.configureTestingModule({
+      imports: [
+        BrowserAnimationsModule,
+        StoreModule.forRoot(appReducer),
+        AppEffectModule,
+        HttpClientTestingModule,
+        RouterTestingModule,
+        MaterialModule,
+      ],
+      providers: [
+        BannerResolver,
+        provideMockStore({ initialState }),
+        provideMockActions(() => actions$),
+      ],
+    });
+    service = TestBed.inject(BannerResolver);
+    store = TestBed.inject(MockStore);
   });
 
-  it('should be created', () => {
-    expect(resolver).toBeTruthy();
+  it('can load instance', () => {
+    expect(service).toBeTruthy();
+  });
+
+  describe('resolve', () => {
+    it('makes expected calls', () => {
+      const routerStateSnapshotStub: RouterStateSnapshot = <any>{};
+      const activatedRouteSnapshotStub: ActivatedRouteSnapshot = <any>{};
+      const storeStub: MockStore = TestBed.inject(MockStore);
+      const actionsStub: Actions = TestBed.inject(Actions);
+      spyOn(storeStub, 'select').and.callThrough();
+      storeStub.select('banner');
+      spyOn(storeStub, 'dispatch').and.callThrough();
+      storeStub.dispatch(new FetchBanner());
+      spyOn(actionsStub, 'pipe').and.callThrough();
+      actionsStub.pipe(take(1));
+      service.resolve(activatedRouteSnapshotStub, routerStateSnapshotStub);
+      expect(storeStub.select).toHaveBeenCalled();
+      expect(storeStub.dispatch).toHaveBeenCalled();
+      expect(actionsStub.pipe).toHaveBeenCalled();
+    });
   });
 });
-
-function setup() {
-    const store = autoSpy(Store<fromApp.AppState>);
-    const actions$ = autoSpy(Actions);
-    const builder = {
-        store,
-        actions$,
-        default() {
-            return builder;
-        },
-        build() {
-            return new BannerResolver(store, actions$);
-        }
-    }
-    return builder;
-}

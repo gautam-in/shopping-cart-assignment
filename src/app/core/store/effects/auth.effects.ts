@@ -1,18 +1,16 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { Actions, ofType, createEffect } from '@ngrx/effects';
-import { switchMap, catchError, map, tap } from 'rxjs/operators';
+import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { of } from 'rxjs';
-import { HttpClient } from '@angular/common/http';
-import { environment } from 'src/environments/environment';
-import * as AuthActions from 'src/app/core/store/actions/auth.actions';
+import { catchError, map, switchMap, tap } from 'rxjs/operators';
 import { User } from 'src/app/core/models/user.model';
 import { UtilService } from 'src/app/core/services/util.service';
-import { AuthService } from '../../services/auth.service';
-import { AuthResponseData } from '../../models/auth-response-data.model';
+import * as AuthActions from 'src/app/core/store/actions/auth.actions';
 import { ErrorMsg } from '../../common/constants/error.constants';
+import { AuthService } from '../../services/auth.service';
 
-const handleAuthentication = (
+export const handleAuthentication = (
   expiresIn: number,
   email: string,
   userId: string,
@@ -30,7 +28,7 @@ const handleAuthentication = (
   });
 };
 
-const handleError = (errorRes: any) => {
+export const handleError = (errorRes: any) => {
   let errorMessage = ErrorMsg.UNKNOWN_ERROR;
   if (!errorRes.error || !errorRes.error.error) {
     return of(new AuthActions.AuthenticateFail(errorMessage));
@@ -63,31 +61,19 @@ export class AuthEffects {
     this.actions$.pipe(
       ofType(AuthActions.SIGNUP_START),
       switchMap((signupAction: AuthActions.SignupStart) => {
-        return this.http
-          .post<AuthResponseData>(
-            `https://www.googleapis.com/identitytoolkit/v3/relyingparty/signupNewUser?key=${environment.firebaseConfig.apiKey}`,
-            {
-              email: signupAction.payload.email,
-              password: signupAction.payload.password,
-              returnSecureToken: true,
-            }
-          )
-          .pipe(
-            tap((resData) => {
-              this.authService.setLogoutTimer(+resData.expiresIn * 1000);
-            }),
-            map((resData) => {
-              return handleAuthentication(
-                +resData.expiresIn,
-                resData.email,
-                resData.localId,
-                resData.idToken
-              );
-            }),
-            catchError((errorRes) => {
-              return handleError(errorRes);
-            })
-          );
+        return this.authService.signup(signupAction);
+      }),
+      map((resData) => {
+        console.log(resData, 'signup');
+        return handleAuthentication(
+          +resData.expiresIn,
+          resData.email,
+          resData.localId,
+          resData.idToken
+        );
+      }),
+      catchError((errorRes) => {
+        return handleError(errorRes);
       })
     )
   );
@@ -96,31 +82,18 @@ export class AuthEffects {
     this.actions$.pipe(
       ofType(AuthActions.LOGIN_START),
       switchMap((authData: AuthActions.LoginStart) => {
-        return this.http
-          .post<AuthResponseData>(
-            `https://www.googleapis.com/identitytoolkit/v3/relyingparty/verifyPassword?key=${environment.firebaseConfig.apiKey}`,
-            {
-              email: authData.payload.email,
-              password: authData.payload.password,
-              returnSecureToken: true,
-            }
-          )
-          .pipe(
-            tap((resData) => {
-              this.authService.setLogoutTimer(+resData.expiresIn * 1000);
-            }),
-            map((resData) => {
-              return handleAuthentication(
-                +resData.expiresIn,
-                resData.email,
-                resData.localId,
-                resData.idToken
-              );
-            }),
-            catchError((errorRes) => {
-              return handleError(errorRes);
-            })
-          );
+        return this.authService.login(authData);
+      }),
+      map((resData) => {
+        return handleAuthentication(
+          +resData.expiresIn,
+          resData.email,
+          resData.localId,
+          resData.idToken
+        );
+      }),
+      catchError((errorRes) => {
+        return handleError(errorRes);
       })
     )
   );

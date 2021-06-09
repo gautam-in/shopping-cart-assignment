@@ -19,7 +19,6 @@ export function bannerReducer(state = initialState, action: any) {
           .sort((a, b) => a.order - b.order)
           .filter((a) => a.isActive),
       };
-
     default:
       return state;
   }

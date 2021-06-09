@@ -28,7 +28,7 @@
 .app-sidenav-container {
   flex: 1;
   color: rgba(0, 0, 0, 0.87);
-  background-color: #fff;
+  background-color: $white;
 }
 
 .side-nav {
@@ -39,7 +39,7 @@
   text-align: left;
   padding-left: 2em;
   margin-top: 1em;
-  border-bottom: 1px solid #f6f6f6;
+  border-bottom: 1px solid $border-color;
   padding-bottom: 8px;
   &.active {
     background: $mergenta;

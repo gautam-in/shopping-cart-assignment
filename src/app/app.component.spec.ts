@@ -1,72 +1,82 @@
-import { TestBed } from '@angular/core/testing';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { MatSidenav } from '@angular/material/sidenav';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterTestingModule } from '@angular/router/testing';
+import { StoreModule } from '@ngrx/store';
+import { MockStore, provideMockStore } from '@ngrx/store/testing';
 import { AppComponent } from './app.component';
-import { MatDialog } from '@angular/material/dialog';
+import { Constants } from './core/common/constants/constants';
+import { MaterialModule } from './shared/modules/material.module';
+import { AppEffectModule } from './store/effects/app.effects.module';
+import { appReducer } from './store/reducers/app.reducer';
 
 describe('AppComponent', () => {
-  beforeEach(async () => {
-    const a = setup().default();
-    await TestBed.configureTestingModule({
+  let component: AppComponent;
+  let fixture: ComponentFixture<AppComponent>;
+  let store: MockStore;
+  const initialState = {};
+  let sideNav: MatSidenav;
+  beforeEach(() => {
+    TestBed.configureTestingModule({
       imports: [
-        RouterTestingModule
+        RouterTestingModule,
+        BrowserAnimationsModule,
+        StoreModule.forRoot(appReducer),
+        AppEffectModule,
+        HttpClientTestingModule,
+        MaterialModule,
       ],
-      declarations: [
-        AppComponent
-      ],
-    }).configureTestingModule({ providers: [{ provide: Store<AppState>, useValue: a.store },
-            { provide: MatDialog, useValue: a.dialog }] }).compileComponents();
-  });
-
-  it('should create the app', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app).toBeTruthy();
-  });
-
-  it(`should have as title 'shopping-cart'`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app.title).toEqual('shopping-cart');
-  });
-
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('shopping-cart app is running!');
-  });
-    it('when openCart is called it should', () => {
-        // arrange
-        const { build } = setup().default();
-        const a = build();
-        // act
-        a.openCart();
-        // assert
-        // expect(a).toEqual
-    });
-    it('when logout is called it should', () => {
-        // arrange
-        const { build } = setup().default();
-        const a = build();
-        // act
-        a.logout();
-        // assert
-        // expect(a).toEqual
-    });
-});
-
-function setup() {
-    const store = autoSpy(Store<AppState>);
-    const dialog = autoSpy(MatDialog);
-    const builder = {
-        store,
-        dialog,
-        default() {
-            return builder;
+      schemas: [NO_ERRORS_SCHEMA],
+      declarations: [AppComponent],
+      providers: [
+        provideMockStore({ initialState }),
+        {
+          provide: MatSidenav,
+          useValue: jasmine.createSpyObj(MatSidenav, ['close', 'toggle']),
         },
-        build() {
-            return new AppComponent(store, dialog);
-        }
-    }
-    return builder;
-}
+      ],
+    });
+    fixture = TestBed.createComponent(AppComponent);
+    store = TestBed.inject(MockStore);
+    sideNav = TestBed.inject(MatSidenav);
+
+    component = fixture.componentInstance;
+  });
+
+  it('can load instance', () => {
+    expect(component).toBeTruthy();
+  });
+
+  describe('logout', () => {
+    it('makes expected calls', () => {
+      const storeStub: MockStore = fixture.debugElement.injector.get(MockStore);
+      spyOn(storeStub, 'dispatch').and.callThrough();
+      component.logout();
+      expect(storeStub.dispatch).toHaveBeenCalled();
+    });
+  });
+
+  describe('ngOnInit', () => {
+    it('should assign sideNav ref', () => {
+      component.ngOnInit();
+      expect(component.sideNav).toBeTruthy();
+    });
+  });
+
+  describe('ngOnInit', () => {
+    it('should assign sideNav ref', () => {
+      component.ngOnInit();
+      expect(component.sideNav).toBeTruthy();
+    });
+  });
+
+  describe('closeNav', () => {
+    it('should call closenav', () => {
+      Constants.SIDENAV = sideNav;
+      component.closeNav();
+      expect(Constants.SIDENAV.close).toHaveBeenCalled();
+    });
+  });
+});

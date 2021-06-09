@@ -1,50 +1,69 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { autoSpy } from 'auto-spy';
-
+import { NO_ERRORS_SCHEMA } from '@angular/core';
+import { MatSelectChange } from '@angular/material/select';
+import { ActivatedRoute, Router } from '@angular/router';
+import { MediaObserver } from '@angular/flex-layout';
+import { RouterTestingModule } from '@angular/router/testing';
 import { ProductComponent } from './product.component';
+import { MockStore, provideMockStore } from '@ngrx/store/testing';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { StoreModule } from '@ngrx/store';
+import { MaterialModule } from 'src/app/shared/modules/material.module';
+import { AppEffectModule } from 'src/app/store/effects/app.effects.module';
+import { appReducer } from 'src/app/store/reducers/app.reducer';
 
 describe('ProductComponent', () => {
   let component: ProductComponent;
   let fixture: ComponentFixture<ProductComponent>;
-
-  beforeEach(async () => {
-    const a = setup().default();
-    await TestBed.configureTestingModule({
-      declarations: [ ProductComponent ]
-    }).configureTestingModule({ providers: [{ provide: Store<AppState>, useValue: a.store }] })
-    .compileComponents();
-  });
-
+  let store: MockStore;
+  const initialState = {};
   beforeEach(() => {
+    TestBed.configureTestingModule({
+      imports: [
+        BrowserAnimationsModule,
+        StoreModule.forRoot(appReducer),
+        AppEffectModule,
+        HttpClientTestingModule,
+        RouterTestingModule,
+        MaterialModule,
+      ],
+      schemas: [NO_ERRORS_SCHEMA],
+      declarations: [ProductComponent],
+      providers: [
+        MediaObserver,
+        provideMockStore({ initialState }),
+        {
+          provide: Router,
+          useValue: {
+            navigate: jasmine.createSpy('navigate'),
+          },
+        },
+        {
+          provide: ActivatedRoute,
+          useValue: jasmine.createSpyObj(ActivatedRoute, ['snapshot']),
+        },
+      ],
+    });
     fixture = TestBed.createComponent(ProductComponent);
+    store = TestBed.inject(MockStore);
     component = fixture.componentInstance;
-    fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('can load instance', () => {
     expect(component).toBeTruthy();
   });
-    it('when ngOnInit is called it should', () => {
-        // arrange
-        const { build } = setup().default();
-        const p = build();
-        // act
-        p.ngOnInit();
-        // assert
-        // expect(p).toEqual
-    });
-});
 
-function setup() {
-    const store = autoSpy(Store<AppState>);
-    const builder = {
-        store,
-        default() {
-            return builder;
-        },
-        build() {
-            return new ProductComponent(store);
-        }
-    }
-    return builder;
-}
+  it(`isMobile has default value`, () => {
+    expect(component.isMobile).toEqual(false);
+  });
+
+  describe('changeFilter', () => {
+    it('makes expected calls', () => {
+      const matSelectChangeStub: MatSelectChange = <any>{ value: -1 };
+      const routerStub: Router = fixture.debugElement.injector.get(Router);
+      component.changeFilter(matSelectChangeStub);
+      expect(routerStub.navigate).toHaveBeenCalled();
+    });
+  });
+});

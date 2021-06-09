@@ -1,10 +1,10 @@
-<div class="wrapper" role="main">
+<div class="wrapper" role="list">
   <div
     class="card"
     *ngFor="let product of (products$ | async)?.currentProducts"
-    role="cell"
+    role="listitem"
   >
-    <h3 class="card-title product-title">{{ product?.name }}</h3>
+    <h2 class="card-title product-title">{{ product?.name }}</h2>
     <div class="inner-body">
       <span class="badge" *ngIf="product?.productInCart">
         <span class="a-badge-text" data-a-badge-color="sx-granite"
@@ -27,13 +27,13 @@
         </ng-container>
       </p>
     </div>
-    <footer class="product-footer" *ngIf="!isMobile">
-      <h6 class="product-price">MRP Rs.{{ product?.price }}</h6>
+    <div class="product-footer" *ngIf="!isMobile">
+      <h3 class="product-price">MRP Rs.{{ product?.price }}</h3>
       <ng-container
         [ngTemplateOutlet]="button"
         [ngTemplateOutletContext]="{ product: product }"
       ></ng-container>
-    </footer>
+    </div>
   </div>
 </div>
 

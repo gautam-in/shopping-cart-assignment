@@ -1,10 +1,10 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
+import { CarouselItemDirective } from './carousel-item.directive';
 import {
   CarouselComponent,
   CarouselItemElement,
 } from './carousel/carousel.component';
-import { CarouselItemDirective } from './carousel-item.directive';
 let componentsArry = [
   CarouselComponent,
   CarouselItemDirective,

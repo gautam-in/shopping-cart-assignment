@@ -1,32 +1,29 @@
 import {
-  AfterViewInit,
   Component,
   ComponentFactoryResolver,
   Renderer2,
   ViewChild,
 } from '@angular/core';
+import { MediaObserver } from '@angular/flex-layout';
 import { Store } from '@ngrx/store';
 import { Observable, Subscription } from 'rxjs';
+import { Constants } from 'src/app/core/common/constants/constants';
 import { AppState } from 'src/app/models/app-state.model';
 import { CartComponent } from 'src/app/shared/components/cart/cart.component';
 import { PlaceholderDirective } from 'src/app/shared/directive/placeholder/placeholder.directive';
 import { CartState } from 'src/app/shared/models/cart-state.model';
-
 import { FetchLocalCart } from 'src/app/shared/store/actions/cart-list.actions';
 import { AuthState } from '../../models/auth-state.model';
 import { AutoLogin, Logout } from '../../store/actions/auth.actions';
-import { MediaObserver } from '@angular/flex-layout';
-import { Constants } from 'src/app/core/common/constants/constants';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
 })
-export class HeaderComponent implements AfterViewInit {
+export class HeaderComponent {
   cart$!: Observable<CartState>;
   user$!: Observable<AuthState>;
-  isCartOpen = false;
   private closeSub!: Subscription;
   @ViewChild(PlaceholderDirective, { static: false })
   alertHost!: PlaceholderDirective;
@@ -47,23 +44,17 @@ export class HeaderComponent implements AfterViewInit {
     });
   }
 
-  openCart(data: boolean) {
-    this.isCartOpen = data;
-  }
-
   logout() {
     this.store.dispatch(new Logout());
   }
 
-  ngAfterViewInit() {}
   showCart(targetRef: HTMLElement) {
-    // const alertCmp = new AlertComponent();
-    const alertCmpFactory =
+    const cartCmpFactory =
       this.componentFactoryResolver.resolveComponentFactory(CartComponent);
     const hostViewContainerRef = this.alertHost.viewContainerRef;
     hostViewContainerRef.clear();
 
-    const componentRef = hostViewContainerRef.createComponent(alertCmpFactory);
+    const componentRef = hostViewContainerRef.createComponent(cartCmpFactory);
     this.renderer.setStyle(
       componentRef.location.nativeElement,
       'position',
@@ -99,6 +90,6 @@ export class HeaderComponent implements AfterViewInit {
   }
 
   toggleSideNav() {
-    Constants.SIDENAV.toggle();
+    Constants.SIDENAV?.toggle();
   }
 }

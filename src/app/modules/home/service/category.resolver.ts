@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
 import {
+  ActivatedRouteSnapshot,
   Resolve,
   RouterStateSnapshot,
-  ActivatedRouteSnapshot,
 } from '@angular/router';
 import { Actions, ofType } from '@ngrx/effects';
 import { Action, Store } from '@ngrx/store';
 import { Observable, of } from 'rxjs';
-import { take, switchMap } from 'rxjs/operators';
+import { switchMap, take } from 'rxjs/operators';
 import { AppState } from 'src/app/models/app-state.model';
 import { CategoryState } from '../models/category-state.model';
 import {

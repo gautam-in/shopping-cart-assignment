@@ -1,16 +1,15 @@
 import { Injectable } from '@angular/core';
 import {
-  Resolve,
-  RouterStateSnapshot,
-  ActivatedRouteSnapshot,
+  ActivatedRouteSnapshot, Resolve,
+  RouterStateSnapshot
 } from '@angular/router';
+import { Actions, ofType } from '@ngrx/effects';
 import { Store } from '@ngrx/store';
 import { Observable, of } from 'rxjs';
-import { FetchBanner, SET_BANNER } from '../store/actions/banner.actions';
-import { Actions, ofType } from '@ngrx/effects';
-import { map, switchMap, take } from 'rxjs/operators';
-import { Banner } from '../models/banner.model';
+import { switchMap, take } from 'rxjs/operators';
 import { AppState } from 'src/app/models/app-state.model';
+import { Banner } from '../models/banner.model';
+import { FetchBanner, SET_BANNER } from '../store/actions/banner.actions';
 
 @Injectable({
   providedIn: 'root',

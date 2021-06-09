@@ -8,7 +8,7 @@ carousel ::ng-deep .carousel-wrapper {
     position: relative;
     .btn-next,
     .btn-prev {
-        background-color: rgba($color: #000000, $alpha: 0.5);
+        background-color: rgba($color: $black, $alpha: 0.5);
         border-radius: 4px;
         color: white;
         position: absolute;
@@ -17,7 +17,11 @@ carousel ::ng-deep .carousel-wrapper {
         text-transform: uppercase;
         opacity: 0.36;
         cursor: pointer;
-        &:hover {
+        &.disabled {
+            cursor: default;
+            opacity: 0.1;
+        }
+        &:hover:not(.disabled) {
             opacity: 1;
         }
     }
@@ -32,6 +36,11 @@ carousel ::ng-deep .carousel-wrapper {
         width: 100%;
         object-fit: contain;
         background-color: $grey;
+    }
+
+    .item {
+        width: inherit;
+        display: block;
     }
 }
 

@@ -1,39 +1,47 @@
-import { Title } from '@angular/platform-browser';
-import { Meta } from '@angular/platform-browser';
 import { Location } from '@angular/common';
+import { PLATFORM_ID } from '@angular/core';
+import { TestBed } from '@angular/core/testing';
+import { Meta, Title } from '@angular/platform-browser';
 import { SeoService } from './seo.service';
-import { autoSpy } from 'autoSpy';
 
 describe('SeoService', () => {
-  it('when setMetaData is called it should', () => {
-    // arrange
-    const { build } = setup().default();
-    const s = build();
-    // act
-    s.setMetaData();
-    // assert
-    // expect(s).toEqual
+  let service: SeoService;
+
+  beforeEach(() => {
+    TestBed.configureTestingModule({
+      imports: [],
+      providers: [
+        SeoService,
+        { provide: Meta, useClass: Meta },
+        { provide: Title, useClass: Title },
+        { provide: Location, useClass: Location },
+        {
+          provide: PLATFORM_ID,
+          useValue: 'browser',
+        },
+      ],
+    });
+    service = TestBed.inject(SeoService);
   });
-  
+
+  it('can load instance', () => {
+    expect(service).toBeTruthy();
+  });
+
+  it(`firstTime should be true`, () => {
+    expect(service.firstTime).toEqual(true);
+  });
+
+  it(`setMetaData should be called`, () => {
+    service.firstTime = true;
+    service.setMetaData('Title', 'Keyword', 'Description');
+    expect(service.firstTime).toEqual(false);
+    expect(document.title).toBe('Title');
+  });
+
+  it(`updateMetaData should be called`, () => {
+    service.firstTime = false;
+    service.setMetaData('Title', 'Keyword', 'Description');
+    expect(document.title).toBe('Title');
+  });
 });
-
-function setup() {
-  const title = autoSpy(Title);
-const meta = autoSpy(Meta);
-const loc = autoSpy(Location);
-const platformId = autoSpy(Object);
-  const builder = {
-    title,
-meta,
-loc,
-platformId,
-    default() {
-      return builder;
-    },
-    build() {
-      return new SeoService(title,meta,loc,platformId);
-    }
-  };
-
-  return builder;
-}

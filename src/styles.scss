@@ -47,7 +47,7 @@ p {
 a,
 a:visited,
 a:hover {
-  color: #666666;
+  color: $darkgrey;
   text-decoration: none;
 }
 
@@ -92,11 +92,11 @@ button {
 }
 
 .mat-drawer {
-  background-color: #fff;
+  background-color: $white;
   color: rgba(0, 0, 0, 0.87);
 }
 .cdk-overlay-pane {
-  background-color: #fff;
+  background-color: $white;
 }
 
 .mb-overlay {

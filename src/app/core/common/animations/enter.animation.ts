@@ -1,10 +1,9 @@
 import {
-  trigger,
-  transition,
   animate,
-  style,
   keyframes,
-  state,
+  style,
+  transition,
+  trigger,
 } from '@angular/animations';
 
 export const Enter = trigger('Enter', [

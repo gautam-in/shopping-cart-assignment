@@ -1,12 +1,19 @@
-import { Component, ElementRef, OnInit, ViewChildren } from '@angular/core';
 import {
-  FormGroup,
+  AfterViewInit,
+  Component,
+  ElementRef,
+  OnDestroy,
+  OnInit,
+  ViewChildren,
+} from '@angular/core';
+import {
   FormBuilder,
-  Validators,
   FormControlName,
+  FormGroup,
+  Validators,
 } from '@angular/forms';
 import { Store } from '@ngrx/store';
-import { Observable, fromEvent, merge } from 'rxjs';
+import { fromEvent, merge, Observable } from 'rxjs';
 import { debounceTime } from 'rxjs/operators';
 import { ErrorMsg } from 'src/app/core/common/constants/error.constants';
 import { REGEX } from 'src/app/core/common/constants/regex.constants';
@@ -15,7 +22,7 @@ import { SeoService } from 'src/app/core/services/seo.service';
 import * as AuthActions from 'src/app/core/store/actions/auth.actions';
 import { AppState } from 'src/app/models/app-state.model';
 import { ConfirmFieldValidators } from '../../common/validations/confirm-password.validators';
-const formValidationMsgs = {
+export const formValidationMsgs = {
   firstName: {
     required: ErrorMsg.REQUIRED_ERROR,
     pattern: ErrorMsg.NAME_PATTERN_ERROR,
@@ -47,7 +54,7 @@ const formValidationMsgs = {
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.scss'],
 })
-export class RegisterComponent implements OnInit {
+export class RegisterComponent implements OnInit, AfterViewInit, OnDestroy {
   validationMessages: { [key: string]: { [key: string]: string } } =
     formValidationMsgs;
   displayMessage: { [key: string]: string } = {};
@@ -116,12 +123,12 @@ export class RegisterComponent implements OnInit {
    */
   ngAfterViewInit(): void {
     // Watch for the blur event from any input element on the form.
-    const controlBlurs: Observable<any>[] = this.formInputElements.map(
+    const controlBlurs: Observable<any>[] = this.formInputElements?.map(
       (formControl: ElementRef) => fromEvent(formControl.nativeElement, 'blur')
     );
 
     // Merge the blur event observable with the valueChanges observable
-    merge(this.registrationForm.valueChanges, ...controlBlurs)
+    merge(this.registrationForm.valueChanges, ...(controlBlurs || []))
       .pipe(debounceTime(800))
       .subscribe(() => {
         this.displayMessage = this.genericValidator.processMessages(
@@ -141,4 +148,6 @@ export class RegisterComponent implements OnInit {
   onHandleError() {
     this.store.dispatch(new AuthActions.ClearError());
   }
+
+  ngOnDestroy() {}
 }

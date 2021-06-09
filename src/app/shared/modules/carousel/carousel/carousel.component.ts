@@ -15,14 +15,13 @@ import {
   Inject,
   Input,
   OnDestroy,
-  OnInit,
   PLATFORM_ID,
   QueryList,
   ViewChild,
   ViewChildren,
 } from '@angular/core';
-import { interval, Subject, Subscription } from 'rxjs';
-import { repeat, take, takeUntil } from 'rxjs/operators';
+import { interval, Subscription } from 'rxjs';
+import { repeat, take } from 'rxjs/operators';
 import { CarouselItemDirective } from '../carousel-item.directive';
 @Directive({
   selector: '.carousel-item',
@@ -40,7 +39,7 @@ export class CarouselComponent implements AfterViewInit, OnDestroy {
 
   @ViewChildren(CarouselItemElement, { read: ElementRef })
   private itemsElements!: QueryList<ElementRef>;
-  @ViewChild('carousel') private carousel!: ElementRef;
+  @ViewChild('carousel') carousel!: ElementRef;
   @Input() timing = '250ms ease-in';
   @Input() showControls = false;
   @Input() showIndicators = true;
@@ -53,14 +52,16 @@ export class CarouselComponent implements AfterViewInit, OnDestroy {
   @Input() autoRotate: boolean = true;
 
   sub!: Subscription;
+  carouselSlidelength = 0;
   constructor(
     private builder: AnimationBuilder,
     @Inject(PLATFORM_ID) private platformId: Object
   ) {}
 
   next() {
-    if (this.currentSlide + 1 === this.items.length) return;
-    this.currentSlide = (this.currentSlide + 1) % this.items.length;
+    this.carouselSlidelength = this.items?.length;
+    if (this.currentSlide + 1 === this.items?.length) return;
+    this.currentSlide = (this.currentSlide + 1) % this.items?.length;
     const offset = this.currentSlide * this.itemWidth;
     const myAnimation: AnimationFactory = this.buildAnimation(offset);
     this.player = myAnimation.create(this.carousel.nativeElement);
@@ -74,9 +75,10 @@ export class CarouselComponent implements AfterViewInit, OnDestroy {
   }
 
   prev() {
+    this.carouselSlidelength = this.items?.length;
     if (this.currentSlide === 0) return;
     this.currentSlide =
-      (this.currentSlide - 1 + this.items.length) % this.items.length;
+      (this.currentSlide - 1 + this.items?.length) % this.items?.length;
     const offset = this.currentSlide * this.itemWidth;
     const myAnimation: AnimationFactory = this.buildAnimation(offset);
     this.player = myAnimation.create(this.carousel.nativeElement);
@@ -84,8 +86,8 @@ export class CarouselComponent implements AfterViewInit, OnDestroy {
   }
 
   goSlide(currentSlide: number) {
-    if (currentSlide < 0 || currentSlide > this.items.length) return;
-    this.currentSlide = (currentSlide + this.items.length) % this.items.length;
+    if (currentSlide < 0 || currentSlide > this.items?.length) return;
+    this.currentSlide = (currentSlide + this.items.length) % this.items?.length;
     const offset = this.currentSlide * this.itemWidth;
     const myAnimation: AnimationFactory = this.buildAnimation(offset);
     this.player = myAnimation.create(this.carousel.nativeElement);
@@ -93,10 +95,12 @@ export class CarouselComponent implements AfterViewInit, OnDestroy {
   }
 
   ngAfterViewInit() {
+    this.carouselSlidelength = this.items?.length;
+
     // For some reason only here I need to add setTimeout, in my local env it's working without this.
     setTimeout(() => {
       this.itemWidth =
-        this.itemsElements.first.nativeElement.parentElement.parentElement.getBoundingClientRect().width;
+        this.itemsElements?.first?.nativeElement?.parentElement?.parentElement.getBoundingClientRect().width;
       this.carouselWrapperStyle = {
         width: `${this.itemWidth}px`,
       };
@@ -112,15 +116,19 @@ export class CarouselComponent implements AfterViewInit, OnDestroy {
     if (
       this.autoRotate &&
       isPlatformBrowser(this.platformId) &&
-      this.items.length > 1
+      this.items?.length > 1
     ) {
       this.stopRotation();
       this.sub = interval(this.imageTimeout)
-        .pipe(take(this.items.length), repeat(Number.MAX_SAFE_INTEGER))
+        .pipe(take(this.items?.length), repeat(Number.MAX_SAFE_INTEGER))
         .subscribe((index) => {
           this.goSlide(index);
         });
     }
+  }
+
+  public get currentSlideIndex(): number {
+    return this.currentSlide;
   }
 
   ngOnDestroy() {

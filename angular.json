@@ -101,6 +101,19 @@
             "tsConfig": "tsconfig.spec.json",
             "karmaConfig": "karma.conf.js",
             "inlineStyleLanguage": "scss",
+            "codeCoverage": true,
+              "codeCoverageExclude": [
+                "src/**/*.model.ts",
+                "src/**/*.module.ts",
+                "src/**/*.module.ts",
+                "src/**/*-interceptor.service.ts",
+                "src/**/common/**/*",
+                "src/**/actions/*",
+                "src/**/reducers/*",
+                "src/**/selector/*",
+                "src/**/serializer/*"
+              ],
+            "watch": true,
             "assets": [
               "src/favicon.ico",
               "src/assets",

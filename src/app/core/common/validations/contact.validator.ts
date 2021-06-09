@@ -6,11 +6,11 @@ export class ContactValidators {
     return (c: AbstractControl): { [key: string]: boolean } | null => {
       if (mandate) {
         if (!(c.value && pattern.test(c.value))) {
-          return { 'contact': true };
+          return { contact: true };
         }
       } else {
         if (c.value && !pattern.test(c.value)) {
-          return { 'contact': true };
+          return { contact: true };
         }
       }
       return null;

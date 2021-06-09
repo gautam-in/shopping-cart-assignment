@@ -1,5 +1,5 @@
-import { Product } from '../../models/product.model';
 import { ProductState } from '../../models/product-state.model';
+import { Product } from '../../models/product.model';
 import {
   FILTER_BY,
   REMOVE_FILTER_BY,
@@ -28,14 +28,15 @@ export function productReducer(state = initialState, action: any) {
         },
         new Map()
       );
+
       return {
         ...state,
         ...initialState,
         currentProducts: action.payload.slice(),
         allProducts: action.payload.slice(),
         categoryWiseProducts: categoryMap,
-        filterBy: null,
       } as ProductState;
+
     case FILTER_BY: {
       let filteredProduct: Product[] = [];
       if (action.payload) {

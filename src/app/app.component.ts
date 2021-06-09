@@ -30,6 +30,6 @@ export class AppComponent implements OnInit {
     this.store.dispatch(new Logout());
   }
   closeNav() {
-    Constants.SIDENAV.close();
+    Constants.SIDENAV?.close();
   }
 }

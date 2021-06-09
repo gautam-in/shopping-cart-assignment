@@ -1,13 +1,18 @@
 import { Component, OnInit } from '@angular/core';
+import { MediaObserver } from '@angular/flex-layout';
 import { MatSelectChange } from '@angular/material/select';
-import { Router } from '@angular/router';
+import {
+  ActivatedRoute,
+  ActivatedRouteSnapshot,
+  Router,
+} from '@angular/router';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
+import { Enter } from 'src/app/core/common/animations/enter.animation';
 import { AppState } from 'src/app/models/app-state.model';
 import { CategoryState } from '../../home/models/category-state.model';
 import { ProductState } from '../models/product-state.model';
-import { MediaChange, MediaObserver } from '@angular/flex-layout';
-import { Enter } from 'src/app/core/common/animations/enter.animation';
+import { FilterBy, FILTER_BY } from '../store/actions/product.actions';
 
 @Component({
   selector: 'app-product',
@@ -24,7 +29,8 @@ export class ProductComponent implements OnInit {
   constructor(
     private store: Store<AppState>,
     private router: Router,
-    private media: MediaObserver
+    private media: MediaObserver,
+    private route: ActivatedRoute
   ) {
     this.categories$ = this.store.select('categories');
     this.products$ = this.store.select('products');
@@ -33,7 +39,13 @@ export class ProductComponent implements OnInit {
     });
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    // console.log(this.route.snapshot.queryParamMap.get('categoryId'));
+    let cid = this.route.snapshot.queryParamMap.get('categoryId');
+    if (cid) {
+      this.store.dispatch(new FilterBy(cid));
+    }
+  }
 
   changeFilter(event: MatSelectChange) {
     this.router.navigate(['/products'], {
