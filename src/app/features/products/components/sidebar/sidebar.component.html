@@ -1,9 +1,10 @@
 <div class="container">
-  <ul class="categories">
+  <ul aria-label="product category list" class="categories">
     <li routerLinkActive="active" *ngFor="let category of categories">
-      <a [routerLink]="'/products/' + category.id" href="#">{{
-        category.name
-      }}</a>
+      <a
+        [routerLink]="'/products/' + category.id"
+        >{{ category.name }}</a
+      >
     </li>
   </ul>
 </div>

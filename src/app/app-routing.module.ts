@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { PageNotFoundComponent } from './core/components/page-not-found/page-not-found.component';
 
 const routes: Routes = [
@@ -14,7 +14,8 @@ const routes: Routes = [
   },
   {
     path: 'cart',
-    loadChildren: () => import('./features/cart/cart.module').then((m) => m.CartModule),
+    loadChildren: () =>
+      import('./features/cart/cart.module').then((m) => m.CartModule),
   },
   {
     path: 'products',
@@ -23,14 +24,17 @@ const routes: Routes = [
         (m) => m.ProductsModule
       ),
   },
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  // { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent },
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, {
-    initialNavigation: 'enabled'
-})],
+  imports: [
+    RouterModule.forRoot(routes, {
+      initialNavigation: 'enabled',
+      preloadingStrategy: PreloadAllModules,
+    }),
+  ],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}

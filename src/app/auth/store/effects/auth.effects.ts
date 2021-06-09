@@ -80,7 +80,7 @@ export class AuthEffects {
       this.actions$.pipe(
         ofType(AuthActions.AuthenticateSuccess),
         tap(() => {
-          this.router.navigate(['/']);
+          this.router.navigate(['']);
         })
       ),
     { dispatch: false }

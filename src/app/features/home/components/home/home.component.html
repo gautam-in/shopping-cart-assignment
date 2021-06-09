@@ -2,7 +2,7 @@
   <div class="row">
     <div *ngIf="slider" class="content">
       <div class="slider">
-        <ngx-slider [init]="slider"></ngx-slider>
+        <ngx-slider aria-hidden="true" [init]="slider"></ngx-slider>
       </div>
     </div>
   </div>
@@ -14,14 +14,21 @@
         [class.reverse]="i % 2 !== 0"
       >
         <div *ngIf="item.imageUrl" class="image-section">
-          <img [src]="'../../assets' + item.imageUrl" alt="product merge" />
+          <img
+            aria-label="category image"
+            [src]="'../../assets' + item.imageUrl"
+            alt="product merge"
+          />
         </div>
         <div class="content-section">
-          <h1>{{ item.name }}</h1>
+          <h1 aria-label="category name">{{ item.name }}</h1>
           <p>
             {{ item.description }}
           </p>
-          <button [routerLink]="'/products/' + item.id">
+          <button
+            aria-label="explore category button"
+            [routerLink]="'/products/' + item.id"
+          >
             Explore {{ item.key }}
           </button>
         </div>

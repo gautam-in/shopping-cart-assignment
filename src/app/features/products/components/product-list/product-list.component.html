@@ -4,9 +4,9 @@
       <app-sidebar [categories]="categories"></app-sidebar>
     </div>
     <div class="sidebar mobile">
-      <select [ngModel]="defaultCategory" (change)="onCategoryChange($event)">
-        <option value="">Select Category</option>
-        <option [value]="category.id" *ngFor="let category of categories">
+      <select aria-label="product category select dropdown" [ngModel]="defaultCategory" (change)="onCategoryChange($event)">
+        <option aria-label="show all products" value="">Select Category</option>
+        <option aria-label="product category name" [value]="category.id" *ngFor="let category of categories">
           {{ category.name }}
         </option>
       </select>

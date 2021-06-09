@@ -1,15 +1,23 @@
 <div class="container">
   <div class="header tablet desktop">
-    <h3>My Cart({{ cartItem.length }} Item)</h3>
-    <span aria-colspan="close-button" (click)="closeCart()" class="close"
+    <h3 aria-label="my cart header which shows total items in cart">
+      My Cart({{ cartItem.length }} Item)
+    </h3>
+    <span
+      aria-label="close cart button"
+      aria-colspan="close-button"
+      (click)="closeCart()"
+      class="close"
       >X</span
     >
   </div>
   <div *ngIf="!cartItem.length; else cartContentItem" class="content">
     <div class="no-items">
       <div>
-        <h3>No items in cart</h3>
-        <p>Your favourite items are just a click away</p>
+        <h3 aria-label="No items in cart heading">No items in cart</h3>
+        <p aria-describedat="Your favourite items are just a click away">
+          Your favourite items are just a click away
+        </p>
       </div>
     </div>
   </div>
@@ -18,44 +26,67 @@
       <div *ngFor="let item of cartItem" class="cart-item">
         <div class="left-section">
           <img
+            aria-label="product image"
             [src]="'../../assets/' + item.product.imageURL"
             [alt]="item.product.name"
           />
         </div>
         <div class="right-section">
-          <h4>{{ item?.product?.name }}</h4>
+          <h4 aria-label="product name">{{ item?.product?.name }}</h4>
           <div class="detail">
             <div class="quantity">
-              <span (click)="minusQuantity(item)" class="minus circle">-</span>
-              <span class="count">{{ item?.quantity }}</span>
-              <span (click)="plusQuantity(item)" class="circle">+</span>
-              <span class="multiplier"> x </span>
-              <span class="per-piece-price">Rs.{{ item?.product?.price }}</span>
+              <span
+                aria-label="remove product quantity by one button"
+                (click)="minusQuantity(item)"
+                class="minus circle"
+                >-</span
+              >
+              <span aria-label="product count" class="count">{{
+                item?.quantity
+              }}</span>
+              <span
+                aria-label="add product quantity by one button"
+                (click)="plusQuantity(item)"
+                class="circle"
+                >+</span
+              >
+              <span aria-label="multiplier symbol" class="multiplier"> x </span>
+              <span aria-label="product price per piece" class="per-piece-price"
+                >Rs.{{ item?.product?.price }}</span
+              >
             </div>
-            <h3 class="total">Rs.{{ item.product.price * item.quantity }}</h3>
+            <h3 aria-label="product total price" class="total">
+              Rs.{{ item.product.price * item.quantity }}
+            </h3>
           </div>
         </div>
       </div>
       <div class="lowest-price">
         <img
+          aria-label="lowest price image"
           src="../../assets/static/images/lowest-price.png"
           alt="lowest prive tag"
         />
-        <div class="lowest-price-txt">You won't find it cheaper anywhere</div>
+        <div
+          aria-describedat="You won't find it cheaper anywhere"
+          class="lowest-price-txt"
+        >
+          You won't find it cheaper anywhere
+        </div>
       </div>
     </div>
   </ng-template>
   <div *ngIf="cartItem.length; else startShopping" class="footer">
-    <div class="promo-code">Promo code can be appplied on payment page</div>
+    <div aria-label="promo code section" class="promo-code">Promo code can be appplied on payment page</div>
     <a href="/home" class="checkout">
-      <span> Proceed to Checkout</span>
-      <span> Rs.{{ totalAmount }}</span>
+      <span aria-label="proceed to checkout link"> Proceed to Checkout</span>
+      <span aria-label="cart total amount"> Rs.{{ totalAmount }}</span>
     </a>
   </div>
   <ng-template #startShopping>
     <div class="footer">
-      <a href="/home" class="start-shopping">
-        <span> Start Shopping</span>
+      <a aria-label="start shopping button redirect to home page" href="/products" class="start-shopping">
+        <span aria-label="start shopping button"> Start Shopping</span>
       </a>
     </div>
   </ng-template>

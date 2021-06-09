@@ -1,5 +1,6 @@
-import { AfterViewInit, Component, Input } from '@angular/core';
+import { AfterViewInit, Component, Input, OnDestroy } from '@angular/core';
 import { Store } from '@ngrx/store';
+import { Subscription } from 'rxjs';
 import {
   addProduct,
   deleteProduct,
@@ -12,12 +13,13 @@ import { AppState } from 'src/app/store/app.reducer';
   templateUrl: './product-item.component.html',
   styleUrls: ['./product-item.component.sass'],
 })
-export class ProductItemComponent implements AfterViewInit {
+export class ProductItemComponent implements AfterViewInit, OnDestroy {
   @Input() product!: ICartItem;
+  storeStub!: Subscription;
   constructor(private store: Store<AppState>) {}
 
   ngAfterViewInit() {
-    this.store.select('cartList').subscribe((val) => {
+    this.storeStub = this.store.select('cartList').subscribe((val) => {
       const productItem = val.cart.find(
         (item) => item.product.id === this.product.product.id
       );
@@ -32,5 +34,9 @@ export class ProductItemComponent implements AfterViewInit {
 
   minusQuantity(item: ICartItem) {
     this.store.dispatch(deleteProduct({ id: item.product.id }));
+  }
+
+  ngOnDestroy() {
+    this.storeStub.unsubscribe();
   }
 }
