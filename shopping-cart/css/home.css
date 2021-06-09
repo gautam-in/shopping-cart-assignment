@@ -1,0 +1,44 @@
+.carousel-indicators li{
+    background-color:var(--text-color);
+    border-radius: 50% ;
+    width: 10px ;
+    height: 10px ;
+    cursor: pointer;
+}
+
+#carousel-img-list{
+    box-shadow:var(--box-shadow-color) 0px 10px 20px -15px;
+}
+
+
+#category-list > div:nth-child(even){
+    flex-flow: row-reverse;
+}
+
+#category-list > div:last-child{
+    box-shadow: none;
+}
+
+.category-card{
+    width: 100%;
+    height: auto;
+    box-shadow: var(--box-shadow-color) 0px 10px 20px -15px;
+}
+
+@media (min-width: 768px){
+    .category-card .modified-button{
+        width: 70%;
+    }
+}
+
+@media (min-width: 992px){
+    .category-card .modified-button{
+        width: 60%;
+    }
+}
+@media (min-width: 1200px){
+    .category-card .modified-button{
+        width: 48%;
+    }
+}
+

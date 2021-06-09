@@ -10,7 +10,7 @@
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <script src="../js/login.js"></script>
+    <script src="../js/register.js"></script>
     <link  rel="stylesheet" href="../css/common.css">
     <link  rel="stylesheet" href="../css/login.css">
     <link  rel="stylesheet" href="../css/global.css">
@@ -46,23 +46,35 @@
         <main class="container-fluid mt-0 mt-sm-5 modified-main-container p-0">
             <div class="row">
               <div class="col-sm-6 col-md-6 col-lg-6">
-               <h1>Login</h1>      
-               <p>Get access to your Orders,Wishlist and Recommendation </p>
+                <h1>Signup</h1>      
+                <p>We do not share your personal details with anyone</p>
               </div>
               <div class="col-sm-6 col-md-6 col-lg-4">
-                  <form onsubmit="validateUser(event)"> 
+                <form onsubmit="registerUser(event)"> 
+                    <div class="form-group border-0">
+                      <input type="text" id="first-name" class="modified-input"  placeholder="First Name">
+                      <small id="first-name-alert" class="text-danger display-none">Enter first name</small>
+                    </div>
+                    <div class="form-group border-0">
+                        <input type="text" id="last-name" class="modified-input" placeholder="Last Name">
+                        <small id="last-name-alert" class="text-danger display-none" >Enter last name</small>
+                      </div>
                       <div class="form-group border-0">
                         <input type="email" id="email" class="modified-input"  placeholder="Email">
-                        <small id="email-alert" class="text-danger display-none">Enter valid email</small>
+                        <small id="email-alert" class="text-danger display-none">Enter email</small>
                       </div>
-                      <div class="form-group">
-                        <input type="password" id="password" class="modified-input"  placeholder="Password">
-                        <small id="password-alert" class="text-danger display-none">Enter valid passord</small>
+                    <div class="form-group">
+                      <input type="password" id="password" class="modified-input"  placeholder="Password">
+                      <small id="password-alert" class="text-danger display-none">Enter passord</small>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" id="confirm-password" class="modified-input" placeholder="Confirm Password">
+                        <small id="confirm-password-alert" class="text-danger display-none">Passord mismatch</small>
                       </div>
-                      <div class="form-group">
-                         <button class="modified-button" type="submit">Login</button>
-                      </div> 
-                    </form>
+                    <div class="form-group">
+                       <button type="submit" class="modified-button">Signup</button>
+                    </div> 
+                  </form>
               </div>
             </div>
         </main>

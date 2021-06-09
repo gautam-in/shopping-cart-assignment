@@ -5,9 +5,6 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Mini Cart</title>
-        <link  rel="stylesheet" href="../css/product.css">
-        <link  rel="stylesheet" href="../css/common.css">
-        <link  rel="stylesheet" href="../css/global.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></link>
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
@@ -15,6 +12,11 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="../js/product.js"></script>
+        <script src="../js/cart.js"></script>
+        <link  rel="stylesheet" href="../css/modal.css">
+        <link  rel="stylesheet" href="../css/product.css">
+        <link  rel="stylesheet" href="../css/common.css">
+        <link  rel="stylesheet" href="../css/global.css">
     </head>
 <body onload="getProductBasedOnCategory()">
     <header>
@@ -35,25 +37,29 @@
                      <li class="mr-2"><a href = 'login.html'>SignIn</a></li>
                      <li><a href = 'register.html'>Register</a></li>
                    </ul>
-                   <div class="cart-icon">
+                   <div class="cart-icon d-none d-sm-none d-md-none d-lg-block" data-toggle="modal" data-target="#cart-modal" onclick="getCartItemList()">
                      <span><i class="fa fa-shopping-cart"></i></span>
                      <span><span  class="total-item-count">0</span> items</span>
                    </div>
+                   <div class="cart-icon d-block d-sm-block d-md-block d-lg-none"  onclick="getCartItemList()">
+                    <span><i class="fa fa-shopping-cart"></i></span>
+                    <span><span  class="total-item-count">0</span> items</span>
+                  </div>
                  </div>
                </div>
              </div>
         </nav>
        </header>
      <main class="container-fluid modified-container p-0">
-        <div class="row sidebar d-block d-sm-none">
+        <div class="row sidebar">
             <div class="col-12">
               <label id="category-name"></label>
-              <label for="check" class="sidebar-icon"><i class="fa fa-angle-down"></i></label>
-              <input type="checkbox" id="check" class="display-none"/>
+              <label for="check-box" class="sidebar-icon"><i class="fa fa-angle-down"></i></label>
+              <input type="checkbox" id="check-box" class="display-none"/>
             </div> 
           </div>
 
-         <div class="row" id="product">
+         <div class="row product">
            <div class="col-sm-3 col-md-3 col-lg-3 p-0" id="category-list">
            </div>
            <div class="col-sm-9 col-md-9 col-lg-9" >
@@ -62,6 +68,33 @@
                 </div>
             </div>
          </div>
+         <div class="row display-none cart">
+          <div class="col-12"></div>
+          <div class="col-12 cart-heading bg-white mt-4">
+            <h5 class="p-2">My Cart (<span  class="total-item-count">0</span>item)</h5>
+         </div>
+          <div class="col-12 p-0 mt-0" id="cart-body">
+
+          </div>
+         <div class="col-12 bg-white p-4">
+              <span class="footer-with-item">
+                <div><p class="text-center">Promocode can be applied on payment page</p></div>
+                <div>
+                   <button class="modified-button">
+                     <span>Proceed to Checkout</span>
+                     <span><span class="grand-total"></span> &nbsp;<i class="fa fa-angle-right"></i></span>
+                   </button>
+                 </div>
+              </span>    
+              <span class="footer-with-no-item">
+                <div>
+                  <button class="modified-button justify-content-center">
+                    Start Shopping
+                  </button> 
+             </div>
+              </span>
+         </div>
+     </div>
     </main>
      <footer class="container-fluid modified-container p-0 m-0">
         <div class="row" >
@@ -70,5 +103,56 @@
           </div>
        </div>
     </footer>
+    <div class="modal fade" id="cart-modal" tabindex="-1" role="dialog"  aria-hidden="true" data-backdrop="static">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content rounded-0">
+          <div class="modal-header bg-dark text-white rounded-0">
+            <h5 class="modal-title" id="modal-heading">My Cart (<span class="total-item-count">0</span> item)</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body" id="cart-item-list">
+    
+          </div>
+          <div class="modal-footer d-block">
+            <span class="footer-with-item">
+              <div><p class="text-center">Promocode can be applied on payment page</p></div>
+              <div>
+                 <button class="modified-button">
+                   <span>Proceed to Checkout</span>
+                   <span><span class="grand-total"></span> &nbsp;<i class="fa fa-angle-right"></i></span>
+                 </button>
+               </div>
+            </span>    
+            <span class="footer-with-no-item">
+              <div>
+                <button class="modified-button justify-content-center">
+                  Start Shopping
+                </button> 
+              </div>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="alert-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop="static">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Information</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>Item is added to the cart</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-dismiss="modal">OK</button>
+          </div>
+        </div>
+      </div>
+    </div>
 </body>
 </html>

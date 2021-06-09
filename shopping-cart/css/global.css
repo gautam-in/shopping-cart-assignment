@@ -6,18 +6,28 @@
     --border-color: whitesmoke;
     --input-border-color:#bdb6b6;
     --sidebar-item-list-border-color : #d0cbcb;
+    --box-shadow-color:#b9b9b9;
   }
   
 
 h1{
-    font-size: 2rem !important;
+    font-size: 2rem;
 }
 
 p{
-    font-size: 1rem !important;
+    font-size: 1rem;
 }
 
 .display-none{
     display: none;
 }
 
+.screen-height{
+    height: 100vh;
+}
+
+img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+ }
