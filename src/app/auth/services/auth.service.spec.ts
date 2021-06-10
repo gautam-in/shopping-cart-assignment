@@ -20,8 +20,8 @@ describe('AuthService', () => {
   });
 
   describe('addNewUser', () => {
-    it('should add user to sessionStorage when no session exists for users', (done: DoneFn) => {
-      spyOn(sessionStorage, 'getItem').and.returnValue('');
+    it('should add user to localStorage when no session exists for users', (done: DoneFn) => {
+      spyOn(localStorage, 'getItem').and.returnValue('');
       const login = service.addNewUser(mockUser);
       login.subscribe((val) => {
         expect(val).toEqual(mockUser);
@@ -29,8 +29,8 @@ describe('AuthService', () => {
       });
     });
 
-    it('should add user to sessionStorage when users array already exists for users', (done: DoneFn) => {
-      spyOn(sessionStorage, 'getItem').and.returnValue(
+    it('should add user to localStorage when users array already exists for users', (done: DoneFn) => {
+      spyOn(localStorage, 'getItem').and.returnValue(
         JSON.stringify([mockUser])
       );
       const login = service.addNewUser(mockUser);
@@ -45,8 +45,8 @@ describe('AuthService', () => {
         .subscribe();
     });
 
-    it('should add user to sessionStorage when users user not exists in users session', (done: DoneFn) => {
-      spyOn(sessionStorage, 'getItem').and.returnValue(
+    it('should add user to localStorage when users user not exists in users session', (done: DoneFn) => {
+      spyOn(localStorage, 'getItem').and.returnValue(
         JSON.stringify([mockUser])
       );
       const newMockUser = { ...mockUser, email: 'test2@test.com' };
@@ -59,14 +59,14 @@ describe('AuthService', () => {
   });
 
   describe('loginUser', () => {
-    it('should throw error EMAIL_NOT_FOUND from sessionStorage when no session exists for users', () => {
-      spyOn(sessionStorage, 'getItem').and.returnValue('');
+    it('should throw error EMAIL_NOT_FOUND from localStorage when no session exists for users', () => {
+      spyOn(localStorage, 'getItem').and.returnValue('');
       service.loginUser(mockUser);
       expect(service).toBeTruthy();
     });
 
-    it('should throw error INVALID_PASSWPRD when user exists in sessionStorage but wrong password', (done: DoneFn) => {
-      spyOn(sessionStorage, 'getItem').and.returnValue(
+    it('should throw error INVALID_PASSWPRD when user exists in localStorage but wrong password', (done: DoneFn) => {
+      spyOn(localStorage, 'getItem').and.returnValue(
         JSON.stringify([mockUser])
       );
       const newMockUser = { ...mockUser, password: 'wrongpassword' };
@@ -82,8 +82,8 @@ describe('AuthService', () => {
         .subscribe();
     });
 
-    it('should return user when user exists in sessionStorage and matched password', (done: DoneFn) => {
-      spyOn(sessionStorage, 'getItem').and.returnValue(
+    it('should return user when user exists in localStorage and matched password', (done: DoneFn) => {
+      spyOn(localStorage, 'getItem').and.returnValue(
         JSON.stringify([mockUser])
       );
       const login = service.loginUser(mockUser);
@@ -96,8 +96,8 @@ describe('AuthService', () => {
       });
     });
 
-    it('should throw error when sessionStorage for users exists but user not exist in users session', (done: DoneFn) => {
-      spyOn(sessionStorage, 'getItem').and.returnValue(
+    it('should throw error when localStorage for users exists but user not exist in users session', (done: DoneFn) => {
+      spyOn(localStorage, 'getItem').and.returnValue(
         JSON.stringify([mockUser])
       );
       const newMockUser = { ...mockUser, email: 'test2@test.com' };

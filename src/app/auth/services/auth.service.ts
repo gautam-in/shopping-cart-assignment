@@ -9,7 +9,7 @@ import { User } from '../models/user.model';
 export class AuthService {
   constructor() {}
   addNewUser(value: User): Observable<any> {
-    const users = sessionStorage.getItem('Users');
+    const users = localStorage.getItem('Users');
     if (users) {
       const userArray = JSON.parse(users);
       const userexists = userArray.findIndex(
@@ -19,17 +19,17 @@ export class AuthService {
         return throwError({ error: { error: { message: EMAIL_NOT_FOUND } } });
       } else {
         userArray.push(value);
-        sessionStorage.setItem('Users', JSON.stringify(userArray));
+        localStorage.setItem('Users', JSON.stringify(userArray));
         return of(value);
       }
     } else {
-      sessionStorage.setItem('Users', JSON.stringify([value]));
+      localStorage.setItem('Users', JSON.stringify([value]));
       return of(value);
     }
   }
 
   loginUser(user: User): Observable<any> {
-    const users = sessionStorage.getItem('Users');
+    const users = localStorage.getItem('Users');
     if (users) {
       const userArray = JSON.parse(users);
       const userexists = userArray.find(
