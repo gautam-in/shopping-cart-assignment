@@ -5,7 +5,6 @@
     </div>
     <div class="sub-container">
       <img
-        aria-label="product image"
         [src]="'../../assets/' + product.product.imageURL"
         alt="product image"
       />
@@ -14,7 +13,6 @@
           <span>{{ product.product.description }}</span>
         </p>
         <button
-          aria-label="buy now button to add product to cart"
           *ngIf="product.quantity == 0"
           (click)="addToCart(product)"
           class="buy-now mobile"
@@ -23,53 +21,28 @@
         </button>
         <div *ngIf="product.quantity > 0" class="mobile">
           <div class="quantity">
-            <span
-              aria-label="add more quantity button"
-              (click)="minusQuantity(product)"
-              class="minus circle"
-              >-</span
-            >
+            <span (click)="minusQuantity(product)" class="minus circle">-</span>
             <span aria-label="product quantity added to cart" class="count">{{
               product.quantity
             }}</span>
-            <span
-              aria-label="remove quantity by one button"
-              (click)="addToCart(product)"
-              class="circle"
-              >+</span
-            >
+            <span (click)="addToCart(product)" class="circle">+</span>
           </div>
         </div>
       </div>
     </div>
     <div class="product-footer tablet">
-      <div aria-label="product price" class="price desktop">
-        MRP Rs.{{ product.product.price }}
-      </div>
+      <div class="price desktop">MRP Rs.{{ product.product.price }}</div>
       <div *ngIf="product.quantity > 0" class="desktop">
         <div class="quantity">
-          <span
-            aria-label="add more quantity"
-            (click)="minusQuantity(product)"
-            class="minus circle"
-            >-</span
-          >
-          <span aria-label="product quantity added to cart" class="count">{{
-            product.quantity
-          }}</span>
-          <span
-            aria-label="remove product quantity by one"
-            (click)="addToCart(product)"
-            class="circle"
-            >+</span
-          >
+          <span (click)="minusQuantity(product)" class="minus circle">-</span>
+          <span class="count">{{ product.quantity }}</span>
+          <span (click)="addToCart(product)" class="circle">+</span>
         </div>
       </div>
       <button
         *ngIf="product.quantity == 0"
         (click)="addToCart(product)"
         class="buy-now desktop"
-        aria-label="buy now button to add product to cart"
       >
         Buy Now
       </button>
@@ -77,27 +50,14 @@
         *ngIf="product.quantity === 0"
         (click)="addToCart(product)"
         class="buy-now tablet"
-        aria-label="buy now button to add product to cart"
       >
         Buy Now @ Rs.{{ product.product.price }}
       </button>
       <div *ngIf="product.quantity > 0" class="tablet">
         <div class="quantity">
-          <span
-            aria-label="add product quantity"
-            (click)="minusQuantity(product)"
-            class="minus circle"
-            >-</span
-          >
-          <span aria-label="product quantity added to cart" class="count">{{
-            product.quantity
-          }}</span>
-          <span
-            aria-label="remove product quantity by one"
-            (click)="addToCart(product)"
-            class="circle"
-            >+</span
-          >
+          <span (click)="minusQuantity(product)" class="minus circle">-</span>
+          <span class="count">{{ product.quantity }}</span>
+          <span (click)="addToCart(product)" class="circle">+</span>
         </div>
       </div>
     </div>

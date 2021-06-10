@@ -1,33 +1,17 @@
 <header>
   <div class="row">
     <div routerLink="/home" class="left-section">
-      <img
-        aria-label="Sabka Bazar"
-        src="../../../assets/static/images/logo.png"
-        alt="Sabka Bazar"
-      />
+      <img src="../../../assets/static/images/logo.png" alt="Sabka Bazar" />
     </div>
     <div class="right-section">
       <div *ngIf="!isAuthenticated; else loggedInUser" class="auth-section">
-        <a
-          aria-label="SignIn button"
-          href="#"
-          routerLink="/authentication/login"
-          >SignIn</a
-        >
-        <a
-          aria-label="Register button"
-          href="#"
-          routerLink="authentication/register"
-          >Register</a
-        >
+        <a href="#" routerLink="/authentication/login">SignIn</a>
+        <a href="#" routerLink="authentication/register">Register</a>
       </div>
       <ng-template #loggedInUser>
         <div class="auth-section">
-          <a aria-label="logged in user name">{{
-            user && user.firstName | titlecase
-          }}</a>
-          <a aria-label="logout button" (click)="logout()">Logout</a>
+          <a>{{ user && user.firstName | titlecase }}</a>
+          <a (click)="logout()">Logout</a>
         </div>
       </ng-template>
       <div class="menu">
@@ -35,39 +19,23 @@
           <ul>
             <li>
               <a
-                aria-label="home page link"
                 [routerLinkActiveOptions]="{ exact: true }"
                 routerLinkActive="active"
                 routerLink="/home"
-                href="#"
                 >Home</a
               >
             </li>
             <li>
-              <a
-                aria-label="products page link"
-                routerLinkActive="active"
-                routerLink="/products"
-                href="#"
-                >Products</a
-              >
+              <a routerLinkActive="active" routerLink="/products">Products</a>
             </li>
           </ul>
         </nav>
         <div class="cart-btn mobile">
-          <img
-            aria-label="cart image"
-            src="../../../assets/static/images/cart.svg"
-            alt="cart image"
-          />
+          <img src="../../../assets/static/images/cart.svg" alt="cart image" />
           <a routerLink="/cart">{{ cartItem }} Items</a>
         </div>
         <div class="cart-btn tablet desktop">
-          <img
-            aria-label="cart image"
-            src="../../../assets/static/images/cart.svg"
-            alt="cart image"
-          />
+          <img src="../../../assets/static/images/cart.svg" alt="cart image" />
           <a (click)="openCart()">{{ cartItem }} Items</a>
         </div>
       </div>
@@ -75,11 +43,7 @@
   </div>
   <div class="clearfix"></div>
 </header>
-<div
-  aria-label="cart close button"
-  *ngIf="showCart"
-  class="row showCart tablet desktop"
->
+<div *ngIf="showCart" class="row showCart tablet desktop">
   <app-cart (close)="closeCart()"></app-cart>
 </div>
 <div *ngIf="showCart" class="overlay tablet desktop"></div>
