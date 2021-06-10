@@ -1,5 +1,5 @@
 import { ActionReducerMap } from '@ngrx/store';
-import * as fromCart from '../features/cart/store/reducer/cart.reducer';
+import * as fromCart from '../shared/store/reducer/cart.reducer';
 import * as fromAuth from '../auth/store/reducers/auth.reducer';
 
 export interface AppState {

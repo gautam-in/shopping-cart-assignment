@@ -8,8 +8,8 @@ import {
 import { Store } from '@ngrx/store';
 import { Subscription } from 'rxjs';
 import { AppState } from 'src/app/store/app.reducer';
-import { ICartItem } from '../../../shared/models/cart-item.model';
-import { addProduct, deleteProduct } from '../store/actions/cart.actions';
+import { ICartItem } from '../../models/cart-item.model';
+import { addProduct, deleteProduct } from '../../store/actions/cart.actions';
 
 @Component({
   selector: 'app-cart',

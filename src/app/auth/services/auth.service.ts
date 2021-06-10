@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable, of, throwError } from 'rxjs';
+import { EMAIL_NOT_FOUND, INVALID_PASSWORD } from 'src/app/shared/constants/messages.constant';
 import { User } from '../models/user.model';
 
 @Injectable({
@@ -15,7 +16,7 @@ export class AuthService {
         (item: any) => item.email === value.email
       );
       if (userexists !== -1) {
-        return throwError({ error: { error: { message: 'EMAIL_NOT_FOUND' } } });
+        return throwError({ error: { error: { message: EMAIL_NOT_FOUND } } });
       } else {
         userArray.push(value);
         sessionStorage.setItem('Users', JSON.stringify(userArray));
@@ -42,13 +43,13 @@ export class AuthService {
           });
         } else {
           return throwError({
-            error: { error: { message: 'INVALID_PASSWORD' } },
+            error: { error: { message: INVALID_PASSWORD } },
           });
         }
       }
     }
     return throwError({
-      error: { error: { message: 'EMAIL_NOT_FOUND' } },
+      error: { error: { message: EMAIL_NOT_FOUND } },
     });
   }
 }

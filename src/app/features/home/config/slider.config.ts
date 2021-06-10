@@ -1,7 +1,7 @@
 export const config = {
-  loop: true,
+  loop: false,
   showPreview: false,
   transitionDuration: 1,
-  showNavigator: false,
+  showNavigator: true,
   showTitle: false,
 };

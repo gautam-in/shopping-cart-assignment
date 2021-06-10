@@ -4,8 +4,8 @@ import { StoreModule } from '@ngrx/store';
 import { MockStore, provideMockStore } from '@ngrx/store/testing';
 import { ToastrModule } from 'ngx-toastr';
 import { mockUser } from 'src/app/auth/mock/user.mock';
-import { mockCart } from 'src/app/features/cart/mock/cart.mock';
-import { addProduct } from 'src/app/features/cart/store/actions/cart.actions';
+import { mockCart } from 'src/app/mock/cart.mock';
+import { addProduct } from 'src/app/shared/store/actions/cart.actions';
 import { AppState } from 'src/app/store/app.reducer';
 
 import { ProductItemComponent } from './product-item.component';

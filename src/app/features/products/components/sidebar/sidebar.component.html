@@ -1,10 +1,18 @@
 <div class="container">
   <ul aria-label="product category list" class="categories">
-    <li routerLinkActive="active" *ngFor="let category of categories">
-      <a
-        [routerLink]="'/products/' + category.id"
-        >{{ category.name }}</a
-      >
+    <li
+      routerLink="/products"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+    >
+      <a>All Products</a>
+    </li>
+    <li
+      [routerLink]="'/products/' + category.id"
+      routerLinkActive="active"
+      *ngFor="let category of categories"
+    >
+      <a>{{ category.name }}</a>
     </li>
   </ul>
 </div>

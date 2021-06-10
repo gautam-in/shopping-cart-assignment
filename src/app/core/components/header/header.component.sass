@@ -6,6 +6,7 @@ header
 .left-section
     float: left
     width: 193px
+    cursor: pointer
 .showCart
     position: relative
 .right-section
@@ -26,28 +27,29 @@ header
                     display: inline-block
                     margin-left: 10px
                     position: relative
-                    a
-                        font-weight: 500
-                        &:hover
-                            color: $disabled
-                            &:after
-                                content: ' '
-                                width: 90%
-                                border-bottom: 1px solid $disabled
-                                height: 1px
-                                position: absolute
-                                bottom: -7px
-                                left: 5%
-                    .active
-                        color: $pinkLight
+                .active
+                    color: $pinkLight!important
+                    &:after
+                        content: ' '
+                        width: 90%
+                        border-bottom: 1px solid $pinkLight!important
+                        height: 1px
+                        position: absolute
+                        bottom: -7px
+                        left: 5%
+                a
+                    font-weight: 500
+                    &:hover
+                        color: $disabled
                         &:after
                             content: ' '
                             width: 90%
-                            border-bottom: 1px solid $pinkLight
+                            border-bottom: 1px solid $disabled
                             height: 1px
                             position: absolute
                             bottom: -7px
                             left: 5%
+
         .cart-btn
             display: flex
             align-items: center

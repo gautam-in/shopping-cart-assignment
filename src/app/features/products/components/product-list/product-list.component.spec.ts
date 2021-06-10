@@ -7,7 +7,7 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { StoreModule } from '@ngrx/store';
 import { ToastrModule } from 'ngx-toastr';
 import { of } from 'rxjs';
-import { cartReducer } from 'src/app/features/cart/store/reducer/cart.reducer';
+import { cartReducer } from 'src/app/shared/store/reducer/cart.reducer';
 import {
   mockCategories,
   mockCategory,

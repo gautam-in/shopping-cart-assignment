@@ -4,7 +4,7 @@ import { Subscription } from 'rxjs';
 import {
   addProduct,
   deleteProduct,
-} from 'src/app/features/cart/store/actions/cart.actions';
+} from 'src/app/shared/store/actions/cart.actions';
 import { ICartItem } from 'src/app/shared/models/cart-item.model';
 import { AppState } from 'src/app/store/app.reducer';
 
