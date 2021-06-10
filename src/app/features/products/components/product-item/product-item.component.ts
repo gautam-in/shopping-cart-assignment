@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, Input, OnDestroy } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, Component, Input, OnDestroy } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Subscription } from 'rxjs';
 import {
@@ -16,7 +16,7 @@ import { AppState } from 'src/app/store/app.reducer';
 export class ProductItemComponent implements AfterViewInit, OnDestroy {
   @Input() product!: ICartItem;
   storeStub!: Subscription;
-  constructor(private store: Store<AppState>) {}
+  constructor(private store: Store<AppState>, private changeDetectorRef: ChangeDetectorRef) {}
 
   ngAfterViewInit() {
     this.storeStub = this.store.select('cartList').subscribe((val) => {
@@ -24,6 +24,7 @@ export class ProductItemComponent implements AfterViewInit, OnDestroy {
         (item) => item.product.id === this.product.product.id
       );
       this.product.quantity = productItem ? productItem.quantity : 0;
+      this.changeDetectorRef.detectChanges();
     });
   }
 

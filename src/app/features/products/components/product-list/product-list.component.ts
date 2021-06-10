@@ -18,8 +18,8 @@ export class ProductListComponent implements OnInit {
     private activeRouter: ActivatedRoute,
     private router: Router
   ) {}
-  categories!: ICategory[];
-  products!: ICartItem[];
+  categories: ICategory[] = [];
+  products: ICartItem[] = [];
   defaultCategory = '';
   ngOnInit(): void {
     this.activeRouter.params.subscribe((val) => {

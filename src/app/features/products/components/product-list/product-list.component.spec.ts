@@ -4,37 +4,44 @@ import { FormsModule } from '@angular/forms';
 import { By } from '@angular/platform-browser';
 import { ActivatedRoute, Router } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
-import { StoreModule } from '@ngrx/store';
+import { MockStore, provideMockStore } from '@ngrx/store/testing';
 import { ToastrModule } from 'ngx-toastr';
 import { of } from 'rxjs';
-import { cartReducer } from 'src/app/shared/store/reducer/cart.reducer';
-import {
-  mockCategories,
-  mockCategory,
-} from 'src/app/shared/mock/category.mock';
+import { mockUser } from 'src/app/auth/mock/user.mock';
+import { mockCart } from 'src/app/mock/cart.mock';
+import { mockCategories } from 'src/app/shared/mock/category.mock';
 import { MockCategoryService } from 'src/app/shared/mock/category.service.mock';
 import { CategoryService } from 'src/app/shared/services/category.service';
+import { AppState } from 'src/app/store/app.reducer';
 import { MockActivatedRoute } from '../../mock/routes/activated.route';
 import { MockProductService } from '../../mock/services/product.service.mock';
 import { ProductService } from '../../services/product.service';
 import { ProductItemComponent } from '../product-item/product-item.component';
 import { SidebarComponent } from '../sidebar/sidebar.component';
-
 import { ProductListComponent } from './product-list.component';
 
 describe('ProductListComponent', () => {
   let component: ProductListComponent;
   let fixture: ComponentFixture<ProductListComponent>;
   let activatedRoute: ActivatedRoute;
-  let categoryService: CategoryService;
   let router: Router;
+  let store: MockStore<AppState>;
+  const initialState: AppState = {
+    auth: {
+      user: mockUser,
+      authError: '',
+      loading: false,
+    },
+    cartList: {
+      cart: [mockCart],
+    },
+  };
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [
         HttpClientModule,
         FormsModule,
         ToastrModule.forRoot(),
-        StoreModule.forRoot({ cartList: cartReducer }),
         RouterTestingModule.withRoutes([
           {
             path: 'products',
@@ -53,6 +60,7 @@ describe('ProductListComponent', () => {
         SidebarComponent,
       ],
       providers: [
+        provideMockStore({ initialState }),
         { provide: CategoryService, useClass: MockCategoryService },
         { provide: ProductService, useClass: MockProductService },
         { provide: ActivatedRoute, useClass: MockActivatedRoute },
@@ -65,6 +73,7 @@ describe('ProductListComponent', () => {
     component = fixture.componentInstance;
     activatedRoute = TestBed.inject(ActivatedRoute);
     router = TestBed.inject(Router);
+    store = TestBed.inject(MockStore);
   });
 
   it('should create', () => {

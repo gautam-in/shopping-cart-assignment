@@ -1,4 +1,9 @@
-import { ComponentFixture, fakeAsync, TestBed, tick } from '@angular/core/testing';
+import {
+  ComponentFixture,
+  fakeAsync,
+  TestBed,
+  tick,
+} from '@angular/core/testing';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { StoreModule } from '@ngrx/store';
 import { MockStore, provideMockStore } from '@ngrx/store/testing';
@@ -21,7 +26,7 @@ describe('ProductItemComponent', () => {
       loading: false,
     },
     cartList: {
-      cart: [mockCart],
+      cart: [],
     },
   };
   beforeEach(async () => {
@@ -47,6 +52,12 @@ describe('ProductItemComponent', () => {
   it('Buy now should add product to cart', () => {
     const spy = spyOn(store, 'dispatch');
     component.addToCart(mockCart);
+    expect(spy).toHaveBeenCalled();
+  });
+
+  it('minus button click should call deleteProduct action on store.', () => {
+    const spy = spyOn(store, 'dispatch');
+    component.minusQuantity(component.product);
     expect(spy).toHaveBeenCalled();
   });
 
