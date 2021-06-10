@@ -1,5 +1,9 @@
 import { HttpClientModule } from '@angular/common/http';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { MockHomeService } from 'src/app/mock/services/home.service.mock';
+import { CategoryService } from 'src/app/shared/services/category.service';
+import { SharedModule } from 'src/app/shared/shared.module';
+import { HomeService } from '../../services/home.service';
 
 import { HomeComponent } from './home.component';
 
@@ -10,9 +14,12 @@ describe('HomeComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [HttpClientModule],
-      declarations: [ HomeComponent ]
-    })
-    .compileComponents();
+      declarations: [HomeComponent],
+      providers: [
+        { provie: HomeService, useClass: MockHomeService },
+        { provide: CategoryService, userClass: CategoryService },
+      ],
+    }).compileComponents();
   });
 
   beforeEach(() => {
