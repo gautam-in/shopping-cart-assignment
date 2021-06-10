@@ -1,6 +1,6 @@
 import { cartReducer, State } from './cart.reducer';
 import { addProduct, deleteProduct } from '../actions/cart.actions';
-import { mockCart } from 'src/app/mock/cart.mock';
+import { mockCart } from 'src/app/mock/constants/cart.mock';
 
 describe('CartReducer', () => {
   let initialState: State = {

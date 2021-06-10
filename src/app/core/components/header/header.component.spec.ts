@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { provideMockStore, MockStore } from '@ngrx/store/testing';
-import { mockUser } from 'src/app/auth/mock/user.mock';
+import { mockUser } from 'src/app/mock/constants/user.mock';
 import { AppState } from 'src/app/store/app.reducer';
 import { HeaderComponent } from './header.component';
 

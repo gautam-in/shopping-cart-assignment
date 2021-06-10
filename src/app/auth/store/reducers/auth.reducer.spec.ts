@@ -1,6 +1,6 @@
 import { authReducer, State } from './auth.reducer';
 import * as AuthActions from '../actions/auth.actions';
-import { mockUser } from '../../mock/user.mock';
+import { mockUser } from '../../../mock/constants/user.mock';
 
 describe('AuthReducer', () => {
   it('should null user on logout action', () => {

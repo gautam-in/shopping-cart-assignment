@@ -5,7 +5,7 @@ import { provideMockStore, MockStore } from '@ngrx/store/testing';
 import { AppState } from 'src/app/store/app.reducer';
 import { RegisterComponent } from './register.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { mockUser } from '../../mock/user.mock';
+import { mockUser } from '../../../mock/constants/user.mock';
 
 describe('RegisterComponent', () => {
   let component: RegisterComponent;

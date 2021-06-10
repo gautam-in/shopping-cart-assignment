@@ -1,9 +1,9 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { StoreModule } from '@ngrx/store';
 import { MockStore, provideMockStore } from '@ngrx/store/testing';
-import { mockUser } from 'src/app/auth/mock/user.mock';
+import { mockUser } from 'src/app/mock/constants/user.mock';
 import { AppState } from 'src/app/store/app.reducer';
-import { mockCart } from '../../../mock/cart.mock';
+import { mockCart } from '../../../mock/constants/cart.mock';
 import { cartReducer } from '../../store/reducer/cart.reducer';
 
 import { CartComponent } from './cart.component';

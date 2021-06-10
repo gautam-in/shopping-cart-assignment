@@ -1,7 +1,7 @@
 import { TestBed } from '@angular/core/testing';
 import { of } from 'rxjs';
 import { catchError } from 'rxjs/operators';
-import { mockUser } from '../mock/user.mock';
+import { mockUser } from '../../mock/constants/user.mock';
 
 import { AuthService } from './auth.service';
 

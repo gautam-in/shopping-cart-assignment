@@ -1,18 +1,10 @@
-import {
-  ComponentFixture,
-  fakeAsync,
-  TestBed,
-  tick,
-} from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { StoreModule } from '@ngrx/store';
 import { MockStore, provideMockStore } from '@ngrx/store/testing';
 import { ToastrModule } from 'ngx-toastr';
-import { mockUser } from 'src/app/auth/mock/user.mock';
-import { mockCart } from 'src/app/mock/cart.mock';
-import { addProduct } from 'src/app/shared/store/actions/cart.actions';
+import { mockUser } from 'src/app/mock/constants/user.mock';
+import { mockCart } from 'src/app/mock/constants/cart.mock';
 import { AppState } from 'src/app/store/app.reducer';
-
 import { ProductItemComponent } from './product-item.component';
 
 describe('ProductItemComponent', () => {
