@@ -80,7 +80,7 @@ describe('ProductListComponent', () => {
 
   it('change category from drop down should navigate to category route', () => {
     const spy = spyOn(router, 'navigate');
-    component.categories = mockCategories;
+    component.categories = [...mockCategories];
     fixture.detectChanges();
     const select: HTMLSelectElement = fixture.debugElement.query(
       By.css('select')
@@ -93,7 +93,7 @@ describe('ProductListComponent', () => {
 
   it('change category from drop down to select category should show all products', () => {
     const spy = spyOn(router, 'navigate');
-    component.categories = mockCategories;
+    component.categories = [...mockCategories];
     fixture.detectChanges();
     const select: HTMLSelectElement = fixture.debugElement.query(
       By.css('select')
@@ -102,5 +102,11 @@ describe('ProductListComponent', () => {
     select.dispatchEvent(new Event('change'));
     expect(component.defaultCategory).toEqual('');
     expect(spy).toHaveBeenCalled();
+  });
+
+  it('should load products based on route param category id', () => {
+    activatedRoute.params = of({ id: '5b6899953d1a866534f516e2' });
+    fixture.detectChanges();
+    expect(component).toBeTruthy();
   });
 });
