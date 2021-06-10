@@ -8,10 +8,14 @@
         [src]="'../../assets/' + product.product.imageURL"
         alt="product image"
       />
-      <div class="desc">
-        <p>
-          <span>{{ product.product.description }}</span>
-        </p>
+      <div class="right-container">
+        <div class="desc-container">
+          <div class="desc">
+            <p [title]="product.product.description">
+              {{ product.product.description }}
+            </p>
+          </div>
+        </div>
         <button
           *ngIf="product.quantity == 0"
           (click)="addToCart(product)"

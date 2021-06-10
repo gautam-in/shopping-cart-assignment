@@ -27,14 +27,18 @@
             overflow: hidden
         img
             width: 100%
-        .desc
-            background: $greyEEE
+        .desc-container
             padding: 10px
-            p
-                height: 6.5rem
-                overflow: hidden
+            background: $greyEEE
+            .desc
+                display: -webkit-box
+                -webkit-line-clamp: 4
+                -webkit-box-orient: vertical
                 font-size: 78%
-                position: relative
+                overflow: hidden
+                p
+                    margin: 0
+                    word-break: break-all
         .product-footer
             display: flex
             justify-content: space-between
@@ -71,6 +75,9 @@
         justify-content: center
         bottom: 0
 @media screen and (max-width: 768px)
+    .right-container
+        .desc-container
+            height: 100%
     .product
         width: 50%
         .container
@@ -91,13 +98,19 @@
 @media only screen and (max-width: 480px)
     .product
         width: 100%
-    .desc
-        padding: 0!important
-        position: relative !important
-        background: transparent !important
-        p
-            background: #ccc!important
-            padding: 10px!important
+    .right-container
+        position: relative
+        .desc-container
+            padding: 10px
+            height: inherit !important
+            .desc
+                display: -webkit-box
+                -webkit-line-clamp: 4
+                -webkit-box-orient: vertical
+                font-size: 78%
+                overflow: hidden
+                p
+                    margin: 0
         .buy-now
             width: 100%
             background: #d00245
@@ -108,6 +121,7 @@
             display: flex
             justify-content: inherit
             bottom: 0
+            left: 0
 
     .title
         font-size: 160%!important
