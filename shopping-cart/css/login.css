@@ -1,0 +1,22 @@
+  .modified-input{
+    border : 0 ;
+    outline: 0;
+    border-bottom: 0.12rem solid var(--input-border-color);
+    padding : 0.63rem 0;
+    margin-bottom: 0.93rem;
+    width:100%;
+  }
+
+  .modified-main-container > div{
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  /* media query */
+@media (min-width: 992px){
+  .modified-main-container > div{
+    width: 70%;
+    margin: 0 auto;
+  }
+}
+

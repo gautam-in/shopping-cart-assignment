@@ -1,0 +1,61 @@
+.modified-button{
+    background:var(--primary-color);
+    color: white;
+    font-size: 0.93rem;
+    padding:0.18rem 1.25rem;
+    display: block;
+    margin-top:0.62rem;
+    width:100% ;
+    cursor:pointer;
+    border: 1px solid var(--primary-color);
+  }
+
+nav li{
+   list-style-type: none; 
+   display: inline-block;
+}
+
+nav  a{
+    text-decoration: none !important;
+    color: var(--text-color) !important;
+}
+
+.cart-icon{
+    background-color: var(--secondary-color);
+    padding:1rem 1.5rem;
+    color:var(--primary-color);
+    cursor: pointer;
+    width: max-content;
+    float: right;
+}
+
+#logo{
+    width: 7.5rem;
+}
+
+header{
+    border-bottom: 0.3rem solid var(--border-color);
+}
+
+footer{
+    background-color:var(--secondary-color);
+}
+
+.modified-container > div{
+    width: 100%;
+    margin: 0 auto; 
+}
+
+
+@media (min-width: 576px){
+    #logo{
+        width: 10rem;
+    }
+}
+
+@media (min-width: 992px){
+    .modified-container > div{
+        width: 76%;
+        margin: 0 auto; 
+    }
+}

@@ -1,0 +1,75 @@
+.sidebar-icon{
+    position: absolute;
+    right: 1rem ;
+    top:0;
+    cursor: pointer;
+ }
+
+.sidebar{
+    background-color:var(--primary-color);
+    height:2.5rem;
+    justify-content:space-between;
+    color:white;
+    font-size:1.5rem;
+    cursor:pointer; 
+    display: block;
+}
+
+.sidebar-item-list{
+    padding:1rem 0.5rem;
+    border-bottom:0.1rem solid var(--side-bar-color);
+    cursor: pointer;
+}
+
+.sidebar-item-list:hover{
+    background:var(--sidebar-item-list-border-color);
+    color:var(--text-color);
+    transition: 2sec;
+}
+
+.sidebar-item-list-active{
+    background-color: var(--primary-color);
+    color: white;
+}
+
+#category-list{
+    background-color: var(--secondary-color);
+    min-height: 100vh;
+}
+
+.card-title{
+    height: 3rem;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.card-description{
+    background-color:var(--secondary-color);
+    height: 9rem;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    margin-top: 0rem;
+}
+
+ .card{
+     border-radius: 0;
+     border-right: 0.2rem solid var(--border-color);
+     border-left: 0.2rem solid var(--border-color);
+ }
+
+ .card-description-container > div{
+    width: 50%;
+}
+
+@media (min-width: 576px){
+    .sidebar{
+        display: none;
+    }
+}
+
+@media (min-width: 992px){
+.card-description-container > div{
+    width: 100%;
+}
+}
+
