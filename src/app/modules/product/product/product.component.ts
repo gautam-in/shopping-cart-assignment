@@ -29,8 +29,7 @@ export class ProductComponent implements OnInit {
   constructor(
     private store: Store<AppState>,
     private router: Router,
-    private media: MediaObserver,
-    private route: ActivatedRoute
+    private media: MediaObserver
   ) {
     this.categories$ = this.store.select('categories');
     this.products$ = this.store.select('products');
@@ -39,13 +38,7 @@ export class ProductComponent implements OnInit {
     });
   }
 
-  ngOnInit(): void {
-    // console.log(this.route.snapshot.queryParamMap.get('categoryId'));
-    let cid = this.route.snapshot.queryParamMap.get('categoryId');
-    if (cid) {
-      this.store.dispatch(new FilterBy(cid));
-    }
-  }
+  ngOnInit(): void {}
 
   changeFilter(event: MatSelectChange) {
     this.router.navigate(['/products'], {

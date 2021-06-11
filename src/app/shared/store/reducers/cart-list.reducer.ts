@@ -135,7 +135,7 @@ export function cartReducer(
       };
     }
 
-    case CartListActions.PLACE_ORDER: {
+    case CartListActions.PLACE_ORDER_SUCCESS: {
       return {
         ...state,
         products: [],

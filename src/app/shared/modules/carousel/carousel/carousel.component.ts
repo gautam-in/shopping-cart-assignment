@@ -39,7 +39,10 @@ export class CarouselComponent implements AfterViewInit, OnDestroy {
 
   @ViewChildren(CarouselItemElement, { read: ElementRef })
   private itemsElements!: QueryList<ElementRef>;
-  @ViewChild('carousel') carousel!: ElementRef;
+  @ViewChild('carousel', {
+    static: false,
+  })
+  carousel!: ElementRef;
   @Input() timing = '250ms ease-in';
   @Input() showControls = false;
   @Input() showIndicators = true;
@@ -129,6 +132,14 @@ export class CarouselComponent implements AfterViewInit, OnDestroy {
 
   public get currentSlideIndex(): number {
     return this.currentSlide;
+  }
+
+  public get nextDisabled(): boolean {
+    return this.currentSlide >= this.carouselSlidelength - 1;
+  }
+
+  public get prevDisabled(): boolean {
+    return this.currentSlide <= 0;
   }
 
   ngOnDestroy() {

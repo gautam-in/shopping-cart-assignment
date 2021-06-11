@@ -25,16 +25,6 @@ export class FetchProductsError implements Action {
   constructor(public payload: string) {}
 }
 
-export class ApplyCategoryFilter implements Action {
-  readonly type = APPLY_CATEGORY_FILTER;
-  constructor(public payload: string[]) {}
-}
-
-export class RemoveCategoryFilter implements Action {
-  readonly type = REMOVE_CATEGORY_FILTER;
-  constructor(public payload: string[]) {}
-}
-
 export class RemoveFilterBy implements Action {
   readonly type = REMOVE_FILTER_BY;
   constructor(public payload?: any) {}

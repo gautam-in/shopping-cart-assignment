@@ -70,7 +70,6 @@ describe('LoginComponent', () => {
   describe('ngAfterViewInit', () => {
     it('should detect form changes', () => {
       component.ngAfterViewInit();
-      debugger;
       fixture.detectChanges();
       expect(component.displayMessage.email).toBeUndefined();
     });

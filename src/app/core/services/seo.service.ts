@@ -48,7 +48,6 @@ export class SeoService {
     description: string,
     img_url: string = 'assets/images/logo_2x.png'
   ) {
-    console.log(this.firstTime);
     let baseUrl = <any>this.loc;
     if (isPlatformBrowser(this.platformId)) {
       baseUrl = baseUrl?._platformStrategy?._platformLocation?.location?.href;
@@ -76,6 +75,5 @@ export class SeoService {
     } else {
       this.updateMetaData(title, keyword, description, img_url, baseUrl);
     }
-    console.log(this.firstTime);
   }
 }

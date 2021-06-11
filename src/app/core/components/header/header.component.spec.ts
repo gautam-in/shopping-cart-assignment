@@ -1,27 +1,27 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { Inject, NO_ERRORS_SCHEMA, ViewContainerRef } from '@angular/core';
-import { ComponentFactoryResolver } from '@angular/core';
-import { Renderer2 } from '@angular/core';
-import { Action, Store, StoreModule } from '@ngrx/store';
-import { MediaObserver } from '@angular/flex-layout';
-import { RouterTestingModule } from '@angular/router/testing';
-import { HeaderComponent } from './header.component';
-import { provideMockStore, MockStore } from '@ngrx/store/testing';
-import { provideMockActions } from '@ngrx/effects/testing';
-import { Observable } from 'rxjs';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { SeoService } from '../../services/seo.service';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
+import {
+  ComponentFactoryResolver,
+  NO_ERRORS_SCHEMA,
+  Renderer2,
+  ViewContainerRef,
+} from '@angular/core';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { MediaObserver } from '@angular/flex-layout';
+import { MatSidenav } from '@angular/material/sidenav';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { RouterTestingModule } from '@angular/router/testing';
+import { provideMockActions } from '@ngrx/effects/testing';
+import { Action, StoreModule } from '@ngrx/store';
+import { MockStore, provideMockStore } from '@ngrx/store/testing';
+import { Observable } from 'rxjs';
+import { AppComponent } from 'src/app/app.component';
+import { PlaceholderDirective } from 'src/app/shared/directive/placeholder/placeholder.directive';
 import { MaterialModule } from 'src/app/shared/modules/material.module';
 import { AppEffectModule } from 'src/app/store/effects/app.effects.module';
 import { appReducer } from 'src/app/store/reducers/app.reducer';
-import { MatSidenav } from '@angular/material/sidenav';
-import { AppComponent } from 'src/app/app.component';
-import { CartComponent } from 'src/app/shared/components/cart/cart.component';
-
 import { Constants } from '../../common/constants/constants';
-import { BrowserDynamicTestingModule } from '@angular/platform-browser-dynamic/testing';
-import { PlaceholderDirective } from 'src/app/shared/directive/placeholder/placeholder.directive';
+import { SeoService } from '../../services/seo.service';
+import { HeaderComponent } from './header.component';
 
 describe('HeaderComponent', () => {
   let component: HeaderComponent;

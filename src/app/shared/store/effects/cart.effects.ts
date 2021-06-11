@@ -11,6 +11,7 @@ import {
   withLatestFrom,
 } from 'rxjs/operators';
 import { ErrorMsg } from 'src/app/core/common/constants/error.constants';
+import { AuthState } from 'src/app/core/models/auth-state.model';
 import { UtilService } from 'src/app/core/services/util.service';
 import { AppState } from 'src/app/models/app-state.model';
 import { ProductService } from 'src/app/modules/product/service/product.service';
@@ -30,7 +31,11 @@ import {
   DELETE_PRODUCT,
   FETCH_LOCAL_CART,
   INCREASE_PRODUCT_QUANTITY,
+  PlaceOrderFail,
+  PlaceOrderSuccess,
   PLACE_ORDER,
+  PLACE_ORDER_FAIL,
+  PLACE_ORDER_SUCCESS,
   UPDATE_PRODUCT,
 } from '../actions/cart-list.actions';
 
@@ -127,7 +132,7 @@ export class CartEffects {
   cartSuccessAction$ = createEffect(
     () =>
       this.actions$.pipe(
-        ofType(ADD_CART_SUCCESS, ADD_CART_ERROR),
+        ofType(ADD_CART_SUCCESS, ADD_CART_ERROR, PLACE_ORDER_FAIL),
         tap((e: any) => {
           this.util.openSnackBar(e.payload);
         })
@@ -139,11 +144,30 @@ export class CartEffects {
     () =>
       this.actions$.pipe(
         ofType(PLACE_ORDER),
+        withLatestFrom(this.store.select('auth')),
+        map(([, userState]) => {
+          if (userState.user) {
+            return new PlaceOrderSuccess();
+          }
+          return new PlaceOrderFail(
+            'User Not Logged In! Please Login First to place order'
+          );
+        })
+      ),
+    { dispatch: true }
+  );
+
+  postPlaceOrderSuccessAction$ = createEffect(
+    () =>
+      this.actions$.pipe(
+        ofType(PLACE_ORDER_SUCCESS),
         tap((e: any) => {
           this.util.openSnackBar(ErrorMsg.ORDER_PLACED);
           localStorage.removeItem('cartModel');
         })
       ),
-    { dispatch: false }
+    {
+      dispatch: false,
+    }
   );
 }

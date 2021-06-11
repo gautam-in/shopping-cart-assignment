@@ -89,7 +89,6 @@ describe('ProductEffects', () => {
       const outcome = new SetProducts(response);
       // subscribe to execute the Effect
       effects.fetchProducts.subscribe((action) => {
-        console.log(action);
         expect(action).toEqual(outcome);
       });
     });
@@ -109,8 +108,8 @@ describe('ProductEffects', () => {
 
   describe('FilterBy', () => {
     it('it Filter only by products', () => {
+      actions$ = of({ type: ROUTER_NAVIGATION });
       effects.loadProductsByCategoryActions$.subscribe((action) => {
-        console.log(action);
         expect(action).toBeTruthy();
       });
     });

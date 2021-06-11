@@ -64,7 +64,6 @@ export class AuthEffects {
         return this.authService.signup(signupAction);
       }),
       map((resData) => {
-        console.log(resData, 'signup');
         return handleAuthentication(
           +resData.expiresIn,
           resData.email,

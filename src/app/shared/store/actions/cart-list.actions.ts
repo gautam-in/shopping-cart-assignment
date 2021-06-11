@@ -12,6 +12,8 @@ export const ADD_CART_SUCCESS = `${comp} Add Cart Error`;
 export const FETCH_LOCAL_CART = `${comp} fetch Local Cart`;
 export const COMPUTE_CART = `${comp} compute Cart`;
 export const PLACE_ORDER = `${comp} place order`;
+export const PLACE_ORDER_SUCCESS = `${comp} place order Success`;
+export const PLACE_ORDER_FAIL = `${comp} place order Fail`;
 export const INCREASE_PRODUCT_QUANTITY = `${comp} Increase Product quantity in Cart`;
 export const DECREASE_PRODUCT_QUANTITY = `${comp} Decrease Product quantity in Cart`;
 export const MAX_QUANTITY_ERROR = `${comp} max quantity reached error`;
@@ -42,6 +44,15 @@ export class PlaceOrder implements Action {
   constructor(public payload?: any) {}
 }
 
+export class PlaceOrderSuccess implements Action {
+  readonly type = PLACE_ORDER_SUCCESS;
+  constructor(public payload?: any) {}
+}
+
+export class PlaceOrderFail implements Action {
+  readonly type = PLACE_ORDER_FAIL;
+  constructor(public payload?: any) {}
+}
 export class AddProducts implements Action {
   readonly type = ADD_PRODUCTS;
   constructor(public payload: CartProductModel[]) {}

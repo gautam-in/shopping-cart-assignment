@@ -21,9 +21,7 @@
       role="button"
       aria-label="Go to Next Item"
       class="btn-next"
-      [class.disabled]="
-        carousel.currentSlideIndex >= carousel.carouselSlidelength - 1
-      "
+      [ngClass]="{ disabled: carousel?.nextDisabled }"
       >Next</a
     >
     <a
@@ -31,7 +29,7 @@
       role="button"
       aria-label="Go to Previous Item"
       class="btn-prev"
-      [class.disabled]="carousel.currentSlideIndex <= 0"
+      [ngClass]="{ disabled: carousel?.prevDisabled }"
       >Prev</a
     >
   </div>
