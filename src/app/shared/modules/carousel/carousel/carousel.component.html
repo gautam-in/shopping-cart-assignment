@@ -1,0 +1,46 @@
+<section
+  class="carousel-wrapper"
+  [ngStyle]="carouselWrapperStyle"
+  (mouseenter)="stopRotation()"
+  (mouseleave)="startRotation()"
+>
+  <ul class="carousel-inner" #carousel>
+    <li
+      *ngFor="let item of items"
+      class="carousel-item"
+      [ngStyle]="carouselWrapperStyle"
+    >
+      <ng-container [ngTemplateOutlet]="item.tpl"></ng-container>
+    </li>
+  </ul>
+  <div *ngIf="showIndicators" class="indicators-container">
+    <div>
+      <span
+        class="indicator"
+        [ngClass]="{
+          selected: i === currentSlide,
+          unselected: i !== currentSlide
+        }"
+        *ngFor="let indicatorIndex of items; let i = index"
+        #indicator
+        (click)="goSlide(i)"
+      ></span>
+    </div>
+  </div>
+</section>
+<div *ngIf="showControls" style="margin-top: 1em">
+  <button
+    (click)="next()"
+    class="btn btn-default"
+    [class.disabled]="nextDisabled"
+  >
+    Next
+  </button>
+  <button
+    (click)="prev()"
+    class="btn btn-default"
+    [class.disabled]="prevDisabled"
+  >
+    Prev
+  </button>
+</div>

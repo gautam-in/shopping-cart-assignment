@@ -1,0 +1,122 @@
+<div class="wrapper">
+  <div class="cart-header">
+    <span class="title" id="cartTitle">
+      My Cart
+      <span *ngIf="(cart$ | async)?.products?.length" class="count"
+        >({{ (cart$ | async)?.products?.length || 0 }} item)</span
+      >
+    </span>
+
+    <button
+      class="close"
+      aria-label="Close"
+      (click)="closeDialog()"
+      aria-label="Close Cart Popup"
+    >
+      <i class="material-icons action"> cancel </i>
+    </button>
+  </div>
+
+  <div class="modal-body" *ngIf="(cart$ | async)?.products?.length">
+    <div class="card mb-3">
+      <div
+        class="row product"
+        *ngFor="let product of (cart$ | async)?.products; let i = index"
+      >
+        <div class="cart-image">
+          <img
+            [src]="product?.imageURL"
+            class="card-img"
+            [alt]="product?.name"
+            [title]="product?.name"
+          />
+        </div>
+        <div class="cart-description">
+          <div class="card-body">
+            <p class="card-title" aria-level="1" role="heading">
+              {{ product?.name }}
+            </p>
+            <div class="quantity-action-wrapper">
+              <i
+                class="material-icons action"
+                (click)="removeProductFromCart(i)"
+                title="decrease product unit"
+              >
+                remove_circle_outline
+              </i>
+              <span class="count">{{ product?.count }}</span>
+              <i
+                class="material-icons action"
+                (click)="addProductsToCart(i)"
+                title="increase product unit"
+                >add_circle_outline</i
+              >
+              <span class="item-price"
+                >X &nbsp; &nbsp;{{ product?.price | currency: "Rs " }}</span
+              >
+              <span class="item-price">=</span>
+              <span class="item-total-price">
+                {{
+                  (product?.price || 0) * (product?.count || 0)
+                    | currency: "Rs "
+                }}</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cart-offer">
+        <figure class="offer-img">
+          <img
+            class="offer-image"
+            src="assets/images/lowest-price.png"
+            alt="lowest-price"
+          />
+        </figure>
+        <p class="offer-text">You won't find it cheaper anywhere</p>
+      </div>
+    </div>
+
+    <div class="card-footer cart-footer">
+      <p class="promo-code">Promo code can be applied on payment page</p>
+      <button
+        type="button"
+        class="btn action-btn"
+        title="Proceed to Checkout Rs. {{ (cart$ | async)?.totalPrice || 0 }}"
+        (click)="placeOrder()"
+      >
+        <span class="checkout-text">Proceed to Checkout </span>
+        <span class="checkout-price"
+          >Rs.{{ (cart$ | async)?.totalPrice || 0 }}/- ></span
+        >
+      </button>
+    </div>
+  </div>
+
+  <ng-container *ngIf="!(cart$ | async)?.products?.length">
+    <div class="modal-body empty">
+      <div class="cart-body">
+        <p class="no-items main-heading" aria-level="1" role="heading">
+          No items in your cart
+        </p>
+        <p>You favourite items are just a click away</p>
+      </div>
+    </div>
+
+    <div class="modal-footer empty">
+      <section class="footer-section">
+        <a routerLink="/products" (click)="closeDialog()">
+          <button
+            type="button"
+            class="btn action-btn"
+            data-dismiss="modal"
+            aria-label="Start Shopping"
+          >
+            Start Shopping
+          </button>
+        </a>
+      </section>
+    </div>
+  </ng-container>
+</div>

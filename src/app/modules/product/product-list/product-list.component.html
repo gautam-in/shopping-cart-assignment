@@ -1,0 +1,49 @@
+<div class="wrapper" role="list">
+  <div
+    class="card"
+    *ngFor="let product of (products$ | async)?.currentProducts"
+    role="listitem"
+  >
+    <h2 class="card-title product-title">{{ product?.name }}</h2>
+    <div class="inner-body">
+      <span class="badge" *ngIf="product?.productInCart">
+        <span class="a-badge-text" data-a-badge-color="sx-granite"
+          >{{ product?.productInCart }} in cart</span
+        >
+      </span>
+      <img
+        class="card-img-top product-img"
+        src="{{ product?.imageURL }}"
+        alt="Card image cap"
+        [title]="product?.name"
+      />
+      <p class="card-text">
+        {{ product?.description }}
+        <ng-container *ngIf="isMobile">
+          <ng-container
+            [ngTemplateOutlet]="button"
+            [ngTemplateOutletContext]="{ product: product }"
+          ></ng-container>
+        </ng-container>
+      </p>
+    </div>
+    <div class="product-footer" *ngIf="!isMobile">
+      <h3 class="product-price">MRP Rs.{{ product?.price }}</h3>
+      <ng-container
+        [ngTemplateOutlet]="button"
+        [ngTemplateOutletContext]="{ product: product }"
+      ></ng-container>
+    </div>
+  </div>
+</div>
+
+<ng-template #button let-product="product">
+  <button
+    aria-label="Buy Now"
+    (click)="buyProduct(product)"
+    class="btn btn-danger btn-raised product-buy"
+  >
+    Add to Cart
+    <ng-container *ngIf="isMobile">@Rs.{{ product?.price }}</ng-container>
+  </button>
+</ng-template>
