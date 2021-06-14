@@ -1,0 +1,131 @@
+@import "../../Assets/style/basestyle.scss";
+
+.header-section {
+  width: 100%;
+  box-shadow: 0px 3px 6px rgba(175, 175, 175, 0.4);
+  .maincontainer {
+    padding: 0 0.5rem;
+    height: 6rem;
+    display: flex;
+    font-size: 0.8rem;
+    width: calc(100% - 1rem);
+    justify-content: space-between;
+    max-width: $base-width;
+    margin: 0 auto;
+    .logo {
+      width: auto;
+      height: 100%;
+      // margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+    .heading-menu {
+      display: flex;
+      width: 50%;
+      align-items: flex-end;
+      padding-left: 10%;
+      padding-bottom: 1rem;
+      h3 {
+        cursor: pointer;
+        padding: 0 0.5rem;
+        font-weight: 400;
+      }
+    }
+    .cart-signin {
+      width: 20%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      .signin {
+        display: flex;
+        // padding-left: 2rem;
+        .links {
+          cursor: pointer;
+          text-decoration: none;
+          color: black;
+          padding: 0.2rem 1rem;
+        }
+      }
+      .cart-icon {
+        cursor: pointer;
+        width: 40%;
+        height: auto;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        background-color: #f1f1f1;
+        padding: 0 3%;
+        .item {
+          padding-left: 10%;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  .header-section {
+    .maincontainer {
+      padding-right: 0;
+      height: 4rem;
+      font-size: 0.5rem;
+      width: 100%;
+      .logo {
+        width: 30%;
+        img {
+          width: 90%;
+          height: auto;
+        }
+      }
+      .heading-menu {
+        display: flex;
+        width: 30%;
+        justify-content: center;
+        padding: 0;
+        padding-bottom: 1rem;
+        h3 {
+          cursor: pointer;
+          padding: 0 0.5rem;
+          font-weight: 400;
+        }
+      }
+      .cart-signin {
+        width: 40%;
+        align-items: flex-end;
+        .signin {
+          justify-content: flex-end;
+          width: 7rem;
+          flex-wrap: wrap;
+          padding-top: 0.3rem;
+          .links {
+            width: auto;
+            padding: 0.2rem 0.5rem;
+          }
+        }
+        .cart-icon {
+          cursor: pointer;
+          width: 60%;
+          height: auto;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background-color: #f1f1f1;
+          padding: 3% 0;
+          .App {
+            padding: 0.1rem;
+          }
+          .item {
+            width: auto;
+            padding-left: 10%;
+          }
+        }
+      }
+    }
+  }
+}
