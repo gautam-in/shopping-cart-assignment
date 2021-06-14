@@ -1,15 +1,18 @@
 import { Injectable } from '@angular/core';
 import {
-  ActivatedRouteSnapshot, Resolve,
-  RouterStateSnapshot
+  ActivatedRouteSnapshot,
+  Resolve,
+  RouterStateSnapshot,
 } from '@angular/router';
 import { Actions, ofType } from '@ngrx/effects';
-import { Store } from '@ngrx/store';
+import { select, Store } from '@ngrx/store';
 import { Observable, of } from 'rxjs';
 import { switchMap, take } from 'rxjs/operators';
 import { AppState } from 'src/app/models/app-state.model';
 import { Banner } from '../models/banner.model';
-import { FetchBanner, SET_BANNER } from '../store/actions/banner.actions';
+import { BannerActions } from '../store/actions/banner.action.types';
+import { fetchBanner } from '../store/actions/banner.actions';
+import { selectBannerState } from '../store/selectors/banner.selectors';
 
 @Injectable({
   providedIn: 'root',
@@ -21,12 +24,13 @@ export class BannerResolver implements Resolve<Banner[]> {
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
   ): Observable<any> {
-    return this.store.select('banner').pipe(
+    return this.store.pipe(
+      select(selectBannerState),
       take(1),
       switchMap((bannerState) => {
         if (bannerState.banners.length === 0) {
-          this.store.dispatch(new FetchBanner());
-          return this.actions$.pipe(ofType(SET_BANNER), take(1));
+          this.store.dispatch(BannerActions.fetchBanner());
+          return this.actions$.pipe(ofType(BannerActions.setBanners), take(1));
         } else {
           return of(bannerState);
         }

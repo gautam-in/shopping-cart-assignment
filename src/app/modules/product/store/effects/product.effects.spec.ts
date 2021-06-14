@@ -15,9 +15,9 @@ import { appReducer } from 'src/app/store/reducers/app.reducer';
 import { Product } from '../../models/product.model';
 import { ProductService } from '../../service/product.service';
 import {
-  FetchProducts,
-  FetchProductsError,
-  SetProducts,
+  fetchProducts,
+  fetchProductsError,
+  setProducts,
 } from '../actions/product.actions';
 import { ProductEffects } from './product.effects';
 
@@ -83,10 +83,10 @@ describe('ProductEffects', () => {
       },
     ];
     it('should dispatch SetProducts Action, on success', () => {
-      const action = new FetchProducts();
+      const action = new fetchProducts();
       actions$ = of(action);
       service.fetchProducts.and.returnValue(of(response));
-      const outcome = new SetProducts(response);
+      const outcome = new setProducts(response);
       // subscribe to execute the Effect
       effects.fetchProducts.subscribe((action) => {
         expect(action).toEqual(outcome);
@@ -94,10 +94,10 @@ describe('ProductEffects', () => {
     });
 
     it('should dispatch FetchProductsError Action, on failure', () => {
-      const action = new FetchProducts();
+      const action = new fetchProducts();
       actions$ = of(action);
       service.fetchProducts.and.returnValue(throwError(ErrorMsg.UNKNOWN_ERROR));
-      const outcome = new FetchProductsError(ErrorMsg.UNKNOWN_ERROR);
+      const outcome = new fetchProductsError(ErrorMsg.UNKNOWN_ERROR);
 
       // subscribe to execute the Effect
       effects.fetchProducts.subscribe((action) => {

@@ -16,6 +16,7 @@ import {
   MAT_SNACK_BAR_DEFAULT_OPTIONS,
 } from '@angular/material/snack-bar';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 @NgModule({
   declarations: [],
@@ -31,6 +32,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
     MatIconModule,
     MatToolbarModule,
     MatListModule,
+    MatProgressSpinnerModule,
   ],
   providers: [
     {

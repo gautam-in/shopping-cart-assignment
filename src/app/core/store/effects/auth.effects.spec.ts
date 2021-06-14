@@ -69,9 +69,9 @@ describe('AuthEffects', () => {
   describe('authSignup', () => {
     it('should return an AuthenticateSuccess action, with the user, on success', () => {
       const user = generateUser();
-      const action = new AuthActions.SignupStart(user);
+      const action = new AuthActions.signupStart(user);
       const expirationDate = new Date(new Date().getTime() + 7200 * 1000);
-      const outcome = new AuthActions.AuthenticateSuccess({
+      const outcome = new AuthActions.authenticateSuccess({
         email: user.email,
         userId: '123',
         expirationDate: expirationDate,
@@ -94,8 +94,8 @@ describe('AuthEffects', () => {
 
     it('should return an AuthenticateFail action, with an error, on failure', () => {
       const user = generateUser();
-      const action = new AuthActions.SignupStart(user);
-      const outcome = new AuthActions.AuthenticateFail(ErrorMsg.UNKNOWN_ERROR);
+      const action = new AuthActions.signupStart(user);
+      const outcome = new AuthActions.authenticateFail(ErrorMsg.UNKNOWN_ERROR);
       actions$ = of(action);
       service.signup.and.returnValue(throwError(ErrorMsg.UNKNOWN_ERROR));
       effects.authSignup.subscribe((action) => {
@@ -112,7 +112,7 @@ describe('AuthEffects', () => {
         password: 'Dipu@1234',
       });
       const expirationDate = new Date(new Date().getTime() + 7200 * 1000);
-      const outcome = new AuthActions.AuthenticateSuccess({
+      const outcome = new AuthActions.authenticateSuccess({
         email: 'dheerendra@gmail.com',
         userId: '123',
         expirationDate: expirationDate,
@@ -136,7 +136,7 @@ describe('AuthEffects', () => {
     it('should return an AuthenticateFail action, with an error, on failure', () => {
       const user = generateUser();
       const action = new AuthActions.LoginStart(user);
-      const outcome = new AuthActions.AuthenticateFail(ErrorMsg.UNKNOWN_ERROR);
+      const outcome = new AuthActions.authenticateFail(ErrorMsg.UNKNOWN_ERROR);
       actions$ = of(action);
       service.login.and.returnValue(throwError(ErrorMsg.UNKNOWN_ERROR));
       effects.authLogin.subscribe((action) => {
@@ -149,7 +149,7 @@ describe('AuthEffects', () => {
     it('should navigate to the home page', () => {
       const expirationDate = new Date(new Date().getTime() + 7200 * 1000);
 
-      const action = new AuthActions.AuthenticateSuccess({
+      const action = new AuthActions.authenticateSuccess({
         email: 'dheerendra@gmail.com',
         userId: '123',
         expirationDate: expirationDate,
@@ -177,8 +177,8 @@ describe('AuthEffects', () => {
           _tokenExpirationDate: expirationDate,
         })
       );
-      const action = new AuthActions.AutoLogin();
-      const outcome = new AuthActions.AuthenticateSuccess({
+      const action = new AuthActions.autoLogin();
+      const outcome = new AuthActions.authenticateSuccess({
         email: 'dheerendra@gmail.com',
         userId: '123',
         expirationDate: expirationDate,
@@ -195,7 +195,7 @@ describe('AuthEffects', () => {
 
   describe('autoLogout', () => {
     it('should navigate to the Auth page', () => {
-      const action = new AuthActions.Logout();
+      const action = new AuthActions.logout();
       actions$ = of(action);
       effects.authLogout.subscribe();
       expect(router.navigate).toHaveBeenCalledWith(['/auth']);
@@ -204,7 +204,7 @@ describe('AuthEffects', () => {
 
   describe('authFailAction', () => {
     it('should fail ', () => {
-      const action = new AuthActions.AuthenticateFail(ErrorMsg.UNKNOWN_ERROR);
+      const action = new AuthActions.authenticateFail(ErrorMsg.UNKNOWN_ERROR);
       actions$ = of(action);
       effects.authFailAction$.subscribe((action) => {
         expect(action.payload).toEqual(action.payload);

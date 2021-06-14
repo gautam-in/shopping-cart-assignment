@@ -12,7 +12,7 @@ import { take } from 'rxjs/operators';
 import { MaterialModule } from 'src/app/shared/modules/material.module';
 import { AppEffectModule } from 'src/app/store/effects/app.effects.module';
 import { appReducer } from 'src/app/store/reducers/app.reducer';
-import { FetchBanner } from '../store/actions/banner.actions';
+import { fetchBanner } from '../store/actions/banner.actions';
 import { BannerResolver } from './banner.resolver';
 
 describe('BannerResolver', () => {
@@ -66,7 +66,7 @@ describe('BannerResolver', () => {
       spyOn(storeStub, 'select').and.callThrough();
       storeStub.select('banner');
       spyOn(storeStub, 'dispatch').and.callThrough();
-      storeStub.dispatch(new FetchBanner());
+      storeStub.dispatch(new fetchBanner());
       spyOn(actionsStub, 'pipe').and.callThrough();
       actionsStub.pipe(take(1));
       service.resolve(activatedRouteSnapshotStub, routerStateSnapshotStub);

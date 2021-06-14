@@ -13,9 +13,9 @@ import { CartProductModel } from '../../models/cart-product.model';
 import { CartState } from '../../models/cart-state.model';
 import { MaterialModule } from '../../modules/material.module';
 import {
-  AddCartError,
-  AddCartSuccess,
-  AddProduct,
+  addCartError,
+  addCartSuccess,
+  addProduct,
 } from '../actions/cart-list.actions';
 import { CartEffects } from './cart.effects';
 
@@ -76,10 +76,10 @@ describe('CartEffects', () => {
       responseMessage: 'Product added to cart successfully',
     };
     it('should dispatch SetBanners Action, on success', () => {
-      const action = new AddProduct(cartProduct, 2);
+      const action = new addProduct(cartProduct, 2);
       actions$ = of(action);
       service.addToCart.and.returnValue(of(response));
-      const outcome = new AddCartSuccess(response.responseMessage);
+      const outcome = new addCartSuccess(response.responseMessage);
       // subscribe to execute the Effect
       effects.addProductAction.subscribe((action) => {
         expect(action).toEqual(outcome);
@@ -87,10 +87,10 @@ describe('CartEffects', () => {
     });
 
     it('should dispatch AddCartError Action, on failure', () => {
-      const action = new AddProduct(cartProduct, 2);
+      const action = new addProduct(cartProduct, 2);
       actions$ = of(action);
       service.addToCart.and.returnValue(throwError(ErrorMsg.UNKNOWN_ERROR));
-      const outcome = new AddCartError(ErrorMsg.UNKNOWN_ERROR);
+      const outcome = new addCartError(ErrorMsg.UNKNOWN_ERROR);
       effects.addProductAction.subscribe((action) => {
         expect(action).toEqual(outcome);
       });

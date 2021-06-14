@@ -1,42 +1,24 @@
-import { Action } from '@ngrx/store';
+import { createAction, props } from '@ngrx/store';
 import { Product } from '../../models/product.model';
 const comp = '[Products] ';
-export const FETCH_PRODUCTS = comp + 'Products  Fetch';
-export const SET_PRODUCTS = comp + 'Products  Set';
-export const APPLY_CATEGORY_FILTER = comp + 'Category filter set';
-export const REMOVE_CATEGORY_FILTER = comp + 'Category filter removed';
-export const FETCH_PRODUCTS_ERROR = comp + 'Products  Error';
-export const FILTER_BY = comp + ' FilterBy';
-export const REMOVE_FILTER_BY = comp + ' FilterBy Removed';
+const FETCH_PRODUCTS = comp + 'Products  Fetch';
+const SET_PRODUCTS = comp + 'Products  Set';
+const FETCH_PRODUCTS_ERROR = comp + 'Products  Error';
+const FILTER_BY = comp + ' FilterBy';
+const REMOVE_FILTER_BY = comp + ' FilterBy Removed';
 
-export class FetchProducts implements Action {
-  readonly type = FETCH_PRODUCTS;
-  constructor(public payload?: any) {}
-}
+export const fetchProducts = createAction(FETCH_PRODUCTS);
 
-export class SetProducts implements Action {
-  readonly type = SET_PRODUCTS;
+export const setProducts = createAction(
+  SET_PRODUCTS,
+  props<{ payload: Product[] }>()
+);
 
-  constructor(public payload: Product[]) {}
-}
+export const fetchProductsError = createAction(
+  FETCH_PRODUCTS_ERROR,
+  props<{ payload: string }>()
+);
 
-export class FetchProductsError implements Action {
-  readonly type = FETCH_PRODUCTS_ERROR;
-  constructor(public payload: string) {}
-}
+export const removeFilterBy = createAction(REMOVE_FILTER_BY);
 
-export class RemoveFilterBy implements Action {
-  readonly type = REMOVE_FILTER_BY;
-  constructor(public payload?: any) {}
-}
-
-export class FilterBy implements Action {
-  readonly type = FILTER_BY;
-  constructor(public payload: string) {}
-}
-export type ProductsActions =
-  | FetchProducts
-  | FetchProductsError
-  | SetProducts
-  | FilterBy
-  | RemoveFilterBy;
+export const filterBy = createAction(FILTER_BY, props<{ payload: string }>());

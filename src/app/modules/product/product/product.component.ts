@@ -6,13 +6,15 @@ import {
   ActivatedRouteSnapshot,
   Router,
 } from '@angular/router';
-import { Store } from '@ngrx/store';
+import { select, Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { Enter } from 'src/app/core/common/animations/enter.animation';
 import { AppState } from 'src/app/models/app-state.model';
 import { CategoryState } from '../../home/models/category-state.model';
+import { selectCategoryState } from '../../home/store/selectors/category.selectors';
 import { ProductState } from '../models/product-state.model';
-import { FilterBy, FILTER_BY } from '../store/actions/product.actions';
+import { filterBy } from '../store/actions/product.actions';
+import { selectProductState } from '../store/selectors/products.selectors';
 
 @Component({
   selector: 'app-product',
@@ -31,8 +33,8 @@ export class ProductComponent implements OnInit {
     private router: Router,
     private media: MediaObserver
   ) {
-    this.categories$ = this.store.select('categories');
-    this.products$ = this.store.select('products');
+    this.categories$ = this.store.pipe(select(selectCategoryState));
+    this.products$ = this.store.pipe(select(selectProductState));
     this.media.asObservable().subscribe((e) => {
       this.isMobile = media.isActive('lt-xs');
     });

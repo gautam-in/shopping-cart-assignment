@@ -5,15 +5,14 @@ import {
   RouterStateSnapshot,
 } from '@angular/router';
 import { Actions, ofType } from '@ngrx/effects';
-import { Action, Store } from '@ngrx/store';
+import { Action, select, Store } from '@ngrx/store';
 import { Observable, of } from 'rxjs';
 import { switchMap, take } from 'rxjs/operators';
 import { AppState } from 'src/app/models/app-state.model';
 import { CategoryState } from '../models/category-state.model';
-import {
-  FetchCategory,
-  SET_CATEGORY,
-} from '../store/actions/categories.actions';
+import { CategoryActions } from '../store/actions/categories.action.types';
+import { fetchCategory } from '../store/actions/categories.actions';
+import { selectCategoryState } from '../store/selectors/category.selectors';
 @Injectable({
   providedIn: 'root',
 })
@@ -23,12 +22,16 @@ export class CategoryResolver implements Resolve<CategoryState | Action> {
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
   ): Observable<CategoryState | Action> {
-    return this.store.select('categories').pipe(
+    return this.store.pipe(
+      select(selectCategoryState),
       take(1),
       switchMap((categoryState) => {
         if (categoryState.categories.length === 0) {
-          this.store.dispatch(new FetchCategory());
-          return this.actions$.pipe(ofType(SET_CATEGORY), take(1));
+          this.store.dispatch(CategoryActions.fetchCategory());
+          return this.actions$.pipe(
+            ofType(CategoryActions.setCategories),
+            take(1)
+          );
         } else {
           return of(categoryState);
         }

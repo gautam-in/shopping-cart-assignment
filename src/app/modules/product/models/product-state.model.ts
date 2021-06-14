@@ -5,6 +5,6 @@ export interface ProductState {
   currentProducts: Product[];
   error: string;
   loading: boolean;
-  categoryWiseProducts: Map<string, Product[]>;
+  categoryWiseProducts: { [key: string]: Product[] };
   filterBy?: string | null;
 }

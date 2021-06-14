@@ -1,58 +1,33 @@
-import { Action } from '@ngrx/store';
+import { createAction, props } from '@ngrx/store';
 import {
   AuthenticationSuccessPayload,
   LoginPayLoad,
 } from '../../models/store-payload.model';
 
-export const LOGIN_START = '[Auth] Login Start';
-export const AUTHENTICATE_SUCCESS = '[Auth] Success';
-export const AUTHENTICATE_FAIL = '[Auth] Login Fail';
-export const SIGNUP_START = '[Auth] Signup Start';
-export const CLEAR_ERROR = '[Auth] Clear Error';
-export const AUTO_LOGIN = '[Auth] Auto Login';
-export const LOGOUT = '[Auth] Logout';
+const LOGIN_START = '[Auth] Login Start';
 
-export class AuthenticateSuccess implements Action {
-  readonly type = AUTHENTICATE_SUCCESS;
-  constructor(public payload: AuthenticationSuccessPayload) {}
-}
-export class Logout implements Action {
-  readonly type = LOGOUT;
-  constructor(public payload?: any) {}
-}
+const AUTHENTICATE_SUCCESS = '[Auth] Success';
+const AUTHENTICATE_FAIL = '[Auth] Login Fail';
+const SIGNUP_START = '[Auth] Signup Start';
+const CLEAR_ERROR = '[Auth] Clear Error';
+const AUTO_LOGIN = '[Auth] Auto Login';
+const LOGOUT = '[Auth] Logout';
 
-export class LoginStart implements Action {
-  readonly type = LOGIN_START;
-  constructor(public payload: LoginPayLoad) {}
-}
+export const authenticateSuccess = createAction(
+  AUTHENTICATE_SUCCESS,
+  props<AuthenticationSuccessPayload>()
+);
 
-export class AuthenticateFail implements Action {
-  readonly type = AUTHENTICATE_FAIL;
+export const logout = createAction(LOGOUT);
 
-  constructor(public payload: string) {}
-}
+export const LoginStart = createAction(LOGIN_START, props<LoginPayLoad>());
 
-export class SignupStart implements Action {
-  readonly type = SIGNUP_START;
+export const authenticateFail = createAction(
+  AUTHENTICATE_FAIL,
+  props<{ reason: string }>()
+);
 
-  constructor(public payload: LoginPayLoad) {}
-}
+export const signupStart = createAction(SIGNUP_START, props<LoginPayLoad>());
 
-export class ClearError implements Action {
-  readonly type = CLEAR_ERROR;
-  constructor(public payload?: any) {}
-}
-
-export class AutoLogin implements Action {
-  readonly type = AUTO_LOGIN;
-  constructor(public payload?: any) {}
-}
-
-export type AuthActions =
-  | AuthenticateSuccess
-  | Logout
-  | LoginStart
-  | AuthenticateFail
-  | SignupStart
-  | ClearError
-  | AutoLogin;
+export const clearError = createAction(CLEAR_ERROR);
+export const autoLogin = createAction(AUTO_LOGIN);

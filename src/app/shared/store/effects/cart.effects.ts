@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
-import { Store } from '@ngrx/store';
+import { select, Store } from '@ngrx/store';
 import { of } from 'rxjs';
 import {
   catchError,
@@ -11,44 +11,26 @@ import {
   withLatestFrom,
 } from 'rxjs/operators';
 import { ErrorMsg } from 'src/app/core/common/constants/error.constants';
-import { AuthState } from 'src/app/core/models/auth-state.model';
 import { UtilService } from 'src/app/core/services/util.service';
+import { selectAuthState } from 'src/app/core/store/selectors/auth.selectors';
 import { AppState } from 'src/app/models/app-state.model';
 import { ProductService } from 'src/app/modules/product/service/product.service';
-import { environment } from 'src/environments/environment';
 import { CartResponse } from '../../models/cart-response.model';
 import { CartState } from '../../models/cart-state.model';
-import {
-  AddCartError,
-  AddCartSuccess,
-  AddProducts,
-  ADD_CART_ERROR,
-  ADD_CART_SUCCESS,
-  ADD_PRODUCT,
-  ADD_PRODUCTS,
-  ComputeCart,
-  DECREASE_PRODUCT_QUANTITY,
-  DELETE_PRODUCT,
-  FETCH_LOCAL_CART,
-  INCREASE_PRODUCT_QUANTITY,
-  PlaceOrderFail,
-  PlaceOrderSuccess,
-  PLACE_ORDER,
-  PLACE_ORDER_FAIL,
-  PLACE_ORDER_SUCCESS,
-  UPDATE_PRODUCT,
-} from '../actions/cart-list.actions';
+import { CartActions } from '../actions/cartlist.actions.types';
+import { selectCartState } from '../selectors/cart.selectors';
 
 const handleSucess = (response: CartResponse) => {
-  return new AddCartSuccess(response.responseMessage);
+  return CartActions.addCartSuccess({ payload: response.responseMessage });
 };
 
 const handleError = (errorRes: any) => {
   let errorMessage = 'An unknown error occurred!';
   if (!errorRes.error || !errorRes.error.error) {
-    return of(new AddCartError(errorMessage));
+    return of(CartActions.addCartError({ payload: errorMessage }));
   }
-  return of(new AddCartError(errorMessage));
+  errorMessage = errorRes.error;
+  return of(CartActions.addCartError({ payload: errorMessage }));
 };
 
 @Injectable()
@@ -62,7 +44,12 @@ export class CartEffects {
   ) {}
   addProductAction = createEffect(() =>
     this.actions$.pipe(
-      ofType(ADD_PRODUCT, ADD_PRODUCTS, DELETE_PRODUCT, UPDATE_PRODUCT),
+      ofType(
+        CartActions.addProduct,
+        CartActions.addProducts,
+        CartActions.deleteProduct,
+        CartActions.updateProduct
+      ),
       switchMap((_) => this.productService.addToCart()),
       map((resData) => {
         return handleSucess(resData);
@@ -84,7 +71,7 @@ export class CartEffects {
   fetchLocalCartAction = createEffect(
     () =>
       this.actions$.pipe(
-        ofType(FETCH_LOCAL_CART),
+        ofType(CartActions.fetchLocalCart),
         map(() => {
           const cartState: CartState = JSON.parse(
             localStorage.getItem('cartModel') || '0'
@@ -92,7 +79,7 @@ export class CartEffects {
           if (!cartState) {
             return { type: 'DUMMY' };
           }
-          return new AddProducts(cartState.products);
+          return CartActions.addProducts({ payload: cartState.products });
         })
       ),
     { dispatch: true }
@@ -101,8 +88,13 @@ export class CartEffects {
   saveLocalCartAction = createEffect(
     () =>
       this.actions$.pipe(
-        ofType(ADD_PRODUCT, ADD_PRODUCTS, UPDATE_PRODUCT, DELETE_PRODUCT),
-        withLatestFrom(this.store.select('cart')),
+        ofType(
+          CartActions.addProduct,
+          CartActions.addProducts,
+          CartActions.updateProduct,
+          CartActions.deleteProduct
+        ),
+        withLatestFrom(this.store.pipe(select(selectCartState))),
         switchMap(([actionData, cartState]) => {
           localStorage.setItem('cartModel', JSON.stringify(cartState));
           return cartState.products;
@@ -115,15 +107,15 @@ export class CartEffects {
     () =>
       this.actions$.pipe(
         ofType(
-          ADD_PRODUCT,
-          ADD_PRODUCTS,
-          UPDATE_PRODUCT,
-          DELETE_PRODUCT,
-          INCREASE_PRODUCT_QUANTITY,
-          DECREASE_PRODUCT_QUANTITY
+          CartActions.addProduct,
+          CartActions.addProducts,
+          CartActions.updateProduct,
+          CartActions.deleteProduct,
+          CartActions.increaseProductQuantity,
+          CartActions.decreaseProductQuantity
         ),
         map(() => {
-          return new ComputeCart();
+          return CartActions.computeCart({});
         })
       ),
     { dispatch: true }
@@ -132,7 +124,11 @@ export class CartEffects {
   cartSuccessAction$ = createEffect(
     () =>
       this.actions$.pipe(
-        ofType(ADD_CART_SUCCESS, ADD_CART_ERROR, PLACE_ORDER_FAIL),
+        ofType(
+          CartActions.addCartSuccess,
+          CartActions.addCartError,
+          CartActions.placeOrderFail
+        ),
         tap((e: any) => {
           this.util.openSnackBar(e.payload);
         })
@@ -143,15 +139,15 @@ export class CartEffects {
   cartOrderPlacedAction$ = createEffect(
     () =>
       this.actions$.pipe(
-        ofType(PLACE_ORDER),
-        withLatestFrom(this.store.select('auth')),
+        ofType(CartActions.placeOrder),
+        withLatestFrom(this.store.pipe(select(selectAuthState))),
         map(([, userState]) => {
           if (userState.user) {
-            return new PlaceOrderSuccess();
+            return CartActions.placeOrderSuccess({});
           }
-          return new PlaceOrderFail(
-            'User Not Logged In! Please Login First to place order'
-          );
+          return CartActions.placeOrderFail({
+            payload: 'User Not Logged In! Please Login First to place order',
+          });
         })
       ),
     { dispatch: true }
@@ -160,7 +156,7 @@ export class CartEffects {
   postPlaceOrderSuccessAction$ = createEffect(
     () =>
       this.actions$.pipe(
-        ofType(PLACE_ORDER_SUCCESS),
+        ofType(CartActions.placeOrderSuccess),
         tap((e: any) => {
           this.util.openSnackBar(ErrorMsg.ORDER_PLACED);
           localStorage.removeItem('cartModel');

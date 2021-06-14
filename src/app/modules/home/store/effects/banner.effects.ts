@@ -6,24 +6,18 @@ import { catchError, map, switchMap, tap } from 'rxjs/operators';
 import { UtilService } from 'src/app/core/services/util.service';
 import { ProductService } from 'src/app/modules/product/service/product.service';
 import { Banner } from '../../models/banner.model';
-import {
-  FetchBannerError,
-  FETCH_BANNER,
-  FETCH_BANNER_ERROR,
-  SetBanners,
-} from '../actions/banner.actions';
+import { BannerActions } from '../actions/banner.action.types';
 
 const handleSucess = (banners: Banner[]) => {
-  return new SetBanners(banners);
+  return BannerActions.setBanners({ payload: banners });
 };
 
 const handleError = (errorRes: HttpErrorResponse) => {
   let errorMessage = errorRes.message || 'An unknown error occurred!';
   if (!errorRes.error || !errorRes.error.error) {
-    return of(new FetchBannerError(errorMessage));
+    return of(BannerActions.fetchBannerError({ payload: errorMessage }));
   }
-
-  return of(new FetchBannerError(errorMessage));
+  return of(BannerActions.fetchBannerError({ payload: errorMessage }));
 };
 
 @Injectable()
@@ -35,7 +29,7 @@ export class BannerEffects {
   ) {}
   fetchBanners = createEffect(() =>
     this.actions$.pipe(
-      ofType(FETCH_BANNER),
+      ofType(BannerActions.fetchBanner),
       switchMap((_) => this.productService.fetchBanners()),
       map((resData) => {
         return handleSucess(resData);
@@ -49,7 +43,7 @@ export class BannerEffects {
   restApiFailAction$ = createEffect(
     () =>
       this.actions$.pipe(
-        ofType(FETCH_BANNER_ERROR),
+        ofType(BannerActions.fetchBannerError),
         tap((e: any) => {
           this.util.openSnackBar(e.payload);
         })

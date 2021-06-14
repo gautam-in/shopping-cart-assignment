@@ -15,9 +15,9 @@ import { AppEffectModule } from 'src/app/store/effects/app.effects.module';
 import { appReducer } from 'src/app/store/reducers/app.reducer';
 import { Category } from '../../models/category.model';
 import {
-  FetchCategory,
-  FetchCategoryError,
-  SetCategories,
+  fetchCategory,
+  fetchCategoryError,
+  setCategories,
 } from '../actions/categories.actions';
 import { CategoryEffects } from './category.effects';
 
@@ -78,10 +78,10 @@ describe('CategoryEffects', () => {
       },
     ];
     it('should dispatch SetCategories Action, on success', () => {
-      const action = new FetchCategory();
+      const action = new fetchCategory();
       actions$ = of(action);
       service.fetchCategories.and.returnValue(of(response));
-      const outcome = new SetCategories(response);
+      const outcome = new setCategories(response);
       // subscribe to execute the Effect
       effects.fetchcategory.subscribe((action) => {
         expect(action).toEqual(outcome);
@@ -89,12 +89,12 @@ describe('CategoryEffects', () => {
     });
 
     it('should dispatch FetchCategoryError Action, on failure', () => {
-      const action = new FetchCategory();
+      const action = new fetchCategory();
       actions$ = of(action);
       service.fetchCategories.and.returnValue(
         throwError(ErrorMsg.UNKNOWN_ERROR)
       );
-      const outcome = new FetchCategoryError(ErrorMsg.UNKNOWN_ERROR);
+      const outcome = new fetchCategoryError(ErrorMsg.UNKNOWN_ERROR);
 
       // subscribe to execute the Effect
       effects.fetchcategory.subscribe((action) => {
@@ -105,7 +105,7 @@ describe('CategoryEffects', () => {
 
   describe('apiFailAction', () => {
     it('should fail ', () => {
-      const action = new FetchCategoryError(ErrorMsg.UNKNOWN_ERROR);
+      const action = new fetchCategoryError(ErrorMsg.UNKNOWN_ERROR);
       actions$ = of(action);
       effects.apiFailAction$.subscribe((action) => {
         expect(action.payload).toEqual(action.payload);

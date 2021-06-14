@@ -5,16 +5,19 @@ import {
   ViewChild,
 } from '@angular/core';
 import { MediaObserver } from '@angular/flex-layout';
-import { Store } from '@ngrx/store';
+import { select, Store } from '@ngrx/store';
 import { Observable, Subscription } from 'rxjs';
 import { Constants } from 'src/app/core/common/constants/constants';
 import { AppState } from 'src/app/models/app-state.model';
 import { CartComponent } from 'src/app/shared/components/cart/cart.component';
 import { PlaceholderDirective } from 'src/app/shared/directive/placeholder/placeholder.directive';
 import { CartState } from 'src/app/shared/models/cart-state.model';
-import { FetchLocalCart } from 'src/app/shared/store/actions/cart-list.actions';
+import { fetchLocalCart } from 'src/app/shared/store/actions/cart-list.actions';
+import { CartActions } from 'src/app/shared/store/actions/cartlist.actions.types';
+import { selectCartState } from 'src/app/shared/store/selectors/cart.selectors';
 import { AuthState } from '../../models/auth-state.model';
-import { AutoLogin, Logout } from '../../store/actions/auth.actions';
+import { AuthActions } from '../../store/actions/action-types';
+import { selectAuthState } from '../../store/selectors/auth.selectors';
 
 @Component({
   selector: 'app-header',
@@ -35,17 +38,17 @@ export class HeaderComponent {
     private renderer: Renderer2,
     private media: MediaObserver
   ) {
-    this.cart$ = this.store.select('cart');
-    this.user$ = this.store.select('auth');
-    this.store.dispatch(new AutoLogin());
-    this.store.dispatch(new FetchLocalCart());
+    this.cart$ = this.store.pipe(select(selectCartState));
+    this.user$ = this.store.pipe(select(selectAuthState));
+    this.store.dispatch(AuthActions.autoLogin());
+    this.store.dispatch(CartActions.fetchLocalCart());
     this.media.asObservable().subscribe((e) => {
       this.isMobile = media.isActive('lt-xs');
     });
   }
 
   logout() {
-    this.store.dispatch(new Logout());
+    this.store.dispatch(AuthActions.logout());
   }
 
   showCart(targetRef: HTMLElement) {

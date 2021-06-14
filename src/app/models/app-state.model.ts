@@ -1,3 +1,4 @@
+import { RouterState } from '@angular/router';
 import { AuthState } from '../core/models/auth-state.model';
 import { BannerState } from '../modules/home/models/banner-state.model';
 import { CategoryState } from '../modules/home/models/category-state.model';
@@ -10,4 +11,5 @@ export interface AppState {
   categories: CategoryState;
   products: ProductState;
   cart: CartState;
+  router: RouterState;
 }

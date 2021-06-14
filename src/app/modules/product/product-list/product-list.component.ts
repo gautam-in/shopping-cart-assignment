@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MediaObserver } from '@angular/flex-layout';
-import { Store } from '@ngrx/store';
+import { select, Store } from '@ngrx/store';
 import { combineLatest, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { Enter } from 'src/app/core/common/animations/enter.animation';
@@ -8,7 +8,10 @@ import { SeoService } from 'src/app/core/services/seo.service';
 import { AppState } from 'src/app/models/app-state.model';
 import { CartState } from 'src/app/shared/models/cart-state.model';
 import * as CartListActions from 'src/app/shared/store/actions/cart-list.actions';
+import { CartActions } from 'src/app/shared/store/actions/cartlist.actions.types';
+import { selectCartState } from 'src/app/shared/store/selectors/cart.selectors';
 import { ProductState } from '../models/product-state.model';
+import { selectProductState } from '../store/selectors/products.selectors';
 
 @Component({
   selector: 'app-product-list',
@@ -27,9 +30,9 @@ export class ProductListComponent implements OnInit {
     private seo: SeoService,
     private media: MediaObserver
   ) {
-    this.cart$ = this.store.select('cart');
+    this.cart$ = this.store.pipe(select(selectCartState));
     this.products$ = combineLatest([
-      this.store.select('products'),
+      this.store.pipe(select(selectProductState)),
       this.cart$,
     ]).pipe(
       map(([productState, cartState]) => {
@@ -58,10 +61,12 @@ export class ProductListComponent implements OnInit {
     );
   }
   buyProduct(product: any) {
-    this.store.dispatch(new CartListActions.AddProduct(product));
+    this.store.dispatch(
+      CartActions.addProduct({ payload: product, quantity: 1 })
+    );
   }
 
   onDelete(index: number) {
-    this.store.dispatch(new CartListActions.DeleteProduct(index));
+    this.store.dispatch(CartActions.deleteProduct({ index }));
   }
 }

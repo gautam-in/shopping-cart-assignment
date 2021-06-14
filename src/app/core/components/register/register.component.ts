@@ -19,9 +19,9 @@ import { ErrorMsg } from 'src/app/core/common/constants/error.constants';
 import { REGEX } from 'src/app/core/common/constants/regex.constants';
 import { GenericValidator } from 'src/app/core/common/validations/generic-validator';
 import { SeoService } from 'src/app/core/services/seo.service';
-import * as AuthActions from 'src/app/core/store/actions/auth.actions';
 import { AppState } from 'src/app/models/app-state.model';
 import { ConfirmFieldValidators } from '../../common/validations/confirm-password.validators';
+import { AuthActions } from '../../store/actions/action-types';
 export const formValidationMsgs = {
   firstName: {
     required: ErrorMsg.REQUIRED_ERROR,
@@ -140,13 +140,13 @@ export class RegisterComponent implements OnInit, AfterViewInit, OnDestroy {
   submitRegistrationForm(): void {
     if (this.registrationForm.valid) {
       this.store.dispatch(
-        new AuthActions.SignupStart({ ...this.registrationForm.value })
+        AuthActions.signupStart({ ...this.registrationForm.value })
       );
     }
   }
 
   onHandleError() {
-    this.store.dispatch(new AuthActions.ClearError());
+    this.store.dispatch(AuthActions.clearError());
   }
 
   ngOnDestroy() {}

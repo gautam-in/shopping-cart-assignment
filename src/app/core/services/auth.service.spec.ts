@@ -86,7 +86,7 @@ describe('AuthService', () => {
         idToken: 'abcdefghi',
         localId: '123',
       };
-      service.signup(new AuthActions.SignupStart(request)).subscribe((res) => {
+      service.signup(new AuthActions.signupStart(request)).subscribe((res) => {
         expect(res.email).toEqual(authresponse.email);
       });
       const req = httpTestingController.expectOne(

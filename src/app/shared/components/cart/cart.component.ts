@@ -5,16 +5,13 @@ import {
   OnInit,
   Output,
 } from '@angular/core';
-import { Store } from '@ngrx/store';
+import { select, Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { Enter } from 'src/app/core/common/animations/enter.animation';
 import { AppState } from 'src/app/models/app-state.model';
 import { CartState } from '../../models/cart-state.model';
-import {
-  DecreaseProductQuantity,
-  IncreaseProductQuantity,
-  PlaceOrder,
-} from '../../store/actions/cart-list.actions';
+import { CartActions } from '../../store/actions/cartlist.actions.types';
+import { selectCartState } from '../../store/selectors/cart.selectors';
 @Component({
   selector: 'app-cart',
   templateUrl: './cart.component.html',
@@ -44,7 +41,7 @@ export class CartComponent implements OnInit {
   constructor(private store: Store<AppState>) {}
 
   ngOnInit(): void {
-    this.cart$ = this.store.select('cart');
+    this.cart$ = this.store.pipe(select(selectCartState));
   }
 
   closeDialog() {
@@ -52,15 +49,19 @@ export class CartComponent implements OnInit {
   }
 
   removeProductFromCart(index: number) {
-    this.store.dispatch(new DecreaseProductQuantity(index));
+    this.store.dispatch(
+      CartActions.decreaseProductQuantity({ payload: index, quantity: 1 })
+    );
   }
 
   addProductsToCart(index: number) {
-    this.store.dispatch(new IncreaseProductQuantity(index));
+    this.store.dispatch(
+      CartActions.increaseProductQuantity({ payload: index, quantity: 1 })
+    );
   }
 
   placeOrder() {
-    this.store.dispatch(new PlaceOrder());
+    this.store.dispatch(CartActions.placeOrder({}));
     this.closeDialog();
   }
 }

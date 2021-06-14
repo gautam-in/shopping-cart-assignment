@@ -14,7 +14,9 @@ import { CoreModule } from './core/core.module';
 import { NgrxRouterStoreModule } from './ngrx-router.module';
 import { SharedModule } from './shared/shared.module';
 import { AppEffectModule } from './store/effects/app.effects.module';
-import * as fromApp from './store/reducers/app.reducer';
+import { appReducer, metaReducers } from './store/reducers/app.reducer';
+import { EntityDataModule } from '@ngrx/data';
+import { entityConfig } from './entity-metadata';
 
 @NgModule({
   declarations: [AppComponent],
@@ -29,10 +31,19 @@ import * as fromApp from './store/reducers/app.reducer';
       enabled: environment.production,
       registrationStrategy: 'registerWhenStable:30000',
     }),
-    StoreModule.forRoot(fromApp.appReducer),
+    StoreModule.forRoot(appReducer, {
+      metaReducers,
+      runtimeChecks: {
+        strictStateImmutability: true,
+        strictActionImmutability: true,
+        strictActionSerializability: true,
+        strictStateSerializability: true,
+      },
+    }),
     AppEffectModule,
     StoreDevtoolsModule.instrument({ logOnly: environment.production }),
     SharedModule,
+    EntityDataModule.forRoot(entityConfig),
   ],
   providers: [
     { provide: BREAKPOINT, useValue: MY_CUSTOM_BREAKPOINTS, multi: true },

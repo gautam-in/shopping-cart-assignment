@@ -19,8 +19,8 @@ import { ErrorMsg } from 'src/app/core/common/constants/error.constants';
 import { REGEX } from 'src/app/core/common/constants/regex.constants';
 import { GenericValidator } from 'src/app/core/common/validations/generic-validator';
 import { SeoService } from 'src/app/core/services/seo.service';
-import * as AuthActions from 'src/app/core/store/actions/auth.actions';
 import { AppState } from 'src/app/models/app-state.model';
+import { AuthActions } from '../../store/actions/action-types';
 
 @Component({
   selector: 'app-login',
@@ -101,7 +101,7 @@ export class LoginComponent implements OnInit, AfterViewInit, OnDestroy {
       email = email?.trim();
       password = password?.trim();
       this.store.dispatch(
-        new AuthActions.LoginStart({ email: email, password: password })
+        AuthActions.LoginStart({ email: email, password: password })
       );
     }
   }
@@ -121,7 +121,7 @@ export class LoginComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   onHandleError() {
-    this.store.dispatch(new AuthActions.ClearError());
+    this.store.dispatch(AuthActions.clearError());
   }
   ngOnDestroy() {}
 }

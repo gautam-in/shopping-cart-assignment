@@ -10,9 +10,9 @@ import { UtilService } from 'src/app/core/services/util.service';
 import { ProductService } from 'src/app/modules/product/service/product.service';
 import { Banner } from '../../models/banner.model';
 import {
-  FetchBanner,
-  FetchBannerError,
-  SetBanners,
+  fetchBanner,
+  fetchBannerError,
+  setBanners,
 } from '../actions/banner.actions';
 import { BannerEffects } from './banner.effects';
 
@@ -64,10 +64,10 @@ describe('BannerEffects', () => {
       },
     ];
     it('should dispatch SetBanners Action, on success', () => {
-      const action = new FetchBanner();
+      const action = new fetchBanner();
       actions$ = of(action);
       service.fetchBanners.and.returnValue(of(response));
-      const outcome = new SetBanners(response);
+      const outcome = new setBanners(response);
       // subscribe to execute the Effect
       effects.fetchBanners.subscribe((action) => {
         expect(action).toEqual(outcome);
@@ -75,10 +75,10 @@ describe('BannerEffects', () => {
     });
 
     it('should dispatch FetchBannerError Action, on failure', () => {
-      const action = new FetchBanner();
+      const action = new fetchBanner();
       actions$ = of(action);
       service.fetchBanners.and.returnValue(throwError(ErrorMsg.UNKNOWN_ERROR));
-      const outcome = new FetchBannerError(ErrorMsg.UNKNOWN_ERROR);
+      const outcome = new fetchBannerError(ErrorMsg.UNKNOWN_ERROR);
       effects.fetchBanners.subscribe((action) => {
         expect(action).toEqual(outcome);
       });
@@ -87,7 +87,7 @@ describe('BannerEffects', () => {
 
   describe('apiFailAction', () => {
     it('should fail ', () => {
-      const action = new FetchBannerError(ErrorMsg.UNKNOWN_ERROR);
+      const action = new fetchBannerError(ErrorMsg.UNKNOWN_ERROR);
       actions$ = of(action);
       effects.restApiFailAction$.subscribe((action) => {
         expect(action.payload).toEqual(action.payload);

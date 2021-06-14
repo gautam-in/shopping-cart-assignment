@@ -1,8 +1,8 @@
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { ROUTER_NAVIGATION } from '@ngrx/router-store';
-import { Store } from '@ngrx/store';
+import { select, Store } from '@ngrx/store';
 import { of } from 'rxjs';
 import {
   catchError,
@@ -11,30 +11,23 @@ import {
   switchMap,
   withLatestFrom,
 } from 'rxjs/operators';
-import { UtilService } from 'src/app/core/services/util.service';
 import { AppState } from 'src/app/models/app-state.model';
-import { environment } from 'src/environments/environment';
 import { Product } from '../../models/product.model';
 import { ProductService } from '../../service/product.service';
-import {
-  FetchProductsError,
-  FETCH_PRODUCTS,
-  FilterBy,
-  SetProducts,
-  SET_PRODUCTS,
-} from '../actions/product.actions';
+import { ProductActions } from '../actions/product.action.types';
+import { selectProductState } from '../selectors/products.selectors';
 
 const handleSucess = (banners: Product[]) => {
-  return new SetProducts(banners);
+  return ProductActions.setProducts({ payload: banners });
 };
 
 const handleError = (errorRes: HttpErrorResponse) => {
   let errorMessage = 'An unknown error occurred!';
   if (!errorRes.error || !errorRes.error.error) {
-    return of(new FetchProductsError(errorMessage));
+    return of(ProductActions.fetchProductsError({ payload: errorMessage }));
   }
   errorMessage = errorRes.message;
-  return of(new FetchProductsError(errorMessage));
+  return of(ProductActions.fetchProductsError({ payload: errorMessage }));
 };
 
 @Injectable()
@@ -46,7 +39,7 @@ export class ProductEffects {
   ) {}
   fetchProducts = createEffect(() =>
     this.actions$.pipe(
-      ofType(FETCH_PRODUCTS),
+      ofType(ProductActions.fetchProducts),
       switchMap((_) => this.productService.fetchProducts()),
       map((resData) => {
         return handleSucess(resData);
@@ -59,11 +52,11 @@ export class ProductEffects {
 
   setProducts = createEffect(() =>
     this.actions$.pipe(
-      ofType(SET_PRODUCTS),
-      withLatestFrom(this.store.select('products')),
+      ofType(ProductActions.setProducts),
+      withLatestFrom(this.store.pipe(select(selectProductState))),
       map(([, prodState]) => {
         if (prodState.filterBy) {
-          return new FilterBy(prodState.filterBy);
+          return ProductActions.filterBy({ payload: prodState.filterBy });
         }
         return {
           type: 'Dummy',
@@ -85,7 +78,7 @@ export class ProductEffects {
         };
       }),
       filter(({ url, filterBy }) => url.startsWith('/products')),
-      map(({ filterBy }) => new FilterBy(filterBy))
+      map(({ filterBy }) => ProductActions.filterBy(filterBy))
     )
   );
 }

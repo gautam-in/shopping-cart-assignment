@@ -6,26 +6,20 @@ import { catchError, map, switchMap, tap } from 'rxjs/operators';
 import { ErrorMsg } from 'src/app/core/common/constants/error.constants';
 import { UtilService } from 'src/app/core/services/util.service';
 import { ProductService } from 'src/app/modules/product/service/product.service';
-import { environment } from 'src/environments/environment';
 import { Category } from '../../models/category.model';
-import {
-  FetchCategoryError,
-  FETCH_CATEGORY,
-  FETCH_CATEGORY_ERROR,
-  SetCategories,
-} from '../actions/categories.actions';
+import { CategoryActions } from '../actions/categories.action.types';
 
 const handleSucess = (categories: Category[]) => {
-  return new SetCategories(categories);
+  return CategoryActions.setCategories({ payload: categories });
 };
 
 const handleError = (errorRes: HttpErrorResponse) => {
   let errorMessage = errorRes?.message || ErrorMsg.UNKNOWN_ERROR;
   if (!errorRes.error || !errorRes.error.error) {
-    return of(new FetchCategoryError(errorMessage));
+    return of(CategoryActions.fetchCategoryError({ payload: errorMessage }));
   }
 
-  return of(new FetchCategoryError(errorMessage));
+  return of(CategoryActions.fetchCategoryError({ payload: errorMessage }));
 };
 
 @Injectable()
@@ -38,7 +32,7 @@ export class CategoryEffects {
   ) {}
   fetchcategory = createEffect(() =>
     this.actions$.pipe(
-      ofType(FETCH_CATEGORY),
+      ofType(CategoryActions.fetchCategory),
       switchMap((_) => this.productService.fetchCategories()),
       map((resData) => {
         return handleSucess(resData);
@@ -52,7 +46,7 @@ export class CategoryEffects {
   apiFailAction$ = createEffect(
     () =>
       this.actions$.pipe(
-        ofType(FETCH_CATEGORY_ERROR),
+        ofType(CategoryActions.fetchCategoryError),
         tap((e: any) => {
           this.util.openSnackBar(e.payload);
         })

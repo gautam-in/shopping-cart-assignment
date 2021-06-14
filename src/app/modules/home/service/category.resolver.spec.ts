@@ -6,7 +6,7 @@ import { Action } from '@ngrx/store';
 import { MockStore, provideMockStore } from '@ngrx/store/testing';
 import { Observable } from 'rxjs';
 import { take } from 'rxjs/operators';
-import { FetchCategory } from '../store/actions/categories.actions';
+import { fetchCategory } from '../store/actions/categories.actions';
 import { CategoryResolver } from './category.resolver';
 
 describe('CategoryResolver', () => {
@@ -39,7 +39,7 @@ describe('CategoryResolver', () => {
       spyOn(storeStub, 'select').and.callThrough();
       storeStub.select('categories');
       spyOn(storeStub, 'dispatch').and.callThrough();
-      storeStub.dispatch(new FetchCategory());
+      storeStub.dispatch(new fetchCategory());
       spyOn(actionsStub, 'pipe').and.callThrough();
       actionsStub.pipe(take(1));
       service.resolve(activatedRouteSnapshotStub, routerStateSnapshotStub);

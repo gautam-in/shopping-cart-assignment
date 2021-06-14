@@ -5,12 +5,13 @@ import {
   RouterStateSnapshot,
 } from '@angular/router';
 import { Actions, ofType } from '@ngrx/effects';
-import { Action, Store } from '@ngrx/store';
+import { Action, select, Store } from '@ngrx/store';
 import { Observable, of } from 'rxjs';
 import { switchMap, take } from 'rxjs/operators';
 import { AppState } from 'src/app/models/app-state.model';
 import { ProductState } from '../models/product-state.model';
-import { FetchProducts, SET_PRODUCTS } from '../store/actions/product.actions';
+import { ProductActions } from '../store/actions/product.action.types';
+import { selectProductState } from '../store/selectors/products.selectors';
 
 @Injectable({
   providedIn: 'root',
@@ -21,12 +22,20 @@ export class ProductResolver implements Resolve<ProductState | Action> {
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
   ): Observable<ProductState | Action> {
-    return this.store.select('products').pipe(
+    return this.store.pipe(
+      select(selectProductState),
       take(1),
       switchMap((productState) => {
-        if (productState.categoryWiseProducts.size === 0) {
-          this.store.dispatch(new FetchProducts());
-          return this.actions$.pipe(ofType(SET_PRODUCTS), take(1));
+        if (
+          productState?.categoryWiseProducts &&
+          Object.keys(productState?.categoryWiseProducts).length === 0 &&
+          productState?.categoryWiseProducts.constructor === Object
+        ) {
+          this.store.dispatch(ProductActions.fetchProducts());
+          return this.actions$.pipe(
+            ofType(ProductActions.setProducts),
+            take(1)
+          );
         } else {
           return of(productState);
         }
