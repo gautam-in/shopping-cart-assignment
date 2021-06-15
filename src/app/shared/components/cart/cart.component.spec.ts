@@ -10,7 +10,7 @@ describe('CartComponent', () => {
 
   beforeEach(() => {
     const storeStub = () => ({
-      select: (string: any) => ({}),
+      pipe: (string: any) => ({}),
       dispatch: (arg: any) => ({}),
     });
     TestBed.configureTestingModule({
@@ -46,9 +46,9 @@ describe('CartComponent', () => {
   describe('ngOnInit', () => {
     it('makes expected calls', () => {
       const storeStub: Store = fixture.debugElement.injector.get(Store);
-      spyOn(storeStub, 'select').and.callThrough();
+      spyOn(storeStub, 'pipe').and.callThrough();
       component.ngOnInit();
-      expect(storeStub.select).toHaveBeenCalled();
+      expect(storeStub.pipe).toHaveBeenCalled();
     });
   });
 

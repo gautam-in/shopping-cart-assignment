@@ -64,10 +64,10 @@ describe('BannerEffects', () => {
       },
     ];
     it('should dispatch SetBanners Action, on success', () => {
-      const action = new fetchBanner();
+      const action = fetchBanner();
       actions$ = of(action);
       service.fetchBanners.and.returnValue(of(response));
-      const outcome = new setBanners(response);
+      const outcome = setBanners({ payload: response });
       // subscribe to execute the Effect
       effects.fetchBanners.subscribe((action) => {
         expect(action).toEqual(outcome);
@@ -75,19 +75,19 @@ describe('BannerEffects', () => {
     });
 
     it('should dispatch FetchBannerError Action, on failure', () => {
-      const action = new fetchBanner();
+      const action = fetchBanner();
       actions$ = of(action);
       service.fetchBanners.and.returnValue(throwError(ErrorMsg.UNKNOWN_ERROR));
-      const outcome = new fetchBannerError(ErrorMsg.UNKNOWN_ERROR);
+      const outcome = fetchBannerError({ payload: ErrorMsg.UNKNOWN_ERROR });
       effects.fetchBanners.subscribe((action) => {
-        expect(action).toEqual(outcome);
+        expect(action.payload).toEqual(outcome.payload);
       });
     });
   });
 
   describe('apiFailAction', () => {
     it('should fail ', () => {
-      const action = new fetchBannerError(ErrorMsg.UNKNOWN_ERROR);
+      const action = fetchBannerError({ payload: ErrorMsg.UNKNOWN_ERROR });
       actions$ = of(action);
       effects.restApiFailAction$.subscribe((action) => {
         expect(action.payload).toEqual(action.payload);

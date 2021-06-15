@@ -5,75 +5,22 @@ import { provideMockActions } from '@ngrx/effects/testing';
 import { Action } from '@ngrx/store';
 import { MockStore, provideMockStore } from '@ngrx/store/testing';
 import { Observable } from 'rxjs';
+import { AppState } from 'src/app/models/app-state.model';
+import { testAppState } from '../../home/service/banner.resolver.spec';
+import { ProductState } from '../models/product-state.model';
+import { testingProducts } from '../product-list/product-list.component.spec';
+import { selectProductState } from '../store/selectors/products.selectors';
 import { ProductResolver } from './product.resolver';
 
 describe('ProductResolver', () => {
   let service: ProductResolver;
-  let store: MockStore;
+  let store: MockStore<AppState>;
   const initialState = {
-    allProducts: [
-      {
-        name: 'Fresho Kiwi - Green, 3 pcs',
-        imageURL: '/static/images/products/fruit-n-veg/kiwi-green.jpg',
-        description:
-          'Kiwis are oval shaped with a brownish outer skin. The flesh is bright green and juicy with tiny, edible black seeds.',
-        price: 87,
-        stock: 50,
-        category: '5b6899953d1a866534f516e2',
-        sku: 'fnw-kiwi-3',
-        id: '5b6c6a7f01a7c38429530883',
-      },
-      {
-        name: 'Apple - Washington, Regular, 4 pcs',
-        imageURL: '/static/images/products/fruit-n-veg/apple.jpg',
-        description:
-          'The bright red coloured and heart shaped Washington apples are crunchy, juicy and slightly sweet. Washington Apples are a natural source of fibre and are fat free.',
-        price: 187,
-        stock: 50,
-        category: '5b6899953d1a866534f516e2',
-        sku: 'fnw-apple-4',
-        id: '5b6c6aeb01a7c38429530884',
-      },
-    ],
-    currentProducts: [
-      {
-        name: 'Fresho Kiwi - Green, 3 pcs',
-        imageURL: '/static/images/products/fruit-n-veg/kiwi-green.jpg',
-        description:
-          'Kiwis are oval shaped with a brownish outer skin. The flesh is bright green and juicy with tiny, edible black seeds.',
-        price: 87,
-        stock: 50,
-        category: '5b6899953d1a866534f516e2',
-        sku: 'fnw-kiwi-3',
-        id: '5b6c6a7f01a7c38429530883',
-      },
-      {
-        name: 'Apple - Washington, Regular, 4 pcs',
-        imageURL: '/static/images/products/fruit-n-veg/apple.jpg',
-        description:
-          'The bright red coloured and heart shaped Washington apples are crunchy, juicy and slightly sweet. Washington Apples are a natural source of fibre and are fat free.',
-        price: 187,
-        stock: 50,
-        category: '5b6899953d1a866534f516e2',
-        sku: 'fnw-apple-4',
-        id: '5b6c6aeb01a7c38429530884',
-      },
-    ],
-    error: '',
-    loading: false,
-    categoryWiseProducts: new Map().set('5b6c6aeb01a7c38429530884', {
-      name: 'Apple - Washington, Regular, 4 pcs',
-      imageURL: '/static/images/products/fruit-n-veg/apple.jpg',
-      description:
-        'The bright red coloured and heart shaped Washington apples are crunchy, juicy and slightly sweet. Washington Apples are a natural source of fibre and are fat free.',
-      price: 187,
-      stock: 50,
-      category: '5b6899953d1a866534f516e2',
-      sku: 'fnw-apple-4',
-      id: '5b6c6aeb01a7c38429530884',
-    }),
+    ...testAppState,
   };
   let actions$ = new Observable<Action>();
+  let mockProductSelector: any;
+
   beforeEach(() => {
     TestBed.configureTestingModule({
       providers: [
@@ -84,6 +31,9 @@ describe('ProductResolver', () => {
     });
     store = TestBed.inject(MockStore);
     service = TestBed.inject(ProductResolver);
+    mockProductSelector = store.overrideSelector(selectProductState, {
+      ...testAppState.products,
+    });
   });
 
   it('can load instance', () => {
@@ -97,12 +47,33 @@ describe('ProductResolver', () => {
       const actionsStub: Actions = TestBed.inject(Actions);
       const storeStub: MockStore = TestBed.inject(MockStore);
       spyOn(actionsStub, 'pipe').and.callThrough();
-      spyOn(storeStub, 'select').and.callThrough();
       spyOn(storeStub, 'dispatch').and.callThrough();
-      service.resolve(activatedRouteSnapshotStub, routerStateSnapshotStub);
-      expect(actionsStub.pipe).not.toHaveBeenCalled();
-      expect(storeStub.select).toHaveBeenCalled();
-      expect(storeStub.dispatch).not.toHaveBeenCalled();
+      const res = service.resolve(
+        activatedRouteSnapshotStub,
+        routerStateSnapshotStub
+      );
+      res.subscribe((e: any) => {
+        expect(Object.entries(e.categoryWiseProducts).length).toBe(0);
+      });
+      expect(actionsStub.pipe).toHaveBeenCalled();
+      expect(storeStub.dispatch).toHaveBeenCalled();
+    });
+
+    it('makes expected calls when banner have values', () => {
+      const routerStateSnapshotStub: RouterStateSnapshot = <any>{};
+      const activatedRouteSnapshotStub: ActivatedRouteSnapshot = <any>{};
+      mockProductSelector.setResult({
+        ...testingProducts,
+      });
+      store.refreshState();
+
+      const res = service.resolve(
+        activatedRouteSnapshotStub,
+        routerStateSnapshotStub
+      );
+      res.subscribe((e: any) => {
+        expect(Object.entries(e.categoryWiseProducts).length).toBe(1);
+      });
     });
   });
 });

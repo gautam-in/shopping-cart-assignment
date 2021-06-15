@@ -41,7 +41,6 @@ export const productReducer = createReducer(
     } else {
       filteredProduct = [...state.allProducts];
     }
-
     return {
       ...state,
       loading: false,

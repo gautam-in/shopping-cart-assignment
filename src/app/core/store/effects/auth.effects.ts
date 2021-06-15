@@ -29,6 +29,7 @@ export const handleAuthentication = (
 };
 
 export const handleError = (errorRes: any) => {
+  console.log(errorRes);
   let errorMessage = ErrorMsg.UNKNOWN_ERROR;
   if (!errorRes.error || !errorRes.error.error) {
     return of(AuthActions.authenticateFail({ reason: errorMessage }));

@@ -7,7 +7,6 @@ import { Enter } from 'src/app/core/common/animations/enter.animation';
 import { SeoService } from 'src/app/core/services/seo.service';
 import { AppState } from 'src/app/models/app-state.model';
 import { CartState } from 'src/app/shared/models/cart-state.model';
-import * as CartListActions from 'src/app/shared/store/actions/cart-list.actions';
 import { CartActions } from 'src/app/shared/store/actions/cartlist.actions.types';
 import { selectCartState } from 'src/app/shared/store/selectors/cart.selectors';
 import { ProductState } from '../models/product-state.model';

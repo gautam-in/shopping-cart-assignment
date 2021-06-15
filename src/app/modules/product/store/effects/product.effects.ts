@@ -17,16 +17,17 @@ import { ProductService } from '../../service/product.service';
 import { ProductActions } from '../actions/product.action.types';
 import { selectProductState } from '../selectors/products.selectors';
 
-const handleSucess = (banners: Product[]) => {
-  return ProductActions.setProducts({ payload: banners });
+const handleSucess = (products: Product[]) => {
+  return ProductActions.setProducts({ payload: products });
 };
 
 const handleError = (errorRes: HttpErrorResponse) => {
   let errorMessage = 'An unknown error occurred!';
+
   if (!errorRes.error || !errorRes.error.error) {
     return of(ProductActions.fetchProductsError({ payload: errorMessage }));
   }
-  errorMessage = errorRes.message;
+  errorMessage = errorRes.error.error;
   return of(ProductActions.fetchProductsError({ payload: errorMessage }));
 };
 
@@ -45,6 +46,7 @@ export class ProductEffects {
         return handleSucess(resData);
       }),
       catchError((errorRes) => {
+        console.log('error', errorRes);
         return handleError(errorRes);
       })
     )
@@ -55,15 +57,13 @@ export class ProductEffects {
       ofType(ProductActions.setProducts),
       withLatestFrom(this.store.pipe(select(selectProductState))),
       map(([, prodState]) => {
+        console.log(prodState);
         if (prodState.filterBy) {
           return ProductActions.filterBy({ payload: prodState.filterBy });
         }
         return {
           type: 'Dummy',
         };
-      }),
-      catchError((errorRes) => {
-        return handleError(errorRes);
       })
     )
   );
@@ -78,7 +78,7 @@ export class ProductEffects {
         };
       }),
       filter(({ url, filterBy }) => url.startsWith('/products')),
-      map(({ filterBy }) => ProductActions.filterBy(filterBy))
+      map(({ filterBy }) => ProductActions.filterBy({ payload: filterBy }))
     )
   );
 }

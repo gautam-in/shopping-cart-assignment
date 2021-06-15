@@ -29,7 +29,7 @@ const handleError = (errorRes: any) => {
   if (!errorRes.error || !errorRes.error.error) {
     return of(CartActions.addCartError({ payload: errorMessage }));
   }
-  errorMessage = errorRes.error;
+  errorMessage = errorRes.error.error;
   return of(CartActions.addCartError({ payload: errorMessage }));
 };
 
@@ -146,7 +146,7 @@ export class CartEffects {
             return CartActions.placeOrderSuccess({});
           }
           return CartActions.placeOrderFail({
-            payload: 'User Not Logged In! Please Login First to place order',
+            payload: ErrorMsg.INVALID_USER,
           });
         })
       ),

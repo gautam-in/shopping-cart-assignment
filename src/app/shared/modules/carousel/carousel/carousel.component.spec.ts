@@ -4,13 +4,20 @@ import {
   ElementRef,
   NO_ERRORS_SCHEMA,
   PLATFORM_ID,
+  QueryList,
 } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CarouselComponent, CarouselItemElement } from './carousel.component';
 import { CarouselItemDirective } from '../carousel-item.directive';
-import { AnimationBuilder, AnimationFactory } from '@angular/animations';
+import {
+  AnimationBuilder,
+  AnimationFactory,
+  AnimationPlayer,
+  NoopAnimationPlayer,
+} from '@angular/animations';
+import { noop } from 'rxjs';
 
 @Component({
   template: `
@@ -99,10 +106,6 @@ describe('CarouselComponent', () => {
           provide: AnimationBuilder,
           useValue: jasmine.createSpyObj(AnimationBuilder, ['build']),
         },
-        // {
-        //   provide: AnimationFactory,
-        //   useValue: jasmine.createSpyObj(AnimationFactory, ['create']),
-        // },
       ],
     });
     fixture = TestBed.createComponent(CarouselComponent);
@@ -138,7 +141,12 @@ describe('CarouselComponent', () => {
   it(`autoRotate has default value`, () => {
     expect(component.autoRotate).toEqual(true);
   });
-
+  it(`nextDisabled has default value`, () => {
+    expect(component.nextDisabled).toEqual(true);
+  });
+  it(`prevDisabled has default value`, () => {
+    expect(component.prevDisabled).toEqual(true);
+  });
   describe('ngAfterViewInit', () => {
     it('makes expected calls', () => {
       spyOn(component, 'startRotation').and.callThrough();
@@ -166,35 +174,44 @@ describe('CarouselComponent', () => {
     });
   });
   describe('goSlide slide index', () => {
-    try {
-      it('makes expected calls', () => {
-        spyOn(component, 'goSlide').and.returnValue(
-          jasmine.createSpyObj(AnimationFactory, ['create'])
-        );
-        component.goSlide(0);
-        expect(component.goSlide).toHaveBeenCalled();
-      });
-    } catch (error) {
-      expect(error).toBeTruthy();
-    }
+    it('should  call gotoSlide', () => {
+      let builder: any = TestBed.inject(AnimationBuilder);
+      let af = jasmine.createSpyObj(AnimationFactory, ['create']);
+      builder.build.and.returnValue(af);
+      af.create.and.returnValue({ play: noop });
+      component.carousel = new ElementRef(document.createElement('h1'));
+      console.log(component.items);
+      component.items = new QueryList<CarouselItemDirective>();
+      component.goSlide(0);
+      expect(builder.build).toHaveBeenCalled();
+    });
   });
   describe('Next slide', () => {
     it('makes expected calls', () => {
-      spyOn(component, 'next').and.returnValue(
-        jasmine.createSpyObj(AnimationFactory, ['create'])
-      );
+      let builder: any = TestBed.inject(AnimationBuilder);
+      let af = jasmine.createSpyObj(AnimationFactory, ['create']);
+      builder.build.and.returnValue(af);
+      af.create.and.returnValue({ play: noop });
+      component.carousel = new ElementRef(document.createElement('h1'));
+      component.items = new QueryList<CarouselItemDirective>();
+
       component.next();
-      expect(component.next).toHaveBeenCalled();
+      expect(builder.build).toHaveBeenCalled();
     });
   });
 
   describe('Prev slide', () => {
     it('makes expected calls', () => {
-      spyOn(component, 'prev').and.returnValue(
-        jasmine.createSpyObj(AnimationFactory, ['create'])
-      );
+      let builder: any = TestBed.inject(AnimationBuilder);
+      let af = jasmine.createSpyObj(AnimationFactory, ['create']);
+      builder.build.and.returnValue(af);
+      af.create.and.returnValue({ play: noop });
+      component.carousel = new ElementRef(document.createElement('h1'));
+      component.currentSlide = 1;
+      component.items = new QueryList<CarouselItemDirective>();
+
       component.prev();
-      expect(component.prev).toHaveBeenCalled();
+      expect(builder.build).toHaveBeenCalled();
     });
   });
 

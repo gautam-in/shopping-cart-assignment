@@ -33,4 +33,7 @@ export class ErrorMsg {
   public static LOG_OUT = 'You have successfully logged out';
   public static UNKNOWN_ERROR = 'An unknown error occurred!';
   public static ORDER_PLACED = 'Your Order Has been Placed Successfully';
+
+  public static INVALID_USER =
+    'User Not Logged In! Please Login First to place order';
 }

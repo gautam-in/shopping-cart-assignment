@@ -64,7 +64,7 @@ describe('AuthService', () => {
         idToken: 'abcdefghi',
         localId: '123',
       };
-      service.login(new AuthActions.LoginStart(request)).subscribe((res) => {
+      service.login(AuthActions.LoginStart(request)).subscribe((res) => {
         expect(res.email).toEqual(authresponse.email);
       });
       const req = httpTestingController.expectOne(
@@ -86,7 +86,7 @@ describe('AuthService', () => {
         idToken: 'abcdefghi',
         localId: '123',
       };
-      service.signup(new AuthActions.signupStart(request)).subscribe((res) => {
+      service.signup(AuthActions.signupStart(request)).subscribe((res) => {
         expect(res.email).toEqual(authresponse.email);
       });
       const req = httpTestingController.expectOne(

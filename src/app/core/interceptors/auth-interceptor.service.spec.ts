@@ -65,11 +65,11 @@ describe('AuthInterceptorService', () => {
       const httpHandlerStub: HttpHandler = TestBed.inject(HttpHandler);
       const storeStub: MockStore = TestBed.inject(MockStore);
       spyOn(httpRequestStub, 'clone').and.callThrough();
-      spyOn(storeStub, 'select').and.callThrough();
+      spyOn(storeStub, 'pipe').and.callThrough();
       service.intercept(httpRequestStub, httpHandlerStub);
       expect(httpRequestStub.clone).not.toHaveBeenCalled();
       expect(httpHandlerStub.handle).toBe(undefined);
-      expect(storeStub.select).toHaveBeenCalled();
+      expect(storeStub.pipe).toHaveBeenCalled();
     });
   });
 });

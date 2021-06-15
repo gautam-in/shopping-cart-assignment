@@ -3,12 +3,15 @@ import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { MatSidenav } from '@angular/material/sidenav';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { Router, RouterModule } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
 import { StoreModule } from '@ngrx/store';
 import { MockStore, provideMockStore } from '@ngrx/store/testing';
+import { noop } from 'rxjs';
 import { AppComponent } from './app.component';
 import { Constants } from './core/common/constants/constants';
 import { MaterialModule } from './shared/modules/material.module';
+import { SharedModule } from './shared/shared.module';
 import { AppEffectModule } from './store/effects/app.effects.module';
 import { appReducer } from './store/reducers/app.reducer';
 
@@ -26,7 +29,8 @@ describe('AppComponent', () => {
         StoreModule.forRoot(appReducer),
         AppEffectModule,
         HttpClientTestingModule,
-        MaterialModule,
+        SharedModule,
+        RouterTestingModule,
       ],
       schemas: [NO_ERRORS_SCHEMA],
       declarations: [AppComponent],
@@ -34,14 +38,17 @@ describe('AppComponent', () => {
         provideMockStore({ initialState }),
         {
           provide: MatSidenav,
-          useValue: jasmine.createSpyObj(MatSidenav, ['close', 'toggle']),
+          useValue: jasmine.createSpyObj(MatSidenav, [
+            'close',
+            'toggle',
+            'open',
+          ]),
         },
       ],
     });
     fixture = TestBed.createComponent(AppComponent);
     store = TestBed.inject(MockStore);
     sideNav = TestBed.inject(MatSidenav);
-
     component = fixture.componentInstance;
   });
 
@@ -60,15 +67,18 @@ describe('AppComponent', () => {
 
   describe('ngOnInit', () => {
     it('should assign sideNav ref', () => {
-      component.ngOnInit();
-      expect(component.sideNav).toBeTruthy();
-    });
-  });
+      let router = TestBed.inject(Router);
 
-  describe('ngOnInit', () => {
-    it('should assign sideNav ref', () => {
+      Constants.SIDENAV = sideNav;
+      fixture.detectChanges();
+      console.log(sideNav);
       component.ngOnInit();
       expect(component.sideNav).toBeTruthy();
+      router.navigate(['/'], {
+        queryParams: {
+          categoryId: '5b6899953d1a866534f516e2',
+        },
+      });
     });
   });
 

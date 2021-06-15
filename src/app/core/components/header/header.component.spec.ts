@@ -3,23 +3,32 @@ import {
   ComponentFactoryResolver,
   NO_ERRORS_SCHEMA,
   Renderer2,
+  TemplateRef,
   ViewContainerRef,
+  ComponentRef,
+  EventEmitter,
 } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { MediaObserver } from '@angular/flex-layout';
 import { MatSidenav } from '@angular/material/sidenav';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {
+  BrowserAnimationsModule,
+  NoopAnimationsModule,
+} from '@angular/platform-browser/animations';
 import { RouterTestingModule } from '@angular/router/testing';
 import { provideMockActions } from '@ngrx/effects/testing';
 import { Action, StoreModule } from '@ngrx/store';
 import { MockStore, provideMockStore } from '@ngrx/store/testing';
-import { Observable } from 'rxjs';
+import { noop, Observable } from 'rxjs';
 import { AppComponent } from 'src/app/app.component';
+import { CartComponent } from 'src/app/shared/components/cart/cart.component';
 import { PlaceholderDirective } from 'src/app/shared/directive/placeholder/placeholder.directive';
 import { MaterialModule } from 'src/app/shared/modules/material.module';
+import { SharedModule } from 'src/app/shared/shared.module';
 import { AppEffectModule } from 'src/app/store/effects/app.effects.module';
 import { appReducer } from 'src/app/store/reducers/app.reducer';
 import { Constants } from '../../common/constants/constants';
+import { CoreModule } from '../../core.module';
 import { SeoService } from '../../services/seo.service';
 import { HeaderComponent } from './header.component';
 
@@ -35,29 +44,21 @@ describe('HeaderComponent', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [
-        BrowserAnimationsModule,
-        StoreModule.forRoot(appReducer),
-        AppEffectModule,
+        NoopAnimationsModule,
         HttpClientTestingModule,
         RouterTestingModule,
-        MaterialModule,
       ],
       schemas: [NO_ERRORS_SCHEMA],
-      declarations: [HeaderComponent, AppComponent, PlaceholderDirective],
+      declarations: [HeaderComponent, CartComponent],
       providers: [
         SeoService,
         {
           provide: MatSidenav,
           useValue: jasmine.createSpyObj(MatSidenav, ['close', 'toggle']),
         },
-        ComponentFactoryResolver,
         {
           provide: Renderer2,
           useValue: jasmine.createSpyObj(Renderer2, ['setStyle', 'addClass']),
-        },
-        {
-          provide: HeaderComponent,
-          useValue: jasmine.createSpyObj(HeaderComponent, ['showCart']),
         },
 
         {
@@ -112,12 +113,21 @@ describe('HeaderComponent', () => {
 
   describe('Cart', () => {
     it('should open cart', () => {
-      // component.showCart(
-      //   fixture.debugElement.nativeElement.querySelector('.cart')
-      // );
-      spyOn(component, 'showCart');
+      let cfr = TestBed.inject(ComponentFactoryResolver);
+      let pd: any = new PlaceholderDirective(
+        jasmine.createSpyObj(ViewContainerRef, ['clear', 'createComponent'])
+      );
+      pd.viewContainerRef.createComponent.and.returnValue({
+        location: {
+          nativeElement: document.createElement('span'),
+        },
+        instance: {
+          close: new EventEmitter(),
+        },
+      });
+      component.alertHost = pd;
       component.showCart(document.createElement('button'));
-      expect(component.showCart).toHaveBeenCalled();
+      expect(cfr.resolveComponentFactory).toHaveBeenCalled();
     });
   });
 
