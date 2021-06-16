@@ -1,23 +1,21 @@
 import {
+  AnimationBuilder,
+  AnimationFactory
+} from '@angular/animations';
+import {
   Component,
   DebugElement,
   ElementRef,
   NO_ERRORS_SCHEMA,
   PLATFORM_ID,
-  QueryList,
+  QueryList
 } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { CarouselComponent, CarouselItemElement } from './carousel.component';
-import { CarouselItemDirective } from '../carousel-item.directive';
-import {
-  AnimationBuilder,
-  AnimationFactory,
-  AnimationPlayer,
-  NoopAnimationPlayer,
-} from '@angular/animations';
 import { noop } from 'rxjs';
+import { CarouselItemDirective } from '../carousel-item.directive';
+import { CarouselComponent, CarouselItemElement } from './carousel.component';
 
 @Component({
   template: `

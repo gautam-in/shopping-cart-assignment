@@ -1,7 +1,6 @@
-import { Action, createAction, props } from '@ngrx/store';
+import { createAction, props } from '@ngrx/store';
 import { Product } from 'src/app/modules/product/models/product.model';
 import { CartProductModel } from '../../models/cart-product.model';
-import { CartState } from '../../models/cart-state.model';
 const comp = '[Cart]';
 const ADD_PRODUCT = `${comp} Add Product`;
 const ADD_PRODUCTS = `${comp} Add Products`;

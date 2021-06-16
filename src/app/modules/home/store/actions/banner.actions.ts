@@ -1,4 +1,4 @@
-import { Action, createAction, props } from '@ngrx/store';
+import { createAction, props } from '@ngrx/store';
 import { Banner } from '../../models/banner.model';
 const comp = '[Banner] ';
 const FETCH_BANNER = comp + 'Banner  Fetch';

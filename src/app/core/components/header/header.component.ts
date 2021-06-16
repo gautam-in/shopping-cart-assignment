@@ -12,7 +12,6 @@ import { AppState } from 'src/app/models/app-state.model';
 import { CartComponent } from 'src/app/shared/components/cart/cart.component';
 import { PlaceholderDirective } from 'src/app/shared/directive/placeholder/placeholder.directive';
 import { CartState } from 'src/app/shared/models/cart-state.model';
-import { fetchLocalCart } from 'src/app/shared/store/actions/cart-list.actions';
 import { CartActions } from 'src/app/shared/store/actions/cartlist.actions.types';
 import { selectCartState } from 'src/app/shared/store/selectors/cart.selectors';
 import { AuthState } from '../../models/auth-state.model';

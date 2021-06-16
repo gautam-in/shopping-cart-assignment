@@ -1,7 +1,7 @@
 import { createAction, props } from '@ngrx/store';
 import {
   AuthenticationSuccessPayload,
-  LoginPayLoad,
+  LoginPayLoad
 } from '../../models/store-payload.model';
 
 const LOGIN_START = '[Auth] Login Start';

@@ -1,17 +1,17 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { NO_ERRORS_SCHEMA } from '@angular/core';
-import { MatSelectChange } from '@angular/material/select';
-import { ActivatedRoute, Router } from '@angular/router';
-import { MediaObserver } from '@angular/flex-layout';
-import { RouterTestingModule } from '@angular/router/testing';
-import { ProductComponent } from './product.component';
-import { MockStore, provideMockStore } from '@ngrx/store/testing';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { MediaObserver } from '@angular/flex-layout';
+import { MatSelectChange } from '@angular/material/select';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ActivatedRoute, Router } from '@angular/router';
+import { RouterTestingModule } from '@angular/router/testing';
 import { StoreModule } from '@ngrx/store';
+import { MockStore, provideMockStore } from '@ngrx/store/testing';
 import { MaterialModule } from 'src/app/shared/modules/material.module';
 import { AppEffectModule } from 'src/app/store/effects/app.effects.module';
 import { appReducer } from 'src/app/store/reducers/app.reducer';
+import { ProductComponent } from './product.component';
 
 describe('ProductComponent', () => {
   let component: ProductComponent;

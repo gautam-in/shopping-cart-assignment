@@ -11,7 +11,6 @@ import { switchMap, take } from 'rxjs/operators';
 import { AppState } from 'src/app/models/app-state.model';
 import { CategoryState } from '../models/category-state.model';
 import { CategoryActions } from '../store/actions/categories.action.types';
-import { fetchCategory } from '../store/actions/categories.actions';
 import { selectCategoryState } from '../store/selectors/category.selectors';
 @Injectable({
   providedIn: 'root',

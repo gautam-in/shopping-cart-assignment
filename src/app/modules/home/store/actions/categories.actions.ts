@@ -1,4 +1,4 @@
-import { Action, createAction, props } from '@ngrx/store';
+import { createAction, props } from '@ngrx/store';
 import { Category } from '../../models/category.model';
 const comp = '[Category] ';
 const FETCH_CATEGORY = comp + 'Category  Fetch';

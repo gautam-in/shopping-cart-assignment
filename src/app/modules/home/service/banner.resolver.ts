@@ -11,7 +11,6 @@ import { switchMap, take, tap } from 'rxjs/operators';
 import { AppState } from 'src/app/models/app-state.model';
 import { Banner } from '../models/banner.model';
 import { BannerActions } from '../store/actions/banner.action.types';
-import { fetchBanner } from '../store/actions/banner.actions';
 import { selectBannerState } from '../store/selectors/banner.selectors';
 
 @Injectable({

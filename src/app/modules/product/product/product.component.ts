@@ -1,11 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MediaObserver } from '@angular/flex-layout';
 import { MatSelectChange } from '@angular/material/select';
-import {
-  ActivatedRoute,
-  ActivatedRouteSnapshot,
-  Router,
-} from '@angular/router';
+import { Router } from '@angular/router';
 import { select, Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { Enter } from 'src/app/core/common/animations/enter.animation';
@@ -13,7 +9,6 @@ import { AppState } from 'src/app/models/app-state.model';
 import { CategoryState } from '../../home/models/category-state.model';
 import { selectCategoryState } from '../../home/store/selectors/category.selectors';
 import { ProductState } from '../models/product-state.model';
-import { filterBy } from '../store/actions/product.actions';
 import { selectProductState } from '../store/selectors/products.selectors';
 
 @Component({

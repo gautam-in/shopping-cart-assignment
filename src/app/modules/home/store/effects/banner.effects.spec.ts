@@ -12,7 +12,7 @@ import { Banner } from '../../models/banner.model';
 import {
   fetchBanner,
   fetchBannerError,
-  setBanners,
+  setBanners
 } from '../actions/banner.actions';
 import { BannerEffects } from './banner.effects';
 

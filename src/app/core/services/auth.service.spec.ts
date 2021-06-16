@@ -7,12 +7,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterTestingModule } from '@angular/router/testing';
 import { StoreModule } from '@ngrx/store';
 import { MockStore, provideMockStore } from '@ngrx/store/testing';
+import * as AuthActions from 'src/app/core/store/actions/auth.actions';
 import { MaterialModule } from 'src/app/shared/modules/material.module';
 import { AppEffectModule } from 'src/app/store/effects/app.effects.module';
 import { appReducer } from 'src/app/store/reducers/app.reducer';
-import { AuthService } from './auth.service';
-import * as AuthActions from 'src/app/core/store/actions/auth.actions';
 import { environment } from 'src/environments/environment';
+import { AuthService } from './auth.service';
 
 describe('AuthService', () => {
   let service: AuthService;

@@ -7,7 +7,6 @@ import { MockStore, provideMockStore } from '@ngrx/store/testing';
 import { Observable } from 'rxjs';
 import { AppState } from 'src/app/models/app-state.model';
 import { testAppState } from '../../home/service/banner.resolver.spec';
-import { ProductState } from '../models/product-state.model';
 import { testingProducts } from '../product-list/product-list.component.spec';
 import { selectProductState } from '../store/selectors/products.selectors';
 import { ProductResolver } from './product.resolver';

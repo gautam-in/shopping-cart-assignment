@@ -1,6 +1,5 @@
 import { createReducer, on } from '@ngrx/store';
 import { BannerState } from '../../models/banner-state.model';
-import { Banner } from '../../models/banner.model';
 import { BannerActions } from '../actions/banner.action.types';
 
 const initialState: BannerState = {

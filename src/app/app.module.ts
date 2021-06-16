@@ -15,8 +15,6 @@ import { NgrxRouterStoreModule } from './ngrx-router.module';
 import { SharedModule } from './shared/shared.module';
 import { AppEffectModule } from './store/effects/app.effects.module';
 import { appReducer, metaReducers } from './store/reducers/app.reducer';
-import { EntityDataModule } from '@ngrx/data';
-import { entityConfig } from './entity-metadata';
 
 @NgModule({
   declarations: [AppComponent],
@@ -43,7 +41,6 @@ import { entityConfig } from './entity-metadata';
     AppEffectModule,
     StoreDevtoolsModule.instrument({ logOnly: environment.production }),
     SharedModule,
-    EntityDataModule.forRoot(entityConfig),
   ],
   providers: [
     { provide: BREAKPOINT, useValue: MY_CUSTOM_BREAKPOINTS, multi: true },

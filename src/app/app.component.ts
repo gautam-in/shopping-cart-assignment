@@ -13,7 +13,6 @@ import { Constants } from 'src/app/core/common/constants/constants';
 import { Enter } from './core/common/animations/enter.animation';
 import { AuthState } from './core/models/auth-state.model';
 import { AuthActions } from './core/store/actions/action-types';
-import { logout } from './core/store/actions/auth.actions';
 import { selectAuthState } from './core/store/selectors/auth.selectors';
 import { AppState } from './models/app-state.model';
 @Component({

@@ -1,5 +1,4 @@
 const WebpackNotifierPlugin = require("webpack-notifier");
-const webpack = require("webpack");
 const path = require("path");
 const WebpackObfuscator = require("webpack-obfuscator");
 const CompressionPlugin = require("compression-webpack-plugin");
@@ -10,6 +9,7 @@ const ImageMinimizerPlugin = require("image-minimizer-webpack-plugin");
 const { extendDefaultPlugins } = require("svgo");
 const BundleAnalyzerPlugin =
   require("webpack-bundle-analyzer").BundleAnalyzerPlugin;
+
 module.exports = {
   module: {
     rules: [
@@ -85,7 +85,10 @@ module.exports = {
       },
       ["excluded_bundle_name.js"]
     ),
-    new CompressionPlugin(),
+    new CompressionPlugin({
+      algorithm: "gzip",
+      compressionOptions: { level: 9 },
+    }),
   ],
   optimization: {
     minimize: true,

@@ -2,7 +2,7 @@ import {
   HttpHandler,
   HttpInterceptor,
   HttpParams,
-  HttpRequest,
+  HttpRequest
 } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { select, Store } from '@ngrx/store';

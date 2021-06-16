@@ -1,34 +1,23 @@
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import {
   ComponentFactoryResolver,
+  EventEmitter,
   NO_ERRORS_SCHEMA,
   Renderer2,
-  TemplateRef,
   ViewContainerRef,
-  ComponentRef,
-  EventEmitter,
 } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { MediaObserver } from '@angular/flex-layout';
 import { MatSidenav } from '@angular/material/sidenav';
-import {
-  BrowserAnimationsModule,
-  NoopAnimationsModule,
-} from '@angular/platform-browser/animations';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterTestingModule } from '@angular/router/testing';
 import { provideMockActions } from '@ngrx/effects/testing';
-import { Action, StoreModule } from '@ngrx/store';
+import { Action } from '@ngrx/store';
 import { MockStore, provideMockStore } from '@ngrx/store/testing';
-import { noop, Observable } from 'rxjs';
-import { AppComponent } from 'src/app/app.component';
+import { Observable } from 'rxjs';
 import { CartComponent } from 'src/app/shared/components/cart/cart.component';
 import { PlaceholderDirective } from 'src/app/shared/directive/placeholder/placeholder.directive';
-import { MaterialModule } from 'src/app/shared/modules/material.module';
-import { SharedModule } from 'src/app/shared/shared.module';
-import { AppEffectModule } from 'src/app/store/effects/app.effects.module';
-import { appReducer } from 'src/app/store/reducers/app.reducer';
 import { Constants } from '../../common/constants/constants';
-import { CoreModule } from '../../core.module';
 import { SeoService } from '../../services/seo.service';
 import { HeaderComponent } from './header.component';
 

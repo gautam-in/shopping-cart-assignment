@@ -9,15 +9,13 @@ import {
 import { RouterTestingModule } from '@angular/router/testing';
 import { Actions } from '@ngrx/effects';
 import { provideMockActions } from '@ngrx/effects/testing';
-import { Action, select, StoreModule } from '@ngrx/store';
+import { Action, StoreModule } from '@ngrx/store';
 import { MockStore, provideMockStore } from '@ngrx/store/testing';
 import { Observable } from 'rxjs';
-import { switchMap, take, tap } from 'rxjs/operators';
 import { AppState } from 'src/app/models/app-state.model';
 import { MaterialModule } from 'src/app/shared/modules/material.module';
 import { AppEffectModule } from 'src/app/store/effects/app.effects.module';
 import { appReducer } from 'src/app/store/reducers/app.reducer';
-import { fetchBanner } from '../store/actions/banner.actions';
 import { selectBannerState } from '../store/selectors/banner.selectors';
 import { BannerResolver } from './banner.resolver';
 export const testAppState = {

@@ -1,15 +1,13 @@
-import { HttpErrorResponse } from '@angular/common/http';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { Router, UrlTree } from '@angular/router';
+import { Router } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
 import { provideMockActions } from '@ngrx/effects/testing';
 import { ROUTER_NAVIGATION } from '@ngrx/router-store';
-import { Action, select, StoreModule } from '@ngrx/store';
+import { Action, StoreModule } from '@ngrx/store';
 import { MockStore, provideMockStore } from '@ngrx/store/testing';
 import { Observable, of, throwError } from 'rxjs';
-import { map } from 'rxjs/operators';
 import { ErrorMsg } from 'src/app/core/common/constants/error.constants';
 import { UtilService } from 'src/app/core/services/util.service';
 import { AppState } from 'src/app/models/app-state.model';

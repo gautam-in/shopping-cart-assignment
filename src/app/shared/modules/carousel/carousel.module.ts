@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { CarouselItemDirective } from './carousel-item.directive';
 import {
   CarouselComponent,
-  CarouselItemElement,
+  CarouselItemElement
 } from './carousel/carousel.component';
 let componentsArry = [
   CarouselComponent,
