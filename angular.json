@@ -21,10 +21,10 @@
           "builder": "@angular-builders/custom-webpack:browser",
           "options": {
             "outputPath": "dist/shopping-cart/browser",
-             "customWebpackConfig": {
-             "path": "./webpack.config.js",
+            "customWebpackConfig": {
+              "path": "./webpack.config.js",
               "replaceDuplicatePlugins": true
-      },
+            },
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -33,14 +33,27 @@
             "assets": [
               "src/favicon.ico",
               "src/assets",
-              "src/manifest.webmanifest"
+              "src/manifest.webmanifest",
+              {
+                "glob": "**/*",
+                "input": "server/static/",
+                "output": "/assets/images/"
+              }
             ],
             "styles": [
-              "src/styles.scss"      
-                   ],
+              "src/styles.scss"
+            ],
             "scripts": [],
             "serviceWorker": true,
-            "ngswConfigPath": "ngsw-config.json"
+            "ngswConfigPath": "ngsw-config.json",
+            "optimization": {
+              "scripts": true,
+              "styles": {
+                "minify": true,
+                "inlineCritical": true
+              },
+              "fonts": true
+            }
           },
           "configurations": {
             "production": {
@@ -48,7 +61,7 @@
                 {
                   "type": "initial",
                   "maximumWarning": "500kb",
-                  "maximumError": "1mb"
+                  "maximumError": "2mb"
                 },
                 {
                   "type": "anyComponentStyle",
@@ -62,7 +75,9 @@
                   "with": "src/environments/environment.prod.ts"
                 }
               ],
-              "outputHashing": "all"
+              "outputHashing": "bundles",
+              "vendorChunk": true,
+              "optimization": true
             },
             "development": {
               "buildOptimizer": false,
@@ -102,17 +117,17 @@
             "karmaConfig": "karma.conf.js",
             "inlineStyleLanguage": "scss",
             "codeCoverage": true,
-              "codeCoverageExclude": [
-                "src/**/*.model.ts",
-                "src/**/*.module.ts",
-                "src/**/*.module.ts",
-                "src/**/*-interceptor.service.ts",
-                "src/**/common/**/*",
-                "src/**/actions/*",
-                "src/**/reducers/*",
-                "src/**/selector/*",
-                "src/**/serializer/*"
-              ],
+            "codeCoverageExclude": [
+              "src/**/*.model.ts",
+              "src/**/*.module.ts",
+              "src/**/*.module.ts",
+              "src/**/*-interceptor.service.ts",
+              "src/**/common/**/*",
+              "src/**/actions/*",
+              "src/**/reducers/*",
+              "src/**/selector/*",
+              "src/**/serializer/*"
+            ],
             "watch": true,
             "assets": [
               "src/favicon.ico",
