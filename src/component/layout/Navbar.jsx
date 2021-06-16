@@ -14,10 +14,14 @@ function Navbar() {
   );
   return (
     <header>
-      <nav className="app-navbar">
+      <nav
+        className="app-navbar"
+        itemScope
+        itemType="http://schema.org/SiteNavigationElement"
+      >
         <div className="app-header">
           <div className="app-block left">
-            <Link to="/" className="app-logo">
+            <Link to="/" className="app-logo" itemProp="url">
               <img
                 src="/static/images/logo.webp"
                 srcSet="/static/images/logo_2x.webp 1.5x, /static/images/logo_2x.webp 2x"
@@ -28,8 +32,12 @@ function Navbar() {
               ></img>
             </Link>
 
-            <Link to="/">Home</Link>
-            <Link to="/product">Product</Link>
+            <Link to="/" itemProp="url">
+              Home
+            </Link>
+            <Link to="/product" itemProp="url">
+              Product
+            </Link>
           </div>
           <div className="app-block right">
             <ul className="app-auth">
@@ -40,7 +48,7 @@ function Navbar() {
                 <Link to="/signUp">Register</Link>
               </li>
             </ul>
-            <div className="app-cartBlock" onClick={openCart}>
+            <button className="app-cartBlock" onClick={openCart}>
               <img
                 src="/static/images/cart.svg"
                 alt="cart"
@@ -49,7 +57,7 @@ function Navbar() {
                 loading="lazy"
               />
               <p>{itemCount} Items</p>
-            </div>
+            </button>
           </div>
         </div>
       </nav>

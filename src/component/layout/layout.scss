@@ -36,6 +36,7 @@
   }
   &-cartBlock {
     @extend %flex;
+    width: 100%;
     justify-content: space-evenly;
     background: $gray-color;
     padding: 5px;

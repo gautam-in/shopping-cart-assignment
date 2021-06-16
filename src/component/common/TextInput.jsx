@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-
 function TextInput({ type, label, name, rules, register, errors, mandatory }) {
   const [value, setValue] = useState("");
 

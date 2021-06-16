@@ -10,7 +10,6 @@
     left: 0;
     right: 0;
     top: 0;
-    bottom: 0;
     .cart {
       &-block {
         background: $gray-color;
@@ -26,7 +25,12 @@
         background-color: $black-color;
         color: $primary-color;
         @extend %flex;
-        span,
+        button {
+          background-color: $black-color;
+          color: #eeeeee;
+          cursor: pointer;
+        }
+
         p {
           color: $primary-color;
           margin: 10px;

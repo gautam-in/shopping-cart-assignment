@@ -1,26 +1,25 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { useHistory } from "react-router-dom";
 import { getCategory } from "../../redux/category/actionCreator";
 
 function Categories() {
   const categoryData = useSelector((state) => state.getCatDetail.category);
   const dispatch = useDispatch();
-  const history = useHistory();
 
   useEffect(() => {
     dispatch(getCategory());
   }, [dispatch]);
 
-  const routeTo = (catid) => {
-    history.push("/product#" + catid);
-  };
   return (
     <>
       {categoryData.map(
         (data) =>
           data.enabled && (
-            <div key={data.key} className="app-category app-bottom-shadow">
+            <div
+              key={data.key}
+              id="main"
+              className="app-category app-bottom-shadow"
+            >
               <img
                 src={data.imageUrl}
                 alt={data.name}
@@ -29,16 +28,13 @@ function Categories() {
                 height="185"
               ></img>
               <div className="cat-desc centre">
-                <h3>
+                <h2>
                   <b>{data.name}</b>
-                </h3>
-                <p>{data.description}</p>
-                <button
-                  className="app-btn"
-                  onClick={routeTo.bind(null, data.id)}
-                >
+                </h2>
+                <h3>{data.description}</h3>
+                <a className="app-btn" href={`/product#${data.id}`}>
                   Explore {data.name}
-                </button>
+                </a>
               </div>
             </div>
           )

@@ -6,9 +6,6 @@ import "./cart.scss";
 function Cart(props) {
   const cartData = useSelector((state) => state.getCartDetail.cartItems);
   const dispatch = useDispatch();
-  const closeCart = () => {
-    props.status(false);
-  };
 
   // If cart is open then block background Scroll
   useEffect(() => {
@@ -27,12 +24,14 @@ function Cart(props) {
       <div className="cart-block">
         <div className="cart-head">
           <p>My Cart ({cartData.length}item)</p>
-          <span onClick={closeCart}>X</span>
+          <button onClick={() => props.status(false)} aria-label="close cart">
+            X
+          </button>
         </div>
-        <div className="cart-mid">
+        <ul className="cart-mid">
           {cartData &&
-            cartData.map((product) => (
-              <div className="product-block" key={product.id}>
+            cartData.map((product, index) => (
+              <li className="product-block" key={product.id} tabIndex="0">
                 <img
                   src={product.image}
                   alt={product.name}
@@ -46,14 +45,14 @@ function Cart(props) {
                       className="cart-btn"
                       onClick={manageCartItems.bind(null, product, "decrement")}
                     >
-                      <span>-</span>
+                      <span aria-label="remove item">-</span>
                     </button>
                     <span>{product.count}</span>
                     <button
                       className="cart-btn"
                       onClick={manageCartItems.bind(null, product, "increment")}
                     >
-                      <span>+</span>
+                      <span aria-label="add Item">+</span>
                     </button>
                     <span>x</span>
                     <span>{product.price}</span>
@@ -62,11 +61,11 @@ function Cart(props) {
                 <p>
                   <b>{product.price * product.count}</b>
                 </p>
-              </div>
+              </li>
             ))}
 
           {cartData.length ? (
-            <div className="block2">
+            <li className="block2" tabIndex="0">
               <img
                 src="/static/images/lowest-price.webp"
                 alt="lowest Price Logo"
@@ -74,16 +73,16 @@ function Cart(props) {
                 width="100"
               ></img>
               <p>You Wont find cheeper anywhere</p>
-            </div>
+            </li>
           ) : (
-            <div className="centre">
+            <li className="centre" tabIndex="0">
               <p>
                 <b>No Items in your cart</b>
               </p>
               <p>Your favourite items are just a click away</p>
-            </div>
+            </li>
           )}
-        </div>
+        </ul>
         <div className="cart-foot centre">
           {cartData.length ? (
             <>

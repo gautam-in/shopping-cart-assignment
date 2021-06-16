@@ -2,19 +2,29 @@
 /* Common Css */
 
 span,
-p {
+p,
+h3 {
   color: $f-text;
 }
 
-p {
+p,
+h3 {
   margin: 10px 0px;
   font-size: $f-medium;
+  font-weight: 500;
 }
 
 span {
   font-size: $f-small;
 }
 
+a,
+li {
+  &:focus {
+    outline: 3px solid #0f1214 !important;
+    padding: 2px;
+  }
+}
 input,
 input[type="text"],
 input[type="password"] {
@@ -27,6 +37,23 @@ input[type="password"] {
   &:focus {
     border-color: $btn-color;
   }
+}
+
+.skip-line {
+  padding: 8px;
+  position: absolute;
+  background: $seconday-color;
+  color: $black-color;
+  left: 50%;
+  height: 40px;
+  transition: transform 0.3s;
+  scroll-behavior: smooth;
+  border-radius: 10px;
+}
+
+.skip-line:focus {
+  transform: translateY(-100%);
+  display: block;
 }
 
 .label::after {

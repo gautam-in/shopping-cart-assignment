@@ -36,21 +36,17 @@ function Product() {
   return (
     <div className="app-product">
       {screenSize > 480 ? (
-        <div className="category-bar">
-          <span
+        <aside className="category-bar">
+          <button
             onClick={loadCategory.bind(null, "showAll")}
-            role="button"
-            tabIndex="0"
             className={`items ${!Boolean(hashID) && "active"}`}
           >
             Show All
-          </span>
+          </button>
           {categoryData.map(
             (data) =>
               data.enabled && (
-                <span
-                  role="button"
-                  tabIndex="0"
+                <button
                   className={`items ${
                     hashID === "#" + data.id ? "active" : "not-active"
                   }`}
@@ -58,10 +54,10 @@ function Product() {
                   onClick={loadCategory.bind(null, data.id)}
                 >
                   {data.name}
-                </span>
+                </button>
               )
           )}
-        </div>
+        </aside>
       ) : (
         <div className="category-bar-mobile">
           <select onChange={loadCategory} name="category" id="category">

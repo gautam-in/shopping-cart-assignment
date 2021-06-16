@@ -29,9 +29,9 @@ function ProductList(props) {
     <>
       {(urlID ? updatedProduct : productData).map((data) => (
         <div key={data.id} className="app-productList">
-          <p className="categoryName">
+          <h3 className="categoryName">
             <b>{data.name}</b>
-          </p>
+          </h3>
           <div className="product-card">
             <img
               src={data.imageURL}

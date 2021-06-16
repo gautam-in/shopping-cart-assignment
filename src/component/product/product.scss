@@ -14,6 +14,7 @@
         border: 1px solid $primary-color;
         cursor: pointer;
         font-size: $f-medium;
+        text-align: left;
         &.active,
         &:hover {
           background-color: darken($color: $gray-color, $amount: 10%);
