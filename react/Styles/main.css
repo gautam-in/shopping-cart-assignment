@@ -4,17 +4,35 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.navbar {
-  align-items: center;
-  padding: 0px 150px;
+.header {
   background-color: white;
   box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.3);
-  display: flex;
-  justify-content: space-between;
   position: fixed;
   width: 100%;
   z-index: 2;
   height: 85px;
+}
+
+.header a {
+  cursor: pointer;
+  margin-left: 10px;
+  margin-top: 6px;
+  color: black;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+}
+
+.header a:hover {
+  color: grey;
+}
+
+.navbar {
+  align-items: center;
+  padding: 0px 150px;
+  display: flex;
+  justify-content: space-between;
 }
 
 .sbkaBazaarLogo {
@@ -30,9 +48,6 @@ body {
   display: flex;
   list-style-type: none;
   align-items: flex-end;
-}
-
-.navbar .left-nav .flow-links li {
 }
 
 .navbar .right-nav .login-links {
@@ -57,7 +72,7 @@ body {
 }
 
 .navbar .right-nav .cart-icon .cart-dimension {
-  width: 30px;
+  width: 25px;
   padding-right: 5px;
 }
 
@@ -75,14 +90,10 @@ main {
 
 @media only screen and (max-width: 1023px) {
   main {
-    padding: 80px 0px 0px 0px;
+    padding: 85px 0px 0px 0px;
   }
   .navbar {
     padding: 0px 0px;
-    height: 80px;
-  }
-  .sbkaBazaarLogo {
-    height: 70px;
   }
 }
 
@@ -90,8 +101,7 @@ main {
   main {
     padding: 60px 0px 0px 0px;
   }
-  .navbar {
-    padding: 0px 0px;
+  .header {
     height: 60px;
   }
   .sbkaBazaarLogo {

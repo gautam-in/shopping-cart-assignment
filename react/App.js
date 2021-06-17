@@ -7,7 +7,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 export default function () {
   return (
     <Router>
-      <header>
+      <header className="header">
         <nav className="navbar">
           <div className="left-nav">
             <img
