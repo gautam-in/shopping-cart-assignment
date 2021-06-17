@@ -1,0 +1,132 @@
+.product-page {
+  display: flex;
+}
+
+.product-list {
+  display: flex;
+  flex-wrap: wrap;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.product-card {
+  flex: 1 1 0; /* Prevent the extra space around content */
+  display: flex; /* Display as flex */
+  flex-direction: column; /* Display flex in column */
+  max-width: 400px;
+  min-width: 175px;
+  margin: 10px;
+  padding: 10px;
+  overflow: hidden;
+}
+
+.product-card .product-title {
+  font-size: 18px;
+  font-weight: bold;
+  height: 100%;
+}
+
+.product-card .product-image {
+  margin-top: 10px;
+  width: 100%;
+}
+
+button.buy-button {
+  background: maroon;
+  padding: 10px 20px;
+  color: white;
+  border: none;
+}
+
+.product-card .product-description {
+  background-color: lightgrey;
+  text-overflow: ellipsis;
+  overflow: auto;
+  min-height: 50px;
+  max-height: 50px;
+  font-size: 12px;
+  padding: 10px;
+  margin-top: 10px;
+}
+
+.product-card .price-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+  font-size: 12px;
+}
+
+.category-dropdown {
+  display: none;
+}
+
+.product-category-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  min-width: 250px;
+  max-width: 250px;
+  background-color: lightgray;
+}
+
+.product-category-list .product-category {
+  border-bottom: 1px solid gray;
+  padding: 10px;
+}
+
+.product-category-list .product-category.active {
+  background-color: gray;
+}
+
+@media only screen and (min-width: 1024px) {
+  .product-card .buy-now-price {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 1023px) {
+  .product-card .product-details {
+    display: flex;
+    height: 125px;
+  }
+  .product-card .product-image {
+    width: 50%;
+  }
+  .product-card {
+    max-width: unset;
+    min-width: 200px;
+  }
+  .product-card .product-title {
+    height: 100%;
+  }
+  .product-card .product-description {
+    min-height: unset;
+    max-height: unset;
+  }
+  .product-card .mrp {
+    display: none;
+  }
+
+  button.buy-button {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .category-dropdown {
+    margin: 10px 0px;
+    width: 100%;
+    background-color: maroon;
+    color: white;
+    padding: 10px;
+    display: inline-block;
+  }
+  .product-page {
+    display: block;
+  }
+  .product-category-list {
+    display: none;
+  }
+}
