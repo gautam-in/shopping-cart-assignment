@@ -1,0 +1,121 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.header {
+  background-color: white;
+  box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.3);
+  position: fixed;
+  width: 100%;
+  z-index: 2;
+  height: 85px;
+}
+
+.header a {
+  cursor: pointer;
+  margin-left: 10px;
+  margin-top: 6px;
+  color: black;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+}
+
+.header a:hover {
+  color: grey;
+}
+
+.navbar {
+  align-items: center;
+  padding: 0px 150px;
+  display: flex;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.sbkaBazaarLogo {
+  height: 80px;
+}
+
+.navbar .left-nav {
+  display: flex;
+  width: 100%;
+}
+
+.navbar .left-nav .flow-links {
+  display: flex;
+  list-style-type: none;
+  align-items: flex-end;
+}
+
+.navbar .right-nav .login-links {
+  display: flex;
+  justify-content: flex-end;
+  padding: 0px 0px 10px 0px;
+}
+
+.number-of-items {
+  white-space: nowrap;
+}
+
+.navbar .right-nav {
+  justify-content: space-between;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.navbar .right-nav .cart-icon {
+  display: flex;
+  background-color: lightgray;
+  align-items: center;
+  padding: 0 15px;
+  height: 100%;
+}
+
+.navbar .right-nav .cart-icon .cart-dimension {
+  width: 25px;
+  padding-right: 5px;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: lightgray;
+  padding: 10px 0px;
+}
+
+main {
+  padding: 85px 150px 0px 150px;
+}
+
+@media only screen and (max-width: 1023px) {
+  main {
+    padding: 85px 0px 0px 0px;
+  }
+  .navbar {
+    padding: 0px 0px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  main {
+    padding: 60px 0px 0px 0px;
+  }
+  .header {
+    height: 60px;
+  }
+  .sbkaBazaarLogo {
+    height: 50px;
+  }
+  .navbar .right-nav .login-links {
+    display: none;
+  }
+  .navbar .left-nav .flow-links {
+    display: none;
+  }
+}

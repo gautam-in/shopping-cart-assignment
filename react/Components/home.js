@@ -35,7 +35,6 @@ export default function () {
   else
     return (
       <>
-        {banner && <h1>cdcd</h1>}
         <ul className="category-list">
           {categories.map((_) => (
             <li key={_.id} className="category">
