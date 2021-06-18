@@ -1,0 +1,17 @@
+<div class="header">
+  <img class="logo" src="assets/images/logo.png">
+  <ul class="main-nav">
+    <li><a routerLink="/home">Home</a></li>
+    <li><a routerLink="/products">Products</a></li>
+  </ul>
+  <div class="user-auth">
+    <ul>
+      <li><a routerLink="/login">SignIn</a></li>
+      <li><a routerLink="/register">Register</a></li>
+    </ul>
+    <button class="cart-btn">
+      <img src="assets/images/cart.svg">
+      {{productsLength$ | async}} Items
+    </button>
+  </div>
+</div>

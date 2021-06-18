@@ -1,0 +1,42 @@
+<section>
+  <mat-carousel
+    timings="250ms ease-in"
+    [autoplay]="true"
+    [interval]="5000"
+    maxWidth="auto"
+    [slides]="banners.length"
+    [loop]="true"
+    [hideArrows]="false"
+    [hideIndicators]="false"
+    orientation="ltr">
+    <mat-carousel-slide *ngFor="let banner of banners"
+      #matCarouselSlide
+      [image]="banner.bannerImageUrl"
+      [ariaLabel]="banner.bannerImageAlt"
+      [hideOverlay]="true"
+      [load]="true">
+    </mat-carousel-slide>
+  </mat-carousel>
+</section>
+<section *ngFor="let category of categories$ | async; let i = index;" class="category-section">
+  <ng-container *ngIf="category.order % 2 !== 0">
+    <figure>
+      <img [src]="category.imageUrl" [alt]="category.key">
+    </figure>
+    <div class="details">
+      <h2>{{category.name}}</h2>
+      <p>{{category.description}}</p>
+      <button>Explore {{category.key}}</button>
+    </div>
+  </ng-container>
+  <ng-container *ngIf="category.order % 2 === 0">
+    <div class="details">
+      <h2>{{category.name}}</h2>
+      <p>{{category.description}}</p>
+      <button>Explore {{category.key}}</button>
+    </div>
+    <figure>
+      <img [src]="category.imageUrl" [alt]="category.key">
+    </figure>
+  </ng-container>
+</section>

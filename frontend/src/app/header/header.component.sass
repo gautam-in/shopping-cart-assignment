@@ -1,0 +1,72 @@
+@import 'src/variables';
+
+.header
+  display: flex;
+  max-width: 1200px;
+  width: 90%;
+
+  .logo
+    height: 80px;
+    margin: 5px 0;
+    width: auto;
+
+  .main-nav
+    margin-top: auto;
+    margin-left: 10%;
+    margin-bottom: 20px;
+
+    li:first-child
+      margin-right: 20px;
+
+  ul
+    list-style: none;
+
+    li
+      cursor: pointer;
+      display: inline-block;
+
+      a
+        color: $dark-grey;
+
+  .user-auth
+    display: flex; 
+    flex-direction:  column;
+    margin-left: auto;
+
+    ul
+      font-size: 80%;
+      padding: 10px 0;
+      text-align: right;
+    
+      li:first-child
+        margin-right: 10px;
+
+    .cart-btn
+      align-items: center;
+      background: $grey;
+      color: $dark-grey;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      margin-top: auto;
+
+    .cart-btn img
+      height: 30px;
+
+/* Small phones to small tablets: from 481px to 767px */
+@media only screen and (max-width: 767px)
+  .header
+    width: 100%;
+
+/* Small phones: from 0 to 480px */
+@media only screen and (max-width: 480px)
+  .main-nav
+    display: none;
+  .user-auth ul
+    display: none;
+  p
+    fint-size: 80%;
+  .header
+    padding-left: 5px;
+    .logo
+      height: 45px;
