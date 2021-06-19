@@ -1,0 +1,96 @@
+@import '../../../../colors'
+
+.container
+    width: 450px
+    background: $black
+    border: 1px solid
+    position: absolute
+    right: 0
+    z-index: 999
+.header
+    background: $black
+    color: $white
+    display: flex
+    justify-content: space-between
+    align-items: center
+    padding: 10px
+    .close
+        cursor: pointer
+.footer
+    text-align: center
+    padding: 10px
+    background: $white
+    > a
+        background: $pinkLight
+        color: $white
+        padding: 10px 20px
+        display: flex
+        margin-top: 15px
+        justify-content: space-between
+        &:hover
+            background: $pinkDart
+
+.content
+    background: $greyCCC
+    overflow: auto
+    height: 500px
+    .cart-item
+        background: $white
+        display: flex
+        align-items: center
+        padding: 5px 10px 0 10px
+        margin: 10px 0
+        .left-section
+            width: 20%
+            img
+                width: 90%
+        .right-section
+            width: 80%
+            font-size: 90%
+            padding: 5px 0
+            h4
+                margin: 0 0 10px 0
+            .detail
+                display: flex
+                justify-content: space-between
+                margin-right: 30px
+            .count, .multiplier, .per-piece-price
+                margin: 0px 10px
+            .circle
+                padding: 0px 5px
+                background: $pinkLight
+                color: white
+                cursor: pointer
+                border-radius: 50%
+            .minus
+                padding: 0 7px
+    .lowest-price
+        display: flex
+        align-items: center
+        margin: 10px
+        background: white
+        img
+            padding: 6px 0
+            margin: 0 15px
+            font-size: 90%
+.no-items
+    height: 100%
+    text-align: center
+    display: flex
+    justify-content: center
+    align-items: center
+    h3
+        padding: 10px
+.start-shopping
+    justify-content: center!important
+
+.header.tablet.desktop
+    display: flex !important
+
+@media screen and ( max-width: 480px )
+    .container
+        width: 100%
+        position: relative!important
+        border: none!important
+    .header.tablet.desktop
+        display: none !important

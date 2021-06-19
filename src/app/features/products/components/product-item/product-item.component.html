@@ -1,0 +1,69 @@
+<div *ngIf="product" class="product">
+  <div class="container">
+    <div class="title">
+      {{ product.product.name }}
+    </div>
+    <div class="sub-container">
+      <img
+        [src]="'../../assets/' + product.product.imageURL"
+        alt="product image"
+      />
+      <div class="right-container">
+        <div class="desc-container">
+          <div class="desc">
+            <p>
+              {{ product.product.description }}
+            </p>
+          </div>
+        </div>
+        <button
+          *ngIf="product.quantity == 0"
+          (click)="addToCart(product)"
+          class="buy-now mobile"
+        >
+          Buy Now @ Rs.{{ product.product.price }}
+        </button>
+        <div *ngIf="product.quantity > 0" class="mobile">
+          <div class="quantity">
+            <span (click)="minusQuantity(product)" class="minus circle">-</span>
+            <span aria-label="product quantity added to cart" class="count">{{
+              product.quantity
+            }}</span>
+            <span (click)="addToCart(product)" class="circle">+</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="product-footer tablet">
+      <div class="price desktop">MRP Rs.{{ product.product.price }}</div>
+      <div *ngIf="product.quantity > 0" class="desktop">
+        <div class="quantity">
+          <span (click)="minusQuantity(product)" class="minus circle">-</span>
+          <span class="count">{{ product.quantity }}</span>
+          <span (click)="addToCart(product)" class="circle">+</span>
+        </div>
+      </div>
+      <button
+        *ngIf="product.quantity == 0"
+        (click)="addToCart(product)"
+        class="buy-now desktop"
+      >
+        Buy Now
+      </button>
+      <button
+        *ngIf="product.quantity === 0"
+        (click)="addToCart(product)"
+        class="buy-now tablet"
+      >
+        Buy Now @ Rs.{{ product.product.price }}
+      </button>
+      <div *ngIf="product.quantity > 0" class="tablet">
+        <div class="quantity">
+          <span (click)="minusQuantity(product)" class="minus circle">-</span>
+          <span class="count">{{ product.quantity }}</span>
+          <span (click)="addToCart(product)" class="circle">+</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

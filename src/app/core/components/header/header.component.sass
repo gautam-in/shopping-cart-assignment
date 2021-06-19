@@ -1,0 +1,90 @@
+@import '../../../../colors'
+
+header
+    box-shadow: 0 4px 3px -2px $greyEEE
+    margin-top: 7px
+.left-section
+    float: left
+    width: 193px
+    cursor: pointer
+.showCart
+    position: relative
+.right-section
+    float: right
+    text-align: right
+    width: calc(100% - 193px)
+    .auth-section
+        font-size: 90%
+    .menu
+        display: flex
+        align-items: center
+        justify-content: space-between
+        padding-top: 25px
+        .main-nav
+            ul
+                list-style: none
+                li
+                    display: inline-block
+                    margin-left: 10px
+                    position: relative
+                .active
+                    color: $pinkLight!important
+                    &:after
+                        content: ' '
+                        width: 90%
+                        border-bottom: 1px solid $pinkLight!important
+                        height: 1px
+                        position: absolute
+                        bottom: -7px
+                        left: 5%
+                a
+                    font-weight: 500
+                    &:hover
+                        color: $disabled
+                        &:after
+                            content: ' '
+                            width: 90%
+                            border-bottom: 1px solid $disabled
+                            height: 1px
+                            position: absolute
+                            bottom: -7px
+                            left: 5%
+
+        .cart-btn
+            display: flex
+            align-items: center
+            background: $greyEEE
+            cursor: pointer
+            padding: 10px 5px
+            img
+                width: 30px
+.overlay
+    position: fixed
+    background: $black
+    opacity: 0.5
+    height: 100%
+    left: 0
+    top: 0
+    width: 100%
+    z-index: 99
+
+.cart-btn.tablet.desktop
+    display: flex!important
+.cart-btn.mobile
+    display: none!important
+
+@media only screen and (max-width: 480px)
+    .left-section
+        float: left
+        width: 160px !important
+        margin-top: 5px
+        img
+            width: 100%!important
+    .row
+        .right-section
+            .menu
+                justify-content: flex-end!important
+    .cart-btn.tablet.desktop
+        display: none!important
+    .cart-btn.mobile
+        display: flex!important

@@ -1,0 +1,59 @@
+<section>
+  <div class="row">
+    <div class="container">
+      <div class="left-section">
+        <h1 aria-label="Login">Login</h1>
+        <p
+          aria-label="description"
+          aria-describedat="Get access to your Orders. Whishlist and Recommendations"
+        >
+          Get access to your Orders. Whishlist and Recommendations
+        </p>
+      </div>
+      <div class="right-section">
+        <form
+          aria-label="Login Form"
+          #loginForm="ngForm"
+          (ngSubmit)="onSubmit(loginForm)"
+        >
+          <div class="form-group">
+            <div class="floating-label">
+              <input
+                class="floating-input"
+                type="text"
+                placeholder=" "
+                required
+                name="email"
+                aria-label="Email input field"
+                email
+                ngModel
+              />
+              <span class="highlight"></span>
+              <label for="email" aria-label="Email label">Email</label>
+            </div>
+            <div class="floating-label">
+              <input
+                class="floating-input"
+                placeholder=" "
+                required
+                ngModel
+                minlength="8"
+                aria-label="Password input field"
+                type="password"
+                name="password"
+              />
+              <span class="highlight"></span>
+              <label for="password" aria-label="Password label">Password</label>
+            </div>
+            <input
+              aria-label="Submit login form"
+              [disabled]="!loginForm.valid"
+              type="submit"
+              value="Login"
+            />
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

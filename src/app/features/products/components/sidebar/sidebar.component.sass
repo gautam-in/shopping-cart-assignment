@@ -1,0 +1,16 @@
+@import '../../../../../colors'
+
+ul
+    list-style: none
+    li
+        padding: 10px
+        border-bottom: 1px solid $greyEEE
+        cursor: pointer
+        &:hover
+            background: $disabled
+            a
+                color: $white
+    .active
+        background: $pinkLight!important
+        a
+            color: $white!important

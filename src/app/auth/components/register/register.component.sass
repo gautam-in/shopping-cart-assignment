@@ -1,0 +1,37 @@
+@import '../../../../colors'
+
+.container
+    display: flex
+    margin: 60px 20px
+    .left-section
+        padding: 0 20px
+        h1
+            margin: 20px 0
+        p
+            font-size: 90%
+    .right-section
+        width: 40%
+        margin-left: 30px
+        .form-group
+            .mat-form-field
+                width: 100%
+        input[type='submit']
+            width: 100%
+            color: white
+            background: $pinkLight
+            padding: 10px 20px
+            border: none
+            &:hover
+                background: $pinkDart
+                cursor: pointer
+        input[type="submit"][disabled]
+            background: $disabled!important
+@media only screen and (max-width: 480px)
+    .container
+        display: block
+        margin: 20px!important
+        .left-section
+            padding: 0 0 30px 0!important
+        .left-section, .right-section
+            width: 100%
+            margin: auto!important

@@ -1,0 +1,38 @@
+<section>
+  <div class="row">
+    <div *ngIf="slider" class="content">
+      <div class="slider">
+        <ngx-slider aria-hidden="true" [init]="slider"></ngx-slider>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="content-2">
+      <div
+        *ngFor="let item of categories; let i = index"
+        class="banner"
+        [class.reverse]="i % 2 !== 0"
+      >
+        <div *ngIf="item.imageUrl" class="image-section">
+          <img
+            aria-label="category image"
+            [src]="'../../assets' + item.imageUrl"
+            alt="product merge"
+          />
+        </div>
+        <div class="content-section">
+          <h1 aria-label="category name">{{ item.name }}</h1>
+          <p>
+            {{ item.description }}
+          </p>
+          <button
+            aria-label="explore category button"
+            [routerLink]="'/products/' + item.id"
+          >
+            Explore {{ item.key }}
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

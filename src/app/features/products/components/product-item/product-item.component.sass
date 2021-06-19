@@ -1,0 +1,128 @@
+@import '../../../../../colors'
+
+.product
+    width: 25%
+    position: relative
+    box-sizing: border-box
+    overflow: hidden
+    margin-bottom: 1%
+    float: left
+    &:after
+        content: " "
+        position: absolute
+        top: 0
+        right: 0
+        font-size: 20px
+        height: 80%
+        margin: 10% 0
+        border-right: 1px solid $greyEEE
+
+    .container
+        margin: 20px
+        .title
+            font-size: 100%
+            font-weight: 600
+            height: 55px
+            padding-bottom: 30px
+            overflow: hidden
+        img
+            width: 100%
+        .desc-container
+            padding: 10px
+            min-height: 80px
+            background: $greyEEE
+            .desc
+                display: -webkit-box
+                -webkit-line-clamp: 4
+                -webkit-box-orient: vertical
+                font-size: 78%
+                overflow: hidden
+                p
+                    margin: 0
+                    word-break: break-all
+        .product-footer
+            display: flex
+            justify-content: space-between
+            align-items: center
+            height: 66px
+            border-bottom: 2px dashed $greyCCC
+            padding: 15px 0
+            .price
+                font-size: 90
+            .buy-now
+                background: $pinkLight
+                padding: 10px
+                cursor: pointer
+                font-size: 90%
+                color: $white
+                border: none
+                &:hover
+                    background: $pinkDart
+    .count
+        margin: 0px 10px
+    .circle
+        padding: 0px 5px
+        background: $pinkLight
+        color: white
+        cursor: pointer
+        border-radius: 50%
+    .minus
+        padding: 0 7px
+    .mobile .quantity
+        width: 100%
+        position: absolute
+        padding: 10px
+        display: flex
+        justify-content: center
+        bottom: 0
+@media screen and (max-width: 768px)
+    .right-container
+        .desc-container
+            height: 100%
+    .product
+        width: 50%
+        .container
+            font-size: 80%
+            .title
+                padding-bottom: 0
+        .sub-container
+            display: flex
+            img
+                width: 48%
+                padding: 0 2% 0 0
+        .buy-now
+            width: 100%
+    .tablet
+        padding: 10px
+        text-align: center
+
+@media only screen and (max-width: 480px)
+    .product
+        width: 100%
+    .right-container
+        position: relative
+        .desc-container
+            padding: 10px
+            height: inherit !important
+            .desc
+                display: -webkit-box
+                -webkit-line-clamp: 4
+                -webkit-box-orient: vertical
+                font-size: 78%
+                overflow: hidden
+                p
+                    margin: 0
+        .buy-now
+            width: 100%
+            background: #d00245
+            color: white
+            border: none
+            position: absolute
+            padding: 10px
+            display: flex
+            justify-content: inherit
+            bottom: 0
+            left: 0
+
+    .title
+        font-size: 160%!important
