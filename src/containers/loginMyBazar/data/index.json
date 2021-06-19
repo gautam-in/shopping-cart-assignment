@@ -1,0 +1,12 @@
+{
+  "title": "Sign In Your Account",
+  "description": "Get access to your Orders, Whitelist and Recommendations.",
+  "emailLabel": "Email",
+  "passwordLabel": "Password",
+  "submitButtonLabel": "Log In",
+  "services": {
+    "urls": {
+      "loginApi": ""
+    }
+  }
+}

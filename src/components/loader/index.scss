@@ -1,0 +1,44 @@
+.throbberOverlay {
+  & .loading {
+    background: #e1e1e1e1;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: 0;
+    position: fixed;
+    width: 100%;
+    z-index: 9999999999;
+    opacity: 0.8;
+    top: 0;
+    height: 100%;
+    -webkit-box-align: center;
+    justify-content: center;
+
+    & .show {
+      display: flex;
+    }
+
+    & .hide {
+      display: none;
+    }
+
+    & .loading-icon {
+      background: url(../../../public/static/images/loading-icon.gif) no-repeat;
+      width: 10%;
+      height: 20%;
+      background-size: contain;
+      position: absolute;
+      top: 40%;
+      left: 45%;
+    }
+  }
+  & .throbberOverlay__text {
+    position: absolute;
+    top: 45%;
+    z-index: 9999999999;
+    text-align: center;
+    width: 100%;
+    left: 0;
+    // margin-top: 20px;
+  }
+}

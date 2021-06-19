@@ -1,0 +1,8 @@
+{
+  "services": {
+    "urls": {
+      "getCategoryApi": "http://localhost:5000/categories/",
+      "getProductApi": "http://localhost:5000/products/"
+    }
+  }
+}

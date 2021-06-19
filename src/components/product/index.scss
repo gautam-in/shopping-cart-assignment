@@ -1,0 +1,168 @@
+.card_container {
+  // min-height: 450px;
+  display: flex;
+  flex-direction: column;
+  background: white;
+  padding: 0px 5px;
+  border-bottom: 1px dashed #eeeeee;
+  border-right: 2px solid #eeeeee;
+  margin-bottom: 1rem;
+  box-shadow: -2px 0px 2px -1px #eeeeee;
+
+  & .title {
+    min-height: 65px;
+  }
+  & .card_body {
+    & .img-fluid_avatar {
+      width: 100%;
+    }
+
+    & .description {
+      padding: 0.4rem;
+      font-size: 0.75rem;
+      flex: 1;
+      background: #eeeeee;
+      min-height: 130px;
+    }
+
+    & .tablet_info_container {
+      display: none;
+    }
+
+    & .mobile_info_container {
+      display: none;
+    }
+  }
+  & .tablet{
+    display: none;
+  }
+  & .card-footer {
+    margin: 10px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    & .price {
+      width: 50%;
+      font-size: 15px;
+      font-weight: 600;
+    }
+
+    & .add_to_cart {
+      width: 50%;
+      font-size: 12px;
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  /* For tablet phones: */
+  .card_container {
+    min-height: inherit;
+    & .title {
+      min-height: auto;
+    }
+    & .card_body {
+      display: flex;
+      flex-direction: row;
+
+      & .image_container {
+        width: 50%;
+      }
+
+      & .description{
+        display: none;
+      }
+
+      & .tablet_info_container {
+        display: flex;
+        width: 50%;
+        flex-direction: column;
+        justify-content: space-between;
+
+        & .description {
+          display: block;
+          flex: none;
+          margin-bottom: 5px;
+          min-height: 170px;
+        }
+
+        & .add_to_cart {
+          width: 100%;
+          font-size: 15px;
+          padding: 0.5rem;
+        }
+      }
+    }
+    & .tablet{
+      display: inline-block;
+    }
+    & .card-footer {
+      display: none;
+    }
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  /* For mobile phones: */
+  .card_container {
+    min-height: auto;
+    margin-bottom: 30px;
+    padding: 0px 15px;
+
+    & .title {
+      min-height: auto;
+    }
+
+    & .card_body {
+      display: flex;
+      flex-direction: row;
+
+      & .image_container {
+        width: 50%;
+      }
+
+      & .tablet_info_container {
+        display: none;
+      }
+
+      & .mobile_info_container {
+        display: flex;
+        width: 50%;
+        flex-direction: column;
+        justify-content: space-between;
+
+        & .description {
+          display: block;
+          flex: none;
+          margin-bottom: 5px;
+          min-height: inherit;
+        }
+
+        & .add_to_cart {
+          width: 100%;
+          font-size: 15px;
+          padding: 0.5rem;
+        }
+      }
+    }
+    & .tablet{
+      display: none;
+    }
+    & .card-footer {
+      flex-direction: column;
+
+      & .price {
+        width: 100%;
+        font-size: 20px;
+        font-weight: 900;
+      }
+
+      & .add_to_cart {
+        width: 100%;
+        font-size: 16px;
+      }
+    }
+  }
+}

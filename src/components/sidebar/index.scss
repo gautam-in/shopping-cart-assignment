@@ -1,0 +1,66 @@
+.sidebar {
+  padding: 0.5rem;
+  background-color: #eeeeee;
+  display: flex;
+  flex-direction: column;
+  width: 22%;
+  margin: 0px 10px 0px 0px;
+  position: sticky;
+  top: 0;
+
+  & .nav_link_container {
+    list-style: none;
+    & .nav_link {
+      color: #00000094;
+      cursor: pointer;
+      display: block;
+      padding: 0.5rem 1rem;
+      border-bottom: 1px solid #00000015;
+      transition: background-color 0.1s ease-in;
+      &:hover {
+        background-color: #00000010;
+      }
+      &.active {
+        color: #fff;
+        background-color: #d10157;
+      }
+    }
+
+    &:last-child {
+      & .nav_link {
+        border-bottom: none;
+      }
+    }
+  }
+}
+
+.select {
+  width: 100%;
+  padding: 1rem 1rem;
+  appearance: none;
+  color: white;
+  border-color: #d10157;
+  background-color: #d10157;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='white' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  background-size: 16px 12px;
+  outline: none;
+  font-size: 16px;
+  & option {
+    background-color: #eeeeee;
+    color: #00000094;
+    cursor: pointer;
+    display: block;
+    padding: 0.5rem 1rem;
+    border-bottom: 1px solid #00000015;
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  /* For tablet phones: */
+  .sidebar {
+    width: 30%;
+  }
+}

@@ -1,0 +1,22 @@
+.modal_container {
+  width: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  background: #00000094;
+  height: 100vh;
+  z-index: 9999;
+
+  & .modal_wrapper {
+    position: fixed;
+    bottom: 48px;
+    right: 123px;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    // justify-content: center;
+    align-items: center;
+    height: calc(100vh - 110px);
+    background-color: #e1e1e1;
+  }
+}

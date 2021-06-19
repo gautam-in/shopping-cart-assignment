@@ -1,0 +1,131 @@
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: #fff;
+  z-index: 99;
+  display: flex;
+  align-items: center;
+  min-height: 50px;
+  -webkit-box-shadow: 0px 0px 0px 0 #00000005, 0px 0px 12px 0 #0000001f;
+  -moz-box-shadow: 0px 0px 0px 0 #00000005, 0px 0px 12px 0 #0000001f;
+  box-shadow: 0px 0px 0px 0 #00000005, 0px 0px 12px 0 #0000001f;
+
+  & .container-fluid {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  & .logo_container_nav {
+    display: flex;
+    flex-direction: row;
+    & .logo_container {
+      & .logo_avatar {
+        height: 55px;
+        width: auto;
+        margin: 5px 0px;
+      }
+    }
+    & .nav_links {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin: 0px 0px 10px 50px;
+      min-width: 50%;
+
+      & a {
+        text-decoration: none;
+        color: #00000094;
+
+        &:visited {
+          color: #00000094;
+        }
+      }
+    }
+  }
+
+  & .nav_container {
+    display: flex;
+    flex-direction: column;
+    & .nav_primary {
+      display: flex;
+      justify-content: flex-end;
+      font-size: 14px;
+      padding: 0;
+      margin: 0;
+      min-height: 25px;
+      & a {
+        text-decoration: none;
+        color: #00000094;
+        width: 50%;
+        text-align: end;
+
+        &:hover {
+          color: #d10157;
+        }
+
+        &:visited {
+          color: #00000094;
+        }
+      }
+
+      & .my_account_container {
+        display: flex;
+        cursor: pointer;
+        & .user_logo {
+          height: 20px;
+          width: 20px;
+        }
+        & span {
+          margin-left: 5px;
+        }
+      }
+    }
+    & .nav_secondary {
+      min-height: 40px;
+      display: flex;
+      align-items: center;
+      background-color: #00000012;
+      padding: 5px 15px 5px 10px;
+      & span {
+        text-decoration: none;
+
+        // &:hover {
+        //   color: #d10157;
+        // }
+
+        // &:visited {
+        //   color: #00000094;
+        // }
+
+        & .cart_logo_container {
+          display: flex;
+          align-items: center;
+          & .cart_logo {
+            height: 25px;
+            width: 25px;
+            margin-right: 10px;
+          }
+          & span {
+            font-size: 16px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  /* For mobile phones: */
+  .header {
+    & .logo_container_nav {
+      & .nav_links {
+        margin: 0px 0px 10px 10px;
+        min-width: 50%;
+      }
+    }
+  }
+}
