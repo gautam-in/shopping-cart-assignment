@@ -1,0 +1,72 @@
+@import "../../stylesheet/generic/settings";
+
+.app {
+  &-navbar {
+    box-shadow: 0 1px 6px 0 #20212447;
+  }
+  &-header {
+    @extend %flex;
+    padding: 10px;
+    height: 80px;
+    width: 95%;
+    margin: 0 auto;
+  }
+  &-block {
+    @extend %flex;
+    &.left {
+      .app-logo {
+        margin: 0;
+      }
+      a {
+        margin: 20px;
+      }
+    }
+
+    &.right {
+      display: block;
+    }
+  }
+  &-auth {
+    @extend %flex;
+    margin-bottom: 5px !important;
+    li {
+      margin-right: 10px;
+      cursor: pointer;
+    }
+  }
+  &-cartBlock {
+    @extend %flex;
+    width: 100%;
+    justify-content: space-evenly;
+    background: $gray-color;
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    p {
+      margin-top: 0px;
+    }
+    &:hover {
+      background-color: darken($color: $gray-color, $amount: 20%);
+    }
+  }
+
+  &-footer {
+    text-align: center;
+    background-color: $gray-color;
+    padding: 15px;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .app-header {
+    .app-block.left {
+      a {
+        display: none;
+      }
+      .app-logo {
+        display: block;
+      }
+    }
+  }
+}
