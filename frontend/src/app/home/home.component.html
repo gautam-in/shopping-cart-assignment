@@ -26,14 +26,14 @@
     <div class="details">
       <h2>{{category.name}}</h2>
       <p>{{category.description}}</p>
-      <button>Explore {{category.key}}</button>
+      <button (click)="openProduct(category)">Explore {{category.key}}</button>
     </div>
   </ng-container>
   <ng-container *ngIf="category.order % 2 === 0">
     <div class="details">
       <h2>{{category.name}}</h2>
       <p>{{category.description}}</p>
-      <button>Explore {{category.key}}</button>
+      <button (click)="openProduct(category)">Explore {{category.key}}</button>
     </div>
     <figure>
       <img [src]="category.imageUrl" [alt]="category.key">

@@ -31,6 +31,11 @@
       padding: 15px 25px;
       border-bottom: 1px solid $dark-grey;
 
+      &:hover, &.selected
+        background: $accent;
+        border-color: $grey;
+        color: $white;
+
 .products
   display: flex;
   flex-wrap: wrap;
@@ -130,10 +135,14 @@
     width: 100%;
 
     .top-nav-bar
+      border-bottom: 1px solid $grey;
       display: flex;
 
     .categories
       display: none;
+
+      li
+        border-bottom: 1px solid $grey;
 
     .expand
       display: block;

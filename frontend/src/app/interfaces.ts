@@ -7,6 +7,7 @@ export interface Product {
   category: string;
   sku: string;
   id: string;
+  count?: number;
 }
 
 export interface Category {

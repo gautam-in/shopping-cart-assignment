@@ -15,6 +15,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ProductsComponent } from './products/products.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { ProductCartComponent } from './product-cart/product-cart.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { RegisterComponent } from './register/register.component';
     HomeComponent,
     ProductsComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    ProductCartComponent
   ],
   imports: [
     BrowserModule,
@@ -36,6 +38,7 @@ import { RegisterComponent } from './register/register.component';
     MatIconModule,
     MatInputModule,
   ],
+  entryComponents: [ProductCartComponent],
   providers: [],
   bootstrap: [AppComponent]
 })

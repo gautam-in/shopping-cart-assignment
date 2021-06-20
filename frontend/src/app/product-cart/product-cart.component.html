@@ -1,0 +1,53 @@
+<header class="cart-header">
+  <h2>My Cart ({{products.length}} item)</h2>
+  <button mat-icon-button class="close-btn" aria-label="Close cart"
+          (click)="closeCart.emit()">
+    <mat-icon>close</mat-icon>
+  </button>
+</header>
+<div class="products" *ngIf="products.length > 0">
+  <section *ngFor="let product of products" class="cart-section">
+    <figure>
+      <img [src]="product.imageURL" [alt]="product.name" class="product-img">
+    </figure>
+    <div class="details">
+      <h2>{{product.name}}</h2>
+      <div class="price-details">
+        <button mat-icon-button color="accent" (click)="decreaseItem(product)" class="adecrease-item">
+          <mat-icon class="next-icon">remove_circle</mat-icon>
+        </button>
+        <span class="product-count">{{product.count}}</span>
+        <button mat-icon-button color="accent" (click)="increaseItem(product)" class="increase-item">
+          <mat-icon class="next-icon">add_circle</mat-icon>
+        </button>
+        <button mat-icon-button (click)="removeItem(product)" class="remove-item">
+          <mat-icon class="next-icon">close</mat-icon>
+        </button>
+        <span class="price">Rs187</span>
+        <span class="total-price">Rs{{product.price * (product.count || 1)}}</span>
+      </div>
+    </div>
+  </section>
+  <section class="promo">
+    <figure>
+      <img class="promo-img" src="assets//images/lowest-price.png" alt="Lowest price promo">
+    </figure>
+    <p class="promo-description">You won't find cheaper anywhere</p>
+  </section>
+</div>
+<section class="no-items" *ngIf="products.length === 0">
+  <h3>No items in your cart</h3>
+  <p>Your favourite itemsare just a click away</p>
+</section>
+<footer class="cart-footer">
+  <p *ngIf="products.length > 0" class="promo-code-label">Promo code can be applied on payment page</p>
+  <button mat-flat-button color="accent" class="proceed-btn" aria-label="Proceed to pay cart"
+          (click)="closeCart.emit()">
+    <span *ngIf="products.length > 0" class="button-content">
+      <span>Proceed to Checkout</span>
+      <span class="price">Rs187</span>
+      <mat-icon class="next-icon">keyboard_arrow_right</mat-icon>
+    </span>
+    <span *ngIf="products.length === 0">Start Shopping</span>
+  </button>
+</footer>

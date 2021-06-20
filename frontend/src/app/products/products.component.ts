@@ -11,7 +11,6 @@ import { DataService } from '../services/data.service';
   styleUrls: ['./products.component.sass']
 })
 export class ProductsComponent implements OnInit {
-  selectedCategory$ = new BehaviorSubject<Category|null>(null);
   categories$: Observable<Category[]> = of([]);
   products: Product[] = [];
   filteredProducts$: Observable<Product[]> = of([]);
@@ -24,9 +23,8 @@ export class ProductsComponent implements OnInit {
       .pipe(map(categories => categories.filter(c => c.order > 0).sort((a, b) => a.order - b.order)));
 
     const products$ = this.apiService.getProducts();
-
     this.filteredProducts$ =
-      combineLatest([products$, this.selectedCategory$])
+      combineLatest([products$, this.dataService.selectedCategory$])
         .pipe(map(([products, category]) => category ? products.filter(p => p.category === category?.id) : products));
   }
 
@@ -34,11 +32,11 @@ export class ProductsComponent implements OnInit {
   }
 
   categoryselected(category: Category) {
-    this.selectedCategory$.next(category);
+    this.dataService.setSelectedCategory(category);
     this.manuExpand = false;
   }
 
   selectProduct(product: Product) {
-    this.dataService.setSelectedProducts(product);
+    this.dataService.setSelectedProducts({...product, count: 1});
   }
 }

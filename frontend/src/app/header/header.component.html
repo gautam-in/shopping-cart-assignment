@@ -9,7 +9,7 @@
       <li><a routerLink="/login">SignIn</a></li>
       <li><a routerLink="/register">Register</a></li>
     </ul>
-    <button class="cart-btn">
+    <button class="cart-btn" (click)="openProductCart()">
       <img src="assets/images/cart.svg">
       {{productsLength$ | async}} Items
     </button>
