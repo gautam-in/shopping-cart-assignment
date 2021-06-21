@@ -1,0 +1,59 @@
+.banners .banner-dots {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  bottom: 20px;
+  left: calc(50% - 25px);
+}
+
+.banners .carousel {
+  position: relative;
+  align-items: center;
+  display: flex;
+}
+
+.banners .carousel:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  width: 90%;
+  left: 5%;
+  height: 10px;
+  z-index: -1;
+  background: radial-gradient(at 50% 0, rgba(0, 0, 0, 0.5), transparent 70%);
+}
+
+.carousel .prev {
+  position: absolute;
+  background-color: grey;
+  color: white;
+  opacity: 70%;
+  padding: 5px;
+}
+
+.carousel .next {
+  position: absolute;
+  right: 0;
+  background-color: grey;
+  opacity: 70%;
+  color: white;
+  padding: 5px;
+}
+
+.banners .banner-image {
+  width: 100%;
+  padding: 20px 0px;
+}
+
+.banners .banner-dot {
+  height: 6px;
+  width: 6px;
+  margin: 0 2px;
+  border-radius: 3px;
+  background-color: lightgray;
+  margin-top: 10px;
+}
+
+.banners .banner-dot.active {
+  background-color: black;
+}

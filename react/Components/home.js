@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import '../Styles/home.css';
 import { Link } from 'react-router-dom';
+import Carousel from './carousel';
 
 export default function () {
   let [categories, setCategories] = useState(null);
   let [loading, setLoading] = useState(true);
   let [error, setError] = useState(null);
-  let [banner, setBanner] = useState(null);
+  let [banners, setBanners] = useState(null);
 
   useEffect(() => {
     fetch('http://localhost:5000/categories')
@@ -23,7 +24,7 @@ export default function () {
     fetch('http://localhost:5000/banners')
       .then((response) => response.json())
       .then((data) => {
-        setBanner(data);
+        setBanners(data);
       })
       .catch((er) => {
         setError(er);
@@ -35,6 +36,7 @@ export default function () {
   else
     return (
       <>
+        {banners && <Carousel banners={banners} />}
         <ul className="category-list">
           {categories.map((_) => (
             <li key={_.id} className="category">
