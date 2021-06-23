@@ -6,8 +6,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
   .MuiButtonBase-root {
     color: #fff;
+  }
+  .MuiButton-root {
+    text-transform: inherit;
   }
 }
 

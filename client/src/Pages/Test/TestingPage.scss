@@ -1,0 +1,17 @@
+.testingDiv {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgb(228, 207, 17);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .box {
+    background-color: #fff;
+    width: 50%;
+    height: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

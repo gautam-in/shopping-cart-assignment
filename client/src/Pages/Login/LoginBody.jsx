@@ -1,11 +1,12 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { TextField } from "@material-ui/core";
 import { useForm, Controller } from "react-hook-form";
 import { useHistory } from "react-router-dom";
 import Button from "Components/ButtonPrimary/ButtonPrimary";
+import { getLocalStorage } from "Helper/loginFunc";
 import "./Body.scss";
 
-const LoginBody = () => {
+export default () => {
   const history = useHistory();
   const {
     control,
@@ -13,10 +14,25 @@ const LoginBody = () => {
     handleSubmit,
   } = useForm();
 
+  const [commonErr, setCommonErr] = useState("");
+
   const onSubmit = (data) => {
     console.log(data);
-    history.replace("/home");
+    const { email, password } = data;
+    let loginDetails = localStorage.getItem(email);
+    loginDetails = JSON.parse(loginDetails);
+    if (password !== loginDetails?.password) {
+      setCommonErr("Invalid credentials");
+      return;
+    }
+    localStorage.setItem("user", email);
+    history.push("/");
   };
+
+  useEffect(() => {
+    const user = getLocalStorage();
+    if (user) history.push("/");
+  }, [history.location.pathname]);
 
   return (
     <section className="login-body-section">
@@ -56,10 +72,10 @@ const LoginBody = () => {
                     value: 6,
                     message: "Password must have at least 6 characters",
                   },
-                  pattern: {
-                    value: /^\S+(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$/,
-                    message: "Password must be alphanumeric without spaces",
-                  },
+                  // pattern: {
+                  //   value: /^\S+(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$/,
+                  //   message: "Password must be alphanumeric without spaces",
+                  // },
                 }}
                 render={({ field }) => (
                   <TextField {...field} type="password" label="Password" />
@@ -69,6 +85,7 @@ const LoginBody = () => {
                 <span className="err-msg">{errors.password.message}</span>
               )}
             </div>
+            {commonErr && <div className="common-err">{commonErr}</div>}
             <div className="form-field">
               <Button title="Login" />
             </div>
@@ -78,5 +95,3 @@ const LoginBody = () => {
     </section>
   );
 };
-
-export default LoginBody;

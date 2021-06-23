@@ -9,7 +9,6 @@ export default () => {
 
   const getBanners = async () => {
     const result = await getBannerList();
-    console.log("result::", result);
     setBannerList(result);
   };
 
@@ -19,17 +18,11 @@ export default () => {
 
   const handleNext = () => {
     const newTransx = transX - 100;
-    console.log("newTransx::next", newTransx);
     if (Math.abs(newTransx) < bannerList.length * 100) setTransX(newTransx);
     else setTransX(0);
   };
   const handlePrev = () => {
     const newTransx = transX + 100;
-    console.log(
-      "newTransx::previous",
-      newTransx,
-      -100 * (bannerList.length - 2)
-    );
     newTransx <= 0
       ? setTransX(newTransx)
       : setTransX(-100 * (bannerList.length - 1));
@@ -56,19 +49,13 @@ export default () => {
         </div>
       </div>
       <div className="img-position">
-        {bannerList?.map((x, idx) => {
-          console.log(
-            "image position::checker",
-            Math.abs(transX) / 100 === idx
-          );
-          return (
-            <div
-              className={`dot ${
-                Math.abs(transX) / 100 === idx ? "dot-selected" : ""
-              }`}
-            ></div>
-          );
-        })}
+        {bannerList?.map((x, idx) => (
+          <div
+            className={`dot ${
+              Math.abs(transX) / 100 === idx ? "dot-selected" : ""
+            }`}
+          ></div>
+        ))}
       </div>
     </section>
   );

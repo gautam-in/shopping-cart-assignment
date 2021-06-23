@@ -3,10 +3,17 @@ import { Button } from "@material-ui/core";
 import "./ButtonPrimary.scss";
 
 export default (props) => {
-  const { title } = props;
+  const { title, click } = props;
   return (
     <div className="btn-style">
-      <Button> {title} </Button>
+      <Button
+        onClick={click}
+        variant="contained"
+        color="secondary"
+        type="submit"
+      >
+        {title} {props.children}
+      </Button>
     </div>
   );
 };

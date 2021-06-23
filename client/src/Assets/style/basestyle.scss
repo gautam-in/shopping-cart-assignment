@@ -1,3 +1,8 @@
 $base-width: 1500px;
 $main-body: 1000px;
-$base-icon-color: rgb(173, 0, 0);
+$base-icon-color: rgb(138, 23, 23);
+$header-height: 6rem;
+$footer-height: 3rem;
+$header-footer_height: $header-height + $footer-height;
+$main-content-height: calc(100vh - #{$header-footer_height});
+$main-content-footer_height: calc(100vh - #{$header-height});

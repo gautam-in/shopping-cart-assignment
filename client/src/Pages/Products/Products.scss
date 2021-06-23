@@ -1,0 +1,28 @@
+@import "../../Assets/style/basestyle.scss";
+.section-product {
+  display: flex;
+  height: $main-content-height;
+  background-color: #fff;
+  padding-left: 2%;
+  aside {
+    width: 30%;
+    // padding-top: 1.5rem;
+  }
+  main .scroll-container {
+    padding: 1.5rem;
+    height: $main-content-height;
+    overflow-y: auto;
+  }
+  .hidden-header-menu {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  aside {
+    display: none;
+  }
+  .hidden-header-menu {
+    display: block !important;
+  }
+}

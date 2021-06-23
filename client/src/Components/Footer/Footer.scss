@@ -1,7 +1,9 @@
+@import "../../Assets/style/basestyle.scss";
+
 .footer-section {
   background: lightgray;
   // padding: 4%;
-  height: 3rem;
+  height: $footer-height;
   font-weight: 600;
   position: fixed;
   bottom: 0;
@@ -10,4 +12,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  font-size: 1rem;
+  color: #000;
+}
+
+@media screen and (max-width: 460px) {
+  .footer-section {
+    font-size: 0.8rem;
+    // font-weight: 400;
+  }
 }

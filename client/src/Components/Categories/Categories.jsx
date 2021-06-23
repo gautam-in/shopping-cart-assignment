@@ -7,13 +7,6 @@ import "./Categories.scss";
 export default (props) => {
   const { data, flip } = props;
   const { imageUrl, description, name } = data;
-  console.log("category::Flip", name, flip);
-  //   const data = {
-  //     imageUrl: "/images/category/fruits.png",
-  //     description:
-  //       "Our beverage department will ensure your fridge is always fully stocked. Shop for soda, juice, beer and more. ",
-  //     name: "Beverages",
-  //   };
   return (
     <section className={`section-categories shadow `}>
       <div className={`categories-container ${flip ? "row-reverse" : ""}`}>
