@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import LoginBody from "./LoginBody";
 import Home from "pages/Home";
 import Login from "pages/Login";

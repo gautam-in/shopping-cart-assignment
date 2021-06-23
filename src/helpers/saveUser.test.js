@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import { signIn, signOut } from "./saveUser";
 
 it("should save user detail in local storage", () => {
