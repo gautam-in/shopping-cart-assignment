@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Container = styled.div`
+export const Container = styled.header`
   box-shadow: 0px 3px 6px rgb(175 175 175 / 40%);
   display: flex;
   justify-content: space-evenly;
