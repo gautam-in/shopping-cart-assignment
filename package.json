@@ -1,15 +1,30 @@
 {
-  "name": "code-exercise",
-  "version": "1.0.0",
-  "description": "This is a shopping cart coding exercise",
-  "main": "index.js",
+  "name": "shopping-cart-frontend",
+  "version": "0.1.0",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "canned -p 5000 ./server"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "canned -p 5000  ./server"
   },
-  "author": "",
-  "license": "MIT",
   "dependencies": {
-    "canned": "^0.3.12"
+    "@fortawesome/fontawesome-svg-core": "^1.2.35",
+    "@fortawesome/free-brands-svg-icons": "^5.15.3",
+    "@fortawesome/free-solid-svg-icons": "^5.15.3",
+    "@fortawesome/react-fontawesome": "^0.1.14",
+    "axios": "^0.21.1",
+    "canned": "^0.3.12",
+    "json-server": "^0.16.3",
+    "lodash": "^4.17.21",
+    "next": "10.2.3",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "react-redux": "^7.2.4",
+    "react-slick": "^0.28.1",
+    "redux": "^4.1.0",
+    "redux-form": "^8.3.7",
+    "redux-thunk": "^2.3.0",
+    "slick-carousel": "^1.8.1",
+    "styled-components": "^5.3.0"
   }
 }
