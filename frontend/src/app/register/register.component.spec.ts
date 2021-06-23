@@ -28,4 +28,11 @@ describe('RegisterComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should render SignUp details', () => {
+    const compiled = fixture.nativeElement;
+
+    expect(compiled.querySelector('.details h1').textContent).toContain('SignUp');
+    expect(compiled.querySelector('.details p').textContent).toContain('We do not share your personal details with anyone.');
+  });
 });

@@ -25,4 +25,11 @@ describe('LoginComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should render login details', () => {
+    const compiled = fixture.nativeElement;
+
+    expect(compiled.querySelector('.details h1').textContent).toContain('Login');
+    expect(compiled.querySelector('.details p').textContent).toContain('Get access to your Orders. Wishlist and Recommendations.');
+  });
 });
