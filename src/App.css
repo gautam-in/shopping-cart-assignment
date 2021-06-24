@@ -1,0 +1,22 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.common-err,
+.err-msg {
+  color: #ff0033;
+  font-size: 0.7rem;
+  margin-top: 0.3rem;
+  font-weight: 600;
+}
+
+.common-err {
+  font-size: 0.8rem;
+}
+
+@media (max-width: 650px) {
+  .MuiButton-label {
+    font-size: 0.5rem;
+  }
+}
