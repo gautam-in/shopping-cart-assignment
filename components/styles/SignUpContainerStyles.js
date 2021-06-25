@@ -7,12 +7,12 @@ const SignUpContainerStyles = styled.div`
   .signIn-container {
     text-align: end;
     margin-bottom: 0.5rem;
-    span{
+    span {
       margin: 0 0.25rem;
       cursor: pointer;
     }
-    @media only screen and (max-width: 767px){
-        display: none;
+    @media only screen and (max-width: 767px) {
+      display: none;
     }
   }
   .signIn-container a {
@@ -27,13 +27,14 @@ const SignUpContainerStyles = styled.div`
     cursor: pointer;
     width: 70%;
     align-self: flex-end;
-    @media only screen and (max-width:767px){
-        flex: 1;
+    @media only screen and (max-width: 767px) {
+      flex: 1;
     }
   }
-  .cart-btn img{
-    filter: invert(19%) sepia(75%) saturate(3402%) hue-rotate(333deg) brightness(81%) contrast(89%);
-      width: 15%;
+  .cart-btn img {
+    filter: invert(19%) sepia(75%) saturate(3402%) hue-rotate(333deg)
+      brightness(81%) contrast(89%);
+    width: 15%;
   }
 `;
 

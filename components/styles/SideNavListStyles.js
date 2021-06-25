@@ -9,20 +9,17 @@ const SideNavListStyles = styled.li`
   text-align: center;
   cursor: pointer;
   order: ${(props) => props.order};
-  ${(props) =>
-    props.active
-      ? `background-color: var(--magenta);
-    color: var(--white);`
-      : ""}
   &:hover {
     background-color: var(--magenta);
     color: var(--white);
   }
-
-  @media only screen and (max-width:767px){
+  &.active{
+    background-color: var(--magenta);
+    color: var(--white);
+  }
+  @media only screen and (max-width: 767px) {
     padding: 0.5rem;
   }
- 
 `;
 
 export default SideNavListStyles;

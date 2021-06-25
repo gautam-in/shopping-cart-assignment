@@ -48,7 +48,7 @@ const shoppingReducer = (state = {}, action) => {
     case SIGN_IN:
       localStorage.setItem("user", action.payload.email);
       return { ...state, userId: action.payload.email };
-      
+
     case SIGN_OUT:
       localStorage.clear();
       return { ...state, userId: null };
@@ -61,33 +61,34 @@ const shoppingReducer = (state = {}, action) => {
   }
 };
 
-const addToCart = (product, cart = [], totalPrice) => {
-  totalPrice = 0;
+const addNewProduct = (product, cart, totalPrice = 0) => {
+  let addedProduct = { ...product };
+  addedProduct.quantity = 1;
+  addedProduct.totalPrice = addedProduct.quantity * addedProduct.price;
+  totalPrice += addedProduct.price;
+  cart = [...cart, { ...addedProduct }];
+  return { cart, totalPrice };
+};
+const addToCart = (product, cart = [], totalPrice ) => {
   if (cart.length > 0) {
     let existingItem = cart.find((item) => item.id === product.id);
     if (existingItem) {
       existingItem.quantity += 1;
       existingItem.totalPrice = existingItem.price * existingItem.quantity;
+      totalPrice += existingItem.price;
+      return { cart, totalPrice };
     } else {
-      let addedProduct = { ...product };
-      addedProduct.quantity = 1;
-      addedProduct.totalPrice = addedProduct.quantity * addedProduct.price;
-      cart = [...cart, { ...addedProduct }];
+      return addNewProduct(product, cart, totalPrice);
     }
   } else {
-    let addedProduct = { ...product };
-    addedProduct.quantity = 1;
-    addedProduct.totalPrice = addedProduct.quantity * addedProduct.price;
-    cart = [...cart, { ...addedProduct }];
+   return addNewProduct(product, cart, totalPrice);
   }
-  cart.forEach((item) => (totalPrice = item.totalPrice + totalPrice));
-
-  return { cart, totalPrice };
 };
 
 const deleteFromCart = (product, deleteCart, newTotalPrice) => {
-  let deleteIndex = deleteCart.find((item, index) => {
-    if (item.id === product.id) return index;
+  let deleteIndex;
+  deleteCart.find((item, index) => {
+    if (item.id === product.id) deleteIndex = index;
   });
   product.quantity -= 1;
   product.totalPrice -= product.price;

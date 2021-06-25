@@ -2,7 +2,8 @@ import styled from "styled-components";
 
 const FooterStyle = styled.footer`
   background-color: var(--lightgrey);
-  position: relative;
+  position: fixed;
+  bottom: 0;
   z-index: 1;
   font-size: 0.8rem;
   height: var(--footerHeight);

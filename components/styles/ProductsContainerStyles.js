@@ -7,8 +7,8 @@ const ProductsContainerStyles = styled.div`
   justify-content: space-between;
   flex-wrap: wrap;
 
-  @media only screen and (max-width:767px){
-      margin: 0;
+  @media only screen and (max-width: 767px) {
+    margin: 0;
   }
 `;
 

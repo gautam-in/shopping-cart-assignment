@@ -20,7 +20,7 @@ export default function Cart(){
             <h4>My Cart {cartItems ? `(${cartItems.length} items)` : ''} </h4>
             <FontAwesomeIcon icon={faTimes} onClick={()=> dispatch(setCartOpen(false))} />
         </header>
-       {cartItems ? 
+       {cartItems?.length > 0 ? 
        <>
        <main className="scroller">{renderCartItems(cartItems)}</main> 
        <section>
@@ -36,7 +36,7 @@ export default function Cart(){
         <>
             <main className="no-items">
                 <h2>No items in the card</h2>
-                <p>yout favourite items are just click away</p>
+                <p>your favourite items are just click away</p>
             </main>
             <footer>
             <CustomButton text={`start shopping`} classes="start-shopping-btn" />

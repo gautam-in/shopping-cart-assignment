@@ -28,9 +28,7 @@ const CartStyles = styled.div`
   main {
     max-height: 50vh;
     overflow-y: auto;
-    .scroller {
-      scrollbar-width: thin;
-    }
+    height: 100%;
   }
   section {
     background-color: white;
@@ -76,7 +74,7 @@ const CartStyles = styled.div`
     font-size: 0.8em;
     right: -999999;
     width: 100%;
-    padding-top:2rem;
+    padding-top: 2rem;
     header {
       background-color: var(--white);
       color: black;

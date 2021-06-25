@@ -31,10 +31,10 @@ const ProductTileStyles = styled.div`
     padding: 1%;
     p {
       margin: 0;
-      display:-webkit-box;
-      -webkit-line-clamp:4;
-      -webkit-box-orient:vertical; 
-      overflow:hidden;
+      display: -webkit-box;
+      -webkit-line-clamp: 4;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
     }
   }
   .product-footer {
@@ -76,7 +76,7 @@ const ProductTileStyles = styled.div`
     .product-content {
       grid-template-rows: 1fr;
     }
-    .image-container{
+    .image-container {
       grid-row-start: 1;
       grid-row-end: 2;
     }

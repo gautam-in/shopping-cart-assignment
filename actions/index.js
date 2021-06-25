@@ -39,7 +39,7 @@ export const fetchProducts = (category) => async (dispatch) => {
 export const setCategory = (id) => async (dispatch, getState) => {
   let category;
   if (id) {
-    category = getState().categories.categories.filter(
+    category = getState().categories.categories?.filter(
       (ele) => ele.id === id
     )[0];
   }
@@ -61,7 +61,6 @@ export const addToShipping = (product) => async (dispatch) => {
   });
   const data = await response.json();
   if (data) {
-    console.log(data);
     dispatch({ type: ADD_TO_SHIPPING, payload: product });
   }
 };
@@ -71,11 +70,11 @@ export const deleteFromShipping = (product) => async (dispatch) => {
 };
 
 export const signIn = (formData) => {
-  return{type: SIGN_IN, payload:formData}
-}
+  return { type: SIGN_IN, payload: formData };
+};
 export const signOut = () => {
-  return{type: SIGN_OUT}
-}
+  return { type: SIGN_OUT };
+};
 
 export const resetStore = () => {
   return {

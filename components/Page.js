@@ -1,19 +1,6 @@
 import Header from "./Header";
-import styled from "styled-components";
 import Footer from "./Footer";
-
-const InnerStyle = styled.main`
-  max-width: var(--maxWidth);
-  margin: 0 auto;
-  padding-top: var(--headerHeight);
-  right: 0;
-  font-size: 0.75rem;
-
-  @media only screen and (max-width: 767px) {
-    max-width: 100%;
-    padding-top: calc(var(--headerHeight) / 2);
-  }
-`;
+import InnerStyle from "./styles/InnerStyle";
 
 export default function Page({ children }) {
   return (

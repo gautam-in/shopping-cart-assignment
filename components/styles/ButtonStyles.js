@@ -10,7 +10,7 @@ const ButtonStyles = styled.button`
   }
   @media only screen and (max-width: 1023px) {
     &::after {
-      content: '${(props) => props.additionalText}';
+      content: "${(props) => props.additionalText}";
     }
   }
 `;

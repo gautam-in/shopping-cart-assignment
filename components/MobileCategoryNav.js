@@ -1,22 +1,18 @@
 import { useRouter } from "next/router";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import SideNavListStyles from "./styles/SideNavListStyles";
 import { connect } from "react-redux";
-import { fetchCategories, setCategory } from "../actions";
+import { setCategory } from "../actions";
 import MobileCategoryStyle from "./styles/MobileCategoryStyle";
 import MobileNavSelectedStyle from "./styles/MobileNavSelectedStyle";
 import { faChevronDown, faChevronUp } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-function MobileCategoryNav({
-  categories,
-  fetchCategories,
-  setCategory,
-  selected,
-}) {
+function MobileCategoryNav({ categories, setCategory, selected }) {
   const router = useRouter();
   const categoryQuery = router.query.category;
   const [open, setOpen] = useState(false);
+
   const PRODUCTS = {
     name: "Products",
     key: "products",
@@ -27,15 +23,14 @@ function MobileCategoryNav({
   };
 
   useEffect(() => {
-    (async () => {
-      await fetchCategories();
-      await setCategory(categoryQuery);
-    })();
+    categoryQuery &&
+      (async () => {
+        await setCategory(categoryQuery);
+      })();
   }, [categoryQuery]);
 
   const onselectionchange = (e, category) => {
     e.stopPropagation();
-    setCategory(category);
     setOpen(false);
     if (category.key === "products") {
       router.push("/products");
@@ -51,7 +46,6 @@ function MobileCategoryNav({
         <SideNavListStyles
           key={category.id}
           order={category.order}
-          active={category.id === categoryQuery}
           onClick={(e) => onselectionchange(e, category)}
         >
           {category.name}
@@ -63,8 +57,12 @@ function MobileCategoryNav({
   return (
     <MobileCategoryStyle onClick={() => setOpen(!open)} open={open}>
       <MobileNavSelectedStyle>
-        {selected?.name || "Products"}
-       {open ? <FontAwesomeIcon icon={faChevronUp} className="chevron-icon"/> : <FontAwesomeIcon icon={faChevronDown} className="chevron-icon"/>} 
+        {selected ? selected.name : "Products"}
+        {open ? (
+          <FontAwesomeIcon icon={faChevronUp} className="chevron-icon" />
+        ) : (
+          <FontAwesomeIcon icon={faChevronDown} className="chevron-icon" />
+        )}
       </MobileNavSelectedStyle>
 
       <ul>
@@ -82,11 +80,8 @@ function MobileCategoryNav({
 }
 const mapStateToProps = (state) => {
   return {
-    categories: state.categories.categories,
     selected: state.categories.selected,
   };
 };
 
-export default connect(mapStateToProps, { fetchCategories, setCategory })(
-  MobileCategoryNav
-);
+export default connect(mapStateToProps, { setCategory })(MobileCategoryNav);

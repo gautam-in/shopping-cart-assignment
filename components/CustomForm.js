@@ -7,7 +7,6 @@ import {validateFunc} from '../lib/formValidation'
 function CustomForm(props) {
 console.log(props)
   const onSubmit = (formValues) => {
-    console.log(formValues)
     props.onSubmit(formValues)
   };
   

@@ -1,6 +1,17 @@
+import { useRouter } from "next/router";
+import { useEffect } from "react";
 import ProductTile from "./ProductTile";
+import { fetchProducts } from "../actions";
+import { connect } from "react-redux";
 
-function Products({ products }) {
+function Products({ products, fetchProducts }) {
+  const { query } = useRouter();
+  const category = query.category;
+  useEffect(() => {
+    (async () => {
+      await fetchProducts(category);
+    })();
+  }, [category]);
 
   const renderProducts = (products) => {
     if (products)
@@ -11,6 +22,13 @@ function Products({ products }) {
 
   return <>{renderProducts(products)}</>;
 }
+const mapStateToProps = (state) => {
+  return {
+    products: state.categories.products,
+    categories: state.categories.categories,
+  };
+};
 
-
-export default Products;
+export default connect(mapStateToProps, {
+  fetchProducts,
+})(Products);

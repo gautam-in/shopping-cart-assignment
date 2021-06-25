@@ -8,21 +8,27 @@ const MobileCategoryStyle = styled.div`
   font-size: 0.8rem;
   font-weight: 600;
   padding: 0.5%;
-  
-  display: none;
   height: fit-content;
   outline: none;
   border: none;
   cursor: pointer;
-  @media only screen and (max-width: 767px) {
-    display: flex;
-    ul{
-        padding:0;
-        display: flex;
-        flex-direction: column;
-        margin: 0;
-        display: ${(props) => (props.open ? "block" : "none")};
+  display: flex;
+    ul {
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      margin: 0;
+      display: ${(props) => (props.open ? "block" : "none")};
     }
-  }
+  /* @media only screen and (max-width: 767px) {
+    display: flex;
+    ul {
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      margin: 0;
+      display: ${(props) => (props.open ? "block" : "none")};
+    }
+  } */
 `;
 export default MobileCategoryStyle;

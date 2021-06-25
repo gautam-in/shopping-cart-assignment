@@ -7,7 +7,7 @@ import SignUpStyle from "../components/styles/SignupStyle";
 
 export default function UserRegisterPage() {
   const router = useRouter();
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
   const formArray = [
     {
       id: 1,
@@ -48,7 +48,6 @@ export default function UserRegisterPage() {
   const header = "Signup";
   const description = "We don not share your personal details with anyone.";
   const onSubmit = (formData) => {
-    console.log(formData);
     dispatch(signIn(formData));
     router.push("/");
   };

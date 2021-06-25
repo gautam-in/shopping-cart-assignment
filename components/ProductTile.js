@@ -15,7 +15,7 @@ export default function ProductTile({ product }) {
           <img src={product.imageURL} alt={product.name} />
         </div>
         <div className="product-desc" title={product.description}>
-         <p>{product.description}</p>
+          <p>{product.description}</p>
         </div>
         <div className="product-footer">
           <div className="product-price">MRP Rs.{product.price}</div>

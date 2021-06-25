@@ -30,36 +30,36 @@ const CustomFormStyle = styled.form`
         color: #90caf9;
         font-size: 0.8em;
       }
-      &:focus{
+      &:focus {
         border-bottom: 1px solid #90caf9;
       }
     }
-    &.error{
-      input{
+    &.error {
+      input {
         border-bottom: 1px solid red;
       }
-      label{
+      label {
         color: red;
       }
-      div{
-        color:red
+      div {
+        color: red;
       }
     }
   }
-  .reduxFormBtn{
-      width: 80%;
-      text-align: center;
+  .reduxFormBtn {
+    width: 80%;
+    text-align: center;
+  }
+  @media only screen and (max-width: 767px) {
+    padding: 1rem;
+    .input-container {
+      width: 100%;
     }
-    @media only screen and (max-width:767px){
-      padding: 1rem;
-      .input-container{
-        width: 100%;
-      }
-      
-      .reduxFormBtn{
-        width: 100%;
-      }
+
+    .reduxFormBtn {
+      width: 100%;
     }
+  }
 `;
 
 export default CustomFormStyle;

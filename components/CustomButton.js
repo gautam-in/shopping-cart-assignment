@@ -1,5 +1,10 @@
 import ButtonStyles from "./styles/ButtonStyles";
-export default function CustomButton({ text, classes, clickHandler,additionalText }) {
+export default function CustomButton({
+  text,
+  classes,
+  clickHandler,
+  additionalText,
+}) {
   return (
     <ButtonStyles
       type="button"
@@ -7,7 +12,7 @@ export default function CustomButton({ text, classes, clickHandler,additionalTex
       onClick={clickHandler}
       additionalText={additionalText}
     >
-        {text}
+      {text}
     </ButtonStyles>
   );
 }
