@@ -1,13 +1,17 @@
 <header>
+  <div class="sr-only sr-only-focusable">
+    <a href="#content">Skip to main content</a>
+  </div>
   <div class="container common-padding">
     <div class="left">
       <mat-toolbar
         *ngIf="isMobile"
         (click)="toggleSideNav()"
         role="menubar"
-        aria-label="Open Navigations"
+        aria-label="Toggle side nav"
         color="accent"
         class="app-toolbar"
+        [attr.aria-expanded]="Constants?.SIDENAV?.opened"
       >
         <button mat-icon-button>
           <mat-icon>menu</mat-icon>
@@ -40,7 +44,7 @@
           <a
             class="nav-link"
             routerLink="/products"
-            [routerLinkActiveOptions]="{ exact: true }"
+            [routerLinkActiveOptions]="{ exact: false }"
             routerLinkActive="active"
             >Products</a
           >

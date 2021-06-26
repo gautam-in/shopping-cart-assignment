@@ -9,6 +9,7 @@ const ImageMinimizerPlugin = require("image-minimizer-webpack-plugin");
 const { extendDefaultPlugins } = require("svgo");
 const BundleAnalyzerPlugin =
   require("webpack-bundle-analyzer").BundleAnalyzerPlugin;
+const webpack = require("webpack");
 
 module.exports = {
   module: {
@@ -44,7 +45,8 @@ module.exports = {
     ],
   },
   plugins: [
-    new BundleAnalyzerPlugin(),
+    // new BundleAnalyzerPlugin(),
+    new webpack.optimize.ModuleConcatenationPlugin(),
     new ImageMinimizerPlugin({
       minimizerOptions: {
         // Lossless optimization with custom option
@@ -93,8 +95,17 @@ module.exports = {
   optimization: {
     minimize: true,
     minimizer: [new HtmlMinimizerPlugin(), new CssMinimizerPlugin()],
+    usedExports: true,
+    innerGraph: true,
     splitChunks: {
       chunks: "all",
+      cacheGroups: {
+        vendors: {
+          test: /[\\/]node_modules[\\/]/, ///< put all used node_modules modules in this chunk
+          name: "vendor", ///< name of bundle
+          chunks: "all", ///< type of code to put in this bundle
+        },
+      },
     },
   },
 

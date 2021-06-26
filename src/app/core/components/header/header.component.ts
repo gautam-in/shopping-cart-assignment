@@ -30,7 +30,7 @@ export class HeaderComponent {
   @ViewChild(PlaceholderDirective, { static: false })
   alertHost!: PlaceholderDirective;
   isMobile = false;
-
+  Constants = Constants;
   constructor(
     private store: Store<AppState>,
     private componentFactoryResolver: ComponentFactoryResolver,

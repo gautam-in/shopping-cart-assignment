@@ -17,7 +17,12 @@
       </mat-option>
     </mat-select>
   </mat-form-field>
-  <div class="left" *ngIf="!isMobile">
+  <div
+    class="left"
+    *ngIf="!isMobile"
+    aria-label="Filter By Category"
+    tabindex="0"
+  >
     <p class="filter" title="Filter By Category">
       <ng-container *ngIf="!(products$ | async)?.filterBy">
         <b> Filter By Category </b>
@@ -57,8 +62,8 @@
       </a>
     </nav>
   </div>
-  <div class="right">
-    <h1 class="title">Products at Sabka Bazar</h1>
+  <div class="right" tabindex="0">
+    <h1 class="sr-only">Products at Sabka Bazar</h1>
     <router-outlet></router-outlet>
   </div>
 </div>

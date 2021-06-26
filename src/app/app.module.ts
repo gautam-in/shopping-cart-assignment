@@ -34,8 +34,8 @@ import { appReducer, metaReducers } from './store/reducers/app.reducer';
       runtimeChecks: {
         strictStateImmutability: true,
         strictActionImmutability: true,
-        strictActionSerializability: true,
-        strictStateSerializability: true,
+        strictActionSerializability: false,
+        strictStateSerializability: false,
       },
     }),
     AppEffectModule,

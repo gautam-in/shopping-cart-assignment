@@ -17,7 +17,7 @@ export const handleAuthentication = (
   token: string
 ) => {
   const expirationDate = new Date(new Date().getTime() + expiresIn * 1000);
-  const user = new User(email, userId, token, expirationDate);
+  const user = new User(email, userId, token, new Date(expirationDate));
   localStorage.setItem('userData', JSON.stringify(user));
   return AuthActions.authenticateSuccess({
     email: email,

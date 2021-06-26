@@ -16,7 +16,7 @@ export const authReducer = createReducer(
       action.email,
       action.userId,
       action.token,
-      action.expirationDate
+      new Date(action.expirationDate)
     );
     return {
       ...state,

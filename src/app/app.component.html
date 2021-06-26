@@ -12,30 +12,34 @@
         routerLink="/"
         routerLinkActive="active"
         [routerLinkActiveOptions]="{ exact: true }"
+        aria-label="Home"
       >
-        <a class="nav-link">Home</a>
+        <span class="nav-link" aria-hidden="true">Home</span>
       </mat-nav-list>
       <mat-nav-list
         routerLink="/products"
-        [routerLinkActiveOptions]="{ exact: true }"
+        [routerLinkActiveOptions]="{ exact: false }"
         routerLinkActive="active"
+        aria-label="Products"
       >
-        <a class="nav-link">Products</a>
+        <span class="nav-link" aria-hidden="true">Products</span>
       </mat-nav-list>
       <ng-container *ngIf="!(user$ | async)?.user">
         <mat-nav-list
           class="nav-link"
           [routerLink]="['/auth', 'login']"
           [routerLinkActive]="['active']"
+          aria-label="SignIn"
         >
-          <a>SignIn</a>
+          <span aria-hidden="true">SignIn</span>
         </mat-nav-list>
         <mat-nav-list
           class="nav-link"
           [routerLink]="['/auth', 'register']"
           [routerLinkActive]="['active']"
+          aria-label="Register"
         >
-          <a>Register</a>
+          <span aria-hidden="true">Register</span>
         </mat-nav-list>
       </ng-container>
 
@@ -43,9 +47,13 @@
         <mat-nav-list>
           Hi there!! {{ (user$ | async)?.user?.email }}
         </mat-nav-list>
-        <mat-nav-list class="logout-nav">
+        <mat-nav-list class="logout-nav" aria-label="Log out">
           Logout
-          <i class="material-icons logout" (click)="logout()" title="Log out"
+          <i
+            class="material-icons logout"
+            aria-hidden="true"
+            (click)="logout()"
+            title="Log out"
             >logout</i
           >
         </mat-nav-list>
@@ -56,8 +64,8 @@
     </div>
 
     <mat-sidenav-content>
-      <div class="wrapper" role="main">
-        <div class="content-body container">
+      <div class="wrapper">
+        <div class="content-body container" id="content" role="main">
           <router-outlet></router-outlet>
         </div>
         <app-footer></app-footer>

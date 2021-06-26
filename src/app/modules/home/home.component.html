@@ -1,10 +1,16 @@
 <div class="carousel-wrapper" aria-label="Banner of Home Page">
-  <carousel #carousel="carousel">
+  <carousel #carousel="carousel" role="list">
     <ng-container
       *ngFor="let item of (banners$ | async)?.banners; let i = index"
     >
       <ng-container *carouselItem>
-        <div class="item" title="Carousel Item {{ i }}">
+        <div
+          class="item"
+          title="Carousel Item {{ i }}"
+          role="listitem"
+          [attr.aria-setsize]="(banners$ | async)?.banners?.length"
+          [attr.aria-posinset]="i"
+        >
           <img
             [src]="item.bannerImageUrl"
             [alt]="item.bannerImageAlt"
@@ -17,32 +23,35 @@
 
   <div style="margin-top: 1em">
     <a
-      (click)="carousel.next()"
-      role="button"
-      aria-label="Go to Next Item"
-      class="btn-next"
-      [ngClass]="{ disabled: carousel?.nextDisabled }"
-      >Next</a
-    >
-    <a
       (click)="carousel.prev()"
       role="button"
+      tabindex="0"
       aria-label="Go to Previous Item"
       class="btn-prev"
       [ngClass]="{ disabled: carousel?.prevDisabled }"
       >Prev</a
+    >
+    <a
+      (click)="carousel.next()"
+      role="button"
+      tabindex="0"
+      aria-label="Go to Next Item"
+      class="btn-next"
+      [ngClass]="{ disabled: carousel?.nextDisabled }"
+      >Next</a
     >
   </div>
 </div>
 
 <ul class="categories" aria-label="List of Categories Available in Store">
   <li *ngFor="let category of (categories$ | async)?.categories">
-    <section class="category">
+    <section class="category" [attr.aria-label]="category.name">
       <div class="left">
         <img
           [src]="category?.imageUrl"
           [alt]="category?.description"
           [title]="category?.description"
+          tabindex="0"
         />
       </div>
       <div class="right">
