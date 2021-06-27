@@ -1,0 +1,22 @@
+button {
+  background-color: var(--btn-bg-primary);
+  border: none;
+  border-radius: 2px;
+  color: var(--btn-text-primary);
+  cursor: pointer;
+  height: auto;
+  font-family: "Dosis", sans-serif;
+  font-weight: 600;
+  padding: 10px 10px;
+  width: 100%;
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.7;
+  }
+  &.cartButton {
+    background-color: var(--btn-bg-secondary);
+  }
+  &:hover {
+    filter: brightness(80%);
+  }
+}

@@ -1,0 +1,23 @@
+footer {
+  align-items: center;
+  background-color: #eaeaea;
+  display: flex;
+  height: 40px;
+  justify-content: center;
+  padding: 0px 12%;
+  span {
+    color: var(--text-dark-black);
+    font-size: 14px;
+    font-weight: 600;
+  }
+}
+
+@media (max-width: 480px) {
+  footer {
+    height: 30px;
+    padding: 0px 4%;
+    span {
+      font-size: 12px;
+    }
+  }
+}

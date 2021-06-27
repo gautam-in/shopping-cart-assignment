@@ -1,0 +1,31 @@
+.carousel-container {
+  box-shadow: 0 8px 6px -6px var(--box-shadow);
+  margin: 0 12%;
+  button {
+    background-color: grey;
+    color: white;
+    height: 30;
+    opacity: 0.5;
+    position: absolute;
+    top: calc(50% - 15px);
+    width: auto;
+    z-index: 2;
+  }
+  .control-dots {
+    .dot {
+      background-color: #464646;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .carousel-container {
+    margin: 0;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .carousel-container {
+    margin: 0;
+  }
+}

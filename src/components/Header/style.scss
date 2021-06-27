@@ -1,0 +1,115 @@
+header {
+  background-color: white;
+  box-shadow: 0 8px 6px -6px var(--box-shadow);
+  display: flex;
+  height: 80px;
+  padding: 0 12%;
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+  .logo-container {
+    align-items: center;
+    display: flex;
+    flex-basis: 15%;
+    img {
+      max-width: 150px;
+    }
+  }
+  .nav-container {
+    display: flex;
+    flex-basis: 85%;
+    flex-direction: column;
+    &__quickLinks {
+      flex-basis: 40%;
+      text-align: end;
+      a {
+        text-decoration: none;
+        margin: 0 5px;
+        &:last-child {
+          margin-right: 0;
+        }
+        span {
+          font-size: 12px;
+          font-weight: 600;
+        }
+      }
+    }
+    &__navigation {
+      display: flex;
+      flex-basis: 60%;
+      height: 100%;
+      &__links {
+        align-items: center;
+        display: flex;
+        flex-basis: 90%;
+        a {
+          text-decoration: none;
+          &:first-child {
+            margin-left: 10%;
+            margin-right: 5%;
+          }
+          span {
+            color: var(--text-light-black);
+            font-weight: 600;
+          }
+        }
+      }
+      &__buttonContainer {
+        flex-basis: 10%;
+        text-align: center;
+        button {
+          align-items: center;
+          display: flex;
+          height: 100%;
+          width: 100px;
+          img {
+            filter: invert(24%) sepia(71%) saturate(2418%) hue-rotate(320deg)
+              brightness(82%) contrast(91%);
+            margin-right: 5px;
+            width: 25px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  header {
+    height: 50px;
+    padding: 0;
+    .logo-container {
+      padding-left: 10px;
+      padding-top: 5px;
+      img {
+        max-width: 90px;
+      }
+    }
+    .nav-container {
+      display: block;
+      &__navigation {
+        flex-direction: row-reverse;
+      }
+    }
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  header {
+    padding: 0;
+    .logo-container {
+      img {
+        max-width: 140px;
+      }
+    }
+    .nav-container {
+      &__quickLinks {
+        a {
+          &:last-child {
+            margin-right: 5px;
+          }
+        }
+      }
+    }
+  }
+}
