@@ -18,6 +18,9 @@
         src="{{ product?.imageURL }}"
         alt="Card image cap"
         [title]="product?.name"
+        loading="lazy"
+        height="275"
+        width="275"
       />
       <div class="card-text" fxFlex>
         {{ product?.description }}

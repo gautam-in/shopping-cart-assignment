@@ -4,11 +4,12 @@
   (mouseenter)="stopRotation()"
   (mouseleave)="startRotation()"
 >
-  <ul class="carousel-inner" #carousel>
+  <ul class="carousel-inner" #carousel role="list">
     <li
       *ngFor="let item of items"
       class="carousel-item"
       [ngStyle]="carouselWrapperStyle"
+      role="listitem"
     >
       <ng-container [ngTemplateOutlet]="item.tpl"></ng-container>
     </li>

@@ -23,6 +23,8 @@
           class="logo-image"
           alt="Sabka bazaar"
           title="Sabka Bazaar"
+          width="150"
+          height="68"
         />
       </a>
       <ul
@@ -100,8 +102,10 @@
           alt="cart"
           class="cart-logo"
           title="{{ (cart$ | async)?.products?.length || 0 }} items"
+          width="40"
+          height="40"
         />
-        <a>{{ (cart$ | async)?.products?.length || 0 }} items</a>
+        <span>{{ (cart$ | async)?.products?.length || 0 }} items</span>
       </button>
     </div>
   </div>

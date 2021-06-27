@@ -1,5 +1,6 @@
+import { isPlatformBrowser } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { Inject, Injectable, PLATFORM_ID } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { select, Store } from '@ngrx/store';
 import { of } from 'rxjs';
@@ -40,7 +41,8 @@ export class CartEffects {
     private http: HttpClient,
     private store: Store<AppState>,
     private util: UtilService,
-    private productService: ProductService
+    private productService: ProductService,
+    @Inject(PLATFORM_ID) private platformId: Object
   ) {}
   addProductAction = createEffect(() =>
     this.actions$.pipe(
@@ -74,7 +76,9 @@ export class CartEffects {
         ofType(CartActions.fetchLocalCart),
         map(() => {
           const cartState: CartState = JSON.parse(
-            localStorage.getItem('cartModel') || '0'
+            isPlatformBrowser(this.platformId)
+              ? localStorage.getItem('cartModel') || '0'
+              : '0'
           );
           if (!cartState) {
             return { type: 'DUMMY' };
@@ -96,7 +100,9 @@ export class CartEffects {
         ),
         withLatestFrom(this.store.pipe(select(selectCartState))),
         switchMap(([actionData, cartState]) => {
-          localStorage.setItem('cartModel', JSON.stringify(cartState));
+          if (isPlatformBrowser(this.platformId)) {
+            localStorage.setItem('cartModel', JSON.stringify(cartState));
+          }
           return cartState.products;
         })
       ),

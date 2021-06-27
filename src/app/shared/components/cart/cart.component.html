@@ -6,7 +6,6 @@
         >({{ (cart$ | async)?.products?.length || 0 }} item)</span
       >
     </span>
-
     <button
       class="close"
       aria-label="Close"
@@ -29,6 +28,7 @@
             class="card-img"
             [alt]="product?.name"
             [title]="product?.name"
+            loading="lazy"
           />
         </div>
         <div class="cart-description">
@@ -72,6 +72,7 @@
             class="offer-image"
             src="assets/images/lowest-price.png"
             alt="lowest-price"
+            loading="lazy"
           />
         </figure>
         <p class="offer-text">You won't find it cheaper anywhere</p>

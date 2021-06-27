@@ -1,5 +1,6 @@
+import { isPlatformBrowser } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { Inject, Injectable, PLATFORM_ID } from '@angular/core';
 import { Router } from '@angular/router';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { of } from 'rxjs';
@@ -9,6 +10,7 @@ import { UtilService } from 'src/app/core/services/util.service';
 import { ErrorMsg } from '../../common/constants/error.constants';
 import { AuthService } from '../../services/auth.service';
 import { AuthActions } from '../actions/action-types';
+let platformId: any;
 
 export const handleAuthentication = (
   expiresIn: number,
@@ -18,7 +20,10 @@ export const handleAuthentication = (
 ) => {
   const expirationDate = new Date(new Date().getTime() + expiresIn * 1000);
   const user = new User(email, userId, token, new Date(expirationDate));
-  localStorage.setItem('userData', JSON.stringify(user));
+  if (isPlatformBrowser(platformId)) {
+    localStorage.setItem('userData', JSON.stringify(user));
+  }
+
   return AuthActions.authenticateSuccess({
     email: email,
     userId: userId,
@@ -47,7 +52,6 @@ export const handleError = (errorRes: any) => {
   }
   return of(AuthActions.authenticateFail({ reason: errorMessage }));
 };
-
 @Injectable()
 export class AuthEffects {
   constructor(
@@ -55,8 +59,11 @@ export class AuthEffects {
     private http: HttpClient,
     private router: Router,
     private authService: AuthService,
-    private util: UtilService
-  ) {}
+    private util: UtilService,
+    @Inject(PLATFORM_ID) private platformId: Object
+  ) {
+    platformId = this.platformId;
+  }
 
   authSignup = createEffect(() =>
     this.actions$.pipe(
@@ -115,12 +122,15 @@ export class AuthEffects {
     this.actions$.pipe(
       ofType(AuthActions.autoLogin),
       map(() => {
-        const userData: {
+        let userData: {
           email: string;
           id: string;
           _token: string;
           _tokenExpirationDate: string;
-        } = JSON.parse(localStorage.getItem('userData') || '0');
+        } = JSON.parse('0');
+        if (isPlatformBrowser(this.platformId)) {
+          userData = JSON.parse(localStorage.getItem('userData') || '0');
+        }
         if (!userData) {
           return { type: 'DUMMY' };
         }

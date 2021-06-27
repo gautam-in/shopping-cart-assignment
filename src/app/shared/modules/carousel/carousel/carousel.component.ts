@@ -100,15 +100,17 @@ export class CarouselComponent implements AfterViewInit, OnDestroy {
   ngAfterViewInit() {
     this.carouselSlidelength = this.items?.length;
 
-    // For some reason only here I need to add setTimeout, in my local env it's working without this.
-    setTimeout(() => {
-      this.itemWidth =
-        this.itemsElements?.first?.nativeElement?.parentElement?.parentElement.getBoundingClientRect().width;
-      this.carouselWrapperStyle = {
-        width: `${this.itemWidth}px`,
-      };
-      this.startRotation();
-    });
+    if (isPlatformBrowser(this.platformId)) {
+      // For some reason only here I need to add setTimeout, in my local env it's working without this.
+      setTimeout(() => {
+        this.itemWidth =
+          this.itemsElements?.first?.nativeElement?.parentElement?.parentElement?.getBoundingClientRect()?.width;
+        this.carouselWrapperStyle = {
+          width: `${this.itemWidth}px`,
+        };
+        this.startRotation();
+      });
+    }
   }
 
   stopRotation() {

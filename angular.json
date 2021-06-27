@@ -30,11 +30,11 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
-            "aot": true,
             "assets": [
               "src/favicon.ico",
               "src/assets",
               "src/manifest.webmanifest",
+              "src/robots.txt",
               {
                 "glob": "**/*",
                 "input": "server/static/",
