@@ -18,14 +18,14 @@ const HomePage = () => {
     dispatch(getCategoryList());
   }, [dispatch]);
   return (
-    <>
-    <BannerCarousel banners={bannerList}/>
+    <main className="homepage-container">
+      <BannerCarousel banners={bannerList} />
       {_.sortBy(categoryList, ["order"]).map((category) => {
         if (category.order > 0) {
           return <CategoryCard key={category.id} category={category} />;
         }
       })}
-    </>
+    </main>
   );
 };
 

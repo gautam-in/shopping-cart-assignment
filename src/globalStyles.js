@@ -2,7 +2,7 @@ import { createGlobalStyle } from "styled-components";
 
 export const GlobalStyles = createGlobalStyle`
     html {
-        --btn-bg-primary: #bf2957;
+        --btn-bg-primary: #ce0e55;
         --btn-bg-secondary: #eeeeee;
         --btn-text-white: #fafaf7;
         --text-dark-black: #1c1c1c;

@@ -63,7 +63,7 @@ const Header = () => {
             ) : null}
 
             <div className="nav-container__navigation__buttonContainer">
-              <Button className="cartButton">
+              <Button className="cartButton" tabIndex="6">
                 <img src="static/images/cart.svg" alt="Cart Icon" aria-hidden />
                 <Text ariaLabel={`You have 0 items in your Cart`}>0 items</Text>
               </Button>

@@ -5,11 +5,12 @@ import "./style.scss";
 const Button = ({
   ariaLabel = "",
   ariaHidden = false,
-  className = "",
   children,
+  className = "",
+  clickHandler,
   disabled = false,
-  handler,
   type = "submit",
+  ...otherProps
 }) => {
   return (
     <button
@@ -17,8 +18,9 @@ const Button = ({
       aria-hidden={ariaHidden}
       className={`button ${className}`}
       disabled={disabled}
-      onClick={handler}
+      onClick={clickHandler}
       type={type}
+      {...otherProps}
     >
       {children}
     </button>
