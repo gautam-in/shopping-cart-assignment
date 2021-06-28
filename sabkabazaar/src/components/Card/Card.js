@@ -4,7 +4,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './Card.scss';
 
-
 const Card = React.memo(({product, addCart,cartSideNav}) => {
   const {name, imageURL, sku, description, price, disabled} = product;
   const temp = imageURL.split('/').reverse()

@@ -1,7 +1,7 @@
 import {useForm} from 'react-hook-form';
 import {Form, Label, Input} from 'reactstrap';
 import ErrorMessage from '../../../components/ErrorMessage';
-import {emailValidation, passwordValidation} from '../../../constant';
+import {emailValidation, passwordValidation} from '../../../contants';
 import '../../../styles/Form.scss';
 
 const LoginForm = () => {
@@ -88,7 +88,18 @@ const LoginForm = () => {
             </div>
           </div>
         </div>
-        
+        <div className="row">
+          <div className="col-sm-12 col-md-12 col-lg-12 col-xs-12">
+            <div className="floating-group">
+              <button
+                type="submit"
+                className="form-submit-btn"               
+              >
+                Login
+              </button>
+            </div>
+          </div>
+      </div>
       </>
     </Form>
   );

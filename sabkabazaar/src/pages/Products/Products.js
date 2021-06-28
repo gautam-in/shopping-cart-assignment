@@ -3,8 +3,8 @@ import {useEffect, useState} from 'react';
 import {useDispatch} from 'react-redux';
 import {useLocation} from 'react-router-dom';
 import {
-  fetchCategoriesDataRequest,
-  fetchProductsDataRequest,
+  fetchCategoriesDataRequestAction,
+  fetchProductsDataRequestAction,
 } from '../../actions';
 import ProductFilter from './ProductFilter';
 import ProductsList from './ProductsList';
@@ -18,8 +18,8 @@ const Products = ({cartSideNav}) => {
   const [filterId, setFilterId] = useState(null);
 
   useEffect(() => {
-    dispatch(fetchProductsDataRequest());
-    dispatch(fetchCategoriesDataRequest());
+    dispatch(fetchProductsDataRequestAction());
+    dispatch(fetchCategoriesDataRequestAction());
   }, [dispatch]);
 
   useEffect(() => {

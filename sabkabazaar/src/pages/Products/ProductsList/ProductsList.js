@@ -3,7 +3,7 @@ import React, {useCallback, useEffect, useState} from 'react';
 import PropTypes from 'prop-types';
 import Card from '../../../components/Card';
 import {selectCartProductIds, getProducts} from '../../../selector';
-import {createAddToCartRequest} from '../../../actions';
+import {createAddToCartRequestAction} from '../../../actions';
 import './ProductList.scss';
 
 const ProductList = React.memo(({filterId,cartSideNav }) => {
@@ -16,7 +16,7 @@ const ProductList = React.memo(({filterId,cartSideNav }) => {
   const addCart = useCallback(
     (product) => {
     
-      dispatch(createAddToCartRequest({...product, quantity: 1}));
+      dispatch(createAddToCartRequestAction({...product, quantity: 1}));
     },
     [dispatch],
   );

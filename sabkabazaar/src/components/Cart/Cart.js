@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import {Modal} from 'reactstrap';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faTimes, faGreaterThan} from '@fortawesome/free-solid-svg-icons';
-import {cartProductQuantity, removeCartProduct} from '../../actions';
+import {cartProductQuantityAction, removeCartProductAction} from '../../actions';
 import {allCartData} from '../../selector';
 import './Cart.scss';
 
@@ -18,9 +18,9 @@ const Cart = React.memo(({isSlideOpen, cartSideNav}) => {
     const {quantity} = cartProduct;
     const quantityHash = status === 'increment' ? quantity + 1 : quantity - 1;
     if (quantityHash < 1) {
-      dispatch(removeCartProduct({...cartProduct}));
+      dispatch(removeCartProductAction({...cartProduct}));
     } else {
-      dispatch(cartProductQuantity({...cartProduct, quantity: quantityHash}));
+      dispatch(cartProductQuantityAction({...cartProduct, quantity: quantityHash}));
     }
   };
 

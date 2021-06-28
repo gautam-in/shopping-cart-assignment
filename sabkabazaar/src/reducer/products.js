@@ -1,8 +1,8 @@
 import {
-  FETCH_PRODUCTS_REQUEST,
-  FETCH_PRODUCTS_SUCCESS,
-  FETCH_PRODUCTS_FAILURE,
-} from '../types';
+  SABKABAZAAR_FETCH_PRODUCTS_REQUEST,
+  SABKABAZAAR_FETCH_PRODUCTS_SUCCESS,
+  SABKABAZAAR_FETCH_PRODUCTS_FAILURE,
+} from '../actions';
 
 const intialState = {
   loading: false,
@@ -12,21 +12,21 @@ const intialState = {
 
 const products = (state = intialState, action) => {
   switch (action.type) {
-    case FETCH_PRODUCTS_REQUEST: {
+    case SABKABAZAAR_FETCH_PRODUCTS_REQUEST: {
       return {
         loading: true,
         data: {},
         error: false,
       };
     }
-    case FETCH_PRODUCTS_SUCCESS: {
+    case SABKABAZAAR_FETCH_PRODUCTS_SUCCESS: {
       return {
         loading: false,
         data: action.products.entities.data,
         error: false,
       };
     }
-    case FETCH_PRODUCTS_FAILURE: {
+    case SABKABAZAAR_FETCH_PRODUCTS_FAILURE: {
       return {
         loading: false,
         data: {},

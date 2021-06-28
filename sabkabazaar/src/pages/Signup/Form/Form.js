@@ -7,7 +7,7 @@ import {
   emailValidation,
   nameValidation,
   passwordValidation,
-} from '../../../constant';
+} from '../../../contants';
 import '../../../styles/Form.scss';
 
 const signUpForm = () => {

@@ -4,9 +4,6 @@ import {cleanup, screen,render} from '@testing-library/react';
 import 'regenerator-runtime/runtime';
 import Header from '../Header';
 
-
-
-
 afterEach(() => {
   cleanup();
 });

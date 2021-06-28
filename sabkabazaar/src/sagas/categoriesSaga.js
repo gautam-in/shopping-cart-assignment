@@ -1,22 +1,22 @@
 import {call, put, takeLatest} from 'redux-saga/effects';
 import {normalize} from 'normalizr';
-import {FETCH_CATEGORIES_REQUEST} from '../types';
 import Api from '../services/Api';
 import schema from '../schema';
 import {
-  fetchCategoriesDataSuccess,
-  fetchCategoriesDataFailure,
+  fetchCategoriesDataSuccessAction,
+  fetchCategoriesDataFailureAction,
+  SABKABAZAAR_FETCH_CATEGORIES_REQUEST
 } from '../actions';
 
 export function* fetchCategories() {
   try {
     const categories = yield call(Api.getCategories);
-    yield put(fetchCategoriesDataSuccess(normalize(categories, [schema])));
+    yield put(fetchCategoriesDataSuccessAction(normalize(categories, [schema])));
   } catch (err) {
-    yield put(fetchCategoriesDataFailure());
+    yield put(fetchCategoriesDataFailureAction());
   }
 }
 
 export function* categoriesSaga() {
-  yield takeLatest(FETCH_CATEGORIES_REQUEST, fetchCategories);
+  yield takeLatest(SABKABAZAAR_FETCH_CATEGORIES_REQUEST, fetchCategories);
 }

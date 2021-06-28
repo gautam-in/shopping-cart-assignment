@@ -5,14 +5,14 @@ import {useEffect} from 'react';
 import './Categories.scss';
 import {useDispatch, useSelector} from 'react-redux';
 import {Link} from 'react-router-dom';
-import {fetchCategoriesDataRequest} from '../../../actions';
+import {fetchCategoriesDataRequestAction} from '../../../actions';
 import {allCategoriesData} from '../../../selector';
 
 
 const Categories = () => {
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(fetchCategoriesDataRequest());
+    dispatch(fetchCategoriesDataRequestAction());
   }, [dispatch]);
 
   const {loading, data, error} = useSelector((state) =>

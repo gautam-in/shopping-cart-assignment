@@ -2,18 +2,18 @@ import {call, put, takeLatest} from 'redux-saga/effects';
 import {normalize} from 'normalizr';
 import Api from '../services/Api';
 import schema from '../schema';
-import {fetchProductDataSuccess, fetchProductsDataFailure} from '../actions';
-import {FETCH_PRODUCTS_REQUEST} from '../types';
+import {fetchProductDataSuccessAction, fetchProductsDataFailureAction, SABKABAZAAR_FETCH_PRODUCTS_REQUEST} from '../actions';
 
 export function* fetchProducts() {
-  try {
+  try {    
     const products = yield call(Api.getProducts);
-    yield put(fetchProductDataSuccess(normalize(products, [schema])));
+    console.log('shakun', products)
+    yield put(fetchProductDataSuccessAction(normalize(products, [schema])));
   } catch (err) {
-    yield put(fetchProductsDataFailure());
+    yield put(fetchProductsDataFailureAction());
   }
 }
 
 export function* productSaga() {
-  yield takeLatest(FETCH_PRODUCTS_REQUEST, fetchProducts);
+  yield takeLatest(SABKABAZAAR_FETCH_PRODUCTS_REQUEST, fetchProducts);
 }
