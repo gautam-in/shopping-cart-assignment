@@ -7,16 +7,22 @@ import Footer from "Components/Footer/Footer";
 // import { getCategoryList } from "Services/services";
 
 export default () => {
-  const categories = useContext(CategoryContext);
+  const { categories, setSelected } = useContext(CategoryContext);
 
   return (
     <>
       <Header />
       <div className="main-container-body">
         <Slider />
-        {categories?.map((catagory, idx) => (
-          <Categories data={catagory} flip={idx % 2 === 0 ? false : true} />
-        ))}
+        {categories
+          ?.filter((x) => x.id !== "")
+          .map((catagory, idx) => (
+            <Categories
+              data={catagory}
+              setSelected={setSelected}
+              flip={idx % 2 === 0 ? false : true}
+            />
+          ))}
       </div>
       <Footer />
     </>

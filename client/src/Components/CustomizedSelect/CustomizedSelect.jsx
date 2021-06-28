@@ -5,8 +5,7 @@ import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import "./CustomizedSelect.scss";
 
 export default (props) => {
-  const { handleFilter, selected } = props;
-  const categories = useContext(CategoryContext);
+  const { handleFilter, selected, categories } = props;
   const [selectedText, setSelectedText] = useState("");
   const [showList, setShowList] = useState(false);
   const [menuList, setMenuList] = useState([]);

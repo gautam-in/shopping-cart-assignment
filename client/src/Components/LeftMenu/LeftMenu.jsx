@@ -4,14 +4,14 @@ import { CategoryContext } from "Context/CategoryContext";
 import "./leftMenu.scss";
 
 export default (props) => {
-  const { handleFilter, selected } = props;
-  const categories = useContext(CategoryContext);
+  const { handleFilter, categories, selected } = props;
   const [menuList, setMenuList] = useState([]);
 
   useEffect(() => {
     const all = { name: "All", id: "" };
     const list = categories;
-    const firstItem = list.find((x) => x.id === "");
+    if (!list || !Array.isArray(list)) return;
+    const firstItem = list?.find((x) => x.id === "");
     if (!firstItem) list.unshift(all);
     setMenuList(list);
   }, [categories]);

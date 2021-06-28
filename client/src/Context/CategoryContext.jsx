@@ -5,6 +5,7 @@ export const CategoryContext = createContext();
 
 export default (props) => {
   const [categories, setCategories] = useState([]);
+  const [selected, setSelected] = useState("");
 
   const getCategories = async () => {
     const result = await getCategoryList();
@@ -16,7 +17,7 @@ export default (props) => {
     getCategories();
   }, []);
   return (
-    <CategoryContext.Provider value={categories}>
+    <CategoryContext.Provider value={{ categories, selected, setSelected }}>
       {props.children}
     </CategoryContext.Provider>
   );

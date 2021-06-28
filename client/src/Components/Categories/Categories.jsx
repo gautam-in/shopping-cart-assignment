@@ -1,12 +1,19 @@
 import React from "react";
 
+import { useHistory } from "react-router-dom";
 import Button from "Components/ButtonPrimary/ButtonPrimary";
 
 import "./Categories.scss";
 
 export default (props) => {
-  const { data, flip } = props;
-  const { imageUrl = "/images/no_image.png", description, name } = data;
+  const history = useHistory();
+  const { data, flip, setSelected } = props;
+  const { imageUrl = "/images/no_image.png", description, name, id } = data;
+
+  const handleClick = () => {
+    setSelected(id);
+    history.push("/product");
+  };
 
   return (
     <section className={`section-categories shadow1`}>
@@ -18,7 +25,7 @@ export default (props) => {
           <div className="cate-name flex-center">{name}</div>
           <div className="cate-dis flex-center pad-t-b-10">{description} </div>
           <div className="btn flex-center">
-            <Button title={`Explore ${name}`} />
+            <Button click={handleClick} title={`Explore ${name}`} />
           </div>
         </div>
       </div>
