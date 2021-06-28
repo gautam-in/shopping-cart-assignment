@@ -33,7 +33,6 @@ function CategoryBox({data}){
     return (
         <CategoryBoxStyled>
             <BoxImage>
-<TextBox type="text" value="ankur" name="name"/>
                 { data?.imageUrl?.length > 0 && (<Image src={data.imageUrl} alt={data.name} width="150" height="100"/>) }
             </BoxImage>
             
