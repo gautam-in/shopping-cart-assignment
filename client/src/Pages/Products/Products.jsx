@@ -30,11 +30,11 @@ export default () => {
       <Header changed={date} />
       <section className="section-product">
         <aside>
-          <LeftMenu handleFilter={handleFilter} />
+          <LeftMenu handleFilter={handleFilter} selected={filterId} />
         </aside>
         <main>
           <div className="hidden-header-menu">
-            <CustomizedSelect handleFilter={handleFilter} />
+            <CustomizedSelect handleFilter={handleFilter} selected={filterId} />
           </div>
           <div className="scroll-container">
             <Grid container spacing={2}>

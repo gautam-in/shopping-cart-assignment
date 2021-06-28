@@ -114,3 +114,56 @@ body {
     font-size: 20px !important;
   }
 }
+
+.shadow-custom {
+  position: relative;
+}
+.shadow-custom::before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  height: 10px;
+  width: 50%;
+  z-index: 2;
+  filter: blur(5px);
+  background-image: linear-gradient(to right, #fff 30%, #313131);
+}
+.shadow-custom::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  right: 0;
+  height: 10px;
+  width: 50%;
+  z-index: 2;
+  filter: blur(5px);
+  background-image: linear-gradient(to left, #fff 30%, #313131);
+}
+.shadow1 {
+  position: relative;
+}
+.shadow1::before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  height: 3px;
+  width: 50%;
+  z-index: 2;
+  filter: blur(2px);
+  // background-image: linear-gradient(to right, #fff 40%, #000);
+  background-image: linear-gradient(to right, #fff 30%, rgb(43, 43, 43));
+}
+.shadow1::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  right: 0;
+  height: 3px;
+  width: 50%;
+  z-index: 2;
+  filter: blur(2px);
+  // background-image: linear-gradient(to left, #fff 40%, #000);
+  background-image: linear-gradient(to left, #fff 30%, rgb(43, 43, 43));
+}

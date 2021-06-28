@@ -6,12 +6,13 @@ import "./Categories.scss";
 
 export default (props) => {
   const { data, flip } = props;
-  const { imageUrl, description, name } = data;
+  const { imageUrl = "/images/no_image.png", description, name } = data;
+
   return (
-    <section className={`section-categories shadow `}>
+    <section className={`section-categories shadow1`}>
       <div className={`categories-container ${flip ? "row-reverse" : ""}`}>
         <div className="img-container">
-          <img src={data.imageUrl} alt={name} />
+          <img src={imageUrl} alt={name} />
         </div>
         <div className="category-details">
           <div className="cate-name flex-center">{name}</div>

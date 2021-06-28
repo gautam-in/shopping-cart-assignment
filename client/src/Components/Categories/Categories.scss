@@ -1,6 +1,8 @@
 .section-categories {
   margin-top: 0.5rem;
   padding: 1.5rem 0.5rem;
+  z-index: 5;
+  height: 20%;
   .categories-container {
     display: flex;
     align-items: center;

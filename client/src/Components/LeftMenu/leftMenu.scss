@@ -1,9 +1,10 @@
 .left-menu {
   background-color: lightgray;
   height: 100%;
-  padding: 1rem 0 1rem 1.5rem;
+  padding: 1rem 0 1rem 0;
   .main-container {
     .items {
+      padding-left: 1.5rem;
       border-bottom: 1px solid #c4c4c4;
       height: 3rem;
       display: flex;
@@ -11,10 +12,16 @@
       font-size: 1.2rem;
       color: rgb(121, 117, 117);
       cursor: pointer;
-      transition: font-weight 0.1s ease;
+
       &:hover {
-        font-weight: 600;
+        background-color: #1f1e1d;
+        color: #fff;
       }
+    }
+    .selected-item {
+      background-color: #1f1e1d;
+      font-weight: 600;
+      color: #fff;
     }
   }
 }

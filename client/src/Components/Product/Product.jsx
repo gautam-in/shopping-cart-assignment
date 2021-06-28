@@ -37,7 +37,15 @@ export default (props) => {
   return (
     <div className="product-container">
       {msg != "" && <Alert msg={msg} />}
-      <div className="title">{name}</div>
+      <div className="title">
+        <LinesEllipsis
+          text={name}
+          maxLine="2"
+          ellipsis="..."
+          trimRight
+          basedOn="letters"
+        />
+      </div>
       <div className="body-container">
         <div className="img">
           <img src={imageURL} alt="product image" />

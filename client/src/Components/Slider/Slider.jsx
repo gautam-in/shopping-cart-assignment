@@ -29,7 +29,7 @@ export default () => {
   };
 
   return (
-    <section className="slider-section shadow">
+    <section className="slider-section shadow-custom">
       <div
         className="slider-holder"
         style={{ transform: `translateX(${transX}%)` }}
