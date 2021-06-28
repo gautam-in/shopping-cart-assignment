@@ -5,6 +5,8 @@ import Button from "../../components/Button";
 import FormInput from "../../components/FormInput";
 import Text from "../../components/Text";
 
+import { loginFormValidation } from "../../utils/formValidation";
+
 import "./style.scss";
 
 const LoginForm = () => {
@@ -12,6 +14,7 @@ const LoginForm = () => {
   const [loginFormData, setLoginFormData] = useState({
     email: "",
     password: "",
+    errors: {},
   });
   const changeHandler = (e) => {
     const { name, value } = e.target;
@@ -20,10 +23,17 @@ const LoginForm = () => {
       [name]: value,
     }));
   };
+  const formValidate = () => {
+    const { errors, isFormValid } = loginFormValidation(loginFormData);
+    setLoginFormData((prevState) => ({
+      ...prevState,
+      errors: errors,
+    }));
+    return isFormValid;
+  };
   const submitHandler = (e) => {
     e.preventDefault();
-    const { email, password } = loginFormData;
-    if (email && password) {
+    if (formValidate()) {
       history.push("/");
     }
   };
@@ -48,29 +58,29 @@ const LoginForm = () => {
         </div>
         <div className="login-section__right">
           <form
-            aria-label="This is the login form for user to log in"
+            aria-label="This is the login form for users to log in"
             className="login-section__right__form"
             onSubmit={submitHandler}
             tabIndex="9"
           >
             <FormInput
               ariaLabel="Enter your email address"
+              error={loginFormData.errors.email}
               htmlFor="emailInput"
               label="Email"
               name="email"
               onChange={changeHandler}
-              required
               tabIndex="10"
               type="email"
               value={loginFormData.email}
             />
             <FormInput
               ariaLabel="Enter your password"
+              error={loginFormData.errors.password}
               htmlFor="passwordInput"
               label="Password"
               name="password"
               onChange={changeHandler}
-              required
               tabIndex="11"
               type="password"
               value={loginFormData.password}

@@ -1,6 +1,9 @@
 .form-group {
-  margin: 50px 0px;
+  margin-bottom: 25px;
   position: relative;
+  &:first-child {
+    margin-top: 50px;
+  }
   .form-group-input {
     border: none;
     border-bottom: 2px solid #e3e3e3;
@@ -31,5 +34,16 @@
   }
   .form-group-error-message {
     color: #ff0000;
+    font-size: 12px;
+    padding-top: 5px;
+    text-align: justify;
+  }
+}
+
+@media (max-width: 480px) {
+  .form-group {
+    &:first-child {
+      margin-top: 10px;
+    }
   }
 }

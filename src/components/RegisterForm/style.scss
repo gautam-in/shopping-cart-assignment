@@ -1,4 +1,4 @@
-.login-section {
+.register-section {
   display: flex;
   margin: 0% 14% 4% 14%;
   justify-content: space-around;
@@ -25,8 +25,8 @@
     flex-basis: 45%;
     form {
       button {
-        color: whitesmoke;
         font-size: 15px;
+        color: whitesmoke;
         font-weight: 400;
       }
     }
@@ -34,7 +34,7 @@
 }
 
 @media (max-width: 480px) {
-  .login-section {
+  .register-section {
     margin: 0% 5% 4% 5%;
     flex-direction: column;
     &__left {
@@ -44,7 +44,7 @@
 }
 
 @media (min-width: 481px) and (max-width: 768px) {
-  .login-section {
+  .register-section {
     margin: 0% 5% 4% 5%;
   }
 }

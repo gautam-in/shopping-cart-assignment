@@ -7,7 +7,7 @@ const FormInput = ({
   ariaHidden = false,
   changeHandler,
   htmlFor,
-  errors = {},
+  error = "",
   label,
   name,
   ...otherProps
@@ -33,9 +33,9 @@ const FormInput = ({
           {label}
         </label>
       ) : null}
-      {errors[name] && (
+      {error && (
         <div className="form-group-error-message" role="alert" tabIndex="-1">
-          {error[name]}
+          {error}
         </div>
       )}
     </div>
