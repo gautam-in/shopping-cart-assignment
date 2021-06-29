@@ -22,8 +22,8 @@ const Home = () => {
       });
   }, []);
 
-  const handleExplore = () => {
-    history.push("/products");
+  const handleExplore = (categoryId) => {
+    history.push(`/products#${categoryId}`);
   };
 
   return (
@@ -44,10 +44,10 @@ const Home = () => {
                 <button
                   type="button"
                   className="category-explore-button"
-                  onClick={handleExplore}
+                  onClick={() => handleExplore(category.id)}
                   tabIndex={0}
                   disabled={!category.enabled}
-                  onKeyPress={handleExplore}
+                  onKeyPress={() => handleExplore(category.id)}
                 >
                   Explore {category.name}
                 </button>

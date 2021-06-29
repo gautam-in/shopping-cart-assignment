@@ -68,7 +68,21 @@ const Products = () => {
                 </li>
               ))}
           </ul>
-
+          <select
+            value={selectedCategoryId}
+            onChange={(e) => handleCategoryChange(e.target.value)}
+            className="category-dropdown"
+          >
+            <option value="" disabled>
+              ---Select Category---
+            </option>
+            {categories &&
+              categories.map((_) => (
+                <option value={_.id} key={_.id}>
+                  {_.name}
+                </option>
+              ))}
+          </select>
           <div className="product-list">
             {filteredProducts.length > 0 ? (
               products &&

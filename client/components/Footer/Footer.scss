@@ -1,8 +1,10 @@
+$light-gray:#c8cbce61;
+
 .footer {
     height: 2rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #d1d5da;
+    background: $light-gray;
     width: 100%;
 }
