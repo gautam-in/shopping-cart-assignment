@@ -1,7 +1,7 @@
 
 import Page from "../components/Page";
 import { applyMiddleware, compose, createStore } from "redux";
-import reducers from "../reducers";
+import reducers from "../redux/reducers";
 import reduxThunk from 'redux-thunk';
 import { Provider } from "react-redux";
 

@@ -1,13 +1,12 @@
 import  styled,{ createGlobalStyle } from 'styled-components';
 
 export const InnerStyle = styled.main`
-  max-width: var(--maxWidth);
   margin: 0 auto;
-  padding-top: var(--headerHeight);
   right: 0;
   font-size: 0.75rem;
-
-  @media only screen and (max-width: 767px) {
+  padding-top: var(--headerHeight);
+  max-width: var(--maxWidth);
+ @media only screen and (max-width: 767px) {
     max-width: 100%;
     padding-top: calc(var(--headerHeight) / 2);
   }
@@ -26,9 +25,9 @@ export const GlobalStyles = createGlobalStyle`
     --maxWidth: 1140px;
     --headerHeight: 100px;
     --sideNavWidth: 230px;
-    --productTileDesktopWidth: calc((var(--maxWidth) = var(--sideNavWidth)) / 6 + 5px );
-    --productTileTabletWidth:calc((var(--maxWidth) - var(--sideNavWidth)) / 4  );
-    --productTileHeight: 450px;
+    --productDesktopWidth: calc((var(--maxWidth) = var(--sideNavWidth)) / 6 + 5px );
+    --productTabletWidth:calc((var(--maxWidth) - var(--sideNavWidth)) / 4  );
+    --productHeight: 450px;
     --footerHeight: 50px
   }
   
