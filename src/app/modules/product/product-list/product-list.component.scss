@@ -1,0 +1,88 @@
+@import "src/variables";
+.wrapper {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-column-gap: 1.5em;
+    grid-row-gap: 1.5em;
+    display: grid;
+    padding: 1em 1.5em;
+    .card {
+        box-shadow: 0px 3px 6px rgba($color: $black, $alpha: 0.16);
+        padding: 0.5em;
+        display: flex;
+        flex-direction: column;
+        // justify-content: space-between;
+        .card-title {
+            font-weight: bold;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        .card-text {
+            background-color: $grey;
+            padding: 0.8em;
+            border-radius: 4px;
+            margin-top: 1em;
+        }
+
+        .inner-body {
+            position: relative;
+            span.badge {
+                position: absolute;
+                background: green;
+                border-radius: 8px;
+                padding: 0.7em;
+                z-index: 10;
+                right: 0;
+                color: white;
+                &:hover {
+                    opacity: 0;
+                }
+            }
+        }
+
+        .product-footer {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            margin-top: 1em;
+            align-items: center;
+        }
+        button {
+            background-color: $mergenta;
+            color: white;
+            cursor: pointer;
+        }
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .wrapper {
+        .card {
+            box-shadow: none;
+            border-bottom: 1px dashed black;
+            .inner-body {
+                display: flex;
+                flex-direction: row;
+                span.badge {
+                    top: -3em;
+                }
+                .product-img {
+                    width: 50%;
+                }
+            }
+
+            .product-footer {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                margin-top: 1em;
+                align-items: center;
+                button {
+                    background-color: $mergenta;
+                    color: white;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}

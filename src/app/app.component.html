@@ -1,0 +1,75 @@
+<div class="app-container">
+  <app-header></app-header>
+  <mat-sidenav-container class="app-sidenav-container">
+    <mat-sidenav
+      #snav
+      mode="over"
+      fixedTopGap="18vh"
+      class="side-nav"
+      (click)="closeNav()"
+    >
+      <mat-nav-list
+        routerLink="/"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        aria-label="Home"
+      >
+        <span class="nav-link" aria-hidden="true">Home</span>
+      </mat-nav-list>
+      <mat-nav-list
+        routerLink="/products"
+        [routerLinkActiveOptions]="{ exact: false }"
+        routerLinkActive="active"
+        aria-label="Products"
+      >
+        <span class="nav-link" aria-hidden="true">Products</span>
+      </mat-nav-list>
+      <ng-container *ngIf="!(user$ | async)?.user">
+        <mat-nav-list
+          class="nav-link"
+          [routerLink]="['/auth', 'login']"
+          [routerLinkActive]="['active']"
+          aria-label="SignIn"
+        >
+          <span aria-hidden="true">SignIn</span>
+        </mat-nav-list>
+        <mat-nav-list
+          class="nav-link"
+          [routerLink]="['/auth', 'register']"
+          [routerLinkActive]="['active']"
+          aria-label="Register"
+        >
+          <span aria-hidden="true">Register</span>
+        </mat-nav-list>
+      </ng-container>
+
+      <ng-container *ngIf="(user$ | async)?.user">
+        <mat-nav-list>
+          Hi there!! {{ (user$ | async)?.user?.email }}
+        </mat-nav-list>
+        <mat-nav-list class="logout-nav" aria-label="Log out">
+          Logout
+          <i
+            class="material-icons logout"
+            aria-hidden="true"
+            (click)="logout()"
+            title="Log out"
+            >logout</i
+          >
+        </mat-nav-list>
+      </ng-container>
+    </mat-sidenav>
+    <div class="spinner-container" *ngIf="loading">
+      <mat-spinner></mat-spinner>
+    </div>
+
+    <mat-sidenav-content>
+      <div class="wrapper">
+        <div class="content-body container" id="content" role="main">
+          <router-outlet></router-outlet>
+        </div>
+        <app-footer></app-footer>
+      </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>

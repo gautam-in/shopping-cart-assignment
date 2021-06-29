@@ -1,0 +1,75 @@
+<div class="carousel-wrapper" aria-label="Banner of Home Page">
+  <carousel #carousel="carousel" role="banner">
+    <ng-container
+      *ngFor="let item of (banners$ | async)?.banners; let i = index"
+    >
+      <ng-container *carouselItem>
+        <div
+          class="item"
+          title="Carousel Item {{ i }}"
+          [attr.aria-setsize]="(banners$ | async)?.banners?.length"
+          [attr.aria-posinset]="i"
+        >
+          <img
+            [src]="item.bannerImageUrl"
+            [alt]="item.bannerImageAlt"
+            [title]="item.bannerImageAlt"
+            loading="lazy"
+            width="1680"
+            height="250"
+          />
+        </div>
+      </ng-container>
+    </ng-container>
+  </carousel>
+
+  <div style="margin-top: 1em">
+    <a
+      (click)="carousel.prev()"
+      role="button"
+      tabindex="0"
+      aria-label="Go to Previous Item"
+      class="btn-prev"
+      [ngClass]="{ disabled: carousel?.prevDisabled }"
+      >Prev</a
+    >
+    <a
+      (click)="carousel.next()"
+      role="button"
+      tabindex="0"
+      aria-label="Go to Next Item"
+      class="btn-next"
+      [ngClass]="{ disabled: carousel?.nextDisabled }"
+      >Next</a
+    >
+  </div>
+</div>
+
+<ul class="categories" aria-label="List of Categories Available in Store">
+  <li *ngFor="let category of (categories$ | async)?.categories">
+    <section class="category" [attr.aria-label]="category.name">
+      <div class="left">
+        <img
+          [src]="category?.imageUrl"
+          [alt]="category?.description"
+          [title]="category?.description"
+          tabindex="0"
+          loading="lazy"
+          width="840"
+          height="250"
+        />
+      </div>
+      <div class="right">
+        <h2 [innerHtml]="category.name" class="name"></h2>
+        <div [innerHtml]="category.description" class="desc"></div>
+        <a
+          routerLink="/products"
+          [queryParams]="{ categoryId: category?.id }"
+          queryParamsHandling="merge"
+        >
+          <button class="btn-explore">Explore {{ category.key }}</button>
+        </a>
+      </div>
+    </section>
+  </li>
+</ul>

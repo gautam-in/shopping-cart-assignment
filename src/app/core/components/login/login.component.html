@@ -1,0 +1,48 @@
+<div class="container wrapper common-padding">
+  <div class="left">
+    <div class="LoginRegText">
+      <h1 class="title">Login</h1>
+      <p class="title-description">
+        Get access to your Orders, Wishlist and Recommendations
+      </p>
+    </div>
+  </div>
+  <div class="right">
+    <form [formGroup]="loginForm" (submit)="submitForm()">
+      <div class="form-group">
+        <mat-form-field appearance="standard">
+          <mat-label>Email</mat-label>
+          <input
+            matInput
+            type="email"
+            class="form-control"
+            formControlName="email"
+          />
+          <mat-error>{{ displayMessage?.email }}</mat-error>
+        </mat-form-field>
+      </div>
+      <div class="form-group">
+        <mat-form-field appearance="standard">
+          <mat-label>Password</mat-label>
+          <input
+            matInput
+            type="password"
+            class="form-control"
+            formControlName="password"
+          />
+          <mat-error>{{ displayMessage?.password }}</mat-error>
+        </mat-form-field>
+      </div>
+      <button
+        aria-label="Login"
+        type="submit"
+        mat-flat-button
+        color="accent"
+        class="action-btn"
+        [disabled]="loginForm.invalid"
+      >
+        Login
+      </button>
+    </form>
+  </div>
+</div>

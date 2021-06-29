@@ -1,0 +1,113 @@
+<header>
+  <div class="sr-only sr-only-focusable">
+    <a href="#content">Skip to main content</a>
+  </div>
+  <div class="container common-padding">
+    <div class="left">
+      <mat-toolbar
+        *ngIf="isMobile"
+        (click)="toggleSideNav()"
+        role="menubar"
+        aria-label="Toggle side nav"
+        color="accent"
+        class="app-toolbar"
+        [attr.aria-expanded]="Constants?.SIDENAV?.opened"
+      >
+        <button mat-icon-button>
+          <mat-icon>menu</mat-icon>
+        </button>
+      </mat-toolbar>
+      <a class="logo" routerLink="/">
+        <img
+          src="assets/images/logo_2x.png"
+          class="logo-image"
+          alt="Sabka bazaar"
+          title="Sabka Bazaar"
+          width="150"
+          height="68"
+        />
+      </a>
+      <ul
+        class="navbar"
+        *ngIf="!isMobile"
+        role="menu"
+        aria-label="navigate different section of app"
+      >
+        <li class="nav-item" role="menuitem" aria-label="Visit Home Page">
+          <a
+            class="nav-link"
+            routerLink="/"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            >Home</a
+          >
+        </li>
+        <li class="nav-item" role="menuitem" aria-label="Visit Products Page">
+          <a
+            class="nav-link"
+            routerLink="/products"
+            [routerLinkActiveOptions]="{ exact: false }"
+            routerLinkActive="active"
+            >Products</a
+          >
+        </li>
+      </ul>
+    </div>
+    <div class="end-container">
+      <ng-container *ngIf="!isMobile">
+        <ul
+          class="navbar"
+          *ngIf="!(user$ | async)?.user"
+          role="menu"
+          aria-label="SignIn/ Signup"
+        >
+          <li class="nav-item" role="menuitem" aria-label="Visit Login Page">
+            <a
+              class="nav-link"
+              [routerLink]="['/auth', 'login']"
+              [routerLinkActive]="['active']"
+              >SignIn</a
+            >
+          </li>
+          <li class="nav-item" role="menuitem" aria-label="Visit Register Page">
+            <a
+              class="nav-link"
+              [routerLink]="['/auth', 'register']"
+              [routerLinkActive]="['active']"
+              >Register</a
+            >
+          </li>
+        </ul>
+        <p *ngIf="(user$ | async)?.user" class="user-info">
+          <span class="greet"> Hi {{ (user$ | async)?.user?.email }} </span>
+          <i
+            class="material-icons logout"
+            (click)="logout()"
+            role="button"
+            aria-label="Log out "
+            title="Log out"
+            >logout</i
+          >
+        </p>
+      </ng-container>
+
+      <button
+        aria-label="cart"
+        class="cart"
+        (click)="showCart(cartButton)"
+        #cartButton
+      >
+        <img
+          src="assets/images/cart.svg"
+          alt="cart"
+          class="cart-logo"
+          title="{{ (cart$ | async)?.products?.length || 0 }} items"
+          width="40"
+          height="40"
+        />
+        <span>{{ (cart$ | async)?.products?.length || 0 }} items</span>
+      </button>
+    </div>
+  </div>
+  <ng-template appPlaceholder></ng-template>
+</header>
