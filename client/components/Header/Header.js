@@ -6,9 +6,15 @@ const Header = () => {
   return (
     <header className="header">
       <nav className="navbar">
-        <div className="brand-name">Sabka Bazaar</div>
+        <div className="brand-name">
+          <img
+            className="brand-logo"
+            src="../static/images/logo.png"
+            alt="Sabka Bazaar Logo"
+          />
+        </div>
         <div className="left-nav">
-          <ul>
+          <ul className="tabs">
             <li>
               <Link to="/">Home</Link>
             </li>
@@ -18,7 +24,7 @@ const Header = () => {
           </ul>
         </div>
         <div className="right-nav">
-          <ul>
+          <ul className="links">
             <li>
               <Link to="/login">SignIn</Link>
             </li>

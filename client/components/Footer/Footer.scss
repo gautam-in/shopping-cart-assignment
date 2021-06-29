@@ -1,6 +1,8 @@
 .footer {
-    position: fixed;
-    bottom: 0;
-    background: grey;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #d1d5da;
     width: 100%;
 }

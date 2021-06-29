@@ -1,0 +1,38 @@
+@media only screen and (min-width: 1023px) {
+    .home {
+        padding: 0 7em;
+    }
+}
+
+@media only screen and (min-width: 760px) {
+    .home {
+        padding: 0 5em;
+    }
+}
+
+.home {
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.category-list {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+
+    .category {
+        display: flex;
+        padding: 20px 10px 30px 10px;
+        height: 10em;
+    }
+
+    .category:nth-child(even) {
+        flex-direction: row-reverse;
+    }
+
+    .category-image {
+        height: 10em;
+    }
+}
