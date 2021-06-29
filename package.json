@@ -10,6 +10,10 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "canned": "^0.3.12"
+    "@material-ui/icons": "^4.11.2",
+    "axios": "^0.21.1",
+    "canned": "^0.3.12",
+    "node-sass": "^6.0.0",
+    "react-lines-ellipsis": "^0.15.0"
   }
 }

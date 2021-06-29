@@ -1,0 +1,34 @@
+.section-categories {
+  margin-top: 0.5rem;
+  padding: 1.5rem 0.5rem;
+  z-index: 5;
+  // height: 20%;
+  .categories-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .img-container {
+      width: 30%;
+    }
+    .category-details {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      .cate-name {
+        font-weight: bold;
+        font-size: 1.125rem;
+        display: flex;
+      }
+      .cate-dis {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1rem;
+      }
+      .btn {
+        width: auto;
+        padding: 0.625rem 1rem;
+      }
+    }
+  }
+}

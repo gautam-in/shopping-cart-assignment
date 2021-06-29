@@ -1,0 +1,41 @@
+.section-cart-item {
+  display: flex;
+  background-color: #fff;
+  margin: 0.625rem 0;
+  height: 5rem;
+  .main-container {
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+    .img {
+      width: 15%;
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+    .list-body {
+      width: calc(85% - 1.6rem);
+      padding: 0 0.8rem;
+      .title {
+        width: 100%;
+        font-weight: 600;
+        padding-bottom: 0.625rem;
+      }
+      .pricing-section {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .counter-container {
+          display: flex;
+          align-items: center;
+          .price {
+          }
+        }
+        .total-price {
+          width: auto;
+        }
+      }
+    }
+  }
+}
