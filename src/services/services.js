@@ -14,7 +14,7 @@ export const getBannerListAPI = async () => {
     }
     console.log("Something went wrong.");
   } catch (error) {
-    throw("Error : Unable to fetch Banner List.");
+    throw "Error : Unable to fetch Banner List.";
   }
 };
 
@@ -26,6 +26,18 @@ export const getCategoryListAPI = async () => {
     }
     console.log("Something went wrong.");
   } catch (error) {
-    throw("Error : Unable to fetch Category List.");
+    throw "Error : Unable to fetch Category List.";
+  }
+};
+
+export const getProductListAPI = async () => {
+  try {
+    const response = await axios.get(`${apiURL}/products`, apiHeaders);
+    if ((response.status = 200)) {
+      return response.data;
+    }
+    console.log("Something went wrong.");
+  } catch (error) {
+    throw "Error : Unable to fetch Product List.";
   }
 };

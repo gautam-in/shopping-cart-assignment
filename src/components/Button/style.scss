@@ -4,10 +4,11 @@ button {
   border-radius: 2px;
   color: var(--btn-text-primary);
   cursor: pointer;
-  height: auto;
   font-family: "Dosis", sans-serif;
   font-weight: 600;
+  height: auto;
   padding: 10px 10px;
+  transition: 300ms ease all;
   width: 100%;
   &:disabled {
     cursor: not-allowed;

@@ -11,9 +11,16 @@
     width: auto;
     z-index: 2;
   }
-  .control-dots {
-    .dot {
-      background-color: #464646;
+  .custom-control-dots {
+    background: whitesmoke;
+    border-radius: 50%;
+    display: inline-block;
+    list-style-type: circle;
+    margin: 0 8px;
+    height: 8px;
+    width: 8px;
+    &.selected {
+      background: grey;
     }
   }
 }

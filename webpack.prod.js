@@ -24,6 +24,11 @@ module.exports = {
         test: /\.(jpg|png|svg|woff|woff2)$/,
         use: {
           loader: "url-loader",
+          options: {
+            limit: 8192,
+            name: "[name].[ext]",
+            publicPath: "/",
+          },
         },
       },
     ],
@@ -34,11 +39,13 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, "./dist"),
     filename: "bundle.js",
+    publicPath: "/",
   },
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       favicon: "./src/favicon.ico",
+      hash: true,
       title: "Sabka Bazaar",
       template: path.resolve(__dirname, "./src/index.html"),
     }),

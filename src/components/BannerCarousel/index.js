@@ -1,6 +1,7 @@
 import React from "react";
 import { Carousel } from "react-responsive-carousel";
 import { useViewport } from "../../hooks/useDevice";
+
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import "./style.scss";
 
@@ -21,11 +22,12 @@ const BannerCarousel = ({ banners }) => {
         renderArrowPrev={(onClickHandler, hasPrev, label) =>
           hasPrev && (
             <button
-              type="button"
-              onClick={onClickHandler}
-              title={label}
-              style={{ left: 0 }}
               aria-label="Previous Banner"
+              onClick={onClickHandler}
+              role="button"
+              style={{ left: 0 }}
+              tabIndex="0"
+              type="button"
             >
               PREV
             </button>
@@ -34,16 +36,34 @@ const BannerCarousel = ({ banners }) => {
         renderArrowNext={(onClickHandler, hasPrev, label) =>
           hasPrev && (
             <button
-              type="button"
-              onClick={onClickHandler}
-              title={label}
-              style={{ right: 0 }}
               aria-label="Next Banner"
+              onClick={onClickHandler}
+              role="button"
+              style={{ right: 0 }}
+              tabIndex="0"
+              type="button"
             >
               NEXT
             </button>
           )
         }
+        renderIndicator={(onClickHandler, isSelected, index, label) => {
+          if (isSelected) {
+            return (
+              <li className="custom-control-dots selected" tabIndex="-1" />
+            );
+          }
+          return (
+            <li
+              className="custom-control-dots"
+              onClick={onClickHandler}
+              onKeyDown={onClickHandler}
+              value={index}
+              key={index}
+              tabIndex="-1"
+            />
+          );
+        }}
       >
         {banners.map((banner) => (
           <div key={banner.id}>

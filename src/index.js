@@ -5,7 +5,7 @@ import { Provider } from "react-redux";
 import { BrowserRouter } from "react-router-dom";
 import store from "./redux/store/store";
 
-import { ViewportProvider } from "./hooks/useDevice";
+import { ViewportProvider } from './hooks/useDevice'
 
 import App from "./App";
 

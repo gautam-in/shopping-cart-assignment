@@ -1,6 +1,10 @@
 import React from "react";
 
-import RegisterForm from '../../components/RegisterForm'
+const RegisterForm = React.lazy(() =>
+  import(
+    /* webpackChunkName: "RegisterPageRegisterFormComponent" */ "../../components/RegisterForm"
+  )
+);
 
 const RegisterPage = () => {
   return (

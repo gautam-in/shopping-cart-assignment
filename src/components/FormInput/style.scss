@@ -25,6 +25,7 @@
     pointer-events: none;
     position: absolute;
     top: 10px;
+    left: 0;
     transition: 200ms ease all;
     &.input-shrink {
       top: -10px;

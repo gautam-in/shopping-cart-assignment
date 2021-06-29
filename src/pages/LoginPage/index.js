@@ -1,6 +1,6 @@
 import React from "react";
 
-import LoginForm from '../../components/LoginForm'
+const LoginForm = React.lazy(() => import(/* webpackChunkName: "LoginPageLoginFormComponent" */ "../../components/LoginForm"));
 
 const LoginPage = () => {
   return (

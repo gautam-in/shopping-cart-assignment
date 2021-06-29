@@ -1,31 +1,31 @@
 import {
-  GET_BANNER_LIST_FAILED,
-  GET_BANNER_LIST_REQUEST,
-  GET_BANNER_LIST_SUCCESS,
+  GET_PRODUCT_LIST_FAILED,
+  GET_PRODUCT_LIST_REQUEST,
+  GET_PRODUCT_LIST_SUCCESS,
 } from "../constants/constants";
 
 const initialState = {
-  bannerList: [],
   error: "",
   loading: true,
+  productList: [],
 };
 
-const bannerListReducer = (state = initialState, action) => {
+const productListReducer = (state = initialState, action) => {
   switch (action.type) {
-    case GET_BANNER_LIST_REQUEST: {
+    case GET_PRODUCT_LIST_REQUEST: {
       return {
         ...state,
         loading: true,
       };
     }
-    case GET_BANNER_LIST_SUCCESS: {
+    case GET_PRODUCT_LIST_SUCCESS: {
       return {
         ...state,
-        bannerList: action.payload,
+        productList: action.payload,
         loading: false,
       };
     }
-    case GET_BANNER_LIST_FAILED: {
+    case GET_PRODUCT_LIST_FAILED: {
       return {
         ...state,
         error: action.payload,
@@ -37,4 +37,4 @@ const bannerListReducer = (state = initialState, action) => {
   }
 };
 
-export default bannerListReducer;
+export default productListReducer;

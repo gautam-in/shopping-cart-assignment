@@ -34,7 +34,7 @@ const FormInput = ({
         </label>
       ) : null}
       {error && (
-        <div className="form-group-error-message" role="alert" tabIndex="-1">
+        <div className="form-group-error-message" role="alert" tabIndex="0">
           {error}
         </div>
       )}

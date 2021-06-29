@@ -1,9 +1,15 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router";
 
-import Button from "../../components/Button";
-import FormInput from "../../components/FormInput";
-import Text from "../../components/Text";
+const Button = React.lazy(() =>
+  import(/* webpackChunkName: "LoginFormButtonComponent" */ "../Button")
+);
+const FormInput = React.lazy(() =>
+  import(/* webpackChunkName: "LoginFormFormInputComponent" */ "../FormInput")
+);
+const Text = React.lazy(() =>
+  import(/* webpackChunkName: "LoginFormTextComponent" */ "../Text")
+);
 
 import { loginFormValidation } from "../../utils/formValidation";
 
@@ -38,60 +44,56 @@ const LoginForm = () => {
     }
   };
   return (
-    <>
-      <section className="login-section">
-        <div className="login-section__left">
-          <Text
-            ariaLabel="Login Title"
-            className="login-section__left__title"
-            tabIndex="7"
+    <section className="login-section">
+      <div className="login-section__left">
+        <Text className="login-section__left__title">Login</Text>
+        <Text className="login-section__left__description">
+          Get access to your Orders, Wishlist and Recommendations
+        </Text>
+      </div>
+      <div className="login-section__right">
+        <form
+          aria-label="This is the login form for users to log into sabka bazaar"
+          className="login-section__right__form"
+          onSubmit={submitHandler}
+          role="form"
+          tabIndex="0"
+        >
+          <FormInput
+            ariaLabel="Enter your email address"
+            error={loginFormData.errors.email}
+            htmlFor="emailInput"
+            label="Email"
+            name="email"
+            onChange={changeHandler}
+            role="textbox"
+            tabIndex="0"
+            type="email"
+            value={loginFormData.email}
+          />
+          <FormInput
+            ariaLabel="Enter your password"
+            error={loginFormData.errors.password}
+            htmlFor="passwordInput"
+            label="Password"
+            name="password"
+            onChange={changeHandler}
+            role="textbox"
+            tabIndex="0"
+            type="password"
+            value={loginFormData.password}
+          />
+          <Button
+            ariaLabel="Login Button"
+            role="button"
+            tabIndex="0"
+            type="submit"
           >
             Login
-          </Text>
-          <Text
-            ariaLabel="Get access to your orders, wishlist and recommendations by login with your credentials in this login webpage"
-            className="login-section__left__description"
-            tabIndex="8"
-          >
-            Get access to your Orders, Wishlist and Recommendations
-          </Text>
-        </div>
-        <div className="login-section__right">
-          <form
-            aria-label="This is the login form for users to log in"
-            className="login-section__right__form"
-            onSubmit={submitHandler}
-            tabIndex="9"
-          >
-            <FormInput
-              ariaLabel="Enter your email address"
-              error={loginFormData.errors.email}
-              htmlFor="emailInput"
-              label="Email"
-              name="email"
-              onChange={changeHandler}
-              tabIndex="10"
-              type="email"
-              value={loginFormData.email}
-            />
-            <FormInput
-              ariaLabel="Enter your password"
-              error={loginFormData.errors.password}
-              htmlFor="passwordInput"
-              label="Password"
-              name="password"
-              onChange={changeHandler}
-              tabIndex="11"
-              type="password"
-              value={loginFormData.password}
-            />
-            <Button ariaLabel="Login Button" tabIndex="12" type="submit">
-              Login
-            </Button>
-          </form>
-        </div>
-      </section>
-    </>
+          </Button>
+        </form>
+      </div>
+    </section>
   );
 };
 

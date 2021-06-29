@@ -1,0 +1,26 @@
+.sidebar {
+  background-color: var(--btn-bg-secondary);
+  flex-basis: 20%;
+  a {
+    border-bottom: 1px solid #dbdbdb;
+    color: #a0a0a0;
+    display: flex;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 15px;
+    transition: 300ms ease all;
+    text-decoration: none;
+    &:hover {
+      filter: brightness(70%);
+    }
+    &.selected {
+      filter: brightness(70%);
+    }
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .sidebar {
+    flex-basis: 25%;
+  }
+}

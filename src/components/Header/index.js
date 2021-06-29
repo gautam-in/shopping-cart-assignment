@@ -1,13 +1,19 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { useViewport } from "../../hooks/useDevice";
 
-import Button from "../Button";
-import Text from "../Text";
+const Button = React.lazy(() =>
+  import(/* webpackChunkName: "HeaderButtonComponent" */ "../Button")
+);
+const Text = React.lazy(() =>
+  import(/* webpackChunkName: "HeaderTextComponent" */ "../Text")
+);
 
 import "./style.scss";
 
 const Header = () => {
+  const cartItemsCount = useSelector((state) => state.cart.cartItemsCount);
   const { isMobile } = useViewport();
 
   const handleKeypress = (e) => {
@@ -20,52 +26,74 @@ const Header = () => {
       <header>
         <picture className="logo-container">
           <Link
-            to="/"
-            aria-labelledby="Sabka Bazaar Logo"
+            aria-label="Sabka Bazaar Logo"
             onKeyPress={handleKeypress}
+            tabIndex="0"
+            to="/"
           >
             <img
+              aria-hidden
               src="/static/images/logo_2x.png"
               alt="Sabka Bazaar Logo"
-              tabIndex="1"
             />
           </Link>
         </picture>
         <div className="nav-container">
           {!isMobile ? (
             <div className="nav-container__quickLinks">
-              <Link to="/login" onKeyPress={handleKeypress}>
-                <Text tabIndex="2" ariaLabel="SignIn to Sabka Bazaar">
-                  SignIn
-                </Text>
+              <Link
+                aria-label="Navigate to signin page"
+                to="/login"
+                onKeyPress={handleKeypress}
+                role="navigation"
+                tabIndex="0"
+              >
+                <Text>SignIn</Text>
               </Link>
-              <Link to="/register" onKeyPress={handleKeypress}>
-                <Text tabIndex="3" ariaLabel="Register to Sabka Bazaar">
-                  Register
-                </Text>
+              <Link
+                aria-label="Navigate to register page"
+                to="/register"
+                onKeyPress={handleKeypress}
+                role="navigation"
+                tabIndex="0"
+              >
+                <Text>Register</Text>
               </Link>
             </div>
           ) : null}
           <div className="nav-container__navigation">
             {!isMobile ? (
               <div className="nav-container__navigation__links">
-                <Link to="/" onKeyPress={handleKeypress}>
-                  <Text tabIndex="4" ariaLabel="Navigate to Home Page">
-                    Home
-                  </Text>
+                <Link
+                  aria-label="Navigate to home page"
+                  to="/"
+                  onKeyPress={handleKeypress}
+                  role="navigation"
+                  tabIndex="0"
+                >
+                  <Text>Home</Text>
                 </Link>
-                <Link to="/products" onKeyPress={handleKeypress}>
-                  <Text tabIndex="5" ariaLabel="Navigate to Products Page">
-                    Products
-                  </Text>
+                <Link
+                  aria-label="Navigate to products page"
+                  to="/products"
+                  onKeyPress={handleKeypress}
+                  role="navigation"
+                  tabIndex="0"
+                >
+                  <Text>Products</Text>
                 </Link>
               </div>
             ) : null}
 
             <div className="nav-container__navigation__buttonContainer">
-              <Button className="cartButton" tabIndex="6">
-                <img src="static/images/cart.svg" alt="Cart Icon" aria-hidden />
-                <Text ariaLabel={`You have 0 items in your Cart`}>0 items</Text>
+              <Button
+                ariaLabel={`You have ${cartItemsCount} items in your cart`}
+                className="cartButton"
+                role="button"
+                tabIndex="0"
+              >
+                <img src="/static/images/cart.svg" alt="Cart Icon" />
+                <Text>{cartItemsCount} items</Text>
               </Button>
             </div>
           </div>
