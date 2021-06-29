@@ -1,0 +1,30 @@
+$light-gray:#c8cbce61;
+$gray:#a1a4ab;
+$primary-color:#d00156;
+
+.products {
+    display: flex;
+
+    .product-list {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .product-categories {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        min-width: 250px;
+        max-width: 250px;
+        background-color: $light-gray;
+
+        li {
+            border-bottom: 1px solid $gray;
+            padding: 10px;
+        }
+
+        .category-active {
+            background-color: $gray;
+        }
+    }
+}
