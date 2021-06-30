@@ -1,5 +1,6 @@
-import styled from 'styled-components';
-import Header from '../molecules/Header';
+// import styled from 'styled-components';
+import Header from '../organism/Header/Header';
+
 /*const GlobalStyles = createGlobalStyle``;*/
 
 

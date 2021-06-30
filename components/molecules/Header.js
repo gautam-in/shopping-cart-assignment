@@ -8,7 +8,6 @@ const HeaderStyle = styled.div`
     padding-left:13vw;
     padding-right:13vw;
     box-shadow: 0 4px 6px -6px #777;
-}
 `;
 
 export default function Header(){

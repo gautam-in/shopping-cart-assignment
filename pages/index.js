@@ -1,4 +1,4 @@
-import Category from '../components/organism/Category'
+import Category from '../components/organism/Category/Category'
 
 function Home({pageProps}) {
   return (
