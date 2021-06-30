@@ -5,7 +5,8 @@ import Header from "./components/Header/Header";
 import Home from "./containers/Home/Home";
 import Footer from "./components/Footer/Footer";
 import Products from "./containers/Products/Products";
-import Auth from "./containers/Auth/Auth";
+import Register from "./containers/Auth/Register";
+import SignIn from "./containers/Auth/SignIn";
 
 const App = () => {
   return (
@@ -14,10 +15,10 @@ const App = () => {
       <main>
         <Switch>
           <Route path="/login">
-            <Auth />
+            <SignIn />
           </Route>
           <Route path="/sign-up">
-            <Auth />
+            <Register />
           </Route>
           <Route path="/products">
             <Products />

@@ -21,8 +21,15 @@
 
     .left-nav {
       width: 55vw;
+
       a {
         text-decoration: none;
+      }
+    }
+
+    .right-nav {
+      .cart-icon {
+        width: 25px;
       }
     }
   }

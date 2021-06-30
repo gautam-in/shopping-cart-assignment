@@ -32,6 +32,14 @@ const Header = () => {
               <Link to="/sign-up">Register</Link>
             </li>
           </ul>
+          <div className="my-cart">
+            <img
+              className="cart-icon"
+              src="../static/images/cart.svg"
+              alt="cart image"
+            />
+            <span className="number-of-items">0 items</span>
+          </div>
         </div>
       </nav>
     </header>

@@ -1,0 +1,35 @@
+$primary-color:#d00156;
+$light-gray:#c8cbce61;
+
+.register {
+    display: flex;
+    justify-content: center;
+    padding: 2em 0;
+
+    aside {
+        padding: 2em;
+    }
+
+    .register-form {
+        padding: 1em;
+        width: 30%;
+
+        input {
+            display: block;
+            padding: 1em 0;
+            margin: 1em 0;
+            width: 100%;
+            border: none;
+            border-bottom: 1px solid gray;
+        }
+
+        button {
+            background: $primary-color;
+            padding: 10px 20px;
+            color: white;
+            border: none;
+            width: 100%;
+            margin-top: 2em;
+        }
+    }
+}
