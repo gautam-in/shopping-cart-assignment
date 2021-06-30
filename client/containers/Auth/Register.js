@@ -1,7 +1,9 @@
 import React, { useState } from "react";
-import "./Register.scss";
+import "./Auth.scss";
+import { useHistory } from "react-router-dom";
 
 const Register = () => {
+  const history = useHistory();
   const intialState = {
     firstName: "",
     lastName: "",
@@ -24,12 +26,14 @@ const Register = () => {
       );
       localStorage.setItem("email", userDetails.email);
       localStorage.setItem("password", userDetails.password);
+      localStorage.setItem("isAuthenticated", false);
       setValidation({
         ...validation,
         statusSuccessMessage: "User Registered successfully",
         statusErrorMessage: "",
       });
       setUserDetails(intialState);
+      setTimeout(() => history.push("/login"), 2000);
     } else {
       setValidation({
         ...validation,

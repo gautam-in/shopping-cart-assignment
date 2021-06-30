@@ -1,8 +1,10 @@
 $primary-color:#d00156;
 $light-gray:#c8cbce61;
 
-.register {
+.register,
+.sign-in {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     padding: 2em 0;
 
@@ -30,6 +32,17 @@ $light-gray:#c8cbce61;
             border: none;
             width: 100%;
             margin-top: 2em;
+        }
+    }
+
+    @media only screen and(max-width:550px) {
+        aside {
+            padding: 1em 3em;
+        }
+
+        .register-form {
+            padding: 0 3em;
+            width: 100%;
         }
     }
 }

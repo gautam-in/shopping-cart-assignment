@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.scss";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
 import Header from "./components/Header/Header";
 import Home from "./containers/Home/Home";
 import Footer from "./components/Footer/Footer";
@@ -9,23 +9,29 @@ import Register from "./containers/Auth/Register";
 import SignIn from "./containers/Auth/SignIn";
 
 const App = () => {
+  console.log("isAuthenticated:", localStorage.getItem("isAuthenticated"));
+  const isAuthenticated = localStorage.getItem("isAuthenticated");
   return (
     <BrowserRouter>
       <Header />
       <main>
         <Switch>
-          <Route path="/login">
-            <SignIn />
-          </Route>
-          <Route path="/sign-up">
-            <Register />
-          </Route>
-          <Route path="/products">
-            <Products />
-          </Route>
-          <Route path="/">
-            <Home />
-          </Route>
+          <Route
+            exact
+            path="/"
+            render={() => {
+              console.log("Navigating");
+              return isAuthenticated ? (
+                <Redirect to="/home" />
+              ) : (
+                <Redirect to="/login" />
+              );
+            }}
+          />
+          <Route path="/login" component={SignIn} />
+          <Route path="/sign-up" component={Register} />
+          <Route path="/products" component={Products} />
+          <Route path="/home" component={Home} />
         </Switch>
       </main>
       <Footer />
