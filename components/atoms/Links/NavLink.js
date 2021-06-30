@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-import StyledLink from './Style'
+import {StyledLink} from './Style'
 
 const NavLink = ({ redirect, children }) => (
   <li>
