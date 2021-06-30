@@ -13,7 +13,7 @@ const Text = ({
     <span
       aria-label={ariaLabel}
       aria-hidden={ariaHidden}
-      className={`text ${className}`}
+      className={`span ${className}`}
       {...otherProps}
     >
       {children}

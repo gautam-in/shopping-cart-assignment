@@ -7,7 +7,7 @@ import "./style.scss";
 const Footer = () => {
   return (
     <>
-      <footer>
+      <footer className="footer">
         <Text>
           Copyright &copy; 2011-2018 Sabka Bazaar Grocery Supplies Pvt Ltd
         </Text>

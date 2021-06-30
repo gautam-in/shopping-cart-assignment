@@ -22,9 +22,9 @@ const Dropdown = ({
       value={value}
       {...otherProps}
     >
-      <option value={""}>All Products</option>
+      <option className="select-dropdown__option" value={""}>All Products</option>
       {options.map((option) => (
-        <option key={option.id} value={option.id}>
+        <option className="select-dropdown__option" key={option.id} value={option.id}>
           {option.name}
         </option>
       ))}

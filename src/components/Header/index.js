@@ -1,36 +1,35 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { useViewport } from "../../hooks/useDevice";
 
 const Button = React.lazy(() =>
   import(/* webpackChunkName: "HeaderButtonComponent" */ "../Button")
 );
+const Cart = React.lazy(() =>
+  import(/* webpackChunkName: "HeaderCartComponent" */ "../Cart")
+);
 const Text = React.lazy(() =>
   import(/* webpackChunkName: "HeaderTextComponent" */ "../Text")
 );
 
+import { openCartModal } from "../../redux/actions/cartActions";
+
 import "./style.scss";
 
 const Header = () => {
-  const cartItemsCount = useSelector((state) => state.cart.cartItemsCount);
+  const dispatch = useDispatch();
   const { isMobile } = useViewport();
-
-  const handleKeypress = (e) => {
-    if (e.keyCode === 13) {
-      this.btn.click();
-    }
+  const cartItemsCount = useSelector((state) => state.cart.cartItemsCount);
+  const clickHandlerCartButton = () => {
+    dispatch(openCartModal());
   };
   return (
     <>
-      <header>
+      <header className="header">
+        <Cart />
         <picture className="logo-container">
-          <Link
-            aria-label="Sabka Bazaar Logo"
-            onKeyPress={handleKeypress}
-            tabIndex="0"
-            to="/"
-          >
+          <Link aria-label="Sabka Bazaar Logo" tabIndex="0" to="/">
             <img
               aria-hidden
               src="/static/images/logo_2x.png"
@@ -44,7 +43,6 @@ const Header = () => {
               <Link
                 aria-label="Navigate to signin page"
                 to="/login"
-                onKeyPress={handleKeypress}
                 role="navigation"
                 tabIndex="0"
               >
@@ -53,7 +51,6 @@ const Header = () => {
               <Link
                 aria-label="Navigate to register page"
                 to="/register"
-                onKeyPress={handleKeypress}
                 role="navigation"
                 tabIndex="0"
               >
@@ -67,7 +64,6 @@ const Header = () => {
                 <Link
                   aria-label="Navigate to home page"
                   to="/"
-                  onKeyPress={handleKeypress}
                   role="navigation"
                   tabIndex="0"
                 >
@@ -76,7 +72,6 @@ const Header = () => {
                 <Link
                   aria-label="Navigate to products page"
                   to="/products"
-                  onKeyPress={handleKeypress}
                   role="navigation"
                   tabIndex="0"
                 >
@@ -89,6 +84,7 @@ const Header = () => {
               <Button
                 ariaLabel={`You have ${cartItemsCount} items in your cart`}
                 className="cartButton"
+                onClick={clickHandlerCartButton}
                 role="button"
                 tabIndex="0"
               >

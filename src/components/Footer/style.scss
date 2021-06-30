@@ -1,4 +1,4 @@
-footer {
+.footer {
   align-items: center;
   background-color: #eaeaea;
   display: flex;
@@ -13,7 +13,7 @@ footer {
 }
 
 @media (max-width: 480px) {
-  footer {
+  .footer {
     height: 30px;
     padding: 0px 4%;
     span {

@@ -1,4 +1,4 @@
-header {
+.header {
   background-color: white;
   box-shadow: 0 8px 6px -6px var(--box-shadow);
   display: flex;
@@ -6,7 +6,7 @@ header {
   padding: 0 12%;
   position: sticky;
   top: 0;
-  z-index: 9999;
+  z-index: 100;
   .logo-container {
     align-items: center;
     display: flex;
@@ -75,7 +75,7 @@ header {
 }
 
 @media (max-width: 480px) {
-  header {
+  .header {
     height: 50px;
     padding: 0;
     .logo-container {
@@ -95,7 +95,7 @@ header {
 }
 
 @media (min-width: 481px) and (max-width: 768px) {
-  header {
+  .header {
     padding: 0;
     .logo-container {
       img {
