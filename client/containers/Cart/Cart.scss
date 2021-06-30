@@ -1,0 +1,35 @@
+$primary-color:#d00156;
+
+.cart {
+    height: 80vh;
+
+    .cart-empty {
+        height: 90%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        h2 {
+            text-align: center;
+        }
+    }
+
+    .buttons {
+        height: 10%;
+        padding: 0 1em;
+
+        button {
+            background: $primary-color;
+            padding: 10px 20px;
+            border-radius: 4px;
+            border: none;
+            width: 100%;
+            height: 70%;
+
+            a {
+                color: white;
+                text-decoration: none;
+            }
+        }
+    }
+}
