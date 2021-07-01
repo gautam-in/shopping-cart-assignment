@@ -1,8 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./Header.scss";
 import { Link } from "react-router-dom";
+import AuthContext from "../../AuthContext";
 
 const Header = () => {
+  const { userAuthentication, toggleUserAuthentication } = useContext(
+    AuthContext
+  );
   return (
     <header className="header">
       <nav className="navbar">
@@ -24,14 +28,27 @@ const Header = () => {
           </ul>
         </div>
         <div className="right-nav">
-          <ul className="links">
-            <li>
-              <Link to="/login">SignIn</Link>
-            </li>
-            <li>
-              <Link to="/sign-up">Register</Link>
-            </li>
-          </ul>
+          {userAuthentication === "logged-in" ? (
+            <ul className="links">
+              <li
+                onClick={() => {
+                  sessionStorage.setItem("status", "");
+                  toggleUserAuthentication();
+                }}
+              >
+                Logout
+              </li>
+            </ul>
+          ) : (
+            <ul className="links">
+              <li>
+                <Link to="/login">SignIn</Link>
+              </li>
+              <li>
+                <Link to="/sign-up">Register</Link>
+              </li>
+            </ul>
+          )}
           <div className="my-cart">
             <Link to="/cart">
               <img

@@ -20,13 +20,13 @@ const Register = () => {
   const onFormSubmit = (e) => {
     e.preventDefault();
     if (userDetails.password === userDetails.confirmPwd) {
-      localStorage.setItem(
+      sessionStorage.setItem(
         "name",
         userDetails.firstName + " " + userDetails.lastName
       );
-      localStorage.setItem("email", userDetails.email);
-      localStorage.setItem("password", userDetails.password);
-      localStorage.setItem("isAuthenticated", false);
+      sessionStorage.setItem("email", userDetails.email);
+      sessionStorage.setItem("password", userDetails.password);
+      sessionStorage.setItem("status", "");
       setValidation({
         ...validation,
         statusSuccessMessage: "User Registered successfully",
@@ -73,6 +73,7 @@ const Register = () => {
           />
           <input
             placeholder="Password"
+            type="password"
             value={userDetails.password}
             onChange={(event) =>
               setUserDetails({ ...userDetails, password: event.target.value })
@@ -80,6 +81,7 @@ const Register = () => {
           />
           <input
             placeholder="Confirm Password"
+            type="password"
             value={userDetails.confirmPwd}
             onChange={(event) =>
               setUserDetails({ ...userDetails, confirmPwd: event.target.value })

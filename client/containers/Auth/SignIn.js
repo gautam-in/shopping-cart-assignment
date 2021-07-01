@@ -1,8 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { useHistory } from "react-router-dom";
 import "./Auth.scss";
+import AuthContext from "../../AuthContext";
 
 const SignIn = () => {
+  const { toggleUserAuthentication } = useContext(AuthContext);
   const history = useHistory();
   const intialState = {
     email: "",
@@ -13,10 +15,11 @@ const SignIn = () => {
 
   const onFormSubmit = (e) => {
     e.preventDefault();
-    const email = localStorage.getItem("email");
-    const pwd = localStorage.getItem("password");
+    const email = sessionStorage.getItem("email");
+    const pwd = sessionStorage.getItem("password");
     if (userDetails.email === email && userDetails.password === pwd) {
-      localStorage.setItem("isAuthenticated", true);
+      toggleUserAuthentication();
+      sessionStorage.setItem("status", "logged-in");
       history.push("/");
     } else {
       setValidation("Invalid credentials");
@@ -40,6 +43,7 @@ const SignIn = () => {
           />
           <input
             placeholder="Password"
+            type="password"
             value={userDetails.password}
             onChange={(event) =>
               setUserDetails({ ...userDetails, password: event.target.value })
