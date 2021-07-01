@@ -1,13 +1,21 @@
 import CartIcon from '../../atoms/Icons/CartIcon'
 import {Container,Count} from './CartStyle'
+import {incrementCounter} from '../../../redux/actions/main'
+import {connect} from 'react-redux'
 
-function Cart(){
+function Cart({cartInfo,incrementCounter}){
+
+  const {cartCount} = cartInfo
     return (
         <Container>
            <CartIcon/>
-           <Count>1 Item</Count> 
+           <Count>{`${cartCount} Items`}</Count>
+           {/* <button onClick={(e)=>{ incrementCounter(cartCount)}}>Cart Count</button>  */}
         </Container>
     )
 }
 
-export default Cart
+const mapStateToProps = state=>({ cartInfo:state.main })
+const mapDispatchToProps = {incrementCounter} 
+
+export default  connect(mapStateToProps,mapDispatchToProps)(Cart)  

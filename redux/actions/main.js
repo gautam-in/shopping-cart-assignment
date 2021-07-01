@@ -1,14 +1,6 @@
 import * as t from '../types';
 
 
-const incrementCounter = (cartCount)=>{
-    cartCount = cartCount+1
-    return {type:t.CART_COUNT_INCREMENT,payload:cartCount}
-}
-
-const decrementCounter = (counter)=>({type:t.CART_COUNT_INCREMENT,payload:counter})
-
-export {
-    incrementCounter,
-    decrementCounter
-}
+const incrementCounter = (cartCount) => ({type:t.CART_COUNT_INCREMENT,payload:cartCount+1})
+const decrementCounter = (cartCount) => ({type:t.CART_COUNT_DECREMENT,payload:cartCount++})
+export { incrementCounter, decrementCounter }
