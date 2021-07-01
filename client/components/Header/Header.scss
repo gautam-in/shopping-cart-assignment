@@ -1,39 +1,78 @@
+$light-gray:#c8cbce61;
+
 .header {
   background: white;
   box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.3);
-  position: fixed;
-  display: flex;
-  align-items: center;
-  top: 0;
-  width: 100%;
-  z-index: 1;
   height: 6rem;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 1;
 
   .navbar {
+    height: 100%;
     display: flex;
-    justify-content: center;
+    align-items: center;
+
+    a {
+      margin-left: 10px;
+      margin-top: 6px;
+      color: gray; //
+      text-align: center;
+      text-decoration: none;
+      display: inline-block; //
+      font-size: 0.8em;
+      font-weight: bold;
+
+      &:hover {
+        color: black;
+      }
+    }
 
     .brand-name {
       .brand-logo {
-        width: 20vw;
+        height: 4rem;
       }
     }
 
     .left-nav {
-      width: 55vw;
+      flex-grow: 4;
 
-      a {
-        text-decoration: none;
+      .tabs {
+        display: flex;
+        margin: 2em 0 0;
+
+        li:hover {
+          background: $light-gray;
+        }
       }
     }
 
     .right-nav {
-      .cart-icon {
-        width: 25px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
+
+      .links {
+        display: flex;
+        justify-content: flex-end;
+        margin: 0;
+        padding: 0px 0px 10px 0px;
       }
 
-      a {
-        text-decoration: none;
+      .cart-icon {
+        padding: 0 15px;
+        height: 3em;
+      }
+
+      .my-cart {
+        a {
+          background-color: $light-gray;
+        }
+
+        display: flex;
+        justify-content: flex-end;
       }
     }
   }
@@ -42,4 +81,50 @@
   .links {
     list-style-type: none;
   }
+}
+
+//ipad & above
+@media only screen and(min-width:1030px) {
+  .header {
+    .navbar {
+      padding: 0 6rem;
+    }
+  }
+}
+
+// mobile
+@media only screen and(max-width:420px) {
+  .header {
+    height: 4rem;
+
+    .navbar {
+      .brand-name {
+        .brand-logo {
+          height: 3rem;
+        }
+      }
+
+      .left-nav {
+        .tabs {
+          display: none;
+        }
+      }
+
+      .right-nav {
+        .links {
+          display: none;
+        }
+
+        .my-cart {
+          flex-grow: 1;
+
+          a {
+            margin: 0;
+          }
+        }
+      }
+    }
+  }
+
+
 }

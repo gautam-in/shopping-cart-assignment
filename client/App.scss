@@ -5,3 +5,10 @@ body {
 main {
   margin-top: 6rem;
 }
+
+//mobile
+@media only screen and(max-width:420px) {
+  main {
+    margin-top: 4rem;
+  }
+}
