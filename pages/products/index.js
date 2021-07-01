@@ -1,14 +1,13 @@
-import Products from "../../components/Products";
-import ProductsContainerStyles from "../../components/styles/ProductsContainerStyles";
-import SideNavBar from "../../components/SideNavBar";
+import SideNavBar from '../../app/containers/SideNav';
+import Products from '../../app/containers/Products';
+import { useRouter } from 'next/router';
 
 export default function CategoryPage() {
+  const {query} = useRouter();
   return (
     <>
       <SideNavBar />
-      <ProductsContainerStyles>
-        <Products />
-      </ProductsContainerStyles>
+      <Products category={query.category}/>
     </>
   );
 }

@@ -1,31 +1,32 @@
 @import url('https://fonts.googleapis.com/css?family=Dosis:400,600,700');
 
-:root{
+:root {
   --black: #000;
   --white: #fff;
-  --darkgrey:#777;
+  --darkgrey: #777;
   --grey: #7f8c8d;
-  --lightgrey:#ccc;
-  --lightestgrey:#eee;
-  --magenta:#c02345;
+  --lightgrey: #ccc;
+  --lightestgrey: #eee;
+  --magenta: #c02345;
   --maxWidth: 1140px;
   --headerHeight: 100px;
   --sideNavWidth: 230px;
-  --productTileDesktopWidth: calc((var(--maxWidth) = var(--sideNavWidth)) / 6 + 5px );
-  --productTileTabletWidth:calc((var(--maxWidth) - var(--sideNavWidth)) / 4  );
+  --productTileDesktopWidth: calc(
+    (var(--maxWidth) = var(--sideNavWidth)) / 6 + 5px
+  );
+  --productTileTabletWidth: calc((var(--maxWidth) - var(--sideNavWidth)) / 4);
   --productTileHeight: 450px;
-  --footerHeight: 50px
+  --footerHeight: 50px;
 }
-
 
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: 'dosis',-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-    font-size: 20px;
-    overflow-x: hidden;
+  font-family: 'dosis', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+    Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-size: 20px;
+  overflow-x: hidden;
 }
 
 a {
@@ -36,4 +37,22 @@ a {
 * {
   box-sizing: border-box;
 }
+::-webkit-scrollbar {
+  width: 10px;
+}
 
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}

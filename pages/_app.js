@@ -1,25 +1,22 @@
-import "../styles/globals.css";
-import Page from "../components/Page";
-import { applyMiddleware, compose, createStore } from "redux";
-import reducers from "../reducers";
-import reduxThunk from "redux-thunk";
-import { Provider } from "react-redux";
+import '../styles/globals.css';
+import Page from '../app/containers/Page';
+import PropTypes from 'prop-types';
+import { Provider } from 'react-redux';
+import { store } from '../store/store';
 
-const ComposeEnhancer =
-  global.window?.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
-const store = createStore(
-  reducers,
-  ComposeEnhancer(applyMiddleware(reduxThunk))
-);
-
-function MyApp({ Component, pageProps }) {
+function MyApp({ Component, pageProps  }) {
   return (
-    <Provider store={store}>
+     <Provider store={store}>
       <Page>
         <Component {...pageProps} />
       </Page>
-    </Provider>
+     </Provider>
   );
 }
 
+MyApp.propTypes = {
+  Component: PropTypes.elementType,
+  pageProps: PropTypes.any,
+};
 export default MyApp;
+//export default wrapper.withRedux(MyApp);
