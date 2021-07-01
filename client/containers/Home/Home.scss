@@ -11,6 +11,7 @@
 }
 
 $primary-color:#d00156;
+$accent-color:#ea1d71;
 
 .home {
     min-height: 80vh;
@@ -70,6 +71,11 @@ $primary-color:#d00156;
             color: white;
             border: none;
             cursor: pointer;
+
+            &:hover,
+            &:focus {
+                background: $accent-color;
+            }
         }
 
         button:disabled {

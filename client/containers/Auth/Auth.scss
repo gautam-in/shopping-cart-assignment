@@ -17,12 +17,17 @@ $light-gray:#c8cbce61;
         width: 30%;
 
         input {
+            outline: none;
             display: block;
             padding: 1em 0;
             margin: 1em 0;
             width: 100%;
             border: none;
             border-bottom: 1px solid gray;
+
+            &:focus {
+                border-bottom: 2px solid #51dae2;
+            }
         }
 
         button {

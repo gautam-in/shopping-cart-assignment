@@ -1,8 +1,12 @@
 import React from "react";
 import "./Cart.scss";
-import { Link } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 const Cart = () => {
+  const history = useHistory();
+  const handleStart = () => {
+    history.push("/products");
+  };
   return (
     <div className="cart">
       <div className="cart-empty">
@@ -12,8 +16,13 @@ const Cart = () => {
         </div>
       </div>
       <div className="buttons">
-        <button>
-          <Link to="/Products">Start Shopping</Link>
+        <button
+          type="button"
+          onClick={handleStart}
+          onKeyPress={handleStart}
+          tabIndex={0}
+        >
+          Start Shopping
         </button>
       </div>
     </div>

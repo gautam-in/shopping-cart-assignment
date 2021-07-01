@@ -36,7 +36,7 @@ const Header = () => {
                   toggleUserAuthentication();
                 }}
               >
-                Logout
+                <a href="#">Logout</a>
               </li>
             </ul>
           ) : (

@@ -19,25 +19,32 @@ const Register = () => {
 
   const onFormSubmit = (e) => {
     e.preventDefault();
-    if (userDetails.password === userDetails.confirmPwd) {
-      sessionStorage.setItem(
-        "name",
-        userDetails.firstName + " " + userDetails.lastName
-      );
-      sessionStorage.setItem("email", userDetails.email);
-      sessionStorage.setItem("password", userDetails.password);
-      sessionStorage.setItem("status", "");
-      setValidation({
-        ...validation,
-        statusSuccessMessage: "User Registered successfully",
-        statusErrorMessage: "",
-      });
-      setUserDetails(intialState);
-      setTimeout(() => history.push("/login"), 2000);
+    if (userDetails.firstName && userDetails.email && userDetails.password) {
+      if (userDetails.password === userDetails.confirmPwd) {
+        sessionStorage.setItem(
+          "name",
+          userDetails.firstName + " " + userDetails.lastName
+        );
+        sessionStorage.setItem("email", userDetails.email);
+        sessionStorage.setItem("password", userDetails.password);
+        sessionStorage.setItem("status", "");
+        setValidation({
+          ...validation,
+          statusSuccessMessage: "User registered successfully",
+          statusErrorMessage: "",
+        });
+        setUserDetails(intialState);
+        setTimeout(() => history.push("/login"), 2000);
+      } else {
+        setValidation({
+          ...validation,
+          statusErrorMessage: "Passwords do not match",
+        });
+      }
     } else {
       setValidation({
         ...validation,
-        statusErrorMessage: "Passwords do not match",
+        statusErrorMessage: "Please provide First name, Email & Password",
       });
     }
   };

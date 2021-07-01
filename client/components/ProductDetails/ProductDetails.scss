@@ -1,4 +1,5 @@
 $primary-color:#d00156;
+$accent-color:#ea1d71;
 $light-gray:#c8cbce61;
 
 .product-card {
@@ -48,6 +49,12 @@ $light-gray:#c8cbce61;
         padding: 10px 20px;
         color: white;
         border: none;
+        cursor: pointer;
+
+        &:hover,
+        &:focus {
+            background: $accent-color;
+        }
     }
 }
 

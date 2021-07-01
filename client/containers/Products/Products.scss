@@ -5,6 +5,10 @@ $primary-color:#d00156;
 .products {
     display: flex;
 
+    .no-content {
+        min-height: 80vh;
+    }
+
     .product-list {
         display: flex;
         flex-wrap: wrap;
@@ -23,6 +27,7 @@ $primary-color:#d00156;
         background-color: $light-gray;
 
         li {
+            cursor: pointer;
             border-bottom: 1px solid $gray;
             padding: 10px;
         }
