@@ -1,0 +1,35 @@
+* {
+  margin: 0;
+}
+.modalcontainer {
+  position: absolute;
+  width: 400px;
+  min-height: 80%;
+  height: auto;
+  background: white;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.modalcontainer h3 {
+  padding: 1rem;
+  background: black;
+  color: white;
+}
+.allcartproducts {
+  padding: 0.5rem;
+  flex: 1;
+}
+.emptycarttext {
+  text-align: center;
+}
+.startshopping {
+  width: 100%;
+  padding: 1rem 0;
+  background: #bf3737;
+  text-align: center;
+}

@@ -1,0 +1,20 @@
+.sidebaritem {
+  padding: 1rem;
+  border-bottom: 1px solid grey;
+}
+.sidedropdown {
+  display: none;
+}
+@media screen and (min-width: 600px) {
+}
+
+@media screen and (min-width: 768px) {
+}
+@media screen and (max-width: 600px) {
+  .Sidebar {
+    display: none;
+  }
+  .sidedropdown {
+    display: block;
+  }
+}

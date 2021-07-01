@@ -1,0 +1,43 @@
+.Eachproduct {
+  width: 200px;
+  border-bottom: 1px solid #00000029;
+  padding: 0.5rem;
+}
+.description {
+  font-size: small;
+  background: #80808029;
+  padding: 0.5rem;
+  height: 80px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  height: 52px;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+}
+.Eachproductpricing {
+  padding: 0.5rem 0rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.Eachproduct button {
+  padding: 0.4rem;
+  width: 90px;
+  background: #da2020e3;
+  border: none;
+  color: white;
+}
+.eachtitle {
+  height: 50px;
+}
+@media screen and (min-width: 600px) {
+}
+
+@media screen and (min-width: 768px) {
+}
+@media screen and (max-width: 600px) {
+  .Eachproduct {
+    width: 300px;
+  }
+}

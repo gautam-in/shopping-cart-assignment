@@ -1,0 +1,18 @@
+.allproducts {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  background: white;
+  border-top: 1px solid #00000014;
+}
+@media screen and (min-width: 600px) {
+}
+
+@media screen and (min-width: 768px) {
+}
+@media screen and (max-width: 600px) {
+  .allproducts {
+    justify-content: space-evenly;
+  }
+}

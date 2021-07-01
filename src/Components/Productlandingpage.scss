@@ -1,0 +1,21 @@
+.productlandingpage {
+  min-height: calc(100vh - 132px);
+  background: #c4c2c23b;
+  display: grid;
+  grid-template-columns: 25% 75%;
+}
+.productlandingpage h1 {
+  text-align: center;
+}
+.selectionbar {
+}
+@media screen and (min-width: 600px) {
+}
+
+@media screen and (min-width: 768px) {
+}
+@media screen and (max-width: 600px) {
+  .productlandingpage {
+    display: block;
+  }
+}
