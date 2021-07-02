@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import withErrorHandler from '../../ErrorBoundary/withErrorHandler';
 import {CategoriesContainer} from './categories.styles';
 import Category from './Category';
 
@@ -22,6 +23,6 @@ const CategoriesComponent = ({categories}) =>{
 CategoriesComponent.propTypes ={
     categories: PropTypes.array,
   }
-export default CategoriesComponent
+export default withErrorHandler(CategoriesComponent)
 
   

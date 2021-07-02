@@ -3,8 +3,8 @@ import styled from 'styled-components';
 const ButtonStyles = styled.button`
   & {
     padding: 0.5rem 1.25rem;
-    background-color: var(--magenta);
-    color: var(--white);
+    background-color: ${props => props.theme.magenta};
+    color: ${props => props.theme.white};
     outline: none;
     border: none;
     cursor: pointer;

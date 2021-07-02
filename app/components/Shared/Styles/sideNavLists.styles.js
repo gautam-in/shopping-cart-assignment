@@ -4,18 +4,18 @@ const SideNavListStyles = styled.li`
   list-style: none;
   margin: 0;
   width: 100%;
-  border-bottom: 1px solid var(--grey);
+  border-bottom: 1px solid ${props => props.theme.grey};
   padding: 1rem;
   text-align: center;
   cursor: pointer;
   order: ${(props) => props.order};
   &:hover {
-    background-color: var(--magenta);
-    color: var(--white);
+    background-color: ${props => props.theme.magenta};
+    color: ${props => props.theme.white};
   }
   &.active {
-    background-color: var(--magenta);
-    color: var(--white);
+    background-color: ${props => props.theme.magenta};
+    color: ${props => props.theme.white};
   }
   @media only screen and (max-width: 767px) {
     padding: 0.5rem;

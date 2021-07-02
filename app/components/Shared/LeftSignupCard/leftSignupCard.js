@@ -1,6 +1,7 @@
 import LeftSignUpCardStyle from './leftSignupCard.styles';
 import PropTypes from 'prop-types'
-export default function LeftSignUpCard({ header, description }) {
+import withErrorHandler from '../../../ErrorBoundary/withErrorHandler';
+const LeftSignUpCard = ({ header, description }) => {
   return (
     <LeftSignUpCardStyle>
       <h1>{header}</h1>
@@ -12,3 +13,4 @@ LeftSignUpCard.propTypes = {
   header: PropTypes.string,
   description: PropTypes.string
 }
+export default withErrorHandler(LeftSignUpCard)

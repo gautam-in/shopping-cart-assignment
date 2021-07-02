@@ -1,11 +1,19 @@
-import Document from 'next/document';
+import Document, { Html, Main, NextScript } from 'next/document';
 import { ServerStyleSheet } from 'styled-components';
+import useTitle from '../utils/useTitle';
 
 export default class MyDocument extends Document {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      title: 'abc',
+    };
+  }
+
   static async getInitialProps(ctx) {
     const sheet = new ServerStyleSheet();
     const originalRenderPage = ctx.renderPage;
-
     try {
       ctx.renderPage = () =>
         originalRenderPage({
@@ -26,5 +34,17 @@ export default class MyDocument extends Document {
     } finally {
       sheet.seal();
     }
+  }
+  render() {
+    return (
+      <Html lang="en-us">
+       <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+        {useTitle('Sabka Bazaar')}
+        <body>
+          <Main />
+          <NextScript />
+        </body>
+      </Html>
+    );
   }
 }

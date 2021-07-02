@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import withErrorHandler from '../../../ErrorBoundary/withErrorHandler';
 import {LogoStyle} from './logo.styles';
 
 const Logo = () =>{
@@ -12,4 +13,4 @@ const Logo = () =>{
       </Link>
     )
 }
-export default Logo;
+export default withErrorHandler(Logo);

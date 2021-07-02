@@ -2,8 +2,9 @@ import { useRouter } from 'next/router';
 import SideNavListStyles from '../Shared/Styles/sideNavLists.styles';
 import SideNavStyles from './desktopSideNav.styles';
 import PropTypes from 'prop-types';
+import withErrorHandler from '../../ErrorBoundary/withErrorHandler';
 
-export default function DesktopSideNav({ categories }) {
+const DesktopSideNav = ({ categories }) => {
   const router = useRouter();
   const categoryQuery = router.query.category;
   const onCategoryChange = (category) => {
@@ -19,15 +20,16 @@ export default function DesktopSideNav({ categories }) {
   const renderCategoryList = (categories, categoryQuery) => {
     if (categories) {
       return categories.map((category) => {
+        const {id, order, name} = category
         return (
           <SideNavListStyles
-            className={category.id === categoryQuery ? 'active' : ''}
-            key={category.id}
-            order={category.order}
+            className={id === categoryQuery ? 'active' : ''}
+            key={id}
+            order={order}
             onClick={() => onCategoryChange(category)}
-            id={category.id}
+            id={id}
           >
-            {category.name}
+            {name}
           </SideNavListStyles>
         );
       });
@@ -44,3 +46,4 @@ export default function DesktopSideNav({ categories }) {
 DesktopSideNav.propTypes = {
   categories: PropTypes.array
 }
+export default withErrorHandler(DesktopSideNav)

@@ -1,18 +1,21 @@
-
 import Footer from '../../components/Footer';
 import InnerStyle from './innerStyle';
 import PropTypes from 'prop-types';
 import Header from '../Header';
+import { ThemeProvider } from 'styled-components';
+import theme from '../../../utils/themeConstant';
 
 export default function Page({ children }) {
   return (
     <>
-      <Header />
-      <InnerStyle>{children}</InnerStyle>
-      <Footer />
+      <ThemeProvider theme={theme}>
+        <Header />
+        <InnerStyle>{children}</InnerStyle>
+        <Footer />
+      </ThemeProvider>
     </>
   );
 }
 Page.propTypes = {
-  children: PropTypes.object
-}
+  children: PropTypes.object,
+};

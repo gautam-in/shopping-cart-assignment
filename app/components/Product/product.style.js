@@ -1,14 +1,14 @@
 import styled from 'styled-components';
 
 export const ProductStyles = styled.div`
-  width: var(--productTileDesktopWidth);
-  border-bottom: 1px dotted var(--grey);
-  background-color: var(--white);
+  width: ${props => props.theme.productTileDesktopWidth}px;
+  border-bottom: 1px dotted ${props => props.theme.grey};
+  background-color: ${props => props.theme.white};
   margin: 0.5rem 0.5rem 1rem;
   padding: 0.25rem;
   --max-lines: 4;
   @media only screen and (max-width: 1023px) {
-    width: var(--productTileTabletWidth);
+    width: ${props => props.theme.productTileTabletWidth}px;
   }
 
   @media only screen and (max-width: 767px) {
@@ -35,7 +35,7 @@ export const ProductContent = styled.div`
     }
 `;
 export const ImageContainer = styled.div`
-  width:  var(--productTileDesktopWidth);
+  width:  ${props => props.theme.productTileDesktopWidth}px;
   img{
     width: 100%;
   }
@@ -48,7 +48,7 @@ export const ImageContainer = styled.div`
     }
 `;
 export const ProductDesc = styled.div`
-     background-color: var(--lightestgrey);
+     background-color: ${props => props.theme.lightestgrey};
     font-size: 0.8rem;
     font-weight: 600;
     margin: 1rem 0;

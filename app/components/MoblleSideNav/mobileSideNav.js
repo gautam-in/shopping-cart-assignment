@@ -9,6 +9,7 @@ import { faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import PropTypes from 'prop-types';
 import {PRODUCTS} from './mobileSIdeNav.constants'
+import withErrorHandler from '../../ErrorBoundary/withErrorHandler';
 
 function MobileCategoryNav({ categories }) {
 
@@ -33,14 +34,15 @@ function MobileCategoryNav({ categories }) {
 
   const renderCategoryList = (categories) => {
     return categories?.map((category) => {
+      const {id, order, name} = category;
       if (category.id === categoryQuery) return;
       return (
         <SideNavListStyles
-          key={category.id}
-          order={category.order}
+          key={id}
+          order={order}
           onClick={(e) => onselectionchange(e, category)}
         >
-          {category.name}
+          {name}
         </SideNavListStyles>
       );
     });
@@ -76,4 +78,4 @@ function MobileCategoryNav({ categories }) {
 MobileCategoryNav.propTypes = {
   categories: PropTypes.array
 }
-export default MobileCategoryNav;
+export default withErrorHandler(MobileCategoryNav);

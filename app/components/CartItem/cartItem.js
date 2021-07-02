@@ -3,7 +3,7 @@ import { addToShipping, deleteFromShipping } from '../../../store/actions';
 import CustomButton from '../Shared/CustomButton';
 import {CartItemStyle, ProductDetails, ProductQuantityDetails} from './cartItem.styles';
 import PropTypes from 'prop-types';
-// import { bindActionCreators } from 'redux';
+import withErrorHandler from '../../ErrorBoundary/withErrorHandler';
 
 const CartItem = ({ addedProduct }) => {
   const dispatch = useDispatch();
@@ -40,4 +40,4 @@ CartItem.propTypes = {
   addedProduct: PropTypes.any,
 }
 
-export default CartItem;
+export default withErrorHandler(CartItem);

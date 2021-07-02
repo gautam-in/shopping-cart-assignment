@@ -1,24 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Dosis:400,600,700');
 
-:root {
-  --black: #000;
-  --white: #fff;
-  --darkgrey: #777;
-  --grey: #7f8c8d;
-  --lightgrey: #ccc;
-  --lightestgrey: #eee;
-  --magenta: #c02345;
-  --maxWidth: 1140px;
-  --headerHeight: 100px;
-  --sideNavWidth: 230px;
-  --productTileDesktopWidth: calc(
-    (var(--maxWidth) = var(--sideNavWidth)) / 6 + 5px
-  );
-  --productTileTabletWidth: calc((var(--maxWidth) - var(--sideNavWidth)) / 4);
-  --productTileHeight: 450px;
-  --footerHeight: 50px;
-}
-
 html,
 body {
   padding: 0;

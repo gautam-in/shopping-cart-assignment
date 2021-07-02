@@ -1,11 +1,12 @@
 import ButtonStyles from './customButton.styles';
 import PropTypes from 'prop-types'
-export default function CustomButton({
+import withErrorHandler from '../../../ErrorBoundary/withErrorHandler';
+const CustomButton = ({
   text,
   classes,
   clickHandler,
   additionalText,
-}) {
+})=> {
   return (
     <ButtonStyles
       type="button"
@@ -23,4 +24,6 @@ CustomButton.propTypes = {
   additionalText:PropTypes.string,
   clickHandler:PropTypes.any,
 }
+
+export default withErrorHandler(CustomButton)
 

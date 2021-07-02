@@ -1,19 +1,25 @@
 import NavBarStyles from './navbar.styles';
 import Link from 'next/link';
+import { navbarLinks } from './navbar.constants';
+import withErrorHandler from '../../../ErrorBoundary/withErrorHandler';
 
+const renderNavbarList = (navbarLinks) => {
+  return navbarLinks.map(({id, name, href}) =>{
+      return(
+        <li key={id}>
+        <Link href={href}>{name}</Link>
+      </li>
+      )
+  })
+}
 const Navbar = () =>{
     return(
         <NavBarStyles>
         <ul>
-          <li>
-            <Link href="/">Home</Link>
-          </li>
-          <li>
-            <Link href="/products">Products</Link>
-          </li>
+        {renderNavbarList(navbarLinks)}
         </ul>
       </NavBarStyles>
     )
 }
 
-export default Navbar;
+export default withErrorHandler(Navbar);

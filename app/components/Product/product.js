@@ -4,25 +4,27 @@ import { addToShipping } from '../../../store/actions';
 import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
+import withErrorHandler from '../../ErrorBoundary/withErrorHandler';
 
 const Product = ({ product, addToShipping }) => {
+  const {name, imageURL, description, price} = product
   return (
     <ProductStyles>
       <ProductHeader>
-        <h3>{product.name}</h3>
+        <h3>{name}</h3>
       </ProductHeader>
       <ProductContent>
         <ImageContainer>
-          <img src={product.imageURL} alt={product.name} loading='lazy' />
+          <img src={imageURL} alt={name} loading='lazy' />
         </ImageContainer>
-        <ProductDesc title={product.description}>
-          <p>{product.description}</p>
+        <ProductDesc title={description}>
+          <p>{description}</p>
         </ProductDesc>
         <ProductFooter>
-          <ProductPrice>MRP Rs.{product.price}</ProductPrice>
+          <ProductPrice>MRP Rs.{price}</ProductPrice>
           <CustomButton
             text={`Buy Now`}
-            additionalText={` @ Rs ${product.price}`}
+            additionalText={` @ Rs ${price}`}
             clickHandler={() => addToShipping(product)}
           />
         </ProductFooter>
@@ -40,4 +42,4 @@ Product.propTypes = {
   addToShipping: PropTypes.func
 }
 
-export default connect(null, mapDispatchToProps)(Product)
+export default withErrorHandler(connect(null, mapDispatchToProps)(Product))

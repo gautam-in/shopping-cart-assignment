@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 const ProductsContainerStyles = styled.div`
-  margin-left: var(--sideNavWidth);
+  margin-left: ${props => props.theme.sideNavWidth}px;
   padding: 1rem;
   display: flex;
   justify-content: space-between;

@@ -1,5 +1,6 @@
 import Banner from '../app/containers/Banners';
 import Categories from '../app/containers/Categories';
+import useTitle from '../utils/useTitle';
 // import { fetchBanners, fetchCategories } from '../actions';
 // import { wrapper } from '../reducers';
 
@@ -7,6 +8,7 @@ import Categories from '../app/containers/Categories';
 const Home = () => {
   return (
     <main>
+      {useTitle('Home')}
       <Banner  /> 
       <Categories  />
     </main>

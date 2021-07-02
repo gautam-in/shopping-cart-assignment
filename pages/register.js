@@ -1,7 +1,13 @@
-import Register from '../app/containers/Register'
+import Register from '../app/containers/Register';
+import useTitle from '../utils/useTitle';
 
- const RegisterPage = () =>{
-   return <Register />
- }
+const RegisterPage = () => {
+  return (
+    <>
+     {useTitle('register')}
+      <Register />
+    </>
+  );
+};
 
- export default RegisterPage
+export default RegisterPage;

@@ -9,12 +9,12 @@ import withErrorHandler from '../../ErrorBoundary/withErrorHandler';
 const renderBanner = (banners) => {
   if(banners){
   return banners.map((banner) => {
-
+    const {id, bannerImageAlt, bannerImageUrl} = banner;
     return (
       <img
-        key={banner.id}
-        src={banner.bannerImageUrl}
-        alt={banner.bannerImageAlt}
+        key={id}
+        src={bannerImageUrl}
+        alt={bannerImageAlt}
         loading="lazy"
       />
     );

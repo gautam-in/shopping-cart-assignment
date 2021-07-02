@@ -6,6 +6,7 @@ import { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { signOut } from '../../../../store/actions';
+import withErrorHandler from '../../../ErrorBoundary/withErrorHandler';
 
 const Signup = (props) => {
   const { userId, signOut } = props;
@@ -50,4 +51,4 @@ Signup.propTypes = {
     userId: PropTypes.string,
     signOut: PropTypes.func,
   }
-export default connect(mapStateToProps, mapDispatchToProps)(Signup);
+export default withErrorHandler(connect(mapStateToProps, mapDispatchToProps)(Signup));

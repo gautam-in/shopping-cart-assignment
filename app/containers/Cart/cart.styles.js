@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const CartStyles = styled.div`
-  background: var(--lightestgrey);
+  background: ${props => props.theme.lightestgrey};
   position: fixed;
   height: 100%;
   top: 100px;
@@ -14,7 +14,7 @@ export const CartStyles = styled.div`
   ${(props) => props.open && `transform: translateX(0);`};
   header {
     padding: 1% 3%;
-    background: var(--black);
+    background: ${props => props.theme.black};
     color: white;
     display: flex;
     align-items: center;
@@ -30,13 +30,13 @@ export const CartStyles = styled.div`
     overflow-y: auto;
     height: 100%;
     ::-webkit-scrollbar-thumb {
-      background: var(--lightgrey);
+      background: ${props => props.theme.grey};
       border-radius: 10px;
     }
 
     /* Handle on hover */
     ::-webkit-scrollbar-thumb:hover {
-      background: var(--grey);
+      background: ${props => props.theme.grey};
     }
   }
   section {
@@ -45,7 +45,7 @@ export const CartStyles = styled.div`
     margin: 0.5rem;
   }
   footer {
-    background-color: var(--white);
+    background-color: ${props => props.theme.white};
     color: black;
     position: fixed;
     bottom: 100px;
@@ -80,7 +80,7 @@ export const CartStyles = styled.div`
     width: 100%;
     padding-top: 2rem;
     header {
-      background-color: var(--white);
+      background-color: ${props => props.theme.white};
       color: black;
     }
   }

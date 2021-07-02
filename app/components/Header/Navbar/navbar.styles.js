@@ -3,7 +3,7 @@ import styled from 'styled-components';
 const NavBarStyles = styled.nav`
   flex: 0 0 45%;
   align-self: flex-end;
-  color: var(--grey);
+  color: ${props => props.theme.grey};
   ul {
     list-style: none;
     display: flex;

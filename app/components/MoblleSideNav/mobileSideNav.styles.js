@@ -4,7 +4,7 @@ export const MobileCategoryStyle = styled.div`
   flex-direction: column;
   width: 100%;
   position: fixed;
-  background-color: var(--lightestgrey);
+  background-color: ${props => props.theme.lightestgrey};
   font-size: 0.8rem;
   font-weight: 600;
   padding: 0.5%;
@@ -25,8 +25,8 @@ export const MobileCategoryStyle = styled.div`
 export const MobileNavSelectedStyle = styled.div`
   text-align: center;
   padding: 0.5rem;
-  background-color: var(--magenta);
-  color: var(--white);
+  background-color: ${props => props.theme.magenta};
+  color:${props => props.theme.white};
   .chevron-icon {
     float: right;
     transition: 0.2s;

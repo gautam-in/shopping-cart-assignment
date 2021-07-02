@@ -4,7 +4,7 @@ export const CartItemStyle = styled.div`
   display: flex;
   padding: 0.5rem;
   height: 100px;
-  background-color: var(--white);
+  background-color: ${props => props.theme.white};
   margin: 0.5rem 0;
   h4 {
     margin: 0;

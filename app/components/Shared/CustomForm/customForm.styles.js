@@ -22,7 +22,7 @@ const CustomFormStyle = styled.form`
       padding: 1%;
       background-color: transparent;
       border: none;
-      border-bottom: 1px solid var(--lightgrey);
+      border-bottom: 1px solid ${props => props.theme.lightgrey};
       outline: none;
       &:focus + label,
       &:valid + label {

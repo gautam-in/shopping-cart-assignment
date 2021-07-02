@@ -11,9 +11,9 @@ const HeaderStyle = styled.header`
   background-color: #fff;
   z-index: 2;
   top: 0;
-  height: var(--headerHeight);
+  height: ${props => props.theme.headerHeight}px;
   @media only screen and (max-width: 767px) {
-    height: calc(var(--headerHeight) / 2);
+    height: ${props => props.theme.headerHeight / 2}px;
     padding: 0;
     justify-content: space-between;
   }
