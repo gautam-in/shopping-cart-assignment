@@ -1,5 +1,1 @@
-export default () =>(
-    <h1>start
-        
-    </h1>
-)
+export {default} from './home';

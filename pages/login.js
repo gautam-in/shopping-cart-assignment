@@ -1,10 +1,10 @@
 import { useRouter } from "next/router";
 import { useDispatch } from "react-redux";
 import {SIGN_IN} from "../redux/actions/Constant"
-import SignUpHeader from "../components/SIgnUpHeader";
+import SignUpHeader from "../components/atom/SignUpHeader";
 import SignUpStyle from "../components/styles/SignupStyle";
 import CustomFormStyle from "../components/styles/FormStyle"
-import InputBox from "../components/Input"
+import InputBox from "../components/atom/Input"
 import { useFormik } from "formik";
 import ButtonStyles from "../components/styles/ButtonStyles";
 import {loginValidation} from '../Utils/Validation'

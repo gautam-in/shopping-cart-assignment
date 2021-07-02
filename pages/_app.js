@@ -1,5 +1,4 @@
-
-import Page from "../components/Page";
+import Page from "../components/organism/Page";
 import { applyMiddleware, compose, createStore } from "redux";
 import reducers from "../redux/reducers";
 import reduxThunk from 'redux-thunk';
@@ -14,7 +13,7 @@ function MyApp({ Component, pageProps }) {
     <Page>
       <Component {...pageProps} />
     </Page>
-   </Provider>
+    </Provider>
   );
 }
 

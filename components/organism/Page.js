@@ -1,6 +1,6 @@
-import Header from "./Header";
-import Footer from "./Footer";
-import {InnerStyle,GlobalStyles} from "./styles/GlobalStyle";
+import Header from "../molecules/Header";
+import Footer from "../molecules/Footer";
+import {InnerStyle,GlobalStyles} from "../styles/GlobalStyle";
 
 
 export default function Page({ children }) {

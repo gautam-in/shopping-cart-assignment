@@ -1,10 +1,10 @@
 import styled from "styled-components";
 
 const FooterStyle = styled.footer`
-  font-size: 0.8rem;
   background-color: var(--lightgrey);
   position: relative;
   z-index: 1;
+  font-size: 0.8rem;
   height: var(--footerHeight);
   display: flex;
   align-items: center;
