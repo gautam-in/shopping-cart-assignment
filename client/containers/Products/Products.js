@@ -1,28 +1,22 @@
 import React, { useState, useEffect } from "react";
-import { PRODUCTS_URL, CATEGORIES_URL } from "../../constants";
+import { CATEGORIES_URL } from "../../constants";
 import "./Products.scss";
+import { useSelector, useDispatch } from "react-redux";
 import ProductDetails from "../../components/ProductDetails/ProductDetails";
+import { fetchProducts } from "../../redux/products/productActions";
 
 const Products = () => {
-  let [products, setProducts] = useState(null);
-  let [loading, setLoading] = useState(true);
-  let [error, setError] = useState(null);
-  let [categories, setCategories] = useState(null);
-  let [selectedCategoryId, setSelectedCategoryId] = useState(
+  const dispatch = useDispatch();
+  const products = useSelector((state) => state.products.data);
+  const loading = useSelector((state) => state.products.loading);
+  const error = useSelector((state) => state.products.error);
+  const [categories, setCategories] = useState(null);
+  const [selectedCategoryId, setSelectedCategoryId] = useState(
     window.location.hash.substring(1)
   );
 
   useEffect(() => {
-    fetch(PRODUCTS_URL)
-      .then((response) => response.json())
-      .then((data) => {
-        setProducts(data);
-        setLoading(false);
-      })
-      .catch((err) => {
-        setError(err);
-        setLoading(false);
-      });
+    dispatch(fetchProducts());
   }, []);
 
   useEffect(() => {

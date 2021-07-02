@@ -1,11 +1,16 @@
 import React, { useContext } from "react";
 import "./Header.scss";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 import AuthContext from "../../AuthContext";
 
 const Header = () => {
   const { userAuthentication, toggleUserAuthentication } = useContext(
     AuthContext
+  );
+  const cartItemsCount = useSelector(
+    (state) =>
+      state.cart && state.cart.itemsAdded && state.cart.itemsAdded.length
   );
   return (
     <header className="header">
@@ -56,7 +61,7 @@ const Header = () => {
                 src="../static/images/cart.svg"
                 alt="cart image"
               />
-              <span className="number-of-items">0 items</span>
+              <span className="number-of-items">{cartItemsCount} items</span>
             </Link>
           </div>
         </div>

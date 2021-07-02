@@ -1,7 +1,19 @@
 import React from "react";
 import "./ProductDetails.scss";
+import { useDispatch } from "react-redux";
+import { addItemToCart } from "../../redux/cart/cartActions";
 
 const ProductDetails = ({ product }) => {
+  const dispatch = useDispatch();
+  const handleBuyNow = (prodId) => {
+    dispatch(
+      addItemToCart({
+        id: prodId,
+        quantity: 0,
+      })
+    );
+  };
+
   return (
     <div className="product-card">
       <div className="product-title">{product.name}</div>
@@ -18,7 +30,13 @@ const ProductDetails = ({ product }) => {
       </div>
       <div className="price-details">
         <div className="mrp">MRP Rs {product.price}</div>
-        <button className="buy-button">
+        <button
+          type="button"
+          className="buy-button"
+          onClick={() => handleBuyNow(product.id)}
+          tabIndex={0}
+          onKeyPress={() => handleBuyNow(product.id)}
+        >
           Buy Now <span className="buy-now-price"> @ Rs.{product.price}</span>
         </button>
       </div>

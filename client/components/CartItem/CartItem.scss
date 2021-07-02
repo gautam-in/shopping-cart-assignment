@@ -1,0 +1,11 @@
+.cart-item {
+    padding: 1em 1em;
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .item-name {
+        font-weight: bold;
+    }
+}

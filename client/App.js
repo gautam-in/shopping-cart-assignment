@@ -1,5 +1,6 @@
-import React, { useState } from "react";
 import "./App.scss";
+import React, { useState } from "react";
+import { Provider } from "react-redux";
 import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
 import Header from "./components/Header/Header";
 import Home from "./containers/Home/Home";
@@ -9,6 +10,7 @@ import Register from "./containers/Auth/Register";
 import SignIn from "./containers/Auth/SignIn";
 import Cart from "./containers/Cart/Cart";
 import AuthContext from "./AuthContext";
+import store from "./redux/store";
 
 const App = () => {
   const [userAuthentication, setUserAuthentication] = useState(
@@ -24,22 +26,24 @@ const App = () => {
   };
 
   return (
-    <AuthContext.Provider value={contextVal}>
-      <BrowserRouter>
-        <Header />
-        <main>
-          <Switch>
-            <Route exact path="/" render={() => <Redirect to="/home" />} />
-            <Route path="/login" component={SignIn} />
-            <Route path="/sign-up" component={Register} />
-            <Route path="/home" component={Home} />
-            <Route path="/products" component={Products} />
-            <Route path="/cart" component={Cart} />
-          </Switch>
-        </main>
-        <Footer />
-      </BrowserRouter>
-    </AuthContext.Provider>
+    <Provider store={store}>
+      <AuthContext.Provider value={contextVal}>
+        <BrowserRouter>
+          <Header />
+          <main>
+            <Switch>
+              <Route exact path="/" render={() => <Redirect to="/home" />} />
+              <Route path="/login" component={SignIn} />
+              <Route path="/sign-up" component={Register} />
+              <Route path="/home" component={Home} />
+              <Route path="/products" component={Products} />
+              <Route path="/cart" component={Cart} />
+            </Switch>
+          </main>
+          <Footer />
+        </BrowserRouter>
+      </AuthContext.Provider>
+    </Provider>
   );
 };
 
