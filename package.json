@@ -10,6 +10,8 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "canned": "^0.3.12"
+    "canned": "^0.3.12",
+    "lodash": "^4.17.21",
+    "prettier": "^2.3.2"
   }
 }
