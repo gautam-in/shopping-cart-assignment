@@ -14,6 +14,10 @@ const StyledImage = styled.div`
         width:100%
     }
 
+    .product {
+        width:100%
+    }
+
     .product-cart {
         width:100%
     }

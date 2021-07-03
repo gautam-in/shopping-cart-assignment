@@ -13,6 +13,7 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
+    "@babel/plugin-proposal-export-default-from": "^7.14.5",
     "canned": "^0.3.12",
     "next": "^11.0.1",
     "next-redux-wrapper": "^7.0.2",
@@ -26,6 +27,7 @@
   },
   "devDependencies": {
     "@babel/eslint-parser": "7.14.7",
+    "@babel/plugin-syntax-export-default-from": "^7.14.5",
     "babel-plugin-styled-components": "^1.12.0",
     "eslint": "^7.29.0",
     "eslint-config-airbnb": "^18.2.1",

@@ -1,10 +1,9 @@
 import {ProductStyled,TopSection,MiddleSection,BottomSection,Price,Buy,
     ProductDesc,ProductRow} from './style'
 import HeadingH4 from '../../atoms/Heading/HeadingH4'
-import Image from 'next/image'
 import TextP from '../../atoms/Text/TextP'
 import Button from '../../atoms/Button/Button'
-
+import Image from '../../atoms/Image/Image'
 
 const SingleProduct = ({data})=>{
     const {name,imageURL,description,price} = data;
@@ -16,7 +15,7 @@ const SingleProduct = ({data})=>{
                 </HeadingH4>
             </TopSection>
             <MiddleSection>
-                <Image src={imageURL} width="100" height="200"/>
+                <Image src={imageURL} classname='product' alt={name}/>
                 <ProductDesc>
                     <TextP>{description}</TextP>
                 </ProductDesc>
@@ -30,7 +29,6 @@ const SingleProduct = ({data})=>{
 }
 
 function Product({product}){
-    console.log("56",product)
     const rowItems = product.map((data) =>
         <SingleProduct key={data.id} data={data}/>
     );

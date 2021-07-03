@@ -1,15 +1,16 @@
 import { endpoint } from "../config"
 
-const FetchCategory = async () => {
-    const res = await fetch(`${endpoint}/categories`)
-    const data = await res.json()
-    return data;
-}
+const resJson = async (res)=>(await res.json())
 
-const FetchProducts = async () => {
-    const res = await fetch(`${endpoint}/products`)
-    const data = await res.json()
-    return data;
-}
+const callGetMethod = async (api) =>{
+    const res =  await fetch(api)
+    return resJson(res)
+} 
 
-export {FetchCategory,FetchProducts}
+const FetchCategory = async () => (callGetMethod(`${endpoint}/categories`))
+
+const FetchProducts = async () => (callGetMethod(`${endpoint}/products`))
+
+const FetchUser = async () => (callGetMethod(`${endpoint}/user`))
+
+export {FetchCategory,FetchProducts,FetchUser}

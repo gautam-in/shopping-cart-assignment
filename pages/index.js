@@ -1,17 +1,10 @@
 import Category from '../components/organism/Category/Category'
+import withData from '../lib/withData'
 
-function Home({pageProps}) {
+function Home(props) {
   return (
-    <Category {...pageProps}/>
+    <Category {...props}/>
   )
 }
 
-Home.getInitialProps = async function () {
-  let pageProps = {};
-  if (Category.getInitialProps) {
-    pageProps = await Category.getInitialProps();
-  }
-  return { pageProps };
-};
-
-export default Home
+export default withData(Home,'categories')

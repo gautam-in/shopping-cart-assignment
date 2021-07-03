@@ -1,17 +1,10 @@
 import Products from '../components/organism/Products/Products'
+import withData from '../lib/withData'
 
-function ProductsIndex({pageProps}) {
+function ProductsIndex(props) {
   return (
-    <Products {...pageProps}/>
+    <Products {...props}/>
   )
 }
 
-ProductsIndex.getInitialProps = async function () {
-  let pageProps = {};
-  if (Products.getInitialProps) {
-    pageProps = await Products.getInitialProps();
-  }
-  return { pageProps };
-};
-
-export default ProductsIndex
+export default withData(ProductsIndex,'products')
