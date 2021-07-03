@@ -25,6 +25,7 @@ const CartExpand = styled.div`
     margin-left:auto;
     position:absolute;
     right:236px;
+    top:92px;
 `;
 
 const CartContainer = styled.div`

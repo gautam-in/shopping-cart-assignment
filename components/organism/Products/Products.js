@@ -1,10 +1,8 @@
 import MenuList from  '../../molecules/Menu/MenuList'
 import { ProductStyle ,Container} from './style'
 import Product from '../../molecules/Product/Product'
-import {FetchCategory,FetchProducts} from '../../../api/FetchCategory' 
-import {arrayChunk} from '../../../lib/lib';
 
-function Products({products,categories}){
+function Products({products,menu}){
     
 
     const listItems = products.map((data,i) =>
@@ -13,7 +11,7 @@ function Products({products,categories}){
     
     return (
         <Container>
-            <MenuList menuData = {categories} />    
+            <MenuList menuData = {menu} />    
             <ProductStyle>
                 {listItems}
             </ProductStyle>
@@ -21,11 +19,5 @@ function Products({products,categories}){
     )
 }
 
-Products.getInitialProps = async function () {
-    const categories = await FetchCategory()
-    const products = await FetchProducts()
-    const productsChunk = arrayChunk(products)
-    return {categories,products:productsChunk} 
- }
 
 export default Products
