@@ -1,29 +1,43 @@
-import {ProductStyled,TopSection,MiddleSection,BottomSection,Price,Buy,ProductDesc} from './style'
+import {ProductStyled,TopSection,MiddleSection,BottomSection,Price,Buy,
+    ProductDesc,ProductRow} from './style'
 import HeadingH4 from '../../atoms/Heading/HeadingH4'
 import Image from 'next/image'
 import TextP from '../../atoms/Text/TextP'
 import Button from '../../atoms/Button/Button'
 
-function Product({product}){
-    
+
+const SingleProduct = ({data})=>{
+    const {name,imageURL,description,price} = data;
     return(
         <ProductStyled>
             <TopSection>
                 <HeadingH4>
-                    {product.name}
+                    {name}
                 </HeadingH4>
             </TopSection>
             <MiddleSection>
-                <Image src={product.imageURL} width="100" height="200"/>
+                <Image src={imageURL} width="100" height="200"/>
                 <ProductDesc>
-                    <TextP>{product.description}</TextP>
+                    <TextP>{description}</TextP>
                 </ProductDesc>
             </MiddleSection>
             <BottomSection>
-                <Price><span>MRP Rs {product.price}</span></Price>
+                <Price><span>MRP Rs {price}</span></Price>
                 <Buy><Button>Buy Now</Button></Buy>
             </BottomSection>
         </ProductStyled>
+    )
+}
+
+function Product({product}){
+    console.log("56",product)
+    const rowItems = product.map((data) =>
+        <SingleProduct key={data.id} data={data}/>
+    );
+    return(
+        <ProductRow>
+            {rowItems}
+        </ProductRow>
     )
 }
 

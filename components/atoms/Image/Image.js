@@ -1,23 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
- 
+import StyledImage from './style'
+  
 const Image = (props) => {
-  const {
-    source,
-    alt,
-    classname,
-  } = props;
-  const ImageJsx = (
-    <picture>
-      <img className={classname} src={source} alt={alt} />
-    </picture>
-  );
- 
+    const {
+      src,
+      alt,
+      classname,
+    } = props;
+  
   return (
-    <>
-      {ImageJsx}
-    </>
+    <StyledImage> <img src={src}  alt={alt} className={classname}/> </StyledImage>
   );
+  
 };
  
 // props validation

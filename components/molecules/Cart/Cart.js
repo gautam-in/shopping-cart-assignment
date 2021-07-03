@@ -3,6 +3,7 @@ import {Container,Count} from './CartStyle'
 import {incrementCounter} from '../../../redux/actions/main'
 import {connect} from 'react-redux'
 
+ 
 function Cart({cartInfo,incrementCounter}){
 
   const {cartCount} = cartInfo

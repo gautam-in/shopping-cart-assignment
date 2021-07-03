@@ -7,8 +7,8 @@ import {arrayChunk} from '../../../lib/lib';
 function Products({products,categories}){
     
 
-    const listItems = products.map((data) =>
-        <Product key={data.id} product={data}/>
+    const listItems = products.map((data,i) =>
+        <Product key={i} product={data}/>
     );
     
     return (
@@ -25,8 +25,7 @@ Products.getInitialProps = async function () {
     const categories = await FetchCategory()
     const products = await FetchProducts()
     const productsChunk = arrayChunk(products)
-    let pr = productsChunk[0]
-    return {categories,products:pr} 
+    return {categories,products:productsChunk} 
  }
 
 export default Products

@@ -43,6 +43,10 @@ const BottomSection = styled.div`
     margin-top:4px;
 `;
 
+const ProductRow = styled.div`
+    display: flex;
+    justify-content: space-evenly;
+`;
 export {
     ProductStyled,
     TopSection,
@@ -50,5 +54,6 @@ export {
     BottomSection,
     Price,
     Buy,
-    ProductDesc
+    ProductDesc,
+    ProductRow
 }
