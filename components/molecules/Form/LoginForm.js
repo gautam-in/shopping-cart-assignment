@@ -1,15 +1,26 @@
-import Button from '../../atoms/Button/Button'
-import Input from '../../atoms/Input/InputField'
+import React from 'react'
+import { Field, reduxForm } from 'redux-form'
 
-function loginForm(){
-    return (
-        <form>
-            <Input cname="input" type="text" className="input" content="Email" />
-            <Input cname="input" type="password" className="input" content="Password" />
-            <Button cname=" btn-primary btn-lg btn-block" type="submit" content="Log In" />
-            <Button cname="btn btn-outline-primary fb" type="submit" content="New User? SignUp" />
-        </form>
-    )   
+let LoginForm = props => {
+  const { handleSubmit } = props
+  return (
+    <form onSubmit={handleSubmit}>
+      <div>
+        <label htmlFor="email">Email</label>
+        <Field name="email" component="input" type="email" />
+      </div>
+      <div>
+        <label htmlFor="password">Password</label>
+        <Field name="password" component="input" type="password" />
+      </div>
+      <button type="submit">Submit</button>
+    </form>
+  )
 }
+
+LoginForm = reduxForm({
+  // a unique name for the form
+  form: 'login'
+})(LoginForm)
 
 export default LoginForm

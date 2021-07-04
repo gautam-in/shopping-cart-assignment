@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 
 const StyledImage = styled.div`
+    display:flex;
     img {
         width:100%
     }
@@ -18,7 +19,7 @@ const StyledImage = styled.div`
         width:100%
     }
 
-    .product-cart {
+    .cart-image {
         width:100%
     }
 

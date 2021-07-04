@@ -1,16 +1,16 @@
 import { Provider } from 'react-redux'
 import withRedux from 'next-redux-wrapper'
-import '../styles/globals.css'
 import PageLayout from '../components/templates'
 import store from '../redux/store'
-
+import GlobalStyle from '../styles/GlobalStyle'
 
 function MyApp({ Component, pageProps }) {
   return (
     <Provider store={store}>
-      <PageLayout> 
-        <Component {...pageProps} />
-      </PageLayout>
+      <GlobalStyle />
+        <PageLayout user={pageProps.user}> 
+          <Component {...pageProps} />
+        </PageLayout>
     </Provider>
   )
 }

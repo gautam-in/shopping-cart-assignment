@@ -1,7 +1,5 @@
 import styled from 'styled-components'
-import {PlusCircleFill} from "@styled-icons/bootstrap/PlusCircleFill"
-import {MinusCircle} from "@styled-icons/boxicons-solid/MinusCircle" 
-import {Cross} from "@styled-icons/entypo/Cross"
+
 
 const Container = styled.div`
     background:#fff;
@@ -14,6 +12,7 @@ const Container = styled.div`
 
 
 const LeftSection = styled.div`
+    flex-grow:1;
     img{
         width:60px;
         padding:5px;
@@ -48,22 +47,6 @@ const RightSection = styled.div`
     flex-grow:1;
     font-weight: 150px;
 `;
-
-function CartProduct(){
-    return (
-        <Container>
-            <LeftSection>
-                <img src='/static/images/products/fruit-n-veg/kiwi-green.jpg'/>
-            </LeftSection>
-            <MiddleSection>
-                <div><h5>Apple-washington , Regular 4 pcs</h5></div>
-                <div><MinusCircle width="25" color="#bf2957"/>1<PlusCircleFill width="20" color="#bf2957"/><Cross width="20" /><Price>Rs.187</Price></div>
-            </MiddleSection>
-            <RightSection>
-                <Price>Rs.187</Price>
-            </RightSection>
-        </Container>
-    )
+export {
+    Container,LeftSection,MiddleSection,RightSection,Price
 }
-
-export default CartProduct

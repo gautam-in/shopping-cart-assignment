@@ -1,17 +1,20 @@
 import * as t from '../types'
 
 const defaultState = {
-    name:'guest',
-    cart:[]
+        name:'guest',
+        cart:[]
 }
 
-const user = (defaultState,action)=>{
-    switch(actipn.type){
+const user = (state=defaultState,action)=>{
+    switch(action.type){
         case t.SET_USER:
             return action.payload
-            break;
+        break;
+        
         default:
-            return 
+            return state
         break;
     }
 }
+
+export default user

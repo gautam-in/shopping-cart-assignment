@@ -17,7 +17,7 @@ const Image = (props) => {
  
 // props validation
 Image.propTypes = {
-  source: PropTypes.string.isRequired,
+  src: PropTypes.string.isRequired,
   alt: PropTypes.string.isRequired,
   classname: PropTypes.string,
 };

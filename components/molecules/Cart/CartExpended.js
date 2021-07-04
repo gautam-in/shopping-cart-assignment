@@ -6,10 +6,16 @@ import {CartExpand,CartExpandTop,
 import {cartClose} from '../../../redux/actions/main'
 import {connect} from 'react-redux'
 import {Cross} from "@styled-icons/entypo/Cross";
-import CartProduct from './CartProduct'
+import CartProduct from '../../molecules/Product/CartProduct'
 import Checkout from './Checkout'
- const CartExpended = ({cartInfo,cartClose})=>{
+ 
+const CartExpended = ({cartInfo,cartClose,cartData})=>{
+    
     const { open }  = cartInfo
+    
+    const cartItems = cartData.map((data) =>
+        <CartProduct key={data.id} data={data}/>
+    );
     if(!open){
       return ''
     }
@@ -18,16 +24,11 @@ import Checkout from './Checkout'
       <CartExpand>
         <CartContainer>
           <CartExpandTop>
-            <div><strong>My Cart</strong><span>(1 item)</span></div>
+            <div><strong>My Cart</strong><span>({cartData.length} item)</span></div>
             <div><Cross height='20' width='20' onClick={()=>cartClose()} /></div>
           </CartExpandTop>
           <CartExpandMiddle>
-              <CartProduct/>
-              <CartProduct/>
-              <CartProduct/>
-              <CartProduct/> 
-              <CartProduct/>
-               
+              {cartItems}
           </CartExpandMiddle>
           <CartExpandBottom>
             <Checkout/>
