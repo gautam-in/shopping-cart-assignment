@@ -11,14 +11,16 @@ export const addItemToCart = (item) => {
   };
 };
 
-export const increaseQuantity = () => {
+export const increaseQuantity = (prodId) => {
   return {
     type: INCREASE_QUANTITY,
+    payload: prodId,
   };
 };
 
-export const decreaseQuantity = () => {
+export const decreaseQuantity = (prodId) => {
   return {
     type: DECREASE_QUANTITY,
+    payload: prodId,
   };
 };

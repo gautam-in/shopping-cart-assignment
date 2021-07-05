@@ -1,3 +1,5 @@
+$primary-color:#d00156;
+
 .cart-item {
     padding: 1em 1em;
     background-color: white;
@@ -7,5 +9,27 @@
 
     .item-name {
         font-weight: bold;
+    }
+
+    .purchase-description {
+        flex-grow: 1;
+        padding: 0 1em;
+
+        .item-quantity {
+            .quant-buttons {
+                cursor: pointer;
+                background: $primary-color;
+                border: none;
+                color: white;
+                margin: 1em;
+                padding: 0.3em 0.8em;
+                border-radius: 4px;
+            }
+        }
+    }
+
+    .item-price {
+        padding: 0 1em;
+        font-size: 1.2em;
     }
 }

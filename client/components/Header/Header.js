@@ -61,7 +61,13 @@ const Header = () => {
                 src="../static/images/cart.svg"
                 alt="cart image"
               />
-              <span className="number-of-items">{cartItemsCount} items</span>
+              <span
+                style={
+                  cartItemsCount > 0 ? { color: "#ea1d71" } : { color: "gray" }
+                }
+              >
+                {cartItemsCount} {cartItemsCount === 1 ? "item" : "items"}
+              </span>
             </Link>
           </div>
         </div>

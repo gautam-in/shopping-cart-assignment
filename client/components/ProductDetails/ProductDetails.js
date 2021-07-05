@@ -1,17 +1,26 @@
 import React from "react";
 import "./ProductDetails.scss";
-import { useDispatch } from "react-redux";
-import { addItemToCart } from "../../redux/cart/cartActions";
+import { useSelector, useDispatch } from "react-redux";
+import { addItemToCart, increaseQuantity } from "../../redux/cart/cartActions";
 
 const ProductDetails = ({ product }) => {
+  const cartItems = useSelector((state) => state.cart.itemsAdded);
   const dispatch = useDispatch();
+
   const handleBuyNow = (prodId) => {
-    dispatch(
-      addItemToCart({
-        id: prodId,
-        quantity: 0,
-      })
-    );
+    if (cartItems.find((_) => _.id === prodId)) {
+      dispatch(increaseQuantity(prodId));
+    } else {
+      dispatch(
+        addItemToCart({
+          id: prodId,
+          quantity: 1,
+          stock: product.stock,
+          unitPrice: product.price,
+          totalPrice: product.price,
+        })
+      );
+    }
   };
 
   return (

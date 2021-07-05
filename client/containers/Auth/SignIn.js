@@ -37,6 +37,7 @@ const SignIn = () => {
           <input
             placeholder="Email"
             value={userDetails.email}
+            required
             onChange={(event) =>
               setUserDetails({ ...userDetails, email: event.target.value })
             }
@@ -45,6 +46,7 @@ const SignIn = () => {
             placeholder="Password"
             type="password"
             value={userDetails.password}
+            required
             onChange={(event) =>
               setUserDetails({ ...userDetails, password: event.target.value })
             }

@@ -59,6 +59,7 @@ const Register = () => {
         <form onSubmit={onFormSubmit}>
           <input
             placeholder="First name"
+            required
             value={userDetails.firstName}
             onChange={(event) =>
               setUserDetails({ ...userDetails, firstName: event.target.value })
@@ -73,6 +74,7 @@ const Register = () => {
           />
           <input
             placeholder="Email"
+            required
             value={userDetails.email}
             onChange={(event) =>
               setUserDetails({ ...userDetails, email: event.target.value })
@@ -81,6 +83,7 @@ const Register = () => {
           <input
             placeholder="Password"
             type="password"
+            required
             value={userDetails.password}
             onChange={(event) =>
               setUserDetails({ ...userDetails, password: event.target.value })
@@ -89,6 +92,7 @@ const Register = () => {
           <input
             placeholder="Confirm Password"
             type="password"
+            required
             value={userDetails.confirmPwd}
             onChange={(event) =>
               setUserDetails({ ...userDetails, confirmPwd: event.target.value })
@@ -102,7 +106,7 @@ const Register = () => {
           >
             {validation.statusErrorMessage || validation.statusSuccessMessage}
           </p>
-          <button>SignUp</button>
+          <button>Sign up</button>
         </form>
       </section>
     </div>

@@ -6,7 +6,8 @@ import CartItem from "../../components/CartItem/CartItem";
 
 const Cart = () => {
   const history = useHistory();
-  const items = useSelector((state) => state.cart.itemsAdded);
+  const cart = useSelector((state) => state.cart);
+  const items = cart.itemsAdded;
   const handleButtonClick = () => {
     items.length > 0 ? history.push("/home") : history.push("/products");
   };
@@ -42,13 +43,16 @@ const Cart = () => {
         </div>
       )}
       <div className="buttons">
+        {/* {items.length > 0 && <p>Promo code can be applied on payment page</p>} */}
         <button
           type="button"
           onClick={handleButtonClick}
           onKeyPress={handleButtonClick}
           tabIndex={0}
         >
-          {items.length > 0 ? "Proceed to checkout" : "Start Shopping"}
+          {items.length > 0
+            ? `Proceed to checkout Rs.${cart.cartPrice} >`
+            : "Start Shopping"}
         </button>
       </div>
     </div>
