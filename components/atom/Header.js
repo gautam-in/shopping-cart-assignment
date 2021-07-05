@@ -1,7 +1,7 @@
-import NavBarStyles from "./styles/NavBarStyles";
-import { HeaderStyle,Logo } from "./styles/HeaderStyles";
+import NavBarStyles from "../styles/NavBarStyles";
+import { HeaderStyle,Logo } from "../styles/HeaderStyles";
 import Link from "next/link";
-import {SignUpContainerStyles,Container,CartBtn} from "./styles/SignUpContainerStyles";
+import {SignUpContainerStyles,Container,CartBtn} from "../styles/SignUpContainerStyles";
 
 export default function Header() {
     return (
