@@ -13,7 +13,7 @@ const Text = React.lazy(() =>
   import(/* webpackChunkName: "HeaderTextComponent" */ "../Text")
 );
 
-import { openCartModal } from "../../redux/actions/cartActions";
+import { toggleCartModal } from "../../redux/actions/cartActions";
 
 import "./style.scss";
 
@@ -22,7 +22,7 @@ const Header = () => {
   const { isMobile } = useViewport();
   const cartItemsCount = useSelector((state) => state.cart.cartItemsCount);
   const clickHandlerCartButton = () => {
-    dispatch(openCartModal());
+    dispatch(toggleCartModal());
   };
   return (
     <>

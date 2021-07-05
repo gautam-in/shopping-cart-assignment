@@ -1,10 +1,9 @@
 import {
   ADD_PRODUCT_TO_CART,
-  CLOSE_CART_MODAL,
   DECREMENT_PRODUCT_QUANTITY_IN_CART,
   INCREMENT_PRODUCT_QUANTITY_IN_CART,
-  OPEN_CART_MODAL,
   REMOVE_PRODUCT_FROM_CART,
+  TOGGLE_CART_MODAL,
 } from "../constants/constants";
 
 const initialState = {
@@ -45,12 +44,6 @@ const cartReducer = (state = initialState, action) => {
         cartTotalPrice: state.cartTotalPrice + action.payload.price,
       };
     }
-    case CLOSE_CART_MODAL: {
-      return {
-        ...state,
-        isCartModalOpen: false,
-      };
-    }
     case DECREMENT_PRODUCT_QUANTITY_IN_CART: {
       let updatedCartItems = state.cartItems.map((product) =>
         product.id === action.payload.id
@@ -85,12 +78,6 @@ const cartReducer = (state = initialState, action) => {
         cartTotalPrice: state.cartTotalPrice + action.payload.price,
       };
     }
-    case OPEN_CART_MODAL: {
-      return {
-        ...state,
-        isCartModalOpen: true,
-      };
-    }
     case REMOVE_PRODUCT_FROM_CART: {
       return {
         ...state,
@@ -99,6 +86,12 @@ const cartReducer = (state = initialState, action) => {
         ),
         cartItemsCount: state.cartItemsCount - 1,
         cartTotalPrice: state.cartTotalPrice - action.payload.price,
+      };
+    }
+    case TOGGLE_CART_MODAL: {
+      return {
+        ...state,
+        isCartModalOpen: !state.isCartModalOpen,
       };
     }
     default:
