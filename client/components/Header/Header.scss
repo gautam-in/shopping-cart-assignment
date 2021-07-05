@@ -31,7 +31,8 @@ $light-gray:#c8cbce61;
 
     .brand-name {
       .brand-logo {
-        height: 4rem;
+        // height: 4rem;
+        width: auto;
       }
     }
 
@@ -76,8 +77,7 @@ $light-gray:#c8cbce61;
           background-color: $light-gray;
 
           .cart-icon {
-            padding: 0 10px;
-            height: 2em;
+            padding: 0 1em;
           }
         }
 

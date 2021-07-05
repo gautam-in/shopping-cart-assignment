@@ -31,6 +31,8 @@ const ProductDetails = ({ product }) => {
           className="product-image"
           src={product.imageURL}
           alt={product.name}
+          height="120"
+          width="100"
         />
         <div className="product-description">
           {product.description}

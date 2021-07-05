@@ -40,7 +40,7 @@ const CartItem = ({ productId }) => {
           <button
             type="button"
             aria-label="decrease quantity by one"
-            className="quant-buttons"
+            className="quant-buttons left"
             onClick={handleDecrement}
           >
             -
@@ -49,7 +49,7 @@ const CartItem = ({ productId }) => {
           <button
             type="button"
             aria-label="increase quantity by one"
-            className="quant-buttons"
+            className="quant-buttons right"
             onClick={handleIncrement}
           >
             +

@@ -13,7 +13,7 @@ $primary-color:#d00156;
 
     .purchase-description {
         flex-grow: 1;
-        padding: 0 1em;
+        padding: 0 0 0 1em;
 
         .item-quantity {
             .quant-buttons {
@@ -21,9 +21,16 @@ $primary-color:#d00156;
                 background: $primary-color;
                 border: none;
                 color: white;
-                margin: 1em;
                 padding: 0.3em 0.8em;
                 border-radius: 4px;
+
+                &.left {
+                    margin: 1em 1em 1em 0;
+                }
+
+                &.right {
+                    margin: 1em;
+                }
             }
         }
     }

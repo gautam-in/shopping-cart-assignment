@@ -56,6 +56,8 @@ const Home = () => {
                     className="category-image"
                     src={category.imageUrl}
                     alt={category.name}
+                    height="150"
+                    width="200"
                   />
                 </div>
               </li>

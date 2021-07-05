@@ -28,7 +28,7 @@ const Cart = () => {
               <img
                 className="addv-image"
                 src="../static/images/lowest-price.png"
-                alt="Sabka Bazaar Logo"
+                alt="Lowest price gauranteed"
               />{" "}
               you wont find it cheaper anywhere!
             </div>

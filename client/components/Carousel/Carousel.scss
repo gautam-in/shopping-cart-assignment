@@ -2,6 +2,7 @@
     display: flex;
     position: relative;
     align-items: center;
+    min-height: 25vh;
 
     button {
         border: none;
@@ -20,6 +21,7 @@
 
     .banner-image {
         width: 100%;
+        height: auto;
         padding: 20px 0px;
     }
 

@@ -1,12 +1,6 @@
-@media only screen and (min-width: 1023px) {
+@media only screen and (min-width: 1030px) {
     .home {
-        padding: 0 7em;
-    }
-}
-
-@media only screen and (min-width: 760px) {
-    .home {
-        padding: 0 5em;
+        padding: 0 6rem;
     }
 }
 
@@ -96,6 +90,7 @@ $accent-color:#ea1d71;
 
         .category-image {
             width: 100%;
+            height: auto;
         }
     }
 }

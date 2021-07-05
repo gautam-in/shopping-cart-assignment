@@ -20,6 +20,8 @@ const Header = () => {
             className="brand-logo"
             src="../static/images/logo.png"
             alt="Sabka Bazaar Logo"
+            height="60"
+            width="100"
           />
         </div>
         <div className="left-nav">
@@ -60,6 +62,8 @@ const Header = () => {
                 className="cart-icon"
                 src="../static/images/cart.svg"
                 alt="cart image"
+                height="27"
+                width="30"
               />
               <span
                 style={
