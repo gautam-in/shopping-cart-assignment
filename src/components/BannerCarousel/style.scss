@@ -1,18 +1,25 @@
+@import "../../styles/variables.scss";
+
 .carousel-container {
   box-shadow: 0 8px 6px -6px var(--box-shadow);
   margin: 0 12%;
   button {
-    background-color: grey;
-    color: white;
+    background-color: $color-primary-background-dark;
+    border: none;
+    color: $color-primary-text-light;
     height: 30;
     opacity: 0.5;
+    padding: 5px;
     position: absolute;
     top: calc(50% - 15px);
     width: auto;
     z-index: 2;
+    &:hover {
+      filter: brightness(90%);
+    }
   }
   .custom-control-dots {
-    background: whitesmoke;
+    background: $color-primary-text-light;
     border-radius: 50%;
     display: inline-block;
     list-style-type: circle;
@@ -20,7 +27,7 @@
     height: 8px;
     width: 8px;
     &.selected {
-      background: grey;
+      background: $color-primary-background-dark;
     }
   }
 }

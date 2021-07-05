@@ -23,7 +23,7 @@ const RegisterPage = React.lazy(() =>
 const Header = React.lazy(() => import("./components/Header"));
 const Footer = React.lazy(() => import("./components/Footer"));
 
-import { GlobalStyles } from "./globalStyles";
+import { GlobalStyles } from "./styles/globalStyles";
 
 const App = () => {
   return (

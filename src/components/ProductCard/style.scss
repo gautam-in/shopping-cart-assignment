@@ -1,3 +1,5 @@
+@import "../../styles/variables.scss";
+
 .products-section {
   display: flex;
   margin: 0 12%;
@@ -7,7 +9,7 @@
     flex-wrap: wrap;
     padding: 15px;
     .product {
-      box-shadow: 10px 0px 10px -8px #f3f3f3;
+      box-shadow: 10px 0px 10px -8px $color-primary-box-shadow-dark;
       flex: 0 1 24%;
       margin-bottom: 50px;
       &:last-child {
@@ -31,7 +33,7 @@
           flex-direction: column;
           justify-content: space-between;
           &__description {
-            background-color: #f0f0f0;
+            background-color: $color-primary-background-light;
             overflow: auto;
             margin: 0 0 5px 5px;
             padding: 0 5px;
@@ -44,14 +46,14 @@
           &__buyNowContainer {
             padding: 0 0 0 5px;
             button {
-              color: whitesmoke;
+              color: $color-primary-text-light;
               font-size: 13px;
             }
           }
         }
       }
       &__description {
-        background-color: #f0f0f0;
+        background-color: $color-primary-background-light;
         height: 85px;
         margin: 0 10px 15px 10px;
         overflow: auto;
@@ -64,7 +66,7 @@
       }
       &__buyNowContainer {
         align-items: center;
-        border-bottom: 2px dotted #dbdbdb;
+        border-bottom: 2px dotted $color-primary-border-dark;
         display: flex;
         margin: 0 10px;
         padding: 0 0 10px 0;
@@ -74,7 +76,7 @@
           font-weight: 600;
         }
         button {
-          color: whitesmoke;
+          color: $color-primary-text-light;
           flex-basis: 50%;
           font-size: 12px;
         }
@@ -99,7 +101,7 @@
           font-weight: 700;
         }
         &__imageContainer {
-          border-bottom: 2px dotted #dbdbdb;
+          border-bottom: 2px dotted $color-primary-border-dark;
           display: flex;
           height: 190px;
           margin: 0 10px 10px 10px;

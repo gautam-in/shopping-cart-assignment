@@ -1,12 +1,14 @@
+@import "../../styles/variables.scss";
+
 .footer {
   align-items: center;
-  background-color: #eaeaea;
+  background-color: $color-primary-background-light;
   display: flex;
   height: 40px;
   justify-content: center;
   padding: 0px 12%;
   span {
-    color: var(--text-dark-black);
+    color: $color-primary-text-dark;
     font-size: 14px;
     font-weight: 600;
   }

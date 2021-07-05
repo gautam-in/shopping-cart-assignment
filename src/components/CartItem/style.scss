@@ -1,5 +1,7 @@
+@import "../../styles/variables.scss";
+
 .cart-item-container {
-  background-color: white;
+  background-color: $color-primary-white;
   display: flex;
   min-height: 80px;
   margin-top: 2px;
@@ -31,14 +33,14 @@
       padding: 0px 5px 5px 5px;
       &__actionButtons {
         .actionButton {
-          background-color: var(--btn-bg-primary);
+          background-color: $color-primary-background;
           border: none;
           border-radius: 50%;
           font-size: 14px;
           line-height: 1.25;
           margin-right: 10px;
           span {
-            color: whitesmoke;
+            color: $color-primary-text-light;
           }
           .decrement {
             cursor: pointer;

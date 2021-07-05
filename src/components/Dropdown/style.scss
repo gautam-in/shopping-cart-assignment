@@ -1,6 +1,8 @@
+@import "../../styles/variables.scss";
+
 .select-dropdown {
-  background-color: var(--btn-bg-primary);
-  color: whitesmoke;
+  background-color: $color-primary-background;
+  color: $color-primary-text-light;
   cursor: pointer;
   font-family: "Dosis", sans-serif;
   font-size: 14px;
@@ -14,7 +16,7 @@
     font-size: 14px;
     font-weight: 600;
     &:hover {
-      background-color: whitesmoke;
+      background-color: $color-primary-text-light;
     }
   }
 }

@@ -1,6 +1,8 @@
+@import "../../styles/variables.scss";
+
 .header {
-  background-color: white;
-  box-shadow: 0 8px 6px -6px var(--box-shadow);
+  background-color: $color-primary-white;
+  box-shadow: 0 8px 6px -6px $color-primary-box-shadow-light;
   display: flex;
   height: 80px;
   padding: 0 12%;
@@ -19,9 +21,11 @@
     display: flex;
     flex-basis: 85%;
     flex-direction: column;
+    justify-content: space-between;
     &__quickLinks {
+      display: flex;
       flex-basis: 40%;
-      text-align: end;
+      justify-content: flex-end;
       a {
         text-decoration: none;
         margin: 0 5px;
@@ -49,7 +53,7 @@
             margin-right: 5%;
           }
           span {
-            color: var(--text-light-black);
+            color: $color-primary-text-dark;
             font-weight: 600;
           }
         }

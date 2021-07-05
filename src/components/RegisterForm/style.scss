@@ -1,3 +1,5 @@
+@import "../../styles/variables.scss";
+
 .register-section {
   display: flex;
   margin: 0% 14% 4% 14%;
@@ -26,7 +28,7 @@
     form {
       button {
         font-size: 15px;
-        color: whitesmoke;
+        color: $color-primary-text-light;
         font-weight: 400;
       }
     }

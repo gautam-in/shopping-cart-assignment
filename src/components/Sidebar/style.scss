@@ -1,9 +1,11 @@
+@import "../../styles/variables.scss";
+
 .sidebar {
-  background-color: var(--btn-bg-secondary);
+  background-color: $color-primary-background-light;
   flex-basis: 20%;
   a {
-    border-bottom: 1px solid #dbdbdb;
-    color: #a0a0a0;
+    border-bottom: 1px solid $color-primary-border-dark;
+    color: $color-primary-background-dark;
     display: flex;
     font-size: 14px;
     font-weight: 600;
@@ -11,10 +13,12 @@
     transition: 300ms ease all;
     text-decoration: none;
     &:hover {
-      filter: brightness(70%);
+      background-color: $color-primary-white;
+      filter: brightness(80%);
     }
     &.selected {
-      filter: brightness(70%);
+      background-color: $color-primary-white;
+      filter: brightness(80%);
     }
   }
 }

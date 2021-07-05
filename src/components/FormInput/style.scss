@@ -1,3 +1,5 @@
+@import "../../styles/variables.scss";
+
 .form-group {
   margin-bottom: 25px;
   position: relative;
@@ -6,20 +8,20 @@
   }
   .form-group-input {
     border: none;
-    border-bottom: 2px solid #e3e3e3;
+    border-bottom: 2px solid $color-primary-border-light;
     font-size: 16px;
     padding: 10px 1px 10px 0px;
     width: 100%;
     &:focus {
       outline: none;
-      border-bottom: 2px solid #1ad1e3;
+      border-bottom: 2px solid $color-primary-text;
       ~ .form-group-label {
-        color: #1ad1e3;
+        color: $color-primary-text;
       }
     }
   }
   .form-group-label {
-    color: #b0b0b0;
+    color: $color-primary-text-medium;
     font-size: 16px;
     font-weight: 600;
     pointer-events: none;
@@ -30,11 +32,11 @@
     &.input-shrink {
       top: -10px;
       font-size: 12px;
-      color: #1ad1e3;
+      color: $color-primary-text;
     }
   }
   .form-group-error-message {
-    color: #ff0000;
+    color: $color-primary-text-error;
     font-size: 12px;
     padding-top: 5px;
     text-align: justify;

@@ -1,6 +1,8 @@
+@import "../../styles/variables.scss";
+
 .categoryCard {
   align-items: center;
-  box-shadow: 0 8px 6px -6px var(--box-shadow);
+  box-shadow: 0 8px 6px -6px $color-primary-box-shadow-light;
   display: flex;
   flex-direction: row;
   min-height: 250px;
@@ -25,7 +27,7 @@
       font-size: 14px;
     }
     button {
-      color: var(--btn-text-white);
+      color: $color-primary-text-light;
       width: fit-content;
       width: auto;
     }
