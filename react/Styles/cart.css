@@ -1,0 +1,145 @@
+.cart {
+  display: flex;
+  background-color: whitesmoke;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  max-width: 500px;
+}
+
+.cart-items {
+  height: 100%;
+  overflow: auto;
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  background-color: white;
+  margin: 10px 0;
+}
+
+.cart-header {
+  background-color: black;
+  color: white;
+  padding: 15px 15px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.close-cart {
+  font-size: 120%;
+  font-weight: bold;
+}
+
+.cart-no-of-items {
+  font-size: 120%;
+  font-weight: 500;
+  margin: 0;
+  padding: 0;
+}
+
+.cart-item-detail {
+  width: 100%;
+  padding-left: 15px;
+}
+
+.cart-item-image {
+  width: 20%;
+}
+
+.cart-item-description {
+  display: flex;
+  justify-content: space-between;
+}
+
+.cart-item-amount {
+  align-items: center;
+  display: flex;
+}
+
+.cart-item-name {
+  font-size: 110%;
+  margin: 0 0 10px 0;
+}
+
+.cart-item-qty {
+  padding: 0 10px;
+  font-weight: bold;
+  font-size: 90%;
+}
+
+.cart-item-cross {
+  font-weight: 500;
+  padding: 0px 10px;
+  font-size: 80%;
+}
+
+.cart-item-price {
+  font-weight: 500;
+}
+
+.cart-item-total {
+  font-weight: 600;
+}
+
+.cart-item-qty-button {
+  border-radius: 5px;
+  padding: 5px 10px;
+}
+
+.cart__cheaper {
+  margin: 10px 10px 10px 10px;
+  background: white;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.cart__cheaper img {
+  width: 100px;
+  margin-right: 10px;
+}
+
+.cart-modal {
+  max-width: 1440px;
+  margin: auto;
+  height: calc(100% - 85px);
+  width: 100%;
+  bottom: 0px;
+  position: absolute;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.cart-checkout {
+  background-color: white;
+  padding: 10px;
+  text-align: center;
+}
+
+.checkout-button {
+  margin-top: 10px;
+  width: 100%;
+}
+
+@media only screen and (max-width: 1440px) {
+  .cart-modal {
+    max-width: 1200px;
+    margin: auto;
+  }
+}
+
+@media only screen and (max-width: 1120px) {
+  .cart-modal {
+    max-width: 1024px;
+    margin: auto;
+  }
+}
+
+@media only screen and (max-width: 1023px) {
+  .cart-modal {
+    height: 100%;
+  }
+}

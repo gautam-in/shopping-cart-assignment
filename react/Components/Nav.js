@@ -1,17 +1,28 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
 import '../Styles/nav.css';
 import { Link } from 'react-router-dom';
+import CartContext from '../CartContext';
+import Cart from './cart';
 
 export default function () {
+  const { cart } = useContext(CartContext);
+  let [cartShow, setCartShow] = useState(false);
+
+  function toggleCart() {
+    setCartShow(!cartShow);
+  }
+
   return (
     <nav className="navbar">
+      <div className={cartShow ? 'modal' : 'modal close-modal'}>
+        <Cart toggleCart={toggleCart} />
+      </div>
       <div className="left-nav">
         <img
           className="sbkaBazaarLogo"
           src="../static/images/logo.png"
           alt="Sabka Bazaar Logo"
         />
-
         <ul className="flow-links">
           <li>
             <Link to="/">Home</Link>
@@ -26,13 +37,14 @@ export default function () {
           <a href="/login">SignIn</a>
           <a href="/register">Register</a>
         </div>
-        <div className="cart-icon">
+
+        <div onClick={toggleCart} className="cart-icon">
           <img
             className="cart-dimension"
             src="../static/images/cart.svg"
             alt="cart image"
           />
-          <span className="number-of-items">0 items</span>
+          <span className="number-of-items">{cart.length} items</span>
         </div>
       </div>
     </nav>

@@ -1,28 +1,28 @@
 .product-page {
   display: flex;
+  background-color: white;
 }
 
 .product-list {
-  display: flex;
-  flex-wrap: wrap;
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
+  /* display: flex;
+  flex-wrap: wrap; */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 }
 
 .product-card {
-  flex: 1 1 0; /* Prevent the extra space around content */
-  display: flex; /* Display as flex */
-  flex-direction: column; /* Display flex in column */
-  max-width: 400px;
-  min-width: 175px;
-  margin: 10px;
-  padding: 10px;
+  /* flex: 1 1 0; */
+  display: flex;
+  flex-direction: column;
+  /* max-width: 400px;
+  min-width: 175px; */
+  padding: 20px;
+  background-color: white;
   overflow: hidden;
 }
 
 .product-card .product-title {
-  font-size: 18px;
+  font-size: 130%;
   font-weight: bold;
   height: 100%;
 }
@@ -32,20 +32,13 @@
   width: 100%;
 }
 
-button.buy-button {
-  background: maroon;
-  padding: 10px 20px;
-  color: white;
-  border: none;
-}
-
 .product-card .product-description {
   background-color: lightgrey;
   text-overflow: ellipsis;
   overflow: auto;
   min-height: 50px;
   max-height: 50px;
-  font-size: 12px;
+  font-size: 80%;
   padding: 10px;
   margin-top: 10px;
 }
@@ -55,7 +48,7 @@ button.buy-button {
   justify-content: space-between;
   align-items: center;
   margin-top: 10px;
-  font-size: 12px;
+  font-size: 80%;
 }
 
 .category-dropdown {
@@ -89,21 +82,20 @@ button.buy-button {
 @media only screen and (max-width: 1023px) {
   .product-card .product-details {
     display: flex;
-    height: 125px;
   }
   .product-card .product-image {
     width: 50%;
+    object-fit: contain;
   }
-  .product-card {
-    max-width: unset;
-    min-width: 200px;
+  .product-list {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   }
   .product-card .product-title {
     height: 100%;
   }
   .product-card .product-description {
-    min-height: unset;
-    max-height: unset;
+    min-height: 100px;
+    max-height: 100px;
   }
   .product-card .mrp {
     display: none;
@@ -115,12 +107,13 @@ button.buy-button {
 }
 
 @media only screen and (max-width: 767px) {
+  .product-card .product-description {
+    min-height: unset;
+    max-height: unset;
+  }
   .category-dropdown {
     margin: 10px 0px;
     width: 100%;
-    background-color: maroon;
-    color: white;
-    padding: 10px;
     display: inline-block;
   }
   .product-page {

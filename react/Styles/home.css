@@ -1,14 +1,9 @@
-.category-list {
-  margin: 0;
-  padding: 0;
-  list-style-type: none;
-}
-
 .category-list .category {
   display: flex;
   padding: 20px 10px 30px 10px;
   position: relative;
   height: 200px;
+  background-color: white;
 }
 
 .category-list .category:nth-child(even) {
@@ -22,7 +17,6 @@
   width: 90%;
   left: 5%;
   height: 10px;
-  z-index: -1;
   background: radial-gradient(at 50% 0, rgba(0, 0, 0, 0.5), transparent 70%);
 }
 
@@ -38,20 +32,11 @@
 
 .category .category-title {
   font-weight: bold;
-  font-size: 20px;
+  font-size: 120%;
 }
 
 .category .category-description {
   text-align: center;
-}
-
-.category .category-explore-button {
-  padding: 10px;
-  background-color: maroon;
-  border-radius: 0px;
-  color: white;
-  border: none;
-  cursor: pointer;
 }
 
 .category .category-explore-button a {

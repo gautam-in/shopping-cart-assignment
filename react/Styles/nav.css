@@ -15,7 +15,7 @@
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 12px;
+  font-size: 80%;
 }
 
 .header a:hover {
@@ -24,7 +24,6 @@
 
 .navbar {
   align-items: center;
-  padding: 0px 150px;
   display: flex;
   justify-content: space-between;
   height: 100%;
@@ -84,7 +83,36 @@ footer {
 }
 
 main {
-  padding: 85px 150px 0px 150px;
+  max-width: 1440px;
+  margin: auto;
+  padding: 85px 0 0px 0;
+}
+
+.navbar {
+  max-width: 1440px;
+  margin: auto;
+}
+
+@media only screen and (max-width: 1440px) {
+  main {
+    max-width: 1200px;
+    margin: auto;
+  }
+  .navbar {
+    max-width: 1200px;
+    margin: auto;
+  }
+}
+
+@media only screen and (max-width: 1120px) {
+  main {
+    max-width: 1024px;
+    margin: auto;
+  }
+  .navbar {
+    max-width: 1024px;
+    margin: auto;
+  }
 }
 
 @media only screen and (max-width: 1023px) {

@@ -43,8 +43,8 @@ export default function () {
               <div className="category-details">
                 <div className="category-title">{_.name}</div>
                 <div className="category-description">{_.description}</div>
-                <button className="category-explore-button">
-                  <Link to={'/products#' + _.id}>Explore {_.name}</Link>
+                <button className="category-explore-button maroon-button">
+                  <Link to={'/products/' + _.id}>Explore {_.name}</Link>
                 </button>
               </div>
               <div className="category-right">

@@ -1,16 +1,19 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
+import { useHistory, useParams } from 'react-router-dom';
 import '../Styles/product.css';
+import CartContext from '../CartContext';
 
 export default function () {
+  let history = useHistory();
   let [products, setProducts] = useState(null);
   let [loading, setLoading] = useState(true);
   let [error, setError] = useState(null);
-  let [categoryId, setCategoryId] = useState(window.location.hash.substring(1));
   let [categories, setCategories] = useState(null);
+  let { categoryId } = useParams();
+  let cart = sessionStorage.getItem('cart');
 
   function categoryChange(category) {
-    setCategoryId(category);
-    window.location.hash = category;
+    history.replace('/products/' + category);
   }
 
   useEffect(() => {
@@ -64,7 +67,7 @@ export default function () {
         <select
           value={categoryId}
           onChange={(e) => categoryChange(e.target.value)}
-          className="category-dropdown"
+          className="category-dropdown maroon-button"
         >
           <option value="" disabled>
             ---Select Category---
@@ -86,6 +89,22 @@ export default function () {
 }
 
 function Product({ item }) {
+  const { cart, setCart } = useContext(CartContext);
+
+  function addItem() {
+    let newCart = [...cart];
+    let cartItem = cart.findIndex((_) => _.item.id == item.id);
+    if (cartItem >= 0) {
+      newCart[cartItem] = {
+        ...newCart[cartItem],
+        qty: newCart[cartItem].qty + 1,
+      };
+    } else {
+      newCart.push({ item: item, qty: 1 });
+    }
+    setCart(newCart);
+  }
+
   return (
     <div className="product-card">
       <div className="product-title">{item.name}</div>
@@ -95,7 +114,7 @@ function Product({ item }) {
       </div>
       <div className="price-details">
         <div className="mrp">MRP Rs {item.price}</div>
-        <button className="buy-button">
+        <button className="buy-button maroon-button" onClick={addItem}>
           Buy Now <span className="buy-now-price"> @ {item.price}</span>
         </button>
       </div>
