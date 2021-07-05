@@ -1,33 +1,23 @@
 import React, { useState, useEffect } from "react";
-import { CATEGORIES_URL } from "../../constants";
 import "./Products.scss";
 import { useSelector, useDispatch } from "react-redux";
 import ProductDetails from "../../components/ProductDetails/ProductDetails";
 import { fetchProducts } from "../../redux/products/productActions";
+import { fetchCategories } from "../../redux/categories/categoryActions";
 
 const Products = () => {
   const dispatch = useDispatch();
   const products = useSelector((state) => state.products.data);
   const loading = useSelector((state) => state.products.loading);
   const error = useSelector((state) => state.products.error);
-  const [categories, setCategories] = useState(null);
+  const categories = useSelector((state) => state.categories.data);
   const [selectedCategoryId, setSelectedCategoryId] = useState(
     window.location.hash.substring(1)
   );
 
   useEffect(() => {
     dispatch(fetchProducts());
-  }, []);
-
-  useEffect(() => {
-    fetch(CATEGORIES_URL)
-      .then((response) => response.json())
-      .then((data) => {
-        setCategories(data);
-      })
-      .catch((err) => {
-        setError(err);
-      });
+    dispatch(fetchCategories());
   }, []);
 
   const handleCategoryChange = (category) => {

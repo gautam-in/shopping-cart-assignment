@@ -2,6 +2,13 @@ $light-gray:#c8cbce61;
 $gray:#a1a4ab;
 $primary-color:#d00156;
 
+//desktop screen
+@media only screen and (min-width: 1030px) {
+    .products {
+        padding: 0 6rem;
+    }
+}
+
 .products {
     display: flex;
 

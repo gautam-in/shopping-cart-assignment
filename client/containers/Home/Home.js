@@ -1,35 +1,22 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import "./Home.scss";
 import { useHistory } from "react-router-dom";
-import { CATEGORIES_URL, BANNERS_URL } from "../../constants";
+import { useSelector, useDispatch } from "react-redux";
+import { fetchCategories } from "../../redux/categories/categoryActions";
 import Carousel from "../../components/Carousel/Carousel";
+import { fetchBanners } from "../../redux/banners/bannerActions";
 
 const Home = () => {
   const history = useHistory();
-  let [categories, setCategories] = useState(null);
-  let [loading, setLoading] = useState(true);
-  let [error, setError] = useState(null);
-  let [banners, setBanners] = useState(null);
+  const dispatch = useDispatch();
+  const categories = useSelector((state) => state.categories.data);
+  const loading = useSelector((state) => state.categories.loading);
+  const error = useSelector((state) => state.categories.error);
+  const banners = useSelector((state) => state.banners.data);
 
   useEffect(() => {
-    fetch(CATEGORIES_URL)
-      .then((response) => response.json())
-      .then((data) => {
-        setCategories(data);
-        setLoading(false);
-      })
-      .catch((err) => {
-        setError(err);
-        setLoading(false);
-      });
-    fetch(BANNERS_URL)
-      .then((response) => response.json())
-      .then((data) => {
-        setBanners(data);
-      })
-      .catch((err) => {
-        setError(err);
-      });
+    dispatch(fetchBanners());
+    dispatch(fetchCategories());
   }, []);
 
   const handleExplore = (categoryId) => {
