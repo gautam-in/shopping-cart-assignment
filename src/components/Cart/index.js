@@ -37,12 +37,30 @@ const Cart = () => {
           isDesktop ? "desktop" : ""
         }`}
       ></div>
+      {isCartModalOpen ? (
+        <div
+          aria-label="You have opened the cart"
+          className="sr-only"
+          role="alert"
+        ></div>
+      ) : null}
       <div className={`cart-container ${isCartModalOpen ? "open" : ""}`}>
         <header className="cart-container__header">
-          <Text>
+          <Text
+            ariaLabel={`You have ${cartItemsCount} items in your cart`}
+            role="heading"
+            tabIndex="0"
+          >
             My Cart{cartItemsCount ? ` (${cartItemsCount} items)` : ""}
           </Text>
-          <button onClick={clickHandlerCloseButton}>x</button>
+          <button
+            aria-label="Close Cart"
+            onClick={clickHandlerCloseButton}
+            role="button"
+            tabIndex="0"
+          >
+            x
+          </button>
         </header>
         {cartItemsCount ? (
           <>
@@ -52,7 +70,11 @@ const Cart = () => {
                   <CartItem cartItem={cartItem} key={cartItem.id} />
                 ))}
               </div>
-              <div className="cart-container__filledCartContainer__lowestPriceContainer">
+              <div
+                aria-label="Lowest price guaranteed - you wont find it cheaper anywhere"
+                className="cart-container__filledCartContainer__lowestPriceContainer"
+                tabIndex="0"
+              >
                 <div className="cart-container__filledCartContainer__lowestPriceContainer__image">
                   <img
                     src="/static/images/lowest-price.png"
@@ -65,11 +87,16 @@ const Cart = () => {
               </div>
             </div>
             <div className="cart-container__checkoutCartContainer">
-              <div className="cart-container__checkoutCartContainer__promoTextContainer">
+              <div
+                aria-label="Promo code can be applied on payment page"
+                className="cart-container__checkoutCartContainer__promoTextContainer"
+                tabIndex="0"
+              >
                 <Text>Promo code can be applied on payment page</Text>
               </div>
               <div className="cart-container__checkoutCartContainer__checkoutButtonContainer">
                 <Button
+                  ariaLabel={`Press enter or click button to proceed to checkout with cart items worth rupees ${cartTotalPrice}`}
                   className="checkoutButton"
                   onClick={clickHandlerCloseButton}
                 >

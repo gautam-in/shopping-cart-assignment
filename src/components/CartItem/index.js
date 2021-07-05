@@ -25,7 +25,10 @@ const CartItem = ({ cartItem }) => {
     dispatch(removeProductFromCart(cartItem));
   };
   return (
-    <div className="cart-item-container">
+    <div
+      aria-label={`You have added ${cartItem.quantity} quantity of ${cartItem.name} worth rupees ${cartItem.totalPrice}`}
+      className="cart-item-container"
+    >
       <div className="cart-item-container__imageContainer">
         <img src={cartItem.imageURL} alt={cartItem.alt} />
       </div>
@@ -36,17 +39,32 @@ const CartItem = ({ cartItem }) => {
         <div className="cart-item-container__itemDetails__actionButtonsAndPrice">
           <div className="cart-item-container__itemDetails__actionButtonsAndPrice__actionButtons">
             <button
+              aria-label={`Press enter or click button to ${
+                cartItem.quantity === 1
+                  ? `remove ${cartItem.name} from your cart`
+                  : `decrease quantity of ${cartItem.name} to ${
+                      cartItem.quantity - 1
+                    }`
+              }`}
               className="actionButton"
               onClick={
                 cartItem.quantity === 1
                   ? clickHandlerRemove
                   : clickHandlerDecrement
               }
+              tabIndex="0"
             >
               <Text className="decrement">-</Text>
             </button>
             <Text className="quantity">{cartItem.quantity}</Text>
-            <button className="actionButton" onClick={clickHandlerIncrement}>
+            <button
+              aria-label={`Press enter or click button to increase quantity of ${
+                cartItem.name
+              } to ${cartItem.quantity + 1} `}
+              className="actionButton"
+              onClick={clickHandlerIncrement}
+              tabIndex="0"
+            >
               <Text className="increment">+</Text>
             </button>
             <Text className="cross">x</Text>

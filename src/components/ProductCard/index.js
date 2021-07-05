@@ -42,7 +42,7 @@ const ProductCard = ({ product }) => {
             {isMobile ? (
               <div className="product__imageContainer__mobileTabletLayout__buyNowContainer">
                 <Button
-                  ariaLabel={`Press enter to buy ${product.name} worth rupees ${product.price}}`}
+                  ariaLabel={`Press enter or click button to buy ${product.name} worth rupees ${product.price}}`}
                   onClick={() => clickHandler(product)}
                   role="button"
                   tabIndex={0}
@@ -65,7 +65,7 @@ const ProductCard = ({ product }) => {
         <div className="product__buyNowContainer">
           {isDesktop ? <Text>MRP Rs.{product.price}</Text> : null}
           <Button
-            ariaLabel={`Press enter to buy now ${product.name} worth rupees ${product.price}}`}
+            ariaLabel={`Press enter or click button to buy now ${product.name} worth rupees ${product.price}}`}
             onClick={() => clickHandler(product)}
           >
             Buy Now{isMobile || isTablet ? ` @ Rs.${product.price}` : ``}
