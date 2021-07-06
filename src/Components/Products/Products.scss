@@ -1,10 +1,8 @@
 .allproducts {
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
   justify-content: space-between;
   background: white;
-  border-top: 1px solid #00000014;
 }
 @media screen and (min-width: 600px) {
 }

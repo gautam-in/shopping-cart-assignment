@@ -3,8 +3,6 @@ import "./Eachcartitem.scss";
 import AddCircleIcon from "@material-ui/icons/AddCircle";
 import RemoveCircleIcon from "@material-ui/icons/RemoveCircle";
 import CloseIcon from "@material-ui/icons/Close";
-import { connect } from "react-redux";
-import { addtocart, removefromcart } from "../redux/Cart/cartactions";
 function Eachcartitem({ item, addtocart, removefromcart }) {
   console.log(item);
   return (
@@ -34,10 +32,4 @@ function Eachcartitem({ item, addtocart, removefromcart }) {
     </div>
   );
 }
-// const mapDispatchToProps = (dispatch) => {
-//   return {
-//     addtoCart: (product) => dispatch(addtocart(product)),
-//     removefromCart: (product) => dispatch(removefromcart(product)),
-//   };
-// };
 export default Eachcartitem;

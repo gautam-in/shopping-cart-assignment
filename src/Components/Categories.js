@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
 import { fetchCategories } from "../redux/Categories/categoriesactions";
-import Eachcategory from "./Eachcategory";
+import Eachcategory from "./Eachcategory/Eachcategory";
 import { element } from "prop-types";
 function Categories({ categoriesData, fetchCategories }) {
   useEffect(() => {

@@ -21,9 +21,14 @@ function Sidebar(props) {
   const [category, setcategory] = React.useState("");
   const onselectionchange = (e) => {
     console.log(e.target.id || e.target.value);
-    const category = e.target.id || e.target.value || "";
-    props.eventhandler(category);
-    setcategory(e.target.id || e.target.value);
+    const tempcategory = e.target.id || e.target.value || "";
+    props.eventhandler(
+      category === (e.target.id || e.target.value) ? "" : tempcategory
+    );
+    console.log(category === (e.target.id || e.target.value));
+    category === (e.target.id || e.target.value)
+      ? setcategory("")
+      : setcategory(e.target.id || e.target.value);
   };
   return (
     <div>
@@ -33,7 +38,11 @@ function Sidebar(props) {
             id={element.id}
             key={element.id}
             value={element.id}
-            className="sidebaritem"
+            //style={category === element.id && { background: "grey" }}
+            className={
+              "sidebaritem" +
+              (category === element.id ? " selectedsidebar" : "")
+            }
             onClick={(e) => onselectionchange(e)}
           >
             {element.name}

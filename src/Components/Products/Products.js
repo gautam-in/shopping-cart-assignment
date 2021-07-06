@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
-import { addtocart } from "../redux/Cart/cartactions";
-import Eachproduct from "./Eachproduct";
+import { addtocart } from "../../redux/Cart/cartactions";
+import Eachproduct from "../Eachproduct/Eachproduct";
 import "./Products.scss";
 function Products(props) {
   console.log(props, "productsss");

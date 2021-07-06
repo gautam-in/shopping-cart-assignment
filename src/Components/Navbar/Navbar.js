@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import "./Navbar.scss";
-import { changecartstatus } from "../redux/Cart/cartactions";
+import { changecartstatus } from "../../redux/Cart/cartactions";
 import { Link } from "react-router-dom";
 function Navbar({ cartproductsData, changecartStatus }) {
   const itemnumber = cartproductsData.cartproducts.reduce(

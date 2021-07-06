@@ -9,11 +9,7 @@
   padding: 0.5rem;
   height: 80px;
   overflow: hidden;
-  text-overflow: ellipsis;
-  display: -webkit-box;
-  height: 52px;
-  -webkit-line-clamp: 4;
-  -webkit-box-orient: vertical;
+  height: 58px;
 }
 .Eachproductpricing {
   padding: 0.5rem 0rem;
@@ -29,7 +25,8 @@
   color: white;
 }
 .eachtitle {
-  height: 50px;
+  height: 43px;
+  overflow: hidden;
 }
 @media screen and (min-width: 600px) {
 }

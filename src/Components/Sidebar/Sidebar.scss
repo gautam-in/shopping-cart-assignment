@@ -1,6 +1,13 @@
 .sidebaritem {
   padding: 1rem;
   border-bottom: 1px solid grey;
+  cursor: pointer;
+}
+.sidebaritem:hover {
+  background: rgb(201, 200, 200);
+}
+.selectedsidebar {
+  background: rgb(201, 200, 200);
 }
 .sidedropdown {
   display: none;

@@ -16,7 +16,7 @@ function Login() {
   return (
     <div className="LoginContainer">
       <section>
-        <h1>Login</h1>
+        <h1 style={{ margin: "1rem 0" }}>Login</h1>
         <small>Get access to your Orders, Wishlist and Recommendations</small>
       </section>
       <section>

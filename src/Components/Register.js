@@ -15,7 +15,7 @@ function Register() {
   return (
     <div className="LoginContainer">
       <section>
-        <h1>Signup</h1>
+        <h1 style={{ margin: "1rem 0" }}>Signup</h1>
         <small>We do not share your personal details with anyone</small>
       </section>
       <section>
@@ -26,7 +26,7 @@ function Register() {
           <TextField label="Password" type="password" />
           <TextField label="Confirm Password" type="password" />
           <Button variant="contained" color="secondary">
-            Login
+            Sign Up
           </Button>
         </form>
       </section>
