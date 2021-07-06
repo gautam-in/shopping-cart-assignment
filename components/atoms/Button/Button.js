@@ -1,24 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
- 
-import styled from "styled-components";
-
-const ButtonStyle = styled.button`
-    background:#bf2957;
-    font-family:'Myriad Pro Regular';
-    color:#fff;
-    border:none;
-    text-align: center;
-    width:auto;
-    height:30px;
-`; 
+import {ButtonStyle} from './style' 
 
 const Button= (props) => {
+  
   const { children,type, cname } = props;
+  
   return (
-        <ButtonStyle className={cname} type={type}>{children}</ButtonStyle>
-  );
-};
+        <ButtonStyle className={cname} type={type}>
+          <button class={cname}>{children}</button>
+        </ButtonStyle>
+  )
+
+}
 
 /*Button.propTypes = {
   content: PropTypes.string.isRequired,

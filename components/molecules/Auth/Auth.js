@@ -12,7 +12,7 @@ const AuthLink = ({href,children})=>{
 function Auth() {
     return (
         <StyledSignUp>
-            <AuthLink href='siginin'>SignIn</AuthLink>
+            <AuthLink href='signin'>SignIn</AuthLink>
             <AuthLink href='signup'>SignUp</AuthLink>
         </StyledSignUp>
     );

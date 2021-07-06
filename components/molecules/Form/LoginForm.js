@@ -1,19 +1,18 @@
 import React from 'react'
-import { Field, reduxForm } from 'redux-form'
+import { reduxForm,Field } from 'redux-form'
+import styled from 'styled-components'
+import InputType from '../../atoms/Input/InputField' 
+import Button from '../../atoms/Button/Button' 
 
 let LoginForm = props => {
+  
   const { handleSubmit } = props
+  
   return (
-    <form onSubmit={handleSubmit}>
-      <div>
-        <label htmlFor="email">Email</label>
-        <Field name="email" component="input" type="email" />
-      </div>
-      <div>
-        <label htmlFor="password">Password</label>
-        <Field name="password" component="input" type="password" />
-      </div>
-      <button type="submit">Submit</button>
+    <form onSubmit={handleSubmit} autoComplete="off">
+      <InputType cname="form_field" content="Email" type="email" />
+      <InputType cname="form_field" content="Password" type="password" />
+      <Button cname="variant_signin" type="submit">Submit</Button>
     </form>
   )
 }

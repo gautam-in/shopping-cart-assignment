@@ -1,10 +1,8 @@
-// import styled from 'styled-components';
 import React from 'react'
 import Header from '../organism/Header/Header';
 import {connect} from 'react-redux'
 import {setUser} from '../../redux/actions/main'
 
-/*const GlobalStyles = createGlobalStyle``;*/
 
 class PageLayout extends React.Component{
     
@@ -21,7 +19,7 @@ class PageLayout extends React.Component{
         
        const {children} = this.props
         
-        return (
+        return ( 
             <>
                 <Header/>
                 {children}
@@ -29,7 +27,6 @@ class PageLayout extends React.Component{
         );
     }
 }
-
 
 
 const mapDispatchToProps = {setUser} 

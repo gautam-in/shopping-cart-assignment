@@ -1,6 +1,6 @@
 import * as t from '../types';
 
-const main = (state={ cartCount:0,open:true },action)=>{
+const main = (state={ cartCount:0,open:false },action)=>{
     switch(action.type){
         case t.CART_COUNT_INCREMENT:
             return {...state,cartCount:action.payload}

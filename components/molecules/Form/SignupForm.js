@@ -1,42 +1,27 @@
 import React from 'react'
-import { Field, reduxForm } from 'redux-form'
+import { reduxForm } from 'redux-form'
+import InputType from '../../atoms/Input/InputField' 
+import Button from '../../atoms/Button/Button' 
+
 
 let SignUpForm = props => {
+  
   const { handleSubmit } = props
+  
   return (
-    <form onSubmit={handleSubmit}>
-      <div>
-        <label htmlFor="firstName">First Name</label>
-        <Field name="firstName" component="input" type="text" />
-      </div>
-      <div>
-        <label htmlFor="lastName">Last Name</label>
-        <Field name="lastName" component="input" type="text" />
-      </div>
-      
-      <div>
-        <label htmlFor="email">Email</label>
-        <Field name="email" component="input" type="email" />
-      </div>
-
-      <div>
-        <label htmlFor="password">Password</label>
-        <Field name="password" component="input" type="password" />
-      </div>
-      
-      <div>
-        <label htmlFor="password">Confirm Password</label>
-        <Field name="password" component="input" type="password" />
-      </div>
-
-      <button type="submit">Submit</button>
+    <form onSubmit={handleSubmit} autoComplete="off">
+      <InputType cname="form_field" content="Name" type="email" />
+      <InputType cname="form_field" content="Email" type="email" />
+      <InputType cname="form_field" content="Password" type="password" />
+      <InputType cname="form_field" content="Confirm Password" type="password" />
+      <Button cname="variant_signin" type="submit">Sign Up</Button>
     </form>
   )
 }
 
 SignUpForm = reduxForm({
   // a unique name for the form
-  form: 'login'
+  form: 'signup'
 })(SignUpForm)
 
 export default SignUpForm
