@@ -8,6 +8,7 @@ const Container = styled.div`
     text-align: center;
     /* margin-top:40px; */
     padding:3px;
+    cursor:pointer;
 `;
 
 const Count = styled.span`
@@ -21,26 +22,29 @@ const CartExpand = styled.div`
     z-index:999;
     background:#f0f0f0;
     width:300px;
-    height:90vh;
+    height:520px;
     margin-left:auto;
     position:absolute;
-    right:236px;
+    right:0;
     top:92px;
+    display:flex;
+    flex-direction: column;
 `;
 
 const CartContainer = styled.div`
     display:flex;
-    flex-direction:column;
-    justify-content: space-between;
+    flex-flow:column wrap;
+    flex-basis:100%;
+    justify-content:flex-start;
 `;
 
 const CartExpandTop = styled.div`
+    flex-basis:10%;
     background:black;
     display:flex;
     justify-content: space-between;
     color:#fff;
     padding:10px;
-    flex-grow:1;
     div{
         display:flex;
         span{
@@ -51,15 +55,16 @@ const CartExpandTop = styled.div`
 `;
 
 const CartExpandMiddle = styled.div`
-    flex-grow:2;
+    flex-basis:75%;
 `;
 
 const CartExpandBottom = styled.div`
-
-    flex-grow:1;
-    margin-bottom:auto;
-
+    display:flex;
+    flex-direction:column;
+    flex-basis:10%;
 `; 
+
+
 
 export {
     Container,

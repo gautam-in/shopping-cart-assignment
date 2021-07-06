@@ -13,6 +13,7 @@ const Container = styled.div`
 
 const LeftSection = styled.div`
     flex-grow:1;
+    flex-basis:15%;
     img{
         width:60px;
         padding:5px;
@@ -47,6 +48,18 @@ const RightSection = styled.div`
     flex-grow:1;
     font-weight: 150px;
 `;
+
+const CartHeading = styled.div`
+    display:flex;
+`;
+
+const CartCountContainer = styled.div`
+    display:flex;
+`;
+
+const ProductQuantity = styled.strong`
+    display:flex;
+`;
 export {
-    Container,LeftSection,MiddleSection,RightSection,Price
+    Container,LeftSection,MiddleSection,RightSection,Price,CartHeading,CartCountContainer,ProductQuantity
 }

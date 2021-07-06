@@ -12,7 +12,7 @@ const StyledImage = styled.div`
     }
 
     .product-cat {
-        width:100%
+        width:30vw;
     }
 
     .product {

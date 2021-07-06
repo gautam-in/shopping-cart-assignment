@@ -22,7 +22,7 @@ const SingleProduct = ({data})=>{
             </MiddleSection>
             <BottomSection>
                 <Price><span>MRP Rs {price}</span></Price>
-                <Buy><Button>Buy Now</Button></Buy>
+                <Buy><Button cname='variant_category'>Buy Now</Button></Buy>
             </BottomSection>
         </ProductStyled>
     )

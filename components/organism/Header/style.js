@@ -2,9 +2,7 @@ import styled from 'styled-components'
 
 const Container = styled.div`
     display:flex;
-    justify-content: space-around;
-    padding-left:5vw;
-    padding-right:5vw;
+    justify-content: space-between;
     box-shadow: 0 4px 6px -6px #777;
 `;
 
