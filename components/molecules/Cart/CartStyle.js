@@ -1,4 +1,32 @@
-import styled from 'styled-components'
+import styled,{keyframes} from 'styled-components'
+
+const slideInLeft = keyframes`
+  from {
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+    visibility: visible;
+  }
+
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+`;
+
+const slideOutLeft = keyframes`
+  from {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    display:flex;
+  }
+
+  to {
+    visibility: hidden;
+    -webkit-transform: translate3d(0, -120%, 0);
+    transform: translate3d(0,-120%, 0);
+    display:flex;
+  }
+`;
 
 
 const Container = styled.div`
@@ -22,13 +50,17 @@ const CartExpand = styled.div`
     z-index:999;
     background:#f0f0f0;
     width:300px;
-    height:520px;
+    height:520px; 
     margin-left:auto;
     position:absolute;
     right:0;
     top:92px;
-    display:flex;
+    display:${(props) => (props.active==-1 ? "none" : "flex")};
     flex-direction: column;
+    animation: ${(props)=>(props.active ? slideInLeft : slideOutLeft  )} 0.4s forwards;
+    /* animation-name: ${rotate};
+    animation-duration: 10s;
+    animation-iteration-count: 1; */
 `;
 
 const CartContainer = styled.div`

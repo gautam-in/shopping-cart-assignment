@@ -17,12 +17,12 @@ const CartExpended = ({cartInfo,cartClose,cartData})=>{
         <CartProduct key={data.id} data={data}/>
     );
 
-    if(!open){
-      return ''
-    }
+    // if(!open){
+    //   return ''
+    // }
 
     return(
-      <CartExpand>
+      <CartExpand active={open}>
         <CartContainer>
           <CartExpandTop>
             <div><strong>My Cart</strong><span>({cartData.length} item)</span></div>
