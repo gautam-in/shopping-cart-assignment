@@ -31,7 +31,11 @@ function Navbar({ cartproductsData, changecartStatus }) {
           </Link>
           <Link
             to="/Register"
-            style={{ textDecoration: "none", color: "black" }}
+            style={{
+              textDecoration: "none",
+              color: "black",
+              marginLeft: "1rem",
+            }}
           >
             Register
           </Link>
