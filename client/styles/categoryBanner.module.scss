@@ -1,0 +1,110 @@
+@use "variables";
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 19rem;
+    padding: 1rem;
+    position: relative;
+
+    @include variables.shadow;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    .info {
+        display: flex;
+        width: 100%;
+        height: 80%;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        font-size: 16px;
+        margin: auto 0;
+        text-align: center;
+        padding-right: 5px;
+        padding-left: 0;
+
+        button {
+            padding: 10px 15px;
+            color: #fff;
+            background-color: variables.$bgButton;
+            border: none;
+        }
+
+        .name {
+            font-weight: bold;
+            font-size: 28px;
+        }
+        
+    }
+    .catImg {
+        height: 100%;
+        width: 50%;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        
+        .img {
+            height: auto;
+            width: 100%;
+            min-width: 300px;
+            object-fit: contain;
+        }
+    }
+
+    &:nth-child(2n+1) {
+        flex-direction: row-reverse;
+        .info {
+            padding-left: 5px;
+            padding-right: 0;
+        }
+        .catImg {
+            justify-content: flex-start;
+        }
+    }
+    
+}
+
+@media only screen and (max-width: 768px) and (min-width: 481px) {
+    .container{
+        height: 16rem;
+        .info {
+            font-size: 12px;
+            .name {
+                font-size: 24px;
+            }
+        }
+        .catImg {
+            .img {
+                min-width: 260px;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width : variables.$maxWidth) {
+    .container{
+        height: 12rem;
+        .info {
+            font-size: 10px;
+            .name {
+                font-size: 15px;
+            }
+            button {
+                padding: 8px 10px;
+                color: #fff;
+                border: none;
+                font-size: 10px;
+            }
+        }
+        .catImg {
+            .img {
+                min-width: 130px;
+            }
+        }
+    }
+}
+

@@ -1,0 +1,111 @@
+@use "variables";
+
+.container {
+    padding: 10px;
+    padding-right: 0;
+    background-color: #fff;
+    width: 250px;
+    font-size: small;
+    border-bottom: 1px dashed grey;
+    margin: 10px 0;
+    
+
+    .name {
+        height: 50px;
+        font-size: 18px;
+    }
+    
+    .details {
+        width: 100%;
+        margin: 0 auto;
+        .img {
+            margin-top: 20px;
+            img {
+                width: 100%;
+            }
+        }
+        .description {
+            background-color: lightgray;
+            padding: 10px;
+            height: 85px;
+            overflow: hidden;
+        }
+        
+    }
+    .foot {
+        display: flex;
+        justify-content: space-between;
+        align-content: center;
+        margin-top: 10px;
+        .price {
+            font-size: 16px;
+            height: max-content;
+            margin: auto 0;
+        }
+        .button {
+            padding: 10px;
+            background-color: variables.$bgButton;
+            color: #fff;
+            border: none;
+        }
+        .tabButton {
+            display: none;
+        }
+    }
+}
+
+
+@media only screen and (max-width: variables.$maxWidthTab) {
+    .container {
+         width: 260px;
+        padding: 0;
+        .details {
+            display: flex;
+            background-color: lightgray;
+
+            .img {
+                margin-top: 0px;
+                min-width: 50%;
+                img {
+                    height: 100%;
+                    width: 100%;
+                }
+            }
+            .description {
+                background-color: lightgray;
+                padding: 10px;
+                height: 80px;
+                overflow: hidden;
+            }
+        }
+        .foot {
+            .price {
+                display: none;
+            }
+            .button {
+                display: none;
+            }
+            .tabButton {
+                display: block;
+                padding: 10px;
+                background-color: variables.$bgButton;
+                color: #fff;
+                border: none;
+                width: 100%;
+                margin-bottom: 10px;
+            }
+        }
+    }
+}
+
+
+@media only screen and (max-width : variables.$maxWidth) {
+    .container {
+        padding: 10px;
+        width: 100%;
+        justify-content: center;
+        .details {
+            width: 100%;
+        }
+    }
+}

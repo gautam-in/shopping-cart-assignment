@@ -1,0 +1,96 @@
+@use "variables";
+
+.container {
+    display: flex;
+    .filter {
+        min-width: 25%;
+        flex: 1;
+        background-color: lightgray;
+
+        .category {
+            padding: 15px 20px;
+            border-bottom: 1px solid grey;
+            
+        }
+        .mobileCat {
+            display: none;
+        }
+        .active {
+            background-color: darkgray;
+        }
+    }
+    .items {
+        padding-left: 20px;
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 10px;
+    }
+}
+
+
+@media only screen and (min-width: variables.$minWidthTab) and (max-width: variables.$maxWidthTab){
+    .container {
+        .filter {
+            width: 40%;   
+        }
+    }
+}
+
+@media only screen and (max-width : variables.$maxWidth) {
+    .container {
+        flex-direction: column;
+        justify-content: center;
+
+        .items {
+            padding: 0;
+        }
+
+        .filter {
+            background-color: #fff;
+            position: relative;
+            width: 100%;
+            .category {
+                width: 100%;
+                border: none;
+            }
+            .mobileCat {
+                display: inline-block;
+                background-color: variables.$bgButton;
+                margin-top: 10px;
+                color: #fff;
+                font-size: 18px;
+               
+                
+            }
+            select {
+                -moz-appearance:none; /* Firefox */
+                -webkit-appearance:none; /* Safari and Chrome */
+            
+                option {
+                    background-color: lightgray;
+                    color: black;  
+                }
+            }
+
+            .downArrow {
+                position: absolute;
+                bottom: calc(50% - 10px);
+                right: 20px;
+                border: solid #fff;
+                border-width: 0 3px 3px 0;
+                display: inline-block;
+                padding: 6px;
+                transform: rotate(45deg);
+                -moz-transform: rotate(45deg);
+                
+            }
+        
+            .catDesktop {
+                display: none;
+            }
+        }
+
+    }
+}

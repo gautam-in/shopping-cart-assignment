@@ -1,0 +1,57 @@
+@use "variables";
+
+.loginContainer {
+    display: flex;
+    width: 80%;
+    margin: 2rem auto;
+    justify-content: center;
+    font-size: 13px;
+
+    .login {
+        flex: 1;
+        padding-right: 20px;
+        p {
+            padding: 0;
+        }
+
+        .loginTitle {
+            font-weight: bold;
+            font-size: 30px;
+            margin: 10px 0;
+        }
+    }
+
+    .loginForm {
+        
+        flex: 1;
+        padding-left: 20px;
+        form {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            max-width: 400px;
+
+            .MuiTextField-root {
+                margin: 50px 0;
+            }
+
+            button {
+                width: 100%;
+                margin-top: 5vh;
+                padding: 0.5rem;
+                background-color: variables.$bgButton;
+                color: #fff;
+                border: none;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width : variables.$maxWidth) {
+    .loginContainer {
+        flex-direction: column;
+        .loginForm {
+            margin-top: 10px;
+        }
+    }
+}

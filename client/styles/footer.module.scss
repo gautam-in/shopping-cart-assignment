@@ -1,0 +1,12 @@
+@use "variables";
+
+.footer {
+    background-color: lightgray;
+    text-align: center;
+
+    @media only screen and (max-width : variables.$maxWidth) {
+        .footer {
+            font-size: 10px;
+        }
+    }
+}
