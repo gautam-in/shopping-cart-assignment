@@ -1,0 +1,59 @@
+.carousel {
+    display: flex;
+    position: relative;
+    align-items: center;
+    min-height: 25vh;
+
+    button {
+        border: none;
+        cursor: pointer;
+        position: absolute;
+        background-color: grey;
+        padding: 5px;
+        opacity: 70%;
+        color: white;
+        font-size: 10px;
+
+        &.next {
+            right: 0;
+        }
+    }
+
+    .banner-image {
+        width: 100%;
+        height: auto;
+        padding: 20px 0px;
+    }
+
+    .banner-dots {
+        display: flex;
+        justify-content: center;
+        position: absolute;
+        bottom: 20px;
+        left: calc(50% - 25px);
+
+        .banner-dot {
+            height: 6px;
+            width: 6px;
+            margin: 0 6px;
+            border-radius: 3px;
+            background-color: lightgray;
+            margin-top: 10px;
+        }
+
+        .banner-dot.active {
+            background-color: black;
+        }
+    }
+
+    &:after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        width: 90%;
+        left: 5%;
+        height: 10px;
+        z-index: -1;
+        background: radial-gradient(at 50% 0, rgba(0, 0, 0, 0.5), transparent 70%);
+    }
+}

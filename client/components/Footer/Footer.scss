@@ -1,0 +1,11 @@
+$light-gray:#c8cbce61;
+
+.footer {
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: $light-gray;
+    width: 100%;
+    font-size: 10px;
+}

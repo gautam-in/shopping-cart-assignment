@@ -1,0 +1,42 @@
+$primary-color:#d00156;
+
+.cart-item {
+    padding: 1em 1em;
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .item-name {
+        font-weight: bold;
+    }
+
+    .purchase-description {
+        flex-grow: 1;
+        padding: 0 0 0 1em;
+
+        .item-quantity {
+            .quant-buttons {
+                cursor: pointer;
+                background: $primary-color;
+                border: none;
+                color: white;
+                padding: 0.3em 0.8em;
+                border-radius: 4px;
+
+                &.left {
+                    margin: 1em 1em 1em 0;
+                }
+
+                &.right {
+                    margin: 1em;
+                }
+            }
+        }
+    }
+
+    .item-price {
+        padding: 0 1em;
+        font-size: 1.2em;
+    }
+}

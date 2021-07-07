@@ -1,0 +1,53 @@
+$primary-color:#d00156;
+$light-gray:#c8cbce61;
+
+.register,
+.sign-in {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 2em 0;
+
+    aside {
+        padding: 2em;
+    }
+
+    .register-form {
+        padding: 1em;
+        width: 30%;
+
+        input {
+            outline: none;
+            display: block;
+            padding: 1em 0;
+            margin: 1em 0;
+            width: 100%;
+            border: none;
+            border-bottom: 1px solid gray;
+
+            &:focus {
+                border-bottom: 2px solid #51dae2;
+            }
+        }
+
+        button {
+            background: $primary-color;
+            padding: 10px 20px;
+            color: white;
+            border: none;
+            width: 100%;
+            margin-top: 2em;
+        }
+    }
+
+    @media only screen and(max-width:550px) {
+        aside {
+            padding: 1em 3em;
+        }
+
+        .register-form {
+            padding: 0 3em;
+            width: 100%;
+        }
+    }
+}
