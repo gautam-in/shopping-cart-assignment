@@ -4,7 +4,7 @@ import {
     DELETE_FROM_SHIPPING,
   } from "../actions/Constant";
   import _ from "lodash";
-  import {addToCart,deleteFromCart} from "./addItem"
+  import {addToCart,deleteFromCart} from "../../Utils/helper"
   
   const cartReducer = (state = {}, action) => {
     switch (action.type) {

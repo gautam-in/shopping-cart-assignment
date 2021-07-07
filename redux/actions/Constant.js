@@ -1,5 +1,4 @@
 
-export const RESET_STORE = 'RESET_STORE';
 export const SIGN_IN = 'SIGN_IN';
 export const SIGN_OUT = 'SIGN_OUT';
 export const FETCH_CATEGORIES = 'FETCH_CATEGORIES';

@@ -1,5 +1,5 @@
 import { useRouter } from "next/router";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import SideNavListStyles from "../styles/SideNavListStyles";
 import { connect } from "react-redux";
 import { fetchCategories, setCategory } from "../../redux/actions";

@@ -4,7 +4,6 @@ import {
   FETCH_BANNERS,
   FETCH_CATEGORIES,
   FETCH_PRODUCTS,
-  RESET_STORE,
   SET_CART_OPEN,
   SET_CATEGORY
 } from "./Constant";
@@ -56,12 +55,4 @@ export const addToShipping = (product) => async (dispatch) => {
 
 export const deleteFromShipping = (product) => async (dispatch) => {
   dispatch({ type: DELETE_FROM_SHIPPING, payload: product });
-};
-
-
-
-export const resetStore = () => {
-  return {
-    type: RESET_STORE,
-  };
 };

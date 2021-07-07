@@ -12,14 +12,15 @@ import { useRouter } from "next/router";
 export default function Header() {
     const dispatch = useDispatch();
     const router = useRouter();
-    const userId = useSelector(state => state.categories.userId)
+    const userId = useSelector(state => state.user.userId)
     const cartOpen = useSelector(state => state.cart.cartOpen);
     const cartItems = useSelector(state => state.cart.cartItems?.cart);
+
     const LogOut = () =>{
       dispatch({type: SIGN_OUT})
-      setUserId(null)
       router.push('/')
     }
+    
   return (
     <HeaderStyle>
       <Link href="/">
