@@ -4,10 +4,11 @@ import Button from '../../atoms/Button/Button'
 import {Container,LeftSection,RightSection} from  './styles'
 import Image from '../../atoms/Image/Image'
 import {isEven} from '../../../lib/lib'
+import {Explore} from '../../atoms/Links/Links'
 
 function Box({data,index}){
     
-    const {imageUrl, name, description, key , enabled} = data
+    const {imageUrl, name, description, key , enabled, id} = data
 
     console.log("index is",index)
 
@@ -23,7 +24,7 @@ function Box({data,index}){
             <RightSection>
                 <HeadingH3>{data.name}</HeadingH3>
                 <TextP>{description}</TextP>
-                <Button type='button' cname='variant_category'>{`Explore ${key}`}</Button>
+                <Explore href={`/products?category=${id}`} >{`Explore ${key}`}</Explore>
             </RightSection>
         </Container>
     )

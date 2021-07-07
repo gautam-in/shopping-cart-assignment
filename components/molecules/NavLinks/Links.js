@@ -1,4 +1,4 @@
-import NavLink from '../../atoms/Links/NavLink'
+import {NavLink} from '../../atoms/Links/Links'
 import {NavStyled,ListStyled} from './style'
 
 const NavLinks = () =>{

@@ -23,6 +23,15 @@ const StyledMenu = styled.div`
 `;
 
 
+const StyledExplore = styled.a`
+    background:#bf2957;
+    font-family:'Myriad Pro Regular';
+    color:#fff;
+    border:none;
+    text-align: center;
+    width:auto;
+    height:30px;
+    padding:6px;
+`;
 
-
-export {StyledLink,StyledMenu,StyledMenuList}
+export {StyledLink,StyledMenu,StyledMenuList,StyledExplore}
