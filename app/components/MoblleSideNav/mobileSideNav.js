@@ -11,7 +11,7 @@ import PropTypes from 'prop-types';
 import {PRODUCTS} from './mobileSIdeNav.constants'
 import withErrorHandler from '../../ErrorBoundary/withErrorHandler';
 
-function MobileCategoryNav({ categories }) {
+const MobileCategoryNav = ({ categories }) => {
 
   const router = useRouter();
   const categoryQuery = router.query.category;

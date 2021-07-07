@@ -5,7 +5,7 @@ import { fetchProducts } from '../../../store/actions';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
-function Products({ products, fetchProducts }) {
+const Products = ({ products, fetchProducts })=> {
   useEffect(() => {
     fetchProducts()
   }, []);

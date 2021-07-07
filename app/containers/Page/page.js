@@ -5,7 +5,7 @@ import Header from '../Header';
 import { ThemeProvider } from 'styled-components';
 import theme from '../../../utils/themeConstant';
 
-export default function Page({ children }) {
+ const Page = ({ children }) => {
   return (
     <>
       <ThemeProvider theme={theme}>
@@ -19,3 +19,4 @@ export default function Page({ children }) {
 Page.propTypes = {
   children: PropTypes.object,
 };
+export default Page

@@ -1,6 +1,6 @@
-import Document, { Html, Main, NextScript } from 'next/document';
+import Document, { Head,Html, Main, NextScript } from 'next/document';
 import { ServerStyleSheet } from 'styled-components';
-import useTitle from '../utils/useTitle';
+
 
 export default class MyDocument extends Document {
   constructor(props) {
@@ -39,7 +39,8 @@ export default class MyDocument extends Document {
     return (
       <Html lang="en-us">
        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
-        {useTitle('Sabka Bazaar')}
+       <Head>
+       </Head>
         <body>
           <Main />
           <NextScript />

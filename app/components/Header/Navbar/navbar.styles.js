@@ -10,9 +10,14 @@ const NavBarStyles = styled.nav`
   }
   li {
     margin-right: 1rem;
+  
   }
   li a {
-    text-decoration: none;
+    padding: 5px 0;
+    transition: color 0.2s;
+  }
+  li a:hover{
+    color: ${props => props.theme.black};   
   }
   @media only screen and (max-width: 767px) {
     display: none;

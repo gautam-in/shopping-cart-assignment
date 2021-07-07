@@ -1,7 +1,7 @@
 import React from 'react';
 import FallbackComponent from './FallbackComponent';
-
-function withErrorHandler (Component) {
+ 
+const withErrorHandler = (Component) => {
     class WithErrorHandler extends React.Component {
       constructor () {
         super()

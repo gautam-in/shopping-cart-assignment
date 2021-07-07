@@ -12,6 +12,7 @@ const SideNavListStyles = styled.li`
   &:hover {
     background-color: ${props => props.theme.magenta};
     color: ${props => props.theme.white};
+    transition: background-color 0.2s, color 0.2s;
   }
   &.active {
     background-color: ${props => props.theme.magenta};

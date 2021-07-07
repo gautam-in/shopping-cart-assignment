@@ -6,7 +6,7 @@ import { fetchCategories } from '../../../store/actions';
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 
-function SideNavBar({ categories, fetchCategories }) {
+const SideNavBar = ({ categories, fetchCategories })  =>{
   const router = useRouter();
   const categoryQuery = router.query.category;
   const [isDesktop, setDesktop] = useState(true);

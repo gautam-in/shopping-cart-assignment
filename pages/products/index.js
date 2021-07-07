@@ -3,7 +3,7 @@ import Products from '../../app/containers/Products';
 import { useRouter } from 'next/router';
 import useTitle from '../../utils/useTitle';
 
-export default function CategoryPage() {
+const CategoryPage = () => {
   const {query} = useRouter();
   return (
     <>
@@ -13,3 +13,4 @@ export default function CategoryPage() {
     </>
   );
 }
+export default CategoryPage
