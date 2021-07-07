@@ -73,9 +73,6 @@ export default function () {
           />
         </form>
       </div>
-      <div className="footer">
-        <p>Copyrigth &copy; 2011-2018 Sabka Bazar Groceries Supplies Pvt Ltd</p>
-      </div>
     </div>
   );
 }

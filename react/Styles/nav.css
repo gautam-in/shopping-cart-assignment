@@ -85,7 +85,7 @@ footer {
 main {
   max-width: 1440px;
   margin: auto;
-  padding: 85px 0 0px 0;
+  padding: 85px 0 40px 0;
 }
 
 .navbar {
@@ -117,7 +117,7 @@ main {
 
 @media only screen and (max-width: 1023px) {
   main {
-    padding: 85px 0px 0px 0px;
+    padding: 85px 0px 40px 0px;
   }
   .navbar {
     padding: 0px 0px;
@@ -126,7 +126,7 @@ main {
 
 @media only screen and (max-width: 767px) {
   main {
-    padding: 60px 0px 0px 0px;
+    padding: 60px 0px 40px 0px;
   }
   .header {
     height: 60px;

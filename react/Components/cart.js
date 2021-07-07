@@ -5,6 +5,16 @@ import '../Styles/cart.css';
 export default function ({ toggleCart }) {
   const { cart, setCart } = useContext(CartContext);
 
+  function updateQuantity(index, newQty) {
+    let newCart = [...cart];
+    if (newQty <= 0) {
+      newCart.splice(index, 1);
+    } else {
+      newCart[index] = { ...newCart[index], qty: newQty };
+    }
+    setCart(newCart);
+  }
+
   return (
     <div className="cart-modal">
       <div className="cart">
@@ -15,8 +25,13 @@ export default function ({ toggleCart }) {
           </div>
         </div>
         <div className="cart-items">
-          {cart.map((_) => (
-            <CartItem item={_} key={_.id} />
+          {cart.map((_, index) => (
+            <CartItem
+              item={_}
+              key={_.item.id}
+              updateQuantity={updateQuantity}
+              index={index}
+            />
           ))}
           <div className="cart__cheaper">
             <img src="/static/images/lowest-price.png" />
@@ -37,9 +52,7 @@ export default function ({ toggleCart }) {
   );
 }
 
-function CartItem({ item }) {
-  const { cart, setCart } = useContext(CartContext);
-
+function CartItem({ item, updateQuantity, index }) {
   return (
     <div className="cart-item">
       <img className="cart-item-image" src={item.item.imageURL} />
@@ -47,9 +60,19 @@ function CartItem({ item }) {
         <h2 className="cart-item-name">{item.item.name}</h2>
         <div className="cart-item-description">
           <div className="cart-item-amount">
-            <button className="maroon-button cart-item-qty-button">-</button>
+            <button
+              className="maroon-button cart-item-qty-button"
+              onClick={() => updateQuantity(index, item.qty - 1)}
+            >
+              -
+            </button>
             <div className="cart-item-qty">{item.qty}</div>
-            <button className="maroon-button cart-item-qty-button">+</button>
+            <button
+              className="maroon-button cart-item-qty-button"
+              onClick={() => updateQuantity(index, item.qty + 1)}
+            >
+              +
+            </button>
             <div className="cart-item-cross">X</div>
             <div className="cart-item-price">Rs. {item.item.price}</div>
           </div>

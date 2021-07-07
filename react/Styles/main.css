@@ -37,3 +37,14 @@ ul {
 .modal.close-modal {
   display: none;
 }
+
+footer {
+  background-color: whitesmoke;
+  padding: 10px;
+  position: fixed;
+  bottom: 0;
+}
+
+footer p {
+  margin: 0;
+}

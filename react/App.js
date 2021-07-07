@@ -37,6 +37,11 @@ export default function () {
             </Route>
           </Switch>
         </main>
+        <footer>
+          <p>
+            Copyrigth &copy; 2011-2018 Sabka Bazar Groceries Supplies Pvt Ltd
+          </p>
+        </footer>
       </Router>
     </CartContext.Provider>
   );

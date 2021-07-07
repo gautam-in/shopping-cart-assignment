@@ -20,16 +20,6 @@
   flex-direction: column;
 }
 
-.footer {
-  margin-top: 30px;
-  background-color: whitesmoke;
-  padding: 10px;
-}
-
-.footer p {
-  margin: 0;
-}
-
 label {
   color: #9a9595;
   display: block;
