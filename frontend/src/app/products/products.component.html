@@ -1,0 +1,39 @@
+<nav class="side-nav">
+  <div class="top-nav-bar">
+    {{(dataService.selectedCategory$ | async)?.name || 'All'}}
+    <button mat-icon-button class="menu-btn" aria-label="Expand category menu"
+            (click)="manuExpand = !manuExpand">
+      <mat-icon>
+        <span class="material-icons-outlined">
+          expand_more
+        </span>
+      </mat-icon>
+    </button>
+  </div>
+  <ul class="categories" [ngClass]="{'expand': manuExpand}">
+    <li *ngFor="let category of categories$ | async"
+        [ngClass]="{'selected': (dataService.selectedCategory$ | async)?.id === category.id}">
+      <a (click)="categoryselected(category)">{{category.name}}</a>
+    </li>
+  </ul>
+</nav>
+<div class="products">
+  <section *ngFor="let product of filteredProducts$ | async" class="product-details">
+    <h2>{{product.name}}</h2>
+    <div class="details">
+      <figure>
+        <img [src]="product.imageURL" [alt]="product.name">
+      </figure>
+      <div class="description-buy-now">
+        <p class="description">{{product.description}}</p>
+        <button (click)="selectProduct(product)" class="buy-now">Buy Now @ Rs{{product.price}}</button>
+      </div>
+      <div class="price-details">
+        <span class="price">MRP Rs{{product.price}}</span>
+        <button (click)="selectProduct(product)" class="buy-now">
+          Buy Now <span class="at-price">@ Rs{{product.price}}</span>
+        </button>
+      </div>
+    </div>
+  </section>
+</div>

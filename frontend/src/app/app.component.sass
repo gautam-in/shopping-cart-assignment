@@ -1,0 +1,61 @@
+@import 'src/variables'
+
+\:host
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+app-header
+  box-shadow: 0px 10px 13px -9px $grey;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+
+.cart-section
+  display: block;
+  height: 100%;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+
+  .cart-overlay
+    background: $black;
+    display: block;
+    height: 100%;
+    left: 0;
+    opacity: 0.5;
+    position: absolute;
+    top: 0;
+    width: 100%;
+
+  app-product-cart
+    position: absolute;
+    right: 5%;
+    top: 90px;
+
+/* Small phones to small tablets: from 481px to 767px */
+@media only screen and (max-width: 768px)
+  .cart-section + .router-container, .cart-section ~ app-footer
+    display: none;
+
+  .cart-section
+    background: $grey;
+    top: 94px;
+
+    .cart-overlay
+      display: none;
+
+    app-product-cart
+      height: calc(100% - 110px);
+      left: 0;
+      top: 20px;
+      width: 100%;
+
+/* Small phones: from 0 to 480px */
+@media only screen and (max-width: 480px)
+  .cart-section
+    top: 55px;
+
+    app-product-cart
+      height: calc(100% - 75px);

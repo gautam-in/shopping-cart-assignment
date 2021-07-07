@@ -1,0 +1,60 @@
+@import 'src/variables';
+
+\:host
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+
+section
+  align-self: center;
+  box-shadow: 0px 10px 13px -9px $grey;
+  margin-top: 10px;
+  max-width: 1200px;
+  width: 90%;
+
+.category-section
+  display: flex;
+  padding: 20px 10px;
+
+  figure
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    width: 400px;
+
+    img
+      max-height: 100%;
+      max-width: 100%;
+
+  .details
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: center;
+    padding: 0 15px;
+
+    h2
+      color: $black;
+      font-weight: 600;
+    
+    p
+      margin-bottom: 30px;
+      text-align: center;
+
+/* Small phones to small tablets: from 481px to 767px */
+@media only screen and (max-width: 767px)
+  section
+    width: 100%;
+
+/* Small phones: from 0 to 480px */
+@media only screen and (max-width: 480px)
+  p
+    font-size: 80%;
+  
+  .category-section
+    figure
+      width: 300px;
+    .details h2
+      font-size: 110%;

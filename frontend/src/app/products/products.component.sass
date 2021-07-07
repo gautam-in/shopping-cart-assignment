@@ -1,0 +1,164 @@
+@import 'src/variables'
+
+\:host
+  align-self: center;
+  display: flex;
+  max-width: 1200px;
+  width: 90%;
+
+.side-nav
+  width: 25%;
+  background: $grey;
+
+  .top-nav-bar
+    align-items: center;
+    border-bottom: 1px solid $dark-grey;
+    display: none;
+    font-weight: 550;
+    font-size: 115%;
+    padding: 5px 25px;
+
+    .menu-btn
+      margin-left: auto;
+
+      mat-icon
+        font-size: 35px;
+
+  ul
+    list-style: none;
+
+    li
+      padding: 15px 25px;
+      border-bottom: 1px solid $dark-grey;
+
+      &:hover, &.selected
+        background: $accent;
+        border-color: $grey;
+        color: $white;
+
+.products
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px;
+  width: 75%;
+
+  .product-details
+    border-bottom: 1px solid $grey;
+    border-bottom-style: dashed;
+    box-shadow: 25px 0px 10px -25px $grey;
+    margin: 20px 0;
+    padding: 10px;
+    width: 25%;
+
+    .description-buy-now
+      .buy-now
+        display: none;
+
+      .description
+        background: $grey;
+        font-size: 80%;
+        height: 70px;
+        padding: 3px 10px;
+        overflow: hidden;
+        line-height: 1.5;
+
+    h2
+      font-size: 100%;
+      font-weight: 600;
+      line-height: 1.5;
+      height: 50px;
+    
+    figure
+      align-items: center;
+      display: flex;
+      justify-content: center;
+
+      img
+        max-width: 100%;
+        max-height: 100%
+
+    .price-details
+      align-items: center;
+      display: flex;
+      justify-content: space-between;
+
+      .buy-now
+        font-size: 80%;
+        padding: 8px;
+
+        .at-price
+          display: none;
+
+/* Small phones to small tablets: from 481px to 767px */
+@media only screen and (max-width: 768px)
+  \:host
+    width: 100%;
+
+  .products .product-details
+    width: 50%;
+
+    h2
+      height: 30px;
+
+    .details
+      display: flex;
+      flex-wrap: wrap;
+
+      figure
+        flex: 1;
+
+      .description-buy-now
+        flex: 1;
+
+      .description
+        height: 100px;
+    
+    .price-details
+      flex-basis: 100%;
+
+      .price
+        display: none;
+      .buy-now
+        width: 100%;
+
+        .at-price
+          display: inline;
+
+/* Small phones: from 0 to 480px */
+@media only screen and (max-width: 480px)
+  \:host
+    flex-direction: column;
+
+  .side-nav
+    background: $accent;
+    color: $white;
+    width: 100%;
+
+    .top-nav-bar
+      border-bottom: 1px solid $grey;
+      display: flex;
+
+    .categories
+      display: none;
+
+      li
+        border-bottom: 1px solid $grey;
+
+    .expand
+      display: block;
+
+  .products
+    width: 100%;
+
+    .product-details
+      width: 100%;
+
+      .description-buy-now .buy-now
+        display: block;
+        width: 100%;
+      
+      .description
+        margin-bottom: 25px;
+
+      .price-details
+        display: none;

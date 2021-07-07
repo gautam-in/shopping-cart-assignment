@@ -1,0 +1,24 @@
+\:host
+  align-self: center;
+  display: flex;
+  padding: 20px;
+
+.details
+  flex: 1;
+  margin-right: 20px;
+
+  h1
+    font-weight: 600;
+
+.login-form
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+
+  .submit
+    width: 100%;
+
+/* Small phones to small tablets: from 481px to 767px */
+@media only screen and (max-width: 768px)
+  \:host
+    flex-direction: column;
