@@ -2,6 +2,7 @@ import React from "react";
 import "./ProductDetails.scss";
 import { useSelector, useDispatch } from "react-redux";
 import { addItemToCart, increaseQuantity } from "../../redux/cart/cartActions";
+import PropTypes from "prop-types";
 
 const ProductDetails = ({ product }) => {
   const cartItems = useSelector((state) => state.cart.itemsAdded);
@@ -56,3 +57,7 @@ const ProductDetails = ({ product }) => {
 };
 
 export default ProductDetails;
+
+ProductDetails.propTypes = {
+  product: PropTypes.object.isRequired,
+};

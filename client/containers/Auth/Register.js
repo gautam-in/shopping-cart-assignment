@@ -19,34 +19,47 @@ const Register = () => {
 
   const onFormSubmit = (e) => {
     e.preventDefault();
+    const emailReg = /\S+@\S+\.\S+/;
+    const pwdReg = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/;
     if (userDetails.firstName && userDetails.email && userDetails.password) {
       if (userDetails.password === userDetails.confirmPwd) {
-        sessionStorage.setItem(
-          "name",
-          userDetails.firstName + " " + userDetails.lastName
-        );
-        sessionStorage.setItem("email", userDetails.email);
-        sessionStorage.setItem("password", userDetails.password);
-        sessionStorage.setItem("status", "");
-        setValidation({
-          ...validation,
-          statusSuccessMessage: "User registered successfully",
-          statusErrorMessage: "",
-        });
-        setUserDetails(intialState);
-        setTimeout(() => history.push("/login"), 2000);
+        if (pwdReg.test(userDetails.password)) {
+          if (emailReg.test(userDetails.email)) {
+            sessionStorage.setItem(
+              "name",
+              userDetails.firstName + " " + userDetails.lastName
+            );
+            sessionStorage.setItem("email", userDetails.email);
+            sessionStorage.setItem("password", userDetails.password);
+            sessionStorage.setItem("status", "");
+            setValidation({
+              ...validation,
+              statusSuccessMessage: "User registered successfully",
+              statusErrorMessage: "",
+            });
+            setUserDetails(intialState);
+            setTimeout(() => history.push("/login"), 2000);
+          } else {
+            showError("Invalid email id");
+          }
+        } else {
+          showError(
+            "Password must contain minimum eight characters, at least one letter, one number and one special character"
+          );
+        }
       } else {
-        setValidation({
-          ...validation,
-          statusErrorMessage: "Passwords do not match",
-        });
+        showError("Passwords do not match");
       }
     } else {
-      setValidation({
-        ...validation,
-        statusErrorMessage: "Please provide First name, Email & Password",
-      });
+      showError("Please provide First name, Email & Password");
     }
+  };
+
+  const showError = (msg) => {
+    setValidation({
+      ...validation,
+      statusErrorMessage: msg,
+    });
   };
 
   return (

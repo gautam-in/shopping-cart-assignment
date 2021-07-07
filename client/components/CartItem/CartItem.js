@@ -1,5 +1,6 @@
 import React from "react";
 import "./CartItem.scss";
+import PropTypes from "prop-types";
 import { useSelector, useDispatch } from "react-redux";
 import {
   increaseQuantity,
@@ -64,3 +65,7 @@ const CartItem = ({ productId }) => {
 };
 
 export default CartItem;
+
+CartItem.propTypes = {
+  productId: PropTypes.string.isRequired,
+};

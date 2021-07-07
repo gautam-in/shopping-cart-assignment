@@ -1,16 +1,26 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./Cart.scss";
 import { useHistory } from "react-router-dom";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import CartItem from "../../components/CartItem/CartItem";
+import AuthContext from "../../AuthContext";
 
 const Cart = () => {
+  const { userAuthentication } = useContext(AuthContext);
   const history = useHistory();
   const cart = useSelector((state) => state.cart);
   const items = cart.itemsAdded;
+
   const handleButtonClick = () => {
-    items.length > 0 ? history.push("/home") : history.push("/products");
+    if (items.length > 0) {
+      userAuthentication === "logged-in"
+        ? history.push("/home")
+        : history.push("/login");
+    } else {
+      history.push("/products");
+    }
   };
+
   return (
     <div className="cart">
       {items.length > 0 ? (

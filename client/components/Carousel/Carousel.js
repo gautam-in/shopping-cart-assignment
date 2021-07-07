@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./Carousel.scss";
+import PropTypes from "prop-types";
 
 const Carousel = ({ data }) => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -60,3 +61,7 @@ const Carousel = ({ data }) => {
 };
 
 export default Carousel;
+
+Carousel.propTypes = {
+  data: PropTypes.arrayOf(PropTypes.object).isRequired,
+};
