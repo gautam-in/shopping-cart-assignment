@@ -15,6 +15,34 @@ export default function ({ toggleCart }) {
     setCart(newCart);
   }
 
+  function renderCart() {
+    return (
+      <div className="cart-items">
+        {cart.map((_, index) => (
+          <CartItem
+            item={_}
+            key={_.item.id}
+            updateQuantity={updateQuantity}
+            index={index}
+          />
+        ))}
+        <div className="cart__cheaper">
+          <img src="/static/images/lowest-price.png" />
+          You won't find it cheaper anywhere
+        </div>
+      </div>
+    );
+  }
+
+  function emptyCart() {
+    return (
+      <div className="empty-cart">
+        <p>No items in your cart</p>
+        <p>Your favourite items are just a click away.</p>
+      </div>
+    );
+  }
+
   return (
     <div className="cart-modal">
       <div className="cart">
@@ -24,27 +52,16 @@ export default function ({ toggleCart }) {
             X
           </div>
         </div>
-        <div className="cart-items">
-          {cart.map((_, index) => (
-            <CartItem
-              item={_}
-              key={_.item.id}
-              updateQuantity={updateQuantity}
-              index={index}
-            />
-          ))}
-          <div className="cart__cheaper">
-            <img src="/static/images/lowest-price.png" />
-            You won't find it cheaper anywhere
-          </div>
-        </div>
+        {cart.length <= 0 ? emptyCart() : renderCart()}
         <div className="cart-checkout">
-          <div>Promo code can be applied on payment page</div>
+          {cart.length > 0 && (
+            <div>Promo code can be applied on payment page</div>
+          )}
           <button
             onClick={toggleCart}
             className="checkout-button maroon-button"
           >
-            Proceed to Checkout
+            {cart.length <= 0 ? 'Start Shopping' : 'Proceed to Checkout'}
           </button>
         </div>
       </div>

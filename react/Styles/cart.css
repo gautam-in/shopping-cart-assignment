@@ -124,6 +124,21 @@
   width: 100%;
 }
 
+.empty-cart {
+  background-color: white;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 120%;
+}
+
+.empty-cart p {
+  margin: 0;
+  padding: 0;
+}
+
 @media only screen and (max-width: 1440px) {
   .cart-modal {
     max-width: 1200px;
