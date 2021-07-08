@@ -6,10 +6,8 @@ import Categories from "../components/organism/Categories";
 
 function home({ banners, fetchBanners, categories, fetchCategories }) {
   useEffect(() => {
-    (async () => {
-      await fetchBanners();
-      await fetchCategories();
-    })();
+    fetchBanners();
+    fetchCategories();
   }, []);
 
   return (

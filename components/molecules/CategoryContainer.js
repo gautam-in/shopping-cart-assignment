@@ -4,7 +4,7 @@ import CustomButton from "../atom/CustomButton";
 
 
 
-export default function Category({ category }) {
+export default function Category({category}) {
     const router = useRouter()
   return (
     <CategoryContainer reverse={category.order % 2 === 0} order={category.order}>

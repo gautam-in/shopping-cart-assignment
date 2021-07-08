@@ -1,3 +1,4 @@
+import {GET, POST} from '../../Utils/helper'
 import {
   ADD_TO_SHIPPING,
   DELETE_FROM_SHIPPING,
@@ -7,7 +8,7 @@ import {
   SET_CART_OPEN,
   SET_CATEGORY
 } from "./Constant";
-import {GET, POST} from '../../Utils/helper'
+
 
 export const fetchBanners = () => async (dispatch) => {
   const data = await GET("banners")

@@ -13,25 +13,15 @@ function MobileCategoryNav({
   fetchCategories,
   setCategory,
   selected,
-}) {
+  }) {
   const router = useRouter();
-  const categoryQuery = router.query.category;
+  const categoryId = router.query.category;
   const [open, setOpen] = useState(false);
-  const PRODUCTS = {
-    name: "Products",
-    key: "products",
-    description: "All Products",
-    enabled: true,
-    order: 6,
-    id: "5b68994e3d1a866534f51234",
-  };
 
   useEffect(() => {
-    (async () => {
-      await fetchCategories();
-      await setCategory(categoryQuery);
-    })();
-  }, [categoryQuery]);
+    fetchCategories();
+    setCategory(categoryId);
+  }, [categoryId]);
 
   const onselectionchange = (e, category) => {
     e.stopPropagation();
@@ -44,14 +34,23 @@ function MobileCategoryNav({
     }
   };
 
+  const PRODUCTS = {
+    name: "Products",
+    key: "products",
+    description: "All Products",
+    enabled: true,
+    order: 6,
+    id: "5b68994e3d1a866534f51234",
+  };
+
   const renderCategoryList = (categories) => {
     return categories?.map((category) => {
-      if (category.id === categoryQuery) return;
+      if (category.id === categoryId) return;
       return (
         <SideNavListStyles
           key={category.id}
           order={category.order}
-          active={category.id === categoryQuery}
+          active={category.id === categoryId}
           onClick={(e) => onselectionchange(e, category)}
         >
           {category.name}
@@ -71,7 +70,7 @@ function MobileCategoryNav({
         {renderCategoryList(categories)}
         <SideNavListStyles
           key="all-products"
-          active={!categoryQuery}
+          active={!categoryId}
           onClick={(e) => onselectionchange(e, PRODUCTS)}
         >
           Products

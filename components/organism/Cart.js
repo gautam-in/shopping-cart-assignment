@@ -7,10 +7,10 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { setCartOpen } from "../../redux/actions";
 
 export default function Cart(){
+    const dispatch = useDispatch();
     const cartOpen = useSelector(state => state.cart.cartOpen);
     const cartItems = useSelector(state => state.cart.cartItems?.cart);
     const totalPrice = useSelector(state => state.cart.cartItems?.totalPrice);
-    const dispatch = useDispatch();
     const renderCartItems = (cartItems) => {
         return cartItems.map(cartItem => <CartItem key={cartItem.id} addedProduct={cartItem} />)
     }

@@ -3,7 +3,6 @@ import {
     ADD_TO_SHIPPING,
     DELETE_FROM_SHIPPING,
   } from "../actions/Constant";
-  import _ from "lodash";
   import {addToCart,deleteFromCart} from "../../Utils/helper"
   
   const cartReducer = (state = {}, action) => {

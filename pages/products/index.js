@@ -19,11 +19,10 @@ function CategoryPage(props) {
     categories,
     fetchCategories,
   } = props;
+  
   useEffect(() => {
-    (async () => {
-      await fetchCategories();
-      await fetchProducts(category);
-    })();
+    fetchCategories();
+    fetchProducts(category);
   }, [category]);
 
   return (
