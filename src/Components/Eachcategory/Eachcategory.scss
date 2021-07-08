@@ -1,0 +1,32 @@
+.eachcategorybutton {
+  padding: 0.5rem;
+  color: white;
+  background: #c73030;
+  border: none;
+}
+
+.eachcategorysection {
+  text-align: center;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.eachcategorysection h2,
+p {
+  margin: 0;
+}
+@media screen and (min-width: 600px) {
+  .eachcategoryimg {
+    height: 180px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .eachcategoryimg {
+    height: 250px;
+  }
+}
+@media screen and (max-width: 600px) {
+}

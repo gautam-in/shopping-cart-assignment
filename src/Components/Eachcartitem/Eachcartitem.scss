@@ -1,0 +1,31 @@
+.eachcartitem {
+  height: 80px;
+  display: flex;
+  padding: 0.3rem;
+  background: white;
+  margin-bottom: 0.5rem;
+}
+.eachcartitem img {
+  width: 80px;
+}
+.productdetails {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.itemcontainer {
+  display: flex;
+  align-items: center;
+}
+.iconcontainer {
+  display: flex;
+  align-items: center;
+  flex: 2;
+  justify-content: space-between;
+}
+.itemprice {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
