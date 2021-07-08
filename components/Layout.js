@@ -13,7 +13,7 @@ export default function Layout({ title,children }) {
         auth.onAuthStateChanged(user=>{
             if(user){
                 db.collection('SignedUpUsersData').doc(user.uid).get().then(snapshot => {
-                    setUser(snapshot?.data()?.firstName)
+                    setUser(snapshot?.data()?.email)
                 })
             }
             else{
