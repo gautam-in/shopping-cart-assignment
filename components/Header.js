@@ -1,6 +1,6 @@
 import Link from 'next/link';
-import logo from '../backend/static/images/logo.png';
-import cart from '../backend/static/images/cart.svg'
+import logo from '../static/images/logo.png';
+import cart from '../static/images/cart.svg'
 import Image from 'next/image'
 import { Nav, Navbar, Button } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -54,11 +54,11 @@ const Header = ({ user }) => {
                 </Nav>
                 {user && <Nav className="d-flex" >
                     <Button style={{ textAlign: 'left', cursor: 'auto' }} disabled variant="light"><i><b>{user}</b></i></Button>
-                    <Button style={{ textAlign: 'left' }} variant="light" onClick={signout}><b>SignOff</b></Button>
+                    <Button style={{ textAlign: 'left' }} variant="light" onClick={signout}><b>SignOut</b></Button>
                 </Nav>}
                 {!user && <Nav className="d-flex">
-                    <Link href="/login" passHref><Nav.Link><b>SignIn</b></Nav.Link></Link>
-                    <Link href="/signup" passHref><Nav.Link><b>Register</b></Nav.Link></Link>
+                    <Link href="/login" passHref><Nav.Link style={{ padding: '10px' }}><b>SignIn</b></Nav.Link></Link>
+                    <Link href="/signup" passHref><Nav.Link style={{ padding: '10px' }}><b>Register</b></Nav.Link></Link>
                 </Nav>}
             </Navbar.Collapse>
             <Nav className="d-flex">

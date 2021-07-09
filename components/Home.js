@@ -1,14 +1,33 @@
 import { Carousel, Card, Button, Row, Col } from 'react-bootstrap';
-import banners from '../backend/server/banners/index.get.json';
-import categories from '../backend/server/categories/index.get.json'
 import Image from 'next/image';
 import '../styles/MainPage.module.css';
 import Router from 'next/router';
-
+import { useEffect, useState } from 'react';
 
 export default function Home() {
 
-    const content = categories.map((category) => {
+    const [bannersAll, setBanners] = useState();
+    const [categoriesAll, setCategories] = useState();
+
+    useEffect(() => {
+        fetch("http://localhost:3000/api/banners")
+            .then(res => res.json())
+            .then(
+                (result) => {
+                    setBanners(result);
+                })
+    }, [])
+
+    useEffect(() => {
+        fetch("http://localhost:3000/api/categories")
+            .then(res => res.json())
+            .then(
+                (result) => {
+                    setCategories(result);
+                })
+    }, [])
+
+    const content = categoriesAll && categoriesAll.map((category) => {
         const { id, name, key, description, imageUrl, order, enabled } = category;
         if (enabled && order % 2 !== 0) {
             return (
@@ -63,9 +82,8 @@ export default function Home() {
         }
     });
 
-    const slides = banners.map((banner) => {
+    const slides = bannersAll && bannersAll.map((banner) => {
         const { id, bannerImageUrl, bannerImageAlt } = banner;
-        // console.log(banner);
         return (
             <Carousel.Item className="shadow p-3 mb-5 bg-white rounded" key={id} interval={2000}>
                 <Image

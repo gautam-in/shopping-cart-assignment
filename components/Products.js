@@ -1,16 +1,35 @@
 import css from '../styles/Products.module.css';
 import Link from 'next/link';
-import products from '../backend/server/products/index.get.json';
-import categories from '../backend/server/categories/index.get.json';
 import { Card, Button, CardDeck } from 'react-bootstrap';
 import Image from 'next/image';
 import Router from 'next/router';
-import { useContext, useState } from 'react';
+import { useContext, useState, useEffect } from 'react';
 import { CartContext } from './Cart/CartContext';
 import { TokenContext } from "./TokenContext";
 import { db } from '../firebase';
 
 export default function Products() {
+
+    const [productsAll, setProducts] = useState();
+    const [categoriesAll, setCategories] = useState();
+
+    useEffect(() => {
+        fetch("http://localhost:3000/api/products")
+            .then(res => res.json())
+            .then(
+                (result) => {
+                    setProducts(result);
+                })
+    }, [])
+
+    useEffect(() => {
+        fetch("http://localhost:3000/api/categories")
+            .then(res => res.json())
+            .then(
+                (result) => {
+                    setCategories(result);
+                })
+    }, [])
 
     const [error, setError] = useState('');
     const { shoppingCart, totalPrice, totalQty, dispatch } = useContext(CartContext);
@@ -27,7 +46,7 @@ export default function Products() {
         }
     }
 
-    const displayContent = products.map((product) => {
+    const displayContent = productsAll && productsAll.map((product) => {
         const { id, key, name, price, description, imageURL } = product;
         return (
             <CardDeck key={key} style={{ display: 'flex', flexDirection: 'row' }}>
@@ -48,7 +67,7 @@ export default function Products() {
         )
     })
 
-    const productCategory = categories.map((category) => {
+    const productCategory = categoriesAll && categoriesAll.map((category) => {
         const { id, name, key, enabled } = category;
         if (enabled) {
             if (user) {
