@@ -74,11 +74,17 @@
 
 .product-category-list .product-category {
   border-bottom: 1px solid gray;
-  padding: 10px;
 }
 
 .product-category-list .product-category.active {
   background-color: gray;
+}
+
+.product-category-list .product-category button {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  background-color: transparent;
 }
 
 @media only screen and (min-width: 1024px) {

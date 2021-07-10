@@ -59,9 +59,8 @@ export default function () {
                     : 'product-category'
                 }
                 key={_.id}
-                onClick={() => categoryChange(_.id)}
               >
-                {_.name}
+                <button onClick={() => categoryChange(_.id)}>{_.name}</button>
               </li>
             ))}
         </ul>
