@@ -115,7 +115,8 @@ function Product({ item }) {
       <article className="price-details">
         <p className="mrp">MRP Rs {item.price}</p>
         <button className="buy-button maroon-button" onClick={addItem}>
-          Buy Now <span className="buy-now-price"> @ {item.price}</span>
+          Buy Now <span className="visually-hidden">{item.name}</span>{' '}
+          <span className="buy-now-price"> @ {item.price}</span>
         </button>
       </article>
     </li>
