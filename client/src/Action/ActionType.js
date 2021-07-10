@@ -1,0 +1,15 @@
+export const ADD_ITEM = "ADD_ITEM";
+export const INCREASE_QUANTITY = "INCREASE_QUANTITY";
+export const DECREASE_QUANTITY = "DECREASE_QUANTITY";
+export const GET_PRODUCTS_REQUEST = "GET_PRODUCTS_REQUEST";
+export const GET_PRODUCTS_SUCCESS = "GET_PRODUCTS_SUCCESS";
+export const GET_PRODUCTS_FAILURE = "GET_PRODUCTS_FAILURE";
+export const GET_BANNER_REQUEST = "GET_BANNER_REQUEST";
+export const GET_BANNER_SUCCESS = "GET_BANNER_SUCCESS";
+export const GET_BANNER_FAILURE = "GET_BANNER_FAILURE";
+export const GET_CATEGORY_REQUEST = "GET_CATEGORY_REQUEST";
+export const GET_CATEGORY_SUCCESS = "GET_CATEGORY_SUCCESS";
+export const GET_CATEGORY_FAILURE = "GET_CATEGORY_FAILURE";
+export const CATEGORIES_URL = "http://localhost:5000/categories";
+export const PRODUCTS_URL = "http://localhost:5000/products";
+export const BANNERS_URL = "http://localhost:5000/banners";

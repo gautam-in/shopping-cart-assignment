@@ -1,0 +1,106 @@
+$primary: #11998e;
+$secondary: #38ef7d;
+$white: #000;
+$gray: #9b9b9b;
+
+$primary-color:#d00156;
+$light-gray:#c8cbce61;
+
+.register {
+    display: flex;
+    flex-wrap: wrap;
+    // justify-content: center;
+    padding: 2em 4em;
+
+    aside {
+        padding: 2em;
+    }
+
+    .register-form {
+        padding: 1em;
+        width: 45%;
+
+        .form__group {
+          position: relative;
+          padding: 15px 0 0;
+          margin-top: 10px;
+          width: 100%;
+        }
+        
+        .form__field {
+          font-family: inherit;
+          width: 100%;
+          border: 0;
+          border-bottom: 2px solid $gray;
+          outline: 0;
+          font-size: 1.3rem;
+          color: $white;
+          padding: 7px 0;
+          background: transparent;
+          transition: border-color 0.2s;
+        
+          &::placeholder {
+            color: transparent;
+          }
+        
+          &:placeholder-shown ~ .form__label {
+            font-size: 1.3rem;
+            cursor: text;
+            top: 20px;
+          }
+        }
+        
+        .form__label {
+          position: absolute;
+          top: 0;
+          display: block;
+          transition: 0.2s;
+          font-size: 1rem;
+          color: $gray;
+        }
+        
+        .form__field:focus {
+          ~ .form__label {
+            position: absolute;
+            top: 0;
+            display: block;
+            transition: 0.2s;
+            font-size: 1rem;
+            color: $primary;
+            font-weight:700;    
+          }
+          padding-bottom: 6px;  
+          font-weight: 700;
+          border-width: 3px;
+          border-image: linear-gradient(to right, $primary,$secondary);
+          border-image-slice: 1;
+        }
+        /* reset input */
+        .form__field{
+          &:required,&:invalid { box-shadow:none; }
+        }
+
+        .SignUp-btn {
+            background: $primary-color;
+            padding: 10px 20px;
+            color: white;
+            border: none;
+            width: 100%;
+            margin-top: 2em;
+        }
+    }
+
+    @media only screen and(max-width:550px) {
+        aside {
+            padding: 1em 3em;
+        }
+
+        .register-form {
+            padding: 0 3em;
+            width: 100%;
+        }
+    }
+}
+
+
+
