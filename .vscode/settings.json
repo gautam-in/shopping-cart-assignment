@@ -2,8 +2,8 @@
   "workbench.colorCustomizations": {
     "titleBar.activeForeground": "#000",
     "titleBar.inactiveForeground": "#000000CC",
-    "titleBar.activeBackground": "#FFC600",
-    "titleBar.inactiveBackground": "#FFC600CC"
+    "titleBar.activeBackground": "#06f642",
+    "titleBar.inactiveBackground": "#04fd19cc"
   },
   "editor.formatOnSave": true,
   "[javascript]": {
@@ -16,5 +16,8 @@
   "editor.codeActionsOnSave": {
     "source.fixAll": true
   },
-  "prettier.disableLanguages": ["javascript", "javascriptreact"]
+  "prettier.disableLanguages": [
+    "javascript",
+    "javascriptreact"
+  ]
 }
