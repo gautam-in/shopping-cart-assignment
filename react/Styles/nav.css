@@ -52,6 +52,8 @@
 
 .number-of-items {
   white-space: nowrap;
+  font-size: 16px;
+  font-family: 'Dosis';
 }
 
 .navbar .right-nav {

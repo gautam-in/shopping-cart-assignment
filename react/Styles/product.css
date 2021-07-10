@@ -32,6 +32,14 @@
   width: 100%;
 }
 
+.product-card h2 {
+  margin: 0;
+}
+
+.product-card p {
+  margin: 0;
+}
+
 .product-card .product-description {
   background-color: lightgrey;
   text-overflow: ellipsis;

@@ -45,79 +45,77 @@ export default function () {
   };
 
   return (
-    <div className="login">
-      <div className="login-container">
-        <div className="login-header">
-          <h1>SignUp</h1>
-          <p>We do not share your personal details with anyone.</p>
-        </div>
-        <form onSubmit={signup} className="login-form">
-          <fieldset className="input-field">
-            <label htmlFor="firstname">First Name</label>
-            <input
-              type="text"
-              id="firstname"
-              required
-              value={firstName}
-              onChange={(e) => setFirstName(e.target.value)}
-            />
-          </fieldset>
-          <fieldset className="input-field">
-            <label htmlFor="lastname">Last Name</label>
-            <input
-              type="text"
-              id="lastname"
-              required
-              value={lastname}
-              onChange={(e) => setLastName(e.target.value)}
-            />
-          </fieldset>
-          <fieldset className="input-field">
-            <label htmlFor="email">Email</label>
-            <input
-              type="email"
-              id="email"
-              required
-              value={email}
-              onBlur={validateEmail}
-              onChange={(e) => setEmail(e.target.value)}
-            />
-            {emailError && <p className="error-message">{emailError}</p>}
-          </fieldset>
-          <fieldset className="input-field">
-            <label htmlFor="password">Password</label>
-            <input
-              type="password"
-              id="password"
-              value={password}
-              required
-              onBlur={validatePassword}
-              onChange={(e) => setPassword(e.target.value)}
-            />
-            {passwordError && <p className="error-message">{passwordError}</p>}
-          </fieldset>
-          <fieldset className="input-field">
-            <label htmlFor="cPassword">Confirm Password</label>
-            <input
-              type="password"
-              id="cPassword"
-              value={confirmPassword}
-              required
-              onChange={(e) => setConfirmPassword(e.target.value)}
-            />
-            {cPasswordError && (
-              <p className="error-message">
-                Confirm Password and Password should match!
-              </p>
-            )}
-          </fieldset>
+    <section className="login-container">
+      <article className="login-header">
+        <h1>SignUp</h1>
+        <p>We do not share your personal details with anyone.</p>
+      </article>
+      <form onSubmit={signup} className="login-form">
+        <fieldset className="input-field">
+          <label htmlFor="firstname">First Name</label>
           <input
-            value="Register"
-            className="login-button maroon-button"
-            type="submit"
+            type="text"
+            id="firstname"
+            required
+            value={firstName}
+            onChange={(e) => setFirstName(e.target.value)}
           />
-        </form>
-      </div>
-    </div>
+        </fieldset>
+        <fieldset className="input-field">
+          <label htmlFor="lastname">Last Name</label>
+          <input
+            type="text"
+            id="lastname"
+            required
+            value={lastname}
+            onChange={(e) => setLastName(e.target.value)}
+          />
+        </fieldset>
+        <fieldset className="input-field">
+          <label htmlFor="email">Email</label>
+          <input
+            type="email"
+            id="email"
+            required
+            value={email}
+            onBlur={validateEmail}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+          {emailError && <p className="error-message">{emailError}</p>}
+        </fieldset>
+        <fieldset className="input-field">
+          <label htmlFor="password">Password</label>
+          <input
+            type="password"
+            id="password"
+            value={password}
+            required
+            onBlur={validatePassword}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+          {passwordError && <p className="error-message">{passwordError}</p>}
+        </fieldset>
+        <fieldset className="input-field">
+          <label htmlFor="cPassword">Confirm Password</label>
+          <input
+            type="password"
+            id="cPassword"
+            value={confirmPassword}
+            required
+            onChange={(e) => setConfirmPassword(e.target.value)}
+          />
+          {cPasswordError && (
+            <p className="error-message">
+              Confirm Password and Password should match!
+            </p>
+          )}
+        </fieldset>
+        <input
+          value="Register"
+          className="login-button maroon-button"
+          type="submit"
+        />
+      </form>
+    </section>
   );
 }

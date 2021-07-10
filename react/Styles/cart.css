@@ -20,6 +20,10 @@
   margin: 10px 0;
 }
 
+.cart-item p {
+  margin: 0;
+}
+
 .cart-header {
   background-color: black;
   color: white;
@@ -31,6 +35,8 @@
 .close-cart {
   font-size: 120%;
   font-weight: bold;
+  background: none;
+  color: white;
 }
 
 .cart-no-of-items {

@@ -14,10 +14,10 @@ export default function () {
 
   return (
     <nav className="navbar">
-      <div className={cartShow ? 'modal' : 'modal close-modal'}>
+      <section className={cartShow ? 'modal' : 'modal close-modal'}>
         <Cart toggleCart={toggleCart} />
-      </div>
-      <div className="left-nav">
+      </section>
+      <section className="left-nav">
         <img
           className="sbkaBazaarLogo"
           src="../static/images/logo.png"
@@ -31,22 +31,25 @@ export default function () {
             <Link to="/products">Products</Link>
           </li>
         </ul>
-      </div>
-      <div className="right-nav">
-        <div className="login-links">
-          <a href="/login">SignIn</a>
-          <a href="/register">Register</a>
-        </div>
-
-        <div onClick={toggleCart} className="cart-icon">
+      </section>
+      <section className="right-nav">
+        <ul className="login-links">
+          <li>
+            <Link to="/login">SignIn</Link>
+          </li>
+          <li>
+            <Link to="/register">Register</Link>
+          </li>
+        </ul>
+        <button onClick={toggleCart} className="cart-icon">
           <img
             className="cart-dimension"
             src="../static/images/cart.svg"
             alt="cart image"
           />
           <span className="number-of-items">{cart.length} items</span>
-        </div>
-      </div>
+        </button>
+      </section>
     </nav>
   );
 }

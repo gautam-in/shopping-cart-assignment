@@ -12,33 +12,31 @@ export default function ({ banners }) {
     setBanner(banner + 1);
   };
   return (
-    <div className="banners">
-      <div className="carousel">
-        <div className="prev" onClick={changePrev}>
-          Prev
-        </div>
-        <img
-          className="banner-image"
-          src={banners[banner].bannerImageUrl}
-          alt={banners[banner].bannerImageAlt}
-        />
-        <div className="banner-dots">
-          {banners.map((_, i) => (
-            <div
-              key={_.id}
-              className={
-                _.id == banners[banner].id ? 'banner-dot active' : 'banner-dot'
-              }
-              onClick={() => {
-                setBanner(i);
-              }}
-            />
-          ))}
-        </div>
-        <div className="next" onClick={changeNext}>
-          Next
-        </div>
+    <section className="banners">
+      <button className="prev" onClick={changePrev}>
+        Prev
+      </button>
+      <img
+        className="banner-image"
+        src={banners[banner].bannerImageUrl}
+        alt={banners[banner].bannerImageAlt}
+      />
+      <div className="banner-dots">
+        {banners.map((_, i) => (
+          <button
+            key={_.id}
+            className={
+              _.id == banners[banner].id ? 'banner-dot active' : 'banner-dot'
+            }
+            onClick={() => {
+              setBanner(i);
+            }}
+          />
+        ))}
       </div>
-    </div>
+      <button className="next" onClick={changeNext}>
+        Next
+      </button>
+    </section>
   );
 }

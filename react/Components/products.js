@@ -40,14 +40,15 @@ export default function () {
       });
   }, []);
 
-  if (loading) return <div>Loading...</div>;
-  else if (error) return <div>Error Occured! Please try again</div>;
+  if (loading) return <p>Loading...</p>;
+  else if (error) return <p>Error Occured! Please try again</p>;
   else {
     let filteredProducts = categoryId
       ? products.filter((_) => _.category == categoryId)
       : products;
+
     return (
-      <div className="product-page">
+      <section className="product-page">
         <ul className="product-category-list">
           {categories &&
             categories.map((_) => (
@@ -83,7 +84,7 @@ export default function () {
           {products &&
             filteredProducts.map((_) => <Product item={_} key={_.id} />)}
         </ul>
-      </div>
+      </section>
     );
   }
 }
@@ -106,18 +107,18 @@ function Product({ item }) {
   }
 
   return (
-    <div className="product-card">
-      <div className="product-title">{item.name}</div>
-      <div className="product-details">
+    <li className="product-card">
+      <h2 className="product-title">{item.name}</h2>
+      <article className="product-details">
         <img className="product-image" src={item.imageURL} alt={item.name} />
-        <div className="product-description">{item.description}</div>
-      </div>
-      <div className="price-details">
-        <div className="mrp">MRP Rs {item.price}</div>
+        <p className="product-description">{item.description}</p>
+      </article>
+      <article className="price-details">
+        <p className="mrp">MRP Rs {item.price}</p>
         <button className="buy-button maroon-button" onClick={addItem}>
           Buy Now <span className="buy-now-price"> @ {item.price}</span>
         </button>
-      </div>
-    </div>
+      </article>
+    </li>
   );
 }

@@ -13,6 +13,15 @@ ul {
   list-style-type: none;
 }
 
+p {
+  margin: 0;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+}
+
 .maroon-button {
   background-color: maroon;
   border-radius: 0px;

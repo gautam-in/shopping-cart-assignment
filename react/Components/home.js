@@ -31,8 +31,8 @@ export default function () {
       });
   }, []);
 
-  if (loading) return <div>Loading...</div>;
-  else if (error) return <div>Error Occured! Please try again</div>;
+  if (loading) return <p>Loading...</p>;
+  else if (error) return <p>Error Occured! Please try again</p>;
   else
     return (
       <>
@@ -40,16 +40,16 @@ export default function () {
         <ul className="category-list">
           {categories.map((_) => (
             <li key={_.id} className="category">
-              <div className="category-details">
-                <div className="category-title">{_.name}</div>
-                <div className="category-description">{_.description}</div>
+              <section className="category-details">
+                <h2 className="category-title">{_.name}</h2>
+                <p className="category-description">{_.description}</p>
                 <button className="category-explore-button maroon-button">
                   <Link to={'/products/' + _.id}>Explore {_.name}</Link>
                 </button>
-              </div>
-              <div className="category-right">
+              </section>
+              <section className="category-right">
                 <img className="category-image" src={_.imageUrl} alt={_.name} />
-              </div>
+              </section>
             </li>
           ))}
         </ul>

@@ -1,9 +1,5 @@
 import React from 'react';
 
-// set the defaults
-const CartContext = React.createContext({
-  cart: [],
-  setCart: () => {},
-});
+const CartContext = React.createContext();
 
 export default CartContext;

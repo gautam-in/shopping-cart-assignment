@@ -35,44 +35,42 @@ export default function () {
   };
 
   return (
-    <div className="login">
-      <div className="login-container">
-        <div className="login-header">
-          <h1>Login</h1>
-          <p>Get access to your Orders, Wishlist and Recommedations</p>
-        </div>
-        <form onSubmit={login} className="login-form">
-          <fieldset className="input-field">
-            <label htmlFor="email">Email</label>
-            <input
-              type="email"
-              id="email"
-              required
-              value={email}
-              onBlur={validateEmail}
-              onChange={(e) => setEmail(e.target.value)}
-            />
-            {emailError && <p className="error-message">{emailError}</p>}
-          </fieldset>
-          <fieldset className="input-field">
-            <label htmlFor="password">Password</label>
-            <input
-              type="password"
-              id="password"
-              value={password}
-              required
-              onBlur={validatePassword}
-              onChange={(e) => setPassword(e.target.value)}
-            />
-            {passwordError && <p className="error-message">{passwordError}</p>}
-          </fieldset>
+    <section className="login-container">
+      <article className="login-header">
+        <h1>Login</h1>
+        <p>Get access to your Orders, Wishlist and Recommedations</p>
+      </article>
+      <form onSubmit={login} className="login-form">
+        <fieldset className="input-field">
+          <label htmlFor="email">Email</label>
           <input
-            value="Login"
-            className="login-button maroon-button"
-            type="submit"
+            type="email"
+            id="email"
+            required
+            value={email}
+            onBlur={validateEmail}
+            onChange={(e) => setEmail(e.target.value)}
           />
-        </form>
-      </div>
-    </div>
+          {emailError && <p className="error-message">{emailError}</p>}
+        </fieldset>
+        <fieldset className="input-field">
+          <label htmlFor="password">Password</label>
+          <input
+            type="password"
+            id="password"
+            value={password}
+            required
+            onBlur={validatePassword}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+          {passwordError && <p className="error-message">{passwordError}</p>}
+        </fieldset>
+        <input
+          value="Login"
+          className="login-button maroon-button"
+          type="submit"
+        />
+      </form>
+    </section>
   );
 }
