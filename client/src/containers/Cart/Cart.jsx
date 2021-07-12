@@ -1,14 +1,13 @@
 import React, { useState } from "react";
 import "./Cart.scss";
-// import { handlecartupdate } from "../../../Redux/action";
-import { connect } from "react-redux";
+import { useSelector } from "react-redux";
 import ProductCardItems from "../../components/ProductCarts/ProductCartItems";
 import EmptyCart from "../../components/ProductCarts/EmptyCart/EmptyCart";
-// import NonEmptyCart from "../../UI/molecules/cart/NonEmptyCart";
-// import EmptyCart from "../../UI/molecules/cart/EmptyCart";
+import { LABEL } from "../../constants/constant";
 
 export function Cart(props) {
-  const { setCartDialog, cart } = props;
+  const cart = useSelector((state) => state.cartItems);
+  const { setCartDialog } = props;
   const handleCloseCart = () => {
     setCartDialog(false);
   };
@@ -17,7 +16,7 @@ export function Cart(props) {
     <main className="cartContainer" data-test="component-cart">
       <section className="cartMain">
         <header>
-          <span> My Cart</span>
+          <span>{LABEL.MY_CART} </span>
           <button className="deleteButton" onClick={handleCloseCart}>
             x
           </button>
@@ -31,10 +30,5 @@ export function Cart(props) {
     </main>
   );
 }
-const mapStateToProps = (store) => {
-  return {
-    cart: store.cartItems,
-  };
-};
 
-export default connect(mapStateToProps, null)(Cart);
+export default Cart;

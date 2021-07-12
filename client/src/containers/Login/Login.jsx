@@ -2,6 +2,8 @@ import React from "react";
 import "./Login.scss";
 import Button from "../../components/UI/Button/Button";
 import { withRouter } from "react-router";
+import { LABEL } from "../../constants/constant";
+import { getItem } from "../../service/Storage";
 export function Login(props) {
   const [fields, setFields] = React.useState({});
   const [errors, setErrors] = React.useState({});
@@ -58,7 +60,7 @@ export function Login(props) {
   const handleSubmit = (event) => {
     event.preventDefault();
     if (handleValidation()) {
-      const user = JSON.parse(localStorage.getItem("registed_user"));
+      const user = JSON.parse(getItem("registed_user"));
       if (user) {
         if (
           fields.email !== user &&
@@ -82,13 +84,11 @@ export function Login(props) {
 
   return (
     <section data-test="component-login">
-      <span style={{ color: "red", fontWeight: "600", marginLeft: "5%" }}>
-        {errorMessage}
-      </span>
+      <span className="errorMessage">{errorMessage}</span>
       <main className="formContainer">
         <section className="formHeadingContainer">
-          <h2>Login</h2>
-          <p>Get access to your Orders, Wishlist and Recommendations</p>
+          <h2>{LABEL.LOGIN}</h2>
+          <p>{LABEL.ORDER_ACCESS}</p>
         </section>
         <form name="loginForm" className="loginForm" onSubmit={handleSubmit}>
           <section className="inputContainer">
@@ -102,7 +102,7 @@ export function Login(props) {
                 data-test="login-input-email"
               />
               <label for="name" className="formLabel">
-                Email
+                {LABEL.EMAIL}
               </label>
             </section>
             <span className="error">{errors["email"]}</span>
@@ -116,7 +116,7 @@ export function Login(props) {
                 data-test="login-input-password"
               />
               <label for="name" className="formLabel">
-                Password
+                {LABEL.PASSWORD}
               </label>
             </section>
             <span className="error">{errors["password"]}</span>

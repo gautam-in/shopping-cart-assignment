@@ -5,7 +5,8 @@
   height: 280px;
   align-items: center;
   border-bottom: solid 0.5px $grey;
-  margin: 30px;
+  padding: 0px 20px;
+  margin: 20px 0px
 }
 .info {
   display: flex;
@@ -13,6 +14,10 @@
   text-align: center;
   flex-direction: column;
   align-items: center;
+
+  section {
+    margin-bottom: 10px;
+  }
 }
 .categoryImage {
   width: 300px;

@@ -2,6 +2,8 @@ import React from "react";
 import "./Register.scss";
 import Button from "../../components/UI/Button/Button";
 import { withRouter } from "react-router";
+import { LABEL } from "../../constants/constant";
+import { setItem } from "../../service/Storage";
 export function Register(props) {
   const [fields, setFields] = React.useState({});
   const [errors, setErrors] = React.useState({});
@@ -73,7 +75,7 @@ export function Register(props) {
   const handleSubmit = (event) => {
     event.preventDefault();
     if (handleValidation()) {
-      localStorage.setItem("registered_user", JSON.stringify(fields));
+      setItem("registered_user", JSON.stringify(fields));
       props.history.push("/");
       window.location.reload();
     } else {
@@ -85,8 +87,8 @@ export function Register(props) {
     <section data-test="component-register">
       <main className="formContainer">
         <section className="formHeadingContainer">
-          <h2>Signup</h2>
-          <p>We do not share your personal details with anyone.</p>
+          <h2>{LABEL.SIGNUP}</h2>
+          <p>{LABEL.REGISTER_PRIVACY}</p>
         </section>
         <form
           name="registerForm"
@@ -104,7 +106,7 @@ export function Register(props) {
                 data-test="register-input-firstname"
               />
               <label for="first_name" className="formLabel">
-                First Name
+                {LABEL.FIRSTNAME}
               </label>
             </section>
             <span className="error">{errors["first_name"]}</span>
@@ -118,7 +120,7 @@ export function Register(props) {
                 data-test="register-input-lastname"
               />
               <label for="last_name" className="formLabel">
-                Last Name
+                {LABEL.LASTNAME}
               </label>
             </section>
             <span className="error">{errors["last_name"]}</span>
@@ -132,7 +134,7 @@ export function Register(props) {
                 data-test="register-input-email"
               />
               <label for="name" className="formLabel">
-                Email
+                {LABEL.EMAIL}
               </label>
             </section>
             <span className="error">{errors["email"]}</span>
@@ -146,7 +148,7 @@ export function Register(props) {
                 data-test="register-input-password"
               />
               <label for="name" className="formLabel">
-                Password
+                {LABEL.PASSWORD}
               </label>
             </section>
             <span className="error">{errors["password"]}</span>
@@ -160,7 +162,7 @@ export function Register(props) {
                 data-test="register-input-cfpassword"
               />
               <label for="name" className="formLabel">
-                Confirm Password
+                {LABEL.CONFIRM_PASSWORD}
               </label>
             </section>
             <span className="error">{errors["confirm_password"]}</span>

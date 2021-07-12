@@ -29,9 +29,7 @@ export function Category(props) {
             />
             <section className="info">
               <h2>{category.name}</h2>
-              <section style={{ marginBottom: "10px" }}>
-                {category.description}
-              </section>
+              <section>{category.description}</section>
               <Button
                 text={`Explore ${category.key}`}
                 onClick={() => handleClick(category.id)}

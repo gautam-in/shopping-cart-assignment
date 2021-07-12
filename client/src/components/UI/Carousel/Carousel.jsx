@@ -29,19 +29,15 @@ export default function Carousel(props) {
   }, []);
   return (
     <section data-test="component-carousel">
-      <section class="slideShowContainer">
+      <section className="slideShowContainer">
         {banners.map((banner) => {
           return (
-            <figure
-              class="mySlides fade"
-              key={banner.id}
-              style={{ margin: "0px" }}
-            >
+            <figure className="mySlides fade" key={banner.id}>
               <img
                 src={banner.bannerImageUrl}
-                style={{ width: "100%" }}
                 alt={banner.bannerImageAlt}
                 data-test="carousel-image"
+                width="100%"
               />
             </figure>
           );
@@ -49,9 +45,9 @@ export default function Carousel(props) {
       </section>
       <br />
 
-      <section style={{ textAlign: "center" }}>
+      <section className="dotContainer">
         {banners.map((banner) => {
-          return <span class="dot" key={banner.id}></span>;
+          return <span className="dot" key={banner.id}></span>;
         })}
       </section>
     </section>

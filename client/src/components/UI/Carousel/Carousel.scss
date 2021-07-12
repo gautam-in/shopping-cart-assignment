@@ -10,15 +10,18 @@ img {
 
 /* Slideshow container */
 .slideShowContainer {
-  max-width: 1000px;
   position: relative;
   margin: auto;
+  padding: 0px 20px;
+}
+.dotContainer {
+  text-align: center;
 }
 
 .dot {
-  height: 15px;
-  width: 15px;
-  margin: 0 2px;
+  height: 5px;
+  width: 5px;
+  margin: 0 10px;
   background-color: $grey;
   border-radius: 50%;
   display: inline-block;
@@ -34,8 +37,11 @@ img {
   -webkit-animation-duration: 1.5s;
   animation-name: fade;
   animation-duration: 1.5s;
+  margin: 0px;
 }
-
+.bannerImageUrl {
+  width: 100%;
+}
 @-webkit-keyframes fade {
   from {
     opacity: 0.4;

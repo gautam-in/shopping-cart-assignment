@@ -1,31 +1,25 @@
 import React from "react";
-import { connect } from "react-redux";
+
 import "./ProductCard.scss";
-import * as AuthenticationApi from "../../axios/AuthenticationAPI";
-import { handleIncrement, initializeCart } from "../../store/action";
-// import { useSelector, useDispatch } from "react-redux";
-// import { handleCart, handleIncrement } from "../../../../Redux/action";
+import { handleIncrement, addItemToCart } from "../../store/action";
+import { useSelector, useDispatch } from "react-redux";
+import { LABEL } from "../../constants/constant";
 
-export function ProductCard(props) {
-  const { product, cart, handleIncrement, initializeCart } = props;
-  const [message, setMessage] = React.useState("");
+function ProductCard(props) {
+  const cart = useSelector((state) => state.cartItems);
+  const dispatch = useDispatch();
+  const { product } = props;
 
-  const addItemToCart = async (product) => {
-    AuthenticationApi.postData(
-      `${process.env.REACT_APP_BASE_URL}/addtocart`
-    ).then((res) => {
-      setMessage(res.responseMessage);
-
-      for (let item of cart) {
-        if (item.id === product.id) return handleIncrement(product);
-      }
-      return initializeCart(product);
-    });
+  const addCartItem = async (product) => {
+    for (let item of cart) {
+      if (item.id === product.id) return dispatch(handleIncrement(product.id));
+    }
+    return dispatch(addItemToCart(product));
   };
   return (
     <section className="productCard" data-test="component-product-card">
       <h3 className="productName">{product.name}</h3>
-      <figure style={{ margin: "0px" }}>
+      <figure>
         <img
           src={product.imageURL}
           alt={product.name}
@@ -35,29 +29,26 @@ export function ProductCard(props) {
       </figure>
 
       <section className="productDescription">
-        <div className="desc">{product.description}</div>
+        <p className="desc">{product.description}</p>
       </section>
 
       <section className="productPriceContainer">
-        <section className="productPrice"> MRP Rs.{product.price} </section>
+        <section className="productPrice">
+          {" "}
+          {LABEL.MRP}
+          {product.price}{" "}
+        </section>
 
         <button
           className="productPriceButton"
-          type="submit"
-          onClick={() => addItemToCart(product)}
+          onClick={() => addCartItem(product)}
           data-test="product-button"
         >
-          Buy Now
+          {LABEL.BUY_NOW}
         </button>
       </section>
     </section>
   );
 }
-const mapStateToProps = (store) => {
-  return {
-    cart: store.cartItems,
-  };
-};
-export default connect(mapStateToProps, { handleIncrement, initializeCart })(
-  ProductCard
-);
+
+export default ProductCard;

@@ -5,6 +5,7 @@ import Dialog from "../UI/Dialog/Dialog";
 import ProductCartItem from "./ProductCartItem/ProductCartItem";
 import { handleReset } from "../../store/action";
 import "./ProductCartItems.scss";
+import { LABEL } from "../../constants/constant";
 export function ProductCartItems(props) {
   const { cart, setCartDialog, handleReset } = props;
   const [dialog, setDialog] = React.useState(false);
@@ -29,27 +30,25 @@ export function ProductCartItems(props) {
         setDialog={setDialog}
         onDialogConfirm={onDialogConfirm}
       />
-      <section
-        style={{ height: "313px", overflow: "auto", position: "relative" }}
-      >
+      <section className="productItemsContainer">
         <section className="items">
           {cart.map((item) => (
             <ProductCartItem item={item} key={item.id} />
           ))}
         </section>
         <section className="checkoutBanner">
-          <figure style={{ margin: "0px" }}>
+          <figure className="bannerImageUrl">
             <img src="./static/images/lowest-price.png" alt="" height="40px" />
           </figure>
-          <figcaption>You won't find it cheaper anywhere.</figcaption>
+          <figcaption>{LABEL.CHEAPER_MESSAGE}</figcaption>
         </section>
       </section>
       <section className="checkoutButtonContainer">
-        <small>Promo code can be applied on payment page.</small>
+        <small>{LABEL.PROMO}</small>
         <button className="checkoutButton" onClick={() => setDialog(true)}>
-          <span>Proceed to checkout</span>
+          <span>{LABEL.CHECKOUT}</span>
           <span>
-            &nbsp;Rs.&nbsp; {total_price()}&nbsp;{">"}
+            &nbsp;{LABEL.RS}&nbsp; {total_price()}&nbsp;{">"}
           </span>
         </button>
       </section>

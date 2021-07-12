@@ -1,13 +1,12 @@
 import React from "react";
-import { connect } from "react-redux";
+import { useDispatch } from "react-redux";
+import { LABEL } from "../../../constants/constant";
 import { handleIncrement, handleDecrement } from "../../../store/action";
 import "./ProductCartItem.scss";
-// import { handleIncrement, handledecrement } from "../../../Redux/action";
-// import ActionButton from "../atoms/actionButton/actionButton";
-// import ItemImage from "../atoms/itemImage/itemImage"
 
-export function ProductCartItem(props) {
-  const { item, handleDecrement, handleIncrement } = props;
+function ProductCartItem(props) {
+  const dispatch = useDispatch();
+  const { item } = props;
 
   return (
     <section className="itemContainer" data-test="component-productCartItem">
@@ -16,7 +15,7 @@ export function ProductCartItem(props) {
         <h3>{item.name}</h3>
         <section>
           <button
-            onClick={() => handleDecrement(item)}
+            onClick={() => dispatch(handleDecrement(item.id))}
             className="buttonAction"
             data-test="button-decrement"
           >
@@ -24,22 +23,26 @@ export function ProductCartItem(props) {
           </button>
           <span>{item.quantity}</span>
           <button
-            onClick={() => handleIncrement(item)}
+            onClick={() => dispatch(handleIncrement(item.id))}
             className="buttonAction"
           >
             +
           </button>
-          <span>X&nbsp;&nbsp; Rs.{item.price} </span>
+          <span>
+            X&nbsp;&nbsp; {LABEL.RS}
+            {item.price}
+          </span>
         </section>
       </section>
       <section className="priceItem" data-test="cartItem-price">
         {" "}
-        <span> Rs. {item.price * item.quantity} </span>
+        <span>
+          {" "}
+          {LABEL.RS} {item.price * item.quantity}{" "}
+        </span>
       </section>
     </section>
   );
 }
 
-export default connect(null, { handleIncrement, handleDecrement })(
-  ProductCartItem
-);
+export default ProductCartItem;

@@ -1,16 +1,16 @@
 import React from "react";
+import { useDispatch, useSelector } from "react-redux";
 import Carousel from "../../components/UI/Carousel/Carousel";
-import { connect } from "react-redux";
 import Category from "../../components/UI/Category/Category";
-import * as AuthenticateAPI from "../../axios/AuthenticationAPI";
+import { getBannersAction } from "../../store/action";
 
-export function Home(props) {
-  const [banners, setBanners] = React.useState([]);
+
+function Home(props) {
+  const dispatch = useDispatch()
+  const banners = useSelector(state => state.banners)
   const { categories } = props;
   React.useEffect(() => {
-    AuthenticateAPI.getData(`${process.env.REACT_APP_BASE_URL}/banners`)
-      .then((res) => setBanners(res))
-      .catch((err) => console.log(err));
+    dispatch(getBannersAction());
   }, []);
 
   return (
@@ -22,9 +22,5 @@ export function Home(props) {
     )
   );
 }
-const mapStateToProps = (state) => {
-  return {
-    cart: state.cart,
-  };
-};
-export default connect(mapStateToProps, null)(Home);
+
+export default Home;

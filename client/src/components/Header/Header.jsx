@@ -5,18 +5,21 @@ import { ReactComponent as CartLogo } from "../../assets/images/cart.svg";
 import Logo from "../../assets/images/logo_2x.png";
 import ApplicationUrls from "../../router/ApplicationRoutes";
 import { LABEL } from "../../constants/constant";
-import { connect } from "react-redux";
 import Cart from "../../containers/Cart/Cart";
+import { useSelector } from "react-redux";
+import { getItem, removeItem } from "../../service/Storage";
+
 export function Header(props) {
+  const count = useSelector((state) => state.count);
   const { cartDialog, setCartDialog, cart } = props;
   const [user, setUser] = React.useState(null);
   React.useState(() => {
-    const user = JSON.parse(localStorage.getItem("registered_user"));
+    const user = JSON.parse(getItem("registered_user"));
     setUser(user);
-  }, [JSON.parse(localStorage.getItem("registered_user"))]);
+  }, []);
 
   const handleLogout = () => {
-    localStorage.removeItem("registered_user");
+    removeItem("registered_user");
     props.history.push("/");
     window.location.reload();
   };
@@ -27,7 +30,7 @@ export function Header(props) {
         <Cart setCartDialog={setCartDialog} cartDialog={cartDialog} />
       )}
       <section className="container">
-        <figure className="logo" style={{ margin: "0px" }}>
+        <figure className="logo">
           <img src={Logo} alt="Sabka Bazaar" />
         </figure>
         <nav className="navOptions">
@@ -35,7 +38,7 @@ export function Header(props) {
             <Link to={ApplicationUrls.HOME}>{LABEL.HOME}</Link>
           </span>
           <span>
-            <Link to="/products">Products</Link>
+            <Link to={ApplicationUrls.PRODUCTS}>{LABEL.PRODUCTS}</Link>
           </span>
         </nav>
         <section className="cartLogoC">
@@ -63,7 +66,9 @@ export function Header(props) {
               <button className="cartbtn">
                 <CartLogo name="cartButton" fill="#e83583" />
               </button>
-              <div>{props.count} items</div>
+              <div>
+                {count} {LABEL.ITEMS}
+              </div>
             </section>
           </section>
         </section>
@@ -72,9 +77,4 @@ export function Header(props) {
   );
 }
 
-const mapStateToProps = (store) => {
-  return {
-    count: store.count,
-  };
-};
-export default withRouter(connect(mapStateToProps, null)(Header));
+export default withRouter(Header);

@@ -15,7 +15,7 @@
 .container {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
   display: flex;
-
+  padding: 0px 20px;
   .navOptions {
     display: flex;
     width: 40%;
@@ -23,7 +23,7 @@
     align-items: flex-end;
     > span {
       padding: 10px;
-      font-weight: map-get($fontWeight, semibold);
+      font-weight: map-get($fontWeight, bold);
       cursor: pointer;
       font-size: map-get($fontSize, medium);
       color: $grey;
@@ -36,7 +36,6 @@
   .cartIcon {
     background-color: $grey;
     display: flex;
-    justify-content: center;
     padding: 10px;
     cursor: pointer;
     button {
@@ -68,7 +67,7 @@
   }
   a {
     text-decoration: none;
-    font-weight: map-get($fontWeight, semibold);
+    font-weight: map-get($fontWeight, bold);
     color: $darkgrey;
     :hover {
       color: $primary;
@@ -88,10 +87,12 @@
       padding: 5px;
       text-align: right;
       text-decoration: none;
+      font-weight: map-get($fontWeight, bold);
     }
   }
 
   .logo {
+    margin: 0px;
     img {
       width: 185px;
       margin: 10px;

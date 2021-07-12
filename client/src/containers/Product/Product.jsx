@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import "./Product.scss";
 import Sidebar from "../../components/UI/Sidebar/Sidebar";
-import * as AuthenticateAPI from "../../axios/AuthenticationAPI";
-import ProductCard from "../../components/ProductCard/ProductCard";
+import ProductCardMobile from "../../components/ProductCard/ProductCardMobile/ProductCardMobile";
 import { withRouter } from "react-router";
 import Dropdown from "../../components/UI/Dropdown/Dropdown";
+import { getProductsAction } from "../../store/action";
+import { useDispatch, useSelector } from "react-redux";
 
 function getWindowDimensions() {
   const { innerWidth: width, innerHeight: height } = window;
@@ -16,19 +17,19 @@ function getWindowDimensions() {
 
 export function Product(props) {
   const { categories } = props;
+  const dispatch = useDispatch();
+  const productItems = useSelector((state) => state.products);
   const initialCategory = props.history.location.data
     ? props.history.location.data
     : null;
   const [productCategory, setProductCategory] = useState(initialCategory);
-  const [productItems, setProductItems] = useState([]);
+
   const [windowDimensions, setWindowDimensions] = useState(
     getWindowDimensions()
   );
 
   React.useEffect(async () => {
-    await AuthenticateAPI.getData(`${process.env.REACT_APP_BASE_URL}/products`)
-      .then((res) => setProductItems(res))
-      .catch((err) => console.log(err));
+    await dispatch(getProductsAction());
     function handleResize() {
       setWindowDimensions(getWindowDimensions());
     }
@@ -59,7 +60,7 @@ export function Product(props) {
 
       <section className="productItemContainer">
         {FilterProducts.map((product) => {
-          return <ProductCard product={product} key={product.id} />;
+          return <ProductCardMobile product={product} key={product.id} />;
         })}
       </section>
     </main>

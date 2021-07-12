@@ -7,6 +7,10 @@
   background-color: $white;
   font-size: map-get($fontSize, exsmall);
   padding: 0 20px;
+
+  figure {
+    margin: 0px;
+  }
 }
 .checkoutButtonContainer {
   padding: 10px 20px;
@@ -27,4 +31,9 @@
   width: 100%;
   border: none;
   cursor: pointer;
+}
+.productItemsContainer {
+  height: 313px;
+  overflow: auto;
+  position: relative;
 }

@@ -1,6 +1,6 @@
-@import "../../styles/Colors.scss";
-@import "../../styles/Fonts.scss";
-.productCard {
+@import "../../../styles/Colors.scss";
+@import "../../../styles/Fonts.scss";
+.mproductCard {
   padding: 10px;
   width: 200px;
   border-bottom: dashed $darkgrey 0.5px;
@@ -9,12 +9,12 @@
     margin: 0px;
   }
 }
-.productName {
+.mproductName {
   min-height: 72px;
 }
-.productDescription {
+.mproductDescription {
   background-color: $grey;
-  padding: 10px;
+  padding: 1px 10px;
   box-sizing: border-box;
   height: 90px;
   font-size: map-get($fontSize, small);
@@ -22,7 +22,7 @@
   letter-spacing: 0.3px;
   line-height: 17px;
   margin-top: 10px;
-  .desc {
+  .mdesc {
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
@@ -30,29 +30,29 @@
     -webkit-box-orient: vertical;
   }
 }
-.productPriceContainer {
+.mproductPriceContainer {
   display: flex;
   justify-content: space-between;
-  padding-top: 20px;
+  padding-top: 30px;
 }
-.productPrice {
+.mproductPrice {
   margin-top: 5px;
 }
-.productPriceButton {
+.mproductPriceButton {
   background-color: $primary;
   color: $white;
-  padding: 10px 20px;
+  padding: 10px 10px;
   border: none;
   cursor: pointer;
+  width: 100%;
 }
 @media (min-width: 600px) and (max-width: 767px) {
-  .productCard {
+  .mproductCard {
     width: 250px;
   }
 }
 @media only screen and (max-width: 600px) {
-  .productCard {
+  .mproductCard {
     width: 100%;
-    padding: 50px;
   }
 }
