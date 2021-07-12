@@ -1,0 +1,92 @@
+.login-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.login-header {
+  margin-right: 30px;
+  font-weight: bold;
+}
+
+.login-header h1 {
+  margin: 0 0 20px 0;
+  padding: 0;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  color: black;
+  display: block;
+  font-size: 85%;
+}
+
+input {
+  margin: 0 0 10px 0;
+  border: none;
+  border-bottom: 2px solid lightgray;
+  width: 350px;
+  padding: 10px 0px;
+}
+
+input:hover,
+input:focus {
+  border: none;
+  border-bottom: 2px solid #44daff;
+  outline: none;
+}
+
+.input-field {
+  margin: 0 0 15px 0;
+  padding: 0;
+  border: 0;
+}
+
+.error-message {
+  margin: 0;
+  color: red;
+}
+
+.input-field:focus-within label {
+  color: #44daff;
+  font-weight: 600;
+}
+
+.login-button {
+  margin-top: 20px;
+  outline: 0;
+  border: 0;
+  transition: background-color 0.2s;
+}
+
+.login-button:hover,
+.login-button:focus {
+  outline: 0;
+  border: 0;
+  background-color: #900000;
+}
+
+input[value=''] {
+  height: 0px;
+  padding: 5px 0;
+  transition: all 0.3s;
+}
+
+input:focus {
+  height: unset;
+  padding: 10px 0;
+}
+
+@media only screen and (max-width: 767px) {
+  .login-container {
+    flex-direction: column;
+  }
+  .login-header {
+    margin: 0 0 25px 0;
+  }
+}

@@ -1,0 +1,139 @@
+.product-page {
+  display: flex;
+  background-color: white;
+}
+
+.product-list {
+  /* display: flex;
+  flex-wrap: wrap; */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.product-card {
+  /* flex: 1 1 0; */
+  display: flex;
+  flex-direction: column;
+  /* max-width: 400px;
+  min-width: 175px; */
+  padding: 20px;
+  background-color: white;
+  overflow: hidden;
+}
+
+.product-card .product-title {
+  font-size: 130%;
+  font-weight: bold;
+  height: 100%;
+}
+
+.product-card .product-image {
+  margin-top: 10px;
+  width: 100%;
+}
+
+.product-card h2 {
+  margin: 0;
+}
+
+.product-card p {
+  margin: 0;
+}
+
+.product-card .product-description {
+  background-color: lightgrey;
+  text-overflow: ellipsis;
+  overflow: auto;
+  min-height: 50px;
+  max-height: 50px;
+  font-size: 80%;
+  padding: 10px;
+  margin-top: 10px;
+}
+
+.product-card .price-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+  font-size: 80%;
+}
+
+.category-dropdown {
+  display: none;
+}
+
+.product-category-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  min-width: 250px;
+  max-width: 250px;
+  background-color: lightgray;
+}
+
+.product-category-list .product-category {
+  border-bottom: 1px solid gray;
+}
+
+.product-category-list .product-category.active {
+  background-color: gray;
+}
+
+.product-category-list .product-category button {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  background-color: transparent;
+}
+
+@media only screen and (min-width: 1024px) {
+  .product-card .buy-now-price {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 1023px) {
+  .product-card .product-details {
+    display: flex;
+  }
+  .product-card .product-image {
+    width: 50%;
+    object-fit: contain;
+  }
+  .product-list {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+  .product-card .product-title {
+    height: 100%;
+  }
+  .product-card .product-description {
+    min-height: 100px;
+    max-height: 100px;
+  }
+  .product-card .mrp {
+    display: none;
+  }
+
+  button.buy-button {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .product-card .product-description {
+    min-height: unset;
+    max-height: unset;
+  }
+  .category-dropdown {
+    margin: 10px 0px;
+    width: 100%;
+    display: inline-block;
+  }
+  .product-page {
+    display: block;
+  }
+  .product-category-list {
+    display: none;
+  }
+}
