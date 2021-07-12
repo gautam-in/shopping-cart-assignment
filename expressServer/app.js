@@ -5,7 +5,6 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const { graphqlHTTP } = require("express-graphql");
 const schema = require("./graphql/schema");
-const resolver = require("./graphql/resolver");
 const cors = require("cors");
 
 var app = express();
@@ -21,8 +20,9 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(cors());
 
+
+
 app.use("/graphql", graphqlHTTP({
-  rootValue: resolver,
   schema: schema,
   graphiql: true
 }));

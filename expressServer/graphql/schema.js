@@ -1,17 +1,8 @@
-const { buildSchema } = require("graphql");
+const { makeExecutableSchema } = require("graphql-tools");
+const merge = require("lodash/merge");
+const banners = require("./banners");
 
-module.exports = buildSchema(`
-    type Banner {
-        _id: ID!
-        banner_uid: String!
-        order: Int!
-        bannerImageUrl: String!
-        bannerImageAlt: String!
-        isActive: Boolean!
-        temp_url: String!
-    }
-    
-    type Query {
-        banners: [Banner!]! 
-    }
-`)
+module.exports = makeExecutableSchema({
+    typeDefs: [banners.typeDefs],
+    resolvers: merge(banners.resolvers)
+})
