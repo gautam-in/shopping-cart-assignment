@@ -61,8 +61,8 @@ const Header = React.memo(({cartSideNav}) => {
           </Collapse>
           <button aria-label={`${data.length ? data.length : 0} Items in Cart`} className="cart-header-wrap" onClick={cartSideNav}  type='button'>
             <div className="cart-header-main">
-              <FontAwesomeIcon icon={faShoppingCart} tabIndex={0} />
-              <span  > {data.length ? data.length : 0} Items</span>
+                <FontAwesomeIcon icon={faShoppingCart} />
+                <span> {data.length ? data.length : 0} Items</span>
             </div>
           </button>
         </div>
