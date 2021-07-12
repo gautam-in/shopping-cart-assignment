@@ -52,24 +52,17 @@ export default function CategoryProduct() {
     const productCategory = categories.map((category) => {
         const { id, name, key, enabled } = category;
         if (enabled) {
-            if (user) {
-                return (
-                    <ActiveLink key={key} onClick={
-                        db?.collection('CartData')?.doc(user).set({
-                            CartProducts: {
-                                shoppingCart: shoppingCart,
-                                totalPrice: totalPrice,
-                                totalQty: totalQty,
-                            }
-                        }).then(() => { }).catch(err => setError(err.message))
-                    } href={`/products/${id}`}>{name}</ActiveLink>
-                )
-            }
-            else {
-                return (
-                    <ActiveLink key={key} href={`/products/${id}`}>{name}</ActiveLink>
-                )
-            }
+            return (
+                <ActiveLink key={key} onClick={ user &&
+                    db?.collection('CartData')?.doc(user).set({
+                        CartProducts: {
+                            shoppingCart: shoppingCart,
+                            totalPrice: totalPrice,
+                            totalQty: totalQty,
+                        }
+                    }).then(() => { }).catch(err => setError(err.message))
+                } href={`/products/${id}`}>{name}</ActiveLink>
+            )
         }
     })
 
