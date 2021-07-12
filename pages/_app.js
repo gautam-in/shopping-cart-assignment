@@ -1,21 +1,24 @@
+import React, { lazy, Suspense } from "react";
 import Page from "../components/organism/Page";
-import { applyMiddleware, compose, createStore } from "redux";
-import reducers from "../redux/reducers";
-import reduxThunk from 'redux-thunk';
-import { Provider } from "react-redux";
-
-const ComposeEnhancer = (global.window?.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ )|| compose
-const store = createStore(reducers, ComposeEnhancer(applyMiddleware(reduxThunk),))
-
+import { CartContextProvider } from "../context/CartContext";
+import { LoginContextProvider } from "../context/LoginContext";
+import Head from "next/head";
 function MyApp({ Component, pageProps }) {
   return (
-    <Provider store={store}>
-    <Page>
-      <Component {...pageProps} />
-    </Page>
-    </Provider>
+    <>
+      <Head>
+        <title>Shopping Cart</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+      </Head>
+      <LoginContextProvider>
+        <CartContextProvider>
+          <Page>
+            <Component {...pageProps} />
+          </Page>
+        </CartContextProvider>
+      </LoginContextProvider>
+    </>
   );
 }
-
 
 export default MyApp;

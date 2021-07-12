@@ -3,28 +3,26 @@ import SideNavListStyles from "../styles/SideNavListStyles";
 import SideNavStyles from "../styles/SideNavStyles";
 
 export default function SideNav({ categories }) {
+  if (!categories.length) return null;
   const router = useRouter();
-  const renderCategoryList = (categories) => {
-    if (categories) {
-      return categories.map((category) => {
-        return (
-          <SideNavListStyles
-            key={category.id}
-            order={category.order}
-            active={category.id === router.query.category}
-            onClick={() => router.push(`/products?category=${category.id}`)}
-          >
-            {category.name}
-          </SideNavListStyles>
-        );
-      });
-    } else {
-      return <div>loading...</div>;
-    }
+  const categoryParam = router.query.category;
+  const handleClick = (id) => {
+    router.push(`/products?category=${id}`);
   };
   return (
     <SideNavStyles>
-      <ul>{renderCategoryList(categories)}</ul>
+      <ul>
+        {categories.map((category) => (
+          <SideNavListStyles
+            key={category.id}
+            order={category.order}
+            active={category.id === categoryParam}
+            onClick={() => handleClick(category.id)}
+          >
+            {category.name}
+          </SideNavListStyles>
+        ))}
+      </ul>
     </SideNavStyles>
   );
 }

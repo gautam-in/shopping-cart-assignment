@@ -1,29 +1,47 @@
-import {ProductHeader,ProductStyles,ProductContent,ProductImage,ProductDesc,ProductFooter} from "../styles/ProductTileStyle";
+import {
+  ProductHeader,
+  ProductStyles,
+  ProductContent,
+  ProductImage,
+  ProductDesc,
+  ProductFooter,
+} from "../styles/ProductTileStyle";
 import CustomButton from "../atom/CustomButton";
-import { useDispatch } from "react-redux";
-import { addToShipping } from "../../redux/actions";
+import { useContext } from "react";
+import { CartContext } from "../../context/CartContext";
+import { POST } from "../../Utils/helper";
+import { ADD_TO_SHIPPING } from "../../context/actions/Constant";
 
 export default function ProductContainer({ product }) {
-  const dispatch = useDispatch();
+  const { dispatch } = useContext(CartContext);
+  const addToCart = async (product) => {
+    const data = await POST("addToCart", product.id);
+    if (data) {
+      dispatch({ type: ADD_TO_SHIPPING, payload: product });
+    }
+  };
   return (
     <ProductStyles>
       <ProductHeader>
-        <h3>{product.name}</h3>
+        <p>{product.name}</p>
       </ProductHeader>
       <ProductContent>
         <ProductImage>
-          <img src={product.imageURL} alt={product.name} />
+          <img src={product.imageURL} alt={product.name} loading="lazy" />
         </ProductImage>
-        <ProductDesc >
+        <ProductDesc>
           <p>{product.description}</p>
         </ProductDesc>
         <ProductFooter>
-          <div className="product-price">MRP Rs.{product.price}</div>
+          <div className="product-price">
+            <span>MRP Rs.{product.price}</span>
+          </div>
           <CustomButton
-            text={`Buy Now`}
             additionalText={` @ Rs ${product.price}`}
-            clickHandler={() => dispatch(addToShipping(product))}
-          />
+            clickHandler={() => addToCart(product)}
+          >
+            Buy Now
+          </CustomButton>
         </ProductFooter>
       </ProductContent>
     </ProductStyles>

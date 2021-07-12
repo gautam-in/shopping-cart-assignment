@@ -1,47 +1,45 @@
 import { useRouter } from "next/router";
-import { connect } from "react-redux";
-import {
-  fetchProducts,
-  fetchCategories,
-} from "../../redux/actions";
 import Products from "../../components/organism/Products";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import SideNav from "../../components/atom/SideNav";
 import ProductsContainerStyles from "../../components/styles/ProductsContainerStyles";
 import MobileCategoryNav from "../../components/atom/MobileCategoryNav";
+import { GET } from "../../Utils/helper";
+import { ProductsPath, CategoriesPath } from "../../constant/index";
 
-function CategoryPage(props) {
-  const { query } = useRouter();
-  const category = query.category;
-  const {
-    products,
-    fetchProducts,
-    categories,
-    fetchCategories,
-  } = props;
-  
+export const getStaticProps = async () => {
+  const categories = await GET(CategoriesPath);
+  const products = await GET(ProductsPath);
+  return {
+    props: { categories, products },
+  };
+};
+
+function CategoryPage({ products, categories }) {
+  const router = useRouter();
+  const category = router.query.category;
+  const [selectedProduct, setSelectedProduct] = useState(products);
+
   useEffect(() => {
-    fetchCategories();
-    fetchProducts(category);
+    if (category) {
+      let FiltrProduct = products.filter(
+        (product) => product.category == category
+      );
+      setSelectedProduct(FiltrProduct);
+    } else {
+      setSelectedProduct(products);
+    }
   }, [category]);
 
   return (
     <div>
       <SideNav categories={categories} />
-      <MobileCategoryNav />
+      <MobileCategoryNav categories={categories} />
       <ProductsContainerStyles>
-      <Products products={products} />
+        <Products products={selectedProduct} />
       </ProductsContainerStyles>
     </div>
   );
 }
-const mapStateToProps = (state) => {
-  return {
-    products: state.categories.products,
-    categories: state.categories.categories,
-  };
-};
-export default connect(mapStateToProps, {
-  fetchProducts,
-  fetchCategories,
-  })(CategoryPage);
+
+export default CategoryPage;

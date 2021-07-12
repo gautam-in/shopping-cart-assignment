@@ -1,56 +1,71 @@
-import * as yup from 'yup';
+import {
+  Required,
+  InvalidEmail,
+  InvalidPassword,
+  InvalidName,
+  ConfirmPasswordError,
+} from "../constant/index";
+export const validateEmail = function (value) {
+  let error = "";
+  if (!value) {
+    error = Required;
+  } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(value)) {
+    error = InvalidEmail;
+  }
+  return error;
+};
+export const validatePassword = function (value) {
+  let error = "";
+  let regExp = new RegExp(
+    "^(?=.*\\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$"
+  );
+  if (!value) {
+    error = Required;
+  } else if (!regExp.test(value)) {
+    error = InvalidPassword;
+  }
+  return error;
+};
+export const validateName = function (value) {
+  let error = "";
+  if (!value) {
+    error = Required;
+  } else if (!/^[a-zA-Z\s]*$/.test(value)) {
+    error = InvalidName;
+  }
+  return error;
+};
+export const loginValidation = (values) => {
+  let { email, password } = values;
+  let errors = {};
+  if (validateEmail(email)) {
+    errors.email = validateEmail(email);
+  }
+  if (validatePassword(password)) {
+    errors.password = validatePassword(password);
+  }
 
-export const loginValidation = () => {
-	 
-    return yup.object({
-      email : yup.string().email('Invalid Email address format').required('Email address is required').trim(),
-      password: yup
-        .string()
-        .required("Password is Required")
-        .test(
-          "regex",
-          "Password must be min 8 characters, and have 1 Special Character, 1 Uppercase, 1 Number and 1 Lowercase",
-          val => {
-            let regExp = new RegExp(
-              "^(?=.*\\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$"
-            );
-            return regExp.test(val);
-          }
-        ),
-    })
+  return errors;
+};
 
-}
+export const RegisterValidation = (values) => {
+  let { firstname, lastname, email, password, confirmPassword } = values;
+  let errors = {};
+  if (validateName(firstname)) {
+    errors.firstname = validateName(firstname);
+  }
+  if (validateName(lastname)) {
+    errors.lastname = validateName(lastname);
+  }
+  if (validateEmail(email)) {
+    errors.email = validateEmail(email);
+  }
+  if (validatePassword(password)) {
+    errors.password = validatePassword(password);
+  }
+  if (password !== confirmPassword) {
+    errors.confirmPassword = ConfirmPasswordError;
+  }
 
-export const RegisterValidation = () => {
-	 
-  return yup.object({
-    firstname: yup.string()
-              .max(100, 'Name cannot exceed 100 characters')
-              .test('alphabetsonly', 'Name should not contain Numbers and Special characters', function (val) {
-                  return /^[a-zA-Z\s]*$/.test(val);
-          }).required('First Name is Required'),
-    lastname: yup.string()
-          .max(100, 'Name cannot exceed 100 characters')
-          .test('alphabetsonly', 'Name should not contain Numbers and Special characters', function (val) {
-              return /^[a-zA-Z\s]*$/.test(val);
-      }).required('Last Name is Required'),
-    email : yup.string().email('Invalid Email address format').required('Email address is required').trim(),
-    password: yup.string()
-                .required("Password is Required")
-                .test(
-                  "regex",
-                  "Password must be min 8 characters, and have 1 Special Character, 1 Uppercase, 1 Number and 1 Lowercase",
-                  val => {
-                    let regExp = new RegExp(
-                      "^(?=.*\\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$"
-                    );
-                    return regExp.test(val);
-                  }
-                ),
-    confirmPassword: yup.string().required("Password is Required")
-                        .oneOf([yup.ref('password'), null], 'Passwords must match')
-  })
-
-}
-
-
+  return errors;
+};

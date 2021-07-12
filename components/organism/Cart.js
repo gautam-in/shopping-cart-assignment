@@ -1,47 +1,73 @@
-import {CartStyles,NoItem,CartHeader,CartContainer,LowerItemSection,CartFooter} from "../styles/CartStyle";
-import { useDispatch, useSelector } from "react-redux";
+import {
+  CartStyles,
+  NoItem,
+  CartHeader,
+  CartContainer,
+  LowerItemSection,
+  CartFooter,
+} from "../styles/CartStyle";
 import CartItem from "../molecules/CartItem";
 import CustomButton from "../atom/CustomButton";
-import {faTimes} from "@fortawesome/free-solid-svg-icons";
+import { faTimes } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { setCartOpen } from "../../redux/actions";
+import {
+  lowestImg,
+  CheapText,
+  Promo,
+  Proceed,
+  NoItemText,
+  FavourItem,
+  StartShoping,
+  MyCart,
+} from "../../constant";
+import { useContext } from "react";
+import { CartContext } from "../../context/CartContext";
+import { SET_CART_OPEN } from "../../context/actions/Constant";
+export default function Cart() {
+  const { cartItems, cartOpen, dispatch } = useContext(CartContext);
+  const cart = cartItems?.cart;
+  const totalPrice = cartItems?.totalPrice;
 
-export default function Cart(){
-    const dispatch = useDispatch();
-    const cartOpen = useSelector(state => state.cart.cartOpen);
-    const cartItems = useSelector(state => state.cart.cartItems?.cart);
-    const totalPrice = useSelector(state => state.cart.cartItems?.totalPrice);
-    const renderCartItems = (cartItems) => {
-        return cartItems.map(cartItem => <CartItem key={cartItem.id} addedProduct={cartItem} />)
-    }
-    
-    return <CartStyles open={cartOpen}>
-         <CartHeader>
-            <h4>My Cart {cartItems ? `(${cartItems.length} items)` : ''} </h4>
-            <FontAwesomeIcon icon={faTimes} onClick={()=> dispatch(setCartOpen(false))} />
-        </CartHeader>
-       {cartItems?.length>0 ? 
-       <>
-       <CartContainer className="scroller">{renderCartItems(cartItems)}</CartContainer> 
-       <LowerItemSection>
-                <img src='/static/images/lowest-price.png' alt="lowest price image" />
-                <p>You won't find it cheaper anywhere </p>
-        </LowerItemSection>
-       <CartFooter>
-           <p>Promo code can be applied on payment page</p>
-           <CustomButton text={<>Proceed to checkout <span > Rs. {totalPrice}</span></>} classes="checkout-btn" />
-       </CartFooter>
-       </>
-       :
+  const setCartState = (isOpen) => {
+    dispatch({ type: SET_CART_OPEN, payload: isOpen });
+  };
+  return (
+    <CartStyles open={cartOpen}>
+      <CartHeader>
+        <h1>
+          {MyCart} {cart ? `(${cart.length} items)` : ""}{" "}
+        </h1>
+        <FontAwesomeIcon icon={faTimes} onClick={() => setCartState(false)} />
+      </CartHeader>
+      {cart?.length > 0 ? (
         <>
-            <NoItem>
-                <h2>No items in the card</h2>
-                <p>your favourite items are just click away</p>
-            </NoItem>
-            <CartFooter>
-            <CustomButton text={`start shopping`} classes="shopping-btn" />
-            </CartFooter>
+          <CartContainer className="scroller">
+            {cart.map((cartItem) => (
+              <CartItem key={cartItem.id} addedProduct={cartItem} />
+            ))}
+          </CartContainer>
+          <LowerItemSection>
+            <img src={lowestImg} alt="lowest price image" loading="lazy" />
+            <p>{CheapText}</p>
+          </LowerItemSection>
+          <CartFooter>
+            <p>{Promo}</p>
+            <CustomButton classes="checkout-btn">
+              {Proceed} <span> Rs. {totalPrice}</span>
+            </CustomButton>
+          </CartFooter>
         </>
-       }
+      ) : (
+        <>
+          <NoItem>
+            <h2>{NoItemText}</h2>
+            <p>{FavourItem}</p>
+          </NoItem>
+          <CartFooter>
+            <CustomButton classes="shopping-btn">{StartShoping}</CustomButton>
+          </CartFooter>
+        </>
+      )}
     </CartStyles>
+  );
 }

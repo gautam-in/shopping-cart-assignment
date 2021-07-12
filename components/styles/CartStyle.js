@@ -5,6 +5,15 @@ export const NoItem = styled.main`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 100%;
+  height: 70%;
+  background-color: var(--white);
+  h2 {
+    margin-bottom: 0;
+  }
+  @media only screen and (max-width: 1023px) {
+    height: 80%;
+  }
 `;
 
 export const CartHeader = styled.header`
@@ -13,12 +22,13 @@ export const CartHeader = styled.header`
   align-items: center;
   padding: 1% 3%;
   background: var(--black);
-  h4 {
+  h1 {
     flex: 1;
+    font-size: 1.2em;
   }
   svg {
     cursor: pointer;
-  } 
+  }
   @media (max-width: 1023px) {
     background-color: var(--white);
     color: black;
@@ -37,9 +47,13 @@ export const LowerItemSection = styled.section`
   background-color: white;
   display: flex;
   margin: 0.5rem;
+  p {
+    font-size: 1em;
+    padding: 0.5rem;
+  }
 `;
 
-export const CartFooter = styled.footer`
+export const CartFooter = styled.div`
   background-color: var(--white);
   color: black;
   position: fixed;
@@ -80,19 +94,17 @@ export const CartStyles = styled.div`
   transition: all 0.3s;
   z-index: 5;
   ${(props) => props.open && `transform: translateX(0);`};
- 
+
   @media only screen and (max-width: 1023px) {
     font-size: 0.8em;
     right: -999999;
     width: 100%;
-    padding-top:2rem;
+    padding-top: 2rem;
   }
   @media only screen and (max-width: 767px) {
     font-size: 0.8em;
     top: 50px;
     right: -999999;
     width: 100%;
-   
   }
 `;
-

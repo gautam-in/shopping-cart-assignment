@@ -1,4 +1,4 @@
-import  styled,{ createGlobalStyle } from 'styled-components';
+import styled, { createGlobalStyle } from "styled-components";
 
 export const InnerStyle = styled.main`
   margin: 0 auto;
@@ -6,14 +6,14 @@ export const InnerStyle = styled.main`
   font-size: 0.75rem;
   padding-top: var(--headerHeight);
   max-width: var(--maxWidth);
- @media only screen and (max-width: 767px) {
+  @media only screen and (max-width: 767px) {
     max-width: 100%;
     padding-top: calc(var(--headerHeight) / 2);
   }
 `;
 
 export const GlobalStyles = createGlobalStyle`
-@import url('https://fonts.googleapis.com/css?family=Dosis:400,600,700');
+@import url("https://fonts.googleapis.com/css?family=Dosis:400,600,700");
 :root{
     --black: #000;
     --white: #fff;
@@ -51,4 +51,3 @@ export const GlobalStyles = createGlobalStyle`
     box-sizing: border-box;
   }
 `;
-

@@ -18,11 +18,9 @@ const CustomFormStyle = styled.form`
       outline: none;
       &:focus + label,
       &:valid + label {
-        top: -20px;
-        color: #90caf9;
         font-size: 0.8em;
       }
-      &:focus{
+      &:focus {
         border-bottom: 1px solid #90caf9;
       }
     }
@@ -33,34 +31,36 @@ const CustomFormStyle = styled.form`
       left: 0;
       position: absolute;
       transition: 0.2s;
+      top: -10px;
+      color: #90caf9;
     }
-   
-    &.error{
-      input{
+
+    &.error {
+      input {
         border-bottom: 1px solid red;
       }
-      label{
+      label {
         color: red;
       }
-      div{
-        color:red
+      p {
+        color: red;
       }
     }
   }
-  .reduxFormBtn{
-      width: 80%;
-      text-align: center;
+  .reduxFormBtn {
+    width: 80%;
+    text-align: center;
+  }
+  @media only screen and (max-width: 767px) {
+    padding: 1rem;
+    .input-container {
+      width: 100%;
     }
-    @media only screen and (max-width:767px){
-      padding: 1rem;
-      .input-container{
-        width: 100%;
-      }
-      
-      .Btn{
-        width: 100%;
-      }
+
+    .Btn {
+      width: 100%;
     }
+  }
 `;
 
 export default CustomFormStyle;
