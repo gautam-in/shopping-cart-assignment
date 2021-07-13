@@ -32,9 +32,7 @@ const Header = ({ user }) => {
             }).then(() => {
                 dispatch({ type: 'EMPTY' })
             }).catch(err => setError(err.message))
-            Router.push({
-                pathname: `/`,
-            })
+            Router.push(`/`,null, { shallow: true });
         })
     }
 

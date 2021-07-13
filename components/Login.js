@@ -15,9 +15,7 @@ export default function Login() {
             setEmail('');
             setPassword('');
             setError('');
-            Router.push({
-                pathname: `/`,
-            })
+            Router.push(`/`,null, { shallow: true });
         }).catch(err => setError(err.message));
     }
 

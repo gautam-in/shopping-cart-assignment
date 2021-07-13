@@ -21,8 +21,7 @@ export default function Cart() {
     const { user } = useContext(TokenContext);
 
     useEffect(() => {
-        if (user) {
-            db.collection('CartData').doc(user).get().then(snapshot => {
+            user && db.collection('CartData').doc(user).get().then(snapshot => {
                 if (snapshot.data()) {
                     dispatch({
                         type: 'USER_CART',
@@ -31,11 +30,7 @@ export default function Cart() {
                         totalQty: snapshot.data().CartProducts.totalQty || 0
                     })
                 }
-                else {
-                    dispatch({ type: 'EMPTY' })
-                }
             })
-        }
     }, [user])
 
     const checkoutFunction = e => {

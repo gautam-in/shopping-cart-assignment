@@ -44,9 +44,7 @@ export default function Home() {
                                 </Card.Text>
                                 <Button variant="primary" onClick={(e) => {
                                     e.preventDefault();
-                                    Router.push({
-                                        pathname: `/products/${id}`,
-                                    })
+                                    Router.push(`/products/${id}`,null, { shallow: true });
                                 }}>Explore {key}</Button>
                             </Card.Body>
                         </Col>
@@ -67,9 +65,7 @@ export default function Home() {
                                 </Card.Text>
                                 <Button variant="primary" onClick={(e) => {
                                     e.preventDefault();
-                                    Router.push({
-                                        pathname: `/products/${id}`,
-                                    })
+                                    Router.push(`/products/${id}`,null, { shallow: true })
                                 }}>Explore {key}</Button>
                             </Card.Body>
                         </Col>

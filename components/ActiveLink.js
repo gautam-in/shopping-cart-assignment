@@ -10,7 +10,7 @@ const ActiveLink = ({ router, href, children }) => {
 
     const handleClick = e => {
         e.preventDefault();
-        router.push(href);
+        router.push(href, null, {shallow: true});
     }
 
     const isCurrentPath = router.pathname === href || router.asPath === href;

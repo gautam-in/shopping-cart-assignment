@@ -25,9 +25,7 @@ export default function CategoryProduct() {
             dispatch({ type: 'ADD_TO_CART', id: id, product })
         }
         else {
-            Router.push({
-                pathname: `/login`,
-            })
+            Router.push(`/login`,null, { shallow: true });
         }
     }
 
@@ -61,7 +59,7 @@ export default function CategoryProduct() {
                             totalQty: totalQty,
                         }
                     }).then(() => { }).catch(err => setError(err.message))
-                } href={`/products/${id}`}>{name}</ActiveLink>
+                } href={`/products/${id}`} >{name}</ActiveLink>
             )
         }
     })

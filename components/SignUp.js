@@ -30,12 +30,9 @@ export default function SignUp() {
                     setPassword('');
                     setConfirmPassword('')
                     setError('');
-                    Router.push({
-                        pathname: `/`,
-                    })
+                    Router.push(`/`,null, { shallow: true });
                 }).catch(err => setError(err.message));
             }).catch(err => setError(err.message));
-            console.log('DONE');
         }
         else{
             setPassError('Password and confirm password should match');

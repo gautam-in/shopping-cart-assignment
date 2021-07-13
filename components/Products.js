@@ -40,9 +40,7 @@ export default function Products() {
             dispatch({ type: 'ADD_TO_CART', id: id, product })
         }
         else {
-            Router.push({
-                pathname: `/login`,
-            })
+            Router.push(`/login`,null, { shallow: true });
         }
     }
 
