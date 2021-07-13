@@ -13,7 +13,11 @@ function Header() {
     <HeaderContainer>
       <HeaderCenter>
         <LeftNav>
-          <img src="/static/images/logo_2x.png" alt="Sabka Bazaarlogo" />
+          <img
+            srcSet="/static/images/logo_2x.png 2x"
+            src="/static/images/logo.png"
+            alt="Sabka Bazaarlogo"
+          />
           <ul>
             <Link href="/">
               <a>Home</a>

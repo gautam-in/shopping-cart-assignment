@@ -1,7 +1,5 @@
+import Home from '../components/Home';
+
 export default function indexPage() {
-  return (
-    <div>
-      <p>hello world</p>
-    </div>
-  );
+  return <Home />;
 }

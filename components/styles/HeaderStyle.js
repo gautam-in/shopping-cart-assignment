@@ -29,14 +29,14 @@ export const HeaderCenter = styled.header`
 export const LeftNav = styled.nav`
   display: flex;
   justify-content: space-between;
-  max-width: 500px;
+
   & > ul {
     display: none;
   }
   & > ul > a {
     text-decoration: none;
     color: var(--gray);
-    margin-right: 2em;
+    margin-right: 1.5em;
     font-size: 1.5em;
   }
   //media queries for tablet
@@ -49,6 +49,7 @@ export const LeftNav = styled.nav`
   }
   //media queries for desktop
   @media (min-width: 1025px) {
+    min-width: 500px;
     & > ul {
       display: flex;
       align-items: flex-end;
