@@ -1,24 +1,19 @@
 import Link from 'next/link';
-import Image from 'next/image';
+import { memo } from 'react';
 import {
   HeaderCenter,
   HeaderContainer,
   LeftNav,
   RightNav,
 } from './styles/HeaderStyle';
-import { BASE_URL } from '../config';
 import CartIcon from './CartIcon';
-import { CenterDiv } from './styles/GlobalStyles';
 
-export default function Header() {
+function Header() {
   return (
     <HeaderContainer>
       <HeaderCenter>
         <LeftNav>
-          <img
-            src={`${BASE_URL}static/images/logo_2x.png`}
-            alt="Sabka Bazaarlogo"
-          />
+          <img src="/static/images/logo_2x.png" alt="Sabka Bazaarlogo" />
           <ul>
             <Link href="/">
               <a>Home</a>
@@ -43,3 +38,5 @@ export default function Header() {
     </HeaderContainer>
   );
 }
+
+export default memo(Header);

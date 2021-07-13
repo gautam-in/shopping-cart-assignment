@@ -59,7 +59,9 @@ export const LeftNav = styled.nav`
 export const RightNav = styled.nav`
   display: flex;
   justify-content: stretch;
-
+  ul {
+    display: none;
+  }
   //media queries for tablet
   @media (min-width: 961px) {
     justify-content: stretch;

@@ -1,11 +1,10 @@
 import { memo } from 'react';
 import { Container } from './styles/CartStyle';
-import { BASE_URL } from '../config';
 
 const CartIcon = () => (
   <Container>
-    <img src={`${BASE_URL}static/images/cart.svg`} alt="cart-icon" />
-    <span>{2} items</span>
+    <img src="/static/images/cart.svg" alt="cart-icon" />
+    <span>{20} items</span>
   </Container>
 );
 

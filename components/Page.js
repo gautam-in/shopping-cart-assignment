@@ -1,6 +1,7 @@
 /* Wrapper Page for all the pages */
 import { Container } from './styles/Container';
 import { GlobalStyles } from './styles/GlobalStyles';
+import { Main } from './styles/MainStyle';
 import Header from './Header';
 
 export default function Page({ children }) {
@@ -8,7 +9,7 @@ export default function Page({ children }) {
     <Container>
       <GlobalStyles />
       <Header />
-      <main>{children}</main>
+      <Main>{children}</Main>
     </Container>
   );
 }
