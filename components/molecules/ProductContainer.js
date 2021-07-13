@@ -11,7 +11,7 @@ import { useContext } from "react";
 import { CartContext } from "../../context/CartContext";
 import { POST } from "../../Utils/helper";
 import { ADD_TO_SHIPPING } from "../../context/actions/Constant";
-
+import Image from "next/image";
 export default function ProductContainer({ product }) {
   const { dispatch } = useContext(CartContext);
   const addToCart = async (product) => {
@@ -27,7 +27,12 @@ export default function ProductContainer({ product }) {
       </ProductHeader>
       <ProductContent>
         <ProductImage>
-          <img src={product.imageURL} alt={product.name} loading="lazy" />
+          <Image
+            src={product.imageURL}
+            width={185}
+            height={185}
+            alt={product.name}
+          />
         </ProductImage>
         <ProductDesc>
           <p>{product.description}</p>

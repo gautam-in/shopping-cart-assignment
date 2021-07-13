@@ -1,15 +1,16 @@
 import { useRouter } from "next/router";
 import { SIGN_IN } from "../context/actions/Constant";
-import SignUpHeader from "../components/atom/SignUpHeader";
 import SignUpStyle from "../components/styles/SignupStyle";
 import CustomFormStyle from "../components/styles/FormStyle";
-import InputBox from "../components/atom/Input";
 import { useFormik } from "formik";
 import ButtonStyles from "../components/styles/ButtonStyles";
 import { loginValidation } from "../Utils/Validation";
 import { LoginHeader, LoginDescription } from "../constant/index";
 import { LoginContext } from "../context/LoginContext";
 import { useContext } from "react";
+import dynamic from "next/dynamic";
+const SignUpHeader = dynamic(() => import("../components/atom/SignUpHeader"));
+const InputBox = dynamic(() => import("../components/atom/Input"));
 export default function LoginPage() {
   const router = useRouter();
   const { logindispatch } = useContext(LoginContext);

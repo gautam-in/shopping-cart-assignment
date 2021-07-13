@@ -13,7 +13,6 @@ export const InnerStyle = styled.main`
 `;
 
 export const GlobalStyles = createGlobalStyle`
-@import url("https://fonts.googleapis.com/css?family=Dosis:400,600,700");
 :root{
     --black: #000;
     --white: #fff;

@@ -9,13 +9,13 @@ export const HeaderStyle = styled.header`
   position: fixed;
   width: 100%;
   background-color: #fff;
-  z-index:2;
+  z-index: 2;
   top: 0;
   height: var(--headerHeight);
-  @media only screen and (max-width:767px){
-      height: calc(var(--headerHeight)/2);
-      padding: 0;
-      justify-content: space-between;
+  @media only screen and (max-width: 767px) {
+    height: calc(var(--headerHeight) / 2);
+    padding: 0;
+    justify-content: space-between;
   }
 `;
 

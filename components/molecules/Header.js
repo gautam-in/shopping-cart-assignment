@@ -1,4 +1,3 @@
-import NavBarStyles from "../styles/NavBarStyles";
 import {
   SignUpContainerStyles,
   Container,
@@ -6,7 +5,6 @@ import {
 } from "../styles/SignUpContainerStyles";
 import { HeaderStyle, Logo } from "../styles/HeaderStyles";
 import Link from "next/link";
-import Cart from "../organism/Cart";
 import { SIGN_OUT } from "../../context/actions/Constant";
 import { useRouter } from "next/router";
 import {
@@ -25,6 +23,11 @@ import { useContext } from "react";
 import { CartContext } from "../../context/CartContext";
 import { LoginContext } from "../../context/LoginContext";
 import { SET_CART_OPEN } from "../../context/actions/Constant";
+import dynamic from "next/dynamic";
+const NavBarStyles = dynamic(() => import("../styles/NavBarStyles"));
+const Cart = dynamic(() => import("../organism/Cart"), {
+  ssr: false,
+});
 export default function Header() {
   const router = useRouter();
   const { cartItems, cartOpen, dispatch } = useContext(CartContext);
@@ -45,6 +48,7 @@ export default function Header() {
           src={LogoImg}
           alt="shopping-cart-logo"
           srcSet={SmalLogo}
+          rel="preload"
         />
       </Link>
       <NavBarStyles>
@@ -72,7 +76,7 @@ export default function Header() {
           )}
         </Container>
         <CartBtn onClick={() => setCartState(!cartOpen)}>
-          <img src={CartImg} alt="cart item" loading="lazy" />
+          <img src={CartImg} alt="cart item" rel="preload" />
           <span>
             {cartItems?.cart?.length} {Items}
           </span>

@@ -1,8 +1,8 @@
-import Banner from "../components/molecules/Banner";
-import Categories from "../components/organism/Categories";
 import { GET } from "../Utils/helper";
 import { BannerPath, CategoriesPath } from "../constant/index";
-
+import dynamic from "next/dynamic";
+const Banner = dynamic(() => import("../components/molecules/Banner"));
+const Categories = dynamic(() => import("../components/organism/Categories"));
 function home({ banners, categories }) {
   return (
     <main>

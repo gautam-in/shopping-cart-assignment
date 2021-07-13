@@ -26,7 +26,6 @@ function Banner({ banners }) {
             key={banner.id}
             src={banner.bannerImageUrl}
             alt={banner.bannerImageAlt}
-            loading="lazy"
             width={1140} height={305}
           />
         ))}

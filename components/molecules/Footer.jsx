@@ -1,4 +1,5 @@
-import FooterStyle from "../styles/FooterStyles";
+import dynamic from "next/dynamic";
+const FooterStyle = dynamic(() => import("../styles/FooterStyles"));
 export default function Footer() {
   return (
     <FooterStyle>
