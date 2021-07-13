@@ -1,0 +1,108 @@
+@import "../../stylesheet/generic/settings";
+
+.app {
+  &-product {
+    @extend %flex;
+    .category-bar {
+      @extend %flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      flex-basis: 20%;
+      background-color: $gray-color;
+      .items {
+        padding: 10px 20px;
+        border: 1px solid $primary-color;
+        cursor: pointer;
+        font-size: $f-medium;
+        text-align: left;
+        &.active,
+        &:hover {
+          background-color: darken($color: $gray-color, $amount: 10%);
+          color: #3c3c3c;
+        }
+      }
+    }
+    .category-bar-mobile {
+      display: none;
+    }
+    .product-bar {
+      @extend %flex;
+      flex-basis: 80%;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      margin-bottom: 40px;
+    }
+  }
+
+  &-productList {
+    padding: 10px;
+    flex-basis: 250px;
+    height: 345px;
+    margin-top: 10px;
+    border-right: 2px solid $gray-color;
+    border-bottom: 2px dashed $gray-color;
+    .categoryName {
+      font-size: 13px;
+      line-height: 1.1;
+      height: 30px;
+    }
+    .product-card {
+      @extend %flex;
+      flex-direction: column;
+      align-items: center;
+      height: 80%;
+      margin-top: 20px;
+      .des {
+        background-color: $gray-color;
+        padding: 10px;
+        font-size: 12px;
+        height: 86px;
+        overflow: hidden;
+        -webkit-line-clamp: 4;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+      }
+      .app-btn {
+        margin-left: 25px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .app-product {
+    .category-bar {
+      display: none;
+    }
+    .category-bar-mobile {
+      display: block;
+      width: 100%;
+
+      select {
+        padding: 10px;
+        width: 100%;
+        background-color: $btn-color;
+        color: $primary-color;
+      }
+    }
+    .product-bar {
+      display: block;
+      flex-basis: 100%;
+      .app-productList {
+        border-right: none;
+        height: unset;
+      }
+      .product-card {
+        flex-direction: row;
+
+        .des {
+          width: 60%;
+          margin-bottom: 8px;
+        }
+        .buynow {
+          margin: 0 10px 0 auto;
+        }
+      }
+    }
+  }
+}
