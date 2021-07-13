@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import {
-  HeaderCenterDiv,
+  HeaderCenter,
   HeaderContainer,
   LeftNav,
   RightNav,
@@ -12,8 +12,8 @@ import { CenterDiv } from './styles/GlobalStyles';
 
 export default function Header() {
   return (
-    <HeaderCenterDiv>
-      <HeaderContainer>
+    <HeaderContainer>
+      <HeaderCenter>
         <LeftNav>
           <img
             src={`${BASE_URL}static/images/logo_2x.png`}
@@ -29,9 +29,17 @@ export default function Header() {
           </ul>
         </LeftNav>
         <RightNav>
+          <ul>
+            <Link href="/signin">
+              <a>Signin</a>
+            </Link>
+            <Link href="/register">
+              <a>Register</a>
+            </Link>
+          </ul>
           <CartIcon />
         </RightNav>
-      </HeaderContainer>
-    </HeaderCenterDiv>
+      </HeaderCenter>
+    </HeaderContainer>
   );
 }

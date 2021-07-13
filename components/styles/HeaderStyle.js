@@ -1,26 +1,24 @@
 import styled from 'styled-components';
+import { pageMaxWidth } from './GlobalStyles';
 
-export const HeaderCenterDiv = styled.div`
+export const HeaderContainer = styled.div`
   box-shadow: var(--boxShadow);
   height: max-content;
 `;
 
-export const HeaderContainer = styled.header`
+export const HeaderCenter = styled.header`
   display: flex;
-
   justify-content: space-between;
   height: max-content;
   max-height: 60px;
 
   //media queries for tablet
   @media (min-width: 961px) {
-    background-color: red;
   }
   //media queries for desktop
   @media (min-width: 1025px) {
-    background-color: green;
     max-height: 90px;
-    max-width: 1300px;
+    max-width: ${pageMaxWidth};
     margin: 0 auto;
     img {
       margin: 5px;
@@ -31,27 +29,58 @@ export const HeaderContainer = styled.header`
 export const LeftNav = styled.nav`
   display: flex;
   justify-content: space-between;
-
-  ul {
+  max-width: 500px;
+  & > ul {
     display: none;
+  }
+  & > ul > a {
+    text-decoration: none;
+    color: var(--gray);
+    margin-right: 2em;
+    font-size: 1.5em;
   }
   //media queries for tablet
   @media (min-width: 961px) {
-    background-color: red;
-    ul {
+    & > ul {
       display: flex;
+
+      align-items: flex-end;
     }
   }
   //media queries for desktop
   @media (min-width: 1025px) {
-    background-color: green;
-    ul {
+    & > ul {
       display: flex;
+      align-items: flex-end;
     }
   }
 `;
 
 export const RightNav = styled.nav`
   display: flex;
-  align-items: stretch;
+  justify-content: stretch;
+
+  //media queries for tablet
+  @media (min-width: 961px) {
+    justify-content: stretch;
+    ul {
+      display: none;
+    }
+  }
+  //media queries for desktop
+  @media (min-width: 1025px) {
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+    ul {
+      display: block;
+      margin: 3px 4px;
+    }
+    ul a {
+      font-size: 0.8em;
+      margin-right: 6px;
+      text-decoration: none;
+      color: var(--gray);
+    }
+  }
 `;

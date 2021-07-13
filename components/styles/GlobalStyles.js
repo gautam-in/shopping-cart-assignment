@@ -16,8 +16,4 @@ html{
 }
 `;
 
-export const CenterDiv = styled.div`
-  @media (min-width: 1025px) {
-    min-width: 1025px;
-  }
-`;
+export const pageMaxWidth = '1300px';
