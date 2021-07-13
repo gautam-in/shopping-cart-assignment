@@ -28,6 +28,7 @@ export const CartHeader = styled.header`
   }
   svg {
     cursor: pointer;
+    width: 1em;
   }
   @media (max-width: 1023px) {
     background-color: var(--white);
@@ -53,7 +54,7 @@ export const LowerItemSection = styled.section`
   }
 `;
 
-export const CartFooter = styled.div`
+export const CartFooter = styled.footer`
   background-color: var(--white);
   color: black;
   position: fixed;
