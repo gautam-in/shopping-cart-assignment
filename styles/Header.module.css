@@ -1,0 +1,13 @@
+.span{
+    font-size: '0.6rem';
+    position: 'relative';
+    color: '#fff';
+    background-color: '#1266F1';
+    width: '15px';
+    height: '15px'; 
+    border-radius: '50%';
+    right: '30px'; 
+    display: 'flex';
+    align-items: 'center'; 
+    justify-content: 'center';
+}
