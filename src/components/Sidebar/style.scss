@@ -1,0 +1,30 @@
+@import "../../styles/variables.scss";
+
+.sidebar {
+  background-color: $color-primary-background-light;
+  flex-basis: 20%;
+  a {
+    border-bottom: 1px solid $color-primary-border-dark;
+    color: $color-primary-background-dark;
+    display: flex;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 15px;
+    transition: 300ms ease all;
+    text-decoration: none;
+    &:hover {
+      background-color: $color-primary-white;
+      filter: brightness(80%);
+    }
+    &.selected {
+      background-color: $color-primary-white;
+      filter: brightness(80%);
+    }
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .sidebar {
+    flex-basis: 25%;
+  }
+}

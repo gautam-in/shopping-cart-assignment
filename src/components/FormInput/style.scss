@@ -1,0 +1,52 @@
+@import "../../styles/variables.scss";
+
+.form-group {
+  margin-bottom: 25px;
+  position: relative;
+  &:first-child {
+    margin-top: 50px;
+  }
+  .form-group-input {
+    border: none;
+    border-bottom: 2px solid $color-primary-border-light;
+    font-size: 16px;
+    padding: 10px 1px 10px 0px;
+    width: 100%;
+    &:focus {
+      outline: none;
+      border-bottom: 2px solid $color-primary-text;
+      ~ .form-group-label {
+        color: $color-primary-text;
+      }
+    }
+  }
+  .form-group-label {
+    color: $color-primary-text-medium;
+    font-size: 16px;
+    font-weight: 600;
+    pointer-events: none;
+    position: absolute;
+    top: 10px;
+    left: 0;
+    transition: 200ms ease all;
+    &.input-shrink {
+      top: -10px;
+      font-size: 12px;
+      color: $color-primary-text;
+    }
+  }
+  .form-group-error-message {
+    color: $color-primary-text-error;
+    font-size: 12px;
+    padding-top: 5px;
+    text-align: justify;
+  }
+}
+
+@media (max-width: 480px) {
+  .form-group {
+    &:first-child {
+      margin-top: 10px;
+    }
+  }
+}

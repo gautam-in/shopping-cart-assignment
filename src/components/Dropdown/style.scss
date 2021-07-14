@@ -1,0 +1,22 @@
+@import "../../styles/variables.scss";
+
+.select-dropdown {
+  background-color: $color-primary-background;
+  color: $color-primary-text-light;
+  cursor: pointer;
+  font-family: "Dosis", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  margin-top: 30px;
+  padding: 12px;
+  &:focus-visible {
+    outline: none;
+  }
+  &__option {
+    font-size: 14px;
+    font-weight: 600;
+    &:hover {
+      background-color: $color-primary-text-light;
+    }
+  }
+}

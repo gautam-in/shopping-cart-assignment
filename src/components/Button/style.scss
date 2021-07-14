@@ -1,0 +1,25 @@
+@import "../../styles/variables.scss";
+
+.button {
+  background-color: $color-primary-background;
+  border: none;
+  border-radius: 2px;
+  color: $color-primary-text-dark;
+  cursor: pointer;
+  font-family: "Dosis", sans-serif;
+  font-weight: 600;
+  height: auto;
+  padding: 10px 10px;
+  transition: 300ms ease all;
+  width: 100%;
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.7;
+  }
+  &.cartButton {
+    background-color: $color-primary-background-light;
+  }
+  &:hover {
+    filter: brightness(80%);
+  }
+}

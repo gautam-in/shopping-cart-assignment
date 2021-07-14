@@ -1,0 +1,78 @@
+@import "../../styles/variables.scss";
+
+.cart-item-container {
+  background-color: $color-primary-white;
+  display: flex;
+  min-height: 80px;
+  margin-top: 2px;
+  padding: 10px 20px;
+  &:first-child {
+    margin-top: 10px;
+  }
+  &__imageContainer {
+    max-width: 90px;
+    padding-right: 5px;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  &__itemDetails {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: calc(100% - 90px);
+    &__title {
+      font-weight: 700;
+      padding: 5px 5px 0 5px;
+    }
+    &__actionButtonsAndPrice {
+      align-items: center;
+      display: flex;
+      justify-content: space-between;
+      padding: 0px 5px 5px 5px;
+      &__actionButtons {
+        .actionButton {
+          background-color: $color-primary-background;
+          border: none;
+          border-radius: 50%;
+          font-size: 14px;
+          line-height: 1.25;
+          margin-right: 10px;
+          span {
+            color: $color-primary-text-light;
+          }
+          .decrement {
+            cursor: pointer;
+            padding: 2px;
+          }
+          .increment {
+            cursor: pointer;
+          }
+        }
+        .quantity {
+          font-size: 14px;
+          font-weight: 700;
+          margin-right: 10px;
+        }
+        .cross {
+          font-size: 18px;
+          margin-right: 10px;
+        }
+        .item-price {
+          font-size: 14px;
+        }
+      }
+      &__price {
+        font-size: 16px;
+        font-weight: 600;
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .cart-item-container {
+    padding: 10px;
+  }
+}

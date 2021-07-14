@@ -1,0 +1,47 @@
+@import "../../styles/variables.scss";
+
+.carousel-container {
+  box-shadow: 0 8px 6px -6px $color-primary-box-shadow-light;
+  margin: 0 12%;
+  button {
+    background-color: $color-primary-background-dark;
+    border: none;
+    color: $color-primary-text-light;
+    cursor: pointer;
+    height: 30;
+    opacity: 0.5;
+    padding: 5px;
+    position: absolute;
+    top: calc(50% - 15px);
+    width: auto;
+    z-index: 2;
+    &:hover {
+      filter: brightness(90%);
+    }
+  }
+  .custom-control-dots {
+    background: $color-primary-text-light;
+    border-radius: 50%;
+    cursor: pointer;
+    display: inline-block;
+    list-style-type: circle;
+    margin: 0 8px;
+    height: 8px;
+    width: 8px;
+    &.selected {
+      background: $color-primary-background-dark;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .carousel-container {
+    margin: 0;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .carousel-container {
+    margin: 0;
+  }
+}

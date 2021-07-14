@@ -1,0 +1,52 @@
+@import "../../styles/variables.scss";
+
+.register-section {
+  display: flex;
+  margin: 0% 14% 4% 14%;
+  justify-content: space-around;
+  &__left {
+    display: flex;
+    flex-basis: 45%;
+    flex-direction: column;
+    margin-top: 50px;
+    &__title {
+      font-size: 28px;
+      font-weight: 700;
+    }
+    &__description {
+      font-size: 14px;
+      font-weight: 600;
+    }
+    &__title,
+    &__description {
+      display: block;
+      margin-bottom: 20px;
+    }
+  }
+  &__right {
+    flex-basis: 45%;
+    form {
+      button {
+        font-size: 15px;
+        color: $color-primary-text-light;
+        font-weight: 400;
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .register-section {
+    margin: 0% 5% 4% 5%;
+    flex-direction: column;
+    &__left {
+      text-align: center;
+    }
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .register-section {
+    margin: 0% 5% 4% 5%;
+  }
+}
