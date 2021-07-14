@@ -1,0 +1,64 @@
+@import "../../stylesheet/generic/settings";
+.app {
+  &-carousel {
+    min-height: 310px;
+    margin-top: 10px;
+
+    .control-dots {
+      .dot {
+        background: lighten($color: $black-color, $amount: 40%) !important;
+        &.selected {
+          background-color: $black-color;
+        }
+      }
+    }
+  }
+  &-category {
+    @extend %flex;
+    padding: 10px 40px;
+    justify-content: space-evenly;
+    margin: 40px 0px 0px;
+    min-height: 205px;
+    .cat-desc {
+      align-self: center;
+      flex-basis: 40%;
+    }
+  }
+}
+
+.app-home {
+  .app-category:nth-child(odd) {
+    flex-direction: row-reverse;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .app-carousel {
+    min-height: 220px;
+    height: 200px;
+    .carousel-status {
+      display: none;
+    }
+
+    .carousel.carousel-slider {
+      height: 255px;
+    }
+  }
+  .app-category {
+    padding: 8px 10px;
+    margin: 10px 0px 0px;
+    .cat-desc {
+      flex-basis: 60%;
+    }
+    img {
+      width: 35%;
+    }
+    p {
+      font-size: $f-small;
+    }
+    .app-btn {
+      width: 100%;
+      font-size: $f-small;
+    }
+  }
+}
