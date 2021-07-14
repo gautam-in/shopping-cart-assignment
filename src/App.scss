@@ -1,0 +1,74 @@
+@import "../src/stylesheet/generic/_settings.scss";
+
+span,
+p,
+h3 {
+  color: $f-text;
+}
+
+p,
+h3 {
+  margin: 10px 0px;
+  font-size: $f-medium;
+  font-weight: 500;
+}
+
+span {
+  font-size: $f-small;
+}
+
+a,
+li {
+  &:focus {
+    outline: 3px solid #0f1214 !important;
+    padding: 2px;
+  }
+}
+input,
+input[type="text"],
+input[type="password"] {
+  outline: none;
+  border: none;
+  width: 100%;
+  border-bottom: 2px solid $gray-color;
+  padding: 5px;
+  margin-bottom: 10px;
+  &:focus {
+    border-color: $btn-color;
+  }
+}
+
+.label::after {
+  content: "*";
+  color: red;
+  margin-left: 5px;
+}
+
+.centre {
+  text-align: center;
+}
+
+.app-bottom-shadow {
+  position: relative;
+  &:after,
+  &:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    box-shadow: 0 0 10px #000;
+    border-radius: 50%;
+    width: 100%;
+    height: 20px;
+    display: none;
+  }
+  &:after {
+    display: block;
+    bottom: 0px;
+    clip: rect(20px auto 40px auto);
+  }
+}
+.app {
+  &-btn {
+    @extend %btn;
+  }
+}
