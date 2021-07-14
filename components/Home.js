@@ -19,7 +19,13 @@ function Home() {
   }, [bannersData, categoriesData]);
   return (
     <>
-      <Carousel showStatus={false} showThumbs={false} emulateTouch>
+      <Carousel
+        preventMovementUntilSwipeScrollTolerance
+        swipeable
+        showStatus={false}
+        showThumbs={false}
+        emulateTouch
+      >
         {banners
           ?.filter((banner) => banner.isActive)
           .map((banner) => (
@@ -41,7 +47,7 @@ function Categories({ categories }) {
         .filter((category) => category.enabled)
         .map((category, index) =>
           index % 2 === 0 ? (
-            <CategoryStyle key={category.key}>
+            <CategoryStyle key={category.id}>
               <div>
                 <article>
                   <h2>{category.name}</h2>
@@ -54,7 +60,7 @@ function Categories({ categories }) {
               </div>
             </CategoryStyle>
           ) : (
-            <CategoryStyle>
+            <CategoryStyle key={category.id}>
               <div>
                 <img src={category.imageUrl} alt={category.name} />{' '}
               </div>
