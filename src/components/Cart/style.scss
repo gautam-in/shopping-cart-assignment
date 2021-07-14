@@ -123,10 +123,10 @@
     }
     &__buttonContainer {
       box-sizing: border-box;
-      color: $color-primary-text-light;
       height: 50px;
       padding: 5px 10px;
       button {
+        color: $color-primary-text-light;
         transition: none;
       }
     }

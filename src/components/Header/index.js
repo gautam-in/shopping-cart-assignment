@@ -14,6 +14,7 @@ const Text = React.lazy(() =>
 );
 
 import { toggleCartModal } from "../../redux/actions/cartActions";
+import { logoutUser } from "../../redux/actions/userActions";
 
 import "./style.scss";
 
@@ -21,6 +22,10 @@ const Header = () => {
   const dispatch = useDispatch();
   const { isMobile } = useViewport();
   const cartItemsCount = useSelector((state) => state.cart.cartItemsCount);
+  const isLoggedIn = useSelector((state) => state.user.isLoggedIn);
+  const clickHandlerLogoutText = () => {
+    dispatch(logoutUser());
+  };
   const clickHandlerCartButton = () => {
     dispatch(toggleCartModal());
   };
@@ -39,24 +44,32 @@ const Header = () => {
         </picture>
         <div className="nav-container">
           {!isMobile ? (
-            <div className="nav-container__quickLinks">
-              <Link
-                aria-label="Navigate to signin page"
-                to="/login"
-                role="navigation"
-                tabIndex="0"
-              >
-                <Text>SignIn</Text>
-              </Link>
-              <Link
-                aria-label="Navigate to register page"
-                to="/register"
-                role="navigation"
-                tabIndex="0"
-              >
-                <Text>Register</Text>
-              </Link>
-            </div>
+            !isLoggedIn ? (
+              <div className="nav-container__quickLinks">
+                <Link
+                  aria-label="Navigate to signin page"
+                  to="/login"
+                  role="navigation"
+                  tabIndex="0"
+                >
+                  <Text>SignIn</Text>
+                </Link>
+                <Link
+                  aria-label="Navigate to register page"
+                  to="/register"
+                  role="navigation"
+                  tabIndex="0"
+                >
+                  <Text>Register</Text>
+                </Link>
+              </div>
+            ) : (
+              <div className="nav-container__quickLinks">
+                <Text className="logout" onClick={clickHandlerLogoutText}>
+                  Logout User
+                </Text>
+              </div>
+            )
           ) : null}
           <div className="nav-container__navigation">
             {!isMobile ? (

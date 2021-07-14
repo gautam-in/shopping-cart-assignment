@@ -41,3 +41,19 @@ export const getProductListAPI = async () => {
     throw "Error : Unable to fetch Product List.";
   }
 };
+
+export const postAddToCart = async (product) => {
+  try {
+    const response = await axios.post(
+      `${apiURL}/addToCart`,
+      { productId: product.id },
+      apiHeaders
+    );
+    if ((response.status = 200)) {
+      return response.data;
+    }
+    console.log("Something went wrong.");
+  } catch (error) {
+    throw "Error : Unable to post Product Item";
+  }
+};

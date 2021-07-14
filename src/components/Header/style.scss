@@ -37,6 +37,12 @@
           font-weight: 600;
         }
       }
+      .logout {
+        cursor: pointer;
+        font-size: 12px;
+        font-weight: 600;
+        margin: 5px;
+      }
     }
     &__navigation {
       display: flex;

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useDispatch } from "react-redux";
 import { useHistory } from "react-router";
 
 const Button = React.lazy(() =>
@@ -13,9 +14,12 @@ const Text = React.lazy(() =>
 
 import { loginFormValidation } from "../../utils/formValidation";
 
+import { loginUser } from "../../redux/actions/userActions";
+
 import "./style.scss";
 
 const LoginForm = () => {
+  const dispatch = useDispatch();
   const history = useHistory();
   const [loginFormData, setLoginFormData] = useState({
     email: "",
@@ -40,6 +44,11 @@ const LoginForm = () => {
   const submitHandler = (e) => {
     e.preventDefault();
     if (formValidate()) {
+      dispatch(
+        loginUser({
+          email: loginFormData.email,
+        })
+      );
       history.push("/");
     }
   };

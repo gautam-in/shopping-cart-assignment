@@ -6,8 +6,17 @@ import {
   TOGGLE_CART_MODAL,
 } from "../constants/constants";
 
+import { postAddToCart } from "../../services/services";
+
 export const addProductToCart = (product) => {
   return (dispatch) => {
+    postAddToCart(product)
+      .then((response) => {
+        console.log(response);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
     dispatch({
       type: ADD_PRODUCT_TO_CART,
       payload: product,

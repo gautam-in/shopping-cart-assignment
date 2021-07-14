@@ -1,7 +1,7 @@
 @import "../../styles/variables.scss";
 
 .carousel-container {
-  box-shadow: 0 8px 6px -6px var(--box-shadow);
+  box-shadow: 0 8px 6px -6px $color-primary-box-shadow-light;
   margin: 0 12%;
   button {
     background-color: $color-primary-background-dark;
