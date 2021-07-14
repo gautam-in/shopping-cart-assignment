@@ -8,7 +8,6 @@ function MyApp({ Component, pageProps }) {
     <>
       <Head>
         <title>Shopping Cart</title>
-        <link rel="preload" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <LoginContextProvider>
