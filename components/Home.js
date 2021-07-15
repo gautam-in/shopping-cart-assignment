@@ -5,17 +5,24 @@ import { ButtonStyle } from './styles/GlobalStyles';
 import { BACKEND_URL } from '../config';
 import 'react-responsive-carousel/lib/styles/carousel.min.css'; // requires a loader
 import { CategoryStyle } from './styles/HomeStyle';
+import { useAppData } from '../lib/store';
 
 function Home() {
+  const contextData = useAppData();
+  const { categories } = contextData?.data;
+  console.log(categories);
   const [banners, setBanners] = useState([]);
-  const [categories, setCategories] = useState([]);
   const bannersData = banners?.join('');
   const categoriesData = categories?.join('');
+
   useEffect(() => {
     // getting banners
     RequestsHandler.getData(`${BACKEND_URL}banners/`, setBanners);
     // getting categories
-    RequestsHandler.getData(`${BACKEND_URL}categories/`, setCategories);
+    RequestsHandler.getData(`${BACKEND_URL}categories/`, {
+      name: 'categories',
+      setData: contextData.setData,
+    });
   }, [bannersData, categoriesData]);
   return (
     <>
@@ -40,7 +47,7 @@ function Home() {
 }
 function Categories({ categories }) {
   const sortedCategories = categories?.sort((a, b) => a.order - b.order);
-  console.log(sortedCategories);
+
   return (
     <>
       {sortedCategories
