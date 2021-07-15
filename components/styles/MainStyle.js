@@ -3,8 +3,11 @@ import { pageMaxWidth } from './GlobalStyles';
 
 export const Main = styled.main`
   padding: 2em 0px;
+
+  //desktop
   @media (min-width: 1025px) {
     max-width: ${pageMaxWidth};
     margin: 0 auto;
+    min-height: calc(100vh - (52px + 90px));
   }
 `;

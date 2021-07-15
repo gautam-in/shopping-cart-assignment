@@ -10,7 +10,6 @@ import { useAppData } from '../lib/store';
 function Home() {
   const contextData = useAppData();
   const { categories } = contextData?.data;
-  console.log(categories);
   const [banners, setBanners] = useState([]);
   const bannersData = banners?.join('');
   const categoriesData = categories?.join('');
