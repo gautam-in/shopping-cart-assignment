@@ -18,12 +18,6 @@ function Product() {
     dispatch(getCategory());
   }, [dispatch]);
 
-  const loadCategory = (e) => {
-    e === "showAll"
-      ? history.push("/product#" + e.target.value)
-      : history.push("/product#" + e);
-  };
-
   return (
     <div className="app-product">{<ProductList categoryId={hashID} />}</div>
   );

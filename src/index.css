@@ -2,15 +2,13 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
 .container {
   position: relative;
-  max-width: 1280px;
+  max-width: 90%;
   margin: 0 auto;
-  min-height: 610px;
+  min-height: 90%;
 }
 
 * {

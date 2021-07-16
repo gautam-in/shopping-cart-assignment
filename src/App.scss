@@ -19,9 +19,8 @@ span {
 
 a,
 li {
-  &:focus {
-    outline: 3px solid #0f1214 !important;
-    padding: 2px;
+  &:hover {
+    color: darken($black-color, 100%);
   }
 }
 input,

@@ -25,9 +25,6 @@ $f-large: 16px;
   min-width: 80px;
   color: $primary-color;
   font-size: $f-medium;
-  &:hover {
-    transform: translate(0px, -2px);
-  }
 }
 
 %flex {

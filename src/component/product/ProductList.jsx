@@ -2,10 +2,9 @@ import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { getProducts } from "../../redux/product/actionCreator";
 import { addRemoveToCart } from "../../redux/cart/actionCreator";
-function ProductList(props) {
-  const urlID = window.location.hash.split("#")[1];
+
+function ProductList() {
   const productData = useSelector((state) => state.getProdDetail.product);
-  const updatedProduct = productData.filter((data) => urlID === data.category);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -25,7 +24,7 @@ function ProductList(props) {
 
   return (
     <>
-      {(urlID ? updatedProduct : productData).map((data) => (
+      {productData.map((data) => (
         <div key={data.id} className="app-productList">
           <h3 className="categoryName">
             <b>{data.name}</b>
