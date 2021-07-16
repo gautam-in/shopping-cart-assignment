@@ -1,0 +1,41 @@
+.signup-title{
+    font-family: 'Dosis', sans-serif;
+    font-weight: 800;
+    font-size: 27px;
+}
+.signup-subtitle{
+    font-family: 'Dosis', sans-serif;
+    font-weight: 800;
+    font-size: 13px;
+    color:black
+}
+
+.register-footer-title{
+    font-weight:600;
+    font-family: 'Dosis', sans-serif;
+
+}
+
+.register-footer-bg-color{
+    background-color: Lavender;
+}
+
+/* Media Queries for mobile */
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+
+    .signup-title {
+        text-align: center;
+    }
+    .signup-subtitle {
+        text-align: center;
+    }
+    .signup-margin{
+        margin: 2% 9% 2% 10% !important;
+    }
+    .register-footer-title {
+        padding: 1px 2px 2px 29px !important;
+        font-size: 13px;
+    }
+
+}

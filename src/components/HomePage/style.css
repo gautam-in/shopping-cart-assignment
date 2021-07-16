@@ -1,0 +1,148 @@
+.banner-title{
+    text-align: center;
+}
+.banner-border{
+    background-color: white !important;
+    height: 40px;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+
+
+/* Home Page  Catagories */
+
+.catogory-list{
+    padding: 4% 3%;
+    background-color: white !important;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+.explore-fruit{
+    margin-top: 2%;
+    margin-left: 29%;
+    background-color: MediumVioletRed;
+    padding: 2% 2% 2% 2%;
+    width: 35%;
+    color: white;
+}
+.explore-bakery{
+    margin-top: 2%;
+    background-color: MediumVioletRed;
+    padding: 2% 2% 2% 2%;
+    width: 43%;
+    color: white;
+    margin-left: 27%;  
+}
+.explore-beverage {
+    margin-top: 2%;
+    background-color: MediumVioletRed;
+    padding: 2% 2% 2% 2%;
+    width: 38%;
+    color: white;
+    margin-left: 33%;
+}
+.explore-beauty {
+    margin-top: 2%;
+    background-color: MediumVioletRed;
+    padding: 2% 2% 2% 2%;
+    width: 48%;
+    color: white;
+    margin-left: 27%;
+}
+.explore-baby {
+    margin-top: 2%;
+    margin-left:39%;
+    background-color: MediumVioletRed;
+    padding: 2% 2% 2% 2%;
+    width: 23%;
+    color: white;
+}
+.cat-name{
+    font-weight: bolder;
+    font-family: 'PT Sans Narrow';
+    font-size: 18px;
+    text-align: center;
+}
+.cat-desc{
+    color:grey; 
+    text-align: center;
+}
+/* Media Queries */
+
+ 
+/* Smartphones (portrait and landscape) ----------- */
+ @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+    .banner-title{
+        text-align: center;
+    }
+    .banner-border{
+        background-color: white !important;
+        height: 40px;
+        box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    }
+     /* Home Page  Catagories */
+      .explore-baby {
+        margin: 0 auto;
+        width: 37%;
+    }
+    .explore-beauty {
+        width: 63%;
+        margin: 0 auto;
+    }
+    .explore-beverage {
+        width: 50%;
+        margin: 0 auto;
+    }
+    .explore-bakery {
+        width: 70%;
+        margin: 0 auto;
+    }
+    .explore-fruit {
+        margin: 0 auto;
+        width: 57%;
+    }
+    .cat-desc {
+        text-align: center;
+    }
+    .banner-width{
+        width:100%;
+        margin-left:12%; 
+    }
+    } 
+
+
+/* iPads (portrait and landscape) ----------- */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
+   /* Home Page  Catagories */
+   .explore-baby {
+    margin: 0 auto;
+    width:14%;
+}
+.explore-beauty {
+    width: 22%;
+    margin: 0 auto;
+}
+.explore-beverage {
+    width: 18%;
+    margin: 0 auto;
+}
+.explore-bakery {
+    width: 25%;
+    margin: 0 auto;
+}
+.explore-fruit {
+    margin: 0 auto;
+    width: 20%;
+}
+.cat-desc {
+    text-align: center;
+}
+.banner-width{
+    width:100%;
+    margin-left:12%; 
+}
+}
+
+
+
+

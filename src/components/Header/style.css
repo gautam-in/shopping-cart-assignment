@@ -1,0 +1,77 @@
+.main-logo{
+    width:115px
+}
+
+a {
+    float:left;
+    color: DarkGrey;
+    text-decoration: none;
+    font-family: sans-serif;
+}
+
+a:hover {
+    color: DarkGrey;
+}
+.navbar {
+    background-color: white !important;
+    height: 80px;
+    box-shadow: rgb(0 0 0 / 15%) 1.95px 1.95px 2.6px;
+}
+.cart-bg{
+    background-color: gainsboro;
+    padding: 1% 2% 1% 2%;;
+} 
+.sign-in {
+    margin-right: -3% !important;
+    margin-bottom:2%;
+}
+
+.cart-button{
+    background-color: white;
+    border: 1px solid white;
+}
+.modal-title{
+    color: white;
+}
+.modal-header{
+    background-color: black;
+}
+.close {
+    color: white !important;
+    opacity: 1 !important;
+}
+.modal-body{
+    background-color: Gainsboro;
+    height: 600px;
+}
+.model-footer-text{
+    font-family: 'Dosis';
+}
+
+p:nth-child(odd) {
+    margin: 2% -3% 2% -3%;
+    background: white;
+    padding: 2% 2%;
+  }
+
+  .modal-dialog {
+    float: right !important;
+}
+
+
+
+
+
+
+
+
+/* media queries for mobile devices */
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+    .main-logo{
+        width:98px
+    }    
+    .navbar {
+        height: 163px;
+    }
+     
+}
