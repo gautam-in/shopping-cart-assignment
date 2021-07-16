@@ -14,4 +14,23 @@ const getPreSignedUrl = ( fileKey ) => {
     });
 }
 
-exports.getPreSignedUrl = getPreSignedUrl;
+const injectTempUrl = (data, key) => {
+    if(Array.isArray(data)) {
+        return data.map(value => {
+            if(value[key]) {
+                const preSignedUrl = getPreSignedUrl(value[key]);
+                return {...value._doc, temp_url: preSignedUrl}
+            } else return value._doc
+        })
+    } else {
+        if(data[key]) {
+            const preSignedUrl = getPreSignedUrl(data[key]);
+            return {...data, temp_url: preSignedUrl}
+        } else return data
+    }
+}
+
+module.exports = {
+    getPreSignedUrl,
+    injectTempUrl
+}

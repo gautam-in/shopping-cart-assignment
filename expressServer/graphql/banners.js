@@ -1,4 +1,4 @@
-const { getPreSignedUrl } = require("../utils/aws")
+const { getPreSignedUrl, injectTempUrl } = require("../utils/aws")
 const Banners = require("../model/banners");
 const typeDefs = `
     type Banner {
@@ -11,24 +11,16 @@ const typeDefs = `
         temp_url: String!
     }
     
-    type Query {
+    extend type Query {
         banners: [Banner!]! 
-    }
-    
-    schema {
-        query: Query
     }
 `
 
 const resolvers = {
     Query: {
         banners: async (args, req) => {
-            const banners = await Banners.find({});
-            const bannersWithTempUrl = banners.map((banner) => {
-                const preSignedUrl = getPreSignedUrl(banner.bannerImageUrl);
-                return {...banner._doc, temp_url: preSignedUrl}
-            })
-            return bannersWithTempUrl
+            const banners = await Banners.model.find({});
+            return injectTempUrl(banners, "bannerImageUrl")
         }
     }
 }

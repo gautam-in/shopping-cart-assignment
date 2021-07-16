@@ -1,30 +1,30 @@
 const mongoose = require("mongoose");
 
 const Schema = mongoose.Schema;
-const bannerSchema = new Schema ({
-    bannerImageUrl: {
+const userSchema = new Schema({
+    name: {
         type: String,
         required: true,
     },
-    bannerImageAlt: {
+    firstName: {
         type: String,
         required: true,
     },
-    banner_uid: {
+    lastName: {
         type: String,
         required: true,
     },
-    isActive: {
-        type: Boolean,
-        required: true
+    password: {
+        type: String,
+        required: true,
     },
-    order: {
-        type: Number,
+    cart: {
+        type: [String],
         required: true
     }
 })
 
 module.exports = {
-    model: mongoose.model("Banner", bannerSchema, "banners"),
-    schema: bannerSchema
+    model: mongoose.model("User", userSchema, "users"),
+    schema: userSchema
 }
