@@ -7,13 +7,21 @@ function Signin() {
   return (
     <SigninStyle>
       <div>
-        <h2>Login</h2>
-        <p>Get acces to your Orders, Wishlist and Recommendations</p>
+        <h2>Signup</h2>
+        <p>We do not share yur personal details with anyone.</p>
       </div>
       <div>
         <form>
           <fieldset>
             {/* put aria-invalid for = true for the errors */}
+            <InputStyle>
+              <input type="text" required />
+              <span>First Name</span>
+            </InputStyle>
+            <InputStyle>
+              <input type="text" required />
+              <span>Last Name</span>
+            </InputStyle>
             <InputStyle>
               <input type="email" required />
               <span>Email</span>
@@ -21,6 +29,10 @@ function Signin() {
             <InputStyle>
               <input type="password" required />
               <span>Password</span>
+            </InputStyle>
+            <InputStyle>
+              <input type="password" required />
+              <span>Confirm Password</span>
             </InputStyle>
             <ButtonStyle
               type="submit"

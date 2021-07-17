@@ -2,8 +2,12 @@ import styled from 'styled-components';
 
 export const SigninStyle = styled.section`
   display: flex;
+  flex-direction: column;
   div {
     flex: 1;
+  }
+  & > div {
+    padding: 1em;
   }
   div form fieldset {
     border: none;
@@ -14,5 +18,8 @@ export const SigninStyle = styled.section`
   }
   div form > div {
     color: red;
+  }
+  @media (min-width: 1025px) {
+    flex-direction: row;
   }
 `;

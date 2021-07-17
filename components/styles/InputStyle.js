@@ -2,8 +2,9 @@ import styled from 'styled-components';
 
 export const InputStyle = styled.div`
   position: relative;
-  width: 50%;
+  width: 100%;
   margin-top: 2em;
+  padding: 0;
   &[aria-invalid='true'] > input {
     border-bottom: 1px solid var(--errorRed);
   }
@@ -36,5 +37,9 @@ export const InputStyle = styled.div`
     font-size: 13px;
     opacity: 1;
     color: var(--themeBlue);
+  }
+
+  @media (min-width: 1025px) {
+    width: 50%;
   }
 `;
