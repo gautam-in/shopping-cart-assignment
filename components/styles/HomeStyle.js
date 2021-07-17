@@ -25,6 +25,9 @@ export const CategoryStyle = styled.section`
   div article > * {
     margin-top: 1em;
   }
+  div article h2 {
+    font-weight: bold;
+  }
 
   /* div article h2 {
     font-size: 1em;

@@ -8,6 +8,5 @@ export const Main = styled.main`
   @media (min-width: 1025px) {
     max-width: ${pageMaxWidth};
     margin: 0 auto;
-    min-height: calc(100vh - (52px + 90px));
   }
 `;
