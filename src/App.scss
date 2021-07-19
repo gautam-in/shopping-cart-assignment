@@ -1,0 +1,64 @@
+$black: black;
+$gray: #9b9b9b;
+$flexContainer: flex;
+$red:red;
+$font-size:14px;
+$phone_width: 85%;
+$margin:20px;
+$topBottomMargin:0px 20px;
+$desktop_width:60%;
+
+.App {
+  display: flex;
+  justify-content: center;
+}
+
+.auth-form {
+  width:$desktop_width;
+  margin: $topBottomMargin;
+}
+
+.flex-div {
+  display: $flexContainer;
+  justify-content: space-between;
+  width: $desktop_width;
+}
+
+@media only screen and (max-width: 600px) {
+  .flex-div {
+    flex-direction: column;
+    width: $phone_width;
+  }
+  .auth-form{
+    width: $phone_width;
+  }
+}
+
+@mixin alignment($align) {
+  text-align: $align;
+  margin: $margin;
+  font-size: $font-size;
+}
+
+.align-left {
+  @include alignment($align: left)
+}
+
+.align-right {
+  @include alignment($align: right)
+}
+
+.align-center {
+  @include alignment($align: center)
+}
+
+.error-text {
+  color:$red !important;
+  font-size: $font-size;
+  text-align: center;
+  margin:$margin;
+}
+
+.text-field-style {
+  margin-bottom: $topBottomMargin;
+}
