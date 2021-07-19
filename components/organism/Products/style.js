@@ -3,7 +3,7 @@ import styled from 'styled-components'
 const ProductStyle = styled.div`
     display:flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: flex-start;
     flex-direction: row;
     width:100%;
 `;

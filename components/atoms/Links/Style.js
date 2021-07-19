@@ -24,9 +24,9 @@ const StyledMenu = styled.div`
 
 
 const StyledExplore = styled.a`
-    background:#bf2957;
-    font-family:'Myriad Pro Regular';
-    color:#fff;
+    background:${({theme:{colors} })=> colors.btnColor};
+    font-family:${({theme:{fonts} })=> fonts[2]};
+    color:${({theme:{colors} })=> colors.white};
     border:none;
     text-align: center;
     width:auto;

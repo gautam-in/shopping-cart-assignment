@@ -1,21 +1,26 @@
 import MenuList from  '../../molecules/Menu/MenuList'
+import MobileMenu from  '../../molecules/Menu/MobileMenu'
 import { ProductStyle ,Container} from './style'
-import Product from '../../molecules/Product/Product'
+import SingleProduct from '../../molecules/Product/Product'
 
 function Products({products,menu}){
-    
+    console.log("products",products)
 
-    const listItems = products.map((data,i) =>
-        <Product key={i} product={data}/>
+    const listItems = products.map((data) =>
+         <SingleProduct key={data.id} data={data}/>
+        // console.log("row",data)
     );
     
     return (
+        <>
+        <MobileMenu menuData={menu} dropDownTheme='mobile' />
         <Container>
             <MenuList menuData = {menu} />    
             <ProductStyle>
                 {listItems}
             </ProductStyle>
         </Container>
+        </>
     )
 }
 

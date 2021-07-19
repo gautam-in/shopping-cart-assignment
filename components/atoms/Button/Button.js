@@ -4,10 +4,10 @@ import {ButtonStyle} from './style'
 
 const Button= (props) => {
   
-  const { children,type, cname } = props;
+  const { children,type, cname, btnTheme } = props;
   
   return (
-        <ButtonStyle className={cname} type={type}>
+        <ButtonStyle className={cname} type={type} btnTheme={btnTheme}>
           <button class={cname}>{children}</button>
         </ButtonStyle>
   )

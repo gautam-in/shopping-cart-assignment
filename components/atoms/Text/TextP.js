@@ -2,16 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import StyledP from './style';
 
-const TextP = ({children}) => {
+const TextP = (props) => {
   return (
-    <StyledP>
-      {children}
+    <StyledP {...props}>
+      {props.children}
     </StyledP>
   );
 };
-/*
-TextP.propTypes = {
-  customText: PropTypes.string.isRequired,
-  cname: PropTypes.string.isRequired,
-};*/
+
 export default TextP;

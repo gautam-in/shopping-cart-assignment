@@ -6,9 +6,9 @@ const ButtonStyle = styled.div`
      justify-content: center;
     
     .variant_category {
-        background:#bf2957;
+        background: ${({theme:{colors} })=> colors.btnColor};
         font-family:'Myriad Pro Regular';
-        color:#fff;
+        color:${({theme:{colors} })=> colors.white};
         border:none;
         text-align: center;
         width:auto;
@@ -24,6 +24,21 @@ const ButtonStyle = styled.div`
         width:100%;
         height:30px;
         margin-top:20px;
+    }
+
+    .variant_product {
+        font-family:${({theme,btnTheme})=>theme.buttons[btnTheme].fonts};
+        background:${({theme,btnTheme})=>theme.buttons[btnTheme].background};
+        color:${({theme,btnTheme})=>theme.buttons[btnTheme].color};
+        border:${({theme,btnTheme})=>theme.buttons[btnTheme].border};
+        font-size:${({theme,btnTheme})=>theme.buttons[btnTheme].fontSize};
+        padding:${({theme,btnTheme})=>theme.buttons[btnTheme].padding};
+        margin-top:${({theme,btnTheme})=>theme.buttons[btnTheme].marginTop}; ;
+        text-align: center;
+        width:100%;
+        height:auto;
+        
+        
     }
     
 `;
