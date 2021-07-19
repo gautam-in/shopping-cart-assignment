@@ -37,8 +37,7 @@
     flex-basis: 250px;
     height: 345px;
     margin-top: 10px;
-    border-right: 2px solid $gray-color;
-    border-bottom: 2px dashed $gray-color;
+    border: 2px solid $gray-color;
     .categoryName {
       font-size: 13px;
       line-height: 1.1;
@@ -50,15 +49,12 @@
       align-items: center;
       height: 80%;
       margin-top: 20px;
-      .des {
+      .description {
         background-color: $gray-color;
         padding: 10px;
         font-size: 12px;
         height: 86px;
         overflow: hidden;
-        -webkit-line-clamp: 4;
-        display: -webkit-box;
-        -webkit-box-orient: vertical;
       }
       .app-btn {
         margin-left: 25px;

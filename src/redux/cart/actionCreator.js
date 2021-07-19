@@ -1,7 +1,6 @@
 import { ADD_REMOVE_TO_CART } from "./actionType";
 
 export const addRemoveToCart = (productData) => (dispatch, getState) => {
-  // let selectProduct;
   let finalProductData = [];
   let flag = false;
   let cartData = getState().getCartDetail.cartItems;
