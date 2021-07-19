@@ -1,0 +1,55 @@
+{
+    "name": "bazaar",
+    "plugins": [
+        {
+            "name": "Styled Components",
+            "description": "Utilising tagged template literals (a recent addition to JavaScript) and the power of CSS, styled-components allows you to write actual CSS code to style your components.",
+            "url": "https://styled-components.com/docs"
+        },
+        {
+            "name": "Fetch",
+            "description": "Next.js has a built-in polyfill for the fetch API. You don't need to worry about using it on either server or client side.",
+            "url": "https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API"
+        },
+        {
+            "name": "Axios",
+            "description": "Promise based HTTP client for the browser and node.js.",
+            "url": "https://github.com/axios/axios"
+        },
+        {
+            "name": "SVGR",
+            "description": "Transform SVGs into React components.",
+            "url": "https://react-svgr.com/docs/getting-started/"
+        },
+        {
+            "name": "Environment Variables",
+            "description": "Use environment variables in your next.js project for server side, client or both.",
+            "url": "https://github.com/vercel/next.js/tree/canary/examples/environment-variables"
+        },
+        {
+            "name": "React Query",
+            "description": "Hooks for fetching, caching and updating asynchronous data in React.",
+            "url": "https://react-query.tanstack.com/overview"
+        },
+        {
+            "name": "React Redux",
+            "description": "Redux helps you write applications that behave consistently, run in different environments (client, server, and native), and are easy to test.",
+            "url": "https://redux.js.org/introduction/getting-started"
+        },
+        {
+            "name": "ESLint",
+            "description": "A pluggable and configurable linter tool for identifying and reporting on patterns in JavaScript. Maintain your code quality with ease.",
+            "url": "https://eslint.org/docs/user-guide/getting-started"
+        },
+        {
+            "name": "Prettier",
+            "description": "An opinionated code formatter; Supports many languages; Integrates with most editors.",
+            "url": "https://prettier.io/docs/en/index.html"
+        },
+        {
+            "name": "Testing Library",
+            "description": "The React Testing Library is a very light-weight solution for testing React components. It provides light utility functions on top of react-dom and react-dom/test-utils.",
+            "url": "https://testing-library.com/docs/"
+        }
+    ]
+}
