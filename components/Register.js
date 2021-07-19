@@ -12,6 +12,7 @@ function Register() {
     password: '',
     confirmPassword: '',
   });
+  console.log(errors);
   return (
     <SigninStyle>
       <div>
@@ -42,7 +43,7 @@ function Register() {
               />
               <span>Last Name</span>
             </InputStyle>
-            <InputStyle>
+            <InputStyle error={errors?.email || false}>
               <input
                 type="text"
                 name="email"
@@ -53,7 +54,9 @@ function Register() {
               />
               <span>Email</span>
             </InputStyle>
-            <InputStyle>
+            <InputStyle
+              error={errors?.password || errors?.confirmPassword || false}
+            >
               <input
                 type="password"
                 name="password"
@@ -64,7 +67,7 @@ function Register() {
               />
               <span>Password</span>
             </InputStyle>
-            <InputStyle>
+            <InputStyle error={errors?.confirmPassword || false}>
               <input
                 type="password"
                 name="confirmPassword"
@@ -82,7 +85,14 @@ function Register() {
               Submit
             </ButtonStyle>
           </fieldset>
-          <div role="alert">errors</div>
+          <div role="alert">
+            <ul>
+              {errors &&
+                Object.entries(errors).map((item, index) => (
+                  <li key={index}>{item[1]}</li>
+                ))}
+            </ul>
+          </div>
         </form>
       </div>
     </SigninStyle>
