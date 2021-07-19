@@ -1,15 +1,32 @@
 {
-  "name": "code-exercise",
+  "name": "client",
   "version": "1.0.0",
-  "description": "This is a shopping cart coding exercise",
-  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "canned -p 5000 ./server"
+    "dev": "next dev -p 8888",
+    "server": "canned -p 5000  ./server",
+    "build": "next build",
+    "start": "next start"
   },
-  "author": "",
-  "license": "MIT",
   "dependencies": {
-    "canned": "^0.3.12"
+    "axios": "^0.21.1",
+    "canned": "^0.3.13",
+    "dotenv": "^10.0.0",
+    "next": "^11.0.1",
+    "prettier": "^2.3.2",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-hook-form": "^7.10.0",
+    "react-query": "^3.18.1",
+    "react-redux": "^7.2.4",
+    "react-responsive-carousel": "^3.2.19",
+    "redux-devtools-extension": "^2.13.9",
+    "redux-thunk": "^2.3.0",
+    "styled-components": "^5.3.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.14.6",
+    "@babel/preset-env": "^7.14.7",
+    "babel-eslint": "^10.1.0",
+    "redux-logger": "^3.0.6"
   }
 }
