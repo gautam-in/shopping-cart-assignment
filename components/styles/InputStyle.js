@@ -14,6 +14,7 @@ export const InputStyle = styled.div`
     outline: none;
     border: none;
     border-bottom: 1px solid var(--darkGrey);
+    border-color: ${(props) => (props.error ? 'red' : 'var(--darkGrey)')};
     box-shadow: none !important;
     line-height: 2em;
     font-size: 1.2em;
@@ -30,15 +31,20 @@ export const InputStyle = styled.div`
     left: 10px;
     transition: 0.2s ease all;
   }
+
   & input:focus ~ span,
   & input:not(:focus):valid ~ span {
-    top: -7px;
+    top: -15px;
     left: 0;
     font-size: 13px;
     opacity: 1;
     color: var(--themeBlue);
   }
+  /* ,
+  & input[type=email]:not(:focus):invalid ~ span
 
+  for email case, we need to handle this
+  */
   @media (min-width: 1025px) {
     width: 50%;
   }
