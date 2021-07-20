@@ -1,0 +1,20 @@
+.carousel{
+    width:100%; 
+    .glide__slide{
+        img{
+            width:100%
+        }
+    } 
+    
+}
+
+.carousel .glide__bullet{
+    background-color: $color-background-light;
+            }
+            
+.carousel .glide__bullet:hover {
+    background-color: $color-font-medium-dark;
+}
+.carousel .glide__bullet--active{
+    background-color: $color-font-dark;
+            }

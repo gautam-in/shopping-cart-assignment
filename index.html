@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sabka Bazaar</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Dosis:400,600,700"
+    />
+    <link rel="stylesheet" href="/src/sass/main.scss" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@glidejs/glide@latest/dist/css/glide.core.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@glidejs/glide@latest/dist/css/glide.theme.min.css"
+    />
+  </head>
+  <body>
+    <div class="header-container">
+      <header class="header">
+        <div class="header__logo">
+          <img
+            srcset="/static/images/logo.png 1x, /static/images/logo_2x.png 2x"
+            alt="Logo"
+            src="/static/images/logo.png"
+          />
+        </div>
+        <nav class="header__nav">
+          <ul class="header__nav__list">
+            <li class="header__nav__list--item"><a href="#home">Home</a></li>
+            <li class="header__nav__list--item">
+              <a href="#products">Products</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="header__action">
+          <ul class="header__action__list">
+            <li class="header__action__list--item">
+              <a title="SignIn" href="#login">SignIn</a>
+            </li>
+            <li class="header__action__list--item">
+              <a title="User Registration" href="#register">Register</a>
+            </li>
+          </ul>
+        </div>
+        <div class="header__cart">
+          <button aria-label="Shopping Cart" class="header__cart__box">
+            <div class="header__cart--button"></div>
+            <div class="header__cart--count">0</div>
+            <div class="header__cart--text">Items</div>
+          </button>
+        </div>
+      </header>
+    </div>
+    <main class="main"></main>
+    <footer class="footer">
+      Copyright &copy; 2011-2018 Sabka Bazaar Grocery Supplies Pvt Ltd
+    </footer>
+    <div class="overlay hide"></div>
+    <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide@latest/dist/glide.min.js"></script>
+    <script type="module" src="/src/js/index.js"></script>
+  </body>
+</html>

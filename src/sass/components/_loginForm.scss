@@ -1,0 +1,81 @@
+.login {
+  display: grid;
+  grid-template-columns: 1fr max-content repeat(3, 1fr);
+  grid-template-rows: max-content;
+  grid-row: auto;
+  margin-top: 5rem;
+  grid-gap: 10rem;
+  min-height: 78vh;
+  justify-content: center;
+  @include respond(tab-port) {
+    grid-gap: 4rem;
+  }
+
+  &__intro {
+    grid-column: 2 / span 1;
+    @include respond(tab-port) {
+      grid-column: 2 / -1;
+      grid-row: 1 / span 1;
+    }
+  }
+  &-form {
+    grid-column: 3 / span 2;
+    @include respond(tab-port) {
+      grid-column: 2 / span 3;
+    }
+    &__group {
+      position: relative;
+    }
+
+    &__ip {
+      outline: none;
+      width: 100%;
+      margin-bottom: 1.5rem;
+      font-size: 1.6rem;
+      padding: 1.5rem 0;
+      border: none;
+      &:not(button) {
+        border-bottom: 1px solid black;
+      }
+      &.btn {
+        background-color: $color-icon-red;
+        color: $color-font-light;
+        margin: 3rem 0 1.5rem 0;
+        &:hover {
+          background-color: $color-background-light;
+        }
+      }
+      &::placeholder {
+        color: $color-font-medium-dark;
+        font-family: $font-family-primary;
+        font-size: 1.4rem;
+      }
+      & + label.login-form__label {
+        visibility: hidden;
+        position: absolute;
+        top: 1rem;
+        left: 0;
+        color: $color-input-focus-blue;
+        transition: transform 0.2s;
+      }
+
+      &:focus {
+        border-top: none;
+        border-right: none;
+        border-left: none;
+        border-bottom: 2px solid rgb(126, 178, 247);
+
+        &::placeholder {
+          color: transparent;
+        }
+        & + label.login-form__label {
+          visibility: visible;
+          transform: translateY(-10px);
+        }
+      }
+      &:focus:invalid {
+        border-bottom: 2px solid $color-error;
+      }
+    }
+  }
+}

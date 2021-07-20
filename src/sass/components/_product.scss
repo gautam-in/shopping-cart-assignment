@@ -1,0 +1,153 @@
+.product-catalouge {
+  display: grid;
+  grid-template-columns: 0.6fr 15vw 3fr 0.6fr;
+  min-height: 85vh;
+  @include respond(tab-land) {
+    grid-template-columns: 0fr 20vw 3fr 0fr;
+  }
+  @include respond(phone) {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, min-content);
+  }
+}
+.sidebar {
+  background-color: $color-background-light;
+  grid-column: 2;
+  @include respond(phone) {
+    grid-column: 1 / span 2;
+    grid-row: 1;
+  }
+}
+.sidebar__toggle-btn {
+  font-size: 1.8rem;
+  display: none;
+  &::after {
+    content: "<";
+    transform: rotate(90deg) translateX(-1px) scale(2.5);
+    float: right;
+    line-height: 1;
+  }
+
+  &.collapse {
+    &::after {
+      transform: rotate(270deg) translateY(-5px) scale(2.5);
+    }
+  }
+  @include respond(phone) {
+    display: block;
+  }
+}
+.catalouge__filter {
+  padding: 1rem 0 0 0.5rem;
+  list-style-type: none;
+
+  &--item {
+    padding: 1rem 0 0 2rem;
+    border-bottom: 1px solid $color-primary-light;
+    color: $color-primary;
+    line-height: 1.7;
+    font-size: 1.7rem;
+    &.selected {
+      background-color: $color-icon-red;
+      color: $color-font-light;
+    }
+    color: $color-font-medium-dark;
+  }
+  @include respond(phone) {
+    //display: none;
+  }
+}
+
+.product-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 1rem;
+  padding: 5rem 0 0 3rem;
+  max-height: 88vh;
+  overflow: scroll;
+  @include respond(tab-port) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @include respond(phone) {
+    grid-column: 1 / -1;
+    grid-template-columns: repeat(1, 1fr);
+  }
+  &-not-found {
+    grid-column: 1 / -1;
+  }
+}
+.product__details {
+  display: grid;
+  padding-right: 1rem;
+  grid-template-columns: repeat(2, 1fr);
+  border-width: 0.5rem;
+  border-style: solid;
+  max-height: 45rem;
+  border-image: radial-gradient(
+      $color-background-light 0%,
+      $color-background-white 60%
+    )
+    1 100%;
+
+  border-left: none;
+  &--title {
+    grid-column: 1 / span 2;
+    justify-self: left;
+  }
+  &--image {
+    grid-column: 1 / span 2;
+    justify-self: center;
+    img {
+      width: 100%;
+      max-width: 16rem;
+    }
+    @include respond(tab-port) {
+      grid-column: 1 / span 1;
+    }
+    @include respond(phone) {
+      grid-row: 2 / span 2;
+    }
+  }
+  &--desc {
+    grid-column: 1 / span 2;
+    padding: 1rem;
+    background-color: $color-background-light;
+
+    @include respond(tab-port) {
+      grid-column: 2 / span 1;
+    }
+  }
+  &--price {
+    padding-left: 1rem;
+    align-self: end;
+
+    @include respond(tab-port) {
+      display: none;
+    }
+  }
+  &--buy {
+    justify-self: end;
+    align-self: end;
+    @include respond(tab-port) {
+      grid-column: 1 / -1;
+      justify-self: auto;
+      align-self: center;
+      button {
+        width: 100%;
+        font-size: 1.6rem;
+      }
+    }
+    @include respond(phone) {
+      grid-column: 2 / span 1;
+    }
+  }
+  &--inline-price {
+    display: none;
+    @include respond(tab-port) {
+      display: inline;
+    }
+  }
+  @include respond(phone) {
+    border: none;
+  }
+}

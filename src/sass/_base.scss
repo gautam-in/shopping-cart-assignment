@@ -1,0 +1,195 @@
+$color-primary: black;
+$color-primary-light: rgb(194, 190, 190);
+$color-background-light: rgba(199, 197, 197, 0.555);
+$color-background-grey: rgb(226 226 226 / 99%);
+$color-background-white: white;
+$color-background-black: black;
+$color-background-red: #ce416c;
+$color-background-darkred: #bf0b42;
+$color-icon-red: #ce416c;
+$color-font-dark: rgb(43, 42, 42);
+$color-font-medium-dark: rgb(117, 117, 117);
+$color-font-light: rgb(247, 244, 244);
+$color-input-focus-blue: rgb(126, 178, 247);
+$color-error: #e70606cb;
+$color-valid: rgb(126, 178, 247);
+$font-family-primary: Dosis, sans-serif;
+%heading {
+  color: $color-primary;
+  line-height: 1;
+  margin-bottom: 1rem;
+}
+
+%button {
+  outline: none;
+  border: none;
+  cursor: pointer;
+  background-color: $color-background-red;
+  color: $color-font-light;
+  padding: 1.5rem;
+  &:hover {
+    box-shadow: -1px 2px 13px 5px #b1abab;
+  }
+  &:active {
+    background-color: $color-background-darkred;
+  }
+}
+.heading-1 {
+  @extend %heading;
+  font-size: 2.5rem;
+}
+.heading-2 {
+  @extend %heading;
+  font-size: 2.25rem;
+}
+.heading-3 {
+  @extend %heading;
+  font-size: 2rem;
+}
+
+.heading-4 {
+  @extend %heading;
+  font-size: 1.7rem;
+}
+.heading-5 {
+  @extend %heading;
+  font-size: 1.25rem;
+}
+
+.heading-6 {
+  @extend %heading;
+  font-size: 1rem;
+}
+.description-1 {
+  font-size: 1.25rem;
+  color: $color-primary;
+  margin-bottom: 1rem;
+}
+.description-2 {
+  font-size: 1rem;
+  color: $color-primary;
+  margin-bottom: 1rem;
+}
+.button-1 {
+  @extend %button;
+  border-radius: 3px;
+}
+
+.button-2 {
+  outline: none;
+  border: none;
+  background-color: $color-icon-red;
+  color: $color-font-light;
+  font-size: 1.6rem;
+  padding: 1.5rem;
+  &:hover {
+    background-color: $color-background-darkred;
+  }
+}
+.button-3 {
+  outline: none;
+  border: none;
+  background-color: $color-icon-red;
+  color: $color-font-light;
+  font-size: 1.6rem;
+  padding: 1.5rem;
+  &:hover {
+    background-color: $color-background-darkred;
+  }
+  &:focus {
+    box-shadow: 10px 10px 10px;
+  }
+}
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%; /* 16px * 62.5/100 = 10px*/
+  box-sizing: border-box;
+  font-family: Dosis, sans-serif;
+  color: $color-primary;
+  @include respond(desktop) {
+  }
+  @include respond(tab-land) {
+    font-size: 56.24%; //1 rem = 9px, 9/16 = 50%
+  }
+  @include respond(tab-port) {
+    font-size: 50%; //1 rem = 8px, 8/16 = 50%
+  }
+
+  @include respond(phone) {
+    font-size: 40%; //1 rem = 6px, 8/16 = 50%
+  }
+  a {
+    @include resetLinkStyle;
+  }
+}
+.main {
+  min-height: 85vh;
+}
+.overlay {
+  height: 100vh;
+  background: rgb(16 16 16 / 81%);
+  width: 100vw;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  position: fixed;
+  display: grid;
+  grid-template-columns: repeat(10, 1fr) 0.3fr;
+  &.hide {
+    display: none;
+  }
+  @include respond(tab-port) {
+    background: rgb(16 16 16 / 0%);
+  }
+}
+nav > ul > li {
+  cursor: pointer;
+}
+.scroll-freeze {
+  overflow: hidden;
+}
+
+.action-icon-round {
+  @include resetButtonStyle;
+  display: inline-block;
+  background: $color-icon-red;
+  width: 20px;
+  height: 20px;
+  font-size: 22px;
+  text-align: center;
+  border-radius: 10px;
+  color: white;
+  line-height: 12px;
+  cursor: pointer;
+}
+.spinner {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%);
+
+  svg {
+    height: 6rem;
+    width: 6rem;
+    fill: $color-icon-red;
+    animation: rotate 2s infinite linear;
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
