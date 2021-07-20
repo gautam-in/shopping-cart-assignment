@@ -11,6 +11,8 @@ const callGetMethod = async (api) =>{
 
 const FetchCategory = async () => (callGetMethod(`${endpoint}/categories`))
 
+const FetchSlider = async() => (callGetMethod(`${endpoint}/banners`))
+
 const FetchProducts = async (chunked=true,category) => {
 
     let api = `${endpoint}/products/`
@@ -30,4 +32,4 @@ const FetchProducts = async (chunked=true,category) => {
 
 const FetchUser = async () => (callGetMethod(`${endpoint}/user`))
 
-export {FetchCategory,FetchProducts,FetchUser}
+export {FetchCategory,FetchProducts,FetchUser,FetchSlider}

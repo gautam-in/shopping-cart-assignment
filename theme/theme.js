@@ -53,6 +53,10 @@ const theme = {
         color:"#fff",
         border:"none"
       }
+    },
+    shadowCard: {
+      borderBottom : "none",
+      boxShadow:"0 3px 9px -5px"
     }
   }
 

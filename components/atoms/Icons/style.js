@@ -5,6 +5,7 @@ import {PlusCircleFill} from "@styled-icons/bootstrap/PlusCircleFill"
 import {MinusCircle} from "@styled-icons/boxicons-solid/MinusCircle" 
 import {ChevronDown} from "@styled-icons/boxicons-regular/ChevronDown" 
 import {ChevronLeft} from "@styled-icons/boxicons-regular/ChevronLeft" 
+import {DotSingle} from "@styled-icons/entypo/DotSingle" 
 
 const StyledCartIcon = styled(ShoppingCart)`
     color: #bf2957;
@@ -35,11 +36,17 @@ const StyledMenuCloseIcon = styled(ChevronLeft)`
     color:#fff;
 `;
 
+const StyledDotSingle = styled(DotSingle)`
+    width:25px;
+    color:${({color})=>color};
+`;
+
 export {
     StyledCartIcon,
     StyledCloseIcon,
     StyledPlusIcon,
     StyledMinusIcon,
     StyledMenuOpenIcon,
-    StyledMenuCloseIcon
+    StyledMenuCloseIcon,
+    StyledDotSingle
 }
