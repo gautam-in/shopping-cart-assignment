@@ -21,6 +21,7 @@ function Home() {
     RequestsHandler.getData(`${BACKEND_URL}categories/`, {
       name: 'categories',
       setData: contextData.setData,
+      state: contextData,
     });
   }, [bannersData, categoriesData]);
   return (
