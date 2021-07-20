@@ -1,7 +1,9 @@
 import React from 'react'
 import HorizontalListView from '../../../components/horizontalListView';
 
-export default function ProductList() {
+export default function CategoryList() {
+
+
     const cardsData = [
         { id: 1, title: 'CARD 1', content: 'Clark Kent', imgUrl: 'https://unsplash.it/200/200' },
         { id: 2, title: 'CARD 2', content: 'Bruce Wayne', imgUrl: 'https://unsplash.it/201/200' },
@@ -16,7 +18,7 @@ export default function ProductList() {
     ]
 
     return (
-        <HorizontalListView>
+        <HorizontalListView title="Featured Categories">
             {
                 cardsData.map((card) => (
                     <Card title={card.title}

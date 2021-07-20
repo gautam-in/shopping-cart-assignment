@@ -2,7 +2,27 @@
     margin: auto;
 }
 
-.cards-container {
+.CardContainer {
+    display: flex;
+
+    .CardContainer_ArrowContainer{
+        display: flex;
+    }
+
+    button {
+        color: blue;
+        border: none;
+        background-color: white;
+        text-align: center;
+        padding: 14px;
+        /* text-decoration: none; */
+        cursor: pointer;
+    }
+    button:hover {
+        background-color: whitesmoke;
+    }
+}
+.CardContainer__List {
     display: flex;
     border-radius: 6px;
     color: #333;
@@ -46,7 +66,7 @@
         width: 100%;
     }
 
-    .cards-container {
+    .CardContainer__List {
         padding: 0.5rem;
     }
 

@@ -17,11 +17,12 @@
 
     .CartContainer {
         display: flex;
-        justify-content: space-around;
+        justify-content: flex-end;
         align-items: center;
         width: 30%;
 
         .LoginButton {
+            margin-right: 10px;
         }
 
         img {
