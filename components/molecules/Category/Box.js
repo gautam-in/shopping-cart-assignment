@@ -23,7 +23,7 @@ function Box({data,index}){
             </LeftSection>
             <RightSection>
                 <HeadingH3>{data.name}</HeadingH3>
-                <TextP>{description}</TextP>
+                <TextP paraTheme="white">{description}</TextP>
                 <Explore href={`/products?category=${id}`} >{`Explore ${key}`}</Explore>
             </RightSection>
         </Container>

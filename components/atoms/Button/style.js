@@ -4,7 +4,7 @@ const ButtonStyle = styled.div`
 
      display:flex;
      justify-content: center;
-    
+     width:100%;
     .variant_category {
         background: ${({theme:{colors} })=> colors.btnColor};
         font-family:'Myriad Pro Regular';
@@ -27,13 +27,13 @@ const ButtonStyle = styled.div`
     }
 
     .variant_product {
-        font-family:${({theme,btnTheme})=>theme.buttons[btnTheme].fonts};
-        background:${({theme,btnTheme})=>theme.buttons[btnTheme].background};
-        color:${({theme,btnTheme})=>theme.buttons[btnTheme].color};
-        border:${({theme,btnTheme})=>theme.buttons[btnTheme].border};
-        font-size:${({theme,btnTheme})=>theme.buttons[btnTheme].fontSize};
-        padding:${({theme,btnTheme})=>theme.buttons[btnTheme].padding};
-        margin-top:${({theme,btnTheme})=>theme.buttons[btnTheme].marginTop}; ;
+        font-family:${({theme,btnTheme})=>theme?.buttons[btnTheme]?.fonts};
+        background:${({theme,btnTheme})=>theme?.buttons[btnTheme]?.background};
+        color:${({theme,btnTheme})=>theme?.buttons[btnTheme]?.color};
+        border:${({theme,btnTheme})=>theme?.buttons[btnTheme]?.border};
+        font-size:${({theme,btnTheme})=>theme?.buttons[btnTheme]?.fontSize};
+        padding:${({theme,btnTheme})=>theme?.buttons[btnTheme]?.padding};
+        margin-top:${({theme,btnTheme})=>theme?.buttons[btnTheme]?.marginTop}; ;
         text-align: center;
         width:100%;
         height:auto;

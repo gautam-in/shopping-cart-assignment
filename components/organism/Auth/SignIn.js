@@ -12,7 +12,7 @@ function SignIn() {
         <Container>
             <LeftSection>
                 <Heading cname="h1" type="h3">Login</Heading>
-                <TextP>Get Access to your orders wishlist and Recommendations</TextP>
+                <TextP paraTheme="white">Get Access to your orders wishlist and Recommendations</TextP>
             </LeftSection>
             <RightSection>
                 <LoginForm onSubmit={submit} />

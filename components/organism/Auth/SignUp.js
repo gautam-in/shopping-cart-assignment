@@ -12,7 +12,7 @@ function SignUp() {
         <Container>
             <LeftSection>
                 <Heading cname="h1" type="h3">Signup</Heading>
-                <TextP>We don't share your personal details with anyone</TextP>
+                <TextP paraTheme="white">We don't share your personal details with anyone</TextP>
             </LeftSection>
             <RightSection>
                 <SignUpForm onSubmit={submit} />

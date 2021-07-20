@@ -7,7 +7,8 @@ const theme = {
       lightBlue: "#AFDBD2",
       onyx: "#36313D",
       white:"#fff",
-      btnColor:"#bf2957"
+      btnColor:"#bf2957",
+      gray:"#f0f0f0"
     },
     fonts: ["sans-serif", "Roboto","Myriad Pro Regular"],
     fontSizes: {
@@ -18,6 +19,13 @@ const theme = {
     paragraph: {
       gray : {
         color:"#f0f0f0",
+        fonts:"sans-serif",
+        padding:"8px",
+        fontSize:"12px",
+        fontWeight:"700",
+        marginTop:"0px"
+      },white:{
+        color:"#fff",
         fonts:"sans-serif",
         padding:"8px",
         fontSize:"12px",

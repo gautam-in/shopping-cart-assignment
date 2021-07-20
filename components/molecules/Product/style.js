@@ -4,12 +4,14 @@ import {device} from '../../../theme/device'
 const ProductStyled = styled.div`
     display:flex;
     flex-direction:column;
-    border-bottom: 1px solid black;
-    width:25%;
+    border-bottom: 2px solid ${({theme:{colors}})=>(colors.gray)};
+    border-bottom-style:dashed;
+    width:24.5%;
     padding:3px;
     justify-content:flex-start;
+    margin-left:1px;
     @media(max-width: 768px) {
-      width: calc(100% / 2);
+      width: calc(100% / 2.1);
     }
 
     @media(max-width: 480px) {
@@ -129,6 +131,36 @@ const ProductDescription = styled.div`
 
 `;
 
+
+const ProductPrice = styled.div`
+    display:flex;
+    justify-content: space-between;
+    @media(max-width: 480px) {
+      display:none;
+    }
+    @media(max-width: 768px) {
+      display:none;
+    }
+`;
+
+const ProductPriceMobile = styled.div`
+    display:none;
+    width:100%;
+    @media(max-width: 480px) {
+      display:flex;
+      width:100%;
+    }
+    @media(max-width: 768px) {
+      display:flex;
+      width:100%;
+    }
+`;
+
+const PriceText = styled.div`
+    font-family: 'The hand black';
+    font-size:18px;
+    font-weight:400;
+`;
 export {
     ProductStyled,
     TopSection,
@@ -139,5 +171,8 @@ export {
     ProductDesc,
     ProductRow,
     ProductImage,
-    ProductDescription
+    ProductDescription,
+    ProductPrice,
+    PriceText,
+    ProductPriceMobile
 }

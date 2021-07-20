@@ -1,13 +1,30 @@
 import {ProductStyled,TopSection,MiddleSection,BottomSection,Price,Buy,
-    ProductDesc,ProductRow,ProductImage,ProductDescription} from './style'
+    ProductDesc,ProductRow,ProductImage,ProductDescription,ProductPrice,ProductPriceMobile,PriceText} from './style'
 import HeadingH4 from '../../atoms/Heading/HeadingH4'
 import TextP from '../../atoms/Text/TextP'
 import Button from '../../atoms/Button/Button'
 import Image from '../../atoms/Image/Image'
 import {subStr} from '../../../lib/lib'
 
+const PriceTag = ({price})=>{
+    return(
+        <>
+            <ProductPrice>
+                <PriceText>MRP Rs.150</PriceText>
+                <div><Button cname='variant_category' btnTheme='product'>Buy Now</Button></div>
+            </ProductPrice>
+            <ProductPriceMobile>
+                <Button cname='variant_product' btnTheme="product">Buy Now <span>@ Rs{price}</span></Button>
+            </ProductPriceMobile>
+        </>
+    )
+}
+
+
 const SingleProduct = ({data})=>{
+    
     const {name,imageURL,description,price} = data;
+    
     return(
         <ProductStyled>
             <TopSection>
@@ -22,7 +39,8 @@ const SingleProduct = ({data})=>{
                 <ProductDescription>
                     <TextP paraTheme="gray">{subStr(description,120)}</TextP>
                     {/* <Price>MRP Rs {price}</Price> */}
-                    <Button cname='variant_product' btnTheme="product">Buy Now <span>@ Rs{price}</span></Button>
+                    {/* <Button cname='variant_product' btnTheme="product">Buy Now <span>@ Rs{price}</span></Button> */}
+                    <PriceTag price={price}/>
                 </ProductDescription>
             </BottomSection>
             {/* <MiddleSection>

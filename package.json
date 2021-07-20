@@ -16,6 +16,7 @@
     "@babel/plugin-proposal-export-default-from": "^7.14.5",
     "canned": "^0.3.12",
     "next": "^11.0.1",
+    "next-auth": "^3.27.3",
     "next-redux-wrapper": "^7.0.2",
     "prop-types": "^15.7.2",
     "react": "^17.0.2",
