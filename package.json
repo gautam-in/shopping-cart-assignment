@@ -2,14 +2,45 @@
   "name": "code-exercise",
   "version": "1.0.0",
   "description": "This is a shopping cart coding exercise",
-  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "canned -p 5000 ./server"
+    "move-images": "mkdir -p dist && cp -R ./static ./dist",
+    "dev-start": "parcel index.html",
+    "prod-build": "parcel build index.html",
+    "api-start": "canned -p 3000 ./server",
+    "temp_start": "npm-run-all --parallel devserver watch:sass  ",
+    "start": "npm-run-all move-images dev-start ",
+    "build": "npm-run-all move_images prod-build",
+    "test": "karma start"
   },
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "canned": "^0.3.12"
+    "@glidejs/glide": "^3.4.1",
+    "all": "^0.0.0",
+    "canned": "^0.3.13",
+    "handlebars": "^4.7.7",
+    "jasmine": "^3.8.0",
+    "jquery": "^3.6.0",
+    "puppeteer": "^10.1.0",
+    "run": "^1.4.0"
+  },
+  "devDependencies": {
+    "@parcel/transformer-image": "^2.0.0-nightly.2377",
+    "@parcel/transformer-sass": "^2.0.0-beta.1",
+    "browserify": "^17.0.0",
+    "jasmine-core": "^3.8.0",
+    "jasmine-jquery": "^2.1.1",
+    "jasmine-matchers": "^0.2.3",
+    "karma": "^6.3.4",
+    "karma-browserify": "^8.0.0",
+    "karma-chrome-launcher": "^3.1.0",
+    "karma-jasmine": "^4.0.1",
+    "karma-jasmine-jquery": "^0.1.1",
+    "karma-jasmine-matchers": "^4.0.2",
+    "karma-requirejs": "^1.1.0",
+    "npm-run-all": "^4.1.5",
+    "parcel": "^2.0.0-beta.1",
+    "requirejs": "^2.3.6",
+    "watchify": "^4.0.0"
   }
 }

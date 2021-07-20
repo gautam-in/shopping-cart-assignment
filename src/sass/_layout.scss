@@ -1,0 +1,102 @@
+.header {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 0.4fr 0.5fr minmax(min-content, 1fr) max-content 1fr 0.4fr;
+  grid-template-rows: auto auto;
+  padding: 1rem;
+  box-shadow: 0px 0px 10px 1px #0c0c0c57;
+  font-size: 1.4rem;
+
+  @include respond(tab-port) {
+    grid-template-columns: 0fr 1fr minmax(min-content, 1fr) max-content 1fr 0fr;
+    padding: 1rem 0;
+  }
+
+  &__logo {
+    grid-column: 2 / span 1;
+    grid-row: 1 / -1;
+    @include respond(tab-port) {
+      grid-row: 1 / span 1;
+      img {
+        width: 15rem;
+      }
+    }
+  }
+
+  &__nav {
+    font-size: 2rem;
+    align-self: center;
+    grid-column: 3 / span 1;
+    grid-row: 2 / span 1;
+    &__list {
+      @include resetListStyle;
+      display: flex;
+      justify-content: flex-start;
+      &--item {
+        margin-right: 2rem;
+        a {
+          @include resetLinkStyle;
+          color: $color-font-medium-dark;
+          font-weight: 550;
+        }
+      }
+    }
+    @include respond(phone) {
+      display: none;
+    }
+  }
+  &__action {
+    grid-column: 5 / span 1;
+    grid-row: 1 / span 1;
+    justify-self: end;
+    display: flex;
+    font-weight: bold;
+    &__list {
+      display: flex;
+      @include resetListStyle;
+      &--item {
+        margin-right: 1rem;
+        a {
+          @include resetLinkStyle;
+        }
+      }
+    }
+    @include respond(phone) {
+      display: none;
+    }
+  }
+  &__cart {
+    grid-column: 5 / span 1;
+    grid-row: 2 / span 1;
+    align-self: end;
+    justify-self: end;
+
+    &__box {
+      @include resetButtonStyle;
+      width: min-content;
+      display: flex;
+      align-items: center;
+      padding: 1rem;
+      &:hover {
+        background-color: $color-background-light;
+      }
+    }
+    transform: translateY(1rem);
+    &--button {
+      mask: url("/static/images/cart.svg");
+      -webkit-mask: url("/static/images/cart.svg");
+      width: 4rem;
+      height: 4rem;
+      border: none;
+      background-color: $color-icon-red;
+    }
+    &--count {
+      margin-right: 0.5rem;
+      width: min-content;
+    }
+    @include respond(phone) {
+      align-self: stretch;
+      grid-row: 1 / span 1;
+    }
+  }
+}

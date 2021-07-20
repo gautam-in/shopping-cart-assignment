@@ -1,0 +1,127 @@
+.cart {
+  grid-column: 7 / span 3;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(3, min-content) 1fr min-content;
+  grid-row-gap: 1rem;
+  height: 70vh;
+  max-width: 30vw;
+  transform: translateY(11rem);
+  background-color: $color-background-grey;
+  @include respond(tab-port) {
+    height: 90vh;
+    max-width: 100vw;
+    grid-column: 1 / -1;
+    padding-top: 1rem;
+  }
+  &__header {
+    grid-column: 1 / -1;
+    padding: 2rem;
+    background-color: $color-background-black;
+    & > * {
+      color: $color-font-light;
+    }
+    &--title {
+      display: inline-block;
+    }
+    &--close {
+      float: right;
+      font-size: 2rem;
+      cursor: pointer;
+      transform: scale(1.2);
+      @include resetButtonStyle;
+    }
+
+    @include respond(tab-port) {
+      background-color: $color-background-white;
+      & > * {
+        color: $color-font-dark;
+      }
+    }
+  }
+  &__item-list {
+    grid-column: 1 / -1;
+    max-height: 50vh;
+    overflow: scroll;
+  }
+  &__item {
+    display: grid;
+    grid-template-columns: 1fr repeat(5, 0.5fr) 2fr;
+    grid-template-rows: repeat(2, 5rem);
+    grid-gap: 1rem;
+    font-size: 1.6rem;
+    padding-top: 1rem;
+    background-color: $color-background-white;
+    & > *:not(:nth-child(2)) {
+      text-align: center;
+    }
+    &--title {
+      align-self: center;
+      grid-column: 2 / -1;
+    }
+    &--img img {
+      width: 10rem;
+      grid-column: 1 / span 2;
+    }
+    &--minus {
+      grid-column: 2;
+    }
+
+    &--cost {
+      font-size: 1.8rem;
+    }
+  }
+  &__banner {
+    grid-column: 1 / -1;
+    margin: 1rem;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    background-color: $color-background-white;
+    border-radius: 7px;
+    & img {
+      width: 10rem;
+    }
+    &--text {
+      margin-left: 1rem;
+      font-size: 1.6rem;
+    }
+  }
+  &__checkout {
+    grid-column: 1 / span 2;
+    grid-row: 5 / span 1;
+    background-color: $color-background-white;
+    padding: 1rem;
+
+    &--text {
+      text-align: center;
+    }
+    &--button {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      margin: auto;
+    }
+  }
+  &__empty {
+    grid-row: 2 / -1;
+    grid-column: 1 / -1;
+    display: grid;
+    justify-items: center;
+    grid-gap: 1rem;
+    grid-template-rows: 1fr min-content min-content 1fr min-content;
+    grid-template-columns: 1fr;
+    background-color: $color-background-white;
+    padding: 1rem;
+    &--title {
+      grid-row: 2;
+    }
+    &--message {
+      grid-row: 3;
+    }
+    &--button {
+      grid-row: 5;
+      width: 100%;
+    }
+  }
+}

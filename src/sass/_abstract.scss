@@ -1,0 +1,49 @@
+@mixin resetLinkStyle {
+  text-decoration: none;
+  cursor: pointer;
+  color: inherit;
+}
+@mixin resetListStyle {
+  text-decoration: none;
+  list-style-type: none;
+}
+@mixin resetButtonStyle {
+  border: none;
+  background: none;
+}
+@mixin respond($breakpoint) {
+  @if $breakpoint==phone {
+    @media only screen and (max-width: 37.5em) {
+      @content;
+    } //600px
+  }
+  @if $breakpoint==tab-port {
+    @media only screen and (max-width: 56.25em) {
+      @content;
+    } //900px
+  }
+
+  @if $breakpoint==tab-land {
+    @media only screen and (max-width: 75em) {
+      @content;
+    } //1200px
+  }
+
+  @if $breakpoint==desktop {
+    @media only screen and (max-width: 112.25em) {
+      @content;
+    } //1800px
+  }
+}
+
+@mixin horizontal-partition-gray {
+  content: " ";
+  display: inline-block;
+  width: 100%;
+  height: 1.5rem;
+  background: radial-gradient(
+    $color-background-light 0%,
+    $color-background-white 40%
+  );
+  //background:linear-gradient($color-background-light 0%, $color-font-light 30%);
+}
