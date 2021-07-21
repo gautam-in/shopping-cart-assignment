@@ -1,9 +1,18 @@
 import * as t from '../types';
 
-const main = (state={ cartCount:0,open:-1 },action)=>{
+const defaultState = {
+    cartCount:0,
+    open:-1,
+    cartData:[]
+}
+const cart = (state = defaultState,action)=>{
+    console.log("action.tpe",action)
     switch(action.type){
         case t.CART_COUNT_INCREMENT:
             return {...state,cartCount:action.payload}
+        case t.ADD_TO_CART:
+            console.log("adnkur",action)
+            return {...state,cartData:action.payload}    
         case t.CART_INFO:
             return {...state,cartCount:action.payload}
         case t.CART_OPEN:
@@ -15,4 +24,4 @@ const main = (state={ cartCount:0,open:-1 },action)=>{
     }
 }
 
-export default main
+export default cart

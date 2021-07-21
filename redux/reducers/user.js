@@ -9,11 +9,8 @@ const user = (state=defaultState,action)=>{
     switch(action.type){
         case t.SET_USER:
             return action.payload
-        break;
-        
         default:
             return state
-        break;
     }
 }
 

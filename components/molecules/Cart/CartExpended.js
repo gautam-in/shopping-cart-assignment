@@ -3,23 +3,21 @@ import {CartExpand,CartExpandTop,
   CartExpandBottom,
   CartContainer
 } from './CartStyle'
-import {cartClose} from '../../../redux/actions/main'
+import {cartClose} from '../../../redux/actions/cart'
 import {connect} from 'react-redux'
 import {CloseIcon} from '../../atoms/Icons/Icons'
 import CartProduct from '../../molecules/Product/CartProduct'
 import Checkout from './Checkout'
  
-const CartExpended = ({cartInfo,cartClose,cartData})=>{
-    
-    const { open }  = cartInfo
-    
-    const cartItems = cartData.map((data) =>
-        <CartProduct key={data.id} data={data}/>
+const CartExpended = ({cartInfo,cartClose})=>{
+    const { open,cartData }  = cartInfo
+    let totalCost = 0
+      const cartItems = cartData.map((data) =>{
+        let {quantity,price} = data
+        totalCost += quantity ? price*quantity : price
+        return <CartProduct key={data.id} data={data}/>
+      }
     );
-
-    // if(!open){
-    //   return ''
-    // }
 
     return(
       <CartExpand active={open}>
@@ -32,7 +30,7 @@ const CartExpended = ({cartInfo,cartClose,cartData})=>{
               {cartItems}
           </CartExpandMiddle>
           <CartExpandBottom>
-            <Checkout/>
+            <Checkout totalCost={totalCost}/>
           </CartExpandBottom>
           </CartContainer>
       </CartExpand>
@@ -40,6 +38,6 @@ const CartExpended = ({cartInfo,cartClose,cartData})=>{
 }
 
 
-const mapStateToProps = state=>({ cartInfo:state.main })
+const mapStateToProps = state=>({ cartInfo:state.cart,userInfo:state.user })
 const mapDispatchToProps = {cartClose} 
 export default  connect(mapStateToProps,mapDispatchToProps)(CartExpended)  

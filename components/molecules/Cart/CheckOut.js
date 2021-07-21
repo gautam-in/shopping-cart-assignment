@@ -29,13 +29,13 @@ const Container = styled.div`
     }
 `;
 
-function CheckOut(){
+function CheckOut({totalCost}){
     return (
         <Container>
             <span>Promo code can be applyied on payment page</span>
             <div>
                 <a>Proceed to checkout</a>
-                <span>Rs.187</span>
+                <span>Rs{totalCost}</span>
             </div>
         </Container>
     )

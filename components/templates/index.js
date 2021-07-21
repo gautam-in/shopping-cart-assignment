@@ -1,7 +1,7 @@
 import React from 'react'
 import Header from '../organism/Header/Header';
 import {connect} from 'react-redux'
-import {setUser} from '../../redux/actions/main'
+import {setUser,addToCart} from '../../redux/actions/main'
 
 
 class PageLayout extends React.Component{
@@ -11,8 +11,11 @@ class PageLayout extends React.Component{
     }
 
     componentDidMount(){
+        
         const {user,setUser} = this.props
+        console.log("cart Data",user.cart)
         setUser(user) 
+        addToCart(user.cart)
     }
 
     render(){
@@ -29,7 +32,7 @@ class PageLayout extends React.Component{
 }
 
 
-const mapDispatchToProps = {setUser} 
-const mapStateToProps = state=>({ userInfo:state.user })
+const mapDispatchToProps = {setUser,addToCart} 
+const mapStateToProps = (state)=>({ userInfo:state.user,cartInfo:state.cart })
 
 export default  connect(mapStateToProps,mapDispatchToProps)(PageLayout)  

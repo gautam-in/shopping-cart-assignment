@@ -8,7 +8,8 @@ import { useSelector } from 'react-redux'
 function Cart({cartInfo,incrementCounter,cartOpen}){
 
   const user = useSelector((state) => state.user)
-  const cartCount = user.cart.length
+  const cart = useSelector((state) => state.cart)
+  const cartCount = cart.cartData.length
     
   return (
       <>
@@ -21,7 +22,7 @@ function Cart({cartInfo,incrementCounter,cartOpen}){
     )
 }
 
-const mapStateToProps = state=>({ cartInfo:state.main })
+const mapStateToProps = state=>({ cartInfo:state.cart })
 const mapDispatchToProps = {incrementCounter,cartOpen} 
 
 export default  connect(mapStateToProps,mapDispatchToProps)(Cart)  
