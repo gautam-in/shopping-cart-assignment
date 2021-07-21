@@ -8,15 +8,23 @@ export const ProductsStyle = styled.section`
     display: grid;
     grid-template-columns: 1fr;
   }
+  aside#sidebar > div:nth-child(2) {
+    display: none;
+  }
 
   //media queries for tablet
   @media (min-width: 768px) {
     flex-direction: row;
     aside#sidebar {
-      flex: 1.5;
       background-color: var(--grey);
+      flex: 1;
+
       position: relative;
     }
+    aside#sidebar > div:nth-child(2) {
+      display: block;
+    }
+
     aside#sidebar ul li {
       list-style-type: none;
       padding: 5px;
@@ -36,10 +44,10 @@ export const ProductsStyle = styled.section`
   }
   //media queries for desktop
   @media (min-width: 1025px) {
-    /* & > div {
+    & > div {
       grid-template-columns: 1fr 1fr 1fr 1fr;
       grid-gap: 10px;
-    } */
+    }
   }
 `;
 
@@ -100,10 +108,21 @@ export const SingleProductStyle = styled.div`
   }
   //media queries for desktop
   @media (min-width: 1025px) {
-    /* & > div {
-      background-color: red;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    & > div {
       flex-direction: column;
-    } */
+      position: relative;
+      align-items: center;
+    }
+    & > div > img {
+      flex: 1;
+      max-width: 80%;
+    }
+    & > div > div {
+      flex: 1;
+    }
   }
 `;
 
