@@ -533,3 +533,89 @@ img {
       }
     } */
 /* Banner offer slider end */
+.footer {
+  margin-top: 100px;
+  bottom: 0;
+  width: 100%;
+  height: 3.125rem;
+  text-align: center;
+  background-color: #eaeaea; }
+  .footer p {
+    color: #000;
+    padding-top: 15px;
+    text-align: center; }
+
+@media only screen and (max-width: 600px) {
+  .footer-home {
+    width: 500px; } }
+
+a,
+ul {
+  text-decoration: none; }
+
+.signup-signin {
+  display: flex;
+  flex-wrap: wrap; }
+  .signup-signin div {
+    width: 50%;
+    text-align: center; }
+    .signup-signin div h3 {
+      padding-top: 3.625rem;
+      font-size: 2em; }
+    .signup-signin div p {
+      padding: 1.875rem 0 0 14rem;
+      font-size: 1.1em; }
+  .signup-signin form {
+    padding: 5rem 0 0 1.875rem; }
+    .signup-signin form input {
+      margin: 0.5rem;
+      height: 2.5rem;
+      border: 0;
+      outline: 0; }
+      .signup-signin form input:focus {
+        border-bottom: 2px solid #5df4ff; }
+    .signup-signin form button {
+      margin-top: 0.5rem;
+      width: 100%;
+      height: 2.5rem;
+      background-color: #d6224c;
+      color: #fff;
+      border: 0; }
+
+.footer-login {
+  margin-top: 100px;
+  bottom: 0;
+  width: 100%;
+  height: 3.125rem;
+  text-align: center;
+  background-color: #eaeaea; }
+  .footer-login p {
+    color: #000;
+    padding-top: 15px;
+    text-align: center; }
+
+@media screen and (min-width: 601px) and (max-width: 1200px) {
+  .signup-signin > div > p {
+    padding: 0;
+    font-size: 1.1rem;
+    margin-top: 15px; } }
+
+@media only screen and (max-width: 600px) {
+  .signup-signin > div > p {
+    padding: 0;
+    width: 100vw;
+    text-align: left;
+    margin-left: 35px;
+    font-size: 1.1rem;
+    margin-top: 15px; }
+  .footer-login {
+    width: 500px;
+    margin-top: 100px;
+    bottom: 0;
+    height: 3.125rem;
+    text-align: center;
+    background-color: #eaeaea; }
+    .footer-login p {
+      color: #000;
+      padding-top: 15px;
+      text-align: center; } }
