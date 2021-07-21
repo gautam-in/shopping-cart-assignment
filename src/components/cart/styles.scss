@@ -1,0 +1,16 @@
+@import "./../../colors.scss";
+@import "./../../config.scss";
+
+.cart {
+  display: flex;
+  justify-self: center;
+  align-items: center;
+  border: 0px;
+  box-sizing: border-box;
+  padding: 0.5rem 2rem;
+
+  svg {
+    height: 2rem;
+    fill: $primary-color-red;
+  }
+}

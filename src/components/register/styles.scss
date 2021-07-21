@@ -1,0 +1,18 @@
+@import "./../../colors.scss";
+
+.login-container {
+    display: flex;
+    justify-content: center;
+    &__heading {
+        margin-right: 2rem;
+    }
+    &__form {
+        input[type="submit"] {
+            width: 100%;
+            background-color: $primary-color-red;
+            border: 0px;
+            color: white;
+            padding: 0.5rem 0;
+        }
+    }
+}

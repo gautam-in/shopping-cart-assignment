@@ -1,0 +1,30 @@
+@import "./colors.scss";
+
+@font-face {
+	font-family: "Able";
+	src: url("../static/fonts/Abel-Regular.ttf");
+    // src: url("../static/fonts/VarelaRound-Regular.ttf");
+}
+
+:root {
+    font-size: 1em;
+}
+
+body {
+    margin: 0px;
+}
+*{
+    font-family: 'Able', 'Helvetica';
+}
+ a {
+     text-decoration: none;
+     color: black;
+ }
+
+ button.red {
+    padding: 0.5rem 1rem;
+    background-color: $primary-color-red;
+    border: 0px;
+    color: white;
+    cursor: pointer;
+}

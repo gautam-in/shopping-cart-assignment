@@ -1,0 +1,60 @@
+@import "./../../colors.scss";
+
+.categories-container {
+    display: flex;
+    justify-content: center;
+    ul {
+        list-style-type: none;
+    }
+    &__categories {
+        > li {
+            margin-top: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+            height: 15rem;
+            background-color: white;
+            &:after {
+                content: '';
+                position: absolute;
+                left: 0px;
+                bottom: 0px;
+                width: 100%;
+                height: 25px;
+                border-radius: 50%;
+                z-index: -1;
+                box-shadow: 0 0 10px #ccc;
+              }
+
+            ul {
+                height: 70%;
+                flex-basis: 70%;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+                li {
+                    h3 {
+                        margin: 0px;
+                    }
+                    text-align: center;
+                    font-weight: bold;
+                }
+            }
+            img {
+                height: 80%;
+            }
+            &:nth-child(2n) {
+                flex-direction: row-reverse;
+            }
+
+            button {
+                padding: 0.5rem 1rem;
+                background-color: $primary-color-red;
+                border: 0px;
+                color: white;
+                cursor: pointer;
+            }
+        }
+    }
+}

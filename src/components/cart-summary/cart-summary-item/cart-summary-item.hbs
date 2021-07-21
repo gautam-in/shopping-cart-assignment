@@ -1,0 +1,20 @@
+{{#with product}}
+  <div class="cart-summary-card">
+    <img src={{imageURL}} alt={{sku}} />
+    <div class="cart-summary-card__description">
+      <h3>{{name}}</h3>
+      <div class="cart-summary-card__price-cart">
+        <div>
+          <div id="cart-add-remove-item-ref-{{id}}" class="cart-summary-card__price-cart--add-remove">
+          {{{../addRemoveItem}}}
+        </div>
+                    <div>x</div>
+          <div>Rs.{{price}}</div>
+        </div>
+        
+        
+        <div hbs-id="cart-summary-total-price">Rs.{{../totalPrice}}</div>
+      </div>
+    </div>
+  </div>
+{{/with}}

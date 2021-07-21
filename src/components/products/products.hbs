@@ -1,0 +1,12 @@
+<section class="products-container" hbs-id="products-main-container">
+    <div class="products-container__menu">
+        {{#each categories}}
+        <div class="products-container__menu-item">
+            <a href="#" id={{key}}>{{name}}</a>
+        </div>
+        {{/each}}
+    </div>
+    <div class="products-container__grid" hbs-id="products-container">
+        {{{gridView}}}
+    </div>
+</section>

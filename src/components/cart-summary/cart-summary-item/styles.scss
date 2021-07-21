@@ -1,0 +1,35 @@
+@import "./../../../colors.scss";
+@import "./../../../config.scss";
+
+.cart-summary-card {
+  display: flex;
+  width: 100%;
+  img {
+    height: 8rem;
+  }
+  &__description {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1;
+  }
+  &__price-cart {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    > div:first-child {
+      flex-basis: 8rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    &--add-remove {
+      flex-basis: 4rem;
+    }
+  }
+}
+
+.empty-cart-message {
+  margin-top: 100px;
+  align-self: center;
+}

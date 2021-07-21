@@ -1,0 +1,12 @@
+@import "./../../../../colors.scss";
+@import "./../../../../config.scss";
+
+.main-page {
+    padding: 5rem $padding-horizontal;
+}
+
+footer {
+    padding: 1rem $padding-horizontal;
+    background: $primary-color-gray-d;
+    color: black;
+}

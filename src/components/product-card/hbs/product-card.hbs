@@ -1,0 +1,20 @@
+{{#with product}}
+  <div class="products-container__grid__product-card">
+    <h3>{{name}}</h3>
+    <div class="description">
+      <img src={{imageURL}} alt={{sku}} />
+      <span>
+        {{description}}
+      </span>
+      <div class="price-cart">
+        <span>MRP Rs.{{price}}</span>
+        <div id="add-remove-item-ref-{{id}}">
+          {{{../addRemoveItem}}}
+        </div>
+        <button class="red" id={{id}}>
+          Buy Now
+        </button>
+      </div>
+    </div>
+  </div>
+{{/with}}

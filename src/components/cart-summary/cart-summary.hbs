@@ -1,0 +1,20 @@
+<div class="cart-summary-box">
+  <div class="cart-summary-box__heading">
+    <div>
+      <h2>My Cart&nbsp;</h2>
+      <span hbs-id="cart-summary-count">{{count}}</span>
+    </div>
+    <div>
+      <button class="cart-summary-box__heading--close">x</button>
+    </div>
+
+  </div>
+  <div class="cart-summary-box__body">
+    <section class="cart-summary-box__body--items" hbs-id="cart-view-items-ref">
+      {{{cartItems}}}
+    </section>
+    <button class="red checkout" hbs-id="cart-checkout-button">
+      {{{buttonTemplate}}}
+    </button>
+  </div>
+</div>
