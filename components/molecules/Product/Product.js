@@ -21,6 +21,7 @@ const PriceTag = ({data})=>{
     const addToCart = ()=>{
         const filterData = filterProduct(cartData,data,false,false,price)
         dispatch({ type: 'ADD_TO_CART',payload:filterData })
+        dispatch({ type: 'CART_OPEN',payload:true })
         // return addProductToCart(cartData)
     }
     return(
