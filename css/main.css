@@ -395,3 +395,141 @@ button {
     height: 100%;
     width: 1200px;
     overflow: auto; } }
+
+/* navbar */
+.navbar {
+  display: flex;
+  background-color: #fff;
+  width: 100%;
+  height: 6rem;
+  margin: 0 auto;
+  margin-bottom: 10px;
+  align-items: center;
+  padding: 20px;
+  padding-left: 10vw;
+  padding-right: 10vw;
+  -webkit-box-shadow: 0 8px 6px -6px rgba(0, 0, 0, 0.164);
+  -moz-box-shadow: 0 8px 6px -6px rgba(0, 0, 0, 0.164);
+  box-shadow: 0 8px 6px -6px rgba(0, 0, 0, 0.164);
+  margin-bottom: 0;
+  z-index: 1;
+  position: sticky;
+  top: 0px; }
+
+.site-logo {
+  width: 11rem; }
+
+nav {
+  flex: 1;
+  text-align: right; }
+  nav ul {
+    display: inline-block;
+    list-style-type: none; }
+    nav ul li {
+      display: inline-block;
+      margin-right: 30px; }
+
+a {
+  text-decoration: none;
+  color: #555; }
+
+p {
+  color: #555; }
+
+.container {
+  max-width: 1300px;
+  margin: auto;
+  padding-left: 25px;
+  padding-right: 25px; }
+
+small {
+  color: #555; }
+
+.menu-icon {
+  width: 28px;
+  margin-left: 20px;
+  display: none; }
+
+.shopping-cart {
+  z-index: 5; }
+
+/* Media Quer for menu */
+@media only screen and (max-width: 800px) {
+  nav ul {
+    position: absolute;
+    top: 92px;
+    z-index: 1;
+    left: 125px;
+    background: #333;
+    width: 100%;
+    overflow: hidden;
+    transition: max-height 0.5s; }
+    nav ul li {
+      display: block;
+      margin-right: 50px;
+      margin-top: 10px;
+      margin-bottom: 10px; }
+      nav ul li a {
+        color: #fff; }
+  .menu-icon {
+    display: block;
+    cursor: pointer; } }
+
+@media only screen and (max-width: 600px) {
+  .navbar {
+    width: 100%;
+    padding: 20px; }
+  y .fa-lg {
+    display: none; }
+  .shopping-cart {
+    margin-right: 20px;
+    z-index: 20; }
+  .menu-icon {
+    margin-right: -130px; } }
+
+/* Banner offer slider start */
+@keyframes fade {
+  from {
+    opacity: 0.4; }
+  to {
+    opacity: 1; } }
+
+.banner-slider {
+  margin: 0 auto;
+  width: 80%;
+  overflow: hidden;
+  height: 300px;
+  margin-top: 30px; }
+
+.banner-image {
+  width: 100%; }
+
+.banner-offers-slides {
+  overflow: hidden;
+  animation-name: fade;
+  animation-duration: 1s;
+  display: none; }
+
+img {
+  width: 100%; }
+
+.banner-dots {
+  margin: 0 auto;
+  text-align: center; }
+
+.banner-dot-individual {
+  display: inline-block;
+  border-radius: 50%;
+  background: #d3d3d3;
+  padding: 4px;
+  margin: 10px 5px; }
+
+.active {
+  background: black; }
+
+/* @media (max-width: 567px) {
+      .banner-slider {
+        width: 100%;
+      }
+    } */
+/* Banner offer slider end */

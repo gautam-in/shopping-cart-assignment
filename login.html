@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="./css/main.css" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Page Sabka Bazaar</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <!-- Favicon -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./static/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./static/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./static/favicon-16x16.png"
+    />
+    <!-- Favicon -->
+  </head>
+
+  <body>
+    <!-- Navbar Starting -->
+    <div class="navbar">
+      <div class="logo">
+        <a href="index.html">
+          <img
+            class="site-logo"
+            src="./static/images/logo.png"
+            alt="website logo sabka bazaar"
+        /></a>
+      </div>
+      <nav>
+        <ul class="MenuItems">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="./register.html">Register</a></li>
+          <li><a href="./login.html">Login</a></li>
+          <!-- TODo: 22:20 -->
+        </ul>
+      </nav>
+
+      <a class="shopping-cart" href="#"
+      ><i id="shopping-cart-image" class="fas fa-shopping-cart fa-lg"></i>
+      <span class="cart-items">0 items</span>
+    </a>
+      <img
+        src="./static/images/menu.png"
+        alt=""
+        class="menu-icon"
+      />
+    </div>
+
+    <!-- Navbar Ending -->
+
+    <!-- Login starting -->
+
+    <section class="signup-signin">
+      <div>
+        <h3>Login</h3>
+        <p>Get access to your Orders and Recommendations.</p>
+      </div>
+      <form>
+        <input type="email" placeholder="Email" required /><br />
+        <input type="password" placeholder="Password" required /><br />
+        <button>Login</button>
+      </form>
+    </section>
+
+    <!-- Login Ending -->
+
+    <!-- Footer Starting -->
+    <footer class="footer-login">
+      <p>Copyright &copy; 2011-2018 Sabka Bazaar Grocery Suplies Pvt. Ltd</p>
+    </footer>
+    <!-- Footer Ending -->
+    
+
+     <!-- modal -->
+     <div id="my-modal" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <span class="close">&times;</span>
+          <h2>My Cart</h2>
+        </div>
+        <div class="modal-body">
+        <div class="model-content">
+          <img class="cart-lowest-price" src="../static/images/lowest-price.png" alt="Lowest price">
+            <p class="modal-content-heading">You won't find it cheaper anywhere</p>
+        </div>
+        </div>
+        <div class="modal-footer">
+          <h3>Proceed to checkout</h3>
+        </div>
+      </div>
+    </div>
+    <!-- modal -->
+
+    <!-- Script files -->
+    <script src="./js/cart.js"></script>
+    <script src="./js/app.js"></script>
+    <script src="./js/cart-number.js"></script>
+    <script src="./js/openModal.js"></script>
+  </body>
+</html>

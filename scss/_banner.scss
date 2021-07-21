@@ -1,0 +1,58 @@
+/* Banner offer slider start */
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.banner-slider {
+  margin: 0 auto;
+  width: 80%;
+  overflow: hidden;
+  height: 300px;
+  margin-top: 30px;
+}
+
+.banner-image {
+  width: 100%;
+}
+
+.banner-offers-slides {
+  overflow: hidden;
+  animation-name: fade;
+  animation-duration: 1s;
+  display: none;
+}
+
+img {
+  width: 100%;
+}
+
+.banner-dots {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.banner-dot-individual {
+  display: inline-block;
+  border-radius: 50%;
+  background: #d3d3d3;
+  padding: 4px;
+  margin: 10px 5px;
+}
+
+.active {
+  background: black;
+}
+
+/* @media (max-width: 567px) {
+      .banner-slider {
+        width: 100%;
+      }
+    } */
+
+/* Banner offer slider end */
