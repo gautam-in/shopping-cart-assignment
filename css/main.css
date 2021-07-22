@@ -843,12 +843,15 @@ img {
 .product-description {
   color: #333;
   font-size: 14px;
-  font-weight: normal;
+  font-weight: bold;
   margin: 0;
-  line-height: 1.3rem; }
+  line-height: 1.3rem;
+  background: #e9e6e6;
+  height: 150px;
+  padding: 5px; }
 
 .product-reviews-wrapper .product-rating {
-  color: #0ab4b5;
+  color: #0c1a1a;
   font-weight: bold; }
 
 .product-reviews-wrapper .product-review {
