@@ -18,7 +18,7 @@ const typeDefs = `
 
 const resolvers = {
     Query: {
-        banners: async (args, req) => {
+        banners: async (_, args) => {
             const banners = await Banners.model.find({});
             return injectTempUrl(banners, "bannerImageUrl")
         }

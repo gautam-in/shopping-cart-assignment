@@ -7,3 +7,8 @@ const encrypt = (data) => {
 const decrypt = (data) => {
     return AES.decrypt(data, process.env.PASS_ENCRYPT_KEY)
 }
+
+module.exports = {
+    encrypt,
+    decrypt
+}

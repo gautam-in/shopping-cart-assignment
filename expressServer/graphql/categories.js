@@ -1,5 +1,5 @@
 const { getPreSignedUrl, injectTempUrl } = require("../utils/aws");
-const Category = require("../model/categories");
+const CategoryModel = require("../model/categories");
 
 const typeDefs = `
     type Category {
@@ -21,10 +21,9 @@ const typeDefs = `
 
 const resolvers = {
     Query: {
-        categories: async (args, req) => {
-            const categories = await Category.model.find({enabled: true});
-            console.log("sks", injectTempUrl(categories, "imageUrl"))
-            return injectTempUrl(categories, "imageUrl")
+        categories: async (_, args) => {
+            const categories = await CategoryModel.model.find({enabled: true});
+            return injectTempUrl(categories, "imageUrl");
         },
     }
 }

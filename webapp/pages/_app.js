@@ -1,3 +1,4 @@
+import { useState, useContext, createContext } from "react";
 import '../styles/globals.css'
 import {Layout} from "antd"
 import StoreHeader from "../components/StoreHeader";
@@ -21,17 +22,21 @@ Router.events.on("routeChangeStart", () => NProgress.start());
 Router.events.on("routeChangeComplete", () => NProgress.done());
 Router.events.on("routeChangeError", () => NProgress.done());
 
+const AuthContext = createContext();
+
 function MyApp({Component, pageProps, apollo}) {
     console.log("asdf", pageProps)
     return (
-        <ApolloProvider client={apollo}>
-            <Layout>
-                <StoreHeader/>
-                <Layout.Content style={{display: "flex", justifyContent: "center", flexDirection: "column", padding: 20, backgroundColor: "white", marginTop: 5}}>
-                    <Component {...pageProps} />
-                </Layout.Content>
-            </Layout>
-        </ApolloProvider>
+        <AuthContext.Provider value={}>
+            <ApolloProvider client={apollo}>
+                <Layout>
+                    <StoreHeader/>
+                    <Layout.Content style={{display: "flex", justifyContent: "center", flexDirection: "column", padding: 20, backgroundColor: "white", marginTop: 5}}>
+                        <Component {...pageProps} />
+                    </Layout.Content>
+                </Layout>
+            </ApolloProvider>
+        </AuthContext.Provider>
     )
 }
 
