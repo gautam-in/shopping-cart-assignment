@@ -4,13 +4,18 @@ import { GlobalStyles } from './styles/GlobalStyles';
 import { Main } from './styles/MainStyle';
 import Header from './Header';
 import Footer from './Footer';
+import Cart from './Cart';
 
 export default function Page({ children }) {
   return (
     <Container>
       <GlobalStyles />
       <Header />
-      <Main>{children}</Main>
+      <Main>
+        {children}
+        <Cart />
+      </Main>
+
       <Footer />
     </Container>
   );

@@ -29,6 +29,7 @@ export default function Products() {
       setFilter(categoryId);
       return;
     }
+    // handling for list
     categoryId = e.target.id;
     if (categoryId === filter) {
       setFilter(undefined);
