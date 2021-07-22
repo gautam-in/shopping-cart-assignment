@@ -1,0 +1,125 @@
+.ProductPage {
+    h1 {
+        font-size: 28px;
+        font-weight: 700;
+        margin-bottom: 5px;
+    }
+
+    .price {
+        margin-bottom: 10px;
+    }
+
+    .wrapper {
+        margin: 0 auto;
+        width: 860px;
+    }
+
+    .Productpage_Container {
+        margin: 5%;
+        // max-width: 900px;
+        display: flex;
+        flex-flow: row wrap;
+    }
+
+    .Thumbnail_Container {
+
+        width: 100%;
+        height: 100%;
+        flex-basis: 60%;
+    }
+
+    
+    .Details_Container {
+        width: 100%;
+        height: 100%;
+        flex-basis: 40%;
+    }
+
+    .Button_Container{
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+}
+
+
+    .price {
+        font-size: 20px;
+        color: #777474;
+    }
+
+    .wishlist-container {
+        padding-left: 0;
+    }
+
+    #header {
+        width: 100%;
+        text-align: center;
+        background: white;
+        padding: 5px;
+        /*box-shadow: 0 10px 17px 0px #c0c0c0;*/
+        box-shadow: 0 5px 10px 0px #dbd7d7;
+    }
+    #header img {
+        max-width: 30px;
+    }
+
+    .columns {
+        margin-top: 30px;
+    }
+
+    .button {
+        width: 100%;
+        border-radius: 0;
+    }
+
+    .select,
+    select {
+        width: 100%;
+        border-radius: 0 !important;
+    }
+
+    #wishlist-container {
+        padding-left: 0;
+    }
+
+    #buy-container {
+        padding-right: 0;
+    }
+
+    .small-text {
+        font-size: 14px;
+    }
+
+    .small-text span {
+        font-weight: bold;
+    }
+
+    .buy-button {
+        background: #ff6900;
+        color: white;
+        border: none;
+    }
+
+    .buy-button:hover,
+    .buy-button:active,
+    .buy-button:focus {
+        color: white;
+        opacity: 0.9;
+    }
+
+    a {
+        color: #ff6900;
+    }
+    a:hover {
+        color: #ff6900;
+        opacity: 0.8;
+    }
+
+    @media only screen and (max-width: 769px) {
+        #wishlist-container,
+        #buy-container {
+            padding: 0 0 15px 0;
+        }
+    }
+
