@@ -7,6 +7,8 @@ const StyledMenu = styled.div`
     /* padding:10px; */
     height:100vh;
     width:30.333%;
+    position:sticky;
+    top:0px;
     @media(max-width: 480px) {
       display:none;
     }
