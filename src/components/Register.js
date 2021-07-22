@@ -280,7 +280,7 @@ class Register extends Component {
               <Link
                 to="/signin"
                 style={{
-                  padding: "2px 0px ",
+                  padding: "2px 0px",
                   marginTop: "2px",
                   color: "blue",
                   fontWeight: "bold",
