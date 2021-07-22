@@ -1,0 +1,22 @@
+.main-nav {
+  list-style: none;
+  margin: 15px 0 0 30px;
+}
+
+.main-nav li {
+  display: inline-block;
+  margin-left: 20px;
+}
+
+.main-nav li .main-nav-link:link,
+.main-nav li .main-nav-link:visited {
+  text-decoration: none;
+  font-size: 80%;
+  color: #6d6868;
+  font-weight: 400;
+}
+
+.main-nav li .main-nav-link:hover,
+.main-nav li .main-nav-link:active {
+  color: #67c2e2;
+}

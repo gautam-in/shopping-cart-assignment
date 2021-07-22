@@ -1,0 +1,16 @@
+# Ignore artifacts:
+build
+coverage
+node_modules
+*.log
+*.snap
+.idea
+.vscode
+*.md
+
+# Ignore all mp4 files:
+*.mp4
+*.svg
+*.png
+*.gif
+

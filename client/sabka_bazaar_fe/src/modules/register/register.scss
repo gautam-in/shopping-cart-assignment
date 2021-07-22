@@ -1,0 +1,29 @@
+.section-register {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 55vh;
+  margin-top: 30px;
+}
+
+.signup-text {
+  margin-left: 40%;
+  margin-top: 20px;
+}
+
+.signup-box:last-child {
+  text-align: left;
+  padding-left: 20px;
+}
+
+/* --Login Form-- */
+.register-form {
+  width: 50%;
+}
+
+.signup-button {
+  width: 100%;
+  margin-top: 10px;
+  background: #d33761 !important;
+}
