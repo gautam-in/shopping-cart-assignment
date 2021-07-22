@@ -66,12 +66,12 @@ class Cart extends Component {
               </article>
             ) : (
               <article className="cart-empty">
-                <details>
+                <div>
                   <h2>No items in your cart</h2>
                   <p style={{ textAlign: "center" }}>
                     Your favourite items are just a click away
                   </p>
-                </details>
+                </div>
               </article>
             )}
             <article className="buttons">

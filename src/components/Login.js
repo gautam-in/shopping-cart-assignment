@@ -47,18 +47,18 @@ class Login extends Component {
     let userExist = sessionStorage.getItem(tempEmail);
     if (userExist !== null) {
       if (tempPass === userExist) {
-        console.log("Success");
+        // console.log("Success");
         sessionStorage.setItem("currentUser", this.state.email);
         this.props.history.push("/products");
       } else {
-        console.log("InCorrect Password");
+        // console.log("InCorrect Password");
         this.setState({
           errorMessageOnScreen: "InCorrect Password, Please Try Again!",
         });
         toast.warn("InCorrect Password, Please Try Again!");
       }
     } else {
-      console.log("User does not exist");
+      // console.log("User does not exist");
       this.setState({
         errorMessageOnScreen:
           "User does not exist, Please Click here to Create an Account!",
@@ -133,7 +133,9 @@ class Login extends Component {
                     : "submitButton"
                 }
                 onClick={
-                  this.state.buttonEnableValidation ? "" : this.handleSubmit
+                  this.state.buttonEnableValidation
+                    ? function () {}
+                    : this.handleSubmit
                 }
                 title={
                   this.state.buttonEnableValidation

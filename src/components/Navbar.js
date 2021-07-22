@@ -4,6 +4,8 @@ import LogoSmall from "../../public/static/images/logo.png";
 import Cart from "../../public/static/images/cart.svg";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { userNameCreation } from "../commonData/index";
+import { toast } from "react-toastify";
 
 class Navbar extends Component {
   constructor(props) {
@@ -15,9 +17,10 @@ class Navbar extends Component {
   }
 
   handleUserLogin = (event) => {
-    console.log(event.target);
+    // console.log(event.target);
     if (sessionStorage.getItem("currentUser")) {
       sessionStorage.setItem("currentUser", "");
+      toast.success("Successfully LoggedOut!");
     }
   };
 
@@ -47,6 +50,11 @@ class Navbar extends Component {
               </li>
               <li>
                 <Link to="signup">Register</Link>
+              </li>
+              <li style={{ textTransform: "capitalize", fontWeight: "bold" }}>
+                {sessionStorage.getItem("currentUser")
+                  ? userNameCreation(sessionStorage.getItem("currentUser"))
+                  : ""}
               </li>
             </aside>
             <Link to="/cart" className="cartLogo">

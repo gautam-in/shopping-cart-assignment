@@ -33,12 +33,12 @@ class CartItem extends Component {
   }
 
   decreaseCount = () => {
-    console.log("decrese");
+    // console.log("decrese");
     this.props.updateCartItemCount("decrease", this.state.productDetails.id);
   };
 
   increaseCount = () => {
-    console.log("increase count");
+    // console.log("increase count");
     this.props.updateCartItemCount("increase", this.state.productDetails.id);
   };
 
@@ -56,10 +56,8 @@ class CartItem extends Component {
           />
         </figure>
         <article className="purchase-description">
-          <details className="item-name">
-            {this.state.productDetails.name}
-          </details>
-          <details className="item-quantity">
+          <div className="item-name">{this.state.productDetails.name}</div>
+          <div className="item-quantity">
             <button
               type="button"
               aria-label="decrease quantity by one"
@@ -79,13 +77,13 @@ class CartItem extends Component {
             </button>{" "}
             <span aria-label="multiplied-by">x</span>
             &nbsp;Rs.{this.props.productSingle.unitPrice}
-          </details>
+          </div>
         </article>
-        <details className="item-price">
+        <div className="item-price">
           Rs.
           {this.props.productSingle.unitPrice *
             this.props.productSingle.quantity}
-        </details>
+        </div>
       </section>
     );
   }

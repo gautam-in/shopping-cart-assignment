@@ -13,3 +13,9 @@ export const passwordValidation = (password) => {
   const regex = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$/;
   return regex.test(password);
 };
+
+export const userNameCreation = (email) => {
+  let username = "";
+  username = email.split("@")[0].replace(".", " ");
+  return username;
+};

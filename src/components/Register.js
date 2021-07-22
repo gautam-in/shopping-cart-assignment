@@ -27,7 +27,7 @@ class Register extends Component {
   }
 
   validation = (data, id) => {
-    console.log("validating");
+    // console.log("validating");
     if (id === "firstName") {
       if (nameValidation(data)) {
         this.setState({
@@ -264,7 +264,9 @@ class Register extends Component {
                     : "submitButton"
                 }
                 onClick={
-                  this.state.buttonEnableValidation ? "" : this.handleSubmit
+                  this.state.buttonEnableValidation
+                    ? function () {}
+                    : this.handleSubmit
                 }
                 title={
                   this.state.buttonEnableValidation

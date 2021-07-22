@@ -15,14 +15,9 @@ class ProductDetails extends Component {
     // this.setState({
     //   cartItems: total,
     // });
-    this.setState(
-      {
-        cartItems: [...this.state.cartItems, newItem],
-      },
-      () => {
-        console.log(this.state.cartItems);
-      }
-    );
+    this.setState({
+      cartItems: [...this.state.cartItems, newItem],
+    });
     let checkItem = this.props.mainCartItems.find(
       (obj) => obj.id === newItem.id
     );
@@ -34,7 +29,7 @@ class ProductDetails extends Component {
       this.props.allSelectedProducts(newItem, "");
       toast.success("Successfully Added to the Cart!");
     }
-    console.log("Add new one");
+    // console.log("Add new one");
   };
 
   increaseQuantity = (prodId, check) => {
@@ -55,7 +50,7 @@ class ProductDetails extends Component {
     // });
     this.props.allSelectedProducts(currentItem, "sameItem");
     toast.success("Item Already Exist in Cart, Increased Count");
-    console.log("Add existing");
+    // console.log("Add existing");
   };
 
   handleBuyNow = (prodId) => {
