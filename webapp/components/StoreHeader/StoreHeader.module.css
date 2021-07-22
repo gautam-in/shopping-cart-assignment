@@ -1,9 +1,9 @@
 .header-container {
     padding: 20px !important;
     min-height: 10vh !important;
-    box-shadow: 0 3px 3px 0 rgba(0,0,0,0.2) !important;
-    -webkit-box-shadow: 0 3px 3px 0 rgba(0,0,0,0.2) !important;
-    -moz-box-shadow: 0 3px 3px 0 rgba(0,0,0,0.2) !important;
+    box-shadow: 0 0.5vh 0.5vh 0 rgba(0,0,0,0.2) !important;
+    -webkit-box-shadow: 0 0.5vh 0.5vh 0 rgba(0,0,0,0.2) !important;
+    -moz-box-shadow: 0 0.5vh 0.5vh 0 rgba(0,0,0,0.2) !important;
     display: flex !important;
     justify-content: space-between !important;
     background-color: white !important;

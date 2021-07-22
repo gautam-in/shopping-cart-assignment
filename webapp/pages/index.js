@@ -6,6 +6,7 @@ import {Banners} from "../components/Banners";
 import {useEffect} from "react";
 import {Button} from "antd";
 import {CategoryCards} from "../components/CategoryCards";
+import {Loading} from "../components/Loading";
 
 const GET_BANNERS = gql`
     query GetBanners {
@@ -38,13 +39,13 @@ export default function Home() {
     const bannersApolloObj = useQuery(GET_BANNERS);
     const categoriesApolloObj = useQuery(GET_CATEGORIES)
     if(bannersApolloObj.loading || categoriesApolloObj.loading) {
-        return <div>LOADING ...</div>
+        return <Loading/>
     } else if (bannersApolloObj.error || categoriesApolloObj.error) {
         return <div>{"Erorr: " + (bannersApolloObj.error.message || categoriesApolloObj.error)}</div>
     } else {
         console.log("banner", bannersApolloObj.data, categoriesApolloObj.data)
         return (
-            <div>
+            <div style={{padding: 20}}>
                 <Banners bannerData={bannersApolloObj.data.banners}/>
                 <CategoryCards categories={categoriesApolloObj.data.categories}/>
             </div>

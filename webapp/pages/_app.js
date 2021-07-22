@@ -27,16 +27,14 @@ const AuthContext = createContext();
 function MyApp({Component, pageProps, apollo}) {
     console.log("asdf", pageProps)
     return (
-        <AuthContext.Provider value={}>
             <ApolloProvider client={apollo}>
                 <Layout>
                     <StoreHeader/>
-                    <Layout.Content style={{display: "flex", justifyContent: "center", flexDirection: "column", padding: 20, backgroundColor: "white", marginTop: 5}}>
+                    <Layout.Content style={{display: "flex", justifyContent: "center", flexDirection: "column", backgroundColor: "white", marginTop: "0.5vh", minHeight: "89vh"}}>
                         <Component {...pageProps} />
                     </Layout.Content>
                 </Layout>
             </ApolloProvider>
-        </AuthContext.Provider>
     )
 }
 
