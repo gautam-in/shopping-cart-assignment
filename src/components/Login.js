@@ -146,6 +146,20 @@ class Login extends Component {
                 Login
               </button>
               <Link
+                to="/signup"
+                style={{
+                  padding: "2px 0px ",
+                  marginTop: "2px",
+                  color: "blue",
+                  fontWeight: "bold",
+                  display: "block",
+                  textAlign: "right",
+                  fontSize: "11px",
+                }}
+              >
+                If you don't have account, Create new one!
+              </Link>
+              <Link
                 to={
                   this.state.errorMessageOnScreen ===
                   "InCorrect Password, Please Try Again!"

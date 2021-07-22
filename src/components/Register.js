@@ -5,6 +5,7 @@ import {
   passwordValidation,
 } from "../commonData/index";
 import { toast } from "react-toastify";
+import { Link } from "react-router-dom";
 
 class Register extends Component {
   constructor(props) {
@@ -276,6 +277,20 @@ class Register extends Component {
               >
                 Signup
               </button>
+              <Link
+                to="/signin"
+                style={{
+                  padding: "2px 0px ",
+                  marginTop: "2px",
+                  color: "blue",
+                  fontWeight: "bold",
+                  display: "block",
+                  textAlign: "right",
+                  fontSize: "11px",
+                }}
+              >
+                If you have already an account, Click here to login!
+              </Link>
             </form>
           </article>
         </section>
