@@ -16,35 +16,29 @@ class Navbar extends Component {
 
   handleUserLogin = (event) => {
     console.log(event.target);
-    sessionStorage.setItem("currentUser", "");
-    // event.target.innerHTML = `<a href="/signin">SignIn</>`;
-    // event.target.innerText = "TExt";
-    // if (sessionStorage.getItem("currentUser")) {
-    //   sessionStorage.setItem("currentUser", "");
-    //   event.target.innerText === "SignIn";
-    // } else {
-    //   event.target.innerText === "Signin";
-    // }
+    if (sessionStorage.getItem("currentUser")) {
+      sessionStorage.setItem("currentUser", "");
+    }
   };
 
   render() {
     return (
-      <div className="navbarContainer">
-        <div className="navBar">
+      <nav className="navbarContainer">
+        <header className="navBar">
           <Link to="/home" className="logo">
             <img src={LogoSmall} className="logoSmall" alt="logosmall" />
             <img src={LogoBig} className="logoBig" alt="logobig" />
           </Link>
-          <div className="navBarLinks">
+          <article className="navBarLinks">
             <li>
               <Link to="/">Home</Link>
             </li>
             <li>
               <Link to="products">Products</Link>
             </li>
-          </div>
-          <div className="rightSection">
-            <div className="moreLinks">
+          </article>
+          <article className="rightSection">
+            <aside className="moreLinks">
               <li>
                 <Link to="signin" onClick={this.handleUserLogin}>
                   {sessionStorage.getItem("currentUser") ? "Logout" : "SignIn"}
@@ -54,17 +48,19 @@ class Navbar extends Component {
               <li>
                 <Link to="signup">Register</Link>
               </li>
-            </div>
+            </aside>
             <Link to="/cart" className="cartLogo">
               <img className="img" src={Cart} alt="Cart" />
               <p>
-                {this.props.mainCartItems && this.props.mainCartItems.length}{" "}
+                {sessionStorage.getItem("currentUser")
+                  ? this.props.mainCartItems && this.props.mainCartItems.length
+                  : 0}{" "}
                 items
               </p>
             </Link>
-          </div>
-        </div>
-      </div>
+          </article>
+        </header>
+      </nav>
     );
   }
 }

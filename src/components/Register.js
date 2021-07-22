@@ -148,13 +148,13 @@ class Register extends Component {
     return (
       <>
         <section className="signupContainer">
-          <div className="signupLeftSide">
+          <article className="signupLeftSide">
             <h1 className="signupTitle">Signup</h1>
             <p className="signupPara">
               We do not share your personal details with anyone
             </p>
-          </div>
-          <div className="signupRightSide">
+          </article>
+          <article className="signupRightSide">
             <form autoComplete="off">
               {/* <label htmlFor="firstName">First Name</label> */}
               <input
@@ -263,7 +263,9 @@ class Register extends Component {
                     ? "submitButtonDisabled"
                     : "submitButton"
                 }
-                onClick={this.handleSubmit}
+                onClick={
+                  this.state.buttonEnableValidation ? "" : this.handleSubmit
+                }
                 title={
                   this.state.buttonEnableValidation
                     ? "Please Fill all the Fields"
@@ -273,7 +275,7 @@ class Register extends Component {
                 Signup
               </button>
             </form>
-          </div>
+          </article>
         </section>
       </>
     );

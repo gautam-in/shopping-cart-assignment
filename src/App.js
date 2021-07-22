@@ -52,7 +52,7 @@ class App extends Component {
           mainCartItems: newList,
         });
       } else {
-        toast.warn("Currently Stock is not Avaliable!");
+        toast.warn("You reached Maximum Limit!");
       }
     } else {
       let data = [...this.state.mainCartItems];
@@ -78,7 +78,13 @@ class App extends Component {
     return (
       <div className="app">
         <BrowserRouter>
-          <Navbar mainCartItems={this.state.mainCartItems} />
+          {/* <Navbar mainCartItems={this.state.mainCartItems} /> */}
+          <Route
+            path="/"
+            render={(props) => (
+              <Navbar {...props} mainCartItems={this.state.mainCartItems} />
+            )}
+          />
           <Switch>
             <Route exact path="/" render={() => <Redirect to="/home" />} />
             <Route path="/signin" component={Signin} />

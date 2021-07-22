@@ -14,27 +14,27 @@ class Footer extends Component {
 
   render() {
     return (
-      <div className="footerContainer">
-        <div className="footer">
-          <div className="footerLeftSide">
+      <footer className="footerContainer">
+        <section className="footer">
+          <article className="footerLeftSide">
             <p>
               Copyright &copy; 2011 - {this.state.todayDate.getFullYear()} Sabka
               Bazaar Grocery Supplies Pvt Ltd
             </p>
-          </div>
-          <div className="footerRightSide">
-            <div className="icon">
+          </article>
+          <article className="footerRightSide">
+            <figure className="icon">
               <img src={Facebook} alt="facebook" />
-            </div>
-            <div className="icon">
+            </figure>
+            <figure className="icon">
               <img src={Instagram} alt="instagram" />
-            </div>
-            <div className="icon">
+            </figure>
+            <figure className="icon">
               <img src={Twitter} alt="twitter" />
-            </div>
-          </div>
-        </div>
-      </div>
+            </figure>
+          </article>
+        </section>
+      </footer>
     );
   }
 }

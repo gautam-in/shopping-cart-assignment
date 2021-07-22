@@ -44,20 +44,22 @@ class CartItem extends Component {
 
   render() {
     return (
-      <div
+      <section
         className="cart-item"
         style={{ maxWidth: "80%", margin: "0rem auto" }}
       >
-        <div className="item-image">
+        <figure className="item-image">
           <img
             src={this.state.productDetails.imageURL}
             height={80}
             alt={this.state.productDetails.name}
           />
-        </div>
-        <div className="purchase-description">
-          <div className="item-name">{this.state.productDetails.name}</div>
-          <div className="item-quantity">
+        </figure>
+        <article className="purchase-description">
+          <details className="item-name">
+            {this.state.productDetails.name}
+          </details>
+          <details className="item-quantity">
             <button
               type="button"
               aria-label="decrease quantity by one"
@@ -77,14 +79,14 @@ class CartItem extends Component {
             </button>{" "}
             <span aria-label="multiplied-by">x</span>
             &nbsp;Rs.{this.props.productSingle.unitPrice}
-          </div>
-        </div>
-        <div className="item-price">
+          </details>
+        </article>
+        <details className="item-price">
           Rs.
           {this.props.productSingle.unitPrice *
             this.props.productSingle.quantity}
-        </div>
-      </div>
+        </details>
+      </section>
     );
   }
 }

@@ -65,7 +65,7 @@ class Home extends Component {
 
   render() {
     return (
-      <div>
+      <main>
         {!isEmpty(this.state.bannerList) ? (
           <HomeBanners bannerList={this.state.bannerList} />
         ) : (
@@ -75,7 +75,7 @@ class Home extends Component {
           <ul className="category-list">
             {this.state.categiryList.map((category) => (
               <li key={category.id} className="category">
-                <div className="category-details">
+                <article className="category-details">
                   <div className="category-title">{category.name}</div>
                   <div className="category-description">
                     {category.description}
@@ -90,8 +90,8 @@ class Home extends Component {
                   >
                     Explore {category.name}
                   </button>
-                </div>
-                <div className="category-right">
+                </article>
+                <article className="category-right">
                   <img
                     className="category-image"
                     src={category.imageUrl}
@@ -99,7 +99,7 @@ class Home extends Component {
                     height="150"
                     width="200"
                   />
-                </div>
+                </article>
               </li>
             ))}
           </ul>
@@ -118,7 +118,7 @@ class Home extends Component {
               : "Data Not Avaliable"}
           </h2>
         )}
-      </div>
+      </main>
     );
   }
 }

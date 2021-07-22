@@ -29,7 +29,7 @@ class HomeBanners extends Component {
 
   render() {
     return (
-      <div className="carousel">
+      <section className="carousel">
         {this.props.bannerList && this.props.bannerList.length > 0 && (
           <>
             <button
@@ -48,7 +48,7 @@ class HomeBanners extends Component {
               height="150"
               width="500"
             />
-            <div className="banner-dots">
+            <article className="banner-dots">
               {this.props.bannerList.map((item) => (
                 <div
                   key={item.id}
@@ -59,7 +59,7 @@ class HomeBanners extends Component {
                   }
                 />
               ))}
-            </div>
+            </article>
             <button
               type="button"
               className="next"
@@ -71,7 +71,7 @@ class HomeBanners extends Component {
             </button>
           </>
         )}
-      </div>
+      </section>
     );
   }
 }

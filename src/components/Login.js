@@ -87,15 +87,15 @@ class Login extends Component {
 
   render() {
     return (
-      <div>
+      <>
         <section className="loginContainer">
-          <div className="loginLeftSide">
+          <article className="loginLeftSide">
             <h1 className="loginTitle">Login</h1>
             <p className="loginPara">
               Get Access to your Orders, Wishlist and Recommendations
             </p>
-          </div>
-          <div className="loginRightSide">
+          </article>
+          <article className="loginRightSide">
             <form autoComplete="off">
               {/* <label htmlFor="firstName">First Name</label> */}
               <input
@@ -132,7 +132,9 @@ class Login extends Component {
                     ? "submitButtonDisabled"
                     : "submitButton"
                 }
-                onClick={this.handleSubmit}
+                onClick={
+                  this.state.buttonEnableValidation ? "" : this.handleSubmit
+                }
                 title={
                   this.state.buttonEnableValidation
                     ? "Please Fill all the Fields"
@@ -161,9 +163,9 @@ class Login extends Component {
                   : ""}
               </Link>
             </form>
-          </div>
+          </article>
         </section>
-      </div>
+      </>
     );
   }
 }

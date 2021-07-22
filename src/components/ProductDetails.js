@@ -59,25 +59,27 @@ class ProductDetails extends Component {
   };
 
   handleBuyNow = (prodId) => {
-    if (this.state.cartItems.find((_) => _.id === prodId)) {
-      this.increaseQuantity(prodId);
-    } else {
-      let data = {
-        id: prodId,
-        quantity: 1,
-        stock: this.props.product.stock,
-        unitPrice: this.props.product.price,
-        totalPrice: this.props.product.price,
-      };
-      this.addItemToCard(this.state.cartItems, data);
+    if (this.props.checkingUserAuth()) {
+      if (this.state.cartItems.find((_) => _.id === prodId)) {
+        this.increaseQuantity(prodId);
+      } else {
+        let data = {
+          id: prodId,
+          quantity: 1,
+          stock: this.props.product.stock,
+          unitPrice: this.props.product.price,
+          totalPrice: this.props.product.price,
+        };
+        this.addItemToCard(this.state.cartItems, data);
+      }
     }
   };
 
   render() {
     return (
-      <div className="product-card">
-        <div className="product-title">{this.props.product.name}</div>
-        <div className="product-details">
+      <section className="product-card">
+        <article className="product-title">{this.props.product.name}</article>
+        <article className="product-details">
           <img
             className="product-image"
             src={this.props.product.imageURL}
@@ -88,8 +90,8 @@ class ProductDetails extends Component {
           <div className="product-description">
             {this.props.product.description}
           </div>
-        </div>
-        <div className="price-details">
+        </article>
+        <article className="price-details">
           <div className="mrp">MRP Rs {this.props.product.price}</div>
           <button
             type="button"
@@ -104,8 +106,8 @@ class ProductDetails extends Component {
               @ Rs.{this.props.product.price}
             </span>
           </button>
-        </div>
-      </div>
+        </article>
+      </section>
     );
   }
 }

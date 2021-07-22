@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import ProductDetails from "./ProductDetails";
 import { isEmpty } from "lodash";
+import { Link } from "react-router-dom";
 
 class Products extends Component {
   constructor(props) {
@@ -14,6 +15,7 @@ class Products extends Component {
       filteredProducts: [],
       allSelectedProducts: [],
       noDataText: "",
+      userAuth: true,
     };
   }
 
@@ -108,83 +110,125 @@ class Products extends Component {
       });
   };
 
+  checkingUserAuth = () => {
+    if (sessionStorage.getItem("currentUser")) {
+      this.setState({
+        userAuth: true,
+      });
+      return true;
+    } else {
+      this.setState({
+        userAuth: false,
+      });
+      return false;
+    }
+  };
+
   render() {
     return (
       <>
-        {!isEmpty(this.state.productList) ? (
-          <div className="products">
-            <ul className="product-categories">
-              {this.state.categiryList &&
-                this.state.categiryList.map((category) => (
-                  <li
-                    className={
-                      this.state.selectedCategoryId == category.id
-                        ? "category-active"
-                        : ""
-                    }
-                    key={category.id}
-                    onClick={() => this.handleCategoryChange(category.id)}
+        {this.state.userAuth ? (
+          !isEmpty(this.state.productList) ? (
+            <section className="products">
+              <ul className="product-categories">
+                {this.state.categiryList &&
+                  this.state.categiryList.map((category) => (
+                    <li
+                      className={
+                        this.state.selectedCategoryId == category.id
+                          ? "category-active"
+                          : ""
+                      }
+                      key={category.id}
+                      onClick={() => this.handleCategoryChange(category.id)}
+                    >
+                      {category.name}
+                    </li>
+                  ))}
+              </ul>
+              <select
+                value={this.state.selectedCategoryId}
+                onChange={(e) => this.handleCategoryChange(e.target.value)}
+                className="category-dropdown"
+              >
+                <option value="" disabled>
+                  ---Select Category---
+                </option>
+                {this.state.categiryList &&
+                  this.state.categiryList.map((_) => (
+                    <option value={_.id} key={_.id}>
+                      {_.name}
+                    </option>
+                  ))}
+              </select>
+              <article className="product-list">
+                {this.state.filteredProducts.length > 0 ? (
+                  this.state.productList &&
+                  this.state.filteredProducts.map((prod) => (
+                    <ProductDetails
+                      product={prod}
+                      key={prod.id}
+                      allSelectedProducts={this.allSelectedProducts}
+                      mainCartItems={this.props.mainCartItems}
+                      checkingUserAuth={this.checkingUserAuth}
+                    />
+                  ))
+                ) : (
+                  <h2
+                    className="nodataTextProducts"
+                    style={{
+                      textAlign: "center",
+                      height: "70vh",
+                      display: "flex",
+                      justifyContent: "center",
+                      alignItems: "center",
+                    }}
                   >
-                    {category.name}
-                  </li>
-                ))}
-            </ul>
-            <select
-              value={this.state.selectedCategoryId}
-              onChange={(e) => this.handleCategoryChange(e.target.value)}
-              className="category-dropdown"
+                    Data Not Avaliable Please Try Again Later!
+                  </h2>
+                )}
+              </article>
+            </section>
+          ) : (
+            <h2
+              style={{
+                textAlign: "center",
+                height: "70vh",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
             >
-              <option value="" disabled>
-                ---Select Category---
-              </option>
-              {this.state.categiryList &&
-                this.state.categiryList.map((_) => (
-                  <option value={_.id} key={_.id}>
-                    {_.name}
-                  </option>
-                ))}
-            </select>
-            <div className="product-list">
-              {this.state.filteredProducts.length > 0 ? (
-                this.state.productList &&
-                this.state.filteredProducts.map((prod) => (
-                  <ProductDetails
-                    product={prod}
-                    key={prod.id}
-                    allSelectedProducts={this.allSelectedProducts}
-                    mainCartItems={this.props.mainCartItems}
-                  />
-                ))
-              ) : (
-                <h2
-                  className="nodataTextProducts"
+              {this.state.noDataText
+                ? this.state.noDataText
+                : "Data Not Avaliable"}
+            </h2>
+          )
+        ) : (
+          <article className="doLogin">
+            <h2
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                height: "70vh",
+                flexDirection: "column",
+              }}
+            >
+              <Link to="/signin">Please Click here to Login</Link>
+              <h4>
+                <Link
+                  to="/signup"
                   style={{
-                    textAlign: "center",
-                    height: "70vh",
-                    display: "flex",
-                    justifyContent: "center",
-                    alignItems: "center",
+                    color: "red",
+                    letterSpacing: "1px",
                   }}
                 >
-                  Data Not Avaliable Please Try Again Later!
-                </h2>
-              )}
-            </div>
-          </div>
-        ) : (
-          <h2
-            style={{
-              textAlign: "center",
-              height: "70vh",
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-            }}
-          >
-            {this.state.noDataText
-              ? this.state.noDataText
-              : "Data Not Avaliable"}
-          </h2>
+                  If you don't have an account please create!
+                </Link>
+              </h4>
+            </h2>
+          </article>
         )}
       </>
     );
