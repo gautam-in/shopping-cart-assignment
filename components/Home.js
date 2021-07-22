@@ -54,7 +54,7 @@ function Categories({ categories }) {
         .filter((category) => category.enabled)
         .map((category, index) =>
           index % 2 === 0 ? (
-            <CategoryStyle key={category.id}>
+            <CategoryStyle key={category.id} tabIndex="0">
               <div>
                 <article>
                   <h2>{category.name}</h2>
@@ -67,7 +67,7 @@ function Categories({ categories }) {
               </div>
             </CategoryStyle>
           ) : (
-            <CategoryStyle key={category.id}>
+            <CategoryStyle key={category.id} tabIndex="0">
               <div>
                 <img src={category.imageUrl} alt={category.name} />{' '}
               </div>

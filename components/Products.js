@@ -1,3 +1,7 @@
+/* eslint-disable jsx-a11y/no-noninteractive-element-to-interactive-role */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
+/* eslint-disable no-nested-ternary */
 import { useEffect } from 'react';
 import { useState } from 'react/cjs/react.development';
 import { useAppData } from '../lib/store';
@@ -22,6 +26,11 @@ export default function Products() {
   // });
 
   function filterHandler(e) {
+    // on Enter Key Press - to do
+    // if (e.key === 'Enter') {
+    //   console.log('enter press here! ');
+    // }
+
     // handling for dropdown list
     let categoryId;
     if (e.target.options) {
@@ -54,7 +63,7 @@ export default function Products() {
       });
     }
   }, [categories.length, contextData.setData, products.length]);
-  console.log(filter);
+
   return (
     <ProductsStyle>
       {/* Side Bar & dropdown */}
@@ -81,10 +90,13 @@ export default function Products() {
             {categories?.map((category) => (
               <li
                 onClick={filterHandler}
+                onKeyPress={filterHandler}
                 key={category.id}
                 id={category.id}
                 className={filter === category.id ? 'active' : ''}
                 aria-label={category.name}
+                role="button"
+                tabIndex="0"
               >
                 {category.name}
               </li>
@@ -94,15 +106,21 @@ export default function Products() {
       </aside>
       {/* Product Listing - filtering performed here */}
       <div id="products">
-        {filter
-          ? products
+        {filter ? (
+          products.filter((item) => filter === item.category).length === 0 ? (
+            <p>No Products found</p>
+          ) : (
+            products
               .filter((item) => filter === item.category)
               .map((product) => (
                 <SingleProduct key={product.id} product={product} />
               ))
-          : products.map((product) => (
-              <SingleProduct key={product.id} product={product} />
-            ))}
+          )
+        ) : (
+          products.map((product) => (
+            <SingleProduct key={product.id} product={product} />
+          ))
+        )}
       </div>
     </ProductsStyle>
   );
@@ -111,18 +129,18 @@ export default function Products() {
 function SingleProduct({ product }) {
   return (
     <SingleProductStyle>
-      <h2>{product?.name}</h2>
+      <h2>{product.name}</h2>
       <div>
-        <img src={product?.imageURL} alt={product?.name} />
+        <img src={product.imageURL} alt={product.name} />
         <div>
-          <p>{product?.description}</p>
+          <p>{product.description}</p>
           <ButtonStyle>Buy Now @ MRP Rs.{product?.price}</ButtonStyle>
         </div>
       </div>
       <div className="button-group-desktop">
-        <span> MRP Rs.{product?.price} </span>
+        <span> MRP Rs.{product.price} </span>
         <ButtonStyle id="button-tablet">
-          Buy Now @ MRP Rs.{product?.price}
+          Buy Now @ MRP Rs.{product.price}
         </ButtonStyle>
         <ButtonStyle id="button-desktop">Buy Now </ButtonStyle>
       </div>

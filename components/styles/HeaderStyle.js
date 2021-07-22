@@ -1,12 +1,12 @@
 import styled from 'styled-components';
 import { pageMaxWidth } from './GlobalStyles';
 
-export const HeaderContainer = styled.div`
+export const HeaderContainer = styled.header`
   box-shadow: var(--boxShadow);
   height: max-content;
 `;
 
-export const HeaderCenter = styled.header`
+export const HeaderCenter = styled.div`
   display: flex;
   justify-content: space-between;
   height: max-content;
