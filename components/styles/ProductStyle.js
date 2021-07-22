@@ -27,11 +27,11 @@ export const ProductsStyle = styled.section`
 
     aside#sidebar ul li {
       list-style-type: none;
-      padding: 5px;
+      padding: 1em 5px;
       border-bottom: 1px solid var(--darkGrey);
       cursor: pointer;
     }
-    aside#sidebar ul li[selected='true'] {
+    aside#sidebar ul li[class='active'] {
       background-color: var(--darkGrey);
     }
     div#products {
@@ -41,12 +41,15 @@ export const ProductsStyle = styled.section`
     & > aside > div#dropdown {
       display: none;
     }
+    & > div#products {
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 10px;
+    }
   }
   //media queries for desktop
   @media (min-width: 1025px) {
-    & > div {
+    & > div#products {
       grid-template-columns: 1fr 1fr 1fr 1fr;
-      grid-gap: 10px;
     }
   }
 `;
@@ -86,14 +89,17 @@ export const SingleProductStyle = styled.div`
 
   //media queries for tablet
   @media (min-width: 768px) {
-    & > div > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    y & > div > div {
       background-color: var(--grey);
     }
     & > div > div > button {
       display: none;
     }
     & > div > div > p {
-      font-size: 1.5em;
+      font-size: 1em;
     }
     & > div.button-group-desktop {
       display: flex;
@@ -105,12 +111,18 @@ export const SingleProductStyle = styled.div`
       width: 100%;
       margin: 1em;
     }
+
+    & > div > img {
+      min-width: 50%;
+      object-fit: contain;
+    }
+    & > div.button-group-desktop button#button-desktop {
+      display: none;
+    }
   }
   //media queries for desktop
   @media (min-width: 1025px) {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    border-right: 1px solid rgba(220, 220, 220, 0.2);
     & > div {
       flex-direction: column;
       position: relative;
@@ -122,6 +134,24 @@ export const SingleProductStyle = styled.div`
     }
     & > div > div {
       flex: 1;
+    }
+    & > div.button-group-desktop {
+      display: flex;
+      flex-direction: row;
+    }
+    & > div.button-group-desktop span {
+      display: block;
+      flex: 1;
+    }
+    & > div.button-group-desktop button#button-desktop {
+      display: block;
+      flex: 1;
+    }
+    & > div.button-group-desktop button#button-tablet {
+      display: none;
+    }
+    & > div > div > p {
+      font-size: 1.2em;
     }
   }
 `;

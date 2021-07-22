@@ -27,4 +27,4 @@ export const ButtonStyle = styled.button`
   font-family: Dosis, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
     Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; ;
 `;
-export const pageMaxWidth = '1300px';
+export const pageMaxWidth = '1368px';

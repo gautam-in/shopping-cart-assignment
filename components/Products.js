@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import { useState } from 'react/cjs/react.development';
 import { useAppData } from '../lib/store';
 import { BACKEND_URL } from '../config';
 import RequestsHandler from '../lib/requestHandler';
@@ -8,17 +9,33 @@ import {
   SingleProductStyle,
 } from './styles/ProductStyle';
 import { DropdownStyle } from './styles/InputStyle';
-
 import { ButtonStyle } from './styles/GlobalStyles';
 
 export default function Products() {
   const contextData = useAppData();
+  const [filter, setFilter] = useState(undefined);
   const { categories, products } = contextData?.data;
   // todo change this categories Data for flatten values values
   // const categoriesData = categories?.join('');
   // RequestsHandler.postData('http://localhost:5000/addToCart', {
   //   id: '1234211',
   // });
+
+  function filterHandler(e) {
+    // handling for dropdown list
+    let categoryId;
+    if (e.target.options) {
+      categoryId = e.target.options[e.target.selectedIndex].id;
+      setFilter(categoryId);
+      return;
+    }
+    categoryId = e.target.id;
+    if (categoryId === filter) {
+      setFilter(undefined);
+      return;
+    }
+    setFilter(categoryId);
+  }
 
   useEffect(() => {
     if (categories.length === 0) {
@@ -36,15 +53,22 @@ export default function Products() {
       });
     }
   }, [categories.length, contextData.setData, products.length]);
-  console.log(contextData);
+  console.log(filter);
   return (
     <ProductsStyle>
+      {/* Side Bar & dropdown */}
       <aside id="sidebar">
         <DropdownStyle id="dropdown">
-          <select>
+          <select onChange={filterHandler}>
             <option>--Select Filter--</option>
             {categories.map((category, index) => (
-              <option key={index} value={category.key}>
+              <option
+                id={category.id}
+                className={filter === category.id ? 'active' : ''}
+                aria-label={category.name}
+                key={index}
+                value={category.key}
+              >
                 {category.name}
               </option>
             ))}
@@ -54,15 +78,30 @@ export default function Products() {
         <ProductSideBarDesktopStyle>
           <ul>
             {categories?.map((category) => (
-              <li key={category.id}>{category.name}</li>
+              <li
+                onClick={filterHandler}
+                key={category.id}
+                id={category.id}
+                className={filter === category.id ? 'active' : ''}
+                aria-label={category.name}
+              >
+                {category.name}
+              </li>
             ))}
           </ul>
         </ProductSideBarDesktopStyle>
       </aside>
+      {/* Product Listing - filtering performed here */}
       <div id="products">
-        {products.map((product) => (
-          <SingleProduct key={product.id} product={product} />
-        ))}
+        {filter
+          ? products
+              .filter((item) => filter === item.category)
+              .map((product) => (
+                <SingleProduct key={product.id} product={product} />
+              ))
+          : products.map((product) => (
+              <SingleProduct key={product.id} product={product} />
+            ))}
       </div>
     </ProductsStyle>
   );
@@ -81,7 +120,10 @@ function SingleProduct({ product }) {
       </div>
       <div className="button-group-desktop">
         <span> MRP Rs.{product?.price} </span>
-        <ButtonStyle>Buy Now @ MRP Rs.{product?.price}</ButtonStyle>
+        <ButtonStyle id="button-tablet">
+          Buy Now @ MRP Rs.{product?.price}
+        </ButtonStyle>
+        <ButtonStyle id="button-desktop">Buy Now </ButtonStyle>
       </div>
     </SingleProductStyle>
   );
