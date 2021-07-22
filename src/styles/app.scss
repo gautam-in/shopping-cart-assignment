@@ -1,0 +1,107 @@
+/*
+=============
+Fonts
+=============
+*/
+
+@import url("https://fonts.googleapis.com/css2?family=Dosis:wght@400;700&display=swap");
+
+/*
+=============
+Variables
+=============
+*/
+
+$clr-primary: #e82222;
+$clr-primary-light: #ff0000;
+$clr-grey-1: #102a42;
+$clr-grey-5: #617d98;
+$clr-grey-10: #f1f5f8;
+$clr-white: #fff;
+$ff-primary: "Dosis", sans-serif;
+$ff-secondary: "Grand Hotel", cursive;
+$transition: all 0.3s linear;
+$spacing: 0.25rem;
+$radius: 0.5rem;
+
+/*
+=============
+Global Styles
+=============
+*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: $ff-primary;
+  background: $clr-white;
+  color: $clr-grey-1;
+  line-height: 1.5;
+  font-size: 0.875rem;
+  font-weight: 400;
+}
+a {
+  text-decoration: none;
+}
+img {
+  width: 100%;
+  display: block;
+}
+h1,
+h2,
+h3,
+h4 {
+  letter-spacing: $spacing;
+  text-transform: capitalize;
+  line-height: 1.25;
+  margin-bottom: 0.75rem;
+}
+h1 {
+  font-size: 3rem;
+}
+h2 {
+  font-size: 2rem;
+}
+h3 {
+  font-size: 1.5rem;
+}
+h4 {
+  font-size: 0.875rem;
+}
+@media screen and (min-width: 800px) {
+  h1 {
+    font-size: 4rem;
+  }
+  h2 {
+    font-size: 2.5rem;
+  }
+  h3 {
+    font-size: 2rem;
+  }
+  h4 {
+    font-size: 1rem;
+  }
+  body {
+    font-size: 1rem;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    line-height: 1.25;
+  }
+}
+
+@import "./login";
+@import "./register";
+@import "./footer";
+@import "./navbar";
+@import "./homeBanner";
+@import "./home";
+@import "./products";
+@import "./productDetails";
+@import "./cart";
+@import "./cartItem";
