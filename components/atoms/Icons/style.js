@@ -17,12 +17,12 @@ const StyledCloseIcon = styled(Cross)`
 `; 
 
 const StyledPlusIcon = styled(PlusCircleFill)`
-    width:20px;
+    width:15px;
     color:#bf2957
 `;
 
 const StyledMinusIcon = styled(MinusCircle)`
-    width:25px;
+    width:20px;
     color:#bf2957
 `;
 

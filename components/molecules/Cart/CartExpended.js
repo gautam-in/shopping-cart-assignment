@@ -2,7 +2,11 @@ import {CartExpand,CartExpandTop,
   CartExpandMiddle,
   CartExpandBottom,
   CartContainer,
-  CartOverlayStyled
+  CartOverlayStyled,
+  CartClose,
+  CartHeading,
+  HeadingText,
+  ItemCount
 } from './CartStyle'
 import {cartClose} from '../../../redux/actions/cart'
 import {connect} from 'react-redux'
@@ -26,8 +30,13 @@ const CartExpended = ({cartInfo,cartClose})=>{
       <CartExpand active={open}>
         <CartContainer>
           <CartExpandTop>
-            <div><strong>My Cart</strong><span>({cartData.length} item)</span></div>
-            <div onClick={()=>cartClose()}><CloseIcon  /></div>
+            
+            <CartHeading>
+              <HeadingText>My Cart</HeadingText>
+              <ItemCount>({cartData.length} item)</ItemCount>
+            </CartHeading>
+
+            <CartClose onClick={()=>cartClose()}><CloseIcon  /></CartClose>
           </CartExpandTop>
           <CartExpandMiddle>
               {cartItems}

@@ -8,9 +8,16 @@ const theme = {
       onyx: "#36313D",
       white:"#fff",
       btnColor:"#bf2957",
-      gray:"#f0f0f0"
+      gray:"#f0f0f0",
+      darkGray:"#cec8c8",
+      lightGray:"#f9f9f9",
+      black:"black",
     },
-    fonts: ["sans-serif", "Roboto","Myriad Pro Regular"],
+    themeFont:{
+      family:"Arial Narrow, sans-serif",
+      weight:"200"
+    },
+    fonts: ["sans-serif", "Roboto","Myriad Pro Regular",""],
     fontSizes: {
       small: "1em",
       medium: "2em",
@@ -57,7 +64,30 @@ const theme = {
     shadowCard: {
       borderBottom : "none",
       boxShadow:"0 3px 9px -5px"
-    }
+    },
+    cart:{
+      product:{
+        backgroundColor:"#fff"
+      },
+      mobile:{
+        fontFamily:"",
+        fontSize:"",
+        textColor:"",
+        backgroundColor:"#eeeeee",
+      },
+      desktop:{
+        fontFamily:"",
+        fontSize:"",
+        textColor:"",
+        backgroundColor:"#eeeeee",
+      },
+      tab:{
+        fontFamily:"",
+        fontSize:"",
+        textColor:"",
+        backgroundColor:"#eeeeee",
+      }
+    }    
   }
 
   const Theme = ({ children }) => (

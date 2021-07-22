@@ -1,10 +1,9 @@
 import  styled from 'styled-components'
 
 const StyledMenu = styled.div`
-    background-color: #f0f0f0;
+    background-color: ${({theme:{colors}})=>colors.gray};
     display:flex;
     flex-direction:column;
-    /* padding:10px; */
     height:100vh;
     width:30.333%;
     position:sticky;
@@ -21,7 +20,7 @@ const StyledMenuList = styled.ul`
    padding: 0 0 0 0;
     li{
         list-style:none;
-        border-bottom:1px solid #cec8c8;
+        border-bottom:1px solid ${({theme:{colors}})=>colors.darkGray};
         padding:10px;
         text-align:center;
     }
@@ -56,12 +55,12 @@ const Dropdown = styled.div`
 const DropdownContent = styled.div`
      display: ${({display})=> (display ? 'block' : 'none')};
      position: absolute;
-     background-color: #f9f9f9;
+     background-color: ${({theme:{colors}})=>colors.lightGray};
      min-width: 100%;
      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
      z-index: 1;
      a{
-        color: black;
+        color: ${({theme:{colors}})=>colors.black};
         padding: 12px 16px;
         text-decoration: none;
         display: block;

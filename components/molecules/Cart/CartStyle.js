@@ -30,25 +30,22 @@ const slideOutLeft = keyframes`
 
 
 const Container = styled.div`
-    background-color: #eeeeee;
+    background-color: ${({theme:{cart}})=>cart.desktop.backgroundColor};
     display:flex;
     justify-content: center;
     text-align: center;
-    /* margin-top:40px; */
     padding:3px;
     cursor:pointer;
 `;
 
 const Count = styled.span`
-    font-family: "Rockwell Regular";
-    /* padding-top:15px; */
-    /* padding-left:10px; */
+    font-family: ${({theme:{themeFont}})=>themeFont.family};
     padding-right:10px;
 `;
 
 const CartExpand = styled.div`
     z-index:999;
-    background:#f0f0f0;
+    background:${({theme:{colors}})=>colors.gray};
     width:300px;
     height:520px; 
     margin-left:auto;
@@ -58,9 +55,16 @@ const CartExpand = styled.div`
     display:${(props) => (props.active==-1 ? "none" : "flex")};
     flex-direction: column;
     animation: ${(props)=>(props.active ? slideInLeft : slideOutLeft  )} 0.4s forwards;
-    /* animation-name: ${rotate};
-    animation-duration: 10s;
-    animation-iteration-count: 1; */
+    
+    @media(max-width: 768px) {
+      width: 100vw;
+      height:95vh;
+    }
+
+    @media(max-width: 480px) {
+      width: 100vw;
+      height:100vh;
+    }
 `;
 
 const CartContainer = styled.div`
@@ -72,22 +76,56 @@ const CartContainer = styled.div`
 
 const CartExpandTop = styled.div`
     flex-basis:10%;
-    background:black;
+    background:${({theme:{colors}})=>colors.black};
     display:flex;
     justify-content: space-between;
-    color:#fff;
+    color:${({theme:{colors}})=>colors.white};
     padding:10px;
-    div{
-        display:flex;
-        span{
-            font-size:12px;
-            padding:3px;
-        }
+    @media(max-width: 768px) {
+      display:flex;
+      justify-content: space-between;
+      flex-basis:5%;
+      margin-top:24px;
+      background:${({theme:{colors}})=>colors.white};
+      color:${({theme:{colors}})=>colors.black};
+    }
+`;
+
+const CartHeading = styled.div`
+    display:flex;
+    font-family: ${({theme:{themeFont}})=>themeFont.family};
+    font-weight: 400;
+   
+`;
+
+const CartClose = styled.div`
+
+`;
+
+const HeadingText = styled.span`
+    font-size:16px;
+    padding:4px;
+    @media(max-width: 768px) {
+      font-weight: 800;
+      font-size:18px;
+      padding:4px;
+    }
+`;
+
+const ItemCount = styled.span`
+  font-family: ${({theme:{themeFont}})=>themeFont.family};
+  padding:4px;
+  @media(max-width: 768px) {
+      padding-top:8px;
+      font-size:14px;
     }
 `;
 
 const CartExpandMiddle = styled.div`
     flex-basis:75%;
+    @media(max-width: 768px) {
+      flex-basis:80%;
+    }
 `;
 
 const CartExpandBottom = styled.div`
@@ -119,5 +157,9 @@ export {
     CartExpandTop,
     CartExpandMiddle,
     CartExpandBottom,
-    CartOverlayStyled
+    CartOverlayStyled,
+    CartHeading,
+    CartClose,
+    HeadingText,
+    ItemCount
 }

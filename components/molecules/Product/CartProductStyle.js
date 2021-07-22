@@ -2,64 +2,228 @@ import styled from 'styled-components'
 
 
 const Container = styled.div`
-    background:#fff;
     display:flex;
-    flex-direction:row;
-    justify-content: space-between;
-    padding:3px;
-    margin:5px;
+    justify-content: flex-start;
+    flex-basis:100%;
+    margin-top:12px;
+    background-color: ${( {theme: { colors: {white} } })=>white};
+    
+    @media all and(max-width: 480px) {
+        display:flex;
+        justify-content: flex-start;
+        flex-basis:100%;
+        margin-top:12px;
+        background-color: ${( {theme: { colors: {white} } })=>white};
+    }
+    
+    @media(max-width: 768px) {
+        display:flex;
+        justify-content: flex-start;
+        flex-basis:100%;
+        margin-top:12px;
+        background-color: ${( {theme: { colors: {white} } })=>white};
+    }
 `;
-
 
 const LeftSection = styled.div`
-    flex-grow:1;
-    flex-basis:15%;
-    img{
-        width:60px;
-        padding:5px;
-        display:flex;
-    }
-`;
-
-const MiddleSection = styled.div`
     display:flex;
-    flex-direction:column;
-    flex-grow:3;
+    flex-basis:20%;
+    padding:4px;
     
-    div{
+    @media(max-width: 768px) {
         display:flex;
-        justify-content: space-around;
-        margin-top:-10px;
-        h5{
-            font-size:11px;
-        }
+        padding:4px;
+        flex-basis:12%;
     }
-`;
 
-const Price = styled.span`
-    font-family: 'Arial Narrow Bold';
-    font-size:12px;
+    @media(max-width: 480px) {
+        display:flex;
+        flex-basis:20%;
+        padding:4px;
+    }
+
+    
 `;
 
 const RightSection = styled.div`
     display:flex;
-    flex-direction:column-reverse;
+    flex-basis:80%; 
+    flex-direction:column;
+    justify-content: center;
+    align-item:center;
+    @media(max-width: 480px) {
+        display:flex;
+        flex-basis:80%; 
+        flex-direction:column;
+        justify-content: flex-start;
+    }
+    @media(max-width: 768px) {
+        display:flex;
+        flex-basis:88%; 
+        flex-direction:column;
+        justify-content: flex-start;
+    }
+`;
+
+const ProductInfo = styled.div`
+ 
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-start;
+    
+    @media(max-width: 480px) {
+        display:flex;
+        flex-direction:column;
+        justify-content:flex-start;
+    }
+    @media(max-width: 768px) {
+        display:flex;
+        flex-direction:column;
+        justify-content:flex-start;
+    }
+`;
+
+const ProductHeading = styled.div`
+    display:flex;
+    font-family: ${({theme:{themeFont}})=>themeFont.family};
+    font-weight:800;
+    padding-top:0px;
+    padding-bottom:6px;
+    @media(max-width: 480px) {
+        display:flex;
+        font-family: ${({theme:{themeFont}})=>themeFont.family};
+        font-weight:600;
+        padding-top:4px;
+        padding-bottom:0px;
+    }
+    @media(max-width: 768px) {
+        display:flex;
+        padding-top:12px;
+        padding-bottom:4px;
+        font-family: ${({theme:{themeFont}})=>themeFont.family};
+    }
+`;
+
+const ProductActions = styled.div`
+    display:flex;
+    flex-direction:row;
+    justify-content:flex-start;
+    @media(max-width: 480px) {
+        display:flex;
+        flex-direction:row;
+        justify-content:flex-start;
+    }
+    @media(max-width: 768px) {
+        display:flex;
+        flex-direction:row;
+        justify-content:flex-start;
+    }
+`;
+
+
+
+
+const Price = styled.div`
+    font-family: ${({theme:{themeFont}})=>themeFont.family};
     font-size:12px;
-    flex-grow:1;
-    font-weight: 150px;
+    padding:4px;
+    font-weight:600;
+    @media(max-width: 480px) {
+        font-family: ${({theme:{themeFont}})=>themeFont.family};
+        font-size:16px;
+        padding:8px;
+        font-weight:800;
+    }
+    @media(max-width: 768px) {
+        font-family: ${({theme:{themeFont}})=>themeFont.family};
+        font-size:16px;
+        padding:8px;
+        font-weight:800;
+    }
 `;
 
-const CartHeading = styled.div`
-    display:flex;
+const PriceRight = styled.div`
+    font-family: ${({theme:{themeFont}})=>themeFont.family};
+    font-size:12px;
+    padding:4px;
+    font-weight:600;
+    margin-left:auto;
+
+    @media(max-width: 480px) {
+        font-family: ${({theme:{themeFont}})=>themeFont.family};
+        font-size:16px;
+        padding:8px;
+        font-weight:800;
+        margin-left:auto;
+    }
+
+    @media(max-width: 768px) {
+        font-family: ${({theme:{themeFont}})=>themeFont.family};
+        font-size:16px;
+        padding:8px;
+        font-weight:800;
+        margin-left:auto;
+    }
 `;
 
-const CartCountContainer = styled.div`
+
+const ProductQuantity = styled.div`
+    font-family: ${({theme:{themeFont}})=>themeFont.family};
     display:flex;
+    padding:4px;
+    font-weight:200;
+
+    @media(max-width: 480px) {
+        font-family: ${({theme:{themeFont}})=>themeFont.family};
+        display:flex;
+        padding:8px;
+        font-weight:800;
+    }
+
+    @media(max-width: 768px) {
+        font-family: ${({theme:{themeFont}})=>themeFont.family};
+        display:flex;
+        padding:8px;
+        font-weight:800;
+    }
 `;
 
-const ProductQuantity = styled.strong`
+const ProductPlus = styled.div`
     display:flex;
+    padding-left:4px;
+    cursor:pointer;
+    
+    @media(max-width: 480px) {
+        display:flex;
+        padding:4px;
+        cursor:pointer;
+    }
+
+    @media(max-width: 768px) {
+        display:flex;
+        padding:4px;
+        cursor:pointer;
+    }
 `;
+
+const ProductMinus = styled.div`
+    display:flex;
+    padding-left:4px;
+    cursor:pointer;
+    @media(max-width: 480px) {
+        display:flex;
+        padding:4px;
+        cursor:pointer;
+    }
+
+    @media(max-width: 768px) {
+        display:flex;
+        padding:4px;
+        cursor:pointer;
+    }
+`;
+
 export {
-    Container,LeftSection,MiddleSection,RightSection,Price,CartHeading,CartCountContainer,ProductQuantity
+    Container,LeftSection,RightSection,Price,ProductQuantity,
+    ProductInfo,ProductHeading,ProductActions,PriceRight,ProductPlus,ProductMinus
 }

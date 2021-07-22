@@ -31,7 +31,7 @@ const PriceTag = ({data})=>{
                 <div onClick={() => addToCart() }><Button  cname='variant_category' btnTheme='product' >Buy Now</Button></div>
             </ProductPrice>
             <ProductPriceMobile>
-                <Button cname='variant_product' btnTheme="product">Buy Now <span>@ Rs{price}</span></Button>
+            <div onClick={() => addToCart() }><Button  cname='variant_product' btnTheme="product">Buy Now <span>@ Rs{price}</span></Button></div>
             </ProductPriceMobile>
         </>
     )
