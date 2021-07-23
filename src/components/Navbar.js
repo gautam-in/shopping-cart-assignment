@@ -52,7 +52,11 @@ class Navbar extends Component {
                   <Link to="signup">Register</Link>
                 </li>
               )}
-              <li style={{ textTransform: "capitalize", fontWeight: "bold" }}>
+              <li
+                className={
+                  sessionStorage.getItem("currentUser") ? "userNameStyles" : ""
+                }
+              >
                 {sessionStorage.getItem("currentUser")
                   ? userNameCreation(sessionStorage.getItem("currentUser"))
                   : ""}
