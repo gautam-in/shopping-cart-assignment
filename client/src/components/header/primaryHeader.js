@@ -3,6 +3,7 @@ import React, { useEffect, useState, useContext } from 'react'
 import SBLogo from './logo.png'
 import { default as CartImage } from './cart.svg';
 import { Link } from 'react-router-dom'
+
 import { fetchProducts } from '../../api/product';
 import MyContext from '../../context/myContext';
 
@@ -38,10 +39,11 @@ export default function PrimaryHeader() {
             <div className="CartContainer">
 
                 <button className="LoginButton">Login</button>
-
-                <img
-                    src={CartImage}
-                    alt="cart_image" />
+                <Link to="/cart">
+                    <img
+                        src={CartImage}
+                        alt="cart_image" />
+                </Link>
             </div>
         </nav>
 
