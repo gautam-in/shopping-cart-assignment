@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Signika:wght@700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="./css/main.css" />
+    <!-- Favicon -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./static/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./static/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./static/favicon-16x16.png"
+    />
+    <!-- Favicon -->
+    <title>Products Sabka Bazaar</title>
+  </head>
+
+  <body>
+    <!-- Navbar Starting -->
+    <div class="navbar">
+      <div class="logo">
+        <a href="index.html">
+          <img
+            class="site-logo"
+            src="./static/images/logo.png"
+            alt="website logo sabka bazaar"
+        /></a>
+      </div>
+      <nav class="products-navbar">
+        <ul class="MenuItems">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="register.html">Register</a></li>
+          <li><a href="login.html">Login</a></li>
+        </ul>
+      </nav>
+
+      <a class="shopping-cart" href="#"
+        ><i id="shopping-cart-image" class="fas fa-shopping-cart fa-lg"></i>
+        <span class="cart-items">0 items</span>
+      </a>
+      <img src="./static/images/menu.png" alt="" class="menu-icon" />
+    </div>
+    <!-- Navbar Ending-->
+
+    <!-- Products Categories aside section Starting -->
+    <aside>
+      <button class="category-button" value="5b6899953d1a866534f516e2">
+        Fruits & Vegetables
+      </button>
+      <button class="category-button" value="5b6899123d1a866534f516de">
+        Bakery Cakes and Dairy
+      </button>
+      <button class="category-button" value="5b675e5e5936635728f9fc30">
+        Beverages
+      </button>
+      <button class="category-button" value="5b68994e3d1a866534f516df">
+        Beauty and Hygiene
+      </button>
+      <button class="category-button" value="5b6899683d1a866534f516e0">
+        Baby Care
+      </button>
+    </aside>
+    <!-- Product Categories aside section Ending -->
+
+    <!-- <select class="mobile-select-dropdown category-button" name="category">
+        <option value="5b6899953d1a866534f516e2">Fruits & Vegetables</option>
+        <option value="5b6899123d1a866534f516de">Bakery Cakes and Dairy</option>
+        <option value="5b675e5e5936635728f9fc30">Beverages</option>
+        <option value="5b68994e3d1a866534f516df">Beauty and Hygiene</option>
+        <option value="5b6899683d1a866534f516e0">Baby Care</option>
+      </select> -->
+
+    <!-- Dropdown section for product categories in mobile view Starting -->
+    <div class="custom-select-wrapper">
+      <div class="custom-select">
+        <div class="custom-select__trigger">
+          <span>Fruits & Vegetables</span>
+          <div class="arrow"></div>
+        </div>
+        <div class="custom-options">
+          <span
+            class="custom-option selected"
+            data-value="5b6899953d1a866534f516e2"
+            >Fruits & Vegetables</span
+          >
+          <span class="custom-option" data-value="5b6899123d1a866534f516de"
+            >Bakery Cakes and Dairy</span
+          >
+          <span class="custom-option" data-value="5b675e5e5936635728f9fc30"
+            >Beverages</span
+          >
+          <span class="custom-option" data-value="5b68994e3d1a866534f516df"
+            >Beauty and Hygiene</span
+          >
+          <span class="custom-option" data-value="5b6899683d1a866534f516e0"
+            >Baby Care</span
+          >
+        </div>
+      </div>
+    </div>
+    <!-- Dropdown section for product categories in mobile view Ending -->
+
+    <!-- Section for dispalying all products Starting -->
+    <div class="content">
+      <div class="container">
+        <section class="products-section"></section>
+      </div>
+    </div>
+    <!-- Section for dispalying all products Starting -->
+
+    <!-- Section for dispalying "Added to cart" notification -->
+    <div id="notification-area"></div>
+
+    <!-- Footer Starting -->
+    <footer class="footer">
+      <p>Copyright &copy; 2011-2018 Sabka Bazaar Grocery Suplies Pvt. Ltd</p>
+    </footer>
+    <!-- Footer Ending -->
+
+    <!-- modal -->
+    <div id="my-modal" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <span class="close">&times;</span>
+          <h2>My Cart</h2>
+        </div>
+        <div class="modal-body"></div>
+        <div class="modal-footer">
+          <h3>Proceed to checkout</h3>
+        </div>
+      </div>
+    </div>
+    <!-- modal -->
+
+    <!-- Script files -->
+    <script src="./js/app.js"></script>
+    <script src="./js/product.js"></script>
+    <script src="./js/cart-number.js"></script>
+    <!-- <script src="./js/openModal.js"></script> -->
+    <script src="./js/cart.js"></script>
+    <script src="./js/changeProductCategory.js"></script>
+
+  </body>
+</html>
