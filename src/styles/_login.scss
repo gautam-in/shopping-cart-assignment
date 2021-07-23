@@ -1,0 +1,82 @@
+.loginContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  //   width: 100%;
+  //   max-width: 30rem;
+
+  .loginLeftSide {
+    padding: 0.875rem 0.5rem 1.5rem 0.5rem;
+    // display: none;
+  }
+
+  .loginRightSide {
+    padding: 1rem;
+    margin-top: 1rem;
+    width: 25rem;
+
+    .submitButton {
+      outline: none;
+      border: none;
+      background: $clr-primary;
+      color: $clr-white;
+      padding: 0.675rem 0.875rem;
+      width: 100%;
+      margin-top: 2.25rem;
+      cursor: pointer;
+    }
+    .submitButton:active {
+      background: $clr-primary-light;
+    }
+    .submitButtonDisabled {
+      outline: none;
+      border: none;
+      background: $clr-primary;
+      color: $clr-white;
+      padding: 0.675rem 0.875rem;
+      width: 100%;
+      margin-top: 2.25rem;
+      cursor: not-allowed;
+      opacity: 0.7;
+    }
+    .inputType {
+      display: block;
+      border: none;
+      font-size: 1.25rem;
+      border-bottom: solid 2px rgb(177, 175, 175);
+      margin-top: 2.25rem;
+      padding-bottom: 0.35rem;
+      outline: none;
+      transition: $transition;
+      width: 100%;
+    }
+    .inputtypeError {
+      color: red;
+      font-size: 9px;
+    }
+    .inputType:focus {
+      border-bottom: solid 2px rgb(60, 176, 221) !important;
+    }
+    ::placeholder {
+      font-size: 1.1rem;
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .loginContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    max-width: 50rem;
+    margin: 0rem auto;
+  }
+  .loginRightSide {
+    margin: 7rem 0rem 0rem 7rem;
+  }
+  form {
+    margin-top: 3rem;
+  }
+}

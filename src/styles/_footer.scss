@@ -1,0 +1,33 @@
+.footerContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 8vh;
+  width: 100%;
+  background: $clr-grey-10;
+
+  .footer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+
+    .footerRightSide {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .icon {
+        width: 20px;
+        margin: 0rem 2rem;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .footer {
+    flex-direction: column;
+    min-height: 10vh;
+  }
+}
