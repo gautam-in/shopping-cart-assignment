@@ -3,6 +3,7 @@ import axios from "axios";
 import ProductDetails from "./ProductDetails";
 import { isEmpty } from "lodash";
 import { Link } from "react-router-dom";
+import Loading from "../commonData/Loading";
 
 class Products extends Component {
   constructor(props) {
@@ -16,6 +17,7 @@ class Products extends Component {
       allSelectedProducts: [],
       noDataText: "",
       userAuth: true,
+      showAPILoader: false,
     };
   }
 
@@ -91,21 +93,30 @@ class Products extends Component {
   };
 
   productListData = () => {
+    this.setState({
+      showAPILoader: true,
+    });
     axios
       .get(`http://localhost:5000/products`)
       .then((res) => {
         if (res && res.status === 200) {
           const response = res.data;
-          this.setState({ productList: response, filteredProducts: res.data });
+          this.setState({
+            productList: response,
+            filteredProducts: res.data,
+            showAPILoader: false,
+          });
         } else {
           this.setState({
             productList: [],
+            showAPILoader: false,
           });
         }
       })
       .catch((err) => {
         this.setState({
           noDataText: "Something went wrong Please Try Again Later!",
+          showAPILoader: false,
         });
       });
   };
@@ -127,7 +138,9 @@ class Products extends Component {
   render() {
     return (
       <>
-        {this.state.userAuth ? (
+        {this.state.showAPILoader ? (
+          <Loading />
+        ) : this.state.userAuth ? (
           !isEmpty(this.state.productList) ? (
             <section className="products">
               <ul className="product-categories">

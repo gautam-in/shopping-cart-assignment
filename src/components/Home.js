@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import HomeBanners from "./HomeBanners";
 import { isEmpty } from "lodash";
+import Loading from "../commonData/Loading";
 
 class Home extends Component {
   constructor(props) {
@@ -11,6 +12,7 @@ class Home extends Component {
       bannerList: [],
       categiryList: [],
       noDataText: "",
+      showAPILoader: false,
     };
   }
 
@@ -31,7 +33,7 @@ class Home extends Component {
           bannerList: [],
         }).catch((err) => {
           this.setState({
-            noDataText: "Something went wrong Please Try Again Later!",
+            noDataText: "Data Not Avaliable",
           });
         });
       }
@@ -39,22 +41,27 @@ class Home extends Component {
   };
 
   categiriesListData = () => {
+    this.setState({
+      showAPILoader: true,
+    });
     axios
       .get(`http://localhost:5000/categories`)
       .then((res) => {
         if (res && res.status === 200) {
           const response = res.data;
-          this.setState({ categiryList: response });
+          this.setState({ categiryList: response, showAPILoader: false });
         } else {
           this.setState({
             categiryList: [],
-            noDataText: "Something went wrong Please Try Again Later!",
+            noDataText: "Data Not Avaliable",
+            showAPILoader: false,
           });
         }
       })
       .catch((err) => {
         this.setState({
           noDataText: "Something went wrong Please Try Again Later!",
+          showAPILoader: false,
         });
       });
   };
@@ -71,7 +78,9 @@ class Home extends Component {
         ) : (
           <p></p>
         )}
-        {!isEmpty(this.state.categiryList) ? (
+        {this.state.showAPILoader ? (
+          <Loading />
+        ) : !isEmpty(this.state.categiryList) ? (
           <ul className="category-list">
             {this.state.categiryList.map((category) => (
               <li key={category.id} className="category">

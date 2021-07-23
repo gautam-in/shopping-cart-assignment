@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import LogoBig from "../../public/static/images/logo_2x.png";
 import LogoSmall from "../../public/static/images/logo.png";
 import Cart from "../../public/static/images/cart.svg";
-import { FaBars, FaTimes } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { userNameCreation } from "../commonData/index";
 import { toast } from "react-toastify";
@@ -45,12 +44,14 @@ class Navbar extends Component {
               <li>
                 <Link to="signin" onClick={this.handleUserLogin}>
                   {sessionStorage.getItem("currentUser") ? "Logout" : "SignIn"}
-                  {/* {}SignIn */}
                 </Link>
               </li>
-              <li>
-                <Link to="signup">Register</Link>
-              </li>
+              {(sessionStorage.getItem("currentUser") === "" ||
+                sessionStorage.getItem("currentUser") === null) && (
+                <li>
+                  <Link to="signup">Register</Link>
+                </li>
+              )}
               <li style={{ textTransform: "capitalize", fontWeight: "bold" }}>
                 {sessionStorage.getItem("currentUser")
                   ? userNameCreation(sessionStorage.getItem("currentUser"))

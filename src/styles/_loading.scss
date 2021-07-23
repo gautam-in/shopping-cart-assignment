@@ -1,0 +1,16 @@
+.loadingIcon {
+  animation: loadingAnimation 4s infinite linear;
+  //   color: gray;
+  font-size: 20rem;
+  opacity: 0.7;
+  //   box-shadow: 0px 0px 7px gray;
+}
+
+@keyframes loadingAnimation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
