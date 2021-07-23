@@ -1,15 +1,16 @@
 import React from 'react'
 import SBLogo from './logo.png'
 import { default as CartImage } from './cart.svg';
+import { Link } from 'react-router-dom'
 
 export default function PrimaryHeader() {
     return (
 
         <nav className="HeaderTop">
-            <div className="LogoContainer">
+            <Link to="/" className="LogoContainer">
                 <img
                     src={SBLogo} alt="sb_logo" />
-            </div>
+            </Link>
 
             <form class="SearchContainer" action="action_page.php">
                 <input type="text" placeholder="Search.." name="search" />

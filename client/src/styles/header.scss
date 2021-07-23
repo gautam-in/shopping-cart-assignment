@@ -1,7 +1,14 @@
+@import "variables";
+
 .SB_Header {
     overflow: hidden;
     background-color: #f1f1f1;
     padding: 10px 5px;
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    height: 15vh;
 
     .HeaderTop {
         display: flex;
@@ -90,29 +97,34 @@
             width: 50%; /* The width is 100%, when the viewport is 800px or smaller */
         }
     }
+}
+.CategoryContainer {
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
 
-    .CategoryContainer {
-        ul {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-            overflow: hidden;
-
-            li {
-                float: left;
-            }
-
-            li a {
-                display: block;
-                color: black;
-                text-align: center;
-                padding: 14px 16px;
-                text-decoration: none;
-            }
-
-            li a:hover {
-                background-color: rgb(117, 117, 117);
-            }
+        li {
+            float: left;
         }
+
+        li a {
+            display: block;
+            color: black;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        li a:hover {
+            background-color: $main-green-color;
+            color: $main-white-color;
+        }
+    }
+
+    .SelectedTab{
+        background-color: $main-green-color;
+        color: $main-white-color;
     }
 }

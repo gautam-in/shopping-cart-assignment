@@ -1,6 +1,13 @@
 @import "variables";
 @import "header.scss";
+@import "footer.scss";
 @import "home.banner.scss";
 @import "home.product.scss";
 @import "cart.scss";
 @import "product.scss";
+@import "productGridList.scss";
+@import "productCard.scss";
+
+.MainSection {
+    min-height: calc(85vh - 70px);
+}

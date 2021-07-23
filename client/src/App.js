@@ -5,8 +5,9 @@ import MyProvider from './context/myProvider';
 
 import Home from './containers/home';
 import Cart from './containers/cart';
-import ProductList from './containers/home/productList';
+import ProductList from './containers/productList';
 import Product from './containers/product';
+import Footer from './components/footer';
 
 function App() {
   return (
@@ -14,14 +15,18 @@ function App() {
 
       <Router>
         <Header />
-        <Switch>
-          <Route exact path="/" component={Home} />
-          <Route path="/cart" component={Cart} />
-          <Route exact path="/products" component={ProductList} />
-          <Route exact path="/products/:id" component={Product} />
 
-        </Switch>
-        {/* <Footer/> */}
+        <section className="MainSection">
+
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route path="/cart" component={Cart} />
+            <Route exact path="/categories/:id" component={ProductList} />
+            <Route exact path="/products/:id" component={Product} />
+
+          </Switch>
+        </section>
+        <Footer />
       </Router>
     </MyProvider>
   );

@@ -2,8 +2,8 @@ import React from 'react'
 
 export default function Footer() {
     return (
-        <div>
-            
-        </div>
+        <footer className="SB_Footer">
+            <p>© basilravi@gmail.com</p>
+        </footer>
     )
 }
