@@ -6,7 +6,7 @@ import ProductList from './productList'
 export default function Home() {
     return (
         <div>
-            {/* <Banner /> */}
+            <Banner />
             <ProductList />
             <CategoryList />
         </div>

@@ -1,9 +1,27 @@
-import React from 'react'
+import React, { useEffect, useState, useContext } from 'react'
+
 import SBLogo from './logo.png'
 import { default as CartImage } from './cart.svg';
 import { Link } from 'react-router-dom'
+import { fetchProducts } from '../../api/product';
+import MyContext from '../../context/myContext';
 
 export default function PrimaryHeader() {
+
+    const { setProducts } = useContext(MyContext);
+
+    useEffect(() => {
+        fetchProducts()
+            .then(res => {
+                // setList(res.data);
+                setProducts(res.data)
+            })
+            .catch(error => {
+
+            })
+    }, [])
+
+
     return (
 
         <nav className="HeaderTop">

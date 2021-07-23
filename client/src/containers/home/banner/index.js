@@ -1,108 +1,88 @@
 import React, { useEffect, useState } from 'react'
+import { fetchBanners } from '../../../api/banner';
 
 export default function Banner() {
-    const banners = [
-        {
-            "bannerImageUrl": "/static/images/offers/offer1.jpg",
-            "bannerImageAlt": "Independence Day Deal - 25% off on shampoo",
-            "isActive": true,
-            "order": 1,
-            "id": "5b6c38156cb7d770b7010ccc"
-        },
-        {
-            "bannerImageUrl": "/static/images/offers/offer2.jpg",
-            "bannerImageAlt": "Independence Day Deal - Rs120 off on surf",
-            "isActive": true,
-            "order": 2,
-            "id": "5b6c38336cb7d770b7010ccd"
-        },
-        {
-            "bannerImageUrl": "/static/images/offers/offer3.jpg",
-            "bannerImageAlt": "Independence Day Deal - Rs99 off on domex",
-            "isActive": true,
-            "order": 3,
-            "id": "5b6c38456cb7d770b7010cce"
-        },
-        {
-            "bannerImageUrl": "/static/images/offers/offer4.jpg",
-            "bannerImageAlt": "Independence Day Deal - Rs99 off on bodywash",
-            "isActive": true,
-            "order": 4,
-            "id": "5b6c38576cb7d770b7010ccf"
-        },
-        {
-            "bannerImageUrl": "/static/images/offers/offer5.jpg",
-            "bannerImageAlt": "Independence Day Deal - Rs70 off on tea",
-            "isActive": true,
-            "order": 5,
-            "id": "5b6c386b6cb7d770b7010cd0"
-        }
-    ]
-
-    const [quoteData, getQuoteData] = useState(banners);
+    const [bannerList, setBannerList] = useState([]);
     const [current, setCurrent] = useState(0);
-    const [quote, getQuote] = useState(quoteData[current])
+    const [banner, setBanner] = useState({})
 
-    useEffect(
-        () => getQuote(quoteData[current]),
-        [current, quote]
+    useEffect(() => {
+        fetchBanners()
+            .then(res => {
+                setBanner(res.data[current])
+                setBannerList(res.data);
+            })
+            .catch(error => {
+
+            })
+    }, [])
+
+
+    useEffect(() => {
+        setBanner(bannerList[current])
+    }, [current]
     )
 
-    const nextQuote = () => {
-        current === quoteData.length - 1 ?
+    const nextBanner = () => {
+        current === bannerList.length - 1 ?
             setCurrent(0)
             :
             setCurrent(current + 1)
     }
 
-    const prevQuote = () => {
+    const prevBanner = () => {
         current === 0 ?
-            setCurrent(quoteData.length - 1)
+            setCurrent(bannerList.length - 1)
             :
             setCurrent(current - 1)
     }
 
-    const dotPicksQuote = (e) => setCurrent(Number(e.target.id))
+    const dotPicksBanner = (e) => setCurrent(Number(e.target.id))
 
-    console.log(current)
-    return (
-        <section>
-            <div className="BannerContainer">
-                <Slide quote={quote} />
-                <Arrows nextQuote={nextQuote}
-                    prevQuote={prevQuote} />
-            </div>
-            <Dots dotQty={quoteData}
-                current={current}
-                dotPicksQuote={dotPicksQuote} />
-        </section>
-    )
+    if (bannerList.length > 0) {
+
+        return (
+            <section>
+                <div className="BannerContainer">
+                    <Slide banner={banner} />
+                    <Arrows nextBanner={nextBanner}
+                        prevBanner={prevBanner} />
+                </div>
+                <Dots dotQty={bannerList}
+                    current={current}
+                    dotPicksBanner={dotPicksBanner} />
+            </section>
+        )
+    }
+    else {
+        return null;
+    }
 }
 
-function Slide({ quote }) {
+function Slide({ banner }) {
     return (
         <div className="BannerSlide">
-            <img alt={quote.bannerImageAlt} src={quote.bannerImageUrl}/>
+            <img alt={banner.bannerImageAlt} src={banner.bannerImageUrl} />
         </div>
     )
 }
 
-function Arrows({ nextQuote, prevQuote }) {
+function Arrows({ nextBanner, prevBanner }) {
     return (
         <>
-            <a onClick={prevQuote} className="BannerSlidePrev" id="prev">&#10094;</a>
-            <a onClick={nextQuote} className="BannerSlideNext" id="next">&#10095;</a>
+            <a onClick={prevBanner} className="BannerSlidePrev" id="prev">&#10094;</a>
+            <a onClick={nextBanner} className="BannerSlideNext" id="next">&#10095;</a>
         </>
     )
 }
 
-function Dots({ dotQty, current, dotPicksQuote }) {
+function Dots({ dotQty, current, dotPicksBanner }) {
     return (
         <div className="dot-container">
             {
                 dotQty.map((dot, i) => {
                     return <span id={i} className={current === i ? "dot active" : "dot"}
-                        onClick={dotPicksQuote}></span>
+                        onClick={dotPicksBanner}></span>
                 })
             }
         </div>

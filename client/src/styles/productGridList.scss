@@ -1,34 +1,42 @@
 .ProductGridList {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: grid;
-    grid-gap: 1rem;
-}
+    margin: 5%;
 
-/* Screen larger than 600px? 2 column */
-@media (min-width: 600px) {
-    .ProductGridList {
-        grid-template-columns: repeat(3, 1fr);
+    header {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        img {
+            height: 200px;
+        }
     }
-}
 
-/* Screen larger than 600px? 2 column */
-@media (min-width: 500px) {
-    .ProductGridList {
-        grid-template-columns: repeat(2, 1fr);
+    .GridList {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-gap: 1rem;
     }
-}
 
-/* Screen larger than 900px? 3 columns */
-@media (min-width: 900px) {
-    .ProductGridList {
-        grid-template-columns: repeat(3, 1fr);
+    /* Screen larger than 600px? 2 column */
+    @media (min-width: 400px) {
+        .GridList {
+            grid-template-columns: repeat(2, 1fr);
+        }
     }
-}
 
-/* Screen larger than 900px? 3 columns */
-@media (min-width: 1200px) {
-    .ProductGridList {
-        grid-template-columns: repeat(4, 1fr);
+    /* Screen larger than 900px? 3 columns */
+    @media (min-width: 800px) {
+        .GridList {
+            grid-template-columns: repeat(3, 1fr);
+        }
     }
+
+     /* Screen larger than 900px? 4 columns */
+     @media (min-width: 1100px) {
+        .GridList {
+            grid-template-columns: repeat(4, 1fr);
+        }
+    }
+
 }
