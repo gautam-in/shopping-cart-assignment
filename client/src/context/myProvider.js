@@ -12,11 +12,16 @@ export default function MyProvider(props) {
         setContext(prev => ({ ...prev, products }));
     }
 
+    const setCategories = (categories) => {
+        setContext(prev => ({ ...prev, categories }));
+    }
+
     return (
         <MyContext.Provider
             value={{
                 context,
-                setProducts
+                setProducts,
+                setCategories
             }}
         >
             {props.children}
