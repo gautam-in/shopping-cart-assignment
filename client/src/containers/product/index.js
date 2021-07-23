@@ -7,8 +7,12 @@ export default function Product() {
     const { id: productId } = useParams();
     const [currentCategoryInfo, setCurrentCategoryInfo] = useState({});
     const [currentProductInfo, setCurrentProductInfo] = useState({});
+    const [ isProductAvailableInCart, setIsProductAvailableInCart ] = useState(false);
 
-    const { addProductToCart, context: { categories = [], products = [] } } = useContext(MyContext)
+    const {
+        removeProductFromCart,
+        addProductToCart,
+        context: { categories = [], products = [], cart = [] } } = useContext(MyContext)
 
     useEffect(() => {
 
@@ -32,8 +36,19 @@ export default function Product() {
             }
         }
 
-    }, [categories, currentProductInfo])
+    }, [categories, currentProductInfo]);
 
+
+    useEffect(() => {
+        console.log(cart)
+        if (cart.length > 0) {
+            const isProductInCart = cart.find(item => item.id === currentProductInfo.id);
+            if (isProductInCart) {
+                setIsProductAvailableInCart(true);
+
+            }
+        }
+    }, [cart, currentProductInfo])
 
     return (
         <section className="ProductPage">
@@ -57,17 +72,24 @@ export default function Product() {
                     <p className="description">{currentProductInfo.description}</p>
 
                     <div className="Button_Container">
+                        {
+                            !isProductAvailableInCart ?
+                                <>
+                                    <button className="Button_Action Button_Action--WishList ">
+                                        ADD TO WISHLIST
+                                    </button>
 
-                        <button className="Button_Action Button_Action--WishList ">
-                            ADD TO WISHLIST
-                        </button>
 
+                                    <button className="Button_Action Button_Action--AddToCart" onClick={() => addProductToCart(currentProductInfo)}>
+                                        ADD TO BAG
+                                    </button>
+                                </> :
 
-                        <button className="Button_Action Button_Action--AddToCart" onClick={() => addProductToCart(currentProductInfo)}>
-                            ADD TO BAG
-                        </button>
+                                <button className="Button_Action Button_Action--RemoveFromCart ">
+                                    REMOVE FROM CART
+                                </button>
+                        }
                     </div>
-
                     <div>
 
                         <p className="small-text"><span>Standard delivery</span> 2-5 working days</p>

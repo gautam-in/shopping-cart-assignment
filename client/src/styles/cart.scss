@@ -1,3 +1,5 @@
+@import "variables";
+
 .ShoppingCart_Container {
     padding: 0px 30px 30px 20px;
     
@@ -122,7 +124,7 @@
         .remove-product {
             border: 0;
             padding: 4px 8px;
-            background-color: #c66;
+            background-color: $main-red-color;
             color: #fff;
             font-family: $font-bold;
             font-size: 12px;

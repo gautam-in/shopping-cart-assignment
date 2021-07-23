@@ -1,6 +1,11 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import MyContext from '../../context/myContext';
+
 
 export default function CartItem(props) {
+
+    const { removeProductFromCart } = useContext(MyContext);
+
     return (
         <div className="product">
             <div className="product-image">
@@ -14,7 +19,7 @@ export default function CartItem(props) {
             <div className="product-quantity">{props.quantity}</div>
 
             <div className="product-removal">
-                <button className="remove-product">
+                <button className="remove-product" onClick={() => removeProductFromCart(props)}>
                     Remove
                 </button>
             </div>

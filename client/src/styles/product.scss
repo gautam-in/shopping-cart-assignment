@@ -49,7 +49,7 @@
         text-decoration: none;
         display: inline-block;
         margin: 4px 30px;
-        cursor: pointer
+        cursor: pointer;
     }
 
     .Button_Action--WishList {
@@ -62,7 +62,10 @@
         color: white;
     }
 
-    
+    .Button_Action--RemoveFromCart {
+        background-color: $main-red-color;
+        color: white;
+    }
 }
 
 .price {

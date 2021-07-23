@@ -39,13 +39,21 @@ export default function MyProvider(props) {
         setContext(prev => ({ ...prev, cart: currentCart }));
     }
 
+    const removeProductFromCart = (product) => {
+
+        let filteredCart = context.cart.filter(item => item.id !== product.id);
+
+        setContext(prev => ({ ...prev, cart: filteredCart }));
+    }
+
     return (
         <MyContext.Provider
             value={{
                 context,
                 setProducts,
                 setCategories,
-                addProductToCart
+                addProductToCart,
+                removeProductFromCart
             }}
         >
             {props.children}
