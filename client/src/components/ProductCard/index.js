@@ -1,8 +1,16 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { useHistory } from 'react-router-dom';
+import MyContext from '../../context/myContext';
 
 export default function ProductCard(props) {
     const history = useHistory();
+
+    const { addProductToCart, context: { cart } } = useContext(MyContext);
+
+    const handleAddCartToProduct = (event) => {
+        event.stopPropagation();
+        addProductToCart(props);
+    }
 
     return (
         <div className="ProductCard"
@@ -14,7 +22,7 @@ export default function ProductCard(props) {
                 <span className="ProductTitle">{props.name}</span>
                 <span className="ProductPrice">Price: {`₹${props.price}`}</span>
                 {/* <p>{props.content}</p> */}
-                <button className="Button_AddToCart">Add To Cart</button>
+                <button className="Button_AddToCart" onClick={handleAddCartToProduct}>Add To Cart</button>
             </div>
         </div>
     )

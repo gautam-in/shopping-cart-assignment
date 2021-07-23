@@ -8,7 +8,7 @@ export default function Product() {
     const [currentCategoryInfo, setCurrentCategoryInfo] = useState({});
     const [currentProductInfo, setCurrentProductInfo] = useState({});
 
-    const { context: { categories = [], products = [] } } = useContext(MyContext)
+    const { addProductToCart, context: { categories = [], products = [] } } = useContext(MyContext)
 
     useEffect(() => {
 
@@ -32,7 +32,7 @@ export default function Product() {
             }
         }
 
-    }, [categories,currentProductInfo])
+    }, [categories, currentProductInfo])
 
 
     return (
@@ -52,6 +52,8 @@ export default function Product() {
                 <div className="Details_Container">
                     <h1>{currentProductInfo.name}</h1>
                     <p className="price">{`₹${currentProductInfo.price}`}</p>
+
+                    <p className="description">{`Quantity: ${currentProductInfo.stock} Unit`}</p>
                     <p className="description">{currentProductInfo.description}</p>
 
                     <div className="Button_Container">
@@ -61,7 +63,7 @@ export default function Product() {
                         </button>
 
 
-                        <button className="Button_Action Button_Action--AddToCart">
+                        <button className="Button_Action Button_Action--AddToCart" onClick={() => addProductToCart(currentProductInfo)}>
                             ADD TO BAG
                         </button>
                     </div>

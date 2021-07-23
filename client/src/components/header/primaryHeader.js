@@ -9,7 +9,7 @@ import MyContext from '../../context/myContext';
 
 export default function PrimaryHeader() {
 
-    const { setProducts } = useContext(MyContext);
+    const { setProducts, context: { cart } } = useContext(MyContext);
 
     useEffect(() => {
         fetchProducts()
@@ -39,13 +39,16 @@ export default function PrimaryHeader() {
             <div className="CartContainer">
 
                 <button className="LoginButton">Login</button>
+                {cart.length > 0 &&
+                    < p style={{ position: 'absolute', right: 0 }}>{cart.length}</p>}
+
                 <Link to="/cart">
                     <img
                         src={CartImage}
                         alt="cart_image" />
                 </Link>
             </div>
-        </nav>
+        </nav >
 
     )
 }

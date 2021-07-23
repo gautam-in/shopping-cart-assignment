@@ -36,6 +36,21 @@
             height: 20px;
             width: 20px;
         }
+
+        p {
+            position: absolute;
+            right: 0px;
+            top: -2px;
+            background: green;
+            border-radius: 15px;
+            color: wheat;
+            width: 15px;
+            height: 15px;
+            font-size: 10px;
+            padding: 1px;
+            text-align: center;
+            font-weight: 700;
+        }
     }
 
     .SearchContainer {
@@ -123,7 +138,7 @@
         }
     }
 
-    .SelectedTab{
+    .SelectedTab {
         background-color: $main-green-color;
         color: $main-white-color;
     }
