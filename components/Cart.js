@@ -13,8 +13,8 @@ import { ButtonStyle } from './styles/GlobalStyles';
 
 export default function Cart() {
   const contextData = useAppData();
-  const { cartOpen, cart } = contextData?.data;
-  const { addToCart, changeQuantity } = contextData;
+  const { cartOpen, cart, totalCart } = contextData?.data;
+  const { changeQuantity } = contextData;
 
   return (
     <>
@@ -25,7 +25,7 @@ export default function Cart() {
               My Cart{' '}
               <span>
                 {' '}
-                {`(${cart.size} ${cart.size <= 1 ? 'item' : 'items'})`}
+                {`(${totalCart} ${totalCart <= 1 ? 'item' : 'items'})`}
               </span>
             </h3>
           </header>
