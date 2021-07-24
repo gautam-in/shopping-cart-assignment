@@ -1,0 +1,132 @@
+@import "~bootstrap/scss/bootstrap";
+@import 'colors';
+
+// body {
+//     font-family: 'Courier New', Courier, monospace;
+//     background-color: tan;
+//     font-weight: bold;
+//     font-size: 1.5em;
+// }
+/* ----------------------------------------------- */
+/* BASIC SETUP */
+/* ----------------------------------------------- */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    background-color: #fff;
+    color: #555;
+    font-family: 'Lato', 'Arial', sans-serif;
+    font-weight: 300;
+    font-size: 20px;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+}
+
+.row {
+    margin: 0 auto;
+}
+
+.category-sider,
+.category-detalis {
+    padding: 20px 0;
+}
+
+
+.bazar-logo {
+    height: 80px;
+    width: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.menu-list {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    height: 100%;
+    align-items: center;
+    li:not(li:nth-child(2)){
+        flex-grow: 1;
+    }
+    li:nth-child(2){
+        flex-grow: 8;
+    }
+    li a{
+        color: #000;
+        text-decoration: none;
+        font-size: 14px;
+    }
+}
+
+.product-image {
+    height: 200px;
+    width: auto;
+}
+
+.category-detalis .row:not(.category-detalis .row:last-child) {
+    margin-bottom: 30px;
+}
+
+.category-detalis .row:nth-child(2n + 2) {
+    flex-direction: row-reverse;
+}
+
+.category-detalis .row:nth-child(2n + 2) .product-image-area {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.carousel-indicators [data-bs-target] {
+    width: 5px;
+    border-radius: 50%;
+    height: 5px;
+    margin-right: 22px;
+    margin-left: 3px;
+    background-color: #000;
+    border-top: 0;
+    border-bottom: 0;
+}
+
+.btn-bazar {
+    background-color: #d85d73;
+    color: #fff;
+    border-radius: 0;
+    font-size: 15px;
+}
+
+.product-desc-area {
+    align-self: center;
+}
+nav .row {
+    box-shadow: -2px 1px 5px #ab9595;
+}
+.carousel-banner,
+.category-detalis .row:not(.category-detalis .row:last-child)  {
+    padding-bottom: 20px;
+    box-shadow: 0 27px 28px -41px #504b4b;
+}
+
+footer{
+    background-color: #ccc;
+    padding: 20px 20px;
+}
+
+.cart-items {
+    font-size: 14px;
+}
+
+.cart-area {
+    background-color: $color-lightgray;
+    cursor: pointer;
+    .shopping-cart-logo {
+        width: 30px;
+        fill: red;
+        height: 30px;
+    }
+}

@@ -1,0 +1,12 @@
+{{#each categories}}
+    <div class="row">
+        <div class="col-6 product-image-area">
+            <img src={{imageUrl}} alt={{name}} class="product-image">
+        </div>
+        <div class="col-6 product-desc-area text-center">
+            <h6 class="fw-bold">{{name}}</h6>
+            <p>{{description}}</p>
+            <button class="btn btn-bazar">Explore {{key}}</button>
+        </div>
+    </div>
+{{/each}}

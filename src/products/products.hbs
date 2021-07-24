@@ -1,0 +1,30 @@
+<section>
+    <div class="row">
+        <div class="col-3 bg-product-list p-0">
+            <ul class="list-group product-side-list">
+                {{#each categories}}
+                    <li class="list-group-item">{{name}}</li>
+                {{/each}}
+            </ul>
+        </div>
+        <div class="col-9 mt-1">
+            <div class="row">
+                {{#each products}}
+                 <div class="col-lg-3 col-xs-12 col-sm-6 product-card-sec">
+                    <div class="card card-products">
+                        <h5 class="card-title">{{name}}</h5>
+                        <img src={{imageURL}} class="card-img-product" alt="Product Image">
+                        <div class="card-body">
+                            <p class="card-text"></p>
+                        </div>
+                        <div class="card-buy">
+                            <span>MRP Rs.{{price}}</span>
+                            <button class="btn btn-bazar">Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+                {{/each}}
+            </div>
+        </div>
+    </div>
+</section>
