@@ -63,7 +63,7 @@ const CartExpand = styled.div`
 
     @media(max-width: 480px) {
       width: 100vw;
-      height:100vh;
+      height:90vh;
     }
 `;
 
@@ -126,12 +126,22 @@ const CartExpandMiddle = styled.div`
     @media(max-width: 768px) {
       flex-basis:80%;
     }
+    @media(max-width: 480px) {
+      flex-basis:70%;
+    }
 `;
+
 
 const CartExpandBottom = styled.div`
     display:flex;
     flex-direction:column;
     flex-basis:10%;
+    @media(max-width: 768px) {
+      flex-basis:10%;
+    }
+    @media(max-width: 480px) {
+      flex-basis:10%;
+    }
 `; 
 
 const CartOverlayStyled = styled.div`

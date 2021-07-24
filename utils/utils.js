@@ -2,9 +2,7 @@ import jsCookie from 'js-cookie';
 import { mapArrayKey, isKeyExists } from '../lib/lib'
 
 const addProductToCart = (product)=>{
-    console.log("product",product)
     const cart = JSON.parse(jsCookie.get('cart'))
-    console.log("cart",cart)
     const arrayWithKey = mapArrayKey(product)
     if(typeof cart !== "undefined"){
         cart.push(arrayWithKey)
@@ -53,6 +51,17 @@ const removeFromCart = (arr,productId)=>{
 
 }
 
+const authorise = ({Email,Password})=>{
+
+    const user = {
+        name:"ankur",
+        email:Email,
+        password:Password,
+        sessionActive:true,
+    }
+    jsCookie.set('user',JSON.stringify(user)) 
+}
+
 export {
-    addProductToCart,filterProduct,removeFromCart
+    addProductToCart,filterProduct,removeFromCart,authorise
 }

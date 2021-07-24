@@ -56,6 +56,22 @@ const TextStyled = styled.div`
         border-image: linear-gradient(to right, ${primary},${secondary});
         border-image-slice: 1;
     }
+    .form_field[value] {
+        ~ .form_label {
+            position: absolute;
+            top: 0;
+            display: block;
+            transition: 0.2s;
+            font-size: 1rem;
+            color: ${primary};
+            font-weight:700;    
+        }
+        padding-bottom: 6px;  
+        font-weight: 700;
+        border-width: 3px;
+        border-image: linear-gradient(to right, ${primary},${secondary});
+        border-image-slice: 1;
+    }
     /* reset input */
     .form_field{
     &:required,&:invalid { box-shadow:none; }

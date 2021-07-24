@@ -5,7 +5,7 @@ import Auth from '../../molecules/Auth/Auth'
 import Image from '../../atoms/Image/Image'
 import {logo} from '../../../config'
 
-function Header(){
+function Header({userInfo}){
     return (
         <>
             <Container>
@@ -14,7 +14,7 @@ function Header(){
                     <NavLinks/>
                 </LeftSection>
                 <RightSection>
-                    <Auth />
+                    <Auth userInfo={userInfo} />
                     <Cart  />
                 </RightSection>
             </Container>

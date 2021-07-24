@@ -9,7 +9,17 @@ const AuthLink = ({href,children})=>{
     )
 }
 
-function Auth() {
+function Auth({userInfo}) {
+    const {name,sessionActive } = userInfo
+
+    if(sessionActive){
+        return(
+            <StyledSignUp>
+                <AuthLink href='#'>{name} </AuthLink>
+                <AuthLink href='#'>Logout</AuthLink>
+            </StyledSignUp>    
+        ) 
+    }
     return (
         <StyledSignUp>
             <AuthLink href='signin'>SignIn</AuthLink>

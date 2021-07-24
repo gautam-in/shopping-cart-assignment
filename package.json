@@ -15,6 +15,7 @@
   "dependencies": {
     "@babel/plugin-proposal-export-default-from": "^7.14.5",
     "canned": "^0.3.12",
+    "cookie": "^0.4.1",
     "js-cookie": "^2.2.1",
     "next": "^11.0.1",
     "next-auth": "^3.27.3",

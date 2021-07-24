@@ -8,7 +8,7 @@ import {ChevronLeft} from "@styled-icons/boxicons-regular/ChevronLeft"
 import {DotSingle} from "@styled-icons/entypo/DotSingle" 
 
 const StyledCartIcon = styled(ShoppingCart)`
-    color: #bf2957;
+    color: ${({theme:{colors}})=>colors.btnColor};
     width:25px;
 `;
 
@@ -18,22 +18,22 @@ const StyledCloseIcon = styled(Cross)`
 
 const StyledPlusIcon = styled(PlusCircleFill)`
     width:15px;
-    color:#bf2957
+    color:${({theme:{colors}})=>colors.btnColor}
 `;
 
 const StyledMinusIcon = styled(MinusCircle)`
     width:20px;
-    color:#bf2957
+    color:${({theme:{colors}})=>colors.btnColor}
 `;
 
 const StyledMenuOpenIcon = styled(ChevronDown)`
     width:25px;
-    color:#fff;
+    color:${({theme:{colors}})=>colors.white};
 `;
 
 const StyledMenuCloseIcon = styled(ChevronLeft)`
     width:25px;
-    color:#fff;
+    color:${({theme:{colors}})=>colors.white};
 `;
 
 const StyledDotSingle = styled(DotSingle)`

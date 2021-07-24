@@ -8,7 +8,7 @@ const Container = styled.div`
     margin-top:12px;
     background-color: ${( {theme: { colors: {white} } })=>white};
     
-    @media all and(max-width: 480px) {
+    @media(max-width: 480px) {
         display:flex;
         justify-content: flex-start;
         flex-basis:100%;

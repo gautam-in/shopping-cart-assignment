@@ -20,11 +20,11 @@ class PageLayout extends React.Component{
 
     render(){
         
-       const {children} = this.props
+       const {children,userInfo} = this.props
         
         return ( 
             <>
-                <Header/>
+                <Header userInfo={userInfo}/>
                 {children}
             </>
         );

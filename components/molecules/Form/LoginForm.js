@@ -1,6 +1,5 @@
 import React from 'react'
 import { reduxForm,Field } from 'redux-form'
-import styled from 'styled-components'
 import InputType from '../../atoms/Input/InputField' 
 import Button from '../../atoms/Button/Button' 
 
