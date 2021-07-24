@@ -61,7 +61,7 @@ export default function Cart() {
 
 function SingleCartItem({ id, cart, changeQuantity }) {
   return (
-    <CartItemStyle>
+    <CartItemStyle tabIndex="0">
       <img src={cart.get(id).imageURL} alt={cart.get(id).name} />
       <div>
         <h3>{cart.get(id).name}</h3>

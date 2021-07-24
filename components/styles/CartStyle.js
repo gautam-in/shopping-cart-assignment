@@ -55,7 +55,7 @@ export const CartItemsContainer = styled.main`
 `;
 
 export const CartItemStyle = styled.div`
-  max-height: 90px;
+  height: max-content;
   display: flex;
   flex-direction: row;
   margin: 10px 0;
@@ -63,10 +63,15 @@ export const CartItemStyle = styled.div`
   background-color: white;
   & > div {
     flex: 2;
+    padding: 5px;
   }
   & > img {
     max-width: 100px;
     object-fit: contain;
+  }
+  & > p {
+    display: flex;
+    align-items: flex-end;
   }
 `;
 
@@ -80,7 +85,7 @@ export const NoCartItems = styled.div`
 export const CartFooter = styled.footer``;
 
 export const Quantity = styled.div`
-  margin-top: 4px;
+  margin-top: 1em;
   & > button {
     padding: 2px 6px 4px 6px;
     font-size: 1em;
