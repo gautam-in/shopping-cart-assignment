@@ -12,8 +12,8 @@ export default function Page({ children }) {
       <GlobalStyles />
       <Header />
       <Main>
-        {children}
         <Cart />
+        {children}
       </Main>
 
       <Footer />

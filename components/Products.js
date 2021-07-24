@@ -19,6 +19,8 @@ export default function Products() {
   const contextData = useAppData();
   const [filter, setFilter] = useState(undefined);
   const { categories, products } = contextData?.data;
+  const { addToCart } = contextData;
+
   // todo change this categories Data for flatten values values
   // const categoriesData = categories?.join('');
   // RequestsHandler.postData('http://localhost:5000/addToCart', {
@@ -113,12 +115,20 @@ export default function Products() {
             products
               .filter((item) => filter === item.category)
               .map((product) => (
-                <SingleProduct key={product.id} product={product} />
+                <SingleProduct
+                  key={product.id}
+                  product={product}
+                  addToCart={addToCart}
+                />
               ))
           )
         ) : (
           products.map((product) => (
-            <SingleProduct key={product.id} product={product} />
+            <SingleProduct
+              key={product.id}
+              product={product}
+              addToCart={addToCart}
+            />
           ))
         )}
       </div>
@@ -126,7 +136,18 @@ export default function Products() {
   );
 }
 
-function SingleProduct({ product }) {
+function SingleProduct({ product, addToCart }) {
+  function addToCartRequest() {
+    const promise = RequestsHandler.postData(`${BACKEND_URL}/addToCart`, {
+      id: product.id,
+    });
+    promise.then((res) => {
+      console.log(res);
+      if (res.response === 'Success') {
+        addToCart(product);
+      }
+    });
+  }
   return (
     <SingleProductStyle>
       <h2>{product.name}</h2>
@@ -134,15 +155,19 @@ function SingleProduct({ product }) {
         <img src={product.imageURL} alt={product.name} />
         <div>
           <p>{product.description}</p>
-          <ButtonStyle>Buy Now @ MRP Rs.{product?.price}</ButtonStyle>
+          <ButtonStyle onClick={addToCartRequest}>
+            Buy Now @ MRP Rs.{product?.price}
+          </ButtonStyle>
         </div>
       </div>
       <div className="button-group-desktop">
         <span> MRP Rs.{product.price} </span>
-        <ButtonStyle id="button-tablet">
+        <ButtonStyle onClick={addToCartRequest} id="button-tablet">
           Buy Now @ MRP Rs.{product.price}
         </ButtonStyle>
-        <ButtonStyle id="button-desktop">Buy Now </ButtonStyle>
+        <ButtonStyle onClick={addToCartRequest} id="button-desktop">
+          Buy Now{' '}
+        </ButtonStyle>
       </div>
     </SingleProductStyle>
   );
