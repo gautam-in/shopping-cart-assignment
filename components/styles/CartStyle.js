@@ -56,6 +56,7 @@ export const CartStyle = styled.article`
     & > header > button {
       display: inline;
       background-color: transparent;
+      font-family: monospace;
       font-weight: bold;
       padding: 0;
     }
@@ -69,6 +70,7 @@ export const CartItemsContainer = styled.main`
   flex-direction: column;
   padding: 4px;
   & > div#info-label {
+    display: flex;
     background-color: white;
     justify-content: flex-start;
     align-items: center;
@@ -146,6 +148,8 @@ export const Quantity = styled.div`
     padding: 2px 6px 4px 6px;
     font-size: 1em;
     border-radius: 100%;
+
+    font-family: monospace;
   }
   & > span {
     display: inline-block;
