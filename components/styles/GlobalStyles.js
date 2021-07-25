@@ -9,6 +9,7 @@ html{
     --black: #0d0d0d;
     --themeBlue: #50c3cd;
     --errorRed: #ff0000 ;
+    --slate:#1d2123;
     --boxShadow :  rgba(0, 0, 0, 0.10) 0px 25px 20px -20px;
     font-family: Dosis, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }

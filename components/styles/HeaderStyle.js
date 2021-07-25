@@ -10,10 +10,10 @@ export const HeaderCenter = styled.div`
   display: flex;
   justify-content: space-between;
   height: max-content;
-  max-height: 60px;
+  max-height: 80px;
 
   //media queries for tablet
-  @media (min-width: 961px) {
+  @media (min-width: 768px) {
   }
   //media queries for desktop
   @media (min-width: 1025px) {
@@ -40,7 +40,7 @@ export const LeftNav = styled.nav`
     font-size: 1.5em;
   }
   //media queries for tablet
-  @media (min-width: 961px) {
+  @media (min-width: 768px) {
     & > ul {
       display: flex;
 
@@ -64,10 +64,18 @@ export const RightNav = styled.nav`
     display: none;
   }
   //media queries for tablet
-  @media (min-width: 961px) {
-    justify-content: stretch;
+  @media (min-width: 768px) {
+    flex-direction: column;
+    justify-content: flex-end;
     ul {
-      display: none;
+      display: block;
+      margin: 1px 2px;
+    }
+    ul a {
+      font-size: 0.8em;
+      margin-right: 6px;
+      text-decoration: none;
+      color: var(--gray);
     }
   }
   //media queries for desktop
@@ -76,14 +84,7 @@ export const RightNav = styled.nav`
     justify-content: flex-end;
     align-items: flex-end;
     ul {
-      display: block;
       margin: 3px 4px;
-    }
-    ul a {
-      font-size: 0.8em;
-      margin-right: 6px;
-      text-decoration: none;
-      color: var(--gray);
     }
   }
 `;

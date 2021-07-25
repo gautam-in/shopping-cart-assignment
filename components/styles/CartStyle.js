@@ -24,9 +24,11 @@ export const CartStyle = styled.article`
   top: 0;
   right: 0;
   width: 100%;
-  height: calc(100vh - 150px);
+  height: calc(100vh - 180px);
   background-color: var(--grey);
-
+  & > header > button {
+    display: none;
+  }
   & > header {
     padding: 1em;
     background-color: white;
@@ -38,11 +40,25 @@ export const CartStyle = styled.article`
   }
   //media queries for tablet
   @media (min-width: 768px) {
-    width: 50%;
   }
   //media queries for desktop
   @media (min-width: 1025px) {
+    width: 50%;
     top: 0;
+    height: calc(100vh - 90px);
+    & > header {
+      background-color: var(--slate);
+      color: white;
+      margin: 0;
+      display: flex;
+      justify-content: space-between;
+    }
+    & > header > button {
+      display: inline;
+      background-color: transparent;
+      font-weight: bold;
+      padding: 0;
+    }
   }
 `;
 
@@ -52,6 +68,16 @@ export const CartItemsContainer = styled.main`
   display: flex;
   flex-direction: column;
   padding: 4px;
+  & > div#info-label {
+    background-color: white;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 0px 1em;
+    padding: 5px;
+  }
+  & > div#info-label > span {
+    margin-left: 2em;
+  }
 `;
 
 export const CartItemStyle = styled.div`
@@ -82,7 +108,37 @@ export const NoCartItems = styled.div`
   }
 `;
 
-export const CartFooter = styled.footer``;
+export const CartFooter = styled.footer`
+  padding: 0.5em;
+  text-align: center;
+  background-color: white;
+
+  & > p {
+    font-weight: bold;
+  }
+  & > button {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1em;
+    margin: 0.5em;
+    width: calc(100% - 1em);
+  }
+  & > button > span#start-shopping {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+  & > button > span > i.arrow {
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+  }
+  & > button > span > i.right {
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+  }
+`;
 
 export const Quantity = styled.div`
   margin-top: 1em;

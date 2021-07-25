@@ -1,6 +1,7 @@
 import { add } from 'date-fns';
 import { useEffect } from 'react/cjs/react.development';
 import { useAppData } from '../lib/store';
+import { calculateAmount } from '../lib/helpers';
 import {
   CartStyle,
   CartItemsContainer,
@@ -14,7 +15,7 @@ import { ButtonStyle } from './styles/GlobalStyles';
 export default function Cart() {
   const contextData = useAppData();
   const { cartOpen, cart, totalCart } = contextData?.data;
-  const { changeQuantity } = contextData;
+  const { changeQuantity, toggleCart } = contextData;
 
   return (
     <>
@@ -24,10 +25,10 @@ export default function Cart() {
             <h3>
               My Cart{' '}
               <span>
-                {' '}
                 {`(${totalCart} ${totalCart <= 1 ? 'item' : 'items'})`}
               </span>
             </h3>
+            <ButtonStyle onClick={toggleCart}>X</ButtonStyle>
           </header>
           {cart.size === 0 ? (
             <NoCartItems>
@@ -45,13 +46,27 @@ export default function Cart() {
                   changeQuantity={changeQuantity}
                 />
               ))}
+              <div id="info-label">
+                <img src="/static/images/lowest-price.png" />
+                <span>you won't find it cheaper anywhere</span>
+              </div>
             </CartItemsContainer>
           ) : null}
           <CartFooter>
-            <p>hi</p>
-            <p>hi</p>
-            <p>hi</p>
-            <p>hi</p>
+            <p>Promo code can be applied on the checkout page</p>
+            <ButtonStyle>
+              {totalCart > 0 ? (
+                <>
+                  {' '}
+                  <span>Proceed to Checkout</span>
+                  <span>
+                    Rs. {calculateAmount(cart)} <i className="arrow right" />
+                  </span>{' '}
+                </>
+              ) : (
+                <span id="start-shopping">Start Shopping</span>
+              )}
+            </ButtonStyle>
           </CartFooter>
         </CartStyle>
       )}
