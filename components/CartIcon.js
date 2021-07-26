@@ -1,11 +1,12 @@
-import { memo } from 'react';
 import { HeaderContainer } from './styles/CartStyle';
 import { useAppData } from '../lib/store';
+import { calculateQuantity } from '../lib/helpers';
 
-const CartIcon = () => {
+export default function CartIcon() {
   const contextData = useAppData();
   const { toggleCart } = contextData;
-  const { totalCart } = contextData?.data;
+  const { cart } = contextData?.data;
+  const totalCart = calculateQuantity(cart);
   return (
     <HeaderContainer
       tabIndex="0"
@@ -18,6 +19,4 @@ const CartIcon = () => {
       <span>{totalCart} items</span>
     </HeaderContainer>
   );
-};
-
-export default memo(CartIcon);
+}

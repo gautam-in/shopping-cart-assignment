@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/label-has-associated-control */
+import Head from 'next/head';
 import { memo } from 'react';
 import useForm from '../lib/useForm';
 import { InputStyle } from './styles/InputStyle';
@@ -10,9 +12,11 @@ function Signin() {
     password: '',
   });
 
-  console.log(errors);
   return (
     <SigninStyle>
+      <Head>
+        <title> Sign In - Sabka Bazaar - Online Grocery Store</title>
+      </Head>
       <div>
         <h2>Login</h2>
         <p>Get acces to your Orders, Wishlist and Recommendations</p>
@@ -23,6 +27,7 @@ function Signin() {
             {/* put aria-invalid for = true for the errors */}
             <InputStyle error={errors?.email || false}>
               <input
+                id="email"
                 type="text"
                 name="email"
                 value={inputs.email}
@@ -30,10 +35,11 @@ function Signin() {
                 aria-invalid={errors?.email || false}
                 required
               />
-              <span>Email</span>
+              <label htmlFor="email">Email</label>
             </InputStyle>
             <InputStyle error={errors?.password || false}>
               <input
+                id="password"
                 type="password"
                 name="password"
                 value={inputs.password}
@@ -41,7 +47,7 @@ function Signin() {
                 aria-invalid={errors?.password || false}
                 required
               />
-              <span>Password</span>
+              <label htmlFor="password">Password</label>
             </InputStyle>
             <ButtonStyle
               type="submit"
@@ -54,7 +60,9 @@ function Signin() {
             <ul>
               {errors &&
                 Object.entries(errors).map((item, index) => (
-                  <li key={index}>{item[1]}</li>
+                  <li tabIndex="0" aria-label={item[1]} key={index}>
+                    {item[1]}
+                  </li>
                 ))}
             </ul>
           </div>

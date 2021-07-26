@@ -1,4 +1,5 @@
-import { memo, useEffect, useState } from 'react';
+import Head from 'next/head';
+import { memo, useEffect, useState, Suspense } from 'react';
 import { Carousel } from 'react-responsive-carousel';
 import RequestsHandler from '../lib/requestHandler';
 import { ButtonStyle } from './styles/GlobalStyles';
@@ -11,21 +12,24 @@ function Home() {
   const contextData = useAppData();
   const { categories } = contextData?.data;
   const [banners, setBanners] = useState([]);
-  const bannersData = banners?.join('');
-  const categoriesData = categories?.join('');
 
   useEffect(() => {
     // getting banners
-    RequestsHandler.getData(`${BACKEND_URL}banners/`, setBanners);
-    // getting categories
-    RequestsHandler.getData(`${BACKEND_URL}categories/`, {
-      name: 'categories',
-      setData: contextData.setData,
-      state: contextData,
+    RequestsHandler.getData(`${BACKEND_URL}banners/`).then((res) => {
+      setBanners(res);
     });
-  }, [bannersData, categoriesData]);
+    // getting categories
+    if (categories.length === 0) {
+      RequestsHandler.getData(`${BACKEND_URL}categories/`).then((res) => {
+        contextData.setData({ ...contextData.data, categories: res });
+      });
+    }
+  }, []);
   return (
     <>
+      <Head>
+        <title>Sabka Bazaar - Online Grocery Store</title>
+      </Head>
       <Carousel
         preventMovementUntilSwipeScrollTolerance
         swipeable
@@ -37,7 +41,7 @@ function Home() {
           ?.filter((banner) => banner.isActive)
           .map((banner) => (
             <div key={banner.id}>
-              <img src={banner.bannerImageUrl} alt={banner.ImageAlt} />
+              <img src={banner.bannerImageUrl} alt={banner.bannerImageAlt} />
             </div>
           ))}
       </Carousel>
@@ -53,6 +57,7 @@ function Categories({ categories }) {
       {sortedCategories
         .filter((category) => category.enabled)
         .map((category, index) =>
+          // left and right arrangment on the basis of their indices
           index % 2 === 0 ? (
             <CategoryStyle key={category.id} tabIndex="0">
               <div>
@@ -63,13 +68,27 @@ function Categories({ categories }) {
                 </article>
               </div>
               <div>
-                <img src={category.imageUrl} alt={category.name} />{' '}
+                <Suspense fallback={<p>loading...</p>}>
+                  <img
+                    src={category.imageUrl}
+                    alt={category.name}
+                    width="auto"
+                    height="auto"
+                  />{' '}
+                </Suspense>
               </div>
             </CategoryStyle>
           ) : (
             <CategoryStyle key={category.id} tabIndex="0">
               <div>
-                <img src={category.imageUrl} alt={category.name} />{' '}
+                <Suspense fallback={<p>loading...</p>}>
+                  <img
+                    src={category.imageUrl}
+                    alt={category.name}
+                    width="auto"
+                    height="auto"
+                  />{' '}
+                </Suspense>{' '}
               </div>
               <div>
                 <article>

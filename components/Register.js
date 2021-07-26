@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/label-has-associated-control */
+import Head from 'next/head';
 import { memo } from 'react';
 import useForm from '../lib/useForm';
 import { InputStyle } from './styles/InputStyle';
@@ -15,6 +17,9 @@ function Register() {
   console.log(errors);
   return (
     <SigninStyle>
+      <Head>
+        <title> Register - Sabka Bazaar - Online Grocery Store</title>
+      </Head>
       <div>
         <h2>Signup</h2>
         <p>We do not share your personal details with anyone.</p>
@@ -25,26 +30,29 @@ function Register() {
             {/* put aria-invalid for = true for the errors */}
             <InputStyle>
               <input
+                id="firstName"
                 type="text"
                 name="firstName"
                 value={inputs.firstName}
                 onChange={handleChange}
                 required
               />
-              <span>First Name</span>
+              <label htmlFor="firstName">First Name</label>
             </InputStyle>
             <InputStyle>
               <input
+                id="lastName"
                 type="text"
                 name="lastName"
                 value={inputs.lastName}
                 onChange={handleChange}
                 required
               />
-              <span>Last Name</span>
+              <label htmlFor="lastName">Last Name</label>
             </InputStyle>
             <InputStyle error={errors?.email || false}>
               <input
+                id="email"
                 type="text"
                 name="email"
                 value={inputs.email}
@@ -52,12 +60,13 @@ function Register() {
                 autoComplete="username"
                 required
               />
-              <span>Email</span>
+              <label htmlFor="email">Email</label>
             </InputStyle>
             <InputStyle
               error={errors?.password || errors?.confirmPassword || false}
             >
               <input
+                id="password"
                 type="password"
                 name="password"
                 value={inputs.passowrd}
@@ -65,10 +74,11 @@ function Register() {
                 autoComplete="new-password"
                 required
               />
-              <span>Password</span>
+              <label htmlFor="password">Password</label>
             </InputStyle>
             <InputStyle error={errors?.confirmPassword || false}>
               <input
+                id="confirmPassword"
                 type="password"
                 name="confirmPassword"
                 value={inputs.confirmPassword}
@@ -76,7 +86,7 @@ function Register() {
                 autoComplete="new-password"
                 required
               />
-              <span>Confirm Password</span>
+              <label htmlFor="confirmPassword">Confirm Password</label>
             </InputStyle>
             <ButtonStyle
               type="submit"

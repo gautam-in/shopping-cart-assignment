@@ -110,7 +110,7 @@ export const NoCartItems = styled.div`
   }
 `;
 
-export const CartFooter = styled.footer`
+export const CartFooter = styled.form`
   padding: 0.5em;
   text-align: center;
   background-color: white;

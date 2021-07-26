@@ -2,8 +2,8 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 /* eslint-disable no-nested-ternary */
-import { useEffect } from 'react';
-import { useState } from 'react/cjs/react.development';
+import Head from 'next/head';
+import { useEffect, useState, Suspense } from 'react';
 import { useAppData } from '../lib/store';
 import { BACKEND_URL } from '../config';
 import RequestsHandler from '../lib/requestHandler';
@@ -21,18 +21,7 @@ export default function Products() {
   const { categories, products } = contextData?.data;
   const { addToCart } = contextData;
 
-  // todo change this categories Data for flatten values values
-  // const categoriesData = categories?.join('');
-  // RequestsHandler.postData('http://localhost:5000/addToCart', {
-  //   id: '1234211',
-  // });
-
   function filterHandler(e) {
-    // on Enter Key Press - to do
-    // if (e.key === 'Enter') {
-    //   console.log('enter press here! ');
-    // }
-
     // handling for dropdown list
     let categoryId;
     if (e.target.options) {
@@ -51,25 +40,28 @@ export default function Products() {
 
   useEffect(() => {
     if (categories.length === 0) {
-      RequestsHandler.getData(`${BACKEND_URL}categories/`, {
-        name: 'categories',
-        setData: contextData.setData,
-        state: contextData,
+      RequestsHandler.getData(`${BACKEND_URL}categories/`).then((res) => {
+        contextData.setData({ ...contextData.data, categories: res });
+        console.log(res);
       });
     }
     if (products.length === 0) {
-      RequestsHandler.getData(`${BACKEND_URL}products/`, {
-        name: 'products',
-        setData: contextData.setData,
-        state: contextData,
+      RequestsHandler.getData(`${BACKEND_URL}products/`).then((res) => {
+        contextData.setData({ ...contextData.data, products: res });
       });
     }
-  }, [categories.length, contextData.setData, products.length]);
+  }, [categories, products]);
 
   return (
     <ProductsStyle>
+      <Head>
+        <title>
+          {products.length} Products - Sabka Bazaar Online Grocery Store{' '}
+        </title>
+      </Head>
       {/* Side Bar & dropdown */}
       <aside id="sidebar">
+        {/* Dropdown for mobile */}
         <DropdownStyle id="dropdown">
           <select onChange={filterHandler}>
             <option>--Select Filter--</option>
@@ -87,6 +79,7 @@ export default function Products() {
           </select>
           <div className="select_arrow" />
         </DropdownStyle>
+        {/* Side bar for Desktop */}
         <ProductSideBarDesktopStyle>
           <ul>
             {categories?.map((category) => (
@@ -108,6 +101,11 @@ export default function Products() {
       </aside>
       {/* Product Listing - filtering performed here */}
       <div id="products">
+        {/* Filtering
+         1. if there is not product belongs to categroy then <p>..
+         2. If the filter has category then all product with filter category filtered out
+         3. if filter is undefined then show all the products
+        */}
         {filter ? (
           products.filter((item) => filter === item.category).length === 0 ? (
             <p>No Products found</p>
@@ -137,22 +135,23 @@ export default function Products() {
 }
 
 function SingleProduct({ product, addToCart }) {
+  // addToCart request
   function addToCartRequest() {
-    const promise = RequestsHandler.postData(`${BACKEND_URL}/addToCart`, {
+    RequestsHandler.postData(`${BACKEND_URL}/addToCart`, {
       id: product.id,
-    });
-    promise.then((res) => {
-      console.log(res);
+    }).then((res) => {
       if (res.response === 'Success') {
         addToCart(product);
       }
     });
   }
   return (
-    <SingleProductStyle>
+    <SingleProductStyle tabIndex="0">
       <h2>{product.name}</h2>
       <div>
-        <img src={product.imageURL} alt={product.name} />
+        <Suspense fallback={<p>loading...</p>}>
+          <img src={product.imageURL} alt={product.name} />
+        </Suspense>
         <div>
           <p>{product.description}</p>
           <ButtonStyle onClick={addToCartRequest}>

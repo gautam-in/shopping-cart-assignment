@@ -24,7 +24,7 @@ export const InputStyle = styled.div`
     border-color: var(--themeBlue);
     border-width: medium medium 2px;
   }
-  span {
+  label {
     position: absolute;
     pointer-events: none;
     top: 15px;
@@ -32,8 +32,8 @@ export const InputStyle = styled.div`
     transition: 0.2s ease all;
   }
 
-  & input:focus ~ span,
-  & input:not(:focus):valid ~ span {
+  & input:focus ~ label,
+  & input:not(:focus):valid ~ label {
     top: -15px;
     left: 0;
     font-size: 13px;

@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import { useAppData } from '../lib/store';
-import { calculateAmount } from '../lib/helpers';
+import { calculateAmount, calculateQuantity } from '../lib/helpers';
 import {
   CartStyle,
   CartItemsContainer,
@@ -13,9 +13,9 @@ import { ButtonStyle } from './styles/GlobalStyles';
 
 export default function Cart() {
   const contextData = useAppData();
-  const { cartOpen, cart, totalCart } = contextData?.data;
+  const { cartOpen, cart } = contextData?.data;
   const { changeQuantity, toggleCart } = contextData;
-
+  const totalCart = calculateQuantity(cart);
   return (
     <>
       {cartOpen && (
@@ -51,13 +51,12 @@ export default function Cart() {
                   alt="discounts"
                   width={120}
                   height={60}
-                  responsive
                 />
                 <span>you won't find it cheaper anywhere</span>
               </div>
             </CartItemsContainer>
           ) : null}
-          <CartFooter>
+          <CartFooter method="POST" action="/">
             <p>Promo code can be applied on the checkout page</p>
             <ButtonStyle>
               {totalCart > 0 ? (

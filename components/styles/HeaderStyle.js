@@ -37,7 +37,8 @@ export const LeftNav = styled.nav`
     text-decoration: none;
     color: var(--gray);
     margin-right: 1.5em;
-    font-size: 1.5em;
+    margin-bottom: 10px;
+    font-size: 1.2em;
   }
   //media queries for tablet
   @media (min-width: 768px) {
