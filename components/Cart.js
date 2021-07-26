@@ -1,5 +1,4 @@
-import { add } from 'date-fns';
-import { useEffect } from 'react/cjs/react.development';
+import Image from 'next/image';
 import { useAppData } from '../lib/store';
 import { calculateAmount } from '../lib/helpers';
 import {
@@ -47,7 +46,13 @@ export default function Cart() {
                 />
               ))}
               <div id="info-label">
-                <img src="/static/images/lowest-price.png" />
+                <Image
+                  src="/static/images/lowest-price.png"
+                  alt="discounts"
+                  width={120}
+                  height={60}
+                  responsive
+                />
                 <span>you won't find it cheaper anywhere</span>
               </div>
             </CartItemsContainer>
@@ -78,6 +83,7 @@ function SingleCartItem({ id, cart, changeQuantity }) {
   return (
     <CartItemStyle tabIndex="0">
       <img src={cart.get(id).imageURL} alt={cart.get(id).name} />
+
       <div>
         <h3>{cart.get(id).name}</h3>
         <QuantityContainer
