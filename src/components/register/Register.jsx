@@ -1,10 +1,11 @@
 import React from 'react'
 import { useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
-import CustomTextField from './custom/CustomTextField';
-import CustomButton from './custom/CustomButton';
-import { checkMissing, validateEmail, validatePassword } from '../utils/Validation';
-import { errorMessage, passwordHelperText, registerText } from '../constants';
+import CustomTextField from '../custom/CustomTextField';
+import CustomButton from '../custom/CustomButton';
+import { checkMissing, validateEmail, validatePassword } from '../../utils/Validation';
+import { errorMessage, passwordHelperText, registerText } from '../../constants';
+import CustomLink from '../custom/NavLink';
 
 const Register = () => {
     const history = useHistory()
@@ -47,7 +48,7 @@ const Register = () => {
         }))
     }
 
-    return <>
+    return <div className="App">
         <div className="flex-div">
             <section className="align-left">
                 <h2>Signup</h2>
@@ -90,12 +91,12 @@ const Register = () => {
                     id="register">
                         Sign In
                     </CustomButton>
-                <Link to="/login">Back to Login</Link>
+                <CustomLink to="/login">Back to Login</CustomLink>
                 </form>
             </section>
         </div>
 
-    </>
+    </div>
 }
 
 export default Register;

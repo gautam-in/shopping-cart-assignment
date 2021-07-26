@@ -8,6 +8,9 @@ const useStyles = makeStyles((theme) => ({
       '& .MuiInputBase-input':{
         fontSize:12
       },
+      '& .MuiInputLabel-root':{
+        fontSize:12
+      },
         width:'100%',
         margin: '10px 0px',
     },

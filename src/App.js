@@ -4,50 +4,45 @@ import {
   Switch,
   Route
 } from "react-router-dom";
-import { Suspense,lazy } from 'react';
-
-const Login = lazy(()=>import('./components/Login'))
-const Register = lazy(()=>import('./components/Register'))
-const ProductList = lazy(()=>import('./components/ProductList'))
-const Category = lazy(()=>import('./components/Category'))
-const Cart = lazy(()=>import('./components/Cart'))
+import React, { Suspense, lazy } from 'react';
+import AppHeader from './components/AppHeader';
+import AppFooter from './components/custom/AppFooter';
+const Login = lazy(() => import('./pages/LoginPage'))
+const Register = lazy(() => import('./pages/RegisterPage'))
+const ProductList = lazy(() => import('./pages/ProductListPage'))
+const Home = lazy(() => import('./pages/HomePage'))
+const Cart = lazy(() => import('./pages/CartPage'))
 
 
 function App() {
   return (
-    <div className="App">
+    <React.Fragment>
       <Router>
-        <Switch>
-          <Route exact path="/">
+        <AppHeader />
+        <section>
           <Suspense fallback={<div>Loading...</div>}>
-            <Category/>
-            </Suspense>
-          </Route>
-
-          <Route exact path="/products">
-          <Suspense fallback={<div>Loading...</div>}>
-            <ProductList/>
-            </Suspense>
-          </Route>
-          
-          <Route exact path="/cart">
-            <Suspense fallback={<div>Loading...</div>}>
-              <Cart/>
-            </Suspense>
-            </Route>
-          <Route exact path="/login">
-            <Suspense fallback={<div>Loading....</div>}>
-              <Login/>
-            </Suspense>
-          </Route>
-          <Route exact path="/register">
-          <Suspense fallback={<div>Loading....</div>}>
-              <Register />
+            <Switch>
+              <Route exact path="/category">
+                <Home />
+              </Route>
+              <Route exact path="/products/:id">
+                <ProductList />
+              </Route>
+              <Route exact path="/cart">
+                <Cart />
+              </Route>
+              <Route exact path="/login">
+                <Login />
+              </Route>
+              <Route exact path="/register">
+                <Register />
+              </Route>
+            </Switch>
           </Suspense>
-          </Route>
-        </Switch>
+        </section>
+        <AppFooter />
       </Router>
-    </div>
+    </React.Fragment>
   );
 }
 
