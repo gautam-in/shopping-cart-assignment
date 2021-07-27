@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import PropTypes from 'prop-types';
 import { memo, useEffect, useState, Suspense } from 'react';
 import { Carousel } from 'react-responsive-carousel';
 import RequestsHandler from '../lib/requestHandler';
@@ -103,4 +104,8 @@ export function Categories({ categories }) {
     </>
   );
 }
+
+Categories.propTypes = {
+  categories: PropTypes.array,
+};
 export default memo(Home);

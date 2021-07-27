@@ -3,6 +3,7 @@
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 /* eslint-disable no-nested-ternary */
 import Head from 'next/head';
+import PropTypes from 'prop-types';
 import { useEffect, useState, Suspense } from 'react';
 import { useAppData } from '../lib/store';
 import { BACKEND_URL } from '../config';
@@ -171,3 +172,8 @@ function SingleProduct({ product, addToCart }) {
     </SingleProductStyle>
   );
 }
+
+SingleProduct.propTypes = {
+  product: PropTypes.object,
+  addToCart: PropTypes.func,
+};

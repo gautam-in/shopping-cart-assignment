@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import PropTypes from 'prop-types';
 import { useAppData } from '../lib/store';
 import { calculateAmount, calculateQuantity } from '../lib/helpers';
 import {
@@ -117,3 +118,14 @@ function QuantityContainer({ id, cart, changeQuantity }) {
     </Quantity>
   );
 }
+
+SingleCartItem.propTypes = {
+  id: PropTypes.string,
+  cart: PropTypes.object,
+  changeQuantity: PropTypes.func,
+};
+QuantityContainer.propTypes = {
+  id: PropTypes.string,
+  cart: PropTypes.object,
+  changeQuantity: PropTypes.func,
+};

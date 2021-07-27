@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import { memo } from 'react';
 import {
   HeaderCenter,
   HeaderContainer,
@@ -8,10 +7,11 @@ import {
 } from './styles/HeaderStyle';
 import CartIcon from './CartIcon';
 
-function Header() {
+export default function Header() {
   return (
     <HeaderContainer>
       <HeaderCenter>
+        {/* Left Navigation */}
         <LeftNav>
           <img
             srcSet="/static/images/logo_2x.png 2x"
@@ -27,6 +27,7 @@ function Header() {
             </Link>
           </ul>
         </LeftNav>
+        {/* Right Navigation */}
         <RightNav>
           <ul>
             <Link href="/signin">
@@ -42,5 +43,3 @@ function Header() {
     </HeaderContainer>
   );
 }
-
-export default memo(Header);

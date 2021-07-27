@@ -1,5 +1,6 @@
 /* Wrapper Page for all the pages */
 import Head from 'next/head';
+import PropTypes from 'prop-types';
 import { Container } from './styles/Container';
 import { GlobalStyles } from './styles/GlobalStyles';
 import { Main } from './styles/MainStyle';
@@ -28,3 +29,7 @@ export default function Page({ children }) {
     </Container>
   );
 }
+
+Page.propTypes = {
+  children: PropTypes.elementType,
+};

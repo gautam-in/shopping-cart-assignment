@@ -18,15 +18,12 @@
     "canned": "^0.3.12",
     "date-fns": "^2.16.1",
     "next": "^10.0.3",
-    "next-with-apollo": "^5.1.1",
-    "nprogress": "^0.2.0",
     "prop-types": "^15.7.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-responsive-carousel": "^3.2.19",
     "react-transition-group": "^4.4.1",
-    "styled-components": "^5.2.1",
-    "waait": "^1.0.5"
+    "styled-components": "^5.2.1"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",
