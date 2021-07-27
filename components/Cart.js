@@ -27,7 +27,9 @@ export default function Cart() {
                 {`(${totalCart} ${totalCart <= 1 ? 'item' : 'items'})`}
               </span>
             </h3>
-            <ButtonStyle onClick={toggleCart}>X</ButtonStyle>
+            <ButtonStyle onClick={toggleCart} aria-label="close cart">
+              X
+            </ButtonStyle>
           </header>
           {cart.size === 0 ? (
             <NoCartItems>
@@ -98,11 +100,19 @@ function SingleCartItem({ id, cart, changeQuantity }) {
 function QuantityContainer({ id, cart, changeQuantity }) {
   return (
     <Quantity>
-      <ButtonStyle onClick={() => changeQuantity(id, 'substract')}>
+      <ButtonStyle
+        onClick={() => changeQuantity(id, 'substract')}
+        aria-label="decrease quantity by 1"
+      >
         -
       </ButtonStyle>
       <span>{cart.get(id).quantity}</span>
-      <ButtonStyle onClick={() => changeQuantity(id, 'add')}>+</ButtonStyle>
+      <ButtonStyle
+        onClick={() => changeQuantity(id, 'add')}
+        aria-label="increase quantity by 1"
+      >
+        +
+      </ButtonStyle>
       <span>{cart.get(id).price}</span>
     </Quantity>
   );

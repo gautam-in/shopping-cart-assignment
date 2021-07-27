@@ -49,7 +49,7 @@ function Home() {
     </>
   );
 }
-function Categories({ categories }) {
+export function Categories({ categories }) {
   const sortedCategories = categories?.sort((a, b) => a.order - b.order);
 
   return (
