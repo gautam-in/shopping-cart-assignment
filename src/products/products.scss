@@ -1,0 +1,59 @@
+@import '../colors';
+
+.bg-product-list {
+    background-color: $color-lightgray;
+}
+.product-side-list {
+    border-radius: 0;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -ms-border-radius: 0;
+    -o-border-radius: 0;
+    li {
+        background-color: $color-lightgray;
+        font-size: 18px;
+        color: gray;
+    }
+}
+
+.card.card-products {
+    border: 0;
+    border-bottom: 2.2px dashed $color-lightgray;
+    .card-body {
+        padding: 20px 0;
+    }
+}
+
+.card-title {
+    font-size: 90%;
+    height: 100px;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    display: flex;
+    font-weight: 600;
+}
+
+.card-text {
+    font-size: 14px;
+    padding: 5px;
+    overflow-y: hidden;
+    height: 110px;
+    background-color: $color-lightgray;;
+    border-radius: 2px;
+}
+
+.card-buy {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 20px 0;
+
+    span {
+        font-size: 15px;
+    }
+}
+
+.product-card-sec {
+    box-shadow: 25px 0 22px -44px #504b4b;
+}
