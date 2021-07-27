@@ -23,7 +23,9 @@ function App(): React.ReactElement {
       <Router>
         <AuthContext.Provider value={userContextValue}>
           <Header />
-          <RouterComponent />
+          <main className="main-content">
+            <RouterComponent />
+          </main>
         </AuthContext.Provider>
       </Router>
     </div>

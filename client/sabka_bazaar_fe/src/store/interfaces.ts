@@ -1,3 +1,4 @@
+import { IHomeState } from "modules/home/redux/reducers/reducer";
 import { ILoginState } from "modules/login/redux/reducers/reducer";
 import { ISignUpState } from "modules/register/redux/reducers/reducer";
 
@@ -10,5 +11,6 @@ export interface IFluxStandardAction<Payload = undefined, Meta = undefined, Erro
 }
 export interface IState {
   login: ILoginState;
-  signUp:ISignUpState;
+  signUp: ISignUpState;
+  home: IHomeState;
 }

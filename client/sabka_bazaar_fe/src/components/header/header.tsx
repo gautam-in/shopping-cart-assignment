@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./header.scss";
-import logo from "../../static/images/logo.png";
+// import logo from "../../../public/static/images/logo.png";
 import Row from "components/row/row";
 import Column from "components/column/column";
 import MainNavigation from "components/mainNavigaton/mainNavigation";
@@ -11,7 +11,7 @@ const Header = (): React.ReactElement => {
     <header>
       <Row className="header-row">
         <Column lg={6} md={6} sm={6} xs={6} className="header-nav-column">
-          <img src={logo} alt="app logo" className="app-logo" />
+          <img src={"/static/images/logo.png"} alt="app logo" className="app-logo" />
           <MainNavigation />
         </Column>
         <Column lg={6} md={6} sm={6} xs={6} className="header-cart-column">
@@ -19,7 +19,7 @@ const Header = (): React.ReactElement => {
             <Link to="/login" className="login-nav-link">
               SignIn
             </Link>
-            <Link to="/register" className="login-nav-link">
+            <Link to="/register" className="login-nav-link"> 
               Register
             </Link>
           </div>

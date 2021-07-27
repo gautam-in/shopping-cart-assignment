@@ -25,6 +25,7 @@
     "web-vitals": "^1.0.1",
     "yup": "^0.32.8"
   },
+  "proxy":"http://localhost:5000",
   "devDependencies": {
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",

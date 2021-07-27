@@ -1,8 +1,7 @@
 import { Login } from "models/login";
 import { LoginActions } from "modules/login/redux/actions/actions";
 import { LOGIN } from "modules/login/redux/actions/actionTypes";
-import { call, put, takeLatest } from "redux-saga/effects";
-import { LoginRepository } from "repositories/login/login";
+import { put, takeLatest } from "redux-saga/effects";
 import { LocalStorage } from "services/storage";
 import { IFluxStandardAction } from "store/interfaces";
 

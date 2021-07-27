@@ -1,9 +1,8 @@
 import { AxiosError, AxiosResponse } from "axios";
-import { HTTP_STATUS_CODES, serverErrors } from "network/constants";
+import { serverErrors } from "network/constants";
 export const successHandler = (response: AxiosResponse) => {
-  //TODO we can destructure again based upon response 17/3/2021
-  const data = response.data.data ?? null;
-  if (!data || response.status === HTTP_STATUS_CODES.noContent) {
+  const data = response.data ?? null;
+  if (!data) {
     return Promise.resolve({});
   }
   return Promise.resolve(data);

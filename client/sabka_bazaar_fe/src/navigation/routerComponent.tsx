@@ -1,6 +1,7 @@
 import React from "react";
-import login from "../modules/login/index";
-import register from "../modules/register/index";
+import Login from "../modules/login/index";
+import Register from "../modules/register/index";
+import Home from '../modules/home/index';
 import { allRoutes } from "./allRouteNames";
 import MapRoutes from "./mapRoutes";
 
@@ -16,18 +17,18 @@ export const Routes = () => {
   return [
     {
       path: allRoutes.HOME,
-      component: () => <div>Home Page</div>,
-      isExact: true
+      isExact: true,
+      component: Home
     },
     {
       path: allRoutes.LOGIN, 
       isExact: true,
-      component: login
+      component: Login
     },
     {
       path: allRoutes.REGISTER,
       isExact: true,
-      component: register
+      component: Register
     },
     {
       path: allRoutes.PLP,

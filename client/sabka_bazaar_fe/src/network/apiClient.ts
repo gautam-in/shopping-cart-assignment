@@ -1,9 +1,7 @@
 import axios, { AxiosInstance, AxiosRequestConfig } from "axios";
-import config from "config/validateEnv";
 import { IApiClient } from "network/interfaces";
-import { v4 as uuidv4 } from "uuid";
-import { bearerTokenReqInterceptor, refreshTokenInterceptor } from "network/interceptors";
 import { errorHandler, successHandler } from "network/responseHandlers";
+import { v4 as uuidv4 } from "uuid";
 
 const getAxiosInstance = (baseUrl: string, client: IApiClient): AxiosInstance => {
   let axiosInstance = axios.create({
@@ -14,10 +12,6 @@ const getAxiosInstance = (baseUrl: string, client: IApiClient): AxiosInstance =>
       "Content-Type": "application/json"
     }
   });
-  // Add Request Interceptor to add Authorization header
-  axiosInstance = bearerTokenReqInterceptor(axiosInstance);
-  // Add Response Interceptor for Authorization token expiry
-  axiosInstance = refreshTokenInterceptor(axiosInstance, baseURL);
   return axiosInstance;
 };
 
@@ -52,7 +46,8 @@ class ApiClient implements IApiClient {
     return this.request({ method: "PATCH", url, data, params });
   }
 }
-const baseURL = config.NODE_ENV === "development" ? "/api/v1/" : `${config.REACT_APP_SCHEME}://${config.REACT_APP_BASE_URL}/${config.REACT_APP_PATH}/${config.REACT_APP_VERSION}`;
+
+const baseURL = window.location.origin;
 
 const apiClient = new ApiClient(baseURL);
 export { apiClient as ApiClient };
