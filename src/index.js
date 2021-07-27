@@ -1,7 +1,7 @@
 import "./main.scss";
 import index from './index.hbs';
-import slider from './slider/slider.hbs';
-import content from './content.hbs';
+import slider from './components/slider.hbs';
+import content from './components/content.hbs';
 
 let path = window.location.pathname.replace('/', '');
 let homeSection = document.querySelector('.home-content');
@@ -9,9 +9,14 @@ const getHomePageDetails = () => {
   homeSection.innerHTML = content();
   fetch('http://localhost:5000/banners').then((resp) => {
     resp.json().then((data) => {
+        let newData =  data.map(item => {
+          const obj = Object.assign({}, item);
+          obj['order'] = item.order?item.order - 1 :item.order;
+          return obj;
+        });
         let sliderSection = document.querySelector('.carousel-banner');
         sliderSection.innerHTML = slider({
-            banners : data
+            banners : newData
         });
     });
   });
@@ -31,16 +36,7 @@ const getHomePageDetails = () => {
     });
   });
 }
-if(!path){
+if(!path) {
   getHomePageDetails();
 }
-// switch (path) {
-//   case "home":
-
-//     break;
-//   case "test":
-
-//     break;
-//   default:
-  
-// }
+localStorage.clear();

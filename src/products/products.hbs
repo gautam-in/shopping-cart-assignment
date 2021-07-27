@@ -1,25 +1,37 @@
 <section>
+    <div class="row categories-mobile">
+        <select class="form-select categories-mobile-dropdown" aria-label="categories">
+            {{#each categories}}
+            <option value={{key}}>{{name}}</option>
+            {{/each}}
+        </select>
+    </div>
     <div class="row">
-        <div class="col-3 bg-product-list p-0">
+        <div class="col col-lg-3 col-sm-3 bg-product-list p-0">
             <ul class="list-group product-side-list">
                 {{#each categories}}
-                    <li class="list-group-item">{{name}}</li>
+                <li class="list-group-item">{{name}}</li>
                 {{/each}}
             </ul>
         </div>
-        <div class="col-9 mt-1">
+        <div class="col col-lg-9 col-sm-9 col-xs-12 mt-1">
             <div class="row">
                 {{#each products}}
-                 <div class="col-lg-3 col-xs-12 col-sm-6 product-card-sec">
+                <div class="col-lg-3 col-sm-6 col-xs-12 product-card-sec">
+                    <h5 class="card-title">{{name}}</h5>
                     <div class="card card-products">
-                        <h5 class="card-title">{{name}}</h5>
                         <img src={{imageURL}} class="card-img-product" alt="Product Image">
-                        <div class="card-body">
-                            <p class="card-text"></p>
-                        </div>
-                        <div class="card-buy">
-                            <span>MRP Rs.{{price}}</span>
-                            <button class="btn btn-bazar">Buy Now</button>
+                        <div class="card-describe">
+                            <div class="card-body">
+                                <p class="card-text">{{{description}}}</p>
+                            </div>
+                            <div class="card-buy">
+                                <span>MRP Rs.{{price}}</span>
+                                <button class="btn btn-bazar btn-buy" id={{id}}>Buy Now</button>
+                                <button class="btn btn-bazar btn-bazar-full btn-buy" id={{id}}>
+                                    Buy Now@Rs.{{price}}
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>

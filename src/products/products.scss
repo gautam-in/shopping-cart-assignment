@@ -1,15 +1,27 @@
 @import '../colors';
 
-.bg-product-list,
-.product-side-list li {
+.bg-product-list {
     background-color: $color-lightgray;
-    font-size: 18px;
-    color: gray;
+}
+.product-side-list {
+    border-radius: 0;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -ms-border-radius: 0;
+    -o-border-radius: 0;
+    li {
+        background-color: $color-lightgray;
+        font-size: 18px;
+        color: gray;
+    }
 }
 
-.card {
+.card.card-products {
     border: 0;
     border-bottom: 2.2px dashed $color-lightgray;
+    .card-body {
+        padding: 20px 0;
+    }
 }
 
 .card-title {
@@ -25,14 +37,18 @@
 .card-text {
     font-size: 14px;
     padding: 5px;
-    background-color: $color-lightgray;
+    overflow-y: hidden;
+    height: 110px;
+    background-color: $color-lightgray;;
+    border-radius: 2px;
 }
 
 .card-buy {
     display: flex;
     justify-content: space-between;
     align-items: baseline;
-    padding: 0px 20px 20px;
+    padding: 20px 0;
+
     span {
         font-size: 15px;
     }
