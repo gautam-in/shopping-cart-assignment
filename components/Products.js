@@ -43,7 +43,6 @@ export default function Products() {
     if (categories.length === 0) {
       RequestsHandler.getData(`${BACKEND_URL}categories/`).then((res) => {
         contextData.setData({ ...contextData.data, categories: res });
-        console.log(res);
       });
     }
     if (products.length === 0) {

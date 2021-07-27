@@ -14,7 +14,6 @@ function Register() {
     password: '',
     confirmPassword: '',
   });
-  console.log(errors);
   return (
     <SigninStyle>
       <Head>
