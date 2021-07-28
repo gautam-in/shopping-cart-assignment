@@ -2,6 +2,7 @@ import { useQuery, gql } from "@apollo/client";
 import { useRouter } from 'next/router'
 import {Loading} from "../../components/Loading";
 import {ProductPageSidebar} from "../../components/ProductPageSidebar";
+import {ProductCards} from "../../components/ProductCards";
 
 const GET_PRODUCTS = gql`
     query GetProducts($category: String!) {
@@ -45,6 +46,7 @@ const Products = (props) => {
         return (
             <div style={{display: "flex"}}>
                 <ProductPageSidebar categoryData={categoryObj.data.categories}/>
+                <ProductCards productData={productsObj.data.products}/>
             </div>)
     }
 }

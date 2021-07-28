@@ -1,11 +1,11 @@
-const AES = require("crypto-js/aes")
+const sha3 = require("crypto-js/sha3")
 
 const encrypt = (data) => {
-    return AES.encrypt(data, process.env.PASS_ENCRYPT_KEY)
+    return sha3(data).toString()
 }
 
 const decrypt = (data) => {
-    return AES.decrypt(data, process.env.PASS_ENCRYPT_KEY)
+    return sha3(data).toString()
 }
 
 module.exports = {

@@ -7,6 +7,7 @@ const { graphqlHTTP } = require("express-graphql");
 const schema = require("./graphql/schema");
 const cors = require("cors");
 const { jwtVerify } = require("./utils/auth")
+const { getErrorCode } = require("./utils/errors")
 
 var app = express();
 
@@ -26,6 +27,10 @@ app.use(cors());
 app.use("/graphql", graphqlHTTP({
   schema: schema,
   graphiql: true,
+  customFormatErrorFn: (err) => {
+    const error = getErrorCode(err.message)
+    return ({ message: error.message, statusCode: error.statusCode })
+  },
   context: async ( {req} ) => {
     let authToken = null;
     let currentUser = null;
