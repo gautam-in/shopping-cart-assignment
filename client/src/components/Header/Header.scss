@@ -1,0 +1,148 @@
+@import "../../styles/Colors.scss";
+@import "../../styles/Fonts.scss";
+
+.header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  height: 100px;
+  background-color: $white;
+  justify-content: space-between;
+  z-index: 100;
+  margin-bottom: 10px;
+}
+
+.container {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
+  display: flex;
+  padding: 0px 20px;
+  .navOptions {
+    display: flex;
+    width: 40%;
+    justify-content: center;
+    align-items: flex-end;
+    > span {
+      padding: 10px;
+      font-weight: map-get($fontWeight, bold);
+      cursor: pointer;
+      font-size: map-get($fontSize, medium);
+      color: $grey;
+
+      :hover {
+        color: $primary;
+      }
+    }
+  }
+  .cartIcon {
+    background-color: $grey;
+    display: flex;
+    padding: 10px;
+    cursor: pointer;
+    button {
+      border-color: $grey;
+      outline-color: $grey;
+      border: none;
+      cursor: pointer;
+      background-color: transparent;
+      font-size: map-get($fontSize, heading2);
+      width: 45%;
+    }
+    div {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  .copyrightrow {
+    background-color: $grey;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 10px;
+    text-align: center;
+  }
+  .text {
+    display: flex;
+    justify-content: flex-end;
+    font-size: map-get($fontSize, exsmall);
+  }
+  a {
+    text-decoration: none;
+    font-weight: map-get($fontWeight, bold);
+    color: $darkgrey;
+    :hover {
+      color: $primary;
+    }
+  }
+  .cartLogoC {
+    position: absolute;
+    right: 20px;
+    top: 0;
+  }
+  .cartLogoContainer {
+    display: flex;
+    width: 110px;
+    flex-direction: column;
+    justify-content: space-between;
+    span {
+      padding: 5px;
+      text-align: right;
+      text-decoration: none;
+      font-weight: map-get($fontWeight, bold);
+    }
+  }
+
+  .logo {
+    margin: 0px;
+    img {
+      width: 185px;
+      margin: 10px;
+    }
+  }
+
+  .header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    height: 100px;
+    background-color: white;
+    border-bottom: $grey 0.5px solid;
+    display: flex;
+    padding: 0 10%;
+    justify-content: space-between;
+    z-index: 100;
+    > div {
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  @media (max-width: 690px) {
+    .navOptions {
+      width: auto;
+    }
+    .text {
+      display: block;
+    }
+    .cartIcon {
+      height: 50%;
+    }
+    .logo {
+      img {
+        width: 125px;
+      }
+    }
+
+    .header {
+      padding: 0;
+      height: 70px;
+      width: 148%;
+      > div {
+        width: max-content;
+      }
+    }
+    .cartLogoC {
+      right: 0px;
+      top: 0px;
+    }
+  }
+}

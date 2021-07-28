@@ -1,0 +1,35 @@
+@import "../../../styles/Colors.scss";
+@import "../../../styles/Fonts.scss";
+
+.dropdownContainer {
+  background: $primary;
+  padding: 10px 0px;
+  width: 100%;
+  button {
+    width: 100%;
+    color: $white;
+    border: none;
+    background: transparent;
+    display: flex;
+    justify-content: space-around;
+    padding: 5px;
+    cursor: pointer;
+  }
+}
+
+.dropdownContent {
+  position: absolute;
+  background-color: $white;
+  width: 100%;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  background: $primary;
+}
+
+.selectBox {
+  width: 100%;
+  border: none;
+  background: $primary;
+  color: $white;
+  outline: none;
+}

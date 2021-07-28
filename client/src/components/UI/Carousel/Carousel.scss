@@ -1,0 +1,68 @@
+@import "../../../styles/Colors.scss";
+@import "../../../styles/Fonts.scss";
+
+.mySlides {
+  display: none;
+}
+img {
+  vertical-align: middle;
+}
+
+/* Slideshow container */
+.slideShowContainer {
+  position: relative;
+  margin: auto;
+  padding: 0px 20px;
+}
+.dotContainer {
+  text-align: center;
+}
+
+.dot {
+  height: 5px;
+  width: 5px;
+  margin: 0 10px;
+  background-color: $grey;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active {
+  background-color: $darkgrey;
+}
+
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+  margin: 0px;
+}
+.bannerImageUrl {
+  width: 100%;
+}
+@-webkit-keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .captionText {
+    font-size: map-get($fontSize, exsmall);
+  }
+}

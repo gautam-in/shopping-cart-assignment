@@ -1,0 +1,39 @@
+@import "../../styles/Colors.scss";
+@import "../../styles/Fonts.scss";
+.checkoutBanner {
+  display: flex;
+  height: 50px;
+  align-items: center;
+  background-color: $white;
+  font-size: map-get($fontSize, exsmall);
+  padding: 0 20px;
+
+  figure {
+    margin: 0px;
+  }
+}
+.checkoutButtonContainer {
+  padding: 10px 20px;
+  background-color: $white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.checkoutButton {
+  padding: 0 20px;
+  height: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+  background-color: $primary;
+  color: $white;
+  width: 100%;
+  border: none;
+  cursor: pointer;
+}
+.productItemsContainer {
+  height: 313px;
+  overflow: auto;
+  position: relative;
+}

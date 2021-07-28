@@ -1,0 +1,25 @@
+@import "../../../styles/Colors.scss";
+@import "../../../styles/Fonts.scss";
+
+.button {
+  background-color: $primary;
+  height: 40px;
+  border: none;
+}
+.label {
+  font-weight: map-get($fontWeight, semibold);
+  line-height: 24px;
+  color: $white;
+  cursor: pointer;
+  font-family: "Dosis";
+}
+@media (max-width: "767px") {
+  .label {
+    font-weight: map-get($fontWeight, semibold);
+    line-height: 24px;
+    color: $white;
+    cursor: pointer;
+    font-size: map-get($fontSize, small);
+    font-family: "Dosis";
+  }
+}

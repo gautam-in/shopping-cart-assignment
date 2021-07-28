@@ -1,0 +1,104 @@
+@import "../../styles/Colors.scss";
+@import "../../styles/Fonts.scss";
+
+.formContainer {
+  width: 80%;
+  display: flex;
+  margin: auto;
+  padding: 20px;
+}
+
+.loginForm {
+  width: 60%;
+}
+.formHeadingContainer {
+  flex: 0 1 50%;
+
+  p {
+    font-weight: map-get($fontWeight, semibold);
+  }
+}
+.buttonStyle {
+  margin: 20px 0px;
+  width: 60%;
+}
+.formGroup {
+  position: relative;
+  padding: 15px 0 0;
+  margin-top: 10px;
+  //   width: 50%;
+}
+
+.formField {
+  color: $black;
+  font-family: inherit;
+  width: 60%;
+  border: 0;
+  border-bottom: 2px solid $darkgrey;
+  outline: 0;
+  padding: 7px 0;
+  background: transparent;
+  transition: border-color 0.2s;
+  background-color: $white !important;
+
+  &::placeholder {
+    color: transparent;
+  }
+
+  &:placeholder-shown ~ .form__label {
+    cursor: text;
+    top: 20px;
+  }
+}
+
+.formLabel {
+  position: absolute;
+  top: 0;
+  display: block;
+  transition: 0.2s;
+  font-size: map-get($fontSize, large);
+  color: $darkgrey;
+}
+
+.formField:focus {
+  ~ .form__label {
+    position: absolute;
+    top: 0;
+    display: block;
+    transition: 0.2s;
+    font-size: map-get($fontSize, medium);
+    color: $blue;
+    font-weight: map-get($fontWeight, bold);
+  }
+  padding-bottom: 6px;
+  font-weight: map-get($fontWeight, bold);
+  border-width: 3px;
+  border-image: linear-gradient(to right, $blue, $green);
+  border-image-slice: 1;
+}
+.error {
+  color: $red;
+  font-weight: 600;
+}
+
+.errorMessage {
+  color: $red;
+  font-weight: 600;
+  margin-left: 5%;
+}
+/* reset input */
+.formField {
+  &:required,
+  &:invalid {
+    box-shadow: none;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .formContainer {
+    display: block;
+  }
+
+  .loginForm {
+    width: 100%;
+  }
+}
