@@ -9,7 +9,7 @@ export function Beverages(props){
     <Grid container className="catogory-list mt-4">
     <Grid item lg={2} md={12}></Grid>
     <Grid item lg={4} md={12}>
-    <img src={props.beverage.imageUrl} alt="banners" />  
+    <img src={props.beverage.imageUrl} alt="banners" className="imageUrl" />  
     </Grid>
     <Grid item lg={4} md={12}>
     <p className="cat-name">{props.beverage.name}</p>

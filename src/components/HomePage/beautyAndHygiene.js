@@ -15,7 +15,7 @@ export function BeautyAndHygiene(props){
     </Grid>
     <Grid item lg={2} md={12} xs={12}></Grid>
     <Grid item lg={4} md={12} xs={12}>
-    <img src={props.beautyP.imageUrl} alt="fruits-banners" />  
+    <img src={props.beautyP.imageUrl} alt="fruits-banners"  className="imageUrl"/>  
     </Grid>
     
      </Grid>

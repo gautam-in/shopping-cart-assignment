@@ -27,7 +27,13 @@
     margin: -25px !important;
 }
 
+.error{
+    color:red;
+    font-family: 'Dosis',sans-serif;
+}
 /* Media Queries for mobile */
+
+
 
  @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
 
@@ -44,5 +50,16 @@
         padding: 3% 0% 2% 4%;
         font-size: 13px;
     }
+
+}
+
+/* iPads (portrait and landscape) ----------- */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
+
+    .footer-title {
+        font-size: 12px;
+    }
+
+
 
 }

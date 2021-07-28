@@ -1,97 +1,53 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { makeStyles } from '@material-ui/core/styles';
-import Tabs from '@material-ui/core/Tabs';
-import Tab from '@material-ui/core/Tab';
-import Typography from '@material-ui/core/Typography';
-import Box from '@material-ui/core/Box';
-
-
-function SideBar(props) {
-  const { children, value, index, ...other } = props;
-
-  return (
-    <div
-      role="tabpanel"
-      hidden={value !== index}
-      id={`vertical-tabpanel-${index}`}
-      aria-labelledby={`vertical-tab-${index}`}
-      {...other}
-    >
-      {value === index && (
-        <Box p={7}>
-          <Typography>{children}</Typography>
-        </Box>
-      )}
-    </div>
-  );
-}
-
-SideBar.propTypes = {
-  children: PropTypes.node,
-  index: PropTypes.any.isRequired,
-  value: PropTypes.any.isRequired,
-};
-
-function a11yProps(index) {
-  return {
-    id: `vertical-tab-${index}`,
-    'aria-controls': `vertical-tabpanel-${index}`,
-  };
-}
-
-const useStyles = makeStyles((theme) => ({
-  root: {
-    flexGrow: 1,
-    backgroundColor: theme.palette.background.white,
-    display: 'flex',
-    height: 900,
-    border:'1px solid white !important'
-  },
-  tabs: {
-    borderRight: `1px solid ${theme.palette.divider}`,
-  },
-}));
+import React, { useState, useEffect } from 'react';
+import {Grid, Button } from '@material-ui/core';
+// import { category } from '../../server/categories/categories';
+//  import {AllProducts} from '../../server/products/AllProducts';
+import Products from './products';
+import { useSelector,useDispatch } from "react-redux";
 
 export default function VerticalTabs() {
-  const classes = useStyles();
-  const [value, setValue] = React.useState();
+  const globalState = useSelector(state => state);
+  const dispatch = useDispatch();
 
-  const handleChange = (event, newValue) => {
-    setValue(newValue);
-  };
+  console.log(globalState,"global state")
+
+  useEffect(()=>{
+    dispatch({
+      type: "addToCart",
+      payload: [{item:"Smabar"}]
+    })
+  },[])
+
+  // const [products, setProducts] = useState(AllProducts);
+  
+  // const filterByCategory = (item)=>{
+  //   let filterData = AllProducts.filter(i=>i.category===item.id)
+  //   setProducts(filterData)
+  // }
 
   return (
-    <div className={classes.root}>
-      <Tabs
-        orientation="vertical"
-        // variant="scrollable"
-        value={value}
-        onChange={handleChange}
-        aria-label="Vertical tabs example"
-        className={classes.tabs}
-      >
-        <Tab label="Fruits & Vegetables" {...a11yProps(0)} />
-        <Tab label="Bakery Cakes and Dairy" {...a11yProps(1)} />
-        <Tab label="Beverages" {...a11yProps(2)} />
-        <Tab label="Beauty and Hygiene" {...a11yProps(3)} />
-        <Tab label="Baby Care" {...a11yProps(4)} />
-      </Tabs>
-      <SideBar value={value} index={0}>
-        Item One
-      </SideBar>
-      <SideBar value={value} index={1}>
-        Item Two
-      </SideBar>
-      <SideBar value={value} index={2}>
-        Item Three
-      </SideBar>
-      <SideBar value={value} index={3}>
-        Item Four
-      </SideBar>
-      <SideBar value={value} index={4}>
-        Item Five
-      </SideBar>
-    </div>
+
+    <Grid container spacing={3}>
+     
+      <Grid className="cat-bg"  item lg={3} md={3} xs={12} sm={3}>
+        {/* {
+          category.map((item) => (
+            <Button variant="contained" color="default" className="cat-button" onClick={()=>filterByCategory(item)}>{item?.label??null}</Button>
+          ))
+        } */}
+      </Grid>
+      <Grid item lg={9} md={9} xs={12} sm={9}>
+        <Grid  item  lg={12} sm={12} md={12} xs={12}>
+        {/* {
+          products.map((product) =>
+          <Grid item  lg={3} sm={6} md={6} xs={12}>
+          <Products  allProducts={product} />
+          </Grid>
+          )
+        } */}
+          <Products  />
+        </Grid>
+      </Grid>
+    </Grid>
   );
 }

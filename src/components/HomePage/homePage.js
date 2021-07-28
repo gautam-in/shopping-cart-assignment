@@ -1,21 +1,23 @@
 import React from 'react';
 import Carousel from 'react-material-ui-carousel'
-import { bannerList } from './BannerData'
+// import { bannerList } from '../../server/banners/banner'
 import Banner from './banners'
-import { SkipNext, SearchTwoTone } from '@material-ui/icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {faCaretCircleLeft } from '@fortawesome/free-solid-svg-icons'
+import {faCaretCircleRight } from '@fortawesome/free-solid-svg-icons'
 import Catagories from './Catagory';
 
 export default function HomePage(props){
     return (
     <div>
-      <Carousel
-      NextIcon={<SearchTwoTone />}
-      PrevIcon={<SkipNext  style={{color:"red"}}/>}
+      {/* <Carousel
+      NextIcon={<i className="fas fa-caret-circle-right carousel-style">Next</i>}
+      PrevIcon={<i className="fas fa-caret-circle-right carousel-style">Prev</i>}
       >
     {
       bannerList.map((list,index)=><Banner  key={index} list={list} />)
     }
-      </Carousel>
+      </Carousel> */}
       <div className="banner-border"></div>
       <div>
       <Catagories />

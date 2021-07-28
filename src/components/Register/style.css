@@ -20,6 +20,10 @@
     background-color: Lavender;
 }
 
+.error{
+    color:red;
+    font-family: 'Dosis',sans-serif;
+}
 /* Media Queries for mobile */
 
 @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
@@ -39,3 +43,15 @@
     }
 
 }
+/* 
+  ##Device = Tablets, Ipads (portrait)
+  ##Screen = B/w 768px to 1024px
+*/
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  
+    .register-footer-title {
+        font-size: 12px;
+    }
+  }
+

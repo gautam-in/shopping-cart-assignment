@@ -5,7 +5,7 @@
 a {
     float:left;
     color: DarkGrey;
-    text-decoration: none;
+    text-decoration: none !important;
     font-family: sans-serif;
 }
 
@@ -21,10 +21,7 @@ a:hover {
     background-color: gainsboro;
     padding: 1% 2% 1% 2%;;
 } 
-.sign-in {
-    margin-right: -3% !important;
-    margin-bottom:2%;
-}
+
 
 .cart-button{
     background-color: white;
@@ -48,7 +45,7 @@ a:hover {
     font-family: 'Dosis';
 }
 
-p:nth-child(odd) {
+.modal-body:nth-child(odd) {
     margin: 2% -3% 2% -3%;
     background: white;
     padding: 2% 2%;
@@ -58,20 +55,20 @@ p:nth-child(odd) {
     float: right !important;
 }
 
-
-
-
-
-
-
-
 /* media queries for mobile devices */
 @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
     .main-logo{
         width:98px
     }    
     .navbar {
-        height: 163px;
+        height: 240px;
     }
      
+}
+
+/* iPads (portrait and landscape) ----------- */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
+    .navbar {
+        height: 240px;
+    }
 }

@@ -67,6 +67,15 @@
     color:grey; 
     text-align: center;
 }
+.imageUrl{
+    height: 83%;
+    width: 100%;
+}
+
+.carousel-style{
+    color:red;
+    border-radius: 20px;
+}
 /* Media Queries */
 
  
@@ -84,22 +93,27 @@
       .explore-baby {
         margin: 0 auto;
         width: 37%;
+        text-align: center;
     }
     .explore-beauty {
         width: 63%;
         margin: 0 auto;
+        text-align: center;
     }
     .explore-beverage {
         width: 50%;
         margin: 0 auto;
+        text-align: center;
     }
     .explore-bakery {
         width: 70%;
         margin: 0 auto;
+        text-align: center;
     }
     .explore-fruit {
         margin: 0 auto;
         width: 57%;
+        text-align: center;
     }
     .cat-desc {
         text-align: center;
@@ -108,6 +122,18 @@
         width:100%;
         margin-left:12%; 
     }
+.cart-button {
+margin-left: -4.7em !important;
+margin-top: 1.8em !important;
+}
+.products-media-query{
+    margin-left: 0.1em !important;
+    margin-top: 1.5em !important;
+}
+
+
+
+
     } 
 
 
@@ -116,23 +142,28 @@
    /* Home Page  Catagories */
    .explore-baby {
     margin: 0 auto;
-    width:14%;
+    width: 18%;
+    text-align: center;
 }
 .explore-beauty {
-    width: 22%;
+    width: 29%;
     margin: 0 auto;
+    text-align: center;
 }
 .explore-beverage {
-    width: 18%;
+    width: 24%;
     margin: 0 auto;
+    text-align: center;
 }
 .explore-bakery {
-    width: 25%;
+    width: 31%;
     margin: 0 auto;
+    text-align: center;
 }
 .explore-fruit {
     margin: 0 auto;
-    width: 20%;
+    width: 26%;
+    text-align: center;
 }
 .cat-desc {
     text-align: center;
@@ -141,6 +172,8 @@
     width:100%;
     margin-left:12%; 
 }
+
+
 }
 
 

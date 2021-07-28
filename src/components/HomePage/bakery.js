@@ -15,7 +15,7 @@ export function Bakery(props){
     </Grid>
     <Grid item lg={3} md={12} xs={12}></Grid>
     <Grid item lg={3} md={12} xs={12}>
-    <img src={props.bake.imageUrl} alt="fruits-banners" />  
+    <img src={props.bake.imageUrl} alt="fruits-banners" className="imageUrl" />  
     </Grid>
     
      </Grid>
