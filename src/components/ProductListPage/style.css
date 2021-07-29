@@ -1,9 +1,6 @@
 .imageUrl{
     height: 67%;
     width: 87%;
-    /* display: block;
-    margin-left: auto;
-    margin-right: auto; */
 }
 .products-desc{
     width: 100%;
@@ -28,21 +25,23 @@
 .cat-bg{
     background-color: Gainsboro;
     height: 146.5em;
+    margin-top: -0.6em !important;
 }
+
 .cat-button{
-    margin: 1% 0% 0% 5% !important;
+    margin: 0% 0% 0% 5% !important;
     text-align:center;
     font-size: 13px !important;
     border-radius: 0px !important;
-    width: 23em;
+    width: 23.2em;
     height: 3em;
-    background: white !important;
-    border: none !important;
+    border-bottom:1px solid grey !important;
 }
 .all-pro-bg{
-    border: 1px solid black;
-    margin: -0.5em 1em 0em 0em;
+    margin: -0.5em 1em 2em 0em !important;
     width: 14em !important;
+    box-shadow: rgb(0 0 0 / 16%) 0px 1px 4px;
+    background-color: white !important;
 }
 .buy-now{
     float: right;
@@ -79,11 +78,11 @@
         height: 14.5em;
     }
     .cat-button {
-        margin: 1% 0% 0.1% 7%  ;
+        margin: 1% 0% 0.1% 7% !important ;
     }
     .all-pro-bg {
         margin: auto !important;
-        padding: 0px !important;
+        width: 17em !important;
     }
 }
 

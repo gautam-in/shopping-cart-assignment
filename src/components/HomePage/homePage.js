@@ -1,23 +1,40 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Carousel from 'react-material-ui-carousel'
-// import { bannerList } from '../../server/banners/banner'
 import Banner from './banners'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {faCaretCircleLeft } from '@fortawesome/free-solid-svg-icons'
 import {faCaretCircleRight } from '@fortawesome/free-solid-svg-icons'
 import Catagories from './Catagory';
+import axios from 'axios';
 
-export default function HomePage(props){
+
+function HomePage(props){
+
+const [banners,setBanners] = useState([]);
+
+useEffect(() => {
+  axios
+    .get("http://localhost:5001/banners")
+    .then((response) => {
+      const banners = response.data;
+      console.log(banners,"banners")
+      setBanners(banners);
+    })
+    .catch((error) => {
+      console.log(error);
+    }); 
+}, []);
+
     return (
     <div>
-      {/* <Carousel
+      <Carousel
       NextIcon={<i className="fas fa-caret-circle-right carousel-style">Next</i>}
       PrevIcon={<i className="fas fa-caret-circle-right carousel-style">Prev</i>}
       >
     {
-      bannerList.map((list,index)=><Banner  key={index} list={list} />)
+      banners.map((list,index)=><Banner  key={index} list={list} />)
     }
-      </Carousel> */}
+      </Carousel>
       <div className="banner-border"></div>
       <div>
       <Catagories />
@@ -25,3 +42,5 @@ export default function HomePage(props){
       </div>
     )
 }
+
+export default HomePage;

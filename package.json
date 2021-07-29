@@ -27,12 +27,11 @@
     "yup": "^0.32.9"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "dev": "canned -p 5000 ./server",
+    "start": "concurrently \"set PORT=8000 && react-scripts start\" \"npm run server\"",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
-   
+    "eject": "react-scripts eject",
+    "server": "canned -p 5001 ./server"
   },
   "eslintConfig": {
     "extends": [

@@ -17,6 +17,8 @@ import CartModel from '../MiniCart/cartModel';
 
 
 export default function Header(){
+
+ 
     return (
       <Router>
       <nav className="navbar navbar-expand-lg navbar-light bg-light mb-4">
