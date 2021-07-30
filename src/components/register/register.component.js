@@ -12,7 +12,7 @@ export class RegisterPartial extends BaseComponent {
     }
 
     preRender() {
-        his.formBuilder = [{
+        this.formBuilder = [{
             type: "text",
             id: "firstname",
             name: "firstname",

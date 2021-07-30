@@ -12,21 +12,59 @@ export class CategoryPartial extends BaseComponent {
 
     preRender() {
         this.categoryService = ServiceRegistry.getService(CategoryService)
-        this.categoryService.getCategories().then((data) => {
-            this.props = data.filter(d => d.enabled).sort((a, b) => a.order - b.order);
+        Promise.all([this.categoryService.getCategories(), this.categoryService.getBanners()]).then((resp) => {
+            this.props = {
+                categories: resp[0].filter(d => d.enabled).sort((a, b) => a.order - b.order),
+                banners: resp[1].filter(d => d.isActive).sort((a, b) => a.order - b.order),
+            };
             this.rerender(this.containerRef.parentElement, this);
         });
     }
 
+    initializeCarousel() {
+        const banners = [...this.bannerCarousel.querySelectorAll('.banner-container')];
+        const navigators = [...this.bannerCarousel.querySelectorAll('.carousel-navigator_anchor')];
+        if (banners.length === 0 || navigators.length === 0) {
+            return;
+        }
+        
+        let inViewIndex = 0;
+        const changeBanner = () => {
+            banners[inViewIndex].classList.add('active');
+            navigators[inViewIndex].classList.add('active');
+            banners.filter((_v, i) => i !== inViewIndex).forEach((e) => e.classList.remove('active'));
+            navigators.filter((_v, i) => i !== inViewIndex).forEach((e) => e.classList.remove('active'));
+            inViewIndex = inViewIndex === banners.length - 1 ? 0 : inViewIndex + 1;
+        };
+
+        banners[inViewIndex].classList.add('active');
+        navigators[inViewIndex].classList.add('active');
+        navigators.forEach((e, _i) => {
+            e.onclick = () => {
+                inViewIndex = _i;
+                changeBanner();
+            }
+        })
+        this.bannerInterval = setInterval(() => {
+            changeBanner();
+        }, 5000);
+
+    }
+
     render() {
         return categoryTemplate({
-            data: this.props
+            categories: this.props?.categories,
+            banners: this.props?.banners,
         });
     }
 
     postRender() {
         this.containerRef = document.querySelector("[hbs-id='categories-container']");
-        this.props?.forEach(cat => {
+        this.bannerCarousel = document.querySelector("[hbs-id='categories-banner-carousel']");
+        if (this.bannerCarousel) {
+            this.initializeCarousel();
+        }
+        this.props?.categories?.forEach(cat => {
             document.getElementById(cat.key).onclick = () => {
                 RouteSubject.next({
                     route: routes.products,
@@ -36,5 +74,10 @@ export class CategoryPartial extends BaseComponent {
                 })
             };
         })
+    }
+
+    onDispose() {
+        super.onDispose();
+        this.bannerInterval && clearInterval(this.bannerInterval);
     }
 }

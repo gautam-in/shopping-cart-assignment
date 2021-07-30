@@ -1,12 +1,70 @@
-$menu-width: 15rem;
+@import "./../../config.scss"; 
+@import "./../../colors.scss";
+
+@media (min-width: $breakpoint-desktop) {
+    :root {
+        --menu-width: 15rem;
+    }
+}
+
+@media (min-width: $breakpoint-tablet) and (max-width: $breakpoint-desktop) {
+    :root {
+        --menu-width: 15rem;
+    }
+}
+
+
+
 .products-container {
+    @media (max-width: $breakpoint-tablet) {
+        flex-direction: column;
+    }
     display: flex;
     justify-content: center;
     &__menu {
+        display: flex;
+        flex-direction: column;
         background-color: #eee;
-        flex-basis: $menu-width;
+        flex-basis: var(--menu-width);
+        #menu-dd {
+            display: none;
+        }
+        @media (max-width: $breakpoint-tablet) {
+            & {
+                position: relative;
+            }
+            #menu-dd {
+                color: white;
+                border: 1px solid white;
+                border-bottom: 0;
+                border-right: 0;
+                background: transparent;
+                display: inline-block;
+                position: absolute;
+                height: 20px;
+                width: 20px;
+                right: 20px;
+                cursor: pointer;
+                transform: translateY(25%) rotate(-135deg);
+                &.show~.products-container__menu-item {
+                    flex-basis: auto;
+                }
+            }
+        }
         &-item {
             display: flex;
+            @media (max-width: $breakpoint-tablet) {
+                flex-basis: 0px;
+                overflow: hidden;
+                &.active {
+                    order: -1;
+                    flex-basis: auto;
+                    background: $primary-color-red;
+                    a {
+                        color: white;
+                    }
+                }
+            }
             a {
                 flex-basis: 100%;
                 padding: 0.8rem 2rem;
@@ -15,11 +73,23 @@ $menu-width: 15rem;
         }
     }
     &__grid {
-        flex-basis: calc(100% - #{$menu-width});
+        @media (min-width: $breakpoint-desktop) {
+            flex-basis: calc(100% - var(--menu-width));    
+            grid-template-columns: repeat(4, auto);    
+        }
+
+        @media (min-width: $breakpoint-tablet) and (max-width: $breakpoint-desktop) {
+            flex-basis: calc(100% - var(--menu-width));    
+            grid-template-columns: repeat(2, auto);    
+        }
+
+        @media (max-width: $breakpoint-tablet) {
+            flex-basis: calc(100% - var(--menu-width));    
+            grid-template-columns: repeat(1, auto);    
+        }
         display: grid;
         column-gap: 0.5rem;
         row-gap: 0.5rem;
-        grid-template-columns: repeat(4, auto);
         &__product-card {
             padding: 0.5rem;
             align-items: center;
@@ -30,15 +100,25 @@ $menu-width: 15rem;
             justify-content: space-between;
             border-bottom: 1px dashed gray;
             .description {
+                @media (min-width: $breakpoint-desktop) {
+                    flex-direction: column;
+                    align-items: center;
+                    > img {
+                        width: 80px;
+                    }
+                    > span {
+                        flex-basis: 80px;
+                        margin: 0px;
+                    }   
+                }
                 display: flex;
-                flex-direction: column;
-                align-items: center;
+                flex-direction: row;
+                align-items: flex-start;
                 > img {
-                    width: 80%;
+                    width: 40%;
                 }
                 > span {
-                    margin: 1rem 0;
-                    flex-basis: 80px;
+                    align-self: stretch;
                     background-color: #eee;
                     padding: 0.5rem 1rem;
                     text-overflow: ellipsis;
@@ -47,6 +127,25 @@ $menu-width: 15rem;
             }
 
             .price-cart {
+                @media (min-width: $breakpoint-desktop) {
+                    .buy-now_price {
+                        display: none;
+                    }  
+                }
+                @media (max-width: $breakpoint-desktop) {
+                    & {
+                        justify-content: center;
+                    }
+                    .buy-now {
+                        display: none;
+                    }
+                    .buy {
+                        flex-basis: 100%;
+                    }
+                    .price-tag {
+                        display: none;
+                    }
+                }
                 display: flex;
                 align-items: center;
                 width: 100%;

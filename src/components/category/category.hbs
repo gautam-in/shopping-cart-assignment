@@ -1,26 +1,43 @@
 <section class="categories-container" hbs-id="categories-container">
-    <ul class="categories-container__categories">
-        {{#each data}}
-        <li>
-            <img src={{imageUrl}} alt={{name}} />
-            <ul>
-                <li>
-                    <h3>{{name}}</h3>
-                </li>
-                <li>{{description}}</li>
-                <li><button id={{key}}>Explore {{key}}</button></li>
-            </ul>
-        </li>
-        {{/each}}
-    </ul>
+  <div
+    class="categories-container__banners"
+    hbs-id="categories-banner-carousel"
+  >
+    {{#each banners}}
+      <div class="banner-container" id={{id}}>
+        <img src={{bannerImageUrl}} alt={{bannerImageAlt}} />
+      </div>
+    {{/each}}
+    <div class="carousel-navigator">
+      {{#each banners}}
+        <div class="carousel-navigator_anchor" data-ref={{id}}>
+
+        </div>
+      {{/each}}
+    </div>
+  </div>
+  <ul class="categories-container__categories">
+
+    {{#each categories}}
+      <li>
+        <img src={{imageUrl}} alt={{name}} />
+        <ul>
+          <li>
+            <h3>{{name}}</h3>
+          </li>
+          <li>{{description}}</li>
+          <li><button id={{key}}>Explore {{key}}</button></li>
+        </ul>
+      </li>
+    {{/each}}
+  </ul>
 </section>
 
-
-{{!-- description: "Our beverage department will ensure your fridge is always fully stocked. Shop for soda, juice, beer
+{{! description: "Our beverage department will ensure your fridge is always fully stocked. Shop for soda, juice, beer
 and more. "
 enabled: true
 id: "5b675e5e5936635728f9fc30"
 imageUrl: "/static/images/category/beverages.png"
 key: "beverages"
 name: "Beverages"
-order: 3 --}}
+order: 3 }}

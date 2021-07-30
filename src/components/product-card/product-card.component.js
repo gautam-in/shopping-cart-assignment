@@ -6,7 +6,6 @@ import productCardTemplate from "./hbs/product-card.hbs";
 import "./styles.scss";
 
 export class ProductCardComponent extends BaseComponent {
-  selectedItems = [];
   constructor(args, props) {
     super(args, props);
   }
@@ -26,6 +25,9 @@ export class ProductCardComponent extends BaseComponent {
   }
 
   setView() {
+    if (!this.addButtonRef || !this.addRemoveRef) {
+      return;
+    }
     if (this.selectedItems.length > 0) {
       this.addButtonRef.style.display = 'none';
       this.addRemoveRef.style.display = 'flex';

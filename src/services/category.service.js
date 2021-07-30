@@ -20,4 +20,8 @@ export class CategoryService extends BaseService {
         await this.getCategories();
         this.categories.map(cat => cat.name);
     }
+
+    async getBanners() {
+        return await this.get('/banners');
+    }
 }

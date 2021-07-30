@@ -2,38 +2,51 @@
 @import "./../../../../config.scss";
 
 .page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 0 var(--padding-horizontal);
+  box-sizing: border-box;
+  box-shadow: 0 3px 10px $primary-color-shadow;
+  width: 100vw;
+  &__logo {
+    @media (max-width: $breakpoint-sm) {
+      img {
+          width: 120px;
+      }
+    }
+  }
+  &__nav {
+    flex-basis: 70%;
+    &-menu ul {
+      display: flex;
+      list-style-type: none;
+      padding: 0px;
+      li {
+        font-weight: bold;
+        @media (max-width: $breakpoint-tablet) {
+          margin-left: 10px;
+        }
+        margin-left: 50px;
+      }
+    }
+  }
+
+  &__cart {
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
-    align-items: flex-end;
-    padding: 0 $padding-horizontal;
-    box-shadow: 0 3px 10px $primary-color-shadow;
-
-    &__nav {
-        flex-basis: 70%;
-        &-menu ul{
-            display: flex;
-            list-style-type: none;
-            li {
-                font-weight: bold;
-                margin-left: 50px;
-            }
-        }
+    &-user-actions {
+      display: flex;
+      justify-content: flex-end;
+      margin-bottom: 0.5rem;
+      padding-right: 0.5rem;
+      a {
+        text-decoration: none;
+        margin-left: 0.5rem;
+        color: black;
+        cursor: pointer;
+      }
     }
-
-    &__cart {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        &-user-actions{
-            display: flex;
-            justify-content: flex-end;
-            margin-bottom: 0.5rem;
-            a {
-                text-decoration: none;
-                margin-left: 0.5rem;
-                color: black;
-                cursor: pointer;
-            }
-        }
-    }
+  }
 }

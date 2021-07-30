@@ -1,4 +1,4 @@
-import { Subject } from "rxjs";
+import { BehaviorSubject, Subject } from "rxjs";
 import { BaseService } from "./base.service";
 
 export class CartService extends BaseService {
@@ -45,7 +45,7 @@ export class CartService extends BaseService {
 
   notifyMe(id) {
     if (!this.notifications.has(id)) {
-      this.notifications.set(id, new Subject());
+      this.notifications.set(id, new BehaviorSubject([]));
     }
     return this.notifications.get(id);
   }

@@ -46,7 +46,9 @@ export class CartPartial extends BaseComponent {
       cs.onDispose();
     }
     if (this.showCartSummary) {
-      const cs = new CartSummary(this.handleBars);
+      const cs = new CartSummary(this.handleBars, {
+        toggleCartSummary: this.toggleCartSummary.bind(this),
+      });
       this.rerender(this.cartSummaryRef, cs);
       this.viewTemplates.push(cs);
     }

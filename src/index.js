@@ -2,7 +2,7 @@ import './components/index.component';
 import { entryPoint } from './components/index.component';
 import * as Handlebars from 'handlebars';
 import "./main.scss";
-import { RouteSubject } from './components/constants';
+import { routes, RouteSubject } from './components/constants';
 import { ServiceRegistry, dependencies } from './services/index.services';
 
 class Bootstrap {
@@ -50,11 +50,8 @@ class Bootstrap {
 
     registerRouting() {
         RouteSubject.next({
-            route : '/products'
+            route : routes.home
         });
-        // window.onpopstate = () => {
-        //     RouteSubject.next(window.location.pathname);
-        // }
     }
 }
 

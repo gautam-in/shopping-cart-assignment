@@ -1,6 +1,11 @@
 @import "./../../colors.scss";
+@import "./../../config.scss";
 
 .login-container {
+    @media (max-width: $breakpoint-sm) {
+        flex-direction: column;
+        align-items: center;
+    }
     display: flex;
     justify-content: center;
     &__heading {

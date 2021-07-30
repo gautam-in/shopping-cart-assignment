@@ -5,6 +5,7 @@ import { CartSummaryItem } from "./cart-summary-item/cart-summary-item.component
 import cartSummaryTemplate from "./cart-summary.hbs";
 import emptyCartTemplate from "./empty-cart.hbs";
 import checkoutCartButtonTemplate from "./checkout-cart-button.hbs";
+import lowestPriceTemplate from "./lowest-price.hbs";
 import "./styles.scss";
 
 export class CartSummary extends BaseComponent {
@@ -13,7 +14,8 @@ export class CartSummary extends BaseComponent {
   }
 
   preRender() {
-      this.shoppongCartTemplate = "<span class='align-center'>Start Shopping</span>";
+    this.shoppongCartTemplate =
+      "<span class='align-center'>Start Shopping</span>";
     this.cartViewItems = new Map();
     this.cartService = ServiceRegistry.getService(CartService);
     this.subscriptions.push(
@@ -73,6 +75,10 @@ export class CartSummary extends BaseComponent {
     return emptyCartTemplate();
   }
 
+  renderLowestPrice() {
+    return lowestPriceTemplate();
+  }
+
   getCountText() {
     return this.count === 1 ? "(1 Item)" : `(${this.count} Items)`;
   }
@@ -80,10 +86,14 @@ export class CartSummary extends BaseComponent {
   render() {
     return cartSummaryTemplate({
       cartItems: this.renderCartViewItems(),
+      lowestPrice: this.count > 0 ? this.renderLowestPrice() : "",
       count: this.getCountText(),
-      buttonTemplate: this.count > 0 ? checkoutCartButtonTemplate({
-        totalPrice: this.getTotalPrice(this.cartService.getAllItems()),
-      }) : this.shoppongCartTemplate,
+      buttonTemplate:
+        this.count > 0
+          ? checkoutCartButtonTemplate({
+              totalPrice: this.getTotalPrice(this.cartService.getAllItems()),
+            })
+          : this.shoppongCartTemplate,
     });
   }
 
@@ -96,5 +106,10 @@ export class CartSummary extends BaseComponent {
     this.cartViewItemRef = document.querySelector(
       "[hbs-id='cart-view-items-ref']"
     );
+    this.closeCart = document.querySelector("#close-cart");
+    if (this.closeCart)
+      this.closeCart.onclick = () => {
+        this.props?.toggleCartSummary();
+      };
   }
 }

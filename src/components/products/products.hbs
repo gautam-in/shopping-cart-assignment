@@ -1,8 +1,9 @@
 <section class="products-container" hbs-id="products-main-container">
     <div class="products-container__menu">
+        <button id="menu-dd"></button>
         {{#each categories}}
-        <div class="products-container__menu-item">
-            <a href="#" id={{key}}>{{name}}</a>
+        <div class="products-container__menu-item" id={{id}}>
+            <a href="#">{{name}}</a>
         </div>
         {{/each}}
     </div>

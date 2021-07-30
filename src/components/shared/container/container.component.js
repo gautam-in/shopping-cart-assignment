@@ -19,7 +19,7 @@ export class ContainerComponent extends BaseComponent {
         this.viewTemplates = [];
         this.headerTemplate = new HeaderPartial(this.handleBars, {
             userActions: [{
-                text: 'Sign Up',
+                text: 'Sign In',
                 route: routes.login,
                 id: 'sign-up-link',
             },
@@ -30,6 +30,7 @@ export class ContainerComponent extends BaseComponent {
             }]
         });
         RouteSubject.subscribe(({route, params}) => {
+            this.currentTemplate.onDispose();
             if (route === routes.login || route === '/' || route === '') {
                 this.currentTemplate = new LoginPartial(this.handleBars);
             } else if (route === routes.register) {
@@ -39,7 +40,6 @@ export class ContainerComponent extends BaseComponent {
             } else if (route === routes.products) {
                 this.currentTemplate = new ProductsComponent(this.handleBars, params);
             }
-            this.currentTemplate.onDispose();
             this.viewTemplates = [this.headerTemplate, this.currentTemplate];
             this.rerender(this.mainContainerRef, this.currentTemplate);
         });

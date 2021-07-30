@@ -65,13 +65,26 @@ export class ProductsComponent extends BaseComponent {
     this.containerRef = document.querySelector(
       "[hbs-id='products-main-container']"
     );
+    const refs = [];
     this.props?.categories?.forEach((cat) => {
-      document.getElementById(cat.key).onclick = () => {
+      refs.push(document.getElementById(cat.id));
+    });
+
+    document.querySelector('#menu-dd').onclick = (e) => {
+      e.currentTarget.classList.toggle('show');
+    };
+    
+    refs.forEach((e, _i) => {
+      if (_i === 0) e.classList.add('active');
+      e.onclick = () => {
         this.props = {
           ...this.props,
-          categoryId: cat.id,
+          categoryId: e.id,
         };
         this.renderProductsByCategoryId();
+        document.querySelector('#menu-dd').classList.remove('show');
+        e.classList.add('active');
+        refs.filter((_, i) => i !== _i).forEach((r) => r.classList.remove('active'));
       };
     });
     super.postRender();

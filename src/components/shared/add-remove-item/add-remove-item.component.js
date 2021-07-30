@@ -13,6 +13,9 @@ export class AddRemoveItemComponent extends BaseComponent {
   preRender() {
     this.cartService = ServiceRegistry.getService(CartService);
     this.subscriptions.push(this.cartService.notifyMe(this.props.id).subscribe((items) => {
+      if (!this.containerRef) {
+        return;
+      }
       this.rerender(this.containerRef, this);
     }));
   }

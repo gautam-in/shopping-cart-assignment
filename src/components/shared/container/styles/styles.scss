@@ -2,11 +2,11 @@
 @import "./../../../../config.scss";
 
 .main-page {
-    padding: 5rem $padding-horizontal;
+    padding: 5rem var(--padding-horizontal);
 }
 
 footer {
-    padding: 1rem $padding-horizontal;
+    padding: 1rem var(--padding-horizontal);
     background: $primary-color-gray-d;
     color: black;
 }
