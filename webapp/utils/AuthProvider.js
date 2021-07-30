@@ -1,5 +1,12 @@
 import {useContext, useState, createContext} from "react";
-import {gql, useApolloClient} from "@apollo/client";
+import {    ApolloClient,
+    InMemoryCache,
+    ApolloProvider,
+    useQuery,
+    gql,
+    HttpLink
+} from "@apollo/client";
+import {endpoint} from "../config";
 
 const AuthContext = createContext();
 
@@ -9,6 +16,7 @@ const useAuth = () => {
 
 function useProvideAuth() {
     const [authToken, setAuthToken] = useState(null)
+    const [userData, setUserData] = useState({})
 
     const isSignedIn = () => {
         return !!authToken;
@@ -22,12 +30,29 @@ function useProvideAuth() {
         }
     }
 
+    const createApolloClient = () => {
+        const link = new HttpLink({
+            uri: endpoint,
+            headers: getAuthHeaders(),
+        })
+
+        return new ApolloClient({
+            link,
+            cache: new InMemoryCache(),
+        })
+    }
+
     const signIn = async ({email, password}) => {
-        const client = useApolloClient();
+        const client = createApolloClient();
         const LoginMutation = gql`
             mutation signin($email: String!, $password: String!) {
                 login(email: $email, password: $password) {
                     token
+                    name
+                    cart{
+                        product_uid
+                        quantity
+                    }
                 }
             }
         `
@@ -40,16 +65,59 @@ function useProvideAuth() {
         console.log(result)
 
         if(window && window.localStorage) {
-            window.localStorage.setItem("token", result.data.login.token)
+            const { token, cart, name } = result.data.login
+            window.localStorage.setItem("token", token)
         }
 
         if (result?.data?.login?.token) {
-            setAuthToken(result.data.login.token)
+            const { token, cart, name } = result.data.login
+            setAuthToken(token)
+            setUserData({
+                cart,
+                name
+            })
         }
+        return result.data.login
     }
 
-    const signUp = ({email, password, }) => {
+    const signUp = async ({email, password, name }) => {
+        console.log("fata")
+        const client = createApolloClient();
+        console.log("nahi fata")
+        const SignupMutation = gql`
+            mutation Signup($email: String!, $password: String!, $cart: [CartItemInput], $name: String!) {
+                signup(email: $email, password: $password, cart: $cart, name: $name) {
+                    name
+                    token
+                    cart{
+                        product_uid
+                        quantity
+                    }
+                }
+            }
+        `
 
+        const result = await client.mutate({
+            mutation: SignupMutation,
+            variables: {email, password, name , cart: null},
+        })
+
+        console.log(result)
+
+        if(window && window.localStorage) {
+            const { token, cart, name } = result.data.signup
+            window.localStorage.setItem("token", token)
+        }
+
+        if (result?.data?.signup?.token) {
+            const { token, cart, name } = result.data.signup
+            setAuthToken(token)
+            setUserData({
+                cart,
+                name
+            })
+        }
+        return result.data.signup
     }
 
     const signOut = () => {
@@ -64,7 +132,8 @@ function useProvideAuth() {
         isSignedIn,
         signIn,
         signOut,
-        getAuthHeaders
+        getAuthHeaders,
+        signUp
     }
 }
 

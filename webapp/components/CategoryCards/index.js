@@ -23,7 +23,7 @@ export const CategoryCards = (props) => {
                         <h1><b>{category.name}</b></h1>
                         <h5>{category.description}</h5>
                         <Button className={styles["explore-button"]} onClick={(e) => {onClickExplore(category.category_uid)}}>
-                            <p style={{color: "white", fontSize: "1vw"}}>{`Explore ${category.name}`}</p>
+                            <p style={{color: "white", fontSize: "1vw", marginTop: 0, marginBottom: 0}}>{`Explore ${category.name}`}</p>
                         </Button>
                     </div>
                 </div>

@@ -41,7 +41,7 @@ const typeDefs = `
     extend type Mutation {
        signup (email: String!, password: String!, name: String!, cart: [CartItemInput]): LoginResponse!
        login (email: String!, password: String!): LoginResponse!
-       addToCart(products: [String!]!): [String!]!
+       addToCart(products: [CartItemInput!]!): [CartItem!]!
     }
 `
 
@@ -51,6 +51,7 @@ const resolvers = {
         signup: async (_, args) => {
             const {email, password, name, cart} = args;
             const encryptedPassword = encrypt(password);
+            console.log("aaya", args)
             const existingUser = await Users.model.find({email});
             if (isEmpty(existingUser)) {
                 try {
@@ -77,7 +78,7 @@ const resolvers = {
                 throw new Error(errorName.USER_NOT_FOUND)
             } else {
                 const encryptedPassword = encrypt(password);
-                console.log("decrypt", encryptedPassword, password, user[0].password)
+                console.log("decrypt", encryptedPassword, user[0])
                 if(user[0].password === encryptedPassword) {
                     return({
                         token: jwtSign({
@@ -91,6 +92,9 @@ const resolvers = {
                     throw new Error(errorName.WRONG_PASSWORD)
                 }
             }
+        },
+        addToCart: async (_, args) => {
+
         }
     }
 }

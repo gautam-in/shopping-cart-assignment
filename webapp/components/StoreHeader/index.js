@@ -19,7 +19,12 @@ const StoreHeader = (props) => {
                 <Link href={router.pathname.includes("products") ? "all" :"products/all"}>Products</Link>
             </div>
             <div>
-
+                <div style={{display: "flex"}}>
+                    <Link href={"/signup"}>Sign Up</Link>
+                    <h3>/</h3>
+                    <Link href={"/signin"}>Sign In</Link>
+                </div>
+                <div></div>
             </div>
         </Layout.Header>
     )
