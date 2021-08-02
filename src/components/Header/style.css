@@ -27,33 +27,7 @@ a:hover {
     background-color: white;
     border: 1px solid white;
 }
-.modal-title{
-    color: white;
-}
-.modal-header{
-    background-color: black;
-}
-.close {
-    color: white !important;
-    opacity: 1 !important;
-}
-.modal-body{
-    background-color: Gainsboro;
-    height: 600px;
-}
-.model-footer-text{
-    font-family: 'Dosis';
-}
 
-.modal-body:nth-child(odd) {
-    margin: 2% -3% 2% -3%;
-    background: white;
-    padding: 2% 2%;
-  }
-
-  .modal-dialog {
-    float: right !important;
-}
 
 /* media queries for mobile devices */
 @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {

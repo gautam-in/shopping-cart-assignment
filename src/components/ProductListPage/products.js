@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Grid } from '@material-ui/core'
 import './style.css';
-import { useSelector, useDispatch } from "react-redux";
-import CartModel from '../MiniCart/cartModel'
+import { useDispatch } from "react-redux";
+
 
 const Products = (props) => {
     const dispatch = useDispatch();
@@ -37,14 +37,9 @@ const Products = (props) => {
                 <p className="products-desc">{props.allProducts.description}</p>
             </Grid>
 
+            {/*  */}
 
-
-            <Grid item md={7} lg={7} xs={6} sm={7} className="mb-5 mt-0">
-                <h2 className="products-subText">MRP RS </h2>
-            </Grid>
-
-
-            <Grid item md={5} lg={5} xs={1} sm={5}>
+            <Grid item md={12} lg={12} xs={12} sm={12}>
                 <button className='btn btn-sm btn-danger buy-now' data-toggle="modal" data-target="#myModal"  onClick={addtoCart}>Buy Now @{props.allProducts.price}</button>
             </Grid>
 

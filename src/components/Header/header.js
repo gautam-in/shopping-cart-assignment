@@ -1,7 +1,6 @@
 import React from 'react';
 import HomePage  from "../HomePage/homePage";
 import Login from "../Login/login";
-import MiniCart from "../MiniCart/miniCart";
 import ProductsListPage from "../ProductListPage/productsListPage";
 import logo from '../../images/logo_2x.png';
 import {  Grid } from '@material-ui/core'
@@ -13,7 +12,7 @@ import {
 } from "react-router-dom";
 import './style.css';
 import Register from '../Register/register';
-import CartModel from '../MiniCart/cartModel';
+import Cart from '../MiniCart/cart';
 
 
 export default function Header(){
@@ -37,9 +36,9 @@ export default function Header(){
               <Link to="/products">Products</Link>
             </Grid>
 
-            <Grid item  sm={5} md={5} lg={5} xs={12}></Grid>
-            <Grid item  sm={1} md={1}  lg={1} xs={12}>
-             <CartModel />
+            <Grid item  sm={4} md={4} lg={4} xs={12}></Grid>
+            <Grid item  sm={2} md={2}  lg={2} xs={12}>
+             <Cart />
             </Grid>
            
             <Grid item  sm={1} md={1}  lg={1} xs={12} className="mb-4">
@@ -54,7 +53,6 @@ export default function Header(){
         <Switch>
           <Route exact path="/" component={HomePage} />
           <Route path="/login" component={Login} />
-          <Route path="/miniCart" component={MiniCart} />
           <Route path="/products" component={ProductsListPage} />
           <Route path="/register" component={Register} />
         </Switch>

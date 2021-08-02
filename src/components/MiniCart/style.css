@@ -1,4 +1,133 @@
+
+.modal-title{
+    color: white;
+}
+.modal-header{
+    background-color: black;
+}
+.close {
+    color: white !important;
+    opacity: 1 !important;
+}
+.modal-body{
+    background-color: lavender;
+    height: 100% !important;
+}
+.model-footer-text{
+    font-family: 'Dosis';
+    text-align: center;
+}
+
+.modal-dialog {
+    float: right !important;
+}
+.cart-prod-title{
+    font-family: 'Martel', serif !important;
+    font-size: 12px;
+    color:black;
+    font-weight:800;
+}
 .cart-color{
-    color:MediumVioletRed;
-    margin:24px 13px 2px 13px;
+    color:MediumVioletRed !important;
+    margin: 1em 1em 0em 2em;
+   
+    
+}
+.cart-add-btn{
+    background-color:MediumVioletRed !important;
+    color:white;
+    height: 2em !important;
+    border-radius: 18px !important;
+    padding: 2px 11px 2px 11px !important;
+    margin-bottom: 2em !important;
+    border: 1px solid MediumVioletRed !important;
+}
+.cart-minus-btn{
+    color:white;
+    background-color:MediumVioletRed !important;
+    height: 2em !important;
+    border-radius: 18px !important;
+    padding: 2px 11px 2px 14px !important;
+    margin-bottom: 2em !important;
+    border: 1px solid MediumVioletRed !important;
+}
+.checkout-btn{
+    background-color:MediumVioletRed !important;  
+    border: 1px solid MediumVioletRed !important;
+   width: 100% !important;
+}
+
+.cart-no-item-title{
+    margin: 0 auto;
+    padding:13em 0;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 600;
+}
+.cart-no-item-subtitle{
+   color:grey;
+   font-weight: 400;
+   font-size: 15px;
+}
+.cartlogo-background{
+    background-color: white;
+}
+.lowest-price-text{
+    margin-top: 1.3em;
+    margin-left: 4em;
+    font-size: 13px;
+    color: grey;
+}
+
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+
+    .cart-prod-title {
+        margin-left: 6px;
+        width: 25em;
+        font-size: 7.7px;
+        margin-top: 5px;
+    
+    }
+    .imageUrl {
+        height: 4em;
+        width: 4.5em;
+    }
+    .cartLogo-responsive{
+        margin-top: 0.6em;
+        width: 5em;
+    }
+    .lowest-price-text {
+        margin-top: 1.8em;
+        font-size: 10px;
+    }
+    .cart-minus-btn {
+        height: 1.4em !important;
+        padding: 0px 7px 0px 8px !important;
+        margin-left: 9px;
+    }
+    .cart-add-btn {
+        height: 1.4em !important;
+        padding: 0px 5px 11px 6px !important;
+        margin-left: 9px;
+    }
+    .model-footer-text {
+        font-size: 12px;
+    }
+    .checkout-btn {
+        width: 100% !important;
+    }
+    .cart-color{
+        margin: 2em 1em 0em -4em;
+        
+    }
+
+}
+
+
+/* iPads (portrait and landscape) ----------- */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
+    .cart-color {
+        margin: 4em 1em 0em -4em;
+    }
 }

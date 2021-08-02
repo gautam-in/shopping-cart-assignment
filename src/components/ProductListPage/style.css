@@ -1,7 +1,4 @@
-.imageUrl{
-    height: 67%;
-    width: 87%;
-}
+
 .products-desc{
     width: 100%;
     font-size: 13px;
@@ -43,10 +40,12 @@
     box-shadow: rgb(0 0 0 / 16%) 0px 1px 4px;
     background-color: white !important;
 }
+
 .buy-now{
     float: right;
     margin-right: 0.9em;
-    
+    background-color: MediumVioletRed !important;
+    border-color:MediumVioletRed !important;
 }
 /* Media Queries for mobile */
 
@@ -55,10 +54,7 @@
         width: 25em;
         font-size: 6.7px;
     }
-    .imageUrl {
-        height: 10em;
-        width: 6.5em;
-    }
+   
     .products-desc {
         width: 11em;
         font-size: 9px;
