@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+@import url("https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css");
+
+
+/* Modules */
+@import '../components/Header/Header.scss';
+@import './auth.scss';
+@import 'react-toastify/dist/ReactToastify.css';
+@import '../components/Home/Home.scss';
+@import '../components/Carousel/Carousel.scss';
+@import '../components/Category/Category.scss';
+@import '../components/ProductList/ProductList.scss';
+@import '../components/Cart/Cart.scss';
+@import '../components/Cart/CartItem/CartItem.scss';
