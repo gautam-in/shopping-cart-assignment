@@ -1,0 +1,41 @@
+.products-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.categories {
+    background-color: rgb(228, 227, 227);
+    width: 30%;
+    margin: 0%;
+    padding-left: 0%;
+}
+
+.category-links {
+    list-style-type: none;
+    margin: 3%;
+} 
+
+.category-links-name {
+    padding-left: 10%;
+    border: none;
+    background-color: rgb(228, 227, 227);
+    color: grey;
+    font-weight: bold;
+}
+
+.active{
+    border: none;
+    background-color: rgb(179, 177, 177);
+    color: rgb(39, 39, 39);
+    font-weight: bold;
+}
+
+.products {
+    display: flex;
+    flex-wrap: wrap;
+    width: 70%;
+    flex-direction: row;
+    justify-content: space-between;
+} 

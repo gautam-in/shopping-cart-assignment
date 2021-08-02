@@ -1,0 +1,48 @@
+.product-card {
+    display: flex;
+    flex-direction: column;
+    padding: 2% 2%;
+    max-width: 25%;
+}
+
+.title {
+    height: 78px;
+}
+
+.product-card img {
+    width: 175px;
+    height: 150px;
+}
+
+.description {
+    background-color: rgb(228, 227, 227);
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;  
+    overflow: hidden;
+    height: 85px; /* fallback */
+}
+
+.buttons {
+    border: none;
+    background-color: rgb(206, 4, 64);
+    color: white;
+    padding: 10px;
+    border-radius: 0px;
+    cursor: pointer;
+    margin: 0px
+}
+
+.price {
+    margin: 0px;
+}
+
+.buy-now {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: dashed rgb(228, 227, 227);
+    padding-bottom: 5%;
+}
+

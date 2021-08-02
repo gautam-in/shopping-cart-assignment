@@ -1,0 +1,91 @@
+.signup-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 100%;
+    padding: 5% 20%;
+}
+
+.signup-text {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 50%;
+}
+
+.signup-text p {
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.signup-form {
+    display: flex;
+    width: 55%;
+    justify-content: space-around;
+    flex-direction: column;
+    color: grey;
+    padding-left: 3%;
+}
+
+.buttons {
+    border: none;
+    background-color: rgb(206, 4, 64);
+    color: white;
+    padding: 10px;
+    border-radius: 0px;
+    cursor: pointer;
+}
+
+.floating-label { 
+    position:relative; 
+    margin-bottom:20px; 
+}
+
+.floating-input {
+    padding:4px 4px;
+    display:block;
+    width:100%;
+    height:30px;
+    border:none;
+    border-bottom:1px solid grey;
+    outline: none;
+  }
+  
+label {
+    color:grey; 
+    position:relative;
+    pointer-events:none;
+    top: -30px;
+    transition: all 0.3s ease;
+  }
+
+.errorMessage {
+    color: red;
+}
+
+.floating-input:focus ~ label, .floating-input:not([value=""]) ~ label {
+    position: relative;
+    top: -60px;
+    color: #10c4ca; 
+    outline: none;
+    font-size: small;
+  }
+
+  /* active state */
+*, *:before, *:after {
+      box-sizing: border-box;
+  }
+  
+  
+  /* active state */
+.floating-input:focus {
+    animation:inputHighlighter 0.6s ease;
+    border-bottom: 2px solid #10c4ca;
+  }
+  
+  /* animation */
+@keyframes inputHighlighter {
+      from { background:#10c4ca; }
+    to 	{ width:0; background:transparent; }
+  }
