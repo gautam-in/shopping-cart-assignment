@@ -1,0 +1,16 @@
+{
+    "presets": [
+        [                   
+            "@babel/preset-env", {                                                  // for next gen JS to normal JS
+                "targets": {                                                        // support browsers with global usage statistics > 1%
+                    "browsers": ["> 1%", "last 2 versions"]                         // and last 2 versions of it
+                                                                                    
+                }
+            }
+        ],
+        "@babel/preset-react"
+    ],
+    "plugins": [
+        "@babel/plugin-proposal-class-properties"
+    ]
+}
