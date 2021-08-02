@@ -1,0 +1,21 @@
+// Color code
+$site_colors: (
+    primary-color-white: #ffffff,
+    secondary-color-black: #000000,
+    btn-pink-color:  #d10157,
+    box-grey-color: #eeeeee,
+    footer-bg-color: #eaeaea,
+    bullet-bg-color: #ccc,
+    bullet-bg-color-active :#aaa,
+    input-blue-color: #2fb9c6
+
+);
+// Z-index
+$z-index: (
+    cart : 4,
+    carousel : 3,
+    home  : 2,
+    header : 1,
+);
+$body-width : 100%;
+$font_style: Dosis, sans-serif;

@@ -1,0 +1,9 @@
+footer {
+    &.product-footer {
+        padding: 1rem 0;
+        @include height(40px);
+        @include fontSize(12px);
+        text-align: center;
+        background-color: map-get($site_colors, footer-bg-color);
+    }
+}

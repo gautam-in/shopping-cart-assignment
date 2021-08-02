@@ -1,0 +1,25 @@
+.registration {
+    max-width: 860px;
+    margin: 30px auto;
+    &__info {
+      padding-right: 30px;
+      @include media-lg-screen {
+        margin-left: 27px;
+      }
+      @include media-sm-screen {
+        padding: 10px 10px;
+      }
+    }
+    &__info,
+    &__form {
+      float: left;
+      width: 50%;
+      @include media-lg-screen {
+        width: 46%;
+      }
+      @include media-sm-screen {
+        width: 48%;
+      }
+    }
+  }
+  
