@@ -2,13 +2,14 @@ import React, { useEffect, useState, useContext } from 'react'
 
 import SBLogo from './logo.png'
 import { default as CartImage } from './cart.svg';
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 
 import { fetchProducts } from '../../api/product';
 import MyContext from '../../context/myContext';
 
 export default function PrimaryHeader() {
-
+    const history = useHistory();
+    const [ searchText, setSearchText ] = useState();
     const { setProducts, context: { cart } } = useContext(MyContext);
 
     useEffect(() => {
@@ -20,7 +21,13 @@ export default function PrimaryHeader() {
             .catch(error => {
 
             })
-    }, [])
+    }, []);
+
+    const handleSearchProduct = () => {
+        if (searchText.length > 0) {
+            history.push(`/search/?text=${searchText}`)
+        }
+    }
 
 
     return (
@@ -32,8 +39,8 @@ export default function PrimaryHeader() {
             </Link>
 
             <form class="SearchContainer" action="action_page.php">
-                <input type="text" placeholder="Search.." name="search" />
-                <button type="submit"><i class="fa fa-search"></i></button>
+                <input type="text" placeholder="Search.." name="search" onChange={(event) => setSearchText(event.target.value)} />
+                <button type="button" onClick={handleSearchProduct}><i class="fa fa-search"></i></button>
             </form>
 
             <div className="CartContainer">

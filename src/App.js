@@ -8,6 +8,7 @@ import Cart from './containers/cart';
 import ProductList from './containers/productList';
 import Product from './containers/product';
 import Footer from './components/footer';
+import SearchViewList from './containers/searchViewList';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
             <Route path="/cart" component={Cart} />
             <Route exact path="/categories/:id" component={ProductList} />
             <Route exact path="/products/:id" component={Product} />
+            <Route exact path="/search" component={SearchViewList} />
 
           </Switch>
         </section>
