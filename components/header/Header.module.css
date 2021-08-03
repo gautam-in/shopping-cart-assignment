@@ -1,0 +1,17 @@
+.container {
+  position: relative;
+}
+
+.logo {
+  margin: 0px;
+  height: 60px;
+  object-fit: contain;
+}
+
+@media only screen and (max-width: 580px) {
+  .logo {
+    margin: 0px;
+    height: 40px;
+    object-fit: contain;
+  }
+}
