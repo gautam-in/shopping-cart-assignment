@@ -16,7 +16,11 @@ export default function SearchViewList() {
                 {
                     products
                         .filter(item => {
-                            return item.name.includes(query.get("text"))
+                            if(query.get("text")){
+                                return item.name.includes(query.get("text"))
+                            }
+                            
+                            return true
                         })
                         .map((item) => (
                             <ProductCard {...item} />

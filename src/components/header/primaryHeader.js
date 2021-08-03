@@ -9,7 +9,7 @@ import MyContext from '../../context/myContext';
 
 export default function PrimaryHeader() {
     const history = useHistory();
-    const [ searchText, setSearchText ] = useState();
+    const [searchText, setSearchText] = useState();
     const { setProducts, context: { cart } } = useContext(MyContext);
 
     useEffect(() => {
@@ -24,8 +24,11 @@ export default function PrimaryHeader() {
     }, []);
 
     const handleSearchProduct = () => {
-        if (searchText.length > 0) {
+        if (searchText && searchText.length > 0) {
             history.push(`/search/?text=${searchText}`)
+        }
+        else{
+            history.push(`/search`)
         }
     }
 
