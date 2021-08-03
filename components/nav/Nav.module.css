@@ -1,0 +1,52 @@
+.home {
+  position: absolute;
+  left: 250px;
+  top: 50%;
+  font-family: cursive;
+  font-size: 20px;
+}
+.home > a {
+  text-decoration: none;
+}
+
+.products {
+  position: absolute;
+  left: 350px;
+  top: 50%;
+  font-family: cursive;
+  font-size: 20px;
+}
+.products > a {
+  text-decoration: none;
+}
+
+.cart {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  font-size: 20px;
+  background-color: rgb(225, 226, 226);
+  height: 45px;
+  width: 100px;
+}
+.cart > img {
+  height: 30px;
+}
+
+.signin {
+  position: absolute;
+  right: 100px;
+}
+.register {
+  position: absolute;
+  right: 30px;
+}
+
+@media only screen and (max-width: 580px) {
+  .products {
+    display: none;
+  }
+  .home {
+    display: none;
+  }
+}

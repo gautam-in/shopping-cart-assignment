@@ -1,0 +1,44 @@
+.product {
+  width: 300px;
+  height: 10%;
+  font-family: cursive;
+  margin: 5px 2px;
+}
+
+.name {
+  font-weight: bold;
+  font-size: 125%;
+  margin-bottom: 0px;
+}
+
+.description {
+  background-color: rgba(213, 218, 224, 0.774);
+  border-radius: 10px;
+  padding: 8px;
+  margin: 0px;
+}
+
+.innerFlex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.innerFlex > p {
+  font-family: monospace;
+  font-size: x-large;
+}
+
+.innerFlex > button {
+  height: max-content;
+  padding: 5%;
+  background-color: rgb(196, 44, 77);
+  border: 0px;
+  color: aliceblue;
+}
+
+@media only screen and (max-width: 480px) {
+  .product > img {
+    width: 250px;
+  }
+}

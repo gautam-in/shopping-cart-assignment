@@ -1,0 +1,52 @@
+.container {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  align-items: center;
+  height: 400px;
+}
+
+.description {
+  flex-grow: 2;
+}
+.bold {
+  font-family: system-ui;
+  font-size: 30px;
+  font-weight: 600;
+}
+
+.form {
+  flex-grow: 5;
+  width: 300px;
+  transition: 0.5s;
+}
+.form > input {
+  width: 80%;
+  padding: 10px 0px;
+  margin: 5px 0;
+  border-left: 0;
+  border-right: 0;
+  border-top: 0;
+  border-bottom: 1px solid #999;
+  outline: none;
+}
+.form > button {
+  width: 80%;
+  padding: 10px 0px;
+  margin: 5px 0;
+  border: 0;
+  background-color: rgb(196, 44, 77);
+  color: white;
+}
+
+@media only screen and (max-width: 768px) {
+  .description {
+    flex-grow: 1;
+  }
+
+  .form {
+    flex-grow: 6;
+    width: 300px;
+    transition: 0.5s;
+  }
+}

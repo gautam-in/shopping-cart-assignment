@@ -1,0 +1,160 @@
+.container {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2%;
+  height: 15%;
+  box-shadow: 0px 5px #888888;
+  font-family: cursive;
+}
+
+.image {
+  box-sizing: border-box;
+  margin: 0px;
+  width: 40%;
+  object-fit: contain;
+}
+
+.details {
+  box-sizing: border-box;
+  margin: 0px;
+  width: 60%;
+  text-align: center;
+  padding: 2%;
+}
+.name {
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.description {
+  font-size: 25px;
+}
+
+.details > button {
+  box-sizing: auto;
+  background-color: rgb(196, 44, 77);
+  color: aliceblue;
+  border: 0px;
+  font-size: 30px;
+  border-radius: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+@media only screen and (max-width: 1024px) {
+  .image {
+    box-sizing: border-box;
+    margin: 0px;
+    width: 45%;
+    object-fit: contain;
+  }
+
+  .details {
+    box-sizing: border-box;
+    margin: 0px;
+    width: 55%;
+    text-align: center;
+    padding: 2%;
+  }
+  .name {
+    font-size: 35px;
+    font-weight: bold;
+  }
+
+  .description {
+    font-size: 20px;
+  }
+
+  .details > button {
+    box-sizing: auto;
+    background-color: rgb(196, 44, 77);
+    color: aliceblue;
+    border: 0px;
+    font-size: 25px;
+    border-radius: 8px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
+@media only screen and (max-width: 780px) {
+  .image {
+    box-sizing: border-box;
+    margin: 0px;
+    width: 50%;
+    object-fit: contain;
+  }
+
+  .details {
+    box-sizing: border-box;
+    margin: 0px;
+    width: 50%;
+    text-align: center;
+    padding: 2%;
+  }
+  .name {
+    font-size: 25px;
+    font-weight: bold;
+    margin: 0px;
+    padding: 5px;
+  }
+
+  .description {
+    font-size: 15px;
+    margin: 0px;
+    padding: 5px;
+  }
+
+  .details > button {
+    box-sizing: auto;
+    background-color: rgb(196, 44, 77);
+    color: aliceblue;
+    border: 0px;
+    font-size: 20px;
+    border-radius: 8px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .image {
+    box-sizing: border-box;
+    margin: 0px;
+    width: 50%;
+    object-fit: contain;
+  }
+
+  .details {
+    box-sizing: border-box;
+    margin: 0px;
+    width: 50%;
+    text-align: center;
+    padding: 2%;
+  }
+  .name {
+    font-size: 17px;
+    font-weight: bold;
+    margin: 0px;
+    padding: 3px;
+  }
+
+  .description {
+    font-size: 12px;
+    margin: 0px;
+    padding: 0px;
+  }
+
+  .details > button {
+    box-sizing: auto;
+    background-color: rgb(196, 44, 77);
+    color: aliceblue;
+    border: 0px;
+    font-size: 12px;
+    border-radius: 8px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
