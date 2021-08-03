@@ -10,14 +10,9 @@ Clone down this repository. You will need node and npm installed globally on you
 npm install
 ```
 
-#### To start React
+#### To start
 ```node
-npm start
-```
-
-#### To start server
-```node
-npm run server
+npm start run
 ```
 
 ## Usage
