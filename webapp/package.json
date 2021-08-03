@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@ant-design/icons": "^4.6.2",
     "@apollo/client": "^3.3.21",
     "antd": "^4.16.6",
     "apollo-boost": "^0.4.9",

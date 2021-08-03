@@ -1,5 +1,6 @@
 import {useContext, useState, createContext} from "react";
-import {    ApolloClient,
+import {
+    ApolloClient,
     InMemoryCache,
     ApolloProvider,
     useQuery,
@@ -50,8 +51,11 @@ function useProvideAuth() {
                     token
                     name
                     cart{
-                        product_uid
-                        quantity
+                        value
+                        items {
+                            product_uid
+                            quantity
+                        }
                     }
                 }
             }
@@ -81,17 +85,18 @@ function useProvideAuth() {
     }
 
     const signUp = async ({email, password, name }) => {
-        console.log("fata")
         const client = createApolloClient();
-        console.log("nahi fata")
         const SignupMutation = gql`
-            mutation Signup($email: String!, $password: String!, $cart: [CartItemInput], $name: String!) {
+            mutation Signup($email: String!, $password: String!, $cart: CartInput, $name: String!) {
                 signup(email: $email, password: $password, cart: $cart, name: $name) {
                     name
                     token
                     cart{
-                        product_uid
-                        quantity
+                        value
+                        items {
+                            product_uid
+                            quantity
+                        }
                     }
                 }
             }
@@ -99,7 +104,14 @@ function useProvideAuth() {
 
         const result = await client.mutate({
             mutation: SignupMutation,
-            variables: {email, password, name , cart: null},
+            variables: {
+                email,
+                password,
+                name ,
+                cart: {
+                    value: 0,
+                    items: null
+                }},
         })
 
         console.log(result)

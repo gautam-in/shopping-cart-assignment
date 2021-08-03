@@ -42,7 +42,7 @@ const SignIn = (props) => {
                         <Input className={styles["default-input"]} type={"password"}/>
                     </Form.Item>
                     <Form.Item>
-                        <Button className={styles["signup-button"]} htmlType={"submit"}>
+                        <Button className={styles["signup-button"]} onClick={onSubmit}>
                             <p style={{color: "white", fontSize: "1vw", marginTop: 0, marginBottom: 0}}>Sign In</p>
                         </Button>
                     </Form.Item>

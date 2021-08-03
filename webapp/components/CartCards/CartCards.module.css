@@ -1,0 +1,10 @@
+.cart-item-container {
+    margin-top: 2vh;
+    height: 16vh;
+    width: 100%;
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 1vh 1vw;
+}

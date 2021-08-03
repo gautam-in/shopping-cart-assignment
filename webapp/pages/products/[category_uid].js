@@ -4,7 +4,7 @@ import {Loading} from "../../components/Loading";
 import {ProductPageSidebar} from "../../components/ProductPageSidebar";
 import {ProductCards} from "../../components/ProductCards";
 
-const GET_PRODUCTS = gql`
+export const GET_PRODUCTS = gql`
     query GetProducts($category: String!) {
         products(category: $category) {
             _id

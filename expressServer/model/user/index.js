@@ -19,7 +19,7 @@ const addressSchema = new Schema({
         required: true
     }
 });
-const cartSchema = new Schema({
+const cartItemSchema = new Schema({
     product_uid: {
         type: [String],
         required: true
@@ -28,7 +28,16 @@ const cartSchema = new Schema({
         type: Number,
         required: true
     }
+});
+
+const cartSchema = new Schema({
+    items: [cartItemSchema],
+    value: {
+        type: Number,
+        required: true
+    }
 })
+
 const userSchema = new Schema({
         name: {
             type: String,
@@ -43,7 +52,7 @@ const userSchema = new Schema({
         //     required: true
         // },
         cart: {
-            type: [cartSchema],
+            type: cartSchema,
         },
 
         email: {
