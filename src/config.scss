@@ -1,0 +1,24 @@
+$breakpoint-desktop: 1200px;
+$breakpoint-tablet: 900px;
+$breakpoint-sm: 720px;
+$breakpoint-xs: 640px;
+
+@media (min-width: $breakpoint-desktop) {
+  :root {
+    --padding-horizontal: 8rem;
+  }
+}
+
+@media (min-width: $breakpoint-tablet) and (max-width: $breakpoint-desktop) {
+  :root {
+    --padding-horizontal: 0rem;
+  }
+}
+
+@media (max-width: $breakpoint-tablet) {
+  :root {
+    --padding-horizontal: 0rem;
+  }
+}
+
+

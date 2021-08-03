@@ -1,0 +1,17 @@
+.form-control {
+    margin-bottom: 1.5rem;
+    // padding: 1.5rem 0 0 0;
+    // position: relative;
+    // label {
+    //     position: absolute;
+    // }
+    display: flex;
+    flex-direction: column;
+    input {
+        // margin-top: 0.5rem;
+        outline: none;
+        border: 0px;
+        border-bottom: 2px solid gray;
+        width: 20rem;
+    }
+}

@@ -1,0 +1,40 @@
+@import "./colors.scss";
+@import "./config.scss";
+
+@font-face {
+  font-family: "Able";
+  src: url("../static/fonts/Abel-Regular.ttf");
+  // src: url("../static/fonts/VarelaRound-Regular.ttf");
+}
+
+@media (min-width: $breakpoint-sm) {
+  :root {
+    font-size: 1em;
+  }
+}
+
+@media (max-width: $breakpoint-sm) {
+  :root {
+    --padding-horizontal: 0rem;
+    font-size: 0.7em;
+  }
+}
+
+body {
+  margin: 0px;
+}
+* {
+  font-family: "Able", "Helvetica";
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+
+button.red {
+  padding: 0.5rem 1rem;
+  background-color: $primary-color-red;
+  border: 0px;
+  color: white;
+  cursor: pointer;
+}

@@ -1,0 +1,122 @@
+@import "./../../colors.scss";
+@import "./../../config.scss";
+
+.categories-container {
+  ul {
+    list-style-type: none;
+    padding: 0px;
+  }
+  &__categories {
+    > li {
+      width: 100%;
+      margin-top: 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: relative;
+      height: 15rem;
+      background-color: white;
+      &:after {
+        content: "";
+        position: absolute;
+        left: 0px;
+        bottom: 0px;
+        width: 100%;
+        height: 25px;
+        border-radius: 50%;
+        z-index: -1;
+        box-shadow: 0 0 10px #ccc;
+      }
+
+      ul {
+        height: 70%;
+        flex-basis: 70%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        li {
+          h3 {
+            margin: 0px;
+          }
+          text-align: center;
+          font-weight: bold;
+        }
+      }
+      img {
+        @media (max-width: $breakpoint-sm) {
+          height: 50%;
+        }
+        height: 80%;
+      }
+      &:nth-child(2n) {
+        flex-direction: row-reverse;
+      }
+
+      button {
+        padding: 0.5rem 1rem;
+        background-color: $primary-color-red;
+        border: 0px;
+        color: white;
+        cursor: pointer;
+      }
+    }
+  }
+  &__banners {
+    position: relative;
+    height: 200px;
+    background: white;
+    &:after {
+      content: "";
+      position: absolute;
+      left: 0px;
+      bottom: 0px;
+      width: 100%;
+      height: 25px;
+      border-radius: 50%;
+      z-index: -1;
+      box-shadow: 0 0 10px #ccc;
+    }
+    .banner-container {
+      position: absolute;
+      height: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      text-align: center;
+      z-index: -1;
+      opacity: 0;
+      transition: all 0.3s;
+      &.active {
+        z-index: 1;
+        opacity: 1;
+      }
+      img {
+        @media (max-width: $breakpoint-sm) {
+          height: 40%;
+        }
+        height: 100%;
+      }
+    }
+    .carousel-navigator {
+      display: flex;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: 10px;
+      z-index: 2;
+      &_anchor {
+        height: 10px;
+        width: 10px;
+        border-radius: 50%;
+        background: #eee;
+        border: 1px solid gray;
+        cursor: pointer;
+        &.active {
+          background: #888;
+        }
+        &:not(:first-child) {
+          margin-left: 5px;
+        }
+      }
+    }
+  }
+}
