@@ -1,0 +1,10 @@
+@import "variables";
+
+.SB_Footer {
+    position: absolute;
+    height: 50px;
+    width: 100%;
+    background-color: $main-green-color;
+    color: white;
+    text-align: center;
+}

@@ -1,0 +1,58 @@
+.container {
+    margin: auto;
+}
+
+.CardContainer {
+    display: flex;
+
+    .CardContainer_ArrowContainer {
+        display: flex;
+    }
+
+    button {
+        color: blue;
+        border: none;
+        background-color: white;
+        text-align: center;
+        padding: 14px;
+        /* text-decoration: none; */
+        cursor: pointer;
+    }
+    button:hover {
+        background-color: whitesmoke;
+    }
+}
+.CardContainer__List {
+    display: flex;
+    border-radius: 6px;
+    color: #333;
+    padding: 1rem;
+    overflow-x: auto;
+    position: relative;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+
+
+.ProductCard__Content {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+@media screen and (max-width: 625px) {
+    .container {
+        width: 100%;
+    }
+
+    .CardContainer__List {
+        padding: 0.5rem;
+    }
+
+    .ProductCard {
+        // margin: 0.5rem;
+    }
+}

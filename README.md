@@ -1,15 +1,31 @@
-# XT Shopping Cart Assignment
+# Sabka Bazaar : Shopping Cart
 
-This is the base folder for the shopping cart exercise. You will have all the static assets and mock server responses available in this repo.
+Foobar is a Python library for dealing with word pluralization.
 
-## Getting Started
+## Installation & Setup instructions
 
-Clone this repo and run following command for starting the mock server:
+Clone down this repository. You will need node and npm installed globally on your machine.
 
-```
+```node
 npm install
-npm run start
-# or
-yarn install
-yarn start
 ```
+
+#### To start
+```node
+npm start run
+```
+
+## Usage
+
+Visit to site
+
+``http://localhost:3000``  
+
+
+## Contributing
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+
+Please make sure to update tests as appropriate.
+
+## License
+[MIT](https://choosealicense.com/licenses/mit/)
