@@ -34,6 +34,12 @@ app.get('/banners',(req,res)=>{
   res.send(parseData)
 })
 
+app.post('/addToCart',(req,res)=>{
+  let jsonData = fs.readFileSync(path.resolve(__dirname,'addToCart/index.post.json'));
+  let parseData = JSON.parse(jsonData);
+  res.send(parseData)
+})
+
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`)
 })

@@ -12,12 +12,12 @@ const Home = () => {
 
     useEffect(() => {
         const fetchData = async () => {
-            const response = await BaseUrl.get('/banners')
-            const categoryResponse = await BaseUrl.get('/categories')
             if (bannerItems.length === 0) {
+                const response = await BaseUrl.get('/banners')
                 dispatch(getBannerData(response.data))
             }
             if (categoryItems.length === 0) {
+                const categoryResponse = await BaseUrl.get('/categories')
                 dispatch(getCategoryData(categoryResponse.data))
             }
         }
@@ -35,8 +35,8 @@ const Home = () => {
             {bannerItems
                 ?.filter((banner) => banner.isActive)
                 .map((banner) => (
-                    <div key={banner.id}>
-                        <img src={banner.bannerImageUrl} alt={banner.ImageAlt} />
+                    <div data-testid="carousel" key={banner.id}>
+                        <img src={banner.bannerImageUrl} loading="lazy" alt={banner.ImageAlt} />
                     </div>
                 ))}
         </Carousel>

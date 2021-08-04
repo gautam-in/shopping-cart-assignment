@@ -1,9 +1,8 @@
-import { Typography } from "@material-ui/core";
 import { footerText } from "../../constants";
 
 const AppFooter = () => {
-    return <footer className="footer-container">
-        <Typography className="text-style">{footerText}</Typography>
+    return <footer data-testid="footer" className="footer-container">
+        <p className="text-style">{footerText}</p>
     </footer>
 }
 

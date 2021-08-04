@@ -1,5 +1,7 @@
+import { useSelector } from "react-redux";
+
 export const validateEmail = (email) => {
-    const re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    const re = /\S+@\S+\.\S+/;
     if (re.test(email)) {
         return true;
     }
@@ -7,7 +9,7 @@ export const validateEmail = (email) => {
 }
 
 export const validatePassword = (password) => {
-    const regex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$/
+    const regex = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{6,}$/
     if (regex.test(password)){
         return true;
     }
@@ -21,4 +23,9 @@ export const checkMissing = (form) => {
         }
     }
     return true;
+}
+
+export const displayCartItems = (data) => {
+    let items = data.reduce((acc,value)=>{return acc + value.quantity},0)
+    return items;
 }

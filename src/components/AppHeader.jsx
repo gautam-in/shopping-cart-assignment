@@ -1,50 +1,52 @@
-import React from "react"
-import { AppBar, Toolbar, Typography, IconButton, makeStyles } from '@material-ui/core';
 import { useHistory } from "react-router-dom";
 import CustomLink from "./custom/NavLink";
-
-const useStyles = makeStyles((theme) => ({
-    root: {
-        flexGrow: 1,
-        flexDirection: 'row',
-        justifyContent: 'center'
-    },
-    title: {
-        flexGrow: 1,
-    },
-    menuButton: {
-        padding: '10px 20px 10px 10px'
-    }
-}));
+import { useDispatch, useSelector } from "react-redux";
+import { displayCartItems } from "../utils/Validation";
+import { setAuthenticated, toggleModal } from "../redux/actions";
+import { Fragment } from "react";
+import Toast from "./custom/Toast";
 
 const AppHeader = () => {
-    const classes = useStyles();
     const history = useHistory();
-    return <React.Fragment>
-        <AppBar position="static" color="transparent" className={classes.root} >
-            <Toolbar className="toolbar-style">
-                <section>
-                    <IconButton edge="start" color="inherit" aria-label="app logo" onClick={()=>history.push('/category')}>
-                        <img src="/static/images/logo_2x.png" alt="app logo" className="large-icon-style" />
-                    </IconButton>
+    const dispatch = useDispatch();
+    const cartData = useSelector(state => state.TestReducer.cartData)
+    const auth = useSelector(state => state.TestReducer.auth)
+
+
+    const handleLoginClick = (e) => {
+        if (e.target.innerHTML === "Sign out") {
+            sessionStorage.clear()
+            dispatch(setAuthenticated(false))
+        }
+    }
+
+    return <Fragment>
+        <header className="header-container" data-testid="app-header">
+            <div className="toolbar-style">
+                <section className="btn-link-container">
+                    <div className="app-logo-btn-container">
+                        <button data-testid="app-logo" className="icon-button" aria-label="app logo" onClick={() => history.push('/category')}>
+                            <img src="/static/images/logo_2x.png" alt="app logo" className="large-icon-style" />
+                        </button>
+                    </div>
                     <CustomLink to="/category">Home</CustomLink>
                     <CustomLink to="/products/all">Products</CustomLink>
                 </section>
                 <section>
                     <div>
-                        <CustomLink to="/login">Sign in</CustomLink>
-                        <CustomLink to="register">Register</CustomLink>
+                        <CustomLink to="/login" onClick={handleLoginClick}>{auth ? "Sign out" : "Sign in"}</CustomLink>
+                        <CustomLink to="/register">Register</CustomLink>
                     </div>
                     <div className="cart-container">
-                        <IconButton onClick={() => history.push('/cart')} edge="end" className={classes.menuButton} color="inherit" aria-label="app logo">
-                            <img src="/static/images/cart.svg" alt="app logo" className="medium-icon-style" />
-                        </IconButton>
-                        <Typography variant="caption">0 items</Typography>
+                        <button data-testid="cart-logo" className="icon-button" aria-label="cart logo" onClick={() => dispatch(toggleModal(true))} edge="end" color="inherit" aria-label="app logo">
+                            <img src="/static/images/cart.svg" alt="cart logo" className="medium-icon-style" />
+                        </button>
+                        <p>{displayCartItems(cartData)} Items</p>
                     </div>
                 </section>
-            </Toolbar>
-        </AppBar>
-    </React.Fragment>
+            </div>
+        </header>
+    </Fragment>
 }
 
 export default AppHeader;

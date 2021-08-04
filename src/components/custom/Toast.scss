@@ -1,0 +1,57 @@
+.notification-container {
+    font-size: 14px;
+    box-sizing: border-box;
+    position: fixed;
+    background-color: black;
+    color: white;
+    min-width: 220px;
+    padding: 0px 10px;
+    display: block;
+    transition: transform 1s ease-in;
+    z-index: 99;
+    button {
+        background: none;
+        border: none;
+        cursor: pointer;
+        color: white;
+    }
+}
+
+.notification-close {
+    display: none;
+    transition: transform 1s ease-in-out;
+}
+
+.notification-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.top-right {
+    top: 12px;
+    right: 12px;
+    transition: transform .6s ease-in-out;
+    animation: toast-in-right .7s;
+}
+
+.bottom-right {
+    bottom: 12px;
+    right: 12px;
+    transition: transform .6s ease-in-out;
+    animation: toast-in-right .7s;
+}
+
+.top-left {
+    top: 12px;
+    left: 12px;
+    transition: transform .6s ease-in;
+    animation: toast-in-left .7s;
+}
+
+.bottom-left {
+    bottom: 12px;
+    left: 12px;
+    transition: transform .6s ease-in;
+    animation: toast-in-left .7s;
+}

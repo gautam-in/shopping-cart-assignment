@@ -1,0 +1,100 @@
+@import '../../App.scss';
+
+.modal.enter-done {
+    opacity: 1;
+    pointer-events: visible;
+}
+
+.modal.exit {
+    opacity: 0;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width:100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    transition: all 0.3s ease-in-out;
+    pointer-events: none;
+    z-index: 99;
+
+}
+
+.modal-content {
+    position:fixed;
+    background: white;
+    width: 30%;
+    height: 87%;
+    bottom:0;
+    right:24px;
+    background-color: #fff;
+    transition: all 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: black;
+}
+
+.modal-footer-button-style {
+    bottom: 0;
+    display: flex;
+    justify-content: space-between;
+    width: 98%;
+    margin: 10px 0px 10px 4px;
+    padding: 15px;
+}
+
+.modal-title {
+    margin: 0;
+    color: white;
+}
+
+.modal-body {
+    padding: 10px 0px;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+    overflow-y: auto;
+    max-height: fit-content;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    background-color:$grey;
+}
+
+.no-item-style {
+    flex-grow: 1;
+    margin: 40% 0;
+    text-align: center;
+}
+
+.button {
+    background-color: black;
+    border: none;
+    color: white;
+    font-size: 16px;
+}
+
+@media only screen and (max-width: 767px) {
+    .modal-content {
+        right: 0;
+        width: 100%;
+        height: 100%;
+        top:0;
+    }
+}
+
+@media only screen and (max-width: 1050px) {
+    .modal-content {
+        right: 0;
+        width: 100%;
+        height: 100%;
+        top:0;
+    }
+}

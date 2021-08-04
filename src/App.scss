@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Dosis:400,600,700');
+
 $black: black;
 $gray: #9b9b9b;
 $flexContainer: flex;
@@ -12,14 +14,16 @@ $medium_image_width : 1.5rem;
 $large_image_width : 8rem; 
 $grey: rgb(231, 231, 233);
 $padding:10px;
-$mobile_font_heading : 12px;
-$mobile-font_body : 10px;
+$mobile_font_heading : 16px;
+$mobile-font_body : 12px;
 $button_color : #b72f60;
 $white:white;
+$mobile_product_image: 5rem;
+$font-size-mobile : 12px;
 
 @mixin alignment($align) {
   text-align: $align;
-  margin: $topBottomMargin;
+  margin: 10px;
   font-size: $font-size;
 }
 
@@ -83,6 +87,8 @@ $white:white;
 }
 
 .cart-container {
+  display: flex;
+  align-items: center;
   background-color: $grey;
   margin-top: $margin;
   padding-right: 10px;
@@ -90,9 +96,8 @@ $white:white;
 
 .footer-container {
   @include flexContainer($jc:center);
-  @include alignment($align:center);
+  text-align: center;
   background-color: $grey;
-  padding: $padding;
 }
 
 .text-style {
@@ -129,10 +134,25 @@ $white:white;
   background: $button_color;
   border: none;
   cursor: pointer;
+  border-radius: 2px;
+  min-width: 25px;
+  text-align: center;
+}
+
+.cheap-image-container {
+  margin: 10px;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  font-size: $font-size;
+  padding: 5px;
+  img {
+      margin-right: 20px;
+  }
 }
 
 p {
- font-size: $font-size; 
+ font-size: $font-size;
 }
 
 .product-style {
@@ -171,8 +191,9 @@ p {
 
 .single-product {
   margin: 10px;
-  border-bottom: 1px solid var(--darkGrey);
+  border-bottom: 1px dashed $grey;
   padding-bottom: 5px;
+  box-shadow: 10px 0 5px -5px #88888817;
 }
 
 .min-height {
@@ -185,7 +206,7 @@ p {
   background-color: $grey;
   padding: 5px;
   min-height: 150px;
-  font-size: 12px;
+  font-size: $font-size;
   font-weight: bold;
 }
 
@@ -202,7 +223,28 @@ p {
   display: none;
 }
 
-@media only screen and (max-width: 500px) {
+.product-image-styles {
+  width: 12rem;
+  height: 12rem;
+}
+
+@media only screen and (max-width: 550px) {
+  html {
+    font-size: $font-size-mobile;
+  }
+  
+  p {
+    font-size: $mobile-font_body;
+  }
+
+  .desc-para {
+    font-size: $mobile-font_body;
+  }
+
+  .product-image-styles {
+    width: 8rem;
+    height: 8rem;
+  }
   .flex-div {
     flex-direction: column;
     width: $phone_width;
@@ -215,7 +257,7 @@ p {
     height: 6rem;
   }
   .each-category-text-style{
-    font-size: $mobile_font_heading;
+    font-size: $font-size-mobile;
   }
   .side-section {
     display: none;
@@ -241,6 +283,15 @@ p {
   .link-style {
     display: none;
   }
+
+  .each-category-button-style {
+    font-size: $mobile-font_body;
+  }
+  
+  .cheap-image-container{
+    font-size: $font-size-mobile;
+  }
+
   
   .dropdown-style {
     display: inline-block;
@@ -255,10 +306,109 @@ p {
     outline: 0;
     background: $button_color;
     color: white;
-    font-size: 1em;
+    font-size: $font-size-mobile;
   }
   }
   .min-height {
     min-height: 0px;
+    font-size: $mobile_font_heading;
   }
+
+  
+}
+
+.highlight-cat {
+  text-decoration: underline;
+  color: #9a4700;
+}
+
+.header-container {
+  padding: 0px 10px;
+  box-shadow: 0 8px 6px -6px #0000006e;
+}
+
+.icon-button {
+  background: none;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.btn-link-container {
+  flex-grow: 1;
+  display: flex;
+  align-items: baseline;
+  a {
+    margin: 0px 20px;
+  }
+}
+
+.app-logo-btn-container {
+  width: 25%;
+}
+
+body {
+  font-family: Dosis, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.cart-detail-container {
+  display: flex;
+  align-items: flex-start;
+  margin: 5px 0px;
+  padding: 10px;
+  background-color: white;
+  img {
+      width: 5rem;
+      height: 5rem;
+  }
+}
+
+.no-item-button { 
+  width: 98%;
+  margin: 10px 0px 10px 4px;
+}
+
+.cart-details-section {
+  margin-left: 20px;
+  width: 90%;
+}
+
+input {
+  width: 30px;
+  border: none;
+}
+
+.cart-details-disp-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  span {
+      margin-left: 10px;
+  }
+}
+
+.quantity {
+  display: flex;
+  align-items: center;
+  font-size: $font-size;
+  input {
+      text-align: center;
+      padding: 0px 5px;
+  }
+  p{
+      margin-left: 10px;
+  }
+}
+
+.cart-image-section {
+  width: 30%;
+}
+
+.circle-button {
+  border-radius: 30px;
+  width: 30px;
+}
+
+.fullwidth {
+  width: 98%;
 }

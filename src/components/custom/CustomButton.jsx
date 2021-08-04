@@ -1,5 +1,6 @@
 import { Button } from "@material-ui/core"
 import { makeStyles } from "@material-ui/core/styles";
+import { memo } from "react";
 const useStyles = makeStyles((theme) => ({
     root: {
         width:'100%',
@@ -8,9 +9,9 @@ const useStyles = makeStyles((theme) => ({
     },
   }));
 
-const CustomButton = ({onClick,id,children}) => {
+const CustomButton = ({onClick,id,children,type,value},props) => {
     const classes = useStyles();
-    return <Button className={classes.root}  variant="contained" color="secondary" onClick={onClick} id={id}>{children}</Button>
+    return <Button {...props} className={classes.root} type={type} value={value}  variant="contained" color="secondary" onClick={onClick} id={id}>{children}</Button>
 }
 
-export default CustomButton
+export default memo(CustomButton)

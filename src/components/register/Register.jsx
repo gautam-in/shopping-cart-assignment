@@ -1,11 +1,12 @@
-import React from 'react'
 import { useState } from 'react';
-import { Link, useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import CustomTextField from '../custom/CustomTextField';
 import CustomButton from '../custom/CustomButton';
 import { checkMissing, validateEmail, validatePassword } from '../../utils/Validation';
 import { errorMessage, passwordHelperText, registerText } from '../../constants';
 import CustomLink from '../custom/NavLink';
+import { useRef } from 'react';
+import Toast from '../custom/Toast';
 
 const Register = () => {
     const history = useHistory()
@@ -17,21 +18,31 @@ const Register = () => {
         confirmPassword: ''
     })
     const [error, setError] = useState('')
+    const errorTextRef = useRef();
+    const [show, setShow] = useState(false)
 
     const validateForm = () => {
-        if(!checkMissing(registerForm)){
+        if (!checkMissing(registerForm)) {
+            errorTextRef.current.focus();
             setError(errorMessage.missingValueText)
         }
         else if (!validateEmail(registerForm.email)) {
+            errorTextRef.current.focus();
             setError(errorMessage.emailInvalidText)
-        } 
-        else if(!validatePassword(registerForm.password)){
-            setError(errorMessage.passwordInvalidText)
+        }
+        else if (!validatePassword(registerForm.password)) {
+            errorTextRef.current.focus();
+            setError(`${errorMessage.passwordInvalidText} - ${passwordHelperText}`)
         }
         else if (registerForm.password !== registerForm.confirmPassword) {
+            errorTextRef.current.focus();
             setError(errorMessage.passwordMismatchText)
-        }else {
-            history.push('/login')
+        } else {
+            localStorage.setItem('formData', JSON.stringify(registerForm))
+            setShow(true)
+            setTimeout(() => {
+                history.push('/login')
+            }, 2000)
         }
     }
 
@@ -55,7 +66,7 @@ const Register = () => {
                 <small>{registerText}</small>
             </section>
             <section className="auth-form">
-            <div className="align-center" style={{fontSize:14,color:'red'}}>{error}</div>
+                <p ref={errorTextRef} tabIndex={1} className="align-center" style={{ fontSize: 14, color: 'red' }}>{error}</p>
                 <form autoComplete="on">
                     <CustomTextField
                         label="First Name"
@@ -84,18 +95,26 @@ const Register = () => {
                         onChange={handleTextChange}
                         id="confirmPassword"
                     />
-                    <CustomButton 
-                    variant="contained" 
-                    color="secondary" 
-                    onClick={handleClick} 
-                    id="register">
+                    <CustomButton
+                        tabIndex={0}
+                        variant="contained"
+                        color="secondary"
+                        onClick={handleClick}
+                        id="register">
                         Sign In
                     </CustomButton>
-                <CustomLink to="/login">Back to Login</CustomLink>
+                    <CustomLink to="/login">Back to Login</CustomLink>
                 </form>
+
             </section>
         </div>
-
+        <Toast
+            show={show}
+            position="top-left"
+            description="User Registered"
+            title="Success"
+            onClose={() => setShow(false)}
+        />
     </div>
 }
 

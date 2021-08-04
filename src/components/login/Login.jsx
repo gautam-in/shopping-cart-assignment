@@ -1,12 +1,13 @@
-import React from 'react'
+import React, { useRef } from 'react'
+import { set } from 'react-hook-form';
 import { useDispatch } from 'react-redux';
-import { Link, useHistory } from 'react-router-dom';
-import { hardcodedCred, invalidUser, loginText, newAccountText, token } from '../../constants';
+import { useHistory } from 'react-router-dom';
+import { invalidUser, loginText, newAccountText, token } from '../../constants';
 import { setAuthenticated } from '../../redux/actions';
 import CustomButton from '../custom/CustomButton';
 import CustomTextField from '../custom/CustomTextField';
 import CustomLink from '../custom/NavLink';
-
+import Toast from '../custom/Toast';
 const Login = () => {
 
     const dispatch = useDispatch();
@@ -14,14 +15,23 @@ const Login = () => {
     const [email, setEmail] = React.useState("")
     const [password, setPassword] = React.useState("")
     const [error, setError] = React.useState('')
+    const [show, setShow] = React.useState(false)
+    const errorTextRef = useRef();
 
     const handleClick = (event) => {
         event.preventDefault();
-        if ((email === hardcodedCred.email) && (password === hardcodedCred.password)) {
+        const registeredUser = JSON.parse(localStorage.getItem('formData'))
+        console.log('check register', registeredUser)
+        if ((email === registeredUser.email) && (password === registeredUser.password)) {
             sessionStorage.setItem('auth-token', token);
             dispatch(setAuthenticated(true))
-            history.goBack();
+            setShow(true)
+            setTimeout(() => {
+                history.push('/');
+            }, 2000)
         } else {
+            console.log(errorTextRef.current)
+            errorTextRef.current.focus();
             setError(invalidUser)
         }
     }
@@ -33,7 +43,7 @@ const Login = () => {
                 <small>{loginText}</small>
             </section>
             <section className="auth-form">
-                <div className="error-text">{error}</div>
+                <p tabIndex={1} className="error-text" ref={errorTextRef}>{error}</p>
                 <form autoComplete="on">
                     <CustomTextField
                         label="Email"
@@ -47,6 +57,7 @@ const Login = () => {
                         id="password"
                     />
                     <CustomButton
+                        tabIndex={0}
                         variant="contained"
                         color="secondary"
                         onClick={handleClick}
@@ -57,6 +68,13 @@ const Login = () => {
                 <CustomLink to="/register">{newAccountText}</CustomLink>
             </section>
         </div>
+        <Toast
+            show={show}
+            position="top-left"
+            description="Welcome, you are successfully Logged In"
+            title="Success"
+            onClose={() => setShow(false)}
+        />
     </div>
 }
 
