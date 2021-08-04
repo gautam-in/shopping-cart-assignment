@@ -28,7 +28,7 @@ const OffersCarousel = (props: IProps): React.ReactElement => {
   };
 
   return (
-    <Carousel nextIcon={nextIcon()} prevIcon={prevIcon()}>
+    <Carousel nextIcon={nextIcon()} prevIcon={prevIcon()} interval={null}>
       {getBannersData.banners.map((banner) => {
         return (
           <Carousel.Item key={banner.bannerImageAlt}>

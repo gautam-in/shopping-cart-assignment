@@ -33,8 +33,6 @@ body {
   font-family: "Lato", "Arial", "sans-serif";
   font-size: 20px;
   font-weight: 300;
-  // height: 100vh;
-  height: auto;
   text-rendering: optimizeLegibility; /* This makes fonts render in a perfect way */
   overflow-x: hidden;
 }
@@ -74,17 +72,12 @@ h1 {
 h2 {
   font-size: 100%;
   word-spacing: 2px;
-  // text-align: center;
-  letter-spacing: 1px;
+  letter-spacing: 0.5px;
 }
 
 h3 {
   font-size: 80%;
   margin-bottom: 15px;
-}
-
-p {
-  font-size: 80%;
 }
 
 /* -- Carousel -- */

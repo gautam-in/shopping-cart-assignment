@@ -1,6 +1,6 @@
 header {
   height: 13vh;
-  padding: 0 50px;
+  padding: 0 20px;
   -webkit-box-shadow: 0px 2px 15px 0px grey;
   box-shadow: 0px 2px 15px 0px grey;
 }
@@ -55,6 +55,7 @@ header {
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 
   i {
     color: #d33761;

@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./header.scss";
-// import logo from "../../../public/static/images/logo.png";
 import Row from "components/row/row";
 import Column from "components/column/column";
 import MainNavigation from "components/mainNavigaton/mainNavigation";
@@ -19,11 +18,11 @@ const Header = (): React.ReactElement => {
             <Link to="/login" className="login-nav-link">
               SignIn
             </Link>
-            <Link to="/register" className="login-nav-link"> 
+            <Link to="/register" className="login-nav-link">
               Register
             </Link>
           </div>
-          <div className="cart-box">
+          <div className="cart-box" onClick={() => console.log("cart clicked")}>
             <i className="ion-android-cart"></i>
             <span>0 items</span>
           </div>

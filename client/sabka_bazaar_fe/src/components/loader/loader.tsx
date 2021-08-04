@@ -15,9 +15,8 @@ export default function Loader(props: IProps): ReactElement {
   return (
     <div className={wrapperClass}>
       <div className="loader" />
-      <Spinner animation="border" role="status">
-        <span className="visually-hidden">{message}</span>
-      </Spinner>
+      <Spinner animation="border" role="status" />
+      <span className="visually-hidden">{message}</span>
     </div>
   );
 }
