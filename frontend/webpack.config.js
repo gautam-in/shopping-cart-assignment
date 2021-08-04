@@ -7,7 +7,7 @@ module.exports = {
       {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
-        use: ['source-map-loader', 'babel-loader'],
+        use: ['babel-loader'],
       },
       {
         test: /\.(sass|less|css)$/,
