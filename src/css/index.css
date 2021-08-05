@@ -11,7 +11,9 @@ footer {
 }
 
 footer p {
-    padding-left: 10%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 10px 0px;
 }
 
 main {
@@ -26,4 +28,10 @@ main {
     padding: 10px;
     border-radius: 0px;
     cursor: pointer;
+}
+
+@media only screen and (max-width: 1023px) {
+    footer p {
+        text-align: center;
+    }
 }

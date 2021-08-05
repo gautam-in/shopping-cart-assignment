@@ -3,6 +3,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    padding-inline-start: 0px;
 }
 
 .categories-container .categories {
@@ -20,13 +21,13 @@
   }
 
 .categories-container .categories:after {
-        content: '';
-        position: absolute;
-        bottom: 0;
-        width: 90%;
-        left: 5%;
-        height: 10px;
-        background: radial-gradient(at 50% 0, rgba(153, 153, 153, 0.5), transparent 50%);
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 90%;
+    left: 5%;
+    height: 10px;
+    background: radial-gradient(at 50% 0, rgba(153, 153, 153, 0.5), transparent 50%);
 }
 
 .categories .img {

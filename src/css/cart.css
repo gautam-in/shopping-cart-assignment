@@ -2,8 +2,7 @@
     display: flex;
     flex-direction: column;
     max-width: 30%;
-    min-height: 650px;
-    max-height: 650px;
+    height: 100%;
     margin: auto;
 }
 
@@ -36,7 +35,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    min-height: 500px;
+    height: 100%;
     background-color: white;
 }
 
@@ -49,8 +48,7 @@
     flex-direction: column;
     background-color: rgb(235, 235, 235);
     max-width: 100%;
-    min-height: 500px;
-    max-height: 500px;
+    height: 100%;
     padding: 15px 0px;
     overflow: auto;
 }
@@ -121,14 +119,12 @@
 }
 
 .op-buttom {
-    display: flex;
     border: none;
     background-color: rgb(206, 4, 64);
     color: white;
-    padding: 10px;
-    height: 10px;
-    width: 10px;
-    align-items: center;
+    height: 20px;
+    width: 20px;
+    text-align: center;
     border-radius: 50%;
     cursor: pointer;
 }
@@ -148,4 +144,99 @@
 .empty-cart-button {
     display: block;
     width: 100%;
+}
+
+@media only screen and (max-width: 1023px) {
+
+    .cart-container {
+        display: flex;
+        flex-direction: column;
+        max-width: 100%;
+        min-height: 100%;
+        max-height: 100%;
+        margin: auto;
+    }
+
+    .product-details {
+        margin-bottom: 1%;
+        padding: 1%;
+    }
+
+    .cart-operations {
+        margin-bottom: 0%;
+    }
+
+    .product-info h4 {
+        margin-top: 0%;
+    }
+
+    .op-buttom {
+        border-radius: 15%;
+        width: 25px;
+    }
+
+    .operations {
+        width: 25%;
+    }
+
+    .product-info {
+        margin-left: 1%;
+    }
+
+    .lowest-price img {
+        width: 15%;
+    }
+
+    .lowest-price{
+        padding: 1%;
+    }
+
+    .cart-header {
+        background-color: white;
+        color: black;
+    }
+
+    .cross {
+        display: none;
+    }
+
+    .cart-header button {
+        display: none;
+    }
+    
+}
+
+@media only screen and (max-width: 426px) {
+
+    .cart-container {
+        display: flex;
+        flex-direction: column;
+        max-width: 100%;
+        min-height: 100%;
+        max-height: 100%;
+        margin: auto;
+    }
+
+    .product-details {
+        margin-bottom: 5%;
+        padding: 1%;
+    }
+
+    .product-info h4 {
+        margin-top: 0%;
+        margin-bottom: 1%;
+    }
+
+    .operations {
+        width: 40%;
+    }
+
+}
+
+@media only screen and (max-width: 376px) {
+
+    .operations {
+        width: 50%;
+    }
+
 }

@@ -27,8 +27,6 @@
     z-index: 3;
     height: 100%;
     width: 100%;
-    /* top: 0; */
-    /* background-color: rgba(0,0,0,0.4);  */
 }
 
 .backdrop {
@@ -94,4 +92,20 @@
     padding-bottom: 20px;
     align-items: flex-end;
     width: 40%;
+}
+
+@media only screen and (max-width: 426px) {
+
+    .NavBar .nav-container .navCenter {
+        display: none;
+    }
+
+    .nav-container .navLeft img {
+        height: 45px;
+    }
+
+    .navRight .nav-links{
+        display: none
+    }
+
 }

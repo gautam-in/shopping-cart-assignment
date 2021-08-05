@@ -55,7 +55,7 @@ const Cart = ({showCart}) => {
                 {cart.map((product) => {
                     return (
                         <div className={classes['product-details']} key={product.id}>
-                            <img src={product.imageURL} alt="" />
+                            <img src={product.imageURL} alt={product.name} />
                             <div className={classes['product-info']}>
                                 <h4>{product.name}</h4>
                                 <div className={classes['cart-operations']}>

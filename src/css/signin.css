@@ -89,3 +89,23 @@ label {
       from { background:#10c4ca; }
     to 	{ width:0; background:transparent; }
   }
+
+@media only screen and (max-width: 426px) {
+
+.signup-container {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
+  }
+
+.signup-text {
+    width: 100%;
+  }
+
+.signup-form {
+  width: 100%;
+  margin: 10%;
+  }
+
+}
