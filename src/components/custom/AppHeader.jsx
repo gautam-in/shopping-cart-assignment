@@ -1,10 +1,9 @@
 import { useHistory } from "react-router-dom";
-import CustomLink from "./custom/NavLink";
+import CustomLink from "./NavLink";
 import { useDispatch, useSelector } from "react-redux";
-import { displayCartItems } from "../utils/Validation";
-import { setAuthenticated, toggleModal } from "../redux/actions";
+import { displayCartItems } from "../../utils/Validation";
+import { setAuthenticated, toggleModal } from "../../redux/actions";
 import { Fragment } from "react";
-import Toast from "./custom/Toast";
 
 const AppHeader = () => {
     const history = useHistory();

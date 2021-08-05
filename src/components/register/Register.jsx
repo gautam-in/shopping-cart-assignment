@@ -61,7 +61,7 @@ const Register = () => {
 
     return <div className="App">
         <div className="flex-div">
-            <section className="align-left">
+            <section className="align-left margin-top">
                 <h2>Signup</h2>
                 <small>{registerText}</small>
             </section>
@@ -110,7 +110,7 @@ const Register = () => {
         </div>
         <Toast
             show={show}
-            position="top-left"
+            position="top-right"
             description="User Registered"
             title="Success"
             onClose={() => setShow(false)}

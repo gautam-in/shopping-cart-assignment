@@ -9,7 +9,7 @@ $phone_width: 85%;
 $margin:20px;
 $topBottomMargin:10px 0px;
 $desktop_width:100%;
-$loginContainer_width : 60%;
+$loginContainer_width : 50%;
 $medium_image_width : 1.5rem;
 $large_image_width : 8rem; 
 $grey: rgb(231, 231, 233);
@@ -20,10 +20,12 @@ $button_color : #b72f60;
 $white:white;
 $mobile_product_image: 5rem;
 $font-size-mobile : 12px;
+$smallSpacer : 10px;
+$cartIconStyle: 10px 20px 10px 10px;
+$noStyle:none;
 
 @mixin alignment($align) {
   text-align: $align;
-  margin: 10px;
   font-size: $font-size;
 }
 
@@ -33,7 +35,7 @@ $font-size-mobile : 12px;
 }
 
 .cart-icon-style {
-  margin: 10px 20px 10px 10px;
+  margin: $cartIconStyle;
 }
 
 .App {
@@ -47,7 +49,7 @@ $font-size-mobile : 12px;
 
 .flex-div {
   @include flexContainer($jc:space-between);
-  width: $loginContainer_width;
+  width: 65%;
 }
 
 .toolbar-style {
@@ -65,6 +67,10 @@ $font-size-mobile : 12px;
 
 .align-center {
   @include alignment($align: center)
+}
+
+.margin-top {
+  margin-top: 40px;
 }
 
 .error-text {
@@ -107,9 +113,9 @@ $font-size-mobile : 12px;
 
 .link-style {
   font-size: $font-size;
-  text-decoration: none;
+  text-decoration: $noStyle;
   margin:$topBottomMargin;
-  margin-left: 10px;
+  margin-left: $smallSpacer;
 }
 
 .each-category-style {
@@ -132,7 +138,7 @@ $font-size-mobile : 12px;
   padding: 0.5rem;
   color:$white;
   background: $button_color;
-  border: none;
+  border: $noStyle;
   cursor: pointer;
   border-radius: 2px;
   min-width: 25px;
@@ -164,8 +170,8 @@ p {
   width: 80%;
   display:grid;
   grid-template-columns:repeat(auto-fit, minmax(250px, 1fr));
-  grid-gap: 10px;
-  margin: 10px;
+  grid-gap: $smallSpacer;
+  margin: $smallSpacer;
 }
 
 .side-section {
@@ -174,7 +180,7 @@ p {
 }
 
 .list-style {
-  list-style: none;
+  list-style: $noStyle;
   padding: 0;
 }
 
@@ -190,7 +196,7 @@ p {
 }
 
 .single-product {
-  margin: 10px;
+  margin: $smallSpacer;
   border-bottom: 1px dashed $grey;
   padding-bottom: 5px;
   box-shadow: 10px 0 5px -5px #88888817;
@@ -228,6 +234,16 @@ p {
   height: 12rem;
 }
 
+@media only screen and (max-width: 1050px) {
+  .button-mobile-style {
+    display: flex;
+    flex-direction: column;
+  }
+  .button-desktop-style {
+    display: none;
+  }
+}
+
 @media only screen and (max-width: 550px) {
   html {
     font-size: $font-size-mobile;
@@ -247,7 +263,7 @@ p {
   }
   .flex-div {
     flex-direction: column;
-    width: $phone_width;
+    width: 65%;
   }
   .auth-form{
     width: $phone_width;
@@ -292,7 +308,6 @@ p {
     font-size: $font-size-mobile;
   }
 
-  
   .dropdown-style {
     display: inline-block;
     margin-bottom: 15px;
@@ -313,8 +328,6 @@ p {
     min-height: 0px;
     font-size: $mobile_font_heading;
   }
-
-  
 }
 
 .highlight-cat {

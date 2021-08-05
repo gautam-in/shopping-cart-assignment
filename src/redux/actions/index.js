@@ -1,4 +1,4 @@
-import { ADD_QUANTITY, AUTH, BANNER, GET_CATEGORY, GET_PRODUCT, MANAGE_CART, REMOVE_ITEM, REMOVE_QUANTITY, SHOW_MODAL, SHOW_TOAST, UPDATE_QUANTITY } from "../types"
+import { ADD_QUANTITY, AUTH, BANNER, CLEAR_CART, GET_CATEGORY, GET_PRODUCT, MANAGE_CART, REMOVE_ITEM, REMOVE_QUANTITY, SHOW_MODAL, SHOW_TOAST, UPDATE_QUANTITY } from "../types"
 
 export const setAuthenticated = (id) => {
     return {
@@ -69,9 +69,8 @@ export const toggleModal = (flag) => {
     }
 }
 
-export const toggleToast = (flag) => {
+export const clearCart = () => {
     return {
-        type: SHOW_TOAST,
-        payload: flag
+        type: CLEAR_CART
     }
 }

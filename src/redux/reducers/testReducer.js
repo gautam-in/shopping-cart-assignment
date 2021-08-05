@@ -1,4 +1,4 @@
-import { ADD_QUANTITY, AUTH, BANNER, GET_CATEGORY, GET_PRODUCT, MANAGE_CART, REMOVE_ITEM, REMOVE_QUANTITY, SHOW_MODAL, SHOW_TOAST, UPDATE_QUANTITY } from "../types";
+import { ADD_QUANTITY, AUTH, BANNER, CLEAR_CART, GET_CATEGORY, GET_PRODUCT, MANAGE_CART, REMOVE_ITEM, REMOVE_QUANTITY, SHOW_MODAL, SHOW_TOAST, UPDATE_QUANTITY } from "../types";
 
 const initialState = {
     bannerData: [],
@@ -62,10 +62,10 @@ export default (state = initialState, action) => {
                 ...state,
                 modalFlag: action.payload
             }
-        case SHOW_TOAST:
+        case CLEAR_CART:
             return {
                 ...state,
-                toastFlag: action.payload
+                cartData: []
             }
         default:
             return state;

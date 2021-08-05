@@ -13,12 +13,14 @@ const Home = () => {
     useEffect(() => {
         const fetchData = async () => {
             if (bannerItems.length === 0) {
-                const response = await BaseUrl.get('/banners')
-                dispatch(getBannerData(response.data))
+                await BaseUrl.get('/banners').then((res)=>{
+                    dispatch(getBannerData(res.data))
+                }).catch((e)=>console.log('something went wrong',e))
             }
             if (categoryItems.length === 0) {
-                const categoryResponse = await BaseUrl.get('/categories')
-                dispatch(getCategoryData(categoryResponse.data))
+                await BaseUrl.get('/categories').then((res)=>{
+                    dispatch(getCategoryData(res.data))
+                }).catch((e)=>console.log('something went wrong',e));
             }
         }
         fetchData();

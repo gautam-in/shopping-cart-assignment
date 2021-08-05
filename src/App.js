@@ -5,7 +5,7 @@ import {
   Route
 } from "react-router-dom";
 import React, { Suspense, lazy, useEffect } from 'react';
-import AppHeader from './components/AppHeader';
+import AppHeader from './components/custom/AppHeader';
 import AppFooter from './components/custom/AppFooter';
 import { useDispatch } from 'react-redux';
 import { setAuthenticated } from './redux/actions';

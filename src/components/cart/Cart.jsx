@@ -1,7 +1,7 @@
 import { Fragment } from "react";
 import { useDispatch, useSelector } from "react-redux"
 import { cartFooterText, cheapText, favItemText, noItemText, proceedToCheckoutText } from "../../constants";
-import { addQuantity, removeCartItem, removeQuantity, toggleModal, toggleToast, updateQuantity } from "../../redux/actions";
+import { addQuantity, clearCart, removeCartItem, removeQuantity, toggleModal, toggleToast, updateQuantity } from "../../redux/actions";
 import { displayCartItems } from "../../utils/Validation"
 import Modal from "../custom/Modal";
 import { useHistory } from "react-router-dom";
@@ -28,6 +28,7 @@ const Cart = () => {
         if (auth) {
             dispatch(toggleModal(false))
             setShow(true)
+            dispatch(clearCart())
         } else {
             setShow(true)
             setTimeout(() => {
@@ -61,8 +62,8 @@ const Cart = () => {
     const FooterContent = () => {
         return cartData.length > 0 ? <Fragment><p className="align-center">{cartFooterText}</p>
             <button tabIndex={-1} onClick={handleCheckoutClick} className="each-category-button-style modal-footer-button-style">
-                <div>{cartData.length ? proceedToCheckoutText : 'Start shopping'}</div>
-                <div>{cartData.map((ele) => ele.price * ele.quantity).reduce((a, b) => a + b, 0).toFixed(2)}</div>
+                <div>{cartData.length ? proceedToCheckoutText  : 'Start shopping'}</div>
+                <div>Rs.{cartData.map((ele) => ele.price * ele.quantity).reduce((a, b) => a + b, 0).toFixed(2)}</div>
             </button>
         </Fragment> : <button onClick={() => dispatch(toggleModal(false))} className="each-category-button-style no-item-button" >Start Shopping</button>
     }
@@ -84,13 +85,13 @@ const Cart = () => {
         </Modal>
         {!auth ? <Toast
             show={show}
-            position="top-left"
+            position="top-right"
             description="User not Logged In, redirecting to login screen"
-            title="Info"
+            title="Error"
             onClose={() => setShow(false)}
         /> : <Toast
             show={show}
-            position="top-left"
+            position="top-right"
             description="Checkout Successful"
             title="Success"
             onClose={() => setShow(false)}

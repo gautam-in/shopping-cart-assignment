@@ -8,10 +8,10 @@ export default function Modal(props) {
             unmountOnExit
             timeout={{ enter: 0, exit: 300 }}
         >
-            <div role="dialog" className="modal">
+            <div data-testid="modal" role="dialog" className="modal">
                 <section className="modal-content" onClick={e => e.stopPropagation()}>
                     <header className="modal-header">
-                        <h4 className="modal-title">{props.title}</h4>
+                        <h4 data-testid="modal-title" className="modal-title">{props.title}</h4>
                         <button onClick={props.onClose} className="button">x</button>
                     </header>
                     <div className="modal-body">{props.children}</div>

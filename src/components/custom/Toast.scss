@@ -2,19 +2,32 @@
     font-size: 14px;
     box-sizing: border-box;
     position: fixed;
-    background-color: black;
-    color: white;
+    background-color: white;
+    color: black;
     min-width: 220px;
     padding: 0px 10px;
     display: block;
     transition: transform 1s ease-in;
     z-index: 99;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     button {
         background: none;
-        border: none;
+        border: none;   
         cursor: pointer;
-        color: white;
+        color: black;
     }
+}
+
+.Info {
+    border-bottom: 5px solid blue;
+}
+
+.Success {
+    border-bottom: 5px solid green;
+}
+
+.Error {
+    border-bottom: 5px solid red;
 }
 
 .notification-close {
@@ -30,7 +43,7 @@
 
 .top-right {
     top: 12px;
-    right: 12px;
+    right: 24px;
     transition: transform .6s ease-in-out;
     animation: toast-in-right .7s;
 }

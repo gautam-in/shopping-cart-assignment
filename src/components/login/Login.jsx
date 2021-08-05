@@ -21,7 +21,6 @@ const Login = () => {
     const handleClick = (event) => {
         event.preventDefault();
         const registeredUser = JSON.parse(localStorage.getItem('formData'))
-        console.log('check register', registeredUser)
         if ((email === registeredUser.email) && (password === registeredUser.password)) {
             sessionStorage.setItem('auth-token', token);
             dispatch(setAuthenticated(true))
@@ -38,7 +37,7 @@ const Login = () => {
 
     return <div className="App">
         <div className="flex-div">
-            <section className="align-left">
+            <section className="align-left margin-top">
                 <h2>Login</h2>
                 <small>{loginText}</small>
             </section>
@@ -70,7 +69,7 @@ const Login = () => {
         </div>
         <Toast
             show={show}
-            position="top-left"
+            position="top-right"
             description="Welcome, you are successfully Logged In"
             title="Success"
             onClose={() => setShow(false)}

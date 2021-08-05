@@ -8,20 +8,23 @@ import Toast from "../custom/Toast";
 const ProductList = (props) => {
     const dispatch = useDispatch();
     const history = useHistory();
-    const [filter, setFilter] = useState(null)
     const categories = useSelector(state => state.TestReducer.categoryData)
     const products = useSelector(state => state.TestReducer.productData)
-    const [show,setShow] = useState(false)
+    const [show, setShow] = useState(false)
+    const [renderProducts, setRenderProducts] = useState([]);
 
     useEffect(() => {
         const fetchData = async () => {
             if (products.length === 0) {
-                const response = await BaseUrl.get('/products')
-                dispatch(getProductData(response.data))
+                await BaseUrl.get('/products').then((res) => {
+                    dispatch(getProductData(res.data))
+                    setRenderProducts(res.data)
+                }).catch((e) => console.log('something went wrong', e))
             }
             if (categories.length === 0) {
-                const categoryResponse = await BaseUrl.get('/categories')
-                dispatch(getCategoryData(categoryResponse.data))
+                await BaseUrl.get('/categories').then((res) => {
+                    dispatch(getCategoryData(res.data))
+                }).catch((e) => console.log('something went wrong', e));
             }
         }
         fetchData();
@@ -29,9 +32,14 @@ const ProductList = (props) => {
 
     useEffect(() => {
         if (props.match.params.id !== 'all') {
-            setFilter(props.match.params.id)
+            setRenderProducts(products.reduce((acc, x) => {
+                if (props.match.params.id === x.category) {
+                    acc.push(x);
+                    return acc;
+                } else return acc;
+            }, []))
         } else {
-            setFilter(null)
+            setRenderProducts(products)
         }
     }, [props.match.params.id])
 
@@ -62,9 +70,9 @@ const ProductList = (props) => {
         <div className="product-style">
             <aside className="side-section">
                 <ul className="list-style">
-                    <li className="each-list" onClick={() => history.push('/products/all')}>All Products</li>
+                    <li data-testid="category-list-section-all" className="each-list" onClick={() => history.push('/products/all')}>All Products</li>
                     {categories.map((category, index) => (
-                        <li className={props.match.params.id === category.id ? 'each-list highlight-cat' : 'each-list'}
+                        <li data-testid="category-list-section" className={props.match.params.id === category.id ? 'each-list highlight-cat' : 'each-list'}
                             key={index}
                             value={category.key}
                             onClick={(e) => filterProducts(e, category)}
@@ -75,7 +83,7 @@ const ProductList = (props) => {
                 </ul>
             </aside>
             <section className="main-section">
-                <div className="dropdown-style">
+                <div data-testid="category-list-dropdown" className="dropdown-style">
                     <select onChange={(e) => filterProducts(e)}>
                         <option>Select Category</option>
                         {categories.map((category, index) => (
@@ -90,18 +98,13 @@ const ProductList = (props) => {
                         ))}
                     </select>
                 </div>
-                {filter
-                    ? products.filter((item) => filter === item.category)
-                        .map((product) => (
-                            <SingleProduct key={product.id} product={product} handleAddToCart={handleAddToCart} />
-                        ))
-                    : products.map((product) => (
-                        <SingleProduct key={product.id} product={product} handleAddToCart={handleAddToCart} />
-                    ))}
+                {renderProducts.length > 0 ? renderProducts.map((product) => (
+                    <SingleProduct key={product.id} product={product} handleAddToCart={handleAddToCart} />
+                )) : <p role="alert" className="align-center">No Products for this Category</p>}
             </section>
             <Toast
                 show={show}
-                position="top-left"
+                position="top-right"
                 description="Item added to cart"
                 title="Success"
                 onClose={() => setShow(false)}
@@ -122,11 +125,14 @@ function SingleProduct({ product, handleAddToCart }) {
                     <p className="desc-para">{product?.description}</p>
                     <div className="button-desktop-style">
                         MRP Rs.{product?.price}
-                        <button className="each-category-button-style" onClick={(e) => handleAddToCart(e, product)}>Buy Now</button>
+                        <button data-testid="buy-now" className="each-category-button-style" onClick={(e) => handleAddToCart(e, product)}>Buy Now</button>
                     </div>
                     <div className="button-mobile-style">
-                        <button className="each-category-button-style" onClick={(e) => handleAddToCart(e, product)}>Buy Now @ Rs.{product?.price}</button>
+                        <button data-testid="buy-now-mobile" className="each-category-button-style" onClick={(e) => handleAddToCart(e, product)}>Buy Now @ Rs.{product?.price}</button>
                     </div>
+                </div>
+                <div>
+
                 </div>
             </div>
         </div>

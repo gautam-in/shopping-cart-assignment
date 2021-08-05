@@ -7,5 +7,5 @@ export const REMOVE_ITEM = 'REMOVE_ITEM';
 export const ADD_QUANTITY = 'ADD_QUANTITY';
 export const REMOVE_QUANTITY = 'REMOVE_QUANTITY';
 export const SHOW_MODAL = 'SHOW_MODAL';
-export const SHOW_TOAST = 'SHOW_TOAST';
+export const CLEAR_CART = 'CLEAR_CART';
 export const UPDATE_QUANTITY = 'UPDATE_QUANTITY';
