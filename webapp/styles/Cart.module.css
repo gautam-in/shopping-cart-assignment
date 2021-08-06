@@ -1,0 +1,81 @@
+.cart-container {
+    width: 100%;
+    background-color: rgba(0,0,0,0.2);
+    min-height: 89vh;
+}
+
+.cart-footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: white;
+    height: 10vh;
+    display: flex;
+    padding: 1vw;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.cart-button, .cart-button:active, .cart-button:focus {
+    width: 100%;
+    height: 8vh;
+    background-color: #ff0066;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-color: #ff0066;
+}
+
+.cart-button:hover {
+    width: 100%;
+    height: 10vh;
+    background-color: #ff0066;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-color: #ff0066;
+    opacity: 0.7;
+}
+
+.cart-header {
+    margin-top: 2vh;
+    height: 8vh;
+    width: 100%;
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-left: 1vw;
+}
+
+.lowest-price-card {
+    margin-top: 2vh;
+    height: 8vh;
+    width: 100%;
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-left: 30vw;
+    padding-right: 30vw;
+    justify-content: space-around;
+}
+
+@media screen and (max-width: 720px){
+    .lowest-price-card {
+        margin-top: 2vh;
+        height: 8vh;
+        width: 100%;
+        background-color: white;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding-left: 5vw;
+        padding-right: 5vw;
+        justify-content: space-around;
+    }
+}
