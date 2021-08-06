@@ -1,9 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Carousel from 'react-material-ui-carousel'
 import Banner from './banners'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {faCaretCircleLeft } from '@fortawesome/free-solid-svg-icons'
-import {faCaretCircleRight } from '@fortawesome/free-solid-svg-icons'
 import Catagories from './Catagory';
 import axios from 'axios';
 

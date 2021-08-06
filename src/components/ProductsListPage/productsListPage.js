@@ -4,8 +4,6 @@ import { Grid } from '@material-ui/core/';
 
 export default function ProductsListPage(){
     return <div>
-        <Grid lg={12}>
-        <SideBar />
-        </Grid>
-    </div>
+            <SideBar />
+           </div>
 }

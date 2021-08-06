@@ -4,12 +4,18 @@ import './style.css';
 import { useDispatch } from "react-redux";
 
 
+
 const Products = (props) => {
     const dispatch = useDispatch();
     const addtoCart = () => {
+
+        let halith = props.allProducts;
+        halith.count = 1;
+
         dispatch({
             type: "ADDCART",
-            payload: props.allProducts
+            payload: halith
+
         })
         
     }
@@ -23,6 +29,7 @@ const Products = (props) => {
     return (
 
         <Grid container className="all-pro-bg" spacing={1}>
+           
 
             <Grid item lg={12} xs={12} md={12} sm={12} className="mb-0 mt-0" >
                 <h2 className="products-title">{props.allProducts.name}</h2>

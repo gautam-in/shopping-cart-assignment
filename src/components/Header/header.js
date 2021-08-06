@@ -1,7 +1,7 @@
 import React from 'react';
 import HomePage  from "../HomePage/homePage";
 import Login from "../Login/login";
-import ProductsListPage from "../ProductListPage/productsListPage";
+import ProductsListPage from "../ProductsListPage/productsListPage";
 import logo from '../../images/logo_2x.png';
 import {  Grid } from '@material-ui/core'
 import {
@@ -12,7 +12,7 @@ import {
 } from "react-router-dom";
 import './style.css';
 import Register from '../Register/register';
-import Cart from '../MiniCart/cart';
+import Cart from '../Cart/cart';
 
 
 export default function Header(){

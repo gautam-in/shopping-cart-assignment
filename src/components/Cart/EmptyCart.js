@@ -1,6 +1,6 @@
 import React from 'react';
 import './style.css';
-import { Grid } from '@material-ui/core'
+
 
 
 export default function EmptyCart(){

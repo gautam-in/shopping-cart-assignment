@@ -8,7 +8,7 @@ import axios from 'axios';
 
 
 
-export default function VerticalTabs() {
+export default function SideBar() {
   const globalState = useSelector(state => state);
   const dispatch = useDispatch();
 
@@ -58,14 +58,18 @@ export default function VerticalTabs() {
 
   return (
 
-    <Grid container spacing={3}>
+    <Grid container spacing={3} >
 
       <Grid className="cat-bg" item lg={3} md={3} xs={12} sm={3}>
+      {/* <select className="form-select" aria-label="Default select example"> */}
         {
           categories.map((item) => (
+            
             <Button variant="contained" color="default" className="cat-button" onClick={() => filterByCategory(item)}>{item?.label ?? null}</Button>
+           
           ))
         }
+         {/* </select> */}
       </Grid>
       <Grid item lg={9} md={9} xs={12} sm={9}>
         <Grid container item lg={12} sm={12} md={12} xs={12}>
