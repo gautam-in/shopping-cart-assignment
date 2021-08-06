@@ -71,6 +71,7 @@ function useProvideAuth() {
         if(window && window.localStorage) {
             const { token, cart, name } = result.data.login
             window.localStorage.setItem("token", token)
+            window.localStorage.setItem("userData", JSON.stringify({cart, name}))
         }
 
         if (result?.data?.login?.token) {
@@ -119,6 +120,7 @@ function useProvideAuth() {
         if(window && window.localStorage) {
             const { token, cart, name } = result.data.signup
             window.localStorage.setItem("token", token)
+            window.localStorage.setItem("userData", JSON.stringify({cart, name}))
         }
 
         if (result?.data?.signup?.token) {
@@ -139,13 +141,27 @@ function useProvideAuth() {
         setAuthToken(null)
     }
 
+    const getLoggedInUserData = () => {
+        if(window) {
+            const userData = window.localStorage.getItem("userData")
+            if(userData) {
+                return JSON.parse(userData)
+            } else {
+                return {}
+            }
+        } else {
+            return {}
+        }
+    }
+
     return {
         setAuthToken,
         isSignedIn,
         signIn,
         signOut,
         getAuthHeaders,
-        signUp
+        signUp,
+        getLoggedInUserData
     }
 }
 

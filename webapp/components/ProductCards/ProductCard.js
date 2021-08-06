@@ -13,7 +13,8 @@ export const ProductCard = ({product}) => {
         setBuyNowClicked(true);
         cart.addToCart({
             product_uid: product.product_uid,
-            quantity: 1
+            quantity: 1,
+            price: product.price
         });
     }
     const setProductCount = (count) => {

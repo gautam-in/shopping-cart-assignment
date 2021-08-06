@@ -21,7 +21,8 @@ const typeDefs = `
 
 const resolvers = {
     Query: {
-        products: async (_ ,args) => {
+        products: async (_ ,args, context) => {
+            console.log("context", context.authToken)
             let products;
             if(args.category === "all") {
                 products = await ProductModel.model.find({});

@@ -24,30 +24,17 @@ app.use(cors());
 
 
 
-app.use("/graphql", graphqlHTTP({
-  schema: schema,
-  graphiql: true,
-  customFormatErrorFn: (err) => {
-    const error = getErrorCode(err.message)
-    return ({ message: error.message, statusCode: error.statusCode })
-  },
-  context: async ( {req} ) => {
-    let authToken = null;
-    let currentUser = null;
-
-    try {
-      authToken = req.headers['authorization'].split(" ")[1];
-      if (authToken) {
-        currentUser = await jwtVerify(authToken);
-      }
-    } catch (e) {
-      console.warn(`Unable to authenticate using auth token: ${authToken}`);
+app.use("/graphql", graphqlHTTP((req, res, graphqlParams) => {
+  return {
+    schema: schema,
+    graphiql: true,
+    customFormatErrorFn: (err) => {
+      const error = getErrorCode(err.message)
+      return ({ message: error.message, statusCode: error.statusCode })
+    },
+    context: {
+      authToken: req.headers.authorization
     }
-
-    return {
-      authToken,
-      currentUser,
-    };
   }
 }));
 

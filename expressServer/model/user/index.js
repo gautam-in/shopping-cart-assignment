@@ -52,7 +52,11 @@ const userSchema = new Schema({
         //     required: true
         // },
         cart: {
-            type: cartSchema,
+            value: Number,
+            items: [{
+                product_uid: String,
+                quantity: Number
+            }]
         },
 
         email: {

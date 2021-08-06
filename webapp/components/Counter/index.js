@@ -1,18 +1,21 @@
 import {useState, useEffect} from "react";
 import {PlusCircleOutlined, MinusCircleOutlined} from "@ant-design/icons";
 
-export const Counter = (props) => {
-    const { setParentCount } = props;
-    const [count, setCount] = useState(1);
+export const Counter = ({setParentCount, preDefinedCount}) => {
+    const [count, setCount] = useState();
+    useEffect(() => {
+            setCount(preDefinedCount ? preDefinedCount : 1)
+        },[]);
     useEffect(() => {
         setParentCount(count)
-    }, [count])
+    }, [count]);
     const increment = () => {
         setCount((currentCount) => currentCount + 1)
     }
     const decrement = () => {
         setCount((currentCount) => {
             if(currentCount !== 0) {
+                console.log("decrement", currentCount)
                 return currentCount - 1
             }
         })

@@ -64,3 +64,18 @@
     padding-right: 30vw;
     justify-content: space-around;
 }
+
+@media screen and (max-width: 720px){
+    .lowest-price-card {
+        margin-top: 2vh;
+        height: 8vh;
+        width: 100%;
+        background-color: white;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding-left: 5vw;
+        padding-right: 5vw;
+        justify-content: space-around;
+    }
+}

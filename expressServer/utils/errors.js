@@ -15,6 +15,14 @@ const errorTypes = {
     WRONG_PASSWORD: {
         message: "Wrong password entered",
         statusCode: 401
+    },
+    UNAUTHORIZED: {
+        message: "Unauthorized",
+        statusCode: 401
+    },
+    JWT_EXPIRED: {
+        message: "JWT expired",
+        statusCode: 401
     }
 }
 
@@ -22,7 +30,9 @@ const errorName = {
     USER_ALREADY_EXISTS: 'USER_ALREADY_EXISTS',
     SERVER_ERROR: 'SERVER_ERROR',
     USER_NOT_FOUND: "USER_NOT_FOUND",
-    WRONG_PASSWORD: "WRONG_PASSWORD"
+    WRONG_PASSWORD: "WRONG_PASSWORD",
+    UNAUTHORIZED: "UNAUTHORIZED",
+    JWT_EXPIRED: "JWT_EXPIRED"
 }
 
 const getErrorCode = (message) => {

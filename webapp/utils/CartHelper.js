@@ -1,4 +1,4 @@
-import {useContext, useState, createContext} from "react";
+import {useContext, useState, createContext, useEffect} from "react";
 
 export const CartContext = createContext();
 
@@ -8,10 +8,25 @@ export const useCart = () => {
 
 export const useCartProvider = () => {
     const [cart,setCart] = useState([]);
-    const [cartValue, setCartValue] = useState(0)
+    const [cartValue, setCartValue] = useState(0);
+    useEffect(() => {
+        console.log("cart value", cartValue )
+    }, [cartValue]);
+
+    useEffect(async () => {
+        if(window) {
+           const userData = JSON.parse(window.localStorage.getItem("userData"));
+            if(userData.cart && userData.cart.items) {
+                console.log("data", userData)
+                setCartValue((currentCartValue) => currentCartValue + userData.cart.value)
+                setCart((currentCart) => [...currentCart, ...userData.cart.items])
+            }
+        }
+    }, [])
 
     const addToCart = (cartItem) => {
         setCart([...cart, cartItem])
+        console.log("cartitem", cartItem)
         setCartValue((currentValue) => currentValue + cartItem.price)
     }
 
@@ -55,6 +70,13 @@ export const useCartProvider = () => {
         return cartValue
     }
 
+    const getCartData = () => {
+        return {
+            value: cartValue,
+            items: cart
+        }
+    }
+
     return {
         addToCart,
         removeFromCart,
@@ -62,6 +84,8 @@ export const useCartProvider = () => {
         getCartCount,
         editQuantity,
         getCartItems,
-        getCartValue
+        getCartValue,
+        cart,
+        getCartData
     }
 }

@@ -1,7 +1,7 @@
 const Users = require("../model/user");
 const {errorName} = require("../utils/errors");
 const {encrypt} = require("../utils/crypto");
-const {jwtSign, jwtVerify} = require("../utils/auth");
+const {jwtSign, jwtVerify, authenticated} = require("../utils/auth");
 const isEmpty = require("lodash/isEmpty");
 const typeDefs = `
     type User {
@@ -51,7 +51,7 @@ const typeDefs = `
     extend type Mutation {
        signup (email: String!, password: String!, name: String!, cart: CartInput): LoginResponse!
        login (email: String!, password: String!): LoginResponse!
-       addToCart(products: [CartInput!]!): [Cart!]!
+       addToCart(cartData: CartInput): Cart
     }
 `
 
@@ -103,9 +103,21 @@ const resolvers = {
                 }
             }
         },
-        addToCart: async (_, args) => {
-
-        }
+        addToCart: authenticated(
+            async (_, args, context, info, authData) => {
+                const {cartData} = args
+                if(authData.isAuthenticated) {
+                    try {
+                        const res = await Users.model.updateOne({email: authData.userData.email}, {cart: cartData});
+                        const userInfo = await Users.model.findOne({email: authData.userData.email});
+                        console.log("userinfo", userInfo)
+                        return userInfo.cart
+                    } catch (e) {
+                        throw new Error(errorName.SERVER_ERROR)
+                    }
+                }
+            }
+        )
     }
 }
 

@@ -3,10 +3,14 @@ import {useEffect, useState} from "react";
 import {Form, Button, Input} from 'antd';
 import FloatingLabel from "../../components/FloatingLabel";
 import {useAuth} from "../../utils/AuthProvider";
+import {useRouter} from "next/router";
 
 const Signup = () => {
     const [form] = Form.useForm();
+    const [loading, setLoading] = useState(false);
+    const [error, setError] = useState()
     const auth = useAuth();
+    const router = useRouter();
     const [formValues, setFormValues] = useState({})
     const onChangeFormValue = (values) => {
         setFormValues({...formValues, ...values})
@@ -14,6 +18,7 @@ const Signup = () => {
 
     const onSubmit = async () => {
         const { name, password, email} = formValues
+        setLoading(true)
         const data = {
             name,
             password,
@@ -21,8 +26,11 @@ const Signup = () => {
         }
         try {
             await auth.signUp(data)
+            setLoading(false)
+            router.push("/");
         } catch (e) {
-
+            setLoading(false)
+            setError(error)
         }
     }
 
