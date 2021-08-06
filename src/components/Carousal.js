@@ -24,8 +24,8 @@ const Carousal = ({ offerBanners }) => {
                 <img src={offerBanners[currentBannerOrder - 1].bannerImageUrl} 
                      alt={offerBanners[currentBannerOrder-1].bannerImageAlt} 
                      id={offerBanners[currentBannerOrder - 1].id} />
-                <button className={classes.prev} onClick={() => prevBanner()}>PREV</button>
-                <button className={classes.next} onClick={() => nextBanner()}>NEXT</button>
+                <button className={classes.prev} onClick={prevBanner}>PREV</button>
+                <button className={classes.next} onClick={nextBanner}>NEXT</button>
             </div>
             <div className={classes['dots-div']}>
                 {offerBanners.map(offer => {

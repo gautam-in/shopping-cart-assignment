@@ -41,9 +41,6 @@ const App = () => {
                         <Route path="/products">
                             <Products />
                         </Route>
-                        {/* <Route path="/home"> 
-                            <Cart />
-                        </Route> */}
                     </Switch>
                 </main>
                 <footer>

@@ -9,10 +9,11 @@ import CartContext from '../Context/CartContext';
 const Home = () => {
     const [products, setProducts] = useState([]);
     const [categories, setCategories] = useState([]);
-    const [filterCategory, setFilterCategory] = useState();
     const [error, setError] = useState();
 
     let { categoryId } = useParams();
+    const [filterCategory, setFilterCategory] = useState(categoryId);
+
     const history = useHistory();
 
     const { cart, setCart } = React.useContext(CartContext);
@@ -37,10 +38,6 @@ const Home = () => {
             })
     }, [])
 
-    useEffect(() => {
-        setFilterCategory(categoryId)
-    }, [])
-
     const filterProducts = (id) => {
         if (!filterCategory || filterCategory !== id) {
             history.replace('/products/' + id)
@@ -53,13 +50,11 @@ const Home = () => {
     }
 
     const addToCart = (productId) => {
-        // let data = {productId}
         let cartData = [...cart]
-        // axios.post(`http://localhost:5000/addToCart`, data).then(res => {
-        // if (res.response === 'Success') {
+
         let productToAdd = products.filter(product => product.id === productId)
         let productIndex = cartData.findIndex(product => product.id === productId)
-        console.log(productIndex)
+
         if (productIndex !== -1) {
             cartData[productIndex].quantity++;
         }
@@ -68,8 +63,6 @@ const Home = () => {
             cartData.push(productToAdd[0]);
         }
         setCart(cartData);
-        // }
-        // })
     }
 
     if (error) return <p>Error Occured! Please try again</p>;

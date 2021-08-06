@@ -28,6 +28,10 @@
     padding-left: 3%;
 }
 
+.signup-form div {
+  padding-bottom: 20px;
+}
+
 .buttons {
     border: none;
     background-color: rgb(206, 4, 64);
@@ -62,6 +66,11 @@ label {
 
 .errorMessage {
     color: red;
+    padding-bottom: 20px;
+}
+
+.errorMessage-null {
+    display: none;
 }
 
 .floating-input:focus ~ label, .floating-input:not([value=""]) ~ label {

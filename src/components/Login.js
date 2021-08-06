@@ -7,8 +7,8 @@ const Login = () => {
     const [email, setEmail] = useState('');
     const [pass, setPassword] = useState('');
 
-    const [emailError, setEmailError] = useState('');
-    const [passwordError, setPasswordError] = useState('');
+    const [emailError, setEmailError] = useState(null);
+    const [passwordError, setPasswordError] = useState(null);
 
     let history = useHistory();
 
@@ -44,18 +44,16 @@ const Login = () => {
             setEmailError('');
             history.push('/')
         }
-        else {
-            setPasswordError('Incorrect email or password');
-            return
-        }
     }
 
     return (
         <section className={classes['signup-container']}>
+
             <article className={classes['signup-text']}>
                 <h2 style={{ "margin": "0px 1px" }}>Login</h2>
                 <p>Get acces to your Orders, Wishlist, and Recommendations.</p>
             </article>
+
             <form onSubmit={submitHandler} className={classes['signup-form']}>
 
                 <div className="floating-label">
@@ -66,9 +64,11 @@ const Login = () => {
                         required
                         onChange={(e) => { setEmail(e.target.value) }} />
                     <label htmlFor="email">Email</label>
+                    <div className={emailError ? classes.errorMessage : classes['errorMessage-null']}>
+                        {emailError}
+                    </div>
                 </div>
-                <br />
-
+                
                 <div className="floating-label">
                     <input type="password"
                         className={classes['floating-input']}
@@ -77,15 +77,15 @@ const Login = () => {
                         required
                         onChange={(e) => { setPassword(e.target.value) }} />
                     <label htmlFor="pass">Password</label>
+                    <div className={passwordError ? classes.errorMessage : classes['errorMessage-null']}>
+                        {passwordError}
+                    </div>
                 </div>
-
-                <span className={classes.errorMessage}>{emailError}</span>
-                <span className={classes.errorMessage}>{passwordError}</span>
-                <br />
 
                 <button type="submit" className={classes.buttons}>Signup</button>
 
             </form>
+
         </section>
     );
 
