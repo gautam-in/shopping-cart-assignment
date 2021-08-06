@@ -5,11 +5,50 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "canned -p 5000 ./server"
+    "start": "canned -p 5000 ./server",
+    "dev": "next dev",
+    "build": "next build",
+    "lint": "next lint"
   },
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "canned": "^0.3.12"
+    "@babel/plugin-proposal-export-default-from": "^7.14.5",
+    "canned": "^0.3.12",
+    "cookie": "^0.4.1",
+    "js-cookie": "^2.2.1",
+    "next": "^11.0.1",
+    "next-auth": "^3.27.3",
+    "next-redux-wrapper": "^7.0.2",
+    "prop-types": "^15.7.2",
+    "react": "^17.0.2",
+    "react-animations": "^1.0.0",
+    "react-dom": "^17.0.2",
+    "react-redux": "^7.2.4",
+    "react-styled-carousel": "^0.5.1",
+    "redux": "^4.1.0",
+    "redux-form": "^8.3.7",
+    "styled-components": "^5.3.0",
+    "styled-icons": "^10.35.0",
+    "styled-tools": "^1.7.2"
+  },
+  "devDependencies": {
+    "@babel/eslint-parser": "7.14.7",
+    "@babel/plugin-syntax-export-default-from": "^7.14.5",
+    "babel-plugin-styled-components": "^1.13.2",
+    "eslint": "^7.29.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-config-next": "11.0.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-html": "^6.1.2",
+    "eslint-plugin-import": "^2.23.4",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-prettier": "^3.4.0",
+    "eslint-plugin-react": "^7.24.0",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "prettier": "^2.3.1",
+    "sass": "^1.35.1",
+    "stylelint": "^13.13.1",
+    "stylelint-config-standard": "^22.0.0"
   }
 }
