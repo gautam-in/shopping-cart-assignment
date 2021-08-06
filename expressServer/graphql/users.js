@@ -26,6 +26,7 @@ const typeDefs = `
     type CartItem {
         product_uid: String!,
         quantity: Int!
+        price: Int!
     }
     
     type Cart {
@@ -41,6 +42,7 @@ const typeDefs = `
     input CartItemInput {
         product_uid: String!,
         quantity: Int!
+        price: Int!
     }
     
     extend type Query {

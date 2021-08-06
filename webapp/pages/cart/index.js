@@ -10,6 +10,7 @@ import {gql, useQuery, useMutation} from "@apollo/client";
 import {GET_PRODUCTS} from "../products/[category_uid]";
 import {Loading} from "../../components/Loading";
 import CartCards from "../../components/CartCards";
+import {ToastMessage} from "../../components/ToastMessage";
 
 const ADD_TO_CART_MUTATION = gql`
     mutation AddToCart($cartData: CartInput) {
@@ -18,6 +19,7 @@ const ADD_TO_CART_MUTATION = gql`
             items{
                 product_uid
                 quantity
+                price
             }
         }
     }
@@ -37,8 +39,7 @@ const Cart = () => {
         if(auth.isSignedIn()) {
             const value = cartContextData.getCartValue();
             const items = cartContextData.getCartItems();
-            console.log("get value", value, items,cartContextData.getCartItems() );
-            addToCart({variables: cartContextData.getCartItems()})
+            addToCart({variables: {cartData: cartContextData.getCartData()}})
         }
     },[])
 
@@ -47,15 +48,19 @@ const Cart = () => {
         return (
             <Button
                 className={styles["cart-button"]}
-                onClick={(e) => {
+                onClick={async (e) => {
                     if(isEmptyCart) {
                         router.push("products/all")
+                    } else if(!auth.isSignedIn()) {
+                        router.push("signin")
                     } else {
-                        addToCart({
-                            variables: {
-                                items: data.item,
-                                value: data.value
-                            }})
+                        {
+                            await addToCart({
+                                variables: {
+                                    cartData: data
+                                }})
+                            ToastMessage("success",{content: "Items added to cart successfully"})
+                        }
                     }
                 }}
             >

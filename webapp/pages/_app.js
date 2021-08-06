@@ -27,10 +27,6 @@ Router.events.on("routeChangeComplete", () => NProgress.done());
 Router.events.on("routeChangeError", () => NProgress.done());
 
 function MyApp({Component, pageProps, apollo}) {
-    useEffect(() => {
-        window.localStorage.setItem("asdf", "pppp")
-        console.log("window", window.localStorage.getItem("asdf"))
-    }, [])
 
     return (
         <AuthProvider>
@@ -76,6 +72,10 @@ const authLink = setContext((_, { headers }) => {
 export default withApollo(({initialState}) => {
     return new ApolloClient({
         link: authLink.concat(httpLink),
-        cache: new InMemoryCache().restore(initialState || {})
+        cache: new InMemoryCache(
+            {
+                addTypename: false
+            }
+        ).restore(initialState || {})
     });
 })(MyApp);

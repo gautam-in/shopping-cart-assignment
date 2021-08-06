@@ -55,7 +55,8 @@ const userSchema = new Schema({
             value: Number,
             items: [{
                 product_uid: String,
-                quantity: Number
+                quantity: Number,
+                price: Number
             }]
         },
 

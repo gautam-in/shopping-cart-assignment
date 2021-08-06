@@ -7,7 +7,8 @@ import logo from "../../assets/images/logo_2x.png"
 import {Layout} from "antd";
 import {ShoppingCartOutlined} from "@ant-design/icons"
 import {useCart} from "../../utils/CartHelper";
-import {AuthContext} from "../../utils/AuthProvider";
+import {AuthContext, useAuth} from "../../utils/AuthProvider";
+import {useEffect} from "react";
 
 const StoreHeader = (props) => {
     const router = useRouter();
@@ -34,7 +35,7 @@ const StoreHeader = (props) => {
                         </div>
                     </div>
                     <div className={styles["right-box"]}>
-                        <div style={{display: "flex", height: "4vh"}}>
+                        <div className={styles["sign-in-box"]}>
                             {auth.isSignedIn() ? `Signed in as ${auth.getLoggedInUserData().name}` :
                                 <>
                                     <Link href={"/signin"}>Sign In</Link>

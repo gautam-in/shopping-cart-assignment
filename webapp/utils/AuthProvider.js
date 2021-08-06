@@ -1,4 +1,4 @@
-import {useContext, useState, createContext} from "react";
+import {useContext, useState, createContext, useEffect} from "react";
 import {
     ApolloClient,
     InMemoryCache,
@@ -18,6 +18,18 @@ const useAuth = () => {
 function useProvideAuth() {
     const [authToken, setAuthToken] = useState(null)
     const [userData, setUserData] = useState({})
+
+    useEffect(() => {
+        if(!authToken) {
+            if(window && window.localStorage) {
+                const token = window.localStorage.getItem("token");
+                if(token) {
+                    setAuthToken(token);
+                    setUserData(JSON.parse(window.localStorage.getItem("userData")))
+                }
+            }
+        }
+    })
 
     const isSignedIn = () => {
         return !!authToken;
@@ -39,7 +51,9 @@ function useProvideAuth() {
 
         return new ApolloClient({
             link,
-            cache: new InMemoryCache(),
+            cache: new InMemoryCache({
+                addTypename: false
+            }),
         })
     }
 
@@ -55,6 +69,7 @@ function useProvideAuth() {
                         items {
                             product_uid
                             quantity
+                            price
                         }
                     }
                 }
@@ -97,6 +112,7 @@ function useProvideAuth() {
                         items {
                             product_uid
                             quantity
+                            price
                         }
                     }
                 }

@@ -16,10 +16,10 @@ export const useCartProvider = () => {
     useEffect(async () => {
         if(window) {
            const userData = JSON.parse(window.localStorage.getItem("userData"));
-            if(userData.cart && userData.cart.items) {
-                console.log("data", userData)
-                setCartValue((currentCartValue) => currentCartValue + userData.cart.value)
-                setCart((currentCart) => [...currentCart, ...userData.cart.items])
+            if(userData?.cart?.items) {
+                    console.log("data", userData)
+                    setCartValue((currentCartValue) => currentCartValue + userData.cart.value)
+                    setCart((currentCart) => [...currentCart, ...userData.cart.items])
             }
         }
     }, [])

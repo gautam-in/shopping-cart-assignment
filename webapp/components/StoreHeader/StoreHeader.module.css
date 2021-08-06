@@ -49,3 +49,34 @@
     padding: 0.5vw;
     cursor: pointer;
 }
+
+.sign-in-box {
+    display: flex;
+    height: 4vh;
+}
+
+@media screen and (max-width: 768px){
+    .cart-box {
+        height: 10vh;
+        background-color: rgba(0,0,0,0.2);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 30vw;
+        padding: 0.5vw;
+        cursor: pointer;
+    }
+
+    .right-box {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        height: 15vh;
+        width: 30vw
+    }
+
+    .sign-in-box {
+        display: none;
+    }
+}
