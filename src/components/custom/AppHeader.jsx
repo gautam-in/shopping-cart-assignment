@@ -25,7 +25,10 @@ const AppHeader = () => {
                 <section className="btn-link-container">
                     <div className="app-logo-btn-container">
                         <button data-testid="app-logo" className="icon-button" aria-label="app logo" onClick={() => history.push('/category')}>
-                            <img src="/static/images/logo_2x.png" alt="app logo" className="large-icon-style" />
+                            <picture>
+                                <source media="(max-width:550px)" srcSet="/static/images/logo_2x_mobile.png" />
+                                <img src="/static/images/logo_2x.png" alt="app logo" className="large-icon-style" />
+                            </picture>
                         </button>
                     </div>
                     <CustomLink to="/category">Home</CustomLink>

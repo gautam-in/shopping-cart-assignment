@@ -4,7 +4,7 @@ import {
   Switch,
   Route
 } from "react-router-dom";
-import React, { Suspense, lazy, useEffect } from 'react';
+import React,{ Suspense, lazy, useEffect } from 'react';
 import AppHeader from './components/custom/AppHeader';
 import AppFooter from './components/custom/AppFooter';
 import { useDispatch } from 'react-redux';
@@ -29,7 +29,7 @@ function App() {
     <React.Fragment>
       <Router>
         <AppHeader />
-        <section style={{ margin: 10 }}>
+        <section className="app-main-section">
           <Suspense fallback={<div>Loading...</div>}>
             <Switch>
               <Route exact path="/">

@@ -17,12 +17,14 @@ $padding:10px;
 $mobile_font_heading : 16px;
 $mobile-font_body : 12px;
 $button_color : #b72f60;
+$button_color_hover : #bb0045;
 $white:white;
 $mobile_product_image: 5rem;
 $font-size-mobile : 12px;
 $smallSpacer : 10px;
 $cartIconStyle: 10px 20px 10px 10px;
 $noStyle:none;
+$autoMargin: 'auto';
 
 @mixin alignment($align) {
   text-align: $align;
@@ -32,6 +34,10 @@ $noStyle:none;
 @mixin flexContainer($jc) {
   display: $flexContainer;
   justify-content: $jc;
+}
+
+.app-main-section {
+  margin: $smallSpacer;
 }
 
 .cart-icon-style {
@@ -145,6 +151,10 @@ $noStyle:none;
   text-align: center;
 }
 
+.each-category-button-style:hover{
+  background: $button_color_hover;
+}
+
 .cheap-image-container {
   margin: 10px;
   background-color: white;
@@ -172,6 +182,11 @@ p {
   grid-template-columns:repeat(auto-fit, minmax(250px, 1fr));
   grid-gap: $smallSpacer;
   margin: $smallSpacer;
+
+  .no-item {
+    @include alignment($align:'center');
+    margin:auto
+  }
 }
 
 .side-section {
@@ -269,7 +284,7 @@ p {
     width: $phone_width;
   }
   .each-category-image-style{
-    width: 8rem;
+    width: 10rem;
     height: 6rem;
   }
   .each-category-text-style{
@@ -384,6 +399,10 @@ body {
 .cart-details-section {
   margin-left: 20px;
   width: 90%;
+  h4 {
+    margin-top: 0;
+    margin-bottom: 5px;
+  }
 }
 
 input {
@@ -406,7 +425,7 @@ input {
   font-size: $font-size;
   input {
       text-align: center;
-      padding: 0px 5px;
+      padding-left: 15px;
   }
   p{
       margin-left: 10px;

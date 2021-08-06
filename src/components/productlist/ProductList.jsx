@@ -32,12 +32,14 @@ const ProductList = (props) => {
 
     useEffect(() => {
         if (props.match.params.id !== 'all') {
-            setRenderProducts(products.reduce((acc, x) => {
-                if (props.match.params.id === x.category) {
-                    acc.push(x);
-                    return acc;
-                } else return acc;
-            }, []))
+            if (products) {
+                setRenderProducts(products.reduce((acc, x) => {
+                    if (props.match.params.id === x.category) {
+                        acc.push(x);
+                        return acc;
+                    } else return acc;
+                }, []))
+            }
         } else {
             setRenderProducts(products)
         }
@@ -49,7 +51,9 @@ const ProductList = (props) => {
             categoryId ? history.push(`/products/${categoryId}`) : history.push(`/products/all`)
         }
         else {
-            history.push(`/products/${category.id}`)
+            category.id !== props.match.params.id ?
+                history.push(`/products/${category.id}`) :
+                history.push(`/products/all`)
         }
     }
 
@@ -82,7 +86,7 @@ const ProductList = (props) => {
                     ))}
                 </ul>
             </aside>
-            <section className="main-section">
+            <section role="main" className="main-section">
                 <div data-testid="category-list-dropdown" className="dropdown-style">
                     <select onChange={(e) => filterProducts(e)}>
                         <option>Select Category</option>
@@ -100,7 +104,7 @@ const ProductList = (props) => {
                 </div>
                 {renderProducts.length > 0 ? renderProducts.map((product) => (
                     <SingleProduct key={product.id} product={product} handleAddToCart={handleAddToCart} />
-                )) : <p role="alert" className="align-center">No Products for this Category</p>}
+                )) : <p role="alert" className="no-item">No Products for this Category</p>}
             </section>
             <Toast
                 show={show}

@@ -1,3 +1,4 @@
+/** @jsxRuntime classic */
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.scss';
@@ -7,6 +8,8 @@ import { createStore } from 'redux'
 import reducers from './redux/reducers'
 import {BrowserRouter as Router} from 'react-router-dom'
 import 'react-responsive-carousel/lib/styles/carousel.min.css'; // requires a loader
+import 'react-app-polyfill/ie11'; 
+import 'react-app-polyfill/stable';
 
 ReactDOM.render(<Provider store={createStore(reducers)}> 
 <Router>

@@ -1,6 +1,7 @@
 import { CSSTransition } from "react-transition-group";
 import "./Modal.scss";
 
+
 export default function Modal(props) {
     return (
         <CSSTransition
@@ -14,7 +15,7 @@ export default function Modal(props) {
                         <h4 data-testid="modal-title" className="modal-title">{props.title}</h4>
                         <button onClick={props.onClose} className="button">x</button>
                     </header>
-                    <div className="modal-body">{props.children}</div>
+                    <div className={`modal-body ${props.background}`}>{props.children}</div>
                     <footer className="modal-footer">{props.footerContent}</footer>
                 </section>
             </div>

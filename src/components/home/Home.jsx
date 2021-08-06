@@ -13,18 +13,18 @@ const Home = () => {
     useEffect(() => {
         const fetchData = async () => {
             if (bannerItems.length === 0) {
-                await BaseUrl.get('/banners').then((res)=>{
+                await BaseUrl.get('/banners').then((res) => {
                     dispatch(getBannerData(res.data))
-                }).catch((e)=>console.log('something went wrong',e))
+                }).catch((e) => console.log('something went wrong', e))
             }
             if (categoryItems.length === 0) {
-                await BaseUrl.get('/categories').then((res)=>{
+                await BaseUrl.get('/categories').then((res) => {
                     dispatch(getCategoryData(res.data))
-                }).catch((e)=>console.log('something went wrong',e));
+                }).catch((e) => console.log('something went wrong', e));
             }
         }
         fetchData();
-    }, [])
+    }, []);
 
     return <>
         <Carousel
@@ -38,7 +38,10 @@ const Home = () => {
                 ?.filter((banner) => banner.isActive)
                 .map((banner) => (
                     <div data-testid="carousel" key={banner.id}>
-                        <img src={banner.bannerImageUrl} loading="lazy" alt={banner.ImageAlt} />
+                        <picture>
+                            <source media="(max-width:550px)" srcSet={banner.bannerImageUrlMob} />
+                            <img src={banner.bannerImageUrl} loading="lazy" alt={banner.bannerImageAlt} />
+                        </picture>
                     </div>
                 ))}
         </Carousel>

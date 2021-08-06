@@ -21,17 +21,22 @@ const Login = () => {
     const handleClick = (event) => {
         event.preventDefault();
         const registeredUser = JSON.parse(localStorage.getItem('formData'))
-        if ((email === registeredUser.email) && (password === registeredUser.password)) {
-            sessionStorage.setItem('auth-token', token);
-            dispatch(setAuthenticated(true))
-            setShow(true)
-            setTimeout(() => {
-                history.push('/');
-            }, 2000)
-        } else {
-            console.log(errorTextRef.current)
-            errorTextRef.current.focus();
+        if (registeredUser) {
+            if ((email === registeredUser.email) && (password === registeredUser.password)) {
+                sessionStorage.setItem('auth-token', token);
+                dispatch(setAuthenticated(true))
+                setShow(true)
+                setTimeout(() => {
+                    history.push('/');
+                }, 2000)
+            } else {
+                setError(invalidUser)
+                errorTextRef.current.focus();
+            }
+        }
+        else {
             setError(invalidUser)
+            errorTextRef.current.focus();
         }
     }
 
@@ -39,10 +44,10 @@ const Login = () => {
         <div className="flex-div">
             <section className="align-left margin-top">
                 <h2>Login</h2>
-                <small>{loginText}</small>
+                <p>{loginText}</p>
             </section>
             <section className="auth-form">
-                <p tabIndex={1} className="error-text" ref={errorTextRef}>{error}</p>
+                <p tabIndex={0} className="error-text" ref={errorTextRef}>{error}</p>
                 <form autoComplete="on">
                     <CustomTextField
                         label="Email"
@@ -56,7 +61,7 @@ const Login = () => {
                         id="password"
                     />
                     <CustomButton
-                        tabIndex={0}
+                        tabIndex={-1}
                         variant="contained"
                         color="secondary"
                         onClick={handleClick}

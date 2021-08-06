@@ -22,9 +22,11 @@ export default (state = initialState, action) => {
                 bannerData: action.payload
             }
         case GET_CATEGORY:
+            const sortedCategories = action.payload?.sort((a, b) => a.name - b.name);
+            console.log('check sorted data',sortedCategories)
             return {
                 ...state,
-                categoryData: action.payload
+                categoryData: action.payload?.sort((a, b) => a.name - b.name)
             }
         case GET_PRODUCT:
             return {

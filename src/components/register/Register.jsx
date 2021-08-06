@@ -63,10 +63,10 @@ const Register = () => {
         <div className="flex-div">
             <section className="align-left margin-top">
                 <h2>Signup</h2>
-                <small>{registerText}</small>
+                <p>{registerText}</p>
             </section>
             <section className="auth-form">
-                <p ref={errorTextRef} tabIndex={1} className="align-center" style={{ fontSize: 14, color: 'red' }}>{error}</p>
+                <p ref={errorTextRef} tabIndex={0} className="align-center error-text">{error}</p>
                 <form autoComplete="on">
                     <CustomTextField
                         label="First Name"
@@ -96,7 +96,7 @@ const Register = () => {
                         id="confirmPassword"
                     />
                     <CustomButton
-                        tabIndex={0}
+                        tabIndex={-1}
                         variant="contained"
                         color="secondary"
                         onClick={handleClick}

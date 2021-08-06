@@ -1,5 +1,3 @@
-import { useSelector } from "react-redux";
-
 export const validateEmail = (email) => {
     const re = /\S+@\S+\.\S+/;
     if (re.test(email)) {

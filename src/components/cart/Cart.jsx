@@ -43,7 +43,7 @@ const Cart = () => {
             return <div data-testid="cart-container" key={item.id} className="cart-detail-container">
                 <img src={item.imageURL} alt={item.name}></img>
                 <div className="cart-details-section">
-                    <h4 style={{ marginTop: 0, marginBottom: 5 }}>{item.name}</h4>
+                    <h4>{item.name}</h4>
                     <div className="cart-details-disp-flex">
                         <QuantityBar
                             item={item}

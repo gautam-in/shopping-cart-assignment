@@ -1,7 +1,7 @@
 import { useHistory } from "react-router-dom";
 
 const CategoryList = ({ categories }) => {
-    const sortedCategories = categories?.sort((a, b) => a.order - b.order);
+    const sortedCategories = categories?.sort((a, b) => a.name - b.name);
     const history = useHistory();
     const navigateToProductList = (id) => {
         history.push({
@@ -11,8 +11,8 @@ const CategoryList = ({ categories }) => {
 
     return (
         <>
-            {sortedCategories.map((category, index) => (
-                category.enabled && <div data-testid="category-list" className="each-category-style"
+            {sortedCategories.filter(ele=>ele.enabled).map((category, index) => (
+                <div data-testid="category-list" className="each-category-style"
                     style={{ flexDirection: index % 2 === 0 ? 'row-reverse' : 'row' }}
                     key={category.id}>
                     <article className="each-category-text-style">
@@ -20,12 +20,15 @@ const CategoryList = ({ categories }) => {
                         <p>{category.description}</p>
                         <button data-testid="navigate-products" onClick={() => navigateToProductList(category.id)} className="each-category-button-style">{`Explore ${category.key}`}</button>
                     </article>
-                    <img className="each-category-image-style" loading="lazy" src={category.imageUrl} alt={category.name} />
+                    <picture>
+                            <source media="(max-width:550px)" srcSet={category.imageUrlMob} type="image/webp"/>
+                            <img className="each-category-image-style" loading="lazy" src={category.imageUrl} alt={category.name} />
+                    </picture>
                 </div>
-            )
+                    )
             )}
         </>
-    );
+            );
 }
 
-export default CategoryList;
+            export default CategoryList;
