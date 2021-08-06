@@ -8,7 +8,7 @@ const Home = () => {
 
     const [offerBanners, setBanners] = useState([]);
     const [categories, setCategories] = useState([]);
-    const [error, setError] = useState('');
+    const [error, setError] = useState(null);
 
     useEffect(() => {
         axios.get("http://localhost:5000/banners")

@@ -28,16 +28,12 @@ const NavBar = () => {
         setCartIsVisible(!cartIsVisible);
     }
 
-    const handleBrandClick = () => {
-        history.push('/home')
-    }
-
     return (
         <nav className={classes.NavBar}>
             <section className={classes['nav-container']}>
-                <article className={classes.navLeft} >
-                    <img src={Brand} alt="Sabka Bazaar logo" onClick={handleBrandClick} />
-                </article>
+                <Link to="/home" className={classes.navLeft} >
+                    <img src={Brand} alt="Sabka Bazaar logo" />
+                </Link>
 
                 <article className={classes.navCenter}>
                     <Link to="/home">Home</Link>
