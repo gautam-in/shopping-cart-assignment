@@ -67,3 +67,8 @@
     align-items: center;
     justify-content: center;
 }
+
+.sign-in-register {
+    display: flex;
+    margin-top: 10px;
+}

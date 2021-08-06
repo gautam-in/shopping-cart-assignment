@@ -77,6 +77,12 @@ export const useCartProvider = () => {
         }
     }
 
+    const updateCart = (data) => {
+        setCart(data.items);
+        setCartValue(data.value)
+
+    }
+
     return {
         addToCart,
         removeFromCart,

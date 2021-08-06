@@ -1,6 +1,7 @@
 import styles from "../../styles/SignUp.module.css"
 import {useEffect, useState} from "react";
 import {useRouter} from "next/router";
+import Link from "next/link"
 import {Form, Button, Input} from 'antd';
 import FloatingLabel from "../../components/FloatingLabel";
 import {useAuth} from "../../utils/AuthProvider";
@@ -36,6 +37,12 @@ const SignIn = (props) => {
             <div>
                 <b><h1>Login</h1></b>
                 <h4>Get access to your Orders, Wishlist and Recommendations</h4>
+                <div className={styles["sign-in-register"]}>
+                    <h3>Don't have an account</h3>
+                    <Link href={"signup"}>
+                        <h3 style={{color: "blue", marginLeft: 10, cursor: "pointer"}}>Register</h3>
+                    </Link>
+                </div>
             </div>
             <div>
                 <Form
