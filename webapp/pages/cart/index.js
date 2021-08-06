@@ -35,11 +35,16 @@ const Cart = () => {
     })
 
 
-    useEffect(() => {
+    useEffect(async () => {
         if(auth.isSignedIn()) {
             const value = cartContextData.getCartValue();
             const items = cartContextData.getCartItems();
-            addToCart({variables: {cartData: cartContextData.getCartData()}})
+            try {
+                const response = await addToCart({variables: {cartData: cartContextData.getCartData()}})
+                cartContextData.updateCart(response.data.addToCart)
+            } catch (e) {
+
+            }
         }
     },[])
 
@@ -55,10 +60,11 @@ const Cart = () => {
                         router.push("signin")
                     } else {
                         {
-                            await addToCart({
+                            const response = await addToCart({
                                 variables: {
                                     cartData: data
                                 }})
+                            cartContextData.updateCart(response.data.addToCart);
                             ToastMessage("success",{content: "Items added to cart successfully"})
                         }
                     }

@@ -79,8 +79,16 @@ export const useCartProvider = () => {
 
     const updateCart = (data) => {
         setCart(data.items);
-        setCartValue(data.value)
-
+        setCartValue(data.value);
+        console.log("data", data)
+        if(window) {
+            let userData = JSON.parse(window.localStorage.getItem("userData"));
+            if(userData?.cart) {
+                userData.cart.value = data.value;
+                userData.cart.items = data.items;
+                window.localStorage.setItem("userData", JSON.stringify(userData))
+            }
+        }
     }
 
     return {
@@ -92,6 +100,7 @@ export const useCartProvider = () => {
         getCartItems,
         getCartValue,
         cart,
-        getCartData
+        getCartData,
+        updateCart
     }
 }
