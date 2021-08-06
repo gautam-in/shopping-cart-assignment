@@ -1,0 +1,111 @@
+.NavBar {
+    width: 100%;
+    box-shadow: 10px 0px 8px 3px rgb(224, 222, 222);
+}
+
+.nav-container {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.cart { 
+    display: flex;
+    border: none;
+    padding: 10px;
+    align-items: center;
+    justify-content: center;
+    width: 133px;
+    cursor: pointer;
+}
+
+.cart-modal {
+    display: block;
+    position: fixed;
+    z-index: 3;
+    height: 100%;
+    width: 100%;
+}
+
+.backdrop {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    z-index: 2;
+    background-color: rgba(0,0,0,0.75);
+}
+
+.cart-modal.close-cart {
+    display: none;
+}
+
+.navLeft img {
+    width: 90%;
+    height: 80%;
+    padding: 4%;
+}
+
+.cartIcon{
+    height: 25px;
+}
+
+.NavBar .nav-container .navCenter a {
+    text-decoration: none;
+    color: grey;
+    padding-left: 20px;
+    font-weight: bolder
+}
+
+.navRight .nav-links{
+    display: flex;
+    justify-content: flex-end;
+    padding-bottom: 15px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: black;
+    font-size: small;
+    font-weight: bold;
+    padding-right: 5%;
+}
+
+.NavBar .nav-container .navLeft {
+    display: flex;
+    justify-content: flex-start;
+    /* position: relative;
+    right: 25% */
+}
+
+.NavBar .nav-container .navRight {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.NavBar .nav-container .navCenter {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    padding-bottom: 20px;
+    align-items: flex-end;
+    width: 40%;
+}
+
+@media only screen and (max-width: 426px) {
+
+    .NavBar .nav-container .navCenter {
+        display: none;
+    }
+
+    .nav-container .navLeft img {
+        height: 45px;
+    }
+
+    .navRight .nav-links{
+        display: none
+    }
+
+}

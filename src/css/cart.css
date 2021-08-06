@@ -1,0 +1,242 @@
+.cart-container {
+    display: flex;
+    flex-direction: column;
+    max-width: 30%;
+    height: 100%;
+    margin: auto;
+}
+
+.cart-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: black;
+    color: white;
+    align-items: center;
+    padding: 0px 15px
+}
+
+.cart-header button {
+    background-color: black;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+.header-text {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: -6px 0px;
+}
+
+.no-items {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    background-color: white;
+}
+
+.no-items h4, .no-items p {
+    margin: 5px;
+}
+
+.items-container {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(235, 235, 235);
+    max-width: 100%;
+    height: 100%;
+    padding: 15px 0px;
+    overflow: auto;
+}
+
+.lowest-price{
+    margin: 0% 3%;
+    background-color: white;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 2%;
+    font-size: small;
+    font-weight: 600;
+}
+
+.lowest-price img {
+    height: 100%;
+    width: 20%;
+}
+
+.lowest-price p {
+    margin: 0%;
+    padding-left: 5%;
+}
+
+.proceed-container {
+    text-align: center;
+    position: relative;
+    padding: 0% 3% 3% 3%;
+    font-weight: 600;
+    background-color: white;
+}
+
+.product-details {
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+    align-items: center;
+    margin-bottom: 4%;
+    padding: 0% 5%;
+}
+
+.product-details img {
+    max-height: 70px;
+}
+
+.product-info {
+    display: flex;
+    flex-direction: column;
+    margin-left: 5%;
+    width: 100%;
+}
+
+.cart-operations {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 12%;
+    font-weight: 600;
+}
+
+.operations {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 50%;
+    font-size: 14px;
+}
+
+.op-buttom {
+    border: none;
+    background-color: rgb(206, 4, 64);
+    color: white;
+    height: 20px;
+    width: 20px;
+    text-align: center;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    border: none;
+    background-color: rgb(206, 4, 64);
+    color: white;
+    padding: 10px;
+    border-radius: 0px;
+    cursor: pointer;
+    margin: 0px
+}
+
+.empty-cart-button {
+    display: block;
+    width: 100%;
+}
+
+@media only screen and (max-width: 1023px) {
+
+    .cart-container {
+        display: flex;
+        flex-direction: column;
+        max-width: 100%;
+        min-height: 100%;
+        max-height: 100%;
+        margin: auto;
+    }
+
+    .product-details {
+        margin-bottom: 1%;
+        padding: 1%;
+    }
+
+    .cart-operations {
+        margin-bottom: 0%;
+    }
+
+    .product-info h4 {
+        margin-top: 0%;
+    }
+
+    .op-buttom {
+        border-radius: 15%;
+        width: 25px;
+    }
+
+    .operations {
+        width: 25%;
+    }
+
+    .product-info {
+        margin-left: 1%;
+    }
+
+    .lowest-price img {
+        width: 15%;
+    }
+
+    .lowest-price{
+        padding: 1%;
+    }
+
+    .cart-header {
+        background-color: white;
+        color: black;
+    }
+
+    .cross {
+        display: none;
+    }
+
+    .cart-header button {
+        display: none;
+    }
+    
+}
+
+@media only screen and (max-width: 426px) {
+
+    .cart-container {
+        display: flex;
+        flex-direction: column;
+        max-width: 100%;
+        min-height: 100%;
+        max-height: 100%;
+        margin: auto;
+    }
+
+    .product-details {
+        margin-bottom: 5%;
+        padding: 1%;
+    }
+
+    .product-info h4 {
+        margin-top: 0%;
+        margin-bottom: 1%;
+    }
+
+    .operations {
+        width: 40%;
+    }
+
+}
+
+@media only screen and (max-width: 376px) {
+
+    .operations {
+        width: 50%;
+    }
+
+}
