@@ -1,19 +1,17 @@
-import React, { useEffect } from "react";
-import { Link } from "react-router-dom";
-import { connect } from "react-redux";
-import { Dispatch } from "redux";
-import "./header.scss";
-import Row from "components/row/row";
-import Column from "components/column/column";
-import MainNavigation from "components/mainNavigaton/mainNavigation";
-import { CartActions } from "modules/cart/redux/actions/actions";
-import Cart from "modules/cart/index";
-import { IState } from "store/interfaces";
-import { CartSelectors } from "modules/cart/redux/selectors/selectors";
 import { ProductsList } from "models/products";
-import { LocalStorage } from "services/storage";
+import Cart from "modules/cart/index";
+import { CartActions } from "modules/cart/redux/actions/actions";
+import { CartSelectors } from "modules/cart/redux/selectors/selectors";
 import { LoginActions } from "modules/login/redux/actions/actions";
 import { ProductsSelectors } from "modules/products/redux/selectors/selectors";
+import { allRoutes } from "navigation/allRouteNames";
+import React, { useEffect } from "react";
+import { connect } from "react-redux";
+import { Link } from "react-router-dom";
+import { Dispatch } from "redux";
+import { LocalStorage } from "services/storage";
+import { IState } from "store/interfaces";
+import "./header.scss";
 
 interface IProps {
   toggleCartModal: Function;
@@ -36,35 +34,52 @@ const Header = (props: IProps): React.ReactElement => {
 
   return (
     <header>
-      <Row className="header-row">
-        <Column lg={6} md={6} sm={6} xs={6} className="header-nav-column">
+      <div className="left-nav">
+        <div className="app-logo-div">
           <img src={"/static/images/logo.png"} alt="app logo" className="app-logo" />
-          <MainNavigation />
-        </Column>
-        <Column lg={6} md={6} sm={6} xs={6} className="header-cart-column">
+        </div>
+        <div className="main-nav">
+          <ul>
+            <li>
+              <Link to={allRoutes.HOME} className="main-nav-link">
+                Home
+              </Link>
+            </li>
+            <li>
+              <Link to={allRoutes.PLP} className="main-nav-link">
+                Products
+              </Link>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div className="right-nav">
+        <div className="login-nav">
           {LocalStorage.getStorage("status") !== "logged-in" ? (
-            <div className="login-nav">
-              <Link to="/login" className="login-nav-link">
-                SignIn
-              </Link>
-              <Link to="/register" className="login-nav-link">
-                Register
-              </Link>
-            </div>
+            <ul>
+              <li>
+                <Link to="/login" className="login-nav-link">
+                  SignIn
+                </Link>
+              </li>
+              <li>
+                <Link to="/register" className="login-nav-link">
+                  Register
+                </Link>
+              </li>
+            </ul>
           ) : (
-            <div className="login-nav">
-              <Link to="/" className="login-nav-link" onClick={() => handleLogout()}>
-                Logout
-              </Link>
-            </div>
+            <Link to="/" className="login-nav-link" onClick={() => handleLogout()}>
+              Logout
+            </Link>
           )}
-          <div className="cart-box" onClick={() => toggleCartModal(true)}>
-            <img src={"/static/images/cart.svg"} alt="cart-icon" />
-            <span>{`(${cartItems.products.length} items)`}</span>
-          </div>
-          <Cart />
-        </Column>
-      </Row>
+        </div>
+        <div className="cart-box" onClick={() => toggleCartModal(true)}>
+          <img src={"/static/images/cart.svg"} alt="cart-icon" />
+          <span>{`(${cartItems.products.length} items)`}</span>
+        </div>
+        <Cart />
+      </div>
     </header>
   );
 };

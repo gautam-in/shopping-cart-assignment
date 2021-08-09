@@ -1,16 +1,16 @@
+import Loader from "components/loader/loader";
+import { BannerList, CategoryList } from "models/home";
 import React, { useEffect } from "react";
-import { IState } from "store/interfaces";
-import OffersCarousel from "./components/offersCarousel";
-import "./home.scss";
 import { connect } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { bindActionCreators, Dispatch } from "redux";
-import { HomeSelectors } from "./redux/selectors/selectors";
-import { HomeActions } from "./redux/actions/actions";
-import { BannerList, CategoryList } from "models/home";
-import { IHomeLoading } from "./redux/reducers/reducer";
+import { IState } from "store/interfaces";
 import CategoriesPage from "./components/categoriesPage";
-import Loader from "components/loader/loader";
+import OffersCarousel from "./components/offersCarousel";
+import "./home.scss";
+import { HomeActions } from "./redux/actions/actions";
+import { IHomeLoading } from "./redux/reducers/reducer";
+import { HomeSelectors } from "./redux/selectors/selectors";
 
 interface IProps {
   getBannersData: BannerList;
@@ -22,7 +22,7 @@ interface IProps {
 
 function Index(props: IProps): React.ReactElement {
   const { getBannersData, getCategoriesData, loading, getBanners, getCategories } = props;
-  // let history = useHistory();
+  let history = useHistory();
 
   useEffect(() => {
     if (getBannersData.banners.length === 0) getBanners();
@@ -42,7 +42,7 @@ function Index(props: IProps): React.ReactElement {
             <OffersCarousel getBannersData={getBannersData} />
           </div>
           <div className="categories-page">
-            <CategoriesPage getCategoriesData={getCategoriesData} />
+            <CategoriesPage getCategoriesData={getCategoriesData} history={history} />
           </div>
         </>
       )}

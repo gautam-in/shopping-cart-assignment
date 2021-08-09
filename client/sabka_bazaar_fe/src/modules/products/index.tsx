@@ -43,6 +43,12 @@ const Index = (props: IProps): React.ReactElement => {
     if (getProductsData.products.length === 0) getProducts();
   }, []);
 
+  useEffect(() => {
+    if (history.location.state && history.location.state["id"].length > 0) {
+      filterProducts(history.location.state["id"]);
+    }
+  }, [history.location.state]);
+
   const filterProducts = (id: string) => {
     let filteredProducts = getProductsData.products.filter((product) => {
       if (product.category === id) return product;
@@ -53,18 +59,22 @@ const Index = (props: IProps): React.ReactElement => {
 
   return (
     <section className="section-products" id="products">
-      {/* <Row> */}
-      {/* <Column md={4} lg={4} xs={4} sm={4} className="products-box"> */}
+      <select onChange={(e) => filterProducts(e.target.value)} className="custom-menu">
+        {getCategoriesData.categories &&
+          getCategoriesData.categories.map((element, index) => {
+            return (
+              <option value={element.id} key={index}>
+                {element.name}
+              </option>
+            );
+          })}
+      </select>
       <div className="sidebar-menu">
         <Sidebar menuOptions={getCategoriesData.categories} filterOptions={(id: string) => filterProducts(id)} />
       </div>
-      {/* </Column> */}
-      {/* <Column md={8} lg={8} xs={8} sm={8} className="products-box"> */}
       <div className="products-component">
         <ProductsComponent productsList={filteredProducts.length > 0 ? filteredProducts : getProductsData.products} addToCart={addToCart} />
       </div>
-      {/* </Column> */}
-      {/* </Row> */}
     </section>
   );
 };

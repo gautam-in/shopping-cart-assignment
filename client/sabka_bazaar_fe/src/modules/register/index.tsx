@@ -24,13 +24,13 @@ function Index(props: IProps): React.ReactElement {
   return (
     <section className="section-register" id="registration">
       <Row>
-        <Column md={6} lg={6} xs={6} sm={6} className="signup-box">
+        <Column md={6} lg={6} xs={12} sm={12} className="signup-box">
           <div className="signup-text">
             <h1>Signup</h1>
             <p>We do not share your details with anyone</p>
           </div>
         </Column>
-        <Column md={6} lg={6} xs={6} sm={6} className="signup-box">
+        <Column md={6} lg={6} xs={12} sm={12} className="signup-box">
           <RegistrationComponent history={history} loading={loading.isSignup} postSignUp={postSignUp} user={user} />
         </Column>
       </Row>

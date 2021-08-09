@@ -1,3 +1,44 @@
+<h1 align="center">
+    SHOPPING CART ASSIGNMENT
+</h1>
+<p>
+  
+####   Technology Stack
+- **Web-App :** ReactJS
+    
+   This app is developed using the best practices like:
+- **Programming Language :** **Typescript**
+- **Styles:** Used **scss** for styling the components
+- **Design Structure:** Followed **Atomic Design Structure**
+- **State Management:** Used **Redux** for managing the state of the application.
+- **Middleware:** Used **Redux saga** as middleware.
+- **Api client:** Used **Axios** for APIs.
+- **Domain Driven Implementation:** Used **Models** and **Repositories** to maintain the business logic in the application
+- All the components are **functional components** and uses **react hooks**.
+
+</p>
+
+### Running
+
+## Start the Server
+yarn start
+
+## start the client
+Move to the directory client -> sabka_bazaar-fe
+then
+yarn install  
+from inside your project directory (i.e. where package.json is located) will install the dependencies for your app, rather than install it as a module. These will be placed in ./node_modules relative to your package.json file.
+
+### Running application
+
+Run inside project folder:
+yarn start
+If everything is set up correctly, you should see your new app running in your browser shortly.
+Now run npm start to start development server.
+npm start
+
+### That's it!
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -39,32 +80,4 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

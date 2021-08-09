@@ -30,7 +30,7 @@ const CartModal = (props: IProps): ReactElement => {
   };
 
   return (
-    <Modal show={showCart} onHide={handleClose} dialogClassName="cart-modal">
+    <Modal show={showCart} onHide={handleClose} dialogClassName="cart-modal" bsClass="my-modal">
       <Modal.Header className="cart-header" closeButton>
         <h2>My Cart</h2>
         <span>{`(${cartItems.products.length} items)`}</span>

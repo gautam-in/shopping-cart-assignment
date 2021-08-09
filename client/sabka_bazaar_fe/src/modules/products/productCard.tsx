@@ -18,19 +18,17 @@ const ProductCard = (props: IProps): ReactElement => {
   return (
     <div className="product-card">
       <h2>{product.name}</h2>
-      <div className="product-image-div">
+      <div className="product-details">
         <img src={product.imageURL} alt={product.name} />
-      </div>
-      <div className="product-description">
         <p>{product.description}</p>
       </div>
       <div className="price-and-purchase">
-        <span>{`MRP Rs.${product.price}`}</span>
+        <span className="product-mrp">{`MRP Rs.${product.price}`}</span>
         <Button type={ButtonType.Secondary} id="buy-now" customClass="buy-now-button" onClick={() => productSelected()}>
-          Buy Now
+          Buy Now <span className="product-price">{`@${product.price}`}</span>
         </Button>
       </div>
-      <hr style={{ borderTop: "dotted 1px", marginTop: "10px" }} />
+      <hr style={{ borderTop: "dashed 1px #eee", marginTop: "10px" }} />
     </div>
   );
 };
