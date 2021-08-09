@@ -1,0 +1,34 @@
+@import "../../Assets/style/basestyle.scss";
+
+.login-body-section {
+  height: 50vh;
+  .main-container {
+    max-width: $main-body;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    margin: 0 auto;
+    .discription {
+      width: 50%;
+    }
+    .container {
+      width: 50%;
+      .right-body {
+        display: flex;
+        flex-direction: column;
+        width: 80%;
+        .form-field {
+          margin: 1rem 0;
+          .MuiFormControl-root {
+            width: 100%;
+          }
+          .btn-style {
+            background-color: $base-icon-color;
+            width: 100%;
+            color: #fff;
+          }
+        }
+      }
+    }
+  }
+}
