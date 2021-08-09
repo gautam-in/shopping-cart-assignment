@@ -1,0 +1,104 @@
+
+.products-desc{
+    width: 100%;
+    font-size: 13px;
+    background-color: aliceblue;
+    font-family: Source Sans Pro;
+    color: black;
+    margin-top: -5em;
+}
+.products-title{
+    font-size: 13px;
+    text-align: start;
+    font-weight: bolder;
+   
+}
+.products-subText{
+    font-size: 15px; 
+    margin-top:10px;
+    font-family: Source Sans Pro;
+    text-align: start;
+}
+.cat-bg{
+    background-color: Gainsboro;
+    height: 146.5em;
+    margin-top: -0.6em !important;
+}
+
+.cat-button{
+    margin: 0% 0% 0% 5% !important;
+    text-align:center;
+    font-size: 13px !important;
+    border-radius: 0px !important;
+    width: 23.2em;
+    height: 3em;
+    border-bottom:1px solid grey !important;
+}
+.all-pro-bg{
+    margin: -0.5em 1em 2em 0em !important;
+    width: 14em !important;
+    box-shadow: rgb(0 0 0 / 16%) 0px 1px 4px;
+    background-color: white !important;
+}
+
+.buy-now{
+    float: right;
+    margin-right: 0.9em;
+    background-color: MediumVioletRed !important;
+    border-color:MediumVioletRed !important;
+}
+/* Media Queries for mobile */
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+    .products-title {
+        width: 25em;
+        font-size: 6.7px;
+    }
+   
+    .products-desc {
+        width: 11em;
+        font-size: 9px;
+        padding: 14px 0px 19px 1px;
+        margin-top: 1em;
+    }
+    .products-subText {
+        width: 6em;
+        margin-left: 3em;
+        font-size: 13px;
+    }
+    .buy-now{
+        margin-left: 1em;
+        
+    }
+    .cat-bg {
+        height: 14.5em;
+    }
+    .cat-button {
+        margin: 1% 0% 0.1% 7% !important ;
+    }
+    .all-pro-bg {
+        margin: auto !important;
+        width: 17em !important;
+    }
+}
+
+
+/* iPads (portrait and landscape) ----------- */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
+
+
+.cat-button {
+    margin: 1% 0% 0% 8% !important;
+    font-size: 6px !important;
+    width: 28em;
+   
+}
+
+.all-pro-bg {
+    width: 17em !important;
+}
+.products-desc {
+    margin-top: 0em;
+}
+
+}
