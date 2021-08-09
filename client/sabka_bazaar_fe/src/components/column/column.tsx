@@ -1,4 +1,4 @@
-import { ReactElement, ReactNode } from "react";
+import { ReactElement } from "react";
 import Col from "react-bootstrap/Col";
 
 interface IProps {

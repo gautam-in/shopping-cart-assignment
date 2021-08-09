@@ -1,7 +1,5 @@
 import { BannerList, CategoryList } from "models/home";
-import { ApiClient } from "network/apiClient";
 import { call, put, takeLatest } from "redux-saga/effects";
-import { endPoints } from "repositories/endPoints";
 import { HomeRepository } from "repositories/home/home";
 import { HomeActions } from "../actions/actions";
 import { BANNER, CATEGORY } from "../actions/actionTypes";

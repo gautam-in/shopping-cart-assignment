@@ -5,7 +5,7 @@
 
   .sidebar-menu {
     width: 20%;
-    background-color: #eaeaea;
+    background-color: #eeeeee;
   }
 
   .products-component {
@@ -66,12 +66,17 @@
 
     .buy-now-button {
       text-align: center;
-      background: #d33761 !important;
       color: #fff;
+      background: #d33761 !important;
       border-radius: 0;
       border: none;
       padding: 10px 20px;
       margin-right: 5px;
+
+      &:hover,
+      &:focus {
+        background: #fa4676 !important;
+      }
     }
   }
 }

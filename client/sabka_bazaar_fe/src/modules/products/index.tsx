@@ -1,13 +1,15 @@
-import Column from "components/column/column";
-import Row from "components/row/row";
 import Sidebar from "components/sidebar/sidebar";
 import { CategoryList } from "models/home";
 import { ProductsList } from "models/products";
+import { CartActions } from "modules/cart/redux/actions/actions";
 import { HomeActions } from "modules/home/redux/actions/actions";
 import { HomeSelectors } from "modules/home/redux/selectors/selectors";
+import { allRoutes } from "navigation/allRouteNames";
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
+import { useHistory } from "react-router-dom";
 import { Dispatch } from "redux";
+import { LocalStorage } from "services/storage";
 import { IState } from "store/interfaces";
 import "./products.scss";
 import ProductsComponent from "./productsComponent";
@@ -18,13 +20,20 @@ interface IProps {
   getCategories: Function;
   getProducts: Function;
   getFilteredProducts: Function;
+  addToCart: Function;
   getCategoriesData: CategoryList;
   getProductsData: ProductsList;
   filteredProducts: ProductsList["products"];
 }
 
 const Index = (props: IProps): React.ReactElement => {
-  const { getCategories, getCategoriesData, getProducts, getProductsData, getFilteredProducts, filteredProducts } = props;
+  let history = useHistory();
+  const { getCategories, getCategoriesData, getProducts, getProductsData, getFilteredProducts, filteredProducts, addToCart } = props;
+
+  useEffect(() => {
+    let userStatus = LocalStorage.getStorage("status");
+    userStatus !== "logged-in" && history.push(allRoutes.LOGIN);
+  }, [LocalStorage.getStorage("status")]);
 
   useEffect(() => {
     if (getCategoriesData.categories.length === 0) getCategories();
@@ -37,6 +46,7 @@ const Index = (props: IProps): React.ReactElement => {
   const filterProducts = (id: string) => {
     let filteredProducts = getProductsData.products.filter((product) => {
       if (product.category === id) return product;
+      // return 0;
     });
     getFilteredProducts(filteredProducts);
   };
@@ -51,7 +61,7 @@ const Index = (props: IProps): React.ReactElement => {
       {/* </Column> */}
       {/* <Column md={8} lg={8} xs={8} sm={8} className="products-box"> */}
       <div className="products-component">
-        <ProductsComponent productsList={filteredProducts.length > 0 ? filteredProducts : getProductsData.products} />
+        <ProductsComponent productsList={filteredProducts.length > 0 ? filteredProducts : getProductsData.products} addToCart={addToCart} />
       </div>
       {/* </Column> */}
       {/* </Row> */}
@@ -72,7 +82,8 @@ const mapDispatchToProps = (dispatch: Dispatch) => {
   return {
     getCategories: () => dispatch(HomeActions.getCategories()),
     getProducts: () => dispatch(ProductsActions.getProducts()),
-    getFilteredProducts: (filteredProducts) => dispatch(ProductsActions.getFilteredProducts(filteredProducts))
+    getFilteredProducts: (filteredProducts) => dispatch(ProductsActions.getFilteredProducts(filteredProducts)),
+    addToCart: (product) => dispatch(CartActions.addToCart(product))
   };
 };
 

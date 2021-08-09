@@ -15,12 +15,12 @@ const Sidebar = (props: IProps): ReactElement => {
         <ul>
           {menuOptions.map((option) => {
             return (
-              <>
+              <div key={option.name}>
                 <li key={option.name} onClick={() => filterOptions(option.id)} className={"menuOption"}>
                   {option.name}
                 </li>
                 <hr color="#dadbd5" />
-              </>
+              </div>
             );
           })}
         </ul>

@@ -1,11 +1,10 @@
 import Button, { ButtonType } from "components/button/button";
 import { InputTypes, Label, LoadText, LoginFormValidations, PlaceHolder, RegularExpression } from "components/constants/constants";
 import TextField from "components/textField/textField";
-import { AuthContext } from "context/authContext";
 import { Form, Formik, FormikProps } from "formik";
 import { SignUp } from "models/login";
 import { allRoutes } from "navigation/allRouteNames";
-import React, { useContext, useEffect } from "react";
+import React, { useEffect } from "react";
 import { LocalStorage } from "services/storage";
 import * as Yup from "yup";
 import "./register.scss";
@@ -31,7 +30,6 @@ function RegistrationComponent(props: IProps): React.ReactElement {
     password: Yup.string().min(6).required(LoginFormValidations.emptyValidation),
     confirmPassword: Yup.string().min(6).required(LoginFormValidations.emptyValidation)
   });
-  const { toggleUserAuthentication } = useContext(AuthContext);
 
   useEffect(() => {
     let userStatus = LocalStorage.getStorage("status");
@@ -44,8 +42,8 @@ function RegistrationComponent(props: IProps): React.ReactElement {
         initialValues={initialValues}
         onSubmit={(values, { setSubmitting }) => {
           props.postSignUp(values);
+          LocalStorage.setStorage("status", "logged-in");
           setSubmitting(false);
-          toggleUserAuthentication();
           props.history.push(allRoutes.PLP);
         }}
         validationSchema={formValidationSchema}

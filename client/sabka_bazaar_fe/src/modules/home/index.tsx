@@ -22,7 +22,7 @@ interface IProps {
 
 function Index(props: IProps): React.ReactElement {
   const { getBannersData, getCategoriesData, loading, getBanners, getCategories } = props;
-  let history = useHistory();
+  // let history = useHistory();
 
   useEffect(() => {
     if (getBannersData.banners.length === 0) getBanners();

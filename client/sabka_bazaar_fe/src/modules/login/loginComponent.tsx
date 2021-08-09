@@ -1,13 +1,10 @@
 import Button, { ButtonType } from "components/button/button";
 import { InputTypes, Label, LoadText, LoginFormValidations, PlaceHolder, RegularExpression } from "components/constants/constants";
 import TextField from "components/textField/textField";
-import { AuthContext } from "context/authContext";
 import { Form, Formik, FormikProps } from "formik";
 import { Login } from "models/login";
 import { allRoutes } from "navigation/allRouteNames";
-import React from "react";
-import { useEffect } from "react";
-import { useContext } from "react";
+import React, { useEffect } from "react";
 import { LocalStorage } from "services/storage";
 import * as Yup from "yup";
 import "./login.scss";
@@ -30,8 +27,6 @@ function LoginComponent(props: IProps): React.ReactElement {
     password: Yup.string().min(6).required(LoginFormValidations.emptyValidation)
   });
 
-  const { toggleUserAuthentication } = useContext(AuthContext);
-
   useEffect(() => {
     let userStatus = LocalStorage.getStorage("status");
     userStatus === "logged-in" && history.push(allRoutes.PLP);
@@ -42,9 +37,9 @@ function LoginComponent(props: IProps): React.ReactElement {
       <Formik
         initialValues={initialValues}
         onSubmit={(values, { setSubmitting }) => {
-          postLogin(values); 
+          postLogin(values);
+          LocalStorage.setStorage("status", "logged-in");
           setSubmitting(false);
-          toggleUserAuthentication();
           history.push(allRoutes.PLP);
         }}
         validationSchema={formValidationSchema}

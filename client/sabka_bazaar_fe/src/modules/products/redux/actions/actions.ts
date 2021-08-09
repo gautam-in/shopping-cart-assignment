@@ -23,7 +23,6 @@ const getProductsError = (error: string): IFluxStandardAction<string> => {
 };
 
 const getFilteredProducts = (payload: ProductsList["products"]): IFluxStandardAction<ProductsList["products"]> => {
-  console.log("filtered products acttion called", payload)
   return {
     type: FILTEREDPRODUCTS,
     payload

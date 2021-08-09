@@ -5,10 +5,16 @@ import "./products.scss";
 
 interface IProps {
   product: ProductItem;
+  addToCart: Function;
 }
 
 const ProductCard = (props: IProps): ReactElement => {
-  const { product } = props;
+  const { product, addToCart } = props;
+
+  const productSelected = () => {
+    addToCart(product);
+  };
+
   return (
     <div className="product-card">
       <h2>{product.name}</h2>
@@ -20,11 +26,11 @@ const ProductCard = (props: IProps): ReactElement => {
       </div>
       <div className="price-and-purchase">
         <span>{`MRP Rs.${product.price}`}</span>
-        <Button type={ButtonType.Secondary} id="buy-now" customClass="buy-now-button">
+        <Button type={ButtonType.Secondary} id="buy-now" customClass="buy-now-button" onClick={() => productSelected()}>
           Buy Now
         </Button>
       </div>
-      <hr style={{ borderTop: "dotted 1px" , marginTop:"10px" }} />
+      <hr style={{ borderTop: "dotted 1px", marginTop: "10px" }} />
     </div>
   );
 };

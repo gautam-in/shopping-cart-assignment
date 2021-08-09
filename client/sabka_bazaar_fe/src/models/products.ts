@@ -18,6 +18,8 @@ export class ProductItem {
   sku: string = "";
   @JsonProperty("id", String)
   id: string = "";
+  @JsonProperty("productCount", Number)
+  productCount: number = 0;
 }
 
 @JsonObject("ProductsList")

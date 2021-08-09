@@ -1,6 +1,6 @@
 import { Login } from "models/login";
 import { IFluxStandardAction } from "store/interfaces";
-import { LOGIN } from "./actionTypes";
+import { LOGIN, LOGOUT } from "./actionTypes";
 
 const postLogin = (payload: Login): IFluxStandardAction<Login> => {
   return {
@@ -15,6 +15,7 @@ const postLoginSuccess = (payload: Login["email"]): IFluxStandardAction<Login["e
     payload
   };
 };
+
 const postLoginError = (error: string): IFluxStandardAction<string> => {
   return {
     type: LOGIN.POST.ERROR,
@@ -22,4 +23,10 @@ const postLoginError = (error: string): IFluxStandardAction<string> => {
   };
 };
 
-export const LoginActions = { postLogin, postLoginSuccess, postLoginError };
+const clearStore = () => {
+  return {
+    type: LOGOUT.CLEAR
+  };
+};
+
+export const LoginActions = { postLogin, postLoginSuccess, postLoginError, clearStore };

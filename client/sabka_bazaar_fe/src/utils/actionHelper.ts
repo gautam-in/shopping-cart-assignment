@@ -2,13 +2,15 @@ interface IBaseActionTypes {
   LOADING: string;
   SUCCESS: string;
   ERROR: string;
+  CLEAR: string;
 }
 const actionTypesCreator = (prefix: string, actionType: string): IBaseActionTypes => {
-  const types = ["LOADING", "SUCCESS", "ERROR"];
+  const types = ["LOADING", "SUCCESS", "ERROR", "CLEAR"];
   let data = {
     LOADING: "",
     SUCCESS: "",
-    ERROR: ""
+    ERROR: "",
+    CLEAR: ""
   };
 
   types.forEach((type: string) => {

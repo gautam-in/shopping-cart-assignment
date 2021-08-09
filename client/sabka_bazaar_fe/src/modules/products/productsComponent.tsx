@@ -1,21 +1,22 @@
 import { ProductsList } from "models/products";
-import { useEffect } from "react";
 import { ReactElement } from "react";
 import "./products.scss";
 import ProductCard from "./productCard";
 
 interface IProps {
   productsList: ProductsList["products"];
+  addToCart: Function;
 }
 
 const ProductsComponent = (props: IProps): ReactElement => {
-  const { productsList } = props;
+  const { productsList, addToCart } = props;
+
   return (
     <>
       {productsList && (
         <ul className="products-list">
           {productsList.map((product) => (
-            <ProductCard key={product.name} product={product} />
+            <ProductCard key={product.name} product={product} addToCart={addToCart} />
           ))}
         </ul>
       )}
