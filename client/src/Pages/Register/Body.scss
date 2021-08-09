@@ -1,0 +1,30 @@
+.section-registerbody {
+  .main-container {
+    display: flex;
+    padding: 1rem;
+    width: calc(100% - 2rem);
+    .description {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+      padding-left: 3rem;
+      padding-top: 6%;
+      width: 50%;
+      h2 {
+        width: auto;
+        padding-bottom: 1rem;
+      }
+      div {
+        width: auto;
+      }
+    }
+    .form-body {
+      .form-field {
+        padding: 1rem 0;
+        width: 70%;
+        min-width: 300px;
+      }
+    }
+  }
+}
