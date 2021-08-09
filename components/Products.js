@@ -60,46 +60,8 @@ export default function Products() {
         </title>
       </Head>
       {/* Side Bar & dropdown */}
-      <aside id="sidebar">
-        {/* Dropdown for mobile */}
-        <DropdownStyle id="dropdown">
-          <select onChange={filterHandler}>
-            <option>--Select Filter--</option>
-            {categories.map((category, index) => (
-              <option
-                id={category.id}
-                className={filter === category.id ? 'active' : ''}
-                aria-label={category.name}
-                key={index}
-                value={category.key}
-              >
-                {category.name}
-              </option>
-            ))}
-          </select>
-          <div className="select_arrow" />
-        </DropdownStyle>
-        {/* Side bar for Desktop */}
-        <ProductSideBarDesktopStyle>
-          <ul>
-            {categories?.map((category) => (
-              <li
-                onClick={filterHandler}
-                onKeyPress={filterHandler}
-                key={category.id}
-                id={category.id}
-                className={filter === category.id ? 'active' : ''}
-                aria-label={category.name}
-                role="button"
-                tabIndex="0"
-              >
-                {category.name}
-              </li>
-            ))}
-          </ul>
-        </ProductSideBarDesktopStyle>
-      </aside>
-      {/* Product Listing - filtering performed here */}
+      <SideBar categories={categories} filterHandler={filterHandler} filter={filter}/>
+      {/* Product Listing - filtering performed here */} 
       <div id="products">
         {/* Filtering
          1. if there is not product belongs to categroy then <p>..
@@ -172,7 +134,55 @@ function SingleProduct({ product, addToCart }) {
   );
 }
 
+function SideBar({filterHandler,categories, filter}) {
+  return (   <aside id="sidebar">
+  {/* Dropdown for mobile */}
+  <DropdownStyle id="dropdown">
+    <select onChange={filterHandler}>
+      <option>--Select Filter--</option>
+      {categories.map((category, index) => (
+        <option
+          id={category.id}
+          className={filter === category.id ? 'active' : ''}
+          aria-label={category.name}
+          key={index}
+          value={category.key}
+        >
+          {category.name}
+        </option>
+      ))}
+    </select>
+    <div className="select_arrow" />
+  </DropdownStyle>
+  {/* Side bar for Desktop */}
+  <ProductSideBarDesktopStyle>
+    <ul>
+      {categories?.map((category) => (
+        <li
+          onClick={filterHandler}
+          onKeyPress={filterHandler}
+          key={category.id}
+          id={category.id}
+          className={filter === category.id ? 'active' : ''}
+          aria-label={category.name}
+          role="button"
+          tabIndex="0"
+        >
+          {category.name}
+        </li>
+      ))}
+    </ul>
+  </ProductSideBarDesktopStyle>
+</aside>);
+}
+
 SingleProduct.propTypes = {
   product: PropTypes.object,
   addToCart: PropTypes.func,
+};
+
+SideBar.propTypes = {
+  filterHandler: PropTypes.func,
+  categories: PropTypes.array,
+  filter:PropTypes.string
 };

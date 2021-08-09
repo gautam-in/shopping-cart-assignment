@@ -110,7 +110,7 @@ export const NoCartItems = styled.div`
   }
 `;
 
-export const CartFooter = styled.form`
+export const CartFooterStyle = styled.form`
   padding: 0.5em;
   text-align: center;
   background-color: white;
@@ -142,7 +142,7 @@ export const CartFooter = styled.form`
   }
 `;
 
-export const Quantity = styled.div`
+export const QuantityStyle = styled.div`
   margin-top: 1em;
   & > button {
     padding: 2px 6px 4px 6px;
