@@ -1,8 +1,13 @@
 import React from "react"
 import FontAwesome from "react-fontawesome";
 function CardItem({ itemInfo, increment, decrease }) {
-  const { name, quantity, imageURL, price } = itemInfo;
-
+  const { name, quantity, imageURL, price, stock } = itemInfo;
+  const plusFontClickHandler = () => {
+    if (quantity === stock)
+      alert(`We have only ${stock} ${name} items in stock`)
+    else
+      increment()
+  }
   return (
     <div className="card-item">
       <div style={{ width: "20%" }}>
@@ -33,10 +38,9 @@ function CardItem({ itemInfo, increment, decrease }) {
             }}
           />
           <p style={{ marginRight: "1rem" }}>{quantity}</p>
-
           <FontAwesome
             name="plus"
-            onClick={increment}
+            onClick={plusFontClickHandler}
             style={{
               color: "white",
               backgroundColor: "#d00155",
@@ -51,7 +55,7 @@ function CardItem({ itemInfo, increment, decrease }) {
           <p
             style={{
               alignSelf: "flex-end",
-              marginLeft:"1rem",
+              marginLeft: "1rem",
               fontWeight: "bold",
               marginRight: "2rem"
             }}

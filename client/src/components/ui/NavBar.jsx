@@ -1,5 +1,5 @@
-import React, { useContext, useEffect } from "react";
-//import Logo from "/images/logo.png";
+import React, { useContext } from "react";
+
 import Cart from "./Cart";
 import { Link, useHistory, useLocation } from "react-router-dom";
 import { Context as AuthContext } from "../../context/AuthContext";
@@ -8,9 +8,6 @@ function NavBar() {
   const { state, logOut } = useContext(AuthContext);
   const history = useHistory();
   const location = useLocation()
-  useEffect(() => {
-    console.log("location", location)
-  }, [location])
   return (
     <header>
       <div className="navbar">

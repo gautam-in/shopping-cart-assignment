@@ -3,11 +3,17 @@ import { Context as CartContext } from "../../context/CartContext";
 import FontAwesome from "react-fontawesome";
 import ReadMoreComponent from "./ReadMoreComponent"
 function ProductCard({ productInfo }) {
-  const { name, imageURL, description, price, id } = productInfo;
+  const { name, imageURL, description, price, id, stock } = productInfo;
   const { addItem, incrementItem, decreaseItem, state } =
     useContext(CartContext);
   const [present, setPresent] = useState(false);
   const [index, setIndex] = useState(null);
+  const plusFontClickHandler = () => {
+    if (state.items[index].quantity === stock)
+      alert(`We have only ${stock} ${name} items in stock`)
+    else
+      incrementItem(productInfo)
+  }
   useEffect(() => {
     let flag = false
     state.items.forEach((item, i) => {
@@ -57,7 +63,7 @@ function ProductCard({ productInfo }) {
               <FontAwesome
                 name="plus"
                 size="2x"
-                onClick={() => incrementItem(productInfo)}
+                onClick={plusFontClickHandler}
                 style={{
                   color: "white",
                   backgroundColor: "#d00155",
@@ -88,9 +94,9 @@ function ProductCard({ productInfo }) {
             width: "70%"
           }}>
             <ReadMoreComponent>
-            {description}
+              {description}
             </ReadMoreComponent>
-            
+
           </div>
         </div>
         {present === true ? (
@@ -112,7 +118,7 @@ function ProductCard({ productInfo }) {
             <FontAwesome
               name="plus"
               size="2x"
-              onClick={() => incrementItem(productInfo)}
+              onClick={plusFontClickHandler}
               style={{
                 color: "white",
                 backgroundColor: "#d00155",
@@ -140,48 +146,48 @@ function ProductCard({ productInfo }) {
               backgroundColor: "#eaeaea",
               padding: "10px",
               fontWeight: "bold",
-              marginBottom:"5px"
+              marginBottom: "5px"
             }}>
               {description}
             </div>
             {present === true ? (
-          <div style={{ display: "flex", alignItems: "center", justifyContent: "center", width: "100%" }}>
-            <FontAwesome
-              onClick={() => decreaseItem(productInfo)}
-              name="minus"
-              size="2x"
-              style={{
-                color: "white",
-                backgroundColor: "#d00155",
-                cursor: "pointer",
-                padding: "4px",
-              }}
-            />
-            <p style={{ margin: "0px 10px", fontWeight: "bolder", fontSize: "1.3rem" }}>
-              {state.items[index] && state.items[index].quantity}
-            </p>
-            <FontAwesome
-              name="plus"
-              size="2x"
-              onClick={() => incrementItem(productInfo)}
-              style={{
-                color: "white",
-                backgroundColor: "#d00155",
-                cursor: "pointer",
-                padding: "4px",
-              }}
-            />
-          </div>
-        ) : (
-          <button
-            style={{ width: "100%", cursor: "pointer" }}
-            className="button"
-            onClick={() => addItem(productInfo)}
-          >
-            Buy Now @ {price}
-          </button>
-        )}
-           
+              <div style={{ display: "flex", alignItems: "center", justifyContent: "center", width: "100%" }}>
+                <FontAwesome
+                  onClick={() => decreaseItem(productInfo)}
+                  name="minus"
+                  size="2x"
+                  style={{
+                    color: "white",
+                    backgroundColor: "#d00155",
+                    cursor: "pointer",
+                    padding: "4px",
+                  }}
+                />
+                <p style={{ margin: "0px 10px", fontWeight: "bolder", fontSize: "1.3rem" }}>
+                  {state.items[index] && state.items[index].quantity}
+                </p>
+                <FontAwesome
+                  name="plus"
+                  size="2x"
+                  onClick={plusFontClickHandler}
+                  style={{
+                    color: "white",
+                    backgroundColor: "#d00155",
+                    cursor: "pointer",
+                    padding: "4px",
+                  }}
+                />
+              </div>
+            ) : (
+              <button
+                style={{ width: "100%", cursor: "pointer" }}
+                className="button"
+                onClick={() => addItem(productInfo)}
+              >
+                Buy Now @ {price}
+              </button>
+            )}
+
           </div>
         </div>
 

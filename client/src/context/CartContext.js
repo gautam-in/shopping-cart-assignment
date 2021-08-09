@@ -30,6 +30,7 @@ const cartReducer = (state, action) => {
         imageURL: action.payload.imageURL,
         name: action.payload.name,
         id: action.payload.id,
+        stock: action.payload.stock,
         quantity: 1,
       });
       return { ...state, totalAmount: calcTotalAmount(state.items) };
@@ -39,31 +40,31 @@ const cartReducer = (state, action) => {
       const item = state.items[indexOfItem];
       if (indexOfItem > -1) {
         state.items.splice(indexOfItem, 1, { ...item, quantity: parseInt(item.quantity) + 1 });
-    }
+      }
       return { ...state, totalAmount: calcTotalAmount(state.items) };
-  }
+    }
     case "delete_item": {
-  const indexOfItem = getIndexOfItem(state.items, action.payload);
-  if (indexOfItem > -1) {
-    state.items.splice(indexOfItem, 1);
-  }
-  return { ...state, totalAmount: calcTotalAmount(state.items) };
-}
+      const indexOfItem = getIndexOfItem(state.items, action.payload);
+      if (indexOfItem > -1) {
+        state.items.splice(indexOfItem, 1);
+      }
+      return { ...state, totalAmount: calcTotalAmount(state.items) };
+    }
     case "decrease_item": {
-  const indexOfItem = getIndexOfItem(state.items, action.payload);
-  const item = state.items[indexOfItem];
-  if (indexOfItem > -1) {
-    if (item.quantity > 1)
-    state.items.splice(indexOfItem, 1,{ ...item, quantity: parseInt(item.quantity) - 1 });
-    else
-    state.items.splice(indexOfItem, 1);
-  }
-  return { ...state, totalAmount: calcTotalAmount(state.items) };
-}
+      const indexOfItem = getIndexOfItem(state.items, action.payload);
+      const item = state.items[indexOfItem];
+      if (indexOfItem > -1) {
+        if (item.quantity > 1)
+          state.items.splice(indexOfItem, 1, { ...item, quantity: parseInt(item.quantity) - 1 });
+        else
+          state.items.splice(indexOfItem, 1);
+      }
+      return { ...state, totalAmount: calcTotalAmount(state.items) };
+    }
     case "empty_cart":
-return initialCartValue;
+      return initialCartValue;
     default:
-return state;
+      return state;
   }
 };
 
@@ -87,7 +88,6 @@ const deleteItem = (dispatch) => {
 
 const decreaseItem = (dispatch) => {
   return (itemName) => {
-    console.log("decrase action")
     dispatch({ type: "decrease_item", payload: itemName });
   };
 };
