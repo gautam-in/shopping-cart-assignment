@@ -1,0 +1,17 @@
+@import "../../Assets/style/basestyle.scss";
+.counter-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-right: 1.375rem;
+  .btn-round {
+    height: 1.5rem;
+    width: 1.5rem;
+    border-radius: 50%;
+    background-color: $base-icon-color;
+    color: #fff;
+  }
+  .count {
+    width: auto;
+  }
+}
