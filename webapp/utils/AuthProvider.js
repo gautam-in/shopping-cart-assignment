@@ -150,11 +150,13 @@ function useProvideAuth() {
         return result.data.signup
     }
 
-    const signOut = () => {
+    const signOut = async () => {
         if(window) {
             window.localStorage.removeItem("token")
+            window.localStorage.removeItem("userData")
         }
-        setAuthToken(null)
+       await setAuthToken(null);
+        await setUserData(null)
     }
 
     const getLoggedInUserData = () => {

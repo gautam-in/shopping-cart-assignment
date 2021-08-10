@@ -74,6 +74,16 @@ const Cart = () => {
             </Button>
         )
     }
+    if(addToCartObj.error && addToCartObj.error.message === "JWT expired") {
+        auth.signOut().then(() => {
+            ToastMessage("warn", {
+                content: "Token expired, please signin again"
+            })
+            setTimeout(() => {
+                router.push("signin")
+            }, 1000)
+        })
+    }
     return (
         <CartContext.Consumer>
             {(cart) => {
@@ -81,8 +91,10 @@ const Cart = () => {
                 let cartData = []
                 if(productsObj.loading || addToCartObj.loading) {
                     return <Loading/>
-                } else if(productsObj.error || addToCartObj.error) {
-                    return <div>{productsObj.error || addToCartObj.error}</div>
+                } else if(productsObj.error) {
+                    return <div>{productsObj.error.message}</div>
+                 }else if(addToCartObj.error) {
+                    return <div>{addToCartObj.error.message}</div>
                 } else {
                     cartData = cartItems.map((item) => {
                         const productData = productsObj.data.products.find((productItem) => productItem.product_uid === item.product_uid);
