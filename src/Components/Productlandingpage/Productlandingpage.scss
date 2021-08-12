@@ -1,0 +1,15 @@
+.productlandingpage {
+  min-height: calc(100vh - 132px);
+  background: #c4c2c23b;
+  display: grid;
+  grid-template-columns: 25% 75%;
+  h1{
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .productlandingpage {
+    display: block;
+  }
+}

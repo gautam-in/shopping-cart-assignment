@@ -1,0 +1,15 @@
+.allproducts {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  background: white;
+}
+
+@media screen and (min-width: 768px) {
+}
+
+@media screen and (max-width: 600px) {
+  .allproducts {
+    justify-content: space-evenly;
+  }
+}

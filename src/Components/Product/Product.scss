@@ -1,0 +1,46 @@
+.product {
+	width: 200px;
+	border-bottom: 1px solid black;
+	padding: 0.5rem;
+	button {
+		padding: 0.4rem;
+		width: 90px;
+		background: red;
+		border: none;
+		color: white;
+	}
+  .description {
+    font-size: small;
+    background: darkgrey;
+    padding: 0.5rem;
+    height: 80px;
+    overflow: hidden;
+    height: 58px;
+  }
+  .title {
+    height: 43px;
+    overflow: hidden;
+  }
+  .productpricing {
+    padding: 0.5rem 0rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .container{
+    background-repeat: no-repeat;
+    height: 200px;
+    background-size: cover;
+    @media (max-width: 600px) {
+      height: 300px;
+    }
+}
+.popup{
+  background: green;
+  padding: 0.2rem 0.5rem;
+  color: white;
+}
+@media screen and (max-width: 600px) {
+    width: 300px;
+}
+}
