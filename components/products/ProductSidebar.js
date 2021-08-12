@@ -1,7 +1,8 @@
 import axios from "axios";
 import { useRouter } from "next/dist/client/router";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useQuery } from "react-query";
+import LoadError from '../LoadError'
 import styled from "styled-components";
 
 const Sidebar = styled.div`
@@ -60,22 +61,16 @@ const CategorySelect = styled.select`
   background-repeat: no-repeat;
   border-radius: 3px;
 `;
+const baseUrl = "http://localhost:3000/api/categories";
+
+const getCategories = async () => {
+  const res = await axios.get(baseUrl);
+  return res.data.sort((a, b) => a.order - b.order).filter((category) => category.enabled)
+}
 
 function ProductSidebar() {
   const router = useRouter();
-  const baseUrl = "http://localhost:3000/api/categories";
-
-  const [categories, setCategories] = useState([]);
-
-  useEffect(() => {
-    axios.get(baseUrl).then((response) => {
-      setCategories(
-        response.data
-          .sort((a, b) => a.order - b.order)
-          .filter((category) => category.enabled)
-      );
-    });
-  }, []);
+  const {isLoading, isError, data} = useQuery('getCategories', getCategories);
 
   const CategoryOption = ({ id, name }) => {
     return <option value={id}>{name}</option>;
@@ -85,41 +80,52 @@ function ProductSidebar() {
     router.push(`/products/${e.target.value}`);
   };
 
-  return (
-    <Sidebar>
-      <CategorySelect
-        onChange={handleProductPage}
-        value={router.query.category}
-      >
-        {categories.map((category) => {
-          return (
-            <CategoryOption
-              key={category.id}
-              id={category.id}
-              name={category.name}
-            />
-          );
-        })}
-      </CategorySelect>
-      <SidebarList>
-        {categories.map((category) => {
-          return (
-            <SidebarItem key={category.id}>
-              <Link href={`/products/${category.id}`} passHref>
-                <a
-                  className={
-                    router.query.category?.includes(category.id) ? "active" : ""
-                  }
-                >
-                  {category.name}
-                </a>
-              </Link>
-            </SidebarItem>
-          );
-        })}
-      </SidebarList>
-    </Sidebar>
-  );
+  if(isLoading) {
+    return <p>Loading...</p>
+  }
+
+  if(isError) {
+    return <LoadError />
+  }
+
+  if(data) {
+    return (
+      <Sidebar>
+        <CategorySelect
+          onChange={handleProductPage}
+          value={router.query.category}
+        >
+          {data.map((category) => {
+            return (
+              <CategoryOption
+                key={category.id}
+                id={category.id}
+                name={category.name}
+              />
+            );
+          })}
+        </CategorySelect>
+        <SidebarList>
+          {data.map((category) => {
+            return (
+              <SidebarItem key={category.id}>
+                <Link href={`/products/${category.id}`} passHref>
+                  <a
+                    className={
+                      router.query.category?.includes(category.id) ? "active" : ""
+                    }
+                  >
+                    {category.name}
+                  </a>
+                </Link>
+              </SidebarItem>
+            );
+          })}
+        </SidebarList>
+      </Sidebar>
+    );
+  }
+  
 }
 
 export default ProductSidebar;

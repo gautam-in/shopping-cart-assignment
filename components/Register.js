@@ -1,125 +1,31 @@
-import { useState } from "react";
-import styled from "styled-components";
 import { auth } from "../firebase";
 import { useStore } from "../store/Store";
 import { login } from "../actions/userActions";
 import { useRouter } from "next/router";
+import { useForm } from "react-hook-form";
+import { yupResolver } from '@hookform/resolvers/yup';
+import * as yup from "yup";
+import { AuthForm, Authleft, AuthWrapper, FormError, FormGroup, SubmitBtn } from "./AuthStyles";
 
-const Register = styled.div`
-  display: flex;
-  margin: 50px 0;
-  justify-content: center;
-
-  @media (max-width: 767px) {
-    flex-direction: column;
-  }
-`;
-
-const Registerleft = styled.div`
-  width: 40%;
-  @media (max-width: 767px) {
-    width: 100%;
-  }
-  h1 {
-    font-size: 2rem;
-    margin: 20px 0;
-  }
-`;
-
-const RegisterForm = styled.form`
-  width: 40%;
-  display: flex;
-  flex-direction: column;
-  margin-left: 3%;
-  @media (max-width: 767px) {
-    width: 100%;
-    margin: 0;
-  }
-`;
-
-const FormGroup = styled.div`
-  margin: 30px 0 0 0;
-  position: relative;
-
-  label {
-    font-size: 12px;
-    color: var(--colorBlue);
-    opacity: 0;
-    position: absolute;
-    top: -15px;
-    left: 0;
-    transition: all 0.3s;
-  }
-
-  input {
-    color: #444;
-    border: 0;
-    border-bottom: 1px solid currentColor;
-    width: 100%;
-    height: 38px;
-    padding: 0 5px;
-    transition: all 0.2s;
-
-    &:focus {
-      border-color: var(--colorBlue);
-      outline: none;
-    }
-
-    &::placeholder {
-      color: #999;
-    }
-
-    &:not(:placeholder-shown) + label {
-      opacity: 1;
-    }
-  }
-`;
-
-const RegisterBtn = styled.button`
-  background: var(--colorPrimary);
-  color: #fff;
-  border: 0;
-  padding: 10px 20px;
-  transition: all 0.2s;
-  width: 100%;
-  margin-top: 40px;
-
-  &:hover {
-    filter: brightness(0.9);
-  }
-`;
+const schema = yup.object().shape({
+  firstName: yup.string().required('Please enter your first name'),
+  lastName: yup.string().required('Please enter your last name'),
+  email: yup.string().email('Please enter a valid email').required('Please enter your email'),
+  password: yup.string().min(8, 'Password should be at at least 8 characters long').required('Please enter a password'),
+  confirmPassword: yup.string().oneOf([yup.ref('password'), null]).required('Please confirm your password'),
+});
 
 export default function SignIn() {
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [cPassword, setCPassword] = useState("");
+  const {register, handleSubmit, formState: {errors}, watch} = useForm({
+    resolver: yupResolver(schema)
+  });
 
   const [, dispatch] = useStore();
   const router = useRouter();
-  const handleRegister = (e) => {
-    e.preventDefault();
-
-    // Check if fields are filled properly.
-    if (
-      firstName === "" ||
-      lastName === "" ||
-      email === "" ||
-      password === "" ||
-      cPassword === "" ||
-      password !== cPassword
-    ) {
-      alert("Please fill all fields properly!");
-      return;
-    }
-
-    // Register user
-
+  const onSubmit = ({firstName, lastName, email, password}) => {
     auth
       .createUserWithEmailAndPassword(email, password)
       .then((userCredentials) => {
-        //signed in
         userCredentials.user.updateProfile({
           displayName: firstName + " " + lastName,
         });
@@ -137,45 +43,46 @@ export default function SignIn() {
       });
   };
   return (
-    <Register>
-      <Registerleft>
+    <AuthWrapper>
+      <Authleft>
         <h1>Signup</h1>
         <p>We do not share your personal details with anyone.</p>
-      </Registerleft>
-      <RegisterForm autocomplete="off">
+      </Authleft>
+      <AuthForm onSubmit={handleSubmit(onSubmit)}>
         <FormGroup>
           <input
-            id="fname"
-            name="fname"
+            id="firstName"
+            name="firstName"
             type="text"
             autoFocus
             placeholder="First Name"
-            value={firstName}
-            onChange={(e) => setFirstName(e.target.value)}
+            {...register('firstName')}
           />
-          <label htmlFor="fname">First Name</label>
+          
+          <label htmlFor="firstName">First Name</label>
+          {errors.firstName && <FormError>{errors.firstName.message}</FormError>}
         </FormGroup>
         <FormGroup>
           <input
-            id="lname"
-            name="lname"
+            id="lastName"
+            name="lastName"
             type="text"
             placeholder="Last Name"
-            value={lastName}
-            onChange={(e) => setLastName(e.target.value)}
+            {...register('lastName')}
           />
-          <label htmlFor="lname">Last Name</label>
+          <label htmlFor="lastName">Last Name</label>
+          {errors.lastName && <FormError>{errors.lastName.message}</FormError>}
         </FormGroup>
         <FormGroup>
           <input
             id="email"
             name="email"
-            type="email"
+            type="text"
             placeholder="Email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            {...register('email')}
           />
           <label htmlFor="email">Email</label>
+          {errors.email && <FormError>{errors.email.message}</FormError>}
         </FormGroup>
         <FormGroup>
           <input
@@ -183,24 +90,24 @@ export default function SignIn() {
             name="password"
             type="password"
             placeholder="Password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
+            {...register('password')}
           />
           <label htmlFor="password">Password</label>
+          {errors.password && <FormError>{errors.password.message}</FormError>}
         </FormGroup>
         <FormGroup>
           <input
-            id="cpassword"
-            name="cpassword"
+            id="confirmPassword"
+            name="confirmPassword"
             type="password"
             placeholder="Confirm Password"
-            value={cPassword}
-            onChange={(e) => setCPassword(e.target.value)}
+            {...register('confirmPassword')}
           />
-          <label htmlFor="cpassword">Confirm Password</label>
+          <label htmlFor="confirmPassword">Confirm Password</label>
+          {errors.confirmPassword && <FormError>Passwords should match!</FormError>}
         </FormGroup>
-        <RegisterBtn onClick={handleRegister}>Register</RegisterBtn>
-      </RegisterForm>
-    </Register>
+        <SubmitBtn type='submit'>Register</SubmitBtn>
+      </AuthForm>
+    </AuthWrapper>
   );
 }

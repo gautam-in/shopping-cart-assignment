@@ -1,100 +1,25 @@
-import { useState } from "react";
-import styled from "styled-components";
 import { login } from "../actions/userActions";
 import { auth } from "../firebase";
 import { useStore } from "../store/Store";
 import { useRouter } from "next/router";
+import { AuthForm, Authleft, AuthWrapper, FormError, FormGroup, SubmitBtn } from "./AuthStyles";
+import { useForm } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
+import * as yup from 'yup'
 
-const Login = styled.div`
-  display: flex;
-  margin: 50px 0;
-  justify-content: center;
-  @media (max-width: 767px) {
-    flex-direction: column;
-  }
-`;
-
-const Loginleft = styled.div`
-  width: 40%;
-  @media (max-width: 767px) {
-    width: 100%;
-  }
-  h1 {
-    font-size: 2rem;
-    margin: 20px 0;
-  }
-`;
-
-const LoginForm = styled.form`
-  width: 40%;
-  display: flex;
-  flex-direction: column;
-  margin-left: 3%;
-  @media (max-width: 767px) {
-    width: 100%;
-    margin: 0;
-  }
-`;
-
-const FormGroup = styled.div`
-  margin: 30px 0 0 0;
-  position: relative;
-
-  label {
-    font-size: 12px;
-    color: var(--colorBlue);
-    opacity: 0;
-    position: absolute;
-    top: -15px;
-    left: 0;
-    transition: all 0.3s;
-  }
-
-  input {
-    color: #444;
-    border: 0;
-    border-bottom: 1px solid currentColor;
-    width: 100%;
-    height: 38px;
-    padding: 0 5px;
-    transition: all 0.2s;
-
-    &:focus {
-      border-color: var(--colorBlue);
-      outline: none;
-    }
-
-    &::placeholder {
-      color: #999;
-    }
-
-    &:not(:placeholder-shown) + label {
-      opacity: 1;
-    }
-  }
-`;
-
-const LoginBtn = styled.button`
-  background: var(--colorPrimary);
-  color: #fff;
-  border: 0;
-  padding: 10px 20px;
-  transition: all 0.2s;
-  width: 100%;
-  margin-top: 40px;
-
-  &:hover {
-    filter: brightness(0.9);
-  }
-`;
+const schema = yup.object().shape({
+  email: yup.string().email('Please enter a valid email').required('Please enter your email'),
+  password: yup.string().min(8, 'Password must be of minimum 8 characters').required('Please enter your password')
+})
 
 export default function SignIn() {
+  
   const router = useRouter();
   const [, dispatch] = useStore();
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const handleLogin = (e) => {
-    e.preventDefault();
+  const {register, handleSubmit, formState: {errors}} = useForm({
+    resolver: yupResolver(schema)
+  })
+  const onSubmit = ({email, password}) => {
     auth
       .signInWithEmailAndPassword(email, password)
       .then((userCredentials) =>
@@ -110,22 +35,22 @@ export default function SignIn() {
       .catch((error) => alert(error.message));
   };
   return (
-    <Login>
-      <Loginleft>
+    <AuthWrapper>
+      <Authleft>
         <h1>Login</h1>
         <p>Get access to your Orders, Wishlist and Recommendations</p>
-      </Loginleft>
-      <LoginForm autocomplete="off">
+      </Authleft>
+      <AuthForm onSubmit={handleSubmit(onSubmit)}>
         <FormGroup>
           <input
             id="email"
             name="email"
             type="email"
             placeholder="Email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            {...register('email')}
           />
           <label htmlFor="email">Email</label>
+          {errors.email && <FormError>{errors.email.message}</FormError>}
         </FormGroup>
         <FormGroup>
           <input
@@ -133,13 +58,13 @@ export default function SignIn() {
             name="password"
             type="password"
             placeholder="Password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
+            {...register('password')}
           />
           <label htmlFor="password">Password</label>
+          {errors.password && <FormError>{errors.password.message}</FormError>}
         </FormGroup>
-        <LoginBtn onClick={handleLogin}>Login</LoginBtn>
-      </LoginForm>
-    </Login>
+        <SubmitBtn type='submit'>Login</SubmitBtn>
+      </AuthForm>
+    </AuthWrapper>
   );
 }
