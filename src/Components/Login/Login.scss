@@ -1,0 +1,11 @@
+.LoginContainer {
+  display: flex;
+  width: 60%;
+  margin: auto;
+  margin-top: 2rem;
+  section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+}

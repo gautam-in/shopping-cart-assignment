@@ -1,0 +1,53 @@
+* {
+  margin: 0;
+}
+.modalcontainer {
+  position: absolute;
+  width: 400px;
+  min-height: 80%;
+  max-height: 85%;
+  height: auto;
+  background: white;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  h3 {
+    padding: 1rem;
+    background: black;
+    color: white;
+  }
+  .allcartproducts {
+    padding: 0.5rem;
+    flex: 1;
+    background-color: #8080801a;
+    overflow: auto;
+    .lowestpricebanner {
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      padding: 0.5rem;
+      background: white;
+      margin-top: 0.5rem;
+    }
+  }
+  .emptycarttext {
+    text-align: center;
+  }
+  .startshopping {
+    width: 100%;
+    padding: 1rem 0;
+    background: #bf3737;
+    text-align: center;
+  }
+}
+.checkout {
+  background: #b81b23;
+  color: white;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+}
