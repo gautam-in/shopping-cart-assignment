@@ -1,0 +1,24 @@
+.cart-item-container {
+    margin-top: 2vh;
+    height: 16vh;
+    width: 100%;
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 1vh 1vw;
+}
+
+.total-price-text {
+    position: absolute;
+    right: 1vw;
+}
+
+.cart-item-data {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-left: 5px;
+    height: 14vh;
+}

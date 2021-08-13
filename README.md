@@ -1,11 +1,12 @@
 # XT Shopping Cart Assignment
 
-This is the base folder for the shopping cart exercise. You will have all the static assets and mock server responses available in this repo.
 
 ## Getting Started
+The FE code is present in `/webapp` and the Express-Graphql server is present in `/server`
 
-Clone this repo and run following command for starting the mock server:
 
+In each folder run the following command to start the process.
+Also contact Kumar Aarshi Anand on `MS Teams` for the `.env` file to run the server.
 ```
 npm install
 npm run start
