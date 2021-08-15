@@ -1,0 +1,91 @@
+import styled from 'styled-components';
+import { pageMaxWidth } from './GlobalStyles';
+
+export const HeaderContainer = styled.header`
+  box-shadow: var(--boxShadow);
+  height: max-content;
+`;
+
+export const HeaderCenter = styled.div`
+  display: flex;
+  justify-content: space-between;
+  height: max-content;
+  max-height: 80px;
+
+  //media queries for tablet
+  @media (min-width: 768px) {
+  }
+  //media queries for desktop
+  @media (min-width: 1025px) {
+    max-height: 90px;
+    max-width: ${pageMaxWidth};
+    margin: 0 auto;
+    img {
+      margin: 5px;
+    }
+  }
+`;
+
+export const LeftNav = styled.nav`
+  display: flex;
+  justify-content: space-between;
+
+  & > ul {
+    display: none;
+  }
+  & > ul > a {
+    text-decoration: none;
+    color: var(--gray);
+    margin-right: 1.5em;
+    margin-bottom: 10px;
+    font-size: 1.2em;
+  }
+  //media queries for tablet
+  @media (min-width: 768px) {
+    & > ul {
+      display: flex;
+
+      align-items: flex-end;
+    }
+  }
+  //media queries for desktop
+  @media (min-width: 1025px) {
+    min-width: 500px;
+    & > ul {
+      display: flex;
+      align-items: flex-end;
+    }
+  }
+`;
+
+export const RightNav = styled.nav`
+  display: flex;
+  justify-content: stretch;
+  ul {
+    display: none;
+  }
+  //media queries for tablet
+  @media (min-width: 768px) {
+    flex-direction: column;
+    justify-content: flex-end;
+    ul {
+      display: block;
+      margin: 1px 2px;
+    }
+    ul a {
+      font-size: 0.8em;
+      margin-right: 6px;
+      text-decoration: none;
+      color: var(--gray);
+    }
+  }
+  //media queries for desktop
+  @media (min-width: 1025px) {
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+    ul {
+      margin: 3px 4px;
+    }
+  }
+`;

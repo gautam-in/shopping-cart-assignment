@@ -1,0 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200&display=swap');
+
+
+/* adding box shadow on carousel*/
+.carousel-root{
+    box-shadow: var(--boxShadow);
+}
