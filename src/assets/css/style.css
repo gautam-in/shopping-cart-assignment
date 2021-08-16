@@ -1,0 +1,257 @@
+/*--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+--*/
+@import '~@angular/cdk/overlay-prebuilt.css';
+html, body{
+    font-size: 100%;
+	font-family: 'Open Sans', sans-serif;
+	background:#ffffff;
+	min-height: 100%;
+}
+
+
+.mat-form-field-appearance-legacy .mat-form-field-label {
+	color: #777 !important ;
+}
+.mat-form-field-underline{
+	background-color: #777 !important;
+	width: 20em !important;
+}
+.mat-form-field-infix {
+    width: 20em !important;
+}
+.mat-input-element {
+    caret-color: #c2185b !important;
+}
+
+body a:hover{
+	text-decoration:none;
+}
+/*-- header --*/
+
+.btn-danger {
+    color: #fff;
+    background-color: #FA1818;
+    border-color: #FA1818;
+}
+
+
+.w3ls_logo_products_left a span {
+    font-size: .3em;
+    display: block;
+    color: #FA1818;
+}
+.w3ls_logo_products_left1{
+	/* float: left; */
+	position: absolute;
+	left: 30%;
+	top:30%;
+	/* imp */
+}
+.w3ls_logo_products_left1 ul.phone_email li, ul.signin_register li{
+	display:inline-block;
+	color:#212121;
+	font-family: 'Ubuntu', sans-serif;
+/*-- w3layouts --*/
+	margin-right:2em;
+}
+.w3ls_logo_products_left1 ul.phone_email li a, ul.signin_register li a{
+	color:#212121;
+	text-decoration:none;
+}
+.w3ls_logo_products_left1 ul.phone_email li i{
+	padding-right:1em;
+}
+.w3ls_logo_products_left1 ul.special_items li{
+	display:inline-block;
+	padding:1em;
+	font-size: 1vw;
+}
+.w3ls_logo_products_left1 ul.special_items li a{
+	color:#212121;
+	font-family: 'Ubuntu', sans-serif;
+	text-decoration:none;
+}
+
+
+
+.w3ls_vegetables ul li a:hover{
+	color:#FA1818;
+}
+.w3l_banner_nav_right_banner1,.w3l_banner_nav_right_banner,.w3l_banner_nav_right_banner2{
+	min-height:500px;
+	text-align: right;
+	padding:10em 17em 0 0;
+}
+
+.btn-danger.my-cart-btn:focus {
+    outline: none;
+}
+
+a.btn.btn-primary {
+    background-color: #3a5795;
+    font-family: 'Open Sans', sans-serif;
+    color: #fff;
+    border: none;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #84c639;
+    border-color: #84c639;
+    border-radius: 0;
+}
+
+
+.footer{
+	padding:4em 0;
+	background:#212121;
+}
+
+
+
+.head-hr {
+	height: 10px;
+	border: 0;
+	box-shadow: 0 10px 10px -10px #ccc inset;
+	margin-top: 0;
+	margin-bottom: 0 !important;
+  }
+
+
+  ul.signin_register{
+  position: absolute;
+  top: 0;
+  right: 11em;
+  }
+
+.carousel-indicators li {
+	background-color: #999 !important;
+}
+.carousel-indicators .active {
+	background-color: #777 !important;
+}
+
+.carousel-control {
+	opacity:0 !important;
+}
+.container{
+	width:80% !important;
+	height: 21em !important;
+	position: relative !important;
+}
+#baby{
+	width: 100% !important;
+
+}
+.baby-img{
+	position: absolute !important;
+}
+.bold-text{
+	font-size: 2vw;
+	font-weight: bold;
+	display: block;
+	text-align: center;
+	padding: 15px;
+}
+.one-line-text{
+text-align: center;
+font-family: 'Ubuntu';
+font-weight: 500;
+font-size: 1vw;
+}
+.btn-danger {
+    background-color: #e20767f5 !important;
+    border-color: #e20767f5 !important;
+    display: flex !important;
+    margin: auto !important;
+	padding: 0.5em 1em !important;
+    font-size: 1vw !important;
+	border-radius: 0.2em;
+}
+.text-2{
+    position: absolute;
+    top: 15%;
+}
+.text-right{
+	right: 0px;
+	min-width: 26vw;
+	width: auto;
+	
+}
+.right{
+	right: 0 !important;
+}
+.text-rev{
+	left: 0 !important;
+	width: 33vw;
+}
+.img-width{
+	max-width: 35%;
+}
+.img-rev{
+	right: 0;
+}
+
+
+.b-container{
+	height: 100%;
+}
+.head-right{
+	height: 100%;
+}
+.example-overlay {
+	width: 430px;
+	border: solid 1px #ccc;;
+	border-radius: 5px;
+	background: #eee;
+	text-align: center;
+	/* padding: 10px; */
+	margin: 0;
+	height: 85%;
+	bottom: 0;
+	right: 0;
+	/* overflow: auto; */
+  }
+  
+  .example-overlay > li {
+	list-style-type: none;
+	border-bottom: solid 1px #8b8b8b;
+	padding: 8px 0;
+  }
+  
+  .example-overlay > li:last-child {
+	border-bottom: none;
+  }
+  app-overlay{
+	  width: 100%;
+  }
+  .svg-img img{
+	margin-left: 10px;
+	/* height: 40px; */
+    width: 36%;
+  
+}
+
+
+
+@media only screen and (max-width: 1026px) and (min-width: 450px){
+	.example-overlay {
+		width: 100%;
+		height: 92%;
+	}
+}
+
+	@media only screen and (max-width: 450px) {
+		.example-overlay {
+			width: 100%;
+			height: 92%;
+		}
+	
+	
+  }
+
+
