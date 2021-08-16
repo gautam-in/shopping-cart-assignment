@@ -7,7 +7,8 @@
     "stock": 50,
     "category": "5b6899953d1a866534f516e2",
     "sku": "fnw-kiwi-3",
-    "id": "5b6c6a7f01a7c38429530883"
+    "id": "5b6c6a7f01a7c38429530883",
+	"qty": 1
   },
   {
     "name": "Apple - Washington, Regular, 4 pcs",
@@ -17,7 +18,8 @@
     "stock": 50,
     "category": "5b6899953d1a866534f516e2",
     "sku": "fnw-apple-4",
-    "id": "5b6c6aeb01a7c38429530884"
+    "id": "5b6c6aeb01a7c38429530884",
+	"qty": 1
   },
   {
     "name": "Fresho Pomegrante Peeled, 500 gm ",
@@ -27,7 +29,8 @@
     "stock": 50,
     "category": "5b6899953d1a866534f516e2",
     "sku": "fnw-pomegranate-500",
-    "id": "5b6c6b7001a7c38429530885"
+    "id": "5b6c6b7001a7c38429530885",
+	"qty": 1
   },
   {
     "name": "Capsicum - Green, 1 kg",
@@ -37,7 +40,8 @@
     "stock": 50,
     "category": "5b6899953d1a866534f516e2",
     "sku": "fnw-capsicum-1",
-    "id": "5b6c6bdc01a7c38429530886"
+    "id": "5b6c6bdc01a7c38429530886",
+	"qty": 1
   },
   {
     "name": "Tomato - Local, Organically Grown, 500 gm",
@@ -47,7 +51,8 @@
     "stock": 50,
     "category": "5b6899953d1a866534f516e2",
     "sku": "fnw-tomatoes-500",
-    "id": "5b6c6c1801a7c38429530887"
+    "id": "5b6c6c1801a7c38429530887",
+	"qty": 1
   },
   {
     "name": "Sandwich Bread - White, Chemical Free, 400 gm",
@@ -57,7 +62,8 @@
     "stock": 50,
     "category": "5b6899123d1a866534f516de",
     "sku": "bcd-bread-400",
-    "id": "5b6c6d3201a7c38429530888"
+    "id": "5b6c6d3201a7c38429530888",
+	"qty": 1
   },
   {
     "name": "Organic Fresh Paneer, 200 gm ",
@@ -67,7 +73,8 @@
     "stock": 50,
     "category": "5b6899123d1a866534f516de",
     "sku": "bcd-paneer-200",
-    "id": "5b6c6d6201a7c38429530889"
+    "id": "5b6c6d6201a7c38429530889",
+	"qty": 1
   },
   {
     "name": "Epigamia Greek Yogurt - Blueberry, 90 gm Cup",
@@ -77,7 +84,8 @@
     "stock": 50,
     "category": "5b6899123d1a866534f516de",
     "sku": "bcd-yogurt-blue",
-    "id": "5b6c6d9e01a7c3842953088a"
+    "id": "5b6c6d9e01a7c3842953088a",
+	"qty": 1
   },
   {
     "name": "Epigamia Greek Yogurt - Strawberry, 90 gm",
@@ -87,7 +95,8 @@
     "stock": 50,
     "category": "5b6899123d1a866534f516de",
     "sku": "bcd-yogurt-red",
-    "id": "5b6c6dd701a7c3842953088b"
+    "id": "5b6c6dd701a7c3842953088b",
+	"qty": 1
   },
   {
     "name": "Tata Tea Gold Leaf Tea, 500 gm",
@@ -97,7 +106,8 @@
     "stock": 50,
     "category": "5b675e5e5936635728f9fc30",
     "sku": "bev-tata-tea-500",
-    "id": "5b6c6f4a01a7c3842953088c"
+    "id": "5b6c6f4a01a7c3842953088c",
+	"qty": 1
   },
   {
     "name": "Red Label Tea, 500 gm Carton",
@@ -107,7 +117,8 @@
     "stock": 50,
     "category": "5b675e5e5936635728f9fc30",
     "sku": "bev-red-label-500",
-    "id": "5b6c6f8301a7c3842953088d"
+    "id": "5b6c6f8301a7c3842953088d",
+	"qty": 1
   },
   {
     "name": "Bournvita Pro-Health Drink - Chocolate, 2x750 gm",
@@ -117,7 +128,8 @@
     "stock": 50,
     "category": "5b675e5e5936635728f9fc30",
     "sku": "bev-bournvita-750",
-    "id": "5b6c6fbf01a7c3842953088e"
+    "id": "5b6c6fbf01a7c3842953088e",
+	"qty": 1
   },
   {
     "name": "Coca Cola Soft Drink, 2x1.75 L",
@@ -127,7 +139,8 @@
     "stock": 50,
     "category": "5b675e5e5936635728f9fc30",
     "sku": "coke-175",
-    "id": "5b6c6fed01a7c3842953088f"
+    "id": "5b6c6fed01a7c3842953088f",
+	"qty": 1
   },
   {
     "name": "Listerine Mouthwash - Cool Mint, 250 ml",
@@ -137,7 +150,8 @@
     "stock": 50,
     "category": "5b68994e3d1a866534f516df",
     "sku": "bh-listerine-250",
-    "id": "5b6c715f01a7c38429530890"
+    "id": "5b6c715f01a7c38429530890",
+	"qty": 1
   },
   {
     "name": "TRESemme Shampoo - Keratin Smooth With Argan Oil, 580 ml ",
@@ -147,7 +161,8 @@
     "stock": 50,
     "category": "5b68994e3d1a866534f516df",
     "sku": "bh-tresemme-580",
-    "id": "5b6c71a101a7c38429530891"
+    "id": "5b6c71a101a7c38429530891",
+	"qty": 1
   },
   {
     "name": "Dove Intense Repair Shampoo 650ml + Bathing Bar Soap Cream Beauty 100G Pack of 3",
@@ -157,7 +172,8 @@
     "stock": 50,
     "category": "5b68994e3d1a866534f516df",
     "sku": "bh-dove-combo",
-    "id": "5b6c71e601a7c38429530892"
+    "id": "5b6c71e601a7c38429530892",
+	"qty": 1
   },
   {
     "name": "Premier Facial Tissue - Special, 400 pcs",
@@ -167,7 +183,8 @@
     "stock": 50,
     "category": "5b68994e3d1a866534f516df",
     "sku": "bh-tissue-400",
-    "id": "5b6c721d01a7c38429530893"
+    "id": "5b6c721d01a7c38429530893",
+	"qty": 1
   },
   {
     "name": "Close Up Ever Fresh Red Hot Gel Toothpaste, 150 gm",
@@ -177,7 +194,8 @@
     "stock": 50,
     "category": "5b68994e3d1a866534f516df",
     "sku": "bh-closeup-150",
-    "id": "5b6c727801a7c38429530894"
+    "id": "5b6c727801a7c38429530894",
+	"qty": 1
   },
   {
     "name": "Pampers Diapers Pants - Large Size, Monthly Box Pack, New, 128's pack",
@@ -187,7 +205,8 @@
     "stock": 50,
     "category": "5b6899683d1a866534f516e0",
     "sku": "baby-pamper-128",
-    "id": "5b6c746801a7c38429530895"
+    "id": "5b6c746801a7c38429530895",
+	"qty": 1
   },
   {
     "name": "Mamypoko Pants Style Diapers - Large, 62 pcs",
@@ -197,7 +216,8 @@
     "stock": 50,
     "category": "5b6899683d1a866534f516e0",
     "sku": "baby-mamy-62",
-    "id": "5b6c74d101a7c38429530896"
+    "id": "5b6c74d101a7c38429530896",
+	"qty": 1
   },
   {
     "name": "Johnson & Johnson Baby skincare wipes, 20 pcs",
@@ -207,7 +227,8 @@
     "stock": 50,
     "category": "5b6899683d1a866534f516e0",
     "sku": "baby-wipes-20",
-    "id": "5b6c750701a7c38429530897"
+    "id": "5b6c750701a7c38429530897",
+	"qty": 1
   },
   {
     "name": "Nestle Cerelac Stage - 4 Multi Grain & Fruits, 2x300 gm",
@@ -217,7 +238,8 @@
     "stock": 50,
     "category": "5b6899683d1a866534f516e0",
     "sku": "baby-cerelac-300",
-    "id": "5b6c753c01a7c38429530898"
+    "id": "5b6c753c01a7c38429530898",
+	"qty": 1
   },
   {
     "name": "Baby Dove Baby Bar - Rich Moisture, 50 gm",
@@ -227,7 +249,8 @@
     "stock": 50,
     "category": "5b6899683d1a866534f516e0",
     "sku": "baby-dove-50",
-    "id": "5b6c758301a7c38429530899"
+    "id": "5b6c758301a7c38429530899",
+	"qty": 1
   },
   {
     "name": "Johnson's Active Kids Shampoo - Shiny Drops With Argan Oil, 100 ml",
@@ -237,7 +260,8 @@
     "stock": 50,
     "category": "5b6899683d1a866534f516e0",
     "sku": "baby-shampoo-100",
-    "id": "5b6c75e101a7c3842953089a"
+    "id": "5b6c75e101a7c3842953089a",
+	"qty": 1
   },
   {
     "name": "Baby Wipes - Cherry Blossom, 2x80 pcs",
@@ -247,6 +271,7 @@
     "stock": 50,
     "category": "5b6899683d1a866534f516e0",
     "sku": "baby-wipes-red-80",
-    "id": "5b6c761801a7c3842953089b"
+    "id": "5b6c761801a7c3842953089b",
+	"qty": 1
   }
 ]

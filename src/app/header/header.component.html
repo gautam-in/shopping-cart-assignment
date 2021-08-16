@@ -1,0 +1,29 @@
+<div class="logo_products">
+
+    <div class="w3ls_logo_products_left">
+        <a href="#"><img id="img-logo" src="../assets/images/logo.png" /></a>
+
+    </div>
+    <div class="w3ls_logo_products_left1">
+        <ul class="special_items">
+
+            <li><a href="about.html" routerLink="/home">Home</a></li>
+            <li><a href="products.html" routerLink="/products">Products</a></li>
+
+        </ul>
+    </div>
+
+
+    <ul class="signin_register">
+        <li><a href="signin.html" routerLink="/signin">Signin</a></li>
+        <li><a href="register.html" routerLink="/register">Register</a></li>
+    </ul>
+    <button (click)="open()" class="svg-img" type="button">
+
+        <img src="../assets/images/cart.svg" /><span>{{cartItem}} Items</span>
+    </button>
+
+    <div class="clearfix"> </div>
+
+</div>
+<hr class="head-hr">
