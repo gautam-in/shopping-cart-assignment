@@ -1,0 +1,20 @@
+.category_menu {
+  list-style: none;
+  background-color: rgb(223, 223, 223);
+  margin-top: -20px;
+  flex-basis: 25%;
+}
+
+.menu_item {
+  border-bottom: 1px solid rgb(180, 180, 180);
+  padding: 15px 80px 15px 20px;
+  font-size: 14px;
+  color: rgb(112, 112, 112);
+  cursor: pointer;
+  font-weight: 550;
+}
+
+.active_item {
+  background-color: grey;
+  color: white;
+}

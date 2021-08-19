@@ -1,0 +1,53 @@
+.carousal {
+  position: relative;
+  box-shadow: 0 20px 20px -5px #ebebebb2;
+  margin-bottom: 10px;
+}
+
+.offerImg {
+  width: 100%;
+  display: none;
+}
+
+.visible {
+  display: block;
+}
+
+.prevButton,
+.nextButton {
+  position: absolute;
+  top: 50%;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  border: none;
+  padding: 10px;
+}
+
+.nextButton {
+  right: 0;
+}
+
+.dots {
+  position: absolute;
+  display: flex;
+  gap: 10px;
+  bottom: 10%;
+  left: 50%;
+}
+
+.dot {
+  width: 5px;
+  height: 5px;
+  background-color: #cfcfcf;
+  border-radius: 50%;
+}
+
+.dot:hover {
+  background-color: #777777;
+  cursor: pointer;
+}
+
+.active {
+  background-color: #777777;
+}

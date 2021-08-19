@@ -1,0 +1,148 @@
+.mini_cart {
+  width: 35%;
+  height: 80vh;
+  position: fixed;
+  left: 50%;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.cross {
+  font-size: 30px;
+  padding-bottom: 4px;
+  margin-left: auto;
+  cursor: pointer;
+}
+
+.cart_header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: black;
+  color: white;
+  padding: 0 10px;
+}
+
+.no_of_items {
+  font-size: 12px;
+  padding-top: 2px;
+}
+
+.checkout_btn {
+  background-color: #ca0202;
+  color: white;
+  width: 98%;
+  padding: 10px;
+  border: none;
+  display: flex;
+  margin: 0 auto;
+  gap: 10px;
+  font-size: 12px;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.checkout_total {
+  margin-left: auto;
+}
+
+.cart_footer {
+  text-align: center;
+  background-color: white;
+  padding: 10px;
+}
+
+.promo_info {
+  margin-bottom: 10px;
+  font-size: 12px;
+}
+
+.product_section {
+  background-color: #ecebeb;
+  border-bottom: 1px solid #d6d6d6;
+  flex-grow: 1;
+  height: 60%;
+  overflow-y: auto;
+}
+
+.low_price_img {
+  width: 80px;
+  margin-right: 30px;
+}
+
+.lowest_price_section {
+  background-color: white;
+  margin: 10px;
+  padding: 5px 10px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.product_list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 10px 0;
+}
+
+.product_item {
+  background-color: white;
+  display: grid;
+  grid-template-columns: 100px 1fr;
+}
+
+.cart_item_img {
+  margin: 10px;
+  width: 60px;
+  grid-row: 1/3;
+  justify-self: center;
+}
+
+.cart_item_title {
+  align-self: end;
+}
+
+.item_price_container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-right: 20px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.cart_cross {
+  font-size: 18px;
+}
+
+.total {
+  margin-left: auto;
+}
+
+.inc,
+.dec {
+  background-color: #ca0202;
+  height: 15px;
+  width: 15px;
+  border: none;
+  border-radius: 50%;
+  color: white;
+  cursor: pointer;
+}
+
+.empty_cart_section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.empty_cart_section p {
+  font-size: 12px;
+  margin-top: 5px;
+  font-weight: 520;
+}
