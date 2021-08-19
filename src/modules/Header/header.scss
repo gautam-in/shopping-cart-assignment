@@ -1,0 +1,64 @@
+.cart_icon {
+  width: 20px;
+  margin-right: 5px;
+}
+
+.itemsText {
+  margin-left: 5px;
+}
+
+.header a:link {
+  text-decoration: none;
+  color: grey;
+  font-weight: bold;
+}
+
+.shadow {
+  width: 100%;
+  box-shadow: 0 20px 20px -5px #ebebebb2;
+  margin-bottom: 20px;
+}
+
+.header {
+  display: flex;
+  width: 80%;
+  margin: 0 auto;
+  align-items: flex-end;
+  gap: 50px;
+}
+
+.container_right {
+  margin-left: auto;
+}
+
+.container_signIn {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.cart_icon_link {
+  background-color: #ebebebfb;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+  border: none;
+  cursor: pointer;
+}
+
+.home_link {
+  padding-bottom: 10px;
+}
+
+.product_link {
+  padding-bottom: 10px;
+}
+
+.signIn_link {
+  font-size: 0.7rem;
+}
+
+.register_link {
+  font-size: 0.7rem;
+}

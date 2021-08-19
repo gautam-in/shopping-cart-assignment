@@ -1,0 +1,38 @@
+.category {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  padding: 5px;
+  box-shadow: 0 20px 20px -5px #ebebebb2;
+}
+
+.categoryInfo {
+  text-align: center;
+  margin: 0 50px;
+}
+
+.categoryName {
+  margin-bottom: 15px;
+}
+
+.categoryDescription {
+  font-size: 12px;
+  margin-bottom: 20px;
+}
+
+.exploreButton {
+  font-size: 12px;
+  background-color: rgb(117, 19, 19);
+  color: white;
+  border: none;
+  padding: 8px;
+}
+
+.categoryImg {
+  width: 300px;
+}
+
+.rightImg {
+  order: 1;
+}
