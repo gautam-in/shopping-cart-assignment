@@ -1,4 +1,4 @@
-[
+export const categories = [
   {
     "name": "Beverages",
     "key": "beverages",
@@ -34,14 +34,6 @@
     "order": 5,
     "imageUrl": "/static/images/category/baby.png",
     "id": "5b6899683d1a866534f516e0"
-  },
-  {
-    "name": "Seafood",
-    "key": "seafood",
-    "description": "Great place to buy fresh seafood.",
-    "enabled": false,
-    "order": -1,
-    "id": "5b68997d3d1a866534f516e1"
   },
   {
     "name": "Fruits & Vegetables",

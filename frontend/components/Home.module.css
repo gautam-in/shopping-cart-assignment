@@ -1,0 +1,12 @@
+.category
+{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    width: 45%;
+    justify-content: center;
+    align-items: center;
+
+}
