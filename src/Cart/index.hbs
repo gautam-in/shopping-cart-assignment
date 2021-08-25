@@ -1,0 +1,38 @@
+<div class="modal-header">
+    <h5 class="modal-title" id="cartModalLabel">My Cart ({{items}} item)</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+        <i class="fas fa-times"></i>
+    </button>
+</div>
+<div class="modal-body add-to-cart-modal">
+    {{#each products}}
+        <div class="cart-products">
+        <img src={{imageURL}} alt="cart-image" class="cart-image">
+        <div>
+            <p class="fw-bold">{{name}}</p>
+            <div>
+                <span class="badge rounded-pill badge-cart" data-value="dec" data-id={{id}}>-</span>
+                <span>{{incOrDec}}</span>
+                <span class="badge rounded-pill badge-cart" data-value="inc" data-id={{id}}>+</span>
+                <span>x</span>
+                <span>Rs.{{realprice}}</span>
+            </div>
+        </div>
+        <span class="total-cart-price">Rs.{{price}}</span>
+        </div>
+    {{/each}}
+    <div class="row-cheap p-2">
+        <div class="cheapest-tag">
+            <img src="../../static/images/lowest-price.png" alt="lowest-price-logo">
+        <span>You won't find it cheaper anywhere</span>
+    </div>
+    </div>
+</div>
+<div class="modal-footer modal-cart-footer">
+    <span>Promo code can be applied on payment page</span>
+    <button type="button" class="btn shopping-btn">
+        <span>Proceed To checkout</span>
+        <span>Rs.{{totalPrice}}</span>
+        <span class="fas fa-greater-than"></span>
+    </button>
+</div>

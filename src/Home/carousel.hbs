@@ -1,0 +1,32 @@
+<div id="homeBanner" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+        {{#each banners}}
+            {{#if isActive}}
+                <button type="button" data-bs-target="#homeBanner" data-bs-slide-to={{order}} class="active" aria-current="true" aria-label="Slide {{order}}"></button>
+            {{else}}
+                <button type="button" data-bs-target="#homeBanner" data-bs-slide-to={{order}} aria-current="true" aria-label="Slide {{order}}"></button>
+            {{/if}}
+        {{/each}}
+    </div>
+    <div class="carousel-inner">
+        {{#each banners}}
+            {{#if isActive}}
+                <div class="carousel-item active">
+                    <img src={{bannerImageUrl}} class="d-block w-100" alt={{bannerImageAlt}}>
+                </div>
+            {{else}}
+                <div class="carousel-item">
+                    <img src={{bannerImageUrl}} class="d-block w-100" alt={{bannerImageAlt}}>
+                </div>
+            {{/if}}
+        {{/each}}
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#homeBanner" data-bs-slide="prev">
+        <span class="carousel-control-prev-text carousel-slider" aria-hidden="true">PREV</span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#homeBanner" data-bs-slide="next">
+        <span class="carousel-control-next-text carousel-slider" aria-hidden="true">NEXT</span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
