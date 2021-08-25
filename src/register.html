@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="./styles/styles.css" />
+        <title>Sabka Bazar | Register</title>
+    </head>
+    <body>
+        <header>
+            <div>
+                <div class="logo"></div>
+                <nav class="nav-items">
+                    <ul>
+                        <li>
+                            <a href="./home_page.html">Home</a>
+                        </li>
+                        <li>
+                            <a href="./product_listing_page.html">Products</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div>
+                <nav class="nav-items">
+                    <ul>
+                        <li>
+                            <a href="./login.html">SignIn</a>
+                        </li>
+                        <li>
+                            <a href="./register.html">Register</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="cart"></div>
+            </div>
+        </header>
+        <section class="modal-section">
+            <section class="cart-modal"></section>
+        </section>
+        <main id="main" class="register-page">
+            <div class="register-page-info">
+                <h1>Signup</h1>
+                <h5>We do not share your personal details with anyone</h5>
+            </div>
+            <form novalidate id="register-form" class="form" method="POST">
+                <div class="form-control">
+                    <label for="fName">First Name</label>
+                    <input type="text" name="fName" id="fName" />
+                    <small class="hide">Error message</small>
+                </div>
+                <div class="form-control">
+                    <label for="lName">Last Name</label>
+                    <input type="text" name="lName" id="lName" />
+                    <small class="hide">Error message</small>
+                </div>
+                <div class="form-control">
+                    <label for="email">Email</label>
+                    <input type="text" name="email" id="email" />
+                    <small class="hide">Error message</small>
+                </div>
+                <div class="form-control">
+                    <label for="password">Password</label>
+                    <input type="password" name="password" id="password" />
+                    <small class="hide">Error message</small>
+                </div>
+                <div class="form-control">
+                    <label for="confirm-password">Confirm Password</label>
+                    <input type="password" name="password" id="confirm-password" />
+                    <small class="hide">Error message</small>
+                </div>
+                <button type="submit">Signup</button>
+            </form>
+        </main>
+        <footer>
+            <h3>Copyright &copy; Sabka Bazar Grocery Supplies Pvt. Ltd.</h3>
+        </footer>
+        <script src="./js/common.js"></script>
+        <script src="./js/register.js"></script>
+        <script>
+            document.addEventListener("DOMContentLoaded", loadRegisterPage);
+        </script>
+    </body>
+</html>
