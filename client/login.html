@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dosis:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="build/css/global.css" />
+    <link rel="stylesheet" href="build/css/login.css" />
+  </head>
+  <body>
+    <a class="skipnav" href="#main"> Skip to main content </a>
+    <nav class="nav" aria-label="main navigation">
+      <div class="container nav__container">
+        <div class="nav__left">
+          <a href="/" class="nav__brand">
+            <img
+              src="static/images/logo.png"
+              srcset="static/images/logo.png 1x, static/images/logo_2x.png 2x"
+              alt="Company Logo"
+              height="55"
+              width="122"
+              loading="lazy"
+            />
+          </a>
+          <div role="menubar" aria-label="page navigation" class="nav__wrap">
+            <a
+              role="menuitem"
+              aria-haspopup="false"
+              aria-expanded="false"
+              href="/" 
+              class="nav__link"
+            >
+              Home
+            </a>
+            <a
+              role="menuitem"
+              aria-haspopup="false"
+              aria-expanded="false"
+              href="/products.html"
+              class="nav__link"
+            >
+              Products
+            </a>
+          </div>
+        </div>
+        <div class="nav__right">
+          <div role="menubar" aria-label="Account links" class="nav__wrap">
+            <a
+              role="menuitem"
+              aria-haspopup="false"
+              aria-expanded="false"
+              href="/login.html"
+              class="nav__link"
+            >
+              Signin
+            </a>
+            <a
+              role="menuitem"
+              aria-haspopup="false"
+              aria-expanded="false"
+              href="/register.html"
+              class="nav__link"
+            >
+              Register
+            </a>
+          </div>
+          <div aria-live="polite" aria-atomic="true" tabindex="0" class="nav__cart">
+            <i></i>
+            <span>0 Items</span>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <main id="main">
+      <section class="auth">
+        <div class="container">
+          <div class="row">
+            <div class="auth__left">
+              <h1>Login</h1>
+              <p>Get access to your Orders. Wishlist and Recommendations</p>
+            </div>
+            <div class="auth__right">
+              <form action="">
+                <label for="email"></label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  pattern="[/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/;]"
+                  required="true"
+                />
+                <label for="password"></label>
+                <input
+                  type="password"
+                  id="password"
+                  name="password"
+                  pattern="[/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/;]"
+                  required="true"
+                />
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="container container--footer">
+        copyright © 2011 - 2018 Sabka Bazaar Grocery Supplies Pvt. Ltd.
+      </div>
+    </footer>
+    <script src="common.js"></script>
+    <script src="login.js"></script>
+  </body>
+</html>

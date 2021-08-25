@@ -1,0 +1,38 @@
+@import "../styles/variables";
+@import "../styles/placeholders";
+@import "../styles/functions/rem";
+@import "../styles/mixins/breakpoints";
+
+.slider {
+  overflow: hidden;
+}
+.category {
+  &__item {
+    align-items: center;
+    padding: rem(15px);
+    box-shadow: 0px 0px 8px 4px #00000036;
+    @extend %dflex;
+    @extend %rowwrap;
+    margin: 0 0 rem(30px) 0;
+    &:nth-child(even) {
+      @extend %rowrevwrap;
+    }
+    &-left,
+    &-right {
+      max-width: 50%;
+      flex: 0 0 50%;
+    }
+    &-right {
+      @extend %dflex;
+      @extend %colwrap;
+      text-align: center;
+      align-items: center;
+    }
+  }
+  &__title {
+    font-size: rem(20px);
+  }
+  &__title {
+    margin: 0 0 rem(10px) 0;
+  }
+}

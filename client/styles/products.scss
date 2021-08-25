@@ -1,0 +1,118 @@
+@import "../styles/variables";
+@import "../styles/placeholders";
+@import "../styles/functions/rem";
+@import "../styles/mixins/breakpoints";
+.products {
+  &__left {
+    &-in {
+      background: $gray;
+      height: 100%;
+    }
+  }
+  &__price {
+    display: none;
+    @include media-breakpoint-up(xl) {
+      display: inline-flex;
+    }
+  }
+  &__item {
+    margin: 0 0 rem(30px) 0;
+    &__left,
+    &__right {
+      max-width: 50%;
+      flex: 0 0 50%;
+      @include media-breakpoint-up(xl) {
+        max-width: 100%;
+        flex: 0 0 100%;
+      }
+    }
+    &__right {
+      @extend %dflex;
+      flex-flow: column wrap;
+      justify-content: space-between;
+    }
+
+    @include media-breakpoint-up(md) {
+      max-width: 50%;
+      flex: 0 0 50%;
+    }
+    @include media-breakpoint-up(xl) {
+      max-width: 33.33333%;
+      flex: 0 0 33.33333%;
+    }
+
+    &-wrap {
+      background: $lightColor;
+      box-shadow: 0px 0px 8px 4px rgb(0 0 0 / 13%);
+      padding: rem(15px);
+      @extend %dflex;
+      @extend %rowwrap;
+      height: 100%;
+    }
+  }
+  @include media-breakpoint-up(lg) {
+    &__left {
+      max-width: 22%;
+      flex: 0 0 22%;
+    }
+    &__right {
+      max-width: 78%;
+      flex: 0 0 78%;
+    }
+    &__title {
+      min-height: rem(46px);
+    }
+    &__img {
+      margin: 0 0 rem(10px) 0;
+    }
+  }
+
+  &__left,
+  &__right,
+  &__item {
+    padding: 0 rem(15px);
+  }
+  &__title {
+    font-size: rem(20px);
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+  &__img {
+    width: 100%;
+    height: 200px;
+    object-fit: contain;
+  }
+  &__desc {
+    background: $gray;
+    padding: rem(5px);
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    margin: 0;
+    @include media-breakpoint-up(xl) {
+      margin: 0 0 rem(10px) 0;
+    }
+  }
+  &__title {
+    margin: 0 0 rem(10px) 0;
+  }
+  &__bottom {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__left {
+    &-button {
+        width: 100%;
+        padding: rem(10px) rem(15px);
+        margin: 0 0 rem(10px) 0;
+        border: none;
+        background: transparent;
+        text-align: left;
+        border-bottom: 1px solid #d4d4d4;
+        cursor: pointer;
+    }
+  }
+}

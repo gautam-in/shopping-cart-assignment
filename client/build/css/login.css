@@ -1,0 +1,15 @@
+/* colors */
+/* grid variables*/
+/* colors */
+/* grid variables*/
+.auth__left, .auth__right {
+  padding: 0.9375rem;
+}
+@media (min-width: 992px) {
+  .auth__left, .auth__right {
+    max-width: 50%;
+    flex: 0 0 50%;
+  }
+}
+
+/*# sourceMappingURL=login.css.map */

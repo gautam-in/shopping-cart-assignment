@@ -1,0 +1,16 @@
+@import "../styles/variables";
+@import "../styles/placeholders";
+@import "../styles/functions/rem";
+@import "../styles/mixins/breakpoints";
+
+.auth{
+  &__left,
+  &__right{
+    padding: rem(15px);
+    @include media-breakpoint-up(lg) {
+      max-width: 50%;
+      flex: 0 0 50%;
+    }
+      
+  }
+}

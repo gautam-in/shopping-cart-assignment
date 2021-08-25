@@ -1,0 +1,151 @@
+@import "variables";
+@import "functions/rem";
+@import "./mixins/breakpoints";
+@import "./placeholders";
+*,
+::after,
+::before {
+  box-sizing: border-box;
+}
+* {
+  margin-top: 0;
+}
+html {
+  scroll-behavior: smooth;
+}
+body{
+  padding-top:rem(68px);
+
+}
+html,
+body {
+  height: 100%;
+}
+article,
+aside,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section {
+  display: block;
+}
+
+body {
+  font-family: "Dosis", sans-serif;
+  font-size: rem(16px);
+  font-weight: 400;
+  margin: 0;
+  flex-direction: column;
+  display: flex;
+  color: #212121;
+  line-height: 1.5;
+}
+
+main {
+  flex-shrink: 0;
+  padding: rem(30px) 0;
+}
+
+.skipnav {
+  position: absolute;
+  top: rem(-50px);
+  background: $lightColor;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  z-index: 100;
+  padding: rem(10px);
+  background: $primaryMain;
+  color: $lightColor;
+  &:focus {
+    top: 0;
+  }
+}
+
+/* utils*/
+.row {
+  display: flex;
+  flex-flow: row wrap;
+  margin: 0 rem(-15px);
+}
+img {
+  max-width: 100%;
+  vertical-align: middle;
+}
+.btn {
+  padding: rem(8px) rem(16px);
+  border: 1px solid transparent;
+  &--primary {
+    background: $primaryMain;
+    color: $lightColor;
+  }
+  &--mob {
+    @include media-breakpoint-down(xl) {
+      padding: 0.5rem rem(5px);
+    }
+    @include media-breakpoint-up(xl) {
+      display: none;
+    }
+  }
+  &--desktop {
+    display: none;
+    @include media-breakpoint-up(xl) {
+      display: inline-flex;
+    }
+  }
+}
+
+/* header */
+.nav {
+  position: fixed;
+  //position: sticky;
+  top: 0;
+  background: $lightColor;
+  z-index: 9;
+  box-shadow: 0px 0px 8px 4px rgb(0 0 0 / 38%);
+  width: 100%;
+  &__brand {
+    margin-right: rem(15px);
+  }
+  &__left,
+  &__container {
+    @extend %dflex;
+    align-items: center;
+  }
+  &__container {
+    justify-content: space-between;
+  }
+  &__link {
+    padding: rem(7px);
+    text-decoration: none;
+    color: inherit;
+    font-weight: 600;
+  }
+  &__cart {
+    background: $gray;
+    padding: rem(10px);
+  }
+}
+
+/* footer */
+.footer {
+  background: $gray;
+  padding: rem(15px) 0;
+  text-align: center;
+  margin: auto 0 0 0;
+}
+
+/* container */
+.container {
+  padding: 0 15px;
+  margin: 0 auto;
+  @include media-breakpoint-up(lg) {
+    max-width: rem(960px);
+  }
+  @include media-breakpoint-up(xl) {
+    max-width: rem(1140px);
+  }
+}
