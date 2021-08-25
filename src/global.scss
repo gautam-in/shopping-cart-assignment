@@ -1,0 +1,443 @@
+@import "~bootstrap/scss/bootstrap";
+@import 'common';
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    background-color:$color-white;
+    color: #555;
+    font-family: 'Lato', 'Arial', sans-serif;
+    font-weight: 300;
+    font-size: 20px;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+}
+
+.row {
+    margin: 0 auto;
+}
+
+.sabka-bazar-logo {
+    height: 80px;
+    width: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.header-menu {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    height: 100%;
+    align-items: center;
+    padding: 0;
+
+    li:not(li:nth-child(2)) {
+        flex-grow: 1;
+    }
+
+    li:nth-child(2) {
+        flex-grow: 8;
+    }
+
+    li a {
+        color:$color-black;
+        text-decoration: none;
+        font-size: 14px;
+    }
+}
+
+
+.shopping-cart {
+    background-color: $color-lightgray;
+    cursor: pointer;
+    font-size: 14px;
+
+    .shopping-cart-logo {
+        width: 30px;
+        fill: $color-darkpink;
+        height: 30px;
+    }
+}
+
+.cart-count {
+    font-size: 14px;
+    margin-right: 5px;
+}
+
+.shopping-btn {
+    background-color: $color-darkpink;
+    color: $color-white;
+    border-radius: 0;
+    font-size: 15px;
+}
+
+.shopping-btn-full {
+    width: 100%;
+    margin-top: 20px;
+}
+
+nav .row {
+    box-shadow: -2px 1px 5px #ab9595;
+}
+
+
+.modal-cart {
+    .shopping-btn {
+        @extend .shopping-btn-full;
+    }
+}
+.modal-area {
+    align-items: center;
+    overflow-y: auto;
+    height: 65vh;
+}
+
+.add-to-cart-modal {
+    @extend .modal-area;
+    background-color: $color-lightgray;
+    padding: 20px 0;
+}
+
+.modal-body-cart {
+    display: flex;
+    @extend .modal-area;
+}
+.modal-header {
+    background-color: #000;
+    color: $color-white;
+}
+.modal-title {
+    font-size: 15px;
+}
+
+.modal-footer {
+    border: 0;
+}
+
+.btn-close svg {
+    color: $color-white;
+}
+
+.product-image {
+    height: 200px;
+    width: auto;
+}
+
+footer {
+    background-color: #ccc;
+    padding: 20px 20px;
+}
+
+.badge-cart {
+    background-color: $color-darkpink;
+    cursor: pointer;
+}
+
+
+
+.product-image-wrapper {
+    align-self: center;
+}
+
+.category-detalis .row:nth-child(2n + 2) .product-image-wrapper {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.carousel-indicators [data-bs-target] {
+    width: 5px;
+    border-radius: 50%;
+    height: 5px;
+    margin-right: 22px;
+    margin-left: 3px;
+    background-color: #000;
+    border-top: 0;
+    border-bottom: 0;
+    opacity: 0.5;
+}
+
+.carousel-indicators .active[data-bs-target] {
+    opacity: 1;
+}
+
+.home-wrapper,
+.home-details {
+    padding: 20px 0;
+}
+
+.home-details .row:not(.home-details .row:last-child) {
+    margin-bottom: 30px;
+}
+
+.home-details .row:nth-child(2n + 2) {
+    flex-direction: row-reverse;
+}
+
+.home-details .row:nth-child(2n + 2) .product-image-wrapper {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.carousel-banner,
+.home-details .row:not(.home-details .row:last-child) {
+    padding-bottom: 20px;
+    box-shadow: 0 27px 28px -41px #504b4b;
+}
+.carousel-slider {
+    background-color: #695a5abf;
+    font-size: 15px;
+    padding: 5px;
+    border-radius: 2px;
+}
+
+
+.login-form {
+    .form-group {
+        position: relative;
+        padding-top: 16px;
+        margin-bottom: 16px;
+
+        .animated-label {
+            position: absolute;
+            top: 20px;
+            left: 0;
+            bottom: 0;
+            z-index: 2;
+            font-size: 14px;
+            width: 100%;
+            font-weight: 300;
+            opacity: 0.5;
+            cursor: text;
+            transition: 0.2s ease all;
+            margin: 0;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+
+            &:after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 45%;
+                height: 2px;
+                width: 10px;
+                visibility: hidden;
+                background-color: $color-darkpink;
+                transition: 0.2s ease all;
+                -webkit-transition: 0.2s ease all;
+                -moz-transition: 0.2s ease all;
+                -ms-transition: 0.2s ease all;
+                -o-transition: 0.2s ease all;
+            }
+        }
+
+        &.not-empty {
+            .animated-label {
+                top: 0;
+                font-size: 12px;
+            }
+        }
+
+        .form-control {
+            position: relative;
+            z-index: 1;
+            border-radius: 0;
+            border-width: 0 0 1px;
+            border-bottom-color: rgba(0, 0, 0, 0.25);
+            height: auto;
+            padding: 3px 0 5px;
+            font-size: 14px;
+            margin-top: 25px;
+
+            &:focus {
+                box-shadow: none;
+                border-bottom-color: rgba(63, 36, 36, 0.12);
+
+                ~.animated-label {
+                    top: 0;
+                    opacity: 1;
+                    color: $color-darkpink;
+                    font-size: 12px;
+
+                    &:after {
+                        visibility: visible;
+                        width: 100%;
+                        left: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.login-section {
+    padding: 20px 150px;
+
+    p {
+        font-size: 70%;
+    }
+
+    .shopping-btn-full {
+        @extend .shopping-btn-full;
+    }
+}
+.categories-mobile,
+.product-card-sec .shopping-btn-full {
+    display: none;
+}
+.cart-image {
+    width: 15%;
+    height: 15%;
+}
+
+
+.cart-products {
+    display: flex;
+    background-color: #fff;
+    padding: 10px;
+    margin-top: 10px;
+    div {
+        display: inline-block;
+        font-size: 15px;
+        margin-left: 10px;
+        flex-grow: 1;
+        span:nth-child(2) {
+            margin: 5px 8px;
+        }
+        span:nth-child(4) {
+            margin: 5px 12px;
+        }
+    }
+}
+
+
+
+
+/*-----------Responsive design -------- */
+
+
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 480px) {
+    body {
+        font-size: 60%;
+    }
+
+    .sabka-bazar-logo {
+        height: 50px;
+    }
+
+    .header-menu {
+        display: none;
+    }
+    .shopping-btn {
+        font-size: 8px;
+    }
+
+    .product-image {
+        height: 80px;
+    }
+    .carousel-indicators {
+        bottom: -25px;  
+    }
+    .categories-mobile-dropdown {
+        background-color: $color-darkpink;
+        color: #fff;
+        border-radius: 0;
+        border: 0;
+    }
+    .categories-mobile {
+        display: block;
+    }
+    .add-to-cart-modal{
+        height: calc(100vh - 148px);
+    }
+    .cart-products div {
+        font-size: 10px;
+    }
+    .bg-product-list {
+        display: none;
+    }
+    .badge-cart {
+        border-radius: 4px !important;
+    }
+  }
+
+
+@media only screen 
+and (min-device-width: 768px) 
+and (max-device-width: 1024px) {
+.header-menu li:nth-child(2) {
+    flex-grow: 0;
+}
+
+.header-menu li:not(li:nth-child(2)) {
+    flex-grow: 0;
+}
+.add-to-cart-modal{
+    height: calc(100vh - 205px);
+}
+
+.badge-cart {
+    border-radius: 4px !important;
+}
+
+}
+
+
+/*----------------Custom Grid-------------------*/
+
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    [class*="col-"] {
+      flex: 1 0 0%;
+    }
+  }
+
+@media only screen and (min-width: 600px) {
+    /* For tablets: */
+    .col-s-1 {
+        width: 8.33%;
+    }
+    .col-s-2 {
+        width: 16.66%;
+    }
+    .col-s-3 {
+        width: 25%;
+    }
+    .col-s-4 {
+        width: 33.33%;
+    }
+    .col-s-5 {
+        width: 41.66%;
+    }
+    .col-s-6 {
+        width: 50%;}
+    .col-s-7 {
+        width: 58.33%;
+    }
+    .col-s-8 {
+        width: 66.66%;
+    }
+    .col-s-9 {
+        width: 75%;
+    }
+    .col-s-10 {
+        width: 83.33%;
+    }
+    .col-s-11 {
+        width: 91.66%;
+    }
+    .col-s-12 {
+        width: 100%;
+    }
+  }

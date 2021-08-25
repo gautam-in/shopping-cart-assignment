@@ -1,0 +1,39 @@
+<section>
+    <div class="row categories-mobile">
+        <select class="form-select categories-mobile-dropdown" aria-label="categories">
+            {{#each categories}}
+            <option value={{key}}>{{name}}</option>
+            {{/each}}
+        </select>
+    </div>
+    <div class="row">
+        <div class="col col-lg-3 col-sm-3 bg-product-list p-0">
+            <ul class="list-group product-category-list" id="categories">
+                {{#each categories}}
+                <li class="list-group-item category-list" id={{id}}>{{name}}</li>
+                {{/each}}
+            </ul>
+        </div>
+        <div class="col col-lg-9 col-sm-9 col-xs-12 mt-1">
+            <div class="row">
+                {{#each products}}
+                <div class="col-lg-3 col-sm-6 col-xs-12 product-card-sec">
+                    <h5 class="card-title">{{name}}</h5>
+                    <div class="card products-card">
+                        <img src={{imageURL}} class="card-img-product" alt="Product Image">
+                        <div class="card-describe">
+                            <div class="card-body">
+                                <p class="card-text">{{{description}}}</p>
+                            </div>
+                            <div class="card-buy">
+                                <span>MRP Rs.{{price}}</span>
+                                <button class="btn shopping-btn buy-btn" id={{id}}>Buy Now</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {{/each}}
+            </div>
+        </div>
+    </div>
+</section>
