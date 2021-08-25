@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="./styles/styles.css" />
+        <title>Sabka Bazar | Products Listing</title>
+    </head>
+    <body>
+        <header>
+            <div>
+                <div class="logo"></div>
+                <nav class="nav-items">
+                    <ul>
+                        <li>
+                            <a href="./home_page.html">Home</a>
+                        </li>
+                        <li>
+                            <a href="./product_listing_page.html">Products</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div>
+                <nav class="nav-items">
+                    <ul>
+                        <li>
+                            <a href="./login.html">SignIn</a>
+                        </li>
+                        <li>
+                            <a href="./register.html">Register</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="cart"></div>
+            </div>
+        </header>
+        <section class="modal-section">
+            <section class="cart-modal"></section>
+        </section>
+        <main id="main" class="product-listing-page"></main>
+        <footer>
+            <h3>Copyright &copy; Sabka Bazar Grocery Supplies Pvt. Ltd.</h3>
+        </footer>
+        <script src="./js/common.js"></script>
+        <script src="./js/product_listing_page.js"></script>
+        <script>
+            document.addEventListener("DOMContentLoaded", loadProductListingPage);
+        </script>
+    </body>
+</html>

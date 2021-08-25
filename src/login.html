@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="./styles/styles.css" />
+        <title>Sabka Bazar | Login</title>
+    </head>
+    <body>
+        <header>
+            <div>
+                <div class="logo"></div>
+                <nav class="nav-items">
+                    <ul>
+                        <li>
+                            <a href="./home_page.html">Home</a>
+                        </li>
+                        <li>
+                            <a href="./product_listing_page.html">Products</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div>
+                <nav class="nav-items">
+                    <ul>
+                        <li>
+                            <a href="./login.html">SignIn</a>
+                        </li>
+                        <li>
+                            <a href="./register.html">Register</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="cart"></div>
+            </div>
+        </header>
+        <section class="modal-section">
+            <section class="cart-modal"></section>
+        </section>
+        <main id="main" class="login-page">
+            <div class="login-page-info">
+                <h1>Login</h1>
+                <h5>Get access to your orders. Wishlist and Recommendations</h5>
+            </div>
+            <form novalidate id="login-form" class="form" method="POST">
+                <div class="form-control">
+                    <label for="email">Email</label>
+                    <input type="text" name="email" id="email" />
+                    <small class="hide">Error message</small>
+                </div>
+                <div class="form-control">
+                    <label for="password">Password</label>
+                    <input type="password" name="password" id="password" />
+                    <small class="hide">Error message</small>
+                </div>
+                <button type="submit">Login</button>
+            </form>
+        </main>
+        <footer>
+            <h3>Copyright &copy; Sabka Bazar Grocery Supplies Pvt. Ltd.</h3>
+        </footer>
+        <script src="./js/common.js"></script>
+        <script src="./js/login.js"></script>
+        <script>
+            document.addEventListener("DOMContentLoaded", loadLoginPage);
+        </script>
+    </body>
+</html>
