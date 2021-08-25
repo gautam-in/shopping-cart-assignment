@@ -6,6 +6,7 @@
     "enabled": true,
     "order": 3,
     "imageUrl": "/static/images/category/beverages.png",
+    "imageUrlMob": "/static/images/category/beverages_mobile.png",
     "id": "5b675e5e5936635728f9fc30"
   },
   {
@@ -15,6 +16,7 @@
     "enabled": true,
     "order": 2,
     "imageUrl": "/static/images/category/bakery.png",
+    "imageUrlMob": "/static/images/category/bakery_mobile.png",
     "id": "5b6899123d1a866534f516de"
   },
   {
@@ -24,6 +26,7 @@
     "enabled": true,
     "order": 4,
     "imageUrl": "/static/images/category/beauty.png",
+    "imageUrlMob": "/static/images/category/beauty_mobile.png",
     "id": "5b68994e3d1a866534f516df"
   },
   {
@@ -33,6 +36,7 @@
     "enabled": true,
     "order": 5,
     "imageUrl": "/static/images/category/baby.png",
+    "imageUrlMob": "/static/images/category/baby_mobile.png",
     "id": "5b6899683d1a866534f516e0"
   },
   {
@@ -50,6 +54,7 @@
     "enabled": true,
     "order": 1,
     "imageUrl": "/static/images/category/fruits.png",
+    "imageUrlMob": "/static/images/category/fruits_mobile.png",
     "id": "5b6899953d1a866534f516e2"
   }
 ]

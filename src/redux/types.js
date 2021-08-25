@@ -1,0 +1,11 @@
+export const AUTH = 'AUTH';
+export const BANNER = 'BANNER';
+export const GET_CATEGORY = 'GET_CATEGORY';
+export const GET_PRODUCT = 'GET_PRODUCT';
+export const MANAGE_CART = 'MANAGE_CART';
+export const REMOVE_ITEM = 'REMOVE_ITEM';
+export const ADD_QUANTITY = 'ADD_QUANTITY';
+export const REMOVE_QUANTITY = 'REMOVE_QUANTITY';
+export const SHOW_MODAL = 'SHOW_MODAL';
+export const CLEAR_CART = 'CLEAR_CART';
+export const UPDATE_QUANTITY = 'UPDATE_QUANTITY';
