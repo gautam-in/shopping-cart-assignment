@@ -1,0 +1,260 @@
+@media only screen and (max-width: 1024px) {
+  .buy-now {
+    width: auto;
+  }
+  box:after {
+    height: 78%;
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  .main_header {
+    padding: 5px 0px;
+  }
+  box:after {
+    height: 79%;
+  }
+  .wrapper {
+    width: 100%;
+  }
+  .prod-wrapper {
+    flex: 0 49%;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .prod-border {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .prod-titile {
+    flex: 100%;
+  }
+  .prod-img {
+    flex: 50%;
+  }
+  .prod-info {
+    flex: 50%;
+  }
+  .prod-price-container {
+    flex: 100%;
+  }
+  .prod-title {
+    margin-bottom: 30px;
+  }
+  .buy-now {
+    width: 100%;
+    display: inline-block;
+  }
+  .price {
+    position: relative;
+    color: #fff;
+  }
+  .price:before {
+    content: " @ ";
+  }
+  .footer_copyright {
+    flex: 1;
+    font-size: 12px;
+    text-align: center;
+    padding: 5px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .main_header {
+    padding: 0px 0px;
+  }
+
+  .menu {
+    position: absolute;
+    top: 50px;
+    width: 0%;
+    right: 0;
+    z-index: 99;
+    background: #000;
+    text-align: -webkit-center;
+    padding-bottom: 18px;
+    transition: 0.5s;
+  }
+  .menu_one {
+    width: 50%;
+    padding: 6% 0% 0% 0%;
+    display: block;
+  }
+  .menu_two {
+    width: 50%;
+    text-align: unset;
+    float: none;
+    font-size: inherit;
+    margin-top: 5px;
+  }
+  #m_menu {
+    display: block;
+  }
+  .cart-box {
+    bottom: 0;
+    display: block;
+    height: 100%;
+    position: absolute;
+    right: 44px;
+  }
+  .menu ul li {
+    display: block;
+  }
+  .menu ul li a {
+    color: #fff;
+  }
+  .cart {
+    padding: 20px 35px 20px 56px;
+    height: 100%;
+  }
+  .cart-items {
+    display: none;
+  }
+  .cart-icon {
+    top: 16px;
+  }
+  .m-cart-items {
+    display: inline-block;
+    position: absolute;
+    top: -9px;
+    right: 0;
+    background-color: #50dae2;
+    color: #fff;
+    border-radius: 50%;
+    width: 22px;
+    height: 22px;
+    text-align: center;
+    padding: 4px;
+  }
+
+  #m_menu {
+    color: #d00155 !important;
+    font-size: 18px !important;
+    font-weight: normal !important;
+    position: absolute !important;
+    right: 20px !important;
+    left: unset !important;
+    top: 15px !important;
+  }
+
+  .box:after {
+    height: 73%;
+    box-shadow: 0 6px 17px #000000d9;
+  }
+
+  .plp-cat {
+    margin-top: 18px;
+  }
+  .plp-container {
+    display: block;
+  }
+  .left-sidebar ul li {
+    display: none;
+  }
+  .left-sidebar ul .active {
+    display: block;
+    background-color: #d00255;
+    color: #fff;
+    margin-left: 0;
+  }
+  p.left-sidebar ul .active:after {
+    content: " - Remember this";
+  }
+
+  .active i {
+    border: solid #fff;
+    border-width: 0 2px 2px 0;
+    display: inline-block;
+    padding: 6px;
+    float: right;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+  }
+
+  .prod-wrapper {
+    flex: 0 100%;
+    display: block;
+    width: 100%;
+  }
+
+  .prod-img {
+    width: 50%;
+    float: left;
+  }
+
+  .prod-info {
+    float: left;
+    width: 50%;
+    padding: 10px;
+    font-size: 18px;
+    height: 67%;
+  }
+  .prod-price-container {
+    display: block;
+    width: 50%;
+    float: left;
+    margin-top: 10px;
+  }
+  .prod-title {
+    margin-bottom: 30px;
+  }
+  .buy-now {
+    width: 100%;
+    padding: 13px;
+  }
+  .price {
+    position: relative;
+    color: #fff;
+  }
+  .price:before {
+    content: " @ ";
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .prod-info {
+    height: 58%;
+  }
+}
+@media only screen and (max-width: 425px) {
+  .box {
+    min-height: 150px;
+  }
+  .box:after {
+    box-shadow: 0 1px 17px #000000d9;
+  }
+  .footer_copyright {
+    flex: 1;
+    font-size: 12px;
+    text-align: center;
+    padding: 5px;
+  }
+  .prod-info {
+    font-size: 15px;
+    height: 50%;
+  }
+  .buy-now {
+    padding: 10px;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  .prod-info {
+    font-size: 12px;
+    height: 48%;
+  }
+  .buy-now {
+    padding: 8px;
+  }
+}
+@media only screen and (max-width: 320px) {
+  .prod-info {
+    font-size: 12px;
+    height: 40%;
+  }
+  .buy-now {
+    padding: 8px;
+  }
+}
