@@ -6,7 +6,7 @@
 .auth{
   &__left,
   &__right{
-    padding: rem(15px);
+    padding: 0 rem(15px);
     @include media-breakpoint-up(lg) {
       max-width: 50%;
       flex: 0 0 50%;

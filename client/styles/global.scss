@@ -13,9 +13,8 @@
 html {
   scroll-behavior: smooth;
 }
-body{
-  padding-top:rem(68px);
-
+body {
+  padding-top: rem(68px);
 }
 html,
 body {
@@ -96,6 +95,9 @@ img {
       display: inline-flex;
     }
   }
+  &--block {
+    width: 100%;
+  }
 }
 
 /* header */
@@ -127,6 +129,20 @@ img {
   &__cart {
     background: $gray;
     padding: rem(10px);
+  }
+}
+
+/* form */
+.form {
+  &__group {
+    margin-bottom: rem(16px);
+  }
+  &__control {
+    display: block;
+    width: 100%;
+    height: calc(1.5em + 0.75rem + 2px);
+    padding: 0.375rem 0.75rem;
+    border: 1px solid $gray;
   }
 }
 

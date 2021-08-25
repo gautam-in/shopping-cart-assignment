@@ -3,7 +3,7 @@
 /* colors */
 /* grid variables*/
 .auth__left, .auth__right {
-  padding: 0.9375rem;
+  padding: 0 0.9375rem;
 }
 @media (min-width: 992px) {
   .auth__left, .auth__right {
