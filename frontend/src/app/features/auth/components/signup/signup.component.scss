@@ -1,0 +1,37 @@
+section {
+    justify-content: center;
+    margin: 10px;
+    h2 {
+        font-weight: bolder;
+    }
+    article {
+        line-height: 2;
+    }
+    .custom_signup-form {
+        margin-top: 20px;
+        flex-basis: 20%;
+    }
+}
+
+@media (min-width: 768px) {
+    button {
+        width: 100%;
+    }
+}
+
+@media (min-width: 1024px) {
+    section {
+        justify-content: space-around;
+        align-items: baseline;
+        article {
+            line-height: 3.25;
+        }
+        .custom_signup-form {
+            margin-top: 20px;
+            flex-basis: 40%;
+        }
+    }
+    button {
+        width: 100%;
+    }
+}

@@ -1,0 +1,86 @@
+/* You can add global styles to this file, and also import other style files */
+@import "./reset";
+@import "https://fonts.googleapis.com/css?family=Dosis:400,600,700";
+
+/** base styles **/
+body{
+    font-family: 'Dosis';
+}
+/** colors **/
+$color-pink: #d24357;
+$color-blue: #85d8dc;
+$color-dark-pink: #c03e57;
+$color-white: #ffffff;
+$color-grey: #808080;
+$color-black: #000000;
+$color-light-grey: #e2e2e2;
+
+/** style for base elements **/
+.custom_form-group {
+    label{
+        display: block;
+    }
+    .custom_form-input {
+        outline: 0;
+        border-width: 0 0 2px;
+        border-color: $color-blue;
+        width: 100%;
+    }
+    margin-bottom: 20px;
+}
+.custom_flex-container {
+    display: flex;
+    flex-direction: column;
+}
+.custom_btn{
+    border: none;
+    padding: 12px;
+    width: 100%;
+}
+.custom_btn:disabled {
+    opacity: 0.5;
+}
+.custom_btn--pink {
+    color: white;
+    background-color: $color-pink;
+}
+.custom_btn-dark-pink {
+    background-color: $color-dark-pink;
+    color: white;
+}
+.custom_form-error-group{
+    div {
+        margin: 5px 0;
+        color: red;
+    }
+}
+
+/** ngb-carousel overwrites**/
+
+.carousel-control-next-icon,
+.carousel-control-prev-icon {
+   filter: invert(1);
+}
+.carousel-indicators li {
+    width : 12px!important;
+    background-color: black;
+    border-radius: 50% !important;
+    height: 12px;
+  }
+
+@media (min-width: 720px) {
+    .custom_btn {
+        width: 50%;
+    }
+}
+
+/** media query **/
+@media (min-width: 1024px) {
+    .custom_flex-container {
+        display: flex;
+        flex-direction: row;
+    }
+    .custom_btn {
+        width: 25%;
+    }  
+}

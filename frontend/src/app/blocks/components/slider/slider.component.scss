@@ -1,0 +1,8 @@
+@import '/src/styles.scss';
+:host {
+    box-shadow: 0px 5px 5px -6px $color-black;
+    margin-top: 10px;
+    img {
+        width: 100%;
+    }
+}
