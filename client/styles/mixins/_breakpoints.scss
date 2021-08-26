@@ -1,0 +1,30 @@
+@import "../variables";
+@mixin media-breakpoint-up($name) {
+  @if map-has-key($grid-breakpoints, $name) {
+    // Prints a media query based on the value
+    @media (min-width: map-get($grid-breakpoints, $name)) {
+      @content;
+    }
+  }
+
+  // If the key doesn't exist in the map
+  @else {
+    @warn "Unfortunately, no value could be retrieved from `#{$name}`. "
+            + "Available breakpoints are: #{map-keys($breakpoints)}.";
+  }
+}
+
+@mixin media-breakpoint-down($name) {
+  @if map-has-key($grid-breakpoints, $name) {
+    // Prints a media query based on the value
+    @media (max-width: map-get($grid-breakpoints, $name)) {
+      @content;
+    }
+  }
+
+  // If the key doesn't exist in the map
+  @else {
+    @warn "Unfortunately, no value could be retrieved from `#{$name}`. "
+            + "Available breakpoints are: #{map-keys($breakpoints)}.";
+  }
+}
