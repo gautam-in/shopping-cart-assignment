@@ -3,18 +3,18 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ProductsComponent } from './products/products.component';
-import { HomeComponent } from './home/home.component';
-import { HeaderComponent } from './header/header.component';
-import { RegisterComponent } from './register/register.component';
-import { SigninComponent } from './signin/signin.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatFormFieldModule, MatHint, MatLabel } from '@angular/material/form-field';  
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
-import { FooterComponent } from './footer/footer.component';
-import { OverlayModule } from "@angular/cdk/overlay";
-import { OverlayComponent } from './overlay/overlay.component';
+import { ProductsComponent } from './component/products/products.component';
+import { HomeComponent } from './component/home/home.component';
+import { HeaderComponent } from './component/header/header.component';
+import { RegisterComponent } from './component/register/register.component';
+import { SigninComponent } from './component/signin/signin.component';
+import { FooterComponent } from './component/footer/footer.component';
+import { OverlayComponent } from './component/overlay/overlay.component';
+import { OverlayModule } from '@angular/cdk/overlay';
 
 // import "@angular/compiler"
 // MDB Angular Free

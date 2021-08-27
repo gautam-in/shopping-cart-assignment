@@ -3,7 +3,7 @@ import { Overlay, OverlayConfig, OverlayRef } from '@angular/cdk/overlay';
 // import { Overlay, OverlayRef, } from "@angular/cdk/overlay";
 import { ComponentPortal } from "@angular/cdk/portal";
 import { OverlayComponent } from '../overlay/overlay.component';
-import { SibService } from '../sib.service';
+import { SibService } from 'src/app/sib.service';
 
 
 @Component({

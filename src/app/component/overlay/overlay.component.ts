@@ -1,5 +1,5 @@
 import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
-import { SibService } from '../sib.service';
+import { SibService } from 'src/app/sib.service';
 
 @Component({
   selector: 'app-overlay',

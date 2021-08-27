@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import category from '../_files/categories/index.get.json'
-import banners from '../_files/banners/index.get.json'
+import category from '../../server/categories/index.get.json'
+import banners from '../../server/banners/index.get.json'
 
 
 @Component({

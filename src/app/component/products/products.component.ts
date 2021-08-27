@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { SibService } from '../sib.service';
-import products from '../_files/products/index.get.json'
+import { SibService } from 'src/app/sib.service';
+import products from '../../server/products/index.get.json'
 
 @Component({
   selector: 'app-products',

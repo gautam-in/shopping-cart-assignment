@@ -1,10 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ProductsComponent } from './products/products.component';
-import { HomeComponent } from './home/home.component';
-import { HeaderComponent } from './header/header.component';
-import { RegisterComponent } from './register/register.component';
-import { SigninComponent } from './signin/signin.component';
+import { HomeComponent } from './component/home/home.component';
+import { ProductsComponent } from './component/products/products.component';
+import { RegisterComponent } from './component/register/register.component';
+import { SigninComponent } from './component/signin/signin.component';
 // import { OverlayComponent } from './overlay/overlay.component';
 
 const routes: Routes = [
