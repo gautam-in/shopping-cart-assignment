@@ -1,0 +1,40 @@
+<div class="banner">
+  <div id="mySidenav" class="side-nav">
+    <ul>
+      <li><a class="active">Fruits & vegetables <i class='fas fa-angle-down' (click)="openNav()"
+            style='font-size:36px'></i></a> </li>
+      <li><a href="#news">Beverages Cakes and dairy</a></li>
+      <li><a href="#Beverages">Beverages</a></li>
+      <li><a href="#beauty">Beauty and Hygiene</a></li>
+      <li><a href="#news">Baby care</a></li>
+      <li><a>Contact <i class='fas fa-angle-up arrow-up' (click)="closeNav()" style='font-size:36px'></i></a></li>
+    </ul>
+  </div>
+
+<div class="grid-container">
+    <!-- <div class="column" > -->
+    <div class="card" *ngFor="let item of productList; let i=index;">
+
+      <span>
+        <h4>{{item.name}}</h4>
+      </span>
+      <div class="responsive-grid">
+        <div class="r-1">
+          <img id="img" src="../../assets{{item.imageURL}}" alt="img">
+
+        </div>
+        <div class="r-2">
+          <p class="description">{{item.description}}</p>
+
+          <span class="item-price">MRP Rs.{{item.price}}</span>
+
+          <button type="button" (click)="addToCart(item)" class="btn new-btn btn-danger ">Buy now <span id="tab-text">@
+              Rs.{{item.price}}</span></button>
+        </div>
+      </div>
+      <button type="button" (click)="addToCart(item)" class="btn btn-danger tab-btn">Buy now <span id="tab-text-1">@
+          Rs.{{item.price}}</span></button>
+    </div>
+  </div>
+  <hr class="new2">
+</div>

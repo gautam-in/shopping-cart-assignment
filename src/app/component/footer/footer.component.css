@@ -1,0 +1,33 @@
+/* No CSS */
+
+/*# sourceMappingURL=footer.component.css.map */
+
+footer {
+    height: 3em;
+    background-color: #ccccccc2;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+footer p {
+    padding: 10px;
+    font-weight: 600;
+    font-size: 1vw;
+}
+
+@media only screen and (max-width: 1026px) and (min-width: 500px) {
+    footer {
+        height: 2em;
+    }
+    footer p {
+        padding: 6px;
+        font-size: 2vw;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    footer p {
+        font-size: 3vw;
+    }
+}

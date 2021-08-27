@@ -1,0 +1,64 @@
+/* No CSS */
+
+/*# sourceMappingURL=home.component.css.map */
+
+.hr {
+    border: 0;
+    transform: translate(0px, -30px);
+    height: 5px;
+    width: 60%;
+    box-shadow: 0 3px 3px -5px #ccc inset;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), #ccc, rgba(0, 0, 0, 0));
+}
+
+/* Tablet */
+
+@media only screen and (max-width: 1026px) and (min-width: 500px) {
+    .container {
+        height: 14em !important;
+    }
+    .carousel-indicators {
+        top: 160px;
+    }
+    .carousel-indicators li {
+        margin: 5px;
+        height: 7px;
+        width: 7px;
+    }
+    .img-rev {
+        top: 7%;
+    }
+    .hr {
+        height: 3px;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .container {
+        height: 8em !important;
+        padding: 5px;
+    }
+    .bold-text {
+        padding: 4px;
+    }
+    .one-line-text {
+        margin: 0;
+    }
+    .btn {
+        transform: translate(0px, -14px);
+    }
+    .carousel-indicators {
+        top: 80px;
+    }
+    .carousel-indicators li {
+        margin: 5px;
+        height: 7px;
+        width: 7px;
+    }
+    .img-rev {
+        top: 18%;
+    }
+    .hr {
+        height: 2px;
+    }
+}

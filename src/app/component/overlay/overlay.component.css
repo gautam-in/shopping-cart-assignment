@@ -1,0 +1,236 @@
+.main {
+    width: 100%;
+    height: 100%;
+}
+
+.header {
+    background-color: black;
+    /* width: 100%; */
+    padding: 15px;
+    width: 430px;
+    color: #fff;
+    font-weight: bold;
+    border-bottom: 1px solid #ccc;
+    height: 8%;
+    font-size: medium;
+    text-align: left;
+    position: fixed;
+    z-index: 1;
+}
+
+.header-color {
+    background-color: white;
+    color: black;
+}
+
+.main-container {
+    position: relative;
+    overflow: auto;
+    top: 9%;
+    height: 90%;
+}
+
+.emptyCart-text {
+    position: relative;
+    top: 25%;
+}
+
+.emptyCart-text>p {
+    font-weight: bold;
+}
+
+.display {
+    display: none;
+}
+
+.header>span {
+    font-weight: 100;
+}
+
+.close {
+    color: #000;
+    opacity: 1;
+}
+
+.row-1 {
+    background-color: #fff;
+    height: 8em;
+    padding: 5px;
+    margin-top: 10px;
+}
+
+.row-1>img {
+    width: 22%;
+    float: left;
+}
+
+h3 {
+    font-weight: bolder;
+    /* margin-right: 45px; */
+    font-size: 15px;
+    text-align: left;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.row-1 .circle {
+    border-radius: 50%;
+    background-color: #e20767f5;
+    padding: 3px 10px;
+    color: white;
+    position: relative;
+    /* font-weight: bold; */
+    margin: 8px 10px;
+    font-size: 20px;
+    border-color: transparent;
+}
+
+.row-1>span {
+    float: left;
+    font-weight: 500;
+}
+
+.btn-overlay {
+    width: 96%;
+    padding-left: 32% !important;
+    border-radius: 1px;
+}
+
+.row-2 {
+    background-color: #fff;
+    margin-bottom: 70px;
+    padding: 10px;
+}
+
+/* .totalamt{
+    margin-left: 5vw;
+} */
+
+#elseBlock {
+    text-align: center !important;
+}
+
+#totalamt {
+    position: absolute;
+    right: 10%;
+}
+
+
+#r-arrow {
+    position: absolute;
+    right: 5%;
+}
+
+.subtotal {
+    margin-left: 1em;
+    margin-right: 5em;
+    width: 50px;
+    display: inline-block;
+}
+
+.b-container {
+    background-color: #fff;
+    position: absolute;
+    height: 75px;
+    margin: 0 auto;
+    width: 100%;
+    
+}
+.but-position{
+    position: relative !important;
+    top: 25% !important;
+}
+
+.b-container>p {
+    margin: auto;
+    height: 30px;
+    font-size: 1vw;
+}
+
+.row-2>img {
+    width: 25%;
+    margin-right: 30px;
+}
+
+.row-2>p {
+    display: inline;
+}
+
+
+@media only screen and (max-width: 1026px) and (min-width: 500px) {
+    .row-1 {
+        height: 15em;
+        margin-top: 3%;
+    }
+    .overlay-container {
+        width: 100%;
+    }
+    .header {
+        height: 6%;
+        width: 100%;
+        font-size: 3vw;
+    }
+    .btn-overlay {
+        /* height: 60%; */
+        font-size: 2.5vw !important;
+        padding-left: 32% !important;
+    }
+    .main-container {
+        top: 7%;
+    }
+    .b-container>p {
+        font-size: 2vw;
+    }
+    .row-1 .circle {
+        padding: 10px 16px;
+        margin: 20px 20px;
+        font-size: 25px !important;
+    }
+    .subtotal {
+        margin-left: 1em;
+        margin-right: 9em;
+    }
+    .row-1>span {
+        font-size: 2.5vw;
+        top: 15%;
+        position: relative;
+    }
+    .close {
+        font-size: 3vw;
+    }
+    h3{
+        font-size: 20px;
+    }
+    .row-1 > img{
+        top: 15%;
+        position: relative;
+        width: 22%;
+        height: 12em;;
+    }
+    .b-container{
+        height: 100px;
+    }
+    
+}
+
+@media only screen and (max-width: 500px) {
+    .header {
+        width: 100%;
+        height: 6%;
+    }
+    .main-container {
+        top: 8%;
+    }
+    .btn-overlay {
+        /* height: 60%; */
+        padding-left: 32% !important;
+        font-size: 3.5vw !important;
+    }
+    .b-container>p {
+        font-size: 2vw;
+    }
+    .subtotal {
+        margin-right: 3em;
+    }
+}

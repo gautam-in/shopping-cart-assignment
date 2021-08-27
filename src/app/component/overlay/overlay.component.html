@@ -1,0 +1,42 @@
+<div class="main">
+    <div class="header" [ngClass]="{'header-color':overlayCount > 0}">My Cart <span>({{overlayCount}} item)</span>
+        <button (click)="onClose()" type="button" class="close" [ngStyle]="{'color':overlayCount >0 ? 'black':'white'}"
+            aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="main-container" [ngStyle]="{'background-color':overlayCount >0 ? '':'white'}">
+
+        <!-- <div class="overlay-container"> -->
+        <div class="row-1" *ngFor="let item of getCartDetails">
+            <img src="../../assets{{item.imageURL}}" alt="img" />
+            <h3>{{item.name}}</h3>
+            <Span>
+                <button type="button" (click)="countMinus(item.id,item.qty)" class="circle">-</button>
+                <span>{{item.qty}}</span> <button type="button" id="inc" (click)="countPlus(item.id, item.qty)"
+                    class="circle">+</button> <span>x</span> <span class="subtotal">Rs.{{item.price}}</span>
+                <span class="totalamt">{{item.price * item.qty |number}}</span>
+            </Span>
+
+        </div> <br>
+
+        <div class="row-2" [ngClass]="{'display':overlayCount ==0}">
+            <img src="../../assets/static/images/lowest-price.png">
+            <p>You won't fint it cheaper anywhere</p>
+        </div>
+        <div class="emptyCart-text" [ngClass]="{'display':overlayCount >0}">
+            <p>No items in your Cart</p>
+            <span>Your favourite items are just a click away</span>
+        </div>
+
+
+        <!-- </div> -->
+        <div class="b-container" [ngClass]="{'but-position':overlayCount >0}" [ngStyle]="{'bottom':overlayCount >0 ? '':'0px'}">
+            <p [ngClass]="{'display':overlayCount ==0}">Promo code can be applied on the payment page</p>
+            <button type="button" class="btn btn-danger btn-overlay"><span
+                    *ngIf="overlayCount >0; else elseBlock">Proceed to Check-out<span
+                        id="totalamt">Rs.{{total}}</span><span id="r-arrow">></span></span></button>
+            <ng-template style="text-align: center;" #elseBlock>Start shopping</ng-template>
+        </div>
+    </div>
+</div>
