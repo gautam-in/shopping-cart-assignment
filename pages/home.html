@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sasta Bazzar</title>
+    <link rel="stylesheet" href="static/css/global.css">
+    <link rel="stylesheet" href="static/css/header.css">
+    <link rel="stylesheet" href="static/css/home.css">
+</head>
+<body>
+    <div>
+        <header class="header">
+            <div class="container">
+                <div class="header--left">
+                    <h1 class="header__logo">
+                        <img src="static/images/logo.png" alt="Sasta Bazzar">
+                    </h1>
+                </div>
+                <div class="header--right">
+                    <nav class="nav">
+                        <ul class="nav__list">
+                            <li class="active">
+                                <a href="/">Home</a>
+                            </li>
+                            <li>
+                                <a href="/productList">Products</a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <div>
+                        <div class="link">
+                            <div class="link__top">
+                                <a href="#">SignIn</a>
+                                <a href="#">Register</a>
+                            </div>
+                            <div class="link__bottom">
+                                <a href="javascript:void(0)" class="link__bottom__tItems" onclick="showMiniCart()">
+                                    <span></span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="minicart" class="minicart">
+                    <div class="minicart__header">
+                        <label></label>
+                        <a href="javascript:void(0)" onclick="off();hideMiniCart();">X</a>
+                    </div>
+                    <div class="minicart__content">
+                        
+                    </div>
+                    <div class="minicart__footer">
+                        <button class="btn btn-primary btn-big">Proceed to checkout</button>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <content class="container">
+            <div id="productCarousel" class="container">
+                <ul class="productCarousel__container productCarousel__container-transition">
+                    
+                </ul>
+                <ul class="productCarousel__indicator"></ul>
+            </div>
+            <div id="categories" class="container">
+                <!--<div class="categotyItem">
+                    <div class="categotyItem__img">
+                        <img src="" />
+                    </div>
+                    <div class="categoryItem__info">
+                        <h5 class="categoryItem__info__name"></h5>
+                        <p class="categoryItem__info__desc"></p>
+                        <button class="btn btn-primary"></button>
+                    </div>
+                </div>-->
+            </div>
+        </content>
+        <footer></footer>
+    </div>
+    <div class="overlay" id="overlay" onclick="off();hideMiniCart();"></div>
+    <script src="static/js/carousel.js"></script>
+    <script src="static/js/utils.js"></script>
+    <script src="static/js/home.js"></script>
+    <script src="static/js/cart.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        displayCategories();
+        displayCarousel();
+        totalItemsAndCost();
+      });
+    </script>
+</body>
+</html>
