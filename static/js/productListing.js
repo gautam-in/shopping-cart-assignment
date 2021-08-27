@@ -78,17 +78,22 @@ function productItem(item){
     productTitle.innerHTML = item.name;
     productItemContainer.append(productTitle);
 
+    let productDetails = document.createElement("div");
+    productDetails.setAttribute("class", "productCard__item__details");
+
     let productImg = document.createElement("img");
     productImg.setAttribute("src", item.imageURL);
     productImg.setAttribute("alt", item.name);
     productImg.setAttribute("height", "150px");
 
-    productItemContainer.append(productImg);
+    productDetails.append(productImg);
 
     let productDesc = document.createElement("p");
     productDesc.setAttribute("class", "productCard__item__desc");
     productDesc.innerHTML = item.description;
-    productItemContainer.append(productDesc);
+    productDetails.append(productDesc);
+
+    productItemContainer.append(productDetails);
 
     let productItemAction = document.createElement("div");
     productItemAction.setAttribute("class", "productCard__item__action");
@@ -102,7 +107,11 @@ function productItem(item){
     addToCartBtn.setAttribute("class", "btn btn-primary");
     addToCartBtn.addEventListener("click", addToCart);
     addToCartBtn.setAttribute("data-id", `${item.id}`);
+    let addToCartPriceBtn = document.createElement("span");
+    addToCartPriceBtn.setAttribute("class", "productCard__item__price--btn")
+    addToCartPriceBtn.innerHTML = `@ RS.${item.price}`;
     addToCartBtn.innerHTML = "Buy now";
+    addToCartBtn.append(addToCartPriceBtn);
     productItemAction.append(addToCartBtn);
 
     productItemContainer.append(productItemAction);

@@ -96,3 +96,31 @@ nav {
     background: #fff;
     padding: 20px;
 }
+
+@media only screen and (min-width: 320px) and (max-width: 1023px) {
+    .minicart{
+        width: 100%;
+        height: auto;
+    }
+    .minicart__header{
+        background: #ccc;
+    }
+}
+@media only screen and (min-width: 320px) and (max-width: 699px) {
+    header .container{
+        justify-content: space-between;
+    }
+    nav, .link__top{
+        display: none;
+    }
+    .header--right, .header--left{
+        display: block;
+        flex: none;
+    }
+    .header__logo img{
+        width: 100px;
+    }
+    .minicart{
+        top:53px;
+    }
+}

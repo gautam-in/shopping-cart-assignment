@@ -59,8 +59,9 @@ function categoryItem(item){
     courseDesc.innerHTML = item.description;
     catItemInfoDiv.append(courseDesc);
 
-    let goToCategory = document.createElement("button");
+    let goToCategory = document.createElement("a");
     goToCategory.setAttribute("class", "btn btn-primary btn-big");
+    goToCategory.setAttribute("href", "/productList");
     goToCategory.innerHTML = `Explore ${item.key}`;
     catItemInfoDiv.append(goToCategory);
 
