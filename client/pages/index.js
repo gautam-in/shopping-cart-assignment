@@ -1,3 +1,3 @@
-export default function Home() {
-  return <div>Home Page</div>;
-}
+import RegisterPage from "./register";
+
+export default RegisterPage;

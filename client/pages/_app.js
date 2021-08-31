@@ -1,6 +1,7 @@
 import Header from "../components/molecules/Header";
 import Footer from "../components/molecules/Footer";
 import GlobalStyles from "../global/styles/global";
+import SectionWrapper from "../components/atoms/SectionWrapper";
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -8,7 +9,9 @@ function MyApp({ Component, pageProps }) {
       <GlobalStyles />
       <Header />
       <main>
-        <Component {...pageProps} />
+        <SectionWrapper>
+          <Component {...pageProps} />
+        </SectionWrapper>
       </main>
       <Footer />
     </>

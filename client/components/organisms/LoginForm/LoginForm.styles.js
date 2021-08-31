@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { sizes } from "../../../global/styles/sizes";
 
-export const RegistrationFormWrapper = styled.div`
+export const LoginFormWrapper = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   padding: 0 72px;
@@ -18,7 +18,7 @@ export const RegistrationFormWrapper = styled.div`
   }
 `;
 
-export const RegistrationFormHeading = styled.section`
+export const LoginFormHeading = styled.section`
   h1 {
     margin-top: 0;
   }

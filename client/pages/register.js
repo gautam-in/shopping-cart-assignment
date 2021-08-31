@@ -1,3 +1,5 @@
-const RegisterPage = () => <div>Register Page</div>;
+import RegistrationForm from "../components/organisms/RegistrationForm";
+
+const RegisterPage = () => <RegistrationForm />;
 
 export default RegisterPage;

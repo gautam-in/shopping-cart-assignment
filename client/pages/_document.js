@@ -14,7 +14,18 @@ class MyDocument extends Document {
   render() {
     return (
       <Html lang="en">
-        <Head />
+        <Head>
+          <meta
+            name="description"
+            content="Online Grocery Shopping : Choose from a wide range of grocery, baby care products, personal care products, fresh fruits and vegetables online. Pay Online and Avail exclusive discounts on various products @ India's Best Online Grocery store.
+✔ Best Prices and Offers ✔ Cash on Delivery ✔ Easy Returns"
+          />
+
+          <title>
+            Sabka Bazaar | Online Grocery Store: Buy Online Grocery from India's
+            Best Online Supermarket
+          </title>
+        </Head>
         <body>
           <Main />
           <NextScript />

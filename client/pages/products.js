@@ -1,4 +1,5 @@
 import axios from "../axios.config";
+import ProductList from "../components/molecules/ProductList";
 import { FETCH_PRODUCTS } from "../global/services";
 
 export async function getServerSideProps() {
@@ -7,9 +8,10 @@ export async function getServerSideProps() {
     props: { data },
   };
 }
+
 const ProductPage = ({ data }) => {
   console.log({ data });
-  return <div>Product Page</div>;
+  return <ProductList productsList={data} />;
 };
 
 export default ProductPage;
