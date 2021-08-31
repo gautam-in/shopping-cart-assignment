@@ -1,0 +1,32 @@
+#productCarousel {
+    text-align: center;
+    overflow: hidden;
+    margin: 20px 0;
+}
+.productCarousel__container {
+    display: flex;
+    overflow: hidden;
+}
+.productCarousel__container-transition {
+	transition: transform 1s ease-in-out;
+}
+.productCarousel__container .productCarousel__container__item{
+    width: 100%;
+	flex-shrink: 0;
+}
+.productCarousel__indicator{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+.productCarousel__indicator__dots > span {
+    display: inline-block;
+    height: 5px;
+    width: 5px;
+    background: #ccc;
+    border-radius: 50%;
+    margin-left: 5px;
+}
+.productCarousel__indicator__dots.active > span{
+    background: #000;
+}
