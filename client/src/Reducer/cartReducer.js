@@ -9,6 +9,7 @@ const cartReducer = (state = initialState, action) => {
     return initialState;
   }
   switch (action.type) {
+    
     case ADD_ITEM: {
       const newItems = [...state.itemsAdded];
       newItems.push(action.payload);

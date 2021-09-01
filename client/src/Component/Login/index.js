@@ -6,6 +6,7 @@ import "./index.scss";
 const SignIn = () => {
   const { toggleUserAuthentication } = useContext(AuthContext);
   const history = useHistory();
+  
   const initialState = {
     email: "",
     password: "",
@@ -18,27 +19,35 @@ const SignIn = () => {
     var regex = "^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$";
     const email = localStorage.getItem("email");
     const pwd = localStorage.getItem("password");
-
     if (!email && !pwd) {
-      if (userDetails.email.match(regex) && userDetails.email.length>1 && userDetails.password>6&&userDetails.email === email && userDetails.password === pwd) {
+      setValidation("please register first");
+    } else if (!pwd) {
+      setValidation("please enter the password");
+    } else if (!email) {
+      setValidation("please enter the email");
+    } else {
+      if (
+        userDetails.email.match(regex) &&
+        userDetails.email.length > 1 &&
+        userDetails.password.length > 6 &&
+        userDetails.email === email &&
+        userDetails.password === pwd
+      ) {
         toggleUserAuthentication();
         localStorage.setItem("status", "logged-in");
         history.push("/");
       } else {
         setValidation("Invalid credentials");
       }
-    } else {
-      setValidation("please register first")
     }
   };
 
   return (
     <div className="sign-in">
       <aside>
-        <h1>Login</h1>
-        <p>Get access to your Orders, Wishlist and Recommendations</p>
-      </aside>
-
+        <h1> Login </h1>{" "}
+        <p> Get access to your Orders, Wishlist and Recommendations </p>{" "}
+      </aside>{" "}
       <section className="register-form">
         <form onSubmit={onFormSubmit}>
           <div class="form__group field">
@@ -51,11 +60,14 @@ const SignIn = () => {
               required
               value={userDetails.email}
               onChange={(event) =>
-                setUserDetails({ ...userDetails, email: event.target.value })
+                setUserDetails({
+                  ...userDetails,
+                  email: event.target.value,
+                })
               }
-            />
-            <label className="form__label">Email</label>
-          </div>
+            />{" "}
+            <label className="form__label"> Email </label>{" "}
+          </div>{" "}
           <div class="form__group field">
             <input
               type="password"
@@ -65,22 +77,26 @@ const SignIn = () => {
               id="password"
               required
               onChange={(event) =>
-                setUserDetails({ ...userDetails, password: event.target.value })
+                setUserDetails({
+                  ...userDetails,
+                  password: event.target.value,
+                })
               }
-            />
-            <label className="form__label">Password</label>
-          </div>
+            />{" "}
+            <label className="form__label"> Password </label>{" "}
+          </div>{" "}
           <p
             style={{
               color: "red",
               textAlign: "center",
             }}
           >
-            {validation}
-          </p>
-          <button className="SignIn-btn">Login</button>
-        </form>
-      </section>
+            {" "}
+            {validation}{" "}
+          </p>{" "}
+          <button className="SignIn-btn"> Login </button>{" "}
+        </form>{" "}
+      </section>{" "}
     </div>
   );
 };

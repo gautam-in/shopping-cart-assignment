@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
+
 import { getBanner } from "../../Action/HomeBanner.js";
 import { getCategory } from "../../Action/HomeCategory.js";
+
 import "./index.scss";
 
 const Home = () => {
@@ -70,7 +72,6 @@ const Home = () => {
                     : ""
                 }
               />
-
               <div className="banner-dots">
                 {banner.map((item) => (
                   <div

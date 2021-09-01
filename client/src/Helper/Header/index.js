@@ -1,23 +1,19 @@
-import React, { useContext,useState,useEffect } from "react";
-import "./index.scss";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import AuthContext from "../../Auth.jsx";
-import Cart from '../../Component/Cart/index'
-const Header = (props) => {
-  // const [cart, setCart] = useState(false)
+import Cart from "../../Component/Cart/index";
+
+import "./index.scss";
+
+const Header = () => {
   const [cartOpen, setCartOpen] = useState(false);
-  const { userAuthentication, toggleUserAuthentication } = useContext(
-    AuthContext
-  );
+  const { userAuthentication, toggleUserAuthentication } =
+    useContext(AuthContext);
   const cartItemsCount = useSelector(
     (state) =>
       state.cart && state.cart.itemsAdded && state.cart.itemsAdded.length
   );
-  // useEffect(() => {
-  //   props.openCart(cart)
- 
-  // }, [cart])
 
   const toggleCart = () => {
     setCartOpen(!cartOpen);
@@ -65,45 +61,20 @@ const Header = (props) => {
             </ul>
           )}
           <div className="my-cart" onClick={toggleCart}>
-            <Link >
+            <Link>
               <img
                 className="cart-icon"
                 src="/static/images/cart.svg"
                 alt="cart image"
               />
-              <span className="number-of-items" >{cartItemsCount} items</span>
- 
+              <span className="number-of-items">{cartItemsCount} items</span>
             </Link>
           </div>
-                       {/* {cartOpen && <div onClick={toggleCart} className="backdrop"></div>} */}
-            {cartOpen && (
-              <div className="cart-box">
-                <Cart
-                  handleClose={toggleCart}
-                  // updateCart={setCart}
-                  // cartItems={cart}
-                />
-              </div>
-            )}
-                    {/* <div className="cart-icon" onClick={toggleCart}>
-                    <img
-                // className="cart-icon"
-                src="/static/images/cart.svg"
-                alt="cart image"
-                onClick={() =>{setCart(true)}}
-              />
-            <span className="item">{cartItemsCount} items</span>
-            {cartOpen && <div onClick={toggleCart} className="backdrop"></div>}
-            {cartOpen && (
-              <div className="cart-box">
-                <CartComponent
-                  handleClose={toggleCart}
-                  updateCart={setCart}
-                  cartItems={cart}
-                />
-              </div>
-            )}
-          </div> */}
+          {cartOpen && (
+            <div className="cart-box">
+              <Cart handleClose={toggleCart} />
+            </div>
+          )}
         </div>
       </nav>
     </header>

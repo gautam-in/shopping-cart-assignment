@@ -101,11 +101,13 @@ $light-gray:#c8cbce61;
           height: 100%;
           width: 700px;
           background-color: #fff;
-          
           position: absolute;
           top: 100%;
           right: 0;
-          z-index: 1;
+          z-index: 999;
+          opacity: 0;
+          visibility: visible;
+
         }
       }
     }

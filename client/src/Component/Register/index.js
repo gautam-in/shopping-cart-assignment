@@ -16,12 +16,32 @@ const Register = () => {
     statusErrorMessage: "",
     statusSuccessMessage: "",
   });
-
+  function isEmpty(obj) {
+    let isEmpty = false;
+    const type = typeof obj;
+    isEmpty = isEmpty || !obj;
+    isEmpty = isEmpty || type === "undefined"; // if it is undefined
+    isEmpty = isEmpty || obj === null; // if it is null
+    isEmpty = isEmpty || (type === "string" && obj.trim() === ""); // if the string is empty or only have spaces
+    isEmpty = isEmpty || obj === false || obj === 0; // if boolean value returns false
+    isEmpty = isEmpty || (Array.isArray(obj) && obj.length === 0); // if array is empty
+    isEmpty = isEmpty || (type === "object" && Object.keys(obj).length === 0); // if object is empty
+    return isEmpty;
+  }
   const onFormSubmit = (e) => {
     e.preventDefault();
     var regex = "^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$";
-    if (userDetails.firstName && userDetails.lastName && userDetails.email &&userDetails.email.match(regex) && userDetails.password) {
-      if (userDetails.password === userDetails.confirmPwd) {
+    if (
+      userDetails.firstName &&
+      userDetails.lastName &&
+      userDetails.email &&
+      userDetails.email.match(regex) &&
+      userDetails.password
+    ) {
+      if (
+        userDetails.password === userDetails.confirmPwd &&
+        userDetails.password.length === userDetails.confirmPwd
+      ) {
         localStorage.setItem(
           "name",
           userDetails.firstName + " " + userDetails.lastName
@@ -43,10 +63,34 @@ const Register = () => {
         });
       }
     } else {
-      setValidation({
-        ...validation,
-        statusErrorMessage: "Please provide name, Email & Password",
-      });
+      const { firstName, lastName, email, password, confirmPwd } = userDetails;
+      if (isEmpty(firstName)) {
+        setValidation({
+          ...validation,
+          statusErrorMessage: "please provide your first name",
+        });
+      } else if (isEmpty(lastName)) {
+        setValidation({
+          ...validation,
+          statusErrorMessage: "please provide your last name",
+        });
+      } else if (isEmpty(email)) {
+        setValidation({
+          ...validation,
+          statusErrorMessage: "please provide your email address",
+        });
+      } else if (isEmpty(password)) {
+        setValidation({
+          ...validation,
+          statusErrorMessage: "please provide the password",
+        });
+      } else if (isEmpty(confirmPwd)) {
+        setValidation({
+          ...validation,
+          statusErrorMessage:
+            "please confirm your password by retyping the same",
+        });
+      }
     }
   };
 
@@ -105,7 +149,7 @@ const Register = () => {
           </div>
           <div className="form__group field">
             <input
-              type="input"
+              type="password"
               className="form__field"
               placeholder="Password"
               name="password"
@@ -119,7 +163,7 @@ const Register = () => {
           </div>
           <div className="form__group field">
             <input
-              type="input"
+              type="password"
               className="form__field"
               placeholder="Confirm Password"
               name="confirmpassword"

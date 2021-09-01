@@ -11,6 +11,7 @@ const Products = () => {
   const Category = useSelector((state) => state.category.data);
   const loading = useSelector((state) => state.products.loading);
   const error = useSelector((state) => state.products.error);
+  
   const [categories, setCategories] = useState(null);
   const [selectedCategoryId, setSelectedCategoryId] = useState(
     window.location.hash.substring(1)
@@ -21,9 +22,8 @@ const Products = () => {
   }, []);
 
   useEffect(() => {
-dispatch(getCategory())
-setCategories(Category);
-
+    dispatch(getCategory());
+    setCategories(Category);
   }, []);
 
   const handleCategoryChange = (category) => {
