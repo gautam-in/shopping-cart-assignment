@@ -1,20 +1,22 @@
 import axios from "../axios.config";
-import CategoryList from "../components/molecules/CategoryList";
-import { FETCH_CATEGORIES } from "../global/services";
+import HomePage from "../components/organisms/HomePage";
+import { FETCH_CATEGORIES, FETCH_BANNERS } from "../global/services";
 
 export async function getServerSideProps() {
-  const { data } = await axios.get(FETCH_CATEGORIES);
+  const [bannersResponse, categoriesResponse] = await Promise.all([
+    axios.get(FETCH_BANNERS),
+    axios.get(FETCH_CATEGORIES),
+  ]);
+  const { data: carouselData } = bannersResponse;
+  const { data: categoriesList } = categoriesResponse;
   return {
-    props: { data },
+    props: { carouselData, categoriesList },
   };
 }
 
-export default function Home({ data }) {
-  console.log(data);
-  if (!data) return null;
+export default function Home({ carouselData, categoriesList }) {
+  if (!categoriesList?.length) return null;
   return (
-    <div>
-      <CategoryList categories={data} />
-    </div>
+    <HomePage categoriesList={categoriesList} carouselData={carouselData} />
   );
 }

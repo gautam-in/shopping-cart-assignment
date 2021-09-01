@@ -4,6 +4,8 @@ import useForm from "../../../global/utils/useForm";
 import Button from "../../atoms/Button";
 import TextField from "../../atoms/TextField";
 import { Form, LoginFormHeading, LoginFormWrapper } from "./LoginForm.styles";
+import { SectionWrapper } from "../../atoms/SectionWrapper/SectionWrapper.styles";
+import { validateEmail, validatePassword } from "./LoginForm.utils";
 
 const LoginForm = () => {
   const router = useRouter();
@@ -17,37 +19,17 @@ const LoginForm = () => {
   });
   const { email, password } = inputValues;
 
-  const validateEmail = (value) => {
-    let error;
-    if (!value) {
-      error = "Please enter the email address.";
-    } else if (!value.match(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/)) {
-      error = "Please enter a valid email address.";
-    } else {
-      error = undefined;
-    }
-    return error;
-  };
-
-  const validatePassword = (value) => {
-    let error;
-    if (!value) {
-      error = "Please enter a password.";
-    } else {
-      error = undefined;
-    }
-    return error;
-  };
-
   const handleInputChange = (e) => {
     handleChange(e);
     const { name, value } = e.target;
+    const trimmedValue = value.trim();
+    e.target.value = trimmedValue;
     let errorMessage;
 
     if (name === "email") {
-      errorMessage = validateEmail(value);
+      errorMessage = validateEmail(trimmedValue);
     } else if (name === "password") {
-      errorMessage = validatePassword(value);
+      errorMessage = validatePassword(trimmedValue);
     }
 
     setErrors({
@@ -69,41 +51,44 @@ const LoginForm = () => {
   };
 
   return (
-    <LoginFormWrapper>
-      <LoginFormHeading>
-        <h1>Login</h1>
-        <p>Get access to your Orders, Wishlist and Recommendations.</p>
-      </LoginFormHeading>
-      <Form onSubmit={handleSubmit}>
-        <TextField
-          id="email"
-          name="email"
-          type="email"
-          labelText="Email"
-          error={errors.email}
-          hasInput={!!email}
-          onChange={handleChange}
-          onBlur={handleInputChange}
-        />
-        <TextField
-          id="password"
-          name="password"
-          type="password"
-          labelText="Password"
-          hasInput={!!password}
-          error={errors.password}
-          onChange={handleChange}
-          onBlur={handleInputChange}
-        />
-        <Button
-          id="submit"
-          name="submit"
-          disabled={!email || !password || isError()}
-        >
-          Login
-        </Button>
-      </Form>
-    </LoginFormWrapper>
+    <SectionWrapper>
+      <LoginFormWrapper>
+        <LoginFormHeading>
+          <h1>Login</h1>
+          <p>Get access to your Orders, Wishlist and Recommendations.</p>
+        </LoginFormHeading>
+        <Form onSubmit={handleSubmit}>
+          <TextField
+            id="email"
+            name="email"
+            type="email"
+            labelText="Email"
+            error={errors.email}
+            hasInput={!!email}
+            onChange={handleChange}
+            onBlur={handleInputChange}
+          />
+          <TextField
+            id="password"
+            name="password"
+            type="password"
+            labelText="Password"
+            hasInput={!!password}
+            error={errors.password}
+            onChange={handleChange}
+            onBlur={handleInputChange}
+          />
+          <Button
+            id="submit"
+            name="Login"
+            type="submit"
+            disabled={!email || !password || isError()}
+          >
+            Login
+          </Button>
+        </Form>
+      </LoginFormWrapper>
+    </SectionWrapper>
   );
 };
 

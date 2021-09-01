@@ -1,15 +1,11 @@
-import styled from "styled-components";
 import CategoryItem from "../CategoryItem";
+import { CategoryListWrapper } from "./CategoryList.styles";
 
-const CategoryListWrapper = styled.ul`
-  padding: 0;
-`;
-
-const CategoryList = ({ categories }) => {
-  if (!categories.length) return null;
+const CategoryList = ({ categoriesList }) => {
+  if (!categoriesList.length) return null;
   return (
     <CategoryListWrapper>
-      {categories.map((categoryItem) => (
+      {categoriesList.map((categoryItem) => (
         <CategoryItem key={categoryItem.id} categoryItem={categoryItem} />
       ))}
     </CategoryListWrapper>

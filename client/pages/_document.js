@@ -2,7 +2,7 @@ import Document, { Html, Head, Main, NextScript } from "next/document";
 import { ServerStyleSheet } from "styled-components";
 
 class MyDocument extends Document {
-  static getInitialProps({ renderPage }) {
+  static getServerSideProps({ renderPage }) {
     const sheet = new ServerStyleSheet();
     const page = renderPage(
       (App) => (props) => sheet.collectStyles(<App {...props} />)
@@ -20,7 +20,6 @@ class MyDocument extends Document {
             content="Online Grocery Shopping : Choose from a wide range of grocery, baby care products, personal care products, fresh fruits and vegetables online. Pay Online and Avail exclusive discounts on various products @ India's Best Online Grocery store.
 ✔ Best Prices and Offers ✔ Cash on Delivery ✔ Easy Returns"
           />
-
           <title>
             Sabka Bazaar | Online Grocery Store: Buy Online Grocery from India's
             Best Online Supermarket

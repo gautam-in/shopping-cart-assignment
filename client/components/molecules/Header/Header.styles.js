@@ -1,11 +1,14 @@
 import styled from "styled-components";
 import { sizes } from "../../../global/styles/sizes";
 
-export const HeaderWrapper = styled.header`
+export const HeaderWrapper = styled.div`
+  position: relative;
+`;
+
+export const HeaderContainer = styled.header`
   position: sticky;
   display: grid;
   grid-template-columns: auto 3fr 8rem;
-  margin-bottom: 40px;
   padding: 16px 72px;
   gap: 2rem;
   box-shadow: 0 4px 4px var(--light-grey);

@@ -4,7 +4,7 @@ const Button = ({ name, id, children, disabled, ...otherProps }) => (
   <SubmitButton
     id={id}
     name={name}
-    type="submit"
+    title={name}
     disabled={disabled}
     {...(disabled && { "aria-disabled": true })}
     {...otherProps}

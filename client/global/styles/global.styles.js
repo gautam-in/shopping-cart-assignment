@@ -15,6 +15,8 @@ html {
     --grey: #989898;
     --dark-grey: #64656a;
     --red : red;
+    --black : black;
+    --white: white;
 }
 
 body {
@@ -23,14 +25,24 @@ body {
     margin: 0;
     padding: 0;
 
-    @media (max-width: ${sizes.mobileL}) {
-       font-size: 12px;
-      }
+    .modal-open {
+        overflow: hidden;
+    }
 }
+
+@media (max-width: ${sizes.mobileL}) {
+    body, button {
+        font-size: 12px;
+    }
+   }
 
 a {
     color: var(--dark-grey);
     text-decoration: none;
+
+    &:hover {
+        color: var(--black);
+    }
 }
 `;
 

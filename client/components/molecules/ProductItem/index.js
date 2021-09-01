@@ -1,54 +1,49 @@
 import Image from "next/image";
-import styled from "styled-components";
+import { useCart } from "../../../global/utils/useCart";
 import Button from "../../atoms/Button";
-
-const ProductItemWrapper = styled.li`
-  padding: 16px;
-  margin: 16px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  box-shadow: 0 0 4px var(--light-grey);
-`;
-
-const ProductDescription = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-
-  p {
-    padding: 8px;
-    background-color: var(--light-grey);
-  }
-`;
-const PriceSection = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 8px;
-
-  & > * {
-    flex: 1 1 0px;
-    margin: 0;
-  }
-`;
+import {
+  PriceSection,
+  ProductDescription,
+  ProductItemWrapper,
+} from "./ProductItem.styles";
 
 const ProductItem = ({ productItem }) => {
   if (!productItem.imageURL) return null;
+  const labelText = `Buy ${productItem.name} @Rs.${productItem.price}`;
+
+  const { cartItems, addCartItem } = useCart();
+
+  const handleClick = () => {
+    addCartItem(productItem);
+    console.log({ cartItems });
+  };
+
   return (
     <ProductItemWrapper>
       <ProductDescription>
-        <h2>{productItem.name}</h2>
-        <Image
-          src={productItem?.imageURL}
-          alt={productItem.name}
-          height="200"
-          width="150"
-        />
+        <h3 title={productItem.name}>{productItem.name}</h3>
+        <div>
+          <Image
+            src={productItem?.imageURL}
+            alt={productItem.name}
+            title={productItem.name}
+            height="300"
+            width="300"
+            layout="responsive"
+          />
+        </div>
         <p>{productItem.description}</p>
       </ProductDescription>
       <PriceSection>
         <p>MRP Rs.{productItem.price}</p>
-        <Button>Buy now</Button>
+        <Button
+          id={`buy-${productItem.id}`}
+          name={labelText}
+          aria-label={labelText}
+          onClick={handleClick}
+        >
+          Buy now
+        </Button>
       </PriceSection>
     </ProductItemWrapper>
   );

@@ -10,7 +10,7 @@ const useForm = ({ initialFormValues = {} }) => {
     }
     setInputValues({
       ...inputValues,
-      [name]: value,
+      [name]: value.trim(),
     });
   };
 

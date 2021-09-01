@@ -1,18 +1,18 @@
 import Header from "../components/molecules/Header";
 import Footer from "../components/molecules/Footer";
-import GlobalStyles from "../global/styles/global";
-import SectionWrapper from "../components/atoms/SectionWrapper";
+import GlobalStyles from "../global/styles/global.styles";
+import { CartStateProvider } from "../global/utils/useCart";
 
 function MyApp({ Component, pageProps }) {
   return (
     <>
       <GlobalStyles />
-      <Header />
-      <main>
-        <SectionWrapper>
+      <CartStateProvider>
+        <Header />
+        <main>
           <Component {...pageProps} />
-        </SectionWrapper>
-      </main>
+        </main>
+      </CartStateProvider>
       <Footer />
     </>
   );
