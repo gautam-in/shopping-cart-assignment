@@ -4,6 +4,7 @@ import { sizes } from "../../../global/styles/sizes";
 import { formatSize } from "../../../global/utils";
 import SectionWrapper from "../../atoms/SectionWrapper";
 import CategoryList from "../../molecules/CategoryList";
+import { StyledCarousel } from "./HomePage.styles";
 
 const { mobileL, tablet, desktop } = sizes;
 
@@ -42,19 +43,15 @@ const HomePage = ({ categoriesList, carouselData }) => {
           }}
         >
           {carouselData.map((item) => (
-            <>
-              {item.isActive && (
-                <div key={item.id}>
-                  <Image
-                    src={item.bannerImageUrl}
-                    alt={item.bannerImageAlt}
-                    width="1200"
-                    height="300"
-                    layout="responsive"
-                  />
-                </div>
-              )}
-            </>
+            <div key={item.id}>
+              <Image
+                src={item.bannerImageUrl}
+                alt={item.bannerImageAlt}
+                width="1200"
+                height="300"
+                layout="responsive"
+              />
+            </div>
           ))}
         </StyledCarousel>
       )}
