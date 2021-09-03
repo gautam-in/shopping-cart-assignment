@@ -11,11 +11,10 @@ const ProductItem = ({ productItem }) => {
   if (!productItem.imageURL) return null;
   const labelText = `Buy ${productItem.name} @Rs.${productItem.price}`;
 
-  const { cartItems, addCartItem } = useCart();
+  const { addCartItem } = useCart();
 
   const handleClick = () => {
     addCartItem(productItem);
-    console.log({ cartItems });
   };
 
   return (

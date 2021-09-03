@@ -5,6 +5,7 @@ const GlobalStyles = createGlobalStyle`
 @font-face {
     font-family: Dosis;
     src: url(https://fonts.googleapis.com/css?family=Dosis:400,600,700);
+    font-display: swap;
 }
 
 html {

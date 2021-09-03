@@ -1,5 +1,5 @@
 import styled, { css } from "styled-components";
-import Button from "../../atoms/Button";
+import { sizes } from "../../../global/styles/sizes";
 
 export const ProductsPageWrapper = styled.div`
   display: flex;
@@ -12,18 +12,38 @@ export const ProductsPageWrapper = styled.div`
 `;
 
 export const CategoriesFilterDropdown = styled.div`
+  button {
+    position: relative;
+  }
+
   ul {
-    text-align: center;
+    z-index: 1;
+    position: absolute;
+    width: 100%;
+    box-sizing: border-box;
 
     li {
       max-width: none;
-      padding: 12px;
+      padding: 12px 12px 12px 24px;
       font-size: 0.75rem;
       border-bottom: none;
 
       &:last-child {
         border-bottom: none;
       }
+    }
+  }
+
+  button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 72px;
+    padding-right: 72px;
+
+    @media (max-width: ${sizes.mobileL}) {
+      padding-left: 32px;
+      padding-right: 32px;
     }
   }
 `;

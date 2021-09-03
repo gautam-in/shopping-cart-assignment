@@ -9,6 +9,7 @@ import {
   ProductsPageWrapper,
 } from "./ProductsPage.styles";
 import Button from "../../atoms/Button";
+import { ChevronDown } from "../../../global/styles/icons";
 
 const ProductsPage = ({ categoriesList, productsList, deviceType }) => {
   if (!productsList.length) return null;
@@ -61,7 +62,12 @@ const ProductsPage = ({ categoriesList, productsList, deviceType }) => {
                 name={`Selected category - ${categoryName}`}
                 onClick={() => toggleDropdown(!isDropdownOpen)}
               >
-                {selectedCategory ? categoryName : "Select Category"}
+                <span>
+                  {selectedCategory ? categoryName : "Select Category"}
+                </span>
+                <span>
+                  <ChevronDown />
+                </span>
               </Button>
               {isDropdownOpen && (
                 <CategoriesFilter>
