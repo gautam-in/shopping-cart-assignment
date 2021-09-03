@@ -58,13 +58,20 @@ const CartSection = () => {
           {cartItemsCount ? (
             <>
               <p>Promo code can be applied on payment page</p>
-              <Button title={`Proceed to Checkout @ Rs.${totalCartAmount}`}>
+              <Button
+                title={`Proceed to Checkout @ Rs.${totalCartAmount}`}
+                onClick={closeCart}
+              >
                 <span>Proceed to Checkout</span>{" "}
                 <span>Rs. {totalCartAmount}</span>
               </Button>
             </>
           ) : (
-            <Button title="Start Shopping" tabIndex={cartOpen ? "0" : "-1"}>
+            <Button
+              title="Start Shopping"
+              tabIndex={cartOpen ? "0" : "-1"}
+              onClick={closeCart}
+            >
               Start Shopping
             </Button>
           )}
