@@ -1,0 +1,480 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home should render the component correctly 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        class="SectionWrapperstyles__SectionWrapper-sc-1qizg9n-0 gZaGKd"
+      >
+        <ul
+          class="CategoryListstyles__CategoryListWrapper-sc-11ecke9-0 iIwCWX"
+        >
+          <li
+            class="CategoryItemstyles__CategoryItemWrapper-sc-cixyp4-0 jsaYdI"
+          >
+            <div>
+              <div
+                style="display: block; overflow: hidden; position: relative; box-sizing: border-box; margin: 0px;"
+              >
+                <div
+                  style="display: block; box-sizing: border-box; padding-top: 62.5%;"
+                />
+                <noscript />
+                <img
+                  alt="Beverages"
+                  data-nimg="true"
+                  decoding="async"
+                  src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                  style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+                />
+              </div>
+            </div>
+            <div
+              class="CategoryItemstyles__CategoryItemDescription-sc-cixyp4-1 cqrdZa"
+            >
+              <h2>
+                Beverages
+              </h2>
+              <p>
+                Our beverage department will ensure your fridge is always fully stocked. Shop for soda, juice, beer and more. 
+              </p>
+              <button
+                class="Buttonstyles__SubmitButton-sc-5pqk3u-0 cIowWi"
+                id="5b675e5e5936635728f9fc30"
+                name="Explore Beverages"
+                title="Explore Beverages"
+              >
+                Explore 
+                Beverages
+              </button>
+            </div>
+          </li>
+          <li
+            class="CategoryItemstyles__CategoryItemWrapper-sc-cixyp4-0 jsaYdI"
+          >
+            <div>
+              <div
+                style="display: block; overflow: hidden; position: relative; box-sizing: border-box; margin: 0px;"
+              >
+                <div
+                  style="display: block; box-sizing: border-box; padding-top: 62.5%;"
+                />
+                <noscript />
+                <img
+                  alt="Bakery Cakes and Dairy"
+                  data-nimg="true"
+                  decoding="async"
+                  src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                  style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+                />
+              </div>
+            </div>
+            <div
+              class="CategoryItemstyles__CategoryItemDescription-sc-cixyp4-1 cqrdZa"
+            >
+              <h2>
+                Bakery Cakes and Dairy
+              </h2>
+              <p>
+                The best cupcakes, cookies, cakes, pies, cheesecakes, fresh bread, biscotti, muffins, bagels, fresh coffee, milk and more.
+              </p>
+              <button
+                class="Buttonstyles__SubmitButton-sc-5pqk3u-0 cIowWi"
+                id="5b6899123d1a866534f516de"
+                name="Explore Bakery Cakes and Dairy"
+                title="Explore Bakery Cakes and Dairy"
+              >
+                Explore 
+                Bakery Cakes and Dairy
+              </button>
+            </div>
+          </li>
+          <li
+            class="CategoryItemstyles__CategoryItemWrapper-sc-cixyp4-0 jsaYdI"
+          >
+            <div>
+              <div
+                style="display: block; overflow: hidden; position: relative; box-sizing: border-box; margin: 0px;"
+              >
+                <div
+                  style="display: block; box-sizing: border-box; padding-top: 62.5%;"
+                />
+                <noscript />
+                <img
+                  alt="Beauty and Hygiene"
+                  data-nimg="true"
+                  decoding="async"
+                  src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                  style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+                />
+              </div>
+            </div>
+            <div
+              class="CategoryItemstyles__CategoryItemDescription-sc-cixyp4-1 cqrdZa"
+            >
+              <h2>
+                Beauty and Hygiene
+              </h2>
+              <p>
+                Buy beauty and personal care products online in India at best prices.
+              </p>
+              <button
+                class="Buttonstyles__SubmitButton-sc-5pqk3u-0 cIowWi"
+                id="5b68994e3d1a866534f516df"
+                name="Explore Beauty and Hygiene"
+                title="Explore Beauty and Hygiene"
+              >
+                Explore 
+                Beauty and Hygiene
+              </button>
+            </div>
+          </li>
+          <li
+            class="CategoryItemstyles__CategoryItemWrapper-sc-cixyp4-0 jsaYdI"
+          >
+            <div>
+              <div
+                style="display: block; overflow: hidden; position: relative; box-sizing: border-box; margin: 0px;"
+              >
+                <div
+                  style="display: block; box-sizing: border-box; padding-top: 62.5%;"
+                />
+                <noscript />
+                <img
+                  alt="Baby Care"
+                  data-nimg="true"
+                  decoding="async"
+                  src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                  style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+                />
+              </div>
+            </div>
+            <div
+              class="CategoryItemstyles__CategoryItemDescription-sc-cixyp4-1 cqrdZa"
+            >
+              <h2>
+                Baby Care
+              </h2>
+              <p>
+                Shop online for Baby Products, Diapers, Skin Care Products,etc.
+              </p>
+              <button
+                class="Buttonstyles__SubmitButton-sc-5pqk3u-0 cIowWi"
+                id="5b6899683d1a866534f516e0"
+                name="Explore Baby Care"
+                title="Explore Baby Care"
+              >
+                Explore 
+                Baby Care
+              </button>
+            </div>
+          </li>
+          <li
+            class="CategoryItemstyles__CategoryItemWrapper-sc-cixyp4-0 jsaYdI"
+          >
+            <div>
+              <div
+                style="display: block; overflow: hidden; position: relative; box-sizing: border-box; margin: 0px;"
+              >
+                <div
+                  style="display: block; box-sizing: border-box; padding-top: 62.5%;"
+                />
+                <noscript />
+                <img
+                  alt="Fruits & Vegetables"
+                  data-nimg="true"
+                  decoding="async"
+                  src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                  style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+                />
+              </div>
+            </div>
+            <div
+              class="CategoryItemstyles__CategoryItemDescription-sc-cixyp4-1 cqrdZa"
+            >
+              <h2>
+                Fruits & Vegetables
+              </h2>
+              <p>
+                A variety of fresh fruits and vegetables.
+              </p>
+              <button
+                class="Buttonstyles__SubmitButton-sc-5pqk3u-0 cIowWi"
+                id="5b6899953d1a866534f516e2"
+                name="Explore Fruits & Vegetables"
+                title="Explore Fruits & Vegetables"
+              >
+                Explore 
+                Fruits & Vegetables
+              </button>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="SectionWrapperstyles__SectionWrapper-sc-1qizg9n-0 gZaGKd"
+    >
+      <ul
+        class="CategoryListstyles__CategoryListWrapper-sc-11ecke9-0 iIwCWX"
+      >
+        <li
+          class="CategoryItemstyles__CategoryItemWrapper-sc-cixyp4-0 jsaYdI"
+        >
+          <div>
+            <div
+              style="display: block; overflow: hidden; position: relative; box-sizing: border-box; margin: 0px;"
+            >
+              <div
+                style="display: block; box-sizing: border-box; padding-top: 62.5%;"
+              />
+              <noscript />
+              <img
+                alt="Beverages"
+                data-nimg="true"
+                decoding="async"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+              />
+            </div>
+          </div>
+          <div
+            class="CategoryItemstyles__CategoryItemDescription-sc-cixyp4-1 cqrdZa"
+          >
+            <h2>
+              Beverages
+            </h2>
+            <p>
+              Our beverage department will ensure your fridge is always fully stocked. Shop for soda, juice, beer and more. 
+            </p>
+            <button
+              class="Buttonstyles__SubmitButton-sc-5pqk3u-0 cIowWi"
+              id="5b675e5e5936635728f9fc30"
+              name="Explore Beverages"
+              title="Explore Beverages"
+            >
+              Explore 
+              Beverages
+            </button>
+          </div>
+        </li>
+        <li
+          class="CategoryItemstyles__CategoryItemWrapper-sc-cixyp4-0 jsaYdI"
+        >
+          <div>
+            <div
+              style="display: block; overflow: hidden; position: relative; box-sizing: border-box; margin: 0px;"
+            >
+              <div
+                style="display: block; box-sizing: border-box; padding-top: 62.5%;"
+              />
+              <noscript />
+              <img
+                alt="Bakery Cakes and Dairy"
+                data-nimg="true"
+                decoding="async"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+              />
+            </div>
+          </div>
+          <div
+            class="CategoryItemstyles__CategoryItemDescription-sc-cixyp4-1 cqrdZa"
+          >
+            <h2>
+              Bakery Cakes and Dairy
+            </h2>
+            <p>
+              The best cupcakes, cookies, cakes, pies, cheesecakes, fresh bread, biscotti, muffins, bagels, fresh coffee, milk and more.
+            </p>
+            <button
+              class="Buttonstyles__SubmitButton-sc-5pqk3u-0 cIowWi"
+              id="5b6899123d1a866534f516de"
+              name="Explore Bakery Cakes and Dairy"
+              title="Explore Bakery Cakes and Dairy"
+            >
+              Explore 
+              Bakery Cakes and Dairy
+            </button>
+          </div>
+        </li>
+        <li
+          class="CategoryItemstyles__CategoryItemWrapper-sc-cixyp4-0 jsaYdI"
+        >
+          <div>
+            <div
+              style="display: block; overflow: hidden; position: relative; box-sizing: border-box; margin: 0px;"
+            >
+              <div
+                style="display: block; box-sizing: border-box; padding-top: 62.5%;"
+              />
+              <noscript />
+              <img
+                alt="Beauty and Hygiene"
+                data-nimg="true"
+                decoding="async"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+              />
+            </div>
+          </div>
+          <div
+            class="CategoryItemstyles__CategoryItemDescription-sc-cixyp4-1 cqrdZa"
+          >
+            <h2>
+              Beauty and Hygiene
+            </h2>
+            <p>
+              Buy beauty and personal care products online in India at best prices.
+            </p>
+            <button
+              class="Buttonstyles__SubmitButton-sc-5pqk3u-0 cIowWi"
+              id="5b68994e3d1a866534f516df"
+              name="Explore Beauty and Hygiene"
+              title="Explore Beauty and Hygiene"
+            >
+              Explore 
+              Beauty and Hygiene
+            </button>
+          </div>
+        </li>
+        <li
+          class="CategoryItemstyles__CategoryItemWrapper-sc-cixyp4-0 jsaYdI"
+        >
+          <div>
+            <div
+              style="display: block; overflow: hidden; position: relative; box-sizing: border-box; margin: 0px;"
+            >
+              <div
+                style="display: block; box-sizing: border-box; padding-top: 62.5%;"
+              />
+              <noscript />
+              <img
+                alt="Baby Care"
+                data-nimg="true"
+                decoding="async"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+              />
+            </div>
+          </div>
+          <div
+            class="CategoryItemstyles__CategoryItemDescription-sc-cixyp4-1 cqrdZa"
+          >
+            <h2>
+              Baby Care
+            </h2>
+            <p>
+              Shop online for Baby Products, Diapers, Skin Care Products,etc.
+            </p>
+            <button
+              class="Buttonstyles__SubmitButton-sc-5pqk3u-0 cIowWi"
+              id="5b6899683d1a866534f516e0"
+              name="Explore Baby Care"
+              title="Explore Baby Care"
+            >
+              Explore 
+              Baby Care
+            </button>
+          </div>
+        </li>
+        <li
+          class="CategoryItemstyles__CategoryItemWrapper-sc-cixyp4-0 jsaYdI"
+        >
+          <div>
+            <div
+              style="display: block; overflow: hidden; position: relative; box-sizing: border-box; margin: 0px;"
+            >
+              <div
+                style="display: block; box-sizing: border-box; padding-top: 62.5%;"
+              />
+              <noscript />
+              <img
+                alt="Fruits & Vegetables"
+                data-nimg="true"
+                decoding="async"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+              />
+            </div>
+          </div>
+          <div
+            class="CategoryItemstyles__CategoryItemDescription-sc-cixyp4-1 cqrdZa"
+          >
+            <h2>
+              Fruits & Vegetables
+            </h2>
+            <p>
+              A variety of fresh fruits and vegetables.
+            </p>
+            <button
+              class="Buttonstyles__SubmitButton-sc-5pqk3u-0 cIowWi"
+              id="5b6899953d1a866534f516e2"
+              name="Explore Fruits & Vegetables"
+              title="Explore Fruits & Vegetables"
+            >
+              Explore 
+              Fruits & Vegetables
+            </button>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
