@@ -13,6 +13,7 @@ import {
 import Logo from "../../../public/images/logo_2x.png";
 import { useCart } from "../../../global/utils/useCart";
 import CartSection from "../CartSection";
+import { useCallback } from "react";
 
 const Header = () => {
   const { toggleCart, getCartItemsCount } = useCart();
@@ -20,9 +21,10 @@ const Header = () => {
   const cartItemsCount = getCartItemsCount();
   const cartButtonLabel = `item${cartItemsCount !== 1 ? "s" : ""}`;
 
-  const onLogoClick = () => {
+  const onLogoClick = useCallback(() => {
     router.push("/");
-  };
+  });
+
   return (
     <HeaderWrapper>
       <HeaderContainer>

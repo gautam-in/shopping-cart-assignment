@@ -19,6 +19,7 @@ const CartSection = () => {
   } = useCart();
   const cartItemsCount = getCartItemsCount();
   const totalCartAmount = getTotalCartAmount();
+
   return (
     <Modal cartOpen={cartOpen}>
       <CartWrapper cartOpen={cartOpen} aria-label="Cart section" aria-live>

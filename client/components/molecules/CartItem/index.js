@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { useCallback } from "react";
 import { useCart } from "../../../global/utils/useCart";
 import Button from "../../atoms/Button";
 import {
@@ -11,13 +12,14 @@ import {
 const CartItem = ({ cartItem }) => {
   const { cartOpen, addCartItem, removeCartItem } = useCart();
 
-  const handleAddCartItem = () => {
+  const handleAddCartItem = useCallback(() => {
     addCartItem(cartItem);
-  };
+  });
 
-  const handleRemoveCartItem = () => {
+  const handleRemoveCartItem = useCallback(() => {
     removeCartItem(cartItem.id);
-  };
+  });
+
   return (
     <CartItemWrapper>
       <Container>

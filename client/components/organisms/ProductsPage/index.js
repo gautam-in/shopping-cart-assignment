@@ -1,5 +1,5 @@
 import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import ProductList from "../../molecules/ProductList";
 import SectionWrapper from "../../atoms/SectionWrapper";
 import {
@@ -14,8 +14,17 @@ import { ChevronDown } from "../../../global/styles/icons";
 const ProductsPage = ({ categoriesList, productsList, deviceType }) => {
   if (!productsList.length) return null;
 
+  const [selectedCategory, setSelectedCategory] = useState(undefined);
+  const [isDropdownOpen, toggleDropdown] = useState(false);
+
+  const router = useRouter();
+  const isMobile = deviceType === "MOBILE";
+  const filteredProductsList = selectedCategory
+    ? productsList.filter((product) => product.category === selectedCategory)
+    : productsList;
+
   useEffect(() => {
-    const { selectedCategory: selectedCategoryId } = router?.query;
+    const { selectedCategory: selectedCategoryId } = router?.query || {};
     if (selectedCategoryId) {
       setSelectedCategory(selectedCategoryId);
     }
@@ -24,32 +33,23 @@ const ProductsPage = ({ categoriesList, productsList, deviceType }) => {
   const getCategoryName = (categoryId) =>
     categoriesList.find((category) => category.id === categoryId)?.name;
 
-  const handleKeyPress = (e) => {
+  const handleKeyPress = useCallback((e) => {
     if (e.keyCode === 13) {
       onCategoryChange(e);
     }
-  };
+  });
 
-  const isMobile = deviceType === "MOBILE";
-
-  const [selectedCategory, setSelectedCategory] = useState(undefined);
-  const [isDropdownOpen, toggleDropdown] = useState(false);
-  const categoryName = getCategoryName(selectedCategory);
-
-  const router = useRouter();
-
-  const onCategoryChange = (e) => {
+  const onCategoryChange = useCallback((e) => {
     const selectedCategoryId = e.target.getAttribute("value");
     if (selectedCategoryId === selectedCategory) {
       setSelectedCategory(undefined);
     } else {
       setSelectedCategory(selectedCategoryId);
     }
-  };
+    toggleDropdown(false);
+  });
 
-  const filteredProductsList = selectedCategory
-    ? productsList.filter((product) => product.category === selectedCategory)
-    : productsList;
+  const categoryName = getCategoryName(selectedCategory);
 
   return (
     <ProductsPageWrapper isMobile={isMobile}>

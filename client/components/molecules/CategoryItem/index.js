@@ -5,19 +5,17 @@ import {
   CategoryItemDescription,
   CategoryItemWrapper,
 } from "./CategoryItem.styles";
+import { useCallback } from "react";
 
 const CategoryItem = ({ categoryItem }) => {
   if (!categoryItem.imageUrl) return null;
 
   const router = useRouter();
 
-  const onExploreButtonClick = (e) => {
+  const onExploreButtonClick = useCallback((e) => {
     const categoryId = e.target.id;
-    router.push({
-      pathname: "/products",
-      query: { selectedCategory: categoryId },
-    });
-  };
+    router.push(`/products?selectedCategory=${categoryId}`, "/products");
+  });
 
   return (
     <CategoryItemWrapper>

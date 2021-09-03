@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import { useRouter } from "next/router";
 import useForm from "../../../global/utils/useForm";
 import Button from "../../atoms/Button";
@@ -19,7 +19,7 @@ const LoginForm = () => {
   });
   const { email, password } = inputValues;
 
-  const handleInputChange = (e) => {
+  const handleInputChange = useCallback((e) => {
     handleChange(e);
     const { name, value } = e.target;
     const trimmedValue = value.trim();
@@ -36,19 +36,19 @@ const LoginForm = () => {
       ...errors,
       [name]: errorMessage,
     });
-  };
+  });
 
-  const isError = () => {
+  const isError = useCallback(() => {
     return Object.values(errors).find((value) => value && value !== undefined);
-  };
+  });
 
-  const handleSubmit = (e) => {
+  const handleSubmit = useCallback((e) => {
     e.preventDefault();
     const error = isError();
     if (!error) {
       router.push("/home");
     }
-  };
+  });
 
   return (
     <SectionWrapper>

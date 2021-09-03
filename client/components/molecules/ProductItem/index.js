@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { useCallback } from "react";
 import { useCart } from "../../../global/utils/useCart";
 import Button from "../../atoms/Button";
 import {
@@ -9,13 +10,13 @@ import {
 
 const ProductItem = ({ productItem }) => {
   if (!productItem.imageURL) return null;
-  const labelText = `Buy ${productItem.name} @Rs.${productItem.price}`;
 
   const { addCartItem } = useCart();
+  const labelText = `Buy ${productItem.name} @Rs.${productItem.price}`;
 
-  const handleClick = () => {
+  const handleClick = useCallback(() => {
     addCartItem(productItem);
-  };
+  });
 
   return (
     <ProductItemWrapper>

@@ -19,9 +19,17 @@ export const StyledCarousel = styled(Carousel)`
 
   .react-multiple-carousel__arrow {
     transform: scale(0.8);
+
+    &:focus {
+      border: solid black 1px;
+    }
   }
 
   .carousel-dots {
     transform: scale(0.5);
+
+    li:focus {
+      border: solid black 1px;
+    }
   }
 `;

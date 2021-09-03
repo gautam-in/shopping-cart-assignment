@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { sizes } from "../../../global/styles/sizes";
 
 export const ProductItemWrapper = styled.li`
   padding: 16px;
@@ -12,6 +13,7 @@ export const ProductDescription = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  flex-grow: 1;
 
   h3 {
     overflow: hidden;
@@ -19,10 +21,15 @@ export const ProductDescription = styled.div`
     display: -webkit-box;
     -webkit-line-clamp: 2; /* number of lines to show */
     -webkit-box-orient: vertical;
+
+    @media (min-width: ${sizes.laptop}) {
+      min-height: 40px;
+    }
   }
 
   p {
     padding: 8px;
+    flex-grow: 1;
     background-color: var(--light-grey);
   }
 `;

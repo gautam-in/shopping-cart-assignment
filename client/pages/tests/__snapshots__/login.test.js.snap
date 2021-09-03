@@ -1,0 +1,198 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Login should render the component correctly 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        class="SectionWrapperstyles__SectionWrapper-sc-1qizg9n-0 gZaGKd"
+      >
+        <div
+          class="LoginFormstyles__LoginFormWrapper-sc-wnnuzy-0 hdmsQj"
+        >
+          <section
+            class="LoginFormstyles__LoginFormHeading-sc-wnnuzy-1 hcmeBz"
+          >
+            <h1>
+              Login
+            </h1>
+            <p>
+              Get access to your Orders, Wishlist and Recommendations.
+            </p>
+          </section>
+          <form
+            class="LoginFormstyles__Form-sc-wnnuzy-2"
+          >
+            <div
+              class="TextFieldstyles__TextFieldWrapper-sc-t64aen-0 kQAkYf"
+            >
+              <input
+                class="TextFieldstyles__Input-sc-t64aen-1 hwdbyY"
+                id="email"
+                name="email"
+                title="Email"
+                type="email"
+              />
+              <label
+                class="TextFieldstyles__Label-sc-t64aen-2 etFUBF"
+                for="email"
+              >
+                Email
+              </label>
+            </div>
+            <div
+              class="TextFieldstyles__TextFieldWrapper-sc-t64aen-0 kQAkYf"
+            >
+              <input
+                class="TextFieldstyles__Input-sc-t64aen-1 hwdbyY"
+                id="password"
+                name="password"
+                title="Password"
+                type="password"
+              />
+              <label
+                class="TextFieldstyles__Label-sc-t64aen-2 etFUBF"
+                for="password"
+              >
+                Password
+              </label>
+            </div>
+            <button
+              aria-disabled="true"
+              class="Buttonstyles__SubmitButton-sc-5pqk3u-0 exksWu"
+              disabled=""
+              id="submit"
+              name="Login"
+              title="Login"
+              type="submit"
+            >
+              Login
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="SectionWrapperstyles__SectionWrapper-sc-1qizg9n-0 gZaGKd"
+    >
+      <div
+        class="LoginFormstyles__LoginFormWrapper-sc-wnnuzy-0 hdmsQj"
+      >
+        <section
+          class="LoginFormstyles__LoginFormHeading-sc-wnnuzy-1 hcmeBz"
+        >
+          <h1>
+            Login
+          </h1>
+          <p>
+            Get access to your Orders, Wishlist and Recommendations.
+          </p>
+        </section>
+        <form
+          class="LoginFormstyles__Form-sc-wnnuzy-2"
+        >
+          <div
+            class="TextFieldstyles__TextFieldWrapper-sc-t64aen-0 kQAkYf"
+          >
+            <input
+              class="TextFieldstyles__Input-sc-t64aen-1 hwdbyY"
+              id="email"
+              name="email"
+              title="Email"
+              type="email"
+            />
+            <label
+              class="TextFieldstyles__Label-sc-t64aen-2 etFUBF"
+              for="email"
+            >
+              Email
+            </label>
+          </div>
+          <div
+            class="TextFieldstyles__TextFieldWrapper-sc-t64aen-0 kQAkYf"
+          >
+            <input
+              class="TextFieldstyles__Input-sc-t64aen-1 hwdbyY"
+              id="password"
+              name="password"
+              title="Password"
+              type="password"
+            />
+            <label
+              class="TextFieldstyles__Label-sc-t64aen-2 etFUBF"
+              for="password"
+            >
+              Password
+            </label>
+          </div>
+          <button
+            aria-disabled="true"
+            class="Buttonstyles__SubmitButton-sc-5pqk3u-0 exksWu"
+            disabled=""
+            id="submit"
+            name="Login"
+            title="Login"
+            type="submit"
+          >
+            Login
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
