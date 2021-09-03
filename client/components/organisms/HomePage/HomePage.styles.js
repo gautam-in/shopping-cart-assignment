@@ -19,6 +19,7 @@ export const StyledCarousel = styled(Carousel)`
 
   .react-multiple-carousel__arrow {
     transform: scale(0.8);
+    z-index: 4;
 
     &:focus {
       border: solid black 1px;

@@ -3,7 +3,7 @@ import { sizes } from "../../../global/styles/sizes";
 
 export const Modal = styled.div`
   position: fixed;
-  z-index: 1;
+  z-index: 5;
   top: 0;
   left: 0;
   width: 100%;
