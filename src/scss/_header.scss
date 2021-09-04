@@ -37,3 +37,11 @@
   font-size: $font-med;
   margin-right: 5px;
 }
+
+@media screen and (max-width: 768px) {
+  .header {
+    nav {
+      padding: 0;
+    }
+  }
+}

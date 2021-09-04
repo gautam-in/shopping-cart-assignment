@@ -34,3 +34,23 @@
     }
   }
 }
+
+@media screen and (max-width: 768px) {
+  .login-section {
+    flex-direction: column;
+    height: auto;
+    text-align: center;
+    article:first-child {
+      margin: 0;
+    }
+
+    &__form {
+      width: 100%;
+      margin: 0;
+    }
+    form {
+      width: 80%;
+      margin: auto;
+    }
+  }
+}
