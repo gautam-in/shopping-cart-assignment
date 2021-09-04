@@ -1,0 +1,76 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Product page Product page should match the snapshot 1`] = `
+<Provider
+  store={
+    Object {
+      "@@observable": [Function],
+      "dispatch": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+>
+  <products>
+    <ProductComponent>
+      <ProductsStyle__ProductsContainer>
+        <main
+          className="ProductsStyle__ProductsContainer-sc-1lwed7i-0 liuUmw"
+        >
+          <ErrorComponent
+            errorMessage="Unable to fetch categories."
+          >
+            <GlobalStyle__Container>
+              <main
+                className="GlobalStyle__Container-sc-hvi81o-0 fMUedy"
+              >
+                <ErrorStyle__ErrorStyleMain>
+                  <main
+                    className="ErrorStyle__ErrorStyleMain-sc-vd5rkk-0 buviRQ"
+                  >
+                    <div
+                      className="error"
+                    >
+                      <h5 />
+                      <h5>
+                        Unable to fetch categories.
+                      </h5>
+                    </div>
+                  </main>
+                </ErrorStyle__ErrorStyleMain>
+              </main>
+            </GlobalStyle__Container>
+          </ErrorComponent>
+          <ProductListComponent>
+            <ErrorComponent
+              errorMessage="Unable to fetch products."
+            >
+              <GlobalStyle__Container>
+                <main
+                  className="GlobalStyle__Container-sc-hvi81o-0 fMUedy"
+                >
+                  <ErrorStyle__ErrorStyleMain>
+                    <main
+                      className="ErrorStyle__ErrorStyleMain-sc-vd5rkk-0 buviRQ"
+                    >
+                      <div
+                        className="error"
+                      >
+                        <h5 />
+                        <h5>
+                          Unable to fetch products.
+                        </h5>
+                      </div>
+                    </main>
+                  </ErrorStyle__ErrorStyleMain>
+                </main>
+              </GlobalStyle__Container>
+            </ErrorComponent>
+          </ProductListComponent>
+        </main>
+      </ProductsStyle__ProductsContainer>
+    </ProductComponent>
+  </products>
+</Provider>
+`;
