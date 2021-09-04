@@ -48,14 +48,59 @@ a:hover {
   flex-direction: column;
 }
 
+// margin styles
+
+.mb-1 {
+  margin-bottom: 1rem;
+}
+
 //buttons
 
-// button,
-// .button {
-//   background: #ccc;
-//   border: 0;
-//   border-radius: 50px;
-//   color: $black;
-//   cursor: pointer;
-//   font-weight: 400;
-// }
+button,
+.button {
+  padding: 1rem 6.25rem;
+  background: $brightRed;
+  border: 0;
+  border-radius: 5px;
+  color: $white;
+  cursor: pointer;
+  font-weight: 400;
+}
+
+// Form inputs
+
+input {
+  background: none;
+  font-size: $font-sm;
+  padding: 10px 10px 10px 5px;
+  display: block;
+  width: 100%;
+  border: none;
+  border-radius: 0;
+  border-bottom: 1px solid #ccc;
+  &:focus {
+    outline: none;
+    border-bottom: 1px solid $brightCyan;
+  }
+  &:focus ~ label,
+  &:valid ~ label {
+    top: -14px;
+    font-size: $font-xsm;
+    color: $brightCyan;
+  }
+}
+
+input[type='password'] {
+  letter-spacing: 0.3em;
+}
+
+label {
+  color: #ccc;
+  font-size: $font-sm;
+  font-weight: normal;
+  position: absolute;
+  pointer-events: none;
+  left: 5px;
+  top: 0.625rem;
+  transition: 300ms ease all;
+}

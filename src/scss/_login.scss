@@ -1,0 +1,36 @@
+.login-section {
+  display: flex;
+  width: 100%;
+  // margin: auto;
+  justify-content: center;
+  padding: 0.625rem 0;
+  align-items: center;
+  height: 35vh;
+
+  article:first-child {
+    margin-bottom: 70px;
+  }
+
+  h1 {
+    font-size: $font-lg;
+    margin-bottom: 1rem;
+  }
+
+  &__form {
+    width: 31%;
+    padding: 0.625rem;
+    margin-top: 1.875rem;
+    margin-left: 3rem;
+
+    form {
+      width: 80%;
+    }
+
+    div {
+      position: relative;
+    }
+    button {
+      width: 100%;
+    }
+  }
+}
