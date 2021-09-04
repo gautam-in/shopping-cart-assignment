@@ -1,0 +1,72 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Cart Component Cart component should match the snapshot 1`] = `
+<Provider
+  store={
+    Object {
+      "@@observable": [Function],
+      "dispatch": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+>
+  <CartCoponent>
+    <CartStyle__CartContainer>
+      <main
+        className="CartStyle__CartContainer-sc-htxxwv-0 jtFoCy"
+      >
+        <div
+          className="cartScreen"
+        >
+          <div
+            className="cartBox"
+          >
+            <div
+              className="cartHeader"
+            >
+              <p>
+                My Cart 
+              </p>
+              <p
+                onClick={[Function]}
+              >
+                ✖
+              </p>
+            </div>
+            <div
+              className="cartContent"
+            >
+              <div
+                className="noItem"
+              >
+                <p>
+                  No items in your cart
+                </p>
+                <p>
+                  your favourite items are just a click away
+                </p>
+              </div>
+            </div>
+            <div
+              className="cartFooter"
+            >
+              <button
+                onClick={[Function]}
+                style={
+                  Object {
+                    "justifyContent": "center",
+                  }
+                }
+              >
+                Start Shopping
+              </button>
+            </div>
+          </div>
+        </div>
+      </main>
+    </CartStyle__CartContainer>
+  </CartCoponent>
+</Provider>
+`;

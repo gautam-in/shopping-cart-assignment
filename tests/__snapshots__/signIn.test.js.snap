@@ -1,0 +1,96 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SignInPage SignInPage should match snapshot 1`] = `
+<Provider
+  store={
+    Object {
+      "@@observable": [Function],
+      "dispatch": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+>
+  <signIn>
+    <SignInComponent>
+      <FormStyle__FormContainer>
+        <section
+          className="FormStyle__FormContainer-sc-wpd7la-0 iccOel"
+        >
+          <FormStyle__FormLeft>
+            <div
+              className="FormStyle__FormLeft-sc-wpd7la-1 jLIMxq"
+            >
+              <h2>
+                Login
+              </h2>
+              <p>
+                Get access to your Orders, Wishlist and Recommendations
+              </p>
+            </div>
+          </FormStyle__FormLeft>
+          <FormStyle__FormRight>
+            <div
+              className="FormStyle__FormRight-sc-wpd7la-2 grYBdk"
+            >
+              <form
+                onSubmit={[Function]}
+              >
+                <InputStyle>
+                  <div
+                    className="InputStyle-sc-gzj6cq-0 hqkFkK"
+                  >
+                    <input
+                      id="email"
+                      name="email"
+                      onChange={[Function]}
+                      required={true}
+                      type="text"
+                      value=""
+                    />
+                    <label
+                      htmlFor="email"
+                    >
+                      Email
+                    </label>
+                  </div>
+                </InputStyle>
+                <InputStyle>
+                  <div
+                    className="InputStyle-sc-gzj6cq-0 hqkFkK"
+                  >
+                    <input
+                      id="password"
+                      name="password"
+                      onChange={[Function]}
+                      required={true}
+                      type="password"
+                      value=""
+                    />
+                    <label
+                      htmlFor="Password"
+                    >
+                      Password
+                    </label>
+                  </div>
+                </InputStyle>
+                <InputStyle__LargeButtonStyle>
+                  <div
+                    className="InputStyle__LargeButtonStyle-sc-gzj6cq-1 ifaKse"
+                  >
+                    <input
+                      type="submit"
+                      value="Login"
+                    />
+                  </div>
+                </InputStyle__LargeButtonStyle>
+              </form>
+            </div>
+          </FormStyle__FormRight>
+        </section>
+      </FormStyle__FormContainer>
+    </SignInComponent>
+  </signIn>
+</Provider>
+`;

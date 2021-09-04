@@ -1,0 +1,70 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home page Home Component should match Snapshot 1`] = `
+<Provider
+  store={
+    Object {
+      "@@observable": [Function],
+      "dispatch": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+>
+  <home>
+    <HomeComponent>
+      <ErrorComponent
+        errorMessage="Unable to load banners."
+      >
+        <GlobalStyle__Container>
+          <main
+            className="GlobalStyle__Container-sc-hvi81o-0 fMUedy"
+          >
+            <ErrorStyle__ErrorStyleMain>
+              <main
+                className="ErrorStyle__ErrorStyleMain-sc-vd5rkk-0 buviRQ"
+              >
+                <div
+                  className="error"
+                >
+                  <h5 />
+                  <h5>
+                    Unable to load banners.
+                  </h5>
+                </div>
+              </main>
+            </ErrorStyle__ErrorStyleMain>
+          </main>
+        </GlobalStyle__Container>
+      </ErrorComponent>
+      <HomeCategory>
+        <ErrorComponent
+          errorMessage="Unable to load products categories"
+        >
+          <GlobalStyle__Container>
+            <main
+              className="GlobalStyle__Container-sc-hvi81o-0 fMUedy"
+            >
+              <ErrorStyle__ErrorStyleMain>
+                <main
+                  className="ErrorStyle__ErrorStyleMain-sc-vd5rkk-0 buviRQ"
+                >
+                  <div
+                    className="error"
+                  >
+                    <h5 />
+                    <h5>
+                      Unable to load products categories
+                    </h5>
+                  </div>
+                </main>
+              </ErrorStyle__ErrorStyleMain>
+            </main>
+          </GlobalStyle__Container>
+        </ErrorComponent>
+      </HomeCategory>
+    </HomeComponent>
+  </home>
+</Provider>
+`;

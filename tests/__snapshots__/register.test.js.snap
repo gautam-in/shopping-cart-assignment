@@ -1,0 +1,160 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Register page Register page should match the snapshot 1`] = `
+<Provider
+  store={
+    Object {
+      "@@observable": [Function],
+      "dispatch": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+>
+  <register>
+    <RegisterComponent>
+      <FormStyle__FormContainer>
+        <section
+          className="FormStyle__FormContainer-sc-wpd7la-0 iccOel"
+        >
+          <FormStyle__FormLeft>
+            <div
+              className="FormStyle__FormLeft-sc-wpd7la-1 jLIMxq"
+            >
+              <h2>
+                Signup
+              </h2>
+              <p>
+                We don not share your personal details with anyone.
+              </p>
+            </div>
+          </FormStyle__FormLeft>
+          <FormStyle__FormRight>
+            <div
+              className="FormStyle__FormRight-sc-wpd7la-2 grYBdk"
+            >
+              <div
+                className="formError"
+              />
+              <form
+                onSubmit={[Function]}
+              >
+                <InputStyle>
+                  <div
+                    className="InputStyle-sc-gzj6cq-0 hqkFkK"
+                  >
+                    <input
+                      id="firstName"
+                      maxLength="30"
+                      minLength="3"
+                      name="fisrtName"
+                      onChange={[Function]}
+                      required={true}
+                      type="text"
+                      value=""
+                    />
+                    <label
+                      htmlFor="fisrtName"
+                    >
+                      First Name
+                    </label>
+                  </div>
+                </InputStyle>
+                <InputStyle>
+                  <div
+                    className="InputStyle-sc-gzj6cq-0 hqkFkK"
+                  >
+                    <input
+                      id="lastName"
+                      name="lastName"
+                      onChange={[Function]}
+                      required={true}
+                      type="text"
+                      value=""
+                    />
+                    <label
+                      htmlFor="lastName"
+                    >
+                      Last Name
+                    </label>
+                  </div>
+                </InputStyle>
+                <InputStyle>
+                  <div
+                    className="InputStyle-sc-gzj6cq-0 hqkFkK"
+                  >
+                    <input
+                      id="email"
+                      name="email"
+                      onChange={[Function]}
+                      pattern="[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,}$"
+                      required={true}
+                      type="text"
+                      value=""
+                    />
+                    <label
+                      htmlFor="Email"
+                    >
+                      Email
+                    </label>
+                  </div>
+                </InputStyle>
+                <InputStyle>
+                  <div
+                    className="InputStyle-sc-gzj6cq-0 hqkFkK"
+                  >
+                    <input
+                      id="password"
+                      name="password"
+                      onChange={[Function]}
+                      pattern="(?=.*d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                      required={true}
+                      type="password"
+                      value=""
+                    />
+                    <label
+                      htmlFor="Password"
+                    >
+                      Password
+                    </label>
+                  </div>
+                </InputStyle>
+                <InputStyle>
+                  <div
+                    className="InputStyle-sc-gzj6cq-0 hqkFkK"
+                  >
+                    <input
+                      id="confirmPassword"
+                      name="confirmPassword"
+                      onChange={[Function]}
+                      required={true}
+                      type="password"
+                      value=""
+                    />
+                    <label
+                      htmlFor="confirmPassword"
+                    >
+                      Confirm Password
+                    </label>
+                  </div>
+                </InputStyle>
+                <InputStyle__LargeButtonStyle>
+                  <div
+                    className="InputStyle__LargeButtonStyle-sc-gzj6cq-1 ifaKse"
+                  >
+                    <input
+                      type="submit"
+                      value="Signup"
+                    />
+                  </div>
+                </InputStyle__LargeButtonStyle>
+              </form>
+            </div>
+          </FormStyle__FormRight>
+        </section>
+      </FormStyle__FormContainer>
+    </RegisterComponent>
+  </register>
+</Provider>
+`;
