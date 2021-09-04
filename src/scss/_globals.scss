@@ -34,12 +34,20 @@ a:hover {
     justify-content: space-between;
   }
 
+  &-jc-sa {
+    justify-content: space-around;
+  }
+
   &-jc-c {
     justify-content: center;
   }
 
   &-ai-c {
     align-items: center;
+  }
+
+  &-row-reverse {
+    flex-direction: row-reverse;
   }
 }
 
@@ -65,6 +73,10 @@ button,
   color: $white;
   cursor: pointer;
   font-weight: 400;
+}
+
+.button-primary {
+  padding: 0.625rem 1rem;
 }
 
 // Form inputs
@@ -103,4 +115,26 @@ label {
   left: 5px;
   top: 0.625rem;
   transition: 300ms ease all;
+}
+
+.container {
+  width: 85%;
+  margin: auto;
+  padding: 20px;
+  padding-bottom: 0;
+}
+
+@media screen and (min-width: 768px) and (max-width: 961px) {
+  .container {
+    width: 100%;
+    padding: 10px 0;
+    padding-bottom: 0;
+  }
+}
+@media screen and (max-width: 768px) {
+  .container {
+    width: 100%;
+    padding: 10px 0;
+    padding-bottom: 0;
+  }
 }
