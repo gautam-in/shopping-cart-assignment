@@ -97,6 +97,10 @@ main {
   .img-fluid {
     object-fit: fill;
   }
+  .img-cat {
+    height: 150px;
+    width: 50%;
+  }
 }
 
 @media screen and (max-width: 768px) {

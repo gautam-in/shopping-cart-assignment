@@ -41,3 +41,24 @@
 .pd-0 {
   padding: 0;
 }
+
+@media screen and (min-width: 768px) and (max-width: 961px) {
+  .card {
+    flex-basis: 48%;
+    &__subtitle {
+      display: inline-block;
+      height: 126px;
+      width: 50%;
+    }
+  }
+  .products-container {
+    &__cta {
+      span {
+        display: none;
+      }
+      button {
+        width: 100%;
+      }
+    }
+  }
+}
