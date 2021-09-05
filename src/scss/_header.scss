@@ -5,7 +5,7 @@
   }
 
   &__logo {
-    padding: 0.625rem 0;
+    padding: 0.625rem 0.625rem;
   }
 
   &__cta-container {
@@ -22,6 +22,19 @@
 
   &__login a:first-child {
     margin-right: 1rem;
+  }
+
+  &__menu {
+    display: flex;
+    align-items: flex-end;
+    margin-left: 2rem;
+    ul {
+      list-style: none;
+    }
+    li {
+      display: inline-block;
+      margin: 0 1rem;
+    }
   }
 }
 
@@ -43,5 +56,22 @@
     nav {
       padding: 0;
     }
+    &__logo {
+      img {
+        height: 50px;
+      }
+    }
+    &__cta-container {
+      flex-direction: row;
+      width: auto;
+    }
+    &__menu,
+    &__login {
+      display: none;
+    }
+  }
+  .cart-button {
+    display: flex;
+    align-items: center;
   }
 }
