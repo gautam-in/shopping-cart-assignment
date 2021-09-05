@@ -20,7 +20,7 @@
     />
     <link rel="stylesheet" href="../dist/styles.css" />
 
-    <title>Sign In</title>
+    <title>Register</title>
   </head>
   <body>
     <header class="header">
@@ -45,12 +45,27 @@
     <main>
       <section class="login-section">
         <article>
-          <h1>Login</h1>
-          <p>Get access to your Orders, Wishlist and Recommendations</p>
+          <h1>Signup</h1>
+          <p>We do not share your personal details with anyone.</p>
         </article>
 
         <article class="login-section__form">
-          <form id="loginForm">
+          <form id="registerForm">
+            <div class="mb-1">
+              <input
+                type="firstName"
+                name="firstName"
+                id="firstName"
+                required
+              />
+              <label for="firstName">First Name</label>
+            </div>
+
+            <div class="mb-1">
+              <input type="lastName" name="lastName" id="lastName" required />
+              <label for="lastName">Last Name</label>
+            </div>
+
             <div class="mb-1">
               <input type="email" name="email" id="email" required />
               <label for="email">Email</label>
@@ -61,7 +76,17 @@
               <label for="password">Password</label>
             </div>
 
-            <button>Login</button>
+            <div class="mb-1">
+              <input
+                type="text"
+                name="confirmPassword"
+                id="confirmPassword"
+                required
+              />
+              <label for="confirmPassword">Confirm Password</label>
+            </div>
+
+            <button>Signup</button>
           </form>
         </article>
       </section>
