@@ -1,4 +1,4 @@
-'use-strict';
+'use strict';
 
 async function fetchBanners() {
   try {
@@ -53,7 +53,7 @@ const createSlider = (banners) => {
   var sliderItem = slider.getElementsByTagName('div');
   var dots = document.getElementById('dots');
   var dotsChild = document.getElementById('dots').getElementsByTagName('li');
-  for (i = 0; i < sliderItem.length; i++) {
+  for (let i = 0; i < sliderItem.length; i++) {
     dots.appendChild(document.createElement('li'));
     dotsChild[i].classList.add('list-inline-item');
     dotsChild[i].setAttribute('id', i);
@@ -63,7 +63,7 @@ const createSlider = (banners) => {
   }
   function runSlider() {
     var dnum = this.getAttribute('id');
-    for (i = 0; i < sliderItem.length; i++) {
+    for (let i = 0; i < sliderItem.length; i++) {
       sliderItem[i].classList.remove('active');
       sliderItem[dnum].classList.add('active');
       dotsChild[i].classList.remove('active');
