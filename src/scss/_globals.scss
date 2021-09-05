@@ -26,6 +26,11 @@ a:hover {
   color: $black;
 }
 
+aside ul {
+  list-style-type: none;
+  padding: 0;
+}
+
 // Flexbox style
 .flex {
   display: flex;

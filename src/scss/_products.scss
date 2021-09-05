@@ -1,0 +1,43 @@
+.products-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 80%;
+  margin: auto;
+  padding: 0 10px;
+
+  &__cta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.card {
+  flex-basis: 24%;
+  margin-bottom: 5%;
+  position: relative;
+  overflow: hidden;
+  border-bottom: 2px dotted #ccc;
+  margin-left: 5px;
+  padding: 10px;
+  box-shadow: 2px 0px 5px #ccc;
+
+  h2 {
+    font-size: $font-med;
+    height: 70px;
+    overflow: scroll;
+  }
+
+  &__subtitle {
+    background-color: #ccc;
+    font-size: $font-xsm;
+    padding: 5px;
+    height: 82px;
+    overflow: scroll;
+  }
+}
+
+.pd-0 {
+  padding: 0;
+}
