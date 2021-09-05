@@ -38,12 +38,13 @@ const createProductGrid = (products) => {
     ctaDiv.classList = 'products-container__cta';
 
     const spanMrp = document.createElement('span');
+    spanMrp.classList = 'desktop-show';
     spanMrp.innerText = `MRP Rs.${price}`;
 
     const ctaBtn = document.createElement('button');
     ctaBtn.type = 'button';
     ctaBtn.classList = 'button-primary';
-    ctaBtn.innerText = 'Buy Now';
+    ctaBtn.innerHTML = `Buy Now <span class="mobile-show">@ MRP Rs.${price} </span>`;
 
     ctaDiv.appendChild(spanMrp);
     ctaDiv.appendChild(ctaBtn);

@@ -129,14 +129,14 @@ label {
   padding-bottom: 0;
 }
 
-@media screen and (min-width: 768px) and (max-width: 961px) {
+@media screen and (min-width: 767px) and (max-width: 961px) {
   .container {
     width: 100%;
     padding: 10px 0;
     padding-bottom: 0;
   }
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
   .container {
     width: 100%;
     padding: 10px 0;

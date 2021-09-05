@@ -9,3 +9,9 @@
     padding: 1rem 1rem;
   }
 }
+
+@media screen and (max-width: 767px) {
+  .aside {
+    display: none;
+  }
+}
