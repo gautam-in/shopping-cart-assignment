@@ -1,5 +1,7 @@
 'use strict';
 
+let cart = [];
+
 async function fetchProducts() {
   try {
     const res = await fetch('http://localhost:5000/products');
@@ -44,6 +46,7 @@ const createProductGrid = (products) => {
     const ctaBtn = document.createElement('button');
     ctaBtn.type = 'button';
     ctaBtn.classList = 'button-primary';
+    ctaBtn.addEventListener('click', () => addProductToCart(product));
     ctaBtn.innerHTML = `Buy Now <span class="mobile-show">@ MRP Rs.${price} </span>`;
 
     ctaDiv.appendChild(spanMrp);
@@ -56,4 +59,18 @@ const createProductGrid = (products) => {
 
     productSection.appendChild(cardDiv);
   });
+};
+
+const addProductToCart = (product) => {
+  // check if product already exists in cart
+  const productAlreadyExist =
+    cart.filter((item) => item.id === product.id).length > 0;
+
+  if (!productAlreadyExist) {
+    cart = [...cart, product];
+
+    // Update cart items number
+    const cartElm = document.querySelector('.cart-button');
+    cartElm.innerHTML = `<i class="fas fa-shopping-cart"></i> ${cart.length} items`;
+  }
 };
