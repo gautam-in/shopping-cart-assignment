@@ -1,6 +1,6 @@
 'use strict';
 
-import '../scss/styles.scss';
+// import '../scss/styles.scss';
 
 async function fetchBanners() {
   try {
