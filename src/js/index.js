@@ -1,5 +1,7 @@
 'use strict';
 
+import '../scss/styles.scss';
+
 async function fetchBanners() {
   try {
     const res = await fetch('http://localhost:5000/banners');
