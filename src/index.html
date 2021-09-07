@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="../dist/styles.css" />
+    <title>Home</title>
+  </head>
+  <body>
+    <header class="header">
+      <nav class="flex flex-jc-sb">
+        <div class="flex">
+          <a href="./index.html" class="header__logo">
+            <img src="../static/images/logo.png" alt="Sabka Bazar" />
+          </a>
+
+          <!-- Menu Links -->
+          <div class="header__menu">
+            <ul>
+              <li><a href="./index.html"> Home</a></li>
+              <li><a href="./products.html"> Products</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="header__cta-container">
+          <div class="header__login">
+            <a href="./login.html">SignIn</a>
+            <a href="./register.html">Register</a>
+          </div>
+
+          <a href="#" class="cart-button">
+            <i class="fas fa-shopping-cart"></i> 0 items
+          </a>
+        </div>
+      </nav>
+    </header>
+    <!-- Main Section Starts -->
+    <main class="container">
+      <!-- Banners section Starts -->
+      <section id="banners" class="slider category curved"></section>
+
+      <section id="categories">
+        <!-- <article class="flex flex-jc-sa category curved">
+          <img
+            src="../static/images/category/fruits.png"
+            alt="Fruits"
+            height="200px"
+          />
+
+          <div class="category-info">
+            <h2>Fruits & Vegetables</h2>
+            <p>A variety of fresh fruits & vegetables</p>
+            <button type="button" class="button-primary">
+              Explore fruit-and-veg
+            </button>
+          </div>
+        </article> -->
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>Copyright © 2011-2018 Sabka Bazaar Grocery Supplies Pvt Ltd</p>
+    </footer>
+    <script src="./js/helpers.js"></script>
+    <script src="./js/index.js"></script>
+  </body>
+</html>

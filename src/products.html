@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="../dist/styles.css" />
+    <title>Home</title>
+  </head>
+  <body>
+    <header class="header">
+      <nav class="flex flex-jc-sb">
+        <div class="flex">
+          <a href="./index.html" class="header__logo">
+            <img src="../static/images/logo.png" alt="Sabka Bazar" />
+          </a>
+
+          <!-- Menu Links -->
+          <div class="header__menu">
+            <ul>
+              <li><a href="./index.html"> Home</a></li>
+              <li><a href="./products.html"> Products</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="header__cta-container">
+          <div class="header__login">
+            <a href="./login.html">SignIn</a>
+            <a href="./register.html">Register</a>
+          </div>
+
+          <a href="#" class="cart-button" onclick="openCart(event)">
+            <i class="fas fa-shopping-cart"></i> 0 items
+          </a>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Mobile select dropdown for navigation -->
+    <section class="mobile-show">
+      <select id="sub-menu" name="sub-menu">
+        <option value="">Fruits & Vegetables</option>
+        <option value="">Bakery Cakes & Dairy</option>
+        <option value="">Beverages</option>
+        <option value="">Beauty and Hygiene</option>
+        <option value="">Baby Care</option>
+      </select>
+    </section>
+
+    <!-- Main Section Starts -->
+    <main class="container flex pd-0">
+      <!-- Desktop/tablet aside bar -->
+      <aside class="aside">
+        <ul>
+          <li><a href="#">Fruits & Vegetables</a></li>
+          <li><a href="#">Bakery Cakes & Dairy</a></li>
+          <li><a href="#">Beverages</a></li>
+          <li><a href="#">Beauty and Hygiene</a></li>
+          <li><a href="#">Baby Care</a></li>
+        </ul>
+      </aside>
+      <!-- Products -->
+      <section id="products" class="products-container flex">
+        <!-- <div class="card">
+          <h2>Kiwi frsho - green</h2>
+          <img
+            src="../static/images/products/fruit-n-veg/kiwi-green.jpg"
+            alt="Kiwi"
+            height="150"
+          />
+          <p class="card__subtitle">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Reprehenderit, consequuntur?
+          </p>
+          <div class="products-container__cta">
+            <span>MRP Rs.87</span>
+            <button type="button" class="button-primary">Buy Now</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <h2>Kiwi frsho - green</h2>
+          <img
+            src="../static/images/products/fruit-n-veg/kiwi-green.jpg"
+            alt="Kiwi"
+            height="150"
+          />
+          <p class="card__subtitle">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Reprehenderit, consequuntur?
+          </p>
+          <div class="products-container__cta">
+            <span>MRP Rs.87</span>
+            <button type="button" class="button-primary">Buy Now</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <h2>Kiwi frsho - green</h2>
+          <img
+            src="../static/images/products/fruit-n-veg/kiwi-green.jpg"
+            alt="Kiwi"
+            height="150"
+          />
+          <p class="card__subtitle">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Reprehenderit, consequuntur?
+          </p>
+          <div class="products-container__cta">
+            <span>MRP Rs.87</span>
+            <button type="button" class="button-primary">Buy Now</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <h2>Kiwi frsho - green</h2>
+          <img
+            src="../static/images/products/fruit-n-veg/kiwi-green.jpg"
+            alt="Kiwi"
+            height="150"
+          />
+          <p class="card__subtitle">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Reprehenderit, consequuntur?
+          </p>
+          <div class="products-container__cta">
+            <span>MRP Rs.87</span>
+            <button type="button" class="button-primary">Buy Now</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <h2>Kiwi frsho - green</h2>
+          <img
+            src="../static/images/products/fruit-n-veg/kiwi-green.jpg"
+            alt="Kiwi"
+            height="150"
+          />
+          <p class="card__subtitle">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Reprehenderit, consequuntur?
+          </p>
+          <div class="products-container__cta">
+            <span>MRP Rs.87</span>
+            <button type="button" class="button-primary">Buy Now</button>
+          </div>
+        </div> -->
+      </section>
+
+      <!-- Cart Modal -->
+      <section id="cart">
+        <div id="myModal" class="modal">
+          <div class="modal-content">
+            <div class="modal-header">
+              <span class="close">&times;</span>
+              <h2 id="cartHeader">My Cart</h2>
+            </div>
+            <div class="modal-body">
+              <!-- <div
+                class="flex-column flex-jc-c flex-ai-c"
+                style="margin-top: 30%"
+              >
+                <h2>No items in your cart</h2>
+                <p>Your favorite items are just a click away</p>
+              </div> -->
+
+              <!-- <div class="row">
+                <img
+                  src="../static/images/products/fruit-n-veg/apple.jpg"
+                  alt="Apple"
+                  height="80px"
+                  width="80px"
+                />
+                <div class="cart-info">
+                  <h2>Apple- Washington, Regular, 4 pcs</h2>
+
+                  <div class="control-buttons">
+                    <i class="fas fa-minus-circle"></i>
+                    <span class="multiplier">1</span>
+                    <i class="fas fa-plus-circle"></i>
+                  </div>
+
+                  <span>&times;</span>
+                  <span>Rs. 187</span>
+                </div>
+
+                <div class="price">
+                  <span>Rs. 187</span>
+                </div>
+              </div> -->
+
+              <!-- <div class="offer">
+                <img src="../static/images/lowest-price.png" alt="Offer" />
+                <span>You won't find it cheaper anywhere</span>
+              </div> -->
+            </div>
+            <div class="modal-footer">
+              <!-- <p>Promo code can be applied on payment page</p>
+              <button type="button" class="flex flex-jc-sb">
+                Proceed to Checkout <span>Rs.187</span>
+              </button> -->
+              <!-- <button>Start Shopping</button> -->
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>Copyright © 2011-2018 Sabka Bazaar Grocery Supplies Pvt Ltd</p>
+    </footer>
+
+    <script src="./js/helpers.js"></script>
+    <script src="./js/products.js"></script>
+  </body>
+</html>
