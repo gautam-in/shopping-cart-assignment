@@ -81,9 +81,25 @@ input, textarea, button, p, span, select {
   visibility: hidden;
 }
 
+.hide {
+  display: none;
+}
+
+.text-align-center {
+  text-align: center;
+}
+
+.text-align-left {
+  text-align: left;
+}
+
+.text-align-right {
+  text-align: right;
+}
+
 header {
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.25);
   font-weight: bold;
+  box-shadow: 0 7px 4px 0px rgba(0, 0, 0, 0.25);
 }
 
 .container {
@@ -163,6 +179,62 @@ header {
   font-size: 1.5rem;
 }
 
+.carousel-section {
+  position: relative;
+}
+.carousel-section .carousel-list {
+  margin: 10px 0 0 0;
+  padding: 0px;
+}
+.carousel-section .carousel-list .carousel-list-item {
+  list-style: none;
+  box-shadow: 0 7px 4px 0px rgba(0, 0, 0, 0.25);
+}
+.carousel-section .carousel-list .carousel-list-item img {
+  width: 100%;
+  max-height: 250px;
+}
+.carousel-section .carousel-list-nav {
+  position: absolute;
+  display: block;
+  top: 45%;
+  padding: 0px 10px;
+  width: 100%;
+}
+.carousel-section .carousel-list-nav button {
+  padding: 10px;
+  background: #00000066;
+  color: #eee;
+}
+.carousel-section .carousel-list-nav .carousel-list-nav-prev {
+  float: left;
+}
+.carousel-section .carousel-list-nav .carousel-list-nav-next {
+  float: right;
+}
+
+.categories .category {
+  box-shadow: 0 7px 4px 0px rgba(0, 0, 0, 0.25);
+}
+.categories .category div {
+  flex: 0.5;
+}
+.categories .category .category-image img {
+  width: 36rem;
+  height: 22rem;
+}
+.categories .category .category-desc {
+  color: black;
+}
+.categories .category .category-desc h3 {
+  font-weight: bolder;
+}
+.categories .category .category-desc .category-explore-button {
+  padding: 10px;
+  background: #716d6c;
+  color: #eee;
+}
+
 footer {
   height: 15%;
   background-color: #eeeeee;
@@ -172,6 +244,15 @@ footer {
 @media screen and (max-width: 720px) {
   .xs-hide {
     display: none;
+  }
+
+  img.xs-shrink {
+    width: 18rem !important;
+    height: 11rem !important;
+  }
+
+  .xs-shrink {
+    font-size: 0.8rem;
   }
 }
 

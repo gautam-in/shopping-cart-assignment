@@ -72,12 +72,32 @@ input,textarea,button,p,span,select {
   visibility: hidden;
 }
 
+.hide {
+  display: none;
+}
+
+.text-align-center {
+  text-align: center;
+}
+
+.text-align-left {
+  text-align: left;
+}
+
+.text-align-right {
+  text-align: right;
+}
+
 // common classes
+@mixin shadow-bottom {
+  box-shadow: 0 7px 4px 0px rgb(0 0 0 / 25%);
+}
 
 header{
-  box-shadow: 0 0 8px rgb(0 0 0 / 25%);
   font-weight: bold;
+  @include shadow-bottom;
 }
+
 .container{
   width: 90%;
   margin: auto;
@@ -169,6 +189,66 @@ header{
   }
 }
 
+.carousel-section {
+  position: relative;
+  .carousel-list {
+    margin: 10px 0 0 0;
+    padding: 0px;
+    .carousel-list-item {
+      list-style: none;
+      @include shadow-bottom;
+      img{
+        width: 100%;
+        max-height: 250px;
+      }
+    }
+  }
+  .carousel-list-nav {
+    position: absolute;
+    display: block;
+    top: 45%;
+    padding: 0px 10px;
+    width: 100%;
+    button{
+      padding: 10px;
+      background: #00000066;
+      color:#eee;
+    }
+    .carousel-list-nav-prev {
+      float:left;
+    }
+    .carousel-list-nav-next {
+      float:right;
+    }
+  }
+}
+.categories {
+  .category {
+    @include shadow-bottom;
+    div {
+      flex: 0.5;
+    }
+    .category-image {
+      img {
+        width: 36rem;
+        height: 22rem;
+      }
+    }
+    .category-desc {
+      color: black;
+      h3 {
+        font-weight: bolder;
+      }
+      .category-explore-button {
+        padding: 10px;
+        background: #716d6c;
+        color: #eee;
+      }
+    }
+  }
+
+}
+
 
 // Footer section CSS
 footer{
@@ -180,7 +260,14 @@ footer{
 // media queries for small devices
 
 @media screen and (max-width: 720px){
-  .xs-hide{
+  .xs-hide {
     display: none;
+  }
+  img.xs-shrink {
+    width: 18rem !important;
+    height: 11rem !important;
+  }
+  .xs-shrink {
+    font-size: 0.8rem;
   }
 }
