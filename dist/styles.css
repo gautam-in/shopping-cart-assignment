@@ -281,6 +281,12 @@ label {
   }
 }
 
+@media screen and (max-width: 767px) {
+  .header__menu {
+    display: none;
+  }
+}
+
 .footer {
   background: #ccc;
 }
