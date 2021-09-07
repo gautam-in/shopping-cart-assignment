@@ -163,6 +163,9 @@ label {
 }
 
 @media screen and (max-width: 767px) {
+  body {
+    font-size: 0.825rem;
+  }
   .container {
     width: 100%;
     padding: 10px 0;
@@ -875,7 +878,7 @@ select#sub-menu > option {
 @media screen and (max-width: 767px) {
   .modal {
     background-color: transparent;
-    margin-top: 18%;
+    margin-top: 10vh;
     padding: 0;
   }
   .modal-content {
@@ -892,6 +895,20 @@ select#sub-menu > option {
   }
   .modal-footer {
     margin-top: 5px;
+    position: absolute;
+    top: 75vh;
+    width: 100%;
+    height: 14vh;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
   }
   .price {
     margin-top: 13.25%;

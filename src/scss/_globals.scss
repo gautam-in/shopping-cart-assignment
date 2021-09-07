@@ -145,6 +145,9 @@ label {
   }
 }
 @media screen and (max-width: 767px) {
+  body {
+    font-size: $font-xsm;
+  }
   .container {
     width: 100%;
     padding: 10px 0;
