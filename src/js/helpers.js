@@ -6,3 +6,14 @@ const createElementHelper = (type, classList, innerText, innerHTML) => {
 
   return customElement;
 };
+
+const makeRequest = async (url) => {
+  try {
+    const res = await fetch(url);
+    const data = await res.json();
+    return data;
+  } catch (error) {
+    console.log(error);
+    throw Error('Something went wrong');
+  }
+};

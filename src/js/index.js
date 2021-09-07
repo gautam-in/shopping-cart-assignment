@@ -3,25 +3,13 @@
 // import '../scss/styles.scss';
 
 async function fetchBanners() {
-  try {
-    const res = await fetch('http://localhost:5000/banners');
-    const data = await res.json();
-    createSlider(data);
-    console.log('data from banners', data);
-  } catch (error) {
-    console.log(error);
-  }
+  const bannersArray = await makeRequest('http://localhost:5000/banners');
+  createSlider(bannersArray);
 }
 
 async function fetchCategories() {
-  try {
-    const res = await fetch('http://localhost:5000/categories');
-    const data = await res.json();
-    createCategoriesSection(data);
-    console.log('data from categories', data);
-  } catch (error) {
-    console.log(error);
-  }
+  const catArray = await makeRequest('http://localhost:5000/categories');
+  createCategoriesSection(catArray);
 }
 
 fetchBanners();

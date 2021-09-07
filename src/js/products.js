@@ -3,14 +3,8 @@
 let cart = [];
 
 async function fetchProducts() {
-  try {
-    const res = await fetch('http://localhost:5000/products');
-    const data = await res.json();
-    createProductGrid(data);
-    console.log('data from products', data);
-  } catch (error) {
-    console.log(error);
-  }
+  const productsArray = await makeRequest('http://localhost:5000/products');
+  createProductGrid(productsArray);
 }
 
 fetchProducts();
