@@ -43,7 +43,7 @@
             <a href="./register.html">Register</a>
           </div>
 
-          <a href="#" class="cart-button">
+          <a href="#" class="cart-button" onclick="openCart(event)">
             <i class="fas fa-shopping-cart"></i> 0 items
           </a>
         </div>
@@ -160,12 +160,62 @@
           </div>
         </div> -->
       </section>
+
+      <!-- Cart Modal -->
+      <section id="cart">
+        <div id="myModal" class="modal">
+          <div class="modal-content">
+            <div class="modal-header">
+              <span class="close">&times;</span>
+              <h2 id="cartHeader">My Cart</h2>
+            </div>
+            <div class="modal-body">
+              <!-- <div class="row">
+                <img
+                  src="../static/images/products/fruit-n-veg/apple.jpg"
+                  alt="Apple"
+                  height="80px"
+                  width="80px"
+                />
+                <div class="cart-info">
+                  <h2>Apple- Washington, Regular, 4 pcs</h2>
+
+                  <div class="control-buttons">
+                    <i class="fas fa-minus-circle"></i>
+                    <span class="multiplier">1</span>
+                    <i class="fas fa-plus-circle"></i>
+                  </div>
+
+                  <span>&times;</span>
+                  <span>Rs. 187</span>
+                </div>
+
+                <div class="price">
+                  <span>Rs. 187</span>
+                </div>
+              </div> -->
+
+              <!-- <div class="offer">
+                <img src="../static/images/lowest-price.png" alt="Offer" />
+                <span>You won't find it cheaper anywhere</span>
+              </div> -->
+            </div>
+            <div class="modal-footer">
+              <p>Promo code can be applied on payment page</p>
+              <button type="button" class="flex flex-jc-sb">
+                Proceed to Checkout <span>Rs.187</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
 
     <footer class="footer">
       <p>Copyright © 2011-2018 Sabka Bazaar Grocery Supplies Pvt Ltd</p>
     </footer>
 
+    <script src="./js/helpers.js"></script>
     <script src="./js/products.js"></script>
   </body>
 </html>

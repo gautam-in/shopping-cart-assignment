@@ -21,33 +21,32 @@ const createProductGrid = (products) => {
   products.map((product, index) => {
     const { name, imageURL, description, price } = product;
 
-    const cardDiv = document.createElement('div');
-    cardDiv.classList = 'card';
-
-    const h2 = document.createElement('h2');
-    h2.innerText = name;
-
-    const cardImg = document.createElement('img');
+    const cardDiv = createElementHelper('div', 'card');
+    const h2 = createElementHelper('h2', '', name);
+    const cardImg = createElementHelper('img', 'img-cat');
     cardImg.src = imageURL;
     cardImg.alt = name;
-    cardImg.classList = 'img-cat';
 
-    const cardSubtitle = document.createElement('p');
-    cardSubtitle.classList = 'card__subtitle';
-    cardSubtitle.innerText = description;
+    const cardSubtitle = createElementHelper(
+      'p',
+      'card__subtitle',
+      description
+    );
+    const ctaDiv = createElementHelper('div', 'products-container__cta');
+    const spanMrp = createElementHelper(
+      'span',
+      'desktop-show',
+      `MRP Rs.${price}`
+    );
 
-    const ctaDiv = document.createElement('div');
-    ctaDiv.classList = 'products-container__cta';
-
-    const spanMrp = document.createElement('span');
-    spanMrp.classList = 'desktop-show';
-    spanMrp.innerText = `MRP Rs.${price}`;
-
-    const ctaBtn = document.createElement('button');
+    const ctaBtn = createElementHelper(
+      'button',
+      'button-primary',
+      undefined,
+      `Buy Now <span class="mobile-show">@ MRP Rs.${price} </span>`
+    );
     ctaBtn.type = 'button';
-    ctaBtn.classList = 'button-primary';
     ctaBtn.addEventListener('click', () => addProductToCart(product));
-    ctaBtn.innerHTML = `Buy Now <span class="mobile-show">@ MRP Rs.${price} </span>`;
 
     ctaDiv.appendChild(spanMrp);
     ctaDiv.appendChild(ctaBtn);
@@ -73,4 +72,99 @@ const addProductToCart = (product) => {
     const cartElm = document.querySelector('.cart-button');
     cartElm.innerHTML = `<i class="fas fa-shopping-cart"></i> ${cart.length} items`;
   }
+};
+
+const openCart = (e) => {
+  e.preventDefault();
+  var modal = document.getElementById('myModal');
+  var span = document.querySelector('.close');
+
+  //Toggle modal functionality
+  if (modal.style.display === 'block') {
+    modal.style.display = 'none';
+    return;
+  }
+
+  let cartTotalPrice = 0;
+
+  modal.style.display = 'block';
+
+  if (cart.length === 0) {
+    // Show Empty cart
+  } else {
+    // Build cart
+    const cartHeader = document.getElementById('cartHeader');
+    cartHeader.innerHTML = `My Cart <span> (${cart.length} items) </span>`;
+
+    const modalBody = document.querySelector('.modal-body');
+
+    modalBody.innerHTML = '';
+
+    cart.map((product) => {
+      const { name, imageURL, price } = product;
+
+      cartTotalPrice += price;
+
+      const row = createElementHelper('div', 'row');
+      modalBody.appendChild(row);
+
+      const img = createElementHelper('img', 'img-modal');
+      img.src = imageURL;
+      img.alt = name;
+      row.appendChild(img);
+
+      const cartInfoDiv = createElementHelper('div', 'cart-info');
+      row.appendChild(cartInfoDiv);
+
+      const h2 = createElementHelper('h2', '', name);
+      cartInfoDiv.appendChild(h2);
+
+      const controlButtonDiv = createElementHelper('div', 'control-buttons');
+      cartInfoDiv.appendChild(controlButtonDiv);
+
+      const minusIcon = createElementHelper('i', 'fas fa-minus-circle');
+      const plusIcon = createElementHelper('i', 'fas fa-plus-circle');
+      const multiplier = createElementHelper('span', '', '1');
+      controlButtonDiv.appendChild(minusIcon);
+      controlButtonDiv.appendChild(multiplier);
+      controlButtonDiv.appendChild(plusIcon);
+
+      const spanCross = createElementHelper('span', 'multiplier', 'x');
+      cartInfoDiv.appendChild(spanCross);
+
+      const spanPrice = createElementHelper('span', '', `Rs.${price}`);
+      cartInfoDiv.appendChild(spanPrice);
+
+      const divPrice = createElementHelper('div', 'price');
+      const spanPrice2 = createElementHelper('span', '', `Rs.${price}`);
+      row.appendChild(divPrice);
+      divPrice.appendChild(spanPrice2);
+    });
+
+    // Append offer div
+    const divOffer = createElementHelper('div', 'offer');
+    modalBody.appendChild(divOffer);
+
+    const offerImg = createElementHelper('img');
+    offerImg.src = '../static/images/lowest-price.png';
+    offerImg.alt = 'Offer Image';
+
+    const span = createElementHelper(
+      'span',
+      '',
+      "You won't find it cheaper anywhere"
+    );
+    divOffer.appendChild(offerImg);
+    divOffer.appendChild(span);
+
+    // Update price on checkout button
+    const checkOutPriceElm = document.querySelector(
+      '.modal-footer button span'
+    );
+    checkOutPriceElm.innerText = `Rs.${cartTotalPrice}`;
+  }
+
+  span.onclick = function () {
+    modal.style.display = 'none';
+  };
 };

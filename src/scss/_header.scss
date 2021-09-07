@@ -1,11 +1,16 @@
 .header {
   box-shadow: 0px 5px 5px #ccc;
+  height: 12vh;
   nav {
     padding: 0 10rem;
+    height: 100%;
   }
 
   &__logo {
     padding: 0.625rem 0.625rem;
+    img {
+      height: 100%;
+    }
   }
 
   &__cta-container {
@@ -53,21 +58,19 @@
 
 @media screen and (max-width: 961px) {
   .header {
+    height: 10vh;
     nav {
       padding: 0;
-    }
-    &__logo {
-      img {
-        height: 50px;
-      }
     }
     &__cta-container {
       flex-direction: row;
       width: auto;
     }
-    &__menu,
     &__login {
       display: none;
+    }
+    &__menu {
+      margin: 0;
     }
   }
   .cart-button {

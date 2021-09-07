@@ -84,7 +84,7 @@ aside ul {
 
 button,
 .button {
-  padding: 1rem 6.25rem;
+  padding: 1rem 2rem;
   background: #df0e6f;
   border: 0;
   border-radius: 5px;
@@ -116,7 +116,7 @@ input:focus {
 input:focus ~ label,
 input:valid ~ label {
   top: -14px;
-  font-size: 0.75rem;
+  font-size: 0.825rem;
   color: #2bb7da;
 }
 
@@ -143,6 +143,17 @@ label {
   padding-bottom: 0;
 }
 
+.row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: white;
+  margin: 1rem 0;
+  padding: 1rem;
+  -webkit-box-shadow: 0px 5px 5px #ccc;
+          box-shadow: 0px 5px 5px #ccc;
+}
+
 @media screen and (min-width: 767px) and (max-width: 961px) {
   .container {
     width: 100%;
@@ -157,19 +168,28 @@ label {
     padding: 10px 0;
     padding-bottom: 0;
   }
+  .row {
+    padding: 0;
+  }
 }
 
 .header {
   -webkit-box-shadow: 0px 5px 5px #ccc;
           box-shadow: 0px 5px 5px #ccc;
+  height: 12vh;
 }
 
 .header nav {
   padding: 0 10rem;
+  height: 100%;
 }
 
 .header__logo {
   padding: 0.625rem 0.625rem;
+}
+
+.header__logo img {
+  height: 100%;
 }
 
 .header__cta-container {
@@ -232,11 +252,11 @@ label {
 }
 
 @media screen and (max-width: 961px) {
+  .header {
+    height: 10vh;
+  }
   .header nav {
     padding: 0;
-  }
-  .header__logo img {
-    height: 50px;
   }
   .header__cta-container {
     -webkit-box-orient: horizontal;
@@ -245,8 +265,11 @@ label {
             flex-direction: row;
     width: auto;
   }
-  .header__menu, .header__login {
+  .header__login {
     display: none;
+  }
+  .header__menu {
+    margin: 0;
   }
   .cart-button {
     display: -webkit-box;
@@ -441,7 +464,11 @@ label {
 }
 
 .img-cat {
-  height: 200px;
+  height: 120px;
+  width: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  width: 100%;
 }
 
 #categories article:last-child {
@@ -549,7 +576,7 @@ label {
 
 .card__subtitle {
   background-color: #ccc;
-  font-size: 0.75rem;
+  font-size: 0.825rem;
   padding: 5px;
   height: 82px;
   overflow: scroll;
@@ -644,6 +671,236 @@ select#sub-menu > option {
   }
   .desktop-show {
     display: none;
+  }
+}
+
+/* The Modal (background) */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 85px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+/* Modal Content */
+.modal-content {
+  position: relative;
+  background-color: #ccc;
+  margin: auto;
+  padding: 0;
+  border: 1px solid #888;
+  width: 35%;
+  height: 98%;
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  -webkit-animation-name: animatetop;
+          animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+          animation-duration: 0.4s;
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+  from {
+    top: -300px;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
+}
+@keyframes animatetop {
+  from {
+    top: -300px;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
+}
+
+/* The Close Button */
+.close {
+  color: white;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  margin-top: 2%;
+}
+
+.close:hover,
+.close:focus {
+  color: #ccc;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-header {
+  padding: 2px 16px;
+  background-color: black;
+  color: white;
+}
+
+.modal-header h2 {
+  font-size: 1.125rem;
+}
+
+.modal-body {
+  background-color: #ccc;
+  height: 75%;
+  overflow: scroll;
+}
+
+.modal-body .img-modal {
+  width: 80px;
+  height: 80px;
+}
+
+.modal-footer {
+  padding: 10px 16px;
+  background-color: white;
+  text-align: center;
+  margin: auto;
+  margin-top: 5px;
+}
+
+.modal-footer p {
+  margin-top: 0;
+}
+
+.modal-footer button {
+  width: 100%;
+}
+
+.cart-info {
+  padding: 0 1rem;
+  width: 70%;
+}
+
+.cart-info h2 {
+  margin: 0;
+  height: 2rem;
+  overflow: scroll;
+}
+
+.cart-info .multiplier {
+  margin-right: 1rem;
+  font-size: 1.125rem;
+}
+
+.control-buttons {
+  display: inline-block;
+  margin-top: 0.625rem;
+  margin-right: 1rem;
+}
+
+.control-buttons span {
+  padding: 0 1rem;
+}
+
+.fa-minus-circle,
+.fa-plus-circle {
+  font-size: 1.25rem;
+  color: #df0e6f;
+}
+
+.price {
+  margin-top: 9.45%;
+}
+
+.offer {
+  background: white;
+  margin: 0 1rem;
+  padding: 8px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.offer img {
+  height: 40px;
+  width: 20%;
+}
+
+.offer span {
+  margin-left: 1rem;
+}
+
+@media screen and (min-width: 767px) and (max-width: 961px) {
+  .modal {
+    background-color: transparent;
+    margin-top: 103px;
+    padding: 0;
+  }
+  .modal-content {
+    height: 100%;
+    width: 100%;
+  }
+  .modal-body {
+    height: 72%;
+  }
+  .modal-header {
+    margin-top: 1.5rem;
+    background-color: white;
+    color: black;
+  }
+  .modal-footer {
+    margin-top: 5px;
+  }
+  .price {
+    margin-top: 6%;
+  }
+  .offer img {
+    width: 15%;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .modal {
+    background-color: transparent;
+    margin-top: 18%;
+    padding: 0;
+  }
+  .modal-content {
+    height: 100%;
+    width: 100%;
+  }
+  .modal-body {
+    height: 63%;
+  }
+  .modal-header {
+    margin-top: 1.5rem;
+    background-color: white;
+    color: black;
+  }
+  .modal-footer {
+    margin-top: 5px;
+  }
+  .price {
+    margin-top: 13.25%;
+  }
+  .offer img {
+    width: 23%;
+  }
+  .cart-info {
+    padding-top: 0.625rem;
+  }
+  .cart-info h2 {
+    font-size: 0.825rem;
+  }
+  .control-buttons {
+    margin-top: 5px;
   }
 }
 /*# sourceMappingURL=styles.css.map */
