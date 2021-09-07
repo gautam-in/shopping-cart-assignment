@@ -89,17 +89,44 @@ const openCart = (e) => {
 
   modal.style.display = 'block';
 
+  const modalBody = document.querySelector('.modal-body');
+  const modalFooter = document.querySelector('.modal-footer');
+
   if (cart.length === 0) {
     // Show Empty cart
+    modalBody.innerHTML = '';
+    modalFooter.innerHTML = '';
+
+    const buttonCta = createElementHelper('button', null, 'Start Shopping');
+    buttonCta.type = 'button';
+    buttonCta.addEventListener('click', () => {
+      modal.style.display = 'none';
+    });
+    modalFooter.appendChild(buttonCta);
+    modalFooter.style.margin = 0;
+
+    const div = createElementHelper(
+      'div',
+      'flex-column flex-jc-c flex-ai-c',
+      null,
+      ` <h2>No items in your cart</h2>
+      <p>Your favorite items are just a click away</p>`
+    );
+    div.style.marginTop = '30%';
+    modalBody.appendChild(div);
+    modalBody.style.background = 'white';
   } else {
     // Build cart
     const cartHeader = document.getElementById('cartHeader');
     cartHeader.innerHTML = `My Cart <span> (${cart.length} items) </span>`;
-
-    const modalBody = document.querySelector('.modal-body');
-
     modalBody.innerHTML = '';
-
+    modalFooter.innerHTML = `
+    <p>Promo code can be applied on payment page</p>
+              <button type="button" class="flex flex-jc-sb">
+                Proceed to Checkout <span>Rs.187</span>
+              </button>
+    `;
+    modalFooter.style.marginTop = '5px';
     cart.map((product) => {
       const { name, imageURL, price } = product;
 
