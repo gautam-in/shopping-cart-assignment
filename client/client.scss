@@ -1,5 +1,183 @@
-$body-color: red;
-
+// nullifying few predefined styles
+$primary-color: #716d6c;
+*{
+  box-sizing: border-box;
+}
+html{
+  font-size: 10px;
+}
 body {
-  color: $body-color;
+  font-family: 'Dosis', sans-serif;
+  font-size: 1.5rem;
+  color: $primary-color;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+button {
+  cursor: pointer;
+  margin: 0;
+  border: none;
+}
+h1,h2,h3,h4,h5,h6 {
+  font-weight: normal;
+}
+input,textarea,button,p,span,select {
+  font-family: inherit;
+  font-size: inherit;
+  background: none;
+  border-radius: 0;
+  outline: 0;
+  padding: 0;
+}
+
+// utility classes
+.m-0 {
+  margin: 0;
+}
+.m-t10 {
+  margin-top: 10px;
+}
+.d-flex {
+  display: flex;
+}
+.flex-column {
+  flex-direction: column;
+}
+.justify-space-between {
+  justify-content: space-between;
+}
+.justify-center {
+  justify-content: center;
+}
+.justify-space-evenly {
+  justify-content: space-evenly;
+}
+
+.d-flex-space-between {
+  display: flex;
+  justify-content: space-between;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.not-visible{
+  visibility: hidden;
+}
+
+// common classes
+
+header{
+  box-shadow: 0 0 8px rgb(0 0 0 / 25%);
+  font-weight: bold;
+}
+.container{
+  width: 90%;
+  margin: auto;
+}
+
+.form-input {
+  padding-top:20px;
+}
+.form-submit-button {
+  padding: 20px;
+  margin: 20px 0px 0px 0px;
+  background-color: $primary-color;
+  color: #eee;
+  font-size: larger;
+}
+
+.form-submit-button:focus, .form-submit-button:hover {
+  background-color: #716d6ce0;
+}
+
+// Header section CSS
+.header-container{
+  .header-main-section{
+    .header-section-logo{
+      padding: 0;
+      margin: 20px 0 0 0;
+    }
+    .navigation-links{
+      .navigation-links-list{
+        align-items: end;
+        .navigation-links-list-item{
+          list-style: none;
+          margin: 0px 30px 10px 0px;
+        }
+      }
+    }
+  }
+  .checkout-section{
+    .checkout-nav-links{
+      .checkout-nav-links-list{
+        align-items: end;
+        .checkout-nav-links-list-item{
+          list-style: none;
+          margin: 0px 30px 10px 0px;
+          font-size: 1.2rem;
+        }
+      }
+    }
+    .checkout-cart{
+      background: #eee;
+      padding: 10px 0px 10px 0px;
+      margin-left: 30px;
+      justify-content: center;
+      align-items: center;
+      .checkout-cart-icon{
+        width: 30px;
+        height: 30px;
+        fill: #bf2957;
+      }
+    }
+  } 
+}
+
+// Main section CSS
+.main-section{
+  .main-section-desc{
+    color: black;
+    h1{
+      font-weight: bolder;
+    }
+  }
+  .main-section-form{
+    flex: 0.5;
+    .main-section-input-form{
+      padding-top: 40px;
+      padding-bottom:40px;
+      label{
+        // position: absolute;
+        font-size: 1em;
+      }
+      input{
+        border-top:none;
+        border-right: none;
+        border-left: none;
+        border-bottom: 2px solid #716d6c91;
+        line-height: 2.5em;
+        font-size: 1.5rem;
+      }
+    }
+  }
+}
+
+
+// Footer section CSS
+footer{
+  height: 15%;
+  background-color: #eeeeee;
+  padding: 15px;
+}
+
+// media queries for small devices
+
+@media screen and (max-width: 720px){
+  .xs-hide{
+    display: none;
+  }
 }
