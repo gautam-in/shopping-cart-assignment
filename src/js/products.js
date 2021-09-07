@@ -66,6 +66,7 @@ const addProductToCart = (product) => {
     cart.filter((item) => item.id === product.id).length > 0;
 
   if (!productAlreadyExist) {
+    product.quantity = 1;
     cart = [...cart, product];
 
     // Update cart items number
@@ -75,15 +76,15 @@ const addProductToCart = (product) => {
 };
 
 const openCart = (e) => {
-  e.preventDefault();
+  e ? e.preventDefault() : null;
   var modal = document.getElementById('myModal');
   var span = document.querySelector('.close');
 
   //Toggle modal functionality
-  if (modal.style.display === 'block') {
-    modal.style.display = 'none';
-    return;
-  }
+  // if (modal.style.display === 'block') {
+  //   modal.style.display = 'none';
+  //   return;
+  // }
 
   let cartTotalPrice = 0;
 
@@ -128,9 +129,7 @@ const openCart = (e) => {
     `;
     modalFooter.style.marginTop = '5px';
     cart.map((product) => {
-      const { name, imageURL, price } = product;
-
-      cartTotalPrice += price;
+      const { name, imageURL, price, quantity } = product;
 
       const row = createElementHelper('div', 'row');
       modalBody.appendChild(row);
@@ -150,8 +149,12 @@ const openCart = (e) => {
       cartInfoDiv.appendChild(controlButtonDiv);
 
       const minusIcon = createElementHelper('i', 'fas fa-minus-circle');
+      minusIcon.addEventListener('click', () => decreaseQuantity(product));
+
       const plusIcon = createElementHelper('i', 'fas fa-plus-circle');
-      const multiplier = createElementHelper('span', '', '1');
+      plusIcon.addEventListener('click', () => addQuantity(product));
+
+      const multiplier = createElementHelper('span', '', quantity);
       controlButtonDiv.appendChild(minusIcon);
       controlButtonDiv.appendChild(multiplier);
       controlButtonDiv.appendChild(plusIcon);
@@ -159,11 +162,14 @@ const openCart = (e) => {
       const spanCross = createElementHelper('span', 'multiplier', 'x');
       cartInfoDiv.appendChild(spanCross);
 
-      const spanPrice = createElementHelper('span', '', `Rs.${price}`);
+      const totalPrice = price * quantity;
+      cartTotalPrice += totalPrice;
+
+      const spanPrice = createElementHelper('span', '', `Rs.${totalPrice}`);
       cartInfoDiv.appendChild(spanPrice);
 
       const divPrice = createElementHelper('div', 'price');
-      const spanPrice2 = createElementHelper('span', '', `Rs.${price}`);
+      const spanPrice2 = createElementHelper('span', '', `Rs.${totalPrice}`);
       row.appendChild(divPrice);
       divPrice.appendChild(spanPrice2);
     });
@@ -194,4 +200,18 @@ const openCart = (e) => {
   span.onclick = function () {
     modal.style.display = 'none';
   };
+};
+
+const addQuantity = (product) => {
+  cart.map((item) => {
+    if (item.id === product.id) item.quantity += 1;
+  });
+  openCart();
+};
+
+const decreaseQuantity = (product) => {
+  cart.map((item) => {
+    if (item.id === product.id && item.quantity > 1) item.quantity -= 1;
+  });
+  openCart();
 };
