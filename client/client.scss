@@ -64,6 +64,10 @@ input,textarea,button,p,span,select {
   align-items: center;
 }
 
+.align-items-baseline {
+  align-items: baseline;
+}
+
 .not-visible{
   visibility: hidden;
 }
@@ -83,11 +87,10 @@ header{
   padding-top:20px;
 }
 .form-submit-button {
-  padding: 20px;
-  margin: 20px 0px 0px 0px;
-  background-color: $primary-color;
+  background-color: #716d6c;
   color: #eee;
-  font-size: larger;
+  margin-top: 25px;
+  cursor: pointer;
 }
 
 .form-submit-button:focus, .form-submit-button:hover {
