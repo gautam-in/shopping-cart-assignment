@@ -1,0 +1,59 @@
+@import "../base/vars";
+
+nav {
+  height: 100px;
+  align-items: center;
+  justify-content: space-evenly;
+  background-color: $white-color;
+  border-bottom: 1px solid #e7e7e7;
+  img {
+    height: 80px;
+    width: auto;
+  }
+  .page__links {
+    display: flex;
+    margin: 30px 0 0;
+  }
+  ul li {
+    text-align: center;
+  }
+  .nav__link {
+    color: $nav-link-color;
+    font-size: 0.9375rem;
+    margin-left: 24px;
+    font-weight: 600;
+  }
+
+  .page__user-links {
+    display: flex;
+    li {
+      margin: 10px 0 0 12px;
+    }
+    a {
+      font-size: 14px;
+      color: $nav-link-color;
+      font-weight: 400;
+    }
+  }
+  .page__user-info {
+    height: inherit;
+    justify-content: space-between;
+    display: inherit;
+    flex-direction: column;
+  }
+  .cart__btn {
+    background: #eeeeee;
+    padding: 14px 0;
+    margin-top: 1px;
+    text-align: center;
+    i {
+      color: $secondary-color;
+      font-size: 1.5rem;
+      margin-right: 6px;
+    }
+    .cart__item-count {
+      letter-spacing: 0.5px;
+      word-spacing: 0.1px;
+    }
+  }
+}
