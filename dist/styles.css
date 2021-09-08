@@ -297,9 +297,9 @@ label {
 .footer p {
   width: 85%;
   margin: auto;
-  padding: 1.25rem 0;
-  padding-left: 3rem;
   font-size: 0.875rem;
+  padding: 10px;
+  text-align: center;
 }
 
 @media screen and (min-width: 767px) and (max-width: 961px) {
@@ -549,7 +549,7 @@ label {
       flex-wrap: wrap;
   width: 80%;
   margin: auto;
-  padding: 0 10px;
+  padding: 10px 10px;
 }
 
 .products-container__cta {
@@ -570,7 +570,6 @@ label {
   margin-bottom: 5%;
   position: relative;
   overflow: hidden;
-  border-bottom: 2px dotted #ccc;
   margin-left: 5px;
   padding: 10px;
   -webkit-box-shadow: 2px 0px 5px #ccc;
@@ -580,7 +579,7 @@ label {
 .card h2 {
   font-size: 1.125rem;
   height: 70px;
-  overflow: scroll;
+  overflow: hidden;
 }
 
 .card__subtitle {
@@ -588,7 +587,7 @@ label {
   font-size: 0.825rem;
   padding: 5px;
   height: 82px;
-  overflow: scroll;
+  overflow: hidden;
 }
 
 .pd-0 {
@@ -688,7 +687,7 @@ select#sub-menu > option {
   display: none;
   position: fixed;
   z-index: 1;
-  padding-top: 85px;
+  padding-top: 10px;
   left: 0;
   top: 0;
   width: 100%;
@@ -765,7 +764,7 @@ select#sub-menu > option {
 .modal-body {
   background-color: #ccc;
   height: 75%;
-  overflow: scroll;
+  overflow: hidden;
 }
 
 .modal-body .img-modal {
@@ -797,7 +796,7 @@ select#sub-menu > option {
 .cart-info h2 {
   margin: 0;
   height: 2rem;
-  overflow: scroll;
+  overflow: hidden;
 }
 
 .cart-info .multiplier {
@@ -819,6 +818,7 @@ select#sub-menu > option {
 .fa-plus-circle {
   font-size: 1.25rem;
   color: #df0e6f;
+  cursor: pointer;
 }
 
 .price {

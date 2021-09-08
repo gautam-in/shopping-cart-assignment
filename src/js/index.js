@@ -1,6 +1,5 @@
 'use strict';
 
-// import '../scss/styles.scss';
 
 async function fetchBanners() {
   const bannersArray = await makeRequest('http://localhost:5000/banners');
@@ -42,22 +41,22 @@ const createSlider = (banners) => {
 
   var sliderItem = slider.getElementsByTagName('div');
   var dots = document.getElementById('dots');
-  var dotsChild = document.getElementById('dots').getElementsByTagName('li');
+  var carouselCTA = document.getElementById('dots').getElementsByTagName('li');
   for (let i = 0; i < sliderItem.length; i++) {
     dots.appendChild(document.createElement('li'));
-    dotsChild[i].classList.add('list-inline-item');
-    dotsChild[i].setAttribute('id', i);
-    dotsChild[i].innerHTML = i;
-    dotsChild[0].classList.add('active');
-    dotsChild[i].addEventListener('click', runSlider);
+    carouselCTA[i].classList.add('list-inline-item');
+    carouselCTA[i].setAttribute('id', i);
+    carouselCTA[i].innerHTML = i;
+    carouselCTA[0].classList.add('active');
+    carouselCTA[i].addEventListener('click', runSlider);
   }
   function runSlider() {
     var dnum = this.getAttribute('id');
     for (let i = 0; i < sliderItem.length; i++) {
       sliderItem[i].classList.remove('active');
       sliderItem[dnum].classList.add('active');
-      dotsChild[i].classList.remove('active');
-      dotsChild[dnum].classList.add('active');
+      carouselCTA[i].classList.remove('active');
+      carouselCTA[dnum].classList.add('active');
     }
   }
 };

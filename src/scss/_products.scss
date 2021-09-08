@@ -4,7 +4,7 @@
   flex-wrap: wrap;
   width: 80%;
   margin: auto;
-  padding: 0 10px;
+  padding: 10px 10px;
 
   &__cta {
     display: flex;
@@ -15,7 +15,8 @@
 
 .card {
   flex-basis: 24%;
-  margin-bottom: 5%;
+  border-radius: 5px;
+  margin-bottom: 10px;
   position: relative;
   overflow: hidden;
   border-bottom: 2px dotted #ccc;
@@ -26,7 +27,7 @@
   h2 {
     font-size: $font-med;
     height: 70px;
-    overflow: scroll;
+    overflow: hidden;
   }
 
   &__subtitle {
@@ -34,7 +35,7 @@
     font-size: $font-xsm;
     padding: 5px;
     height: 82px;
-    overflow: scroll;
+    overflow: hidden;
   }
 }
 

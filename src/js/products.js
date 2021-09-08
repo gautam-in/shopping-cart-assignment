@@ -15,7 +15,7 @@ const createProductGrid = (products) => {
   products.map((product, index) => {
     const { name, imageURL, description, price } = product;
 
-    const cardDiv = createElementHelper('div', 'card');
+    const cardElement = createElementHelper('div', 'card');
     const h2 = createElementHelper('h2', '', name);
     const cardImg = createElementHelper('img', 'img-cat');
     cardImg.src = imageURL;
@@ -45,12 +45,12 @@ const createProductGrid = (products) => {
     ctaDiv.appendChild(spanMrp);
     ctaDiv.appendChild(ctaBtn);
 
-    cardDiv.appendChild(h2);
-    cardDiv.appendChild(cardImg);
-    cardDiv.appendChild(cardSubtitle);
-    cardDiv.appendChild(ctaDiv);
+    cardElement.appendChild(h2);
+    cardElement.appendChild(cardImg);
+    cardElement.appendChild(cardSubtitle);
+    cardElement.appendChild(ctaDiv);
 
-    productSection.appendChild(cardDiv);
+    productSection.appendChild(cardElement);
   });
 };
 
@@ -61,7 +61,7 @@ const addProductToCart = (product) => {
 
   if (!productAlreadyExist) {
     product.quantity = 1;
-    cart = [...cart, product];
+    CART_ITEMS = [...CART_ITEMS, product];
 
     // Update cart items number
     const cartElm = document.querySelector('.cart-button');
@@ -74,11 +74,6 @@ const openCart = (e) => {
   var modal = document.getElementById('myModal');
   var span = document.querySelector('.close');
 
-  //Toggle modal functionality
-  // if (modal.style.display === 'block') {
-  //   modal.style.display = 'none';
-  //   return;
-  // }
 
   let cartTotalPrice = 0;
 

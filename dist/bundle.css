@@ -206,8 +206,8 @@ label {
 .footer p {
   width: 85%;
   margin: auto;
-  padding: 1.25rem 0;
-  padding-left: 3rem;
+  padding: 10px;
+  text-align: center;
   font-size: 0.875rem;
 }
 
@@ -216,6 +216,8 @@ label {
     text-align: center;
     width: 100%;
     margin: 0;
+    padding: 10px;
+    text-align: center;
   }
 }
 @media screen and (max-width: 767px) {
@@ -419,7 +421,7 @@ label {
   flex-wrap: wrap;
   width: 80%;
   margin: auto;
-  padding: 0 10px;
+  padding: 10px 10px;
 }
 .products-container__cta {
   display: flex;

@@ -3,7 +3,7 @@
   display: none;
   position: fixed;
   z-index: 1;
-  padding-top: 85px;
+  padding-top: 10px;
   left: 0;
   top: 0;
   width: 100%;
@@ -97,7 +97,7 @@
   h2 {
     margin: 0;
     height: 2rem;
-    overflow: scroll;
+    overflow: hidden;
   }
   .multiplier {
     margin-right: 1rem;
@@ -119,6 +119,7 @@
 .fa-plus-circle {
   font-size: 1.25rem;
   color: $brightRed;
+  cursor: pointer;
 }
 
 .price {
@@ -161,9 +162,6 @@
   }
   .modal-footer {
     margin-top: 5px;
-    // position: fixed;
-    // bottom: 0;
-    // width: 100%;
   }
   .price {
     margin-top: 6%;

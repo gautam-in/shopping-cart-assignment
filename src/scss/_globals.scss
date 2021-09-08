@@ -84,17 +84,15 @@ button,
   padding: 0.625rem 1rem;
 }
 
-// Form inputs
-
 input {
   background: none;
   font-size: $font-sm;
+  border-bottom: 1px solid #ccc;
   padding: 10px 10px 10px 5px;
   display: block;
   width: 100%;
   border: none;
   border-radius: 0;
-  border-bottom: 1px solid #ccc;
   &:focus {
     outline: none;
     border-bottom: 1px solid $brightCyan;
@@ -123,7 +121,7 @@ label {
 }
 
 .container {
-  width: 85%;
+  width: 90%;
   margin: auto;
   padding: 20px;
   padding-bottom: 0;
