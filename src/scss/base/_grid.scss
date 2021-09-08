@@ -17,3 +17,41 @@
 .container__row--reverse {
   flex-direction: row-reverse;
 }
+
+// Flexbox style
+.flex {
+  display: flex;
+
+  &-jc-sb {
+    justify-content: space-between;
+  }
+
+  &-jc-sa {
+    justify-content: space-around;
+  }
+
+  &-jc-c {
+    justify-content: center;
+  }
+
+  &-ai-c {
+    align-items: center;
+  }
+
+  &-row-reverse {
+    flex-direction: row-reverse;
+  }
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.row {
+  display: flex;
+  background-color: white;
+  margin: 1rem 0;
+  padding: 1rem;
+  box-shadow: 0px 5px 5px #ccc;
+}

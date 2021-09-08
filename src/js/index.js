@@ -1,4 +1,9 @@
-import { fetchItemsByUrl, getElementByProps, insertAdjacentElement } from './util';
+import { addProductToCart } from './cart-modal';
+import {
+  createElementHelper, fetchItemsByUrl,
+  getElementByProps,
+  insertAdjacentElement
+} from './util';
 
 const DOM_TEMPLATE_TYPE = {
   category: 'category',
@@ -85,21 +90,68 @@ function getBannerControls(banner, index) {
   </li>`;
 }
 
-function getProductTemplate(product, index) {
-  return `<div id="${index}" class="card">
-            <h2>${product.name} </h2>
-            <img class="img-cat" src="${product.imageURL}"
-            alt="${product.name}">
-            <p class="card__subtitle">
-            ${product.description}
-            </p>
-            <div class="products-container__cta">
-              <span class="desktop-show">MRP Rs.${product.price}</span>
-              <button class="btn button-primary" type="button">Buy Now
-                <span class="mobile-show">@ MRP Rs.${product.price} </span>
-              </button>
-            </div>
-          </div>`;
+// function getProductTemplate(product, index) {
+//   return `<div id="${index}" class="card">
+//             <h2>${product.name} </h2>
+//             <img class="img-cat" src="${product.imageURL}"
+//             alt="${product.name}">
+//             <p class="card__subtitle">
+//             ${product.description}
+//             </p>
+//             <div class="products-container__cta">
+//               <span class="desktop-show">MRP Rs.${product.price}</span>
+//               <button class="btn button-primary add-product" type="button">Buy Now
+//                 <span class="mobile-show">@ MRP Rs.${product.price} </span>
+//               </button>
+//             </div>
+//           </div>`;
+// }
+
+function getProductTemplate(products) {
+  const productSection = getElementByProps('#products');
+
+  products.forEach((product, index) => {
+    const {
+      name, imageURL, description, price,
+    } = product;
+
+    const cardElement = createElementHelper('div', 'card');
+    const h2 = createElementHelper('h2', '', name);
+    const cardImg = createElementHelper('img', 'img-cat');
+    cardImg.src = imageURL;
+    cardImg.alt = name;
+
+    const cardSubtitle = createElementHelper(
+      'p',
+      'card__subtitle',
+      description,
+    );
+    const ctaDiv = createElementHelper('div', 'products__container__cta');
+    const spanMrp = createElementHelper(
+      'span',
+      'desktop-show',
+      `MRP Rs.${price}`,
+    );
+
+    const ctaBtn = createElementHelper(
+      'button',
+      'button--primary btn',
+      undefined,
+      `Buy Now <span class="mobile-show">@ MRP Rs.${price} </span>`,
+    );
+    ctaBtn.type = 'button';
+    ctaBtn.addEventListener('click', () => addProductToCart(product));
+
+    ctaDiv.appendChild(spanMrp);
+    ctaDiv.appendChild(ctaBtn);
+
+    cardElement.appendChild(h2);
+    cardElement.appendChild(cardImg);
+    cardElement.appendChild(cardSubtitle);
+    cardElement.appendChild(ctaDiv);
+
+    productSection.appendChild(cardElement);
+  });
 }
 
 async function loadHome() {
@@ -112,8 +164,7 @@ async function loadHome() {
 
 async function loadProducts() {
   const products = await fetchItemsByUrl('http://localhost:5000/products');
-  console.log({ products });
-  await insertElementToDom(products, DOM_TEMPLATE_TYPE.product, '#products', 'afterbegin', getProductTemplate);
+  getProductTemplate(products);
 }
 document.addEventListener('DOMContentLoaded', async () => {
   switch (document.title) {

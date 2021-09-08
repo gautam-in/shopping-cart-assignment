@@ -2,7 +2,7 @@
   width: 90%;
   margin: 0 auto;
 }
-.products-container {
+.products__container {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -42,7 +42,7 @@
     overflow: hidden;
     padding: 6px;
   }
-  .button-primary {
+  .button--primary {
     padding: 0.625rem 1rem;
   }
 }
@@ -89,7 +89,7 @@ select#sub-menu > option {
       width: 50%;
     }
   }
-  .products-container {
+  .products__container {
     &__cta {
       span {
         display: none;
@@ -123,7 +123,7 @@ select#sub-menu > option {
     }
   }
 
-  .products-container {
+  .products__container {
     width: 100%;
     &__cta {
       display: inline-block;
