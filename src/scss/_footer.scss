@@ -1,0 +1,28 @@
+.footer {
+  background: #ccc;
+  p {
+    width: 85%;
+    margin: auto;
+    padding: 1.25rem 0;
+    padding-left: 3rem;
+    font-size: $font-sm;
+  }
+}
+
+@media screen and (min-width: 767px) and (max-width: 961px) {
+  .footer {
+    p {
+      text-align: center;
+      width: 100%;
+      margin: 0;
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .footer {
+    p {
+      width: 100%;
+    }
+  }
+}
