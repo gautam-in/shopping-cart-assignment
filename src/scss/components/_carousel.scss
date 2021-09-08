@@ -194,3 +194,40 @@ section.carousel {
 .carousel__next {
   right: 0;
 }
+
+@media screen and (max-width: 767px) {
+  .carousel {
+    padding-top: 40%;
+  }
+  .carousel__viewport {
+    .carousel__image {
+      height: 10rem;
+    }
+  }
+  .carousel::before,
+  .carousel::after,
+  .carousel__prev,
+  .carousel__next {
+    margin-top: 22%;
+    width: 2rem;
+    height: 2.5rem;
+  }
+}
+
+@media screen and (min-width: 767px) and (max-width: 961px) {
+  .carousel {
+    padding-top: 28%;
+  }
+  .carousel__viewport {
+    .carousel__image {
+      height: 10rem;
+    }
+  }
+  .carousel::before,
+  .carousel::after,
+  .carousel__prev,
+  .carousel__next {
+    width: 2rem;
+    height: 2.5rem;
+  }
+}

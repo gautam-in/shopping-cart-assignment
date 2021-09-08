@@ -44,7 +44,7 @@ function getDomTemplate(type, entity, indexOfEntity, entityLength, getTemplate) 
 function getCategoryTemplate(entity, index) {
   if (entity.enabled) {
     return `<article id="${entity.id}" class="category__container 
-    ${(index % 2 === 1) ? 'container__row--reverse' : ''}">
+    ${(index % 2 === 0) ? 'container__row--reverse' : ''}">
   <img class="category__image" src="${entity.imageUrl}" alt="fruit category">
   <div class="category-text__wrapper">
     <div class="category__title">${entity.name}</div>
