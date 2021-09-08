@@ -32,3 +32,40 @@ body {
   font-family: "Serif", sans-serif;
   min-height: 100vh;
 }
+
+input {
+  background: none;
+  font-size: $font-sm;
+  padding: 10px 10px 10px 5px;
+  display: block;
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  border-radius: 0;
+  &:focus {
+    outline: none;
+    border-bottom: 1px solid $brightCyan;
+  }
+  &:focus ~ label,
+  &:valid ~ label {
+    top: -14px;
+    font-size: $font-xsm;
+    color: $brightCyan;
+  }
+}
+
+input[type="password"] {
+  letter-spacing: 0.3em;
+  border-bottom: 1px solid #ccc;
+}
+
+label {
+  color: $darkBlue;
+  font-size: $font-sm;
+  font-weight: normal;
+  position: absolute;
+  pointer-events: none;
+  left: 5px;
+  top: 0.625rem;
+  transition: 300ms ease all;
+}

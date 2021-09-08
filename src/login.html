@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Cart Login</title>
+    <meta name="description" content="Shopping Cart" />
+    <meta name="keywords" content="Shopping Cart" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="Tejomay Saha" />
+    <link rel="icon" href="./images/logo.png" type="image/png" sizes="16x16">
+  </head>
+  <body>
+      <!-- Header start -->
+      <header>
+        <nav class="container">  
+          <div class="brand">
+            <img class="logo" src="images/logo.png">
+          </div>
+          <!-- <div> -->
+            <ul class="page__links">  
+              <li><a class="nav__link" href="./index.html">Home</a></li>  
+              <li><a class="nav__link" href="./products.html">Products</a></li>  
+            </ul>  
+          <!-- </div> -->
+          <div class="page__user-info">
+            <ul class="page__user-links">  
+              <li><a href="./login.html">SignIn</a></li>  
+              <li><a href="./register.html">Register</a></li>  
+            </ul>  
+            <div class="cart__btn">
+              <i class="fas fa-shopping-cart"></i>
+              <span class="cart__item-count">0 items</span>
+            </div>
+          </div>
+        </nav>
+      </header>
+
+    <main>
+      <section class="login__section">
+        <article>
+          <h1>Login</h1>
+          <p>Get access to your Orders, Wishlist and Recommendations</p>
+        </article>
+
+        <article class="login__section-form">
+          <form id="loginForm">
+            <div class="m-b-1">
+              <input type="email" name="email" id="email" required />
+              <label for="email">Email</label>
+            </div>
+
+            <div class="m-b-1">
+              <input type="password" name="password" id="password" required />
+              <label for="password">Password</label>
+            </div>
+
+            <button class="btn btn-primary">Login</button>
+          </form>
+        </article>
+      </section>
+    </main>
+    </main>
+    <footer class="footer">
+      Copyright &copy; 2011-2021 Sabka Bazar grocery Supplies Pvt Ltd.
+    </footer>
+  </body>
+</html>
