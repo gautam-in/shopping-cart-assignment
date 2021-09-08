@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Products</title>
+    <meta name="description" content="Shopping Cart" />
+    <meta name="keywords" content="Shopping Cart" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="Tejomay Saha" />
+    <link rel="icon" href="./images/logo.png" type="image/png" sizes="16x16">
+    <title>Home</title>
+  <script defer src="js/app.js"></script><link href="css/app.css" rel="stylesheet"></head>
+  <body>
+      <!-- Header start -->
+      <header>
+        <nav class="container">  
+          <div class="brand" onclick="location.href='./index.html';">
+            <img class="logo" src="images/logo.png">
+          </div>
+          <!-- <div> -->
+            <ul class="page__links">  
+              <li><a class="nav__link" href="./index.html">Home</a></li>  
+              <li><a class="nav__link" href="./products.html">Products</a></li>  
+            </ul>  
+          <!-- </div> -->
+          <div class="page__user-info">
+            <ul class="page__user-links">  
+              <li><a href="./login.html">SignIn</a></li>  
+              <li><a href="./register.html">Register</a></li>  
+            </ul>  
+            <div class="cart__btn cart__btn--click">
+              <i class="fas cart__btn--click fa-shopping-cart"></i>
+              <span class="cart__item-count cart__btn--click">0 items</span>
+            </div>
+          </div>
+        </nav>
+      </header>
+
+    <!-- Mobile select dropdown for navigation -->
+    <section class="mobile-show">
+      <select id="sub-menu" name="sub-menu">
+        <option value="">Fruits & Vegetables</option>
+        <option value="">Bakery Cakes & Dairy</option>
+        <option value="">Beverages</option>
+        <option value="">Beauty and Hygiene</option>
+        <option value="">Baby Care</option>
+      </select>
+    </section>
+
+    <!-- Main Section Starts -->
+    <main class="container container--center pd-0">
+      <!-- Desktop/tablet aside bar -->
+      <aside class="aside">
+        <ul>
+          <li><a href="#">Fruits & Vegetables</a></li>
+          <li><a href="#">Bakery Cakes & Dairy</a></li>
+          <li><a href="#">Beverages</a></li>
+          <li><a href="#">Beauty and Hygiene</a></li>
+          <li><a href="#">Baby Care</a></li>
+        </ul>
+      </aside>
+      <!-- Products -->
+      <section id="products" class="products__container flex">
+ 
+      </section>
+
+      <!-- Cart Modal -->
+      <section id="cart">
+        <div id="myModal" class="modal">
+          <div class="modal__content">
+            <div class="modal__header">
+              <span class="close">&times;</span>
+              <h2 id="cartHeader">My Cart</h2>
+            </div>
+            <div class="modal__body">
+            
+            </div>
+            <div class="modal__footer">
+           
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>Copyright © 2011-2018 Sabka Bazaar Grocery Supplies Pvt Ltd</p>
+    </footer>
+  </body>
+</html>
