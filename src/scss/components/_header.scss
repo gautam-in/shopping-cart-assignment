@@ -3,12 +3,16 @@
 header {
   box-shadow: -4px 3px 7px -3px rgba(136, 136, 136, 1);
 }
+
 nav {
   height: 100px;
   align-items: center;
   justify-content: space-evenly;
   background-color: $white-color;
   border-bottom: 1px solid #e7e7e7;
+  .brand {
+    cursor: pointer;
+  }
   img {
     height: 80px;
     width: auto;

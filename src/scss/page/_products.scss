@@ -51,7 +51,6 @@
   height: 120px;
   width: 100%;
   object-fit: contain;
-  width: 100%;
 }
 .mobile-show {
   display: none;
@@ -86,8 +85,11 @@ select#sub-menu > option {
     &__subtitle {
       display: inline-block;
       height: 126px;
-      width: 50%;
+      width: 55%;
     }
+  }
+  .img-cat {
+    width: 45%;
   }
   .products__container {
     &__cta {
@@ -101,25 +103,32 @@ select#sub-menu > option {
   }
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 766px) {
   .card {
     flex-basis: 100%;
 
     h2 {
-      height: 50px;
+      min-height: 24px;
+      max-height: 32px;
+      font-size: 1rem;
     }
 
     img {
-      width: 49%;
-      height: 11.25rem;
-      object-fit: fill;
+      width: 46%;
+      height: 7.5rem;
+      object-fit: center;
     }
 
     &__subtitle {
       display: inline-block;
       position: absolute;
-      top: 28%;
+      top: 18%;
       width: 49%;
+      height: 80px;
+    }
+    .button--primary {
+      padding: 0.5rem;
+      font-size: 0.75rem;
     }
   }
 
@@ -136,6 +145,9 @@ select#sub-menu > option {
     }
   }
 
+  .container--center {
+    width: 100%;
+  }
   .mobile-show {
     display: inline;
   }

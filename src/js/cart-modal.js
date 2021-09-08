@@ -66,6 +66,9 @@ function openCart(e) {
                   Proceed to Checkout <span>Rs.187</span>
                 </button>`;
     modalFooter.style.marginTop = '5px';
+    modalFooter.onclick = function () {
+      modal.style.display = 'none';
+    };
     CART_ITEMS.map((product) => {
       const {
         name, imageURL, price, quantity,
