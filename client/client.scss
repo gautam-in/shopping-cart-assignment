@@ -76,6 +76,10 @@ input,textarea,button,p,span,select {
   display: none;
 }
 
+.show {
+  display: block;
+}
+
 .text-align-center {
   text-align: center;
 }
@@ -236,7 +240,8 @@ header{
     }
     .category-desc {
       color: black;
-      h3 {
+      padding: 0px 0px 10px 10px;
+      h2 {
         font-weight: bolder;
       }
       .category-explore-button {

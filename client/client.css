@@ -85,6 +85,10 @@ input, textarea, button, p, span, select {
   display: none;
 }
 
+.show {
+  display: block;
+}
+
 .text-align-center {
   text-align: center;
 }
@@ -225,8 +229,9 @@ header {
 }
 .categories .category .category-desc {
   color: black;
+  padding: 0px 0px 10px 10px;
 }
-.categories .category .category-desc h3 {
+.categories .category .category-desc h2 {
   font-weight: bolder;
 }
 .categories .category .category-desc .category-explore-button {
