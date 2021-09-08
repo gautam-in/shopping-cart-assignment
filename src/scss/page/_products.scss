@@ -1,3 +1,7 @@
+.container--center {
+  width: 90%;
+  margin: 0 auto;
+}
 .products-container {
   display: flex;
   flex-direction: row;
@@ -10,6 +14,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    font-size: 0.875rem;
   }
 }
 
@@ -19,7 +24,6 @@
   margin-bottom: 10px;
   position: relative;
   overflow: hidden;
-  border-bottom: 2px dotted #ccc;
   margin-left: 5px;
   padding: 10px;
   box-shadow: 2px 0px 5px #ccc;
@@ -32,17 +36,23 @@
 
   &__subtitle {
     background-color: #ccc;
-    font-size: $font-xsm;
-    padding: 5px;
-    height: 82px;
+    font-size: 0.75rem;
+    margin: 6px 0;
+    height: 100px;
     overflow: hidden;
+    padding: 6px;
+  }
+  .button-primary {
+    padding: 0.625rem 1rem;
   }
 }
 
-.pd-0 {
-  padding: 0;
+.img-cat {
+  height: 120px;
+  width: 100%;
+  object-fit: contain;
+  width: 100%;
 }
-
 .mobile-show {
   display: none;
 }

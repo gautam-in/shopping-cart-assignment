@@ -3,6 +3,7 @@ import { fetchItemsByUrl, getElementByProps, insertAdjacentElement } from './uti
 const DOM_TEMPLATE_TYPE = {
   category: 'category',
   banner: 'banner',
+  product: 'product',
 };
 
 async function getSortedItems(url) {
@@ -24,6 +25,9 @@ function getDomTemplate(type, entity, indexOfEntity, entityLength, getTemplate) 
       template = getTemplate(entity, indexOfEntity);
       break;
     case 'banner':
+      template = getTemplate(entity, indexOfEntity, entityLength);
+      break;
+    case 'product':
       template = getTemplate(entity, indexOfEntity, entityLength);
       break;
     default:
@@ -81,10 +85,45 @@ function getBannerControls(banner, index) {
   </li>`;
 }
 
-document.addEventListener('DOMContentLoaded', async () => {
+function getProductTemplate(product, index) {
+  return `<div id="${index}" class="card">
+            <h2>${product.name} </h2>
+            <img class="img-cat" src="${product.imageURL}"
+            alt="${product.name}">
+            <p class="card__subtitle">
+            ${product.description}
+            </p>
+            <div class="products-container__cta">
+              <span class="desktop-show">MRP Rs.${product.price}</span>
+              <button class="btn button-primary" type="button">Buy Now
+                <span class="mobile-show">@ MRP Rs.${product.price} </span>
+              </button>
+            </div>
+          </div>`;
+}
+
+async function loadHome() {
   const banners = await getSortedItems('http://localhost:5000/banners');
   await insertElementToDom(banners, 'banner', '#carousel__viewport', 'afterbegin', getBannerSlides);
   await insertElementToDom(banners, DOM_TEMPLATE_TYPE.banner, '#carousel__navigation-list', 'afterbegin', getBannerControls);
   const categories = await getSortedItems('http://localhost:5000/categories');
   await insertElementToDom(categories, DOM_TEMPLATE_TYPE.category, '#category__wrapper-container', 'afterbegin', getCategoryTemplate);
+}
+
+async function loadProducts() {
+  const products = await fetchItemsByUrl('http://localhost:5000/products');
+  console.log({ products });
+  await insertElementToDom(products, DOM_TEMPLATE_TYPE.product, '#products', 'afterbegin', getProductTemplate);
+}
+document.addEventListener('DOMContentLoaded', async () => {
+  switch (document.title) {
+    case 'Shopping Cart':
+      loadHome();
+      break;
+    case 'Products':
+      loadProducts();
+      break;
+    default:
+      console.log('loaded');
+  }
 });
