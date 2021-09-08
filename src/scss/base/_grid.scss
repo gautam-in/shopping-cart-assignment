@@ -8,9 +8,12 @@
   align-content: center;
 }
 
-.container--row {
+.container__row {
   flex-direction: row;
 }
-.container--column {
+.container__column {
   flex-direction: column;
+}
+.container__row--reverse {
+  flex-direction: row-reverse;
 }

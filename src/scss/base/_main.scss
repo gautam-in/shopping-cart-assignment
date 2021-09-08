@@ -7,8 +7,19 @@
   margin: 0;
   padding: 0;
 }
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
 
-ul {
+* {
+  box-sizing: border-box;
+  scrollbar-color: transparent transparent; /* thumb and track color */
+  scrollbar-width: 0px;
+}
+ul,
+li {
   list-style: none;
 }
 
@@ -17,7 +28,7 @@ a {
 }
 
 body {
-  box-sizing: border-box;
   min-height: 100vh;
   font-family: "Serif", sans-serif;
+  min-height: 100vh;
 }

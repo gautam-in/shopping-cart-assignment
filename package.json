@@ -13,7 +13,9 @@
     "canned": "^0.3.12"
   },
   "devDependencies": {
+    "@babel/runtime": "^7.15.4",
     "@babel/core": "^7.15.0",
+    "@babel/plugin-transform-runtime": "^7.15.0",
     "@babel/preset-env": "^7.15.0",
     "autoprefixer": "^10.3.1",
     "babel-loader": "^8.2.2",
@@ -48,8 +50,7 @@
     "webpack-dev-server": "^3.11.2",
     "webpack-merge": "^5.8.0"
   },
-  "keywords": [
-  ],
+  "keywords": [],
   "scripts": {
     "build": "webpack --config configuration/webpack.dev.config.js --mode=development",
     "watch": "webpack --config configuration/webpack.dev.config.js --mode=development --watch",
