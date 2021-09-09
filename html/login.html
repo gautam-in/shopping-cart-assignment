@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Login Page</title>
+  <link rel="stylesheet" type="text/css" href="../sass/style.css"/>
+</head>
+<body>
+  <script id="navbar" src="../js/nav.js"></script>
+  <div id="login-container" class="container">
+    <label for="uname"><b>Email</b></label>
+    <input id="emailLogin" type="text" placeholder="Email" name="uname" required>
+
+    <label for="psw"><b>Password</b></label>
+    <input id="passwordLogin" type="password" placeholder="Password" name="psw" required>
+
+    <button type="submit" onclick="logIn()">Login</button>
+    <div id="error" style="color: red;display: none;">User not found, Please Sign Up first.</div>
+  </div>
+
+  <div id="signin-container" class="container" style="display: none;">
+    <label for="fname"><b>First Name</b></label>
+    <input id="fname" type="text" placeholder="First Name" name="uname" required>
+
+    <label for="psw"><b>Last Name</b></label>
+    <input id="lname" type="text" placeholder="Last Name" name="psw" required>
+
+    <label for="uname"><b>Email</b></label>
+    <input id="email" type="text" placeholder="Email" name="uname" required>
+
+    <label for="psw"><b>Password</b></label>
+    <input id="password" type="password" placeholder="Password" name="psw" required>
+
+    <label for="psw"><b>Confirm Password</b></label>
+    <input id="conf-pwd" type="password" placeholder="Confirm Password" name="psw" required>
+    <button type="submit" onclick="signUp()">Sign Up</button>
+  </div>
+</body>
+<script>
+
+  function signUp() {
+    var users = JSON.parse(localStorage.getItem('Users')) || [];
+    var userData = { email: document.getElementById("email").value ,
+     password: document.getElementById("password").value };
+    users.push(userData);
+    localStorage.setItem('Users', JSON.stringify(users));
+    document.getElementById("login-container").style.display = "block";
+    document.getElementById("signin-container").style.display = "none";
+    document.getElementById("error").style.display = "none";
+  }
+
+  function logIn() {
+    if(document.getElementById("emailLogin").value != '' && document.getElementById("passwordLogin").value != '') {
+    if (localStorage.getItem('Users') !== null) {
+      console.log(localStorage.getItem('Users'))
+      JSON.parse(localStorage.getItem('Users')).find(user => {
+        if(user.email === document.getElementById("emailLogin").value && user.password === document.getElementById("passwordLogin").value){
+          window.location.href = 'home.html';
+        }})
+        } else {
+          document.getElementById("error").style.display = "block";
+    }
+  }
+  }
+</script>
+</html>
