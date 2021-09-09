@@ -1,0 +1,128 @@
+@import "nav";
+
+:root{
+    --dval:none;
+}
+*{
+   margin:0;  
+   padding:0; 
+   box-sizing:border-box;
+   font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}
+input{
+    font-size:1em;
+    width: 80%;
+    display: block;
+    margin: 10px 0;
+    padding: 10px 0px;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #000;   
+}
+.register{
+    height:100vh;
+    width:100%;
+    position:relative;
+    margin-top:100px;
+    z-index:0;
+}
+.login{
+    padding:2em 1em;
+    position:relative ;
+    z-index:0;
+}
+.content{
+    height:210px;
+    overflow:hidden;
+    padding:0 5%;    
+}
+.inputs{
+    height:380px;
+    overflow:hidden;
+    box-shadow:2px 2px 8px rgba(0,0,0,.2);
+   
+}
+.content span{
+    display:block;
+    color:#000;
+    font-weight:bolder;
+    font-size:1.4em;
+    margin:1.5em 0;
+}
+.signini , .signini form , .signupi , .signupi form , .signinc , .signupc{
+    height:90%;
+    width:100%;
+    display:flex;
+    flex-flow:column nowrap;
+    align-items:space-evenly;  
+    position:relative ;  
+}
+.signini{
+    padding:2em 0;
+}
+.signini form div ,
+.signupi form div{
+    width:80%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin:auto;    
+}
+.signini form  div:not(.signini div:nth-child(3)) ,
+.signupi form div:not(.signupi div:nth-child(6)){
+    border-bottom: 1px solid #000;
+}
+.signini form div span , .signupi form div span{
+   padding:8px;
+}
+input:not(.btn){
+    flex:1;
+    border:none;
+    outline:none;
+}
+.btn{
+    width:100%;
+}
+.btn:not(.b){
+  background: #ced2d6;
+  border: 1px solid #ced2d6;
+  color: #454c52;
+}
+
+.b{
+    background:#e6005c;
+    color:#fff;
+    border:1px solid #e6005c;
+}
+.signinc,.signini{
+    display:none;
+}
+.message{
+    width:60%;
+    position:absolute ;
+    top:50%;
+    left:20%;
+    background:#abf5d1;
+    padding:8px;
+    text-align:center;
+    color:#006644;
+    font-weight:bold;
+    opacity:0;
+}
+@media screen and (min-width:400px){
+  .login{
+    display:flex;
+  }
+  .content, 
+  .inputs {
+  width: 50%;
+}
+}
+
+
+
+
+
+
+
+
