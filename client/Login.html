@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="Styles/styles.css"> -->
+    <!-- <link rel="stylesheet" href="Styles/convertedCss/styles.css">
+    <link rel="stylesheet" href="Styles/convertedCss/login.css">
+    <link rel="stylesheet" href="cart.css"> -->
+    <link rel="stylesheet" href="../dist/main.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <title>Document</title>
+</head>
+<body>
+    <header class="header">
+        <img src="/static/images/logo_2x.png" alt="Sabka Bazar" class="header--logo">
+        <nav class="header-navigation">
+            <ul>
+                <li><a href="Home.html">Home</a></li>
+                <li><a href="Products.html">Products</a></li>
+            </ul>
+        </nav>
+        <div class="LoginandCart">
+            <ul>
+                <li><a href="Login.html">SignIn</a></li>
+                <li><a href="SignUp.html">Register</a></li>
+            </ul>
+
+            <button id="cart" class="cart"><i class="fa fa-shopping-cart" aria-hidden="true"></i> 0 items
+            </button>
+        </div>
+    </header>
+
+    <main class="main">
+        <section class="main--header">
+            <h1>Login</h1>
+            <p>Get access to your Orders, Wishlist and Recommendations</p>
+        </section>
+        <section class="main-content"> 
+            <form class="main--content-form" action="Home.html">
+                <div class="inputFieldContainer">
+                   
+                    <input type="email" placeholder="Email" required >
+                    <label for="email">Email</label>
+                </div>
+                
+                <div class="inputFieldContainer">
+                
+                <input type="text" placeholder="Password" required minlength="8">
+                <label for="password">Password</label>
+                </div>
+
+                <button type="submit" class="submit-button">Login</button>
+            </form>
+        </section>
+    </main>
+    <footer class="footer">
+        Copyright@2011-2018 Sabka Bazaar Grocery Supplies Pvt Ltd
+    </footer>
+
+    <div class="backdrop"></div>
+    
+    <section class="cart-modal" id="cart-modal">
+        <header class="Cartheader">
+            <h1 class="title">My Cart  <span class="total-items-container">(<span id="total-items"></span>&nbsp;items)</span> </h1>
+           
+            <span class="close">&times;</span>
+        </header>
+
+        <section id="cart-body" class="cart-body">
+            <section id="emptyCart" class="emptyCart">
+                <section class="cart-details">
+                    <h3>No Items in your cart</h3>
+                    <p>Your favourite items are just one click away </p>
+                    </section>
+            </section>
+
+            <section id="cartWithItems">
+
+            </section>
+
+            
+            <section>
+                <section class="cart-start-shopping">
+                    <button class="cart-button"><a href="Home.html" >Start Shopping</a> </button>
+                </section>
+
+                <section class="cart-checkout">
+                    <div>Promo code can be applied</div>
+                    <button class="cart-button cart-button--checkout">
+                        <div>Proceed to checkout</div>  
+                        <div> <span id="checkout-total-price">Rs. 1983</span> ></div>  
+                    </button>
+                </section>
+            </section>
+    </section>
+  
+
+    </section>
+
+    <script src="./Cart.js"></script>
+</body>
+</html>

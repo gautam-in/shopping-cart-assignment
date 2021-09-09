@@ -1,0 +1,232 @@
+ .main-container{
+    display: flex;
+    width: 100%;
+
+    .category{
+        width: 20%;
+        background-color: rgb(245, 243, 243);
+
+        .categoryList{
+            padding: 0%;
+            cursor: pointer;
+
+            ul{
+                display: block;
+                list-style: none;
+                margin-left: 5px;
+              
+                margin: 5px;
+                padding: 5px;
+
+            
+            }
+            li{
+                padding: 5px;
+            }
+         
+         }
+         .category-separator{
+            border: 0;
+            height: 0;
+            background-image: none;
+            border-top: 1px solid #CCC;
+        }
+
+         .categoryDropdown{
+
+         }
+
+       
+
+        select{
+            width: 100%;
+            text-align: center;
+            padding: 8px;
+            background-color: #cc0e6d;
+            color: white;
+            border: none;
+            font-size: 16px;
+
+            option{
+                background: white;
+                color: black;
+                padding: 8px;
+            }
+        }
+
+        select:focus{
+            outline: none;
+        }
+
+        #categoryDropdown{
+            display: none;
+            }
+       
+
+    }
+
+    .products{
+        width: 70%;
+        display: flex;
+        flex-wrap: wrap;
+        margin: auto;
+
+        .productContainer{
+            display: flex;
+            flex-flow: column wrap;
+            justify-content: center;
+            align-items: center;
+            width: 300px;
+            box-shadow: 10px 10px 5px #CCC;
+            clip-path: inset(0px -155px 0px 0px);
+            border-bottom: 2px dashed #CCC;
+            margin: 10px 10px;
+
+            .productTitle{
+
+                height: 60px;
+            }
+
+            .productImg{
+                height: 200px;
+                width: auto;
+            }
+
+            .productDescription{
+
+                padding: 4px;
+                font-size: 14px;
+                box-sizing: border-box;
+                margin: 0 8px;
+                width: 280px;
+                height: 110px;
+                background-color: rgb(245, 243, 243);
+            }
+            
+            .productPriceDetails{
+                display: flex;
+                width: 280px;
+                margin: 8px;
+                justify-content: space-between;
+            }
+            
+            .productPrice::before{
+                content: "MRP ";
+            
+            }
+
+            .productButton{
+
+                padding: 8px;
+                background-color: rgb(204, 14, 109);
+                color: white;
+                border: none;
+                margin: 8px;
+            
+            
+                
+            }
+            
+        
+        }
+
+     
+       
+    }
+ }
+
+ @media only screen and (max-width: 1200px) {
+
+    .main-container{
+        .products{
+            .productContainer{
+                margin: 10px auto;
+            }
+        }
+    }
+    
+}
+
+
+
+
+@media screen and (max-width: 600px){
+
+    .main-container{
+        flex-direction: column;
+
+        .category{
+            width: 100%;
+            margin-top: 15px;
+
+            ul.categoryList{
+                display: none;
+            }   
+
+            select#categoryListDropdown{
+                display: block;
+                margin: 5px;
+                padding: 5px;
+            }
+        
+            #categoryDropdown{
+                display: block;
+            }
+          
+        }
+
+        .products{
+            width: 100%;
+            margin: auto;
+
+            .productContainer{
+                margin: 0;
+                width: 100%;
+                box-shadow: none;
+                padding: 5px;
+
+                .productTitle{
+                    align-self: flex-start;
+                }
+
+                .productInfo{
+                    display: flex;
+                    justify-content: center;
+                    align-items: flex-start;
+
+                    .productImg{
+                        height: 150px;
+                        width: auto;
+                    }
+
+                    .productDetails{
+                        width: 200px;
+
+                        .productDescription{
+                            width: auto;
+                            overflow: auto;
+                        }
+
+                        .productPriceDetails{
+                            width: auto;
+                        }
+                    }
+                }
+            }
+            .productContainer:last-child{
+                border: none;
+            }
+          
+        }
+    }
+
+  
+   
+
+
+
+  
+  
+   
+
+}
