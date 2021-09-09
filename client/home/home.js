@@ -20,7 +20,7 @@ document.getElementsByClassName("carousel-list-nav-next")[0].addEventListener("c
 /* button navigation handler to products page */
 function onClickButtonHandler(e){
     localStorage.setItem("activeCategory",e.currentTarget.getAttribute("data-id"));
-    window.location.replace("../product/Product.html");
+    window.location.assign("../product/Product.html");
 }
 
 

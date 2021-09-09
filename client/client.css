@@ -44,6 +44,10 @@ input, textarea, button, p, span, select {
   margin-top: 10px;
 }
 
+.p-0 {
+  padding: 0;
+}
+
 .d-flex {
   display: flex;
 }
@@ -240,6 +244,55 @@ header {
   color: #eee;
 }
 
+.filter-section {
+  min-width: 20%;
+  background-color: #eeeeee;
+}
+.filter-section .filter-section-links-list {
+  list-style: none;
+}
+.filter-section .filter-section-links-list li {
+  font-size: 1.2em;
+  padding: 10px;
+  border-bottom: 1px solid #b0afad;
+}
+.filter-section .filter-section-links-list li button {
+  color: #b0afad;
+}
+.filter-section .filter-section-links-list li.active {
+  background-color: #ffffff;
+}
+
+.products-section {
+  flex-wrap: wrap;
+  margin-left: 30px;
+}
+.products-section .product-card {
+  padding: 20px;
+  width: 25rem;
+}
+.products-section .product-card h3 {
+  height: 55px;
+  color: #000000;
+}
+.products-section .product-card .product-card-img {
+  width: 20rem;
+  height: 20rem;
+}
+.products-section .product-card .product-card-desc {
+  background: #eeeeee;
+  height: 12em;
+  padding: 5px;
+}
+.products-section .product-card .product-card-details .product-card-details-buy {
+  padding: 10px 25px 10px 25px;
+  background: #449161;
+  color: #eeeeee;
+}
+.products-section .product-card .product-card-details .product-card-details-buy:focus, .products-section .product-card .product-card-details .product-card-details-buy:hover {
+  background-color: #716d6ce0;
+}
+
 footer {
   height: 15%;
   background-color: #eeeeee;
@@ -247,6 +300,12 @@ footer {
 }
 
 @media screen and (max-width: 720px) {
+  .filter-section-compressed-active {
+    padding: 2rem;
+    background: green;
+    color: #eeeeee;
+  }
+
   .xs-hide {
     display: none;
   }
@@ -258,6 +317,11 @@ footer {
 
   .xs-shrink {
     font-size: 0.8rem;
+  }
+}
+@media screen and (min-width: 720px) {
+  .xl-hide {
+    display: none;
   }
 }
 
