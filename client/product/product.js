@@ -31,6 +31,12 @@ function onBuyClickHandler() {
 function onClickCartHandler(){
     document.getElementsByTagName("body")[0].setAttribute("class","no-scroll m-0");
     document.getElementById("miniCart").setAttribute("class","minicart-section show");
+    if(totalItems > 0) {
+        document.getElementById("miniCartContents").setAttribute("class","minicart-overlay d-flex flex-column show");
+    } else {
+        document.getElementById("miniCartEmpty").setAttribute("class","minicart-overlay d-flex flex-column show");
+    }
+    
 }
 
 

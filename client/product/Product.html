@@ -56,19 +56,30 @@
                 <!-- Products appended from /products api call-->
         </section>
         <section class="minicart-section hide" id="miniCart">
-            <div class="minicart-overlay d-flex flex-column hide">
+            <div class="minicart-overlay d-flex flex-column hide" id="miniCartContents">
                 <div class="minicart-header d-flex-space-between">
                     <h3>My Cart</h3>
                     <h3><a href="../product/Product.html">x</a></h3>
                 </div>
-                <div class="minicart-details">
-
+                <div class="minicart-details d-flex flex-column b-gray">
+                    <div class="minicart-product-card d-flex-space-between m-t10">
+                        <div class="minicart-product-details d-flex">
+                            <img src="../../static/images/products/beverages/bournvita.jpg" alt="sadfasd" />
+                            <div class="minicart-product-details m-t10">
+                                <h3 class="m-0">Apple cider 127g</h3>
+                                <p><button>-</button>1<button>+</button> x Rs. 187 </p>
+                            </div>
+                        </div>
+                        <div class="minicart-product-total d-flex">
+                            <h3>Rs. 187</h3>
+                        </div>
+                    </div>
                 </div>
                 <div class="minicart-checkout d-flex justify-center">
                     <button class="minicart-checkout-items m-t10">Proceed to Checkout</button>
                 </div>
             </div>
-            <div class="minicart-overlay d-flex flex-column show empty">
+            <div class="minicart-overlay d-flex flex-column hide" id="miniCartEmpty">
                 <div class="minicart-header d-flex-space-between">
                     <h3>My Cart</h3>
                     <h3><a href="../product/Product.html">x</a></h3>

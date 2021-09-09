@@ -109,6 +109,10 @@ input, textarea, button, p, span, select {
   overflow: hidden;
 }
 
+.b-gray {
+  background: #eeeeee;
+}
+
 header {
   font-weight: bold;
   box-shadow: 0 7px 4px 0px rgba(0, 0, 0, 0.25);
@@ -334,6 +338,26 @@ footer {
 }
 .minicart-overlay .minicart-details h3 {
   font-weight: bolder;
+}
+.minicart-overlay .minicart-details .minicart-product-card {
+  background: #fff;
+  padding: 15px;
+}
+.minicart-overlay .minicart-details .minicart-product-card .minicart-product-details {
+  height: 5em;
+  margin-left: 5px;
+}
+.minicart-overlay .minicart-details .minicart-product-card .minicart-product-details img {
+  height: 5em;
+}
+.minicart-overlay .minicart-details .minicart-product-card .minicart-product-details p button {
+  background: green;
+  padding: 2px 10px 5px 10px;
+  color: #ffffff;
+  margin: 0px 5px;
+}
+.minicart-overlay .minicart-details .minicart-product-card .minicart-product-total {
+  align-items: end;
 }
 .minicart-overlay .minicart-checkout button {
   padding: 10px;
