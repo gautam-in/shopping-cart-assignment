@@ -1,0 +1,50 @@
+[{
+    "name": "Listerine Mouthwash - Cool Mint, 250 ml",
+    "imageURL": "/static/images/products/beauty-hygiene/listerine.jpg",
+    "description": "Listerine Cool mint Antibacterial Mouthwash is rapid & easy to use, a 30 second \"slosh\" with Listerine after brushing and flossing reaches parts of the mouth.",
+    "price": 109,
+    "stock": 50,
+    "category": "5b68994e3d1a866534f516df",
+    "sku": "bh-listerine-250",
+    "id": "5b6c715f01a7c38429530890"
+  },
+  {
+    "name": "TRESemme Shampoo - Keratin Smooth With Argan Oil, 580 ml ",
+    "imageURL": "/static/images/products/beauty-hygiene/shampoo.jpg",
+    "description": "For the first time, at TRESemme , Our Professional combines luxurious ingredients to give you gorgeously smoother shiny hair every day , infused with keratin protein",
+    "price": 410,
+    "stock": 50,
+    "category": "5b68994e3d1a866534f516df",
+    "sku": "bh-tresemme-580",
+    "id": "5b6c71a101a7c38429530891"
+  },
+  {
+    "name": "Dove Intense Repair Shampoo 650ml + Bathing Bar Soap Cream Beauty 100G Pack of 3",
+    "imageURL": "/static/images/products/beauty-hygiene/dove.jpg",
+    "description": "Dove Cream Beauty Bar combines a gentle cleansing formula with Doves signature 1/4 moisturizing cream to give you softer, smoother and more glowing skin.",
+    "price": 622,
+    "stock": 50,
+    "category": "5b68994e3d1a866534f516df",
+    "sku": "bh-dove-combo",
+    "id": "5b6c71e601a7c38429530892"
+  },
+  {
+    "name": "Premier Facial Tissue - Special, 400 pcs",
+    "imageURL": "/static/images/products/beauty-hygiene/tissues.jpg",
+    "description": "Let your beautiful face stay clean Here Premier Special Face Tissues are available, mostly prepared targeting to care for your face which has spongy and delicate skin.",
+    "price": 270,
+    "stock": 50,
+    "category": "5b68994e3d1a866534f516df",
+    "sku": "bh-tissue-400",
+    "id": "5b6c721d01a7c38429530893"
+  },
+  {
+    "name": "Close Up Ever Fresh Red Hot Gel Toothpaste, 150 gm",
+    "imageURL": "/static/images/products/beauty-hygiene/closeup.jpg",
+    "description": " Closeup's unique Active Zinc Mouthwash not only cleans deep corners of your mouth of residual germs it also gives you upto 12 Hours Fresh Breath.",
+    "price": 82,
+    "stock": 50,
+    "category": "5b68994e3d1a866534f516df",
+    "sku": "bh-closeup-150",
+    "id": "5b6c727801a7c38429530894"
+  }]
