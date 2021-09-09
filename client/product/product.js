@@ -24,9 +24,14 @@ function onCategoryClickHandler(e) {
 let totalItems = 0;
 function onBuyClickHandler() {
     totalItems++;
+    // TODO Fetch POST to be called
     document.getElementById("totalItems").innerText = totalItems +  " items";
 }
 
+function onClickCartHandler(){
+    document.getElementsByTagName("body")[0].setAttribute("class","no-scroll m-0");
+    document.getElementById("miniCart").setAttribute("class","minicart-section show");
+}
 
 
 /* Dom Manipulations */

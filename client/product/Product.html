@@ -29,7 +29,7 @@
                         <li class="checkout-nav-links-list-item"><a href="../register/Register.html">Register</a></li>
                     </ul>
                 </nav>
-                <button class="checkout-cart d-flex">
+                <button class="checkout-cart d-flex" onclick="onClickCartHandler()">
                     <svg class="checkout-cart-icon" version="1.1" focusable="false" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                         x="0px" y="0px" viewBox="0 0 24 24" xml:space="preserve">
                     <path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49A1.003 1.003 0 0 0 20 4H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"/>
@@ -54,6 +54,33 @@
         </section>
         <section class="products-section d-flex justify-space-between" id="products">
                 <!-- Products appended from /products api call-->
+        </section>
+        <section class="minicart-section hide" id="miniCart">
+            <div class="minicart-overlay d-flex flex-column hide">
+                <div class="minicart-header d-flex-space-between">
+                    <h3>My Cart</h3>
+                    <h3><a href="../product/Product.html">x</a></h3>
+                </div>
+                <div class="minicart-details">
+
+                </div>
+                <div class="minicart-checkout d-flex justify-center">
+                    <button class="minicart-checkout-items m-t10">Proceed to Checkout</button>
+                </div>
+            </div>
+            <div class="minicart-overlay d-flex flex-column show empty">
+                <div class="minicart-header d-flex-space-between">
+                    <h3>My Cart</h3>
+                    <h3><a href="../product/Product.html">x</a></h3>
+                </div>
+                <div class="minicart-details d-flex flex-column justify-center align-items-center">
+                    <h3>No items in your cart</h3>
+                    <h4>Your favorite items are just a click away</h4>
+                </div>
+                <div class="minicart-checkout d-flex justify-center">
+                    <button class="minicart-checkout-empty m-t10"><a href="../product/Product.html">Start Shopping</a></button>
+                </div>
+            </div>
         </section>
     </main>
     <footer class="footer">
