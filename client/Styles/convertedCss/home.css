@@ -1,0 +1,103 @@
+.banner {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5px;
+}
+.banner .banner-img {
+    width: 100%;
+    height: auto;
+}
+.banner .btn {
+    position: absolute;
+    padding: 8px;
+    color: white;
+    background-color: rgba(44, 42, 42, 0.336);
+    border: none;
+    cursor: pointer;
+}
+.banner .prev {
+    left: 0;
+}
+.banner .next {
+    right: 0;
+}
+.banner .dotsContainer {
+    position: absolute;
+    bottom: 20px;
+}
+.banner .dotsContainer .dot {
+    height: 8px;
+    width: 8px;
+    background: grey;
+    display: inline-block;
+    border-radius: 50%;
+    margin: 10px;
+    cursor: pointer;
+}
+.banner .dotsContainer .active {
+    background-color: black;
+}
+.banner .dotsContainer .inactive {
+    background-color: grey;
+}
+hr {
+    border: 0;
+    height: 3px;
+    background-image: linear-gradient(to right, transparent, #ccc, transparent);
+}
+hr :last-child {
+    display: none;
+}
+.categories .categoryContainer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.categories .categoryContainer .categoryImg {
+    width: 30%;
+    height: max-content;
+}
+.categories .categoryContainer .categoryDetails {
+    width: 40vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.categories .categoryContainer .categoryButton {
+    padding: 8px;
+    background-color: #cc0e6d;
+    max-width: 400px;
+    min-width: 200px;
+    color: white;
+    border: none;
+    margin: 8px;
+    cursor: pointer;
+   /* margin-top: 40px;
+    */
+}
+.categories .categoryContainer:nth-of-type(2n) {
+    flex-direction: row-reverse;
+}
+@media only screen and (max-width: 768px) {
+    .categories .categoryImg {
+        width: 35%;
+   }
+}
+@media only screen and (max-width: 600px) {
+    .banner .banner-img {
+        height: 150px;
+   }
+    .banner .dotsContainer {
+        bottom: 10px;
+   }
+    .banner .dotsContainer .dot {
+        height: 5px;
+        width: 5px;
+   }
+    .categories .categoryContainer .categoryImg {
+        width: 50%;
+   }
+}

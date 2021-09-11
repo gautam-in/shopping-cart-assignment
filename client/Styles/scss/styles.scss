@@ -1,0 +1,112 @@
+@import "variables.scss";
+@import "home.scss";
+@import "cart.scss";
+@import "login.scss";
+@import "products.scss";
+
+body{
+    margin: 0%;
+    .header{
+        // margin: 0 10%;
+        margin-bottom: 5px;
+        display: flex;
+        justify-content: space-around;
+        box-shadow: 0 8px 6px -6px lightgray;
+    
+    
+        li{
+            list-style-type: none;
+            float: left;
+            margin: 5px;
+          
+        }
+        
+        li a{
+        
+            text-decoration: none;
+            color: gray;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+    
+        .header--logo{
+            height: 80px;
+        }
+    
+        .header-navigation{
+            display: flex;
+            align-items: end;
+            width: 45%;
+    
+          
+         
+        }
+    
+        .LoginandCart{
+            display: flex;
+            flex-direction: column;
+    
+            ul{
+                margin: 0;
+               display: flex;
+    
+               li{
+                   a{
+                       color: black;
+                       font-size: 12px;
+                   }
+               }
+    
+            }
+    
+            .cart{
+                padding: 5px;
+                background-color: rgb(240, 235, 235);
+                border: none;
+                height: 100%;
+                cursor: pointer;
+    
+                a{
+                    text-decoration: none;
+                    color: black;
+                    font-size: 16px;
+                }
+    
+                i{
+                    color: rgb(204, 14, 109);
+                    margin: 3px;
+                }
+            }
+            
+        }
+    }
+    
+    .footer{
+        background-color: rgb(240, 235, 235);
+        padding: 10px;
+        text-align: center;
+        margin: 0;
+        margin-top: 40px;
+    }
+    
+    
+    @media only screen and (max-width: 600px) {
+    
+        .header{
+            margin: 0%;
+            justify-content: space-between;
+    
+            .header-navigation{
+                display: none;
+            }
+
+            .LoginandCart{
+                ul{
+                    display: none;
+                }
+            }
+        }
+      
+    }
+
+}
+

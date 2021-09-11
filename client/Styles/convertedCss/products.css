@@ -1,0 +1,133 @@
+.main-container {
+    display: flex;
+    width: 100%;
+}
+.main-container .category {
+    width: 20%;
+    background-color: #f5f3f3;
+}
+.main-container .category .categoryList {
+    padding: 0%;
+    cursor: pointer;
+}
+.main-container .category .categoryList ul {
+    display: block;
+    list-style: none;
+    margin-left: 5px;
+    margin: 5px;
+    padding: 5px;
+}
+.main-container .category .categoryList li {
+    padding: 5px;
+}
+.main-container .category hr {
+    border: 0;
+    border-top: 1px solid #ccc;
+}
+.main-container .category select {
+    width: 100%;
+    text-align: center;
+    padding: 8px;
+    background-color: #cc0e6d;
+    color: white;
+    border: none;
+    font-size: 16px;
+}
+.main-container .category select option {
+    background: white;
+    color: black;
+    padding: 8px;
+}
+.main-container .category select:focus {
+    outline: none;
+}
+.main-container .category #categoryDropdown {
+    display: none;
+}
+.main-container .products {
+    width: 70%;
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+}
+.main-container .products .productContainer {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    box-shadow: 10px 10px 5px #ccc;
+    clip-path: inset(0px -155px 0px 0px);
+    border-bottom: 2px dashed #ccc;
+    margin: 10px 10px;
+}
+.main-container .products .productContainer .productTitle {
+    height: 60px;
+}
+.main-container .products .productContainer .productImg {
+    height: 200px;
+    width: auto;
+}
+.main-container .products .productContainer .productDescription {
+    padding: 4px;
+    font-size: 14px;
+    box-sizing: border-box;
+    margin: 0 8px;
+    width: 280px;
+    height: 110px;
+    background-color: #f5f3f3;
+}
+.main-container .products .productContainer .productPriceDetails {
+    display: flex;
+    width: 280px;
+    margin: 8px;
+    justify-content: space-between;
+}
+.main-container .products .productContainer .productPrice::before {
+    content: "MRP ";
+}
+.main-container .products .productContainer .productButton {
+    padding: 8px;
+    background-color: #cc0e6d;
+    color: white;
+    border: none;
+    margin: 8px;
+}
+@media only screen and (max-width: 1200px) {
+    .main-container .products .productContainer {
+        margin: 10px auto;
+   }
+}
+@media screen and (max-width: 600px) {
+    .main-container {
+        flex-direction: column;
+   }
+    .main-container .category {
+        width: 100%;
+        margin-top: 15px;
+   }
+    .main-container .category ul.categoryList {
+        display: none;
+   }
+    .main-container .category select#categoryListDropdown {
+        display: block;
+        margin: 5px;
+        padding: 5px;
+   }
+    .main-container .category #categoryDropdown {
+        display: block;
+   }
+    .main-container .products {
+        width: 100%;
+        margin: auto;
+   }
+    .main-container .products .productContainer {
+        margin: 10px auto;
+        width: 100%;
+        box-shadow: none;
+        padding: 5px;
+   }
+    .main-container .products .productContainer:last-child {
+        border: none;
+   }
+}
