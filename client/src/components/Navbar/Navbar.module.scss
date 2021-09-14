@@ -1,0 +1,64 @@
+
+
+.container{
+    -webkit-box-shadow: 0 5px 6px -6px grey;
+    -moz-box-shadow: 0 5px 6px -6px grey;
+    box-shadow: 0 5px 6px -6px grey;
+}
+.NavBar{
+    display: flex;
+    align-items: center;
+    margin: 0rem 4rem 0rem 4rem;
+    
+     
+}
+.LogoContainer{
+    display: flex;
+}
+.LogoContainer>img{
+    width: 11rem;
+    object-fit: cover;
+}
+nav {
+    margin: 0;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+  }
+  .AuthNav{
+    align-self: flex-end;
+    height: 50%;
+  }
+  .NavLinksContainer{
+    display: flex;
+    justify-content: space-around;
+    font-size: 1rem;
+
+    color: grey;
+    margin: 0.5rem;
+    align-items: center;
+  }
+  .NavLinksContainer>li{
+      margin: 10px;
+  }
+  .FreeNavContainer{
+      display: flex;
+  }
+
+  
+@media (max-width: 600px) {
+    .NavLinksContainer{
+        display: none;
+      }
+      .NavBar {
+        margin: 0rem 1rem 0rem 1rem;
+      }
+      main {
+        flex-direction: column;
+        margin: 1rem;
+      }
+      .LogoContainer>img{
+        width: 8rem;
+        object-fit: cover;
+    }
+}

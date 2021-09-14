@@ -1,0 +1,22 @@
+.LogoContainer{
+    display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: auto;
+  background-color: #eaeaea;
+  padding: 0px 10px 0px 10px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.LogoContainer>img{
+    height: 2rem;
+    width: 2rem;
+ object-fit: contain;
+}
+
+@media (max-width: 600px) {
+    .LogoContainer{
+        width: 6rem;
+        height: 4rem;
+    }
+}
