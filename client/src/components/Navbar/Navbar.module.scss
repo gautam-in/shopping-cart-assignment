@@ -4,6 +4,11 @@
     -webkit-box-shadow: 0 5px 6px -6px grey;
     -moz-box-shadow: 0 5px 6px -6px grey;
     box-shadow: 0 5px 6px -6px grey;
+    position: fixed;
+    width: 100%;
+    top: 0px;
+    z-index: 5;
+    background-color: #fff;
 }
 .NavBar{
     display: flex;
@@ -56,6 +61,7 @@ nav {
       main {
         flex-direction: column;
         margin: 1rem;
+        margin-top: 6rem;
       }
       .LogoContainer>img{
         width: 8rem;

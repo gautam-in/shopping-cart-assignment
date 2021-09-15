@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import classes from "./Home.module.scss";
+import { useDispatch } from "react-redux";
+import { accessCategoriesDataList } from "../../Redux/categoriesListReducer";
 
 import { Link } from "react-router-dom";
 import OfferBanner from "../../components/OfferBanner/OfferBanner";
@@ -8,6 +10,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
 import CategoryCard from "../../components/CategoryCard/CategoryCard";
 export default function Home() {
+  const dispatch = useDispatch();
   const [bannerData, setBannerData] = useState([]);
   const [categoriesData, setCategoriesData] = useState([]);
   //api call for banners data
@@ -15,7 +18,7 @@ export default function Home() {
     document.title = "S B | Home";
     Axios.get("http://localhost:5005/banners")
       .then((res) => {
-        setBannerData(res.data);
+        setBannerData(res?.data);
       })
       .catch((err) => {
         console.log(err);
@@ -27,13 +30,15 @@ export default function Home() {
     Axios.get("http://localhost:5005/categories")
       .then((res) => {
         setCategoriesData(res.data);
+        dispatch(accessCategoriesDataList(res.data));
       })
       .catch((err) => {
         console.log(err);
       });
   }, []);
-
-  let orderedCategories = categoriesData.sort((a, b) => a?.order - b?.order);
+  if (categoriesData) {
+    categoriesData.sort((a, b) => a?.order - b?.order);
+  }
 
   return (
     <div className={classes.Container}>

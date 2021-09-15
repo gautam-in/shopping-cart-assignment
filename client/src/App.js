@@ -4,6 +4,7 @@ import Home from "./pages/Home/Home";
 import Register from "./pages/Register/Register";
 import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer";
+import ProductPage from "./pages/ProductPage/ProductPage";
 
 function App() {
   return (
@@ -12,6 +13,12 @@ function App() {
       <main>
         <Switch>
           <Route exact path="/" render={(props) => <Home {...props} />} />
+          <Route
+            exact
+            path="/products"
+            render={(props) => <ProductPage {...props} />}
+          />
+
           <Route
             exact
             path="/register"

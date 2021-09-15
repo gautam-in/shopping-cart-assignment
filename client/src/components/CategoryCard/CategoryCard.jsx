@@ -1,5 +1,7 @@
 import React from "react";
 import classes from "./CategoryCard.module.scss";
+import { useHistory } from "react-router-dom";
+
 export default function CategoryCard({
   imageUrl,
   alt,
@@ -7,6 +9,7 @@ export default function CategoryCard({
   order,
   description,
 }) {
+  const history = useHistory();
   return (
     <div
       style={{ flexDirection: order % 2 === 0 ? "row" : "row-reverse" }}
@@ -16,7 +19,17 @@ export default function CategoryCard({
       <div className={classes.CategoryDetailsDiv}>
         <h3 className={classes.CategoryName}>{name}</h3>
         <p className={classes.CategoryDescription}>{description}</p>
-        <button className={classes.CategoryButton}>Explore {alt}</button>
+        <button
+          type="button"
+          onClick={() =>
+            history.push({
+              pathname: "/products",
+            })
+          }
+          className={classes.CategoryButton}
+        >
+          Explore {alt}
+        </button>
       </div>
     </div>
   );

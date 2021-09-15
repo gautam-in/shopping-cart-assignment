@@ -1,0 +1,19 @@
+.Container{
+    display: none;
+}
+
+@media (max-width: 600px) {
+    .Container{
+        display: block;
+    ul {
+      width: 100%;
+      font-size: 1.2rem;
+      background-color: #eaeaea;
+      display: flex;
+      flex-direction: column;
+      padding: 0px;
+      background-color: #d00155;
+      color: white;
+    }
+    }
+}
