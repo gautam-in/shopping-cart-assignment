@@ -1,13 +1,13 @@
 {
     "workbench.colorCustomizations": {
-        "titleBar.activeForeground": "#e6edf3",
-        "titleBar.inactiveForeground": "#e6edf3",
-        "titleBar.activeBackground": "#e27644",
-        "titleBar.inactiveBackground": "#e27644"
-   
-        
-      },
+      "titleBar.activeForeground": "#15202b",
+      "titleBar.inactiveForeground": "#15202b99",
+      "titleBar.activeBackground": "#e27644",
+      "titleBar.inactiveBackground": "#e2764499",
+  
+    },
       "cSpell.words": [
         "Sabka"
-      ]
+      ],
+      "peacock.color": "#e27644"
 }
