@@ -23,7 +23,7 @@
 .CartMainContainer{
     position: absolute;
   background: white;
-  width: 28vw;
+  width: 30vw;
   min-width: 300px;
   height: 85vh;
   top: 14%;
@@ -77,7 +77,13 @@
     color: #000000;
     font-size: 1.1rem;
 }
-
+.BottomContainer{
+    display: flex;
+ align-items: center;
+    flex-direction: column;
+    font-weight: 600;
+    color: #000000;
+}
 .ShoppingBtn{
     width: 90%;
     
@@ -85,14 +91,62 @@
     background-color: #d00155;
     color: #ffffff;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     margin-bottom: 0.5rem;
     cursor: pointer;
     border-radius: 5px;
-    padding: 1rem;
+    padding: 0.2rem;
+    padding-left: 0.6rem;
+    padding-right: 0.6rem;
+
     font-size: 1.2rem;
     outline: none;
     border: none;
+    
     margin-left: auto;
     margin-right: auto;
 }
+.SecondaryContainer{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+  overflow-y: auto;
+    background-color: #dddcdc5d;
+}
+.PromoBanner{
+    width: 95%;
+    height: 6%;
+    background: #FFF;
+    margin-top: 0.5rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: auto;
+    padding: 0.3rem;
+    margin-right: auto;
+    border-radius: 5px;
+    justify-content: flex-start;
+    img{
+        height: 100%;
+        object-fit: contain;
+        
+    }
+    p{
+        font-size: 0.8rem;
+        font-weight: 700;
+        margin-left: 0.5rem;
+        width: 100%;
+    }
+}
+
+
+@media (max-width: 600px) {
+    .CartMainContainer{
+        top: 0;
+        right: 0;
+        height: 100vh;
+        width: 100vw;
+    }
+}
+

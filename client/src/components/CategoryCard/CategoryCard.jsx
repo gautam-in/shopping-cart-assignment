@@ -17,7 +17,9 @@ export default function CategoryCard({
     >
       <img className={classes.CategoryImg} src={imageUrl} alt={alt} />
       <div className={classes.CategoryDetailsDiv}>
-        <h3 className={classes.CategoryName}>{name}</h3>
+        <h3 onClick={console.log(order)} className={classes.CategoryName}>
+          {name}
+        </h3>
         <p className={classes.CategoryDescription}>{description}</p>
         <button
           type="button"

@@ -1,9 +1,17 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import classes from "./MyCart.module.scss";
 import cart from "../../assets/images/cart.svg";
 import CardContainer from "../CardContainer/CardContainer";
+import { useSelector } from "react-redux";
 export default function MyCart() {
+  let cartCount = useSelector((state) => state.cartList.cartData);
+
   const [cartOpen, setCartOpen] = useState(true);
+  const [cardCount, setCardCount] = useState(0);
+
+  useEffect(() => {
+    setCardCount(cartCount.length);
+  }, [cartCount]);
   function toggleCart() {
     setCartOpen(!cartOpen);
   }
@@ -11,7 +19,7 @@ export default function MyCart() {
   return (
     <>
       <div tabIndex="0" className={classes.LogoContainer} onClick={toggleCart}>
-        <img src={cart} alt="Cart Logo" /> 0 items
+        <img src={cart} alt="Cart Logo" /> {cardCount} items
       </div>
       <CardContainer changeCartToggleState={toggleCart} cartState={cartOpen} />
     </>

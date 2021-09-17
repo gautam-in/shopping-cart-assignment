@@ -1,0 +1,88 @@
+.Container{
+    width: calc(100% - 1rem);
+    height: 18%;
+    background: #FFF;
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 0.4rem;
+
+}
+.ImgContainer{
+    flex: 1;
+    height: 100%;
+    img{
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+}
+.SecondaryContainer{
+    flex: 3;
+}
+.ProductName{
+    width: 100%;
+    font-weight: 700;
+    color: #000000;
+}
+.ActionContainer{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+   justify-content: flex-start;
+   align-items: center;
+}
+.TotalCountContainer,.MultiplicationIcon{
+    font-weight: 600;
+}
+.MultiplicationIcon{
+    margin-left: .5rem;
+    font-size: 1.2rem;
+}
+.PriceContainer{
+    margin-left: 0.5rem;
+}
+.DecrementContainer{
+    background-color: #d00155;
+    color: #ffffff;
+    width: 8%;
+    height: 8%;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    margin-right: 0.5rem;
+    font-weight: 600;
+}
+.IncrementContainer{
+    background-color: #d00155;
+    color: #ffffff;
+    width: 8%;
+    height: 8%;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    cursor: pointer;
+    margin-left: 0.5rem;
+}
+.TotalAmountContainer{
+    flex: 1;
+}
+.TotalAmountContainer{
+    font-weight: 500;
+    font-size: 1.1rem;
+}
+
+@media (max-width: 600px) {
+    .ProductName{
+      font-size: 1.2rem;
+    }
+    .DecrementContainer, .IncrementContainer{
+        width: 20px;
+        height: 20px;
+    }   
+}

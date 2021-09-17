@@ -13,12 +13,13 @@ export default function Home() {
   const dispatch = useDispatch();
   const [bannerData, setBannerData] = useState([]);
   const [categoriesData, setCategoriesData] = useState([]);
+  const [newCategoriesData, setNewCategoriesData] = useState([]);
   //api call for banners data
   useEffect(() => {
     document.title = "S B | Home";
     Axios.get("http://localhost:5005/banners")
       .then((res) => {
-        setBannerData(res?.data);
+        setBannerData(res.data);
       })
       .catch((err) => {
         console.log(err);
@@ -36,9 +37,14 @@ export default function Home() {
         console.log(err);
       });
   }, []);
-  if (categoriesData) {
-    categoriesData.sort((a, b) => a?.order - b?.order);
-  }
+
+  useEffect(() => {
+    if (categoriesData) {
+      const items = [...categoriesData];
+      let sortedData = items.sort((a, b) => a?.order - b?.order);
+      setNewCategoriesData(sortedData);
+    }
+  }, [categoriesData]);
 
   return (
     <div className={classes.Container}>
@@ -58,7 +64,8 @@ export default function Home() {
           ))}
         </Carousel>
       </div>
-      {categoriesData.map((item) =>
+
+      {newCategoriesData.map((item) =>
         item?.order !== -1 ? (
           <CategoryCard
             key={item?.id}
