@@ -1,13 +1,16 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, lazy, Suspense } from "react";
 import Axios from "axios";
-import ProductCard from "../../components/ProductCard/ProductCard";
-import HamburgerMenu from "../../components/HamburgerMenu/HamburgerMenu";
+
 import { useSelector } from "react-redux";
 import { accessProductDataList } from "../../Redux/productListReducer";
 import { useDispatch } from "react-redux";
 import classes from "./ProductPage.module.scss";
 import arrowUp from "../../assets/images/upArrow.svg";
 import arrowDown from "../../assets/images/downArrow.svg";
+
+const ProductCard = lazy(() =>
+  import("../../components/ProductCard/ProductCard")
+);
 export default function ProductPage({ location }) {
   const dispatch = useDispatch();
 
@@ -71,23 +74,25 @@ export default function ProductPage({ location }) {
   return (
     <>
       <div className={classes.ProductNavigation}>
-        <ul>
-          {productCategories.map((item) =>
-            item?.order !== -1 ? (
-              <li
-                style={{
-                  color: item.id === selectedProductCategory.id && "#d00155",
-                  fontSize: "1.2rem",
-                }}
-                key={item.id}
-                tabIndex="0"
-                onClick={() => handleNavCategory(item)}
-              >
-                {item.name}
-              </li>
-            ) : null
-          )}
-        </ul>
+        <Suspense fallback={<h2>Loading...</h2>}>
+          <ul>
+            {productCategories.map((item) =>
+              item?.order !== -1 ? (
+                <li
+                  style={{
+                    color: item.id === selectedProductCategory.id && "#d00155",
+                    fontSize: "1.2rem",
+                  }}
+                  key={item.id}
+                  tabIndex="0"
+                  onClick={() => handleNavCategory(item)}
+                >
+                  {item.name}
+                </li>
+              ) : null
+            )}
+          </ul>
+        </Suspense>
       </div>
       {/*        
        Hidden Hamburger */}
@@ -129,18 +134,20 @@ export default function ProductPage({ location }) {
        Hidden Hamburger */}
 
       <div className={classes.Container}>
-        {productData.map((item) => (
-          <ProductCard
-            key={item?.id}
-            id={item?.id}
-            name={item?.name}
-            imageURL={item?.imageURL}
-            description={item?.description}
-            price={item?.price}
-            stock={item?.stock}
-            category={item?.category}
-          />
-        ))}
+        <Suspense fallback={<h1>Loading...</h1>}>
+          {productData.map((item) => (
+            <ProductCard
+              key={item?.id}
+              id={item?.id}
+              name={item?.name}
+              imageURL={item?.imageURL}
+              description={item?.description}
+              price={item?.price}
+              stock={item?.stock}
+              category={item?.category}
+            />
+          ))}
+        </Suspense>
       </div>
     </>
   );

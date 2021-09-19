@@ -93,7 +93,7 @@ export default function CardContainer({ cartState, changeCartToggleState }) {
               changeCartToggleState();
               history.push("/products");
             }}
-            className={classes.ShoppingBtn}
+            className={classes.ShoppingBtnEmpty}
             type="button"
           >
             Start Shopping

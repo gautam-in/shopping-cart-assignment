@@ -1,6 +1,6 @@
 import { configureStore, combineReducers } from "@reduxjs/toolkit";
 import { cartList } from "./cartReducer";
-import { userData } from "./cred";
+import { userList } from "./cred";
 import { productList } from "./productListReducer";
 import { categoriesList } from "./categoriesListReducer";
 import { commonMethodsReducer } from "./commonReducer";
@@ -9,16 +9,16 @@ import storage from "redux-persist/lib/storage";
 
 const rootReducer = combineReducers({
   cartList: cartList,
-  userData: userData,
+  userList: userList,
   productList: productList,
   categoriesList: categoriesList,
   commonMethodsReducer: commonMethodsReducer,
 });
 
 const persistConfig = {
-  key: "root",
+  key: "sabkabazaar",
   storage,
-  whitelist: ["userData", "productList", "categoriesList", "cartList"],
+  whitelist: ["userList", "productList", "categoriesList", "cartList"],
 };
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);

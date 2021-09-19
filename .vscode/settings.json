@@ -4,10 +4,15 @@
       "titleBar.inactiveForeground": "#15202b99",
       "titleBar.activeBackground": "#e27644",
       "titleBar.inactiveBackground": "#e2764499",
-  
+      
     },
       "cSpell.words": [
-        "Sabka"
+        "fname",
+        "lname",
+        "Repassword",
+        "Sabka",
+        "signin",
+        "Signup"
       ],
       "peacock.color": "#e27644"
 }
