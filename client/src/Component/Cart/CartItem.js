@@ -4,8 +4,7 @@ import { useSelector } from "react-redux";
 import "./cartItem.scss";
 
 export default function CartItems(props) {
-  
-  const { productId, product, changeCount, min = 0 } = props;
+  const { productId, product, changeCount, removeItem, min = 0 } = props;
   const { stock, count } = product;
 
   const [counter, setCounter] = useState(count);
@@ -35,7 +34,9 @@ export default function CartItems(props) {
     setCounter(newCount);
     getCount(newCount);
   };
-
+  const handleRemove = () => {
+    removeItem(_product.id);
+  };
   return (
     <div className="section-cart-item">
       <div className="main-container">
@@ -53,7 +54,9 @@ export default function CartItems(props) {
               <div onClick={handleAdd} className="btn-round ">
                 +
               </div>
-              <div className="close-x">X</div>
+              <div onClick={handleRemove} className="close-x">
+                X
+              </div>
               <div className="price">&#x20a8;.{_product.price}</div>
             </div>
             <div className="total-price">

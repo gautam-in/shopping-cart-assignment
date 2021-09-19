@@ -6,7 +6,6 @@ import CartItems from "./CartItem";
 import "./index.scss";
 
 const Cart = (props) => {
-
   const { handleClose } = props;
   const history = useHistory();
 
@@ -29,6 +28,13 @@ const Cart = (props) => {
         item.count = count;
       }
       return item;
+    });
+    setList(newList);
+  };
+
+  const changeRemoveItem = (value) => {
+    const newList = list.filter((item) => {
+      return item.id !== value;
     });
     setList(newList);
   };
@@ -62,7 +68,7 @@ const Cart = (props) => {
   }, [items]);
 
   return (
-    <section className="section-cart" onClick={removePropagation}>
+    <div className="section-cart" onClick={removePropagation}>
       <div className="cart-header">
         <div className="title">
           My Cart <span>({`${items.length} item`})</span>
@@ -82,7 +88,7 @@ const Cart = (props) => {
           </div>
         </div>
       ) : (
-        <>
+        <div>
           <div className="cart-body">
             {list.map((item) => (
               <div>
@@ -90,6 +96,7 @@ const Cart = (props) => {
                   changeCount={changeCount}
                   product={item}
                   productId={item.id}
+                  removeItem={changeRemoveItem}
                 />
               </div>
             ))}
@@ -123,9 +130,9 @@ const Cart = (props) => {
               </div>
             </div>
           </div>
-        </>
+        </div>
       )}
-    </section>
+    </div>
   );
 };
 
