@@ -1,0 +1,152 @@
+$light-gray:#c8cbce61;
+
+.header {
+  background: white;
+  box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.3);
+  height: 6rem;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  .navbar {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    a {
+      margin: 0;
+      padding: 10px;
+      color: gray; 
+      text-align: center;
+      text-decoration: none;
+      display: inline-block; 
+      font-size: 0.8em;
+      font-weight: bold;
+      &:hover {
+        color: black;
+      }
+    }
+    .brand-name {
+      .brand-logo {
+        height: 4rem;
+      }
+    }
+    .left-nav {
+      flex-grow: 4;
+      .tabs {
+        display: flex;
+        margin: 2em 0 0;
+        li:hover {
+          background: $light-gray;
+        }
+      }
+    }
+    .right-nav {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
+      .links {
+        display: flex;
+        justify-content: flex-end;
+        margin: 0;
+        padding: 5px 10px 10px 0px;
+        li {
+          cursor: pointer;
+          &:hover {
+            background: $light-gray;
+          }
+        }
+      }
+      .my-cart {
+        display: flex;
+        justify-content: flex-end;
+        a {
+          display: flex;
+          align-items: center;
+          background-color: $light-gray;
+          .cart-icon {
+            padding: 0 10px;
+            height: 2em;
+            filter: invert(21%) sepia(63%) saturate(5409%) hue-rotate(315deg) brightness(101%) contrast(101%);
+          }
+        }
+        span {
+          padding-right: 25px;
+        }
+        .cart-box {
+          height: 100%;
+          width: 700px;
+          background-color: #fff;
+          position: relative;
+          top: 100%;
+          right: 0;
+          // z-index: 1;
+        }
+      }
+    }
+    .tabs,
+    .links {
+      list-style-type: none;
+    }
+  }
+}
+
+@media only screen and (min-width: 320px) and (max-width: 425px) {
+  .header {
+    height: 4rem;
+    .navbar {
+      padding: 0 ;
+      .brand-name {
+        .brand-logo {
+          height: 3rem;
+        }
+      }
+      .left-nav {
+        .tabs {
+          display: none;
+        }
+      }
+      .right-nav {
+        .links {
+          display: none;
+        }
+        .my-cart {
+          flex-grow: 1;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 425px) and (max-width: 768px) {
+  .header {
+    .navbar {
+      padding: 0;
+    }
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .header {
+    .navbar {
+      padding: 0 ;
+    }
+  }
+}
+
+@media only screen and (min-width: 1024px) and (max-width: 1440px) {
+  .header {
+    .navbar {
+      padding: 0 3rem;
+    }
+  }
+}
+
+@media only screen and (min-width: 1440px) and (max-width: 2560px) {
+  .header {
+    .navbar {
+      padding: 0 18rem;
+    }
+  }
+}
+
