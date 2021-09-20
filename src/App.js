@@ -9,7 +9,7 @@ import Listing from "./pages/Listing/Listing";
 export default function App() {
   return (
     <>
-      <div className="container">
+      <div className="container content">
         <BrowserRouter>
           <Header />
           <Switch>
