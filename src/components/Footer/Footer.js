@@ -4,7 +4,10 @@ import "./Footer.scss";
 export default function Footer() {
   return (
     <>
-      <h1>This Is Footer</h1>
+      <footer>
+        Copyright &copy; 2011-{new Date().getFullYear()} Sabka Bazaar Grocery
+        Supplies Pvt. Ltd.
+      </footer>
     </>
   );
 }
