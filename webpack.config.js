@@ -3,7 +3,7 @@ const app = path.resolve(__dirname, "src", "js", "index.js");
 
 module.exports = {
   entry: "./src/js/index.js",
-  mode: "production",
+  mode: "development",
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: "bundle.js",
@@ -17,6 +17,7 @@ module.exports = {
           loader: "babel-loader",
           options: {
             presets: ["@babel/preset-env"],
+            plugins: ["@babel/plugin-transform-runtime"],
           },
         },
       },

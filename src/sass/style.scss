@@ -1,11 +1,129 @@
 @import "reset";
+@import "colors";
+@import "utilities";
+
+$sb-padding: 0.5em;
 
 html,
 body > * {
   box-sizing: border-box;
   font-size: 16px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
+.container {
+  width: 960px;
+  margin: 0 auto;
+}
+
+a {
+  color: $sb-dark-gray;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+// Header Styles
 header {
   display: flex;
+  justify-content: space-between;
+  box-shadow: 2px 2px 20px 5px rgba($sb-gray, 0.9);
+  padding-top: 0.2em;
+
+  nav.main {
+    ul {
+      display: flex;
+      li {
+        padding-right: 1.5em;
+      }
+    }
+  }
+
+  .side-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    nav {
+      ul {
+        display: flex;
+        li {
+          padding-right: $sb-padding;
+        }
+      }
+    }
+
+    button.cart {
+      background-color: $sb-gray;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding-block: 0.8em;
+      border: none;
+      cursor: pointer;
+
+      svg {
+        width: 30px;
+        fill: $sb-pink;
+      }
+    }
+  }
+}
+
+// Homepage Styles
+.categories {
+  li {
+    display: flex;
+    justify-content: space-around;
+    padding: 1em;
+    &:nth-child(even) {
+      flex-direction: row-reverse;
+    }
+
+    .category {
+      &__image {
+        width: 300px;
+      }
+      &__info {
+        width: 300px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        h2 {
+          font-size: 1.4em;
+          padding-bottom: $sb-padding;
+        }
+
+        a {
+          background-color: $sb-pink;
+          color: $sb-white;
+          padding: $sb-padding;
+          display: inline-block;
+          margin-top: 1em;
+          &:hover {
+            text-decoration: none;
+            background-color: lighten($sb-pink, 5%);
+          }
+          flex-grow: 0;
+        }
+      }
+    }
+  }
+}
+
+// Footer Styles
+footer {
+  background-color: $sb-gray;
+  padding: 0.7em;
+
+  @media screen and (min-width: 400px) {
+    text-align: center;
+  }
+}
+
+@media screen and (min-width: 400px) {
 }
