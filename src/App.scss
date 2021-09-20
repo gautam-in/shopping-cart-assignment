@@ -22,13 +22,20 @@ a {
 }
 
 .content {
-  margin-top: 6rem;
+  margin-top: 5rem;
 }
 
 .container {
   margin-right: auto;
   margin-left: auto;
 }
+
+.center-display {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 @media (min-width: 460px) {
   .container {
     padding: 0;
@@ -36,7 +43,7 @@ a {
 }
 @media (min-width: 576px) {
   .container {
-    padding: 0 0.5rem;
+    padding: 0 1rem;
   }
 }
 @media (min-width: 768px) {

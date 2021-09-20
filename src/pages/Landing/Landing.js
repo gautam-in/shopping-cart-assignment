@@ -1,9 +1,10 @@
 import React from "react";
+import HeroCarousel from "../../components/HeroCarousel/HeroCarousel";
 
 export default function Landing() {
   return (
     <>
-      <h1>Landing Page</h1>
+      <HeroCarousel />
     </>
   );
 }
