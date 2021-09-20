@@ -1,11 +1,4 @@
-import "../sass/style.scss";
-
-// Fetch all categories from server (endpoint)
-async function getCategories() {
-  let response = await fetch("http://localhost:5000/categories");
-  let results = await response.json();
-  return results.filter((e) => e.enabled).sort((e) => e.order);
-}
+import { getCategories } from "./modules/categories";
 
 function displayCategories(categories) {
   let theList = document.querySelector(".categories");

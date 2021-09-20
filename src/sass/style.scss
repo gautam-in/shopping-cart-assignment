@@ -1,19 +1,24 @@
 @import "reset";
+@import "variables";
 @import "colors";
+@import "mixins";
 @import "utilities";
-
-$sb-padding: 0.5em;
 
 html,
 body > * {
   box-sizing: border-box;
   font-size: 16px;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  -webkit-font-smoothing: antialiased;
 }
 
 .container {
   width: 960px;
   margin: 0 auto;
+
+  @media screen and (max-width: $sb-tablet-breakpoint) {
+    width: 100%;
+  }
 }
 
 a {
@@ -27,12 +32,36 @@ a {
 
 // Header Styles
 header {
-  display: flex;
-  justify-content: space-between;
+  background-color: $sb-white;
   box-shadow: 2px 2px 20px 5px rgba($sb-gray, 0.9);
-  padding-top: 0.2em;
+}
+.header {
+  display: flex;
+  @media screen and (min-width: $sb-mobile-breakpoint) {
+    padding-top: 0.2em;
+  }
+  @media screen and (max-width: $sb-mobile-breakpoint) {
+    justify-content: space-between;
+  }
+
+  .logo {
+    @media screen and (max-width: $sb-mobile-breakpoint) {
+      width: 80px;
+    }
+
+    padding: $sb-padding;
+    padding-left: 0;
+  }
 
   nav.main {
+    flex-grow: 1;
+    align-self: center;
+    padding-top: 30px;
+    padding-left: 30px;
+    @media screen and (max-width: $sb-mobile-breakpoint) {
+      display: none;
+    }
+
     ul {
       display: flex;
       li {
@@ -47,6 +76,9 @@ header {
     justify-content: space-between;
 
     nav {
+      @media screen and (max-width: $sb-mobile-breakpoint) {
+        display: none;
+      }
       ul {
         display: flex;
         li {
@@ -115,15 +147,90 @@ header {
   }
 }
 
+// Products Styles
+.category-products {
+  display: flex;
+
+  @media screen and (max-width: $sb-mobile-breakpoint) {
+    flex-direction: column;
+  }
+
+  &__heading {
+    background-color: $sb-gray;
+    flex-basis: 200px;
+    margin-bottom: 1px;
+    @media screen and (max-width: $sb-mobile-breakpoint) {
+      flex-basis: 100%;
+    }
+
+    button {
+      @include primary-button;
+      width: 100%;
+      text-align: left;
+      padding-left: 1.5em;
+
+      &::after {
+        font-family: "Font Awesome 5 Free";
+        font-weight: 400;
+        content: "\f107";
+      }
+    }
+  }
+
+  &__products {
+    display: none;
+
+    .category-products.active & {
+      display: block;
+    }
+
+    li {
+      display: flex;
+      flex-wrap: wrap;
+
+      > div {
+        width: 25%;
+        padding: 1em;
+
+        @media screen and (max-width: $sb-tablet-breakpoint) {
+          width: 50%;
+        }
+        @media screen and (max-width: $sb-mobile-breakpoint) {
+          width: 100%;
+        }
+
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        h3 {
+          grid-column: 1 / span 2;
+          font-size: 1.2em;
+          padding-bottom: 0.8em;
+        }
+        img {
+          grid-column: 1/2;
+        }
+        p {
+          grid-column: 2/2;
+          background-color: $sb-gray;
+          padding: 0.4em;
+          font-size: 0.9em;
+        }
+        button {
+          @include primary-button;
+          grid-column: 2/2;
+          position: relative;
+        }
+      }
+    }
+  }
+}
+
 // Footer Styles
 footer {
   background-color: $sb-gray;
   padding: 0.7em;
 
-  @media screen and (min-width: 400px) {
+  @media screen and (max-width: 400px) {
     text-align: center;
   }
-}
-
-@media screen and (min-width: 400px) {
 }
