@@ -1,4 +1,5 @@
 @import "../../utilities/variables";
+@import "../../utilities/mixins";
 
 .product {
   background-color: $background;
@@ -30,15 +31,7 @@
         font-size: 18px;
       }
       .card-text-button {
-        background-color: $theme;
-        padding: 15px;
-        color: $background;
-        font-size: 1rem;
-        border: 0;
-      }
-      .card-text-button:hover {
-        opacity: 0.8;
-        cursor: pointer;
+        @include primary-button;
       }
     }
     .card-text-odd {
