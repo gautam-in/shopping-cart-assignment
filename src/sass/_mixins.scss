@@ -1,0 +1,8 @@
+@mixin primary-button {
+  background-color: $sb-pink;
+  color: $sb-white;
+  font-size: 1em;
+  padding: 0.8em;
+  border: 0;
+  cursor: pointer;
+}
