@@ -1,0 +1,11 @@
+@import "reset";
+
+html,
+body > * {
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+header {
+  display: flex;
+}
