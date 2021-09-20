@@ -39,7 +39,7 @@ export default function Header() {
           <div className="nav-cart-logo">
             <Link to="/cart">
               <span className="icon-cart"></span>
-              <span> 0 Item</span>
+              <span className="cart-item-count"> 0 Item</span>
             </Link>
           </div>
         </div>
