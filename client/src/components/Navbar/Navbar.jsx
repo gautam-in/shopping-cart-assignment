@@ -47,7 +47,7 @@ export default function Navbar() {
                 {headerSign ? null : (
                   <Link
                     style={{
-                      color: location.pathname === "/login" && "#d00155",
+                      color: location.pathname === "/signin" && "#d00155",
                     }}
                     to="/signin"
                   >

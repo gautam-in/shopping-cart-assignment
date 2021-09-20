@@ -24,7 +24,6 @@ export default function ProductPage({ location }) {
   const filterProducts = (category, productList) => {
     const { id } = category;
     if (id === "all") return productList;
-    console.log(productList, "product List");
     const newList = [];
     productList.forEach((product) => {
       if (product.category === id) newList.push(product);
@@ -47,7 +46,6 @@ export default function ProductPage({ location }) {
   });
 
   const handleNavCategory = (category) => {
-    console.log(category, "handleNav");
     setSelectedProductCategory(category);
     const newProductList = filterProducts(category, productListFromReducer);
     setProductData(newProductList);
@@ -59,7 +57,7 @@ export default function ProductPage({ location }) {
       setProductData(res.data);
       dispatch(accessProductDataList(res.data));
     });
-  }, []);
+  }, [dispatch]);
 
   useEffect(() => {
     setProductCategories((prevState) => {
@@ -68,9 +66,8 @@ export default function ProductPage({ location }) {
       newArray = newArray.concat(categoriesList);
       return newArray;
     });
-  }, []);
+  }, [categoriesList]);
 
-  console.log(productData);
   return (
     <>
       <div className={classes.ProductNavigation}>

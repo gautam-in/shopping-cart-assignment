@@ -1,25 +1,14 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect } from "react";
 import classes from "./RegisterPage.module.scss";
 import { useForm } from "react-hook-form";
 import { useHistory } from "react-router-dom";
 import { userCred } from "../../Redux/cred";
 import { useDispatch, useSelector } from "react-redux";
-import { yupResolver } from "@hookform/resolvers/yup";
-import * as yup from "yup";
 export default function RegisterPage() {
   const history = useHistory();
   const dispatch = useDispatch();
   let presentEmail = useSelector((state) => state.userList.userCredentials);
 
-  const schema = yup.object().shape({
-    fname: yup.string().required(),
-    email: yup
-      .string()
-      .email("Must be a valid email")
-      .max(255)
-      .required("Email is required"),
-  });
   const {
     register,
     formState: { errors },
@@ -28,7 +17,9 @@ export default function RegisterPage() {
   } = useForm();
 
   const onSubmission = (data) => {
-    const storeCred = presentEmail.find((user) => user.email === data.email);
+    const storeCred = presentEmail.find(
+      (user) => user.email === data.email.trim()
+    );
 
     if (storeCred) {
       alert("You are already registered with this email kindly login ");
@@ -36,14 +27,18 @@ export default function RegisterPage() {
       dispatch(
         userCred({
           id: new Date().getMilliseconds(),
-          email: data.email,
-          password: data.password,
+          email: data.email.trim(),
+          password: data.password.trim(),
         })
       );
       alert("Congrats ! You are Registered");
       history.push("/signin");
     }
   };
+
+  useEffect(() => {
+    document.title = "S B | Register";
+  }, []);
 
   return (
     <div className={classes.Container}>

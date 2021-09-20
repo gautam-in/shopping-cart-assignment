@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import classes from "./SignInPage.module.scss";
 import { useForm } from "react-hook-form";
 import { useHistory } from "react-router-dom";
@@ -15,8 +15,8 @@ export default function SignInPage() {
   } = useForm();
 
   const onSubmission = (SignINdata) => {
-    const inputData = SignINdata.email;
-    const inputPass = SignINdata.password;
+    const inputData = SignINdata.email.trim();
+    const inputPass = SignINdata.password.trim();
     const storeCredEmail = authorizedData.find(
       (user) => user.email === inputData
     );
@@ -39,6 +39,10 @@ export default function SignInPage() {
       }
     }
   };
+
+  useEffect(() => {
+    document.title = "S B | Signin";
+  }, []);
 
   return (
     <div className={classes.Container}>

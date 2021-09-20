@@ -1,4 +1,4 @@
-.Container{
+.Container {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -7,9 +7,10 @@
 }
 
 
-.ProductNavigation{
+.ProductNavigation {
     margin: 0px;
     padding: 0px;
+
     ul {
         width: 100%;
         font-size: 1.2rem;
@@ -19,36 +20,40 @@
         padding: 0px;
         cursor: pointer;
         height: 100%;
-      }
-      li {
-       padding: 1rem;
+    }
+
+    li {
+        padding: 1rem;
         border-bottom: 1px solid grey;
         text-align: center;
         font-weight: 700;
-      }
+    }
 }
 
 
 
-.HamburgerContainer{
+.HamburgerContainer {
     display: none;
 }
 
 @media (max-width: 600px) {
-    .Container{
+    .Container {
         width: 100%;
         padding: 0.2rem;
-    margin: 0;
+        margin: 0;
     }
-    .ProductNavigation{
+
+    .ProductNavigation {
         display: none;
     }
-    .HamburgerContainer{
+
+    .HamburgerContainer {
         display: block;
         cursor: pointer;
-  
+
     }
-    .HamburgerSecondaryContainer{
+
+    .HamburgerSecondaryContainer {
         width: 100%;
         font-size: 1.2rem;
         background-color: #eaeaea;
@@ -58,22 +63,24 @@
         padding: 0;
         background-color: #d00155;
         color: white;
+        transition: all 0.3s;
     }
-    .HamburgerSecondaryContainer > li{
+
+    .HamburgerSecondaryContainer>li {
         width: 100%;
         font-size: 1.2rem;
-        background-color: #eaeaea;
         display: flex;
         flex-direction: row;
         justify-content: space-around;
-        padding:0;
+        padding: 0;
+        transition: all 0.3s;
         padding-top: 0.2rem;
         background-color: #d00155;
         color: white;
-      
+
     }
-    .HamburgerImageContainer>img{
-         width: 1rem;
+
+    .HamburgerImageContainer>img {
+        width: 1rem;
     }
 }
-

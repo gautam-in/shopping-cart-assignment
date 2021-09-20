@@ -1,60 +1,72 @@
-.Container{
-    width: 100%;
-    box-sizing: border-box;
-    display: flex;
-    padding: 2rem;
-    align-items: center;
-    -webkit-box-shadow: 0 5px 6px -6px grey;
-    -moz-box-shadow: 0 5px 6px -6px grey;
-    box-shadow: 0 5px 6px -6px grey;
+.Container {
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  padding: 2rem;
+  align-items: center;
+  -webkit-box-shadow: 0 5px 6px -6px grey;
+  -moz-box-shadow: 0 5px 6px -6px grey;
+  box-shadow: 0 5px 6px -6px grey;
+}
+
+.CategoryImg {
+  width: 50%;
+  object-fit: contain;
+}
+
+.CategoryDetailsDiv {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+}
+
+.CategoryName {
+  font-size: 2.5rem;
+  font-weight: bolder;
+
+}
+
+.CategoryDescription {
+  font-size: 1.5rem;
+
+}
+
+.CategoryButton, .CategoryButton:visited {
+  background: #c33761;
+  border: none;
+  color: white;
+  font-size: 1.3rem;
+  padding: 0.3rem;
+  font-size: 1.5rem;
+  padding: 1rem;
+  cursor: pointer;
+}
+.CategoryButton:hover,
+.CategoryButton:active,
+.CategoryButton:focus{
+  background: #df1350;
+
+}
+@media (max-width: 600px) {
+
+  .Container {
+    padding: 0.5rem;
   }
 
-  .CategoryImg{
-    width: 50%;
-    object-fit: contain;
-  }
-  .CategoryDetailsDiv{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 50%;
-  }
-  .CategoryName{
-    font-size: 2.5rem;
+  .CategoryName {
+    font-size: 1rem;
     font-weight: bolder;
-    
-  }
-  .CategoryDescription{
-    font-size: 1.5rem;
-   
-  }
-  .CategoryButton{
-    background-color: #d00155;
-    border: none;
-    color: white;
-    font-size: 1.3rem;
-    padding: 0.3rem;
-    font-size: 1.5rem;
-    padding: 1rem;
-    cursor: pointer;
   }
 
-  @media (max-width: 600px) {
-
-    .Container{
-        padding: 0.5rem;
-    }
-    .CategoryName{
-        font-size: 1rem;
-        font-weight: bolder;
-    }
-    .CategoryDescription{
-        font-size: 0.5rem;
+  .CategoryDescription {
+    font-size: 0.5rem;
     font-weight: bold;
-    }
-    .CategoryButton{
-        font-size: 0.5rem;
-        padding: 0.5rem;
-    }
   }
+
+  .CategoryButton {
+    font-size: 0.5rem;
+    padding: 0.5rem;
+  }
+}

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import classes from "./ProductCard.module.scss";
 import { addToCart } from "../../Redux/cartReducer";
 import { useDispatch } from "react-redux";
@@ -47,7 +47,11 @@ export default function ProductCard({
             >
               Buy Now
             </button>
-            <button type="button" className={classes.AddToCartMobileButton}>
+            <button
+              onClick={handleAddingToCart}
+              type="button"
+              className={classes.AddToCartMobileButton}
+            >
               Buy now @Rs.{price}
             </button>
           </div>

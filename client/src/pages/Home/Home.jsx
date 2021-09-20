@@ -40,7 +40,7 @@ export default function Home() {
       .catch((err) => {
         console.log(err);
       });
-  }, []);
+  }, [dispatch]);
 
   useEffect(() => {
     if (categoriesData) {

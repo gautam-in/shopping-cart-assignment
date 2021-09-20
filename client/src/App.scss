@@ -1,5 +1,5 @@
 @font-face {
-  font-family: 'Roboto';
+  font-family: "Roboto";
   src: url("./assets/fonts/Roboto-Light.ttf") format("truetype");
 }
 
@@ -15,27 +15,25 @@ body {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  scroll-behavior: smooth;
 }
+
 a {
   text-decoration: none;
+
   &:focus,
   &:hover,
   &:visited,
   &:link,
   &:active {
     text-decoration: none;
-    color: grey;
+    color: rgb(51, 50, 50);
   }
 }
-
-
-
 
 ul {
   list-style: none;
 }
-
-
 
 @mixin flex-container {
   display: flex;
@@ -56,7 +54,8 @@ footer {
   justify-content: center;
   align-items: center;
 }
-footer>p{
+
+footer>p {
   text-align: center;
   font-weight: 600;
 }

@@ -1,17 +1,32 @@
-import React from "react";
+import React, { Suspense, lazy } from "react";
 import ReactDOM from "react-dom";
-import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { store, persistedStore } from "./Redux/store";
 
 import { Provider } from "react-redux";
 import { PersistGate } from "redux-persist/integration/react";
-
+const App = lazy(() => import("./App"));
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistedStore}>
-        <App />
+        <Suspense
+          fallback={
+            <h1
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                width: "100vw",
+                fontSize: "4rem",
+              }}
+            >
+              Loading...
+            </h1>
+          }
+        >
+          <App />
+        </Suspense>
       </PersistGate>
     </Provider>
   </React.StrictMode>,

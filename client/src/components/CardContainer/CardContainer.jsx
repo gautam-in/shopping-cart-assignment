@@ -1,14 +1,14 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, lazy, Suspense } from "react";
 import classes from "./CardContainer.module.scss";
 import { useHistory } from "react-router-dom";
 
 import cross from "../../assets/images/WhiteCross.svg";
 import LowestLogo from "../../assets/images/lowest-price.png";
 
-import CartCard from "../CartCard/CartCard";
 import { useDispatch, useSelector } from "react-redux";
 import { checkOutAct } from "../../Redux/cartReducer";
 
+const CartCard = lazy(() => import("../CartCard/CartCard"));
 export default function CardContainer({ cartState, changeCartToggleState }) {
   const history = useHistory();
   const dispatch = useDispatch();
@@ -69,18 +69,19 @@ export default function CardContainer({ cartState, changeCartToggleState }) {
           </div>
         ) : (
           <div className={classes.SecondaryContainer}>
-            {cartData.map((item) => (
-              <CartCard
-                key={item.id}
-                id={item.id}
-                name={item.name}
-                imageURL={item.imageURL}
-                price={item.price}
-                stock={item.stock}
-                count={item.count}
-              />
-            ))}
-
+            <Suspense fallback={<h1>Loading...</h1>}>
+              {cartData.map((item) => (
+                <CartCard
+                  key={item.id}
+                  id={item.id}
+                  name={item.name}
+                  imageURL={item.imageURL}
+                  price={item.price}
+                  stock={item.stock}
+                  count={item.count}
+                />
+              ))}
+            </Suspense>
             <div className={classes.PromoBanner}>
               <img src={LowestLogo} alt="Promo banner" />
               <p>You won't find it cheaper anywhere</p>

@@ -1,41 +1,49 @@
-.Container{
-display: flex;
-  width: 100%;
+.Container {
+    display: flex;
+    width: 100%;
 
 }
-.ErrorContainer{
+
+.ErrorContainer {
     position: absolute;
-   
+
 }
-.PrimaryContainer{
-  margin-left: 18%;
-    h1{
+
+.PrimaryContainer {
+    margin-left: 18%;
+
+    h1 {
         font-weight: bolder;
         font-size: 2.3rem;
         margin: 0;
     }
-    p{
+
+    p {
         font-weight: 800;
         min-width: 370px;
     }
 }
-.SecondaryContainer{
+
+.SecondaryContainer {
     width: 50%;
     margin-left: 1.2rem;
-    
+
 }
-.Form{
+
+.Form {
     display: flex;
     flex-direction: column;
     justify-content: center;
-  
+
 }
-.InputContainer{
+
+.InputContainer {
     position: relative;
     width: 50%;
     margin-bottom: 1rem;
 }
-.Input{
+
+.Input {
     width: 100%;
     min-width: 300px;
     height: 5vh;
@@ -45,75 +53,93 @@ display: flex;
     padding: 10px 0px 5px;
     transition: all 0.3s;
     color: #636262;
+
     &::placeholder {
-      color: transparent;
+        color: transparent;
     }
 }
-.Label{
+
+.Label {
     position: absolute;
-  left: 0px;
-  transition: all 0.3s;
-  top: 50%;
-  transform: translateY(-30%);
-  cursor: text;
-  color: #b4b4b4;
-  font-weight: 500;
+    left: 0px;
+    transition: all 0.3s;
+    top: 50%;
+    transform: translateY(-30%);
+    cursor: text;
+    color: #b4b4b4;
+    font-weight: 500;
 }
 
-.Input:focus + Label,
-.Input:not(:placeholder-shown) + Label {
-  top: 0;
-  left: 0;
-  transform: translateY(-30%);
-  color: #8fd7dc;
-  font-size: 85.7%;
-  cursor: default;
+.Input:focus+Label,
+.Input:not(:placeholder-shown)+Label {
+    top: 0;
+    left: 0;
+    transform: translateY(-30%);
+    color: #8fd7dc;
+    font-size: 85.7%;
+    cursor: default;
 }
 
 .Input:focus,
 .Input:not(:placeholder-shown) {
-  border-bottom: 2px solid #8fd7dc;
+    border-bottom: 2px solid #8fd7dc;
 }
 
-.Button{
-    background-color: #d00155;
-  border: none;
-  color: white;
-  font-size: 1.3rem;
-  padding: 0.3rem;
-  width: 100%;
-  height: 5vh;
+.Button,
+.Button:visited {
+    background: #c33761;
+
+    border: none;
+    color: white;
+    font-size: 1.3rem;
+    padding: 0.3rem;
+    width: 100%;
+    height: 5vh;
+    cursor: pointer;
 }
+
+.Button:hover,
+.Button:active,
+.Button:focus {
+    background: #df1350;
+
+}
+
 @media (max-width: 961px) {
-    .Container{
+    .Container {
         flex-direction: column;
         justify-content: center;
         align-items: center;
         margin-left: 10%;
     }
-    .PrimaryContainer{
+
+    .PrimaryContainer {
         margin-left: 0;
     }
-    .SecondaryContainer{
+
+    .SecondaryContainer {
         width: 62%;
     }
-    .InputContainer{
+
+    .InputContainer {
         width: 100%;
     }
 }
 
 @media (max-width: 600px) {
-    .SecondaryContainer{
+    .SecondaryContainer {
         width: 100%;
     }
-    .InputContainer{
+
+    .InputContainer {
         width: 100%;
     }
-    .Container{
+
+    .Container {
         margin-left: 0;
     }
-    .PrimaryContainer{
+
+    .PrimaryContainer {
         margin-left: 30%;
     }
 }
-
