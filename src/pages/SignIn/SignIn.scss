@@ -1,0 +1,39 @@
+@import "../../utilities/mixins";
+
+.signin {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 0;
+
+  .signin-text {
+    padding: 2rem;
+  }
+  .signin-action {
+    padding: 1rem;
+    width: 30%;
+
+    .signin-action-form {
+      input {
+        @include input-text;
+      }
+      button {
+        @include primary-button;
+        padding: 10px;
+        width: 100%;
+        margin-top: 2rem;
+      }
+    }
+  }
+}
+@media (max-width: 660px) {
+  .signin {
+    .signin-text {
+      text-align: center;
+    }
+    .signin-action {
+      width: 70%;
+    }
+  }
+}

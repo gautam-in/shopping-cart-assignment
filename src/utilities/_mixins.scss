@@ -1,11 +1,25 @@
+@import "./variables";
+
 @mixin primary-button {
   background-color: $theme;
   padding: 15px;
   color: $background;
   font-size: 1rem;
   border: 0;
-  :hover {
+  &:hover {
     opacity: 0.8;
     cursor: pointer;
+  }
+}
+
+@mixin input-text {
+  padding: 1em 0;
+  margin: 1em 0;
+  width: 100%;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid $background-grey;
+  &:focus {
+    border-bottom: 2px solid $theme2;
   }
 }

@@ -39,7 +39,7 @@ section {
           margin: 0 6px;
           border-radius: 3px;
         }
-        .slick-li:hover {
+        &:hover {
           background-color: $background-black;
         }
         .slick-li-active {
