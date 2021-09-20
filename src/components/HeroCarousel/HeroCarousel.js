@@ -24,6 +24,18 @@ function HeroCarousel() {
     setIndex(newIndex);
   };
 
+  useEffect(() => {
+    let interval = setInterval(() => {
+      let newIndex = data && (index + 1 < data.length) ? index + 1 : 0;
+      setImageData(data && data[newIndex]);
+      setIndex(newIndex);
+    }, 5000);
+    return () => {
+      clearInterval(interval);
+    };
+    return;
+  }, [data,index]);
+
   const dotClickHandler = (e) => {
     setIndex(e.target.value - 1);
     setImageData(data && data[e.target.value - 1]);
