@@ -30,7 +30,7 @@ function Header() {
     dispatch(setSelectedCategory(""));
   };
   return (
-    <header className="container">
+    <header className="">
       <nav>
         <div className="nav-logo">
           <img

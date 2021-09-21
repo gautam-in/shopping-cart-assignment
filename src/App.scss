@@ -26,6 +26,7 @@ a {
 }
 
 .container {
+  min-height: calc(100vh - (120px));
   margin-right: auto;
   margin-left: auto;
 }
