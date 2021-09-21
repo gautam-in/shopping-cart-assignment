@@ -1,10 +1,10 @@
 @import "../../utilities/mixins";
+@import "../../utilities/variables";
 
 .signin {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
   padding: 2rem 0;
 
   .signin-text {
@@ -23,6 +23,17 @@
         padding: 10px;
         width: 100%;
         margin-top: 2rem;
+      }
+      .msg {
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+      }
+      .success-msg {
+        color: $success;
+      }
+      .error-msg {
+        color: $warning;
       }
     }
   }
