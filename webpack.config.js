@@ -42,4 +42,9 @@ module.exports = {
       ],
     }),
   ],
+  devServer: {
+    historyApiFallback: true,
+    static: "./",
+    hot: true,
+  }
 };
