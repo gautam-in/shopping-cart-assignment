@@ -1,6 +1,7 @@
 import React from "react";
 import "./Listing.scss";
 import CategoryList from "../../components/CategoryList/CategoryList";
+import CategoryDropdown from "../../components/CategoryDropDown/CategoryDropdown";
 
 export default function Listing() {
   let categoryData, categoryLoading, categoryError;
@@ -17,7 +18,8 @@ export default function Listing() {
 
   return (
     <section>
-      <CategoryList data={categoryData}/>
+      {/* <CategoryList data={categoryData}/> */}
+      <CategoryDropdown data={categoryData}/>
     </section>
   );
 }
