@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from "react";
 import "./ListingCard.scss";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { addCartDetails, addCartItemCount } from "../../redux/cart/cartAction";
 
-export default function ListingCard({ data }) {
+function ListingCard({ data }) {
   const selectedCategory = useSelector((state) => state.category.categoryId);
+  const cartItem = useSelector((state) => state.cart.item);
   const [cardData, setCardData] = useState(data ? data : "");
+  const dispatch = useDispatch();
 
   useEffect(() => {
     if (selectedCategory && data) {
@@ -15,6 +18,25 @@ export default function ListingCard({ data }) {
     }
   }, [selectedCategory]);
 
+  const addItemHandler = (val) => {
+    if (itemCount(val.id)) {
+      dispatch(addCartItemCount(val.id));
+    } else {
+      let item = {
+        id: val.id,
+        name: val.name,
+        quantity: 1,
+        price: val.price,
+        stock: val.stock,
+      };
+      dispatch(addCartDetails(item));
+    }
+  };
+
+  const itemCount = (id) => {
+    let item = cartItem && cartItem.find((el) => el.id === id);
+    return item && item.quantity;
+  };
   return (
     <div className="listing-product">
       {cardData && cardData.length ? (
@@ -35,12 +57,26 @@ export default function ListingCard({ data }) {
             </div>
             <div className="listing-product-element-footer">
               <div className="price-lg">MRP Rs.{el.price}</div>
-              <button className="listing-product-element-button button-lg">
-                Buy Now
-              </button>
-              <button className="listing-product-element-button button-sm">
-                Buy Now @ Rs.{el.price}
-              </button>
+              {itemCount(el.id) ? (
+                <>
+                  <button onClick={() => addItemHandler(el)}> HI</button>
+                </>
+              ) : (
+                <>
+                  <button
+                    className="listing-product-element-button button-lg"
+                    onClick={() => addItemHandler(el)}
+                  >
+                    Buy Now
+                  </button>
+                  <button
+                    className="listing-product-element-button button-sm"
+                    onClick={() => addItemHandler(el)}
+                  >
+                    Buy Now @ Rs.{el.price}
+                  </button>
+                </>
+              )}
             </div>
           </div>
         ))
@@ -50,3 +86,5 @@ export default function ListingCard({ data }) {
     </div>
   );
 }
+
+export default React.memo(ListingCard);

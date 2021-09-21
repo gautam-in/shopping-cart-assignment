@@ -10,6 +10,7 @@ import { setSelectedCategory } from "../../redux/category/categoryAction";
 
 function Header() {
   const loginState = useSelector((state) => state.login.logged);
+  const cartCount = useSelector((state) => state.cart.count);
   const dispatch = useDispatch();
   const history = useHistory();
 
@@ -74,7 +75,11 @@ function Header() {
           <div className="nav-cart-logo">
             <Link to="/cart">
               <span className="icon-cart"></span>
-              <span className="cart-item-count"> 0 Item</span>
+              <span
+                className={cartCount ? "cart-item-count count-color" : "cart-item-count"}
+              >
+                {cartCount > 0 ? `${cartCount} Items` : `0 Item`}
+              </span>
             </Link>
           </div>
         </div>

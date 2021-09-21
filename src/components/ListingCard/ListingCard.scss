@@ -4,6 +4,7 @@
 .listing-product {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 
   .listing-product-element {
     flex: 1 1;
