@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import "./SignIn.scss";
 import { useHistory } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { userLoginRequest } from "../../redux/login/loginAction";
 
 const initialState = {
   email: "",
@@ -11,8 +13,9 @@ export default function SignIn() {
   const [formData, setFormData] = useState(initialState);
   const [userMessage, setUserMessage] = useState("");
   const [isSuccess, setIsSuccess] = useState(false);
-
+  const dispatch = useDispatch();
   const history = useHistory();
+
   const onFormSubmit = (e) => {
     e.preventDefault();
     if (formData.email && formData.password) {
@@ -35,7 +38,8 @@ export default function SignIn() {
         name: userData.name,
       };
       localStorage.setItem("user-status", JSON.stringify(loginData));
-      setTimeout(() => history.push("/"), 1500);
+      dispatch(userLoginRequest());
+      setTimeout(() => history.push("/"), 1000);
     } else {
       setUserMessage("Fill All The Fields");
       return;
@@ -73,7 +77,7 @@ export default function SignIn() {
               {userMessage}
             </span>
           )}
-          <button>Signup</button>
+          <button>Login</button>
         </form>
       </div>
     </section>

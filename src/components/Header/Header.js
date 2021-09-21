@@ -1,20 +1,30 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import "./Header.scss";
 import { Link, useHistory } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+import {
+  userLoginRequest,
+  userLogoutRequest,
+} from "../../redux/login/loginAction";
 
 function Header() {
-  const [loginState, useLoginState] = useState("");
+  const loginState = useSelector((state) => state.login.logged);
+  const dispatch = useDispatch();
+  const history = useHistory();
+
   useEffect(() => {
     const data = localStorage.getItem("user-status");
     const status = data && JSON.parse(data)?.status;
-    useLoginState(status);
+    if (status) {
+      dispatch(userLoginRequest());
+    }
   }, []);
-  const history = useHistory();
 
   const logoutClickHandler = () => {
-    useLoginState("");
+    dispatch(userLogoutRequest());
     localStorage.setItem("user-status", "");
   };
+
   return (
     <header className="container">
       <nav>
