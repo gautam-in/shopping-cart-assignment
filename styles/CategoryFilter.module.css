@@ -9,7 +9,7 @@
 
 
 .active {
-    background-color: beige;
+    background-color: var(--category-filter-active-bg-color);
 }
 
 .CategoryFilterContainer:hover {
@@ -18,5 +18,5 @@
 
 
 .CategoryFilterContainer:active {
-    background-color: beige;
+    background-color: var(--category-filter-active-bg-color);
 }

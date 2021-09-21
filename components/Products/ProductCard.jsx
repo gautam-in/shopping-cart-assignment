@@ -44,7 +44,7 @@ export default function ProductCard({
           ₹
         </div>
         <div className={styles.ProductButton}>
-          <Button colorScheme="telegram" width="100%" onClick={addToCartHandler}>Add To Cart</Button>
+          <Button colorScheme="telegram" bgColor="var(--product-card-button-color)" width="100%" onClick={addToCartHandler}>Add To Cart</Button>
         </div>
       </div>
     </div>
