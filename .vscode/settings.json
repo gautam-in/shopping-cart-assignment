@@ -1,0 +1,19 @@
+{
+    "workbench.colorCustomizations": {
+      "titleBar.activeForeground": "#15202b",
+      "titleBar.inactiveForeground": "#15202b99",
+      "titleBar.activeBackground": "#e27644",
+      "titleBar.inactiveBackground": "#e2764499",
+  
+    },
+      "cSpell.words": [
+        "fname",
+        "lname",
+        "Repassword",
+        "Sabka",
+        "signin",
+        "Signup",
+        "truetype"
+      ],
+      "peacock.color": "#e27644"
+}

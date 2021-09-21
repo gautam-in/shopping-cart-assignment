@@ -1,0 +1,22 @@
+.Container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 4rem;
+    margin-right: 4rem;
+}
+
+.CarouselContainer {
+    -webkit-box-shadow: 0 5px 6px -6px grey;
+    -moz-box-shadow: 0 5px 6px -6px grey;
+    box-shadow: 0 5px 6px -6px grey;
+}
+
+@media (max-width: 600px) {
+    .Container {
+        margin-top: 2rem;
+        margin-right: 2rem;
+        margin-left: 2rem;
+    }
+}

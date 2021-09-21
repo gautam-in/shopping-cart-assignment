@@ -1,0 +1,206 @@
+.Container {
+    display: block;
+    transition: all 0.2s;
+    position: fixed;
+
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    /* background-color: rgba(0,0,0,0.5); */
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 900;
+
+}
+
+.ContainerClosed {
+    position: relative;
+    right: -1000%;
+    transition: all 1s;
+}
+
+.CartMainContainer {
+    position: absolute;
+    background: white;
+    width: 30vw;
+    min-width: 300px;
+    height: 85vh;
+    top: 14%;
+    right: 0.2%;
+    background-color: #eeeeee;
+    transition: all 1s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.cartState {
+    left: 2000%;
+}
+
+.Header {
+    background-color: #000000e7;
+
+}
+
+.HeaderSecondaryContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0;
+    padding: 1rem;
+}
+
+.Heading {
+    color: #ffffffe8;
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+.CloseContainer>img {
+    width: 1.1rem;
+    cursor: pointer;
+    object-fit: contain;
+}
+
+.InformationContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.InformationPrimary {
+    margin: 0;
+    color: #000000;
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.InformationSecondary {
+    margin: 0;
+    color: #000000;
+    font-size: 1.1rem;
+}
+
+.BottomContainer {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    font-weight: 600;
+    color: #000000;
+}
+
+.ShoppingBtn,
+.ShoppingBtn:visited {
+    width: 90%;
+
+    display: flex;
+    background: #c33761;
+
+    color: #ffffff;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+    border-radius: 5px;
+    padding: 0.2rem;
+    padding-left: 0.6rem;
+    padding-right: 0.6rem;
+
+    font-size: 1.2rem;
+    outline: none;
+    border: none;
+
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.ShoppingBtn:hover,
+.ShoppingBtn:active,
+.ShoppingBtn:focus {
+    background: #df1350;
+
+}
+
+.ShoppingBtnEmpty,
+.ShoppingBtnEmpty:visited {
+    width: 90%;
+
+    display: flex;
+    background: #c33761;
+
+    color: #ffffff;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+    border-radius: 5px;
+    padding: 1rem;
+    padding-left: 0.6rem;
+    padding-right: 0.6rem;
+
+    font-size: 1.2rem;
+    outline: none;
+    border: none;
+
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.ShoppingBtnEmpty:hover,
+.ShoppingBtnEmpty:active,
+.ShoppingBtnEmpty:focus {
+    background: #df1350;
+
+}
+
+.SecondaryContainer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    background-color: #dddcdc5d;
+}
+
+.PromoBanner {
+    width: 95%;
+    height: 6%;
+    background: #FFF;
+    margin-top: 0.5rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: auto;
+    padding: 0.3rem;
+    margin-right: auto;
+    border-radius: 5px;
+    justify-content: flex-start;
+
+    img {
+        height: 100%;
+        object-fit: contain;
+
+    }
+
+    p {
+        font-size: 0.8rem;
+        font-weight: 700;
+        margin-left: 0.5rem;
+        width: 100%;
+    }
+}
+
+
+@media (max-width: 600px) {
+    .CartMainContainer {
+        top: 0;
+        right: 0;
+        height: 100vh;
+        width: 100vw;
+    }
+}
