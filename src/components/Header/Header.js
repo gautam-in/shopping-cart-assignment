@@ -1,9 +1,20 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./Header.scss";
 import { Link, useHistory } from "react-router-dom";
 
-export default function Header() {
+function Header() {
+  const [loginState, useLoginState] = useState("");
+  useEffect(() => {
+    const data = localStorage.getItem("user-status");
+    const status = data && JSON.parse(data)?.status;
+    useLoginState(status);
+  }, []);
   const history = useHistory();
+
+  const logoutClickHandler = () => {
+    useLoginState("");
+    localStorage.setItem("user-status", "");
+  };
   return (
     <header className="container">
       <nav>
@@ -29,12 +40,20 @@ export default function Header() {
         </div>
         <div className="nav-cart">
           <ul className="sign-links">
-            <li>
-              <Link to="/signin">SignIn</Link>
-            </li>
-            <li>
-              <Link to="/register">Register</Link>
-            </li>
+            {!loginState ? (
+              <>
+                <li>
+                  <Link to="/signin">SignIn</Link>
+                </li>
+                <li>
+                  <Link to="/register">Register</Link>
+                </li>
+              </>
+            ) : (
+              <li>
+                <a onClick={logoutClickHandler}>Logout</a>
+              </li>
+            )}
           </ul>
           <div className="nav-cart-logo">
             <Link to="/cart">
@@ -47,3 +66,4 @@ export default function Header() {
     </header>
   );
 }
+export default React.memo(Header);
