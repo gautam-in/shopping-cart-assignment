@@ -1,7 +1,8 @@
 {
     "env": {
         "browser": true,
-        "es2021": true
+        "es2021": true,
+        "jest": true //Adding this so that eslint will not show error in jest part in testing.
     },
     "extends": [
         "plugin:react/recommended",

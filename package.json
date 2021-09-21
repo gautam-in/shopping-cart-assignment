@@ -1,11 +1,13 @@
 {
   "name": "shopping-cart-assignment",
+  "author": "Divesh Keswani",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "test": "jest --watch",
     "lint": "next lint"
   },
   "dependencies": {
@@ -26,12 +28,19 @@
     "slick-carousel": "^1.8.1"
   },
   "devDependencies": {
+    "@testing-library/jest-dom": "^5.14.1",
+    "@testing-library/react": "^12.1.0",
+    "babel-jest": "^27.2.1",
     "eslint": "^7.31.0",
-    "eslint-config-next": "11.0.1",
     "eslint-config-airbnb": "^18.2.1",
+    "eslint-config-next": "11.0.1",
     "eslint-plugin-import": "^2.23.4",
     "eslint-plugin-jsx-a11y": "^6.4.1",
     "eslint-plugin-react": "^7.24.0",
-    "eslint-plugin-react-hooks": "^4.2.0"
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "eslint-plugin-testing-library": "^4.12.3",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^27.2.1",
+    "react-test-renderer": "^17.0.2"
   }
 }
