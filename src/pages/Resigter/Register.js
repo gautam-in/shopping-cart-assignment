@@ -33,10 +33,13 @@ export default function Register() {
       let userData = {
         email: formData.email,
         password: formData.password,
+        name: `${formData.firstName} ${formData.lastName}`,
       };
       setUserMessage("User Registered Successfully");
       setIsSuccess(true);
-      localStorage.setItem("user-details", JSON.stringify(userData));
+      let allUserData = JSON.parse(localStorage.getItem("user-details")) || [];
+      allUserData.push(userData);
+      localStorage.setItem("user-details", JSON.stringify(allUserData));
       setTimeout(() => history.push("/signin"), 1500);
     } else {
       setUserMessage("Fill All The Fields");
@@ -66,7 +69,6 @@ export default function Register() {
             type="text"
             id="lastName"
             placeholder="Last Name"
-            required
             value={formData.lastName}
             onChange={formChangeHandler}
           />

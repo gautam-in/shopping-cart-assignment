@@ -16,22 +16,25 @@ export default function SignIn() {
   const onFormSubmit = (e) => {
     e.preventDefault();
     if (formData.email && formData.password) {
-      let userData = JSON.parse(localStorage.getItem("user-details"));
+      let allUserData = JSON.parse(localStorage.getItem("user-details"));
+      let userData =
+        allUserData &&
+        allUserData.filter((el) => el.email === formData.email)[0];
       if (!userData) {
         setUserMessage("No User Present, Register First");
         return;
       }
-      debugger
-      if (
-        userData.email !== formData.email &&
-        userData.password !== formData.password
-      ) {
+      if (userData.password !== formData.password) {
         setUserMessage("Invalid Credentials");
         return;
       }
       setUserMessage("Login Successfully");
       setIsSuccess(true);
-      localStorage.setItem("user-status", "loggedIn");
+      let loginData = {
+        status: "logged",
+        name: userData.name,
+      };
+      localStorage.setItem("user-status", JSON.stringify(loginData));
       setTimeout(() => history.push("/"), 1500);
     } else {
       setUserMessage("Fill All The Fields");
