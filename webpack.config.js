@@ -4,18 +4,12 @@ const app = path.resolve(__dirname, "src", "js", "index.js");
 module.exports = {
   entry: {
     styles: "./src/js/styles.js",
-    index: "./src/js/index.js",
-    products: "./src/js/products.js",
+    main: "./src/js/index.js",
   },
   mode: "development",
   output: {
     filename: "[name].bundle.js",
     path: path.resolve(__dirname, "dist"),
-  },
-  optimization: {
-    splitChunks: {
-      chunks: "all",
-    },
   },
   module: {
     rules: [

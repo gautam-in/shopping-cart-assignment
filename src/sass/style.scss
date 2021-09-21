@@ -31,17 +31,18 @@ a {
 }
 
 // Header Styles
-header {
-  background-color: $sb-white;
-  box-shadow: 2px 2px 20px 5px rgba($sb-gray, 0.9);
-}
 .header {
+  background-color: $sb-white;
+  box-shadow: 2px 0px 10px 0px rgba($sb-black, 0.4);
   display: flex;
+  z-index: 100;
+
   @media screen and (min-width: $sb-mobile-breakpoint) {
     padding-top: 0.2em;
   }
   @media screen and (max-width: $sb-mobile-breakpoint) {
     justify-content: space-between;
+    position: fixed;
   }
 
   .logo {
@@ -101,6 +102,13 @@ header {
         fill: $sb-pink;
       }
     }
+  }
+}
+
+.main {
+  padding-top: 55px;
+  @media screen and (min-width: $sb-mobile-breakpoint) {
+    padding-top: $sb-cart-top-margin;
   }
 }
 
@@ -219,6 +227,169 @@ header {
           @include primary-button;
           grid-column: 2/2;
           position: relative;
+        }
+      }
+    }
+  }
+}
+
+// Shopping Cart
+.overlay {
+  background-color: rgba($sb-black, 0.7);
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 9;
+
+  @media screen and (max-width: $sb-tablet-breakpoint) {
+    width: 0;
+    height: 0;
+  }
+}
+
+#shopping-cart {
+  $bs-top-cart: 50px;
+
+  .cart-wrapper {
+    position: fixed;
+    top: $bs-top-cart;
+    right: 0;
+    height: calc(100vh - $bs-top-cart);
+    width: 100vw;
+    z-index: 10;
+    background-color: $sb-gray;
+    display: flex;
+    flex-direction: column;
+
+    @media screen and (max-width: $sb-mobile-breakpoint) {
+      // margin-top: $sb-cart-top-margin;
+    }
+
+    header {
+      @include cart-header-footer;
+      flex-grow: 0;
+
+      h2 {
+        font-size: 1.2em;
+        font-weight: 600;
+      }
+      span {
+        font-size: 0.9em;
+        color: $sb-dark-gray;
+        line-height: 1.5em;
+        padding-left: 0.5em;
+      }
+    }
+
+    main {
+      flex-grow: 1;
+      ul {
+        .cart-item {
+          display: flex;
+          background-color: $sb-white;
+          justify-content: space-between;
+          margin-bottom: 0.5em;
+          padding: 0.5em;
+          margin: 0.3em;
+
+          &__image {
+            flex-basis: 80px;
+          }
+
+          &__detail {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            margin-inline: 0.8em;
+
+            h3 {
+              font-weight: 600;
+            }
+
+            > div {
+              display: flex;
+              > * {
+                margin-right: 0.5em;
+              }
+            }
+          }
+
+          &__price {
+            align-self: flex-end;
+            padding-bottom: 14px;
+          }
+
+          button {
+            @include primary-button;
+            padding: 0 0.4em;
+            border-radius: 0.3em;
+          }
+        }
+      }
+    }
+
+    footer {
+      @include cart-header-footer;
+      justify-self: flex-end;
+      display: flex;
+      flex-direction: column;
+      margin-top: 0;
+      p {
+        text-align: center;
+      }
+
+      button {
+        @include primary-button;
+        display: flex;
+        justify-content: space-between;
+        border-radius: 3px;
+        margin-top: 0.8em;
+      }
+    }
+
+    // Empty Cart Styles
+    &--empty {
+      top: 0;
+      justify-content: space-between;
+      height: 100%;
+
+      header {
+        background-color: $sb-black;
+        color: $sb-white;
+        margin: 0;
+        justify-content: space-between;
+
+        .btn {
+          &--close {
+            background-color: transparent;
+            color: $sb-white;
+            border: 0;
+          }
+        }
+      }
+
+      main {
+        text-align: center;
+        justify-content: center;
+        background-color: #ffffff;
+        display: flex;
+        flex-direction: column;
+
+        h4 {
+          font-size: 1.2em;
+          font-weight: 600;
+        }
+        background-color: $sb-white;
+      }
+
+      footer {
+        margin: 0;
+        box-shadow: none;
+        a {
+          @include primary-button;
+          text-align: center;
         }
       }
     }
