@@ -30,14 +30,24 @@ export default function Register() {
         );
         return;
       }
+
+      let allUserData = JSON.parse(localStorage.getItem("user-details")) || [];
+      if (
+        allUserData.length &&
+        allUserData.filter((el) => el.email === formData.email).length
+      ) {
+        setUserMessage("Email already Registered");
+        return;
+      }
+
       let userData = {
         email: formData.email,
         password: formData.password,
         name: `${formData.firstName} ${formData.lastName}`,
       };
+
       setUserMessage("User Registered Successfully");
       setIsSuccess(true);
-      let allUserData = JSON.parse(localStorage.getItem("user-details")) || [];
       allUserData.push(userData);
       localStorage.setItem("user-details", JSON.stringify(allUserData));
       setTimeout(() => history.push("/signin"), 1500);
