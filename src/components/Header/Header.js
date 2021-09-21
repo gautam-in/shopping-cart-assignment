@@ -6,6 +6,7 @@ import {
   userLoginRequest,
   userLogoutRequest,
 } from "../../redux/login/loginAction";
+import { setSelectedCategory } from "../../redux/category/categoryAction";
 
 function Header() {
   const loginState = useSelector((state) => state.login.logged);
@@ -25,6 +26,9 @@ function Header() {
     localStorage.setItem("user-status", "");
   };
 
+  const productClickHandler = () => {
+    dispatch(setSelectedCategory(""));
+  };
   return (
     <header className="container">
       <nav>
@@ -44,7 +48,9 @@ function Header() {
               <Link to="/">Home</Link>
             </li>
             <li>
-              <Link to="/listing">Products</Link>
+              <Link to="/listing" onClick={productClickHandler}>
+                Products
+              </Link>
             </li>
           </ul>
         </div>

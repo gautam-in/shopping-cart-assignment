@@ -1,12 +1,23 @@
 import React from "react";
 import "./Listing.scss";
-import { useSelector } from "react-redux";
+import CategoryList from "../../components/CategoryList/CategoryList";
 
 export default function Listing() {
-  const loginState = useSelector((state) => state.category.categoryId);
+  let categoryData, categoryLoading, categoryError;
+  const storageData = localStorage.getItem("category-list");
+
+  if (storageData && JSON.parse(storageData)?.length) {
+    categoryData = JSON.parse(storageData);
+  } else {
+    [categoryData, categoryLoading, categoryError] = useFetch(
+      "http://localhost:5000/categories"
+    );
+    localStorage.setItem("category-list", JSON.stringify(categoryData));
+  }
+
   return (
-    <>
-      <h1>This is Listing page - {loginState} </h1>
-    </>
+    <section>
+      <CategoryList data={categoryData}/>
+    </section>
   );
 }
