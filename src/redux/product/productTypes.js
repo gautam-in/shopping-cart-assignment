@@ -1,1 +1,3 @@
-export const SELECTED_CATEGORY_ID = "selected_category_id"
+export const PRODUCT_DATA = "product_data";
+export const PRODUCT_DATA_LOADING = "product_data_loading";
+export const PRODUCT_DATA_ERROR = "product_data_error";

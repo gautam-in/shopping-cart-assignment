@@ -8,7 +8,6 @@ export default function CategoryDropdown({ data }) {
   const selectedId = useSelector((state) => state.category.categoryId);
 
   const categoryClick = (val) => {
-    console.log(val);
     dispatch(setSelectedCategory(val));
   };
 
@@ -19,8 +18,8 @@ export default function CategoryDropdown({ data }) {
         value={selectedId}
         onChange={(e) => categoryClick(e.target.value)}
       >
-        <option value="" className="selected" disabled>
-          Select Category
+        <option value="" className="selected">
+          All Category
         </option>
         {data.map((el) => (
           <option
