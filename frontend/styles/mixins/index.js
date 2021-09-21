@@ -1,20 +1,26 @@
 import { css } from 'styled-components';
 
-export const FlexMixin = ({ flexDir = 'column', alignItem, justifyContent }) => css`
-    display: flex;
-    flex-direction: ${flexDir};
-    
-    align-items: ${alignItem};
-    justify-content: ${justifyContent};
+export const FlexMixin = (justifyContent, alignItem, flexDir) => css`
+  display: flex;
+  flex-direction: ${flexDir ? flexDir : 'row'};
+
+  align-items: ${alignItem};
+  justify-content: ${justifyContent};
 `;
 
 export const FlexHorizontalCenter = () => css`
-    ${FlexMixin({ alignItem: 'center', justifyContent: 'center' })};
+  ${FlexMixin('center', 'center', 'column')};
 `;
 
-export const GridMixin = ({ columnGridTemplate = 'auto 1fr', alignItem = 'stretch', justifyContent = 'space-between' }) => css`
-    display: grid;
-    grid-template-columns: ${columnGridTemplate};
-    justify-content: ${justifyContent};
-    align-items: ${alignItem};
+export const GridMixin = (
+  columnGridTemplate,
+  justifyContent,
+  alignItem,
+  gridGap
+) => css`
+  display: grid;
+  grid-template-columns: ${columnGridTemplate};
+  justify-content: ${justifyContent};
+  align-items: ${alignItem};
+  grid-gap: ${gridGap ? gridGap : 0};
 `;
