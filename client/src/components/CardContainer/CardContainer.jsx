@@ -49,9 +49,17 @@ export default function CardContainer({ cartState, changeCartToggleState }) {
     <div className={cartState ? classes.ContainerClosed : classes.Container}>
       <section className={classes.CartMainContainer}>
         <header className={classes.Header}>
-          <ul className={classes.HeaderSecondaryContainer}>
-            <li className={classes.Heading}>MY Cart</li>
+          <ul
+            aria-label="menu"
+            role="tablist"
+            className={classes.HeaderSecondaryContainer}
+          >
+            <li tabIndex="0" className={classes.Heading}>
+              MY Cart
+            </li>
             <li
+              tabIndex="0"
+              role="presentation"
               onClick={changeCartToggleState}
               aria-label="Close"
               className={classes.CloseContainer}
@@ -90,6 +98,7 @@ export default function CardContainer({ cartState, changeCartToggleState }) {
         )}
         {cartData.length === 0 ? (
           <button
+            tabIndex="0"
             onClick={() => {
               changeCartToggleState();
               history.push("/products");
@@ -103,6 +112,7 @@ export default function CardContainer({ cartState, changeCartToggleState }) {
           <div className={classes.BottomContainer}>
             <p>Promo code can be applied on payment page</p>
             <button
+              tabIndex="0"
               onClick={() => {
                 checkOutHandler();
               }}

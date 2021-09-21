@@ -46,6 +46,8 @@ export default function CartCard({ id, name, imageURL, price, stock, count }) {
         <p className={classes.ProductName}>{name}</p>
         <div className={classes.ActionContainer}>
           <div
+            tabIndex="0"
+            role="button"
             onClick={decrementProducts}
             className={classes.DecrementContainer}
           >
@@ -53,6 +55,8 @@ export default function CartCard({ id, name, imageURL, price, stock, count }) {
           </div>
           <div className={classes.TotalCountContainer}>{count}</div>
           <div
+            tabIndex="0"
+            role="button"
             onClick={incrementHandler}
             className={classes.IncrementContainer}
           >

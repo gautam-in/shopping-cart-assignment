@@ -72,10 +72,11 @@ export default function ProductPage({ location }) {
     <>
       <div className={classes.ProductNavigation}>
         <Suspense fallback={<h2>Loading...</h2>}>
-          <ul>
+          <ul aria-label="menu" role="tablist">
             {productCategories.map((item) =>
               item?.order !== -1 ? (
                 <li
+                  role="presentation"
                   style={{
                     color: item.id === selectedProductCategory.id && "#d00155",
                     fontSize: "1.2rem",
@@ -94,17 +95,22 @@ export default function ProductPage({ location }) {
       {/*        
        Hidden Hamburger */}
       <div className={classes.HamburgerContainer}>
-        <ul className={classes.HamburgerSecondaryContainer}>
+        <ul
+          aria-label="menu"
+          role="tablist"
+          className={classes.HamburgerSecondaryContainer}
+        >
           <li
+            role="presentation"
             className={classes.HamburgerImageContainer}
             tabIndex="0"
             onClick={() => setHamburgerToggle(!hamburgerToggle)}
           >
             {selectedProductCategory.name}{" "}
             {hamburgerToggle ? (
-              <img src={arrowUp} alt="Up Arrow" />
+              <img src={arrowUp} alt="Up Arrow" role="button" />
             ) : (
-              <img src={arrowDown} alt="Down Arrow" />
+              <img src={arrowDown} alt="Down Arrow" role="button" />
             )}
           </li>
           {hamburgerToggle &&
