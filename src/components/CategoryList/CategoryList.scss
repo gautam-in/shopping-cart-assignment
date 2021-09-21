@@ -4,6 +4,8 @@
   width: 17rem;
   background: $light-grey;
   height: inherit;
+  min-width: 14rem;
+  min-height: calc(100vh - 120px);
 
   .category-list-ul {
     margin: 0;
