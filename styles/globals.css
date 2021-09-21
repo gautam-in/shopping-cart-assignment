@@ -1,13 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@400;600;700&display=swap');
+
+:root {
+  --footer-bg-color             : #CCCCCC;
+  --header-bg-color             : whitesmoke;
+  --product-description-bg-color: #EFE8E8;
+}
+
+
+
 html,
 body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+
+  font-family: 'Ubuntu', sans-serif !important;
+  overflow-x : hidden;
+  padding    : 0;
+  margin     : 0;
+  font-family: 'Dosis', sans-serif;
 }
 
 a {
-  color: inherit;
+  color          : inherit;
   text-decoration: none;
 }
 

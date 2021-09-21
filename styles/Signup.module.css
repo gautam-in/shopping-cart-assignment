@@ -1,0 +1,17 @@
+.SignupContainer {
+    height         : 100%;
+    display        : flex;
+    flex-direction : column;
+    justify-content: space-around;
+
+}
+
+
+@media(max-width : 900px) {
+    .SignupContainer {
+        margin-top     : 50px;
+        height         : 100%;
+        justify-content: space-around;
+
+    }
+}

@@ -1,0 +1,57 @@
+.ProductCardContainer {
+    width: 100%;
+
+    min-height     : 380px;
+    text-align     : center;
+    display        : flex;
+    flex-direction : column;
+    justify-content: space-between;
+    align-items    : center;
+    padding        : 5px;
+    border-radius  : 10px;
+    box-shadow     : rgba(0, 0, 0, 0.24) 0px 5px 10px;
+    transition     : all 150ms ease-in;
+    cursor         : pointer;
+}
+
+.ProductCardContainer:hover {
+    transform : scale(1.03);
+    transition: all 150ms ease-in;
+}
+
+.ProductPriceAndButton {
+    height         : 20%;
+    display        : flex;
+    width          : 100%;
+    justify-content: space-around;
+    align-items    : center;
+}
+
+.ProductName {
+    font-weight: bold;
+    font-size  : 18px;
+}
+
+.ProductPrice {
+    font-weight: bold;
+}
+
+.ProductImage {
+    position     : relative;
+    height       : 55%;
+    width        : 90%;
+    overflow     : hidden;
+    border-radius: 5px;
+}
+
+.ProductDescription {
+    background-color: var(--product-description-bg-color);
+    padding         : 5px;
+    width           : 95%;
+    min-height      : 20%;
+    max-height      : 25%;
+    text-align      : center;
+    font-size       : 70%;
+    overflow        : hidden;
+    border-radius   : 5px;
+}

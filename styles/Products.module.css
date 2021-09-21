@@ -1,0 +1,44 @@
+.ProductsContainer {
+    width     : 100vw;
+    min-height: 100vh;
+    display   : flex;
+
+
+}
+
+.CategoryFiltorSection {
+    min-width : 230px;
+    width     : 20%;
+    margin-top: 40px;
+
+}
+
+
+.ProductListContainer {
+    flex: 1;
+
+
+}
+
+@media(min-width:701px) {
+    .CategoryFiltorSection {
+        border-right: 3px solid whitesmoke;
+
+
+    }
+}
+
+
+
+@media(max-width : 700px) {
+    .CategoryFiltorSection {
+        margin-top: 20px;
+
+
+
+    }
+
+    .ProductsContainer {
+        flex-direction: column;
+    }
+}
