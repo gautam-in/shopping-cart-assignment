@@ -17,14 +17,8 @@ export const addCartDetails = (item) => {
         id: item.id,
       }),
       mode: "no-cors",
-      headers: {
-        "Content-type": "application/json; charset=UTF-8",
-        "Access-Control-Allow-Origin": "*",
-      },
     })
-      .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         if (data.response === "Success") {
           dispatch(addCartDetailsSucess(item));
         }

@@ -1,15 +1,16 @@
 import React, { useState, useEffect } from "react";
 import "./ListingCard.scss";
 import { useSelector, useDispatch } from "react-redux";
-import { addCartDetails, addCartItemCount } from "../../redux/cart/cartAction";
+import { addCartDetails } from "../../redux/cart/cartAction";
 import CartButton from "../CartButton/CartButton";
 
 function ListingCard({ data }) {
   const selectedCategory = useSelector((state) => state.category.categoryId);
   const cartItem = useSelector((state) => state.cart.item);
+  const cartCount = useSelector((state) => state.cart.count);
   const [cardData, setCardData] = useState(data ? data : "");
   const dispatch = useDispatch();
-
+  
   useEffect(() => {
     if (selectedCategory && data) {
       let filteredData = data.filter((el) => el.category === selectedCategory);
@@ -20,19 +21,15 @@ function ListingCard({ data }) {
   }, [selectedCategory]);
 
   const addItemHandler = (val) => {
-    if (itemCount(val.id)) {
-      dispatch(addCartItemCount(val.id));
-    } else {
-      let item = {
-        id: val.id,
-        name: val.name,
-        quantity: 1,
-        price: val.price,
-        stock: val.stock,
-        image: val.imageURL,
-      };
-      dispatch(addCartDetails(item));
-    }
+    let item = {
+      id: val.id,
+      name: val.name,
+      quantity: 1,
+      price: val.price,
+      stock: val.stock,
+      image: val.imageURL,
+    };
+    dispatch(addCartDetails(item));
   };
 
   const itemCount = (id) => {
@@ -60,7 +57,11 @@ function ListingCard({ data }) {
             <div className="listing-product-element-footer">
               {itemCount(el.id) ? (
                 <>
-                  <CartButton id={el.id} price={el.price} quan={itemCount(el.id)} />
+                  <CartButton
+                    id={el.id}
+                    price={el.price}
+                    quan={itemCount(el.id)}
+                  />
                 </>
               ) : (
                 <>

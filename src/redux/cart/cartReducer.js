@@ -9,8 +9,10 @@ const cartReducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_ITEM: {
       const newState = { ...state };
-      newState.item.push(action.payload);
-      newState.count++;
+      if (!newState.item.find(el => el.id === action.payload.id)) {
+        newState.item.push(action.payload);
+        newState.count++;
+      }
       return newState;
     }
     case ADD_ITEM_COUNT: {
