@@ -1,9 +1,37 @@
 import { ADD_ITEM, DELETE_ITEM_COUNT, ADD_ITEM_COUNT } from "./cartTypes";
 
-export const addCartDetails = (item) => {
+const url = "http://localhost:5000/addToCart";
+
+export const addCartDetailsSucess = (item) => {
   return {
     type: ADD_ITEM,
     payload: item,
+  };
+};
+
+export const addCartDetails = (item) => {
+  return (dispatch) => {
+    fetch("http://localhost:5000/addToCart", {
+      method: "POST",
+      body: JSON.stringify({
+        id: item.id,
+      }),
+      mode: "no-cors",
+      headers: {
+        "Content-type": "application/json; charset=UTF-8",
+        "Access-Control-Allow-Origin": "*",
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        if (data.response === "Success") {
+          dispatch(addCartDetailsSucess(item));
+        }
+      })
+      .catch((err) => {
+        dispatch(addCartDetailsSucess(item));
+      });
   };
 };
 

@@ -2,6 +2,26 @@
 @import "../../utilities/mixins";
 
 .cart {
+  .no-item {
+    .no-item-text {
+      min-height: calc(100vh - 163px);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+
+      .remove-margin {
+        margin: 0;
+      }
+    }
+
+    .button-start-shopping {
+      @include primary-button;
+      width: 100%;
+      padding: 10px;
+      font-size: 1.2rem;
+    }
+  }
   .cart-product {
     background: $light-grey;
     min-height: calc(100vh - 126px);

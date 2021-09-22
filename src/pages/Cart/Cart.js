@@ -8,6 +8,10 @@ export default function Cart() {
   let totalPrice = 0;
   cartData.map((e) => (totalPrice += e.quantity * e.price));
 
+  const startShoppingHandler = () => {
+    window.history.back();
+  };
+
   const checkoutClickHandler = () => {};
   return (
     <div className="cart">
@@ -41,7 +45,21 @@ export default function Cart() {
           </div>
         </section>
       ) : (
-        <h1>No Items in your cart</h1>
+        <div className="no-item">
+          <div className="no-item-text">
+            <h2 className="remove-margin">No Items in your cart</h2>
+            <h5>
+              Your favourite items are just a click away.
+            </h5>
+          </div>
+
+          <button
+            className="button-start-shopping"
+            onClick={startShoppingHandler}
+          >
+            Start Shopping
+          </button>
+        </div>
       )}
     </div>
   );
