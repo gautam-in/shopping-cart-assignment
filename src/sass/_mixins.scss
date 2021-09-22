@@ -14,3 +14,20 @@
   margin: 1.5em 0.3em 0.3em;
   box-shadow: 0px 0px 5px 0px rgba($sb-dark-gray, 0.25);
 }
+
+@mixin cart-dark-header {
+  background-color: $sb-black;
+  color: $sb-white;
+  margin: 0;
+  justify-content: space-between;
+
+  .btn {
+    &--close {
+      background-color: transparent;
+      color: $sb-white;
+      border: 0;
+      font-size: 1.2em;
+      cursor: pointer;
+    }
+  }
+}

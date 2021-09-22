@@ -42,9 +42,30 @@ function displayCategories(categories) {
   }
 }
 
+function displayAsideCategories(categories) {
+  const theList = document.querySelector("aside ul.categories-listing");
+  if (theList) {
+    for (const category of categories) {
+      const newLi = document.createElement("li");
+
+      const newLiA = document.createElement("a");
+      newLiA.href = "products.html";
+      newLiA.innerText = category.name;
+
+      newLi.appendChild(newLiA);
+      theList.appendChild(newLi);
+    }
+  }
+}
+
 async function allCategories() {
   let allCategories = await getCategories();
   displayCategories(allCategories);
+}
+
+async function allAsideCategories() {
+  let allCategories = await getCategories();
+  displayAsideCategories(allCategories);
 }
 
 async function allCategoriesProducts() {
@@ -70,14 +91,20 @@ function displayCategoryProducts(productsList) {
 
   if (theList) {
     for (const categoryProduct of productsList) {
-      let newLi = document.createElement("li");
+      const newLi = document.createElement("li");
       newLi.classList.add("category-products");
       newLi.classList.add(index === 0 ? "active" : "inactive");
 
-      let newCategory = document.createElement("div");
+      const newCategory = document.createElement("div");
       newCategory.classList.add("category-products__heading");
-      let newCategoryLink = document.createElement("button");
+      const newCategoryLink = document.createElement("button");
       newCategoryLink.innerText = categoryProduct.category.name;
+      const newCategorySpan = document.createElement("span");
+      newCategorySpan.innerHTML = `<i class="fas fa-chevron-${
+        index === 0 ? "up" : "down"
+      }"></i>`;
+
+      newCategoryLink.appendChild(newCategorySpan);
       newCategory.appendChild(newCategoryLink);
       // Toggle products
       newCategoryLink.addEventListener("click", toggleCategory);
@@ -87,24 +114,24 @@ function displayCategoryProducts(productsList) {
         (index === 0 && true).toString()
       );
 
-      let newProducts = document.createElement("ul");
+      const newProducts = document.createElement("ul");
       newProducts.classList.add("category-products__products");
-      let newProductsLi = document.createElement("li");
+      const newProductsLi = document.createElement("li");
 
       for (const product of categoryProduct["products"]) {
-        let productWrapper = document.createElement("div");
-        let productHeading = document.createElement("h3");
+        const productWrapper = document.createElement("div");
+        const productHeading = document.createElement("h3");
         productHeading.innerText = product.name;
 
-        let productImage = document.createElement("img");
+        const productImage = document.createElement("img");
         productImage.classList.add("img-responsive");
         productImage.setAttribute("src", product.imageURL);
         productImage.setAttribute("alt", product.name);
 
-        let productInfo = document.createElement("p");
-        productInfo.innerText = product.description;
+        const productInfo = document.createElement("p");
+        productInfo.innerText = `${product.description.substring(0, 110)}...`;
 
-        let productCartbutton = document.createElement("button");
+        const productCartbutton = document.createElement("button");
         productCartbutton.innerText = `Buy Now @ Rs.${product.price}`;
         // Add to cart
         productCartbutton.addEventListener("click", () => {
@@ -133,18 +160,22 @@ function displayCategoryProducts(productsList) {
 function toggleCategory(e) {
   const button = e.currentTarget;
   const parentLi = button.parentNode.parentNode;
+  const arrowIcon = button.querySelector("span");
   if (parentLi.classList.contains("active")) {
     parentLi.classList.remove("active");
     button.setAttribute("aria-expanded", "false");
+    arrowIcon.innerHTML = '<i class="fas fa-chevron-down"></i>';
   } else {
     parentLi.classList.add("active");
     button.setAttribute("aria-expanded", "true");
+    arrowIcon.innerHTML = '<i class="fas fa-chevron-up"></i>';
   }
 }
 
 document.addEventListener("DOMContentLoaded", () => {
   allCategories();
   allCategoriesProducts();
+  allAsideCategories();
   bindEventCart();
   cartCounter();
 });

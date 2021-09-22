@@ -44,7 +44,7 @@ export async function addToCartHandler(productId) {
       // Update Cart Number
       cartCounter();
 
-      // @TODO show cart
+      // Show cart
       openCart();
     }
   } catch (e) {
@@ -88,6 +88,11 @@ function createModal() {
     const headerNode = document.createElement("header");
     const headerH2 = document.createElement("h2");
     headerH2.innerText = "My Cart";
+    const headerCloseBtn = document.createElement("button");
+    headerCloseBtn.classList.add("btn--close");
+    headerCloseBtn.innerHTML = '<i class="fas fa-times"></i>';
+    // Close overlay
+    headerCloseBtn.addEventListener("click", removeCart);
 
     if (totalItems) {
       let totalPrice = 0;
@@ -95,8 +100,10 @@ function createModal() {
       headerSpan.innerText = `(${cartItems?.length} item${
         totalItems > 1 ? "s" : ""
       })`;
+
       headerNode.appendChild(headerH2);
       headerNode.appendChild(headerSpan);
+      headerNode.appendChild(headerCloseBtn);
 
       const mainNode = document.createElement("main");
       const mainUl = document.createElement("ul");
@@ -163,11 +170,6 @@ function createModal() {
       cartWrapper.appendChild(footerNode);
     } else {
       cartWrapper.classList.add("cart-wrapper--empty");
-      const headerCloseBtn = document.createElement("button");
-      headerCloseBtn.classList.add("btn--close");
-      headerCloseBtn.innerText = "X";
-      // Close overlay
-      headerCloseBtn.addEventListener("click", removeCart);
 
       const mainNode = document.createElement("main");
       const mainHeading = document.createElement("h4");
@@ -194,7 +196,7 @@ function createModal() {
 
     modalDiv.appendChild(cartWrapper);
 
-    document.body.appendChild(modalDiv);
+    document.querySelector("main.main").appendChild(modalDiv);
     modalDiv.style.display = "block";
   }
 }
