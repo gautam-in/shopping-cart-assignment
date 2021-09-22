@@ -1,0 +1,123 @@
+@import url("https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@300;400;500;600&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Merriweather Sans", sans-serif;
+}
+.product-filter {
+  display: flex;
+  background-color: #fff;
+  margin-top: 100px;
+}
+.product-filter h1 {
+  flex-grow: 1;
+}
+.product-filter .sort {
+  display: flex;
+  background-color: #bbb;
+}
+.product-filter .collection-sort {
+  display: flex;
+  flex-direction: column;
+}
+.products {
+  display: flex;
+  flex-wrap: wrap;
+}
+.product-card {
+  padding: 2%;
+  flex: 1 100%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin: 15px 15px 15px 0;
+}
+
+.filter ul li {
+  padding: 15px;
+  list-style-type: none;
+  border-bottom: 1px solid darkgray;
+}
+
+@media screen and (min-width: 600px) {
+  .product-card {
+    flex: 1 50%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .prod-div {
+    flex-direction: column;
+  }
+
+  .product-filter {
+    margin-top: 30px;
+  }
+
+  .filter ul li {
+    padding: 8px;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .product-card {
+    flex: 1 40%;
+  }
+}
+@media screen and (min-width: 1080px) {
+  .product-card {
+    flex: 1 20%;
+  }
+}
+
+.product-card img {
+  max-width: 100%;
+  height: auto;
+}
+.product-card .product-info {
+  margin-top: auto;
+  text-align: center;
+}
+.product-card .product-info h5 {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+.product-card .product-info h6 {
+  font-size: 16px;
+  margin-top: 20px;
+}
+.product-card .product-info p {
+  margin-top: 20px;
+  font-size: 12px;
+  line-height: 1.5;
+  background-color: #e6e6e6;
+  padding: 10px;
+  text-align: left !important;
+}
+.product-card .product-info button {
+  border: none;
+  outline: 0;
+  padding: 12px;
+  color: white;
+  background-color: #e6005c;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+.filter {
+  margin-top: 115px;
+  background-color: lightgray;
+  min-width: 200px;
+  text-align: left;
+}
+
+.filter ul {
+  margin: 15px;
+}
+
+.filter ul li:hover {
+  color: white;
+  background-color: #e6005c;
+}
