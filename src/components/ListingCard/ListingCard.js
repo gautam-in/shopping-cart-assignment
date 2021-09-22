@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./ListingCard.scss";
 import { useSelector, useDispatch } from "react-redux";
 import { addCartDetails, addCartItemCount } from "../../redux/cart/cartAction";
+import CartButton from "../CartButton/CartButton";
 
 function ListingCard({ data }) {
   const selectedCategory = useSelector((state) => state.category.categoryId);
@@ -28,6 +29,7 @@ function ListingCard({ data }) {
         quantity: 1,
         price: val.price,
         stock: val.stock,
+        image: val.imageURL,
       };
       dispatch(addCartDetails(item));
     }
@@ -56,13 +58,13 @@ function ListingCard({ data }) {
               </div>
             </div>
             <div className="listing-product-element-footer">
-              <div className="price-lg">MRP Rs.{el.price}</div>
               {itemCount(el.id) ? (
                 <>
-                  <button onClick={() => addItemHandler(el)}> HI</button>
+                  <CartButton id={el.id} price={el.price} quan={itemCount(el.id)} />
                 </>
               ) : (
                 <>
+                  <div className="price-lg">MRP Rs.{el.price}</div>
                   <button
                     className="listing-product-element-button button-lg"
                     onClick={() => addItemHandler(el)}

@@ -20,15 +20,31 @@ const cartReducer = (state = initialState, action) => {
       );
       newItem[index].quantity++;
 
-      console.log(newItem);
-
       return {
         item: newItem,
         count: state.count,
       };
     }
-    case DELETE_ITEM_COUNT:
-      return state;
+    case DELETE_ITEM_COUNT: {
+      let newItem = [...state.item];
+      let index = state.item.findIndex(
+        (element) => element.id == action.payload
+      );
+      let count = state.count;
+
+      if (newItem[index].quantity === 1) {
+        newItem.splice(index, 1);
+        count--;
+      } else {
+        newItem[index].quantity--;
+      }
+
+      return {
+        item: newItem,
+        count,
+      };
+    }
+
     default:
       return state;
   }
