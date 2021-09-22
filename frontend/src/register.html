@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sabka Bazar</title>
+    <link rel="stylesheet" href="css/styles.css" />
+
+    <script defer src="./header.js"></script>
+    <script defer src="./footer.js"></script>
+    <script defer>
+        function SubmitForm(e) {
+            const pass = document.getElementById('password').value;
+            const cPass = document.getElementById('confirmPassword').value;
+            console.log(pass, cPass);
+            if (pass !== cPass) {
+                document.querySelector('.error-block').innerText = 'Password and confirm password is not same';
+            } else {
+                document.querySelector('.error-block').innerText = '';
+                alert('Data submitted');
+            }
+            e.preventDefault();
+        }
+    </script>
+</head>
+
+<body>
+    <header id="main-header" class="main-header">
+        <uc-header count="0"></uc-header>
+    </header>
+    <div class="signin-container">
+        <div class="column">
+            <h2>Signup</h2>
+            <div>We do not share your personal detials with anyone.</div>
+        </div>
+        <div class="column">
+            <div class="error-block"></div>
+            <form onsubmit="SubmitForm(event)">
+                <input type="text" id="firstName" name="firstName" placeholder="First Name" required />
+                <input type="text" id="lastName" name="lastName" placeholder="Last Name" required />
+                <input type="email" id="email" name="email" placeholder="Email" required />
+                <input type="password" id="password" name="password" placeholder="Password" required />
+                <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm Password"
+                    required />
+                <button type="submit">Register</button>
+            </form>
+        </div>
+    </div>
+    <footer>
+        <uc-footer></uc-footer>
+    </footer>
+</body>
+
+</html>
