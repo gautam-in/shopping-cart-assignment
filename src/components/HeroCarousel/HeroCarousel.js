@@ -4,8 +4,9 @@ import useFetch from "../../utilities/helper/customHooks";
 import LoaderCarousel from "../LoaderCarousel/LoaderCarousel";
 
 function HeroCarousel() {
-  const [data, loading, error] = useFetch("http://localhost:5000/banners");
-
+  const [data, loading = false, error] = useFetch(
+    "http://localhost:5000/banners"
+  );
   const [imageData, setImageData] = useState({});
   const [index, setIndex] = useState(0);
 
@@ -44,8 +45,8 @@ function HeroCarousel() {
     <section className="center-display">
       <div className="carousel">
         {loading ? (
-          <LoaderCarousel />
-        ) : (
+          <LoaderCarousel error={false}/>
+        ) : !error ? (
           <>
             <div className="arrow" onClick={() => arrowClickHandler(-1)}>
               <svg
@@ -83,8 +84,7 @@ function HeroCarousel() {
                       key={el.id}
                       value={el.order}
                       onClick={(e) => dotClickHandler(e)}
-                    >
-                    </li>
+                    ></li>
                   ))}
                 </ul>
               </div>
@@ -101,6 +101,8 @@ function HeroCarousel() {
               </svg>
             </div>
           </>
+        ) : (
+          <LoaderCarousel error={true}/>
         )}
       </div>
     </section>
