@@ -18,6 +18,8 @@ function displayCategories(categories) {
       newCategoryImage.classList.add("img-responsive");
       newCategoryImage.src = category.imageUrl;
       newCategoryImage.alt = category.name;
+      newCategoryImage.width = "200";
+      newCategoryImage.height = "200";
       newWrapperImage.appendChild(newCategoryImage);
 
       let newWrapperInfo = document.createElement("div");
