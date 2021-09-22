@@ -18,12 +18,12 @@ export default function CartButton({ id, price, quan }) {
   return (
     <div className="cart-price">
       <div className="cart-button">
-        <button className="cart-add-button" onClick={addHandler}>
-          <span>+</span>
-        </button>
-        <span className="cart-button-text">{quan}</span>
         <button className="cart-add-button" onClick={removeHandler}>
           <span>-</span>
+        </button>
+        <span className="cart-button-text">{quan}</span>
+        <button className="cart-add-button" onClick={addHandler}>
+          <span>+</span>
         </button>
       </div>
       <div className="divider"> X </div>
