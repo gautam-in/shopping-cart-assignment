@@ -18,6 +18,7 @@ export const addCartDetails = (item) => {
       }),
       mode: "no-cors",
     })
+      .then((res) => res.json())
       .then((data) => {
         if (data.response === "Success") {
           dispatch(addCartDetailsSucess(item));
