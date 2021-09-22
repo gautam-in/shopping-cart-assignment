@@ -14,7 +14,7 @@ function ListingList() {
   }, []);
 
   return (
-    <div>
+    <>
       {loading ? (
         <h1>Loading</h1>
       ) : error ? (
@@ -22,7 +22,7 @@ function ListingList() {
       ) : (
         <ListingCard data={data} />
       )}
-    </div>
+    </>
   );
 }
 

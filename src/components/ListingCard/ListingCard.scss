@@ -62,6 +62,12 @@
     }
   }
 }
+.no-data-product {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  width: 100%;
+}
 
 @media (max-width: 1080px) {
   .listing-product {

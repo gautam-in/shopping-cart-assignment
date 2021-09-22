@@ -46,5 +46,6 @@ module.exports = {
     historyApiFallback: true,
     static: "./",
     hot: true,
-  }
+  },
+  devtool: "inline-source-map",
 };
