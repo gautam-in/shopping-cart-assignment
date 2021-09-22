@@ -39,7 +39,7 @@ function Header() {
             src="../static/images/logo.png"
             alt="Sabka Bazaar Logo"
             height="60"
-            width="120"
+            width="133"
             onClick={() => history.push("/")}
           />
         </div>

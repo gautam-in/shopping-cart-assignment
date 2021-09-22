@@ -41,6 +41,8 @@ export default function ProductCard({ data, id }) {
             src={data.imageUrl}
             alt={data.name}
             className="card-image-area"
+            width="357"
+            height="178"
           />
         </div>
       </div>
