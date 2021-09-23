@@ -6,7 +6,7 @@ import { useHistory } from "react-router-dom";
 import { bindActionCreators, Dispatch } from "redux";
 import { IState } from "store/interfaces";
 import CategoriesPage from "../../components/organisms/home/categoriesPage";
-import OffersCarousel from "../../components/organisms/home/offersCarousel";
+import OffersCarousel from "../../components/molecules/carousel/offersCarousel";
 import "./home.scss";
 import { HomeActions } from "./redux/actions/actions";
 import { IHomeLoading } from "./redux/reducers/reducer";

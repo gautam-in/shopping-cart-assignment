@@ -3,7 +3,7 @@ import { ProductsList } from "models/products";
 import { ReactElement } from "react";
 import { Modal } from "react-bootstrap";
 import "pages/cart/cart.scss";
-import CartItem from "./cartItem";
+import CartItem from "../../molecules/cart/cartItem";
 
 interface IProps {
   cartItems: ProductsList;

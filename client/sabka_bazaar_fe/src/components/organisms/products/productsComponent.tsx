@@ -1,7 +1,7 @@
 import { ProductsList } from "models/products";
 import { ReactElement } from "react";
 import "pages/products/products.scss";
-import ProductCard from "./productCard";
+import ProductCard from "../../molecules/products/productCard";
 
 interface IProps {
   productsList: ProductsList["products"];
