@@ -35,7 +35,7 @@ export default function Login() {
   }
 
   return (
-    <div className={styles.LoginContainer}>
+    <div className={styles.LoginContainer} data-testid="login-form">
       <form onSubmit={handleSubmit}>
         <FormControl>
           <FormLabel>Email address</FormLabel>
@@ -55,7 +55,7 @@ export default function Login() {
           >
             Submit
           </Button>
-          <FormErrorMessage fontSize="large" fontWeight="bold" color="red">{error}</FormErrorMessage>
+          <FormErrorMessage aria-errormessage={error} fontSize="large" fontWeight="bold" color="red">{error}</FormErrorMessage>
         </FormControl>
       </form>
       <Text fontSize="xl" align="center">

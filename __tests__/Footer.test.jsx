@@ -20,14 +20,8 @@ describe('Footer component Test Unit Tests', () => {
     );
   });
 
-  test('Footer Component should render on screen', async () => {
-    render(
-      <ChakraProvider>
-        <Footer />
-      </ChakraProvider>,
-
-    );
-    const footerSpanElement = await screen.findByText(/Copyright 2011-2021/i, undefined, { timeout: 3000 });
-    console.log(footerSpanElement);
+  test('Footer Component should render on screen', () => {
+    const footerSpanElement = screen.getByText(/Copyright 2011-2021/i);
+    expect(footerSpanElement).toBeInTheDocument();
   });
 });

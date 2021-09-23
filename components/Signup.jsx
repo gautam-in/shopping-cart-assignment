@@ -48,7 +48,7 @@ export default function Signup() {
   }
 
   return (
-    <div className={styles.SignupContainer}>
+    <div className={styles.SignupContainer} data-testid="signup-form">
       <form onSubmit={handleSubmit}>
 
         {/* FirstName */}
@@ -89,7 +89,7 @@ export default function Signup() {
           >
             Submit
           </Button>
-          <FormErrorMessage fontSize="large" fontWeight="bold" color="red">{error}</FormErrorMessage>
+          <FormErrorMessage aria-errormessage={error} fontSize="large" fontWeight="bold" color="red">{error}</FormErrorMessage>
         </FormControl>
       </form>
       <Text fontSize="xl" align="center">

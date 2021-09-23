@@ -13,7 +13,7 @@ export default function Header() {
   }
 
   return (
-    <header className={styles.HeaderMainContainer}>
+    <header className={styles.HeaderMainContainer} data-testid="header-component">
 
       <div className={styles.LogoAndProducts}>
         <div className={styles.HeaderLogo}>
