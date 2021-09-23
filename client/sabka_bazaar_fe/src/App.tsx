@@ -1,5 +1,5 @@
-import Footer from "components/footer/footer";
-import Header from "components/header/header";
+import Footer from "components/molecules/footer/footer";
+import Header from "components/molecules/header/header";
 import RouterComponent from "navigation/routerComponent";
 import React from "react";
 import { BrowserRouter as Router } from "react-router-dom";

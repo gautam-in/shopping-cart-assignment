@@ -1,8 +1,8 @@
-import { ICartState } from "modules/cart/redux/reducers/reducer";
-import { IHomeState } from "modules/home/redux/reducers/reducer";
-import { ILoginState } from "modules/login/redux/reducers/reducer";
-import { IProductsState } from "modules/products/redux/reducers/reducer";
-import { ISignUpState } from "modules/register/redux/reducers/reducer";
+import { ICartState } from "pages/cart/redux/reducers/reducer";
+import { IHomeState } from "pages/home/redux/reducers/reducer";
+import { ILoginState } from "pages/login/redux/reducers/reducer";
+import { IProductsState } from "pages/products/redux/reducers/reducer";
+import { ISignUpState } from "pages/register/redux/reducers/reducer";
 
 export interface IFluxStandardAction<Payload = undefined, Meta = undefined, Error = string> {
   type: string;

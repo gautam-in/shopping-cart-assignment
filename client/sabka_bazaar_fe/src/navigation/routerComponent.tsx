@@ -1,8 +1,8 @@
 import React from "react";
-import Login from "../modules/login/index";
-import Register from "../modules/register/index";
-import Home from "../modules/home/index";
-import Products from "../modules/products/index";
+import Login from "../pages/login/index";
+import Register from "../pages/register/index";
+import Home from "../pages/home/index";
+import Products from "../pages/products/index";
 import { allRoutes } from "./allRouteNames";
 import MapRoutes from "./mapRoutes";
 
