@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Boostrap minified css start-->
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Boostrap minified css end-->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- custom css start-->
+    <link rel="stylesheet" href="./dist/css/style.css">
+    <!-- custom css end-->
+    <title>Home</title>
+</head>
+<body>
+    <header class="boxShadow">
+        <div class="sb-header text-right hidden-xs">
+            <ul class="list-unstyled">
+                <li>
+                    <a href="/login">SignIn</a>
+                </li>
+                <li>
+                    <a href="/register">Register</a>
+                </li>
+            </ul>
+        </div>
+        <div class="sb-header d-flex flex-wrap align-items-center">
+            <div class="sb-header-lt"><a href=""><img src="./static/images/logo.png" class="logo_img"></a></div>
+            <div class="sb-header-center hidden-xs">
+                <ul class="list-unstyled">
+                    <li><a href="/home">Home</a></li>
+                    <li><a href="/products">Product</a></li>
+                </ul>
+            </div>
+            <div class="sb-header-rt">
+                <a href="#">
+                    <?xml version="1.0" encoding="utf-8"?>
+                    <svg version="1.1" id="Layer_1" focusable="false" xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 24 24"
+                        style="enable-background:new 0 0 24 24;" xml:space="preserve">
+                        <path fill="#bf2957"
+                            d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49A1.003 1.003 0 0 0 20 4H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z" />
+                    </svg> 0 Items
+            </div>
+        </div>
+    </header>
+    <div class="home">
+    <main>
+        <div class="content">
+            <div class="carousel slide" id="main-carousel" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#main-carousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#main-carousel" data-slide-to="1"></li>
+                    <li data-target="#main-carousel" data-slide-to="2"></li>
+                    <li data-target="#main-carousel" data-slide-to="3"></li>
+                </ol>
+
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img class="d-block img-fluid" src="./static/images/offers/offer1.jpg">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block img-fluid" src="./static/images/offers/offer2.jpg" alt="">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block img-fluid" src="./static/images/offers/offer3.jpg" alt="">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="./static/images/offers/offer4.jpg" alt="" class="d-block img-fluid">
+                    </div>
+                </div>
+            </div>
+
+            <div class="products">
+                <div class="row">
+                  <div class="d-flex flex-wrap align-items-center pad-20 boxShadow width-100">
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 float-left order1 product-img-width">
+                        <img src="./static/images/category/fruits.png" alt="fruit-and-veg">
+                    </div>
+                    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 float-right order2 text-center">
+                        <h4>Fruits & Vegetables</h4>
+                        <p>A variety of fresh fruits and vegetables.</p>
+                        <button class="buttons-primary">Explore fruit-and-veg</button>
+                    </div>
+                    </div>
+                    <div class="d-flex flex-wrap align-items-center pad-20 boxShadow width-100">
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 float-right order2 product-img-width">
+                        <img src="./static/images/category/bakery.png" alt="bakery-cakes-dairy">
+                    </div>
+                    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 float-left order1 text-center">
+                        <h4>Bakery Cakes and Dairy</h4>
+                        <p>The best cupcakes, cookies, cakes, pies, cheesecakes, fresh bread, biscotti, muffins, bagels,
+                            fresh coffee, milk and more.</p>
+                        <button class="buttons-primary">Explore bakery-cakes-dairy</button>
+                    </div>
+                </div>
+                <div class="d-flex flex-wrap align-items-center pad-20 boxShadow width-100">
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 float-left order1 product-img-width">
+                        <img src="./static/images/category/beverages.png" alt="beverages">
+                    </div>
+                    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 float-right order2 text-center">
+                        <h4>Beverages</h4>
+                        <p>Our beverage department will ensure your fridge is always fully stocked. Shop for soda,
+                            juice, beer and more.</p>
+                        <button class="buttons-primary">Explore beverages</button>
+                    </div>
+                </div>
+                <div class="d-flex flex-wrap align-items-center pad-20 boxShadow width-100">
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 float-right order2 product-img-width">
+                        <img src="./static/images/category/beauty.png" alt="beauty-hygiene">
+                    </div>
+                    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 float-left order1 text-center">
+                        <h4>Beauty and Hygiene</h4>
+                        <p>Buy beauty and personal care products online in India at best prices.</p>
+                        <button class="buttons-primary">Explore beauty-hygiene</button>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    </div>
+    <footer>
+        <div class="container">
+            Copyright © 2011-2018 Sabka Bazaar Grocery Supplies Pvt Ltd
+        </div>
+    </footer>
+    <!-- jQuery minified start -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- jQuery minified end-->
+    <!-- Boostrap minified Js start-->
+    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Boostrap minified Js end-->
+    <!-- Popper JS start-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <!-- Popper JS end-->
+    <script src="./dist/js/test.js"></script>
+    </script>
+</body>
+
+</html>
