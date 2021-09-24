@@ -1,12 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Dosis:wght@400;600;700&display=swap');
 
 :root {
-  --footer-bg-color                   : #CCCCCC;
-  --header-bg-color                   : whitesmoke;
-  --product-description-bg-color      : #EFE8E8;
-  --product-card-button-color         : #0088CC;
-  /* --product-card-button-color      : #d00256; */
-  --category-filter-active-bg-color   : beige;
+  --footer-bg-color                     : #CCCCCC;
+  --header-bg-color                     : whitesmoke;
+  --product-description-bg-color        : #EFE8E8;
+  --product-card-button-color           : #0088CC;
+  --category-banner-card-button-color   : #38A169;
+  /* --product-card-button-color        : #d00256;
+  --category-banner-card-button-color   : #d00256; */
+  --category-filter-active-bg-color     : beige;
 }
 
 

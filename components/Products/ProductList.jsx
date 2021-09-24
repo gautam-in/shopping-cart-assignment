@@ -32,7 +32,7 @@ export default function ProductList({ productsData }) {
     );
   }
   return (
-    <div className={styles.ProductListContainer}>
+    <div className={styles.ProductListContainer} data-testid="product-list">
       {filteredProducts.length >= 1 ? filteredProducts.map(populateProducts) : productsData.map(populateProducts)}
 
     </div>

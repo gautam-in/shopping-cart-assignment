@@ -28,7 +28,7 @@ export default function CategoryBanner({
           {description}
         </div>
         <div className={styles.CategoryButton}>
-          <Button colorScheme="green" size="sm" onClick={handleCategoryClick}>
+          <Button colorScheme="green" bgColor="var(--category-banner-card-button-color)" size="sm" onClick={handleCategoryClick}>
             Explore
             {' '}
             {name}

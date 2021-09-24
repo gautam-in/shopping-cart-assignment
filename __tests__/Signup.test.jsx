@@ -55,7 +55,7 @@ describe('Login Component Tests', () => {
     expect(mockHandleSubmitFunction).toHaveBeenCalledTimes(1);
   });
 
-  test('Redirect to Signup Page', () => {
+  test('Redirect to Login Page', () => {
     // jest.spyOn(Link);
     const signupLinkElement = screen.getByText('Login');
     userEvent.click(signupLinkElement);
