@@ -18,7 +18,7 @@ export default function Header() {
       <div className={styles.LogoAndProducts}>
         <div className={styles.HeaderLogo}>
 
-          <Image src="/static/images/logo.png" layout="fill" objectFit="fill" alt="Logo" onClick={handleLogoClick} />
+          <Image src="/static/images/logo.png" layout="fill" objectFit="contain" alt="Logo" onClick={handleLogoClick} />
 
         </div>
         <div className={styles.HeaderProducts}>

@@ -31,7 +31,7 @@ export default function ProductCard({
     <div className={styles.ProductCardContainer}>
       <div className={styles.ProductName}>{name}</div>
       <div className={styles.ProductImage}>
-        <Image src={imageURL} layout="fill" objectFit="fill" alt={name} />
+        <Image src={imageURL} layout="fill" objectFit="contain" alt={name} />
       </div>
       <div className={styles.ProductDescription}>
         {description}
