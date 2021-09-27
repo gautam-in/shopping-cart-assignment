@@ -29,12 +29,12 @@ export default function ProductCard({
 
   return (
     <div className={styles.ProductCardContainer}>
-      <div className={styles.ProductName}>{name}</div>
+      <div className={styles.ProductName}><p>{name}</p></div>
       <div className={styles.ProductImage}>
         <Image src={imageURL} layout="fill" objectFit="contain" alt={name} />
       </div>
       <div className={styles.ProductDescription}>
-        {description}
+        <p>{description}</p>
       </div>
       <div className={styles.ProductPriceAndButton}>
         <div className={styles.ProductPrice}>

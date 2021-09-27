@@ -1,13 +1,13 @@
 .ProductCardContainer {
     width: 100%;
 
-    min-height     : 380px;
+    height         : 380px;
     text-align     : center;
     display        : flex;
     flex-direction : column;
     justify-content: space-between;
     align-items    : center;
-    padding        : 5px;
+    padding        : 8px;
     border-radius  : 10px;
     box-shadow     : rgba(0, 0, 0, 0.24) 0px 5px 10px;
     transition     : all 150ms ease-in;
@@ -30,6 +30,14 @@
 .ProductName {
     font-weight: bold;
     font-size  : 18px;
+    height     : 15%;
+}
+
+.ProductName p {
+    display           : -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow          : hidden;
 }
 
 .ProductPrice {
@@ -48,10 +56,16 @@
     background-color: var(--product-description-bg-color);
     padding         : 5px;
     width           : 95%;
-    min-height      : 20%;
-    max-height      : 25%;
+    height          : 25%;
     text-align      : center;
-    font-size       : 70%;
-    overflow        : hidden;
+    font-size       : 13px;
     border-radius   : 5px;
+    overflow        : hidden;
+}
+
+.ProductDescription p {
+    display           : -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow          : hidden;
 }
