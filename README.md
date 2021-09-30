@@ -1,4 +1,4 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Shopping Cart Assignment
 
 ## Getting Started
 
@@ -12,23 +12,42 @@ yarn dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+## Welcome! 👋
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+Thanks for checking out this case study.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+Application is implemented using Next.js(React Framework
+for Production).
 
-## Learn More
+Changes includes : 
 
-To learn more about Next.js, take a look at the following resources:
+1. Routing for login, register, home , products and checkout pages
+2. Product Page -> SSR used for displaying products page.
+3. Home page - Using Incremental Static Regenration. Banners fetching data from        
+    API endpoints using Fetch Web API.   
+5. Application level Auth Implemented with Context Provider.
+6. Redux Implemented for Cart and Product Category Filter.
+7. All pages are mobile responsive till 320px width.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Screenshots
 
-## Deploy on Vercel
+![Screenshot of Sabka Bazaar Homepage(Desktop)](./screenshots/shopping_cart_assignment_Homepage_1.jpg)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+![Screenshot of LightHouse Report](./screenshots/shopping_cart_assignment_LightHouse_Report.jpg)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+![Screenshot of Sabka Bazaar Homepage(Desktop 2)](./screenshots/shopping_cart_assignment_Homepage_2.jpg)
+
+![Screenshot of Sabka Bazaar Homepage(Mobile)](./screenshots/shopping_cart_assignment_Homepage_Mobile.jpg)
+
+![Screenshot of Sabka Bazaar Product Page(Desktop)](./screenshots/shopping_cart_assignment_ProductPage.jpg)
+
+![Screenshot of Sabka Bazaar Product Page(Mobile)](./screenshots/shopping_cart_assignment_ProductPage_Mobile.jpg)
+
+![Screenshot of Sabka Bazaar Login Page(Desktop)](./screenshots/shopping_cart_assignment_LoginPage.jpg)
+
+![Screenshot of Sabka Bazaar Login Page(Mobile)](./screenshots/shopping_cart_assignment_LoginPage_Mobile.jpg)
+
+![Screenshot of Sabka Bazaar Cart Drawer](./screenshots/shopping_cart_assignment_Cart_Drawer.jpg)
+
+![Screenshot of Sabka Bazaar Cart Drawer](./screenshots/shopping_cart_assignment_Cart_Drawer.jpg)
