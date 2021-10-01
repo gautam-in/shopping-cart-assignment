@@ -1,0 +1,34 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@400;600;700&display=swap');
+
+:root {
+  --footer-bg-color                     : #CCCCCC;
+  --header-bg-color                     : whitesmoke;
+  --product-description-bg-color        : #EFE8E8;
+  --product-card-button-color           : #0088CC;
+  --category-banner-card-button-color   : #38A169;
+  /* --product-card-button-color        : #d00256;
+  --category-banner-card-button-color   : #d00256; */
+  --category-filter-active-bg-color     : beige;
+}
+
+
+
+html,
+body {
+
+  font-family   : 'Ubuntu', sans-serif !important;
+  /* font-family: 'Dosis', sans-serif !important; */
+  overflow-x    : hidden;
+  padding       : 0;
+  margin        : 0;
+  font-family   : 'Dosis', sans-serif;
+}
+
+a {
+  color          : inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}

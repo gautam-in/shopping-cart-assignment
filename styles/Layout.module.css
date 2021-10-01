@@ -1,0 +1,22 @@
+.MainContainer {
+    min-height      : 101vh;
+    display         : flex;
+    flex-direction  : column;
+    background-color: var(--bg-color);
+    position        : relative;
+
+}
+
+.Header {
+    position: sticky;
+    position: -webkit-sticky;
+    top     : 0;
+    /* required */
+
+}
+
+.Content {
+    margin-top: 100px;
+    flex      : 1;
+    min-height: 100vh;
+}

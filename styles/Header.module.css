@@ -1,0 +1,70 @@
+.HeaderMainContainer {
+    position        : fixed;
+    top             : 0px;
+    z-index         : 100;
+    padding         : 5px 0px;
+    width           : 100%;
+    height          : 90px;
+    display         : flex;
+    justify-content : space-between;
+    background-color: var(--header-bg-color);
+    font-weight     : 600;
+    box-shadow      : rgba(0, 0, 0, 0.24) 0px 5px 10px;
+
+}
+
+
+
+.HeaderLogo {
+    position: relative;
+    height  : 90%;
+    width   : 30%;
+    cursor  : pointer;
+}
+
+.LogoAndProducts {
+    width          : 50%;
+    display        : flex;
+    justify-content: space-around;
+    align-items    : center;
+}
+
+
+.UserAndCart {
+    width          : 30%;
+    display        : flex;
+    justify-content: space-between;
+    align-items    : center;
+}
+
+.HeaderCart {
+    height         : 100%;
+    min-width      : 100px;
+    display        : flex;
+    align-items    : center;
+    justify-content: center;
+}
+
+
+@media(max-width : 900px) {
+    .HeaderLogo {
+        width       : 130px;
+        margin-right: 10px;
+    }
+
+    .HeaderMainContainer {
+        justify-content: space-evenly;
+        padding-right  : 20px;
+    }
+
+    .HeaderHome {
+        display: none;
+    }
+
+
+
+    .HeaderCart {
+        min-width  : 100px;
+        margin-left: 10px;
+    }
+}
