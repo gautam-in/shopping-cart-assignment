@@ -50,4 +50,4 @@ Changes includes :
 
 ![Screenshot of Sabka Bazaar Cart Drawer](./screenshots/shopping_cart_assignment_Cart_Drawer.jpg)
 
-![Screenshot of Sabka Bazaar Cart Drawer](./screenshots/shopping_cart_assignment_Cart_Drawer.jpg)
+![Screenshot of Sabka Bazaar Cart Auth](./screenshots/shopping_cart_assignment_Auth.jpg)

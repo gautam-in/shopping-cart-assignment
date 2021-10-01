@@ -2,7 +2,6 @@ import React from 'react';
 import { screen, render } from '@testing-library/react';
 import { ChakraProvider } from '@chakra-ui/react';
 import { Provider } from 'react-redux';
-import userEvent from '@testing-library/user-event';
 import { store } from '../redux/store';
 import ProductList from '../components/Products/ProductList';
 import ProductListData from './testutils/ProductListData.json';
