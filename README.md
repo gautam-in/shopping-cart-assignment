@@ -22,12 +22,11 @@ for Production).
 Changes includes : 
 
 1. Routing for login, register, home , products and checkout pages
-2. Product Page -> SSR used for displaying products page.
-3. Home page - Using Incremental Static Regenration. Banners fetching data from        
-    API endpoints using Fetch Web API.   
-5. Application level Auth Implemented with Context Provider.
-6. Redux Implemented for Cart and Product Category Filter.
-7. All pages are mobile responsive till 320px width.
+2. Product Page - Using Incremental Static Regeneration for displaying products page.
+3. Home page - Banners and Product Category data fetching from API endpoints using Fetch Web API.
+4. Application level AUTH Implemented with Context Provider.
+5. Redux Implemented for Cart and Product Category Filter.
+6. All pages are mobile responsive till 320px width.
 
 
 ## Screenshots:
