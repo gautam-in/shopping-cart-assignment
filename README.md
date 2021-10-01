@@ -32,22 +32,22 @@ Changes includes :
 
 ## Screenshots
 
-![Screenshot of Sabka Bazaar Homepage(Desktop)](./screenshots/shopping_cart_assignment_Homepage_1.jpg)
+![Screenshot of Sabka Bazaar Homepage(Desktop)](./screenshots/shopping_cart_assignment_Homepage_1.JPG)
 
-![Screenshot of LightHouse Report](./screenshots/shopping_cart_assignment_LightHouse_Report.jpg)
+![Screenshot of LightHouse Report](./screenshots/shopping_cart_assignment_LightHouse_Report.JPG)
 
-![Screenshot of Sabka Bazaar Homepage(Desktop 2)](./screenshots/shopping_cart_assignment_Homepage_2.jpg)
+![Screenshot of Sabka Bazaar Homepage(Desktop 2)](./screenshots/shopping_cart_assignment_Homepage_2.JPG)
 
-![Screenshot of Sabka Bazaar Homepage(Mobile)](./screenshots/shopping_cart_assignment_Homepage_Mobile.jpg)
+![Screenshot of Sabka Bazaar Homepage(Mobile)](./screenshots/shopping_cart_assignment_Homepage_Mobile.JPG)
 
-![Screenshot of Sabka Bazaar Product Page(Desktop)](./screenshots/shopping_cart_assignment_ProductPage.jpg)
+![Screenshot of Sabka Bazaar Product Page(Desktop)](./screenshots/shopping_cart_assignment_ProductPage.JPG)
 
-![Screenshot of Sabka Bazaar Product Page(Mobile)](./screenshots/shopping_cart_assignment_ProductPage_Mobile.jpg)
+![Screenshot of Sabka Bazaar Product Page(Mobile)](./screenshots/shopping_cart_assignment_ProductPage_Mobile.JPG)
 
-![Screenshot of Sabka Bazaar Login Page(Desktop)](./screenshots/shopping_cart_assignment_LoginPage.jpg)
+![Screenshot of Sabka Bazaar Login Page(Desktop)](./screenshots/shopping_cart_assignment_LoginPage.JPG)
 
-![Screenshot of Sabka Bazaar Login Page(Mobile)](./screenshots/shopping_cart_assignment_LoginPage_Mobile.jpg)
+![Screenshot of Sabka Bazaar Login Page(Mobile)](./screenshots/shopping_cart_assignment_LoginPage_Mobile.JPG)
 
-![Screenshot of Sabka Bazaar Cart Drawer](./screenshots/shopping_cart_assignment_Cart_Drawer.jpg)
+![Screenshot of Sabka Bazaar Cart Drawer](./screenshots/shopping_cart_assignment_Cart_Drawer.JPG)
 
-![Screenshot of Sabka Bazaar Cart Auth](./screenshots/shopping_cart_assignment_Auth.jpg)
+![Screenshot of Sabka Bazaar Cart Auth](./screenshots/shopping_cart_assignment_Auth.JPG)
