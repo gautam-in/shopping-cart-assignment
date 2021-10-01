@@ -31,7 +31,7 @@ Changes includes :
 
 
 ## Screenshots
-
+### Screenshot of Sabka Bazaar Homepage(Desktop)
 ![Screenshot of Sabka Bazaar Homepage(Desktop)](./screenshots/shopping_cart_assignment_Homepage_1.JPG)
 
 ![Screenshot of LightHouse Report](./screenshots/shopping_cart_assignment_LightHouse_Report.JPG)
