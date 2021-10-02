@@ -1,0 +1,117 @@
+/* Carosuel Start */
+
+.carousel {
+  margin: 0.5rem auto;
+  width: 70%;
+  overflow: hidden;
+  box-shadow: 0px 15px 10px -15px #111;
+}
+
+.carousel-container-slide {
+  opacity: 0;
+  display: none;
+  transition: 1s ease-in-out;
+}
+
+.carousel-container-slide-image {
+  width: 100%;
+}
+
+.carousel-nav {
+  text-align: center;
+  margin: 0.2rem 0;
+}
+.carousel-nav-dots {
+  border: 0;
+  border-radius: 50%;
+  width: 0.4rem;
+  height: 0.4rem;
+  background-color: #9e9d9d;
+  margin: 0.5rem 0.5rem;
+  padding: 0;
+}
+
+.active {
+  opacity: 1;
+  display: block;
+  transition: 1s ease-in-out;
+}
+.dots-active {
+  background-color: #5c5c5c;
+  transition: 0.2s ease-in-out;
+}
+/*carousel ENd */
+
+/* Categories Start*/
+
+.categories-products {
+  width: 70%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px auto;
+  box-shadow: 0px 15px 10px -15px #111;
+}
+.categories-products-reverse {
+  flex-direction: row-reverse;
+}
+
+.categories-products-image-container {
+  flex-basis: 50%;
+}
+
+.categories-products-image-container img {
+  width: 100%;
+}
+
+.categories-products-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 5px;
+}
+
+.categories-products-content-heading,
+.categories-products-content-title {
+  margin: 10px;
+}
+
+.categories-products-content-button {
+  background-color: var(--button-color);
+  color: var(--button-text-color);
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+}
+
+.categories-products-content-button:hover {
+  cursor: pointer;
+}
+/* Categories End */
+
+/* 
+* Tablet View Start  
+*/
+
+@media only screen and (min-width: 481px) and (max-width: 770px) {
+  /* Home Start */
+  .carousel,
+  .categories-products {
+    width: 100%;
+  }
+  /* Home End */
+}
+/* 
+  * Tablet View End
+  */
+
+@media only screen and (max-width: 480px) {
+  /* Home Start */
+  .carousel,
+  .categories-products {
+    width: 100%;
+  }
+  /* Home End */
+}
