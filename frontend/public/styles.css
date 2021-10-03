@@ -1,0 +1,363 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Dosis;
+  height: 100%;
+}
+
+/** HEARDER CSS **/
+.block {
+  text-align: center;
+  padding: 40px 0px;
+  width: 90%;
+}
+
+nav a {
+  color: black;
+  font-size: 16px;
+  font-weight: 500;
+  text-decoration: none;
+  padding: 0px 14px 14px 0px;
+}
+
+.cart-img {
+  width: 40px;
+  height: 40px;
+}
+
+.cart p {
+  align-self: flex-end;
+}
+
+/**
+.........................................................................................
+.Image Container 
+.....................................................................................**/
+.slideshow-container {
+  position: relative;
+}
+
+.mySlides {
+  padding: 0px;
+  box-shadow: 0px 15px 10px -15px #111;
+}
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 40%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+/* Position the "next button" to the right */
+.next {
+  right: 10%;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.274);
+}
+
+/** 
+...................................................................................
+CATEGORY CSS 
+...................................................................................
+**/
+article {
+  margin: 0 70px;
+}
+
+section {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 20%;
+  box-shadow: 0px 15px 10px -15px #111;
+}
+
+section img {
+  width: auto;
+  height: 200px;
+}
+
+button {
+  background-color: rgb(128, 32, 40);
+  color: white;
+  padding: 15px;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button:hover {background-color: rgb(143, 37, 46);}
+
+button:active {
+  background-color: rgb(102, 23, 29);
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+/**
+...........................................................................
+Side bar
+............................................................................
+**/
+.grid-container {
+  display: flex;
+}
+
+.sidebar {
+  min-width:160px;
+  max-width: 200px;
+  height: 100vh;
+  background-color: rgba(211, 211, 211, 0.548);
+  position: sticky;
+  top:0;
+}
+
+.sidebar a {
+  display: block;
+  padding: 15px 20px;
+  width: 100%;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.493);
+  border: 1px solid rgba(211, 211, 211, 0.548);
+}
+
+.products {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  row-gap: 30px;
+  column-gap: 40px;
+  padding-right: 10px;
+}
+
+.card {
+  box-shadow: 0px 15px 10px -15px #111;
+  margin: 10px;
+  width: 200px;
+  height: 280px;
+  position: relative;
+}
+
+.card h3 {
+  font-weight: 800;
+}
+
+.prod-desc {
+  margin-top: 30px;
+  display: flex;
+}
+
+.prod-desc p {
+  background-color: rgba(211, 211, 211, 0.548);
+  font-size: 14px;
+  font-weight: 500;
+  padding: 5px;
+  width: 120px;
+  height: 150px;
+  overflow: hidden;
+}
+
+.prod-desc img {
+  width: 130px;
+  height: 140px;
+}
+
+.prod-btn {
+  width: 100%;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  cursor: pointer;
+}
+
+/**
+...................................................................................................
+MY CART
+....................................................................................................
+**/
+
+.cart-container {
+  background-color: rgba(211, 211, 211, 0.979);
+  width: 600px;
+  height: 500px;
+  margin: 0px;
+  overflow-y: scroll;
+}
+
+.cart-title {
+  background-color: white;
+  font-weight: bold;
+  font-size: 16px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+}
+
+.cart-container section {
+  margin-top: 20px;
+  background-color: white;
+  height: 100px;
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+}
+
+.item-img {
+  width: 100px;
+  height: 90px;
+  padding-left: 20px;
+}
+
+.item-desc {
+  font-size: 13px;
+  font-weight: bold;
+  flex: 1;
+  letter-spacing: 0.5px;
+  padding: 10px;
+}
+
+.update-quantity {
+  display: flex;
+  align-items: center;
+  padding-top: 10px;
+  gap: 10px;
+}
+
+.update-quantity p {
+  font-size: 14px;
+}
+.update-quantity button {
+  padding: 5px 10px;
+}
+
+.total-price {
+  align-self: flex-end;
+  margin: 10px;
+}
+
+.cart-adv {
+  background-color: white;
+  margin: 20px 20px 100px 20px;
+  display: flex;
+  align-items: center;
+}
+
+.cart-adv img {
+  width: 150px;
+  height: 80px;
+  padding: 20px;
+}
+
+
+/*----------------Form Styles----------------------*/
+.form_field {
+  font-family: inherit;
+  width: 250px;
+  border: 0;
+  border-bottom: 2px solid grey;
+  outline: 0;
+  font-size: 1.3rem;
+  color: black;
+  padding: 7px 0;
+  background: transparent;
+  transition: border-color 0.2s;
+}
+
+.form_field::placeholder {
+  color: transparent;
+}
+.form_field:placeholder-shown ~ .form_label {
+  font-size: 14px;
+  cursor: text;
+  top: 25px;
+}
+
+.form_label {
+  position: absolute;
+  top: 0;
+  line-height: 0;
+  display: block;
+  transition: 0.2s;
+  font-size: 12px;
+  color: rgba(128, 128, 128, 0.89);
+}
+
+.form_field:focus {
+  padding-bottom: 6px;
+  font-weight: 700;
+  border-width: 3px;
+  border-image-slice: 1;
+  border-bottom: 2px solid rgb(31, 206, 203);
+}
+
+.form_field:focus ~ .form_label {
+  position: absolute;
+  top: 0;
+  display: block;
+  transition: 0.2s;
+  font-size: 1rem;
+  font-weight: 700;
+  color: rgb(31, 206, 203);
+}
+/**----------------------------------**/
+
+footer {
+  background-color: rgba(211, 211, 211, 0.548);
+  font-size: 12px;
+  text-align: center;
+  padding:20px;
+}
+
+
+@media(max-width:768px){
+  .block {
+
+    padding: 20px 0px;
+    width: 100%;
+  }
+  
+  article {
+    margin: 0px;
+  } 
+  section {
+    display:block;
+  }
+  
+  section img {
+    height: 150px
+  }
+  
+  button {
+    background-color: rgb(128, 32, 40);
+    color: white;
+    padding: 12px;
+    border: none;
+    font-size: 14px;
+    cursor: pointer;
+  }
+
+  .products {
+    display: grid;
+    grid-template-columns: 1fr ;
+    row-gap: 30px;
+  }
+}
