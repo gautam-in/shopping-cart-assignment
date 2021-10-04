@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, useHistory } from 'react-router-dom';
+import {useHistory } from 'react-router-dom';
 import styled from 'styled-components';
 
 /**

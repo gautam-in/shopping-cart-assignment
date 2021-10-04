@@ -7,7 +7,6 @@ const ImageContainer = () => {
     const getBanners = async () => {
       const result = await fetch("http://localhost:3000/banners");
       const data = await result.json();
-      console.log("result==", data);
       if (data && data.length > 0) {
         setBanners(data);
       }

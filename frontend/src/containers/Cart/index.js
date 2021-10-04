@@ -1,6 +1,6 @@
 import React from "react";
 import Modal from "react-modal";
-import Header from "../../components/header"
+import Header from "../../components/header";
 import { useSelector, useDispatch } from "react-redux";
 import styled from "styled-components";
 import { addQuantity, reduceQuantity, removeProduct } from "../../action";
@@ -28,9 +28,28 @@ const Checkout = styled.footer`
     width: 100%;
   }
 `;
+const CartHeader = styled.div`
+background-color:black;
+color:white;
+padding:10px;
+display:flex;
+gap:10px;
+p{
+  align-self:flex-end;
+  font-size:14px;
+  
+}
+`
+const EmptyCart = styled.div`
+text-align:center;
+margin-top:70px;
+p{
+  font-weight:500;
+}
+`
 
 const Cart = ({ open, openModal, closeModal }) => {
-  let result = [];
+  let result = null;
   const dispatch = useDispatch();
   const state = useSelector((state) => state.updateCart);
 
@@ -41,8 +60,8 @@ const Cart = ({ open, openModal, closeModal }) => {
     }
   }
 
-  function checkout(){
-     closeModal()  //close the cart modal
+  function checkout() {
+    closeModal(); //close the cart modal
   }
   //Style each item in cart
   if (state.cart && state.cart.length > 0) {
@@ -74,17 +93,29 @@ const Cart = ({ open, openModal, closeModal }) => {
       >
         <>
           <article class="cart-container">
-            <Header isNav={false}/>
-            <p class="cart-title">My Cart</p>
-            {result}
-            <aside class="cart-adv">
-              <img src={"/images/lowest-price.png"} alt="seurity" />
-              <p>You won't find it cheaper anywhere</p>
-            </aside>
-            <Checkout>
-              <p>Promo Code will be applied on Payment Screen </p>
-              <button onClick={checkout}>Proceed to checkout</button>
-            </Checkout>
+            <CartHeader>
+              <h3>My Cart </h3>
+              <p>( {state.cart.length} items)</p>
+            </CartHeader>
+            {result && (
+              <>
+                {result}
+                <aside class="cart-adv">
+                  <img src={"/images/lowest-price.png"} alt="seurity" />
+                  <p>You won't find it cheaper anywhere</p>
+                </aside>
+                <Checkout>
+                  <p>Promo Code will be applied on Payment Screen </p>
+                  <button onClick={checkout}>Proceed to checkout</button>
+                </Checkout>
+              </>
+            )}
+            {!result && (
+              <EmptyCart>
+              <h3>Your Cart is Empty</h3>
+              <p>Your favourite Items are just a click away</p>
+              </EmptyCart>
+            )}
           </article>
         </>
       </Modal>

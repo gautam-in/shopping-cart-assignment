@@ -73,7 +73,7 @@ const Header = ({ isNav = true }) => {
   ];
   let registrationLinks = [
     {
-      href: "",
+      href: "/login",
       name: "SignIn",
     },
     {
