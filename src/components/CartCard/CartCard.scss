@@ -1,0 +1,40 @@
+@import "../../utilities/variables";
+
+.cart-card {
+  display: flex;
+  align-items: center;
+  margin: 1rem;
+  background: $background;
+  padding: 0.5rem;
+  min-width: 20rem;
+
+  // .cart-image {
+  // }
+
+  .cart-card-button {
+    width: 12rem;
+    margin-left: 12px;
+  }
+  .total-cart-price {
+    margin-left: auto;
+    font-size: 24px;
+    font-weight: 600;
+  }
+}
+
+@media (max-width: 480px) {
+  .cart-card {
+    padding: 5px;
+    margin: 5px;
+
+    .cart-image {
+      img {
+        height: 80px;
+      }
+    }
+    .cart-card-button {
+      width: 9.5rem;
+      margin-left: 2px;
+    }
+  }
+}

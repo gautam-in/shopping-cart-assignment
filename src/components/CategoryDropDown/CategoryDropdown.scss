@@ -1,0 +1,19 @@
+@import "../../utilities/variables";
+
+.category-dropdown {
+  padding: 0.5rem 0;
+
+  .category-dropdown-select {
+    width: 100%;
+    padding: 10px;
+    background: $theme;
+    color: $background;
+
+    .category-dropdown-option {
+      margin: 10px;
+    }
+    .selected {
+      color: $background;
+    }
+  }
+}

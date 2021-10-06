@@ -1,0 +1,12 @@
+@import "../../utilities/variables";
+
+footer {
+  height: 2rem;
+  width: 100%;
+  font-size: 12px;
+  word-spacing: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: $light-grey;
+}

@@ -1,0 +1,89 @@
+@import "./utilities/variables";
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Dosis", sans-serif;
+}
+
+a {
+  margin: 0;
+  padding: 10px;
+  color: $background-grey;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: bold;
+
+  &:hover {
+    color: $background-black;
+  }
+}
+
+.content {
+  margin-top: 5rem;
+}
+
+.container {
+  min-height: calc(100vh - (120px));
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.center-display {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (min-width: 460px) {
+  .container {
+    padding: 0;
+  }
+}
+@media (min-width: 576px) {
+  .container {
+    padding: 0 1rem;
+  }
+}
+@media (min-width: 768px) {
+  .container {
+    padding: 0 1rem;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    padding: 0 2rem;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    padding: 0 6rem;
+  }
+}
+.skeleton {
+  opacity: 0.7;
+  animation: skeleton-loading 1s linear infinite alternate;
+}
+@keyframes skeleton-loading {
+  0% {
+    background-color: hsl(200, 20%, 70%);
+  }
+
+  100% {
+    background-color: hsl(200, 20%, 95%);
+  }
+}
+
+.skeleton-text {
+  width: 100%;
+  height: .5rem;
+  margin-bottom: .25rem;
+  border-radius: .125rem;
+}
+
+.skeleton-text:last-child {
+  margin-bottom: 0;
+  width: 80%;
+} 

@@ -11,5 +11,5 @@ npm install
 npm run start
 # or
 yarn install
-yarn start 1
+yarn start
 ```

@@ -1,0 +1,75 @@
+@import "../../utilities/variables";
+@import "../../utilities/mixins";
+
+.product {
+  background-color: $background;
+
+  .card-odd {
+    grid-template-columns: 2.6fr 1.4fr;
+  }
+
+  .card-even {
+    grid-template-columns: 1.4fr 2.6fr;
+  }
+
+  .card {
+    height: 16rem;
+    display: grid;
+
+    .card-text {
+      background-color: $background;
+      display: block;
+      text-align: center;
+      margin-top: 1.5rem;
+
+      .card-text-title {
+        font-size: 30px;
+        font-weight: bold;
+      }
+      .card-text-desc {
+        margin: 1rem 0;
+        font-size: 18px;
+      }
+      .card-text-button {
+        @include primary-button;
+      }
+    }
+    .card-text-odd {
+      order: 2;
+    }
+    .card-image {
+      .card-image-area {
+        height: auto;
+        width: 95%;
+      }
+    }
+    .card-image-odd {
+      order: 1;
+    }
+  }
+
+  hr {
+    background: radial-gradient(at 50% 0, rgba(0, 0, 0, 0.5), transparent 70%);
+    width: 90%;
+    height: 13px;
+    border: 0px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .product {
+    .card {
+      .card-text {
+        margin-top: 1rem;
+
+        .card-text-title {
+          font-size: 24px;
+        }
+        .card-text-desc {
+          font-size: 16px;
+        }
+      }
+    }
+  }
+}
