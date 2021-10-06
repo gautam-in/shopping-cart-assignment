@@ -1,0 +1,75 @@
+@import "../../utilities/variables";
+@import "../../utilities/mixins";
+
+.cart {
+  .no-item {
+    .no-item-text {
+      min-height: calc(100vh - 163px);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+
+      .remove-margin {
+        margin: 0;
+      }
+    }
+
+    .button-start-shopping {
+      @include primary-button;
+      width: 100%;
+      padding: 10px;
+      font-size: 1.2rem;
+    }
+  }
+  .cart-product {
+    background: $light-grey;
+    min-height: calc(100vh - 126px);
+    padding-top: 12px;
+
+    .cart-item-height {
+      min-height: calc(100vh - 203px);
+
+      .cart-header {
+        background-color: $background-black;
+        padding: 15px;
+        font-size: 24px;
+        font-weight: 600;
+        color: $background;
+
+        .cart-header-text {
+          margin: 0;
+          font-size: 24px;
+          font-weight: 600;
+        }
+      }
+      .cheap {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        padding: 0.5rem;
+        margin: 1rem;
+        background: $background;
+      }
+    }
+
+    .checkout {
+      background: $background;
+
+      .promo {
+        margin: 10px 0 5px 0;
+        text-align: center;
+      }
+      .button-checkout {
+        @include primary-button;
+        width: 100%;
+        padding: 10px;
+        font-size: 1.2rem;
+
+        .total-price {
+          margin: 0px 10px 0px 40px;
+        }
+      }
+    }
+  }
+}

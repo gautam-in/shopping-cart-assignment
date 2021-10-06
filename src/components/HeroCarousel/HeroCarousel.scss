@@ -1,0 +1,73 @@
+@import "../../utilities/variables";
+
+section {
+  .carousel {
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    min-height: 100px;
+
+    .carousel-image {
+      height: auto;
+      width: 95%;
+    }
+    .arrow {
+      position: relative;
+      .arrow-icon {
+        fill: $background-grey;
+      }
+    }
+    .slick-dots {
+      display: flex;
+      justify-content: center;
+      position: absolute;
+      bottom: 12px;
+      left: calc(50% - 40px);
+
+      .slick-ul {
+        list-style: none;
+        display: flex;
+        padding: 0;
+        margin: 0;
+
+        .slick-li {
+          background-color: $background-grey;
+          opacity: 0.5;
+          height: 6px;
+          width: 6px;
+          margin: 0 6px;
+          border-radius: 3px;
+          
+          &:hover {
+            background-color: $background-black;
+          }
+        }
+        .slick-li-active {
+          background-color: $background-black;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  section {
+    .carousel {
+      padding: 6px;
+
+      .carousel-image {
+        width: 90%;
+      }
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  section {
+    .carousel {
+      padding: 10px;
+    }
+  }
+}

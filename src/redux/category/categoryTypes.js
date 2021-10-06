@@ -1,0 +1,1 @@
+export const SELECTED_CATEGORY_ID = "selected_category_id"

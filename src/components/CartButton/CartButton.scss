@@ -1,0 +1,55 @@
+@import "../../utilities/variables";
+@import "../../utilities/mixins";
+
+.cart-price {
+  display: flex;
+  align-items: center;
+  width: 100%;
+
+  .cart-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .cart-add-button {
+      @include primary-button;
+      padding: 12px;
+    }
+    .cart-button-text {
+      margin: 0 15px;
+      font-size: 24px;
+      font-weight: 600;
+    }
+  }
+  .divider {
+    margin: 0 auto;
+    font-size: 18px;
+    font-weight: 600;
+  }
+
+  .cart-price-item {
+    margin-left: auto;
+    font-size: 24px;
+    font-weight: 600;
+  }
+}
+
+@media (max-width: 480px) {
+  .cart-price {
+    .cart-button {
+      .cart-add-button {
+        padding: 8px;
+      }
+      .cart-button-text {
+        margin: 0 8px;
+        font-size: 22px;
+      }
+    }
+    .divider {
+      font-size: 14px;
+    }
+    .cart-price-item {
+      font-size: 22px;
+    }
+  }
+}

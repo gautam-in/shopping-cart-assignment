@@ -1,0 +1,32 @@
+@import "../../utilities/variables";
+
+.category-list {
+  width: 17rem;
+  background: $light-grey;
+  height: inherit;
+  min-width: 14rem;
+  min-height: calc(100vh - 120px);
+
+  .category-list-ul {
+    margin: 0;
+    list-style: none;
+    padding: 0;
+
+    .selected {
+      background: $theme;
+      color: $background;
+    }
+
+    .category-list-li {
+      cursor: pointer;
+      border-bottom: 1px solid $background-grey;
+      padding: 10px;
+      transition: all 0.3s cubic-bezier(0.4, 0, 1, 1);
+
+      &:hover {
+        background: $theme;
+        color: $background;
+      }
+    }
+  }
+}
