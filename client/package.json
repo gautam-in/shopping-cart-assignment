@@ -1,0 +1,93 @@
+{
+  "name": "sabka_bazaar",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "axios": "^0.21.1",
+    "bootstrap": "^4.6.0",
+    "classnames": "^2.2.6",
+    "dotenv": "^8.2.0",
+    "envalid": "^7.0.0",
+    "formik": "^2.2.6",
+    "json2typescript": "^1.4.1",
+    "react": "^17.0.1",
+    "react-bootstrap": "1.5.2",
+    "react-dom": "^17.0.1",
+    "react-redux": "^7.2.2",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "4.0.2",
+    "redux": "^4.0.5",
+    "redux-saga": "^1.1.3",
+    "reselect": "^4.0.0",
+    "uuid": "^8.3.2",
+    "web-vitals": "^1.1.0",
+    "yup": "^0.32.8"
+  },
+  "proxy": "http://localhost:5000",
+  "devDependencies": {
+    "@testing-library/jest-dom": "^5.11.9",
+    "@testing-library/react": "^11.2.5",
+    "@testing-library/user-event": "^12.6.3",
+    "@types/classnames": "^2.2.11",
+    "@types/jest": "^26.0.20",
+    "@types/node": "^12.19.16",
+    "@types/node-sass": "^4.11.1",
+    "@types/react": "^17.0.1",
+    "@types/react-dom": "^17.0.0",
+    "@types/react-redux": "^7.1.16",
+    "@types/react-router-dom": "^5.1.7",
+    "@types/redux": "^3.6.0",
+    "@types/redux-saga": "^0.10.5",
+    "@types/reselect": "^2.2.0",
+    "@types/uuid": "^8.3.0",
+    "husky": "^4.2.5",
+    "jest-sonar-reporter": "^2.0.0",
+    "lint-staged": "^10.5.4",
+    "node-sass": "^5.0.0",
+    "prettier": "^2.2.1",
+    "react-router-to-array": "^0.1.3",
+    "redux-devtools-extension": "^2.13.8",
+    "semver": "^7.3.4",
+    "typescript": "^4.1.4"
+  },
+  "engines": {
+    "node": "14.17.6",
+    "yarn": "1.22.15"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "lint": "eslint src",
+    "prettier": "prettier --config .prettierrc src/** --write"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,ts,tsx,json,css,scss}": [
+      "yarn run prettier"
+    ]
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

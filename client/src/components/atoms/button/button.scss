@@ -1,0 +1,15 @@
+@import "assets/sass/colors.scss";
+@import "assets/sass/paddings.scss";
+.btn {
+  border-radius: 4px;
+  padding: $btnPadding;
+  outline: none;
+  text-align: center;
+  cursor: pointer;
+}
+.primary {
+  background: $btnPrimaryBg;
+  color: $btnPrimaryText;
+  border: none;
+  margin-bottom: 5px;
+}
