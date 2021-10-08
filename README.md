@@ -1,15 +1,9 @@
-# XT Shopping Cart Assignment
+# Getting Started with Create React App
 
-This is the base folder for the shopping cart exercise. You will have all the static assets and mock server responses available in this repo.
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Getting Started
+## Available Scripts
 
-Clone this repo and run following command for starting the mock server:
+In the project directory, you can run:
 
-```
-npm install
-npm run start
-# or
-yarn install
-yarn start
-```
+### `npm run start`

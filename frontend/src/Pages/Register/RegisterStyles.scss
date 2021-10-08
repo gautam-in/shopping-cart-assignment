@@ -1,0 +1,94 @@
+@import "../../Assets/style/basestyle.scss";
+
+.register-content-section {
+  height: 50vh;
+    .register-container {
+      display: flex;
+      max-width: $main-body;
+      height: inherit;
+      margin: 0 auto;
+      align-items: center;
+      
+      .register-desc {
+        width: 50%;
+        padding: 0 5rem;
+        .register-label {
+          font-weight: bold;
+          margin-bottom: 10px;
+        }
+        .register-text {
+          font-weight: 500;
+          font-size: 15px;
+        }
+        h2 {
+          width: auto;
+          padding-bottom: 1rem;
+        }
+        div {
+          width: auto;
+        }
+      }
+      .register-form {
+        width: 50%;
+        .form-content {
+          display: flex;
+          flex-direction: column;
+          .form-field {
+            margin: 0.5rem 0;
+          .MuiFormControl-root {
+            width: 100%;
+          }
+          .btn-style {
+            background-color: $base-icon-color;
+            width: 100%;
+            color: #fff;
+          }
+        }
+      }
+      }
+    }
+  }
+
+  @media screen and (max-device-width: 768px) {
+    .register-content-section {
+      .register-container {
+        .register-form {
+          .form-content {
+            width: 80%
+          }
+        }
+      }
+    }
+  }
+
+  @media screen and (max-device-width: 360px) {
+    .register-content-section {
+      .register-container {
+        flex-direction: column;
+        .register-desc {
+          width: auto;
+        }
+      }
+    }
+  }
+
+  @media screen and (max-device-width: 320px) {
+    .register-content-section { 
+      .register-container {
+      flex-direction: column;
+      padding: 0rem;
+      .register-desc {
+        width: auto;
+        padding-left: 4rem;
+      }
+      .register-form {
+        .form-field {
+          padding: 0rem 0rem 0.5rem 4rem;
+          .err-msg {
+            font-size: 0.795rem;
+          }
+        }
+      }
+      }      
+    }
+  }

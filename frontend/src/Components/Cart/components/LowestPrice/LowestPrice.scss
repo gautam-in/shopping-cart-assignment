@@ -1,0 +1,19 @@
+.lowest-price-section {
+    padding: 0 0.8rem;
+    .main-container {
+      background-color: #fff;
+      display: flex;
+      margin-bottom: 10px;
+      .img {
+        width: 30%;
+        padding: 0.3rem;
+      }
+    }
+  }
+  @media screen and (max-width: 768px) {
+    .lowest-price-section {
+      .main-container {
+        margin-bottom: 0.9rem;
+      }
+    }
+  }
