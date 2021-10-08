@@ -1,22 +1,21 @@
 import { ProductsList } from "models/products";
 import { ReactElement } from "react";
-import "pages/products/products.scss";
 import ProductCard from "components/molecules/productCard/productCard";
+import "modules/products/products.scss";
 
 interface IProps {
   productsList: ProductsList["products"];
-  addToCart: Function;
 }
 
 const ProductsComponent = (props: IProps): ReactElement => {
-  const { productsList, addToCart } = props;
+  const { productsList } = props;
 
   return (
     <>
       {productsList && (
         <ul className="products-list">
           {productsList.map((product) => (
-            <ProductCard key={product.name} product={product} addToCart={addToCart} />
+            <ProductCard key={product.name} product={product} />
           ))}
         </ul>
       )}

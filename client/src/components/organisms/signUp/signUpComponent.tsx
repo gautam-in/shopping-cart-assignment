@@ -20,7 +20,9 @@ const SignUpComponent = (props: IProps): React.ReactElement => {
   const formValidationSchema = Yup.object({
     email: Yup.string().matches(RegularExpression.email, SignInFormValidations.emailValidation).required(SignInFormValidations.emptyValidation),
     password: Yup.string().min(6).required(SignInFormValidations.emptyValidation),
-    confirmPassword: Yup.string().min(6).required(SignInFormValidations.emptyValidation)
+    confirmPassword: Yup.string()
+      .oneOf([Yup.ref("password"), null], SignInFormValidations.confirmPasswordValidation)
+      .required(SignInFormValidations.emptyValidation)
   });
 
   return (

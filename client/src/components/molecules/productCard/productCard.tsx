@@ -4,20 +4,22 @@ import { allRoutes } from "navigation/allRouteNames";
 import { ReactElement } from "react";
 import { useHistory } from "react-router-dom";
 import { LocalStorage } from "services/storage";
+import { useDispatch } from "react-redux";
+import { CartActions } from "modules/cart/redux/actions/actions";
 import "modules/products/products.scss";
 
 interface IProps {
   product: ProductItem;
-  addToCart: Function;
 }
 
 const ProductCard = (props: IProps): ReactElement => {
+  const { product } = props;
+  const dispatch = useDispatch();
   let history = useHistory();
-  const { product, addToCart } = props;
   let userStatus = LocalStorage.getStorage("status");
 
   const productSelected = () => {
-    if (userStatus) addToCart(product);
+    if (userStatus) dispatch(CartActions.addToCart(product));
     else {
       history.push(allRoutes.LOGIN);
     }

@@ -1,3 +1,4 @@
+import { ICartState } from "modules/cart/redux/reducers/reducer";
 import { IHomeState } from "modules/home/redux/reducers/reducer";
 import { IProductsState } from "modules/products/redux/reducers/reducer";
 import { ISignInState } from "modules/signIn/redux/reducers/reducer";
@@ -15,4 +16,5 @@ export interface IState {
   signUp: ISignUpState;
   home: IHomeState;
   products: IProductsState;
+  cart: ICartState;
 }

@@ -6,6 +6,7 @@ import Footer from "components/molecules/footer/footer";
 import SignIn from "modules/signIn";
 import SignUp from "modules/signUp";
 import Home from "modules/home";
+import Products from "modules/products";
 
 export const Routes = () => {
   return [
@@ -26,7 +27,7 @@ export const Routes = () => {
     },
     {
       path: allRoutes.PRODUCTS,
-      component: () => <div>Products</div>,
+      component: Products,
       isExact: true
     },
     {
