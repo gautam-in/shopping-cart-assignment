@@ -1,0 +1,23 @@
+.menu-container {
+  z-index: 7;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  width: 6rem;
+  background-color: rgb(150, 150, 150);
+  padding: 1rem;
+  color: #fff;
+  .cart-icon {
+    width: auto;
+    display: flex;
+  }
+  .items {
+    padding: 0.3rem 0;
+    cursor: pointer;
+    .redirectLinks {
+      text-decoration: none;
+      color: #FFF;
+      padding: 0 0.3rem;
+    }
+  }
+}

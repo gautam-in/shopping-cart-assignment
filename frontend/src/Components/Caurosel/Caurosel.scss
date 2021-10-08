@@ -1,0 +1,87 @@
+.carousel-section {
+    margin-top: 0.3rem;
+    position: relative;
+    background-color: rgb(238, 238, 238);
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    .carousel-holder {
+      display: flex;
+      width: 100%;
+      height: 100%;
+      transition: transform 1s ease-in-out;
+      z-index: 1;
+      .carousel-image {
+        display: flex;
+        justify-content: center;
+        max-width: 100vw;
+        img {
+          width: 100vw;
+          min-width: 75vw;
+        }
+      }
+    }
+    .img-position {
+      z-index: 2;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      padding: 2% 0;
+      .dot {
+        height: 0.5rem;
+        width: 0.5rem;
+        border-radius: 50%;
+        background-color: rgba(0, 0, 0, 0.2);
+        margin: 0 0.5rem;
+      }
+      .dot-selected {
+        background-color: rgba(0, 0, 0, 1);
+      }
+    }
+    .backdrop {
+      position: absolute;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 3;
+      .box {
+        width: 3rem;
+        background-color: rgba(0, 0, 0, 0.3);
+        padding: 0.3rem;
+        cursor: pointer;
+        color: #fff;
+      }
+    }
+  }
+
+  @media only screen and (max-width: 360px) {
+    .carousel-section {
+      .backdrop {
+        .box {
+          font-size: 0.7rem;
+          width: 2rem;    
+        }
+      } 
+    }
+  }
+
+  @media only screen and (max-width: 320px) {
+    .carousel-section {
+    //   .slider-holder {
+    //     // .image-holder {
+    //     // }
+    //   }
+      .backdrop {
+        font-size: 0.8rem;
+      }
+    }
+  }
