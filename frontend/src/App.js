@@ -9,7 +9,6 @@ import CategoryProvider from "./Context/CategoryContext";
 import AddToCartProvider from "./Context/AddToCartContext";
 import Cart from "./Components/Cart/Cart";
 import RequireAuth from "./Helper/AuthComponent";
-// import SampleTest from "Pages/Test/Test"
 
 function App() {
   return (
@@ -22,7 +21,6 @@ function App() {
             <Route exact path="/" component={Home} />
             <Route exact path="/product" component={Products}/>
             <Route exact path="/cart" render={(props) => <RequireAuth Component={Cart} {...props} />} />
-            {/* <Route exact path="/test" render={(props) => <RequireAuth Component={SampleTest} {...props} />} /> */}
             <Route path="*" exact={true} component={NotFound} />
           </Switch>
         </Router>
