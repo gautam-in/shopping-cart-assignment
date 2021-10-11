@@ -1,0 +1,50 @@
+@import "../../assets/sass/colors.scss";
+
+.signup-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 55vh;
+  margin-top: 30px;
+}
+
+.signup-text {
+  margin-left: 40%;
+  margin-top: 20px;
+  color: $color-black;
+}
+
+.signup-box:last-child {
+  text-align: left;
+  padding-left: 20px;
+}
+
+/* --Sign up Form-- */
+.signup-form {
+  width: 50%;
+}
+
+.signup-button {
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background: $btnPrimaryBg !important;
+}
+
+@media only screen and (max-width: 767px) {
+  .signup-container {
+    text-align: center;
+    align-items: center;
+  }
+
+  .signup-text {
+    margin-left: 0;
+    color: $color-black;
+  }
+
+  .signup-form {
+    width: 80%;
+    margin: 0 10%;
+  }
+}

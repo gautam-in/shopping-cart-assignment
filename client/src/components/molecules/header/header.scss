@@ -1,0 +1,151 @@
+@import "../../../assets/sass/colors.scss";
+
+.main-header {
+  height: 13vh;
+  width: 100%;
+  top: 0;
+  z-index: 1;
+  box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.3);
+  display: flex;
+
+  .left-nav-container {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    padding-left: 10%;
+
+    .logo {
+      width: 140px;
+      height: auto;
+    }
+
+    .main-navbar {
+      padding-left: 10%;
+
+      ul {
+        list-style: none;
+      }
+
+      li {
+        display: inline-block;
+        margin: 0 20px;
+      }
+
+      &-link:link,
+      &-link:visited {
+        text-decoration: none;
+        font-size: 70%;
+        font-weight: bold;
+        color: #7e7d7d;
+      }
+
+      &-link:hover,
+      &-link:active {
+        color: $btnPrimaryBg;
+      }
+    }
+  }
+
+  .right-navbar {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    padding-right: 10%;
+    justify-content: space-around;
+    align-items: flex-end;
+
+    .signin-navbar {
+      ul {
+        list-style: none;
+      }
+
+      li {
+        display: inline-block;
+        margin: 0 10px;
+      }
+
+      &-link:link,
+      &-link:visited {
+        text-decoration: none;
+        font-size: 60%;
+        font-weight: bold;
+        color: #7e7d7d;
+      }
+
+      &-link:hover,
+      &-link:active {
+        color: $btnPrimaryBg;
+      }
+    }
+
+    .cart-box {
+      background-color: #eee;
+      padding: 16px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+
+      img {
+        width: 25px;
+      }
+
+      span {
+        font-size: 80%;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 767px) and (min-width: 100px) {
+  .main-header {
+    height: 9vh;
+
+    .left-nav-container {
+      padding-left: 2%;
+
+      .app-logo {
+        width: 90px;
+      }
+
+      .main-navbar {
+        display: none;
+      }
+    }
+
+    .right-navbar {
+      padding-right: 2%;
+
+      .signin-navbar {
+        display: none;
+      }
+
+      .cart-box {
+        flex-grow: 1;
+        padding: 10px;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1023px) and (min-width: 767px) {
+  .main-header {
+    height: 12vh;
+
+    .left-nav-container {
+      padding-left: 2%;
+
+      .app-logo {
+        width: 120px;
+      }
+    }
+
+    .right-navbar {
+      padding-right: 2%;
+
+      .cart-box {
+        padding: 14px;
+      }
+    }
+  }
+}

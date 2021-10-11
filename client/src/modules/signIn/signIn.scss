@@ -1,0 +1,52 @@
+@import "../../assets/sass/colors.scss";
+
+.singin-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 55vh;
+}
+
+.signin-text {
+  margin-left: 40%;
+  color: $color-black;
+}
+
+.sub-text {
+  font-size: small;
+  font-weight: 500;
+}
+
+.signin-box:last-child {
+  text-align: left;
+  padding-left: 20px;
+}
+
+/* --Sign in Form-- */
+.signin-form {
+  width: 50%;
+}
+
+.signin-button {
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background: $btnPrimaryBg !important;
+}
+
+@media only screen and (max-width: 767px) {
+  .singin-container {
+    text-align: center;
+    align-items: center;
+  }
+
+  .signin-text {
+    margin-left: 0;
+  }
+
+  .signin-form {
+    width: 80%;
+    margin: 0 10%;
+  }
+}

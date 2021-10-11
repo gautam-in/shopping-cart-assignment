@@ -1,0 +1,16 @@
+.footer {
+  background-color: #e9e9e9;
+  padding: 10px 20px 10px 80px;
+
+  &-text {
+    font-size: 70%;
+    font-weight: 600;
+  }
+
+  @media only screen and (max-width: 767px) and (min-width: 100px) {
+    &-text {
+      font-size: 40%;
+      font-weight: 600;
+    }
+  }
+}
