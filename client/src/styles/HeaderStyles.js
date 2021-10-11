@@ -24,7 +24,7 @@ const HeaderStyles = styled.header`
 
 const Logo = styled.img`
   width: 150px;
-  height: 60px;
+  height: 70px;
 `;
 const NavStyles = styled.div`
   display: flex;
@@ -55,11 +55,14 @@ const CustomButton = styled.button`
   background-color: var(--grey);
   text-transform: none;
   display: flex;
+  justify-content: center;
   height: auto;
   cursor: pointer;
   border: none;
   border-radius: 0;
   text-decoration: none;
+  width: 100%;
+  height: 48px;
 `;
 
 export { Logo, HeaderStyles, NavStyles, CartStyles, CustomButton };

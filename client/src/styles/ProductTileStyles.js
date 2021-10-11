@@ -12,7 +12,7 @@ const Title = styled.h3`
 `;
 
 const ProductTileStyles = styled.section`
-  width: 220px;
+  width: 245px;
   height: 450px;
   padding: 0.5rem;
   margin: 1rem;
@@ -21,6 +21,9 @@ const ProductTileStyles = styled.section`
   box-shadow: 5px 5px 15px gray;
   border-bottom: 1px dotted grey;
   cursor: pointer;
+  @media (min-width: 1030px) and (max-width: 1365px) {
+    width: 226px;
+  }
   @media (min-width: 768px) and (max-width: 1024px) {
     height: 350px;
     width: 250px;

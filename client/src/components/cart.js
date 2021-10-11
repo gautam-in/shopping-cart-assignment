@@ -54,10 +54,16 @@ function CartItem({ productInfo }) {
 
 export default function Cart() {
   const { closeCart, open, products = [] } = useContext(CartContext);
-  const TOTAL_PRICE = useMemo(() => {
-    return products.reduce((prev, cur) => {
-      return prev + Math.floor(cur.price * cur.quantity);
-    }, 0);
+  const totalobj = useMemo(() => {
+    return products.reduce(
+      (prev, product) => {
+        return {
+          items: prev.items + product.quantity,
+          price: prev.price + Math.floor(product.price * product.quantity),
+        };
+      },
+      { items: 0, price: 0 }
+    );
   }, [products]);
   return (
     <>
@@ -65,7 +71,7 @@ export default function Cart() {
       <CartStyles open={open}>
         <CartContentWrapper>
           <header>
-            <h4>My Cart</h4>
+            <h4>My Cart ({totalobj?.items} item)</h4>
             <CloseButton onClick={closeCart}>&times;</CloseButton>
           </header>
           <section>
@@ -93,7 +99,7 @@ export default function Cart() {
             <p>Promo code can be applied on payment page</p>
             <button>
               <span>Proceed to checkout</span>
-              <span>Rs.${TOTAL_PRICE}</span>
+              <span>Rs.${totalobj?.price}</span>
             </button>
           </footer>
         </CartContentWrapper>
