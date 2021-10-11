@@ -1,0 +1,30 @@
+.Category{
+    padding: 4rem 1rem;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+.Image{
+    width: 30%;
+}
+
+.Image img{
+    width: 100%;
+    height: auto;
+}
+
+.Details{
+    text-align: center;
+    flex: 1;
+}
+.Details h3{
+    font-weight: 600;
+}
+
+.Details p{
+    font-weight: 500;
+}
+
+.Details button{
+    margin: 2rem;
+}

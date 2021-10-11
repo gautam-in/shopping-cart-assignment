@@ -1,0 +1,57 @@
+footer{
+    background: var(--footerBg);
+    height: var(--footerHeight);
+}
+:is(footer,header){
+    display: flex;
+    padding: 0 1rem;
+}
+
+:is(footer,header)>*{
+    flex:1;
+}
+
+header{
+    box-shadow: 0 .125rem .25rem rgba(0,0,0,.075);
+    height: var(--headerHeight);
+}
+
+.Logo{
+    min-width: 300px;
+    margin-bottom: .5rem;
+}
+
+.Menu{
+    list-style: none;
+    flex: 1;
+}
+
+.Menu li{
+    display: inline-block;
+    padding: 1rem;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--navText);
+}
+
+.RightMenu{
+    font-weight: 500;
+    min-width: 100px;
+}
+
+.RightMenu .CartIcon{
+    width: 100%;
+    font-size: 1.5rem;
+    padding: 1rem 1.5rem;
+    background: var(--footerBg);
+}
+
+.CartIcon img{
+    width: 32px;
+}
+
+.Links span{
+margin-right: 2rem;
+padding: 1.5rem 0;
+display: inline-block;
+}
