@@ -7,6 +7,7 @@ import { LocalStorage } from "services/storage";
 import { useDispatch } from "react-redux";
 import { CartActions } from "modules/cart/redux/actions/actions";
 import "modules/products/products.scss";
+import Image from "components/atoms/image/image";
 
 interface IProps {
   product: ProductItem;
@@ -29,7 +30,7 @@ const ProductCard = (props: IProps): ReactElement => {
     <div className="product-card">
       <h2>{product.name}</h2>
       <div className="product-details">
-        <img src={product.imageURL} alt={product.name} />
+        <Image src={product.imageURL} alt={product.name} />
         <p>{product.description}</p>
       </div>
       <div className="price-and-purchase">

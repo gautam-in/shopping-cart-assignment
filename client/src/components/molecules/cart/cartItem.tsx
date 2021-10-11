@@ -4,6 +4,7 @@ import { ReactElement } from "react";
 import { useDispatch } from "react-redux";
 import { CartActions } from "modules/cart/redux/actions/actions";
 import "modules/cart/cart.scss";
+import Image from "components/atoms/image/image";
 
 interface IProps {
   product: ProductItem;
@@ -24,15 +25,15 @@ const CartItem = (props: IProps): ReactElement => {
   return (
     <div className="cart-item">
       <div className="product-image">
-        <img src={product.imageURL} alt={product.name} />
+        <Image src={product.imageURL} alt={product.name} />
       </div>
       <div className="item-details">
         <h2>{product.name}</h2>
-        <Button type={ButtonType.Secondary} customClass="count-button" id="product-count" onClick={() => handleRemove()}>
+        <Button type={ButtonType.Secondary} customClass="count-button" id="decrease-product-count" onClick={() => handleRemove()}>
           -
         </Button>
         <span className="products-number">{product.productCount}</span>
-        <Button type={ButtonType.Secondary} customClass="count-button" id="product-count" onClick={() => handleAdd()}>
+        <Button type={ButtonType.Secondary} customClass="count-button" id="oncrease-product-count" onClick={() => handleAdd()}>
           +
         </Button>
         &nbsp;

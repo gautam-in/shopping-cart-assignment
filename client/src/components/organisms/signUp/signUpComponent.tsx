@@ -18,6 +18,8 @@ interface IProps {
 const SignUpComponent = (props: IProps): React.ReactElement => {
   const dispatch = useDispatch();
   const formValidationSchema = Yup.object({
+    firstName: Yup.string().required(SignInFormValidations.emptyValidation),
+    lastName: Yup.string().required(SignInFormValidations.emptyValidation),
     email: Yup.string().matches(RegularExpression.email, SignInFormValidations.emailValidation).required(SignInFormValidations.emptyValidation),
     password: Yup.string().min(6).required(SignInFormValidations.emptyValidation),
     confirmPassword: Yup.string()
@@ -41,7 +43,7 @@ const SignUpComponent = (props: IProps): React.ReactElement => {
           <Form>
             <TextField name={"firstName"} type={InputTypes.text} placeholder={PlaceHolder.firstName} label={Label.firstName} id="firstName" />
             <TextField name={"lastName"} type={InputTypes.text} placeholder={PlaceHolder.lastName} label={Label.lastName} id="firstName" />
-            <TextField name={"email"} type={InputTypes.email} placeholder={PlaceHolder.emailId} label={Label.email} id="emailId" />
+            <TextField name={"email"} type={InputTypes.email} placeholder={PlaceHolder.emailId} label={Label.email} id="email" />
             <TextField name={"password"} type={InputTypes.password} placeholder={PlaceHolder.password} label={Label.password} id="password" />
             <TextField name={"confirmPassword"} type={InputTypes.password} placeholder={PlaceHolder.confirmPassword} label={Label.confirmPassword} id="confirmPassword" />
             <Button loadText={LoadText.posting} type={ButtonType.Primary} id="signUp" btnTyp="submit" customClass="signup-button">

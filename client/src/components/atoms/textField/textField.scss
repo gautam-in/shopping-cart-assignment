@@ -1,6 +1,4 @@
-$primary: #67c2e2;
-$white: #fff;
-$gray: #929292;
+@import "../../../assets/sass/colors.scss";
 
 .form__group {
   position: relative;
@@ -13,7 +11,7 @@ $gray: #929292;
   font-family: inherit;
   width: 100%;
   border: 0;
-  border-bottom: 1px solid $gray;
+  border-bottom: 1px solid $color-gray;
   outline: 0;
   font-size: 70%;
   padding: 7px 0;
@@ -37,7 +35,7 @@ $gray: #929292;
   display: block;
   transition: 0.2s;
   font-size: 70%;
-  color: $gray;
+  color: $color-gray;
 }
 
 .form__field:focus {
@@ -47,13 +45,13 @@ $gray: #929292;
     display: block;
     transition: 0.2s;
     font-size: 70%;
-    color: $primary;
+    color: $color-blue;
     font-weight: 700;
   }
   padding-bottom: 6px;
   font-weight: 700;
   border-width: 2px;
-  border-image: linear-gradient(to right, $primary, $primary);
+  border-image: linear-gradient(to right, $color-blue, $color-blue);
   border-image-slice: 1;
 }
 
@@ -66,7 +64,7 @@ $gray: #929292;
 }
 
 .error {
-  color: red;
+  color: $validationerror;
   font-weight: 500;
   font-size: medium;
 }

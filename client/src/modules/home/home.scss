@@ -1,3 +1,5 @@
+@import "../../assets/sass/colors.scss";
+
 .home-page {
   width: 80%;
   margin: 2% 10% 0 10%;
@@ -17,7 +19,7 @@
   border-bottom: 3px solid;
   border-image-slice: 1;
   border-width: 3px;
-  border-image-source: linear-gradient(to right, #fff, #d3d3d3, #fff);
+  border-image-source: linear-gradient(to right, $btnPrimaryText, #d3d3d3, $btnPrimaryText);
 }
 
 /* -- Categories -- */
@@ -31,7 +33,7 @@
   border-bottom: 3px solid;
   border-image-slice: 1;
   border-width: 3px;
-  border-image-source: linear-gradient(to right, #fff, #d3d3d3, #fff);
+  border-image-source: linear-gradient(to right, $btnPrimaryText, #d3d3d3, $btnPrimaryText);
 
   img {
     width: 40%;
@@ -59,8 +61,8 @@
 .category-button {
   width: auto;
   padding: 10px;
-  background-color: #d33761;
-  color: #fff;
+  background-color: $btnPrimaryBg;
+  color: $btnPrimaryText;
   border: none;
 
   &:hover,

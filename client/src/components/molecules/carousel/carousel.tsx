@@ -3,6 +3,7 @@ import React from "react";
 import Button, { ButtonType } from "components/atoms/button/button";
 import { BannerList } from "models/home";
 import "modules/home/home.scss";
+import Image from "components/atoms/image/image";
 
 interface IProps {
   getBannersData: BannerList;
@@ -32,7 +33,7 @@ const OffersCarousel = (props: IProps): React.ReactElement => {
       {getBannersData.banners.map((banner) => {
         return (
           <Carousel.Item key={banner.bannerImageAlt}>
-            <img src={banner.bannerImageUrl.substring(1)} alt={banner.bannerImageAlt} className="d-block w-100 carousel-image" />
+            <Image src={banner.bannerImageUrl.substring(1)} alt={banner.bannerImageAlt} className="d-block w-100 carousel-image" />
           </Carousel.Item>
         );
       })}

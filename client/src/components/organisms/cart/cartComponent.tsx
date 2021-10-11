@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { IState } from "store/interfaces";
 import { CartActions } from "modules/cart/redux/actions/actions";
 import "modules/cart/cart.scss";
+import Image from "components/atoms/image/image";
 
 const CartComponent = (): ReactElement => {
   const dispatch = useDispatch();
@@ -16,7 +17,7 @@ const CartComponent = (): ReactElement => {
     dispatch(CartActions.toggleModal(false));
   };
 
-  const totalPrice = () => {
+  const totalAmount = () => {
     const { products } = cartItems;
     let total = 0;
     for (let i = 0; i < products.length; i++) {
@@ -40,7 +41,7 @@ const CartComponent = (): ReactElement => {
               ))}
             </ul>
             <div className="lowest-price">
-              <img src={"/static/images/lowest-price.png"} alt={"lowest-price"} />
+              <Image src={"/static/images/lowest-price.png"} alt={"lowest-price"} />
               <span>You won't find it cheaper anywhere</span>
             </div>
           </>
@@ -57,7 +58,7 @@ const CartComponent = (): ReactElement => {
             <p>Promo code can be applied on payment page</p>
             <Button id="proceed-button" type={ButtonType.Secondary} customClass="proceed-button" onClick={() => dispatch(CartActions.toggleModal(false))}>
               <span>Proceed to Checkout</span>
-              <span>{`Rs.${totalPrice()}`}</span>&#62;
+              <span>{`Rs.${totalAmount()}`}</span>&#62;
             </Button>
           </>
         ) : (

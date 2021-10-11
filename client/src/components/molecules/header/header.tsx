@@ -13,7 +13,6 @@ import { CartActions } from "modules/cart/redux/actions/actions";
 import Cart from "modules/cart/index";
 
 const Header = (): React.ReactElement => {
-  let userEmail = LocalStorage.getStorage("email");
   let history = useHistory();
   const dispatch = useDispatch();
 
@@ -26,10 +25,10 @@ const Header = (): React.ReactElement => {
   };
 
   useEffect(() => {
-    if (!userStatus && userEmail) {
-      handleLogout();
+    if (!userStatus) {
+      dispatch(SignInActions.clearStore());
     }
-  }, [userStatus, userEmail]);
+  }, [userStatus]);
 
   const handleCartClick = () => {
     if (LocalStorage.getStorage("status")) {
@@ -83,8 +82,8 @@ const Header = (): React.ReactElement => {
           )}
         </div>
         <div className="cart-box" onClick={() => handleCartClick()}>
-          <img src={"/static/images/cart.svg"} alt="cart-icon" />
-          <span>{`${cartItems ? cartItems.products.length : 0} items`}</span>
+          <Image src={"/static/images/cart.svg"} alt="cart-icon" />
+          <span>{`${cartItems.products.length > 0 ? cartItems.products.length : 0} items`}</span>
         </div>
         <Cart />
       </div>

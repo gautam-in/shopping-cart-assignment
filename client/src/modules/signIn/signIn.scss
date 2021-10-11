@@ -1,3 +1,5 @@
+@import "../../assets/sass/colors.scss";
+
 .singin-container {
   width: 100%;
   display: flex;
@@ -8,7 +10,7 @@
 
 .signin-text {
   margin-left: 40%;
-  color: black;
+  color: $color-black;
 }
 
 .sub-text {
@@ -30,7 +32,7 @@
   width: 100%;
   margin-top: 10px;
   margin-bottom: 10px;
-  background: #d33761 !important;
+  background: $btnPrimaryBg !important;
 }
 
 @media only screen and (max-width: 767px) {

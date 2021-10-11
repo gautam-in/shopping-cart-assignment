@@ -1,3 +1,5 @@
+@import "../../assets/sass/colors.scss";
+
 .signup-container {
   width: 100%;
   display: flex;
@@ -10,6 +12,7 @@
 .signup-text {
   margin-left: 40%;
   margin-top: 20px;
+  color: $color-black;
 }
 
 .signup-box:last-child {
@@ -26,7 +29,7 @@
   width: 100%;
   margin-top: 10px;
   margin-bottom: 10px;
-  background: #d33761 !important;
+  background: $btnPrimaryBg !important;
 }
 
 @media only screen and (max-width: 767px) {
@@ -37,6 +40,7 @@
 
   .signup-text {
     margin-left: 0;
+    color: $color-black;
   }
 
   .signup-form {

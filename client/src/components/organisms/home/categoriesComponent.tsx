@@ -1,4 +1,5 @@
 import Button, { ButtonType } from "components/atoms/button/button";
+import Image from "components/atoms/image/image";
 import { CategoryItem, CategoryList } from "models/home";
 import { allRoutes } from "navigation/allRouteNames";
 import React from "react";
@@ -24,7 +25,7 @@ const CategoriesComponent = (props: IProps): React.ReactElement => {
         filteredCategories.map((category) => {
           return (
             <div className="category-card" key={category.key}>
-              <img src={category.imageUrl} alt={category.name} />
+              <Image src={category.imageUrl} alt={category.name} />
               <div className="category-text">
                 <h2>{category.name}</h2>
                 <p>{category.description}</p>

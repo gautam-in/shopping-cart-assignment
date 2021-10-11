@@ -37,4 +37,9 @@ const decrementProduct = (payload: ProductItem): IFluxStandardAction<ProductItem
   };
 };
 
+// const removeCartProducts = (): IFluxStandardAction=> {
+//   return {
+//     type: CART.DELETE.SUCCESS
+//   }
+// }
 export const CartActions = { toggleModal, addToCart, addToCartSuccess, addToCartError, decrementProduct };

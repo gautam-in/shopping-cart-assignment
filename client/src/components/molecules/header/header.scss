@@ -1,3 +1,5 @@
+@import "../../../assets/sass/colors.scss";
+
 .main-header {
   height: 13vh;
   width: 100%;
@@ -39,7 +41,7 @@
 
       &-link:hover,
       &-link:active {
-        color: #d33761;
+        color: $btnPrimaryBg;
       }
     }
   }
@@ -72,7 +74,7 @@
 
       &-link:hover,
       &-link:active {
-        color: #d33761;
+        color: $btnPrimaryBg;
       }
     }
 

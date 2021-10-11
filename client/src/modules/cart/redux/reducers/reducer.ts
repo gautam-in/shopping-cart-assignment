@@ -38,7 +38,11 @@ const cartReducer = (state = cartInitialState, action: { payload: any; type: str
       return { ...state, loading: { ...state.loading, postToCart: false }, error: { ...state.error } };
 
     case DECREMENT_PRODUCT:
-      return { ...state, loading: { ...state.loading, postToCart: false }, cartItems: { ...state.cartItems, products: removeItem(state.cartItems, action.payload) } };
+      return { ...state, loading: { ...state.loading, postToCart: false }, cartItems: { ...state.cartItems, products: removeProduct(state.cartItems, action.payload) } };
+
+    // case CART.DELETE.SUCCESS:
+    //   return { ...state, loading: { ...state.loading, postToCart: false }, cartItems: { ...state.cartItems, products: [] } };
+
     default:
       return state;
   }
@@ -46,8 +50,8 @@ const cartReducer = (state = cartInitialState, action: { payload: any; type: str
 export default cartReducer;
 
 export const totalProducts = (cartItems: ProductsList, product: ProductItem) => {
-  const found = cartItems.products.some((item) => item.id === product.id);
-  if (found === false) {
+  const existedProduct = cartItems.products.some((item) => item.id === product.id);
+  if (existedProduct === false) {
     cartItems.products.push({ ...product, productCount: 1 });
   } else {
     const index = cartItems.products.findIndex((item) => item.id === product.id);
@@ -56,7 +60,7 @@ export const totalProducts = (cartItems: ProductsList, product: ProductItem) => 
   return cartItems.products;
 };
 
-export const removeItem = (cartItems: ProductsList, product: ProductItem) => {
+export const removeProduct = (cartItems: ProductsList, product: ProductItem) => {
   const { products } = cartItems;
   const index = cartItems.products.findIndex((item) => item.id === product.id);
   if (products[index].productCount > 1) {
