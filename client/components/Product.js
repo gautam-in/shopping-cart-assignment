@@ -15,7 +15,7 @@ export function Product({item}) {
     }
     return (<ProductCardStyle>
             <h4> {item.name}</h4>
-            <img src={item.imageURL} alt={item.name} />
+            <img loading="lazy" src={item.imageURL} alt={item.name} />
             <p></p>
             <div className="flex-row">
               <label>MRP {formatMoney(item.price)} </label>

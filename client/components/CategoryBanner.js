@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import Image from 'next/image'
 
 const CamgBannerStyle = styled.div `
   display: flex;
@@ -53,6 +54,6 @@ export function CategoryBanner({item, index}) {
                   <p>{item.description}</p>
                   <button>Explore {item.name}</button>
               </div>
-              <img src={item.imageUrl} alt={item.name} />
+              <img loading="lazy" src={item.imageUrl} alt={item.name} width="100px" height="100px" />
     </CamgBannerStyle>);
 }

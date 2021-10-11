@@ -29,6 +29,7 @@ function CartItem({ item }) {
   return (
     <CartItemStyles>
       <img
+      loading="lazy"
         width="100"
         src={item.imageURL}
         alt={item.name}

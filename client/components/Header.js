@@ -38,7 +38,7 @@ export default function Header() {
   return (
     <HeaderStyles>
       <div className="bar">
-         <img src="/static/images/logo.png" />
+         <img loading="lazy" src="/static/images/logo.png" loading="lazy" alt="Sabka Bazar" width="100px" height="50px"/>
          <Nav />
       </div>
       <div className="gradient separator"></div>
