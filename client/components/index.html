@@ -2,6 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
     <title>Sabka Bazaar</title>
     <link rel="shortcut icon" href="#">
@@ -10,40 +11,15 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 <body>
-    <header>
-        <div class='inner_header'>
-        <div class='logo_container'>
-            <img src='../../static/images/logo.png' height="80%" width="100%" alt='Sabka Bazaar logo'/>
-        </div>
-        <nav class='navigation'>
-            <ul class='nav_ul'>
-                <li><a>Home</a></li>
-                <li><a>Products</a></li>
-            </ul>
-        </nav>
-        <div class='cart_container'>
-            <nav>
-                <ul class='nav_ul'>
-                    <li><a>Sign In</a></li>
-                    <li><a>Register</a></li>             
-                </ul>
-            </nav>
-            <div class='cart_item'>
-                <img src = "../../static/images/cart.svg" height='20px' width='20px' alt="My Happy SVG"/>
-                <span>0 Items</span>
-            </div>    
-        </div>
-    </div>
-    </header>
+    <header id='header'></header>
     <main>
-       <div id='bannerList' class='bannerContainer'>
-       </div>
+       <div id='bannerList' class='bannerContainer'></div>
+       <div id='categoriesList' class='containerCategory'></div>
     </main>
-    <footer class='footer'>
-        <div>
-            <span>Copyright © 2011-2018 Sabka Bazaar Grocery Supplies Pvt Ltd</span>
-        </div>
-    </footer>
+    <footer id='footer' class='footer_style'></footer>
+    <script type="module" src="../scripts/getHeader.js"></script>
     <script type="module" src="../scripts/getBanners.js"></script>
+    <script type="module" src="../scripts/getCategories.js"></script>
+    <script type="module" src="../scripts/getFooter.js"></script>
 </body>
 </html>

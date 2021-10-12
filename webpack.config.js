@@ -59,6 +59,21 @@ module.exports = {
       filename: "./index.html",
       excludeChunks: ["server"],
     }),
+    new HtmlWebPackPlugin({
+      template: "./client/components/productList.html",
+      filename: "./productList.html",
+      excludeChunks: ["server"],
+    }),
+    new HtmlWebPackPlugin({
+      template: "./client/components/login.html",
+      filename: "./login.html",
+      excludeChunks: ["server"],
+    }),
+    new HtmlWebPackPlugin({
+      template: "./client/components/register.html",
+      filename: "./register.html",
+      excludeChunks: ["server"],
+    }),
     new MiniCssExtractPlugin({
       filename: "[name].css",
     }),
