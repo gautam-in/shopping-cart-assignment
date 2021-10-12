@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cart</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="./cart.css" />
+    <link rel="stylesheet" href="../loginPage/index.css" />
+  </head>
+  <body>
+    <header>
+      <div class="container d-flex">
+        <div class="left d-flex">
+          <img
+            src="../../static/images/logo.png"
+            alt=""
+            height="80%"
+            width="65%"
+          />
+          <ul class="main-nav">
+            <li>
+              <a href="../homePage/home.html" class="nav-links">Home</a>
+            </li>
+            <li>
+              <a href="../productsPage/products.html" class="nav-links"
+                >Products</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="right">
+          <div class="login-links">
+            <a href="../loginPage/index.html">SignIn</a> |
+            <a href="../registerPage/register.html">Register</a>
+          </div>
+          <ul>
+            <li>
+              <a href="../cartPage/cart.html" class="nav-links">
+                <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                <span class="cart-count">0</span> Items
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </header>
+
+    <section class="container">
+      <div class="shopping-cart">
+        <div class="column-labels">
+          <label class="product-image">Image</label>
+          <label class="product-details">Product Name</label>
+          <label class="product-price">Price</label>
+          <label class="product-quantity">Quantity</label>
+          <label class="product-line-price">Total</label>
+        </div>
+        <div class="cart-products"></div>
+        <div class="ads">
+          <img src="../../static/images/lowest-price.png" alt="Lowest Price">
+          <p>You won't find it cheaper anywhere else.</p>
+        </div>
+      </div>
+    </section>
+    <script src="./cart.js"></script>
+  </body>
+</html>
