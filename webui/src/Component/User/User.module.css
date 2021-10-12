@@ -1,0 +1,11 @@
+.LoginContainer{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    max-width: 800px;
+    margin: auto;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 50vh;
+}
+

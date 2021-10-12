@@ -1,8 +1,8 @@
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import css from './Nav.module.css';
 function Nav(){
     return <nav className="wrapper d-flex flex-wrap flex-row align-items-end">
-        <div className={css.Logo}><img src="/static/images/logo.png" alt="Logo" /></div>
+        <div className={css.Logo}><Link to="/"><img src="/static/images/logo.png" alt="Logo" /></Link></div>
         <ul className={css.Menu}>
             <li><NavLink exact to="/">Home</NavLink></li>
             <li><NavLink to="/products">Products</NavLink></li>

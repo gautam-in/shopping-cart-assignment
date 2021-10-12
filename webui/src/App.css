@@ -1,5 +1,6 @@
 html{
     font-size: 10px;
+    --themeRed:#D00155;
     --headerHeight:100px;
     --footerHeight:32px;
     --headerBg:#fff;

@@ -1,9 +1,11 @@
 import { useState } from 'react';
 import {useQuery} from 'react-query';
 import { getBanner } from '../../Services/http';
+import { sortAsc } from '../../Utils';
 import css from './Slider.module.css';
 function Slider(){
-    const {data=[],isError,error,isLoading}=useQuery('getBanner',getBanner);
+    let {data=[],error,isLoading}=useQuery('getBanner',getBanner);
+    data=data.filter(item=>item.isActive).sort(sortAsc); // Only active banners and in assending order
     const bannerCount=data.length;
 
     const [posX, setposX] = useState(0);
@@ -40,8 +42,10 @@ function Slider(){
             </div>
             <div className={css.SliderDots}>
                 {
-                    data.map((item,ix)=><span className={Math.abs(posX) / 100 === ix?css.Selected:''}></span>)
+                    data.map((item,ix)=><span  key={item.id} className={Math.abs(posX) / 100 === ix?css.Selected:''}></span>)
                 }
+                {isLoading && <p>Loading...</p>}
+                {error && <p>{error.message}</p>}
             </div>
         </section>
 }

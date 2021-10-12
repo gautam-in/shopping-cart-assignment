@@ -15,3 +15,7 @@ export const getBanner=async ()=>{
 export const getCategories=async()=>{
     return await API({path:'categories'});
 }
+
+export const getProducts=async()=>{
+    return await API({path:'products'});
+}

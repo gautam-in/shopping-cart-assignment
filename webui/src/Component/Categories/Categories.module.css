@@ -28,3 +28,29 @@
 .Details button{
     margin: 2rem;
 }
+
+.CategoryList{
+   list-style: none;
+   padding: 0;
+   margin: 0;
+}
+
+.CategoryList li a{
+    padding: 1rem;
+    border-bottom: 1px solid #ccc;
+    font-size: 1.5rem;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+}
+
+.CategoryList :is(li:hover,li.Active){
+    background: var(--themeRed);
+    cursor: pointer;
+    color: #fff;
+    transition: all .2s ease-in-out;
+}
+
+.CategoryList a:hover{
+    color: inherit;
+}

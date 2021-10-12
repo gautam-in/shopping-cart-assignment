@@ -1,0 +1,75 @@
+.InputContainer{
+    position: relative;
+    margin: 1rem 0;
+}
+
+.InputContainer label{
+    position: absolute;
+    left: 1px;
+    top: -1rem;
+    transition: all .2s ease-in-out;
+    cursor:text;
+    color: #aaa;
+    font-size: 1.5rem;
+    font-weight: 400;
+    pointer-events: none;
+}
+
+.InputContainer input{
+    width: 100%;
+    display: block;
+    font-size: 1.5rem;
+    border: none;
+    border-bottom: 1.5px solid #ccc;
+    transition: all .2s ease-in-out;
+    padding: 1rem 0;
+    background: none;
+}
+
+input[value=""] ~label{
+    top: 1rem;
+}
+
+input:invalid{
+    /* border-bottom: 1.5px solid var(--themeRed); */
+}
+
+input:invalid ~ label{
+    /* color: var(--themeRed); */
+}
+
+input:focus,input:active{
+    outline: none;
+    background: none;
+}
+
+.InputContainer :is(input:focus,input:valid)~label{
+    top: -1rem;
+    color: #50DAE2;
+    font-size: 1.2rem;
+}
+
+.Bar{
+    display: none;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    background:#50DAE2;
+   
+}
+
+.InputContainer input:focus ~ .Bar{
+    display: inline-block;
+    transition: all .2s ease-in-out;
+}
+
+/* Change the white to any color */
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active{
+    box-shadow: 0 0 0 30px white inset ;
+    -webkit-box-shadow: 0 0 0 30px white inset ;
+}

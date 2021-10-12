@@ -1,0 +1,29 @@
+.Button{
+    background: var(--themeRed);
+    border: 1px solid var(--themeRed);
+    font-weight: 600;
+    color: #fff;
+}
+
+.Button a:hover{
+    color: inherit;
+}
+
+.Button:hover{
+    opacity: .8;
+    transition: all .5s ease-in-out;
+}
+
+.Default{
+    padding: 1rem 1.5rem;
+}
+
+.Small{
+    padding: .3rem .5rem;
+    font-size: 1rem;
+}
+
+.Block{
+    width: 100%;
+    font-size: 1.5rem;
+}
