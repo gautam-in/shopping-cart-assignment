@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@300;400;500;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Merriweather Sans', sans-serif;
+}
+
+.carousel {
+  box-shadow: 0 2px 10px 0 rgb(0 0 0 / 5%);
+  background-color: #fff;
+  padding: 0;
+  border-bottom: 1px solid #eceef3;
+}
+
+.carousel-item img {
+  max-height: 250px;
+}
+
+.product-filter {
+  display: flex;
+  background-color: #fff;
+  margin-top: 100px;
+  flex-direction: column;
+}
+.product-filter h1 {
+  flex-grow: 1;
+}
+
+.product-filter .collection-sort {
+  display: flex;
+  flex-direction: column;
+}
+.products {
+  display: flex;
+  flex-wrap: wrap;
+}
+.product-card {
+  padding: 2%;
+  flex: 1 100%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin: 15px;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-evenly;
+}
+
+.product-card img {
+  max-width: 40%;
+  height: auto;
+}
+
+.product-card.right {
+  flex-direction: row;
+}
+
+.product-card.right img {
+  float: right;
+}
+
+.product-card a {
+  color: #fff;
+  text-decoration: none;
+}
+.product-card .product-info {
+  margin-top: auto;
+  text-align: center;
+}
+.product-card .product-info h5 {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+.product-card .product-info h6 {
+  font-size: 16px;
+  margin-top: 20px;
+}
+.product-card .product-info p {
+  margin-top: 20px;
+  font-size: 12px;
+  line-height: 1.5;
+  padding: 10px;
+  /* text-align: left !important; */
+}
+.product-card .product-info button {
+  border: none;
+  outline: 0;
+  padding: 12px;
+  color: white;
+  background-color: #e6005c;
+  text-align: center;
+  cursor: pointer;
+  width: 50%;
+  font-size: 14px;
+}
+@media screen and (max-width: 600px) {
+
+  .product-card .product-info {
+    margin-top: auto;
+ }
+  .product-card .product-info h5 {
+    font-size: 16px;
+    margin-bottom: 20px;
+ }
+  .product-card .product-info h6 {
+    font-size: 16px;
+    margin-top: 20px;
+ }
+  .product-card .product-info p {
+    margin-top: 20px;
+    font-size: 12px;
+    line-height: 1.5;
+    padding: 10px;
+    text-align: left !important;
+ }
+  .product-card .product-info button {
+    border: none;
+    outline: 0;
+    padding: 10px;
+    color: white;
+    background-color: #e6005c;
+    text-align: center;
+    cursor: pointer;
+    width: 90% !important;
+    font-size: 14px;
+ }
+  .product-card img {
+    max-width: 80% !important;
+    height: auto;
+    float: right;
+    margin-top: 80px;
+ }
+}

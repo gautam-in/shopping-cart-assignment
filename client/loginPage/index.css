@@ -1,0 +1,143 @@
+@import url("https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@300;400;500;600&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Merriweather Sans", sans-serif;
+}
+
+.mb-30 {
+  margin-bottom: 30px;
+}
+
+header {
+  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 5%);
+  background-color: #fff;
+  padding: 1rem 1.15rem;
+  border-bottom: 1px solid #eceef3;
+  padding-bottom: 0;
+}
+
+header .left {
+  width: 20%;
+  align-items: baseline;
+}
+
+header .container {
+  align-items: baseline;
+  position: relative;
+}
+
+header ul {
+  list-style-type: none;
+}
+
+header ul li a {
+  text-decoration: none;
+  padding: 0 10px 0 0;
+  color: gray;
+}
+
+.login-links {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.login-links a {
+  text-decoration: none;
+  color: gray;
+}
+
+a:hover {
+  color: rgb(71, 71, 71);
+  transform: translateY(-10px);
+}
+
+.container {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.d-flex {
+  display: flex;
+  justify-content: space-between;
+}
+
+input {
+  font-size: 1em;
+  width: 100%;
+  display: block;
+  margin: 10px 0;
+  padding: 10px 0px;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid #000;
+}
+
+.main-nav {
+  margin-left: 20%;
+  display: flex;
+}
+
+header .right {
+  padding: 1.3%;
+  background-color: lightgray;
+}
+
+.fa-shopping-cart {
+  color: #d0217f;
+  font-size: 1.3rem;
+}
+
+.login-row {
+  height: 70vh;
+  padding: 2% 0 0 0;
+}
+
+.login {
+  display: flex;
+  align-items: center;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: space-between;
+  flex-grow: 2;
+}
+
+.login .right {
+  flex-grow: 1;
+  align-content: flex-end;
+  margin-left: 5%;
+}
+
+.btn {
+  display: block;
+  width: 80%;
+  padding: 10px;
+  background: #e6005c;
+  color: #fff;
+  border: 1px solid #e6005c;
+}
+
+.footer-content {
+  height: 3rem;
+  background-color: lightgrey;
+  display: flex;
+  align-items: center;
+}
+
+@media screen and (max-width: 600px) {
+  .main-nav,
+  .login-links {
+    display: none !important;
+  }
+
+  header img {
+    width: 80% !important;
+  }
+}
