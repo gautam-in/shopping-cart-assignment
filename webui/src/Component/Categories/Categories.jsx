@@ -6,7 +6,6 @@ import css from './Categories.module.css';
 function Categories(){
     let {data,error,isLoading}=useCategory();
     return <section>
-        {isLoading && <p>Loading category data..</p>}
         {error && <p>{error.message}</p>}
         {
             data.map((category,ix)=><Category key={category.id} category={category} ix={ix+1}/>)

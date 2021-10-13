@@ -1,7 +1,9 @@
 .InputContainer{
     position: relative;
     margin: 1rem 0;
+    margin-bottom: 3rem;
 }
+
 
 .InputContainer label{
     position: absolute;
@@ -28,14 +30,6 @@
 
 input[value=""] ~label{
     top: 1rem;
-}
-
-input:invalid{
-    /* border-bottom: 1.5px solid var(--themeRed); */
-}
-
-input:invalid ~ label{
-    /* color: var(--themeRed); */
 }
 
 input:focus,input:active{
@@ -72,4 +66,16 @@ input:-webkit-autofill:focus,
 input:-webkit-autofill:active{
     box-shadow: 0 0 0 30px white inset ;
     -webkit-box-shadow: 0 0 0 30px white inset ;
+}
+
+.Error{
+    position: absolute;
+    top: 100%;
+    left: 0;
+    color: var(--themeRed);
+    font-size: 1rem;
+}
+
+.InputContainer[data-error="true"] label{
+    color: var(--themeRed)!important;
 }

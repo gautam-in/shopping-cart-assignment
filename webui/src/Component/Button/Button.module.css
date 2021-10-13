@@ -5,6 +5,11 @@
     color: #fff;
 }
 
+.Button:disabled,.Button:disabled:hover{
+    cursor: not-allowed;
+    opacity: .5;
+}
+
 .Button a:hover{
     color: inherit;
 }
@@ -25,5 +30,5 @@
 
 .Block{
     width: 100%;
-    font-size: 1.5rem;
+    font-size: 1.4rem;
 }

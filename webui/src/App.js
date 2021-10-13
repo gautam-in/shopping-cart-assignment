@@ -7,21 +7,26 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import SigninPage from "./Container/Signin";
 import SignupPage from "./Container/Signup";
+import DataProvider from "./Context/dataContext";
+import Checkout from "./Component/Cart/Checkout";
 
 const client=new QueryClient();
 function App() {
   return (
     <BrowserRouter>
     <QueryClientProvider client={client}>
-     <Layout>
-      <Switch>
-        <Route path="/products/:category?" component={ProductsPage}/>
-        <Route path="/signin" component={SigninPage}/>
-        <Route path="/register" component={SignupPage}/>
-        {/* Redirect all other URLs to Home page */}
-        <Route component={HomePage}/> 
-      </Switch>
-      </Layout>
+    <DataProvider>
+      <Layout>
+        <Switch>
+          <Route path="/products/:category?" component={ProductsPage}/>
+          <Route path="/signin" component={SigninPage}/>
+          <Route path="/register" component={SignupPage}/>
+          <Route path="/checkout" component={Checkout}/>
+          {/* Redirect all other URLs to Home page */}
+          <Route component={HomePage}/> 
+        </Switch>
+        </Layout>
+      </DataProvider>
       </QueryClientProvider>
     </BrowserRouter>
   );
