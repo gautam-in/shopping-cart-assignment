@@ -1,0 +1,84 @@
+footer{
+    background: var(--footerBg);
+    height: var(--footerHeight);
+}
+:is(footer,header){
+    display: flex;
+    padding: 0 1rem;
+    
+}
+
+:is(footer,header)>*{
+    flex:1;
+    justify-content: space-between;
+}
+
+header{
+    box-shadow: 0 .125rem .25rem rgba(0,0,0,.075);
+    max-height: var(--headerHeight);
+}
+
+.Logo{
+    margin-bottom: .5rem;
+}
+
+.Logo img{
+    max-width: 100%;
+    max-height: auto;
+}
+
+
+@media all and (min-width:641px){
+    .Logo{
+        min-width: 20%;
+    }
+}
+
+@media all and (max-width:641px) {
+    .Logo{
+        max-width: 100px;
+    }
+
+    .Menu,.Links{
+       display: none;
+    }
+}
+
+.Menu{
+    list-style: none;
+    flex: 1;
+}
+
+.Menu li{
+    display: inline-block;
+    padding: 1rem;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--navText);
+}
+
+.RightMenu{
+    font-weight: 500;
+    min-width: 100px;
+}
+
+.CartIcon{
+    cursor: pointer;
+}
+
+.RightMenu .CartIcon{
+    width: 100%;
+    font-size: 1.5rem;
+    padding: 1rem 1.5rem;
+    background: var(--footerBg);
+}
+
+.CartIcon img{
+    width: 32px;
+}
+
+.Links span{
+margin-right: 2rem;
+padding: .9rem 0;
+display: inline-block;
+}

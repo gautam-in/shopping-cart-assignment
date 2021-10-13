@@ -1,0 +1,26 @@
+.LoginContainer{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    max-width: 800px;
+    margin: auto;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 50vh;
+    padding-top: 2rem;
+}
+
+.ErrorText,.SuccessText{
+    font-size: 1.4rem;
+    padding: 2rem .2rem;
+    height: 30px;
+}
+
+.ErrorText{
+    color: var(--themeRed);
+   
+}
+
+.SuccessText{
+    color: #508823;
+}

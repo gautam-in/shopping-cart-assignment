@@ -1,0 +1,130 @@
+.CartContainer{
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0,0,0,.5);
+    height: 100%;
+    width: 100%;
+    z-index: 10;
+    transition: all .5s ease-in-out;
+}
+
+.Cart{
+    background: #fff;
+    height: calc(100% - 90px);
+    width: 360px;
+    bottom: 0;
+    position: absolute;
+    margin: auto;
+    right: 0;
+    z-index: 11;
+    display: flex;
+    flex-direction: column;
+}
+
+.Checkout{
+    background: #fff;
+    height: calc(100% - 90px);
+    bottom: 0;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+}
+
+.CartBody{
+    background: var(--footerBg);
+    padding: 1rem 0;
+    flex: 1;
+    overflow: auto;
+}
+
+.CartHead{
+    background: #000;
+    color: #fff;
+    padding: 1rem;
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.Close{
+    cursor: pointer;
+    font-size: 2.5rem;
+}
+
+.Close:hover{
+    opacity: .6;
+}
+
+.CartFooter{
+    background: #fff;
+    padding: 1rem;
+    border-top: 1px solid #eee;
+    
+}
+.CartFooter button{
+    display: flex;
+    justify-content: space-between;
+}
+
+.CartFooter div{
+    flex-basis: 100%;
+}
+
+.CartFooter p{
+    font-weight: 400;
+    text-align: center;
+}
+
+.Banner{
+    margin: 1rem;
+    background: #fff;
+    display: flex;
+    padding: .5rem;
+    border-radius: 2px;
+    align-items: center;
+    justify-content: space-around;
+    font-size: 1rem;
+}
+.Banner img{
+    max-width: 100%;
+    height: auto;
+}
+
+.CartItem{
+    background: #fff;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.CartItem output{
+    float: right;
+    font-weight: 500;
+}
+
+.CartItem span{
+    padding: 1rem;
+}
+
+.CartItem p{
+    font-weight: 500;
+}
+
+.CartItem button{
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+}
+
+.CartItem img{
+    max-width: 64px;
+}
+
+.CartItem .Details{
+    flex-basis: 70%;
+}

@@ -1,0 +1,176 @@
+.ProductWrapper{
+    display: flex;
+    flex-direction: row;
+}
+
+
+.Category{
+    width: 250px;
+    flex-grow: 0;
+    flex-shrink: 0;
+    background: var(--footerBg);
+    padding-top: 2rem;
+}
+
+.ProductContainer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-top: 2rem;
+}
+
+.Product{
+    width: 23%;
+    border-bottom: 2px dashed var(--footerBg);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin: 1rem;
+    margin-bottom: 10rem;
+}
+
+.Product:hover{
+    box-shadow: 0 .125rem .25rem rgba(0,0,0,.075);
+}
+
+.Name{
+    flex: 1;
+}
+
+.Image{
+    flex: 1;
+}
+
+.Image img{
+    width: 100%;
+    height: auto;
+}
+
+.Info{
+background: var(--footerBg);
+padding:.8rem;
+text-align: justify;
+margin: 2rem auto;
+font-weight: 400;
+flex-basis: 100px;
+max-height: 100px;
+}
+
+.Info p{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 4; /* number of lines to show */
+    -webkit-box-orient: vertical;
+}
+
+.Footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.FooterMobile{
+    display: none;
+}
+
+.Price{
+    font-weight: 500;
+    font-size: 1.5rem;
+    padding-left: 1rem;
+}
+
+
+@media all and (max-width:641px) {
+    .ProductWrapper{
+        flex-direction: column;
+    }
+    .Category{
+        min-width: 100%;
+        height: 60px;
+        overflow: hidden;
+    }
+    .Product{
+        min-width: 100%;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        align-items: flex-start;
+        padding: 1rem;
+        margin-bottom: 2rem;
+    }
+    .Product .Name{
+        width: 100%;
+        flex-basis: 100%;
+    }
+    .Image{
+        flex-basis: 40%;
+    }
+
+    .Image img{max-width: 100px;}
+
+    .Info{
+        margin: 0;
+        flex-basis: 50%;
+    }
+
+    .FooterMobile{
+        display: block;
+        width: 50%;
+    }
+
+    .FooterMobile button{
+        width: 100%;
+    } 
+
+    .Footer{
+        display: none;
+    }
+}
+
+
+@media all and (min-width:641px) and (max-width:1200px) {
+    .Category{
+        width: 180px;
+    }
+    .Product{
+        min-width: 45%;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        align-items: flex-start;
+        padding: 1rem;
+        margin-bottom: 2rem;
+        
+    }
+    .Product .Name{
+        width: 100%;
+        flex-basis: 100%;
+    }
+    .Image{
+        flex-basis: 48%;
+    }
+    .Info{
+        flex-basis: 50%;
+    }
+
+    .Image img{max-width: 100px;}
+
+    .Info{
+        margin: 0;
+    }
+
+    .FooterMobile{
+        display: block;
+        width: 100%;
+        margin: 1rem 0;
+    }
+
+   .FooterMobile button{
+       width: 100%;
+   } 
+    .Footer{
+        display: none;
+    }
+}
