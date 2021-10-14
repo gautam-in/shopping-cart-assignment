@@ -4,8 +4,8 @@
   "description": "This is a shopping cart coding exercise",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "rmdir /Q /S dist & webpack --mode development --config webpack.server.config.js & webpack --mode development",
+    "buildDev": "rmdir /Q /S dist & webpack --mode development --config webpack.server.config.js & webpack --mode development --config webpack.dev.config.js",
+    "buildProd": "rmdir /Q /S dist & webpack --mode production --config webpack.server.config.js & webpack --mode production --config webpack.prod.config.js",
     "start": "node ./dist/server.js"
   },
   "author": "",
@@ -35,6 +35,7 @@
     "nodemon": "^2.0.13",
     "sass-loader": "^12.1.0",
     "style-loader": "^3.3.0",
+    "terser-webpack-plugin": "^5.2.4",
     "webpack": "^5.58.1",
     "webpack-cli": "^4.9.0",
     "webpack-dev-middleware": "^5.2.1",

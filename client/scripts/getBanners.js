@@ -73,7 +73,7 @@ function bannerCarousal(banners) {
 
   let prev_text = document.createElement("span");
   prev_text.setAttribute("class", "sr-only");
-  prev_text.innerHTML= "Previous";
+  prev_text.innerHTML = "Previous";
 
   prev_button.append(prev_text);
 

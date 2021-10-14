@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <title>Register</title>
+    <link rel="shortcut icon" href="#" />
+  </head>
+  <body>
+    <header id="header"></header>
+    <main class="main_login">
+      <div class="login_container">
+        <div class="text_div">
+          <h2>Signup</h2>
+          <h5>We do not share your personal details with anyone.</h5>
+        </div>
+        <div class="text_div">
+          <form name='register' class="login_form">
+            <label class="form_label" for="firstName">First Name</label>
+            <input class="form_input" type="text" id="firstName" name="firstName" required/>
+            <label class="form_label" for="lastName">Last Name</label>
+            <input class="form_input" type="text" id="lastName" name="lastName" />
+            <label class="form_label" for="email">Email</label>
+            <input class="form_input" type="email" id="email" name="email" required/>
+            <label class="form_label" for="password">Password</label>
+            <input class="form_input" type="password" id="password" name="password" required/>
+            <label class="form_label" for="confirmPassword">Confirm Password</label>
+            <input class="form_input" type="password" id="confirmPassword" name="confirmPassword" required/>
+            <button class="login_button">Signup</button>
+          </form>
+        </div>
+      </div>
+    </main>
+    <footer id="footer" class="footer_style"></footer>
+    <script type="module" src="../scripts/getHeader.js"></script>
+    <script type="module" src="../scripts/getFooter.js"></script>
+  </body>
+</html>

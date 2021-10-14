@@ -37,7 +37,7 @@
 
 .categoryImage {
   height: 100%;
-  width: 70%;
+  width: 60%;
   @media screen and (max-width: 768px) {
     height: 80%;
     width: 70%;
@@ -59,11 +59,17 @@
 
 .categoryButton {
   margin-top: 10px;
-  padding: 5px;
+  padding: 5px 10px 5px 10px;
   border: none;
   background-color: #c90c63f2;
+  color: white;
+  font-family: sans-serif;
+  font-size: smaller;
   @media screen and (max-width: 768px) {
     margin-top: 5px;
+  }
+  @media screen and (max-width: 480px) {
+    font-size: x-small;
   }
 }
 
@@ -75,11 +81,11 @@
   }
 }
 
-.categoryButton span {
-  color: white;
-  font-family: sans-serif;
-  font-size: smaller;
-  @media screen and (max-width: 480px) {
-    font-size: x-small;
-  }
-}
+// .categoryButton span {
+//   color: white;
+//   font-family: sans-serif;
+//   font-size: smaller;
+//   @media screen and (max-width: 480px) {
+//     font-size: x-small;
+//   }
+// }

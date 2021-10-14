@@ -30,7 +30,8 @@ function categoryList(categoriesArr) {
 
       let img = document.createElement("img");
       img.setAttribute("src", categories[i].imageUrl);
-      img.setAttribute("class","categoryImage");
+      img.setAttribute("class", "categoryImage");
+      img.setAttribute("alt",categories[i].name);
 
       imageContainer.append(img);
 
@@ -41,18 +42,15 @@ function categoryList(categoriesArr) {
       categoryName.setAttribute("class", "desc h4");
       categoryName.innerHTML = categories[i].name;
 
-      let categoryDesc = document.createElement("h6");
-      categoryDesc.setAttribute("class","categoryDescription")
+      let categoryDesc = document.createElement("span");
+      categoryDesc.setAttribute("class", "categoryDescription");
       categoryDesc.innerHTML = categories[i].description;
 
       let categoryButton = document.createElement("button");
       categoryButton.setAttribute("class", "categoryButton");
+      categoryButton.setAttribute("id", categories[i].id);
+      categoryButton.innerHTML = `Explore ${categories[i].key}`;
 
-      let buttonName = document.createElement("span");
-      buttonName.setAttribute("class", "categoryButton span");
-      buttonName.innerHTML = `Explore ${categories[i].key}`;
-
-      categoryButton.append(buttonName);
       descContainer.append(categoryName);
       descContainer.append(categoryDesc);
       descContainer.append(categoryButton);
@@ -69,3 +67,14 @@ function categoryList(categoriesArr) {
     }
   }
 }
+
+async function getCategoryProducts(e) {
+  if (e.target && e.target.nodeName == "BUTTON") {
+    window.location.href = "./productList.html";
+    document.getElementById(e.target.id).click();
+  }
+}
+
+document
+  .getElementById("categoriesList")
+  .addEventListener("click", getCategoryProducts);

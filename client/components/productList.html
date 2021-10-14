@@ -8,17 +8,18 @@
   </head>
   <body>
     <header id="header"></header>
-    <main style="display: flex">
-      <div style="width: 85%; margin: 0 auto; display: flex">
-        <div style="width: 20%; background-color: #d1d0d0b3;display: flex;justify-content: center;">
-          <ul id="product_navigation" style="list-style-type: none"></ul>
-        </div>
-        <div id="product_container" style="width: 80%; display: flex; justify-content: start; flex-wrap: wrap;"></div>
+    <main class='main_container'>
+      <div class='main_div'>
+        <nav class='nav_div'>
+          <ul id="product_navigation" class='product_navigation'></ul>
+        </nav>
+        <div id="product_container" class='products_container'></div>
       </div>
     </main>
     <footer id="footer" class="footer_style"></footer>
     <script type="module" src="../scripts/getHeader.js"></script>
     <script type="module" src="../scripts/getProductList.js"></script>
+    <script type='module' src='../scripts/cart.js'></script>
     <script type="module" src="../scripts/getFooter.js"></script>
   </body>
 </html>

@@ -1,9 +1,15 @@
 const path = require('path')
 const webpack = require('webpack')
-const nodeExternals = require('webpack-node-externals')
-module.exports = {
+const nodeExternals = require('webpack-node-externals');
+
+module.exports = (env, argv) => {
+  const SERVER_PATH = (argv.mode === 'production') ?
+    './server/app-prod.js' :
+    './server/app-dev.js';
+
+return ({
   entry: {
-    server: './server/app.js',
+    server: SERVER_PATH,
   },
   output: {
     path: path.join(__dirname, 'dist'),
@@ -29,4 +35,5 @@ module.exports = {
       }
     ]
   }
+});
 }

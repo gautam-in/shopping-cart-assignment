@@ -7,10 +7,7 @@ const CopyPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   entry: {
-    main: [
-      "babel-polyfill","webpack-hot-middleware/client?path=/__webpack_hmr&timeout=20000",
-      "./client/index.js",
-    ],
+    main: ["babel-polyfill","./client/index.js"]
   },
   output: {
     path: path.join(__dirname, "dist"),
@@ -18,7 +15,6 @@ module.exports = {
     filename: "[name].js",
     assetModuleFilename: "images/[name][ext][query]",
   },
-  mode: "development",
   target: "web",
   devtool: "source-map",
   module: {
@@ -35,7 +31,7 @@ module.exports = {
         use: [
           {
             loader: "html-loader",
-            //options: { minimize: true }
+            options: { minimize: true }
           },
         ],
       },
@@ -74,10 +70,14 @@ module.exports = {
       filename: "./register.html",
       excludeChunks: ["server"],
     }),
+    new HtmlWebPackPlugin({
+      template: "./client/components/cart.html",
+      filename: "./cart.html",
+      excludeChunks: ["server"],
+    }),
     new MiniCssExtractPlugin({
       filename: "[name].css",
     }),
-    new webpack.HotModuleReplacementPlugin(),
     new webpack.NoEmitOnErrorsPlugin(),
     new CopyPlugin({
       patterns: [

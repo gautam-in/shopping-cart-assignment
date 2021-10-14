@@ -3,7 +3,7 @@ const webpack = require('webpack')
 const express = require('express')
 const webpackDevMiddleware = require('webpack-dev-middleware')
 const webpackHotMiddleware = require('webpack-hot-middleware')
-const config = require("../webpack.config.js")
+const config = require("../webpack.dev.config")
 const banners = require('./banners/index.get.json');
 const products = require('./products/index.get.json');
 const categories = require('./categories/index.get.json');
@@ -12,8 +12,6 @@ const app = express(),
   DIST_DIR = __dirname,
   HTML_FILE = path.join(DIST_DIR, "index.html"),
   compiler = webpack(config);
-
-  console.log('DIST_DIR',DIST_DIR);
 
 const PORT = process.env.PORT || 5000;
 
