@@ -1,0 +1,48 @@
+.bannerContainer {
+  width: 85%;
+  height: 38vh;
+  display: block;
+  margin: 0 auto;
+  box-shadow: 0px 5px 5px #e9e3e3;
+  margin-bottom: 10px;
+  @media screen and (max-width: 768px) {
+    width: 100%;
+    height: 30vh
+  }
+  @media screen and (max-width: 480px) {
+    width: 100%;
+    height: 22vh
+  }
+  @media screen and (max-width: 360px) {
+    width: 100%;
+    height: 20vh
+  }
+}
+
+.item {
+  height: 38vh;
+  @media screen and (max-width: 768px) {
+    height: 30vh
+  }
+  @media screen and (max-width: 480px) {
+    height: 22vh
+  }
+  @media screen and (max-width: 360px) {
+    // width: 100%;
+    height: 20vh
+  }
+}
+
+.carousel .carousel-indicators li {
+  background-color: #c5c0c0;
+  width: 0.75rem;
+  height: 0.75rem;
+  margin-right: 5px;
+}
+
+.carousel .carousel-indicators li.active {
+  background-color: #c5c0c0;
+  width: 1rem;
+  height: 1rem;
+  margin-right: 5px;
+}
