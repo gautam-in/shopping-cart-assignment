@@ -1,0 +1,204 @@
+@import "../../Assets/style/basestyle.scss";
+
+.header-section {
+  width: 100%;
+  box-shadow: 0px 3px 6px rgba(175, 175, 175, 0.4);
+  margin-bottom: 0.1rem;
+  .header-main-container {
+    padding: 0 0.5rem;
+    height: $header-height;
+    display: flex;
+    font-size: 0.8rem;
+    width: calc(100% - 1rem);
+    justify-content: space-between;
+    max-width: $base-width;
+    margin: 0 auto;
+    .links {
+      cursor: pointer;
+      text-decoration: none;
+      color: black;
+      padding: 0.2rem 0.75rem;
+    }
+    .header-logo {
+      width: auto;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+    .header-menu {
+      display: flex;
+      align-items: flex-end;
+      padding-left: 10%;
+      padding-bottom: 1rem;
+      h3 {
+        cursor: pointer;
+        padding: 0 0.5rem;
+        font-weight: 400;
+        font-size: 1rem;
+      }
+    }
+    .header-hidden-menu {
+      display: none;
+    }
+    .header-cartmenu {
+      display: none;
+    }
+    .cart-signin {
+      width: 20%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding-top: 5px;
+      font-size: 1rem;
+      .signin {
+        display: flex;
+        width: 50%;
+        // padding-left: 2rem;
+      }
+      .backdrop {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 2;
+        background-color: rgba(175, 175, 175, 0.2);
+      }
+      .cart-icon {
+        position: relative;
+        cursor: pointer;
+        //width: 40%;
+        width: 50%;
+        height: auto;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        background-color: #f1f1f1;
+        padding: 3%;
+        .cart-box {
+          height: $main-content-height;
+          width: 400px;
+          background-color: #fff;
+          position: absolute;
+          top: 100%;
+          right: 0;
+          z-index: 7;
+        }
+        .item {
+          padding-left: 10%;
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 1438px) {
+  .cart-icon {
+    width: 100% !important;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  .header-main-container {
+    .header-logo {
+      .links {
+        padding: 0 !important;
+      }
+    }
+    .header-cartmenu {
+      position: fixed !important;
+      top: 0 !important;
+      left: 0 !important;
+      right: unset !important;
+      width: 100% !important;
+      height: 100% !important;
+      display: block !important;
+      z-index: 10;
+    }
+    .cart-signin {
+      display: none !important;
+    }
+    .header-hidden-menu {
+      display: flex !important;
+      justify-content: flex-end;
+      align-items: center;
+      padding: 1rem;
+      width: auto;
+      position: relative;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .header-section {
+    .header-main-container {
+      .header-menu {
+        padding-bottom: 0 !important;
+        align-items: center !important;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  .header-section {
+    .header-main-container {
+      padding-right: 0;
+      height: 4rem;
+      font-size: 0.5rem;
+      width: 100%;
+      .header-logo {
+        width: 30%;
+        img {
+          width: 90%;
+          height: auto;
+        }
+      }
+      .header-menu {
+        display: flex;
+        justify-content: center !important;
+        align-items: center !important;
+        padding: 0;
+        h3 {
+          cursor: pointer;
+          padding: 0 0.5rem;
+          font-weight: 400;
+        }
+      }
+      .cart-signin {
+        width: 40%;
+        align-items: flex-end;
+        .signin {
+          justify-content: flex-end;
+          width: 7rem;
+          flex-wrap: wrap;
+          padding-top: 0.3rem;
+          .links {
+            width: auto;
+            padding: 0.2rem 0.5rem;
+          }
+        }
+        .cart-icon {
+          cursor: pointer;
+          width: 60%;
+          height: auto;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background-color: #f1f1f1;
+          padding: 3% 0;
+          .App {
+            padding: 0.1rem;
+          }
+          .item {
+            width: auto;
+            padding-left: 10%;
+          }
+        }
+      }
+    }
+  }
+}

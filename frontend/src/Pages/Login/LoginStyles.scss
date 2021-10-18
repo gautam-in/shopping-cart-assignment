@@ -1,0 +1,83 @@
+@import "../../Assets/style/basestyle.scss";
+
+.login-content-section {
+  height: 50vh;
+  .login-container {
+    max-width: $main-body;
+    display: flex;
+    align-items: center;
+    height: inherit;
+    margin: 0 auto;
+    .login-desc {
+      width: 50%;
+      padding: 0 5rem;
+      
+      .login-label {
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+      .login-text {
+        font-weight: 500;
+        font-size: 15px;
+      }
+    }
+    .login-form {
+      width: 50%;
+      .form-content {
+        display: flex;
+        flex-direction: column;
+        .form-field {
+          margin: 0.5rem 0;
+          .MuiFormControl-root {
+            width: 100%;
+          }
+          .btn-style {
+            background-color: $base-icon-color;
+            width: 100%;
+            color: #fff;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-device-width: 768px) {
+  .login-content-section {
+    .login-container {
+      .login-form {
+        .form-content {
+          width: 80%
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-device-width: 360px) {
+  .login-content-section {
+    .login-container {
+      flex-direction: column;
+      .login-desc {
+        width: auto;
+      }
+    }
+  }
+}
+
+@media screen and (max-device-width: 320px) {
+  .login-content-section { 
+    .login-container {
+    flex-direction: column;
+    .login-desc {
+      width: auto;
+      padding-left: 4rem;
+    }
+    .login-form {
+      .form-content {
+        width: auto;
+      }
+    }
+  }
+}
+}

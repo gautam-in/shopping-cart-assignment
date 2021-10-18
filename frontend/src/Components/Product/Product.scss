@@ -1,0 +1,139 @@
+.product-container {
+    height: 20rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 10px 0 5px -2px #eaeaea;
+      border:none;
+      border-bottom: 3px dashed #eaeaea;
+      border-right: 3px solid #eaeaea;
+      padding: 0.5rem;
+    transition: box-shadow 0.3s ease;
+    &:hover {
+      box-shadow: 0 5px 17px 0 #d5d5d5;
+    }
+    .product-label-name {
+      display:flex;
+      height:auto;
+    }
+    .product-label-name .LinesEllipsis {
+      font-weight: 600;
+      width: 100%;
+      flex-wrap: wrap;
+      height: 20%;
+    }
+    .product-details {
+      height: 80%;
+      display: flex;
+      flex-direction: column;
+      .product-image {
+        width: 70%;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 10px;
+        img {
+          height: inherit;
+          width: inherit;
+        }
+      }
+      .product-description {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+      .overview {
+        background-color: rgb(241, 241, 241);
+        padding: 0.3rem;
+        font-size: 0.8rem;
+        height: 60%;
+      }
+    }
+    }
+    .product-price-details {
+      height: 20%;
+      margin-top: 20px;
+      display: flex;
+      align-items: center;
+      font-size: 0.8rem;
+      .product-price {
+        padding-left: 0.5rem;
+      }
+      .product-buynow-priceBtn {
+        display: none;
+        width: 100%;
+      }
+    }
+  }
+  
+  @media only screen and (max-width: 600px) {
+    .product-container {
+      .product-details {
+        flex-direction: row !important;
+        height: auto !important;
+        .product-image {
+          height: 100% !important;
+        }
+        .product-description {
+          display: flex;
+          flex-direction: column;
+          margin-left: 0.5rem;
+        }
+      }
+      .product-price-details {
+        height: auto !important;
+        margin-top: 20px;
+        .product-price {
+          display: none;
+        }
+        .product-buynow-btn {
+          display: none !important;
+        }
+        .product-buynow-priceBtn {
+          display: block !important;
+        }
+      }
+    }
+  }
+
+  @media only screen and (max-width: 768px) {
+    .product-container {
+      .product-details {
+        flex-direction: row;
+        .product-image {
+          display: block;
+          width: 100%;
+        }
+      }
+      .product-price-details {
+        .product-price {
+          display: none;
+        }
+        .product-buynow-btn {
+          display: none !important;
+        }
+        .product-buynow-priceBtn {
+          display: block !important;
+        }
+      }
+    }
+    
+  }
+  @media only screen and (max-width: 360px) {
+    .product-container {
+      box-shadow: none;
+      border:none;
+      border-bottom: 3px dashed #eaeaea;
+      height: 14rem;
+        .product-label-name {
+          height: auto;
+        } 
+        .product-details {
+          .product-image {
+            img {
+              width: 130px;
+            }
+          }
+        }
+    }
+  }

@@ -1,0 +1,38 @@
+.sidebar-menu {
+    background-color: lightgray;
+    margin-top: 25px;
+    .sidebar-container {
+      .products-categories {
+        padding-left: 1.5rem;
+        padding-right: 1rem;
+        border-bottom: 1px solid #c4c4c4;
+        height: 2.75rem;
+        display: flex;
+        align-items: center;
+        font-size: 0.9rem;
+        color: #797575;
+        cursor: pointer;
+        &:hover {
+          background-color: #1f1e1d;
+          color: #fff;
+        }
+      }
+      .active-category {
+        background-color: #1f1e1d;
+        font-weight: 600;
+        color: #fff;
+      }
+    }
+  }
+  
+  @media only screen and (max-width: 600px) {
+    .sidebar-menu {
+      display: none;
+    }
+  }
+
+  @media only screen and (max-device-width : 768px) { 
+    .sidebar-menu {
+      height: 100%;
+    }
+  }
