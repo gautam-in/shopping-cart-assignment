@@ -1,0 +1,40 @@
+@import "../../Assets/style/basestyle.scss";
+
+.products-category-acc {
+  color: #fff;
+  background-color: $base-icon-color;
+  padding: 0.5rem 1rem;
+  font-weight: 600;
+  position: relative;
+  margin-bottom: 0.5rem;
+  .categories-accordian {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    div {
+      width: auto;
+    }
+  }
+  .categories-listview {
+    transition: all 0.3s ease;
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    background-color: $base-icon-color;
+    z-index: 5;
+    left: 0;
+    padding: 0.5rem 1rem;
+    .product-categoryitem {
+      padding: 0.4rem 0;
+      z-index: 6;
+    }
+  }
+}
+
+@media only screen and (max-width: 360px) {
+  .products-category-acc {
+    .categories-accordian, .categories-listview {
+      font-size: 0.9rem;
+    }
+  }
+}

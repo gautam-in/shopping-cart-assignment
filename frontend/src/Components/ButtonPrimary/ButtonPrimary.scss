@@ -1,0 +1,25 @@
+@import "../../assets/style/basestyle.scss";
+.btn-styled {
+  background-color: $base-icon-color;
+  width: 100%;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  .MuiButtonBase-root {
+    color: #fff;
+  }
+  .MuiButton-root {
+    text-transform: inherit;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  .btn-styled {
+    .MuiButtonBase-root {
+      font-size: 0.75rem;
+      padding: 0.5rem 1.25rem;
+    }
+  }
+}

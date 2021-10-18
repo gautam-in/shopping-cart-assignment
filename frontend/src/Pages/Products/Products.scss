@@ -1,0 +1,53 @@
+@import "../../Assets/style/basestyle.scss";
+.content-section {
+  display: flex;
+  height: $main-content-height;
+  background-color: #fff;
+  padding: 0 0 0 10%;
+  aside {
+    width: 25%;
+  }
+  main .content-products-listitem {
+    padding: 1.5rem;
+    height: $main-content-height;
+    width: 85%;
+  }
+  .content-products-category {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 600px) {  
+  aside {
+    display: none;
+  }
+  .content-products-category {
+    display: block !important;
+  }
+}
+
+@media only screen and (max-device-width : 768px) { 
+  .content-section {
+    padding: 0 0 0 2%;
+      main {
+        .content-products-listitem {
+          width: 100%;
+        }
+      }
+    }
+}
+
+@media only screen and (max-width: 360px) {
+  .content-section {
+    padding-left: 0%;
+    main {
+      .content-products-listitem {
+        width: 100%;
+        padding: 0.5rem;;
+      }
+    } 
+  }
+  .content-products-list {
+    padding-top: 10px;
+  }
+}
