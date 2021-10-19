@@ -1,0 +1,106 @@
+html,
+body {
+  /* padding-bottom: 1%;
+  padding-left: 1%;
+  padding-right: 1%; */
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+.mobile{
+  display: none;
+}
+.web{
+  display: grid;
+}
+@media (max-width: 600px) {
+  .web{
+    display: none;
+  }
+  .mobile{
+    display: flex;
+  }
+  body{
+    padding-bottom: 0%;
+    padding-left: 0%;
+    padding-right: 0%;
+  }
+}
+
+.web ul :hover{
+  font-weight: bold;
+  font-size: 20px;
+}
+.nav a{
+  text-decoration: none;
+  font-weight: bolder;
+  font-size: 20px;
+  color: black;
+}
+.nav a:hover{
+  /* font-size: 23px; */
+  /* background-color: lightgrey; */
+  color: red !important;
+}
+
+.sign a{
+  text-decoration: none;
+  font-weight: bolder;
+  font-size: 15px;
+  color:grey;
+}
+.sign a:hover{
+  /* font-size: 17px; */
+  /* background-color: lightgrey; */
+  color: red !important;
+}
+.logout{
+  border: 1px solid black;
+  color: black;
+}
+.logout:hover{
+  border: 1px solid red;
+  color: red;
+}
+.carousel-control-next-icon{
+  visibility: hidden;
+}
+.carousel-control-prev-icon{
+  visibility: hidden;
+}
+.carousel-control-next span{
+  color: black;
+  font-size: 50px;
+}
+.carousel-control-prev span{
+  color: black;
+  font-size: 50px;
+}
+@media (max-width: 600px) {
+  .carousel-control-next span{
+    color: black;
+    font-size: 20px;
+  }
+  .carousel-control-prev span{
+    color: black;
+    font-size: 20px;
+  }
+}
+.font-Size{
+  font-size: 20px;
+}
+@media (max-width: 600px) {
+  .font-Size{
+    font-size: 10px;
+  }
+}
+
