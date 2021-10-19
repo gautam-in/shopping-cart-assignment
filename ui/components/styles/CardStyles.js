@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 const CardStyle = styled(Card)`
     display: flex;
-    width: 20rem;
+    width: 21rem;
     flex-direction: row;
     height: 20rem;
     /* overflow-y: hidden; */
@@ -15,17 +15,17 @@ const CardStyle = styled(Card)`
     .cImage{
             width: 10rem;
         }
-    @media (max-width: 800px) {
-        width: 20rem;
+    @media (max-width: 900px) {
+        width: 30rem;
         .cImage{
-            width: 6rem;
+            width: 15rem;
         }
     }
     @media (max-width: 500px) {
-        width: 16rem;
+        width: 20rem;
         height: 15rem;
         .cImage{
-            width: 6rem;
+            width: 10rem;
         }
     }
 `;

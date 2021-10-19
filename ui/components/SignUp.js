@@ -1,13 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 // import { makeStyles } from '@material-ui/core';
-import TextField from '@material-ui/core/TextField';
-import Button from '@material-ui/core/Button';
-import Form from './styles/FormStyles'
-import { getCookie, setCookies } from 'cookies-next';
-import { useRouter } from 'next/router'
+import TextField from "@material-ui/core/TextField";
+import Button from "@material-ui/core/Button";
+import Form from "./styles/FormStyles";
+import { getCookie, setCookies } from "cookies-next";
+import { useRouter } from "next/router";
 
 const SignUp = ({ handleClose }) => {
-  const router = useRouter()
+  const router = useRouter();
   // create state variables for each input
   // const [firstName, setFirstName] = useState('');
   // const [lastName, setLastName] = useState('');
@@ -35,7 +35,8 @@ const SignUp = ({ handleClose }) => {
   const onFormSubmit = (e) => {
     e.preventDefault();
     const emailReg = /\S+@\S+\.\S+/;
-    const pwdReg = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/;
+    const pwdReg =
+      /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/;
     if (userDetails.firstName && userDetails.email && userDetails.password) {
       if (userDetails.password === userDetails.confirmPwd) {
         if (pwdReg.test(userDetails.password)) {
@@ -76,85 +77,91 @@ const SignUp = ({ handleClose }) => {
       statusErrorMessage: msg,
     });
   };
-  
+
   return (
-    <div style={{display:'grid', gridTemplateColumns:'1fr 1fr 1fr 1fr'}}>
-    <div style={{gridColumn:'2/3', alignContent:'center',paddingTop:"10%"}}>
-      <h1>Register </h1>
-      <p>Get access to your Order wishlist and Recomendation</p>
-    </div>
-    <div style={{gridColumn:'3/4'}}>
-      <br/>
-      <Form onSubmit={onFormSubmit} id="Form">
-    
-      <TextField
-        label="First Name"
-        id="fName"
-        variant="filled"
-        required
-        value={userDetails.firstName}
+    <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr 1fr" }}>
+      <div
+        style={{ gridColumn: "2/3", alignContent: "center", paddingTop: "10%" }}
+      >
+        <h1>Register </h1>
+        <p>Get access to your Order wishlist and Recomendation</p>
+      </div>
+      <div style={{ gridColumn: "3/4" }}>
+        <br />
+        <Form onSubmit={onFormSubmit} id="Form">
+          <TextField
+            label="First Name"
+            id="fName"
+            variant="filled"
+            required
+            value={userDetails.firstName}
             onChange={(event) =>
               setUserDetails({ ...userDetails, firstName: event.target.value })
             }
-      />
-      <TextField
-        label="Last Name"
-        id="lName"
-        variant="filled"
-        value={userDetails.lastName}
+          />
+          <TextField
+            label="Last Name"
+            id="lName"
+            variant="filled"
+            value={userDetails.lastName}
             onChange={(event) =>
               setUserDetails({ ...userDetails, lastName: event.target.value })
             }
-      />
-      <TextField
-        label="Email"
-        variant="filled"
-        id="email"
-        type="email"
-        required
-        value={userDetails.email}
+          />
+          <TextField
+            label="Email"
+            variant="filled"
+            id="email"
+            type="email"
+            required
+            value={userDetails.email}
             onChange={(event) =>
               setUserDetails({ ...userDetails, email: event.target.value })
             }
-      />
-      <TextField
-        label="Password"
-        variant="filled"
-        id="pass"
-        type="password"
-        required
-        value={userDetails.password}
+          />
+          <TextField
+            label="Password"
+            variant="filled"
+            id="pass"
+            type="password"
+            required
+            value={userDetails.password}
             onChange={(event) =>
               setUserDetails({ ...userDetails, password: event.target.value })
             }
-      />
-      <TextField
-        label="Confirm Password"
-        variant="filled"
-        id="pass"
-        type="password"
-        required
-        value={userDetails.confirmPwd}
+          />
+          <TextField
+            label="Confirm Password"
+            variant="filled"
+            id="pass"
+            type="password"
+            required
+            value={userDetails.confirmPwd}
             onChange={(event) =>
               setUserDetails({ ...userDetails, confirmPwd: event.target.value })
             }
-      />
-      <p
-        style={{
-          color: validation.statusErrorMessage ? "red" : "green",
-          textAlign: "center",
-        }}
-      >
-        {validation.statusErrorMessage || validation.statusSuccessMessage}
-      </p>
-      <br/>
-      <div>
-        <Button type="submit" id="submit" variant="contained" color="primary">
-          SignUp
-        </Button>
+          />
+          <p
+            style={{
+              color: validation.statusErrorMessage ? "red" : "green",
+              textAlign: "center",
+            }}
+          >
+            {validation.statusErrorMessage || validation.statusSuccessMessage}
+          </p>
+          <br />
+          <div>
+            <Button
+              type="submit"
+              id="submit"
+              variant="contained"
+              color="primary"
+            >
+              SignUp
+            </Button>
+          </div>
+        </Form>
       </div>
-    </Form>
-    </div>
     </div>
   );
 };

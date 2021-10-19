@@ -28,6 +28,7 @@ a {
   }
   .mobile{
     display: flex;
+    
   }
   body{
     padding-bottom: 0%;
@@ -35,7 +36,9 @@ a {
     padding-right: 0%;
   }
 }
-
+/* Button{
+  background-color: #D70040 !important;
+} */
 .web ul :hover{
   font-weight: bold;
   font-size: 20px;
@@ -98,9 +101,25 @@ a {
 .font-Size{
   font-size: 20px;
 }
+.mainBody{
+  padding-left: 10%;
+  padding-right: 10%;
+}
+.coroselImage{
+  width: 1900px;
+  height: 300px;
+}
 @media (max-width: 600px) {
   .font-Size{
     font-size: 10px;
   }
+  
 }
+@media (max-width: 1600px) {
+  .mainBody{
+    padding-left: 0%;
+    padding-right: 0%;
+  }
+}
+
 

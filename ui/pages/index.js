@@ -2,7 +2,6 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import Corousel from '../components/Corousel'
-import Nav from '../components/Nav'
 import styles from '../styles/Home.module.css'
 import category from '../category.json'
 import Link from 'next/link'
@@ -21,7 +20,7 @@ export default function Home() {
         <link rel="icon" href="/logo.png" />
       </Head>
       
-      <main className={styles.main}><br/>
+      <main  ><br/>
         <div style={{position:"relative",display:"flex", justifyContent:'center',width:"100%",height:"20%", boxShadow:'-1px 5px 5px -1px rgba(0, 0, 0, 0.3)'}}>
           <Corousel/>
         </div><br/><br/>

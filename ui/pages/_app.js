@@ -9,7 +9,9 @@ function MyApp({ Component, pageProps }) {
   return (
     <CookiesProvider>
       <Nav/>
+      <div className="mainBody">
       <Component {...pageProps} /><br/>
+      </div>
       <footer className={styles.footer}>
           ©Copyright @ 2020-2021 Sabka Bazaar Grocery Suppliers pvt. ltd.
       </footer>
