@@ -24,8 +24,8 @@ export const updateCart = (payload, operation) => {
                     product.count = product.count + 1:
                     product.count = product.count - 1;
                 }
-                return product
-            })
+                return product;
+            }).filter((item) => item.count)
         }else {
             finalPayload = [...existingProducts, {...product, count: 1}]
         }

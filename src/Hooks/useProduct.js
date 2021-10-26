@@ -9,6 +9,7 @@ export default function useProduct(){
 
     function handleSideBarClick(id) {
         let selected = all_products.filter(product => id === product.category);
+        console.log(selected)
         setSelectedProducts(selected);
     }
 

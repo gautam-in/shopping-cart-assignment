@@ -14,15 +14,15 @@ const DROP_DATA_STYLE = styled.div`
     padding-left: 11px;
 `
 
-export default function Dropdown({ itemList }) {
-    const { handleSideBarClick, selectedProducts } = useProduct();
+export default function Dropdown({ itemList, handleClick }) {
     const [dropdownOpen, setdropdownOpen] = useState(false);
+    const [currentItem, setCurrentItem] = useState(itemList && itemList[0].name);
 
     return (
         <>
         <DROP_DATA_STYLE onClick={() => setdropdownOpen(true)}>
                         <p>
-                            {itemList && itemList[0].name}
+                            {currentItem}
                         </p>
                         <span>
                             ▼
@@ -30,13 +30,16 @@ export default function Dropdown({ itemList }) {
         </DROP_DATA_STYLE>
         { dropdownOpen && 
             itemList && itemList.map((item) => {
-                return (
-                    <DROP_DATA_STYLE>
+                if(item.name !== currentItem){
+
+                    return ( 
+                        <DROP_DATA_STYLE key={item.id} onClick={() => {handleClick(item.id); setCurrentItem(item.name); setdropdownOpen(false)}}>
                         <p>
                             {item && item.name}
                         </p>
                     </DROP_DATA_STYLE>
                 )
+            }
             })
         }
         </>

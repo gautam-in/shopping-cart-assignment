@@ -16,7 +16,6 @@ export default function ProductCard({product}){
             <PRODUCT_PURCHASE_STYLE>
                 {!isMobile && !isTab && <PRICE_STYLE>MRP Rs {product.price}</PRICE_STYLE>}
                 <PURCHASE_BUTTON type='button' onClick={()=>{
-                    console.log('id of product is: ', product.id)
                     dispatch(updateCart(product.id, 'add'))
                     }}>Buy Now {isMobile || isTab && `@ Rs ${product.price}`}</PURCHASE_BUTTON>
             </PRODUCT_PURCHASE_STYLE>

@@ -38,7 +38,7 @@ export const INPUT_STYLE = styled.input`
 `
 export const INPUT_WRAPPER = styled.div`
     width: 331px;
-    height: 10vh;
+    height: 7vh;
     :focus-within{
         & span{
         transform: translateY(-150%);

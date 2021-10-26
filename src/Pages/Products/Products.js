@@ -23,7 +23,7 @@ export default function Products() {
     const productTypes = useSelector(state => state.product.productType);
     return (
         <>
-        {isMobile && <Dropdown itemList={productTypes}></Dropdown>}
+        {isMobile && <Dropdown itemList={productTypes} handleClick={handleSideBarClick}></Dropdown>}
         <PRODUCT_WRAPPER>
             {!isMobile && <SideBar itemList={productTypes} handleClick={handleSideBarClick} />}
             <RIGHT_CONTENT>

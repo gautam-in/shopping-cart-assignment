@@ -174,6 +174,9 @@ export default function CartModel(){
     const history = useHistory();
     const dispatch = useDispatch();
     const cartItems = useSelector(state => state.cartReducer.cartItems);
+    const total_price = cartItems.reduce((acc, item)=>{
+        return acc + item.price * item.count;
+    },0);
     const handleRoundBtnClick = (item, operation) =>{
 
         operation === 'add' ? dispatch(updateCart(item, 'add')) : dispatch(updateCart(item, 'remove'))
@@ -182,7 +185,7 @@ export default function CartModel(){
         <CART_MODEL>
             {cartItems.length >= 1 && <CART_STYLE>
                 <CART_TITLE>
-                    My Cart (1 Item)
+                    My Cart ({cartItems.length} Item)
                     <CART_CLOSE_BTN onClick={()=>{dispatch(openCloseCart(false))}}>X</CART_CLOSE_BTN>
                 </CART_TITLE>
                 <CartCard cartItems={cartItems} handleCart={handleRoundBtnClick}/>
@@ -194,13 +197,13 @@ export default function CartModel(){
                     <p>Promo code can be applied on payment page</p>
                     <CHECKOUT_BUTTON>
                         <p>Proceed to Checkout</p>
-                        <p>Rs 101 &nbsp;&nbsp;&nbsp;&#62;</p>
+                        <p>Rs {total_price} &nbsp;&nbsp;&nbsp;&#62;</p>
                     </CHECKOUT_BUTTON>
                 </CART_FOOTER>
             </CART_STYLE>}
             { cartItems.length === 0 && <CART_STYLE_EMPTY>
             <CART_TITLE>
-                    My Cart (1 Item)
+                    My Cart ({cartItems.length} Item)
                     <CART_CLOSE_BTN onClick={()=>{dispatch(openCloseCart(false))}}>X</CART_CLOSE_BTN>
                 </CART_TITLE>
             <CART_EMPTY><h4>No Items in you cart</h4>
