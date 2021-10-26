@@ -9,14 +9,15 @@ import {
   Home,
   Cart,
   CartMain,
-  Home1,
-  HeaderWrap,
   Login,
+  HeaderWrap,
+  User,
 } from "./HeaderStyle";
 import { useSelector } from "react-redux";
 
 const Header = ({ cartSideNav }) => {
   const cartListData = useSelector((state) => state.cartReducer.cartList);
+  const userLoggedData = useSelector((state) => state.userLoginReducer.data);
 
   return (
     <HeaderMain>
@@ -29,11 +30,16 @@ const Header = ({ cartSideNav }) => {
             <Link to="/">Home</Link>
             <Link to="/product">Product</Link>
           </Home>
-          <Home1>
-            <Login>
-              <Link to="/login">SignIn</Link>
-              <Link to="/signup">Register</Link>
-            </Login>
+          <Login>
+            {userLoggedData ? (
+              <User> {userLoggedData} </User>
+            ) : (
+              <>
+                <Link to="/login">SignIn</Link>
+                <Link to="/signup">Register</Link>
+              </>
+            )}
+
             <Cart onClick={cartSideNav}>
               <CartMain>
                 <FontAwesomeIcon icon={faShoppingCart} />
@@ -43,7 +49,7 @@ const Header = ({ cartSideNav }) => {
                 </span>
               </CartMain>
             </Cart>
-          </Home1>
+          </Login>
         </Nav>
       </HeaderWrap>
     </HeaderMain>

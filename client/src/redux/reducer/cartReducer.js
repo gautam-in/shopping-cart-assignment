@@ -8,6 +8,7 @@ const initialState = {
   cartList: [],
   cartItem: 0,
   error: false,
+  disable: false,
 };
 
 const cartReducer = (state = initialState, action) => {
@@ -16,9 +17,13 @@ const cartReducer = (state = initialState, action) => {
       let result = [];
       const index = findItemIndex(state.cartList, action.cartProduct.id);
       if (index === -1) {
-        result = [...state.cartList, { ...action.cartProduct, count: 1 }];
+        result = [
+          ...state.cartList,
+          { ...action.cartProduct, count: 1, msg: "added" },
+        ];
       } else {
         result = [...state.cartList];
+
         result[index]["count"] += 1;
       }
       return {

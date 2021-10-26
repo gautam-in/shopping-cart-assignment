@@ -1,3 +1,3 @@
 import cartReducer from "./cartReducer";
-
-export { cartReducer };
+import userLoginReducer from "./userLoginReducer";
+export { cartReducer, userLoginReducer };

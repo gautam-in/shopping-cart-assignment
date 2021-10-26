@@ -8,7 +8,7 @@ import CartBody from "../../atoms/Cart/CartBody";
 
 const Cart = ({ isSlideOpen, cartSideNav }) => {
   const cartListData = useSelector((state) => state.cartReducer.cartList);
-  console.log(cartListData);
+
   return (
     <div>
       <div>
@@ -27,7 +27,7 @@ const Cart = ({ isSlideOpen, cartSideNav }) => {
 
           <div className="sidebar-cart-body-wrap">
             <div className="sidebar-cart-body-main">
-              <ModalBody style={{ minHeight: "840px", padding: "0px" }}>
+              <ModalBody>
                 {cartListData.length ? (
                   <CartList data={cartListData} />
                 ) : (

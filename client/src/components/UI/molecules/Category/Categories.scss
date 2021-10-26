@@ -1,4 +1,4 @@
-// @import '../../../styles/global';
+@import '../../../../globalStyles.scss';
 .skeleton-card-wrap {
   margin: 5px 0px;
 }
@@ -10,7 +10,7 @@
   display: flex;
   margin: 5px 0px;
   padding: 20px 0px;
-  background-color: white;
+  background-color: $white-color;
   > .image-wrap img {
     position: relative;
     overflow: hidden;
@@ -22,7 +22,7 @@
     h2,
     p {
       text-align: center;
-      color: black;
+      color: $black-color;
     }
     h2 {
       font-weight: 800;
@@ -60,18 +60,18 @@
   margin: 0 auto;
   display: table;
   text-decoration: none;
-  color: white;
+  color: $white-color;
   padding: 10px;
   font-size: 1.2rem;
-  background: #d10256;
-  border: 2px solid #d10256;
+  background: $pink-color;
+  border: 2px solid $pink-color;
   &:hover {
-    color: white;
+    color: $white-color;
     text-decoration: none;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: $tab-max-width) {
   .card-wrap {
     .image-wrap img {
       width: 10rem;
@@ -96,7 +96,7 @@
   }
 }
 
-@media only screen and (max-width:600px) {
+@media only screen and (max-width:$mobile-max-width) {
   .card-wrap {
     .image-wrap img {
       width: 5rem;

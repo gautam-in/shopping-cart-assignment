@@ -1,11 +1,15 @@
 import "./Card.scss";
 import { createAddToCartSuccess } from "../../../../redux/actions/index";
 import { useDispatch } from "react-redux";
+import React, { useState } from "react";
 
 const Card = ({ product }) => {
-  const { name, price, description, imageURL, sku, stock } = product;
+  const { name, price, description, imageURL, sku } = product;
+  const [disable, setDisable] = useState(false);
+
   const dispatch = useDispatch();
   const addToCart = (item) => {
+    setDisable(true);
     dispatch(createAddToCartSuccess(item));
   };
 
@@ -24,8 +28,12 @@ const Card = ({ product }) => {
             <span>MRP Rs.{price}</span>
           </div>
           <div className="product-buyout-btn">
-            <button type="button" onClick={() => addToCart(product)}>
-              Buy Now
+            <button
+              disabled={disable}
+              type="button"
+              onClick={() => addToCart(product)}
+            >
+              {disable ? "In Cart" : "Buy Now"}
             </button>
           </div>
         </div>

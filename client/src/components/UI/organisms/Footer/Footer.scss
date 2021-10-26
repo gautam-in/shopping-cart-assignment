@@ -1,15 +1,15 @@
 
-
+@import '../../../../globalStyles.scss';
 .footer {
   padding: 15px;
-  background:#eaeaea;
+  background:$grey-color;
 }
 .footer span {
   display: block;
   margin: 0px auto;
   font-size: 11px;
   width: 75vw;
-  color: black;
+  color: $black-color;
   font-weight: 600;
 }
 @media only screen and (min-width: 992px) {

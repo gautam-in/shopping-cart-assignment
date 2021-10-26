@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Api from "../../atoms/util/Api";
-import Card from "../../molecules/Card/Card";
+import Card from "../../molecules/PLCL/Card";
 import "./ProductList.scss";
 
 const ProductList = ({ filterId }) => {
@@ -14,9 +14,6 @@ const ProductList = ({ filterId }) => {
   }, []);
   useEffect(() => {
     if (filterId) {
-      console.log("filterId", filterId);
-      console.log("filterId2str", filterId.toString());
-      console.log("product.setDisplayList", displayList);
       setDisplayList(() =>
         products.filter((product) => product.category === filterId)
       );
@@ -27,7 +24,6 @@ const ProductList = ({ filterId }) => {
 
   const productsContent = displayList?.map((product) => {
     const { id } = product;
-
     return (
       <li key={id} className="col-sm-12 col-md-6 col-lg-3 col-xs-3">
         <Card product={product} />

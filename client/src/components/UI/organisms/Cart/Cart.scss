@@ -1,15 +1,9 @@
-$mobile-max-width: 600px;
-$tab-max-width: 768px;
-$white-color: #ffffff;
-$dark-grey-color: #676666;
-$grey-color: #ece8e8;
-$black-color: #000000;
-$pink-color: #d10256;
-$green-color: #50dae2;
+@import '../../../../globalStyles.scss';
 
 .sidebar-wrap-modal {
   .modal-content {
     border-radius: 0px;
+
   }
 }
 
@@ -23,9 +17,9 @@ $green-color: #50dae2;
 .sidebar-cart-header-wrap {
   position: relative;
   overflow: hidden;
-  background-color: black;
+  background-color: $black-color;
   h6 {
-    color: white;
+    color: $white-color;
     margin: 0;
     font-size: 1.2rem;
     font-weight: 800;
@@ -34,7 +28,7 @@ $green-color: #50dae2;
   }
   .close {
       position: absolute;
-    background-color: black;
+    background-color: $black-color;
     right: 0;
     display: inline-block;
     opacity: initial;
@@ -42,19 +36,19 @@ $green-color: #50dae2;
     span {
       font-size: 1.2rem;
 
-      color: white;
+      color: $white-color;
     }
   }
 }
 
 .sidebar-cart-header-main {
   padding: 10px;
-  color: white;
+  color: $white-color;
 }
 
 .sidebar-cart-body-wrap {
   background-color: $grey-color;
-  height: calc(100vh - 170px);
+  height: calc(100vh - 60px);
   overflow: hidden;
 }
 
@@ -70,7 +64,7 @@ $green-color: #50dae2;
     li {
       display: block;
       padding: 10px 0px;
-      background-color: white;
+      background-color: $white-color;
       margin: 15px 0px;
     }
   }
@@ -116,7 +110,7 @@ $green-color: #50dae2;
   border-radius: 100%;
   background-color: $pink-color;
   border: 1px solid $pink-color;
-  color: white;
+  color: $white-color;
   font-size: 0.8rem;
   font-weight: 800;
   margin: 0px 2rem;
@@ -130,7 +124,7 @@ $green-color: #50dae2;
   margin: 10px;
   button {
     width: 100%;
-    color: white;
+    color: $white-color;
     padding: 10px;
     background-color: $pink-color;
     border: 1px solid $pink-color;

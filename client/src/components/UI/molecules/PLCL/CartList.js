@@ -57,7 +57,7 @@ const CartList = ({ data }) => {
     });
   return (
     <div className="cart-list-wrap">
-      <ul style={{ padding: "0" }}>{CartData}</ul>;
+      <ul style={{ padding: "0" }}>{CartData}</ul>
     </div>
   );
 };

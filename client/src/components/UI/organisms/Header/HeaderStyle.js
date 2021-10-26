@@ -1,8 +1,6 @@
 import styled from "styled-components";
-import logo from "../.././../../Images/cart.svg";
 
 const HeaderMain = styled.header`
-  // display: flex;
   min-height: 90px;
   background: white;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 3px 20px 0 rgba(0, 0, 0, 0.19);
@@ -13,6 +11,12 @@ const HeaderMain = styled.header`
     font-weight: 800;
     font-family: Arial, Helvetica, sans-serif;
     color: #787878;
+  }
+  @media (max-width: 768px) {
+    display: block;
+  }
+  @media (max-width: 600px) {
+    display: block;
   }
 `;
 const HeaderWrap = styled.div`
@@ -29,8 +33,8 @@ const Nav = styled.nav`
   display: flex;
 `;
 const Home = styled.div`
-  width: 600px;
-  margin: 0 auto;
+  width: 770px;
+
   padding: 5rem 0 0 0;
   a {
     padding: 0 3rem;
@@ -43,17 +47,18 @@ const Home = styled.div`
     color: #787878;
   }
 `;
-const Home1 = styled.div`
+const Login = styled.div`
+  max-width: 1320px;
   margin-top: 1rem;
   a {
     padding: 0 1rem;
   }
-  span {
-    text-decoration: none;
-    font-size: 1rem;
-    font-weight: 800;
-    font-family: Arial, Helvetica, sans-serif;
-    color: #787878;
+
+  @media (max-width: 768px) {
+    display: block;
+  }
+  @media (max-width: 600px) {
+    display: block;
   }
 `;
 const Cart = styled.div`
@@ -63,8 +68,7 @@ const Cart = styled.div`
 
 const CartMain = styled.div`
   background-color: #ece8e8;
-  // right: 1rem;
-  // bottom: 0;
+
   padding: 15px;
   cursor: pointer;
   span {
@@ -75,16 +79,13 @@ const CartMain = styled.div`
   }
 `;
 
-const Login = styled.div``;
+const User = styled.span`
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 800;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #787878;
+  text-transform: capitalize;
+`;
 
-export {
-  HeaderMain,
-  HeaderWrap,
-  Logo,
-  Nav,
-  Home,
-  Cart,
-  CartMain,
-  Home1,
-  Login,
-};
+export { HeaderMain, HeaderWrap, Logo, Nav, Home, Cart, CartMain, Login, User };

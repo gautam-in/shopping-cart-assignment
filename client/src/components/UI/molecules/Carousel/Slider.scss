@@ -1,4 +1,4 @@
-
+@import '../../../../globalStyles.scss';
 
 .carousel-wrap {
   position: relative;
@@ -32,7 +32,7 @@
 }
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
-  background-color: #ece8e8;
+  background-color: $grey-color;
   padding: 18px;
 }
 .carousel-control-next,
@@ -41,13 +41,13 @@
 }
 
 .carousel-indicators li {
-  background-color: #ece8e8;
+  background-color: $grey-color;
   height: 10px;
   width: 10px;
   margin-bottom: 5px;
 }
 
-@media only screen and (max-width:600px) {
+@media only screen and (max-width:$mobile-max-width) {
   .carousel-control-prev-icon,
   .carousel-control-next-icon {
     display: none;
