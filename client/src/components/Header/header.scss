@@ -1,0 +1,28 @@
+
+@import "../../assets/scss/variables.scss";
+.header{
+    width: 100%;
+    position: fixed;
+    top:0;
+    left:0;
+    border-bottom: 2px solid $secondary;
+    z-index: 99;
+    &__main{
+        @include set-max-width();
+        display: flex;
+        justify-content: space-between;
+        background-color: $primary;
+        align-items: center;
+    }
+}
+
+@media (max-width:$size__site_content_width){
+    .header{
+        z-index: 999;
+    }
+}
+
+
+
+
+

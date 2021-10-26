@@ -1,0 +1,18 @@
+@import "./../../../assets//scss/variables.scss";
+
+.categorySidebar {
+  width: 22%;
+  min-width: 160px;
+  display: flex;
+  background-color: $secondary;
+  flex-direction: column;
+  margin: 0;
+  padding-left: 2px;
+}
+
+@media (max-width: $size__site_content_width) {
+  .categorySidebar {
+    width: 20%;
+    min-width: 190px;
+  }
+}

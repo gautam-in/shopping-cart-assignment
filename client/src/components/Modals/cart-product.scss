@@ -1,0 +1,46 @@
+@import "../../assets//scss//variables.scss";
+
+.CartProducts {
+  display: flex;
+  width: 100%;
+  background-color: #ffffff;
+  margin: 0.5 auto;
+  padding: 1rem;
+
+  align-items: center;
+  &__Img {
+    width: 15%;
+    height: 15%;
+  }
+  &__middleContainer {
+    display: flex;
+    flex-direction: column;
+    width: 85%;
+    margin-left: .4rem;
+    &__heading {
+      font-weight: 800;
+    }
+    &__btn {
+      margin: 0.8rem 0;
+      display: flex;
+      font-weight: 600;
+      align-items: center;
+      position: relative;
+    }
+  }
+}
+
+@media (max-width: $size__site_content_width) {
+  .CartProducts {
+    padding: 0.5rem;
+    &__Img {
+      width: 10%;
+    }
+  }
+}
+
+@media (max-width: $size__tablet_width) {
+  .CartProducts__Img {
+    width: 15%;
+  }
+}

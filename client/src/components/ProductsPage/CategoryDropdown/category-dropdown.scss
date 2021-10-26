@@ -1,0 +1,29 @@
+@import "../../../assets/scss/variables.scss";
+
+
+@media (max-width: $size__tablet_width) {
+  .CategoryDropdown {
+    display: block;
+
+    &__select {
+      width: 100%;
+      background-color: $btn-color;
+      margin: 1rem 0;
+      padding: 0.7rem 0 0.7rem 0;
+      
+      option {
+        background-color: $list-option-color;
+        border-bottom: 2px solid $primary;
+      }
+      font-size: 1rem;
+      font-weight: 400;
+      cursor: pointer;
+      color: $primary;
+      
+    }
+  }
+}
+
+select:focus > option:checked {
+  background-color: $btn-color !important;
+}

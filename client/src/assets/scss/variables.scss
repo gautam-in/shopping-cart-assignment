@@ -1,0 +1,69 @@
+
+$size__site_content_width: 1024px;
+$size__tablet_width: 767px;
+$slider-width: 1024px;
+$slider-height: 300px;
+/* 
+$media_queries:(
+    "mobile": "only screen and (max-width:667px)",
+    "tablet": "only screen and (min-width:668px) and (max-width: $size__site_content_width)",
+    "desktop": "only screen and (min-width: ($size__site_content_width+1))",
+); */
+
+@mixin for_breakpoint($breakpoints){
+
+    $conditions: ();
+    @each $breakpoint in $breakpoints{
+        $conditions: append($conditions , #{inspect(map-get($media_queries, $breakpoint))}, comma);
+    }
+
+    @media #{$conditions}{
+        @content;
+    }
+}
+
+@mixin set-link-style($size, $weight) {
+    text-decoration: none;
+    color:$font-color;
+    font-size: $size;
+    font-weight: $weight;
+}
+/* @mixin set-link-style-rt() {
+    text-decoration: none;
+    color:$font-color;
+    font-size: .8rem;
+    font-weight: 500;
+} */
+
+
+@mixin set-max-width() {
+    margin: 0 auto;
+    max-width: $size__site_content_width;
+}
+
+@mixin set-btn-style() {
+    font-weight: 400;
+    color: $primary;
+    background-color: $btn-color;
+    border: none;
+    border-radius: 2px;
+    font-size: 0.8rem;
+    padding: 0.8rem;
+    &:hover {
+      cursor: pointer;
+      transform: scale(0.98);
+    }
+    &:focus {
+      outline-color: black;
+      cursor: pointer;
+    }
+  }
+
+$btn-color: #C2185B;
+$slider-btn: #242424;
+$primary: #ffffff;
+$secondary: #e4e4e4;
+$font-color: #707070;
+$focus-color:#50eaea;
+$blue-color: #00b8d4;
+$list-option-color: #343434

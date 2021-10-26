@@ -1,0 +1,83 @@
+@import "../../../../assets/scss/variables.scss";
+
+.category {
+  
+  padding: 1rem .5rem 1rem .5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  &__image {
+    width: 30%;
+    min-width: 120px;
+    display: inline-block;
+    Img {
+      width: 100%;
+    }
+  }
+  &__content {
+    width: 70%;
+    display: flex;
+    align-items: center;
+    align-content: center;
+   
+  }
+  &__contentinside {
+    width: 100%;
+    text-align: center;
+    h3{
+      text-align: center;
+    }
+    &__description {
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+    &__btnName {
+      
+      margin: 1.5rem auto;
+    }
+  }
+
+  
+}
+
+.reverse {
+  flex-direction: row-reverse;
+}
+
+.horizontalRow {
+  border: 0;
+  height: 2px;
+  box-shadow: 3px;
+  background-image: linear-gradient(
+    to right,
+    rgba(177, 174, 174, 0),
+    rgba(175, 175, 175, 0.527),
+    rgba(75, 70, 70, 0)
+  );
+  margin: 0;
+}
+
+@media screen and (max-width: $size__tablet_width) {
+ .category{
+
+  &__image {
+    width: 30%;
+    min-width: 120px;
+    display: inline-block;
+    Img {
+      width: 100%;
+    }
+  }
+  &__contentinside {
+    h3{
+      text-align: center;
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+    &__description {
+      font-size: 0.5rem;
+      font-weight: 400;
+    }
+  }
+    }
+}

@@ -1,0 +1,23 @@
+@import "../../assets/scss/variables.scss";
+
+.ftr{
+    background-color: $secondary;
+    margin-bottom: 0px;
+    &__cpyrt{
+        max-width: $size__site_content_width;
+        margin: 0 auto;
+        font-size: 1rem;
+        font-weight: 500;
+        height: 8vh;
+        padding-top: .8rem;
+    }
+}
+
+@media (max-width: $size__tablet_width){
+    .ftr{
+        &__cpyrt{
+            text-align: center;
+        }
+    }
+  
+}

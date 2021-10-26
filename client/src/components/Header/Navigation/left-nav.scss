@@ -1,0 +1,28 @@
+
+@import "../../../assets/scss/variables.scss";
+
+.nav_lt{
+    display: flex;
+    align-items: center;
+
+    &__list{
+        display: flex;
+        align-items: center;
+        margin: 2rem 0 0 4rem;
+        list-style: none;
+        li:first-of-type{
+            padding-right: 2rem;
+        }
+    }
+    &__link{
+        @include set-link-style(1rem, 700);
+    }
+}
+
+@media(max-width:$size__tablet_width){
+    .nav_lt{
+        &__list{
+            display: none;
+        }
+    }
+}

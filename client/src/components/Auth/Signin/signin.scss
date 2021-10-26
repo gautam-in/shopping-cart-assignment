@@ -1,0 +1,96 @@
+@import "../../../assets//scss//variables.scss";
+
+.flex--row {
+  display: flex;
+  flex-direction: row;
+}
+.flex--column {
+  display: flex;
+  flex-direction: column;
+}
+
+.pageDetails {
+  margin: 1.5rem 2rem 0 5rem;
+  flex: 2 1;
+}
+.pageDetails__heading {
+  font-size: 2rem;
+  font-weight: 600;
+}
+.pageDetails__desc {
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+.auth-form {
+  margin: 2rem 0 1rem 0;
+  flex: 3 1;
+}
+
+.rowInput {
+  width: 60%;
+  position: relative;
+  margin-bottom: 2rem;
+  margin-top: 1rem;
+  border-bottom: 2px solid $secondary;
+  font-size: 1rem;
+  &:focus-within {
+    border-bottom: 2px solid $focus-color;
+  }
+}
+.rowInput__input-text {
+  text-decoration: none;
+  border: none;
+  outline: none;
+  width: 100%;
+  margin-bottom: 0.5rem;
+  position: relative;
+  padding: 0;
+}
+.rowInput__input-text:focus + .rowInput__labelHelper,
+.rowInput__input-text:not(:placeholder-shown) + .rowInput__labelHelper {
+  opacity: 1;
+  padding: 0.5rem 0;
+  bottom: 95%;
+  color: $focus-color;
+}
+
+.rowInput__labelHelper {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  opacity: 0;
+  transition: 0.2s bottom, 0.2s opacity;
+}
+.submit {
+  width: 60%;
+  @include set-btn-style();
+}
+
+@media(max-width:$size__tablet_width){
+  .flex--row {
+    flex-direction: column;
+  }
+  .auth-form{
+    padding: 0 40px 0 40px;
+  }
+  .rowInput{
+    width: 100%;
+  }
+  .pageDetails{
+    margin: 1.5rem 2rem 0 2rem;
+    flex: 2 1;
+  }
+  .pageDetails__heading {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+  .pageDetails__desc {
+    font-size: 0.9rem;
+    font-weight: 500;
+  }
+.submit-btn{
+  display: flex;
+  justify-content: space-around;
+}
+}

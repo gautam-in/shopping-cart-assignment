@@ -1,0 +1,20 @@
+@import "../../../assets/scss/variables.scss";
+.products {
+    width: 78%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  
+  @media (max-width: $size__site_content_width) {
+    .products {
+      width: 80%;
+    }
+  }
+  
+  @media (max-width: $size__tablet_width) {
+    .products {
+      width: 100%;
+    }
+  }

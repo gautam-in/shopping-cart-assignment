@@ -1,0 +1,35 @@
+
+@import "../../../assets/scss/variables.scss";
+
+.nav_rt{
+    &__list{
+        display: flex;
+        list-style: none;
+        margin: .5rem;
+        width: 20%;
+    }
+    &__list{
+        li:first-of-type{
+            padding-right: .5rem;
+        }
+       
+    }
+    &__link{
+        @include set-link-style(0.8rem, 500);
+    }
+    .cart{
+        display: flex;
+        align-items: center;
+      
+    }
+}
+
+@media(max-width:$size__tablet_width){
+    .nav_rt{
+        width: 30%;
+        max-width: 120px;
+        &__list{
+            display: none;
+        }
+    }
+}

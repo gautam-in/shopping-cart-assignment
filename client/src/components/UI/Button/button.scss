@@ -1,0 +1,56 @@
+@import "../../../assets//scss//variables.scss";
+
+.product_button {
+  @include set-btn-style();
+}
+
+.product__button_tablet {
+  width: 100%;
+  margin: 1rem 0;
+}
+
+.cartModalWindow__headerbtn {
+  font-size: 1.2rem;
+  background-color: #000000;
+  color: $primary;
+  border: none;
+  padding: 0;
+}
+
+.CartProducts__middleContainer__remove {
+  font-size: 1.1rem;
+  width: 16%;
+  padding: .2rem ;
+}
+
+.CartProducts__middleContainer__add {
+  font-size: 1.1rem;
+  width: 16%;
+  padding: .2rem ;
+}
+
+.cartModalWindow__checkout {
+  width:96%;
+  border-radius: 2px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 .4rem 0.4rem .4rem;
+}
+
+.cart {
+  display: flex;
+  background-color: $secondary;
+  height: 4rem;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  border: none;
+}
+@media (max-width: $size__tablet_width) {
+  .product__button_mobile {
+    width: 100%;
+    margin: 1rem 0;
+    padding: 1rem 0;
+  }
+}
