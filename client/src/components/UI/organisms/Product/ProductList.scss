@@ -1,0 +1,114 @@
+@import '../../../../globalStyles.scss';
+
+.page-wrap{
+    padding-top: 1rem;
+}
+.product-list-wrap {
+    margin-left: 15px;
+    ul {
+      list-style: none;
+    }
+  }
+  .product-wrap {
+    background-color: $white-color;
+  }
+
+.product-page-main {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  .product-filter-wrap {
+    flex-basis: 20%;
+    background-color: $grey-color;
+  }
+  .product-page-list-wrap {
+    flex-basis: 80%;
+  }
+}
+@media only screen and (max-width: $tab-max-width) {
+  .product-page-main {
+    .product-filter-wrap {
+      flex-basis: 25%;
+    }
+    .product-page-list-wrap {
+      flex-basis: 75%;
+    }
+  }
+}
+
+@media only screen and (max-width: $mobile-max-width) {
+  .product-page-main {
+    display: block;
+  }
+}
+
+.categories-filter-data-wrap {
+  ul {
+    margin: 0px;
+    li {
+      list-style: none;
+      cursor: pointer;
+      border-bottom: 1px solid $black-color;
+      span {
+        font-size: 1rem;
+        font-weight: normal;
+        padding-left: 5px;
+        text-decoration: none;
+        color: $black-color;
+        font-weight: normal;
+        display: block;
+        padding: 10px;
+      }
+    }
+  }
+}
+
+.is-active {
+  border-left: 2px solid $pink-color;
+}
+.categories-filter-data-wrap {
+  .product-categories-dropdown {
+    position: relative;
+    overflow: hidden;
+    display: none;
+    select {
+      position: relative;
+      padding: 5px 0px;
+      width: 100%;
+      color: $white-color;
+      background-color: $pink-color;
+      border: 2px solid $pink-color;
+      option {
+        position: relative;
+        overflow: hidden;
+      }
+      &:active {
+        border: 2px solid $pink-color;
+        border-radius: 0px;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: $mobile-max-width) {
+  .page-wrap {
+    padding-top: 70px;
+  }
+  .product-page-list-wrap {
+    .product-list-wrap {
+      margin-left: 0px;
+    }
+  }
+
+  .categories-filter-data-wrap {
+    position: relative;
+    overflow: hidden;
+    ul {
+      display: none;
+    }
+    .product-categories-dropdown {
+      display: block;
+    }
+  }
+}
