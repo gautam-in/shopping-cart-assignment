@@ -1,16 +1,20 @@
 // import { Dropdown, DropdownButton } from 'react-bootstrap'
-import { useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import prod from "../products.json";
 import ProductCard from "./ProductCard";
 import catg from "../category.json";
+import { getCookie } from "cookies-next";
+import { CartContext } from "./UseContext";
 
 function Products(props) {
+  const {value, setValue} = useContext(CartContext);
   const [prodType, setprodType] = useState(
     props.prodType ? props.prodType : ""
   );
-  // console.log(prod)
+  
   return (
     <>
+    
       <div
         style={{
           gridTemplateColumns: "1fr 1fr 1fr 1fr 1fr",
@@ -72,7 +76,7 @@ function Products(props) {
               })
               .map((pd, index) => {
                 return (
-                  <div key={index} style={{ padding: "1%" }}>
+                  <div key={pd.id} style={{ padding: "1%" }}>
                     <ProductCard pdts={pd} />
                   </div>
                 );
@@ -107,7 +111,7 @@ function Products(props) {
           .map((pd, index) => {
             return (
               <div key={pd.id} style={{ padding: "1%" }}>
-                <ProductCard pdts={pd} />
+                <ProductCard pdts={pd}/>
               </div>
             );
           })}

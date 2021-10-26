@@ -1,28 +1,32 @@
-import React, { useState } from "react";
-import { Card } from "react-bootstrap";
+import React, { useContext, useState } from "react";
+import { Alert, Card } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import CardStyle from "./styles/CardStyles";
 import { setCookies } from "cookies-next";
 import { getCookie } from "cookies-next";
-import { CardTitle } from "reactstrap";
+import { CartContext } from "./UseContext";
+// import { CardTitle } from "reactstrap";
 
 function ProductCard(props) {
+  const { value, setValue } = useContext(CartContext);
+  const [cartMsg, setcartMsg] = useState("");
   const [cartItems, setCartItems] = useState(
     getCookie("cartItems") ? JSON.parse(getCookie("cartItems")) : []
   );
   const [state, setstate] = useState(false);
   const handleAddCart = (pdt) => {
-    console.log(pdt);
+    
     if (typeof getCookie("cartItems") == "string") {
       var carts = JSON.parse(getCookie("cartItems"));
     } else {
       var carts = cartItems;
     }
-    console.log(carts, f);
+    
     var f = 0;
     for (let i = 0; i < carts.length; i++) {
       if (carts[i].id == pdt.id) {
-        alert("this item is already added to cart");
+        setcartMsg("already added");
+        // alert("this item is already added to cart");
       } else {
         f += 1;
       }
@@ -36,13 +40,58 @@ function ProductCard(props) {
       setCookies("cartItems", JSON.stringify(carts));
       setCartItems(localStorage.getItem("cartItems"));
       setstate(!state);
-      alert("pdt added to cart");
+      setValue(carts);
+      // alert("pdt added to cart");
+      setcartMsg("Added");
     }
-    console.log(getCookie("cartItems"));
   };
 
   return (
     <div className="card">
+      {value.map((x,i) => {
+        if (x.name == props.pdts.name && cartMsg) {
+          if (cartMsg == "Added")
+            return (
+              <span key={i}
+                style={{
+                  backgroundColor: "lightgreen",
+                  display: "flex",
+                  justifyContent: "space-between",
+                  cursor: "pointer",
+                }}
+              >
+                Added
+                <span
+                  onClick={() => {
+                    return setcartMsg("");
+                  }}
+                >
+                  ❌
+                </span>
+              </span>
+            );
+          else
+            return (
+              <span
+                style={{
+                  backgroundColor: "yellow",
+                  display: "flex",
+                  justifyContent: "space-between",
+                  cursor: "pointer",
+                }}
+              >
+                Already Added
+                <span
+                  onClick={() => {
+                    return setcartMsg("");
+                  }}
+                >
+                  ❌
+                </span>
+              </span>
+            );
+        }
+      })}
       <CardStyle>
         <Card.Img
           variant="top"

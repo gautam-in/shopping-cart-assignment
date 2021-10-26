@@ -1,24 +1,12 @@
 import React, { useState } from "react";
-// import { makeStyles } from '@material-ui/core';
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 import Form from "./styles/FormStyles";
 import { getCookie, setCookies } from "cookies-next";
 import { useRouter } from "next/router";
 
-const SignUp = ({ handleClose }) => {
+const SignUp = () => {
   const router = useRouter();
-  // create state variables for each input
-  // const [firstName, setFirstName] = useState('');
-  // const [lastName, setLastName] = useState('');
-  // const [email, setEmail] = useState('');
-  // const [password, setPassword] = useState('');
-
-  // const handleSubmit = e => {
-  //   e.preventDefault();
-  //   console.log(firstName, lastName, email, password);
-  //   handleClose();
-  // };
   const intialState = {
     firstName: "",
     lastName: "",

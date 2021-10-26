@@ -1,22 +1,13 @@
 /* eslint-disable @next/next/link-passhref */
 /* eslint-disable react-hooks/rules-of-hooks */
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { Button, Image, Modal } from "react-bootstrap";
-// import useWindowSize from "../lib/WindowResize";
-import CartStyle from "./styles/CartStyles";
-import Link from "next/link";
+import {CartStyle, ButtonStyle} from "./styles/CartStyles";
 import { getCookie, setCookies } from "cookies-next";
-import styled from "styled-components";
+import { CartContext } from "./UseContext";
 
-const ButtonStyle = styled.div`
-  background-color: lightgray;
-  padding: 6%;
-  cursor: pointer;
-  width: 200px;
-  font-size: 140%;
-`;
-
-export default function CartComponent({ data }) {
+export default function CartComponent() {
+  const {value, setValue} = useContext(CartContext);
   const [show, setShow] = useState(false);
   const [cartAr, setcartAr] = useState(
     getCookie("cartItems") ? JSON.parse(getCookie("cartItems")) : []
@@ -30,6 +21,7 @@ export default function CartComponent({ data }) {
     cartAr.splice(i, 1);
     setCookies("cartItems", JSON.stringify(cartAr));
     setcartAr(JSON.parse(getCookie("cartItems")));
+    setValue(cartAr)
   };
   useEffect(() => {
     setcartAr(getCookie("cartItems") ? JSON.parse(getCookie("cartItems")) : []);
@@ -56,9 +48,7 @@ export default function CartComponent({ data }) {
           height="27"
           width="30"
         />
-        <span style={cartAr.length > 0 ? { color: "red" } : { color: "red" }}>
-          {cartAr.length} {cartAr.length === 1 ? "item" : "items"}
-        </span>
+        
       </ButtonStyle>
       {!cartAr.length ? (
         <CartStyle show={show} onHide={handleClose} className="mod">
@@ -69,14 +59,7 @@ export default function CartComponent({ data }) {
             </span>
           </Modal.Header>
           <Modal.Body className="modalBody">
-            <div
-              style={{
-                display: "grid",
-                justifyContent: "center",
-                textAlign: "center",
-                paddingTop: "50%",
-              }}
-            >
+            <div>
               <b>No Items in this cart</b>
               <p>Your favorite items are just one click away</p>
             </div>
@@ -211,9 +194,9 @@ export default function CartComponent({ data }) {
                 &nbsp;You will not find it cheaper anywhere
               </p>
             </Modal.Body>
-            <p className="modalfoot" style={{ textAlign: "center" }}>
+            <div className="modalfoot" style={{ textAlign: "center" }}>
               *Promo Code Can be Applied On Payment Page
-            </p>
+            </div>
             <Modal.Footer style={{}}>
               <Button
                 className="modalfoot"
@@ -243,17 +226,4 @@ export default function CartComponent({ data }) {
   );
 }
 
-CartComponent.getInitialProps = async ({ req, res }) => {
-  const data = getCookie("cartItems");
 
-  if (res) {
-    if (Object.keys(data).length === 0 && data.constructor === Object) {
-      res.writeHead(301, { Location: "/" });
-      res.end();
-    }
-  }
-
-  return {
-    data: data && data,
-  };
-};

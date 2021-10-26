@@ -11,7 +11,7 @@ import { useState } from 'react'
 
 export default function Home() {
   const [catId, setCatId] = useState('')
-  console.log(category)
+  
   return (
     <div className={styles.container}>
       <Head>
@@ -33,7 +33,6 @@ export default function Home() {
                   <div style={{display:"",justifyContent:"center", alignItems:"center",textAlign:'center'}}>
                     <h2>{ctg.name}</h2><br/>
                     <h6>{ctg.description}</h6>
-                    {/* <Link href="/"><span style={{backgroundColor:"red"}}>Explore More</span></Link> */}
                     <Link href={`products/${ctg.id}`}><Button variant="danger" size="xs">Explore</Button></Link>
                   </div>
               </div><br/><br/>

@@ -1,18 +1,21 @@
 /* eslint-disable @next/next/link-passhref */
-import React, { useState } from "react";
-import { Navbar, Container, Nav, NavDropdown, Button } from "react-bootstrap";
+import React, { useContext, useState } from "react";
+import { Navbar, Container, Nav} from "react-bootstrap";
 import Link from "next/link";
 import Image from "next/image";
 import CartComponent from "./Cart";
 import { getCookie, setCookies } from "cookies-next";
+import { CartContext } from "./UseContext";
 
 export default function NavBar() {
+  const {value, setValue} = useContext(CartContext);
   const [state, setState] = useState(false);
   var logged = getCookie("status");
   const handleLogout = () => {
     setCookies("status", "");
     setState(!state);
   };
+  // console.log("sam..................",value)
   return (
     <Navbar
       bg="light"
@@ -51,7 +54,10 @@ export default function NavBar() {
               </>
             )}
             <br />
-            <CartComponent />
+            <span style={{display:"flex",flexDirection:"row",backgroundColor:"lightgrey", padding:"6%"}}>
+            <CartComponent/><span style={value.length > 0 ? { color: "red" } : { color: "red" }}>
+            {value.length} {value.length === 1 ? "item" : "items"}
+          </span></span>
           </Navbar.Text>
         </Navbar.Collapse>
       </Container>
