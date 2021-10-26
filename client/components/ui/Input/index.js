@@ -11,7 +11,7 @@ export default function Input(props) {
   };
   return (
     <>
-      <p>
+      <div>
         <div className={style.input_container}>
           <input
             className={style["input_text"]}
@@ -22,11 +22,11 @@ export default function Input(props) {
             spellCheck="off"
             {...rest}
           />
-          <label className={style.input_label} for={props.name}>
+          <label className={style.input_label} htmlFor={props.name}>
             {props.name}
           </label>
         </div>
-      </p>
+      </div>
     </>
   );
 }

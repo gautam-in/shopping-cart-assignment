@@ -125,7 +125,7 @@
 }
 @media (max-width: 960px) {
   .OuterContainer {
-    margin: 0;
+    margin: 0 ;
   }
 }
 @media (max-width: 600px) {

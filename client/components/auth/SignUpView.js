@@ -12,6 +12,10 @@ export default function SignUpView(props) {
 
   const handleLogin = async (e) => {
     e.preventDefault();
+    if (password !== confirmpassword) {
+      alert("Password doesn't match");
+      return;
+    }
     const userobj = await registerUser({
       fname: firstname,
       lname: lastname,
@@ -33,17 +37,19 @@ export default function SignUpView(props) {
   const [confirmpassword, setConfirmpassword] = useState("");
   return (
     <>
-      <form onSubmit={handleLogin}>
+      <form onSubmit={handleLogin} action="" method="post">
         <Input
           type="text"
           name="firstname"
           value={firstname}
+          required
           onChange={setFirstname}
         />
         <Input
           type="text"
           name="lastname"
           value={lastname}
+          required
           onChange={setLastname}
         />
         <Input type="email" name="email" value={email} onChange={setEmail} />
@@ -51,12 +57,14 @@ export default function SignUpView(props) {
           name="password"
           type="password"
           value={password}
+          required
           onChange={setPassword}
         />
         <Input
           type="password"
           name="confirmpassword"
           value={confirmpassword}
+          required
           onChange={setConfirmpassword}
         />
         <Button type="submit">Signup</Button>

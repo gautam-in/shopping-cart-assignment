@@ -67,7 +67,6 @@ export default function Product({ categorydata, products, selectedcategory }) {
               {productsdata.map((item) => (
                 <ProductCard key={item.id} item={item} />
               ))}
-              )
             </div>
           ) : (
             <div className={style.No_Data}>

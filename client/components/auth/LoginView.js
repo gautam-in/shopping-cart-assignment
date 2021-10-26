@@ -15,21 +15,33 @@ export default function Loginview(props) {
   const handleLogin = async (e) => {
     e.preventDefault();
     const userobj = checkLogin({ email, password });
+
     if (userobj) {
       if (userobj) {
-        await dispatch({ type: "USER", payload: { user: userobj } });
-        router.push(`/`);
+        if (userobj.message) {
+          alert(userobj.message);
+        } else {
+          await dispatch({ type: "USER", payload: { user: userobj } });
+          router.push(`/`);
+        }
       }
     }
   };
   return (
     <>
       <form onSubmit={handleLogin}>
-        <Input type="email" name="email" value={email} onChange={setEmail} />
+        <Input
+          type="email"
+          required
+          name="email"
+          value={email}
+          onChange={setEmail}
+        />
         <Input
           type="password"
           name="password"
           value={password}
+          required
           onChange={setPassword}
         />
         <Button type="submit">Login</Button>

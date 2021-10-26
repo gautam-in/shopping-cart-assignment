@@ -15,16 +15,14 @@ export default function Navbar(props) {
   const router = useRouter();
   const { items, total, totalquantity, user, cartOpen, setToggleCart } =
     useStore();
-  debugger;
+
   const dispatch = useDispatchStore();
   const [checkLogin, registerUser, signOutUser] = useLocalStorage();
 
   const signOut = () => {
-    // debugger;
     const userobj = signOutUser(user.user.email);
     if (userobj) {
       if (userobj.message) {
-        debugger;
         dispatch({ type: "USER", payload: { user: {} } });
         router.push(`/`);
       }
@@ -44,7 +42,11 @@ export default function Navbar(props) {
                 <a>
                   <img
                     className={style.imageLogo}
+                    alt="site logo"
                     src="../../../static/images/logo.png"
+                    aria-label="site logo"
+                    width={`100%`}
+                    height={`100%`}
                   />
                 </a>
               </Link>
@@ -98,7 +100,7 @@ export default function Navbar(props) {
                 >
                   <div className={style.CartIcon}>
                     <Image
-                      classname={style.imgCart}
+                      className={style.imgCart}
                       src={CartIcon}
                       alt="Cart Icon"
                     />

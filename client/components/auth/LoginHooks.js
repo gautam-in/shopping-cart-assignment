@@ -38,7 +38,8 @@ export default function useLocalStorage() {
         };
       } else {
         return {
-          message: "user not found,please register first",
+          message:
+            "username or password is incorrect or user not found,please register again",
         };
       }
     }
