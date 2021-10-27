@@ -1,0 +1,114 @@
+.container {
+  top: 0;
+  right: 10%;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: flex;
+  background: #e6e6e6;
+  -webkit-flex-direction: column;
+  -moz-box-orient: vertical;
+  -moz-box-direction: normal;
+  flex-direction: column;
+  overflow-y: scroll;
+  position: absolute;
+  z-index: 1000;
+  width: 450px;
+  height: 100%;
+  box-sizing: border-box;
+  -webkit-transition: right 0.2s;
+  transition: right 0.2s;
+  height: calc(100vh - 89px);
+}
+.header {
+  background: #1b2022;
+  color: white;
+  height: 4rem;
+  padding: 1rem;
+  align-items: center;
+  display: flex;
+  width: 100%;
+}
+.content {
+  grid-column: span 12;
+  overflow: scroll;
+  flex-grow: 1;
+  position: relative;
+}
+.footer {
+  padding: 10px;
+  background: white;
+  text-align: center;
+  bottom: 0;
+  width: 100%;
+}
+.footer button {
+  width: 100%;
+}
+.footer p {
+  margin: 0 0 10px;
+}
+.emptyCart {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  position: absolute;
+  width: 100%;
+  background: white;
+}
+.emptyCart p {
+  margin: 0;
+  padding: 0;
+  font-size: 12px;
+}
+.header {
+  flex-direction: row;
+  display: flex;
+  justify-content: space-between;
+}
+.cartCloseButton {
+  width: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 5px;
+}
+.cartCloseButton:hover {
+  background-color: var(--button-black-hover);
+}
+.cartCloseButton:active {
+  opacity: 0.6;
+  -webkit-transition: opacity 0.1s ease-in-out;
+  -moz-transition: opacity 0.1s ease-in-out;
+  transition: opacity 0.1s ease-in-out;
+}
+@media (max-width: 960px) {
+  .header {
+    background: white;
+    color: black;
+  }
+  .container {
+    width: 100%;
+    right: 0;
+  }
+  .showinMobile {
+    height: 42px;
+    background: var(--background-gray1);
+  }
+  .container {
+    height: calc(100vh - 86px);
+  }
+  .cartCloseButton {
+    display: none;
+  }
+}
+.checkOutButton {
+  display: flex;
+  justify-content: space-between;
+}
+@media (max-width: 576px) {
+  .container {
+    height: calc(100vh - 60px);
+  }
+}

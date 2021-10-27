@@ -1,0 +1,38 @@
+.input_container {
+  position: relative;
+  padding-bottom: 1.5rem;
+}
+.input_text {
+  border: none;
+  width: 100%;
+  height: 100%;
+  background: none;
+  padding: 20px 16px 6px;
+  box-sizing: border-box;
+  outline: 0;
+  border-bottom: 1px solid#9e9e9e;
+}
+.input_label {
+  position: absolute;
+  pointer-events: none;
+  left: 10px;
+  top: 17px;
+  transition: 0.2s ease all;
+  font-size: 15px;
+  text-transform: capitalize;
+  color: #9e9e9e;
+}
+.input_text:focus {
+  border-bottom: 1px solid #00bcd4;
+}
+.input_text:focus ~ .input_label {
+  color: #4fdbe2;
+}
+.input_text:focus ~ .input_label,
+.input_text:not([value=""]) ~ .input_label {
+  top: -10px;
+  font-size: 12px;
+  opacity: 1;
+  transition: all 0.2s ease-out;
+  zoom: 1;
+}

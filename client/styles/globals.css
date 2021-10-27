@@ -1,0 +1,47 @@
+:root {
+  --background-gray1: #ebebeb;
+  --background-gray2: #f0f0f0;
+
+  --font-color-grey1: #4b4646;
+  --primary-font-color: black;
+
+  --button-primary: #bd2857;
+  --button-primary-hover: #a5103f;
+
+  --button-secondary: var(--background-gray1);
+  --button-secondary-hover: #d8d5d5;
+
+  --button-black: black;
+  --button-black-hover: #413d3e;
+
+  --text-primary: black;
+  --text-secondary: grey;
+
+  --black: black;
+
+  --base-font-size-header: 1.2rem;
+  --base-font-size-text: 12px;
+
+  --base-font-waight-header: 700;
+
+  --navbar-height-large: 100px;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Exo 2", -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+    Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  color: var(--primary-font-color);
+  font-size: 16px;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}

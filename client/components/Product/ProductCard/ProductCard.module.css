@@ -1,0 +1,116 @@
+.Product_Container {
+  padding: 10px;
+}
+.Product_Content {
+  /* display: flex;
+  padding: 10px;
+  flex-wrap: wrap;
+  flex-grow: 1;
+  gap: 20px;
+  flex-direction: row; */
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 10px;
+}
+.Product_Image_Container {
+  grid-column: span 2;
+}
+.Product_Header {
+  overflow: hidden;
+  height: 85px;
+  margin: 20px 0px;
+}
+.Product_Header p {
+  margin: 0;
+}
+.Product_Content_Description {
+  grid-column: span 2;
+  font-size: 0.8rem;
+}
+.Product_Content_Description p {
+  grid-column: span 2;
+  height: 115px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 0px 10px;
+}
+.Product_Content_Footer {
+  grid-column: span 2;
+}
+
+.Product_Content div {
+  flex: 1 1 200px;
+}
+.Product_Container {
+  border: 1px solid #e9e6e6;
+}
+.Product_Container img {
+  z-index: -1;
+}
+.Product_Header {
+  font-size: var(--base-font-size-header);
+  font-weight: var(--base-font-waight-header);
+}
+.Product_Content_Description {
+  background: var(--background-gray2);
+}
+.Product_Content_Footer_not_desktop {
+  display: none;
+}
+.Product_Content_Footer_desktop {
+  grid-column: span 2;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  clear: both;
+  align-items: center;
+  font-size: 0.9rem;
+}
+.Product_Content_Footer_desktop button {
+  width: 100%;
+}
+
+.Product_Content_Footer_desktop_span {
+  align-items: center;
+  text-align: center;
+}
+
+@media (max-width: 960px) {
+  .Product_Content_Footer_desktop {
+    display: none;
+  }
+  .Product_Image_Container {
+    grid-column: span 1;
+  }
+  .Product_Content_Description {
+    grid-column: span 1;
+  }
+  .Product_Content_Footer_not_desktop {
+    grid-column: span 2;
+    display: grid;
+  }
+  .Product_Content_Footer button {
+    width: 100%;
+  }
+}
+@media (max-width: 576px) {
+  .textContainer {
+    display: flex;
+    justify-content: space-between;
+  }
+  .Product_Image_Container {
+    grid-row: span 2;
+    grid-column: span 1;
+  }
+  .Product_Content_Description {
+    grid-column: span 1;
+    font-size: 0.9rem;
+  }
+  .Product_Content_Footer_not_desktop {
+    grid-column: span 1;
+    display: grid;
+  }
+  .Product_Header {
+    font-size: 1.3rem;
+  }
+}

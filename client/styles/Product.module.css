@@ -1,0 +1,117 @@
+.active {
+  font-weight: 700;
+  background: #dbd7d7;
+  color: var(--black);
+}
+.Product_Outer_container {
+  display: grid;
+  padding: 10px;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 10px;
+}
+.grid_container {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  grid-gap: 1rem;
+  margin: 0 10%;
+}
+.filter {
+  grid-column: span 3;
+
+  background: #edebeb;
+  color: black;
+}
+.products {
+  grid-column: span 9;
+  min-height: calc(100vh - 89px);
+}
+.filter ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.filter ul li {
+  padding: 10px;
+  border-bottom: 1px solid #d8d8d8;
+  color: var(--font-color-grey1);
+  font-size: 0.9rem;
+}
+.filter ul li.active {
+  color: var(--black);
+}
+.button {
+  display: none;
+}
+.No_Data {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 900;
+  font-size: 1.2rem;
+}
+@media (max-width: 960px) {
+  .Product_Outer_container {
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+  }
+  .grid_container {
+    margin: 0;
+  }
+}
+@media (max-width: 576px) {
+  .filter ul li.active {
+    color: white;
+    background-color: var(--button-primary-hover);
+  }
+  .filter ul li:hover {
+    background-color: var(--button-primary-hover);
+  }
+  .filter ul li:active {
+    opacity: 0.6;
+    -webkit-transition: opacity 0.1s ease-in-out;
+    -moz-transition: opacity 0.1s ease-in-out;
+    transition: opacity 0.1s ease-in-out;
+  }
+  .grid_container {
+    margin-top: 42px;
+  }
+  .Product_Outer_container {
+    grid-template-columns: 1fr;
+  }
+  .filter {
+    grid-column: span 12;
+    color: white;
+    background: #bd2757;
+  }
+  .filter ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  .filter ul li {
+    padding: 10px;
+    border-bottom: 1px solid white;
+    color: white;
+  }
+  .products {
+    grid-column: span 12;
+  }
+  .button button {
+    display: block;
+    width: 100%;
+    text-align: left;
+  }
+  .button {
+    display: block;
+  }
+  .hidden {
+    display: none;
+  }
+  .textContainer {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+  }
+}
