@@ -38,7 +38,7 @@ justify-items: center;
 
 `
 
-export const PRODUCT_DESCRIPTION = styled.p`
+export const PRODUCT_DESCRIPTION = styled.article`
     max-width: 250px;
     font-size: .7rem;
     height: 4.8rem;
@@ -93,7 +93,7 @@ export const PRODUCT_HEADING = styled.h6`
     }
 `;
 
-export const PRODUCT_PURCHASE_STYLE = styled.p`
+export const PRODUCT_PURCHASE_STYLE = styled.article`
     display: grid;
     grid-template-columns: 1fr 1fr;
     min-width: 250px;
@@ -115,7 +115,7 @@ export const PRODUCT_PURCHASE_STYLE = styled.p`
     }
 `
 
-export const PRICE_STYLE = styled.p`
+export const PRICE_STYLE = styled.article`
     /* grid-area: price-style; */
     box-sizing: border-box;
     font-size: .8rem;

@@ -24,7 +24,7 @@ const DESCRIPTION_HEADING = styled.h6`
     font-size: 0.98rem;
 `;
 
-const PRODUCT_DESCRIPTION = styled.p`
+const PRODUCT_DESCRIPTION = styled.article`
     max-width: 545px;
     font-size: .7rem;
     font-size: 0.9rem;

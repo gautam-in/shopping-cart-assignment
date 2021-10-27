@@ -24,14 +24,14 @@ export const CART_CARD_DESCRIPTION = styled.h6`
     text-align: center;
     font-size: 0.98rem;
 `
-export const CART_CARD_PRICE =  styled.p`
+export const CART_CARD_PRICE =  styled.article`
     grid-area: price;
     max-width: 250px;
     min-height: 1rem;
     text-align: center;
     font-size: 0.98rem;
 `
-export const CARD_TOTAL = styled.p`
+export const CARD_TOTAL = styled.article`
 display: grid;
 grid-template-columns: 25px 36px 23px 37px 20px;
     grid-template-rows: 23px;
@@ -53,6 +53,6 @@ export const ROUND_BUTTON = styled.div`
     cursor: pointer;
 `;
 
-export const INSIDE_BUTTON = styled.p`
+export const INSIDE_BUTTON = styled.article`
     font-size: 0.98rem;
 `

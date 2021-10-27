@@ -141,7 +141,7 @@ export const CART_EMPTY = styled.div`
     height: 126%;
 `
 
-export const CART_CLOSE_BTN = styled.p`
+export const CART_CLOSE_BTN = styled.article`
     cursor: pointer;
 `
 export const CART_DEFAULT_STATEMENT = styled.div`
@@ -158,7 +158,7 @@ export const CART_DEFAULT_STATEMENT = styled.div`
 export const CART_DEFAULT_IMAGE = styled.img`
     width: 66px;
 `
-export const CART_DEFAULT_TEXT = styled.p`
+export const CART_DEFAULT_TEXT = styled.article`
     max-width: 250px;
     min-height: 1rem;
     text-align: center;

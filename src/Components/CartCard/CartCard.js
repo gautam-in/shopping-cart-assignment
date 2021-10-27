@@ -6,7 +6,7 @@ export default function CartCard({cartItems, handleCart}){
         {
             cartItems && cartItems.map((item)=>{
                 return (
-                <CART_CARD_WRAPPER>
+                <CART_CARD_WRAPPER key={item.id}>
                 <CART_CARD_IMG src={item.imageURL} alt={item.name}/>
                 <CART_CARD_DESCRIPTION>{item.name}</CART_CARD_DESCRIPTION>
                 <CARD_TOTAL>
