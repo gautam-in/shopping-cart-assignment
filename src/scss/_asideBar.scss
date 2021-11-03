@@ -1,0 +1,27 @@
+@import "./vars";
+
+.aside {
+    background-color: lightgray;
+    display: block;
+    width: 20%;
+  
+    ul li {
+      box-shadow: 0px 1px 1px 0px grey;      
+      color: grey;
+      padding: 0.7rem 0.7rem;
+    }
+    a,
+    a:visited,
+    a:hover {
+      text-decoration: none;
+      color: gray;
+      font-size: 0.875rem;
+      font-family: sans-serif;
+    }
+  }
+  
+  @media screen and (max-width: 767px) {
+    .aside {
+      display: none;
+    }
+  }

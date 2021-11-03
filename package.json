@@ -1,15 +1,30 @@
 {
-  "name": "code-exercise",
+  "name": "assignment",
   "version": "1.0.0",
-  "description": "This is a shopping cart coding exercise",
+  "description": "This is a shopping cart website",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "canned -p 5000 ./server"
+    "build": "webpack --config webpack.config.js",
+    "wp-server": "webpack-dev-server --config webpack.config.js --mode development",
+    "start": "webpack-dev-server --mode development --open"
   },
+  "keywords": [],
   "author": "",
-  "license": "MIT",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.16.0",
+    "@babel/preset-env": "^7.16.0",
+    "babel-loader": "^8.2.3",
+    "css-loader": "^6.5.0",
+    "html-loader": "^3.0.0",
+    "html-webpack-plugin": "^5.5.0",
+    "sass-loader": "^12.3.0",
+    "style-loader": "^3.3.1",
+    "webpack": "^5.61.0",
+    "webpack-cli": "^4.9.1",
+    "webpack-dev-server": "^4.4.0"
+  },
   "dependencies": {
-    "canned": "^0.3.12"
+    "node-sass": "^6.0.1"
   }
 }

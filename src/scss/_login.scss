@@ -1,0 +1,54 @@
+.login__section {
+    display: flex;
+    justify-content: center;
+    padding: 1rem 0 2rem 0;
+    height: auto;    
+    width: 100%;
+  
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+  
+    article:first-child {
+      margin-bottom: 20%;
+    }
+  
+    &-form {
+      width: 31%;
+      padding: 0.625rem;
+      margin-top: 1.875rem;
+      margin-left: 3rem;
+  
+      form {
+        width: 80%;
+      }
+  
+      div {
+        position: relative;
+      }
+      button {
+        width: 100%;
+      }
+    }
+  }
+  
+  @media screen and (max-width: 767px) {
+    .login__section {
+      flex-direction: column;
+      height: auto;
+      text-align: center;
+      article:first-child {
+        margin: 0;
+      }
+  
+      &-form {
+        width: 100%;
+        margin: 0;
+      }
+      form {
+        width: 80%;
+        margin: auto;
+      }
+    }
+  }
