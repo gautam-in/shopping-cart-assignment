@@ -1,0 +1,67 @@
+/* .modal-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: black;
+  opacity: 0.92;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  overflow: hidden;
+} */
+.modalBackground {
+  background: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  position: fixed;
+  overflow: hidden;
+}
+.modalWrapper {
+  background: #ffffff;
+  border: 1px solid #d0cccc;
+  margin: 10% auto 0;
+  width: 30%;
+  height: 80%;
+  z-index: 11;
+  position: fixed;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 0.8s;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.modalHead {
+  width: 100% !important;
+  height: 10%;
+  background-color: black;
+  color: white;
+  /* margin: 5% 0 10% 25%; */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  padding: 2% 5%;
+}
+.modalCross {
+  cursor: pointer;
+}
+.formInput {
+  width: 80%;
+  margin: 3% auto 0;
+}
+.loginMessage {
+  color: red;
+  font-size: 120%;
+  font-weight: 200;
+}
+.modalChildren {
+  overflow: auto;
+  height: 100%;
+  width: 100%;
+  background-color: lightgray;
+}

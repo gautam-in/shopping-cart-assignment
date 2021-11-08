@@ -1,0 +1,12 @@
+.categorySection {
+  width: 70%;
+  height: 50%;
+  margin: 1% 15%;
+}
+
+@media screen and (max-width: 768px) {
+  .categorySection {
+    width: 100%;
+    margin: 0;
+  }
+}

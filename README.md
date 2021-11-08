@@ -13,3 +13,5 @@ npm run start
 yarn install
 yarn start
 ```
+
+Under App screenshot folder, screenshots of app is added for mobile, tablet and desktop view
