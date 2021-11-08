@@ -1,0 +1,8 @@
+.products-all {
+  display: flex;
+  max-width: 100vw;
+
+  @media screen and (max-width: 600px) {
+    flex-direction: column;
+  }
+}

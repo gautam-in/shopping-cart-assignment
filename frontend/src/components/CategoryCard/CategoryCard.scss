@@ -1,0 +1,83 @@
+@import "../../common/colors.scss";
+
+.category-card {
+  //   border: 2px solid black;
+
+  height: 300px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+  flex-direction: row;
+  border-bottom: 2px solid rgb(230, 230, 230);
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  text-align: justify;
+  margin: 20px 0;
+  padding: 20px 30px;
+  // border: 2px solid red;
+
+  &:nth-child(2n) {
+    flex-direction: row-reverse;
+  }
+
+  .image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    height: 100%;
+    img {
+      width: 80%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+
+  .desc {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    h3 {
+      font-size: 1.5rem;
+      margin: 10px 0;
+    }
+
+    h4 {
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+
+    button {
+      border: none;
+      background-color: $text-primary;
+      color: $font-primary;
+      padding: 10px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+  }
+
+  @media only screen and (max-width: 600px) {
+    & {
+      height: 200px;
+      padding: 10px 20px;
+
+      .desc {
+        text-align: justify;
+        h3 {
+          font-size: 1.2rem;
+        }
+
+        h4 {
+          font-size: 0.8rem;
+          text-align: justify;
+        }
+      }
+    }
+  }
+}
