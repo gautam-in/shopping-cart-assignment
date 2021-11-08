@@ -1,0 +1,15 @@
+@import "../../common/colors.scss";
+
+.sidenav-container {
+  min-width: 260px;
+  width: 260px;
+  background-color: $color-grey;
+  .sidenav {
+    .category-name {
+      padding: 10px;
+      border-bottom: 1px solid grey;
+      margin: 10px;
+      cursor: pointer;
+    }
+  }
+}

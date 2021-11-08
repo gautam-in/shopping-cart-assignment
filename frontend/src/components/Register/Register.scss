@@ -1,0 +1,116 @@
+@import "../../common/colors.scss";
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  //   border: 2px solid green;
+  margin: 20px;
+  form {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    // border: 2px solid red;
+    width: 100%;
+    padding: 20px;
+
+    .left-side {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      //   border: 2px solid blue;
+      width: 50%;
+      .heading {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+    }
+
+    .right-side {
+      display: flex;
+      flex-direction: column;
+      //   border: 2px solid brown;
+      width: 50%;
+
+      .field {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        padding: 10px 20px;
+        transition: all 200ms ease-in;
+
+        input {
+          border-bottom: 2px solid $color-grey;
+          width: 60%;
+          padding: 10px 0px;
+          &:focus {
+            border-bottom: 2px solid $color-input-fields;
+          }
+        }
+
+        label {
+          position: absolute;
+          top: 20px;
+          left: 20px;
+          letter-spacing: 1px;
+          font-size: 0.9rem;
+          color: $color-grey;
+          font-weight: bold;
+          transition: 0.5s;
+          //   border: 2px solid green;
+        }
+
+        input:focus ~ label,
+        input:valid + label {
+          top: -2px;
+          color: $color-input-fields;
+          font-size: 0.8rem;
+        }
+
+        p {
+          margin: 10px 0;
+          font-weight: bold;
+          font-size: 0.9rem;
+          color: red;
+        }
+      }
+
+      .button {
+        background-color: $text-primary;
+        padding: 10px;
+        width: 60%;
+        margin: 10px;
+        color: $font-primary;
+      }
+    }
+
+    @media only screen and (max-width: 1024px) {
+      min-width: 100vw;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      .left-side {
+        width: 100%;
+        margin-bottom: 5rem;
+      }
+      .right-side {
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        .field {
+          width: 100%;
+          justify-content: center;
+          align-items: center;
+
+          label {
+            position: absolute;
+            top: 25px;
+            left: 100px;
+          }
+        }
+      }
+    }
+  }
+}
