@@ -4,12 +4,40 @@
   min-width: 260px;
   width: 260px;
   background-color: $color-grey;
+  .icon-dropdown {
+    display: none;
+  }
   .sidenav {
     .category-name {
       padding: 10px;
       border-bottom: 1px solid grey;
       margin: 10px;
       cursor: pointer;
+    }
+  }
+
+  @media only screen and (max-width: 600px) {
+    min-width: 100vw;
+    width: 100vw;
+    margin: 20px 0px;
+    // border: 2px solid green;
+    color: $font-primary;
+    background-color: $text-primary;
+
+    .icon-dropdown {
+      min-width: 100%;
+      padding: 10px 30px;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 20px;
+      // border: 2px solid grey;
+      background-color: $text-primary;
+      color: $font-primary;
+      z-index: 1;
+    }
+    .sidebar-list {
     }
   }
 }

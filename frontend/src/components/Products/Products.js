@@ -13,7 +13,7 @@ export default function Products() {
   const dispatch = useDispatch();
   const cart = useSelector((state) => state.cart);
   // console.log(cart.showCart);
-  let width = window.innerWidth;
+  // let width = window.innerWidth;
 
   useEffect(() => {
     dispatch(fetchAsyncProducts());
@@ -22,7 +22,7 @@ export default function Products() {
 
   return (
     <div className="products-all">
-      {width > 600 ? <SideBar /> : null}
+      <SideBar />
       <ProductList />
       {cart.showCart && <Cart />}
     </div>
