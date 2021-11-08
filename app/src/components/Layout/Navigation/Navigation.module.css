@@ -1,0 +1,102 @@
+.mainContainer {
+  border-bottom: 1px solid lightgray;
+  box-shadow: 0px 0px 10px gray;
+  position: relative;
+}
+.signinContainer {
+  text-align: end;
+  margin: 0 15%;
+}
+.logoStyle {
+  width: 90%;
+}
+.signinLink {
+  font-size: small;
+  margin-right: 1%;
+  font-weight: bold;
+  color: gray;
+  text-decoration: none;
+}
+.NavigationContainer {
+  display: flex;
+  align-items: center;
+  margin: 0 15%;
+}
+.NavigationContainer span {
+  margin-left: 5%;
+}
+
+.cartContainerBigScreen {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  margin-right: 15%;
+  padding: 0.5% 1%;
+  background-color: rgb(238, 237, 237);
+  cursor: pointer;
+}
+.cartContainerSmallScreen {
+  display: none;
+}
+.cart {
+  width: 30px;
+}
+.itemCount {
+  vertical-align: super;
+  font-weight: 600;
+  color: gray;
+}
+
+.navItem {
+  text-decoration: none;
+  margin-left: 30%;
+  font-weight: 600;
+  color: gray;
+}
+
+@media screen and (max-width: 768px) {
+  .signinContainer {
+    margin: 0 5%;
+  }
+  .NavigationContainer {
+    margin: 0;
+  }
+  .NavigationContainer span {
+    margin: 0;
+  }
+  .cartContainer {
+    margin-right: 5%;
+  }
+  .cartContainerBigScreen {
+    display: none;
+  }
+  .cartContainerSmallScreen {
+    display: block;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    margin-right: 3%;
+    padding: 0.5% 1%;
+    background-color: rgb(238, 237, 237);
+    cursor: pointer;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .signinContainer {
+    display: none;
+    margin: 0;
+  }
+  .NavigationContainer {
+    margin: 0;
+  }
+  .NavigationContainer span {
+    display: none;
+  }
+  .cartContainer {
+    margin: 0;
+  }
+  .logoStyle {
+    width: 70%;
+  }
+}

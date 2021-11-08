@@ -1,0 +1,38 @@
+.signinContainer {
+  display: flex;
+  justify-content: center;
+}
+.loginLeftSection {
+  width: 30% !important;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+.loginLeftSection h2 {
+  margin: 0;
+}
+.loginLeftSection p {
+  font-size: smaller;
+}
+.loginRightSection {
+  width: 30% !important;
+}
+.error {
+  font-size: small;
+  color: red;
+}
+
+@media screen and (max-width: 768px) {
+  .signinContainer {
+    flex-direction: column;
+    align-items: center;
+  }
+  .loginLeftSection {
+    width: 60% !important;
+    align-items: center;
+  }
+  .loginRightSection {
+    width: 60% !important;
+  }
+}

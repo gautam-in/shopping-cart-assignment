@@ -1,0 +1,11 @@
+.footerContainer{
+    margin: 2% 0;
+    background-color: rgb(238, 237, 237);
+    padding: 1%;
+}
+.footerContent{
+    margin: 0 15%;
+    color: black;
+    font-weight: 600;
+    text-align: left;
+}
