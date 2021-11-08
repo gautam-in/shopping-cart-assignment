@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import {
+  fetchAsyncBanners,
   fetchAsyncCategories,
   getAllCategories,
   // loaded,
@@ -8,6 +9,7 @@ import { useDispatch, useSelector } from "react-redux";
 import CategoryCard from "../CategoryCard/CategoryCard";
 import "./Home.scss";
 import Cart from "../Cart/Cart";
+import Carousel from "../Carousel/Carousel";
 
 export default function Home() {
   const cart = useSelector((state) => state.cart);
@@ -17,22 +19,26 @@ export default function Home() {
 
   useEffect(() => {
     dispatch(fetchAsyncCategories());
+    dispatch(fetchAsyncBanners());
   }, [dispatch]);
 
   return (
-    <div className="movie-card-container">
-      {
-        /* {load === true ? (
+    <>
+      <div className="movie-card-container">
+        <Carousel />
+        {
+          /* {load === true ? (
         <div> ..loading </div>
       ) : ( }*/
-        <div>
-          {categories.length > 0 &&
-            categories.map((category) => (
-              <CategoryCard key={category.id} category={category} />
-            ))}
-        </div>
-      }
-      {cart.showCart && <Cart />}
-    </div>
+          <div>
+            {categories.length > 0 &&
+              categories.map((category) => (
+                <CategoryCard key={category.id} category={category} />
+              ))}
+          </div>
+        }
+        {cart.showCart && <Cart />}
+      </div>
+    </>
   );
 }

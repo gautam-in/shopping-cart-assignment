@@ -2,6 +2,15 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 import { compare } from "../../common/sort";
 
+//fetch the banners
+export const fetchAsyncBanners = createAsyncThunk(
+  "products/fetchAsyncBanners",
+  async () => {
+    const response = await axios.get("http://localhost:5000/banners");
+    return response.data;
+  }
+);
+
 // fetch the categories
 export const fetchAsyncCategories = createAsyncThunk(
   "products/fetchAsyncCategories",
@@ -37,6 +46,7 @@ const initialState = {
   categories: {},
   loaded: true,
   products: {},
+  banners: {},
 };
 
 const productSlice = createSlice({
@@ -84,6 +94,15 @@ const productSlice = createSlice({
     [fetchAsyncProducts.rejected]: () => {
       console.log("Rejected Products");
     },
+
+    //banners
+    [fetchAsyncBanners.fulfilled]: (state, { payload }) => {
+      console.log("Fetched Properly");
+      return {
+        ...state,
+        banners: payload,
+      };
+    },
   },
 });
 
@@ -93,7 +112,6 @@ const productSlice = createSlice({
 export const getAllCategories = (state) => state.products.categories;
 export const getAllProducts = (state) => state.products.products;
 export const loaded = (state) => state.products.loaded;
-// console.log(getAllCategories());
 
 // exporting the slice outside
 export default productSlice.reducer;
