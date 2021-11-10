@@ -1,0 +1,19 @@
+@import "../../styles/variables";
+
+.category-dropdown {
+  padding: 0.5rem 0;
+
+  .select {
+    width: 100%;
+    padding: 10px;
+    background: $theme;
+    color: $background-white;
+
+    .option {
+      margin: 10px;
+    }
+    .active {
+      color: $background-white;
+    }
+  }
+}

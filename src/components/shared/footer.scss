@@ -1,0 +1,11 @@
+@import '../../styles/variables';
+
+.footer {
+  padding: 10px;
+  font-size: 12px;
+  word-spacing: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: $light-grey;
+}

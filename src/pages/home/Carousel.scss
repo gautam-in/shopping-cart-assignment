@@ -1,0 +1,31 @@
+@import '../../styles/variables';
+
+.slick-next:before, .slick-prev:before {
+    color: $background-black;
+}
+.slick-slider {
+    &::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 13px;
+        bottom: -15px;
+        margin: 0 auto;
+        background: radial-gradient(at 50% 0, rgba(0, 0, 0, 0.5), transparent 70%);
+    }
+    .slick-dots {
+        bottom: 12px;
+    }
+    .slick-slide img {
+        height: auto;
+        width: 100%;
+    }
+    .slick-next {
+        right: 0;
+    }
+    .slick-prev {
+        left: 0;
+        z-index: 1;
+    }
+
+}

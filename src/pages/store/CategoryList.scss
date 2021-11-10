@@ -1,0 +1,28 @@
+@import '../../styles/variables';
+
+.categories-list {
+    background: #eaeaea;
+    list-style: none;
+    min-height: calc(100vh - 20px);
+    width: 20rem;
+    //min-width: 14rem;
+    padding: 0;
+    .active {
+        background-color: $theme;
+        color: $background-white;
+    }
+    > div {
+      flex: 1   
+    }
+    li {
+        cursor: pointer;
+        border-bottom: 1px solid #808080;
+        list-style-type: none;
+        padding: 10px;
+        transition: all 0.3s linear;
+        &:hover {
+            background-color: $theme;
+            color: $background-white;
+        }
+    }
+}

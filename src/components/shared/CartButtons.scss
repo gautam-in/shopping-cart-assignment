@@ -1,0 +1,59 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+.card-buttons {
+    display: flex;
+    align-items: center;    
+    justify-content: space-between;         
+    padding: 15px 0;
+    border-bottom: 2px dashed $light-grey;
+    .button-action {
+        @media screen and (max-width: 600px) {
+            padding: 5px;
+            margin: 0;
+            margin-right: 10px;
+            &:nth-of-type(1) {
+                margin-right: 10px;
+            }
+            &:nth-of-type(2) {
+                margin-left: 10px;
+            }
+        }
+    }
+    
+    .button-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        @media screen and (max-width: 1080px) {
+            display: none;
+        }
+        .price {
+            font-weight: bold;
+        }
+        .button-action {
+            margin: 0 10px;
+        }
+    }
+    button {
+        @include button-primary;
+        margin: 0 10px;
+        &.button-sm {
+            display: none;
+        }
+        
+        @media screen and (max-width: 1080px) {
+            &.button-addproduct.button-sm {
+                width: 100%;
+                display: block;
+            }
+            &.button-lg {
+                display: none;
+            }
+            .price {
+                display: none;
+            }
+        }
+    }
+}
