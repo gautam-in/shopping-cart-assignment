@@ -1,0 +1,63 @@
+* {
+	box-sizing: border-box;
+}
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Dosis";
+}
+ul,p  {
+    margin: 0;
+}
+a {
+    margin: 0;
+    padding: 10px;
+    color: #808080;
+    text-align: center;
+    text-decoration: none !important;
+    display: inline-block;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+.container {
+    min-height: calc(100vh - 35px);
+	max-width: 1440px;
+	margin-top: 5rem;
+	margin-left: auto;
+    margin-right: auto;
+    @media screen and (min-width: 1024px) {        
+        padding: 0 2rem;
+    }
+	@media screen and (min-width: 1200px) {
+		padding: 0 6rem;
+	}
+}
+.form-row {
+	position: relative;
+	margin-top: 15px;
+	margin-bottom: 25px;
+
+	.floating-label {
+		font-size: 13px;
+		color: #cccccc;
+		position: absolute;
+		pointer-events: none;
+		top: 4px;
+		left: 9px;
+		transition: all 0.4s ease;
+	}
+
+	input:focus ~ .floating-label,
+	input:not(:focus):valid ~ .floating-label,
+    .email:not(:focus):invalid ~ .floating-label {
+		top: -15px;
+		bottom: 0px;
+		left: 0px;
+		font-size: 11px;
+		opacity: 1;
+		color: blue;
+	}
+}
+.err-msg {
+	padding: 10px;
+}

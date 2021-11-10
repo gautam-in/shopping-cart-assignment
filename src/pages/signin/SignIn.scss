@@ -1,0 +1,36 @@
+@import '../../styles/variables';
+@import '../../styles/mixins.scss';
+
+.signin-container {
+    display: flex;
+    flex-wrap: wrap;
+    flex: 1;
+    justify-content: center;
+    margin-top: 50px;
+
+    .signin-left,.signin-right {
+        padding: 15px;
+    }
+    .signin-right {
+        flex-basis: 70%;
+        @media screen and (min-width: 768px) {
+            flex-basis: 30%;
+        }
+    }
+    form {
+        input, button, label {
+            display: block;
+            border: 0;
+            padding: 10px 0;
+            outline: none;
+        }
+        input {
+            @include input-field;           
+        }
+        button {
+            @include button-primary;
+            width: 100%;
+        }
+    }
+}
+

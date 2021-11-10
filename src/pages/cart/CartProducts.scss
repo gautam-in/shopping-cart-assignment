@@ -1,0 +1,12 @@
+@import '../../styles/variables';
+
+.cart-heading {
+    padding: 15px;
+    background: $background-black;
+    color: $background-white;
+    font-size: 24px;
+    font-weight: bold;
+}
+.product-name {
+    font-weight: bold;
+}
