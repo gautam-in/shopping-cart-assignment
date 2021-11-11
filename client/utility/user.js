@@ -16,7 +16,7 @@ export const registerUser = (user) => {
       }
       if (!validateUserPassword(user.password)) {
         message.password =
-          "Password must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters";
+          "Password must contain at least one  number and one uppercase and lowercase letter, and at least 6 or more characters";
       }
 
       if (!validateConfirmPassword(user.password, user.confirmPassword)) {
