@@ -1,0 +1,159 @@
+.App {
+  text-align: center;
+}
+.App button {
+  border-radius: 10px;
+  border: 2px solid burlywood;
+  font-size: medium;
+  padding: 5px;
+  cursor: pointer;
+}
+.App h1 {
+  color: red;
+  font-family: 'Times New Roman', Times, serif;
+  background-color: wheat;
+  margin-left: 33%;
+  margin-right: 33%;
+  border-radius: 10px;
+  border: 2px solid burlywood;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+.nav-bar {
+ width: 80%;
+ display: flex ;
+ margin-left : 10%;
+ margin-right: 10%;
+ padding-right: 2rem;
+ padding-left: 2rem;
+ position: sticky;
+ top: 0;
+background-color: whitesmoke;
+}
+nav{
+  margin-left: 2rem;
+  
+}
+a {
+  background-color: honeydew;
+  font-size: large;
+  align-items: center;
+  justify-content: center;
+  margin: 2rem;
+  font-weight: 200;
+  text-decoration: none;
+  text-align: center;
+}
+.nav-bar img {
+  width: 10%;
+  height: 5%;
+}
+.nav-right {
+  position: absolute;
+  left: 75%;
+}
+form {
+  background-color: thistle;
+  margin-left: 20%;
+  height: 80%;
+  width: 30%;
+  border-radius: 2rem;
+  text-align: center;
+}
+.products {
+  text-align: center;
+  display: inline-block;
+  margin: 0.5rem;
+  background-color: wheat;
+  width: 18rem;
+  height: 45%;
+  border: 2px solid burlywood;
+  border-radius: 10px;
+  vertical-align: middle;
+}
+.products img {
+  height: 8rem;
+  width: 60%;
+}
+
+.banner {
+
+  width: auto;
+  margin: 35px;
+  padding: 5px;
+  text-align: center;
+  cursor: pointer;
+}
+.banner img:hover {
+  background-color: wheat;
+  width: auto;
+  height: auto;
+
+}
+
+.subHeading {
+  color: gray;
+  font-family: 'Times New Roman', Times, serif;
+  background-color: whitesmoke;
+  border-radius: 10px;
+  border: 2px solid grey;
+  margin-left: 10px;
+  margin-right: 10px;
+
+}
+.subHeading:hover {
+  background-color: wheat;
+}
+
+.category {
+border: 2px solid grey;
+border-radius: 10px;
+width: 30%;
+height: auto;
+display: inline;
+margin: 10px;
+cursor: pointer;
+}
+.category h3 {
+  color: red;
+}
+.category img {
+  width: 40%;
+  height: 50%;
+}
+.category:hover {
+  background-color: wheat;
+}
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
