@@ -1,0 +1,21 @@
+.Button {
+  background-color: var(--button-primary);
+  color: white;
+  padding: 10px;
+  border: none;
+  opacity: 1;
+  font-size: 0.9rem;
+
+  &:hover {
+    background-color: var(--button-primary-hover);
+  }
+  &:active {
+    opacity: 0.6;
+    -webkit-transition: opacity 0.1s ease-in-out;
+    -moz-transition: opacity 0.1s ease-in-out;
+    transition: opacity 0.1s ease-in-out;
+  }
+  @media (max-width: 576px) {
+    font-size: 1.1rem;
+  }
+}

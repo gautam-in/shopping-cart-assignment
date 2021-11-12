@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders homepage unchanged 1`] = `
+<div>
+  <div
+    style={
+      Object {
+        "paddingBottom": "10px",
+        "paddingTop": "10px",
+      }
+    }
+  />
+</div>
+`;

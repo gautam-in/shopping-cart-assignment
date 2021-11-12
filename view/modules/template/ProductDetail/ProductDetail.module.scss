@@ -1,0 +1,31 @@
+.Homecard_container {
+  display: flex;
+  justify-content: space-around;
+  padding: 0px 20px;
+  align-items: center;
+}
+.even {
+  flex-direction: row-reverse;
+}
+.Homecard_description {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  h1 {
+    font-size: 1.3rem;
+  }
+
+  p {
+    font-size: 0.9rem;
+  }
+}
+
+.Homecard_image {
+  img {
+    height: 239px !important;
+    width: auto !important;
+  }
+}

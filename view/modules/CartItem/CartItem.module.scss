@@ -1,0 +1,40 @@
+.ItemContainer {
+  background: white;
+  margin: 10px 0;
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  grid-gap: 1rem;
+  align-items: center;
+}
+.ImageContainer {
+  grid-column: span 2;
+}
+.description {
+  grid-column: span 8;
+  grid-gap: 1rem;
+  display: grid;
+  padding: 1rem 0;
+}
+.price {
+  grid-column: span 2;
+}
+.quantity {
+  display: grid;
+  height: auto;
+  grid-gap: 2rem;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+
+  button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20px;
+  }
+}
+.ItemEmptyContainer {
+  background: white;
+  margin: 10px;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
