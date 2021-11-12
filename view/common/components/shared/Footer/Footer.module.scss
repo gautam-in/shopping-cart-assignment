@@ -1,0 +1,13 @@
+.footer {
+  font-size: 0.7rem;
+  padding: 10px;
+  width: 100%;
+  text-align: center;
+  background: var(--button-secondary);
+  
+  @media only screen and (min-width: 769px) {
+    font-size: 0.8rem;
+    text-align: left;
+    padding-left: 200px;
+  }
+}

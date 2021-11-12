@@ -1,0 +1,138 @@
+.active {
+  font-weight: 700;
+  background: #dbd7d7;
+  color: var(--black);
+}
+.Product_Outer_container {
+  display: grid;
+  padding: 10px;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 10px;
+
+  @media (max-width: 960px) {
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+  }
+
+  @media (max-width: 576px) {
+    grid-template-columns: 1fr;
+  }
+}
+.grid_container {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  grid-gap: 1rem;
+  margin: 0 10%;
+
+  @media (max-width: 960px) {
+    margin: 0;
+  }
+
+  @media (max-width: 576px) {
+    margin-top: 42px;
+  }
+}
+.filter {
+  grid-column: span 3;
+  background: #edebeb;
+  color: black;
+
+  @media (max-width: 576px) {
+    grid-column: span 12;
+    color: white;
+    background: #bd2757;
+  }
+
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
+    @media (max-width: 576px) {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    li {
+      padding: 10px;
+      border-bottom: 1px solid #d8d8d8;
+      color: var(--font-color-grey1);
+      font-size: 0.9rem;
+
+      @media (max-width: 576px) {
+        padding: 10px;
+        border-bottom: 1px solid white;
+        color: white;
+      }
+
+      &.active {
+        color: var(--black);
+
+        @media (max-width: 576px) {
+          color: white;
+          background-color: var(--button-primary-hover);
+        }
+      }
+
+      &:hover {
+        @media (max-width: 576px) {
+          background-color: var(--button-primary-hover);
+        }
+      }
+
+      &:active {
+        @media (max-width: 576px) {
+          opacity: 0.6;
+          -webkit-transition: opacity 0.1s ease-in-out;
+          -moz-transition: opacity 0.1s ease-in-out;
+          transition: opacity 0.1s ease-in-out;
+        }
+      }
+    }
+  }
+}
+.products {
+  grid-column: span 9;
+  min-height: calc(100vh - 89px);
+
+  @media (max-width: 576px) {
+    grid-column: span 12;
+  }
+}
+.button {
+  display: none;
+
+  @media (max-width: 576px) {
+    display: block;
+  }
+  
+  button {
+    @media (max-width: 576px) {
+      display: block;
+      width: 100%;
+      text-align: left;
+    }
+  }
+}
+.No_Data {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 900;
+  font-size: 1.2rem;
+}
+.hidden {
+  @media (max-width: 576px) {
+    display: none;
+  }
+}
+.textContainer {
+  @media (max-width: 576px) {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+  }
+}
