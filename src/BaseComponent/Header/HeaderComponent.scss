@@ -1,0 +1,66 @@
+/******************* HeaderComponent *****************************/
+@import "../../Styles/color-variable.scss";
+@import "../../Styles/variable.scss";
+@import "../../Styles/mixin.scss";
+
+.header {
+  box-shadow: 0 0 5px 5px $LIGHT_GREY;
+  min-height: $LARGE_HEIGHT;
+  // margin-bottom: $MEDIUM_MARGIN;
+
+  @mixin header-link {
+    text-decoration: none;
+    font-size: $MEDIUM_FONT_SIZE;
+    color: $APP_BLACK;
+  }
+
+  & .header_navbar {
+    display: grid;
+    grid-template-columns: 1fr 1fr 3fr 1fr;
+    gap: $LARGE_GAP;
+    width: 80%;
+    margin: auto;
+
+    & .header_navbar_logo-link {
+      padding: $SMALL_PADDING;
+
+      & .header_navbar_logo {
+        width: 100%;
+        height: $LARGE_HEIGHT;
+      }
+    }
+
+    & .header_navbar_home {
+      @include header-link;
+      align-self: center;
+      justify-self: end;
+    }
+
+    & > .header_navbar_product {
+      @include header-link;
+      align-self: center;
+      justify-self: start;
+    }
+
+    & .header_navbar_option {
+      @include grid-2-column;
+    //   justify-self: end;
+
+      & .header_navbar_option_signin {
+        @include header-link;
+        justify-self: end;
+        align-self: center;
+      }
+
+      & .header_navbar_option_register {
+        @include header-link;
+        justify-self: end;
+        align-self: center;
+      }
+
+      & .header_navbar_option_cart {
+        grid-column: 1/-1;
+      }
+    }
+  }
+}

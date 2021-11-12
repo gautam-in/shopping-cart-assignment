@@ -1,0 +1,16 @@
+/******************* AccordionComponent *****************************/
+@import "../../Styles/variable.scss";
+@import "../../Styles/color-variable.scss";
+
+.accordion{
+    width: 100%;
+    background-color: $LIGHT_GREY;
+
+    & .accordion_menu {
+        width: 100%;
+        font-size: $MEDIUM_FONT_SIZE;
+        padding: $SMALL_PADDING $MEDIUM_PADDING;
+        border-bottom: 1px solid $DARK_GREY;
+        cursor: pointer;
+    }
+}

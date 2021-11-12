@@ -1,0 +1,51 @@
+/******************* DataGridComponent *****************************/
+@import "../../Styles/color-variable.scss";
+@import "../../Styles/variable.scss";
+
+.data-grid {
+    width: 100%;
+    display: grid;
+    gap: 10px;
+    margin: 0 10px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+
+    & .data-grid_item {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr auto 1fr auto;
+        gap: 10px;
+        width: 100%;
+        padding: 10px;
+        border-bottom: 2px dotted $LIGHT_GREY;
+        box-shadow: 2px 0 2px 0 $LIGHT_GREY;
+
+        & .data-grid_item_header {
+            font-size: 14px;
+            grid-column: 1/-1;
+            align-self: center;
+        }
+
+        & .data-grid_item_image {
+            width: 100%;
+            grid-column: 1/-1;
+        }
+
+        & .data-grid_item_description {
+            font-size: 10px;
+            grid-column: 1/-1;
+            background-color: $LIGHT_GREY;
+            padding: 5px;
+        }
+
+        & .data-grid_item_price {
+            font-size: 14px;
+            white-space: nowrap;
+            letter-spacing: -1px;
+            align-self: center;
+        }
+
+        & .data-grid_item_button {
+            white-space: nowrap;
+        }
+    }
+}

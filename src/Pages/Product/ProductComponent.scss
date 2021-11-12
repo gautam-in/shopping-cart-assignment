@@ -1,0 +1,9 @@
+/******************* ProductComponent *****************************/
+@import "../../Styles/variable.scss";
+
+.product {
+    width: 80%;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    margin: $MEDIUM_MARGIN auto;
+}

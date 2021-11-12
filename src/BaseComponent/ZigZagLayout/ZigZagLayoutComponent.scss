@@ -1,0 +1,61 @@
+/******************* ZigZagLayoutComponent *****************************/
+@import "../../Styles/variable.scss";
+@import "../../Styles/color-variable.scss";
+
+.zig-zag {
+    width: 100%;
+
+    & .zig-zag_section {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        gap: $SMALL_GAP;
+        padding: $MEDIUM_PADDING;
+        margin-bottom: $MEDIUM_MARGIN;
+        box-shadow: 0px 10px 5px -5px $LIGHT_GREY;
+
+        & .zig-zag_section_sub-left {
+            & .zig-zag_section_sub-left_image {
+                width: 100%;
+                height: auto;
+            }
+        }
+
+        & .zig-zag_section_sub-right {
+            align-self: center;
+            display: flex;
+            flex-direction: column;
+            gap: $MEDIUM_GAP;
+
+            & .zig-zag_section_sub-right_header {
+                text-align: center;
+                font-size: $LARGE_FONT_SIZE;
+            }
+
+            & .zig-zag_section_sub-right_description {
+                text-align: center;
+                font-size: $MEDIUM_FONT_SIZE;
+                white-space: nowrap;
+            }
+
+            & .zig-zag_section_sub-right_button {
+                align-self: center;
+            }
+        }
+    }
+
+    & .zig-zag_section:last-child {
+        box-shadow: none;
+    }
+
+    & .zig-zag_section:nth-child(2n + 0) {
+        grid-template-columns: 2fr 1fr;
+
+        & .zig-zag_section_sub-left {
+            grid-area: 1/2/2/3;
+        }
+
+        & .zig-zag_section_sub-right {
+            grid-area: 1/1/2/2;
+        }
+    }
+}

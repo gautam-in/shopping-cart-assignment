@@ -1,0 +1,28 @@
+/******************* InputTextBoxComponent *****************************/
+@import "../../Styles/color-variable.scss";
+@import "../../Styles/variable.scss";
+
+.input-textbox {
+  & .input-textbox_label {
+    display: none;
+    color: $LIGHT_GREY;
+  }
+
+  & .input-textbox_label--focus {
+    display: block;
+    color: $LIGHT_BLUE;
+  }
+
+  & .input-textbox_input {
+    border: none;
+    border-bottom: 2px solid $LIGHT_GREY;
+    width: 100%;
+    height: $MEDIUM_HEIGHT;
+    padding: $MEDIUM_PADDING 0;
+    font-size: $MEDIUM_FONT_SIZE;
+  }
+
+  & .input-textbox_input--focus {
+    border-bottom: 2px solid $LIGHT_BLUE;
+  }
+}

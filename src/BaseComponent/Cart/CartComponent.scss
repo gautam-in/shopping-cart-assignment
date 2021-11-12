@@ -1,0 +1,26 @@
+/********************* CartComponent ************************/
+@import "../../Styles/color-variable.scss";
+@import "../../Styles/variable.scss";
+@import "../../Styles/mixin.scss";
+
+.cart {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  background-color: $LIGHT_GREY;
+  gap: $SMALL_GAP;
+  text-decoration: none;
+
+  & .cart_icon {
+    width: $MEDIUM_WIDTH;
+    height: auto;
+    justify-self: end;
+    align-self: center;
+  }
+
+  & .cart_items {
+    font-size: $MEDIUM_FONT_SIZE;
+    color: $APP_BLACK;
+    justify-self: start;
+    align-self: center;
+  }
+}

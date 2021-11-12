@@ -1,0 +1,15 @@
+/******************* InputSubmitButtonComponent *****************************/
+@import '../../Styles/variable.scss';
+@import '../../Styles/color-variable.scss';
+
+$BUTTON_PADDING: 15px;
+
+.input-button {
+    border: none;
+    background-color: $CRIMSON_RED;
+    width: 100%;
+    min-height: $MEDIUM_HEIGHT;
+    padding: $BUTTON_PADDING;
+    font-size: $MEDIUM_FONT_SIZE;
+    color: $WHITE;
+}

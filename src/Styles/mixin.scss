@@ -1,0 +1,9 @@
+@mixin flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+@mixin grid-2-column {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+}

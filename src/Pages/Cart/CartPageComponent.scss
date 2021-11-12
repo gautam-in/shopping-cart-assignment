@@ -1,0 +1,114 @@
+/******************* CartPageComponent *****************************/
+@import "../../Styles/color-variable.scss";
+@import "../../Styles/variable.scss";
+
+.cart-page {
+    background-color: $LIGHT_GREY;
+    display: grid;
+    grid-template-rows: auto 3fr auto;
+    gap: $MEDIUM_GAP;
+    padding: $MEDIUM_PADDING 0 0;
+    position: absolute;
+    width: 100%;
+    height: 80%;
+    overflow: auto;
+
+    & .cart-page_header {
+        background-color: $WHITE;
+        font-size: $LARGE_FONT_SIZE;
+        padding: $SMALL_PADDING;
+        display: flex;
+        gap: $SMALL_GAP;
+        align-self: center;
+
+        & .cart-page_header_item-count {
+            font-size: $MEDIUM_FONT_SIZE;
+            font-weight: 200;
+            align-self: center;
+        }
+    }
+
+    & .cart-page_items-section {
+        & .cart-page_items {
+            display: grid;
+            grid-template-columns: 1fr 4fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            background-color: $WHITE;
+            padding: 10px;
+            margin-bottom: 10px;
+
+            & .cart-page_items_image-section {
+                grid-area: 1/1/-1/2;
+                justify-self: center;
+
+                & .cart-page_items_image-section_image {
+                    width: 80px;
+                    height: auto;
+                }
+            }
+            
+            & .cart-page_items_header {
+                grid-area: 1/2/1/-1;
+                align-self: center;
+                font-weight: 700;
+            }
+            & .cart-page_items_button {
+                display: flex;
+                gap:10px;
+            }
+
+            & .cart-page_items_total {
+                font-size: 15px;
+            }
+        }
+
+        & .cart-page_tag {
+            display: flex;
+            background-color: $WHITE;
+            gap: 10px;
+            padding: $SMALL_PADDING;
+            margin: 10px;
+    
+            & .cart-page_tag_image {
+                width: 140px;
+                height: auto;
+                align-self: center;
+            }
+    
+            & .cart-page_tag_line {
+                font-size: 14px;
+                align-self: center;
+            }
+        }     
+        
+        & .cart-page_items-section_empty {
+            text-align: center;
+            & .cart-page_items-section_empty_header {
+                font-size: 28px;
+                font-weight: 700;
+                padding: 10px;
+            }
+
+            & .cart-page_items-section_empty_sub-header {
+                font-size: 14px;
+            }
+        }
+    }
+
+    & .cart-page_checkout {
+        background-color: $WHITE;
+
+        & .cart-page_checkout_message {
+            text-align: center;
+            padding: $SMALL_PADDING;
+            padding-bottom: 0;
+            font-size: $MEDIUM_FONT_SIZE;
+        }
+
+        & .cart-page_checkout_button {
+            padding: $SMALL_PADDING;
+            font-size: $MEDIUM_FONT_SIZE;
+            text-align: center;
+        }
+    }
+}
