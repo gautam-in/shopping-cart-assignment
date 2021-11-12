@@ -2,7 +2,7 @@
   "name": "assignment",
   "version": "1.0.0",
   "description": "This is a shopping cart website",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "build": "webpack --config webpack.config.js",
     "wp-server": "webpack-dev-server --config webpack.config.js --mode development",

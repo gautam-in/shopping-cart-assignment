@@ -155,15 +155,15 @@ function getProductTemplate(products) {
 }
 
 async function loadHome() {
-  const banners = await getSortedItems('http://localhost:5501/server/banners/index.get.json');
+  const banners = await getSortedItems('http://localhost:5500/shopping-cart-assignment/server/banners/index.get.json');
   await insertElementToDom(banners, 'banner', '#carousel__viewport', 'afterbegin', getBannerSlides);
   await insertElementToDom(banners, DOM_TEMPLATE_TYPE.banner, '#carousel__navigation-list', 'afterbegin', getBannerControls);
-  const categories = await getSortedItems('http://localhost:5501/server/categories/index.get.json');
+  const categories = await getSortedItems('http://localhost:5500/shopping-cart-assignment/server/categories/index.get.json');
   await insertElementToDom(categories, DOM_TEMPLATE_TYPE.category, '#category__wrapper-container', 'afterbegin', getCategoryTemplate);
 }
 
 async function loadProducts() {
-  const products = await fetchItemsByUrl('http://localhost:5501/server/products/index.get.json');
+  const products = await fetchItemsByUrl('http://localhost:5500/shopping-cart-assignment/server/products/index.get.json');
   getProductTemplate(products);
 }
 document.addEventListener('DOMContentLoaded', async () => {
