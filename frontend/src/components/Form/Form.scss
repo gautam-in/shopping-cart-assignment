@@ -1,0 +1,53 @@
+.login-wrap{
+    display: flex;
+    flex-direction: row;
+    max-width: 1320px;
+    margin: auto;
+    padding: 3rem;
+    .heading{
+      width: 40%;
+      @media only screen and (max-width: 540px) {
+        width: 80%;
+      }
+    }
+    @media only screen and (max-width: 540px) {
+      padding: 1rem;
+      flex-direction: column;
+    }
+}
+.form-group{
+  margin:2%;
+  .form-control{
+    width: 50%;
+    border-style: none;
+    border-bottom-style: groove;
+    &:focus{
+      outline: none;
+    }
+    @media only screen and (max-width: 540px) {
+      width: 100%;
+    }
+  }
+  button{
+    width: 50%;
+    padding: 12px;
+    background-color: crimson;
+    color: white;
+    border-style: none;
+    font-size: 15px;
+    &:hover{
+      cursor: pointer;
+      background-color: rgb(107, 72, 79);
+    }
+    @media only screen and (max-width: 540px) {
+      width: 100%;
+    }
+  }
+  .invalid-feedback{
+    // display:none;
+    width:100%;
+    margin-top:.25rem;
+    font-size:80%;
+    color:#dc3545
+  }
+}
