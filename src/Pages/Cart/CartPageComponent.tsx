@@ -62,7 +62,7 @@ const CartPageComponent: React.FC<TCartPageComponentProps> = (
             <>
                 {props.cartItemList.map((item) => {
                     return (
-                        <div className={ITEMS_CLASSNAME}>
+                        <div className={ITEMS_CLASSNAME} key={item.id}>
                             <div className={ITEMS_IMAGE_CLASSNAME}>
                                 <img
                                     className={IMAGE_CLASSNAME}

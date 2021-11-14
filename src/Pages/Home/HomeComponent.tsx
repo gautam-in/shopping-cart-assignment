@@ -1,5 +1,4 @@
 import { connect } from "react-redux";
-import { useEffect } from "react";
 
 import "./HomeComponent.scss";
 import { BannerComponent } from "../../BaseComponent/Banner/BannerComponent";

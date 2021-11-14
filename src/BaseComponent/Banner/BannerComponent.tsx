@@ -71,6 +71,7 @@ export const BannerComponent: React.FC<IBannerComponentProps> = (
                 {bannerList.map((banner, index) => {
                     return (
                         <button
+                        key={index}
                             className={getSelectedClassName(index)}
                             onClick={() => setSelectedBanner(index)}
                         />

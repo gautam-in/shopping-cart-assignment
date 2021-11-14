@@ -6,6 +6,7 @@ import "./DataGridComponent.scss";
 
 interface IDataGridComponent {
     productList: Array<IProduct>;
+    externalClassName?: string;
 }
 
 export const DataGridComponent: React.FC<IDataGridComponent> = (
@@ -18,13 +19,16 @@ export const DataGridComponent: React.FC<IDataGridComponent> = (
     const GRID_ITEM_DESCRIPTION_CLASSNAME: string = `${GRID_ITEM_CLASSNAME}_description`;
     const GRID_ITEM_PRICE_CLASSNAME: string = `${GRID_ITEM_CLASSNAME}_price`;
     const GRID_ITEM_BUTTON_CLASSNAME: string = `${GRID_ITEM_CLASSNAME}_button`;
+    const BUTTON_PRICE_TAG_CLASSNAME: string = `${GRID_ITEM_BUTTON_CLASSNAME}_price-tag`;
+    const BUTTON_PRICE_CLASSNAME: string = `${BUTTON_PRICE_TAG_CLASSNAME}_price`;
     return (
-        <div className={BASE_CLASSNAME}>
+        <div className={`${BASE_CLASSNAME} ${props.externalClassName}`}>
             {props.productList.map((product) => {
                 return (
                     <div
                         id={`item_${product.id}`}
                         className={GRID_ITEM_CLASSNAME}
+                        key={product.id}
                     >
                         <h3 className={GRID_ITEM_HEADER_CLASSNAME}>
                             {product.name}
@@ -37,6 +41,7 @@ export const DataGridComponent: React.FC<IDataGridComponent> = (
                         <p className={GRID_ITEM_DESCRIPTION_CLASSNAME}>
                             {product.description}
                         </p>
+
                         <p
                             className={GRID_ITEM_PRICE_CLASSNAME}
                         >{`MRP Rs.${product.price}`}</p>
@@ -44,8 +49,13 @@ export const DataGridComponent: React.FC<IDataGridComponent> = (
                             externalClassName={GRID_ITEM_BUTTON_CLASSNAME}
                             id={`btn_${product.id}`}
                             to={ROUTE_URL.CART_PAGE}
-                            buttonName={"Buy Now"}
-                            onClick={()=>addProductToCart(product.id)}
+                            buttonName={
+                                <p className={BUTTON_PRICE_TAG_CLASSNAME}>
+                                    <span>Buy Now</span>
+                                    <span className={BUTTON_PRICE_CLASSNAME} >{`@ MRP Rs.${product.price}`}</span>
+                                </p>
+                            } //buttonName={"Buy Now"} //#todo myResponsiveChanges
+                            onClick={() => addProductToCart(product.id)}
                         />
                     </div>
                 );

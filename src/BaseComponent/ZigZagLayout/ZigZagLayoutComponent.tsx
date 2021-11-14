@@ -26,7 +26,7 @@ export const ZigZagLayoutComponent: React.FC<IZigZagLayoutComponentProps> = (
             {categoriesList.map((categorie) => {
                 if (categorie.enabled) {
                     return (
-                        <div className={SECTION_CLASSNAME}>
+                        <div key={categorie.id} className={SECTION_CLASSNAME} >
                             <div className={SUB_LEFT_CLASSNAME}>
                                 <img
                                     className={SUB_LEFT_IMAGE_CLASSNAME}

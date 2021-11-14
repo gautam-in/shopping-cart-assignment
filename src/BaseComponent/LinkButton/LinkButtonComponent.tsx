@@ -4,7 +4,7 @@ import "./LinkButtonComponent.scss";
 interface ILinkButtonComponentProps {
     id: string;
     to: string;
-    buttonName: string;
+    buttonName: string | JSX.Element;
     externalClassName?: string;
     onClick?: () => void;
 }

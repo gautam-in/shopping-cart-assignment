@@ -1,26 +1,55 @@
 import "./AccordionComponent.scss";
 import { ICategories } from "../../Interfaces/ICategories";
 import { setSelectedAccordion } from "../../Model/Model";
+import classNames from "classnames";
+import { useState } from "react";
 
 interface IAccordionComponentProps {
     categoriesList: Array<ICategories>;
+    selectedCategorieID: string | null;
+    externalClassName?: string;
 }
 
 export const AccordionComponent: React.FC<IAccordionComponentProps> = (
     props: IAccordionComponentProps
 ) => {
+    const { categoriesList, selectedCategorieID, externalClassName } = props;
+    const [isOpen, setOpen] = useState(selectedCategorieID !== null);
     const BASE_CLASSNAME: string = "accordion";
-    const ACCORDION_CLASSNAME: string = `${BASE_CLASSNAME}_menu`;
+    const getClassName = (id: string) => {
+        const ACCORDION_CLASSNAME: string = classNames({
+            accordion_menu: true,
+            "accordion_menu--hide": isOpen && selectedCategorieID === id,
+        }); // `${BASE_CLASSNAME}_menu`;
+
+        return ACCORDION_CLASSNAME;
+    };
+
+    const onClickHandle = (categorie: ICategories) => {
+        if(window.screen.width < 530) {
+            if(!isOpen) {
+                setSelectedAccordion(categorie.id);
+                setOpen(true);
+            } else {
+                setSelectedAccordion(null);
+                setOpen(false);
+            }
+        } else {
+            setSelectedAccordion(categorie.id);
+        }
+        
+    };
 
     return (
-        <div className={BASE_CLASSNAME}>
-            {props.categoriesList.map((categorie) => {
+        <div className={`${BASE_CLASSNAME} ${externalClassName}`}>
+            {categoriesList.map((categorie) => {
                 if (categorie.enabled) {
                     return (
                         <div
+                            key={categorie.id}
                             id={categorie.name}
-                            className={ACCORDION_CLASSNAME}
-                            onClick={() => setSelectedAccordion(categorie.id)}
+                            className={getClassName(categorie.id)}
+                            onClick={() => onClickHandle(categorie)}
                         >
                             {categorie.name}
                         </div>

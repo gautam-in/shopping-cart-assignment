@@ -10,3 +10,16 @@
     padding: $SMALL_PADDING;
     padding-left: $X_LARGE_PADDING;
 }
+
+@media screen and (max-width: 750px) {
+    .footer {
+        padding-left: 0;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 530px) {
+    .footer {
+        font-size: $SMALL_FONT_SIZE;
+    }
+}

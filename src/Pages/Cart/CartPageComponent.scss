@@ -34,15 +34,16 @@
             grid-template-columns: 1fr 4fr 1fr;
             grid-template-rows: 1fr 1fr;
             background-color: $WHITE;
-            padding: 10px;
-            margin-bottom: 10px;
+            padding: $SMALL_PADDING;
+            margin-bottom: $SMALL_MARGIN;
+            font-size: $MEDIUM_FONT_SIZE;
 
             & .cart-page_items_image-section {
                 grid-area: 1/1/-1/2;
                 justify-self: center;
 
                 & .cart-page_items_image-section_image {
-                    width: 80px;
+                    width: 8rem;
                     height: auto;
                 }
             }
@@ -54,29 +55,29 @@
             }
             & .cart-page_items_button {
                 display: flex;
-                gap:10px;
+                gap:$SMALL_GAP;
             }
 
             & .cart-page_items_total {
-                font-size: 15px;
+                font-size: $MEDIUM_FONT_SIZE;
             }
         }
 
         & .cart-page_tag {
             display: flex;
             background-color: $WHITE;
-            gap: 10px;
+            gap: $SMALL_GAP;
             padding: $SMALL_PADDING;
-            margin: 10px;
+            margin: $SMALL_MARGIN;
     
             & .cart-page_tag_image {
-                width: 140px;
+                width: $X_LARGE_WIDTH;
                 height: auto;
                 align-self: center;
             }
     
             & .cart-page_tag_line {
-                font-size: 14px;
+                font-size: $MEDIUM_FONT_SIZE;
                 align-self: center;
             }
         }     
@@ -84,13 +85,13 @@
         & .cart-page_items-section_empty {
             text-align: center;
             & .cart-page_items-section_empty_header {
-                font-size: 28px;
+                font-size: $LARGE_FONT_SIZE;
                 font-weight: 700;
-                padding: 10px;
+                padding: $SMALL_PADDING;
             }
 
             & .cart-page_items-section_empty_sub-header {
-                font-size: 14px;
+                font-size: $MEDIUM_FONT_SIZE;
             }
         }
     }

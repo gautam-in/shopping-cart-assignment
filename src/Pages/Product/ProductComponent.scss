@@ -1,9 +1,38 @@
 /******************* ProductComponent *****************************/
 @import "../../Styles/variable.scss";
+@import "../../Styles/color-variable.scss";
 
 .product {
-    width: 80%;
+    max-width: 80%;
     display: grid;
     grid-template-columns: 1fr 3fr;
     margin: $MEDIUM_MARGIN auto;
+}
+
+@media screen and (max-width: 1080px) {
+    .product {
+        max-width: 100%;
+    }
+}
+
+@media screen and (max-width: 530px) {
+    .product {
+        grid-template-columns: 1fr;
+
+        & .product_accordion {
+            background-color: $CRIMSON_RED;
+
+            & .accordion_menu {
+                color: $WHITE;
+            }
+        }
+
+        & .product_data-grid {
+            display: none;
+        }
+
+        & .product_data-grid--show {
+            display: block;
+        }
+    }
 }
