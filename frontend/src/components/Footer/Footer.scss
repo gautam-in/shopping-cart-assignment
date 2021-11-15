@@ -1,0 +1,26 @@
+.footer {
+    padding: 15px;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+  }
+  .footer span {
+    display: block;
+    margin: 0px auto;
+    font-size: 11px;
+    width: 75vw;
+    color: black;
+    font-weight: 600;
+  }
+  @media only screen and (min-width: 992px) {
+    .footer span {
+      font-size: 0.8rem;;
+      text-align: left;
+    }
+  }
+  @media only screen and (min-width: 1200px) {
+    .footer span {
+      font-size: 0.8rem;;
+      text-align: left;
+    }
+}

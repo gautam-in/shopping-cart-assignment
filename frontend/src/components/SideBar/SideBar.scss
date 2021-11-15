@@ -1,0 +1,36 @@
+.sidenav-container {
+    min-width: 260px;
+    width: 260px;
+    background-color: rgb(214, 211, 211);
+    .icon-dropdown {
+      display: none;
+    }
+    .sidenav {
+      .category-name {
+        padding: 10px;
+        border-bottom: 1px solid grey;
+        margin: 10px;
+        cursor: pointer;
+        &:hover{
+            background-color: rgb(165, 164, 164);
+        }
+      }
+    }
+  
+    @media only screen and (max-width: 540px) {
+      min-width: 100vw;
+      margin: 20px 0px;
+      color: #ffffff;
+      background-color:  #8b008b;
+  
+      .icon-dropdown {
+        padding: 5px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border: 2px solid grey;
+        background-color:  #8b008b;
+        color: #ffffff;
+      }
+    }
+  }

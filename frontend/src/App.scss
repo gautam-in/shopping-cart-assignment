@@ -1,0 +1,22 @@
+.App {
+    // margin: 0;
+    // padding: 0;
+    position: relative;
+    min-height: 100vh;
+}
+.page-container {
+    
+    font-family: Arial, Helvetica, sans-serif;
+//   background-color: #f1f1f1;
+    position: relative;
+    // padding-bottom:20%;
+    // min-width: 100vw;
+    min-height: 62vh;
+    @media only screen and (max-width: 780px){
+        min-height: 60vh;
+    }
+    @media only screen and (max-width: 480px){
+        min-height: 80vh;
+    }
+    
+  }
