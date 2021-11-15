@@ -1,0 +1,31 @@
+.m-b-1 {
+    margin-bottom: 1rem;
+  }
+  .m-t-1 {
+    margin-top: 1rem;
+  }
+  .pd-0 {
+    padding: 0;
+  }
+
+  ::-webkit-scrollbar {
+  width: 10px;
+  background: white;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  //background: #888; 
+  background: #f1f1f1;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+ // background: #555;
+ background: #f1f1f1; 
+}

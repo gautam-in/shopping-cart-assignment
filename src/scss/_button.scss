@@ -1,0 +1,23 @@
+.btn {
+    color: #ffffff;
+    background: #bf2957;
+    padding: 10px 20px 10px 20px;
+    text-decoration: none;
+    min-width: 5rem;
+    min-height: 1.5rem;
+    transition: hover 2s ease-out, opacity 2s ease-out;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .btn:hover {
+    background: #bb5776;
+    opacity: 0.8;
+    text-decoration: none;
+  }
+  
+  @media screen and (min-width: 767px) and (max-width: 961px) {
+    .btn {
+      padding: 5px 10px;
+    }
+  }

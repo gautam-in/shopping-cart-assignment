@@ -1,0 +1,232 @@
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 10px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+  
+  /* Modal Content */
+  .modal__content {
+    position: relative;
+    background-color: #ccc;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 35%;
+    height: 98%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    animation-name: animatetop;
+    animation-duration: 0.4s;
+  }
+  
+  /* Add Animation */
+  @keyframes animatetop {
+    from {
+      top: -300px;
+      opacity: 0;
+    }
+    to {
+      top: 0;
+      opacity: 1;
+    }
+  }
+  
+  /* The Close Button */
+  .close {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #ccc;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  .modal__header {
+    padding: 20px 16px;
+    background-color: $black;
+    color: $white;
+    h2 {
+      font-size: $font-med;
+    }
+  }
+  
+  .modal__body {
+    background-color: #ccc;
+    height: 75%;
+    overflow-y: scroll;
+  
+    .img-modal {
+      width: 80px;
+      height: 80px;
+    }
+  }
+  
+  .modal__footer {
+    padding: 10px 16px;
+    background-color: $white;
+    text-align: center;
+    margin: auto;
+    margin-top: 15px;
+  
+    p {
+      margin-top: 0;
+      margin-bottom: 8px;
+      font-size: 15px;
+    }
+  
+    button {
+      width: 100%;
+    }
+  }
+  
+  .cart-info {
+    padding: 0 1rem;
+    width: 70%;
+  
+    h2 {
+      margin: 0;
+      height: 3rem;
+      overflow: hidden;
+      font-size: 1rem;
+    }
+    .multiplier {
+      margin-right: 1rem;
+      font-size: $font-med;
+    }
+  }
+  
+  .control-buttons {
+    display: inline-block;
+    margin-top: 0.625rem;
+    margin-right: 1rem;
+  
+    span {
+      padding: 0 1rem;
+    }
+  }
+  
+  .fa-minus-circle,
+  .fa-plus-circle {
+    font-size: 1.25rem;
+    color: $brightRed;
+    cursor: pointer;
+  }
+  
+  .price {
+    margin-top:15.45%;
+  }
+  
+  .offer {
+    background: white;
+    margin: 0 1rem;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+  
+    img {
+      height: 40px;
+      width: 20%;
+    }
+    span {
+      margin-left: 1rem;
+    }
+  }
+  
+  @media screen and (min-width: 767px) and (max-width: 961px) {
+    .modal {
+      background-color: transparent;
+      margin-top: 103px;
+      padding: 0;
+    }
+    .modal__content {
+      height: 100%;
+      width: 100%;
+    }
+    .modal__body {
+      height: 72%;
+    }
+    .modal__header {
+      margin-top: 1.5rem;
+      background-color: $white;
+      color: $black;
+    }
+    .modal__footer {
+      margin-top: 5px;
+    }
+    .price {
+      margin-top: 6%;
+    }
+    .offer img {
+      width: 15%;
+    }
+  }
+  
+  @media screen and (max-width: 767px) {
+    .modal {
+      background-color: transparent;
+      margin-top: 10vh;
+      padding: 0;
+    }
+    .modal__content {
+      height: 100%;
+      width: 100%;
+    }
+    .modal__body {
+      height: 63%;
+    }
+    .modal__header {
+      margin-top: 1.5rem;
+      background-color: $white;
+      color: $black;
+    }
+    .modal__footer {
+      margin-top: 5px;
+      position: absolute;
+      top: 75vh;
+      width: 100%;
+      height: 14vh;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+    }
+    .price {
+      margin-top: 13.25%;
+    }
+    .offer img {
+      width: 23%;
+    }
+    .cart-info {
+      padding-top: 0.625rem;
+      h2 {
+        font-size: $font-xsm;
+      }
+    }
+    .control-buttons {
+      margin-top: 5px;
+    }
+  }
+  
+  .row {
+    display: flex;
+    background-color: white;
+    margin: 1rem 0.25rem;
+    padding: 1rem;
+    border: 1
+px
+ solid lightgrey;
+    border-radius: 3
+px
+;
+    box-shadow: 1px 1px lightgrey;
+  }

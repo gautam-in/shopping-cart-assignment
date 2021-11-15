@@ -1,0 +1,159 @@
+.container--center {
+    width: 90%;
+    margin: 0 auto;
+  }
+  .products__container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 80%;
+    margin: auto;
+    padding: 10px 10px;
+  
+    &__cta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.875rem;
+    }
+  }
+  
+  .card {
+    flex-basis: 24%;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    position: relative;
+    overflow: hidden;
+    margin-left: 5px;
+    padding: 10px;
+    box-shadow: 2px 0px 5px #ccc;
+  
+    h2 {
+      font-size: $font-reg;
+      height: 70px;
+      overflow: hidden;
+    }
+  
+    &__subtitle {
+      background-color: lightgray;
+      font-size: 0.75rem;
+      margin: 6px 0;
+      height: 100px;
+      overflow-y: scroll;
+      padding: 6px;
+      color: gray;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+    .button--primary {
+      padding: 0.625rem 1rem;
+    }
+  }
+  
+  .img-cat {
+    height: 120px;
+    width: 100%;
+    object-fit: contain;
+  }
+  .mobile-show {
+    display: none;
+  }
+  
+  select#sub-menu {
+    width: 100%;
+    height: 55px;
+    color: $white;
+    margin: 15px 0;
+    padding: 13px;
+    border: none;
+    appearance: none;
+    background: url(http://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/br_down.png)
+      no-repeat right $brightRed;
+    background-position-x: 95%;
+  }
+  select#sub-menu,
+  select#sub-menu > option {
+    font-size: $font-med;
+    line-height: 28px;
+  }
+  select#sub-menu,
+  select#sub-menu > option {
+    font-size: $font-med;
+    line-height: 28px;
+  }
+  
+  @media screen and (min-width: 767px) and (max-width: 961px) {
+    .card {
+      flex-basis: 48%;
+      &__subtitle {
+        display: inline-block;
+        height: 126px;
+        width: 55%;
+      }
+    }
+    .img-cat {
+      width: 45%;
+    }
+    .products__container {
+      &__cta {
+        span {
+          display: none;
+        }
+        button {
+          width: 100%;
+        }
+      }
+    }
+  }
+  
+  @media screen and (max-width: 766px) {
+    .card {
+      flex-basis: 100%;
+  
+      h2 {
+        min-height: 24px;
+        max-height: 32px;
+        font-size: 1rem;
+      }
+  
+      img {
+        width: 46%;
+        height: 7.5rem;
+        object-fit: center;
+      }
+  
+      &__subtitle {
+        display: inline-block;
+        position: absolute;
+        top: 18%;
+        width: 49%;
+        height: 80px;
+      }
+      .button--primary {
+        padding: 0.5rem;
+        font-size: 0.75rem;
+      }
+    }
+  
+    .products__container {
+      width: 100%;
+      &__cta {
+        display: inline-block;
+        position: absolute;
+        top: 70%;
+        width: 49%;
+        button {
+          width: 100%;
+        }
+      }
+    }
+  
+    .container--center {
+      width: 100%;
+    }
+    .mobile-show {
+      display: inline;
+    }
+    .desktop-show {
+      display: none;
+    }
+  }

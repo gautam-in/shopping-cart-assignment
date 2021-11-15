@@ -1,0 +1,78 @@
+@import './vars';
+
+
+header {
+    box-shadow: -4px 3px 7px -3px rgba(136, 136, 136, 1);
+  }
+  
+  nav {
+    height: 100px;
+    align-items: center;    
+    background-color: $white-color;
+    border-bottom: 1px solid #e7e7e7;
+    .brand {
+      cursor: pointer;
+    }
+    img {
+      height: 80px;
+      width: auto;
+    }
+    .page__links {
+      display: flex;
+      margin: 60px 45px 0;
+      flex-basis: 60%;
+    }
+    ul li {
+      text-align: center;
+    }
+    .nav__link {
+      color: $nav-link-color;
+      font-size: 0.9375rem;
+      margin-left: 24px;
+      font-weight: 600;
+    }
+  
+    .page__user-links {
+      display: flex;
+      justify-content: flex-end;
+      li {
+        margin: 10px 0 0 12px;
+      }
+      a {
+        font-size: 14px;
+        color: $nav-link-color;
+        font-weight: 400;
+      }
+    }
+    .page__user-info {
+      height: inherit;
+      justify-content: space-between;
+      display: inherit;
+      flex-direction: column;
+      flex-basis: 16%;
+    }
+    .cart__btn {
+      background: #eeeeee;
+      padding: 11px 0;
+      margin-left: 44%;
+      text-align: center;
+      cursor: pointer;
+      width: $cent;
+      height: 35px;
+      position: relative;
+      bottom: 4px;          
+      font-family: $sans-style;
+      font-size: $font-sm;
+      }
+
+      i {
+        color: $secondary-color;
+        font-size: 1.5rem;
+        margin-right: 6px;
+      }
+      .cart__item-count {
+        letter-spacing: 0.5px;
+        word-spacing: 0.1px;
+      }
+    }
+  

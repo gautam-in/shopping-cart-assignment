@@ -1,0 +1,122 @@
+@import "./vars";
+
+.main__container {
+  width: 87.5%;
+    margin: 0px 6% auto;
+    text-align: center;
+}
+
+.category__container {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  align-items: center;
+  box-shadow: 0px 6px 6px 0px rgba(13, 13, 13, 0.33);
+  min-height: 306px;
+  padding: 0 2rem;
+  .category__image {
+    height: 14rem;
+    width: auto;
+    padding: 10px;
+  }
+}
+.category-text__wrapper {
+  align-self: center;
+  .category__title {
+    font-weight: bold;
+    font-size: 1.3rem;
+    padding: 1rem 0;
+  }
+  .category__description {
+    opacity: 0.7;
+    padding: 0 0 1rem 0;
+    font-size: 0.875rem;
+  }
+  .category__button {
+    font-size: 1rem;
+    font-weight: 400;
+  }
+}
+
+.footer {
+  padding: 1.25rem 0;
+    background-color: lightgray;
+    height: 1.5rem;
+    font-size: 13px;
+    text-align: center;
+    width: 87.5%;
+    bottom: 0;
+    margin: 3px 6% auto;
+    box-shadow: 0 -3px 5px grey;
+}
+
+@media screen and (min-width: 767px) and (max-width: 961px) {
+  .category__container {
+    min-height: 100px;
+    .category__image {
+      height: 8rem;
+    }
+  }
+  .category-text__wrapper {
+    .category__title {
+      font-size: 1rem;
+      padding: 0.8rem 0;
+    }
+    .category__description {
+      padding: 0 0 0.4rem 0;
+      font-size: 0.75rem;
+    }
+    .category__button {
+      font-size: 0.75rem;
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  nav {
+    height: 78px;
+    justify-content: space-around;
+    img {
+      height: 54px;
+    }
+    .page__links {
+      display: none;
+    }
+    .page__user-links {
+      visibility: hidden;
+    }
+    .cart__btn {
+      padding: 10px 0;
+      margin-top: 0;
+      i {
+        font-size: 1rem;
+      }
+    }
+  }
+  .main__container {
+    width: 100%;
+    margin: 0%;
+  }
+  .category__container {
+    min-height: 100px;
+    padding: 0.5rem;
+    .category__image {
+      height: 6rem;
+      padding: 6px 2px;
+    }
+  }
+  .category-text__wrapper {
+    .category__button {
+      font-size: 0.75rem;
+    }
+    .category__title {
+      font-size: 0.875rem;
+      padding: 0.75rem 0;
+    }
+  }
+  .footer {
+    position: static;
+    padding: 1.5rem 0;
+    font-size: 12px;
+  }
+}

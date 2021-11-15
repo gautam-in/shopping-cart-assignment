@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Samkit Saraf" />   
+    <link rel='shortcut icon' type='image/x-icon' href='../favicon.ico' />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../dist/css/app.css">    
+    
+    <script type="module" src="./js/app.js"></script>
+    <title>Sabka Bazar</title>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <a href="index.html">
+                <img src="../static/images/logo.png" alt="" />                
+            </a>    
+            <ul class="page__links">
+                <li><a href="./index.html" class="nav__link">Home</a></li>
+                <li><a href="./products.html" class="nav__link">Products</a></li>
+            </ul>
+            <div class="page__user-info">
+                <ul class="page__user-links">  
+                  <li><a href="./login.html">SignIn</a></li>  
+                  <li><a href="./register.html">Register</a></li>  
+                </ul>  
+                <div class="cart__btn cart__btn--click">
+                  <i class="fa fa-shopping-cart"></i>
+                  <span class="cart__item-count">0 items</span>
+                </div>
+              </div>
+        </nav>
+    </header>
+    <main class="main__container">
+        <section id="carousel__banner" class="carousel" aria-label="Gallery">
+          <ol id="carousel__viewport" class="carousel__viewport">
+          </ol>
+          <aside class="carousel__navigation">
+            <ol id="carousel__navigation-list" class="carousel__navigation-list">
+            </ol>
+          </aside>
+        </section>
+        <section id="category__wrapper-container" class="category__wrapper"> 
+        </section>
+    </main>
+    <footer class="footer">
+        Copyright &copy; 2011-2021 Sabka Bazar grocery Supplies Pvt Ltd.
+    </footer>
+</body>
+</html>
