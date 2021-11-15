@@ -5,13 +5,13 @@
     margin: 2rem 0;
 
     .sb-categories-list {
-        /* display: flex;
+        display: flex;
         flex-direction: column;
-        gap: 2rem; */
+        gap: 2rem;
 
         .sb-category {
-            margin-top: 2rem;
-            min-height: 150px;
+            /* margin-top: 2rem;
+            min-height: 150px; */
             display: flex;
             align-items: center;
             background-color: white;
@@ -19,10 +19,6 @@
             
             @include responsive-sm {
                 gap: 1rem;
-            }
-            
-            @include responsive-sm {
-                gap: 2rem;
             }
 
             img {

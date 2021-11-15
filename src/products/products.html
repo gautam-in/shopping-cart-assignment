@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sabka Bazar</title>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Dosis:400,600,700">
+    <link rel="stylesheet" href="../css/styles.css">
+
+    <script src="../index.js" type="module" defer></script>
+    <script src="../header/header.js" type="module" defer></script>
+    <script src="products.js" type="module" defer></script>
+    <script src="../services/productsService.js" type="module" defer></script>
+    <script src="../services/homeService.js" type="module" defer></script>
+</head>
+
+<body>
+    <header class="main-header">
+        <div class="sb-container">
+            <nav class="sb-navbar">
+                <!-- Side nav menu icon -->
+                <div class="menu">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="menu-btn" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd"
+                            d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+                            clip-rule="evenodd" />
+                    </svg>
+                </div>
+                <!-- Side nav For Mobile devices -->
+                <div class="main-side-nav">
+                    <ul class="side-nav">
+                        <li class="">
+                            <a href="../index.html" class="side-nav-link">Home</a>
+                        </li>
+                        <li>
+                            <a href="#" class="side-nav-link">Products</a>
+                        </li>
+                        <li>
+                            <a href="#" class="side-nav-link">SignIn</a>
+                        </li>
+                        <li>
+                            <a href="#" class="side-nav-link">Register</a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- Side nav For Mobile devices End -->
+                <div class="logo">
+                    <img src="../../static/images/logo_2x.png" alt="Sabka Bazar Logo">
+                </div>
+                <ul class="main-nav">
+                    <li class="main-nav-item">
+                        <a href="../index.html" class="main-nav-link">Home</a>
+                    </li>
+                    <li class="main-nav-item">
+                        <a href="products.html" class="main-nav-link">Products</a>
+                    </li>
+                </ul>
+                <div class="secondary-nav-parent">
+                    <ul class="secondary-nav">
+                        <li class="secondary-nav-item">
+                            <a href="#" class="secondary-nav-link">SignIn</a>
+                        </li>
+                        <li class="secondary-nav-item">
+                            <a href="#" class="secondary-nav-link">Register</a>
+                        </li>
+                    </ul>
+                    <div class="cart">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="cart-icon" viewBox="0 0 20 20"
+                            fill="currentColor">
+                            <path
+                                d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" />
+                        </svg>
+                        <p class="cart-btn">
+                            <span class="cart-item-count">0</span>
+                            Items
+                        </p>
+                    </div>
+                </div>
+            </nav>
+        </div>
+
+    </header>
+    <main id="main">
+        <div class="sb-container">
+            <!-- Side navbar -->
+            <div class="sb-products-container">
+                <div class="sb-products-sidenav">
+                    <ul class="products-sidenav-list">
+                        <!-- <li class="products-sidenav-item">
+                            <a href="#" class="products-sidenav-link">Beverages</a>
+                        </li>
+                        <li class="products-sidenav-item">
+                            <a href="#" class="products-sidenav-link">Bakery Cakes and Dairy</a>
+                        </li>
+                        <li class="products-sidenav-item">
+                            <a href="#" class="products-sidenav-link">Beauty and Hygiene</a>
+                        </li>
+                        <li class="products-sidenav-item">
+                            <a href="#" class="products-sidenav-link">Baby Care</a>
+                        </li>
+                        <li class="products-sidenav-item">
+                            <a href="#" class="products-sidenav-link">Fruits & Vegetables</a>
+                        </li> -->
+                    </ul>
+                </div>
+                <section>
+                    <div class="products">
+                        <div class="card-grid">
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="sb-container">
+            Copyright &copy; 2011-2021 Sabka Bazaar Grocery Supplies Pvt Ltd
+        </div>
+    </footer>
+</body>
+
+</html>
