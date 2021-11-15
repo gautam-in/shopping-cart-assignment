@@ -1,0 +1,123 @@
+@import '../responsive-mixin';
+
+.sb-products-container {
+    display: flex;
+    gap: 1rem;
+}
+
+.sb-products-sidenav {
+    width: 20rem;
+    background-color: #f1f3f5;
+
+    @include responsive-sm {
+        display: none;
+    }
+
+    .products-sidenav-list {
+        list-style: none;
+        width: inherit;
+
+        .products-sidenav-item {
+            padding: 1rem 2rem;
+            border-bottom: 1px solid #ced4da;
+            font-size: 1.4rem;
+        }
+
+        .products-sidenav-item:hover {
+            cursor: pointer;
+            background-color: #ced4da;
+        }
+
+        .products-sidenav-item.active {
+            background-color: #adb5bd;
+        }
+    }
+}
+
+.products {
+    padding: 1rem;
+    padding-right: 0;
+}
+
+.card-grid {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+
+    .card {
+        padding: 1rem;
+        box-shadow: 2px 0 5px -3px rgba(0, 0, 0, 0.2);
+        border-bottom: 2px dotted rgba(0, 0, 0, 0.2);
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        height: 100%;
+
+        .card-header {
+
+            .card-image {
+                margin-top: 1rem;
+                display: block;
+                width: 100%;
+            }
+        }
+
+        .card-body {
+            background-color: #e9ecef;
+
+            .card-description {
+                padding: 0.5rem;
+                font-weight: 600;
+            }
+        }
+
+        .card-footer {
+            margin-top: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .price {
+                font-size: 1.2rem;
+                font-weight: 600;
+            }
+
+            .product-btn {
+                cursor: pointer;
+                border: none;
+                color: white;
+                background-color: $primaryColor;
+                padding: 0.5em 1em;
+            }
+
+            .product-btn:hover {
+                background-color: #e64980;
+            }
+        }
+
+        .card-footer-lg {
+            @extend .card-footer;
+
+            @include responsive-md {
+                display: none;
+            }
+
+            @include responsive-sm {
+                display: none;
+            }
+        }
+
+        .card-footer-sm, .card-footer-md {
+            @extend .card-footer;
+            justify-content: center;
+
+            @include responsive-lg {
+                display: none;
+            }
+
+            .product-btn {
+                width: 100%;
+            }
+        }
+    }
+}

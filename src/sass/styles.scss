@@ -1,0 +1,48 @@
+@import 'responsive-mixin';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: 'Dosis', sans-serif;
+}
+
+$primaryColor: #c2255c;
+$textPrimaryColor: #495057;
+$smWidth: 560px;
+$mdWidth: 980px;
+
+
+.sb-container {
+    width: 92rem;
+    margin: 0 auto;
+        
+    @include responsive-sm {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding-left: 1rem;
+    }
+        
+    @include responsive-md {
+        width: 100%;
+        margin: 0 auto;
+    }
+}
+
+@import 'header/header';
+
+// Home
+@import 'home/home';
+
+@import 'products/products';
+
+// Footer
+@import 'footer/footer';

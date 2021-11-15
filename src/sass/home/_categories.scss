@@ -1,0 +1,87 @@
+@import '../responsive-mixin';
+
+.sb-categories-container {
+    width: 100%;
+    margin: 2rem 0;
+
+    .sb-categories-list {
+        /* display: flex;
+        flex-direction: column;
+        gap: 2rem; */
+
+        .sb-category {
+            margin-top: 2rem;
+            min-height: 150px;
+            display: flex;
+            align-items: center;
+            background-color: white;
+            position: relative;
+            
+            @include responsive-sm {
+                gap: 1rem;
+            }
+            
+            @include responsive-sm {
+                gap: 2rem;
+            }
+
+            img {
+                width: 30rem;
+            
+                @include responsive-sm {
+                    width: 18rem;
+                }
+                
+                @include responsive-md {
+                    width: 24rem;
+                }
+            }
+
+            .product-info {
+                flex: 1;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 2rem;
+
+                .product-desc {
+                    font-size: 1.2rem;
+                    line-break: 1.5;
+                    font-weight: 600;
+                    text-align: center;
+                }
+
+                .category-btn {
+                    padding: 0.8rem;
+                    background-color: $primaryColor;
+                    border: none;
+                    font-family: inherit;
+                    color: white;
+                    cursor: pointer;
+                }
+
+                .category-btn:hover {
+                    background-color: #a61e4d;
+                    opacity: 0.9;
+                }
+            }
+        }
+
+        .sb-category:nth-child(2n) {
+            .product-img {
+                order: 2;
+            }
+
+            .product-info {
+                order: 1;
+            }
+        }
+    }
+}
+
+.ct-shadow {
+    position: absolute;
+    bottom: -0.35rem;
+    left: 50%;
+    transform: translateX(-50%);
+}
