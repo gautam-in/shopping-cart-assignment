@@ -1,0 +1,43 @@
+.SignupPageContainer {
+	width: 100vw;
+	min-height: 90vh;
+	padding: 20px;
+	display: flex;
+	justify-content: space-around;
+}
+
+.SignupPageBanner {
+	padding: 20px;
+	background-color: antiquewhite;
+	width: 40vw;
+	height: 70vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 10px;
+}
+
+.SignupBannerHeading {
+	font-size: 35px;
+	font-weight: 500;
+}
+
+.SignupPageLoginComponent {
+	min-width: 50vw;
+}
+
+@media (max-width: 900px) {
+	.SignupPageContainer {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.SignupPageBanner {
+		height: 20vh;
+		width: 100%;
+	}
+
+	.SignupPageLoginComponent {
+		min-height: 80vh;
+	}
+}

@@ -1,0 +1,27 @@
+.ProductListContainer {
+	margin-top: 10px;
+	padding: 20px 10px;
+	width: 99%;
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	column-gap: 15px;
+	row-gap: 20px;
+}
+
+@media (min-width: 500px) and (max-width: 799px) {
+	.ProductListContainer {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+@media (min-width: 800px) and (max-width: 1050px) {
+	.ProductListContainer {
+		grid-template-columns: repeat(3, 1fr);
+	}
+}
+
+@media (max-width: 499px) {
+	.ProductListContainer {
+		grid-template-columns: repeat(1, 1fr);
+	}
+}

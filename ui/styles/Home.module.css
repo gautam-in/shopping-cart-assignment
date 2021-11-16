@@ -1,0 +1,12 @@
+.container {
+	width: 99.4vw;
+	min-height: 80vh;
+}
+
+.ProductCategories {
+	margin: 1rem 0;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}

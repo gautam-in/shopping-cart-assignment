@@ -1,15 +1,52 @@
 {
-  "name": "code-exercise",
-  "version": "1.0.0",
-  "description": "This is a shopping cart coding exercise",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "canned -p 5000 ./server"
-  },
-  "author": "",
-  "license": "MIT",
-  "dependencies": {
-    "canned": "^0.3.12"
-  }
+	"name": "shopping-cart-assignment",
+	"author": "Rohit Yadav",
+	"version": "0.1.0",
+	"private": true,
+	"scripts": {
+		"dev": "cd ui; next dev",
+		"build": "cd ui; next build",
+		"start:ui": "cd ui; next start",
+		"test": "jest --watch",
+		"lint": "next lint",
+		"start": "canned -p 5000 ./server"
+	},
+	"dependencies": {
+		"@chakra-ui/react": "1.6.5",
+		"@emotion/react": "11.4.0",
+		"@emotion/styled": "11.3.0",
+		"@reduxjs/toolkit": "1.6.1",
+		"canned": "0.3.12",
+		"firebase": "8.8.1",
+		"framer-motion": "4.1.17",
+		"next": "11.1.2",
+		"react": "17.0.2",
+		"react-dom": "17.0.2",
+		"react-icons": "4.2.0",
+		"react-redux": "7.2.4",
+		"react-reveal": "1.2.2",
+		"react-slick": "0.28.1",
+		"react-transition-group": "4.4.2",
+		"sharp": "^0.29.2",
+		"slick-carousel": "1.8.1"
+	},
+	"devDependencies": {
+		"@testing-library/dom": "8.6.0",
+		"@testing-library/jest-dom": "5.14.1",
+		"@testing-library/react": "12.1.0",
+		"@testing-library/user-event": "13.2.1",
+		"babel-jest": "27.2.1",
+		"babel-plugin-styled-components": "^1.13.2",
+		"eslint": "7.31.0",
+		"eslint-config-airbnb": "18.2.1",
+		"eslint-config-next": "11.0.1",
+		"eslint-plugin-import": "2.23.4",
+		"eslint-plugin-jsx-a11y": "6.4.1",
+		"eslint-plugin-react": "7.24.0",
+		"eslint-plugin-react-hooks": "4.2.0",
+		"eslint-plugin-testing-library": "4.12.3",
+		"identity-obj-proxy": "3.0.0",
+		"jest": "27.2.1",
+		"react-test-renderer": "17.0.2"
+	}
 }
