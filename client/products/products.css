@@ -1,0 +1,155 @@
+* {
+    box-sizing: border-box;
+}
+  
+html,
+body {
+    margin: 0;
+}
+  
+header {
+    background-color: white;
+    box-shadow: 2px 2px 2px gray;
+}
+
+nav{
+    position: relative;
+}
+
+.login-cart-btn{
+    width: 10%;
+    height: 8vh;
+    background-color: rgb(202, 202, 202);
+    border: none;
+    position: absolute;
+    bottom: 0%;
+    right: 20%;
+}
+
+.product-list{
+    display: flex;
+}
+
+.product-categories{
+    width: 20%;
+    height: 100vh;
+    background-color: rgb(221, 221, 221);
+}
+
+.category-list-style{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.category-name{
+    text-decoration: none;
+    border-bottom: 1px solid rgb(66, 66, 66);
+    padding: 5%;
+}
+
+.category-dropdown{
+    display: none;
+}
+
+.product-display{
+    width: 85%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.product-image{
+    width: 100%;
+    height: 50%;
+    margin-bottom: 5%;
+}
+
+.product-item-card{
+    width: 29%;
+    height: 12%;
+    margin: 1%;
+    padding: 2px;
+}
+
+.product-name{
+    font-weight: bold;
+    height: 15%;
+}
+
+.product-description{
+    height: 20%;
+    background-color: rgb(221, 221, 221);
+    padding: 10px;
+    border-radius: 5px;
+    overflow: hidden;
+    font-size: 1rem;
+}
+
+.product-purchase{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.product-purchase-btn{
+    background-color: rgb(197, 3, 3);
+    color: white;
+    border: none;
+    width: 50%;
+}
+
+@media only screen and (max-width: 468px) {
+    .login-cart-btn{
+        background-color: rgb(202, 202, 202);
+        position: static;
+        width: 30%;
+    }
+
+    .product-item-card{
+        margin: 5%;
+        width: 100%;
+    }
+
+    .signup-form-card{
+        display: block;
+    }
+
+    .signup-form-desc{
+        width: 100%;
+        margin: 2%;
+    }
+    
+    .signup-form-fields{
+        width: 100%;
+        margin: 2%;
+    }
+
+    .category-dropdown{
+        display: block;
+        width: 100%;
+        margin-top: 2%;
+        height: 5vh;
+        color: white;
+        background-color: rgb(197, 3, 3);
+    }
+
+    .product-display{
+        width: 100%;
+    }
+
+    .product-categories{
+        display: none;
+    }
+
+    
+
+    .product-list{
+        display: block;
+    }
+}
+
+
+
+
+
+
