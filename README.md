@@ -10,6 +10,9 @@
 - its mobile responsive.
 - Accessible for all screens
 
+![image](https://user-images.githubusercontent.com/40739903/141944560-ffd33787-5f13-4df3-8851-1359f63e5dfb.png)
+
+
 ## Setup
 
 Clone repository
