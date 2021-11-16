@@ -5,7 +5,7 @@ import { CONSTANT } from "../../Utility/Constant";
 import { InputSubmitButtonComponent } from "../../BaseComponent/InputButton/InputSubmitButtonComponent";
 import { InputTextBoxComponent } from "../../BaseComponent/InputTextBox/InputTextBoxComponent";
 
-export const RegisterComponent: React.FC = () => {
+const RegisterComponent: React.FC = () => {
   const BASE_CLASSNAME: string = "register";
   const PAGE_HEADER_CLASSNAME: string = `${BASE_CLASSNAME}_page-header`;
   const HEADER_HEADING_CLASSNAME: string = `${PAGE_HEADER_CLASSNAME}_heading`;
@@ -68,3 +68,5 @@ export const RegisterComponent: React.FC = () => {
     </div>
   );
 };
+
+export default RegisterComponent;
