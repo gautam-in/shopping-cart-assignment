@@ -38,17 +38,29 @@ export class Carousel {
                         this.showNextOrPreviousBanner(1); */
                 }, 3000);
 
-                const carouselContainer = document.getElementsByClassName("sb-carousel-container")[0];
-                carouselContainer.addEventListener('mouseenter', event => {
-                    this.isHovered = true;
-                    event.stopPropagation();
-                })
-                carouselContainer.addEventListener('mouseleave', event => {
-                    this.isHovered = false;
-                    event.stopPropagation();
-                })
-                
+                this.addCarouselMouseEvents();
+                this.addNextPreviousBtnEvents();
+            }
+        )
+            .catch(error => {
+                const merrorElement = document.getElementsByClassName('banners-error')[0];
+                merrorElement.innerHTML = "No data fouind";
+            });
+    }
 
+    addCarouselMouseEvents() {
+        const carouselContainer = document.getElementsByClassName("sb-carousel-container")[0];
+        carouselContainer.addEventListener('mouseenter', event => {
+            this.isHovered = true;
+            event.stopPropagation();
+        })
+        carouselContainer.addEventListener('mouseleave', event => {
+            this.isHovered = false;
+            event.stopPropagation();
+        })
+    }
+
+    addNextPreviousBtnEvents() {
         let perviousButton = document.getElementsByClassName("sb-carousel-btn-left")[0];
         perviousButton.addEventListener('click', event => {
             this.showNextOrPreviousBanner(-1);
@@ -60,20 +72,13 @@ export class Carousel {
             this.showNextOrPreviousBanner(1);
             event.stopPropagation();
         });
-            }
-        )
-        .catch(error => {
-            console.log(error);
-            const bannerElement = document.getElementsByClassName('sb-carousel-list')[0];
-            bannerElement.innerHTML = error.message;
-        });
     }
 
     showNextOrPreviousBanner(num) {
         let carouselList = document.getElementsByClassName("sb-carousel-item");
         let currentListItem = carouselList[this.currentIndex];
         if (currentListItem) {
-            currentListItem.style.display = "none";            
+            currentListItem.style.display = "none";
         }
 
         let dotList = document.getElementsByClassName("dot-item");

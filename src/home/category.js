@@ -6,12 +6,16 @@ export class Categories {
     }
 
     showCategories() {
+        let categoriesList = document.getElementsByClassName('sb-categories-list')[0];
         this.homeService.getAllCategories()
             .then(categories => {
+                if (!categories || categories.length === 0) {
+                    categoriesList.innerHTML = "No categories found!";
+                    return;
+                }
                 categories = categories.sort((a, b) => {
                     return a.order - b.order;
                 });
-                const categoriesList = document.getElementsByClassName('sb-categories-list')[0];
 
                 for (let index = 0; index < categories.length; index++) {
                     const category = categories[index];
@@ -51,6 +55,9 @@ export class Categories {
 
                 }
 
+            })
+            .catch(error => {
+                categoriesList.innerHTML = "Please try again later!";
             });
     }
 }

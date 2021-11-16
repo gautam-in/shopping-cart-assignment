@@ -14,7 +14,7 @@ export class Products {
                 return a.order - b.order;
             });
             const productsSidenav = document.getElementsByClassName('products-sidenav-list')[0];
-            productsSidenav.addEventListener('click', event => {
+            productsSidenav?.addEventListener('click', event => {
                 event.stopPropagation();
 
                 let queryParams = new URLSearchParams(document.location.search);
@@ -29,7 +29,7 @@ export class Products {
 
             let queryParams = new URLSearchParams(document.location.search);
             if (!queryParams.get("category")) {
-                let defaultCategory = productsSidenav.firstElementChild;
+                let defaultCategory = productsSidenav?.firstElementChild;
                 defaultCategory?.classList.add("active");
             }
 
@@ -48,21 +48,29 @@ export class Products {
                         <a href="#" class="products-sidenav-link">${category.name}</a>
                     `;
                     categoryItem.innerHTML = category.name;
-                    productsSidenav.appendChild(categoryItem);
+                    productsSidenav?.appendChild(categoryItem);
                 }
                 
             }
 
+        })
+        .catch(error => {
+            console.log(error);
         });
     }
 
     showProducts(categoryId) {
+        let cardGrid = document.getElementsByClassName("card-grid")[0];
         this.productsService.getProducts()
         .then(productsList => {
+            if (!productsList || productsList.length === 0) {
+                cardGrid?.innerHTML = "No products found!";
+                return;
+            }
+
             if (categoryId) {
                 productsList = productsList.filter(product => product.category === categoryId);
             }
-            let cardGrid = document.getElementsByClassName("card-grid")[0];
             for (let index = 0; index < productsList.length; index++) {
                 const product = productsList[index];
                 
@@ -89,8 +97,11 @@ export class Products {
                 `;
 
                 productElement.innerHTML = productContent;
-                cardGrid.append(productElement);
+                cardGrid?.append(productElement);
             }
+        })
+        .catch(error => {
+            cardGrid?.innerHTML = "Please try again later!";
         });
     }
 
@@ -103,7 +114,7 @@ export class Products {
 
     toggleSideNav(event, isRemove) {
         let sideNav = document.getElementsByClassName('sb-products-sidenav')[0];
-        sideNav.classList.toggle('open');
+        sideNav?.classList.toggle('open');
 
         if (isRemove) {
             sideNav.classList.remove('open');
@@ -121,4 +132,4 @@ prod.showProducts(queryParams.get("category"));
 
 
 let toggleBtn = document.getElementsByClassName("category-toggle-btn")[0];
-toggleBtn.addEventListener('click', prod.toggleSideNav);
+toggleBtn?.addEventListener('click', prod.toggleSideNav);
