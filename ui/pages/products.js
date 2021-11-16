@@ -32,9 +32,6 @@ export async function getStaticProps() {
 		props: {
 			productsData: data,
 		},
-		// Next.js will attempt to re-generate the page:
-		// - When a request comes in
-		// - At most once every 12 hours
-		revalidate: 43200, // In seconds
+		revalidate: 43200,
 	};
 }

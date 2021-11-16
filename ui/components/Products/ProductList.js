@@ -1,4 +1,3 @@
-/* eslint-disable max-len */
 import { useSelector } from 'react-redux';
 import { useEffect, useState } from 'react';
 import ProductCard from './ProductCard';

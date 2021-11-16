@@ -7,25 +7,25 @@ import ProductList from '../components/Products/ProductList';
 import ProductListData from './testutils/ProductListData.json';
 
 describe('ProductList Tests', () => {
-  //
-  beforeEach(() => {
-    render(
-      <ChakraProvider>
-        <Provider store={store}>
-          <ProductList productsData={ProductListData} />
-        </Provider>
-      </ChakraProvider>,
-    );
-  });
-  //
+	//
+	beforeEach(() => {
+		render(
+			<ChakraProvider>
+				<Provider store={store}>
+					<ProductList productsData={ProductListData} />
+				</Provider>
+			</ChakraProvider>
+		);
+	});
+	//
 
-  test('Product List should render correctly', () => {
-    const productListElement = screen.getByTestId('product-list');
-    expect(productListElement).toBeInTheDocument();
-  });
+	test('Product List should render correctly', () => {
+		const productListElement = screen.getByTestId('product-list');
+		expect(productListElement).toBeInTheDocument();
+	});
 
-  test('ProductList should render correct amount of product card', () => {
-    const productCards = screen.getAllByText('Add To Cart');
-    expect(productCards).toHaveLength(4);
-  });
+	test('ProductList should render correct amount of product card', () => {
+		const productCards = screen.getAllByText('Add To Cart');
+		expect(productCards).toHaveLength(4);
+	});
 });

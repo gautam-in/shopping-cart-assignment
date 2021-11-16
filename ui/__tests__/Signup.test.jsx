@@ -7,57 +7,61 @@ import Login from '../components/Signup';
 import Firebase from '../firebase';
 
 const authObjectMock = {
-  createUserAndRetrieveDataWithEmailAndPassword: jest.fn(() => Promise.resolve(true)),
-  createUserWithEmailAndPassword: jest.fn(() => Promise.resolve(true)),
-  sendPasswordResetEmail: jest.fn(() => Promise.resolve(true)),
-  signInAndRetrieveDataWithEmailAndPassword: jest.fn(() => Promise.resolve(true)),
-  fetchSignInMethodsForEmail: jest.fn(() => Promise.resolve(true)),
-  signOut: jest.fn(() => {
-    Promise.resolve(true);
-  }),
-  onAuthStateChanged: jest.fn(),
-  currentUser: {
-    sendEmailVerification: jest.fn(() => Promise.resolve(true)),
-  },
+	createUserAndRetrieveDataWithEmailAndPassword: jest.fn(() =>
+		Promise.resolve(true)
+	),
+	createUserWithEmailAndPassword: jest.fn(() => Promise.resolve(true)),
+	sendPasswordResetEmail: jest.fn(() => Promise.resolve(true)),
+	signInAndRetrieveDataWithEmailAndPassword: jest.fn(() =>
+		Promise.resolve(true)
+	),
+	fetchSignInMethodsForEmail: jest.fn(() => Promise.resolve(true)),
+	signOut: jest.fn(() => {
+		Promise.resolve(true);
+	}),
+	onAuthStateChanged: jest.fn(),
+	currentUser: {
+		sendEmailVerification: jest.fn(() => Promise.resolve(true)),
+	},
 };
 
 const authMock = jest.fn(() => authObjectMock);
 
 Firebase.auth = authMock;
 
-jest.mock('next/link', () => ({ children }) => children);
+jest.mock(
+	'next/link',
+	() =>
+		({ children }) =>
+			children
+);
 
 describe('Login Component Tests', () => {
-  //
+	//
 
-  beforeEach(() => {
-    render(
-      <ChakraProvider>
-        <Login />
-      </ChakraProvider>,
-    );
-  });
-  //
+	beforeEach(() => {
+		render(
+			<ChakraProvider>
+				<Login />
+			</ChakraProvider>
+		);
+	});
 
-  test('Component should render correctly', () => {
-    // const firebaseLoginFunction = jest.spyOn(global, 'firebase/app');
+	test('Component should render correctly', () => {
+		const formElement = screen.getByTestId('signup-form');
+		expect(formElement).toBeInTheDocument();
+	});
 
-    const formElement = screen.getByTestId('signup-form');
-    expect(formElement).toBeInTheDocument();
-  });
+	test('On Cliking submit should execute handleSubmit function', () => {
+		const mockHandleSubmitFunction = jest.fn();
+		const formSubmitButton = screen.getByText('Submit');
+		formSubmitButton.onclick = mockHandleSubmitFunction;
+		userEvent.click(formSubmitButton);
+		expect(mockHandleSubmitFunction).toHaveBeenCalledTimes(1);
+	});
 
-  test('On Cliking submit should execute handleSubmit function', () => {
-    // Login.prototype.handleSubmit = jest.fn();
-    const mockHandleSubmitFunction = jest.fn();
-    const formSubmitButton = screen.getByText('Submit');
-    formSubmitButton.onclick = mockHandleSubmitFunction;
-    userEvent.click(formSubmitButton);
-    expect(mockHandleSubmitFunction).toHaveBeenCalledTimes(1);
-  });
-
-  test('Redirect to Login Page', () => {
-    // jest.spyOn(Link);
-    const signupLinkElement = screen.getByText('Login');
-    userEvent.click(signupLinkElement);
-  });
+	test('Redirect to Login Page', () => {
+		const signupLinkElement = screen.getByText('Login');
+		userEvent.click(signupLinkElement);
+	});
 });
