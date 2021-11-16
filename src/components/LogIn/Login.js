@@ -9,8 +9,8 @@ function Login() {
             </aside>
             <section className='form-section'>
                 <form>
-                    <input type='text' placeholder='First name' required />
-                    <input type='text' placeholder='First name' required />
+                    <input type='text' placeholder='Email' required />
+                    <input type='text' placeholder='Password' required />
                     <button className='btn-signup'>Sign Up</button>
                 </form>
             </section>

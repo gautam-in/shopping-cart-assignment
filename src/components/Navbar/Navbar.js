@@ -12,7 +12,7 @@ function Navbar() {
         <header className='header'>
             <nav className='navbar'>
                 <div className='logo'>
-                    <img src={logo} alt='logo' height='73' width='120'/>
+                    <img className='logo-img' src={logo} alt='logo' height='73' width='120'/>
                 </div>
                 <div className='menu'>
                     <Link className='left-nav-menu' to='/'><div>Home</div></Link>

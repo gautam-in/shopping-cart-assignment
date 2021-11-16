@@ -9,6 +9,7 @@ import { addToCart } from '../../redux/shopping/shopping-actions';
 function Products() {
     const history = useHistory();
     const [products, setProducts] = useState([]);
+    const [active, setActive] = useState(false);
     const obj = useParams();
     const dispatch = useDispatch();
 
@@ -27,7 +28,7 @@ function Products() {
     return (
         <div className='products-page'>
             <div className='sidebar'>
-                {Categories.map(category => <li key={category.id} onClick={()=>history.push(`/products/${category.id}`)} className='category-list'>{category.name}</li>)}
+                {Categories.map(category => <li key={category.id} onClick={()=>{history.push(`/products/${category.id}`);}} className="category-list">{category.name}</li>)}
             </div>
             <div className='product-details'>
                 {products.map(each => <div key={each.id} className='product-container'>
