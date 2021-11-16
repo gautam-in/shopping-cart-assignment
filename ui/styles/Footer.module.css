@@ -1,0 +1,9 @@
+.FooterMainContainer {
+	background-color: var(--footer-bg-color);
+	height: 80px;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+}

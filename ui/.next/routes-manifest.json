@@ -1,0 +1,1 @@
+{"version":3,"pages404":true,"basePath":"","redirects":[{"source":"/:path+/","destination":"/:path+","internal":true,"statusCode":308,"regex":"^(?:/((?:[^/]+?)(?:/(?:[^/]+?))*))/$"}],"headers":[],"dynamicRoutes":[],"dataRoutes":[{"page":"/products","dataRouteRegex":"^/_next/data/x179s5MIfx\\-1\\-SEjKxNOt/products.json$"}],"rewrites":[]}

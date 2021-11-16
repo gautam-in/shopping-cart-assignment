@@ -1,0 +1,17 @@
+.SliderContainer {
+	margin: 30px 0px;
+	max-width: 100%;
+	box-shadow: rgba(0, 0, 0, 0.24) 0px 5px 10px;
+}
+
+.bannerImg {
+	position: relative;
+	max-width: 100%;
+	height: calc(100vw * 0.2625);
+}
+
+@media (max-width: 900px) {
+	.bannerImg {
+		height: 25vh;
+	}
+}

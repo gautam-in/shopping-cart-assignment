@@ -1,0 +1,41 @@
+.CategoryBannerContainer {
+	margin: 1rem 0;
+	width: 100%;
+	min-height: 25vh;
+	box-shadow: rgba(0, 0, 0, 0.24) 0px 5px 10px;
+	padding: 20px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.reveseFlex {
+	flex-direction: row-reverse;
+}
+
+.CategoryBannerImg {
+	min-width: 150px;
+	flex: 0.3;
+	height: 200px;
+	position: relative;
+}
+
+.CategoryTitle {
+	font-weight: bold;
+	font-size: 20px;
+}
+
+.CategoryDescription {
+	font-size: 14px;
+}
+
+.CategoryBannerDescription {
+	flex: 0.5;
+	width: 50%;
+	min-height: 200px;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+}

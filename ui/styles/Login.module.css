@@ -1,0 +1,13 @@
+.LoginContainer {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+}
+
+@media (max-width: 900px) {
+	.LoginContainer {
+		height: 70vh;
+		justify-content: space-around;
+	}
+}

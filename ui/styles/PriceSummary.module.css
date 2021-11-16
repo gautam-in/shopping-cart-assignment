@@ -1,0 +1,48 @@
+.PriceSummaryContainerMain {
+	width: 100%;
+	min-height: 50vh;
+	padding: 20px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-around;
+}
+
+.PriceSummaryHeading {
+	font-size: 25px;
+	font-weight: bold;
+	text-align: center;
+}
+
+.PricingDetails {
+	height: 100%;
+	min-width: 60%;
+}
+
+.ItemsRow {
+	height: 100%;
+	font-weight: 600;
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+}
+
+.DeliveryRow {
+	height: 100%;
+	font-weight: 600;
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+}
+
+.OrderTotalRow {
+	font-size: 20px;
+	font-weight: 800;
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+}
+
+.PlaceOrderContainer {
+	min-width: 60%;
+}

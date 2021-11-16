@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@400;600;700&display=swap');
+
+:root {
+	--footer-bg-color: #cccccc;
+	--header-bg-color: #fff;
+	--product-description-bg-color: #efe8e8;
+	--product-card-button-color: #d00275;
+	--category-banner-card-button-color: #d00257;
+	--category-filter-active-bg-color: silver;
+	--black: #1c2123;
+	--white: #fff;
+	--primary: #d00257;
+}
+
+html,
+body {
+	font-family: 'Dosis', --apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+		Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	overflow-x: hidden;
+	padding: 0;
+	margin: 0;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+* {
+	box-sizing: border-box;
+}

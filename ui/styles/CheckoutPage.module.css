@@ -1,0 +1,48 @@
+.CheckoutPageContainer {
+	width: 100vw;
+	margin-top: 1rem;
+	min-height: 100vh;
+	display: flex;
+	justify-content: space-evenly;
+}
+
+.OrderSummaryContainer {
+	width: 50%;
+	background-color: whitesmoke;
+	min-height: 80%;
+	padding: 5px;
+	border-radius: 5px;
+	box-shadow: rgba(0, 0, 0, 0.24) 0px 5px 10px;
+}
+
+.PriceSummaryContainer {
+	width: 35%;
+	height: 60vh;
+	background-color: whitesmoke;
+	border-radius: 5px;
+	padding: 5px;
+	box-shadow: rgba(0, 0, 0, 0.24) 0px 5px 10px;
+}
+
+.OrderSummaryHeading {
+	font-size: 25px;
+	font-weight: bold;
+	text-align: center;
+}
+
+@media (max-width: 900px) {
+	.CheckoutPageContainer {
+		flex-direction: column;
+		justify-content: space-between;
+		margin: 5vh 0px;
+	}
+
+	.OrderSummaryContainer {
+		width: 100%;
+	}
+
+	.PriceSummaryContainer {
+		width: 100%;
+		min-height: 50%;
+	}
+}
