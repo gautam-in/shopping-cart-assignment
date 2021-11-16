@@ -21,7 +21,7 @@ export class Categories {
                         categoryElement.classList.add("sb-category");
                         const bottomShadow = document.createElement('div');
                         bottomShadow.classList.add("shadow");
-                        bottomShadow.classList.add("ct-shadow");
+                        bottomShadow.classList.add("category-shadow");
                         const categoryContent = `
                         <div class="product-img">
                             <img src="${category.imageUrl}" alt="${category.name}" class="categories-image">

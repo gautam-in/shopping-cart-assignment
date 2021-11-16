@@ -10,8 +10,6 @@
         gap: 2rem;
 
         .sb-category {
-            /* margin-top: 2rem;
-            min-height: 150px; */
             display: flex;
             align-items: center;
             background-color: white;
@@ -75,7 +73,7 @@
     }
 }
 
-.ct-shadow {
+.shadow.category-shadow {
     position: absolute;
     bottom: -0.35rem;
     left: 50%;

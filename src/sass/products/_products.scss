@@ -3,6 +3,20 @@
 .sb-products-container {
     display: flex;
     gap: 1rem;
+
+    @include responsive-sm {
+        display: block;
+        position: relative;
+
+        .sb-products-sidenav {
+            position: absolute;
+            border-bottom: 1px solid black;
+        }
+
+        .sb-products-sidenav:not(.open) {
+            display: none;
+        }
+    }
 }
 
 .sb-products-sidenav {
@@ -10,7 +24,7 @@
     background-color: #f1f3f5;
 
     @include responsive-sm {
-        display: none;
+        width: 100%;
     }
 
     .products-sidenav-list {
@@ -30,6 +44,10 @@
 
         .products-sidenav-item.active {
             background-color: #adb5bd;
+
+            @include responsive-sm {
+                background-color: transparent;
+            }
         }
     }
 }
@@ -119,5 +137,31 @@
                 width: 100%;
             }
         }
+    }
+}
+
+.dropdown-btn {
+
+    .category-toggle-btn {
+        padding: 0 2rem;
+        display: none;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        height: 3.6rem;
+        border: none;
+        background-color: $primaryColor;
+        cursor: pointer;
+        color: white;
+
+        @include responsive-sm {
+            display: flex;
+        }
+    }
+    
+    .down-arrow {
+        width: 2.4rem;
+        height: 2.4rem;
+        stroke: white;
     }
 }

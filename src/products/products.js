@@ -1,7 +1,7 @@
 import { HomeService } from '../services/homeService.js';
 import { ProductsService } from '../services/productsService.js';
 
-class Products {
+export class Products {
     constructor() {
         this.productsService = new ProductsService()
         this.homeService = new HomeService();
@@ -18,11 +18,20 @@ class Products {
                 event.stopPropagation();
 
                 let queryParams = new URLSearchParams(document.location.search);
-                queryParams.set("category", event.target.dataset.categoryId);
+                if (event.target.dataset.categoryId) {
+                    queryParams.set("category", event.target.dataset.categoryId);
+                } else {
+                    queryParams.delete("category");
+                }
+                
                 document.location.search = queryParams;
             });
 
             let queryParams = new URLSearchParams(document.location.search);
+            if (!queryParams.get("category")) {
+                let defaultCategory = productsSidenav.firstElementChild;
+                defaultCategory?.classList.add("active");
+            }
 
             for (let index = 0; index < categories.length; index++) {
                 const category = categories[index];
@@ -31,7 +40,8 @@ class Products {
                     const categoryItem = document.createElement("li");
                     categoryItem.classList.add("products-sidenav-item");
                     if (queryParams.get("category") === category.id) {
-                        categoryItem.classList.add("active");                        
+                        categoryItem.classList.add("active");
+                        this.updateToggleBtnText(category.name);
                     }
                     categoryItem.dataset.categoryId = category.id;
                     const categoryLink = `
@@ -83,9 +93,32 @@ class Products {
             }
         });
     }
+
+    updateToggleBtnText(categoryName) {
+        let btn = document.querySelector(".category-toggle-btn span");
+        if (btn) {
+            btn.innerHTML = categoryName;            
+        }
+    }
+
+    toggleSideNav(event, isRemove) {
+        let sideNav = document.getElementsByClassName('sb-products-sidenav')[0];
+        sideNav.classList.toggle('open');
+
+        if (isRemove) {
+            sideNav.classList.remove('open');
+        }
+        if (event) {
+            event.stopPropagation();
+        }
+    }
 }
 
 const prod = new Products();
 prod.showCategories();
 let queryParams = new URLSearchParams(document.location.search);
 prod.showProducts(queryParams.get("category"));
+
+
+let toggleBtn = document.getElementsByClassName("category-toggle-btn")[0];
+toggleBtn.addEventListener('click', prod.toggleSideNav);

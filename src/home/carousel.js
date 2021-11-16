@@ -47,8 +47,7 @@ export class Carousel {
                     this.isHovered = false;
                     event.stopPropagation();
                 })
-            }
-        );
+                
 
         let perviousButton = document.getElementsByClassName("sb-carousel-btn-left")[0];
         perviousButton.addEventListener('click', event => {
@@ -61,11 +60,21 @@ export class Carousel {
             this.showNextOrPreviousBanner(1);
             event.stopPropagation();
         });
+            }
+        )
+        .catch(error => {
+            console.log(error);
+            const bannerElement = document.getElementsByClassName('sb-carousel-list')[0];
+            bannerElement.innerHTML = error.message;
+        });
     }
 
     showNextOrPreviousBanner(num) {
         let carouselList = document.getElementsByClassName("sb-carousel-item");
-        carouselList[this.currentIndex].style.display = "none";
+        let currentListItem = carouselList[this.currentIndex];
+        if (currentListItem) {
+            currentListItem.style.display = "none";            
+        }
 
         let dotList = document.getElementsByClassName("dot-item");
         dotList[this.currentIndex].classList.remove("dot-active");
