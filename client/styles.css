@@ -1,0 +1,159 @@
+* {
+    box-sizing: border-box;
+}
+  
+html,
+body {
+    margin: 0;
+}
+  
+header {
+    background-color: white;
+    box-shadow: 2px 2px 2px gray;
+}
+
+nav{
+    position: relative;
+    margin-bottom: 2%;
+}
+
+.login-cart-btn{
+    width: 10%;
+    height: 8vh;
+    background-color: rgb(202, 202, 202);
+    border: none;
+    position: absolute;
+    bottom: 0%;
+    right: 20%;
+}
+
+.product-banner{
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.product-image{
+    display: none;
+}
+
+.previous{
+    position: absolute;
+    color: black;
+    top: 35%;
+    left: 0;
+    cursor: pointer;
+    padding: 16px;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+.next{
+    position: absolute;
+    color: black;
+    top: 35%;
+    right: 0;
+    cursor: pointer;
+    padding: 16px;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+.previous:hover, .next:hover{
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.product-fade{
+    animation: fade 1.5s;
+}
+
+.category-card{
+    display: flex;
+}
+
+.category-image{
+    width: 500px;
+    height: 300px;
+}
+
+.category-desc-align{
+    width: 80%;
+    margin-top: 5%;
+    text-align: center;
+}
+
+.category-explore-btn{
+    font-size: 20px;
+    color: white;
+    background-color: rgb(197, 3, 3);
+    border: none;
+    padding: 10px;
+}
+
+.card{
+    margin: 2%;
+}
+
+@keyframes fade{
+    from { opacity: 0.4; }
+    to { opacity: 1; }
+}
+
+
+@media only screen and (max-width: 468px) {
+    .login-cart-btn{
+        background-color: rgb(202, 202, 202);
+        position: static;
+        width: 30%;
+    }
+
+    .card{
+        width: 100%;
+    }
+
+    .signup-form-card{
+        display: block;
+    }
+
+    .signup-form-desc{
+        width: 100%;
+        margin: 2%;
+    }
+    
+    .signup-form-fields{
+        width: 100%;
+        margin: 2%;
+    }
+
+    .signup-submit-button{
+        width: 50%;
+        height: 5vh;
+    }
+
+    .product-banner{
+        width: 100%;
+    }
+
+    .category-card{
+        font-size: 12px;
+    }
+
+    .category-image{
+        width: 100px;
+        height: 80px;
+        margin-top: 12%;
+    }
+
+    .category-explore-btn{
+        font-size: 10px;
+    }
+    
+}
+
+
