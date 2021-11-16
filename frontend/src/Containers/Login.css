@@ -1,0 +1,41 @@
+
+section{
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.input{
+  border: none;
+  outline: none;
+  border-bottom: 1px solid grey;
+  box-sizing: border-box;
+  font-size: 18px;
+  width: 200px;
+}
+
+input:focus {
+    border-bottom: 1px solid blue;
+}
+
+.label {
+    color: grey;
+    cursor: pointer;
+    padding-top: 20px;
+}
+
+input:focus + label {
+    color: blue;
+}
+
+section {
+    display: flex;
+    justify-content: center;
+}
+
+section form {
+    padding-left: 20px;
+}
+section form div {
+    display: flex;
+    flex-direction: column-reverse;
+}
