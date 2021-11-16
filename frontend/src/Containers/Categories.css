@@ -1,0 +1,23 @@
+.Categories-Container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 5%;
+    box-shadow: 0px 10px 10px #efeeee;
+}
+
+.Categories-Container:nth-child(even){
+    flex-direction: row-reverse;
+}
+
+.Container {
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+@media screen and (max-width: 1024px) {
+    .Container {
+        padding-left: 0%;
+        padding-right: 0%;
+    }
+}

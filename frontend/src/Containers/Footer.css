@@ -1,0 +1,15 @@
+footer {
+    position: relative;
+    background-color: #efeeee;
+}
+
+footer p {
+    padding-left: 10%;
+}
+
+@media screen and (max-width: 1024px){
+    footer p {
+        text-align: center;
+        padding-left: 0%;
+    }
+}
