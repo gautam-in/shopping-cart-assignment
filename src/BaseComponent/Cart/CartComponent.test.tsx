@@ -1,5 +1,4 @@
 import { ShallowWrapper, shallow } from "enzyme";
-import IBanners from "../../Interfaces/IBanners";
 import { CartComponent, TCartComponentProps } from "./CartComponent";
 
 describe("CartComponent", () => {
