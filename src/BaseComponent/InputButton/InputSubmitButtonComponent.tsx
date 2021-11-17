@@ -1,3 +1,4 @@
+import { memo } from "react";
 import "./InputSubmitButtonComponent.scss";
 
 interface IInputSubmitButtonComponentProps {
@@ -6,7 +7,7 @@ interface IInputSubmitButtonComponentProps {
   externalClassName?: string;
 }
 
-export const InputSubmitButtonComponent: React.FC<IInputSubmitButtonComponentProps> = (
+export const InputSubmitButtonComponent: React.FC<IInputSubmitButtonComponentProps> = memo((
   props
 ) => {
   const { id, buttonName, externalClassName } = props;
@@ -21,4 +22,4 @@ export const InputSubmitButtonComponent: React.FC<IInputSubmitButtonComponentPro
         />
     </div>
   );
-};
+})
