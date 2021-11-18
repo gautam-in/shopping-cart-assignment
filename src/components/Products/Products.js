@@ -35,7 +35,7 @@ function Products() {
                 {Categories.map(category => <li key={category.id} onClick={()=>{history.push(`/products/${category.id}`);}} className="category-list">{category.name}</li>)}
             </div>
             <select onChange={dropdownHandler} className='category-dropdown'>
-                <option selected disabled>-- Select Category --</option>
+                <option defaultValue disabled>-- Select Category --</option>
                 {Categories.map(category => <option key={category.id} value={category.id}>{category.name}</option> )}
             </select>
             <div className='product-details'>

@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import {Link} from 'react-router-dom';
 
 function Login() {
     return (
@@ -10,8 +11,13 @@ function Login() {
             <section className='form-section'>
                 <form>
                     <input type='text' placeholder='Email' required />
-                    <input type='text' placeholder='Password' required />
-                    <button className='btn-signup'>Sign Up</button>
+                    <input type='password' placeholder='Password' required />
+                    <button className='btn-signup'>Sign In</button>
+                    <div style={{textAlign:'center',fontSize:'14px',color:'grey',margin:'5px'}}>Or</div>
+                    <div style={{textAlign:'center',fontStyle:'15px'}}>
+                        <Link  to='/register'>click here to Register</Link>
+                    </div>
+                    
                 </form>
             </section>
         </div>

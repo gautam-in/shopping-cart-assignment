@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom'; 
 import './cart.css';
 import {useSelector, useDispatch} from 'react-redux';
 import { decrementQuantity, incrementQuantity } from '../../redux/shopping/shopping-actions';
@@ -13,7 +14,7 @@ function Cart() {
         {cartitems.length === 0 ? <div className='cart-page'>
         <div style={{fontWeight:'bold',fontSize:'22px',margin:'5px'}}>No items in your cart</div>
         <div style={{fontSize:'16px',margin:'5px'}}>Your favourite items are just a click away</div>
-        <button className='btn-shopping'>Start Shopping</button>
+        <Link to='/products'><button className='btn-shopping'>Start Shopping</button></Link>
         </div> :
         
         <div className='cart-items-container'>
@@ -23,7 +24,7 @@ function Cart() {
                     cartitems.map(item => <div className='each-cart-item-container'>
                         <div className='each-cart-item'>
                             <img style={{marginRight:'8px'}} src={item.imageURL} alt={item.name} height='80' width='80' />
-                            <div style={{display:'flex',flexDirection:'column',width:'80%'}}>
+                            <div className='item-description'>
                                 <div>{item.name}</div>
                                 <div style={{display:'flex',margin:'10px'}}>
                                     <button onClick={() => dispatch(decrementQuantity({id:item.id}))} className='btn-primary-cart'>-</button>
@@ -39,7 +40,7 @@ function Cart() {
             <button className='checkout-btn'>
                 <div style={{display:'flex'}}>
                     <div style={{width:'50%',marginLeft:'30px',textAlign:'left'}}>Proceed to checkout</div>
-                    <div style={{width:'50%',marginRight:'30px',textAlign:'right'}}>Rs.{total_price} &nbsp; &gt;</div>
+                    <div style={{width:'50%',marginRight:'30px',textAlign:'right'}}>Rs. {total_price} &nbsp; &gt;</div>
                 </div>
             </button>
         </div>}

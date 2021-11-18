@@ -15,6 +15,9 @@
     margin:20px;
     border-radius: 3px;
 }
+.btn-shopping:hover,.btn-shopping:active {
+    background: #e02673;
+}
 .cart-items-container {
     margin-top: 6rem;
     display: flex;
@@ -61,4 +64,14 @@
     font-size: 15px;
     padding: 10px 10px;
     cursor: pointer;
+}
+.item-description {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+}
+@media screen and (max-width:480px) {
+    .item-description {
+        width: 60%;
+    }
 }
