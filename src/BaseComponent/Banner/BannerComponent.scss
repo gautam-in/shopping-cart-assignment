@@ -1,0 +1,56 @@
+/******************* BannerComponent *****************************/
+@import '../../Styles/variable.scss';
+@import '../../Styles/color-variable.scss';
+
+.banner {
+    position: relative;
+    margin-bottom: $SMALL_MARGIN;
+    box-shadow: 0px 10px 5px -5px $LIGHT_GREY;
+
+    @mixin basic-btn {
+        position: absolute;
+        padding: $SMALL_PADDING;
+        top: 50%;
+        background-color: $TRANSPARENT_BLACK;
+        border: none;
+        color: white;
+        cursor: pointer;
+    }
+
+    & .banner_carousel {
+        & .banner_carousel_image {
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    & .banner_prev {
+        @include basic-btn;
+        left: 0;
+    }
+
+    & .banner_next {
+        @include basic-btn;
+        right: 0;
+    }
+
+    & .banner_dot-slider {
+        display: flex;
+        justify-content: center;
+
+        & .banner_dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: $LIGHT_GREY;
+            display: inline;
+            margin: 10px;
+            border: none;
+            cursor: pointer;
+        }
+
+        & .banner_dot--selected {
+            background-color: $APP_BLACK;
+        }
+    }
+}

@@ -1,0 +1,34 @@
+/******************* RegisterComponent *****************************/
+@import '../../Styles/variable.scss';
+@import '../../Styles/mixin.scss';
+
+.register {
+    width: 60%;
+    margin: $LARGE_MARGIN auto;
+    @include grid-2-column;
+    gap: $SMALL_GAP;
+
+    & .register_page-header {
+        @include flex-column;
+        gap: $MEDIUM_GAP;
+
+        & .register_page-header_heading {
+            font-size: $LARGE_FONT_SIZE;
+        }
+
+        & .register_page-header_subsection {
+            font-size: $MEDIUM_FONT_SIZE;
+        }
+
+    }
+
+    & .register_page-content {
+        @include flex-column;
+        gap: $LARGE_GAP;
+        justify-content: space-evenly;
+
+        & .register_page-content_button {
+            margin-top: $SMALL_MARGIN;
+        }
+    }
+}

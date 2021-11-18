@@ -1,0 +1,25 @@
+/******************* footer *****************************/
+@import '../../Styles/color-variable.scss';
+@import '../../Styles/variable.scss';
+
+.footer {
+    width: 100%;
+    min-height: $MEDIUM_HEIGHT;
+    background-color: $LIGHT_GREY;
+    font-size: $MEDIUM_FONT_SIZE;
+    padding: $SMALL_PADDING;
+    padding-left: $X_LARGE_PADDING;
+}
+
+@media screen and (max-width: 750px) {
+    .footer {
+        padding-left: 0;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 530px) {
+    .footer {
+        font-size: $SMALL_FONT_SIZE;
+    }
+}

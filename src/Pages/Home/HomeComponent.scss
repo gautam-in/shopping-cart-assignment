@@ -1,0 +1,19 @@
+/******************* HomeComponent *****************************/
+@import "../../Styles/variable.scss";
+
+.home {
+    width: 80%;
+    margin: $MEDIUM_MARGIN auto;
+}
+
+@media screen and (max-width: 750px) {
+    .home {
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 530px) {
+    .home {
+        width: 100%;
+    }
+}

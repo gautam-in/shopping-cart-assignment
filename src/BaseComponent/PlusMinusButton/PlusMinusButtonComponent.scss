@@ -1,0 +1,32 @@
+/******************* PlusMinusButtonComponent *****************************/
+@import "../../Styles/color-variable.scss";
+@import "../../Styles/variable.scss";
+
+.plus-minus-button {
+    display: inline-flex;
+    gap: 10px;
+
+    @mixin p-m-btn {
+        width: 30px;
+        height: 30px;
+        font-size: 15px;
+        background-color: $CRIMSON_RED;
+        color: $WHITE;
+        text-align: center;
+        padding: 5px;
+        cursor: pointer;
+    }
+
+    & .minus-button {
+        @include p-m-btn;
+    }
+
+    & .plus-button {
+        @include p-m-btn;
+    }
+
+    & .count-button {
+        padding: 5px;
+        text-align: center;
+    }
+}

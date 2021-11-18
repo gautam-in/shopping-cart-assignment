@@ -1,0 +1,40 @@
+/********************* CartComponent ************************/
+@import "../../Styles/color-variable.scss";
+@import "../../Styles/variable.scss";
+@import "../../Styles/mixin.scss";
+
+.cart {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    background-color: $LIGHT_GREY;
+    gap: $SMALL_GAP;
+    text-decoration: none;
+
+    & .cart_icon {
+        max-width: $MEDIUM_WIDTH;
+        // max-width: 100%; //#todo myResponsiveChanges
+        height: auto;
+        justify-self: end;
+        align-self: center;
+        // padding: $SMALL_PADDING; //#todo myResponsiveChanges
+    }
+
+    & .cart_items {
+        font-size: $MEDIUM_FONT_SIZE;
+        color: $APP_BLACK;
+        justify-self: start;
+        align-self: center;
+    }
+}
+
+@media screen and (max-width: 530px) {
+    .cart {
+        & .cart_icon {
+            max-width: $LARGE_WIDTH;
+        }
+
+        & .cart_items {
+            font-size: $LARGE_FONT_SIZE;
+        }
+    }
+}
