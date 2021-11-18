@@ -71,12 +71,27 @@
         gap: 1rem;
         height: 100%;
 
+        @include responsive-sm {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+        }
+
         .card-header {
 
-            .card-image {
-                margin-top: 1rem;
-                display: block;
-                width: 100%;
+
+            @include responsive-sm {
+                grid-column: 1 / -1;
+            }
+        }
+
+        .card-image {
+            margin-top: 1rem;
+            display: block;
+            width: 100%;
+
+            @include responsive-sm {
+                grid-row: 2 / 4;
             }
         }
 
@@ -98,6 +113,10 @@
             .price {
                 font-size: 1.2rem;
                 font-weight: 600;
+
+                @include responsive-sm {
+                    font-size: 1rem;
+                }
             }
 
             .product-btn {
@@ -106,6 +125,11 @@
                 color: white;
                 background-color: $primaryColor;
                 padding: 0.5em 1em;
+
+                @include responsive-sm {
+                    font-size: 1rem;
+                    padding: 0.5rem 0.8rem;
+                }
             }
 
             .product-btn:hover {

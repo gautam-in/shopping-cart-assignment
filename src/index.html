@@ -14,10 +14,14 @@
     <script src="home/carousel.js" type="module"></script>
     <script src="home/category.js" type="module"></script>
     <script src="services/homeService.js" type="module" defer></script>
+    <script src="services/sbLocalStorage.js" type="module" defer></script>
     <script src="header/header.js" type="module" defer></script>
+    <script src="cart/cart.js" type="module" defer></script>
 </head>
 
 <body>
+    <!-- backdrop is to blur background when cart opens -->
+    <div class="backdrop"></div>
     <header class="main-header">
         <div class="sb-container">
             <nav class="sb-navbar">
@@ -79,7 +83,7 @@
         </div>
 
     </header>
-    <main id="main">
+    <main class="main">
         <div class="sb-container">
             <!-- Carousel/Slider -->
             <section>
@@ -106,6 +110,41 @@
                     <div class="sb-categories-list"></div>
                 </div>
             </section>
+
+            <div class="cart-container">
+                <header class="cart-header">
+                    <div class="cart-header-text">My Cart</div>
+                    <div class="cart-items-count">(0 Items)</div>
+                    <div class="cart-close">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="cart-close-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                          </svg>
+                    </div>
+                </header>
+                <main class="cart-body">
+                    <div class="cart-items">
+                    </div>
+                    <div class="cart-empty">
+                        <div>No items in your cart</div>
+                        <div>Your favourite items are just a click away</div>
+                    </div>
+                </main>
+                <footer class="cart-footer">
+                    <div class="promocode-text">
+                        Promo code can be applied on payment page.
+                    </div>
+                    <button type="button" class="cart-submit-btn">
+                        <div class="btn-text">Proceed to checkout</div>
+                        <div class="cart-total-price">Rs.<span class="cart-total-amount">0</span></div>
+                        <div class="">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="right-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                              </svg>
+                        </div>
+                    </button>
+                    <button type="button" class="cart-empty-btn">Start Shopping</button>
+                </footer>
+            </div>
         </div>
     </main>
     <footer class="footer">

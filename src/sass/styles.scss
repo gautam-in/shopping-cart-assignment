@@ -12,6 +12,7 @@ html {
 
 body {
     font-family: 'Dosis', sans-serif;
+    filter: blur(0px);
 }
 
 $primaryColor: #c2255c;
@@ -23,6 +24,7 @@ $mdWidth: 980px;
 .sb-container {
     width: 92rem;
     margin: 0 auto;
+    position: relative;
         
     @include responsive-sm {
         width: 100%;
@@ -45,3 +47,6 @@ $mdWidth: 980px;
 
 // Footer
 @import 'footer/footer';
+
+// Cart
+@import 'cart/cart';
