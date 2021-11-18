@@ -1,0 +1,113 @@
+import styled from "styled-components";
+
+const HomeCatageroiesStyles = styled.section`
+  .categories-common {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    margin-top: 20px;
+    padding-right: 5vw;
+    /* border: 2px solid black; */
+    background-color: #fff;
+
+    > * {
+      &::nth-child(1) {
+        flex: 1 1 70%;
+        justify-content: space-around;
+        min-width: 25ch;
+        margin-top: 20px;
+      }
+      &::nth-child(2) {
+        flex: 1 1 30%;
+        align-self: flex-start;
+        min-width: 22ch;
+        margin-right: 10vw;
+      }
+    }
+  }
+
+  .shadow {
+    position: relative;
+  }
+
+  .shadow::before {
+    content: "";
+    z-index: -2;
+    position: absolute;
+    top: 50%;
+    left: 12px;
+    right: 12px;
+    bottom: 0;
+      /* box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px; */
+    box-shadow: 0px 0px 3px 5px rgba(0, 0, 0, 0.5);
+    border-radius: 500% / 15px;
+  }
+
+  .categories-common-image {
+    width: 30vw;
+    margin-left: 10px;
+    margin-top: 20px;
+  }
+
+  .categories-common-content-title,
+  .categories-common-content-heading {
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+
+  .categories-common-content-button {
+    background-color: var(--primary-color);
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    color: #fff;
+  }
+`;
+
+export default HomeCatageroiesStyles;
+
+
+
+
+
+
+
+
+
+
+/* html */
+
+
+import HomeCatageroiesStyles from "./styles/HomeCategoriesStyles";
+
+export default function HomeCatageroies() {
+  return (
+    <main>
+      <HomeCatageroiesStyles>
+      <section className="categories-fruits categories-common shadow">
+        <div  className="padding-left">
+          <img
+            className="categories-fruits-image categories-common-image"
+            src="/images/category/fruits.png"
+            alt="Fruits and vegitables"
+          />
+        </div>
+        <div className="categories-fruits-content categories-common-content">
+          <h2 className="categories-common-content-heading">
+            Fruits & Vegitables
+          </h2>
+          <p className="categories-fruits-content-title categories-common-content-title">
+            A verity of fresh fruits and vegetables
+          </p>
+          <button
+            className="categories-fruits-content-button categories-common-content-button product-category-button"
+            type="button"
+          >Explore Fruits-and-veg</button>
+        </div>
+      </section>
+      </HomeCatageroiesStyles>
+    </main>
+  );
+}
