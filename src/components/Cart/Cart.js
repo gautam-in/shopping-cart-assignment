@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link} from 'react-router-dom'; 
+import {Link,useHistory} from 'react-router-dom'; 
 import './cart.css';
 import {useSelector, useDispatch} from 'react-redux';
 import { decrementQuantity, incrementQuantity } from '../../redux/shopping/shopping-actions';
@@ -7,6 +7,7 @@ import { decrementQuantity, incrementQuantity } from '../../redux/shopping/shopp
 function Cart() {
     const cartitems = useSelector(state => state.shop.cart);
     const dispatch = useDispatch();
+    const history = useHistory();
     const total_price = cartitems.reduce((acc,curr) => acc += (curr.price*curr.quantity), 0);
     
     return (
@@ -38,7 +39,7 @@ function Cart() {
                 }
             </div>
             <button className='checkout-btn'>
-                <div style={{display:'flex'}}>
+                <div onClick={()=>history.push('/login')} style={{display:'flex'}}>
                     <div style={{width:'50%',marginLeft:'30px',textAlign:'left'}}>Proceed to checkout</div>
                     <div style={{width:'50%',marginRight:'30px',textAlign:'right'}}>Rs. {total_price} &nbsp; &gt;</div>
                 </div>
