@@ -26,6 +26,10 @@ const GlobalStyle = createGlobalStyle`
 const MainContainer = styled.div`
     width: 85%;
     margin: auto;
+
+    @media (max-width: 53em) {
+        width: 100%;
+    }  
 `
 
 

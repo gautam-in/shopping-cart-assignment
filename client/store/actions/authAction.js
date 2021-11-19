@@ -18,11 +18,11 @@ export function addProductToCart (product, user) {
     }
 }
 
-export function incrementProductQuantity (product, user) {
+export function incrementProductQuantity (cartItem, user) {
     return {
         type: "INCREMENT_CART_PRODUCT_QUANTITY",
         payload : {
-            product,
+            cartItem,
             user
         }
     }

@@ -7,7 +7,7 @@ export const Wrapper = styled.section`
     gap:2.2rem;
     
     @media (max-width: 53em) {
-        grid-template-columns: 1.5fr 3fr;
+        grid-template-columns: 1fr 3fr;
     }
 
     @media (max-width: 46em) {

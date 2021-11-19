@@ -15,13 +15,26 @@ export const CartOverLay = styled.div`
 ` 
 export const CartContainer = styled.div`
     width: 33%;
-    min-height: 600px;
     background-color: #fdfdf8;
     position: absolute;
     bottom: 0;
     right: 1.2rem;
+    top: 30px;
 
-    @media (max-width: 75em) {
+    .noItemsInfo {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+
+        h3 {   
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+    }
+
+    @media (max-width: 80em) {
         width: 40%;
     }
 
@@ -29,7 +42,6 @@ export const CartContainer = styled.div`
     @media (max-width: 62em) {
         width: 85%;
         left: 50%;
-        top: 50px;
         transform: translate(-50%, 0);
     }
 `
@@ -48,7 +60,7 @@ export const CartBody = styled.div`
 export const CartHeader = styled.div`
     background-color: black;
     color: #fff;
-    padding: 1.2rem;
+    padding: 0.8rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -105,7 +117,7 @@ export const ProductPrice = styled.h4`
 
 export const CheckoutBtnContainer = styled.div` 
     background-color: #e6e6e6;
-    padding: 1.2rem;
+    padding: 0.8rem;
     align-items: center;
     position: absolute;
     bottom: 0;
@@ -122,9 +134,10 @@ export const CheckoutBtn = styled.button`
     border: none;
     width: 100%;
     margin-top: 1.2rem;
-    padding: 1.2rem;
+    padding: 0.8rem;
     border-radius: 5px;
     background-color: #e96443;
     color: #ffffff;
-    font-size: 1.8rem;
+    font-size: 1.6rem;
+    cursor: pointer;
 `

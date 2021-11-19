@@ -1,10 +1,15 @@
+
+@font-face {
+  font-family: 'rubik';
+  src: url('../public/fonts/rubik/Rubik-Light.ttf');
+}
+
 html,
 body,
 * {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: 'rubik'
 }
 
 html {
@@ -19,6 +24,7 @@ a {
 * {
   box-sizing: border-box;
 }
+
 
 @media (max-width: 75em) {
   html{

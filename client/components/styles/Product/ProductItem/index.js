@@ -10,6 +10,11 @@ export const ProductCard = styled.div`
 
     img {
         width: 100%;
+        height: 22.4rem;
+
+        @media (max-width: 53em) {
+            height: auto;
+        }   
 
         @media (max-width: 46em) {  
              grid-area: image; 
@@ -51,17 +56,20 @@ export const ProductCard = styled.div`
     }
 `
 
-export const ProductTitle = styled.h3`
+export const TitleContainer = styled.div`
     padding: 1.2rem;
-    font-size: 1.6rem;
-    text-align: center;
+    min-height: 9.6rem;
 
     @media (max-width: 53em) {
-        grid-column: 1/-1;
-    }
+            grid-column: 1/-1;
+        }
 
-    @media (max-width: 46em) {  
-        grid-area: title; 
+        @media (max-width: 46em) {  
+            grid-area: title; 
+        }
+
+    h4 {
+        font-size: 1.6rem;
     }
 `
 
@@ -83,7 +91,7 @@ export const ButtonBlock = styled.div`
 
 export const ProductPrice = styled.p`
     grid-row: 4;
-    font-size: 1.6rem;  
+    font-size: 1.4rem;  
 ` 
     
 export const ProductDescription = styled.p`
@@ -102,6 +110,7 @@ export const Button = styled.button`
     padding: 0.8rem 1rem;
     background-color: palevioletred;
     color: #fff;
+    font-size: 1.6rem;
     font-weight: 500;
     border-radius: 4px;
     cursor: pointer;

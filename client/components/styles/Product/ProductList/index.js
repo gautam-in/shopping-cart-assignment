@@ -6,7 +6,7 @@ export const ProductListWrapper = styled.div`
     row-gap:1.8rem;
     grid-template-columns: repeat(3, 1fr);
     
-    @media (max-width: 53em) {
+    @media (max-width: 60em) {
         grid-template-columns: repeat(2, 1fr);
     }
 

@@ -26,17 +26,17 @@ export default function authReducer(state = initialState, action) {
           return {...state, cart: { ...state.cart, cartItems: [...cartItems], totalPrice : productPrice * quantity}}
         }else {
           let id = action.payload.product.id;
-          let cartItem = cartItems.find(cartItem => cartItem.id === id);
+          let cartItem = state.cart.cartItems.find(cartItem => cartItem.id === id);
           let quantity = cartItem.quantity + 1;
           cartItem.quantity = quantity;
           return {...state, cart: {...state.cart, cartItems: [...cartItems, cartItem]}}
         }
-      case 'INCREMENT_CART_PRODUCT_QUANTITY':
-          let id = action.payload.product.id;
-          let cartItem = cartItems.find(cartItem => cartItem.id === id);
+      case "INCREMENT_CART_PRODUCT_QUANTITY":
+          let id = action.payload.cartItem.id;
+          let cartItem = state.cart.cartItems.find(cartItem => cartItem.id === id);
           let quantity = cartItem.quantity + 1;
           cartItem.quantity = quantity;
-          return {...state, cart: {...state.cart, cartItems: [...cartItems, cartItem]}}
+          return {...state, cart: {...state.cart, cartItems: [...state.cart.cartItems]}}
       default:
         return state;
     }
