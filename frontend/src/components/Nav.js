@@ -3,6 +3,7 @@ import { CartButton, NavStyles } from './styles/headerStyles';
 import { useContext } from 'react';
 import { ModalContext } from '../store/modal-context';
 import { CartContext } from '../store/cart-context';
+
 export default function Nav() {
   const ctxModal = useContext(ModalContext);
   const ctx = useContext(CartContext);

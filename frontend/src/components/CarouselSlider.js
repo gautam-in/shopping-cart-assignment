@@ -6,15 +6,21 @@ import axios from 'axios';
 
 function CarouselSlider() {
   const [bannerList, setBannerList] = useState([]);
+
   useEffect(() => {
     loadBanners();
-  }, [])
+  }, []);
+
   const loadBanners = async () => {
-    await axios.get("http://localhost:8888/banners")
-      .then((response) => {
-        setBannerList(response.data)
-      })
-      .catch(err => console.error(err));
+    try {
+      const resp = await axios.get("http://localhost:8888/banners");
+      if (resp.status !== 200) {
+        throw new Error('Something went wrong')
+      }
+      setBannerList(resp.data);
+    } catch (error) {
+      console.log(error);
+    }
   }
   return (
     <Carousel showThumbs={false}>

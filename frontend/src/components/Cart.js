@@ -36,7 +36,6 @@ export default function Cart(props) {
             </div>
           )}
       </ul>
-      <article>add boxxxx</article>
       <div className="checkout">
         <p>You can apply Promo Code on Checkout🤑</p>
         <Link to={`/checkout`} onClick={ctxModal.hideCart}><span>checkout-Total💸</span> <span>{ctx.totalAmount}</span></Link>

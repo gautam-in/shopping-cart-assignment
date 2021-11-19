@@ -9,7 +9,6 @@ export default function ProductRow() {
     axios.get('http://localhost:8888/categories')
       .then(data => {
         setCategory(data);
-        //console.log(data);
       });
   }, [])
 

@@ -1,4 +1,4 @@
-import { createGlobalStyle } from "styled-components";
+import styled, { createGlobalStyle } from "styled-components";
 
 export const GlobalStyles = createGlobalStyle`
 html {
@@ -7,7 +7,7 @@ html {
   --grey: #EAEAEA;
   --gray: var(--grey);
   --offWhite: #FFFFFF;
-  --maxWidth: 1300px;
+  --maxWidth: 1200px;
   --bs: 0 12px 24px 0 rgba(0,0,0,0.09);
   box-sizing: border-box;
   font-size: 16px;
@@ -40,4 +40,10 @@ button{
   border: none;
   outline: none;
 }
+`;
+export const ContainerStyles = styled.div`
+padding: 20px;
+max-width: 1200px;
+width: 100%;
+margin: 0 auto;
 `;

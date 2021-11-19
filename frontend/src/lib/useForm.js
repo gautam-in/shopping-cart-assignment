@@ -1,18 +1,15 @@
 import { useState } from 'react';
 
 export default function useForm(initial = {}) {
-  // create a state object for our inputs
   const [inputs, setInputs] = useState(initial);
 
   function handleChange(e) {
     const { value, name } = e.target;
 
     setInputs({
-      // copy the existing state
       ...inputs,
       [name]: value,
     });
-    //console.log(inputs)
   }
 
   function clearForm() {
@@ -23,7 +20,7 @@ export default function useForm(initial = {}) {
   }
   const validate = (inputs) => {
     const errors = {};
-    const regex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    const regex = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
     if (!inputs.firstname) {
       errors.firstname = "First name is required";
     }

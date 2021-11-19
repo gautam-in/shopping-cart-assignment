@@ -7,28 +7,26 @@ export default function SideNav(props) {
 
   useEffect(() => {
     LoadCategories();
-  }, [])
-  const LoadCategories = async () => {
-    await axios.get('http://localhost:8888/categories')
+  }, []);
+
+  const LoadCategories = () => {
+    axios.get('http://localhost:8888/categories')
       .then(res => {
-        //console.log(res.data);
+        if (res.status !== 200) {
+          throw new Error('Something went wrong in categories');
+        }
         setNavLink(res.data);
+      }).catch(error => {
+        console.log(error);
       });
   }
   return (
-
     <NavlinkStyles>
-      {/* {
-          props.categoryLinks.map(item => (
-            <li><Link to={`/products/${item}`}>{ }</Link></li>
-          ))
-        } */}
       {
         navlink.map(item => (
           <li key={item.id}><Link to={`/products/${item.id}`}>{item.name}</Link></li>
         ))
       }
     </NavlinkStyles>
-
   );
 }

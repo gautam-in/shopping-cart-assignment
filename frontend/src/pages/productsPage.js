@@ -1,9 +1,9 @@
-import Products from '../components/Products';
+import ProductCategory from '../components/ProductCategory';
 
 export default function ProductsPage() {
   return (
     <div>
-      <Products />
+      <ProductCategory />
     </div>
   )
 }

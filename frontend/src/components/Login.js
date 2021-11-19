@@ -5,7 +5,7 @@ import {
 } from "./styles/formStyles";
 import useForm from "../lib/useForm";
 import { useHistory } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 export default function Login() {
   const { inputs, handleChange, clearForm, validate } = useForm({
     email: "",
@@ -28,6 +28,7 @@ export default function Login() {
         }, 3000);
       }
     }
+    clearForm();
   };
   return (
     <FormContainer>

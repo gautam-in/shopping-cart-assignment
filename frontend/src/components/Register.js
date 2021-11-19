@@ -5,7 +5,7 @@ import {
 } from "./styles/formStyles";
 import useForm from "../lib/useForm";
 import { useHistory } from 'react-router-dom';
-import { useState, useEffect } from "react";
+import { useState } from "react";
 export default function Register() {
   const { inputs, handleChange, clearForm, validate } = useForm({
     firstname: "",
@@ -27,13 +27,14 @@ export default function Register() {
       setIsSubmit(true);
       setTimeout(function () { history.push('/login'); }, 3000);
     }
+    clearForm();
   };
 
   return (
     <FormContainer>
       <FormDescription>
         <h2>Register</h2>
-        <p>Get access to your orders, Whishlist and Recommendations</p>
+        <p>We do not share your personal info with anyone Relax!!</p>
       </FormDescription>
       <FormStyles onSubmit={submitHandler}>
         {(Object.keys(formError).length === 0 && isSubmit) && <p>Registered Successfully</p>}
