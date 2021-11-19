@@ -26,6 +26,11 @@ input {
     /* margin-top: 3rem;
     width: 25%; */
 }
+@media screen and (max-width:480px) {
+    .form-section {
+        width: 50%;
+    }
+}
 .btn-signup {
     padding: 0.8rem;
     width: 100%;

@@ -1,11 +1,21 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import {Link} from 'react-router-dom';
 import './navbar.css';
 import logo from '../../logo.png';
 import {useSelector} from 'react-redux';
 
 function Navbar() {
+    const [loginstatus, setloginStatus] = useState(false);
+    const [username, setusername] = useState(null);
     const cart = useSelector(state => state.shop.cart);
+    const isLogin = useSelector(state => state.auth.isLogin);
+    const sessionlogin = sessionStorage.getItem('isLogin');
+
+    useEffect(() => {
+        setloginStatus(isLogin || sessionlogin);
+        setusername(sessionStorage.getItem('username'));
+    }, [isLogin,sessionlogin]);
+    
 
     return (
         
@@ -20,8 +30,11 @@ function Navbar() {
                 </div>
                 <div className='right-menu'>
                     <div className='right-flex'>
-                    <Link className='right-nav-menu' to='/login'><div>SignIn</div></Link>
-                    <Link className='right-nav-menu' to='/register'><div>Register</div></Link>
+                        {loginstatus ? <div className='right-nav-menu'>Welcome, {username}</div> : <>
+                            <Link className='right-nav-menu' to='/login'><div>SignIn</div></Link>
+                            <Link className='right-nav-menu' to='/register'><div>Register</div></Link>
+                        </>}
+                            
                     </div>
                     <Link style={{textDecoration:'none',color:'black'}} to='/cart' className='cart'>
                         <img src='/static/images/cart.svg' alt='cart' height='28' width='28'/>

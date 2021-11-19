@@ -122,8 +122,9 @@
      display: block;
      font-size: 11px;
      background: #c8cbce61;
-     padding: 5px;
+     padding: 10px;
      overflow: auto;
+     text-align: justify;
  }   
 }
 @media screen and (max-width:780px) {
