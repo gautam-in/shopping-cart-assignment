@@ -22,7 +22,7 @@ function App() {
   useEffect(() => {
     if (!!localStorage.getItem('items')) {
       const storedCart = JSON.parse(localStorage.getItem('items'));
-      console.log("entered");
+      // console.log("entered");
       ctx.items = storedCart;
     }
   }, [ctx])
