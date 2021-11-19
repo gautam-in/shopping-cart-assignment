@@ -1,12 +1,19 @@
 import { ProductCard, ProductPrice, TitleContainer ,ProductDescription, ButtonBlock, Button} from '../../styles/Product/ProductItem'
 import { useDispatch , useSelector } from 'react-redux';
 import { addProductToCart } from '../../../store/actions/authAction';
+import { useRouter } from 'next/router';
 
 export default function ProductItem({product}) {
     const dispatch = useDispatch();
+    const router = useRouter()
     const curUser = useSelector(state => state.auth.curUser)
     return (
-            <ProductCard>
+            <ProductCard onClick={() => {
+                router.push({
+                  pathname: '/products/[pid]',
+                  query: { pid: product.id  },
+                })
+              }}>
                 <TitleContainer>
                     <h4>{product.name}</h4>
                  </TitleContainer>

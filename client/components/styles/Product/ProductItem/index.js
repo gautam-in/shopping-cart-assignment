@@ -7,6 +7,7 @@ export const ProductCard = styled.div`
     grid-template-columns: 1fr;
     gap: 1.2rem;
     box-shadow: 0 0 12px rgba(0,0,0,0.1);
+    cursor: pointer;
 
     img {
         width: 100%;
@@ -114,6 +115,8 @@ export const Button = styled.button`
     font-weight: 500;
     border-radius: 4px;
     cursor: pointer;
+    display: flex;
+    justify-content: space-between;
 `
 
 
