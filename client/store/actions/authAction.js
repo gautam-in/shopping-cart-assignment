@@ -26,22 +26,20 @@ export function addProductToCart (product, user) {
     }
 }
 
-export function incrementProductQuantity (cartItem, user) {
+export function incrementProductQuantity (cartItem) {
     return {
         type: "INCREMENT_CART_PRODUCT_QUANTITY",
         payload : {
-            cartItem,
-            user
+            cartItem
         }
     }
 }
 
-export function decrementProductQuantity (product, user) {
+export function decrementProductQuantity (cartItem) {
     return {
         type: "DECREMENT_CART_PRODUCT_QUANTITY",
         payload : {
-            product,
-            user
+            cartItem
         }
     }
 }

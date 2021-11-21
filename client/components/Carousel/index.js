@@ -1,7 +1,9 @@
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from 'react-responsive-carousel';
+import { useSelector } from "react-redux";
 
 export default function CarouselComponent() {
+    const banners = useSelector(state => state.banner.allBanners);
     return (
         <Carousel>
                 <div>

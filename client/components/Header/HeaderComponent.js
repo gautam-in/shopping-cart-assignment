@@ -8,6 +8,7 @@ import {
 import { useSelector, useDispatch } from 'react-redux';
 import { setLogout } from '../../store/actions/authAction';
 import { useEffect, useState } from 'react';
+import { MenuOutline , CloseOutline} from 'react-ionicons'
 
 export default function HeaderComponent() { 
     const [ loginStatus, setLoginStatus ] = useState(false)
@@ -23,12 +24,20 @@ export default function HeaderComponent() {
         document.querySelector(".overlay").style.display = "block"
     }
 
+    const toggleMenuOpen = () => {
+        document.querySelector(".headerMobileView").style.display = "flex"
+    }
+    
+    const toggleMenuClose = () => {
+        document.querySelector(".headerMobileView").style.display = "none"
+    }
     return  (
         <>
             <Header>
                 <HeaderContainer>
-                    <Link href="/">
-                        <img src="/static/images/logo_2x.png" alt="Sabka Bazaar Logo"/></Link>
+                    <Link href="/" >
+                        <img style={{cursor: 'pointer'}} src="/static/images/logo_2x.png" alt="Sabka Bazaar Logo"/>
+                    </Link>
                     <HeaderContent>
                         <nav className="topNav">
                             {   
@@ -56,6 +65,32 @@ export default function HeaderComponent() {
 
                         </div> 
                     </HeaderContent>
+                     <nav class="headerMobileView">         
+                        <Link href="/">Home</Link>
+                        <Link href="/products">Products</Link>
+                         { isLoggedIn ?
+                            <Link href="#">Logout</Link>  : (
+                                <>
+                                <Link href="/login">SignIn</Link>
+                                <Link href="/register">Register</Link>
+                            </>
+                        ) }
+                        <CloseOutline 
+                            color={'#00000'} 
+                            height="3.6rem"
+                            width="3.6rem"
+                            onClick={toggleMenuClose}
+                            />
+
+                    </nav> 
+
+                    <button class="btn-mobile-icon" onClick={toggleMenuOpen}>
+                        <MenuOutline
+                            color={'#00000'} 
+                            height="3.6rem"
+                            width="3.6rem"
+                        />
+                    </button>
                 </HeaderContainer>                                                                                                                                                                                                                                                                    
             </Header>
         </>

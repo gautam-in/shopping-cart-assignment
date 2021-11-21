@@ -1,10 +1,10 @@
 import { CartContainer,CartItemContainer, CartBody, CartHeader, CartHeaderTitle, ProductImageContainer, ProductTitle, QuantitySeaction, ProductPrice, CheckoutBtnContainer, CheckoutBtn } from "../../styles/Cart/CartItem";
 import { useSelector, useDispatch } from "react-redux";
-import { incrementProductQuantity } from "../../../store/actions/authAction";
+import { incrementProductQuantity, decrementProductQuantity } from "../../../store/actions/authAction";
 import { useRouter } from 'next/router';
 import { connect } from "react-redux";
 
-const CartList = ({ isLoggedIn , loggedInUser}) => {
+const CartList = ({ totalPrice}) => {
     const router = useRouter()
     const closeOverlay = () => {
         document.querySelector(".overlay").style.display = "none";
@@ -27,8 +27,8 @@ const CartList = ({ isLoggedIn , loggedInUser}) => {
                                         <img src={cartItem.imageURL} />
                                     </ProductImageContainer>
                                     <ProductTitle>{cartItem.name}</ProductTitle>
-                                    <QuantitySeaction> &nbsp;&nbsp; <button onClick={() => dispatch(incrementProductQuantity(cartItem, {}))}> + </button> &nbsp;{cartItem.quantity} &nbsp; <button> - </button></QuantitySeaction>
-                                    <ProductPrice>MRP Rs: {cartItem.price}</ProductPrice>
+                                    <QuantitySeaction> &nbsp;&nbsp; <button onClick={() => dispatch(incrementProductQuantity(cartItem))}> + </button> &nbsp;{cartItem.quantity} &nbsp; <button onClick={() => dispatch(decrementProductQuantity(cartItem))}> - </button> &nbsp; x &nbsp; {cartItem.price}</QuantitySeaction>
+                                    <ProductPrice>MRP Rs: {cartItem.quantity * cartItem.price}</ProductPrice>
                                 </CartItemContainer>
                             )) 
                         } 
@@ -45,7 +45,7 @@ const CartList = ({ isLoggedIn , loggedInUser}) => {
                 <CheckoutBtnContainer>
                     <p>Referral Code applied at the checkout page</p>
                     <CheckoutBtn>
-                        Checkout Now
+                        Checkout Now {totalPrice}
                     </CheckoutBtn>
                 </CheckoutBtnContainer>
                 ) : 
@@ -63,7 +63,8 @@ const CartList = ({ isLoggedIn , loggedInUser}) => {
 
 const mapStateToProps = (state) => ({
     isLoggedIn : state.auth.isLoggedIn,
-    loggedInUser : state.auth.loggedInUser
+    loggedInUser : state.auth.loggedInUser,
+    totalPrice  : state.auth.cart.totalPrice
 })
   
 export default connect(mapStateToProps, null)(CartList)

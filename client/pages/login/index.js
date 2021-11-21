@@ -18,7 +18,6 @@ const Login = ({users}) => {
         let { email } = inputs;
         const isRegisteredUser = users.find(user => user.email === email);
         clearInputs()
-        console.log(isRegisteredUser)
         if(isRegisteredUser) {
             dispatch(setAuthentication(true, isRegisteredUser));
             router.push({

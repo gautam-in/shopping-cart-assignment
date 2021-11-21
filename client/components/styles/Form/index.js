@@ -10,6 +10,11 @@ export const FormWrapper = styled.div`
     gap: 2.4rem;    
     padding: 2.4rem;
     border-radius: 5px;
+
+    @media (max-width: 38em) {
+        flex-direction: column;
+        text-align: center;
+    }
 `
 
 export const LoginInfoContainer = styled.div`

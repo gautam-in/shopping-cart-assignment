@@ -13,9 +13,6 @@ export default function ProductDetail({ query }) {
     if(allProducts.length > 0) {
         product = allProducts.find(product => product.id === pid);
     }
-
-    console.log(product)
-
     return (
         <ProductDetailContainer>
                 <img src={product.imageURL} alt={product.name}/>

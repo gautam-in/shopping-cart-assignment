@@ -15,6 +15,35 @@ export const HeaderContainer = styled.div`
         height: 4.2rem;
         margin-right: 2.4rem;
     }
+
+    .btn-mobile-icon {
+        border: none;
+        background: none;
+        cursor: pointer;
+        display: none;
+
+        @media (max-width: 38em) {
+            display: block;
+        }   
+    }
+
+    .headerMobileView {
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: rgba(255, 255, 255, 0.9);
+        display: flex;
+        width: 100%;
+        height: 100vh;
+        color: black;
+        font-size: 2.4rem;
+        font-weight: bold;
+        line-height: 2.5;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        display: none;
+    }
 `
 export const HeaderContent = styled.div`
     width: 100%;
@@ -46,7 +75,7 @@ export const HeaderContent = styled.div`
         display: inline-block;
         text-decoration: none;
         color: #333;
-        font-weight: 500;
+        font-weight: 600;
         font-size: 1.4rem;
         transition: all 0.3s;
         border: none;
@@ -56,6 +85,7 @@ export const HeaderContent = styled.div`
     nav a:active {
         color: #cf711f;
     }
+
 `
 
 export const CartButton = styled.a`

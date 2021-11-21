@@ -17,20 +17,16 @@ export default function authReducer(state = initialState, action) {
       case "SET_LOGOUT_STATUS":
         return {...state, isLoggedIn :false, loggedInUser: null,cart : {totalPrice: 0, cartItems: []}}
       case "ADD_CART_ITEM": 
-        console.log('Cart State',state)
-        console.log(state.isLoggedIn)
         if(state.isLoggedIn) {
-          console.log('INDSIDE')
           let product = action.payload.product;
           let cartItems = state.cart.cartItems;
-          console.log(product, cartItems)
           let isProductInCart = cartItems.find(cartItem => cartItem.id === product.id);
-            console.log(isProductInCart)
           let productPrice = product.price;
           if (!isProductInCart) {
             let quantity = 1;
             cartItems.push({...product, quantity});
-            return {...state, cart: { ...state.cart, cartItems: [...cartItems], totalPrice : productPrice * quantity}}
+            let totalPrice = state.cart.totalPrice + productPrice;
+            return {...state, cart: { ...state.cart, cartItems: [...cartItems], totalPrice }}
           }else {
             let id = action.payload.product.id;
             let cartItem = state.cart.cartItems.find(cartItem => cartItem.id === id);
@@ -38,14 +34,34 @@ export default function authReducer(state = initialState, action) {
             cartItem.quantity = quantity;
             return {...state, cart: {...state.cart, cartItems: [...cartItems, cartItem]}}
           }
+        } else  {
+          return state;
         }
-        return state
       case "INCREMENT_CART_PRODUCT_QUANTITY":
-          let id = action.payload.cartItem.id;
+          let { id, price } = action.payload.cartItem;
           let cartItem = state.cart.cartItems.find(cartItem => cartItem.id === id);
           let quantity = cartItem.quantity + 1;
+          let totalPrice = state.cart.totalPrice +  price;
           cartItem.quantity = quantity;
-          return {...state, cart: {...state.cart, cartItems: [...state.cart.cartItems]}}
+          return {...state, cart: {...state.cart, cartItems: [...state.cart.cartItems], totalPrice: totalPrice}}
+      case "DECREMENT_CART_PRODUCT_QUANTITY":
+          let pid = action.payload.cartItem.id
+          let prodPrice = action.payload.cartItem.price
+
+          let cartItem1 = state.cart.cartItems.find(cartItem => cartItem.id === pid);
+          let quantity1 = action.payload.cartItem.quantity - 1;
+          if (quantity1 === 0) {
+            console.log(quantity1)
+            let TP = state.cart.totalPrice - prodPrice;
+            cartItem1.quantity = quantity1;
+            let newCartItems = state.cart.cartItems.filter(cartItem => cartItem.id !== pid);
+            return {...state, cart: {...state.cart, cartItems: [...newCartItems], totalPrice: TP}}
+          } else {
+            let TP = state.cart.totalPrice - prodPrice;
+            cartItem1.quantity = quantity1;
+             return {...state, cart: {...state.cart, cartItems: [...state.cart.cartItems], totalPrice: TP}}
+          }
+          
       default:
         return state;
     }
