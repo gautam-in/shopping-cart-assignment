@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import Logo from "../../Assets/images/logo.png";
 import { FaShoppingCart } from "react-icons/fa";
 import { Cart } from "../Cart/Cart";
+import { Footer } from "../Footer/Footer";
 
 export const Header = () => {
   const [cartIsOpen, setCart] = useState(false);
@@ -13,7 +14,7 @@ export const Header = () => {
 
   return (
     <div>
-      <div className="flex relative justify-between h-20 items-center shadow-md w-full px-16 pt-2">
+      <div className="flex relative justify-between h-20 items-center shadow-md w-full px-10 pt-2">
         <div className="flex items-center">
           <Link to="/login">
             <img alt="logo" className="w-4/6" src={Logo} />
@@ -39,14 +40,15 @@ export const Header = () => {
           </div>
           <div
             onClick={handleCart}
-            className="flex items-center cursor-pointer justify-center md w-32 sm:hidden bg-gray-200 p-2 "
+            className="flex items-center cursor-pointer justify-center w-32 bg-gray-200 sm:bg-transparent p-2 "
           >
             <FaShoppingCart className="mr-2" color="red" size="20" />
-            <h3>0 items</h3>
+            <h3 className=" sm:hidden">0 items</h3>
           </div>
         </div>
       </div>
       {cartIsOpen && <Cart closeCart={handleCart} />}
+      <Footer />
     </div>
   );
 };
