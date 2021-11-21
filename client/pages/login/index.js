@@ -2,20 +2,33 @@ import userForm from "../../customHooks/UserForm";
 import { LoginInfoContainer , LoginForm, FormWrapper} from "../../components/styles/Form";
 import { useDispatch } from 'react-redux';
 import { useRouter } from 'next/router';
+import { connect } from "react-redux";
+import { ErrorMessage } from "../../components/Error";
 import { setAuthentication } from "../../store/actions/authAction";
 
-export default function Login() {
-     const { inputs, onHandleChange } = userForm({})  
+
+
+const Login = ({users}) => {
+     const { inputs, onHandleChange, clearInputs } = userForm({})  
      const dispatch = useDispatch();   
      const router = useRouter();
 
      const onSubmitHandler = (e) => {
         e.preventDefault();
-        dispatch(setAuthentication(true, inputs ));
-        console.log('Logged In')
-        router.push({
-            pathname: '/'
-        })
+        let { email } = inputs;
+        const isRegisteredUser = users.find(user => user.email === email);
+        clearInputs()
+        console.log(isRegisteredUser)
+        if(isRegisteredUser) {
+            dispatch(setAuthentication(true, isRegisteredUser));
+            router.push({
+                pathname: '/'
+            }) 
+        } else {
+            router.push({
+                pathname: '/register'
+            }) 
+        }
      }
 
      return (
@@ -33,3 +46,10 @@ export default function Login() {
          
      )
 }
+
+
+const mapStateToProps = (state) => ({
+    users : state.users.users
+})
+  
+export default connect(mapStateToProps, null)(Login)

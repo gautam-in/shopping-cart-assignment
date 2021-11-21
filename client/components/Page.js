@@ -1,5 +1,7 @@
 import HeaderComponent from './header/HeaderComponent';
 import CartList from './Cart/CartList';
+import FooterComponent from './Footer';
+
 import styled, { createGlobalStyle } from 'styled-components';
 import { CartOverLay } from './styles/Cart/CartItem';
 import { useDispatch } from 'react-redux';
@@ -49,5 +51,6 @@ export default function MainPage(props) {
         <MainContainer>
             {props.children}
         </MainContainer>
+        <FooterComponent />
     </>
 } 

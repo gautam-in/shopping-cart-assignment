@@ -2,8 +2,9 @@ import { CartContainer,CartItemContainer, CartBody, CartHeader, CartHeaderTitle,
 import { useSelector, useDispatch } from "react-redux";
 import { incrementProductQuantity } from "../../../store/actions/authAction";
 import { useRouter } from 'next/router';
+import { connect } from "react-redux";
 
-export default function CartList() {
+const CartList = ({ isLoggedIn , loggedInUser}) => {
     const router = useRouter()
     const closeOverlay = () => {
         document.querySelector(".overlay").style.display = "none";
@@ -17,7 +18,7 @@ export default function CartList() {
                     <CartHeaderTitle>Cart Items ({cartItems.length})</CartHeaderTitle>
                     <h3 className="icon" onClick={closeOverlay}>x</h3>
                 </CartHeader>
-                {  cartItems.length > 0 ? (
+                { cartItems.length > 0 ? (
                         <CartBody>
                         {
                             cartItems.map(cartItem => (
@@ -59,3 +60,10 @@ export default function CartList() {
         </CartContainer>
     )
 } 
+
+const mapStateToProps = (state) => ({
+    isLoggedIn : state.auth.isLoggedIn,
+    loggedInUser : state.auth.loggedInUser
+})
+  
+export default connect(mapStateToProps, null)(CartList)

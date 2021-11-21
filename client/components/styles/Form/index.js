@@ -10,7 +10,6 @@ export const FormWrapper = styled.div`
     gap: 2.4rem;    
     padding: 2.4rem;
     border-radius: 5px;
-    box-shadow: 0 0 12px rgba(0,0,0,0.1);   
 `
 
 export const LoginInfoContainer = styled.div`

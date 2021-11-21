@@ -6,3 +6,12 @@ export function getUserOnLogin(email) {
         }
     }
 }
+
+export function addUserOnRegister(user) {
+    return {
+        type : 'ADD_UESR_ON_REGISTER',
+        payload : {
+            newUser: user
+        }
+    }
+}

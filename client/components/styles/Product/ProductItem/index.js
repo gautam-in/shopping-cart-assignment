@@ -24,6 +24,7 @@ export const ProductCard = styled.div`
 
     .productBuyBtnSmallDevice {
         display: none;
+        font-size: 1.2rem;
 
         @media (max-width: 53em) {
            display: block;                                                                                                                   ;

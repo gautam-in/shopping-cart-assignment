@@ -6,7 +6,7 @@ import {
     CartButton
 } from '../styles/Header';
 import { useSelector, useDispatch } from 'react-redux';
-import { setAuthentication } from '../../store/actions/authAction';
+import { setLogout } from '../../store/actions/authAction';
 import { useEffect, useState } from 'react';
 
 export default function HeaderComponent() { 
@@ -27,19 +27,20 @@ export default function HeaderComponent() {
         <>
             <Header>
                 <HeaderContainer>
-                    <img src="/static/images/logo_2x.png" alt="Sabka Bazaar Logo"/>
+                    <Link href="/">
+                        <img src="/static/images/logo_2x.png" alt="Sabka Bazaar Logo"/></Link>
                     <HeaderContent>
                         <nav className="topNav">
                             {   
                                 loginStatus ? 
                                     <a href="#" onClick={() => {
-                                        dispatch(setAuthentication(false, null))
+                                        dispatch(setLogout())
                                         setLoginStatus(false)
                                     }}>Logout</a> :
                                 (
                                     <>
                                         <Link href="/login">SignIn</Link>
-                                        <Link href="#">Register</Link>
+                                        <Link href="/register">Register</Link>
                                     </>
                                 )
 
@@ -51,7 +52,7 @@ export default function HeaderComponent() {
                                 <Link href="/products">Products</Link>
                             </nav>
                            
-                            <CartButton onClick={openOverlay}>Cart {cartItemLength}</CartButton>
+                            <CartButton onClick={openOverlay}>Cart {cartItemLength > 0 ? cartItemLength : null}</CartButton>
 
                         </div> 
                     </HeaderContent>

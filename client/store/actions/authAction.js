@@ -8,6 +8,14 @@ export function setAuthentication (status, curUser) {
     }
 }
 
+
+export function setLogout (curUser) {
+    return {
+        type: "SET_LOGOUT_STATUS"
+    }
+}
+
+
 export function addProductToCart (product, user) {
     return {
         type: "ADD_CART_ITEM",
