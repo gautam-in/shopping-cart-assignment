@@ -1,0 +1,48 @@
+.App {
+  text-align: center;
+}
+.box-shaddow-bottom{
+  box-shadow: 0 6px 4px -4px rgb(212, 212, 212);
+}
+.bg-grey{
+  background-color: rgb(212, 212, 212);
+}
+
+.header-link{
+  text-decoration: none;
+  color:grey;
+}
+.card-border{
+  
+  border :none;
+  border-bottom: 2px dotted maroon;
+}
+.product-heading{
+  height: 4em;
+  
+  font-size: 1.3em;
+  font-weight:700;
+}
+.product-btn{
+
+}
+.product-decription{
+  height: 6em;
+  text-overflow: ellipsis;
+ overflow: hidden;
+}
+.product-price{
+  font-weight: 700;
+
+}
+.small-font{
+  font-size: .8rem;
+}
+.bg-white{
+  background:white;
+  color: black;
+}
+.border-bottom{
+  border: none;
+  border-bottom: 3px solid skyblue;
+}
