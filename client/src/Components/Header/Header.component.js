@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import css from './header.css'
-export default function HeaderComponent() {
+export default function HeaderComponent(props) {
     return (
         <header className="">
             <div className="container">
@@ -19,14 +19,14 @@ export default function HeaderComponent() {
                 <div className="col-3 d-flex justify-content-end">
                     <nav className="nav2">
                         <div className=" row ">
-                            <div className="col">
+                            <div className="col mt-2">
                             <Link className="header-link mx-2" to="/login">Sign In</Link>
                             <Link className="header-link mx-2" to="/register">Register</Link>
                            
                             </div>
                         </div>
-                        <div className="row mt-4">
-                        <Link className="header-link " to="/cart">Cart</Link>
+                        <div className="row mt-4 mb-0">
+                        <button onClick={()=>{props.setToggleModal()}} className=" btn bg-grey header-link m-0 p-2" to="/cart"><i className="fas fa-shopping-cart text-danger"></i>  {props.totalItems} Items</button>
                         </div>
                     </nav>
                 </div>

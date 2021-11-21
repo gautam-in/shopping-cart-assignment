@@ -8,14 +8,20 @@ import CartComponent from './Components/Cart/Cart.component';
 import RegisterComponent from './Components/Register/Register.component';
 import LoginComponent from './Components/Login/Login.component';
 import FooterComponent from './Components/Footer/Footer.component';
-function App() {
+import Modal from './Components/Cart/modal';
+function App(props) {
+  console.log(props)
   return (
     <div className="App">
-      <HeaderComponent/>
-      <Routes>
+      <HeaderComponent {...props}/>
+      <Modal {...props}/>
+      <Routes> 
         <Route path="/" element={<HomeComponent/>}/>
-        <Route path ="/products" element={<ProductsComponent/>}/>
-        <Route path="/cart" element={<CartComponent/>}/>
+        
+        <Route exact path ="/products" element={<ProductsComponent {...props}/>}>
+          <Route exact path ="/products/:id" element={<ProductsComponent {...props}/>}/>
+        </Route>
+        <Route path="/cart" element={<CartComponent {...props}/>}/>
         <Route path="/register" element={<RegisterComponent/>}/>
         <Route path="/login" element={<LoginComponent/>} />
       </Routes>

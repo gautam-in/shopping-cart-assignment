@@ -4,9 +4,15 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {BrowserRouter} from 'react-router-dom'
+import MainApp from './store/connect';
+import { Provider } from 'react-redux';
+import store from './store/store';
+
 ReactDOM.render(
   <BrowserRouter>
-    <App />
+    <Provider store={store}>
+    <MainApp></MainApp>
+    </Provider>
   </BrowserRouter>
   ,
   document.getElementById('root')
