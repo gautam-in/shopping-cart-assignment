@@ -7,6 +7,7 @@ import HomeComponent from './Components/Home/Home.component';
 import CartComponent from './Components/Cart/Cart.component';
 import RegisterComponent from './Components/Register/Register.component';
 import LoginComponent from './Components/Login/Login.component';
+import FooterComponent from './Components/Footer/Footer.component';
 function App() {
   return (
     <div className="App">
@@ -18,6 +19,7 @@ function App() {
         <Route path="/register" element={<RegisterComponent/>}/>
         <Route path="/login" element={<LoginComponent/>} />
       </Routes>
+      <FooterComponent></FooterComponent>
     </div>
   );
 }
