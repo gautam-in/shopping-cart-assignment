@@ -1,0 +1,32 @@
+header {
+    display: flex;
+    box-shadow: 0 2px 17px 0 #d1cdcd;
+    position: relative;
+}
+header .wrapper {
+    width: 100%;
+}
+header nav {
+    display: flex;
+    justify-content: space-between;
+}
+
+header .header-menu {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    padding-left: 0;
+}
+.hamburger {
+    background: transparent;
+    border: 0;
+}
+@media (min-width: 768px) {
+    header .header-menu {
+        padding-left: 15%;
+        justify-content: space-between;
+    }
+    .hamburger {
+        display: none;
+    }
+}
