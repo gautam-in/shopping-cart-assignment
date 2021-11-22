@@ -20,7 +20,7 @@ export default function ProductRow() {
           <DescriptionStyles>
             <h1>{item.name}</h1>
             <p>{item.description}</p>
-            <Link to={`/products/${item.id}`}>Explore {item.name}</Link>
+            <Link to={`/products/${item.id}`}><button>Explore {item.name}</button></Link>
           </DescriptionStyles>
         </RowStyles>
       ))
