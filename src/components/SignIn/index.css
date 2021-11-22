@@ -1,0 +1,65 @@
+.main-form {
+    display: flex;
+    width: 100%;
+    margin: 30px auto;
+    font-family: 'Roboto', sans-serif;
+    flex-direction: column;
+}
+.form-text,
+.form-data {
+    width: 100%;
+}
+
+.form-text p {
+    font-size: 14px;
+}
+
+.login-form fieldset {
+    border: none;
+    display: flex;
+    flex-direction: column;
+    margin-inline-start: 0;
+    margin-inline-end: 0;
+    padding-block-start: 0;
+    padding-inline-start: 0;
+    padding-inline-end: 0;
+    padding-block-end: 0;
+}
+.login-form fieldset label {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+}
+.login-form fieldset input {
+    margin-top: 8px;
+    border: 0;
+    border-bottom: 1px solid #9c9a9a;
+}
+.login-form fieldset input:focus {
+    border: 0;
+    border-bottom: 1px solid blue;
+    outline: 0;
+}
+
+.login-form fieldset label.inputfocus span {
+    color: blue;
+}
+.login-form fieldset button {
+    background-color: #d32d2d;
+    border: 0;
+    color: white;
+    padding: 8px 12px;
+    margin: 15px 0;
+    height: auto;
+}
+
+/* @media (max-width: 768px) {
+    .main-form {
+        width: 70%;
+    }
+} */
+@media (min-width: 768px) {
+    .main-form {
+        flex-direction: row;
+    }
+}

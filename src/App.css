@@ -1,0 +1,36 @@
+.wrapper {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+@media (min-width: 1200px) {
+    .wrapper {
+        max-width: 1140px;
+    }
+}
+@media (min-width: 992px) {
+    .wrapper {
+        max-width: 960px;
+    }
+}
+@media (min-width: 768px) {
+    .wrapper {
+        max-width: 720px;
+    }
+}
+@media (min-width: 576px) {
+    .wrapper {
+        max-width: 540px;
+    }
+}
+@keyframes App-logo-spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}

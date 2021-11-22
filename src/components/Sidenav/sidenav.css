@@ -1,0 +1,40 @@
+.nav-item {
+    padding: 0.8rem 1.5rem;
+    display: block;
+    border-bottom: 1px solid rgba(97, 89, 89, 0.336);
+    color: var(--color-neutral-300);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.hide-xs {
+    display: none !important;
+}
+.prod-category {
+    display: none;
+}
+.prod-category.show-category {
+    display: flex;
+}
+.mobile-tab {
+    background-color: #d32d2d;
+    padding: 10px;
+    margin: 20px 0;
+    color: white;
+}
+.mobile-tab p {
+    display: flex;
+    justify-content: space-between;
+    margin: 15px 22px;
+}
+.mobile-tab p span {
+    color: white;
+}
+@media (min-width: 768px) {
+    .hide-xs {
+        display: flex !important;
+    }
+    .mobile-tab {
+        display: none;
+    }
+}
