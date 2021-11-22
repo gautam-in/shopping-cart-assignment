@@ -1,4 +1,4 @@
-import axios from "axios"
+import { backendInstance } from "../../backend"
 
 export const fetchCategoryWithId = (id) => {
     return {
@@ -26,7 +26,7 @@ export const fetchAllCategoriesError = () => {
 
 export function asyncFetchCategories() {
     return dispatch => {
-        axios.get('http://localhost:5000/categories', { headers: {'Content-Type':'application/json'}})
+        backendInstance.get('/categories')
         .then(res => {
             dispatch(fetchAllCategories(res.data))
         })

@@ -1,4 +1,4 @@
-import axios from "axios"
+import { backendInstance } from "../../backend"
 
 export const fetchAllBanners = (data) => {
     return {
@@ -17,7 +17,7 @@ export const fetchAllBannersError = () => {
 
 export function asyncFetchBanners() {
     return dispatch => {
-        axios.get('http://localhost:5000/banners', { headers: {'Content-Type':'application/json'}})
+        backendInstance.get('/banners')
         .then(res => {
             dispatch(fetchAllBanners(res.data))
         })

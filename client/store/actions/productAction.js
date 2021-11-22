@@ -1,4 +1,4 @@
-import axios from "axios"
+import { backendInstance } from "../../backend"
 
 export const fetchProductWithId = (id) => {
     return {
@@ -26,7 +26,7 @@ export const fetchAllProductsError = () => {
 
 export function asyncFetchProducts() {
     return dispatch => {
-        axios.get('http://localhost:5000/products', { headers: {'Content-Type':'application/json'}})
+        backendInstance.get('/products')
         .then(res => {
             dispatch(fetchAllProducts(res.data))
         })
