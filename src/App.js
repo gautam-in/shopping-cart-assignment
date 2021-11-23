@@ -1,24 +1,29 @@
 import {BrowserRouter, Route,Switch} from 'react-router-dom';
+import React from 'react';
 import Navbar from './components/Navbar/Navbar';
 import Home from './components/Home/Home';
-import Login from './components/LogIn/Login';
-import Register from './components/Register/Register';
 import Footer from './components/Footer/Footer';
-import Products from './components/Products/Products';
-import Cart from './components/Cart/Cart';
+import Loader from './components/Loader';
+import { Suspense } from 'react';
+const Login = React.lazy(() => import('./components/LogIn/Login'));
+const Products = React.lazy(() => import('./components/Products/Products'));
+const Cart = React.lazy(() => import('./components/Cart/Cart'));
+const Register = React.lazy(() => import('./components/Register/Register'));
 
 function App() {
   return (
     <BrowserRouter>
       <Navbar />
-      <Switch>
-        <Route path='/' exact component={Home} />
-        <Route path='/login' exact component={Login} />
-        <Route path='/register' exact component={Register} />
-        <Route path='/cart' exact component={Cart} />
-        <Route path='/products' exact component={Products} />
-        <Route path='/products/:id' exact component={Products} />
-      </Switch>
+      <Suspense fallback={<Loader/>}>
+        <Switch>
+          <Route path='/' exact component={Home} />
+          <Route path='/login' exact render={() => <Login/>} />
+          <Route path='/register' exact render={() => <Register/>} />
+          <Route path='/cart' exact component={() => <Cart/>} />
+          <Route path='/products' exact render={() => <Products/>} />
+          <Route path='/products/:id' exact component={Products} />
+        </Switch>
+      </Suspense>
       <Footer/>
     </BrowserRouter>
 
