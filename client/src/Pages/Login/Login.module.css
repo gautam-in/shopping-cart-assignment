@@ -1,0 +1,32 @@
+.input {
+  margin: 0 0 10px 0;
+  border: none;
+  border-bottom: 2px solid lightgray;
+}
+.label {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: auto;
+  color: #50dae3;
+  pointer-events: none;
+}
+
+input:hover,
+input:focus {
+  border: none;
+  border-bottom: 2px solid #44daff;
+  outline: none;
+}
+
+input:focus ~ .label {
+  top: -20px;
+}
+
+.movedLabel {
+  top: -20px;
+}
+
+.buttonBackground {
+  background-color: #e72369;
+}
