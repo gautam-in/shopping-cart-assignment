@@ -1,0 +1,63 @@
+.app-header,
+.app-block,
+.app-auth,
+.app-cartBlock {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.app-navbar {
+  box-shadow: 2px 2px 18px 3px rgb(0 0 0 / 20%);
+}
+
+.app-header {
+  padding: 10px;
+  height: 80px;
+  width: 95%;
+  margin: 0 auto;
+}
+
+.app-block.left .app-logo {
+  margin: 0;
+}
+
+.app-block.left a {
+  margin: 20px;
+}
+
+.app-block.right {
+  display: block;
+}
+
+.app-auth li {
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.app-cartBlock {
+  width: 100%;
+  justify-content: space-evenly;
+  background: #eee;
+  padding: 5px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.app-cartBlock p {
+  margin-top: 0px;
+}
+
+.app-cartBlock:hover {
+  background-color: #bbb;
+}
+
+@media screen and (max-width: 480px) {
+  .app-header .app-block.left a {
+    display: none;
+  }
+
+  .app-header .app-block.left .app-logo {
+    display: block;
+  }
+}

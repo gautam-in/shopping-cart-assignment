@@ -1,0 +1,145 @@
+.app-btn {
+  background-color: #bf2957;
+  appearance: none;
+  cursor: pointer;
+  border: 0;
+  padding: 8px;
+  transition: all 0.3s;
+  min-width: 80px;
+  color: #fff;
+  font-size: 14px;
+}
+
+.app-btn:hover {
+  transform: translate(0px, -2px);
+}
+
+.app-notFoundPage {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+span,
+p,
+h3 {
+  color: #5f6368;
+}
+
+p,
+h3 {
+  margin: 10px 0px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+span {
+  font-size: 12px;
+}
+
+a:focus,
+li:focus {
+  outline: 3px solid #0f1214 !important;
+  padding: 2px;
+}
+
+input,
+input[type="text"],
+input[type="password"] {
+  outline: none;
+  border: none;
+  width: 100%;
+  border-bottom: 2px solid #eee;
+  padding: 5px;
+  margin-bottom: 10px;
+}
+
+input:focus,
+input[type="text"]:focus,
+input[type="password"]:focus {
+  border-color: #bf2957;
+}
+
+.label::after {
+  content: "*";
+  color: red;
+  margin-left: 5px;
+}
+
+.centre {
+  text-align: center;
+}
+
+/* Loader Code */
+.loader-block {
+  position: fixed;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+}
+
+.loader {
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #3498db;
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 2s linear infinite;
+  /* Safari */
+  animation: spin 2s linear infinite;
+  margin: 0 auto;
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* common bottom shadow */
+.app-bottom-shadow {
+  position: relative;
+}
+
+.app-bottom-shadow:after,
+.app-bottom-shadow:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  box-shadow: 0 0 10px #000;
+  border-radius: 50%;
+  width: 100%;
+  height: 20px;
+  display: none;
+}
+
+.app-bottom-shadow:after {
+  display: block;
+  bottom: 0px;
+  clip: rect(20px auto 40px auto);
+}
+
+.app-notFoundPage {
+  justify-content: center;
+  align-items: center;
+  height: 78vh;
+}
+
+.app-notFoundPage h2 {
+  color: #5f6368;
+}
