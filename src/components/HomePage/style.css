@@ -1,0 +1,181 @@
+.banner-title{
+    text-align: center;
+}
+.banner-border{
+    background-color: white !important;
+    height: 40px;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+
+
+/* Home Page  Catagories */
+
+.catogory-list{
+    padding: 4% 3%;
+    background-color: white !important;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+.explore-fruit{
+    margin-top: 2%;
+    margin-left: 29%;
+    background-color: MediumVioletRed;
+    padding: 2% 2% 2% 2%;
+    width: 35%;
+    color: white;
+}
+.explore-bakery{
+    margin-top: 2%;
+    background-color: MediumVioletRed;
+    padding: 2% 2% 2% 2%;
+    width: 43%;
+    color: white;
+    margin-left: 27%;  
+}
+.explore-beverage {
+    margin-top: 2%;
+    background-color: MediumVioletRed;
+    padding: 2% 2% 2% 2%;
+    width: 38%;
+    color: white;
+    margin-left: 33%;
+}
+.explore-beauty {
+    margin-top: 2%;
+    background-color: MediumVioletRed;
+    padding: 2% 2% 2% 2%;
+    width: 48%;
+    color: white;
+    margin-left: 27%;
+}
+.explore-baby {
+    margin-top: 2%;
+    margin-left:39%;
+    background-color: MediumVioletRed;
+    padding: 2% 2% 2% 2%;
+    width: 23%;
+    color: white;
+}
+.cat-name{
+    font-weight: bolder;
+    font-family: 'PT Sans Narrow';
+    font-size: 18px;
+    text-align: center;
+}
+.cat-desc{
+    color:grey; 
+    text-align: center;
+}
+.imageUrl{
+    height: 100% !important;
+    width: 100% !important;
+}
+
+.carousel-style{
+    color:red;
+    border-radius: 20px;
+}
+/* Media Queries */
+
+ 
+/* Smartphones (portrait and landscape) ----------- */
+ @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+    .banner-title{
+        text-align: center;
+    }
+    .banner-border{
+        background-color: white !important;
+        height: 40px;
+        box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    }
+     /* Home Page  Catagories */
+      .explore-baby {
+        margin: 0 auto;
+        width: 37%;
+        text-align: center;
+    }
+    .explore-beauty {
+        width: 63%;
+        margin: 0 auto;
+        text-align: center;
+    }
+    .explore-beverage {
+        width: 50%;
+        margin: 0 auto;
+        text-align: center;
+    }
+    .explore-bakery {
+        width: 70%;
+        margin: 0 auto;
+        text-align: center;
+    }
+    .explore-fruit {
+        margin: 0 auto;
+        width: 57%;
+        text-align: center;
+    }
+    .cat-desc {
+        text-align: center;
+    }
+    .banner-width{
+        width:100%;
+        margin-left:12%; 
+    }
+.cart-button {
+margin-left: -4.7em !important;
+margin-top: 1.8em !important;
+}
+.products-media-query{
+    margin-left: 0.1em !important;
+    margin-top: 1.5em !important;
+}
+
+
+
+
+    } 
+
+
+/* iPads (portrait and landscape) ----------- */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
+   /* Home Page  Catagories */
+   .explore-baby {
+    margin: 0 auto;
+    width: 18%;
+    text-align: center;
+}
+.explore-beauty {
+    width: 29%;
+    margin: 0 auto;
+    text-align: center;
+}
+.explore-beverage {
+    width: 24%;
+    margin: 0 auto;
+    text-align: center;
+}
+.explore-bakery {
+    width: 31%;
+    margin: 0 auto;
+    text-align: center;
+}
+.explore-fruit {
+    margin: 0 auto;
+    width: 26%;
+    text-align: center;
+}
+.cat-desc {
+    text-align: center;
+}
+.banner-width{
+    width:100%;
+    margin-left:12%; 
+}
+
+
+}
+
+
+
+
