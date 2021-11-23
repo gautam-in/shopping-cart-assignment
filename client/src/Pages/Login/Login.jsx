@@ -43,7 +43,7 @@ export const Login = () => {
       alert.error("Invalid Credentials");
       return;
     }
-    navigate("/");
+    navigate("/home");
   };
 
   const showErrors = (type) => {
