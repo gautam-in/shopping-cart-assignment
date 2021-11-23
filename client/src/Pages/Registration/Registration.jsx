@@ -67,17 +67,17 @@ export const Registration = () => {
       <Header />
       <div
         className={classNames(
-          "flex h-screen sm:flex-col px-48 sm:px-8 justify-start items-start sm:justify-start sm:items-center pt-12 sm:pt-5 "
+          "flex h-screen sm:flex-col px-48 sm:px-8 justify-start items-start sm:justify-start sm:items-center pt-32 sm:pt-24 "
         )}
       >
         <div className="mr-24 sm:mr-0 sm:text-center">
-          <h1 className="text-xl sm:text-base">Signup</h1>
-          <p className="sm:text-sm">
+          <h1 className="text-xl sm:text-xs">Signup</h1>
+          <p className="sm:text-xs">
             We do not share your personal details with anyone
           </p>
         </div>
         <form onSubmit={(e) => handleSumbit(e)}>
-          <div className="w-72 sm:w-48 sm:mx-auto relative sm:mt-12">
+          <div className="w-72 sm:w-48 sm:mx-auto relative sm:mt-4">
             <input
               className={classNames(styles.input, "w-full text-base")}
               type="text"

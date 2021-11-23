@@ -56,7 +56,7 @@ export const Login = () => {
       <Header />
       <div
         className={classNames(
-          "flex sm:flex-col px-48 sm:px-10 justify-start items-start sm:justify-start sm:items-center pt-24"
+          "flex sm:flex-col px-48 sm:px-10 justify-start items-start sm:justify-start sm:items-center pt-48"
         )}
       >
         <div className="mr-24 sm:mr-0 sm:text-center">

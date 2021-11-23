@@ -13,7 +13,7 @@ export const Header = () => {
   };
 
   return (
-    <div>
+    <div className="fixed w-full bg-white z-10">
       <div className="flex relative justify-between h-20 items-center shadow-md w-full px-10 pt-2">
         <div className="flex items-center">
           <Link to="/login">
