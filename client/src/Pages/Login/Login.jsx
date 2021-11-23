@@ -3,16 +3,60 @@ import { Header } from "../../Components/Header/Header";
 import { Footer } from "../../Components/Footer/Footer";
 import styles from "./Login.module.css";
 import classNames from "classnames";
+import { useNavigate } from "react-router-dom";
+import validator from "validator";
+import { useAlert } from "react-alert";
 
 export const Login = () => {
   const [data, setData] = useState({ email: "", password: "" });
+
+  const [errors, setErrors] = useState([]);
+  const navigate = useNavigate();
+  const alert = useAlert();
+
+  const validation = () => {
+    const errors = [];
+    const { email, password } = data;
+    if (!validator.isEmail(email)) {
+      errors.push({
+        name: "email",
+        message: "Email is not valid",
+      });
+    }
+    if (!password) {
+      errors.push({
+        name: "password",
+        message: "Password is mandatory",
+      });
+    }
+
+    setErrors(errors);
+    return errors.length === 0;
+  };
+
+  const handleSumbit = (e) => {
+    e.preventDefault();
+    if (!validation()) return;
+    const { email, password } = data;
+    let userDetails = JSON.parse(localStorage.getItem("user"));
+    if (email !== userDetails?.email || password !== userDetails?.password) {
+      alert.error("Invalid Credentials");
+      return;
+    }
+    navigate("/");
+  };
+
+  const showErrors = (type) => {
+    const error = errors.filter((item) => item?.name === type);
+    return error[0]?.message;
+  };
 
   return (
     <div className="h-screen">
       <Header />
       <div
         className={classNames(
-          " h-4/5 flex sm:flex-col px-10 justify-center items-start sm:justify-start sm:items-center pt-24"
+          "flex sm:flex-col px-48 sm:px-10 justify-start items-start sm:justify-start sm:items-center pt-24"
         )}
       >
         <div className="mr-24 sm:mr-0 sm:text-center">
@@ -21,8 +65,8 @@ export const Login = () => {
             Get access to your Orders, Wishlist & Recommendations
           </p>
         </div>
-        <div>
-          <div className="w-64 sm:w-48 sm:mx-auto relative sm:mt-12">
+        <form onSubmit={(e) => handleSumbit(e)}>
+          <div className="w-72 sm:w-48 sm:mx-auto relative sm:mt-12">
             <input
               className={classNames(styles.input, "w-full text-base")}
               type="text"
@@ -41,9 +85,14 @@ export const Login = () => {
             >
               Email
             </label>
+            {showErrors("email") && (
+              <span className="text-xs text-red-700">
+                {showErrors("email")}
+              </span>
+            )}
           </div>
 
-          <div className="w-64 sm:w-48 sm:mx-auto relative mt-12">
+          <div className="w-72 sm:w-48 sm:mx-auto relative mt-12">
             <input
               className={classNames(styles.input, "w-full text-base")}
               type="password"
@@ -62,16 +111,21 @@ export const Login = () => {
             >
               Password
             </label>
+            {showErrors("password") && (
+              <span className="text-xs text-red-700">
+                {showErrors("password")}
+              </span>
+            )}
           </div>
           <button
             className={classNames(
               styles.buttonBackground,
-              "font-medium w-64 sm:w-48 p-2 mt-10"
+              "font-medium w-72 sm:w-48 p-2 mt-10"
             )}
           >
             <p className="text-white sm:text-sm">Login</p>
           </button>
-        </div>
+        </form>
       </div>
       <Footer />
     </div>

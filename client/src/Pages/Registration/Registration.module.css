@@ -19,11 +19,11 @@ input:focus {
 }
 
 input:focus ~ .label {
-  top: -20px;
+  top: -30px;
 }
 
 .movedLabel {
-  top: -20px;
+  top: -30px;
 }
 
 .buttonBackground {

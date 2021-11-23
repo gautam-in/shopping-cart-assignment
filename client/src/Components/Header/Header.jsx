@@ -34,7 +34,7 @@ export const Header = () => {
             <Link className="links text-sm" to="/login">
               SignIn
             </Link>
-            <Link className="links text-sm ml-4 sm:ml-2" to="/register">
+            <Link className="links text-sm ml-4 sm:ml-2" to="/registration">
               Register
             </Link>
           </div>
