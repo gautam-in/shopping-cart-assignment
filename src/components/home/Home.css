@@ -1,0 +1,55 @@
+.app-category {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 10px 40px;
+  justify-content: space-evenly;
+  margin: 40px 0px 0px;
+  min-height: 205px;
+}
+.app-carousel {
+  min-height: 310px;
+  margin-top: 10px;
+}
+.app-carousel .control-dots .dot {
+  background: #666 !important;
+}
+.app-carousel .control-dots .dot.selected {
+  background-color: #000;
+}
+.app-category .cat-desc {
+  align-self: center;
+  flex-basis: 40%;
+}
+.app-home .app-category:nth-child(odd) {
+  flex-direction: row-reverse;
+}
+
+@media screen and (max-width: 480px) {
+  .app-carousel {
+    min-height: 220px;
+    height: 200px;
+  }
+  .app-carousel .carousel-status {
+    display: none;
+  }
+  .app-carousel .carousel.carousel-slider {
+    height: 255px;
+  }
+  .app-category {
+    padding: 8px 10px;
+    margin: 10px 0px 0px;
+  }
+  .app-category .cat-desc {
+    flex-basis: 60%;
+  }
+  .app-category img {
+    width: 35%;
+  }
+  .app-category p {
+    font-size: 12px;
+  }
+  .app-category .app-btn {
+    width: 100%;
+    font-size: 12px;
+  }
+}

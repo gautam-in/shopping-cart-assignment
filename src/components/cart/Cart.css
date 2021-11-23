@@ -1,0 +1,114 @@
+.app-cart .cart-head,
+.app-cart .cart-mid .product-block,
+.app-cart .cart-mid .product-block .quantity,
+.app-cart .cart-mid .block2,
+.app-cart .cart-foot .app-btn {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.app-cart {
+  position: fixed;
+  z-index: 10;
+  background: #030303 7a;
+  opacity: 1;
+  transition-delay: 0s;
+  left: 0;
+  right: 0;
+  top: 0;
+}
+.app-cart .cart-block {
+  background: #eee;
+  width: 30%;
+  float: right;
+  min-height: 86vh;
+  max-height: 100vh;
+  position: relative;
+  margin: 82px 40px 0px 0px;
+}
+.app-cart .cart-head {
+  padding: 0px 15px;
+  background-color: #000;
+  color: #fff;
+}
+.app-cart .cart-head button {
+  background-color: #000;
+  color: #eee;
+  cursor: pointer;
+}
+.app-cart .cart-head p {
+  color: #fff;
+  margin: 10px;
+}
+.app-cart .cart-head span {
+  cursor: pointer;
+  display: block;
+}
+.app-cart .cart-head span:hover {
+  transform: scale(0.88);
+}
+.app-cart .cart-mid {
+  overflow: auto;
+  height: 360px;
+}
+.app-cart .cart-mid .product-block {
+  align-items: center;
+  padding: 5px 20px;
+  background-color: #fff;
+  border-bottom: 2px solid #eee;
+}
+.app-cart .cart-mid .product-block .prod-detail {
+  flex-basis: 50%;
+}
+.app-cart .cart-mid .product-block p {
+  font-size: 12px;
+}
+.app-cart .cart-mid .product-block .quantity {
+  justify-content: space-evenly;
+}
+.app-cart .cart-mid .product-block .quantity .cart-btn {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  background: #bf2957;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.app-cart .cart-mid .product-block .quantity .cart-btn span {
+  color: #fff;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 44%;
+  position: absolute;
+}
+.app-cart .cart-mid .block2 {
+  margin-top: 10px;
+  background: #fff;
+  padding: 5px 10px;
+}
+.app-cart .cart-mid .block2 p {
+  align-self: center;
+}
+.app-cart .cart-foot {
+  background: #fff;
+  padding: 15px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+.app-cart .cart-foot .app-btn {
+  width: 100%;
+}
+.app-cart .cart-foot .app-btn.centre {
+  justify-content: center;
+}
+.app-cart .cart-foot .app-btn span {
+  color: #fff;
+}
+@media screen and (max-width: 480px) {
+  .app-cart .cart-block {
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+  }
+}

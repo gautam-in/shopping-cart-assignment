@@ -1,0 +1,100 @@
+.app-product,
+.app-product .category-bar,
+.app-product .product-bar,
+.app-productList .product-card {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.app-product .category-bar {
+  flex-direction: column;
+  justify-content: flex-start;
+  flex-basis: 20%;
+  background-color: #eee;
+}
+.app-product .category-bar .items {
+  padding: 10px 20px;
+  border: 1px solid #fff;
+  cursor: pointer;
+  font-size: 14px;
+  text-align: left;
+}
+.app-product .category-bar .items.active,
+.app-product .category-bar .items:hover {
+  background-color: #d5d5d5;
+  color: #3c3c3c;
+}
+.app-product .category-bar-mobile {
+  display: none;
+}
+.app-product .product-bar {
+  flex-basis: 80%;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  margin-bottom: 40px;
+}
+.app-productList {
+  padding: 10px;
+  flex-basis: 250px;
+  height: 345px;
+  margin-top: 10px;
+  border-right: 2px solid #eee;
+  border-bottom: 2px dashed #eee;
+}
+.app-productList .categoryName {
+  font-size: 13px;
+  line-height: 1.1;
+  height: 30px;
+}
+.app-productList .product-card {
+  flex-direction: column;
+  align-items: center;
+  height: 80%;
+  margin-top: 20px;
+}
+.app-productList .product-card .des {
+  background-color: #eee;
+  padding: 10px;
+  font-size: 12px;
+  height: 86px;
+  overflow: hidden;
+  -webkit-line-clamp: 4;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+}
+.app-productList .product-card .app-btn {
+  margin-left: 25px;
+}
+@media screen and (max-width: 480px) {
+  .app-product .category-bar {
+    display: none;
+  }
+  .app-product .category-bar-mobile {
+    display: block;
+    width: 100%;
+  }
+  .app-product .category-bar-mobile select {
+    padding: 10px;
+    width: 100%;
+    background-color: #bf2957;
+    color: #fff;
+  }
+  .app-product .product-bar {
+    display: block;
+    flex-basis: 100%;
+  }
+  .app-product .product-bar .app-productList {
+    border-right: none;
+    height: unset;
+  }
+  .app-product .product-bar .product-card {
+    flex-direction: row;
+  }
+  .app-product .product-bar .product-card .des {
+    width: 60%;
+    margin-bottom: 8px;
+  }
+  .app-product .product-bar .product-card .buynow {
+    margin: 0 10px 0 auto;
+  }
+}
