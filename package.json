@@ -1,15 +1,33 @@
 {
-  "name": "code-exercise",
+  "name": "shopping-cart",
   "version": "1.0.0",
   "description": "This is a shopping cart coding exercise",
-  "main": "index.js",
+  "main": "start-client.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "canned -p 5000 ./server"
+    "start-server": "canned -p 5000 ./server",
+    "build-css": "npx sass ./client/client.scss ./client/client.css",
+    "start-client": "node ./start-client.js"
   },
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "canned": "^0.3.12"
+    "@babel/preset-env": "^7.15.4",
+    "canned": "^0.3.12",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "fs": "0.0.1-security",
+    "path": "^0.12.7",
+    "webpack": "^5.52.0",
+    "webpack-cli": "^4.8.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.15.5",
+    "babel-loader": "^8.2.2",
+    "css-loader": "^6.2.0",
+    "nodemon": "^2.0.12",
+    "sass": "^1.39.0",
+    "sass-loader": "^12.1.0",
+    "style-loader": "^3.2.1"
   }
 }

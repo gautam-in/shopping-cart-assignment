@@ -6,10 +6,13 @@ This is the base folder for the shopping cart exercise. You will have all the st
 
 Clone this repo and run following command for starting the mock server:
 
+1.To install dependencies : npm i
+2.
 ```
-npm install
-npm run start
-# or
-yarn install
-yarn start
+To run server : npm run start-server
+To run client : npm run start-client
+To build css : npm run build-css
 ```
+3.Then Open Index.html
+
+
