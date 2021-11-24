@@ -34,7 +34,7 @@ function onClickCartHandler(){
 
 /* Dom Manipulations */
 function createFilterLiElement(category){            
-    let categoryLiEl = createDomElementment("li", {
+    let categoryLiEl = createDomElement("li", {
         class: localStorage["activeCategory"] === category.id ? "filter-section-links-list-item active" : "filter-section-links-list-item"
     });
         let categoryButtonEl = createDomElement("button", {
