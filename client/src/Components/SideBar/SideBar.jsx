@@ -4,11 +4,15 @@ import { useEffect, useState } from "react";
 import styles from "./SideBar.module.css";
 import classNames from "classnames";
 import { useAlert } from "react-alert";
+import { useParams } from "react-router";
 
 export const SideBar = (props) => {
   const [navlink, setNavLink] = useState([]);
   const [activeLink, setActiveLink] = useState("");
   const alert = useAlert();
+  const params = useParams();
+
+  const { categoryId } = params;
 
   useEffect(() => {
     LoadCategories();
@@ -33,7 +37,10 @@ export const SideBar = (props) => {
       {navlink.map((item) => (
         <li
           key={item.id}
-          className={classNames(activeLink === item?.name ? "bg-gray-300" : "")}
+          className={classNames(
+            activeLink === item?.name ? "bg-gray-300" : "",
+            categoryId === item?.id ? "bg-gray-300" : ""
+          )}
         >
           <NavLink
             onClick={() => setActiveLink(item?.name)}

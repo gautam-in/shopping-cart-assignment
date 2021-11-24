@@ -25,7 +25,11 @@ export const Product = () => {
           )}
           key={item?.id}
         >
-          <img className="w-1/5" src={item?.imageUrl} alt={item?.name} />
+          <img
+            className="w-1/5 sm:w-1/3 sm:mr-2"
+            src={item?.imageUrl}
+            alt={item?.name}
+          />
           <div className={classNames(styles.description)}>
             <h1 className="mb-5 font-bold sm:text-sm">{item?.name}</h1>
             <p className="mb-5 text-sm sm:text-xs">{item?.description}</p>

@@ -9,10 +9,9 @@ export const initialcartState = previousCart || {
   totalAmount: 0,
   totalItemsCount: 0,
 };
-//cart reducer
+
 export const cartReducer = (state, action) => {
   if (action.type === "ADD") {
-    //addition code
     const updatedTotalAmount =
       state.totalAmount + action.item.price * action.item.amount;
     const existingCartItemIndex = state.items.findIndex(

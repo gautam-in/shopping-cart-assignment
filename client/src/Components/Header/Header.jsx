@@ -9,7 +9,7 @@ import { CartContext } from "../../Context/CartContext";
 export const Header = () => {
   const [cartIsOpen, setCart] = useState(false);
   const context = useContext(CartContext);
-
+  const isLoggedIn = localStorage.getItem("isLogged");
   const handleCart = () => {
     setCart(!cartIsOpen);
   };
@@ -22,7 +22,7 @@ export const Header = () => {
             <img alt="logo" className="w-4/6" src={Logo} />
           </Link>
         </div>
-        <div className="flex w-1/2 justify-start">
+        <div className="flex w-1/2 justify-start xs:hidden">
           <Link to="/home" className="sm:text-sm">
             <h3>Home</h3>
           </Link>
@@ -41,11 +41,11 @@ export const Header = () => {
             </Link>
           </div>
           <div
-            onClick={handleCart}
-            className="flex items-center cursor-pointer justify-center w-32 bg-gray-200 sm:bg-transparent p-2 "
+            onClick={isLoggedIn && handleCart}
+            className="flex items-center cursor-pointer justify-center w-32 bg-gray-200 xs:bg-transparent p-3 "
           >
             <FaShoppingCart className="mr-2" color="red" size="20" />
-            <h3 className=" sm:hidden">{context?.totalItemsCount} items</h3>
+            <h3 className=" xs:hidden">{context?.totalItemsCount} items</h3>
           </div>
         </div>
       </div>

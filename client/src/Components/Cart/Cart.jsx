@@ -5,10 +5,6 @@ import Modal from "react-modal";
 import { CartContext } from "../../Context/CartContext";
 
 const customStyles = {
-  overlay: {
-    backgroundColor: "rgba(0,0,0,0.3)",
-    padding: 0,
-  },
   content: {
     top: "5rem",
     right: 0,
@@ -25,6 +21,23 @@ const customStyles = {
   },
 };
 
+const customFullPageStyles = {
+  content: {
+    top: "5rem",
+    right: 0,
+    padding: 0,
+    paddingBottom: "20px",
+    outline: 0,
+    margin: 0,
+    left: "auto",
+    backgroundColor: "lightGrey",
+    width: "100%",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "space-between",
+  },
+};
+
 export const Cart = ({ closeCart }) => {
   const context = useContext(CartContext);
   const cartItemRemoveHandler = (id) => {
@@ -34,17 +47,24 @@ export const Cart = ({ closeCart }) => {
     context.addItem({ ...item, amount: 1 });
   };
 
-  console.log(context);
   return (
-    <Modal isOpen={true} style={customStyles} ariaHideApp={false}>
-      <div className=" flex justify-between items-center p-6 bg-black">
-        <h1 className="text-2xl text-white sm:text-sm">
+    <Modal
+      isOpen={true}
+      className={classNames("content")}
+      overlayClassName={classNames("overlay")}
+      ariaHideApp={false}
+    >
+      <div className=" flex justify-between items-center p-6 bg-black md:bg-white">
+        <h1 className="text-2xl text-white sm:text-sm md:text-black md:font-bold">
           My Cart{" "}
-          <span className="text-base sm:text-xs">
+          <span className="text-base sm:text-xs md:text-black md:font-bold">
             ({context?.totalItemsCount} item)
           </span>
         </h1>
-        <button onClick={closeCart} className="text-white text-2xl sm:text-sm">
+        <button
+          onClick={closeCart}
+          className="text-white text-2xl sm:text-sm md:text-black md:font-bold"
+        >
           X
         </button>
       </div>
@@ -110,8 +130,8 @@ export const Cart = ({ closeCart }) => {
         </>
       )}
       {context?.items?.length ? (
-        <div className="flex flex-col justify-center items-center bg-white">
-          <p>You can apply Promo Code on Checkout</p>
+        <div className="flex flex-col justify-center items-center bg-white sm:text-sm">
+          <p>Promo code can be applied on payment page</p>
           <button
             className={classNames(
               styles.buttonBackground,

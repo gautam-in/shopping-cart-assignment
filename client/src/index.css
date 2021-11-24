@@ -3,3 +3,37 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.overlay {
+  background-color: rgba(0, 0, 0, 0.3);
+  padding: 0;
+  z-index: 2;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.content {
+  top: 5rem;
+  position: absolute;
+  height: 80%;
+  right: 0;
+  padding: 0;
+  padding-bottom: 20px;
+  outline: 0;
+  margin: 0;
+  left: auto;
+  background-color: lightGrey;
+  width: 38%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+@media (max-width: 767px) {
+  .content {
+    width: 100%;
+  }
+}

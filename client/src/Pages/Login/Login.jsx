@@ -43,6 +43,7 @@ export const Login = () => {
       alert.error("Invalid Credentials");
       return;
     }
+    localStorage.setItem("isLogged", true);
     navigate("/home");
   };
 
