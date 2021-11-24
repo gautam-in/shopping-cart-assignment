@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState, useEffect, useCallback, useContext } from "react";
 import { useParams } from "react-router";
 import { SideBar } from "../../Components/SideBar/SideBar";
 import { Header } from "../../Components/Header/Header";
@@ -7,12 +7,15 @@ import classNames from "classnames";
 import styles from "./Products.module.css";
 import axios from "axios";
 import { useAlert } from "react-alert";
+import { CartContext } from "../../Context/CartContext";
 
 export const Products = () => {
   const [categories, setCategories] = useState([]);
   const params = useParams();
   const { categoryId } = params;
   const alert = useAlert();
+
+  const context = useContext(CartContext);
 
   const LoadProducts = useCallback(() => {
     axios
@@ -38,6 +41,11 @@ export const Products = () => {
     let filteredCategory = data;
     filteredCategory = data?.filter((item) => item.category === catId);
     return filteredCategory;
+  };
+
+  const addToCartHandler = (item) => {
+    context.addItem({ ...item, amount: 1 });
+    alert.success("Item successfully added to cart");
   };
 
   return (
@@ -89,6 +97,7 @@ export const Products = () => {
                 <span className="text-sm lg:text-xs">MRP Rs.{item?.price}</span>
                 <button
                   className={classNames(styles.buttonBackground, "text-sm p-1")}
+                  onClick={() => addToCartHandler(item)}
                 >
                   <p className="text-white lg:text-xs"> Buy Now</p>
                 </button>

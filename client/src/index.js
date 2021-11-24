@@ -5,6 +5,7 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { transitions, positions, Provider as AlertProvider } from "react-alert";
 import AlertTemplate from "react-alert-template-basic";
+import { CartProvider } from "./Context/Provider";
 
 // optional configuration
 const options = {
@@ -18,9 +19,11 @@ const options = {
 
 ReactDOM.render(
   <React.StrictMode>
-    <AlertProvider template={AlertTemplate} {...options}>
-      <App />
-    </AlertProvider>
+    <CartProvider>
+      <AlertProvider template={AlertTemplate} {...options}>
+        <App />
+      </AlertProvider>
+    </CartProvider>
   </React.StrictMode>,
   document.getElementById("root")
 );

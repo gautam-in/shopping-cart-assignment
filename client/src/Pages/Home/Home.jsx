@@ -9,7 +9,7 @@ export const Home = () => {
     <>
       <Header />
 
-      <Carousel showThumbs={false} className="mt-4">
+      <Carousel showThumbs={false} className="pt-24">
         <div>
           <img src={"/static/images/offers/offer1.jpg"} alt="offer1" />
         </div>
