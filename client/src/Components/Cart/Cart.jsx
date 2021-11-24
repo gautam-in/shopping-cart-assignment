@@ -54,8 +54,8 @@ export const Cart = ({ closeCart }) => {
       overlayClassName={classNames("overlay")}
       ariaHideApp={false}
     >
-      <div className=" flex justify-between items-center p-6 bg-black md:bg-white">
-        <h1 className="text-2xl text-white sm:text-sm md:text-black md:font-bold">
+      <div className=" flex justify-between items-center p-4 bg-black md:bg-white">
+        <h1 className="text-xl text-white sm:text-sm md:text-black md:font-bold">
           My Cart{" "}
           <span className="text-base sm:text-xs md:text-black md:font-bold">
             ({context?.totalItemsCount} item)

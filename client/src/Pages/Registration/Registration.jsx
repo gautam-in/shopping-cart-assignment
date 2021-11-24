@@ -67,7 +67,7 @@ export const Registration = () => {
       <Header />
       <div
         className={classNames(
-          "flex h-screen sm:flex-col px-48 sm:px-8 justify-start items-start sm:justify-start sm:items-center pt-32 sm:pt-24 "
+          "flex sm:flex-col px-48 sm:px-8 justify-center items-start sm:justify-start sm:items-center py-32 sm:py-24 "
         )}
       >
         <div className="mr-24 sm:mr-0 sm:text-center">
@@ -105,7 +105,7 @@ export const Registration = () => {
               </span>
             )}
           </div>
-          <div className="w-72 sm:w-48 sm:mx-auto relative mt-12">
+          <div className="w-72 sm:w-48 sm:mx-auto relative mt-12 sm:mt-8">
             <input
               className={classNames(styles.input, "w-full text-base")}
               type="text"
@@ -125,7 +125,7 @@ export const Registration = () => {
               Last Name
             </label>
           </div>
-          <div className="w-72 sm:w-48 sm:mx-auto relative mt-12">
+          <div className="w-72 sm:w-48 sm:mx-auto relative mt-12  sm:mt-8">
             <input
               className={classNames(styles.input, "w-full text-base")}
               type="email"
@@ -150,7 +150,7 @@ export const Registration = () => {
               </span>
             )}
           </div>
-          <div className="w-72 sm:w-48 sm:mx-auto relative mt-12">
+          <div className="w-72 sm:w-48 sm:mx-auto relative mt-12  sm:mt-8">
             <input
               className={classNames(styles.input, "w-full text-base")}
               type="password"
@@ -176,7 +176,7 @@ export const Registration = () => {
             )}
           </div>
 
-          <div className="w-72 sm:w-48 sm:mx-auto relative mt-12">
+          <div className="w-72 sm:w-48 sm:mx-auto relative mt-12  sm:mt-8">
             <input
               className={classNames(styles.input, "w-full text-base")}
               type="password"
@@ -206,7 +206,7 @@ export const Registration = () => {
           <button
             className={classNames(
               styles.buttonBackground,
-              "font-medium w-72 sm:w-48 p-2 mt-12"
+              "font-medium w-72 sm:w-48 p-2 mt-12  sm:mt-8"
             )}
           >
             <p className="text-white sm:text-sm">Signup</p>

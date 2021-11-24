@@ -21,7 +21,7 @@ export const Product = () => {
         <div
           className={classNames(
             index % 2 === 0 ? styles.row : styles.rowReverse,
-            "p-10 h-48 sm:flex-col"
+            "p-10  sm:flex-col"
           )}
           key={item?.id}
         >
