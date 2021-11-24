@@ -1,0 +1,15 @@
+.linkStyles {
+  list-style: none;
+  padding: 0 10px;
+}
+.linkStyles li a {
+  display: block;
+  font-size: 15px;
+  padding: 12px;
+  border-bottom: 1px solid black;
+}
+
+.linkStyles li a:hover {
+  background: darkgray;
+  text-decoration: none;
+}
