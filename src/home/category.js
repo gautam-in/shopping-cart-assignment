@@ -35,7 +35,7 @@ export class Categories {
                                 <h1>${category.name}</h1>
                             </header>
                             <p class="product-desc">${category.description}</p>
-                            <button type="button" class="category-btn">Explore ${category.name}</button>
+                            <button type="button" class="category-btn sb-btn">Explore ${category.name}</button>
                         </div>
                     `;
                         categoryElement.innerHTML = categoryContent;

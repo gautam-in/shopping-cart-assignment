@@ -1,3 +1,6 @@
+$smWidth: 560px;
+$mdWidth: 920px;
+
 @mixin responsive-sm {
     @media (max-width: $smWidth) {
         @content;

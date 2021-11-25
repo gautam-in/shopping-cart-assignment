@@ -1,4 +1,4 @@
-@import '../responsive-mixin';
+@use '../responsive-mixin' as *;
 
 .backdrop {
     position: absolute;

@@ -1,8 +1,7 @@
-@import '../responsive-mixin';
+@use '../responsive-mixin' as *;
 
 .sb-products-container {
     display: flex;
-    gap: 1rem;
 
     @include responsive-sm {
         display: block;
@@ -119,7 +118,7 @@
                 }
             }
 
-            .product-btn {
+            /* .product-btn {
                 cursor: pointer;
                 border: none;
                 color: white;
@@ -134,7 +133,7 @@
 
             .product-btn:hover {
                 background-color: #e64980;
-            }
+            } */
         }
 
         .card-footer-lg {
@@ -159,6 +158,11 @@
 
             .product-btn {
                 width: 100%;
+                
+                @include responsive-sm {
+                    font-size: 1rem;
+                    padding: 0.5rem 0.8rem;
+                }
             }
         }
     }

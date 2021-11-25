@@ -2,18 +2,27 @@ import { SBLocalStorage } from "../services/sbLocalStorage.js";
 
 export class Cart {
 
+    constructor() {
+        this.sbLocalStorage = new SBLocalStorage();
+    }
+
     fetchCartItems() {
         // localStorage.clear();
-        const cartItemsList = new SBLocalStorage().getItem("cartItems");
+        const cartItemsList = this.sbLocalStorage.getItem("cartItems");
 
         const cartBody = document.getElementsByClassName("cart-body")[0];
         const cartFooter = document.getElementsByClassName("cart-footer")[0];
 
         if (cartItemsList && cartItemsList.length > 0) {
+            cartBody.style.display = "block";
             this.updateCartHeader(cartItemsList.length);
             this.updateCartItems(cartItemsList, cartBody);
 
             this.updateCartTotal();
+
+            // Remove empty cart element to dom
+            const cartEmptyDiv = cartBody.getElementsByClassName("cart-empty")[0];
+            cartEmptyDiv.style.display = "none";
             
         } else {
             // Remove cart items element from dom

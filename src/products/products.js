@@ -93,10 +93,10 @@ export class Products {
                     </div>
                     <footer class="card-footer card-footer-lg">
                         <div class="price">MRP Rs.${product.price}</div>
-                        <button type="button" class="product-btn">Buy Now</button>
+                        <button type="button" class="product-btn sb-btn">Buy Now</button>
                     </footer>
                     <footer class="card-footer card-footer-sm card-footer-md">
-                        <button type="button" class="product-btn">Buy Now @ Rs.${product.price}</button>
+                        <button type="button" class="sb-btn product-btn">Buy Now @ Rs.${product.price}</button>
                     </footer>
                 `;
 
@@ -135,6 +135,13 @@ export class Products {
     }
 
     addProductToCart(product) {
+
+        const user = this.sbLocalStorage.getItem("user");
+        if (user !== "true") {
+            alert("Please login to add items to your cart!");
+            return;
+        }
+
         let cartItems = this.sbLocalStorage.getItem("cartItems");
         cartItems = cartItems ?? [];
         for (let index = 0; index < cartItems.length; index++) {

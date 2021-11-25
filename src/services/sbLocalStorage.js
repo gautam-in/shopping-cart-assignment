@@ -9,4 +9,13 @@ export class SBLocalStorage {
         value = value ? JSON.parse(value) : value;
         return value;
     }
+
+    removeItem(key) {
+        if(!key) return;
+        localStorage.removeItem(key);
+    }
+
+    clear() {
+        localStorage.clear();
+    }
 }

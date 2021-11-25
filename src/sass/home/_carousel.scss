@@ -1,4 +1,4 @@
-@import '../responsive-mixin';
+@use '../index' as *;
 
 .sb-carousel-container {
     width: 100%;
@@ -13,18 +13,29 @@
         justify-content: flex-start;
 
         .sb-carousel-item {
+            &:first-child {
+                display: block;
+            }
+
+            &:not(first-child) {
+                display: none;
+            }
+
+            /* animation: slide-carousel 500ms ease-out;
+            @keyframes slide-carousel {
+                from {
+                    transform: translateX(-100%);
+                }
+
+                to {
+                    transform: translateX(0%);
+                }
+            } */
+
             img {
                 display: block;
                 width: 100%;
             }
-        }
-
-        .sb-carousel-item:first-child {
-            display: block;
-        }
-
-        .sb-carousel-item:not(first-child) {
-            display: none;
         }
     }
 }
@@ -42,19 +53,18 @@
     justify-content: center;
     align-items: center;
 
+    &:hover {
+        background-color: rgba($primaryColor, 0.75);
+    
+        .left-icon, .right-icon {
+            stroke: #fff;
+        }
+    }
+
     .left-icon, .right-icon {
         width: 2.4rem;
         height: 2.4rem;
         stroke: $primaryColor;
-    }
-}
-
-.sb-carousel-btn:hover {
-    background-color: $primaryColor;
-    opacity: 0.8;
-
-    .left-icon, .right-icon {
-        stroke: #fff;
     }
 }
 

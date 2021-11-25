@@ -1,6 +1,11 @@
 import { Cart } from "../cart/cart.js";
 import { SBLocalStorage } from "../services/sbLocalStorage.js";
 
+import { headerTemplate } from "../common-templates/header.js";
+
+const headerEle = document.getElementById("main-header");
+headerEle.innerHTML = headerTemplate;
+
 export class Header {
 
     constructor() {
@@ -37,8 +42,27 @@ export class Header {
         const cartClose = cartContainer.getElementsByClassName("cart-close")[0];
         cartClose.addEventListener('click', () => new Header().closeCart());
 
-        const cart = new Cart();
-        cart.fetchCartItems();
+        const user = this.sbLocalStorage.getItem("user");
+
+        if (user === "true") {
+            const cart = new Cart();
+            cart.fetchCartItems();            
+        } else {
+            const cartBody = document.getElementsByClassName("cart-body")[0];
+            // Remove cart items element from dom
+            const cartItemsDiv = cartBody.getElementsByClassName("cart-items")[0];
+            cartItemsDiv.style.display = "none";
+
+            // Add empty cart element to dom
+            const cartEmptyDiv = cartBody.getElementsByClassName("cart-empty")[0];
+            cartEmptyDiv.style.display = "block";
+            cartEmptyDiv.innerText = "Login to access your cart.";
+            
+            // Remove cart items element from dom
+            const cartFooterDiv = cartBody.parentElement.getElementsByClassName("cart-footer")[0];
+            cartFooterDiv.style.display = "none";
+        }
+
     }
 
     closeCart() {
@@ -51,10 +75,13 @@ export class Header {
 }
 
 const h = new Header();
-h.updateCartItemsCount();
+const user = h.sbLocalStorage.getItem("user");
+if (user) {
+    h.updateCartItemsCount();
+}
+
+const cartBtn = document.getElementsByClassName('cart')[0];
+cartBtn?.addEventListener('click', h.openCart.bind(h));
 
 const menuEle = document.getElementsByClassName('menu')[0];
 menuEle?.addEventListener('click', h.toggleMenu);
-
-const cartBtn = document.getElementsByClassName('cart')[0];
-cartBtn?.addEventListener('click', h.openCart);
