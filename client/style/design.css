@@ -295,6 +295,7 @@ button:hover {
   padding: 0px;
   margin: 0;
   text-align: center;
+  border-radius: 2px;
 }
 
 .cart-container .Cart_Item .Item_responsive span {
@@ -341,15 +342,12 @@ button:hover {
   text-align: center;
 }
 
-.cart-footer div {
-  padding: 0.5rem;
-}
-
 .cart-footer button {
   width: 95%;
   margin-left: 5px;
   margin-right: 5px;
   border-radius: 2px;
+  margin-bottom: 10px;
 }
 
 .cart-footer span {

@@ -55,12 +55,13 @@ template.innerHTML = `
 
         .home-products {
             font-size: 14px;
+            padding: 10px
         }
 
         a {
             text-decoration: none;
             color: black;
-            margin-left: 10px;
+            margin-left: 20px;
         }
        
         @media only screen and (max-width: 600px) {

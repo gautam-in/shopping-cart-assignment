@@ -25,7 +25,7 @@
       </div>
     </div>
     <div class="cart-footer">
-      <div>Promo code can be applied on payment page</div>
+      <h5>Promo code can be applied on payment page</h5>
       <button>Proceed to Checkout <span id="total_Bill"></span>></button>
     </div>
     <div class="no-item" id="no-item">
@@ -106,7 +106,7 @@
         increaseBtn.innerText = "+";
         increaseBtn.addEventListener("click", () => increaseCount(index));
         const amountSpan = document.createElement("span");
-        amountSpan.innerText = ` X ${product.price}`;
+        amountSpan.innerText = ` X  Rs.${product.price}`;
 
         countCont.appendChild(decreaseBtn);
         countCont.appendChild(countSpan);
@@ -120,7 +120,7 @@
         const right = document.createElement("div");
         right.setAttribute("id", `amount-${product.id}`);
          total_Bill =  total_Bill + product.price * product.count;
-        right.innerText = `Rs. ${product.price * product.count}`;
+        right.innerText = `Rs.${product.price * product.count}`;
         item.appendChild(right);
 
         return item;

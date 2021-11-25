@@ -228,6 +228,7 @@ button:hover {
         padding: 0px;
         margin: 0;
         text-align: center;
+        border-radius: 2px;
       }
       span {
         margin: 0 10px;
@@ -266,14 +267,12 @@ button:hover {
 
 .cart-footer {
   text-align: center;
-  div {
-    padding: 0.5rem;
-  }
   button {
     width: 95%;
     margin-left: 5px;
     margin-right: 5px;
     border-radius: 2px;
+    margin-bottom: 10px;
   }
   span {
     margin: 0px 10px;
