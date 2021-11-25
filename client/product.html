@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sabka Bazar</title>
+    <link rel="stylesheet" href="style/design.css" />
+  </head>
+
+  <body>
+    <header id="main-header" class="main-header">
+      <uc-header count="0"></uc-header>
+    </header>
+    <div class="content-body">
+      <div class="left-section" id="categories-list"></div>
+      <div class="right-section">
+        <div class="product-container" id="product-container"></div>
+      </div>
+    </div>
+    <footer>
+      <uc-footer></uc-footer>
+    </footer>
+  </body>
+
+  <script defer src="./footer.js"></script>
+  <script defer src="./header.js"></script>
+
+  <script defer>
+    let count = localStorage.getItem("count") || "0";
+    const id = location.search.replace("?id=", "");
+    function getProductsList() {
+      fetch("http://localhost:5000/products")
+        .then((res) => res.json())
+        .then((products) => {
+          products.length ? showProductsList(products) : showNoItemFound();
+        });
+    }
+
+    function showNoItemFound() {
+      const container = document.querySelector("#product-container");
+      const noProduct = document.createElement("h3");
+      noProduct.classList.add("no-item-found");
+      noProduct.innerText = "There is no Product available!!";
+      container.appendChild(noProduct);
+    }
+
+    function ProductData(productDetails) {
+      let productCard = document.createElement("div");
+      productCard.classList.add("card");
+
+      let productLabel = document.createElement("h4");
+      productLabel.classList.add("word-break");
+      productLabel.innerHTML = productDetails.name;
+      productCard.append(productLabel);
+
+      let LabelImg = document.createElement("img");
+      LabelImg.setAttribute("src", "../../" + productDetails.imageURL);
+      LabelImg.setAttribute("alt", productDetails.name);
+      productCard.append(LabelImg);
+
+      let ProductDetails = document.createElement("div");
+      ProductDetails.classList.add("product-des");
+      ProductDetails.innerHTML = productDetails.description;
+      productCard.append(ProductDetails);
+
+      let BuyButton = document.createElement("button");
+      BuyButton.classList.add("buynow-btn");
+      BuyButton.setAttribute("id", productDetails.id);
+      BuyButton.innerHTML = `Buy Now @ ${productDetails.price}`;
+      BuyButton.addEventListener("click", () => addToCard(productDetails));
+      productCard.append(BuyButton);
+
+      return productCard;
+    }
+
+    function showProductsList(products) {
+      const container = document.querySelector("#product-container");
+      let moreThanOneProduct = true;
+      for (const product of products) {
+        if (id) {
+          if (id === product.category) {
+            moreThanOneProduct = false;
+            container.appendChild(ProductData(product));
+          }
+        } else {
+          moreThanOneProduct = false;
+          container.appendChild(ProductData(product));
+        }
+      }
+      if (moreThanOneProduct) showNoItemFound();
+    }
+
+    function getCategoriesList() {
+      fetch("http://localhost:5000/categories")
+        .then((res) => res.json())
+        .then((categories) => {
+          const container = document.querySelector("#categories-list");
+          categories.forEach((category) => {
+            container.appendChild(showCategoryList(category));
+          });
+        });
+    }
+
+    function addToCard(product) {
+      const header = document.querySelector("uc-header");
+      header.setAttribute("count", ++count);
+      checkIfProductAlreadyInCart(product);
+    }
+
+    function goToCategorySection(categoryId) {
+      location.href = `./product.html?id=${categoryId}`;
+    }
+
+    function showCategoryList(category) {
+      const categoryTile = document.createElement("button");
+      categoryTile.classList.add("category-btn");
+      categoryTile.innerText = category.name;
+      categoryTile.addEventListener("click", () =>
+        goToCategorySection(category.id)
+      );
+      return categoryTile;
+    }
+
+    function checkIfProductAlreadyInCart(product) {
+      const DublicateCartCheck = JSON.parse(localStorage.getItem("cartItems"));
+
+      if (DublicateCartCheck) {
+        let found = false;
+        for (let index = 0; index < DublicateCartCheck.length; index++) {
+          if (DublicateCartCheck[index].id === product.id) {
+            DublicateCartCheck[index].count =
+              DublicateCartCheck[index].count + 1;
+            found = true;
+            break;
+          }
+        }
+        if (!found) DublicateCartCheck.push({ ...product, count: 1 });
+        setItemsInLocalStorage(DublicateCartCheck, count);
+      } else {
+        setItemsInLocalStorage([{ ...product, count: 1 }], 1);
+      }
+    }
+
+    function setItemsInLocalStorage(productData, count) {
+      localStorage.setItem("count", count);
+      localStorage.setItem("cartItems", JSON.stringify(productData));
+    }
+
+    getProductsList();
+    getCategoriesList();
+  </script>
+</html>

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sabka Bazar</title>
+    <link rel="stylesheet" href="style/design.css" />
+    <script defer src="./header.js"></script>
+  </head>
+
+  <body>
+    <header id="main-header" class="main-header">
+      <uc-header count="0"></uc-header>
+    </header>
+    <div class="cart-container">
+      <div class="Cart_Item">
+        <h3>My Cart</h3>
+        <span class="Cart_Item_Count"></span>
+      </div>
+      <div class="cart-items"></div>
+      <div class="LowestPrice" id="lowestPrice">
+        <img src="../../static/images/lowest-price.png" alt="Lowest Price"></a>
+        <P>You won't find it cheaper anywhere</P>
+      </div>
+    </div>
+    <div class="cart-footer">
+      <h5>Promo code can be applied on payment page</h5>
+      <button>Proceed to Checkout <span id="total_Bill"></span>></button>
+    </div>
+    <div class="no-item" id="no-item">
+      <div class="container">
+        <div>
+          <h2>No items in your cart</h2>
+          <div>Your favourite items are just a click away.</div>
+        </div>
+      </div>
+      <div>
+        <button onclick="goToProducts()">Start Shopping</button>
+      </div>
+    </div>
+    <script defer>
+      function goToProducts() {
+        location.href = "./product.html";
+      }
+
+      let total_Bill = 0;
+      const cartItems = JSON.parse(localStorage.getItem("cartItems"));
+
+      function updateData() {
+        let count = +localStorage.getItem("count") || 0;
+        if (count > 0) {
+          document.querySelector("#no-item").classList.add("display-none");
+          document
+            .querySelector(".cart-container")
+            .classList.remove("display-none");
+          document
+            .querySelector(".cart-footer")
+            .classList.remove("display-none");
+          updateCartCount(count);
+
+          const cartItemsDiv = document.querySelector(".cart-items");
+          cartItems.forEach((product, index) => {
+            cartItemsDiv.appendChild(addItemToDom(product, index));
+          });
+          document.querySelector(
+            "#total_Bill"
+          ).innerText = `Rs. ${ total_Bill}`;
+        } else {
+          document.querySelector("#no-item").classList.remove("display-none");
+          document.querySelector(".cart-footer").classList.add("display-none");
+          document
+            .querySelector(".cart-container")
+            .classList.add("display-none");
+        }
+      }
+
+      function addItemToDom(product, index) {
+        const item = document.createElement("div");
+        item.classList.add("Cart_Item");
+        item.classList.add("product-details");
+
+        
+        const left = document.createElement("div");
+        left.classList.add("Item_responsive");
+
+      
+        const img = document.createElement("img");
+        img.src = `../../${product.imageURL}`;
+        left.appendChild(img);
+
+      
+        const contNameCount = document.createElement("div");
+        const name = document.createElement("h4");
+        name.innerText = product.name;
+        contNameCount.appendChild(name);
+
+        const countCont = document.createElement("div");
+        const decreaseBtn = document.createElement("button");
+        decreaseBtn.innerText = "-";
+        decreaseBtn.addEventListener("click", () => decreaseCount(index));
+        const countSpan = document.createElement("span");
+        countSpan.innerText = product.count;
+        countSpan.setAttribute("id", `count-${product.id}`);
+        const increaseBtn = document.createElement("button");
+        increaseBtn.innerText = "+";
+        increaseBtn.addEventListener("click", () => increaseCount(index));
+        const amountSpan = document.createElement("span");
+        amountSpan.innerText = ` X  Rs.${product.price}`;
+
+        countCont.appendChild(decreaseBtn);
+        countCont.appendChild(countSpan);
+        countCont.appendChild(increaseBtn);
+        countCont.appendChild(amountSpan);
+
+        contNameCount.appendChild(countCont);
+        left.appendChild(contNameCount);
+        item.appendChild(left);
+
+        const right = document.createElement("div");
+        right.setAttribute("id", `amount-${product.id}`);
+         total_Bill =  total_Bill + product.price * product.count;
+        right.innerText = `Rs.${product.price * product.count}`;
+        item.appendChild(right);
+
+        return item;
+      }
+
+      function updateCartCount(count) {
+        document.querySelector(".Cart_Item_Count").innerText = `(${count} ${
+          count > 1 ? "items" : "item"
+        })`;
+      }
+
+      function increaseCount(index) {
+        cartItems[index].count = cartItems[index].count + 1;
+         total_Bill =  total_Bill + cartItems[index].price;
+        const totalCount = +localStorage.getItem("count") + 1;
+        localStorage.setItem("count", totalCount);
+        updateCartCount(totalCount);
+        document.querySelector("uc-header").setAttribute("count", totalCount);
+        updateCountAndAmount(
+          cartItems[index].id,
+          cartItems[index].count,
+          cartItems[index].price
+        );
+      }
+
+      function decreaseCount(index) {
+        if (cartItems[index].count > 0) {
+          cartItems[index].count = cartItems[index].count - 1;
+           total_Bill =  total_Bill - cartItems[index].price;
+          const totalCount = +localStorage.getItem("count") - 1;
+          localStorage.setItem("count", totalCount);
+          document.querySelector("uc-header").setAttribute("count", totalCount);
+          updateCartCount(totalCount);
+          updateCountAndAmount(
+            cartItems[index].id,
+            cartItems[index].count,
+            cartItems[index].price
+          );
+        }
+      }
+
+      function updateCountAndAmount(productId, count, price) {
+        document.querySelector(`#count-${productId}`).innerText = count;
+        document.querySelector(`#amount-${productId}`).innerText = `Rs. ${
+          count * price
+        }`;
+        document.querySelector(
+          "#total_Bill"
+        ).innerText = `Rs. ${ total_Bill}`;
+        localStorage.setItem("cartItems", JSON.stringify(cartItems));
+      }
+
+      updateData();
+    </script>
+  </body>
+</html>

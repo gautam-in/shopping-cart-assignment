@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sabka Bazar</title>
+    <link rel="stylesheet" href="style/design.css" />
+  </head>
+
+  <body>
+    <header id="main-header" class="main-header">
+      <uc-header count="0"></uc-header>
+    </header>
+    <div class="banners-container" id="banners-container"></div>
+    <footer>
+      <uc-footer></uc-footer>
+    </footer>
+  </body>
+  <script defer src="./header.js"></script>
+  <script defer src="./footer.js"></script>
+  <script defer>
+    const baseUrl = "../../";
+    function getProductsList() {
+      const bannerPromise = fetch("http://localhost:5000/banners").then((res) =>
+        res.ok ? res.json() : ""
+      );
+      const categoriesPromise = fetch("http://localhost:5000/categories").then(
+        (res) => (res.ok ? res.json() : "")
+      );
+      Promise.all([bannerPromise, categoriesPromise])
+        .then((response) => {
+          showCategoriesList(response[1]);
+        })
+        .catch((error) => {
+          console.log("Unexpected Error");
+        });
+    }
+
+    function showCategoriesList(categories) {
+      const container = document.querySelector("#banners-container");
+      categories.forEach((category, index) => {
+        container.appendChild(
+          showCategoryData(
+            category,
+            index % 2 === 0 ? "imageRight" : "imageLeft"
+          )
+        );
+      });
+    }
+
+    function showCategoryData(category, imageAlignment) {
+      let categoryCard = document.createElement("div");
+      categoryCard.classList.add("category-banner");
+
+      let GoodsTypeInfo = document.createElement("div");
+      GoodsTypeInfo.classList.add("category-details");
+
+      let categoryImage;
+      if (category.imageUrl) {
+        GoodsImgs = document.createElement("div");
+        GoodsImgs.classList.add("image-section");
+        categoryImage = document.createElement("img");
+        categoryImage.setAttribute("src", `${baseUrl}${category.imageUrl}`);
+        categoryImage.setAttribute("alt", category.name);
+        GoodsImgs.append(categoryImage);
+      } else {
+        categoryImage = document.createElement("div");
+      }
+      let categoryName = document.createElement("h3");
+      categoryName.classList.add("category-name");
+      categoryName.innerHTML = category.name;
+
+      let categoryDescription = document.createElement("div");
+      categoryDescription.classList.add("category-des");
+      categoryDescription.innerHTML = category.description;
+
+      let categoryBtn = document.createElement("button");
+      categoryBtn.classList.add("category-btn");
+      categoryBtn.innerHTML = `Explore ${category.key}`;
+      categoryBtn.addEventListener("click", () =>
+        goToCategorySection(category.id)
+      );
+
+      GoodsTypeInfo.append(categoryName);
+      GoodsTypeInfo.append(categoryDescription);
+      GoodsTypeInfo.append(categoryBtn);
+
+      if (imageAlignment === "imageLeft") {
+        categoryCard.append(GoodsImgs);
+        categoryCard.append(GoodsTypeInfo);
+      } else {
+        categoryCard.append(GoodsTypeInfo);
+        categoryCard.append(GoodsImgs);
+      }
+
+      return categoryCard;
+    }
+
+    function goToCategorySection(categoryId) {
+      location.href = `./product.html?id=${categoryId}`;
+    }
+
+    getProductsList();
+  </script>
+</html>

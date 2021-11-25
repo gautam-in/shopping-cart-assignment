@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sabka Bazar</title>
+    <link rel="stylesheet" href="style/design.css" />
+  </head>
+
+  <body>
+    <header id="main-header" class="main-header">
+      <uc-header count="0"></uc-header>
+    </header>
+    <div class="loginForm">
+      <div class="column">
+        <h2>Login</h2>
+        <p>Get access to your Orders, Wishlist and Recommendations</p>
+      </div>
+      <div class="column">
+        <form onsubmit="SubmitForm(event)">
+          <input type="email" id="email" placeholder="Email" required />
+          <input
+            type="password"
+            id="password"
+            placeholder="Password"
+            required
+          />
+          <br />
+          <button type="submit">Login</button>
+        </form>
+      </div>
+    </div>
+    <footer>
+      <uc-footer></uc-footer>
+    </footer>
+  </body>
+
+  <script defer src="./header.js"></script>
+  <script defer src="./footer.js"></script>
+  <script defer>
+    function SubmitForm(e) {
+      alert("Data submitted successfully");
+      e.preventDefault();
+    }
+  </script>
+</html>
