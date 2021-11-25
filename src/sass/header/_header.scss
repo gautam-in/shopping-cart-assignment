@@ -1,0 +1,200 @@
+@use '../responsive-mixin' as *;
+
+.main-header {
+    width: 100%;
+    box-shadow: 0px 1px 4px 1px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    padding: 0.5rem 0;
+    img {
+        height: 6rem;
+        
+        @include responsive-sm {
+            height: 2.4rem;
+            justify-self: flex-start;
+        }
+    }
+}
+
+ul {
+    list-style: none;
+}
+
+.sb-navbar {
+    display: flex;
+    align-items: center;
+
+    @include responsive-sm {
+        width: 100%;
+        height: 100%;
+        gap: 1rem;
+        justify-content: space-between;
+    }
+
+    .main-nav {
+        align-self: flex-end;
+        margin: {
+            bottom: 2rem;
+            left: 4.8rem;
+            right: auto;
+        };
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+
+        @include responsive-sm {
+            display: none;
+        }
+
+        .main-nav-item {
+            cursor: pointer;
+            
+            .main-nav-link {
+                display: block;
+                padding: 0.5rem 1rem;
+                text-decoration: none;
+                color: $textPrimaryColor;
+                font-size: 1.2rem;
+                font-weight: 600;
+            }
+
+            .main-nav-link:active {
+                font-weight: 900;
+            }
+        }
+
+        .main-nav-item:hover {
+            background-color: #e9ecef;
+            border-radius: 0.3rem;
+
+            .main-nav-link {
+                font-weight: 900;
+            }
+        }
+    }
+
+    .secondary-nav-parent {
+        align-self: flex-start;
+        width: 100px;
+
+        @include responsive-sm {
+            width: 80px;
+            align-self: stretch;
+            margin: {
+                left: auto;
+            }
+        }
+    }
+
+    .secondary-nav {
+        @extend .main-nav;
+        justify-content: flex-end;
+        padding-top: 0.5rem;
+        gap: 1rem;
+
+        .secondary-nav-item {
+            cursor: pointer;
+            
+            .secondary-nav-link {
+                display: block;
+                padding: 0.2rem 0.5rem;
+                text-decoration: none;
+                color: $textPrimaryColor;
+                font-weight: 600;
+                font-size: 1rem;
+            }
+        }
+
+        .secondary-nav-item:hover {
+            background-color: #e9ecef;
+            border-radius: 0.3rem;
+        }
+    }
+}
+
+.cart {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    background-color: #e9ecef;
+    padding: 1rem 0;
+    cursor: pointer;
+
+    @include responsive-sm {
+        height: 100%;
+        padding: 0 0.5rem;
+        gap: .5rem;
+    }
+}
+
+.cart-btn {
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: $textPrimaryColor;
+}
+
+.cart-icon {
+    stroke: $primaryColor;
+    fill: $primaryColor;
+    width: 2rem;
+    height: 2rem;
+}
+
+.menu {
+    display: none;
+    cursor: pointer;
+    
+    @include responsive-sm {
+        display: block;
+    }
+}
+
+.menu-btn {
+    @extend .cart-icon;
+}
+
+.main-side-nav {
+    display: none;
+    transform: translateX(-110%);
+    transition: transform 400ms ease-in-out;
+    position: fixed;
+    width: 80%;
+    height: 100%;
+    background-color: #d6336c;
+    top: 4rem;
+    left: 0;
+    z-index: 100;
+
+    @include responsive-sm {        
+        display: block;
+    }
+    
+    @include responsive-md {
+        display: none;
+    }
+    @include responsive-lg {
+        display: none;
+    }
+
+    .side-nav {
+        list-style: none;
+        padding-top: 1rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+
+        .side-nav-link {
+            text-decoration: none;
+            color: #f1f3f5;
+            font-weight: 600;
+        }
+    }
+}
+
+.main-side-nav.show {
+    transform: translateX(0%);
+}

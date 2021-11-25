@@ -1,0 +1,20 @@
+$smWidth: 560px;
+$mdWidth: 920px;
+
+@mixin responsive-sm {
+    @media (max-width: $smWidth) {
+        @content;
+    }
+}
+
+@mixin responsive-md {
+    @media (min-width: $smWidth) and (max-width: $mdWidth) {
+        @content;
+    }
+}
+
+@mixin responsive-lg {
+    @media (min-width: $mdWidth) {
+        @content;
+    }
+}

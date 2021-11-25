@@ -1,0 +1,124 @@
+@use '../index' as *;
+
+.sb-carousel-container {
+    width: 100%;
+    margin: 1rem 0;
+    position: relative;
+    overflow-x: hidden;
+    z-index: 20;
+
+    .sb-carousel-list {
+        width: 100%;
+        display: flex;
+        justify-content: flex-start;
+
+        .sb-carousel-item {
+            &:first-child {
+                display: block;
+            }
+
+            &:not(first-child) {
+                display: none;
+            }
+
+            /* animation: slide-carousel 500ms ease-out;
+            @keyframes slide-carousel {
+                from {
+                    transform: translateX(-100%);
+                }
+
+                to {
+                    transform: translateX(0%);
+                }
+            } */
+
+            img {
+                display: block;
+                width: 100%;
+            }
+        }
+    }
+}
+
+.sb-carousel-btn {
+    cursor: pointer;
+    width: 4.8rem;
+    height: 4.8rem;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    border: none;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &:hover {
+        background-color: rgba($primaryColor, 0.75);
+    
+        .left-icon, .right-icon {
+            stroke: #fff;
+        }
+    }
+
+    .left-icon, .right-icon {
+        width: 2.4rem;
+        height: 2.4rem;
+        stroke: $primaryColor;
+    }
+}
+
+.sb-carousel-btn-left {
+    transform: translateY(-50%);
+}
+
+.sb-carousel-btn-right {
+    left: 100%;
+    transform: translateX(-100%) translateY(-50%);
+}
+
+.sb-carousel-dots-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    position: absolute;
+    bottom: 2rem;
+
+    @include responsive-sm {
+        position: static;
+        margin-top: 1rem;
+        gap: 1.5rem;
+    }
+
+    @include responsive-md {
+        gap: 1.5rem;
+        bottom: 1rem;
+    }
+
+    .dot-item {
+        width: 0.6rem;
+        height: 0.6rem;
+        border-radius: 50%;
+        background-color: #fcc2d7;
+    }
+}
+
+.dot-item.dot-active {
+    background-color: $primaryColor;
+}
+
+.shadow {
+    display: block;
+    width: 80%;
+    margin: 0 auto;
+    height: 0.7rem;
+    border-radius: 50% / 100%;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    transform: translateY(-50%);
+    z-index: -1;
+    background-image: radial-gradient(at 50% -90%, rgba(0, 0, 0, 0.5), #fff);
+    box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.1);
+    mix-blend-mode: screen; /* To make z-index work */
+}

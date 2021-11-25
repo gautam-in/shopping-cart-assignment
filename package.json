@@ -5,11 +5,17 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "canned -p 5000 ./server"
+    "start": "npm run open",
+    "open": "concurrently \"http-server -a localhost -p 3000\" \"open http://localhost:3000/build\" \"sass --watch src/sass/styles.scss src/css/styles.css\""
   },
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "canned": "^0.3.12"
+    "canned": "^0.3.12",
+    "sass": "^1.43.4"
+  },
+  "devDependencies": {
+    "concurrently": "^6.3.0",
+    "http-server": "^14.0.0"
   }
 }

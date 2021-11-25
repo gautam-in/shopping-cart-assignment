@@ -1,0 +1,57 @@
+@use 'index' as *;
+
+$primaryColor: #c2255c;
+$textPrimaryColor: #495057;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: 'Dosis', sans-serif;
+    filter: blur(0px);
+}
+
+
+.sb-container {
+    width: 92rem;
+    margin: 0 auto;
+    position: relative;
+        
+    @include responsive-sm {
+        width: 100%;
+        margin: 0;
+    }
+        
+    @include responsive-md {
+        width: 100%;
+        margin: 0 auto;
+    }
+}
+
+@import 'global';
+
+@import 'header/header';
+
+// Home
+@import 'home/home';
+
+@import 'products/products';
+
+// Footer
+@import 'footer/footer';
+
+// Cart
+@import 'cart/cart';
+
+// Signup
+@import 'sign-up/sign-up';
+
+// Signup
+@import 'login/login';

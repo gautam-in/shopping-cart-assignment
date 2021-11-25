@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign up</title>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Dosis:400,600,700">
+    <link rel="stylesheet" href="/src/css/styles.css">
+
+    <script src="signup.js" type="module" defer></script>
+    <script src="/src/header/header.js" type="module" defer></script>
+</head>
+
+<body>
+    <header id="main-header" class="main-header"></header>
+    <main>
+        <div class="sb-container">
+            <div class="sb-signup-container">
+                <section>
+                    <h1 class="signup-title">Signup</h1>
+                    <p class="signup-info">We do not share your personal details with anyone</p>
+                </section>
+                <section>
+                    <form id="signup-form" class="signup-form">
+                        <div class="form-field">
+                            <input type="text" name="firstname" id="firstname" class="form-input">
+                            <label for="firstname" class="form-input-label">First Name</label>
+                        </div>
+                        <div class="form-field">
+                            <input type="text" name="lastname" id="lastname" class="form-input">
+                            <label for="lastname" class="form-input-label">Last Name</label>
+                        </div>
+                        <div class="form-field">
+                            <input type="email" name="email" id="email" class="form-input">
+                            <label for="email" class="form-input-label">Email</label>
+                        </div>
+                        <div class="form-field">
+                            <input type="password" name="password" id="password" class="form-input">
+                            <label for="password" class="form-input-label">Password</label>
+                        </div>
+                        <div class="form-field">
+                            <input type="password" name="confirmPassword" id="confirmPassword" class="form-input">
+                            <label for="confirmPassword" class="form-input-label">Confirm Password</label>
+                        </div>
+
+                        <button type="submit" class="sb-btn sb-full-width">Signup</button>
+                    </form>
+                </section>
+            </div>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="sb-container">
+            Copyright &copy; 2011-2021 Sabka Bazaar Grocery Supplies Pvt Ltd
+        </div>
+    </footer>
+</body>
+
+</html>

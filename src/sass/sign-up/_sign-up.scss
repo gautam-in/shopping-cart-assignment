@@ -1,0 +1,64 @@
+@use '../responsive-mixin' as *;
+
+.sb-signup-container {
+    display: flex;
+    justify-content: space-around;
+    padding-top: 4rem;
+    padding-bottom: 1rem;
+
+    @include responsive-sm {
+        flex-direction: column;
+        gap: 2rem;
+        align-items: center;
+    }
+
+    .signup-title {
+        margin: 1rem 2rem;
+        font-size: 2.4rem;
+    }
+
+    .signup-info {
+        @extend .signup-title;
+        font-size: 1.2rem;
+    }
+
+    .form-field {
+        position: relative;
+        margin-bottom: 2.5rem;
+    
+        .form-input-label {
+            color: rgba($textPrimaryColor, 0.6);
+            position: absolute;
+            left: 0;
+            top: 0.5rem;
+            font-size: 1.4rem;
+            font-weight: 600;
+            transition: all 0.25s ease-out;
+            user-select: none;
+            cursor: text;
+        }
+    
+        .form-input {
+            width: 30rem;
+            height: 3rem;
+            color: $textPrimaryColor;
+            font-family: inherit;
+            border: none;
+            border-bottom: 1.5px solid rgba(0, 0, 0, 0.25);
+        }
+    
+        .form-input:focus,
+        .float-form-input-color {
+            outline: 0;
+            border-bottom-color: #3bc9db;
+        }
+    
+        .form-input:focus + .form-input-label,
+        .float-label {
+            transform: translateY(-2rem);
+            font-size: 1.2rem;
+            color: #3bc9db;
+            left: 0;
+        }
+    }
+}
