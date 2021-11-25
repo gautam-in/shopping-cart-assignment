@@ -1,0 +1,123 @@
+
+@media (max-width: 75em) {
+    html{
+        font-size: 62.5%;
+    }
+}
+
+
+@media (max-width: 53em) {
+    html{
+        font-size: 56.25%;
+    }
+
+    .mainSection {
+        grid-template-columns: 1.5fr 3fr;
+    }  
+    
+    .productContent {
+        grid-template-columns: repeat(2, 1fr);
+    }   
+   
+    .productTile {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .productTitle, .btnBlock {
+        grid-column: 1/-1
+    }
+    .product-buyBtn-smallDevice {
+        display: block                                                                                                                   ;
+    }
+
+    .btnBlock {
+        display: none;
+    }
+
+    .productBuyBtnSmallDevice {
+        grid-column: 1/-1;
+    }
+
+}
+
+@media (max-width: 46em) {
+    html{
+        font-size: 50.0%;
+    }
+
+    .mainSection {
+        grid-template-columns: 1fr;
+    }  
+
+    .productContent {
+        grid-template-columns: 1fr 1fr;
+    } 
+    
+    .productTitle { grid-area: title; }
+    .productImg { grid-area: image; }
+    .productDesc { grid-area: desc; }
+    .productBuyBtnSmallDevice { grid-area: btn; }
+
+    .productTile {
+        grid-template-areas:
+        'title title'
+        'image desc'
+        'image btn';
+    }
+    
+    .productTitle {
+        grid-column: 1/-1
+    }
+
+    .btnBlock {
+        grid-column: 2;
+    }
+
+    .sidebarSection {
+        display:none;
+    }
+    .mobile-nav-list {
+        display: block;
+    }
+}
+
+
+@media (max-width: 38em) {
+
+    html{
+        font-size: 44.0%;
+    }
+
+    .productContent {
+        grid-template-columns: 1fr;
+    }
+    
+    .productTitle { grid-area: title; }
+    .productImg { grid-area: image; }
+    .productDesc { grid-area: desc; }
+    .product-buyBtn-smallDevice { grid-area: btn; }
+
+    .productTile {
+        grid-template-areas:
+        'title title'
+        'image desc'
+        'image desc'
+        'image desc'
+        'image btn';
+    }
+    
+    .productTitle {
+        grid-column: 1/-1
+    }
+
+    .btnBlock {
+        grid-column: 2;
+    }
+
+    .sidebarSection {
+        display:none;
+    }
+    .mobile-nav-list {
+        display: block;
+    }
+}
