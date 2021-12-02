@@ -26,6 +26,13 @@ module.exports = (env) => {
       clean: true,
       assetModuleFilename: "assets/[name][hash][ext][query]",
     },
+    resolve: {
+      // These options change how modules are resolved.
+      // Webpack provides reasonable defaults, but it is possible to change the resolving in detail.
+      alias: {
+        handlebars: "handlebars/dist/handlebars.js",
+      },
+    },
     optimization: {
       // Webpack provides an optimization feature to split runtime code
       // into a separate chunk using the optimization.runtimeChunk option.
@@ -103,6 +110,7 @@ module.exports = (env) => {
           test: /\.(woff|woff2|eot|ttf|otf)$/i,
           type: "asset/resource",
         },
+        { test: /\.handlebars$/, loader: "handlebars-loader" },
       ],
     },
     plugins: [
@@ -116,8 +124,9 @@ module.exports = (env) => {
         ignoreOrder: false, // Enable to remove warnings about conflicting order
       }),
       new HtmlWebpackPlugin({
-        title: "Output Management",
+        title: "Sabka Bazaar: One stop solution for all your groceries.",
         template: `./client/index.html`, // relative path to the HTML file template
+        favicon: "./static/images/icon.svg",
       }),
       new CopyPlugin({
         patterns: [
