@@ -1,0 +1,60 @@
+.header-container {
+  height: 90px;
+  display: flex;
+  align-self: center;
+  justify-content: space-between;
+  box-shadow: 0 8px 6px -7px $light-gray-shadow;
+
+  .logo-link {
+    margin-right: 100px;
+    display: block;
+  }
+
+  #logo-img {
+    max-height: 70px;
+  }
+
+  .nav-bar {
+    display: flex;
+    align-self: center;
+
+    .nav-link {
+      font-size: 16px;
+      font-weight: 600;
+      margin-top: 25px;
+      color: $font-medium-gray;
+    }
+  }
+
+  .right-actions {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+
+    .auth-link {
+      color: $font-dark-gray;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+    }
+    .cart-button {
+      background-color: $light-gray;
+      display: flex;
+      flex-direction: row;
+      width: 150px;
+      height: 55px;
+      align-items: center;
+      border-radius: 0;
+
+      img {
+        max-height: 35px;
+        margin-right: 10px;
+      }
+
+      div {
+        white-space: nowrap;
+      }
+    }
+  }
+}

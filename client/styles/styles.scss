@@ -1,4 +1,7 @@
-$body-color: blue;
+@import "~bootstrap/scss/bootstrap";
+@import "variables";
+@import "header";
+@import url("https://fonts.googleapis.com/css2?family=Dosis:wght@200;300;400;500;600;700;800&display=swap");
 
 // @font-face {
 //   font-family: 'MyFont';
@@ -7,8 +10,37 @@ $body-color: blue;
 //   font-weight: 600;
 //   font-style: normal;
 // }
+*,
+*::before,
+*::after {
+  font-family: "Dosis", sans-serif;
+  font-weight: 500;
+}
 
-h1 {
-  // font-family: 'MyFont';
-  color: $body-color;
+.btn:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+// X-Small devices (portrait phones, less than 576px)
+// No media query for `xs` since this is the default in Bootstrap
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+}
+
+// X-Large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+}
+
+// XX-Large devices (larger desktops, 1400px and up)
+@media (min-width: 1400px) {
 }
