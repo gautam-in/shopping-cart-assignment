@@ -1,5 +1,3 @@
-import '../styles/styles.scss';
+import "../styles/styles.scss";
 
-(function () {
-    document.querySelector('#message').textContent = 'Project by JJ';
-})();
+(function () {})();

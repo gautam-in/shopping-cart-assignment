@@ -2,6 +2,7 @@ const path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
+const CopyPlugin = require("copy-webpack-plugin");
 
 module.exports = (env) => {
   const isProductionMode = !!env.production;
@@ -9,20 +10,21 @@ module.exports = (env) => {
 
   return {
     mode: isProductionMode ? "production" : "development",
-    // devtool: "source-map", // any "source-map"-like devtool is possible
-    devtool: "inline-source-map",
+    devtool: isProductionMode ? "source-map" : "inline-source-map",
     devServer: {
       static: "./dist",
     },
     // entry: "./client/scripts/index.js",
     entry: {
-      index: "./client/scripts/index.js",
-      print: "./client/scripts/home.js",
+      main: ["./client/scripts/index.js", "./client/scripts/home.js"],
     },
     output: {
-      filename: "[name].[contenthash].js",
+      filename: isProductionMode
+        ? "[name].[contenthash].js"
+        : "[name].bundle.js",
       path: path.resolve(__dirname, "dist"),
       clean: true,
+      assetModuleFilename: "assets/[name][hash][ext][query]",
     },
     optimization: {
       // Webpack provides an optimization feature to split runtime code
@@ -58,6 +60,16 @@ module.exports = (env) => {
     },
     module: {
       rules: [
+        {
+          test: /\.m?js$/,
+          exclude: /(node_modules|bower_components)/,
+          use: {
+            loader: "babel-loader",
+            options: {
+              presets: ["@babel/preset-env"],
+            },
+          },
+        },
         {
           test: /\.(sa|sc|c)ss$/i,
           use: [
@@ -105,6 +117,16 @@ module.exports = (env) => {
       }),
       new HtmlWebpackPlugin({
         title: "Output Management",
+        template: `./client/index.html`, // relative path to the HTML file template
+      }),
+      new CopyPlugin({
+        patterns: [
+          // Copy static assets, images etc
+          {
+            from: path.resolve(__dirname, "static"),
+            to: path.resolve(__dirname, "dist", "static"),
+          },
+        ],
       }),
     ],
   };
