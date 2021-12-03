@@ -1,9 +1,11 @@
 .header-container {
-  height: 90px;
-  display: flex;
-  align-self: center;
-  justify-content: space-between;
   box-shadow: 0 8px 6px -7px $light-gray-shadow;
+  .container {
+    height: 90px;
+    display: flex;
+    align-self: center;
+    justify-content: space-between;
+  }
 
   .logo-link {
     margin-right: 100px;

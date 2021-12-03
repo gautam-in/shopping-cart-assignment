@@ -1,0 +1,4 @@
+.content-container {
+    /*header height + footer height = 90px + 50px = 140px*/
+    min-height: calc(100vh - 140px);
+}
