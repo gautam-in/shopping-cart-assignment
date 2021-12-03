@@ -110,7 +110,16 @@ module.exports = (env) => {
           test: /\.(woff|woff2|eot|ttf|otf)$/i,
           type: "asset/resource",
         },
-        { test: /\.handlebars$/, loader: "handlebars-loader" },
+        {
+          test: /\.handlebars$/,
+          loader: "handlebars-loader",
+          options: {
+            helperDirs: path.join(__dirname, "client/scripts/helpers"),
+            precompileOptions: {
+              knownHelpersOnly: false,
+            },
+          },
+        },
       ],
     },
     plugins: [

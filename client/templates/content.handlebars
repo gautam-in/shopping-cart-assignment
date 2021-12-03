@@ -2,16 +2,20 @@
   <div class="container">
     Content
     <div id="route-content">
-
+      {{#ifCond page '===' 'login'}}
       {{> login}}
-    </div>
-    
+      {{/ifCond}}
 
-    {{!-- <script id="entry-template" type="text/x-handlebars-template">
+      {{#ifCond page '===' 'register'}}
+      {{> register}}
+      {{/ifCond}}
+    </div>
+  </div>
+</main>
+
+{{!--
+<script id="entry-template" type="text/x-handlebars-template">
       <div class="entry"> <h1>{{title}}</h1> <div class="body">
       {{body}}
       </div> </div>
     </script> --}}
-
-  </div>
-</main>
