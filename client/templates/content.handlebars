@@ -1,21 +1,46 @@
 <main class="content-container">
   <div class="container">
-    Content
-    <div id="route-content">
-      {{#ifCond page '===' 'login'}}
-      {{> login}}
-      {{/ifCond}}
-
-      {{#ifCond page '===' 'register'}}
-      {{> register}}
-      {{/ifCond}}
-    </div>
+    <div id="route-content"></div>
   </div>
 </main>
 
+{{!-- -------------------------------------------------------------------------------------- --}}
+{{! START Method 1 : By using view partials directly in template }}
+{{!-- <div id="route-content">
+  {{#ifCond page '===' 'login'}}
+  {{> login}}
+  {{/ifCond}}
+
+  {{#ifCond page '===' 'register'}}
+  {{> register}}
+  {{/ifCond}}
+</div> --}}
+{{!-- Partial view switching can be done by running script --}}
+{{!--
+import template from "../templates/layout.handlebars";
+const context = {
+page: "register",
+};
+const html = template(context);
+document.querySelector("#app-root").innerHTML = html;
+--}}
+{{!-- END Method 1 --}}
+
+{{!-- -------------------------------------------------------------------------------- --}}
+
+{{!-- START Method 2: Runtime template compilation method --- Not recommended in this Application --}}
 {{!--
 <script id="entry-template" type="text/x-handlebars-template">
-      <div class="entry"> <h1>{{title}}</h1> <div class="body">
-      {{body}}
-      </div> </div>
-    </script> --}}
+  <div class="entry"> <h1>{{title}}</h1> <div class="body">
+  {{body}}
+  </div> </div>
+</script> --}}
+{{!-- Runtime compilation can be done using script --}}
+{{!--
+import Handlebars from "handlebars";
+const source = document.getElementById("entry-template").innerHTML;
+const template = Handlebars.compile(source);
+const html = template({});
+document.querySelector("#route-content").innerHTML = html;
+--}}
+{{!-- END Method 2 --}}

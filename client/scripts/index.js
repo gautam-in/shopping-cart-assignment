@@ -1,29 +1,14 @@
 import "../styles/styles.scss";
-
-import Handlebars from "handlebars";
-// var template = require("../templates/header.handlebars");
 import template from "../templates/layout.handlebars";
+import LoginView from "./views/LoginView";
+import RegisterView from "./views/RegisterView";
 
 (function () {
-  var context = {
-    page: "register",
-    title: "My New Post 12345",
-    body: "This is my first post!",
-  };
-  var html = template(context);
-  document.querySelector("#app-root").innerHTML = html; // Call multiple times to show different pages data
-
-  // var source = document.getElementById("entry-template").innerHTML;
-  // var template2 = Handlebars.compile(source);
-  // // var context2 = { title: "My New Post 12345", body: "This is my first post!" };
-  // var html2 = template2({});
-  // document.querySelector("#route-content").innerHTML = html2;
-
   function router() {
     const routes = [
-      { path: "/", view: () => console.log("Viewing Home") },
-      { path: "/login", view: () => console.log("Viewing Login") },
-      { path: "/register", view: () => console.log("Viewing Register") },
+      { path: "/", view: LoginView },
+      { path: "/login", view: LoginView },
+      { path: "/register", view: RegisterView },
     ];
 
     // Test each route for potential match
@@ -38,10 +23,40 @@ import template from "../templates/layout.handlebars";
       (potentialMatch) => potentialMatch.isMatch
     );
 
-    console.log(match);
+    if (!match) {
+      // If there is no match switch to default route '/'
+      match = {
+        route: routes[0],
+        isMatch: true,
+      };
+    }
+
+    const currentView = new match.route.view();
+    const preCompiledViewTemplate = currentView.getTemplate();
+    const viewHtml = preCompiledViewTemplate({});
+    document.querySelector("#route-content").innerHTML = viewHtml;
   }
 
+  function navigateTo(url) {
+    history.pushState(null, null, url);
+    router();
+  }
+
+  window.addEventListener("popstate", (event) => {
+    router();
+  });
+
   document.addEventListener("DOMContentLoaded", () => {
+    const html = template({});
+    document.querySelector("#app-root").innerHTML = html;
+
+    document.body.addEventListener("click", (e) => {
+      if (e.target.matches("[data-link]")) {
+        e.preventDefault();
+        navigateTo(e.target.href);
+      }
+    });
+
     router();
   });
 })();
