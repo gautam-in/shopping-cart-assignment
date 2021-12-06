@@ -1,7 +1,11 @@
+/*Bootstrap variables override*/
+$form-floating-label-transform: scale(.85) translateY(-1rem) translateX(.15rem);
+
 /*Font Colors*/
 $font-dark-gray: #4c4e46;
 $font-medium-gray: #808087;
 $font-light-gray: #b8b6b7;
+$font-cyan: #79cbc6;
 
 /*Shadow colors*/
 $light-gray-shadow: #c4c4c4;
@@ -12,4 +16,8 @@ $footer-gray: #eaeaea;
 /*Theme colors*/
 $crimson-pink: #d00155;
 $light-gray: #eeeeee;
-$cyan: #59c7d0;
+
+
+/*Input field colors*/
+$text-field-border: #e2e2e2;
+$text-field-border-focus: #59c7cf;

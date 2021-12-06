@@ -12,4 +12,8 @@ export default class LoginView extends AbstractView {
   getTemplate() {
     return template;
   }
+
+  onSubmitHandler() {
+    alert("hello");
+  }
 }

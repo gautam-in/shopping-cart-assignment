@@ -3,12 +3,15 @@ import template from "../templates/layout.handlebars";
 import LoginView from "./views/LoginView";
 import RegisterView from "./views/RegisterView";
 
+const loginInstance = new LoginView();
+const registerInstance = new RegisterView();
+
 (function () {
   function router() {
     const routes = [
-      { path: "/", view: LoginView },
-      { path: "/login", view: LoginView },
-      { path: "/register", view: RegisterView },
+      { path: "/", view: loginInstance },
+      { path: "/login", view: loginInstance },
+      { path: "/register", view: registerInstance },
     ];
 
     // Test each route for potential match
@@ -31,7 +34,7 @@ import RegisterView from "./views/RegisterView";
       };
     }
 
-    const currentView = new match.route.view();
+    const currentView = match.route.view;
     const preCompiledViewTemplate = currentView.getTemplate();
     const viewHtml = preCompiledViewTemplate({});
     document.querySelector("#route-content").innerHTML = viewHtml;
@@ -58,5 +61,12 @@ import RegisterView from "./views/RegisterView";
     });
 
     router();
+
+    document
+      .getElementById("loginForm")
+      .addEventListener("submit", function (event) {
+        event.preventDefault();
+        loginInstance.onSubmitHandler();
+      });
   });
 })();
