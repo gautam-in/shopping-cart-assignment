@@ -1,3 +1,35 @@
 <section>
-  Register
+  <div class="row register-container">
+    <div class="col-md-auto">
+      <h1 class="info-title">Signup</h1>
+      <p class="info-desc">We do not share your personal details with anyone.</p>
+    </div>
+    <div class="col-md-5 register-form-section">
+      <form id="registerForm">
+        <div class="form-floating mb-3">
+          <input type="text" class="form-control" id="txtFirstName" name="firstName" placeholder="First Name" required>
+          <label for="txtFirstName">First Name</label>
+        </div>
+        <div class="form-floating mb-3">
+          <input type="text" class="form-control" id="txtLastName" name="lastName" placeholder="Last Name" required>
+          <label for="txtLastName">Last Name</label>
+        </div>
+        <div class="form-floating mb-3">
+          <input type="email" class="form-control" id="txtEmail" name="email" placeholder="name@example.com" required>
+          <label for="txtEmail">Email</label>
+        </div>
+        <div class="form-floating mb-3">
+          <input type="password" class="form-control" id="txtPassword" name="password" placeholder="Password" required>
+          <label for="txtPassword">Password</label>
+        </div>
+        <div class="form-floating mb-5">
+          <input type="password" class="form-control" id="txtConfirmPassword" name="confirmPassword"
+            placeholder="Confirm Password" required>
+          <label for="txtConfirmPassword">Confirm Password</label>
+        </div>
+
+        <button class="btn btnCrimsonPink w-100" type="submit">Signup</button>
+      </form>
+    </div>
+  </div>
 </section>

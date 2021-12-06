@@ -7,9 +7,10 @@ const loginInstance = new LoginView();
 const registerInstance = new RegisterView();
 
 (function () {
+  let currentPath = null;
   function router() {
     const routes = [
-      { path: "/", view: loginInstance },
+      { path: "/", view: registerInstance },
       { path: "/login", view: loginInstance },
       { path: "/register", view: registerInstance },
     ];
@@ -35,14 +36,74 @@ const registerInstance = new RegisterView();
     }
 
     const currentView = match.route.view;
+    currentPath = match.route.path;
     const preCompiledViewTemplate = currentView.getTemplate();
     const viewHtml = preCompiledViewTemplate({});
     document.querySelector("#route-content").innerHTML = viewHtml;
+
+    addEventListenersOnCurrentView(currentPath);
+  }
+
+  function addEventListenersOnCurrentView(currentPath) {
+    switch (currentPath) {
+      case "/":
+        document
+          .getElementById("registerForm")
+          .addEventListener("submit", registerOnSubmit);
+        break;
+      case "/login":
+        document
+          .getElementById("loginForm")
+          .addEventListener("submit", loginOnSubmit);
+        break;
+      case "/register":
+        document
+          .getElementById("registerForm")
+          .addEventListener("submit", registerOnSubmit);
+        break;
+      default:
+        break;
+    }
+  }
+
+  function removeEventListenersOnPreviousView(previousPath) {
+    switch (previousPath) {
+      case "/":
+        document
+          .getElementById("registerForm")
+          .removeEventListener("submit", registerOnSubmit);
+        break;
+      case "/login":
+        document
+          .getElementById("loginForm")
+          .removeEventListener("submit", loginOnSubmit);
+        break;
+      case "/register":
+        document
+          .getElementById("registerForm")
+          .removeEventListener("submit", registerOnSubmit);
+        break;
+      default:
+        break;
+    }
+  }
+
+  function loginOnSubmit(event) {
+    event.preventDefault();
+    loginInstance.onSubmitHandler();
+  }
+
+  function registerOnSubmit(event) {
+    event.preventDefault();
+    registerInstance.onSubmitHandler();
   }
 
   function navigateTo(url) {
-    history.pushState(null, null, url);
-    router();
+    if (url !== location.href) {
+      removeEventListenersOnPreviousView(currentPath);
+      history.pushState(null, null, url);
+      router();
+    }
   }
 
   window.addEventListener("popstate", (event) => {
@@ -61,12 +122,5 @@ const registerInstance = new RegisterView();
     });
 
     router();
-
-    document
-      .getElementById("loginForm")
-      .addEventListener("submit", function (event) {
-        event.preventDefault();
-        loginInstance.onSubmitHandler();
-      });
   });
 })();
