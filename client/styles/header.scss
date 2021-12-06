@@ -1,5 +1,6 @@
 .header-container {
   box-shadow: 0 8px 6px -7px $light-gray-shadow;
+
   .container {
     height: 90px;
     display: flex;
@@ -14,6 +15,7 @@
 
   #logo-img {
     max-height: 70px;
+    pointer-events: none;
   }
 
   .nav-bar {
@@ -25,6 +27,10 @@
       font-weight: 600;
       margin-top: 25px;
       color: $font-medium-gray;
+
+      &:hover {
+        @extend .link-focus;
+      }
     }
   }
 
@@ -39,7 +45,12 @@
       text-decoration: none;
       font-size: 14px;
       font-weight: 600;
+
+      &:hover {
+        @extend .link-focus;
+      }
     }
+
     .cart-button {
       background-color: $light-gray;
       display: flex;
@@ -48,6 +59,10 @@
       height: 55px;
       align-items: center;
       border-radius: 0;
+
+      &:hover {
+        background-color: $light-gray-bg-hover;
+      }
 
       img {
         max-height: 35px;

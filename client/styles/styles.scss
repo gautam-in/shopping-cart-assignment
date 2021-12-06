@@ -28,9 +28,18 @@
   min-height: 36px;
 
   &:hover {
-    background-color: rgba(208, 1, 85, 0.7);
+    background-color: $light-crimson-pink-hover;
     color: white;
   }
+}
+
+.link-active {
+  color: $text-field-border-focus !important;
+  text-decoration: underline !important;
+}
+
+.link-focus {
+  color: $text-field-border-focus;
 }
 
 .info-title {

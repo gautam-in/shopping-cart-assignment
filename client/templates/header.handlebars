@@ -2,7 +2,7 @@
   <div class="container">
     <div class="d-flex">
       <div class="align-self-center">
-        <a class="logo-link" href="#" aria-label="Click logo to navigate to Home screen" title="Home" data-link>
+        <a class="logo-link" href="/" aria-label="Click logo to navigate to Home screen" title="Home" data-link>
           <img alt="Sabka Bazaar brand logo - Click to navigate to home page" src="../../static/images/logo.png"
             id="logo-img" />
         </a>
@@ -10,10 +10,11 @@
       <nav class="nav-bar">
         <ul class="nav">
           <li class="nav-item">
-            <a class="nav-link active" href="#" aria-label="Navigate to Home screen" title="Home" data-link>Home</a>
+            <a id="home-link" class="nav-link active" href="/" aria-label="Navigate to Home screen" title="Home"
+              data-link>Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#" aria-label="Navigate to Products screen" title="Products"
+            <a id="products-link" class="nav-link" href="#" aria-label="Navigate to Products screen" title="Products"
               data-link>Products</a>
           </li>
         </ul>
@@ -21,8 +22,10 @@
     </div>
     <div class="right-actions">
       <div>
-        <a class="auth-link me-3" href="/login" aria-label="Click to SignIn" title="SignIn" data-link>SignIn</a>
-        <a class="auth-link" href="/register" aria-label="Click to Register" title="Register" data-link>Register</a>
+        <a id="login-link" class="auth-link me-3" href="/login" aria-label="Click to SignIn" title="SignIn"
+          data-link>SignIn</a>
+        <a id="register-link" class="auth-link" href="/register" aria-label="Click to Register" title="Register"
+          data-link>Register</a>
       </div>
       <div>
         <button type="button" class="btn cart-button" aria-label="Click to view items in the cart" title="View Cart">

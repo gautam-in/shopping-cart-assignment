@@ -1,16 +1,18 @@
 import "../styles/styles.scss";
 import template from "../templates/layout.handlebars";
+import HomeView from "./views/HomeView";
 import LoginView from "./views/LoginView";
 import RegisterView from "./views/RegisterView";
 
 const loginInstance = new LoginView();
 const registerInstance = new RegisterView();
+const homeInstance = new HomeView();
 
 (function () {
   let currentPath = null;
   function router() {
     const routes = [
-      { path: "/", view: registerInstance },
+      { path: "/", view: homeInstance },
       { path: "/login", view: loginInstance },
       { path: "/register", view: registerInstance },
     ];
@@ -47,9 +49,6 @@ const registerInstance = new RegisterView();
   function addEventListenersOnCurrentView(currentPath) {
     switch (currentPath) {
       case "/":
-        document
-          .getElementById("registerForm")
-          .addEventListener("submit", registerOnSubmit);
         break;
       case "/login":
         document
@@ -66,12 +65,9 @@ const registerInstance = new RegisterView();
     }
   }
 
-  function removeEventListenersOnPreviousView(previousPath) {
+  function cleanUpMemory(previousPath) {
     switch (previousPath) {
       case "/":
-        document
-          .getElementById("registerForm")
-          .removeEventListener("submit", registerOnSubmit);
         break;
       case "/login":
         document
@@ -86,6 +82,14 @@ const registerInstance = new RegisterView();
       default:
         break;
     }
+
+    removeLinkActiveClass();
+  }
+
+  function removeLinkActiveClass() {
+    document.querySelectorAll("[data-link]").forEach((element) => {
+      element.classList.remove("link-active");
+    });
   }
 
   function loginOnSubmit(event) {
@@ -100,7 +104,7 @@ const registerInstance = new RegisterView();
 
   function navigateTo(url) {
     if (url !== location.href) {
-      removeEventListenersOnPreviousView(currentPath);
+      cleanUpMemory(currentPath);
       history.pushState(null, null, url);
       router();
     }
