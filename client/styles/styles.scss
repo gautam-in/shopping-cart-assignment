@@ -7,6 +7,7 @@
 @import "footer";
 @import "login";
 @import "register";
+@import "home";
 
 *,
 *::before,
@@ -26,6 +27,7 @@
   border-radius: 0;
   font-size: 14px;
   min-height: 36px;
+  font-weight: 500;
 
   &:hover {
     background-color: $light-crimson-pink-hover;
@@ -49,6 +51,12 @@
 
 .info-desc {
   font-size: 14px;
+}
+
+.carousel-indicators {
+  [data-bs-target] {
+    border-radius: 50%;
+  }
 }
 
 .form-floating {

@@ -1,4 +1,5 @@
 import "../styles/styles.scss";
+import { Carousel } from "bootstrap";
 import template from "../templates/layout.handlebars";
 import HomeView from "./views/HomeView";
 import LoginView from "./views/LoginView";
@@ -10,7 +11,7 @@ const homeInstance = new HomeView();
 
 (function () {
   let currentPath = null;
-  function router() {
+  async function router() {
     const routes = [
       { path: "/", view: homeInstance },
       { path: "/login", view: loginInstance },
@@ -39,8 +40,7 @@ const homeInstance = new HomeView();
 
     const currentView = match.route.view;
     currentPath = match.route.path;
-    const preCompiledViewTemplate = currentView.getTemplate();
-    const viewHtml = preCompiledViewTemplate({});
+    const viewHtml = await currentView.getTemplate();
     document.querySelector("#route-content").innerHTML = viewHtml;
 
     addEventListenersOnCurrentView(currentPath);

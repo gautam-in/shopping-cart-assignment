@@ -1,5 +1,6 @@
 import AbstractView from "./AbstractView";
 import template from "../../templates/login.handlebars";
+import { DOCUMENT_TITLE } from "../constants/constants";
 
 export default class LoginView extends AbstractView {
   constructor() {
@@ -7,11 +8,11 @@ export default class LoginView extends AbstractView {
   }
 
   getTemplate() {
-    this.setTitle(
-      "Sabka Bazaar - User login: One stop solution for all your groceries."
-    );
+    this.setTitle(DOCUMENT_TITLE.login);
     this.setActiveLinkIndicator("login-link");
-    return template;
+
+    // template is the pre-compiled handlebars template
+    return template({});
   }
 
   onSubmitHandler() {

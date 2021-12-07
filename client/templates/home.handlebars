@@ -1,3 +1,57 @@
-<section>
-    Home
+<section class="home-container">
+    <div id="carouselOffersBanner" class="carousel slide carousel-dark" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            {{#each banner}}
+            {{#if this.isActive}}
+            {{#ifCond @index '===' 0}}
+            <button type="button" data-bs-target="#carouselOffersBanner" data-bs-slide-to="{{@index}}" class="active"
+                aria-current="true" aria-label="Slide {{@index}}"></button>
+            {{else}}
+            <button type="button" data-bs-target="#carouselOffersBanner" data-bs-slide-to="{{@index}}"
+                aria-label="Slide {{@index}}"></button>
+            {{/ifCond}}
+            {{/if}}
+            {{/each}}
+        </div>
+        <div class="carousel-inner">
+            {{#each banner}}
+            {{#if this.isActive}}
+            {{#ifCond @index '===' 0}}
+            <div class="carousel-item active">
+                <img src="{{this.bannerImageUrl}}" class="d-block w-100" alt="{{this.bannerImageAlt}}">
+            </div>
+            {{else}}
+            <div class="carousel-item">
+                <img src="{{this.bannerImageUrl}}" class="d-block w-100" alt="{{this.bannerImageAlt}}">
+            </div>
+            {{/ifCond}}
+            {{/if}}
+            {{/each}}
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselOffersBanner" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselOffersBanner" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+    <div class="categories-container">
+        {{#each categories}}
+        {{#if this.enabled}}
+        <div id="{{this.key}}" class="row category {{#ifCond @index 'isOdd' null}}flex-row-reverse{{/ifCond}}">
+            <div class="col img-conatiner">
+                <img class="img-fluid" src="{{this.imageUrl}}" alt="Image of {{this.name}} category">
+            </div>
+            <div class="col-8 category-details">
+                <h2>{{this.name}}</h2>
+                <p>{{this.description}}</p>
+                <button class="btn btnCrimsonPink" type="button" aria-label="Click here to explore {{this.key}}">Explore
+                    {{this.key}}</button>
+            </div>
+        </div>
+        {{/if}}
+        {{/each}}
+    </div>
 </section>

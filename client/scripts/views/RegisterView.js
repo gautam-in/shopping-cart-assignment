@@ -1,5 +1,6 @@
 import AbstractView from "./AbstractView";
 import template from "../../templates/register.handlebars";
+import { DOCUMENT_TITLE } from "../constants/constants";
 
 export default class RegisterView extends AbstractView {
   constructor() {
@@ -7,11 +8,11 @@ export default class RegisterView extends AbstractView {
   }
 
   getTemplate() {
-    this.setTitle(
-      "Sabka Bazaar - Register user: One stop solution for all your groceries."
-    );
+    this.setTitle(DOCUMENT_TITLE.register);
     this.setActiveLinkIndicator("register-link");
-    return template;
+
+    // template is the pre-compiled handlebars template
+    return template({});
   }
 
   onSubmitHandler() {
