@@ -1,0 +1,27 @@
+.Header {
+  display: flex;
+  padding: 0 20px;
+  //   border-top: solid 1px black;
+  //   border-bottom: solid 1px black;
+  position: relative;
+  box-shadow: 0 2px 3px -1px rgba(0, 0, 0, 0.1);
+}
+.Header__Navigation-container {
+  margin-top: 80px;
+  margin-left: 10vw;
+}
+.Header__Last-section {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin-left: auto;
+}
+.Header__SignIn-Register {
+  font-size: 12px;
+  position: absolute;
+  right: 0;
+  color: black;
+  a:first-child {
+    margin-right: 16px;
+  }
+}

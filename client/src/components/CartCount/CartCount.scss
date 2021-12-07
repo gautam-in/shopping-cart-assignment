@@ -1,0 +1,15 @@
+@import "assets/colors.scss";
+
+.CartCount {
+  height: 50px;
+  background-color: $gallery;
+  display: flex;
+  margin-top: auto;
+  padding: 5px 20px;
+  align-items: center;
+  svg {
+    width: 26px;
+    fill: $darkPink4;
+    margin-right: 8px;
+  }
+}
