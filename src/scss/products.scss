@@ -26,7 +26,7 @@ html {
 // 2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
 
 .container {
-    padding: 0 160px;
+    margin: 0 160px;
 }
 
 .grid {
@@ -139,14 +139,14 @@ html {
 //------------1200px--------
 @media ( max-width: 75em) {
     .container {
-        padding: 0 8rem;
+        margin: 0 8rem;
     }
 }
 
 //------1000px---------------
 @media ( max-width: 63em) {
     .container {
-        padding: 0 0rem;
+        margin: 0 0rem;
     }
 
     .grid-4-cols {
@@ -161,7 +161,7 @@ html {
 //------------800px-----------------
 // @media ( max-width: 37em) {
 //     .container {
-//         padding: 0 0rem;
+//         margin: 0 0rem;
 //     }
 // }
 

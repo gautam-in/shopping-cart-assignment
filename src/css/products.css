@@ -10,7 +10,7 @@ html {
 }
 
 .container {
-  padding: 0 160px;
+  margin: 0 160px;
 }
 
 .grid {
@@ -109,12 +109,12 @@ html {
 
 @media (max-width: 75em) {
   .container {
-    padding: 0 8rem;
+    margin: 0 8rem;
   }
 }
 @media (max-width: 63em) {
   .container {
-    padding: 0 0rem;
+    margin: 0 0rem;
   }
 
   .grid-4-cols {

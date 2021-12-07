@@ -27,7 +27,7 @@ html {
 // 2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
 
 .container {
-    padding: 0 160px;
+    margin: 0 160px;
 }
 
 .grid {
@@ -109,6 +109,8 @@ html {
             background-color: rgba($color: $color-light-grey, $alpha: 0.7);
             padding: 1.3rem 1.8rem;
             margin-top: 1.1rem;
+            color: $txt-datk-grey;
+            text-decoration: none;
 
             img{
                 width: 2rem;
@@ -134,14 +136,14 @@ html {
 //------------1200px--------
 @media ( max-width: 75em) {
     .container {
-        padding: 0 8rem;
+        margin: 0 8rem;
     }
 }
 
 //------1000px---------------
 @media ( max-width: 63em) {
       .container {
-          padding: 0 4rem;
+          margin: 0 4rem;
       }
 
       .product-details {
@@ -156,7 +158,7 @@ html {
 //-------600px--------------------
 @media ( max-width: 37em) {
     .container {
-        padding: 0 0rem;
+        margin: 0 0rem;
     }
 
     .nav-links {
@@ -176,7 +178,7 @@ html {
 // ================home style star====================
 
     //-------------carousel start------------------
-.header-height-space {
+.main-home {
     padding-top: 7.5rem;
 }
 .carousel {
@@ -296,8 +298,9 @@ html {
 
 .footer {
     background-color: $color-light-grey;
+
     &-container {
-    font-size: 1.8rem;
-    padding: 0.8rem 0;
+        font-size: 1.8rem;
+        padding: 0.8rem 0;
     }
 }

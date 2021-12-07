@@ -10,7 +10,7 @@ html {
 }
 
 .container {
-  padding: 0 160px;
+  margin: 0 160px;
 }
 
 .grid {
@@ -86,6 +86,8 @@ html {
   background-color: rgba(214, 214, 214, 0.7);
   padding: 1.3rem 1.8rem;
   margin-top: 1.1rem;
+  color: #3f3f3f;
+  text-decoration: none;
 }
 .nav-right-cart img {
   width: 2rem;
@@ -103,12 +105,12 @@ html {
 
 @media (max-width: 75em) {
   .container {
-    padding: 0 8rem;
+    margin: 0 8rem;
   }
 }
 @media (max-width: 63em) {
   .container {
-    padding: 0 4rem;
+    margin: 0 4rem;
   }
 
   .product-details {
@@ -121,7 +123,7 @@ html {
 }
 @media (max-width: 37em) {
   .container {
-    padding: 0 0rem;
+    margin: 0 0rem;
   }
 
   .nav-links {
@@ -136,7 +138,7 @@ html {
     width: 50%;
   }
 }
-.header-height-space {
+.main-home {
   padding-top: 7.5rem;
 }
 

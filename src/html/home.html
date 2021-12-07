@@ -10,8 +10,8 @@
 </head>
 
 <body>
-    <header class="header container">
-        <nav class="nav">
+    <header class="header">
+        <nav class="nav container">
             <div class="nav-logo">
                 <img src="../../static/images/logo.png" alt="logo" class="nav-logo-image">
             </div>
@@ -24,17 +24,22 @@
                     <li><a href="./signin.html" class="acc-link-item">Signin</a></li>
                     <li><a href="./register.html" class="acc-link-item">Register</a></li>
                 </ul>
-                <div class="nav-right-cart">
+                <!-- <div class="nav-right-cart">
                     <img src="../../static/images/cart.svg" alt="cart" class="cart">
                     <span>&nbsp; 0 items</span>
+                </div> -->
+                <div>
+                    <a class="nav-right-cart" href="./cart.html">
+                        <img src="../../static/images/cart.svg" alt="cart" class="cart">
+                        <span>&nbsp; 0 items</span>
+                    </a>
                 </div>
             </div>
         </nav>
     </header>
 
-    <main class="container">
+    <main class="container main-home">
         <div class="carousel">
-            <div class="header-height-space"></div>
             <div id="carousel-slide-wrap" class="carousel-slide-wrap">
                 <div id="carousel-slider" class="carousel-slider">
                     <!-- <div class="carousel-slide" id="carousel-slide-1"><img src="./../../static/images/offers/offer1.jpg" alt=""></div>
@@ -119,8 +124,8 @@
         </div>
     </main>
 
-    <footer class="container footer">
-        <div class="footer-container">
+    <footer class="footer">
+        <div class="container footer-container">
             Copyright &copy; 2021 Sabka Bazaar Grocery Suppliers Pvt Ltd
         </div>
     </footer>
