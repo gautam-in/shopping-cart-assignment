@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sabka Bazaar</title>
+    <link rel="stylesheet" href="../css/products.css">
+</head>
+
+<body>
+    <header class="header">
+        <nav class="container nav">
+            <div class="nav-logo">
+                <img src="../../static/images/logo.png" alt="logo" class="nav-logo-image">
+            </div>
+            <ul class="nav-links">
+                <li><a href="./home.html" class="nav-link-item">Home</a></li>
+                <li><a href="./products.html" class="nav-link-item">Products</a></li>
+            </ul>
+            <div class="nav-right">
+                <ul class="nav-right-register">
+                    <li><a href="./signin.html" class="acc-link-item">Signin</a></li>
+                    <li><a href="./register.html" class="acc-link-item">Register</a></li>
+                </ul>
+                <div class="nav-right-cart">
+                    <img src="../../static/images/cart.svg" alt="cart" class="cart">
+                    <span>&nbsp; 0 items</span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="">
+        <div class="container product">
+            <ul class="product-nav-list">
+                <li class="product-nav-item" onclick="renderCategoryItems('5b6899953d1a866534f516e2')">Fruits and Vegetables</li>
+                <li class="product-nav-item" onclick="renderCategoryItems('5b6899123d1a866534f516de')">Bakery Cakes and Dairy</li>
+                <li class="product-nav-item" onclick="renderCategoryItems('5b675e5e5936635728f9fc30')">Beverages</li>
+                <li class="product-nav-item" onclick="renderCategoryItems('5b68994e3d1a866534f516df')">Beauty and Hygiene</li>
+                <li class="product-nav-item" onclick="renderCategoryItems('5b6899683d1a866534f516e0')">Baby Care</li>
+            </ul>
+            <div id="product-container" class="product-list grid grid-4-cols">
+                <!-- <div class="product-item">
+                    <div class="product-item-heading">
+                        <h3 class="heading-quarternary">Lorem ipsum dolor sit.</h3>
+                    </div>
+                    <div class="product-item-image">
+                        <img src="../../static/images/products/baby/baby-dove.jpg" alt="">
+                    </div>
+                    <div class="product-item-description">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id vitae 
+                            sapiente, ea error harum nisi sequi!
+                        </p>
+                    </div>
+                    <div class="product-item-purchase">
+                        <span>Price Rs.200</span>
+                        <button>Buy Now</button>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-container">
+            Copyright &copy; 2021 Sabka Bazaar Grocery Suppliers Pvt Ltd
+        </div>
+    </footer>
+
+    <script src="../js/products.js" defer></script>
+</body>
+
+</html>

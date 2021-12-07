@@ -1,0 +1,28 @@
+{
+  "name": "code-exercise",
+  "version": "1.0.0",
+  "description": "This is a shopping cart coding exercise",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "canned -p 5000 ./server",
+    "start:dev": "webpack serve",
+    "build": "webpack",
+    "sass": "sass ./src/scss:./src/css"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "canned": "^0.3.12"
+  },
+  "devDependencies": {
+    "babel-loader": "^8.2.3",
+    "css-loader": "^6.5.1",
+    "html-webpack-plugin": "^5.5.0",
+    "style-loader": "^3.3.1",
+    "svg-inline-loader": "^0.8.2",
+    "webpack": "^5.64.1",
+    "webpack-cli": "^4.9.1",
+    "webpack-dev-server": "^4.5.0"
+  }
+}
