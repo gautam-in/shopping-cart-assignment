@@ -1,0 +1,208 @@
+
+@import "./utilities/variables";
+@import "./utilities/mixins";
+
+html {
+  // font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  font-family: "Dosis", sans-serif;
+}
+
+
+h1,
+h2 {
+  font-family: "Dosis";
+  font-size: 1.5rem;
+}
+
+
+p {
+  font-size: 1.2rem;
+  line-height: 150%;
+  font-style: normal;
+  font-weight: normal;
+}
+
+a {
+  margin: 0;
+  padding: 10px;
+  color: $background-grey;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: bold;
+
+  &:hover {
+    color: $background-black;
+  }
+  
+  li{
+    list-style: none;
+  }
+}
+
+@import "./partials/Header";
+
+// ------content start-------
+
+
+@media (min-width: 460px) {
+  .container {
+    padding: 0;
+  }
+}
+@media (min-width: 576px) {
+  .container {
+    padding: 0 1rem;
+  }
+}
+@media (min-width: 768px) {
+  .container {
+    padding: 0 1rem;
+  }
+}
+@media (min-width: 992px) {
+  main {
+    padding: 0 2rem;
+  }
+  .container{
+    header{
+      nav{
+        padding: 0 2rem;
+      }
+    }
+  }
+}
+@media (min-width: 1200px) {
+  main {
+    padding: 0 6rem;
+  }
+  .container{
+    header{
+      nav{
+        padding: 0 6rem;
+      }
+    }
+  }
+}
+
+// --------hero carousel --------------
+@import './partials//HeroCarousle';
+
+main {
+  margin-bottom: 2rem;
+  hr {
+    background: radial-gradient(at 50% 0, rgba(0, 0, 0, 0.5), transparent 70%);
+    width: 90%;
+    height: 13px;
+    border: 0px;
+    margin: 0 auto;
+  }
+}
+
+// ----------home page listing---------
+
+.product {
+  background-color: $background;
+
+  .card-odd {
+    grid-template-columns: 2.6fr 1.4fr;
+  }
+
+  .card-even {
+    grid-template-columns: 1.4fr 2.6fr;
+  }
+
+  .card {
+    height: 16rem;
+    display: grid;
+
+    .card-text {
+      background-color: $background;
+      display: block;
+      text-align: center;
+      margin-top: 1.5rem;
+
+      .card-text-title {
+        font-size: 30px;
+        font-weight: bold;
+      }
+      .card-text-desc {
+        margin: 1rem 0;
+        font-size: 18px;
+      }
+      .card-text-button {
+        border: 0;
+        a{
+          background-color: $theme;
+          padding: 15px;
+          color: $background;
+          font-size: 1rem;
+          border: 0;
+          transition: all 0.5s cubic-bezier(0.5, 0.09, 0.03, 1.09);
+          &:hover {
+            opacity: 0.8;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+    .card-text-odd {
+      order: 2;
+    }
+    .card-image {
+      .card-image-area {
+        height: auto;
+        width: 95%;
+      }
+    }
+    .card-image-odd {
+      order: 1;
+    }
+  }
+
+  hr {
+    background: radial-gradient(at 50% 0, rgba(0, 0, 0, 0.5), transparent 70%);
+    width: 90%;
+    height: 13px;
+    border: 0px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .product {
+    .card {
+      .card-text {
+        margin-top: 1rem;
+
+        .card-text-title {
+          font-size: 24px;
+        }
+        .card-text-desc {
+          font-size: 16px;
+        }
+      }
+    }
+  }
+}
+
+
+
+// ---------signin---------
+@import "./partials/SignIn";
+// -----------register-----
+@import "./partials/Products";
+// ----------cart--------------
+@import "./partials/Cart";
+// ----------footer------------
+@import "./partials/Footer";
