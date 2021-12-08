@@ -1,5 +1,6 @@
-let currentSlideNum = 1;
-let offetImagesCount;
+let currentSlideNum = 0;
+let offetImagesArr;
+// let offerImgArr = [];
 let carouselContainerEl = document.getElementById('carousel-slider');
 let carouselSlideBtnContainerEl = document.getElementById('carousel-slideButton');
 let slideWrapperEl = document.getElementById('carousel-slide-wrap');
@@ -14,7 +15,7 @@ let slideWrapperEl = document.getElementById('carousel-slide-wrap');
             throw new Error("Something went wrong !");
         })
         .then(function (offers) {
-            offetImagesCount = offers.length
+            offetImagesArr = offers;
             offers = offers.sort((a,b)=> a.order - b.order);
             renderOffersImages(offers);
         })
@@ -46,7 +47,6 @@ function renderOffersImages(offersImages) {
         anchor.setAttribute('href', `#carousel-slide-${image.order}`);
         anchor.onclick = function currentSlide() {
             currentSlideNum = image.order;
-            selectSlide(currentSlideNum)
         }
         carouselSlideBtnContainerEl.append(anchor);
     })
@@ -63,7 +63,7 @@ function scrollToPrevious() {
 }
 
 function scrollToNext() {
-    if(currentSlideNum >= offetImagesCount) return;
+    if(currentSlideNum >= offetImagesArr.length) return;
     document.querySelector(`.slide-${currentSlideNum + 1}`).click();
     selectSlide(currentSlideNum);
 }
@@ -75,3 +75,24 @@ function selectSlide(n) {
     })
     document.querySelector(`.slide-${n}`).classList.add('active');
 }
+
+
+//-----slide show auto scroll images--------------------
+setTimeout(()=> {
+    nextSlideAutoScroll();
+}, 2000)
+
+function nextSlideAutoScroll() {
+    scrollToNext();
+    setTimeout(nextSlideAutoScroll, 2000);
+    if(currentSlideNum == 5) {
+        setTimeout(()=> {
+            if(currentSlideNum == 5) {
+                currentSlideNum = 0;
+            }
+        }, 0)
+    }
+}
+
+
+
