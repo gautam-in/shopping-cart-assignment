@@ -1,0 +1,44 @@
+$font-stack: Helvetica, sans-serif;
+$primary-color: #d20057;
+
+.fontNormal {
+  font-weight: normal;
+}
+.btn {
+  border: none;
+  padding: 5px 10px;
+  font-family: sans-serif;
+  cursor: pointer;
+}
+.btn-primary {
+  color: #fff;
+  background-color: $primary-color;
+}
+.btn-round {
+  border-radius: 20px;
+}
+.btn-curve {
+  border-radius: 8px;
+}
+.cursor-pointer {
+  cursor: pointer;
+}
+.float-right {
+  float: right;
+}
+body {
+  font-family: $font-stack;
+  margin-top: 0px;
+}
+.container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.hideLinkStyling {
+  text-decoration: inherit;
+  color: inherit;
+}
+.mR10 {
+  margin-right: 10px;
+}

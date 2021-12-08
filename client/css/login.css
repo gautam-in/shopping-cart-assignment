@@ -1,0 +1,406 @@
+.fontNormal {
+  font-weight: normal;
+}
+
+.btn {
+  border: none;
+  padding: 5px 10px;
+  font-family: sans-serif;
+  cursor: pointer;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #d20057;
+}
+
+.btn-round {
+  border-radius: 20px;
+}
+
+.btn-curve {
+  border-radius: 8px;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.float-right {
+  float: right;
+}
+
+body {
+  font-family: Helvetica, sans-serif;
+  margin-top: 0px;
+}
+
+.container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hideLinkStyling {
+  text-decoration: inherit;
+  color: inherit;
+}
+
+.mR10 {
+  margin-right: 10px;
+}
+
+/* Global style */
+/* Navbar starts */
+/* nav {
+  display: flex;
+  justify-content: space-between;
+  color: #4a4a4c;
+  -webkit-box-shadow: 0 8px 6px -6px #999;
+  -moz-box-shadow: 0 8px 6px -6px #999;
+  box-shadow: 0 8px 6px -6px #999;
+}
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 80px;
+  cursor: pointer;
+  margin-left: 8%;
+  margin-top: 10px;
+}
+.leftNav a {
+  margin-left: 20px;
+  color: #7b8181;
+}
+
+.rightNav {
+  margin-top: -12px;
+  margin-right: 8%;
+}
+.rightNav ul li {
+  list-style-type: none;
+  display: inline-block;
+  margin-left: 4px;
+  cursor: pointer;
+}
+.cart {
+  background-color: #eeeeee;
+  padding: 15px 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.cartImg {
+  width: 30px;
+  height: auto;
+} */
+/* Navbar ends */
+/* Cart starts */
+/* article.shoppingCart {
+  background-color: #eeeeee;
+  position: absolute;
+  width: 600px;
+  height: 90vh;
+  display: block;
+  z-index: 1;
+  display: none;
+  right: 9%;
+  border: 1px solid #ccc;
+  overflow: auto;
+}
+.card {
+  background-color: #fff;
+  padding: 10px 5px;
+  margin-bottom: 10px;
+}
+.cardHeading {
+  background: #000;
+  color: #fff;
+}
+.cross {
+  width: 24px;
+  cursor: pointer;
+}
+.card h3 {
+  margin: 10px;
+}
+.cartItems {
+  display: flex;
+}
+.cartImage {
+  width: 100px;
+  margin-right: 7px;
+}
+.cartImage img {
+  width: 100%;
+}
+.cartContent {
+  flex-grow: 1;
+}
+.itemNumbers {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.multiply {
+  margin-left: 10px;
+  width: 15px;
+  padding: 0px;
+}
+.lowestPrice {
+  padding: 10px 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: 5px;
+  margin-right: 5px;
+  border-radius: 8px;
+}
+.lowestPriceImg {
+  width: 5rem;
+}
+.lowestPriceImg img {
+  width: 100%;
+}
+.checkout {
+  position: absolute;
+  bottom: 10px;
+  background: #fff;
+  width: 100%;
+}
+.text-center {
+  text-align: center;
+}
+.checkoutBtn {
+  display: flex;
+  justify-content: space-between;
+  width: 98%;
+  padding: 15px;
+  margin: 0px 1% 0px 1%;
+} */
+/* Cart ends */
+.loginFormData {
+  display: flex;
+  justify-content: flex-start;
+  gap: 80px;
+}
+
+.loginDescription {
+  margin-top: 5%;
+  margin-left: 12%;
+}
+
+.loginDescription h1 {
+  font-family: serif;
+}
+
+/* Form style starts */
+.group {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+input {
+  font-size: 18px;
+  padding: 10px 10px 10px 5px;
+  display: block;
+  /* width: 300px; */
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #757575;
+}
+
+input:focus {
+  outline: none;
+  border-bottom: 1px solid #79cbcd;
+}
+
+/* LABEL ======================================= */
+label {
+  color: #999;
+  font-size: 18px;
+  font-weight: normal;
+  position: absolute;
+  pointer-events: none;
+  left: 5px;
+  top: 10px;
+  transition: 0.2s ease all;
+}
+
+/* active state */
+input:focus ~ label,
+input:valid ~ label {
+  top: -20px;
+  font-size: 14px;
+  color: #79cbcd;
+}
+
+/* BOTTOM BARS ================================= */
+.bar {
+  position: relative;
+  display: block;
+  /* width: 300px; */
+  width: 100%;
+}
+
+.bar:before,
+.bar:after {
+  content: "";
+  height: 2px;
+  width: 0;
+  bottom: 1px solid #79cbcd;
+  position: absolute;
+  background: #79cbcd;
+  transition: 0.2s ease all;
+}
+
+.bar:before {
+  left: 50%;
+}
+
+.bar:after {
+  right: 50%;
+}
+
+/* active state */
+input:focus ~ .bar:before,
+input:focus ~ .bar:after {
+  width: 50%;
+}
+
+/* HIGHLIGHTER ================================== */
+.highlight {
+  position: absolute;
+  height: 60%;
+  width: 100px;
+  top: 25%;
+  left: 0;
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+/* active state */
+input:focus ~ .highlight {
+  animation: inputHighlighter 0.3s ease;
+}
+
+/* ANIMATIONS ================ */
+@keyframes inputHighlighter {
+  from {
+    background: #79cbcd;
+  }
+  to {
+    width: 0;
+    background: transparent;
+  }
+}
+.fullForm {
+  flex-basis: 340px;
+  margin-top: 4%;
+}
+
+.loginBtn {
+  width: 105%;
+  color: #fff;
+  background-color: #d20057;
+  border: none;
+  padding: 10px;
+  font-family: sans-serif;
+  cursor: pointer;
+}
+
+/* Form style ends */
+footer {
+  background-color: #eaeaea;
+  padding: 2px;
+  margin-top: 20px;
+}
+
+footer p {
+  margin-left: 8%;
+}
+
+/* Mobile design */
+@media only screen and (max-width: 600px) {
+  .main-header {
+    gap: 0px;
+    margin-left: 0;
+  }
+
+  .logoImg {
+    width: 100px;
+  }
+
+  .rightNav {
+    margin-right: 0;
+  }
+
+  .rightNav ul {
+    display: inline-flex;
+  }
+
+  .rightNav ul li {
+    display: inherit;
+  }
+
+  .cartPosition {
+    padding-left: 43px;
+  }
+
+  /* Shopping cart style starts */
+  /* article.shoppingCart {
+    height: 90vh;
+    width: 100%;
+    right: 0%;
+    border: 1px solid #ccc;
+  }
+  .cardHeading {
+    background: none;
+    color: #000;
+  } */
+  /* Shopping cart style ends */
+  .loginDescription {
+    margin-left: 8%;
+  }
+
+  .loginFormData {
+    gap: 10px;
+  }
+
+  .fullForm {
+    margin-top: 7%;
+  }
+
+  .group {
+    margin-bottom: 15px;
+  }
+
+  input {
+    font-size: 15px;
+    padding: 8px 8px 8px 3px;
+  }
+
+  footer p {
+    font-size: 14px;
+  }
+}
+/* Tablet design */
+@media only screen and (min-width: 600px) {
+  /* .rightNav {
+    margin-right: 0;
+  } */
+  /* Shopping cart style starts */
+  /* .cardHeading {
+    background: none;
+    color: #000;
+  }
+  article.shoppingCart {
+    height: 90vh;
+    width: 100%;
+    right: 0%;
+    border: 1px solid #ccc;
+  } */
+  /* Shopping cart style ends */
+}
+
+/*# sourceMappingURL=login.css.map */

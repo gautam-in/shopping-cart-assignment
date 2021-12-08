@@ -1,0 +1,200 @@
+body {
+  font-family: Helvetica, sans-serif;
+  margin-top: 0px;
+}
+
+.container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.loginFormData {
+  display: flex;
+  justify-content: flex-start;
+  gap: 80px;
+}
+
+.loginDescription {
+  margin-top: 5%;
+  margin-left: 12%;
+}
+
+.loginDescription h1 {
+  font-family: serif;
+}
+
+/* Form style starts */
+.group {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+input {
+  font-size: 18px;
+  padding: 10px 10px 10px 5px;
+  display: block;
+  /* width: 300px; */
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #757575;
+}
+
+input:focus {
+  outline: none;
+  border-bottom: 1px solid #79cbcd;
+}
+
+/* LABEL ======================================= */
+label {
+  color: #999;
+  font-size: 18px;
+  font-weight: normal;
+  position: absolute;
+  pointer-events: none;
+  left: 5px;
+  top: 10px;
+  transition: 0.2s ease all;
+}
+
+/* active state */
+input:focus ~ label,
+input:valid ~ label {
+  top: -20px;
+  font-size: 14px;
+  color: #79cbcd;
+}
+
+/* BOTTOM BARS ================================= */
+.bar {
+  position: relative;
+  display: block;
+  /* width: 300px; */
+  width: 100%;
+}
+
+.bar:before,
+.bar:after {
+  content: "";
+  height: 2px;
+  width: 0;
+  bottom: 1px solid #79cbcd;
+  position: absolute;
+  background: #79cbcd;
+  transition: 0.2s ease all;
+}
+
+.bar:before {
+  left: 50%;
+}
+
+.bar:after {
+  right: 50%;
+}
+
+/* active state */
+input:focus ~ .bar:before,
+input:focus ~ .bar:after {
+  width: 50%;
+}
+
+/* HIGHLIGHTER ================================== */
+.highlight {
+  position: absolute;
+  height: 60%;
+  width: 100px;
+  top: 25%;
+  left: 0;
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+/* active state */
+input:focus ~ .highlight {
+  animation: inputHighlighter 0.3s ease;
+}
+
+/* ANIMATIONS ================ */
+@keyframes inputHighlighter {
+  from {
+    background: #79cbcd;
+  }
+  to {
+    width: 0;
+    background: transparent;
+  }
+}
+.fullForm {
+  flex-basis: 340px;
+  margin-top: 4%;
+}
+
+.loginBtn {
+  width: 105%;
+  color: #fff;
+  background-color: #d20057;
+  border: none;
+  padding: 10px;
+  font-family: sans-serif;
+  cursor: pointer;
+}
+
+/* Form style ends */
+footer {
+  background-color: #eaeaea;
+  padding: 2px;
+  margin-top: 20px;
+}
+
+footer p {
+  margin-left: 8%;
+}
+
+/* Mobile design */
+@media only screen and (max-width: 600px) {
+  /* .main-header {
+    gap: 0px;
+    margin-left: 0;
+  }
+  .logoImg {
+    width: 100px;
+  }
+  .rightNav {
+    margin-right: 0;
+  }
+  .rightNav ul {
+    display: inline-flex;
+  }
+  .rightNav ul li {
+    display: inherit;
+  }
+  .cartPosition {
+    padding-left: 43px;
+  } */
+  .loginDescription {
+    margin-left: 8%;
+  }
+
+  .loginFormData {
+    gap: 10px;
+  }
+
+  .fullForm {
+    margin-top: 7%;
+  }
+
+  .group {
+    margin-bottom: 15px;
+  }
+
+  input {
+    font-size: 15px;
+    padding: 8px 8px 8px 3px;
+  }
+
+  footer p {
+    font-size: 14px;
+  }
+}
+
+/*# sourceMappingURL=register.css.map */
