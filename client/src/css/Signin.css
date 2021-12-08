@@ -1,0 +1,46 @@
+.signin_left {
+  display: flex;
+  flex-direction: column;
+}
+
+.signin_right {
+  display: flex;
+  flex-direction: column;
+  flex: 0.4;
+  gap: 0.4em;
+}
+
+.signin {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 1em;
+}
+
+.signin_btn {
+  padding: 10px 20px;
+  background-color: rgb(175, 24, 24);
+  border: none;
+  color: #fff;
+  margin: 2em 0;
+  cursor: pointer;
+}
+
+@media only screen and (min-width: 250px) and (max-width: 767px) {
+  .signin {
+    flex-direction: column;
+    align-items: center;
+    gap: 2em;
+  }
+
+  .signin_left {
+    align-items: center;
+  }
+
+  .signin_left p {
+    text-align: center;
+  }
+
+  .signin_right {
+    width: 80%;
+  }
+}

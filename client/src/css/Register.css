@@ -1,0 +1,47 @@
+.register_left {
+  display: flex;
+  flex-direction: column;
+}
+
+.register_right {
+  display: flex;
+  flex-direction: column;
+  flex: 0.4;
+  gap: 0.4em;
+}
+
+.register {
+  display: flex;
+  justify-content: space-around;
+  /* align-items: center; */
+  margin-top: 1em;
+}
+
+.register_btn {
+  padding: 10px 20px;
+  background-color: rgb(175, 24, 24);
+  border: none;
+  color: #fff;
+  margin: 2em 0;
+  cursor: pointer;
+}
+
+@media only screen and (min-width: 250px) and (max-width: 767px) {
+  .register {
+    flex-direction: column;
+    align-items: center;
+    gap: 2em;
+  }
+
+  .register_left {
+    align-items: center;
+  }
+
+  .register_left p {
+    text-align: center;
+  }
+
+  .register_right {
+    width: 80%;
+  }
+}
