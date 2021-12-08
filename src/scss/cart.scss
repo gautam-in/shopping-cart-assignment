@@ -3,6 +3,7 @@ $color-dark-grey: #adadad;
 $color-light-grey: #d6d6d6;
 $txt-datk-grey: #3f3f3f;
 $txt-light-grey: #797878;
+$color-black: #000;
 $color-mix-green-blue: #2dc9a9;
 $color-dark-red: #ca0655;
 $color-white: #fff;
@@ -29,7 +30,7 @@ html {
 
 // ======Reusable start=============
 .container {
-    padding: 0 160px;
+    margin: 0 160px;
 }
 
 .grid {
@@ -128,7 +129,7 @@ html {
 //------------1200px--------
 @media ( max-width: 75em) {
     .container {
-        padding: 0 5rem;
+        margin: 0 5rem;
     }
 }
 
@@ -142,14 +143,14 @@ html {
       }
 
       .container {
-          padding: 0 2rem;
+          margin: 0 2rem;
       }
 }
 
 //------------600px-------------------
 @media ( max-width: 37em) {
     .container {
-        padding: 0 0;
+        margin: 0 0;
     }
 
     .grid-2-cols {
@@ -175,10 +176,53 @@ html {
 
 
 // ================main style start==========
-.login {
-    padding-top: 9.5rem;
-    margin: 0rem 0 1.8rem 0 ;
-    font-size: $font-md;
+.cart-container {
+    padding-top: 7.5rem;
+    margin-bottom: 1.8rem;
+    font-size: 1.6rem;
+}
+
+.cart-page {
+    // background-color: lightblue;
+}
+
+.cart-items-empty {
+    height: 65vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+.cart-heading {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    background-color: $color-black;
+    padding: 10px 15px;
+    color: $color-white;
+    font-weight: 800;
+}
+
+.cart-close-btn {
+    font-size: 1.3rem;
+}
+
+.shop-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    button {
+        background-color:  $color-dark-red;
+        background-color: #ca0655;
+        width: 95%;
+        border: 0;
+        padding: 8px 12px;
+        margin-bottom: 8px;
+        border-radius: 4px;
+    }
 }
 
 

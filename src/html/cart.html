@@ -10,8 +10,8 @@
 </head>
 
 <body>
-    <header class="header container">
-        <nav class="nav">
+    <header class="header">
+        <nav class="container nav">
             <div class="nav-logo">
                 <img src="../../static/images/logo.png" alt="logo" class="nav-logo-image">
             </div>
@@ -32,32 +32,26 @@
         </nav>
     </header>
 
-    <main class="container">
-        <div class="login">
-            <!-- <div class="login-head">
-                <h2>Login</h2>
-                <p>Get access to your Orders. Wishlist and recomendarion.</p>
-            </div>
-            <form class="login-container" onsubmit="onSignin(event)">
-                <div class="form-group">
-                    <label for="email" class="label">Email: </label>
-                    <input type="text" id="email" class="form-control" onfocus="onInputFocus(event)" onblur="onInputBlur(event)" placeholder="test@test.com" required>
-                </div>
-                <div class="form-group">
-                    <label for="password" class="label">Password: </label>
-                    <input type="password" id="password" class="form-control"onfocus="onInputFocus(event)" onblur="onInputBlur(event)" placeholder="password" required>
-                </div>
-
-                <div>
-                    <input type="submit"  class="btn" value="Login">
-                </div>
-            </form> -->
+    <main class="cart-container">
+        <div class="container cart-page">
+            <div class="cart-heading">
+                <div class="heading-wquarternary">My Cart</div>
+                <div class="cart-close-btn">X</div>
+             </div>
+             <div class="cart-items-empty">
+                 <h3 class="heading-ternary">No items in your cart</h3>
+                 <p>Your favourite items are just a click away.</p>
+             </div>
+     
+             <div class="shop-btn">
+                 <button>Start Shoping</button>
+             </div>
         </div>
     </main>
 
 
-    <footer class="container footer">
-        <div class="footer-container">
+    <footer class="footer">
+        <div class="container footer-container">
             Copyright &copy; 2021 Sabka Bazaar Grocery Suppliers Pvt Ltd
         </div>
     </footer>

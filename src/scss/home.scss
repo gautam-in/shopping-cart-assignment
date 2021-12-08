@@ -150,6 +150,10 @@ html {
           margin-bottom: 1rem;
       }
 
+      .carousel-slideButton {
+        top: 85% !important;
+      }
+
       .product .product-image {
           width: 40% ;
       }
@@ -167,6 +171,10 @@ html {
 
     .nav-right-register {
         visibility: hidden;
+    }
+
+    .carousel-slideButton {
+        top: 80% !important;
     }
 
     .product .product-image {

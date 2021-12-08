@@ -80,6 +80,8 @@ html {
   background-color: rgba(214, 214, 214, 0.7);
   padding: 1.3rem 1.8rem;
   margin-top: 1.1rem;
+  color: #3f3f3f;
+  text-decoration: none;
 }
 .nav-right-cart img {
   width: 2rem;
