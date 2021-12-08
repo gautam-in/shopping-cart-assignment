@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/home.css" />
+    <script src="https://use.fontawesome.com/2f5189959d.js"></script>
+    <title>Shopping cart assignment</title>
+  </head>
+  <body>
+    <div class="container">
+      <!-- <nav>
+        <header class="main-header">
+          <picture>
+            <source
+              media="(min-width: 380px"
+              srcset="./../static/images/logo.png"
+            />
+            <source
+              media="(min-width: 900px"
+              srcset="./../static/images/logo_2x.png"
+            />
+            <img
+              src="./../static/images/logo.png"
+              alt="Sabka bazar home"
+              class="logoImg"
+            />
+          </picture>
+          <div class="leftNav">
+            <a class="hideLinkStyling" href="#">Home</a>
+            <a class="hideLinkStyling" href="#">Products</a>
+          </div>
+        </header>
+        <div class="rightNav">
+          <ul>
+            <li>SignIn</li>
+            <li>Register</li>
+          </ul>
+          <div class="cartPosition">
+            <a class="cart hideLinkStyling" area-label="cart items" href="#">
+              <img
+                aria-hidden="true"
+                src="./../static/images/cart.svg"
+                class="cartImg"
+              />
+              <span>0 items</span>
+            </a>
+          </div>
+        </div>
+      </nav> -->
+      <app-navbar></app-navbar>
+      <!-- Carousel starts -->
+      <article id="carousel-wrapper" class="carousel-wrapper">
+        <div class="carousel">
+          <!-- <img
+            src="./../static/images/offers/offer1.jpg"
+            alt="offer 1"
+            class="offersImg"
+          />
+          <img
+            src="./../static/images/offers/offer2.jpg"
+            alt="offer 2"
+            class="offersImg"
+          />
+          <img
+            src="./../static/images/offers/offer3.jpg"
+            alt="offer 3"
+            class="offersImg"
+          /> -->
+          <ul class="dotList"></ul>
+        </div>
+      </article>
+      <!-- Carousel ends -->
+
+      <!-- Offer items starts -->
+      <!-- <article class="categoriesComponent shadowEffect">
+        <div class="imagePosition">
+          <img
+            src="./../static//images/category/fruits.png"
+            alt="offers on fruits"
+            class="categoryImages"
+          />
+        </div>
+        <div class="categoriesComponentRight">
+          <h2>Fruits & Vegetables</h2>
+          <p>A variety of fresh fruits and vegetables</p>
+          <button type="button" class="btn btn-primary">
+            Explore fruit-and-veg
+          </button>
+        </div>
+      </article>
+      <article class="categoriesComponent shadowEffect">
+        <div class="categoriesComponentRight">
+          <h2>Bakery Cakes and Dairy</h2>
+          <p>
+            The best cupcakes, cookies, cakes, pies, cheesecakes, fresh bread,
+            biscotti, muffins, bagels, fresh coffee, milk and more.
+          </p>
+          <button type="button" class="btn btn-primary">
+            Explore bakery-cakes-dairy
+          </button>
+        </div>
+        <div class="imagePosition">
+          <img
+            src="./../static//images/category/bakery.png"
+            alt="offers on fruits"
+            class="categoryImages"
+          />
+        </div>
+      </article> -->
+      <!-- Offer items ends -->
+
+      <app-footer></app-footer>
+      <!-- <footer>
+        <p class="footer">
+          Copyright &copy; 2011-2018 Sabka Bazaar Grocery Supplies Pvt Ltd
+        </p>
+      </footer> -->
+    </div>
+    <script src="./js/home.js"></script>
+    <script src="./common-components/navbar-component.js"></script>
+    <script src="./common-components/footer-component.js"></script>
+  </body>
+</html>

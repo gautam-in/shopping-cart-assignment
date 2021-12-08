@@ -1,0 +1,211 @@
+$font-stack: Helvetica, sans-serif;
+$primary-color: #d20057;
+body {
+  font-family: $font-stack;
+  margin-top: 0px;
+}
+.container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+// footer {
+//   background-color: #eaeaea;
+//   padding: 2px;
+//   margin-top: 20px;
+// }
+// footer p {
+//   margin-left: 8%;
+// }
+
+/* Mobile design */
+@media only screen and (max-width: 600px) {
+  // .main-header {
+  //   gap: 0px;
+  //   margin-left: 0;
+  // }
+  // .logoImg {
+  //   width: 100px;
+  // }
+  // .rightNav {
+  //   margin-right: 0;
+  // }
+  // .rightNav ul {
+  //   display: inline-flex;
+  // }
+  // .rightNav ul li {
+  //   display: inherit;
+  // }
+  // .cartPosition {
+  //   padding-left: 43px;
+  // }
+  // footer p {
+  //   font-size: 14px;
+  // }
+}
+
+/* Carousel design starts */
+.carousel-wrapper {
+  width: 100%;
+  position: relative;
+  /* -webkit-box-shadow: 0 8px 6px -6px #999;
+  -moz-box-shadow: 0 8px 6px -6px #999;
+  box-shadow: 0 12px 12px -6px #999; */
+  margin-bottom: 35px;
+  margin-top: 10px;
+  /* display: flex;
+  align-items: center;
+  justify-content: center; */
+  /* overflow: hidden; */
+}
+.carousel-wrapper * {
+  box-sizing: border-box;
+}
+.carousel {
+  transform-style: preserve-3d;
+}
+/* .carousel.fade {
+  opacity: 0;
+} */
+.offersImg {
+  /* height: 70%; */
+  width: 100%;
+  margin: auto;
+  padding: 1rem 4rem;
+  z-index: 100;
+  /* transition: transform 0.5s, opacity 0.5s, z-index 0.5s; */
+}
+/* .offersImg.initial,
+.offersImg.active {
+  opacity: 1;
+  position: relative;
+  z-index: 900;
+} */
+/* .offersImg.next {
+  transform: translateX(100%);
+} */
+/* .offersImg.prev,
+.offersImg.next {
+  z-index: 800;
+}
+.offersImg.prev {
+  transform: translateX(-100%);
+}
+.offersImg.next {
+  transform: translateX(100%);
+} */
+.carousel-wrapper .carousel ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+}
+.carousel-wrapper .carousel ul li {
+  display: inline;
+  margin: 3px;
+  color: grey;
+  cursor: pointer;
+}
+/* Adding buttons inside carousel */
+/* .dots {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translate(-50%, 32px);
+  display: flex;
+  gap: 12px;
+}
+.dot {
+  width: 12px;
+  height: 12px;
+  background-color: rgb(205, 195, 195);
+  border: 1px solid #000;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.dot-active {
+  background-color: #000;
+} */
+/* Carousel design ends */
+
+/* Shadow effect */
+.shadowEffect::after {
+  z-index: -1;
+  content: "";
+  width: 80%;
+  height: 50%;
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  background: none;
+  border-radius: 50%;
+  box-shadow: 0 18px 10px rgba(0, 0, 0, 0.3);
+  transition: bottom 0.4s;
+}
+
+/* Main component */
+.categoriesComponent {
+  display: flex;
+  align-items: stretch;
+  justify-content: flex-start;
+  position: relative;
+  margin-bottom: 30px;
+  padding-bottom: 30px;
+  background-color: #fff;
+}
+.imagePosition {
+  display: flex;
+  justify-content: center;
+  background-color: #fff;
+}
+.categoryImages {
+  width: 340px;
+  background-color: #fff;
+  align-self: center;
+}
+.categoriesComponentRight {
+  background-color: #fff;
+  align-self: stretch;
+  flex-grow: 1;
+  text-align: center;
+  font-family: Verdana, sans-serif;
+}
+
+.btn {
+  padding: 10px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+.btn-primary {
+  color: #fff;
+  background-color: $primary-color;
+  border: 1px solid $primary-color;
+}
+
+/* Mobile design */
+@media only screen and (max-width: 600px) {
+  .categoryImages {
+    width: 190px;
+  }
+  h2 {
+    font-size: 1.1em;
+  }
+  .carousel-wrapper .carousel ul {
+    transform: translate(-25%, 0);
+  }
+  .carousel-wrapper .carousel ul li {
+    font-size: 10px;
+  }
+}
+
+/* Large screen */
+@media only screen and (min-width: 900px) {
+  .container {
+    width: 80%;
+  }
+}

@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="./css/products.css" />
+    <title>Shopping cart assignment</title>
+  </head>
+  <body>
+    <div class="container">
+      <app-navbar id="navbarComponent"></app-navbar>
+      <div class="mainAndAside">
+        <aside class="sideNav">
+          <ul id="sideNavList" class="sideNavList">
+            <li><a href="#">Fruits & Vegetables</a></li>
+            <li><a href="#">Bakery Cakes and Dairy</a></li>
+            <li><a href="#">Beverages</a></li>
+            <li><a href="#">Beauty and Hygiene</a></li>
+            <li><a href="#">Baby Care</a></li>
+          </ul>
+          <!-- <button class="sideNavButton">
+            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+              <i class="fa fa-chevron-down"></i>
+            </a>
+          </button> -->
+        </aside>
+        <main>
+          <aside class="sideNavS">
+            <select name="sideNavList" class="sideNavListS" id="sidenav">
+              <option value="Fruits & Vegetables">Fruits & Vegetables</option>
+              <option value="Bakery Cakes and Dairy">
+                Bakery Cakes and Dairy
+              </option>
+              <option value="Beverages">Beverages</option>
+              <option value="Beauty and Hygiene">Beauty and Hygiene</option>
+              <option value="Baby Care">Baby Care</option>
+            </select>
+          </aside>
+          <article class="products">
+            <!-- <section class="component-container">
+              <h3>Fresho Kiwi - Green, 3 pcs</h3>
+              <div class="imageAndData">
+                <div class="imageContainer">
+                  <img
+                    src="./../static/images/products/fruit-n-veg/apple.jpg"
+                    alt="apples"
+                  />
+                </div>
+                <div class="descriptionAndButton">
+                  <p class="productsDescription">
+                    Kiwis are oval shaped with a brownish outer skin. The flesh
+                    is bright green and juicy with tiny, edible black seeds.
+                  </p>
+                  <div class="buyListS">
+                    <button type="button" class="btn btn-primary">
+                      Buy Now @Rs87
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="buyList">
+                <p class="mrp">MRP Rs87</p>
+                <button type="button" class="btn btn-primary">Buy Now</button>
+              </div>
+              <div class="buyListT">
+                <button type="button" class="btn btn-primary">
+                  Buy Now @Rs87
+                </button>
+              </div>
+            </section>
+            <section class="component-container">
+              <h3>Fresho Kiwi - Green, 3 pcs</h3>
+              <div class="imageAndData">
+                <div class="imageContainer">
+                  <img
+                    src="./../static/images/products/fruit-n-veg/apple.jpg"
+                    alt="apples"
+                  />
+                </div>
+                <div class="descriptionAndButton">
+                  <p class="productsDescription">
+                    Kiwis are oval shaped with a brownish outer skin. The flesh
+                    is bright green and juicy with tiny, edible black seeds.
+                  </p>
+                  <div class="buyListS">
+                    <button type="button" class="btn btn-primary">
+                      Buy Now @Rs87
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="buyList">
+                <p class="mrp">MRP Rs87</p>
+                <button type="button" class="btn btn-primary">Buy Now</button>
+              </div>
+              <div class="buyListT">
+                <button type="button" class="btn btn-primary">
+                  Buy Now @Rs87
+                </button>
+              </div>
+            </section>
+            <section class="component-container">
+              <h3>Fresho Kiwi - Green, 3 pcs</h3>
+              <div class="imageAndData">
+                <div class="imageContainer">
+                  <img
+                    src="./../static/images/products/fruit-n-veg/apple.jpg"
+                    alt="apples"
+                  />
+                </div>
+                <div class="descriptionAndButton">
+                  <p class="productsDescription">
+                    Kiwis are oval shaped with a brownish outer skin. The flesh
+                    is bright green and juicy with tiny, edible black seeds.
+                  </p>
+                  <div class="buyListS">
+                    <button type="button" class="btn btn-primary">
+                      Buy Now @Rs87
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="buyList">
+                <p class="mrp">MRP Rs87</p>
+                <button type="button" class="btn btn-primary">Buy Now</button>
+              </div>
+              <div class="buyListT">
+                <button type="button" class="btn btn-primary">
+                  Buy Now @Rs87
+                </button>
+              </div>
+            </section>
+            <section class="component-container">
+              <h3>Fresho Kiwi - Green, 3 pcs</h3>
+              <div class="imageAndData">
+                <div class="imageContainer">
+                  <img
+                    src="./../static/images/products/fruit-n-veg/apple.jpg"
+                    alt="apples"
+                  />
+                </div>
+                <div class="descriptionAndButton">
+                  <p class="productsDescription">
+                    Kiwis are oval shaped with a brownish outer skin. The flesh
+                    is bright green and juicy with tiny, edible black seeds.
+                  </p>
+                  <div class="buyListS">
+                    <button type="button" class="btn btn-primary">
+                      Buy Now @Rs87
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="buyList">
+                <p class="mrp">MRP Rs87</p>
+                <button type="button" class="btn btn-primary">Buy Now</button>
+              </div>
+              <div class="buyListT">
+                <button type="button" class="btn btn-primary">
+                  Buy Now @Rs87
+                </button>
+              </div>
+            </section>
+            <section class="component-container">
+              <h3>Fresho Kiwi - Green, 3 pcs</h3>
+              <div class="imageAndData">
+                <div class="imageContainer">
+                  <img
+                    src="./../static/images/products/fruit-n-veg/apple.jpg"
+                    alt="apples"
+                  />
+                </div>
+                <div class="descriptionAndButton">
+                  <p class="productsDescription">
+                    Kiwis are oval shaped with a brownish outer skin. The flesh
+                    is bright green and juicy with tiny, edible black seeds.
+                  </p>
+                  <div class="buyListS">
+                    <button type="button" class="btn btn-primary">
+                      Buy Now @Rs87
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="buyList">
+                <p class="mrp">MRP Rs87</p>
+                <button type="button" class="btn btn-primary">Buy Now</button>
+              </div>
+              <div class="buyListT">
+                <button type="button" class="btn btn-primary">
+                  Buy Now @Rs87
+                </button>
+              </div>
+            </section>
+            <section class="component-container">
+              <h3>Fresho Kiwi - Green, 3 pcs</h3>
+              <div class="imageAndData">
+                <div class="imageContainer">
+                  <img
+                    src="./../static/images/products/fruit-n-veg/apple.jpg"
+                    alt="apples"
+                  />
+                </div>
+                <div class="descriptionAndButton">
+                  <p class="productsDescription">
+                    Kiwis are oval shaped with a brownish outer skin. The flesh
+                    is bright green and juicy with tiny, edible black seeds.
+                  </p>
+                  <div class="buyListS">
+                    <button type="button" class="btn btn-primary">
+                      Buy Now @Rs87
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="buyList">
+                <p class="mrp">MRP Rs87</p>
+                <button type="button" class="btn btn-primary">Buy Now</button>
+              </div>
+              <div class="buyListT">
+                <button type="button" class="btn btn-primary">
+                  Buy Now @Rs87
+                </button>
+              </div>
+            </section>
+            <section class="component-container">
+              <h3>Fresho Kiwi - Green, 3 pcs</h3>
+              <div class="imageAndData">
+                <div class="imageContainer">
+                  <img
+                    src="./../static/images/products/fruit-n-veg/apple.jpg"
+                    alt="apples"
+                  />
+                </div>
+                <div class="descriptionAndButton">
+                  <p class="productsDescription">
+                    Kiwis are oval shaped with a brownish outer skin. The flesh
+                    is bright green and juicy with tiny, edible black seeds.
+                  </p>
+                  <div class="buyListS">
+                    <button type="button" class="btn btn-primary">
+                      Buy Now @Rs87
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="buyList">
+                <p class="mrp">MRP Rs87</p>
+                <button type="button" class="btn btn-primary">Buy Now</button>
+              </div>
+              <div class="buyListT">
+                <button type="button" class="btn btn-primary">
+                  Buy Now @Rs87
+                </button>
+              </div>
+            </section>
+            <section class="component-container">
+              <h3>Fresho Kiwi - Green, 3 pcs</h3>
+              <div class="imageAndData">
+                <div class="imageContainer">
+                  <img
+                    src="./../static/images/products/fruit-n-veg/apple.jpg"
+                    alt="apples"
+                  />
+                </div>
+                <div class="descriptionAndButton">
+                  <p class="productsDescription">
+                    Kiwis are oval shaped with a brownish outer skin. The flesh
+                    is bright green and juicy with tiny, edible black seeds.
+                  </p>
+                  <div class="buyListS">
+                    <button type="button" class="btn btn-primary">
+                      Buy Now @Rs87
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="buyList">
+                <p class="mrp">MRP Rs87</p>
+                <button type="button" class="btn btn-primary">Buy Now</button>
+              </div>
+              <div class="buyListT">
+                <button type="button" class="btn btn-primary">
+                  Buy Now @Rs87
+                </button>
+              </div>
+            </section>
+            <section class="component-container">
+              <h3>Fresho Kiwi - Green, 3 pcs</h3>
+              <div class="imageAndData">
+                <div class="imageContainer">
+                  <img
+                    src="./../static/images/products/fruit-n-veg/apple.jpg"
+                    alt="apples"
+                  />
+                </div>
+                <div class="descriptionAndButton">
+                  <p class="productsDescription">
+                    Kiwis are oval shaped with a brownish outer skin. The flesh
+                    is bright green and juicy with tiny, edible black seeds.
+                  </p>
+                  <div class="buyListS">
+                    <button type="button" class="btn btn-primary">
+                      Buy Now @Rs87
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="buyList">
+                <p class="mrp">MRP Rs87</p>
+                <button type="button" class="btn btn-primary">Buy Now</button>
+              </div>
+              <div class="buyListT">
+                <button type="button" class="btn btn-primary">
+                  Buy Now @Rs87
+                </button>
+              </div>
+            </section>
+            <section class="component-container">
+              <h3>Fresho Kiwi - Green, 3 pcs</h3>
+              <div class="imageAndData">
+                <div class="imageContainer">
+                  <img
+                    src="./../static/images/products/fruit-n-veg/apple.jpg"
+                    alt="apples"
+                  />
+                </div>
+                <div class="descriptionAndButton">
+                  <p class="productsDescription">
+                    Kiwis are oval shaped with a brownish outer skin. The flesh
+                    is bright green and juicy with tiny, edible black seeds.
+                  </p>
+                  <div class="buyListS">
+                    <button type="button" class="btn btn-primary">
+                      Buy Now @Rs87
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="buyList">
+                <p class="mrp">MRP Rs87</p>
+                <button type="button" class="btn btn-primary">Buy Now</button>
+              </div>
+              <div class="buyListT">
+                <button type="button" class="btn btn-primary">
+                  Buy Now @Rs87
+                </button>
+              </div>
+            </section> -->
+          </article>
+        </main>
+      </div>
+      <app-footer></app-footer>
+      <!-- <footer>
+        <p class="footer">
+          Copyright &copy; 2011-2018 Sabka Bazaar Grocery Supplies Pvt Ltd
+        </p>
+      </footer> -->
+    </div>
+    <script src="./js/products.js"></script>
+    <script src="./common-components/navbar-component.js"></script>
+    <script src="./common-components/footer-component.js"></script>
+  </body>
+</html>

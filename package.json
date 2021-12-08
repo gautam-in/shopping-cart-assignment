@@ -2,14 +2,30 @@
   "name": "code-exercise",
   "version": "1.0.0",
   "description": "This is a shopping cart coding exercise",
-  "main": "index.js",
+  "main": "home.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "canned -p 5000 ./server"
+    "start": "canned -p 5000 ./server",
+    "build": "npm run finalcompilesass && npm run compilesass && webpack --config webpack.config.js",
+    "finalcompilesass": "sass client/css/style.scss:dist/bundle.css",
+    "compilesass": "sass client/css/_login.scss:client/css/login.css client/css/_home.scss:client/css/home.css client/css/_products.scss:client/css/products.css client/css/_register.scss:client/css/register.css",
+    "compilesass-watch": "sass --watch client/css/_login.scss:client/css/login.css client/css/_home.scss:client/css/home.css client/css/_products.scss:client/css/products.css client/css/_register.scss:client/css/register.css"
   },
   "author": "",
   "license": "MIT",
   "dependencies": {
     "canned": "^0.3.12"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.16.0",
+    "@babel/preset-env": "^7.16.4",
+    "babel-loader": "^8.2.3",
+    "css-loader": "^6.2.0",
+    "mini-css-extract-plugin": "^2.2.2",
+    "postcss-loader": "^6.1.1",
+    "sass": "^1.39.0",
+    "sass-loader": "^12.1.0",
+    "webpack": "^5.64.4",
+    "webpack-cli": "^4.9.1"
   }
 }
