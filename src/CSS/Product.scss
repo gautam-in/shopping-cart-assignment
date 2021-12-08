@@ -1,0 +1,121 @@
+@import "Home";
+* {
+    box-sizing: border-box;
+    font-size: 62.5%;
+    list-style-type: none;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    flex-wrap: wrap;
+
+  }
+  $font-default: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue",
+  Helvetica, Arial, sans-serif;
+$font-bold: "HelveticaNeue-Medium", "Helvetica Neue Medium";
+$color: #d10157;
+   main{
+    padding:0;
+    position:relative;
+    top:-2rem;
+       article{
+           z-index: -10;
+           display:flex;
+        //    height:90vh;
+           aside{
+               margin:0;
+               padding:0;
+            position:fixed;
+            flex-basis: 20%;
+            top:12%;
+            left:0;
+            height:95vh;
+            .nav-menu{
+                margin:0;
+                padding:0;
+            }
+            background-color: rgb(234,234,234);
+            .nav-item{
+                padding:1.5rem 2rem;
+                border-bottom:1px solid grey;
+                font-size:2.2rem;
+            }
+            .nav-link{
+                cursor:pointer;
+                color:rgb(39, 38, 38)
+                
+            }
+            .nav-link:visited,
+            .nav-item:hover,
+            .nav-link:hover,
+            .nav-link:active
+            {
+                background-color: $color;
+            }
+            .nav-menu:hover,
+            .nav-item:hover,
+            .nav-link:hover,
+            .nav-link:active{
+                color:white;
+            }
+            .nav-item:hover{
+                color:white!important;
+            }
+           
+         }
+      
+         section {
+            flex-basis: 80%;
+            margin-left:20rem;
+            .products-container{
+                display:flex;
+                .card{
+                    box-shadow: 2px -8px 16px -12px rgba(218, 215, 215, 0.75);
+                    height:40rem;
+                    width:15rem;
+                    flex:1 1 20%;
+                    padding:.5rem;
+                    display:flex;
+                    flex-wrap:nowrap;
+                    flex-direction:column;
+                    justify-content: center;
+                    align-items: flex-start;
+                    border-bottom:2px dashed rgb(233, 229, 229);
+                    margin:0 .6rem;
+                    .price{
+                        display:flex;
+                        flex-wrap: wrap;
+                        justify-content: space-between;
+                        align-items: center;
+
+                        .price-tag{
+                            font-size: 1.2rem;
+                
+                        }
+                        .price-button
+                        {
+                         border:none;
+                         color:white;
+                         background-color: $color;
+                         font-size: 1.2rem;
+                         padding:1rem 1.5rem;
+                         margin-left:7rem;
+                        }
+                    }
+                    .card-heading{
+                        font-size: 1.5rem;
+                        // padding:.5rem
+                    }
+                    .description{
+                        border-radius:.4rem;
+                        background-color: rgb(234,234,234);
+                        font-size: 1rem;
+                        padding:.3rem;
+                    }
+
+                }
+                   
+               }
+           }
+       }
+     
+   }
+   

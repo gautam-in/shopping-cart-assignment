@@ -179,16 +179,7 @@
     "sku": "bh-closeup-150",
     "id": "5b6c727801a7c38429530894"
   },
-  {
-    "name": "Pampers Diapers Pants - Large Size, Monthly Box Pack, New, 128's pack",
-    "imageURL": "/static/images/products/baby/pampers.jpg",
-    "description": "Pampers dry, pants style diapers are the only pants in India with new air channels that provides your baby with breathable dryness overnight.",
-    "price": 1999,
-    "stock": 50,
-    "category": "5b6899683d1a866534f516e0",
-    "sku": "baby-pamper-128",
-    "id": "5b6c746801a7c38429530895"
-  },
+ 
   {
     "name": "Mamypoko Pants Style Diapers - Large, 62 pcs",
     "imageURL": "/static/images/products/baby/mamy.jpg",
