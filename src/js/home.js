@@ -47,6 +47,7 @@ function renderOffersImages(offersImages) {
         anchor.setAttribute('href', `#carousel-slide-${image.order}`);
         anchor.onclick = function currentSlide() {
             currentSlideNum = image.order;
+            selectSlide(currentSlideNum);
         }
         carouselSlideBtnContainerEl.append(anchor);
     })
