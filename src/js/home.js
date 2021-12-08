@@ -83,7 +83,6 @@ setTimeout(()=> {
     nextSlideAutoScroll();
 }, 2000)
 
-
 function nextSlideAutoScroll() {
     scrollToNext();
     setTimeout(nextSlideAutoScroll, 2000);
