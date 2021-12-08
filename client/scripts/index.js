@@ -4,10 +4,12 @@ import template from "../templates/layout.handlebars";
 import HomeView from "./views/HomeView";
 import LoginView from "./views/LoginView";
 import RegisterView from "./views/RegisterView";
+import ProductsView from "./views/ProductsView";
 
 const loginInstance = new LoginView();
 const registerInstance = new RegisterView();
 const homeInstance = new HomeView();
+const productsInstance = new ProductsView();
 
 (function () {
   let currentPath = null;
@@ -16,6 +18,7 @@ const homeInstance = new HomeView();
       { path: "/", view: homeInstance },
       { path: "/login", view: loginInstance },
       { path: "/register", view: registerInstance },
+      { path: "/products", view: productsInstance },
     ];
 
     // Test each route for potential match
@@ -60,6 +63,8 @@ const homeInstance = new HomeView();
           .getElementById("registerForm")
           .addEventListener("submit", registerOnSubmit);
         break;
+      case "/products":
+        break;
       default:
         break;
     }
@@ -78,6 +83,8 @@ const homeInstance = new HomeView();
         document
           .getElementById("registerForm")
           .removeEventListener("submit", registerOnSubmit);
+        break;
+      case "/products":
         break;
       default:
         break;

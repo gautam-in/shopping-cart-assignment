@@ -8,4 +8,6 @@ export const DOCUMENT_TITLE = {
   login: "Sabka Bazaar - User login: One stop solution for all your groceries.",
   register:
     "Sabka Bazaar - Register user: One stop solution for all your groceries.",
+  products:
+    "Sabka Bazaar - Products: One stop solution for all your groceries.",
 };

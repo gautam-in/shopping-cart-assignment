@@ -1,5 +1,11 @@
 .header-container {
   box-shadow: 0 8px 6px -7px $light-gray-shadow;
+  position: sticky;
+  width: 100%;
+  z-index: 10;
+  background-color: white;
+  top: 0;
+  left: 0;
 
   .container {
     height: 90px;
