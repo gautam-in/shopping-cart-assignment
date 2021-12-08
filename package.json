@@ -4,12 +4,37 @@
   "description": "This is a shopping cart coding exercise",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "canned -p 5000 ./server"
-  },
+    "start": "webpack serve",
+    "watch": "webpack --watch",
+    "build": "SET NODE_ENV=production & webpack",
+    "dev-build": "webpack",
+    "clean": "rmdir /s dist",
+    "test": "echo \"Error: no test specified\" && exit 1"
+    },
+
   "author": "",
   "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.15.8",
+    "@babel/preset-env": "^7.15.8",
+    "@babel/preset-react": "^7.14.5",
+    "@pmmmwh/react-refresh-webpack-plugin": "^0.5.1",
+    "babel-loader": "^8.2.2",
+    "clean-webpack-plugin": "^4.0.0",
+    "css-loader": "^6.4.0",
+    "html-webpack-plugin": "^5.4.0",
+    "mini-css-extract-plugin": "^2.4.2",
+    "react-refresh": "^0.10.0",
+    "webpack": "^5.58.2",
+    "webpack-cli": "^4.9.0",
+    "webpack-dev-server": "^4.3.1"
+  },
   "dependencies": {
+    "@reduxjs/toolkit": "^1.6.2",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "styled-components": "^5.3.3",
     "canned": "^0.3.12"
   }
+  
 }
