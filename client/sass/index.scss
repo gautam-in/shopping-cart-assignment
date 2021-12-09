@@ -1,3 +1,5 @@
+@import "colors";
+@import "font";
 * {
   margin: 0px;
   padding: 0px;
@@ -71,7 +73,7 @@
   margin-top: 10px;
   padding: 5px 10px 5px 10px;
   border: none;
-  background-color: #c90c63f2;
+  background-color: $primaryColor;
   color: white;
   font-family: sans-serif;
   font-size: smaller;

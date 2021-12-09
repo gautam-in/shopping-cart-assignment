@@ -1,7 +1,9 @@
+@import "font";
+@import "colors";
 * {
   margin: 0px;
   padding: 0px;
-  font-family: "PT Sans", sans-serif;
+  font-family: $sans-serif;
   box-sizing: border-box;
 }
 
@@ -35,20 +37,20 @@
   border-bottom: 2px solid #000;
 }
 form > label {
-  color: rgb(92, 180, 231);
+  color: $formFieldColor;
 }
 .form-field:focus {
-  border-bottom: 2px solid rgb(92, 180, 231);
+  border-bottom: 2px solid $formFieldColor;
 }
-#loginBtn {
+#RegisterBtn {
   width: 100%;
   padding: 10px;
   color: white;
-  background-color: #c90c63f2;
+  background-color: $primaryColor;
   border: none;
 }
 
-#loginForm {
+#RegisterForm {
   padding: 20px;
   width: 50%;
 }

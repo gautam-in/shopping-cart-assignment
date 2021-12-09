@@ -1,8 +1,10 @@
+@import "colors";
+@import "font";
 * {
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
-  font-family: "PT Sans", sans-serif;
+  font-family: $sans-serif;
 }
 
 .cart_main {
@@ -12,11 +14,11 @@
 
 .div_cart {
   width: 100%;
-  background-color: #dad9d987;
+  background-color: $secondaryColor;
   @media screen and (max-width: 768px) {
     width: 100%;
     height: 90vh;
-    // height: 65vh;
+    
   }
   @media screen and (max-width: 500px) {
     height: 78vh;
@@ -24,14 +26,9 @@
 }
 
 .product_list {
-  // height: 50vh;
+
   overflow: auto;
-  @media screen and (max-width: 768px) {
-    // height: 44vh;
-  }
-  @media screen and (max-width: 500px) {
-    // height: 52vh;
-  }
+  
 }
 
 .cart_title {
@@ -42,7 +39,7 @@
   background-color: white;
   padding-left: 15px;
   margin-top: 20px;
-  font-family: sans-serif;
+  font-family: $sans-serif;
   font-weight: bold;
 }
 
@@ -68,7 +65,7 @@
 }
 
 .item_name {
-  font-family: sans-serif;
+  font-family: $sans-serif;
   font-weight: bold;
   font-size: small;
 }
@@ -78,7 +75,7 @@
 }
 
 .action_button {
-  background-color: #c90c63f2;
+  background-color: $primaryColor;
   color: white;
   padding: 5px;
   margin-right: 5px;
@@ -97,7 +94,7 @@
   display: flex;
   align-items: center;
   padding-right: 20px;
-  font-family: sans-serif;
+  font-family: $sans-serif;
   font-weight: bold;
   font-size: small;
 }
@@ -116,18 +113,18 @@
 
 .cheap_price_text {
   font-size: smaller;
-  font-family: sans-serif;
+  font-family: $sans-serif;
   margin-left: 10px;
   color: rgb(44, 43, 43);
 }
 
 .checkout_button {
-  background-color: #c90c63f2;
+  background-color: $primaryColor;
   display: flex;
   justify-content: space-between;
   align-items: center;
   color: white;
-  font-family: sans-serif;
+  font-family: $sans-serif;
   border: none;
   width: 100%;
   height: 30px;
@@ -144,7 +141,7 @@
   justify-content: center;
   align-items: center;
   font-size: smaller;
-  font-family: sans-serif;
+  font-family: $sans-serif;
 }
 
 .checkout_div {
@@ -173,11 +170,11 @@
 }
 
 .noItemHeading {
-  font-family: sans-serif;
+  font-family: $sans-serif;
   font-size: medium;
   margin-bottom: 10px;
 }
 
 .noItemText {
-  font-family: sans-serif;
+  font-family: $sans-serif;
 }

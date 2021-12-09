@@ -1,38 +1,28 @@
 const mq = window.matchMedia("(max-width: 500px)");
 const mobileView = mq.matches;
-console.log(mobileView);
 
-async function getCategories() {
+async function getData() {
   try {
-    const response = await fetch("http://localhost:5000/categories");
-    const data = await response.json();
+    const responseCatagory = await fetch("http://localhost:5000/categories");
+    const responseProduct = await fetch("http://localhost:5000/products");
+    const categoriesArr = await responseCatagory.json();
+    const productsArr = await responseProduct.json();
 
-    return data;
-  } catch (e) {
-    console.log(e);
-  }
-}
-
-async function getProducts() {
-  try {
-    const response = await fetch("http://localhost:5000/products");
-    const data = await response.json();
-
-    return data;
-  } catch (e) {
-    console.log(e);
+    return { productsArr, categoriesArr };
+  } catch (err) {
+    console.log(err);
   }
 }
 
 async function displayCategoriesAndProducts() {
-  const categoriesArr = await getCategories();
-  const productsArr = await getProducts();
+  const { productsArr, categoriesArr } = await getData();
+  console.log(productsArr, categoriesArr);
   if (!JSON.parse(localStorage.getItem("productList"))) {
     localStorage.setItem("productList", JSON.stringify(productsArr));
   }
 
   const categories = categoriesArr.sort((a, b) => (a.order > b.order ? 1 : -1));
-  const ulTag = document.createElement("ul");
+
   for (let i = 0; i < categories.length; i++) {
     if (categories[i].enabled) {
       let li = document.createElement("li");
@@ -67,7 +57,7 @@ async function displayCategoriesAndProducts() {
           .appendChild(divProductMobile);
 
         products.forEach((product) => {
-          getProductDetail(product, categories[i].id);
+          productDetails(product, categories[i].id);
         });
       }
     }
@@ -75,12 +65,12 @@ async function displayCategoriesAndProducts() {
 
   if (!mobileView) {
     for (let i = 0; i < productsArr.length; i++) {
-      getProductDetail(productsArr[i]);
+      productDetails(productsArr[i]);
     }
   }
 }
 
-function getProductDetail(product, categoryID) {
+function productDetails(product, categoryID) {
   let cardContainer = document.createElement("div");
   cardContainer.setAttribute("class", "card_product");
 
@@ -159,7 +149,7 @@ async function getCategoryProducts(e) {
       ul.textContent = "";
 
       for (let i = 0; i < products.length; i++) {
-        getProductDetail(products[i], e.target.id);
+        productDetails(products[i], e.target.id);
       }
     }
   }
@@ -210,36 +200,6 @@ function addProductToCart(e) {
     localStorage.setItem("cart", JSON.stringify(item));
     document.getElementById("total_Items").innerHTML = `1 item(s)`;
   }
-  //   if (e.target && e.target.nodeName == "BUTTON") {
-  //     let cart = JSON.parse(localStorage.getItem("cart"));
-  //     const products = JSON.parse(localStorage.getItem("productList"));
-  //     // console.log(products, cart);
-  //     const product = products?.filter(
-  //       (product) => product.id === e.target.id
-  //     )[0];
-  //     let alreadyPresent = cart?.filter((item) => item.id === e.target.id);
-
-  //     if (alreadyPresent?.length) {
-  //       cart = cart.map((item) => {
-  //         if (item.id === e.target.id) {
-  //           item.quantity += 1;
-  //           item.totalPrice += item.price;
-  //         }
-  //         return item;
-  //       });
-  //     } else {
-  //       cart?.push({
-  //         name: product.name,
-  //         price: product.price,
-  //         imgURL: product.imageURL,
-  //         id: product.id,
-  //         quantity: 1,
-  //         totalPrice: product.price,
-  //       });
-  //     }
-  //     localStorage.setItem("cart", JSON.stringify(cart));
-  //     document.getElementById("total_count").innerHTML = `${cart?.length} items)`;
-  //   }
 }
 
 document

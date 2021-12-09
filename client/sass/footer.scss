@@ -1,6 +1,11 @@
+@import "colors";
 .footer {
   width: 100%;
-  background-color: #bbb9b9b9;
+  text-align: center;
+  background-color: $secondaryColor;
   padding: 10px;
   padding-left: 15%;
+  @media screen and (max-width: 500px) {
+    font-size: 0.6rem;
+  }
 }

@@ -54,7 +54,7 @@ form > label {
   border-bottom: 2px solid #5cb4e7;
 }
 
-#loginBtn {
+#RegisterBtn {
   width: 100%;
   padding: 10px;
   color: white;
@@ -62,7 +62,7 @@ form > label {
   border: none;
 }
 
-#loginForm {
+#RegisterForm {
   padding: 20px;
   width: 50%;
 }
