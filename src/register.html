@@ -14,38 +14,8 @@
 <body>
   <div class="container content">
     <header>
-      <nav>
-        <div class="nav-logo">
-          <img class="nav-logo-image" src="../static/images/logo.png" alt="Sabka Bazaar Logo" height="60" width="133" />
-          <div class="nav-as">
-            <ul class="as">
-              <li>
-                <a href="index.html">Home</a>
-              </li>
-              <li>
-                <a href="products.html">
-                  Products
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div class="nav-cart">
-          <ul class="sign-as">
-            <li>
-              <a href="signin.html">SignIn</a>
-            </li>
-            <li>
-              <a href="register.html">Register</a>
-            </li>
-          </ul>
-          <div class="nav-cart-logo">
-            <a href="cartcard.html">
-              <span class="icon-cart"></span>
-              <span class="cart-item-count count-color">0 Item</span>
-            </a>
-          </div>
-        </div>
+      <nav class="navbar">
+       
       </nav>
     </header>
     <main>
@@ -56,25 +26,28 @@
         </div>
         <div class="signin-action">
           <form onSubmit="" class="signin-action-form">
+            <label for="firstName" ></label>
             <input type="text" id="firstName" placeholder="First Name *" required value="" />
+            <label for="lastName" ></label>
             <input type="text" id="lastName" placeholder="Last Name" value="" />
+            <label for="email" ></label>
             <input type="email" id="email" placeholder="Email *" required value='' />
+            <label for="password" ></label>
             <input type="password" id="password" placeholder="Password" required minlength="6" value="" />
+            <label for="confirmPwd" ></label>
             <input type="password" id="confirmPwd" placeholder="Confirm Password" minlength="6" required value="" /> 
             <span id="showerror"></span>          
             <button type="submit" >Signup</button>
           </form>
         </div>
       </section>
-
     </main>
   </div>
-
   <footer>
-    Copyright &copy; 2021 Sabka Bazaar Grocery
+    Copyright &copy; 2011-2018 Sabka Bazaar Grocery
     Supplies Pvt. Ltd.
   </footer>
   <script src="assets/js/register.js"></script>
+  <script src="./assets/js/header.js"></script>
 </body>
-
 </html>

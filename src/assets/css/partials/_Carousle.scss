@@ -12,15 +12,14 @@
   position: absolute;
   top: 50%;
   width: auto;
-  padding: 1rem;
   margin-top: -1.5rem;
   color: white;
   font-weight: bold;
-  font-size: 1rem;
+  font-size: 0.5rem;
   transition: 0.6s ease;
   border-radius: 0 3px 3px 0;
   user-select: none;
-  background-color: rgba(0,0,0,0.1);
+  background-color: rgba(0,0,0,0.2);
 }
 
 .next {
@@ -29,6 +28,7 @@
 }
 
 .prev:hover, .next:hover {
+  color: white;
   background-color: rgba(0,0,0,0.8);
 }
 
@@ -37,7 +37,7 @@
   cursor: pointer;
   height: 0.5rem;
   width: 0.5rem;
-  margin: 0 0 15px 0;
+  margin: 0 0.2rem 0.5rem 0;
   background-color: #bbb;
   border-radius: 50%;
   display: inline-block;

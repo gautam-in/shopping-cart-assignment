@@ -1,4 +1,6 @@
 
+
+// fetch and show all categories
 async function FetchAllCategories(){
     var response = await fetch("http://localhost:5000/categories");
     var respoanseJson = await response.json();
@@ -64,116 +66,135 @@ function ShowAllData(allres){
         card.append(card_image);
         section.append(card);
         section.append(hr);
-
+}
 
 // --------------------Categories session end-------------
 
 // ---------------carousel session start----------
 
-//     async function FetchAllCarousel(){
-//         var response = await fetch("http://localhost:5000/categories");
-//         var respoanseJson = await response.json();
-//         for(var posts of respoanseJson){
-//             Carousel(posts);
-//         }
-//     }
-   
-//     function Carousel(){
-//         var carousel = document.querySelector('.center-display');
-//         var slidershow = document.createElement('div');
-//             slidershow.className = "slideshow-container";
+    async function FetchAllCarousel(){
+        var response = await fetch("http://localhost:5000/banners");
+        var respoanseJson = await response.json();
+            Carousel(respoanseJson);
+        
+    }
+    window.addEventListener("DOMContentLoaded",FetchAllCarousel);
+    function Carousel(resp){
+        var carousel = document.querySelector('.center-display');
+        var slidershow = document.createElement('div');
+            slidershow.className = "slideshow-container";
 
-//         var myslides = document.createElement('div');
-//             myslides.className = "mySlides fade";
-        
-//         var image = document.createElement('img');
-//             image.setAttribute('src',"");
-//             image.style.width = "100%";
-        
-//         var prev = document.createElement('a');
-//             prev.className = ('prev');
-//             prev.setAttribute('id','plusSlides');
-//             prev.innerText = "&#10094;";
-        
-//         var next = document.createElement('a');
-//             next.className = ('next');
-//             next.setAttribute('id','MinusSlides');
-//             next.innerText = '&#10095;';
-        
-//         var dot = document.createElement('div');
-//             dot.style.textAlign = "center";
-        
-//         var span = document.createElement('span');
-//             span.className = 'dot';
+        for(var slider of resp){
 
+            var myslides = document.createElement('div');
+            myslides.className = "mySlides fade";
         
+            var image = document.createElement('img');
+            image.setAttribute('src',`..${slider.bannerImageUrl}`);
+            image.setAttribute('alt',slider.bannerImageAlt);
+            image.style.width = "100%";
+            // console.log(slider);
+            slidershow.append(myslides);
+            myslides.append(image);
+        }
+
+        var prev = document.createElement('a');
+            prev.className = ('prev');
+            prev.setAttribute('id','plusSlides');
+            prev.innerText = "PREV";
+        
+        var next = document.createElement('a');
+            next.className = ('next');
+            next.setAttribute('id','MinusSlides');
+            next.innerText = 'NEXT';
+
+        slidershow.append(prev);
+        slidershow.append(next);
+        
+        var dot = document.createElement('div');
+            dot.style.textAlign = "center";
+
+        for(var slider of resp){           
+
+        var span = document.createElement('span');
+            span.className = `dot dot${slider.order}`;       
+            dot.append(span);
+        }
+
+        var br = document.createElement('br');
+
+
+        carousel.append(slidershow);
+        carousel.append(dot);
+        carousel.append(br);
+
+
+// -----------------carousel slider code ---------------------------------
+
+        var slideIndex = 1;
+        showSlides(slideIndex);
+    
+        // click on prev button
+        document.getElementById('plusSlides').addEventListener('click',function(){
+            let n = -1;
+            showSlides(slideIndex += n);
+        })
+    
+        // click on next button 
+        document.getElementById('MinusSlides').addEventListener('click',function(){
+            let n = 1;
+            showSlides(slideIndex += n);
+        })
+    
+        var dot =document.querySelector('.dot1');
+        dot.addEventListener('click',function(){
+            showSlides(slideIndex = 1);
+        })
+    
+        var dot =document.querySelector('.dot2');
+        dot.addEventListener('click',function(){
+            showSlides(slideIndex = 2);
+        })
+    
+        var dot =document.querySelector('.dot3');
+        dot.addEventListener('click',function(){
+            showSlides(slideIndex = 3);
+        })
+    
+        var dot =document.querySelector('.dot4');
+        dot.addEventListener('click',function(){
+            showSlides(slideIndex = 4);
+        })
+    
+        var dot =document.querySelector('.dot5');
+        dot.addEventListener('click',function(){
+            showSlides(slideIndex = 5);
+        })
+    
+    
+    
+        function showSlides(n) {
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+        var dots = document.getElementsByClassName("dot");
+        if (n > slides.length) {slideIndex = 1}    
+        if (n < 1) {slideIndex = slides.length}
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";  
+        }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+                
+        slides[slideIndex-1].style.display = "block";  
+        dots[slideIndex-1].className += " active";
+        }    
             
-//     }
-
-//     window.addEventListener('DOMContentLoaded',Carousel);
+    }
 
 // // --------------------------------------------
 
-    var slideIndex = 1;
-    showSlides(slideIndex);
-
-    // click on prev button
-    document.getElementById('plusSlides').addEventListener('click',function(){
-        let n = -1;
-        showSlides(slideIndex += n);
-    })
-
-    // click on next button 
-    document.getElementById('MinusSlides').addEventListener('click',function(){
-        let n = 1;
-        showSlides(slideIndex += n);
-    })
-
-    var dot =document.querySelector('.dot1');
-    dot.addEventListener('click',function(){
-        showSlides(slideIndex = 1);
-    })
-
-    var dot =document.querySelector('.dot2');
-    dot.addEventListener('click',function(){
-        showSlides(slideIndex = 2);
-    })
-
-    var dot =document.querySelector('.dot3');
-    dot.addEventListener('click',function(){
-        showSlides(slideIndex = 3);
-    })
-
-    var dot =document.querySelector('.dot4');
-    dot.addEventListener('click',function(){
-        showSlides(slideIndex = 4);
-    })
-
-    var dot =document.querySelector('.dot5');
-    dot.addEventListener('click',function(){
-        showSlides(slideIndex = 5);
-    })
-
-
-
-    function showSlides(n) {
-    var i;
-    var slides = document.getElementsByClassName("mySlides");
-    var dots = document.getElementsByClassName("dot");
-    if (n > slides.length) {slideIndex = 1}    
-    if (n < 1) {slideIndex = slides.length}
-    for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";  
-    }
-    for (i = 0; i < dots.length; i++) {
-        dots[i].className = dots[i].className.replace(" active", "");
-    }
-    slides[slideIndex-1].style.display = "block";  
-    dots[slideIndex-1].className += " active";
-    }
-
-}
+ 
 
 
 // --------------carousel end--------
-

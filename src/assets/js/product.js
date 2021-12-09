@@ -36,6 +36,7 @@ async function FetchAllCards() {
 
 window.addEventListener("DOMContentLoaded", FetchAllCards);
 
+
 function AllCard(resp) {
     if(resp){
         var list = document.querySelector('.list');

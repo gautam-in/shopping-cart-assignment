@@ -13,39 +13,9 @@
 
 <body>
   <div class="container content">
-    <header>
-      <nav>
-        <div class="nav-logo">
-          <img class="nav-logo-image" src="../static/images/logo.png" alt="Sabka Bazaar Logo" height="60" width="133" />
-          <div class="nav-as">
-            <ul class="as">
-              <li>
-                <a href="index.html">Home</a>
-              </li>
-              <li>
-                <a href="products.html">
-                  Products
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div class="nav-cart">
-          <ul class="sign-as">
-            <li>
-              <a href="signin.html">SignIn</a>
-            </li>
-            <li>
-              <a href="register.html">Register</a>
-            </li>
-          </ul>
-          <div class="nav-cart-logo">
-            <a href="cartcard.html">
-              <span class="icon-cart"></span>
-              <span class="cart-item-count count-color">0 Item</span>
-            </a>
-          </div>
-        </div>
+    
+     <header>
+      <nav class="navbar">        
       </nav>
     </header>
     <main>
@@ -59,15 +29,13 @@
 
             <div class="floating-label-group">
               <input type="text" id="email" class="form-control" autocomplete="off" autofocus required />
-                <label class="floating-label" for="email">Email</label>
-              </div>
+              <label class="floating-label" for="email">Email</label>
+            </div>
 
-              <div class="floating-label-group">
-                <input type="password" id="password" class="form-control" autocomplete="off" autofocus required />
-                  <label class="floating-label" for="password">Password</label>
-                </div>  
-            <!-- <input type="email" id="email" placeholder="Email" required value="" />
-            <input type="password" id="password" placeholder="Password" required value="" /> -->
+            <div class="floating-label-group">
+              <input type="password" id="password" class="form-control" autocomplete="off" autofocus required />
+              <label class="floating-label" for="password">Password</label>
+            </div>
             <span id="showerror"> </span>
             <button type="submit">Login</button>
           </form>
@@ -77,10 +45,11 @@
   </div>
 
   <footer>
-    Copyright &copy; 2021 Sabka Bazaar Grocery
+    Copyright &copy; 2011-2018 Sabka Bazaar Grocery
     Supplies Pvt. Ltd.
   </footer>
   <script src="./assets/js/register.js"></script>
+  <script src="./assets/js/header.js"></script>
 </body>
 
 </html>

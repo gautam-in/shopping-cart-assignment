@@ -1,4 +1,4 @@
-@import "../utilities/variables";
+// @import "../utilities/variables";
 
 .container {  
   min-height: calc(100vh - (120px));
@@ -74,7 +74,6 @@
             padding: 0;
             .icon-cart {
               display: inline-block;
-              // background-color: orange;
               background-size: cover;
               height: 35px;
               width: 30px;
@@ -93,79 +92,24 @@
     }
   }
 }
-  @media (max-width: 460px) {
-    .nav-links {
-      display: none;
-    }
-
-    .sign-links {
-      display: none !important;
-    }
-    .nav-cart-logo {
-      height: 4rem !important;
-      margin-top: 2px;
+  
+@media (max-width: 768px) {
+    
+  .nav-logo{
+    .nav-as{
+      ul{
+        li{
+          display: none;
+        }
+      }
     }
   }
 
-
-  
-
-// .container {  
-//   min-height: calc(100vh - (120px));
-//   margin-right: auto;
-//   margin-left: auto;
-//   header{
-//     position: sticky;
-//   top: 0;
-//   z-index: 1;
-//   padding-left: 5px;
-//   padding-right: 5px;
-//   box-sizing: border-box;
-//   left: 0;
-//   width: 100%;
-//   box-shadow: 0px 9px 6px 0px rgba(146,146,153,0.57);
-//   background-color: $background;
-//     nav{
-//       display: flex;
-//       justify-content: space-between;
-//       align-items: center;
-//       .nav-logo{
-//         display: flex;
-//         .nav-as{
-//           padding: 0;
-//           ul{
-//             display: flex;
-//             justify-content: center;
-//             li{
-//               list-style: none;
-//               a{
-//                 margin-top: 2rem;
-//               }
-//             }
-//           }
-
-//         }
-//       }
-//       .nav-cart{
-//         display: flex;
-//         flex-direction: column;
-//         ul{
-//           display: flex;
-//           li{
-//             list-style: none;
-//           }
-//         }
-//         .nav-cart-logo{
-//           text-align: center;
-//         }
-//       }
-//     }
-//   }
-// }
-
-
-// .center-display {
-//   display: flex;
-//   align-items: center;
-//   justify-content: center;
-// }
+  .nav-cart{
+    .sign-as{
+      li{
+        display: none;
+      }
+    }
+  }
+}
