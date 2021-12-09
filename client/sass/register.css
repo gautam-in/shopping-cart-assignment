@@ -1,0 +1,69 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  font-family: "PT Sans", sans-serif;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+#main {
+  width: 60%;
+  margin: 0px auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#heading {
+  font-size: 25px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.content {
+  padding: 0px 20px;
+  width: 50%;
+}
+
+#subheading {
+  font-size: 14px;
+}
+
+.form-field {
+  width: 100%;
+  margin: 0px 0px 20px 0px;
+  padding: 5px 0px 5px 0px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border: none;
+  outline: none;
+  border-bottom: 2px solid #000;
+}
+
+form > label {
+  color: #5cb4e7;
+}
+
+.form-field:focus {
+  border-bottom: 2px solid #5cb4e7;
+}
+
+#RegisterBtn {
+  width: 100%;
+  padding: 10px;
+  color: white;
+  background-color: #c90c63f2;
+  border: none;
+}
+
+#RegisterForm {
+  padding: 20px;
+  width: 50%;
+}
+/*# sourceMappingURL=register.css.map */

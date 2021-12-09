@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register</title>
+    <link rel="stylesheet" href="../../sass/header.css" />
+    <link rel="stylesheet" href="../../sass/footer.css" />
+    <link rel="stylesheet" href="../../sass/register.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header id="header"></header>
+    <main id="main">
+      <article class="content">
+        <h1 id="heading">Register</h1>
+        <p id="sub-heading">We dont share your details with anyone</p>
+      </article>
+      <article id="RegisterForm">
+        <form>
+          <label for="fname">First Name</label>
+          <input
+            type="text"
+            id="fname"
+            name="fname"
+            aria-label="First name"
+            class="form-field"
+            placeholder="First Name"
+          />
+          <label for="lname">Last Name</label>
+          <input
+            type="text"
+            id="lname"
+            name="lname"
+            aria-label="Last Name"
+            class="form-field"
+            placeholder="Last Name"
+          />
+          <label for="email">Email </label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            aria-label="Email"
+            class="form-field"
+            placeholder="Email"
+          />
+          <label for="password">Password </label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            aria-label="Password"
+            class="form-field"
+            placeholder="Password"
+          />
+          <label for="cpassword">Confirm Password</label>
+          <input
+            type="password"
+            id="cpassword"
+            name="cpassword"
+            aria-label="Confirm Password"
+            class="form-field"
+            placeholder="Confirm Password"
+          />
+          <button id="RegisterBtn">Register</button>
+        </form>
+      </article>
+    </main>
+    <footer id="footer"></footer>
+    <script type="module" src="../components/footer.js"></script>
+    <script type="module" src="../components/header.js"></script>
+  </body>
+</html>

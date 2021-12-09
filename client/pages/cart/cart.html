@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cart</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../sass/header.css" />
+
+    <link rel="stylesheet" href="../../sass/cart.css" />
+  </head>
+  <body>
+    <header id="header"></header>
+    <main class="cart_main">
+      <div class="div_cart">
+        <div id="number_Products" class="cart_title">My Cart (0 item)</div>
+        <div id="product_list" class="product_list"></div>
+        <div class="cheaper_text_container">
+          <img
+            src="../../../static/images/lowest-price.png"
+            alt="Lowest price"
+            height="80%"
+            style="margin-left: 20px"
+          />
+          <span class="cheap_price_text"
+            >You won't find it cheaper anywhere.</span
+          >
+        </div>
+      </div>
+    </main>
+    <div id="checkout_div" class="checkout_div">
+      <div class="promo_div">
+        Promo code can be applied on your payment page.
+      </div>
+      <button name="checkout" class="checkout_button">
+        <span> Proceed to checkout </span>
+        <span id="cart_total"> </span>
+      </button>
+    </div>
+
+    <script type="module" src="../components/header.js"></script>
+    <script type="module" src="./cart.js"></script>
+  </body>
+</html>
