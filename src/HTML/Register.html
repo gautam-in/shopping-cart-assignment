@@ -40,28 +40,41 @@
     <main>
         <section class="signin">
             <div class="signin-text">
-              <h1>Login</h1>
-              <p>Get access to your orders, wishlist and recommedations</p>
+              <h1>Signup</h1>
+              <p>We do not share your personal details with anyone</p>
             </div>
             <div class="signin-action">
              
               <form method="get" action="home.html">
                 <div class="txt_field">
-                  <input type="text" required>
+                  <input type="text" required id="Firstname">
                   <span></span>
-                  <label>Email</label>
+                  <label>First Name</label>
                 </div>
                 <div class="txt_field">
-                  <input type="password" required>
+                    <input type="text" required id="Lastname">
+                    <span></span>
+                    <label>Last Name</label>
+                  </div>
+                  <div class="txt_field">
+                    <input type="text" required id="email">
+                    <span></span>
+                    <label>Email</label>
+                  </div>
+                <div class="txt_field">
+                  <input type="password" required id="pwd">
                   <span></span>
                   <label>Password</label>
                 </div>
+                <div class="txt_field">
+                    <input type="password" required>
+                    <span></span>
+                    <label>Confirm Password</label>
+                  </div>
                 
-                <input type="submit" value="Login"
-                aria-label="Login">
-                <div class="signup_link">
-                  Not a member? <a href="Register.html">Signup</a>
-                </div>
+                <input type="submit" value="Sign Up"
+                aria-label="Sign Up">
+               
               </form>
             </div>
           </section>
@@ -72,4 +85,5 @@
 </body>
 
 
+   
 </html>
