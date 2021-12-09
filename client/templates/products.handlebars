@@ -1,3 +1,20 @@
-<section class="products-container">
-    Products
+<section class="products-container-page container">
+    <div class="row container-row">
+        <div class="col-md-3 category-container">
+            <div class="list-group list-group-flush">
+                {{#each categories}}
+                {{#if this.enabled}}
+                <button id="{{this.key}}" type="button" class="list-group-item list-group-item-action category-name"
+                    aria-label="Click to view products in {{this.name}} category" data-id="{{this.id}}">
+                    {{this.name}}
+                </button>
+                {{/if}}
+                {{/each}}
+            </div>
+        </div>
+
+        <div id="productsListingSection" class="col-md-9 products-container">
+            {{> productListingSection}}
+        </div>
+    </div>
 </section>

@@ -24,7 +24,7 @@
 
 .btnCrimsonPink {
   background-color: $crimson-pink;
-  color: white;
+  color: $std-white;
   border-radius: 0;
   font-size: 14px;
   min-height: 36px;
@@ -32,7 +32,7 @@
 
   &:hover {
     background-color: $light-crimson-pink-hover;
-    color: white;
+    color: $std-white;
   }
 }
 

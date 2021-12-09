@@ -1,6 +1,7 @@
 export const API_PATH = {
   bannersUrl: "http://localhost:5000/banners",
   categoriesUrl: "http://localhost:5000/categories",
+  productsUrl: "http://localhost:5000/products",
 };
 
 export const DOCUMENT_TITLE = {

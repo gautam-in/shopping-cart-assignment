@@ -1,0 +1,15 @@
+{{#each products}}
+<div class="product" id="{{this.sku}}">
+    <div class="product-name">{{this.name}}</div>
+    <div class="product-details">
+        <img class="product-img img-fluid" src="{{this.imageURL}}" alt="Image of {{this.name}}">
+        <div class="product-desc">{{this.description}}</div>
+    </div>
+    <div class="action-area">
+        <div class="price-per-unit">MRP Rs.{{this.price}}</div>
+        <button class="btn btnCrimsonPink buy-now-btn" type="button"
+            aria-label="Click the Buy Now button to buy product" data-id="{{this.id}}" data-stock="{{this.stock}}">Buy
+            Now</button>
+    </div>
+</div>
+{{/each}}

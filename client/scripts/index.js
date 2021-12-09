@@ -129,6 +129,13 @@ const productsInstance = new ProductsView();
       if (e.target.matches("[data-link]")) {
         e.preventDefault();
         navigateTo(e.target.href);
+      } else if (e.target.matches(".category-name")) {
+        const activeCategory = document.querySelector(".category-name.active");
+        if (activeCategory) {
+          activeCategory.classList.remove("active");
+        }
+        e.target.classList.add("active");
+        productsInstance.filterProductsBasedOnCategory(e.target.dataset.id);
       }
     });
 

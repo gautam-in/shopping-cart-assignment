@@ -13,7 +13,6 @@ export default class HomeView extends AbstractView {
   async getTemplate() {
     this.bannerList = await this.getBannerData();
     this.categoryList = await this.getProductCategoriesData();
-    console.log("Categories Array: ", this.categoryList);
     this.setTitle(DOCUMENT_TITLE.home);
     this.setActiveLinkIndicator("home-link");
 
