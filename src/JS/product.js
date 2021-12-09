@@ -35,7 +35,7 @@ async function NavContent() {
       
   }
 //  Main section
-function ProductContent() {
+ function ProductContent() {
     return fetch("../server/products/index.get.json")
       .then((result) => {
         return result.json();
@@ -72,7 +72,7 @@ function ProductContent() {
     image.setAttribute('class','card-img');
     image.setAttribute('src',`..${res.imageURL}`);
     image.setAttribute('alt',`${res.name}`);
-    image.setAttribute('width',"auto");
+    image.setAttribute('width',"100%");
     image.setAttribute('height',"50%");
     // paragraph
     let para=document.createElement("p");
@@ -90,10 +90,22 @@ function ProductContent() {
     let Pricebutton=document.createElement("button");
     Pricebutton.setAttribute('class','price-button');
     Pricebutton.innerText="Buy Now";
+    Pricebutton.addEventListener('click',()=>{ CartContent(res);})
+   
+   
     // Apending
     PriceWrapper.append(PriceTag,Pricebutton);
     Card.append(heading,image,para,PriceWrapper);
     ProductsContainer.append(Card)
 
   }
-  
+ var count=0;
+  var CartItem=[];
+ function CartContent(response)
+ {
+   CartItem.push(response);
+   console.log(CartItem);
+   return CartItem;
+   
+ }
+ export{CartContent}

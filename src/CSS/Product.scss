@@ -25,7 +25,7 @@ $color: #d10157;
                padding:0;
             position:fixed;
             flex-basis: 20%;
-            top:12%;
+            top:9%;
             left:0;
             height:95vh;
             .nav-menu{
@@ -67,11 +67,14 @@ $color: #d10157;
             margin-left:20rem;
             .products-container{
                 display:flex;
+                flex-wrap:wrap;
+                justify-content: center;
+                    align-items: center;
                 .card{
                     box-shadow: 2px -8px 16px -12px rgba(218, 215, 215, 0.75);
-                    height:40rem;
-                    width:15rem;
-                    flex:1 1 20%;
+                    height:50rem;
+                    width:12rem;
+                    flex:1 1 23%;
                     padding:.5rem;
                     display:flex;
                     flex-wrap:nowrap;
@@ -84,7 +87,7 @@ $color: #d10157;
                         display:flex;
                         flex-wrap: wrap;
                         justify-content: space-between;
-                        align-items: center;
+                        align-items:  center;
 
                         .price-tag{
                             font-size: 1.2rem;
@@ -108,7 +111,9 @@ $color: #d10157;
                         border-radius:.4rem;
                         background-color: rgb(234,234,234);
                         font-size: 1rem;
-                        padding:.3rem;
+                        padding:.5rem;
+                        width:auto;
+                        height:8.8rem;
                     }
 
                 }
@@ -118,4 +123,38 @@ $color: #d10157;
        }
      
    }
+   @media only screen and (max-width: 1170px) 
+   {
+       aside{
+           flex:10%;
+       }
+       section{
+           flex:90%;
+           flex-wrap: wrap;
+       }
+       .card{
+           flex:1 0 50%
+       }
+       
+    }
+    @media only screen and (max-width: 900px) 
+    {
+        aside{
+            flex:10%;
+        }
+        section{
+            flex:90%;
+            flex-wrap: wrap;
+        }
+        .card{
+            flex:0 0 70%;
+            .card-img{
+             width:100%;
+             height:40%;
+            }
+
+        }
+        
+     }
+
    
