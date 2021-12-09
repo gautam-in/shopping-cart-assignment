@@ -1,15 +1,23 @@
 @import "assets/colors.scss";
 
 .ProductTile {
-  border: solid 1px black;
   padding: 0 16px;
   display: flex;
   flex-direction: column;
+  background-color: white;
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    border-bottom: dotted 1px black;
+    bottom: 0;
+    width: 90%;
+  }
   img {
-    width: 100px;
+    width: 100%;
     transition: transform 0.2s;
     &:hover {
-      transform: scale(1.5);
+      transform: scale(1.2);
     }
   }
   .ProductTile__description {
@@ -32,5 +40,6 @@
   .ProductTile__buyNow {
     background-color: $maroonFlush;
     padding: 10px 20px;
+    color: white;
   }
 }

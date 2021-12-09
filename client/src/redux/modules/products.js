@@ -3,10 +3,20 @@ import { takeEvery, all, put, delay } from "redux-saga/effects";
 
 const ADD_PRODUCTS = "products/ADD_PRODUCTS";
 const INITIATE_GET_PRODUCTS = "products/INITIATE_GET_PRODUCTS";
+const FILTER_PRODUCT_BY_CATEGORY = "products/FILTER_PRODUCT_BY_CATEGORY";
+const RESET_FILTERED_PRODUCTS = "products/RESET_FILTERED_PRODUCTS";
 
 const initialState = {
   products: [],
+  filteredProducts: [],
 };
+
+export function filterProductByCategory(categoryId) {
+  return {
+    type: FILTER_PRODUCT_BY_CATEGORY,
+    categoryId,
+  };
+}
 
 function* getProducts() {
   try {
@@ -34,13 +44,32 @@ export function* watchGetProducts() {
   yield takeEvery(INITIATE_GET_PRODUCTS, getProducts);
 }
 
+export function resetFilteredProducts() {
+  return {
+    type: RESET_FILTERED_PRODUCTS,
+  };
+}
 export default function reducer(state = initialState, action = {}) {
   switch (action.type) {
     case ADD_PRODUCTS:
       return {
         ...state,
         products: action.payload,
+        filteredProducts: action.payload,
       };
+    case FILTER_PRODUCT_BY_CATEGORY:
+      return {
+        ...state,
+        filteredProducts: state.products.filter(
+          (product) => product.category === action.categoryId
+        ),
+      };
+    case RESET_FILTERED_PRODUCTS:
+      return {
+        ...state,
+        filteredProducts: [...state.products],
+      };
+
     default:
       return state;
   }

@@ -3,6 +3,10 @@
 .Category {
   padding: 16px 20px;
   position: relative;
+  cursor: pointer;
+  &.selected {
+    background-color: $LightSeaGreen;
+  }
   &::after {
     content: "";
     position: absolute;

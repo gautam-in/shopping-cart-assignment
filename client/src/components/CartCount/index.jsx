@@ -1,15 +1,33 @@
 import React from "react";
-// import Image from "../HtmlElements/Image";
+import { connect } from "react-redux";
+import { toggleCart } from "redux/modules/cart";
+
 import { ReactComponent as CartIcon } from "../../assets/images/cart.svg";
 import "./CartCount.scss";
 
-export default function CartCount() {
+function CartCount({ toggleCart, isLoggedIn, itemCount }) {
+  if (!isLoggedIn) return null;
   return (
-    <div className="CartCount">
-      {/* <Image src="images/cart.svg" alt="Cart image" />
-       */}
-      <CartIcon />
-      <p>0 items</p>
-    </div>
+    <>
+      <div
+        className="CartCount"
+        onClick={() => {
+          toggleCart();
+        }}
+      >
+        <CartIcon />
+        <p>{itemCount} items</p>
+      </div>
+    </>
   );
 }
+
+export default connect(
+  ({ user: { isLoggedIn }, cart: { itemCount } }) => ({
+    isLoggedIn,
+    itemCount,
+  }),
+  {
+    toggleCart,
+  }
+)(CartCount);

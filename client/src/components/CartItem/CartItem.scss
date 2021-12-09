@@ -1,0 +1,42 @@
+@import "assets/colors.scss";
+
+.CartItem__image {
+  width: 80px;
+}
+.CartItem__name {
+  font-size: 14px;
+  font-weight: bold;
+}
+.CartItem__info-quantity {
+  margin-left: 10px;
+  flex-grow: 1;
+}
+.CartItem__quantity-container {
+  display: flex;
+  margin-top: 11px;
+  align-items: center;
+  position: relative;
+  .CartItem__plus-minus {
+    border-radius: 50%;
+    height: 25px;
+    width: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $maroonFlush;
+  }
+  .CartItem__quantity {
+    margin: 0 25px;
+  }
+  .CartItem__total {
+    position: absolute;
+    right: 24px;
+  }
+}
+.CartItem {
+  padding: 4px 10px;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+}

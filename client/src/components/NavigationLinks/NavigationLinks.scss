@@ -1,4 +1,9 @@
 .NavigationLinks {
   margin: 0 10px;
   color: black;
+  padding: 8px;
+  &.active {
+    border-radius: 4px;
+    background-color: rgb(236, 145, 70);
+  }
 }

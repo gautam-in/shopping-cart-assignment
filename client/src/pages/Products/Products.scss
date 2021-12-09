@@ -1,16 +1,18 @@
 @import "assets/colors.scss";
 
 .Products__category-container {
-  background-color: $gallery;
   width: 20%;
 }
 .Products__container {
-  width: 80%;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-auto-rows: minmax(auto, auto);
   grid-auto-columns: minmax(auto, auto);
+  grid-column-gap: 4px;
+  width: 80%;
+  margin-top: 3px;
 }
 .Products {
   display: flex;
+  background-color: $gallery;
 }
