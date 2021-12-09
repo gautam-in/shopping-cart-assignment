@@ -10,8 +10,7 @@
     "dev-build": "webpack",
     "clean": "rmdir /s dist",
     "test": "echo \"Error: no test specified\" && exit 1"
-    },
-
+  },
   "author": "",
   "license": "MIT",
   "devDependencies": {
@@ -19,22 +18,26 @@
     "@babel/preset-env": "^7.15.8",
     "@babel/preset-react": "^7.14.5",
     "@pmmmwh/react-refresh-webpack-plugin": "^0.5.1",
+    "@svgr/webpack": "^6.1.1",
     "babel-loader": "^8.2.2",
     "clean-webpack-plugin": "^4.0.0",
     "css-loader": "^6.4.0",
-    "html-webpack-plugin": "^5.4.0",
+    "html-webpack-inline-svg-plugin": "^2.3.0",
+    "html-webpack-plugin": "^5.5.0",
     "mini-css-extract-plugin": "^2.4.2",
     "react-refresh": "^0.10.0",
+    "sass-loader": "^12.4.0",
     "webpack": "^5.58.2",
     "webpack-cli": "^4.9.0",
     "webpack-dev-server": "^4.3.1"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.6.2",
+    "canned": "^0.3.12",
+    "node-sass": "^7.0.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "styled-components": "^5.3.3",
-    "canned": "^0.3.12"
+    "react-router-dom": "^6.0.2",
+    "styled-components": "^5.3.3"
   }
-  
 }

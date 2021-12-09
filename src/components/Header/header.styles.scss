@@ -1,0 +1,19 @@
+.header-container{
+    display: flex;
+    justify-content: space-between;
+    .app-logo{
+        display: flex;
+        justify-content: center;
+    }
+    .main-nav{
+        display: flex;
+    }
+    .auth-cart-navs{
+        display: flex;
+        flex-direction: column;
+        .auth-navs{
+            display: flex;
+            padding: 8px;
+        }
+    }
+}
