@@ -1,0 +1,42 @@
+@import "assets/colors.scss";
+@import "assets/breakpoints.scss";
+
+.CategoryTile {
+  display: flex;
+  margin-top: 10px;
+  text-align: center;
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    width: 50%;
+    text-align: center;
+    transform: translateX(50%);
+    bottom: 0;
+    border-bottom: solid 1px transparent;
+    box-shadow: 10px 10px 5px grey;
+  }
+  padding: 10px 0;
+  margin: 10px 0;
+  img {
+    width: 28vw;
+  }
+}
+.CategoryTile__info {
+  flex-grow: 1;
+  button {
+    padding: 10px;
+    background-color: $darkPink4;
+    color: white;
+  }
+}
+
+@media screen and (max-width: $phone) {
+  .CategoryTile {
+    align-items: center;
+    img {
+      width: 114px;
+      height: 72px;
+    }
+  }
+}

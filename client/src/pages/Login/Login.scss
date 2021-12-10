@@ -1,0 +1,19 @@
+@import "../../assets/colors.scss";
+
+.Login--container {
+  //   display: flex;
+  width: 30vw;
+}
+.Login {
+  display: flex;
+  margin-left: 10vw;
+  button {
+    width: 100%;
+    padding: 8px 0;
+    background-color: $darkPink4;
+    color: white;
+  }
+}
+.Login--Header {
+  margin-right: 5vw;
+}

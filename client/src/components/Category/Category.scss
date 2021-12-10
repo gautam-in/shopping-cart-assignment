@@ -1,0 +1,18 @@
+@import "assets/colors.scss";
+
+.Category {
+  padding: 16px 20px;
+  position: relative;
+  cursor: pointer;
+  &.selected {
+    background-color: $LightSeaGreen;
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    border-bottom: solid 1px rgba(0, 0, 0, 0.2);
+    left: 5%;
+    bottom: 0;
+    width: 94%;
+  }
+}
