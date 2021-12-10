@@ -1,25 +1,38 @@
-import React from 'react'
-import { Link } from 'react-router-dom';
-import CartLogo from '../../../static/images/cart.svg'; 
-import { AppCartAndAuthHeaders, AppLogoContainer, AppPageHeaders, HeaderContainer } from './Header.styled.component';
-
+import React from "react";
+import CartLogo from "../../../static/images/cart.svg";
+import {
+    AppAuthRoutes,
+  AppCartAndAuthHeaders,
+  AppLogoContainer,
+  AppPageHeaders,
+  CartLogoSrc,
+  HeaderContainer,
+  LinkContainer,
+} from "./Header.styled.component";
+import Logo from "../../../static/images/logo_2x.png";
 
 const Header = () => {
-    return (
-        <HeaderContainer>
-          <AppLogoContainer>
-              <h1>Logo</h1>
-          </AppLogoContainer>
-          <AppPageHeaders>
-              <Link to='/'></Link>
-          </AppPageHeaders>
-          <AppCartAndAuthHeaders>
-          <Link to='/sign-up'>Register</Link>
-          <Link to='/login'>Signin</Link>
-
-          </AppCartAndAuthHeaders>
-        </HeaderContainer>
-    )
-}
+  return (
+    <HeaderContainer>
+      <AppLogoContainer>
+        <img src={Logo} alt="app-logo" />
+      </AppLogoContainer>
+      <AppPageHeaders>
+        <LinkContainer to="/home">Home</LinkContainer>
+        <LinkContainer to="/products">Products</LinkContainer>
+      </AppPageHeaders>
+      <AppCartAndAuthHeaders>
+        <AppAuthRoutes>
+          <LinkContainer to="/sign-up">Register</LinkContainer>
+          <LinkContainer to="/login">Signin</LinkContainer>
+        </AppAuthRoutes>
+        <AppLogoContainer>
+          <CartLogoSrc src={CartLogo} />
+          <p>0 items</p>
+        </AppLogoContainer>
+      </AppCartAndAuthHeaders>
+    </HeaderContainer>
+  );
+};
 
 export default Header;

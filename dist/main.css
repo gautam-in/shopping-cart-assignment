@@ -1,35 +1,13 @@
 /*!**************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./App.css ***!
   \**************************************************************************************************/
-h1, h2, h3, h4, h5, h6, p {
+body, h1, h2, h3, h4, h5, h6, p {
   margin: 0px;
 }
 
 a {
   text-decoration: none;
   color: #050101;
-}
-/*!***********************************************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/Header/header.styles.scss ***!
-  \***********************************************************************************************************************************/
-.header-container {
-  display: flex;
-  justify-content: space-between;
-}
-.header-container .app-logo {
-  display: flex;
-  justify-content: center;
-}
-.header-container .main-nav {
-  display: flex;
-}
-.header-container .auth-cart-navs {
-  display: flex;
-  flex-direction: column;
-}
-.header-container .auth-cart-navs .auth-navs {
-  display: flex;
-  padding: 8px;
 }
 
 /*# sourceMappingURL=main.css.map*/
