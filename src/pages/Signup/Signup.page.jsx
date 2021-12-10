@@ -1,10 +1,12 @@
 import React from 'react'
+import FormInput from '../../components/Input/Input.component';
+import { GroupContainer } from '../../components/Input/input.styles.jsx';
 
 const SignupPage = () => {
     return (
-        <div>
-            <h1>SignupPage</h1>
-        </div>
+        <GroupContainer>
+            <FormInput />
+        </GroupContainer>
     )
 };
 

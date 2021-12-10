@@ -21,7 +21,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(png|jpg|jpeg|gif)$/i,
+        test: /\.(png|jpg|jpeg|gif|svg)$/i,
         // type: "asset/resource" asset ll be good
         type: "asset/resource",
       },
@@ -33,13 +33,18 @@ module.exports = {
             options: { publicPath: "" },
           },
           "css-loader",
-          "sass-loader",
-        ],
+          "sass-loader"
+          ],
       },
       {
-        test: /\.svg/,
-        use: ["@svgr/webpack"],
-      },
+        test: /\.(js|jsx)$/,
+        exclude: [
+            path.resolve(__dirname, "node_modules")
+        ],
+        use: {
+            loader: 'babel-loader',
+        }
+    },
     ],
   },
   plugins: [
@@ -59,6 +64,6 @@ module.exports = {
     hot: true,
   },
   resolve: {
-    extensions: ["",".js", ".jsx"],
+    extensions: ["",".js", ".jsx",".svg"],
   },
 };
