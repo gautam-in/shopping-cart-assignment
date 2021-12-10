@@ -18,16 +18,11 @@ function Header({ updateLoginData, isLoggedIn }) {
 
   return (
     <div className="Header">
-      <Link to="/">
+      <Link to="/" className="Header__home">
         <Image
           alt="Logo"
           src="images/logo.png"
-          style={{
-            minHeight: "100px",
-            width: "17vw",
-            alignItems: "center",
-            margin: "5px",
-          }}
+          className="Header__HomeLinkImage"
         />
       </Link>
       <div className="Header__Navigation-container">

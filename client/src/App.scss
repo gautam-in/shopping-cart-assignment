@@ -1,3 +1,11 @@
+@import "assets/breakpoints.scss";
+
 .App {
   padding: 0 20px;
+}
+
+@media screen and (max-width: $phone) {
+  .App {
+    padding: 0 10px;
+  }
 }

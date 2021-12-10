@@ -1,3 +1,5 @@
+@import "assets/breakpoints.scss";
+
 .Header {
   display: flex;
   padding: 0 20px;
@@ -16,6 +18,14 @@
   position: relative;
   margin-left: auto;
 }
+.Header__home {
+  .Header__HomeLinkImage {
+    min-height: "100px";
+    width: "17vw";
+    align-items: "center";
+    margin: "5px";
+  }
+}
 .Header__SignIn-Register {
   font-size: 12px;
   position: absolute;
@@ -23,5 +33,28 @@
   color: black;
   a:first-child {
     margin-right: 16px;
+  }
+}
+@media screen and (max-width: $phone) {
+  .Header {
+    padding: 0;
+  }
+  .Header__Navigation-container {
+    display: none;
+  }
+  .Header__SignIn-Register {
+    button {
+      padding: 10px;
+    }
+  }
+  .Header__home {
+    width: 30vw;
+    height: 14vh;
+    padding: 13px 0;
+    .Header__HomeLinkImage {
+      width: 100%;
+      margin: 0;
+      height: 100%;
+    }
   }
 }

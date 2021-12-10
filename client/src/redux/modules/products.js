@@ -9,6 +9,7 @@ const RESET_FILTERED_PRODUCTS = "products/RESET_FILTERED_PRODUCTS";
 const initialState = {
   products: [],
   filteredProducts: [],
+  productsFetching: true,
 };
 
 export function filterProductByCategory(categoryId) {
@@ -56,13 +57,16 @@ export default function reducer(state = initialState, action = {}) {
         ...state,
         products: action.payload,
         filteredProducts: action.payload,
+        productsFetching: false,
       };
     case FILTER_PRODUCT_BY_CATEGORY:
       return {
         ...state,
-        filteredProducts: state.products.filter(
-          (product) => product.category === action.categoryId
-        ),
+        filteredProducts: action.categoryId
+          ? state.products.filter(
+              (product) => product.category === action.categoryId
+            )
+          : [...state.products],
       };
     case RESET_FILTERED_PRODUCTS:
       return {

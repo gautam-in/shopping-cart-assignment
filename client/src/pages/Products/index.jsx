@@ -11,6 +11,7 @@ import {
 } from "redux/modules/products";
 import { updateCartItem, CART_ACTIONS } from "redux/modules/cart";
 import ProductTile from "components/ProductTile";
+import CategoryListingDropdown from "components/CategoryListingDropdown";
 
 function Products({
   categories,
@@ -20,15 +21,19 @@ function Products({
   products,
   resetFilteredProducts,
   updateCartItem,
+  categoriesFetching,
+  productsFetching,
 }) {
   const navigate = useNavigate();
   const [selectedCategory, setSelectedCategory] = useState("");
   const { categoryId } = useParams();
 
   useEffect(() => {
-    if (categoryId) filterProductByCategory(categoryId);
-    setSelectedCategory(categoryId);
-  }, [categoryId]);
+    if (!categoriesFetching && !productsFetching) {
+      filterProductByCategory(categoryId);
+      setSelectedCategory(categoryId || "");
+    }
+  }, [categoryId, categoriesFetching, productsFetching]);
 
   useEffect(() => {
     if (!products.length) initiateGetProducts();
@@ -50,6 +55,15 @@ function Products({
             onCategoryClick={(category) => setSelectedCategory(category)}
           />
         </div>
+
+        <CategoryListingDropdown
+          categories={categories}
+          selectedCategory={selectedCategory}
+          onChange={(category) => {
+            if (category) navigate(`/products/${category}`);
+            else navigate("/products");
+          }}
+        />
       </CategoryListingContext>
 
       <div className="Products__container">
@@ -71,10 +85,15 @@ function Products({
 }
 
 export default connect(
-  ({ category: { categories }, products: { filteredProducts, products } }) => ({
+  ({
+    category: { categories, fetching },
+    products: { filteredProducts, products, productsFetching },
+  }) => ({
     categories,
     filteredProducts,
+    categoriesFetching: fetching,
     products,
+    productsFetching,
   }),
   {
     initiateGetProducts,

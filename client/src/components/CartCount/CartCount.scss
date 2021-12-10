@@ -1,7 +1,8 @@
 @import "assets/colors.scss";
+@import "assets/breakpoints.scss";
 
 .CartCount {
-  height: 50px;
+  min-height: 50px;
   background-color: $gallery;
   display: flex;
   margin-top: auto;
@@ -12,5 +13,16 @@
     width: 26px;
     fill: $darkPink4;
     margin-right: 8px;
+  }
+}
+
+@media screen and (max-width: $phone) {
+  .CartCount {
+    min-height: 38px;
+    padding: 4px 10px;
+    font-size: 14px;
+    svg {
+      width: 23px;
+    }
   }
 }

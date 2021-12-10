@@ -1,0 +1,22 @@
+@import "assets/breakpoints.scss";
+@import "assets/colors.scss";
+
+.CategoryListingDropdown {
+  display: none;
+}
+
+@media screen and (max-width: $phone) {
+  .CategoryListingDropdown {
+    display: block;
+    width: 99%;
+    height: 6vh;
+    margin-top: 3px;
+    background-color: $maroonFlush;
+    color: white;
+    // border: none;
+    padding: 0 11px;
+    &:focus {
+      outline: none;
+    }
+  }
+}

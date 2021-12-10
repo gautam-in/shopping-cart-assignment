@@ -6,6 +6,7 @@ const INITIATE_ADD_CATEGORY = "category/INITIATE_ADD_CATEGORY";
 
 const initialState = {
   categories: [],
+  fetching: true,
 };
 
 function* getAddCategory() {
@@ -40,6 +41,7 @@ export default function reducer(state = initialState, action = {}) {
       return {
         ...state,
         categories: action.payload,
+        fetching: false,
       };
     default:
       return state;

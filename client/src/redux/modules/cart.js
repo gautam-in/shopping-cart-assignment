@@ -44,6 +44,7 @@ function checkAndUpdteCartItem(payload, currentState) {
   if (findProductIndex !== -1) {
     let previousProduct = previousProducts[findProductIndex];
     let totalPrice = previousTotalPrice;
+    let totalCount = previousProducts.length;
 
     if (actionType === CART_ACTIONS.ADD) {
       previousProduct.quantity += 1;
@@ -52,11 +53,13 @@ function checkAndUpdteCartItem(payload, currentState) {
       previousProduct.quantity -= 1;
       if (previousProduct.quantity === 0) {
         previousProducts.splice(findProductIndex, 1);
+        totalCount -= 1;
       }
     }
     return {
       totalPrice,
       cartItems: [...previousProducts],
+      itemCount: totalCount,
     };
   } else {
     item.quantity = 1;

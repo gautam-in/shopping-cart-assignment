@@ -1,4 +1,5 @@
 @import "assets/colors.scss";
+@import "assets/breakpoints.scss";
 
 .CategoryTile {
   display: flex;
@@ -27,5 +28,15 @@
     padding: 10px;
     background-color: $darkPink4;
     color: white;
+  }
+}
+
+@media screen and (max-width: $phone) {
+  .CategoryTile {
+    align-items: center;
+    img {
+      width: 114px;
+      height: 72px;
+    }
   }
 }
