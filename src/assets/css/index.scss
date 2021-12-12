@@ -1,0 +1,17 @@
+
+// ----home-------
+@import "./utilities/variables";
+@import "./utilities/mixins";
+
+@import "./partials/Header";
+@import "./partials/Home";
+// --------hero carousel --------------
+@import './partials/Carousle';
+// ---------signin---------
+@import "./partials/SignIn";
+// -----------register-----
+@import "./partials/Products";
+// ----------cart--------------
+@import "./partials/Cart";
+// ----------footer------------
+@import "./partials/Footer";

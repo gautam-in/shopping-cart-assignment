@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <hello-world></hello-world>
+  <script>
+    class HelloWorld extends HTMLElement {
+      constructor(name) {
+        super();
+
+        this.subject = name;
+
+        // create a Shadow DOM
+        this.root = this.attachShadow({
+          mode: 'open'
+        });
+      }
+
+      // run some code when the component is ready
+      connectedCallback() {
+        this.root.innerHTML = this.getTemplate();
+      }
+
+      getTemplate() {
+        return `
+        <style>
+          
+
+          header {
+  height: 20%;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  padding-left: 5px;
+  padding-right: 5px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  left: 0;
+  width: 100%;
+  border-bottom: 3px solid #d7d4d4;
+  background-color: #fff;
+}
+
+header nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+header nav .nav-logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+header nav .nav-logo .nav-logo-image {
+  width: auto;
+}
+
+header nav .nav-logo .nav-as {
+  padding: 0;
+}
+
+header nav .nav-logo .nav-as ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 1.7rem;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+header nav .nav-logo .nav-as ul li {
+  list-style: none;
+}
+
+header nav .nav-logo .nav-as ul li a {
+  margin-top: 2rem;
+  margin: 0;
+  padding: 10px;
+  color: #808080;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+header nav .nav-logo .nav-as ul li a:hover {
+  color: #000;
+}
+
+header nav .nav-links .links {
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 2rem 0 0;
+}
+
+header nav .nav-cart {
+  margin-left: auto;
+}
+
+header nav .nav-cart .sign-as {
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0;
+  padding-left: 10px;
+}
+
+header nav .nav-cart .sign-as li a {
+  margin: 0;
+  padding: 10px;
+  color: #808080;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+header nav .nav-cart .sign-as li a:hover {
+  color: #000;
+}
+
+header nav .nav-cart .nav-cart-logo {
+  background: #eaeaea;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 2.5rem;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 8rem;
+}
+
+header nav .nav-cart .nav-cart-logo a {
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0;
+  margin: 0;
+  padding: 10px;
+  color: #808080;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+header nav .nav-cart .nav-cart-logo a:hover {
+  color: #000;
+}
+
+header nav .nav-cart .nav-cart-logo a .icon-cart {
+  display: inline-block;
+  background-size: cover;
+  height: 35px;
+  width: 30px;
+  background-image: url(../../../../static/images/cart.svg);
+}
+
+header nav .nav-cart .nav-cart-logo a .cart-item-count {
+  padding-left: 10px;
+}
+
+header nav .nav-cart .nav-cart-logo a .count-color {
+  color: #d00155;
+}
+
+
+          </style>
+          <header>
+      <nav class="navbar">
+        <div class="nav-logo">
+          <img class="nav-logo-image" src="../static/images/logo.png" alt="Sabka Bazaar Logo" height="60" width="133" />
+          <div class="nav-as">
+            <ul class="as">
+              <li>
+                <a href="index.html">Home</a>
+              </li>
+              <li>
+                <a href="products.html">
+                  Products
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="nav-cart">
+          <ul class="sign-as">
+            <li>
+              <a href="signin.html">SignIn</a>
+            </li>
+            <li>
+              <a href="register.html">Register</a>
+            </li>
+            <li style="display: none;">
+              <a href="register.html">Register</a>
+            </li>
+          </ul>
+          <div class="nav-cart-logo">
+            <a href="cartcard.html">
+              <span class="icon-cart count-color"></span>
+              <span class="cart-item-count ">0 Item</span>
+            </a>
+          </div>
+        </div>
+      </nav>
+    </header>`;
+      }
+    }
+
+    customElements.define('hello-world', HelloWorld);
+  </script>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- header code  -->
+        <!-- <div class="nav-logo">
+          <img class="nav-logo-image" src="../static/images/logo.png" alt="Sabka Bazaar Logo" height="60" width="133" />
+          <div class="nav-as">
+            <ul class="as">
+              <li>
+                <a href="index.html">Home</a>
+              </li>
+              <li>
+                <a href="products.html">
+                  Products
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="nav-cart">
+          <ul class="sign-as">
+            <li>
+              <a href="signin.html">SignIn</a>
+            </li>
+            <li>
+              <a href="register.html">Register</a>
+            </li>
+            <li style="display: none;">
+              <a href="logout.html">logout</a>
+            </li>
+          </ul>
+          <div class="nav-cart-logo">
+            <a href="cartcard.html">
+              <span class="icon-cart count-color"></span>
+              <span class="cart-item-count ">0 Item</span>
+            </a>
+          </div>
+        </div> -->
+
+  <!-- ------header code end----------------- -->
+
+
+
+
+  <!-- -------------carousel code start------------- -->
+
+     <!-- <div class="slideshow-container">
+          <div class="mySlides fade">
+            <img src="../static/images/offers/offer1.jpg" style="width:100%">
+          </div>
+
+          <div class="mySlides fade">
+            <img src="../static/images/offers/offer2.jpg" style="width:100%">
+          </div>
+
+          <div class="mySlides fade">
+            <img src="../static/images/offers/offer3.jpg" style="width:100%">
+          </div>
+
+          <div class="mySlides fade">
+            <img src="../static/images/offers/offer4.jpg" style="width:100%">
+          </div>
+
+          <div class="mySlides fade">
+            <img src="../static/images/offers/offer5.jpg" style="width:100%">
+          </div>
+
+          <a class="prev" id="plusSlides">PREV</a>
+          <a class="next" id="MinusSlides">NEXT</a>
+        </div>
+        <div style="text-align:center">
+          <span class="dot dot1"></span>
+          <span class="dot dot2"></span>
+          <span class="dot dot3"></span>
+          <span class="dot dot4"></span>
+          <span class="dot dot5"></span>
+        </div>
+        <br> -->
+
+    <!-- ------------------carousel code end----------------- -->
