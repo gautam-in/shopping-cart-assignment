@@ -5,11 +5,13 @@ import HomeView from "./views/HomeView";
 import LoginView from "./views/LoginView";
 import RegisterView from "./views/RegisterView";
 import ProductsView from "./views/ProductsView";
+import HeaderView from "./views/HeaderView";
 
 const loginInstance = new LoginView();
 const registerInstance = new RegisterView();
 const homeInstance = new HomeView();
 const productsInstance = new ProductsView();
+const headerInstance = new HeaderView();
 
 (function () {
   let currentPath = null;
@@ -137,6 +139,14 @@ const productsInstance = new ProductsView();
         e.target.classList.add("active");
         productsInstance.filterProductsBasedOnCategory(e.target.dataset.id);
       }
+    });
+
+    document.querySelector("#cartButton").addEventListener("click", (e) => {
+      headerInstance.showOrHideCart();
+    });
+
+    document.querySelector("#cartBtnClose").addEventListener("click", (e) => {
+      headerInstance.showOrHideCart();
     });
 
     router();

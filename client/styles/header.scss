@@ -57,7 +57,7 @@
       }
     }
 
-    .cart-button {
+    #cartButton {
       background-color: $light-gray;
       display: flex;
       flex-direction: row;
@@ -77,6 +77,109 @@
 
       div {
         white-space: nowrap;
+      }
+    }
+  }
+
+  .cart-container {
+    position: relative;
+
+    .cart-popup {
+      position: absolute;
+      top: 55px;
+      right: 0;
+      width: 500px;
+      z-index: 15;
+
+      .cart-header {
+        background-color: $theme-black;
+        color: $std-white;
+        display: flex;
+        justify-content: space-between;
+        padding: 10px 8px 10px 20px;
+        align-items: center;
+        max-height: 44px;
+
+        .my-cart-title {
+          font-size: 14px;
+
+          span {
+            font-weight: 800;
+            font-size: 16px;
+          }
+        }
+      }
+
+      .cart-content {
+        background-color: $light-gray;
+        padding: 10px;
+        border-bottom: 1px solid $light-gray-border;
+        /* Height of header: 90px, cartHeader: 44px, cartFooter: 87px */
+        height: calc(100vh - 90px - 44px - 87px);
+        overflow-y: auto;
+
+        .cart-ad {
+          background-color: $std-white;
+          border-radius: 5px;
+          display: flex;
+          align-items: center;
+          padding: 7px 12px;
+
+          img {
+            max-height: 40px;
+            margin-right: 25px;
+          }
+        }
+
+        .cart-items-container {
+          background-color: white;
+          margin: 0 -10px 10px;
+
+          .cart-item {
+            display: flex;
+            padding: 10px 15px;
+
+            img {
+              width: 100px;
+              padding-right: 12px;
+            }
+
+            .cart-item-details {
+              width: calc(100% - 100px);
+              padding: 10px;
+
+              .cart-item-name {
+                font-size: 16px;
+                font-weight: 800;
+              }
+
+              .cart-item-pricing {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+              }
+            }
+          }
+        }
+      }
+
+      .cart-footer {
+        background-color: $std-white;
+        padding: 10px;
+        max-height: 87px;
+
+        .promo-info {
+          text-align: center;
+          font-size: 14px;
+          padding-bottom: 10px;
+        }
+
+        #proceedCheckout {
+          width: 100%;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
       }
     }
   }

@@ -3,6 +3,9 @@ $form-floating-label-transform: scale(.85) translateY(-1rem) translateX(.15rem);
 $carousel-indicator-width: 5px;
 $carousel-indicator-height: 5px;
 $carousel-indicator-spacer: 20px;
+$btn-close-opacity: 1;
+$btn-close-hover-opacity: 1;
+$btn-close-width: 10px;
 
 /*Standard colors*/
 $std-white: white;
@@ -20,12 +23,16 @@ $light-gray-shadow: #c4c4c4;
 /*Section colors*/
 $footer-gray: #eaeaea;
 
+/*Border colors*/
+$light-gray-border: #d8d8d8;
+
 /*Theme colors*/
 $crimson-pink: #d00155;
 $light-gray: #eeeeee;
 $light-gray-bg-hover: rgba(238, 238, 238, 0.5);
 $light-crimson-pink-hover: rgba(208, 1, 85, 0.7);
 $light-gray-2: #f0f0f0;
+$theme-black: #1d2124;
 
 /*Input field colors*/
 $text-field-border: #e2e2e2;

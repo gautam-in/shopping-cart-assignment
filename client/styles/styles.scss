@@ -22,6 +22,21 @@
   box-shadow: none !important;
 }
 
+#app-root {
+  position: relative;
+}
+
+.black-overlay {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: black;
+  z-index: 9;
+  opacity: 0.25;
+}
+
 .btnCrimsonPink {
   background-color: $crimson-pink;
   color: $std-white;
