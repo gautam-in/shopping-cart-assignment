@@ -49,11 +49,21 @@ const headerInstance = new HeaderView();
     document.querySelector("#route-content").innerHTML = viewHtml;
 
     addEventListenersOnCurrentView(currentPath);
+
+    if (location.pathname === "/products") {
+      checkProductsPageQueryParams();
+    }
   }
 
   function addEventListenersOnCurrentView(currentPath) {
     switch (currentPath) {
       case "/":
+        const exploreCategoryBtns = document.querySelectorAll(
+          ".exploreCategoryBtn"
+        );
+        exploreCategoryBtns.forEach((exploreBtn) => {
+          exploreBtn.addEventListener("click", exploreCategory);
+        });
         break;
       case "/login":
         document
@@ -75,6 +85,12 @@ const headerInstance = new HeaderView();
   function cleanUpMemory(previousPath) {
     switch (previousPath) {
       case "/":
+        const exploreCategoryBtns = document.querySelectorAll(
+          ".exploreCategoryBtn"
+        );
+        exploreCategoryBtns.forEach((exploreBtn) => {
+          exploreBtn.removeEventListener("click", exploreCategory);
+        });
         break;
       case "/login":
         document
@@ -93,6 +109,22 @@ const headerInstance = new HeaderView();
     }
 
     removeLinkActiveClass();
+  }
+
+  function exploreCategory(e) {
+    navigateTo(
+      `${window.location.origin}/products?category=${e.target.dataset.id}`
+    );
+  }
+
+  function checkProductsPageQueryParams() {
+    var url = new URL(window.location.href);
+    var params = new URLSearchParams(url.search);
+    productsInstance.filterProductsBasedOnCategory(params.get("category"));
+    document
+      .querySelector(`button[data-id="${params.get("category")}"]`)
+      .classList.add("active");
+    window.scrollTo(0, 0);
   }
 
   function removeLinkActiveClass() {

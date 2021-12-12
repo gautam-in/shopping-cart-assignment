@@ -47,7 +47,8 @@
             <div class="col-8 category-details">
                 <h2>{{this.name}}</h2>
                 <p>{{this.description}}</p>
-                <button class="btn btnCrimsonPink" type="button" aria-label="Click here to explore {{this.key}}">Explore
+                <button data-id="{{this.id}}" class="btn btnCrimsonPink exploreCategoryBtn" type="button"
+                    aria-label="Click here to explore {{this.key}}">Explore
                     {{this.key}}</button>
             </div>
         </div>
