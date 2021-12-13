@@ -5,6 +5,7 @@ import Header from "./src/components/Header/Header.component";
 import HomePage from "./src/pages/Home/Home.page.jsx";
 import LoginPage from "./src/pages/Login/Login.page.jsx";
 import SignupPage from "./src/pages/Signup/Signup.page.jsx";
+import Products from "./src/pages/Products/Products.component.jsx";
 
 
 const App = () => {
@@ -14,7 +15,8 @@ const App = () => {
       <Routes>
         <Route exact path="/" element={<HomePage />} />
         <Route exact path="/sign-up" element={<SignupPage />} />
-        <Route  exact path="/login" element={<LoginPage />} />
+        <Route exact path="/login" element={<LoginPage />} />
+        <Route path="/products" element={<Products />} />
       </Routes>
     </div>
   );

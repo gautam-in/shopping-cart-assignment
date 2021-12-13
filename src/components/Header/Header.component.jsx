@@ -5,6 +5,7 @@ import {
   AppCartAndAuthHeaders,
   AppLogoContainer,
   AppPageHeaders,
+  CartLogoContainer,
   CartLogoSrc,
   HeaderContainer,
   LinkContainer,
@@ -26,10 +27,10 @@ const Header = () => {
           <LinkContainer to="/sign-up">Register</LinkContainer>
           <LinkContainer to="/login">Signin</LinkContainer>
         </AppAuthRoutes>
-        <AppLogoContainer>
+        <CartLogoContainer >
           <CartLogoSrc src={CartLogo} />
           <p>0 items</p>
-        </AppLogoContainer>
+        </CartLogoContainer>
       </AppCartAndAuthHeaders>
     </HeaderContainer>
   );
