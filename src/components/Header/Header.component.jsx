@@ -19,7 +19,7 @@ const Header = () => {
         <img src={Logo} alt="app-logo" />
       </AppLogoContainer>
       <AppPageHeaders>
-        <LinkContainer to="/home">Home</LinkContainer>
+        <LinkContainer to="/">Home</LinkContainer>
         <LinkContainer to="/products">Products</LinkContainer>
       </AppPageHeaders>
       <AppCartAndAuthHeaders>
