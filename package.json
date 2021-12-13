@@ -9,7 +9,8 @@
     "build": "SET NODE_ENV=production & webpack",
     "dev-build": "webpack",
     "clean": "rmdir /s dist",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start-server": "canned -p 5000 ./server"
   },
   "author": "",
   "license": "MIT",
@@ -33,13 +34,15 @@
     "webpack-dev-server": "^4.3.1"
   },
   "dependencies": {
-    "@reduxjs/toolkit": "^1.6.2",
     "canned": "^0.3.12",
     "node-sass": "^7.0.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-redux": "^7.2.6",
     "react-responsive-carousel": "^3.2.22",
     "react-router-dom": "^6.0.2",
+    "redux": "^4.1.2",
+    "redux-logger": "^3.0.6",
     "styled-components": "^5.3.3"
   }
 }
