@@ -1,4 +1,11 @@
 // side Menu
+let count=0;
+
+import {CartItem,CartContent} from "./cart.js"
+import {DisplayAddedToCart} from "./Displaycart.js"
+
+
+
 function HomepageCategoriesContent() {
     return fetch("../server/categories/index.get.json")
       .then((result) => {
@@ -89,8 +96,14 @@ async function NavContent() {
     // button
     let Pricebutton=document.createElement("button");
     Pricebutton.setAttribute('class','price-button');
+    Pricebutton.setAttribute('style','cursor:pointer');
+
     Pricebutton.innerText="Buy Now";
-    Pricebutton.addEventListener('click',()=>{ CartContent(res);})
+    Pricebutton.addEventListener('click',()=>{ 
+      CartContent(res);
+      DisplayAddedToCart();
+    }
+      )
    
    
     // Apending
@@ -99,13 +112,3 @@ async function NavContent() {
     ProductsContainer.append(Card)
 
   }
- var count=0;
-  var CartItem=[];
- function CartContent(response)
- {
-   CartItem.push(response);
-   console.log(CartItem);
-   return CartItem;
-   
- }
- export{CartContent}
