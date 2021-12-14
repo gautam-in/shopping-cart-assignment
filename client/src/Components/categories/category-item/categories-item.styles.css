@@ -30,7 +30,7 @@
 
 .category-button {
   border: none;
-  background-color: #8b0a5f;
+  background-color: #d10157;
   color: #fff;
   padding: 10px;
   cursor: pointer;
@@ -39,13 +39,20 @@
 
 .category-button:hover,
 .category-button:active {
-  background-color: #c83095;
+  background-color: #c72a93;
 }
 
 .category-image img {
-  height: 150px;
-  width: 200px;
+  height: 240px;
+  width: 320px;
   flex: 1;
+}
+
+@media (max-width: 992px) {
+  .category-image img {
+    height: 180px;
+    width: 240px;
+  }
 }
 
 @media (max-width: 768px) {
@@ -58,5 +65,16 @@
   .category-button {
     font-size: 10px;
     padding: 8px;
+  }
+  .category-image img {
+    height: 150px;
+    width: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .category-image img {
+    height: 120px;
+    width: 160px;
   }
 }

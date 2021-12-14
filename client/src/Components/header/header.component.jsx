@@ -1,13 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { userSignOut } from "../../reducer/user/user.actions";
 
 import "./header.styles.css";
 
 const Header = () => {
-  const name = sessionStorage.getItem("name");
+  const userCredentials = JSON.parse(localStorage.getItem("userCredentials"));
   const cart = useSelector((state) => state.cart.cartItems);
   const isLoggedIn = useSelector((state) => state.user.isLoggedIn);
+  const dispatch = useDispatch();
 
   return (
     <div className='header'>
@@ -33,8 +35,15 @@ const Header = () => {
           <div className='auth'>
             {isLoggedIn ? (
               <>
-                <div className='right-menu'>Hi {name}</div>
-                <div className='right-menu'>Sign Out</div>
+                <div className='right-menu first-name'>
+                  Hi, {userCredentials.firstName}
+                </div>
+                <div
+                  className='right-menu'
+                  onClick={() => dispatch(userSignOut())}
+                >
+                  Sign Out
+                </div>
               </>
             ) : (
               <>

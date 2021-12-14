@@ -1,6 +1,6 @@
 import React from "react";
 import useHttp from "../../utils/hooks/use-http";
-import CategoryItem from "../category-item/category-item.component";
+import CategoryItem from "./category-item/category-item.component";
 
 const Categories = () => {
   const categories = useHttp("http://localhost:5000/categories");

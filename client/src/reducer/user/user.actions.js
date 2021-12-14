@@ -1,9 +1,9 @@
 import UserActionTypes from "./user.types";
 
-export const UserSignIn = () => ({
+export const userSignIn = () => ({
   type: UserActionTypes.SIGN_IN,
 });
 
-export const UserSignOut = () => ({
+export const userSignOut = () => ({
   type: UserActionTypes.SIGN_OUT,
 });

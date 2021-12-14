@@ -51,6 +51,12 @@
   text-decoration: underline;
 }
 
+.first-name:hover {
+  text-decoration: none;
+  color: #777777;
+  cursor: default;
+}
+
 .auth-cart {
   display: flex;
   flex-direction: column;
