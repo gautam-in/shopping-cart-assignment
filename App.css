@@ -1,6 +1,9 @@
 body,h1,h2,h3,h4,h5,h6,p,hr{
   margin: 0px;
 }
+span{
+  margin: 0 8px;
+}
 a{
   text-decoration: none;
   color: rgb(5, 1, 1)

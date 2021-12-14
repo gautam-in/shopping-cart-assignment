@@ -6,11 +6,16 @@ const addItem = item => ({
     payload : item
 });
 
+const removeItem = item => ({
+    type : cartActionTypes.REMOVE_ITEM,
+    payload : item
+});
+
 const clearItem = item => ({
     type : cartActionTypes.CLEAR_ITEM,
     payload : item
 })
 
-export { addItem , clearItem };
+export { addItem , clearItem , removeItem };
 
 
