@@ -4,12 +4,46 @@
   "description": "This is a shopping cart coding exercise",
   "main": "index.js",
   "scripts": {
+    "start": "webpack serve",
+    "watch": "webpack --watch",
+    "build": "SET NODE_ENV=production & webpack",
+    "dev-build": "webpack",
+    "clean": "rmdir /s dist",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "canned -p 5000 ./server"
+    "start-server": "canned -p 5000 ./server"
   },
   "author": "",
   "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.15.8",
+    "@babel/preset-env": "^7.15.8",
+    "@babel/preset-react": "^7.14.5",
+    "@pmmmwh/react-refresh-webpack-plugin": "^0.5.1",
+    "@svgr/webpack": "^6.1.1",
+    "babel-loader": "^8.2.2",
+    "clean-webpack-plugin": "^4.0.0",
+    "copy-webpack-plugin": "^10.1.0",
+    "css-loader": "^6.4.0",
+    "html-webpack-inline-svg-plugin": "^2.3.0",
+    "html-webpack-plugin": "^5.5.0",
+    "mini-css-extract-plugin": "^2.4.2",
+    "react-refresh": "^0.10.0",
+    "sass-loader": "^12.4.0",
+    "webpack": "^5.58.2",
+    "webpack-cli": "^4.9.0",
+    "webpack-dev-server": "^4.3.1"
+  },
   "dependencies": {
-    "canned": "^0.3.12"
+    "canned": "^0.3.12",
+    "node-sass": "^7.0.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-redux": "^7.2.6",
+    "react-responsive-carousel": "^3.2.22",
+    "react-router-dom": "^6.0.2",
+    "redux": "^4.1.2",
+    "redux-logger": "^3.0.6",
+    "reselect": "^4.1.5",
+    "styled-components": "^5.3.3"
   }
 }
