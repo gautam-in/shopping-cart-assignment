@@ -1,0 +1,143 @@
+.cart-page {
+  margin-top: 0;
+}
+.empty-cart {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+  position: relative;
+}
+
+.empty-cart-title {
+  font-size: 1.5rem;
+  margin: 8px;
+  font-weight: bold;
+}
+.empty-cart-desc {
+  margin: 8px;
+  font-size: 1rem;
+}
+
+.btn-cart {
+  border: none;
+  background-color: #d10157;
+  color: white;
+  width: 95%;
+  margin: 0 auto;
+  font-size: 1rem;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.btn-cart:hover,
+.btn-cart:active {
+  background-color: #c72a93;
+}
+
+.btn-bottom {
+  position: absolute;
+  bottom: 10px;
+}
+
+/*Cart Items CSS*/
+
+.cart-items-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgb(221, 218, 218);
+}
+
+.cart-title {
+  padding: 4px 24px;
+  background-color: white;
+  margin: 12px 8px;
+  font-size: 1.2rem;
+  width: 98%;
+}
+
+.cart-items-list {
+  width: 100%;
+  height: 60vh;
+  overflow-y: auto;
+}
+
+.cart-item-container {
+  padding: 8px;
+  background-color: white;
+  width: 98%;
+  margin: 8px;
+}
+
+.cart-item {
+  display: flex;
+  padding: 4px;
+}
+
+.cart-item img {
+  width: 80px;
+  height: 80px;
+  margin-right: 8px;
+}
+
+.item-desc {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+}
+
+.button-container {
+  display: flex;
+  margin: 12px;
+  font-size: 18px;
+}
+
+.btn-inc-dec {
+  border: none;
+  background-color: #d10157;
+  border-radius: 5px;
+  padding: 4px 10px;
+  color: white;
+  margin: 0 8px;
+}
+
+.btn-inc-dec:hover,
+.btn-inc-dec:active {
+  background-color: #c72a93;
+}
+
+.item-total {
+  align-self: center;
+  font-size: 18px;
+}
+
+.cart-footer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: white;
+  flex-direction: column;
+  align-items: center;
+}
+
+.btn-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.checkout-title {
+  margin-left: 1rem;
+}
+
+.cart-total-price {
+  margin-right: 1rem;
+}
+
+@media (max-width: 767px) {
+  .item-desc {
+    width: 60%;
+  }
+}

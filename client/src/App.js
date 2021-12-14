@@ -7,6 +7,7 @@ import SignIn from "./Pages/SignIn/sign-in.component";
 import SignUp from "./Pages/SignUp/sign-up.component";
 import Footer from "./Components/footer/footer.component";
 import Header from "./Components/header/header.component";
+import Cart from "./Components/cart/cart.component";
 
 const App = () => {
   return (
@@ -18,6 +19,7 @@ const App = () => {
         <Route path={"/products"} element={<Products />} />
         <Route path={"/signin"} element={<SignIn />} />
         <Route path={"/signup"} element={<SignUp />} />
+        <Route path={"/cart"} element={<Cart />} />
         <Route path='*' element={<Navigate to='/' />} />
       </Routes>
       <Footer />
