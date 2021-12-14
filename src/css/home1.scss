@@ -1,0 +1,290 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+  }
+
+  $button_color : #ca0655;
+  @mixin shadow_ele {
+    background: radial-gradient(at 50% 0, rgba(0, 0, 0, 0.5), transparent 70%);
+    height: 1rem;
+    width: 100%;
+  }
+
+  @mixin header_ele {
+    width: 100%;
+    height: 70px;
+    box-shadow: 0 0.3rem 0.2rem rgb(219, 218, 215);
+    z-index: 1;
+    background-color: white;
+    position: fixed;
+    .container{
+        width: 85%;
+        height: 80%;
+        display: flex;
+        margin: 0 auto;
+        justify-content: space-between;
+        .header-first {
+            display: flex;
+            flex: 1;
+            justify-content: space-around;
+            align-items: flex-end;
+            .first-list {
+                display: flex;
+                flex-direction: row;
+                .list-item {
+                    color: gray;
+                    padding-right: 20px;
+                    font-size: 1.2rem;
+                }
+            }
+        }
+        .logo-img{
+            height: 90%;
+        }
+        .second{
+            display: flex;
+            flex: 1.7;
+            justify-content: flex-end;
+            .header-second {
+                display: flex;
+                flex-direction: column;
+                .second-list {
+                    display: flex;
+                    flex-direction: row;
+                    margin-bottom: 5px;
+                    .litwo-item{
+                        color: rgb(58, 70, 70);
+                        padding-left: 5px;
+                        font-size: 0.9rem;
+                    }
+                }
+                .header-cart{
+                    display: flex;
+                    align-items: center;
+                    border: 3px solid black;
+                    border-radius: 10px;
+                    height: 70%;
+                    padding-left: 10px;
+                    background-color: rgb(214, 212, 212);
+                    img{
+                        height: 80%;
+                    }
+                   
+                    span{
+                        color: black;
+                        font-size: 0.8rem;
+                    }
+                }
+              }
+        }
+    }
+  }
+  
+  html{
+      font-size: 16px;
+  }
+  
+  .header {
+    @include header_ele();
+  }
+
+.carousel{
+    position: relative;
+    height: 340px;
+    width: 85%;
+    margin: 0px auto;
+    padding-top: 70px;
+    z-index: 0;
+    margin-bottom: 20px;
+    .carousel_button{
+        position: absolute;
+        top: 50%;
+        background-color: transparent;
+        padding: 4px;
+    }
+    .button_left{
+        left: -40px;
+    }
+    
+    .button_right{
+        right: -40px;
+    }
+    .track_container{
+        position: relative;
+        height: 100%;
+        overflow: hidden;
+        #carousel_track{
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            position: relative;
+            height: 100%;
+            transition: transform 250ms ease-in;
+            .carousel_slide{
+                position: absolute;
+                top: 0;
+                margin: 0;
+                list-style: none;
+                width: 100%;
+                height: 100%;
+                .carousel_image{
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+        }
+    }
+    .carousel_nav{
+        display: flex;
+        justify-content: center;
+        padding: 2px 0;
+        margin-top: -29px;
+        position: relative;
+        .carousel_indicator{
+            border: 0;
+            border-radius: 50%;
+            background: rgba(0, 0, 0,.3);
+            width: 15px;
+            height: 15px;
+            margin: 0 4px;
+            cursor: pointer;
+        }
+        .carousel_indicator.current{
+            background: rgba(0, 0, 0,.75);
+        }
+    }
+    .shadow{
+        @include shadow_ele();
+    }
+}
+
+.item_type{
+    display: flex;
+    width: 80%;
+    margin: 0 auto;
+    flex-direction: column;
+    .shadow{
+        @include shadow_ele();
+    }
+    .item{
+        display: flex;
+        height: 240px;
+        width: 100%;
+        justify-content: space-around;
+        .item_image{
+            flex: 1;
+            max-height: 100%;
+            .it_image{
+                height: 80%;
+            }
+        }
+        .item_description{
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            margin: 0 auto;
+            .item_heading{
+                display: flex;
+                justify-content: center;
+                padding: 0.1rem 0.8rem;
+                margin: 0rem auto;
+            }
+            .item_about{
+                display: flex;
+                justify-content: center;
+                padding: 0.5rem 0.8rem;
+                margin: 0.2rem auto;
+            }
+            .item_button{
+                display: flex;
+                justify-content: center;
+                background-color: $button_color;
+                color: #fff;
+                border: 0;
+                padding: 0.5rem 0.8rem;
+                margin: 0.2rem auto;
+                
+            }
+        }
+    }
+}
+
+
+.footer {
+    background-color: #d6d6d6;
+    display: flex;
+    justify-content: space-evenly;
+    .footer-container {
+        width: 80%;
+        font-size: 1.1rem;
+        padding: 0.3rem 0rem;
+      }
+  }
+  
+
+  @media (max-width:500px) {
+    html, body {
+        overflow-x:hidden 
+      } 
+    .container{
+        width: 90%;
+      }
+    .header-cart{
+        display: flex;
+        flex-direction: row;
+        padding: 0 10px;
+        height: 2rem;
+    }
+    .cart{
+        height: 20%;
+    }
+    .second-list{
+        display: none;
+    }
+    .first-list{
+        display: flex;
+        flex-direction: column;
+        padding-left: 10px;
+    }
+    .second{
+        display: flex;
+        align-items: center;
+        padding-top: 10px;
+    }
+
+    .carousel{
+        width: 18rem;
+        height: 10rem;
+    }
+    .carousel_nav{
+        padding-top: 10px;
+    }
+    .carousel_indicator{
+        height: 0.5rem;
+        width: 0.5rem;
+    }
+
+    .item{
+        display: flex;
+        align-items: center;
+    }
+    .item_image{
+        display: flex;
+        flex: 1;
+        align-items: center;
+        width: 8rem;
+        height: 8rem;
+    }
+    .item_description{
+        flex: 3;
+    }
+    .it_image{
+        width: 90%;
+        height: 70%;
+    }
+  }
