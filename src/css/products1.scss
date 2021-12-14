@@ -1,0 +1,146 @@
+@import './home1.scss';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+  }
+  
+  html{
+      font-size: 16px;
+  }
+
+  .header{
+      @include header_ele();
+  }
+
+   .cont{
+    position: relative;
+    height: 100%;
+    padding-top: 70px;
+    margin: 0 5rem;
+    display: flex;
+    justify-content: center;
+   }
+
+   .types{
+       flex: 1;
+       background-color:#aaa;;
+       padding: 10px 20px;
+   }
+
+   .product_filter{
+       text-align: center;
+       width: 100%;
+       padding-top: 7px;
+       padding-bottom: 7px;
+       padding-left: 20px;
+       border-bottom: 1px solid black;
+       cursor: pointer;
+   }
+
+   .products{
+       flex: 4;
+       display: flex;
+       flex-wrap: wrap;
+       flex-direction: row;
+       justify-content: center;
+   }
+
+   .item{
+       display: flex;
+       flex-direction: column;
+       width: 15rem;
+       padding: 10px 5px;
+       box-shadow: 39px 1px 7px -33px rgba(170, 176, 170, 0.1);
+   }
+
+   .item_heading{
+        height: 3rem;
+   }
+
+   .item_image{
+       height: 12rem;
+       width: 100%;
+   }
+
+   .it_image{
+       height: 100%;
+       width: 100%;
+   }
+
+   .item_description{
+    background-color: #d6d6d6;
+    padding: 10px;
+    margin-top: 8px;
+    height: 8rem;
+    overflow-y: scroll;
+   }
+
+   .item_purchase{
+       display: flex;
+       justify-content: space-between;
+       padding: 10px 0px;
+       border-bottom: 2px dotted black;
+   }
+
+   .item_purchase span{
+       display: flex;
+       align-items: center;
+   }
+
+   .item_purchase button{
+    padding: 6px 10px;
+    border: 0;
+    background-color: $button_color;
+    color: #fff;
+   }
+
+   .footer {
+    
+    background-color: #d6d6d6;
+    display: flex;
+    justify-content: space-evenly;
+  }
+  .footer-container {
+    width: 80%;
+    font-size: 1.1rem;
+    padding: 0.3rem 0rem;
+  }
+
+  @media (max-width:500px) {
+    html, body {
+        overflow-x:hidden 
+      } 
+    .container{
+        width: 90%;
+      }
+    .header-cart{
+        display: flex;
+        flex-direction: row;
+        padding: 0 10px;
+        height: 2rem;
+    }
+    .cart{
+        height: 20%;
+    }
+    .second-list{
+        display: none;
+    }
+    .first-list{
+        display: flex;
+        flex-direction: column;
+        padding-left: 10px;
+    }
+    .second{
+        display: flex;
+        align-items: center;
+        padding-top: 10px;
+    }
+    .types{
+        display:none;
+    }
+    
+  }

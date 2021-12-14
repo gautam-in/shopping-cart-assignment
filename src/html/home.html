@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sabka Bazar</title>
+    <link rel="stylesheet" href="../css/home1.css" />
+  </head>
+
+  <body>
+    <div class="header">
+      <div class="container">
+        <div class="header-first">
+          <img src="../../static/images/logo.png" alt="logo" class="logo-img" />
+
+          <ul class="first-list">
+            <li><a href="./home.html" class="list-item">Home</a></li>
+            <li><a href="./products.html" class="list-item">Products</a></li>
+          </ul>
+        </div>
+
+        <div class="second">
+          <div class="header-second">
+            <ul class="second-list">
+              <li><a href="./signin.html" class="litwo-item">Sign-In</a></li>
+              <li><a href="./register.html" class="litwo-item">Register</a></li>
+            </ul>
+
+            <a class="header-cart" href="./cart.html">
+              <img src="../../static/images/cart.svg" alt="cart" class="cart" />
+              <span>&nbsp; 0 items</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="carousel">
+      <button class="carousel_button button_left">Prev</button>
+
+      <div class="track_container">
+        <ul id="carousel_track"></ul>
+      </div>
+
+      <button class="carousel_button button_right">Next</button>
+
+      <div class="carousel_nav">
+        <button class="carousel_indicator current"></button>
+        <button class="carousel_indicator"></button>
+        <button class="carousel_indicator"></button>
+        <button class="carousel_indicator"></button>
+        <button class="carousel_indicator"></button>
+      </div>
+      <div class="shadow"></div>
+    </div>
+
+    <div class="item_type">
+
+    </div>
+
+    <!-- <div class="item_type">
+
+      <div class="item">
+        <div class="item_image">
+          <img src="./../../static/images/category/fruits.png" alt="a" class="it_image" />
+        </div>
+        <div class="item_description">
+          <h3 class="item_heading">Fruits & Vegetables</h3>
+          <p class="item_about">
+            A variety of frest fruits and vegetables.
+          </p>
+          <button class="item_button">Explore fruit-and-veg</button>
+        </div>
+      </div>
+
+      <div class="shadow"></div>
+
+    </div> -->
+
+    <footer class="footer">
+      <div class="footer-container">
+        Copyright &copy; 2021 Sabka Bazaar Grocery Suppliers Pvt Ltd
+      </div>
+    </footer>
+
+    <script type="module">
+      import { init } from "../js/home.js";
+      (async function () {
+        init();
+      })();
+    </script>
+  </body>
+</html>

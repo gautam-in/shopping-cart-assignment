@@ -11,5 +11,21 @@
   "license": "MIT",
   "dependencies": {
     "canned": "^0.3.12"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ayushk96/shopping-cart-assignment.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/ayushk96/shopping-cart-assignment/issues"
+  },
+  "homepage": "https://github.com/ayushk96/shopping-cart-assignment#readme",
+  "devDependencies": {
+    "@babel/core": "^7.16.5",
+    "@babel/preset-env": "^7.16.5",
+    "babel-loader": "^8.2.3",
+    "webpack": "^5.65.0",
+    "webpack-cli": "^4.9.1"
   }
 }

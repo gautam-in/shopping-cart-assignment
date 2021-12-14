@@ -1,0 +1,142 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+  }
+  
+  html{
+      font-size: 16px;
+  }
+  
+  .header {
+    width: 100%;
+    height: 70px;
+    box-shadow: 0 0.3rem 0.2rem rgb(219, 218, 215);
+    z-index: 1;
+    background-color: white;
+    position: relative;
+    
+  }
+  
+  .container{
+      width: 85%;
+      height: 80%;
+      display: flex;
+      margin: 0 auto;
+      justify-content: space-between;  
+  }
+  
+  .header-first {
+    display: flex;
+    flex: 1;
+    justify-content: space-around;
+    align-items: flex-end;
+  }
+  .second{
+      display: flex;
+      flex: 1.7;
+      justify-content: flex-end;
+  }
+  .header-second {
+     
+    display: flex;
+   
+    
+    flex-direction: column;
+  }
+  
+  .first-list {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .list-item {
+      color: gray;
+      padding-right: 20px;
+      font-size: 1.2rem;
+  }
+  
+  .second-list {
+     display: flex;
+     flex-direction: row;
+     margin-bottom: 5px;
+  }
+  
+  .litwo-item{
+      color: rgb(58, 70, 70);
+      padding-left: 5px;
+      font-size: 0.9rem;
+  }
+  
+  .header-cart{
+      display: flex;
+      align-items: center;
+      border: 3px solid black;
+      border-radius: 10px;
+      height: 70%;
+      padding-left: 10px;
+      background-color: rgb(214, 212, 212);
+  }
+  
+   .header-cart img{
+       height: 80%;
+   }
+  
+   .header-cart span{
+       color: black;
+       font-size: 0.8rem;
+   }
+  
+   .logo-img{
+       height: 90%;
+   }
+
+   .crt{
+       display: flex;
+       flex-direction: column;
+       margin: 20px 10rem;
+       height: 30rem;
+   }
+
+   .head{
+       display: flex;
+       justify-content: space-between;
+       background-color: black;
+       color: white;
+       padding: 10px 15px;
+   }
+
+   .content{
+       height: 25rem;
+       display: flex;
+       flex-direction: column;
+       justify-content: center;
+       align-items: center;
+   }
+
+   p:first-child{
+       font-weight: bold;
+       font-size: 25px;
+   }
+
+   .bott button{
+       width: 100%;
+       border: none;
+       padding: 10px 15px;
+       background-color: #ca0655;
+       color: #fff;
+   }
+
+   .footer {
+    
+    background-color: #d6d6d6;
+    display: flex;
+    justify-content: space-evenly;
+  }
+  .footer-container {
+    width: 80%;
+    font-size: 1.1rem;
+    padding: 0.3rem 0rem;
+  }

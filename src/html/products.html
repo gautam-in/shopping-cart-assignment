@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sabka Bazar</title>
+    <link rel="stylesheet" href="../css/products1.css" />
+  </head>
+
+  <body>
+    <div class="header">
+      <div class="container">
+        <div class="header-first">
+          <img src="../../static/images/logo.png" alt="logo" class="logo-img" />
+
+          <ul class="first-list">
+            <li><a href="./home.html" class="list-item">Home</a></li>
+            <li><a href="./products.html" class="list-item">Products</a></li>
+          </ul>
+        </div>
+
+        <div class="second">
+          <div class="header-second">
+            <ul class="second-list">
+              <li><a href="./signin.html" class="litwo-item">Sign-In</a></li>
+              <li><a href="./register.html" class="litwo-item">Register</a></li>
+            </ul>
+
+            <a class="header-cart" href="./cart.html">
+              <img src="../../static/images/cart.svg" alt="cart" class="cart" />
+              <span>&nbsp; 0 items</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cont">
+      <ul class="types">
+        <li class="product_filter" onclick="applyFilter('5b6899953d1a866534f516e2')">Fruits and Vegetables</li>
+        <li class="product_filter" onclick="applyFilter('5b6899123d1a866534f516de')">Bakery Cakes and Dairy</li>
+        <li class="product_filter" onclick="applyFilter('5b675e5e5936635728f9fc30')">Beverages</li>
+        <li class="product_filter" onclick="applyFilter('5b68994e3d1a866534f516df')">Beauty and Hygiene</li>
+        <li class="product_filter" onclick="applyFilter('5b6899683d1a866534f516e0')">Baby Care</li>
+        <li class="product_filter" onclick="applyFilter(null)">All</li>
+      </ul>
+
+
+      <div class="products"></div>
+    </div>
+
+    <footer class="footer">
+      <div class="footer-container">
+        Copyright &copy; 2021 Sabka Bazaar Grocery Suppliers Pvt Ltd
+      </div>
+    </footer>
+
+    <script type="module">
+      import {
+        fetchProducts,
+        addProductToDOM,
+        filterFunction,
+        saveCategoryToLocalStorage,
+        getCategoryFromLocalStorage
+      } from "../js/product.js";
+
+      let products;
+
+      let category =
+        getCategoryFromLocalStorage() !== null
+          ? getCategoryFromLocalStorage()
+          : null;
+
+      (async function () {
+        products = await fetchProducts('./../../server/products/index.get.json');
+        let filteredProducts = filterFunction(products, category);
+        addProductToDOM(filteredProducts);
+      })();
+
+      function applyFilter(categ){
+        document.querySelector(".products").textContent = "";
+        category = categ;
+        let prod = filterFunction(products,category);
+        addProductToDOM(prod);
+        saveCategoryToLocalStorage(category);
+      }
+
+      window.applyFilter = applyFilter;
+    </script>
+  </body>
+</html>
