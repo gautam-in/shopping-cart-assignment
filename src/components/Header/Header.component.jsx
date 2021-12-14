@@ -1,7 +1,9 @@
 import React from "react";
 import CartLogo from "../../../static/images/cart.svg";
+import { connect } from "react-redux";
+import { createStructuredSelector } from "reselect";
 import {
-    AppAuthRoutes,
+  AppAuthRoutes,
   AppCartAndAuthHeaders,
   AppLogoContainer,
   AppPageHeaders,
@@ -11,8 +13,13 @@ import {
   LinkContainer,
 } from "./Header.styled.component";
 import Logo from "../../../static/images/logo_2x.png";
+import { cartItemTotalCount } from "../../redux/cart_reducer/cart.selectors";
+import { useNavigate } from "react-router-dom";
 
-const Header = () => {
+const Header = ({ count = 0 }) => {
+
+  const navigate = useNavigate();
+
   return (
     <HeaderContainer>
       <AppLogoContainer>
@@ -27,13 +34,17 @@ const Header = () => {
           <LinkContainer to="/sign-up">Register</LinkContainer>
           <LinkContainer to="/login">Signin</LinkContainer>
         </AppAuthRoutes>
-        <CartLogoContainer >
-          <CartLogoSrc src={CartLogo} />
-          <p>0 items</p>
+        <CartLogoContainer>
+          <CartLogoSrc src={CartLogo} onClick={()=>navigate("/shopping-cart")} />
+          <p>{count} items</p>
         </CartLogoContainer>
       </AppCartAndAuthHeaders>
     </HeaderContainer>
   );
 };
 
-export default Header;
+const mapStateToProps = createStructuredSelector({
+  count: cartItemTotalCount,
+});
+
+export default connect(mapStateToProps)(Header);

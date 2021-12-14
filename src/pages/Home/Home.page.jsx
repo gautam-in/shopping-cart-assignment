@@ -1,21 +1,12 @@
 import React, { useEffect, useState } from "react";
 import CarouselComponent from "../../components/Carousel/Carousel.component.jsx";
+import { selectCategories } from "../../redux/category/category.selector.js";
 import { HomePageContainer } from "./Home.styled.jsx";
+import { createStructuredSelector } from 'reselect';
+import { connect } from 'react-redux';
 
-const HomePage = () => {
-  const [categories, setCategories] = useState(null);
+const HomePage = ({ categories }) => {
 
-  const getCategories = () => {
-    fetch("http://localhost:5000/categories")
-      .then((response) => response.json())
-      .then((categories) => setCategories(categories))
-      .catch((err) => console.log(err));
-  };
-
-  useEffect(() => {
-    getCategories();
-    console.log(categories);
-  }, []);
 
   return (
     <HomePageContainer>
@@ -36,4 +27,8 @@ const HomePage = () => {
   );
 };
 
-export default HomePage;
+export const mapStateToProps = createStructuredSelector({
+  categories: selectCategories,
+});
+
+export default connect(mapStateToProps)(HomePage);

@@ -1,4 +1,7 @@
 import React from "react";
+import { connect } from "react-redux";
+import { addItem } from "../../../redux/cart_reducer/cartActions";
+
 import {
     ButtonContainer,
   CardContainer,
@@ -8,7 +11,7 @@ import {
   CardHeader,
 } from "./card-item.styled";
 
-export const CardItem = ({ product }) => {
+const CardItem = ({ product, addItem }) => {
   const { name, imageURL, description, price } = product;
   return (
     <CardContainer>
@@ -21,10 +24,16 @@ export const CardItem = ({ product }) => {
       <CardDescription>{description}</CardDescription>
       <CardFooter>
         <p>MRP Rs.{price}</p>
-        <ButtonContainer>
+        <ButtonContainer onClick={()=> addItem(product)}>
             Buy Now
         </ButtonContainer>
       </CardFooter>
     </CardContainer>
   );
 };
+
+const mapDispatchToProps = (dispatch) => ({
+  addItem : (item) => dispatch(addItem(item)),
+})
+
+export default connect(null,mapDispatchToProps)(CardItem);

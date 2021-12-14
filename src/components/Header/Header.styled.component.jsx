@@ -28,21 +28,26 @@ export const AppCartAndAuthHeaders = styled.div`
   ${containerStyles}
   flex-direction: column;
   flex: 1;
+  font-size: 12px;
 `;
 export const AppAuthRoutes = styled.div`
   ${containerStyles}
 `;
 
 export const LinkContainer = styled(Link)`
-  margin: 8px;
+  margin: 0 0 4px 16px;
 `;
 export const CartLogoContainer = styled.div`
   ${containerStyles}
   background: #f2f2f2;
+  width: fit-content;
+  padding: 0 8px;
+  margin: 0 8px;
 `;
 export const CartLogoSrc = styled.img`
   height: 40px;
   width: 40px;
   color: #d2687c;
   margin: 0 8px;
+  cursor: pointer;
 `;

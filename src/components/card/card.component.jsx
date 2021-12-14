@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { CardItem } from "./card-item/card-item.component";
+import CardItem from "./card-item/card-item.component";
 import { CardParentContainer } from "./card.styled";
 
 const Card = () => {
