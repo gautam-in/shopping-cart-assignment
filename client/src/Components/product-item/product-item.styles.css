@@ -87,6 +87,12 @@
     border: none;
     color: white;
     padding: 10px 20px;
+    cursor: pointer;
+  }
+
+  .buy-button-mobile:hover,
+  .buy-button-mobile:active {
+    background-color: #c72a93;
   }
 }
 
@@ -94,7 +100,5 @@
   .product-item {
     height: 100%;
     width: 100%;
-  }
-  .prod-desc {
   }
 }
