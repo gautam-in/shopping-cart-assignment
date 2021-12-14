@@ -46,7 +46,7 @@
   color: red;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .signin-form {
     width: 60%;
   }

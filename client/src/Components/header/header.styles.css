@@ -92,7 +92,13 @@
   font-size: 12px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 992px) {
+  .right-menu {
+    font-size: 0.7rem;
+  }
+}
+
+@media (max-width: 767px) {
   .logo {
     margin-left: 0;
   }
