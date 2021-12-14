@@ -64,6 +64,10 @@ const Cart = () => {
                 </div>
               </div>
             ))}
+            <div className='cheap-slogan'>
+              <img src='/static/images/lowest-price.png' alt='lowest-price' />
+              <p>You won't find it cheaper anywhere</p>
+            </div>
           </div>
           <div className='cart-footer'>
             <p>Promo code can be applied on payment page</p>
