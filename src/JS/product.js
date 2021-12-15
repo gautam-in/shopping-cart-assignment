@@ -28,6 +28,7 @@ async function NavContent() {
   NavContent();
   function DisplayNav(res){
       let NavMenu=document.querySelector(".nav-menu");
+      
     //   LINK
       let NavItem=document.createElement("li");
       NavItem.setAttribute('class','nav-item')
@@ -99,7 +100,6 @@ async function NavContent() {
     let Pricebutton=document.createElement("button");
     Pricebutton.setAttribute('class','price-button');
     Pricebutton.setAttribute('style','cursor:pointer');
-
     Pricebutton.innerText="Buy Now";
     Pricebutton.addEventListener('click',()=>{ 
       CartNumbers();
@@ -176,88 +176,20 @@ async function NavContent() {
       console.log(total);
       total=parseInt(total);
       localStorage.setItem('totalCost',total+res.price);
+      document.querySelector("#totalprice").textContent="Rs"+total+res.price;
+
 
     }else{
       localStorage.setItem('totalCost',res.price);
+      document.querySelector("#totalprice").textContent="Rs"+total;
+
 
     }
 
   }
-  function DisplayCartContent(res)
- {
-  let CartContainer=document.querySelector(".Cartcontainer");
+ 
 
-    //    First Div Cart Heading
-      let CartHeading=document.createElement("div");
-      CartHeading.setAttribute('class','cart-heading-div');
-    //   Heading inside Div
-    let Heading=document.createElement("h3");
-    Heading.setAttribute('class','heading');
-    Heading.innerText="My Cart"
-    // Span
-    let span=document.createElement("span");
-    span.setAttribute('class','headingSpan');
-    span.innerText="(items)";
-    // Item Row
-    let ItemRow=document.createElement("div");
-    ItemRow.setAttribute('class','item-row');
-    // Image
-    let Image=document.createElement("img");
-    Image.setAttribute('class','ite-image');
-    Image.setAttribute('src',`..${res.imageURL}`);
-    Image.setAttribute('width','100%');
-    Image.setAttribute('height','100%');
-    // Item-detail
-    let itemDetail=document.createElement("div");
-    itemDetail.setAttribute('class','item-detail');
-    // Item heading
-    let itemHeading=document.createElement("div");
-    itemHeading.setAttribute('class','item-heading');
-    
-    // Itemname
-    let ItemName=document.createElement("h3");
-    ItemName.setAttribute('class','item-name');
-    ItemName.innerText=res.name;
-
-    // quatities
-    let ItemQuantities=document.createElement("div");
-    ItemQuantities.setAttribute('class','item-quantities');
-    // increament
-    let Increament=document.createElement("button");
-    Increament.setAttribute('class','increament');
-    Increament.setAttribute('value','+');
-    // span for number
-    let ItemCount =document.createElement("span");
-    ItemCount.setAttribute('class','itemcount');
-     // decreament
-     let decreament=document.createElement("button");
-     Increament.setAttribute('value','-');
-      // span
-    let spanx=document.createElement("span");
-    spanx.setAttribute('class','spanx');
-     // price
-     let price=document.createElement("span");
-     price.setAttribute('class','price');
-//   appending
-  
-Heading.append(span);
-// console.log(CartContainer);
-
-CartHeading.append(Heading);
-CartContainer.append(ItemRow,CartHeading);
-
-ItemRow.append(Image);
-itemHeading.append(ItemName);
-itemDetail.append(itemHeading);
-ItemQuantities.append(Increament);
-ItemQuantities.append(ItemCount);
-ItemQuantities.append(decreament);
-ItemQuantities.append(spanx);
-ItemQuantities.append(price);
-itemHeading.append(ItemQuantities);
-ItemRow.append(itemHeading,itemDetail);
-
- }
+ 
   function displayCart(){
     let cartMembers=localStorage.getItem('ProductsInCart');
     cartMembers=JSON.parse(cartMembers);
@@ -265,10 +197,146 @@ ItemRow.append(itemHeading,itemDetail);
     if(cartMembers && CartContainer ){
       CartContainer.innerHTML=" "
       Object.values(cartMembers).map(res=>{
-        DisplayCartContent(res)
+        let itemnubmer=document.querySelector("#countnum");
+  itemnubmer.innerText=" ("+Object.keys(cartMembers).length +" items)";
+     Display(res)
+       
+
       })
     }
   }
+ function Increment(res){
+   console.log(res)
+   let cartMembers=localStorage.getItem('ProductsInCart');
+   cartMembers=JSON.parse(cartMembers);
+   cartMembers[res.id].inCart+=1;
+   
+
+  // res.inCart+=1;
+  //  var imts=document.querySelector(".itemcount");
+  //  imts.innerText=res.inCart;
+
+ }
+
+  function Display(res)
+  {
+       
+        var CartContainer=document.querySelector(".Cartcontainer");
+        var itemrow=document.createElement("div");
+        itemrow.setAttribute('class',`item-row`);
+        //img
+        var image=document.createElement("img");
+        image.setAttribute('class','item-image')
+        image.setAttribute('src',`..${res.imageURL}`);
+        //item-detail
+        var itemdetail=document.createElement("div");
+        itemdetail.setAttribute('class',`item-detail`);
+        //item-heading
+        var itemheading=document.createElement("div");
+        itemheading.setAttribute('class',`item-heading`);
+        //h3
+       var h3=document.createElement("h3");
+       h3.setAttribute('class',`item-name`);
+       h3.innerText=res.name
+       //item-quantities
+       var itemquantities=document.createElement("div");
+       itemquantities.setAttribute('class',`item-quantities`);
+       //item-numbers
+       var itemnumbers=document.createElement("div");
+       itemnumbers.setAttribute('class',`item-numbers`);
+       //decrement
+        var decrement=document.createElement("button");
+       decrement.setAttribute('class',`decreament`);
+       decrement.innerText="-";
+       decrement.addEventListener('click',()=>{decreamentCall(res)})
+
+       //itemcount
+       var itemcount=document.createElement("span");
+       itemcount.setAttribute('class',`itemcount`);
+       itemcount.innerText=res.inCart;
+       //increment
+        var increment=document.createElement("button");
+       increment.setAttribute('class',`increament`);
+       increment.innerText="+";
+       increment.addEventListener('click',()=>{IncreamentCall(res)});
+       //spanx
+       var spanx=document.createElement("span");
+       spanx.setAttribute('class',`spanx`);
+       spanx.innerText="x";
+       //price
+       var price=document.createElement("span");
+       price.setAttribute('class',`price`);
+       price.innerText=res.price;
+       //itemprice
+       var itemprice=document.createElement("div");
+       itemprice.setAttribute('class',`itemprice`);
+       //itemsPrice
+       var itemsPrice=document.createElement("span");
+      itemsPrice.setAttribute('class',`itemsPrice`);
+      itemsPrice.setAttribute('style',"font-size:1.3rem");
+
+       itemsPrice.innerText="Rs "+res.price * res.inCart;
+       //appending
+       CartContainer.append(itemrow);
+       itemrow.append(image,itemdetail);
+       itemdetail.append(itemheading,itemquantities);
+       itemheading.append(h3);
+       itemquantities.append(itemnumbers);
+       itemnumbers.append(decrement,itemcount,increment,spanx,price);
+       itemprice.append(itemsPrice);
+      itemquantities.append(itemprice);
+      let total=localStorage.getItem('totalCost');
+    total=parseInt(total);
+    document.querySelector("#totalprice").textContent="Rs "+total;
+
+  }
+  function IncreamentCall(res){
+    let cartMembers=localStorage.getItem('ProductsInCart');
+    cartMembers=JSON.parse(cartMembers);
+    cartMembers[res.id].inCart+=1;
+    localStorage.setItem('ProductsInCart',JSON.stringify(cartMembers));
+    let total=localStorage.getItem('totalCost');
+    total=parseInt(total);
+    document.querySelector("#totalprice").textContent=total+res.price
+
+    localStorage.setItem('totalCost',total+res.price);
+    console.log(total+res.price);
+
+    Display(res);
+    OnLoadCartNumbers();
+    CartNumbers();
+    displayCart();
+}
+function decreamentCall(res){
+  let cartMembers=localStorage.getItem('ProductsInCart');
+  cartMembers=JSON.parse(cartMembers);
+  if(cartMembers[res.id].inCart>1){
+    cartMembers[res.id].inCart-=1;
+  }
+  else{
+    delete cartMembers[res.id]
+
+  }
+  let ProductNumbers=localStorage.getItem('CartNumbers');
+    ProductNumbers=parseInt(ProductNumbers);
+    document.querySelector("#count").textContent=ProductNumbers-1+" items";
+    localStorage.setItem('CartNumbers',ProductNumbers-1);
+    let total=localStorage.getItem('totalCost');
+    total=parseInt(total);
+    localStorage.setItem('totalCost',total-res.price);
+    document.querySelector("#totalprice").textContent="Rs"+total-res.price;
+
+
+  
+  localStorage.setItem('ProductsInCart',JSON.stringify(cartMembers));
+  
+  Display(res);
+    OnLoadCartNumbers();
+    displayCart();
+
+}
+
+
   OnLoadCartNumbers();
   displayCart();
   export{CartNumbers,OnLoadCartNumbers}

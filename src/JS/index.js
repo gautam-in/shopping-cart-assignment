@@ -1,6 +1,6 @@
 
 // For carosuel
-import {CartNumbers,OnLoadCartNumbers} from './product.js'
+import {OnLoadCartNumbers} from './product.js'
 var slideIndex = 1;
 
 var myTimer;
@@ -58,11 +58,11 @@ function showSlides(n){
   dots[slideIndex-1].className += " active";
 }
 
-pause = () => {
+var pause = () => {
   clearInterval(myTimer);
 }
 
-resume = () =>{
+var resume = () =>{
   clearInterval(myTimer);
   myTimer = setInterval(function(){plusSlides(slideIndex)}, 3000);
 }

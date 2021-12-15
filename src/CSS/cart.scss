@@ -7,3 +7,142 @@
     font-family: "Roboto", sans-serif;
     flex-wrap: wrap;
   }
+$font-default: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue",
+                Helvetica, Arial, sans-serif;
+$font-bold: "HelveticaNeue-Medium", "Helvetica Neue Medium";
+$color: #3f3e3f;
+$bg-color:rgb(238,238,238);
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+body{
+    background-color:rgb(238,238,238)!important ;
+}
+.cartview{
+    box-sizing: border-box;
+
+  background-color: rgb(238,238,238);
+  padding:0!important;
+  .Cart-Container{
+      padding-top:1rem;
+      box-sizing: border-box;
+       background-color: rgb(238,238,238);
+       display:flex;
+       flex-direction: column;
+       justify-content: space-between;
+       flex-wrap: wrap;
+       
+       
+
+
+      .cart-heading{
+          margin:0;
+          padding:1rem;
+          width:100%;
+          background:white;
+          
+          h3,#id{
+              font-size: 1.2rem;
+          }
+      }
+      .Cartcontainer{
+        display:flex;
+        flex-direction: column;
+        justify-content: space-between;
+        flex-wrap: wrap;
+         background-color: rgb(238,238,238);
+
+      }
+      .item-row{
+        display:flex;
+        margin-top: 2rem;
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin-bottom: .6rem;
+        justify-content: flex-start;
+        align-items:center;
+        background-color: white;
+        padding:.5rem;
+
+        .item-image{
+            width:5rem;
+            height:5rem;
+        }
+        .item-name{
+            font-weight: 400;
+            font-size: 1.2rem;
+        }
+        .increament,.decreament{
+            background-color: #d10157;
+            border:none;
+            outline:none;
+            color:white;
+            font-size: 1.3rem;
+            border-radius: .4rem;
+            
+        }
+        .item-detail{
+            margin-left: .5rem;
+            flex-basis: 90%;
+
+
+        }
+        .item-quantities{
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+
+        }
+
+        .decreament,.increament,.itemcount,.spanx,.price{
+            margin-left:1rem;
+            font-size:1.3rem
+        }
+        .itemcount{
+            font-size: 1.3rem;
+        }
+       .itemprice .itemsPrice{
+           font-size: 1.4!important;
+       }
+      }
+
+  }
+
+
+
+}
+.near-footer{
+    // position:absolute;
+    // bottom:0;
+    // width:100%;
+
+    .totalCostContainer{
+        
+        width:100%;
+        background-color: white;
+        text-align: center;
+        font-size: 1.3rem;
+
+    }
+    h3{
+        font-size: 1.1rem;
+        padding: 1rem;
+        font-weight: 300;
+    }
+    .proceed-to-checkout{
+        background-color:#d10157;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding:1rem;
+        color:white;
+        // font-size: 1.5;
+        .checkout,.totalprice{
+            display: inline-block;
+            font-size: 1.5;
+        }
+
+    }
+}
