@@ -1,6 +1,6 @@
 
 // For carosuel
-
+import {CartNumbers,OnLoadCartNumbers} from './product.js'
 var slideIndex = 1;
 
 var myTimer;
@@ -130,3 +130,5 @@ Article.append(Section);
 
 
 }
+CartNumbers();
+OnLoadCartNumbers();

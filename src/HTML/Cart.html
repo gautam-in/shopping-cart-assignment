@@ -36,11 +36,11 @@
                     <a href='Signin.html'>SignIn</a>
                     <a href="register.html">Register</a>
                 </div>
-                <a href="Cart.html" style="cursor:pointer;font-size:1rem">
+                <a href="Cart.html" style="display: inline-block;cursor:pointer;font-size:1.2rem">
                 <div class="cart-icon">
-                  <i class="fa fa-shopping-cart" aria-hidden="true" id="icon"></i>
-                    items
-                 </div>
+                 <i class="fa fa-shopping-cart" aria-hidden="true" id="icon"></i>
+                 <span id="count">items</span>
+                </div>
                 </a>
                  
                 
@@ -53,12 +53,16 @@
     <main>
         <article>
             <section>
-            <div id="Cart-Container">
-                hello
-                <!-- <div class="cart-heading">
-                   <h3>My Cart<span>(items)</span></h3>
+             <div class="Cart-Container"> 
+                
+                 <div class="cart-heading">
+                   <h3>My Cart<span id="count">(items)</span></h3>
                 </div>
-                   <diSv class="item-row">
+                <div class="Cartcontainer"> 
+
+                </div>
+
+                   <!-- <div class="item-row">
                        <img src="" alt="" class="item-image">
                          <div class="heading">
                         <div class="heads"> <h3 class="item-name"></h3></div>
@@ -68,17 +72,18 @@
                         <span class="increament">+</span>
                         <span> x </span>
                         <span class="price"></span>
-                        </div>
-                  </div> -->
-            </div>
+                        </div> -->
+                  </div> 
+            <!-- </div> --> 
                    
               
             </section>
         </article>
-    </main>
+    </main> 
+       <!-- <script type="module" src="../JS/product.js" ></script> -->
+
     <script type="module" src="../JS/product.js" ></script>
 
-    <script type="module" src="../JS/cart.js" ></script>
 
 </body>
 
