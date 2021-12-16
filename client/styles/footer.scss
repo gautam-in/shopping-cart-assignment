@@ -4,4 +4,9 @@
     display: flex;
     align-items: center;
     font-size: 14px;
+
+    @media (max-width: 768px) {
+        text-align: center;
+        height: 35px;
+    }
 }

@@ -1,4 +1,8 @@
 .content-container {
     /*header height + footer height = 90px + 50px = 140px*/
     min-height: calc(100vh - 140px);
+
+    @media (max-width: 767.98px) {
+        min-height: calc(100vh - 90px);
+    }
 }
