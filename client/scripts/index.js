@@ -177,6 +177,8 @@ const headerInstance = new HeaderView();
           activeCategory.classList.remove("active");
         }
         e.target.classList.add("active");
+        document.querySelector("#currentSelectionCategory").textContent =
+          e.target.textContent;
         productsInstance.filterProductsBasedOnCategory(e.target.dataset.id);
       }
     });
