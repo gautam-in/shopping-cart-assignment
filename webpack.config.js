@@ -13,6 +13,7 @@ module.exports = (env) => {
     devtool: isProductionMode ? "source-map" : "inline-source-map",
     devServer: {
       static: "./dist",
+      historyApiFallback: true,
     },
     // entry: "./client/scripts/index.js",
     entry: {
