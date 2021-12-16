@@ -1,0 +1,75 @@
+@import '../../../../globalStyles.scss';
+
+
+.product-wrap {
+  position: relative;
+  overflow: hidden;
+  height: 350px;
+  padding: 10px;
+  h4 {
+    font-size: 0.9rem;
+    font-weight: 800;
+    height: 40px;
+    text-align: left;
+  }
+  .product-detail-wrap {
+    margin: 10px;
+    padding-bottom: 5px;
+    border-bottom: 2px dotted $grey-color;
+    img {
+      height: 150px;
+      width: 150px;
+      margin: 0 auto;
+      display: table;
+    }
+    .product-price-wrap {
+      display: flex;
+      flex-direction: row;
+      .product-price,
+      .product-buyout-btn {
+        flex-basis: 50%;
+        :disabled{
+          background-color: $light-pink-color;
+          border: 1px solid $light-pink-color;
+        }
+      }
+
+      .product-buyout-btn button {
+        border: 1px solid $pink-color;
+        background-color: $pink-color;
+        color: $white-color;
+        padding: 5px;
+        width: 100%;
+        font-weight: 800;
+      }
+    }
+  }
+}
+
+.product-price span,
+.product-description p {
+  font-size: 0.7rem;
+  font-weight: 800;
+  margin-bottom: 0px;
+}
+
+.product-description {
+  height: 60px;
+  background-color: $grey-color;
+  padding: 5px 10px;
+  margin: 10px 0px;
+  p {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    word-break: break-all;
+  }
+}
+
+.product-price span {
+  text-align: center;
+  margin: 10px auto;
+  display: table;
+}

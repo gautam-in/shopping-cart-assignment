@@ -1,0 +1,60 @@
+
+.login-wrap{
+    display: flex;
+    max-width: 1320px;
+    margin: auto;
+    padding: 3rem;
+}
+label + .MuiInput-formControl{
+    width:450px !important;
+}
+
+.textWrap{
+padding: 0 2rem 0 0;
+font-size: 1rem;
+font-weight: 800;
+font-family:Tahoma;
+h2{
+    font-weight: 800;
+    text-align: initial;
+}
+}
+.css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root{
+  width: 450px;
+  .css-1d3z3hw-MuiOutlinedInput-notchedOutline{
+
+    border-bottom-style: groove !important;
+    border-style:none;
+    border-radius: initial;
+  }
+}
+.MuiButton-containedPrimary{
+
+    width: 450px;
+    text-transform: capitalize !important;
+    background-color: #d10256 !important;
+
+
+      .MuiButton-label{
+        padding: 8px;
+      }
+
+}
+
+
+
+@media (min-width: 481px) and (max-width: 767px) {
+  .login-section_info,
+  .signup-section_info {
+    flex: 0 0 60%;
+    margin-left: 0%;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+  .login-section_info,
+  .signup-section_info {
+    flex: 0 0 60%;
+    margin-left: 0%;
+  }
+}
