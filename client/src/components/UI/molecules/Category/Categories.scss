@@ -1,0 +1,106 @@
+@import '../../../../globalStyles.scss';
+.skeleton-card-wrap {
+  margin: 5px 0px;
+}
+
+.card-wrap {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  display: flex;
+  margin: 5px 0px;
+  padding: 20px 0px;
+  background-color: $white-color;
+  > .image-wrap img {
+    position: relative;
+    overflow: hidden;
+    width: 30rem;
+    height: 20rem;
+  }
+  > .text-wrap {
+    margin: auto;
+    h2,
+    p {
+      text-align: center;
+      color: $black-color;
+    }
+    h2 {
+      font-weight: 800;
+    }
+    p {
+      font-size: 1.2rem;
+    }
+  }
+}
+
+.categories-wrap {
+  ul {
+    list-style: none;
+    li:nth-child(even) {
+      flex-direction: row-reverse;
+    }
+    li::after {
+    //   @extend cardShadow;
+      content: '';
+      display: block;
+      position: absolute;
+      bottom: 0rem;
+      background: radial-gradient(
+        farthest-corner at 50% 0px,
+        grey 0%,
+        transparent 50%
+      );
+      width: 100%;
+      height: 1rem;
+    }
+  }
+}
+
+.explore-btn {
+  margin: 0 auto;
+  display: table;
+  text-decoration: none;
+  color: $white-color;
+  padding: 10px;
+  font-size: 1.2rem;
+  background: $pink-color;
+  border: 2px solid $pink-color;
+  &:hover {
+    color: $white-color;
+    text-decoration: none;
+  }
+}
+
+@media only screen and (max-width: $tab-max-width) {
+  .card-wrap {
+    .image-wrap img {
+      width: 10rem;
+      height: 8rem;
+      padding: 10px 0px;
+    }
+  }
+  .card-wrap {
+    .text-wrap h2 {
+      font-size: 1rem;
+    }
+  }
+  .card-wrap {
+    .text-wrap p {
+      font-size: 0.8rem;
+      margin-bottom: 0px;
+    }
+  }
+  .explore-btn {
+    padding: 5px;
+    font-size: 0.8rem;
+  }
+}
+
+@media only screen and (max-width:$mobile-max-width) {
+  .card-wrap {
+    .image-wrap img {
+      width: 5rem;
+      height: 5rem;
+    }
+  }
+}

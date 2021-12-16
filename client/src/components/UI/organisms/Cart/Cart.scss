@@ -1,0 +1,155 @@
+@import '../../../../globalStyles.scss';
+
+.sidebar-wrap-modal {
+  .modal-content {
+    border-radius: 0px;
+
+  }
+}
+
+.modal {
+  top: 6rem;
+  right: 0;
+  left: auto;
+  width: 50%;
+}
+
+.sidebar-cart-header-wrap {
+  position: relative;
+  overflow: hidden;
+  background-color: $black-color;
+  h6 {
+    color: $white-color;
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: 800;
+    display: inline-block;
+    left: 0;
+  }
+  .close {
+      position: absolute;
+    background-color: $black-color;
+    right: 0;
+    display: inline-block;
+    opacity: initial;
+    border: none;
+    span {
+      font-size: 1.2rem;
+
+      color: $white-color;
+    }
+  }
+}
+
+.sidebar-cart-header-main {
+  padding: 10px;
+  color: $white-color;
+}
+
+.sidebar-cart-body-wrap {
+  background-color: $grey-color;
+  height: calc(100vh - 60px);
+  overflow: hidden;
+}
+
+.sidebar-cart-body-main {
+  overflow-y: auto;
+  height: calc(100% - 60px);
+
+}
+
+.cart-list-wrap {
+  ul {
+    list-style: none;
+    li {
+      display: block;
+      padding: 10px 0px;
+      background-color: $white-color;
+      margin: 15px 0px;
+    }
+  }
+}
+
+.no-cart-items-found-wrap {
+  position: absolute;
+  top: 50%;
+  margin: 0px 100px;
+  .no-cart-items-found-main {
+    h5,
+    p {
+      text-align: center;
+      margin: auto;
+      display: table;
+      font-weight: 800;
+    }
+  }
+}
+
+.cart-item-main {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  .cart-image-wrap {
+    flex-basis: 20%;
+    img {
+      width: 80px;
+      height: 80px;
+      margin: 0 auto;
+      display: table;
+    }
+  }
+  .cart-item-details-wrap {
+    flex-basis: 80%;
+    h5 {
+      font-weight: 800;
+    }
+  }
+}
+
+.circle-btn {
+  border-radius: 100%;
+  background-color: $pink-color;
+  border: 1px solid $pink-color;
+  color: $white-color;
+  font-size: 0.8rem;
+  font-weight: 800;
+  margin: 0px 2rem;
+  height: 26px;
+  width: 25px;
+}
+
+.sidebar-cart-footer-wrap {
+  position: relative;
+  overflow: hidden;
+  margin: 10px;
+  button {
+    width: 100%;
+    color: $white-color;
+    padding: 10px;
+    background-color: $pink-color;
+    border: 1px solid $pink-color;
+    .checkout-text-wrap {
+      float: left;
+    }
+    .checkout-price-wrap {
+      float: right;
+    }
+    svg {
+      margin-left: 5px;
+    }
+  }
+}
+
+@media only screen and (max-width: $tab-max-width) {
+  .no-cart-items-found-wrap {
+    margin: 0;
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: $mobile-max-width) {
+  .modal {
+    top: 0px;
+    width: 100%;
+  }
+}
