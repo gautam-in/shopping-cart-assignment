@@ -5,4 +5,13 @@
     @media (max-width: 767.98px) {
         min-height: calc(100vh - 90px);
     }
+
+    &.products-view {
+        .wrapper-content-container {
+            @media (max-width: 768px) {
+                max-width: 100%;
+                padding: 0;
+            }
+        }
+    }
 }

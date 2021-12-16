@@ -7,7 +7,7 @@
   top: 0;
   left: 0;
 
-  @media (max-width: 767.98px) {
+  @media (max-width: 768px) {
     box-shadow: 0 -12px 9px 11px #c4c4c4;
   }
 
@@ -17,9 +17,13 @@
     align-self: center;
     justify-content: space-between;
 
+    @media (max-width: 768px) {
+      max-width: 100%;
+      padding: 0;
+    }
+
     @media (max-width: 767.98px) {
       height: 55px;
-      padding: 0;
     }
   }
 
@@ -27,9 +31,12 @@
     margin-right: 100px;
     display: block;
 
+    @media (max-width: 768px) {
+      margin-left: 10px;
+    }
+
     @media (max-width: 767.98px) {
       margin-right: 0;
-      margin-left: 10px;
     }
   }
 
@@ -69,6 +76,10 @@
     align-items: flex-end;
 
     .user-auth-links {
+      @media (max-width: 768px) {
+        margin-right: 10px;
+      }
+
       @media (max-width: 767.98px) {
         display: none;
       }

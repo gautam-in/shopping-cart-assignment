@@ -76,6 +76,9 @@ const headerInstance = new HeaderView();
           .addEventListener("submit", registerOnSubmit);
         break;
       case "/products":
+        document
+          .querySelector(".content-container")
+          .classList.add("products-view");
         break;
       default:
         break;
@@ -108,6 +111,9 @@ const headerInstance = new HeaderView();
         break;
     }
 
+    document
+      .querySelector(".content-container")
+      .classList.remove("products-view");
     removeLinkActiveClass();
   }
 
@@ -120,11 +126,13 @@ const headerInstance = new HeaderView();
   function checkProductsPageQueryParams() {
     var url = new URL(window.location.href);
     var params = new URLSearchParams(url.search);
-    productsInstance.filterProductsBasedOnCategory(params.get("category"));
-    document
-      .querySelector(`button[data-id="${params.get("category")}"]`)
-      .classList.add("active");
-    window.scrollTo(0, 0);
+    if (params.get("category") && location.pathname === "/products") {
+      productsInstance.filterProductsBasedOnCategory(params.get("category"));
+      document
+        .querySelector(`button[data-id="${params.get("category")}"]`)
+        .classList.add("active");
+      window.scrollTo(0, 0);
+    }
   }
 
   function removeLinkActiveClass() {

@@ -1,4 +1,8 @@
 .products-container-page {
+    @media (max-width: 768px) {
+        max-width: 100%;
+    }
+
     .container-row {
         min-height: calc(100vh - 140px);
 
@@ -29,6 +33,12 @@
             display: flex;
             flex-wrap: wrap;
             padding-bottom: 35px;
+            align-items: flex-start;
+            height: fit-content;
+
+            @media (max-width: 767.98px) {
+                justify-content: center;
+            }
 
             .product {
                 width: 190px;
@@ -38,6 +48,20 @@
                 background-color: $std-white;
                 box-shadow: 20px 0px 30px -19px $light-gray-2;
 
+                @media (max-width: 768px) {
+                    width: 47%;
+
+                    &:nth-child(2n) {
+                        box-shadow: none;
+                    }
+                }
+
+                @media (max-width: 767.98px) {
+                    box-shadow: none !important;
+                    width: 320px;
+                    margin: 0;
+                }
+
                 .product-name {
                     font-weight: 800;
                     font-size: 16px;
@@ -45,11 +69,21 @@
                     height: 66px;
                     margin-bottom: 15px;
                     margin-top: 25px;
+
+                    @media (max-width: 768px) {
+                        margin-bottom: 5px;
+                    }
+
+                    @media (max-width: 767.98px) {
+                        margin-bottom: 15px;
+                        height: auto;
+                    }
                 }
 
                 .product-details {
                     display: flex;
                     flex-direction: column;
+
 
                     .product-img {
                         margin-bottom: 10px;
@@ -63,6 +97,21 @@
                         padding: 7px;
                         height: 70px;
                         overflow-y: auto;
+                    }
+
+                    @media (max-width: 768px) {
+                        flex-direction: row;
+                        align-items: stretch;
+                        height: 121px;
+
+                        .product-img {
+                            height: 100%;
+                            margin-bottom: 0;
+                        }
+
+                        .product-desc {
+                            height: auto;
+                        }
                     }
                 }
 
@@ -83,6 +132,28 @@
                     .buy-now-btn {
                         font-size: 12px;
                         min-height: 32px;
+                    }
+
+                    .d-tablet-price {
+                        display: none;
+                    }
+
+                    @media (max-width: 768px) {
+                        padding-top: 10px;
+                        padding-left: 0;
+                        padding-bottom: 10px;
+
+                        .price-per-unit {
+                            display: none;
+                        }
+
+                        .buy-now-btn {
+                            width: 100%;
+                        }
+
+                        .d-tablet-price {
+                            display: inline-block;
+                        }
                     }
                 }
             }
