@@ -10,6 +10,45 @@
             background-color: $footer-gray;
             padding: 0;
 
+            .category-side-nav {
+                @media (max-width: 767.98px) {
+                    display: none;
+                }
+            }
+
+            .category-dropdown {
+                display: none;
+
+                @media (max-width: 767.98px) {
+                    display: block;
+                }
+            }
+
+            .dropdown {
+                .dropdown-toggle {
+                    border-radius: 0;
+
+                    &::after {
+                        position: absolute;
+                        top: 50%;
+                        right: 2rem;
+                    }
+                }
+
+                .dropdown-menu {
+                    background-color: $footer-gray;
+                    padding: 0;
+                    border: none;
+                    width: 100%;
+
+                    &>li {
+                        .list-group-item {
+                            border-width: 0 0 1px;
+                        }
+                    }
+                }
+            }
+
             .list-group-item {
                 background-color: transparent;
                 color: $font-gray;

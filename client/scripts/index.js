@@ -129,8 +129,15 @@ const headerInstance = new HeaderView();
     if (params.get("category") && location.pathname === "/products") {
       productsInstance.filterProductsBasedOnCategory(params.get("category"));
       document
-        .querySelector(`button[data-id="${params.get("category")}"]`)
+        .querySelector(
+          `.category-side-nav button[data-id="${params.get("category")}"]`
+        )
         .classList.add("active");
+      const categoryObj = productsInstance.getCategoryObject(
+        params.get("category")
+      );
+      document.querySelector("#currentSelectionCategory").textContent =
+        categoryObj ? categoryObj.name : "All Products";
       window.scrollTo(0, 0);
     }
   }
@@ -172,11 +179,18 @@ const headerInstance = new HeaderView();
         e.preventDefault();
         navigateTo(e.target.href);
       } else if (e.target.matches(".category-name")) {
-        const activeCategory = document.querySelector(".category-name.active");
+        const activeCategory = document.querySelector(
+          ".category-side-nav .category-name.active"
+        );
         if (activeCategory) {
           activeCategory.classList.remove("active");
         }
-        e.target.classList.add("active");
+
+        document
+          .querySelector(
+            `.category-side-nav button[data-id="${e.target.dataset.id}"]`
+          )
+          .classList.add("active");
         document.querySelector("#currentSelectionCategory").textContent =
           e.target.textContent;
         productsInstance.filterProductsBasedOnCategory(e.target.dataset.id);

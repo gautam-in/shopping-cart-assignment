@@ -53,4 +53,11 @@ export default class ProductsView extends AbstractView {
       document.querySelector("#productsListingSection").innerHTML = viewHtml;
     }
   }
+
+  getCategoryObject(categoryId) {
+    const categoryItem = this.categoryList.filter(
+      (category) => category.id === categoryId
+    );
+    return categoryItem && categoryItem.length ? categoryItem[0] : null;
+  }
 }
