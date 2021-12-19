@@ -1,11 +1,27 @@
 .login-container {
     padding: 3rem 0 3rem 3rem;
 
+    @media (max-width: 768px) {
+        padding: 3rem 0 3rem 0;
+    }
+
+    @media (max-width: 767.98px) {
+        padding: 1rem 0 1rem 0;
+    }
+
     .info-title {
         margin-top: 1.5rem;
     }
 
     .login-form-section {
         margin-left: 3rem;
+
+        @media (max-width: 768px) {
+            margin-left: 2rem;
+        }
+
+        @media (max-width: 767.98px) {
+            margin-left: 0;
+        }
     }
 }
