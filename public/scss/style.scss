@@ -1,0 +1,59 @@
+@import "__variable";
+@import "__header";
+@import "__footer";
+@import "__home";
+@import "__login";
+
+* {
+    box-sizing: border-box;
+  }
+  
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+  }
+
+
+.link-focus {
+  color: $light-crimson-pink-hover;
+}
+
+.btnCrimsonPink {
+  background-color: $crimson-pink;
+  color: $std-white;
+  border-radius: 0;
+  font-size: 14px;
+  min-height: 36px;
+  font-weight: 500;
+
+  &:hover {
+    background-color: $light-crimson-pink-hover;
+    color: $std-white;
+  }
+}
+
+.info-title {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.info-desc {
+  font-size: 14px;
+}
+
+.form-floating {
+  .form-control {
+    outline: 0;
+    border-width: 0 0 2px;
+    border-color : $text-field-border;
+  }
+
+  &:focus {
+    border-bottom-color: $text-field-border-focus;
+  }
+
+}
+
+  
+  

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sabka bazar is an online grocery store ">
+    <title>Sabka Bazar</title>
+    <link
+    rel="stylesheet"
+    href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+    crossorigin="anonymous"
+  />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/style.css"/>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>  
+</head>
+<body>
+    <header class="header-container">
+     <div class="container">   
+        <div class="d-flex">
+            <div class="logo">
+            <a href="index.html" class="logo-link"> 
+                <img src="/static/images/logo.png" alt="Sabka Bazar logo- Click yo navigate to home page" />
+            </a>
+            </div>
+            <div class="nav-bar">
+                <nav>
+                    <ul>
+                    <li class="nav-link"><a href= "/public/index.html"> Home</a></li>
+                    <li class="nav-link"><a href="/public/products.html">Products</a></li>
+                    </ul>
+                </nav>
+            </div>
+         </div>   
+        <div class="side-menu">
+          <div class="user-auth-links">  
+                <a href= "/public/login.html">SignIn</a>
+                <a href="/public/register.html">Register</a>
+            </div>   
+             <div class="cart-container">
+                <button type="button" class="btn">
+                    <img src="/static/images/cart.svg"  alt="Cart icon"/>
+                    <span>0 Items</span>
+                </button>
+            </div>
+        </div>
+     </div>   
+    </header>
+    <main class="container">
+      <section>
+          <div class="row login-container">
+            <div class="col-md-auto">
+              <h1 class="info-title">Login</h1>
+              <p class="info-desc">Get access to your Orders, Wishlist and Recommendations</p>
+            </div>
+            <div class="col-md-5 login-form-section">
+               <form id="loginForm" >
+                <div class="form-floating mb-3">
+                    <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                    <label for="floatingInput">Email address</label>
+                  </div>
+                  <div class="form-floating mb-5">
+                    <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                    <label for="floatingPassword">Password</label>
+                  </div>
+                <button type="submit" class="btn btnCrimsonPink w-100 ">Submit</button>
+               </form>
+            </div>
+
+          </div>
+      </section>
+    </main>
+    <footer class="footer-container">
+        <div class="container">
+          Copyright &copy; 2011 - 2018 Sabka Bazaar Grocery Supplies Pvt Ltd
+        </div>
+    </footer>
+
+      <!--scripts-->
+      <!-- <script src="scripts/products.js" type="module"></script> -->
+</body>
+</html>
