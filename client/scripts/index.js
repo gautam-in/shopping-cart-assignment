@@ -6,12 +6,14 @@ import LoginView from "./views/LoginView";
 import RegisterView from "./views/RegisterView";
 import ProductsView from "./views/ProductsView";
 import HeaderView from "./views/HeaderView";
+import CartView from "./views/CartView";
 
 const loginInstance = new LoginView();
 const registerInstance = new RegisterView();
 const homeInstance = new HomeView();
 const productsInstance = new ProductsView();
 const headerInstance = new HeaderView();
+const cartInstance = new CartView();
 
 (function () {
   let currentPath = null;
@@ -194,6 +196,17 @@ const headerInstance = new HeaderView();
         document.querySelector("#currentSelectionCategory").textContent =
           e.target.textContent;
         productsInstance.filterProductsBasedOnCategory(e.target.dataset.id);
+      } else if (e.target.matches(".buy-now-btn")) {
+        // Add items to cart
+        productsInstance.addProductToCart(e.target.dataset.id);
+      } else if (e.target.matches("#cartBtnClose")) {
+        headerInstance.showOrHideCart();
+      } else if (e.target.matches("#startShopingBtn")) {
+        headerInstance.showOrHideCart();
+
+        if (location.pathname !== "/") {
+          navigateTo(`${window.location.origin}/`);
+        }
       }
     });
 
@@ -201,10 +214,9 @@ const headerInstance = new HeaderView();
       headerInstance.showOrHideCart();
     });
 
-    document.querySelector("#cartBtnClose").addEventListener("click", (e) => {
-      headerInstance.showOrHideCart();
-    });
-
+    cartInstance.updateCartPopupTemplate();
+    document.querySelector("#cartItemsLength").textContent =
+      cartInstance.cartItems.length;
     router();
   });
 })();

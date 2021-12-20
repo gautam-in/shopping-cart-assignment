@@ -3,8 +3,10 @@ import template from "../../templates/products.handlebars";
 import productListingSectionTemplate from "../../templates/productListingSection.handlebars";
 import { API_PATH, DOCUMENT_TITLE } from "../constants/constants";
 import { fetchData } from "../helpers/apiService";
+import CartView from "./CartView";
 
 export default class ProductsView extends AbstractView {
+  static cartInstance = new CartView();
   constructor() {
     super();
     this.categoryList = [];
@@ -59,5 +61,19 @@ export default class ProductsView extends AbstractView {
       (category) => category.id === categoryId
     );
     return categoryItem && categoryItem.length ? categoryItem[0] : null;
+  }
+
+  getProductObject(productId) {
+    const productItem = this.productsList.filter(
+      (product) => product.id === productId
+    );
+    return productItem && productItem.length ? productItem[0] : null;
+  }
+
+  addProductToCart(productId) {
+    const productObj = this.getProductObject(productId);
+    if (productObj) {
+      ProductsView.cartInstance.addToCart(productObj);
+    }
   }
 }

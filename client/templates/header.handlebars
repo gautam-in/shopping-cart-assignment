@@ -31,10 +31,12 @@
         <button id="cartButton" type="button" class="btn" aria-label="Click to view items in the cart"
           title="View Cart">
           <img alt="Cart Icon" src="/static/images/cart-crimson-pink.svg" />
-          <div>0 items</div>
+          <div><span id="cartItemsLength">0</span> items</div>
         </button>
 
-        {{> cart}}
+        <div id="cartPopupTemplate">
+          {{> cart}}
+        </div>
       </div>
     </div>
   </div>

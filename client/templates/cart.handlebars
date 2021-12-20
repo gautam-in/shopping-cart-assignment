@@ -1,154 +1,44 @@
 <div class="cart-popup d-none">
     <div class="cart-header">
-        <div class="my-cart-title"><span>My Cart</span> (1 item)</div>
+        <div class="my-cart-title"><span>My Cart</span> ({{cartItems.length}} items)</div>
         <button id="cartBtnClose" type="button" class="btn-close btn-close-white"
             aria-label="Close cart popup"></button>
     </div>
     <div class="cart-content">
+        {{#if cartItems.length}}
         <div class="cartContentWithItems">
             <div class="cart-items-container">
+                {{#each cartItems}}
                 <div class="cart-item">
                     <div>
-                        <img src="/static/images/products/fruit-n-veg/apple.jpg" alt="Product image">
+                        <img src="{{this.imageURL}}" alt="Product image of {{this.name}}">
                     </div>
                     <div class="cart-item-details">
-                        <div class="cart-item-name">Apple - Washington, Regular, 4 pcs</div>
+                        <div class="cart-item-name">{{this.name}}</div>
                         <div class="cart-item-pricing">
-                            <div class="quantity-price">control * Rs.187</div>
+                            <div class="quantity-price">control * Rs.{{this.price}}</div>
                             <div class="total-item-price">Rs.187</div>
                         </div>
                     </div>
                 </div>
-
-                <div class="cart-item">
-                    <div>
-                        <img src="/static/images/products/fruit-n-veg/apple.jpg" alt="Product image">
-                    </div>
-                    <div class="cart-item-details">
-                        <div class="cart-item-name">Apple - Washington, Regular, 4 pcs</div>
-                        <div class="cart-item-pricing">
-                            <div class="quantity-price">control * Rs.187</div>
-                            <div class="total-item-price">Rs.187</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="cart-item">
-                    <div>
-                        <img src="/static/images/products/fruit-n-veg/apple.jpg" alt="Product image">
-                    </div>
-                    <div class="cart-item-details">
-                        <div class="cart-item-name">Apple - Washington, Regular, 4 pcs</div>
-                        <div class="cart-item-pricing">
-                            <div class="quantity-price">control * Rs.187</div>
-                            <div class="total-item-price">Rs.187</div>
-                        </div>
-                    </div>
-                </div>
-
-                {{!-- <div class="cart-item">
-                    <div>
-                        <img src="/static/images/products/fruit-n-veg/apple.jpg" alt="Product image">
-                    </div>
-                    <div class="cart-item-details">
-                        <div class="cart-item-name">Apple - Washington, Regular, 4 pcs</div>
-                        <div class="cart-item-pricing">
-                            <div class="quantity-price">control * Rs.187</div>
-                            <div class="total-item-price">Rs.187</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="cart-item">
-                    <div>
-                        <img src="/static/images/products/fruit-n-veg/apple.jpg" alt="Product image">
-                    </div>
-                    <div class="cart-item-details">
-                        <div class="cart-item-name">Apple - Washington, Regular, 4 pcs</div>
-                        <div class="cart-item-pricing">
-                            <div class="quantity-price">control * Rs.187</div>
-                            <div class="total-item-price">Rs.187</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="cart-item">
-                    <div>
-                        <img src="/static/images/products/fruit-n-veg/apple.jpg" alt="Product image">
-                    </div>
-                    <div class="cart-item-details">
-                        <div class="cart-item-name">Apple - Washington, Regular, 4 pcs</div>
-                        <div class="cart-item-pricing">
-                            <div class="quantity-price">control * Rs.187</div>
-                            <div class="total-item-price">Rs.187</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="cart-item">
-                    <div>
-                        <img src="/static/images/products/fruit-n-veg/apple.jpg" alt="Product image">
-                    </div>
-                    <div class="cart-item-details">
-                        <div class="cart-item-name">Apple - Washington, Regular, 4 pcs</div>
-                        <div class="cart-item-pricing">
-                            <div class="quantity-price">control * Rs.187</div>
-                            <div class="total-item-price">Rs.187</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="cart-item">
-                    <div>
-                        <img src="/static/images/products/fruit-n-veg/apple.jpg" alt="Product image">
-                    </div>
-                    <div class="cart-item-details">
-                        <div class="cart-item-name">Apple - Washington, Regular, 4 pcs</div>
-                        <div class="cart-item-pricing">
-                            <div class="quantity-price">control * Rs.187</div>
-                            <div class="total-item-price">Rs.187</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="cart-item">
-                    <div>
-                        <img src="/static/images/products/fruit-n-veg/apple.jpg" alt="Product image">
-                    </div>
-                    <div class="cart-item-details">
-                        <div class="cart-item-name">Apple - Washington, Regular, 4 pcs</div>
-                        <div class="cart-item-pricing">
-                            <div class="quantity-price">control * Rs.187</div>
-                            <div class="total-item-price">Rs.187</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="cart-item">
-                    <div>
-                        <img src="/static/images/products/fruit-n-veg/apple.jpg" alt="Product image">
-                    </div>
-                    <div class="cart-item-details">
-                        <div class="cart-item-name">Apple - Washington, Regular, 4 pcs</div>
-                        <div class="cart-item-pricing">
-                            <div class="quantity-price">control * Rs.187</div>
-                            <div class="total-item-price">Rs.187</div>
-                        </div>
-                    </div>
-                </div> --}}
+                {{/each}}
             </div>
             <div class="cart-ad">
                 <img src="/static/images/lowest-price.png" alt="Lowest price guaranteed image">
                 <div>You won't find it cheaper anywhere</div>
             </div>
         </div>
-        <div class="cartContentWithoutItems d-none">
+        {{/if}}
+        {{#unless cartItems.length}}
+        <div class="cartContentWithoutItems">
             <div class="no-items-text">No items in your cart</div>
             <div class="no-items-text-2">Your favourite items are just a click away</div>
         </div>
+        {{/unless}}
     </div>
 
     <div class="cart-footer">
+        {{#if cartItems.length}}
         <div class="cartFooterWithItems">
             <div class="promo-info">Promo code can be applied on payment page</div>
             <button id="proceedCheckout" type="button" class="btn btnCrimsonPink" aria-label="Proceed to Checkout">
@@ -156,10 +46,13 @@
                 <span>Rs.187 ></span>
             </button>
         </div>
-        <div class="cartFooterWithoutItems d-none">
+        {{/if}}
+        {{#unless cartItems.length}}
+        <div class="cartFooterWithoutItems">
             <button id="startShopingBtn" type="button" class="btn btnCrimsonPink" aria-label="Start Shopping">
                 Start Shopping
             </button>
         </div>
+        {{/unless}}
     </div>
 </div>
