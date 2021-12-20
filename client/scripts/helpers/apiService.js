@@ -9,14 +9,30 @@ export async function fetchData(url) {
         return Promise.resolve(categoriesList);
       }
     } else {
-      const response = await fetch(url);
-      const data = await response.json();
-      localStorage.setItem("categories", JSON.stringify(data));
-      return Promise.resolve(data);
+      try {
+        const response = await fetch(url);
+        if (response.ok) {
+          const data = await response.json();
+          localStorage.setItem("categories", JSON.stringify(data));
+          return Promise.resolve(data);
+        } else {
+          throw new Error("Something went wrong!");
+        }
+      } catch (error) {
+        Promise.reject(error);
+      }
     }
   } else {
-    const response = await fetch(url);
-    const data = await response.json();
-    return Promise.resolve(data);
+    try {
+      const response = await fetch(url);
+      if (response.ok) {
+        const data = await response.json();
+        return Promise.resolve(data);
+      } else {
+        throw new Error("Something went wrong!");
+      }
+    } catch (error) {
+      Promise.reject(error);
+    }
   }
 }

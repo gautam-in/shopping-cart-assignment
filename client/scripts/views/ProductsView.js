@@ -16,23 +16,27 @@ export default class ProductsView extends AbstractView {
   }
 
   async getTemplate() {
-    this.categoryList = await this.getProductCategoriesData();
-    this.productsList = await this.getAllProducts();
-    this.setTitle(DOCUMENT_TITLE.products);
-    this.setActiveLinkIndicator("products-link");
+    try {
+      this.categoryList = await this.getProductCategoriesData();
+      this.productsList = await this.getAllProducts();
+      this.setTitle(DOCUMENT_TITLE.products);
+      this.setActiveLinkIndicator("products-link");
 
-    this.templateInput = {
-      categories: [],
-      products: this.productsList,
-    };
-    if (this.categoryList && this.categoryList.length) {
-      this.templateInput.categories = this.categoryList
-        .filter((category) => category.enabled)
-        .sort((a, b) => a.order - b.order);
+      this.templateInput = {
+        categories: [],
+        products: this.productsList,
+      };
+      if (this.categoryList && this.categoryList.length) {
+        this.templateInput.categories = this.categoryList
+          .filter((category) => category.enabled)
+          .sort((a, b) => a.order - b.order);
+      }
+
+      // template is the pre-compiled handlebars template
+      return template(this.templateInput);
+    } catch (error) {
+      console.log("Error: ", error);
     }
-
-    // template is the pre-compiled handlebars template
-    return template(this.templateInput);
   }
 
   async getProductCategoriesData() {

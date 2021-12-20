@@ -11,29 +11,33 @@ export default class HomeView extends AbstractView {
   }
 
   async getTemplate() {
-    this.bannerList = await this.getBannerData();
-    this.categoryList = await this.getProductCategoriesData();
-    this.setTitle(DOCUMENT_TITLE.home);
-    this.setActiveLinkIndicator("home-link");
+    try {
+      this.bannerList = await this.getBannerData();
+      this.categoryList = await this.getProductCategoriesData();
+      this.setTitle(DOCUMENT_TITLE.home);
+      this.setActiveLinkIndicator("home-link");
 
-    const input = {
-      banner: [],
-      categories: [],
-    };
-    if (this.categoryList && this.categoryList.length) {
-      input.categories = this.categoryList
-        .filter((category) => category.enabled)
-        .sort((a, b) => a.order - b.order);
+      const input = {
+        banner: [],
+        categories: [],
+      };
+      if (this.categoryList && this.categoryList.length) {
+        input.categories = this.categoryList
+          .filter((category) => category.enabled)
+          .sort((a, b) => a.order - b.order);
+      }
+
+      if (this.bannerList && this.bannerList.length) {
+        input.banner = this.bannerList
+          .filter((banner) => banner.isActive)
+          .sort((a, b) => a.order - b.order);
+      }
+
+      // template is the pre-compiled handlebars template
+      return template(input);
+    } catch (error) {
+      console.log("Error: ", error);
     }
-
-    if (this.bannerList && this.bannerList.length) {
-      input.banner = this.bannerList
-        .filter((banner) => banner.isActive)
-        .sort((a, b) => a.order - b.order);
-    }
-
-    // template is the pre-compiled handlebars template
-    return template(input);
   }
 
   async getBannerData() {
