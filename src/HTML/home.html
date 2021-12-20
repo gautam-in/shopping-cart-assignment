@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,900;1,500&display=swap" rel="stylesheet">
+<link href="../CSS/home.css" rel="stylesheet">
+
+    
+<title>Sabka Bazar</title>
+    <script type="module" src="../JS/index.js"></script>
+
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+       
+        <div class="main-nav">
+            <a href="#"><img src="../static/images/logo.png" alt="Sabka Bazar Logo" width="65%" height="65%"></a></li>
+            <div class="menu-item">
+            <a href='home.html' id="home">Home</a>
+            <a href='products.html'>Products</a>
+        </div>
+        </div>
+        <div class="side-nav">
+            <div class="menu-wrap">
+                <a href='Signin.html'>SignIn</a>
+                <a href="register.html">Register</a>
+            </div>
+            <a href="Cart.html" style="display: inline-block;cursor:pointer;font-size:1.2rem">
+            <div class="cart-icon">
+             <i class="fa fa-shopping-cart" aria-hidden="true" id="icon"></i>
+             <span id="count">items</span>
+            </div>
+            </a>
+             
+            
+           
+           </div>
+        </div>
+    </nav>
+   
+</header>
+    <main >
+        <article>
+            <section class="slideshow">
+               
+                <div class="slideshow-container">
+                    <div class="slideshow-inner">
+                      <div class="mySlides fade">
+                    
+                        <img  src='../static/images/offers/offer1.jpg' style='width:100%;height:auto;' alt="sally lightfoot crab"/>
+                        <div class="text">Sally Lightfoot Crab</div>
+                      </div>
+                    
+                      <div class="mySlides fade">
+                    
+                        <img  src='../static/images/offers/offer2.jpg'  style='width: 100%;height:50%;' alt="fighting nazca boobies"/>
+                        <div class="text">A scuffle between two Nazca Boobies</div>
+                      </div>
+                    
+                      <div class="mySlides fade">
+                    
+                        <img  src='../static/images/offers/offer3.jpg'  style='width: 100%;height:50%;' alt="otovalo waterfall"/>
+                        <div class="text">A waterfall discovered on a hike in Otovalo</div>
+                      </div>
+                    
+                      <div class="mySlides fade">
+                    
+                        <img  src='../static/images/offers/offer4.jpg'  style='width: 100%;height:50%;' alt="pelican"/>
+                        <div class="text">Pelican</div>
+                      </div>
+                      <div class="mySlides fade">
+                    
+                        <img  src='../static/images/offers/offer5.jpg'  style='width: 100%;height:50%;' alt="pelican"/>
+                        <div class="text">Pelican</div>
+                      </div>
+                      
+                      </div>
+                    
+                    
+                      <a class="prev" onclick='plusSlides(-1)'>Prev</a>
+                      <a class="next" onclick='plusSlides(1)'>Next</a>
+                    </div>
+                    <br/>
+                    
+                    
+                    <div style='text-align: center;'>
+                      <span class="dot" onclick='currentSlide(1)'></span>
+                      <span class="dot" onclick='currentSlide(2)'></span>
+                      <span class="dot" onclick='currentSlide(3)'></span>
+                      <span class="dot" onclick='currentSlide(4)'></span>
+                      <span class="dot" onclick='currentSlide(5)'></span>
+
+                    </div>
+                    
+                    </div>
+                 
+                  
+            </section>
+        </article>
+        <div class="little-shadow"></div>
+        
+        <article class="Categories">
+          
+        </article>
+    </main>
+    <footer>
+        <h5>Copyright @2011-2018 Sabka Bazaar Grocery Supplies Pvt.Ltd</h5>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,161 @@
+@import "Home";
+.signin {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 2rem 0;
+  
+    .signin-text {
+      padding: 2rem;
+      h1{
+        font-size:2rem;
+        padding-bottom: .2rem;
+      }
+      p{
+        font-size: 1.2rem;
+      }
+    }
+    .signin-action {
+      padding: 1rem;
+      width: 30%;
+      form .txt_field{
+        position: relative;
+        border-bottom: 2px solid #adadad;
+        margin: 30px 0;
+      }
+      .txt_field input{
+        width: 100%;
+        padding: 0 5px;
+        height: 40px;
+        font-size: 16px;
+        border: none;
+        background: none;
+        outline: none;
+      }
+      .txt_field label{
+        position: absolute;
+        top: 50%;
+        left: 5px;
+        color: #adadad;
+        transform: translateY(-50%);
+        font-size: 14px;
+        pointer-events: none;
+        transition: .5s;
+      }
+      .txt_field span::before{
+        content: '';
+        position: absolute;
+        top: 40px;
+        left: 0;
+        width: 0%;
+        height: 2px;
+        background: #2691d9;
+        transition: .5s;
+      }
+      .txt_field input:focus ~ label,
+      .txt_field input:valid ~ label{
+        top: -5px;
+        color: #2691d9;
+      }
+      .txt_field input:focus ~ span::before,
+      .txt_field input:valid ~ span::before{
+        width: 100%;
+      }
+      .pass{
+        margin: -5px 0 20px 5px;
+        color: #a6a6a6;
+        cursor: pointer;
+      }
+      .pass:hover{
+        text-decoration: underline;
+      }
+      input[type="submit"]{
+        width: 100%;
+        height: 50px;
+        border: 1px solid;
+        background: #d10157;
+        font-size: 14px;
+        color: white;
+        cursor: pointer;
+        outline: none;
+      }
+      input[type="submit"]:hover{
+        border-color: #d10157;
+        transition: .5s;
+      }
+      .signup_link{
+        margin: 30px 0;
+        text-align: center;
+        font-size: 16px;
+        color: #666666;
+      }
+      .signup_link a{
+        color: #2691d9;
+        text-decoration: none;
+      }
+      .signup_link a:hover{
+        text-decoration: underline;
+      }
+      
+    }
+  }
+  a{
+    cursor:pointer;
+  }
+  footer{
+    display:flex;
+    justify-content: flex-start;
+    padding: 0 16%;
+    
+  }
+  @media (max-width: 660px) {
+    .signin {
+      .signin-text {
+        text-align: center;
+      }
+      .signin-action {
+        width: 70%;
+      }
+    }
+  }
+  
+
+  .floating-label-group {
+      position: relative;
+      margin-top: 1.2rem;
+      margin-bottom: 1.2rem;
+  
+      .floating-label {
+          font-size: 13px;
+          color: #cccccc;
+          position: absolute;
+          pointer-events: none;
+          top: 11px;
+          left: 12px;
+          transition: all 0.1s ease;
+      }
+      input:focus ~ input[type="text"]{
+        border-bottom: 2px solid rgb(16, 160, 218)!important;
+
+      }
+
+      input:focus ~ .floating-label,
+      input:not(:focus):valid ~ .floating-label
+      
+       {
+          top: -15px;
+          bottom: 0px;
+          transition: all 0.3s;
+          
+           left: 0px;
+           font-size: 1.1rem;
+           opacity: 1;
+           color: rgb(16, 160, 218);
+           border-bottom: 2px solid rgb(16, 160, 218)!important;
+           
+
+
+      }
+  }
+  
+  
