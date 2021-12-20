@@ -1,0 +1,63 @@
+.carousel{
+    position: relative;
+    height: fit-content;
+    width: 80%;
+}
+.scroller {
+    overflow-x: scroll;
+    display: flex;
+    ms-overflow-style: none;
+    scrollbar-width: none;
+ }
+ .scroller::-webkit-scrollbar {
+    display: none;
+  }
+.item {
+    min-width: 100%;
+    min-height: fit-content;
+    background-color: white;
+    scroll-snap-type: x mandatory;
+    scroll-snap-align: center;
+ }
+ .item>img{
+     width: 100%;
+ }
+ .carousel>button{
+     position: absolute;
+     top: 50%;
+     transform: translateY(-50%);
+     width: 10%;
+     height: 20%;
+     background-color: rgba(0,0,0,.5);
+     color: #fff;
+     border: none;
+     cursor: pointer;
+ }
+ .carousel>button:hover{
+     border: 1px solid black;
+ }
+ .prev{
+     left: 0;
+ }
+ .next{
+     right: 0;
+ }
+ .dotContainer{
+     position: absolute;
+     bottom: 10px;
+     left: 50%;
+     transform: translateX(-50%);
+ }
+ .dotContainer>span {
+    cursor: pointer;
+    height: 5px;
+    width: 5px;
+    margin: 0 8px;
+    background-color: rgba(0,0,0,.3);
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+  }
+  .active, .dotContainer>span:hover {
+    background-color: #717171 !important;
+  }

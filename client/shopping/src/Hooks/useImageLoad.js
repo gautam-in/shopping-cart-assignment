@@ -3,8 +3,8 @@ import { useEffect, useState } from 'react'
 const useImageLoad = (filepath) => {
     const [error, setError] = useState(false)
     const [image, setImage] = useState(null)
-    const fetchImage = async () => {
-        if(filepath){
+    const fetchImage = async (filepath) => {
+        if(filepath && filepath.length>0){
             if(!Array.isArray(filepath))
             {
                 try {
@@ -17,7 +17,7 @@ const useImageLoad = (filepath) => {
             else{
                 let promises=[]
                 filepath.forEach((url)=>{
-                    promises.push(import(`../../src${url}`))
+                    url && promises.push(import(`../../src${url}`))
                 })
 
                 Promise.allSettled(promises).then((dta)=>{
@@ -34,7 +34,7 @@ const useImageLoad = (filepath) => {
     }
 
     useEffect(() => {
-        fetchImage()
+        fetchImage(filepath)
     }, [filepath])
 
     return [

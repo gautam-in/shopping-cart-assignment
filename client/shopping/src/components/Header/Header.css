@@ -1,0 +1,43 @@
+.navbar{
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    background-color: white;
+}
+.user-action{
+    padding: 10px;
+}
+.user-action>nav{
+    font-size: small;
+    width: fit-content;
+    cursor: pointer;
+}
+.navbar>span{
+    width: fit-content;
+    cursor: pointer;
+}
+.page{
+    display: inline;
+    margin: 10px;
+}
+.page>a{
+    color: inherit; 
+    text-decoration: inherit;
+    cursor: pointer;
+}
+.nav-container{
+    height: fit-content;
+    min-height: 100px;
+    width: 80%;
+}
+.cart{
+    margin: 10px;
+    padding: 10px;
+    background-color: #dcdcdc;
+    min-width: 5em;
+    width: fit-content;
+}
+.cart>nav{
+    display: inline;
+    width: fit-content;
+}

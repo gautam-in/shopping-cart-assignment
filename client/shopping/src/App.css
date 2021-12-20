@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css?family=Dosis:400,600,700');
+body {
+    font-family:'Dosis';
+  }
 .App {
   text-align: center;
 }
@@ -9,7 +13,9 @@
   margin-right: auto;
   margin-left: auto
 }
-
+.flex-row-reverse {
+    flex-direction: row-reverse !important
+}
 @media (min-width:576px) {
   .container, .container-sm {
       max-width: 540px
@@ -62,105 +68,69 @@
 .col {
   flex: 1 0 0%
 }
-
-.row-cols-auto>* {
-  flex: 0 0 auto;
-  width: auto
-}
-
-.row-cols-1>* {
-  flex: 0 0 auto;
-  width: 100%
-}
-
-.row-cols-2>* {
-  flex: 0 0 auto;
-  width: 50%
-}
-
-.row-cols-3>* {
-  flex: 0 0 auto;
-  width: 33.3333333333%
-}
-
-.row-cols-4>* {
-  flex: 0 0 auto;
-  width: 25%
-}
-
-.row-cols-5>* {
-  flex: 0 0 auto;
-  width: 20%
-}
-
-.row-cols-6>* {
-  flex: 0 0 auto;
-  width: 16.6666666667%
-}
-
 .col-auto {
-  flex: 0 0 auto;
-  width: auto
+    flex: 0 0 auto;
+    width: auto
 }
 
 .col-1 {
-  flex: 0 0 auto;
-  width: 8.33333333%
+    flex: 0 0 auto;
+    width: 8.33333333%
 }
 
 .col-2 {
-  flex: 0 0 auto;
-  width: 16.66666667%
+    flex: 0 0 auto;
+    width: 16.66666667%
 }
 
 .col-3 {
-  flex: 0 0 auto;
-  width: 25%
+    flex: 0 0 auto;
+    width: 25%
 }
 
 .col-4 {
-  flex: 0 0 auto;
-  width: 33.33333333%
+    flex: 0 0 auto;
+    width: 33.33333333%
 }
 
 .col-5 {
-  flex: 0 0 auto;
-  width: 41.66666667%
+    flex: 0 0 auto;
+    width: 41.66666667%
 }
 
 .col-6 {
-  flex: 0 0 auto;
-  width: 50%
+    flex: 0 0 auto;
+    width: 50%
 }
 
 .col-7 {
-  flex: 0 0 auto;
-  width: 58.33333333%
+    flex: 0 0 auto;
+    width: 58.33333333%
 }
 
 .col-8 {
-  flex: 0 0 auto;
-  width: 66.66666667%
+    flex: 0 0 auto;
+    width: 66.66666667%
 }
 
 .col-9 {
-  flex: 0 0 auto;
-  width: 75%
+    flex: 0 0 auto;
+    width: 75%
 }
 
 .col-10 {
-  flex: 0 0 auto;
-  width: 83.33333333%
+    flex: 0 0 auto;
+    width: 83.33333333%
 }
 
 .col-11 {
-  flex: 0 0 auto;
-  width: 91.66666667%
+    flex: 0 0 auto;
+    width: 91.66666667%
 }
 
 .col-12 {
-  flex: 0 0 auto;
-  width: 100%
+    flex: 0 0 auto;
+    width: 100%
 }
 
 .offset-1 {
@@ -206,47 +176,38 @@
 .offset-11 {
   margin-left: 91.66666667%
 }
+.g-sm-0, .gx-sm-0 {
+    --bs-gutter-x: 0
+}
+
+.g-sm-0, .gy-sm-0 {
+    --bs-gutter-y: 0
+}
+.center{
+  align-items: center;
+  justify-content: center;
+}
+.one-edge-shadow{
+    background-color: white;
+}
+.one-edge-shadow::after
+{
+    content: '';
+    position: absolute;
+    z-index: -1;
+    bottom: 3%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 65%;
+    height: 7%;
+    border-radius: 50%;
+    box-shadow: 0px 10px 5px rgb(75, 75, 75);
+}
 
 @media (min-width:576px) {
   .col-sm {
       flex: 1 0 0%
   }
-
-  .row-cols-sm-auto>* {
-      flex: 0 0 auto;
-      width: auto
-  }
-
-  .row-cols-sm-1>* {
-      flex: 0 0 auto;
-      width: 100%
-  }
-
-  .row-cols-sm-2>* {
-      flex: 0 0 auto;
-      width: 50%
-  }
-
-  .row-cols-sm-3>* {
-      flex: 0 0 auto;
-      width: 33.3333333333%
-  }
-
-  .row-cols-sm-4>* {
-      flex: 0 0 auto;
-      width: 25%
-  }
-
-  .row-cols-sm-5>* {
-      flex: 0 0 auto;
-      width: 20%
-  }
-
-  .row-cols-sm-6>* {
-      flex: 0 0 auto;
-      width: 16.6666666667%
-  }
-
   .col-sm-auto {
       flex: 0 0 auto;
       width: auto
@@ -317,47 +278,6 @@
   .col-md {
       flex: 1 0 0%
   }
-
-  .row-cols-md-auto>* {
-      flex: 0 0 auto;
-      width: auto
-  }
-
-  .row-cols-md-1>* {
-      flex: 0 0 auto;
-      width: 100%
-  }
-
-  .row-cols-md-2>* {
-      flex: 0 0 auto;
-      width: 50%
-  }
-
-  .row-cols-md-3>* {
-      flex: 0 0 auto;
-      width: 33.3333333333%
-  }
-
-  .row-cols-md-4>* {
-      flex: 0 0 auto;
-      width: 25%
-  }
-
-  .row-cols-md-5>* {
-      flex: 0 0 auto;
-      width: 20%
-  }
-
-  .row-cols-md-6>* {
-      flex: 0 0 auto;
-      width: 16.6666666667%
-  }
-
-  .col-md-auto {
-      flex: 0 0 auto;
-      width: auto
-  }
-
   .col-md-1 {
       flex: 0 0 auto;
       width: 8.33333333%
