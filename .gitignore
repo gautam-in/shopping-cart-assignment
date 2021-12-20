@@ -67,3 +67,6 @@ typings/
 
 # IDE - VSCode
 .vscode/*
+
+# .DS_Store
+.DS_Store

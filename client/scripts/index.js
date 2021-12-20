@@ -198,7 +198,7 @@ const cartInstance = new CartView();
         productsInstance.filterProductsBasedOnCategory(e.target.dataset.id);
       } else if (e.target.matches(".buy-now-btn")) {
         // Add items to cart
-        productsInstance.addProductToCart(e.target.dataset.id);
+        productsInstance.addProductToCart(e.target.dataset.id, cartInstance);
       } else if (e.target.matches("#cartBtnClose")) {
         headerInstance.showOrHideCart();
       } else if (e.target.matches("#startShopingBtn")) {
@@ -207,6 +207,11 @@ const cartInstance = new CartView();
         if (location.pathname !== "/") {
           navigateTo(`${window.location.origin}/`);
         }
+      } else if (e.target.matches(".plusMinusBtn")) {
+        cartInstance.incrementOrDecrementQuantity(
+          e.target.dataset.action,
+          e.target.dataset.id
+        );
       }
     });
 

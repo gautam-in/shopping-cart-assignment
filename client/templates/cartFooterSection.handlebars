@@ -1,0 +1,16 @@
+{{#if cartItems.length}}
+<div class="cartFooterWithItems">
+    <div class="promo-info">Promo code can be applied on payment page</div>
+    <button id="proceedCheckout" type="button" class="btn btnCrimsonPink" aria-label="Proceed to Checkout">
+        <span>Proceed to Checkout</span>
+        <span>Rs.{{totalCostCheckout}} ></span>
+    </button>
+</div>
+{{/if}}
+{{#unless cartItems.length}}
+<div class="cartFooterWithoutItems">
+    <button id="startShopingBtn" type="button" class="btn btnCrimsonPink" aria-label="Start Shopping">
+        Start Shopping
+    </button>
+</div>
+{{/unless}}
