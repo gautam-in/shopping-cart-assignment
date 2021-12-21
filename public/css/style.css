@@ -63,7 +63,7 @@ nav ul {
   height: 55px;
   align-items: center; }
   .cart-container button:hover {
-    background-color: rgba(238, 238, 238, 0.5); }
+    background-color: #4c4e46; }
 
 .cart-container img {
   max-height: 35px;
@@ -76,7 +76,8 @@ nav ul {
   display: flex;
   align-items: center;
   font-size: 14px;
-  background-color: #eaeaea; }
+  background-color: #eaeaea;
+  text-align: center; }
   @media (max-width: 768px) {
     .footer-container {
       text-align: center;
@@ -124,11 +125,44 @@ nav ul {
           font-size: 12px; } }
 
 .login-container {
-  padding: 3rem 0rem 3rem 3rem; }
+  min-height: calc(100vh - 140px);
+  padding: 3rem 0rem 3rem 3rem;
+  align-items: center;
+  justify-content: center; }
   .login-container .info-title {
-    margin-top: 1.5 rem; }
+    font-size: 40px;
+    font-weight: 600; }
   .login-container .login-form-section {
     margin-left: 3rem; }
+
+.register-container {
+  min-height: calc(100vh - 140px);
+  padding: 3rem 0rem 3rem 3rem;
+  align-items: center;
+  justify-content: center; }
+  .register-container .info-title {
+    font-size: 40px;
+    font-weight: 600; }
+  .register-container .register-form-section {
+    margin-left: 3rem; }
+
+.container-row {
+  min-height: calc(100vh - 140px); }
+  .container-row .category-container {
+    background-color: #eaeaea;
+    padding: 0; }
+    .container-row .category-container .category-side-nav .list-group-item {
+      background-color: transparent;
+      color: #989898;
+      font-size: 16px;
+      font-weight: 600;
+      padding: 0.8rem 1rem 0.8rem 2rem; }
+      .container-row .category-container .category-side-nav .list-group-item.active {
+        background-color: #d00155;
+        color: white;
+        border-color: #d00155; }
+      .container-row .category-container .category-side-nav .list-group-item:hover {
+        background-color: #4c4e46; }
 
 * {
   box-sizing: border-box; }
@@ -160,9 +194,12 @@ body {
   font-size: 14px; }
 
 .form-floating .form-control {
-  outline: 0;
-  border-width: 0 0 2px;
+  border-width: 0;
+  border-bottom-width: 2px;
+  border-radius: 0;
   border-color: #e2e2e2; }
-
-.form-floating:focus {
-  border-bottom-color: #59c7cf; }
+  .form-floating .form-control:focus {
+    outline: none;
+    box-shadow: none;
+    border-bottom-width: 2px;
+    border-bottom-color: #59c7cf; }
