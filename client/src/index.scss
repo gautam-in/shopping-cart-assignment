@@ -1,0 +1,21 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Dosis", sans-serif;
+}
+
+// html {
+//   font-size: 62.5%;
+// }
+
+body {
+  margin: 0;
+  height: 100vh;
+  // font-size: 1.6rem;
+
+  // overflow: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+}

@@ -1,0 +1,21 @@
+.card {
+  padding: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  width: 20%;
+  height: 340px;
+  word-wrap: break-word;
+
+  &:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  }
+  &__container {
+    // background-color: white;
+    display: flex;
+    flex-wrap: wrap;
+    // row-gap: 10px;
+    gap: 20px 12px;
+  }
+ 
+}
+

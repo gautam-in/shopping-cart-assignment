@@ -1,0 +1,30 @@
+.productCategoryBanner {
+  background-color: white;
+  box-shadow: 0 25px 31px -20px rgba(0, 0, 0, 0.22);
+  transition: 0.3s;
+  width: 100%;
+  height: auto;
+  &:nth-child(odd) {
+    flex-direction: row-reverse;
+  }
+  &__content {
+    // display: flex;
+    // flex-direction: column;
+    // justify-content: space-around;
+    // align-items: center;
+    width: 50%;
+  }
+  &__imageContainer{
+    width:30%;}
+
+  &__title {
+    font-weight: 700;
+  }
+  &__button{
+//     width: 50%;
+// align-items:stretch;
+  }
+
+
+}
+

@@ -1,0 +1,18 @@
+@import '../../../assests/scss/variables';
+
+.sidebar{
+    background-color: $gray;
+}
+.navList{
+    padding: 0;
+    list-style-type: none;    
+    &__items{
+        word-wrap:break-word;
+        text-align: left;
+        padding:10px;
+        border-bottom: 1px solid #b8b7b7;
+        cursor: pointer;
+
+    }
+
+}

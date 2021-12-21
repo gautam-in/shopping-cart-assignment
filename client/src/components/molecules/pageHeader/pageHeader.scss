@@ -1,0 +1,39 @@
+.header {
+  position: fixed;
+  width: 100vw;
+  z-index: 10;
+  height: 20vh;
+  &__cart_button {
+    // border: none;
+    background: #d8d8d8;
+    color: black;
+    // width:35%;
+    padding: 10px 20px;
+    // width: 10vw;
+    // display: flex;
+    // justify-content: center;
+    // padding: 2px 10px 10px 4px;
+    cursor: pointer;
+    &__icon {
+      width: 21px;
+      margin: 6px 10px 0px 14px;
+    }
+  }
+  &__link {
+    text-decoration: none;
+    color: black;
+    &_routes {
+      text-decoration: none;
+      color: black;
+      font-weight: 700;
+      // font-size: 1.4rem;
+    }
+    &_routes:hover{
+      color: black;
+text-decoration: underline;
+    }
+  }
+  &__link:hover {
+    color: black;
+  }
+}
