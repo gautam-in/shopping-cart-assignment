@@ -146,6 +146,14 @@ module.exports = (env) => {
             from: path.resolve(__dirname, "static"),
             to: path.resolve(__dirname, "dist", "static"),
           },
+          {
+            from: path.resolve(__dirname, "server.js"),
+            to: path.resolve(__dirname, "dist"),
+          },
+          {
+            from: path.resolve(__dirname, "server"),
+            to: path.resolve(__dirname, "dist", "server"),
+          },
         ],
       }),
     ],

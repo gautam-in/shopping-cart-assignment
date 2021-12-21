@@ -5,10 +5,12 @@
   "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "server": "canned -p 5000 ./server",
+    "server": "canned -p 5000 ./server --cors=true --headers 'Content-Type'",
     "build": "webpack --config webpack.config.js --env production",
     "watch": "webpack --watch --config webpack.config.js",
-    "start": "webpack serve --open --config webpack.config.js"
+    "start": "webpack serve --open --config webpack.config.js",
+    "buildServer": "node ./dist/server.js",
+    "buildAndServe": "npm run build && npm run buildServer"
   },
   "author": "",
   "license": "MIT",
@@ -16,6 +18,8 @@
     "@babel/runtime": "^7.16.3",
     "bootstrap": "^5.1.3",
     "canned": "^0.3.12",
+    "compression": "^1.7.4",
+    "express": "^4.17.2",
     "handlebars": "^4.7.7"
   },
   "devDependencies": {

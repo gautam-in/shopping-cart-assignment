@@ -1,6 +1,6 @@
 import { API_PATH } from "../constants/constants";
 
-export async function fetchData(url) {
+export async function fetchData(url, method = "GET", postData = {}) {
   if (url === API_PATH.categoriesUrl) {
     const categoriesString = localStorage.getItem("categories");
     if (categoriesString && categoriesString.length) {
@@ -24,7 +24,19 @@ export async function fetchData(url) {
     }
   } else {
     try {
-      const response = await fetch(url);
+      let response = null;
+      if (method === "POST") {
+        response = await fetch(url, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(postData),
+        });
+      } else {
+        response = await fetch(url);
+      }
+
       if (response.ok) {
         const data = await response.json();
         return Promise.resolve(data);
