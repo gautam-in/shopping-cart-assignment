@@ -20,7 +20,7 @@ export async function fetchData(url, method = "GET", postData = {}) {
           throw new Error("Something went wrong!");
         }
       } catch (error) {
-        Promise.reject(error);
+        return Promise.reject(error);
       }
     }
   } else {
@@ -45,7 +45,7 @@ export async function fetchData(url, method = "GET", postData = {}) {
         throw new Error("Something went wrong!");
       }
     } catch (error) {
-      Promise.reject(error);
+      return Promise.reject(error);
     }
   }
 }
