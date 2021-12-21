@@ -22,7 +22,7 @@ const cartInstance = new CartView();
       { path: "/", view: homeInstance },
       { path: "/login", view: loginInstance },
       { path: "/register", view: registerInstance },
-      { path: "/products", view: productsInstance },
+      { path: "/productsList", view: productsInstance },
     ];
 
     // Test each route for potential match
@@ -52,7 +52,7 @@ const cartInstance = new CartView();
 
     addEventListenersOnCurrentView(currentPath);
 
-    if (location.pathname === "/products") {
+    if (location.pathname === "/productsList") {
       checkProductsPageQueryParams();
     }
   }
@@ -77,7 +77,7 @@ const cartInstance = new CartView();
           .getElementById("registerForm")
           .addEventListener("submit", registerOnSubmit);
         break;
-      case "/products":
+      case "/productsList":
         document
           .querySelector(".content-container")
           .classList.add("products-view");
@@ -107,7 +107,7 @@ const cartInstance = new CartView();
           .getElementById("registerForm")
           .removeEventListener("submit", registerOnSubmit);
         break;
-      case "/products":
+      case "/productsList":
         break;
       default:
         break;
@@ -121,14 +121,14 @@ const cartInstance = new CartView();
 
   function exploreCategory(e) {
     navigateTo(
-      `${window.location.origin}/products?category=${e.target.dataset.id}`
+      `${window.location.origin}/productsList?category=${e.target.dataset.id}`
     );
   }
 
   function checkProductsPageQueryParams() {
     var url = new URL(window.location.href);
     var params = new URLSearchParams(url.search);
-    if (params.get("category") && location.pathname === "/products") {
+    if (params.get("category") && location.pathname === "/productsList") {
       productsInstance.filterProductsBasedOnCategory(params.get("category"));
       document
         .querySelector(

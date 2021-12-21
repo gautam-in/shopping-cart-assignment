@@ -3,10 +3,14 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
+const webpack = require("webpack");
 
 module.exports = (env) => {
   const isProductionMode = !!env.production;
   console.log("Production: ", isProductionMode);
+  const dotenv = require("dotenv").config({
+    path: path.join(__dirname, isProductionMode ? ".env" : ".env.development"),
+  });
 
   return {
     mode: isProductionMode ? "production" : "development",
@@ -155,6 +159,9 @@ module.exports = (env) => {
             to: path.resolve(__dirname, "dist", "server"),
           },
         ],
+      }),
+      new webpack.DefinePlugin({
+        "process.env": JSON.stringify(dotenv.parsed),
       }),
     ],
   };
