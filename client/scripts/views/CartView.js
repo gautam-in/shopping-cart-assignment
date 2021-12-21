@@ -4,6 +4,7 @@ import cartFooterSectionTemplate from "../../templates/cartFooterSection.handleb
 import cartHeaderSectionTemplate from "../../templates/cartHeaderSection.handlebars";
 import { API_PATH } from "../constants/constants";
 import { fetchData } from "../helpers/apiService";
+import { showToastMessage } from "../helpers/toast";
 
 export default class CartView {
   constructor() {
@@ -51,24 +52,13 @@ export default class CartView {
         document.querySelector("#cartItemsLength").textContent =
           this.cartItems.length;
         this.updateCartPopupTemplate();
-        this.showToastMessage(successResonse.responseMessage);
+        showToastMessage(successResonse.responseMessage);
       } else {
         throw new Error("Something went wrong in addToCart API !");
       }
     } catch (error) {
       console.log("Error: ", error);
     }
-  }
-
-  showToastMessage(message) {
-    let toastDiv = document.createElement("div");
-    toastDiv.id = "snackbar";
-    toastDiv.textContent = message;
-    toastDiv.className = "show";
-    document.body.appendChild(toastDiv);
-    setTimeout(function () {
-      toastDiv.className = "";
-    }, 3000);
   }
 
   async addToCartAPI(postData) {

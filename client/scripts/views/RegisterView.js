@@ -1,6 +1,8 @@
 import AbstractView from "./AbstractView";
 import template from "../../templates/register.handlebars";
-import { DOCUMENT_TITLE } from "../constants/constants";
+import { API_PATH, DOCUMENT_TITLE } from "../constants/constants";
+import { fetchData } from "../helpers/apiService";
+import { showToastMessage } from "../helpers/toast";
 
 export default class RegisterView extends AbstractView {
   constructor() {
@@ -15,7 +17,30 @@ export default class RegisterView extends AbstractView {
     return template({});
   }
 
-  onSubmitHandler() {
-    alert("hello signup");
+  async onSubmitHandler() {
+    try {
+      const formData = new FormData(document.querySelector("#registerForm"));
+      const userData = {};
+      for (var [key, value] of formData.entries()) {
+        userData[key] = value;
+      }
+      delete userData.confirmPassword;
+
+      const response = await this.submitUserSignupData(userData);
+      if (response.status === "success") {
+        showToastMessage(response.message);
+        document.getElementById("registerForm").reset();
+      } else if (response.status === "failure") {
+        showToastMessage(response.message, true);
+      } else {
+        throw new Error("Something went wrong in user registration !");
+      }
+    } catch (error) {
+      console.log("Error: ", error);
+    }
+  }
+
+  async submitUserSignupData(postData) {
+    return fetchData(API_PATH.newUserRegistration, "POST", postData);
   }
 }

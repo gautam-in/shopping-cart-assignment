@@ -116,12 +116,16 @@
   left: 50%;
   bottom: 30px;
   font-size: 17px;
-}
 
-#snackbar.show {
-  visibility: visible;
-  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
-  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  &.errorToast {
+    background-color: $error-bg;
+  }
+
+  &.show {
+    visibility: visible;
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  }
 }
 
 @-webkit-keyframes fadein {

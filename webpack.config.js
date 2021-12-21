@@ -158,6 +158,10 @@ module.exports = (env) => {
             from: path.resolve(__dirname, "server"),
             to: path.resolve(__dirname, "dist", "server"),
           },
+          {
+            from: path.resolve(__dirname, "models"),
+            to: path.resolve(__dirname, "dist", "models"),
+          },
         ],
       }),
       new webpack.DefinePlugin({

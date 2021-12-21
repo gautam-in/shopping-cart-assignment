@@ -3,6 +3,8 @@ export const API_PATH = {
   categoriesUrl: "/categories",
   productsUrl: "/products",
   addToCart: "/addToCart",
+  newUserRegistration: "/newUserRegistration",
+  userLogin: "/userLogin",
 };
 
 export const DOCUMENT_TITLE = {

@@ -5,6 +5,7 @@ const bannersData = require("./server/banners/index.get.json");
 const categoriesData = require("./server/categories/index.get.json");
 const productsData = require("./server/products/index.get.json");
 const addToCartAPIResponseData = require("./server/addToCart/index.post.json");
+let users = require("./models/users.model");
 
 const app = express();
 
@@ -43,6 +44,38 @@ app.get("/products", (req, res) => {
 app.post("/addToCart", (req, res) => {
   console.log("addToCart API request body: ", req.body);
   res.json(addToCartAPIResponseData);
+});
+
+app.post("/newUserRegistration", (req, res) => {
+  console.log("newUserRegistration API request body: ", req.body);
+  const isUserExist = users.find((user) => user.email === req.body.email);
+  if (isUserExist) {
+    res.json({ status: "failure", message: "User already exist" });
+  } else {
+    users = [...users, { ...req.body, id: new Date().getTime() }];
+    console.log("Users: ", users);
+    res.json({ status: "success", message: "User registered successfully" });
+  }
+});
+
+app.post("/userLogin", (req, res) => {
+  console.log("userLogin API request body: ", req.body);
+  const personObj = users.find(
+    (user) =>
+      user.email === req.body.email && user.password === req.body.password
+  );
+  if (personObj) {
+    const { firstName, lastName, email } = personObj;
+    res.json({
+      status: "success",
+      message: "User login success",
+      firstName,
+      lastName,
+      email,
+    });
+  } else {
+    res.json({ status: "failure", message: "Login failed!" });
+  }
 });
 
 // Handling non matching request from the client
