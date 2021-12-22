@@ -66,7 +66,7 @@
     }
 }
 
-.cart-container button {
+.cart-container #cartButton {
     background-color:$light-gray;
     display: flex;
     flex-direction: row;
@@ -82,4 +82,8 @@
 .cart-container img{ 
     max-height: 35px;
     margin-right: 10px;
+}
+
+.cart-container {
+    position: relative;
 }

@@ -1,5 +1,8 @@
 import { API_PATH } from './constants.js';
 
+console.log("home",cart);
+
+
 const categoryContainer = document.querySelector(".categories-container");
 const  carouselBlock = document.querySelector(".carousel-inner");
 
@@ -62,11 +65,19 @@ async function loadCategories() {
     }
     
   const categoryButtons = document.querySelectorAll('.category-details button');
-  
   categoryButtons.forEach(button => button.addEventListener('click',exploreCategory));
-
 }
 
 
+function  showOrHidecart() {
+    document.querySelector('.cart-popup').classList.toggle('d-none');
+    const isHide = document.querySelector('.cart-popup').classList.contains('d-none');
+    // if(!isHide) {
+    //    document.querySelector('#overallTemplate').classList.add("black-overlay");
+    // }else {
+    //    document.querySelector('#overallTemplate').classList.remove("black-overlay");
+    // }
+}
 
+document.querySelector('.cart-container').addEventListener('click', showOrHidecart);
 document.addEventListener('DOMContentLoaded',loadData);
