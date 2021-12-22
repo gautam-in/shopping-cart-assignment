@@ -1,0 +1,134 @@
+.header-container {
+  box-shadow: 0 8px 6px -7px $light-gray-shadow;
+  position: sticky;
+  width: 100%;
+  z-index: 10;
+  background-color: $std-white;
+  top: 0;
+  left: 0;
+
+  @media (max-width: 768px) {
+    box-shadow: 0 -12px 9px 11px #c4c4c4;
+  }
+
+  .container {
+    height: 90px;
+    display: flex;
+    align-self: center;
+    justify-content: space-between;
+
+    @media (max-width: 768px) {
+      max-width: 100%;
+      padding: 0;
+    }
+
+    @media (max-width: 767.98px) {
+      height: 55px;
+    }
+  }
+
+  .logo-link {
+    margin-right: 100px;
+    display: block;
+
+    @media (max-width: 768px) {
+      margin-left: 10px;
+    }
+
+    @media (max-width: 767.98px) {
+      margin-right: 0;
+    }
+  }
+
+  #logo-img {
+    max-height: 70px;
+    pointer-events: none;
+
+    @media (max-width: 767.98px) {
+      max-height: 45px;
+    }
+  }
+
+  .nav-bar {
+    display: flex;
+    align-self: center;
+
+    @media (max-width: 767.98px) {
+      display: none;
+    }
+
+    .nav-link {
+      font-size: 16px;
+      font-weight: 600;
+      margin-top: 25px;
+      color: $font-medium-gray;
+
+      &:hover {
+        @extend .link-focus;
+      }
+    }
+  }
+
+  .right-actions {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+
+    .user-auth-links {
+      display: flex;
+      align-items: center;
+
+      @media (max-width: 768px) {
+        margin-right: 10px;
+      }
+
+      @media (max-width: 767.98px) {
+        display: none;
+      }
+    }
+
+    .auth-link,
+    #welcomeUserMsg {
+      color: $font-dark-gray;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+
+      &:hover {
+        @extend .link-focus;
+      }
+    }
+
+    #cartButton {
+      background-color: $light-gray;
+      display: flex;
+      flex-direction: row;
+      width: 150px;
+      height: 55px;
+      align-items: center;
+      border-radius: 0;
+
+      @media (max-width: 767.98px) {
+        width: 140px;
+      }
+
+      &:hover {
+        background-color: $light-gray-bg-hover;
+      }
+
+      img {
+        max-height: 35px;
+        margin-right: 10px;
+      }
+
+      div {
+        white-space: nowrap;
+      }
+    }
+  }
+
+  .cart-container {
+    position: relative;
+  }
+}

@@ -54,8 +54,16 @@ typings/
 # Yarn Integrity file
 .yarn-integrity
 
-# dotenv environment variables file
-.env
-
 # next.js build output
 .next
+
+# compiled output
+/dist
+/tmp
+/out-tsc
+
+# IDE - VSCode
+.vscode/*
+
+# .DS_Store
+.DS_Store

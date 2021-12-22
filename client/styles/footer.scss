@@ -1,0 +1,16 @@
+.footer-container {
+    background-color: $footer-gray;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+
+    @media (max-width: 768px) {
+        text-align: center;
+        height: 35px;
+    }
+
+    @media (max-width: 767.98px) {
+        font-size: 12px;
+    }
+}

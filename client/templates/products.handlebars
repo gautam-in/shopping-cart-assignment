@@ -1,0 +1,40 @@
+<section class="products-container-page container">
+    <div class="row container-row">
+        <div class="col-md-3 category-container">
+            <div class="list-group list-group-flush category-side-nav">
+                {{#each categories}}
+                {{#if this.enabled}}
+                <button id="{{this.key}}" type="button" class="list-group-item list-group-item-action category-name"
+                    aria-label="Click to view products in {{this.name}} category" data-id="{{this.id}}">
+                    {{this.name}}
+                </button>
+                {{/if}}
+                {{/each}}
+            </div>
+
+            <div class="dropdown category-dropdown">
+                <button class="btn dropdown-toggle list-group-item list-group-item-action active" type="button"
+                    id="categoryMenuDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                    <span id="currentSelectionCategory">All Products</span>
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="categoryMenuDropdown">
+                    {{#each categories}}
+                    {{#if this.enabled}}
+                    <li>
+                        <button id="{{this.key}}" type="button"
+                            class="list-group-item list-group-item-action category-name"
+                            aria-label="Click to view products in {{this.name}} category" data-id="{{this.id}}">
+                            {{this.name}}
+                        </button>
+                    </li>
+                    {{/if}}
+                    {{/each}}
+                </ul>
+            </div>
+        </div>
+
+        <div id="productsListingSection" class="col-md-9 products-container">
+            {{> productListingSection}}
+        </div>
+    </div>
+</section>

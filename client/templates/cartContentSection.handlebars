@@ -1,0 +1,44 @@
+{{#if cartItems.length}}
+<div class="cartContentWithItems">
+    <div class="cart-items-container">
+        {{#each cartItems}}
+        <div class="cart-item">
+            <div class="align-self-center">
+                <img class="product-image-cart" src="{{this.imageURL}}" alt="Product image of {{this.name}}">
+            </div>
+            <div class="cart-item-details">
+                <div class="cart-item-name">{{this.name}}</div>
+                <div class="cart-item-pricing">
+                    <div class="quantity-price">
+                        <button type="button" class="btn btnCrimsonPink plusMinusBtn"
+                            aria-label="Decrement item quantity of {{this.name}}" data-action="minus"
+                            data-id="{{this.id}}">
+                            <img src="/static/images/minus-math.png" alt="Minus image">
+                        </button>
+                        <span class="quantity-nos">{{this.quantity}}</span>
+                        <button type="button" class="btn btnCrimsonPink plusMinusBtn"
+                            aria-label="Increment item quantity of {{this.name}}" data-action="plus"
+                            data-id="{{this.id}}">
+                            <img src="/static/images/plus-math.png" alt="Plus image">
+                        </button>
+                        <img class="multiply-img" src="/static/images/multiply.png" alt="Multiplication image">
+                        Rs.{{this.price}}
+                    </div>
+                    <div class="total-item-price">Rs.{{this.totalItemOrderCost}}</div>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+    <div class="cart-ad">
+        <img src="/static/images/lowest-price.png" alt="Lowest price guaranteed image">
+        <div>You won't find it cheaper anywhere</div>
+    </div>
+</div>
+{{/if}}
+{{#unless cartItems.length}}
+<div class="cartContentWithoutItems">
+    <div class="no-items-text">No items in your cart</div>
+    <div class="no-items-text-2">Your favourite items are just a click away</div>
+</div>
+{{/unless}}

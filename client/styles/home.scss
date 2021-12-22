@@ -1,0 +1,63 @@
+.home-container {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+
+    #carouselOffersBanner {
+        box-shadow: 0 10px 23px -27px black;
+
+        .carousel-indicators {
+            @media (max-width: 767.98px) {
+                bottom: -50px;
+            }
+        }
+    }
+
+    .categories-container {
+        .category {
+            box-shadow: 0 10px 23px -27px black;
+            margin-top: 25px;
+            align-items: center;
+            padding-bottom: 30px;
+
+            &:first-child {
+                @media (max-width: 767.98px) {
+                    margin-top: 45px;
+                }
+            }
+
+            &:last-child {
+                padding-bottom: 0;
+                box-shadow: none;
+            }
+
+            .img-conatiner {
+                img {
+                    max-height: 300px;
+                }
+            }
+
+            .category-details {
+                text-align: center;
+
+                h2 {
+                    font-weight: 700;
+                    font-size: 24px;
+
+                    @media (max-width: 767.98px) {
+                        font-size: 16px;
+                    }
+                }
+
+                p {
+                    font-size: 16px;
+                    font-weight: 600;
+                    line-height: 19px;
+
+                    @media (max-width: 767.98px) {
+                        font-size: 12px;
+                    }
+                }
+            }
+        }
+    }
+}
