@@ -50,7 +50,10 @@ app.post("/newUserRegistration", (req, res) => {
   console.log("newUserRegistration API request body: ", req.body);
   const isUserExist = users.find((user) => user.email === req.body.email);
   if (isUserExist) {
-    res.json({ status: "failure", message: "User already exist" });
+    res.json({
+      status: "failure",
+      message: "User already exist with same email",
+    });
   } else {
     users = [...users, { ...req.body, id: new Date().getTime() }];
     console.log("Users: ", users);
@@ -76,6 +79,11 @@ app.post("/userLogin", (req, res) => {
   } else {
     res.json({ status: "failure", message: "Login failed!" });
   }
+});
+
+app.get("/logout", (req, res) => {
+  console.log("logout API user email: ", req.query.email);
+  res.json({ status: "success", message: "Logout success!" });
 });
 
 // Handling non matching request from the client

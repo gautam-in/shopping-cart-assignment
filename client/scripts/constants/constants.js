@@ -5,6 +5,7 @@ export const API_PATH = {
   addToCart: "/addToCart",
   newUserRegistration: "/newUserRegistration",
   userLogin: "/userLogin",
+  logout: "/logout",
 };
 
 export const DOCUMENT_TITLE = {

@@ -76,6 +76,9 @@
     align-items: flex-end;
 
     .user-auth-links {
+      display: flex;
+      align-items: center;
+
       @media (max-width: 768px) {
         margin-right: 10px;
       }
@@ -85,7 +88,8 @@
       }
     }
 
-    .auth-link {
+    .auth-link,
+    #welcomeUserMsg {
       color: $font-dark-gray;
       text-decoration: none;
       font-size: 14px;

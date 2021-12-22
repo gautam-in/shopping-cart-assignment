@@ -212,6 +212,8 @@ const cartInstance = new CartView();
           e.target.dataset.action,
           e.target.dataset.id
         );
+      } else if (e.target.matches("#logoutUser")) {
+        headerInstance.logoutUser();
       }
     });
 
@@ -223,5 +225,6 @@ const cartInstance = new CartView();
     document.querySelector("#cartItemsLength").textContent =
       cartInstance.cartItems.length;
     router();
+    headerInstance.checkLoginStatus();
   });
 })();

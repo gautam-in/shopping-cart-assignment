@@ -26,6 +26,16 @@
           data-link>SignIn</a>
         <a id="register-link" class="auth-link" href="/register" aria-label="Click to Register" title="Register"
           data-link>Register</a>
+
+        <div id="userDropdownMenu" class="dropdown d-none">
+          <div class="dropdown-toggle" role="button" id="userDropdownMenuButton" data-bs-toggle="dropdown"
+            aria-expanded="false" aria-label="Dropdown to see logged in user and logout option">
+            <span id="welcomeUserMsg">Hi User</span>
+          </div>
+          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdownMenuButton">
+            <li><button id="logoutUser" class="dropdown-item" type="button">Logout</button></li>
+          </ul>
+        </div>
       </div>
       <div class="cart-container">
         <button id="cartButton" type="button" class="btn" aria-label="Click to view items in the cart"
