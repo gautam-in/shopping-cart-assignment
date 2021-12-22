@@ -1,10 +1,12 @@
 @import "__variable";
 @import "__header";
+@import "__cart";
 @import "__footer";
 @import "__home";
 @import "__login";
 @import "__register";
 @import "__product";
+
 
 * {
     box-sizing: border-box;
@@ -35,6 +37,10 @@
   }
 }
 
+.link-active {
+  color: $light-crimson-pink-hover !important;
+  text-decoration: underline !important;
+}
 .info-title {
   font-size: 24px;
   font-weight: 700;

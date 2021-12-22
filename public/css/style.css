@@ -21,6 +21,10 @@
   margin-right: 80px;
   display: block; }
 
+@media (max-width: 767.98px) {
+  .nav-bar {
+    display: none; } }
+
 nav ul {
   display: flex;
   list-style-type: none;
@@ -148,9 +152,15 @@ nav ul {
 
 .container-row {
   min-height: calc(100vh - 140px); }
+  @media (max-width: 768px) {
+    .container-row {
+      max-width: 100%; } }
   .container-row .category-container {
     background-color: #eaeaea;
     padding: 0; }
+    @media (max-width: 767.98px) {
+      .container-row .category-container {
+        display: none; } }
     .container-row .category-container .category-side-nav .list-group-item {
       background-color: transparent;
       color: #989898;
@@ -158,11 +168,35 @@ nav ul {
       font-weight: 600;
       padding: 0.8rem 1rem 0.8rem 2rem; }
       .container-row .category-container .category-side-nav .list-group-item.active {
-        background-color: #d00155;
-        color: white;
-        border-color: #d00155; }
+        background-color: #4c4e46;
+        color: white; }
       .container-row .category-container .category-side-nav .list-group-item:hover {
-        background-color: #4c4e46; }
+        background-color: #4c4e46;
+        color: white; }
+  .container-row .product-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    padding-bottom: 35px;
+    height: fit-content; }
+    .container-row .product-container .product-name {
+      font-weight: 800;
+      font-size: 16px;
+      margin-bottom: 15px;
+      margin-top: 25px;
+      height: 66px; }
+    .container-row .product-container .product-desc {
+      background-color: #f0f0f0;
+      font-size: 12px;
+      font-weight: 600;
+      line-height: 14px;
+      padding: 7px;
+      height: 70px;
+      overflow-y: auto; }
+    .container-row .product-container .product-actions {
+      display: flex;
+      justify-content: space-between;
+      align-items: center; }
 
 * {
   box-sizing: border-box; }
@@ -185,6 +219,10 @@ body {
   .btnCrimsonPink:hover {
     background-color: rgba(208, 1, 85, 0.7);
     color: white; }
+
+.link-active {
+  color: rgba(208, 1, 85, 0.7) !important;
+  text-decoration: underline !important; }
 
 .info-title {
   font-size: 24px;

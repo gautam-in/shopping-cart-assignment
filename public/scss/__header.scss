@@ -19,7 +19,11 @@
     margin-right: 80px;
     display: block;
 }
-
+.nav-bar {
+    @media (max-width: 767.98px) {
+        display: none;
+      }
+}
  nav ul {
    display: flex;
    list-style-type: none;
