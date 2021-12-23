@@ -1,8 +1,4 @@
-import { API_PATH } from './constants.js';
-
-
 const listGourp = document.querySelector(".category-side-nav");
-let products = [];
 let previousListItem = null;
 
 async function loadData() {
@@ -15,56 +11,48 @@ async function loadData() {
     
 }
 
-//function to load categories
-async function loadCategories() {
-    try {
-        const response  = await fetch(API_PATH.categoriesUrl);
-        let categories = await response.json();
-        categories.filter(category => category.enabled)
-          .forEach(category => {
-               let button = document.createElement('button');
-                button.setAttribute('type','button');
-                button.setAttribute('data-id',category.id);
-                button.className = 'list-group-item list-group-item-action';
-                button.innerText=category.name
-               listGourp.appendChild(button);
-          });
-    
-          listGourp.addEventListener('click',filterProducts);
-    } catch(error){
-        console.log("error",error);
-    }    
 
+ async function loadCategories() {
+    const response  = await fetch(API_PATH.categoriesUrl);
+    categories = await response.json();
+    categories.filter(category => category.enabled)
+        .forEach(category => {
+            let button = document.createElement('button');
+            button.setAttribute('type','button');
+            button.setAttribute('data-id',category.id);
+            button.className = 'list-group-item list-group-item-action';
+            button.innerText=category.name
+            listGourp.appendChild(button);
+        });
+
+    listGourp.addEventListener('click',filterProducts);
+    
+    
 }
 
-//function to load products initially
 async function loadProducts() {
     let localProducts;
-    try {
-        const response = await fetch(API_PATH.productsUrl); 
-        products = await response.json();
-        
-        const categoryId = sessionStorage.getItem('categoryId');
-        
-        if(categoryId) {
-        localProducts =  products.filter(product => product.category === categoryId);
 
-        //setting active category whenver we select category from home page 
-        let listGroupItem = document.querySelector(`.list-group-item[data-id='${categoryId}']`);
-        listGroupItem.classList.add('active');
-        previousListItem = listGroupItem;
-        
-        } else {
-            localProducts = [...products];
-        }
-        for(let product of localProducts) {
-            productCardItem(product);
-        }
-    }catch(error) {
-        console.log("error", error);
-    }
+    const response = await fetch(API_PATH.productsUrl); 
+    products = await response.json();
+    const categoryId = sessionStorage.getItem('categoryId');
     
-}
+    if(categoryId) {
+    localProducts =  products.filter(product => product.category === categoryId);
+
+    //setting active category whenver we select category from home page 
+    let listGroupItem = document.querySelector(`.list-group-item[data-id='${categoryId}']`);
+    listGroupItem.classList.add('active');
+    previousListItem = listGroupItem;
+    
+    } else {
+        localProducts = [...products];
+    }
+    for(let product of localProducts) {
+        productCardItem(product);
+    }
+} 
+
 
 
 function filterProducts(eventData) {
@@ -85,6 +73,14 @@ function filterProducts(eventData) {
         previousListItem.classList.remove('active');
     }
     previousListItem = eventData.srcElement;
+}
+
+
+function addtoCart(eventData) {
+    let target = eventData.target;
+    let productId =  target.getAttribute('data-id');
+    let product = products.find(product =>  product.id === productId);
+    updateCartSetUp({id:product.id,quantity:1});
 }
 
 
@@ -128,6 +124,7 @@ function productCardItem(product) {
 
      let buyNowButton = document.createElement("button");
      buyNowButton.setAttribute("class", "btn btnCrimsonPink");
+     buyNowButton.setAttribute('data-id', product.id);
      buyNowButton.innerHTML = 'Buy Now';
      productAction.append(buyNowButton);
      
@@ -136,7 +133,8 @@ function productCardItem(product) {
      productCard.append(productCardBody);
      productItem.append(productCard);
      document.querySelector('.product-container').appendChild(productItem);
+     buyNowButton.addEventListener("click", addtoCart);
 }
 
 
-document.addEventListener('DOMContentLoaded',loadData)
+document.addEventListener('DOMContentLoaded',loadData);

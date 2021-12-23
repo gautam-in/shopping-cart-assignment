@@ -1,72 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Sabka bazar is an online grocery store ">
     <title>Sabka Bazar</title>
-    <link
-    rel="stylesheet"
-    href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
-    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
-    crossorigin="anonymous"
-  />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-  <link rel="stylesheet" href="css/style.css"/>
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>  
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
 </head>
+
 <body>
+    <div class="backdrop d-none"></div>
     <header class="header-container">
-     <div class="container">   
-        <div class="d-flex">
-            <div class="logo">
-            <a href="index.html" class="logo-link"> 
-                <img src="/static/images/logo.png" alt="Sabka Bazar logo- Click yo navigate to home page" />
-            </a>
-            </div>
-            <div class="nav-bar">
-                <nav>
-                    <ul>
-                    <li class="nav-link"><a href= "/public/index.html"> Home</a></li>
-                    <li class="nav-link "><a  class="link-active" href="/public/products.html">Products</a></li>
-                    </ul>
-                </nav>
-            </div>
-         </div>   
-        <div class="side-menu">
-          <div class="user-auth-links">  
-                <a href= "/public/login.html">SignIn</a>
-                <a href="/public/register.html">Register</a>
-            </div>   
-             <div class="cart-container">
-                <button type="button" class="btn">
-                    <img src="/static/images/cart.svg"  alt="Cart icon"/>
-                    <span>0 Items</span>
-                </button>
-            </div>
-        </div>
-     </div>   
     </header>
     <main>
         <section class="row container-row">
-           <div class="col-md-3 category-container"> 
-                <div class="list-group list-gourp-flush category-side-nav">    
+            <div class="col-md-3 category-container">
+                <div class="list-group list-gourp-flush category-side-nav">
                 </div>
-            </div>   
+            </div>
             <div class="col-md-9 product-container row">
-             </div>
+            </div>
 
         </section>
     </main>
     <footer class="footer-container">
         <div class="container">
-          Copyright &copy; 2011 - 2018 Sabka Bazaar Grocery Supplies Pvt Ltd
+            Copyright &copy; 2011 - 2018 Sabka Bazaar Grocery Supplies Pvt Ltd
         </div>
     </footer>
 
-      <!--scripts-->
-    <script src="scripts/products.js" type="module"></script>
+    <!--scripts-->
+
+    <!--Script files-->
+    <script src="scripts/constants.js"></script>
+    <script src="scripts/index.js"></script>
+    <script src="scripts/header.js"> </script>
+    <script src="scripts/products.js" defer></script>
 </body>
+
 </html>
+

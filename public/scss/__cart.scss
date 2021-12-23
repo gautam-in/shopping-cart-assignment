@@ -2,7 +2,7 @@
     position: absolute;
     width: 500px;
     top: 55px;
-    z-index:15;
+    z-index:20;
     right:0;
     background-color: $light-gray;
     border: 1px solid $std-black;
@@ -24,11 +24,6 @@
         .my-cart-title {
             font-size: 14px;
             font-weight: 800;
-        }
-        #cartBtnClose {
-            &.btn-close-white {
-                filter: none;
-            }
         }
     }
 
@@ -212,3 +207,4 @@
 
     }
 }
+

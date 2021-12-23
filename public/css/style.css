@@ -49,7 +49,8 @@ nav ul {
   justify-content: space-between; }
 
 .user-auth-links {
-  text-align: start; }
+  display: flex;
+  align-items: center; }
 
 .user-auth-links a {
   text-decoration: none;
@@ -63,7 +64,7 @@ nav ul {
   background-color: #eeeeee;
   display: flex;
   flex-direction: row;
-  width: 130px;
+  width: 150px;
   height: 55px;
   align-items: center; }
   .cart-container #cartButton:hover {
@@ -80,7 +81,7 @@ nav ul {
   position: absolute;
   width: 500px;
   top: 55px;
-  z-index: 15;
+  z-index: 20;
   right: 0;
   background-color: #eeeeee;
   border: 1px solid black; }
@@ -98,8 +99,6 @@ nav ul {
     .cart-popup .cart-header .my-cart-title {
       font-size: 14px;
       font-weight: 800; }
-    .cart-popup .cart-header #cartBtnClose.btn-close-white {
-      filter: none; }
   .cart-popup .cart-content {
     padding: 10px;
     border-bottom: 1px solid #d8d8d8;
@@ -284,11 +283,17 @@ nav ul {
   padding: 3rem 0rem 3rem 3rem;
   align-items: center;
   justify-content: center; }
+  @media (max-width: 768px) {
+    .login-container {
+      padding: 3rem 0 3rem 0; } }
   .login-container .info-title {
     font-size: 40px;
     font-weight: 600; }
   .login-container .login-form-section {
     margin-left: 3rem; }
+    @media (max-width: 768px) {
+      .login-container .login-form-section {
+        margin-left: 0px; } }
 
 .register-container {
   min-height: calc(100vh - 140px);
@@ -300,6 +305,9 @@ nav ul {
     font-weight: 600; }
   .register-container .register-form-section {
     margin-left: 3rem; }
+    @media (max-width: 994px) {
+      .register-container .register-form-section {
+        margin-left: 0px; } }
 
 .container-row {
   min-height: calc(100vh - 140px); }
@@ -402,3 +410,14 @@ body {
     box-shadow: none;
     border-bottom-width: 2px;
     border-bottom-color: #59c7cf; }
+
+.backdrop {
+  position: fixed;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  opacity: .30;
+  filter: alpha(opacity=30);
+  z-index: 13; }

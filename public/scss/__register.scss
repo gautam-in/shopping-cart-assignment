@@ -11,6 +11,9 @@
 
     .register-form-section {
         margin-left: 3rem;
+        @media (max-width: 994px) {
+            margin-left: 0px;
+        }
     }
 
 }

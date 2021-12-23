@@ -1,12 +1,5 @@
-import { API_PATH } from './constants.js';
-
-console.log("home",cart);
-
-
 const categoryContainer = document.querySelector(".categories-container");
 const  carouselBlock = document.querySelector(".carousel-inner");
-
-
 
 function exploreCategory(eventData) {
     const id = eventData.target.getAttribute("data-id");
@@ -14,11 +7,11 @@ function exploreCategory(eventData) {
     window.location.href = "products.html"
 }
 
- function loadData () {
+ async function loadData () {
      if(sessionStorage.getItem('categoryId')) {
          sessionStorage.removeItem('categoryId');
      }
-  loadBanners();
+  await loadBanners();
   loadCategories();  
 }
 
@@ -42,10 +35,10 @@ async function loadBanners() {
 
 async function loadCategories() {
     try {
-        const response  = await fetch(API_PATH.categoriesUrl);
-        const data = await response.json();
+        // const response  = await fetch(API_PATH.categoriesUrl);
+        // const data = await response.json();
 
-        categoryContainer.innerHTML = data.filter(category => category.enabled).map((category,index) => {
+        categoryContainer.innerHTML = categories.filter(category => category.enabled).map((category,index) => {
             return `
             <div class="row category ${index%2 !== 0 ? 'flex-row-reverse': ''}"> 
                 <div class="col-4 img-conatiner">
@@ -69,15 +62,5 @@ async function loadCategories() {
 }
 
 
-function  showOrHidecart() {
-    document.querySelector('.cart-popup').classList.toggle('d-none');
-    const isHide = document.querySelector('.cart-popup').classList.contains('d-none');
-    // if(!isHide) {
-    //    document.querySelector('#overallTemplate').classList.add("black-overlay");
-    // }else {
-    //    document.querySelector('#overallTemplate').classList.remove("black-overlay");
-    // }
-}
 
-document.querySelector('.cart-container').addEventListener('click', showOrHidecart);
 document.addEventListener('DOMContentLoaded',loadData);
