@@ -1,8 +1,4 @@
-import {
-  GET_BANNER_ERROR,
-  GET_BANNER_LOADING,
-  GET_BANNER_SUCCESS,
-} from "./actionTypes";
+import { GET_BANNER_ERROR, GET_BANNER_LOADING, GET_BANNER_SUCCESS } from './actionTypes';
 
 const getBannerLoading = () => {
   return {

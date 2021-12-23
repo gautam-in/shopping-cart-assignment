@@ -1,5 +1,4 @@
-import React from "react";
-import "./card.scss";
+import './card.scss';
 
 function Card(props) {
   const { children } = props;

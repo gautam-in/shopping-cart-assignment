@@ -1,5 +1,5 @@
-import  { useRef } from "react";
-import { Modal as BootstrapModal } from "bootstrap";
+import { useRef } from 'react';
+import { Modal as BootstrapModal } from 'bootstrap';
 
 function useModal() {
   const modalRef = useRef();
@@ -7,7 +7,7 @@ function useModal() {
   const showModal = () => {
     const modalEle = modalRef.current;
     const bsModal = new BootstrapModal(modalEle, {
-      backdrop: "static",
+      backdrop: 'static',
       keyboard: false,
     });
     bsModal.show();
@@ -18,7 +18,7 @@ function useModal() {
     const bsModal = BootstrapModal.getInstance(modalEle);
     bsModal.hide();
   };
-  return {modalRef, showModal, hideModal};
+  return { modalRef, showModal, hideModal };
 }
 
 export default useModal;

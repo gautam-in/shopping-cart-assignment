@@ -1,43 +1,55 @@
-import { Link } from "react-router-dom";
-import CartModal from "../../organisms/cartModal/cartModal";
-import "./pageHeader.scss";
+import { Link } from 'react-router-dom';
+import CartModal from '../../organisms/cartModal/cartModal';
+import * as constants from '../../../constants';
+import './pageHeader.scss';
 
 function PageHeader() {
   return (
     <header className="header">
-      <nav class="navbar shadow  p-2 bg-white rounded">
-        <div class="container">
-          <div>
-            <Link to="/">
-              <img
-                src={"/static/images/logo_2x.png"}
-                alt="sabka-baazar-logo"
-                width="80"
-                height="40"
-                // class="d-inline-block align-text-top"
-              />
-            </Link>
-            <Link className="header__link_routes mx-5" to="/">
-              HOME
-            </Link>
-            <Link
-              className="header__link_routes mx-n2"
-              to="/products/5b6899953d1a866534f516e2"
-            >
-              PRODUCTS
-            </Link>
+      <nav className="navbar navbar-light navbar-expand-md bg-white shadow">
+        <div className="container">
+          <Link to="/" className="navbar-brand abs">
+            <img src={constants.SABKA_BAAZAR_LOGO} alt="sabka-baazar-logo" width="80" height="40" />
+          </Link>
+          <button
+            className="navbar-toggler ms-auto mx-3"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapseNavbar"
+          >
+            <span className="navbar-toggler-icon"></span>
+          </button>
+          <div className="navbar-collapse collapse" id="collapseNavbar">
+            <ul className="navbar-nav">
+              <li className="nav-item active">
+                <Link className="nav-link header__link_routes" to="/">
+                  HOME
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link header__link_routes" to="/products/5b6899953d1a866534f516e2">
+                  PRODUCTS
+                </Link>
+              </li>
+            </ul>
+            <ul className="navbar-nav ms-auto">
+              <li className="nav-item">
+                <Link className="nav-link" to="/signIn">
+                  Sign In
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link" to="/register">
+                  Register
+                </Link>
+              </li>
+            </ul>
           </div>
-          <div className="d-flex flex-column">
-            <div className="p-2">
-              <Link className="header__link px-2" to="/signIn">
-                Sign In
-              </Link>
-              <Link className=" header__link px-2" to="/register">
-                Register
-              </Link>
-            </div>
-            <CartModal />{" "}
-          </div>
+          <ul className="navbar-nav">
+            <li className="nav-item">
+              <CartModal />
+            </li>
+          </ul>
         </div>
       </nav>
     </header>

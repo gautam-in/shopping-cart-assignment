@@ -1,20 +1,17 @@
-import classNames from "classnames";
-import usePrevNext from "../../../hooks/usePrevNext";
-import "./carousel.scss";
+import classNames from 'classnames';
+import usePrevNext from '../../../hooks/usePrevNext';
+import './carousel.scss';
 
 function Carousel(props) {
   const { bannerData } = props;
   const [index, setIndex, handleNext, handlePrev] = usePrevNext(bannerData);
   return (
-    <div className="carousel" >
-      <div
-        id="carouselExampleIndicators"
-        className="carousel carousel-dark slide"
-        data-bs-ride="carousel"
-      >
+    <div className="carousel">
+      <div id="carouselExampleIndicators" className="carousel carousel-dark slide" data-bs-ride="carousel">
         <div className="carousel-indicators">
-          {bannerData.map((data, buttonIndex) => (
+          {bannerData?.map((data, buttonIndex) => (
             <button
+            key={buttonIndex}
               type="button"
               data-bs-target="#carouselExampleIndicators"
               data-bs-slide-to={buttonIndex}
@@ -30,16 +27,12 @@ function Carousel(props) {
         <div className="carousel-inner">
           {bannerData?.map(({ bannerImageUrl, bannerImageAlt }, imageIndex) => (
             <div
-              className={classNames("carousel-item", {
+              className={classNames('carousel-item', {
                 active: imageIndex === index,
               })}
               key={imageIndex}
             >
-              <img
-                src={`${bannerImageUrl}`}
-                className="d-block w-100"
-                alt={bannerImageAlt}
-              />
+              <img src={`${bannerImageUrl}`} className="d-block w-100" alt={bannerImageAlt} />
             </div>
           ))}
         </div>
@@ -50,10 +43,7 @@ function Carousel(props) {
           data-bs-slide="prev"
           onClick={handlePrev}
         >
-          <span
-            className="carousel-control-prev-icon"
-            aria-hidden="true"
-          ></span>
+          <span className="carousel-control-prev-icon" aria-hidden="true"></span>
           <span className="visually-hidden">Previous</span>
         </button>
         <button
@@ -63,10 +53,7 @@ function Carousel(props) {
           data-bs-slide="next"
           onClick={handleNext}
         >
-          <span
-            className="carousel-control-next-icon"
-            aria-hidden="true"
-          ></span>
+          <span className="carousel-control-next-icon" aria-hidden="true"></span>
           <span className="visually-hidden">Next</span>
         </button>
       </div>

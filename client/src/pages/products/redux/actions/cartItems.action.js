@@ -1,7 +1,4 @@
-import {
-  ADD_CART_ITEM,
-  REMOVE_CART_ITEM,
-} from "./actionTypes";
+import { ADD_CART_ITEM, REMOVE_CART_ITEM } from './actionTypes';
 
 const addCartItem = (selectedItem, productData) => {
   return {
@@ -16,9 +13,7 @@ const removeCartItem = (selectedItem, productData) => {
   };
 };
 
-
 export const cartItemActions = {
   addCartItem,
   removeCartItem,
-
 };

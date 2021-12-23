@@ -1,19 +1,15 @@
-import {
-  GET_CATEGORIES_ERROR,
-  GET_CATEGORIES_LOADING,
-  GET_CATEGORIES_SUCCESS,
-} from "../actions/actionTypes";
+import { GET_CATEGORIES_ERROR, GET_CATEGORIES_LOADING, GET_CATEGORIES_SUCCESS } from '../actions/actionTypes';
 
 const initialState = {
   categoriesData: [
     {
-      name: "",
-      key: "",
-      description: "",
+      name: '',
+      key: '',
+      description: '',
       enabled: true,
       order: 0,
-      imageUrl: "",
-      id: "",
+      imageUrl: '',
+      id: '',
     },
   ],
   error: { getCategories: null },

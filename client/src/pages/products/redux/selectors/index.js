@@ -1,5 +1,5 @@
-import { getProductsSelectors } from "./getProducts.selector";
-import { getcartItemsSelectors } from "./cartItems.selector";
+import { getProductsSelectors } from './getProducts.selector';
+import { getcartItemsSelectors } from './cartItems.selector';
 
 export const productsSelectors = {
   getProductsSelectors,

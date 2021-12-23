@@ -1,16 +1,12 @@
-import { useEffect } from "react";
-import HomeComponent from "./homeComponent";
-import { useSelector, useDispatch } from "react-redux";
-import { homeActions } from "./redux/actions";
-import { homeSelectors } from "./redux/selectors";
+import { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import HomeComponent from './homeComponent';
+import { homeActions } from './redux/actions';
+import { homeSelectors } from './redux/selectors';
 
 function HomeContainer() {
-  const bannerData = useSelector(
-    homeSelectors.getBannerSelectors.selectBannerData
-  );
-  const categoriesData = useSelector(
-    homeSelectors.getCategoriesSelectors.selectCategoriesData
-  );
+  const bannerData = useSelector(homeSelectors.getBannerSelectors.selectBannerData);
+  const categoriesData = useSelector(homeSelectors.getCategoriesSelectors.selectCategoriesData);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -19,9 +15,9 @@ function HomeContainer() {
   }, [dispatch]);
 
   return (
-    <div style={{ height: "200vh" }}>
+    <>
       <HomeComponent bannerData={bannerData} categoriesData={categoriesData} />
-    </div>
+    </>
   );
 }
 

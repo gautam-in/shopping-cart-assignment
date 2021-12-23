@@ -1,11 +1,11 @@
-import Button from "../../atoms/button/button";
-import TextField from "../../atoms/textField/textField";
-import { Form, Formik } from "formik";
-import { signInFormValidationSchema } from "../../../utils/validations";
+import Button from '../../atoms/button/button';
+import TextField from '../../atoms/textField/textField';
+import { Form, Formik } from 'formik';
+import { signInFormValidationSchema } from '../../../utils/validations';
 
 const initialValues = {
-  email: "",
-  password: "",
+  email: '',
+  password: '',
 };
 
 function SignInForm() {
@@ -24,7 +24,7 @@ function SignInForm() {
           <Form>
             <TextField name="email" type="email" label="Email" />
             <TextField name="password" type="password" label="Password" />
-            <Button type="submit" onClick={() => console.log("onclick")}>
+            <Button type="submit" onClick={() => console.log('onclick')}>
               Login
             </Button>
           </Form>

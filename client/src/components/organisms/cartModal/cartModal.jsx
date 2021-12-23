@@ -1,32 +1,26 @@
-import { useDispatch, useSelector, shallowEqual } from "react-redux";
-import { productsActions } from "../../../pages/products/redux/actions";
-import { productsSelectors } from "../../../pages/products/redux/selectors";
-import { getTotal } from "../../../utils";
-import Button from "../../atoms/button/button";
-import useModal from "../../../hooks/useModal";
-import CartButton from "./cartButton";
-import "./cartModal.scss";
+import { useDispatch, useSelector } from 'react-redux';
+import { productsActions } from '../../../pages/products/redux/actions';
+import { productsSelectors } from '../../../pages/products/redux/selectors';
+import { getTotal } from '../../../utils';
+import Button from '../../atoms/button/button';
+import useModal from '../../../hooks/useModal';
+import CartButton from './cartButton';
+import './cartModal.scss';
+import CartItemList from './cartItemList';
 
 function CartModal() {
   const { modalRef, showModal, hideModal } = useModal();
   const dispatch = useDispatch();
-  const cartItemData = useSelector(
-    productsSelectors.getcartItemsSelectors.selectCartItemsData,
-    shallowEqual
-  );
+  const cartItemData = useSelector(productsSelectors.getcartItemsSelectors.selectCartItemsData);
 
   console.log(cartItemData);
 
   const handleOnAddItem = (product) => {
-    dispatch(
-      productsActions.cartItemActions.addCartItem(product, cartItemData)
-    );
+    dispatch(productsActions.cartItemActions.addCartItem(product, cartItemData));
   };
 
   const handleOnRemoveItem = (product) => {
-    dispatch(
-      productsActions.cartItemActions.removeCartItem(product, cartItemData)
-    );
+    dispatch(productsActions.cartItemActions.removeCartItem(product, cartItemData));
   };
 
   return (
@@ -37,7 +31,7 @@ function CartModal() {
           <div className="modal-content">
             <div className="modal-header bg-dark ">
               <h5 className="modal-title modal__header_heading">{`My Cart ( ${
-                getTotal(cartItemData, "quantity") || 0
+                getTotal(cartItemData, 'quantity') || 0
               } item )`}</h5>
               <button
                 type="button"
@@ -49,48 +43,24 @@ function CartModal() {
             <div className="modal-body modal__body">
               <ul className="modal__body_cartList">
                 {cartItemData?.length > 0 ? (
-                  cartItemData?.map((item) => {
-                    return (
-                      <li
-                        className="modal__body_cartList_items d-flex mb-2"
-                        key={item.id}
-                      >
-                        <img
-                          src={item.imageURL}
-                          className="modal__body_cartList_img"
-                          alt={item.name}
+                  <>
+                    {cartItemData?.map((item) => {
+                      return (
+                        <CartItemList
+                          item={item}
+                          handleOnRemoveItem={handleOnRemoveItem}
+                          handleOnAddItem={handleOnAddItem}
                         />
-                        <div className="modal__body_cartList_details">
-                          <h2 className="modal__body_cartList_name truncate">
-                            {item.name}
-                          </h2>
-                          <button
-                            className="modal__body_cartList_buttonIncrementDecrement"
-                            onClick={()=>handleOnRemoveItem(item)}
-                          >
-                            -
-                          </button>
-                          <span className="quantity">{item.quantity}</span>
-                          <button
-                            className="modal__body_cartList_buttonIncrementDecrement"
-                            onClick={() => handleOnAddItem(item)}
-                          >
-                            +
-                          </button>
-                          <span className="">X</span>
-                          <span className="modal__body_cartList_price mx-4 ">
-                            ₹ {item.price}
-                          </span>
-                          <span className="cart_list-item-total mx-3 ">
-                            ₹ {item.quantity * item.price}
-                          </span>
-                        </div>
-                      </li>
-                    );
-                  })
+                      );
+                    })}
+                    <div className="modal__body_cartList_items m-3 d-flex align-items-center">
+                      <img src={'/static/images/lowest-price.png'} alt="lowest-price" width="80px" />
+                      <p className="mb-0 mx-5">You won't find it cheap anywhere</p>
+                    </div>
+                  </>
                 ) : (
-                  <div className="no-item-text">
-                    <b>No items in your cart</b>
+                  <div className="text-center">
+                    <strong>No items in your cart</strong>
                     <p>Your favourite items are just a click away</p>
                   </div>
                 )}
@@ -98,22 +68,23 @@ function CartModal() {
             </div>
             <div className=" modal-footer modal__footer">
               <p className="text-center">
-                Promo code can be applied on payment page
+                {cartItemData?.length > 0 && <p className="text-center">Promo code can be applied on payment page</p>}
               </p>
               <Button onClick={hideModal}>
-                <div className="d-flex justify-content-between align-items-center">
+                <div className="d-flex justify-content-between align-items-center p-2">
                   {cartItemData?.length > 0 ? (
                     <>
-                      <p>Proceed Checkout </p>
-                      <p>
-                        Rs.
-                        {cartItemData.reduce((total, item) => {
+                      <p className="mb-0">Proceed Checkout </p>
+                      <p className="mb-0">
+                        <span> &#8377;</span>
+                        {cartItemData?.reduce((total, item) => {
                           return total + item.price * item.quantity;
                         }, 0)}
+                        <span className="mx-3">&#x3e;</span>
                       </p>
                     </>
                   ) : (
-                    <p>Start Shopping</p>
+                    <p className="mx-auto mb-0">Start Shopping</p>
                   )}
                 </div>
               </Button>

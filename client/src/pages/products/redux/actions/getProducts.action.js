@@ -1,8 +1,4 @@
-import {
-  GET_PRODUCTS_ERROR,
-  GET_PRODUCTS_LOADING,
-  GET_PRODUCTS_SUCCESS,
-} from "./actionTypes";
+import { GET_PRODUCTS_ERROR, GET_PRODUCTS_LOADING, GET_PRODUCTS_SUCCESS } from './actionTypes';
 
 const getProductsLoading = () => {
   return {

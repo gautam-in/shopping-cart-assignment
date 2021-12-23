@@ -8,23 +8,24 @@
     flex-direction: row-reverse;
   }
   &__content {
-    // display: flex;
-    // flex-direction: column;
-    // justify-content: space-around;
-    // align-items: center;
     width: 50%;
   }
-  &__imageContainer{
-    width:30%;}
+  &__imageContainer {
+    width: 50%;
+  }
 
   &__title {
     font-weight: 700;
   }
-  &__button{
-//     width: 50%;
-// align-items:stretch;
-  }
-
-
 }
 
+@media (min-width: 768px) {
+  .productCategoryBanner {
+    &__imageContainer {
+      width: 25%;
+    }
+    &__button {
+      width: 50%;
+    }
+  }
+}

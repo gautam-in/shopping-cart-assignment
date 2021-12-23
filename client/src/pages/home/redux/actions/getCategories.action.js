@@ -1,8 +1,4 @@
-import {
-  GET_CATEGORIES_ERROR,
-  GET_CATEGORIES_LOADING,
-  GET_CATEGORIES_SUCCESS,
-} from "./actionTypes";
+import { GET_CATEGORIES_ERROR, GET_CATEGORIES_LOADING, GET_CATEGORIES_SUCCESS } from './actionTypes';
 
 const getCategoriesLoading = () => {
   return {

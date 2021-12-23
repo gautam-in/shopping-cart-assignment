@@ -1,12 +1,12 @@
-import React from 'react'
-import SignInComponent from './signInComponent'
+import React from 'react';
+import SignInComponent from './signInComponent';
 
 function SignInContainer() {
-    return (
-        <div>
-            <SignInComponent/>
-        </div>
-    )
+  return (
+    <>
+      <SignInComponent />
+    </>
+  );
 }
 
-export default SignInContainer
+export default SignInContainer;

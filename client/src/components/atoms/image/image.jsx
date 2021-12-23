@@ -1,15 +1,10 @@
-import classNames from "classnames";
-import "./image.scss";
+import classNames from 'classnames';
+import './image.scss';
 
 function Image(props) {
-  const {
-    imageSrc = "",
-    alt = "image",
-    customClass = "",
-    onClick = null,
-  } = props;
+  const { imageSrc = '', alt = 'image', customClass = '', onClick = null } = props;
 
-  const className = classNames("image", customClass);
+  const className = classNames('image', customClass);
 
   return (
     <div>
@@ -18,13 +13,8 @@ function Image(props) {
         alt={alt}
         className={className}
         onClick={() => {
-          onClick();
+          onClick?.();
         }}
-        //  loading={loading}
-        //  onError={() => {
-        //    handleError();
-        //  }}
-        //  onLoad={() => handleLoad()}
       />
     </div>
   );

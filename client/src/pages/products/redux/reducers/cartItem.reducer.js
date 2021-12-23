@@ -1,28 +1,22 @@
-import {
-  ADD_CART_ITEM,
-  REMOVE_CART_ITEM,
-} from "../actions/actionTypes";
+import { ADD_CART_ITEM, REMOVE_CART_ITEM } from '../actions/actionTypes';
 
 const initialState = {
   item: 0,
   cartItemData: [],
-  total: 0,
 };
 
 export const cartItemReducer = (state = initialState, action = {}) => {
   switch (action.type) {
     case ADD_CART_ITEM:
-      if (
-        state.cartItemData.find((e) => e.id === action.payload.selectedItem.id)
-      ) {
+      if (state.cartItemData.find((cartItem) => cartItem.id === action.payload.selectedItem.id)) {
         return {
           ...state,
           item: state.item + 1,
-          cartItemData: state.cartItemData.map((ele) => {
-            if (ele.id === action.payload.selectedItem.id) {
-              return { ...ele, quantity: ele.quantity + 1 };
+          cartItemData: state.cartItemData.map((cartItem) => {
+            if (cartItem.id === action.payload.selectedItem.id) {
+              return { ...cartItem, quantity: cartItem.quantity + 1 };
             }
-            return ele;
+            return cartItem;
           }),
         };
       } else {
@@ -36,28 +30,24 @@ export const cartItemReducer = (state = initialState, action = {}) => {
         };
       }
     case REMOVE_CART_ITEM:
-      const findItem = state.cartItemData.find(
-        (element) => element.id === action.payload.selectedItem.id
-      );
-      if (findItem) {
-        if (findItem.quantity > 1) {
+      const removeItem = state.cartItemData.find((cartItem) => cartItem.id === action.payload.selectedItem.id);
+      if (removeItem) {
+        if (removeItem.quantity > 1) {
           return {
             ...state,
             item: state.item - 1,
-            cartItemData: state.cartItemData.map((ele) => {
-              if (ele.id === action.payload.selectedItem.id) {
-                return { ...ele, quantity: ele.quantity - 1 };
+            cartItemData: state.cartItemData.map((cartItem) => {
+              if (cartItem.id === action.payload.selectedItem.id) {
+                return { ...cartItem, quantity: cartItem.quantity - 1 };
               }
-              return ele;
+              return cartItem;
             }),
           };
         } else {
           return {
             ...state,
             item: state.item - 1,
-            cartItemData: state.cartItemData.filter(
-              (ele) => ele.id !== action.payload.selectedItem.id
-            ),
+            cartItemData: state.cartItemData.filter((cartItem) => cartItem.id !== action.payload.selectedItem.id),
           };
         }
       }

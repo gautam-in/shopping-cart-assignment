@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState } from 'react';
 
 export default function usePrevNext(data) {
   const [index, setIndex] = useState(0);
@@ -10,5 +10,5 @@ export default function usePrevNext(data) {
   const handlePrev = () => {
     setIndex((prevIndex) => (prevIndex > 0 ? prevIndex - 1 : data.length - 1));
   };
-  return [index,setIndex, handleNext, handlePrev];
+  return [index, setIndex, handleNext, handlePrev];
 }

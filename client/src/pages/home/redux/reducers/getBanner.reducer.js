@@ -1,17 +1,13 @@
-import {
-  GET_BANNER_ERROR,
-  GET_BANNER_LOADING,
-  GET_BANNER_SUCCESS,
-} from "../actions/actionTypes";
+import { GET_BANNER_ERROR, GET_BANNER_LOADING, GET_BANNER_SUCCESS } from '../actions/actionTypes';
 
 const initialState = {
   bannerData: [
     {
-      bannerImageAlt: "",
-      bannerImageUrl: "",
-      id: "",
+      bannerImageAlt: '',
+      bannerImageUrl: '',
+      id: '',
       isActive: false,
-      order: "",
+      order: '',
     },
   ],
   error: { getBanner: null },

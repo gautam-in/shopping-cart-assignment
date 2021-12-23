@@ -1,20 +1,16 @@
-import {
-  GET_PRODUCTS_ERROR,
-  GET_PRODUCTS_LOADING,
-  GET_PRODUCTS_SUCCESS,
-} from "../actions/actionTypes";
+import { GET_PRODUCTS_ERROR, GET_PRODUCTS_LOADING, GET_PRODUCTS_SUCCESS } from '../actions/actionTypes';
 
 const initialState = {
   productsData: [
     {
-      name: "",
-      imageURL: "",
-      description: "",
+      name: '',
+      imageURL: '',
+      description: '',
       price: 0,
       stock: 0,
-      category: "",
-      sku: "",
-      id: "",
+      category: '',
+      sku: '',
+      id: '',
     },
   ],
   error: { getProducts: null },

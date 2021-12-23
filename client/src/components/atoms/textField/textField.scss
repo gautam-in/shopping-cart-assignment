@@ -1,7 +1,6 @@
 .error-msg {
   color: red;
   white-space: nowrap;
-
 }
 /* form starting stylings ------------------------------- */
 .group {
@@ -40,7 +39,7 @@ input:focus ~ label,
 input:valid ~ label {
   top: -20px;
   font-size: 14px;
-  color: #2bbabd
+  color: #2bbabd;
 }
 
 /* BOTTOM BARS ================================= */
@@ -51,7 +50,7 @@ input:valid ~ label {
 }
 .bar:before,
 .bar:after {
-  content: "";
+  content: '';
   height: 2px;
   width: 0;
   bottom: 1px;
