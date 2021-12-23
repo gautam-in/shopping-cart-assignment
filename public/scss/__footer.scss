@@ -1,0 +1,19 @@
+.footer-container {
+    background-color: $footer-gray;
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    background-color: $footer-gray;
+    text-align: center;
+
+    @media (max-width: 768px) {
+        text-align: center;
+        height: 35px;
+    }
+
+    @media (max-width: 767.98px) {
+        font-size: 12px;
+    }
+}

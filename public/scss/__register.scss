@@ -1,0 +1,19 @@
+.register-container {
+    min-height: calc(100vh - 140px);
+    padding: 3rem 0rem 3rem 3rem;
+    align-items: center;
+    justify-content: center;
+
+    .info-title {
+        font-size: 40px;
+        font-weight: 600;
+    }
+
+    .register-form-section {
+        margin-left: 3rem;
+        @media (max-width: 994px) {
+            margin-left: 0px;
+        }
+    }
+
+}
