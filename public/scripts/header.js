@@ -162,8 +162,8 @@ function updateTotalAmount () {
 }
 
 function addProductDetailsInCart(product,parentContainer) {
-    console.log(product);
-    const cartItem = document.createElement('div');
+    
+   const cartItem = document.createElement('div');
    cartItem.className = 'cart-item'
 
    const imgParent = document.createElement('div');

@@ -32,7 +32,6 @@ async function loadData() {
 
 async function loadProducts() {
     let localProducts;
-
     const response = await fetch(API_PATH.productsUrl); 
     products = await response.json();
     const categoryId = sessionStorage.getItem('categoryId');
@@ -82,10 +81,9 @@ function addtoCart(eventData) {
     let productChecked = cart.find(item => item.id === productId);
     if(productChecked) {
         let productAlert = document.querySelector('#product-alert');
-        console.log(productAlert);
-        productAlert.className = 'show';
+        productAlert.classList.add('show');
         setTimeout(()=> {
-            productAlert.className = '';         
+            productAlert.classList.remove('show');      
         },3000);
         return;
     }

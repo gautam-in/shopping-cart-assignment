@@ -375,36 +375,60 @@ nav ul {
 #product-alert {
   visibility: hidden;
   min-width: 250px;
-  background-color: #eeeeee;
-  color: white;
+  background-color: #333;
+  color: #fff;
   text-align: center;
+  border-radius: 2px;
   padding: 16px;
   position: fixed;
   z-index: 1;
   left: 50%;
   bottom: 30px;
   font-size: 16px;
-  border-radius: 2px; }
+  border: 1px solid black; }
+  @media (max-width: 767.9px) {
+    #product-alert {
+      left: 20%; } }
+  @media (max-width: 432px) {
+    #product-alert {
+      left: 5%; } }
 
-#product-alert .show {
+#product-alert.show {
   visibility: visible;
-  animation: fadein 0.5s, fadeout 0.5s 2.5s; }
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  animation: fadein 0.5s, fadeout 0.5s 10s; }
+
+@-webkit-keyframes fadein {
+  from {
+    bottom: 0;
+    opacity: 0; }
+  to {
+    bottom: 30px;
+    opacity: 1; } }
 
 @keyframes fadein {
   from {
-    opacity: 0;
-    bottom: 0; }
+    bottom: 0;
+    opacity: 0; }
   to {
-    opacity: 1;
-    bottom: 30px; } }
+    bottom: 30px;
+    opacity: 1; } }
+
+@-webkit-keyframes fadeout {
+  from {
+    bottom: 30px;
+    opacity: 1; }
+  to {
+    bottom: 0;
+    opacity: 0; } }
 
 @keyframes fadeout {
   from {
-    opacity: 1;
-    bottom: 30px; }
+    bottom: 30px;
+    opacity: 1; }
   to {
-    opacity: 0;
-    bottom: 0px; } }
+    bottom: 0;
+    opacity: 0; } }
 
 * {
   box-sizing: border-box; }

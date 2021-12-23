@@ -6,8 +6,8 @@ let categories = [];
 
 async function loadData() {
     try {
-        await loadCategories();
-        await loadProducts();
+        await getCategories();
+        await getProducts();
         renderCart();
     }catch(error) {
         console.log('error',error);
@@ -15,7 +15,7 @@ async function loadData() {
     
 }
 
-async function loadCategories() {
+async function getCategories() {
     try {
         const response  = await fetch(API_PATH.categoriesUrl);
         categories = await response.json();
@@ -26,7 +26,7 @@ async function loadCategories() {
 }
 
 //function to load products initially
-async function loadProducts() {
+async function getProducts() {
     try {
         const response = await fetch(API_PATH.productsUrl); 
         products = await response.json();
