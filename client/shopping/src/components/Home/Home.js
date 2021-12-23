@@ -6,7 +6,6 @@ import CategoryCard from './CategoryCards/CategoryCard';
 
 function Home(props) {
     const [ImgUrl, setImage]= useState();
-    const [category, setCategory]= useState({category:[], categoryImage:[]});
     const [error, image]= useImageLoad(ImgUrl);
     useEffect(()=>{
         fetch("/banners").then((dta)=> dta.json()).then((dta)=>{
@@ -16,16 +15,8 @@ function Home(props) {
                 
             });
             setImage(data);
-        })
-        fetch("/categories").then((dta)=> dta.json()).then((dta)=>{
-            let data = [];
-            dta.forEach(element => {
-                data.push(element.imageUrl);
-                
-            });
-            setCategory({category:dta,categoryImage:data});
-        })
-    },[])
+        })},[])
+    console.log(props.category);
     return(
         <div className="container">
             <div className="row center" style={{marginBottom:"1em"}}>
@@ -33,8 +24,8 @@ function Home(props) {
             </div>
             {/* {(!errorCat && Catimage!==null) && Catimage.map(item=><img src={item} alt=""></img>)} */}
             <div className="row">
-            {category.category.map((cat)=>{
-                return cat.imageUrl && <CategoryCard {...cat}/>
+            {props.category.map((cat)=>{
+                return cat.imageUrl && <CategoryCard {...cat} key={cat.key}/>
                 })
              }
         </div>

@@ -5,12 +5,12 @@ function CategoryCard(props) {
     const [errorCat, item]= useImageLoad(props.imageUrl);
     return (
         <section className="row center" style={{order:props.order, marginBottom:"1em"}}>
-            <div className="card">
+           { !errorCat && <div className="card">
             <div className="row center">
-            <div className="col-4 g-sm-0" style={props.order%2?{order:1}:{order:2}}>
+            <div className="col-6 g-sm-0" style={props.order%2?{order:1}:{order:2}}>
                 <img className="cat-image" src={item} alt=""></img>
             </div>
-            <div className="col-8 g-sm-0" style={props.order%2?{order:2}:{order:1}}>
+            <div className="col-6 g-sm-0" style={props.order%2?{order:2}:{order:1}}>
                 <header className="row center heading" >
                     {props.name}
                 </header> 
@@ -22,7 +22,7 @@ function CategoryCard(props) {
                 </div>
                 </div>
                 </div>
-            </div>
+            </div>}
         </section>
     );
 }

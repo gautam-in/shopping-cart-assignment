@@ -13,7 +13,7 @@
     content: '';
     position: absolute;
     z-index: -1;
-    bottom: 5%;
+    bottom: 3%;
     left: 50%;
     transform: translateX(-50%);
     width: 65%;
@@ -39,4 +39,11 @@
     border:none;
     background-color: #BF2A61;
     cursor: pointer;
+}
+
+@media (max-width:576px) {
+    .card::after
+    {
+        bottom: 5%;
+    }
 }

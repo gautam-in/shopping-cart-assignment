@@ -2,6 +2,7 @@
     position: relative;
     height: fit-content;
     width: 80%;
+    margin-top: 10px;
 }
 .scroller {
     overflow-x: scroll;
@@ -61,3 +62,26 @@
   .active, .dotContainer>span:hover {
     background-color: #717171 !important;
   }
+  .one-edge-shadow{
+        background-color: white;
+    }
+  .one-edge-shadow::after
+    {
+        content: '';
+        position: absolute;
+        z-index: -1;
+        bottom: 3%;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 65%;
+        height: 7%;
+        border-radius: 50%;
+        box-shadow: 0px 10px 5px rgb(75, 75, 75);
+    }
+
+@media (max-width:576px) {
+    .one-edge-shadow::after
+    { 
+        bottom: 9%;
+    }
+}

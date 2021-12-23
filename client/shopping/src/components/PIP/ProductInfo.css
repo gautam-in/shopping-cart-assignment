@@ -1,0 +1,70 @@
+.catCards{
+    padding: 5%;
+    margin: 5%;
+}
+.catCards>div{
+    padding: 5%;
+}
+.catCards>div>img{
+    width: 80%;
+}
+.cardHead{
+    font-weight: 800;
+    height: 4em;
+}
+.categoriesCol{
+    background-color: rgb(206, 204, 204);
+}
+.categoriesTab{
+    padding: 10px;
+    margin-left: 5%;
+    border-bottom: 1px solid gray;
+    cursor: pointer;
+}
+.prodContain{
+   width:80%;
+   padding-left: 0px;
+   padding-right: 0px;
+}
+.description{
+    padding: 1em;
+    height: 6em;
+    margin: 5%;
+    word-wrap: break-word;
+    overflow-y: scroll;
+    text-overflow: ellipsis;
+    ms-overflow-style: none;
+    scrollbar-width: none;
+    background-color: rgb(211, 211, 211);
+}
+.description::-webkit-scrollbar {
+    display: none;
+  }
+.mobiledropdown{
+    display: none;
+    background-color: #BF2A61;
+    color: white;
+    margin-left: 0%;
+}
+.open{
+    padding: 0px;
+}
+.close{
+    padding: 0px;
+}
+@media (max-width:998px) {
+    .prodContain{
+        width:100%;
+    }
+}
+@media (max-width:576px){
+    .mobiledropdown{
+        display: block;
+    }
+    .close{
+        display: none;
+    }
+    .open{
+        display: block;
+    }
+}
