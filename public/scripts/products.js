@@ -79,15 +79,25 @@ function filterProducts(eventData) {
 function addtoCart(eventData) {
     let target = eventData.target;
     let productId =  target.getAttribute('data-id');
+    let productChecked = cart.find(item => item.id === productId);
+    if(productChecked) {
+        let productAlert = document.querySelector('#product-alert');
+        console.log(productAlert);
+        productAlert.className = 'show';
+        setTimeout(()=> {
+            productAlert.className = '';         
+        },3000);
+        return;
+    }
     let product = products.find(product =>  product.id === productId);
-    updateCartSetUp({id:product.id,quantity:1});
+    addProductToCart({id:product.id,quantity:1});
 }
 
 
 
 function productCardItem(product) {
     let productItem = document.createElement('div');
-    productItem.setAttribute('class','col-md-3');
+    productItem.setAttribute('class','col-md-3 col-sm-6');
 
     let productCard = document.createElement('div');
     productCard.setAttribute('class','card m-1 p-2');
@@ -102,7 +112,7 @@ function productCardItem(product) {
     productImg.setAttribute('src', product.imageURL);
     productImg.setAttribute('alt', product.description);
     productImg.setAttribute('height', '150px');
-    productImg.setAttribute('class','card-img-top');
+    productImg.setAttribute('class','card-img-top product-img');
     productCard.append(productImg);
 
     let productCardBody = document.createElement('div');

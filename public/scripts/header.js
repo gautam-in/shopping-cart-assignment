@@ -1,7 +1,10 @@
 
 let headerSeaction = document.querySelector('.header-container');
+let operations = {
+    add: 'ADD',
+    subt: 'SUBTRACT' 
+}
 headerSeaction.innerHTML = `
-
 <div class="container">
     <div class="d-flex">
         <div class="logo">
@@ -85,48 +88,67 @@ let cartContentWithItems = document.querySelector('.cartContentWithItems');
 let cartContentWithoutItems = document.querySelector('.cartContentWithoutItems');
 
 
+function updateCart(eventData) {
+  let updatedItem;
+  let target = eventData.target;
+  let productId =  target.getAttribute('data-id');
+  let cartItem = cart.find(item => item.id === productId);
+  let  operationPerformed = target.getAttribute('data-action');
+  switch(operationPerformed) {
+       case 'ADD':{
+             updatedItem = {...cartItem, quantity: cartItem.quantity+1};
+            break;
+        }     
+       case 'SUBTRACT': {
+             updatedItem = {...cartItem, quantity: cartItem.quantity-1};
+            break;
+       }
+   }
+   if(updatedItem.quantity === 0) {
+       if(cart.length === 1) {
+          cart = [];    
+       }else {
+        cart =cart.filter(item => item.id !== productId);
+       }
+       sessionStorage.setItem('cart',JSON.stringify(cart));
+       renderCart();
+       return;
+   }
+   let index = cart.findIndex(item => item.id === productId);
+   cart[index]=updatedItem;
+   sessionStorage.setItem('cart',JSON.stringify(cart));
+   renderCart();
+}
 
-function initalCartSetUP() {
+function renderCart() {
    if(cart.length === 0) {
        cartHeaderElement.textContent = '';
        cartContentWithItems.classList.add('d-none');
        cartFooterWithItems.classList.add('d-none');
        cartContentWithoutItems.classList.remove('d-none');
        cartFooterWithoutItems.classList.remove('d-none');
+
     } else {
        let cartItemContainer = document.querySelector('.cart-items-container');
+       cartItemContainer.innerHTML = '';
        cartContentWithoutItems.classList.add('d-none');
        cartFooterWithoutItems.classList.add('d-none');
        cartContentWithItems.classList.remove('d-none');
        cartFooterWithItems.classList.remove('d-none');
-   
        cart.forEach(item => {
            let productDetails = products.find( product => product.id === item.id );
            addProductDetailsInCart({...productDetails,quantity: item.quantity},cartItemContainer);
        }) 
-       updateTotalAmount();
-       cartHeaderElement.textContent = `(${cart.length} items)`  
-       cartIconCount.textContent = `(${cart.length} items)`;
     }
+    updateTotalAmount();
+    cartHeaderElement.textContent = `(${cart.length} items)`  
+    cartIconCount.textContent = `(${cart.length} items)`;
+    sessionStorage.setItem('cart',JSON.stringify(cart));
 }
 
-function updateCartSetUp(item) {
-   let cartItemContainer = document.querySelector('.cart-items-container');
-   cartContentWithoutItems.classList.add('d-none');
-   cartFooterWithoutItems.classList.add('d-none');
-   cartContentWithItems.classList.remove('d-none');
-   cartFooterWithItems.classList.remove('d-none');
-   
-
+function addProductToCart(item) {
    cart.push(item);
-   
-   let productDetails = products.find( product => product.id === item.id );
-   addProductDetailsInCart({...productDetails,quantity: item.quantity},cartItemContainer);
-   cartHeaderElement.textContent = `(${cart.length} items)`  
-   cartIconCount.textContent = `(${cart.length} items)`;
-   updateTotalAmount();
-   sessionStorage.setItem('cart',JSON.stringify(cart));
-
+   renderCart();   
 }
 
 function updateTotalAmount () {
@@ -135,12 +157,13 @@ function updateTotalAmount () {
        return acc + (productDetails.price * item.quantity);
   },0);
 
-  document.querySelector('#totalAmount').textContent = totalAmount;
+  document.querySelector('#totalAmount').textContent = `₹.${totalAmount}`;
 
 }
 
 function addProductDetailsInCart(product,parentContainer) {
-   const cartItem = document.createElement('div');
+    console.log(product);
+    const cartItem = document.createElement('div');
    cartItem.className = 'cart-item'
 
    const imgParent = document.createElement('div');
@@ -158,6 +181,7 @@ function addProductDetailsInCart(product,parentContainer) {
 
    const cartItemName = document.createElement('div');
    cartItemName.setAttribute('class','cart-item-name');
+   cartItemName.textContent = product.name;
    cartItemDetails.appendChild(cartItemName);
 
    const cartItempricing = document.createElement('div');
@@ -169,8 +193,9 @@ function addProductDetailsInCart(product,parentContainer) {
    const minusbutton = document.createElement('button');
    minusbutton.setAttribute('class','btn btnCrimsonPink plusMinusBtn');
    minusbutton.setAttribute('data-id',product.id);
+   minusbutton.setAttribute('data-action', operations.subt);
    minusbutton.setAttribute('type','button');
-   //minusbutton.addEventListener('click',updateCart);
+   minusbutton.addEventListener('click',updateCart);
 
     const minusImg = document.createElement('img');
     minusImg.setAttribute('src','/static/images/minus-math.png');
@@ -186,8 +211,9 @@ function addProductDetailsInCart(product,parentContainer) {
    const plusbutton = document.createElement('button');
    plusbutton.setAttribute('class','btn btnCrimsonPink plusMinusBtn');
    plusbutton.setAttribute('data-id',product.id);
+   plusbutton.setAttribute('data-action', operations.add);
    plusbutton.setAttribute('type','button');
-   //plusbutton.addEventListener('click',updateCart);
+   plusbutton.addEventListener('click',updateCart);
 
     const plusImg = document.createElement('img');
     plusImg.setAttribute('src','/static/images/plus-math.png');
@@ -245,14 +271,14 @@ function addProductDetailsInCart(product,parentContainer) {
 // </div>`
 }
 
+
 function  showOrHidecart() {
    document.querySelector('.cart-popup').classList.toggle('d-none');
    document.querySelector('.backdrop').classList.toggle('d-none');
-   const isHide = document.querySelector('.cart-popup').classList.contains('d-none');
 }
 
 
-
+//mark the link active based on route 
 $(function(){
    var current = location.pathname;
    $('.nav-bar li a').each(function(){
@@ -273,5 +299,6 @@ $(function(){
    
 })
 
-document.querySelector('.cart-container').addEventListener('click', showOrHidecart);
+document.querySelector('#cartButton').addEventListener('click', showOrHidecart);
+document.querySelector('#cartBtnClose').addEventListener('click', showOrHidecart);
 document.querySelector('.backdrop').addEventListener('click',showOrHidecart);
