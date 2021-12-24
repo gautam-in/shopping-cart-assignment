@@ -1,0 +1,192 @@
+@import "variables";
+@import "~bootstrap/scss/bootstrap";
+@import url("https://fonts.googleapis.com/css2?family=Dosis:wght@200;300;400;500;600;700;800&display=swap");
+
+@import "header";
+@import "footer";
+@import "login";
+@import "register";
+
+
+*,
+*::before,
+*::after {
+  font-family: "Dosis", sans-serif;
+  font-weight: 500;
+}
+
+.btn:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+#app-root {
+  position: relative;
+}
+
+.black-overlay {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: black;
+  z-index: 9;
+  opacity: 0.25;
+}
+
+.btnCrimsonPink {
+  background-color: $crimson-pink;
+  color: $std-white;
+  border-radius: 0;
+  font-size: 14px;
+  min-height: 36px;
+  font-weight: 500;
+
+  &:hover {
+    background-color: $light-crimson-pink-hover;
+    color: $std-white;
+  }
+}
+
+.link-active {
+  color: $text-field-border-focus !important;
+  text-decoration: underline !important;
+}
+
+.link-focus {
+  color: $text-field-border-focus;
+}
+
+.info-title {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.info-desc {
+  font-size: 14px;
+}
+
+.carousel-indicators {
+  [data-bs-target] {
+    border-radius: 50%;
+  }
+}
+
+.form-floating {
+  .form-control {
+    border-width: 0;
+    border-bottom-width: 2px;
+    border-radius: 0;
+    border-color: $text-field-border;
+
+    &:focus {
+      outline: none;
+      box-shadow: none;
+      border-bottom-width: 2px;
+      border-bottom-color: $text-field-border-focus;
+    }
+
+    &+label {
+      color: $font-light-gray;
+      font-weight: 500;
+      font-size: 16px;
+    }
+
+    &:focus+label {
+      color: $font-cyan;
+    }
+  }
+}
+
+#snackbar {
+  visibility: hidden;
+  min-width: 250px;
+  margin-left: -125px;
+  background-color: $snackbar-bg;
+  color: $std-white;
+  text-align: center;
+  border-radius: 2px;
+  padding: 16px;
+  position: fixed;
+  z-index: 1;
+  left: 50%;
+  bottom: 30px;
+  font-size: 17px;
+
+  &.errorToast {
+    background-color: $error-bg;
+  }
+
+  &.show {
+    visibility: visible;
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  }
+}
+
+@-webkit-keyframes fadein {
+  from {
+    bottom: 0;
+    opacity: 0;
+  }
+
+  to {
+    bottom: 30px;
+    opacity: 1;
+  }
+}
+
+@keyframes fadein {
+  from {
+    bottom: 0;
+    opacity: 0;
+  }
+
+  to {
+    bottom: 30px;
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeout {
+  from {
+    bottom: 30px;
+    opacity: 1;
+  }
+
+  to {
+    bottom: 0;
+    opacity: 0;
+  }
+}
+
+@keyframes fadeout {
+  from {
+    bottom: 30px;
+    opacity: 1;
+  }
+
+  to {
+    bottom: 0;
+    opacity: 0;
+  }
+}
+
+// X-Small devices (portrait phones, less than 576px)
+// No media query for `xs` since this is the default in Bootstrap
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {}
+
+// X-Large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {}
+
+// XX-Large devices (larger desktops, 1400px and up)
+@media (min-width: 1400px) {}

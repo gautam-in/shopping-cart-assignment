@@ -1,0 +1,56 @@
+<header class="header-container">
+  <div class="container">
+    <div class="d-flex">
+      <div class="align-self-center">
+        <a class="logo-link" href="/" aria-label="Click logo to navigate to Home screen" title="Home" data-link>
+          <img alt="Sabka Bazaar brand logo - Click to navigate to home page" src="/static/images/logo.png"
+            id="logo-img" />
+        </a>
+      </div>
+     
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Sabka Baazar</a>
+  ...
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="/">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/about-us">About us</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+    </div>
+    <div class="right-actions">
+      <div class="user-auth-links">
+        <a id="login-link" class="auth-link me-3" href="/login" aria-label="Click to SignIn" title="SignIn"
+          data-link>SignIn</a>
+        <a id="register-link" class="auth-link" href="/register" aria-label="Click to Register" title="Register"
+          data-link>Register</a>
+
+        <div id="userDropdownMenu" class="dropdown d-none">
+          <div class="dropdown-toggle" role="button" id="userDropdownMenuButton" data-bs-toggle="dropdown"
+            aria-expanded="false" aria-label="Dropdown to see logged in user and logout option">
+            <span id="welcomeUserMsg">Hi User</span>
+          </div>
+          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdownMenuButton">
+            <li><button id="logoutUser" class="dropdown-item" type="button">Logout</button></li>
+          </ul>
+        </div>
+      </div>
+      <div class="cart-container">
+        <button id="cartButton" type="button" class="btn" aria-label="Click to view items in the cart"
+          title="View Cart">
+          <img alt="Cart Icon" src="/static/images/cart-crimson-pink.svg" />
+          <div><span id="cartItemsLength">0</span> items</div>
+        </button>
+
+        <div id="cartPopupTemplate">
+          {{> cart}}
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
