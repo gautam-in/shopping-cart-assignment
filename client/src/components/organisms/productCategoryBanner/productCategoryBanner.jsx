@@ -24,7 +24,9 @@ function ProductCategoryBanner(props) {
                 </div>
                 <div className="productCategoryBanner__content d-flex flex-column align-items-lg-center justify-content-around">
                   <h2 className="productCategoryBanner__title">{name}</h2>
-                  <div className="productCategoryBanner__description mb-2">{description}</div>
+                  <div className="productCategoryBanner__description mb-2">
+                    <p>{description}</p>
+                  </div>
                   <div className="productCategoryBanner__button">
                     <Button onClick={() => handleOnClickCategory(id)}>{`Explore ${key}`}</Button>
                   </div>

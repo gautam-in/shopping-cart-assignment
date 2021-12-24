@@ -13,3 +13,20 @@ npm run start
 yarn install
 yarn start
 ```
+After Install dependencies `npm i` in client folder `cd/client`  
+```
+npm run client 
+or
+npm start (in client folder)
+```
+Tech Stack
+
+```
+react: 17.0.2
+react-router-dom: 6.0.2
+redux (redux-saga middleware)
+scss
+bootstrap: 5.1
+
+```
+
