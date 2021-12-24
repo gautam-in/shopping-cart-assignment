@@ -3,11 +3,6 @@ import { BASE_URL } from './apiEndpoint';
 
 const client = axios.create({
   baseURL: BASE_URL,
-  // headers: {
-  //   'Access-Control-Allow-Headers': '*',
-  //   'Access-Control-Allow-Origin': '*',
-  //   // 'Content-Type': 'application/json',
-  // },
 });
 
 export const apiCall = async ({ method, endPoint, body = null }) => {
@@ -23,6 +18,7 @@ export const apiCall = async ({ method, endPoint, body = null }) => {
       // other than 2xx
       const { status, data, headers } = error.response;
       console.error('Error:', { status, data, headers });
+      throw new Error()
     } else {
       // Something else happened while setting up the request
       // triggered the error
@@ -33,7 +29,7 @@ export const apiCall = async ({ method, endPoint, body = null }) => {
   };
 
   try {
-    const response = await client({ method, url: endPoint, data: body });
+    const response = await client({ method, url: endPoint, data: JSON.stringify(body) });
     return onSuccess(response);
   } catch (error) {
     return onError(error);

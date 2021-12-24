@@ -15,6 +15,7 @@ function Image(props) {
         onClick={() => {
           onClick?.();
         }}
+        loading={'lazy'}
       />
     </div>
   );

@@ -1,7 +1,6 @@
 import Footer from '../components/atoms/footer/footer';
 import PageHeader from '../components/molecules/pageHeader/pageHeader';
 import MainRoutes from '../navigation/mainRoutes';
-
 function MainLayout() {
   return (
     <>
@@ -15,7 +14,7 @@ function MainLayout() {
           <MainRoutes />
         </div>
       </div>
-      <div style={{ minHeight: '100vh' }}>
+      <div>
         <Footer />
       </div>
     </>

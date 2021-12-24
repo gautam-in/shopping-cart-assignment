@@ -12,7 +12,8 @@ function ProductsComponent(props) {
   };
   return (
     <div className="row">
-      <div className="sidebar__container col-md-2">
+      <h1 className="d-none">Products</h1>
+      <div className="sidebar__container col-md-2 mb-3 mb-lg-0 mb-md-0">
         <Sidebar handleOnClickNavItems={handleOnClickNavItems} />
       </div>
       <div className="col-md-10">

@@ -1,15 +1,15 @@
 import { ADD_CART_ITEM, REMOVE_CART_ITEM } from './actionTypes';
 
-const addCartItem = (selectedItem, productData) => {
+const addCartItem = (selectedItem) => {
   return {
     type: ADD_CART_ITEM,
-    payload: { selectedItem, productData },
+    payload: selectedItem,
   };
 };
-const removeCartItem = (selectedItem, productData) => {
+const removeCartItem = (selectedItem) => {
   return {
     type: REMOVE_CART_ITEM,
-    payload: { selectedItem, productData },
+    payload: selectedItem,
   };
 };
 

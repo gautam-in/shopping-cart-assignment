@@ -2,23 +2,26 @@ import { Link } from 'react-router-dom';
 import CartModal from '../../organisms/cartModal/cartModal';
 import * as constants from '../../../constants';
 import './pageHeader.scss';
+import Image from '../../atoms/image/image';
 
 function PageHeader() {
   return (
     <header className="header">
       <nav className="navbar navbar-light navbar-expand-md bg-white shadow">
         <div className="container">
-          <Link to="/" className="navbar-brand abs">
-            <img src={constants.SABKA_BAAZAR_LOGO} alt="sabka-baazar-logo" width="80" height="40" />
-          </Link>
-          <button
+          <div  className="navbar-brand abs header__logo">
+            <Image imageSrc={constants.SABKA_BAAZAR_LOGO} alt="sabka-baazar-logo"  />
+          </div>
+          <div
+          aria-label='collapse-menu'
+          role='button'
             className="navbar-toggler ms-auto mx-3"
             type="button"
             data-bs-toggle="collapse"
             data-bs-target="#collapseNavbar"
           >
             <span className="navbar-toggler-icon"></span>
-          </button>
+          </div>
           <div className="navbar-collapse collapse" id="collapseNavbar">
             <ul className="navbar-nav">
               <li className="nav-item active">

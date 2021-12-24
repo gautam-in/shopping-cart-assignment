@@ -2,6 +2,10 @@
   position: fixed;
   width: 100vw;
   z-index: 10;
+
+  &__logo{
+    width: 80px;
+  }
   &__cart_button {
     background: #d8d8d8;
     color: black;

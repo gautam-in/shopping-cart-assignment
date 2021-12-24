@@ -8,12 +8,12 @@ const initialState = {
 export const cartItemReducer = (state = initialState, action = {}) => {
   switch (action.type) {
     case ADD_CART_ITEM:
-      if (state.cartItemData.find((cartItem) => cartItem.id === action.payload.selectedItem.id)) {
+      if (state.cartItemData.find((cartItem) => cartItem.id === action.payload.id)) {
         return {
           ...state,
           item: state.item + 1,
           cartItemData: state.cartItemData.map((cartItem) => {
-            if (cartItem.id === action.payload.selectedItem.id) {
+            if (cartItem.id === action.payload.id) {
               return { ...cartItem, quantity: cartItem.quantity + 1 };
             }
             return cartItem;
@@ -24,20 +24,20 @@ export const cartItemReducer = (state = initialState, action = {}) => {
           ...state,
           item: state.item + 1,
           cartItemData: state.cartItemData.concat({
-            ...action.payload.selectedItem,
+            ...action.payload,
             quantity: 1,
           }),
         };
       }
     case REMOVE_CART_ITEM:
-      const removeItem = state.cartItemData.find((cartItem) => cartItem.id === action.payload.selectedItem.id);
+      const removeItem = state.cartItemData.find((cartItem) => cartItem.id === action.payload.id);
       if (removeItem) {
         if (removeItem.quantity > 1) {
           return {
             ...state,
             item: state.item - 1,
             cartItemData: state.cartItemData.map((cartItem) => {
-              if (cartItem.id === action.payload.selectedItem.id) {
+              if (cartItem.id === action.payload.id) {
                 return { ...cartItem, quantity: cartItem.quantity - 1 };
               }
               return cartItem;
@@ -47,7 +47,7 @@ export const cartItemReducer = (state = initialState, action = {}) => {
           return {
             ...state,
             item: state.item - 1,
-            cartItemData: state.cartItemData.filter((cartItem) => cartItem.id !== action.payload.selectedItem.id),
+            cartItemData: state.cartItemData.filter((cartItem) => cartItem.id !== action.payload.id),
           };
         }
       }

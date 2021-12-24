@@ -7,7 +7,7 @@ function Button(props) {
   const className = classNames('button', type, customClass);
   return (
     <>
-      <button type={type} className={className} disabled={isDisabled} onClick={() => onClick?.()}>
+      <button type={type} className={className} disabled={isDisabled} onClick={(e) => onClick?.(e)}>
         {children}
       </button>
     </>

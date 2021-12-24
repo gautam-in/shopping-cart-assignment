@@ -1,18 +1,7 @@
 import { POST_CART_ITEM_ERROR, POST_CART_ITEM_LOADING, POST_CART_ITEM_SUCCESS } from '../actions/actionTypes';
 
 const initialState = {
-  postCartItemData: [
-    {
-      name: '',
-      imageURL: '',
-      description: '',
-      price: 0,
-      stock: 0,
-      category: '',
-      sku: '',
-      id: '',
-    },
-  ],
+  postCartItemData: null,
   error: { postCartItem: null },
   loading: { postCartItem: false },
 };

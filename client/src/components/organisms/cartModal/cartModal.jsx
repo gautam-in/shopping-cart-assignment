@@ -13,14 +13,12 @@ function CartModal() {
   const dispatch = useDispatch();
   const cartItemData = useSelector(productsSelectors.getcartItemsSelectors.selectCartItemsData);
 
-  console.log(cartItemData);
-
   const handleOnAddItem = (product) => {
-    dispatch(productsActions.cartItemActions.addCartItem(product, cartItemData));
+    dispatch(productsActions.cartItemActions.addCartItem(product));
   };
 
   const handleOnRemoveItem = (product) => {
-    dispatch(productsActions.cartItemActions.removeCartItem(product, cartItemData));
+    dispatch(productsActions.cartItemActions.removeCartItem(product));
   };
 
   return (
@@ -44,13 +42,15 @@ function CartModal() {
               <ul className="modal__body_cartList">
                 {cartItemData?.length > 0 ? (
                   <>
-                    {cartItemData?.map((item) => {
+                    {cartItemData?.map((item, idx) => {
                       return (
-                        <CartItemList
-                          item={item}
-                          handleOnRemoveItem={handleOnRemoveItem}
-                          handleOnAddItem={handleOnAddItem}
-                        />
+                        <div key={idx}>
+                          <CartItemList
+                            item={item}
+                            handleOnRemoveItem={handleOnRemoveItem}
+                            handleOnAddItem={handleOnAddItem}
+                          />
+                        </div>
                       );
                     })}
                     <div className="modal__body_cartList_items m-3 d-flex align-items-center">

@@ -1,7 +1,7 @@
 function CartItemList(props) {
   const { item, handleOnRemoveItem, handleOnAddItem } = props;
   return (
-    <div>
+    <>
       <li className="modal__body_cartList_items d-flex mb-2" key={item.id}>
         <img src={item.imageURL} className="modal__body_cartList_img" alt={item.name} />
         <div className="modal__body_cartList_details">
@@ -22,7 +22,7 @@ function CartItemList(props) {
           </span>
         </div>
       </li>
-    </div>
+    </>
   );
 }
 

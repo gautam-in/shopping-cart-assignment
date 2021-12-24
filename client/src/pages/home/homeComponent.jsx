@@ -5,6 +5,7 @@ function HomeComponent(props) {
   const { bannerData, categoriesData } = props;
   return (
     <>
+    <h1 className="d-none">Home</h1>
       <div className="mb-5">
         <Carousel bannerData={bannerData} />
       </div>

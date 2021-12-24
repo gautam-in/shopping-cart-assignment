@@ -1,5 +1,11 @@
 @import '../../assests//scss/variables';
 
-.sidebar__container{
-background-color: $gray;
+.sidebar__container {
+  background-color: $gray;
+}
+
+@media (min-width: 768px) {
+  .sidebar__container {
+    min-height: 100vh;
+  }
 }

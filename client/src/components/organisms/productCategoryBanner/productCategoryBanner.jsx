@@ -18,7 +18,7 @@ function ProductCategoryBanner(props) {
           ?.filter(({ enabled }) => enabled)
           ?.map(({ name, key, description, imageUrl, id }) => {
             return (
-              <div className="productCategoryBanner d-flex justify-content-around p-lg-5 p-md-5 p-4" key={key}>
+              <div className="productCategoryBanner d-flex justify-content-around p-lg-3 p-md-5 p-4" key={key}>
                 <div className="productCategoryBanner__imageContainer">
                   <Image imageSrc={imageUrl} alt={name} />
                 </div>

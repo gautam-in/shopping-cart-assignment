@@ -1,23 +1,30 @@
 import { useParams } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import Button from '../../atoms/button/button';
 import Card from '../../molecules/card/card';
 import Image from '../../atoms/image/image';
 import { productsActions } from '../../../pages/products/redux/actions';
 import './productCard.scss';
+import { toast } from 'react-toastify';
+import Toast from '../../atoms/toast/toast';
+import { productsSelectors } from '../../../pages/products/redux/selectors';
 
 function ProductCard(props) {
   const { productsData } = props;
+  const postcartItem = useSelector(productsSelectors.postCartItemSelectors.selectPostCartItemData);
   let params = useParams();
   const dispatch = useDispatch();
 
   const handleOnClickBuyProduct = (product) => {
-    dispatch(productsActions.cartItemActions.addCartItem(product, productsData));
+    dispatch(productsActions.cartItemActions.addCartItem(product));
     dispatch(productsActions.postCartItemActions.postCartItemLoading(product));
+    toast.success(postcartItem?.responseMessage || 'Product added to cart successfully');
+
   };
 
   return (
     <div>
+      <Toast />
       <Card>
         {productsData
           ?.filter(({ category }) => category === params.id)
