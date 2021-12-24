@@ -9,6 +9,8 @@ import ProductInfo from './components/PIP/ProductInfo';
 import Header from './components/Header/Header';
 import { useEffect, useState } from 'react';
 import SideDrawer from './components/Sidedrawer/Sidedrawer';
+import SignIn from './components/UserActions/SignIn/SignIn';
+import Register from './components/UserActions/Register/Register';
 
 function App() {
   const [drawer, setState] =  useState({showbd:false})
@@ -28,17 +30,31 @@ function App() {
             }
        )
     }
+  let setProdQty = (data)=>{
+    let prodQty = cartProducts;
+    if(data.qty>0)
+    {
+      prodQty[data.key].qty = data.qty;
+    }
+    else{
+      const { [data.key]:removed, ...dataRest } = cartProducts;
+      prodQty = dataRest
+    }
+    setProducts({...prodQty})
+  }
 
  return(
   <>
   <BrowserRouter>
-  <Header toggle={backdroptoggle}/>
+  <Header toggle={backdroptoggle} cartProducts = {cartProducts}/>
       <Routes>
         <Route exact path="/" element={category.length>0 && <Home category={category}/>}/>
-        <Route exact path="/productInfo" element={category.length>0 && <ProductInfo categories={category}/>}/>
+        <Route exact path="/productInfo" element={category.length>0 && <ProductInfo categories={category} addToCart={setProducts} products={cartProducts}/>}/>
+        <Route exact path="/signin" element={<SignIn/>}/>
+        <Route exact path="/register" element={<Register/>}/>
       </Routes>
   </BrowserRouter>
-  <SideDrawer open={drawer.showbd} close={backdroptoggle} products={cartProducts}/>
+  <SideDrawer open={drawer.showbd} close={backdroptoggle} products={cartProducts} setQty={setProdQty}/>
   </>
  )
 }

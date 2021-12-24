@@ -8,9 +8,12 @@
 .user-action{
     padding: 10px 0px 10px 10px;
 }
-.user-action>nav{
+.user-action>a{
     font-size: small;
     width: fit-content;
+    cursor: pointer;
+    color: inherit; 
+    text-decoration: inherit;
     cursor: pointer;
 }
 .navbar>span{

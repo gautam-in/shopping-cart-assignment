@@ -24,6 +24,7 @@ const SideDrawer =(props)=>{
         s=<div>
         Rs {total} &nbsp;&gt;</div>
     }
+    console.log(props.products)
     return(
         <>
         <Backdrop show={props.open} display={props.close}/>
@@ -37,13 +38,13 @@ const SideDrawer =(props)=>{
                 <br/>Your favourite items are just a click away
                 </section>:
                 Object.keys(props.products).map((item)=>{
-                    return <Cart {...props.products[item]} key={props.products[item].id}/>
+                    return <Cart name={item} {...props.products[item]} setQty={props.setQty} key={item}/>
                 })
                 }
                
             </div>
             {!isEmpty && <div className="promo">Promo code can be applied on the payment page</div>}
-            <button className="shop" style={isEmpty? {justifyContent:'center'}: null}>
+            <button className="shop" style={isEmpty? {justifyContent:'center'}: null} onClick={props.close}>
                 <div>{shop}</div>
                 {s}</button>
         </div>

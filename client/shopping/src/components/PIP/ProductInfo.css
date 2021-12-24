@@ -1,12 +1,12 @@
 .catCards{
-    padding: 5%;
-    margin: 5%;
+    margin: 5% 0% 5% 5%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
 .catCards>div{
     padding: 5%;
 }
 .catCards>div>img{
-    width: 80%;
+    width: 100%;
 }
 .cardHead{
     font-weight: 800;
@@ -52,12 +52,41 @@
 .close{
     padding: 0px;
 }
+.buttonDesk{
+    text-align: center;
+}
+.buttonMob{
+    display: none;
+}
 @media (max-width:998px) {
+    .tabCards{
+        width: 50% !important;
+    }
     .prodContain{
         width:100%;
     }
+    .buttonDesk{
+        display: none;
+    }
+    .buttonMob{
+        display: block;
+        width: 100%;
+    }
+    .description{
+        margin: 0;
+    }
+    .catCards{
+        margin: 2% 0% 2% 2%;
+        padding: 0;
+    }
+    .buttonMob>button{
+        width: 100%;
+    }
 }
 @media (max-width:576px){
+    .tabCards{
+        width: 100% !important;
+    }
     .mobiledropdown{
         display: block;
     }
@@ -66,5 +95,16 @@
     }
     .open{
         display: block;
+    }
+    .cardBody{
+        display: flex;
+    }
+    .cardBody>img{
+        height: 20%;
+        width: 50% !important;
+    }
+    .cardDes{
+        flex-direction: row;
+        margin-left: 2%;
     }
 }

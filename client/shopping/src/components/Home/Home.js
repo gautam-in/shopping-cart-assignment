@@ -16,7 +16,6 @@ function Home(props) {
             });
             setImage(data);
         })},[])
-    console.log(props.category);
     return(
         <div className="container">
             <div className="row center" style={{marginBottom:"1em"}}>
