@@ -11,6 +11,7 @@ import { useEffect, useState } from 'react';
 import SideDrawer from './components/Sidedrawer/Sidedrawer';
 import SignIn from './components/UserActions/SignIn/SignIn';
 import Register from './components/UserActions/Register/Register';
+import Footer from './components/Footer/Footer';
 
 function App() {
   const [drawer, setState] =  useState({showbd:false})
@@ -53,6 +54,7 @@ function App() {
         <Route exact path="/signin" element={<SignIn/>}/>
         <Route exact path="/register" element={<Register/>}/>
       </Routes>
+    <Footer/>
   </BrowserRouter>
   <SideDrawer open={drawer.showbd} close={backdroptoggle} products={cartProducts} setQty={setProdQty}/>
   </>
