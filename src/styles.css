@@ -1,0 +1,8 @@
+/* @import url("https://fonts.googleapis.com/css?family=Inconsolata&display=swap"); */
+@import url("https://fonts.googleapis.com/css?family=Shadows+Into+Light&display=swap");
+
+.App {
+  font-family: "Shadows Into Light", monospace;
+  /* font-family: "Inconsolata", monospace; */
+  text-align: center;
+}

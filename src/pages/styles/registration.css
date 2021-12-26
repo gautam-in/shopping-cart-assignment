@@ -1,0 +1,13 @@
+.registration-page {
+  display: flex;
+  font-family: Consolas;
+  justify-content: center;
+}
+
+.registration-page > div {
+  width: 30%;
+}
+
+.registration-page > div {
+  font-size: 1rem;
+}
