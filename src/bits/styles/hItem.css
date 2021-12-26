@@ -1,0 +1,35 @@
+.menu-cart-item {
+  width: 100%;
+  display: flex;
+  height: 150px;
+  margin-bottom: 15px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.menu-cart-item img {
+  width: 30%;
+}
+
+.menu-cart-item .menu-item-details {
+  width: 70%;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 10px 20px;
+}
+.menu-cart-item .menu-item-details .name {
+  font-size: 20px;
+}
+.button-explore {
+  min-width: 150px;
+  width: 100%;
+  padding: 10px;
+  background-color: rgba(206, 18, 18, 0.842);
+  color: white;
+  font-family: "Open Sans Condensed";
+  font-weight: bolder;
+  border: none;
+  cursor: pointer;
+  justify-content: center;
+  text-align: center;
+}

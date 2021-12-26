@@ -1,0 +1,55 @@
+/* .a-button {
+  min-width: 165px;
+  width: auto;
+  height: 50px;
+  background-color: black;
+  color: white;
+  text-transform: uppercase;
+  font-family: "Open Sans Condensed";
+  font-weight: bolder;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+}
+
+.a-button :hover {
+  background-color: white;
+  color: black;
+  box-shadow: 3px 3px rgba(#4a4a4a, 0.2);
+}
+.a-button.google-sign-in {
+  background-color: #4285f4;
+  color: white;
+}
+
+.a-button.google-sign-in:hover {
+  background-color: #357ae8;
+  border: none;
+}
+.a-button.inverted {
+  background-color: white;
+  color: black;
+  border: 1px solid black;
+}
+
+.a-button .inverted:hover {
+  background-color: black;
+  color: white;
+  border: none;
+} */
+
+.a-button {
+  min-width: 165px;
+  width: 100%;
+  padding: 10px;
+  background-color: rgba(206, 18, 18, 0.842);
+  color: white;
+  text-transform: uppercase;
+  font-family: "Open Sans Condensed";
+  font-weight: bolder;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+}

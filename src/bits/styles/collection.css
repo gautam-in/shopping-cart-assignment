@@ -1,0 +1,20 @@
+.c-content .title {
+  cursor: pointer;
+  text-decoration: underline;
+}
+.c-content .coll-prew {
+  display: inline-grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-column-gap: 1em;
+}
+.c-content .coll-prew img {
+  width: 11em;
+  height: 12em;
+}
+
+.c-content .coll-prew span {
+  width: 11em;
+  margin-left: -11em;
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.8);
+}

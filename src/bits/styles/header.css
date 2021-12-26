@@ -1,0 +1,33 @@
+.header {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+a {
+  color: #6f6f6f;
+}
+
+h3 {
+  margin: 0 1rem;
+}
+
+.options {
+  display: flex;
+  width: 50%;
+  justify-content: flex-end;
+  color: gray;
+  cursor: pointer;
+}
+.optionsStart {
+  display: flex;
+  width: 50%;
+  justify-content: flex-start;
+  color: gray;
+  cursor: pointer;
+}
+.no-options {
+  width: 50%;
+  text-align: left;
+  justify-content: flex-start;
+}

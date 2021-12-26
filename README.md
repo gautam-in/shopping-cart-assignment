@@ -12,4 +12,5 @@ npm run start
 # or
 yarn install
 yarn start
+node_module_remove
 ```
