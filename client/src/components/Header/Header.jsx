@@ -8,8 +8,8 @@ import {
         ImgContainer,
         Cart
       } from './styles';
-import {ReactComponent as CartIcon} from './../../static/images/cart.svg';
-import logo from './../../static/images/logo.png';
+import { ReactComponent as CartIcon } from './../../assets/cart.svg';
+import logo from './../../assets/logo.png';
 
 const Header = () => {
   // useEffect(() => {

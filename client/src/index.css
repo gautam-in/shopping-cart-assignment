@@ -6,7 +6,8 @@
 
 body {
   background-color: #ffffff;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: scroll;
   font-family: 'Quicksand', sans-serif;
   font-size: 16px;
 }
