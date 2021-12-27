@@ -1,5 +1,7 @@
 import { HomeActionTypes } from './types';
 
+// CATEGORIES
+
 export const fetchCategories = () => {
   return {
     type: HomeActionTypes.FETCH_CATEGORIES_START
@@ -12,6 +14,8 @@ export const fetchCategoriesSuccess = categories => {
     payload: categories
   }
 };
+
+// BANNERS
 
 export const fetchBanners = () => {
   return {

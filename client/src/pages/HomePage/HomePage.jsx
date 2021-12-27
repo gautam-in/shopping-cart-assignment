@@ -10,7 +10,7 @@ const HomeWrapper = styled.div`
   margin-top: 80px;
 `;
 
-const Home = () => {
+const HomePage = () => {
   return (
     <HomeWrapper>
       <BannerSlider />
@@ -19,4 +19,4 @@ const Home = () => {
   );
 }
 
-export default Home;
+export default HomePage;

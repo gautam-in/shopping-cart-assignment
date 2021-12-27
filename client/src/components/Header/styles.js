@@ -4,6 +4,10 @@ export const HeaderWrapper = styled.header`
   width: 100%;
   font-size: 90%;
   box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.2);
+  min-height: 15vh;
+  max-height: 15vh;
+  overflow-y: hidden;
+  background-color: #fff;
 `;
 
 export const Navbar = styled.nav`
@@ -30,7 +34,7 @@ export const Nav = styled.div`
       return `
         flex-direction: column;
         align-items: flex-end;
-        row-gap: 30px;
+        row-gap: 20px;
       `;
     }
   }}
@@ -58,7 +62,7 @@ export const NavOptions = styled.div`
 export const Cart = styled.div`
   width: 25%;
   background-color: #eeeeee;
-  padding: 10px;
+  padding: 12px 10px;
   display: flex;
   flex-direction: row;
   justify-content: center;

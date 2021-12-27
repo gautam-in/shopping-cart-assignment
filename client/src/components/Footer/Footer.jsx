@@ -5,6 +5,7 @@ const FooterWrapper = styled.div`
   background-color: #eeeeee;
   font-size: 85%;
   padding: 20px 0px;
+  width: 100%;
   p {
     width: 80%;
     margin: 0 auto;
