@@ -17,3 +17,7 @@ a {
   text-decoration: none;
   color: #000;
 }
+
+button {
+  font-family: 'Quicksand', sans-serif;
+}

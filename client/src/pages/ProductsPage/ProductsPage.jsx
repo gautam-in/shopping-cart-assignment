@@ -5,8 +5,6 @@ import Filters from '../../components/Filters/Filters';
 import Products from '../../components/Products/Products';
 
 const ProductsWrapper = styled.div`
-  width: 80%;
-  margin: 0 auto;
   display:flex;
   flex-direction: row;
 `;
