@@ -22,7 +22,7 @@ const Products = () => {
   }, [dispatch]);
   return (
     <ProductsWrapper>
-      {products && products.map(product => <ProductItem key={product.id} {...product} />)}
+      {products && products.map(product => <ProductItem key={product.id} item={product} />)}
     </ProductsWrapper>
   );
 }

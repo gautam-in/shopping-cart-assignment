@@ -1,5 +1,7 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
 
+import { showCart } from './../../redux/Cart/actions';
 import { 
         HeaderWrapper,
         Navbar,
@@ -12,13 +14,7 @@ import { ReactComponent as CartIcon } from './../../assets/cart.svg';
 import logo from './../../assets/logo.png';
 
 const Header = () => {
-  // useEffect(() => {
-  //   async function fetchBanners() {
-  //     const banners = await (await fetch('http://localhost:5000/banners')).json();
-  //     console.log(banners);
-  //   }
-  //   fetchBanners();
-  // }, []);
+  const dispatch = useDispatch();
   return (
     <HeaderWrapper>
       <Navbar>
@@ -36,7 +32,7 @@ const Header = () => {
               <a href="/">SignIn</a>
               <a href="/">Register</a>
             </NavOptions>
-            <Cart>
+            <Cart onClick={() => dispatch(showCart())}>
               <CartIcon /> <span>0 items</span>
             </Cart>
           </Nav>

@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { useSelector } from 'react-redux';
 
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
@@ -15,15 +16,17 @@ const Views = styled.div`
 `;
 
 const App = () => {
+  const showCart = useSelector(state => state.cart.showCart);
+  console.log(showCart)
   return (
     <div>
       <Header />
       <Views>
         {/* <HomePage /> */}
-        {/* <ProductsPage /> */}
-        {/* <Cart /> */}
+        <ProductsPage />
         {/* <LoginPage /> */}
-        <RegisterPage />
+        {/* <RegisterPage /> */}
+        {showCart && <Cart />}
       </Views>
       <Footer />
     </div>

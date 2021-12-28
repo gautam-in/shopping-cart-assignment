@@ -13,3 +13,28 @@ export const mapCategories = categories => {
     .sort((cate1, cate2) => cate1.order < cate2.order ? -1 : 
       (cate1.order > cate2.order ? 1 : 0))
 }
+
+export const addItemQty = (cartItems, id) => {
+  return cartItems.map(item => {
+    if(item.id === id) {
+      return {
+        ...item,
+        qty: item.qty + 1
+      }
+    }
+    return item;
+  });
+}
+
+export const decreaseItemQty = (cartItems, id) => {
+  return cartItems.reduce((result, item) => {
+    if(item.id === id) {
+      if(item.qty > 1) {
+        return [...result, { ...item, qty: item.qty - 1 }];
+      } else {
+        return result;
+      }
+    }
+    return [...result, item];
+  }, []);
+}

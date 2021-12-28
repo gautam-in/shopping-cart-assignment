@@ -68,6 +68,7 @@ export const Cart = styled.div`
   justify-content: center;
   align-items: center;
   column-gap: 5px;
+  cursor: pointer;
   svg {
     height: 20px;
     width: 20px;
