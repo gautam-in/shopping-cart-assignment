@@ -2,7 +2,7 @@ import { CartActionTypes } from './types';
 
 // SHOW CART
 
-export const showCart = () => {
+export const toggleCart = () => {
   return {
     type: CartActionTypes.SHOW_CART
   };

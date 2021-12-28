@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { Carousel } from 'react-responsive-carousel';
 
 import { fetchBanners } from './../../redux/Home/actions';
+import { selectBanners } from './../../redux/Home/selectors';
 
 import { arrowStyles, indicatorStyles, CarouselWrapper } from './styles';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
@@ -13,7 +14,7 @@ const BannerSlider = () => {
     dispatch(fetchBanners());
   }, [dispatch]);
 
-  const banners = useSelector(state => state.home.banners);
+  const banners = useSelector(selectBanners);
 
   const carouselProps = {
     showThumbs: false,

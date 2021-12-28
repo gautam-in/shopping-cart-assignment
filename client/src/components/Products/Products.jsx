@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import ProductItem from '../ProductItem/ProductItem';
 
 import { fetchProducts } from './../../redux/Products/actions';
+import { selectProducts } from './../../redux/Products/selectors';
 
 const ProductsWrapper = styled.div`
   display: flex;
@@ -16,13 +17,15 @@ const ProductsWrapper = styled.div`
 
 const Products = () => {
   const dispatch = useDispatch();
-  const products = useSelector(state => state.products.products);
+  const products = useSelector(selectProducts);
   useEffect(() => {
     dispatch(fetchProducts());
   }, [dispatch]);
   return (
     <ProductsWrapper>
-      {products && products.map(product => <ProductItem key={product.id} item={product} />)}
+      {products && products.map(product => (
+        <ProductItem key={product.id} item={product} />
+      ))}
     </ProductsWrapper>
   );
 }

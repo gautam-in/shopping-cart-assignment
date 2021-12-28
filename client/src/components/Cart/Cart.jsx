@@ -3,7 +3,12 @@ import { useSelector, useDispatch } from 'react-redux';
 
 import CartItem from '../CartItem/CartItem';
 
-import { showCart } from './../../redux/Cart/actions';
+import { toggleCart } from './../../redux/Cart/actions';
+import { 
+  selectCartItems, 
+  selectNoOfItems,
+  selectCartTotalPrice 
+} from './../../redux/Cart/selectors';
 
 import {
   Overlay,
@@ -18,17 +23,17 @@ import lowPriceImg from './../../assets/lowest-price.png';
 
 const Cart = () => {
   const dispatch = useDispatch();
-  const inCartItems = useSelector(state => state.cart.inCartItems);
-  const noOfItems = inCartItems.length;
-  const price = 344;
+  const inCartItems = useSelector(selectCartItems);
+  const noOfCartItems = useSelector(selectNoOfItems);
+  const totalPrice = useSelector(selectCartTotalPrice);
   return (
     <Overlay>
       <CartWrapper>
         <CartHeader>
-          <p>My Cart <span>{`(${noOfItems} item${noOfItems > 1 ? 's' : ''})`}</span></p>
+          <p>My Cart <span>{`(${noOfCartItems} item${noOfCartItems > 1 ? 's' : ''})`}</span></p>
           <button 
             type="button"
-            onClick={() => dispatch(showCart())}>
+            onClick={() => dispatch(toggleCart())}>
               X
           </button>
         </CartHeader>
@@ -43,7 +48,7 @@ const Cart = () => {
           <p>Promo code can be applied on payment page</p>
           <CustomButtom type="button">
             <span>Proceed to Checkout</span>
-            <span>{`Rs. ${price} >`}</span>
+            <span>{`Rs. ${totalPrice} >`}</span>
           </CustomButtom>
         </CartFooter>
       </CartWrapper>

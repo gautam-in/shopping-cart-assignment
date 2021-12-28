@@ -10,13 +10,15 @@ import RegisterPage from './pages/RegisterPage/RegisterPage';
 import ProductsPage from './pages/ProductsPage/ProductsPage';
 import Cart from './components/Cart/Cart';
 
+import { selectShowCart } from './redux/Cart/selectors';
+
 const Views = styled.div`
   width: 80%;
   margin: 0 auto;
 `;
 
 const App = () => {
-  const showCart = useSelector(state => state.cart.showCart);
+  const showCart = useSelector(selectShowCart);
   console.log(showCart)
   return (
     <div>

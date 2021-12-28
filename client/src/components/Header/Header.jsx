@@ -1,7 +1,9 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 
-import { showCart } from './../../redux/Cart/actions';
+import { toggleCart } from './../../redux/Cart/actions';
+import { selectNoOfItems } from './../../redux/Cart/selectors';
+
 import { 
         HeaderWrapper,
         Navbar,
@@ -15,6 +17,7 @@ import logo from './../../assets/logo.png';
 
 const Header = () => {
   const dispatch = useDispatch();
+  const noOfCartItems = useSelector(selectNoOfItems);
   return (
     <HeaderWrapper>
       <Navbar>
@@ -32,8 +35,8 @@ const Header = () => {
               <a href="/">SignIn</a>
               <a href="/">Register</a>
             </NavOptions>
-            <Cart onClick={() => dispatch(showCart())}>
-              <CartIcon /> <span>0 items</span>
+            <Cart onClick={() => dispatch(toggleCart())}>
+              <CartIcon /> <span>{noOfCartItems} items</span>
             </Cart>
           </Nav>
       </Navbar>

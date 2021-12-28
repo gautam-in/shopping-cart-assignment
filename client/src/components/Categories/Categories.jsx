@@ -5,6 +5,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import Category from '../Category/Category';
 
 import { fetchCategories } from './../../redux/Home/actions';
+import { selectCategories } from './../../redux/Home/selectors';
 
 const CategoriesWrapper = styled.div`
   display: flex;
@@ -18,11 +19,12 @@ const Categories = () => {
     dispatch(fetchCategories());
   }, [dispatch]);
 
-  const categories = useSelector(state => state.home.categories);
-
+  const categories = useSelector(selectCategories);
   return (
     <CategoriesWrapper>
-      {categories.length > 0 && categories.map(category => <Category key={category.id} category={category} /> )}
+      {categories.length > 0 && (
+        categories.map(category => <Category key={category.id} category={category} /> 
+      ))}
     </CategoriesWrapper>
   );
 }
