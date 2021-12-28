@@ -54,4 +54,6 @@ export const QtyBtn = styled.button`
 
 export const TotalPrice = styled.p`
   align-self: flex-end;
+  font-size: 100%;
+  font-weight: 600;
 `;

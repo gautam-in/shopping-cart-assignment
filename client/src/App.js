@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { useSelector } from 'react-redux';
+import { Routes, Route, Navigate } from 'react-router-dom';
 
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
@@ -19,15 +20,18 @@ const Views = styled.div`
 
 const App = () => {
   const showCart = useSelector(selectShowCart);
-  console.log(showCart)
   return (
     <div>
       <Header />
       <Views>
-        {/* <HomePage /> */}
-        <ProductsPage />
-        {/* <LoginPage /> */}
-        {/* <RegisterPage /> */}
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="products/:filterId" element={<ProductsPage />} />
+          <Route path="products" element={<ProductsPage />} />
+          <Route path="login" element={<LoginPage />} />
+          <Route path="register" element={<RegisterPage />} />
+          <Route path="*" element={<Navigate to="/" />} />
+        </Routes>
         {showCart && <Cart />}
       </Views>
       <Footer />

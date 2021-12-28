@@ -6,9 +6,16 @@ export const CartWrapper = styled.div`
   width: 30%;
   background-color: #eeeeee;
   position: absolute;
+  top: 20%;
   right: 10%;
   bottom: 0;
   cursor: default;
+  overflow-y: auto;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  -ms-overflow-style: none;
+  scrollbar-width: none; 
 `;
 
 export const CartHeader = styled.div`
@@ -67,8 +74,10 @@ export const CartFooter = styled.div`
   align-items: center;
   row-gap: 15px;
   border: 1px solid #cccccc;
-  border-top: 0;
   padding: 20px 5px;
+  position: fixed;
+  width: 30%;
+  bottom: 0;
   p {
     font-size: 80%;
     font-weight: 600;

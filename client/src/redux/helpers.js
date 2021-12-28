@@ -14,6 +14,10 @@ export const mapCategories = categories => {
       (cate1.order > cate2.order ? 1 : 0))
 }
 
+export const filterProducts = (products, categoryId) => {
+  return products.filter(product => product.category.indexOf(categoryId) !== -1);
+}
+
 export const addItemQty = (cartItems, id) => {
   return cartItems.map(item => {
     if(item.id === id) {

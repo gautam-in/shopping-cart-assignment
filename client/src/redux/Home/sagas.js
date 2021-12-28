@@ -6,7 +6,7 @@ import {
 import { HomeActionTypes } from './types';
 import { mapCategories } from './../helpers';
 
-function* fetchCategoriesStart() {
+export function* fetchCategoriesStart() {
   try {
     const res = yield fetch('http://localhost:5000/categories');
     const categoriesJSON = yield res.json();
@@ -21,7 +21,6 @@ function* fetchBannersStart() {
   try {
     const res = yield fetch('http://localhost:5000/banners');
     const banners = yield res.json();
-    console.log(banners)
     yield put(fetchBannersSuccess(banners));
   } catch(err) {
     console.log(err);

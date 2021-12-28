@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import { useDispatch, useSelector } from 'react-redux';
+import { useParams } from 'react-router-dom';
 
 import ProductItem from '../ProductItem/ProductItem';
 
@@ -17,9 +18,11 @@ const ProductsWrapper = styled.div`
 
 const Products = () => {
   const dispatch = useDispatch();
+  const { filterId } = useParams();
+  console.log(filterId)
   const products = useSelector(selectProducts);
   useEffect(() => {
-    dispatch(fetchProducts());
+    dispatch(fetchProducts(filterId));
   }, [dispatch]);
   return (
     <ProductsWrapper>

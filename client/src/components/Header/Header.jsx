@@ -1,5 +1,6 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 import { toggleCart } from './../../redux/Cart/actions';
 import { selectNoOfItems } from './../../redux/Cart/selectors';
@@ -23,17 +24,17 @@ const Header = () => {
       <Navbar>
           <Nav dir="left">
             <ImgContainer>
-              <a href="/"><img src={logo} alt="logo" /></a>
+              <Link to="/"><img src={logo} alt="logo" /></Link>
             </ImgContainer>
             <NavOptions dir="left">
-              <a href="/">Home</a>
-              <a href="/">Products</a>
+              <Link to="/">Home</Link>
+              <Link to="/products">Products</Link>
             </NavOptions>
           </Nav>
           <Nav dir="right">
             <NavOptions dir="right">
-              <a href="/">SignIn</a>
-              <a href="/">Register</a>
+              <Link to="/login">SignIn</Link>
+              <Link to="/register">Register</Link>
             </NavOptions>
             <Cart onClick={() => dispatch(toggleCart())}>
               <CartIcon /> <span>{noOfCartItems} items</span>

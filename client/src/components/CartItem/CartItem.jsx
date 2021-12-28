@@ -33,11 +33,11 @@ const CartItem = ({ imageURL, name, qty, price, id }) => {
             onClick={() => dispatch(incrementQty(id))}>
             +
           </QtyBtn>
-          <p> X Rs. {price} </p>
+          <p> {` X Rs. ${price}`} </p>
         </QtyWrapper>
       </Description>
       <TotalPrice>
-        Rs. {price}
+        Rs. {qty * price}
       </TotalPrice>
     </Card>
   );
