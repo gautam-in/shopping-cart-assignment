@@ -4,6 +4,8 @@ import styled from 'styled-components';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 import HomePage from './pages/HomePage/HomePage';
+import LoginPage from './pages/LoginPage/LoginPage';
+import RegisterPage from './pages/RegisterPage/RegisterPage';
 import ProductsPage from './pages/ProductsPage/ProductsPage';
 import Cart from './components/Cart/Cart';
 
@@ -19,7 +21,9 @@ const App = () => {
       <Views>
         {/* <HomePage /> */}
         {/* <ProductsPage /> */}
-        <Cart />
+        {/* <Cart /> */}
+        {/* <LoginPage /> */}
+        <RegisterPage />
       </Views>
       <Footer />
     </div>
