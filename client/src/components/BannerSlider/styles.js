@@ -23,4 +23,13 @@ export const indicatorStyles = {
 
 export const CarouselWrapper = styled.div`
   box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.2);
+
+  // Large screen mobiles
+  @media only screen 
+  and (min-width : 321px) 
+  and (max-width : 480px) {
+    img {
+      height: 120px;
+    }
+  }
 `;

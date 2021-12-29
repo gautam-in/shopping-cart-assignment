@@ -14,6 +14,14 @@ const ProductsWrapper = styled.div`
   flex-wrap: wrap;
   width: 75%;
   background-color: #fff;
+
+  // Large screen mobiles
+  @media only screen 
+  and (min-width : 321px) 
+  and (max-width : 480px) {
+    width: 90%;
+    margin: 0 auto;
+  }
 `;
 
 const Products = () => {

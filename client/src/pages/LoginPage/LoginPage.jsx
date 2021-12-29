@@ -12,8 +12,24 @@ const LoginContainer = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: center;
-  align-items: center;
   column-gap: 50px;
+
+  // Tablets
+  @media only screen 
+  and (min-width : 768px) 
+  and (max-width : 1024px) {
+    padding: 0 40px;
+    padding-top: 10%;
+  }
+
+  // Large screen mobiles
+  @media only screen 
+  and (min-width : 321px) 
+  and (max-width : 480px) {
+    flex-direction: column;
+    padding: 0 40px;
+    padding-top: 10%;
+  }
 `;
 
 const Title = styled.div`
@@ -28,6 +44,13 @@ const Form = styled.form`
     -webkit-text-security: disc;
     text-security: disc;
   }
+
+  // Large screen mobiles
+  @media only screen 
+  and (min-width : 321px) 
+  and (max-width : 480px) {
+    width: 100%;
+  }  
 `;
 
 const CustomButton = styled(Button)`

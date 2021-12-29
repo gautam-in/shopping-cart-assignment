@@ -11,6 +11,17 @@ const FooterWrapper = styled.div`
     margin: 0 auto;
     font-weight: bold;
   }
+
+  // Large screen mobiles
+  @media only screen 
+  and (min-width : 321px) 
+  and (max-width : 480px) {
+    font-size: 65%;
+    p {
+      width: 95%;
+      text-align: center;
+    }
+  }
 `;
 
 const Footer = () => {

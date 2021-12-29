@@ -16,6 +16,23 @@ export const CartWrapper = styled.div`
   }
   -ms-overflow-style: none;
   scrollbar-width: none; 
+
+  // Tablets
+  @media only screen 
+  and (min-width : 768px) 
+  and (max-width : 1024px) {
+    width: 80%;
+    top: 5%;
+  }
+
+  // Large screen mobiles
+  @media only screen 
+  and (min-width : 321px) 
+  and (max-width : 480px) {
+    width: 90%;
+    top: 10%;
+    right: 5%;
+  }
 `;
 
 export const CartHeader = styled.div`
@@ -65,6 +82,22 @@ export const CartBanner = styled.div`
     font-size: 80%;
     font-weight: 600;
   }
+
+  // Tablets
+  @media only screen 
+  and (min-width : 768px) 
+  and (max-width : 1024px) {
+    justify-content: flex-start;
+    padding: 20px 40px;
+  }
+
+  // Large screen mobiles
+  @media only screen 
+  and (min-width : 321px) 
+  and (max-width : 480px) {
+    justify-content: flex-start;
+    padding: 20px;
+  }
 `;
 
 export const CartFooter = styled.div`
@@ -82,6 +115,21 @@ export const CartFooter = styled.div`
     font-size: 80%;
     font-weight: 600;
   }
+
+  // Tablets
+  @media only screen 
+  and (min-width : 768px) 
+  and (max-width : 1024px) {
+    width: 80%;
+  }
+
+  // Large screen mobiles
+  @media only screen 
+  and (min-width : 321px) 
+  and (max-width : 480px) {
+    width: 90%;
+  }
+  
 `;
 
 export const CustomButtom = styled(Button)`

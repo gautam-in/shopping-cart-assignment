@@ -19,6 +19,8 @@ const BannerSlider = () => {
   const carouselProps = {
     showThumbs: false,
     showStatus: false,
+    autoPlay: true,
+    infiniteLoop: true,
     renderArrowPrev: (onClickHandler, hasPrev) =>
       hasPrev && (
         <button 

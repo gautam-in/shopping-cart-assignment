@@ -4,10 +4,15 @@ export const HeaderWrapper = styled.header`
   width: 100%;
   font-size: 90%;
   box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.2);
-  min-height: 15vh;
-  max-height: 15vh;
   overflow-y: hidden;
   background-color: #fff;
+
+  // Large screen mobiles
+  @media only screen 
+  and (min-width : 321px) 
+  and (max-width : 480px) {
+    font-size: 85%;
+  }
 `;
 
 export const Navbar = styled.nav`
@@ -17,6 +22,20 @@ export const Navbar = styled.nav`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+
+  // Tablets
+  @media only screen 
+  and (min-width : 768px) 
+  and (max-width : 1024px) {
+    width: 95%;
+  }
+
+  // Large screen mobiles
+  @media only screen 
+  and (min-width : 321px) 
+  and (max-width : 480px) {
+    width: 95%;
+  }
 `;
 
 export const Nav = styled.div`
@@ -57,6 +76,34 @@ export const NavOptions = styled.div`
       `;
     }
   }}
+
+  // Large screen mobiles 
+  @media only screen 
+  and (min-width : 321px) 
+  and (max-width : 480px) {
+    column-gap: 8px;
+    ${({ dir }) => {
+      if(dir === "right") {
+        return `
+          justify-content: space-around;
+          width: 60%;
+        `;
+      }
+    }}
+  }
+
+  // Tablets
+  @media only screen 
+  and (min-width : 768px) 
+  and (max-width : 1024px) {
+    ${({ dir }) => {
+      if(dir === "right") {
+        return `
+          width: 30%;
+        `;
+      }
+    }}
+  }
 `;
 
 export const Cart = styled.div`
@@ -76,6 +123,25 @@ export const Cart = styled.div`
       fill: #BF2957;
     }
   }
+
+  // Large screen mobiles
+  @media only screen 
+  and (min-width : 321px) 
+  and (max-width : 480px) {
+    width: 60%;
+    padding: 8px;
+    svg {
+      height: 16px;
+      width: 16px;
+    }
+  }
+
+  // Tablets
+  @media only screen 
+  and (min-width : 768px) 
+  and (max-width : 1024px) {
+    width: 30%;
+  }
 `;
 
 export const ImgContainer = styled.div`
@@ -84,5 +150,13 @@ export const ImgContainer = styled.div`
   img {
     height: 100%;
     width: 100%;
+  }
+
+  // Large screen mobiles
+  @media only screen 
+  and (min-width : 321px) 
+  and (max-width : 480px) {
+    height: 30px;
+    width: 60px;
   }
 `;

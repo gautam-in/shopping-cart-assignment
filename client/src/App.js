@@ -16,6 +16,24 @@ import { selectShowCart } from './redux/Cart/selectors';
 const Views = styled.div`
   width: 80%;
   margin: 0 auto;
+  margin-top: 3px;
+  min-height: 90vh;
+  max-height: 100%;
+
+  // Tablets
+  @media only screen 
+  and (min-width : 768px) 
+  and (max-width : 1024px) {
+    width: 95%;
+  }
+
+  // Large screen mobiles
+  @media only screen 
+  and (min-width : 321px) 
+  and (max-width : 480px) {
+    min-height: 83vh;
+    width: 95%;
+  }
 `;
 
 const App = () => {

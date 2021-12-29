@@ -1,5 +1,6 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
+import { isDesktop, isTablet, isMobileOnly } from 'react-device-detect';
 
 import Button from './../Button/Button';
 
@@ -24,11 +25,11 @@ const ProductItem = ({ item }) => {
       </ImgContainer>
       <Description>{`${description.slice(0, 100)}${description.length > 100 ? '...' : ''} `}</Description>
       <Options>
-        <p>Rs. {price}</p>
+        {(isDesktop && (!isMobileOnly || !isTablet)) && <p>Rs. {price}</p>}
         <Button
           type="button"
           onClick={() => dispatch(addToCart(item))}>
-            Buy Now
+            Buy Now {(!isDesktop && (isMobileOnly || isTablet)) && ` @ Rs. ${price}`}
         </Button>
       </Options>
     </ItemCard>

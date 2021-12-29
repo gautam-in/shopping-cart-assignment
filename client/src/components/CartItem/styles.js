@@ -11,6 +11,21 @@ export const Card = styled.div`
   align-items: center;
   justify-content: space-between;
   margin-bottom: 5px;
+
+  // Tablets
+  @media only screen 
+  and (min-width : 768px) 
+  and (max-width : 1024px) {
+    padding: 40px;
+  }
+
+  // Large screen mobiles
+  @media only screen 
+  and (min-width : 321px) 
+  and (max-width : 480px) {
+    padding: 5px;
+    font-size: 85%;
+  }
 `;
 
 export const ImgContainer = styled.div`
@@ -56,4 +71,18 @@ export const TotalPrice = styled.p`
   align-self: flex-end;
   font-size: 100%;
   font-weight: 600;
+
+  // Tablets
+  @media only screen 
+  and (min-width : 768px) 
+  and (max-width : 1024px) {
+    font-size: 120%;
+  }
+
+  // Large screen mobiles
+  @media only screen 
+  and (min-width : 321px) 
+  and (max-width : 480px) {
+    font-size: 110%;
+  }
 `;

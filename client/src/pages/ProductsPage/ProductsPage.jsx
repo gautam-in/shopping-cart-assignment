@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { isMobileOnly } from 'react-device-detect';
 
 import Filters from '../../components/Filters/Filters';
 import Products from '../../components/Products/Products';
@@ -12,7 +13,7 @@ const ProductsWrapper = styled.div`
 const ProductsPage = () => {
   return (
     <ProductsWrapper>
-      <Filters />
+      {!isMobileOnly && <Filters />}
       <Products />
     </ProductsWrapper>
   );
