@@ -19,11 +19,10 @@ const ProductsWrapper = styled.div`
 const Products = () => {
   const dispatch = useDispatch();
   const { filterId } = useParams();
-  console.log(filterId)
   const products = useSelector(selectProducts);
   useEffect(() => {
     dispatch(fetchProducts(filterId));
-  }, [dispatch]);
+  }, [dispatch, filterId]);
   return (
     <ProductsWrapper>
       {products && products.map(product => (
