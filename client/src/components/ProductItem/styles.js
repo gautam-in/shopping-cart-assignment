@@ -49,6 +49,8 @@ export const Title = styled.h4`
   and (min-width : 321px) 
   and (max-width : 480px) {
     width: 50%;
+    height: 20%;
+    font-size: 85%;
   }
 `;
 
