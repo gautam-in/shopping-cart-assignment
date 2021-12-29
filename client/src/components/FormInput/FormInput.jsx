@@ -26,8 +26,15 @@ const FormControl = styled.div`
   }
   label {
     position: absolute;
-    top: 15px;
+    top: 5px;
     left: 0;
+  }
+  span {
+    display: inline-block;
+    font-size: 85%;
+    font-weight: 600;
+    margin-top: 5px;
+    color: #FB0217;
   }
 `;
 

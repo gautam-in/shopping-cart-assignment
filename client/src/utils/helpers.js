@@ -22,6 +22,10 @@ export const validate = ({ type, value, required, ariaLabel }) => {
   return { hasError, errMessage };
 }
 
+export const isItemAlreadyInCart = (items, id) => {
+  return !!items.find(item => item.id === id);
+}
+
 export const mapCategories = categories => {
   // Filters categories which are not enabled, maps each with dir param, 
   // also sorts them based on order

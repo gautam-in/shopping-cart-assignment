@@ -19,12 +19,15 @@ const FilterList = styled.ul`
 `;
 
 const FilterItem = styled.li`
-  padding: 10px 0px;
+  padding: 10px 5px;
   border-bottom: 1px solid #aaaaaa;
   cursor: pointer;
+  &:hover {
+    background-color: #ffffff;
+  }
 `;
 
-const Filters = () => {
+const Filters = ({ filterId }) => {
   const filters = useSelector(selectCategories);
   const navigate = useNavigate();
   return (
@@ -34,6 +37,9 @@ const Filters = () => {
           const { id, name, key } = filter;
           return (
             <FilterItem 
+              style={{
+                backgroundColor: filterId === key ? '#ffffff' : ''
+              }}
               onClick={() => navigate(`/products/${key}`)}
               key={id} >
                 {name}

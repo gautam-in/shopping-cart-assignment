@@ -14,6 +14,7 @@ const RegisterContainer = styled.div`
   flex-direction: row;
   justify-content: center;
   column-gap: 50px;
+  padding-top: 5%;
 
   // Tablets
   @media only screen 

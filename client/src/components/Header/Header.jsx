@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 
 import { toggleCart } from './../../redux/Cart/actions';
 import { selectNoOfItems } from './../../redux/Cart/selectors';
+import { selectLoggedInUser } from './../../redux/User/selectors';
 
 import { 
         HeaderWrapper,
@@ -19,6 +20,7 @@ import logo from './../../assets/logo.png';
 const Header = () => {
   const dispatch = useDispatch();
   const noOfCartItems = useSelector(selectNoOfItems);
+  const loggedInUser = useSelector(selectLoggedInUser);
   return (
     <HeaderWrapper>
       <Navbar>
@@ -32,10 +34,17 @@ const Header = () => {
             </NavOptions>
           </Nav>
           <Nav dir="right">
-            <NavOptions dir="right">
-              <Link to="/login">SignIn</Link>
-              <Link to="/register">Register</Link>
-            </NavOptions>
+            {!!loggedInUser ? (
+              <NavOptions dir="right">
+                <p>Hi, {loggedInUser.firstName}</p>
+                <Link to="/register">Signout</Link>
+              </NavOptions>
+            ) : (
+              <NavOptions dir="right">
+                <Link to="/login">SignIn</Link>
+                <Link to="/register">Register</Link>
+              </NavOptions>    
+            )}
             <Cart onClick={() => dispatch(toggleCart())}>
               <CartIcon /> <span>{noOfCartItems} items</span>
             </Cart>

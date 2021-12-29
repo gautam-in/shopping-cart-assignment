@@ -22,7 +22,7 @@ export const CartWrapper = styled.div`
   and (min-width : 768px) 
   and (max-width : 1024px) {
     width: 80%;
-    top: 5%;
+    top: 15%;
   }
 
   // Large screen mobiles
@@ -30,7 +30,7 @@ export const CartWrapper = styled.div`
   and (min-width : 321px) 
   and (max-width : 480px) {
     width: 90%;
-    top: 10%;
+    top: 20%;
     right: 5%;
   }
 `;
@@ -140,6 +140,13 @@ export const CustomButtom = styled(Button)`
   span {
     font-weight: 600;
   }
+  ${({ text }) => {
+    if(text === "center") {
+      return `
+        justify-content: center;
+      `;
+    }
+  }}
 `;
 
 export const Overlay = styled.div`
@@ -154,4 +161,11 @@ export const Overlay = styled.div`
   background-color: rgba(0,0,0,0.4);
   z-index: 2; 
   cursor: not-allowed; 
+`;
+
+export const EmptyCart = styled.div`
+  background-color: #eeeeee;
+  text-align: center;
+  padding: 100px 20px;
+  line-height: 2;
 `;

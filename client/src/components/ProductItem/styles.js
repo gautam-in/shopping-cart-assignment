@@ -48,7 +48,7 @@ export const Title = styled.h4`
   @media only screen 
   and (min-width : 321px) 
   and (max-width : 480px) {
-    width: 50%;
+    width: 45%;
     height: 20%;
     font-size: 85%;
   }
@@ -138,4 +138,18 @@ export const Options = styled.div`
   and (max-width : 1024px) {
     justify-content: center;
   }
+`;
+
+export const ItemInCart = styled.div`
+  flex: 1;
+  max-height: 10%;
+  margin: 0 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #BF2957;
+  padding: 18px 0px;
+  color: #BF2957;
+  font-weight: bolder;
 `;

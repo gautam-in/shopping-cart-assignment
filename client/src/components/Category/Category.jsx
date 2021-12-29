@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import {
   ItemCard,
@@ -9,6 +10,7 @@ import {
 
 const Category = ({ category }) => {
   const { name, description, key, imageUrl, dir } = category;
+  const navigate = useNavigate();
   return (
     <ItemCard dir={dir}>
       <ImageContainer>
@@ -18,6 +20,7 @@ const Category = ({ category }) => {
         <h3>{name}</h3>
         <p>{description}</p>
         <CustomButton
+          onClick={() => navigate(`/products/${key}`)}
           type="button">
           {`Explore ${key}`}
         </CustomButton>

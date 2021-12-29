@@ -18,7 +18,7 @@ const SelectField = styled.select`
   color: #ffffff;
 `;
 
-const Dropdown = () => {
+const Dropdown = ({ filterId }) => {
   const filters = useSelector(selectCategories);
   const navigate = useNavigate();
 
@@ -29,13 +29,19 @@ const Dropdown = () => {
   return (
     <DropdownWrapper>
       <SelectField onChange={handleChange}>
-        <option key="default_category" value="">All Products</option>
+        <option 
+          key="default_category" 
+          value=""
+          selected={filterId === ""}>
+            All Products
+        </option>
         {filters.map(filter => {
             const { id, name, key } = filter;
             return (
               <option 
                 key={id}
-                value={key}>
+                value={key}
+                selected={filterId === key}>
                   {name}
               </option>
             );

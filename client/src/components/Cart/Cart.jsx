@@ -17,7 +17,8 @@ import {
   CartItems,
   CartFooter,
   CustomButtom,
-  CartBanner
+  CartBanner,
+  EmptyCart
 } from './styles';
 import lowPriceImg from './../../assets/lowest-price.png';
 
@@ -37,20 +38,38 @@ const Cart = () => {
               X
           </button>
         </CartHeader>
-        <CartItems>
-          {inCartItems.map(item => <CartItem key={item.id} {...item} />)}
-          <CartBanner>
-            <img src={lowPriceImg} alt="Lowest Price Guaranteed" />
-            <p>You won't find it cheaper anywhere</p>
-          </CartBanner>
-        </CartItems>
-        <CartFooter>
-          <p>Promo code can be applied on payment page</p>
-          <CustomButtom type="button">
-            <span>Proceed to Checkout</span>
-            <span>{`Rs. ${totalPrice} >`}</span>
-          </CustomButtom>
-        </CartFooter>
+        {noOfCartItems > 0 ? (
+          <>
+            <CartItems>
+              {inCartItems.map(item => <CartItem key={item.id} {...item} />)}
+              <CartBanner>
+                <img src={lowPriceImg} alt="Lowest Price Guaranteed" />
+                <p>You won't find it cheaper anywhere</p>
+              </CartBanner>
+            </CartItems>
+            <CartFooter>
+              <p>Promo code can be applied on payment page</p>
+              <CustomButtom type="button">
+                <span>Proceed to Checkout</span>
+                <span>{`Rs. ${totalPrice} >`}</span>
+              </CustomButtom>
+            </CartFooter>
+          </>
+        ):(
+          <>
+            <EmptyCart>
+              <h3>No items in your cart</h3>
+              <p>Your favourite items are just a click away</p>
+            </EmptyCart>
+            <CartFooter>
+              <CustomButtom 
+                type="button" 
+                text="center">
+                  Start Shopping
+              </CustomButtom>
+            </CartFooter>
+          </>
+        )}
       </CartWrapper>
     </Overlay>
   );

@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { isMobileOnly } from 'react-device-detect';
+import { useParams } from 'react-router-dom';
 
 import Filters from '../../components/Filters/Filters';
 import Dropdown from '../../components/Dropdown/Dropdown';
@@ -20,11 +21,12 @@ const ProductsWrapper = styled.div`
 `;
 
 const ProductsPage = () => {
+  const { filterId } = useParams();
   return (
     <ProductsWrapper>
-      {!isMobileOnly && <Filters />}
-      {isMobileOnly && <Dropdown />}
-      <Products />
+      {!isMobileOnly && <Filters filterId={filterId} />}
+      {isMobileOnly && <Dropdown filterId={filterId} />}
+      <Products filterId={filterId} />
     </ProductsWrapper>
   );
 }

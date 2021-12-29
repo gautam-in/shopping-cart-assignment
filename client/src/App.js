@@ -31,7 +31,7 @@ const Views = styled.div`
   @media only screen 
   and (min-width : 321px) 
   and (max-width : 480px) {
-    min-height: 83vh;
+    min-height: 84vh;
     width: 95%;
   }
 `;

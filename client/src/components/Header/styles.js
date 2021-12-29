@@ -6,6 +6,7 @@ export const HeaderWrapper = styled.header`
   box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.2);
   overflow-y: hidden;
   background-color: #fff;
+  font-weight: bolder;
 
   // Large screen mobiles
   @media only screen 
@@ -64,6 +65,9 @@ export const NavOptions = styled.div`
   flex-direction: row;
   justify-content: space-between;
   column-gap: 20px;
+  p {
+    color: #BF2957;
+  }
   ${({ dir }) => {
     if(dir === "left") {
       return `
@@ -99,7 +103,7 @@ export const NavOptions = styled.div`
     ${({ dir }) => {
       if(dir === "right") {
         return `
-          width: 30%;
+          width: 35%;
         `;
       }
     }}
