@@ -1,8 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
+import { useDispatch } from 'react-redux';
 
 import Button from '../../components/Button/Button';
 import FormInput from '../../components/FormInput/FormInput';
+
+import { login } from './../../redux/User/actions';
+import { validate } from './../../utils/helpers';
 
 const LoginContainer = styled.div`
   display: flex;
@@ -20,6 +24,10 @@ const Title = styled.div`
 
 const Form = styled.form`
   width: 35%;
+  input[type=text] {
+    -webkit-text-security: disc;
+    text-security: disc;
+  }
 `;
 
 const CustomButton = styled(Button)`
@@ -27,27 +35,85 @@ const CustomButton = styled(Button)`
 `;
 
 const LoginPage = () => {
-  const [userEmail, setUserEmail] = useState('');
-  const [userPwd, setUserPwd] = useState('');
+  const dispatch = useDispatch();
+  const [userData, setUserData] = useState({
+    email: '',
+    pwd: ''
+  });
+
+  const [errors, setErrors] = useState({});
+  const [touched, setTouched] = useState({});
+  const [formValid, setFormValid] = useState(false);
+
+  useEffect(() => {
+    checkFormValidity();
+  }, [userData]);
+
+  const checkFormValidity = () => {
+    const haveAnyErrors = !!Object.values(errors).find(err => err.hasError);
+    const touchedFields = Object.values(touched).filter(item => item);
+    const haveTouchedAllFields = Object.values(userData).length === touchedFields.length;
+    const isValid = !haveAnyErrors && haveTouchedAllFields;
+    setFormValid(isValid);
+  }
+
+  const handleChange = ev => {
+    const { name, value } = ev.target;
+    const { hasError, errMessage } = validate(ev.target);
+    if(!touched[name]) {
+      setTouched((prevState) => {
+        return {
+          ...prevState,
+          [name]: true
+        }
+      });
+    }
+    setErrors((prevState) => {
+      return {
+        ...prevState,
+        [name]: { hasError, errMessage }
+      }
+    });
+    setUserData((prevState) => {
+      return {
+        ...prevState,
+        [name]: value
+      }
+    });
+  }
+
+  const handleSubmit = ev => {
+    ev.preventDefault();
+    dispatch(login(userData));
+  };
+
+  const { email, pwd } = userData;
   return (
     <LoginContainer>
       <Title>
         <h2>Login</h2>
         <p>Get access to your Orders, Wishlist and Recommendations</p>
       </Title>
-      <Form>
+      <Form onSubmit={handleSubmit}>
         <FormInput
           type="email"
-          name="userEmail"
+          name="email"
           label="Email"
-          value={userEmail} />
+          value={email}
+          required
+          onChange={handleChange}
+          errors={errors?.email} />
         <FormInput
-          type="password"
-          name="userPwd"
+          type="text"
+          name="pwd"
           label="Password"
-          value={userPwd} />
-        <CustomButton>
-          Login
+          value={pwd}
+          required
+          onChange={handleChange}
+          errors={errors?.pwd} />
+        <CustomButton
+          type="submit">
+            Login
         </CustomButton>
       </Form>
     </LoginContainer>

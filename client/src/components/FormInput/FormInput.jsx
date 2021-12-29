@@ -31,7 +31,14 @@ const FormControl = styled.div`
   }
 `;
 
-const FormInput = ({ label, value, name, type }) => {
+const FormInput = ({ 
+    label, 
+    value, 
+    name, 
+    type, 
+    onChange, 
+    errors,
+    ...otherProps }) => {
   return (
     <FormControl>
       <input 
@@ -39,8 +46,12 @@ const FormInput = ({ label, value, name, type }) => {
         value={value}
         name={name}
         autoComplete='off'
-        placeholder=' ' />
+        placeholder=' '
+        aria-label={label}
+        onChange={onChange}
+        {...otherProps} />
       <label>{label}</label>
+      {errors?.hasError ? <span>{errors.errMessage}</span> : null}
     </FormControl>
   );
 }

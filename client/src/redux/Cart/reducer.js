@@ -1,6 +1,6 @@
 import { CartActionTypes } from "./types";
 
-import { addItemQty, decreaseItemQty } from "../helpers";
+import { addItemQty, decreaseItemQty } from "./../../utils/helpers";
 
 const INITIAL_STATE = {
   showCart: false,

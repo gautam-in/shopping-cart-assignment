@@ -1,5 +1,5 @@
 import { store } from './../store';
-import { filterProducts } from './../helpers';
+import { filterProducts } from './../../utils/helpers';
 import { ProductsActionTypes } from "./types";
 
 // PRODUCTS

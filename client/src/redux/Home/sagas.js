@@ -4,7 +4,7 @@ import {
   fetchCategoriesSuccess, 
   fetchBannersSuccess } from './actions';
 import { HomeActionTypes } from './types';
-import { mapCategories } from './../helpers';
+import { mapCategories } from './../../utils/helpers';
 
 export function* fetchCategoriesStart() {
   try {
