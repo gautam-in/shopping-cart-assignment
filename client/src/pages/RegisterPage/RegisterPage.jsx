@@ -15,6 +15,7 @@ const RegisterContainer = styled.div`
   justify-content: center;
   column-gap: 50px;
   padding-top: 5%;
+  margin-bottom: 20px;
 
   // Tablets
   @media only screen 
