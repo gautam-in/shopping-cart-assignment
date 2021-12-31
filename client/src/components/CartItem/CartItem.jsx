@@ -24,12 +24,14 @@ const CartItem = ({ imageURL, name, qty, price, id }) => {
         <QtyWrapper>
           <QtyBtn
             type="button"
+            aria-label="Increment Quantity"
             onClick={() => dispatch(decrementQty(id))}>
             -
           </QtyBtn>
-          <span>{qty}</span>
+          <span aria-live="assertive" aria-label={`${qty} added`}>{qty}</span>
           <QtyBtn
             type="button"
+            aria-label="Decrement Quantity"
             onClick={() => dispatch(incrementQty(id))}>
             +
           </QtyBtn>

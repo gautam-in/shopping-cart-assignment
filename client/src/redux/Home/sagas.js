@@ -2,7 +2,8 @@ import { takeLatest, call, all, put } from 'redux-saga/effects';
 
 import { 
   fetchCategoriesSuccess, 
-  fetchBannersSuccess } from './actions';
+  fetchBannersSuccess,
+  triggerNotification } from './actions';
 import { HomeActionTypes } from './types';
 import { mapCategories } from './../../utils/helpers';
 
@@ -13,17 +14,22 @@ export function* fetchCategoriesStart() {
     const categories = yield mapCategories(categoriesJSON);
     yield put(fetchCategoriesSuccess(categories));
   } catch(err) {
-    console.log(err);
+    const message = err.message ? err.message : 'Internal Server Error';
+    const errObj = { hasError: true, message: message };
+    yield put(triggerNotification({...errObj}));
   }
 }
 
 function* fetchBannersStart() {
   try {
-    const res = yield fetch('http://localhost:5000/banners');
-    const banners = yield res.json();
+    const bannersRes = yield fetch('http://localhost:5000/banners');
+    const banners = yield bannersRes.json();
+    yield call(fetchCategoriesStart);
     yield put(fetchBannersSuccess(banners));
   } catch(err) {
-    console.log(err);
+    const message = err.message ? err.message : 'Internal Server Error';
+    const errObj = { hasError: true, message: message };
+    yield put(triggerNotification({...errObj}));
   }
 }
 

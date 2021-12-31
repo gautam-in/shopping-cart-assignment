@@ -40,6 +40,8 @@ const Filters = ({ filterId }) => {
               style={{
                 backgroundColor: filterId === key ? '#ffffff' : ''
               }}
+              role="button"
+              aria-label={name}
               onClick={() => navigate(`/products/${key}`)}
               key={id} >
                 {name}

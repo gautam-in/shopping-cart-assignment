@@ -26,6 +26,8 @@ const BannerSlider = () => {
         <button 
           type="button" 
           onClick={onClickHandler} 
+          aria-label="Prev"
+          tabIndex={0}
           style={{ ...arrowStyles, left: "5px" }}>
             PREV
         </button>
@@ -34,7 +36,9 @@ const BannerSlider = () => {
       hasNext && (
         <button 
           type="button" 
+          aria-label="Next"
           onClick={onClickHandler} 
+          tabIndex={0}
           style={{ ...arrowStyles, right: "5px" }}>
             NEXT
         </button>

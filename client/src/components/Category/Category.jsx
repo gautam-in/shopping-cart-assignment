@@ -21,7 +21,8 @@ const Category = ({ category }) => {
         <p>{description}</p>
         <CustomButton
           onClick={() => navigate(`/products/${key}`)}
-          type="button">
+          type="button"
+          aria-label={`Explore ${key}`}>
           {`Explore ${key}`}
         </CustomButton>
       </Description>

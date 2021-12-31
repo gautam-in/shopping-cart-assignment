@@ -2,6 +2,7 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 
+import { signoutUser } from './../../redux/User/actions';
 import { toggleCart } from './../../redux/Cart/actions';
 import { selectNoOfItems } from './../../redux/Cart/selectors';
 import { selectLoggedInUser } from './../../redux/User/selectors';
@@ -37,7 +38,11 @@ const Header = () => {
             {!!loggedInUser ? (
               <NavOptions dir="right">
                 <p>Hi, {loggedInUser.firstName}</p>
-                <Link to="/register">Signout</Link>
+                <Link 
+                  to="/" 
+                  onClick={() => dispatch(signoutUser({email: loggedInUser.email}))}>
+                    Signout
+                </Link>
               </NavOptions>
             ) : (
               <NavOptions dir="right">
@@ -45,8 +50,11 @@ const Header = () => {
                 <Link to="/register">Register</Link>
               </NavOptions>    
             )}
-            <Cart onClick={() => dispatch(toggleCart())}>
-              <CartIcon /> <span>{noOfCartItems} items</span>
+            <Cart ariaLabel="Show Cart" 
+              role="button" 
+              tabIndex={0} 
+              onClick={() => dispatch(toggleCart())}>
+                <CartIcon /> <span>{noOfCartItems} items</span>
             </Cart>
           </Nav>
       </Navbar>

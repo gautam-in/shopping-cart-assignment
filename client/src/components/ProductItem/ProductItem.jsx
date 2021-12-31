@@ -32,12 +32,13 @@ const ProductItem = ({ item }) => {
       <Options>
         {(isDesktop && (!isMobileOnly || !isTablet)) && <p>Rs. {price}</p>}
         {alreadyInCart ? (
-          <ItemInCart>
+          <ItemInCart aria-label="Already in Cart">
             Already in Cart
           </ItemInCart>
           ) : (
           <Button
             type="button"
+            aria-label="Buy Now"
             onClick={() => dispatch(addToCart(item))}>
               Buy Now {(!isDesktop && (isMobileOnly || isTablet)) && ` @ Rs. ${price}`}
           </Button>

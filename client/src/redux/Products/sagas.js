@@ -3,6 +3,7 @@ import { takeLatest, call, all, put } from "redux-saga/effects";
 import { fetchCategoriesStart } from './../Home/sagas';
 import { ProductsActionTypes } from './types';
 import { fetchProductsSuccess } from './actions';
+import { triggerNotification } from './../Home/actions';
 
 function* fetchProductsStart({ payload }) {
   try {
@@ -11,7 +12,9 @@ function* fetchProductsStart({ payload }) {
     yield call(fetchCategoriesStart);
     yield put(fetchProductsSuccess({ products: productsJSON, filterId: payload }));
   } catch(err) {
-    console.log(err);
+    const message = err.message ? err.message : 'Internal Server Error';
+    const errObj = { hasError: true, message: message };
+    yield put(triggerNotification({...errObj}));
   }
 }
 

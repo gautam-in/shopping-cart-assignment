@@ -10,7 +10,7 @@ const ButtonWrapper = styled.button`
 
 const Button = ({ children, ...props }) => {
   return (
-    <ButtonWrapper {...props}>
+    <ButtonWrapper {...props} tabIndex={0}>
       {children}
     </ButtonWrapper>
   );

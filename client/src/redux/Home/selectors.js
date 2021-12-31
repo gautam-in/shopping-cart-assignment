@@ -11,3 +11,13 @@ export const selectCategories = createSelector(
   [selectHome],
   (homeState) => homeState.categories
 );
+
+export const selectNotificationError = createSelector(
+  [selectHome],
+  (homeState) => homeState.error
+);
+
+export const selectHomePageLoading = createSelector(
+  [selectHome],
+  (homeState) => homeState.isLoading
+);

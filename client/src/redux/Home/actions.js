@@ -29,3 +29,18 @@ export const fetchBannersSuccess = banners => {
     payload: banners
   }
 };
+
+// Notification
+
+export const triggerNotification = error => {
+  return {
+    type: HomeActionTypes.TRIGGER_NOTIFICATION,
+    payload: error
+  }
+};
+
+export const closeNotification = () => {
+  return {
+    type: HomeActionTypes.CLOSE_NOTIFICATION
+  }
+};

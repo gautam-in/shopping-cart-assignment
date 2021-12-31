@@ -3,6 +3,7 @@ import { takeLatest, put, all, call } from 'redux-saga/effects';
 import { CartActionTypes } from './types';
 
 import { addToCartSuccess } from './actions';
+import { triggerNotification } from './../Home/actions';
 
 function* addToCartStart({ payload }) {
   try {
@@ -19,7 +20,9 @@ function* addToCartStart({ payload }) {
     yield res.json();
     yield put(addToCartSuccess({ ...payload, qty: 1 }));
   } catch(err) {
-    console.log(err);
+    const message = err.message ? err.message : 'Internal Server Error';
+    const errObj = { hasError: true, message: message };
+    yield put(triggerNotification({...errObj}));
   }
 }
 

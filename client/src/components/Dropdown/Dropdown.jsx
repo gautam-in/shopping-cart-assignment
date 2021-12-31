@@ -27,12 +27,12 @@ const Dropdown = ({ filterId }) => {
     navigate(`/products/${value}`);
   }
   return (
-    <DropdownWrapper>
-      <SelectField onChange={handleChange}>
+    <DropdownWrapper aria-modal="true" role="alertdialog">
+      <SelectField onChange={handleChange} value={filterId}>
         <option 
           key="default_category" 
           value=""
-          selected={filterId === ""}>
+          aria-label="All Products">
             All Products
         </option>
         {filters.map(filter => {
@@ -41,7 +41,7 @@ const Dropdown = ({ filterId }) => {
               <option 
                 key={id}
                 value={key}
-                selected={filterId === key}>
+                aria-label={name}>
                   {name}
               </option>
             );

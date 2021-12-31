@@ -1,10 +1,9 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import styled from 'styled-components';
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 import Category from '../Category/Category';
 
-import { fetchCategories } from './../../redux/Home/actions';
 import { selectCategories } from './../../redux/Home/selectors';
 
 const CategoriesWrapper = styled.div`
@@ -14,11 +13,6 @@ const CategoriesWrapper = styled.div`
 `;
 
 const Categories = () => {
-  const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(fetchCategories());
-  }, [dispatch]);
-
   const categories = useSelector(selectCategories);
   return (
     <CategoriesWrapper>

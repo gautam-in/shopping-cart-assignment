@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import styled from 'styled-components';
 import { useDispatch } from 'react-redux';
 
@@ -56,6 +56,10 @@ const Form = styled.form`
 
 const CustomButton = styled(Button)`
   width: 100%;
+  &:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+  }
 `;
 
 const LoginPage = () => {
@@ -69,17 +73,17 @@ const LoginPage = () => {
   const [touched, setTouched] = useState({});
   const [formValid, setFormValid] = useState(false);
 
-  useEffect(() => {
-    checkFormValidity();
-  }, [userData]);
-
-  const checkFormValidity = () => {
+  const checkFormValidity = useCallback(() => {
     const haveAnyErrors = !!Object.values(errors).find(err => err.hasError);
     const touchedFields = Object.values(touched).filter(item => item);
     const haveTouchedAllFields = Object.values(userData).length === touchedFields.length;
     const isValid = !haveAnyErrors && haveTouchedAllFields;
     setFormValid(isValid);
-  }
+  }, [errors, touched, userData]);
+
+  useEffect(() => {
+    checkFormValidity();
+  }, [userData, checkFormValidity]);
 
   const handleChange = ev => {
     const { name, value } = ev.target;
@@ -109,6 +113,13 @@ const LoginPage = () => {
   const handleSubmit = ev => {
     ev.preventDefault();
     dispatch(login(userData));
+    setUserData({
+      email: '',
+      pwd: ''
+    });
+    setErrors({});
+    setTouched({});
+    setFormValid(false);
   };
 
   const { email, pwd } = userData;
@@ -136,7 +147,8 @@ const LoginPage = () => {
           onChange={handleChange}
           errors={errors?.pwd} />
         <CustomButton
-          type="submit">
+          type="submit"
+          disabled={!formValid}>
             Login
         </CustomButton>
       </Form>

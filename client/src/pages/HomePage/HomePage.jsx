@@ -8,7 +8,7 @@ const HomePage = () => {
     <>
       <BannerSlider />
       <Categories />
-    </ >
+    </>
   );
 }
 

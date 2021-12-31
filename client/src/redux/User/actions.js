@@ -27,3 +27,22 @@ export const registerSuccess = userDetails => {
     payload: userDetails
   };
 }
+
+export const checkAuth = () => {
+  return {
+    type: UserActionTypes.CHECK_AUTH_START
+  };
+}
+
+export const signoutUser = userDetails => {
+  return {
+    type: UserActionTypes.SIGN_OUT_USER_START,
+    payload: userDetails
+  };
+}
+
+export const signoutUserSuccess = () => {
+  return {
+    type: UserActionTypes.SIGN_OUT_USER_SUCCESS
+  };
+}

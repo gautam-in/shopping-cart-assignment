@@ -2,7 +2,8 @@ import { HomeActionTypes } from './types';
 
 const INITIAL_STATE = {
   banners: [],
-  categories: []
+  categories: [],
+  error: null
 }
 
 const homeReducer = (state = INITIAL_STATE, action) => {
@@ -17,6 +18,16 @@ const homeReducer = (state = INITIAL_STATE, action) => {
       return {
         ...state,
         banners: [...payload]
+      }
+    case HomeActionTypes.TRIGGER_NOTIFICATION:
+      return {
+        ...state,
+        error: {...payload}
+      }
+    case HomeActionTypes.CLOSE_NOTIFICATION:
+      return {
+        ...state,
+        error: null
       }
     default:
       return state;

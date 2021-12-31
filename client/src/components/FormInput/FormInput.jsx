@@ -56,8 +56,9 @@ const FormInput = ({
         placeholder=' '
         aria-label={label}
         onChange={onChange}
-        {...otherProps} />
-      <label>{label}</label>
+        {...otherProps} 
+        id={name}/>
+      <label htmlFor={name}>{label}</label>
       {errors?.hasError ? <span>{errors.errMessage}</span> : null}
     </FormControl>
   );
