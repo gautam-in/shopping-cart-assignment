@@ -1,0 +1,30 @@
+* {
+  margin: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #ffffff;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 16px;
+}
+
+a {
+  cursor: pointer;
+  text-decoration: none;
+  color: #000;
+}
+
+button,
+input {
+  font-family: 'Quicksand', sans-serif;
+}
+
+*:focus {
+  outline: none;
+  outline-offset: 5px;
+  border: 2px dashed #000;
+}
