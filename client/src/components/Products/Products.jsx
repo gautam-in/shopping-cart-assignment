@@ -21,6 +21,13 @@ const ProductsWrapper = styled.div`
     width: 90%;
     margin: 0 auto;
   }
+
+  // Tablets
+  @media only screen 
+  and (min-width : 768px) 
+  and (max-width : 1024px) {
+    align-content: flex-start;
+  }
 `;
 
 const Products = ({ filterId }) => {

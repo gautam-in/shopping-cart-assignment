@@ -11,6 +11,13 @@ const FiltersWrapper = styled.div`
   font-size: 90%;
   min-height: 85vh;
   max-height: 100%;
+
+  // Tablets
+  @media only screen 
+  and (min-width : 768px) 
+  and (max-width : 1024px) {
+    min-height: 90vh;
+  }
 `;
 
 const FilterList = styled.ul`
@@ -41,6 +48,7 @@ const Filters = ({ filterId }) => {
                 backgroundColor: filterId === key ? '#ffffff' : ''
               }}
               role="button"
+              tabIndex={0}
               aria-label={name}
               onClick={() => navigate(`/products/${key}`)}
               key={id} >
