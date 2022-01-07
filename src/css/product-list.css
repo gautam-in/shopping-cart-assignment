@@ -1,0 +1,232 @@
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: dosis, sans-serif;
+  }
+  
+  html {
+    font-size: 62.5%;
+  }
+  
+  .container {
+    margin: 0 160px;
+  }
+  
+  .grid {
+    display: grid;
+    gap: 4px;
+  }
+  
+  .grid-2-cols {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .grid-3-cols {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .grid-4-cols {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  
+  .grid-5-cols {
+    grid-template-columns: repeat(5, 1fr);
+  }
+  
+  .heading-tertiary {
+    font-size: 2rem;
+    word-spacing: -1px;
+    letter-spacing: -1px;
+  }
+  
+  .product-name {
+    font-size: 1.6rem;
+    word-spacing: -1px;
+    letter-spacing: -1px;
+  }
+  
+  .header {
+    height: 7.5rem;
+    box-shadow: 0 0.3rem 0.8rem rgba(173, 173, 173, 0.4);
+    width: 100%;
+    position: fixed;
+    z-index: 999;
+    opacity: 1;
+    background-color: white;
+  }
+  
+  .navigation {
+    display: flex;
+  }
+  .navigation-logo img {
+    margin: 0.8rem 0;
+    width: 70%;
+  }
+  .navigation-links {
+    display: flex;
+    vertical-align: bottom;
+    font-size: 1.6rem;
+    flex-grow: 0.8;
+    align-items: end;
+    margin-bottom: 2rem;
+    gap: 2rem;
+    list-style: none;
+    margin-left: 10px;
+  }
+  @media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 667px) 
+  and (-webkit-min-device-pixel-ratio: 2) { 
+    .navigation-links {
+      visibility: hidden;
+    }
+}
+  .navigation-right {
+    width: 10rem;
+    display: inline-block;
+  }
+  .navigation-right-register {
+    display: flex;
+    justify-content: end;
+    padding: 0.2rem;
+    list-style: none;
+    font-size: 1.2rem;
+  }
+  .navigation-right-cart {
+    display: flex;
+    align-items: center;
+    background-color: #d6d6d6b3;
+    padding: 1.5rem 1.5rem;
+    margin-top: 1.1rem;
+    color: #3f3f3f;
+    text-decoration: none;
+  }
+  .navigation-right-cart img {
+    width: 2rem;
+  }
+  
+  .navigation-link-item {
+    color: #797878;
+    text-decoration: none;
+    font-weight: 600;
+  }
+  
+  .sign-in-item {
+    color: #3f3f3f;
+    text-decoration: none;
+  }
+
+  .register-item {
+    color: #3f3f3f;
+    text-decoration: none;
+    margin-left: 20px;
+  }
+  
+  @media (max-width: 75em) {
+    .container {
+      margin: 0 8rem;
+    }
+  }
+  @media (max-width: 63em) {
+    .container {
+      margin: 0 0rem;
+    }
+  
+    .grid-4-cols {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  
+    .product-details {
+      margin-bottom: 1rem;
+    }
+  }
+  @media (max-width: 37em) {
+    .grid-4-cols {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  
+    .nav-links {
+      display: none;
+    }
+  
+    .nav-right-register {
+      visibility: hidden;
+    }
+  
+    .product-nav-list {
+      display: none;
+    }
+  
+    .product-item-purchase span {
+      display: none;
+    }
+  }
+  .product {
+    display: flex;
+    padding-top: 7.5rem;
+  }
+  .product-nav-list {
+    width: 20rem;
+    flex-shrink: 0;
+    background-color: rgba(214, 214, 214, 0.3);
+  }
+  .product-nav-item {
+    font-size: 1.2rem;
+    padding: 10px 10px;
+    margin-left: 0.5rem;
+    list-style: none;
+    color: rgba(0, 0, 0, 0.5);
+    border-bottom: 1px solid #adadad;
+    cursor: pointer;
+  }
+  .product-list {
+    margin-top: 0.5rem;
+  }
+  .product-item {
+    padding: 0 10px 4px 10px;
+    box-shadow: 39px 1px 7px -33px rgba(170, 176, 170, 0.1);
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 25px;
+    border-bottom: 1px dashed #adadad;
+  }
+  .product-heading {
+    height: 5.4rem;
+  }
+  .product-item img {
+    width: 100%;
+    margin-top: 12px;
+  }
+  .product-description {
+    background-color: #d6d6d6;
+    padding: 10px;
+    margin-top: 8px;
+    height: 8rem;
+    overflow-y: scroll;
+  }
+  .product-purchase {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1rem;
+    margin-top: 8px;
+  }
+  .product-purchase span {
+    color: #3f3f3f;
+  }
+  .product-purchase button {
+    padding: 6px 10px;
+    border: 0;
+    background-color: #ca0655;
+    color: #fff;
+  }
+  
+  .footer {
+    background-color: #d6d6d6;
+  }
+  .footer-container {
+    font-size: 1.8rem;
+    padding: 0.8px 0;
+  }

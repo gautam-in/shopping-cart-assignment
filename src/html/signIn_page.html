@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sabka Bazaar</title>
+    <link rel="stylesheet" href="../css/signIn_page.css">
+</head>
+
+<body>
+    <header class="header container">
+        <nav class="navigation">
+            <div class="navigation-logo">
+                <img src="../../static/images/logo.png" alt="logo" class="nav-logo-image">
+            </div>
+            <ul class="navigation-links">
+                <li><a href="./home_page.html" class="navigation-link-item">Home</a></li>
+                <li><a href="./product-list.html" class="navigation-link-item">Products</a></li>
+            </ul>
+            <div class="navigation-right">
+                <ul class="navigation-right-register">
+                    <li><a href="./signIn_page.html" class="sign-in-item">Signin</a></li>
+                    <li><a href="./registration_page.html" class="register-item">Register</a></li>
+                </ul>
+                <div>
+                    <a class="navigation-right-cart" href="./cart.html">
+                        <img src="../../static/images/cart.svg" alt="cart" class="cart">
+                        <span>&nbsp; 0 items</span>
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+        <div class="login grid grid-2-cols">
+            <div class="login-head">
+                <h2>Login</h2>
+                <p>Get access to your Orders. Wishlist and recomendarion.</p>
+            </div>
+            <form class="login-container" onsubmit="onSignin(event)">
+                <div class="form-group">
+                    <label for="email" class="label">Email </label>
+                    <input type="text" id="email" class="form-control" onfocus="onInputFocus(event)" onblur="onInputBlur(event)" placeholder="Example: test@test.com" required autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <input type="password" id="password" class="form-control"onfocus="onInputFocus(event)" onblur="onInputBlur(event)" placeholder="Password" required autocomplete="off">
+                </div>
+
+                <div>
+                    <input type="submit"  class="btn" value="Login">
+                </div>
+            </form>
+        </div>
+    </main>
+
+
+    <footer class="container footer">
+        <div class="footer-container">
+            Copyright &copy; 2021 Sabka Bazaar Grocery Suppliers Pvt Ltd
+        </div>
+    </footer>
+
+</body>
+
+</html>
