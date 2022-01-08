@@ -1,0 +1,9 @@
+@import "./common/_variables.scss";
+
+html {
+  font-size: 62.5%;
+}
+div {
+  font-size: 2rem;
+  background-color: $accent;
+}
