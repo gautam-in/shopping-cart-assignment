@@ -36,6 +36,8 @@ build/Release
 node_modules/
 jspm_packages/
 server/node_modules
+client/node_modules
+client/dist
 server/.env
 
 # TypeScript v1 declaration files
