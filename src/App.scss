@@ -1,9 +1,12 @@
 @import "./common/_variables.scss";
+@import "./common/_mixins.scss";
 
 html {
-  font-size: 62.5%;
+  color: $gray;
 }
-div {
-  font-size: 2rem;
-  background-color: $accent;
+
+.shopping-site {
+  display: grid;
+  grid-template-rows: 65px auto;
+  grid-template-columns: 1fr;
 }

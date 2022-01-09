@@ -8,18 +8,18 @@
       "type": "image/x-icon"
     },
     {
-      "src": "logo192.png",
+      "src": "logo.png",
       "type": "image/png",
-      "sizes": "192x192"
+      "sizes": "190x86"
     },
     {
-      "src": "logo512.png",
+      "src": "logo_2x.png",
       "type": "image/png",
-      "sizes": "512x512"
+      "sizes": "380x173"
     }
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "theme_color": "#bf2957",
+  "background_color": "#79d7e1"
 }

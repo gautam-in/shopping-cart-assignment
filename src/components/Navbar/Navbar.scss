@@ -1,0 +1,18 @@
+.navlinks li {
+  list-style: none;
+  display: inline-block;
+}
+
+.navigation-bar {
+  display: flex;
+  justify-content: space-around;
+  height: 100%;
+}
+
+.navbar-branding {
+  flex-grow: 1;
+}
+
+.navlinks {
+  flex-basis: 40%;
+}
