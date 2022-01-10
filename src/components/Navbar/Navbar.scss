@@ -1,18 +1,105 @@
-.navlinks li {
-  list-style: none;
-  display: inline-block;
-}
+@import "../../common/_variables";
+@import "../../common/_mixins";
 
 .navigation-bar {
   display: flex;
   justify-content: space-around;
   height: 100%;
+  box-shadow: 0 0 10px lightgray;
+  position: relative;
+
+  .navbar-branding {
+    flex-grow: 1;
+    height: 65px;
+    img {
+      height: 100%;
+      padding: 1rem;
+    }
+  }
+
+  .navlinks {
+    position: absolute;
+    top: 20px;
+    color: $gray;
+    .hamburger {
+      @include centralize;
+      min-width: 125px;
+      font-size: $medText;
+    }
+
+    li {
+      display: none;
+      list-style: none;
+      padding: 0.5rem 2rem;
+      background: $light;
+      border-right: 5px solid $accent;
+      a {
+        text-decoration: none;
+        font-weight: 600;
+        &:visited {
+          color: $gray;
+        }
+      }
+    }
+
+    &:hover li {
+      display: block;
+    }
+  }
+
+  .cart {
+    flex-basis: 100px;
+    button {
+      width: 100%;
+      font-family: $defaultFontFamily;
+      height: 100%;
+      outline: none;
+      border: 0;
+      .cart-icon {
+        font-size: $medText;
+        color: $primary;
+        margin-right: 1rem;
+      }
+    }
+  }
 }
 
-.navbar-branding {
-  flex-grow: 1;
+@media screen and (min-width: 500px) {
+  .navlinks {
+    position: static;
+
+    .hamburger {
+      display: none !important;
+    }
+
+    flex-basis: 40%;
+    max-width: 300px;
+    display: flex !important;
+    justify-content: space-around;
+
+    li {
+      list-style: none;
+      display: inline-block !important;
+      padding: 0 0.5rem !important;
+      background: none !important;
+      border-right: none !important;
+      font-size: $smallText;
+
+      a {
+        text-decoration: none;
+        font-weight: 600;
+        &:visited {
+          color: $gray;
+        }
+      }
+    }
+  }
 }
 
-.navlinks {
-  flex-basis: 40%;
+@media screen and (min-width: 600px) {
+  .navlinks {
+    li {
+      font-size: $normalText;
+    }
+  }
 }

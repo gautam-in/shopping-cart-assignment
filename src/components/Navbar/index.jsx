@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "./Navbar.scss";
 import logo from "../../assets/images/logo.png";
 
-import { FaShoppingCart } from "react-icons/fa";
+import { FaShoppingCart, FaStream } from "react-icons/fa";
 
 class Navbar extends Component {
   constructor(props) {
@@ -10,6 +10,7 @@ class Navbar extends Component {
 
     this.state = {
       categories: [],
+      items: [],
     };
   }
 
@@ -17,9 +18,12 @@ class Navbar extends Component {
     return (
       <nav className="navigation-bar">
         <div className="navbar-branding">
-          <img src={logo} alt="Brand logo" />
+          <img src={logo} alt="Sabka Bazar Logo" />
         </div>
         <ul className="navlinks">
+          <span className="hamburger">
+            <FaStream />
+          </span>
           <li>
             <a href="#">Home</a>
           </li>
@@ -35,7 +39,10 @@ class Navbar extends Component {
         </ul>
         <div className="cart">
           <button>
-            <FaShoppingCart />
+            <span className="cart-icon">
+              <FaShoppingCart />
+            </span>{" "}
+            {this.state.items.length} items
           </button>
         </div>
       </nav>
