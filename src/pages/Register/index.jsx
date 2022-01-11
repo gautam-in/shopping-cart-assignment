@@ -160,7 +160,12 @@ class Register extends Component {
               value={this.state.confirmPassword}
               handleChange={this.handleChange}
             />
-            <input type="submit" id="signup-button" value="Sign Up" />
+            <input
+              aria-label="Sign up"
+              type="submit"
+              id="signup-button"
+              value="Sign Up"
+            />
           </form>
         </div>
       </section>

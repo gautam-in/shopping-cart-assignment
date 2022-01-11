@@ -1,19 +1,24 @@
 import React, { Component } from "react";
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import "./Carousel.scss";
+import { Carousel as Banner } from "react-responsive-carousel";
 
 class Carousel extends Component {
   render() {
+    const images = require.context("../..", true);
+
     return (
-      <ul>
+      <Banner showThumbs={false}>
         {this.props.banners.map((banner) => (
-          <li>
-            {/* <img src={require("./../.." + banner.bannerImageUrl)} alt="" /> */}
+          <div>
             <img
-              src={require("../../assets/images/offers/offer1.jpg")}
-              alt=""
+              key={banner.id}
+              src={images(`.${banner.bannerImageUrl}`)}
+              alt={banner.bannerImageAlt}
             />
-          </li>
+          </div>
         ))}
-      </ul>
+      </Banner>
     );
   }
 }

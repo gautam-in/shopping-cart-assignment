@@ -93,7 +93,12 @@ class Login extends Component {
               handleChange={this.handleChange}
             />
 
-            <input type="submit" id="login-button" value="Login" />
+            <input
+              aria-label="Log in"
+              type="submit"
+              id="login-button"
+              value="Login"
+            />
           </form>
         </div>
       </section>
