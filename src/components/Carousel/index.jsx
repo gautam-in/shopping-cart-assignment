@@ -8,17 +8,18 @@ class Carousel extends Component {
     const images = require.context("../..", true);
 
     return (
-      <Banner showThumbs={false}>
-        {this.props.banners.map((banner) => (
-          <div>
-            <img
-              key={banner.id}
-              src={images(`.${banner.bannerImageUrl}`)}
-              alt={banner.bannerImageAlt}
-            />
-          </div>
-        ))}
-      </Banner>
+      <header>
+        <Banner showThumbs={false}>
+          {this.props.banners.map((banner) => (
+            <div key={banner.id}>
+              <img
+                src={images(`.${banner.bannerImageUrl}`)}
+                alt={banner.bannerImageAlt}
+              />
+            </div>
+          ))}
+        </Banner>
+      </header>
     );
   }
 }

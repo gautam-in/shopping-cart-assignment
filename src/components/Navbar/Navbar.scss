@@ -20,7 +20,9 @@
   .navlinks {
     position: absolute;
     top: 20px;
+    z-index: 2;
     color: $gray;
+
     .hamburger {
       @include centralize;
       min-width: 125px;
