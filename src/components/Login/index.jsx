@@ -18,6 +18,7 @@ class Login extends Component {
     };
   }
 
+  // Handles input value changes for controlled component
   handleChange = (e) => {
     const { name, value } = e.target;
     if (!(name && value)) return;
@@ -26,19 +27,20 @@ class Login extends Component {
     });
   };
 
+  // Handles form submission for controlled component
   handleSubmit = (e) => {
     e.preventDefault();
     const isEmailValid = checkValidEmail(this.state.email);
     const listOfpasswordErrors = checkValidPassword(this.state.password);
-    this.setState({
-      email: "",
-      password: "",
-    });
     if (!isEmailValid || listOfpasswordErrors.length) {
       this.setErrors(isEmailValid, listOfpasswordErrors);
       return;
     }
     this.submitForm();
+    this.setState({
+      email: "",
+      password: "",
+    });
   };
 
   submitForm = () => {
@@ -79,7 +81,9 @@ class Login extends Component {
             {/* Email field */}
             <label htmlFor="email">Email</label>
             {this.state.errors.email && (
-              <small className="error-message">{this.state.errors.email}</small>
+              <div className="error-message">
+                <small>{this.state.errors.email}</small>
+              </div>
             )}
             <input
               type="text"
@@ -89,17 +93,20 @@ class Login extends Component {
               value={this.state.email}
               onChange={this.handleChange}
             />
+
             {/* Password field */}
             <label htmlFor="password">Password</label>
             {this.state.errors.password.length ? (
-              <small className="error-message">
-                Sorry, your password:
-                <ul>
-                  {this.state.errors.password.map((error) => (
-                    <li>{error}</li>
-                  ))}
-                </ul>
-              </small>
+              <div className="error-message">
+                <small>
+                  Sorry, your password:
+                  <ul>
+                    {this.state.errors.password.map((error) => (
+                      <li key={error}>{error}</li>
+                    ))}
+                  </ul>
+                </small>
+              </div>
             ) : (
               ""
             )}

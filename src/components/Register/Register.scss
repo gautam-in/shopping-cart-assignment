@@ -7,13 +7,13 @@
   & > div {
     @include centralize;
     flex-basis: 100%;
-    padding: 3rem 1rem;
+    padding: 3rem $small;
   }
 
   .signup-header {
     flex-wrap: wrap;
     padding-bottom: 0;
-    font-size: $large;
+    font-size: $medium;
     padding-top: $large;
     text-align: center;
   }
@@ -21,39 +21,67 @@
   .signup-form form {
     display: flex;
     flex-wrap: wrap;
+    max-width: 350px;
+
+    .error-message {
+      flex-basis: 100%;
+      color: red;
+      padding: $normal $small;
+      background: lighten(red, 45%);
+    }
+
+    label {
+      flex-basis: 100%;
+    }
 
     #email,
     #password,
-    button {
+    #signup-button {
       flex-basis: 100%;
-      padding: $small 0;
       margin-bottom: 2rem;
+      padding: 0.5rem 0;
     }
 
-    button {
+    input[type="text"],
+    input[type="password"] {
+      @include material-input;
+    }
+
+    #signup-button {
+      transition: all 0.3s;
       background-color: $primary;
       color: white;
       border: none;
       font-size: $normal;
+      cursor: pointer;
+
+      &:hover {
+        background-color: darken($color: $primary, $amount: 10%);
+      }
     }
   }
 }
 
 @media screen and (min-width: 500px) {
   .signup {
-    display: flex;
     flex-wrap: nowrap;
 
     .signup-form {
-      flex-basis: 50%;
+      flex-basis: 40%;
     }
 
     .signup-header {
       display: flex;
-      align-content: center;
+      margin-top: $normal;
+      align-content: flex-start;
       justify-content: flex-end;
       text-align: left;
       flex-basis: 40%;
+      font-size: $normal;
+
+      h1 {
+        margin-bottom: $normal;
+      }
     }
   }
 }

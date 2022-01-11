@@ -7,7 +7,7 @@
   & > div {
     @include centralize;
     flex-basis: 100%;
-    padding: 3rem 1rem;
+    padding: 3rem $small;
   }
 
   .login-header {
@@ -21,10 +21,17 @@
   .login-form form {
     display: flex;
     flex-wrap: wrap;
+    max-width: 350px;
 
     .error-message {
       flex-basis: 100%;
       color: red;
+      padding: $normal $small;
+      background: lighten(red, 45%);
+    }
+
+    label {
+      flex-basis: 100%;
     }
 
     #email,
@@ -32,7 +39,7 @@
     #login-button {
       flex-basis: 100%;
       margin-bottom: 2rem;
-      padding: $small 0;
+      padding: 0.5rem 0;
     }
 
     input[type="text"],
@@ -57,11 +64,10 @@
 
 @media screen and (min-width: 500px) {
   .login {
-    display: flex;
     flex-wrap: nowrap;
 
     .login-form {
-      flex-basis: 50%;
+      flex-basis: 40%;
     }
 
     .login-header {
