@@ -1,0 +1,59 @@
+@import "../../common/_variables";
+@import "../../common/_mixins";
+
+.signup {
+  display: flex;
+  flex-wrap: wrap;
+  & > div {
+    @include centralize;
+    flex-basis: 100%;
+    padding: 3rem 1rem;
+  }
+
+  .signup-header {
+    flex-wrap: wrap;
+    padding-bottom: 0;
+    font-size: $large;
+    padding-top: $large;
+    text-align: center;
+  }
+
+  .signup-form form {
+    display: flex;
+    flex-wrap: wrap;
+
+    #email,
+    #password,
+    button {
+      flex-basis: 100%;
+      padding: $small 0;
+      margin-bottom: 2rem;
+    }
+
+    button {
+      background-color: $primary;
+      color: white;
+      border: none;
+      font-size: $normal;
+    }
+  }
+}
+
+@media screen and (min-width: 500px) {
+  .signup {
+    display: flex;
+    flex-wrap: nowrap;
+
+    .signup-form {
+      flex-basis: 50%;
+    }
+
+    .signup-header {
+      display: flex;
+      align-content: center;
+      justify-content: flex-end;
+      text-align: left;
+      flex-basis: 40%;
+    }
+  }
+}

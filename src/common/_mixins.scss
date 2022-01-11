@@ -3,3 +3,14 @@
   align-items: center;
   justify-content: center;
 }
+
+@mixin material-input {
+  border: none;
+  box-shadow: 0 1px 0 $gray;
+  transition: all 0.3s;
+
+  &:focus {
+    box-shadow: 0 2px 0 $accent;
+    outline: none;
+  }
+}

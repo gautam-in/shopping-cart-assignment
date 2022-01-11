@@ -24,7 +24,7 @@
     .hamburger {
       @include centralize;
       min-width: 125px;
-      font-size: $medText;
+      font-size: $medium;
     }
 
     li {
@@ -32,13 +32,11 @@
       list-style: none;
       padding: 0.5rem 2rem;
       background: $light;
-      border-right: 5px solid $accent;
+      border-left: 5px solid $accent;
       a {
         text-decoration: none;
         font-weight: 600;
-        &:visited {
-          color: $gray;
-        }
+        color: $gray;
       }
     }
 
@@ -56,7 +54,7 @@
       outline: none;
       border: 0;
       .cart-icon {
-        font-size: $medText;
+        font-size: $medium;
         color: $primary;
         margin-right: 1rem;
       }
@@ -82,8 +80,8 @@
       display: inline-block !important;
       padding: 0 0.5rem !important;
       background: none !important;
-      border-right: none !important;
-      font-size: $smallText;
+      border-left: none !important;
+      font-size: $small;
 
       a {
         text-decoration: none;
@@ -99,7 +97,7 @@
 @media screen and (min-width: 600px) {
   .navlinks {
     li {
-      font-size: $normalText;
+      font-size: $normal;
     }
   }
 }

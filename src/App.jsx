@@ -1,7 +1,9 @@
 import React, { Component } from "react";
 import "./App.scss";
+import Login from "./components/Login";
 
 import Navbar from "./components/Navbar";
+import Register from "./components/Register";
 
 class App extends Component {
   render() {
@@ -10,7 +12,10 @@ class App extends Component {
         <header>
           <Navbar />
         </header>
-        <main></main>
+        <main>
+          <Login />
+          {/* <Register /> */}
+        </main>
       </div>
     );
   }

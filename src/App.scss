@@ -3,10 +3,17 @@
 
 html {
   color: $gray;
+  font-size: 80%;
 }
 
 .shopping-site {
   display: grid;
   grid-template-rows: 65px auto;
   grid-template-columns: 1fr;
+}
+
+@media screen and (min-width: 500px) {
+  html {
+    font-size: 100%;
+  }
 }
