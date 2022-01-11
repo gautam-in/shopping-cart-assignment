@@ -144,7 +144,7 @@ class Register extends Component {
               value={this.state.email}
               handleChange={this.handleChange}
             />
-            {/* Password field */}
+            {/* Password fields */}
             <InputField
               fieldControl={"password"}
               type={"password"}
