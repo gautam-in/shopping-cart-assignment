@@ -3,9 +3,10 @@ import {
   checkValidEmail,
   checkValidPassword,
 } from "../../services/formServices";
-import "./Register.scss";
+import InputField from "../../components/InputField";
+import "./Login.scss";
 
-class Register extends Component {
+class Login extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -69,57 +70,30 @@ class Register extends Component {
 
   render() {
     return (
-      <section className="signup">
-        <div className="signup-header">
+      <section className="login">
+        <div className="login-header">
           <span>
-            <h1>Sign Up</h1>
-            <p>We do not share your personal details with anyone</p>
+            <h1>Login</h1>
+            <p>Get access to your Orders, Wishlist and Recommendations</p>
           </span>
         </div>
-        <div className="signup-form">
+        <div className="login-form">
           <form onSubmit={this.handleSubmit}>
-            {/* Email field */}
-            <label htmlFor="email">Email</label>
-            {this.state.errors.email && (
-              <div className="error-message">
-                <small>{this.state.errors.email}</small>
-              </div>
-            )}
-            <input
-              type="text"
-              id="email"
-              name="email"
-              aria-required="true"
+            <InputField
+              fieldControl={"email"}
+              error={this.state.errors.email}
               value={this.state.email}
-              onChange={this.handleChange}
+              handleChange={this.handleChange}
             />
-
             {/* Password field */}
-            <label htmlFor="password">Password</label>
-            {this.state.errors.password.length ? (
-              <div className="error-message">
-                <small>
-                  Sorry, your password:
-                  <ul>
-                    {this.state.errors.password.map((error) => (
-                      <li key={error}>{error}</li>
-                    ))}
-                  </ul>
-                </small>
-              </div>
-            ) : (
-              ""
-            )}
-            <input
-              type="password"
-              id="password"
-              name="password"
-              aria-required="true"
+            <InputField
+              fieldControl={"password"}
+              error={this.state.errors.password}
               value={this.state.password}
-              onChange={this.handleChange}
+              handleChange={this.handleChange}
             />
 
-            <input type="submit" id="signup-button" value="Sign Up" />
+            <input type="submit" id="login-button" value="Login" />
           </form>
         </div>
       </section>
@@ -127,4 +101,4 @@ class Register extends Component {
   }
 }
 
-export default Register;
+export default Login;

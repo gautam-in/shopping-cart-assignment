@@ -13,3 +13,7 @@ export const checkValidPassword = (password) => {
     listOfErrors.push("Should contain atleast one letter");
   return listOfErrors;
 };
+
+export const checkNameValid = (name) => {
+  return name.length < 15 && name.length > 2;
+};

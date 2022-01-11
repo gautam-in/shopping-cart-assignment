@@ -1,7 +1,8 @@
 @import "../../common/_variables";
 @import "../../common/_mixins";
+@import "../../common/_classes";
 
-.login {
+.signup {
   display: flex;
   flex-wrap: wrap;
   & > div {
@@ -10,7 +11,7 @@
     padding: 3rem $small;
   }
 
-  .login-header {
+  .signup-header {
     flex-wrap: wrap;
     padding-bottom: 0;
     font-size: $medium;
@@ -18,42 +19,14 @@
     text-align: center;
   }
 
-  .login-form form {
+  .signup-form form {
     display: flex;
     flex-wrap: wrap;
     max-width: 350px;
 
-    .error-message {
+    #signup-button {
+      @extend .primary-button;
       flex-basis: 100%;
-      color: red;
-      padding: $normal $small;
-      background: lighten(red, 45%);
-    }
-
-    label {
-      flex-basis: 100%;
-    }
-
-    #email,
-    #password,
-    #login-button {
-      flex-basis: 100%;
-      margin-bottom: 2rem;
-      padding: 0.5rem 0;
-    }
-
-    input[type="text"],
-    input[type="password"] {
-      @include material-input;
-    }
-
-    #login-button {
-      transition: all 0.3s;
-      background-color: $primary;
-      color: white;
-      border: none;
-      font-size: $normal;
-      cursor: pointer;
 
       &:hover {
         background-color: darken($color: $primary, $amount: 10%);
@@ -63,14 +36,14 @@
 }
 
 @media screen and (min-width: 500px) {
-  .login {
+  .signup {
     flex-wrap: nowrap;
 
-    .login-form {
+    .signup-form {
       flex-basis: 40%;
     }
 
-    .login-header {
+    .signup-header {
       display: flex;
       margin-top: $normal;
       align-content: flex-start;

@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
+
 import "./Navbar.scss";
 import logo from "../../assets/images/logo.png";
 
@@ -25,16 +27,16 @@ class Navbar extends Component {
             <FaStream />
           </span>
           <li>
-            <a href="#">Home</a>
+            <Link to="/">Home</Link>
           </li>
           <li>
-            <a href="#">Products</a>
+            <Link to="/products">Products</Link>
           </li>
           <li>
-            <a href="#">Sign In</a>
+            <Link to="/login">Sign In</Link>
           </li>
           <li>
-            <a href="#">Register</a>
+            <Link to="/signup">Register</Link>
           </li>
         </ul>
         <div className="cart">

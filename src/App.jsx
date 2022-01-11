@@ -1,27 +1,31 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.scss";
+import Home from "./pages/Home";
 
-import Login from "./components/Login";
+import Login from "./pages/Login";
 import Navbar from "./components/Navbar";
-import Register from "./components/Register";
+import Products from "./pages/Products";
+import Register from "./pages/Register";
 
 class App extends Component {
   render() {
     return (
-      <div className="shopping-site">
-        <header>
-          <Navbar />
-        </header>
-        <main>
-          <Router>
+      <Router>
+        <div className="shopping-site">
+          <header>
+            <Navbar />
+          </header>
+          <main>
             <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/products" element={<Products />} />
               <Route path="/login" element={<Login />} />
               <Route path="/signup" element={<Register />} />
             </Routes>
-          </Router>
-        </main>
-      </div>
+          </main>
+        </div>
+      </Router>
     );
   }
 }
