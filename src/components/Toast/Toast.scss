@@ -1,0 +1,27 @@
+@import "../../common/_variables";
+@import "../../common/_classes";
+
+.toast {
+  @extend .material-shadow;
+  position: absolute;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: $small $large;
+  font-weight: 600;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  min-width: 250px;
+}
+
+.toast.success {
+  background: rgb(186, 241, 186);
+  border-bottom: 2px solid $primary;
+  color: $gray;
+}
+
+.toast.error {
+  background: $primary;
+  color: white;
+}

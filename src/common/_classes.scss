@@ -13,3 +13,7 @@
     background-color: darken($color: $primary, $amount: 10%);
   }
 }
+
+.material-shadow {
+  box-shadow: 2px 5px 10px rgb(0 0 0 / 15%);
+}
