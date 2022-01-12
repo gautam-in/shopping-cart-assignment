@@ -10,7 +10,8 @@ const Products = () => {
   const [loading, setLoading] = useState(true);
   const [products, setProducts] = useState([]);
   const [categories, setCategories] = useState([]);
-  const [searchParam, setSearchParam] = useSearchParams();
+  const [categoryId, setCategoryId] = useState([]);
+  const [searchParam, setSearchParam] = useSearchParams("");
 
   useEffect(() => {
     const fetchAPI = async () => {
@@ -29,6 +30,7 @@ const Products = () => {
         setProducts([]);
         setCategories([]);
       }
+      setCategoryId(searchParam.get("categoryId") || "");
     };
     setTimeout(fetchAPI, 300);
   }, []);
@@ -45,8 +47,7 @@ const Products = () => {
         <ProductListing
           products={products}
           categories={categories}
-          categoryId={searchParam.get("categoryId")}
-          setSearchParam={setSearchParam}
+          categoryId={categoryId}
         />
       )}
       {error && (

@@ -5,14 +5,23 @@ import "./ProductListing.scss";
 
 class ProductListing extends Component {
   render() {
-    const { products, categories } = this.props;
+    const { products, categories, categoryId } = this.props;
+    let filteredProducts;
+    if (categoryId) {
+      filteredProducts = products.filter(
+        (product) => product.category === categoryId
+      );
+    } else {
+      filteredProducts = products;
+    }
+
     return (
       <section className="product-listing">
         <div className="category-filter">
-          <CategoriesBar categories={categories} />
+          <CategoriesBar categoryId={categoryId} categories={categories} />
         </div>
         <div className="products">
-          {products.map((product) => (
+          {filteredProducts.map((product) => (
             <ProductCard key={product.id} product={product} />
           ))}
         </div>

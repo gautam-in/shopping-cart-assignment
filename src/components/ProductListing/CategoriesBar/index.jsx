@@ -5,16 +5,19 @@ import CategoriesList from "./CategoriesList";
 
 class CategoriesBar extends Component {
   render() {
-    const { categories } = this.props;
-    console.log(categories);
+    const { categories, categoryId } = this.props;
+
     return (
       <section className="categories-list">
         <aside>
           <div className="category-dropdown">
-            <CategoriesDropdown categories={categories} />
+            <CategoriesDropdown
+              categoryId={categoryId}
+              categories={categories}
+            />
           </div>
           <div className="category-list">
-            <CategoriesList categories={categories} />
+            <CategoriesList categoryId={categoryId} categories={categories} />
           </div>
         </aside>
       </section>

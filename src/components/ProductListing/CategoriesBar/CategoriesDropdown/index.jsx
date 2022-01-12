@@ -3,9 +3,25 @@ import "./CategoriesDropdown.scss";
 
 class CategoriesDropdown extends Component {
   render() {
-    const { categories } = this.props;
-    console.log(categories);
-    return <section className="categories-list">Categories Dropdown</section>;
+    const { categories, categoryId } = this.props;
+
+    return (
+      <section className="categories-dropdown">
+        <select
+          name="categories"
+          value={categoryId ? categoryId : ""}
+          aria-label="Categories"
+          // onChange={this.handleChange}
+        >
+          <option value="" disabled>
+            Select a category
+          </option>
+          {categories.map((category) => (
+            <option value={category.id}>{category.name}</option>
+          ))}
+        </select>
+      </section>
+    );
   }
 }
 
