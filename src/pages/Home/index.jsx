@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Carousel from "../../components/Carousel";
 import Category from "../../components/Category";
+import Loader from "../../components/Spinner";
 import { axiosFetch } from "../../services/utils";
 import "./Home.scss";
 
@@ -11,21 +12,27 @@ class Home extends Component {
     this.state = {
       banners: [],
       categories: [],
+      loading: true,
     };
   }
 
   componentDidMount() {
     // TODO: Error handling
-    axiosFetch("banners").then((resp) => {
-      this.setState({
-        banners: resp,
-      });
-    });
-    axiosFetch("categories").then((resp) => {
-      this.setState({
-        categories: resp,
-      });
-    });
+    setTimeout(() => {
+      axiosFetch("banners")
+        .then((resp) => {
+          this.setState({
+            banners: resp,
+          });
+          return axiosFetch("categories");
+        })
+        .then((resp) => {
+          this.setState({
+            categories: resp,
+            loading: false,
+          });
+        });
+    }, 500);
   }
 
   render() {
@@ -33,7 +40,9 @@ class Home extends Component {
       .filter((category) => category.enabled)
       .sort((a, b) => a.order - b.order);
 
-    return (
+    return this.state.loading ? (
+      <Loader />
+    ) : (
       <section>
         {/* Banner Carousel */}
         <Carousel banners={this.state.banners} />
