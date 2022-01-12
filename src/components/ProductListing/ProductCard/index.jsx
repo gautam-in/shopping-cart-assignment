@@ -13,7 +13,7 @@ class ProductCard extends Component {
         <p className="product-description">{product.description}</p>
         <div className="CTA">
           <div className="price">MRP Rs.{product.price}</div>
-          <button>
+          <button onClick={(e) => this.props.handleClick(product)}>
             Buy Now <span className="button-price">@Rs.{product.price}</span>
           </button>
         </div>

@@ -2,10 +2,10 @@ import React, { Component } from "react";
 import "./CategoriesList.scss";
 
 class CategoriesList extends Component {
-  handleChange = (e) => {
+  handleClick = (e) => {
     const categoryId = e.target.dataset.categoryid;
-    console.log(categoryId);
-    if (categoryId === "all") {
+    console.log({ categoryId, event: e.target });
+    if (e.target.className.includes("active-category")) {
       this.props.setSearchParam("");
       return;
     }
@@ -13,16 +13,9 @@ class CategoriesList extends Component {
   };
   render() {
     const { categories, categoryId } = this.props;
-
-    console.log("CategoryID", categoryId);
-
-    console.log(categories);
     return (
       <section className="categories-list">
-        <ul className="category-group" onClick={this.handleChange}>
-          <li data-categoryid="all" className="category-item">
-            All
-          </li>
+        <ul className="category-group" onClick={this.handleClick}>
           {categories.map((category) => (
             <li
               key={category.id}

@@ -3,7 +3,6 @@ import "./CategoriesDropdown.scss";
 
 class CategoriesDropdown extends Component {
   handleChange = (e) => {
-    console.log(e.target.value, window.location);
     if (e.target.value === "all") {
       this.props.setSearchParam("");
       return;
@@ -13,8 +12,6 @@ class CategoriesDropdown extends Component {
 
   render() {
     const { categories, categoryId } = this.props;
-
-    console.log("CategoryID", categoryId);
 
     return (
       <section className="categories-dropdown">

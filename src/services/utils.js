@@ -8,3 +8,10 @@ export const axiosFetch = (endpoint) => {
     return resp.data;
   });
 };
+
+export const axiosPost = (endpoint, payload) => {
+  return axios.post(baseUrl + endpoint, payload).then((resp) => {
+    console.log(endpoint + ":", resp);
+    return resp.data;
+  });
+};
