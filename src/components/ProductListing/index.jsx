@@ -18,7 +18,11 @@ class ProductListing extends Component {
     return (
       <section className="product-listing">
         <div className="category-filter">
-          <CategoriesBar categoryId={categoryId} categories={categories} />
+          <CategoriesBar
+            categoryId={categoryId}
+            categories={categories}
+            setSearchParam={this.props.setSearchParam}
+          />
         </div>
         <div className="products">
           {filteredProducts.map((product) => (

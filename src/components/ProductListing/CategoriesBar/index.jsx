@@ -14,10 +14,15 @@ class CategoriesBar extends Component {
             <CategoriesDropdown
               categoryId={categoryId}
               categories={categories}
+              setSearchParam={this.props.setSearchParam}
             />
           </div>
           <div className="category-list">
-            <CategoriesList categoryId={categoryId} categories={categories} />
+            <CategoriesList
+              categoryId={categoryId}
+              categories={categories}
+              setSearchParam={this.props.setSearchParam}
+            />
           </div>
         </aside>
       </section>

@@ -17,7 +17,10 @@ const Products = () => {
     const fetchAPI = async () => {
       try {
         const categories = await axiosFetch("categories");
-        setCategories(categories);
+        const enabledCategories = categories
+          .filter((category) => category.enabled)
+          .sort((a, b) => a.order - b.order);
+        setCategories(enabledCategories);
         setError(false);
 
         const products = await axiosFetch("products");
@@ -33,7 +36,7 @@ const Products = () => {
       setCategoryId(searchParam.get("categoryId") || "");
     };
     setTimeout(fetchAPI, 300);
-  }, []);
+  }, [searchParam]);
 
   const closeToast = () => {
     setError(false);
@@ -48,6 +51,7 @@ const Products = () => {
           products={products}
           categories={categories}
           categoryId={categoryId}
+          setSearchParam={setSearchParam}
         />
       )}
       {error && (
