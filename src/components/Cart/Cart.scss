@@ -1,0 +1,29 @@
+@import "../../common/variables";
+
+.mini-cart-overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+
+  .mini-cart {
+    position: fixed;
+    bottom: 0;
+    right: $normal;
+    background: #fff;
+
+    .cart-header {
+      cursor: pointer;
+      width: 100%;
+      background: $gray;
+      color: #fff;
+      padding: $normal $small;
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+}

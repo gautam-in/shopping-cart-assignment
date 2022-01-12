@@ -8,7 +8,8 @@ import { FaShoppingCart, FaStream } from "react-icons/fa";
 
 class Navbar extends Component {
   render() {
-    const { items } = this.props;
+    const { items, showCart } = this.props;
+
     return (
       <nav className="navigation-bar">
         <div className="navbar-branding">
@@ -32,7 +33,7 @@ class Navbar extends Component {
           </li>
         </ul>
         <div className="cart">
-          <button>
+          <button onClick={showCart}>
             <span className="cart-icon">
               <FaShoppingCart />
             </span>{" "}

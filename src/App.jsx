@@ -9,31 +9,46 @@ import Products from "./pages/Products";
 import Register from "./pages/Register";
 import { CartProvider } from "./services/cartContext";
 import cartServices from "./services/cartServices";
+import Cart from "./components/Cart";
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      items: 0,
+      items: {},
+      isCartShown: false,
     };
   }
 
   updateCart = () => {
-    let numberOfItems = 0;
-    for (let product in cartServices.products) {
-      numberOfItems += cartServices.products[product].count;
-    }
     this.setState({
-      items: numberOfItems,
+      items: cartServices.products,
+    });
+  };
+
+  showCart = () => {
+    this.setState({
+      isCartShown: true,
+    });
+  };
+
+  closeCart = () => {
+    this.setState({
+      isCartShown: false,
     });
   };
 
   render() {
+    let numberOfItems = 0;
+    for (let product in this.state.items) {
+      numberOfItems += this.state.items[product].count;
+    }
+
     return (
       <Router>
         <div className="shopping-site">
           <header>
-            <Navbar items={this.state.items} />
+            <Navbar items={numberOfItems} showCart={this.showCart} />
           </header>
           <main>
             <CartProvider value={this.updateCart}>
@@ -44,6 +59,13 @@ class App extends Component {
                 <Route path="/signup" element={<Register />} />
               </Routes>
             </CartProvider>
+            {this.state.isCartShown && (
+              <Cart
+                items={this.state.items}
+                numberOfItems={numberOfItems}
+                closeCart={this.closeCart}
+              />
+            )}
           </main>
         </div>
       </Router>

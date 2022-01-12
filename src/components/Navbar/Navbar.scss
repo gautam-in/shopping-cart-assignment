@@ -51,6 +51,7 @@
   .cart {
     flex-basis: 100px;
     button {
+      cursor: pointer;
       width: 100%;
       font-family: $defaultFontFamily;
       height: 100%;
