@@ -4,8 +4,12 @@ import ProductCard from "./ProductCard";
 import { axiosPost } from "../../services/utils";
 import "./ProductListing.scss";
 import Toast from "../Toast";
+import cartServices from "../../services/cartServices";
+import { CartContext } from "../../services/cartContext";
 
 class ProductListing extends Component {
+  static contextType = CartContext;
+
   constructor(props) {
     super(props);
     this.state = {
@@ -15,7 +19,11 @@ class ProductListing extends Component {
 
   handleClick = async (product) => {
     try {
+      cartServices.addToCart({ ...product });
+      const updateCart = this.context;
+      updateCart();
       await axiosPost("addToCartToast", { productId: product.id });
+      this.setState((prevState) => ({ addToCartToast: true }));
     } catch (e) {
       this.setState((prevState) => ({ addToCartToast: true }));
     }

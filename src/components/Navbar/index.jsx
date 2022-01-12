@@ -7,16 +7,8 @@ import logo from "../../assets/images/logo.png";
 import { FaShoppingCart, FaStream } from "react-icons/fa";
 
 class Navbar extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      categories: [],
-      items: [],
-    };
-  }
-
   render() {
+    const { items } = this.props;
     return (
       <nav className="navigation-bar">
         <div className="navbar-branding">
@@ -44,7 +36,7 @@ class Navbar extends Component {
             <span className="cart-icon">
               <FaShoppingCart />
             </span>{" "}
-            {this.state.items.length} items
+            {items} item{items === 1 ? "" : "s"}
           </button>
         </div>
       </nav>
