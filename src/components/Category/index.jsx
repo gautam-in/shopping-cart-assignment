@@ -18,7 +18,7 @@ class Category extends Component {
         <div className="description">
           <h1>{category.name}</h1>
           <p>{category.description}</p>
-          <Link to={"/category/" + category.id}>
+          <Link to={"/products?categoryId=" + category.id}>
             <button className="explore-category">
               Explore {category.name}
             </button>

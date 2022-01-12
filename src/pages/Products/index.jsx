@@ -1,68 +1,63 @@
-import React, { Component } from "react";
+import { useEffect, useState } from "react";
+import { useSearchParams } from "react-router-dom";
+import ProductListing from "../../components/ProductListing";
 import Loader from "../../components/Spinner";
 import Toast from "../../components/Toast";
 import { axiosFetch } from "../../services/utils";
 
-class Products extends Component {
-  constructor(props) {
-    super(props);
+const Products = () => {
+  const [error, setError] = useState(false);
+  const [loading, setLoading] = useState(true);
+  const [products, setProducts] = useState([]);
+  const [categories, setCategories] = useState([]);
+  const [searchParam, setSearchParam] = useSearchParams();
 
-    this.state = {
-      products: [],
-      categories: [],
-      loading: true,
-      error: false,
+  useEffect(() => {
+    const fetchAPI = async () => {
+      try {
+        const categories = await axiosFetch("categories");
+        setCategories(categories);
+        setError(false);
+
+        const products = await axiosFetch("products");
+        setProducts(products);
+        setError(false);
+        setLoading(false);
+      } catch (err) {
+        setLoading(false);
+        setError(true);
+        setProducts([]);
+        setCategories([]);
+      }
     };
-  }
+    setTimeout(fetchAPI, 300);
+  }, []);
 
-  componentDidMount() {
-    setTimeout(() => {
-      axiosFetch("categories")
-        .then((resp) => {
-          this.setState({
-            categories: resp,
-            error: false,
-          });
-          return axiosFetch("products");
-        })
-        .then((resp) => {
-          this.setState({
-            products: resp,
-            loading: false,
-            error: false,
-          });
-        })
-        .catch((err) => {
-          this.setState({
-            products: [],
-            categories: [],
-            loading: false,
-            error: true,
-          });
-        });
-    }, 300);
-  }
-
-  closeToast = () => {
-    this.setState({
-      error: false,
-    });
+  const closeToast = () => {
+    setError(false);
   };
 
-  render() {
-    return (
-      <>
-        {this.state.loading ? <Loader /> : <section>Product</section>}
-        {this.state.error && (
-          <Toast
-            toastType="error"
-            textMessage="Sorry something went wrong!"
-            closeToast={this.closeToast}
-          />
-        )}
-      </>
-    );
-  }
-}
+  return (
+    <>
+      {loading ? (
+        <Loader />
+      ) : (
+        <ProductListing
+          products={products}
+          categories={categories}
+          categoryId={searchParam.get("categoryId")}
+          setSearchParam={setSearchParam}
+        />
+      )}
+      {error && (
+        <Toast
+          toastType="error"
+          textMessage="Sorry something went wrong!"
+          closeToast={closeToast}
+        />
+      )}
+    </>
+  );
+};
 
 export default Products;
