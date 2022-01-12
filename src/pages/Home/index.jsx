@@ -43,7 +43,7 @@ class Home extends Component {
             error: true,
           });
         });
-    }, 500);
+    }, 300);
   }
 
   closeToast = () => {
