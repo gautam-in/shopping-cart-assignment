@@ -1,0 +1,13 @@
+.category-list {
+  display: none;
+}
+
+@media screen and (min-width: 500px) {
+  .category-dropdown {
+    display: none;
+  }
+
+  .category-list {
+    display: block;
+  }
+}

@@ -5,7 +5,6 @@ class ProductCard extends Component {
   render() {
     const image = require.context("../../..", true);
     const { product } = this.props;
-    console.log("From ProductCard:", product);
     // TODO: ARIA labels
     return (
       <section className="product-card">

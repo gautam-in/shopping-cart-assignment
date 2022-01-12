@@ -78,7 +78,6 @@ class Register extends Component {
         confirmPassword: "",
       },
     });
-    console.log(this.state);
   };
 
   setErrors = (

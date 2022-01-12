@@ -51,7 +51,6 @@ class Login extends Component {
         password: [],
       },
     });
-    console.log(this.state);
   };
 
   setErrors = (isEmailValid, listOfpasswordErrors) => {
