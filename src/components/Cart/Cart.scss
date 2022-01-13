@@ -9,12 +9,15 @@
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.5);
+  z-index: 2;
 
   .mini-cart {
     position: fixed;
     bottom: 0;
-    right: $normal;
+    width: 100%;
+    height: 100%;
     background: #fff;
+    z-index: inherit;
 
     .cart-header {
       cursor: pointer;
@@ -22,8 +25,36 @@
       background: $gray;
       color: #fff;
       padding: $normal $small;
+      font-weight: 700;
       display: flex;
       justify-content: space-between;
+
+      h1 {
+        font-size: $normal;
+
+        .number-of-items {
+          font-weight: 400;
+        }
+      }
     }
+
+    .cart-body {
+      display: flex;
+      width: 100%;
+      height: 100%;
+
+      .no-items {
+        align-self: center;
+        margin: 0 auto;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 500px) {
+  .mini-cart {
+    right: $normal;
+    width: 400px !important;
+    height: 600px !important;
   }
 }
