@@ -47,6 +47,12 @@
         align-self: center;
         margin: 0 auto;
       }
+
+      .cart-items {
+        padding-left: 0;
+        background: $lightgray;
+        width: 100%;
+      }
     }
   }
 }

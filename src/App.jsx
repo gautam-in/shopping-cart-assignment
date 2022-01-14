@@ -58,14 +58,14 @@ class App extends Component {
                 <Route path="/login" element={<Login />} />
                 <Route path="/signup" element={<Register />} />
               </Routes>
+              {this.state.isCartShown && (
+                <Cart
+                  items={this.state.items}
+                  numberOfItems={numberOfItems}
+                  closeCart={this.closeCart}
+                />
+              )}
             </CartProvider>
-            {this.state.isCartShown && (
-              <Cart
-                items={this.state.items}
-                numberOfItems={numberOfItems}
-                closeCart={this.closeCart}
-              />
-            )}
           </main>
         </div>
       </Router>

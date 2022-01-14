@@ -21,7 +21,7 @@ class Cart extends Component {
           </header>
           <section className="cart-body">
             {items.length ? (
-              <ul>
+              <ul className="cart-items">
                 {items.map((item) => (
                   <CartItem item={item} />
                 ))}

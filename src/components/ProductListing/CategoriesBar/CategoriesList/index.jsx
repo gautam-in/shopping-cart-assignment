@@ -4,7 +4,6 @@ import "./CategoriesList.scss";
 class CategoriesList extends Component {
   handleClick = (e) => {
     const categoryId = e.target.dataset.categoryid;
-    console.log({ categoryId, event: e.target });
     if (e.target.className.includes("active-category")) {
       this.props.setSearchParam("");
       return;
