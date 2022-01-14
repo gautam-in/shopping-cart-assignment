@@ -16,29 +16,6 @@
   .item-details {
     flex-grow: 1;
     padding-left: $small;
-
-    .item-count-price {
-      display: flex;
-      align-items: center;
-      height: 40px;
-
-      .item-count-section {
-        margin-right: $small;
-
-        button {
-          @extend .primary-button;
-          width: $medium;
-          height: $medium;
-          border-radius: 2px;
-          margin: 0;
-          padding: 0;
-        }
-
-        .item-count {
-          margin: auto $small;
-        }
-      }
-    }
   }
 
   .item-total {

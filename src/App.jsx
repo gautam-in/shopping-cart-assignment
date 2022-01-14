@@ -17,12 +17,15 @@ class App extends Component {
     this.state = {
       items: {},
       isCartShown: false,
+      total: 0,
     };
   }
 
   updateCart = () => {
+    cartServices.getTotal();
     this.setState({
       items: cartServices.products,
+      total: cartServices.total,
     });
   };
 
@@ -61,6 +64,7 @@ class App extends Component {
               {this.state.isCartShown && (
                 <Cart
                   items={this.state.items}
+                  total={this.state.total}
                   numberOfItems={numberOfItems}
                   closeCart={this.closeCart}
                 />
