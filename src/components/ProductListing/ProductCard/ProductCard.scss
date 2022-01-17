@@ -1,0 +1,130 @@
+@import "../../../common/variables";
+@import "../../../common/classes";
+
+.product-card {
+  flex-basis: 100%;
+  background: #fff;
+  margin-bottom: $small;
+  padding-bottom: $small;
+  border-bottom: 1px dashed lightgray;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto 1fr 30px;
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    display: block;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.25);
+    width: 95%;
+    height: 80%;
+    top: 10%;
+    left: 2.5%;
+    border-radius: 40%;
+    z-index: -1;
+  }
+
+  h1 {
+    grid-column: 1 / span2;
+  }
+
+  img {
+    width: 100%;
+    grid-column: 1/2;
+    grid-row: 2/4;
+    align-self: center;
+  }
+
+  .price {
+    display: none;
+  }
+
+  .product-description {
+    background-color: $lightgray;
+    padding: $normal;
+    grid-column: 2/3;
+    grid-row: 2/3;
+    margin-bottom: $normal;
+  }
+
+  .CTA {
+    grid-column: 2/3;
+    grid-row: 3/4;
+    button {
+      @extend .primary-button;
+      width: 100%;
+    }
+  }
+}
+
+@media screen and (min-width: 680px) {
+  .product-card {
+    flex-basis: 47%;
+    img {
+      grid-column: 1/2;
+      grid-row: 2/3;
+    }
+
+    .product-description {
+      font-size: $small;
+    }
+    .CTA {
+      grid-column: 1/-1;
+      grid-row: 3/4;
+    }
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .product-card {
+    flex-basis: 31%;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto minmax(150px, auto) minmax(100px, auto) 35px;
+
+    h1 {
+      grid-column: 1/2;
+      grid-row: 1/2;
+    }
+
+    img {
+      width: 100%;
+      grid-column: 1/2;
+      grid-row: 2/3;
+    }
+
+    .product-description {
+      background-color: $lightgray;
+      padding: $normal;
+      grid-column: 1/2;
+      grid-row: 3/4;
+      //   font-size: $normal;
+    }
+
+    .CTA {
+      grid-column: 1/2;
+      grid-row: 4/5;
+      display: flex;
+
+      .price {
+        flex-basis: 50%;
+        display: block;
+        text-align: center;
+      }
+
+      button {
+        flex-basis: 50%;
+        height: 100%;
+        .button-price {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .product-card {
+    flex-basis: 23%;
+  }
+}

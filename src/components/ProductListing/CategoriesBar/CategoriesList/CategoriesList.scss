@@ -1,0 +1,28 @@
+@import "../../../../common/variables";
+
+.categories-list {
+  background: $lightgray;
+  .category-group {
+    list-style: none;
+    padding: 0;
+    color: $gray;
+    cursor: pointer;
+
+    .category-item {
+      width: 100%;
+      padding: $normal $small;
+      border-bottom: 1px solid lightgray;
+    }
+  }
+
+  .active-category {
+    background: $primary;
+    color: white;
+  }
+}
+
+@media screen and (min-width: 500px) {
+  .categories-list {
+    padding: $large 0;
+  }
+}

@@ -1,0 +1,21 @@
+@import "../../../../common/variables";
+@import "../../../../common/mixins";
+
+.categories-dropdown {
+  @include centralize;
+  height: 50px;
+  background: $primary;
+
+  select {
+    background: $primary;
+    padding: 0 1rem;
+    width: 90%;
+    border: none;
+    font-size: $medium;
+    color: white;
+
+    &:focus {
+      outline: none;
+    }
+  }
+}

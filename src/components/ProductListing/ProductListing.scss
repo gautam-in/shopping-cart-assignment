@@ -1,0 +1,21 @@
+@import "../../common/variables";
+
+.product-listing {
+  display: grid;
+  grid-template-rows: 50px 1fr;
+  gap: 10px;
+
+  .products {
+    display: flex;
+    gap: 20px;
+    padding: 0 $medium;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+  }
+}
+
+@media screen and (min-width: 500px) {
+  .product-listing {
+    grid-template-columns: 180px 1fr;
+  }
+}

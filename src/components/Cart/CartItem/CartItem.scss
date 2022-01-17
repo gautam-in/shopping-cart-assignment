@@ -1,0 +1,27 @@
+@import "../../../common/variables";
+@import "../../../common/classes";
+
+.cart-item {
+  min-height: 90px;
+  display: flex;
+  padding: $small;
+  margin: $normal auto;
+  background: #fff;
+
+  img {
+    height: 4rem;
+    flex-shrink: 1;
+  }
+
+  .item-details {
+    flex-grow: 1;
+    padding-left: $small;
+  }
+
+  .item-total {
+    flex-basis: 15%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

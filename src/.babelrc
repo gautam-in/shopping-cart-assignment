@@ -1,0 +1,21 @@
+{     
+    "env": {
+      "test": {
+        "presets": [
+          "jest",
+          "@babel/preset-react",
+          [
+            "@babel/preset-env",
+            {
+              "debug": false,
+              "modules": "commonjs",
+              "targets": {
+                "node": "current"
+              },
+              "useBuiltIns": false
+            }
+          ]
+        ]
+      }
+    }
+  }

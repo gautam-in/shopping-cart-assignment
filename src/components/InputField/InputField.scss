@@ -1,0 +1,27 @@
+@import "../../common/_variables";
+@import "../../common/_mixins";
+
+.error-message {
+  flex-basis: 100%;
+  color: red;
+  padding: $normal $small;
+  background: lighten(red, 45%);
+  font-size: $medium;
+}
+
+label {
+  flex-basis: 100%;
+}
+
+input {
+  @include material-input;
+  flex-basis: 100%;
+  margin-bottom: 2rem;
+  padding: 0.5rem 0;
+}
+
+@media screen and (min-width: 500px) {
+  .error-message {
+    font-size: $normal;
+  }
+}
