@@ -1,0 +1,96 @@
+@import '_variables';
+
+.form {
+  &-title {
+    font-weight: bold;
+    font-size: $xxlarge;
+  }
+
+  &-description {
+    font-weight: 400;
+    font-size: $xlarge;
+  }
+
+  &-action-button {
+    background-color: $theme-pink;
+    border-radius: 0.3rem;
+    color: white;
+    font-size: $small;
+    font-weight: 600;
+    letter-spacing: 0.2rem;
+    width: 100%;
+  }
+
+  &-input {
+    width: 100%;
+  }
+}
+
+.group {
+  height: 3rem;
+  position: relative;
+}
+
+input,
+textarea {
+  background: none;
+  color: black;
+  padding: 1rem 0;
+  display: block;
+  border: none;
+  border-bottom: $border-bottom-inactive;
+  font-size: $large !important;
+}
+
+input {
+  &:hover {
+    border-bottom: $border-bottom-inactive;
+  }
+
+  &:valid {
+    border-bottom: $border-bottom-active;
+  }
+}
+
+input:focus,
+textarea:focus {
+  padding: 1rem 0;
+  color: black;
+  outline: none;
+  border: none;
+  border-bottom: $border-bottom-active;
+  font-size: $large;
+}
+
+input:focus ~ label,
+input:valid ~ label,
+textarea:focus ~ label,
+textarea:valid ~ label {
+  top: -0.5rem;
+  font-size: $small;
+  color: #00f1f1;
+  font-weight: 400;
+  left: 0;
+}
+
+label {
+  color: $dark-gray;
+  font-size: $standard;
+  font-weight: normal;
+  position: absolute;
+  pointer-events: none;
+  left: 0;
+  top: 1.2rem;
+  transition: 300ms ease all;
+  background-color: $off-white;
+  padding: 0;
+}
+
+@media screen and ($screen-md-width) {
+  .form {
+    &-input,
+    &-action-button {
+      width: 75%;
+    }
+  }
+}
