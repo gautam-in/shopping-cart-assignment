@@ -88,6 +88,10 @@ html {
     text-decoration: none;
     font-size: $small;
   }
+
+  &:first-child {
+    margin-right: 1.5rem !important;
+  }
 }
 
 .bg-gray {
@@ -195,7 +199,7 @@ html {
   font-weight: 500;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: $screen-md-width) {
   .main-nav,
   .login-register {
     display: block;

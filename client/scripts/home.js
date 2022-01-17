@@ -1,24 +1,21 @@
-const BASE_URL = 'http://localhost:8000/';
-
-updateCart();
+import { BASE_URL } from './constants.js';
 
 const setCarousel = async () => {
   const offers = await axios.get(BASE_URL + 'offers').then(({ data }) => data);
   const carouselDiv = document.querySelector('.carousel-inner');
-  const length = offers.length;
-  for (let i = 0; i < length; i++) {
+  offers.forEach((offer, index) => {
     const div = document.createElement('div');
     div.classList.add('carousel-item');
-    if (i === 0) {
+    if (index === 0) {
       div.classList.add('active');
     }
     const img = document.createElement('img');
-    img.src = `./${offers[i].bannerImageUrl}`;
-    img.alt = `${offers[i].bannerImageAlt}`;
+    img.src = `./${offer.bannerImageUrl}`;
+    img.alt = `${offer.bannerImageAlt}`;
     img.classList.add('d-block', 'w-100', 'h-100');
     div.appendChild(img);
     carouselDiv.appendChild(div);
-  }
+  });
 };
 
 const setBanners = async () => {
@@ -26,9 +23,9 @@ const setBanners = async () => {
     data.sort((entity1, entity2) => (entity1.order > entity2.order ? 1 : -1))
   );
   const mainContent = document.querySelector('.main-content');
-  const length = banners.length;
   const commonCardClasses = ['col', 'd-flex', 'justify-content-center'];
-  for (let i = 1; i < length; i++) {
+  banners.shift();
+  banners.forEach((banner, index) => {
     const categoryCard = document.createElement('div');
     categoryCard.classList.add('row', 'border', 'my-5', 'shadow');
     const cardCol1 = document.createElement('div');
@@ -39,8 +36,8 @@ const setBanners = async () => {
     );
 
     const img = document.createElement('img');
-    img.src = `.${banners[i].imageUrl}`;
-    img.alt = banners[i].description;
+    img.src = `.${banner.imageUrl}`;
+    img.alt = banner.description;
     img.classList.add('category-img');
     cardCol1.appendChild(img);
     categoryCard.appendChild(cardCol1);
@@ -54,11 +51,11 @@ const setBanners = async () => {
     );
 
     const categoryDescription = document.createElement('p');
-    categoryDescription.innerText = banners[i].description;
+    categoryDescription.innerText = banner.description;
     categoryDescription.classList.add('category-description', 'text-center');
 
     const cardButton = document.createElement('button');
-    cardButton.innerText = 'Explore ' + banners[i].key;
+    cardButton.innerText = 'Explore ' + banner.key;
     cardButton.classList.add(
       'category-action',
       'action',
@@ -70,7 +67,7 @@ const setBanners = async () => {
     cardCol2.appendChild(categoryDescription);
     cardCol2.appendChild(cardButton);
 
-    if (i % 2 !== 0) {
+    if (index % 2 !== 0) {
       categoryCard.appendChild(cardCol1);
       categoryCard.appendChild(cardCol2);
     } else {
@@ -79,7 +76,7 @@ const setBanners = async () => {
     }
 
     mainContent.appendChild(categoryCard);
-  }
+  });
 };
 
 setCarousel();

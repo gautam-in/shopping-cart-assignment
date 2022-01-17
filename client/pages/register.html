@@ -36,47 +36,7 @@
   </head>
 
   <body>
-    <header class="header">
-      <div class="container">
-        <div class="row">
-          <div class="col">
-            <img class="logo" src="../static/images/logo.png" />
-          </div>
-          <div class="main-nav col">
-            <nav class="h-100">
-              <ul class="list-unstyled d-flex nav-items align-items-end h-100">
-                <li><a href="../index.html" class="nav-link">Home</a></li>
-                <li>
-                  <a href="./products.html" class="nav-link">Products</a>
-                </li>
-              </ul>
-            </nav>
-          </div>
-          <div
-            class="col-4 col-md-2 d-flex flex-column justify-content-around align-items-end"
-          >
-            <div class="login-register">
-              <a class="accounts" href="./signin.html">Login</a>
-              <a class="accounts" href="./register.html">Register</a>
-            </div>
-            <div>
-              <span
-                class="cart d-flex align-items-center justify-content-center"
-              >
-                <i
-                  class="fas fa-shopping-cart fa-2x"
-                  data-bs-toggle="offcanvas"
-                  data-bs-target="#offcanvasExample"
-                  aria-controls="offcanvasExample"
-                ></i>
-                <span class="cart-msg">0 Items</span>
-              </span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </header>
-
+    <uc-header></uc-header>
     <main class="container">
       <div class="row">
         <div class="col">
@@ -144,46 +104,11 @@
       </div>
     </main>
 
-    <footer class="footer bg-gray">
-      <div class="container">
-        Copyright &copy; 2011 - 2018 Sabka Bazaar Grocery Supplies Pvt Ltd
-      </div>
-    </footer>
+    <uc-footer></uc-footer>
+    <uc-offcanvas></uc-offcanvas>
 
-    <div
-      class="offcanvas offcanvas-end"
-      tabindex="-1"
-      id="offcanvasExample"
-      aria-labelledby="offcanvasExampleLabel"
-    >
-      <div class="offcanvas-header">
-        <h5 class="offcanvas-title p-3" id="offcanvasExampleLabel">My Cart</h5>
-        <button
-          type="button"
-          class="btn-close text-reset btn-close-white text-white"
-          data-bs-dismiss="offcanvas"
-          aria-label="Close"
-        ></button>
-      </div>
-
-      <div class="offcanvas-body bg-gray"></div>
-      <p class="promo-text text-center m-0 d-none">
-        Promo code can be applied on payment page
-      </p>
-      <button
-        class="cart-shopping-action bg-theme border-0 p-4 mx-4 my-3 d-flex align-items-center justify-content-between"
-      >
-        <span class="cart-action-btn-text">Start Shopping</span>
-        <span class="cart-total"
-          ><span class="cart-total-price"></span>
-          <i class="fas fa-chevron-right text-white"></i
-        ></span>
-      </button>
-    </div>
-
-    <script src="../scripts/cart.js"></script>
-    <script>
-      updateCart();
-    </script>
+    <script defer src="../scripts/components.js" type="module"></script>
+    <script defer src="../scripts/cart.js" type="module"></script>
+    <script defer src="../scripts/index.js" type="module"></script>
   </body>
 </html>

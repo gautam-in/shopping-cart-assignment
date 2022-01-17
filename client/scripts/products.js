@@ -1,4 +1,5 @@
-const BASE_URL = 'http://localhost:8000/';
+import { updateCart, setCart, getCart } from './cart.js';
+import { BASE_URL } from './constants.js';
 
 const commonProductActionClasses = [
   'product-buy',
@@ -12,8 +13,7 @@ const getProducts = async () => {
   products = await axios.get(BASE_URL + 'products').then(({ data }) => data);
   const productsDiv = document.querySelector('.products');
 
-  const length = products.length;
-  for (let i = 0; i < length; i++) {
+  products.forEach((product, index) => {
     const productCard = document.createElement('div');
     productCard.classList.add(
       'product-card',
@@ -30,7 +30,7 @@ const getProducts = async () => {
     productNameRow.classList.add('row');
     const productName = document.createElement('p');
     productName.classList.add('product-name', 'col');
-    productName.innerText = products[i].name;
+    productName.innerText = product.name;
     productNameRow.appendChild(productName);
     productCard.appendChild(productNameRow);
 
@@ -48,8 +48,8 @@ const getProducts = async () => {
     );
     productDetailsRow.appendChild(productDetails);
     const productImg = document.createElement('img');
-    productImg.src = `..${products[i].imageURL}`;
-    productImg.alt = products[i].name;
+    productImg.src = `..${product.imageURL}`;
+    productImg.alt = product.name;
     productDetails.appendChild(productImg);
 
     const productDescriptionDiv = document.createElement('div');
@@ -65,7 +65,7 @@ const getProducts = async () => {
     productDetailsRow.appendChild(productDescriptionDiv);
 
     const productDescription = document.createElement('p');
-    productDescription.innerText = products[i].description;
+    productDescription.innerText = product.description;
     productDescription.classList.add(
       'product-description',
       'bg-gray',
@@ -80,8 +80,8 @@ const getProducts = async () => {
       ...commonProductActionClasses,
       'd-md-none'
     );
-    productActionTablet.innerText = 'Buy Now @ ' + products[i].price;
-    productActionTablet.value = products[i].id;
+    productActionTablet.innerText = 'Buy Now @ ' + product.price;
+    productActionTablet.value = product.id;
     productActionTablet.addEventListener('click', addToCart);
     productDescriptionDiv.appendChild(productActionTablet);
 
@@ -105,7 +105,7 @@ const getProducts = async () => {
       'm-0',
       'product-price'
     );
-    productPrice.innerText = 'MRP ' + products[i].price;
+    productPrice.innerText = 'MRP ' + product.price;
 
     productActionsRow.appendChild(productPrice);
 
@@ -126,12 +126,12 @@ const getProducts = async () => {
     productCard.appendChild(productActionsRow);
 
     productBuyDesktop.innerText = 'Buy Now';
-    productBuyDesktop.value = products[i].id;
+    productBuyDesktop.value = product.id;
 
     productActionButtonsCol.appendChild(productBuyDesktop);
 
     const productBuyMobile = document.createElement('button');
-    productBuyMobile.value = products[i].id;
+    productBuyMobile.value = product.id;
     productBuyMobile.addEventListener('click', addToCart);
 
     productBuyMobile.classList.add(
@@ -142,10 +142,10 @@ const getProducts = async () => {
       ...commonProductActionClasses
     );
 
-    productBuyMobile.innerText = 'Buy Now @ ' + products[i].price;
+    productBuyMobile.innerText = 'Buy Now @ ' + product.price;
 
     productActionButtonsCol.appendChild(productBuyMobile);
-  }
+  });
   updateCart();
 };
 

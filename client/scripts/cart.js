@@ -1,3 +1,5 @@
+import { BASE_URL } from './constants.js';
+
 const cartActionButton = document.querySelector('.cart-shopping-action');
 const cartActionButtonText = document.querySelector(
   '.cart-shopping-action > .cart-action-btn-text'
@@ -21,19 +23,20 @@ const commonFlexClasses = ['d-flex', 'align-items-center'];
 const controlButtonClasses = ['btn-qty', 'bg-theme', 'px-2'];
 
 let prices = [];
-let allProducts;
+let allProducts = [];
 
 (async function() {
-  allProducts = await axios
-    .get('http://localhost:8000/' + 'products')
-    .then(({ data }) => data);
+  allProducts = await axios.get(BASE_URL + 'products').then(({ data }) => data);
 })();
 
-function getCart() {
-  return JSON.parse(localStorage.getItem('cart')) || [];
+export function getCart() {
+  const cart = JSON.parse(localStorage.getItem('cart')) || [];
+  cart.sort((a, b) => a.id < b.id);
+  console.log('cart', cart);
+  return cart;
 }
 
-function setCart(cartItems) {
+export function setCart(cartItems) {
   localStorage.setItem('cart', JSON.stringify(cartItems));
 }
 
@@ -42,14 +45,15 @@ function deleteCartItems() {
   const offcanvasBody = document.querySelector('.offcanvas-body');
 
   if (cartItemToDelete && cartItemToDelete.length) {
-    for (let i = 0; i < cartItemToDelete.length; i++) {
-      offcanvasBody.removeChild(cartItemToDelete[i]);
-    }
+    cartItemToDelete.forEach(cartItem => {
+      offcanvasBody.removeChild(cartItem);
+    });
   }
 }
+let cart;
 
-function updateCart() {
-  const cart = getCart();
+export function updateCart() {
+  cart = getCart();
   deleteCartItems();
   const cartMsg = document.querySelector('.cart-msg');
   cartMsg.innerText = ((cart && cart.length) || 0) + ' Items';
@@ -62,7 +66,6 @@ function updateCart() {
 }
 
 function buildCart() {
-  const cart = getCart();
   const offcanvasBody = document.querySelector('.offcanvas-body');
   const offcanvasPromoText = document.querySelector('.offcanvas p.promo-text');
 
@@ -83,21 +86,21 @@ function buildCart() {
     }
 
     const isOnRootPath = location.pathname.includes('index.html');
-    for (let i = 0; i < cart.length; i++) {
+    cart.forEach(item => {
       const cartItem = document.createElement('div');
 
       const imagePath = isOnRootPath
-        ? '.' + cart[i].imageURL
-        : '..' + cart[i].imageURL;
+        ? '.' + item.imageURL
+        : '..' + item.imageURL;
       cartItem.classList.add('cart-item', 'row', 'my-4');
-      cartItem.setAttribute('value', cart[i].id);
+      cartItem.setAttribute('value', item.id);
       offcanvasBody.appendChild(cartItem);
 
       const cartItemImg = document.createElement('div');
       cartItemImg.classList.add('col-4');
       const cartImg = document.createElement('img');
       cartImg.src = imagePath;
-      cartImg.alt = cart[i].name;
+      cartImg.alt = item.name;
       cartItemImg.appendChild(cartImg);
 
       cartItem.appendChild(cartItemImg);
@@ -108,7 +111,7 @@ function buildCart() {
 
       const cartItemName = document.createElement('p');
       cartItemName.classList.add('product-name');
-      cartItemName.innerText = cart[i].name;
+      cartItemName.innerText = item.name;
       cartItemInfoCol.appendChild(cartItemName);
 
       const cartControls = document.createElement('div');
@@ -132,30 +135,30 @@ function buildCart() {
       addButton.classList.add(...controlButtonClasses);
       addButton.innerText = '+';
       addButton.setAttribute('value', 'add');
-      addButton.setAttribute('id', cart[i].id);
+      addButton.setAttribute('id', item.id);
 
       const qtyInfo = document.createElement('span');
       qtyInfo.classList.add('qty');
-      qtyInfo.innerText = cart[i].quantity;
-      qtyInfo.setAttribute('value', cart[i].id);
+      qtyInfo.innerText = item.quantity;
+      qtyInfo.setAttribute('value', item.id);
 
       const subtractButton = document.createElement('button');
       subtractButton.classList.add(...controlButtonClasses);
       subtractButton.innerText = '-';
       subtractButton.setAttribute('value', 'sub');
-      subtractButton.setAttribute('id', cart[i].id);
+      subtractButton.setAttribute('id', item.id);
 
       const multiply = document.createElement('span');
       multiply.innerText = 'X';
 
       const mrp = document.createElement('span');
       mrp.classList.add('cart-mrp');
-      mrp.innerText = cart[i].price;
+      mrp.innerText = item.price;
 
       const itemTotal = document.createElement('span');
       itemTotal.classList.add('final-price');
-      itemTotal.setAttribute('value', cart[i].id);
-      itemTotal.innerText = 'Rs ' + parseInt(cart[i].quantity) * cart[i].price;
+      itemTotal.setAttribute('value', item.id);
+      itemTotal.innerText = 'Rs ' + parseInt(item.quantity) * item.price;
 
       cartControlButtons.appendChild(subtractButton);
       cartControlButtons.appendChild(qtyInfo);
@@ -163,19 +166,10 @@ function buildCart() {
       cartControlButtons.appendChild(multiply);
       cartControlButtons.appendChild(mrp);
       cartControls.appendChild(itemTotal);
-    }
+    });
 
-    if (cartMrpField) {
-      const allPrices = document.querySelectorAll('span.final-price');
-      if (allPrices && allPrices.length) {
-        prices = [];
-        for (let i = 0; i < allPrices.length; i++) {
-          prices = [...prices, parseInt(allPrices[i].innerHTML.split(' ')[1])];
-        }
+    getTotalPrice();
 
-        cartMrpField.innerHTML = 'Rs ' + prices.reduce((a, b) => a + b, 0);
-      }
-    }
     const lowestPriceBanner = document.createElement('div');
     lowestPriceBanner.classList.add(
       'row',
@@ -236,12 +230,12 @@ function buildCart() {
   const quantityChangeButtons = document.querySelectorAll('.btn-qty');
 
   if (quantityChangeButtons && quantityChangeButtons.length) {
-    for (let i = 0; i < quantityChangeButtons.length; i++) {
-      quantityChangeButtons[i].addEventListener(
+    quantityChangeButtons.forEach(quantityChangeButton => {
+      quantityChangeButton.addEventListener(
         'click',
-        handleQuantityChange(quantityChangeButtons[i].getAttribute('id'))
+        handleQuantityChange(quantityChangeButton.getAttribute('id'))
       );
-    }
+    });
   }
 }
 
@@ -249,10 +243,10 @@ function handleQuantityChange(productId) {
   return async function(event) {
     const targetVal = event.target.value;
     const quantityInput = document.querySelector(`.qty[value="${productId}"]`);
-    const cartItems = getCart();
+
     const quantity = parseInt(quantityInput.innerHTML);
     if (quantity === 1 && targetVal === 'sub') {
-      const updatedProducts = cartItems.filter(item => item.id !== productId);
+      const updatedProducts = cart.filter(item => item.id !== productId);
       setCart(updatedProducts);
       updateCart();
       return;
@@ -265,9 +259,9 @@ function handleQuantityChange(productId) {
 
     const product = allProducts.find(({ id }) => id === productId);
 
-    let cartItem = cartItems.find(({ id }) => id === productId);
+    let cartItem = cart.find(({ id }) => id === productId);
     cartItem = { ...cartItem, quantity: updatedQuantity };
-    let updatedCart = cartItems.filter(item => item.id !== productId);
+    let updatedCart = cart.filter(item => item.id !== productId);
 
     updatedCart = [...updatedCart, cartItem];
     setCart(updatedCart);
@@ -277,18 +271,7 @@ function handleQuantityChange(productId) {
       'Rs ' + parseInt(quantityInput.innerHTML) * product.price;
 
     updateCartToProceed(false);
-
-    if (cartMrpField) {
-      const allPrices = document.querySelectorAll('span.final-price');
-      if (allPrices && allPrices.length) {
-        prices = [];
-        for (let i = 0; i < allPrices.length; i++) {
-          prices = [...prices, parseInt(allPrices[i].innerHTML.split(' ')[1])];
-        }
-
-        cartMrpField.innerHTML = 'Rs ' + prices.reduce((a, b) => a + b, 0);
-      }
-    }
+    getTotalPrice();
   };
 }
 
@@ -322,3 +305,17 @@ function updateCartToProceed(markCartEmpty) {
     cartActionButton.classList.add(...cartActionButtonFlexClasses);
   }
 }
+
+const getTotalPrice = () => {
+  if (cartMrpField) {
+    const allPrices = document.querySelectorAll('span.final-price');
+    if (allPrices && allPrices.length) {
+      prices = [];
+      allPrices.forEach(price => {
+        prices = [...prices, parseInt(price.innerHTML.split(' ')[1])];
+      });
+
+      cartMrpField.innerHTML = 'Rs ' + prices.reduce((a, b) => a + b, 0);
+    }
+  }
+};
