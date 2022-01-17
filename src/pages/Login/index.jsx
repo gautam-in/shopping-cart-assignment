@@ -38,19 +38,19 @@ class Login extends Component {
       return;
     }
     this.submitForm();
-    this.setState({
-      email: "",
-      password: "",
-    });
   };
 
   submitForm = () => {
     this.setState({
+      email: "",
+      password: "",
       errors: {
         email: "",
         password: [],
       },
     });
+    // TO BE REPLACED WITH POST ONCE POST API IS PROVIDED
+    window.location.replace("http://localhost:3000");
   };
 
   setErrors = (isEmailValid, listOfpasswordErrors) => {
@@ -77,7 +77,7 @@ class Login extends Component {
           </span>
         </div>
         <div className="login-form">
-          <form onSubmit={this.handleSubmit}>
+          <form action="POST" method="/" onSubmit={this.handleSubmit}>
             <InputField
               fieldControl={"email"}
               error={this.state.errors.email}
@@ -87,6 +87,7 @@ class Login extends Component {
             {/* Password field */}
             <InputField
               fieldControl={"password"}
+              type={"password"}
               error={this.state.errors.password}
               value={this.state.password}
               handleChange={this.handleChange}

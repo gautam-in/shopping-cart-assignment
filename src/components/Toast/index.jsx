@@ -3,7 +3,6 @@ import { FaWindowClose } from "react-icons/fa";
 import "./Toast.scss";
 
 class Toast extends Component {
-  // TODO: ARIA label
   render() {
     return (
       <section className={this.props.toastType + " toast"}>

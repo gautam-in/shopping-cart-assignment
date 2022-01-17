@@ -18,10 +18,10 @@ class InputField extends Component {
           {fieldName || fieldControl[0].toUpperCase() + fieldControl.slice(1)}
         </label>
         {error && error.length > 0 && (
-          <div className="error-message">
+          <div id={"err_" + fieldControl} className="error-message">
             {typeof error === "object" ? (
               <small>
-                Sorry, this field:
+                Sorry, the password:
                 <ul>
                   {error.map((error) => (
                     <li key={error}>{error}</li>
@@ -40,6 +40,10 @@ class InputField extends Component {
           aria-required={required}
           value={value}
           onChange={handleChange}
+          aria-invalid={error || error.length ? true : null}
+          aria-describedby={
+            error || error.length ? "err_" + fieldControl : null
+          }
         />
       </>
     );

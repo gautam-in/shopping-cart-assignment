@@ -59,17 +59,15 @@ class Register extends Component {
       return;
     }
     this.submitForm();
+  };
+
+  submitForm = () => {
     this.setState({
       email: "",
       password: "",
       firstName: "",
       lastName: "",
       confirmPassword: "",
-    });
-  };
-
-  submitForm = () => {
-    this.setState({
       errors: {
         email: "",
         password: [],
@@ -78,6 +76,8 @@ class Register extends Component {
         confirmPassword: "",
       },
     });
+    // TO BE REPLACED WITH POST ONCE POST API IS PROVIDED
+    window.location.replace("http://localhost:3000");
   };
 
   setErrors = (

@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import "./Category.scss";
 
 class Category extends Component {
-  // TODO: Do ARIA
   render() {
     const images = require.context("../..", true);
     const { category, idx } = this.props;
