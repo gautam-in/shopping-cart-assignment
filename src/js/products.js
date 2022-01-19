@@ -9,7 +9,8 @@ let products1;
 let selectedCategoryProducts = [];
 
 
-(function getProducts() {
+window.addEventListener('DOMContentLoaded', getProducts);
+function getProducts() {
     fetch("./../../server/products/index.get.json")
         .then(function (response) {
             if (response.ok) {
@@ -24,7 +25,7 @@ let selectedCategoryProducts = [];
         .catch(function (err) {
             console.log(err);
         });
-})()
+}
 
 function renderProducts(products) {
     productContainerEl.innerHTML = '';

@@ -5,8 +5,8 @@ let carouselContainerEl = document.getElementById('carousel-slider');
 let carouselSlideBtnContainerEl = document.getElementById('carousel-slideButton');
 let slideWrapperEl = document.getElementById('carousel-slide-wrap');
 
-
-(function getProducts() {
+window.addEventListener('DOMContentLoaded', getProducts);
+function getProducts() {
     fetch("./../../server/banners/index.get.json")
         .then(function (response) {
             if (response.ok) {
@@ -22,7 +22,7 @@ let slideWrapperEl = document.getElementById('carousel-slide-wrap');
         .catch(function (err) {
             console.log(err);
         });
-})()
+}
 
 function renderOffersImages(offersImages) {
     // -----carousel banner image render--------------
@@ -79,9 +79,9 @@ function selectSlide(n) {
 
 
 //-----slide show auto scroll images--------------------
-setTimeout(()=> {
-    nextSlideAutoScroll();
-}, 2000)
+// setTimeout(()=> {
+//     nextSlideAutoScroll();
+// }, 2000)
 
 function nextSlideAutoScroll() {
     scrollToNext();
