@@ -16,7 +16,7 @@ const Cart = (props) => {
                         <p>Your Favourite items are just a click away</p>
                     </span>
                     <footer className={classes.footer}>
-                        <Link href={'/'}>
+                        <Link href={'/'} passHref>
                             <button className={classes.startShopping} onClick={() => hideCart()}>
                                 Start Shopping
                             </button>
@@ -54,7 +54,7 @@ const Cart = (props) => {
             })}
                 <div className={classes.lowestPrice}>
                     <Image src={LowestPrice} alt="lowest price guranteed" height={35} width={100} />
-                    <p>You won't find it cheaper anywhere</p>
+                    <p>You won&apos;t find it cheaper anywhere</p>
                 </div>
 
                 <footer className={classes.footer}>
