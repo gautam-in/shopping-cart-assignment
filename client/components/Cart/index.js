@@ -17,7 +17,7 @@ const Cart = (props) => {
                     </span>
                     <footer className={classes.footer}>
                         <Link href={'/'} passHref>
-                            <button className={classes.startShopping} onClick={() => hideCart()}>
+                            <button id="footer-button" className={classes.startShopping} onClick={() => hideCart()}>
                                 Start Shopping
                             </button>
                         </Link>
@@ -32,7 +32,7 @@ const Cart = (props) => {
                 if (count < 1) return <></>
                 return (
                     <section key={id} className={classes.productContainer}>
-                        <Image
+                        <img
                             src={imageSrc}
                             alt={imageAlt}
                             height={100}
@@ -42,9 +42,9 @@ const Cart = (props) => {
                             <p className={classes.productTItle}>{name}</p>
                             <span>
                                 <span className={classes.cost}>
-                                    <button className={classes.button} onClick={() => onDelete(id)}>-</button>
+                                    <button id={`${id}delete`} className={classes.button} onClick={() => onDelete(id)}>-</button>
                                     &nbsp;&nbsp;{count}&nbsp;&nbsp;
-                                    <button className={classes.button} onClick={() => onAdd(id)}>+</button>
+                                    <button id={`${id}add`} className={classes.button} onClick={() => onAdd(id)}>+</button>
                                     &nbsp;&nbsp;x&nbsp;Rs.{price}
                                 </span>
                                 <p className={classes.total}>Rs.{count * price}</p>
@@ -53,13 +53,13 @@ const Cart = (props) => {
                     </section>)
             })}
                 <div className={classes.lowestPrice}>
-                    <Image src={LowestPrice} alt="lowest price guranteed" height={35} width={100} />
+                    <img src={LowestPrice} alt="lowest price guranteed" height={35} width={100} />
                     <p>You won&apos;t find it cheaper anywhere</p>
                 </div>
 
                 <footer className={classes.footer}>
                     <p>Promo code can be applied on payment page</p>
-                    <button className={classes.checkoutButton} onClick={() => hideCart()}>
+                    <button id="footer-button" className={classes.checkoutButton} onClick={() => hideCart()}>
                         <p>Proceed to Checkout</p>
                         <p>Rs.{totalCost}</p>
                     </button>
