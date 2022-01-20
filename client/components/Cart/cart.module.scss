@@ -1,0 +1,167 @@
+@import "../../styles/colors.scss";
+
+.cartContainer {
+    position: absolute;
+    z-index: 98;
+    width: 100%;
+    min-height: calc(100% - 114px);
+    background-color: $footer-background;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 130px;
+    @media screen and (min-width: 720px) {
+        position: fixed;
+        right: 10px;
+        width: 40%;
+        overflow: scroll;
+        height: 50%;
+        padding-bottom: 0;
+    }
+}
+
+.title {
+    display: inline;
+}
+
+.titleContainer {
+    padding: 15px;
+    display: block;
+    background-color: white;
+    box-shadow: 0px 0px 10px -5px;
+    @media screen and (min-width: 720px) {
+        position: sticky;
+        top: 0;
+        z-index: 110;
+    }
+}
+
+.productContainer {
+    display: flex;
+    padding: 0 15px;
+    background-color: white;
+    margin: 20px 0;
+}
+
+.productDetails {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.productTItle {
+    font-weight: 600;
+    font-size: 18px;
+    margin: 0px;
+}
+
+.button {
+    background-color: $button-primary;
+    color: #fff;
+    appearance: none;
+    border-radius: 5px;
+    font-size: 20px;
+    border: none;
+    line-height: 1;
+}
+
+.cost {
+    float: left;
+}
+
+.total {
+    float: right;
+    margin: 0px;
+}
+
+.lowestPrice {
+    display: flex;
+    background-color: white;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 90%;
+    align-self: center;
+    border-radius: 5px;
+    box-shadow: 0px 0px 8px -5px;
+}
+
+.footer {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0 0 15px 0;
+    box-shadow: 0px 5px 13px -5px;
+    & > p {
+        margin: 10px 0;
+    }
+    @media screen and (min-width: 720px) {
+        position: relative;
+    }
+}
+
+.closeCart {
+    display: none;
+    @media screen and (min-width: 720px) {
+        display: inline-block;
+        border: none;
+        background-color: transparent;
+        font-size: 20px;
+        font-weight: bold;
+        float: right;
+    }
+}
+
+.checkoutButton {
+    border: none;
+    background-color: $button-primary;
+    color: white;
+    display: flex;
+    width: 90%;
+    justify-content: space-around;
+    font-weight: bold;
+    font-size: 16px;
+    position: relative;
+    &::after {
+        content: ">";
+        font-size: 25px;
+        position: absolute;
+        right: 10px;
+        top: calc(50% - 19px);
+    }
+}
+
+.startShopping {
+    border: none;
+    background-color: $button-primary;
+    color: white;
+    display: flex;
+    width: 90%;
+    justify-content: space-around;
+    font-size: 18px;
+    padding: 10px;
+    margin-top: 15px;
+    position: relative;
+}
+
+.noItems {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    @media screen and (min-width: 720px) {
+        flex-direction: column;
+    }
+}
+
+.bold {
+    font-weight: bold;
+    font-size: 18px;
+    padding: 0px;
+    margin: 0px;
+}
