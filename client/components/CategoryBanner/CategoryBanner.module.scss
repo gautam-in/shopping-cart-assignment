@@ -1,0 +1,50 @@
+@import "../../styles/colors.scss";
+
+.container {
+    padding: 5px;
+    margin: 0 0 40px;
+    box-shadow: inset 0px 3px 5px -5px #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @media screen and (min-width: 720px) {
+        flex-direction: row;
+        padding: 50px 5px;
+        justify-content: space-evenly;
+    }
+}
+
+.imageContainer {
+    width: 200px;
+    height: 100px;
+    @media screen and (min-width: 720px) {
+        width: 400px;
+        height: 200px;
+    }
+}
+
+.reverse {
+    flex-direction: row-reverse;
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 75%;
+}
+
+.title {
+    text-align: center;
+}
+
+.description {
+    text-align: center;
+}
+
+.linkButton {
+    background-color: $button-primary;
+    color: #fff;
+    padding: 10px;
+}

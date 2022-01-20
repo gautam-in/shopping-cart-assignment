@@ -1,0 +1,134 @@
+@import "../../styles/colors.scss";
+
+.header {
+    box-shadow: -2px -15px 20px 5px;
+    padding: 5px;
+    position: relative;
+}
+
+.navItems {
+    display: block;
+    margin: 20px;
+    @media screen and (min-width: 720px) {
+        display: inline;
+    }
+}
+
+.cartButton {
+    background-color: $footer-background;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    padding: 10px;
+    position: absolute;
+    bottom: 0px;
+    top: 0px;
+    right: 65px;
+}
+
+.hamburger {
+    height: 30px;
+    width: 30px;
+    position: absolute;
+    right: 20px;
+    top: calc(50% - 15px);
+    z-index: 100;
+    padding: 0px;
+    background: none;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    & > span {
+        background-color: #000;
+        border-radius: 1px;
+        height: 2px;
+        width: 100%;
+        transition: height 100ms;
+    }
+
+    & > span:after,
+    & > span:before {
+        content: "";
+        background-color: #000;
+        border-radius: 1px;
+        height: 2px;
+        width: 100%;
+        position: absolute;
+        left: 0;
+        transition: all 100ms;
+    }
+
+    & > span:after {
+        bottom: 7px;
+    }
+    & > span:before {
+        top: 7px;
+    }
+
+    @media screen and (min-width: 720px) {
+        display: none;
+    }
+}
+
+.close {
+    & > span {
+        height: 0;
+    }
+
+    & > span:after,
+    & > span:before {
+        background-color: #000;
+        right: 20px;
+        top: 10px;
+    }
+
+    & > span:after {
+        transform: rotate(45deg);
+    }
+
+    & > span:before {
+        transform: rotate(-45deg);
+    }
+}
+
+.navigation {
+    background-color: #fff;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 99;
+    height: 100%;
+    width: 0px;
+    display: table;
+    text-align: center;
+    visibility: hidden;
+    transition: all 100ms ease-in-out;
+
+    & > ol {
+        padding: 0;
+    }
+
+    @media screen and (min-width: 720px) {
+        position: static;
+        visibility: visible;
+        display: inline-block;
+        width: auto;
+        vertical-align: bottom;
+    }
+}
+
+.showNavigation {
+    width: 100%;
+    visibility: visible;
+    @media screen and (min-width: 720px) {
+        position: static;
+        visibility: visible;
+        display: inline-block;
+        vertical-align: bottom;
+        width: auto;
+    }
+}
