@@ -1,7 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import PropTypes from 'prop-types';
-import LowestPrice from '../../public/images/lowest-price.png'
 import classes from './cart.module.scss';
 
 const Cart = (props) => {
@@ -21,7 +20,7 @@ const Cart = (props) => {
                                 Start Shopping
                             </button>
                         </Link>
-                    </footer>
+                    </footer>   
                 </div>
             )
         }
@@ -53,7 +52,7 @@ const Cart = (props) => {
                     </section>)
             })}
                 <div className={classes.lowestPrice}>
-                    <img src={LowestPrice} alt="lowest price guranteed" height={35} width={100} />
+                    <img src={'images/lowest-price.png'} alt="lowest price guranteed" height={35} width={100} />
                     <p>You won&apos;t find it cheaper anywhere</p>
                 </div>
 

@@ -1,4 +1,4 @@
-import { render, fireEvent, waitFor, screen } from '@testing-library/react'
+import { render } from '@testing-library/react'
 import Footer from './index'
 
 describe('Footer Component', () => {
