@@ -1,0 +1,16 @@
+.image-wrappper {
+  width: 100%;
+  height: 100%;
+  max-width: 200px;
+  max-height: 150px;
+
+  @media screen and (max-width: 768px) {
+    max-width: 160px;
+    max-height: 120px;
+  }
+
+  @media screen and (max-width: 480px) {
+    max-width: 120px;
+    max-height: 90px;
+  }
+}

@@ -1,0 +1,14 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  padding: 0 1rem;
+
+  .button {
+    width: 60%;
+
+    @media screen and (max-width: 768px) {
+      width: 80%;
+    }
+  }
+}

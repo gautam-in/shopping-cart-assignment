@@ -1,0 +1,23 @@
+.button-wrapper {
+  display: block;
+  border-radius: 3px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 0.9rem;
+  padding: 0.5rem;
+  border: 1px solid #eee;
+  background-color: #d42559;
+  color: #fff;
+  cursor: pointer;
+  position: relative;
+
+  &:active {
+    top: 0.6px;
+    left: 0.6px;
+  }
+
+  @media screen and (max-width: 480px) {
+    font-size: 0.8rem;
+    padding: 0.4rem;
+  }
+}

@@ -1,0 +1,14 @@
+.footer {
+  background-color: #ddd;
+  display: flex;
+  justify-content: center;
+
+  .text {
+    color: #212121;
+    font-size: 0.9rem;
+
+    @media (max-width: 480px) {
+      font-size: 0.7rem;
+    }
+  }
+}
