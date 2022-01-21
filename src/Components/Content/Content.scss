@@ -1,0 +1,17 @@
+.content-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  &__header {
+    font-size: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  &__text {
+    text-align: center;
+    font-size: 0.8rem;
+    padding-bottom: 1rem;
+  }
+}

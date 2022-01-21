@@ -1,0 +1,27 @@
+.cart-section {
+  display: grid;
+  background-color: #fff;
+  align-items: center;
+  padding: 0.5rem 0;
+  grid-template-columns: 60px 1fr 60px;
+  grid-template-rows: 30px 30px;
+  grid-gap: 0.5rem;
+
+  &__image {
+    grid-row: 1 / 3;
+    max-width: 70px;
+    max-height: 70px;
+    justify-self: center;
+    padding: 0rem 0.5rem;
+  }
+
+  &__title {
+    grid-column: 2 / 4;
+    grid-row: 1 / 2;
+    font-size: 0.9rem;
+  }
+
+  &__totalprice {
+    font-size: 0.8rem;
+  }
+}
