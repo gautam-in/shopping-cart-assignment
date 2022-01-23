@@ -1,0 +1,100 @@
+.app-product,
+.app-product .category-tab-section,
+.app-product .product-tab-section,
+.app-productList .product-card {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.app-product .category-tab-section {
+  flex-direction: column;
+  justify-content: flex-start;
+  flex-basis: 20%;
+  background-color: #eee;
+}
+.app-product .category-tab-section .items {
+  padding: 10px 20px;
+  border: 1px solid #fff;
+  cursor: pointer;
+  font-size: 14px;
+  text-align: left;
+}
+.app-product .category-tab-section-mobile {
+  display: none;
+}
+.app-product .product-tab-section {
+  flex-basis: 80%;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  margin-bottom: 40px;
+}
+.app-product .category-tab-section .items.active,
+.app-product .category-tab-section .items:hover {
+  background-color: #d5d5d5;
+  color: #3c3c3c;
+}
+.app-productList {
+  height: 345px;
+  margin-top: 10px;
+  padding: 10px;
+  flex-basis: 250px;
+  border-right: 2px solid #eee;
+  border-bottom: 2px dashed #eee;
+}
+.app-productList .product-card .prod-description {
+  background-color: #eee;
+  padding: 10px;
+  font-size: 12px;
+  height: 86px;
+  overflow: hidden;
+  -webkit-line-clamp: 4;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+}
+.app-productList .categoryName {
+  font-size: 13px;
+  line-height: 1.1;
+  height: 30px;
+}
+.app-productList .product-card {
+  height: 80%;
+  margin-top: 20px;
+  flex-direction: column;
+  align-items: center;
+}
+.app-productList .product-card .app-btn {
+  margin-left: 25px;
+}
+@media screen and (max-width: 480px) {
+  .app-product .category-tab-section {
+    display: none;
+  }
+  .app-product .category-tab-section-mobile {
+    display: block;
+    width: 100%;
+  }
+  .app-product .category-tab-section-mobile select {
+    padding: 10px;
+    width: 100%;
+    background-color: #bf2957;
+    color: #fff;
+  }
+  .app-product .product-tab-section {
+    display: block;
+    flex-basis: 100%;
+  }
+  .app-product .product-tab-section .app-productList {
+    border-right: none;
+    height: unset;
+  }
+  .app-product .product-tab-section .product-card {
+    flex-direction: row;
+  }
+  .app-product .product-tab-section .product-card .prod-description {
+    width: 60%;
+    margin-bottom: 8px;
+  }
+  .app-product .product-tab-section .product-card .prod-purchase {
+    margin: 0 10px 0 auto;
+  }
+}

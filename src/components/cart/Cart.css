@@ -1,0 +1,119 @@
+.app-cart .empty-cart {
+  margin-top: 100px;
+}
+.app-cart .cart-header button {
+  background-color: #000;
+  color: #eee;
+  cursor: pointer;
+}
+.app-cart .cart-header,
+.app-cart .cart-information .product-details,
+.app-cart .cart-information .product-details .quantity,
+.app-cart .cart-information .low-price,
+.app-cart .cart-footer .app-btn {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.app-cart {
+  position: fixed;
+  z-index: 10;
+  transition-delay: 0s;
+  left: 0;
+  right: 0;
+  top: 0;
+  background: #030303 7a;
+  opacity: 1;
+}
+.app-cart .cart-section {
+  position: relative;
+  width: 26%;
+  float: right;
+  max-height: 100vh;
+  min-height: 80vh;
+  background: #fff;
+  margin: 82px 40px 0px 0px;
+}
+.app-cart .cart-header {
+  padding: 0px 15px;
+  background-color: #000;
+  color: #fff;
+}
+
+.app-cart .cart-header p {
+  margin: 10px;
+  color: #fff;
+}
+.app-cart .cart-header span {
+  cursor: pointer;
+  display: block;
+}
+.app-cart .cart-header span:hover {
+  transform: scale(0.88);
+}
+.app-cart .cart-information .product-details p {
+  font-size: 12px;
+}
+.app-cart .cart-information .product-details .quantity {
+  justify-content: space-evenly;
+}
+.app-cart .cart-information .product-details .quantity .cart-btn {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  background: #b82752;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.app-cart .cart-information {
+  overflow: auto;
+  height: 450px;
+}
+.app-cart .cart-information .product-details {
+  align-items: center;
+  border-bottom: 2px solid #eee;
+  padding: 5px 20px;
+  background-color: #fff;
+}
+.app-cart .cart-footer .app-btn span {
+  color: #fff;
+}
+.app-cart .cart-information .product-details .product-info {
+  flex-basis: 50%;
+}
+.app-cart .cart-information .product-details .quantity .cart-btn span {
+  color: #fff;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 44%;
+  position: absolute;
+}
+.app-cart .cart-information .low-price {
+  margin-top: 10px;
+  background: #fff;
+  padding: 5px 10px;
+}
+.app-cart .cart-information .low-price p {
+  align-self: center;
+}
+.app-cart .cart-footer {
+  background: #fff;
+  padding: 15px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+.app-cart .cart-footer .app-btn {
+  width: 100%;
+}
+.app-cart .cart-footer .app-btn.centre {
+  justify-content: center;
+}
+
+@media screen and (max-width: 480px) {
+  .app-cart .cart-section {
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+  }
+}

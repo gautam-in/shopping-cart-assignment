@@ -1,0 +1,54 @@
+.cart-container {
+  width: 100%;
+  justify-content: space-evenly;
+  border-radius: 5px;
+  padding: 5px;
+  cursor: pointer;
+  background: #eee;
+}
+.app-header,
+.navbar-header,
+.app-auth,
+.cart-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding-left: 20px;
+}
+.navbar-container {
+  box-shadow: 2px 2px 18px 3px rgb(0 0 0 / 20%);
+}
+.app-header {
+  height: 80px;
+  width: 95%;
+  padding: 10px;
+  margin: 0 auto;
+}
+.cart-container p {
+  margin-top: 0px;
+}
+.navbar-header.left .app-logo {
+  margin: 0;
+}
+.navbar-header.left a {
+  margin: 20px;
+}
+.cart-container:hover {
+  background-color: #bbb;
+}
+.navbar-header.right {
+  display: block;
+}
+.app-auth li {
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 480px) {
+  .app-header .navbar-header.left .app-logo {
+    display: block;
+  }
+  .app-header .navbar-header.left a {
+    display: none;
+  }
+}
