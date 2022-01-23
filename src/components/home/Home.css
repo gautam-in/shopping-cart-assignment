@@ -1,0 +1,55 @@
+.app-category {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    min-height: 205px;
+    margin: 40px 0px 0px;
+    padding: 10px 40px;
+  }
+  .app-carousel {
+    margin-top: 10px;
+    min-height: 310px;
+  }
+  .app-category .category-description {
+    flex-basis: 40%;
+    align-self: center;
+  }
+  .app-carousel .control-dots .dot.selected {
+    background-color: #000;
+  }
+  .app-carousel .control-dots .dot {
+    background: #666 !important;
+  }
+  .app-home .app-category:nth-child(odd) {
+    flex-direction: row-reverse;
+  }
+  
+  @media screen and (max-width: 480px) {
+    .app-carousel .carousel-status {
+      display: none;
+    }
+    .app-category .app-btn {
+      width: 100%;
+      font-size: 12px;
+    }
+    .app-category .category-description {
+      flex-basis: 60%;
+    }
+    .app-category {
+      padding: 8px 10px;
+      margin: 10px 0px 0px;
+    }
+    .app-category img {
+      width: 35%;
+    }
+    .app-carousel {
+      height: 200px;
+      min-height: 220px;
+    }
+    .app-carousel .carousel.carousel-slider {
+      height: 255px;
+    }
+    .app-category p {
+      font-size: 12px;
+    }
+  }

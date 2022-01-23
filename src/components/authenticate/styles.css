@@ -1,0 +1,22 @@
+.app-login,
+.app-signup {
+  width: 80%;
+  margin: 50px auto;
+}
+.app-login .login-right .app-btn,
+.app-signup .login-right .app-btn {
+  width: 100%;
+}
+.app-login,
+.app-signup,
+.app-login .login-right,
+.app-signup .login-right {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.app-login .login-right,
+.app-signup .login-right {  
+flex-direction: column;
+  width: 360px;
+}
