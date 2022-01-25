@@ -1,0 +1,65 @@
+@import './mixins.scss';
+
+.container {
+    max-width: 100%;
+    padding: 0 10px;
+    margin: 0;
+}
+
+@include desktop {
+    .container {
+        padding: 0 160px;
+    }
+}
+
+.mobile-hidden {
+    @include tablet {
+        display: none !important;
+    }
+}
+
+.tablet-hidden {
+    @include mobile {
+        display: none !important;
+    }
+}
+
+.desktop-hidden {
+    @include mobile {
+        display: none !important;
+    }
+    @include tablet {
+        display: none !important;
+    }
+}
+
+.main-content {
+    margin-top: 90px;
+}
+
+.container-bottom-shadow {
+    position: relative;
+    padding-bottom: 16px;
+    margin-bottom: 50px;
+    &::after {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        top: 100%;
+        bottom: 0;
+        width: 120%;
+        height: 24px;
+        left: -10%;
+        right: -10%;
+        background: radial-gradient(ellipse at 50% -3%, rgba(00, 00, 00, 0.5), rgba(97, 97, 97, 0.0) 40%);
+    }
+}
+
+body, p, h4 {
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: var(--font1-color);
+}

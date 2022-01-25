@@ -1,0 +1,91 @@
+@import '../../../assets//stylesheets/mixins.scss';
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 8px 0;
+    background-color: var(--bg1-color);
+    box-shadow: var(--box-shadow1);
+    z-index: 999;
+    width: 100vw;
+
+    @include mobile {
+        padding: 0;
+    }
+
+    .header-wrapper {
+        display: flex;
+        justify-content: space-between;
+
+        @include mobile {
+            margin: 0 -10px;
+        }
+        @include tablet {
+            margin: 0 -10px;
+        }
+
+        .logo-menu-warapper {
+            display: grid;
+            grid-auto-flow: column;
+            grid-gap: 80px;
+
+            @include tablet {
+                grid-gap: 60px;
+            }
+    
+            & > a {
+                > img {
+                    height: 72px;
+                    width: 172px;
+                    margin-bottom: -4px;
+
+                    @include mobile {
+                        height: 48px;
+                        width: 128px;
+                    }
+                }
+            }
+            nav {
+                display: flex;
+                align-items: center;
+                gap: 24px;
+                padding-top: 30px;
+                a {
+                    color: var(--font2-color);
+                }
+
+                @include mobile {
+                    display: none;
+                }
+            }
+        }
+
+        .right-side-wrapper {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            .sign-in-wrapper {
+                display: flex;
+                gap: 24px;
+
+                @include mobile {
+                    display: none;
+                }
+            }
+            .cart-wrapper {
+                display: flex;
+                align-items: center;
+                gap: 4px;
+                background-color: var(--bg2-color);
+                padding: 8px;
+                margin-bottom: -8px;
+                img {
+                    width: 32px;
+                    height: 32px;
+                }
+            }
+        }
+    }
+}
