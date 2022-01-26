@@ -2,7 +2,7 @@
 
 .container {
     max-width: 100%;
-    padding: 0 10px;
+    padding: 0 4px;
     margin: 0;
 }
 
@@ -12,22 +12,38 @@
     }
 }
 
-.mobile-hidden {
+.mobile-only {
     @include tablet {
         display: none !important;
     }
 }
 
-.tablet-hidden {
+.tablet-only {
     @include mobile {
+        display: none !important;
+    }
+    @include desktop {
+        display: none !important;
+    }
+}
+
+.desktop-only {
+    @include mobile-tablet {
         display: none !important;
     }
 }
 
 .desktop-hidden {
+    @include desktop {
+        display: none !important;
+    }
+}
+.mobile-hidden {
     @include mobile {
         display: none !important;
     }
+}
+.tablet-hidden {
     @include tablet {
         display: none !important;
     }
@@ -35,6 +51,7 @@
 
 .main-content {
     margin-top: 90px;
+    padding-bottom: 30px;
 }
 
 .container-bottom-shadow {

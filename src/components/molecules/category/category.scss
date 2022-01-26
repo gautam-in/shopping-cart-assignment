@@ -6,12 +6,20 @@
         display: grid;
         grid-template-columns: 4fr 8fr;
         grid-gap: 40px;
+
+        @include mobile {
+            grid-gap: 16px;
+        }
     }
 
     .content-image {
         display: grid;
         grid-template-columns: 8fr 4fr;
         grid-gap: 40px;
+
+        @include mobile {
+            grid-gap: 16px;
+        }
     }
 
     .content-wrapper {

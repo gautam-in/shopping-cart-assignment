@@ -1,0 +1,29 @@
+.cart {
+    min-height: 90vh;
+    background-color: var(--bg2-color);
+    margin: 0 -4px;
+    padding-top: 24px;
+    .cart-count {
+        width: 100%;
+        padding: 16px;
+        background-color: var(--bg1-color);
+        font-size: var(--base-large);
+        color: var(--font1-color);
+        font-weight: var(--font-weight-bold);
+        margin-bottom: 32px;
+    }
+
+    .lowest-price {
+        display: flex;
+        gap: 16px;
+        padding: 16px;
+        align-items: center;
+        background-color: var(--bg1-color); 
+        margin: 24px 8px;
+        border-radius: 5px;
+    }
+
+    .cart-items {
+
+    }
+}

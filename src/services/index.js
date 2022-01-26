@@ -7,6 +7,15 @@ export const getData = async url => {
     return response? response.data: [];
 }
 
+export const getDataById = async (url, id) => {
+    const response = await axiosInstance.get(url);
+    if(response) {
+        const data = response.data.filter( item => item.category===id);
+        return data;
+    }
+    return [];
+}
+
 export const postData = async (url, data) => {
     const response = await axiosInstance.post(url, data);
     return response? response.data: [];

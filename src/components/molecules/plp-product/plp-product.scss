@@ -1,0 +1,101 @@
+@import '../../../assets/stylesheets/mixins.scss';
+
+.plp-product {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 24px;
+    padding: 5px;
+    padding-bottom: 8px;
+    border-bottom: 2px dotted var(--border1-color);
+    box-shadow: 6px 0 6px -8px var(--border1-color);
+
+    @include desktop {
+        align-items: center;
+    }
+
+    & > h4 {
+        font-size: var(--base-medium);
+        font-family: var(--font-weight-bold);
+        min-height: 36px;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        margin: 10px 0;
+
+        @include desktop {
+            margin: 16px 0 24px;
+        }
+    }
+
+    .image-desc {
+        display: flex;
+        gap: 16px;
+        img {
+            width: 45%;
+
+            @include tablet {
+                width: 100px;
+            }
+        }
+        
+        @include desktop {
+            flex-direction: column;
+            img {
+                width: 120px;
+            }
+        }
+    }
+    .desc {
+        padding: 5px;
+        background-color: var(--bg2-color);
+        & > p {
+            min-height: 110px;
+            font-size: var(--base-small);
+            color: var(--font1-color);
+            display: -webkit-box;
+            -webkit-line-clamp: 6;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            line-height: 1.3;
+        }
+
+        @include mobile {
+            margin-bottom: 40px;
+            min-height: 100;
+            -webkit-line-clamp: 5;
+        }
+    }
+
+    .buy-part {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        align-items: center;
+        font-size: var(--base-smaller);
+        font-weight: var(--font-weight-semi-bold);
+        margin-top: 8px;
+
+        button {
+            font-size: var(--base-small);
+            padding: 6px;
+        }
+    }
+    .buy-part-mobile {
+        width: 100%;
+
+        button {
+            width: 100%;
+            text-align: center;
+            font-size: var(--base-small);
+        }
+
+        @include mobile {
+            width: 50%;
+            padding-left: 50%;
+            margin-top: -36px;
+        }
+    }
+}

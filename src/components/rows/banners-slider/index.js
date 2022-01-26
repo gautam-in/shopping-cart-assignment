@@ -1,4 +1,5 @@
 import React from "react";
+
 import Slider from "react-slick";
 import Image from "../../atoms/image";
 import SliderArrow from "../../atoms/slider-arrow";
@@ -8,7 +9,7 @@ import './banners-slider.scss';
 
 const BannersSlider = () => {
 
-    const {loading, data} = useCustGetData('/banners');
+    const {loading, data=[]} = useCustGetData('/banners');
 
     const SLIDER_SETTINGS = {
         dots: true,

@@ -1,0 +1,35 @@
+@import '../../../assets/stylesheets/mixins.scss';
+
+.sidebar {
+    background-color: var(--bg2-color);
+    position: fixed;
+    left: 0;
+    width: 200px;
+    height: 100%;
+    top: 90px;
+    bottom: 30px;
+    overflow-y: auto;
+
+    @include desktop {
+        left: 160px;
+        width: 224px;
+    }
+    & > nav {
+        display: flex;
+        flex-direction: column;
+
+        & > a {
+            display: block;
+            padding: 10px;
+            border-bottom: 2px solid var(--border1-color);
+            color: var(--font2-color);
+            font-weight: var(--font-weight-semi);
+        }
+
+        &>a:hover, .active {
+            color: var(--secondary-color);
+            font-weight: var(--font-weight-bold);
+            background-color: var(--primary-color);
+        }
+    }
+}

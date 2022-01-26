@@ -1,5 +1,5 @@
 import React from 'react';
-import BannersSlider from '../../molecules/banners-slider';
+import BannersSlider from '../../rows/banners-slider';
 import Categories from '../../rows/categories';
 
 import './home.scss';

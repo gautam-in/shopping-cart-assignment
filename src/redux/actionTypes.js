@@ -1,4 +1,5 @@
 module.exports = {
     REGISTER: 'register',
-    LOGGEDIN: 'loggedin'
+    LOGGEDIN: 'loggedin',
+    ADDTOCART: 'addToCart'
 }

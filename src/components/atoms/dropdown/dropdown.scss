@@ -1,0 +1,17 @@
+.dropdown {
+    background: var(--primary-color);
+    color: var(--secondary-color);
+    padding: 0 10px;
+    font-size: var(--base);
+    width: 100%;
+    border: none;
+    padding: 8px 0;
+    margin-top: 10px;
+    option {
+        background: var(--secondary-color);
+        color: var(--primary-color);
+        padding: 0 10px;
+        font-size: var(--base-small);
+        border: none;
+    }
+}
