@@ -3,8 +3,6 @@
 header {
     position: fixed;
     top: 0;
-    left: 0;
-    right: 0;
     padding: 8px 0;
     background-color: var(--bg1-color);
     box-shadow: var(--box-shadow1);
@@ -16,6 +14,11 @@ header {
 
     @include mobile-tablet {
         width: 100vw;
+    }
+
+    @include desktop {
+        left: 0;
+        right: 0;
     }
 
     .header-wrapper {
@@ -50,7 +53,7 @@ header {
                 padding-top: 30px;
                 a {
                     color: var(--font2-color);
-                    font-weight: var(--font-weight-semi);
+                    font-weight: var(--font-weight-semi-bold);
                 }
 
                 @include mobile {
@@ -99,7 +102,7 @@ header {
             gap: 20px;
 
             & > a {
-                font-weight: var(--font-weight-semi);
+                font-weight: var(--font-weight-semi-bold);
             }
         }
     }

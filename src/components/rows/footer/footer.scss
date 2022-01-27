@@ -1,13 +1,12 @@
 footer {
     position: fixed;
     bottom: 0;
-    left: 0;
-    right: 0;
     color: var(--font1-color);
     background-color: var(--bg2-color);
     font-size: var(--base-smaller);
+    width: 100vw;
     p {
-        padding: 8px 0;
+        padding: 8px;
     }
     border-top: 2px solid var(--secondary-color);
 }

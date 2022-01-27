@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { number } from 'prop-types';
 
-import { connect } from 'react-redux';
+import { useSelector } from 'react-redux';
 import Image from '../../atoms/image';
 import CustomLink from '../../atoms/link';
 
@@ -9,8 +9,18 @@ import { HOME, PRODUCTS, SIGNIN, REGISTER, CART } from '../../../utils/RouteName
 import { _TITLE, _HOME, _LOGIN, _PRODUCTS, _SIGNIN, _REGISTER } from '../../../utils/constants';
 
 import './header.scss';
+import Modal from '../../atoms/modal';
+import Cart from '../../pages/cart';
 
-const Header = ({ cartCount }) => {
+const Header = () => {
+
+    const { cartCount, loggedIn, userName } = useSelector((state) => state);
+
+    const [showCart, setShowCart] = useState(false);
+
+    const handleModal = () => {
+        setShowCart(!showCart);
+    }
 
     return <header>
         <div className='container'>
@@ -27,12 +37,20 @@ const Header = ({ cartCount }) => {
                         <CustomLink href={SIGNIN} label={_SIGNIN} />
                         <CustomLink href={REGISTER} label={_REGISTER} />
                     </div>
-                    <CustomLink href={CART}>
-                        <div className='cart-wrapper'>
+                    <div>
+                        <CustomLink href={CART}>
+                            <div className='cart-wrapper'>
+                                <Image src='/static/images/cart.svg' alt='Cart' />
+                                <span>{cartCount} items</span>
+                            </div>
+                        </CustomLink>
+                    </div>
+                    {/* <div className='desktop-only'>
+                        <div className='cart-wrapper' onClick={handleModal}>
                             <Image src='/static/images/cart.svg' alt='Cart' />
                             <span>{cartCount} items</span>
                         </div>
-                    </CustomLink>
+                    </div> */}
                 </div>
             </div>
         </div>
@@ -46,6 +64,11 @@ const Header = ({ cartCount }) => {
                 <CustomLink href={REGISTER} label={_REGISTER} />
             </div>
         </div>
+        {
+            showCart ?
+            <Modal handleClose={handleModal} show={showCart}><div className='cart-modal'><Cart /></div></Modal>
+            :<></>
+        }
     </header>
 }
 
@@ -53,8 +76,4 @@ Header.propTypes = {
     cartCount: number
 }
 
-const mapStateToProps = (state) => ({
-    cartCount: state.cartCount
-})
-
-export default connect(mapStateToProps, null)(Header);
+export default Header;

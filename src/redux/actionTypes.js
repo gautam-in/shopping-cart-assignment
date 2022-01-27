@@ -1,5 +1,9 @@
 module.exports = {
     REGISTER: 'register',
-    LOGGEDIN: 'loggedin',
-    ADDTOCART: 'addToCart'
+    LOGIN: 'login',
+    ADDTOCART: 'addToCart',
+    SHOWMODAL: 'SHOWMODAL',
+    REMOVEFROMCART: 'REMOVEFROMCART',
+    RESET: 'RESET',
+    LOGOUT: 'LOGOUT',
 }

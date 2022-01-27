@@ -1,6 +1,5 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
-import { redirectToCategory } from '../../../utils/helpers';
+import { useParams, withRouter } from 'react-router-dom';
 import Dropdown from '../../atoms/dropdown';
 
 import useCustGetData from '../../atoms/use-custom-getdata';
@@ -9,7 +8,7 @@ import PlpProducts from '../../rows/plp-products';
 
 import './products.scss';
 
-const Products = () => {
+const Products = ({history}) => {
 
     const { id } = useParams();
     let categoryTypes = [];
@@ -28,7 +27,7 @@ const Products = () => {
         } else {
             href = `/products`;
         }
-        redirectToCategory(href);
+        history.push(href);
     }
 
     return (
@@ -41,4 +40,4 @@ const Products = () => {
     )
 }
 
-export default Products;
+export default withRouter(Products);

@@ -1,0 +1,90 @@
+@import '../../../assets/stylesheets/mixins.scss';
+
+.login-wrapper {
+    padding: 36px;
+
+    @include mobile {
+        padding: 20px 16px;
+    }
+
+    @include desktop {
+        padding: 0;
+        display: grid;
+        grid-template-columns: 5fr 5fr 2fr;
+        > div {
+            padding: 16px 10px 30px 56px;
+        }
+        > div:first-child {
+            padding: 30px 0 30px 100px;
+        }
+    }
+
+    .login {
+        font-size: var(--base-largest);
+        font-weight: var(--font-weight-bold);
+        margin-bottom: 10px;
+    }
+    .login-desc {
+        font-size: var(--base);
+        font-weight: var(--font-weight-semi);
+        margin-bottom: 40px;
+
+        @include desktop {
+            font-size: var(--base-smaller);
+        }
+    }
+}
+.login-form {
+    form > div {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        margin: 24px 0;
+
+        label {
+            font-size: var(--base-large);
+            color: var(--font2-color);
+
+            @include desktop {
+                font-size: var(--base);
+            }
+        }
+        input {
+            font-size: var(--base-small);
+            color: var(--font2-color);
+            padding: 10px 0;
+            border: none;
+            border-bottom: 1px solid var(--font1-color);
+            @include desktop {
+                font-size: var(--base-smaller);
+            }
+
+            &:focus,
+            &:active {
+                outline: none;
+                color: var(--font1-color);
+                border-bottom: 1px solid var(--border2-color);
+                background-color: var(--secondary-color);
+            }
+        }
+
+        input:-webkit-autofill,
+        input:-webkit-autofill:hover,
+        input:-webkit-autofill:focus,
+        input:-webkit-autofill:active {
+            -webkit-box-shadow: 0 0 0 30px white inset !important;
+        }
+
+        span {
+            color: red;
+            font-size: var(--base);
+        }
+    }
+
+    button {
+        font-size: var(--base-medium);
+        font-weight: var(--font-weight-bold);
+        width: 100%;
+        padding: 7px;
+    }
+}

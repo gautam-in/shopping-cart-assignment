@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Button from "../../atoms/button";
 import Heading from "../../atoms/heading";
 import Image from "../../atoms/image";
@@ -10,19 +10,20 @@ const CartItem = ({ cartItem, handleCount }) => {
     return (
         cartItem ? <div className="cart-item-wrapper">
             <div className="cart-item">
-            <Image src={cartItem.imageURL} alt={cartItem.name} />
-            <div className="name-items-count">
-                <Heading heading={cartItem.name} />
-                <div>
-                    <Button label={'-'} onClick={()=>handleCount(cartItem.id, cartItem.count-1)}/>
-                    <div>{cartItem.count}</div>
-                    <Button label={'+'} onClick={()=>handleCount(cartItem.id, cartItem.count+1)}/>
-                    <div>X</div>
-                    <div>{cartItem.price}</div>
+                <Image src={cartItem.imageURL} alt={cartItem.name} />
+                <div className="name-items-count">
+                    <Heading heading={cartItem.name} />
+                    <div>
+                        <Button label={'-'} onClick={() => handleCount(cartItem.id, cartItem.count - 1)} />
+                        <div>{cartItem.count}</div>
+                        <Button label={'+'} onClick={() => handleCount(cartItem.id, cartItem.count + 1)} />
+                        <div>X</div>
+                        <div>{cartItem.price}</div>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div>Rs.{cartItem.price*cartItem.count}</div>
+            <div className="total-price">Rs.{cartItem.price * cartItem.count}</div>
+            <div className="close-button"><Button label={'X'} id={cartItem.id}/></div>
         </div>
             : <></>
     )

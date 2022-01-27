@@ -1,31 +1,77 @@
-import { REGISTER, LOGGEDIN, ADDTOCART } from './actionTypes'
+import { REGISTER, ADDTOCART, SHOWMODAL, REMOVEFROMCART, RESET, LOGIN, LOGOUT } from './actionTypes'
 
 const INITIAL_STATE = {
-    register: false,
+    userName: null,
+    registeredData: {},
     loggedIn: false,
+    modalValue: false,
     cart: {},
-    cartCount: 0
+    cartCount: 0,
+    totalAmount: 0
 };
+
+const findTotalAmount = (cartItems) => {
+    let totalValue = 0;
+    Object.keys(cartItems).forEach(cartId => {
+        const cartItem = cartItems[cartId];
+        totalValue += cartItem.price * cartItem.count;
+    });
+    return totalValue;
+}
 
 const reducer = (state = INITIAL_STATE, action) => {
     switch (action.type) {
         case REGISTER:
+            const registeredData = { ...state.registeredData };
+            registeredData[action.data.email] = action.data;
+
+            console.log("action", action);
+
             return {
-                ...state, register: true,
+                ...state, registeredData: { ...registeredData },
             };
-        case LOGGEDIN:
+
+        case LOGIN:
             return {
-                ...state, loggedIn: true
+                ...state, loggedIn: true, userName: state.registeredData[action.email].fname
             };
+
         case ADDTOCART:
-            console.log("Reducer", action);
             const updatedCart = state.cart;
             updatedCart[action.id] = action.cartItem;
-            // return Object.assign({}, state, {cart:updatedCart, cartCount: Object.keys(updatedCart).length})
-            console.log("updatedCart", updatedCart);
+
             return {
-                ...state, cart: updatedCart, cartCount: Object.keys(updatedCart).length
-              };
+                ...state,
+                cart: { ...updatedCart },
+                totalAmount: findTotalAmount(updatedCart),
+                cartCount: Object.keys(updatedCart).length
+            };
+
+        case REMOVEFROMCART:
+            const removeCart = state.cart;
+            delete removeCart[action.id];
+
+            return {
+                ...state,
+                cart: { ...removeCart },
+                totalAmount: findTotalAmount(removeCart),
+                cartCount: Object.keys(removeCart).length
+            };
+
+        case SHOWMODAL:
+            return {
+                ...state, modalValue: action.modalValue
+            };
+
+        case RESET:
+            return {
+                ...state, ...INITIAL_STATE, cart: {}, registeredData: {}, loggedIn: state.loggedIn
+            }
+
+        case LOGOUT:
+            return {
+                ...state, ...INITIAL_STATE, cart: {}, registeredData: {}
+            }
 
         default: return state;
     }

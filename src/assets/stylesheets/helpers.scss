@@ -2,7 +2,7 @@
 
 .container {
     max-width: 100%;
-    padding: 0 4px;
+    padding: 0;
     margin: 0;
 }
 
@@ -50,8 +50,12 @@
 }
 
 .main-content {
-    margin-top: 90px;
+    padding-top: 90px;
     padding-bottom: 30px;
+
+    @include mobile-tablet {
+        width: 100vw;
+    }
 }
 
 .container-bottom-shadow {

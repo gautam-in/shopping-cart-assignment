@@ -1,61 +1,90 @@
 import React, { useState } from 'react';
-import { connect } from 'react-redux';
-import { addToCartAction } from '../../../redux/actions';
-import { LOWEST_PRICE_MSG } from '../../../utils/constants';
+import { useDispatch, useSelector } from 'react-redux';
+import { addToCartAction, removeFromCartAction, showModal } from '../../../redux/actions';
+import { RESET } from '../../../redux/actionTypes';
+import { _LOWEST_PRICE_MSG, _CHECKOUT_MSG, _EMPTY_CART_MSG, _PROMO_MSG, _PAYMENT_SUCCESS } from '../../../utils/constants';
+import EmptyCart from '../../atoms/empty-cart';
 import Image from '../../atoms/image';
+import Modal from '../../atoms/modal';
 import CartItem from '../../molecules/cart-item';
 
 import './cart.scss';
 
-const Cart = ({ cartCount, cartItems, addToCart }) => {
+const Cart = () => {
 
-    const [counter, setCounter] = useState(0);
+    const dispatch = useDispatch();
+    const { cartCount, cart, totalAmount } = useSelector((state) => state);
+
+    const[show, setShow] = useState(false);
+
     const handleCount = (id, count) => {
         if (count > -1) {
-            const updatedCart = cartItems[id];
+            const updatedCart = cart[id];
             updatedCart.count = count;
             console.log("updatedData", updatedCart);
-            addToCart(id, updatedCart);
-            setCounter(counter + 1);
+            dispatch(addToCartAction(id, updatedCart));
         }
     }
 
+    const removeFromCart = (e) => {
+        if(e.target && e.target.id) {
+            dispatch(removeFromCartAction(e.target.id));
+        }
+    }
 
-    console.log("cartItems", cartItems);
+    const onOrder =(e) => {
+        
+        setShow(!show);
+        dispatch({type:RESET});
+        e.stopPropagation()
+    }
+
+    const onPayment = (e) => {
+        setShow(!show);
+        e.stopPropagation()
+    }
+
+    console.log("cart", cart);
+    console.log("totalPrice", totalAmount);
 
     return (
         <div className='cart'>
             {
-                Object.keys(cartItems).length > 0 ?
+                Object.keys(cart).length > 0 ?
                     <>
                         <div className='cart-count'>My Cart ({cartCount} item(s))</div>
-                        <div className='cart-items'>
+                        <div className='cart-items' onClick={removeFromCart}>
                             {
-                                Object.keys(cartItems).map(cartItem => <div>
-                                    <CartItem
-                                        cartItem={cartItems[cartItem]}
-                                        handleCount={handleCount}
-                                    />
-                                </div>)
+                                Object.keys(cart).map(cartItem => (
+                                    <div key={cartItem}>
+                                        <CartItem
+                                            cartItem={cart[cartItem]}
+                                            handleCount={handleCount}
+                                        />
+                                    </div>
+                                ))
                             }
                         </div>
                         <div className='lowest-price'>
                             <Image src='/static/images/lowest-price.png' height='40px' />
-                            <div>{LOWEST_PRICE_MSG}</div>
+                            <div>{_LOWEST_PRICE_MSG}</div>
+                        </div>
+                        <div className='proceed-to-pay' onClick={onOrder}>
+                            <div className='container'>
+                                <div>{_PROMO_MSG}</div>
+                                <div>
+                                    <div>{_CHECKOUT_MSG}</div>
+                                    <div>{`Rs.${totalAmount}`}<span>{'>'}</span></div>
+                                </div>
+                            </div>
                         </div></>
-                    : <div>You have no items in your shopping cart, start adding some!</div>
+                    : <div><EmptyCart /></div>
+            }
+            {
+                <Modal handleClose={onPayment} show={show}>{_PAYMENT_SUCCESS}</Modal>
             }
         </div>
     )
 }
 
-const mapStateToProps = (state) => ({
-    cartCount: state.cartCount,
-    cartItems: state.cart
-});
-
-const mapDispatchToProps = (dispatch) => ({
-    addToCart: (id, cartItem) => dispatch(addToCartAction(id, cartItem))
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(Cart);
+export default Cart;
