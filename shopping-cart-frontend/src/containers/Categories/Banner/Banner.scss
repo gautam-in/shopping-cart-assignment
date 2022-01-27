@@ -1,0 +1,29 @@
+@import "../../../assets/utils.scss";
+
+@include tab {
+  .nav-icon {
+    background-color: black;
+    color: white;
+    transition: all 1s ease-in;
+    opacity: 0.8;
+    text-transform: uppercase;
+
+    :hover {
+      opacity: 1;
+    }
+  }
+  .nav-icon {
+    display: none;
+  }
+}
+
+.carousel {
+  box-shadow: 0px 15px 10px -15px #111;
+}
+
+.carousel .carousel-indicators button {
+  width: 5px;
+  height: 5px;
+  border-radius: 100%;
+  background-color: black;
+}

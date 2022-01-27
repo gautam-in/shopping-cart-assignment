@@ -1,0 +1,10 @@
+@import "../../assets/utils.scss";
+
+.categories {
+  width: 80%;
+  margin: 0 auto;
+
+  @include tab {
+    width: 100%;
+  }
+}

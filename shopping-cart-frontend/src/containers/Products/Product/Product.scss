@@ -1,0 +1,60 @@
+@import "../../../assets/utils.scss";
+@import "../../../assets/colors.scss";
+
+@mixin line-clamp($lineNo) {
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  display: block;
+  display: -webkit-box;
+  -webkit-line-clamp: $lineNo;
+  text-overflow: ellipsis;
+}
+
+.product {
+  border: none;
+
+  .title {
+    @include line-clamp(2);
+    height: 65px;
+    font-weight: 600;
+  }
+  .product-content {
+    .description {
+      @include line-clamp(4);
+      height: 110px;
+      background-color: $bg-secondary;
+      box-sizing: border-box;
+    }
+
+    button {
+      span {
+        display: none;
+      }
+    }
+  }
+
+  border-bottom: 1px dashed lightgray;
+
+  @include sm {
+    .product-content {
+      display: flex;
+
+      img {
+        width: 50%;
+        height: auto;
+        object-fit: contain;
+      }
+
+      .price {
+        display: none;
+      }
+
+      button {
+        width: 100%;
+        span {
+          display: inline;
+        }
+      }
+    }
+  }
+}

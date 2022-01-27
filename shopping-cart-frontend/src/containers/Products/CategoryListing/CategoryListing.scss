@@ -1,0 +1,41 @@
+@import "../../../assets/colors.scss";
+@import "../../../assets/utils.scss";
+
+.category-listing {
+  height: 100%;
+  min-height: 100vh;
+  background-color: $bg-secondary;
+
+  .list-group-item {
+    background-color: inherit;
+    border: none;
+    border-bottom: 1px solid lightgray;
+
+    &.active {
+      color: $theme-color;
+    }
+  }
+
+  @include sm {
+    height: unset;
+    min-height: unset;
+    margin-top: 15px;
+
+    .list-group-item {
+      border: none;
+    }
+  }
+  .dropdown {
+    width: 100%;
+    button {
+      width: 100%;
+      display: inline-flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .dropdown-menu {
+      width: 100%;
+    }
+  }
+}
