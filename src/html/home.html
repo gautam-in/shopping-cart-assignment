@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sabka Bazaar</title>
+    <link rel="stylesheet" href="../css/home.css">
+</head>
+
+<body>
+    <header class="header">
+        <nav class="nav container">
+            <div class="nav-logo">
+                <img src="../../static/images/logo.png" alt="logo" class="nav-logo-image">
+            </div>
+            <ul class="nav-links">
+                <li><a href="./home.html" class="nav-link-item">Home</a></li>
+                <li><a href="./products.html" class="nav-link-item">Products</a></li>
+            </ul>
+            <div class="nav-right">
+                <ul class="nav-right-register">
+                    <li><a href="./signin.html" class="acc-link-item">Signin</a></li>
+                    <li><a href="./register.html" class="acc-link-item">Register</a></li>
+                </ul>
+                <div>
+                    <a class="nav-right-cart" href="./cart.html">
+                        <img src="../../static/images/cart.svg" alt="cart" class="cart">
+                        <span>&nbsp; 0 items</span>
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container main-home">
+        <div class="carousel">
+            <div id="carousel-slide-wrap" class="carousel-slide-wrap">
+                <div id="carousel-slider" class="carousel-slider">
+                    <!-- <div class="carousel-slide" id="carousel-slide-1"><img src="./../../static/images/offers/offer1.jpg" alt=""></div>
+                    <div class="carousel-slide" id="carousel-slide-2"><img src="./../../static/images/offers/offer2.jpg" alt=""></div>
+                    <div class="carousel-slide" id="carousel-slide-3"><img src="./../../static/images/offers/offer3.jpg" alt=""></div>
+                    <div class="carousel-slide" id="carousel-slide-4"><img src="./../../static/images/offers/offer4.jpg" alt=""></div>
+                    <div class="carousel-slide" id="carousel-slide-5"><img src="./../../static/images/offers/offer5.jpg" alt=""></div> -->
+                </div>
+                <div id="carousel-slideButton" class="carousel-slideButton">
+                    <!-- <a href="#carousel-slide-1" onclick="currentSlide(1)" class="carousel-option slide-1 active"></a>
+                    <a href="#carousel-slide-2" onclick="currentSlide(2)" class="carousel-option slide-2"></a>
+                    <a href="#carousel-slide-3" onclick="currentSlide(3)" class="carousel-option slide-3"></a>
+                    <a href="#carousel-slide-4" onclick="currentSlide(4)" class="carousel-option slide-4"></a>
+                    <a href="#carousel-slide-5" onclick="currentSlide(5)" class="carousel-option slide-5"></a> -->
+                </div>
+            </div>
+
+            <div class="carousel-select">
+                <span class="carousel-select-previous" onclick="scrollToPrevious()">prev</span>
+                <span class="carousel-select-next" onclick="scrollToNext()">next</span>
+            </div>
+        </div>
+        <div class="product-shadow"></div>
+
+        <div class="product">
+            <div class="product-image">
+                <img src="./../../static/images/category/fruits.png" alt="a">
+            </div>
+            <div class="product-details">
+                <h3 class="heading-tertiary">Fruits & Vegetables</h3>
+                <p class="product-description">A variety of frest fruits and vegetables.</p>
+                <button class="product-button">Explore fruit-and-veg</button>
+            </div>
+        </div>
+        <div class="product-shadow"></div>
+
+        <div class="product">
+            <div class="product-details">
+                <h3 class="heading-tertiary">Bakery Cakes and Dairy</h3>
+                <p class="product-description">The best cupcakes cookies, cakes, pies, cheesecakes, fresh bread, biscotti, muffins, bagrls, fresh coffee, milk an dmore.</p>
+                <button class="product-button">Explore bakery-cakes-dairy</button>
+            </div>
+            <div class="product-image">
+                <img src="./../../static/images/category/bakery.png" alt="a">
+            </div>
+        </div>
+        <div class="product-shadow"></div>
+
+        <div class="product">
+            <div class="product-image">
+                <img src="./../../static/images/category/beverages.png" alt="a">
+            </div>
+            <div class="product-details">
+                <h3 class="heading-tertiary">Beverages</h3>
+                <p class="product-description">Our beverage department will ensures your fridge is always fully stocked. Shop for soda, juoce and bear and more.</p>
+                <button class="product-button">Explore fruit-and-veg</button>
+            </div>
+        </div>
+        <div class="product-shadow"></div>
+
+        <div class="product">
+            <div class="product-details">
+                <h3 class="heading-tertiary">Beauty and Hygien</h3>
+                <p class="product-description">Buy beauty and personal care product online in india at best price.</p>
+                <button class="product-button">Explore beauty-hygien</button>
+            </div>
+            <div class="product-image">
+                <img src="./../../static/images/category/beauty.png" alt="a">
+            </div>
+        </div>
+        <div class="product-shadow"></div>
+
+        <div class="product">
+            <div class="product-image">
+                <img src="./../../static/images/category/baby.png" alt="a">
+            </div>
+            <div class="product-details">
+                <h3 class="heading-tertiary">Baby care</h3>
+                <p class="product-description">Shop online for baby Products, Diapers, Skin care Products, etc</p>
+                <button class="product-button">Explore baby</button>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-container">
+            Copyright &copy; 2021 Sabka Bazaar Grocery Suppliers Pvt Ltd
+        </div>
+    </footer>
+
+    <script src="../js/home.js" defer></script>
+</body>
+
+</html>
