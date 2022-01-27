@@ -97,12 +97,6 @@ class Carousal extends HTMLElement{
         .controls:hover {
             cursor : pointer;
         }
-        @media only screen and (min-width: 600px) {
-            .carousal {
-                max-width : 1000px;
-                margin : 0 auto;
-            }
-        }
         </style>
         <section class='carousal'>
         <figure class='img-container'>
@@ -118,8 +112,6 @@ class Carousal extends HTMLElement{
             <div class="controls prev">Prev</div>
             <div class="controls next">Next</div>
         </section>
-        <div>
-        </div>
         </section>
         `;
         const img_container = document.querySelector('.img-container');

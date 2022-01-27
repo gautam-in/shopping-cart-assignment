@@ -28,7 +28,7 @@ class Login_Register extends HTMLElement{
         }
         input {
             border-width : 0;
-            border-bottom-width : 1px;
+            border-bottom-width : 1.5px;
             padding-top : 1rem;
             width : 100%;
         }

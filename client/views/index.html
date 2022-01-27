@@ -7,6 +7,7 @@
     <title>Sabka Bazar - The Grocery Store</title>
     <script src='../scripts/header.js'></script>
     <script src='../scripts/carousal.js'></script>
+    <script src='../scripts/categories.js'></script>
     <link
       rel="stylesheet"
       href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
@@ -18,10 +19,19 @@
             margin : 0;
             padding : 0;
         }
+        @media only screen and (min-width: 600px) {
+            .home-container {
+                max-width : 1000px;
+                margin : 0 auto;
+            }
+        }
     </style>
 </head>
 <body>
     <custom-header></custom-header>
-    <custom-carousal></custom-carousal>
+    <div class='home-container'>
+        <custom-carousal></custom-carousal>
+        <categories-view></categories-view>
+    </div>
 </body>
 </html>
