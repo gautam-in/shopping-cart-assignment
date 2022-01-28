@@ -1,9 +1,9 @@
 import React from "react";
-import {string} from 'prop-types';
+import { string } from 'prop-types';
 
 import './paragraph.scss';
 
-const Paragraph = ({text, className, ...props}) => {
+const Paragraph = ({ text, className, ...props }) => {
 
     return <p className={`${className} paragraph`} {...props}>
         {text}
@@ -11,7 +11,7 @@ const Paragraph = ({text, className, ...props}) => {
 }
 
 Paragraph.propTypes = {
-    text: string,
+    text: string.isRequired,
     className: string,
 }
 

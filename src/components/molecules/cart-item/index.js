@@ -1,4 +1,6 @@
 import React from "react";
+import { func, object } from 'prop-types';
+
 import Button from "../../atoms/button";
 import Heading from "../../atoms/heading";
 import Image from "../../atoms/image";
@@ -23,10 +25,15 @@ const CartItem = ({ cartItem, handleCount }) => {
                 </div>
             </div>
             <div className="total-price">Rs.{cartItem.price * cartItem.count}</div>
-            <div className="close-button"><Button label={'X'} id={cartItem.id}/></div>
+            <div className="close-button"><Button label={'X'} id={cartItem.id} /></div>
         </div>
             : <></>
     )
+}
+
+CartItem.propTypes = {
+    cartItem: object.isRequired,
+    handleCount: func
 }
 
 export default CartItem;

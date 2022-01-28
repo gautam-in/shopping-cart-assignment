@@ -11,7 +11,7 @@ const Heading = ({heading, className, ...props}) => {
 }
 
 Heading.propTypes = {
-    heading: string,
+    heading: string.isRequired,
     className: string
 }
 

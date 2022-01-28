@@ -6,7 +6,7 @@ const useCustPostData = (url, payload) => {
     const [response, setResponse] = useState({});
     const [loading, setLoading] = useState(true);
 
-    useEffect(()=> {
+    useEffect(() => {
         (async () => {
             try {
                 let response = await postData(url, payload);
@@ -16,7 +16,7 @@ const useCustPostData = (url, payload) => {
             } finally {
                 setLoading(false);
             }
-          })();
+        })();
     }, []);
 
     return { loading, response };

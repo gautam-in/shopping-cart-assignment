@@ -1,5 +1,5 @@
 import React from 'react';
-import {string, func, object} from 'prop-types';
+import { string, func, object } from 'prop-types';
 
 function SliderArrow(props) {
     const { className, style, onClick, label } = props;

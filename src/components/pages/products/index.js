@@ -1,20 +1,21 @@
 import React from 'react';
+import { object } from 'prop-types';
 import { useParams, withRouter } from 'react-router-dom';
-import Dropdown from '../../atoms/dropdown';
 
+import Dropdown from '../../atoms/dropdown';
 import useCustGetData from '../../atoms/use-custom-getdata';
 import Sidebar from '../../molecules/sidebar';
 import PlpProducts from '../../rows/plp-products';
 
 import './products.scss';
 
-const Products = ({history}) => {
+const Products = ({ history }) => {
 
     const { id } = useParams();
     let categoryTypes = [];
 
     const categoriesData = useCustGetData('/categories');
-    const { data, loading } = id ? useCustGetData('/products', id) : useCustGetData('/products');
+    const { data = [], loading } = id ? useCustGetData('/products', id) : useCustGetData('/products');
 
     if (categoriesData && categoriesData.data) {
         categoryTypes = categoriesData.data.map(item => ({ id: item.id, categoryType: item.name }));
@@ -22,7 +23,7 @@ const Products = ({history}) => {
 
     const onSelect = (e) => {
         let href = "";
-        if(e && e.target && e.target.value!=="select") {
+        if (e && e.target && e.target.value !== "select") {
             href = `/products/${e.target.value}`;
         } else {
             href = `/products`;
@@ -31,13 +32,18 @@ const Products = ({history}) => {
     }
 
     return (
-        loading ? <></>
-            : <div className='products-container'>
-                <div className='mobile-only'><Dropdown items={categoryTypes} onSelect={onSelect} activeId={id}/></div>
+        loading ? <div>Loading...</div>
+            : data.length ? <div className='products-container'>
+                <div className='mobile-only'><Dropdown items={categoryTypes} onSelect={onSelect} activeId={id} /></div>
                 <div className='nav-sidebar'><Sidebar items={categoryTypes} activeId={id} /></div>
                 <div className='products'><PlpProducts products={data} /></div>
             </div>
+                : <></>
     )
+}
+
+Products.propTypes = {
+    history: object
 }
 
 export default withRouter(Products);

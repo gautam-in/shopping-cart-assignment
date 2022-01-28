@@ -1,11 +1,11 @@
-@import '../../../assets/stylesheets/mixins.scss';
+@import "../../../assets/stylesheets/mixins.scss";
 
 .cart-item-wrapper {
     position: relative;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: var(--bg1-color);    
+    background-color: var(--bg1-color);
     margin: 10px 0;
     padding: 0 20px 0 10px;
     .cart-item {
@@ -25,7 +25,7 @@
                 height: 70px;
             }
         }
-    
+
         h4 {
             font-size: var(--base-large);
 
@@ -33,7 +33,7 @@
                 font-size: var(--base);
             }
         }
-    
+
         .name-items-count {
             display: flex;
             flex-direction: column;
@@ -44,12 +44,12 @@
                 gap: 10px;
                 font-size: var(--base);
             }
-    
+
             & > div {
                 display: flex;
                 align-items: center;
                 gap: 16px;
-    
+
                 button {
                     padding: 6px 16px;
                     border-radius: 5px;

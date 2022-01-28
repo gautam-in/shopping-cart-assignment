@@ -1,6 +1,6 @@
 @import '../../../assets/stylesheets/mixins.scss';
 
-.register-wrapper {
+.lr-wrapper {
     padding: 36px;
 
     @include mobile {
@@ -19,12 +19,12 @@
         }
     }
 
-    .register {
+    .heading {
         font-size: var(--base-largest);
         font-weight: var(--font-weight-bold);
         margin-bottom: 10px;
     }
-    .register-desc {
+    .description {
         font-size: var(--base);
         font-weight: var(--font-weight-semi);
         margin-bottom: 40px;
@@ -34,7 +34,7 @@
         }
     }
 }
-.register-form {
+.lr-form {
     form > div {
         display: flex;
         flex-direction: column;
@@ -82,16 +82,20 @@
     }
 
     button {
-        font-size: var(--base-large);
+        font-size: var(--base-medium);
         font-weight: var(--font-weight-bold);
         width: 100%;
-        padding: 8px;
-        margin-top: 16px;
-
-        @include desktop {
-            padding: 6px;
-            margin-top: 0;
-            font-size: var(--base-medium);
-        }
+        padding: 7px;
     }
 }
+
+.lr-msg {
+    margin-top: 16px;
+    font-size: var(--base);
+
+    a {
+        color: var(--primary-color);
+        font-weight: var(--font-weight-semi-bold);
+        text-decoration: underline;
+    }
+} 

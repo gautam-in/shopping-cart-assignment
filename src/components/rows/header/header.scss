@@ -54,6 +54,10 @@ header {
                 a {
                     color: var(--font2-color);
                     font-weight: var(--font-weight-semi-bold);
+
+                    &:hover {
+                        color: var(--primary-color);
+                    }
                 }
 
                 @include mobile {
@@ -70,6 +74,7 @@ header {
             .sign-in-wrapper {
                 display: flex;
                 gap: 24px;
+                font-weight: var(--font-weight-semi-bold);
 
                 @include mobile {
                     display: none;
@@ -97,13 +102,21 @@ header {
         margin: 16px 4px 8px;
         padding: 0 8px;
 
-        & > div, & > nav {
+        & > div,
+        & > nav {
             display: flex;
             gap: 20px;
 
             & > a {
                 font-weight: var(--font-weight-semi-bold);
             }
+        }
+    }
+    .user-name {
+        color: var(--primary-color);
+
+        &:hover {
+            color: var(--font2-color);
         }
     }
 }

@@ -1,8 +1,22 @@
-import { REGISTER, ADDTOCART, SHOWMODAL, REMOVEFROMCART, RESET, LOGIN, LOGOUT } from './actionTypes'
+import {
+    REGISTER,
+    ADDTOCART,
+    SHOWMODAL,
+    REMOVEFROMCART,
+    RESET,
+    LOGIN,
+    LOGOUT
+} from './actionTypes';
 
 const INITIAL_STATE = {
     userName: null,
-    registeredData: {},
+    registeredData: {
+        "sur@1": {
+            fname: "Suresh",
+            lname: "Vakkalakula",
+            password: "12345678"
+        }
+    },
     loggedIn: false,
     modalValue: false,
     cart: {},
@@ -24,8 +38,6 @@ const reducer = (state = INITIAL_STATE, action) => {
         case REGISTER:
             const registeredData = { ...state.registeredData };
             registeredData[action.data.email] = action.data;
-
-            console.log("action", action);
 
             return {
                 ...state, registeredData: { ...registeredData },
@@ -65,12 +77,18 @@ const reducer = (state = INITIAL_STATE, action) => {
 
         case RESET:
             return {
-                ...state, ...INITIAL_STATE, cart: {}, registeredData: {}, loggedIn: state.loggedIn
+                ...state, ...INITIAL_STATE,
+                cart: {}, registeredData: state.registeredData,
+                userName: state.userName,
+                loggedIn: state.loggedIn
             }
 
         case LOGOUT:
             return {
-                ...state, ...INITIAL_STATE, cart: {}, registeredData: {}
+                ...state, 
+                ...INITIAL_STATE, 
+                cart: {}, 
+                registeredData: state.registeredData
             }
 
         default: return state;

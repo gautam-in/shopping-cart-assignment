@@ -1,6 +1,6 @@
 import React from "react";
-
 import Slider from "react-slick";
+
 import Image from "../../atoms/image";
 import SliderArrow from "../../atoms/slider-arrow";
 import useCustGetData from "../../atoms/use-custom-getdata";
@@ -9,7 +9,7 @@ import './banners-slider.scss';
 
 const BannersSlider = () => {
 
-    const {loading, data=[]} = useCustGetData('/banners');
+    const { loading, data = [] } = useCustGetData('/banners');
 
     const SLIDER_SETTINGS = {
         dots: true,
@@ -24,19 +24,21 @@ const BannersSlider = () => {
     };
 
     return (
-        loading ? 
-        <div>Loading</div>
-        : <div className="banners-slider">
-            <Slider {...SLIDER_SETTINGS}>
-                {
-                    data.map(({bannerImageUrl, bannerImageAlt, id}) => (
-                        <div key={id} className="slide">
-                            <Image src={bannerImageUrl} alt={bannerImageAlt}/>
-                        </div>
-                    ))
-                }
-            </Slider>
-        </div>
+        loading ?
+            <div>Loading</div>
+            : data.length > 0 ?
+                <div className="banners-slider">
+                    <Slider {...SLIDER_SETTINGS}>
+                        {
+                            data.map(({ bannerImageUrl, bannerImageAlt, id }) => (
+                                <div key={id} className="slide">
+                                    <Image src={bannerImageUrl} alt={bannerImageAlt} />
+                                </div>
+                            ))
+                        }
+                    </Slider>
+                </div>
+                : <></>
     )
 }
 

@@ -1,4 +1,4 @@
-@import '../../../assets/stylesheets/mixins.scss';
+@import "../../../assets/stylesheets/mixins.scss";
 
 .cart {
     position: relative;
@@ -41,6 +41,7 @@
         padding: 24px 0;
         z-index: 99;
         box-shadow: var(--box-shadow3);
+        cursor: pointer;
 
         @include mobile-tablet {
             width: 100vw;
@@ -52,7 +53,7 @@
             bottom: 0;
             padding: 12px 0;
         }
-        
+
         & > div {
             & > div {
                 display: flex;
@@ -66,7 +67,7 @@
             & > div:first-child {
                 margin-bottom: 16px;
                 font-size: var(--base-large);
-    
+
                 @include mobile {
                     font-size: var(--base);
                 }
@@ -81,15 +82,15 @@
                 margin: 0 16px;
                 background-color: var(--primary-color);
                 color: var(--secondary-color);
-    
+
                 @include mobile {
                     padding: 10px 16px;
                 }
-    
+
                 @include desktop {
                     padding: 4px 16px;
                 }
-    
+
                 span {
                     padding-left: 10px;
                     font-size: var(--base-largest);

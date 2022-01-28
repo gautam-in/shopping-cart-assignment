@@ -9,13 +9,15 @@ import Routing from './routing';
 const App = () => {
     return (
         <Provider store={store}>
-            <Router>
-                <Header />
-                <div className='container main-content' >
-                    <Routing />
-                </div>
-                <Footer />
-            </Router>
+            <React.Suspense fallback={<div>Loading...</div>}>
+                <Router>
+                    <Header />
+                    <div className='container main-content' >
+                        <Routing />
+                    </div>
+                    <Footer />
+                </Router>
+            </React.Suspense>
         </Provider>
     )
 }

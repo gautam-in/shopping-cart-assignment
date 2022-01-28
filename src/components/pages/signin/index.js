@@ -1,21 +1,28 @@
 import React, { useState } from 'react';
+import { object } from 'prop-types';
 import { withRouter } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { useDispatch, useSelector } from 'react-redux';
-import { loginAction } from '../../../redux/actions';
-import { _EMAIL, _LOGIN, _PASSWORD, _LOGIN_DESC } from '../../../utils/constants';
 
+import { loginAction } from '../../../redux/actions';
+import LoginRegisterTemplate from '../../rows/login-register-template';
 import Button from '../../atoms/button';
 import Modal from '../../atoms/modal';
+import CustomLink from '../../atoms/link';
+import { REGISTER } from '../../../redux/actionTypes';
+import {
+    _EMAIL,
+    _LOGIN,
+    _PASSWORD,
+    _LOGIN_DESC,
+    _SIGNIN,
+    _SIGN_UP
+} from '../../../utils/constants';
 
-import './signin.scss';
-
-const LoginForm = ({history}) => {
+const LoginForm = ({ history }) => {
 
     const dispatch = useDispatch();
-    const { registeredData, ...remaining } = useSelector((state) => state);
-
-    console.log(registeredData, remaining);
+    const { registeredData } = useSelector((state) => state);
 
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
     const [show, setShow] = useState(false);
@@ -24,25 +31,29 @@ const LoginForm = ({history}) => {
     }
 
     const onSubmit = data => {
-        console.log(data);
-        if (data && data.email && registeredData[data.email] ) {
+        if (data && data.email) {
             const reqData = registeredData[data.email];
-            if(reqData.password == data.password ) {
+            if (reqData && reqData.password == data.password) {
                 dispatch(loginAction(data.email));
-                history.push("/");
+                let to = '/';
+                if (history.location.state) {
+                    to = history.location.state.from;
+                }
+                history.push(to);
             }
-        } else {
-            handleDialog()
+            else {
+                handleDialog()
+            }
         }
     }
 
     return (
-        <div className='login-wrapper'> 
+        <LoginRegisterTemplate>
             <div>
-                <div className='login'>{_LOGIN}</div>
-                <div className='login-desc'>{_LOGIN_DESC}</div>
+                <div className='heading'>{_LOGIN}</div>
+                <div className='description'>{_LOGIN_DESC}</div>
             </div>
-            <div className='login-form'>
+            <div className='lr-form'>
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <div>
                         <label><b>{_EMAIL}</b></label>
@@ -56,10 +67,15 @@ const LoginForm = ({history}) => {
                     </div>
                     <Button label={_LOGIN} type={'submit'} />
                 </form>
+                <div className='lr-msg'>If you dont't have an account already, please <CustomLink href={REGISTER} label={_SIGN_UP} /></div>
             </div>
             <Modal handleClose={handleDialog} show={show}>{"Invalid credentials. Please enter correct credentials!!"}</Modal>
-        </div>
+        </LoginRegisterTemplate>
     );
+}
+
+LoginForm.propTypes = {
+    history: object
 }
 
 export default withRouter(LoginForm);

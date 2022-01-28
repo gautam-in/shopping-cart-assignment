@@ -1,11 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
+import { array } from 'prop-types';
 import { useDispatch, useSelector } from "react-redux";
+
 import PlpProduct from "../../molecules/plp-product";
 import { addToCartAction, showModal } from "../../../redux/actions";
-
-import './plp-products.scss';
 import Modal from "../../atoms/modal";
 import { _PRODUCT_ADDED } from "../../../utils/constants";
+
+import './plp-products.scss';
 
 const PlpProducts = ({ products }) => {
 
@@ -25,7 +27,7 @@ const PlpProducts = ({ products }) => {
     }
 
     const onProductSelect = (e) => {
-        if(e.target && e.target.id) {
+        if (e.target && e.target.id) {
             dispatch(addToCartAction(e.target.id, { ...requiredFormat[e.target.id], count: 1 }, !modalValue));
         }
     }
@@ -35,10 +37,14 @@ const PlpProducts = ({ products }) => {
             <div className="plp-products" onClick={onProductSelect}>{
                 products.map(product => <PlpProduct product={product} key={product.id} />)
             }
-            <Modal handleClose={handleModal} show={modalValue}><div>{_PRODUCT_ADDED}</div></Modal>
+                <Modal handleClose={handleModal} show={modalValue}><div>{_PRODUCT_ADDED}</div></Modal>
             </div>
             : <></>
     )
+}
+
+PlpProducts.propTypes = {
+    products: array
 }
 
 export default PlpProducts;

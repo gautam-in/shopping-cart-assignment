@@ -1,12 +1,19 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { addToCartAction, removeFromCartAction, showModal } from '../../../redux/actions';
+
+import { addToCartAction, removeFromCartAction } from '../../../redux/actions';
 import { RESET } from '../../../redux/actionTypes';
-import { _LOWEST_PRICE_MSG, _CHECKOUT_MSG, _EMPTY_CART_MSG, _PROMO_MSG, _PAYMENT_SUCCESS } from '../../../utils/constants';
 import EmptyCart from '../../atoms/empty-cart';
 import Image from '../../atoms/image';
 import Modal from '../../atoms/modal';
 import CartItem from '../../molecules/cart-item';
+import {
+    _LOWEST_PRICE_MSG,
+    _CHECKOUT_MSG,
+    _EMPTY_CART_MSG,
+    _PROMO_MSG,
+    _PAYMENT_SUCCESS
+} from '../../../utils/constants';
 
 import './cart.scss';
 
@@ -15,27 +22,25 @@ const Cart = () => {
     const dispatch = useDispatch();
     const { cartCount, cart, totalAmount } = useSelector((state) => state);
 
-    const[show, setShow] = useState(false);
+    const [show, setShow] = useState(false);
 
     const handleCount = (id, count) => {
         if (count > -1) {
             const updatedCart = cart[id];
             updatedCart.count = count;
-            console.log("updatedData", updatedCart);
             dispatch(addToCartAction(id, updatedCart));
         }
     }
 
     const removeFromCart = (e) => {
-        if(e.target && e.target.id) {
+        if (e.target && e.target.id) {
             dispatch(removeFromCartAction(e.target.id));
         }
     }
 
-    const onOrder =(e) => {
-        
+    const onOrder = (e) => {
         setShow(!show);
-        dispatch({type:RESET});
+        dispatch({ type: RESET });
         e.stopPropagation()
     }
 
@@ -43,9 +48,6 @@ const Cart = () => {
         setShow(!show);
         e.stopPropagation()
     }
-
-    console.log("cart", cart);
-    console.log("totalPrice", totalAmount);
 
     return (
         <div className='cart'>

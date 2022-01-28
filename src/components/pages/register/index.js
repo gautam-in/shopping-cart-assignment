@@ -1,19 +1,29 @@
 import React, { useState } from 'react';
+import { object } from 'prop-types';
+import { useDispatch, useSelector } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
-import { _EMAIL, _SIGN_UP, _PASSWORD, _REGISTER_DESC, _FIRSTNAME, _LASTNAME, _CONFIRM_PASS } from '../../../utils/constants';
-
-import Button from '../../atoms/button';
-import Modal from '../../atoms/modal';
-
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as Yup from 'yup';
 
-import './register.scss';
-import { useDispatch, useSelector } from 'react-redux';
+import Button from '../../atoms/button';
+import Modal from '../../atoms/modal';
+import LoginRegisterTemplate from '../../rows/login-register-template';
 import { registerAction } from '../../../redux/actions';
+import CustomLink from '../../atoms/link';
+import { SIGNIN } from '../../../utils/RouteNames';
+import {
+    _EMAIL,
+    _SIGN_UP,
+    _PASSWORD,
+    _REGISTER_DESC,
+    _FIRSTNAME,
+    _LASTNAME,
+    _CONFIRM_PASS,
+    _SIGNIN
+} from '../../../utils/constants';
 
-const RegisterForm = ({history}) => {
+const RegisterForm = ({ history }) => {
 
     const dispatch = useDispatch();
     const { registeredData } = useSelector((state) => state);
@@ -25,24 +35,24 @@ const RegisterForm = ({history}) => {
         confirmPassword: Yup.string()
             .required('Confirm Password is required')
             .oneOf([Yup.ref('password')], 'Passwords must match')
-            
+
     });
     const formOptions = { resolver: yupResolver(validationSchema) };
     const { register, handleSubmit, watch, formState: { errors } } = useForm(formOptions);
     const [show, setShow] = useState(false);
-    const[dialogMsg, setDialogMsg] = useState("You have registered successfully!!");
-    const[isexist, setExists] = useState(false);
+    const [dialogMsg, setDialogMsg] = useState("You have registered successfully!!");
+    const [isexist, setExists] = useState(false);
 
     const handleDialog = () => {
         setShow(!show);
-        if(show && !isexist) {
+        if (show && !isexist) {
             history.push("/signin");
         }
     }
 
     const onSubmit = (data, e) => {
         e.preventDefault();
-        if(!Object.keys(registeredData).includes(data.email)) {
+        if (!Object.keys(registeredData).includes(data.email)) {
             dispatch(registerAction(data));
         }
         else {
@@ -53,12 +63,12 @@ const RegisterForm = ({history}) => {
     }
 
     return (
-        <div className='register-wrapper'> 
+        <LoginRegisterTemplate>
             <div>
-                <div className='register'>{_SIGN_UP}</div>
-                <div className='register-desc'>{_REGISTER_DESC}</div>
+                <div className='heading'>{_SIGN_UP}</div>
+                <div className='description'>{_REGISTER_DESC}</div>
             </div>
-            <div className='register-form'>
+            <div className='lr-form'>
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <div>
                         <label><b>{_FIRSTNAME}</b></label>
@@ -67,10 +77,10 @@ const RegisterForm = ({history}) => {
                     </div>
                     <div>
                         <label><b>{_LASTNAME}</b></label>
-                        <input {...register("lname", {maxLength: 20, pattern: /^[A-Za-z]+$/i})} placeholder={_LASTNAME} type="text" />
+                        <input {...register("lname", { maxLength: 20, pattern: /^[A-Za-z]+$/i })} placeholder={_LASTNAME} type="text" />
                     </div>
                     <div>
-                        <label><b>{_EMAIL}</b></label>  
+                        <label><b>{_EMAIL}</b></label>
                         <input {...register("email", { required: true })} placeholder={_EMAIL} type="email" autoFocus />
                         {errors.email && <span>Email is required</span>}
                     </div>
@@ -86,10 +96,15 @@ const RegisterForm = ({history}) => {
                     </div>
                     <Button label={_SIGN_UP} type={'submit'} />
                 </form>
+                <div className='lr-msg'>If you have an account already, please <CustomLink href={SIGNIN} label={_SIGNIN} /></div>
             </div>
             <Modal handleClose={handleDialog} show={show}>{dialogMsg}</Modal>
-        </div>
+        </LoginRegisterTemplate>
     );
+}
+
+RegisterForm.propTypes = {
+    history: object
 }
 
 export default withRouter(RegisterForm);
