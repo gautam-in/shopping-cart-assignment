@@ -47,8 +47,8 @@ class Header extends HTMLElement{
         <img class='header-logo' src='../../static/images/logo.png' alt='sabka bazar logo'/>
         </section>
         <navigation class="center-nav">
-        <a href='./index.html' style='padding : 5px;'>Home</a>
-        <a style='padding : 5px;' href='#'>Products</a>
+        <a href='./index.html' style='padding : 10px;'>Home</a>
+        <a style='padding : 10px;' href='./products.html'>Products</a>
         </navigation>
         <section>
         <div style='display : flex; justify-content : space-between; padding : 6px 5px'>
