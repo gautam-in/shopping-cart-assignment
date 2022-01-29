@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import logo from '../../resources/images/logo.png';
 import './Header.scss';
 
@@ -15,10 +16,9 @@ export default function Header() {
         </ul>
       </nav>
       <section className="right-heading">
-        <a href="#signin" className='signin'>SignIn</a>
-        <a href="#register" className='register'>Register</a>
-        {/* <span className='cart-button'><i className="fas fa-shopping-cart">{0 + "  " + "Items"}</i></span> */}
-        <a href="#cart" className='cart-button'><i className="fas fa-shopping-cart"><span>{0} Items</span></i></a>          
+        <Link className="signin" to="/login">SignIn</Link>
+        <Link className="register" to="/register">Register</Link>
+        <a href="cart" className='cart-button'><i className="fas fa-shopping-cart"><span>{0} Items</span></i></a>          
       </section>
     </header>
   )

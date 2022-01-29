@@ -12,14 +12,14 @@ function Login() {
           </section>
           <section className="details">
             <form action="">
-              <label>
-                Email
-                <input type="email" />
-              </label>
-              <label>
-                Password
-                <input type="password" />
-              </label>
+              <div>
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email" placeholder='Email' required />
+              </div>
+              <div>
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password" placeholder="Password" required />
+              </div>
               <button type="submit">Login</button>
             </form>
           </section>

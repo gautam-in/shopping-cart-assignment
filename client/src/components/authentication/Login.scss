@@ -1,7 +1,74 @@
+@use "../common/base";
+
 .container {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin: auto;
-  max-width: 1100px;
+  margin: 2em;
+  max-width: 800px;
+}
+
+.heading {
+  h1 {
+    padding-bottom: 0.5em;
+  }
+}
+
+.details div {
+  margin-top: 1em;
+  width: 70vw;
+  max-width: 400px;
+  text-align: left;
+  label {
+    display: none;
+  }
+  input {
+    display: block;
+    border: none;
+    border-bottom: solid 2px base.$gray-color;
+    cursor: text;
+    font-size: 1rem;
+    max-width: 350px;
+    padding-top: 0.5rem;
+    padding-bottom: 1rem;
+    width: 100%;
+  }
+}
+
+.details {
+  div:hover {
+    label {
+      display: inline;
+      color: base.$sky-blue;
+      font-size: 0.8em;
+      font-weight: 700;
+    }
+    input:hover::placeholder {
+      color: transparent;
+    }
+    input:focus {
+      border-bottom: 2px solid base.$sky-blue;
+      outline: none;
+    }
+  }
+
+  button {
+    background-color: base.$pink-color;
+    color: #fff;
+    padding: 0.5rem;
+    margin: 1em 0;
+    border: none;
+    font-size: 1rem;
+    width: 70vw;
+    min-width: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  button:hover {
+    background-color: #35b1e8;
+    color: #ffc107;
+  }
 }
