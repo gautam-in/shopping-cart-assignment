@@ -46,10 +46,10 @@ class Header extends HTMLElement{
         <section>
         <img class='header-logo' src='../../static/images/logo.png' alt='sabka bazar logo'/>
         </section>
-        <navigation class="center-nav">
+        <nav class="center-nav">
         <a href='./index.html' style='padding : 10px;'>Home</a>
         <a style='padding : 10px;' href='./products.html'>Products</a>
-        </navigation>
+        </nav>
         <section>
         <div style='display : flex; justify-content : space-between; padding : 6px 5px'>
         <a href='./login.html'>Login</a>
