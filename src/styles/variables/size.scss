@@ -1,0 +1,40 @@
+// //screen size
+
+// // Media queries breakpoints
+
+// // Small screen / tablet
+// $screen-sm : 361px;
+// $screen-sm-min : $screen-sm;
+
+// // Medium screen / desktop
+// $screen-md : 601px;
+// $screen-md-min : $screen-md;
+
+// // Large screen / wide desktop
+// $screen-lg : 1025px;
+// $screen-lg-min : $screen-lg;
+
+// // Extra large screen / full hd
+// $screen-xl : 1200px;
+// $screen-xl-min : $screen-xl;
+
+// // Extra extra large screen / large descktop
+// $screen-xxl : 1600px;
+// $screen-xxl-min : $screen-xxl;
+
+// // provide a maximum
+// $screen-xs-max : ($screen-sm-min - 1px);
+// $screen-sm-max : ($screen-md-min - 1px);
+// $screen-md-max : ($screen-lg-min - 1px);
+// $screen-lg-max : ($screen-xl-min - 1px);
+// $screen-xl-max : ($screen-xxl-min - 1px);
+
+// $desktop-max: $screen-xxl;
+// $tablet-9-max: $screen-md-max;
+// $tablet-7-max: $screen-sm-max;
+// $mobile-max: $screen-xs-max;
+
+// $desktop-min: $screen-lg-min;
+// $tablet-9-min: $screen-md-min;
+// $tablet-7-min: $screen-sm-min;
+// $mobile-min: $screen-xs-min;

@@ -1,0 +1,77 @@
+@import "./common/index.scss";
+@import "./variables/index.scss";
+//override antd styles
+
+@font-face {
+  src: url("../Assets/fonts/AvenirNext-Regular.ttf");
+  font-family: "AvenirNext-Regular";
+}
+
+@font-face {
+  src: url("../Assets/fonts/AvenirNext-DemiBold.ttf");
+  font-family: "AvenirNext-DemiBold";
+}
+
+@font-face {
+  src: url("../Assets/fonts/AvenirNext-Medium.ttf");
+  font-family: "AvenirNext-Medium";
+}
+
+@font-face {
+  src: url("../Assets/fonts/AvenirNext-Bold.ttf");
+  font-family: "AvenirNext-Bold";
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: "AvenirNext-Regular", "Helvetica Neue", Helvetica, Arial,
+    sans-serif !important;
+  background: #ffffff;
+  -webkit-font-smoothing: antialiased;
+
+  .ant-layout {
+    background: #ffffff;
+  }
+  img {
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+  }
+}
+
+#root {
+  display: flex;
+  min-height: 100%;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.cr-viewport.cr-vp-circle {
+  box-shadow: 0 0 2000px 2000px rgba(255, 255, 255, 0.5);
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: $label-color;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: $silver;
+}

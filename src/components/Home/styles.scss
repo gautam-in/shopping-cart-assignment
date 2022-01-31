@@ -1,0 +1,88 @@
+.container-wrapper {
+  //margin: 60px;
+  .banners-slider {
+    // @include mobile {
+    //   margin-bottom: -12px;
+
+    // }
+
+    img {
+      width: 100%;
+      margin: auto;
+    }
+    .slick-dots {
+      display: flex !important;
+      justify-content: center;
+      margin-bottom: 30px;
+
+      // @include mobile {
+      //   margin-bottom: -16px;
+      // }
+      button {
+        border-radius: 50% !important;
+      }
+    }
+    li {
+      width: 20px !important;
+      height: 20px !important;
+      margin: 0 3px !important;
+
+      button {
+        width: 8px !important;
+        height: 8px !important;
+        line-height: 1;
+        background-color: black !important;
+        border-radius: 100%;
+        padding: 0;
+
+        &:before {
+          opacity: 1;
+          width: 12px !important;
+          height: 12px !important;
+          line-height: 1;
+        }
+      }
+    }
+    .slick-arrow {
+      z-index: 99;
+      width: 42px;
+      height: 24px;
+      display: flex !important;
+      align-items: center;
+      justify-content: center;
+      padding-bottom: 2px;
+    }
+    .slick-prev {
+      margin-left: 25px;
+      color: #fff !important;
+      background: rgba(0, 0, 0, 0.3);
+      &::before {
+        content: "PREV" !important;
+        font-size: 13px;
+        margin-top: 2px;
+      }
+      &:hover {
+        color: #fff !important;
+        background-color: #d4d7d9;
+      }
+    }
+    .slick-next {
+      margin-right: 25px;
+      color: #fff !important;
+      background: rgba(0, 0, 0, 0.3);
+      &::before {
+        content: "NEXT" !important;
+        font-size: 13px;
+        margin-top: 2px;
+      }
+      &:hover {
+        color: #fff !important;
+        background-color: #d4d7d9;
+        // margin-top: 2px;
+      }
+    }
+    .slide {
+      margin: 16px 0;
+    }
+  }
+}
