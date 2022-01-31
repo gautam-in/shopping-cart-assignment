@@ -11,7 +11,7 @@ header {
 }
 
 .logo {
-  max-width: 25vw;
+  max-width: 20vw;
   padding: 0.5em;
   img {
     width: 100%;
@@ -31,7 +31,7 @@ header {
   }
   .cart-button {
     background-color: base.$gray-color;
-    padding: 2.6vh;
+    padding: 1.6vh;
 
     i {
       color: base.$pink-color;
@@ -48,7 +48,7 @@ header {
 
 @media screen and (min-width: 500px) {
   header {
-    height: auto;
+    height: 20vh;
     padding: 0 2vh;
   }
   .menu {
