@@ -1,0 +1,139 @@
+@import "./common";
+
+.product-nav {
+    background-color: $lightgray-color;
+    color: gray;
+    width: 25%;
+    ul {
+        list-style: none;
+        li {
+            padding: 15px;
+            border-bottom: 2px solid rgb(199, 197, 197);
+            a {
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+.prod-main {
+    padding: 0 100px 10px 100px;
+    justify-content: space-between;
+}
+
+.card {
+    margin-top: 20px;
+    width: 25%;
+    position: relative;
+    .card-title {
+        font-weight: bolder;
+        font-size: 1.5rem;
+    }
+    .card-body {
+        p {
+            margin: 10px;
+            background-color: rgb(241, 236, 236);
+            border-radius: 5px;
+            font-size: 0.8rem;
+        }
+    }
+    .card-img {
+        padding-top: 20px;
+        img {
+            width: 100%;
+        }
+    }
+    .card-footer {
+        margin: 10px;
+        font-size: 0.8rem;
+        justify-content: space-between;
+        align-items: center;
+        button {
+            padding: 10px;
+            border: none;
+            background-color: $pink-color;
+            color: white;
+        }
+    }
+}
+
+.card::after {
+    content: "";
+    position: absolute;
+    width: 95%;
+    border-bottom: 2px dotted $lightgray-color;
+}
+
+.products {
+    flex-wrap: wrap;
+    width: 75%;
+    justify-content: space-between;
+}
+
+.btn-tablet {
+    display: none;
+}
+
+.btn-mobile {
+    display: none;
+}
+
+@media screen and (max-width: 767px) {
+    .btn-mobile {
+        display: block;
+        margin: 10px;
+        padding: 10px;
+        border: none;
+        background-color: $pink-color;
+        color: white;
+        width: 90%;
+    }
+
+    .product-nav {
+        display: none;
+    }
+
+    .products {
+        width: 100%;
+        .card {
+            width: 100%;
+        }
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+    .card-footer {
+        .btn-tablet {
+            display: block;
+            width: 100%;
+        }
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .card {
+        width: 50%;
+        .card-img {
+            padding: 0;
+        }
+    }
+    .card-body {
+        display: flex;
+        .card-img,
+        .card-desc {
+            width: 50%;
+        }
+    }
+    .card-footer {
+        span,
+        .btn-desktop {
+            display: none;
+        }
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .prod-main {
+        padding: 0;
+    }
+}

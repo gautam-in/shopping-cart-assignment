@@ -1,0 +1,60 @@
+@import "./common";
+
+.banner {
+    width: 100%;
+    img {
+        width: 100%;
+    }
+}
+
+.category {
+    margin: 15px 0;
+    justify-content: space-between;
+    align-items: center;
+    // border-top: 2px solid $lightgray-color;
+    position: relative;
+    .category-img {
+        img {
+            width: 300px;
+        }
+    }
+    .category-text {
+        text-align: center;
+        button {
+            color: white;
+            background-color: $pink-color;
+            border: none;
+            padding: 10px;
+        }
+        .category-desc {
+            margin: 15px 0;
+        }
+    }
+}
+
+.category:nth-child(2n + 1) {
+    .category-img {
+        order: 1;
+    }
+}
+
+.category:before{
+    bottom: 99%;
+    box-shadow: 0 -2px 2px $lightgray-color;
+    content: "";
+    left: 10%;
+    position: absolute;
+    top: 0;
+    width: 80%;
+    z-index: -1;
+}
+
+@media screen and (max-width: 767px) {
+    .category {
+        .category-img {
+            img {
+                width: 150px;
+            }
+        }
+    }
+}
