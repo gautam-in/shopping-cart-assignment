@@ -9,7 +9,11 @@ $lightgray-color: lightgray;
     align-items: center;
     border-bottom: 1px solid $lightgray-color;
     box-shadow: 0 2px 5px $lightgray-color;
-    padding: 10px 100px 0 100px;
+    padding: 10px 8% 0 8%;
+    position: fixed;
+    width: 100%;
+    z-index: 2;
+    background-color: white;
 }
 
 .left-header {
@@ -56,6 +60,7 @@ nav {
     align-items: center;
     height: 40px;
     position: relative;
+    cursor: pointer;
     img {
         height: 30px;
         width: 30px;
@@ -73,9 +78,10 @@ nav {
     z-index: -1;
 }
 
-@media screen and (max-width: 992px) {
+@media screen and (max-width: 991px) {
     .app-header {
         padding: 0;
+        z-index: 3;
     }
 }
 

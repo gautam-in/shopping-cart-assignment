@@ -41,6 +41,60 @@
             <img src="/static/images/offers/offer1.jpg" alt="Offer">
         </div>
     </main>
+
+    <!-- The Modal -->
+    <div id="cartModal" class="modal">
+        <div class="modal-container">
+            <!-- Modal content -->
+            <div class="modal-content">
+                <header class="modal-header d-flex">
+                    <div class="title">
+                        <span>My Cart</span>
+                        <span>(1 item)</span>
+                    </div>
+                    <span class="close">&times;</span>
+                </header>
+                <section>
+                    <div class="cart-item d-flex">
+                        <div class="item-detail d-flex">
+                            <div class="item-img">
+                                <img src="/static/images/products/fruit-n-veg/apple.jpg" alt="Apple">
+                            </div>
+                            <div class="item-desc d-flex">
+                                <div class="item-name">
+                                    <h4>Apple - Washington, Regular, 4 pcs</h4>
+                                </div>
+                                <div class="item-calculation d-flex">
+                                    <div class="item-quantity">
+                                        <button>-</button>
+                                        <span>1</span>
+                                        <button>+</button>
+                                    </div>
+                                    <div class="item-amount">
+                                        <span>X</span>
+                                        <span>Rs.187</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item-price">Rs.187</div>
+                    </div>
+                    <div class="guarantee-banner">
+                        <img src="/static/images/lowest-price.png" alt="Lowest Price Guaranteed">
+                        <span>You won't find it cheaper anywhere.</span>
+                    </div>
+                </section>
+                <footer>
+                    <p>Promo code can be applied on payment page.</p>
+                    <button class="d-flex" type="button">
+                        <span>Proceed to Checkout</span>
+                        <span>Rs.187 ></span>
+                    </button>
+                </footer>
+            </div>
+        </div>
+    </div>
+
     <script>
         const xhr = new XMLHttpRequest();
 
@@ -81,7 +135,9 @@
 
                 categoryButton = document.createElement('button');
                 categoryButton.setAttribute('type', 'button');
+                categoryButton.setAttribute('category-id', category.id);
                 categoryButton.innerText = `Explore ${category.key}`;
+                categoryButton.addEventListener('click', redirectToProductsPage);
                 categoryTextContainer.append(categoryButton);
 
                 template.append(categoryImgContainer);
@@ -89,6 +145,10 @@
                 document.querySelector('main').appendChild(template);
             });
         };
+
+        function redirectToProductsPage() {
+            window.location.assign(`/products.html?category=${this.getAttribute('category-id')}`);
+        }
     </script>
 </body>
 

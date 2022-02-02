@@ -11,13 +11,14 @@
             border-bottom: 2px solid rgb(199, 197, 197);
             a {
                 text-decoration: none;
+                color: gray;
             }
         }
     }
 }
 
 .prod-main {
-    padding: 0 100px 10px 100px;
+    padding: 66px 8% 10px 8%;
     justify-content: space-between;
 }
 
@@ -25,22 +26,31 @@
     margin-top: 20px;
     width: 25%;
     position: relative;
+    height: 400px;
     .card-title {
         font-weight: bolder;
-        font-size: 1.5rem;
+        height: 10%;
     }
     .card-body {
-        p {
-            margin: 10px;
-            background-color: rgb(241, 236, 236);
-            border-radius: 5px;
-            font-size: 0.8rem;
+        height: 75%;
+        .card-desc {
+            height: 50%;
+            div {
+                margin: 10px;
+                background-color: rgb(241, 236, 236);
+                border-radius: 5px;
+                font-size: 0.8rem;
+                height: 55%;
+                overflow: hidden;
+            }
         }
     }
     .card-img {
         padding-top: 20px;
+        height: 70%;
         img {
             width: 100%;
+            height: 100%;
         }
     }
     .card-footer {
@@ -67,7 +77,6 @@
 .products {
     flex-wrap: wrap;
     width: 75%;
-    justify-content: space-between;
 }
 
 .btn-tablet {
@@ -76,6 +85,19 @@
 
 .btn-mobile {
     display: none;
+}
+
+@media screen and (max-width: 320px) {
+    .products {
+        .card {
+            .card-body {
+                .card-img,
+                .card-desc {
+                    height: 90%;
+                }
+            }
+        }
+    }
 }
 
 @media screen and (max-width: 767px) {
@@ -97,6 +119,14 @@
         width: 100%;
         .card {
             width: 100%;
+            .card-body {
+                height: 80%;
+                .card-desc {
+                    div {
+                        height: 75%;
+                    }
+                }
+            }
         }
     }
 }
@@ -111,29 +141,35 @@
 }
 
 @media screen and (max-width: 991px) {
+    .prod-main {
+        padding: 56px 0 0 0;
+    }
     .card {
         width: 50%;
+        height: 225px;
+        .card-title {
+            height: 15%;
+        }
         .card-img {
             padding: 0;
         }
-    }
-    .card-body {
-        display: flex;
-        .card-img,
-        .card-desc {
-            width: 50%;
+        .card-body {
+            display: flex;
+            height: 60%;
+            .card-img,
+            .card-desc {
+                width: 50%;
+                height: 100%;
+                div {
+                    height: 90%;
+                }
+            }
         }
-    }
-    .card-footer {
-        span,
-        .btn-desktop {
-            display: none;
+        .card-footer {
+            span,
+            .btn-desktop {
+                display: none;
+            }
         }
-    }
-}
-
-@media screen and (max-width: 992px) {
-    .prod-main {
-        padding: 0;
     }
 }
