@@ -1,0 +1,60 @@
+@import "~antd/dist/antd.css";
+@import "./styles/index.scss";
+.app-wrapper {
+  .cart-icon {
+    height: 24px;
+  }
+
+  .app-header {
+    height: 75px;
+    padding: 0 50px;
+    color: rgba(0, 0, 0, 0.85);
+    line-height: 75px;
+    background: #fff;
+    border: 1px solid #e1e1e1;
+
+    .logo {
+      float: left;
+      .logo-img {
+        height: 60px;
+        width: 150px;
+      }
+    }
+    .nav-menu {
+      height: 97%;
+      align-items: flex-end;
+    }
+    .links {
+      line-height: 30px;
+      a {
+        color: black;
+        // font-size: 12px;
+      }
+    }
+    .action-icon {
+      display: flex;
+      flex-direction: column;
+      max-height: 60px;
+      height: 60px;
+      align-items: center;
+
+      .cart {
+        line-height: 32px;
+        background: #f0f2f5;
+        padding: 0 15px;
+        width: 109px;
+      }
+    }
+  }
+
+  .app-footer {
+    text-align: center;
+    padding: 10px 0px;
+    position: fixed;
+    height: 40px;
+    width: 100%;
+    bottom: 0;
+  }
+  .app-content {
+  }
+}

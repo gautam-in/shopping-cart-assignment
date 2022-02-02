@@ -1,0 +1,13 @@
+export const isCatalogLoaded = (state) => state.catalog.isLoaded;
+export const isCategoriesLoaded = (state) => state.categories.isLoaded;
+export const isProductsLoaded = (state) => state.products.isLoaded;
+export const selectProducts = (state) => state.products;
+export const selectCategories = (state) => state.categories.items;
+export const selectFilters = (state) => state.filters;
+export const selectSortBy = (state) => state.sortBy;
+export const selectCatalog = (state) => state.catalog;
+export const selectCart = (state) => state.cart;
+export const selectTotalCount = (state) => state.cart.count;
+export const selectAuthenticatedUser = (state) => state.authUser;
+export const selectRegisteredUser = (state) => state.registeredUser;
+export const isAuthenticated = (state) => state.isAuthenticated;
