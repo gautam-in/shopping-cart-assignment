@@ -9,7 +9,7 @@ function* initCatalog() {
 
     yield put(actions.initCatalogSuccess(catalog.data));
   } catch (e) {
-    yield put(actions.initCatalogFail("COULD NOT GET CATALOG"));
+    yield put(actions.initCatalogFail("Failed to laod catalog"));
   }
 }
 

@@ -9,3 +9,7 @@ let tempId = -999;
 export const getNewId = () => ++id;
 
 export const getNewTempId = () => --tempId;
+
+export const authenticateUser = (user) => {
+  return user.email === "demo@example.com" && user.password === "demoPass";
+};

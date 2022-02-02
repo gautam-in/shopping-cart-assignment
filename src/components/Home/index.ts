@@ -6,7 +6,7 @@ import {
   isCatalogLoaded,
   selectCategories,
   isCategoriesLoaded,
-} from "../../selectors/catalog";
+} from "../../selectors";
 import { IState } from "@typings/state/index";
 import Home, { Props } from "./Home";
 

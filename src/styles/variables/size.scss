@@ -1,40 +1,22 @@
-// //screen size
+:root {
+  --base-smallest: 11px;
+  --base-smaller: 12px;
+  --base-small: 14px;
+  --base: 16px;
+  --base-medium: 18px;
+  --base-large: 20px;
+  --base-larger: 22px;
+  --base-largest: 24px;
+  --medium: 28px;
+  --large: 32px;
+  --larger: 36px;
+  --largest: 40px;
 
-// // Media queries breakpoints
-
-// // Small screen / tablet
-// $screen-sm : 361px;
-// $screen-sm-min : $screen-sm;
-
-// // Medium screen / desktop
-// $screen-md : 601px;
-// $screen-md-min : $screen-md;
-
-// // Large screen / wide desktop
-// $screen-lg : 1025px;
-// $screen-lg-min : $screen-lg;
-
-// // Extra large screen / full hd
-// $screen-xl : 1200px;
-// $screen-xl-min : $screen-xl;
-
-// // Extra extra large screen / large descktop
-// $screen-xxl : 1600px;
-// $screen-xxl-min : $screen-xxl;
-
-// // provide a maximum
-// $screen-xs-max : ($screen-sm-min - 1px);
-// $screen-sm-max : ($screen-md-min - 1px);
-// $screen-md-max : ($screen-lg-min - 1px);
-// $screen-lg-max : ($screen-xl-min - 1px);
-// $screen-xl-max : ($screen-xxl-min - 1px);
-
-// $desktop-max: $screen-xxl;
-// $tablet-9-max: $screen-md-max;
-// $tablet-7-max: $screen-sm-max;
-// $mobile-max: $screen-xs-max;
-
-// $desktop-min: $screen-lg-min;
-// $tablet-9-min: $screen-md-min;
-// $tablet-7-min: $screen-sm-min;
-// $mobile-min: $screen-xs-min;
+  --font-weight-normal: 300;
+  --font-weight-regular: 400;
+  --font-weight-semi: 500;
+  --font-weight-semi-bold: 600;
+  --font-weight-bold: 700;
+  --font-weight-extra-bold: 800;
+  --font-weight-bolder: 900;
+}

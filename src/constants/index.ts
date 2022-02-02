@@ -1,6 +1,10 @@
 export const API_URL = "http://localhost:5000";
 export const IMG_URL = "http://localhost:3000";
 
+export const INIT_CATALOG = "INIT_CATALOG";
+export const INIT_CATALOG_SUCCESS = "INIT_CATALOG_SUCCESS";
+export const INIT_CATALOG_FAIL = "INIT_CATALOG_FAIL";
+
 export const GET_USER = "GET_USER";
 export const GET_USER_SUCCESS = "GET_USER_SUCCESS";
 export const GET_USER_FAIL = "GET_USER_FAIL";
@@ -9,11 +13,11 @@ export const EDIT_USER = "EDIT_USER";
 export const EDIT_USER_SUCCESS = "EDIT_USER_SUCCESS";
 export const EDIT_USER_FAIL = "EDIT_USER_FAIL";
 
-export const LOGOUT_SUCCESS = "LOGOUT_SUCCESS";
-
-export const INIT_CATALOG = "INIT_CATALOG";
-export const INIT_CATALOG_SUCCESS = "INIT_CATALOG_SUCCESS";
-export const INIT_CATALOG_FAIL = "INIT_CATALOG_FAIL";
+export const SIGNUP_USER = "SIGNUP_USER";
+export const LOGIN_USER = "LOGIN_USER";
+export const LOGIN_USER_SUCCESS = "LOGIN_USER_SUCCESS";
+export const LOGIN_USER_FAIL = "LOGIN_USER_FAIL";
+export const LOGOUT_USER = "LOGOUT_USER";
 
 export const GET_PRODUCTS = "GET_PRODUCTS";
 export const GET_PRODUCTS_SUCCESS = "GET_PRODUCTS_SUCCESS";

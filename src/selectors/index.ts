@@ -8,3 +8,6 @@ export const selectSortBy = (state) => state.sortBy;
 export const selectCatalog = (state) => state.catalog;
 export const selectCart = (state) => state.cart;
 export const selectTotalCount = (state) => state.cart.count;
+export const selectAuthenticatedUser = (state) => state.authUser;
+export const selectRegisteredUser = (state) => state.registeredUser;
+export const isAuthenticated = (state) => state.isAuthenticated;

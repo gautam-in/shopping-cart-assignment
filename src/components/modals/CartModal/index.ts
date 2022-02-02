@@ -6,7 +6,7 @@ import {
   selectCart,
   selectProducts,
   selectTotalCount,
-} from "../../../selectors/catalog";
+} from "../../../selectors";
 import CartModal from "./Cart";
 
 const mapStateToProps = (state: IState) => ({

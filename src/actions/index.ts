@@ -15,7 +15,11 @@ import {
   EDIT_USER,
   EDIT_USER_SUCCESS,
   EDIT_USER_FAIL,
-  LOGOUT_SUCCESS,
+  SIGNUP_USER,
+  LOGIN_USER,
+  LOGIN_USER_SUCCESS,
+  LOGIN_USER_FAIL,
+  LOGOUT_USER,
   GET_CART,
   GET_CART_SUCCESS,
   GET_CART_FAIL,
@@ -47,7 +51,11 @@ export const editUser = createAction(EDIT_USER);
 export const editUserSuccess = createAction(EDIT_USER_SUCCESS);
 export const editUserFail = createAction(EDIT_USER_FAIL);
 
-export const logoutSuccess = createAction(LOGOUT_SUCCESS);
+export const registerUser = createAction(SIGNUP_USER);
+export const loginUser = createAction(LOGIN_USER);
+export const loginUserSuccess = createAction(LOGIN_USER_SUCCESS);
+export const loginUserFail = createAction(LOGIN_USER_FAIL);
+export const logoutUser = createAction(LOGOUT_USER);
 
 export const getCart = createAction(GET_CART);
 export const getCartSuccess = createAction(GET_CART_SUCCESS);

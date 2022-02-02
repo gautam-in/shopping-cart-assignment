@@ -6,7 +6,7 @@ import {
   selectProducts,
   isProductsLoaded,
   selectCart,
-} from "../../selectors/catalog";
+} from "../../selectors";
 import { IState } from "@typings/state/index";
 import Products, { Props } from "./Products";
 

@@ -1,22 +1,25 @@
+import { Button, Col, Menu, Row } from "antd";
 import React, { Suspense, useState } from "react";
-import { Menu, Row, Col } from "antd";
-import { Link, useParams } from "react-router-dom";
-import { useSelector, useDispatch } from "react-redux";
-import Logo from "../../Assets/images/logo.png";
+import { Link } from "react-router-dom";
+import isEmpty from "lodash/isEmpty";
 import cartImg from "../../Assets/images/cart.svg";
+import Logo from "../../Assets/images/logo.png";
 const CartModal = React.lazy(() => import("../modals/CartModal"));
 const AppLogo = <img className="logo-img" alt="App Logo" src={Logo} />;
 const CartImg = <img className="cart-icon" alt="Cart" src={cartImg} />;
 
-function AppHeader({ totalItems = 0 }) {
+function AppHeader({ totalItems = 0, authenticateUser, logoutUser }) {
   const [cartStatus, setCartVisibilityStatus] = useState(false);
   const toggleCartModalVisibility = (status) => {
     setCartVisibilityStatus(!status);
   };
-  const totalCount = useSelector((state: any) => state.cart.count);
+  const { authUser, isAuthenticated, registeredUser } = authenticateUser || {};
+  const handleLogout = () => {
+    logoutUser();
+  };
   return (
     <Row className="app-header shadow-btm flex">
-      <Col span={6} className="logo">
+      <Col span={6} className="logo clickable">
         {AppLogo}
         <Link className="navbar-brand" to="/"></Link>
       </Col>
@@ -28,12 +31,12 @@ function AppHeader({ totalItems = 0 }) {
           defaultSelectedKeys={["1"]}
         >
           <Menu.Item key="Home">
-            <Link to="/home" className="link medium">
+            <Link to="/home" className="link fontsize16 medium">
               Home
             </Link>
           </Menu.Item>
           <Menu.Item key="Products">
-            <Link to="/products/all" className="link medium">
+            <Link to="/products/all" className="link fontsize16 medium">
               Products
             </Link>
           </Menu.Item>
@@ -41,15 +44,30 @@ function AppHeader({ totalItems = 0 }) {
       </Col>
       <Col span={4} className="action-icon">
         <Col className="links">
-          <Link to="/sign-in" className="link mr16  medium">
-            SingIn
-          </Link>
-          <Link to="/register" className="link medium">
-            Register
-          </Link>
+          {isAuthenticated ? (
+            <span className="medium">{`${authUser.fname}  ${authUser.lname}`}</span>
+          ) : (
+            <Link to="/sign-in" className="link mr16 fontsize14  medium">
+              SingIn
+            </Link>
+          )}
+          {" | "}
+          {!isEmpty(registeredUser) && isAuthenticated ? (
+            <Link
+              to="/"
+              onClick={handleLogout}
+              className="link fontsize14 medium"
+            >
+              Logout
+            </Link>
+          ) : (
+            <Link to="/register" className="link fontsize14 medium">
+              Register
+            </Link>
+          )}
         </Col>
         <Col
-          className="cart"
+          className="cart clickable"
           onClick={() => {
             toggleCartModalVisibility(cartStatus);
           }}

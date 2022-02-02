@@ -2,11 +2,11 @@ import {
   GET_USER,
   GET_USER_SUCCESS,
   GET_USER_FAIL,
-  LOGOUT_SUCCESS,
-} from '../constants';
-import { IUser } from '../typings/state/user';
-import { ILoggedUser } from '../typings/state/loggedUser';
-import { actionTypes } from '../typings/action';
+  LOGOUT_USER,
+} from "../constants";
+import { IUser } from "../typings/state/user";
+import { ILoggedUser } from "../typings/state/loggedUser";
+import { actionTypes } from "../typings/action";
 
 interface IAction {
   type: actionTypes;
@@ -17,45 +17,45 @@ const initState: ILoggedUser = {
   isLoading: false,
   isLoaded: false,
   user: null,
-  error: null
-}
+  error: null,
+};
 
 const userReducer = (state = initState, action: IAction) => {
-  switch(action.type) {
+  switch (action.type) {
     case GET_USER:
       return {
         ...state,
-        isLoading: true
-      }
+        isLoading: true,
+      };
     case GET_USER_SUCCESS:
-      localStorage.setItem('token', action.payload.token);
+      localStorage.setItem("token", action.payload.token);
       return {
         ...state,
         isLoading: false,
         isLoaded: true,
         user: action.payload,
-        error: null
-      }
+        error: null,
+      };
     case GET_USER_FAIL:
       return {
         ...state,
         isLoading: false,
         isLoaded: true,
         user: null,
-        error: action.payload
-      }
-    case LOGOUT_SUCCESS:
-      localStorage.removeItem('token');
+        error: action.payload,
+      };
+    case LOGOUT_USER:
+      localStorage.removeItem("token");
       return {
         ...state,
         isLoading: false,
         isLoaded: true,
         user: null,
-        error: null
-      }
+        error: null,
+      };
     default:
       return state;
   }
-}
+};
 
 export default userReducer;
