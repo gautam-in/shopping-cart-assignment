@@ -76,6 +76,16 @@ main {
                     cursor: pointer;
                 }
             }
+            .empty-cart {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                height: calc(100% - 95px);
+                p {
+                    margin: 10px;
+                }
+            }
             section {
                 background-color: $lightgray-color;
                 height: calc(100% - 95px);
@@ -144,6 +154,9 @@ main {
                     margin: 10px 0;
                     justify-content: space-between;
                 }
+            }
+            .d-none {
+                display: none;
             }
         }
     }
