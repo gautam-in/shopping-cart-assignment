@@ -5,7 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Grocery Products - Sabka Bazar</title>
-    <script src='../scripts/header.js'></script>
+    <script defer src="../scripts/header.js"></script>
+    <script defer src="../scripts/modal.js"></script>
+    <script defer src="../scripts/productsView.js"></script>
+    <script src='https://cdn.jsdelivr.net/npm/handlebars@4.7.7/dist/handlebars.min.js'></script>
     <link
       rel="stylesheet"
       href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
@@ -54,6 +57,9 @@
             margin-right : auto;
         }
         .product-card {
+            display : grid;
+            grid-template-rows : 100px 150px 50px;
+            grid-row-gap : 5px;
             align-self : center;
             box-shadow : 2px 2px 0px rgba(0, 0, 0, 0.1);
             padding : 10px;
@@ -66,18 +72,28 @@
             display : grid;
             grid-template-columns: 1fr 1fr;
             grid-column-gap : 2px;
+            align-content: center;
         }
-        .product-footer button {
+        .add-btn {
+            display : flex;
+            justify-content: center;
+            align-items: center;
             margin-top : 10px; 
-            padding : 5px 10px; 
+            padding : 5px 5px; 
             background-color : #BF2957; 
             color : white; 
             border-width : 0;
             cursor : pointer;
-            justify-self : center;
+            border-radius : 5px;
+            font-size : 10px;
         }
+        .add-btn:hover, .add-btn:disabled {
+            opacity : 0.5;
+        } 
         .product-footer p {
-            justify-self : center;
+            display : flex;
+            justify-content: center;
+            align-items : center;
             font-size : 15px;
         }
         @media only screen and (min-width: 600px) {
@@ -102,7 +118,7 @@
         </section>
         <section class="products-container">
         </section>
+        <custom-modal></custom-modal>
     </main>
-    <script defer src="../scripts/productsView.js"></script>
 </body>
 </html>

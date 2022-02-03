@@ -23,6 +23,10 @@ class Header extends HTMLElement{
             display : flex;
             background-color : #EEEEEE;
         }
+        #items-cart span:hover{
+            opacity : 0.5;
+            cursor : pointer;
+        }
         a{
             text-decoration : none;
             color : black;
@@ -57,13 +61,30 @@ class Header extends HTMLElement{
         </div>
         <section id='items-cart'>
         <div>
-        <span style='display : inline-block; font-size : 30px; color : #BF2957; padding : 5px 10px'><i class="fas fa-shopping-cart"></i><span>
+        <span 
+        id="cart-btn"
+        role="button"
+        aria-label="View Cart"
+        tabindex="0"
+        style="display : inline-block; font-size : 30px; color : #BF2957; padding : 5px 10px">
+        <i class="fas fa-shopping-cart"></i>
+        <span>
         </div>
-        <p style='font-size : 1rem; padding-right : 10px'>0 Items</p>
+        <p style='font-size : 1rem; padding-right : 10px'>
+        ${localStorage.getItem('cart') ? JSON.parse(localStorage.getItem('cart')).length : 0} 
+        Items
+        </p>
         </section>
         </section>
         </header>
         `;
+
+        document.getElementById('cart-btn').addEventListener('click', showCart);
+        
+        function showCart(){
+            document.getElementById('backdrop').style.display = 'block';
+            document.getElementById('modal').style.display = 'block';
+        }
     }
 }
 

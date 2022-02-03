@@ -53,54 +53,6 @@ class Category extends HTMLElement{
 
     connectedCallback(){
         this.innerHTML = `
-        <style>
-        .categories-container {
-            position : absolute;
-        }
-        .category-element {
-            display : grid;
-            grid-template-columns : 1fr 1fr;
-            box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
-        }
-        .cat-img {
-            width : 100%;
-            height : auto;
-            margin-top : auto;
-            margin-bottom : auto;
-        }
-        .cat-button {
-            width : 70%; 
-            margin-top : 10px; 
-            padding : 10px 60px; 
-            background-color : #BF2957; 
-            color : white; 
-            border-width : 0;
-            cursor : pointer;
-        }
-        .side-content {
-            padding : 20px 5px;
-            margin-top : auto;
-            margin-bottom : auto;
-        }
-        .side-content p {
-            margin : 10px 5px;
-        }
-        .side-content h4 {
-            margin : 10px 5px;
-        }
-        @media only screen and (max-width: 600px) {
-            .cat-button {
-                width : 80%;
-                font-size : 10px;
-                padding : 10px 5px; 
-            }
-        }
-        @media only screen and (min-width: 600px) {
-            .categories-container {
-                max-width : 1000px;
-            }
-        }
-        </style>
         <main class="categories-container"></main>
         `;
         const catContainer = document.querySelector('.categories-container');

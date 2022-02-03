@@ -8,7 +8,7 @@ class Login_Register extends HTMLElement{
             this._isRegister = this.getAttribute('register')
         this.innerHTML = 
         `<style>
-        .main-container {
+        #main-container {
             display : grid;
             max-width : 1000px;
             margin : 0 auto;
@@ -17,10 +17,10 @@ class Login_Register extends HTMLElement{
             background-color : white;
             margin-top : 5rem;
         }
-        .form-container {
+        #form-container {
             justify-self : start;
         }
-        .title-container {
+        #title-container {
             justify-self : center;
         }
         form {
@@ -40,7 +40,7 @@ class Login_Register extends HTMLElement{
             display : block;
             padding-top : 1rem;
         }
-        .submit-button {
+        #submit-button {
             width : 100%; 
             margin-top : 2rem; 
             padding : 10px 60px; 
@@ -50,31 +50,31 @@ class Login_Register extends HTMLElement{
             cursor : pointer;
         }
         @media only screen and (max-width: 600px) {
-            .main-container {
+            #main-container {
                 margin-top : 0;
                 grid-template-columns : 1fr;
                 grid-template-rows : 0.1fr 1fr;
             }
-            .form-container {
+            #form-container {
                 justify-self : center;
             }
             form {
                 width : 50vw;
             }
-            .title-container h2, p{
+            #title-container h2, p{
                 text-align : center;
             }
         }
         </style>
-        <main class='main-container'>
-        <section class='title-container'>` 
+        <main id='main-container'>
+        <section id='title-container'>` 
         + 
         (this._isRegister === 'true' ? `<h2>SignUp</h2>` : `<h2>Login</h2>`)
         +
         (this._isRegister === 'true' ? `<p>We do not share your personal details with anyone</p>` : `<p>Get access to your Orders, Wishlists and Recommendations</p>`)
         +
         `</section>
-        <aside class="form-container">
+        <aside id="form-container">
         <form action = "#" method = "post">`
         +
         (this._isRegister === 'true' ? `
@@ -93,7 +93,7 @@ class Login_Register extends HTMLElement{
             `<label for = "confirm_password">Confirm Password</label>
             <input type = "password" id = "confirm_password"><br>` : '')
         +   
-        `<button type="submit" class="submit-button">`
+        `<button type="submit" id="submit-button">`
         +
         (this._isRegister === 'true' ? `SignUp` : `Login`)
         +

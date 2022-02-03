@@ -328,8 +328,9 @@ else{
     })
 }
 navList.addEventListener('click', event => filterProducts(event.target.id));
+
+
 function filterProducts(id){
-    console.log(id);
     productsContainer.innerHTML = '';
     products.forEach(product => {
     if(product.category === id){
@@ -357,8 +358,34 @@ function displayProduct(product){
     productPrice.innerText = `MRP Rs.` + product.price;
     productFooter.appendChild(productPrice);
     let buyButton = document.createElement('button');
-    buyButton.innerText = `Buy Now`;
+    buyButton.setAttribute('id', product.id);
+    buyButton.classList.add('add-btn');
+    buyButton.innerText = `Add To Cart`;
+    buyButton.onclick = addProductToCart;
+    if(localStorage.getItem('cart')){
+        JSON.parse(localStorage.getItem('cart')).forEach(cartItem => {
+            if(product.id === cartItem.id){
+                buyButton.setAttribute('disabled', true);
+                buyButton.innerText = `Added To Cart`;
+            }
+        })
+    }
     productFooter.appendChild(buyButton);
     productCard.appendChild(productFooter);
     productsContainer.appendChild(productCard);
+}
+
+function addProductToCart(event){
+    document.getElementById(event.target.id).setAttribute('disabled', true);
+    document.getElementById(event.target.id).innerText = 'Added To Cart';
+    let cartProduct = products.find(product => product.id === event.target.id);
+    let cart;
+    if(localStorage.getItem('cart')){
+        cart = JSON.parse(localStorage.getItem('cart'));
+    }
+    else
+        cart = [];
+    cart.push(cartProduct);
+    localStorage.setItem('cart', JSON.stringify(cart));
+    document.querySelector('#items-cart p').innerHTML = `${cart.length} Items`;
 }
