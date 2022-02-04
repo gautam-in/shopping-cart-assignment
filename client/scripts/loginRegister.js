@@ -5,7 +5,7 @@ class Login_Register extends HTMLElement{
 
     connectedCallback(){
         if(this.hasAttribute('register'))
-            this._isRegister = this.getAttribute('register')
+            this._isRegister = this.getAttribute('register');
         this.innerHTML = 
         `<style>
         #main-container {

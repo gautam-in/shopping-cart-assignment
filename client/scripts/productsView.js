@@ -379,6 +379,7 @@ function addProductToCart(event){
     document.getElementById(event.target.id).setAttribute('disabled', true);
     document.getElementById(event.target.id).innerText = 'Added To Cart';
     let cartProduct = products.find(product => product.id === event.target.id);
+    cartProduct.imageURL = '../../' + cartProduct.imageURL;
     let cart;
     if(localStorage.getItem('cart')){
         cart = JSON.parse(localStorage.getItem('cart'));

@@ -82,8 +82,11 @@ class Header extends HTMLElement{
         document.getElementById('cart-btn').addEventListener('click', showCart);
         
         function showCart(){
-            document.getElementById('backdrop').style.display = 'block';
-            document.getElementById('modal').style.display = 'block';
+            let modal = document.createElement('custom-modal');
+            document.body.appendChild(modal);
+            modal.setAttribute('cartitems', localStorage.getItem('cart'));
+            let customModal = document.querySelector('custom-modal');
+            customModal.setAttribute('cartitems', localStorage.getItem('cart'));
         }
     }
 }

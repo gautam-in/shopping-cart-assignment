@@ -8,7 +8,6 @@ class Modal extends HTMLElement{
         `
         <style>
         #backdrop {
-            display : none;
             position : fixed;
             top : 0;
             left : 0;
@@ -18,7 +17,6 @@ class Modal extends HTMLElement{
             z-index : 10;
         }
         #modal {
-            display : none;
             position : fixed;
             z-index : 100;
             top : 50%;
@@ -52,10 +50,24 @@ class Modal extends HTMLElement{
             cursor : pointer;
         }
         #cart-item {
+            display : grid;
+            grid-template-columns : 1fr 3fr 1fr;
             background-color : white;
             width : 100%;
             margin-top : 1rem;
             height : 10vh;
+        }
+        #cart-item img {
+            display : block;
+            height : 50px;
+            width : 50px;
+            margin-left : auto;
+            margin-right : auto;
+        }
+        #cart-item-main {
+            display : grid;
+            grid-template-rows : 1fr 1fr;
+            grid-row-gap : 5px;
         }
         #modal-footer {
             position : fixed;
@@ -71,6 +83,9 @@ class Modal extends HTMLElement{
             display : grid;
             grid-template-columns : 1fr 2fr;
         }
+        #modal-main-content {
+            overflow-y : scroll;
+        }
         </style>
         <div id="backdrop"></div>
         <div id="modal">
@@ -82,7 +97,13 @@ class Modal extends HTMLElement{
         <div id="modal-main-content"></div>
         <script type="text/x-handlebars-template" id="modal-template">
         {{#each items}}
-            <section id="cart-item"></section>
+            <section id="cart-item">
+            <img src={{this.imageURL}} alt={{this.name}}/>
+            <section id="cart-item-main">
+            <div><strong>{{this.name}}</strong></div>
+            <div></div>
+            </section>
+            </section>
         {{/each}}
         </script>
         <section id="main-content-footer"></section>
@@ -91,15 +112,16 @@ class Modal extends HTMLElement{
         </div>
         `
         document.getElementById('modal-close').addEventListener('click', () => {
-            document.getElementById('backdrop').style.display = 'none';
-            document.getElementById('modal').style.display = 'none';
+            let modal = document.querySelector('body custom-modal');
+            modal.remove();
         })
         let template = Handlebars.compile(document.querySelector('#modal-template').innerHTML);
+        console.log(JSON.parse(localStorage.getItem('cart')));
         let data = template({
             items : JSON.parse(localStorage.getItem('cart'))
         });
-        console.log(data);
+
         document.getElementById('modal-main-content').innerHTML += data;
-    }
+    };
 }
 customElements.define('custom-modal', Modal);
