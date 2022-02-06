@@ -1,0 +1,22 @@
+.border-bottom {
+  border-bottom: 1px solid #ccc;
+  box-shadow: 5px 10px 10px #ccc;
+  padding: 20px;
+}
+
+.footer {
+  width: 100%;
+  background-color: #ccc;
+  padding: 5px;
+  text-align: center;
+}
+
+.margin-fixed-top {
+  margin-top: 140px;
+}
+
+@media (max-width: 990px) {
+  .none-display {
+    display: none;
+  }
+}
