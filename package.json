@@ -5,10 +5,13 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "canned -p 5000 ./server",
+    "server": "canned -p 5000 ./server",
     "serve": "webpack-dev-server --mode development --open --hot",
-    "dev": "concurrently \"npm run start\" \"npm run serve\"",
-    "build": "webpack --mode production"
+    "dev": "concurrently \"npm run server\" \"npm run serve\"",
+    "build": "webpack --mode production",
+    
+    "heroku-postbuild": "npm run build",
+    "start": "node src/server/index.js"
   },
   "author": "",
   "license": "MIT",
