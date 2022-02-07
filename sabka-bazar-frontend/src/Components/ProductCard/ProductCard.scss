@@ -1,0 +1,126 @@
+@import "../common/color.scss";
+
+.product-card {
+  //   border: 2px solid green;
+  border-bottom: 2px solid rgb(230, 230, 230);
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  height: 100%;
+
+  .product-name {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+    padding: 0 5px;
+    height: 10%;
+    h2 {
+      font-size: 1.4rem;
+    }
+  }
+
+  .product-description {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 70%;
+
+    .product-logo {
+      padding: 10px;
+      img {
+        object-fit: contain;
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    .product-details {
+      background-color: $color-light-grey;
+      padding: 10px;
+      margin: 10px;
+      height: 90px;
+      overflow-y: hidden;
+      p {
+        font-weight: bold;
+      }
+    }
+  }
+  .product-price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px;
+
+    .button button {
+      border: none;
+      background-color: $text-primary;
+      color: $font-primary;
+      padding: 10px;
+      font-weight: bold;
+      cursor: pointer;
+      span {
+        display: none;
+      }
+    }
+  }
+
+  @media only screen and (max-width: 1024px) {
+    height: 100%;
+    position: relative;
+    // border: 2px solid green;
+    .product-name {
+      // border: 2px solid black;
+      display: flex;
+      margin: 15px;
+      justify-content: flex-start;
+      align-items: flex-start;
+      h2 {
+        font-size: 1.3rem;
+      }
+    }
+    .product-description {
+      padding: 0;
+      height: 160px;
+      // border: 2px solid blue;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: flex-start;
+      .product-details {
+        // border: 2px solid red;
+        padding: 0;
+      }
+      .product-logo {
+        // border: 2px solid green;
+        height: 100%;
+        width: 150px;
+        min-width: 150px;
+      }
+    }
+
+    .product-price {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      margin: 10px;
+      h4 {
+        display: none;
+      }
+
+      .button button {
+        position: absolute;
+        bottom: 10%;
+        right: 3%;
+        display: flex;
+        border: none;
+        background-color: $text-primary;
+        color: $font-primary;
+        padding: 10px;
+        font-weight: bold;
+        cursor: pointer;
+        span {
+          display: block;
+        }
+      }
+    }
+  }
+}
