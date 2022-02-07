@@ -12,4 +12,11 @@ npm run start
 # or
 yarn install
 yarn start
+
+
+To Run this program run the command: 
+npm run dev
+
+
+This Project is made using React + Webapck
 ```
