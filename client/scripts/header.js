@@ -1,51 +1,9 @@
-class Header extends HTMLElement{
+export class Header extends HTMLElement{
     constructor(){
         super();
     }
     connectedCallback(){
         this.innerHTML = `
-        <style>
-        .header{
-            display : flex;
-            justify-content : space-between;
-            position : sticky;
-            box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
-            left : 0;
-            top : 0;
-            width : 100%;
-            max-height : 5rem;
-        }
-        .header-logo{
-            padding : 20px 20px;
-            width : 6rem;
-        }
-        #items-cart{
-            display : flex;
-            background-color : #EEEEEE;
-        }
-        #items-cart span:hover{
-            opacity : 0.5;
-            cursor : pointer;
-        }
-        a{
-            text-decoration : none;
-            color : black;
-            border-radius : 5px;
-        }
-        a:hover{
-            border-radius : 10px;
-            background-color : #EEEEEE;
-        }
-        .center-nav {
-            margin-top : 40px;
-            font-size : 10px;
-        }
-        @media only screen and (min-width: 600px) {
-            .center-nav {
-                font-size : 20px;
-            }
-        }
-        </style>
         <header class='header'>
         <section>
         <img class='header-logo' src='../../static/images/logo.png' alt='sabka bazar logo'/>
@@ -71,7 +29,7 @@ class Header extends HTMLElement{
         <span>
         </div>
         <p style='font-size : 1rem; padding-right : 10px'>
-        ${localStorage.getItem('cart') ? JSON.parse(localStorage.getItem('cart')).length : 0} 
+        ${window.localStorage.getItem('cart') ? JSON.parse(window.localStorage.getItem('cart')).length : 0} 
         Items
         </p>
         </section>
@@ -84,11 +42,9 @@ class Header extends HTMLElement{
         function showCart(){
             let modal = document.createElement('custom-modal');
             document.body.appendChild(modal);
-            modal.setAttribute('cartitems', localStorage.getItem('cart'));
+            modal.setAttribute('cartitems', window.localStorage.getItem('cart'));
             let customModal = document.querySelector('custom-modal');
-            customModal.setAttribute('cartitems', localStorage.getItem('cart'));
+            customModal.setAttribute('cartitems', window.localStorage.getItem('cart'));
         }
     }
 }
-
-customElements.define('custom-header', Header)

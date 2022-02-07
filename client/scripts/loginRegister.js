@@ -1,4 +1,4 @@
-class Login_Register extends HTMLElement{
+export class Login_Register extends HTMLElement{
     constructor(){
         super();
     }
@@ -7,65 +7,7 @@ class Login_Register extends HTMLElement{
         if(this.hasAttribute('register'))
             this._isRegister = this.getAttribute('register');
         this.innerHTML = 
-        `<style>
-        #main-container {
-            display : grid;
-            max-width : 1000px;
-            margin : 0 auto;
-            grid-template-columns : 1fr 1fr;
-            grid-column-gap : 3rem;
-            background-color : white;
-            margin-top : 5rem;
-        }
-        #form-container {
-            justify-self : start;
-        }
-        #title-container {
-            justify-self : center;
-        }
-        form {
-            width : 25vw;
-        }
-        input {
-            border-width : 0;
-            border-bottom-width : 1.5px;
-            padding-top : 1rem;
-            width : 100%;
-        }
-        input:focus {
-            outline : 0;
-            border-color : #2FB9C6;
-        }
-        label {
-            display : block;
-            padding-top : 1rem;
-        }
-        #submit-button {
-            width : 100%; 
-            margin-top : 2rem; 
-            padding : 10px 60px; 
-            background-color : #BF2957; 
-            color : white; 
-            border-width : 0;
-            cursor : pointer;
-        }
-        @media only screen and (max-width: 600px) {
-            #main-container {
-                margin-top : 0;
-                grid-template-columns : 1fr;
-                grid-template-rows : 0.1fr 1fr;
-            }
-            #form-container {
-                justify-self : center;
-            }
-            form {
-                width : 50vw;
-            }
-            #title-container h2, p{
-                text-align : center;
-            }
-        }
-        </style>
+        `
         <main id='main-container'>
         <section id='title-container'>` 
         + 
@@ -116,5 +58,3 @@ class Login_Register extends HTMLElement{
         return ['register']
     }
 }
-
-customElements.define('custom-login-register', Login_Register)
