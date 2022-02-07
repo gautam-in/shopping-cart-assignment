@@ -1,0 +1,16 @@
+.movie-card-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  align-items: center;
+  padding: 20px;
+
+  @media only screen and (max-width: 600px) {
+    justify-content: center;
+    align-items: center;
+    border: 2px solid green;
+    margin: 20px;
+  }
+}
