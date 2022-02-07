@@ -9,9 +9,9 @@ $lightgray-color: lightgray;
     align-items: center;
     border-bottom: 1px solid $lightgray-color;
     box-shadow: 0 2px 5px $lightgray-color;
-    padding: 10px 8% 0 8%;
+    padding-top: 10px;
     position: fixed;
-    width: 100%;
+    width: inherit;
     z-index: 2;
     background-color: white;
 }

@@ -15,11 +15,13 @@ $lightgray-color: lightgray;
 html,
 body {
     height: 100%;
-    width: 100%;
 }
 
 body {
     font-size: 12px;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 footer {
@@ -27,7 +29,7 @@ footer {
 }
 
 main {
-    padding: 66px 8% 10px 8%;
+    padding: 66px 0 10px 0;
 }
 
 /* The Modal (background) */
@@ -166,6 +168,10 @@ main {
     main,
     footer {
         padding: 0;
+    }
+
+    body{
+        width: 100%;
     }
 
     .d-none-sm-device {
