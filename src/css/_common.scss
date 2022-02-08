@@ -53,7 +53,7 @@ main {
             background-color: #fefefe;
             border: 1px solid #888;
             width: 40%;
-            left: 52%;
+            left: 50%;
             height: 100%;
             top: 0;
             position: absolute;
@@ -99,7 +99,7 @@ main {
                     margin-top: 10px;
                     align-items: center;
                     .item-img {
-                        width: 15%;
+                        flex: 0 0 15%;
                         img {
                             width: 100%;
                         }
@@ -111,7 +111,7 @@ main {
                         }
                         .item-calculation {
                             padding: 5px;
-                            width: 140px;
+                            flex: 0 0 20px;
                             justify-content: space-between;
                             align-items: center;
                             span {
@@ -170,7 +170,7 @@ main {
         padding: 0;
     }
 
-    body{
+    body {
         width: 100%;
     }
 

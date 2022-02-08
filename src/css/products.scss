@@ -3,7 +3,7 @@
 .product-nav {
     background-color: $lightgray-color;
     color: gray;
-    width: 25%;
+    flex: 0 0 25%;
     ul {
         list-style: none;
         li {
@@ -24,7 +24,7 @@
 
 .card {
     margin-top: 20px;
-    width: 25%;
+    flex: 0 0 25%;
     position: relative;
     height: 400px;
     .card-title {
@@ -76,7 +76,7 @@
 
 .products {
     flex-wrap: wrap;
-    width: 75%;
+    flex: 0 0 75%;
 }
 
 .btn-tablet {
@@ -116,9 +116,9 @@
     }
 
     .products {
-        width: 100%;
+        flex: 0 0 100%;
         .card {
-            width: 100%;
+            flex: 0 0 100%;
             .card-body {
                 height: 80%;
                 .card-desc {
@@ -145,7 +145,7 @@
         padding: 56px 0 0 0;
     }
     .card {
-        width: 50%;
+        flex: 0 0 50%;
         height: 225px;
         .card-title {
             height: 15%;
@@ -158,7 +158,7 @@
             height: 60%;
             .card-img,
             .card-desc {
-                width: 50%;
+                flex: 0 0 50%;
                 height: 100%;
                 div {
                     height: 90%;
