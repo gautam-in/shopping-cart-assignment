@@ -1,10 +1,21 @@
+.productContainer{
+    @include tablet{
+        display: flex;
+        
+    }
+    @include desktop-lgdesktop{
+        display: flex;
+    }
+}
 .productList{
     display:flex;
     flex-wrap: wrap;
-    margin-left: -15px;
-    margin-right: -15px;
+    // margin-left: -15px;
+    // margin-right: -15px;
+    width: 100%;
     // flex-basis: 100%;
     // width: 100%;
+    
     &-item{
         position: relative;
         width: 100%;
@@ -27,19 +38,37 @@
         @include desktop-lgdesktop{
             flex-basis: 25%;
             width: 25%;
+
+        flex-direction: column;
+        flex-wrap: nowrap
         }
         @include tablet{
             flex-basis: 50%;
             width:50%;
+
+        flex-direction: column;
+        flex-wrap: nowrap
         }
         
     }
     &-description{
         padding:3px;
+        @include tablet{
+            margin-bottom: 5px;
+        }
+        @include desktop-lgdesktop{
+            margin-bottom: 5px;
+        }
     }
     &-media{
         width: 50%;
         flex-basis: 50%;
+        @include tablet{
+            width:100%;
+        }
+        @include desktop-lgdesktop{
+            width:100%;;
+        }
     }
     &-tool{
         width: 50%;
@@ -47,10 +76,113 @@
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        @include tablet{
+            width:100%;
+        }
+        @include desktop-lgdesktop{
+            width:100%;;
+        }
+    }
+    @include tablet{
+        width:75%;
+    }
+    @include desktop-lgdesktop{
+        width:75%;;
+    }
+    .priceDesktop{
+        display: none;
+        @include tablet{
+            display: block;
+            width:50%;
+            padding: 0 4px;
+         }
+         @include desktop-lgdesktop{
+             display: block;
+             width: 50%;
+             padding:0 4px;
+         }
+    }
+    .addToCart{
+        flex-grow: 1;
+
+        span{
+        @include tablet{
+           display: none;
+        }
+        @include desktop-lgdesktop{
+            display: none;
+        }
+    }
     }
 }
 .category{
-    width:100%;
-    flex-basis: 100%;
-    background-color: $greybg;
+    // flex-basis: 100%;
+    background-color: $buttonRed;
+    // color: #ffffff;
+    // position: relative;
+    color: #fff;
+    position: relative;
+    width: 100%;
+    padding: 10px 0;
+    @include tablet{
+        background-color: $greybg;
+        width:25%;
+        color: $headingBlack;
+    }
+    @include desktop-lgdesktop{
+        background-color: $greybg;
+        width:25%;
+        color: $headingBlack;
+    }
+    h3{
+        margin: 0;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 15px;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    @include tablet{
+        display: none;
+        
+    }
+    @include desktop-lgdesktop{
+        display: none;
+    }
+    }
+    ul{
+        display: none;
+        list-style: none;
+        @include tablet{
+            display: block;
+            
+        }
+        @include desktop-lgdesktop{
+            display: block;
+        }
+        li{
+           margin-bottom: 5px; 
+            a{
+                color: #fff;
+                text-decoration: none;
+                @include tablet{
+                    color:$headingBlack
+                    
+                }
+                @include desktop-lgdesktop{
+                    color:$headingBlack
+                }
+            }
+        }
+    }
+    &:hover{
+        ul{
+            display: block;
+        }
+        h3{
+            span{
+                transform: rotate(180deg);
+            }
+        }
+    }
 }

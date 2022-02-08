@@ -1,6 +1,7 @@
 {{>header cartTotal=cartTotal cartData=cartData}}
-<main class="container d-flex flex-wrap flex-autoheight clearSpace">
+<main class="container productContainer">
     <aside class="category">
+        <h3>{{#if catGoryname}}{{catGoryname}}{{else}}Choose any category{{/if}}<span>&#8595;</span></h3>
         <ul>
             {{#each categories}}
             <li><a href="/products/{{key}}">{{name}}</a></li>
@@ -19,8 +20,11 @@
             </div>
             <div class="productList-tool">
                 <div class="productList-description font-12 greybg">{{description}}</div>
-                <a class="productList-mobileAdd btn btn-red" href="/products/cart/{{sku}}">By now @
-                    {{price}}</a>
+                <div class="w-100 d-flex flex-wrap align-items-center">
+                    <span class="priceDesktop">MRP Rs.{{price}}</span>
+                    <a class="addToCart btn btn-red" href="/products/cart/{{sku}}">By now <span> @
+                            {{price}}</span></a>
+                </div>
             </div>
         </div>
         {{else}}

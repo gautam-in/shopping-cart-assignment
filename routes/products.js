@@ -64,13 +64,15 @@ router.get('/:catkey', function (req, res, next) {
     let catId = req.params.catkey;
     let catArr = categories.filter(item => item.key === catId);
     let catid = '';
+    let catName = '';
     if (catArr.length > 0) {
         catid = catArr[0]["id"]
+        catName = catArr[0]["name"];
     }
 
     let filterData = products.filter(item => item.category === catid);
     console.log(filterData);
-    res.render('products/products', { title: 'Shopping Cart', products: filterData, categories: categories, cartTotal: Object.keys(cartData).length, cartData: Object.values(cartData) });
+    res.render('products/products', { title: 'Shopping Cart', catGoryname: catName, products: filterData, categories: categories, cartTotal: Object.keys(cartData).length, cartData: Object.values(cartData) });
 });
 router.post('/cartevent', function (req, res, next) {
     // console.log('req ', req);

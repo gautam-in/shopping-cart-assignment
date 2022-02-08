@@ -114,6 +114,9 @@
 }
 .openNav .cartNav{
     width:100%;
+    @include desktop-lgdesktop{
+        width: 50%;
+    }
 }
   
   /* On smaller screens, where height is less than 450px, change the style of the cartNav (less padding and a smaller font size) */
