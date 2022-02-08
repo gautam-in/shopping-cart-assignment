@@ -1,4 +1,5 @@
 @import './resets.scss';
+@import '_variables';
 
 .categories-container {
     position : absolute;
@@ -7,29 +8,20 @@
     display : grid;
     grid-template-columns : 1fr 1fr;
     box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+    justify-items : center;
+    align-items : center;
 }
 .cat-img {
     width : 100%;
     height : auto;
-    margin-top : auto;
-    margin-bottom : auto;
 }
 .cat-button {
-    width : 70%; 
     margin-top : 10px; 
     padding : 10px 60px; 
-    background-color : #BF2957; 
+    background-color : $pink; 
     color : white; 
     border-width : 0;
     cursor : pointer;
-}
-.side-content {
-    padding : 20px 5px;
-    margin-top : auto;
-    margin-bottom : auto;
-    p, h4 {
-        margin : 10px 5px;
-    }
 }
 @media only screen and (max-width: 600px) {
     .cat-button {

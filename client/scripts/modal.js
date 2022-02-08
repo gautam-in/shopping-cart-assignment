@@ -8,7 +8,9 @@ export class Modal extends HTMLElement{
         <div id="backdrop"></div>
         <div id="modal">
         <header id="modal-header">
-            <p id="modal-header-content"><strong>My Cart (Items)</strong></p>
+            <p id="modal-header-content"><strong>My Cart (
+            ${window.localStorage.getItem('cart') ? JSON.parse(window.localStorage.getItem('cart')).length : 0}
+            Items)</strong></p>
             <div id="modal-close">&#10006;</div>
         </header>
         <main id="modal-main">
@@ -20,12 +22,12 @@ export class Modal extends HTMLElement{
             <section id="cart-item-main">
             <div><strong>{{this.name}}</strong></div>
             <section id="cart-item-main-footer">
-            <button type"button" class="round-btn decrement" onclick="decrement">-</button>
-            <div id="counter">0</div>
-            <button type="button" class="round-btn increment" onclick="increment">+</button>
-            <div><div>
-            <div></div>
-            <div></div>
+            <button id="decrement" type"button" class="round-btn">-</button>
+            <div id="counter">1</div>
+            <button id="increment" type="button" class="round-btn">+</button>
+            <div style="font-size : 1rem;">&#215</div>
+            <div>Rs <span id="item-price">{{this.price}}</span></div>
+            <section id="item-total"></section>
             </section>
             </section>
             </section>
@@ -54,12 +56,23 @@ export class Modal extends HTMLElement{
 
         document.getElementById('modal-main-content').innerHTML += data;
 
-        function increment(){
-            document.getElementById('counter').innerText += 1;
-        }
+        document.querySelectorAll('#decrement').forEach(node => {
+            let parentEle = node.parentElement;
+            node.addEventListener('click', () => {
+                parentEle.querySelector('#counter').innerText -= 1;
+                console.log(parentEle.querySelector('#item-price').innerText);
+                document.querySelector('#item-total').innerText;
+                parentEle.querySelector('#item-total').innerText = parseInt(parentEle.querySelector('#item-price').innerText)*parseInt(parentEle.querySelector('#counter').innerText);
+            })
+        })
 
-        function decrement(){
-            document.getElementById('counter').innerText -= 1;
-        }
+        document.querySelectorAll('#increment').forEach(node => {
+            let parentEle = node.parentElement;
+            node.addEventListener('click', () => {
+                parentEle.querySelector('#counter').innerText = parseInt(parentEle.querySelector('#counter').innerText) + 1;
+                parentEle.querySelector('#item-total').innerText = parseInt(parentEle.querySelector('#item-price').innerText)*parseInt(parentEle.querySelector('#counter').innerText);
+                parentEle.querySelector('#item-total').innerText = parseInt(parentEle.querySelector('#item-price').innerText)*parseInt(parentEle.querySelector('#counter').innerText);
+            })
+        })
     };
 }

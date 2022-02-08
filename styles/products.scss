@@ -1,4 +1,5 @@
 @import './resets.scss';
+@import '_variables';
 
 .home-container {
     display : grid;
@@ -12,10 +13,10 @@
 .nav-link-item {
     border : 0px solid black;
     border-bottom-width: 1px;
-    border-bottom-color: #D1D1D1;
+    border-bottom-color: $mediumGrey;
     text-align: center;
     padding : 10px;
-    color : #7B7B7B;
+    color : $darkGrey;
 }
 .nav-link-item {
     &:hover, &:focus{
@@ -47,7 +48,7 @@
     padding : 10px;
 }
 .product-desc {
-    background-color: #EEEEEE;
+    background-color: $lightGrey;
     font-size: 10px;
 }
 .product-footer {
@@ -62,7 +63,7 @@
     align-items: center;
     margin-top : 10px; 
     padding : 5px 5px; 
-    background-color : #BF2957; 
+    background-color : $pink; 
     color : white; 
     border-width : 0;
     cursor : pointer;
@@ -78,13 +79,18 @@
     align-items : center;
     font-size : 15px;
 }
+.navigation-bar {
+    background-color: $lightGrey;
+    height : 100%;
+}
 @media only screen and (min-width: 600px) {
     .home-container {
         max-width : 1000px;
         margin : 0 auto;
     }
 }
-.navigation-bar {
-    background-color: #EEEEEE;
-    height : 100%;
+@media only screen and (max-width: 600px) {
+    .products-container {
+        grid-template-columns : 1fr 1fr;
+    }
 }

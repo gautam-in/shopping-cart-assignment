@@ -1,4 +1,5 @@
 @import './resets.scss';
+@import './variables';
 
 .header{
     display : flex;
@@ -16,20 +17,20 @@
 }
 #items-cart{
     display : flex;
-    background-color : #EEEEEE;
-}
-#items-cart span:hover{
-    opacity : 0.5;
-    cursor : pointer;
+    background-color : $lightGrey;
+    span:hover{
+        opacity : 0.5;
+        cursor : pointer;
+    }
 }
 a{
     text-decoration : none;
     color : black;
     border-radius : 5px;
-}
-a:hover{
-    border-radius : 10px;
-    background-color : #EEEEEE;
+    &:hover{
+        border-radius : 10px;
+        background-color : $lightGrey;
+    }
 }
 .center-nav {
     margin-top : 40px;
