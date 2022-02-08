@@ -22,10 +22,12 @@
                 <div class="productList-description font-12 greybg">{{description}}</div>
                 <div class="w-100 d-flex flex-wrap align-items-center">
                     <span class="priceDesktop">MRP Rs.{{price}}</span>
-                    <a class="addToCart btn btn-red" href="/products/cart/{{sku}}">By now <span> @
+                    <a class="addToCart hidden-tablet btn btn-red" href="/products/cart/{{sku}}">By now <span> @
                             {{price}}</span></a>
                 </div>
             </div>
+            <a class="addToCart show-tablet btn btn-red" href="/products/cart/{{sku}}">By now <span> @
+                    {{price}}</span></a>
         </div>
         {{else}}
         <div class="w-100">

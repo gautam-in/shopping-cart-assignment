@@ -31,7 +31,6 @@ router.get('/cart/:sku', function (req, res, next) {
     fs.writeFile(path.join(__dirname, "../data/addToCart/cart.json"), JSON.stringify(cartData), err => {
         if (err) console.log("Error writing file:", err);
     });
-    console.log('cartData ', cartData);
 
     res.redirect('back');
 })
@@ -71,7 +70,6 @@ router.get('/:catkey', function (req, res, next) {
     }
 
     let filterData = products.filter(item => item.category === catid);
-    console.log(filterData);
     res.render('products/products', { title: 'Shopping Cart', catGoryname: catName, products: filterData, categories: categories, cartTotal: Object.keys(cartData).length, cartData: Object.values(cartData) });
 });
 router.post('/cartevent', function (req, res, next) {
@@ -93,7 +91,6 @@ router.post('/cartevent', function (req, res, next) {
     fs.writeFile(path.join(__dirname, "../data/addToCart/cart.json"), JSON.stringify(cartData), err => {
         if (err) console.log("Error writing file:", err);
     });
-    console.log('cartData', cartData);
 
     res.send(cartData);
 })

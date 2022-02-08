@@ -170,3 +170,21 @@
   .py-0, .pb-0{
     padding-bottom: 0 !important;
   }
+  .show-tablet{
+    display: none;
+    @include tablet{
+      display: block;
+    }
+    @include desktop-lgdesktop{
+      display: none;
+    }
+  }
+  .hidden-tablet{
+    display: block;
+    @include tablet{
+      display: none;
+    }
+    @include desktop-lgdesktop{
+      display: block;
+    }
+  }

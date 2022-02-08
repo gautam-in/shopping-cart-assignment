@@ -10,7 +10,8 @@
     "watch:server": "nodemon index.js",
     "server": "node app.js",
     "watch:build": "node_modules/.bin/webpack --watch",
-    "build": "node_modules/.bin/webpack --progress"
+    "build": "node_modules/.bin/webpack --progress",
+    "e2etest": "./node_modules/.bin/cypress open"
   },
   "author": "Nabaraj",
   "license": "MIT",
@@ -34,6 +35,7 @@
     "babel-minify-webpack-plugin": "^0.3.1",
     "css-loader": "^6.5.1",
     "css-minimizer-webpack-plugin": "^3.4.1",
+    "cypress": "^9.4.1",
     "extract-loader": "^5.1.0",
     "file-loader": "^6.2.0",
     "mini-css-extract-plugin": "^2.5.3",
