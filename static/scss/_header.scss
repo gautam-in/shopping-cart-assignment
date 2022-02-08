@@ -1,0 +1,143 @@
+.header{
+    background-color: #ffffff;
+    // padding:10px 0;
+    box-shadow: 2px 11px 3px #3333;
+    &Left{
+        flex-basis: 25%;
+        width:25%;
+    }
+    &Right{
+        flex-basis: 75%;
+        width: 75%;
+        margin-right:-15px;
+    }
+}
+.logintool{
+    display: none;
+}
+.navigation{
+    nav{
+    a{
+        display: inline-block;
+        color: $darkGrey;
+        text-decoration: none;
+        padding:0 4px;
+    }
+    @media desktop-lgdesktop{
+        display: block;
+    }
+    @media tablet{
+        display: block;
+    }
+
+}
+.cartLink{
+    background-color: $greybg;
+    padding: 3px;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    .cartIcon{
+        width: 30px;
+    svg{
+        fill: $buttonRed;
+    }
+}
+}
+}
+
+/* The side navigation menu */
+.cartNav {
+    height: 100%; 
+    width: 0; 
+    position: fixed; 
+    z-index: 1; 
+    top: 0; 
+    right: 0;
+    background-color:$greybg; 
+    overflow-x: hidden; 
+    padding-top: 0; 
+    transition: 0.5s; 
+    display: flex;
+    flex-direction: column;
+
+   a {
+    // padding: 8px 8px 8px 32px;
+    // text-decoration: none;
+    // font-size: 25px;
+    // color: #818181;
+    // display: block;
+    // transition: 0.3s;
+   &:hover {
+    color: #f1f1f1;
+  } 
+    }
+  .closebtn {
+    font-size: 36px;
+    margin-left: 50px;
+    position: absolute;
+    right: 25px;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: normal;
+    top: 50%;
+    transform: translateY(-50%);
+    display: block;
+  }
+  &-heading{
+      background-color: $headingBlack;
+      margin-top: 0;
+      color: #ffffff;
+      padding:18px 10px;
+      position: relative;
+  }
+  .cartImage{
+      padding-right:10px;
+      img{
+          max-width: 50px;
+      }
+  }
+  .productCounter {
+      a{
+          background-color: $buttonRed;
+          color:#ffffff;
+          min-width: 20px;
+          border-radius: 5px;
+          text-align: center;
+      }
+      a, span{
+      display: block;
+      padding:0 5px;
+      text-decoration: none;
+      }
+  }
+}
+.openNav .cartNav{
+    width:100%;
+}
+  
+  /* On smaller screens, where height is less than 450px, change the style of the cartNav (less padding and a smaller font size) */
+  @media screen and (max-height: 450px) {
+    // .cartNav {padding-top: 15px;}
+    // .cartNav a {font-size: 18px;}
+  }
+
+.cartList{
+    list-style: none;
+    overflow: auto;
+    flex:1;
+    display: flex;
+    flex-direction: column;
+    .cartListItem{
+        display: flex;
+        padding:10px;
+        background-color: #ffffff;
+    }
+    .noProductCart{
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+
+    }
+}

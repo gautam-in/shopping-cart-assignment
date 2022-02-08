@@ -1,0 +1,94 @@
+<header class="header sticky-top">
+    <div class="container">
+        <div class="d-flex">
+            <div class="headerLeft">
+                <a href="/" aria-label="Sabka Bazaar">
+                    <img src="/images/logo.png" class="fluid-image" srcset="/images/logo_2x.png 2x" alt="Sabka Bazaar">
+                </a>
+            </div>
+            <div class="headerRight d-flex flex-column justify-space-between">
+                <div class="logintool d-flex justify-content-end">
+                    <span>Sign In</span>
+                    <span>Registration</span>
+                </div>
+                <div class="navigation d-flex justify-space-between flex-autoheight">
+                    <nav>
+                        <a href="/">Home</a>
+                        <a href="/products">Products</a>
+                    </nav>
+                    <div class="cartLink d-flex flex-wrap" onclick="openCart()">
+                        <div class="cartIcon">
+                            <svg version="1.1" id="Layer_1" focusable="false" xmlns="http://www.w3.org/2000/svg"
+                                xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 24 24"
+                                style="enable-background:new 0 0 24 24;" xml:space="preserve">
+                                <path
+                                    d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49A1.003 1.003 0 0 0 20 4H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z" />
+                            </svg>
+                        </div>
+                        <div class="cartCount">{{#if cartData}} <span>{{cartData.length}}</span>
+                            {{else}}<span>0</span>{{/if}} Cart</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="cartNav">
+
+        <div>
+            <h3 class="cartNav-heading">My Cart <span>{{cartTotal}}</span><a href="javascript:void(0)" class="closebtn"
+                    onclick="closeCart()">&times;</a></h3>
+        </div>
+        <div class="cartList">
+            {{#each cartData}}
+            <div class="cartListItem w-100">
+                <div class="cartImage">
+                    <img src="{{imageURL}}" class="fluid-image" alt="{{name}}">
+                </div>
+                <div class="d-flex flex-column" style="flex-grow:1">
+                    <div style="padding-bottom: 5px; justify-content:space-between;">{{name}}</div>
+                    <div class="d-flex justify-space-between">
+                        <div class="productCounter d-flex flex-wrap justify-content-center">
+                            <a href="/products/cart/{{sku}}/increase">+</a>
+                            <span>{{total}}</span>
+                            <a href="/products/cart/{{sku}}/decrease">-</a>
+                            <span>X Rs {{price}}</span>
+                        </div>
+                        <div class="totalPrice">Rs {{'getProducts' total price}}</div>
+                    </div>
+                </div>
+            </div>
+            {{else}}
+            <div class="noProductCart">
+                <h3 class="text-center"> No items in your cart</h3>
+                <p class="text-center"> Your favourite items is just a click away</p>
+            </div>
+            {{/each}}
+        </div>
+        {{#if cartData.length}}
+        <div style="padding:0 0 10px; background-color:#ffffff;">
+            <h4 class="text-center">Promo code can be applied in checkout page.</h4>
+            <button class="btn btn-red btn-block rounded w-100">Proceed to Checkout</button>
+        </div>
+        {{else}}
+        <div style="padding: 10px;">
+            <div class="btn btn-red btn-block rounded" onclick="closeCart()">Start Shopping</div>
+        </div>
+        {{/if}}
+    </div>
+</header>
+<script>
+    (function init() {
+        let sidebarOpened = localStorage.getItem('open');
+        if (sidebarOpened) {
+            openCart();
+        }
+    })()
+    function openCart() {
+        document.body.className += ' openNav';
+        localStorage.setItem('open', true);
+    }
+    function closeCart() {
+        document.body.classList.remove('openNav');
+        localStorage.removeItem('open', false);
+    }
+</script>

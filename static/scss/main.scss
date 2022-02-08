@@ -1,5 +1,14 @@
 @import "~normalize.css/normalize";
 @import "variables";
+@import "utility";
+@import "header";
+@import "footer";
+@import "productpage";
+@import "bannerCarousel";
+@import "home";
 *{
     box-sizing: border-box;
+}
+body{
+    height: 100vh;
 }

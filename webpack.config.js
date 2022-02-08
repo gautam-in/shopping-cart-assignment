@@ -7,7 +7,11 @@ const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const MinifyPlugin = require('babel-minify-webpack-plugin');
 
 module.exports = {
-    mode: 'development',
+    mode: 'production',
+    target: ['web', 'es5'],
+    devServer: {
+        watchContentBase: true
+    },
     context: path.join(__dirname, 'static'),
     entry: [
         './scss/main.scss',
@@ -26,19 +30,7 @@ module.exports = {
                 { loader: "css-loader", options: { sourceMap: true } },
                 { loader: "sass-loader", options: { sourceMap: true } },
                 {
-                    loader: "postcss-loader",
-                    options: {
-                        postcssOptions: {
-                            plugins: [
-                                [
-                                    "autoprefixer",
-                                    {
-                                        // Options
-                                    },
-                                ],
-                            ],
-                        },
-                    },
+                    loader: "postcss-loader"
                 },
                 ],
             },

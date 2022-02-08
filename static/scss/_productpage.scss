@@ -1,0 +1,56 @@
+.productList{
+    display:flex;
+    flex-wrap: wrap;
+    margin-left: -15px;
+    margin-right: -15px;
+    // flex-basis: 100%;
+    // width: 100%;
+    &-item{
+        position: relative;
+        width: 100%;
+        padding-right: 15px;
+        padding-left: 15px;
+        flex-basis: 100%;
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        
+        padding-bottom: 10px;
+        &::after{
+            content: "";
+            border-bottom: 1px dashed $darkGrey;
+            position: absolute;
+            left: 15px;
+            right: 15px;
+            bottom:0;
+        }
+        @include desktop-lgdesktop{
+            flex-basis: 25%;
+            width: 25%;
+        }
+        @include tablet{
+            flex-basis: 50%;
+            width:50%;
+        }
+        
+    }
+    &-description{
+        padding:3px;
+    }
+    &-media{
+        width: 50%;
+        flex-basis: 50%;
+    }
+    &-tool{
+        width: 50%;
+        flex-basis: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+}
+.category{
+    width:100%;
+    flex-basis: 100%;
+    background-color: $greybg;
+}
