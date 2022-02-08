@@ -1,0 +1,30 @@
+@use "../common/base";
+@use "../common/base-form";
+
+.container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	margin: 2em;
+}
+
+.heading {
+	@include base-form.form-header;
+}
+
+.details {
+	@include base-form.form-details;
+}
+
+@media screen and (min-width: 500px) {
+	.container {
+		flex-direction: row;
+	}
+	.heading {
+		@include base-form.form-lgHeader;
+	}
+	.details {
+		@include base-form.form-lgDetails;
+	}
+}

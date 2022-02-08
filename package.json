@@ -8,8 +8,9 @@
     "client-install": "npm install --prefix client",
     "start": "canned -p 5000 ./server",
     "server": "canned -p 5000 ./server",
-    "client" : "npm start --prefix client",
-    "dev": "concurrently \"npm run server \" \"npm run client\""
+    "start-auth": "nodemon ./server/server.js",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run server \" \"npm run client\" \"npm run start-auth\" "
   },
   "repository": {
     "type": "git",
@@ -22,7 +23,16 @@
   "author": "Jetal Mali",
   "license": "MIT",
   "dependencies": {
+    "body-parser": "^1.19.1",
     "canned": "^0.3.12",
-    "concurrently": "^7.0.0"
+    "concurrently": "^7.0.0",
+    "json-server": "^0.17.0",
+    "jsonwebtoken": "^8.5.1"
+  },
+  "devDependencies": {
+    "axios": "^0.25.0",
+    "express": "^4.17.2",
+    "nodemon": "^2.0.15",
+    "react-validation": "^3.0.7"
   }
 }

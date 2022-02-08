@@ -1,110 +1,110 @@
 @use "../common/base";
 
 header {
-  position: sticky;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 10vh;
-  border-bottom: 2px solid rgb(218, 209, 209);
-  box-shadow: 1px 0 3px base.$gray-color;
+	position: sticky;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	height: 10vh;
+	border-bottom: 2px solid rgb(218, 209, 209);
+	box-shadow: 1px 0 3px base.$gray-color;
 }
 
 .logo {
-  max-width: 20vw;
-  padding: 0.5em;
-  img {
-    width: 100%;
-  }
+	max-width: 20vw;
+	padding: 0.5em;
+	img {
+		width: 100%;
+	}
 }
 
 .menu {
-  display: none;
+	display: none;
 }
 
 .right-heading {
-  .signin {
-    display: none;
-  }
-  .register {
-    display: none;
-  }
-  .cart-button {
-    background-color: base.$gray-color;
-    padding: 1.6vh;
+	.signin {
+		display: none;
+	}
+	.register {
+		display: none;
+	}
+	.cart-button {
+		background-color: base.$gray-color;
+		padding: 1.6vh;
 
-    i {
-      color: base.$pink-color;
+		i {
+			color: base.$pink-color;
 
-      .fa-shopping-cart:before {
-        font-size: 1.5em;
-      }
-      span {
-        padding-left: 0.4em;
-      }
-    }
-  }
+			.fa-shopping-cart:before {
+				font-size: 1.5em;
+			}
+			span {
+				padding-left: 0.4em;
+			}
+		}
+	}
 }
 
 @media screen and (min-width: 500px) {
-  header {
-    height: 20vh;
-    padding: 0 2vh;
-  }
-  .menu {
-    display: block;
-    padding-left: 2rem;
-    padding-top: 2.5rem;
-    flex: 2;
-    ul {
-      display: flex;
-      list-style-type: none;
-      li a {
-        display: inline-block;
-        bottom: 0;
-        text-decoration: none;
-        padding: 0.75rem 1rem;
-        color: rgb(99, 94, 94);
-        transition: 0.14s ease-in-out;
-      }
-    }
-  }
+	header {
+		height: 20vh;
+		padding: 0 2vh;
+	}
+	.menu {
+		display: block;
+		padding-left: 2rem;
+		padding-top: 2.5rem;
+		flex: 2;
+		ul {
+			display: flex;
+			list-style-type: none;
+			li .link {
+				display: inline-block;
+				bottom: 0;
+				text-decoration: none;
+				padding: 0.75rem 1rem;
+				color: rgb(99, 94, 94);
+				transition: 0.14s ease-in-out;
+			}
+		}
+	}
 
-  nav ul li a:hover {
-    color: #36bae6;
-    background: #d4d9df;
-  }
+	nav ul li .link:hover {
+		color: base.$sky-blue;
+		background: #d4d9df;
+	}
 
-  .right-heading {
-    flex: 1;
-    max-width: 300px;
-    display: grid;
-    grid-template-columns: repeat(3, auto);
-    grid-template-rows: repeat(3, auto);
-    grid-gap: 1em;
-    .signin {
-      text-decoration: none;
-      color: black;
-      display: inline-block;
-      grid-column: 2/3;
-      font-size: 0.8em;
-    }
-    .register {
-      text-decoration: none;
-      color: black;
-      display: inline-block;
-      font-size: 0.8em;
-      grid-column: 3/4;
-    }
+	.right-heading {
+		flex: 1;
+		max-width: 300px;
+		display: grid;
+		grid-template-columns: repeat(3, auto);
+		grid-template-rows: repeat(3, auto);
+		grid-gap: 1em;
+		.signin {
+			text-decoration: none;
+			color: black;
+			display: inline-block;
+			grid-column: 2/3;
+			font-size: 0.8em;
+		}
+		.register {
+			text-decoration: none;
+			color: black;
+			display: inline-block;
+			font-size: 0.8em;
+			grid-column: 3/4;
+		}
 
-    .cart-button {
-      grid-row: 2/4;
-      grid-column: 1/4;
-      background-color: base.$gray-color;
+		.cart-button {
+			grid-row: 2/4;
+			grid-column: 1/4;
+			background-color: base.$gray-color;
 
-      i {
-        color: #d00256;
-      }
-    }
-  }
+			i {
+				color: base.$pink-color;
+			}
+		}
+	}
 }

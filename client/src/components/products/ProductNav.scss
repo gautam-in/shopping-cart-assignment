@@ -1,0 +1,27 @@
+@use "../common/base";
+
+.ProductsNav {
+	background-color: base.$gray-color;
+	// margin:0;
+}
+
+.category-list {
+	margin: 0;
+	list-style-type: none;
+	padding: 1rem 0;
+}
+
+.category {
+	border-bottom: 2px solid lightgray;
+
+	a {
+		display: inline-block;
+		text-decoration: none;
+		color: black;
+		font-size: 0.8rem;
+		font-weight: 600;
+		padding: 1rem 0;
+		transition: 0.14s ease-in-out;
+		cursor: pointer;
+	}
+}
