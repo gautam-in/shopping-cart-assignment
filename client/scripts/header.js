@@ -18,16 +18,13 @@ export class Header extends HTMLElement{
         <a href='./register.html'>Register</a>
         </div>
         <section id='items-cart'>
-        <div>
-        <span 
+        <img 
         id="cart-btn"
         role="button"
         aria-label="View Cart"
         tabindex="0"
-        style="display : inline-block; font-size : 30px; color : #BF2957; padding : 5px 10px">
-        <i class="fas fa-shopping-cart"></i>
-        <span>
-        </div>
+        src="../../static/images/cart.svg"
+        alt="cart icon"/>
         <p style='font-size : 1rem; padding-right : 10px'>
         ${window.localStorage.getItem('cart') ? JSON.parse(window.localStorage.getItem('cart')).length : 0} 
         Items
