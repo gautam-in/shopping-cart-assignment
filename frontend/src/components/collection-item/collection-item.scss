@@ -1,0 +1,63 @@
+.collection-item{
+    display:flex;
+    width:20%;
+    flex-direction: column;
+    align-items: center;
+    height: 350px;
+    // border:1px solid black;
+    border-bottom: 1px dotted rgba(128, 128, 128, 0.904);
+    padding:10px;
+    // margin: 10px 0px 0px 0px;
+}
+.collection-item-name{
+font-style: bold ;
+font-weight: 1%;
+}
+.collection-item-image{
+    width:100%;
+  
+    img {
+     
+      max-width:100%;
+      max-height:100%;
+      
+    }
+    // background-size: cover;
+    // background-position: center;
+  
+}
+
+.collection-item-description{
+    background-color: grey;
+    color:black;
+    border: 1px solid grey;
+   margin:auto;
+   overflow: hidden;
+  height: 500px;
+    overflow-wrap: break-word;
+    width:100%;
+
+}
+
+.collection-footer{
+    width: 100%;
+    padding-top: 10px 0px 10px 0px;
+    height: 15%;
+    display:flex;
+    justify-content: space-between;
+    font-size: 18px;
+    margin-top: 10px;
+    padding:5px;
+
+}
+
+.buy-now{
+    border: 1px solid, purple;
+    background-color: purple;
+    color: white;
+    padding: 1px;
+    width:50%;
+    height: 100%;
+    font-size: 15px;
+   text-align: center;
+}

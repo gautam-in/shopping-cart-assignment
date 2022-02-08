@@ -1,6 +1,7 @@
 import React from 'react';
 import HomePage from './pages/homepage/homepage.component';
-import FruitsAndVegitables from './pages/FruitsAndVegitables';
+import ProductsPage from "./pages/ProductsDisplay/ProductsPage.component";
+
 import './App.css';
 import {Switch,Route} from "react-router-dom"
 
@@ -9,7 +10,7 @@ function App() {
     <div >
       <Switch>
       <Route exact path="/" component={HomePage}/>
-      <Route exact patch="/fruitsandvegitables" component={FruitsAndVegitables} />
+      <Route  path="/products" component={ProductsPage} />
       </Switch>
     </div>
   );
