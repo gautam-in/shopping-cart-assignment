@@ -1,0 +1,207 @@
+@import "./header";
+
+$pink-color: #BF2957;
+$lightblue-color: lightskyblue;
+$lightgray-color: #F0F0F0;
+
+* {
+    font-family: "Raleway", sans-serif;
+    font-family: "Raleway", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    font-size: 12px;
+}
+
+footer {
+    padding: 10px 100px 10px 100px;
+}
+
+main {
+    padding: 66px 8% 10px 8%;
+}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 2; /* Sit on top */
+    padding-top: 66px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0); /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+    .modal-container {
+        position: relative;
+        height: 100%;
+        /* Modal Content */
+        .modal-content {
+            background-color: #fefefe;
+            border: 1px solid #888;
+            width: 40%;
+            left: 52%;
+            height: 100%;
+            top: 0;
+            position: absolute;
+            .modal-header {
+                justify-content: space-between;
+                background-color: black;
+                color: white;
+                align-items: center;
+                padding: 10px;
+                span:first-of-type {
+                    font-weight: bold;
+                }
+                /* The Close Button */
+                .close {
+                    color: white;
+                    font-size: 20px;
+                }
+                .close:hover,
+                .close:focus {
+                    color: #000;
+                    text-decoration: none;
+                    cursor: pointer;
+                }
+            }
+            .empty-cart {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                height: calc(100% - 95px);
+                p {
+                    margin: 10px;
+                }
+            }
+            section {
+                background-color: $lightgray-color;
+                height: calc(100% - 95px);
+                overflow: auto;
+                .cart-item {
+                    justify-content: space-between;
+                    background-color: white;
+                    padding: 10px;
+                    margin-top: 10px;
+                    align-items: center;
+                    .item-img {
+                        width: 15%;
+                        img {
+                            width: 100%;
+                        }
+                    }
+                    .item-desc {
+                        flex-direction: column;
+                        .item-name {
+                            padding: 6px;
+                        }
+                        .item-calculation {
+                            padding: 5px;
+                            width: 140px;
+                            justify-content: space-between;
+                            align-items: center;
+                            span {
+                                margin: 0 5px;
+                            }
+                            button {
+                                padding: 0 5px;
+                                background-color: $pink-color;
+                                color: white;
+                                border: none;
+                                border-radius: 50%;
+                            }
+                        }
+                    }
+                }
+                .guarantee-banner {
+                    display: flex;
+                    align-items: center;
+                    background-color: white;
+                    margin: 10px 10px 50px 10px;
+                    border-radius: 3px;
+                    padding: 5px;
+                    span {
+                        margin: 20px;
+                    }
+                }
+            }
+            footer {
+                position: absolute;
+                width: 100%;
+                bottom: 0;
+                background-color: white;
+                padding: 10px;
+                margin-top: 10px;
+                button {
+                    width: 100%;
+                    border: none;
+                    border-radius: 3px;
+                    background-color: $pink-color;
+                    color: white;
+                    padding: 10px 20px;
+                    margin: 10px 0;
+                    justify-content: space-between;
+                }
+            }
+            .d-none {
+                display: none;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 991px) {
+    main,
+    footer {
+        padding: 0;
+    }
+
+    .d-none-sm-device {
+        display: none;
+    }
+
+    .modal {
+        background-color: $lightgray-color;
+        padding-top: 76px;
+        .modal-container {
+            .modal-content {
+                left: 0;
+                width: 100%;
+                .modal-header {
+                    background: none;
+                    color: black;
+                    .close {
+                        display: none;
+                    }
+                }
+                section {
+                    .cart-item {
+                        .item-desc {
+                            .item-calculation {
+                                button {
+                                    border-radius: 2px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.d-flex .list-style-none .nav {
+    padding-bottom: 10px;
+}
