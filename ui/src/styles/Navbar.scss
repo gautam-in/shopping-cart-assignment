@@ -1,0 +1,29 @@
+.Navbar{
+    /* border-bottom: 1px solid rgb(172, 159, 140); */
+    box-shadow: 1px 3px rgb(231, 229, 226);
+}
+
+.Navbar-container{
+    box-shadow: 1px 3px rgb(231, 229, 226);
+    display: flex;
+    justify-content: space-around;
+  }
+  .Navbar-item{
+      margin: 3px;
+      padding: 3px;
+      text-decoration: none;
+      color: #595959;
+  }
+  
+  .cart-logo{
+      color: rgb(128, 0, 0);
+      /* display: inline; */
+      height: 35px;
+  }
+
+  @media screen and (max-width : 425px){
+    .lg-scrn{
+      display: none;
+      /* justify-content: space-around; */
+    }
+  }

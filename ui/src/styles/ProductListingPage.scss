@@ -1,0 +1,58 @@
+.plp-container{
+    margin-top: 5px;
+}
+
+.plp-sidenav{
+    /* border: 2px solid gray; */
+    background-color: honeydew;
+    padding: 5px;
+    height: 100%;
+    font-size: small;
+}
+
+.plp-content{
+    overflow-y: auto;
+    height: 76vh;
+}
+
+.card-description{
+    background-color: honeydew;
+    padding: 1%;
+    margin-top: 10px;
+    font-size: smaller;
+    height: 100px;
+    overflow: hidden;
+}
+
+.card-title{
+    font-size: medium;
+    font-weight: bold;
+    height: 100px;
+    overflow: hidden;
+}
+
+.card-btn{
+    /* border: 1px solid greenyellow; */
+    height: 40px;
+    border-color: #aa4250;
+    background-color: #aa4250;
+    color: whitesmoke;
+}
+
+.card-bottom-container{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.category-selector{
+    cursor: pointer;
+    background-color: honeydew;
+    color: rgb(94, 93, 93);
+    padding: 0 10px;
+    border-bottom: 1px solid lightgray;
+}
+
+.category-selected{
+    background-color: lavender;
+}

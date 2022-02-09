@@ -1,0 +1,18 @@
+
+.Header-container{
+  display: flex;
+  justify-content: space-around;
+}
+.Header-item{
+    margin: 3px;
+    padding: 3px;
+    text-decoration: none;
+    color: #595959;
+}
+
+@media screen and (max-width : 425px){
+  .Header-container{
+    display: none;
+    /* justify-content: space-around; */
+  }
+}
