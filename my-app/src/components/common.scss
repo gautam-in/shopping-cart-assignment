@@ -1,0 +1,19 @@
+$red: #dc3545;
+$grey: #f0efef;
+$dark-grey: #b9b1b1;
+$bg-color: #b7acac;
+$dark-bg-color: #393737;
+$primary-btn-color: #c44976;
+$grey-text: #797272;
+.btn-danger{
+    height: 40px;
+}
+@media (max-width: 767px) {
+    h3{
+        font-size: 18px;
+    }
+    p,button, button.btn-danger{
+        font-size: 14px;
+    }
+}
+

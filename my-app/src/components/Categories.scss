@@ -1,0 +1,18 @@
+.category-container{
+     .row:nth-child(even) {
+        flex-direction: row-reverse;
+     }
+     .col-8{
+         margin: auto;
+        p,h3{
+            text-align: center;
+        } 
+     }
+    .btn-danger{
+        margin: auto;
+        display: block;
+    }
+    .card{
+        padding-bottom: 20px;
+    }
+}
