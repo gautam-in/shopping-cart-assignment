@@ -1,0 +1,63 @@
+.flex-container {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .section-left {
+    /* text-align: center; */
+    /* padding: 20px 30px 0 0; */
+    padding-top: 10vh;
+    padding-left: 5vw !important;
+    width: 40vw;
+  }
+  
+  .section-left div{
+      margin-top: 10px;
+  }
+  
+  .card-btn {
+    /* border: 1px solid greenyellow; */
+    height: 40px;
+    border-color: #aa4250;
+    background-color: #aa4250;
+    color: whitesmoke;
+  }
+  
+  .font-sm {
+    font-size: 0.9em;
+  }
+  
+  .font-lg{
+      font-size: 1.8em;
+  }
+  
+  .section-right {
+    padding: 10px;
+  }
+  
+  .form-elements {
+    margin: 5px;
+    width: 20vw;
+  }
+  
+  input {
+    border: none;
+    border-bottom: 2px solid lightgray;
+    outline: 0;
+    appearance: none;
+  }
+  
+  input:focus {
+    border: none;
+    border-bottom: 2px solid blue;
+    outline: 0;
+    appearance: none;
+  }
+  
+  label{
+      color: #595959;
+  }
+  
+  label:focus{
+      color: blue;
+  }
