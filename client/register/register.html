@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Here!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header class="app-header d-flex">
+        <div class="left-header d-flex">
+            <div class="logo">
+                <img src="../../static/images/logo_2x.png" alt="Sabka Bazar Logo">
+            </div>
+            <nav class="menu">
+                <ul class="d-flex list-style-none nav">
+                    <li><a href="/index.html">Home</a></li>
+                    <li><a href="/products.html">Products</a></li>
+                </ul>
+            </nav>
+        </div>
+        <nav class="right-header">
+            <div class="navigation">
+                <ul class="d-flex list-style-none nav">
+                    <li><a href="/login.html">SignIn</a></li>
+                    <li><a href="/register.html">Register</a></li>
+                </ul>
+            </div>
+            <div class="cart d-flex">
+                <img src="/static/images/cart.svg" alt="Cart">
+                <span>0 items</span>
+            </div>
+        </nav>
+    </header>
+    <main class="d-flex credentials-main">
+        <aside>
+            <h3>Signup</h3>
+            <p>We do not share your personal details with anyone</p>
+        </aside>
+        <section>
+            <form id="registerForm">
+                <div class="form-group">
+                    <input type="text" required id="firstname" onkeyup="this.setAttribute('value', this.value);"
+                        value="">
+                    <label for="firstname">First Name</label>
+                </div>
+                <div class="form-group">
+                    <input type="text" required id="lastname" onkeyup="this.setAttribute('value', this.value);"
+                        value="">
+                    <label for="lastname">Last Name</label>
+                </div>
+                <div class="form-group">
+                    <input type="email" required id="email" onkeyup="this.setAttribute('value', this.value);" value="">
+                    <label for="email">Email</label>
+                </div>
+                <div class="form-group">
+                    <input type="password" required id="password" onkeyup="this.setAttribute('value', this.value);"
+                        value="">
+                    <label for="password">Password</label>
+                </div>
+                <div class="form-group">
+                    <input type="password" required id="cnfPassword" onkeyup="this.setAttribute('value', this.value);"
+                        value="">
+                    <label for="cnfPassword">Confirm Password</label>
+                </div>
+                <div class="form-group">
+                    <button>Signup</button>
+                </div>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>Copyright &copy; 2011-2018 Sabka Bazaar Grocery Supplies Pvt Ltd</p>
+    </footer>
+</body>
+
+</html>

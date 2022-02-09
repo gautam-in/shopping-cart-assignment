@@ -1,0 +1,59 @@
+@import "../css/common";
+
+.credentials-main {
+    padding-top: 100px;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.form-group {
+    padding-top: 25px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    label {
+        z-index: 1;
+        position: absolute;
+        transition: margin-top 0.5s;
+        margin-top: 0;
+    }
+    input:not([value=""]) ~ label {
+        margin-top: -20px;
+    }
+    input:focus ~ label {
+        margin-top: -20px;
+        transition: margin-top 0.5s;
+        color: $lightblue-color;
+    }
+    input {
+        width: 300px;
+        border: none;
+        border-bottom: 2px solid $lightgray-color;
+        padding-bottom: 5px;
+    }
+    button {
+        width: 300px;
+        border-radius: 0;
+        color: white;
+        background-color: $pink-color;
+        border: none;
+        padding: 10px 0;
+    }
+    input:focus {
+        outline: none;
+        border-bottom: 2px solid $lightblue-color;
+    }
+}
+
+footer {
+    text-align: center;
+    background-color: $lightgray-color;
+    margin-top: 40px;
+}
+
+@media screen and (max-width: 300px) {
+    .left-header,
+    .right-header {
+        padding: 0;
+    }
+}

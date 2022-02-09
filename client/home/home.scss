@@ -1,0 +1,100 @@
+@import "../css/common";
+
+.container-now {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+.category {
+    margin: 15px 0;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    .category-img {
+        img {
+            width: 300px;
+        }
+    }
+    .category-text {
+        text-align: center;
+        button {
+            color: white;
+            background-color: $pink-color;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+        .category-desc {
+            margin: 15px 0;
+        }
+    }
+}
+
+.category:nth-child(2n + 1) {
+    .category-img {
+        order: 1;
+    }
+}
+
+.category:before{
+    bottom: 99%;
+    box-shadow: 0 -2px 2px $lightgray-color;
+    content: "";
+    left: 10%;
+    position: absolute;
+    top: 0;
+    width: 80%;
+    z-index: -1;
+}
+
+@media screen and (max-width: 767px) {
+    .category {
+        .category-img {
+            img {
+                width: 150px;
+            }
+        }
+    }
+}
+
+.logo {
+    cursor: pointer;
+}
+
+.carousel-wrapper {
+    width: 100%;
+    position: relative;
+    margin-bottom: 35px;
+    margin-top: 10px;
+  }
+  .carousel-wrapper * {
+    box-sizing: border-box;
+  }
+  .carousel {
+    transform-style: preserve-3d;
+  }
+
+  .offersImg {
+    width: 100%;
+    margin: auto;
+    padding: 1rem 4rem;
+    z-index: 100;
+  }
+
+  .carousel-wrapper .carousel ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+  }
+  .carousel-wrapper .carousel ul li {
+    display: inline;
+    margin: 3px;
+    color: grey;
+    cursor: pointer;
+  }
