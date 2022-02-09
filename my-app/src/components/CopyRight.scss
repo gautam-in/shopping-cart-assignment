@@ -1,0 +1,12 @@
+@import "common";
+.copy-right{
+    background-color:$grey;
+    padding: 20px 20px 20px 150px;
+    margin-top: 20px;
+    @media(max-width: 767px) {
+        padding: 20px;
+    }
+    p{
+        margin: 0;
+    }
+}

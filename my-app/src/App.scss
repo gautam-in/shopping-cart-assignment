@@ -1,0 +1,42 @@
+@import "components/common";
+.align-right{
+    display: flex;
+    justify-content: flex-end;
+}
+.cart-btn{
+  float: right;
+  background-color: $grey;
+  border-radius: 0;
+}
+.cart-btn img{
+  width: 30px;
+}
+.header-nav a{
+  color: $grey-text;
+  margin-right: 20px;
+  @media(max-width: 767px) {
+    display: none;
+  }
+} 
+.header-nav{
+  a,button{
+    font-size: 18px;
+  }
+  button{
+    height: 60px;
+    padding: 0 25px;
+    @media(max-width: 767px) {
+      height: 55px;
+      padding: 0 10px;
+    }
+  }
+} 
+.font-black a{
+    color: black;
+    margin-left: 10px;
+    margin-bottom: 5px;
+    font-size: 18px;
+    @media(max-width: 767px) {
+      display: none;
+    }
+}

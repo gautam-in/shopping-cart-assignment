@@ -1,0 +1,85 @@
+@import "common";
+.modal-content{
+    border: unset;
+    .modal-header{
+        background-color: black;
+        color: white;
+        button{
+            color: white;
+        }
+    }
+    .modal-body{
+        background-color: $grey;
+        .cart-item{
+            background-color: white;
+            margin-bottom: 15px !important;
+            padding: 5px;
+            display: flex;
+            img{
+                width: 70px;
+                padding: 0;
+            }
+            .cart-item__price{
+                display: inline-block;
+                .cart-item__btn{
+                    display: flex;
+                    button{
+                        background: transparent;
+                        border: none;
+                        padding: 0;
+                        height: unset;
+                        i{
+                            color: $primary-btn-color;
+                            font-size: 20px;
+                            &.fa-minus-circle{
+                                margin-left: 0;
+                            }
+                        }
+                    }
+                    p{
+                        margin: 0;
+                    }
+                    i{
+                        font-size: 24px;
+                        margin: 0 20px;
+                        @media (max-width: 767px){
+                            margin: 0 5px;
+                        }
+                    }
+                }
+            }
+            .total_price{
+                margin: 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+        .lowest-price__section{
+            background-color: white;
+            display: flex;
+            align-items: center;
+            padding: 5px;
+            p{
+                margin: 0 0 0 20px;
+            }
+        }
+        .no-items__section{
+            min-height: 300px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background-color: white;
+        }
+    }
+    .modal-footer{
+        p{
+            width: 100%;
+            text-align: center;
+        }
+        button{
+            width: 100%;
+        }
+    }
+}
