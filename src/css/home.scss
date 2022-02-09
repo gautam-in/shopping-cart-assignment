@@ -1,9 +1,37 @@
 @import "./common";
 
-.banner {
+.carousel-container {
     width: 100%;
-    img {
+    overflow: hidden;
+    margin: 0 auto;
+    .carousel {
+        display: flex;
         width: 100%;
+        animation: sliding 25s infinite;
+        img {
+            width: 100%;
+        }
+    }
+    :hover {
+        animation-play-state: paused;
+    }
+}
+
+@keyframes sliding {
+    20% {
+        transform: translateX(-100%);
+    }
+    40% {
+        transform: translateX(-200%);
+    }
+    60% {
+        transform: translateX(-300%);
+    }
+    80% {
+        transform: translateX(-400%);
+    }
+    100% {
+        transform: translateX(0);
     }
 }
 
@@ -38,7 +66,7 @@
     }
 }
 
-.category:before{
+.category:before {
     bottom: 99%;
     box-shadow: 0 -2px 2px $lightgray-color;
     content: "";
