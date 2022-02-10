@@ -1,6 +1,7 @@
 export class Modal extends HTMLElement{
     constructor(){
         super();
+        this._total = 0;
     }
 
     connectedCallback(){
@@ -39,8 +40,10 @@ export class Modal extends HTMLElement{
         </section>
         </main>
         <footer id="modal-footer">
-        <div>Promo can be applied on payment page</div>
+        <section id="promo">Promo can be applied on payment page</section>
+        <setion id="checkout">
         <button type="button">Proceed To CheckOut</button>
+        </section>
         </footer>
         </div>
         `
@@ -60,8 +63,6 @@ export class Modal extends HTMLElement{
             let parentEle = node.parentElement;
             node.addEventListener('click', () => {
                 parentEle.querySelector('#counter').innerText -= 1;
-                console.log(parentEle.querySelector('#item-price').innerText);
-                document.querySelector('#item-total').innerText;
                 parentEle.querySelector('#item-total').innerText = parseInt(parentEle.querySelector('#item-price').innerText)*parseInt(parentEle.querySelector('#counter').innerText);
             })
         })
@@ -70,7 +71,6 @@ export class Modal extends HTMLElement{
             let parentEle = node.parentElement;
             node.addEventListener('click', () => {
                 parentEle.querySelector('#counter').innerText = parseInt(parentEle.querySelector('#counter').innerText) + 1;
-                parentEle.querySelector('#item-total').innerText = parseInt(parentEle.querySelector('#item-price').innerText)*parseInt(parentEle.querySelector('#counter').innerText);
                 parentEle.querySelector('#item-total').innerText = parseInt(parentEle.querySelector('#item-price').innerText)*parseInt(parentEle.querySelector('#counter').innerText);
             })
         })

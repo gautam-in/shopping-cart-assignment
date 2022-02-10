@@ -67,7 +67,6 @@
 }
 #modal-footer {
     display : grid;
-    justify-items : center;
     grid-template-rows : 1fr 1fr;
     position : fixed;
     bottom : 0;
@@ -76,11 +75,16 @@
     background-color : white;
 }
 #modal-footer button {
-    width : 100%;
+    width : 90%;
+    margin-bottom : 1rem;
     text-align : center;
     background-color : $pink;
     color : white;
-    padding : 30px 0px;
+    padding : 1rem 1rem;
+    border-width : 0px;
+    &:hover {
+        cursor : pointer;
+    }
 }
 #main-content-footer {
     display : grid;
@@ -102,13 +106,23 @@
     width : 20px;
     background-color :  $pink;
     color : white;
+    &:hover {
+        cursor : pointer;
+    }
 }
 #cart-item-main-footer {
     display : grid;
     grid-template-columns : 1fr 1fr 1fr 1fr 2fr 2fr;
     justify-items : center;
 }
-
+#checkout {
+    display : grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+}
+#promo {
+    justify-self: center;
+}
 @media only screen and (max-width : 600px) {
     #modal {
         top : 40%;
