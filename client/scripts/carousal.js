@@ -18,8 +18,8 @@ export default class Carousal extends HTMLElement{
             <span class="dot"></span>
         </section>
         <section class="carousal-controls">
-            <div class="controls prev">Prev</div>
-            <div class="controls next">Next</div>
+            <button class="controls prev">Prev</button>
+            <button class="controls next">Next</button>
         </section>
         </section>
         `;
@@ -100,3 +100,5 @@ export default class Carousal extends HTMLElement{
         }
     }
 }
+
+customElements.define('custom-carousal', Carousal);

@@ -58,3 +58,5 @@ export class Login_Register extends HTMLElement{
         return ['register']
     }
 }
+
+customElements.define('custom-login-register', Login_Register);

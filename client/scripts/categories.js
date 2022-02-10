@@ -36,13 +36,6 @@ export class Category extends HTMLElement{
         let categoryEle = document.querySelector('.category-element');
         categoryEle.addEventListener('click', event => redirectToProduct(event));
 
-        function redirectToProduct(event){
-            if(event.target.classList[0] === 'cat-button'){
-                window.localStorage.setItem('categoryId', event.target.id);
-                window.location.href='../views/products.html';
-            }
-        }
-
         //handlebar helper for checking odd/even index
         Handlebars.registerHelper('isEven', function(index){
             return index%2 === 0;
@@ -53,5 +46,15 @@ export class Category extends HTMLElement{
             items : categories
         })
         document.querySelector('.category-element').innerHTML += data;
+
+        //function definitions
+        function redirectToProduct(event){
+            if(event.target.classList[0] === 'cat-button'){
+                window.localStorage.setItem('categoryId', event.target.id);
+                window.location.href='../views/products.html';
+            }
+        }
     }
 }
+
+customElements.define('categories-view', Category);

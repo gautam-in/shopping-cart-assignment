@@ -4,7 +4,6 @@
 .carousal{
     position : relative;
     top : 5px;
-    z-index : -1;
 } 
 .carousal-img{
     display : none;
@@ -53,5 +52,6 @@
     opacity : 0.2;
     &:hover {
         cursor : pointer;
+        opacity : 0.5;
     }
 }

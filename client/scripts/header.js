@@ -36,6 +36,7 @@ export class Header extends HTMLElement{
 
         document.getElementById('cart-btn').addEventListener('click', showCart);
         
+        //function definitions
         function showCart(){
             let modal = document.createElement('custom-modal');
             document.body.appendChild(modal);
