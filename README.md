@@ -13,3 +13,13 @@ npm run start
 yarn install
 yarn start
 ```
+To run webpack in development mode run following command:
+
+```
+npm run dev
+```
+
+To make production build, run following command. By running command, build will be generated in dist directory.
+```
+npm run build
+```

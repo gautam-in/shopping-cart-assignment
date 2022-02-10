@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Sabka Bazaar!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dongle:wght@300&family=Quicksand:wght@300;400&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <header class="app-header d-flex">
+        <div class="left-header d-flex">
+            <div class="logo">
+                <img src="/static/images/logo_2x.png" alt="Sabka Bazar Logo">
+            </div>
+            <nav class="menu">
+                <ul class="d-flex list-style-none nav">
+                    <li><a href="/index.html">Home</a></li>
+                    <li><a href="/products.html">Products</a></li>
+                </ul>
+            </nav>
+        </div>
+        <nav class="right-header">
+            <div class="navigation">
+                <ul class="d-flex list-style-none nav">
+                    <li><a href="/login.html">SignIn</a></li>
+                    <li><a href="/register.html">Register</a></li>
+                </ul>
+            </div>
+            <div class="cart d-flex">
+                <img src="/static/images/cart.svg" alt="Cart">
+                <span>0 items</span>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="carousel-container">
+            <div class="carousel">
+                <img src="/static/images/offers/offer1.jpg" alt="Offer">
+                <img src="/static/images/offers/offer2.jpg" alt="Offer">
+                <img src="/static/images/offers/offer3.jpg" alt="Offer">
+                <img src="/static/images/offers/offer4.jpg" alt="Offer">
+                <img src="/static/images/offers/offer5.jpg" alt="Offer">
+            </div>
+        </div>
+    </main>
+
+    <!-- The Modal -->
+    <div id="cartModal" class="modal">
+        <div class="modal-container">
+            <!-- Modal content -->
+            <div class="modal-content">
+                <header class="modal-header d-flex">
+                    <div class="title">
+                        <span>My Cart</span>
+                        <span></span>
+                    </div>
+                    <span class="close">&times;</span>
+                </header>
+                <section>
+                    <div class="guarantee-banner">
+                        <img src="/static/images/lowest-price.png" alt="Lowest Price Guaranteed">
+                        <span>You won't find it cheaper anywhere.</span>
+                    </div>
+                </section>
+                <div class="empty-cart">
+                    <h4>No items in your cart.</h4>
+                    <p>Your favourite items are just click away!</p>
+                </div>
+                <footer>
+                    <p>Promo code can be applied on payment page.</p>
+                    <button class="d-flex">
+                        <span>Proceed to Checkout</span>
+                        <span>Rs.187 ></span>
+                    </button>
+                    <button class="start-shopping-btn">Start Shopping</button>
+                </footer>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const xhr = new XMLHttpRequest();
+
+        xhr.open('get', 'http://localhost:5000/categories');
+        xhr.responseType = 'json';
+        xhr.send();
+
+        xhr.onload = function () {
+            const responseObj = xhr.response;
+            const categories = responseObj.filter(category => category.enabled);
+            categories.sort((category1, category2) => category1.order - category2.order);
+            categories.forEach(category => {
+                const template = document.createElement('div');
+                template.classList.add('category');
+                template.classList.add('d-flex');
+
+                const categoryImgContainer = document.createElement('div');
+                categoryImgContainer.classList.add(['category-img']);
+                const categoryImg = document.createElement('img');
+                categoryImg.setAttribute('src', category.imageUrl);
+                categoryImg.setAttribute('alt', category.name);
+                categoryImgContainer.appendChild(categoryImg);
+
+                const categoryTextContainer = document.createElement('div');
+                categoryTextContainer.classList.add('category-text');
+
+                const categoryName = document.createElement('h1');
+                categoryName.classList.add(['category-title']);
+                categoryName.innerText = category.name;
+
+                categoryTextContainer.appendChild(categoryName);
+
+                const categoryDesc = document.createElement('h4');
+                categoryDesc.classList.add(['category-desc']);
+                categoryDesc.innerText = category.description;
+
+                categoryTextContainer.appendChild(categoryDesc);
+
+                categoryButton = document.createElement('button');
+                categoryButton.setAttribute('type', 'button');
+                categoryButton.setAttribute('category-id', category.id);
+                categoryButton.innerText = `Explore ${category.key}`;
+                categoryButton.addEventListener('click', redirectToProductsPage);
+                categoryTextContainer.append(categoryButton);
+
+                template.append(categoryImgContainer);
+                template.append(categoryTextContainer);
+                document.querySelector('main').appendChild(template);
+            });
+        };
+
+        function redirectToProductsPage() {
+            window.location.assign(`/products.html?category=${this.getAttribute('category-id')}`);
+        }
+    </script>
+</body>
+
+</html>

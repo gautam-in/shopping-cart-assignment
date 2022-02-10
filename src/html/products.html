@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chose a product!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dongle:wght@300&family=Quicksand:wght@300;400&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <header class="app-header d-flex">
+        <div class="left-header d-flex">
+            <div class="logo">
+                <img src="/static/images/logo_2x.png" alt="Sabka Bazar Logo">
+            </div>
+            <nav class="menu">
+                <ul class="d-flex list-style-none nav">
+                    <li><a href="/index.html">Home</a></li>
+                    <li><a href="/products.html">Products</a></li>
+                </ul>
+            </nav>
+        </div>
+        <nav class="right-header">
+            <div class="navigation">
+                <ul class="d-flex list-style-none nav">
+                    <li><a href="/login.html">SignIn</a></li>
+                    <li><a href="/register.html">Register</a></li>
+                </ul>
+            </div>
+            <div class="cart d-flex">
+                <img src="/static/images/cart.svg" alt="Cart">
+                <span>0 items</span>
+            </div>
+        </nav>
+    </header>
+    <main class="d-flex prod-main">
+        <nav class="product-nav">
+            <ul>
+            </ul>
+        </nav>
+        <section class="d-flex products">
+        </section>
+    </main>
+
+    <!-- The Modal -->
+    <div id="cartModal" class="modal">
+        <div class="modal-container">
+            <!-- Modal content -->
+            <div class="modal-content">
+                <header class="modal-header d-flex">
+                    <div class="title">
+                        <span>My Cart</span>
+                        <span></span>
+                    </div>
+                    <span class="close">&times;</span>
+                </header>
+                <section>
+                    <div class="guarantee-banner">
+                        <img src="/static/images/lowest-price.png" alt="Lowest Price Guaranteed">
+                        <span>You won't find it cheaper anywhere.</span>
+                    </div>
+                </section>
+                <div class="empty-cart">
+                    <h4>No items in your cart.</h4>
+                    <p>Your favourite items are just click away!</p>
+                </div>
+                <footer>
+                    <p>Promo code can be applied on payment page.</p>
+                    <button class="d-flex">
+                        <span>Proceed to Checkout</span>
+                        <span>Rs.187 ></span>
+                    </button>
+                    <button class="start-shopping-btn">Start Shopping</button>
+                </footer>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let products;
+        const params = (new URL(document.location)).searchParams;
+        const category = params.get("category");
+
+        const categoryXHR = new XMLHttpRequest();
+
+        categoryXHR.open('get', 'http://localhost:5000/categories');
+        categoryXHR.responseType = 'json';
+        categoryXHR.send();
+
+        categoryXHR.onload = function () {
+            const responseObj = categoryXHR.response;
+            const categories = responseObj.filter(category => category.enabled);
+            categories.sort((category1, category2) => category1.order - category2.order);
+            categories.forEach(category => {
+                const template = document.createElement('li');
+
+                const categoryLink = document.createElement('a');
+                categoryLink.setAttribute('href', '/products.html?category=' + category.id);
+                categoryLink.innerText = category.name;
+
+                template.append(categoryLink);
+                document.querySelector('.product-nav ul').appendChild(template);
+            });
+        };
+
+        const xhr = new XMLHttpRequest();
+
+        xhr.open('get', 'http://localhost:5000/products');
+        xhr.responseType = 'json';
+        xhr.send();
+
+        xhr.onload = function () {
+            const responseObj = xhr.response;
+
+            products = category ? responseObj.filter(product => product.category === category) : responseObj;
+
+            products.forEach(product => {
+                const card = document.createElement('div');
+                card.classList.add('card');
+
+                const cardTitle = document.createElement('div');
+                cardTitle.classList.add('card-title');
+                cardTitle.innerText = product.name;
+
+                card.append(cardTitle);
+
+                const cardBody = document.createElement('div');
+                cardBody.classList.add('card-body');
+
+                const cardImg = document.createElement('div');
+                cardImg.classList.add('card-img');
+
+                const img = document.createElement('img');
+                img.setAttribute('src', product.imageURL);
+                img.setAttribute('alt', product.name);
+
+                cardImg.append(img);
+                cardBody.append(cardImg);
+
+                const cardDescription = document.createElement('div');
+                cardDescription.classList.add('card-desc');
+
+                const productDescription = document.createElement('div');
+                productDescription.innerText = product.description;
+
+                cardDescription.append(productDescription);
+
+                const buyNowBtnMobile = document.createElement('button');
+                buyNowBtnMobile.classList.add('btn-mobile');
+                buyNowBtnMobile.setAttribute('product-id', product.id);
+                buyNowBtnMobile.innerText = 'Buy Now @ MRP Rs.' + product.price;
+
+                cardDescription.append(buyNowBtnMobile);
+
+                cardBody.append(cardDescription);
+                card.append(cardBody);
+
+                const cardFooter = document.createElement('div');
+                cardFooter.classList.add('card-footer');
+                cardFooter.classList.add('d-flex');
+
+                const price = document.createElement('span');
+                price.innerText = 'MRP Rs.' + product.price;
+
+                cardFooter.append(price);
+
+                const buyNowBtnDesktop = document.createElement('button');
+                buyNowBtnDesktop.classList.add('btn-desktop');
+                buyNowBtnDesktop.setAttribute('product-id', product.id);
+                buyNowBtnDesktop.innerText = 'Buy Now';
+
+                cardFooter.append(buyNowBtnDesktop);
+
+                const buyNowBtnTablet = document.createElement('button');
+                buyNowBtnTablet.classList.add('btn-tablet');
+                buyNowBtnTablet.setAttribute('product-id', product.id);
+                buyNowBtnTablet.innerText = 'Buy Now @ Rs.' + product.price;
+
+                cardFooter.append(buyNowBtnTablet);
+                card.append(cardFooter);
+                document.querySelector('.products').append(card);
+            });
+
+            document.dispatchEvent(new CustomEvent('registerClickListener'));
+        };
+    </script>
+</body>
+
+</html>
