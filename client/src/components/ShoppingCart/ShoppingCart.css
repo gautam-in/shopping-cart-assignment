@@ -1,0 +1,150 @@
+.overlay {
+  position: fixed;
+  display: block;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+
+.cart-container {
+  position: absolute;
+  left: 50%;
+  top: 10%;
+  width: 350px;
+  display: flex;
+  height: 80%;
+  background-color: #e7e9eb;
+  justify-content: center;
+  align-items: center;
+  margin-right: 10px;
+  flex-direction: column;
+}
+
+.cart-header {
+  background-color: #000;
+  height: 4rem;
+  min-height: 4rem;
+  width: 100%;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cart-header h2 {
+  color: #fff;
+}
+
+.fa-times {
+  color: #fff;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.cart-empty,
+.cart-items {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.desc-empty {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.desc-empty h3,
+.desc-empty p {
+  margin: 5px 0;
+}
+
+.button {
+  display: flex;
+  min-height: 50px;
+  padding: 4px;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.button button {
+  border: none;
+  background-color: var(--primary-color);
+  height: 100%;
+  width: 100%;
+  border-radius: 4px;
+  color: var(--bg1-color);
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.button button p {
+  font-size: 0.9rem;
+  font-weight: 100;
+}
+
+.each-cart-item {
+  overflow-y: scroll;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.banner {
+  margin: 5px;
+  background-color: #fff;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 2px;
+}
+
+.banner-img img {
+  width: 100px;
+}
+
+.banner-desc p {
+  font-size: 0.8rem;
+}
+
+.promo-code {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #fff;
+  height: 70px;
+  padding: 4px;
+}
+
+.promo-code > p {
+  margin: 4px;
+  text-align: center;
+  font-size: 0.8rem;
+}
+
+.promo-code button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+@media only screen and (max-width: 600px) {
+  .cart-container {
+    position: absolute;
+    left: 10%;
+    top: 10%;
+    width: 330px;
+  }
+}

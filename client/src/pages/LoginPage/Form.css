@@ -1,0 +1,117 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+}
+
+input {
+  border: none;
+  outline: 1px solid transparent;
+}
+
+.container form {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  width: 100%;
+  padding: 20px;
+}
+
+.container form .left-side {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+}
+
+.container form .left-side .heading {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.container form .right-side {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
+.container form .right-side .field {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 10px 20px;
+  transition: all 200ms ease-in;
+}
+
+.container form .right-side .field input {
+  border-bottom: 2px solid #d6d3d3;
+  width: 60%;
+  padding: 10px 0px;
+}
+
+.container form .right-side .field input:focus {
+  border-bottom: 2px solid var(--input-field-color);
+}
+
+.container form .right-side .field label {
+  position: absolute;
+  top: -2px;
+  letter-spacing: 1px;
+  font-size: 0.9rem;
+  color: #888888;
+  font-weight: bold;
+  transition: 0.5s;
+}
+
+.container form .right-side .field input:focus ~ label {
+  color: var(--input-field-color);
+  font-size: 0.8rem;
+}
+
+.container form .right-side .field p {
+  margin: 10px 0;
+  font-weight: bold;
+  font-size: 0.9rem;
+  color: red;
+}
+
+.container form .right-side .button {
+  padding: 10px;
+  width: 60%;
+  margin: 10px;
+  font-size: 1.2rem;
+}
+
+@media only screen and (max-width: 1024px) {
+  .container form {
+    min-width: 100vw;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .container form .left-side {
+    width: 100%;
+    margin-bottom: 5rem;
+  }
+
+  .container form .right-side {
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .container form .right-side .field {
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column-reverse;
+  }
+
+  .container form .right-side .field label {
+    position: relative;
+  }
+}

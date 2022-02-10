@@ -1,0 +1,39 @@
+:root {
+  --primary-color: #cc0066;
+  --primary-text-color: #fff;
+
+  --text1-color: #000;
+  --text2-color: #595959;
+
+  --bg1-color: #fff;
+  --bg2-color: #f2f2f2;
+
+  --border-color: rgba(59, 59, 59, 0.2);
+  --border2-color: rgba(255, 255, 255, 0.3);
+  --input-field-color: #00e6e6;
+
+  --box-shadow1: 0px 3px 6px rgba(0, 0, 0, 0.2);
+  --box-shadow2: 0 0 40px rgb(0, 0, 0, 0.8);
+  --box-shadow3: 0px -3px 6px rgba(0, 0, 0, 0.2);
+}
+
+*:not(i),
+*:not(i)::before,
+*:not(i)::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Dosis", sans-serif;
+}
+
+body {
+  background-color: var(--bg1-color);
+  color: var(--text1-color);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
