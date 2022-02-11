@@ -1,0 +1,26 @@
+.banner {
+  box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
+  margin: 25px;
+}
+
+.carousel-indicators [data-bs-target] {
+  width: 10px !important;
+  height: 10px !important;
+  border-radius: 50% !important;
+  background-color: #000 !important;
+}
+
+.carousel-control-next-icon,
+.carousel-control-prev-icon {
+  background-size: 50% 100% !important;
+  background-color: #000;
+  border-radius: 50%;
+  padding: 10px;
+}
+
+@media only screen and (max-width: 500px) {
+  .banner {
+    margin: 0;
+    padding: 20px 0;
+  }
+}

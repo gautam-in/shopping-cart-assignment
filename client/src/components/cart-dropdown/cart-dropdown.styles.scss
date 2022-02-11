@@ -1,0 +1,92 @@
+.cart-dropdown {
+  position: absolute;
+  width: 440px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
+  background-color: white;
+  top: 90px;
+  right: 40px;
+  z-index: 5;
+}
+
+.btn-close {
+  filter: invert(1);
+}
+
+.modal-body {
+  padding: 0 !important;
+}
+
+.modal-header {
+  background-color: #000 !important;
+  color: #fff !important;
+  padding: 10px 20px;
+  font-weight: bold;
+  span {
+    font-weight: normal;
+  }
+}
+
+.footer-message {
+  margin: 4px;
+  background: #fff;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+.message {
+  font-size: 12px;
+  text-align: center;
+  margin: 10px 0;
+}
+
+.empty-message {
+  font-size: 18px;
+  margin: 50px auto;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+
+  span:first-of-type {
+    font-weight: bold;
+  }
+  span:last-of-type {
+    font-weight: normal;
+    font-size: 14px;
+  }
+}
+
+.cart-items {
+  height: 340px;
+  display: flex;
+  flex-direction: column;
+  overflow: scroll;
+  background: #ececec;
+}
+
+button {
+  margin: auto 20px 10px;
+  padding: 7px;
+}
+
+.cart-footer {
+  width: 100%;
+  margin: 1em 0;
+
+  span {
+    font-size: 12px;
+    padding-left: 10px;
+  }
+}
+
+.modal.show .modal-dialog {
+  position: absolute !important;
+  right: 1em !important;
+  top: 4em !important;
+}
+
+.modal.show .modal-dialog {
+  width: 500px;
+}
