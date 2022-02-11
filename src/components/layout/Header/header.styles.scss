@@ -1,0 +1,136 @@
+@import '../../../scss-variables/vairables.scss';
+
+header {
+  box-shadow: 0px 2px 5px 2px rgba(0, 0, 0, 0.14);
+}
+header .navigation {
+  width: 75vw;
+  margin: 0px auto;
+  display: flex;
+  justify-content: space-between;
+}
+header .navigation .logo-img {
+  margin-top: 15px;
+  width: 140px;
+}
+header .navigation > nav {
+  margin-top: 20px;
+  width: 100%;
+}
+.btn-cart {
+  border: none;
+  background: $secondary-color;
+  width: 10vw;
+  display: flex;
+  justify-content: center;
+  padding: 2px 10px 10px 4px;
+}
+.btn-cart .icon {
+  width: 21px;
+  margin: 6px 10px 0px 14px;
+}
+.btn-cart .text {
+  font-size: $primary-font-size;
+  margin-top: 8px;
+}
+header .navigation .cart-login-container {
+  position: relative;
+}
+header nav {
+  display: inline-block;
+}
+header nav .list-n {
+  padding: 0px;
+  padding-left: revert;
+}
+header nav .list-n li {
+  display: inline-block;
+  padding: 0px 5px;
+  margin: 0px;
+}
+
+header nav .list-h {
+  padding: 0px;
+}
+header nav .list-h li {
+  display: inline-block;
+  padding: 0px 5px;
+  margin: 0px;
+}
+.cart-login-container nav {
+  width: 100%;
+}
+.cart-login-container nav ul {
+  float: right;
+}
+@media (min-width: $min-width1) and (max-width: $max-width1) {
+  header .navigation {
+    width: auto;
+    display: flex;
+    justify-content: space-between;
+  }
+}
+@media (min-width: $min-width1) and (max-width: $max-width1) and (orientation: landscape) {
+  header .navigation {
+    width: auto;
+    display: flex;
+    justify-content: space-between;
+  }
+}
+@media only screen and (min-device-width: $width1) and (max-device-width: $width2) {
+  .btn-cart {
+    border: none;
+    background: $secondary-color;
+    width: 15vw;
+    display: flex;
+    justify-content: center;
+    padding: 2px 10px 10px 4px;
+  }
+}
+@media only screen and (min-device-width: $nat-width) and (max-device-width: $width1) {
+  .btn-cart {
+    border: none;
+    background: $secondary-color;
+    width: 18vw;
+    display: flex;
+    justify-content: center;
+    padding: 2px 10px 10px 4px;
+  }
+}
+
+@media only screen and (min-device-width: $max-width) and (max-device-width: $nat-width) {
+  .btn-cart {
+    border: none;
+    background: $secondary-color;
+    width: 20vw;
+    display: flex;
+    justify-content: center;
+    padding: 2px 10px 10px 4px;
+  }
+}
+
+@media only screen and (max-device-width:$max-width) and (min-device-width:$min-width) {
+  header .navigation {
+    width: auto;
+  }
+}
+@media only screen and (min-device-width: $min-width) and (max-device-width:$max-width) {
+  header .navigation {
+    width: auto;
+  }
+  header .navigation nav {
+    display: none;
+  }
+  header .navigation .logo-img {
+    margin: 0px;
+    width: 120px;
+  }
+  .btn-cart {
+    border: none;
+    background: $secondary-color;
+    width: 30vw;
+    display: flex;
+    justify-content: center;
+    padding: 20px 10px 10px 4px;
+  }
+}

@@ -1,0 +1,22 @@
+@import './scss-variables/vairables.scss';
+
+body {
+  margin: 0px;
+  font-size: 14px;
+  font-family: "Dosis", sans-serif;
+}
+body a {
+  text-decoration: none;
+  color: inherit;
+}
+.app-footer {
+  padding: 15px;
+  background:$white-color;
+}
+.app-footer span {
+  display: block;
+  margin: 0px auto;
+  width: 75vw;
+  color:$black-color;
+  font-weight: 500;
+}
