@@ -1,0 +1,248 @@
+body,html{
+    height : 100%;
+    margin: 0;
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    width : 80%;
+    margin-left : 10%;
+    height : 100%;
+}
+.header-container{
+   box-shadow: 0px 3px 10px rgb(0 0 0 / 0.2);
+   height: 12%;
+}
+.head-nav-left{
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+}
+.head-nav-left a> img{
+    margin-right: 100px;
+    height: 80px;
+    margin-top: 12px;
+}
+.head-nav-left a{
+    text-decoration: none;
+    color : black;
+    margin-left : 20px;
+    cursor: pointer;
+}
+.head-nav-right {
+    display: flex;
+    flex-direction : column;
+}
+.head-nav-cart img{
+    height : 30px;
+    padding-right: 10px;
+}
+.head-nav-cart{
+    margin-top: 20%;
+    background-color: rgb(0 0 0 / 0.1);
+    padding-left: 5px;
+    width : 120px;
+    height : 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.head-nav-login{
+    display: flex;
+    justify-content: flex-end;
+    font-size: 0.7rem;
+}
+.head-nav-login a{
+    padding : 3px;
+    cursor: pointer;
+    text-decoration: none;
+    color : black;
+}
+
+.carousel-container{
+    position : relative;
+    margin: 0 auto;
+    border: none;
+    width: 80%;
+    display: flex;
+}
+  .carousel__item {
+    height: 300px;
+    padding: 1em;
+    font-family: "Quicksand", sans-serif;
+    font-weight: bold;
+    font-size: 2em;
+    color: #ffffff;
+    display: none;
+    box-shadow: 0px 1px 10px rgb(0 0 0 / 0.2);
+  }
+  .carousel__item img{
+      width: 100%;
+  }
+
+  .carousel__item--selected {
+    display: block;
+  }
+
+  .carousel__nav {
+    width: 100%;
+    padding: 20px 0;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    text-align: center;
+  }
+
+  .carousel__button {
+    width: 10px;
+    height: 10px;
+    display: inline-block;
+    background: rgba(124, 40, 40, 0.2);
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer !important;
+    z-index : 100;
+  }
+
+  .carousel__button--selected {
+    background: #d00156;
+  }
+
+main{
+    display : flex;
+    flex-direction : column;
+}
+.Home-container{
+    display: flex;
+    flex-direction: column;
+    width : 80%;
+    margin: 0 auto;
+}
+.category-item:nth-child(2n){
+    flex-direction: row-reverse;
+}
+
+.category-item{
+    display: flex;
+    box-shadow: 0px 1px 10px rgb(0 0 0 / 0.2);
+}
+.cat-two{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.cat-two button{
+    margin:30px 0;
+    height: 30px;
+    background-color: #ad3a6a;
+    border : 0.2px solid rgb(46, 45, 45);
+    color : white;
+    cursor: pointer;
+    width: max-content;
+    padding : 0 10px;
+}
+.cat-two a{
+    text-decoration: none;
+    color : white;
+}
+footer{
+    background-color:  rgb(0 0 0 / 0.1);
+    height: 40px;
+}
+footer p{
+    margin-left: 15%;
+    padding-top: 10px;
+}
+
+
+@media screen and (max-width : 480px){
+    .head-nav-left a:not(:first-child) {
+        display: none;
+    }
+    .head-nav-left:first-child  img{
+            height : 60px;
+    }
+    .head-nav-left:first-child {
+        margin-left : 0;
+    }
+    .head-nav-left a{
+        margin-left : 0;
+    }
+    .head-nav-login{
+        display: none;
+    }
+    .head-nav-cart{
+        margin-top: 20%;
+        background-color: rgb(0 0 0 / 0.1);
+        padding-left: 0;
+        width: 100px;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .head-nav-cart img{
+        height:  20px;
+    }
+    .carousel-container{
+        height : 100px;
+    }
+    .carousel__item--selected {
+        display: block;
+    }
+    .carousel__item {
+        height: 100px;
+        padding: 0;
+    }
+    .carousel__nav{
+        top :  100px;
+    }
+
+    .cat-one img{
+        width : 100px;
+        height : 100px;
+    }
+    .category-item{
+        align-items: center;
+    }
+    .cat-two button {
+        margin: 20px 0;
+        height: 20px;
+        font-size: 0.5em;
+    }
+    .cat-two h3{
+        font-size: 1em;
+        margin-top: 50px;
+    }
+    .cat-two div{
+        font-size: 0.5em;
+    }
+    footer p{
+        font-size: 0.5em;
+    }
+    footer{
+        justify-content: center;
+    }
+}
+
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px)
+and (orientation : landscape) {
+
+    .head-nav-cart{
+        margin-top: 10%;
+        background-color: rgb(0 0 0 / 0.1);
+        padding-left: 0;
+        width: 100px;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .head-nav-cart img{
+        height:  20px;
+    }
+
+}
