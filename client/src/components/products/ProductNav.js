@@ -1,46 +1,52 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
+import { AppContext } from '../common/AppContext';
+import APICalls from '../../dataControls/APICalls';
 import axios from 'axios';
 import './ProductNav.scss';
 
-  const API_URL = "http://localhost:5000/";
+const API_URL = "http://localhost:5000/";
 
-class ProductNav extends Component{
-  constructor(props) {
-    super(props);
-    this.state = {
-      items:[],
-      loading: false
+const ProductNav = ({set_id}) => {
+  // static contextType = AppContext;
+  const [categories, setCategories] = useState([]);
+  const [loading, setLoading] = useState(false);
+
+  // const {
+  //   state: {categories}
+  // } = useContext(AppContext);
+
+  // APICalls.getCategories()
+  //   .then((res) => setCategories(res.data))
+  //   .catch(err => console.log(err))
+   const getProductNavData = async () => {
+      await axios(API_URL+"categories").then(res => {
+        setCategories(res.data);
+        setLoading(false);    
+      });
     }
-  }
 
-  getProductNavData = async () => {
-    await axios(API_URL+"categories").then(res => this.setState({
-      items: res.data,
-      loading: false
-    }));
-  }
+  useEffect(()=> {
+    console.log("Mounting");
+    getProductNavData();
+    console.log(categories);
+   }, [])
 
-  componentDidMount(){
-    this.setState({loading: true});
-    this.getProductNavData();
-  }
-
-  render(){
-    let {items} = this.state;
     return(
       <div className="ProductsNav">
         <ul className='category-list'>
           { 
-            items.filter(item => item.enabled === true).sort((max, min)=> max.order > min.order ? 1: -1).map(item => {
+            categories.filter(item => item.enabled === true).sort((max, min)=> max.order > min.order ? 1: -1).map(item => {
               return(
-                <li key={item.order}className='category'><a href="#home">{item.name}</a></li>
+                <li key={item.order} className='category' onClick={()=> set_id(item.id)}>
+                  {item.name}
+                </li>
               )
             })
           }
         </ul>
       </div>
     )
-  }
+
 }
 
 export default ProductNav;

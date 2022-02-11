@@ -7,15 +7,14 @@ class AuthReq{
       headers:{
         'Content-Type': 'application/x-www-form-urlencoded'
       },
-      // body: JSON.stringify({email:email, password: password}),
       body: `email=${email}&password=${password}`,
       mode: "cors"
     })
     .then(response => {
-      response.json();})
-    .then(data =>{
-      // console.log("success:" , data);
-
+      if (response.ok) 
+        return response.json()
+      return response.json()
+    }).then(data =>{
       localStorage.setItem("user", JSON.stringify(data));
       return data;
     })
@@ -27,14 +26,11 @@ class AuthReq{
       headers:{ 
         'Content-Type': 'application/x-www-form-urlencoded'
       },
-
-      // body: JSON.stringify({email:email, password: password}),
       body: `email=${email}&password=${password}&cpassword=${cpassword}`,
       mode: "cors"
-    }).then(response => {
-      response.json();}).then(data => {
-        return data;
-      })
+    }).then(response => response.json())
+      .then(data => data)
+      .catch(err => err);
   }
 
   logout() {

@@ -1,24 +1,30 @@
 import React, { Component } from 'react';
-import classnames from 'classnames';
+import Slider from 'react-slick';
 import {
-  Carousel,
-  CarouselItem,
-} from 'react-bootstrap';
+  FaChevronRight,
+  FaChevronLeft,
+} from "react-icons/fa";
+// import {FcPrevious, FcNext} from 'react-icons';
 import axios from 'axios';
 
 import './Slides.scss';
 const API_URL = "http://localhost:5000/";
 
+function Arrow(props) {
+  let className = props.type === "next" ? "nextArrow" : "prevArrow";
+  className += " arrow";
+  const char = props.type === "next" ? FaChevronRight : FaChevronLeft;
+  return (
+    <span className={className} onClick={props.onClick}>
+      {char}
+    </span>
+  );
+}
 
 export default class Offers extends Component {
   constructor(props) {
     super(props);
     this.state = { activeIndex: 0, loading: false, items: [] };
-    this.next = this.next.bind(this);
-    this.previous = this.previous.bind(this);
-    this.goToIndex = this.goToIndex.bind(this);
-    this.onExiting = this.onExiting.bind(this);
-    this.onExited = this.onExited.bind(this);
   }
 
   getOfferData = async () => {
@@ -33,74 +39,41 @@ export default class Offers extends Component {
     this.getOfferData();
   }
 
-  onExiting() {
-    this.animating = true;
-  }
-
-  onExited() {
-    this.animating = false;
-  }
-
-  goToIndex(newIndex) {
-    if (this.animating) return;
-    this.setState({ activeIndex: newIndex });
-  }
-  next() {
-    let { items } = this.state;
-    if (this.animating) return;
-    const nextIndex =
-      this.state.activeIndex === items.length - 1
-        ? 0
-        : this.state.activeIndex + 1;
-    this.setState({ activeIndex: nextIndex });
-  }
-
-  previous() {
-    let { items } = this.state;
-    if (this.animating) return;
-    const nextIndex =
-      this.state.activeIndex === 0
-        ? items.length - 1
-        : this.state.activeIndex - 1;
-    this.setState({ activeIndex: nextIndex });
-  }
   render() {
-    const { activeIndex } = this.state;
     let { items } = this.state;
+
+    const configs = {
+      dots: true,
+      arrows: true,
+      infinite: true,
+      speed: 500,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      autoplay: true,
+      autoplaySpeed: 5000,
+      className: "slides",
+    };
+
     return (
-      <Carousel
-        activeIndex={activeIndex}
-        next={this.next}
-        previous={this.previous}
-      >
-        {items.map(item => {
+      <div className="Offers">
+        <Slider {...configs} 
+          nextArrow={<Arrow type ="next" />}
+          prevArrow={<Arrow type ="prev" />}
+          className='slides'
+          
+        >
+        {items.map((item, index) => {
           return (
-            <CarouselItem
-              // onExiting={this.onExiting}
-              // onExited={this.onExited}
-              key={item.id}
-              className="carousel-item"
-            >
+            <div key = {index} className="carousel-item">
               <img
                 src={process.env.PUBLIC_URL + item.bannerImageUrl}
                 alt={item.bannerImageAlt}
               />
-            </CarouselItem>
+            </div>
           );
         })}
-        <ol className="carousel-indicators">
-          {items.map((item, index) => {
-            return (
-              <li
-                key={index}
-                onClick={() => this.goToIndex(index)}
-                className={classnames({ active: activeIndex === index })}
-                style={{ backgroundImage: `url(process.env.PUBLIC_URL+ ${item.bannerImageUrl})` }}
-              />
-            );
-          })}
-        </ol>
-      </Carousel>
+        </Slider>
+      </div>
     );
   }
 }

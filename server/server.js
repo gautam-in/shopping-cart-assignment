@@ -11,7 +11,7 @@ const app = express();
 app.get('/cors', (req,res)=> {
   res.set('Access-Control-Allow-Origin', 'http://localhost:3000');
   res.send({ "msg": "This has CORS enabled" })
-  netx();
+  next();
 })
 
 app.use(express.urlencoded({ extended: true }));
@@ -20,7 +20,7 @@ app.use(express.urlencoded({ extended: true }));
 var allowCrossDomain = function(req, res, next) {
   res.header('Access-Control-Allow-Origin', "*");
   res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
-  res.header('Access-Control-Allow-Headers', 'Content-Type');
+  res.header('Access-Control-Allow-Headers', "Access-Control-Allow-Headers, Origin,Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers");
   next();
 };
 

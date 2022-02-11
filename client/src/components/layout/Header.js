@@ -1,21 +1,24 @@
 import React, {useState, useEffect} from 'react';
 import { Link } from 'react-router-dom';
+import AuthReq from '../utils/AuthReq';
+import eventBus from '../utils/eventBus';
 import logo from "./logo.png";
 import './Header.scss';
 
-export default function Header() {
+export default function Header(props) {
   const [currentUser, setCurrentUser] = useState(undefined);
+
+  let qty = Object.keys(props.cartProducts).reduce((acc,current)=> acc + props.cartProducts[current].qty, 0);
 
   useEffect(()=> {
     return{
-      // EventBus.remove("logout");
+      // eventBus.remove("logout")
     }
   }, [])
 
   function logOut() {
-    // AuthService.logout();
+    AuthReq.logout();
     setCurrentUser(undefined);
-
   }
 
   return (
@@ -25,7 +28,7 @@ export default function Header() {
       </section>
       <nav className="menu">
         <ul>
-          <li><Link to={"/home"} className='link'>Home</Link></li>
+          <li><Link to={"/"} className='link'>Home</Link></li>
           <li><Link to={"/products"}  className='link'>Products</Link></li>
         </ul>
       </nav>
@@ -41,7 +44,9 @@ export default function Header() {
             <Link to={"/register"} className="register">Register</Link>
           </>
         )}
-        <a href="cart" className='cart-button'><i className="fas fa-shopping-cart"><span>{0} Items</span></i></a>          
+        <button className='cart-button' onClick={props.toggle} tabIndex="5" aria-pressed="true">
+          <i className="fas fa-shopping-cart"><span>{qty} Items</span></i>
+        </button>          
       </section>
     </header>
   )

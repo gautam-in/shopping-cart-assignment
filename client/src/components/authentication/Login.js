@@ -32,17 +32,20 @@ function Login() {
     setLoading(true);
     setMessage("");
 
-    // Form.validateAll();
-
     if (message.length === 0) {
       AuthReq.login(email, password).then(
         (res) => {
-          console.log("Reload shld hppn");
-          console.log("res", res);
+          console.log("Is this 2", res);
+          if (res.status >= 400) {
+            setMessage(res.message);
+            console.log("Is this", res);
+            throw new Error(res.message);
+          }
+          setMessage("Login Successfully!!");
           history("/");
           window.location.reload();
         },
-        error => {
+        (error) => {
           const resMessage =
             (error.response &&
               error.response.data &&
@@ -53,7 +56,7 @@ function Login() {
           setLoading(false);
           setMessage(resMessage);
         }
-      );
+      )
     } else {
       setLoading(false);
     }

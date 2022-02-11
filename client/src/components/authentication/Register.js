@@ -35,8 +35,6 @@ const required = value => {
 // };
 
 function Register() {
-  const history = useNavigate();
-
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [cpassword, setCpassword] = useState("");
@@ -59,6 +57,11 @@ function Register() {
       ).then(
         (response) => {
           console.log("response: ", response);
+          if (response.status >= 400) {
+            console.log("Is this", response);
+            setMessage(response.message);
+            throw new Error(response.message);
+          }
           setMessage(response.data.message);
           setSuccessful(true);
         },
@@ -73,7 +76,7 @@ function Register() {
           setSuccessful(false);
           setMessage(resMessage);
         }
-      );
+      )
     }
   }
   
