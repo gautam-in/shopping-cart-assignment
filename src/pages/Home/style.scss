@@ -1,0 +1,17 @@
+.home__wrapper {
+  overflow: auto;
+  height: calc(100% - 7.5rem);
+  padding: 0.25rem;
+}
+
+@media screen and (max-device-width: 480px) {
+  .home__wrapper {
+    height: calc(100vh - 3.7rem);
+  }
+}
+
+@media screen and (min-device-width: 481px) and (max-device-width: 768px) {
+  .home__wrapper {
+    height: calc(100vh - 6rem);
+  }
+}

@@ -1,0 +1,148 @@
+.modal {
+  position: absolute;
+  top: 4.5rem;
+  left: 46%;
+  width: 38%;
+  height: calc(100% - 4.5rem);
+  background-color: white;
+  box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
+  z-index: 10;
+  background-color: rgb(223, 219, 219);
+
+  .cart__heading {
+    height: 2.5rem;
+    width: 100%;
+    background-color: black;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .cart--cnt {
+      font-size: 1.3rem;
+      text-align: center;
+      padding-left: 0.8rem;
+      font-weight: 600;
+    }
+
+    .btn--close {
+      font-size: 2.5rem;
+
+      cursor: pointer;
+      border: none;
+      background: none;
+    }
+  }
+
+  .cart--nonempty {
+    height: 78%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .cItem__Container {
+      width: 100%;
+      overflow: auto;
+    }
+  }
+
+  .cart--empty {
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    h2 {
+      margin-block-end: 0rem;
+    }
+    .empty--btn {
+      position: absolute;
+      bottom: 5%;
+      margin-left: 1.3%;
+    }
+  }
+
+  .cart__bottom {
+    background-color: white;
+    text-align: center;
+    height: 15%;
+
+    .nonempty--btn {
+      margin-top: 1%;
+      margin-left: 2%;
+      width: 96%;
+      height: 2.2rem;
+      display: flex;
+      justify-content: space-between;
+      padding-left: 0.5rem;
+      padding-right: 0.5rem;
+    }
+  }
+}
+
+.cart--overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.637);
+  backdrop-filter: blur(1px);
+  z-index: 5;
+}
+
+.cart__footer {
+  background-color: white;
+  width: 96%;
+  margin-left: 2%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.cart__footerImg {
+  width: 30%;
+  height: 98%;
+}
+
+.promo {
+  font-size: small;
+  padding: 1%;
+}
+
+@media screen and (max-device-width: 480px) {
+  .modal {
+    top: 2.5rem;
+    width: 100%;
+    left: 0;
+    height: 87%;
+    background-color: rgb(223, 219, 219);
+    .cart__heading {
+      color: black;
+      background-color: white;
+    }
+
+    .btn--close {
+      color: black;
+      background-color: white;
+      padding: 0 0;
+      font-size: 2rem;
+      margin-right: 0.7rem;
+    }
+    .cart__footer {
+      width: 100%;
+      height: 2.2rem;
+      margin-left: 0%;
+    }
+  }
+}
+
+@media screen and (min-device-width: 481px) and (max-device-width: 768px) {
+  .modal {
+    top: 2.5rem;
+    width: 100%;
+    left: 0;
+    height: 87%;
+    background-color: rgb(223, 219, 219);
+  }
+}

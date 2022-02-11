@@ -1,0 +1,25 @@
+.slist {
+  width: 18%;
+  background-color: rgb(219, 215, 215);
+
+  .slist__container {
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+  }
+
+  .slist__item {
+    padding: 1rem;
+    border-bottom: 1px solid rgb(177, 173, 173);
+    font-size: 1rem;
+  }
+
+  .slist__item:hover {
+    cursor: pointer;
+  }
+
+  .active {
+    background-color: rgb(245, 224, 186);
+    font-weight: 600;
+  }
+}

@@ -1,0 +1,25 @@
+.ddWrapper {
+  margin-bottom: 0.4rem;
+
+  .dd__header {
+    width: 100%;
+    height: 3rem;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    line-height: 2rem;
+
+    .dd_arrow {
+      height: 2rem;
+      width: 1rem;
+      fill: #ffffff;
+      line-height: 3rem;
+    }
+  }
+  .dd__listItem {
+    width: 100%;
+    height: 3rem;
+    color: honeydew;
+  }
+}
