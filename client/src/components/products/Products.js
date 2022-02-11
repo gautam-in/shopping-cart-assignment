@@ -1,7 +1,5 @@
-import React, {useReducer, useContext, useState, Component} from 'react';
+import React, {useState} from 'react';
 import ProductNav from './ProductNav';
-import { AppContext } from '../common/AppContext';
-import APICalls from '../../dataControls/APICalls';
 import './Products.scss';
 import { useEffect } from 'react';
 import axios from 'axios';
