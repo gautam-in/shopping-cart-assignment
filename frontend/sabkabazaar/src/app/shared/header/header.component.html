@@ -1,0 +1,19 @@
+<div class="header">
+    <img class="logo" src="assets/images/logo.png">
+    <nav>
+        <ul>
+            <li><a [routerLink]="['/home']" routerLinkActive="active">Home</a></li>
+            <li><a [routerLink]="['/products']" routerLinkActive="active">Products</a></li>
+        </ul>
+    </nav>
+    <div class="login">
+        <ul>
+            <li><a [routerLink]="['/login']" routerLinkActive="active">SignIn</a></li>
+            <li><a [routerLink]="['/register']" routerLinkActive="active">Register</a></li>
+        </ul>
+        <button class="cart" (click)="showCart()">
+            <img src="assets/images/cart.svg">
+            <!-- {{productsLength$ | async}} Items -->
+        </button>
+    </div>
+</div>

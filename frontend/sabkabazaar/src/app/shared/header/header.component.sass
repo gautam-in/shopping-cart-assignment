@@ -1,0 +1,73 @@
+@import 'src/variables'
+
+.header
+  display: flex
+  width: 90%
+  box-shadow: 0 10px 13px -9px #e8e6e6
+
+  ul
+    list-style: none
+
+    li
+      display: inline-block
+      cursor: pointer
+      display: inline-block
+
+      a
+        color: $dark-grey
+        font-size: 14px
+      .active
+        border-bottom: 2px solid $accent
+        padding-bottom: 10px
+
+        &:hover
+          border-bottom: 2px solid $accent
+          padding-bottom: 10px
+
+    li:first-child
+      margin-right: 20px
+
+.logo
+  height: 70px
+  margin: 5px 0
+  width: auto
+
+nav
+  margin-left: 10%
+  margin-top: auto
+  margin-bottom: 20px
+
+.login
+  display: flex
+  flex-direction: column
+  margin-left: auto
+
+.cart
+  align-items: center
+  background: $grey
+  color: $dark-grey
+  cursor: pointer
+  display: flex
+  justify-content: center
+  margin-top: auto
+
+.cart img
+  height: 30px
+
+@media only screen and (max-width: 767px)
+  .header
+    width: 100%
+
+/* Small phones: from 0 to 480px */
+@media only screen and (max-width: 480px)
+  nav
+    display: none
+  .login ul
+    display: none
+    p
+      font-size: 80%
+
+  header
+    padding-left: 5px
+    .logo
+      height: 45px

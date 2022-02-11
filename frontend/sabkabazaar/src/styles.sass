@@ -1,0 +1,31 @@
+@import 'src/variables'
+
+*
+  margin: 0
+  padding: 0
+  box-sizing: border-box
+
+html,
+body
+  background-color: 000
+  color: $dark-grey
+  font-family: 'Lato', 'Arial', sans-serif
+  font-weight: 300
+  font-size: 12px
+  overflow-x: hidden
+
+button
+  padding: 12px
+  border: 0px
+  color: 000
+  background: $accent
+  cursor: pointer
+
+a
+  text-decoration: none
+  cursor: pointer
+  
+/* Small phones: from 0 to 480px */
+@media only screen and (max-width: 480px)
+  button
+    font-size: 80%
