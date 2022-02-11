@@ -1,4 +1,11 @@
-import './App.css';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect,
+} from 'react-router-dom';
+import { connect } from 'react-redux';
+
 import HomePage from './pages/home/homepage.component';
 import ProductList from './pages/product-list/product-list.component';
 import ProductItem from './pages/product-item/product-item.component';
@@ -7,13 +14,8 @@ import Header from './components/header/header.component';
 import SignInPage from './pages/sign-in/sign-in.component';
 import SignUpPage from './pages/sign-up/sign-up.component';
 import Footer from './components/footer/footer.component';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Redirect,
-} from 'react-router-dom';
-import { connect } from 'react-redux';
+
+import './App.css';
 
 function App({ cartItems }) {
   return (

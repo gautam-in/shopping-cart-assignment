@@ -1,14 +1,15 @@
 import React, { useState, useEffect } from 'react';
+
 import { withRouter } from 'react-router-dom';
+
 import Products from '../../components/product/product.component';
 import SideNav from '../../components/side-nav/side-nav.component';
-
 import PRODUCTS from '../../server/products/index.get.json';
+
 import './product-list.styles.scss';
 
-const ProductList = ({ match, selectedCategory }) => {
+const ProductList = ({ match }) => {
   const [selectedProducts, setSelectedProducts] = useState(PRODUCTS);
-  console.log(match.params.productId);
 
   useEffect(() => {
     // Filter the products that match the selected category

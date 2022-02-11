@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import './cart-icon.styles.scss';
-import { ReactComponent as ShoppingIcon } from '../../images/cart.svg';
 import { connect } from 'react-redux';
+
 import { toggleCartHidden } from '../../redux/cart/cart.actions';
+import { ReactComponent as ShoppingIcon } from '../../images/cart.svg';
+
+import './cart-icon.styles.scss';
 
 const CartIcon = ({ cartItems, toggleCartHidden }) => {
   const [itemCount, setItemCount] = useState(0);
@@ -33,4 +35,3 @@ const mapDispatchToProps = (dispatch) => ({
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(CartIcon);
-// export default CartIcon;

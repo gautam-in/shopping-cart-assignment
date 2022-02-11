@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import './header.styles.scss';
 import { withRouter, Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import Logo from '../../images/logo.png';
+
 import CartIcon from '../cart-icon/cart-icon.component';
 import CartDropdown from '../cart-dropdown/cart-dropdown.component';
+import Logo from '../../images/logo.png';
+
+import './header.styles.scss';
 
 const Header = ({ hidden, currentUser }) => {
   const [show, setShow] = useState(false);

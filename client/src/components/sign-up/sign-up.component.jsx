@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
+import { Toast } from 'react-bootstrap';
+import { withRouter } from 'react-router-dom';
+
 import FormInput from '../form-input/form-input.component';
 import CustomButton from '../custom-button/custom-button.component';
-import { Toast } from 'react-bootstrap';
 
 import './sign-up.styles.scss';
-import { withRouter } from 'react-router-dom/cjs/react-router-dom.min';
 
 const SignUp = ({ history }) => {
   const [name, setName] = useState('');

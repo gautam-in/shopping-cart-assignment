@@ -1,15 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { withRouter } from 'react-router-dom';
-import { Navbar, NavbarToggler, Collapse } from 'react-bootstrap';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
+import { Navbar, Container, Nav, Offcanvas } from 'react-bootstrap';
 
 import NavbarComponent from '../navbar/navbar.component';
 import CATEGORY_DATA from '../../server/categories/index.get.json';
 import './side-nav.styles.scss';
 
-const SideNav = ({ match, selectedCategory }) => {
-  const [collapsed, setCollapsed] = useState(false);
+const SideNav = ({ selectedCategory }) => {
   const [categoryData, setCategoryData] = useState(CATEGORY_DATA);
 
   useEffect(() => {
@@ -19,8 +16,6 @@ const SideNav = ({ match, selectedCategory }) => {
       );
   }, []);
 
-  const toggleNavbar = () => setCollapsed(!collapsed);
-  console.log(selectedCategory);
   return (
     <div className="sidenav-container">
       {window.screen.width > 768 ? (
@@ -31,23 +26,25 @@ const SideNav = ({ match, selectedCategory }) => {
           selectedCategory={selectedCategory}
         />
       ) : (
-        <Navbar color="faded" light>
-          <Navbar.Toggle
-            onClick={() => selectedCategory === undefined && toggleNavbar()}
-          >
-            {categoryData[0].name}
-            {selectedCategory === undefined && (
-              <FontAwesomeIcon icon={faChevronDown} />
-            )}
-          </Navbar.Toggle>
-          <Navbar.Collapse isOpen={collapsed} navbar>
-            <NavbarComponent
-              vertical={false}
-              navbar={true}
-              data={categoryData}
-              selectedCategory={selectedCategory}
-            />
-          </Navbar.Collapse>
+        <Navbar bg="light" expand={false}>
+          <Container fluid>
+            <Navbar.Brand href="#"> {categoryData[0].name}</Navbar.Brand>
+            <Navbar.Toggle aria-controls="offcanvasNavbar" />
+            <Navbar.Offcanvas
+              id="offcanvasNavbar"
+              aria-labelledby="offcanvasNavbarLabel"
+              placement="top"
+            >
+              <Offcanvas.Body>
+                <Nav className="justify-content-end flex-grow-1 pe-3">
+                  <NavbarComponent
+                    data={categoryData}
+                    selectedCategory={selectedCategory}
+                  />
+                </Nav>
+              </Offcanvas.Body>
+            </Navbar.Offcanvas>
+          </Container>
         </Navbar>
       )}
     </div>

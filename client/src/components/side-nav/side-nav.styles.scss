@@ -1,6 +1,15 @@
 .sidenav-container {
   font-size: 14px;
 
+  .navbar {
+    background-color: #c72658 !important;
+    a {
+      color: #fff !important;
+      font-weight: bold;
+      text-align: center;
+    }
+  }
+
   .nav-item {
     border-bottom: 1px solid #ececec;
   }
@@ -32,8 +41,13 @@
   }
 }
 
-.navbar-toggler-icon {
+.navbar-toggler {
   background-color: #c72658;
   width: 100% !important;
   background-image: none !important;
+  width: auto !important;
+}
+
+.navbar-light .navbar-toggler {
+  background-color: #fff;
 }

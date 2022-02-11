@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
+import { withRouter } from 'react-router-dom/cjs/react-router-dom.min';
+
 import FormInput from '../form-input/form-input.component';
 import CustomButton from '../custom-button/custom-button.component';
+
 import './sign-in.styles.scss';
-import { withRouter } from 'react-router-dom/cjs/react-router-dom.min';
 
 const SignIn = ({ history }) => {
   const [email, setEmail] = useState('');

@@ -1,10 +1,12 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
+
 import CartItem from '../../components/cart-item/cart-item.component';
 import CustomButton from '../../components/custom-button/custom-button.component';
-import { withRouter } from 'react-router-dom';
 import { toggleCartHidden } from '../../redux/cart/cart.actions';
 import CartFooter from '../../images/lowest-price.png';
+
 import './checkout.styles.scss';
 
 const CheckoutPage = ({ cartItems, history, dispatch }) => {

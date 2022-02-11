@@ -1,12 +1,13 @@
 import React from 'react';
 import { connect } from 'react-redux';
+
 import CustomButton from '../custom-button/custom-button.component';
 import { addItem } from '../../redux/cart/cart.actions';
+
 import './product.styles.scss';
 
 const Product = ({ item, addItem }) => {
   const { name, sku, imageURL, description, price } = item;
-  // console.log(item, addItem);
   return (
     <div className="product">
       <h3 className="name">{name}</h3>

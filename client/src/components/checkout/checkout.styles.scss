@@ -1,70 +1,61 @@
-// .checkout-container {
-//   padding: 1em 0;
-//   height: 100%;
-//   background: #ececec;
-// }
-// .checkout-heading {
-//   background-color: #fff;
-//   padding: 10px;
-//   border-radius: 4px;
-// }
+.checkout-container {
+  height: 100%;
+  background: #ececec;
+  padding: 10px 0;
+}
 
-// .checkout-item {
-//   padding: 10px;
-//   width: 100%;
-//   display: flex;
-//   height: 100px;
-//   margin: 15px 0;
-//   background-color: #fff;
+.checkout-heading {
+  background-color: #fff;
+  padding: 10px 20px;
+  border-radius: 4px;
+}
 
-//   .checkout-total {
-//     margin-top: auto;
-//     margin-bottom: 1em;
-//     font-size: 14px;
-//   }
+.checkout-button {
+  background-color: #fff;
+  margin-top: auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  padding: 0 10px 10px;
+  box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
+}
 
-//   img {
-//     // width: 30%;
-//     object-fit: contain;
-//   }
+.checkout-items {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: scroll;
+  background: #ececec;
 
-//   .quantity {
-//     display: flex;
-//     align-items: center;
+  .cart-item {
+    padding: 6px 20px;
+    justify-content: space-between;
 
-//     .arrow {
-//       cursor: pointer;
-//     }
+    img {
+      width: 70px;
+    }
+  }
 
-//     .value {
-//       padding: 0 10px;
-//       font-size: 14px;
-//     }
+  .footer-message {
+    margin: 4px;
+    background: #fff;
+    padding: 10px 20px;
+    border-radius: 4px;
+  }
+}
 
-//     svg {
-//       color: #c72658;
-//       font-size: 16px;
-//       cursor: pointer;
-//     }
-//   }
+.message {
+  padding: 10px 0;
+}
 
-//   .item-details {
-//     width: 70%;
-//     display: flex;
-//     flex-direction: column;
-//     align-items: flex-start;
-//     justify-content: center;
-//     padding: 10px 20px;
+.cart-footer {
+  width: 100%;
+  margin: 1em 0;
 
-//     .name {
-//       font-size: 12px;
-//       font-weight: bold;
-//     }
-
-//     .checkout-price {
-//       font-size: 14px;
-//       font-weight: normal;
-//       padding-left: 5px;
-//     }
-//   }
-// }
+  span {
+    font-size: 12px;
+    padding-left: 10px;
+  }
+}

@@ -1,8 +1,10 @@
 import React from 'react';
-import './category.styles.scss';
+import { withRouter } from 'react-router-dom';
+
 import CustomButton from '../custom-button/custom-button.component';
 import CATEGORY_DATA from '../../server/categories/index.get.json';
-import { withRouter } from 'react-router-dom/cjs/react-router-dom.min';
+
+import './category.styles.scss';
 
 const Category = ({ history, match }) => {
   return (
