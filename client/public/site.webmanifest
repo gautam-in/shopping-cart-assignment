@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Sabka Bazaar App",
+  "name": "A e-commerce shopiing website for groceries",
   "icons": [
     {
       "src": "favicon.ico",

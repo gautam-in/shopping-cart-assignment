@@ -62,8 +62,9 @@ function App() {
           <Route exact path="/register" component={Register} element={<Register />}/>
           <Route exact path="/products" component={Products}  element={<Products addToCart={setProducts} products={cartProducts}/>} />
           </Routes>
+          <Sidedrawer open={drawer.showbd} close={backdroptoggle} products={cartProducts} setQty={setProdQty}/>
         </Suspense>
-        <Sidedrawer open={drawer.showbd} close={backdroptoggle} products={cartProducts} setQty={setProdQty}/>
+        
         <Suspense fallback={<Loading name="Footer" />}>
           <Footer />
         </Suspense>

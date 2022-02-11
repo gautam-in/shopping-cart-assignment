@@ -14,6 +14,8 @@ I also introduce
 - Reusable Components
 - Responsive Web Pages
 - Styling using `Scss`
+- Modernizer
+- Service Worker
 - and such features to make an application more functional and reliable.
   <br>
 
