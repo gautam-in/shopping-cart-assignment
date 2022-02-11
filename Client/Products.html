@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sabkaabazaar</title>
+    <link rel="stylesheet" href="Products.css">
+
+</head>
+<body>
+    <div class="header-container">
+        <header>
+            <div class="head-nav-left">
+                <a href="./Home.html"> <img  src="../static/images/logo.png" alt="Sabkaabazaar_Logo"/></a>
+                <a href="Home.html">Home</a>
+                <a href="Products.html">Products</a>
+            </div>
+            <div class="head-nav-right">
+                <div class="head-nav-login">
+                    <a href="login.html">SignIn</a>
+                    <a href="home.html">Register</a>
+                </div>
+                <div class="head-nav-cart" >
+                        <span><img src="../static/images/cart.svg" alt="cart_logo"></span><div id="head-nav-cart-text">0 Item</div>
+                </div>
+            </div>
+        </header>
+    </div>
+    <main class="products-main-container">
+        <div class="products-left-nav">
+            <ul class="products-nav-list"></ul>
+        </div>
+        <div class="products-right-container">
+
+        </div>
+    </main>
+   <div class="my-cart-modal" id="my-cart-modal">
+        <div class="modal-header">
+            <label><h3>My Cart</h3>(1 item)</label>
+            <button class="close-modal" id="close-modal">&#x2715</button>
+        </div>
+        <div class="modal-body" id="modal-body">
+            <div id="modal-product">
+                <img id="modal-product-image" alt=product-image/>
+                <div>
+                    <label id="modal-product-title"></label>
+                    <div id="modal-sub-text">
+                        <button class="minus" id="minus">-</button>
+                        <label id="modal-product-count">1</label>
+                        <button class="plus" id="plus">+</button>
+                        <span id="#prod" style="padding-left: 10px;padding-right: 10px ">X</span>
+                        <label id="modal-product-price"></label>
+                    </div>
+                </div>
+
+
+                <label id="modal-total-price1"></label>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <p>Promo code can be applied on the payment page</p>
+            <button class="checkout-button">
+                <label>proceed to checkout</label>
+                <label id="modal-total-price2"></label>
+            </button>
+        </div>
+    </div>
+    <div id="modal-overlay"></div>
+    <footer>
+        <p>Copyrigth &#169 2011-2018 Sabka Bazaar Grocery Supplies Pvt Ltd</p>
+    </footer>
+    <div id="modal-btn"></div>
+    <script src="Products.js"></script>
+</body>
+</html>

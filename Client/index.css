@@ -1,0 +1,116 @@
+body,html{
+    height : 100%;
+    margin: 0;
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    width : 80%;
+    margin-left : 10%;
+    height : 100%;
+}
+.header-container{
+   box-shadow: 0px 3px 10px rgb(0 0 0 / 0.2);
+   height: 12%;
+}
+.head-nav-left{
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+}
+.head-nav-left a> img{
+    margin-right: 100px;
+    height: 80px;
+    margin-top: 12px;
+}
+.head-nav-left a{
+    text-decoration: none;
+    color : black;
+    margin-left : 20px;
+    cursor: pointer;
+}
+.head-nav-right {
+    display: flex;
+    flex-direction : column;
+}
+
+
+.head-nav-cart img{
+    height : 30px;
+    padding-right: 10px;
+}
+.head-nav-cart{
+    margin-top: 20%;
+    background-color: rgb(0 0 0 / 0.1);
+    padding-left: 5px;
+    width : 120px;
+    height : 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.head-nav-login{
+    display: flex;
+    justify-content: flex-end;
+    font-size: 0.7rem;
+
+}
+.head-nav-login a{
+    padding : 3px;
+    cursor: pointer;
+    text-decoration: none;
+    color : black;
+}
+
+
+main {
+    display: flex;
+    justify-content: left;
+    margin-left:15% ;
+    margin-top: 5%;
+}
+.main-left{
+    margin-right: 10%;
+}
+
+.main-right form {
+    display: flex;
+    flex-direction: column;
+
+}
+.main-right input,button{
+    width : 150%;
+}
+.main-right label,input{
+    margin:5px 0 ;
+}
+.main-right button{
+    margin:30px 0;
+    height: 30px;
+    background-color: #d00156;
+    border : 0.5px solid black;
+    color : white;
+    cursor: pointer;
+}
+form input{
+    border:none;
+    border-bottom : 1px solid black;
+}
+form input:focus{
+    border-bottom : 1px solid #50dae2;
+    outline: none;
+}
+.form-input:focus-within label{
+    color : #50dae2;
+}
+.form-input{
+    margin-bottom: 20px;
+}
+footer{
+    background-color:  rgb(0 0 0 / 0.1);
+    height: 40px;
+}
+footer p{
+    margin-left: 15%;
+    padding-top: 10px;
+}
