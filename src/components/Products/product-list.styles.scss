@@ -1,0 +1,82 @@
+@import '../../scss-variables/vairables.scss';
+
+.product.container {
+  display: flex;
+  width: 75vw;
+  margin: 0 auto;
+  flex: 1;
+}
+.mobile {
+  display: none;
+}
+.btn-cta {
+  background: $pink-color;
+  border: none;
+  padding: 10px;
+  margin: 0 auto;
+  color: $white-color;
+  font-size: 17px;
+}
+@media only screen and (min-device-width: $width4) and (max-device-width: $max-width1) {
+  .product.container {
+    width: 100%;
+  }
+  .tablet.mobile {
+    display: block;
+  }
+}
+@media only screen and (min-device-width: $min-width) and (max-device-width: $max-width) and (-webkit-min-device-pixel-ratio: 2) {
+  .product.container {
+    width: 100%;
+    display: block !important;
+  }
+}
+.product-cards-container {
+  flex: 0 0 75%;
+}
+@media only screen and (min-device-width: $min-width) and (max-device-width: $max-width) and (-webkit-min-device-pixel-ratio: 2) {
+  .product-cards-container {
+    flex: none;
+  }
+}
+.product-category {
+  flex: 0 0 25%;
+  background: $secondary-color;
+}
+@media only screen and (min-device-width: $min-width) and (max-device-width: $max-width) and (-webkit-min-device-pixel-ratio: 2) {
+  .product-category {
+    display: none;
+  }
+}
+.product-category ul {
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+}
+.product-category ul li {
+  color:$light-grey;
+  font-size: 16px;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-bottom: 1px solid $light-grey;
+}
+.product-list {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  padding: 0px;
+  margin: 0px;
+  list-style: none;
+}
+@media only screen and (min-device-width: $min-width) and (max-device-width: $max-width) and (-webkit-min-device-pixel-ratio: 2) {
+  .product-list {
+    display: block;
+    justify-content: initial;
+    flex-wrap: nowrap;
+  }
+}
+@media screen and (min-width: $minWidth) {
+  .product-list {
+    max-width: $maxWidth;
+  }
+}

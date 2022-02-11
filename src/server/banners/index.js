@@ -1,4 +1,4 @@
-[
+export const BannerData=[
   {
     "bannerImageUrl": "/static/images/offers/offer1.jpg",
     "bannerImageAlt": "Independence Day Deal - 25% off on shampoo",

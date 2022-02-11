@@ -1,0 +1,64 @@
+@import '../../scss-variables/vairables.scss';
+
+.slick-slider {
+  box-shadow: 0 25px 31px -20px rgba(0, 0, 0, 0.22);
+}
+.slick-slide img {
+  display: block;
+  width: inherit;
+}
+.slick-dots {
+  bottom: 20px;
+  width: $stand-width;
+  margin: 0;
+  list-style: none;
+  text-align: center;
+}
+.slick-prev {
+  left: 25px;
+  z-index: 1200;
+}
+.slick-next {
+  right: 25px;
+  z-index: 1200;
+}
+.slick-next:before,
+.slick-prev:before {
+  font-size: 20px;
+  line-height: 1;
+  opacity: 0.75;
+  color: $black-color;
+}
+.slick-prev:before,
+.slick-prev:before {
+  font-size: 20px;
+  line-height: 1;
+  opacity: 0.75;
+  color: $black-color;
+}
+@media (min-width: $width4) and (max-width: $width3) {
+  .slick-prev {
+    left: 25px;
+    z-index: 1200;
+  }
+  .slick-next {
+    right: 25px;
+    z-index: 1200;
+  }
+}
+
+@media (min-width: $min-width) and (max-width: $max-width) {
+  .slick-prev {
+    display: none !important;
+  }
+  .slick-next {
+    display: none !important;
+  }
+  .slick-dots {
+    bottom: -20px;
+    width: 100%;
+    margin: 0;
+    list-style: none;
+    text-align: center;
+  }
+}
