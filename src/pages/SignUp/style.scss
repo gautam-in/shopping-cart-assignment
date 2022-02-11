@@ -1,0 +1,48 @@
+.form__wrapper {
+  width: 100%;
+  height: calc(100vh - 7.5rem);
+  display: flex;
+  overflow: auto;
+
+  .form__details {
+    width: 40%;
+    height: 100%;
+    padding-left: 8rem;
+    padding-top: 4rem;
+
+    .form__heading {
+      margin-bottom: 1rem;
+    }
+  }
+
+  .form__inputs {
+    width: 50%;
+    height: 100%;
+    padding-top: 2.5rem;
+
+    .form__btn {
+      width: 21rem;
+      height: 2.2rem;
+      margin-top: 1rem;
+    }
+  }
+}
+
+@media screen and (max-device-width: 768px) {
+  .form__wrapper {
+    height: calc(100vh - 6rem);
+  }
+}
+
+@media screen and (max-device-width: 651px) {
+  .form__wrapper {
+    flex-direction: column;
+    padding: 3%;
+
+    .form__details {
+      padding: 0;
+      width: 90%;
+      height: fit-content;
+    }
+  }
+}

@@ -1,0 +1,32 @@
+.main__footer {
+  width: 100%;
+  height: 3rem;
+  background-color: rgb(223, 215, 215);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  bottom: 0;
+
+  .footer__para {
+    font-size: 0.9rem;
+  }
+}
+
+@media screen and (max-device-width: 480px) {
+  .main__footer {
+    height: 1.5rem;
+    .footer__para {
+      font-size: 0.4rem;
+    }
+  }
+}
+
+@media screen and (min-device-width: 481px) and (max-device-width: 768px) {
+  .main__footer {
+    height: 2.2rem;
+    .footer__para {
+      font-size: 0.8rem;
+    }
+  }
+}

@@ -1,0 +1,50 @@
+.input__wrapper {
+  position: relative;
+  width: 21rem;
+  height: 5.2rem;
+  line-height: 4rem;
+  overflow: hidden;
+
+  .input__label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    color: #727070;
+    transition: 0.2s all;
+    cursor: text;
+  }
+
+  input {
+    width: 100%;
+    border: 0;
+    outline: 0;
+    padding: 0.4rem 0;
+    border-bottom: 2px solid #727070;
+    box-shadow: none;
+    color: #111;
+  }
+  input:invalid {
+    outline: 0;
+  }
+  input:focus,
+  input:valid {
+    border-color: #06eaf1;
+  }
+  input:focus + label,
+  input:valid + label {
+    font-size: 1rem;
+    font-weight: 600;
+    top: -24px;
+    color: #1ee6ec;
+  }
+
+  .input--error {
+    color: red;
+    font-size: 0.7rem;
+    line-height: 0.9rem;
+    position: relative;
+    top: -0.5rem;
+    font-weight: 600;
+  }
+}
