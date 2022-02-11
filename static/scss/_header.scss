@@ -14,6 +14,22 @@
 }
 .logintool{
     display: none;
+    padding:5px 0;
+    @include tablet{
+        display: flex;
+    }
+    @include desktop-lgdesktop{
+        display: flex;
+    }
+    a{
+        text-decoration: none;
+        color: $headingBlack;
+        padding:0 5px;
+        font-size: 12px;
+        &:hover{
+            text-decoration: underline;
+        }
+    }
 }
 .navigation{
     nav{

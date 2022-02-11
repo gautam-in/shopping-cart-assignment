@@ -7,6 +7,6 @@ const cartData = require('../data/addToCart/cart.json');
 
 router.get('/', function (req, res, next) {
     // console.log("###### ", data);
-    res.render('home/home', { title: 'Shopping Cart', categories: categories, banners: banners, cartTotal: Object.keys(cartData).length })
+    res.render('home/home', { title: 'Shopping Cart', categories: categories, banners: banners,cartTotal: Object.keys(cartData).length, cartData: Object.values(cartData) })
 })
 module.exports = router;

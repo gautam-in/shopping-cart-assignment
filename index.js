@@ -5,6 +5,8 @@ const port = 4000;
 
 const projectRouter = require('./routes/products');
 const homeRouter = require('./routes/home');
+const registration = require('./routes/registration');
+const login = require('./routes/login');
 
 const app = express();
 app.use(cors());
@@ -43,7 +45,10 @@ app.set('views', __dirname + '/views');
 app.use(express.static(path.join(__dirname, '/public/')));
 
 app.use('/products', projectRouter);
+app.use('/registration', registration);
+app.use('/login', login);
 app.use('/', homeRouter);
+
 
 // app.get('/', (req, res) => {
 //     // res.send("Hello World");

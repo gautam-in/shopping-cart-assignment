@@ -1,0 +1,28 @@
+{{>header cartTotal=cartTotal cartData=cartData}}
+<div class="container d-flex flex-wrap">
+    <div class="form-left">
+        <h1>Login</h1>
+        <p>Get access to your Orders, Wishlist and Recommendations</p>
+    </div>
+    <div class="form-right">
+    <form action="/login/submit" class="form floating-label" method="post">
+        
+        <div class="form-control">
+            <input id="email" type="email" placeholder="Email">
+            <label for="email" data-content="Email">
+                <span>Email</span> 
+            </label>
+        </div>
+        <div class="form-control">
+            <input id="password" type="password" placeholder="Password">
+            <label for="password" data-content="Password">
+                <span>Password</span> 
+            </label>
+        </div>
+        
+        <div>
+            <button class="btn btn-red btn-block w-100">SignUp</button>
+        </div>
+    </form>
+    </div>
+</div>
