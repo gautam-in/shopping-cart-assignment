@@ -1,0 +1,133 @@
+@import './resets.scss';
+@import '_variables';
+
+#backdrop {
+    position : fixed;
+    top : 0;
+    left : 0;
+    width : 100%;
+    height : 100%;
+    background-color : rgba(0,0,0,0.75);
+    z-index : 10;
+}
+#modal {
+    position : fixed;
+    z-index : 100;
+    top : 50%;
+    left : 50%;
+    transform : translate(-50%, -50%);
+    width : 30%;
+    background-color : $lightGrey;
+    height : 40rem;
+}
+#modal-header {
+    width : 100%;
+    height : 10%;
+    background-color : black;
+    display : flex;
+    justify-content : space-between;
+}
+#modal-header-content {
+    color : white;
+    margin : 0;
+    padding : 20px 0 0 20px;
+    font-size : 20px;
+
+}
+#modal-close {
+    float : right;
+    color : white;
+    font-size : 24px;
+    padding :20px 20px 0 0;
+}
+#modal-close:hover {
+    cursor : pointer;
+}
+#cart-item {
+    display : grid;
+    grid-template-columns : 1fr 3fr 1fr;
+    justify-items : center;
+    align-items : center;
+    background-color : white;
+    width : 100%;
+    margin-top : 1rem;
+    height : 20vh;
+}
+#cart-item img {
+    display : block;
+    height : 50px;
+    width : 50px;
+    margin-left : auto;
+    margin-right : auto;
+}
+#cart-item-main {
+    display : grid;
+    grid-template-rows : 1fr 1fr;
+    grid-row-gap : 5px;
+}
+#modal-footer {
+    display : grid;
+    grid-template-rows : 1fr 1fr;
+    position : fixed;
+    bottom : 0;
+    width : 100%;
+    height : 10vh;
+    background-color : white;
+}
+#modal-footer button {
+    width : 90%;
+    margin-bottom : 1rem;
+    text-align : center;
+    background-color : $pink;
+    color : white;
+    padding : 1rem 1rem;
+    border-width : 0px;
+    &:hover {
+        cursor : pointer;
+    }
+}
+#main-content-footer {
+    display : grid;
+    grid-template-columns : 1fr 2fr;
+    justify-items : center;
+    background-color : white;
+    margin : 1rem;
+    height : 7vh;
+}
+#modal-main-content {
+    height : 400px;
+    overflow : scroll;
+}
+.round-btn {
+    display : block;
+    border-width : 0;
+    border-radius : 50%;
+    height : 20px;
+    width : 20px;
+    background-color :  $pink;
+    color : white;
+    &:hover {
+        cursor : pointer;
+    }
+}
+#cart-item-main-footer {
+    display : grid;
+    grid-template-columns : 1fr 1fr 1fr 1fr 2fr 2fr;
+    justify-items : center;
+}
+#checkout {
+    display : grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+}
+#promo {
+    justify-self: center;
+}
+@media only screen and (max-width : 600px) {
+    #modal {
+        top : 40%;
+        left : 50%;
+        width : 70%;
+        height : 30rem;
+    }
+}
