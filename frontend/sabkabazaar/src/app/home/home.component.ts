@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router'
 import { OwlOptions } from 'ngx-owl-carousel-o';
 import { GeneralApiService } from '../services/general-api.service';
 
@@ -36,7 +37,10 @@ export class HomeComponent implements OnInit {
     nav: false
   }
 
-  constructor(private generalApiService: GeneralApiService) { }
+  constructor(
+    private generalApiService: GeneralApiService,
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
     this.generalApiService.getBanners().subscribe(res => {
@@ -49,7 +53,8 @@ export class HomeComponent implements OnInit {
     })
   }
 
-  openProduct(category: any) {
-    console.log(category);
+  changeCategory(category: any) {
+      this.generalApiService.selectedProductCategory.next(category);
+      this.router.navigate(['/products'])
   }
 }

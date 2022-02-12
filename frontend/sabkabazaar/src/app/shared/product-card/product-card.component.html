@@ -1,0 +1,18 @@
+<div class="product">
+    <h2>{{product.name}}</h2>
+    <div class="product-details">
+        <figure>
+            <img [src]="product.imageURL" [alt]="product.name">
+        </figure>
+        <div class="description">
+            <p>{{product.description}}</p>
+            <button (click)="addProduct(product)" class="at-price">Buy Now @ Rs{{product.price}}</button>
+        </div>
+        <div class="price">
+            <span class="price-detail">MRP Rs. {{product.price}}</span>
+            <button (click)="addProduct(product)" class="buy">
+            Buy Now <span class="at-price">@ Rs{{product.price}}</span>
+          </button>
+        </div>
+    </div>
+</div>

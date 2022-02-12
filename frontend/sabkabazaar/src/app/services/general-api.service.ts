@@ -1,12 +1,15 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class GeneralApiService {
+
+  public selectedProductCategory: BehaviorSubject<any> = new BehaviorSubject(null);
+  public selectedProducts: BehaviorSubject<any> = new BehaviorSubject([]);
 
   constructor(private http: HttpClient) { }
 

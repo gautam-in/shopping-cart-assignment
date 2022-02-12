@@ -17,15 +17,34 @@ body
 button
   padding: 12px
   border: 0px
-  color: 000
+  color: #fff
   background: $accent
   cursor: pointer
 
 a
   text-decoration: none
   cursor: pointer
-  
+
+app-products
+  display: flex
+
+app-products-sidenav
+  width: 25%
+  background-color: $grey
+  height: 100%
+
+app-product-list    
+  width: 75%
+
 /* Small phones: from 0 to 480px */
 @media only screen and (max-width: 480px)
   button
     font-size: 80%
+
+  app-product-list    
+    width: 100%
+
+  app-products-sidenav
+    width: 100%
+    background-color: $accent
+    height: 100%

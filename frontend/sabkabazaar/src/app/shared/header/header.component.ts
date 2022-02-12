@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { GeneralApiService } from 'src/app/services/general-api.service';
 
 @Component({
   selector: 'app-header',
@@ -6,15 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.sass']
 })
 export class HeaderComponent implements OnInit {
-
-  // productsLength$: Observable<number> = of(0);
-  // @Output() openCart = new EventEmitter<void>();
-
-  // constructor(readonly dataservice: DataService) {
-  //   this.productsLength$ = this.dataservice.getselectedProdustsLength();
-  // }
+  productCount = 0;
+  constructor(private generalApiService: GeneralApiService){}
 
   ngOnInit(): void {
+    this.generalApiService.selectedProducts.subscribe(res =>{
+      this.productCount = res.length;
+    })
   }
 
   showCart() {

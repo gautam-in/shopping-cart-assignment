@@ -3,14 +3,17 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+import { ProductCardComponent } from './product-card/product-card.component';
+import { CartComponent } from './cart/cart.component';
 
 const components = [
   HeaderComponent,
-  FooterComponent
+  FooterComponent,
+  ProductCardComponent
 ]
 
 @NgModule({
-  declarations: [...components],
+  declarations: [...components, CartComponent],
   imports: [
     CommonModule,
     RouterModule,

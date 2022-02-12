@@ -1,0 +1,84 @@
+@import 'src/variables'
+
+.product
+    display: flex
+    flex-direction: column
+    margin: 20px 0
+    padding: 10px
+    border-bottom: 1px solid $grey
+    border-bottom-style: dashed
+    box-shadow: 25px 0px 10px -25px $grey
+
+    .product-details
+        display: flex
+        flex-wrap: wrap
+
+    h2
+        font-size: 100%
+        font-weight: 600
+        line-height: 1.5
+        height: 50px
+    figure
+        align-items: center
+        display: flex
+        justify-content: center
+
+    img
+        max-width: 100%
+        max-height: 100%
+
+    .description
+        p
+            background: $grey
+            margin-bottom: 10px
+            padding: 3px 10px
+            height: 70px
+            overflow: hidden
+            line-height: 1.5
+
+    .price
+        align-items: center
+        display: flex
+        justify-content: space-between
+        width: 100%
+
+    .buy
+        padding: 8px
+
+    .at-price
+        display: none
+
+@media only screen and (max-width: 768px)
+    h2
+        height: 30px
+
+    .details
+        display: flex
+        flex-wrap: wrap
+
+    figure
+        flex: 1
+
+    .description
+        flex: 1
+        p
+            height: 100px !important
+            overflow: hidden !important
+
+    .price
+        flex-basis: 100%
+
+        .price-detail
+            display: none
+
+        .buy
+            width: 100%
+
+@media only screen and (max-width: 480px)
+    .description
+        .at-price
+            display: inline
+            width: 100%
+
+    .price
+        display: none !important
