@@ -32,7 +32,7 @@ const ProductCard = (props: IProps): ReactElement => {
       <div className="price-and-purchase">
         <span className="product-mrp">{`MRP Rs.${product.price}`}</span>
         <Button type={ButtonType.Secondary} id="buy-now" customClass="buy-now-button" onClick={() => productSelected()}>
-          Buy Now <span className="product-price">{`@${product.price}`}</span>
+          Buy Me <span className="product-price">{`@${product.price}`}</span>
         </Button>
       </div>
       <hr style={{ borderTop: "dashed 1px #eee", marginTop: "10px" }} />
