@@ -14,6 +14,9 @@ export class ProductsSidenavComponent implements OnInit {
   ngOnInit(): void {
     this.generalApiService.getCategories().subscribe(res => {
       this.categories = res.filter((c:any) => c.order > 0).sort((a: any, b: any) => a.order - b.order);
+      if(!this.selectedProductCategory){
+        this.selectProductCategory(this.categories[0]);
+      }
     })
 
     this.generalApiService.selectedProductCategory.subscribe(res =>{

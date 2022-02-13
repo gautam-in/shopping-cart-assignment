@@ -7,9 +7,9 @@
 
 html,
 body
-  background-color: 000
+  background-color: #fff
   color: $dark-grey
-  font-family: 'Lato', 'Arial', sans-serif
+  font-family: 'Inter', sans-serif
   font-weight: 300
   font-size: 12px
   overflow-x: hidden
@@ -35,6 +35,49 @@ app-products-sidenav
 
 app-product-list    
   width: 75%
+
+.modal-dialog
+  width: 90%
+  bottom: 0px
+  position: absolute
+  right: 40px
+  margin: 0px
+
+.modal-content
+  height: auto
+  border: none
+
+ul
+  padding: 0px
+
+@media only screen and (max-width: 768px)
+  .container
+    padding: 0px
+
+  .modal-dialog
+    margin: 0
+    -webkit-transform: none !important
+    -moz-transform: none !important
+    -ms-transform: none !important
+    transform: none !important
+    align-items: flex-start
+    max-width: 768px
+    height: 100%
+    position: relative
+    right: 0
+    width: 100%
+
+  .modal-body
+    padding: 0
+
+  .modal-content
+    padding: 0
+    margin: 0
+    border: 0
+    border-radius: 0
+    max-height: 100vh
+    height: 100%
+    max-width: 768px
 
 /* Small phones: from 0 to 480px */
 @media only screen and (max-width: 480px)

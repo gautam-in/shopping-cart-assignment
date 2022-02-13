@@ -11,9 +11,156 @@
             <li><a [routerLink]="['/login']" routerLinkActive="active">SignIn</a></li>
             <li><a [routerLink]="['/register']" routerLinkActive="active">Register</a></li>
         </ul>
-        <button class="cart" (click)="showCart()">
+        <button class="cart" (click)="showCart(template)">
             <img src="assets/images/cart.svg">
-            {{productCount}} Items
+            {{products?.length}} Items
         </button>
     </div>
 </div>
+
+<ng-template #template class="cart-modal">
+    <div class="cart-modal" [ngClass]="{'display-desk': products.length > 0}">
+        <div class="modal-header cart-header">
+            <h4 class="modal-title pull-left">My Cart ({{products?.length}} Item)</h4>
+            <button type="button" class="btn-close close pull-right" aria-label="Close" (click)="modalRef?.hide()">
+                <!-- <span aria-hidden="true" class="visually-hidden">&times;</span> -->
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="white">
+                    <path fill-rule="evenodd"
+                        d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                        clip-rule="evenodd" />
+                </svg>
+            </button>
+        </div>
+        <div class="modal-body">
+            <div class="cart-body">
+                <ng-container *ngIf="products.length == 0">
+                    <div class="no-items">
+                        <p class="no-item-text">No items in your cart</p>
+                        <p class="your-item-text">Your favourite items are just a click away</p>
+                    </div>
+                    <button class="btn--start-shopping" (click)="startShopping()"> Start Shopping </button>
+                </ng-container>
+
+                <ng-container *ngIf="products.length > 0">
+                    <div class="cart-products">
+                        <div class="products">
+                            <div class="product" *ngFor="let product of products">
+                                <figure class="margin-zero">
+                                    <img class="product-img" [src]="product.imageURL" [alt]="product.name">
+                                </figure>
+                                <div class="product-details">
+                                    <h2>
+                                        {{product.name}}
+                                    </h2>
+                                    <div class="price">
+                                        <button class="btn--product-qty">
+                                            <img src="/assets/icons/remove_white_24dp.svg" alt="Decrease Product Qty">
+                                        </button>
+
+                                        <span> {{product.quantity}} </span>
+
+                                        <button class="btn--product-qty">
+                                            <img src="/assets/icons/add_white_24dp.svg" alt="Increase Product Qty">
+                                        </button>
+
+
+                                        <button class="btn--remove-close">
+                                            <img src="/assets/icons/close_black_24dp.svg" alt="Increase Product Qty">
+                                        </button>
+
+                                        <span class="product-price">Rs {{product.price * (product.count || 1)}}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="promo-code">
+                            <figure class="margin-zero">
+                                <img src="assets//images/lowest-price.png" alt="Lowest price promo" class="promo-code-img" />
+                            </figure>
+                            <p class="margin-zero">You won't find cheaper anywhere</p>
+                        </div>
+                    </div>
+                    <footer>
+                        <p class="margin-bottom-sm">Promo code can be applied on payment page</p>
+                        <button class="btn--proceed-checkout" (click)="startShopping()">
+                            <p>
+                                <span> Proceed to checkout </span>
+                                <span> Rs 187
+                                    <img src="assets/icons/chevron_right_white_24dp.svg">
+                                </span>
+                            </p>
+                        </button>
+                    </footer>
+                </ng-container>
+            </div>
+        </div>
+    </div>
+
+    <div class="cart-modal-mob" *ngIf="products.length > 0">
+        <div class="modal-header">
+            <div class="header">
+                <img class="logo" src="assets/images/logo.png">
+                <button class="cart" (click)="showCart(template)">
+                    <img src="assets/images/cart.svg">
+                    {{products?.length}} Items
+                </button>
+            </div>
+        </div>
+        <div class="modal-body">
+            <div class="heading">
+                <p>
+                    My Cart (1 Item)
+                </p>
+            </div>
+            <div class="cart-products">
+                <div class="products">
+                    <div class="product" *ngFor="let product of products">
+                        <figure class="margin-zero">
+                            <img class="product-img" [src]="product.imageURL" [alt]="product.name">
+                        </figure>
+                        <div class="product-details">
+                            <h2>
+                                {{product.name}}
+                            </h2>
+                            <div class="price">
+                                <button class="btn--product-qty">
+                                    <img src="/assets/icons/remove_white_24dp.svg" alt="Decrease Product Qty">
+                                </button>
+
+                                <span> {{product.quantity}} </span>
+
+                                <button class="btn--product-qty">
+                                    <img src="/assets/icons/add_white_24dp.svg" alt="Increase Product Qty">
+                                </button>
+
+
+                                <button class="btn--remove-close">
+                                    <img src="/assets/icons/close_black_24dp.svg" alt="Increase Product Qty">
+                                </button>
+
+                                <span class="product-price">Rs {{product.price * (product.count || 1)}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="promo-code">
+                    <figure class="margin-zero">
+                        <img src="assets//images/lowest-price.png" alt="Lowest price promo" class="promo-code-img" />
+                    </figure>
+                    <p class="margin-zero">You won't find cheaper anywhere</p>
+                </div>
+            </div>
+            <footer>
+                <p class="margin-bottom-sm">Promo code can be applied on payment page</p>
+                <button class="btn--proceed-checkout" (click)="startShopping()">
+                    <p>
+                        <span> Proceed to checkout </span>
+                        <span> Rs 187
+                            <img src="assets/icons/chevron_right_white_24dp.svg">
+                        </span>
+                    </p>
+                </button>
+            </footer>
+        </div>
+    </div>
+</ng-template>

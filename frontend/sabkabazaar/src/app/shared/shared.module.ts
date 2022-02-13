@@ -5,6 +5,7 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { ProductCardComponent } from './product-card/product-card.component';
 import { CartComponent } from './cart/cart.component';
+import { ModalModule } from 'ngx-bootstrap/modal'
 
 const components = [
   HeaderComponent,
