@@ -1,0 +1,17 @@
+.cart-icon{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    background-color: rgb(222, 241, 238);
+    padding: 0.2em;
+    height: 4.2rem;
+
+    @media screen and (min-width: 768px) {
+        height: 3rem;
+        padding-right: 2em;
+      }
+}
+.shopping-icon{
+    width: 3em;
+    fill: #D13E56;
+}
