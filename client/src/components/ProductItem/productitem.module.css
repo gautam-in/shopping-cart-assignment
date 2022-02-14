@@ -1,0 +1,135 @@
+.productCard {
+    padding: 2%;
+    flex: 0 0 18%;
+    display: flex; 
+    box-shadow: 4px 0 2px -2px #F9F9F9;
+    flex-direction:column;
+    box-shadow: 0 4px 3px -3px rgb(175, 173, 173);
+  }
+
+.productTitle {
+    color: #2B2B2B;
+    font-size: 1rem;
+    font-weight: 700;
+    min-height: 4.0rem;
+    max-height: 4.0rem;
+    overflow: hidden;
+    text-overflow: clip;
+    word-wrap: break-word;
+}
+
+.productImage img{
+    width: 100%;
+}
+
+.productDesc {
+    padding: 4px;
+    font-size: 12px;
+    color: #383838;
+    background-color: #F0F0F0;
+    max-height: 60px;
+    min-height: 60px;
+    font-weight: 700;
+    overflow: hidden;
+    text-overflow: clip;
+}
+
+.priceContainer {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 15px;
+}
+
+.productPrice {
+    align-self: center;
+    font-size: 12px;
+    font-weight: 700;
+    display: none;
+}
+.buyNowBtn {
+    border: none;
+    background-color: #9E0505;
+    color: white;
+    font-size: 12px;
+    padding: 8px 12px;
+    cursor: pointer;
+    display: none;
+}
+
+.buyNowBtnMobile {
+    border: none;
+    background-color: #9E0505;
+    color: white;
+    font-size: 0.8rem;
+    padding: 8px 12px;
+    cursor: pointer;
+    align-self: flex-end;
+}
+  
+.buyNowBtn:hover,
+.buyNowBtn:active {
+    background-color: #c72a93;
+}
+
+.buyNowBtnMobile:hover,
+  .buyNowBtnMobile:active {
+    background-color: #c72a93;
+  }
+
+
+@media only screen and (min-width: 1024px) {
+    .buyNowBtn {
+        display: block;
+    }
+    
+    .buyNowBtnMobile {
+        display: none;
+    }
+    .productPrice {
+        display: block;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+   .productCard {
+        flex: 0 0 45%;
+        padding-top: 20px;
+   }
+   .productImageDescContainer {
+       display: flex;
+       gap: 8px;
+       height: 80px;
+   }
+
+   .buyNowBtnMobile {
+       width: 100%;
+   }
+  
+}
+
+@media only screen and (max-width: 767px) {
+    .productCard {
+         flex: 1;
+         flex-basis: 100%;
+         box-shadow: 0 4px 3px -3px rgb(175, 173, 173);
+         margin-top: 10px;
+    }
+    .productImageDescContainer {
+        display: flex;
+        gap: 8px;
+        height: 80px;
+    }
+    .productTitle {
+        min-height: 2rem;
+        max-height: 2rem;
+    }
+    .priceContainer {
+        justify-content: flex-end;
+    }
+    .buyNowBtnMobile {
+        flex-basis: 60%;
+    }
+    .productImage img{
+        width: 120px;
+    }
+ }
