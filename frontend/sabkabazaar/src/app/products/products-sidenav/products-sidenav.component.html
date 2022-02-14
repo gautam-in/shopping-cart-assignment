@@ -1,0 +1,13 @@
+<div class="sidebar">
+    <div class="nav-bar-mob">
+        {{selectedProductCategory?.name}}
+        <button mat-icon-button class="menu-btn" aria-label="Expand category menu">
+            <img src="/assets/icons/expand_more_white_24dp.svg"/>
+        </button>
+    </div>
+    <ul>
+        <li *ngFor="let category of categories" [ngClass]="{active: selectedProductCategory?.id == category.id}" (click)="selectProductCategory(category)">
+            <a>{{category.name}}</a>
+        </li>
+    </ul>
+</div>

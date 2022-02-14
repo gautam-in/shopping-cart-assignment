@@ -1,0 +1,49 @@
+@import 'src/variables'
+
+.login
+    display: flex
+    justify-content: space-between
+    padding: 30px
+    width: 100%
+
+    .text
+        display: flex
+        flex-direction: column
+        width: 50%
+
+        h1
+            font-weight: 600
+
+        p
+            font-size: 14px
+            padding-top: 15px
+
+    .login-form
+        width: 50%
+
+        form
+            display: flex
+            flex-direction: column
+
+            input
+                border: none
+                height: 40px
+                margin-bottom: 20px
+                border-bottom: 1px solid $grey
+
+                &:focus, &:focus-visible
+                    outline: none
+
+            .submit
+                width: 100%
+
+@media only screen and (max-width: 768px)
+    .login
+        flex-direction: column
+
+        .text
+            width: 100%
+            margin-bottom: 30px
+
+        .login-form
+            width: 100%

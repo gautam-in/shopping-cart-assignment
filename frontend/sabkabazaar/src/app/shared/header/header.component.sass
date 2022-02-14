@@ -1,0 +1,266 @@
+@import 'src/variables'
+
+.header
+  display: flex
+  width: 90%
+  box-shadow: 0 10px 13px -9px #e8e6e6
+
+  ul
+    list-style: none
+
+    li
+      display: inline-block
+      cursor: pointer
+      display: inline-block
+
+      a
+        color: $dark-grey
+        font-size: 14px
+      .active
+        border-bottom: 2px solid $accent
+        padding-bottom: 10px
+
+        &:hover
+          border-bottom: 2px solid $accent
+          padding-bottom: 10px
+
+    li:first-child
+      margin-right: 20px
+
+.logo
+  height: 70px
+  margin: 5px 0
+  width: auto
+
+nav
+  margin-left: 10%
+  margin-top: auto
+  margin-bottom: 20px
+
+.login
+  display: flex
+  flex-direction: column
+  margin-left: auto
+
+.cart
+  align-items: center
+  background: $grey
+  color: $dark-grey
+  cursor: pointer
+  display: flex
+  justify-content: center
+  margin-top: auto
+
+.cart img
+  height: 30px
+
+.cart-header
+  display: flex
+  align-items: center
+  background: #000
+  color: #fff
+
+.close
+  stroke: #fff
+  fill: #fff
+  width: 24px
+  height: 24px
+
+.cart-body
+  display: flex
+  flex-direction: column
+  justify-content: center
+  align-items: center
+  margin: 0 auto
+  height: 100%
+
+.no-items
+  height: 100%
+  display: flex
+  align-items: center
+  justify-content: center
+  flex-direction: column
+
+.no-item-text
+  color: #000
+  font-weight: 700
+  text-align: center
+  font-size: 14px
+  margin-bottom: 5px
+
+.your-item-text
+  color: #000
+  font-weight: 500
+  text-align: center
+  font-size: 12px
+
+.btn--start-shopping, .btn--proceed-checkout
+  width: 100%
+
+.cart-products
+  height: 58vh
+  background: #e8e6e6
+  width: 100%
+  overflow: auto
+
+.promo-code
+  display: flex
+  gap: 50px
+  align-items: center
+  background: #fff
+  margin: 12px
+  padding: 10px
+
+  p
+    font-size: 13px
+    font-weight: 500
+
+footer
+  width: 100%
+  display: flex
+  flex-direction: column
+  align-items: center
+  padding: 10px 0
+
+  .margin-bottom-sm
+    margin-bottom: 10px
+
+  p
+    margin-bottom: 0px
+    display: flex
+    justify-content: space-between
+    align-items: center
+    font-size: 14px
+    font-weight: 500
+
+.margin-zero
+  margin: 0
+
+.product-img
+  width: 80px
+
+.product
+  display: flex
+  align-items: center
+  margin: 10px
+  background: #fff
+  gap: 20px
+  padding: 10px 0px
+
+  .product-details
+    h2
+      font-size: 14px
+      font-weight: 700
+      color: #000
+
+    .btn--product-qty
+      padding: 0px
+      border-radius: 50%
+
+    .btn--remove-close
+      padding: 0
+      background: none
+
+    .price
+      display: flex
+      gap: 20px
+      align-items: center
+      margin-top: 20px
+
+    .product-price
+      font-size: 14px
+      color: #000
+      font-weight: 600
+
+.cart-modal-mob
+  display: none
+
+@media only screen and (max-width: 767px)
+  .header
+    width: 100%
+
+  .no-item-text
+    font-size: 24px
+
+  .your-item-text
+    font-size: 18px
+
+  .display-desk
+    display: none
+
+  .cart-modal-mob
+    display: flex
+    flex-direction: column
+
+    .modal-header
+      padding: 0px
+
+      .header
+        justify-content: space-between
+        box-shadow: none
+
+        .cart
+          margin: 0px
+          height: auto
+          width: 150px
+
+        .logo
+          padding: 10px
+
+    .modal-body
+      background-color: $grey
+      height: 100%
+      display: flex
+      flex-direction: column
+
+      .heading
+        padding: 20px
+        background: #fff
+        margin: 20px 0 10px 0
+        font-size: 18px
+        color: #000
+        font-weight: 600
+
+        p
+          margin-bottom: 0px
+
+      .btn--product-qty
+        border-radius: 0px
+
+      .promo-code
+        display: flex
+        gap: 16px
+        align-items: center
+        background: #fff
+        margin: 12px
+        padding: 10px
+
+        p
+          font-size: 14px
+          font-weight: 600
+
+  .cart-body
+    height: 92vh
+
+  footer
+    padding: 10px
+    background: #fff
+
+  .cart-products
+    height: 58vh
+    overflow: auto
+/* Small phones: from 0 to 480px */
+@media only screen and (max-width: 480px)
+  nav
+    display: none
+  .login ul
+    display: none
+    p
+      font-size: 80%
+  .cart
+    height: 100%
+
+  header
+    padding-left: 5px
+    .logo
+      height: 45px

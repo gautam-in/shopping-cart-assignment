@@ -1,0 +1,39 @@
+@import 'src/variables'
+
+.sidebar
+    background-color: $grey
+
+ul
+    list-style: none
+li
+    padding: 20px
+    border-bottom: 1px solid $dark-grey
+
+    &:hover, &.active
+        background: $accent
+        border-color: $grey
+        color: #fff
+
+.nav-bar-mob
+    display: none
+
+@media only screen and (max-width: 480px)
+    ul
+        display: none
+
+    .nav-bar-mob
+        display: block
+
+    .sidebar
+        background-color: $accent
+        .nav-bar-mob
+            color: #fff
+            align-items: center
+            display: flex
+            justify-content: space-between
+            font-weight: 550
+            font-size: 20px
+            padding: 5px 25px
+        img
+            width: 35px
+                
