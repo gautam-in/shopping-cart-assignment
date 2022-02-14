@@ -1,0 +1,19 @@
+.home{
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+@media (max-width: 767px) {
+    .home-page {
+      padding: 0 1rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .home-page {
+      padding: 0;
+    }
+  }
