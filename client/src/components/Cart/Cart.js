@@ -25,7 +25,7 @@ export default function Cart(props) {
                     <div className={styles['cart-modal-content']}>
                         <div className={styles['cart-header']}>
                             <span className={styles["close"]} onClick={props.toggleCartHandler}>&times;</span>
-                            <h2>My Cart ({totalCount} item)</h2>
+                            <h2 id="modal-label">My Cart ({totalCount} item)</h2>
                         </div>
                         <div className={styles["cart-body"]}>
                             <div className={styles['cart-items-list']}>
@@ -77,7 +77,7 @@ export default function Cart(props) {
                     <div className={styles['cart-modal-content']}>
                         <div className={styles['cart-header']}>
                             <span className={styles["close"]} onClick={props.toggleCartHandler}>&times;</span>
-                            <h2>My Cart</h2>
+                            <h2 id="modal-label">My Cart</h2>
                         </div>
                         <div className={`${styles["cart-body"]} ${styles['cart-empty']}`}>
                             <div>

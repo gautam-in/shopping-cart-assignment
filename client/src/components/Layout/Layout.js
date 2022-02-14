@@ -15,7 +15,7 @@ const Layout = (props) => {
     const toggleCartHandler = () => {
         toggleCart(!showCart);
     }
-    
+
     useEffect(() => {
         if (showCart) {
             document.body.style.overflow = 'hidden';
@@ -26,10 +26,10 @@ const Layout = (props) => {
 
     return ( 
         <div className={styles.container}>
-            <header className={styles.header}>
+            <header className={styles.header} role="banner">
                 <div className={styles.content}>
                     <nav className={styles.navBar}>
-                        <div className={styles.logo} onClick={() => navigate('/')}><img src="/static/images/logo_2x.png" className={styles.logoImage} alt="Sabka Bazaar"/></div>
+                        <div className={styles.logo}><img src="/static/images/logo_2x.png" className={styles.logoImage} alt="Sabka Bazaar" onClick={() => navigate('/')}/></div>
                         <div className={styles.leftMenu}>
                             <div className={styles.menuItem}><Link to="/">Home</Link></div>
                             <div className={styles.menuItem}><Link to="/products">Products</Link></div>
@@ -55,10 +55,10 @@ const Layout = (props) => {
                 </div>
             </header>
             {showCart ? <Cart toggleCartHandler={toggleCartHandler}/> : null}
-            <section className={styles.content}>
+            <section className={styles.content} role="main">
                 {props.children}
             </section>
-            <footer className={styles.footer}>
+            <footer className={styles.footer} role="contentinfo">
                 <div className={styles.content}>
                     Copyright © 2011-2018 Sabka Bazaar Grocery Supplies Pvt Ltd
                 </div>

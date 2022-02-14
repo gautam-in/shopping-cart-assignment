@@ -50,7 +50,7 @@
 .cart-body {
     display: flex;
     overflow-y: scroll;
-    flex-basis: 80%;
+    flex-basis: 55%;
 }
 
 .cart-footer {
@@ -82,6 +82,7 @@
     align-self: center;
     justify-content: space-between;
     margin-bottom: 10px;
+    cursor: pointer;
 }
 
 .content {
@@ -136,6 +137,7 @@
     padding: 4px 10px;
     color: white;
     margin: 0 8px;
+    cursor: pointer;
 }
 
 .btnIncDec:hover,
@@ -147,6 +149,7 @@
     align-self: center;
     font-size: 16px;
 }
+
 .lowestPriceImg {
     background-color: #fff;
     display: flex;
@@ -154,6 +157,7 @@
     margin: 10px;
     padding: 10px;
 }
+
 .lowestPriceImg p {
     margin-left: 2px;
 }
@@ -166,6 +170,7 @@
     align-content: center;
     width: 100%;
 }
+
 .cart-empty div {
     text-align: center;
 }
@@ -190,6 +195,7 @@
     left: 30%;
     min-height: 100vh;
 }
+
 .emptyCart .checkout-btn {
     justify-content: center;
 }
@@ -198,22 +204,32 @@
     .cartModal {
         padding-top: 56px;
     }
+
+    .cart-body {
+        flex-basis: 55%;
+    }
 }
 
 @media only screen and (max-width: 1023px) {
     .cartModal {
         background-color: unset;
     }
+
     .cart-modal-content {
         width: 100%;
         padding-top: 20px;
     }
-    
+
     .cart-header {
         background-color: #fff;
         color: #000000;
+
     }
-    
+
+    .cart-header h2 {
+        font-size: 1.2rem;
+    }
+
     .emptyCart {
         top: 0;
         position: absolute;
@@ -231,15 +247,16 @@
         padding: 0;
         top: 0;
     }
+
     .emptyCart .cart-header {
         background-color: #000;
         color: #fff;
     }
-    
+
 }
 
-
-
-
-
-
+@media only screen and (min-width: 1023px) {
+    .cart-body {
+        flex-basis: 55%;
+    }
+}

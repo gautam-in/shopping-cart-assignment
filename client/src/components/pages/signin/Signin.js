@@ -45,7 +45,6 @@ function SignIn() {
       setSignInInfo({...signinInfo, error : {status: true, message: "Invalid credentials!"}});
       return;
     }
-    // dispatch(userSignIn());
     navigate("/");
   };
   return (
@@ -64,7 +63,7 @@ function SignIn() {
               value={email}
               onChange={handleChange}
               required
-              autoComplete="false"
+              autoComplete="off"
             />
             <label htmlFor="email">Email</label>
           </div>
@@ -76,15 +75,15 @@ function SignIn() {
               value={password}
               onChange={handleChange}
               required
-              autoComplete="false"
+              autoComplete="off"
             />
             <label htmlFor="password">Password</label>
           </div>
           {/* show error message */}
           {error.status && (
-            <div className={`${styles.error} ${styles['form-group']}`}>{error.message}</div>
+            <div className={`${styles.error} ${styles['form-group']}`} aria-live="polite">{error.message}</div>
           )}
-          <button type='submit' className={`${styles.signInBtn} ${styles['form-group']}`}>
+        <button type='submit' className={`${styles.signInBtn} ${styles['form-group']}`}>
             Login
           </button>
         </form>

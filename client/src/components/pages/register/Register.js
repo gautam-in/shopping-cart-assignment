@@ -74,7 +74,7 @@ function Register() {
               value={firstName}
               onChange={handleChange}
               required
-              autoComplete="false"
+              autoComplete="off"
             />
             <label htmlFor="firstName">First Name</label>
           </div>
@@ -86,7 +86,7 @@ function Register() {
               value={lastName}
               onChange={handleChange}
               required
-              autoComplete="false"
+              autoComplete="off"
             />
             <label htmlFor="lastName">Last Name</label>
           </div>
@@ -98,7 +98,7 @@ function Register() {
               value={email}
               onChange={handleChange}
               required
-              autoComplete="false"
+              autoComplete="off"
             />
             <label htmlFor="email">Email</label>
           </div>
@@ -112,7 +112,7 @@ function Register() {
               value={password}
               onChange={handleChange}
               required
-              autoComplete="false"
+              autoComplete="off"
             />
             <label htmlFor="password">Password</label>
           </div>
@@ -124,13 +124,13 @@ function Register() {
               value={confirmPassword}
               onChange={handleChange}
               required
-              autoComplete="false"
+              autoComplete="off"
             />
             <label htmlFor="confirmPassword">Confirm Password</label>
           </div>
           {/* show error message */}
           {error.status && (
-            <div className={`${styles.error} ${styles['form-group']}`}>{error.message}</div>
+            <div className={`${styles.error} ${styles['form-group']}`} aria-live="polite">{error.message}</div>
           )}
           <button type='submit' className={`${styles.signupBtn} ${styles['form-group']}`}>
             Sign Up

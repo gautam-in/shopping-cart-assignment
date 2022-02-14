@@ -15,13 +15,13 @@
     cursor: pointer;
 }
 
-.categoryList li{
+.categoryList li {
     cursor: pointer;
 }
 
 
 .categoryList li:hover,
-.categoryList li.active{
+.categoryList li.active {
     background-color: #a7a1a1;
     color: #FFFFFF;
 }
@@ -52,15 +52,18 @@
 
 @media only screen and (max-width: 767px) {
     .leftContainer {
-         display: none;
+        display: none;
     }
+
     .productContainer {
         flex-direction: column;
     }
+
     .categoryDropdown {
         margin-top: 20px;
         width: 100%;
     }
+
     .categoryDropdown select {
         width: 100%;
         border: none;
@@ -70,5 +73,4 @@
         overflow: hidden;
         cursor: pointer;
     }
- }
-
+}
