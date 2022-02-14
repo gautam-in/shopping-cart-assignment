@@ -1,5 +1,12 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
+const subColor = "#98B4AA";
+const mainColor = "#50DAE2";
 
+const shrinkLabelStyles = css`
+  top: -14px;
+  font-size: 12px;
+  color: ${mainColor};
+`;
 export const GroupContainer = styled.div`
   position: relative;
   margin: 45px 0;
@@ -15,15 +22,16 @@ export const FormInputContainer = styled.input`
   color: ${subColor};
   font-size: 18px;
   padding: 10px 10px 10px 5px;
-  display: block;
+  display: flex;
   width: 100%;
   border: none;
   border-radius: 0;
-  border-bottom: 1px solid ${subColor};
+  border-bottom: 2px solid ${subColor};
   margin: 25px 0;
 
   &:focus {
     outline: none;
+    border-bottom: 2px solid ${mainColor};
   }
 
   &:focus ~ label {

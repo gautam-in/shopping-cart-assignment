@@ -1,10 +1,12 @@
 import React, { useState } from "react";
+import Container from "../container/Container";
 import CustomButton from "../custom-button/custom-buttom.component";
 import FormInput from "../form-input/form-input.component";
 import {
   ButtonsBarContainer,
   SignInContainer,
   SignInTitle,
+  SignInTitleContainer,
 } from "./sign-in.styles";
 
 const SignIn = () => {
@@ -12,6 +14,7 @@ const SignIn = () => {
     email: "",
     password: "",
   });
+  const { email, password } = state;
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -23,35 +26,36 @@ const SignIn = () => {
     setState({ [name]: value });
   };
   return (
-    <SignInContainer>
-      <SignInTitle>I already have an account</SignInTitle>
-      <span>Sign in with your email and password</span>
+    <Container>
+      <SignInContainer>
+        <SignInTitleContainer>
+          <SignInTitle>Login</SignInTitle>
+          <span>Get access to your Orders, Whishlist and Recommendations</span>
+        </SignInTitleContainer>
 
-      <form onSubmit={handleSubmit}>
-        <FormInput
-          name="email"
-          type="email"
-          handleChange={handleChange}
-          value={email}
-          label="email"
-          required
-        />
-        <FormInput
-          name="password"
-          type="password"
-          value={password}
-          handleChange={handleChange}
-          label="password"
-          required
-        />
-        <ButtonsBarContainer>
-          <CustomButton type="submit"> Sign in </CustomButton>
-          <CustomButton onClick={() => console.log("signin")} isGoogleSignIn>
-            Sign in with Google
-          </CustomButton>
-        </ButtonsBarContainer>
-      </form>
-    </SignInContainer>
+        <form onSubmit={handleSubmit}>
+          <FormInput
+            name="email"
+            type="email"
+            handleChange={handleChange}
+            value={email}
+            label="Email"
+            required
+          />
+          <FormInput
+            name="password"
+            type="password"
+            value={password}
+            handleChange={handleChange}
+            label="Password"
+            required
+          />
+          <ButtonsBarContainer>
+            <CustomButton type="submit"> Sign in </CustomButton>
+          </ButtonsBarContainer>
+        </form>
+      </SignInContainer>
+    </Container>
   );
 };
 
