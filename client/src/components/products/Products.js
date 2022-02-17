@@ -26,7 +26,7 @@ const Products  = (props) => {
   }, [])  
   
   useEffect(()=> {
-    if(props.router.location.state.category){
+    if(props.router.location.state && props.router.location.state.category){
       setCategoryId(props.router.location.state.category);
     }
   }, [])
