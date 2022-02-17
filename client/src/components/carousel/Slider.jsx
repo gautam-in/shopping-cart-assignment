@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { getAllBanners } from "../../http";
 import CarouselItem from "./carousel-item/carousel-item.component";
 import Carousel from "./carousel.component";
-const serverBaseURI = "http://localhost:5000";
 const Slider = () => {
   const [banners, setBanners] = useState([{}]);
   useEffect(() => {

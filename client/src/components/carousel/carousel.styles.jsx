@@ -27,7 +27,7 @@ export const Dot = styled.span`
   cursor: pointer;
   height: 15px;
   width: 15px;
-  margin: 0 2px;
+  margin: 0 8px;
   background-color: ${(props) => props.color};
   border-radius: 50%;
   display: inline-block;

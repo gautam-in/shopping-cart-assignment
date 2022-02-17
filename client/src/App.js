@@ -8,16 +8,23 @@ import Login from "./Page/login/login.pages";
 import Footer from "./components/footer/footer.component";
 import Register from "./Page/register/register.pages";
 import Slider from "./components/carousel/Slider";
+import CategoryCard from "./components/category-card/category-card.component";
+import Products from "./Page/products/products.pages";
+import SignUp from "./components/sign-up/sign-up.component";
+import ErrorBoundary from "./components/error-boundary/error-boundary.component";
 
 function App() {
   return (
-    <div className="App">
-      <Router>
-        <Header />
-        <Slider />
-        <Footer />
-      </Router>
-    </div>
+    <ErrorBoundary>
+      <div className="App">
+        <Router>
+          <Header />
+          {/* <Slider /> */}
+          <Products />
+          <Footer />
+        </Router>
+      </div>
+    </ErrorBoundary>
   );
 }
 

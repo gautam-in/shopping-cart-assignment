@@ -5,6 +5,6 @@ const api = axios.create({
 });
 
 export const getAllBanners = () => api.get("/banners");
-export const getAllCategories = () => api.get("/banners");
-export const getAllProducts = () => api.get("/banners");
-export const addTocart = () => api.post("/banners");
+export const getAllCategories = () => api.get("/categories");
+export const getAllProducts = () => api.get("/products");
+export const addTocart = () => api.post("/addToCart");
