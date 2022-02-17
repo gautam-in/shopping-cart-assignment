@@ -5,11 +5,38 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "canned -p 5000 ./server"
+    "start": "canned -p 5000 ./server",
+    "dev": "webpack --watch --mode=development",
+    "prod": "webpack --mode=production"
   },
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "canned": "^0.3.12"
+    "canned": "^0.3.3",
+    "materialize-css": "^1.0.0-rc.2",
+    "normalize.css": "^8.0.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nikhiljss/shopping-cart-assignment.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/nikhiljss/shopping-cart-assignment/issues"
+  },
+  "homepage": "https://github.com/nikhiljss/shopping-cart-assignment#readme",
+  "devDependencies": {
+    "@babel/core": "^7.16.12",
+    "babel-loader": "^8.2.3",
+    "css-loader": "^6.5.1",
+    "html-loader": "^3.1.0",
+    "mini-css-extract-plugin": "^2.5.3",
+    "node-sass": "^7.0.1",
+    "path": "^0.12.7",
+    "sass": "^1.49.0",
+    "sass-loader": "^12.4.0",
+    "style-loader": "^3.3.1",
+    "webpack": "^5.67.0",
+    "webpack-cli": "^4.9.2"
   }
 }
