@@ -22,7 +22,8 @@
 		align-items: center;
 		justify-content: center;
 
-		button {
+		.explore {
+			text-decoration: none;
 			margin-bottom: 1rem;
 			box-shadow: 0 0.1em 0.1em rgb(216, 210, 210);
 			background-color: base.$pink-color;

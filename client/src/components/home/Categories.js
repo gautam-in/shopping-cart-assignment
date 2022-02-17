@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import withRouter  from '../common/withRouter';
+import {Link} from 'react-router-dom';
 import axios from 'axios';
 import './Categories.scss';
 
@@ -11,6 +13,7 @@ class Categories extends Component{
       items:[],
       loading: false
     }
+    // this.getProducts = this.getProducts.bind(this);
   }
 
   getCategoriesData = async () => {
@@ -27,6 +30,7 @@ class Categories extends Component{
 
   render(){
     let {items} = this.state;
+
     return(
       <article className="categories">
         <section className='categories-items'>
@@ -41,8 +45,13 @@ class Categories extends Component{
                   <section>
                     <h1>{item.name}</h1>
                     <p>{item.description}</p>
-                    <button>Explore {item.key}</button>
+                    {/* <button aria-label="Get Category Products"> */}
+                      <Link to={"/products"} state={{category: item.id}} aria-label="Get Category Products" className='explore' role="button">
+                        {`Explore ${item.key}`}
+                      </Link>
+                    {/* </button> */}
                   </section>
+                {/*  */}
                 </div>
               )
             })
@@ -53,4 +62,4 @@ class Categories extends Component{
   }
 }
 
-export default Categories;
+export default withRouter(Categories);

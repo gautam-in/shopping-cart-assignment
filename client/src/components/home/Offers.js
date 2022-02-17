@@ -64,7 +64,7 @@ export default class Offers extends Component {
         >
         {items.map((item, index) => {
           return (
-            <div key = {index} className="carousel-item">
+            <div key = {index} className="carousel-item" role="img" aria-label="Offers">
               <img
                 src={process.env.PUBLIC_URL + item.bannerImageUrl}
                 alt={item.bannerImageAlt}

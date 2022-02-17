@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import ProductNav from './ProductNav';
+import withRouter  from '../common/withRouter';
 import './Products.scss';
 import { useEffect } from 'react';
 import axios from 'axios';
@@ -21,8 +22,15 @@ const Products  = (props) => {
 
   useEffect(()=> {
     getProductsData();
-  }, [])
+    console.log(props);
+  }, [])  
   
+  useEffect(()=> {
+    if(props.router.location.state.category){
+      setCategoryId(props.router.location.state.category);
+    }
+  }, [])
+
   const addProdToCart = (item)=>{
     let products={};
     if(props.products[Object.keys(item)[0]]){
@@ -69,13 +77,13 @@ const Products  = (props) => {
           <ProductNav set_id = {setCategoryId}/>
         </nav>
         <article className="products">
-          <ul className="products-items">
+          <ul className="products-items" role="grid" aria-label="Products Grid">
             {
               items.length > 0 &&
               categoryId.length === 0 &&
               items.map(item => {
                 return(
-                  <li className='item-product' key={item.id}>
+                  <li className='item-product' key={item.id} role="gridcell">
                     <h1>{item.name}</h1>
                     <img src={process.env.PUBLIC_URL + item.imageURL} alt="product" />
                     <p>{item.description}</p>
@@ -119,4 +127,4 @@ const Products  = (props) => {
     )
 }
 
-export default Products;
+export default withRouter(Products);

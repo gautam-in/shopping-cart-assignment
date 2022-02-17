@@ -11,6 +11,7 @@ export default function Header(props) {
   let qty = Object.keys(props.cartProducts).reduce((acc,current)=> acc + props.cartProducts[current].qty, 0);
 
   useEffect(()=> {
+    
     return{
       // eventBus.remove("logout")
     }

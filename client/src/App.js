@@ -60,7 +60,7 @@ function App() {
           <Route exact path="/" component={Home} element={<Home />}/>
           <Route exact path="/login" component={Login} element={<Login />}/>
           <Route exact path="/register" component={Register} element={<Register />}/>
-          <Route exact path="/products" component={Products}  element={<Products addToCart={setProducts} products={cartProducts}/>} />
+          <Route exact path="/products" element={<Products addToCart={setProducts} products={cartProducts}/>} />
           </Routes>
           <Sidedrawer open={drawer.showbd} close={backdroptoggle} products={cartProducts} setQty={setProdQty}/>
         </Suspense>

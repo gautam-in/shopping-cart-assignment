@@ -1,8 +1,5 @@
 import React, {useState} from 'react';
 import {useNavigate} from 'react-router-dom';
-import Form from "react-validation/build/form";
-import Input from "react-validation/build/input";
-import CheckButton from "react-validation/build/button";
 
 import AuthReq from "../utils/AuthReq";
 import "./Login.scss";
@@ -29,36 +26,39 @@ function Login() {
   function handleLogin(e){
     e.preventDefault();
 
+    var pressed = (e.getAttribute("aria-pressed") === "true");
+    e.setAttribute("aria-pressed", !pressed);
+
     setLoading(true);
     setMessage("");
 
-    if (message.length === 0) {
-      AuthReq.login(email, password).then(
-        (res) => {
-          console.log("Is this 2", res);
-          if (res.status >= 400) {
-            setMessage(res.message);
-            console.log("Is this", res);
-            throw new Error(res.message);
-          }
-          setMessage("Login Successfully!!");
-          history("/");
-          window.location.reload();
-        },
-        (error) => {
-          const resMessage =
-            (error.response &&
-              error.response.data &&
-              error.response.data.message) ||
-            error.message ||
-            error.toString();
+    if(pressed){
+      if (message.length === 0) {
+        AuthReq.login(email, password).then(
+          (res) => {
+            if (res.status >= 400) {
+              setMessage(res.message);
+              throw new Error(res.message);
+            }
+            setMessage("Login Successfully!!");
+            history("/");
+            window.location.reload();
+          },
+          (error) => {
+            const resMessage =
+              (error.response &&
+                error.response.data &&
+                error.response.data.message) ||
+              error.message ||
+              error.toString();
 
-          setLoading(false);
-          setMessage(resMessage);
-        }
-      )
-    } else {
-      setLoading(false);
+            setLoading(false);
+            setMessage(resMessage);
+          }
+        )
+      } else {
+        setLoading(false);
+      }
     }
 
   }
@@ -73,19 +73,22 @@ function Login() {
           <section className="details">
             <form 
               onSubmit={handleLogin}
+              aria-label="Login Form"
               // ref={c => {
               //   Form = c;
               // }}
             >
               <div>
                 <label htmlFor="email">Email</label>
-                <input type="email" name="email" id="email" placeholder='Email' validations={[required]} value={email} onChange={e => setEmail(e.target.value)}/>
+                <input type="email" name="email" id="email" placeholder='Email' validations={[required]} value={email} onChange={e => setEmail(e.target.value)} contenteditable="true"/>
               </div>
               <div>
                 <label htmlFor="password">Password</label>
-                <input type="password" name="password" id="password" placeholder="Password" validations={[required]} value={password} onChange={e => setPassword(e.target.value)}/>
+                <input type="password" name="password" id="password" placeholder="Password" validations={[required]} value={password} onChange={e => setPassword(e.target.value)
+                } contenteditable="true"
+                />
               </div>
-              <button type="submit" disabled={loading}>{loading && (
+              <button type="submit" disabled={loading} aria-pressed="false" aria-label="Submit the login form">{loading && (
                   <span className=""></span>
                 )}Login</button>
 
