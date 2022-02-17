@@ -1,0 +1,38 @@
+.cart__section {
+  display: grid;
+  background-color: #fff;
+  align-items: center;
+  padding: 0.5rem 0;
+  grid-template-columns: 60px 1fr 60px;
+  grid-template-rows: 30px 30px;
+  grid-gap: 0.5rem;
+}
+.cart__section__image {
+  grid-row: 0.3333333333;
+  max-width: 70px;
+  max-height: 70px;
+  width: 100%;
+  justify-self: center;
+  padding: 0rem 0.5rem;
+  display: block;
+  margin-left: auto;
+  height: auto;
+  margin-right: auto;
+}
+.cart__section__title {
+  grid-column: 0.5;
+  grid-row: 0.5;
+  font-size: 0.9rem;
+  text-align: center;
+  margin-top: 2em;
+}
+.cart__section__totalprice {
+  font-size: 0.8rem;
+}
+
+.cart__container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 10px;
+}

@@ -1,0 +1,14 @@
+.cartpage {
+  font-size: 0.9rem;
+  background-color: #ddd;
+  display: flex;
+  flex-direction: column;
+  max-width: 1024px;
+  margin: 0 auto;
+}
+.cartpage__title {
+  padding: 1rem 1rem;
+  font-size: 0.9rem;
+  background-color: #fff;
+  margin: 2rem 0;
+}

@@ -1,0 +1,35 @@
+.card__container {
+  width: 50%;
+  margin: 2x;
+}
+
+.image {
+  display: block;
+  margin: 10px;
+  width: 50%;
+}
+
+.mrp__add_to_cart {
+  display: flex;
+  justify-content: space-between;
+}
+
+.description {
+  background-color: rgb(246, 247, 248);
+  font-size: 14px;
+  text-align: justify;
+}
+
+.card__description {
+  display: flex;
+  justify-content: space-evenly;
+  height: 200px;
+}
+
+.submit__button {
+  width: 75%;
+  margin: auto;
+  color: white;
+  background-color: rgb(191, 41, 87);
+  height: 30px;
+}

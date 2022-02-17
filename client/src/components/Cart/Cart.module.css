@@ -1,0 +1,19 @@
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ddd;
+  padding: 0 10px;
+  margin-top: 10px;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+.wrapper .image {
+  width: 40px;
+}
+.wrapper .items {
+  color: black;
+  font-size: 0.9rem;
+  margin-right: 5px;
+}
