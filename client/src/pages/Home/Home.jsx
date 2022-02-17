@@ -7,6 +7,7 @@ import classes from "./Home.module.css";
 
 const Home = () => {
   const [banners, setBanners] = useState([]);
+  const [categories, setCategories] = useState([]);
   useEffect(() => {
     axios
       .get("http://localhost:5000/banners")
@@ -18,11 +19,26 @@ const Home = () => {
       });
   }, []);
 
+  useEffect(() => {
+    axios
+      .get("http://localhost:5000/categories")
+      .then((response) => {
+        setCategories(
+          response.data
+            .sort((first, second) => first.order - second.order)
+            .filter((category) => category.imageUrl !== undefined)
+        );
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
+
   return (
     <>
       <main className={classes.home__container}>
         <Carousel banners={banners} />
-        <ProductsCategories />
+        <ProductsCategories categories={categories} />
       </main>
       <Footer />
     </>

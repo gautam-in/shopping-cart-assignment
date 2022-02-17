@@ -30,7 +30,9 @@ const Products = () => {
     axios
       .get("http://localhost:5000/categories")
       .then((response) => {
-        setCategories(response.data);
+        setCategories(
+          response.data.sort((first, second) => first.order - second.order)
+        );
       })
       .catch((error) => {});
   }, []);

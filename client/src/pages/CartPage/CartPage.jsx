@@ -7,6 +7,8 @@ const CartPage = () => {
     cart: { count, products },
   } = useSelector((state) => state);
 
+  console.log(products);
+
   const countItems = count === 1 ? `${count} item` : `${count} items`;
   return (
     <main className={classes.cartpage}>

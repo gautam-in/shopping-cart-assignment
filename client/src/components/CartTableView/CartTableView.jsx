@@ -18,7 +18,7 @@ const CartTableView = ({ className = "", count, products }) => {
   }, [products]);
 
   return (
-    <div className={`${className} ${classes.cart__tablet}`}>
+    <div className={`${className} ${classes.cart__table}`}>
       {count > 0 ? (
         <>
           <section className={classes.cart__tablet__section__wrapper}>
