@@ -1,0 +1,9 @@
+@import "../../sassStyles/variable";
+
+footer {
+  padding: 10px;
+  background-color: $footer-background;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}

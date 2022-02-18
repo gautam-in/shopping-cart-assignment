@@ -1,0 +1,14 @@
+@import "../../sassStyles/variable";
+
+.button-submit {
+  display: inline-block;
+  background-color: $button;
+  color: $text-color;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  opacity: 0.9;
+  border: 0;
+  cursor: pointer;
+  margin-top: 20px;
+}
