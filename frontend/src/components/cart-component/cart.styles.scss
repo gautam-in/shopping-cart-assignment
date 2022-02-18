@@ -1,0 +1,139 @@
+$small: 480px;
+$medium: 768px;
+$large: 1024px;
+$xlarge: 2560px;
+.cart-dropdown {
+  position: absolute;
+  width: 300px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+  border: 1px solid black;
+  background-color:#F5F5F5;
+  top: 80px;
+  right: 0px;
+  z-index: 5;
+
+  .cart-items-container{
+    height: 90%;
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+    padding: 10px 0px;
+  }
+
+  button {
+    margin-top: auto;
+    background-color: #d02e56;
+  }
+
+  
+}
+
+.cart-items-footer{
+  height:15%;
+  background-color: white;
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 2px;
+  button{
+    width: 100%;
+  }
+  p{
+    font-size: 0.6rem;
+    align-self: center;
+    margin: 0px;
+    font-weight: 700;
+  }
+}
+
+.cart-header{
+  display:flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  background-color: black;
+  color: white;
+  font-weight: 700;
+  button{
+    background-color: black;
+    color: white;
+  }
+
+  span{
+    font-size: small;
+  }
+  
+}
+
+.checkout-button{
+  border: none;
+  color: white;
+  font-size: 0.8rem;
+  font-weight: 500;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+
+
+@media screen and   (min-width:$medium) and (max-width:$xlarge){
+ 
+  
+  .cart-dropdown{
+    margin-top:calc(15vh - 6%);
+    border: none;
+    height: 380px;
+    margin-right: 60px;
+  }
+
+  .close{
+    font-size: medium;
+    border: none;
+  }
+
+  .cart-header{
+    align-items:center ;
+    padding: 0.5rem;
+    background-color: black;
+    color: white;
+    button{
+      background-color: black;
+      color: white;
+
+      span{
+        font-size: 1.2rem
+      }
+    }
+    
+  }
+
+}
+@media screen and   (max-width:$small){
+  .cart-dropdown{
+    margin-top:calc(15vh - 20px);
+    width:100%;
+    display: flex;
+    padding:20px;
+    border: none;
+  }
+  .close{
+    font-size: small;
+    border: none;
+  }
+  .cart-header{
+    align-items:center ;
+    padding: 0.2rem;
+    background-color: black;
+    color: white;
+    button{
+      background-color: black;
+      color: white;
+    }
+    
+  }
+}

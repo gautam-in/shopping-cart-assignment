@@ -1,0 +1,66 @@
+$sub-color: skyblue;
+$main-color: grey;
+
+$small: 480px;
+$medium: 768px;
+$large: 1024px;
+$xlarge: 1200px;
+
+@mixin shrinkLabel {
+  top: -14px;
+  font-size: 12px;
+  color:$sub-color;
+}
+
+.group {
+  position: relative;
+  margin: 20px 0 10px 0px;
+
+  
+// @media screen and (max-width: $small)and (max-device-width: 768px)  {
+    
+//   .group{
+//    margin: 0px 0px 0px 0px !important;
+//   }
+  
+}
+  .form-input {
+    background: none;
+    background-color: white;
+    color: $main-color;
+    font-size: 18px;
+    padding: 10px 10px 10px 5px;
+    display: block;
+    width: 100%;
+    border: none;
+    border-radius: 0;
+    border-bottom: 1px solid $main-color;
+    margin: 25px 0;
+
+    &:focus {
+      outline: none;
+    }
+
+    &:focus ~ .form-input-label {
+      @include shrinkLabel();
+    }
+  }
+
+  input[type='password'] {
+    letter-spacing: 0.3em;
+  }
+
+  .form-input-label {
+    color: $main-color;
+    font-size: 16px;
+    font-weight: normal;
+    position: absolute;
+    pointer-events: none;
+    left: 5px;
+    top: 10px;
+    transition: 300ms ease all;
+
+    &.shrink {
+      @include shrinkLabel();
+    }
+  }

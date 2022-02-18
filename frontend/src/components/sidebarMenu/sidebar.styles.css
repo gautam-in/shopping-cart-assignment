@@ -1,0 +1,16 @@
+body {
+  font-family: 'Open Sans Condensed';
+  padding: 20px 60px;
+}
+
+.sidebar-item {
+  color: black;
+  border-bottom: 1px solid dashed;
+  text-decoration: none;
+  width: 100%;
+}
+
+button:focus {
+  outline: none;
+}
+/*# sourceMappingURL=sidebar.styles.css.map */

@@ -1,0 +1,256 @@
+$small: 480px;
+$medium: 768px;
+$large: 1024px;
+$xlarge: 2560px;
+
+
+.card-ele{
+   display:flex;
+   padding: 15px;
+   flex-direction: column;
+   height:450px;
+   box-shadow: 5px 0px 5px   #f4f0ec;
+   position: relative;
+   margin-bottom: 10px;
+  }
+
+ 
+  .card-ele-title{
+   height:90px;
+    font-size: 1.5rem;   
+  }
+.card-ele-image{
+  flex-basis: 30%;
+  height: 200px; 
+}
+.card-ele-product-description{
+  height:100px;
+  background-color: rgb(230, 228, 228);
+  overflow: hidden;
+  font-size: small;
+}
+.card-ele-footer{
+  height:60px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+  border-bottom:1px dashed lightgray;
+ span{
+   align-self: center;
+ }
+}
+
+.card-ele-footer-button{
+  width:50%;
+  background-color:#d02e56 ;
+  border: none;
+  height: 100%;
+  cursor :pointer;
+}
+
+@media screen and  (min-width: $small) and (max-width: 768px) {
+ 
+  .card-ele {
+    display: flex;
+    flex-direction: column;
+    height:250px;
+    width: 50%;
+    border-bottom: 1px dashed #ccc;
+  }
+  .card-ele-footer-button-largedevice{
+    display: none;
+  }
+
+  .card-ele-title{
+    height: 30%;
+    margin:0px;
+    font-size: 0.7rem;
+    font-weight: 800;
+  }
+  .card-ele-body{
+    height: 55%;
+   width: 100% !important;
+   display: flex;
+   flex-direction: row;
+  }
+
+  .card-ele-image{
+    width: 50%;
+    height: 100%;
+  }
+  .card-ele-product-description{
+    width: 50%;
+    font-size: 0.6rem;
+    text-align: left;
+  }
+  .card-ele-footer-button{
+    background-color: #d02e56;
+    height: 15%; 
+    width: 100%;
+    font-size: 0.6rem;
+    color: white;
+    cursor :pointer;
+  }
+ 
+}
+
+
+
+@media screen and  (min-width: $medium) and (max-width:$xlarge) {
+ 
+  .card-ele {
+    display: flex;
+    flex-direction: column;
+    height:300px;
+    width: 25%;
+    border-bottom: 1px dashed #ccc;
+  }
+
+  .card-ele-title{
+    height: 20%;
+    margin:0px;
+    font-size: 0.7rem;
+    font-weight: 800;
+  }
+  .card-ele-body{
+    height: 70%;
+   width: 100% !important;
+   display: flex;
+   flex-direction: column;
+   margin-bottom: 5px;
+  }
+
+  .card-ele-image{
+    width: 100%;
+    height: 65%;
+  }
+  .card-ele-product-description{
+    width: 100%;
+    font-size: 0.7rem;
+    text-align: left;
+    height: 35%;
+  }
+  .card-ele-footer-button{
+    display: none;
+  }
+
+  .card-ele-footer-button-largedevice{
+    
+    height: 10%; 
+    width: 100%;
+    font-size: 0.6rem;
+    
+    display: flex;
+    font-size: 1rem;
+    font-weight: 400;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    .buy-now{
+      width:50%;
+      background-color: #d02e56;
+      color: white;
+      padding:2px;
+      text-align: center;
+      font-size: 0.8rem;
+      cursor :pointer;
+      &:hover {
+        background-color: #d02e56;
+        color: black;
+        
+      }
+    }
+    .price{
+      width:50%;
+      background-color: white;
+      color: black;
+      text-align: center;
+      font-size: 0.8rem;
+    }
+  }
+ 
+}
+
+@media screen and  (min-width: $large) and (max-width:$xlarge){
+
+  .card-ele {
+    height:400px;
+  }
+
+  .card-ele-title{
+    font-size: 1.1rem;
+  }
+   
+  .card-ele-footer-button-largedevice{
+  .buy-now{
+    font-size: 1.1rem;
+  }
+  .price{
+    font-size: 1rem;
+  }
+}
+
+}
+
+
+
+
+
+
+@media screen and   (max-width:$small) {
+ 
+  .card-ele {
+    display: flex;
+    flex-direction: column;
+    height:150px;
+    width: 100%;
+    
+    border-bottom: 1px dashed #ccc;
+  }
+  .card-ele-footer-button-largedevice{
+    display: none;
+  }
+
+  .card-ele-title{
+    height: 25%;
+    margin:0px;
+    font-size: 0.6rem;
+    font-weight: 800;
+  }
+  .card-ele-body{
+    height: 75%;
+   width: 100% !important;
+   display: flex;
+   flex-direction: row;
+   margin-bottom: 5px;
+  }
+
+  .card-ele-image{
+    width: 50%;
+    height: 100%;
+  }
+  .card-ele-product-description{
+    width: 50%;
+    font-size: 0.6rem;
+    text-align: left;
+    height: 70%;
+  }
+  .card-ele-footer-button{
+    background-color: #d02e56;
+    position:absolute;
+    right: 14px;
+    bottom: 5%;
+    height: 20%; 
+    width: 45%;
+    font-size: 0.6rem;
+    color: white;
+    &:hover {
+      background-color: #d02e56;
+      color: black;
+      
+    }
+   
+  }
+ 
+}
