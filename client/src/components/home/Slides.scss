@@ -1,0 +1,75 @@
+@use "../common/base";
+@import "~slick-carousel/slick/slick.css";
+@import "~slick-carousel/slick/slick-theme.css";
+
+.carousel-indicators li {
+	border-top: unset;
+	width: 10px;
+	border-bottom: unset;
+	border: 1px solid transparent;
+	border-left-width: 0;
+	border-right-width: 0;
+	border-radius: 10px;
+	background-color: rgba(182, 168, 168, 0.4);
+	height: 10px;
+	width: 20px;
+}
+.carousel-indicators .active {
+	border-top: unset;
+	border-bottom: unset;
+	border: 1px solid transparent;
+	border-left-width: 0;
+	border-right-width: 0;
+	border-radius: 10px;
+	background-color: rgb(41, 37, 37);
+	height: 10px;
+	width: 50px;
+}
+
+.carousel-item {
+	// background-size: cover;
+	width: 100vw;
+	height: auto;
+	padding-top: 2em;
+	box-shadow: 0 0.1em 0.1em rgb(216, 210, 210);
+	img {
+		width: 100vw;
+		height: auto;
+	}
+}
+
+.Offers {
+	margin: 0 auto;
+	// padding: 20px;
+	width: 100%;
+	color: #333;
+	background: #fff;
+}
+
+.slick-prev {
+	left: 3% !important;
+	z-index: 1;
+}
+.slick-next {
+	right: 3% !important;
+	z-index: 1;
+}
+
+.slides {
+	position: relative;
+	.slick-prev,
+	.slick-next {
+		position: absolute;
+		top: 50%;
+	}
+	.slick-prev {
+		left: 5%;
+		color: black;
+		z-index: 1;
+	}
+	.slick-next {
+		right: 5%;
+		color: black;
+		z-index: 1;
+	}
+}

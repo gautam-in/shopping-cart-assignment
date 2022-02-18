@@ -1,0 +1,9 @@
+@use "../common/base";
+
+footer p {
+  font-family: "Roboto Mono", sans-serif;
+  font-size: 0.6em;
+  padding: 0.8em 4em;
+  text-align: left;
+  background-color: base.$gray-color;
+}

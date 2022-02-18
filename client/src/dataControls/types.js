@@ -1,0 +1,9 @@
+export const IS_LOADING = "IS_LOADING";
+export const ADD_QUANTITY = "ADD_QUANTITY";
+export const DELETE_QUANTITY = "DELETE_QUANTITY";
+export const GET_CATEGORIES = "GET_CATEGORIES";
+export const GET_PRODUCTS = "GET_PRODUCTS";
+export const GET_BANNERS = "GET_BANNERS";
+export const ADD_ITEM = "ADD_ITEM";
+export const REMOVE_ITEM = "REMOVE_ITEM";
+export const GET_ERROR = "GET_ERROR";
