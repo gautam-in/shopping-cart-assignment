@@ -1,4 +1,4 @@
-![](screenshots/Screenshot (8).png)
+![](screenshots/Screenshot_1.png)
 
 # XT Shopping Cart Assignment
 
