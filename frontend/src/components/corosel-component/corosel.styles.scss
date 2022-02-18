@@ -1,0 +1,33 @@
+$small: 480px;
+$medium: 768px;
+$large: 1024px;
+$xlarge: 1200px;
+
+.my-carousel-main{
+    @media screen and (max-width: $small) {
+        margin-bottom: 10px !important;
+    }
+    @media screen and (min-width : $small) and (max-width : $medium){
+        margin-bottom: 10px !important;
+    }
+    width:100%;
+}
+
+.carousel-indicators{
+    
+
+    @media screen and (max-width: $small) {
+        margin-bottom: -10%;
+    }
+
+    @media screen and (min-width : $small) and (max-width : $medium){
+        margin-bottom: 0;
+    }
+    button{
+        border-radius: 50% !important;
+        width:5px !important;
+        height:5px !important;
+        background-color:black !important;
+    }
+}
+

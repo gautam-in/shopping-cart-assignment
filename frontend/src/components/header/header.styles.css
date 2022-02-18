@@ -1,0 +1,89 @@
+.header {
+  height: 15vh;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-bottom: 1px solid lightgray;
+  -webkit-box-shadow: 5px 0 10px lightgray;
+          box-shadow: 5px 0 10px lightgray;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.logo-container {
+  height: 100%;
+}
+
+.nav-left {
+  width: 70%;
+  height: 100%;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.nav-left img {
+  width: 40%;
+  height: 100%;
+  border: 1px solid black;
+}
+
+.nav-left, .nav-right {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+  padding-bottom: 0px;
+}
+
+.nav-right {
+  width: 30%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.nav-item {
+  padding: 0.5em;
+}
+
+.nav-item img {
+  height: 100%;
+  width: 50%;
+}
+
+Link:nth-child(3) {
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+}
+
+.cart {
+  background-color: #dcdcdc;
+  width: 30%;
+  height: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-bottom: 0px;
+}
+/*# sourceMappingURL=header.styles.css.map */

@@ -1,0 +1,57 @@
+$small: 480px;
+$medium: 768px;
+$large: 1024px;
+$xlarge: 2560px;
+
+body{
+
+    font-family: 'Open Sans Condensed';
+    padding: 20px 60px;
+  
+}
+
+
+
+
+.sidebar {
+     display: flex;
+     flex-direction: column;
+     justify-content: flex-start;
+     align-items: center;
+}
+
+.sidebar-item {
+   border-bottom: 1px dashed black;
+    width:80%;
+    padding: 5px ;
+    cursor: pointer;
+    font-size: 0.7rem;
+}
+button:focus { outline: none; }
+
+
+@media screen and  (min-width: $medium) and (max-width:$xlarge) {
+ 
+   .sidebar-item{
+       font-size: 1rem;
+   }
+   
+  }
+  
+
+
+
+
+@media screen and   (max-width:$small){
+
+    body{
+
+        font-family: 'Open Sans Condensed';
+        padding: 50px 5px;
+      
+    }
+    
+
+}
+
+

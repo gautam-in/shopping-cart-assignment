@@ -1,3 +1,8 @@
+$small: 480px;
+$medium: 768px;
+$large: 1024px;
+$xlarge: 1200px;
+
 .menu-item {
   display: flex;
 
@@ -5,26 +10,52 @@
   height: 240px;
   flex: 1 1 auto;
   flex-direction: row;
+  
+  @media screen and (max-width: $small) {  
+    margin: 0 0 1rem 0;
+    max-height: 150px;
+  }
 
-  &.left{
+  @media screen and (min-width: $small) and (max-width: $medium) {
+    max-height: 200px;
+    margin: 0 0 2.5rem 0;
+  }
+
+  &.left {
     flex-direction: row-reverse;
   }
   box-shadow: 0 10px 10px -10px grey;
-  
+
   margin: 0 7.5px 15px;
-  
 
   .category-image {
     width: 40%;
+    @media screen and (max-width: $small) {  
+      width: 30%;
+      height:50%;
+      margin: auto;
+    }
+
+    @media screen and (min-width: $small) and (max-width: $medium) {
+      width: 30%;
+      height:60%;
+      margin: auto;
+    }
+
     margin: 0 7.5px 15px;
     img {
-      height: 200px ;
-      max-width:100%;
-      max-height:100%;
-      
+      max-height: 300px;
+      max-width: 100%;
+      max-height: 100%;
+
+      @media screen and (max-width: $small) {  
+        height: 150px;
+      }
+      @media screen and (min-width: $small) and (max-width: $medium) {
+        height: 200px;
+      }
     }
   }
-  
 
   .content {
     width: 60%;
@@ -40,20 +71,53 @@
       margin-bottom: 6px;
       font-size: 22px;
       color: #4a4a4a;
+      @media screen and (max-width: $small) {
+        font-size: 1rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+      }
+
+      @media screen and (min-width: $small) and (max-width: $medium) {
+        font-size: 1.2rem;
+        font-weight: 800;
+        margin-bottom: 1rem;
+      }
     }
 
     .subtitle {
       margin-bottom: 6px;
       font-weight: lighter;
       font-size: 16px;
+      @media screen and (max-width: $small) {
+        font-size: 0.7rem;
+        text-align: center;
+        font-weight: 500;
+        margin-bottom: 1rem;
+      }
+
+      @media screen and (min-width: $small) and (max-width: $medium) {
+        font-size: 0.9rem;
+        text-align: center;
+        font-weight: 600;
+        margin-bottom: 1.1rem;
+      }
     }
 
     .shop-now {
-      border: 1px solid, purple;
-      background-color: purple;
+      cursor: pointer;
+      border: 1px solid, #d02e56;
+      background-color: #d02e56;
       color: white;
       padding: 5px;
       font-size: 16px;
+      @media screen and (max-width: $small) {
+        padding: 0.5rem;
+        font-size: 0.7rem;
+      }
+      @media screen and (min-width: $small) and (max-width: $medium) {
+        padding: 0.6rem;
+        font-size: 1rem;
+      }
     }
   }
 }

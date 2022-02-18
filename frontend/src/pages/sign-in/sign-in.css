@@ -1,0 +1,18 @@
+.sign-in {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: auto;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-flow: row wrap;
+      flex-flow: row wrap;
+  gap: 5%;
+}
+/*# sourceMappingURL=sign-in.css.map */

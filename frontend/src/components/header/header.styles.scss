@@ -1,26 +1,129 @@
+$small: 480px;
+$medium:768px;
+$large: 1024px;
+$xlarge: 1200px;
+
 .header{
-    height:70px;
+    height:15vh;
     width:100%;
     display:flex;
-    justify-content: space-between;
-    margin-bottom: 25px;
+    border-bottom:1px solid lightgray;
+    box-shadow: 5px 0 10px lightgray;
+    align-items:center;
+    
+    a{
+        text-decoration: none;
+        color: black;
+    }
+    justify-content: center;
+
+    @media screen and (max-width: $small) {
+        padding:0.5rem
+    }
+    
+
 }
 
 .logo-container{
     height:100%;
-    width:70px;
-    padding:25px;
+    // width:70px;
+    // padding:25px;
 
 }
 
-.options{
-    width:50%    ;   
-    height:100%;
-    display:flex;
-    // align-items:center;
-    justify-content: flex-start;
+.nav-left {
 
-    .option{
-        padding:10px 15px;
+    width:90%;
+    height:100%;
+    padding-bottom: 1rem;
+    justify-content: flex-start;
+    align-items: center;
+    img{
+        width:20%;
+        height:100%;
+        @media screen and (max-width: $small) {
+            width:40%;
+        }
+        @media screen and (min-width: $small) and (max-width: $medium) {
+           width:20%;
+           height:80%;
+        }
+    }   
+    @media screen and (max-width: $small) {
+        width:70%;
+        padding-bottom: 0%;
+    }
+    @media screen and (min-width: $small) and (max-width: $medium) {
+        width:80%;
+        padding-bottom: 0%;
     }
 }
+.nav-left,.nav-right{
+      
+    display:flex;
+    height: 100%;
+    // flex-shrink: 1;
+   
+}
+
+.nav-right{
+    width:10%;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-end;
+    .nav-right-sign{
+        display:flex;
+        align-items:center ;
+        justify-content: center;
+        flex-grow: 1;
+        width: 100%;
+     
+    }
+    @media screen and (max-width: $small) {
+        width:30%
+    }
+    @media screen and (min-width: $small) and (max-width: $medium) {
+        width:20%
+    }
+}
+
+
+.nav-item{
+    padding:0.5em;
+    @media screen and (max-width: $small) {
+      font-size: 0.7rem;  
+    }
+    @media screen and (min-width: $small) and (max-width: $medium) {
+        font-size:1rem;
+    }
+    img{
+        height:100%;
+        width:50%;
+    }
+}
+
+Link:nth-child(3){
+    align-self: flex-end;
+}
+
+.cart{
+    background-color: #dcdcdc;
+    width:100%;
+    height: 50%;
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+    padding:1rem;
+}
+
+
+
+@media screen and   (max-width:$small){
+    .nav-right-sign a{
+        font-size: 0.7rem;
+    }
+}
+
+ @media screen and (min-width: $small) and (max-width: $medium) {
+    .nav-right-sign a{font-size: 1rem;}
+            }

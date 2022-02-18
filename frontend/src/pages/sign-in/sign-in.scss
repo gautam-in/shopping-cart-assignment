@@ -1,0 +1,26 @@
+$small: 480px;
+$medium: 768px;
+$large: 1024px;
+$xlarge: 1200px;
+
+.sign-in {
+    width: 100%;
+    display: flex;
+   margin:auto;
+    flex-direction: row;
+    justify-content: center;
+    flex-flow:row wrap;
+    gap: 5%;
+    
+    
+  }
+
+ 
+  @media screen and (max-width: $small) and (max-device-width: 768px)  {
+    
+    .sign-in {
+      margin-top: 10%;
+      padding:10%;
+      flex-direction: column;
+    }
+  }

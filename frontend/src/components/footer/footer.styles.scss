@@ -1,0 +1,28 @@
+$small: 480px;
+$medium: 768px;
+$large: 1024px;
+$xlarge: 1200px;
+
+footer {
+  display: flex;
+  background-color: #e5e4e2;
+  width: 100%;
+
+  color: black;
+  justify-content: center;
+}
+  @media screen and (max-width: $small)and (max-device-width: 768px) {
+    .footer{ 
+      position: fixed;
+      bottom: 0px;
+    }
+  }
+
+  
+@media screen and   (max-width:$small){
+  .footer{ 
+    position: fixed;
+    bottom: 0px;
+    font-size: 0.7rem;
+  }
+}
