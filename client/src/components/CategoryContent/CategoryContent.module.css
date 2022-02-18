@@ -1,0 +1,15 @@
+.content__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.content__container__header {
+  font-size: 1rem;
+  padding-bottom: 1rem;
+}
+.content__container__text {
+  text-align: center;
+  font-size: 0.8rem;
+  padding-bottom: 1rem;
+}

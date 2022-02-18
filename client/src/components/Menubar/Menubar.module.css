@@ -1,0 +1,24 @@
+.menubar {
+  background-color: #ddd;
+  display: flex;
+  flex-direction: column;
+}
+.menubar__button {
+  border-bottom: 1px solid #4d4d4d;
+  padding: 10px;
+  font-size: 0.9rem;
+  width: 100%;
+  background-color: transparent;
+  text-align: left;
+  color: rgba(77, 77, 77, 1);
+  border-radius: 0;
+}
+@media screen and (max-width: 768px) {
+  .menubar__button {
+    font-size: 0.8rem;
+  }
+}
+.menubar__button:hover,
+.menubar__button:active {
+  background-color: rgba(160, 160, 160, 0.5);
+}

@@ -1,15 +1,23 @@
-# XT Shopping Cart Assignment
+# Lighthouse
 
-This is the base folder for the shopping cart exercise. You will have all the static assets and mock server responses available in this repo.
+![](screenshots/Screenshot_1.png)
 
-## Getting Started
+# Home
 
-Clone this repo and run following command for starting the mock server:
+![](screenshots/Screenshot_2.png)
 
-```
-npm install
-npm run start
-# or
-yarn install
-yarn start
-```
+# Sign Up
+
+![](screenshots/Screenshot_3.png)
+
+# Sign In
+
+![](screenshots/Screenshot_4.png)
+
+# Products
+
+![](screenshots/Screenshot_5.png)
+
+# Cart
+
+![](screenshots/Screenshot_6.png)

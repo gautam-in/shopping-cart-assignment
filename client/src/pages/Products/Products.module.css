@@ -1,0 +1,11 @@
+.product__container {
+  max-width: 1024px;
+  margin: 0 auto;
+  display: flex;
+}
+
+@media screen and (max-width: 768px) {
+  .product__container {
+    flex-direction: column;
+  }
+}
