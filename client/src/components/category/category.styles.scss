@@ -1,0 +1,62 @@
+@import "../../sassStyles/variable";
+
+.category {
+  img {
+    height: 125px;
+    width: 200px;
+  }
+
+  &__right {
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    h2,
+    p {
+      margin: 10px;
+    }
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .category {
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+    height: 300px;
+    padding: 20px;
+    display: flex;
+    box-sizing: border-box;
+    box-shadow: $box-shadow;
+
+    &__right {
+      h1 {
+        margin: 10px;
+        font-size: 30px;
+      }
+
+      p {
+        font-size: 20px;
+      }
+    }
+
+    img {
+      height: 250px;
+      width: 400px;
+    }
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .category {
+    display: flex;
+    box-sizing: border-box;
+    box-shadow: $box-shadow;
+    padding: 10px;
+
+    img {
+      margin-top: 50px;
+    }
+  }
+}

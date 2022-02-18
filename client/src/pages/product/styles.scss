@@ -1,0 +1,158 @@
+$box-shadow: 0px 2px 4px -1px #fefefe, 0px 4px 5px 0px #a9a0a0,
+  0px 1px 10px 0px #d1c9c9;
+
+.product-container {
+  margin-top: 70px;
+
+  .sidebar {
+    display: none;
+  }
+}
+
+.products__card {
+  padding: 10px;
+  margin: 5px;
+  box-shadow: $box-shadow;
+
+  h3 {
+    height: 50px;
+  }
+
+  article {
+    display: flex;
+    width: 100%;
+
+    img {
+      height: 50%;
+      width: 50%;
+    }
+  }
+
+  p {
+    padding: 10px;
+    box-sizing: border-box;
+  }
+}
+
+.products__footer {
+  display: none;
+}
+
+@media only screen and (min-width: 1025px) {
+  .product-container {
+    display: flex;
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .products__card p {
+    overflow: hidden;
+    background-color: #ededed;
+    height: 120px;
+  }
+}
+
+@media only screen and (min-width: 481px) and (max-width: 1024px) {
+  .product-container {
+    .products__card {
+      width: 48%;
+
+      article {
+        flex-direction: row;
+
+        section {
+          background-color: #ededed;
+          height: 180px;
+          overflow: hidden;
+        }
+      }
+
+      .products__card__price {
+        display: none;
+      }
+    }
+
+    .products {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin-left: 20%;
+    }
+
+    .sidebar {
+      display: block;
+    }
+
+    form {
+      display: none;
+    }
+  }
+
+  .products__footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+
+    .products__footer--display {
+      display: none;
+    }
+  }
+}
+
+@media only screen and (min-width: 1025px) {
+  .product-container {
+    .products__card {
+      width: 23%;
+
+      p {
+        height: 120px;
+        overflow: hidden;
+      }
+
+      article {
+        flex-direction: column;
+
+        img {
+          height: 100%;
+          width: 100%;
+        }
+
+        section {
+          background-color: #ededed;
+        }
+      }
+
+      .products__card__price {
+        display: none;
+      }
+    }
+    .sidebar {
+      display: block;
+    }
+
+    form {
+      display: none;
+    }
+  }
+
+  .products__footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+
+    .products__footer--display {
+      margin-top: 15px;
+      font-size: 14px;
+    }
+  }
+
+  .products__button--display {
+    display: none;
+  }
+}

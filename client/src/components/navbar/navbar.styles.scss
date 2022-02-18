@@ -1,0 +1,128 @@
+@import "../../sassStyles/variable";
+
+.header {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  height: 70px;
+  top: 0;
+  position: fixed;
+  z-index: 1;
+  background: $nav-background;
+  box-shadow: $box-shadow;
+
+  &__leftElem {
+    nav {
+      display: none;
+    }
+
+    img {
+      margin-top: 20px;
+    }
+  }
+
+  &__rightElem {
+    nav {
+      display: none;
+    }
+
+    button {
+      width: 120px;
+      height: 60px;
+    }
+  }
+}
+
+.cartButton {
+  position: relative;
+  background-color: $cart-background;
+  border: none;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  margin: 4px 2px;
+  padding: 5px;
+  margin-left: 60px;
+  color: $cart-color;
+
+  &--pl10 {
+    padding-left: 10px;
+  }
+
+  &--pl5 {
+    padding-left: 5px;
+  }
+
+  img {
+    vertical-align: bottom;
+    cursor: pointer;
+  }
+}
+
+@media only screen and (min-width: 481px) {
+  .header {
+    &__leftElem {
+      display: flex;
+      width: 35%;
+      justify-content: space-between;
+
+      nav {
+        display: flex;
+        align-items: end;
+      }
+    }
+
+    &__rightElem {
+      nav {
+        display: flex;
+        align-items: end;
+      }
+
+      button {
+        width: 100px;
+        height: 32px;
+      }
+    }
+  }
+
+  .nav__links {
+    list-style: none;
+    display: flex;
+    margin-left: 40px;
+
+    &--alignEnd {
+      align-items: end;
+      height: 50px;
+    }
+
+    &--alignStart {
+      align-items: start;
+      height: 30px;
+    }
+
+    li {
+      display: inline-block;
+      padding: 10px 0px 10px 10px;
+
+      a {
+        text-decoration: none;
+        color: $cart-color;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 481px) and (max-width: 1024px) {
+  .header {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@media only screen and (min-width: 1025px) {
+  .header {
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+}

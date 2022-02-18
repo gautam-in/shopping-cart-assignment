@@ -1,0 +1,69 @@
+@import "../../sassStyles/variable";
+
+.slideshow-container {
+  position: relative;
+  margin-top: 70px;
+  box-shadow: $box-shadow;
+
+  img {
+    width: 100%;
+    height: 25%;
+  }
+}
+
+.slideshow__next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.slideshow {
+  text-align: center;
+  width: 100%;
+  position: absolute;
+  bottom: 10px;
+
+  &__prev,
+  &__next {
+    cursor: pointer;
+    position: absolute;
+    top: 35%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    font-weight: bold;
+    transition: 1s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    background-color: $slider-prev-next-background;
+    font-size: 18px;
+    color: $slider-prev-next-color;
+  }
+
+  &__dot {
+    cursor: pointer;
+    height: 7px;
+    width: 7px;
+    margin: 0 2px;
+    border-radius: 50%;
+    display: inline-block;
+    font-size: 10px;
+
+    &--noactive {
+      background-color: $slider-dot-noactive-background;
+      transition: background-color 1s ease;
+    }
+
+    &--active,
+    &:hover {
+      background-color: $slider-dot-active-background;
+      transition: background-color 1s ease;
+    }
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .slideshow-container {
+    margin-left: 10%;
+    margin-right: 10%;
+  }
+}

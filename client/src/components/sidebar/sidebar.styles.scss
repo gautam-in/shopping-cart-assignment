@@ -1,0 +1,22 @@
+@import "../../sassStyles/variable";
+
+.sidebar {
+  width: 20%;
+  height: 100%;
+  background-color: $sidebar-background;
+  text-align: center;
+  top: 70px;
+  position: fixed;
+
+  li {
+    list-style: none;
+    padding: 10px;
+    border-bottom: 1px solid $sidebar-border;
+    text-decoration: none;
+
+    a {
+      text-decoration: none;
+      color: $sidebar-color;
+    }
+  }
+}

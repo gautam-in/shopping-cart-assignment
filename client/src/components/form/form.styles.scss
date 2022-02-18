@@ -1,0 +1,49 @@
+@import "../../sassStyles/variable";
+
+.common-form-container {
+  width: 100%;
+}
+
+.form-group {
+  margin-bottom: 10px;
+  transition: all 0.3s;
+  width: 100%;
+
+  &__label {
+    font-size: 16px;
+    display: block;
+    opacity: 1;
+    transform: translateY(-1.5em);
+    transform-origin: 0 0;
+    transition: all 0.3s;
+  }
+
+  &__input {
+    box-shadow: none;
+    width: 100%;
+    border-style: none none solid none;
+    border-color: $form-input-border-color;
+    transition: all 0.5s;
+    padding: 5px;
+
+    &:focus {
+      box-shadow: none;
+      outline: none;
+      border-color: $form-input-border-focus-color;
+    }
+
+    &::placeholder {
+      color: transparent;
+    }
+  }
+
+  &:focus-within {
+    transform: scale(1, 1);
+  }
+}
+
+.form-group__input:focus + .form-group__label,
+.form-group__input:not(:placeholder-shown) + .form-group__label {
+  transform: translateY(-3em);
+  color: $form-input-border-focus-color;
+}
