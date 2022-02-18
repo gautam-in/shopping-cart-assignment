@@ -4,6 +4,7 @@ import {
   CartDropdownButton,
   CartDropdownContainer,
   CartItemsContainer,
+  DropdownWrapper,
   EmptyMessageContainer,
 } from "./cart-dropdown.styles";
 import CartFooter from "./cart-footer/cart-footer.component";
@@ -12,14 +13,17 @@ import CartItem from "./cart-item/cart-item.component";
 
 const CartDropdown = () => {
   return (
-    <div className="cart-popup">
+    <DropdownWrapper className="addToCartPopup">
       <CartDropdownContainer>
         <CartHeader />
+        <CartItem />
+        <CartItem />
+        <CartItem />
         <CartItem />
         <CartDisclaimer />
         <CartFooter />
       </CartDropdownContainer>
-    </div>
+    </DropdownWrapper>
   );
 };
 

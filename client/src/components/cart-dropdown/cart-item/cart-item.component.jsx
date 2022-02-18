@@ -15,7 +15,7 @@ const CartItem = () => {
         <h3>Apple-Wasgington</h3>
         <ItemCount>
           <span className="decrement">-</span>
-          <h8>8</h8>
+          <h6>8</h6>
           <span className="increment">+</span>
           <span className="cross">x</span>
           <span className="total">Rs187</span>
