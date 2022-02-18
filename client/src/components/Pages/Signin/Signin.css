@@ -1,0 +1,102 @@
+.signin {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    padding-top: 2rem;
+}
+
+.heading h1 {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.heading p {
+    font-weight: 600;
+    font-size: 14px;
+}
+
+
+.signinForm {
+    padding: 2rem 2rem 2rem 4rem;
+    width: 30%;
+}
+
+.signinForm input {
+    /* display: block;
+    width: 100%;
+    border: none;
+    margin-bottom: 15px;
+    border-bottom: 1px solid rgb(129, 127, 127);
+    padding: 1rem 0;
+    margin: 1rem 0; */
+
+    font-family: Poppins-Regular;
+    color: #555555;
+    line-height: 1.2;
+    display: block;
+    width: 100%;
+    height: 45px;
+    background: transparent;
+    border-bottom: 2px solid #adadad;
+    margin-bottom: 8px;
+}
+
+.form-group {
+    padding-bottom: 25px;
+    position: relative;
+}
+
+input {
+    outline: none;
+    border: none;
+}
+
+input:focus {
+    border-bottom-color: #4BC1C9;
+}
+
+.signInBtn {
+    width: 100%;
+    padding: 10px;
+    height:35px;
+    background-color: #C6346C;
+    outline: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+}
+
+.signInBtn:hover {
+    background-color: #C6346C;
+    font-weight: 600;
+}
+
+
+input:focus {
+    outline: none;
+}
+
+label {
+    color: #424242;
+    font-weight: normal;
+    position: absolute;
+    pointer-events: none;
+    left: 5px;
+    top: 10px;
+    transition: 0.2s ease all;
+    -moz-transition: 0.2s ease all;
+    -webkit-transition: 0.2s ease all;
+}
+
+input:focus~label,
+input:valid~label {
+    top: -20px;
+    font-size: 14px;
+    color: #4BC1C9;
+
+}
+.error {
+    color: red;
+    font-size: 14px;
+}
