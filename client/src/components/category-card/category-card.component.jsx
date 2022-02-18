@@ -16,7 +16,6 @@ const CategoryCard = () => {
     try {
       const { data } = await getAllCategories();
       setCategories(data.sort((first, second) => first.order - second.order));
-      console.log(data);
     } catch (error) {
       console.log(error);
     }
@@ -24,7 +23,6 @@ const CategoryCard = () => {
   useEffect(() => {
     getCategories();
   }, []);
-  console.log("category", categories);
 
   return (
     <CategoryWrapper>

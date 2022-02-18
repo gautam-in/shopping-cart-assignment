@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
+import { addItemToCart } from "../../context/actions/cartAction";
+import { GlobalState } from "../../context/reducers/cart-reducer";
 import CustomButton from "../custom-button/custom-buttom.component";
 import CardContent from "./card-content/card-content.component";
-import { Price } from "./card-content/card-content.styles";
 import {
   CardContainer,
   CardWrapper,
@@ -14,7 +15,18 @@ import {
 } from "./card.styles";
 
 const Card = ({ product }) => {
+  const {
+    state: { cartItems },
+    dispatch,
+  } = useContext(GlobalState);
   const { id, imageURL, name, price, stock, description } = product;
+
+  useEffect(() => {}, []);
+  console.log(cartItems);
+
+  const handleClick = () => {
+    dispatch(addItemToCart(cartItems, product));
+  };
 
   return (
     <CardContainer>
@@ -23,13 +35,13 @@ const Card = ({ product }) => {
         <ImageWrapper>
           <Image src={imageURL} />
         </ImageWrapper>
-        <CardContent price={price} description={description} />
+        <CardContent
+          product={product}
+          price={price}
+          description={description}
+        />
       </CardWrapper>
-      {/* <PriceWrapper>
-        <Price>{price}</Price>
-        <CustomButton className="desktop-btn">{"Buy now"}</CustomButton>
-      </PriceWrapper> */}
-      <CustomButton className="desktop-show">
+      <CustomButton onClick={() => handleClick()} className="desktop-show">
         Buy Now @ MRP Rs.{price}
       </CustomButton>
     </CardContainer>

@@ -8,5 +8,4 @@ export const CustomButtonContainer = styled.button`
   text-transform: uppercase;
   font-weight: 300;
   cursor: pointer;
-  /* white-space: nowrap; */
 `;

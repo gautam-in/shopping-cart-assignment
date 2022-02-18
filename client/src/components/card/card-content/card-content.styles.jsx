@@ -15,7 +15,7 @@ export const CardDescription = styled.p`
   flex: 1 0 auto;
 `;
 export const CardFooter = styled.div`
-  .desktop-show {
+  .desktop-visible {
     display: none;
   }
   @media screen and (min-width: 720px) {
@@ -30,7 +30,7 @@ export const CardFooter = styled.div`
     .mobile-show {
       display: none;
     }
-    .desktop-show {
+    .desktop-visible {
       display: block;
     }
   }
