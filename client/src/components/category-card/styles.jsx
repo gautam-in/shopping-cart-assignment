@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const CategoryItemBlock = styled.div`
 	display: flex;
+	align-items: center;
 	padding: 30px 0;
 	box-shadow: 0px 20px 20px -20px rgba(0, 0, 0, 0.45);
 
@@ -10,8 +11,13 @@ export const CategoryItemBlock = styled.div`
 	}
 `;
 
+export const CategoryImageBlock = styled.div`
+	width: 40%;
+`;
+
 export const CategoryImage = styled.img`
-	max-width: 30%;
+	width: 100%;
+	height: auto;
 `;
 
 export const CategoryDetails = styled.div`
@@ -30,4 +36,8 @@ export const Description = styled.div`
 
 export const Name = styled.h2`
 	font-weight: 700;
+`;
+
+export const Explore = styled.div`
+	font-size: 16px;
 `;

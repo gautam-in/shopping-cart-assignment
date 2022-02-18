@@ -2,16 +2,19 @@ import { useContext } from "react";
 import { CartContext } from "../../contexts/cart-context";
 import CustomButton from "../custom-button";
 import {
+	BuyNowFullText,
 	BuyNowText,
-	BuyNowTextTablet,
 	CardContainer,
 	CardDetails,
 	CardImage,
 	CardTitle,
 	Description,
+	DescriptionBlock,
 	ImgBlock,
 	PriceContainer,
 } from "./styles";
+
+import "./styles.css";
 
 const ProductCard = ({ product }) => {
 	const { name, imageURL, description, price } = product;
@@ -24,6 +27,16 @@ const ProductCard = ({ product }) => {
 		});
 	};
 
+	const getFullBuyNowText = () => {
+		return (
+			<BuyNowFullText>
+				<CustomButton isAuth onClick={() => handleAddToCart(product)}>
+					{`Buy Now @ MRP Rs.${price}`}
+				</CustomButton>
+			</BuyNowFullText>
+		);
+	};
+
 	return (
 		<CardContainer>
 			<CardTitle>{name}</CardTitle>
@@ -31,16 +44,21 @@ const ProductCard = ({ product }) => {
 				<ImgBlock>
 					<CardImage src={imageURL} alt={name} />
 				</ImgBlock>
-				<Description>{description}</Description>
+				<DescriptionBlock>
+					<Description>{description}</Description>
+					<div className="mobile_show">{getFullBuyNowText()}</div>
+				</DescriptionBlock>
 			</CardDetails>
+
+			<div className="tablet_show">{getFullBuyNowText()}</div>
+
 			<PriceContainer>
-				<span>MRP Rs.{price}</span>
-				<CustomButton>
-					<BuyNowText onClick={() => handleAddToCart(product)}>
+				<span>{`MRP Rs.${price}`}</span>
+				<BuyNowText>
+					<CustomButton onClick={() => handleAddToCart(product)}>
 						Buy Now
-					</BuyNowText>
-					<BuyNowTextTablet>Buy Now @ MRP Rs.{price}</BuyNowTextTablet>
-				</CustomButton>
+					</CustomButton>
+				</BuyNowText>
 			</PriceContainer>
 		</CardContainer>
 	);

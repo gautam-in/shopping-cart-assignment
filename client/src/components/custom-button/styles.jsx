@@ -14,6 +14,13 @@ const authButtonStyles = css`
 	line-height: 50px;
 	padding: 0 25px 0 25px;
 	font-size: 16px;
+
+	@media (max-width: 768px) {
+		height: 40px;
+		letter-spacing: 0px;
+		line-height: 40px;
+		padding: 0 20px 0 20px;
+	}
 `;
 
 const cartButtonStyles = css`

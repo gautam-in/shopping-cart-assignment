@@ -5,6 +5,8 @@ import {
 	CategoryDetails,
 	Description,
 	Name,
+	CategoryImageBlock,
+	Explore,
 } from "./styles";
 
 const CategoryItem = ({ type, name, imageUrl, description }) => {
@@ -13,7 +15,9 @@ const CategoryItem = ({ type, name, imageUrl, description }) => {
 			<CategoryDetails>
 				<Name>{name}</Name>
 				<Description>{description}</Description>
-				<CustomButton>Explore {name}</CustomButton>
+				<CustomButton>
+					<Explore>Explore {name}</Explore>
+				</CustomButton>
 			</CategoryDetails>
 		);
 	};
@@ -21,7 +25,9 @@ const CategoryItem = ({ type, name, imageUrl, description }) => {
 	return (
 		<CategoryItemBlock>
 			{type === 1 ? getDetailSection() : null}
-			<CategoryImage src={imageUrl} alt={name} />
+			<CategoryImageBlock>
+				<CategoryImage src={imageUrl} alt={name} />
+			</CategoryImageBlock>
 			{type === 2 ? getDetailSection() : null}
 		</CategoryItemBlock>
 	);

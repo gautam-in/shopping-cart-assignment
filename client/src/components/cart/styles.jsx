@@ -17,3 +17,7 @@ export const CartIcon = styled(CartIconSVG)`
 	fill: #bf2957;
 	padding-right: 10px;
 `;
+
+export const CartCount = styled.span`
+	width: 50px;
+`;

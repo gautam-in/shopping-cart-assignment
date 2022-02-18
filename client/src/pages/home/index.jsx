@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
-// import axios from "axios";
-import { categories as categoriesData } from "../../data/categories";
+import { categoriesData } from "../../data/categories";
 import { bannersData } from "../../data/banners";
 
 import CategoryList from "../../components/category-list";
@@ -12,30 +11,35 @@ const Home = () => {
 
 	useEffect(() => {
 		const getBanners = async () => {
-			setBanners(bannersData);
+			let bannersResponse = [];
+			await fetch("http://localhost:5000/banners")
+				.then((response) => response.json())
+				.then((responseJson) => {
+					bannersResponse = responseJson;
+				})
+				.catch((err) => {
+					bannersResponse = bannersData;
+				});
+			const filteredBanners = bannersResponse
+				.filter((category) => category.isActive)
+				.sort((a, b) => (a.order > b.order ? 1 : -1));
+
+			setBanners(filteredBanners);
 		};
 
 		getBanners();
 
 		const getCategories = async () => {
-			// let categories = axios
-			// 	.get("http://localhost:5000/categories/")
-			// 	.then((res) => {
-			// 		console.log(res);
-			// 	})
-			// 	.catch((err) => console.log(err));
-			// fetch("http://localhost:5000/categories", {
-			// 	headers: {
-			// 		Accept: "application/json",
-			// 		"Content-Type": "application/json",
-			// 	},
-			// 	method: "GET",
-			// })
-			// 	.then((response) => response.json())
-			// 	.then((responseJson) => {
-			// 		console.log(responseJson);
-			// 	});
-			const filteredCategories = categoriesData
+			let categoriesResponse = [];
+			await fetch("http://localhost:5000/categories")
+				.then((response) => response.json())
+				.then((responseJson) => {
+					categoriesResponse = responseJson;
+				})
+				.catch((err) => {
+					categoriesResponse = categoriesData;
+				});
+			const filteredCategories = categoriesResponse
 				.filter((category) => category.enabled)
 				.sort((a, b) => (a.order > b.order ? 1 : -1))
 				.map((category, index) => ({

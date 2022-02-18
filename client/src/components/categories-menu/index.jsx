@@ -1,5 +1,11 @@
 import { useState } from "react";
-import { ProductsContainer, ListItem } from "./styles";
+
+import Dropdown from "../dropdown";
+import {
+	CategoriesContainer,
+	CategoriesContainerMobile,
+	ListItem,
+} from "./styles";
 
 const CategoriesMenu = ({ categories, handleCategoryClick }) => {
 	const [selectedCategory, setSelectedCategory] = useState("");
@@ -11,18 +17,34 @@ const CategoriesMenu = ({ categories, handleCategoryClick }) => {
 		setSelectedCategory(category);
 	};
 
+	const formattedCatForDropdown = categories.map(({ id, name }) => ({
+		value: id,
+		text: name,
+	}));
+
 	return (
-		<ProductsContainer>
-			{categories.map(({ id, name }) => (
-				<ListItem
-					active={selectedCategory === id}
-					onClick={() => handleCategoryChange(id)}
-					key={id}
-				>
-					{name}
-				</ListItem>
-			))}
-		</ProductsContainer>
+		<>
+			<CategoriesContainer>
+				{categories &&
+					categories.map(({ id, name }) => (
+						<ListItem
+							active={selectedCategory === id}
+							onClick={() => handleCategoryChange(id)}
+							key={id}
+						>
+							{name}
+						</ListItem>
+					))}
+			</CategoriesContainer>
+			<CategoriesContainerMobile>
+				{formattedCatForDropdown && formattedCatForDropdown.length > 0 && (
+					<Dropdown
+						items={formattedCatForDropdown}
+						handleChange={(id) => handleCategoryChange(id)}
+					/>
+				)}
+			</CategoriesContainerMobile>
+		</>
 	);
 };
 

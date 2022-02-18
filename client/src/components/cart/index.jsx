@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { CartContext } from "../../contexts/cart-context";
-import { CartWrapper, CartIcon } from "./styles";
+import { CartWrapper, CartIcon, CartCount } from "./styles";
 
 const Cart = () => {
 	const {
@@ -13,11 +13,13 @@ const Cart = () => {
 			type: "CART_TOGGLE",
 		});
 	};
-
+	const cartCount = items.reduce((acc, product) => acc + product.quantity, 0);
 	return (
 		<CartWrapper onClick={toggleCart}>
 			<CartIcon />
-			{items.length} {items.length === 1 ? "item" : "items"}
+			<CartCount>
+				{cartCount} {cartCount === 1 ? "item" : "items"}
+			</CartCount>
 		</CartWrapper>
 	);
 };

@@ -3,7 +3,7 @@ import React, { useContext } from "react";
 import Header from "../header";
 import Footer from "../footer";
 
-import { LayoutContainer, Content } from "./styles";
+import { LayoutContainer, Content, Modal, ModalWrapper } from "./styles";
 import CartBlock from "../cart-block";
 import { CartContext } from "../../contexts/cart-context";
 
@@ -16,7 +16,12 @@ const Layout = ({ children }) => {
 		<LayoutContainer>
 			<Header />
 			<Content>
-				{isCartOpen ? <CartBlock /> : null}
+				{isCartOpen ? (
+					<>
+						<Modal />
+						<CartBlock />
+					</>
+				) : null}
 				{children}
 			</Content>
 			<Footer />

@@ -1,4 +1,4 @@
-export const products = [
+export const productsData = [
 	{
 		name: "Fresho Kiwi - Green, 3 pcs",
 		imageURL: "/static/images/products/fruit-n-veg/kiwi-green.jpg",
@@ -45,7 +45,7 @@ export const products = [
 	},
 	{
 		name: "Tomato - Local, Organically Grown, 500 gm",
-		imageURL: "/static/images/products/fruit-n-veg/capsicum-green.jpg",
+		imageURL: "/static/images/products/fruit-n-veg/tomato.jpg",
 		description:
 			"Fresho brings to you an exquisite range of locally grown organic tomatoes, which are now available at bigbasket. These organic tomatoes are free from harmful pesticides and insecticides.",
 		price: 12,
