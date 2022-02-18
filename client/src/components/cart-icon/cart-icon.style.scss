@@ -4,14 +4,17 @@
     align-items: center;
     background-color: rgb(222, 241, 238);
     padding: 0.2em;
-    height: 4.2rem;
+    height: 3rem;
     cursor: pointer;
-    @media screen and (min-width: 768px) {
-        height: 3rem;
+    @media screen and (min-width: 720px) {
+        height: 4.2rem;
         padding-right: 2em;
       }
 }
 .shopping-icon{
-    width: 3em;
+    width: 2em;
     fill: #D13E56;
+    @media screen and (min-width: 720px) {
+        width: 3em;
+      }
 }

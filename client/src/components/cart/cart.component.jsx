@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useContext } from "react";
+import { GlobalState } from "../../context/reducers/cart-reducer";
 import CartDisclaimer from "./cart-disclaimer/cart-disclaimer.component";
 import {
   CartDropdownButton,
@@ -6,20 +7,29 @@ import {
   CartItemsContainer,
   DropdownWrapper,
   EmptyMessageContainer,
-} from "./cart-dropdown.styles";
+} from "./cart.styles";
 import CartFooter from "./cart-footer/cart-footer.component";
 import CartHeader from "./cart-header/cart-header.components";
 import CartItem from "./cart-item/cart-item.component";
 
-const CartDropdown = () => {
+const Cart = () => {
+  const {
+    state: { cartItems },
+    dispatch,
+  } = useContext(GlobalState);
   return (
     <DropdownWrapper className="addToCartPopup">
       <CartDropdownContainer>
         <CartHeader />
-        <CartItem />
-        <CartItem />
-        <CartItem />
-        <CartItem />
+        {cartItems.length > 0 &&
+          cartItems.map(({ id, imageURL, name, price, quantity }) => (
+            <CartItem
+              key={id}
+              imageURL={imageURL}
+              price={price}
+              quantity={quantity}
+            />
+          ))}
         <CartDisclaimer />
         <CartFooter />
       </CartDropdownContainer>
@@ -27,4 +37,4 @@ const CartDropdown = () => {
   );
 };
 
-export default CartDropdown;
+export default Cart;

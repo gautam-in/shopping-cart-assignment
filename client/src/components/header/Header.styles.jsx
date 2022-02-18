@@ -52,8 +52,16 @@ export const NavItem = styled.li`
 `;
 export const NavLink = styled(Link)`
   text-decoration: none;
+  color: var(--color-dark);
+  opacity: 0.7;
+  &:hover {
+    opacity: 0.9;
+  }
 `;
 
 export const Logo = styled.img`
-  width: 200px;
+  width: 150px;
+  @media screen and (min-width: 720px) {
+    width: 200px;
+  }
 `;

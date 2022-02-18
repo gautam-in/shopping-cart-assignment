@@ -1,7 +1,6 @@
 import React, { useContext } from "react";
 import { toggleCart } from "../../context/actions/cartAction";
 import { GlobalState } from "../../context/reducers/cart-reducer";
-import CartDropdown from "../cart-dropdown/cart-dropdown.component";
 import { ShoppingIcon } from "./cart-icon.style";
 import "./cart-icon.style.scss";
 

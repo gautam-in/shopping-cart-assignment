@@ -1,13 +1,11 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import styled from "styled-components";
-import CartDropdown from "../cart-dropdown/cart-dropdown.component";
+import React, { useContext } from "react";
+import { GlobalState } from "../../context/reducers/cart-reducer";
 import CartIcon from "../cart-icon/cart-icon.component";
+import Cart from "../cart/cart.component";
 import Container from "../container/Container";
 import {
   CartContainer,
   HeaderContainer,
-  LogoContainer,
   Nav,
   NavContainer,
   NavItem,
@@ -17,6 +15,9 @@ import {
 } from "./Header.styles";
 
 const Header = () => {
+  const {
+    state: { toggle },
+  } = useContext(GlobalState);
   return (
     <HeaderContainer>
       <Container>
@@ -42,10 +43,10 @@ const Header = () => {
               </NavItem>
             </NavMenu>
             <CartIcon />
+            {toggle && <Cart />}
           </CartContainer>
         </Nav>
       </Container>
-      {/* <CartDropdown /> */}
     </HeaderContainer>
   );
 };

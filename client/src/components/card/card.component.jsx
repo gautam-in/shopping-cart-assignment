@@ -16,7 +16,7 @@ import {
 
 const Card = ({ product }) => {
   const {
-    state: { cartItems },
+    state: { cartItems, cartTotal },
     dispatch,
   } = useContext(GlobalState);
   const { id, imageURL, name, price, stock, description } = product;
@@ -33,7 +33,7 @@ const Card = ({ product }) => {
       <Title>{name}</Title>
       <CardWrapper>
         <ImageWrapper>
-          <Image src={imageURL} />
+          <Image src={imageURL} alt={name} />
         </ImageWrapper>
         <CardContent
           product={product}

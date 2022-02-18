@@ -1,6 +1,6 @@
 import styled, { css } from "styled-components";
-const subColor = "#98B4AA";
-const mainColor = "#50DAE2";
+const subColor = "#a3a8ac";
+const mainColor = "#89d4d5";
 
 const shrinkLabelStyles = css`
   top: -14px;

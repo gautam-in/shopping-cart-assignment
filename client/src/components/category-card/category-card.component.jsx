@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { getAllCategories } from "../../http";
 import Container from "../container/Container";
 import CustomButton from "../custom-button/custom-buttom.component";
@@ -11,6 +12,7 @@ import {
 } from "./category.styles";
 
 const CategoryCard = () => {
+  const navigate = useNavigate();
   const [categories, setCategories] = useState([]);
   const getCategories = async () => {
     try {
@@ -23,7 +25,6 @@ const CategoryCard = () => {
   useEffect(() => {
     getCategories();
   }, []);
-
   return (
     <CategoryWrapper>
       <Container>
@@ -32,12 +33,16 @@ const CategoryCard = () => {
             imageUrl && (
               <CategoryCardContainer key={key} position={index}>
                 <CategoryImageContainer>
-                  <CategoryImage src={imageUrl} />
+                  <CategoryImage src={imageUrl} alt={name} />
                 </CategoryImageContainer>
                 <CategoryInfo>
                   <h1>{name}</h1>
                   <p>{description}</p>
-                  <CustomButton>Explore {key}</CustomButton>
+                  <CustomButton
+                    onClick={() => navigate(`/products?category=${id}`)}
+                  >
+                    Explore {key}
+                  </CustomButton>
                 </CategoryInfo>
               </CategoryCardContainer>
             )

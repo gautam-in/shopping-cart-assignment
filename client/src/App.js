@@ -12,7 +12,6 @@ import CategoryCard from "./components/category-card/category-card.component";
 import Products from "./Page/products/products.pages";
 import SignUp from "./components/sign-up/sign-up.component";
 import ErrorBoundary from "./components/error-boundary/error-boundary.component";
-import CartDropdown from "./components/cart-dropdown/cart-dropdown.component";
 
 function App() {
   return (
@@ -20,9 +19,12 @@ function App() {
       <div className="App">
         <Router>
           <Header />
-          {/* <Slider /> */}
-          <CartDropdown />
-          {/* <Footer /> */}
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/products" element={<Products />} />
+            <Route path="/signin" element={<Login />} />
+            <Route path="/register" element={<Register />} />
+          </Routes>
         </Router>
       </div>
     </ErrorBoundary>

@@ -4,10 +4,10 @@ import { MenuBarContainer, MenuItem } from "./menu-bar.styles";
 const MenuBar = ({ categories, handleClick }) => {
   return (
     <MenuBarContainer>
-      {categories.map(
+      {categories?.map(
         ({ imageUrl, name, id }) =>
           imageUrl && (
-            <MenuItem to="/" key={id}>
+            <MenuItem onClick={() => handleClick(id)} key={id}>
               {name}
             </MenuItem>
           )

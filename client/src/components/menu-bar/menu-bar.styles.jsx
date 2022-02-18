@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { Link } from "react-router-dom";
 export const MenuBarContainer = styled.aside`
   display: none;
   @media screen and (min-width: 720px) {
@@ -15,9 +14,14 @@ export const MenuBarContainer = styled.aside`
     background-color: var(--color-light);
   }
 `;
-export const MenuItem = styled(Link)`
+export const MenuItem = styled.div`
   display: block;
   padding: 0.8rem;
-  color: var(--color-dark));
+  color: var(--color-dark);
   text-decoration: none;
+  cursor: pointer;
+  border-bottom: 2px dotted var(--color-gray);
+  &:hover {
+    color: var(--color-gray);
+  }
 `;

@@ -7,4 +7,6 @@ const api = axios.create({
 export const getAllBanners = () => api.get("/banners");
 export const getAllCategories = () => api.get("/categories");
 export const getAllProducts = () => api.get("/products");
+export const getProductsByCategory = (id) =>
+  api.get(`/products?category=${id}`);
 export const addTocart = () => api.post("/addToCart");

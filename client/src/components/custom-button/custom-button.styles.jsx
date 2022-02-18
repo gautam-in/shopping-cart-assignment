@@ -8,4 +8,6 @@ export const CustomButtonContainer = styled.button`
   text-transform: uppercase;
   font-weight: 300;
   cursor: pointer;
+  background-color: var(--color-primary);
+  color: var(--color-white);
 `;

@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useContext } from "react";
+import { GlobalState } from "../../../context/reducers/cart-reducer";
 import {
   CartItemContainer,
   ItemCount,
@@ -7,22 +8,27 @@ import {
   TotalAmount,
 } from "./cart-item.styles";
 
-const CartItem = () => {
+const CartItem = ({ id, imageURL, name, price, quantity }) => {
+  const {
+    state: { cartItems },
+    dispatch,
+  } = useContext(GlobalState);
+
   return (
     <CartItemContainer>
-      <ProductImage src="./static/images/products/baby/mamy.jpg" alt="" />
+      <ProductImage src={imageURL} alt={name} />
       <ProductInfo>
-        <h3>Apple-Wasgington</h3>
+        <h3>{name}</h3>
         <ItemCount>
           <span className="decrement">-</span>
-          <h6>8</h6>
+          <h6>{quantity}</h6>
           <span className="increment">+</span>
           <span className="cross">x</span>
-          <span className="total">Rs187</span>
+          <span className="total">Rs{price}</span>
         </ItemCount>
       </ProductInfo>
       <TotalAmount>
-        <span>187</span>
+        <span>{quantity * price}</span>
       </TotalAmount>
     </CartItemContainer>
   );

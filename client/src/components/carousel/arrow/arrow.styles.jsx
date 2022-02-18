@@ -1,7 +1,9 @@
 import styled from "styled-components";
 
 export const ArrowContainer = styled.span`
-  background: #4a403a;
+  display: none;
+  background: var(--color-dark);
+  opacity: 0.5;
   color: #fff;
   cursor: pointer;
   position: absolute;
@@ -15,7 +17,11 @@ export const ArrowContainer = styled.span`
   border-radius: 0 3px 3px 0;
   user-select: none;
   &:hover {
-    background: #595260;
+    background: var(--color-dark);
   }
   ${(props) => props.align === `next` && `right:0;`}
+
+  @media screen and (min-width: 720px) {
+    display: flex;
+  }
 `;

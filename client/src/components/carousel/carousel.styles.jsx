@@ -27,12 +27,16 @@ export const Dot = styled.span`
   cursor: pointer;
   height: 15px;
   width: 15px;
-  margin: 0 8px;
+  margin: 0 4px;
   background-color: ${(props) => props.color};
   border-radius: 50%;
   display: inline-block;
   transition: background-color 0.6s ease;
   &:hover {
     background-color: black;
+  }
+
+  @media screen and (min-width: 720px) {
+    margin: 0 8px;
   }
 `;

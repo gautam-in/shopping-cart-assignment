@@ -6,13 +6,12 @@ import {
   Select,
 } from "./mobile-menu-bar.styles";
 
-const MobileMenuBar = ({ categories, onChange }) => {
+const MobileMenuBar = ({ categories, handleChange }) => {
   return (
     <MobileMenuContainer>
-      <Label>sqsq</Label>
-      <Select>
-        {categories.map(({ name, key }) => (
-          <Option key={key} value={name}>
+      <Select onChange={(e) => handleChange(e.target.value)}>
+        {categories.map(({ name, key, id }) => (
+          <Option key={key} value={id}>
             {name}
           </Option>
         ))}

@@ -38,6 +38,11 @@ export const ItemCount = styled.div`
   .cross {
     margin: 0 20px;
   }
+  h6 {
+    height: 30px;
+    margin: 0 20px;
+    line-height: 25px;
+  }
 `;
 export const TotalAmount = styled.div`
   padding: 0.3rem 0;
