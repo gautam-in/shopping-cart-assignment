@@ -33,7 +33,12 @@ const CategoryCard = () => {
             imageUrl && (
               <CategoryCardContainer key={key} position={index}>
                 <CategoryImageContainer>
-                  <CategoryImage src={imageUrl} alt={name} />
+                  <CategoryImage
+                    src={imageUrl}
+                    alt={name}
+                    width="200"
+                    height="200"
+                  />
                 </CategoryImageContainer>
                 <CategoryInfo>
                   <h1>{name}</h1>

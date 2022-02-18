@@ -1,14 +1,16 @@
-import React, { useEffect, useState } from "react";
+import React, { Suspense, useEffect, useState } from "react";
 import Container from "../../components/container/Container";
-import MenuBar from "../../components/menu-bar/menu-bar.component";
-import MobileMenuBar from "../../components/mobile-menu-bar/mobile-menu-bar.component";
-import ProductItems from "../../components/product-items/product-items.component";
-import {
-  getAllCategories,
-  getAllProducts,
-  getProductsByCategory,
-} from "../../http";
+import { getAllCategories, getAllProducts } from "../../http";
 import { ProductsContainer, Wrapper } from "./products.styles";
+const ProductItems = React.lazy(() =>
+  import("../../components/product-items/product-items.component")
+);
+const MenuBar = React.lazy(() =>
+  import("../../components/menu-bar/menu-bar.component")
+);
+const MobileMenuBar = React.lazy(() =>
+  import("../../components/mobile-menu-bar/mobile-menu-bar.component")
+);
 
 const Products = () => {
   const [categories, setCategories] = useState([]);
@@ -41,18 +43,20 @@ const Products = () => {
   };
   if (!categories || !products) return <h1>Loading</h1>;
   return (
-    <ProductsContainer>
-      <Container>
-        <Wrapper>
-          <MobileMenuBar handleChange={handleClick} categories={categories} />
-          <MenuBar handleClick={handleClick} categories={categories} />
-          <ProductItems
-            filteredProducts={filteredProducts}
-            products={products}
-          />
-        </Wrapper>
-      </Container>
-    </ProductsContainer>
+    <Suspense fallback={<div>Loading...</div>}>
+      <ProductsContainer>
+        <Container>
+          <Wrapper>
+            <MobileMenuBar handleChange={handleClick} categories={categories} />
+            <MenuBar handleClick={handleClick} categories={categories} />
+            <ProductItems
+              filteredProducts={filteredProducts}
+              products={products}
+            />
+          </Wrapper>
+        </Container>
+      </ProductsContainer>
+    </Suspense>
   );
 };
 
