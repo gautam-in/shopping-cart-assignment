@@ -12,9 +12,9 @@ const ProductList = (props) => {
             <Fragment>
               {props.filterData.map((item) => {
                 return (
-                  <div class="cards">
-                    <div class="card-item">
-                      <div class="card-image">
+                  <div className="cards" key={item.id}>
+                    <div className="card-item">
+                      <div className="card-image">
                         {" "}
                         <img
                           src={item.imageURL}
@@ -22,9 +22,9 @@ const ProductList = (props) => {
                           className="img-fluid"
                         />
                       </div>
-                      <div class="card-info">
-                        <p class="card-title">{item.name}</p>
-                        <p class="card-intro">{item.description}</p>
+                      <div className="card-info">
+                        <p className="card-title">{item.name}</p>
+                        <p className="card-intro">{item.description}</p>
                       </div>
                       <div className="card-footer">
                         <div className="card-footer-left">
@@ -46,10 +46,10 @@ const ProductList = (props) => {
               {props.productdata &&
                 props.productdata.map((item) => {
                   return (
-                    <div class="cards">
-                      <div class="card-item">
-                        {/* <p class="card-title">{item.name}</p> */}
-                        <div class="card-image">
+                    <div className="cards" key={item.id}>
+                      <div className="card-item">
+                        {/* <p className="card-title">{item.name}</p> */}
+                        <div className="card-image">
                           {" "}
                           <img
                             src={item.imageURL}
@@ -57,9 +57,9 @@ const ProductList = (props) => {
                             className="img-fluid"
                           />
                         </div>
-                        <div class="card-info">
-                          <p class="card-title">{item.name}</p>
-                          <p class="card-intro">{item.description}</p>
+                        <div className="card-info">
+                          <p className="card-title">{item.name}</p>
+                          <p className="card-intro">{item.description}</p>
                         </div>
                         <div className="card-footer">
                           <div className="card-footer-left">

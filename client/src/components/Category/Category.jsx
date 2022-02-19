@@ -4,6 +4,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import { Container } from "@material-ui/core";
 import Button from "@material-ui/core/Button";
+import { useNavigate } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -16,9 +17,16 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Category = ({ categoryData }, props) => {
-  console.log(props);
+const Category = ({ categoryData }) => {
+  const navigate = useNavigate();
   const classes = useStyles();
+
+  const categoryHandler = async (id) => {
+    // props.history.push(`/products/${id}`);
+    localStorage.setItem("categoryId", id);
+    navigate(`/products`);
+  };
+
   return (
     <Fragment>
       <Container>
@@ -40,7 +48,12 @@ const Category = ({ categoryData }, props) => {
                   <div className="categoryData">
                     <h4>{categoryData.name}</h4>
                     <p>{categoryData.description}</p>
-                    <Button variant="contained" color="secondary" className="explore_btn">
+                    <Button
+                      variant="contained"
+                      color="secondary"
+                      className="explore_btn"
+                      onClick={() => categoryHandler(categoryData.id)}
+                    >
                       Explore {categoryData.key}
                     </Button>
                   </div>
@@ -54,7 +67,12 @@ const Category = ({ categoryData }, props) => {
                   <div className="categoryData">
                     <h4>{categoryData.name}</h4>
                     <p>{categoryData.description}</p>
-                    <Button variant="contained" color="secondary" className="explore_btn">
+                    <Button
+                      variant="contained"
+                      color="secondary"
+                      className="explore_btn"
+                      onClick={() => categoryHandler(categoryData.id)}
+                    >
                       Explore {categoryData.key}
                     </Button>
                   </div>

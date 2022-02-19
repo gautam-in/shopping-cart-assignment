@@ -9,41 +9,43 @@ import ProductList from "./ProductList";
 import { useLocation } from "react-router-dom";
 
 const ProductContainer = () => {
-    const location = useLocation()
+  const location = useLocation();
   const [categories, setCategories] = useState(null);
-  const [filterProductList, setFilterProductList] = useState(null)
-  const [productList, setProductList] = useState(null)
+  const [filterProductList, setFilterProductList] = useState(null);
+  const [productList, setProductList] = useState(null);
 
   const getCategories = async () => {
     const result = await axios.get("http://localhost:5000/categories");
-    console.log(result);
     if (result) {
       setCategories(result.data);
     }
   };
 
   const getProducts = async () => {
-      const productList = await axios.get("http://localhost:5000/products")
-        console.log(productList)
-        if(productList.status === 200) {
-           setProductList(productList.data)
-        }
-  }
+    const productList = await axios.get("http://localhost:5000/products");
+    if (productList.status === 200) {
+      setProductList(productList.data);
+    }
+  };
 
   const filterDataHandler = (id) => {
-      console.log(id)
-      let cloneProdcutArr = [...productList]
-        const filterProductList = cloneProdcutArr.filter((product) => {
-            return product.category === id
-        })
-        console.log(filterProductList)
-        setFilterProductList(filterProductList)
-  }
+    let cloneProdcutArr = [...productList];
+    const filterProductList = cloneProdcutArr.filter((product) => {
+      return product.category === id;
+    });
+    setFilterProductList(filterProductList);
+  };
 
   useEffect(() => {
     getCategories();
-    getProducts()
+    getProducts();
   }, []);
+
+  useEffect(() => {
+    if (productList && localStorage.getItem("categoryId")) {
+      filterDataHandler(localStorage.getItem("categoryId"));
+    }
+  }, [productList]);
 
   return (
     <Fragment>
@@ -57,7 +59,11 @@ const ProductContainer = () => {
                   .sort((a, b) => a.order - b.order)
                   .map((item) => {
                     return (
-                      <div key={item.id} className="sidebar-item-name" onClick={() => filterDataHandler(item.id)}>
+                      <div
+                        key={item.id}
+                        className="sidebar-item-name"
+                        onClick={() => filterDataHandler(item.id)}
+                      >
                         {item.name}
                       </div>
                     );
@@ -66,7 +72,10 @@ const ProductContainer = () => {
           </Col>
 
           <Col md={9}>
-              <ProductList productdata={productList} filterData={filterProductList} />
+            <ProductList
+              productdata={productList}
+              filterData={filterProductList}
+            />
           </Col>
         </Row>
       </Container>

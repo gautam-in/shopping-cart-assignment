@@ -21,7 +21,6 @@ const Home = () => {
 
   const getCategories = async () => {
     const result = await axios.get("http://localhost:5000/categories");
-    console.log(result);
     if (result && result.status === 200) {
       setCategoryData(result.data);
     }
@@ -30,12 +29,14 @@ const Home = () => {
   useEffect(() => {
     getBanners();
     getCategories();
+    localStorage.removeItem("categoryId");
   }, []);
 
   return (
     <Fragment>
+      <Container>
       <div className="shadow bottom">
-        <Container>
+        
           <Carousel showThumbs={false}>
             {bannerData &&
               bannerData.map((item) => {
@@ -46,8 +47,9 @@ const Home = () => {
                 );
               })}
           </Carousel>
-        </Container>
+       
       </div>
+      </Container>
 
       {categoryData &&
         categoryData
