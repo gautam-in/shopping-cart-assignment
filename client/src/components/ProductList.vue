@@ -109,7 +109,8 @@
         @click.stop="openCart = true"
       >
         <div class="cartHeading">
-          My Cart <span v-if="cartItems.length > 0">(1 item)</span>
+          My Cart
+          <span v-if="cartItems.length > 0">({{ cartItems.length }} item)</span>
         </div>
         <div class="itemInfo" v-for="(item, ind) in cartItems" :key="ind">
           <div class="row" v-if="item.quantity !== 0">
