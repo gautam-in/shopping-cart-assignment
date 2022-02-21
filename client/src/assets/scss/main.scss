@@ -1,0 +1,410 @@
+$secondary-color: rgb(191, 41, 87);
+$fnt12: 12px;
+$p10: 10px;
+$p50: 50px;
+
+.backWhite {
+  background-color: #fff;
+}
+
+.backGrey {
+  background-color: #eeeeee;
+}
+
+.error {
+  color: #902008;
+  margin-top: 10px;
+  font-size: 12px;
+  font-weight: bold;
+  text-align: left;
+}
+
+.stickyBottom {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+}
+
+.p10 {
+  padding: $p10;
+}
+
+.op07 {
+  opacity: 0.7;
+}
+.p50 {
+  padding: $p50;
+}
+
+.infoPadding {
+  padding: $p50;
+}
+
+.btnStyle {
+  background-color: $secondary-color;
+  color: rgb(255, 255, 255);
+  border: none;
+  padding: 5px;
+  border-radius: 3px;
+  font-size: $fnt12;
+}
+.signupInfo {
+  padding-left: 10rem;
+  text-align: initial;
+}
+
+.overlay {
+  position: fixed; /* Sit on top of the page content */
+
+  width: 100%; /* Full width (cover the whole page) */
+  height: 100%; /* Full height (cover the whole page) */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Black background with opacity */
+  z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+  /* Add a pointer on hover */
+}
+
+@mixin cartModal {
+  cursor: pointer;
+  display: inline-block;
+  height: 450px;
+  width: 300px;
+  position: absolute;
+  // background-color: #eeeeee;
+  z-index: 5;
+  top: 16%;
+  overflow: auto;
+  right: 12.1rem;
+  .cartHeading {
+    background-color: #1d2124;
+    color: #fff;
+    padding: 15px 0 15px 15px;
+    font-size: 14px;
+    text-align: left;
+    margin-bottom: 10px;
+    span {
+      font-size: 12px;
+    }
+  }
+
+  .itemInfo {
+    padding: 15px;
+    background-color: #fff;
+    margin-bottom: 10px;
+    span {
+      font-size: 12px;
+      font-weight: bold;
+      text-align: left;
+    }
+
+    .row > div:nth-child(2) {
+      padding: 0;
+      text-align: left;
+    }
+
+    .row > div:last-child {
+      display: flex;
+      align-items: center;
+      justify-content: right;
+      margin-top: 15px;
+    }
+
+    .incDecStyle {
+      display: flex;
+      align-items: center;
+    }
+
+    .minusRoundBtn {
+      border-radius: 50%;
+      position: relative;
+      width: 20px;
+      height: 20px;
+      margin-right: 5px;
+      &::before {
+        content: "-";
+        position: absolute;
+        top: 0;
+        right: 8px;
+      }
+    }
+    .plusRoundBtn {
+      border-radius: 50%;
+      position: relative;
+      width: 20px;
+      height: 20px;
+      margin-left: 5px;
+      margin-right: 10px;
+      &::before {
+        content: "+";
+        position: absolute;
+        top: 1px;
+        right: 7px;
+      }
+    }
+  }
+
+  .emptyCart {
+    font-size: 12px;
+    margin-top: 10rem;
+    margin-bottom: 5rem;
+    p {
+      margin-bottom: 0;
+      font-weight: bold;
+    }
+  }
+
+  .msgInfoContainer {
+    font-size: 11px;
+    padding: 10px;
+    font-weight: bold;
+    .messageInfo {
+      background-color: #fff;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      padding: 7px 0 7px 10px;
+      border-radius: 3px;
+    }
+  }
+
+  .checkoutContainer {
+    padding: 10px;
+    background-color: #fff;
+    width: 100%;
+    p {
+      font-size: 11px;
+      font-weight: bold;
+      margin-top: 0;
+    }
+
+    button {
+      width: 100%;
+    }
+  }
+}
+
+%cartModal {
+  @include cartModal;
+}
+
+.cartModal {
+  @extend %cartModal;
+}
+
+.imageSizing {
+  height: 200px;
+  width: 300px;
+}
+
+.productImage {
+  width: 100px;
+}
+
+.btnMobile {
+  display: none;
+}
+
+.categoryDrop {
+  display: none;
+}
+
+.cartModalMobile {
+  display: none;
+}
+
+@media only screen and (max-width: 767px) {
+  .loginInfo {
+    padding-left: 15px;
+  }
+
+  .signupInfo {
+    padding-left: 15px;
+  }
+
+  .cartModalMobile {
+    @include cartModal;
+    position: fixed;
+    z-index: 20;
+    height: 100%;
+    width: 100%;
+    top: 16%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: inline-block;
+    /* border: 1px solid black; */
+    // background-color: #eeeeee;
+
+    .cartHeading {
+      background-color: #fff;
+      color: black;
+      margin-top: 1rem;
+      font-weight: bold;
+    }
+    .itemInfo {
+      .row > div:nth-child(2) {
+        padding-left: 10px;
+        text-align: left;
+      }
+    }
+
+    .msgInfoContainer .messageInfo {
+      padding: 10px 0 10px 10px;
+      justify-content: flex-start;
+      & > div:last-child {
+        margin-left: 2rem;
+      }
+    }
+
+    .checkoutContainer {
+      position: fixed;
+      width: 100%;
+      bottom: 0;
+      left: 0;
+      button {
+        width: 100%;
+        .row {
+          & > div:first-child {
+            text-align: left;
+          }
+          & > div:last-child {
+            text-align: right;
+          }
+        }
+      }
+    }
+  }
+
+  .overlay {
+    display: none;
+  }
+
+  .imageSizing {
+    height: 150px;
+    width: 150px;
+  }
+
+  .infoPadding {
+    padding: $p10;
+  }
+
+  .categoryDrop {
+    display: block;
+    select {
+      width: 100%;
+      padding: 7px;
+      margin-bottom: 10px;
+      background-color: $secondary-color;
+      color: #fff;
+      border-radius: 3px;
+      option {
+        border-bottom: 1px solid #fff;
+      }
+    }
+  }
+
+  .categoryNav {
+    display: none;
+  }
+
+  .productName {
+    text-align: left;
+  }
+
+  .productImage {
+    width: 170px;
+    margin-top: 1rem;
+  }
+
+  .productPrice,
+  .btnDesktop {
+    display: none;
+  }
+
+  .btnMobile {
+    display: inline-block;
+    width: 100%;
+  }
+}
+
+@media only screen and (min-width: 767px) and (max-width: 990px) {
+  .overlay {
+    display: none;
+  }
+
+  .cartModalMobile {
+    @include cartModal;
+    position: fixed;
+    z-index: 20;
+    height: 100%;
+    width: 100%;
+    top: 17%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: inline-block;
+    /* border: 1px solid black; */
+    // background-color: #eeeeee;
+
+    .cartHeading {
+      background-color: #fff;
+      color: black;
+      margin-top: 1rem;
+      font-weight: bold;
+    }
+    .itemInfo {
+      .row > div:nth-child(2) {
+        padding-left: 10px;
+        text-align: left;
+      }
+    }
+
+    .msgInfoContainer .messageInfo {
+      padding: 10px 0 10px 10px;
+      justify-content: flex-start;
+      & > div:last-child {
+        margin-left: 2rem;
+      }
+    }
+
+    .checkoutContainer {
+      position: fixed;
+      width: 100%;
+      bottom: 0;
+      left: 0;
+      button {
+        width: 100%;
+        .row {
+          & > div:first-child {
+            text-align: left;
+          }
+          & > div:last-child {
+            text-align: right;
+          }
+        }
+      }
+    }
+  }
+
+  .productName {
+    text-align: left;
+  }
+  .productImage {
+    width: 170px;
+    margin-top: 1rem;
+  }
+
+  .productPrice,
+  .btnDesktop {
+    display: none;
+  }
+
+  .btnMobile {
+    display: inline-block;
+    width: 100%;
+  }
+}

@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Categories snapshot 1`] = `
+<section id="categoryContainer">
+  <div id="bannerContainer" class="container">
+    <div class="row">
+      <div class="categoryCol col-lg-12 col-xl-12 col-md-12 col-sm-12 col-12">
+        <div id="carouselExampleIndicators" data-bs-ride="carousel" class="carousel carousel-dark slide">
+          <div class="carousel-indicators"></div>
+          <div class="carousel-inner"></div> <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev" class="carousel-control-prev"><span aria-hidden="true" class="carousel-control-prev-icon"></span> <span class="visually-hidden">Previous</span></button> <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next" class="carousel-control-next"><span aria-hidden="true" class="carousel-control-next-icon"></span> <span class="visually-hidden">Next</span></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+`;
