@@ -23,7 +23,6 @@ export const CartTitle = styled.h3`
 	margin: 0;
 	display: flex;
 	justify-content: space-between;
-	margin-bottom: 15px;
 
 	@media (max-width: 768px) {
 		border-top: 1px solid #ccc;
@@ -31,6 +30,7 @@ export const CartTitle = styled.h3`
 		background-color: #fff;
 		padding: 20px;
 		color: #444;
+		margin-bottom: 15px;
 	}
 `;
 
