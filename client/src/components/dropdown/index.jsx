@@ -11,6 +11,7 @@ const Dropdown = ({ items, handleChange }) => {
 	const handleClick = (category) => {
 		setSelectionItem(category);
 		handleChange(category.value);
+		setDropdownOpen(false);
 	};
 
 	return (

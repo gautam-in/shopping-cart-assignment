@@ -21,6 +21,10 @@ const CategoriesMenu = ({ categories, handleCategoryClick }) => {
 		value: id,
 		text: name,
 	}));
+	formattedCatForDropdown.unshift({
+		value: "",
+		text: "All",
+	});
 
 	return (
 		<>
