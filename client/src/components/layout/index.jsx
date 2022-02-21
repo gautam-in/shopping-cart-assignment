@@ -18,8 +18,10 @@ const Layout = ({ children }) => {
 			<Content>
 				{isCartOpen ? (
 					<>
-						<Modal />
-						<CartBlock />
+						<ModalWrapper>
+							<Modal />
+							<CartBlock />
+						</ModalWrapper>
 					</>
 				) : null}
 				{children}

@@ -27,6 +27,11 @@ const cartButtonStyles = css`
 	border-radius: 50%;
 	transition: none;
 
+	@media (max-width: 768px) {
+		padding: 0 10px;
+		border-radius: 4px;
+	}
+
 	&:hover {
 		background-color: ${primaryColor};
 		color: #fff;

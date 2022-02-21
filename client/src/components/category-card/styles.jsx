@@ -26,6 +26,7 @@ export const CategoryDetails = styled.div`
 	flex-direction: column;
 	align-items: center;
 	flex: 1 0 0;
+	text-align: center;
 `;
 
 export const Description = styled.div`

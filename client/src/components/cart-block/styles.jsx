@@ -3,12 +3,17 @@ import styled from "styled-components";
 export const CartWrapper = styled.div`
 	position: absolute;
 	right: 0;
-	width: 480px;
+	width: 400px;
 	background-color: #eee;
+	min-height: 350px;
 	height: calc(100vh - 95px);
 	display: flex;
 	flex-flow: column;
-	z-index: 10;
+
+	@media (max-width: 768px) {
+		width: 100%;
+		height: calc(100vh - 54px);
+	}
 `;
 
 export const CartTitle = styled.h3`
@@ -18,6 +23,15 @@ export const CartTitle = styled.h3`
 	margin: 0;
 	display: flex;
 	justify-content: space-between;
+	margin-bottom: 15px;
+
+	@media (max-width: 768px) {
+		border-top: 1px solid #ccc;
+		margin-top: 25px;
+		background-color: #fff;
+		padding: 20px;
+		color: #444;
+	}
 `;
 
 export const CartHeading = styled.div``;
@@ -35,10 +49,13 @@ export const CartCloseIcon = styled.span`
 	cursor: pointer;
 	/* background-color: #444;
 	padding: 20px; */
+
+	@media (max-width: 768px) {
+		display: none;
+	}
 `;
 
 export const CartItems = styled.div`
-	margin-top: 15px;
 	height: calc(100vh - 300px);
 	flex: 1;
 	overflow: auto;

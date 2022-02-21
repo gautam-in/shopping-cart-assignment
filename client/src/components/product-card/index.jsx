@@ -20,11 +20,22 @@ const ProductCard = ({ product }) => {
 	const { name, imageURL, description, price } = product;
 	const { dispatch } = useContext(CartContext);
 
-	const handleAddToCart = (item) => {
-		dispatch({
-			type: "ADD_TO_CART",
-			payload: item,
-		});
+	const handleAddToCart = async (item) => {
+		await fetch("http://localhost:5000/addToCart", {
+			method: "POST",
+			body: JSON.stringify({ productId: item.id }),
+		})
+			.then((response) => response.json())
+			.then((responseJson) => {
+				console.log(responseJson);
+				dispatch({
+					type: "ADD_TO_CART",
+					payload: item,
+				});
+			})
+			.catch((err) => {
+				console.log("Failed to add to cart", err.message);
+			});
 	};
 
 	const getFullBuyNowText = () => {

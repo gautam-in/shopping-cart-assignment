@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import { ReactComponent as MenuIconSVG } from "../../assets/menu.svg";
 
 export const HeaderWrapper = styled.header`
 	width: 100%;
@@ -22,6 +23,10 @@ export const HeaderContent = styled.div`
 export const NavSection = styled.div`
 	width: 75%;
 	/* flex: 1 0 0; */
+
+	@media (max-width: 425px) {
+		width: auto;
+	}
 `;
 
 export const NavItems = styled.div`
@@ -64,6 +69,8 @@ export const NavLink = styled(Link)`
 
 export const LogoContainer = styled.div`
 	padding-top: 5px;
+	align-items: center;
+	display: flex;
 `;
 
 export const Logo = styled.img`
@@ -72,4 +79,39 @@ export const Logo = styled.img`
 	@media (max-width: 425px) {
 		max-width: 100px;
 	}
+`;
+
+export const MenuIcon = styled(MenuIconSVG)`
+	padding-right: 25px;
+`;
+
+export const MenuIconWrapper = styled.div`
+	width: 40px;
+	height: 40px;
+	padding-left: 10px;
+
+	@media (min-width: 426px) {
+		display: none;
+	}
+`;
+
+export const MobileNavWrapper = styled.div`
+	position: absolute;
+	width: 100%;
+	top: 56px;
+	background-color: #eee;
+	z-index: 1001;
+
+	@media (min-width: 426px) {
+		display: none;
+	}
+`;
+
+export const MobileNavLink = styled(Link)`
+	display: block;
+	padding: 0 10px;
+	color: #6c6c6c;
+	font-weight: 600;
+	padding: 10px 15px;
+	border-bottom: 1px solid #ccc;
 `;
