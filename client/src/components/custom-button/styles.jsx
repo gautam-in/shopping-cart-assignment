@@ -38,13 +38,6 @@ const cartButtonStyles = css`
 	}
 `;
 
-const getButtonStyles = (props) => {
-	if (props.isAuth) {
-		return authButtonStyles;
-	}
-	return props.isCart ? cartButtonStyles : buttonStyles;
-};
-
 export const CustomButtonContainer = styled.button`
 	width: auto;
 	cursor: pointer;
@@ -71,5 +64,10 @@ export const CustomButtonContainer = styled.button`
 		pointer-events: none;
 	}
 
-	${getButtonStyles}
+	${(props) =>
+		props.isAuth
+			? authButtonStyles
+			: props.isCart
+			? cartButtonStyles
+			: buttonStyles}
 `;

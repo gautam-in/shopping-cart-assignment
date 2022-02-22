@@ -2,13 +2,16 @@ import styled from "styled-components";
 
 import { ReactComponent as CartIconSVG } from "../../assets/cart.svg";
 
-export const CartWrapper = styled.div`
+export const CartWrapper = styled.button`
 	background-color: #f1f1f1;
 	padding: 10px 15px;
 	display: flex;
 	align-items: center;
 	height: 100%;
 	cursor: pointer;
+	border: 0;
+	font-family: "Dosis";
+	font-size: 16px;
 `;
 
 export const CartIcon = styled(CartIconSVG)`

@@ -43,13 +43,15 @@ export const SubTitle = styled.span`
 	padding: 20px; */
 `;
 
-export const CartCloseIcon = styled.span`
+export const CartCloseIcon = styled.button`
 	font-size: 18px;
 	font-weight: 400;
 	cursor: pointer;
+	background-color: inherit;
+	border: none;
+	color: #fff;
 	/* background-color: #444;
 	padding: 20px; */
-
 	@media (max-width: 768px) {
 		display: none;
 	}

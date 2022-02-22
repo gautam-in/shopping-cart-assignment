@@ -16,7 +16,7 @@ const CategoryItem = ({ type, name, imageUrl, description }) => {
 				<Name>{name}</Name>
 				<Description>{description}</Description>
 				<CustomButton>
-					<Explore>Explore {name}</Explore>
+					<Explore>{`Explore ${name}`}</Explore>
 				</CustomButton>
 			</CategoryDetails>
 		);

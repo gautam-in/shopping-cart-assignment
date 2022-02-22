@@ -10,6 +10,7 @@ import { CartContext } from "../../contexts/cart-context";
 const Layout = ({ children }) => {
 	const {
 		state: { isCartOpen },
+		dispatch,
 	} = useContext(CartContext);
 
 	return (
@@ -19,7 +20,13 @@ const Layout = ({ children }) => {
 				{isCartOpen ? (
 					<>
 						<ModalWrapper>
-							<Modal />
+							<Modal
+								onClick={() =>
+									dispatch({
+										type: "CART_TOGGLE",
+									})
+								}
+							/>
 							<CartBlock />
 						</ModalWrapper>
 					</>

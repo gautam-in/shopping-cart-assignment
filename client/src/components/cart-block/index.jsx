@@ -35,6 +35,17 @@ const CartBlock = () => {
 		0
 	);
 
+	const getSubtitle = () => {
+		if (cartCount > 0) {
+			return (
+				<SubTitle>
+					({`${cartCount} ${cartCount === 1 ? "item" : "items"}`})
+				</SubTitle>
+			);
+		}
+		return "";
+	};
+
 	const handleCartClose = () => {
 		dispatch({
 			type: "CART_TOGGLE",
@@ -44,14 +55,7 @@ const CartBlock = () => {
 	return (
 		<CartWrapper>
 			<CartTitle>
-				<CartHeading>
-					My Cart{" "}
-					{cartCount > 0 ? (
-						<SubTitle>
-							({cartCount} {cartCount === 1 ? "item" : "items"})
-						</SubTitle>
-					) : null}
-				</CartHeading>
+				<CartHeading>My Cart {getSubtitle()}</CartHeading>
 				<CartCloseIcon onClick={handleCartClose}>&#10006;</CartCloseIcon>
 			</CartTitle>
 			{cartCount > 0 ? (
@@ -77,7 +81,7 @@ const CartBlock = () => {
 						<CustomButton isAuth onClick={handleCartClose}>
 							<Checkout>
 								<CheckoutText>Proceed to Checkout</CheckoutText>
-								<CheckoutTotal>Rs.{totalPrice} &gt;</CheckoutTotal>
+								<CheckoutTotal>{`Rs.${totalPrice}`} &gt;</CheckoutTotal>
 							</Checkout>
 						</CustomButton>
 					</CartFooter>

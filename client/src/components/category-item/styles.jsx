@@ -29,7 +29,7 @@ export const CategoryDetails = styled.div`
 	text-align: center;
 `;
 
-export const Description = styled.div`
+export const Description = styled.span`
 	margin-bottom: 30px;
 	text-align: center;
 	font-weight: 600;

@@ -13,12 +13,14 @@ const Cart = () => {
 			type: "CART_TOGGLE",
 		});
 	};
+
 	const cartCount = items.reduce((acc, product) => acc + product.quantity, 0);
+
 	return (
 		<CartWrapper onClick={toggleCart}>
 			<CartIcon />
 			<CartCount>
-				{cartCount} {cartCount === 1 ? "item" : "items"}
+				{`${cartCount} ${cartCount === 1 ? "item" : "items"}`}
 			</CartCount>
 		</CartWrapper>
 	);

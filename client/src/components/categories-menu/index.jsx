@@ -29,16 +29,16 @@ const CategoriesMenu = ({ categories, handleCategoryClick }) => {
 	return (
 		<>
 			<CategoriesContainer>
-				{categories &&
-					categories.map(({ id, name }) => (
-						<ListItem
-							active={selectedCategory === id}
-							onClick={() => handleCategoryChange(id)}
-							key={id}
-						>
-							{name}
-						</ListItem>
-					))}
+				{categories.map(({ id, name }) => (
+					<ListItem
+						aria-selected={selectedCategory === id}
+						active={selectedCategory === id}
+						onClick={() => handleCategoryChange(id)}
+						key={id}
+					>
+						{name}
+					</ListItem>
+				))}
 			</CategoriesContainer>
 			<CategoriesContainerMobile>
 				{formattedCatForDropdown && formattedCatForDropdown.length > 0 && (

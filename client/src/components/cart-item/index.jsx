@@ -44,7 +44,7 @@ const CartItem = ({ dispatch, product }) => {
 						<span>&#10006;</span>
 						<span>{`Rs. ${price}`}</span>
 					</CartActions>
-					<Total>Rs.{quantity * price}</Total>
+					<Total>{`Rs.${quantity * price}`}</Total>
 				</PriceBlock>
 			</CartItemDetails>
 		</CartItemContainer>

@@ -37,14 +37,13 @@ const SignIn = () => {
 			case "password":
 				if (!value) {
 					errorData.password = "Password is required.";
-				}
-				if (value.length < 6) {
+				} else if (value.length < 6) {
 					errorData.password = "Password must have minimum 6 characters.";
 				} else if (value.split(" ").length > 1) {
 					errorData.password = "Password should not contains space.";
 				} else if (!/[A-Za-z]/.test(value) || !/\d/.test(value)) {
 					errorData.password =
-						"Password should contains alteast one character and number.";
+						"Password should contains alteast one character and a number.";
 				} else {
 					errorData.password = "";
 				}
