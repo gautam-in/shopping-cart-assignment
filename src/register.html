@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="./sass/main.css" />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-md navbar-light bg-white shadow">
+      <a class="navbar-brand" href="./index.html">
+        <img
+          class="d-block img-fluid w-100"
+          src="./images/logo.png"
+          alt="sabka bazaar logo"
+        />
+      </a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="./index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./products.html">Products</a>
+          </li>
+        </ul>
+      </div>
+      <div class="nav_right_box">
+        <ul class="nav_login_links">
+          <li class="nav-item">
+            <a class="nav-link" href="./login.html">Sign In</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./register.html">Register</a>
+          </li>
+        </ul>
+        <a href="#" class="cart_link">
+          <img class="d-block img-fluid cart_img" src="./images/cart.svg" />0
+          items
+        </a>
+      </div>
+    </nav>
+    <div class="container-fluid login_div h-100">
+      <div class="row justify-content-center align-items-center h-100">
+        <div class="col-12">
+          <div class="container login_inner_div">
+            <div class="row justify-content-center align-items-center">
+              <div class="col-lg-5 col-md-5 col-sm-12">
+                <h2>SignUp</h2>
+                <p>We do not share you personal details with anyone.</p>
+              </div>
+              <div class="col-lg-7 col-md-7 col-sm-12">
+                <form action="#" id="login_form">
+                  <div class="form-group">
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="First Name"
+                      id="fname"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="Last  Name"
+                      id="lname"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <input
+                      type="email"
+                      class="form-control"
+                      placeholder="Email"
+                      id="email"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <input
+                      type="password"
+                      class="form-control"
+                      placeholder="Enter password"
+                      id="pwd"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <input
+                      type="password"
+                      class="form-control"
+                      placeholder="Confirm Password"
+                      id="pwd"
+                    />
+                  </div>
+                  <button type="submit" class="btn btn-lg btn-block login_btn">
+                    SignUp
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <p>Copyright &copy; 2019-2022 Sabka Bazaar Grocery Supplies Pvt Ltd</p>
+    </footer>
+  </body>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+</html>

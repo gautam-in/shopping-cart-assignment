@@ -1,0 +1,401 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body,
+html {
+  height: 100vh;
+  font-family: "Poppins", sans-serif;
+  overflow-x: hidden;
+}
+
+h3 {
+  font-weight: 600;
+  font-size: large;
+}
+
+p {
+  font-size: small;
+  font-weight: 400;
+}
+
+/*****login page********/
+.login_inner_div h2 {
+  font-weight: 600;
+  font-size: 3rem;
+}
+
+form#login_form .form-control {
+  border: none;
+  border-bottom: 1px solid #ced4da;
+  border-radius: 0px;
+}
+
+form#login_form .form-control:focus {
+  outline: 0;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  border-bottom: 1.5px solid #80bdff;
+}
+
+button.btn.btn-lg.btn-block.login_btn {
+  background-color: deeppink;
+  color: #fff;
+  border-radius: 0px;
+}
+
+/********footer ************/
+footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background: #ededed;
+  padding: 0.5rem 0;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+footer p {
+  margin: 0;
+  font-size: 12px;
+}
+
+/********navbar*********/
+nav.navbar.navbar-expand-md.navbar-light.bg-white.shadow {
+  z-index: 9999;
+}
+
+ul.nav_login_links {
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: auto;
+}
+
+.nav-link {
+  color: dimgrey;
+}
+
+a.cart_link {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  color: #000;
+}
+
+a.cart_link:hover {
+  text-decoration: none;
+}
+
+a.cart_link .cart_img {
+  width: 35px;
+}
+
+/***************index.html********************/
+a.explore_btn {
+  color: #fff;
+  background: deeppink;
+  padding: 0.5rem 0.7rem;
+}
+
+a.explore_btn:hover {
+  text-decoration: none;
+}
+
+.banner_detail.text-center {
+  line-height: 1.6rem;
+}
+
+.container.py-5 {
+  -webkit-box-shadow: 0px 14px 10px -18px #111;
+          box-shadow: 0px 14px 10px -18px #111;
+}
+
+/********product page ********/
+.bg-grey {
+  background-color: #d3d3d36b;
+}
+
+ul.product_category_list {
+  list-style: none;
+}
+
+ul.product_category_list li {
+  line-height: 2.5;
+  border-bottom: 1px solid #bfc3c759;
+  color: #8e9091;
+  cursor: pointer;
+}
+
+.product_details .card-header {
+  padding: 0.4rem 0.7rem !important;
+  margin-bottom: 0 !important;
+  background-color: #fff !important;
+  border-bottom: none !important;
+  height: 110px;
+}
+
+.product_details .card-title {
+  font-size: inherit;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.product_details .card-body {
+  padding: 0.75rem 0.75rem 0rem 0.75rem !important;
+}
+
+.product_details .card-img {
+  height: auto;
+}
+
+.product_details p.card-text {
+  background-color: #f7f7f7 !important;
+  padding: 0.3rem;
+  font-size: 14px;
+  height: 120px;
+  overflow-y: auto;
+}
+
+.product_details p.card-text::-webkit-scrollbar {
+  display: none;
+}
+
+.product_details .card-footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  padding: 1rem 0rem;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  background-color: #fff !important;
+  border: none !important;
+}
+
+.product_details .card-footer p {
+  margin-bottom: 0px;
+}
+
+.product_details button.buy_now_btn {
+  color: #fff;
+  background: deeppink;
+  padding: 5px 7px;
+  border: none;
+  border-radius: 3px;
+}
+
+.product_details button.buy_now_btn:hover {
+  text-decoration: none;
+}
+
+/*******************add to cart***********************/
+.main_cart {
+  background: #fff;
+}
+
+.card {
+  border: none;
+}
+
+.product_name {
+  color: black;
+  font-size: 1 rem;
+  text-transform: capitalize;
+  font-weight: 500;
+}
+
+.delete_wish_item p {
+  font-size: 0.8rem;
+  margin-bottom: 0;
+}
+
+#item_val {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.set_quantity {
+  position: relative;
+}
+
+.page-link {
+  line-height: 16px;
+  width: 45px;
+  font-size: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #495057;
+}
+
+.page-item input {
+  line-height: 26px;
+  padding: 3px;
+  font-size: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+}
+
+.page-link:hover {
+  text-decoration: none;
+  color: #495057;
+  outline: none !important;
+}
+
+.page-link:focus {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.price_indiv p {
+  font-size: 1.1rem;
+}
+
+.fa-heart:hover {
+  color: red;
+}
+
+button.btn.btn_discount.text-uppercase {
+  color: #fff;
+  background: deeppink;
+  padding: 5px 7px;
+}
+
+/********cart********/
+.sidebar {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 100000;
+  top: 0;
+  right: 0;
+  background-color: #fff;
+  overflow-x: hidden;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.cart_top.d-flex.align-items-center.justify-content-between {
+  background: #000;
+  color: #fff;
+  padding: 0px 10px;
+}
+
+.cart_top.d-flex.align-items-center.justify-content-between h2.py-4 {
+  font-size: 16px;
+}
+
+.sidebar a {
+  text-decoration: none;
+  font-size: 25px;
+  color: #fff;
+  display: block;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.sidebar a:hover {
+  color: #f1f1f1;
+}
+
+.sidebar .closebtn {
+  font-size: 36px;
+}
+
+.openbtn {
+  font-size: 20px;
+  cursor: pointer;
+  background-color: #111;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+}
+
+.openbtn:hover {
+  background-color: #444;
+}
+
+#main {
+  -webkit-transition: margin-left 0.5s;
+  transition: margin-left 0.5s;
+  padding: 16px;
+}
+
+.cart_total {
+  background: #ededed;
+  padding: 15px 25px;
+}
+
+.cart_amt.d-flex.align-items-center.justify-content-between {
+  background: deeppink;
+  padding: 10px;
+  color: #fff;
+  border-radius: 3px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidebar {
+    padding-top: 15px;
+  }
+  .sidebar a {
+    font-size: 18px;
+  }
+}
+/*# sourceMappingURL=main.css.map */
