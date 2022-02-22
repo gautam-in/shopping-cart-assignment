@@ -1,14 +1,20 @@
 import React, { Fragment } from "react";
 import { Button, ButtonGroup, Table } from "reactstrap";
 import ChevronRightIcon from "@material-ui/icons/ChevronRight";
+import CloseIcon from "@material-ui/icons/Close";
 import "./cart.scss";
 import { useContext } from "react";
 import { MainContext } from "../../MainContext";
 import { useEffect } from "react";
 
 const CartContainer = ({ cartItems, toggleDrawer }) => {
-  const { setCartItems, cartTotal, setCartTotal, setCartTotalItems } =
-    useContext(MainContext);
+  const {
+    setCartItems,
+    cartTotal,
+    setCartTotal,
+    setCartTotalItems,
+    cartTotalItems,
+  } = useContext(MainContext);
   console.log("cartcontainerprops", cartItems);
 
   const quantityIncreaseHandler = (type, item) => {
@@ -39,8 +45,7 @@ const CartContainer = ({ cartItems, toggleDrawer }) => {
   };
 
   const closeCartHandler = () => {
-      console.log(toggleDrawer('right',false))
-    // toggleDrawer("right", false);
+    toggleDrawer("right", false);
   };
 
   useEffect(() => {
@@ -58,60 +63,79 @@ const CartContainer = ({ cartItems, toggleDrawer }) => {
 
   return (
     <Fragment>
+      <div className="cart-header">
+        <p>
+          My Cart {cartTotalItems > 0 && <span>({cartTotalItems} items )</span>}
+          <span className="para-close-icon" onClick={closeCartHandler}>
+            <CloseIcon />
+          </span>
+        </p>
+      </div>
       {cartItems.length > 0 ? (
-        <Table borderless className="cart-item-table">
-          <tbody>
-            {cartItems &&
-              cartItems.map((item) => {
-                return (
-                  <tr key={item.id}>
-                    <td style={{ width: 100 }}>
-                      <img
-                        src={item.imageURL}
-                        alt={item.name}
-                        className="img-fluid"
-                      />
-                    </td>
-                    <td style={{ width: "60%" }}>
-                      <strong>{item.name}</strong>
-                      <br />
-                      <ButtonGroup
-                        // style={{height : 25}}
-                        size="sm"
-                        className="cart-btngrp-btn"
-                      >
-                        <Button
-                          className="cart-buttons"
-                          onClick={() =>
-                            quantityIncreaseHandler("decrease", item)
-                          }
+        <Fragment>
+          <Table borderless className="cart-item-table">
+            <tbody>
+              {cartItems &&
+                cartItems.map((item) => {
+                  return (
+                    <tr key={item.id}>
+                      <td style={{ width: 100 }}>
+                        <img
+                          src={item.imageURL}
+                          alt={item.name}
+                          className="img-fluid"
+                        />
+                      </td>
+                      <td style={{ width: "60%" }}>
+                        <strong>{item.name}</strong>
+                        <br />
+                        <ButtonGroup
+                          // style={{height : 25}}
+                          size="sm"
+                          className="cart-btngrp-btn"
                         >
-                          <span>&#8722;</span>
-                        </Button>
-                        <Button className="cart-quantity-btn">
-                          <span>{item.quantity}</span>
-                        </Button>
-                        <Button
-                          className="cart-buttons"
-                          onClick={() =>
-                            quantityIncreaseHandler("increase", item)
-                          }
-                        >
-                          <span> &#43;</span>
-                        </Button>
-                      </ButtonGroup>
-                      <span className="price-span"> x Rs. {item.price} </span>
-                    </td>
-                    <td style={{ position: "relative" }}>
-                      <span style={{ position: "absolute", bottom: "16%" }}>
-                        RS {item.price * item.quantity}
-                      </span>
-                    </td>
-                  </tr>
-                );
-              })}
-          </tbody>
-        </Table>
+                          <Button
+                            className="cart-buttons"
+                            onClick={() =>
+                              quantityIncreaseHandler("decrease", item)
+                            }
+                          >
+                            <span>&#8722;</span>
+                          </Button>
+                          <Button className="cart-quantity-btn">
+                            <span>{item.quantity}</span>
+                          </Button>
+                          <Button
+                            className="cart-buttons"
+                            onClick={() =>
+                              quantityIncreaseHandler("increase", item)
+                            }
+                          >
+                            <span> &#43;</span>
+                          </Button>
+                        </ButtonGroup>
+                        <span className="price-span"> x Rs. {item.price} </span>
+                      </td>
+                      <td style={{ position: "relative" }}>
+                        <span style={{ position: "absolute", bottom: "16%" }}>
+                          RS {item.price * item.quantity}
+                        </span>
+                      </td>
+                    </tr>
+                  );
+                })}
+            </tbody>
+          </Table>
+
+          <div className="cart-advertisement">
+            <img
+              src="/static/images/lowest-price.png"
+              className="img-fluid"
+              alt="advertisement"
+            />
+            <span>You won't find it cheaper anywwhere</span>
+          </div>
+        </Fragment>
       ) : (
         <Fragment>
           <div className="cart-empty-msg">

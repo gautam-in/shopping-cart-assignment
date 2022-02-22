@@ -62,3 +62,47 @@
     top: 6px;
     right: 78px;
 }
+
+@media (min-width : 320px) and (max-width: 480px) {
+    .navbar-brand {
+        display: contents;
+    }
+
+    .login-navitem {
+        margin-left: 0 !important;
+        float: none !important;
+        position: relative !important;
+        top: 0 !important;
+        right: 0 !important;
+        padding: 7px;
+    }
+
+    .login-navitem-signup {
+        margin-left: 0 !important;
+        float: none !important;
+        position: relative !important;
+        top: 0 !important;
+        right: 0 !important;
+        padding: 7px;
+    }
+}
+
+@media (min-width : 500px) and (max-width : 760px) {
+    .login-navitem {
+        margin-left: 0 !important;
+        float: none !important;
+        position: relative !important;
+        top: 0 !important;
+        right: 0 !important;
+        padding: 7px;
+    }
+
+    .login-navitem-signup {
+        margin-left: 0 !important;
+        float: none !important;
+        position: relative !important;
+        top: 0 !important;
+        right: 0 !important;
+        padding: 7px;
+    }
+}
