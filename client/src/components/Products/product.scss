@@ -10,6 +10,54 @@
     height: 100%;
 }
 
+.sidebar-select {
+    display: none;
+
+    select {
+        background-color: #c51162;
+        color: #fff;
+        border-color: #c51162;
+
+        option {
+            background-color: #c51162;
+            color: #fff;
+            padding: 0;
+        }
+
+        // select:focus > option:checked, option:hover { 
+        //     background: #000 !important;
+        // }
+    }
+
+    // select option:hover,
+    // select option:focus,
+    // select option:active {
+    //     background: linear-gradient(#000000, #000000);
+    //     background-color: #000000 !important; /* for IE */
+    //     color: #ffed00 !important;
+    // }
+
+    // select option:checked {
+    //     background: linear-gradient(#d6d6d6, #d6d6d6);
+    //     background-color: #d6d6d6 !important; /* for IE */
+    //     color: #000000 !important;
+    // }
+
+    // select:focus>option:checked,
+    // option:hover {
+    //     background: #000 !important;
+    // }
+
+    // select:active, select:hover {
+    //     outline: none
+    //   }
+
+    //   /* make it red instead (with with same width and style) */
+    //   select:active, select:hover {
+    //     outline-color: red
+    //   }
+}
+
 // .product-list {
 //     display: flex;
 //     flex-direction: column;
@@ -51,11 +99,12 @@
 // }
 
 .card-footer-left {
+
     // float: left;
-   p {
-    position: relative;
-    top : 6px;
-   }
+    p {
+        position: relative;
+        top: 6px;
+    }
 }
 
 // .card-footer-right {
@@ -201,11 +250,45 @@
         margin-top: auto;
     }
 }
+
 .btn-buy-now {
     border-radius: 0;
     background-color: #c51162;
     border: none;
 }
+
 .btn-buy-now:hover {
     background-color: #c51162;
+}
+
+@media (min-width : 320px) and (max-width : 480px) {
+    .sidebar-select {
+        display: block;
+    }
+
+    .sidebar {
+        display: none;
+    }
+
+    .navbar-brand {
+        display: contents;
+    }
+
+    .login-navitem {
+        margin-left: 0 !important;
+        float: none !important;
+        position: relative !important;
+        top: 0 !important;
+        right: 0 !important;
+        padding: 7px;
+    }
+
+    .login-navitem-signup {
+        margin-left: 0 !important;
+        float: none !important;
+        position: relative !important;
+        top: 0 !important;
+        right: 0 !important;
+        padding: 7px;
+    }
 }

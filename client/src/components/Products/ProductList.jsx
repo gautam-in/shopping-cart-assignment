@@ -3,7 +3,12 @@ import { Container } from "reactstrap";
 import "./product.scss";
 
 const ProductList = (props) => {
-  console.log();
+  console.log('productlist',props);
+
+  const cartHandler = (product) => {
+    props.addTocart(product);
+  };
+
   return (
     <Fragment>
       <Container>
@@ -31,7 +36,10 @@ const ProductList = (props) => {
                           <p>MRP Rs.{item.price}</p>
                         </div>
                         <div className="card-footer-right">
-                          <button className="btn btn-primary btn-buy-now">
+                          <button
+                            className="btn btn-primary btn-buy-now"
+                            onClick={() => cartHandler(item)}
+                          >
                             Buy Now
                           </button>
                         </div>
@@ -66,7 +74,10 @@ const ProductList = (props) => {
                             <p>MRP Rs.{item.price}</p>
                           </div>
                           <div className="card-footer-right">
-                            <button className="btn btn-primary btn-buy-now">
+                            <button
+                              className="btn btn-primary btn-buy-now"
+                              onClick={() => cartHandler(item)}
+                            >
                               Buy Now
                             </button>
                           </div>

@@ -1,11 +1,64 @@
 .logo-responsive {
     width: 20%;
 }
+
 .nav-span {
-    color: rgba(0,0,0,.5);
+    color: rgba(0, 0, 0, .5);
     cursor: pointer;
+
     a {
         text-decoration: none;
-        color: rgba(0,0,0,.5);
+        color: rgba(0, 0, 0, .5);
     }
+}
+
+.cart_img {
+    width: 30px;
+    // path {
+    //     fill: red!important;
+    // }
+}
+
+.custom_navbar_margin {
+    padding: 0;
+}
+
+.navbar_text_margin_padding {
+    padding: 10px;
+    margin-top: 45px;
+    background-color: #eeeeee;
+    color: #6c6c6c;
+}
+
+.list {
+    width: 500px;
+    position: relative;
+    height: 100%;
+}
+
+.login-navitem {
+    margin-left: auto;
+    float: right;
+    position: absolute;
+    right: 0;
+    top: 6px;
+    right: 143px;
+}
+
+.login-navitem-userName {
+    margin-left: auto;
+    float: right;
+    position: absolute;
+    right: 0;
+    top: 6px;
+    right: 103px;
+}
+
+.login-navitem-signup {
+    margin-left: auto;
+    float: right;
+    position: absolute;
+    right: 0;
+    top: 6px;
+    right: 78px;
 }
