@@ -5,11 +5,12 @@ import ProductContainer from "./components/Products/ProductContainer";
 import NavbarHeader from "./components/navbar/Navbar";
 import LogIn from "./components/SignInAndRegister/LogIn";
 import Register from "./components/SignInAndRegister/Register";
+import Footer from "./components/Footer/Footer";
 
 function App() {
 
   return (
-    <div>
+    <div className="App">
       <NavbarHeader />
       <Routes>
       <Route exact path="/" element={<Home />} />
@@ -17,6 +18,7 @@ function App() {
       <Route exact path='/signin' element={<LogIn />} />
       <Route exact path='/register' element={<Register />} />
       </Routes>
+      <Footer />
     </div>
   );
 }
