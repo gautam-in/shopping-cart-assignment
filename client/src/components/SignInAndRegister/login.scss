@@ -1,4 +1,15 @@
 .login_form {
     margin-top: 20px;
     padding: 20px 40px;
+    button {
+        background-color: #c51162;
+        border-radius: 0;
+        border : none
+    }
+    button:hover {
+        background : #c51162
+    }
+    button:focus {
+        outline: none
+    }
 }

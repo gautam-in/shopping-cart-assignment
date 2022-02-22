@@ -7,7 +7,6 @@ import {
   NavbarBrand,
   Nav,
   NavItem,
-  UncontrolledDropdown,
   NavbarText,
   Container,
 } from "reactstrap";
@@ -51,7 +50,7 @@ const NavbarHeader = (props) => {
 
   const closeDrawer = (anchor, status) => {
     setState({ ...state, [anchor]: status });
-  }
+  };
 
   const toggle = () => setIsOpen(!isOpen);
 
@@ -106,23 +105,6 @@ const NavbarHeader = (props) => {
                   Products
                 </span>
               </NavItem>
-              <UncontrolledDropdown nav inNavbar>
-                {/* <DropdownToggle nav caret>
-                Options
-              </DropdownToggle>
-              <DropdownMenu right>
-                <DropdownItem>
-                  Option 1
-                </DropdownItem>
-                <DropdownItem>
-                  Option 2
-                </DropdownItem>
-                <DropdownItem divider />
-                <DropdownItem>
-                  Reset
-                </DropdownItem>
-              </DropdownMenu> */}
-              </UncontrolledDropdown>
               {!user ? (
                 <Fragment>
                   <NavItem className="login-navitem">

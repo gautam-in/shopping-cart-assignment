@@ -106,7 +106,7 @@ const LogIn = () => {
 
                 <p className="text-danger">{loginError}</p>
 
-                <Button variant="contained" color="primary" type="submit">
+                <Button variant="contained" color="primary" className='submit-btn' type="submit">
                   Submit
                 </Button>
               </form>

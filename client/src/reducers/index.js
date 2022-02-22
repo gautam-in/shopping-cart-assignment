@@ -4,9 +4,11 @@ import {
 import categoryReducer from "./categoryReducer";
 import productReducer from './productReducer'
 import cartReducer from './cartReducer'
+import bannerReducer from "./bannerReducer";
 
 export default combineReducers({
     products: productReducer,
     catagories: categoryReducer,
-    cart : cartReducer
+    cart : cartReducer,
+    banners : bannerReducer
 })
