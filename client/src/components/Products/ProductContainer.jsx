@@ -9,66 +9,60 @@ import ProductList from "./ProductList";
 import { useLocation } from "react-router-dom";
 import { useContext } from "react";
 import { MainContext } from "../../MainContext";
+import { connect, useDispatch, useSelector } from "react-redux";
+import { getProductList } from "../../actions/productActions";
+import { getCategoryList } from "../../actions/categoryActions";
 
 const ProductContainer = () => {
-  const location = useLocation();
-  const { cartTotalItems, setCartTotalItems, cartItems, setCartItems } =
-    useContext(MainContext);
-  const [categories, setCategories] = useState(null);
+  const dispatch = useDispatch();
+  const productListData = useSelector((state) => state.products.productList);
+  const categoryList = useSelector((state) => state.catagories.categories);
+  const { setCartTotalItems, setCartItems } = useContext(MainContext);
   const [filterProductList, setFilterProductList] = useState(null);
-  const [productList, setProductList] = useState(null);
   const [cart, setCart] = useState([]);
-
-  const getCategories = async () => {
-    const result = await axios.get("http://localhost:5000/categories");
-    if (result) {
-      setCategories(result.data);
-    }
-  };
-
-  const getProducts = async () => {
-    const productList = await axios.get("http://localhost:5000/products");
-    if (productList.status === 200) {
-      setProductList(productList.data);
-    }
-  };
 
   const filterDataHandler = (id) => {
     if (id !== "all") {
-      let cloneProdcutArr = [...productList];
+      let cloneProdcutArr = [...productListData];
       const filterProductList = cloneProdcutArr.filter((product) => {
         return product.category === id;
       });
       setFilterProductList(filterProductList);
     } else {
-      getProducts();
+      dispatch(getProductList());
     }
   };
 
-  const addTocart = (item) => {
-    console.log(item);
-    let cartItem = [...cart];
-    let product = cartItem.find((product) => product.id === item.id);
-    if (product) {
-      product.quantity += 1;
-      setCart(cartItem);
-    } else {
-      item.quantity = 1;
-      cartItem.push(item);
-      setCart(cartItem);
+  const addTocart = async (item) => {
+    const result = await axios.post("http://localhost:5000/addToCart", item, {
+      headers: {
+        "Content-type": "application/x-www-form-urlencoded; charset=UTF-8",
+      },
+    });
+    if (result) {
+      let cartItem = [...cart];
+      let product = cartItem.find((product) => product.id === item.id);
+      if (product) {
+        product.quantity += 1;
+        setCart(cartItem);
+      } else {
+        item.quantity = 1;
+        cartItem.push(item);
+        setCart(cartItem);
+      }
     }
   };
 
   useEffect(() => {
-    getCategories();
-    getProducts();
+    dispatch(getProductList());
+    dispatch(getCategoryList());
   }, []);
 
   useEffect(() => {
-    if (productList && localStorage.getItem("categoryId")) {
+    if (productListData && localStorage.getItem("categoryId")) {
       filterDataHandler(localStorage.getItem("categoryId"));
     }
-  }, [productList]);
+  }, [productListData]);
 
   useEffect(() => {
     if (cart.length > 0) {
@@ -91,12 +85,12 @@ const ProductContainer = () => {
                   id="exampleSelect"
                   onClick={(event) => filterDataHandler(event.target.value)}
                 >
-                  <option value={"all"} selected disabled >
+                  <option value={"all"} selected disabled>
                     Select Category
                   </option>
-                  
-                  {categories &&
-                    categories
+
+                  {categoryList &&
+                    categoryList
                       .filter((item) => item.order > 0)
                       .sort((a, b) => a.order - b.order)
                       .map((item) => {
@@ -110,8 +104,8 @@ const ProductContainer = () => {
               </FormGroup>
             </div>
             <div className="sidebar">
-              {categories &&
-                categories
+              {categoryList &&
+                categoryList
                   .filter((item) => item.order > 0)
                   .sort((a, b) => a.order - b.order)
                   .map((item) => {
@@ -130,28 +124,13 @@ const ProductContainer = () => {
 
           <Col md={9}>
             <ProductList
-              productdata={productList}
+              productdata={productListData}
               filterData={filterProductList}
               addTocart={addTocart}
             />
           </Col>
         </Row>
       </Container>
-      {/* <Container fixed>
-        <Grid>
-          <Grid item xs={4}>
-            <div className="sidebar">
-              {categories &&
-                categories
-                  .filter((item) => item.order > 0)
-                  .sort((a, b) => a.order - b.order)
-                  .map((item) => {
-                    return <div key={item.id} className='sidebar-item-name'>{item.name}</div>;
-                  })}
-            </div>
-          </Grid>
-        </Grid>
-      </Container> */}
     </Fragment>
   );
 };

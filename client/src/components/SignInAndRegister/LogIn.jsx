@@ -26,22 +26,13 @@ const LogIn = () => {
   const [password, setPassword] = useState("");
   const [emailError, setEmailError] = useState("");
   const [passwordError, setPasswordError] = useState("");
+  const [loginError, setLoginError] = useState("");
 
   const emailValidationHandler = () => {
     if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)) {
       setEmailError("");
     } else {
       setEmailError("Invalid Email!!");
-    }
-  };
-
-  const passwordValidationHandler = () => {
-    if (/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$/.test(password)) {
-      setPasswordError("");
-    } else {
-      setPasswordError(
-        "Password must be 6 characters long and must contain at least one letter, one numeric digit"
-      );
     }
   };
 
@@ -57,6 +48,8 @@ const LogIn = () => {
       if (result.length > 0) {
         navigate("/");
         setUser(result[0]);
+      } else {
+        setLoginError("User Not Found!!");
       }
     }
   };
@@ -84,7 +77,10 @@ const LogIn = () => {
                     type="email"
                     label="Email"
                     value={email}
-                    onChange={(event) => setEmail(event.target.value)}
+                    onChange={(event) => {
+                      setEmail(event.target.value);
+                      setLoginError("");
+                    }}
                     error={emailError.length > 0 ? true : false}
                     helperText={emailError}
                     onBlur={emailValidationHandler}
@@ -100,13 +96,15 @@ const LogIn = () => {
                     type="password"
                     label="Password"
                     value={password}
-                    onChange={(event) => setPassword(event.target.value)}
-                    error={passwordError.length > 0 ? true : false}
-                    helperText={passwordError}
-                    onBlur={passwordValidationHandler}
+                    onChange={(event) => {
+                      setPassword(event.target.value);
+                      setLoginError("");
+                    }}
                     required
                   />
                 </FormControl>
+
+                <p className="text-danger">{loginError}</p>
 
                 <Button variant="contained" color="primary" type="submit">
                   Submit
