@@ -1,0 +1,20 @@
+@media (min-width: 426px) {
+	.mobile_show {
+		display: none;
+	}
+}
+@media (max-width: 425px) {
+	.mobile_hide {
+		display: none;
+	}
+}
+@media (max-width: 425px) {
+	.tablet_show {
+		display: none;
+	}
+}
+@media (max-width: 769px) {
+	.laptop_show {
+		display: none;
+	}
+}
