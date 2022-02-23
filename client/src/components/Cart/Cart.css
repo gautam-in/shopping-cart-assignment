@@ -1,0 +1,263 @@
+.cartModal {
+    position: fixed;
+    z-index: 9999;
+    padding-top: 116px;
+    right: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.cart-modal-content {
+    height: 95vh;
+    position: relative;
+    background-color: #EEEEEE;
+    margin: auto;
+    padding: 0;
+    width: 40%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    display: flex;
+    flex-direction: column;
+}
+
+.close {
+    color: white;
+    float: right;
+    font-size: 46px;
+    font-weight: 400;
+}
+
+.close:hover,
+.close:focus {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.cart-header {
+    padding: 2px 20px;
+    background-color: #000000;
+    color: white;
+    font-size: 1rem;
+}
+
+.cart-body {
+    display: flex;
+    overflow-y: auto;
+    flex-basis: 55%;
+}
+
+.cart-footer {
+    padding: 20px 20px 10px;
+    background-color: #ffffff;
+    color: #000000;
+    text-align: center;
+    font-size: 14px;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    bottom: 0;
+}
+
+
+.cart-footer p {
+    font-weight: 600;
+}
+
+.checkout-btn {
+    padding: 18px 20px;
+    width: 100%;
+    background-color: #C6346C;
+    color: white;
+    border: none;
+    border-radius: 2px;
+    display: flex;
+    align-self: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.content {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.cart-items-list {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.cart-item-container {
+    display: flex;
+    background: #fff;
+    margin: 5px 0;
+}
+
+.cart-item-content {
+    padding: 10px 18px;
+    display: flex;
+    width: 100%;
+}
+
+.cart-item-content img {
+    width: 15%;
+}
+
+.item-desc {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    padding-left: 8px;
+}
+
+.itemName {
+    font-weight: 900;
+    font-size: 1rem;
+}
+
+.btnContainer {
+    display: flex;
+    margin: 12px;
+    font-size: 14px;
+}
+
+.btnIncDec {
+    border: none;
+    background-color: #C6346C;
+    border-radius: 5px;
+    padding: 4px 10px;
+    color: white;
+    margin: 0 8px;
+    cursor: pointer;
+}
+
+.btnIncDec:hover,
+.btnIncDec:active {
+    background-color: #C6346C;
+}
+
+.totalPrice {
+    align-self: center;
+    font-size: 16px;
+}
+
+.lowestPriceImg {
+    background-color: #fff;
+    display: flex;
+    justify-content: flex-start;
+    margin: 10px;
+    padding: 10px;
+}
+
+.lowestPriceImg p {
+    margin-left: 2px;
+}
+
+.cart-empty {
+    background-color: #fff;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    align-content: center;
+    width: 100%;
+    display: flex;
+}
+
+.cart-empty div {
+    text-align: center;
+}
+
+.emptyCart {
+    border: 1px;
+    top: 0;
+    padding-top: 0;
+}
+
+.emptyCart .cart-modal-content {
+    position: absolute;
+    background-color: #EEEEEE;
+    margin: auto;
+    padding: 0;
+    width: 30%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    display: flex;
+    flex-direction: column;
+    left: 30%;
+    min-height: 100vh;
+}
+
+.emptyCart .checkout-btn {
+    justify-content: center;
+}
+
+@media only screen and (max-width: 767px) {
+    .cartModal {
+        padding-top: 56px;
+    }
+
+    .cart-body {
+        flex-basis: 55%;
+    }
+    .cart-empty {
+        flex-basis: 100%;
+    }
+}
+
+@media only screen and (max-width: 1023px) {
+    .cartModal {
+        background-color: unset;
+    }
+
+    .cart-modal-content {
+        width: 100%;
+        padding-top: 20px;
+    }
+
+    .cart-header {
+        background-color: #fff;
+        color: #000000;
+
+    }
+
+    .cart-header h2 {
+        font-size: 1.2rem;
+    }
+
+    .emptyCart {
+        top: 0;
+        position: absolute;
+        flex-basis: 100%;
+    }
+
+    .emptyCart .cart-modal-content {
+        position: absolute;
+        width: 100%;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        display: flex;
+        flex-direction: column;
+        left: 0;
+        min-height: 100vh;
+        margin: auto;
+        padding: 0;
+        top: 0;
+    }
+
+    .emptyCart .cart-header {
+        background-color: #000;
+        color: #fff;
+    }
+
+}
+
+@media only screen and (min-width: 1023px) {
+    .cart-body {
+        flex-basis: 55%;
+    }
+    .cart-empty {
+        flex-basis: 100%;
+    }
+}
