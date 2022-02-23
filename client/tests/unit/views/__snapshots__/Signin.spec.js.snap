@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Signin snapshot 1`] = `
+<div class="signin">
+  <section id="loginContainer">
+    <div class="container">
+      <div class="row">
+        <div class="loginInfo col-lg-6 col-xl-6 col-md-6 col-sm-12 col-12">
+          <h2>Login</h2>
+          <p>Get access to your Orders, Wishlish and Recommendations</p>
+        </div>
+        <div class="col-lg-6 col-xl-6 col-md-6 col-sm-12 col-12">
+          <div class="mb-3 row"><label for="staticEmail" class="col-sm-2 col-form-label">Email</label>
+            <div class="col-lg-4 col-xl-7 col-md-4 col-sm-10"><input type="text" id="staticEmail" class="form-control">
+              <!---->
+            </div>
+          </div>
+          <div class="mb-3 row"><label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
+            <div class="col-lg-4 col-xl-7 col-md-4 col-sm-10"><input type="password" id="inputPassword" class="form-control">
+              <!---->
+            </div>
+          </div>
+          <div class="mb-3 row">
+            <div class="btnContainer col-lg-10 col-xl-10 col-md-4 col-sm-12 col-12"><button class="btnStyle">
+                Login
+              </button></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+`;

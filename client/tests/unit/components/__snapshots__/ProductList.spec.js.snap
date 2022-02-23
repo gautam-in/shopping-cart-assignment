@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProductList snapshot 1`] = `
+<section id="productListContainer" class="container" cartitemsdata="">
+  <div class="row">
+    <div class="categoryNav col-lg-3 col-md-3 col-xl-3 col-sm-12 col-12">
+      <div class="row"></div>
+    </div>
+    <div class="categoryDrop col-lg-3 col-md-3 col-xl-3 col-sm-12 col-12"><select></select></div>
+    <div class="col-lg-8 col-md-8 col-xl-8 col-sm-12 col-12">
+      <div class="productLists row"></div>
+    </div>
+  </div>
+  <!---->
+</section>
+`;

@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header snapshot 1`] = `
+<section class="container" cartitemsdata="">
+  <div class="row">
+    <div class="col-6 col-sm-6 col-md-4 col-lg-4 col-xl-3"><img id="logo" src="../assets/images/logo.png" alt="logo"></div>
+    <div id="nav" class="col-6 col-sm-6 col-md-4 col-lg-4 col-xl-5"><a>Home</a> <a>Products</a></div>
+    <div id="cartContainer" class="col-6 col-sm-6 col-md-4 col-lg-4 col-xl-4">
+      <div class="linkContainer"><a>Sign In</a> <a>Register</a></div>
+      <div class="cartStyle"><img src="../assets/images/cart.svg" alt="cart">
+        0 items
+        <div class="badgeStyle">0</div>
+      </div>
+    </div>
+  </div>
+  <!---->
+  <!---->
+</section>
+`;

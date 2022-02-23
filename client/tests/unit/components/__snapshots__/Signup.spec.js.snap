@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Signup snapshot 1`] = `
+<section id="signupContainer">
+  <div class="container">
+    <div class="row">
+      <div class="signupInfo col-lg-6 col-xl-6 col-md-6 col-sm-12 col-12">
+        <h2>Signup</h2>
+        <p>We do not share your personal details with anyone</p>
+      </div>
+      <div class="col-lg-6 col-xl-6 col-md-6 col-sm-12 col-12">
+        <div class="mb-3 row"><label for="firstName" class="col-sm-2 col-lg-3 col-xl-3 col-md-3 col-form-label">First Name</label>
+          <div class="col-lg-4 col-xl-7 col-md-4 col-sm-10"><input type="text" id="firstName" class="form-control">
+            <!---->
+          </div>
+        </div>
+        <div class="mb-3 row"><label for="lastName" class="col-sm-2 col-lg-3 col-xl-3 col-md-3 col-form-label">Last Name</label>
+          <div class="col-lg-4 col-xl-7 col-md-4 col-sm-10"><input type="text" id="lastName" class="form-control">
+            <!---->
+          </div>
+        </div>
+        <div class="mb-3 row"><label for="email" class="col-sm-2 col-lg-3 col-xl-3 col-md-3 col-form-label">Email</label>
+          <div class="col-lg-4 col-xl-7 col-md-4 col-sm-10"><input type="text" id="email" class="form-control">
+            <!---->
+          </div>
+        </div>
+        <div class="mb-3 row"><label for="inputPassword" class="col-sm-2 col-lg-3 col-xl-3 col-md-3 col-form-label">Password</label>
+          <div class="col-lg-4 col-xl-7 col-md-4 col-sm-10"><input type="password" id="inputPassword" class="form-control">
+            <!---->
+          </div>
+        </div>
+        <div class="mb-3 row"><label for="confiemPassword" class="col-sm-2 col-lg-3 col-xl-3 col-md-3 col-form-label">Confirm Password</label>
+          <div class="col-lg-4 col-xl-7 col-md-4 col-sm-10"><input type="password" id="confirmPassword" class="form-control">
+            <!---->
+          </div>
+        </div>
+        <div class="mb-3 row">
+          <div class="btnContainer col-lg-10 col-xl-12 col-md-4 col-sm-12 col-12"><button class="btnStyle">
+              Signup
+            </button></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+`;
