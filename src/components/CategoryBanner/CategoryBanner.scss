@@ -1,0 +1,87 @@
+.banner-component {
+  position: relative;
+  margin: 30px auto;
+  box-shadow: 0 25px 31px -20px rgba(0, 0, 0, 0.16);
+  padding: 25px 0px;
+  &:nth-child(odd) {
+    flex-direction: row-reverse;
+  }
+  .content {
+    p {
+      font-size: 1.2rem;
+      text-align: center;
+    }
+    span {
+      font-size: 1.2rem;
+      text-align: center;
+    }
+    a {
+      text-decoration: none;
+    }
+    .link-button {
+      display: block;
+      text-transform: capitalize;
+      text-align: center;
+      width: 20vw;
+      background: #e83583;
+      padding: 15px;
+      border: none;
+      font-size: 16px;
+      border-radius: 3px;
+      font-weight: 500;
+      color: #fff;
+      margin: 15px auto;
+    }
+    .heading {
+      font-size: 1.5rem;
+      display: block;
+      text-align: center;
+      font-weight: bold;
+      margin: 15px 0px 0px 0px;
+    }
+    width: 70%;
+    margin: 15px;
+  }
+  .image-container {
+    img {
+      width: 100%;
+    }
+    width: 30%;
+  }
+}
+@media only screen and (min-device-width: 481px) and (max-device-width: 1024px) {
+  .banner-component {
+    width: 100%;
+    .content {
+      width: 60%;
+      margin: 15px;
+    }
+    .image-container {
+      margin-top: auto;
+      margin-bottom: auto;
+    }
+  }
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  .banner-component {
+    width: 100%;
+    margin: 1px auto;
+    padding: 15px 0px;
+    .image-container {
+      width: 40%;
+      margin-top: auto;
+      margin-bottom: auto;
+    }
+    .content {
+      width: 60%;
+      .link-button {
+        width: fit-content;
+      }
+    }
+  }
+}
+@media screen and (device-width: 320px) and (device-height: 640px) and (-webkit-device-pixel-ratio: 2) {
+  .banner-component {
+    width: 100%;
+  }
+}
