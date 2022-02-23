@@ -1,11 +1,14 @@
 import React from 'react'
 import { NavLink } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 function Header() {
+    let navigate = useNavigate(); 
+
     return (
         <header className='header pg-lr-sp'>
             <div className='section1 fx_aE'>
-                <img src="static/images/logo.png" className='logo' alt="sabka-bazar-logo" />
+                <img src="static/images/logo.png" className='logo' alt="sabka-bazar-logo"  onClick={()=>{navigate('Home');}}/>
                 <nav className="nav-section">
                     <NavLink
                         to="/Home"

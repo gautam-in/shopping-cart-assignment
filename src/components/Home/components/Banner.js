@@ -42,22 +42,23 @@ function Banner(props) {
                                 <div className="keen-slider__slide number-slide4">4</div>
                                 <div className="keen-slider__slide number-slide5">5</div> */}
                             </div>
+                            {loaded && instanceRef.current && (
+                                <div className="dots">
+                                    {bannerList.map((item, index) => {
+                                        return (
+                                            <button
+                                                key={item.id}
+                                                onClick={() => {
+                                                    instanceRef.current?.moveToIdx(index);
+                                                }}
+                                                className={"dot" + (currentSlide === index ? " active" : "")}
+                                            ></button>
+                                        );
+                                    })}
+                                </div>
+                            )}
                         </div>
-                        {loaded && instanceRef.current && (
-                            <div className="dots">
-                                {bannerList.map((item, index) => {
-                                    return (
-                                        <button
-                                            key={item.id}
-                                            onClick={() => {
-                                                instanceRef.current?.moveToIdx(index);
-                                            }}
-                                            className={"dot" + (currentSlide === index ? " active" : "")}
-                                        ></button>
-                                    );
-                                })}
-                            </div>
-                        )}
+
                     </>
                     :
                     null
