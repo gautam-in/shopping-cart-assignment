@@ -21,7 +21,7 @@
   .btn-decrement {
     border-radius: 50%;
     margin: 0px 15px;
-    font-size: 22px;
+    font-size: 14px;
     font-weight: bold;
     color: #fff;
     background-color: #e83583;
@@ -33,7 +33,7 @@
   .btn-increment {
     border-radius: 50%;
     margin: 0px 15px;
-    font-size: 22px;
+    font-size: 14px;
     font-weight: bold;
     color: #fff;
     background-color: #e83583;
@@ -124,6 +124,23 @@
   }
 
   @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+    .btn-close {
+      background-color: black;
+      border: black;
+      &:after {
+        position: absolute;
+        -webkit-transform: translate(-50%, -50%);
+        -moz-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        -o-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        color: #fff;
+        font-size: 36px;
+        content: "\d7";
+        top: 18px;
+        right: 18px;
+      }
+    }
     .cart-main-cont {
       position: fixed;
       display: none;
