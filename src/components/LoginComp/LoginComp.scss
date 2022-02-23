@@ -1,0 +1,126 @@
+.login-section,
+.signup-section {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  width: 75vw;
+  flex-flow: wrap;
+  margin: 50px 50px;
+}
+.login-section_formGroup,
+.signup-section_formGroup {
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 30%;
+  margin-block-start: 0em;
+  margin-block-end: 0em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  padding-inline-start: 0px;
+  list-style: none;
+}
+.login-section_formGroup label,
+.signup-section_formGroup label,
+.login-section_formGroup input,
+.signup-section_formGroup input {
+  transition: all 0.2s;
+  touch-action: manipulation;
+}
+.login-section_formGroup .lbl-submit,
+.signup-section_formGroup .lbl-submit {
+  display: none;
+}
+.login-section_formGroup input:focus,
+.signup-section_formGroup input:focus {
+  outline: 0;
+  border-bottom: 1px solid #00ffe7;
+}
+.login-section_formGroup input,
+.signup-section_formGroup input {
+  font-size: 1.5em;
+  border: 0;
+  border-bottom: 1px solid #ccc;
+  font-family: inherit;
+  -webkit-appearance: none;
+  border-radius: 0;
+  padding: 0;
+  cursor: text;
+}
+.login-section_formGroup input:focus + label,
+.signup-section_formGroup input:focus + label {
+  color: #00ffe7;
+}
+.login-section_formGroup label,
+.signup-section_formGroup label {
+  letter-spacing: 0.05em;
+}
+.login-section_formGroup input:placeholder-shown + label,
+.signup-section_formGroup input:placeholder-shown + label {
+  cursor: text;
+  max-width: 66.66%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transform-origin: left bottom;
+  transform: translate(0, 1.8rem) scale(1.5);
+}
+.login-section_formGroup ::-webkit-input-placeholder,
+.signup-section_formGroup ::-webkit-input-placeholder {
+  opacity: 0;
+  transition: inherit;
+}
+.login-section_formGroup input:focus::-webkit-input-placeholder,
+.signup-section_formGroup input:focus::-webkit-input-placeholder {
+  opacity: 1;
+}
+.login-section_formGroup input:not(:placeholder-shown) + label,
+.signup-section_formGroup input:not(:placeholder-shown) + label,
+.login-section_formGroup input:focus + label,
+.signup-section_formGroup input:focus + label {
+  transform: translate(0, 0) scale(1);
+  cursor: pointer;
+}
+.login-section_formGroup .field,
+.signup-section_formGroup .field {
+  display: flex;
+  flex-flow: column-reverse;
+  margin-bottom: 1em;
+}
+.login-section-desc,
+.signup-section-desc {
+  font-size: 14px;
+}
+.login-section_info,
+.signup-section_info {
+  flex: 0 0 50%;
+  margin-left: 10%;
+}
+.btn--login,
+.btn--signup {
+  background-color: #e83583;
+  border: none;
+  width: 100%;
+  padding: 0.5rem !important;
+  color: #fff;
+  font-size: 1.2rem;
+  box-sizing: border-box;
+  border-bottom: 0px solid transparent !important;
+}
+.error-text {
+  color: #ff0000;
+}
+@media (min-width: 481px) and (max-width: 767px) {
+  .login-section_info,
+  .signup-section_info {
+    flex: 0 0 60%;
+    margin-left: 0%;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+  .login-section_info,
+  .signup-section_info {
+    flex: 0 0 60%;
+    margin-left: 0%;
+  }
+}
