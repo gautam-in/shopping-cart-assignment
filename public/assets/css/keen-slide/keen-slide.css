@@ -1,0 +1,101 @@
+.banner {
+  margin-top: 20px;
+}
+
+.banner [class^="number-slide"],
+.banner [class*=" number-slide"] {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-size: 50px;
+  color: #fff;
+  font-weight: 500;
+  height: 25vw;
+}
+
+.banner [class^="number-slide"] img,
+.banner [class*=" number-slide"] img {
+  width: 80%;
+}
+
+.banner .keen-slider {
+  box-shadow: 0px 99px 14px -102px black;
+  -webkit-box-shadow: 0px 99px 14px -102px black;
+  -moz-box-shadow: 0px 99px 14px -102px black;
+}
+
+.banner .number-slide1 {
+  background: #40afff;
+  background: linear-gradient(128deg, #40afff 0%, #3f61ff 100%);
+}
+
+.banner .number-slide2 {
+  background: #ff4b40;
+  background: linear-gradient(128deg, #ff9a3f 0%, #ff4b40 100%);
+}
+
+.banner .number-slide3 {
+  background: #b6ff40;
+  background: linear-gradient(128deg, #b6ff40 0%, #3fff47 100%);
+  background: linear-gradient(128deg, #bdff53 0%, #2bfa52 100%);
+}
+
+.banner .number-slide4 {
+  background: #40fff2;
+  background: linear-gradient(128deg, #40fff2 0%, #3fbcff 100%);
+}
+
+.banner .number-slide5 {
+  background: #ff409c;
+  background: linear-gradient(128deg, #ff409c 0%, #ff3f3f 100%);
+}
+
+.banner .number-slide6 {
+  background: #404cff;
+  background: linear-gradient(128deg, #404cff 0%, #ae3fff 100%);
+}
+
+.banner .navigation-wrapper {
+  position: relative;
+}
+
+.banner .dots {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 10px 0;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: absolute;
+  /* top: 0; */
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.banner .dot {
+  border: none;
+  width: 6px;
+  height: 6px;
+  background: #c5c5c5;
+  border-radius: 50%;
+  margin: 0 3px;
+  padding: 2px;
+  cursor: pointer;
+}
+
+.banner .dot:focus {
+  outline: none;
+}
+
+.banner .dot.active {
+  background: #000;
+}
+/*# sourceMappingURL=keen-slide.css.map */

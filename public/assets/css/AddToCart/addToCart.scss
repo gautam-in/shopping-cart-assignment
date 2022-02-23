@@ -1,0 +1,144 @@
+@import "../../../../src/theme/variable.scss";
+.addToCart-modal {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.75);
+    display: flex;
+    justify-content: flex-end;
+    @media screen and (max-width: 960px) {
+        background-color:transparent;
+    }
+    .cart {
+        width: 400px;
+        background-color: lightgrey;
+        height: 90%;
+        position: relative;
+        right: 10%;
+        top: 10%;
+        @media screen and (max-width: 960px) {
+            width: 100%;
+            right: 0%;
+            top: 9%;
+            height: 91%;
+        }
+        @media screen and (max-width: 576px) {
+            top: 6%;
+            height: 94%;
+        }
+
+        .header {
+            overflow: hidden;
+            background-color: rgb(0, 0, 0);
+            padding: 10px 15px;
+            @media screen and (max-width: 960px) {
+                background-color: white;
+                margin: 20px 0 10px 0;
+            }
+
+            .heading {
+                color: white;
+                font-weight: 600;
+                display: flex;
+                flex: 1;
+                @media screen and (max-width: 960px) {
+                    color: black;
+                }
+                .displayApart {
+                    display: flex;
+                    flex: 1;
+                    width: 100%;
+                    justify-content: space-between;
+                    align-items: center;
+                }
+                .itemCount {
+                    font-weight: 200;
+                }
+                // .blackiconcolor {
+                //     color: white;
+                // }
+            }
+        }
+        .body {
+            height: 100%;
+            .itemlist {
+                padding: 10px 15px;
+                background-color: white;
+                .item-container {
+                    display: flex;
+                    img {
+                        height: 6vh;
+                    }
+
+                    .item-details {
+                        margin-left: 10px;
+                        display: flex;
+                        flex-direction: column;
+                        flex: 1;
+                        .item-name {
+                            font-weight: bold;
+                            font-size: 14px;
+                            margin: 0;
+                        }
+                        .item-qty-container {
+                            display: flex;
+                            justify-content: space-between;
+                            user-select: none;
+                            .primary-icon {
+                                color: $primary-color;
+                            }
+                        }
+                    }
+                }
+            }
+            .lowest-price-container {
+                margin: 10px 15px;
+                display: flex;
+                align-items: center;
+                background-color: white;
+                padding: 10px 15px;
+                img {
+                    width: 20%;
+                }
+                span {
+                    font-size: 14px;
+                    margin-left: 20px;
+                }
+            }
+        }
+        .footer {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            overflow: hidden;
+            padding: 10px 15px;
+            background-color: white;
+            .footer-message {
+                text-align: center;
+                font-size: 14px;
+            }
+            button {
+                background-color: $primary-color;
+                border: none;
+                padding: 10px 15px;
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                color: white;
+            }
+        }
+        .noCartContainer {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 90%;
+            p {
+                font-weight: bold;
+            }
+        }
+    }
+}
