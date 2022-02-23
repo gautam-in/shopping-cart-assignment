@@ -12,6 +12,7 @@ import { MainContext } from "../../MainContext";
 import { connect, useDispatch, useSelector } from "react-redux";
 import { getProductList } from "../../actions/productActions";
 import { getCategoryList } from "../../actions/categoryActions";
+import { API_URL } from "../../API_URL/apiUrl";
 
 const ProductContainer = () => {
   const dispatch = useDispatch();
@@ -34,7 +35,7 @@ const ProductContainer = () => {
   };
 
   const addTocart = async (item) => {
-    const result = await axios.post("http://localhost:5000/addToCart", item, {
+    const result = await axios.post(`${API_URL}/addToCart`, item, {
       headers: {
         "Content-type": "application/x-www-form-urlencoded; charset=UTF-8",
       },

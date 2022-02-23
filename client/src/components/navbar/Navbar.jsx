@@ -84,12 +84,14 @@ const NavbarHeader = (props) => {
     <div>
       <Navbar color="light" light expand="md" className="custom_navbar_margin">
         <Container>
-          <NavbarBrand href="/">
-            <img
-              src="/static/images/logo_2x.png"
-              alt="logo"
-              className="logo-responsive"
-            />
+          <NavbarBrand>
+            <Link to="/">
+              <img
+                src="/static/images/logo_2x.png"
+                alt="logo"
+                className="logo-responsive"
+              />
+            </Link>
           </NavbarBrand>
           <NavbarToggler onClick={toggle} />
           <Collapse isOpen={isOpen} navbar>

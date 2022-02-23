@@ -1,8 +1,9 @@
 import axios from "axios";
+import { API_URL } from "../API_URL/apiUrl";
 
 export const getCategoryList = () => dispatch => {
     axios
-        .get("http://localhost:5000/categories")
+        .get(`${API_URL}/categories`)
         .then(res => {
         dispatch({
             type: "GET_CATEOGRIES",
