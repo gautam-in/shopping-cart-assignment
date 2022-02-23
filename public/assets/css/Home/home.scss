@@ -1,0 +1,32 @@
+@import "../../../../src/theme/variable.scss";
+.category-component {
+    // margin-bottom: 15vw;
+    .catgContainer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        // margin: 4vh 0;
+        padding: 5% 10%;
+        box-shadow: 0px 99px 14px -102px rgba(0, 0, 0, 1);
+        -webkit-box-shadow: 0px 99px 14px -102px rgba(0, 0, 0, 1);
+        -moz-box-shadow: 0px 99px 14px -102px rgba(0, 0, 0, 1);
+        .catgImage {
+            width: 25vw;
+            img {
+                width: 100%;
+            }
+        }
+
+        .catgInfoContainer {
+            text-align: center;
+            width: 50vw;
+            button {
+                padding: 8px 15px;
+                border-radius: 0px;
+                border-width: 0;
+                background-color: $primary-color;
+                color: $white-color;
+            }
+        }
+    }
+}

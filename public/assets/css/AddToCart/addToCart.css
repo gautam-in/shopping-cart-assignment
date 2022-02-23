@@ -1,0 +1,227 @@
+:export {
+  secondaryColor: skyblue;
+}
+
+.addToCart-modal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+@media screen and (max-width: 960px) {
+  .addToCart-modal {
+    background-color: transparent;
+  }
+}
+
+.addToCart-modal .cart {
+  width: 400px;
+  background-color: lightgrey;
+  height: 90%;
+  position: relative;
+  right: 10%;
+  top: 10%;
+}
+
+@media screen and (max-width: 960px) {
+  .addToCart-modal .cart {
+    width: 100%;
+    right: 0%;
+    top: 9%;
+    height: 91%;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .addToCart-modal .cart {
+    top: 6%;
+    height: 94%;
+  }
+}
+
+.addToCart-modal .cart .header {
+  overflow: hidden;
+  background-color: black;
+  padding: 10px 15px;
+}
+
+@media screen and (max-width: 960px) {
+  .addToCart-modal .cart .header {
+    background-color: white;
+    margin: 20px 0 10px 0;
+  }
+}
+
+.addToCart-modal .cart .header .heading {
+  color: white;
+  font-weight: 600;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+@media screen and (max-width: 960px) {
+  .addToCart-modal .cart .header .heading {
+    color: black;
+  }
+}
+
+.addToCart-modal .cart .header .heading .displayApart {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  width: 100%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.addToCart-modal .cart .header .heading .itemCount {
+  font-weight: 200;
+}
+
+.addToCart-modal .cart .body {
+  height: 100%;
+}
+
+.addToCart-modal .cart .body .itemlist {
+  padding: 10px 15px;
+  background-color: white;
+}
+
+.addToCart-modal .cart .body .itemlist .item-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.addToCart-modal .cart .body .itemlist .item-container img {
+  height: 6vh;
+}
+
+.addToCart-modal .cart .body .itemlist .item-container .item-details {
+  margin-left: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.addToCart-modal .cart .body .itemlist .item-container .item-details .item-name {
+  font-weight: bold;
+  font-size: 14px;
+  margin: 0;
+}
+
+.addToCart-modal .cart .body .itemlist .item-container .item-details .item-qty-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.addToCart-modal .cart .body .itemlist .item-container .item-details .item-qty-container .primary-icon {
+  color: #ff38bd;
+}
+
+.addToCart-modal .cart .body .lowest-price-container {
+  margin: 10px 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: white;
+  padding: 10px 15px;
+}
+
+.addToCart-modal .cart .body .lowest-price-container img {
+  width: 20%;
+}
+
+.addToCart-modal .cart .body .lowest-price-container span {
+  font-size: 14px;
+  margin-left: 20px;
+}
+
+.addToCart-modal .cart .footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  overflow: hidden;
+  padding: 10px 15px;
+  background-color: white;
+}
+
+.addToCart-modal .cart .footer .footer-message {
+  text-align: center;
+  font-size: 14px;
+}
+
+.addToCart-modal .cart .footer button {
+  background-color: #ff38bd;
+  border: none;
+  padding: 10px 15px;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  color: white;
+}
+
+.addToCart-modal .cart .noCartContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 90%;
+}
+
+.addToCart-modal .cart .noCartContainer p {
+  font-weight: bold;
+}
+/*# sourceMappingURL=addToCart.css.map */

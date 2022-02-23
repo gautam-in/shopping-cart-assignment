@@ -1,0 +1,134 @@
+:export {
+  secondaryColor: skyblue;
+}
+
+.footer {
+  padding: 10px;
+  background-color: lightgray;
+  margin-top: 25px;
+  font-size: 14px;
+}
+
+.header {
+  -webkit-box-shadow: 0px 1px 5px #b1b0b0;
+          box-shadow: 0px 1px 5px #b1b0b0;
+  padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+@media screen and (max-width: 576px) {
+  .header {
+    padding: 0 5%;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .header {
+    padding-top: 10px;
+  }
+}
+
+.header .nav-link {
+  color: black;
+  text-decoration: none;
+}
+
+.header .section1 {
+  padding: 10px 0px;
+}
+
+.header .section1 .logo {
+  width: 30%;
+}
+
+.header .section1 .nav-section {
+  margin-left: 10vw;
+}
+
+@media screen and (max-width: 576px) {
+  .header .section1 .nav-section {
+    display: none;
+  }
+}
+
+.header .section2 .header-cart {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 10px 15px;
+  background-color: lightgray;
+}
+
+.header .section2 .header-cart .cartIcon {
+  width: 25px;
+}
+
+.header .section2 .auth {
+  margin-bottom: 15px;
+  text-align: end;
+}
+
+.header .section2 .auth span {
+  font-size: 12px;
+}
+
+.header .section2 .auth .nav-section .nav-link {
+  font-size: 12px;
+}
+
+@media screen and (max-width: 576px) {
+  .header .section2 .auth {
+    display: none;
+  }
+}
+
+.header .nav-link.active {
+  color: skyblue;
+}
+
+.pg-lr-sp {
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+@media screen and (max-width: 960px) {
+  .pg-lr-sp {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .pg-lr-sp {
+    padding-left: 2%;
+    padding-right: 2%;
+  }
+}
+
+.fx_aE {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+/*# sourceMappingURL=main.css.map */
