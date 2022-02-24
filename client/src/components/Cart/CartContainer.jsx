@@ -15,10 +15,8 @@ const CartContainer = ({ cartItems, toggleDrawer }) => {
     setCartTotalItems,
     cartTotalItems,
   } = useContext(MainContext);
-  console.log("cartcontainerprops", cartItems);
 
   const quantityIncreaseHandler = (type, item) => {
-    console.log(type, item);
 
     if (type === "increase") {
       let cartItem = [...cartItems];
@@ -30,11 +28,9 @@ const CartContainer = ({ cartItems, toggleDrawer }) => {
     } else {
       let cartItem = [...cartItems];
       let product = cartItem.find((product) => product.id === item.id);
-      console.log("prodcutdecrease", product);
       if (product) {
         if (product.quantity === 0) {
           const result = cartItem.filter((product) => product.quantity !== 0);
-          console.log("result", result);
           setCartItems(result);
         } else {
           product.quantity -= 1;
@@ -49,13 +45,12 @@ const CartContainer = ({ cartItems, toggleDrawer }) => {
   };
 
   useEffect(() => {
-    console.log("cartItems", cartItems);
     let total = 0;
     total = cartItems.reduce((acc, item) => {
       return acc + item.price * item.quantity;
     }, 0);
     setCartTotal(total);
-    if (cartItems.some((item) => item.quantity == 0)) {
+    if (cartItems.some((item) => item.quantity === 0)) {
       setCartItems(cartItems.filter((item) => item.quantity !== 0));
       setCartTotalItems(cartItems.filter((item) => item.quantity !== 0).length);
     }
@@ -139,7 +134,7 @@ const CartContainer = ({ cartItems, toggleDrawer }) => {
       ) : (
         <Fragment>
           <div className="cart-empty-msg">
-            <div class="vertical-center">
+            <div className="vertical-center">
               <p>
                 <strong>No items in your cart</strong> <br />
                 Your favourite items are just click away

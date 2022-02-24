@@ -30,6 +30,7 @@ const Home = () => {
     dispatch(getCategoryList());
     dispatch(getBannerList());
     localStorage.removeItem("categoryId");
+    sessionStorage.removeItem("filterID");
   }, []);
 
   return (

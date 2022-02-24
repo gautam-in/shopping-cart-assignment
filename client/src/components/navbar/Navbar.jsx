@@ -4,7 +4,6 @@ import {
   Collapse,
   Navbar,
   NavbarToggler,
-  NavbarBrand,
   Nav,
   NavItem,
   NavbarText,
@@ -30,21 +29,12 @@ const NavbarHeader = (props) => {
   const classes = useStyles();
   const navigate = useNavigate();
   const { cartTotalItems, cartItems, user } = useContext(MainContext);
-  console.log(user);
   const [isOpen, setIsOpen] = useState(false);
   const [state, setState] = React.useState({
     right: false,
   });
 
   const toggleDrawer = (anchor, open) => (event) => {
-    console.log(anchor, event, open);
-    // if (
-    //   event.type === "keydown" &&
-    //   (event.key === "Tab" || event.key === "Shift")
-    // ) {
-    //   return;
-    // }
-
     setState({ ...state, [anchor]: open });
   };
 
@@ -64,8 +54,6 @@ const NavbarHeader = (props) => {
   };
 
   const cartPage = (anchor) => {
-    console.log(anchor);
-
     return (
       <Fragment>
         <div
@@ -84,15 +72,13 @@ const NavbarHeader = (props) => {
     <div>
       <Navbar color="light" light expand="md" className="custom_navbar_margin">
         <Container>
-          <NavbarBrand>
-            <Link to="/">
-              <img
-                src="/static/images/logo_2x.png"
-                alt="logo"
-                className="logo-responsive"
-              />
-            </Link>
-          </NavbarBrand>
+          <Link to="/">
+            <img
+              src="/static/images/logo_2x.png"
+              alt="logo"
+              className="logo-responsive"
+            />
+          </Link>
           <NavbarToggler onClick={toggle} />
           <Collapse isOpen={isOpen} navbar>
             <Nav className="mr-auto" navbar>

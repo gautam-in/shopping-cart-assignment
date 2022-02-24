@@ -3,8 +3,7 @@ import { Col, Container, Row } from "reactstrap";
 import "./login.scss";
 import { makeStyles } from "@material-ui/core/styles";
 import TextField from "@material-ui/core/TextField";
-import { Button, FormControl, Input, InputLabel } from "@material-ui/core";
-import { useEffect } from "react";
+import { Button, FormControl } from "@material-ui/core";
 import { useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { MainContext } from "../../MainContext";
@@ -21,11 +20,11 @@ const useStyles = makeStyles((theme) => ({
 const LogIn = () => {
   const classes = useStyles();
   const navigate = useNavigate();
-  const { setUser, user } = useContext(MainContext);
+  const { setUser } = useContext(MainContext);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [emailError, setEmailError] = useState("");
-  const [passwordError, setPasswordError] = useState("");
+  const [passwordError] = useState("");
   const [loginError, setLoginError] = useState("");
 
   const emailValidationHandler = () => {
@@ -44,7 +43,6 @@ const LogIn = () => {
       let result = JSON.parse(sessionStorage.getItem("user")).filter((user) => {
         return user.email === email && user.password === password;
       });
-      console.log(result);
       if (result.length > 0) {
         navigate("/");
         setUser(result[0]);

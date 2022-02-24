@@ -1,5 +1,5 @@
 import { Button, FormControl, TextField } from "@material-ui/core";
-import React, { useEffect, useState } from "react";
+import React, {  useState } from "react";
 import { Col, Container, Row } from "reactstrap";
 import { makeStyles } from "@material-ui/core/styles";
 import "./login.scss";
@@ -26,7 +26,7 @@ const Register = () => {
     confirm_password_error: "",
     password_match_error: "",
   });
-  const [users, setUsers] = useState([]);
+  const [users] = useState([]);
 
   const changeHandler = (event) => {
     setState({
@@ -50,7 +50,6 @@ const Register = () => {
   };
 
   const passwordValidationHandler = (value, type) => {
-    console.log("type", value, type);
     if (type === "password") {
       if (/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$/.test(value)) {
         setState({
@@ -88,7 +87,6 @@ const Register = () => {
         password_match_error: "Password doesn't match",
       });
     } else {
-      console.log(state);
       let value = {
         firstName: state.firstName,
         lastName: state.lastName,

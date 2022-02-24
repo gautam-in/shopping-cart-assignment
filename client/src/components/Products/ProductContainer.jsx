@@ -4,12 +4,11 @@ import "./product.scss";
 import axios from "axios";
 // import { Container, Grid } from "@material-ui/core";
 import { useState } from "react";
-import { Col, Container, FormGroup, Input, Label, Row } from "reactstrap";
+import { Col, Container, FormGroup, Input, Row } from "reactstrap";
 import ProductList from "./ProductList";
-import { useLocation } from "react-router-dom";
 import { useContext } from "react";
 import { MainContext } from "../../MainContext";
-import { connect, useDispatch, useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { getProductList } from "../../actions/productActions";
 import { getCategoryList } from "../../actions/categoryActions";
 import { API_URL } from "../../API_URL/apiUrl";
@@ -23,6 +22,7 @@ const ProductContainer = () => {
   const [cart, setCart] = useState([]);
 
   const filterDataHandler = (id) => {
+    sessionStorage.setItem("filterID", id);
     if (id !== "all") {
       let cloneProdcutArr = [...productListData];
       const filterProductList = cloneProdcutArr.filter((product) => {
@@ -67,7 +67,6 @@ const ProductContainer = () => {
 
   useEffect(() => {
     if (cart.length > 0) {
-      console.log(cart);
       setCartTotalItems(cart.length);
       setCartItems(cart);
     }
@@ -113,7 +112,11 @@ const ProductContainer = () => {
                     return (
                       <div
                         key={item.id}
-                        className="sidebar-item-name"
+                        className={`sidebar-item-name ${
+                          sessionStorage.getItem("filterID") === item.id
+                            ? "sidebar-bold"
+                            : ""
+                        }`}
                         onClick={() => filterDataHandler(item.id)}
                       >
                         {item.name}
