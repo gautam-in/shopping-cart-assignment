@@ -3,8 +3,6 @@ import { Container } from "reactstrap";
 import "./product.scss";
 
 const ProductList = (props) => {
-  console.log('productlist',props);
-
   const cartHandler = (product) => {
     props.addTocart(product);
   };
@@ -70,15 +68,15 @@ const ProductList = (props) => {
                           <p className="card-intro">{item.description}</p>
                         </div>
                         <div className="card-footer">
-                          <div className="card-footer-left">
+                          <div className="card-footer-left mobile-mrp-container">
                             <p>MRP Rs.{item.price}</p>
                           </div>
                           <div className="card-footer-right">
                             <button
-                              className="btn btn-primary btn-buy-now"
+                              className="btn btn-primary btn-buy-now moble-btn-now-btn"
                               onClick={() => cartHandler(item)}
                             >
-                              Buy Now
+                              Buy Now <span>&#64; MRP Rs.{item.price}</span>
                             </button>
                           </div>
                         </div>
@@ -90,96 +88,6 @@ const ProductList = (props) => {
           )}
         </div>
       </Container>
-      {/* <section class="main-section">a */}
-      {/* {props.filterData &&
-          props.filterData.map((item) => {
-            return (
-              <Fragment>
-                <div className="main-card">
-                  <p className="main-card-para">
-                    <strong>{item.name}</strong>
-                  </p>
-                  <div class="card">
-                    <img
-                      src={item.imageURL}
-                      alt={item.name}
-                      className="img-fluid"
-                    />
-                    <p className="item-description">{item.description}</p>
-                    <div className="card-footer">
-                      <div className="card-footer-left">
-                        <p>MRP Rs.{item.price}</p>
-                      </div>
-                      <div className="card-footer-right">
-                        <button className="btn btn-primary">Add to Cart</button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </Fragment>
-            );
-          })} */}
-
-      {/* <div class="card"></div>
-  <div class="card"></div>
-  <div class="card"></div>
-  <div class="card"></div>
-  <div class="card"></div>
-  <div class="card"></div> */}
-      {/* </section> */}
-      {/* <Container>
-        <div className="product-list">
-          <div className="product-list-item">
-            <div className="product-list-item-image">
-              <img src="https://via.placeholder.com/150" alt="product" />
-            </div>
-            <div className="product-list-item-info">
-              <div className="product-list-item-info-name">Product Name</div>
-              <div className="product-list-item-info-price">$100</div>
-            </div>
-          </div>
-
-          <div className="product-list-item">
-            <div className="product-list-item-image">
-              <img src="https://via.placeholder.com/150" alt="product" />
-            </div>
-            <div className="product-list-item-info">
-              <div className="product-list-item-info-name">Product Name</div>
-              <div className="product-list-item-info-price">$100</div>
-            </div>
-          </div>
-
-          <div className="product-list-item">
-            <div className="product-list-item-image">
-              <img src="https://via.placeholder.com/150" alt="product" />
-            </div>
-            <div className="product-list-item-info">
-              <div className="product-list-item-info-name">Product Name</div>
-              <div className="product-list-item-info-price">$100</div>
-            </div>
-          </div>
-
-          <div className="product-list-item">
-            <div className="product-list-item-image">
-              <img src="https://via.placeholder.com/150" alt="product" />
-            </div>
-            <div className="product-list-item-info">
-              <div className="product-list-item-info-name">Product Name</div>
-              <div className="product-list-item-info-price">$100</div>
-            </div>
-          </div>
-
-          <div className="product-list-item">
-            <div className="product-list-item-image">
-              <img src="https://via.placeholder.com/150" alt="product" />
-            </div>
-            <div className="product-list-item-info">
-              <div className="product-list-item-info-name">Product Name</div>
-              <div className="product-list-item-info-price">$100</div>
-            </div>
-          </div>
-        </div>
-      </Container> */}
     </Fragment>
   );
 };

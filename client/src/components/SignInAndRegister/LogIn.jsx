@@ -60,7 +60,7 @@ const LogIn = () => {
         <div className="login_form">
           <Row>
             <Col md={6}>
-              <h4>Login</h4>
+              <h4 className="login-header">Login</h4>
               <p>Get access to your Orders, Wishlist and Recommendations</p>
             </Col>
             <Col md={6}>

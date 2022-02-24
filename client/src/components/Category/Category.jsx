@@ -22,7 +22,6 @@ const Category = ({ categoryData }) => {
   const classes = useStyles();
 
   const categoryHandler = async (id) => {
-    // props.history.push(`/products/${id}`);
     localStorage.setItem("categoryId", id);
     navigate(`/products`);
   };
@@ -32,7 +31,7 @@ const Category = ({ categoryData }) => {
       <Container>
         <div className={classes.root + " shadow bottom category_card"}>
           <Grid container>
-            <Grid item xs={6}>
+            <Grid item xs={6} className='mobile-flex'>
               {categoryData.order % 2 !== 0 ? (
                 <>
                   <div>
@@ -60,7 +59,7 @@ const Category = ({ categoryData }) => {
                 </>
               )}
             </Grid>
-            <Grid item xs={6}>
+            <Grid item xs={6} className='mobile-flex'>
               {categoryData.order % 2 !== 0 ? (
                 <>
                   {" "}

@@ -266,6 +266,13 @@
   }
 }
 
+.moble-btn-now-btn {
+    span {
+        display: none;
+    }
+}
+
+
 @media (min-width: 320px) and (max-width: 480px) {
   .sidebar-select {
     display: block;
@@ -274,4 +281,35 @@
   .sidebar {
     display: none;
   }
+  .mobile-mrp-container {
+      display: none;
+  }
+  .btn-buy-now {
+      width: 100%;
+  }
+  .card-footer-right {
+      width: 100%;
+  }
+  .moble-btn-now-btn {
+      span {
+          display: inline-block;
+      }
+  }
+}
+
+@media (min-width : 320px) and (max-width : 768px) {
+    .mobile-mrp-container {
+        display: none;
+    }
+    .btn-buy-now {
+        width: 100%;
+    }
+    .card-footer-right {
+        width: 100%;
+    }
+    .moble-btn-now-btn {
+        span {
+            display: inline-block;
+        }
+    }
 }

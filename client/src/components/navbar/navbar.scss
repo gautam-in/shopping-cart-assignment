@@ -67,6 +67,12 @@
 @media (min-width : 320px) and (max-width: 480px) {
     .navbar-brand {
         display: contents;
+        a {
+            display: contents;
+        }
+    }
+    .custom_navbar_margin {
+        padding: .5rem 1rem;
     }
 
     .login-navitem {
