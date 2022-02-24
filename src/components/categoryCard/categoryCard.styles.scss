@@ -1,0 +1,38 @@
+.category_section {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  .category {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    margin: 1rem 1rem 0;
+    box-shadow: 0px 15px 10px -15px #3f3e3e;
+    padding-bottom: 20px;
+
+    .category_image {
+      flex: 1;
+      max-width: 30%;
+      height: 100%;
+      align-self: center;
+      img {
+        width: 100%;
+      }
+    }
+
+    .category_container {
+      flex: 2;
+      text-align: center;
+    }
+  }
+
+  .category:nth-child(odd) {
+    flex-direction: row;
+  }
+
+  .category:nth-child(even) {
+    flex-direction: row-reverse;
+  }
+}

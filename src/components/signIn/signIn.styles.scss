@@ -1,0 +1,41 @@
+.sign-in {
+  display: flex;
+  flex-direction: row;
+  padding: 1rem 10rem 1rem 10rem;
+  align-items: center;
+
+  .signIn__content {
+    width: 40%;
+  }
+
+  .signIn__form {
+    width: 40%;
+    padding: 1rem;
+  }
+
+  .buttons {
+    width: -webkit-fill-available;
+    margin-bottom: 2rem;
+  }
+}
+@media screen and (max-width: 480px) {
+  .sign-in {
+    display: flex;
+    flex-direction: column;
+    padding: 0px;
+
+    .signIn__content {
+      width: 100%;
+    }
+
+    .signIn__form {
+      width: 100%;
+      padding: 0px;
+    }
+  }
+}
+@media screen and (min-device-width: 481px) and (max-device-width: 768px) {
+  .sign-in {
+    padding: 1rem 4rem 1rem 4rem;
+  }
+}
