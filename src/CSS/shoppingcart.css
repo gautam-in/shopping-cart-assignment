@@ -1,0 +1,37 @@
+.cart-heading {
+  margin-top: 1.6rem;
+}
+
+.cart-description-container {
+  display: grid;
+  grid-template-columns: 10% 75% 15%;
+  align-items: center;
+}
+
+.button {
+  background-color: #bf2957;
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 0.4rem 1.4rem;
+  border-radius: 1rem;
+
+  /* Only necessary for .btn */
+  border: none;
+  cursor: pointer;
+}
+
+.checkout-button {
+  padding: 0.8rem;
+  margin-bottom: 0.8rem;
+  background-color: #bf2957;
+  color: white;
+  display: grid;
+  grid-template-columns: 85% 15%;
+  align-items: center;
+}
+.flex {
+  align-items: center;
+  justify-content: start;
+  gap: 1.6rem;
+}
