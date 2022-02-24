@@ -1,0 +1,20 @@
+.modal-header {
+  background-color: #000;
+  position: relative;
+  height: 100%;
+  padding: 20px;
+}
+.cart-header-container {
+  display: flex;
+}
+.modal-header h3 {
+  font-size: 1.5rem;
+  color: #fff;
+  margin: 0;
+}
+.modal-header .cross-btn {
+  margin-left: auto;
+  border: 0;
+  background: none;
+  cursor: pointer;
+}

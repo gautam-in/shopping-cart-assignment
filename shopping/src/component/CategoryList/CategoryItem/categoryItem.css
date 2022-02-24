@@ -1,0 +1,7 @@
+.category-list-container img {
+  max-height: 300px;
+}
+
+.buttonContainer {
+  display: inline-block;
+}

@@ -1,0 +1,10 @@
+.cartFooter {
+  padding: 15px;
+  text-align: center;
+}
+.cartFooter button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 4px;
+}

@@ -1,0 +1,34 @@
+.modal-body {
+  background-color: #ebebeb;
+  height: 500px;
+  padding-top: 1px;
+  overflow: auto;
+}
+.cart-empty {
+  padding: 20px;
+}
+.row-item {
+  display: flex;
+  background-color: #fff;
+  justify-content: flex-start;
+  padding: 10px 20px;
+  padding-bottom: 0;
+  margin-top: 10px;
+}
+.img-section {
+  margin-right: 20px;
+}
+.row-item img {
+  width: 100px;
+}
+.text-section {
+  width: 100%;
+  padding-top: 10px;
+}
+.items-content {
+  display: flex;
+  align-items: center;
+}
+.items-content p {
+  margin-left: auto;
+}

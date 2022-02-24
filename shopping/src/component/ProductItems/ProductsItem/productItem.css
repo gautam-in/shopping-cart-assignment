@@ -1,0 +1,127 @@
+.product-card {
+  box-shadow: 0 0px 3px rgba(0, 0, 0, 0.2);
+  margin: 0;
+  text-align: center;
+  font-family: arial;
+  width: 24%;
+  margin-bottom: 15px;
+  position: relative;
+  padding-bottom: 50px;
+  border-bottom: 1px dashed #ccc;
+}
+.product-card img {
+  width: 88%;
+}
+
+.price {
+  color: grey;
+  font-size: 22px;
+}
+
+.product-card button {
+  border: none;
+  outline: 0;
+  padding: 12px;
+  color: white;
+  background-color: #c72658;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+.product-card button:hover {
+  opacity: 0.7;
+}
+
+.product-card p {
+  background-color: #ebebeb;
+  padding: 10px;
+  margin: 10px;
+}
+.card-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  padding: 10px;
+}
+
+.card-bottom button,
+.card-bottom p {
+  width: 50%;
+}
+.product-card h4 {
+  min-height: 90px;
+  padding-top: 20px;
+}
+.img-wrapper {
+  min-height: 200px;
+}
+.product-card p {
+  height: 285px;
+  overflow: auto;
+}
+/* Tbalet Css*/
+@media only screen and (max-width: 1024px) {
+  .product-card {
+    width: 50%;
+  }
+}
+/*Mobile*/
+@media only screen and (max-width: 767px) {
+  .product-card {
+    width: 100%;
+  }
+  .product-card p {
+    height: auto;
+  }
+  .product-card h4 {
+    min-height: 0;
+  }
+  .product-content {
+    flex-direction: column;
+  }
+  .category {
+    width: 100%;
+  }
+  .product-item-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .product-item-wrapper .discription-wrapper,
+  .product-item-wrapper .img-wrapper {
+    flex: 1;
+  }
+  .product-card h4 {
+    text-align: left;
+    padding: 0 15px;
+  }
+  .card-bottom {
+    width: 100%;
+    display: block;
+    align-items: left;
+    position: static;
+    padding: 0;
+    width: 95%;
+    display: block;
+    padding-left: 10px;
+  }
+  .card-bottom button {
+    width: 100%;
+  }
+  .product-card p {
+    margin-right: 0;
+  }
+  .discription-wrapper {
+    margin-right: 10px;
+  }
+  .product-card img {
+    width: 100%;
+  }
+}
