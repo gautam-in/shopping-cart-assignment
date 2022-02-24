@@ -1,0 +1,67 @@
+
+/* Tablet view Start*/
+
+@media screen and (min-width: 601px) and (max-width: 1200px) {
+  .categories-beverages {
+    display: flex;
+    margin-top: 40px;
+
+    > * {
+      &:nth-child(1) {
+        @include categoriesSpacing(70%, 25ch, 20px)
+      }
+
+      &:nth-child(2) {
+        flex: 1 1 30%;
+        min-width: 33ch;
+      }
+    }
+  }
+
+  .categories-beverages-image {
+    width: 40vw;
+    margin-left: 10px;
+  }
+
+  .categories-beverages-content {
+    margin-right: 90px;
+    margin-top: 70px;
+  }
+}
+
+/* Tablet view End*/
+
+/* Mobile View Start */
+
+@media only screen and (max-width: 600px) {
+  .categories-beverages {
+    display: flex;
+    margin-top: 40px;
+
+    > * {
+      &:nth-child(1) {
+        @include categoriesSpacing(70%, 20ch, -20px);
+        margin-left: 220px;
+      }
+
+      &:nth-child(2) {
+        flex: 1 1 30%;
+        min-width: 33ch;
+        margin-left: 40px;
+      }
+    }
+  }
+
+  .categories-beverages-image {
+    width: 50vw;
+    margin-left: -50px;
+  }
+
+  .categories-beverages-content {
+    margin-right: 100px;
+    margin-top: 10px;
+  }
+
+}
+
+/* Mobile View End */

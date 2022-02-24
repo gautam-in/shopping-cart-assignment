@@ -1,0 +1,116 @@
+.categories-beauty {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+
+  > * {
+    &:nth-child(1) {
+      flex: 1 1 30%;
+      justify-content: space-between;
+      min-width: 25ch;
+    }
+
+    &:nth-child(2) {
+      flex: 1 1 70%;
+      min-width: 22ch;
+    }
+  }
+}
+
+.categories-beauty-image {
+  width: 30vw;
+  margin-left: 300px;
+  margin-top: 20px;
+}
+
+.categories-beauty-content {
+  margin-left: 150px;
+  margin-top: 80px;
+  text-align: center;
+}
+
+.categories-beauty-content-title {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+/* .categories-bakery-content-title {
+    margin-top: 10px;
+    text-align: center;
+  } */
+
+.categories-beauty-content-button {
+  background-color: $primary-color;
+  color: $secondary-color;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  // margin-left: 30px;
+}
+
+/* categories-fruits-media-queries */
+
+/* Tablet view Start*/
+
+@media screen and (min-width: 601px) and (max-width: 1200px) {
+  .categories-beauty {
+    display: flex;
+    margin-top: 40px;
+    margin-right: 160px;
+
+    > * {
+      &:nth-child(1) {
+        @include categoriesSpacing(70%, 39ch, 40px);
+        margin-right: 10px;
+      }
+
+      &:nth-child(2) {
+        flex: 1 1 30%;
+        min-width: 33ch;
+      }
+    }
+  }
+
+  .categories-beauty-image {
+    width: 40vw;
+    margin-left: 10px;
+  }
+
+  .categories-beauty-content {
+    margin-right: 90px;
+    margin-top: 70px;
+  }
+}
+
+/* Tablet view End*/
+
+/* Mobile View Start */
+
+@media only screen and (max-width: 600px) {
+  .categories-beauty {
+    display: flex;
+    margin-top: 40px;
+
+    > * {
+      &:nth-child(1) {
+        @include categoriesSpacing(30%, 39ch, 20px);
+        margin-right: -35px;
+      }
+
+      &:nth-child(2) {
+        flex: 1 1 70%;
+        min-width: 25ch;
+      }
+    }
+  }
+
+  .categories-beauty-image {
+    width: 50vw;
+    margin-left: 10px;
+    margin-top: 10px;
+  }
+
+}
+
+/* Mobile View End */
+/* categories beauty */
