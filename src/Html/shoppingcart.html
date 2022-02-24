@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shopping cart</title>
+    <link rel="stylesheet" href="../CSS/general.css" />
+    <link rel="stylesheet" href="../CSS/shoppingcart.css" />
+    <link rel="stylesheet" href="../CSS/header.css" />
+  </head>
+  <body class="bg-color-grey">
+    <header>
+      <div class="container-header">
+        <div class="main">
+          <div class="padding-sm">
+            <a class="img-size" href="index.html">
+              <img
+                class="img-size"
+                src="../../static/images/logo_2x.png"
+                alt=""
+              />
+            </a>
+          </div>
+          <div class="padding-sm nav-items">
+            <ul class="sub-heading nav-list">
+              <li><a class="main-nav-link" href="index.html">Home</a></li>
+              <li>
+                <a class="main-nav-link" href="products.html">Products</a>
+              </li>
+            </ul>
+          </div>
+          <div class="padding-sm signin-container">
+            <ul class="sub-heading nav-list">
+              <li><a class="main-nav-link" href="login.html">Sign In</a></li>
+              <li><a class="main-nav-link" href="signup.html">Register</a></li>
+            </ul>
+            <a class="main-nav-link img-size" href="shoppingcart.html">
+              <img
+                class="img-size-md"
+                src="../../static/images/cart.svg"
+                alt="cart"
+              />
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+    <section id="items" class="container">
+    </section>
+    <section class="container">
+      <div class="sub-heading bg-color-white margin-bottom-sm padding-sm flex">
+        <img src="../../static/images/lowest-price.png" alt="" />
+        <p>You won't find it cheaper anywhere</p>
+      </div>
+      <div class="sub-heading checkout-button">
+        <p>Proceed to checkout</p>
+        <p id="totalPrice" class="text-align"></p>
+      </div>
+    </section>
+    <footer class="footer-container">
+      <div class="footer-main">
+        <h3 class="text-align">
+          Copyright &copy; 2011 - 2018 Sabka Bazaar Grocery Supplies Pvt Ltd
+        </h3>
+      </div>
+    </footer>
+    <script src="../js/shoppingCart.js">
+    </script>
+  </body>
+</html>
