@@ -1,0 +1,79 @@
+.login-container {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  padding: 10rem 0.8rem;
+}
+.form-title {
+  font-weight: bold;
+  font-size: 2.4rem;
+}
+.form-description {
+  font-weight: 400;
+  font-size: 1.8rem;
+  margin-top: 0.8rem;
+}
+.form-action-button {
+  background-color: #d00155;
+  border-radius: 0.3rem;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: 0.2rem;
+  width: 100%;
+  height: 2.6rem;
+  margin-top: 1.6rem;
+}
+.form-input {
+  width: 100%;
+}
+.group {
+  height: 6rem;
+  position: relative;
+}
+input,
+textarea {
+  background: none;
+  color: black;
+  padding: 1rem 0;
+  display: block;
+  border: none;
+  border-bottom: 0.1rem solid #a59f9f;
+  font-size: 1.6rem !important;
+}
+input:hover {
+  border-bottom: 0.1rem solid #a59f9f;
+}
+input:valid {
+  border-bottom: 0.1rem solid aquamarine;
+}
+input:focus,
+textarea:focus {
+  padding: 1rem 0;
+  color: black;
+  outline: none;
+  border: none;
+  border-bottom: 0.1rem solid aquamarine;
+  font-size: 1.6rem;
+}
+input:focus ~ label,
+input:valid ~ label,
+textarea:focus ~ label,
+textarea:valid ~ label {
+  top: -0.5rem;
+  font-size: 1.2rem;
+  color: #00f1f1;
+  font-weight: 400;
+  left: 0;
+}
+label {
+  color: #a59f9f;
+  font-size: 1.4rem;
+  font-weight: normal;
+  position: absolute;
+  pointer-events: none;
+  left: 0;
+  top: 1.2rem;
+  transition: 300ms ease all;
+  background-color: #fff;
+  padding: 0;
+}
