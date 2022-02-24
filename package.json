@@ -1,15 +1,45 @@
 {
-  "name": "code-exercise",
+  "name": "shoppingcart",
   "version": "1.0.0",
-  "description": "This is a shopping cart coding exercise",
+  "description": "Case Study",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "canned -p 5000 ./server"
+    "test": "jest",
+    "build": "webpack --config webpack.config.js"
   },
-  "author": "",
-  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Namitha-KN/ShoppingCart.git"
+  },
+  "keywords": [
+    "Shopping",
+    "Cart"
+  ],
+  "author": "Namitha K N",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Namitha-KN/ShoppingCart/issues"
+  },
+  "homepage": "https://github.com/Namitha-KN/ShoppingCart#readme",
+  "devDependencies": {
+    "@babel/core": "^7.17.5",
+    "@babel/preset-env": "^7.16.11",
+    "babel-loader": "^8.2.3",
+    "css-loader": "^6.6.0",
+    "jest": "^27.5.1",
+    "mini-css-extract-plugin": "^2.5.3",
+    "nodemon": "^2.0.15",
+    "postcss-loader": "^6.2.1",
+    "sass": "^1.49.8",
+    "sass-loader": "^12.6.0",
+    "webpack": "^5.69.1",
+    "webpack-cli": "^4.9.2"
+  },
   "dependencies": {
-    "canned": "^0.3.12"
+    "express": "^4.17.3",
+    "express-handlebars": "^6.0.2",
+    "html-webpack-plugin": "^5.5.0",
+    "node-sass": "^7.0.1",
+    "style-loader": "^3.3.1"
   }
 }

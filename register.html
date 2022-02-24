@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="./assets/css/main.css" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register Page Sabka Bazaar</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="./assets/css/modal.css" rel="stylesheet"/>
+    <!-- Favicon -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./assets/images/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./assets/images/favicon-16x16.png"
+    />
+    <!-- Favicon -->
+  </head>
+
+  <body>
+    <!-- Navbar Starting -->
+    <div class="navbar">
+      <div class="logo">
+        <a href="index.html">
+          <img
+            class="site-logo"
+            src="./assets/images/images/logo.png"
+            alt="website logo sabka bazaar"
+        /></a>
+      </div>
+      <nav>
+        <ul class="MenuItems">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="./register.html">Register</a></li>
+          <li><a href="./login.html">Login</a></li>
+        </ul>
+      </nav>
+
+      <a class="shopping-cart" href="#"
+        ><i id="shopping-cart-image" class="fas fa-shopping-cart fa-lg"></i>
+        <span class="cart-items">0 items</span>
+      </a>
+      <img
+        src="./assets/images/images/menu.png"
+        alt=""
+        class="menu-icon"
+      />
+    </div>
+
+    <!-- Navbar Ending-->
+
+    <!-- Register starting -->
+
+    <section class="signup-signin">
+      <div>
+        <h3>Signup</h3>
+        <p>We do not share your personal details with anyone.</p>
+      </div>
+      <form>
+        <input type="text" placeholder="First Name" required /><br />
+
+        <input type="text" placeholder="Last Name" required /><br />
+
+        <input type="email" placeholder="Email Address" required /><br />
+
+        <input type="text" placeholder="Password" required /><br />
+        <button>Signup</button>
+      </form>
+    </section>
+    <!-- Register Ending -->
+
+    <!-- Footer Starting -->
+    <footer class="footer-login positionFixed">
+      <p>Copyright &copy; 2022 Sabka Bazaar Grocery Suplies Pvt. Ltd</p>
+    </footer>
+    <!-- Footer Ending -->
+
+
+     <!-- modal -->
+     <div id="my-modal" class="modal">
+      <div class="modal-dialog-scrollable modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+        <p class="subTotalHeading">Subtotal = ₹ <span class="cart-subtotal">0 </span></p>
+          <h3>My Cart 
+            <span class="numberOfItems">0 items</span>
+          </h3>
+          <span class="close">&times;</span>
+        </div>
+        <div class="modal-body">
+          <div class="model-content">
+            <img
+              class="cart-lowest-price"
+              src="../assets/images/images/lowest-price.png"
+              alt="Lowest price"
+            />
+            <p class="modal-content-heading">
+              You won't find it cheaper anywhere
+            </p>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <h3 class="final-checkout-plan">Proceed to checkout</h3>
+          <button type="button" class="clear-cart">Clear Cart</button>
+        </div>
+      </div>
+      </div>
+    </div>
+    <!-- modal -->
+
+    <!-- Script files -->
+    <script src="./assets/js/openModal.js"></script>
+    <script src="./assets/js/cart-number.js"></script>
+    <script src="./assets/js/cart.js"></script>
+    <script src="./assets/js/app.js"></script>
+   
+  </body>
+</html>

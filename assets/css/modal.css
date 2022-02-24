@@ -1,0 +1,10 @@
+/* .modal-header
+{
+position: fixed;
+top: 0;
+width: 398px;
+z-index: 1;
+} */
+.modal-footer{
+justify-content: center;
+}

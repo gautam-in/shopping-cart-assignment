@@ -1,0 +1,50 @@
+/* Categories common start */
+
+.categories-common {
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+  margin-top: 20px;
+
+  > * {
+    &:nth-child(1) {
+      flex: 1 1 70%;
+      justify-content: space-around;
+      min-width: 25ch;
+    }
+
+    &:nth-child(2) {
+      flex: 1 1 30%;
+      min-width: 22ch;
+    }
+  }
+}
+
+.categories-common-image {
+  width: 30vw;
+  margin-left: 10px;
+  margin-top: 20px;
+}
+
+.categories-common-content {
+  margin-right: 150px;
+  margin-top: 90px;
+}
+
+.categories-common-content-title,
+.categories-common-content-heading {
+  text-align: center;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.categories-common-content-button {
+  background-color: $primary-color;
+  color: $secondary-color;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  // margin-left: 70px;
+}
+
+/* Categories common end */
