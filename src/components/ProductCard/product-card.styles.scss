@@ -1,0 +1,149 @@
+.pcard {
+  height: 22.7rem;
+  width: 14rem;
+  margin: 0.5rem;
+  padding: 0.2rem;
+  border-bottom: 2px dashed rgb(224, 222, 222);
+  box-shadow: 8px 0 4px -3px rgb(219, 215, 215);
+}
+
+.pcard h4 {
+  height: 15%;
+  margin-block-end: 0.4rem;
+  margin-block-start: 1rem;
+}
+
+.pcard_img {
+  height: 10rem;
+  width: 100%;
+}
+.pcard__btns--big {
+  display: flex;
+  justify-content: space-between;
+}
+
+.pcard__btns--small {
+  display: none;
+}
+
+.btn--big {
+  width: 8rem;
+  align-items: center;
+
+}
+.pcard__para {
+  background-color: rgb(218, 214, 214);
+  height: 5rem;
+  padding: 0.3rem;
+  padding-bottom: 0.4rem;
+  line-height: 1.15rem;
+  font-size: 0.9rem;
+  color: black;
+  font-weight: 510;
+  margin-block-start: 0rem;
+  margin-block-end: 0.2rem;
+  overflow: hidden;
+}
+
+@media screen and (max-device-width: 480px) {
+  .pcard {
+    width: 100%;
+    height: 16rem;
+    border-bottom: none;
+  }
+
+  .pcard__details {
+    display: flex;
+    width: 100%;
+    height: 80%;
+
+    border-bottom: 2px dashed rgb(204, 201, 201);
+  }
+
+  .pcard h4 {
+    height: 18%;
+    margin-block-start: 0.2rem;
+    margin-block-end: 0.3rem;
+  }
+
+  .pcard_img {
+    width: 45%;
+    height: 90%;
+  }
+
+  .pcard__desc {
+    width: 55%;
+    padding: 2%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .pcard__btns--big {
+    display: none;
+  }
+  .pcard__btns--small {
+    display: block;
+    width: 100%;
+  }
+}
+
+@media screen and (min-device-width: 481px) and (max-device-width: 768px) {
+  .pcard {
+    width: 47%;
+    height: 16rem;
+    border-bottom: none;
+    border-bottom: 2px dashed rgb(204, 201, 201);
+    margin: 0.2rem;
+    padding: 0.2rem;
+    padding-bottom: 0.3rem;
+  }
+
+  .pcard__details {
+    display: flex;
+    width: 100%;
+    height: 80%;
+    position: relative;
+  }
+
+  .pcard h4 {
+    height: 18%;
+    margin-block-start: 0.2rem;
+    margin-block-end: 0.3rem;
+  }
+
+  .pcard_img {
+    width: 45%;
+    height: 80%;
+  }
+
+  .pcard_btns {
+    position: absolute;
+    bottom: 1%;
+    left: 1%;
+    width: 100%;
+  }
+
+  .pcard__para {
+    height: 100%;
+  }
+
+  .pcard__desc {
+    width: 55%;
+
+    height: 80%;
+    padding: 2%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .pcard__btns--big {
+    display: none;
+  }
+  .pcard__btns--small {
+    display: block;
+    width: 98%;
+    height: 2.2rem;
+    font-size: 0.9rem;
+  }
+}

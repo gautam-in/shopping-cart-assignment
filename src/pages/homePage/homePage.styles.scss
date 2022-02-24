@@ -1,0 +1,18 @@
+.homePage {
+  height: calc(100vh - 7.5rem);
+  padding: 0.25rem;
+  overflow: auto;
+
+}
+
+@media screen and (max-device-width: 480px) {
+  .homePage {
+    height: calc(100vh - 3.7rem);
+  }
+}
+
+@media screen and (min-device-width: 481px) and (max-device-width: 768px) {
+  .homePage {
+    height: calc(100vh - 6rem);
+  }
+}
