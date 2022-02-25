@@ -1,0 +1,26 @@
+.copyright-text {
+  width: 75vw;
+  margin: 0px auto;
+  display: flex;
+  justify-content: space-between;
+  background: #f3f3f3;
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .copyright-text {
+    width: auto;
+    justify-content: center;
+  }
+}
+@media (min-width: 481px) and (max-width: 767px) {
+  .copyright-text {
+    width: auto;
+    justify-content: center;
+  }
+}
+@media (min-width: 320px) and (max-width: 480px) {
+  .copyright-text {
+    width: auto;
+    justify-content: center;
+  }
+}
