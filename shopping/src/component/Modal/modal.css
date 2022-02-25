@@ -1,0 +1,59 @@
+.modal {
+  z-index: 10;
+  top: 99px;
+  position: fixed;
+  right: 0;
+  background-color: #fff;
+  border-radius: 2.5px;
+  left: 35%;
+  margin: 0 auto;
+  font-size: 14px;
+  max-height: 90%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  max-width: 550px;
+  width: 100%;
+}
+.overlay {
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 9;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  top: 0px;
+}
+@media only screen and (max-width: 1024px) {
+  .modal {
+    left: 0;
+    bottom: 0;
+    background-color: #ebebeb;
+    top: 94px;
+  }
+  .modal-header {
+    height: auto !important;
+    margin-top: 19px !important;
+    background-color: #fff !important;
+  }
+  .modal-footer {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #fff;
+  }
+  .overlay {
+    background: transparent;
+    top: 97px;
+  }
+
+  .modal-header h3 {
+    color: #2c2c2c !important;
+  }
+  .overHidden {
+    overflow: hidden;
+  }
+}

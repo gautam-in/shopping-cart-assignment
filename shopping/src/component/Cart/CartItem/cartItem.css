@@ -1,0 +1,23 @@
+.row-item img {
+  width: 100px;
+}
+.items-content button {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  background: 0;
+  color: #c72658;
+  width: 27px;
+  height: 27px;
+}
+.items-content svg {
+  width: 100%;
+  height: 100%;
+}
+
+.items-content span {
+  display: inline-block;
+  margin: 0 10px;
+  min-width: 20px;
+  text-align: center;
+}

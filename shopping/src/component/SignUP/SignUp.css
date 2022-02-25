@@ -1,0 +1,77 @@
+.registartion-conatiner {
+  display: flex;
+  padding: 0 5px;
+  height: auto;
+  justify-content: space-between;
+}
+
+.left-section {
+  display: flex;
+  width: 50%;
+  justify-content: center;
+}
+
+.right-Section {
+  display: flex;
+  width: 50%;
+  justify-content: space-between;
+}
+
+.loginCard {
+  display: flex;
+  justify-content: inherit;
+  width: 100%;
+}
+.loginCard form {
+  width: 431px;
+}
+
+.labelfield {
+  display: block;
+  font-size: 0.875rem;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+    Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji,
+    Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+  margin-bottom: 1rem;
+}
+
+.registartion-conatiner {
+  display: flex;
+  padding: 0 5px;
+  height: auto;
+  justify-content: space-between;
+  margin-top: 50px;
+}
+
+.inputMain {
+  width: 90%;
+  height: 30px;
+  border: none;
+  border-bottom: 1px solid #424141;
+}
+
+.labelfield label {
+  color: #424141;
+  transform: translateY(-40px);
+  display: block;
+  transform-origin: 0 0;
+  transition: all 0.3s;
+}
+
+.inputMain:focus {
+  outline: 0;
+  border-bottom: 1px solid #25e7bb;
+}
+
+.inputMain:focus ~ label {
+  transform: translateY(-53px);
+  color: #25e7bb;
+}
+
+.labelfield span {
+  color: #ca0c02;
+  float: left;
+  width: 100%;
+  margin-bottom: 10px;
+  transform: translateY(-15px);
+}
