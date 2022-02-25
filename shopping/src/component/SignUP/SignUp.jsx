@@ -105,7 +105,6 @@ const SignUp = (props) => {
             <form onSubmit={registrationSubmitHandler}>
               <div>
                 <Label>
-                  <label htmlFor="fName">First Name</label>
                   <Input
                     id="fName"
                     value={firstName}
@@ -114,6 +113,7 @@ const SignUp = (props) => {
                     ariaInvalid={formErrors.firstName ? true : null}
                     ariaDescribed={formErrors.firstName ? "fnameIderror" : null}
                   />
+                  <label htmlFor="fName">First Name</label>
                   {formErrors.firstName ? (
                     <span id="fnameIderror">{formErrors.firstName}</span>
                   ) : null}
@@ -122,7 +122,6 @@ const SignUp = (props) => {
 
               <div>
                 <Label>
-                  <label htmlFor="lName">Last Name</label>
                   <Input
                     id="lName"
                     value={lastName}
@@ -132,6 +131,7 @@ const SignUp = (props) => {
                     ariaInvalid={formErrors.lastName ? true : null}
                     ariaDescribed={formErrors.lastName ? "lnameIderror" : null}
                   />
+                  <label htmlFor="lName">Last Name</label>
                   {formErrors.lastName ? (
                     <span id="lnameIderror">{formErrors.lastName}</span>
                   ) : null}
@@ -139,7 +139,6 @@ const SignUp = (props) => {
               </div>
               <div>
                 <Label>
-                  <label htmlFor="email">Email</label>
                   <Input
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
@@ -147,7 +146,9 @@ const SignUp = (props) => {
                     ariaRequired="true"
                     ariaInvalid={formErrors.email ? true : null}
                     ariaDescribed={formErrors.email ? "emailIderror" : null}
+                    id="email"
                   />
+                  <label htmlFor="email">Email</label>
                   {formErrors.email ? (
                     <span id="emailIderror">{formErrors.email}</span>
                   ) : null}
@@ -155,7 +156,6 @@ const SignUp = (props) => {
               </div>
               <div>
                 <Label>
-                  <label htmlFor="passInput">Password</label>
                   <Input
                     id="passInput"
                     type="password"
@@ -167,6 +167,7 @@ const SignUp = (props) => {
                       formErrors.passwordCheck ? "passwordIderror" : null
                     }
                   />
+                  <label htmlFor="passInput">Password</label>
                   {formErrors.passwordCheck ? (
                     <span id="passwordIderror">{formErrors.passwordCheck}</span>
                   ) : null}
@@ -175,7 +176,6 @@ const SignUp = (props) => {
 
               <div>
                 <Label>
-                  <label htmlFor="repeatPassinput">Confirmed password</label>
                   <Input
                     id="repeatPassinput"
                     type="password"
@@ -187,6 +187,7 @@ const SignUp = (props) => {
                       formErrors.repeaCheck ? "repeatIderror" : null
                     }
                   />
+                  <label htmlFor="repeatPassinput">Confirmed password</label>
                   {formErrors.repeaCheck ? (
                     <span id="repeatIderror">{formErrors.repeaCheck}</span>
                   ) : null}

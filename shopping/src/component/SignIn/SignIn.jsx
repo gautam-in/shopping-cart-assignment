@@ -63,7 +63,6 @@ const SignIn = (props) => {
             <form onSubmit={loginSubmitHandler}>
               <div>
                 <Label>
-                  <label htmlFor="email">Email</label>
                   <Input
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
@@ -72,6 +71,7 @@ const SignIn = (props) => {
                     ariaInvalid={formErrors.email ? true : null}
                     ariaDescribed={formErrors.email ? "emailIderror" : null}
                   />
+                  <label htmlFor="email">Email</label>
                   {formErrors.email ? (
                     <span id="emailIderror">{formErrors.email}</span>
                   ) : null}
@@ -79,7 +79,6 @@ const SignIn = (props) => {
               </div>
               <div>
                 <Label>
-                  <label htmlFor="passInput">Password</label>
                   <Input
                     id="passInput"
                     type="password"
@@ -91,6 +90,7 @@ const SignIn = (props) => {
                       formErrors.passwordCheck ? "passwordIderror" : null
                     }
                   />
+                  <label htmlFor="passInput">Password</label>
                   {formErrors.passwordCheck ? (
                     <span id="passwordIderror">{formErrors.passwordCheck}</span>
                   ) : null}

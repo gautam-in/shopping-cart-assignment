@@ -33,7 +33,7 @@ const Category = (props) => {
       ) : (
         <div className="dropdown">
           <div className="dropdown-header">
-            <button type="button " onClick={toggleDropdown}>
+            <button type="button " onClick={toggleDropdown} id="exp_elem">
               {selectedItem}
               <i
                 style={{ float: "right" }}
@@ -45,10 +45,10 @@ const Category = (props) => {
           </div>
           {isOpen ? (
             <div className={`dropdown-body ${isOpen && "open"}`}>
-              <ul>
+              <ul role="listbox" aria-labelledby="exp_elem">
                 {CategoryData.map((item, index) => {
                   return (
-                    <li key={item.id}>
+                    <li key={item.id} role="option">
                       <button
                         type="button"
                         className={
@@ -57,6 +57,7 @@ const Category = (props) => {
                         onClick={() => {
                           props.clickprops(item.id, item);
                           setSelectedName(item.name);
+                          setOpen(false);
                         }}
                       >
                         {item.name}

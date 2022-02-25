@@ -48,4 +48,17 @@
   .icon.open {
     transform: rotate(90deg);
   }
+  .dropdown {
+    position: relative;
+  }
+  .dropdown-body.open {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 100%;
+    z-index: 9;
+  }
+  .dropdown-body.open ul {
+    background-color: #fff;
+  }
 }

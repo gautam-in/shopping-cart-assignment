@@ -52,7 +52,7 @@
 
 .labelfield label {
   color: #424141;
-  transform: translateY(3px);
+  transform: translateY(-40px);
   display: block;
   transform-origin: 0 0;
   transition: all 0.3s;
@@ -60,11 +60,12 @@
 
 .inputMain:focus {
   outline: 0;
-  border-bottom: 1px solid aquamarine;
+  border-bottom: 1px solid #25e7bb;
 }
 
 .inputMain:focus ~ label {
-  transform: translateY(0px);
+  transform: translateY(-53px);
+  color: #25e7bb;
 }
 
 .labelfield span {
@@ -72,4 +73,5 @@
   float: left;
   width: 100%;
   margin-bottom: 10px;
+  transform: translateY(-15px);
 }
