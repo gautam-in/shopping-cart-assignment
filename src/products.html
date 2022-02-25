@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sabka Bazaar</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Dosis:400,600,700">
+
+</head>
+
+<body>
+    <header id="header"></header>
+    <div class="product_section">
+        <div class="row">
+            <div class="product-main">
+                <div class="product-main__sidenav">
+                    <input type="checkbox" id="filter" />
+                    <label for="filter" class="carret">
+                        Fruits & Vegetables
+                    </label>
+                    <ul id="productMenu"></ul>
+                </div>
+                <div class="product-main__list">
+                    <div class="product-listing" id="product_listing">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/x-handlebars-template" id="productMenuTemplates">
+        {{#each categories}}
+            {{#ifFirstIndex @index}}
+                <li><a onclick="renderProducts('{{id}}')" class="links active">{{name}}</a></li>
+            {{else}}
+                <li><a onclick="renderProducts('{{id}}')" class="links">{{name}}</a></li>
+            {{/ifFirstIndex}}
+        {{/each}}
+    </script>
+    <script type="text/x-handlebars-template" id="productListingTemplates">
+        {{#each products}}
+        <div class="items">
+            <h3 title="{{name}}">{{name}}</h3>
+            <div class="product_Details">
+                <span><img src="{{imageURL}}" alt="{{name}}" srcset=""></span>
+                <p title="{{description}}">{{description}}</p>
+                <div class="price_tag">
+                    <a onclick="addToCart('{{id}}')" class="btn--default">Buy Now <span>MRP Rs.{{price}}</span></a>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+    </script>
+    <footer id="footer"></footer>
+    <script src="vendor/handlebars-v4.1.1.js"></script>
+    <script src="js/products.js"></script>
+</body>
+</html>

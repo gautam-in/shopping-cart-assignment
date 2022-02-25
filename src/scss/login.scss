@@ -1,0 +1,98 @@
+.login {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+
+  &__text {
+    flex: 0 1 100%;
+    margin-bottom: 40px;
+    padding: 0 15px;
+  }
+  &__form {
+    flex: 0 1 100%;
+    padding: 0 15px;
+  }
+  .btn--default {
+    width: 100%;
+  }
+}
+
+.firstname,
+.lastname,
+.confirm_password,
+.email,
+.password {
+  position: relative;
+  margin-bottom: 45px;
+}
+
+/* LABEL ======================================= */
+.login {
+  label {
+    color: #999;
+    font-size: 18px;
+    font-weight: normal;
+    position: absolute;
+    pointer-events: none;
+    left: 5px;
+    top: 10px;
+    transition: 0.2s ease all;
+    -moz-transition: 0.2s ease all;
+    -webkit-transition: 0.2s ease all;
+  }
+  input {
+    font-size: 18px;
+    padding: 10px 10px 10px 5px;
+    display: block;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #cccccc;
+    &:focus,
+    &:valid {
+      outline: none;
+      border-bottom: 1px solid #50dae4;
+    }
+  }
+}
+
+/* active state */
+.login {
+  input {
+    &:focus,
+    &:valid {
+      & ~ label {
+        top: -20px;
+        font-size: 14px;
+        color: #50dae4;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 480px) {
+  .login {
+    &__text {
+      flex: 0 1 50%;
+      align-self: flex-start;
+      p {
+        margin-top: 15px;
+        font-size: 16px;
+      }
+    }
+    &__form {
+      flex: 0 1 50%;
+      max-width: 450px;
+      h2 {
+        margin-bottom: 10px;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .login {
+    &__text {
+      padding-left: 100px;
+    }
+  }
+}

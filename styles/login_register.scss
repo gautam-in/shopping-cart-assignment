@@ -1,0 +1,60 @@
+@import './resets.scss';
+@import '_variables';
+
+#main-container {
+    display : grid;
+    max-width : 1000px;
+    margin : 0 auto;
+    grid-template-columns : 1fr 1fr;
+    grid-column-gap : 3rem;
+    background-color : white;
+    margin-top : 5rem;
+}
+#form-container {
+    justify-self : start;
+}
+#title-container {
+    justify-self : center;
+}
+form {
+    width : 25vw;
+}
+input {
+    border-width : 0;
+    border-bottom-width : 1.5px;
+    padding-top : 1rem;
+    width : 100%;
+    &:focus {
+        outline : 0;
+        border-color : $lightBlue;
+    }
+}
+label {
+    display : block;
+    padding-top : 1rem;
+}
+#submit-button {
+    width : 100%; 
+    margin-top : 2rem; 
+    padding : 10px 60px; 
+    background-color : $pink; 
+    color : white; 
+    border-width : 0;
+    cursor : pointer;
+}
+@media only screen and (max-width: 600px) {
+    #main-container {
+        margin-top : 0;
+        grid-template-columns : 1fr;
+        grid-template-rows : 0.1fr 1fr;
+    }
+    #form-container {
+        justify-self : center;
+    }
+    form {
+        width : 50vw;
+    }
+    #title-container h2, p{
+        text-align : center;
+    }
+}
