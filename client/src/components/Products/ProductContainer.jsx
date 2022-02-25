@@ -2,7 +2,6 @@ import React, { Fragment } from "react";
 import { useEffect } from "react";
 import "./product.scss";
 import axios from "axios";
-// import { Container, Grid } from "@material-ui/core";
 import { useState } from "react";
 import { Col, Container, FormGroup, Input, Row } from "reactstrap";
 import ProductList from "./ProductList";
@@ -19,18 +18,23 @@ const ProductContainer = () => {
   const categoryList = useSelector((state) => state.catagories.categories);
   const { setCartTotalItems, setCartItems } = useContext(MainContext);
   const [filterProductList, setFilterProductList] = useState(null);
+  const [filterId, setFilterId] = useState(null);
   const [cart, setCart] = useState([]);
 
   const filterDataHandler = (id) => {
-    sessionStorage.setItem("filterID", id);
-    if (id !== "all") {
-      let cloneProdcutArr = [...productListData];
-      const filterProductList = cloneProdcutArr.filter((product) => {
-        return product.category === id;
-      });
-      setFilterProductList(filterProductList);
-    } else {
+    if (filterId && filterId === id) {
+      setFilterId(null);
       dispatch(getProductList());
+    } else {
+      setFilterId(id);
+      if (id) {
+        let cloneProdcutArr = [...productListData];
+        const filterProductList = cloneProdcutArr.filter((product) => {
+          return product.category === id;
+        });
+        setFilterProductList(filterProductList);
+        localStorage.removeItem("categoryId");
+      }
     }
   };
 
@@ -60,7 +64,11 @@ const ProductContainer = () => {
   }, []);
 
   useEffect(() => {
-    if (productListData && localStorage.getItem("categoryId")) {
+    if (
+      productListData &&
+      productListData.length > 0 &&
+      localStorage.getItem("categoryId")
+    ) {
       filterDataHandler(localStorage.getItem("categoryId"));
     }
   }, [productListData]);
@@ -113,9 +121,7 @@ const ProductContainer = () => {
                       <div
                         key={item.id}
                         className={`sidebar-item-name ${
-                          sessionStorage.getItem("filterID") === item.id
-                            ? "sidebar-bold"
-                            : ""
+                          filterId === item.id ? "sidebar-bold" : ""
                         }`}
                         onClick={() => filterDataHandler(item.id)}
                       >
@@ -128,8 +134,7 @@ const ProductContainer = () => {
 
           <Col md={9}>
             <ProductList
-              productdata={productListData}
-              filterData={filterProductList}
+              filterData={filterId ? filterProductList : productListData}
               addTocart={addTocart}
             />
           </Col>

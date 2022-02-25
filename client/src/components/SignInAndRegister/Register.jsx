@@ -1,8 +1,9 @@
 import { Button, FormControl, TextField } from "@material-ui/core";
-import React, {  useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Col, Container, Row } from "reactstrap";
 import { makeStyles } from "@material-ui/core/styles";
 import "./login.scss";
+import { useNavigate } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -15,6 +16,7 @@ const useStyles = makeStyles((theme) => ({
 
 const Register = () => {
   const classes = useStyles();
+  const navigate = useNavigate();
   const [state, setState] = useState({
     firstName: "",
     lastName: "",
@@ -26,7 +28,7 @@ const Register = () => {
     confirm_password_error: "",
     password_match_error: "",
   });
-  const [users] = useState([]);
+  const [users, setUsers] = useState([]);
 
   const changeHandler = (event) => {
     setState({
@@ -92,9 +94,9 @@ const Register = () => {
         lastName: state.lastName,
         email: state.email,
         password: state.password,
-      }
-      users.push(value);
-      sessionStorage.setItem("user", JSON.stringify(users));
+      };
+      setUsers([...users, value]);
+
       setState({
         ...state,
         firstName: "",
@@ -107,8 +109,13 @@ const Register = () => {
         confirm_password_error: "",
         password_match_error: "",
       });
+        navigate("/signin");
     }
   };
+
+  useEffect(() => {
+    sessionStorage.setItem("users", JSON.stringify(users));
+  }, [users]);
 
   return (
     <div>
@@ -116,7 +123,9 @@ const Register = () => {
         <div className="login_form">
           <Row>
             <Col md={6}>
-              <h4>Signup</h4>
+              <h4>
+                <strong>Signup</strong>
+              </h4>
               <p>We do not share your personal details with anyone.</p>
             </Col>
 

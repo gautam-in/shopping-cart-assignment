@@ -37,10 +37,12 @@ const LogIn = () => {
 
   const submitHandler = (event) => {
     event.preventDefault();
-    // console.log(email, password);
-    if (emailError.length === 0 && passwordError.length === 0) {
-      //   console.log(JSON.parse(sessionStorage.getItem("user")));
-      let result = JSON.parse(sessionStorage.getItem("user")).filter((user) => {
+    if (
+      emailError.length === 0 &&
+      passwordError.length === 0 &&
+      sessionStorage.getItem("users")
+    ) {
+      let result = JSON.parse(sessionStorage.getItem("users")).filter((user) => {
         return user.email === email && user.password === password;
       });
       if (result.length > 0) {
@@ -49,6 +51,8 @@ const LogIn = () => {
       } else {
         setLoginError("User Not Found!!");
       }
+    } else {
+      setLoginError("User Not Found!!");
     }
   };
 
@@ -58,7 +62,9 @@ const LogIn = () => {
         <div className="login_form">
           <Row>
             <Col md={6}>
-              <h4 className="login-header">Login</h4>
+              <h4 className="login-header">
+                <strong>Login</strong>
+              </h4>
               <p>Get access to your Orders, Wishlist and Recommendations</p>
             </Col>
             <Col md={6}>
@@ -104,7 +110,12 @@ const LogIn = () => {
 
                 <p className="text-danger">{loginError}</p>
 
-                <Button variant="contained" color="primary" className='submit-btn' type="submit">
+                <Button
+                  variant="contained"
+                  color="primary"
+                  className="submit-btn"
+                  type="submit"
+                >
                   Submit
                 </Button>
               </form>
