@@ -1,0 +1,54 @@
+body {
+  box-sizing: border-box;
+  margin: 0; }
+
+.carousal {
+  position: relative;
+  top: 5px; }
+
+.carousal-img {
+  display: none;
+  max-width: 100%;
+  height: auto; }
+
+.visible {
+  display: block; }
+
+.dots-container {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%, -50%); }
+
+.dot {
+  background-color: #EEEEEE;
+  border: 1px solid #7B7B7B;
+  border-radius: 5px;
+  box-shadow: inset 1px 1px 1px #888;
+  display: inline-block;
+  height: 5px;
+  width: 5px;
+  margin: 0 5px; }
+  .dot:hover {
+    cursor: pointer; }
+  .dot.active {
+    background-color: black;
+    box-shadow: inset 2px 0px 2px -2px #333; }
+
+.carousal-controls {
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%; }
+
+.controls {
+  border: 1px solid black;
+  color: white;
+  background-color: black;
+  padding: 4px;
+  opacity: 0.2; }
+  .controls:hover {
+    cursor: pointer;
+    opacity: 0.5; }
