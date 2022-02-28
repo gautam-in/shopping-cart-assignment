@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`redner card component 1`] = `
+<Fragment>
+  <Container
+    tag="div"
+  >
+    <div
+      className="list-container"
+    />
+  </Container>
+</Fragment>
+`;
