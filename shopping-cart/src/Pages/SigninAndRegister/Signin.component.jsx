@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
+import { UserContext } from "../../App";
 import {
   Container,
   Content,
@@ -13,6 +14,7 @@ import api from "../../api/data";
 import { useNavigate } from "react-router-dom";
 
 const Signin = () => {
+  const context = useContext(UserContext);
   const [user, setUser] = useState({ email: "", pwd: "" });
   const [record, setRecord] = useState([]);
   const location = useNavigate();
@@ -38,7 +40,10 @@ const Signin = () => {
     let check = record.find((item) => {
       return item.email === user.email && item.password === user.pwd;
     });
-    check ? location("/") : alert("Invalid user");
+    if (check) {
+      context.setUser({ userSigned: true, name: check.firstName });
+      location("/");
+    } else alert("Invalid user");
   };
 
   return (

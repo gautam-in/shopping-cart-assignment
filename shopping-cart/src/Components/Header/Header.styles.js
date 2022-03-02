@@ -36,12 +36,18 @@ export const Nav = styled.div`
   }
 `;
 
-export const Signin_Cart = styled.div`
+export const SigninCart = styled.div`
   margin-left: auto;
   width: 20%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
+  //tablet-view
+  @media screen and (max-width: 1200px) {
+    width: 24%;
+  }
+  //mobile-view
   @media screen and (max-width: 580px) {
     width: 40%;
   }
@@ -50,6 +56,11 @@ export const Signin_Cart = styled.div`
 export const Signin = styled.div`
   display: flex;
   justify-content: space-around;
+  //tablet-view
+  @media screen and (max-width: 1200px) {
+    width: 100%;
+  }
+  //mobile-view
   @media screen and (max-width: 580px) {
     display: none;
   }

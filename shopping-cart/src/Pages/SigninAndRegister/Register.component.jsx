@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import { UserContext } from "../../App";
 import { useNavigate } from "react-router-dom";
 import {
   Container,
@@ -13,6 +14,7 @@ import {
 import api from "../../api/data";
 
 const Register = () => {
+  const context = useContext(UserContext);
   const [user, setUser] = useState({});
   const [confirmpwd, setConfirmPwd] = useState("");
   const [error, setError] = useState(false);
@@ -34,8 +36,8 @@ const Register = () => {
         id: id,
         ...user,
       };
-      let res = await api.post("/userRecord", data);
-      console.log(res);
+      await api.post("/userRecord", data);
+      context.setUser({ userSigned: true, name: user.firstName });
       location("/");
     }
   };

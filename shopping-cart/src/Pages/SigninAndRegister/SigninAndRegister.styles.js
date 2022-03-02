@@ -42,7 +42,7 @@ export const Fields = styled.div`
 
 export const Label = styled.label`
   position: absolute;
-  font-size: 15px;
+  font-size: 12px;
   top: 20px;
   color: grey;
   transition: 0.4s linear;

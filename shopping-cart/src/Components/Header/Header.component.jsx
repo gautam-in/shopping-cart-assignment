@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { useSelector } from "react-redux";
+import { UserContext } from "../../App";
 import Cart from "../Cart/Cart.component";
 import {
   HeaderContainer,
   Nav,
-  Signin_Cart,
+  SigninCart,
   Signin,
   CartContainer,
   CartIcon,
@@ -13,6 +14,7 @@ import {
 } from "./Header.styles";
 
 const Header = () => {
+  const { USER, setUser } = useContext(UserContext);
   const [cartClose, setClose] = useState(false);
 
   let itemsCount = useSelector((state) =>
@@ -25,7 +27,7 @@ const Header = () => {
   let width = window.innerWidth <= 1200 ? true : false;
   useEffect(() => {
     cartClose && !width
-      ? (document.getElementById("root").style.opacity = "0.5")
+      ? (document.getElementById("root").style.opacity = "0.3")
       : (document.getElementById("root").style.opacity = "1");
   }, [cartClose, width]);
 
@@ -38,16 +40,29 @@ const Header = () => {
         <Option to="/">Home</Option>
         <Option to="/shop">Products</Option>
       </Nav>
-      <Signin_Cart>
+      <SigninCart>
         <Signin>
-          <Option to="/signin">SignIn</Option>
-          <Option to="register">Register</Option>
+          {!USER.userSigned ? (
+            <>
+              <Option to="/signin">SignIn</Option>
+              <Option to="register">Register</Option>
+            </>
+          ) : (
+            <Option
+              to="/"
+              onClick={() => {
+                setUser({ userSigned: false, name: "" });
+              }}
+            >
+              Hi {USER.name + ""}, SignOut
+            </Option>
+          )}
         </Signin>
         <CartContainer onClick={() => setClose(!cartClose)}>
           <CartIcon />
           <span>{itemsCount} items</span>
         </CartContainer>
-      </Signin_Cart>
+      </SigninCart>
       {cartClose && <Cart close={(flag) => setClose(flag)} />}
     </HeaderContainer>
   );
