@@ -53,7 +53,7 @@ input[type="password"]{
 
 
 
-.form__input__label .shrink{
+.shrink.form__input__label{
     top: -14px;
     font-size: 12px;
     color: black;

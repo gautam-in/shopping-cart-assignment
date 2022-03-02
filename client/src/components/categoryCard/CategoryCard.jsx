@@ -3,7 +3,7 @@ import {useHistory} from 'react-router-dom'
 import axios from 'axios'
 
 import classes from './CategoryCard.module.css'
-import Button from '../button/Button'
+
 
 
 const CategoryCard = () => {

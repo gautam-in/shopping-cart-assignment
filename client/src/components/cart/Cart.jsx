@@ -11,7 +11,7 @@ import CartModal from '../cartModal/CartModal'
 
 const Cart = () => {
 
-    const testCartOpen = true;
+    
     const {
         cart : {
             cartOpen,

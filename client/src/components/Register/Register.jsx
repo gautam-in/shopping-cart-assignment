@@ -19,11 +19,15 @@ const Register = () => {
     })
 
     const [error, setError] = useState({
+        password: "",
         confirmPassword: ""
     })
 
     const handleSubmit = async (event)=>{
         event.preventDefault()
+        if(error.password){
+            return;
+        }
         if(credentials.password !== credentials.confirmPassword){
             return;
         }
@@ -45,8 +49,17 @@ const Register = () => {
             }
         }
 
+        if(name === "password"){
+            const passRegx = /(?=^.{6,10}$)(?=.*\d)(?=.*[a-zA-Z])(?!.*\s)/;
 
-
+            if(!passRegx.test(value)){
+                const errorMessage = "please add min 6 characters"
+                setError({ ...error, [name]: errorMessage });  
+            }
+            else{
+                setError({ ...error, [name]: "" });
+            }
+        }
     }
 
         return (
@@ -93,6 +106,7 @@ const Register = () => {
                     label="Password"
                     value={credentials.password}
                     handleChange={handleChange}
+                    error={error.password}
                     required
                     
                 />

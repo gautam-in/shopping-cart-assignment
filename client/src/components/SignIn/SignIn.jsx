@@ -1,4 +1,4 @@
-import react, {useState} from 'react'
+import  {useState} from 'react'
 import {useHistory} from 'react-router-dom'
 
 import classes from './SignIn.module.css'
@@ -14,9 +14,16 @@ const history = useHistory()
         password: ""
     })
 
+    const [error, setError] = useState({
+        email: "",
+        password: "",
+      });
+
     const handleSubmit = async (event)=>{
         event.preventDefault()
-
+        if(error.email || error.password){
+            return;
+        }
         history.push('/')
 
     }
@@ -25,6 +32,18 @@ const history = useHistory()
 
         const {value, name} = event.target;
         setCredentails({...credentials, [name]: value})
+
+        if(name === "password"){
+            const passRegx = /(?=^.{6,10}$)(?=.*\d)(?=.*[a-zA-Z])(?!.*\s)/;
+
+            if(!passRegx.test(value)){
+                const errorMessage = "please add min 6 characters"
+                setError({ ...error, [name]: errorMessage });  
+            }
+            else{
+                setError({ ...error, [name]: "" });
+            }
+        }
     }
 
     return (
@@ -51,6 +70,7 @@ const history = useHistory()
                     label="Password"
                     value={credentials.password}
                     handleChange={handleChange}
+                    error={error.password}
                     required
                     
                 />
