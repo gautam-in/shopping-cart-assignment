@@ -1,0 +1,32 @@
+
+
+.cart__table__discount{
+
+    margin: 1rem 0.5rem;
+   padding: 0.5rem;
+   background-color: #fff;
+   display: flex;
+   align-items: center;
+}
+
+.cart__table__discount__image{
+
+    max-width: 90px;
+   max-height: 60px;
+}
+
+.cart__table__discount_text{
+
+    font-size: 0.8rem;
+   padding-left: 0.5rem;
+   color: #4d4d4d;
+}
+
+
+
+
+
+
+
+
+
