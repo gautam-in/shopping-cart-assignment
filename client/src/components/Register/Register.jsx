@@ -125,6 +125,7 @@ const Register = () => {
 
                 <Button 
                 type="submit"
+                
                 style={{
                     width:'100%',
                     height: '3.5rem'
