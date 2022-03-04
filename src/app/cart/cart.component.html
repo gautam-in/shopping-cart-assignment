@@ -1,0 +1,57 @@
+<div class="modal-header">
+    <h4 class="modal-title">My Cart <span class="no-of-item" *ngIf="cartItems?.length">({{cartItems?.length}}
+            item)</span></h4>
+    <button type="button" class="btn-close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+        <i class="fa-solid fa-xmark"></i>
+    </button>
+</div>
+<div class="modal-body" [ngClass]="{ 'body-bgc' : cartItems?.length }">
+    <ng-container *ngFor="let item of cartItems;let i=index;">
+        <div class="row cart-item p-2 mb-2">
+            <div class="col-5 col-sm-4">
+                <img src="../../assets{{item?.imgUrl}}" alt="{{item.name}}">
+            </div>
+            <div class="col-7 col-sm-8 product-desc">
+                <h5 class="product-title">{{item?.name}}</h5>
+                <ul class="list-group list-group-horizontal">
+                    <li class="list-group-item">
+                        <button type="button" class="btn plus-btn" (click)="addItemQty(i)">
+                            <i class="fa-solid fa-circle-plus"></i>
+                        </button>
+                        <span>{{item?.qty}}</span>
+                        <button type="button" class="btn minus-btn" (click)="removeItemQty(i)">
+                            <i class="fa-solid fa-circle-minus"></i>
+                        </button>
+                    </li>
+                    <li class="list-group-item">
+                        <span><i class="fa-solid fa-xmark"></i></span>
+                        <label class="item-price">Rs.{{item?.price}}</label>
+                    </li>
+                    <li class="list-group-item item-total-price">Rs.{{item.price*item.qty}}</li>
+                </ul>
+            </div>
+        </div>
+        <div class="row cart-item p-2 align-items-baseline">
+            <div class="col-5">
+                <img src="../../assets/static/images/lowest-price.png" alt="">
+            </div>
+            <div class="col-7">
+                <p>You won't find it cheaper anywhere</p>
+            </div>
+        </div>
+    </ng-container>
+    <div *ngIf="cartItems?.length == 0" class="container-fluid no-cart-items">
+        <h3>No items in your cart</h3>
+        <p>Your favorite items are just a click away</p>
+    </div>
+</div>
+<div class="modal-footer">
+    <button *ngIf="cartItems.length == 0; else prompt" type="button" class="btn btn-outline-dark start-shopping-btn"
+        (click)="activeModal.close('Start Shopping')">Start Shopping</button>
+    <ng-template #prompt>
+        <p class="w-100 text-center">Promo code can be applied on payment page</p>
+        <button *ngIf="cartItems.length > 0; else prompt" type="button"
+            (click)="activeModal.dismiss('Proceed to Checkout')" class="btn btn-outline-dark checkout-btn">Proceed to
+            Checkout</button>
+    </ng-template>
+</div>

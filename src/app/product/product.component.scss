@@ -1,0 +1,66 @@
+.card-title {
+  height: 50px;
+  color: black;
+  font-weight: bold;
+}
+.card-text {
+  padding: 5px;
+  background-color: #e4e4e47a;
+  height: 120px;
+  overflow: hidden;
+  color: black;
+  font-weight: bold;
+}
+.buy-now-btn {
+  color: white;
+  background-color: #d00255;
+}
+.action-row {
+  align-items: flex-end;
+}
+.card-container {
+  margin-bottom: 10px;
+}
+.sidebar {
+  background: #e4e4e4;
+  padding: 0px;
+  li {
+    background: #e4e4e4;
+  }
+}
+#categoryFilter {
+  background: #d00255;
+  border-color: #d00255;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  .fa-chevron-down {
+    float: right;
+    padding: 5px;
+  }
+  .btn-label{
+    float: left;
+  }
+}
+.dropdown-toggle::after {
+  display: none;
+}
+.list-group-item.active {
+  background-color: #d00255;
+  border-color: #d00255;
+}
+
+@media screen and (max-width: 576px) {
+  .sidebar {
+    display: none;
+  }
+  .product-mrp {
+    display: none;
+  }
+  .buy-now-btn {
+    width: inherit;
+  }
+  .category-dropdown {
+    display: block !important;
+  }
+}
