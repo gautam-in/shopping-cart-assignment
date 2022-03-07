@@ -12,3 +12,10 @@
     bottom: 0;
     background-color: rgba(0, 0, 0, 0.7);
 }
+
+@media screen and (max-width: 780px){
+    .modal {
+        height: 100%;
+        width: 100%;
+    }
+}

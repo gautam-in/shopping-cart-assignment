@@ -9,6 +9,20 @@
     height: 100%;
     cursor: pointer;
   }
+
+  @media screen and (max-width: 480px){
+    .wrapper{
+      margin-top: 0;
+      padding: 0 1rem 0 1rem;
+    }
+  }
+
+  @media screen and (max-width: 780px){
+    .wrapper{
+      
+      padding: 0 ;
+    }
+  }
   .wrapper .image {
     width: 40px;
     color: red;
