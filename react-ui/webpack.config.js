@@ -8,6 +8,7 @@ module.exports = {
     path: path.resolve(__dirname, 'build'),
     filename: 'main.bundle.js',
   },
+  // context: path.resolve(__dirname, 'src'),
   plugins: [
     new HtmlWebpackPlugin({
       template: path.join(__dirname, "index.html"),
@@ -27,4 +28,7 @@ module.exports = {
       }
     ]
   },
+  resolve: {
+    extensions: [".js", ".jsx"]
+  }
 };
