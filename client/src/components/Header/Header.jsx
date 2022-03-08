@@ -72,6 +72,10 @@ const Navigation = styled.div`
      align-self: flex-end;
      padding-bottom: 20px;
      flex-grow: 0.5;
+
+     @media only screen and (max-device-width: 480px) {
+         display: none;
+     }
 `;
 
 const NavLinks = styled.div`
