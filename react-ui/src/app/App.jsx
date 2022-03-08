@@ -6,6 +6,8 @@ export const App = () => {
     <div id="test">
       Test test
       <div id="test2">SASS</div>
+      <header></header>
+      <footer></footer>
     </div>
   );
 };
