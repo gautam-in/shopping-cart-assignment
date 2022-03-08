@@ -16,7 +16,7 @@ function Products({ match }) {
     }, [match.params.categoryId])
 
     return (
-        <div class="products-section">
+        <div className="products-section">
             <CategoryList />
             <ProductList />
         </div>

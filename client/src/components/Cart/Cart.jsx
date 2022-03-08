@@ -18,11 +18,11 @@ function Cart() {
         <div className='cart-container'>
 
             {itemsInCart.length > 0 ?
-                <div class="cart-section">
+                <div className="cart-section">
 
                     {/* <!-- HEADER --> */}
-                    <div class="cart-header">
-                        <p class="cart-header--text">My Cart ({totalCount} item)</p>
+                    <div className="cart-header">
+                        <p className="cart-header--text">My Cart ({totalCount} item)</p>
                     </div>
 
                     {/* <!-- ITEMS --> */}
@@ -31,19 +31,19 @@ function Cart() {
                     </div>
 
                     {/* <!-- GUARANTEE CARD --> */}
-                    <div class="guarantee-card">
-                        <div class="guarantee-card--img">
+                    <div className="guarantee-card">
+                        <div className="guarantee-card--img">
                             <img src="../static/images/lowest-price.png" alt="" />
                         </div>
                         <div>
-                            <p class="info-card--tagline">You won't find it cheaper anywhere</p>
+                            <p className="info-card--tagline">You won't find it cheaper anywhere</p>
                         </div>
                     </div>
 
                     {/* <!-- CHECKOUT CARD --> */}
-                    <div class="checkout-section">
+                    <div className="checkout-section">
                         <p style={{ "textAlign": "center", "fontSize": "1.2rem" }}>Promo code can be apply on payment page</p>
-                        <div class="btn-checkout">
+                        <div className="btn-checkout">
                             <p>Proceed to Checkout</p>
                             <p>Rs. {totalAmount}</p>
                         </div>

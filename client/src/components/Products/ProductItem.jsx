@@ -13,17 +13,17 @@ function ProductItem({ product }) {
     }
 
     return (
-        <div class="product-card">
+        <div className="product-card">
             <p>{name}</p>
-            <img class="product-img" src={`${imageURL}`} alt="image of kiwi" />
-            <div class="product-description">
+            <img className="product-img" src={`${imageURL}`} alt="image of kiwi" />
+            <div className="product-description">
                 <p>
                     {description}
                 </p>
             </div>
-            <div class="price-section">
+            <div className="price-section">
                 <p>MRP Rs.{price}</p>
-                <button class="btn-buynow" href="#" onClick={() => addItem(product)}>Buy Now</button>
+                <button className="btn-buynow" href="#" onClick={() => addItem(product)}>Buy Now</button>
             </div>
         </div>
     )

@@ -7,7 +7,7 @@ function ProductList() {
     const { products } = useSelector(({ product }) => product)
 
     return (
-        <div class="products-list">
+        <div className="products-list">
             {
                 products.map((product) => (
                     <ProductItem key={product.id} product={product} />
