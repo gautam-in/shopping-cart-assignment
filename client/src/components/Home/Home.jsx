@@ -16,50 +16,49 @@ function Home() {
     }, [])
 
     return (
-        <p>Hello</p>
-        // <div className="container">
-        //     <div className="categories">
-        //         {/* <Banner /> */}
-        //         {
-        //             categories.map((category, index) => (
-        //                 (index + 1) % 2 === 0 ? (
-        //                     // TODO: move this to seprate component
-        //                     <Fragment key={category.key}>
-        //                         <div className="category">
-        //                             <div className='category-image'>
-        //                                 <img src={category.imageUrl} alt={category.name} />
-        //                             </div>
-        //                             <div className="category--info">
-        //                                 <span className="category--info--main-header">{category.name}</span>
-        //                                 <span className="category--info--description">{category.description}</span>
-        //                                 <Link to={`category/${category.id}`}>
-        //                                     <button className="btn-category">Explore {category.name}</button>
-        //                                 </Link>
-        //                             </div>
-        //                         </div>
-        //                     </Fragment>
-        //                 )
-        //                     :
-        //                     <Fragment key={category.key}>
-        //                         <div className="category">
-        //                             <div className="category--info">
-        //                                 <div className="category--info">
-        //                                     <span className="category--info--main-header">{category.name}</span>
-        //                                     <span className="category--info--description">{category.description}</span>
-        //                                     <Link to={`category/${category.id}`}>
-        //                                         <button className="btn-category">Explore {category.name}</button>
-        //                                     </Link>
-        //                                 </div>
-        //                             </div>
-        //                             <div className='category-image'>
-        //                                 <img src={category.imageUrl} alt={category.name} />
-        //                             </div>
-        //                         </div>
-        //                     </Fragment>
-        //             ))
-        //         }
-        //     </div>
-        // </div>
+        <div className="container">
+            <div className="categories">
+                {/* <Banner /> */}
+                {
+                    categories.map((category, index) => (
+                        (index + 1) % 2 === 0 ? (
+                            // TODO: move this to seprate component
+                            <Fragment key={category.key}>
+                                <div className="category">
+                                    <div className='category-image'>
+                                        <img src={category.imageUrl} alt={category.name} />
+                                    </div>
+                                    <div className="category--info">
+                                        <span className="category--info--main-header">{category.name}</span>
+                                        <span className="category--info--description">{category.description}</span>
+                                        <Link to={`category/${category.id}`}>
+                                            <button className="btn-category">Explore {category.name}</button>
+                                        </Link>
+                                    </div>
+                                </div>
+                            </Fragment>
+                        )
+                            :
+                            <Fragment key={category.key}>
+                                <div className="category">
+                                    <div className="category--info">
+                                        <div className="category--info">
+                                            <span className="category--info--main-header">{category.name}</span>
+                                            <span className="category--info--description">{category.description}</span>
+                                            <Link to={`category/${category.id}`}>
+                                                <button className="btn-category">Explore {category.name}</button>
+                                            </Link>
+                                        </div>
+                                    </div>
+                                    <div className='category-image'>
+                                        <img src={category.imageUrl} alt={category.name} />
+                                    </div>
+                                </div>
+                            </Fragment>
+                    ))
+                }
+            </div>
+        </div>
     )
 }
 
