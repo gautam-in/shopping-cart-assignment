@@ -3,7 +3,7 @@ import { Link, withRouter } from 'react-router-dom';
 import './home.css'
 import { useDispatch, useSelector } from 'react-redux';
 import { getCategories } from '../../redux/home/home.action';
-// import Banner from './Banner/Banner';
+import Banner from './Banner/Banner';
 
 function Home() {
 
@@ -17,7 +17,7 @@ function Home() {
     return (
         <div className="container">
             <div className="categories">
-                {/* <Banner /> */}
+                <Banner />
                 {
                     categories.map((category, index) => (
                         (index + 1) % 2 === 0 ? (

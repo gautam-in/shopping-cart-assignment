@@ -1,8 +1,5 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import SimpleImageSlider from "react-simple-image-slider";
-// import AliceCarousel from 'react-alice-carousel';
-// import * as from "react-alice-carousel/lib/alice-carousel.css";
 
 import './banner.css';
 
@@ -10,6 +7,20 @@ import './banner.css';
 function Banner() {
 
     const [offers, setOffers] = useState([]);
+    const [index, setIndex] = useState(0);
+
+    const slideRight = () => {
+        setIndex((index + 1) % offers.length);
+    };
+
+    const slideLeft = () => {
+        const nextIndex = index - 1;
+        if (nextIndex < 0) {
+            setIndex(offers.length - 1);
+        } else {
+            setIndex(nextIndex);
+        }
+    };
 
     useEffect(async () => {
         const { data } = await axios('http://localhost:5000/banners');
@@ -18,20 +29,14 @@ function Banner() {
     }, [])
 
     return (
-        <div class="banner">
-            <SimpleImageSlider
-                width={896}
-                height={226}
-                images={offers}
-                showBullets={true}
-                showNavs={true}
-                loop={true}
-                autoPlay={true}
-                autoPlayDelay={1.0}
-                slideDuration={0.5}
-            />
-        </div>
-    )
+        offers.length > 0 && (
+            <div className='banner'>
+                <button className='slide-arrow' onClick={slideLeft}>{"PREV"}</button>
+                <img src={offers[index]} alt={index} />
+                <button className='slide-arrow' onClick={slideRight}>{"NEXT"}</button>
+            </div>
+        )
+    );
 
 }
 
