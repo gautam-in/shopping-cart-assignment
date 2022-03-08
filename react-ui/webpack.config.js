@@ -47,4 +47,14 @@ module.exports = {
     }),
     new MiniCssExtractPlugin()
   ],
+  // configure dev server
+  // If you're having trouble, navigating to the /webpack-dev-server route will show where files are served. For example, http://localhost:9000/webpack-dev-server.
+  // If you want to manually recompile the bundle, navigating to the /invalidate route will invalidate the current compilation of the bundle and recompile it for you via webpack-dev-middleware. Depending on your configuration, the URL may look like http://localhost:9000/invalidate.
+  devServer: {
+    static: {
+      directory: path.join(__dirname, 'static'),
+    },
+    compress: true,
+    port: 9000
+  },
 };
