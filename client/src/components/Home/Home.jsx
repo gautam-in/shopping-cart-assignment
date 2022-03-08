@@ -7,8 +7,7 @@ import { getCategories } from '../../redux/home/home.action';
 
 function Home() {
 
-    // const { categories } = useSelector(({ home }) => home);
-    const categories = [];
+    const { categories } = useSelector(({ home }) => home);
     const dispatch = useDispatch();
 
     useEffect(() => {
