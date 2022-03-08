@@ -31,9 +31,9 @@ function Banner() {
     return (
         offers.length > 0 && (
             <div className='banner'>
-                <button className='slide-arrow' onClick={slideLeft}>{"PREV"}</button>
+                <button className='left-slide-arrow' onClick={slideLeft}>{"PREV"}</button>
                 <img src={offers[index]} alt={index} />
-                <button className='slide-arrow' onClick={slideRight}>{"NEXT"}</button>
+                <button className='right-slide-arrow' onClick={slideRight}>{"NEXT"}</button>
             </div>
         )
     );
