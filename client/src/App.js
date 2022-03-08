@@ -7,6 +7,9 @@ import Home from './components/Home/Home';
 import Header from './components/Header/Header';
 import Products from './components/Products/Products';
 import { persistor, store } from './store/store';
+import Cart from './components/Cart/Cart';
+import Signin from './components/Signin/Signin';
+import Register from './components/Signin/Register';
 
 function App() {
   return (
@@ -19,7 +22,10 @@ function App() {
             <Header />
             <Switch>
               <Route exact path='/' component={Home} />
+              <Route exact path='/signin' component={Signin} />
+              <Route exact path='/register' component={Register} />
               <Route exact path='/category/:categoryId' component={Products} />
+              <Route exact path='/cart' component={Cart} />
             </Switch>
           </Router>
         </PersistGate>

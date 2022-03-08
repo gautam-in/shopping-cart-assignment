@@ -1,35 +1,47 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './header.css';
 import styled from 'styled-components'
+import { useDispatch, useSelector } from 'react-redux';
+import { getCartItemCount } from '../../redux/cart/cart.action';
 import { Link } from 'react-router-dom';
 
 
 function Header() {
+
+    const { itemsInCart, totalCount } = useSelector(({ cart }) => cart)
+
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch(getCartItemCount());
+    }, [])
+
+
     return (
         <HeaderContainer>
             <NavBar>
                 <Logo>
-                    <Link to='/'>
+                    <StyledLink to='/'>
                         <img src='/static/images/logo.png' alt="" />
-                    </Link>
+                    </StyledLink>
 
                 </Logo>
 
                 <Navigation>
-                    <nav className="nav-links">
-                        <Link to='/'>Home</Link>
-                        <Link to='/category/5b6899683d1a866534f516e0'>Products</Link>
-                    </nav>
+                    <NavLinks>
+                        <StyledLink to='/'><p>Home</p></StyledLink>
+                        <StyledLink to='/category/all'><p>Products</p></StyledLink>
+                    </NavLinks>
                 </Navigation>
 
                 <CartSection>
                     <LoginLinks>
-                        <p>SignIn</p>
-                        <p>Register</p>
+                        <StyledLink to='/signin'><p>SignIn</p></StyledLink>
+                        <StyledLink to='/register'><p>Register</p></StyledLink>
                     </LoginLinks>
                     <CartItemCounter>
                         <img src='/static/images/cart.svg' height="30" alt="" />
-                        <span>0 items</span>
+                        <StyledLink to='/cart'><span>{totalCount} items</span></StyledLink>
                     </CartItemCounter>
                 </CartSection>
             </NavBar>
@@ -62,6 +74,12 @@ const Navigation = styled.div`
      flex-grow: 0.5;
 `;
 
+const NavLinks = styled.div`
+    display: flex;
+    gap: 10px;
+    justify-content: flex-start; 
+`
+
 const CartSection = styled.div`
      display: flex;
      flex-direction: column;
@@ -71,7 +89,15 @@ const CartSection = styled.div`
 const LoginLinks = styled.div`
      display: flex;
      gap: 5px;
-     justify-content: flex-end;
+     justify-content: flex-end;   
+`;
+
+const StyledLink = styled(Link)`
+    text-decoration: none;
+    color: #6e676a;
+    &:focus, &:hover, &:visited, &:link, &:active {
+        text-decoration: none;
+    }
 `;
 
 const CartItemCounter = styled.div`

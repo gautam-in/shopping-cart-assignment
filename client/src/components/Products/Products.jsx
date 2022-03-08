@@ -1,36 +1,24 @@
 import axios from 'axios';
 import React, { Fragment, useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { getProducts } from '../../redux/products/products.action';
-import ProductItem from './ProductItem';
+import CategoryList from './CategoryList';
 import './products.css';
+import ProductList from './ProductsList';
 
 function Products({ match }) {
-
-    const { products } = useSelector(({ product }) => product)
-    const { categories } = useSelector(({ home }) => home)
 
     const dispatch = useDispatch();
 
     useEffect(() => {
         dispatch(getProducts(match.params.categoryId));
-    }, [])
+    }, [match.params.categoryId])
 
     return (
         <div class="products-section">
-            <div class="products-category">
-                <div class="category-list">
-                    {categories.map((category) => <span key={category.key} class="category-name">{category.name}</span>)}
-                </div>
-            </div>
-            <div class="products-list">
-                {
-                    products.map((product) => (
-                        <ProductItem key={product.id} product={product} />
-                    ))
-                }
-
-            </div>
+            <CategoryList />
+            <ProductList />
         </div>
     )
 

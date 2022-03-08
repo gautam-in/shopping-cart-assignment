@@ -6,6 +6,5 @@ export async function getProducts() {
 }
 
 export function filterCategory(items, id) {
-    return items.filter((item) => item.category === id);
-
+    return id == 'all' ? items : items.filter((item) => item.category === id);
 }

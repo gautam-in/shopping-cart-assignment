@@ -1,3 +1,75 @@
+@media (max-width:420px) {
+    .products-list {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .products-category {
+        display: none;
+    }
+
+    .products-category-dropdown {
+        display: block !important;
+        grid-row: 1;
+        grid-column: 1/-1;
+        background-color: #d31535;
+
+
+        padding: 10px;
+    }
+
+    /* .dropbtn {
+        background-color: #4CAF50;
+        color: white;
+        padding: 16px;
+        font-size: 16px;
+        border: none;
+        position: relative;
+        display: block;
+        cursor: pointer;
+    }
+
+    .dropdown {
+        position: relative;
+        display: inline-block;
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f1f1f1;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+    }
+
+    .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+    }
+
+    .dropdown-content a:hover {
+        background-color: #ddd;
+    }
+
+    
+    .dropcheck {
+        position: absolute;
+        left: -9999px;
+    }
+
+    .dropcheck:checked~.dropdown-content {
+        display: block;
+    }
+
+    .dropcheck:checked+.dropbtn {
+        background-color: #3e8e41;
+    } */
+}
+
 .products-section {
     display: grid;
     grid-template-columns: 200px 1fr;
@@ -6,6 +78,10 @@
 
 .products-category {
     background-color: #ebe7e7;
+}
+
+.products-category-dropdown {
+    display: none;
 }
 
 .category-list {
@@ -19,6 +95,7 @@
     font-weight: 500;
     color: #4e4c4c;
     border-bottom: dashed #999;
+    text-decoration: none;
 }
 
 .products-list {
@@ -27,20 +104,15 @@
     gap: 1rem;
 }
 
-@media (max-width:420px) {
-    .products-list {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 1rem;
-    }
-}
-
 .product-card {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
     border-bottom: dashed #999;
+    border-top: none;
+    padding: 1rem;
+    box-shadow: 5px 0px 5px 1px rgba(238, 238, 238, 1);
 }
 
 .product-img {
@@ -49,8 +121,12 @@
 }
 
 .product-description {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background-color: #ebe7e7;
     padding: 5px 10px;
+    height: 7rem;
 }
 
 .price-section {
@@ -68,4 +144,6 @@
     background-color: #d31535;
     color: #fff;
     padding: 8px 16px;
+    border: none;
+    cursor: pointer;
 }

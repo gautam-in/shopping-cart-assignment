@@ -7,6 +7,7 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 import rootSaga from './sagas';
 import { homeReducer } from '../redux/home/home.reducer';
 import { productReducer } from '../redux/products/products.reducer';
+import { cartReducer } from '../redux/cart/cart.reducer';
 
 const persistConfig = {
     key: 'root',
@@ -17,7 +18,8 @@ const sagaMiddleware = createSagaMiddleware();
 
 const rootReducer = combineReducers({
     home: homeReducer,
-    product: productReducer
+    product: productReducer,
+    cart: cartReducer
 })
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);

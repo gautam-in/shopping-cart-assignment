@@ -10,7 +10,7 @@ function getCategory({ product }) {
 
 // worker
 function* productWorker() {
-    const { categoryId } = yield select(getCategory);
+    const { categoryId = null } = yield select(getCategory);
     const data = yield call(productsService.getProducts);
     const products = yield call(productsService.filterCategory, data, categoryId);
     yield put(productsActions.setProducts(products));
