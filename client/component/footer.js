@@ -12,7 +12,7 @@ footerTemplate.innerHTML = `
     </style>
     <div class="container">
         <div>
-            Copyright @ 2019-2022 Sabka Bazar Grocery Supplies Pvt Ltd
+            Copyright @ 2011-2018 Sabka Bazar Grocery Supplies Pvt Ltd
         </div>
     </div>
 `;

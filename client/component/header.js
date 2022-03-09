@@ -5,6 +5,10 @@ template.innerHTML = `
             display:flex;
             justify-content: space-between;
             align-items: center;
+            width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 0 10px 0 10px;
         }
         .header-left {
             min-width: 30%;
@@ -66,6 +70,9 @@ template.innerHTML = `
             .right-section img {
                 height: 60px;
             }
+            .container {
+                width: 100%;
+              }
         }
     </style>
     <div class="container">

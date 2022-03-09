@@ -2,7 +2,8 @@
   display: flex;
   margin: 1rem;
   padding: 1rem;
-  box-shadow: rgba(66, 43, 43, 0.2) 0px 2px 8px 0px;
+  /* box-shadow: rgba(66, 43, 43, 0.2) 0px 2px 8px 0px; */
+  box-shadow: 0 1px 4px -2px grey;
   align-items: center;
   justify-content: space-between;
 }
@@ -97,8 +98,8 @@ img {
 /* The dots/bullets/indicators */
 .dot {
   cursor: pointer;
-  height: 15px;
-  width: 15px;
+  height: 7px;
+  width: 7px;
   margin: 0 2px;
   background-color: #bbb;
   border-radius: 50%;
@@ -108,7 +109,7 @@ img {
 
 .active,
 .dot:hover {
-  background-color: #717171;
+  background-color: black;
 }
 
 /* On smaller screens, decrease text size */

@@ -25,7 +25,10 @@
     </div>
     <div class="cart-footer">
       <div>Promo code can be applied on payment page</div>
-      <button>Proceed to Checkout <span id="total-amount"></span>></button>
+      <button class="displaySideBySide">
+        <span> Proceed to Checkout</span>
+        <span id="total-amount"></span>
+      </button>
     </div>
     <div class="no-item" id="no-item">
       <div class="container">
@@ -64,7 +67,7 @@
           });
           document.querySelector(
             "#total-amount"
-          ).innerText = `Rs. ${totalAmount}`;
+          ).innerText = `Rs.${totalAmount} >`;
         } else {
           document.querySelector("#no-item").classList.remove("display-none");
           document.querySelector(".cart-footer").classList.add("display-none");
@@ -90,18 +93,22 @@
 
         // name and count
         const contNameCount = document.createElement("div");
+        contNameCount.classList.add("detailSection");
         const name = document.createElement("h4");
         name.innerText = product.name;
         contNameCount.appendChild(name);
 
         const countCont = document.createElement("div");
         const decreaseBtn = document.createElement("button");
+        decreaseBtn.classList.add("roundButton");
+        decreaseBtn.style.borderRadius = "5px";
         decreaseBtn.innerText = "-";
         decreaseBtn.addEventListener("click", () => decreaseCount(index));
         const countSpan = document.createElement("span");
         countSpan.innerText = product.count;
         countSpan.setAttribute("id", `count-${product.id}`);
         const increaseBtn = document.createElement("button");
+        increaseBtn.classList.add("roundButton");
         increaseBtn.innerText = "+";
         increaseBtn.addEventListener("click", () => increaseCount(index));
         const amountSpan = document.createElement("span");
@@ -112,17 +119,20 @@
         countCont.appendChild(increaseBtn);
         countCont.appendChild(amountSpan);
 
-        contNameCount.appendChild(countCont);
-        left.appendChild(contNameCount);
-        item.appendChild(left);
-
         // amount
-        const right = document.createElement("div");
-        right.setAttribute("id", `amount-${product.id}`);
+        const amountContainer = document.createElement("div");
+        amountContainer.setAttribute("id", `amount-${product.id}`);
         totalAmount = totalAmount + product.price * product.count;
-        right.innerText = `Rs. ${product.price * product.count}`;
-        item.appendChild(right);
+        amountContainer.innerText = `Rs.${product.price * product.count}`;
+        ///////////////////////////////////////////--
+        const countPrice = document.createElement("div");
+        countPrice.classList.add("countPriceAlign");
 
+        countPrice.appendChild(countCont);
+        countPrice.appendChild(amountContainer);
+        contNameCount.appendChild(countPrice);
+        item.appendChild(left);
+        left.appendChild(contNameCount);
         return item;
       }
 
