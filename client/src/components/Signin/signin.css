@@ -1,0 +1,180 @@
+  /* ---------
+        sigin-section
+        --------- */
+
+  .signin {
+      display: flex;
+      gap: 2rem;
+      justify-content: center;
+      flex-wrap: wrap;
+  }
+
+  .signin--panel {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 1rem;
+      /* align-items: center; */
+  }
+
+  .signin-form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 1rem;
+  }
+
+  .login-text {
+      font-size: 2.4rem;
+      font-weight: 700;
+      margin-bottom: 1.4rem;
+  }
+
+  .login-subheader {
+      font-size: 1.4rem;
+      font-weight: 510;
+  }
+
+  .login-btn {
+      background-color: #d31535;
+      color: #fff;
+      border: none;
+      align-self: stretch;
+      padding: 1rem 0;
+      cursor: pointer;
+  }
+
+  .copyright {
+      display: flex;
+      justify-content: center;
+      background-color: #eee;
+  }
+
+  .copyright-text {
+      font-size: 1.8rem;
+      font-weight: 500;
+      padding: 1px;
+      flex-grow: 0.5;
+  }
+
+  /* floater input type  */
+
+  .input-group {
+      position: relative;
+      margin: 20px 0 20px;
+  }
+
+  input {
+      font-size: 18px;
+      padding: 10px 10px 10px 5px;
+      display: block;
+      width: 300px;
+      border: none;
+      border-bottom: 1px solid #757575;
+  }
+
+  input:focus {
+      outline: none;
+  }
+
+  label {
+      color: #999;
+      font-size: 18px;
+      font-weight: normal;
+      position: absolute;
+      pointer-events: none;
+      left: 5px;
+      top: 10px;
+      transition: 0.2s ease all;
+      -moz-transition: 0.2s ease all;
+      -webkit-transition: 0.2s ease all;
+  }
+
+  input:focus~label,
+  input:valid~label {
+      top: -20px;
+      font-size: 14px;
+      color: #56d7da;
+  }
+
+  .bar {
+      position: relative;
+      display: block;
+      width: 315px;
+  }
+
+  .bar:before,
+  .bar:after {
+      content: '';
+      height: 2px;
+      width: 0;
+      bottom: 1px;
+      position: absolute;
+      background: #56d7da;
+      transition: 0.2s ease all;
+      -moz-transition: 0.2s ease all;
+      -webkit-transition: 0.2s ease all;
+  }
+
+  .bar:before {
+      left: 50%;
+  }
+
+  .bar:after {
+      right: 50%;
+  }
+
+  input:focus~.bar:before,
+  input:focus~.bar:after {
+      width: 50%;
+  }
+
+  .highlight {
+      position: absolute;
+      height: 60%;
+      width: 100px;
+      top: 25%;
+      left: 0;
+      pointer-events: none;
+      opacity: 0.5;
+  }
+
+  input:focus~.highlight {
+      -webkit-animation: inputHighlighter 0.3s ease;
+      -moz-animation: inputHighlighter 0.3s ease;
+      animation: inputHighlighter 0.3s ease;
+  }
+
+  /* animations */
+  @-webkit-keyframes inputHighlighter {
+      from {
+          background: #4285f4;
+      }
+
+      to {
+          width: 0;
+          background: transparent;
+      }
+  }
+
+  @-moz-keyframes inputHighlighter {
+      from {
+          background: #4285f4;
+      }
+
+      to {
+          width: 0;
+          background: transparent;
+      }
+  }
+
+  @keyframes inputHighlighter {
+      from {
+          background: #4285f4;
+      }
+
+      to {
+          width: 0;
+          background: transparent;
+      }
+  }
