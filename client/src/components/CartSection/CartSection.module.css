@@ -1,0 +1,69 @@
+.cart__section{
+    display: flex;
+    background-color: #fff;
+    align-items: center;
+    padding: 0.5rem 0;
+    justify-content: space-around;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    
+}
+
+.cart__section__image{
+    max-width: 80px;
+   max-height: 80px;
+   width: 100%;
+   justify-self: center;
+   
+   display: block;
+   
+   height: auto;
+   
+}
+
+.container{
+    display: flex;
+   flex-direction: column;
+   align-items: flex-start;
+   margin-right: auto;
+   padding-left: 10px;
+   
+}
+
+.cart__section__title{
+    font-size: 0.9rem;
+   text-align: center;
+   
+}
+
+.cart__section__totalprice {
+    font-size: 1rem;
+    margin-right: 25px;
+    font-weight: bold;
+}
+
+.counter{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-right: auto;
+}
+
+.counter__button{
+    padding: 0.1rem 0.5rem;
+   border-radius: 50%;
+   color: #fff;
+   background-color: rgba(211,17,121);
+   border: none;
+}
+
+.counter__text{
+    font-size: 0.8rem;
+    padding: 0 0.5rem;
+}
+
+.counter__multiply{
+    padding-left: 0.5rem;
+    font-size: 0.8rem;
+}
+

@@ -1,0 +1,64 @@
+.group{
+    position: relative;
+    margin: 45px 0;
+}
+
+.form__input{
+    background: none;
+    background-color: white;
+    color: grey;
+    font-size: 18px;
+    padding: 10px 0 5px;
+    display: block;
+    width: 100%;
+    border: none;
+    border-radius: 0;
+    border-bottom: 1px solid grey;
+    margin: 25px 0 0 0;
+}
+
+@media screen and (max-width: 480px){
+    .form__input{
+        width: 100%;
+    }
+}
+
+.form__input:focus,
+.form__input:valid{
+  
+      outline: none;
+        border-bottom: 1px solid rgb(69,221,241);
+}
+
+.form__input:focus ~ .form__input__label{
+    top: -14px;
+    font-size: 18px;
+    color: black;
+    color: rgb(69,221,241);
+}
+
+input[type="password"]{
+    letter-spacing: 0.5rem;
+}
+
+.form__input__label{
+    color: grey;
+    font-size: 1rem;
+    font-weight: normal;
+    position: absolute;
+    left: 5px;
+    top: 10px;
+    transition: 300ms ease all;
+}
+
+
+
+.shrink.form__input__label{
+    top: -14px;
+    font-size: 12px;
+    color: black;
+}
+
+.error__message {
+    color: red;
+}

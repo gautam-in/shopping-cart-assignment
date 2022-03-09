@@ -1,0 +1,115 @@
+
+
+.cartmodal__section {
+    width: 35vw;
+    height: 92.2vh;
+    max-width: 40rem;
+    font-size: 0.9rem;
+    background-color: #ddd;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    bottom: 0.18%;
+    left: 51.22%;
+}
+
+.cartmodal__section__flex {
+    flex: 1;
+    overflow: hidden;
+  overflow-y: scroll;
+    
+}
+
+@media screen and (max-width: 780px){
+    .cartmodal__section {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        max-width: 100%;
+        left:0;
+        bottom: 0;
+        top: 0;
+        right: 0;
+    }
+}
+
+.cartmodal__ection__heading{
+    display: flex;
+    background-color: #212121;
+    justify-content: space-between;
+}
+
+.cartmodal__section__heading__title{
+    padding: 1rem 1rem;
+    
+    font-size: 1.3rem;
+    color: #fff;
+}
+
+
+
+.cartmodal__section__heading__button {
+    background-color: #212121;
+    border-width: 0;
+    margin-right: 1rem;
+    color: #fff;
+    font-size: 1.3rem;
+    cursor: pointer;
+}
+
+.cart__tablet__footer {
+    position: fixed;
+    bottom: 0.35%;
+    width: 35vw;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    align-items: center;
+    
+}
+.cart__tablet__footer__text {
+    font-size: 1rem;
+    
+}
+.cart__tablet__footer__buyout__button {
+    font-size: 0.9rem;
+    color: white;
+    background-color: rgba(211,17,121);
+    border: none;
+    border-radius: 3px;
+    width: 95%;
+    padding: 0.9rem 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.nocart__tablet__footer {
+    background-color: #fff;
+}
+.nocart__tablet__footer__buyout__button {
+    font-size: 1rem;
+    font-weight: bold;
+    color: white;
+    background-color: rgba(211,17,121);
+    border: none;
+    border-radius: 3px;
+    width: 95%;
+    padding: 1rem 0.5rem;
+    display: flex;
+    justify-content: center;
+    margin: 10px auto 10px;
+}
+
+@media screen and (max-width: 780px){
+    .nocart__tablet__footer__buyout__button{
+        width: 100%;    
+    }
+    .cart__tablet__footer__buyout__button{
+
+    }
+    .cart__tablet__footer{
+        width: 100%;
+        bottom: 0;
+    }
+}

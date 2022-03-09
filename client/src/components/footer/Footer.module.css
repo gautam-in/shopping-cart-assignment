@@ -1,0 +1,18 @@
+.footer {
+    background-color: #ddd;
+    text-align: left;
+    padding: 5px;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.footer__text{
+    margin: 0 auto;
+    max-width: 1300px; 
+}
+
+@media screen and (max-width: 480px){
+    .footer__text{
+        font-size: 0.6rem;
+    }
+}

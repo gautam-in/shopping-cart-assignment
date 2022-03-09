@@ -1,0 +1,24 @@
+.menubar {
+    background-color: #ddd;
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+}
+
+.menubar__button{
+    
+    padding: 10px;
+    font-size: 0.9rem;
+   width: 100%;
+   background-color: transparent;
+   text-align: left;
+   color: rgba(77, 77, 77, 1);
+   border-radius: 0;
+   border: none;
+   border-bottom: 1px solid  #686868;
+}
+
+.menubar__button:hover,
+ .menubar__button:active {
+   background-color: rgba(160, 160, 160, 0.5);
+}

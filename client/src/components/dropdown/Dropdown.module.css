@@ -1,0 +1,9 @@
+.category__dropdown{
+    height: 3rem;
+    background: rgba(211,17,121);
+    border: 1px solid rgba(211,17,121);
+    margin-top: 1rem;
+    color: white;
+    width: 100%;
+    padding: 0 1rem;
+}

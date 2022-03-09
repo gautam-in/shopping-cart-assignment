@@ -1,0 +1,11 @@
+.button{
+    letter-spacing: 0.2rem;
+    color: white;
+    background-color: rgba(211,17,121);
+
+    padding: 1%;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1rem;
+}

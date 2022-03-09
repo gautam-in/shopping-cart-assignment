@@ -1,0 +1,21 @@
+.emptycart {
+    background-color: #fff;
+    height: 100%;
+    display: flex;
+    
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.emptycart__container{
+    
+    display: flex;
+    flex-direction: column;
+    
+    margin: 0 auto;
+}
+
+.emptycart__container__title{
+    text-align: center;
+}
