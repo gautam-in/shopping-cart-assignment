@@ -28,7 +28,8 @@ function CategoryList() {
     }
 
     function handleNavigation(categoryId) {
-        dropdownMenu.current.style = 'display:none';
+        toggleDropDown()
+        // dropdownMenu.current.style = 'display:none';
         history.push(`/category/${categoryId}`)
     }
 
@@ -37,7 +38,7 @@ function CategoryList() {
             <div className="products-category">
                 <div className="category-list">
                     {categories.map((category) => (
-                        <Link className="category-name" to={`/category/${category.id}`}>
+                        <Link key={category.id} className="category-name" to={`/category/${category.id}`}>
                             <span key={category.key}>{category.name}</span>
                         </Link>
                     ))}

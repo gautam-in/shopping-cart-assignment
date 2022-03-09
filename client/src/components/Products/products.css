@@ -22,7 +22,7 @@
     font-size: 1.2rem;
     font-weight: 500;
     color: #4e4c4c;
-    border-bottom: dashed #999;
+    border-bottom: solid rgb(204, 202, 202);
     text-decoration: none;
 }
 
@@ -65,6 +65,10 @@
     padding: 0.5rem;
 }
 
+.price-sm-section {
+    display: none;
+}
+
 .btn-buynow {
     text-decoration: none;
     font-size: 1.2rem;
@@ -99,6 +103,15 @@
         position: relative;
 
         padding: 10px;
+    }
+
+    .price-section {
+        display: none;
+    }
+
+    .price-sm-section {
+        display: block;
+        margin: 1rem;
     }
 
     .dropdown {

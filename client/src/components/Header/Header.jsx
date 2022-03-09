@@ -24,7 +24,6 @@ function Header() {
                     <StyledLink to='/'>
                         <img src='/static/images/logo.png' alt="" />
                     </StyledLink>
-
                 </Logo>
 
                 <Navigation>
@@ -82,6 +81,8 @@ const NavLinks = styled.div`
     display: flex;
     gap: 10px;
     justify-content: flex-start; 
+    font-size: 1.2rem;
+    font-weight: 500;
 `
 
 const CartSection = styled.div`
@@ -93,7 +94,9 @@ const CartSection = styled.div`
 const LoginLinks = styled.div`
      display: flex;
      gap: 5px;
-     justify-content: flex-end;   
+     justify-content: flex-end;
+     font-weight :500;
+     color: #111;
 `;
 
 const StyledLink = styled(Link)`
@@ -111,6 +114,7 @@ const CartItemCounter = styled.div`
      gap: 5px;
      align-items: center;
      justify-content: center;
+     font-weight: 500;
 `
 
 export default Header;

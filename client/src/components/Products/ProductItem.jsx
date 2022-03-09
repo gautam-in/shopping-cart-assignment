@@ -25,6 +25,9 @@ function ProductItem({ product }) {
                 <p>MRP Rs.{price}</p>
                 <button className="btn-buynow" href="#" onClick={() => addItem(product)}>Buy Now</button>
             </div>
+            <div className="price-sm-section">
+                <button className="btn-buynow" href="#" onClick={() => addItem(product)}>Buy Now @ MRP Rs.{price}</button>
+            </div>
         </div>
     )
 }

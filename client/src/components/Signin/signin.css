@@ -37,6 +37,7 @@
 
   .login-btn {
       background-color: #d31535;
+      color: #fff;
       border: none;
       align-self: stretch;
       padding: 1rem 0;
@@ -46,7 +47,7 @@
   .copyright {
       display: flex;
       justify-content: center;
-      background-color: #dddbdb;
+      background-color: #eee;
   }
 
   .copyright-text {
@@ -93,7 +94,7 @@
   input:valid~label {
       top: -20px;
       font-size: 14px;
-      color: #4285f4;
+      color: #56d7da;
   }
 
   .bar {
@@ -109,7 +110,7 @@
       width: 0;
       bottom: 1px;
       position: absolute;
-      background: #4285f4;
+      background: #56d7da;
       transition: 0.2s ease all;
       -moz-transition: 0.2s ease all;
       -webkit-transition: 0.2s ease all;

@@ -22,7 +22,7 @@ function Cart() {
 
                     {/* <!-- HEADER --> */}
                     <div className="cart-header">
-                        <p className="cart-header--text">My Cart ({totalCount} item)</p>
+                        <p className="cart-header--text"><b>My Cart</b> ({totalCount} item)</p>
                     </div>
 
                     {/* <!-- ITEMS --> */}
