@@ -1,5 +1,4 @@
 import React from "react";
-import axios from "axios";
 import { useEffect, useState } from "react";
 import {
   ProductsPageContainer,
@@ -8,28 +7,25 @@ import {
 } from "./productspage.styles";
 import Product from "../../components/Product";
 import ProductsSidebar from "../../components/ProductsSidebar";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import ProductDropdown from "../../components/ProductsDropDown";
+import { fetchProducts } from "../../redux/fetchData/fetch.actions";
+import ErrorPage from "../../components/ErrorPage";
 
 const Products = (props) => {
-  const [productsData, setProductsData] = useState([]);
+  const { productsData, error } = useSelector((state) => state.apiData);
+  const dispatch = useDispatch();
   const { selectedCategory } = useSelector((state) => state.products);
   const filteredData = productsData.filter(
     (item) => item.category === selectedCategory
   );
   let selectedData = filteredData.length > 0 ? filteredData : productsData;
   useEffect(() => {
-    async function fetchProducts() {
-      try {
-        const response = await axios.get("http://localhost:3030/products");
-        setProductsData(response.data);
-      } catch (e) {
-        console.error("Failed to fetch products");
-        console.error(e);
-      }
-    }
-    fetchProducts();
+    dispatch(fetchProducts());
   }, []);
+  if (error) {
+    return <ErrorPage />;
+  }
   return (
     <ProductsPageContainer>
       <SidebarContainer>

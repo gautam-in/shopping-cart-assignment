@@ -1,23 +1,16 @@
 import React from "react";
-import axios from "axios";
 import { useEffect, useState } from "react";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { OffersContainer } from "./offers.styles.jsx";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchBanners } from "../../redux/fetchData/fetch.actions.js";
 
 const Offers = (props) => {
-  const [bannerData, setBannerData] = useState([]);
+  const { bannerData, error } = useSelector((state) => state.apiData);
+  const dispatch = useDispatch();
   useEffect(() => {
-    async function fetchApi() {
-      try {
-        const response = await axios.get("http://localhost:3030/banners");
-        setBannerData(response.data);
-      } catch (e) {
-        console.error("Failed to fetch");
-        console.error(e);
-      }
-    }
-    fetchApi();
+    dispatch(fetchBanners());
   }, []);
   return (
     <OffersContainer>

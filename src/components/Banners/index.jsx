@@ -1,24 +1,19 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
 import HomeCategory from "../HomeCategory/HomeCategory";
 import { HomePageCategoriesContainer } from "./banners.styles";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchCategories } from "../../redux/fetchData/fetch.actions";
 
 const Banners = (props) => {
-  const [categories, setCategories] = useState([]);
-  const sortedCategories = categories
+  const { categoriesData } = useSelector((state) => state.apiData);
+  const dispatch = useDispatch();
+
+  const sortedCategories = categoriesData
     .filter((item) => item.imageUrl)
     .sort((a, b) => a.order - b.order);
+
   useEffect(() => {
-    async function fetchApi() {
-      try {
-        const response = await axios.get("http://localhost:3030/categories");
-        setCategories(response.data);
-      } catch (e) {
-        console.error("Failed to fetch");
-        console.error(e);
-      }
-    }
-    fetchApi();
+    dispatch(fetchCategories());
   }, []);
   return (
     <HomePageCategoriesContainer>
