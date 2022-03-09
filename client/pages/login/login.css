@@ -1,0 +1,41 @@
+.signin-container {
+  display: flex;
+  margin: 1rem;
+  padding: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.signin-container .column {
+  width: 35%;
+  padding: 1rem;
+}
+.signin-container input {
+  width: 100%;
+  border: none;
+  border-bottom: 2px solid black;
+  outline: none;
+  margin-bottom: 30px;
+  height: 50px;
+}
+.signin-container input:focus {
+  border-bottom: 2px solid blue;
+}
+.signin-container button {
+  width: 80%;
+}
+.signin-container form {
+  text-align: center;
+}
+.signin-container .error-block {
+  font-size: 18px;
+  color: red;
+}
+
+@media only screen and (max-width: 600px) {
+  .signin-container {
+    text-align: center;
+  }
+  .signin-container .column {
+    width: 100%;
+  }
+}
