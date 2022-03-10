@@ -1,0 +1,242 @@
+/* .container {
+    padding: 0 auto;
+    margin: 0 auto;
+} */
+
+.carousel-sec {
+    width: 100%;
+    margin: 0.2rem auto;
+    position: relative;
+    box-shadow: 0 8px 10px -10px rgba(0, 0, 0, 0.5);
+}
+
+.home-container {
+    margin: 0 6rem;
+}
+
+.img {
+    background-size: cover;
+    width: 100%;
+    height: 25vh;
+}
+
+.arrows {
+    background-color: #535353;
+    color: #82868a;
+    border: none;
+    /* border-radius: 50%; */
+    padding: 0px 50px;
+    height: 25px;
+    width: 25px;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.left-arrow {
+    left: 10;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.right-arrow {
+    right: 0;
+    top: 50%;
+    transform: translate(50%, -50%);
+}
+
+.category-data {
+    border: 0;
+    box-shadow: 0 8px 10px -10px rgba(0, 0, 0, 0.5);
+}
+
+.category-description {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.category-description button {
+    background-color: #d6336c;
+    border: 0;
+    padding: 0.7rem 1.5rem;
+    color: white;
+}
+
+.carousel-image {
+    width: 100%;
+    height: 200px;
+}
+
+.category-image-style {
+    width: 100%;
+    height: 130px;
+}
+
+
+
+@media(max-width:1024px) {
+
+    .home-container {
+        margin: 0 !important;
+    }
+}
+
+@media(max-width:820px) {
+
+    .home-container {
+        margin: 0 !important;
+    }
+
+    .category-image-style {
+        width: 100%;
+        height: 140px !important;
+    }
+
+    .category-description {
+        width: 365px !important;
+    }
+
+    .arrows {
+        padding: 0 1rem;
+        height: 1.5rem;
+        width: 1.5rem;
+    }
+}
+
+@media(max-width:768px) {
+
+    .home-container {
+        margin: 0 !important;
+    }
+
+    .category-image-style {
+        width: 100%;
+        height: 140px !important;
+    }
+
+    .category-description {
+        width: 380px !important;
+    }
+
+    .arrows {
+        padding: 0 1rem;
+        height: 1.5rem;
+        width: 1.5rem;
+    }
+}
+
+@media(max-width:390px) {
+
+    .home-container {
+        margin: 0 !important;
+    }
+
+    .category-image-style {
+        width: 100%;
+        height: 70px !important;
+    }
+
+    .category-description {
+        width: 230px !important;
+        margin: 0 0.2rem;
+    }
+
+    .category-description button {
+        padding: 0.2rem;
+        margin: 0 0.2rem 0.1rem 0.2rem;
+    }
+
+    .category-data {
+        padding: 0.1rem 0.1rem !important;
+        margin: 1rem 0.1rem 2rem 0.1rem !important
+    }
+
+    .carousel-image {
+        width: 100%;
+        height: 100px !important;
+    }
+
+    .arrows {
+        padding: 0 0.5rem;
+        height: 1.5rem;
+        width: 1.5rem;
+    }
+}
+
+
+@media(max-width:360px) {
+
+    .home-container {
+        margin: 0 !important;
+    }
+
+    .category-image-style {
+        width: 100%;
+        height: 70px !important;
+    }
+
+    .category-description {
+        width: 200px !important;
+    }
+
+    .category-description button {
+        padding: 0.2rem;
+        margin: 0 0.2rem 0.1rem 0.2rem;
+    }
+
+    .category-data {
+        padding: 0.1rem 0.1rem !important;
+        margin: 1rem 0.1rem 2rem 0.1rem !important
+    }
+
+    .carousel-image {
+        width: 100%;
+        height: 100px !important;
+    }
+
+    .arrows {
+        padding: 0 0.5rem;
+        height: 1.5rem;
+        width: 1.5rem;
+    }
+}
+
+@media(max-width:320px) {
+
+    .home-container {
+        margin: 0 !important;
+    }
+
+    .category-image-style {
+        width: 100%;
+        height: 70px !important;
+    }
+
+    .category-description {
+        width: 165px !important;
+    }
+
+    .category-description button {
+        padding: 0.2rem;
+        margin: 0 0.2rem 0.1rem 0.2rem;
+    }
+
+    .category-data {
+        padding: 0.1rem 0.1rem !important;
+        margin: 1rem 0.1rem 2rem 0.1rem !important
+    }
+
+    .carousel-image {
+        width: 100%;
+        height: 100px !important;
+    }
+
+    .arrows {
+        padding: 0 0.5rem;
+        height: 1.5rem;
+        width: 1.5rem;
+    }
+}

@@ -1,0 +1,264 @@
+.form-container {
+  max-width: 850px;
+  display: flex;
+  margin: 10px auto;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+
+}
+
+
+.login-button {
+  margin-top: 3rem;
+  padding: 10px 200px;
+  background-color: #d6336c;
+  border: 0;
+  color: white;
+}
+
+.login-button:active {
+  transform: scale(0.98);
+  /* Scaling button to 0.98 to its original size */
+  box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+  /* Lowering the shadow */
+}
+
+
+form {
+  margin-top: 10px;
+}
+
+
+.login-forms form {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+.name-field {
+  margin: 2rem 1rem 1rem 1rem;
+}
+
+.name-field input {
+  height: 100%;
+  width: 100%;
+  border: none;
+  border-bottom: 0.2rem solid silver;
+  /* font-size: 1.7rem; */
+}
+
+.name-field input:focus {
+  outline: none;
+}
+
+.name-field input:focus~label,
+.name-field input:valid~label {
+  transform: translateY(-20px);
+}
+
+.name-field label {
+  position: absolute;
+  top: 30px;
+  left: 17px;
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+.name-field span {
+  position: absolute;
+  top: 60px;
+  left: 17px;
+}
+
+.password-field {
+  margin: 2rem 1rem 1rem 1rem;
+}
+
+.password-field input {
+  height: 100%;
+  width: 100%;
+  border: none;
+  border-bottom: 0.2rem solid silver;
+  /* font-size: 1.7rem; */
+
+}
+
+.password-field input:focus~label,
+.password-field input:valid~label {
+  transform: translateY(-20px);
+  outline: none;
+}
+
+.password-field input:focus {
+  outline: none;
+}
+
+.password-field label {
+  position: absolute;
+  bottom: 110px;
+  left: 15px;
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+.password-field span {
+  position: absolute;
+  bottom: 53px;
+  left: 15px;
+}
+
+@media(max-width:820px) {
+  .form-container {
+    margin: 0 0.5rem;
+  }
+}
+
+@media(max-width:768px) {
+  .form-container {
+    margin: 0 0.5rem;
+  }
+}
+
+@media(max-width:390px) {
+  .form-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .login-text {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 1rem;
+  }
+
+  .name-field {
+    margin: 2rem 2rem 1rem 2rem;
+  }
+
+  .name-field label {
+    left: 37px;
+  }
+
+  .name-field span {
+    left: 35px;
+  }
+
+  .password-field {
+    margin: 2rem 2rem 1rem 2rem;
+  }
+
+  .password-field label {
+    left: 37px;
+  }
+
+  .password-field span {
+    left: 35px;
+  }
+
+  .login-button {
+    padding: 10px 140px;
+  }
+
+  .login-tagline {
+    text-align: center;
+  }
+
+}
+
+@media(max-width:360px) {
+  .form-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .login-text {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 1rem;
+  }
+
+  .name-field {
+    margin: 2rem 2rem 1rem 2rem;
+  }
+
+  .name-field label {
+    left: 37px;
+  }
+
+  .name-field span {
+    left: 35px;
+  }
+
+  .password-field {
+    margin: 2rem 2rem 1rem 2rem;
+  }
+
+  .password-field label {
+    left: 37px;
+  }
+
+  .password-field span {
+    left: 35px;
+  }
+
+  .login-button {
+    padding: 10px 140px;
+  }
+
+  .login-tagline {
+    text-align: center;
+  }
+
+}
+
+@media(max-width:320px) {
+  .form-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .login-text {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 1rem;
+  }
+
+  .name-field {
+    margin: 2rem 2rem 1rem 2rem;
+  }
+
+  .name-field label {
+    left: 37px;
+  }
+
+  .name-field span {
+    left: 35px;
+  }
+
+  .password-field {
+    margin: 2rem 2rem 1rem 2rem;
+  }
+
+  .password-field label {
+    left: 37px;
+  }
+
+  .password-field span {
+    left: 35px;
+  }
+
+  .login-button {
+    padding: 10px 140px;
+  }
+
+  .login-tagline {
+    text-align: center;
+  }
+
+}

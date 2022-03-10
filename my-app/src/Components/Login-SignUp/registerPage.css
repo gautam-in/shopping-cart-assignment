@@ -1,0 +1,304 @@
+.register-form-container {
+  max-width: 850px;
+  display: flex;
+  margin: 10px auto;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+
+}
+
+.register-forms form {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+.firstnam-field {
+  margin: 2rem 1rem 1rem 1rem;
+}
+
+.firstnam-field input {
+  height: 100%;
+  width: 100%;
+  border: none;
+  border-bottom: 0.2rem solid silver;
+  /* font-size: 1.7rem; */
+}
+
+.firstnam-field input:focus {
+  outline: none;
+}
+
+.firstnam-field input:focus~label,
+.firstnam-field input:valid~label {
+  transform: translateY(-20px);
+}
+
+.firstnam-field label {
+  position: absolute;
+  top: 30px;
+  left: 17px;
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+.firstnam-field span {
+  position: absolute;
+  top: 55px;
+  left: 17px;
+}
+
+.lastname-field {
+  margin: 2rem 1rem 1rem 1rem;
+}
+
+.lastname-field input {
+  height: 100%;
+  width: 100%;
+  border: none;
+  border-bottom: 0.2rem solid silver;
+  /* font-size: 1.7rem; */
+
+}
+
+.lastname-field input:focus~label,
+.lastname-field input:valid~label {
+  transform: translateY(-20px);
+  outline: none;
+}
+
+.lastname-field input:focus {
+  outline: none;
+}
+
+.lastname-field label {
+  position: absolute;
+  top: 103px;
+  left: 15px;
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+.lastname-field span {
+  position: absolute;
+  top: 126px;
+  left: 17px;
+}
+
+.email-field {
+  margin: 2rem 1rem 1rem 1rem;
+}
+
+.email-field input {
+  height: 100%;
+  width: 100%;
+  border: none;
+  border-bottom: 0.2rem solid silver;
+  /* font-size: 1.7rem; */
+
+}
+
+.email-field input:focus~label,
+.email-field input:valid~label {
+  transform: translateY(-20px);
+  outline: none;
+}
+
+.email-field input:focus {
+  outline: none;
+}
+
+.email-field label {
+  position: absolute;
+  top: 176px;
+  left: 15px;
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+.email-field span {
+  position: absolute;
+  top: 198px;
+  left: 17px;
+}
+
+.pass-field {
+  margin: 2rem 1rem 1rem 1rem;
+}
+
+.pass-field input {
+  height: 100%;
+  width: 100%;
+  border: none;
+  border-bottom: 0.2rem solid silver;
+  /* font-size: 1.7rem; */
+
+}
+
+.pass-field input:focus~label,
+.pass-field input:valid~label {
+  transform: translateY(-20px);
+  outline: none;
+}
+
+.pass-field input:focus {
+  outline: none;
+}
+
+.pass-field label {
+  position: absolute;
+  bottom: 178px;
+  left: 15px;
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+.pass-field span {
+  position: absolute;
+  bottom: 123px;
+  left: 17px;
+}
+
+.cpass-field {
+  margin: 2.5rem 1rem 1rem 1rem;
+}
+
+.cpass-field input {
+  height: 100%;
+  width: 100%;
+  border: none;
+  border-bottom: 0.2rem solid silver;
+  /* font-size: 1.7rem; */
+
+}
+
+.cpass-field input:focus~label,
+.cpass-field input:valid~label {
+  transform: translateY(-20px);
+  outline: none;
+}
+
+.cpass-field input:focus {
+  outline: none;
+}
+
+.cpass-field label {
+  position: absolute;
+  bottom: 104px;
+  left: 15px;
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+.cpass-field span {
+  position: absolute;
+  bottom: 64px;
+  left: 17px;
+}
+
+.register-button {
+  margin: 20px 0;
+  padding: 10px 200px;
+  background-color: #d6336c;
+  border: 0;
+  color: white;
+}
+
+.register-button:active {
+  transform: scale(0.98);
+  /* Scaling button to 0.98 to its original size */
+  box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+  /* Lowering the shadow */
+}
+
+@media(max-width:820px) {
+  .register-form-container {
+    margin: 0 0.5rem;
+  }
+}
+
+@media(max-width:768px) {
+  .register-form-container {
+    margin: 0 0.5rem;
+  }
+}
+
+@media(max-width:390px) {
+  .register-form-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .login-text {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .register-button {
+    padding: 10px 130px;
+  }
+
+  .pass-field label {
+    bottom: 185px;
+  }
+
+  .register-tagline {
+    text-align: center;
+  }
+}
+
+
+
+@media(max-width:360px) {
+  .register-form-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .login-text {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .register-button {
+    padding: 10px 130px;
+  }
+
+  .pass-field label {
+    bottom: 185px;
+  }
+
+  .register-tagline {
+    text-align: center;
+  }
+}
+
+@media(max-width:320px) {
+  .register-form-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .login-text {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .register-button {
+    padding: 10px 130px;
+  }
+
+  .pass-field label {
+    bottom: 185px;
+  }
+
+  .register-tagline {
+    text-align: center;
+  }
+}
