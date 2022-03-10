@@ -1,0 +1,47 @@
+@import "../App.scss";
+
+$filter-font-size: 16px;
+#products-wrapper{
+    font-family: $base-font-family;
+    .filter-section{
+        background-color: #EAEAEA;
+        margin: 0;
+        padding: 0;
+    }
+    .products-section{
+        padding: 10px 0;
+    }
+    .list-group{
+        .list-group-item{
+            background-color: #EAEAEA;
+            font-size: $filter-font-size;
+            cursor: pointer;
+        }
+    }
+    .card{
+        border: none;
+        border-left: 1px #EAEAEA;
+        border-radius: 0;
+        .card-body{
+            min-height: 445px;
+            border-bottom: 1px dashed;
+        }
+        .card-title{
+            font-weight: 700;
+            font-size: 18px;
+        }
+        .card-text{
+            font-size: 12px;
+            background-color: #F0F0F0;
+            padding: 5px;
+        }
+        .price-section{
+            float: left;
+            font-size: $base-font-size;
+        }
+        .buy-btn{
+            float: right;
+            padding: 10px 30px;
+        }
+    }
+}

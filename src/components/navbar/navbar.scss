@@ -1,0 +1,66 @@
+@import "../App.scss";
+
+nav {
+    font-family: $base-font-family;
+    box-shadow: $menu-shadow;
+    -webkit-box-shadow: $menu-shadow;
+    #app-logo img{
+        // width: 190px;
+        // height: 86px;
+        // float: left;
+        margin: 10px 0;
+    }
+    .left-spacer{
+        margin-left: 10px;
+    }
+    .menu-options{
+        font-size: $medium-font-size;
+        margin-left: 100px;
+        cursor: pointer;
+        font-weight: 700;
+        color: #8D7F7A;
+        .home, .products{
+            margin-left: 20px;
+        }
+    }
+    @media only screen and (max-width: 600px) {
+        .menu-options {
+            margin-left: 10px;
+        }    
+    }
+    .wrapper {
+        background-color: $base-color;
+        padding: 50px;
+    }
+    .nav-left {
+        display: flex;
+        align-items: center;
+    }
+    .nav-right{
+        height: 100%;
+        float: right;
+        // display: flex;
+        // justify-content: flex-end;
+        .login-options{
+            font-size: $base-font-size;
+            cursor: pointer;
+            float: right;
+        }
+        .cart-wrapper {
+            background-color: #EAEAEA;
+            padding: 15px 30px;
+            margin-top: 40px;
+            .cart-icon {
+                cursor: pointer;
+                img{
+                    width: 35px;
+                    height: 35px;
+                }
+            }
+            .cart-count{
+                font-size: $medium-font-size;
+                margin-left: 5px;
+            }
+        }
+}
+}

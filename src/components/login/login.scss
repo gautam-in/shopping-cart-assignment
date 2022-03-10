@@ -1,0 +1,14 @@
+@import "../App.scss";
+.login-wrapper{
+    font-family: $base-font-family;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 100px 0;
+    .login-form{
+        width: 100%;
+    }
+    .login-btn{
+        margin-top: 40px;
+    }
+}

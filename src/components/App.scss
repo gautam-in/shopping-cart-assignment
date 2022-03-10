@@ -1,0 +1,86 @@
+@import "~bootstrap/scss/bootstrap";
+@import url("https://fonts.googleapis.com/css?family=Dosis:400,600,700");
+
+$base-font-family: 'Dosis';
+$base-color: #ffffff;
+$base-font-size: 14px;
+$medium-font-size : 16px;
+$btn-font-color: #ffffff;
+$btn-background-color: #D10057;
+$border-dark: rgba($base-color, 0.88);
+$menu-shadow: 0px 2px 10px 2px rgb(0 0 0 / 50%);
+$category-shadow: 0px 15px 10px -15px rgb(0 0 0 / 50%);
+$noitem-font-size: 18px;
+
+#shopping-cart-app {
+    .default-btn-style{
+        border-radius: 0;
+        border: none;
+        color: $btn-font-color;
+        background-color: $btn-background-color;
+    }
+
+    .heading-text {
+        font-size: 32px;
+        font-weight: 700;
+        margin-bottom: 10px;
+    }
+
+    .category-shadow{
+        box-shadow: $category-shadow;
+    }
+    
+    .form-control:focus{
+        outline: none;
+        box-shadow: none;
+    }
+
+    .form-group {
+        position: relative;
+        padding: 15px 0 0;
+        margin-top: 10px;
+    }
+
+    .form-field {
+        font-family: inherit;
+        width: 100%;
+        border: 0;
+        border-bottom: 1px solid #d2d2d2;
+        outline: 0;
+        font-size: 16px;
+        color: #212121;
+        padding: 7px 0;
+        background: transparent;
+        transition: border-color 0.2s;
+        border-radius: 0;
+    }
+
+    .form-field::placeholder {
+        color: transparent;
+    }
+
+    .form-field:placeholder-shown ~ .form-label {
+        font-size: 16px;
+        cursor: text;
+        top: 20px;
+    }
+
+    label,
+    .form-field:focus ~ .form-label {
+        position: absolute;
+        top: 0;
+        display: block;
+        transition: 0.2s;
+        font-size: 12px;
+        color: #9b9b9b;
+    }
+
+    .form-field:focus ~ .form-label {
+        color: #6BCBD3;
+    }
+
+    .form-field:focus {
+        padding-bottom: 6px;
+        border-bottom: 2px solid #6BCBD3;
+    }
+}

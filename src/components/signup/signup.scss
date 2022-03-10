@@ -1,0 +1,16 @@
+
+@import "../App.scss";
+
+.signup-wrapper{
+    font-family: 'Dosis';
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 100px 0;
+    .signup-form{
+        width: 100%;
+    }
+    .signup-btn{
+        margin-top: 40px;
+    }
+}
