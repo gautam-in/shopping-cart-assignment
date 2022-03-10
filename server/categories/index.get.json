@@ -41,7 +41,8 @@
     "description": "Great place to buy fresh seafood.",
     "enabled": false,
     "order": -1,
-    "id": "5b68997d3d1a866534f516e1"
+    "id": "5b68997d3d1a866534f516e1",
+    "imageUrl": "/static/images/category/"
   },
   {
     "name": "Fruits & Vegetables",

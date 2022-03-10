@@ -41,6 +41,12 @@ button:hover {
   cursor: pointer;
 }
 
+@media only screen and (max-width: 600px) {
+  button {
+    font-size: 12px;
+  }
+}
+
 .no-item-found {
   margin: 2rem;
   padding: 2rem;
