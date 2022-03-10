@@ -1,0 +1,115 @@
+@import "../App.scss";
+
+#cart-wrapper {
+    font-family: $base-font-family; 
+    .checkout-btn{
+        width: 100%;
+        padding: 12px 18px;
+        .checkout-text{
+            float: left;
+        }
+        .checkout-amount{
+            float: right;
+        }
+    }
+
+    .my-cart-text{
+        width: 100%;
+        font-size: 18px;
+        span{
+            font-weight: 700;
+        }
+    }
+
+    .modal-content{ 
+        .modal-body{
+            height: 450px;
+            overflow-y: auto;
+            background-color: #EEEEEE;
+            .cart-items {
+                margin-bottom: 10px;
+            }
+        }
+        .modal-header{
+            background-color: #1D2123;
+            color: #ffffff;
+            .btn-close {
+                display: none;
+            }
+            .close-icon{
+                width: 20px;
+                height: 20px;
+                float: right;
+                cursor: pointer;
+            }
+        }
+        .modal-footer{
+            justify-content: flex-start;
+            .promo-code{
+                text-align: left;
+            }
+        }
+    }
+    .cart-items{
+        .card{
+            border: none;
+            .card-body{
+                width: 100%;
+                height: 130px;                
+                margin-bottom: 10px;
+                .card-img-top{
+                    width: 100px;
+                    height: 100px;
+                    float: left;
+                }
+                .card-title {
+                    font-weight: 700;
+                }
+                .price-section{
+                    float: right;
+                }
+                .quantity{
+                    margin: 0 10px;
+                }
+                .plus-btn, .minus-btn {
+                    font-size: 18px;
+                    text-align: center;
+                    line-height: 14px;
+                    width: 30px;
+                    height: 30px;
+                    border-radius: 50%;
+                    vertical-align: middle;
+                    background-color: $btn-background-color;
+                    border-color: $btn-background-color;
+                    // margin: 0 5px;
+                }
+                .multiply-btn{
+                    margin: 0 10px;
+                }
+            }
+        }
+    }
+
+    .lowest-price{
+        background-color: #ffffff;
+        padding: 10px 20px;
+        .lowest-price-text{
+            font-size: $base-font-size;
+            margin-left: 10px;
+        }
+    }
+
+    .noitem-wrapper{
+        text-align: center;
+        margin-top: 150px;
+        .no-item{
+            font-size: $noitem-font-size;
+            font-weight: 700;
+        }
+
+        .click-away{
+            font-size: $noitem-font-size;
+        }
+    }
+    
+}

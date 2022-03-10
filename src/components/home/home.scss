@@ -1,0 +1,83 @@
+@import "../App.scss";
+
+#home-wrapper {
+    background-color: $base-color;
+    margin: 10px 0;
+    p {
+        margin: 0;
+    }
+    .footer-wrapper {
+        font-size: $base-font-size;
+        display: flex;
+        align-items: center;
+    }
+    
+    .carousel {
+        .carousel-control-prev, .carousel-control-next{
+            color: #000;
+            .visually-hidden {
+                visibility: visible !important;
+                position: static !important;
+                background-color: #000 !important;
+                width: auto !important;
+                height: 25px !important;
+                color: #ffff;
+                padding: 15px !important;
+                line-height: 0px;
+                text-transform: uppercase;
+            }
+        }
+
+        .carousel-control-prev-icon, .carousel-control-next-icon{
+            display: none;
+        }
+
+        .carousel-indicators [data-bs-target]{
+            height: 5px;
+            background-color: #000;
+            border-radius: 50%;
+            width: 5px;
+            margin: 0 10px;
+        }
+
+        .carousel-inner {
+            .carousel-item img{
+                height: auto;
+                width: 100%;
+            }
+        }
+
+        @media only screen and (max-width: 600px) {
+            .carousel-inner {
+                .carousel-item img{
+                    height: 200px;
+                }
+            }
+        }
+    }
+
+    .category-wrapper{
+        &:nth-child(even){
+            display: flex;
+            flex-direction: row-reverse;
+        }
+        margin: 20px auto;
+        padding: 20px 0;
+        .card{
+            border: none;
+            .card-body{
+                text-align: center;
+                .card-text { 
+                   margin: 10px 0;
+                }
+                .categoryBtn{
+                    background-color: $btn-background-color;
+                    border: none;
+                    border-radius: 0;
+                    color: $base-color;
+                    padding: 10px;
+                }
+            }
+        }
+    }
+}

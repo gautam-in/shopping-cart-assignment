@@ -1,0 +1,12 @@
+footer {
+    background-color: #EAEAEA;
+    padding: 10px 0;
+    p {
+        margin: 0;
+    }
+    .footer-wrapper {
+        $base-font-size: 12px;
+        display: flex;
+        align-items: center;
+    }
+}
