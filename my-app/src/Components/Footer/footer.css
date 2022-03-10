@@ -1,0 +1,38 @@
+.copyrights {
+    padding: 1rem;
+    margin: 1rem;
+    background-color: #dee2e6;
+    text-indent: 15rem;
+    color: black;
+}
+
+.copyright-Footer {
+    width: 100%;
+}
+
+@media(max-width:390px) {
+    .copyrights {
+        padding: 1rem;
+        margin: 1rem;
+        text-indent: 0px;
+        font-size: 0.8rem
+    }
+}
+
+@media(max-width:360px) {
+    .copyrights {
+        padding: 1rem;
+        margin: 1rem;
+        text-indent: 0px;
+        font-size: 0.8rem
+    }
+}
+
+@media(max-width:320px) {
+    .copyrights {
+        padding: 1rem;
+        margin: 1rem;
+        text-indent: 0px;
+        font-size: 0.6rem
+    }
+}
