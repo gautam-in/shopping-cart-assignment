@@ -1,39 +1,126 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Merriweather Sans", sans-serif;
+}
+
+.container {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 10px 0 10px;
+}
+
+@media only screen and (max-width: 600px) {
+  .container {
+    width: 100%;
+  }
+}
+html,
+body {
+  margin: 0px;
+  padding: 0px;
+}
+
+button {
+  font-size: 20px;
+  color: #ffffff;
+  margin-top: 5px;
+  padding: 0.5rem;
+  background: #e6005c;
+  text-decoration: none;
+  border: none;
+}
+
+button:hover {
+  opacity: 0.9;
+  cursor: pointer;
+}
+
+.no-item-found {
+  margin: 2rem;
+  padding: 2rem;
+  text-align: center;
+}
+
+.main-header {
+  height: 70px;
+  top: 0px;
+  background: #ffffff;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px;
+}
+
+.display-none {
+  display: none;
+}
+
+.no-item {
+  text-align: center;
+}
+
+.no-item .container {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  justify-content: center;
+  height: calc(100vh - 130px);
+}
+
+.no-item .container h2 {
+  margin-bottom: 5px;
+}
+
+.no-item button {
+  width: 100%;
+  max-width: 200px;
+}
+
+.roundButton {
+  border-radius: 5px;
+}
+
 .category-card {
   display: flex;
   margin: 1rem;
   padding: 1rem;
-  /* box-shadow: rgba(66, 43, 43, 0.2) 0px 2px 8px 0px; */
   box-shadow: 0 1px 4px -2px grey;
   align-items: center;
   justify-content: space-between;
 }
+
 .category-card img {
   width: 100%;
   text-align: center;
 }
+
 .category-card .image-section {
   width: 40%;
   text-align: center;
 }
+
 .category-card .category-details {
   width: 60%;
   text-align: center;
 }
+
 .category-card .category-details .category-name {
   margin: 10px;
 }
+
 .category-card .category-details .category-des {
   margin: 10px;
 }
+
 .category-card .category-details .category-btn {
   margin: 10px;
 }
 
 /* Slideshow  */
-
 .mySlides {
   display: none;
 }
+
 img {
   vertical-align: middle;
 }
@@ -55,7 +142,7 @@ img {
   width: auto;
   padding: 8px;
   margin-top: -22px;
-  color: white;
+  color: #ffffff;
   font-size: 14px;
   transition: 0.6s ease;
   border-radius: 0 3px 3px 0;
@@ -115,8 +202,10 @@ img {
 /* On smaller screens, decrease text size */
 @media only screen and (max-width: 300px) {
   .prev,
-  .next,
-  .text {
+.next,
+.text {
     font-size: 11px;
   }
 }
+
+/*# sourceMappingURL=home.css.map */

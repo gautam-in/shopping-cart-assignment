@@ -1,3 +1,8 @@
+$btn-background: #e6005c;
+$border-shadow-color: rgba(50, 50, 93, 0.25);
+$white-color: #ffffff;
+$grey-color: grey;
+
 * {
   margin: 0;
   padding: 0;
@@ -23,10 +28,10 @@ body {
 
 button {
   font-size: 20px;
-  color: #ffffff;
+  color: $white-color;
   margin-top: 5px;
   padding: 0.5rem;
-  background: #e6005c;
+  background: $btn-background;
   text-decoration: none;
   border: none;
 }
@@ -45,9 +50,8 @@ button:hover {
 .main-header {
   height: 70px;
   top: 0px;
-  background: white;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
-    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  background: $white-color;
+  box-shadow: $border-shadow-color 0px 6px 12px -2px;
 }
 
 .display-none {

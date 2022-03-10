@@ -1,3 +1,5 @@
+@import "./styles.scss";
+
 .signin-container {
   display: flex;
   margin: 1rem;
@@ -18,7 +20,7 @@
   height: 50px;
 }
 .signin-container input:focus {
-  border-bottom: 2px solid #e6005c;
+  border-bottom: 2px solid $btn-background;
 }
 .signin-container button {
   width: 80%;

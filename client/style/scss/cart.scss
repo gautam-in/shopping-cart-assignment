@@ -1,3 +1,5 @@
+@import "./styles.scss";
+
 .cart-container {
   padding: 1rem 0;
   background-color: #f0f0f0;
@@ -7,7 +9,7 @@
 .cart-container .display-flex {
   display: flex;
   align-items: center;
-  background-color: white;
+  background-color: $white-color;
   padding: 10px;
 }
 .cart-container .display-flex h3 {

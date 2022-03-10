@@ -1,3 +1,5 @@
+@import "./styles.scss";
+
 .border-radius-4,
 .product-container .card,
 .product-container .card .product-des {
@@ -69,13 +71,13 @@
 }
 .content-body .left-section .category-btn {
   background: transparent;
-  color: grey;
+  color: $grey-color;
   text-align: center;
   font-size: 14px;
   font-weight: 500;
   width: 100%;
   padding: 1rem;
-  border-bottom: 1px solid grey;
+  border-bottom: 1px solid $grey-color;
   outline: none;
 }
 .content-body .left-section .category-btn:hover {
