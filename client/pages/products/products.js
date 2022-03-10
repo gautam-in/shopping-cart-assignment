@@ -71,6 +71,7 @@ function showCardData(productDetails) {
   let minSizeBuyBtn = document.createElement("button");
   minSizeBuyBtn.classList.add("minSize-buynow-btn");
   minSizeBuyBtn.setAttribute("id", productDetails.id);
+  minSizeBuyBtn.addEventListener("click", () => addToCard(productDetails));
   minSizeBuyBtn.innerHTML = `MRP Rs.${productDetails.price} Buy Now`;
   productCard.append(minSizeBuyBtn);
 

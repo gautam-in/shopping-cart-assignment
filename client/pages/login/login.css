@@ -18,7 +18,7 @@
   height: 50px;
 }
 .signin-container input:focus {
-  border-bottom: 2px solid blue;
+  border-bottom: 2px solid #e6005c;
 }
 .signin-container button {
   width: 80%;
