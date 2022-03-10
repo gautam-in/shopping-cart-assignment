@@ -1,0 +1,31 @@
+.row-shadow {
+  box-shadow: 0 5px 5px 0px #0003;
+  position: relative;
+}
+.category-heading {
+    color: black;
+    font-weight: bold;
+}
+.category-row {
+  @extend .row-shadow;
+  @extend .category-heading;
+  padding: 3rem;
+  align-items: center;
+  text-align: center;
+  img {
+    width: inherit;
+  }
+}
+.explore-btn {
+  color: white;
+  background-color: #d00255;
+}
+
+@media screen and (max-width: 768px) {
+  .category-row {
+    padding: 1rem;
+    img {
+      width: -webkit-fill-available;
+    }
+  }
+}

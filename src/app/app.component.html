@@ -1,0 +1,44 @@
+<header>
+  <div class="container-fluid main-navigation mb-2">
+    <div class="row">
+      <div class="col-3">
+        <a href="javascript:void(0)" aria-current="page" routerLink="/home">
+          <img class="brand-logo" src="../assets/static/images/logo.png" alt="Sabka Bazar">
+        </a>
+      </div>
+      <div class="col-6 sm-media d-none"></div>
+      <div class="col-3 sm-media d-none">
+        <button type="button" class="btn cart-btn" (click)="openModal()">
+          <i class="cart-icon"></i>
+          <span>{{cartItems?.length}}</span> items
+        </button>
+      </div>
+      <div class="col-9 lg-media">
+        <div class="row">
+          <nav class="nav float-right login-nav">
+            <a class="nav-link active" href="javascript:void(0)" aria-current="page" routerLink="/login">SignIn</a>
+            <a class="nav-link" href="javascript:void(0)" routerLink="/register">Register</a>
+          </nav>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <nav class="nav">
+              <a class="nav-link active" href="javascript:void(0)" aria-current="page" routerLink="/home">Home</a>
+              <a class="nav-link" href="javascript:void(0)" routerLink="/product">Products</a>
+              <button type="button" class="btn cart-btn" (click)="openModal()">
+                <i class="cart-icon"></i>
+                <span>{{cartItems?.length}}</span> items
+              </button>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<div class="footer-margin">
+  <router-outlet></router-outlet>
+</div>
+
+
+<footer class="footer">Copyright © 2011-2018 Sabka Bazaar Grocery Supplies Pvt. Ltd</footer>

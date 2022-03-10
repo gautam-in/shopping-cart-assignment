@@ -1,0 +1,58 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-2 sidebar">
+              <div class="list-group">
+                  <ng-container *ngFor="let item of catgoryData;let i =index;">
+                    <a href="javascript:void(0)" (click)="filterData(item, i)"  class="list-group-item list-group-item-action" [ngClass]="{'active': !item.enabled}">
+                        {{item?.name}}
+                    </a>
+                  </ng-container>
+              </div>
+        </div>
+        <div class="col-12 d-none category-dropdown mb-1">
+            <div class="d-inline-block w-100" ngbDropdown #myDrop="ngbDropdown">
+                <button class="btn me-2 w-100" id="categoryFilter" ngbDropdownToggle>
+                    <label for="categoryFilter" class="btn-label">{{selectedCategoryName ? selectedCategoryName : 'Filter Product By Category' }}</label>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="w-100" ngbDropdownMenu aria-labelledby="categoryFilter">
+                  <ng-container *ngFor="let item of catgoryData;let i =index;">
+                    <a ngbDropdownItem href="javascript:void(0)" (click)="filterData(item, i)"  class="list-group-item list-group-item-action" [ngClass]="{'active': !item.enabled}">
+                        {{item?.name}}
+                    </a>
+                  </ng-container>
+                </div>
+              </div>
+        </div>
+        <div class="col-12 col-sm-10">
+            <div class="row">
+                <ng-container *ngIf="filterdProductData && filterdProductData.length; else noItems">
+                    <div class="col-12 col-sm-6 col-lg-3 card-container" *ngFor="let item of filterdProductData;let i =index;">
+                        <div class="card p-1">
+                            <h5 class="card-title">{{item?.name}}</h5>
+                            <div class="row">
+                                <div class="col-6 col-sm-12"><img src="../../assets{{item?.imageURL}}" class="card-img-top" alt="{{item.name}}"></div>
+                                <div class="col-6 col-sm-12">
+                                    <div class="card-body">
+                                        <p class="card-text">{{item?.description}}</p>
+                                        <div class="row action-row">
+                                            <div class="col product-mrp">MRP Rs. {{item?.price}}</div>
+                                            <div class="col">
+                                                <button class="btn buy-now-btn" type="button" (click)="addToCart(item)"> Buy Now</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </ng-container>
+                <ng-template #noItems>
+                    <div class="col-12 text-center">
+                        <img src="../../assets/static/images/no_product.jpg" alt="no-product">
+                    </div>
+                </ng-template>
+            </div>
+        </div>
+    </div>
+</div>

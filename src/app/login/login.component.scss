@@ -1,0 +1,41 @@
+.login-page {
+  color: black;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  font-weight: bold;
+  h1 {
+    font-weight: bolder;
+  }
+}
+
+.signin-signup-form-container {
+  form {
+    width: auto;
+    .form-floating {
+      label {
+        position: absolute;
+        left: -10px;
+      }
+      .form-control,
+      .form-control:focus {
+        border-width: 2px;
+        border-top: 0px !important;
+        border-right: 0px !important;
+        border-left: 0px !important;
+        box-shadow: none;
+        border-radius: 0px;
+      }
+      .form-control:focus ~ .floating-label {
+        color: #50dae3 !important;
+      }
+      .form-control:focus {
+        border-color: #50dae3;
+      }
+    }
+    .submit-btn {
+        width: 100%;
+        color: white;
+        background-color: #d00255;
+    }
+  }
+}

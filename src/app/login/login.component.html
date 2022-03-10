@@ -1,0 +1,74 @@
+<div class="container-fluid login-page">
+    <div class="row d-flex flex-row justify-content-center align-items-center">
+        <div class="col-md-3"></div>
+        <div class="col-12 col-md-3">
+            <h1>{{isLoginPage ? 'Login' : 'Signup'}}</h1>
+            <p class="pt-2">
+                {{isLoginPage ? 'Get access to your orders, Wishlist and Recommendations' : 'We do not share your personal details with anyone.'}}
+            </p>
+        </div>
+        <div class="signin-signup-form-container col-12 col-md-3">
+            <form [formGroup]="signInSignupForm" novalidate (ngSubmit)="formSubmit()">
+                <fieldset>
+                    <legend></legend>
+                    <div class="form-floating mb-3" *ngIf="!isLoginPage">
+                        <input type="text" #firstNameRef formControlName="firstName" name="firstname"
+                            class="form-control" id="firstNameInput" placeholder="First Name"
+                            aria-describedby="firstNameDesc">
+                        <label for="firstNameInput" class="floating-label">First Name</label>
+                        <small id="firstNameDesc" *ngIf="signInSignupForm.controls['firstName'].errors" class="text-danger">
+                            First Name is required
+                        </small>
+                    </div>
+                    <div class="form-floating mb-3" *ngIf="!isLoginPage">
+                        <input type="text" #lastNameRef formControlName="lastName" name="lastname" class="form-control"
+                            id="lastNameInput" placeholder="Last Name" aria-describedby="lastNameDesc">
+                        <label for="lastNameInput" class="floating-label">Last </label>
+                        <small id="lastNameDesc" *ngIf="signInSignupForm.controls['lastName'].errors" class="text-danger">
+                            Last Name is required
+                        </small>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="email" #emailRef formControlName="email" name="email" class="form-control"
+                            id="emailInput" placeholder="Email" aria-describedby="emailDesc">
+                        <label for="emailInput" class="floating-label">Email</label>
+                        <small id="emailDesc" *ngIf="signInSignupForm.controls['email'].errors let error;"
+                            class="text-danger">
+                            <span *ngIf="error['required']">Email is Required</span>
+                            <span *ngIf="error['pattern']">Invalid Email</span>
+                        </small>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="password" #passwordRef formControlName="password" name="password"
+                            class="form-control" id="passwordInput" placeholder="Password"
+                            aria-describedby="passwordDesc">
+                        <label for="passwordInput" class="floating-label">Password</label>
+                        <small id="passwordDesc" *ngIf="signInSignupForm.controls['password'].errors let error;"
+                            class="text-danger">
+                            <span *ngIf="error['required']">Password is Required</span>
+                            <span *ngIf="error['pattern']">Password min length should be 6 & atleast contain 1 alphabet
+                                & 1 numeric value </span>
+                        </small>
+                    </div>
+                    <div class="form-floating mb-3" *ngIf="!isLoginPage">
+                        <input type="password" #confirmPasswordRef formControlName="confirmPassword"
+                            name="confirmPassword" class="form-control" id="confirmPasswordInput"
+                            placeholder="Confirm Password" aria-describedby="confirmpasswordDesc">
+                        <label for="confirmPasswordInput" class="floating-label">Confirm Password</label>
+                        <small id="confirmpasswordDesc" *ngIf="signInSignupForm.controls['confirmPassword'].errors let error;" class="text-danger">
+                            <span *ngIf="error['required']">Confirm Password is Required</span>
+                            <span *ngIf="error['pattern']">Password min length should be 6 & atleast contain 1 alphabet
+                                & 1 numeric value </span>
+                            <span *ngIf="error['notEquivalent']">Confirm Password should be same as Password</span>
+                        </small>
+                    </div>
+                    <div>
+                        <button type="submit" class="btn submit-btn" [disabled]="signInSignupForm.invalid">
+                            {{isLoginPage ? 'Login' : 'Register'}}</button>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+        <div class="col-md-3"></div>
+    </div>
+</div>

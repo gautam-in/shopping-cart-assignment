@@ -1,0 +1,28 @@
+<div class="container-fluid">
+    <section id="product-category-carousal" class="row-shadow">
+        <ngb-carousel #carousel [interval]="10000">
+            <ng-container *ngFor="let item of bannersData;">
+                <ng-template ngbSlide>
+                    <div class="picsum-img-wrapper">
+                        <img src="../../assets{{item?.bannerImageUrl}}" alt="{{item?.bannerImageAlt}}">
+                    </div>
+                </ng-template>
+            </ng-container>
+        </ngb-carousel>
+    </section>
+    <section id="product-category">
+        <ng-container *ngFor="let item of catgoryData;let i = index;">
+            <div class="row d-flex flex-row category-row" [ngClass]="{'flex-row-reverse': 0 !== i % 2}">
+                <div class="col-6">
+                    <img *ngIf="item?.imageUrl" src="../../assets{{item?.imageUrl}}" alt="{{item?.name}}">
+                    <img *ngIf="!item?.imageUrl" src="../../assets/static/images/no_image.jpg" alt="{{item?.name}}">
+                </div>
+                <div class="col-6">
+                    <h3 class="category-heading">{{item?.name}}</h3>
+                    <p>{{item?.description}}</p>
+                    <a type="button" routerLink="/product/{{item.id}}" class="btn explore-btn">Explore <span>{{item?.key}}</span></a>
+                </div>
+            </div>
+        </ng-container>
+    </section>
+</div>
