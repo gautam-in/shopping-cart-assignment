@@ -1,15 +1,17 @@
 import {
   Component,
-  ElementRef,
+  EventEmitter,
+  Input,
   OnInit,
+  Output,
   ViewChild,
-  ViewContainerRef,
 } from '@angular/core';
 import {
   NgbActiveModal
 } from '@ng-bootstrap/ng-bootstrap';
 
 export interface ICart {
+  productId: string;
   name: string;
   qty: number;
   price: number;
@@ -23,24 +25,20 @@ export interface ICart {
 })
 export class CartComponent implements OnInit {
   @ViewChild('cartModalRef') cartModalRef: any;
-  cartItems: ICart[] = [
-    // {
-    //   name: 'Close Up Ever Fresh Red Hot Gel Toothpaste, 150 gm',
-    //   imgUrl: '/static/images/products/beauty-hygiene/closeup.jpg',
-    //   price: 82,
-    //   qty: 5,
-    // },
-  ];
+  @Output() updateCartItem = new EventEmitter();
+  @Input() cartItems: ICart[] = [];
   constructor(public activeModal: NgbActiveModal) {}
   ngOnInit(): void {}
   addItemQty(index: number){
     this.cartItems[index].qty = this.cartItems[index].qty + 1
+    this.updateCartItem.emit(this.cartItems);
   }
   removeItemQty(index: number){
-    if(this.cartItems[index].qty > 0){
+    if(this.cartItems[index].qty > 1){
       this.cartItems[index].qty =  this.cartItems[index].qty - 1
     } else {
       this.cartItems.splice(index, 1)
     }
+    this.updateCartItem.emit(this.cartItems);
   }
 }

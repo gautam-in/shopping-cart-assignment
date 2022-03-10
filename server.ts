@@ -20,7 +20,7 @@ const addToCart = require('./server/addToCart/index.post.json');
 // The Express app is exported so that it can be used by serverless Functions.
 export function app(): express.Express {
   const server = express();
-  const distFolder = join(process.cwd(), 'dist/apna-bazar/browser');
+  const distFolder = join(process.cwd(), 'dist/sabka-bazar/browser');
   const indexHtml = existsSync(join(distFolder, 'index.original.html'))
     ? 'index.original.html'
     : 'index';
@@ -90,7 +90,7 @@ export function app(): express.Express {
 }
 
 function run(): void {
-  const port = process.env['PORT'] || 4000;
+  const port = process.env['PORT'] || 3000;
 
   // Start up the Node server
   const server = app();

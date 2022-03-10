@@ -1,11 +1,13 @@
 import { environment } from './../environments/environment';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ApiService {
+  updateCartItems = new Subject<any>();
   headers = new HttpHeaders({
     'Content-Type': 'application/json',
   });

@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "apna-bazar": {
+    "sabka-bazar": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -20,7 +20,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/apna-bazar/browser",
+            "outputPath": "dist/sabka-bazar/browser",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -72,10 +72,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "apna-bazar:build:production"
+              "browserTarget": "sabka-bazar:build:production"
             },
             "development": {
-              "browserTarget": "apna-bazar:build:development"
+              "browserTarget": "sabka-bazar:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -83,7 +83,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "apna-bazar:build"
+            "browserTarget": "sabka-bazar:build"
           }
         },
         "test": {
@@ -101,13 +101,14 @@
             "styles": [
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [],
+            "codeCoverage": true
           }
         },
         "server": {
           "builder": "@angular-devkit/build-angular:server",
           "options": {
-            "outputPath": "dist/apna-bazar/server",
+            "outputPath": "dist/sabka-bazar/server",
             "main": "server.ts",
             "tsConfig": "tsconfig.server.json",
             "inlineStyleLanguage": "scss"
@@ -134,12 +135,12 @@
           "builder": "@nguniversal/builders:ssr-dev-server",
           "configurations": {
             "development": {
-              "browserTarget": "apna-bazar:build:development",
-              "serverTarget": "apna-bazar:server:development"
+              "browserTarget": "sabka-bazar:build:development",
+              "serverTarget": "sabka-bazar:server:development"
             },
             "production": {
-              "browserTarget": "apna-bazar:build:production",
-              "serverTarget": "apna-bazar:server:production"
+              "browserTarget": "sabka-bazar:build:production",
+              "serverTarget": "sabka-bazar:server:production"
             }
           },
           "defaultConfiguration": "development"
@@ -153,12 +154,12 @@
           },
           "configurations": {
             "production": {
-              "browserTarget": "apna-bazar:build:production",
-              "serverTarget": "apna-bazar:server:production"
+              "browserTarget": "sabka-bazar:build:production",
+              "serverTarget": "sabka-bazar:server:production"
             },
             "development": {
-              "browserTarget": "apna-bazar:build:development",
-              "serverTarget": "apna-bazar:server:development"
+              "browserTarget": "sabka-bazar:build:development",
+              "serverTarget": "sabka-bazar:server:development"
             }
           },
           "defaultConfiguration": "production"
@@ -166,5 +167,5 @@
       }
     }
   },
-  "defaultProject": "apna-bazar"
+  "defaultProject": "sabka-bazar"
 }

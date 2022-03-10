@@ -1,5 +1,5 @@
 {
-  "name": "apna-bazar",
+  "name": "sabka-bazar",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -7,10 +7,10 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "dev:ssr": "ng run apna-bazar:serve-ssr",
-    "serve:ssr": "npm run build:ssr && node dist/apna-bazar/server/main.js",
-    "build:ssr": "ng build && ng run apna-bazar:server",
-    "prerender": "ng run apna-bazar:prerender"
+    "dev:ssr": "ng run sabka-bazar:serve-ssr",
+    "serve:ssr": "npm run build:ssr && node dist/sabka-bazar/server/main.js",
+    "build:ssr": "ng build && ng run sabka-bazar:server",
+    "prerender": "ng run sabka-bazar:prerender"
   },
   "private": true,
   "dependencies": {

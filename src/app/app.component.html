@@ -10,7 +10,7 @@
       <div class="col-3 sm-media d-none">
         <button type="button" class="btn cart-btn" (click)="openModal()">
           <i class="cart-icon"></i>
-          <span>{{noOfCartItems}}</span> items
+          <span>{{cartItems?.length}}</span> items
         </button>
       </div>
       <div class="col-9 lg-media">
@@ -27,7 +27,7 @@
               <a class="nav-link" href="javascript:void(0)" routerLink="/product">Products</a>
               <button type="button" class="btn cart-btn" (click)="openModal()">
                 <i class="cart-icon"></i>
-                <span>{{noOfCartItems}}</span> items
+                <span>{{cartItems?.length}}</span> items
               </button>
             </nav>
           </div>

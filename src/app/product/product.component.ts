@@ -54,12 +54,12 @@ export class ProductComponent implements OnInit {
     }
   }
 
-  addToCart(item: any){
+  addToCart(product: any){
     const payload = {
-      productId: item.id
+      productId: product.id
     }
     this.apiService.postApi(GlobalConstants.ADD_TO_CART, payload).subscribe((res: any) => {
-      
+      this.apiService.updateCartItems.next(product);
     })    
   }
 }
