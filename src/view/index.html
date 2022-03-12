@@ -112,10 +112,15 @@
             justify-content: space-between;
             padding: 1em 1em 3em 1em;
             box-shadow: 0 8px 6px -6px rgba(0, 0, 0, 0.5);
+            text-align: center;
         }
 
         .image-container {
             display: contents;
+        }
+
+        .image-container img {
+            width: 100%;
         }
 
         .product-image {
@@ -131,7 +136,6 @@
             flex-direction: column;
             gap: 1.5em;
             width: 40%;
-            text-align: center;
         }
 
         .product-details .title {
@@ -157,6 +161,8 @@
             background-color: #dee2e6;
         }
     </style>
+
+    <script defer src="../js/home.js"></script>
 </head>
 
 <body>
@@ -184,83 +190,6 @@
             </section>
 
             <section class="products-container">
-                <div class="product">
-                    <div class="image-container">
-                        <img class="product-image" src="../../static/images/category/fruits.png"
-                            alt="Fruits and Vegetables category">
-                    </div>
-                    <div class="product-details">
-                        <h1 class="title">Fruits & Vegetables</h1>
-                        <p class="description">
-                            A variety of fresh fruits and vegetables.
-                        </p>
-                        <button class="explore">
-                            Explore fruit-and-veg
-                        </button>
-                    </div>
-                </div>
-                <div class="product">
-                    <div class="product-details">
-                        <h1 class="title">Bakery Cakes and Dairy</h1>
-                        <p class="description">
-                            The best cupcakes, cookies, cakes, pies, cheesecakes, fresh bread, biscotti, muffins,
-                            bagels, fresh coffee, milk and more.
-                        </p>
-                        <button class="explore">
-                            Explore bakery-cakes-dairy
-                        </button>
-                    </div>
-                    <div class="image-container">
-                        <img class="product-image" src="../../static/images/category/bakery.png"
-                            alt="Fruits and Vegetables category">
-                    </div>
-                </div>
-                <div class="product">
-                    <div class="image-container">
-                        <img class="product-image" src="../../static/images/category/beverages.png"
-                            alt="Fruits and Vegetables category">
-                    </div>
-                    <div class="product-details">
-                        <h1 class="title">Beverages</h1>
-                        <p class="description">
-                            Our beverage department will ensure your fridge is always fully stocked. Shop for soda,
-                            juice, beer and more
-                        </p>
-                        <button class="explore">
-                            Explore fruit-and-veg
-                        </button>
-                    </div>
-                </div>
-                <div class="product">
-                    <div class="product-details">
-                        <h1 class="title">Beauty and Hygiene</h1>
-                        <p class="description">
-                            beauty and personal care products online in india at best prices.
-                        </p>
-                        <button class="explore">
-                            Explore beauty-hygiene
-                        </button>
-                    </div>
-                    <div class="image-container">
-                        <img class="product-image" src="../../static/images/category/beauty.png"
-                            alt="Fruits and Vegetables category">
-                    </div>
-                </div>
-                <div class="product">
-                    <div class="image-container">
-                        <img class="product-image" src="../../static/images/category/baby.png"
-                            alt="Fruits and Vegetables category">
-                    </div>
-                    <div class="product-details">
-                        <h1 class="title">Baby Care</h1>
-                        <p class="description">
-                            Shop online for baby Products, Diapers, Skin Care Products.etc.
-                        </p>
-                        <button class="explore">
-                            Explore baby
-                        </button>
-                    </div>
-                </div>
             </section>
 
         </main>
