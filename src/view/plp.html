@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products</title>
+
+    <style>
+        /*
+            Primary Color: #D00155
+        */
+        * {
+            margin: 0;
+            padding: 0;
+
+            box-sizing: border-box;
+        }
+
+        body {
+            /* width: 1200px; */
+            /* margin: 1.5em; */
+            font-family: sans-serif;
+        }
+
+        header {
+            background-color: #f8f9fa;
+
+            box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.5);
+        }
+
+        /* HEADER Portion */
+        .container {
+            position: relative;
+            min-height: 100vh;
+        }
+
+        .logo {
+            height: 4em;
+            width: 8em;
+        }
+
+        .navigation-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 1em;
+            /* Added this height to make sure it is similar to screenshot */
+            height: 5em;
+
+        }
+
+        .cart {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .cart-icon {
+            height: 3em;
+            width: 3em;
+            stroke: #D00155;
+            color: #D00155;
+            /* background-color: #8e2b44; */
+        }
+
+        .cart-item {
+            font-size: 1.5rem;
+        }
+
+        /* MAIN/BODY Products Container */
+
+        .product-card-section {
+            display: flex;
+            flex-wrap: wrap;
+            width: 100%;
+            gap: 2em;
+            align-items: center;
+            justify-content: center;
+
+        }
+
+        .products-container {
+            margin-top: 2em;
+        }
+
+        .category-list {
+            /* position: relative; */
+            display: none;
+        }
+
+        .category--opened {
+            display: flex;
+            flex-direction: column;
+        }
+
+
+        .category-name {
+            /* height: 3em; */
+            text-align: center;
+            padding: 1em;
+            border-bottom: 1px solid #000;
+            background-color: #f8f9fa;
+            /* position: absolute; */
+            /* display: none; */
+            width: 100%;
+            cursor: pointer;
+        }
+
+        .category-name:hover {
+            background-color: #dee2e6;
+        }
+
+        .category-banner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            background-color: #D00155;
+
+            padding: 2em;
+            color: #fff;
+            height: 3em;
+            cursor: pointer;
+        }
+
+        .category-banner svg {
+            height: 2.5em;
+            width: 2.5em;
+        }
+
+        .product-card {
+            display: flex;
+            flex-direction: column;
+            margin-top: 1em;
+
+            width: 24rem;
+            height: 100%;
+            margin: 1em auto;
+        }
+
+        .product-title {
+            /* grid-column: 1 / -1; */
+        }
+
+        .product-description {
+            background-color: #dee2e6;
+            padding: 1em;
+        }
+
+        .product-buy-now {
+            border: none;
+            background-color: #D00155;
+            color: #fff;
+            padding: 1em;
+        }
+
+        .product-img {}
+
+        /* .product {
+            margin-top: 3em;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1em 1em 3em 1em;
+            box-shadow: 0 8px 6px -6px rgba(0, 0, 0, 0.5);
+            text-align: center;
+        }
+
+        .image-container {
+            display: contents;
+        }
+
+        .image-container img {
+            width: 100%;
+        }
+
+        .product-image {
+            height: auto;
+            width: 60%;
+
+        }
+
+        .product-details {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 1.5em;
+            width: 40%;
+        }
+
+        .product-details .title {
+            font-size: 1.5rem;
+        }
+
+        .product-details .description {
+            font-size: 0.8rem;
+        }
+
+        .product-details .explore {
+            height: 3em;
+            padding: 1em;
+            background-color: #D00155;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        } */
+
+        .no-products {
+            text-align: center;
+            top: 50vh;
+            width: 100%;
+            text-align: center;
+            position: absolute;
+            z-index: -1;
+        }
+
+        /* FOOTER */
+        footer {
+            position: absolute;
+            bottom: 0;
+            padding: 1em;
+            width: 100%;
+            text-align: center;
+            background-color: #dee2e6;
+
+            transform: translate(0, 70%);
+        }
+    </style>
+
+    <script defer src="../js/plp.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <nav class="navigation-container">
+                <a href="./index.html"><img class="logo" src="../../static/images/logo.png" alt="Sabka Bazaar logo"></a>
+                <div class="cart">
+                    <img class="cart-icon" src="../../static/images/cart.svg" alt="Shopping cart icon">
+
+                    <span class="cart-item">0 items</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="cart-icon" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </div>
+            </nav>
+        </header>
+        <main>
+
+            <section class="products-container">
+                <div class="category-banner">
+                    <h2 class="product-name"></h2>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="down-arrow" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor" stroke-width="2">
+                        <path class="icon-path" stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="up-arrow" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7" />
+                    </svg>
+                </div>
+            </section>
+
+            <section class="category-list">
+            </section>
+
+            <section class="product-card-section">
+            </section>
+            <h1 class="no-products">Sorry!! No Product found</h1>
+
+
+        </main>
+        <footer>
+            <p>Copyright &#169; 2011-2018 Sabka Bazaar Grocery Supplies Pvt Ltd</p>
+        </footer>
+    </div>
+</body>
+
+</html>

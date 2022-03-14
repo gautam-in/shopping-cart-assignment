@@ -36,11 +36,17 @@ async function loadCategories() {
             } else {
                 element.innerHTML = productContent + imageContent;
             }
-
+            element.addEventListener('click', () => goToCategorySection(category.id));
             productsContainer.appendChild(element);
         });
+
+
 
     } catch (error) {
         console.log(error);
     }
+}
+
+function goToCategorySection(categoryId) {
+    location.href = `../view/plp.html#${categoryId}`;
 }
