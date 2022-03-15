@@ -1,0 +1,71 @@
+@import "../../../styles/variables";
+
+// Mobile First Approach
+
+.cart-tablet {
+  font-size: $text-font-size;
+  background-color: $secondary-color;
+  display: flex;
+  flex-direction: column;
+  max-height: 68vh;
+
+  &__section-wrapper {
+    overflow-y: auto;
+    flex: 1;
+  }
+
+  &__discount {
+    margin: 1rem 0.5rem;
+    padding: 0.5rem;
+    background-color: $primary-color;
+    display: flex;
+    align-items: center;
+
+    @media screen and (min-width: $mobile-breakpoint) {
+      padding: 0.5rem 1rem;
+    }
+
+    &__img {
+      max-width: 90px;
+      max-height: 60px;
+      object-fit: contain;
+
+      @media screen and (min-width: $mobile-breakpoint) {
+        max-width: 100px;
+        max-height: 60px;
+      }
+    }
+
+    &__text {
+      font-size: $small-font-size;
+      padding-left: 0.5rem;
+      color: $nav-text-color;
+
+      @media screen and (min-width: $mobile-breakpoint) {
+        padding-left: 1rem;
+        font-size: $text-font-size;
+      }
+    }
+  }
+
+  &__footer {
+    display: flex;
+    flex-direction: column;
+    background-color: $primary-color;
+    align-items: center;
+    padding-top: 0.5rem;
+
+    &__text {
+      font-size: $small-font-size;
+      padding: 0.5rem 0rem;
+    }
+
+    &__buyout-button {
+      font-size: $text-font-size;
+      width: 95%;
+      padding: 0.7rem 0.5rem;
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+}

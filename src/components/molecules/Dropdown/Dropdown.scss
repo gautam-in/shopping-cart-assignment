@@ -1,0 +1,51 @@
+@import "../../../styles/variables";
+
+.dropdown {
+  display: flex;
+  flex-direction: column;
+  background-color: #e22b62;
+  width: 100%;
+  position: relative;
+
+  &__button {
+    display: flex;
+    justify-content: space-between;
+    border: none;
+    color: #fff;
+    outline: none;
+    cursor: pointer;
+    background-color: $button-color;
+    padding: 5px;
+    font-size: $text-font-size;
+  }
+
+  &__content {
+    position: absolute;
+    left: 0;
+    top: 100%;
+    width: 100%;
+
+    &__list {
+      display: none;
+      cursor: pointer;
+      padding: 5px;
+      font-size: $text-font-size;
+      color: #fff;
+      background-color: $button-color;
+      border-bottom: 1px solid #f2f7f5;
+
+      &:hover,
+      &:active {
+        background-color: rgba(#a1193d, 1);
+      }
+
+      &:nth-last-child(1) {
+        border: none;
+      }
+    }
+  }
+}
+
+.show {
+  display: block;
+}

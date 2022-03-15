@@ -1,0 +1,23 @@
+@import "../../../styles/variables";
+
+.product-container {
+  max-width: $max-width-screen;
+  margin: 0 auto;
+  display: flex;
+
+  @media screen and (max-width: $breakpoint-mobile) {
+    flex-direction: column;
+  }
+
+  &__card {
+    flex: 1;
+    display: grid;
+    grid-gap: 1rem;
+    padding: 1rem;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+
+    @media screen and (max-width: $breakpoint-mobile) {
+      grid-template-columns: 1fr;
+    }
+  }
+}

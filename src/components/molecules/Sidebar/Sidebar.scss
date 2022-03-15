@@ -1,0 +1,25 @@
+@import "../../../styles/variables";
+
+.sidebar {
+  background-color: $secondary-color;
+
+  &__button {
+    border-bottom: 1px solid $nav-text-color;
+    padding: 10px;
+    font-size: $text-font-size;
+    width: 100%;
+    background-color: transparent;
+    text-align: left;
+    color: rgba($nav-text-color, 1);
+    border-radius: 0;
+
+    @media screen and (max-width: $breakpoint-tablet) {
+      font-size: $small-font-size;
+    }
+
+    &:hover,
+    &:active {
+      background-color: rgba(rgb(160, 160, 160), 0.5);
+    }
+  }
+}

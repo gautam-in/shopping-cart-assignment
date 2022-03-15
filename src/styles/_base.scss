@@ -1,0 +1,34 @@
+@import "./mixin";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: #fff;
+  @include scrollbars(0.7rem, #888, #fff);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #212121;
+}
+
+p {
+  color: #212121;
+  font-size: 16px;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+  color: #505050;
+}

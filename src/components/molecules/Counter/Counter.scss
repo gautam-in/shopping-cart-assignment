@@ -1,0 +1,24 @@
+@import "../../../styles/variables";
+
+.counter {
+  grid-column: 2 / 3;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  &__text {
+    font-size: $small-font-size;
+    padding: 0 0.5rem;
+  }
+
+  &__multiply {
+    padding-left: 0.5rem;
+    font-size: $small-font-size;
+  }
+
+  &__button {
+    padding: 0.1rem 0.5rem;
+    border-radius: 4px;
+  }
+}

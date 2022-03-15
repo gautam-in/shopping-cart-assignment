@@ -1,0 +1,42 @@
+@import "../../../styles/variables";
+
+.empty-cart {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 68vh;
+  background-color: $primary-color;
+  flex: 1;
+
+  &__sub-container {
+    display: flex;
+    min-height: 40vh;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    flex: 1;
+
+    &__title {
+      font-size: $text-font-size;
+    }
+
+    &__text {
+      font-size: $small-font-size;
+      padding: 1rem 0rem;
+    }
+  }
+
+  &__footer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 0 1rem;
+
+    &__start-button {
+      font-size: $text-font-size;
+      padding: 0.7rem 0.5rem;
+      width: 100%;
+    }
+  }
+}

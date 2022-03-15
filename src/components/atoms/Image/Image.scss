@@ -1,0 +1,20 @@
+@import "../../../styles/variables";
+
+// Default Class for Images
+.image-wrapper {
+  width: 100%;
+  height: 100%;
+  max-width: 200px;
+  max-height: 150px;
+  object-fit: contain;
+
+  @media screen and (max-width: $breakpoint-tablet) {
+    max-width: 160px;
+    max-height: 120px;
+  }
+
+  @media screen and (max-width: $breakpoint-mobile) {
+    max-width: 120px;
+    max-height: 90px;
+  }
+}

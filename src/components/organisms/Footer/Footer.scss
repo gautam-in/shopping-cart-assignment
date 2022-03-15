@@ -1,0 +1,18 @@
+@import '../../../styles/variables';
+
+.footer {
+    min-height: 5vh;
+    background-color: $secondary-color;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &__text{
+        color: $text-color;
+        font-size: $text-font-size;
+
+        @media (max-width: $breakpoint-mobile){
+            font-size: 0.7rem;
+        }
+    }
+}

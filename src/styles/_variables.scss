@@ -1,0 +1,23 @@
+// This is the root file for all the Global SASS Variables
+
+$primary-color: #fff;
+$secondary-color: #ddd;
+$button-color: #d42559;
+$text-color: #212121;
+$button-text-color: #fff;
+$nav-text-color: #4d4d4d;
+
+$text-font-size: 0.9rem;
+$small-font-size: 0.8rem;
+
+// For desktop first approach
+$breakpoint-tablet: 768px;
+$breakpoint-mobile: 480px;
+$breakpoint-smallLaptop: 1024px;
+
+// For mobile first approach
+$tablet-breakpoint: 769px;
+$mobile-breakpoint: 481px;
+$smallLaptop-breakpoint: 1025px;
+
+$max-width-screen: 1024px;
