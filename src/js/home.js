@@ -4,6 +4,7 @@ window.addEventListener('load', loadCategories);
 
 async function loadCategories() {
     try {
+        loadCarousal(1);
         const productsContainer = document.querySelector('.products-container');
         const categories = await fetch(serverURL + 'categories');
         const data = await categories.json();
@@ -49,4 +50,12 @@ async function loadCategories() {
 
 function goToCategorySection(categoryId) {
     location.href = `../view/plp.html#${categoryId}`;
+}
+
+function loadCarousal(number) {
+    const img = document.querySelector('.carousel-image');
+    const allTheDots = document.querySelectorAll('.dot');
+    allTheDots.forEach((el) => el.classList.remove('dot--fill'));
+    allTheDots[number - 1].classList.add('dot--fill');
+    img.src = `../../static/images/offers/offer${number}.jpg`;
 }

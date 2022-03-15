@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+
+    <style>
+        /*
+            Primary Color: #D00155
+        */
+        * {
+            margin: 0;
+            padding: 0;
+
+            box-sizing: border-box;
+        }
+
+        body {
+            /* width: 1200px; */
+            /* margin: 1.5em; */
+            font-family: sans-serif;
+        }
+
+        header {
+            background-color: #f8f9fa;
+
+            box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.5);
+        }
+
+        /* HEADER Portion */
+        .container {}
+
+        .logo {
+            height: 4em;
+            width: 8em;
+        }
+
+        .navigation-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 1em;
+            /* Added this height to make sure it is similar to screenshot */
+            height: 5em;
+
+        }
+
+        .cart {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            cursor: pointer;
+            text-decoration: none;
+            color: #000;
+        }
+
+        .cart:hover {
+            background-color: #dee2e6;
+        }
+
+        .cart-icon {
+            height: 3em;
+            width: 3em;
+            stroke: #D00155;
+            color: #D00155;
+            /* background-color: #8e2b44; */
+        }
+
+        .cart-item {
+            font-size: 1.5rem;
+        }
+
+        /* MAIN/Container */
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+
+        .login-section {
+            text-align: center;
+            margin: 1em;
+        }
+
+        .login-title {
+            margin-bottom: 0.5em;
+        }
+
+        .login-data {
+            display: flex;
+            flex-direction: column;
+            width: 80vw;
+            margin: 2em;
+        }
+
+        .input-field {
+            border: none;
+            border-bottom: 2px solid #000;
+            margin-bottom: 1em;
+            padding: 0.5em;
+            outline: none;
+        }
+
+        .input-field:focus {
+            border-color: #D00155;
+        }
+
+        .button {
+            height: 3em;
+            padding: 1em;
+            background-color: #D00155;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        /* FOOTER */
+        footer {
+            padding: 1em;
+            background-color: #dee2e6;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="navigation-container">
+            <a href="./index.html"><img class="logo" src="../../static/images/logo.png" alt="Sabka Bazaar logo"></a>
+            <a class="cart" href="cart.html">
+                <img class="cart-icon" src="../../static/images/cart.svg" alt="Shopping cart icon">
+                <span class="cart-item">0 items</span>
+            </a>
+        </nav>
+    </header>
+    <main>
+        <div class="container">
+
+            <section class="login-section">
+                <h1 class="login-title">Login</h1>
+                <p class="login-description">Get access to your Orders, Wishlist and Recommandations
+                </p>
+            </section>
+            <section class="login-data">
+                <input class="input-field" type="email" name="email" placeholder="Email" required>
+                <input class="input-field" type="password" name="password" placeholder="Password" required>
+                <button class="button">Login</button>
+            </section>
+        </div>
+    </main>
+    <footer>
+        <p>Copyright &#169; 2011-2018 Sabka Bazaar Grocery Supplies Pvt Ltd</p>
+    </footer>
+</body>
+
+</html>

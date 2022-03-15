@@ -54,6 +54,11 @@
             align-items: center;
             justify-content: center;
             gap: 10px;
+            cursor: pointer;
+        }
+
+        .cart:hover {
+            background-color: #dee2e6;
         }
 
         .cart-icon {
@@ -169,23 +174,25 @@
     <div class="container">
         <header>
             <nav class="navigation-container">
-                <a href="./index.html"><img class="logo" src="../../static/images/logo.png" alt="Sabka Bazaar logo"></a>
+                <a href="#"><img class="logo" src="../../static/images/logo.png" alt="Sabka Bazaar logo"></a>
                 <div class="cart">
-                    <img class="cart-icon" src="../../static/images/cart.svg" alt="Shopping cart icon">
-                    <span class="cart-item">0 items</span>
+                    <a href="cart.html">
+                        <img class="cart-icon" src="../../static/images/cart.svg" alt="Shopping cart icon">
+                        <span class="cart-item">0 items</span>
+                    </a>
                 </div>
             </nav>
         </header>
         <main>
             <section class="carousel">
                 <img class="carousel-image" src="../../static/images/offers/offer5.jpg"
-                    alt="Independence day sale offer">
+                    alt="Offers Carousal">
                 <div class="dots">
-                    <button class="dot">&nbsp;</button>
-                    <button class="dot">&nbsp;</button>
-                    <button class="dot">&nbsp;</button>
-                    <button class="dot">&nbsp;</button>
-                    <button class="dot dot--fill">&nbsp;</button>
+                    <button class="dot" onclick="loadCarousal(1)">&nbsp;</button>
+                    <button class="dot" onclick="loadCarousal(2)">&nbsp;</button>
+                    <button class="dot" onclick="loadCarousal(3)">&nbsp;</button>
+                    <button class="dot" onclick="loadCarousal(4)">&nbsp;</button>
+                    <button class="dot" onclick="loadCarousal(5)">&nbsp;</button>
                 </div>
             </section>
 
