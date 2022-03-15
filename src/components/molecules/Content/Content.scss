@@ -1,0 +1,31 @@
+@import '../../../styles/variables';
+
+@mixin text-styling($font-size) {
+    padding-bottom: 1rem;
+
+    @media screen and (max-width: $breakpoint-tablet) {
+        font-size: $font-size;
+    }
+
+    @media screen and (max-width: $breakpoint-mobile) {
+        font-size: $font-size;
+    }
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &__header{
+        font-size: 1rem;
+        @include text-styling(0.9rem);
+    }
+
+    &__text{
+        text-align: center;
+        font-size: $small-font-size;
+        @include text-styling(0.8rem);
+    }
+}

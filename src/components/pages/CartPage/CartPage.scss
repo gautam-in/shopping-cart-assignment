@@ -1,0 +1,19 @@
+@import "../../../styles/variables";
+
+// Mobile First Approach
+
+.cartpage {
+  font-size: $text-font-size;
+  background-color: $secondary-color;
+  display: flex;
+  flex-direction: column;
+  max-width: $max-width-screen;
+  margin: 0 auto;
+
+  &__title {
+    padding: 1rem 1rem;
+    font-size: $text-font-size;
+    background-color: $primary-color;
+    margin: 2rem 0;
+  }
+}

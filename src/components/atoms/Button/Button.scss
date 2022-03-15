@@ -1,0 +1,31 @@
+@import "../../../styles/variables";
+
+// Default Class for Buttons
+.button-wrapper {
+  display: block;
+  border-radius: 3px;
+  text-align: center;
+  text-decoration: none;
+  font-size: $text-font-size;
+  padding: 0.5rem;
+  border: 1px solid #eee;
+  background-color: $button-color;
+  color: $button-text-color;
+  cursor: pointer;
+  position: relative;
+
+  &:active {
+    top: 0.6px;
+    left: 0.6px;
+  }
+
+  &:disabled {
+    background-color: $secondary-color;
+    cursor: not-allowed;
+  }
+
+  @media screen and (max-width: $breakpoint-mobile) {
+    font-size: $small-font-size;
+    padding: 0.4rem;
+  }
+}

@@ -1,0 +1,66 @@
+// Global mixin file
+@import "./variables";
+
+// Header mixin
+@mixin header-nav-styling($font-size, $padding-left, $margin-right) {
+  color: $nav-text-color;
+  font-size: $font-size;
+  padding-left: $padding-left;
+
+  &__link {
+    margin-right: $margin-right;
+    font-weight: bold;
+  }
+
+  @media screen and (max-width: $breakpoint-mobile) {
+    display: none;
+  }
+}
+
+// Login/Register mixin
+@mixin signup-styling() {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 3rem;
+  padding-bottom: 1.5rem;
+
+  max-width: $max-width-screen;
+  margin: 0 auto;
+
+  @media screen and (max-width: $breakpoint-mobile) {
+    flex-direction: column;
+  }
+
+  &__article {
+    flex: 4;
+
+    display: flex;
+    flex-direction: column;
+    padding: 0 1rem;
+
+    @media screen and (max-width: $breakpoint-mobile) {
+      padding-bottom: 3rem;
+      padding-left: 1rem;
+    }
+  }
+
+  &__form {
+    flex: 5;
+  }
+}
+
+@mixin scrollbars($size, $foreground-color, $background-color) {
+  // For Google Chrome/Safari
+  &::-webkit-scrollbar {
+    width: $size;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: $foreground-color;
+    border-radius: 4px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: $background-color;
+  }
+}
