@@ -5,7 +5,7 @@ const CardCollection = ({ categories }) => {
         <div>
             {
                 categories.map((cat) => {
-                    return cat.enabled && <CardItem cat={cat} />
+                    return cat.enabled && <CardItem cat={cat} key={cat.id}/>
 
                 })
             }

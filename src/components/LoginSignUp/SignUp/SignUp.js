@@ -19,7 +19,7 @@ class SignUpComponent extends React.Component {
 
   handleSubmit = async event => {
     event.preventDefault();
-    console.log("working")
+  
 
     const { firstname,lastname, email, password, confirmPassword } = this.state;
 
@@ -51,7 +51,6 @@ class SignUpComponent extends React.Component {
 
 
   handleChange = (event) => {
-    console.log(event.target.value);
     const { name, value } = event.target;
 
     this.setState({ [name]: value });

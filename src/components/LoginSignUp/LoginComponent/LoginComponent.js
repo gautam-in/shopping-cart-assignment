@@ -37,7 +37,6 @@ class LoginComponent  extends React.Component {
     }
 
     render() {
-        console.log("prop",this.props)
         return (
             <div className='signIn-signUp flex'>
                 <div className='right-container'>
@@ -52,7 +51,7 @@ class LoginComponent  extends React.Component {
                         type='email'
                         handleChange={this.handleChange}
                         value={this.state.email}
-                        label='email'
+                        label='Email'
                         required
                     />
                     <FormInput
@@ -60,7 +59,7 @@ class LoginComponent  extends React.Component {
                         type='password'
                         value={this.state.password}
                         handleChange={this.handleChange}
-                        label='password'
+                        label='Password'
                         required
                     />
                     <button className='sbmt-btn' type='submit'>Sign In</button>

@@ -9,7 +9,6 @@ const Cartitem = ({ cart_items, addItemsTOCart, removeitemsFromCart }) => {
         <div>{
 
             cart_items && cart_items.map((item) => {
-                console.log("ir",item.price * item.quantity)
                 return <div className="cart_item_holder flex">
                     <div className="cart_left_container flex">
                         <img src={item.imageURL} className="prod_img_inCart" />

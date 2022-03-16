@@ -19,7 +19,7 @@ const EachProduct = ({ filteredList,setCartItems,currentUser,history}) => {
     }
     return (<>
     {filteredList && filteredList.map((listItem) => (
-        <div className="indivdual_prodct_card_container">
+        <div className="indivdual_prodct_card_container" key={listItem.id}>
               <h1 className="product_title title">
                 {listItem.name}
 

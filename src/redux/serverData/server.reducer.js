@@ -5,7 +5,8 @@ import { products } from "../../server/products/index.get";
 const INITIAL_STATE={
     banners :banners,
     categories:categories,
-    products:products
+    products:products,
+    respected_category_prods:[]
 }
 
 const serverReducer = (state = INITIAL_STATE, action) => {
@@ -25,6 +26,11 @@ const serverReducer = (state = INITIAL_STATE, action) => {
           ...state,
             products: action.payload
         };
+        case 'SET_CATEGORY_PRODS':
+          return {
+            ...state,
+            respected_category_prods: action.payload
+          };
       default:
         return state;
     }

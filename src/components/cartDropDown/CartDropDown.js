@@ -14,11 +14,9 @@ class CartDropDown extends React.Component{
         finalprice:""
     }
     removeitemsFromCart=(item)=>{
-        console.log(item);
         this.props.removecartItems(item);
     }
     addItemsTOCart = (item)=>{
-        console.log("working",item)
         this.props.setCartItems(item);
     }
     finalPrice=()=>{
@@ -28,7 +26,6 @@ class CartDropDown extends React.Component{
     }
     render(){
         const {cartItems,removecartItems}= this.props;
-        console.log("cart",cartItems);
         return(
         <Modal
           title={<div className='cart_modal_header'>My Cart</div>}

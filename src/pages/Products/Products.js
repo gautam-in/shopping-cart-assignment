@@ -2,6 +2,7 @@ import React from "react";
 import SideNav from "../../components/SideNav/Sidenav";
 import { Select } from 'antd';
 import ProductContainer from "../../components/ProductContainer/ProductCOntainer";
+import { setRespectedCategryProds } from "../../redux/serverData/server.actions";
 import './product.styles.scss';
 import { connect } from 'react-redux';
 
@@ -13,9 +14,18 @@ class Products extends React.Component {
   }
 
   componentDidMount() {
-    this.setState((state) => ({
-      resultedlist: this.props.products
-    }))
+    if(this.props.category_prods.length){
+      this.filterproducts(this.props.category_prods[0].id);
+      this.props.dispatch(setRespectedCategryProds([]));
+    }
+    else{
+      this.setState((state) => ({
+        resultedlist: this.props.products
+      }))
+    }
+  
+
+    
   }
   onClickofProduct = (item) => {
     this.filterproducts(item.id);
@@ -33,12 +43,11 @@ class Products extends React.Component {
     })
   }
   render() {
-
     return (
       <div className="product_container flex container">
         <>
           <div className="navigation_mobile">
-            <Select  placeholder="Select a Product" className="mobile_product_select" onChange={(e)=>this.handleSelectChange(e)}>
+            <Select  placeholder="Select a Product"  className="mobile_product_select" onChange={(e)=>this.handleSelectChange(e)}>
               {
                     this.props.categories &&  this.props.categories.map((item)=>{
                         return item.enabled ?<Option value={item.id} className='sidenav_title' key={item.id} onSelect={()=>this.onClickofProduct(item)}>{item.name}</Option>  :null
@@ -57,9 +66,10 @@ class Products extends React.Component {
 }
 const mapStateToPros = (state, prop) => {
   return {
-  banner_data:state.serverReducer.banners,
   categories:state.serverReducer.categories,
-  products:state.serverReducer.products
+  products:state.serverReducer.products,
+  category_prods:state.serverReducer.respected_category_prods
+
 
   }
 }

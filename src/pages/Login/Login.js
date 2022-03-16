@@ -14,7 +14,6 @@ class Login extends React.Component{
         })
     }
     render(){
-        console.log("prps",this.props);
         return(
             <div className="login_container container">
                 {

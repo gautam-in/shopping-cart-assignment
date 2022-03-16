@@ -9,6 +9,7 @@ import SignUpComponent from './components/LoginSignUp/SignUp/SignUp';
 import { auth, createUserProfileDocument } from './firebase/firebase.utils';
 import { connect } from 'react-redux';
 import { setCurrentUser } from './redux/user/user.actions';
+import { setRespectedCategryProds } from './redux/serverData/server.actions';
 import Footer from './components/Footer/Footer';
 import './App.css';
 
@@ -18,9 +19,7 @@ class App extends React.Component {
   unsubscribeFromAuth = null;
 
   componentDidMount() {
-    console.log("didmount");
     this.unsubscribeFromAuth = auth.onAuthStateChanged(async userAuth => {
-      console.log(userAuth,"userAuth")
       if (userAuth) {
         const userRef = await createUserProfileDocument(userAuth);
 
@@ -31,8 +30,6 @@ class App extends React.Component {
             ...snapShot.data()
           }
           );
-
-          console.log(this.props.currentUser,"current_user");
         });
       }
 
@@ -72,7 +69,8 @@ const mapStateToPros = (state, prop) => {
   }
 }
 const mapDispatchToProps = {
-  setCurrentUser
+  setCurrentUser,
+  setRespectedCategryProds
 }
 
 export default connect(mapStateToPros, mapDispatchToProps)(App);

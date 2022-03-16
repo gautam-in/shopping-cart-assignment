@@ -1,8 +1,10 @@
 import { Button } from "antd";
 import { Link } from "react-router-dom";
 import './carditem.styles.scss'
+import { connect } from "react-redux";
+import {setRespectedCategryProds} from '../../redux/serverData/server.actions';
 
-const CardItem = ({ cat }) => {
+const CardItem = ({ cat,dispatch }) => {
     return (
 
         <div className='card_container box flex'>
@@ -12,11 +14,11 @@ const CardItem = ({ cat }) => {
             <div className="card_detailes" >
                 <h1 className="title">{cat.name}</h1>
                 <p className="description">{cat.description}</p>
-                <Link to="/products">
-                    <Button  className="explore_btn" size="large">
-                        {`Explore ${cat.key}`}
+                
+                    <Button  className="explore_btn" size="large" onClick={()=>{dispatch(setRespectedCategryProds([cat]))}}>
+                    <Link to="/products">{`Explore ${cat.key}`}</Link>
                     </Button>
-                </Link>
+                
 
 
             </div>
@@ -26,4 +28,5 @@ const CardItem = ({ cat }) => {
     )
 }
 
-export default CardItem;
+
+export default  connect(null,null)(CardItem);
