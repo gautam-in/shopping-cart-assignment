@@ -112,8 +112,8 @@ function goToCategorySection(categoryId) {
 }
 
 function addToCard(product) {
-  const header = document.querySelector("uc-header");
-  header?.setAttribute("count", ++count);
+  const header = document.querySelector("custom-header");
+  header.setAttribute("count", ++count);
   alert(`${product?.name} Successfully Added`);
   checkIfProductAlreadyInCart(product);
 }
