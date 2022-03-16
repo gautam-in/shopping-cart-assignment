@@ -1,3 +1,6 @@
+import '../scss/main.scss';
+
+
 const serverURL = 'http://localhost:5001/';
 
 window.addEventListener('load', loadCategories);
@@ -49,7 +52,7 @@ async function loadCategories() {
 }
 
 function goToCategorySection(categoryId) {
-    location.href = `../view/plp.html#${categoryId}`;
+    location.href = `view/plp.html#${categoryId}`;
 }
 
 function loadCarousal(number) {
@@ -57,5 +60,5 @@ function loadCarousal(number) {
     const allTheDots = document.querySelectorAll('.dot');
     allTheDots.forEach((el) => el.classList.remove('dot--fill'));
     allTheDots[number - 1].classList.add('dot--fill');
-    img.src = `../../static/images/offers/offer${number}.jpg`;
+    img.src = `static/images/offers/offer${number}.jpg`;
 }

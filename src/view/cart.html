@@ -6,156 +6,38 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cart</title>
-
-    <style>
-        /*
-            Primary Color: #D00155
-        */
-        * {
-            margin: 0;
-            padding: 0;
-
-            box-sizing: border-box;
-        }
-
-        body {
-            /* width: 1200px; */
-            /* margin: 1.5em; */
-            font-family: sans-serif;
-        }
-
-        header {
-            background-color: #f8f9fa;
-
-            box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.5);
-        }
-
-        /* HEADER Portion */
-        .container {}
-
-        .logo {
-            height: 4em;
-            width: 8em;
-        }
-
-        .navigation-container {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-
-            padding: 1em;
-            /* Added this height to make sure it is similar to screenshot */
-            height: 5em;
-
-        }
-
-        .cart {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-        }
-
-        .cart-icon {
-            height: 3em;
-            width: 3em;
-            stroke: #D00155;
-            color: #D00155;
-            /* background-color: #8e2b44; */
-        }
-
-        .cart-item {
-            font-size: 1.5rem;
-        }
-
-        /* MAIN/Container */
-        .container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            height: 100vh;
-            position: relative;
-        }
-
-        .login-section {
-            text-align: center;
-            margin: 1em;
-        }
-
-        .login-title {
-            margin-bottom: 0.5em;
-        }
-
-        .login-data {
-            display: flex;
-            flex-direction: column;
-            width: 80vw;
-            margin: 2em;
-        }
-
-        .input-field {
-            border: none;
-            border-bottom: 2px solid #000;
-            margin-bottom: 2em;
-            padding: 0.5em;
-            outline: none;
-        }
-
-        .input-field:focus {
-            border-color: #D00155;
-        }
-
-        .button {
-            height: 3em;
-            padding: 1em;
-            background-color: #D00155;
-            color: #fff;
-            border: none;
-            cursor: pointer;
-            text-transform: uppercase;
-            bottom: 0;
-            position: absolute;
-            width: 100vw;
-        }
-
-        /* FOOTER */
-        footer {
-            padding: 1em;
-            background-color: #dee2e6;
-        }
-    </style>
 </head>
 
 <body>
-    <header>
-        <nav class="navigation-container">
-            <a href="./index.html"><img class="logo" src="../../static/images/logo.png" alt="Sabka Bazaar logo"></a>
-            <div class="cart">
-                <img class="cart-icon" src="../../static/images/cart.svg" alt="Shopping cart icon">
-                <span class="cart-item">0 items</span>
-                <svg xmlns="http://www.w3.org/2000/svg" class="cart-icon" fill="none" viewBox="0 0 24 24"
+    <div class="cart-container">
+        <header>
+            <nav class="navigation-container">
+                <a href="../index.html"><img class="logo" src="../static/images/logo.png" alt="Sabka Bazaar logo"></a>
+                <div class="cart">
+                    <img class="cart-icon" src="../static/images/cart.svg" alt="Shopping cart icon">
+                    <span class="cart-item">0 items</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="cart-icon" fill="none" viewBox="0 0 24 24"
                         stroke="currentColor" stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
                     </svg>
+                </div>
+            </nav>
+        </header>
+        <main>
+            <div class="container">
+                <section>
+                    <h1>No items in your cart</h1>
+                    <p>Your favorite items are just one click away.</p>
+                </section>
+                <button class="button">
+                    Proceed to checkout
+                </button>
             </div>
-        </nav>
-    </header>
-    <main>
-        <div class="container">
-            <section>
-                <h1>No items in your cart</h1>
-                <p>Your favorite items are just one click away.</p>
-            </section>
-            <button class="button">
-                Proceed to checkout
-            </button>
-        </div>
-    </main>
-    <footer>
-        <p>Copyright &#169; 2011-2018 Sabka Bazaar Grocery Supplies Pvt Ltd</p>
-    </footer>
+        </main>
+        <footer>
+            <p>Copyright &#169; 2011-2018 Sabka Bazaar Grocery Supplies Pvt Ltd</p>
+        </footer>
+    </div>
 </body>
 
 </html>

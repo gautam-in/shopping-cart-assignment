@@ -7,186 +7,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sabka Bazaar</title>
 
-    <style>
-        /*
-            Primary Color: #D00155
-        */
-        * {
-            margin: 0;
-            padding: 0;
-
-            box-sizing: border-box;
-        }
-
-        body {
-            /* width: 1200px; */
-            /* margin: 1.5em; */
-            font-family: sans-serif;
-        }
-
-        header {
-            background-color: #f8f9fa;
-
-            box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.5);
-        }
-
-        /* HEADER Portion */
-        .container {}
-
-        .logo {
-            height: 4em;
-            width: 8em;
-        }
-
-        .navigation-container {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-
-            padding: 1em;
-            /* Added this height to make sure it is similar to screenshot */
-            height: 5em;
-
-        }
-
-        .cart {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            cursor: pointer;
-        }
-
-        .cart:hover {
-            background-color: #dee2e6;
-        }
-
-        .cart-icon {
-            height: 3em;
-            width: 3em;
-            stroke: #D00155;
-            color: #D00155;
-            /* background-color: #8e2b44; */
-        }
-
-        .cart-item {
-            font-size: 1.5rem;
-        }
-
-        /* BODY/MAIN Portion - Carousal */
-        .carousal {}
-
-        .carousel-image {
-            padding-top: 1em;
-            height: auto;
-            width: 100%;
-            box-shadow: 0 8px 6px -6px rgba(0, 0, 0, 0.5);
-        }
-
-        .dots {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            gap: 2em;
-            padding-top: 1em;
-        }
-
-        .dot {
-            height: 8px;
-            width: 8px;
-            border-radius: 50%;
-            cursor: pointer;
-            background-color: #adb5bd;
-            border: none;
-        }
-
-        .dot--fill {
-            background-color: black;
-        }
-
-        /* MAIN/BODY Products Container */
-        .products-container {
-            margin-top: 3em;
-        }
-
-        .product {
-            margin-top: 3em;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 1em 1em 3em 1em;
-            box-shadow: 0 8px 6px -6px rgba(0, 0, 0, 0.5);
-            text-align: center;
-        }
-
-        .image-container {
-            display: contents;
-        }
-
-        .image-container img {
-            /* width: 100%; */
-        }
-
-        .product-image {
-            height: auto;
-            width: 60%;
-
-        }
-
-        .product-details {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-            gap: 1.5em;
-            width: 40%;
-        }
-
-        .product-details .title {
-            font-size: 1.5rem;
-        }
-
-        .product-details .description {
-            font-size: 0.8rem;
-        }
-
-        .product-details .explore {
-            height: 3em;
-            padding: 1em;
-            background-color: #D00155;
-            color: #fff;
-            border: none;
-            cursor: pointer;
-        }
-
-        /* FOOTER */
-        footer {
-            padding: 1em;
-            background-color: #dee2e6;
-        }
-    </style>
-
-    <script defer src="../js/home.js"></script>
+    <script src="app-bundle.js"></script>
 </head>
 
 <body>
-    <div class="container">
+    <div class="homepage">
         <header>
             <nav class="navigation-container">
-                <a href="#"><img class="logo" src="../../static/images/logo.png" alt="Sabka Bazaar logo"></a>
-                <div class="cart">
-                    <a href="cart.html">
-                        <img class="cart-icon" src="../../static/images/cart.svg" alt="Shopping cart icon">
-                        <span class="cart-item">0 items</span>
-                    </a>
-                </div>
+                <a href="#"><img class="logo" src="static/images/logo.png" alt="Sabka Bazaar logo"></a>
+                <a class="cart" href="view/cart.html">
+                    <img class="cart-icon" src="static/images/cart.svg" alt="Shopping cart icon">
+                    <span class="cart-item">0 items</span>
+                </a>
             </nav>
         </header>
         <main>
             <section class="carousel">
-                <img class="carousel-image" src="../../static/images/offers/offer5.jpg"
-                    alt="Offers Carousal">
+                <img class="carousel-image" src="static/images/offers/offer5.jpg" alt="Offers Carousal">
                 <div class="dots">
                     <button class="dot" onclick="loadCarousal(1)">&nbsp;</button>
                     <button class="dot" onclick="loadCarousal(2)">&nbsp;</button>
