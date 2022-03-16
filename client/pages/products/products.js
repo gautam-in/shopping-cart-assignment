@@ -1,7 +1,9 @@
+const SERVER_URL = "http://localhost:5000";
+
 let count = localStorage.getItem("count") || "0";
 const id = location.search.replace("?id=", "");
 function getProductsList() {
-  fetch("http://localhost:5000/products")
+  fetch(`${SERVER_URL}/products`)
     .then((res) => res.json())
     .then((products) => {
       products.length ? showProductsList(products) : showNoItemFound();
@@ -87,7 +89,7 @@ function showNoItemFound() {
 }
 
 function getCategoriesList() {
-  fetch("http://localhost:5000/categories")
+  fetch(`${SERVER_URL}/categories`)
     .then((res) => res.json())
     .then((categories) => {
       const container = document.querySelector("#categories-list");

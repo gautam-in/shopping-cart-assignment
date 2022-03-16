@@ -1,11 +1,12 @@
 const baseUrl = "../../../";
+const SERVER_URL = "http://localhost:5000";
 
 function getProductsList() {
-  const bannerPromise = fetch("http://localhost:5000/banners").then((res) =>
+  const bannerPromise = fetch(`${SERVER_URL}/banners`).then((res) =>
     res.ok ? res.json() : ""
   );
-  const categoriesPromise = fetch("http://localhost:5000/categories").then(
-    (res) => (res.ok ? res.json() : "")
+  const categoriesPromise = fetch(`${SERVER_URL}/categories`).then((res) =>
+    res.ok ? res.json() : ""
   );
   Promise.all([bannerPromise, categoriesPromise])
     .then((response) => {
