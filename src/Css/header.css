@@ -1,14 +1,58 @@
 .container-header {
   max-width: 120rem;
   padding: 0 3.2rem;
-  margin: 0 auto;
+  margin: 0 0;
 }
 
 .main {
   display: grid;
-  grid-template-columns: 25% 50% 25%;
-  grid-template-rows: 12rem;
+  grid-template-columns: 20% 55% 25%;
+  grid-template-rows: 9rem;
   box-shadow: 0.2rem 0.2rem 0.5rem grey;
+  /* justify-content: center; */
+}
+
+/* .logo {
+  transform: translate(50%, 40%);
+  width: 70px;
+  height: 50px;
+} */
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+  margin-top: 20px;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 8px;
+  margin-top: -22px;
+  color: #ffffff;
+  font-size: 14px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
 .nav-list {
