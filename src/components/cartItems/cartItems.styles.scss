@@ -1,0 +1,33 @@
+.cart_item_holder {
+    justify-content: space-between;
+    background-color: white;
+    margin: 10px 0;
+    padding: 10px;
+}
+
+.prod_img_inCart{
+    width: 100px;
+    
+}
+.cart_left_container{
+    width: 70%;
+    .name_price_cartholder{
+        margin-left: 10px;
+    }
+}
+.final_price{
+width: 20%;
+display: flex;
+justify-content: flex-end;
+}
+.increDecr_symbol{
+    color: #c7555f;
+    font-size: medium;
+    margin: 0 10px;
+    &:hover{
+        cursor: pointer;
+    }
+}
+.multiply_symbol{
+    margin-right: 10px;
+}

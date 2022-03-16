@@ -1,0 +1,109 @@
+.flex{
+    display: flex;
+    align-items: center;
+}
+
+.header {
+    position: fixed;
+    width: 100%;
+    height: 56px;
+   
+    box-shadow: rgb(167, 167, 167) 0px 0px 5px 1px;
+    z-index: 20;
+    background-color: white;
+    .header_container{
+        margin: 0 250px;
+        justify-content: space-between;
+        height: 100%;
+      
+    }
+    .cartLogin{
+        width: 50%;
+        justify-content: flex-end;
+        .cart_navigation{
+            margin: 0 5px;
+            color: #c7555f;
+            justify-content: flex-end;
+            .cart{
+                width: 26px;
+                height: 26px;
+                margin: 0 8px;
+                fill: #c7555f;
+            }
+        }
+      
+        .login_navigation{
+            padding-right: 10px;
+            color: black;
+
+            &:hover{
+                cursor: pointer;
+            }
+        }
+    }
+ 
+    .home_logo{
+        width: 120px;
+    }
+    .mainLogo_nd_products{
+        width: 40%;
+    }
+    .products_navigation{
+        padding: 0 60px;
+        color: black;
+    }
+    .dropbtn{
+        &:hover{
+            cursor: pointer;
+        }
+    }
+
+    
+}
+.option{
+    cursor: pointer;
+}
+
+
+@media screen and (max-width: 480px) {
+    .header {
+        .header_container{
+            margin: 0;
+            padding: 0 10px;
+          
+        }
+        .home_logo{
+            width: 80px;
+        }
+        .products_navigation{
+            padding: 0 10px;
+           
+        }
+        .products_navigation,.login_navigation,.products_navigation{
+            font-size: 10px;
+        }
+        .cartLogin{
+            .cart_navigation{
+                .cart{
+                width: 16px;
+                height: 16px;
+                }
+            }
+        }
+        .dropbtn{
+            span{
+                font-size: 10px;
+            }
+        }
+
+    }  
+  
+  
+}
+
+@media  (min-width: 481px) and (max-width: 1080px) {
+    .header .header_container {
+        padding: 0 50px;
+    margin: 0;
+    }
+}

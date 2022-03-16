@@ -1,0 +1,18 @@
+.login_container{
+    height: calc(100vh - 50px);
+    width: 100%;
+    padding: 56px 250px 0;
+}
+
+@media screen and (max-width: 480px) {
+    .login_container.container{
+        padding:70px 20px ;
+        margin: 0;
+    }
+}
+
+@media  (min-width: 481px) and (max-width: 1080px) {
+    .login_container{
+        padding: 156px 50px 0;
+    }
+}

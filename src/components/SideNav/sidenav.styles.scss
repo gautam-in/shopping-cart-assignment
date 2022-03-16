@@ -1,0 +1,27 @@
+.sidenav_container{
+    width: 25%;
+    background-color: rgb(235, 235, 235);
+    height: 100%;
+
+    .sidenav_title{
+        border-bottom: 1px solid rgba(168, 185, 193, 0.25);
+        padding: 15px 20px;
+        margin-bottom: 0px;
+
+        &:hover{
+            cursor: pointer;
+            color: rgb(0, 195, 255);
+        }
+    }
+
+}
+
+.desktop_sidenav{
+    display: block;
+}
+
+@media screen and (max-width: 480px) {
+    .desktop_sidenav{
+        display: none;
+    }
+}

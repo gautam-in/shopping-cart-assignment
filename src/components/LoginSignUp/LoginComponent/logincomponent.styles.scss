@@ -1,0 +1,49 @@
+.signIn-signUp {
+    width: 100%;
+    justify-content: space-between;
+  
+    .title {
+      margin: 10px 0;
+    }
+    .right-container{
+        width: 52%;
+        text-align: center;
+        h2{
+            font-weight: bold;
+        }
+
+    }
+    .left-container{
+        width: 46%;
+        .sbmt-btn{
+            width: 100%;
+        }
+    }
+ .sbmt-btn{
+      background-color: #c7555f;
+      color: white;
+      border-color: #c7555f;
+      height: 40px;
+      &:hover{
+          cursor: pointer;
+      }
+ }
+ .login_info{
+     text-align: center;
+     margin: 20px 0;
+     text-transform: capitalize;
+ }
+  
+  }
+
+  @media screen and (max-width: 480px) {
+    .signIn-signUp {
+        flex-direction: column;
+        .right-container,.left-container{
+            width: 100%;
+        }
+    }
+
+  }
+  @media  (max-width: 481px) and (max-width: 768px) {
+}
