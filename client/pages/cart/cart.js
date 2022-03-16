@@ -20,9 +20,9 @@ function updateData() {
     });
     document.querySelector("#total-amount").innerText = `Rs.${totalAmount} >`;
   } else {
-    document.querySelector("#no-item").classList.remove("display-none");
-    document.querySelector(".cart-footer").classList.add("display-none");
-    document.querySelector(".cart-container").classList.add("display-none");
+    document.querySelector("#no-item")?.classList.remove("display-none");
+    document.querySelector(".cart-footer")?.classList.add("display-none");
+    document.querySelector(".cart-container")?.classList.add("display-none");
   }
 }
 
