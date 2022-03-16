@@ -1,0 +1,68 @@
+.flex{
+  display: flex;
+  align-items: center;
+}
+
+.container{
+  margin: 0;
+
+  padding-top: 56px;
+  position: relative;
+  width: 100%;
+}
+.cardlist_container{
+  padding: 56px 250px 0;
+}
+.title{
+  font-weight: bold;
+}
+
+
+.box{
+  max-height: 360px;
+  background-color: #fff;
+}
+.border_shadow{
+  height: 12px;
+  box-shadow: -1px 3px 5px -2px rgba(0,0,0,0.72);
+}
+.ant-carousel{
+  margin: 20px 0;
+}
+.ant-carousel .slick-dots li button {
+  background-color: black;
+}
+.ant-carousel .slick-dots li.slick-active button {
+  background: black !important;
+}
+.carosel_img{
+  width: 100%;
+}
+
+@media screen and (max-width: 480px) {
+  
+    .container{
+          margin: 0;
+          padding: 56px 0;
+          overflow-x: hidden;
+        
+      }
+      .ant-carousel .slick-dots-bottom {
+        bottom: 0px;
+      }
+      .title{
+        font-size:18px
+      }
+
+  
+
+}
+
+@media  (min-width: 481px) and (max-width: 1080px) {
+  .container{
+    padding-top: 200px;
+  }
+  .cardlist_container.container{
+    padding:70px 100px;
+  }
+}
