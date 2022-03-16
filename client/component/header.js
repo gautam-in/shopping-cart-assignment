@@ -118,4 +118,4 @@ class Header extends HTMLElement {
   }
 }
 
-window.customElements.define("uc-header", Header);
+window.customElements.define("custom-header", Header);

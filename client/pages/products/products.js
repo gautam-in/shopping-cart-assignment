@@ -112,36 +112,36 @@ function goToCategorySection(categoryId) {
 }
 
 function addToCard(product) {
-  const header = document.querySelector("uc-header");
+  const header = document.querySelector("custom-header");
   header.setAttribute("count", ++count);
   alert(`${product?.name} Successfully Added`);
   checkIfProductAlreadyInCart(product);
 }
 
 function checkIfProductAlreadyInCart(product) {
-  const cartItems = JSON.parse(localStorage.getItem("cartItems"));
-  console.log(cartItems);
-  if (cartItems) {
+  const cartData = JSON.parse(localStorage.getItem("cartData"));
+  console.log(cartData);
+  if (cartData) {
     let found = false;
-    for (let index = 0; index < cartItems.length; index++) {
-      if (cartItems[index].id === product.id) {
-        cartItems[index].count = cartItems[index].count + 1;
+    for (let index = 0; index < cartData.length; index++) {
+      if (cartData[index].id === product.id) {
+        cartData[index].count = cartData[index].count + 1;
         found = true;
         break;
       }
     }
-    if (!found) cartItems.push({ ...product, count: 1 });
-    console.log(cartItems);
-    setItemsInLocalStorage(cartItems, count);
+    if (!found) cartData.push({ ...product, count: 1 });
+    console.log(cartData);
+    setItemsInLocalStorage(cartData, count);
   } else {
     setItemsInLocalStorage([{ ...product, count: 1 }], 1);
   }
-  console.log(localStorage.getItem("cartItems"));
+  console.log(localStorage.getItem("cartData"));
 }
 
 function setItemsInLocalStorage(productData, count) {
   localStorage.setItem("count", count);
-  localStorage.setItem("cartItems", JSON.stringify(productData));
+  localStorage.setItem("cartData", JSON.stringify(productData));
 }
 
 getProductsList();

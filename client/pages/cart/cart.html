@@ -7,14 +7,14 @@
     <title>Sabka Bazar</title>
     <link rel="stylesheet" href="../../style/css/styles.css" />
     <link rel="stylesheet" href="../../style/css/cart.css" />
-
     <script defer src="../../component/header.js"></script>
     <script defer src="../../component/footer.js"></script>
+    <script defer src="./cart.js"></script>
   </head>
 
   <body>
     <header id="main-header" class="main-header">
-      <uc-header count="0"></uc-header>
+      <custom-header count="0"></custom-header>
     </header>
     <div class="cart-container">
       <div class="display-flex">
@@ -41,149 +41,5 @@
         <button onclick="goToProducts()">Start Shopping</button>
       </div>
     </div>
-    <script defer>
-      function goToProducts() {
-        location.href = "../../../client/pages/products/products.html";
-      }
-
-      let totalAmount = 0;
-      const cartItems = JSON.parse(localStorage.getItem("cartItems"));
-
-      function updateData() {
-        let count = +localStorage.getItem("count") || 0;
-        if (count > 0) {
-          document.querySelector("#no-item").classList.add("display-none");
-          document
-            .querySelector(".cart-container")
-            .classList.remove("display-none");
-          document
-            .querySelector(".cart-footer")
-            .classList.remove("display-none");
-          updateCartCount(count);
-
-          const cartItemsDiv = document.querySelector(".cart-items");
-          cartItems.forEach((product, index) => {
-            cartItemsDiv.appendChild(addItemToDom(product, index));
-          });
-          document.querySelector(
-            "#total-amount"
-          ).innerText = `Rs.${totalAmount} >`;
-        } else {
-          document.querySelector("#no-item").classList.remove("display-none");
-          document.querySelector(".cart-footer").classList.add("display-none");
-          document
-            .querySelector(".cart-container")
-            .classList.add("display-none");
-        }
-      }
-
-      function addItemToDom(product, index) {
-        const item = document.createElement("div");
-        item.classList.add("display-flex");
-        item.classList.add("product-details");
-
-        // left
-        const left = document.createElement("div");
-        left.classList.add("sub-flex");
-
-        // image
-        const img = document.createElement("img");
-        img.src = `../../../${product.imageURL}`;
-        left.appendChild(img);
-
-        // name and count
-        const contNameCount = document.createElement("div");
-        contNameCount.classList.add("detailSection");
-        const name = document.createElement("h4");
-        name.innerText = product.name;
-        contNameCount.appendChild(name);
-
-        const countCont = document.createElement("div");
-        const decreaseBtn = document.createElement("button");
-        decreaseBtn.classList.add("roundButton");
-        decreaseBtn.style.borderRadius = "5px";
-        decreaseBtn.innerText = "-";
-        decreaseBtn.addEventListener("click", () => decreaseCount(index));
-        const countSpan = document.createElement("span");
-        countSpan.innerText = product.count;
-        countSpan.setAttribute("id", `count-${product.id}`);
-        const increaseBtn = document.createElement("button");
-        increaseBtn.classList.add("roundButton");
-        increaseBtn.innerText = "+";
-        increaseBtn.addEventListener("click", () => increaseCount(index));
-        const amountSpan = document.createElement("span");
-        amountSpan.innerText = ` X ${product.price}`;
-
-        countCont.appendChild(decreaseBtn);
-        countCont.appendChild(countSpan);
-        countCont.appendChild(increaseBtn);
-        countCont.appendChild(amountSpan);
-
-        // amount
-        const amountContainer = document.createElement("div");
-        amountContainer.setAttribute("id", `amount-${product.id}`);
-        totalAmount = totalAmount + product.price * product.count;
-        amountContainer.innerText = `Rs.${product.price * product.count}`;
-        ///////////////////////////////////////////--
-        const countPrice = document.createElement("div");
-        countPrice.classList.add("countPriceAlign");
-
-        countPrice.appendChild(countCont);
-        countPrice.appendChild(amountContainer);
-        contNameCount.appendChild(countPrice);
-        item.appendChild(left);
-        left.appendChild(contNameCount);
-        return item;
-      }
-
-      function updateCartCount(count) {
-        document.querySelector(".cart-count").innerText = `(${count} ${
-          count > 1 ? "items" : "item"
-        })`;
-      }
-
-      function increaseCount(index) {
-        cartItems[index].count = cartItems[index].count + 1;
-        totalAmount = totalAmount + cartItems[index].price;
-        const totalCount = +localStorage.getItem("count") + 1;
-        localStorage.setItem("count", totalCount);
-        updateCartCount(totalCount);
-        document.querySelector("uc-header").setAttribute("count", totalCount);
-        updateCountAndAmount(
-          cartItems[index].id,
-          cartItems[index].count,
-          cartItems[index].price
-        );
-      }
-
-      function decreaseCount(index) {
-        if (cartItems[index].count > 0) {
-          cartItems[index].count = cartItems[index].count - 1;
-          totalAmount = totalAmount - cartItems[index].price;
-          const totalCount = +localStorage.getItem("count") - 1;
-          localStorage.setItem("count", totalCount);
-          document.querySelector("uc-header").setAttribute("count", totalCount);
-          updateCartCount(totalCount);
-          updateCountAndAmount(
-            cartItems[index].id,
-            cartItems[index].count,
-            cartItems[index].price
-          );
-        }
-      }
-
-      function updateCountAndAmount(productId, count, price) {
-        document.querySelector(`#count-${productId}`).innerText = count;
-        document.querySelector(`#amount-${productId}`).innerText = `Rs. ${
-          count * price
-        }`;
-        document.querySelector(
-          "#total-amount"
-        ).innerText = `Rs. ${totalAmount}`;
-        localStorage.setItem("cartItems", JSON.stringify(cartItems));
-      }
-
-      updateData();
-    </script>
   </body>
 </html>
