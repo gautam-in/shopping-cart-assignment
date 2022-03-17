@@ -1,4 +1,32 @@
-$myColor: cyan;
-#test2 {
-  color: $myColor;
+body {
+  margin: 0;
+  padding: 0;
+}
+
+$light-grey: #eaeaea;
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer {
+  background-color: $light-grey;
+}
+.nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  flex-grow: 1;
+}
+.icon-cart {
+  width: 30px;
+  height: 30px;
+}
+.button-cart {
+  background-color: $light-grey !important;
+}
+.empty-cart-message {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }

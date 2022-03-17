@@ -6,11 +6,13 @@ module.exports = {
   mode: "development",
   // entry: './src/index.jsx',
   entry: {
-    main: path.resolve(__dirname, "./src/index.jsx"),
+    main: path.resolve(__dirname, "src/index.jsx"),
   },
+  devtool: "source-map",
   output: {
     path: path.resolve(__dirname, "build"),
     filename: "main.bundle.js",
+    // publicPath: "/public"
   },
   // context: path.resolve(__dirname, 'src'),
   module: {
@@ -36,6 +38,10 @@ module.exports = {
           "css-loader",
           "sass-loader"],
       },
+      // {
+      //   test: /\.html$/i,
+      //   loader: "html-loader",
+      // },
     ],
   },
   resolve: {
@@ -54,7 +60,8 @@ module.exports = {
     static: {
       directory: path.join(__dirname, 'static'),
     },
+    historyApiFallback: true,
     compress: true,
-    port: 9000
+    port: 7777
   },
 };

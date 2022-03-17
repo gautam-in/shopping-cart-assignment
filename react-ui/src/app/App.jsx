@@ -1,14 +1,23 @@
 import React from "react";
-import "./style.css";
+import { Route, Routes, BrowserRouter } from "react-router-dom";
+import Footer from "./components/Footer";
+import Header from "./components/Header";
+import Home from "./pages/Home";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
 import "./style.scss";
 export const App = () => {
   return (
-    <div id="test">
-      Test test
-      <div id="test2">SASS</div>
-      <header></header>
-      <footer></footer>
-    </div>
+    <BrowserRouter>
+      <Header />
+      <Routes>
+        {/* <Route exact path="/" element={<h1>test</h1>} /> */}
+        <Route path="/" element={<Home />} />
+        <Route exact path="/login" element={<Login />} />
+        <Route exact path="/register" element={<Register />} />
+      </Routes>
+      <Footer />
+    </BrowserRouter>
   );
 };
 
