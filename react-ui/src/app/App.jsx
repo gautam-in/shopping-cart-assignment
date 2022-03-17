@@ -4,6 +4,7 @@ import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
+import Products from "./pages/Products";
 import Register from "./pages/Register";
 import "./style.scss";
 export const App = () => {
@@ -15,6 +16,7 @@ export const App = () => {
         <Route path="/" element={<Home />} />
         <Route exact path="/login" element={<Login />} />
         <Route exact path="/register" element={<Register />} />
+        <Route exact path="/products" element={<Products />} />
       </Routes>
       <Footer />
     </BrowserRouter>

@@ -8,7 +8,7 @@ const Category = ({ categoryData }) => {
 
   const categoryHandler = (id) => {
     localStorage.setItem("categoryId", id);
-    navigate(`/products`);
+    navigate(`/products`, { state: { categoryId: id } });
   };
 
   return (
