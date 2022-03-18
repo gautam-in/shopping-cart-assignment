@@ -1,8 +1,7 @@
-
 let products = [
   {
     name: "Fresho Kiwi - Green, 3 pcs",
-    imageURL: "/static/images/products/fruit-n-veg/kiwi-green.jpg",
+    imageURL: "../../static/images/products/fruit-n-veg/kiwi-green.jpg",
     description:
       "Kiwis are oval shaped with a brownish outer skin. The flesh is bright green and juicy with tiny, edible black seeds.",
     price: 87,
@@ -13,7 +12,7 @@ let products = [
   },
   {
     name: "Apple - Washington, Regular, 4 pcs",
-    imageURL: "/static/images/products/fruit-n-veg/apple.jpg",
+    imageURL: "../../static/images/products/fruit-n-veg/apple.jpg",
     description:
       "The bright red coloured and heart shaped Washington apples are crunchy, juicy and slightly sweet. Washington Apples are a natural source of fibre and are fat free.",
     price: 187,
@@ -24,7 +23,7 @@ let products = [
   },
   {
     name: "Fresho Pomegrante Peeled, 500 gm ",
-    imageURL: "/static/images/products/fruit-n-veg/pomegrante.jpg",
+    imageURL: "../../static/images/products/fruit-n-veg/pomegrante.jpg",
     description:
       "Pomegranate variety has a glossy, vibrant and soft ruby-red skin. The inside of the fruit is divided into compartments by thin white membranes.",
     price: 88,
@@ -35,7 +34,7 @@ let products = [
   },
   {
     name: "Capsicum - Green, 1 kg",
-    imageURL: "/static/images/products/fruit-n-veg/capsicum-green.jpg",
+    imageURL: "../../static/images/products/fruit-n-veg/capsicum-green.jpg",
     description:
       "Leaving a moderately pungent taste on the tongue, Green capsicums, also known as green peppers are bell shaped, medium-sized fruit pods.",
     price: 137,
@@ -46,7 +45,7 @@ let products = [
   },
   {
     name: "Tomato - Local, Organically Grown, 500 gm",
-    imageURL: "/static/images/products/fruit-n-veg/capsicum-green.jpg",
+    imageURL: "../../static/images/products/fruit-n-veg/capsicum-green.jpg",
     description:
       "Fresho brings to you an exquisite range of locally grown organic tomatoes, which are now available at bigbasket. These organic tomatoes are free from harmful pesticides and insecticides.",
     price: 12,
@@ -57,7 +56,7 @@ let products = [
   },
   {
     name: "Sandwich Bread - White, Chemical Free, 400 gm",
-    imageURL: "/static/images/products/bakery-cakes-dairy/bread.jpg",
+    imageURL: "../../static/images/products/bakery-cakes-dairy/bread.jpg",
     description:
       "Freshly Baked bread is one of lifes greatest simple pleasures and at Bigbasket we decided to give you just that. We start baking our breads once you order using the finest ingredients available.",
     price: 32,
@@ -68,7 +67,7 @@ let products = [
   },
   {
     name: "Organic Fresh Paneer, 200 gm ",
-    imageURL: "/static/images/products/bakery-cakes-dairy/paneer.jpg",
+    imageURL: "../../static/images/products/bakery-cakes-dairy/paneer.jpg",
     description:
       "Freshly Baked bread is one of lifes greatest simple pleasures and at Bigbasket we deFresho Organic Milk is sourced from farms that have been certified organic for over 8 years. All feed is naturally grown with no pesticides or fertilizers.",
     price: 98,
@@ -79,7 +78,7 @@ let products = [
   },
   {
     name: "Epigamia Greek Yogurt - Blueberry, 90 gm Cup",
-    imageURL: "/static/images/products/bakery-cakes-dairy/yogurt-blue.jpg",
+    imageURL: "../../static/images/products/bakery-cakes-dairy/yogurt-blue.jpg",
     description:
       "Epigama means in Ancient Greek meant a way to Formalize the relationship between different nations. Epigamia greek yogurt is one of the most authentic yoghurts which advocates a healthy lifestyle with delicious taste. An excellent source of protein without the added fat.",
     price: 40,
@@ -90,7 +89,7 @@ let products = [
   },
   {
     name: "Epigamia Greek Yogurt - Strawberry, 90 gm",
-    imageURL: "/static/images/products/bakery-cakes-dairy/yogurt-red.jpg",
+    imageURL: "../../static/images/products/bakery-cakes-dairy/yogurt-red.jpg",
     description: "Low Fat and High protein delicious and thick Greek Yogurt.",
     price: 40,
     stock: 50,
@@ -100,7 +99,7 @@ let products = [
   },
   {
     name: "Tata Tea Gold Leaf Tea, 500 gm",
-    imageURL: "/static/images/products/beverages/tata-tea.jpg",
+    imageURL: "../../static/images/products/beverages/tata-tea.jpg",
     description:
       "Tata Tea Gold is a unique blend of fine Assam tea leaves with special 15%  long leaf.",
     price: 165,
@@ -111,7 +110,7 @@ let products = [
   },
   {
     name: "Red Label Tea, 500 gm Carton",
-    imageURL: "/static/images/products/beverages/red-label.jpg",
+    imageURL: "../../static/images/products/beverages/red-label.jpg",
     description:
       "Brooke Bond Red Label is one of Indias largest selling packaged tea brands. Brooke Bond Red Label Tea is a blend CTC tea with best quality leaves.",
     price: 205,
@@ -122,7 +121,7 @@ let products = [
   },
   {
     name: "Bournvita Pro-Health Drink - Chocolate, 2x750 gm",
-    imageURL: "/static/images/products/beverages/bournvita.jpg",
+    imageURL: "../../static/images/products/beverages/bournvita.jpg",
     description:
       "Cadbury Bournvita is a delicious chocolate health drink which is enriched with Vitamin (D,B2,B9,B12). It combines the great taste of chocolate, and goodness of essential nutrients that aid growth and development.",
     price: 572,
@@ -133,7 +132,7 @@ let products = [
   },
   {
     name: "Coca Cola Soft Drink, 2x1.75 L",
-    imageURL: "/static/images/products/beverages/bournvita.jpg",
+    imageURL: "../../static/images/products/beverages/bournvita.jpg",
     description:
       "Cadbury Bournvita is a delicious chocolate health drink which is enriched with Vitamin (D,B2,B9,B12). It combines the great taste of chocolate, and goodness of essential nutrients that aid growth and development.",
     price: 150,
@@ -144,7 +143,7 @@ let products = [
   },
   {
     name: "Listerine Mouthwash - Cool Mint, 250 ml",
-    imageURL: "/static/images/products/beauty-hygiene/listerine.jpg",
+    imageURL: "../../static/images/products/beauty-hygiene/listerine.jpg",
     description:
       'Listerine Cool mint Antibacterial Mouthwash is rapid & easy to use, a 30 second "slosh" with Listerine after brushing and flossing reaches parts of the mouth that may be missed. Used two times daily, Listerine provides 24-hour defence against plaque and lasting bright breath assurance.',
     price: 109,
@@ -155,7 +154,7 @@ let products = [
   },
   {
     name: "TRESemme Shampoo - Keratin Smooth With Argan Oil, 580 ml ",
-    imageURL: "/static/images/products/beauty-hygiene/shampoo.jpg",
+    imageURL: "../../static/images/products/beauty-hygiene/shampoo.jpg",
     description:
       "For the first time, at TRESemme , Our Professional combines luxurious ingredients to give you gorgeously smoother shiny hair every day , infused with keratin protein and lightweight argan oil , our advanced keratin smooth system gently nourishes hair and controls frizz for up to 3 days.",
     price: 410,
@@ -165,9 +164,8 @@ let products = [
     id: "5b6c71a101a7c38429530891",
   },
   {
-    name:
-      "Dove Intense Repair Shampoo 650ml + Bathing Bar Soap Cream Beauty 100G Pack of 3",
-    imageURL: "/static/images/products/beauty-hygiene/dove.jpg",
+    name: "Dove Intense Repair Shampoo 650ml + Bathing Bar Soap Cream Beauty 100G Pack of 3",
+    imageURL: "../../static/images/products/beauty-hygiene/dove.jpg",
     description:
       "Dove Cream Beauty Bar combines a gentle cleansing formula with Doves signature 1/4 moisturizing cream to give you softer, smoother and more glowing skin.",
     price: 622,
@@ -178,7 +176,7 @@ let products = [
   },
   {
     name: "Premier Facial Tissue - Special, 400 pcs",
-    imageURL: "/static/images/products/beauty-hygiene/tissues.jpg",
+    imageURL: "../../static/images/products/beauty-hygiene/tissues.jpg",
     description:
       "Let your beautiful face stay clean Here Premier Special Face Tissues are available, mostly prepared targeting to care for your face which has spongy and delicate skin.",
     price: 270,
@@ -189,7 +187,7 @@ let products = [
   },
   {
     name: "Close Up Ever Fresh Red Hot Gel Toothpaste, 150 gm",
-    imageURL: "/static/images/products/beauty-hygiene/closeup.jpg",
+    imageURL: "../../static/images/products/beauty-hygiene/closeup.jpg",
     description:
       " Closeup's unique Active Zinc Mouthwash not only cleans deep corners of your mouth of residual germs it also gives you upto 12 Hours Fresh Breath.",
     price: 82,
@@ -199,9 +197,8 @@ let products = [
     id: "5b6c727801a7c38429530894",
   },
   {
-    name:
-      "Pampers Diapers Pants - Large Size, Monthly Box Pack, New, 128's pack",
-    imageURL: "/static/images/products/baby/pampers.jpg",
+    name: "Pampers Diapers Pants - Large Size, Monthly Box Pack, New, 128's pack",
+    imageURL: "../../static/images/products/baby/pampers.jpg",
     description:
       "Pampers dry, pants style diapers are the only pants in India with new air channels that provides your baby with breathable dryness overnight.",
     price: 1999,
@@ -212,7 +209,7 @@ let products = [
   },
   {
     name: "Mamypoko Pants Style Diapers - Large, 62 pcs",
-    imageURL: "/static/images/products/baby/mamy.jpg",
+    imageURL: "../../static/images/products/baby/mamy.jpg",
     description:
       "MamyPoko Pants Extra Absorb is a Pant Style diaper that can be used most comfortably for the baby at night Because of Powerful slim core that can absorb up to 12 hours, it prevents leakage till morning.",
     price: 930,
@@ -223,7 +220,7 @@ let products = [
   },
   {
     name: "Johnson & Johnson Baby skincare wipes, 20 pcs",
-    imageURL: "/static/images/products/baby/wipes.jpg",
+    imageURL: "../../static/images/products/baby/wipes.jpg",
     description:
       "Johnsons Baby wipes gently cleanse and care for babys delicate skin. As mild as pure water, they can be used safely all over the body, even around eyes.",
     price: 70,
@@ -234,7 +231,7 @@ let products = [
   },
   {
     name: "Nestle Cerelac Stage - 4 Multi Grain & Fruits, 2x300 gm",
-    imageURL: "/static/images/products/baby/cerelac.jpg",
+    imageURL: "../../static/images/products/baby/cerelac.jpg",
     description:
       "Nestle Multigrain Cerelac enriched with the goodness of five fruits is a complementary food which is given to babies above the age of six months.",
     price: 478,
@@ -245,7 +242,7 @@ let products = [
   },
   {
     name: "Baby Dove Baby Bar - Rich Moisture, 50 gm",
-    imageURL: "/static/images/products/baby/baby-dove.jpg",
+    imageURL: "../../static/images/products/baby/baby-dove.jpg",
     description:
       "Gentler and more nourishing than any other baby soap bar, Baby Dove Rich Moisture Baby Bar has a hypoallergenic and pH neutral formula thats ophthalmologist, dermatologist and pediatrician tested too.",
     price: 30,
@@ -256,7 +253,7 @@ let products = [
   },
   {
     name: "Johnson's Active Kids Shampoo - Shiny Drops With Argan Oil, 100 ml",
-    imageURL: "/static/images/products/baby/shampoo.jpg",
+    imageURL: "../../static/images/products/baby/shampoo.jpg",
     description:
       "A hair care product range specifically for kids aged 2 years and above. This mild shiny drops shampoo formula has been developed to boost natural shine & help reduce frizz, leaving hair silky smooth and healthy looking.",
     price: 95,
@@ -267,7 +264,7 @@ let products = [
   },
   {
     name: "Baby Wipes - Cherry Blossom, 2x80 pcs",
-    imageURL: "/static/images/products/baby/red-wipes.jpg",
+    imageURL: "../../static/images/products/baby/red-wipes.jpg",
     description:
       "These Wipes have aloe vera as key ingredient which makes it the best choice for baby hygiene, make-up remover, sanitizing your face and hand after a long drive, sports or any other situation where you need a quick hygiene solution.",
     price: 300,
@@ -286,7 +283,7 @@ let categories = [
       "Our beverage department will ensure your fridge is always fully stocked. Shop for soda, juice, beer and more. ",
     enabled: true,
     order: 3,
-    imageUrl: "/static/images/category/beverages.png",
+    imageUrl: "../../static/images/category/beverages.png",
     id: "5b675e5e5936635728f9fc30",
   },
   {
@@ -296,7 +293,7 @@ let categories = [
       "The best cupcakes, cookies, cakes, pies, cheesecakes, fresh bread, biscotti, muffins, bagels, fresh coffee, milk and more.",
     enabled: true,
     order: 2,
-    imageUrl: "/static/images/category/bakery.png",
+    imageUrl: "../../static/images/category/bakery.png",
     id: "5b6899123d1a866534f516de",
   },
   {
@@ -306,7 +303,7 @@ let categories = [
       "Buy beauty and personal care products online in India at best prices.",
     enabled: true,
     order: 4,
-    imageUrl: "/static/images/category/beauty.png",
+    imageUrl: "../../static/images/category/beauty.png",
     id: "5b68994e3d1a866534f516df",
   },
   {
@@ -316,7 +313,7 @@ let categories = [
       "Shop online for Baby Products, Diapers, Skin Care Products,etc.",
     enabled: true,
     order: 5,
-    imageUrl: "/static/images/category/baby.png",
+    imageUrl: "../../static/images/category/baby.png",
     id: "5b6899683d1a866534f516e0",
   },
   {
@@ -333,7 +330,7 @@ let categories = [
     description: "A variety of fresh fruits and vegetables.",
     enabled: true,
     order: 1,
-    imageUrl: "/static/images/category/fruits.png",
+    imageUrl: "../../static/images/category/fruits.png",
     id: "5b6899953d1a866534f516e2",
   },
 ];
@@ -423,24 +420,24 @@ const getProducts = async (catId) => {
     productActionsRow.appendChild(productBuyDesktop);
     productCard.appendChild(productActionsRow);
   }
- //updateCart();
+  //updateCart();
 };
 
 function addToCart(elem) {
   var cart = [];
-  var checkPro =false;
+  var checkPro = false;
 
   if (sessionStorage.getItem("cart")) {
-     cart = JSON.parse(sessionStorage.getItem("cart"));
-     for(i in cart){
-      if(cart[i] === elem) {
+    cart = JSON.parse(sessionStorage.getItem("cart"));
+    for (i in cart) {
+      if (cart[i] === elem) {
         checkPro = true;
         alert("Selected product is already in cart");
         return;
       }
     }
   }
-  if(!checkPro){
+  if (!checkPro) {
     var stringCart;
     var stringProduct;
     const productId = elem;
@@ -460,7 +457,6 @@ function addToCart(elem) {
       sessionStorage.setItem("cart", stringCart);
       console.log(stringCart);
       //addedToCart(getproductName);
-    
     } else {
       //get existing cart data from storage and convert back into array
       cart = JSON.parse(sessionStorage.getItem("cart"));
@@ -472,13 +468,10 @@ function addToCart(elem) {
       sessionStorage.setItem("cart", stringCart);
       console.log(stringCart);
       //addedToCart(getproductName);
-
     }
     alert("Product successfully added to cart");
   }
 }
 
-
 getProducts();
 getCategories();
-
