@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sabka Bazaar</title>
+    <link rel="stylesheet" href="../CSS/style.css" />
+    <link rel="stylesheet" href="../CSS/general.css" />
+    <link rel="stylesheet" href="../CSS/header.css" />
+  </head>
+  <body>
+    <header>
+      <div class="container-header">
+        <div class="main">
+          <div class="padding-sm">
+            <a class="img-size" href="index.html">
+              <img
+                class="img-size logo"
+                src="../../static/images/logo_2x.png"
+                alt=""
+              />
+            </a>
+          </div>
+          <div class="padding-sm nav-items">
+            <ul class="sub-heading nav-list">
+              <li><a class="main-nav-link" href="index.html">Home</a></li>
+              <li>
+                <a class="main-nav-link" href="products.html">Products</a>
+              </li>
+            </ul>
+          </div>
+          <div class="padding-sm signin-container">
+            <ul class="sub-heading nav-list">
+              <li><a class="main-nav-link" href="login.html">Sign In</a></li>
+              <li><a class="main-nav-link" href="signup.html">Register</a></li>
+            </ul>
+            <a class="main-nav-link img-size" href="shoppingcart.html">
+              <img
+                class="img-size-md"
+                src="../../static/images/cart.svg"
+                alt="cart"
+              />
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- -----------Banner---------- -->
+    <div class="slideshow-container">
+      <div class="mySlides fade">
+        <img src="../../static/images/offers/offer1.jpg" style="width: 100%" />
+      </div>
+      <div class="mySlides fade">
+        <img src="../../static/images/offers/offer2.jpg" style="width: 100%" />
+      </div>
+
+      <div class="mySlides fade">
+        <img src="../../static/images/offers/offer3.jpg" style="width: 100%" />
+      </div>
+
+      <div class="mySlides fade">
+        <img src="../../static/images/offers/offer4.jpg" style="width: 100%" />
+      </div>
+
+      <div class="mySlides fade">
+        <img src="../../static/images/offers/offer5.jpg" style="width: 100%" />
+      </div>
+
+      <a class="prev" onclick="plusSlides(-1)">PREV</a>
+      <a class="next" onclick="plusSlides(1)">NEXT</a>
+    </div>
+    <br />
+
+    <div style="text-align: center">
+      <span class="dot" onclick="currentSlide(1)"></span>
+      <span class="dot" onclick="currentSlide(2)"></span>
+      <span class="dot" onclick="currentSlide(3)"></span>
+      <span class="dot" onclick="currentSlide(4)"></span>
+      <span class="dot" onclick="currentSlide(5)"></span>
+    </div>
+
+    <script>
+      var slideIndex = 1;
+      showSlides(slideIndex);
+
+      function plusSlides(n) {
+        showSlides((slideIndex += n));
+      }
+
+      function currentSlide(n) {
+        showSlides((slideIndex = n));
+      }
+
+      function showSlides(n) {
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+        var dots = document.getElementsByClassName("dot");
+        if (n > slides.length) {
+          slideIndex = 1;
+        }
+        if (n < 1) {
+          slideIndex = slides.length;
+        }
+        for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+          dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].className += " active";
+      }
+    </script>
+    <div class="container" id="banners-container"></div>
+    <section class="section">
+      <div class="container">
+        <div class="item">
+          <div>
+            <img
+              class="img-size"
+              src="../../static/images/category/fruits.png"
+              alt=""
+            />
+          </div>
+          <div class="item-description">
+            <h3 class="heading-tertiary">Fruits & Vegetables</h3>
+            <p class="content margin-bottom-md">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Et
+              voluptate natus, placeat, alias mollitia laborum cupiditate, vel
+              sit voluptatem molestias voluptatum voluptatibus ad quis ipsa
+              laudantium esse quod assumenda nesciunt.
+            </p>
+            <a class="button" href="../Html/products.html"
+              >Explore Fruits & Vegetables</a
+            >
+          </div>
+        </div>
+        <div class="item-inverse">
+          <div class="item-description">
+            <h3 class="heading-tertiary">Bakery</h3>
+            <p class="content margin-bottom-md">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Et
+              voluptate natus, placeat, alias mollitia laborum cupiditate, vel
+              sit voluptatem molestias voluptatum voluptatibus ad quis ipsa
+              laudantium esse quod assumenda nesciunt.
+            </p>
+            <a class="button" href="../Html/products.html">Explore Bakery</a>
+          </div>
+          <div>
+            <img
+              class="img-size"
+              src="../../static/images/category/bakery.png"
+              alt=""
+            />
+          </div>
+        </div>
+        <div class="item">
+          <div>
+            <img
+              class="img-size"
+              src="../../static/images/category/beverages.png"
+              alt=""
+            />
+          </div>
+          <div class="item-description">
+            <h3 class="heading-tertiary">Beverages</h3>
+            <p class="content margin-bottom-md">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Et
+              voluptate natus, placeat, alias mollitia laborum cupiditate, vel
+              sit voluptatem molestias voluptatum voluptatibus ad quis ipsa
+              laudantium esse quod assumenda nesciunt.
+            </p>
+            <a class="button" href="../Html/products.html">Explore Beverages</a>
+          </div>
+        </div>
+        <div class="item-inverse">
+          <div class="item-description">
+            <h3 class="heading-tertiary">Beauty</h3>
+            <p class="content margin-bottom-md">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Et
+              voluptate natus, placeat, alias mollitia laborum cupiditate, vel
+              sit voluptatem molestias voluptatum voluptatibus ad quis ipsa
+              laudantium esse quod assumenda nesciunt.
+            </p>
+            <a class="button" href="../Html/products.html">Explore Beauty</a>
+          </div>
+          <div>
+            <img
+              class="img-size"
+              src="../../static/images/category/beauty.png"
+              alt=""
+            />
+          </div>
+        </div>
+        <div class="item">
+          <div>
+            <img
+              class="img-size"
+              src="../../static/images/category/baby.png"
+              alt=""
+            />
+          </div>
+          <div class="item-description">
+            <h3 class="heading-tertiary">Baby</h3>
+            <p class="content margin-bottom-md">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Et
+              voluptate natus, placeat, alias mollitia laborum cupiditate, vel
+              sit voluptatem molestias voluptatum voluptatibus ad quis ipsa
+              laudantium esse quod assumenda nesciunt.
+            </p>
+            <a class="button" href="../Html/products.html">Explore Baby</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer class="footer-container">
+      <div class="footer-main">
+        <h3 class="text-align">
+          Copyright &copy; 2011 - 2018 Sabka Bazaar Grocery Supplies Pvt Ltd
+        </h3>
+      </div>
+    </footer>
+  </body>
+</html>

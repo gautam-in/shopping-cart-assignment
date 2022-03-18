@@ -1,0 +1,42 @@
+.main-products {
+  display: grid;
+  grid-template-columns: 20% 80%;
+  padding-top: 1.6rem;
+}
+
+.product-items-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.product-item {
+  width: 26rem;
+  height: 48rem;
+  margin-bottom: 2.4rem;
+  border: 0.2rem solid #eaeaea;
+  box-shadow: 0.4rem 0.4rem 0.8rem #eaeaea;
+}
+
+.buy-now-btn {
+  background-color: #bf2957;
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 0.8rem 2.4rem;
+  border-radius: 1rem;
+
+  /* Only necessary for .btn */
+  border: none;
+  cursor: pointer;
+}
+
+.category-list {
+  list-style: none;
+  text-decoration: none;
+}
+
+.category-list-item {
+  padding: 0.8rem;
+  border-bottom: 0.2rem solid lightgrey;
+}
