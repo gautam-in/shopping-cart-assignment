@@ -1,0 +1,18 @@
+.banner-container {
+  box-shadow: 0px 15px 10px -15px rgb(71, 71, 71);
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+@media screen and(max-width: 480px) {
+  .slider-control-centerright button {
+    display: none;
+  }
+
+  .slider-control-centerleft button {
+    display: none;
+  }
+}

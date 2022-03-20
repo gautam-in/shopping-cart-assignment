@@ -1,0 +1,18 @@
+.signUp__container {
+    height: calc(100vh - 7.5rem);
+    overflow: auto;
+  }
+  
+  @media screen and (max-width: 480px) {
+    .signUp__container {
+      height: calc(100vh - 3.7rem);
+      padding: 1rem;
+    }
+  }
+  
+  @media screen and (min-device-width: 481px) and (max-device-width: 768px) {
+    .signUp__container {
+      height: calc(100vh - 6rem);
+    }
+  }
+  
