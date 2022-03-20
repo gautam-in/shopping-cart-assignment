@@ -1,0 +1,14 @@
+button {
+  letter-spacing: 0.5px;
+  padding: 1%;
+  line-height: 25px;
+  background-color: rgb(211, 17, 121);
+  color: white;
+  font-weight: bolder;
+  border: none;
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+}
