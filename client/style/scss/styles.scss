@@ -1,0 +1,87 @@
+$btn-background: #e6005c;
+$border-shadow-color: rgba(50, 50, 93, 0.25);
+$white-color: #ffffff;
+$grey-color: grey;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Merriweather Sans", sans-serif;
+}
+.container {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 10px 0 10px;
+}
+@media only screen and (max-width: 600px) {
+  .container {
+    width: 100%;
+  }
+}
+html,
+body {
+  margin: 0px;
+  padding: 0px;
+}
+
+button {
+  font-size: 20px;
+  color: $white-color;
+  margin-top: 5px;
+  padding: 0.5rem;
+  background: $btn-background;
+  text-decoration: none;
+  border: none;
+}
+
+button:hover {
+  opacity: 0.9;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 600px) {
+  button {
+    font-size: 12px;
+  }
+}
+
+.no-item-found {
+  margin: 2rem;
+  padding: 2rem;
+  text-align: center;
+}
+
+.main-header {
+  height: 70px;
+  top: 0px;
+  background: $white-color;
+  box-shadow: $border-shadow-color 0px 6px 12px -2px;
+}
+
+.display-none {
+  display: none;
+}
+
+.no-item {
+  text-align: center;
+}
+.no-item .container {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  justify-content: center;
+  height: calc(100vh - 130px);
+}
+.no-item .container h2 {
+  margin-bottom: 5px;
+}
+.no-item button {
+  width: 100%;
+  max-width: 200px;
+}
+
+.roundButton {
+  border-radius: 5px;
+}
