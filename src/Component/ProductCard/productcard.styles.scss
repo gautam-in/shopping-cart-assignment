@@ -1,0 +1,62 @@
+.card-container {
+  margin-top: 5vh;
+  width: 15vw;
+  padding: 2vw;
+  box-shadow: -2px 4px 10px -6px rgb(209, 202, 202);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  .thumbnail-container {
+    display: flex;
+    justify-content: center;
+    .product-img {
+      width: 10vw;
+    }
+  }
+
+  .card-desc {
+    background-color: rgb(235, 235, 235);
+    padding: 1vw;
+    font-size: small;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+  }
+
+  .footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .price-tag::before {
+      content: "MRP Rs.";
+      font-size: small;
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .card-container {
+    display: flex;
+    flex-direction: wrap;
+    width: 20vw;
+  }
+}
+
+@media (max-width: 768px) {
+  .card-container {
+    display: flex;
+    flex-direction: wrap;
+    width: 30vw;
+  }
+}
+
+@media (max-width: 425px) {
+  .card-container {
+    display: flex;
+    flex-direction: wrap;
+    width: 70vw;
+    margin-top: 2vh;
+    font-size: small;
+  }
+}

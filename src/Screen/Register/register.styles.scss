@@ -1,0 +1,29 @@
+.register-container {
+  display: flex;
+  margin-top: 5vh;
+
+  .register-text {
+    display: flex;
+    width: 40vw;
+    justify-content: flex-end;
+    padding: 3vh;
+    margin-top: 5vh;
+  }
+  .registerBox-input {
+    margin-left: 5vw;
+    margin-top: 0vh;
+    position: relative;
+  }
+}
+
+@media (max-width: 425px) {
+  .register-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 0;
+
+    .register-text {
+      width: 80vw;
+    }
+  }
+}

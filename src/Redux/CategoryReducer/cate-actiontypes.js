@@ -1,0 +1,12 @@
+const categoryTypes = {
+  CATEGORY_ID: "CATEGORY_ID",
+  GET_CATEGORY: "GET_CATEGORY",
+  CATEGORIES: "CATEGORIES",
+  GET_ERROR: "GET_ERROR",
+  GET_OFFERS: "GET_OFFERS",
+  OFFERS: "OFFERS",
+  GET_PRODUCTS: "GET_PRODUCTS",
+  PRODUCTS: "PRODUCTS",
+};
+
+export default categoryTypes;

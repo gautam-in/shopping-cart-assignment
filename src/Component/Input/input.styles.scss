@@ -1,0 +1,53 @@
+.input-container {
+  position: relative;
+
+  .input {
+    display: block;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    width: 19vw;
+    outline: none;
+    margin-top: 2vh;
+    margin-bottom: 3vh;
+    padding-top: 2vh;
+    padding-bottom: 1vh;
+    font-size: medium;
+    margin-top: 5vh;
+  }
+  .input + .placeholder {
+    visibility: hidden;
+    position: absolute;
+  }
+
+  .input:focus + .placeholder {
+    visibility: visible;
+    animation: jump 0.5s;
+    animation-fill-mode: forwards;
+    position: absolute;
+    color: rgb(34, 192, 192);
+  }
+
+  .input:focus {
+    border-bottom: 1px solid rgb(34, 192, 192);
+  }
+
+  @keyframes jump {
+    from {
+      font-size: 0;
+      top: 2vh;
+    }
+    to {
+      font-size: medium;
+      top: -2vh;
+    }
+  }
+}
+
+@media (max-width: 425px) {
+  .input-container {
+    .input {
+      width: 80vw;
+    }
+  }
+}

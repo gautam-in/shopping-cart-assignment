@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`expects to test major use cases of product card expects to  return the component with all the props 1`] = `ShallowWrapper {}`;
