@@ -75,13 +75,13 @@ const RegisterComponent = () => {
                     type="text"
                     name="firstName"
                     id="firstName"
-                    placeholder="First Name"
+                    // placeholder="First Name"
                     value={values.firstName}
                     onChange={handleChange}
                     onBlur={handleBlur}
                   />
                   <label htmlFor="firstName" id="firstName">
-                    First Name*
+                    First Name
                   </label>
                 </div>
                 {errors.firstName && touched.firstName && (
@@ -92,13 +92,13 @@ const RegisterComponent = () => {
                     type="text"
                     name="lastName"
                     id="lastName"
-                    placeholder="Last Name"
+                    // placeholder="Last Name"
                     value={values.lastName}
                     onChange={handleChange}
                     onBlur={handleBlur}
                   />
                   <label htmlFor="lastName" id="lastName">
-                    Last Name*
+                    Last Name
                   </label>
                 </div>
                 {errors.lastName && touched.lastName && (
@@ -109,13 +109,13 @@ const RegisterComponent = () => {
                     name="email"
                     id="email"
                     type="text"
-                    placeholder="Enter your email"
+                    // placeholder="Enter your email"
                     value={values.email}
                     onChange={handleChange}
                     onBlur={handleBlur}
                   />
                   <label htmlFor="email" id="email">
-                    Email*
+                    Email
                   </label>
                 </div>
                 {errors.email && touched.email && (
@@ -126,13 +126,13 @@ const RegisterComponent = () => {
                     type="password"
                     name="password"
                     id="password"
-                    placeholder="Enter your password"
+                    // placeholder="Enter your password"
                     value={values.password}
                     onChange={handleChange}
                     onBlur={handleBlur}
                   />
                   <label htmlFor="password" id="password">
-                    Password*
+                    Password
                   </label>
                 </div>
                 {errors.password && touched.password && (
@@ -144,13 +144,13 @@ const RegisterComponent = () => {
                     type="password"
                     name="confirmPassword"
                     id="confirmPassword"
-                    placeholder="Confirm Password"
+                    // placeholder="Confirm Password"
                     value={values.confirmPassword}
                     onChange={handleChange}
                     onBlur={handleBlur}
                   />
                   <label htmlFor="confirmPassword" id="confirmPassword">
-                    Confirm Password*
+                    Confirm Password
                   </label>
                 </div>
                 {errors.confirmPassword && touched.confirmPassword && (

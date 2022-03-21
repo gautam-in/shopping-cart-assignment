@@ -66,13 +66,13 @@ const LoginComp = () => {
                     type="email"
                     name="email"
                     id="email"
-                    placeholder="Enter your email"
+                    // placeholder="Enter your email"
                     value={values.email}
                     onChange={handleChange}
                     onBlur={handleBlur}
                   />
                   <label htmlFor="email" id="email">
-                    Email *
+                    Email
                   </label>
                 </div>
 
@@ -86,13 +86,13 @@ const LoginComp = () => {
                     type="password"
                     name="password"
                     id="password"
-                    placeholder="Enter your password"
+                    // placeholder="Enter your password"
                     value={values.password}
                     onChange={handleChange}
                     onBlur={handleBlur}
                   />
                   <label htmlFor="password" id="password">
-                    Password *
+                    Password
                   </label>
                 </div>
 
