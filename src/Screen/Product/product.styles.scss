@@ -1,0 +1,22 @@
+.product-container {
+  display: flex;
+
+  .product-card {
+    display: flex;
+    width: 80vw;
+    height: fit-content;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+}
+
+@media (max-width: 425px) {
+  .product-container {
+    display: flex;
+    flex-direction: column;
+
+    .product-card{
+      width: 100vw;
+    }
+  }
+}

@@ -1,0 +1,101 @@
+.product-tile {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  margin-top: 1vh;
+  .item-img {
+    width: 10vw;
+    padding: 1vh;
+  }
+  .item-container {
+    display: flex;
+
+    .itemQuantity-container {
+      display: flex;
+      width: 10vw;
+      justify-content: space-around;
+      align-items: center;
+
+      .addItem-icon {
+        display: flex;
+        justify-content: center;
+        width: 1vw;
+        height: 2vh;
+        border-radius: 50%;
+        padding: 0.3vh;
+        cursor: pointer;
+      }
+    }
+    .itemPrice-container {
+      display: flex;
+      justify-content: space-around;
+      width: 5vw;
+      align-items: center;
+    }
+    .price-container {
+      width: 5vw;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      font-size: large;
+      font-weight: 600;
+    }
+    .price-container::before {
+      content: "Rs.";
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .product-tile {
+    .item-container {
+      .itemQuantity-container {
+        display: flex;
+        width: 20vw;
+        justify-content: space-around;
+        align-items: center;
+      }
+      .itemPrice-container {
+        display: flex;
+        justify-content: space-around;
+        width: 10vw;
+        align-items: center;
+      }
+      .price-container {
+        width: 12vw;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        font-size: x-small;
+        font-weight: 600;
+      }
+    }
+  }
+}
+
+@media (max-width: 425px) {
+  .product-tile {
+    .item-container {
+      .itemQuantity-container {
+        display: flex;
+        width: 20vw;
+        justify-content: space-around;
+        align-items: center;
+      }
+      .itemPrice-container {
+        display: flex;
+        justify-content: space-around;
+        width: 10vw;
+        align-items: center;
+      }
+      .price-container {
+        width: 32vw;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        font-size: x-small;
+        font-weight: 600;
+      }
+    }
+  }
+}

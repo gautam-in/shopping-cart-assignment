@@ -1,0 +1,4 @@
+.category-container:nth-child(odd) {
+  display: flex;
+  flex-direction: row-reverse;
+}
