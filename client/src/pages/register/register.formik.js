@@ -6,7 +6,10 @@ export const validationSchema = Yup.object().shape({
   email: Yup.string().required("Email is required").email("Email is invalid"),
   password: Yup.string()
     .required("Password is required")
-    .min(6, "Password must be at least 6 characters"),
+    .matches(
+      /^(?=.*?\d)(?=.*?[a-zA-Z])[a-zA-Z\d].....+$/,
+      "Password must contain 6 Characters including numbers and alphabets"
+    ),
   confirmPassword: Yup.string()
     .required("Confirm Password is required")
     .oneOf([Yup.ref("password"), null], "Confirm Password does not match"),

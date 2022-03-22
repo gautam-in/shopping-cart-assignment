@@ -23,7 +23,11 @@ const Sidebar = () => {
 
   const handleChange = ({ target }) => {
     setDropdownVisible(!dropdownVisible);
-    history.push(`${paths.products}/${target.id}`);
+    history.push(
+      activeCategory?.[0]?.id === target.id
+        ? paths.products
+        : `${paths.products}/${target.id}`
+    );
   };
 
   return (
@@ -50,9 +54,6 @@ const Sidebar = () => {
         </div>
         {dropdownVisible && (
           <ul className="category-list" onClick={handleChange}>
-            <li className={!categoryId ? "active" : ""} name="All" id={null}>
-              All
-            </li>
             {categories.map(({ name, id }) => (
               <li
                 key={id}
