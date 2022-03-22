@@ -1,16 +1,20 @@
 import { useCallback, useState } from "react";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 import Cart from "../../components/ShoppingCart";
+import { setFilter } from "../../store/action";
 import "./header.scss";
 
 const Header = () => {
   const [openCart, setOpenCart] = useState(false);
   const { item } = useSelector((state) => state);
   const history = useHistory();
+  const dispatch = useDispatch();
   const handleRedirect = useCallback(
-    (route) => () => history.push(route),
+    (route) => () => {history.push(route),
     [history]
+    dispatch(setFilter(null))
+    }
   );
 
   const toggleCart = useCallback(() => setOpenCart(!openCart), [openCart]);
