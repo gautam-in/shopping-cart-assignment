@@ -4,9 +4,7 @@ This is complete shopping cart assignment including both client and server.
 
 ## Getting Started
 
-Clone this repo and create ****.env**** file with the variables provided in ****.env.sample**** file.
-
-Checkout to the develop branch.
+Clone this repo and checkout to the develop branch.
 
 ```
 git checkout develop
