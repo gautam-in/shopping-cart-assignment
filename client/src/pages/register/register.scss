@@ -1,0 +1,37 @@
+@import "../../variables.scss";
+
+.register-container {
+  display: flex;
+  margin-bottom: 20px;
+
+  @media #{$tablet} {
+    flex-direction: column;
+  }
+
+  .left-section {
+    padding: 60px 80px;
+
+    @media #{$tablet} {
+      padding: 20px;
+    }
+
+    .title {
+      font-weight: 700;
+    }
+
+    .subtitle {
+      font-weight: 600;
+      margin: 0;
+    }
+  }
+
+  .right-section {
+    width: 380px;
+    margin-right: 20px;
+
+    @media #{$tablet} {
+      padding: 20px;
+      width: 100%;
+    }
+  }
+}

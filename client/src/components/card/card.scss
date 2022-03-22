@@ -1,0 +1,108 @@
+@import "../../variables.scss";
+
+.card-container {
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  margin: 10px 0 20px 0;
+  box-shadow: 10px 0 20px -15px rgba(0, 0, 0, 0.15);
+
+  @media #{$tablet} {
+    width: 50%;
+  }
+
+  @media #{$phoneL} {
+    width: 100%;
+    box-shadow: none;
+    margin: 0;
+  }
+
+  .tab-visible {
+    display: none;
+
+    @media #{$tablet} {
+      display: block;
+      border-bottom: 1px dashed #ccc;
+      padding-bottom: 20px;
+
+      button {
+        width: 100%;
+      }
+    }
+
+    @media #{$phoneL} {
+      display: none;
+    }
+  }
+
+  .image-block {
+    @media #{$tablet} {
+      display: flex;
+    }
+    @media #{$phoneL} {
+      border-bottom: 1px dashed #ccc;
+      padding-bottom: 20px;
+    }
+    .image {
+      @media #{$tablet} {
+        flex: 1 1 0;
+      }
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+    .description {
+      @media #{$tablet} {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+      p {
+        background-color: #f0f0f0;
+        line-height: 20px;
+        height: 88px;
+        text-overflow: clip;
+        padding: 5px;
+        overflow: hidden;
+        font-size: 14px;
+      }
+    }
+
+    .desktop-none {
+      display: none;
+      @media #{$phoneL} {
+        display: flex;
+      }
+    }
+  }
+
+  .title {
+    font-size: 17px;
+    font-weight: 700;
+    margin: 10px 0 20px 0;
+    height: 50px;
+
+    @media #{$phoneS} {
+      overflow: hidden;
+      white-space: nowrap;
+      margin: 20px 0;
+      height: auto;
+    }
+  }
+
+  .price-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px dashed #ccc;
+    font-size: 14px;
+
+    @media #{$tablet} {
+      display: none;
+    }
+  }
+}

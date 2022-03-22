@@ -1,0 +1,20 @@
+@import "../../variables.scss";
+
+.footer {
+  background-color: #eaeaea;
+  padding: 10px 0;
+  font-weight: 600;
+
+  @media #{$phoneL} {
+    font-size: 14px;
+  }
+
+  .content {
+    max-width: 1080px;
+    margin: 0 auto;
+
+    @media #{$tablet} {
+      text-align: center;
+    }
+  }
+}

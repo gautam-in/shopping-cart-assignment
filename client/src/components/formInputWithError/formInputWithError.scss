@@ -1,0 +1,58 @@
+@import "../../variables.scss";
+
+.input-error-container {
+  position: relative;
+  margin: 45px 0;
+
+  .input-container {
+    input {
+      background: none;
+      background-color: $whiteColor;
+      color: #6c6c6c;
+      font-size: 18px;
+      padding: 10px 10px 10px 0px;
+      display: block;
+      width: 100%;
+      border: none;
+      border-radius: 0;
+      border-bottom: 1px solid #6c6c6c;
+      margin: 25px 0 10px 0;
+
+      &:focus {
+        border-bottom: 1px solid #02c7ff;
+        outline: none;
+      }
+
+      &:focus ~ label {
+        top: -14px;
+        font-size: 14px;
+        color: #02c7ff;
+      }
+
+      &.has-error {
+        border-bottom: 1px solid $errorColor;
+      }
+    }
+  }
+
+  label {
+    color: #6c6c6c;
+    font-size: 16px;
+    font-weight: normal;
+    position: absolute;
+    pointer-events: none;
+    top: 10px;
+    transition: 300ms ease all;
+
+    &.shrink {
+      top: -14px;
+      font-size: 14px;
+      color: #02c7ff;
+    }
+  }
+
+  .error-container {
+    font-size: 14px;
+    color: $errorColor;
+  }
+}
