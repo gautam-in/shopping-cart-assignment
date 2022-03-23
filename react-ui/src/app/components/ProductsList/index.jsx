@@ -1,48 +1,44 @@
 import React from "react";
+import { useDispatch } from "react-redux";
+import { addItem } from "../../redux/cart/cart.actions";
 
-const ProductList = ({ filterData }) => {
+const ProductList = ({ filterData: filteredProducts }) => {
+  const dispatch = useDispatch();
   return (
     <div>
       <div className="list-container">
-        {filterData ? (
-          <>
-            {filterData.map((item) => {
-              return (
-                <div className="cards" key={item.id}>
-                  <div className="card-item">
-                    <div className="card-image">
-                      {" "}
-                      <img
-                        src={item.imageURL}
-                        alt={item.name}
-                        className="img-fluid"
-                      />
-                    </div>
-                    <div className="card-info">
-                      <p className="card-title">{item.name}</p>
-                      <p className="card-intro">{item.description}</p>
-                    </div>
-                    <div className="card-footer">
-                      <div className="card-footer-left">
-                        <p>MRP Rs.{item.price}</p>
-                      </div>
-                      <div className="card-footer-right">
-                        <button
-                          className="btn btn-primary btn-buy-now"
-                          onClick={() => cartHandler(item)}
-                        >
-                          Buy Now
-                        </button>
-                      </div>
-                    </div>
+        {filteredProducts.map((product) => {
+          return (
+            <div className="cards" key={product.id}>
+              <div className="card-item">
+                <div className="card-image">
+                  <img
+                    src={product.imageURL}
+                    alt={product.name}
+                    className="img-fluid"
+                  />
+                </div>
+                <div className="card-info">
+                  <p className="card-title">{product.name}</p>
+                  <p className="card-intro">{product.description}</p>
+                </div>
+                <div className="card-footer">
+                  <div className="card-footer-left">
+                    <p>MRP Rs.{product.price}</p>
+                  </div>
+                  <div className="card-footer-right">
+                    <button
+                      className="btn btn-primary btn-buy-now"
+                      onClick={() => dispatch(addItem(product))}
+                    >
+                      Buy Now
+                    </button>
                   </div>
                 </div>
-              );
-            })}
-          </>
-        ) : (
-          <>{null}</>
-        )}
+              </div>
+            </div>
+          );
+        })}
       </div>
     </div>
   );

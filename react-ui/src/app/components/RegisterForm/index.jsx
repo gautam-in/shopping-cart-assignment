@@ -30,7 +30,7 @@ const RegisterForm = () => {
           label="Confirm Password"
           variant="standard"
         />
-        <Button variant="contained" fullWidth>
+        <Button variant="contained" fullWidth className="my-5">
           Signup
         </Button>
       </form>

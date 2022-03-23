@@ -4,6 +4,8 @@ body {
 }
 
 $light-grey: #eaeaea;
+$dark-grey: #666;
+$dark-pink: #c51162;
 .form {
   display: flex;
   flex-direction: column;
@@ -11,24 +13,148 @@ $light-grey: #eaeaea;
 
 .footer {
   background-color: $light-grey;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
+.footer p {
+  margin: 0;
+  padding: 0;
+}
+
 .nav {
   display: flex;
   justify-content: space-between;
   padding: 10px;
   flex-grow: 1;
+  max-width: 600px;
 }
+
+.nav a {
+  color: $dark-grey;
+  text-decoration: none;
+  margin-right: 10px;
+}
+.nav .nav-main-links-container {
+  display: flex;
+  align-items: flex-end;
+}
+.nav .nav-login-register-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.nav .nav-login-register-container a:last-child {
+  margin-right: 0;
+}
+
+.nav .nav-login-register-container {
+  display: flex;
+  flex-direction: column;
+}
+.css-1t29gy6-MuiToolbar-root {
+  justify-content: space-between;
+}
+
 .icon-cart {
   width: 30px;
   height: 30px;
 }
 .button-cart {
   background-color: $light-grey !important;
+  color: black !important;
 }
+
+.cart-header {
+  background-color: #000;
+  padding: 10px;
+  height: 40px;
+  p {
+    margin-bottom: 0;
+    color: #fff;
+  }
+  .para-close-icon {
+    float: right;
+    color: #fff;
+    cursor: pointer;
+  }
+}
+
 .empty-cart-message {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.checkout-btn-container {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.checkout-btn {
+  width: 100%;
+  background-color: $dark-pink !important;
+  color: white !important;
+  width: calc(100% - 20px);
+  margin-bottom: 10px !important;
+
+  span {
+    float: right;
+
+    svg {
+      font-size: 1rem;
+      position: relative;
+      top: 3px;
+    }
+  }
+}
+
+.vertical-center {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateY(-50%);
+  transform: translateX(-50%);
+  left: 50%;
+  text-align: center;
+  width: 100%;
+}
+
+.cart-buttons {
+  background-color: $dark-pink !important;
+  color: #fff !important;
+  border: none !important;
+  border-radius: 2px !important;
+  padding: 0 9px !important;
+
+  span {
+    position: relative;
+    bottom: 1px;
+  }
+}
+
+.cart-quantity-btn {
+  background-color: #fff;
+  border: none;
+  color: #000;
+  border-radius: 50% !important;
+  margin: 0 2px !important;
+
+  span {
+    position: relative;
+    bottom: 1px;
+  }
+}
+
+.price-span {
+  margin-left: 10px;
 }
 
 .shadow {

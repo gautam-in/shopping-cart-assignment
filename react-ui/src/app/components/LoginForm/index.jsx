@@ -12,16 +12,7 @@ export const LoginForm = () => {
           label="Password"
           variant="standard"
         />
-        {/* <TextField
-          fullWidth
-          error
-          id="standard-error-helper-text"
-          label="Error"
-          defaultValue="Hello World"
-          helperText="Incorrect entry."
-          variant="standard"
-        /> */}
-        <Button variant="contained" fullWidth>
+        <Button variant="contained" fullWidth className="my-5">
           Login
         </Button>
       </form>

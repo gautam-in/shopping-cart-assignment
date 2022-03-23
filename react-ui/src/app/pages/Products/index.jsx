@@ -1,4 +1,4 @@
-import { Container } from "@mui/material";
+import { Container, Grid } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import ProductList from "../../components/ProductsList";
@@ -360,12 +360,11 @@ const Products = () => {
     }
   }, [categoryId]);
   return (
-    <div>
-      <Container maxWidth="md">
-        {categoryId}
-        <div className="sidebar">
-          {categories &&
-            categories
+    <Container maxWidth="md">
+      <Grid container spacing={2}>
+        <Grid item xs={3}>
+          <div className="sidebar">
+            {categories
               .filter((category) => category.order > 0)
               .sort((a, b) => a.order - b.order)
               .map((category) => {
@@ -381,12 +380,15 @@ const Products = () => {
                   </div>
                 );
               })}
-        </div>
-        <ProductList
-          filterData={filteredCategoryId ? filteredProducts : products}
-        />
-      </Container>
-    </div>
+          </div>
+        </Grid>
+        <Grid item xs={9}>
+          <ProductList
+            filterData={filteredCategoryId ? filteredProducts : products}
+          />
+        </Grid>
+      </Grid>
+    </Container>
   );
 };
 
