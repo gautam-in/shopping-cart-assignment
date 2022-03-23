@@ -32,7 +32,7 @@ const Slider = () => {
   }, [dispatch]);
 
   return (
-    <div className="slider-container">
+    <section className="slider-container" aria-label="Banner">
       <Carousel
         swipeable
         draggable={false}
@@ -53,7 +53,7 @@ const Slider = () => {
           />
         ))}
       </Carousel>
-    </div>
+    </section>
   );
 };
 

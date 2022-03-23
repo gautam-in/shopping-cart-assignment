@@ -31,7 +31,7 @@ const Sidebar = () => {
   };
 
   return (
-    <div className="sidebar-container">
+    <aside className="sidebar-container" aria-label="Sidebar">
       <ul className="category-list" onClick={handleChange}>
         {categories.map(({ name, id }) => (
           <li
@@ -67,7 +67,7 @@ const Sidebar = () => {
           </ul>
         )}
       </div>
-    </div>
+    </aside>
   );
 };
 

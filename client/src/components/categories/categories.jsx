@@ -21,7 +21,7 @@ const Categories = () => {
   };
 
   return categories.map(({ imageUrl, name, description, id }) => (
-    <div className="category-container" key={id}>
+    <section className="category-container" key={id} aria-label={name}>
       <div className="category-image">
         <img src={imageUrl} alt={name} />
       </div>
@@ -30,7 +30,7 @@ const Categories = () => {
         <p>{description}</p>
         <Button onClick={() => handleCategoryClick(id)}>Explore {name}</Button>
       </div>
-    </div>
+    </section>
   ));
 };
 

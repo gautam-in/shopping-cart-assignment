@@ -38,10 +38,10 @@ const Header = () => {
 
         <div className="navbar">
           <div className="navbar-left">
-            <div className="navbar-left-menu">
+            <nav className="navbar-left-menu" aria-label="Primary Menu">
               <Link to={home}>Home</Link>
               <Link to={products}>Products</Link>
-            </div>
+            </nav>
           </div>
           <div className="navbar-right">
             <div className="navbar-right-menu">
