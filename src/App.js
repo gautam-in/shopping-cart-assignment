@@ -1,5 +1,5 @@
 import "./App.scss";
-// import { Suspense, lazy } from 'react';
+
 import { Provider } from "react-redux";
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Footer from "./Components/Footer";
@@ -9,13 +9,7 @@ import Register from "./Components/Register";
 import Home from "./Components/Home";
 import store from "./store/store";
 import Product from "./Components/Product";
-// import { Navigate, Route, Routes } from 'react-router-dom';
-// const LoginPage = lazy(() => import('./Components/Login'));
-// const Product=lazy(()=>import('./Components/Products'))
-// const Register=lazy(()=>import('./Components/Register'));
-// const Footer=lazy(()=>import('./Components/Footer'))
-// const Cart=lazy(()=>import('./Components/Cart'))
-// const Navbars=lazy(()=>import('./Components/Navbars'))
+
 
 function App() {
   return (
