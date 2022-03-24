@@ -1,0 +1,31 @@
+* {
+    margin: 0;
+    padding: 0;
+
+    box-sizing: border-box;
+}
+
+body {
+    /* width: 1200px; */
+    /* margin: 1.5em; */
+    font-family: sans-serif;
+}
+
+header {
+    background-color: #f8f9fa;
+    box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.5);
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2em;
+}
+
+@import "index";
+@import "plp";
+@import "login";
+@import "cart";
+@import "signup";
+@import "responsive";

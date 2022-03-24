@@ -1,0 +1,146 @@
+.homepage {
+
+
+    /* HEADER Portion */
+    .container {}
+
+    .logo {
+        height: 4em;
+        width: 8em;
+    }
+
+    .navigation-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        padding: 1em;
+        /* Added this height to make sure it is similar to screenshot */
+        height: 5em;
+
+        .hide {
+            display: none;
+        }
+
+    }
+
+    .cart {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        cursor: pointer;
+        text-decoration: none;
+        color: #000;
+
+    }
+
+    .cart:hover {
+        background-color: #dee2e6;
+    }
+
+    .cart-icon {
+        height: 3em;
+        width: 3em;
+        stroke: #D00155;
+        color: #D00155;
+        /* background-color: #8e2b44; */
+    }
+
+    .cart-item {
+        font-size: 1.5rem;
+    }
+
+    /* BODY/MAIN Portion - Carousal */
+    .carousal {}
+
+    .carousel-image {
+        padding-top: 1em;
+        height: auto;
+        width: 100%;
+        box-shadow: 0 8px 6px -6px rgba(0, 0, 0, 0.5);
+    }
+
+    .dots {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        gap: 2em;
+        padding-top: 1em;
+    }
+
+    .dot {
+        height: 8px;
+        width: 8px;
+        border-radius: 50%;
+        cursor: pointer;
+        background-color: #adb5bd;
+        border: none;
+    }
+
+    .dot--fill {
+        background-color: black;
+    }
+
+    /* MAIN/BODY Products Container */
+    .products-container {
+        margin-top: 3em;
+    }
+
+    .product {
+        margin-top: 3em;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1em 1em 3em 1em;
+        box-shadow: 0 8px 6px -6px rgba(0, 0, 0, 0.5);
+        text-align: center;
+    }
+
+    .image-container {
+        display: contents;
+    }
+
+    .image-container img {
+        /* width: 100%; */
+    }
+
+    .product-image {
+        height: auto;
+        width: 60%;
+    }
+
+    .product-details {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 1.5em;
+        width: 40%;
+    }
+
+    .product-details .title {
+        font-size: 1.5rem;
+    }
+
+    .product-details .description {
+        font-size: 0.8rem;
+    }
+
+    .product-details .explore {
+        height: 3em;
+        padding: 1em;
+        background-color: #D00155;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+    }
+
+    /* FOOTER */
+    footer {
+        padding: 1em;
+        background-color: #dee2e6;
+    }
+
+}

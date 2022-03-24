@@ -1,0 +1,98 @@
+.signup-container {
+
+    /* HEADER Portion */
+    .container {}
+
+    .logo {
+        height: 4em;
+        width: 8em;
+    }
+
+    .navigation-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1em;
+        /* Added this height to make sure it is similar to screenshot */
+        height: 5em;
+
+        .hide {
+            display: none;
+        }
+    }
+
+    .cart {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+
+        text-decoration: none;
+        color: #000;
+    }
+
+    .cart-icon {
+        height: 3em;
+        width: 3em;
+        stroke: #D00155;
+        color: #D00155;
+        /* background-color: #8e2b44; */
+    }
+
+    .cart-item {
+        font-size: 1.5rem;
+    }
+
+    /* MAIN/Container */
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .login-section {
+        text-align: center;
+        margin: 1em;
+    }
+
+    .login-title {
+        margin-bottom: 0.5em;
+    }
+
+    .login-data {
+        display: flex;
+        flex-direction: column;
+        width: 80vw;
+        margin: 2em;
+    }
+
+    .input-field {
+        border: none;
+        border-bottom: 2px solid #000;
+        margin-bottom: 2em;
+        padding: 0.5em;
+        outline: none;
+    }
+
+    .input-field:focus {
+        border-color: #D00155;
+    }
+
+    .button {
+        height: 3em;
+        padding: 1em;
+        background-color: #D00155;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+        text-transform: uppercase;
+    }
+
+    /* FOOTER */
+    footer {
+        padding: 1em;
+        background-color: #dee2e6;
+    }
+
+}
