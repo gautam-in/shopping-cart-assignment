@@ -23,6 +23,10 @@
         padding: 1em;
         /* Added this height to make sure it is similar to screenshot */
         height: 5em;
+
+        .hide {
+            display: none;
+        }
     
     }
     
@@ -31,6 +35,13 @@
         align-items: center;
         justify-content: center;
         gap: 10px;
+
+        text-decoration: none;
+        color: #000;
+    }
+
+    .cart:hover {
+        background-color: #dee2e6;
     }
     
     .cart-icon {
@@ -130,6 +141,7 @@
         background-color: #D00155;
         color: #fff;
         padding: 1em;
+        cursor: pointer;
     }
     
     .product-img {}
@@ -144,8 +156,8 @@
     }
     
     /* FOOTER */
-    &footer {
-        position: absolute;
+    footer {
+        position: static;
         bottom: 0;
         padding: 1em;
         width: 100%;

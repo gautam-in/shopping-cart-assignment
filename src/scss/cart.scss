@@ -1,4 +1,5 @@
 .cart-container {
+    background-color: #dee2e6;
     header {
         background-color: #f8f9fa;
     
@@ -22,6 +23,10 @@
         /* Added this height to make sure it is similar to screenshot */
         height: 5em;
 
+        .hide {
+            display: none;
+        }
+
     }
 
     .cart {
@@ -29,6 +34,9 @@
         align-items: center;
         justify-content: center;
         gap: 10px;
+
+        text-decoration: none;
+        color: #000;
     }
 
     .cart-icon {
@@ -44,6 +52,61 @@
     }
 
     /* MAIN/Container */
+
+    .cart-img {
+        height: 4em;
+        width: 4em;
+    }
+
+    .flex-row-container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 1em;
+    }
+
+    .flex-column-container {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        gap: 1em;
+
+        h3 {
+            display: inline-block;
+            width: 100%;
+        }
+
+    }
+
+    .flex-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1em;
+
+        margin-bottom: 2em;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        // width: 100%;
+    }
+
+    .block {
+        margin: 2em;
+        background-color: #f8f9fa;
+        padding: 1em;
+
+    }
+
+    .flex-start {
+        justify-self: flex-start;
+        flex-grow: 1;
+    }
+
     .container {
         display: flex;
         flex-direction: column;
@@ -52,6 +115,30 @@
         text-align: center;
         height: 100vh;
         position: relative;
+    }
+
+    .cart-button {
+        padding: 0.2em;
+        background-color: #D00155;
+        color: #f8f9fa;
+        border: none;
+        width: 1.5em;
+        cursor: pointer;
+    }
+
+    .cart-input {
+        width: 2em;
+        cursor: not-allowed;
+        border: none;
+
+        &:focus {
+            outline: none;
+        }
+    }
+
+    .product-total {
+        align-self: center;
+        justify-self: center;
     }
 
     .login-section {

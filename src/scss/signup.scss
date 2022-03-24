@@ -15,6 +15,10 @@
         padding: 1em;
         /* Added this height to make sure it is similar to screenshot */
         height: 5em;
+
+        .hide {
+            display: none;
+        }
     }
 
     .cart {
@@ -22,6 +26,9 @@
         align-items: center;
         justify-content: center;
         gap: 10px;
+
+        text-decoration: none;
+        color: #000;
     }
 
     .cart-icon {
@@ -83,7 +90,7 @@
     }
 
     /* FOOTER */
-    &footer {
+    footer {
         padding: 1em;
         background-color: #dee2e6;
     }

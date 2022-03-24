@@ -1,17 +1,33 @@
 import '../scss/main.scss';
+require('./plp.js');
+require('./cart');
 
+let interval;
+let carouselNumber = 1;
 
 const serverURL = 'http://localhost:5001/';
+if (location.href.includes('index.html')) {
+    window.addEventListener('load', loadCategories);
+    window.addEventListener('unload', () => {
+        clearInterval(interval);
+    });
+}
 
-window.addEventListener('load', loadCategories);
+
+
 
 async function loadCategories() {
     try {
-        loadCarousal(1);
+        interval = setInterval(() => {
+            let number = carouselNumber++;
+            if(number >= 5) {
+                carouselNumber = 1;
+            }
+            loadCarousal(number);
+        }, 1000);
         const productsContainer = document.querySelector('.products-container');
         const categories = await fetch(serverURL + 'categories');
         const data = await categories.json();
-
         data.forEach((category, index) => {
             const imageContent = `
                 <div class="image-container">
@@ -40,7 +56,7 @@ async function loadCategories() {
             } else {
                 element.innerHTML = productContent + imageContent;
             }
-            element.addEventListener('click', () => goToCategorySection(category.id));
+            element.addEventListener('click', () => goToCategorySection(category.id, category.key));
             productsContainer.appendChild(element);
         });
 
@@ -51,7 +67,7 @@ async function loadCategories() {
     }
 }
 
-function goToCategorySection(categoryId) {
+function goToCategorySection(categoryId, categoryKey) {
     location.href = `view/plp.html#${categoryId}`;
 }
 
@@ -62,3 +78,5 @@ function loadCarousal(number) {
     allTheDots[number - 1].classList.add('dot--fill');
     img.src = `static/images/offers/offer${number}.jpg`;
 }
+
+window.loadCarousal = loadCarousal;

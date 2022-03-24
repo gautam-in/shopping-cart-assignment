@@ -1,0 +1,80 @@
+/* for mobile */
+
+@media screen and (min-width: 480px) {
+    .homepage, .login-container, .product-landing-page, .signup-container {
+        // background-color: #D00155;
+        header, main,
+        footer {
+            width: 480px;
+            margin: 0 auto;
+        }
+        /* for ipad  menu css */
+        .product-image {
+            width: 50%;
+        }
+    }
+}
+
+@media screen and (min-width: 767px) {
+    .homepage, .login-container, .product-landing-page, .signup-container {
+        // background-color: yellowgreen;
+        header, main,
+        footer {
+            width: 767px;
+            margin: 0 auto;
+        }
+        .navigation-container {
+            .hide {
+                display: inline-block;
+            }
+        }
+        .product-image {
+            width: 40%;
+        }
+    }
+}
+
+@media screen and (min-width: 1023px) {
+    .homepage, .login-container, .product-landing-page, .signup-container {
+        // background-color: #000fff;
+        header, main,
+        footer {
+            width: 1023px;
+            margin: 0 auto;
+        }
+        .product-image {
+            width: 30%;
+        }
+
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .homepage, .login-container, .product-landing-page, .signup-container {
+        // background-color: palegoldenrod;
+        header, main,
+        footer {
+            width: 1200px;
+            margin: 0 auto;
+        }
+        .product-image {
+            width: 33%;
+        }
+
+    }
+}
+
+@media screen and (min-width: 1600px) {
+    .homepage, .login-container, .product-landing-page, .signup-container {
+        // background-color: palegreen;
+        header, main,
+        footer {
+            width: 1600px;
+            margin: 0 auto;
+        }
+        .product-image {
+            width: 33%;
+        }
+
+    }
+}

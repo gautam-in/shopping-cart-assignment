@@ -12,16 +12,22 @@
     <div class="product-landing-page">
         <header>
             <nav class="navigation-container">
-                <a href="../index.html"><img class="logo" src="../static/images/logo.png" alt="Sabka Bazaar logo"></a>
-                <div class="cart">
-                    <img class="cart-icon" src="../static/images/cart.svg" alt="Shopping cart icon">
-
-                    <span class="cart-item">0 items</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" class="cart-icon" fill="none" viewBox="0 0 24 24"
-                        stroke="currentColor" stroke-width="2">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-                    </svg>
+                <div class="flex">
+                    <a href="../index.html"><img class="logo" src="../static/images/logo.png" alt="Sabka Bazaar logo"></a>
+                    <a class="hide" href="../index.html">Home</a>
+                    <a class="hide" href="plp.html#all">Products</a>
                 </div>
+
+                <span>
+                    <div class="flex">
+                        <a class="hide" href="login.html">Signin</a>
+                        <a class="hide" href="signup.html">Register</a>
+                    </div>
+                    <a class="cart" href="cart.html">
+                        <img class="cart-icon" src="../static/images/cart.svg" alt="Shopping cart icon">
+                        <span class="cart-item">0 items</span>
+                    </a>
+                </span>
             </nav>
         </header>
         <main>

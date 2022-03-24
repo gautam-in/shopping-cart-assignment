@@ -1,6 +1,9 @@
 const serverURL = 'http://localhost:5001/';
+const listOfProducts = [];
 
-window.addEventListener('load', loadProducts);
+if (location.href.includes('plp.html')) {
+    window.addEventListener('load', loadProducts);
+}
 
 async function loadProducts() {
     try {
@@ -26,10 +29,7 @@ async function loadProducts() {
             productInfo
         } = await fetchProductsFromServer();
 
-        console.log({
-            categoryInfo,
-            productInfo
-        })
+        localStorage.setItem('productsList', JSON.stringify(productInfo));
 
         const selectedProducts = productInfo.filter(list =>
             list.category === productId()
@@ -105,10 +105,24 @@ function processProductsInfo(products) {
             <p class="product-description">
                 ${product.description}
             </p>
-            <button class="product-buy-now">BuyNow@ MRP Rs${product.price}</button>
         `;
+        const buttonElement = document.createElement('button');
+        buttonElement.classList.add('product-buy-now');
+        buttonElement.innerText = `BuyNow@ MRP Rs${product.price}`;
+        buttonElement.addEventListener('click', () => addProductToCart(product.id));
+        element.appendChild(buttonElement);
         cardSection.appendChild(element);
     });
+}
+
+function addProductToCart(productId) {
+    alert("Item added to the cart");
+    const products = JSON.parse(localStorage.getItem('products')) || [];
+    const cartText = document.querySelector('.cart-item');
+    products.push(productId);
+    cartText.innerHTML = `${products.length} items`;
+    localStorage.setItem('productCount', products.length);
+    localStorage.setItem('products', JSON.stringify([...products]));
 }
 
 function goToCategorySection(categoryId) {

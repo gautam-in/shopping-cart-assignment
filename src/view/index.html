@@ -6,19 +6,28 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sabka Bazaar</title>
-
-    <script src="app-bundle.js"></script>
 </head>
 
 <body>
     <div class="homepage">
         <header>
             <nav class="navigation-container">
-                <a href="#"><img class="logo" src="static/images/logo.png" alt="Sabka Bazaar logo"></a>
-                <a class="cart" href="view/cart.html">
-                    <img class="cart-icon" src="static/images/cart.svg" alt="Shopping cart icon">
-                    <span class="cart-item">0 items</span>
-                </a>
+                <div class="flex">
+                    <a href="#"><img class="logo" src="static/images/logo.png" alt="Sabka Bazaar logo"></a>
+                    <a class="hide" href="index.html">Home</a>
+                    <a class="hide" href="../view/plp.html#all">Products</a>
+                </div>
+
+                <span>
+                    <div class="flex">
+                        <a class="hide" href="../view/login.html">Signin</a>
+                        <a class="hide" href="../view/signup.html">Register</a>
+                    </div>
+                    <a class="cart" href="../view/cart.html">
+                        <img class="cart-icon" src="static/images/cart.svg" alt="Shopping cart icon">
+                        <span class="cart-item">0 items</span>
+                    </a>
+                </span>
             </nav>
         </header>
         <main>
