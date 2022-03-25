@@ -1,6 +1,6 @@
 {
   "name": "code-exercise",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "This is a shopping cart coding exercise",
   "main": "index.js",
   "scripts": {
