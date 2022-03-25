@@ -4,7 +4,7 @@ import SidePanel from "../Reusables/SidePanel.component";
 import Tile from "../Reusables/Tile.component";
 
 import "../Scss/product.scss";
-import { get } from "../utils";
+import { get } from "../common";
 
 function Product() {
     const [pro, setPro] = useState([]);

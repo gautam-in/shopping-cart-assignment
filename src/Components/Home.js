@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import Slider from "../Reusables/Slider";
 import Category from "../Reusables/Category.component";
 import { setFilter } from "../store/action.js";
-import { get } from "../utils";
+import { get } from "../common";
 import "../Scss/home.scss";
 
 
