@@ -5,7 +5,6 @@ import { Button, Container, Grid } from "@mui/material";
 
 const Category = ({ categoryData }) => {
   const navigate = useNavigate();
-
   const categoryHandler = (id) => {
     localStorage.setItem("categoryId", id);
     navigate(`/products`, { state: { categoryId: id } });
@@ -35,7 +34,7 @@ const Category = ({ categoryData }) => {
                     <Button
                       variant="contained"
                       color="secondary"
-                      className="explore_btn"
+                      className="explore-btn"
                       onClick={() => categoryHandler(categoryData.id)}
                     >
                       Explore {categoryData.key}
@@ -53,7 +52,7 @@ const Category = ({ categoryData }) => {
                     <Button
                       variant="contained"
                       color="secondary"
-                      className="explore_btn"
+                      className="explore-btn"
                       onClick={() => categoryHandler(categoryData.id)}
                     >
                       Explore {categoryData.key}

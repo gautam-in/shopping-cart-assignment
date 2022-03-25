@@ -6,6 +6,7 @@ body {
 $light-grey: #eaeaea;
 $dark-grey: #666;
 $dark-pink: #c51162;
+
 .form {
   display: flex;
   flex-direction: column;
@@ -200,137 +201,16 @@ $dark-pink: #c51162;
       color: #fff;
       padding: 0;
     }
-
-    // select:focus > option:checked, option:hover {
-    //     background: #000 !important;
-    // }
   }
-
-  // select option:hover,
-  // select option:focus,
-  // select option:active {
-  //     background: linear-gradient(#000000, #000000);
-  //     background-color: #000000 !important; /* for IE */
-  //     color: #ffed00 !important;
-  // }
-
-  // select option:checked {
-  //     background: linear-gradient(#d6d6d6, #d6d6d6);
-  //     background-color: #d6d6d6 !important; /* for IE */
-  //     color: #000000 !important;
-  // }
-
-  // select:focus>option:checked,
-  // option:hover {
-  //     background: #000 !important;
-  // }
-
-  // select:active, select:hover {
-  //     outline: none
-  //   }
-
-  //   /* make it red instead (with with same width and style) */
-  //   select:active, select:hover {
-  //     outline-color: red
-  //   }
 }
 
-// .product-list {
-//     display: flex;
-//     flex-direction: column;
-//     flex-wrap: wrap;
-//     justify-content: center;
-
-//     .product-list-item {
-//         flex: 1;
-//     }
-// }
-
-// .main-section {
-//     display: flex;
-//     justify-content: flex-start;
-//     flex-wrap: wrap;
-//     background: #bbb;
-// }
-// .main-card-para {
-//     // text-align: center;
-//     margin: 16px;
-//     // width: 240px;
-// }
-
-// .card {
-//     width: 300px;
-//     height: 460px;
-//     margin: 16px;
-//     border: 1px solid #ccc;
-//     border-radius: 8px;
-//     background: #fff;
-//     box-sizing: border-box;
-//     align-items: center;
-//     overflow: hidden;
-
-// }
-
-// .card-footer {
-//     width: 100%;
-// }
-
 .card-footer-left {
-  // float: left;
   p {
     position: relative;
     top: 6px;
   }
 }
-
-// .card-footer-right {
-//     float: right;
-// }
-
-// .item-description {
-//     -webkit-line-clamp: 3;
-//     -webkit-box-orient: vertical;
-//     overflow: hidden;
-//     text-overflow: ellipsis;
-//     height: 208px;
-//     display: -webkit-box;
-//     padding: 0 15px;
-// }
-
-// .card {
-//     display: flex;
-//     flex-direction: column;
-//     width: 100%;
-
-//     &__wrap {
-
-//         &--outer {
-//             display: flex;
-//             flex-direction: row;
-//             flex-wrap: wrap;
-//             width: 100%;
-//         }
-
-//         &--inner {
-//             display: flex;
-//             flex-direction: row;
-//             width: 100%;
-
-// 						@media (min-width: 480px) {
-// 								width: 50%;
-// 						}
-
-// 						@media (min-width: 1024px) {
-// 								width: 33.33%;
-// 						}
-//         }
-//     }
-// }
-
-// .flexible {
-//     flex-grow: 1;
-// }
-
+ 
 .list-container {
   display: flex;
   -webkit-display: box;
@@ -372,8 +252,6 @@ $dark-pink: #c51162;
     &:hover {
       cursor: pointer;
 
-      // transform: scale(1.1);
-      // -webkit-transform: scale(1.1);
       .card-image {
         opacity: 1;
       }
@@ -390,12 +268,7 @@ $dark-pink: #c51162;
   }
 
   .card-title {
-    // padding: 1rem;
     font-weight: bold;
-    // font-size: 25px;
-    // line-height: 1.1em;
-    // color: #32325d;
-    // margin-bottom: 0.2em;
   }
 
   .card-intro {
@@ -403,15 +276,12 @@ $dark-pink: #c51162;
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
-    // height: 208px;
     display: -webkit-box;
-    // padding: 0 15px;
     margin-bottom: 0;
   }
 
   // Images
   .card-image {
-    // height: 200px;
     overflow: hidden;
     background-size: cover;
     background-position: center;

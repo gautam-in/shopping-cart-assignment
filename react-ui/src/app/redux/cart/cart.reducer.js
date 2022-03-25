@@ -8,22 +8,18 @@ const INITIAL_STATE = {
 }
 
 const cartReducer = (state = INITIAL_STATE, action) => {
-
     switch (action.type) {
-
         case cartTypes.HANDLE_CART:
             return {
                 ...state,
                 cartOpen: !state.cartOpen
             }
-
         case cartTypes.ADD_ITEM:
             return {
                 ...state,
                 count: state.count + 1,
                 cartItems: addItemToCart(state.cartItems, action.payload)
             }
-
         case cartTypes.REMOVE_ITEM:
             return {
                 ...state,
@@ -33,7 +29,6 @@ const cartReducer = (state = INITIAL_STATE, action) => {
         default:
             return state;
     }
-
 }
 
 export default cartReducer
