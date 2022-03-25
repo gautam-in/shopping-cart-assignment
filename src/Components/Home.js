@@ -9,37 +9,34 @@ import "../Scss/home.scss";
 
 
 function Home() {
-    const[banner,setBanner] = useState([]);
+    const [banner, setBanner] = useState([]);
     const [categories, setCategories] = useState([]);
     const dispatch = useDispatch();
-    const navigate =  useNavigate();
+    const navigate = useNavigate();
 
-    useEffect(()=>{
-        get("banners").then(({data})=>{
+    useEffect(() => {
+        get("banners").then(({ data }) => {
             setBanner(data);
         });
-        get("categories").then(({data})=>{
+        get("categories").then(({ data }) => {
             setCategories(data);
         });
-    },[])
+    }, [])
 
-        const goselCategory = (categoryId) => {
-            navigate("/products");
-            dispatch(setFilter(categoryId));
-        };
+    const selCategory = (categoryId) => { navigate("/products"); dispatch(setFilter(categoryId)); };
 
-    return(
+    return (
         <div className="home">
             <Slider sliderD={banner} />
-            {categories.filter((item)=>item.enabled)
-            .map((item)=>(
-                <Category
-                category={item}
-                key={item.key}
-                goselCategory={goselCategory}/>
-            ))}
+            {categories.filter((item) => item.enabled)
+                .map((item) => (
+                    <Category
+                        category={item}
+                        key={item.key}
+                        selectCategory={selCategory} />
+                ))}
         </div>
-    )  
+    )
 }
 
 export default Home;

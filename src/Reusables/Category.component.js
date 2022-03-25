@@ -1,8 +1,8 @@
 import { useCallback } from "react";
 import "../Scss/category.scss";
 
-function Category({ category, goselCategory }) {
-    const callProductCategory = useCallback((id) => () => {goselCategory(id);},[goselCategory])
+function Category({ category, selectCategory }) {
+    const callProductCategory = useCallback((id) => () => {selectCategory(id);},[selectCategory])
 
     return (
         <div className="category-container">

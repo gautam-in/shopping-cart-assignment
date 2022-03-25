@@ -1,12 +1,12 @@
 import get from "lodash/get";
-import { SET_FILTER,DECREAMENT,INCREAMENT,LOGIN,ADD_USER } from "./action";
+import { SET_FILTER, DECREAMENT, INCREAMENT, LOGIN, ADD_USER } from "./action";
 
 const appState = {
     filter: null,
-    item:0,
-    cartItems:[],
+    item: 0,
+    cartItems: [],
     isLogin: false,
-    user:[]
+    user: []
 }
 
 const reducer = (state = appState, action) => {
@@ -19,56 +19,67 @@ const reducer = (state = appState, action) => {
                 filter: payload,
             };
         case INCREAMENT:
-                if(state.cartItems.find((element) => element.id === get(payload,"id"))){
-                    return{
-                        ...state,
-                        item:state.item + 1,
-                        cartItems:state.cartItems.map(item=>{
-                            if(item.id === get(payload,"id")){
-                                return{...item,qty:item.qty+1};    
-                            }
-                            return item;
-                        })
-                    };
+            const present = state.cartItems.find((cart) => cart.id === get(payload, "id"));
+            if (present) {
+                const newList = state.cartItems.map((cart) => {
+                    if (cart.id === get(payload, "id")) {
+
+                        return {
+                            ...cart, qty: cart.qty + 1
+                        };
+
+                    }
+                    return cart;
+                });
+                return {
+                    ...state,
+                    cartItems: newList,
+                    item: state.item + 1
                 }
-                else{
-                    return{
-                ...state,
-                item: state.item + 1,
-                cartItems: state.cartItems.concat({ ...payload, qty: 1 })
-                    }
-                } 
-        case DECREAMENT:
-            const Items = state.cartItems.find((element)=>element.id === get(payload,"id"));
-            console.log(Items);
-            if(Items){
-                if(Items.qty>1){
-                    return {
-                        ...state,
-                        item:state.item-1,
-                        cartItems:state.cartItems.map(item=>{
-                            if(item.id === get(payload,"id")){
-                                return{...item,qty:item.qty-1};    
-                            }
-                            return item;
-                        })
-                    };
-                }else{
-                    return {
-                        ...state,
-                        item: state.item - 1,
-                        cartItems: state.cartItems.filter((ele) => ele.id !== get(payload, "id")),
-                      };
-                    }
-            }else{
-                console.log("Item cannot be identified !");
-                return { ...state };
             }
-        case LOGIN :
-            return {...state, isLogin: payload};
+            else {
+                return {
+                    ...state,
+                    cartItems: [...state.cartItems,{ ...action.payload, qty: 1 }],
+                    item: state.item + 1
+                }
+            }
+        case DECREAMENT: {
+            const qty = state.cartItems.find((cart) => {
+                if ((cart.id === get(payload, "id")) && (cart.qty === 1)) {
+                    return true;
+                }
+                return false;
+            })
+            if (qty) {
+                const newList = state.cartItems.filter((cart) => cart.id !== get(payload, "id"));
+                return {
+                    ...state,
+                    cartItems: newList,
+                    item: state.item - 1
+                }
+            }
+
+            else {
+                const newList = state.cartItems.map((cart) => {
+                    if (cart.id === get(payload, "id")) return { ...cart, qty: cart.qty - 1 }
+                    return cart;
+                });
+                return {
+                    ...state,
+                    cartItems: newList,
+                    item: state.item - 1
+                }
+            }
+        }
+
+        case LOGIN:
+            return { ...state, isLogin: payload };
         case ADD_USER:
-            return {...state,
-                    user: payload};
+            return {
+                ...state,
+                user: payload
+            };
         default:
             return appState;
     }
