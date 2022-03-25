@@ -1,0 +1,65 @@
+.input-float {
+  position: relative;
+  padding-top: 13px;
+
+  input {
+    border: 0;
+    border-bottom: 2px solid lightgrey;
+    outline: none;
+    min-width: 180px;
+    font-size: 16px;
+    transition: all 0.3s ease-out;
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -webkit-appearance: none;
+    border-radius: 0;
+    display: flex;
+    width: 100%;
+
+    &:focus {
+      border-bottom: 2px solid #55c4cd;
+    }
+
+    ::placeholder {
+      color: transparent;
+    }
+  }
+  label {
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-top: 13px;
+    transition: all 0.3s ease-out;
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+  }
+
+  input:required:invalid + label {
+    color: red;
+  }
+  input:focus:required:invalid {
+    border-bottom: 2px solid red;
+  }
+
+  input:required:invalid + label:before {
+    content: "*";
+  }
+
+  input:focus + label,
+  input:not(:placeholder-shown) + label {
+    font-size: 13px;
+    margin-top: -7px;
+    color: #55c4cd;
+  }
+  .error-message {
+    display: flex;
+    color: red;
+  }
+
+  &.error {
+    input {
+      border-bottom: 2px solid red;
+    }
+  }
+}
