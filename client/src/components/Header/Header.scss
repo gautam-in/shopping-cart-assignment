@@ -1,0 +1,64 @@
+@import "../../assets/utils.scss";
+
+.header {
+  background: white;
+  box-shadow: 0 2px 9px 0 rgba(0, 0, 0, 0.11);
+  padding: 0px 10px;
+
+  .content {
+    width: 80%;
+    display: flex;
+
+    margin: 0 auto;
+
+    .logo {
+      margin-right: 30px;
+      height: 78px;
+      width: 120px;
+    }
+    nav {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+    }
+  }
+
+  @include tab {
+    padding: 0px;
+    .content {
+      width: 100%;
+      .main-nav-container {
+        height: 100%;
+
+        .cart-button {
+          height: 100%;
+        }
+      }
+    }
+  }
+
+  @include sm {
+    padding: 0px;
+    .content {
+      width: 100%;
+
+      .logo {
+        height: 50px;
+        margin-right: 0px;
+      }
+      .main-nav-container {
+        justify-content: flex-end !important;
+      }
+      .auth-nav,
+      .main-nav {
+        display: none !important;
+      }
+    }
+  }
+}

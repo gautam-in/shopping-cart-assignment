@@ -1,0 +1,15 @@
+.category {
+  text-align: center;
+
+  .cat-img {
+    width: 40%;
+  }
+
+  .content {
+    width: 100%;
+  }
+
+  &:not(:last-child) {
+    box-shadow: 0px 15px 10px -15px #AAA;
+  }
+}

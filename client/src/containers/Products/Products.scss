@@ -1,0 +1,13 @@
+@import "../../assets/utils.scss";
+
+.products {
+  max-width: 80%;
+  .product-listing {
+    background-color: #fafafa;
+  }
+
+  @include tab {
+    max-width: 100%;
+    margin: 0;
+  }
+}

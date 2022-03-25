@@ -1,0 +1,45 @@
+@import "../../assets/utils.scss";
+
+.cart {
+  .cart-button {
+    .cart-icon {
+      height: 20px;
+    }
+  }
+
+  .mobile {
+    display: none;
+  }
+
+  .cart-modal {
+    height: 90vh;
+    width: 450px;
+    max-width: 450px;
+    background-color: #fafafa;
+    font-family: inherit;
+
+    .popover-arrow {
+      display: none;
+    }
+  }
+
+  .cart-modal {
+    @include tab {
+      display: none;
+    }
+  }
+
+  @include tab {
+    .mobile {
+      display: block;
+      position: fixed;
+      z-index: 10;
+      height: 100%;
+      left: 0;
+      right: 0;
+      background-color: #eee;
+      overflow: auto;
+      box-sizing: border-box;
+    }
+  }
+}
