@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import SliderComponent from "../Reusables/Slider.component";
+import Slider from "../Reusables/Slider";
 import Category from "../Reusables/Category.component";
 import { setFilter } from "../store/action.js";
 import { get } from "../utils";
@@ -30,7 +30,7 @@ function Home() {
 
     return(
         <div className="home">
-            <SliderComponent sliderD={banner} />
+            <Slider sliderD={banner} />
             {categories.filter((item)=>item.enabled)
             .map((item)=>(
                 <Category

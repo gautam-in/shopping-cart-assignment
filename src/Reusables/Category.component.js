@@ -2,26 +2,21 @@ import { useCallback } from "react";
 import "../Scss/category.scss";
 
 function Category({ category, goselCategory }) {
-    const selCategory = useCallback(
-        (id) => () => {
-            goselCategory(id);
-        },
-        [goselCategory]
-    )
+    const callProductCategory = useCallback((id) => () => {goselCategory(id);},[goselCategory])
 
     return (
-        <div className="post-component d-flex justify-content-between">
-            <div className="image-container">
+        <div className="category-container">
+            <div className="product-image">
                 <img
                     className="post-image"
                 src={category.imageUrl}
                 alt={category.name} />
 
             </div>
-            <div className="content">
-                <h2 className="heading">{category.name}</h2>
+            <div className="category-design">
+                <h1 className="heading">{category.name}</h1>
                 <p className="desc">{category.description}</p>
-                <button className="link-button" onClick={selCategory(category.id)}>
+                <button className="btn" onClick={callProductCategory(category.id)}>
                     Explore {category.key}
                 </button>
             </div>
