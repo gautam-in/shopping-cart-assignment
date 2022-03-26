@@ -1,0 +1,107 @@
+.slider {
+  margin: 1.5rem auto;
+  width: 80vw;
+  height: 12rem;
+  position: relative;
+
+  /* IN THE END */
+  overflow: hidden;
+}
+
+.slide {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 10rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* THIS creates the animation! */
+  transition: transform 1s;
+}
+
+.slide > img {
+  /* Only for images that have different size than slide */
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.slider__btn {
+  position: absolute;
+  top: 50%;
+  z-index: 10;
+
+  border: none;
+  background: rgba(218, 216, 216, 0.7);
+  font-family: inherit;
+  color: #333;
+  border-radius: 50%;
+  height: 4rem;
+  width: 4rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.slider__btn--left {
+  left: 8%;
+  transform: translate(-50%, -50%);
+}
+
+.slider__btn--right {
+  right: 8%;
+  transform: translate(50%, -50%);
+}
+
+.dots {
+  position: absolute;
+  bottom: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+}
+
+.dots__dot {
+  border: none;
+  background-color: #b9b9b9;
+  opacity: 0.7;
+  height: 0.5rem;
+  width: 0.5rem;
+  border-radius: 50%;
+  margin-right: 1.75rem;
+  cursor: pointer;
+  transition: all 0.5s;
+  z-index: 1;
+  box-shadow: 0 0.6rem 1.5rem rgba(0, 0, 0, 0.7);
+}
+
+.dots__dot:last-child {
+  margin: 0;
+}
+
+.dots__dot--active {
+  background-color: #888;
+  opacity: 1;
+}
+
+@media only screen and (max-width: 600px) {
+  .slider {
+    height: 6rem;
+  }
+  .slide {
+    height: 6rem;
+  }
+
+  .slider__btn {
+    height: 1.3rem;
+    width: 1.3rem;
+    font-size: 0.75rem;
+  }
+
+  .dots__dot {
+    height: 0.3rem;
+    width: 0.3rem;
+  }
+}
