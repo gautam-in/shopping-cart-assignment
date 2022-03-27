@@ -1,72 +1,67 @@
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import classes from "./Carousel.module.css";
 import axios from "axios";
+
 const Carousel = () => {
   const [carouselData, setCarouselData] = useState([]);
   const [activeSlide, setActiveSlide] = useState(1); //active slide is shown in the slider
   const [maxSlide, setMaxSlide] = useState(null); //total no of carousel slides obtained from API
+  const [touchStart, setTouchStart] = useState(0);
+  const [touchEnd, setTouchEnd] = useState(0);
 
   //get carousel Slides from the API and set carouselData state and maxSlide State
   const getCarouselData = async () => {
     const { data } = await axios.get("http://localhost:5000/banners");
-    console.log(data);
     setCarouselData(data);
     setMaxSlide(data.length);
   };
-
-  //Sets the current slide based on the right Button Click, right arrow press in keyboard
-  const rightClickHandler = useCallback(() => {
-    if (activeSlide === maxSlide) {
-      setActiveSlide(1);
-    } else {
-      setActiveSlide((prevState) => prevState + 1);
-    }
-  }, [activeSlide, maxSlide]);
-
-  //Sets the current slide based on the left Button Click, left arrow press in keyboard
-  const leftClickHandler = useCallback(() => {
-    if (activeSlide === 1) {
-      setActiveSlide(maxSlide);
-    } else {
-      setActiveSlide((prevState) => prevState - 1);
-    }
-  }, [activeSlide, maxSlide]);
-
-  const dotClickHandler = (e) => {
-    if (e.target.classList.contains("dots__dot")) {
-      console.log(e);
-      setActiveSlide(Number(e.target.dataset.slide));
-    }
-  };
-
-  //calls the above two functions(leftClickHandler, rightClickHandler) based on the key pressed
-  const keyDownHandler = useCallback(
-    (e) => {
-      if (e.key === "ArrowLeft") {
-        leftClickHandler();
-      }
-      if (e.key === "ArrowRight") {
-        rightClickHandler();
-      }
-    },
-    [leftClickHandler, rightClickHandler]
-  );
 
   //sets carousel Data on initial load after fetching from the API
   useEffect(() => {
     getCarouselData();
   }, []);
 
-  //attaches keydown handlers on component mount and cleans on component unmount
-  useEffect(() => {
-    document.addEventListener("keydown", keyDownHandler);
-    return () => {
-      document.removeEventListener("keydown", keyDownHandler);
-    };
-  }, [keyDownHandler]);
+  //Sets the current slide based on the right Button Click, right arrow press in keyboard
+  const rightClickHandler = () => {
+    setActiveSlide((prevState) => (prevState === maxSlide ? 1 : prevState + 1));
+  };
+
+  // //Sets the current slide based on the left Button Click, left arrow press in keyboard
+  const leftClickHandler = () => {
+    setActiveSlide((prevState) => (prevState === 1 ? maxSlide : prevState - 1));
+  };
+
+  const dotClickHandler = (e) => {
+    if (e.target.classList.contains("dots__dot")) {
+      setActiveSlide(Number(e.target.dataset.slide));
+    }
+  };
+
+  const handleTouchStart = (e) => {
+    setTouchStart(e.targetTouches[0].clientX);
+    setTouchEnd(0);
+  };
+
+  const handleTouchMove = (e) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchEnd = () => {
+    if (touchEnd && touchStart - touchEnd > 15) {
+      setActiveSlide((prevState) =>
+        prevState === maxSlide ? 1 : prevState + 1
+      );
+    }
+
+    if (touchEnd && touchStart - touchEnd < -15) {
+      setActiveSlide((prevState) =>
+        prevState === 1 ? maxSlide : prevState - 1
+      );
+    }
+  };
 
   return (
-    <div className={classes["slider"]}>
+    <section className={classes["slider"]}>
       {carouselData &&
         carouselData.map((banner, index) => {
           return (
@@ -76,6 +71,9 @@ const Carousel = () => {
               style={{
                 transform: `translateX(${100 * (banner.order - activeSlide)}%)`,
               }}
+              onTouchStart={handleTouchStart}
+              onTouchMove={handleTouchMove}
+              onTouchEnd={handleTouchEnd}
             >
               <img src={banner.bannerImageUrl} alt={banner.bannerImageAlt} />
             </div>
@@ -95,17 +93,19 @@ const Carousel = () => {
         &rarr;
       </button>
       <div onClick={dotClickHandler} className={classes["dots"]}>
-        {carouselData.map((banner) => {
+        {carouselData.map((banner, i) => {
           return (
             <div
-              className={`${classes["dots__dot"]} dots__dot`}
+              className={`${classes["dots__dot"]} dots__dot ${
+                banner.order === activeSlide ? classes["active"] : ""
+              }`}
               data-slide={banner.order}
               key={banner.id}
             ></div>
           );
         })}
       </div>
-    </div>
+    </section>
   );
 };
 

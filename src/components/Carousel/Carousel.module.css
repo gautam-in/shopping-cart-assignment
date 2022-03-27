@@ -1,8 +1,9 @@
 .slider {
   margin: 1.5rem auto;
-  width: 80vw;
-  height: 12rem;
+  width: 85vw;
+  height: 16rem;
   position: relative;
+  box-shadow: 0px 30px 20px -30px #a19f9f;
 
   /* IN THE END */
   overflow: hidden;
@@ -12,7 +13,7 @@
   position: absolute;
   top: 0;
   width: 100%;
-  height: 10rem;
+  height: 16rem;
 
   display: flex;
   align-items: center;
@@ -26,7 +27,7 @@
   /* Only for images that have different size than slide */
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  /* object-fit: contain; */
 }
 
 .slider__btn {
@@ -81,23 +82,23 @@
   margin: 0;
 }
 
-.dots__dot--active {
+.active {
   background-color: #888;
   opacity: 1;
 }
 
 @media only screen and (max-width: 600px) {
   .slider {
-    height: 6rem;
+    height: 9rem;
   }
   .slide {
-    height: 6rem;
+    height: 9rem;
   }
 
   .slider__btn {
-    height: 1.3rem;
-    width: 1.3rem;
-    font-size: 0.75rem;
+    height: 1.5rem;
+    width: 1.5rem;
+    font-size: 0.8rem;
   }
 
   .dots__dot {
