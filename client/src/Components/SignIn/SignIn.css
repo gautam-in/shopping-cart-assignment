@@ -1,0 +1,20 @@
+.form-control {
+  border: 0 !important;
+  border-bottom: 2px solid #ced4da !important;
+  border-radius: 0 !important;
+}
+.form-control:focus {
+  border-color: #ced4da !important;
+  border-bottom-color: #56d7da !important;
+  box-shadow: none !important;
+}
+.input:focus ~ label {
+  color: #56d7da;
+}
+.form-floating > .form-control:focus {
+  padding-top: 2.625rem !important;
+  padding-bottom: 1.625rem !important;
+}
+label {
+  color: #6e676a !important;
+}
