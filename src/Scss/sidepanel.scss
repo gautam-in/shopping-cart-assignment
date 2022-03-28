@@ -1,0 +1,43 @@
+.sidepanel-category{
+    display: flex;
+    flex-basis:25%;
+    flex-grow:0;
+    flex-shrink: 0;
+    background: #f3f3f3;
+
+    .side-panel-list{
+        list-style: none;
+        margin: 0px;
+        padding:0px;
+
+        li{
+            font-size: 14pt;
+            cursor: pointer;
+            border-bottom: 2px solid #909090;
+            color:#909090;
+            padding : 9px 28px;
+        }
+    }
+    .side-panel-list #active{
+        color: red;
+    }
+
+    .side-panel-list #inactive{
+        color:black;
+    }
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+    .sidepanel-category{
+        justify-content: center;
+    .side-panel-list{
+   
+    li:last-child{
+            border-bottom:0;
+        }
+    
+
+  
+}
+}
+}

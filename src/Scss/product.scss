@@ -1,0 +1,32 @@
+.pro-container{
+    display: flex;
+    align-content: space-between;
+    width: 75vw;
+    margin: 0 auto;
+
+    .pro-list{
+        display: flex;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        padding:0px;
+        margin:0px;
+        list-style: none;
+    }
+
+}
+
+
+
+@media only screen and (min-device-width: 481px) and (max-device-width: 1024px) {
+    .pro-container{
+        width:100%;
+    }
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px){
+    .pro-container{
+        display:flex;
+        flex-direction: column;
+    }
+
+    
+}

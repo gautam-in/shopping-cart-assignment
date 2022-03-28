@@ -1,0 +1,133 @@
+*{
+    box-sizing: border-box;
+    margin:0;
+}
+
+.slider-container{
+    height: 45vh;
+    width:75vw;
+    position:relative;
+    margin: auto;
+    overflow: hidden;
+    box-shadow: 0 25px 31px -20px rgba(0, 0, 0, 0.22);
+}
+
+.active{
+    display: inline-block;
+}
+
+.inactive{
+    display: none;
+}
+
+.slides{
+    height:50vh;
+    width:100%;
+    position: relative;
+}
+
+.slider-image{
+    width:75vw;
+    position: absolute;
+    object-fit: cover;
+}
+
+.previous,.next{
+    cursor: pointer;
+    z-index: 100;
+    position: absolute;
+    width: auto;
+    padding: 1rem;
+    margin-top: -15rem;
+    margin-left: -1rem;
+    margin-right: -1rem;
+    font-size: 32px;
+    font-weight: bold;
+    border-radius: 0px 5px 5px 0px;
+}
+
+.previous:hover,.next:hover{
+    color:white;
+    background-color: rgba(0,0,0,0.6);
+    transition: all 0.5s ease-in;
+
+}
+
+.next{
+    right:0;
+    border-radius: 5px 0px 0px 5px;
+}
+
+.slider-dots{
+    width:100%;
+    // height:100%;
+    position: absolute;
+    display: flex;
+    top:89%;
+    justify-content: center;
+}
+
+.dot{
+    cursor: pointer;
+    height: .7rem;
+    width: .7rem;
+    margin: 0px 9px;
+    background-color: gray;
+    border-radius: 50%;
+    line-height: 1;
+    opacity: 0.75;
+}
+
+.active-dot,.dot:hover{
+    background-color:black;
+
+}
+
+@media (min-width: 320px) and (max-width: 1024px) {
+    .slider-container{
+        width:100vw;
+    }
+    .slider-image{
+    width: 98vw;
+    position: absolute;
+    object-fit: cover;
+    }
+
+    .previous,.next{
+        margin-top: -13rem;
+        margin-left: -1rem;
+        margin-right: -1rem;
+    }
+    
+  }
+
+  @media (min-width: 480px) and (max-width: 720px) {
+    .slider-container{
+        height: 33vh;
+    }
+    .dot{
+        cursor: pointer;
+        height: .5em;
+        width: .5rem;
+    }
+    .previous,.next{
+    margin-top: -14.2rem;
+    }
+  }  
+
+@media (min-width: 320px) and (max-width: 480px) {
+    .previous{
+      display: none !important;
+    }
+    .next {
+      display: none !important;
+    }
+    .dot{
+        height: .2rem;
+        width: .2rem;
+    }
+    .slider-container{
+        height:24vh;
+    }
+  }
+  

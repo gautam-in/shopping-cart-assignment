@@ -1,0 +1,30 @@
+.lo-container{
+    display:flex;
+    margin-top:5vh;
+
+    .lo-text{
+        display: flex;
+        width: 49vw;
+        justify-content: flex-end;
+        margin-top:5vh;
+        padding:3vh;
+    }
+
+    .input-box{
+        margin-left:5vw;
+        margin-top:0vh;
+        position:relative;
+    }
+}
+
+@media (max-width:425px){
+    .lo-container{
+        display:flex;
+        flex-direction: column;
+    }
+
+    .lo-text{
+        display: flex;
+        width: 80vw;
+    }
+}
