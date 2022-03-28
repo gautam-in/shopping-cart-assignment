@@ -3,8 +3,8 @@ import "../Scss/input.scss";
 
 function Input({id,type,placeholder,text,required,minlength=1}){
     return(
-        <div className='input-container'>
-            <input className='input'
+        <div className='form-group'>
+            <input className='form-control '
             id={id}
             type={type}
             placeholder={placeholder}

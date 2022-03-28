@@ -1,55 +1,61 @@
-.input-container {
-    position: relative;
-  
-    .input {
-      display: block;
-      border-top: none;
-      border-left: none;
-      border-right: none;
-      width: 19vw;
-      outline: none;
-      margin-top: 2vh;
-      margin-bottom: 3vh;
-      padding-top: 2vh;
-      padding-bottom: 1vh;
-      font-size: medium;
-      margin-top: 5vh;
-    }
-    .input + .placeholder {
-      visibility: hidden;
-      position: absolute;
-    }
-  
-    .input:focus + .placeholder {
+.form-group{
+  position :relative;
+
+  .form-control{
+    box-shadow: none;
+    display: block;
+    border-left: none;
+    border-top: none;
+    border-right:none;
+    width: 19vw;
+    outline: none;
+    border-radius:0px;
+    border-bottom:1px solid black;
+    margin-top: 3vh;
+    padding-top: 2vh;
+    line-height: 1.5;
+    margin-bottom:3vh;
+    text-decoration: none;
+  }
+
+  .form-control + .placeholder {
+          visibility: hidden;
+          position: absolute;
+        }
+  .form-control:focus{
+    border-bottom:1px solid black;
+    outline: none;
+  }      
+
+  .form-control:focus + .placeholder{
       visibility: visible;
-      animation: jump 0.5s;
-      animation-fill-mode: forwards;
+      stroke-dasharray: 124px;
+      stroke-dashoffset: 124px;
+      animation: top-move .3s ease forwards;
       position: absolute;
       color: rgb(34, 192, 192);
       background-color: white;
+    
+  }
+
+  @keyframes top-move  {
+    from{
+      font-size: 2vh;
+      top:2vh;
+      left:11px;
     }
-  
-    .input:focus {
-      border-bottom: 1px solid rgb(34, 192, 192);
-    }
-  
-    @keyframes jump {
-      from {
-        font-size: 0;
-        top: 2vh;
-      }
-      to {
-        font-size: medium;
-        top: -2vh;
-      }
+    to{
+      font-size:small;
+      top:-2vh;
+      left:11px;
     }
   }
-  
-  @media (max-width: 425px) {
-    .input-container {
-      .input {
-        width: 80vw;
+}
+
+@media (max-width: 600px) {
+      .form-group {
+        .form-control {
+          width: 80vw;
+        }
       }
     }
-  }
-  

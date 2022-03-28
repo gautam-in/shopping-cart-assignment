@@ -15,15 +15,28 @@
         margin-top: 0vh;
         position: relative;
       }
+
+     .msg{
+         font-size: smaller;
+         position: absolute;
+         color:red;
+         margin-bottom:2px;
+         padding-bottom: 2px;
+         width: fit-content;
+     } 
 }
 
 @media (max-width:600px){
+
     .re-container{
         display:flex;
         flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
 
     .re-text{
+        justify-content: center;
         display: flex;
         width: 80vw;
     }
