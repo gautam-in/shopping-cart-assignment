@@ -19,11 +19,11 @@ function SidePanel({ product }) {
     return (
         
         <aside className="sidepanel-category">
-            <ul>
+            <ul className="side-panel-list">
                 {product.length ? product.map((pro) => pro.enabled && (
                     <li
                         key={pro.id}
-                        style={{ color: pro.id !== filter ? "black" : "red" }}
+                        id = {pro.id !== filter ? "inactive" : "active"}
                         onClick={handlePanel(pro.id)}
                     >
                         {pro.name}
