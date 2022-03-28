@@ -33,20 +33,6 @@
   font-weight: 600;
 }
 
-.description-container > button {
-  align-self: center;
-  padding: 7px;
-  color: #fff;
-  background-color: #d42559;
-  border: none;
-  border-radius: 3px;
-  transition: all 0.5s;
-}
-
-.description-container > button:hover {
-  background-color: #d83b6a;
-}
-
 @media only screen and (max-width: 600px) {
   .img-container {
     width: 50%;

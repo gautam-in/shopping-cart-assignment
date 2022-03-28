@@ -1,0 +1,13 @@
+.btn-primary {
+  align-self: center;
+  padding: 7px;
+  color: #fff;
+  background-color: #d42559;
+  border: none;
+  border-radius: 3px;
+  transition: all 0.5s;
+}
+
+.btn-primary:hover {
+  background-color: #d83b6a;
+}

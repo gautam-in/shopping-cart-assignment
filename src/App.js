@@ -1,18 +1,18 @@
 import { Route } from "react-router-dom";
 import { Switch } from "react-router-dom";
 import "./App.css";
-import Home from "./pages/Home";
-import Products from "./pages/Products";
+import HomePage from "./pages/HomePage";
+import ProductsPage from "./pages/ProductsPage";
 
 function App() {
   return (
     <div className="sabka-bazaar">
       <Switch>
         <Route path="/products">
-          <Products />
+          <ProductsPage />
         </Route>
         <Route path="/">
-          <Home />
+          <HomePage />
         </Route>
       </Switch>
     </div>

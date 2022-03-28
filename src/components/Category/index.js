@@ -1,4 +1,5 @@
 import React from "react";
+import ButtonPrimary from "../UI/ButtonPrimary";
 
 import classes from "./Category.module.css";
 
@@ -15,7 +16,7 @@ const Category = ({ categoryData }) => {
       <div className={classes["description-container"]}>
         <h3>{categoryData.name}</h3>
         <p>{categoryData.description}</p>
-        <button>{`Explore ${categoryData.name}`}</button>
+        <ButtonPrimary>Explore {categoryData.name}</ButtonPrimary>
       </div>
     </div>
   );
