@@ -4,11 +4,12 @@ import { Link } from 'react-router-dom';
 import "../Scss/cart.scss";
 import { decreament, increament } from "../store/action.js";
 
-function Cart({ closeCart }) {
+function Cart({ cartVisible }) {
 
     const dispatch = useDispatch();
 
     const { item, cartItems } = useSelector((state) => state || {});
+
 
     const handleDecreament = useCallback((item) => () => {
         dispatch(decreament(item));
@@ -20,7 +21,11 @@ function Cart({ closeCart }) {
         console.log(item);
     },[dispatch]);
 
-    const onClose = useCallback(() => { closeCart(false); }, [closeCart])
+    const handlePrice = cartItems.reduce((sum,cur)=>{
+            return sum + cur.price*cur.qty;
+        },0);
+
+    const cartDisplay = useCallback(() => { cartVisible(false); }, [cartVisible])
     return (
         <div>
             <div className='cart-page'>
@@ -28,7 +33,7 @@ function Cart({ closeCart }) {
                     <h1 className='heading'>
                         My Cart {item > 0 ? `(${item} Item)` : null}
                     </h1>
-                    <button className="btn-close" onClick={onClose} />
+                    <button className="btn-close" onClick={cartDisplay} />
                 </div>
                 <ul className="cart-list">
                     {cartItems.length > 0 ?
@@ -61,16 +66,14 @@ function Cart({ closeCart }) {
                 <div className='checkout'>
                     <p className='text-style-f'>Promo code can be applied on the checkout page.</p>
                     {item > 0 ? (
-                         <button className='checkout-button' onClick={onClose}>
+                         <button className='checkout-button' onClick={cartDisplay}>
                             <span className="checkout-text">Proceed to checkout</span>
                             <span className='checkout-price'>
-                                {`  Rs. `}{cartItems.reduce((sum,cur)=>{
-                                    return sum + cur.price*cur.qty;
-                                },0)}{ `    > `}
+                                {`  Rs. `}{handlePrice}
                             </span>
                          </button>  
                     ):(
-                    <Link to="/products"><button className="btn-shopping" onClick={onClose}>Start Shopping</button></Link>)
+                    <Link to="/products"><button className="btn-shopping" onClick={cartDisplay}>Start Shopping</button></Link>)
                         }
                 </div>
                 

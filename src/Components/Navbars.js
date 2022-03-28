@@ -67,7 +67,7 @@ function Navbars() {
                         className="cart-main-cont"
                         style={{ display: cartFun ? "block" : "none" }}
                     >
-                        <Cart closeCart={toggleCart} />
+                        <Cart cartVisible={toggleCart} />
                     </div>
                 </section>
             </section>
