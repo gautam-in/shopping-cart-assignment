@@ -1,0 +1,21 @@
+.button-cont {
+    display: flex;
+    justify-content: center;
+    .button-prm {
+      background-color: #e83583;
+      padding: 1vh;
+      min-width: 19vw;
+      color: #fff;
+      border: none;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .button-cont {
+      .button-prm {
+        font-size: medium;
+        min-width: 19vw;
+      }
+    }
+  }
+  
