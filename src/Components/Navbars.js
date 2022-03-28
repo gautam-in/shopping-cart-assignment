@@ -1,56 +1,53 @@
 import React from "react";
 import { useCallback, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { setFilter } from "../store/action.js";
 import Cart from "./Cart";
 import "../Scss/navbar.scss";
 
 
-function Navbars(props) {
+function Navbars() {
 
-    const [openCart,setOpenCart] = useState(false);
+    const [cartFun,setCartFun] = useState(false);
     const{item} = useSelector((state)=>state);
-    const navigate = useNavigate();
     const dispatch = useDispatch();
-    const handleRedirect =  useCallback(
-        (route) => () =>{
-            navigate(route)
+    const handleFilter =  useCallback(
+        () => {
             dispatch(setFilter(null))
-        }
+        },[dispatch]
     )
-    const toggleCart = useCallback(()=>setOpenCart(!openCart),[openCart]);
+    const toggleCart = useCallback(()=>setCartFun(!cartFun),[cartFun]);
     return (
 
         <header>
-            <div className="navigation" role="navigation">
-                <div>
+            <section className="navigation" role="navigation">
+                <aside>
                     <img className="logo-img" src="static/images/logo.png" alt="logo" />
-                </div>
+                </aside>
                 <nav>
                     <ul className="list-n">
                         <li>
-                            <button onClick={handleRedirect("/")}>Home</button>
+                            <Link to="/" className="link-des" onClick={handleFilter}>Home</Link>
                         </li>
                         <li>
-                            <button onClick={handleRedirect("/products")}>Products</button>
+                            <Link to="/products" className="link-des"  onClick={handleFilter}>Products</Link>
                         </li>
                     </ul>
                 </nav>
-                <div className="cart-login-container">
+                <section className="cart-login-container">
                     <nav>
                         <ul className="list-h">
                             <li className="link">
-                                <button onClick={handleRedirect("/login")}>SignIn</button>
+                            <Link to="/login" className="link-des" onClick={handleFilter}>SignIn</Link>
                             </li>
                             <li className="link">
-                                <button onClick={handleRedirect("/register")}>Register</button>
+                            <Link to="/register" className="link-des"  onClick={handleFilter}>Register</Link>
                             </li>
                         </ul>
                     </nav>
 
                     <button
-                        role={"button"}
                         tabIndex="0"
                         className="ct-nav"
                         onClick={toggleCart}
@@ -68,12 +65,12 @@ function Navbars(props) {
                     <div
                         id="desktop-cart"
                         className="cart-main-cont"
-                        style={{ display: openCart ? "block" : "none" }}
+                        style={{ display: cartFun ? "block" : "none" }}
                     >
                         <Cart closeCart={toggleCart} />
                     </div>
-                </div>
-            </div>
+                </section>
+            </section>
         </header>
 
     )

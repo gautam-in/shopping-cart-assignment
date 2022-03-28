@@ -33,8 +33,9 @@ header{
     .list-n {
       padding: 0px;
       padding-left: revert;
+      margin-top: 5vh;
       li {
-        padding: 0px 5px;
+        padding: 0px 13px;
         margin: 0px;
         display: inline-block;
       }
@@ -45,6 +46,7 @@ header{
       }
     }
     .list-h {
+      font-size: 13px;
       padding: 0px;
       li {
         display: inline-block;
@@ -57,6 +59,11 @@ header{
         font-size: 14px;
       }
     }
+  }
+
+  .link-des{
+    text-decoration:none;
+    color: black;
   }
  
 }
