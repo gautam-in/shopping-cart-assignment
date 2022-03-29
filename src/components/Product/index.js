@@ -2,8 +2,13 @@ import React, { useEffect, useState } from "react";
 import classes from "./Product.module.css";
 
 import ButtonPrimary from "../UI/ButtonPrimary";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../../actions/addToCart";
+
 const Product = ({ productData }) => {
   const [matches, setMatches] = useState(false);
+
+  const dispatch = useDispatch();
 
   useEffect(() => {
     const media = window.matchMedia("(min-width: 769px)");
@@ -21,6 +26,10 @@ const Product = ({ productData }) => {
     return () => media.removeListener(handler);
   }, [matches]);
 
+  const addToCartHandler = () => {
+    dispatch(addToCart(productData.id));
+  };
+
   return (
     <div className={classes["product"]}>
       <h3>{productData.name}</h3>
@@ -31,11 +40,13 @@ const Product = ({ productData }) => {
       {matches ? (
         <div className={classes["price-container"]}>
           <p>MRP Rs. {productData.price}</p>
-          <ButtonPrimary>Buy Now</ButtonPrimary>
+          <ButtonPrimary onClick={addToCartHandler}>Buy Now</ButtonPrimary>
         </div>
       ) : (
         <div className={classes["price-container"]}>
-          <ButtonPrimary>Buy Now @ Rs. {productData.price}</ButtonPrimary>
+          <ButtonPrimary onClick={addToCartHandler}>
+            Buy Now @ Rs. {productData.price}
+          </ButtonPrimary>
         </div>
       )}
     </div>
