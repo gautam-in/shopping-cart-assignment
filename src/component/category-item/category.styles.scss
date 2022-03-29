@@ -8,16 +8,42 @@
     align-items: center;
     margin: 0px 50px;
     .button-container {
-      margin-top: 15px;
+      margin: 15px 0px;
+      button {
+        margin: 0px 10px;
+      }
     }
   }
-  .image-container {
-    img {
-      height: 250px;
-    }
+  img.image-container {
+    height: 250px;
+    //   width: 60%;
   }
 }
 .category-item-container.reverse {
   flex-direction: row-reverse;
   justify-content: space-between;
+}
+
+@media (max-width: "1100px") {
+  .category-item-container {
+    .desciption-box {
+      margin: unset;
+    }
+    img.image-container {
+      height: unset;
+      max-width: 60%;
+    }
+  }
+}
+
+@media (max-width: "720px") {
+  .category-item-container {
+    .desciption-box {
+      margin: unset;
+    }
+    img.image-container {
+      height: unset;
+      max-width: 50%;
+    }
+  }
 }
