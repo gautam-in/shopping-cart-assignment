@@ -7,8 +7,8 @@ import { IoIosArrowDown } from 'react-icons/io';
 
 /**
  * @name Accordion
- * @param {accordianData} param0
- * @param {changeSelectedItem} param1
+ * @param {array} accordionData This contains menu items in array of object format
+ * @param {func} changeSelectedItem It filters Products Page data wrt applied filter
  * @returns JSX for accordion
  */
 const Accordion = ({ accordionData, changeSelectedItem }) => {
@@ -20,14 +20,15 @@ const Accordion = ({ accordionData, changeSelectedItem }) => {
   // accordion menu item builder
   useEffect(() => {
     let data = JSON.parse(JSON.stringify(accordionData));
-    let index = 0;
-    accordionData.forEach((item, i) => {
+    accordionData.every((item) => {
       if (item.active) {
         setActiveItem(item.name);
-        index = i;
+        return false;
+      } else {
+        setActiveItem('Filter');
+        return true;
       }
     });
-    data.splice(index, 1);
     setMenuItems(data);
   }, [accordionData]);
 

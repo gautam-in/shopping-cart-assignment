@@ -76,13 +76,33 @@ const Products = ({ buyButtonHandler }) => {
 
   /**
    * @name changeSelectedItem
-   * @param {string} id
-   * @param {string} category
-   * @desc filter and sets product page data to state based on applied filters
+   * @param {string} id It represent id of selected category
+   * @param {string} category It represent name of selected category
+   * @desc It's a handler that gets call on change of selected filter item
    */
   const changeSelectedItem = (id, category) => {
     const data = JSON.parse(JSON.stringify(accordionData));
-    data.forEach((item) => (item.id === id ? (item.active = true) : (item.active = false)));
+    filterAndSetProductPageDataToState(category);
+
+    data.forEach((item) => {
+      if (item.id === id) {
+        if (item.active) {
+          setFilteredProductPageData(productPageData);
+        }
+        item.active = !item.active;
+      } else {
+        item.active = false;
+      }
+    });
+    setAccordionData(data);
+  };
+
+  /**
+   * @name filterAndSetProductPageDataToState
+   * @param {string} category It contains name of selected category
+   * @description It filter Product Page data based on selected Filter
+   */
+  const filterAndSetProductPageDataToState = (category) => {
     let filteredData = [];
     switch (category) {
       case FRUITS_N_VEG:
@@ -110,7 +130,6 @@ const Products = ({ buyButtonHandler }) => {
         break;
     }
     setFilteredProductPageData(filteredData);
-    setAccordionData(data);
   };
 
   return (

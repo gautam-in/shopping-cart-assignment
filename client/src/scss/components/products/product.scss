@@ -37,7 +37,7 @@
   }
 
   @include breakpoint-up(61.25rem) {
-    flex: 1 1 23%;
+    flex: 0 1 23%;
 
     &__body {
       display: block;
@@ -69,7 +69,7 @@
     margin: 0;
     padding: 0.4rem;
     background-color: #e0e0e0;
-    font-size: 0.8rem;
+    font-size: 0.74rem;
     overflow: hidden;
 
     @include breakpoint-up(37.5rem) {
