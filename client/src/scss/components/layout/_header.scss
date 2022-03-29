@@ -1,0 +1,149 @@
+.header {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 1rem;
+  background-color: $white;
+  box-shadow: 0 0.5px 1px 1.15px rgba($black, 0.1);
+
+  @include container;
+
+  &__left-section {
+    &__nav-links {
+      ul {
+        display: flex;
+        gap: 2rem;
+        align-items: center;
+        margin: 0rem;
+        padding-left: 0;
+      }
+
+      &__logo {
+        img {
+          width: 5.5em;
+          height: 2.5em;
+          @include breakpoint-up(43rem) {
+            width: 9rem;
+            height: 3.8rem;
+          }
+        }
+      }
+    }
+  }
+
+  &__right-section {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+
+    @include breakpoint-up(43rem) {
+      display: block;
+    }
+
+    &__nav-links {
+      ul {
+        display: flex;
+        gap: 0 2rem;
+        padding-left: 0;
+      }
+    }
+
+    &__cart {
+      padding: 0.55rem;
+      background-color: $veryLightGray;
+      border: none;
+      cursor: pointer;
+
+      @include breakpoint-up(43rem) {
+        padding: 0.8rem 0.3rem;
+      }
+
+      &:hover {
+        background-color: $pink;
+
+        .header__right-section__cart__icon {
+          color: $black;
+        }
+      }
+
+      &__icon {
+        margin-left: 0.5rem;
+        color: $pink;
+      }
+
+      span {
+        padding-left: 0.9rem;
+
+        @include breakpoint-up(43rem) {
+          padding-left: 1rem;
+        }
+      }
+    }
+  }
+
+  // mobile menu style
+  &__hamburger {
+    background-color: $white;
+    border: none;
+    cursor: pointer;
+
+    > span {
+      background-color: $black;
+      display: block;
+      width: 28.5px;
+      height: 3px;
+      transform-origin: 3px 1px;
+      transition: all 250ms ease-in-out;
+
+      &:not(:last-child) {
+        margin-bottom: 5px;
+      }
+    }
+  }
+
+  &.open {
+    .header__hamburger {
+      > span:first-child {
+        transform: rotate(45deg);
+      }
+
+      > span:nth-child(2) {
+        opacity: 0;
+      }
+
+      > span:last-child {
+        transform: rotate(-45deg);
+      }
+    }
+  }
+
+  .overlay {
+    position: fixed;
+    top: 3.75em;
+    left: 0px;
+    bottom: 0px;
+    right: 0px;
+    background-color: $black;
+    opacity: 0.6;
+    z-index: 1;
+
+    @include container;
+  }
+
+  &__menu {
+    margin: 3rem auto;
+
+    a {
+      display: block;
+      color: white;
+      font-size: 1.375em;
+      margin-bottom: 0.813em;
+
+      &:hover {
+        color: $pink;
+        opacity: 1;
+      }
+    }
+  }
+}

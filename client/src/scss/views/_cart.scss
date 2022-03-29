@@ -1,0 +1,124 @@
+.cart {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  justify-content: flex-end;
+  background-color: rgba($black, 0.5);
+  z-index: 1;
+
+  @include breakpoint-up(50rem) {
+    align-items: flex-end;
+
+    @include container;
+  }
+
+  &__content {
+    width: 100%;
+    @include breakpoint-up(50rem) {
+      width: 23.125rem;
+    }
+  }
+
+  &__header,
+  &__footer {
+    padding: 10px;
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: $white;
+    background-color: $black;
+
+    &__title {
+      margin: 0;
+
+      :last-child {
+        font-size: 0.9rem;
+        font-weight: 400;
+      }
+    }
+
+    &__icon {
+      cursor: pointer;
+    }
+  }
+
+  &__body {
+    height: 30rem;
+    padding: 9px;
+    background-color: $veryLightGray;
+    border: 1px 0 solid $white;
+    overflow-y: auto;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    &__lowest-price-banner {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      padding: 0.5rem;
+      background-color: $white;
+
+      img {
+        width: 85px;
+      }
+
+      span {
+        font-size: 0.75rem;
+      }
+    }
+  }
+
+  &__footer {
+    text-align: center;
+    background-color: $white;
+  }
+
+  &__promocode {
+    margin: 0 0 0.4rem;
+    font-size: 0.75rem;
+  }
+
+  &__button {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+
+    &__total-price {
+      span {
+        font-size: 0.83333rem;
+      }
+
+      &__icon {
+        padding-top: 2.5px;
+      }
+    }
+  }
+}
+
+.empty-cart {
+  &__body {
+    background-color: $white;
+    text-align: center;
+
+    h2 {
+      margin-top: 50%;
+      font-size: 1rem;
+    }
+
+    p {
+      margin: 0.5rem 0 0;
+      font-size: 0.85rem;
+    }
+  }
+}

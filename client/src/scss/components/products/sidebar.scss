@@ -1,0 +1,21 @@
+.sidebar {
+  display: none;
+
+  @include breakpoint-up(43rem) {
+    display: block;
+    min-width: 10rem;
+    min-height: calc(100vh - 9rem);
+    background-color: $veryLightGray;
+  }
+
+  &__item {
+    margin: 0;
+    padding: 1rem;
+    border-bottom: 1px solid $darkGray;
+    cursor: pointer;
+  }
+}
+
+.sidebar .active {
+  background-color: $pink;
+}

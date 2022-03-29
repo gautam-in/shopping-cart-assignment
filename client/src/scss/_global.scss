@@ -1,0 +1,148 @@
+html {
+  font-size: 100%;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  position: relative;
+  min-height: calc(100vh - 3rem);
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+// img
+img {
+  width: 100%;
+  max-width: 100%;
+}
+
+// link style
+a,
+a:visited,
+a:hover {
+  text-decoration: none;
+}
+
+a {
+  color: $black;
+  cursor: pointer;
+
+  &:hover {
+    color: $pink;
+  }
+}
+
+//list style
+ul {
+  list-style: none;
+}
+
+// input box styling
+input {
+  display: block;
+  padding: 0.7rem 0;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid $black;
+
+  &:focus::placeholder {
+    @include breakpoint-up(43rem) {
+      color: transparent;
+    }
+  }
+
+  &:not(:placeholder-shown) + label {
+    @include breakpoint-up(43rem) {
+      position: absolute;
+      transform: translateY(-5.2rem);
+      display: block;
+    }
+  }
+
+  &:focus + label {
+    @include breakpoint-up(43rem) {
+      position: absolute;
+      transform: translateY(-5.2rem);
+      display: block;
+    }
+  }
+}
+
+// button
+button {
+  padding: 0.7rem;
+  color: $white;
+  background-color: $pink;
+  border: none;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.9;
+  }
+}
+
+// headings
+h1,
+h2,
+h3 {
+  margin: 0;
+}
+
+h1 {
+  font-size: 1.8rem;
+
+  @include breakpoint-up(43em) {
+    font-size: 2rem;
+  }
+}
+
+h2 {
+  font-size: 0.85rem;
+
+  @include breakpoint-up(43em) {
+    font-size: 1.2rem;
+  }
+}
+
+h3 {
+  font-size: 0.66rem;
+
+  @include breakpoint-up(56.25em) {
+    font-size: 0.75rem;
+  }
+}
+
+p {
+  font-size: 0.75rem;
+  color: $black;
+
+  @include breakpoint-up(43em) {
+    font-size: 1rem;
+  }
+}
+
+//visibility
+.hide-in-mobile {
+  @include breakpoint-down(42.936em) {
+    display: none;
+  }
+}
+
+.hide-in-tablet {
+  @include breakpoint-up(42.9374em) {
+    display: none;
+  }
+}
+
+.hide-in-desktop {
+  @include breakpoint-up(61.25em) {
+    display: none;
+  }
+}

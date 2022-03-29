@@ -1,0 +1,135 @@
+.product__wrapper {
+  display: flex;
+  gap: 1rem 0.6rem;
+  flex-wrap: wrap;
+  margin: 2rem 0;
+}
+
+.product {
+  flex: 1 1 100%;
+  padding: 0.5rem;
+  border-bottom: 2.5px dotted $veryLightGray;
+  box-shadow: 4px 0px 6px -6px rgba(0, 0, 0, 0.2), -3px 0px 6px -6px rgba(0, 0, 0, 0.2);
+
+  &__header {
+    &__title {
+      height: 4rem;
+      margin-bottom: 0.5rem;
+      font-size: 0.9rem;
+
+      @include breakpoint-up(61.25rem) {
+        margin-bottom: 2rem;
+      }
+    }
+  }
+
+  &__body {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  @include breakpoint-up(37.5rem) {
+    flex: 1 1 48%;
+
+    &:last-child {
+      flex: 0 1 47%;
+    }
+  }
+
+  @include breakpoint-up(61.25rem) {
+    flex: 1 1 23%;
+
+    &__body {
+      display: block;
+    }
+
+    &:last-child {
+      flex: 0 1 24%;
+    }
+  }
+
+  &__image {
+    width: 50%;
+    max-height: 10rem;
+    margin-bottom: 0.5rem;
+    object-fit: contain;
+
+    @include breakpoint-up(37.5rem) {
+      height: auto;
+      max-height: 9rem;
+    }
+
+    @include breakpoint-up(61.25rem) {
+      width: 100%;
+    }
+  }
+
+  &__desc {
+    height: 7rem;
+    margin: 0;
+    padding: 0.4rem;
+    background-color: #e0e0e0;
+    font-size: 0.8rem;
+    overflow: hidden;
+
+    @include breakpoint-up(37.5rem) {
+      height: auto;
+      max-height: 9rem;
+    }
+
+    @include breakpoint-up(61.25rem) {
+      height: 4.3rem;
+      margin: 1rem 0;
+    }
+  }
+
+  &__right-section {
+    @include breakpoint-up(37.5rem) {
+      display: none;
+    }
+
+    &__button {
+      width: 100%;
+      margin-top: 0.7rem;
+      padding: 0.5rem;
+    }
+  }
+
+  &__lg-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 1rem;
+
+    @include breakpoint-down(61.25rem) {
+      display: none;
+    }
+
+    &__button {
+      padding: 0.5rem;
+    }
+  }
+
+  &__md-footer {
+    margin-top: 0.5rem;
+
+    @include breakpoint-down(37.5rem) {
+      display: none;
+    }
+
+    @include breakpoint-up(61.25rem) {
+      display: none;
+    }
+
+    &__button {
+      width: 100%;
+      padding: 0.5rem;
+    }
+  }
+}
+
+.hide-in-small-device {
+  @include breakpoint-down(37.5rem) {
+    display: none;
+  }
+}

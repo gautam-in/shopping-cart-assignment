@@ -1,15 +1,27 @@
 {
-  "name": "code-exercise",
-  "version": "1.0.0",
-  "description": "This is a shopping cart coding exercise",
-  "main": "index.js",
+  "name": "server",
+  "version": "0.0.0",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "canned -p 5000 ./server"
+    "server": "nodemon ./app",
+    "client": "npm run dev --prefix client",
+    "start": "concurrently \"npm run server\" \"npm run client\""
   },
-  "author": "",
-  "license": "MIT",
   "dependencies": {
-    "canned": "^0.3.12"
+    "cookie-parser": "~1.4.4",
+    "cors": "^2.8.5",
+    "debug": "~2.6.9",
+    "express": "~4.16.1",
+    "http-errors": "~1.6.3",
+    "jade": "~1.11.0",
+    "morgan": "~1.9.1",
+    "prop-types": "^15.8.1"
+  },
+  "devDependencies": {
+    "concurrently": "^7.0.0",
+    "nodemon": "^2.0.15"
+  },
+  "jest":{
+    "testEnvironment": "jsdom"
   }
 }
