@@ -1,0 +1,26 @@
+.notification {
+  margin-top: 1rem;
+  padding: 1rem;
+
+  @include container;
+
+  &__icon {
+    margin-right: 0.5rem;
+  }
+}
+
+.error {
+  padding: 0.6rem;
+  color: $red;
+  background-color: $lightRed;
+  border: 1px solid $red;
+  border-radius: 5px;
+}
+
+.success {
+  padding: 0.6rem;
+  color: $green;
+  background-color: $lightGreen;
+  border: 1px solid $green;
+  border-radius: 5px;
+}

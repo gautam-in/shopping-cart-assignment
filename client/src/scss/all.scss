@@ -1,0 +1,17 @@
+@import 'variables';
+@import 'mixins';
+@import 'global';
+@import './components/layout/header';
+@import './views/login';
+@import './views/signup';
+@import './components/general/notification.scss';
+@import './components/general/carousel.scss';
+@import './views/home';
+@import './components/home/categories.scss';
+@import './components/layout/footer';
+@import './components/general/accordion.scss';
+@import './components/products/sidebar.scss';
+@import './views/products';
+@import './components/products/product.scss';
+@import './views/cart';
+@import './components/cart/cartCard';

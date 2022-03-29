@@ -1,0 +1,46 @@
+.accordion {
+  width: 100%;
+  margin: 1rem 0;
+  overflow: hidden;
+  cursor: pointer;
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 1rem;
+    color: $white;
+    background-color: $pink;
+    transition: all 1ms;
+  }
+  &__body {
+    display: none;
+    padding: 0.1rem 1rem;
+    transform: translateY(-120%);
+
+    p {
+      margin: 0;
+      padding: 0.37rem 0;
+      color: $white;
+
+      &:hover {
+        background-color: $pink;
+        border-radius: 4px;
+      }
+    }
+  }
+}
+
+.visible {
+  display: block;
+  background-color: $veryLightPink;
+  transform: translateY(0%);
+}
+
+.accordion__body .active {
+  background-color: $lightPink;
+}
+
+.rotate-icon {
+  transform: rotate(180deg);
+}
