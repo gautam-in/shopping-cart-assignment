@@ -1,0 +1,23 @@
+.category-item-container {
+  display: flex;
+  justify-content: space-between;
+  .desciption-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0px 50px;
+    .button-container {
+      margin-top: 15px;
+    }
+  }
+  .image-container {
+    img {
+      height: 250px;
+    }
+  }
+}
+.category-item-container.reverse {
+  flex-direction: row-reverse;
+  justify-content: space-between;
+}

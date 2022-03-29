@@ -1,0 +1,19 @@
+.register-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  .register-fields {
+    width: 35%;
+  }
+}
+
+@media screen and (max-width: 720px) {
+  .register-container {
+    display: flex;
+    flex-direction: column;
+    .register-fields {
+      width: 80%;
+      margin: 0px auto;
+    }
+  }
+}
