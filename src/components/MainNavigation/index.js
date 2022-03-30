@@ -1,7 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import classes from "./MainNavigation.module.css";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
+import CartModal from "../CartModal";
 const MainNavigation = () => {
+  const [showCart, setShowCart] = useState(false);
+
+  const cartItems = useSelector((state) => state.cart);
+
+  const noOfItems = cartItems.reduce((total, cartItem) => {
+    return total + cartItem.count;
+  }, 0);
+
   return (
     <header className={classes["header"]}>
       <div className={classes["logo"]}>
@@ -13,23 +23,31 @@ const MainNavigation = () => {
         <Link to="/products">Products</Link>
       </nav>
 
-      <div className={classes["nav-link-2"]}>
+      <div
+        onClick={() => {
+          setShowCart((prevState) => !prevState);
+        }}
+        className={classes["nav-link-2"]}
+      >
         <nav className={classes["login-links"]}>
           <Link to="/signin">SignIn</Link>
           <Link to="/Register">Register</Link>
         </nav>
 
         <div className={classes["cart-wrapper"]}>
-          <Link className={classes["cart-link"]} to="/cart">
+          <div className={classes["cart-link"]} to="/">
             <img
               className={classes["cart-img"]}
               src="/static/images/cart.svg"
               alt="cart icon"
             />
-            <p className={classes["cart-items-count"]}>x items</p>
-          </Link>
+            <p className={classes["cart-items-count"]}>{noOfItems} items</p>
+          </div>
         </div>
       </div>
+      {showCart && (
+        <CartModal noOfItems={noOfItems} onClick={() => setShowCart(false)} />
+      )}
     </header>
   );
 };
