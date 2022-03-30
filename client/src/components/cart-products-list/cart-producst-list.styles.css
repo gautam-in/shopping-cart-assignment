@@ -1,0 +1,14 @@
+.lowest-price-box {
+  display: flex;
+  align-items: center;
+  gap: 2.6rem;
+  background-color: #fff;
+  color: black;
+  padding: 1rem;
+  margin: 1rem;
+}
+
+.lowest-price-box p {
+  font-size: 1.4rem;
+  font-weight: 500;
+}

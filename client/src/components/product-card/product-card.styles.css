@@ -1,0 +1,44 @@
+.product-card {
+  display: flex;
+  padding: 1rem;
+  flex-direction: column;
+  max-width: 25rem;
+  color: black;
+}
+.product-name {
+  font-size: 1.8rem;
+  height: 7rem;
+  font-weight: 700;
+  margin: 1rem 0;
+  text-align: center;
+  overflow: hidden;
+}
+.product-description {
+  background-color: #f0f0f0;
+  line-height: 20px;
+  overflow: hidden;
+  text-overflow: clip;
+  height: 9rem;
+  padding: 0.5rem;
+  font-size: 1.4rem;
+}
+
+.product-img-container {
+  margin-top: 2.4rem;
+  margin-bottom: 1rem;
+}
+
+.product-img {
+  width: 100%;
+}
+.buy-now-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0 1rem 0;
+  border-bottom: 1px dashed #ccc;
+}
+
+.product-price {
+  font-size: 1.4rem;
+}

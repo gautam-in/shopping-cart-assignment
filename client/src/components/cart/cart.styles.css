@@ -1,0 +1,19 @@
+.cart-btn {
+  background-color: #f1f1f1;
+  padding: 1rem 1.5rem;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  cursor: pointer;
+  border: 0;
+  font-size: 1.6rem;
+  margin-top: 2rem;
+  justify-content: space-between;
+}
+
+.cart-icon {
+  width: 34px;
+  height: 34px;
+  fill: #bf2957;
+  padding-right: 1rem;
+}

@@ -1,0 +1,4 @@
+.register-container {
+  display: flex;
+  gap: 4rem;
+}

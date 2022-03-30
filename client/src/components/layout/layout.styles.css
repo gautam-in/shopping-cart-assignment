@@ -1,0 +1,22 @@
+.content-container {
+  max-width: 120rem;
+  margin: 0 auto;
+  margin-top: 1rem;
+}
+
+.modal-container {
+  display: block;
+  position: relative;
+  min-height: 1px;
+  z-index: 2000;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 0;
+}

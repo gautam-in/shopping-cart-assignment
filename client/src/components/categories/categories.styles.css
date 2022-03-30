@@ -1,0 +1,7 @@
+.active-category {
+  background-color: #ddd;
+}
+
+.category {
+  cursor: pointer;
+}

@@ -1,0 +1,82 @@
+.cart-modal-box {
+  position: absolute;
+  right: 0;
+  width: 50rem;
+  min-height: 350px;
+  height: calc(100vh - 107px);
+  display: flex;
+  flex-flow: column;
+}
+
+.modal-header {
+  background-color: #1a1a1a;
+  padding: 20px;
+  color: #fff;
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.modal-title {
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+.close-btn {
+  border: none;
+  background: none;
+  font-weight: 400;
+  cursor: pointer;
+  background-color: inherit;
+  border: none;
+  color: #fff;
+}
+
+.checkout-btn {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.empty-cart {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #000;
+}
+
+.empty-cart h3 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.empty-cart p {
+  font-size: 1.6rem;
+}
+
+.checkout-btn span {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.modal-footer {
+  margin-top: auto;
+  border-top: 1px solid #ddd;
+  background-color: #fff;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-footer p {
+  font-size: 1.4rem;
+  color: black;
+  margin: 1rem 0;
+  font-weight: 500;
+}
