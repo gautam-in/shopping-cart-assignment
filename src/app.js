@@ -9,6 +9,7 @@ import "./app.scss";
 const routes = [
   { path: "/login", element: <Register isFrom="login" /> },
   { path: "/register", element: <Register /> },
+  { path: "/products/:type", element: <Products /> },
   { path: "/products", element: <Products /> },
   { path: "/", element: <Home /> },
 ];
