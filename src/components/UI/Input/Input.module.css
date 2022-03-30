@@ -1,0 +1,48 @@
+.input-container {
+  position: relative;
+}
+
+.input {
+  display: block;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  width: 20rem;
+  outline: none;
+  margin-top: 2vh;
+  margin-bottom: 3vh;
+  padding-top: 2vh;
+  padding-bottom: 1vh;
+  font-size: 0.8rem;
+  margin-top: 5vh;
+}
+
+.label {
+  visibility: hidden;
+  position: absolute;
+  font-size: 0;
+  top: 2vh;
+  transition: all 0.5s;
+}
+
+.input:focus + .label {
+  visibility: visible;
+  position: absolute;
+  color: rgb(37, 201, 201);
+  font-size: 0.8rem;
+  top: -2vh;
+}
+
+.input:focus {
+  border-bottom: 1px solid rgb(37, 201, 201);
+}
+
+input:focus::placeholder {
+  color: transparent;
+}
+
+@media (max-width: 600px) {
+  .input {
+    width: 16rem;
+  }
+}

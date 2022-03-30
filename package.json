@@ -20,7 +20,8 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "canned -p 5000 ./server | react-scripts start",
+    "start": "react-scripts start",
+    "backend": "canned -p 5000 ./server",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

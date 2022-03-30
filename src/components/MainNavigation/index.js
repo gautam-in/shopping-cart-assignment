@@ -23,18 +23,18 @@ const MainNavigation = () => {
         <Link to="/products">Products</Link>
       </nav>
 
-      <div
-        onClick={() => {
-          setShowCart((prevState) => !prevState);
-        }}
-        className={classes["nav-link-2"]}
-      >
+      <div className={classes["nav-link-2"]}>
         <nav className={classes["login-links"]}>
           <Link to="/signin">SignIn</Link>
-          <Link to="/Register">Register</Link>
+          <Link to="/register">Register</Link>
         </nav>
 
-        <div className={classes["cart-wrapper"]}>
+        <div
+          onClick={() => {
+            setShowCart((prevState) => !prevState);
+          }}
+          className={classes["cart-wrapper"]}
+        >
           <div className={classes["cart-link"]} to="/">
             <img
               className={classes["cart-img"]}
