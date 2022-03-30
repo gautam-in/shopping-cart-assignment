@@ -1,0 +1,48 @@
+@import "../../variables.scss";
+
+.category-container {
+  display: flex;
+  align-items: center;
+  padding: 30px 0;
+  box-shadow: 0px 20px 20px -20px rgba(0, 0, 0, 0.45);
+
+  &:last-child {
+    box-shadow: 0px 0px;
+  }
+
+  &:nth-child(odd) {
+    flex-direction: row-reverse;
+  }
+
+  .category-image {
+    width: 40%;
+
+    @media #{$phoneS} {
+      width: 30%;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  .category-desc {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    flex: 1 0 auto;
+
+    p {
+      margin-bottom: 30px;
+      text-align: center;
+      font-weight: 600;
+      margin-top: 0;
+    }
+
+    button {
+      font-size: 16px;
+    }
+  }
+}

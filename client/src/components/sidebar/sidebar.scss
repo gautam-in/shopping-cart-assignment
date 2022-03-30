@@ -1,0 +1,68 @@
+@import "../../variables.scss";
+
+.sidebar-container {
+  width: 25%;
+  background-color: #eaeaea;
+
+  @media #{$phoneS} {
+    width: 100%;
+  }
+
+  .category-list {
+    list-style-type: none;
+    padding: 0;
+    color: #555555;
+    margin: 0;
+
+    @media #{$phoneS} {
+      display: none;
+    }
+
+    li {
+      border-bottom: 1px solid #ccc;
+      margin-left: 5px;
+      padding: 12px;
+      cursor: pointer;
+      &.active {
+        background-color: $primaryColor;
+        color: $whiteColor;
+      }
+    }
+  }
+
+  .mobile-menu {
+    display: none;
+
+    @media #{$phoneS} {
+      display: block;
+    }
+
+    .header {
+      margin: 20px 0 5px 0;
+      padding: 15px 10px;
+      color: $whiteColor;
+      background: $primaryColor;
+      display: flex;
+      justify-content: space-between;
+      font-size: 16px;
+      font-weight: 600;
+    }
+
+    .category-list {
+      background: $whiteColor;
+      color: #333;
+      font-size: 15px;
+      margin: 0;
+      padding: 0;
+
+      @media #{$phoneS} {
+        display: block;
+      }
+
+      li {
+        padding: 10px 15px;
+        margin-left: 0;
+      }
+    }
+  }
+}

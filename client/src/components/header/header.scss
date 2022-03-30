@@ -1,0 +1,126 @@
+@import "../../variables.scss";
+
+.header {
+  width: 100%;
+  padding-top: 5px;
+  box-shadow: 0 1px 5px rgba(95, 94, 94, 0.25);
+
+  @media #{$phoneS} {
+    padding: 0;
+  }
+  &-container {
+    max-width: 1080px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+
+    .logo-container {
+      align-items: center;
+      display: flex;
+
+      .menu-container {
+        width: 40px;
+        height: 40px;
+        padding-left: 10px;
+
+        @media (min-width: 426px) {
+          display: none;
+        }
+      }
+
+      .logo {
+        max-width: 150px;
+
+        @media #{$phoneS} {
+          max-width: 100px;
+        }
+      }
+    }
+
+    .navbar {
+      width: 70%;
+      display: flex;
+      justify-content: space-between;
+
+      @media #{$phoneS} {
+        width: auto;
+      }
+
+      &-left {
+        display: flex;
+        flex-direction: column-reverse;
+        margin-bottom: 15px;
+
+        @media #{$phoneS} {
+          display: none;
+        }
+        &-menu {
+          justify-content: flex-end;
+
+          a {
+            color: #6c6c6c;
+            font-weight: 600;
+            padding: 0 10px;
+          }
+        }
+      }
+
+      &-right {
+        display: flex;
+        flex-direction: column;
+
+        &-menu {
+          padding-bottom: 10px;
+          text-align: right;
+
+          @media #{$phoneS} {
+            display: none;
+          }
+
+          a,
+          span {
+            padding: 0 0 0 10px;
+            font-size: 15px;
+            cursor: pointer;
+          }
+        }
+
+        .cart-container {
+          @media #{$phoneS} {
+            padding: 15px 25px;
+          }
+        }
+      }
+    }
+
+    .sidenav {
+      height: 100%;
+      width: 200px;
+      position: fixed;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      background-color: #eee;
+      overflow-x: hidden;
+      transition: 0.5s;
+      padding-top: 25px;
+    }
+
+    .sidenav a {
+      padding: 8px 8px 8px 32px;
+      text-decoration: none;
+      font-size: 18px;
+      color: #818181;
+      display: block;
+      transition: 0.3s;
+    }
+
+    .sidenav .closebtn {
+      position: absolute;
+      top: 0;
+      right: 25px;
+      font-size: 36px;
+      margin-left: 50px;
+    }
+  }
+}

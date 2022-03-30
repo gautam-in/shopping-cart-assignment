@@ -1,0 +1,9 @@
+@import "../../variables.scss";
+
+.prodct-container {
+  display: flex;
+
+  @media #{$phoneS} {
+    display: block;
+  }
+}

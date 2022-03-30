@@ -1,0 +1,17 @@
+@import "../../variables.scss";
+
+.productList-container {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 0 15px 15px;
+  flex: 1;
+
+  @media #{$phoneS} {
+    width: auto;
+    padding: 0;
+  }
+
+  .no-data {
+    margin: auto;
+  }
+}

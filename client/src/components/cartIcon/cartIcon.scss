@@ -1,0 +1,16 @@
+@import "../../variables.scss";
+
+.cart-container {
+  background-color: #f1f1f1;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+
+  .cart-icon {
+    width: 30px;
+    height: 30px;
+    fill: $primaryColor;
+    padding-right: 10px;
+  }
+}
