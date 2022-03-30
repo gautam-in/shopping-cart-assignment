@@ -1,0 +1,23 @@
+.categord-card {
+  margin: 25px;
+  display: flex;
+  width: 80vw;
+  box-shadow: 10px 10px 5px gainsboro;
+  justify-content: space-around;
+  align-items: center;
+  h1 {
+    margin: 20px;
+  }
+  img {
+    height: 200px;
+  }
+  .theme-button {
+    background: deeppink;
+  }
+  .category-dec {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+}
