@@ -17,7 +17,15 @@ const cartReducer = (initialState = [], action) => {
       });
 
     case REMOVE_PRODUCT_FROM_CART:
-      return initialState.filter((item) => item.id !== payload.id);
+      if (payload.quantity <= 1) {
+        return initialState.filter((item) => item.id !== payload.id);
+      }
+      return initialState.map((item) => {
+        if (item.id === payload.id) {
+          item.quantity -= 1;
+        }
+        return item;
+      });
     default:
       return initialState;
   }

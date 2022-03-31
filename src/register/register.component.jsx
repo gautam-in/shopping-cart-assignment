@@ -32,6 +32,31 @@ class Register extends Component {
     this.setState({ [target.name]: target.value });
   };
 
+  checkEmailAndPassword = (email) =>
+    alert(!email ? "Email is required" : "Password cannot be empty");
+
+  handleClick = () => {
+    const { firstName, lastName, email, password, confirmPassword } =
+      this.state;
+    const { isFrom } = this.props;
+    if (isFrom === "login") {
+      if (email && password) {
+        const data = { email, password };
+        console.log(data);
+        //  call login api to get token
+      } else this.checkEmailAndPassword(email);
+    } else {
+      const data = { firstName, lastName, email, password };
+      console.log(data);
+      // call register api to store data and get token
+      if (firstName && lastName && email && password) {
+        if (password !== confirmPassword) alert("password does not match");
+        else {
+        }
+      } else if (!email || !password) this.checkEmailAndPassword(email);
+    }
+  };
+
   render() {
     const { isFrom } = this.props;
     const isFromLogin = isFrom === "login";
@@ -65,7 +90,9 @@ class Register extends Component {
             />
           ))}
 
-          <Button type="button">{isFromLogin ? "Login" : "Signup"}</Button>
+          <Button type="submit" onClick={this.handleClick}>
+            {isFromLogin ? "Login" : "Signup"}
+          </Button>
         </div>
       </div>
     );

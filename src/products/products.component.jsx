@@ -1,27 +1,108 @@
 import { useEffect, useState } from "react";
+import { connect } from "react-redux";
 import { useParams } from "react-router-dom";
+import { useMediaQuery } from "react-responsive";
+import { Dropdown } from "react-bootstrap";
 import "./product.styles.scss";
-import allProducts from "../server/products/index.get.json";
 import ProductCard from "../component/product-card/product-card.component";
+import { getProducts, getCategory } from "../api/index";
 
-const Products = () => {
+const Products = ({ getProducts, allProducts, getCategory, categories }) => {
   const params = useParams();
+  const productType = params && params.type;
   const [products, setProducts] = useState([]);
+  const [selectedCategory, setSelectedCategory] = useState("");
+  const isTablet = useMediaQuery({ maxWidth: 720 });
+  const isMobile = useMediaQuery({ maxWidth: 520 });
 
   useEffect(() => {
-    if (params && params.type)
+    if (!allProducts?.length) getProducts().then(() => {});
+    if (!categories?.length) getCategory().then(() => {});
+  }, [categories, allProducts]);
+
+  useEffect(() => {
+    if (productType)
       setProducts(
         allProducts.filter((item) => item.imageURL.includes(params.type))
       );
-    else setProducts(allProducts);
-  }, [params]);
+    else if (selectedCategory) {
+      setProducts(
+        allProducts.filter((item) => item.imageURL.includes(selectedCategory))
+      );
+    } else setProducts(allProducts);
+  }, [params, selectedCategory, productType, allProducts]);
 
   return (
-    <div className="product-container">
-      {products.map((product) => (
-        <ProductCard product={product} key={`key=${product.id}`} />
-      ))}
+    <div className="d-flex product-container-element">
+      {isMobile && (
+        <div>
+          <Dropdown>
+            <Dropdown.Toggle id="dropdown-basic" className="dropdown-product">
+              {selectedCategory || "Select Product Type"}
+            </Dropdown.Toggle>
+            <Dropdown.Menu>
+              {categories.map((category) => (
+                <Dropdown.Item
+                  key={`catKey=${category.id}`}
+                  onClick={() =>
+                    setSelectedCategory(
+                      category.key === "fruit-and-veg"
+                        ? "fruit-n-veg"
+                        : category.key
+                    )
+                  }
+                  className="product-dropdown-menu"
+                >
+                  {category.name}
+                </Dropdown.Item>
+              ))}
+            </Dropdown.Menu>
+          </Dropdown>
+        </div>
+      )}
+      {!productType && !isMobile ? (
+        <div className="product-categores-list">
+          {categories.map((category) => (
+            <div
+              key={`catKey=${category.id}`}
+              onClick={() =>
+                setSelectedCategory(
+                  category.key === "fruit-and-veg"
+                    ? "fruit-n-veg"
+                    : category.key
+                )
+              }
+              className="product-category-btn"
+            >
+              {category.name}
+            </div>
+          ))}
+        </div>
+      ) : (
+        !productType && isMobile && <div></div>
+      )}
+      <div className="product-container">
+        {products?.length ? (
+          products.map((product) => (
+            <ProductCard
+              isMobile={isMobile}
+              isTablet={isTablet}
+              product={product}
+              key={`key=${product.id}`}
+            />
+          ))
+        ) : (
+          <p className="text-center">No item available</p>
+        )}
+      </div>
     </div>
   );
 };
-export default Products;
+
+const mapStateToProps = (state) => ({
+  allProducts: state?.products,
+  categories: state?.categories,
+});
+const mapDispatchToProps = { getProducts, getCategory };
+
+export default connect(mapStateToProps, mapDispatchToProps)(Products);

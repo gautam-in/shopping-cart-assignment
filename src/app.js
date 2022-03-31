@@ -4,6 +4,7 @@ import Home from "./home/home.component";
 import Navigation from "./navbar/navigation.component";
 import Products from "./products/products.component";
 import Footer from "./footer/footer.module";
+import Checkout from "./checkout/checkout.component";
 import "./app.scss";
 
 const routes = [
@@ -11,6 +12,7 @@ const routes = [
   { path: "/register", element: <Register /> },
   { path: "/products/:type", element: <Products /> },
   { path: "/products", element: <Products /> },
+  { path: "/checkout", element: <Checkout /> },
   { path: "/", element: <Home /> },
 ];
 

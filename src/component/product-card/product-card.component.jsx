@@ -1,9 +1,9 @@
 import { connect } from "react-redux";
 import "./product-card.styles.scss";
 import Button from "../button/button.component";
-import { addToCart } from "../../redux/action/cart-actions";
+import { addToCart } from "../../redux/action/actions";
 
-const ProductCard = ({ product, addItemToCart }) => {
+const ProductCard = ({ product, addItemToCart, isTablet, isMobile }) => {
   const hanldeBuynow = () => {
     addItemToCart(product);
   };
@@ -11,16 +11,35 @@ const ProductCard = ({ product, addItemToCart }) => {
     <div className="product-card-container">
       <div className="product-name">{product.name}</div>
       <div className="image-footer">
-        <img
-          className="product-card-image"
-          src={process.env.PUBLIC_URL + product.imageURL}
-          alt={product.name}
-        />
-        <div className="description">{product.description}</div>
-        <div className="product-card-footer">
-          <p className="price">MRP RS.{product.price}</p>
-          <Button onClick={hanldeBuynow}>BuyNow</Button>
+        <div
+          className={
+            isTablet && !isMobile ? "d-flex" : isTablet && isMobile && "d-flex"
+          }
+        >
+          <img
+            className="product-card-image"
+            src={product.imageURL}
+            alt={product.name}
+          />
+          <div>
+            <div className="description">{product.description}</div>
+            {isTablet && isMobile && (
+              <Button onClick={hanldeBuynow}>
+                Buy Now @ Rs.{product.price}
+              </Button>
+            )}
+          </div>
         </div>
+        {isTablet && !isMobile ? (
+          <Button onClick={hanldeBuynow}>Buy Now @ Rs.{product.price}</Button>
+        ) : (
+          !isTablet && (
+            <div className="product-card-footer">
+              <div className="price">MRP RS.{product.price}</div>
+              <Button onClick={hanldeBuynow}>BuyNow</Button>
+            </div>
+          )
+        )}
       </div>
     </div>
   );

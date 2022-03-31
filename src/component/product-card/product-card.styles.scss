@@ -48,3 +48,20 @@
 // @media (max-width:520px){
 
 // }
+@media (max-width: 720px) {
+  .product-card-container {
+    width: 250px;
+    .product-card-image {
+      width: 100px;
+    }
+  }
+}
+
+@media (max-width: 520px) {
+  .product-card-container {
+    width: 300px;
+    .product-card-image {
+      width: 110px;
+    }
+  }
+}

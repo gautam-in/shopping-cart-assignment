@@ -29,7 +29,7 @@ const Category = ({ category }) => {
       </div>
       <img
         className="image-container"
-        src={process.env.PUBLIC_URL + category.imageUrl}
+        src={category.imageUrl}
         alt={category.bannerImageAlt}
       />
     </div>

@@ -1,18 +1,16 @@
 import React, { useState, useEffect } from "react";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
+import { connect } from "react-redux";
 
-import Category from "../component/category-item/category-item.component";
-import allCategories from "../server/categories/index.get.json";
-import bannerList from "../server/banners/index.get.json";
 import "./home.styles.scss";
+import Category from "../component/category-item/category-item.component";
+import { getBanner, getCategory } from "../api";
 
-const Home = () => {
-  const [categories, setCategories] = useState([]);
-
+const Home = ({ getBanner, bannerList, categories, getCategory }) => {
   useEffect(() => {
-    //  Api call required to get categories data
-    setCategories(allCategories);
+    if (!categories?.length) getCategory(() => {});
+    if (!bannerList?.length) getBanner().then(() => {});
   }, []);
   return (
     <div className="home-container">
@@ -24,13 +22,10 @@ const Home = () => {
           autoPlay={true}
           infiniteLoop={true}
         >
-          {bannerList &&
+          {Array.isArray(bannerList) &&
             bannerList.map((item) => (
               <div key={`key=${item.id}`}>
-                <img
-                  src={process.env.PUBLIC_URL + item.bannerImageUrl}
-                  alt={item.bannerImageAlt}
-                />
+                <img src={`${item.bannerImageUrl}`} alt={item.bannerImageAlt} />
               </div>
             ))}
         </Carousel>
@@ -44,4 +39,11 @@ const Home = () => {
     </div>
   );
 };
-export default Home;
+
+const mapStateToProps = (state) => ({
+  bannerList: state?.others?.banners,
+  categories: state?.categories,
+});
+const mapDispatchToProps = { getBanner, getCategory };
+
+export default connect(mapStateToProps, mapDispatchToProps)(Home);
