@@ -1,7 +1,7 @@
 {
   "name": "code-exercise",
   "version": "1.0.0",
-  "description": "This is a shopping cart coding exercise - Atharva Datar",
+  "description": "This is a shopping cart coding exercise",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
