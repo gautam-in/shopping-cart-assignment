@@ -32,30 +32,26 @@ class Navbar extends Component {
           </div>
 
           <nav>
-            <div className="list-n">
-              <div className="main-nav">
-                <Link className="links" to="/">
-                  Home
-                </Link>
-                <Link className="links" to="/products">
-                  {' '}
-                  Products
-                </Link>
-              </div>
+            <div className="page-nav-main">
+              <Link className="links" to="/">
+                Home
+              </Link>
+              <Link className="links" to="/products">
+                {' '}
+                Products
+              </Link>
             </div>
           </nav>
           <div className="cart-login-container">
             <nav>
-              <div className="list-h">
-                <div className="main-nav">
-                  <Link className="links" to="/login">
-                    SignIn
-                  </Link>
-                  <Link className="links" to="/register">
-                    {' '}
-                    Register
-                  </Link>
-                </div>
+              <div className="page-nav-sec">
+                <Link className="links" to="/login">
+                  SignIn
+                </Link>
+                <Link className="links" to="/register">
+                  {' '}
+                  Register
+                </Link>
               </div>
             </nav>
             <button className="btn-cart" onClick={this.toggleCart}>

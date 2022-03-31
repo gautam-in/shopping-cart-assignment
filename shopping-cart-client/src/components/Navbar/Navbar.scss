@@ -10,6 +10,9 @@ header {
     > nav {
       margin-top: 20px;
       width: 100%;
+      display: flex;
+      margin: 10px;
+      align-items: flex-end;
     }
     .logo-img {
       margin-top: 20px;
@@ -18,23 +21,30 @@ header {
     }
     .cart-login-container {
       position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: flex-end;
+      > nav {
+        font-size: small;
+      }
     }
   }
   nav {
     display: inline-block;
     .links {
       text-decoration: none;
-      margin: 10px;
+
       display: inline-block;
+      margin-right: 20px;
     }
-    .list-n {
+    .page-nav-main {
       display: flex;
-      padding: 0px 5px;
+      padding: 10px 5px;
+      padding-left: 7rem;
     }
-    .list-h {
-      .main-nav {
-        display: flex;
-      }
+    .page-nav-sec {
+      display: flex;
     }
   }
   .btn-cart {

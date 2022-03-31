@@ -3,3 +3,28 @@
   box-shadow: 10px 10px 5px gainsboro;
   width: 80vw;
 }
+.carousel-indicators {
+  button {
+    width: 5px !important;
+    height: 5px !important;
+    border-radius: 50% !important;
+  }
+}
+.carousel-control-next {
+  height: fit-content;
+  width: fit-content !important;
+  margin: auto;
+  margin-right: 1px;
+}
+.carousel-control-prev {
+  height: fit-content;
+  width: fit-content !important;
+  margin: auto;
+  margin-right: 1px;
+}
+.banner-icon {
+  background: rgb(188, 184, 184);
+  padding: 10px;
+  text-decoration: none;
+  opacity: 0.5;
+}

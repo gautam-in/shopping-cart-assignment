@@ -1,5 +1,6 @@
 .product-card {
   width: 24%;
+
   margin: 4px;
   padding: 10px;
   border: 1px solid #0000001f;
@@ -44,9 +45,6 @@
   font-size: 17px;
 }
 @media only screen and (min-device-width: 481px) and (max-device-width: 1024px) {
-  .product-listing-container {
-    background: sandybrown;
-  }
   .product-card {
     width: 50%;
     margin: 10px 0;
@@ -108,9 +106,6 @@
   }
 }
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
-  .product-listing-container {
-    background: green;
-  }
   .product-card {
     width: 100%;
     padding: 10px 0px;
@@ -149,18 +144,21 @@
   .product-cta-container {
     display: none;
   }
-  .product {
-    .buy-button {
-      position: absolute;
-      background: #e83583;
-      border: none;
-      margin: 0 auto;
-      color: #fff;
-      font-size: inherit;
-      bottom: 10px;
-      right: 12%;
-      z-index: 2;
-      display: block;
-    }
+  .mobile {
+    display: block;
+  }
+
+  .buy-button {
+    position: absolute;
+    background: #e83583;
+    border: none;
+    margin: 0 auto;
+    color: #fff;
+    font-size: inherit;
+    bottom: 10px;
+    right: 10%;
+    z-index: 2;
+    display: block;
+    width: 30vh;
   }
 }

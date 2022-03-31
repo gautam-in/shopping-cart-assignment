@@ -7,6 +7,8 @@ class Placard extends Component {
     super();
     this.state = {
       banners: [],
+      nextIcon: <span className="banner-icon">NEXT</span>,
+      prevIcon: <span className="banner-icon">PREV</span>,
     };
   }
   componentDidMount() {
@@ -23,8 +25,14 @@ class Placard extends Component {
       });
   }
   render() {
+    const { nextIcon, prevIcon } = this.state;
     return (
-      <Carousel className="banner-carousel">
+      <Carousel
+        nextIcon={nextIcon}
+        prevIcon={prevIcon}
+        variant="dark"
+        className="banner-carousel"
+      >
         {this.state.banners.map(
           ({ bannerImageAlt, bannerImageUrl, id, isActive }) => {
             return isActive ? (
