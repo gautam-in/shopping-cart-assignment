@@ -25,7 +25,7 @@ const CartModalHeader = ({ quantity, setIsCartVisible }) => {
           margin: 0,
           width: 22,
           backgroundColor: "inherit",
-          cursor:"pointer",
+          cursor: "pointer",
           color: "#fff",
         }}
       >

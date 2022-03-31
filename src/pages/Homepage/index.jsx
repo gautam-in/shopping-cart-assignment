@@ -22,7 +22,6 @@ const Homepage = (props) => {
   );
 };
 
-
 const HomepageContainer = styled.div`
   margin: 0 auto;
   width: 800px;

@@ -1,6 +1,6 @@
-import React,{useEffect} from "react";
-import { useSelector,useDispatch } from "react-redux";
-import { Route, Routes, Navigate,useLocation} from "react-router-dom";
+import React, { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { Route, Routes, Navigate, useLocation } from "react-router-dom";
 import styled from "styled-components";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
@@ -13,14 +13,14 @@ import { setProductsCategory } from "./redux/products/products.action";
 
 const App = () => {
   const currentUser = useSelector((state) => state.user.currentUser);
-  const location=useLocation();
+  const location = useLocation();
   const dispatch = useDispatch();
-  const category=new URLSearchParams(location.search).get("category");
-  
+  const category = new URLSearchParams(location.search).get("category");
+
   useEffect(() => {
     dispatch(fetchCategories());
-    if(category){
-      dispatch(setProductsCategory(category))
+    if (category) {
+      dispatch(setProductsCategory(category));
     }
   }, []);
 
@@ -43,7 +43,6 @@ const App = () => {
   );
 };
 
-
 const AppContainer = styled.div`
   height: 100vh;
   display: flex;
@@ -53,6 +52,5 @@ const AppContainer = styled.div`
 const RoutesContainer = styled.div`
   flex: 1;
 `;
-
 
 export default App;

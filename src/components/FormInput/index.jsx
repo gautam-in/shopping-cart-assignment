@@ -14,11 +14,10 @@ const FormInput = ({ handleChange, label, ...otherProps }) => {
           {label}
         </label>
       ) : null}
-      {otherProps.error&&<p>{otherProps.error}</p>}
+      {otherProps.error && <p>{otherProps.error}</p>}
     </FormContainer>
   );
 };
-
 
 const shrinkLabel = css`
   top: 8px;
@@ -69,10 +68,9 @@ const FormContainer = styled.div`
       ${shrinkLabel}
     }
   }
-  p{
-    color:red;
+  p {
+    color: red;
   }
 `;
-
 
 export default FormInput;

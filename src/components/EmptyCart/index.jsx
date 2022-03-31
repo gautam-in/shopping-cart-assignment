@@ -52,7 +52,7 @@ const EmptyCartModal = styled.div`
   background-color: #fff;
   height: 85%;
   width: 35%;
-  transition:3s;
+  transition: 3s;
   z-index: 100;
   overflow: auto;
   display: flex;
@@ -63,6 +63,5 @@ const EmptyCartModal = styled.div`
     right: 0px;
   }
 `;
-
 
 export default EmptyCart;

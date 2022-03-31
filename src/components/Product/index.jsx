@@ -10,7 +10,7 @@ const Product = ({ product }) => {
     <ProductContainer>
       <h3>{product.name}</h3>
       <img src={product.imageURL} width={150} />
-      <p style={{ backgroundColor: "#f0f0f0",padding:"5px" }}>
+      <p style={{ backgroundColor: "#f0f0f0", padding: "5px" }}>
         {product.description}
       </p>
       <div
@@ -40,6 +40,5 @@ const ProductContainer = styled.div`
   box-shadow: 10px 0 5px -2px #eaeaea;
   justify-content: space-between;
 `;
-
 
 export default Product;

@@ -11,15 +11,15 @@ const Banners = (props) => {
     .sort((a, b) => a.order - b.order);
 
   return (
-    <HomePageCategoriesContainer>
+    <HomePageCategoriesWrapper>
       {sortedCategories.map((category, index) => (
         <HomeCategory category={category} key={category.id} index={index} />
       ))}
-    </HomePageCategoriesContainer>
+    </HomePageCategoriesWrapper>
   );
 };
 
-const HomePageCategoriesContainer = styled.div`
+const HomePageCategoriesWrapper = styled.div`
   width: 800px;
   @media (max-width: 800px) {
     width: unset;

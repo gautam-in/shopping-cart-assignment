@@ -9,7 +9,6 @@ const Login = () => {
   const [userEmail, setUserEmail] = useState("");
   const [userPassword, setUserPassword] = useState("");
   const dispatch = useDispatch();
-  //Mock login, will accept any credentials as long as username and passoword is same
   const login = (email, password) => {
     if (email === password) {
       dispatch(setCurrentUser(email));
@@ -73,6 +72,5 @@ const LoginContainer = styled.div`
   align-items: center;
   padding-block: 64px;
 `;
-
 
 export default Login;

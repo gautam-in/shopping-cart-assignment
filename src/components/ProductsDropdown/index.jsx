@@ -9,7 +9,7 @@ const ProductDropdown = () => {
   const [categories, setCategories] = useState([]);
 
   useEffect(() => {
-    let finalCategories=categoriesData.sort((a,b)=>a.order-b.order)
+    let finalCategories = categoriesData.sort((a, b) => a.order - b.order);
     setCategories(finalCategories);
   }, [categoriesData]);
 

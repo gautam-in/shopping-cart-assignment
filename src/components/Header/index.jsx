@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
-import { Link,useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import logo from "static/images/logo.png";
 import { setProductsCategory } from "../../redux/products/products.action";
@@ -11,7 +11,7 @@ import { logout } from "../../redux/user/user.actions";
 
 const Header = () => {
   const [isCartVisible, setIsCartVisible] = useState(false);
-  const navigate=useNavigate()
+  const navigate = useNavigate();
   const { cartItems } = useSelector((state) => state.cart);
   const currentUser = useSelector((state) => state.user.currentUser);
   const dispatch = useDispatch();
@@ -24,7 +24,7 @@ const Header = () => {
           <Cart setIsCartVisible={setIsCartVisible}></Cart>
         </div>
       ) : null}
-      <Logo src={logo} alt="logo" height="60px" onClick={()=>navigate("/")}/>
+      <Logo src={logo} alt="logo" height="60px" onClick={() => navigate("/")} />
       <NavButtons>
         <StyledLink to="/">Home</StyledLink>
         <StyledLink
@@ -75,7 +75,7 @@ const Header = () => {
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
-              cursor:"pointer",
+              cursor: "pointer",
               padding: "8px",
               border: "none",
             }}
@@ -98,8 +98,6 @@ const Header = () => {
   );
 };
 
-
-
 const HeaderContainer = styled.header`
   position: sticky;
   background-color: #fff;
@@ -118,7 +116,7 @@ const HeaderContainer = styled.header`
 
 const Logo = styled.img`
   margin-right: 64px;
-  cursor:pointer;
+  cursor: pointer;
   padding: 8px;
 `;
 
@@ -139,6 +137,5 @@ const StyledLink = styled(Link)`
   color: rgb(80, 80, 80);
   text-decoration: none;
 `;
-
 
 export default Header;

@@ -16,7 +16,7 @@ const Products = (props) => {
     (item) => item.category === selectedCategory
   );
   let selectedData = selectedCategory ? filteredData : productsData;
-  
+
   useEffect(() => {
     dispatch(fetchProducts());
   }, []);
@@ -39,7 +39,7 @@ const Products = (props) => {
             : {
                 display: "flex",
                 justifyContent: "center",
-                textAlign:"center",
+                textAlign: "center",
                 alignItems: "center",
                 width: "100%",
               }

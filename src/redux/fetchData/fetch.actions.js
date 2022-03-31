@@ -1,5 +1,5 @@
 import { FetchActionTypes } from "./fetch.types";
-import {Base_Api_Url} from "../../utils/envConfig"
+import { Base_Api_Url } from "../../utils/envConfig";
 import axios from "axios";
 
 export const fetchBanners = () => async (dispatch) => {

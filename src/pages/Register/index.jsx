@@ -7,7 +7,7 @@ import { validateRegistration } from "../../utils/validation";
 import { Button } from "../../global.styles";
 
 const Register = () => {
-  const navigate=useNavigate()
+  const navigate = useNavigate();
   const initialValues = {
     firstName: "",
     lastName: "",
@@ -18,7 +18,7 @@ const Register = () => {
 
   const handleRegistration = () => {
     setValues(initialValues);
-    navigate("/login")
+    navigate("/login");
   };
 
   const { values, setValues, errors, handleChange, handleSubmit } = useForm(
