@@ -1,4 +1,4 @@
-import { Outlet, Link } from 'react-router-dom';
+import { Link, Outlet } from 'react-router-dom';
 
 import Logo from './../../assets/images/logo.png';
 
@@ -9,24 +9,26 @@ import {
   CartItemCount,
   NavLinks,
   NavLink,
+  ActionButtons,
+  ActionLink,
 } from './navigation.styles';
 
 const Navigation = () => (
   <>
     <NavigationContainer>
-      <div className="logo-container" to="/">
+      <Link className="logo-container" to="/">
         <img src={Logo} alt="Subka bazaar brand logo" />
-      </div>
+      </Link>
       <NavLinks>
-        <NavLink to="/home">Home</NavLink>
-        <NavLink to="/home">Products</NavLink>
+        <NavLink to="/">Home</NavLink>
+        <NavLink to="/products">Products</NavLink>
       </NavLinks>
       <div>
-        <div>
-          <span>Register</span>
-          <span>Login</span>
-        </div>
-        <CartIconContainer>
+        <ActionButtons>
+          <ActionLink to="/register">Register</ActionLink>
+          <ActionLink to="/login">Login</ActionLink>
+        </ActionButtons>
+        <CartIconContainer to="/cart">
           <CartIcon />
           <CartItemCount> 0 item </CartItemCount>
         </CartIconContainer>

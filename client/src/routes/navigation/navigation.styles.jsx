@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 import { ReactComponent as CartIconsSVG } from './../../assets/icons/cart.svg';
 export const NavigationContainer = styled.div`
   display: flex;
@@ -8,7 +9,7 @@ export const NavigationContainer = styled.div`
   align-items: center;
 `;
 
-export const CartIconContainer = styled.div`
+export const CartIconContainer = styled(Link)`
   width: 45px;
   height: 45px;
   position: relative;
@@ -37,7 +38,16 @@ export const NavLinks = styled.div`
   padding-top: 2rem;
 `;
 
-export const NavLink = styled.span`
+export const NavLink = styled(Link)`
   text-decoration: none;
   padding: 1rem 0.5rem 0.5rem 0.5rem;
+`;
+
+export const ActionButtons = styled.div`
+  padding: 0.25rem;
+`;
+
+export const ActionLink = styled(Link)`
+  padding: 0.5rem;
+  text-decoration: none;
 `;
