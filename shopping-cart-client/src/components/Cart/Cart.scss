@@ -1,0 +1,103 @@
+.no-item-text {
+  text-align: center;
+}
+
+.cart-main-cont {
+  background: #efefef;
+  padding: 3px;
+  position: absolute;
+  display: none;
+  top: 6rem;
+  right: 0;
+
+  z-index: 1;
+  .cart-container {
+    position: relative;
+    height: 60vh;
+    width: 35vw;
+    overflow: scroll;
+    .header-container {
+      background: #000;
+      display: flex;
+      justify-content: space-between;
+      padding: 0px 15px;
+      .heading {
+        color: #fff;
+      }
+      .btn-close {
+        height: 3em;
+        width: 3rem;
+        color: white;
+        background-color: white;
+      }
+    }
+    .cart-list {
+      list-style: none;
+      .cart_list-item {
+        background: #fff;
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 10px;
+      }
+      .cart_list-img {
+        width: 80px;
+        padding: 10px;
+      }
+      .cart_list-details {
+        width: 100%;
+        .cart_list-name {
+          font-size: 1.1rem;
+          font-weight: 600;
+          margin: 10px 0px;
+          text-align: left;
+        }
+        .btn-decrement {
+          border-radius: 50%;
+          margin: 0px 15px;
+          font-size: 14px;
+          font-weight: bold;
+          color: #fff;
+          background-color: #e83583;
+          border: none;
+          padding: 2px 5px 2px 5px;
+          height: 30px;
+          width: 30px;
+        }
+        .btn-increment {
+          border-radius: 50%;
+          margin: 0px 15px;
+          font-size: 14px;
+          font-weight: bold;
+          color: #fff;
+          background-color: #e83583;
+          border: none;
+          padding: 2px 5px 2px 5px;
+          height: 30px;
+          width: 30px;
+        }
+        .cart_list-price {
+          font-size: 1rem;
+          padding-left: 10px;
+        }
+      }
+    }
+
+    .checkout {
+      left: 0;
+      right: 0;
+      bottom: 0;
+      .checkout-button {
+        background: #e83583;
+        border: none;
+        width: 100%;
+        color: #fff;
+        font-size: 1rem;
+        padding: 15px;
+      }
+      .checkout-heading {
+        margin: 0px 0px 15px 0px;
+        text-align: center;
+      }
+    }
+  }
+}
