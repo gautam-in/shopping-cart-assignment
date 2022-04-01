@@ -3,20 +3,19 @@ import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import "./navigation.styles.scss";
 import { useNavigate } from "react-router-dom";
+import { useMediaQuery } from "react-responsive";
 import PopupModal from "../component/modal/popup-modal.component";
 import Button from "../component/button/button.component";
+import CartRow from "../component/cart-row/cart-row.component";
 import { addToCart, removeFromCart } from "../redux/action/actions";
 
 const Navigation = ({ cartItems, addItemToCart, removeItemFromCart }) => {
   const [show, setShow] = useState(false);
   const [totalItem, setTotalItem] = useState(0);
   const [totalAmount, setTotalAmount] = useState(0);
+  const isTablet = useMediaQuery({ maxWidth: 720 });
+  const isMobile = useMediaQuery({ maxWidth: 520 });
   const navigate = useNavigate();
-
-  const handleClose = () => {
-    setShow(!show);
-  };
-
   useEffect(() => {
     setTotalItem(
       cartItems.reduce((previous, current) => previous + current.quantity, 0)
@@ -49,7 +48,15 @@ const Navigation = ({ cartItems, addItemToCart, removeItemFromCart }) => {
               <Link to="/login">SignIn</Link>
               <Link to="/register">Register</Link>
             </div>
-            <div className="cart cursor" onClick={handleClose}>
+            <div
+              className="cart cursor"
+              onClick={() =>
+                isMobile || isTablet
+                  ? navigate("/cart-items")
+                  : window?.location?.pathname !== "/cart-items" &&
+                    setShow(!show)
+              }
+            >
               <img
                 className="cart-image"
                 src={"/static/images/cart.svg"}
@@ -60,7 +67,7 @@ const Navigation = ({ cartItems, addItemToCart, removeItemFromCart }) => {
           </div>
         </div>
         <PopupModal
-          handleClose={handleClose}
+          handleClose={() => setShow(!show)}
           modalHeader={
             <div>My Cart {totalItem ? `(${totalItem} item)` : ""}</div>
           }
@@ -104,38 +111,12 @@ const Navigation = ({ cartItems, addItemToCart, removeItemFromCart }) => {
             {totalItem ? (
               <div>
                 {cartItems.map((item) => (
-                  <div className="cart-item" key={`key=${item.id}`}>
-                    <div className="cart-image-desc d-flex">
-                      <img
-                        className="cart-image "
-                        src={item.imageURL}
-                        alt={item.name}
-                      />
-                      <div>
-                        <div className="cart-item-title">{item.name}</div>
-                        <div className="d-flex">
-                          <div
-                            className="control-button"
-                            onClick={() => removeItemFromCart(item)}
-                          >
-                            -
-                          </div>
-                          <div className="mx-2">{item.quantity}</div>
-                          <div
-                            className="control-button"
-                            onClick={() => addItemToCart(item)}
-                          >
-                            +
-                          </div>
-                          <div className="mx-2"> ✖</div>
-                          <span>Rs.{item.price}</span>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="align-self-end pb-3">
-                      Rs.{item.quantity * item.price}
-                    </div>
-                  </div>
+                  <CartRow
+                    item={item}
+                    key={`key=${item.id}`}
+                    addItemToCart={addItemToCart}
+                    removeItemFromCart={removeItemFromCart}
+                  />
                 ))}
                 <div className="cart-banner">
                   <img
