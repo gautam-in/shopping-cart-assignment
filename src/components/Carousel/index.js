@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import classes from "./Carousel.module.css";
 import axios from "axios";
+import classes from "./Carousel.module.css";
 
 const Carousel = () => {
   const [carouselData, setCarouselData] = useState([]);

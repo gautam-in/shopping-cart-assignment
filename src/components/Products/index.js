@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { useRouteMatch } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
 import Product from "../Product";
 
 import classes from "./Products.module.css";
-import { NavLink } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
 import { fetchProductList } from "../../actions/fetchProductList";
 import { fetchCategoryList } from "../../actions/fetchCategoryList";
 

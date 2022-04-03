@@ -2,10 +2,13 @@ import React from "react";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import Button from "../UI/ButtonPrimary";
 import Input from "../UI/Input";
+import { userSignIn } from "../../actions/userSignIn";
+import { useDispatch } from "react-redux";
 import classes from "./Register.module.css";
 
 function Register() {
   const history = useHistory();
+  const dispatch = useDispatch();
 
   const onUserCreate = (e) => {
     var regexPassword =
@@ -19,14 +22,7 @@ function Register() {
         "Password should be 8 letter long with minimum 8 characters, a number and alphabet with no spaces"
       );
     } else {
-      const data = {
-        firstName: e.target[0].value,
-        lastname: e.target[1].value,
-        email: e.target[2].value,
-        password: e.target[3].value,
-      };
-      //   props.addUser(data);
-      console.log(data);
+      dispatch(userSignIn());
       history.push("/");
     }
   };

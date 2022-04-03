@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
-import classes from "./Product.module.css";
-
-import ButtonPrimary from "../UI/ButtonPrimary";
 import { useDispatch } from "react-redux";
+import classes from "./Product.module.css";
+import ButtonPrimary from "../UI/ButtonPrimary";
 import { addToCart } from "../../actions/addToCart";
 
 const Product = ({ productData }) => {

@@ -2,10 +2,18 @@ import React from "react";
 import Button from "../UI/ButtonPrimary";
 import Input from "../UI/Input";
 import classes from "./Login.module.css";
+import { userSignIn } from "../../actions/userSignIn";
+import { useDispatch } from "react-redux";
+import { useHistory } from "react-router-dom";
 
 function Login() {
+  const dispatch = useDispatch();
+  const history = useHistory();
+
   const UserloggedIn = (e) => {
     e.preventDefault();
+    dispatch(userSignIn());
+    history.push("/");
   };
 
   return (
