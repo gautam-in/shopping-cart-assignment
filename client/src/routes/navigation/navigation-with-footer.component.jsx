@@ -1,9 +1,11 @@
-import { Link, Outlet } from 'react-router-dom';
+import { Outlet } from 'react-router-dom';
+import Footer from '../../components/footer/footer';
 
 import Logo from './../../assets/images/logo.png';
 
 import {
   NavigationContainer,
+  LogoContainer,
   CartIconContainer,
   CartIcon,
   CartItemCount,
@@ -11,14 +13,14 @@ import {
   NavLink,
   ActionButtons,
   ActionLink,
-} from './navigation.styles';
+} from './navigation-with-footer.styles';
 
-const Navigation = () => (
+const NavigationWithFooter = () => (
   <>
     <NavigationContainer>
-      <Link className="logo-container" to="/">
+      <LogoContainer to="/">
         <img src={Logo} alt="Subka bazaar brand logo" />
-      </Link>
+      </LogoContainer>
       <NavLinks>
         <NavLink to="/">Home</NavLink>
         <NavLink to="/products">Products</NavLink>
@@ -30,11 +32,12 @@ const Navigation = () => (
         </ActionButtons>
         <CartIconContainer to="/cart">
           <CartIcon />
-          <CartItemCount> 0 item </CartItemCount>
+          <CartItemCount> 0 items </CartItemCount>
         </CartIconContainer>
       </div>
     </NavigationContainer>
     <Outlet />
+    <Footer />
   </>
 );
-export default Navigation;
+export default NavigationWithFooter;
