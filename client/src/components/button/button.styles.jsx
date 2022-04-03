@@ -3,7 +3,7 @@ import styled from 'styled-components';
 const primaryRed = '#d10057';
 
 export const BaseButton = styled.button`
-  width: 100%;
+  width: ${(props) => (props.width ? props.width : '100%')};
   height: 50px;
   letter-spacing: 0.5px;
   line-height: 50px;
@@ -30,6 +30,7 @@ export const BaseButton = styled.button`
 export const InvertedButton = styled(BaseButton)`
   background-color: ${primaryRed};
   color: white;
+  margin: 0 auto;
 
   &:hover {
     background-color: white;

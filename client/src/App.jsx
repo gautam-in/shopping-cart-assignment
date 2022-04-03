@@ -5,8 +5,8 @@ import Home from './routes/home/home.component';
 import Products from './routes/products/products.components';
 import Cart from './routes/cart/cart.component';
 import Register from './routes/register/register.component';
-
 import Login from './routes/login/login.component';
+import Categories from './routes/categories/categories.component';
 
 function App() {
   return (
@@ -14,6 +14,9 @@ function App() {
       <Route path="/" element={<Navigation />}>
         <Route index element={<Home />} />
         <Route path="products" element={<Products />} />
+        <Route path="categories" element={<Categories />}>
+          <Route path=":category" element={<Categories />} />
+        </Route>
         <Route path="cart" element={<Cart />} />
         <Route path="register" element={<Register />} />
         <Route path="login" element={<Login />} />
