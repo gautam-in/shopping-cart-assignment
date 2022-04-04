@@ -1,0 +1,36 @@
+.layout {
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  max-width: 110rem;
+  margin: 0 auto;
+}
+
+header {
+  box-shadow: 0 1px 10px rgb(0 0 0 / 30%);
+}
+
+footer {
+  color: #666464;
+  padding: 2rem;
+  background-color: #eaeaea;
+  font-weight: 700;
+}
+
+.cart-container {
+  position: fixed;
+  z-index: 999999;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+@media only screen and (max-width: 1023px) {
+  .cart-container {
+    background-color: rgba(0, 0, 0, 0);
+  }
+}
