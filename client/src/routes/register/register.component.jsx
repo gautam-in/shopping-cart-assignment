@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { useDispatch } from 'react-redux';
 
 import FormInput from './../../components/form-input/form-input.component';
 import Button, {
@@ -19,7 +18,6 @@ const defaultFormFields = {
 const Register = () => {
   const [formFields, setFormFields] = useState(defaultFormFields);
   const { firstName, lastName, email, password, confirmPassword } = formFields;
-  const dispatch = useDispatch();
 
   const handleChange = async (event) => {
     const { name, value } = event.target;
@@ -27,9 +25,9 @@ const Register = () => {
     setFormFields({ ...formFields, [name]: value });
   };
 
-  const resetFormFields = () => {
-    setFormFields(defaultFormFields);
-  };
+  // const resetFormFields = () => {
+  //   setFormFields(defaultFormFields);
+  // };
 
   const handleSubmit = async (event) => {
     event.preventDefault();

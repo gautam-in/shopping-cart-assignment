@@ -6,9 +6,17 @@ import Products from './routes/products/products.components';
 import Cart from './routes/cart/cart.component';
 import Register from './routes/register/register.component';
 import Login from './routes/login/login.component';
-import Categories from './routes/categories/categories.component';
+import { useEffect } from 'react';
+import { fetchCategoriesStartAsync } from './store/categories/categories.actions';
+import { useDispatch } from 'react-redux';
 
 function App() {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchCategoriesStartAsync());
+  }, [dispatch]);
+
   return (
     <Routes>
       <Route path="/" element={<Navigation />}>
