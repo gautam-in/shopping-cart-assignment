@@ -9,7 +9,7 @@ const CategoryCard = ({ name, id, index, imageUrl, description }) => {
   const navigate = useNavigate();
 
   const handleCategoryClick = (category) => {
-    navigate(`/categories/${category}`);
+    navigate(`/products/${category}`);
   };
   return (
     <CategoryContainer index={index}>

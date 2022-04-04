@@ -1,5 +1,7 @@
 export const PRODUCTS_INITIAL_STATE = {
   products: [],
+  categories: [],
+  currentCategory: '',
   isLoading: false,
   error: null,
 };

@@ -9,7 +9,8 @@ export const CategoryContainer = styled.div`
   grid-auto-flow: dense;
   direction: rtl;
   direction: ${(props) => (props.index % 2 === 0 ? 'ltr' : 'rtl')};
-  box-shadow: 0 8px 5px -9px grey;
+  /* box-shadow: 0 8px 5px -9px grey; */
+  box-shadow: 0 63px 57px -102px black;
   padding: 2rem 0;
   img {
     width: 320px;

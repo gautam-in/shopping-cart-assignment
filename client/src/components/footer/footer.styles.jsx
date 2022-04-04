@@ -4,13 +4,13 @@ export const FooterContainer = styled.div`
   background-color: #eaeaea;
   height: 3rem;
   text-align: center;
-  position: fixed;
+  position: sticky;
   bottom: 0;
   width: 100%;
 
   h2 {
     font-size: 1rem;
-    padding-top: 0.5rem;
+    padding-top: 1rem;
     font-weight: 400;
   }
 `;
