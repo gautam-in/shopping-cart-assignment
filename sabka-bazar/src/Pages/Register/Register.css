@@ -1,0 +1,123 @@
+.register {
+  gap: 5rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-top: 2rem;
+}
+
+.main-heading h1 {
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+.main-heading p {
+  font-weight: 600;
+  font-size: 1.4rem;
+}
+
+.signup-form {
+  padding: 4rem;
+  width: 40%;
+}
+
+.signup-form input {
+  color: #555555;
+  line-height: 1.2;
+  width: 100%;
+  height: 4.5rem;
+  background: transparent;
+  border-bottom: 2px solid #adadad;
+}
+
+.form-group {
+  padding-bottom: 25px;
+  position: relative;
+}
+
+input {
+  outline: none;
+  border: none;
+}
+
+input:focus {
+  border-bottom-color: #4bc1c9;
+}
+
+.register-btn {
+  width: 100%;
+  padding: 10px;
+  background-color: #c6346c;
+  outline: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+}
+
+.register-btn:hover {
+  background-color: #c6346c;
+  font-weight: 600;
+}
+
+input:focus {
+  outline: none;
+}
+
+label {
+  color: #424242;
+  font-weight: normal;
+  position: absolute;
+  pointer-events: none;
+  left: 0px;
+  top: -20px;
+  transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -webkit-transition: 0.2s ease all;
+}
+
+input:focus ~ label {
+  top: -20px;
+  font-size: 14px;
+  color: #4bc1c9;
+}
+
+input:placeholder-shown ~ label {
+  top: 10px;
+}
+
+input:focus:placeholder-shown ~ label {
+  top: -20px;
+}
+
+.error input {
+  border-bottom-color: red;
+}
+
+.error input ~ label {
+  color: red;
+}
+
+.error-msg {
+  font-size: 1.2rem;
+  color: red;
+}
+
+::-webkit-input-placeholder {
+  /* Edge */
+  visibility: hidden;
+}
+
+:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  visibility: hidden;
+}
+
+::placeholder {
+  visibility: hidden;
+}
+
+@media only screen and (max-width: 767px) {
+  .signin-form {
+    width: 80%;
+  }
+}
