@@ -8,12 +8,26 @@ import {
   ProductCardButton,
 } from './product-card.styled';
 
+import { toast } from 'react-toastify';
+
 const ProductCard = ({ product }) => {
   const dispatch = useDispatch();
   const cartItems = useSelector(selectCartItems);
 
   const addProductHandler = () => {
-    dispatch(addItemToCart(cartItems, product));
+    addItemToCart(cartItems, product).then((dispatchAction) => {
+      toast
+        .success('Item added to your cart successfully!', {
+          position: toast.POSITION.TOP_RIGHT,
+        })
+        .catch((error) => {
+          toast.error('Failed to add item to your cart.', {
+            position: toast.POSITION.TOP_RIGHT,
+          });
+        });
+
+      dispatch(dispatchAction);
+    });
   };
   return (
     <ProductCardContainer>

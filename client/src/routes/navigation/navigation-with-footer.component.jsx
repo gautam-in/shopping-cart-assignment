@@ -12,8 +12,6 @@ import {
   NavigationContainer,
   LogoContainer,
   CartIconContainer,
-  // CartIcon,
-  CartItemCount,
   NavLinks,
   NavLink,
   ActionButtons,

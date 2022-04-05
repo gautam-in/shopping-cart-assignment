@@ -1,5 +1,4 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
 
 import 'react-multi-carousel/lib/styles.css';
 
@@ -12,11 +11,6 @@ import {
 } from './slider.styles';
 
 const CustomRightArrow = ({ onClick, ...rest }) => {
-  const {
-    onMove,
-    carouselState: { currentSlide, deviceType },
-  } = rest;
-  // onMove means if dragging or swiping in progress.
   return (
     <CustomRightArrowButton onClick={() => onClick()}>
       NEXT
@@ -25,11 +19,6 @@ const CustomRightArrow = ({ onClick, ...rest }) => {
 };
 
 const CustomLeftArrow = ({ onClick, ...rest }) => {
-  const {
-    onMove,
-    carouselState: { currentSlide, deviceType },
-  } = rest;
-  // onMove means if dragging or swiping in progress.
   return (
     <CustomLeftArrowButton onClick={() => onClick()}>
       PREV
@@ -38,12 +27,7 @@ const CustomLeftArrow = ({ onClick, ...rest }) => {
 };
 
 const CustomDot = ({ onClick, banners, ...rest }) => {
-  const {
-    onMove,
-    index,
-    active,
-    carouselState: { currentSlide, deviceType },
-  } = rest;
+  const { index, active } = rest;
 
   const carouselItems = [];
   carouselItems.fill(banners.length);
@@ -94,17 +78,12 @@ const Slider = ({ banners }) => {
         draggable={false}
         showDots={true}
         responsive={responsive}
-        ssr={true} // means to render carousel on server-side.
         infinite={true}
-        // autoPlay={this.props.deviceType !== 'mobile' ? true : false}
-
         keyBoardControl={true}
         customTransition="all .5"
         transitionDuration={500}
         containerClass="carousel-container"
         removeArrowOnDeviceType={['tablet', 'mobile']}
-        // deviceType={this.props.deviceType}
-        // dotListClass="custom-dot-list-style"
         itemClass="carousel-item-padding-40-px"
       >
         {banners
@@ -112,8 +91,7 @@ const Slider = ({ banners }) => {
           .map(({ bannerImageUrl, bannerImageAlt, id }) => {
             return (
               <SlideContainer key={id} onClick={() => handleBannerClick(id)}>
-                {/* <img src={} alt="" /> */}
-                <img src={bannerImageUrl} alt={`image of ${bannerImageAlt}`} />
+                <img src={bannerImageUrl} alt={bannerImageAlt} />
               </SlideContainer>
             );
           })}
