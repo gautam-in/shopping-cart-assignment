@@ -4,13 +4,12 @@ import { BaseButton, InvertedButton } from '../button/button.styles';
 
 export const CartDropdownContainer = styled.div`
   position: absolute;
-  width: 50%;
-  height: 80%;
+  width: 40%;
+
   display: flex;
   flex-direction: column;
-
+  background-color: #eeeeee;
   border: 1px solid black;
-  background-color: white;
   top: 5.75rem;
   right: 0;
   z-index: 5;
@@ -29,6 +28,7 @@ export const CartItems = styled.div`
   display: flex;
   flex-direction: column;
   overflow: scroll;
+  background-color: #eeeeee;
 `;
 
 export const CartDropdownHeading = styled.div`
@@ -43,4 +43,31 @@ export const CartDropdownTitle = styled.div`
   span {
     font-weight: 600;
   }
+`;
+
+export const CartOfferClaim = styled.div`
+  background-color: white;
+  padding: 1rem;
+  text-align: center;
+  margin: 0 1rem;
+`;
+
+export const CartCheckoutContainer = styled.div`
+  background-color: #fff;
+  margin-top: 1rem;
+  text-align: center;
+  padding-bottom: 1rem;
+`;
+
+export const CartCheckoutButton = styled(InvertedButton)`
+  width: 90%;
+  border-radius: 3px;
+  text-transform: capitalize;
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.25rem;
+`;
+
+export const CartTotal = styled.span`
+  margin-right: 0.5rem;
 `;

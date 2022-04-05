@@ -8,6 +8,7 @@ import {
   CartItemContainer,
   ItemDetails,
   QuantityIcon,
+  SingleItemTotal,
 } from './cart-item.styles';
 
 const CartItem = ({ cartItem }) => {
@@ -22,13 +23,17 @@ const CartItem = ({ cartItem }) => {
       <img src={imageURL} alt={`${name}`} />
       <ItemDetails>
         <span>{name}</span>
-        <span>
-          <QuantityIcon onClick={removeItemHandler}>-</QuantityIcon>
-          {quantity}
-          <QuantityIcon onClick={addItemHandler}>+</QuantityIcon> x Rs.
-          {price}
-          <span>{quantity * price}</span>
-        </span>
+        <div>
+          <div>
+            <QuantityIcon onClick={removeItemHandler}>-</QuantityIcon>
+            {quantity}
+            <QuantityIcon onClick={addItemHandler}>+</QuantityIcon>
+            <span>x</span>
+
+            <span>{price}</span>
+          </div>
+          <SingleItemTotal>Rs. {quantity * price}</SingleItemTotal>
+        </div>
       </ItemDetails>
     </CartItemContainer>
   );

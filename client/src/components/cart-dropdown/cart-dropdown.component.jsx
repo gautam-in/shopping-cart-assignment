@@ -1,11 +1,12 @@
 import { useNavigate } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import {
   selectCartCount,
   selectCartItems,
+  selectCartTotal,
 } from '../../store/cart/cart.selector';
-import Button from '../button/button.component';
+
 import CartItem from '../cart-item/cart-item.component';
 
 import {
@@ -14,15 +15,25 @@ import {
   CartItems,
   CartDropdownHeading,
   CartDropdownTitle,
+  CartOfferClaim,
+  CartCheckoutContainer,
+  CartCheckoutButton,
 } from './cart-dropdown.styles';
+import { setIsCartOpen } from '../../store/cart/cart.actions';
 
 const CartDropdown = () => {
   const cartItems = useSelector(selectCartItems);
   const cartCount = useSelector(selectCartCount);
+  const cartTotal = useSelector(selectCartTotal);
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const goToCheckoutHandler = () => {
     navigate('/checkout');
+  };
+
+  const cartDowndownCloseHandler = () => {
+    dispatch(setIsCartOpen(false));
   };
 
   return (
@@ -31,7 +42,7 @@ const CartDropdown = () => {
         <CartDropdownTitle>
           <span> My Cart</span> ({cartCount} items)
         </CartDropdownTitle>
-        <div> &#10005; </div>
+        <div onClick={cartDowndownCloseHandler}> &#10005; </div>
       </CartDropdownHeading>
       <CartItems>
         {cartItems.length ? (
@@ -40,7 +51,18 @@ const CartDropdown = () => {
           <EmptyMessage>Your cart is empty.</EmptyMessage>
         )}
       </CartItems>
-      <Button onClick={goToCheckoutHandler}>GO TO CHECKOUT</Button>
+      <CartOfferClaim>You wont find it cheaper anywhere.</CartOfferClaim>
+      <CartCheckoutContainer>
+        <p>Promo code can be applied on payment page</p>
+        <CartCheckoutButton
+          width="90%"
+          buttonType="inverted"
+          onClick={goToCheckoutHandler}
+        >
+          <span> Proceed to Checkout </span>{' '}
+          <span>Rs.{cartTotal} &#x0003E;</span>
+        </CartCheckoutButton>
+      </CartCheckoutContainer>
     </CartDropdownContainer>
   );
 };

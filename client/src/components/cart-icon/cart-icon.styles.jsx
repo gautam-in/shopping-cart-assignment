@@ -1,6 +1,12 @@
 import styled from 'styled-components';
 import { ReactComponent as CartIconsSVG } from './../../assets/icons/cart.svg';
 
+export const CartActionContainer = styled.div`
+  width: 6rem;
+  display: flex;
+  align-items: center;
+`;
+
 export const CartIconContainer = styled.div`
   width: 45px;
   height: 45px;
