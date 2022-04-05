@@ -1,21 +1,24 @@
 import { useState, useEffect } from 'react';
 
-import { get } from '../../utils/apis';
 import { selectCategories } from '../../store/categories/categories.selector';
 import CategoryCard from '../../components/category-card/category-card.component';
 import { HomeContainer } from './home.styles';
 import Slider from '../../components/Slider/slider.component';
 import { useSelector } from 'react-redux';
+import ApiRequestService from './../../services/api.service';
 
 const Home = () => {
   const [banners, setBanners] = useState([]);
 
   const categories = useSelector(selectCategories);
 
+  const fetchBanners = async () => {
+    const { data } = await ApiRequestService.getApi('banners');
+    setBanners(data);
+  };
+
   useEffect(() => {
-    get('banners').then(({ data }) => {
-      setBanners(data);
-    });
+    fetchBanners();
   }, []);
   return (
     <HomeContainer className="home-container">

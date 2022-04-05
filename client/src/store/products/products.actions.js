@@ -1,7 +1,7 @@
 import { PRODUCTS_ACTION_TYPES } from './products.types';
 import { createAction } from '../../utils/reducer/reducer.utils';
 
-import { get } from '../../utils/apis';
+import ApiRequestService from './../../services/api.service';
 
 export const fetchCategoriesStart = () =>
   createAction(PRODUCTS_ACTION_TYPES.FETCH_PRODUCTS_START);
@@ -16,7 +16,7 @@ export const fetchProductsStartAsync = () => {
   return async (dispatch) => {
     dispatch(fetchCategoriesStart());
     try {
-      const { data } = await get('products');
+      const { data } = await ApiRequestService.getApi('products');
       dispatch(fetchCategoriesSuccess(data));
     } catch (error) {
       dispatch(fetchCategoriesFailure(error));
