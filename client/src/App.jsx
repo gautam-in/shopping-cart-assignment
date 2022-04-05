@@ -24,7 +24,6 @@ function App() {
         <Route path="products" element={<Products />}>
           <Route path=":products" element={<Products />} />
         </Route>
-        <Route path="cart" element={<Cart />} />
         <Route path="register" element={<Register />} />
         <Route path="login" element={<Login />} />
       </Route>

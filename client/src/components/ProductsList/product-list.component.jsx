@@ -7,7 +7,9 @@ const ProductList = ({ products }) => {
   return (
     <ProductListContainer>
       {products.length ? (
-        products?.map((product) => <ProductCard product={product} />)
+        products?.map((product) => (
+          <ProductCard key={product.id} product={product} />
+        ))
       ) : (
         <h2>No Products to display. Please try other categories.</h2>
       )}

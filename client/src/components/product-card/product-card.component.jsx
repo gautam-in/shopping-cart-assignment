@@ -1,4 +1,7 @@
 import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { addItemToCart } from '../../store/cart/cart.actions';
+import { selectCartItems } from '../../store/cart/cart.selector';
 import {
   ProductCardContainer,
   ProductDetail,
@@ -6,6 +9,12 @@ import {
 } from './product-card.styled';
 
 const ProductCard = ({ product }) => {
+  const dispatch = useDispatch();
+  const cartItems = useSelector(selectCartItems);
+
+  const addProductHandler = () => {
+    dispatch(addItemToCart(cartItems, product));
+  };
   return (
     <ProductCardContainer>
       <h2> {product.name}</h2>
@@ -13,7 +22,9 @@ const ProductCard = ({ product }) => {
       <p>{product.description}</p>
       <ProductDetail>
         <span>Rs.{product.price}</span>
-        <ProductCardButton>Buy Now </ProductCardButton>
+        <ProductCardButton onClick={addProductHandler}>
+          Buy Now
+        </ProductCardButton>
       </ProductDetail>
     </ProductCardContainer>
   );

@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import { ReactComponent as CartIconsSVG } from './../../assets/icons/cart.svg';
 
 export const NavigationContainer = styled.div`
   display: flex;
@@ -17,7 +16,7 @@ export const LogoContainer = styled(Link)`
   }
 `;
 
-export const CartIconContainer = styled(Link)`
+export const CartIconContainer = styled.div`
   height: 45px;
   position: relative;
   display: flex;
@@ -31,16 +30,11 @@ export const CartIconContainer = styled(Link)`
   text-decoration: none;
 `;
 
-export const CartIcon = styled(CartIconsSVG)`
-  width: 24px;
-  height: 24px;
-  fill: #bf2856;
-`;
-
 export const CartItemCount = styled.span`
   font-size: 1rem;
   width: max-content;
   margin-left: 0.5rem;
+  width: 3rem;
 `;
 
 export const NavLinks = styled.div`
@@ -57,11 +51,12 @@ export const NavLink = styled(Link)`
 `;
 
 export const ActionButtons = styled.div`
-  padding: 0.25rem;
+  padding: 0.25rem 0 0.25rem 0.25rem;
 `;
 
 export const ActionLink = styled(Link)`
   padding: 0.5rem;
   text-decoration: none;
   color: #424242;
+  font-size: 0.9rem;
 `;
