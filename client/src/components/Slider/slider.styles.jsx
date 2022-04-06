@@ -38,8 +38,8 @@ export const CustomLeftArrowButton = styled.div`
 
 export const CustomDots = styled.span`
   display: block;
-  height: 10px;
-  width: 10px;
+  height: 0.6rem;
+  width: 0.6rem;
   background: ${(props) => {
     return props.className === 'active' ? 'black' : 'gray';
   }};

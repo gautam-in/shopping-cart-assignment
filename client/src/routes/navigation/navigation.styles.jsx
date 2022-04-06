@@ -17,7 +17,7 @@ export const LogoContainer = styled(Link)`
 `;
 
 export const CartIconContainer = styled.div`
-  height: 45px;
+  height: 2.8125rem;
   position: relative;
   display: flex;
   align-items: center;

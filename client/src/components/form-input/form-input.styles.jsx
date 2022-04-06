@@ -4,19 +4,19 @@ const subColor = 'gray';
 const mainColor = '#6ccbd4';
 
 const shrinkLabelStyles = css`
-  top: -14px;
-  font-size: 12px;
+  top: -0.875rem;
+  font-size: 0.75rem;
   color: ${mainColor};
 `;
 
 export const FormInputLabel = styled.label`
   color: ${subColor};
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: normal;
   position: absolute;
   pointer-events: none;
-  left: 5px;
-  top: 10px;
+  left: 0.3rem;
+  top: 0.6rem;
   transition: 300ms ease all;
 
   ${({ shrink }) => shrink && shrinkLabelStyles}
@@ -26,8 +26,8 @@ export const Input = styled.input`
   background: none;
   background-color: white;
   color: ${subColor};
-  font-size: 18px;
-  padding: 10px 10px 10px 5px;
+  font-size: 1.125rem;
+  padding: 0.75rem 0.75rem 0.75rem 0.3rem;
   display: block;
   width: 100%;
   border: none;

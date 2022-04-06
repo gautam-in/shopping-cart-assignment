@@ -4,11 +4,11 @@ const primaryRed = '#d10057';
 
 export const BaseButton = styled.button`
   width: ${(props) => (props.width ? props.width : '100%')};
-  height: 50px;
+  height: 3.125rem;
   letter-spacing: 0.5px;
-  line-height: 50px;
-  padding: 0 35px 0 35px;
-  font-size: 15px;
+  line-height: 3.125rem;
+  padding: 0 2.18rem 0 2.18rem;
+  font-size: 1rem;
   background-color: white;
   color: ${primaryRed};
   text-transform: uppercase;

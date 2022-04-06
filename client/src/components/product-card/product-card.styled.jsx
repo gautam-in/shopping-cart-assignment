@@ -9,7 +9,7 @@ export const ProductCardContainer = styled.div`
   height: fit-content;
 
   h2 {
-    height: 70px;
+    height: 4.375rem;
     width: 90%;
   }
 

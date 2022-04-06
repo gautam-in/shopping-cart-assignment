@@ -18,7 +18,7 @@ export const ItemDetails = styled.div`
   align-items: flex-start;
   justify-content: center;
   span {
-    font-size: 16px;
+    font-size: 1rem;
     margin-top: 0.5rem;
     margin: 1rem 1rem 0 1rem;
   }

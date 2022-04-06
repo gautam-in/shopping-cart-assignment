@@ -20,7 +20,7 @@ export const CartDropdownContainer = styled.div`
 `;
 
 export const EmptyMessage = styled.span`
-  font-size: 18px;
+  font-size: 1rem;
   margin: 50px auto;
 `;
 
@@ -61,7 +61,7 @@ export const CartCheckoutContainer = styled.div`
 
 export const CartCheckoutButton = styled(InvertedButton)`
   width: 90%;
-  border-radius: 3px;
+  border-radius: 0.15rem;
   text-transform: capitalize;
   display: flex;
   justify-content: space-between;

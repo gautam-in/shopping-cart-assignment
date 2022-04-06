@@ -13,7 +13,7 @@ export const CategoryContainer = styled.div`
   box-shadow: 0 63px 57px -102px black;
   padding: 2rem 0;
   img {
-    width: 320px;
+    width: 20rem;
     height: auto;
   }
   :last-child {

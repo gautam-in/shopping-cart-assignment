@@ -4,7 +4,7 @@ import CartIcon from '../../components/cart-icon/cart-icon.component';
 import CartDropdown from '../../components/cart-dropdown/cart-dropdown.component';
 import Footer from '../../components/footer/footer';
 
-import { selectIsCartOpen } from './../../store/cart/cart.selector';
+import { selectIsCartOpen } from '../../store/cart/cart.selector';
 
 import Logo from './../../assets/images/logo.png';
 
@@ -16,10 +16,10 @@ import {
   NavLink,
   ActionButtons,
   ActionLink,
-} from './navigation-with-footer.styles';
+} from './navigation.styles';
 import { useSelector } from 'react-redux';
 
-const NavigationWithFooter = () => {
+const NavigationWithFooter = ({ footer }) => {
   const isCartOpen = useSelector(selectIsCartOpen);
   return (
     <>
@@ -43,7 +43,7 @@ const NavigationWithFooter = () => {
         {isCartOpen && <CartDropdown />}
       </NavigationContainer>
       <Outlet />
-      <Footer />
+      {footer && <Footer />}
     </>
   );
 };
