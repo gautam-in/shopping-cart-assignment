@@ -1,6 +1,20 @@
 import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 
+import OutsideClickHandler from 'react-outside-click-handler';
+
+// function MyComponent() {
+//   return (
+//     <OutsideClickHandler
+//       onOutsideClick={() => {
+//         alert('You clicked outside of this component!!!');
+//       }}
+//     >
+//       Hello World
+//     </OutsideClickHandler>
+//   );
+// }
+
 import {
   selectCartCount,
   selectCartItems,
@@ -37,33 +51,35 @@ const CartDropdown = () => {
   };
 
   return (
-    <CartDropdownContainer>
-      <CartDropdownHeading>
-        <CartDropdownTitle>
-          <span> My Cart</span> ({cartCount} items)
-        </CartDropdownTitle>
-        <div onClick={cartDowndownCloseHandler}> &#10005; </div>
-      </CartDropdownHeading>
-      <CartItems>
-        {cartItems.length ? (
-          cartItems.map((item) => <CartItem key={item.id} cartItem={item} />)
-        ) : (
-          <EmptyMessage>Your cart is empty.</EmptyMessage>
-        )}
-      </CartItems>
-      <CartOfferClaim>You wont find it cheaper anywhere.</CartOfferClaim>
-      <CartCheckoutContainer>
-        <p>Promo code can be applied on payment page</p>
-        <CartCheckoutButton
-          width="90%"
-          buttonType="inverted"
-          onClick={goToCheckoutHandler}
-        >
-          <span> Proceed to Checkout </span>{' '}
-          <span>Rs.{cartTotal} &#x0003E;</span>
-        </CartCheckoutButton>
-      </CartCheckoutContainer>
-    </CartDropdownContainer>
+    <OutsideClickHandler onOutsideClick={cartDowndownCloseHandler}>
+      <CartDropdownContainer>
+        <CartDropdownHeading>
+          <CartDropdownTitle>
+            <span> My Cart</span> ({cartCount} items)
+          </CartDropdownTitle>
+          <div onClick={cartDowndownCloseHandler}> &#10005; </div>
+        </CartDropdownHeading>
+        <CartItems>
+          {cartItems.length ? (
+            cartItems.map((item) => <CartItem key={item.id} cartItem={item} />)
+          ) : (
+            <EmptyMessage>Your cart is empty.</EmptyMessage>
+          )}
+        </CartItems>
+        <CartOfferClaim>You wont find it cheaper anywhere.</CartOfferClaim>
+        <CartCheckoutContainer>
+          <p>Promo code can be applied on payment page</p>
+          <CartCheckoutButton
+            width="90%"
+            buttonType="inverted"
+            onClick={goToCheckoutHandler}
+          >
+            <span> Proceed to Checkout </span>{' '}
+            <span>Rs.{cartTotal} &#x0003E;</span>
+          </CartCheckoutButton>
+        </CartCheckoutContainer>
+      </CartDropdownContainer>
+    </OutsideClickHandler>
   );
 };
 
