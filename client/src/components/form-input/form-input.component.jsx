@@ -1,14 +1,20 @@
-import { Group, FormInputLabel, Input } from './form-input.styles.jsx';
+import {
+  Group,
+  FormInputLabel,
+  Input,
+  ErrorContainer,
+} from './form-input.styles.jsx';
 
-const FormInput = ({ label, ...otherProps }) => {
+const FormInput = ({ label, errorMessage, ...otherProps }) => {
   return (
     <Group>
-      <Input className="form-input" {...otherProps} />
+      <Input {...otherProps} className={errorMessage ? 'has-error' : ''} />
       {label && (
         <FormInputLabel shrink={otherProps.value.length}>
           {label}
         </FormInputLabel>
       )}
+      {errorMessage && <ErrorContainer>{errorMessage}</ErrorContainer>}
     </Group>
   );
 };

@@ -33,7 +33,13 @@ export const Input = styled.input`
   border: none;
   border-radius: 0;
   border-bottom: 1px solid ${subColor};
-  margin: 25px 0;
+  margin: 1.5rem 0 0 0;
+
+  &:focus {
+    outline: none;
+    color: #6ccbd4;
+    border-bottom: 2px solid ${mainColor};
+  }
 
   &:focus {
     outline: none;
@@ -44,6 +50,11 @@ export const Input = styled.input`
   &:focus ~ ${FormInputLabel} {
     ${shrinkLabelStyles}
   }
+
+  &.has-error {
+    color: #cc3300;
+    border-bottom: 2px solid #cc3300;
+  }
 `;
 
 export const Group = styled.div`
@@ -53,4 +64,8 @@ export const Group = styled.div`
   input[type='password'] {
     letter-spacing: 0.3em;
   }
+`;
+
+export const ErrorContainer = styled.span`
+  font-size: 0.75rem;
 `;

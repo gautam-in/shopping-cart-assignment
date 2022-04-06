@@ -1,4 +1,6 @@
-import { useState } from 'react';
+import { useFormik } from 'formik';
+
+import * as Yup from 'yup';
 
 import FormInput from './../../components/form-input/form-input.component';
 import Button, {
@@ -7,7 +9,28 @@ import Button, {
 
 import { SignUpContainer } from './register.styles';
 
-const defaultFormFields = {
+export const validationSchema = Yup.object().shape({
+  firstName: Yup.string().required('First Name is required'),
+  lastName: Yup.string().required('Last Name is required'),
+  email: Yup.string().required('Email is required').email('Email is invalid'),
+  password: Yup.string()
+    .required('Password is required')
+    .matches(
+      /* eslint-disable-next-line */
+      /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{6,})/,
+      'Must Contain 8 Characters, One Uppercase, No Space, One Number and One Special Case Character'
+    ),
+  confirmPassword: Yup.string()
+    .required('Confirm Password is required')
+    .matches(
+      /* eslint-disable-next-line */
+      /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{6,})/,
+      'Must Contain 8 Characters, One Uppercase, No Space, One Number and One Special Case Character'
+    )
+    .oneOf([Yup.ref('password'), null], 'Passwords must match'),
+});
+
+const initialValues = {
   firstName: '',
   lastName: '',
   email: '',
@@ -16,30 +39,15 @@ const defaultFormFields = {
 };
 
 const Register = () => {
-  const [formFields, setFormFields] = useState(defaultFormFields);
-  const { firstName, lastName, email, password, confirmPassword } = formFields;
+  const formik = useFormik({
+    initialValues,
+    validationSchema,
+    onSubmit: async (data) => {
+      console.log(data);
+    },
+  });
 
-  const handleChange = async (event) => {
-    const { name, value } = event.target;
-
-    setFormFields({ ...formFields, [name]: value });
-  };
-
-  // const resetFormFields = () => {
-  //   setFormFields(defaultFormFields);
-  // };
-
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-    console.log(
-      'handleSubmit triggered',
-      firstName,
-      lastName,
-      email,
-      password,
-      confirmPassword
-    );
-  };
+  const { errors, handleChange, values, handleSubmit, handleReset } = formik;
 
   return (
     <SignUpContainer>
@@ -51,42 +59,42 @@ const Register = () => {
         <FormInput
           label="First Name"
           type="text"
-          required
           name="firstName"
-          value={firstName}
+          value={values.firstName}
           onChange={handleChange}
+          errorMessage={errors.firstName}
         />
         <FormInput
           label="Last Name"
           type="text"
-          required
           name="lastName"
-          value={lastName}
+          value={values.lastName}
           onChange={handleChange}
+          errorMessage={errors.lastName}
         />
         <FormInput
           label="Email"
           type="email"
-          required
           name="email"
-          value={email}
+          value={values.email}
           onChange={handleChange}
+          errorMessage={errors.email}
         />
         <FormInput
           label="Password"
           type="password"
-          required
           name="password"
-          value={password}
+          value={values.password}
           onChange={handleChange}
+          errorMessage={errors.password}
         />
         <FormInput
           label="Confirm Password"
           type="password"
-          required
           name="confirmPassword"
-          value={confirmPassword}
+          value={values.confirmPassword}
           onChange={handleChange}
+          errorMessage={errors.confirmPassword}
         />
         <Button buttonType={BUTTON_TYPE_CLASSES.inverted} type="submit">
           Sign Up

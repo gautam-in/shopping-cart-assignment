@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useFormik } from 'formik';
+import * as Yup from 'yup';
 
 import FormInput from './../../components/form-input/form-input.component';
 import Button, {
@@ -7,25 +8,29 @@ import Button, {
 
 import { SignInContainer, ButtonContainer } from './login.styles.jsx';
 
-const defaultFormFields = {
-  email: '',
-  password: '',
-};
+export const validationSchema = Yup.object().shape({
+  email: Yup.string().required('Email is required').email('Email is invalid'),
+  password: Yup.string()
+    .required('Password is required')
+    .matches(
+      /* eslint-disable-next-line */
+      /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{6,})/,
+      'Must Contain 8 Characters, One Uppercase, No Space, One Number and One Special Case Character'
+    ),
+});
+
+export const initialValues = { email: '', password: '' };
 
 const Login = () => {
-  const [formFields, setFormFields] = useState(defaultFormFields);
-  const { email, password } = formFields;
+  const formik = useFormik({
+    initialValues,
+    validationSchema,
+    onSubmit: async (data) => {
+      console.log(data);
+    },
+  });
 
-  const handleChange = async (event) => {
-    const { name, value } = event.target;
-
-    setFormFields({ ...formFields, [name]: value });
-  };
-
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-    console.log({ email, password });
-  };
+  const { errors, handleChange, values, handleSubmit, handleReset } = formik;
 
   return (
     <SignInContainer>
@@ -38,17 +43,17 @@ const Login = () => {
         <FormInput
           label="Email"
           type="text"
-          required
           name="email"
-          value={email}
+          errorMessage={errors.email}
+          value={values.email}
           onChange={handleChange}
         />
         <FormInput
           label="Password"
           type="text"
-          required
           name="password"
-          value={password}
+          errorMessage={errors.password}
+          value={values.password}
           onChange={handleChange}
         />
         <ButtonContainer>
