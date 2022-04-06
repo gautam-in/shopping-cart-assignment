@@ -3,18 +3,6 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import OutsideClickHandler from 'react-outside-click-handler';
 
-// function MyComponent() {
-//   return (
-//     <OutsideClickHandler
-//       onOutsideClick={() => {
-//         alert('You clicked outside of this component!!!');
-//       }}
-//     >
-//       Hello World
-//     </OutsideClickHandler>
-//   );
-// }
-
 import {
   selectCartCount,
   selectCartItems,

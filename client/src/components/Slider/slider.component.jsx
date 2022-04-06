@@ -10,29 +10,21 @@ import {
   CustomDots,
 } from './slider.styles';
 
-const CustomRightArrow = ({ onClick, ...rest }) => {
-  return (
-    <CustomRightArrowButton onClick={() => onClick()}>
-      NEXT
-    </CustomRightArrowButton>
-  );
-};
+const CustomRightArrow = ({ onClick, ...rest }) => (
+  <CustomRightArrowButton onClick={() => onClick()}>
+    NEXT
+  </CustomRightArrowButton>
+);
 
-const CustomLeftArrow = ({ onClick, ...rest }) => {
-  return (
-    <CustomLeftArrowButton onClick={() => onClick()}>
-      PREV
-    </CustomLeftArrowButton>
-  );
-};
+const CustomLeftArrow = ({ onClick, ...rest }) => (
+  <CustomLeftArrowButton onClick={() => onClick()}>PREV</CustomLeftArrowButton>
+);
 
 const CustomDot = ({ onClick, banners, ...rest }) => {
   const { index, active } = rest;
-
   const carouselItems = [];
   carouselItems.fill(banners.length);
-  // onMove means if dragging or swiping in progress.
-  // active is provided by this lib for checking if the item is active or not.
+
   return (
     <CustomDots
       className={active ? 'active' : 'inactive'}
@@ -88,13 +80,11 @@ const Slider = ({ banners }) => {
       >
         {banners
           .filter(({ isActive }) => isActive)
-          .map(({ bannerImageUrl, bannerImageAlt, id }) => {
-            return (
-              <SlideContainer key={id} onClick={() => handleBannerClick(id)}>
-                <img src={bannerImageUrl} alt={bannerImageAlt} />
-              </SlideContainer>
-            );
-          })}
+          .map(({ bannerImageUrl, bannerImageAlt, id }) => (
+            <SlideContainer key={id} onClick={() => handleBannerClick(id)}>
+              <img src={bannerImageUrl} alt={bannerImageAlt} />
+            </SlideContainer>
+          ))}
       </SliderContainer>
     </div>
   );

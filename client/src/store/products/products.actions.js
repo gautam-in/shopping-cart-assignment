@@ -12,14 +12,12 @@ export const fetchCategoriesSuccess = (categoriesArray) =>
 export const fetchCategoriesFailure = (error) =>
   createAction(PRODUCTS_ACTION_TYPES.FETCH_PRODUCTS_FAILED, error);
 
-export const fetchProductsStartAsync = () => {
-  return async (dispatch) => {
-    dispatch(fetchCategoriesStart());
-    try {
-      const { data } = await ApiRequestService.getApi('products');
-      dispatch(fetchCategoriesSuccess(data));
-    } catch (error) {
-      dispatch(fetchCategoriesFailure(error));
-    }
-  };
+export const fetchProductsStartAsync = () => async (dispatch) => {
+  dispatch(fetchCategoriesStart());
+  try {
+    const { data } = await ApiRequestService.getApi('products');
+    dispatch(fetchCategoriesSuccess(data));
+  } catch (error) {
+    dispatch(fetchCategoriesFailure(error));
+  }
 };

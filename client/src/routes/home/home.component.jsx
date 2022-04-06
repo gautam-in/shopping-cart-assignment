@@ -23,9 +23,9 @@ const Home = () => {
   return (
     <HomeContainer className="home-container">
       <Slider banners={banners} />
-      {categories.map((category, index) => {
-        return <CategoryCard index={index} {...category} />;
-      })}
+      {categories.map((category, index) => (
+        <CategoryCard index={index} {...category} />
+      ))}
     </HomeContainer>
   );
 };

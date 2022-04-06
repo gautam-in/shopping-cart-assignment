@@ -19,14 +19,12 @@ export const setCurrentCategory = (categoryId) => {
 export const fetchCategoriesFailure = (error) =>
   createAction(CATEGORIES_ACTION_TYPES.FETCH_CATEGORIES_FAILED, error);
 
-export const fetchCategoriesStartAsync = () => {
-  return async (dispatch) => {
-    dispatch(fetchCategoriesStart());
-    try {
-      const { data } = await ApiRequestService.getApi('categories');
-      dispatch(fetchCategoriesSuccess(data));
-    } catch (error) {
-      dispatch(fetchCategoriesFailure(error));
-    }
-  };
+export const fetchCategoriesStartAsync = () => async (dispatch) => {
+  dispatch(fetchCategoriesStart());
+  try {
+    const { data } = await ApiRequestService.getApi('categories');
+    dispatch(fetchCategoriesSuccess(data));
+  } catch (error) {
+    dispatch(fetchCategoriesFailure(error));
+  }
 };
