@@ -1,0 +1,8 @@
+.footer {
+  background-color: rgb(201, 195, 195);
+  padding: 0.5rem;
+  font-size: 0.8rem;
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}

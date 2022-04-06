@@ -1,0 +1,40 @@
+.category-container {
+  width: 85vw;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 2rem auto;
+  padding: 0.5rem;
+  font-size: 0.8rem;
+  font-weight: 400;
+  box-shadow: 0px 30px 20px -30px #a19f9f;
+}
+
+.reverse {
+  flex-direction: row-reverse;
+}
+.img-container {
+  width: 30%;
+}
+
+.img-container > img {
+  width: 100%;
+}
+
+.description-container {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.description-container > h3 {
+  font-weight: 600;
+}
+
+@media only screen and (max-width: 600px) {
+  .img-container {
+    width: 50%;
+  }
+}

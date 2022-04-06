@@ -1,0 +1,148 @@
+.modal {
+  background-color: rgb(228, 226, 226);
+  position: fixed;
+  bottom: 0;
+  right: 3%;
+  width: 25rem;
+  z-index: 999;
+  overflow: hidden;
+  min-height: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+/*----- Cart Header------ */
+.cart-header {
+  background-color: rgb(10, 10, 10);
+  color: #fff;
+  font-size: 0.8rem;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+.cart-header > button {
+  background-color: rgb(10, 10, 10);
+  color: #fff;
+  border: none;
+  padding: 5px;
+}
+
+/*---- Cart Items -------*/
+.items-container {
+  max-height: 18rem;
+  overflow-y: scroll;
+}
+.cart-item {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem;
+  background-color: white;
+  margin: 0.5rem 0;
+}
+
+.img-container {
+  width: 15%;
+}
+
+.img-container > img {
+  width: 100%;
+  background-size: cover;
+}
+
+.item-info {
+  font-size: 0.7rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.item-info > p {
+  word-spacing: 12px;
+}
+
+.item-info span {
+  display: inline-block;
+  text-align: center;
+  background-color: #d42559;
+  color: white;
+  height: 18px;
+  width: 18px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.total-price-container {
+  font-size: 0.8rem;
+  align-self: flex-end;
+  margin-bottom: 12px;
+  margin-left: auto;
+}
+
+/*--- Lowest Price Slogan container --- */
+
+.lowest-price-slogan {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background-color: #fff;
+  padding: 0.4rem;
+  width: 90%;
+  margin: 0 auto;
+  font-size: 0.7rem;
+}
+.lowest-price-slogan > img {
+  width: 30%;
+}
+
+/*--- No items container --- */
+.no-items-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 0.8rem;
+}
+
+.no-items-container > span {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+/*-- checkout container ---*/
+.checkout-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  padding: 1rem;
+  font-size: 0.8rem;
+  background-color: #fff;
+}
+
+.checkout-container button {
+  padding: 0.8rem;
+  color: #fff;
+  background-color: #d42559;
+  border: none;
+  border-radius: 3px;
+  transition: all 0.5s;
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.checkout-container a {
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+@media only screen and (max-width: 600px) {
+  .modal {
+    width: 100%;
+    height: 100%;
+    bottom: 0;
+    right: 0;
+  }
+}
