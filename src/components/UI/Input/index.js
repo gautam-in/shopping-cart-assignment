@@ -1,7 +1,16 @@
 import React from "react";
 import classes from "./Input.module.css";
 
-function Input({ id, type, placeholder, text, required, minlength = 1 }) {
+function Input({
+  id,
+  type,
+  placeholder,
+  text,
+  required,
+  minlength = 1,
+  value,
+  onChange,
+}) {
   return (
     <div className={classes["input-container"]}>
       <input
@@ -11,6 +20,7 @@ function Input({ id, type, placeholder, text, required, minlength = 1 }) {
         placeholder={placeholder}
         required={required}
         minLength={minlength}
+        onChange={onChange}
       />
       <label className={classes["label"]} htmlFor={id}>
         {text}

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import Button from "../UI/ButtonPrimary";
 import Input from "../UI/Input";
@@ -7,15 +7,22 @@ import { useDispatch } from "react-redux";
 import classes from "./Register.module.css";
 
 function Register() {
+  const [formState, setFormState] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    setPassword: "",
+    confirmPassword: "",
+  });
   const history = useHistory();
   const dispatch = useDispatch();
 
   const onUserCreate = (e) => {
+    e.preventDefault();
     var regexPassword =
       /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])[^-\s](?=.{8,})/;
-    var result = regexPassword.test(e.target[3].value);
-    e.preventDefault();
-    if (e.target[3].value !== e.target[4].value) {
+    var result = regexPassword.test(formState.setPassword);
+    if (formState.setPassword !== formState.confirmPassword) {
       alert("Password and confirm password input should be same");
     } else if (!result) {
       alert(
@@ -27,6 +34,11 @@ function Register() {
     }
   };
 
+  const onFieldChange = (e) => {
+    setFormState((prevState) => {
+      return { ...prevState, [e.target.id]: e.target.value };
+    });
+  };
   return (
     <div className={classes["register-container"]}>
       <section className={classes["register-text"]}>
@@ -41,18 +53,20 @@ function Register() {
         className={classes["registerBox-input"]}
       >
         <Input
-          id="firstname"
+          id="firstName"
           type="text"
           placeholder="First Name"
           text="First Name"
           required={true}
+          onChange={onFieldChange}
         />
         <Input
-          id="lastname"
+          id="lastName"
           type="text"
           placeholder="Last Name"
           text="Last Name"
           required={true}
+          onChange={onFieldChange}
         />
         <Input
           id="email"
@@ -60,20 +74,23 @@ function Register() {
           placeholder="Email"
           text="Email"
           required={true}
+          onChange={onFieldChange}
         />
         <Input
-          id="password"
+          id="setPassword"
           type="password"
-          placeholder="Password"
-          text="Password"
+          placeholder="Set Password"
+          text="Set Password"
           required={true}
+          onChange={onFieldChange}
         />
         <Input
-          id="confirmpassword"
+          id="confirmPassword"
           type="password"
           placeholder="Confirm Password"
           text="Confirm Password"
           required={true}
+          onChange={onFieldChange}
         />
         <Button type="submit" className={classes["submit-button"]}>
           Sign Up

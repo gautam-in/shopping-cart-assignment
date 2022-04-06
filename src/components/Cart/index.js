@@ -84,7 +84,12 @@ const Cart = (props) => {
           </>
         ) : (
           <Link to="/products">
-            <button style={{ justifyContent: "center" }}>Start Shopping</button>
+            <button
+              onClick={props.onClick}
+              style={{ justifyContent: "center" }}
+            >
+              Start Shopping
+            </button>
           </Link>
         )}
       </div>

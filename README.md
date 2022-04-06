@@ -1,15 +1,32 @@
 # XT Shopping Cart Assignment
 
-This is the base folder for the shopping cart exercise. You will have all the static assets and mock server responses available in this repo.
+An Ecommerce site where you can shop for your daily groceries & more.
 
 ## Getting Started
 
-Clone this repo and run following command for starting the mock server:
+## Run Locally
 
+Clone the project
+
+```bash
+  git clone https://github.com/optimus-anu/shopping-cart-assignment.git
 ```
-npm install
-npm run start
-# or
-yarn install
-yarn start
+
+Go to the project directory & Install dependencies
+
+```bash
+  cd shopping-cart-assignment
+  npm install
+```
+
+Start the backend server
+
+```bash
+  npm run backend
+```
+
+Open a new terminal or command prompt window and start the client application
+
+```bash
+  npm start
 ```

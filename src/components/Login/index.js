@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Button from "../UI/ButtonPrimary";
 import Input from "../UI/Input";
 import classes from "./Login.module.css";
@@ -7,13 +7,36 @@ import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 
 function Login() {
+  const [formState, setFormState] = useState({
+    Email: "",
+    password: "",
+  });
+
   const dispatch = useDispatch();
   const history = useHistory();
 
+  const onFieldChange = (e) => {
+    setFormState((prevState) => {
+      return {
+        ...prevState,
+        [e.target.id]: e.target.value,
+      };
+    });
+  };
+
   const UserloggedIn = (e) => {
     e.preventDefault();
-    dispatch(userSignIn());
-    history.push("/");
+    var regexPassword =
+      /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])[^-\s](?=.{8,})/;
+    var result = regexPassword.test(formState.password);
+    if (!result) {
+      alert(
+        "Password should be 8 letter long with minimum 8 characters, a number and alphabet with no spaces"
+      );
+    } else {
+      dispatch(userSignIn());
+      history.push("/");
+    }
   };
 
   return (
@@ -26,11 +49,12 @@ function Login() {
       </section>
       <form onSubmit={(e) => UserloggedIn(e)} className={classes["input-box"]}>
         <Input
-          id="email"
+          id="Email"
           type="email"
           placeholder="Email"
           text="Email"
           required={true}
+          onChange={onFieldChange}
         />
         <Input
           id="password"
@@ -38,7 +62,8 @@ function Login() {
           placeholder="Password"
           text="Password"
           required={true}
-          minlength={6}
+          minlength={8}
+          onChange={onFieldChange}
         />
         <Button type="submit" className={classes["submit-button"]}>
           Log In

@@ -1,5 +1,9 @@
 export const addToCart = (id) => {
-  return (dispatch, getState) => {
+  return async (dispatch, getState) => {
+    await fetch("http://localhost:5000/addToCart", {
+      method: "POST",
+      body: JSON.stringify({ productId: id }),
+    });
     const state = getState();
     const product = state.productList.filter((product) => product.id === id);
     dispatch({
