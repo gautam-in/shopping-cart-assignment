@@ -1,6 +1,9 @@
 import styled from 'styled-components';
 import { ReactComponent as CartIconsSVG } from './../../assets/icons/cart.svg';
 
+const black = '#000000';
+const red = '#bf2856';
+
 export const CartActionContainer = styled.div`
   width: 6rem;
   display: flex;
@@ -24,13 +27,13 @@ export const CartIconContainer = styled.div`
 export const ShoppingIcon = styled(CartIconsSVG)`
   width: 1.5rem;
   height: 1.5rem;
-  fill: #bf2856;
+  fill: ${red};
 `;
 
 export const ItemCount = styled.span`
   font-size: 1rem;
   font-weight: 400;
   bottom: 0.75rem;
-  color: #000;
+  color: ${black};
   width: 3rem;
 `;

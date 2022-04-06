@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 import Carousel from 'react-multi-carousel';
 
+const white = '#ffffff';
+
 export const SliderContainer = styled(Carousel)`
   width: 80%;
   margin: 2rem auto;
@@ -22,7 +24,7 @@ export const CustomRightArrowButton = styled.div`
   padding: 1rem 2rem;
   opacity: 0.25;
   background: black;
-  color: white;
+  color: ${white};
 `;
 
 export const CustomLeftArrowButton = styled.div`
@@ -33,7 +35,7 @@ export const CustomLeftArrowButton = styled.div`
   padding: 1rem 2rem;
   opacity: 0.15;
   background: black;
-  color: white;
+  color: ${white};
 `;
 
 export const CustomDots = styled.span`

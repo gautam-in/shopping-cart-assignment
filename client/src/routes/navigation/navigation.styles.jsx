@@ -1,6 +1,10 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
+const offWhite = '#eeeeee';
+const lightGray = '#797979';
+const darkGray = '#424242';
+
 export const NavigationContainer = styled.div`
   display: flex;
   justify-content: space-between;
@@ -25,7 +29,7 @@ export const CartIconContainer = styled.div`
   cursor: pointer;
   padding: 0.6rem 1rem;
   width: auto;
-  background-color: #eeeeee;
+  background-color: ${offWhite};
 
   text-decoration: none;
 `;
@@ -46,7 +50,7 @@ export const NavLinks = styled.div`
 export const NavLink = styled(Link)`
   text-decoration: none;
   padding: 1rem 0.5rem 0.5rem 0.5rem;
-  color: #797979;
+  color: ${lightGray};
   font-weight: 600;
 `;
 
@@ -57,6 +61,6 @@ export const ActionButtons = styled.div`
 export const ActionLink = styled(Link)`
   padding: 0.5rem;
   text-decoration: none;
-  color: #424242;
+  color: ${darkGray};
   font-size: 0.9rem;
 `;

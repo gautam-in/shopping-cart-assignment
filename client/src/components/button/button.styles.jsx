@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 
+const white = '#ffffff';
 const primaryRed = '#d10057';
 
 export const BaseButton = styled.button`
@@ -9,7 +10,7 @@ export const BaseButton = styled.button`
   line-height: 3.125rem;
   padding: 0 2.18rem 0 2.18rem;
   font-size: 1rem;
-  background-color: white;
+  background-color: ${white};
   color: ${primaryRed};
   text-transform: uppercase;
   font-family: 'Dosis', sans-serif;
@@ -21,7 +22,7 @@ export const BaseButton = styled.button`
   justify-content: center;
 
   &:hover {
-    background-color: white;
+    background-color: ${white};
     color: black;
     border: 1px solid black;
   }
@@ -29,11 +30,11 @@ export const BaseButton = styled.button`
 
 export const InvertedButton = styled(BaseButton)`
   background-color: ${primaryRed};
-  color: white;
+  color: ${white};
   margin: 0 auto;
 
   &:hover {
-    background-color: white;
+    background-color: ${white};
     color: ${primaryRed};
     border: 1px solid ${primaryRed};
   }

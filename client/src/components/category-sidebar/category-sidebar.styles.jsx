@@ -1,15 +1,18 @@
 import styled from 'styled-components';
 
+const offWhite = '#eaeaea';
+const mediumGray = '#848484';
+
 export const CategorySidebarContainer = styled.div`
-  background-color: #eaeaea;
+  background-color: ${offWhite};
   height: 100%;
 `;
 
 export const CategoryLink = styled.h2`
   font-size: 1.25rem;
-  color: #848484;
+  color: ${mediumGray};
   padding: 0.5rem 2rem;
-  border-bottom: 1px solid #848484;
+  border-bottom: 1px solid;
   width: 70%;
   margin-left: auto;
   font-weight: 200;

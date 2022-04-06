@@ -2,13 +2,16 @@ import styled from 'styled-components';
 
 import { BaseButton, InvertedButton } from '../button/button.styles';
 
+const lightGray = '#eeeeee';
+const white = '#ffffff';
+
 export const CartDropdownContainer = styled.div`
   position: absolute;
   width: 40%;
 
   display: flex;
   flex-direction: column;
-  background-color: #eeeeee;
+  background-color: ${lightGray};
   border: 1px solid black;
   top: 5.75rem;
   right: 0;
@@ -28,7 +31,7 @@ export const CartItems = styled.div`
   display: flex;
   flex-direction: column;
   overflow: scroll;
-  background-color: #eeeeee;
+  background-color: ${lightGray};
 `;
 
 export const CartDropdownHeading = styled.div`
@@ -36,7 +39,7 @@ export const CartDropdownHeading = styled.div`
   justify-content: space-between;
   background-color: #33332f;
   padding: 1rem;
-  color: #fff;
+  color: ${white};
 `;
 
 export const CartDropdownTitle = styled.div`
@@ -46,14 +49,14 @@ export const CartDropdownTitle = styled.div`
 `;
 
 export const CartOfferClaim = styled.div`
-  background-color: white;
+  background-color: ${white};
   padding: 1rem;
   text-align: center;
   margin: 0 1rem;
 `;
 
 export const CartCheckoutContainer = styled.div`
-  background-color: #fff;
+  background-color: ${white};
   margin-top: 1rem;
   text-align: center;
   padding-bottom: 1rem;

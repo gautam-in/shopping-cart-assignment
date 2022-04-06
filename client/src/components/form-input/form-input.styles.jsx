@@ -2,6 +2,7 @@ import styled, { css } from 'styled-components';
 
 const subColor = 'gray';
 const mainColor = '#6ccbd4';
+const errorRed = '#cc3300';
 
 const shrinkLabelStyles = css`
   top: -0.875rem;
@@ -37,13 +38,13 @@ export const Input = styled.input`
 
   &:focus {
     outline: none;
-    color: #6ccbd4;
+    color: ${mainColor};
     border-bottom: 2px solid ${mainColor};
   }
 
   &:focus {
     outline: none;
-    color: #6ccbd4;
+    color: ${mainColor};
     border-bottom: 2px solid ${mainColor};
   }
 
@@ -52,8 +53,8 @@ export const Input = styled.input`
   }
 
   &.has-error {
-    color: #cc3300;
-    border-bottom: 2px solid #cc3300;
+    color: ${errorRed};
+    border-bottom: 2px solid ${errorRed};
   }
 `;
 

@@ -1,7 +1,9 @@
 import styled from 'styled-components';
 
+const offWhite = '#eaeaea';
+
 export const FooterContainer = styled.div`
-  background-color: #eaeaea;
+  background-color: ${offWhite};
   height: 3rem;
   text-align: center;
   position: fixed;
