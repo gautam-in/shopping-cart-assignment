@@ -1,12 +1,25 @@
 import styled from 'styled-components';
 import Carousel from 'react-multi-carousel';
+import { device } from '../../utils/breakpoints/devices';
 
 const white = '#ffffff';
 
 export const SliderContainer = styled(Carousel)`
-  width: 80%;
-  margin: 2rem auto;
+  width: 90%;
+  margin: 0 auto;
+  height: 12rem;
   box-shadow: 0 63px 57px -102px black;
+
+  @media ${device.tablet} {
+    margin: 1rem auto;
+    height: 16rem;
+  }
+
+  @media ${device.laptopL} {
+    margin: 3rem auto;
+    height: 20rem;
+    width: 80%;
+  }
 `;
 
 export const SlideContainer = styled.div`
