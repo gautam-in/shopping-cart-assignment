@@ -1,4 +1,5 @@
 import React from 'react';
+import { toast } from 'react-toastify';
 import { useDispatch, useSelector } from 'react-redux';
 import { addItemToCart } from '../../store/cart/cart.actions';
 import { selectCartItems } from '../../store/cart/cart.selector';
@@ -12,7 +13,6 @@ import {
 } from './product-card.styled';
 
 import { InvertedButton } from '../button/button.styles';
-import { toast } from 'react-toastify';
 
 const ProductCardButtonWithPrice = ({ price }) => {
   return <InvertedButton>Buy Now @ Rs.{price}</InvertedButton>;
@@ -23,19 +23,19 @@ const ProductCard = ({ product }) => {
   const cartItems = useSelector(selectCartItems);
 
   const addProductHandler = () => {
-    addItemToCart(cartItems, product).then((dispatchAction) => {
-      toast
-        .success('Item added to your cart successfully!', {
+    addItemToCart(cartItems, product)
+      .then((dispatchAction) => {
+        toast.success('Item added to your cart successfully!', {
           position: toast.POSITION.TOP_RIGHT,
-        })
-        .catch((error) => {
-          toast.error('Failed to add item to your cart.', {
-            position: toast.POSITION.TOP_RIGHT,
-          });
         });
 
-      dispatch(dispatchAction);
-    });
+        dispatch(dispatchAction);
+      })
+      .catch((error) => {
+        toast.error('Failed to add item to your cart.', {
+          position: toast.POSITION.TOP_RIGHT,
+        });
+      });
   };
 
   return (

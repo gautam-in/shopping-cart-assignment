@@ -3,6 +3,7 @@ import { device } from '../../utils/breakpoints/devices';
 
 export const ProductContainers = styled.div`
   display: block;
+  padding-bottom: 5rem;
   @media ${device.tablet} {
     display: grid;
     grid-template-columns: 25% 75%;

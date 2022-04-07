@@ -4,7 +4,7 @@ import { device } from '../../utils/breakpoints/devices';
 export const CategoryContainer = styled.div`
   display: grid;
   grid-template-columns: 40% 60%;
-  width: 90%;
+  width: 95%;
   margin: 0 auto;
   align-items: center;
   grid-auto-flow: dense;
@@ -20,7 +20,7 @@ export const CategoryContainer = styled.div`
   }
 
   img {
-    width: 8rem;
+    width: 7rem;
     height: auto;
 
     @media ${device.tablet} {

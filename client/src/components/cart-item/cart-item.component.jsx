@@ -10,12 +10,26 @@ import {
   QuantityIcon,
   SingleItemTotal,
 } from './cart-item.styles';
+import { toast } from 'react-toastify';
 
 const CartItem = ({ cartItem }) => {
   const { name, imageURL, price, quantity } = cartItem;
   const dispatch = useDispatch();
   const cartItems = useSelector(selectCartItems);
-  const addItemHandler = () => dispatch(addItemToCart(cartItems, cartItem));
+  // const addItemHandler = () => dispatch(addItemToCart(cartItems, cartItem));
+
+  const addProductHandler = () => {
+    addItemToCart(cartItems, cartItem)
+      .then((dispatchAction) => {
+        dispatch(dispatchAction);
+      })
+      .catch((error) => {
+        toast.error('Failed to add item/increase quantity to your cart.', {
+          position: toast.POSITION.TOP_RIGHT,
+        });
+      });
+  };
+
   const removeItemHandler = () =>
     dispatch(removeItemFromCart(cartItems, cartItem));
   return (
@@ -27,7 +41,7 @@ const CartItem = ({ cartItem }) => {
           <div>
             <QuantityIcon onClick={removeItemHandler}>-</QuantityIcon>
             {quantity}
-            <QuantityIcon onClick={addItemHandler}>+</QuantityIcon>
+            <QuantityIcon onClick={addProductHandler}>+</QuantityIcon>
             <span>x</span>
 
             <span>{price}</span>

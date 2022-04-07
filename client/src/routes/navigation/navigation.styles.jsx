@@ -17,8 +17,12 @@ export const NavigationContainer = styled.div`
 
 export const LogoContainer = styled(Link)`
   img {
-    height: 5rem;
+    height: 4rem;
     padding: 0 1rem;
+  }
+
+  @media ${device.tablet} {
+    height: 5rem;
   }
 `;
 

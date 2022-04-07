@@ -27,10 +27,11 @@ const Login = () => {
     validationSchema,
     onSubmit: async (data) => {
       console.log(data);
+      // to be implemented once auth API is avaiable
     },
   });
 
-  const { errors, handleChange, values, handleSubmit, handleReset } = formik;
+  const { errors, handleChange, values, handleSubmit } = formik;
 
   return (
     <SignInContainer>

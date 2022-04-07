@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import ProductListingSidebar from '../../components/category-sidebar/category-sidebar';
+import CustomControl from '../../components/custom-select/custom-select.component';
 import ProductList from '../../components/ProductsList/product-list.component';
 import {
   selectCategories,
@@ -40,6 +41,7 @@ const Products = () => {
   return (
     <ProductContainers>
       <ProductListingSidebar categories={categories} />
+      <CustomControl categories={categories} />
       <ProductList products={filteredProducts} />
     </ProductContainers>
   );
