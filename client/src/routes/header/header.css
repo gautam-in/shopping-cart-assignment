@@ -5,8 +5,9 @@
 .header-content {
   display: flex;
   max-width: 120rem;
-  gap: 12rem;
   margin: auto;
+  position: relative;
+  justify-content: space-between;
 }
 
 .logo {
@@ -16,17 +17,26 @@
 
 .logo-container {
   padding: 0.8rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.mobile-nav-icon-box {
+  display: none;
+  font-size: 3.6rem;
+  margin-right: 2rem;
 }
 
 .main-nav {
-  flex-grow: 1;
   display: flex;
   justify-content: space-between;
 }
 
 .left-nav {
   display: flex;
-  align-items: flex-end;
+  margin-top: auto;
+  margin-left: 6rem;
   font-size: 1.8rem;
   font-weight: 600;
   color: #6f6f6f;
@@ -57,4 +67,54 @@
 
 .cart-status {
   background-color: black;
+}
+
+.link-to-register {
+  margin-right: 1rem;
+}
+
+.mobile-nav {
+  width: 100%;
+  font-size: 1.6rem;
+  position: absolute;
+  background-color: #eaeaea;
+  bottom: 0;
+  left: 0;
+  transform: translate(0, 105%);
+  z-index: 999;
+}
+
+.nav-close {
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+}
+
+.nav-open {
+  opacity: 1;
+  pointer-events: auto;
+  visibility: visible;
+}
+
+.mobile-nav li {
+  margin-left: 1rem;
+  font-size: 1.8rem;
+  padding: 1.3rem;
+  text-align: nter;
+  border-bottom: 1px solid #ccc;
+}
+
+@media only screen and (max-width: 576px) {
+  .right-nav-list {
+    display: none;
+  }
+  .left-nav {
+    display: none;
+  }
+  .mobile-nav-icon-box {
+    display: block;
+  }
+  .logo {
+    max-width: 45%;
+  }
 }

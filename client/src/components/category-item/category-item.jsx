@@ -13,7 +13,7 @@ const CategoryItem = ({ name, imageUrl, description, alignment }) => {
       <div className="category-details">
         <h2 className="category-name">{name}</h2>
         <p className="category-description">{description}</p>
-        <Button>
+        <Button className="category-button">
           <span className="category-explore">{`Explore ${name}`}</span>
         </Button>
       </div>

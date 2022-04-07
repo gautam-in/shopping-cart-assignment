@@ -46,3 +46,18 @@
   font-size: 1.4rem;
   color: red;
 }
+
+@media only screen and (max-width: 576px) {
+  .group .form-input {
+    font-size: 2rem;
+  }
+  .group .form-input-label.shrink {
+    font-size: 1.4rem;
+  }
+  .group .form-input:focus ~ .form-input-label {
+    font-size: 1.4rem;
+  }
+  .group .form-input {
+    margin: 3.2rem 0;
+  }
+}

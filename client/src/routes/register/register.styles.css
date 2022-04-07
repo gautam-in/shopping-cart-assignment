@@ -2,3 +2,12 @@
   display: flex;
   gap: 4rem;
 }
+
+@media only screen and (max-width: 576px) {
+  .register-container {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0;
+  }
+}

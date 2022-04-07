@@ -17,3 +17,12 @@
   fill: #bf2957;
   padding-right: 1rem;
 }
+
+@media only screen and (max-width: 576px) {
+  .cart-btn {
+    margin-top: 0;
+    font-weight: 600;
+    font-size: 1.8rem;
+    padding: 0.5rem 1rem;
+  }
+}

@@ -5,3 +5,37 @@
 .category {
   cursor: pointer;
 }
+
+.product-categories-mobile {
+  display: none;
+}
+
+.active-category-mobile {
+  background-color: #bf2957;
+  font-size: 2.6rem;
+  padding: 1.6rem 1.2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #fff;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.active-category-mobile span {
+  margin-left: 1rem;
+}
+
+.mobile-cateogories-list li {
+  margin: 0 1rem;
+  font-size: 1.8rem;
+  padding: 1.3rem;
+  text-align: nter;
+  border-bottom: 1px solid #ccc;
+}
+
+@media only screen and (max-width: 576px) {
+  .product-categories-mobile {
+    display: block;
+  }
+}

@@ -4,3 +4,22 @@
   gap: 0.8rem;
   padding-left: 1.6rem;
 }
+
+@media only screen and (max-width: 900px) {
+  .products-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .products-list {
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 2rem;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .products-list {
+    grid-template-columns: 1fr;
+  }
+}

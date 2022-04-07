@@ -13,3 +13,9 @@
 .buttons-container {
   margin-top: 4rem;
 }
+
+@media only screen and (max-width: 576px) {
+  .login-form-container {
+    max-width: 90%;
+  }
+}
