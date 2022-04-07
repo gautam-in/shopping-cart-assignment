@@ -4,11 +4,19 @@ import { addItemToCart } from '../../store/cart/cart.actions';
 import { selectCartItems } from '../../store/cart/cart.selector';
 import {
   ProductCardContainer,
-  ProductDetail,
   ProductCardButton,
+  ProductDetailsMobileBlock,
+  ProductDescription,
+  ProductDetailsDesktopBlock,
+  ProductPriceDetail,
 } from './product-card.styled';
 
+import { InvertedButton } from '../button/button.styles';
 import { toast } from 'react-toastify';
+
+const ProductCardButtonWithPrice = ({ price }) => {
+  return <InvertedButton>Buy Now @ Rs.{price}</InvertedButton>;
+};
 
 const ProductCard = ({ product }) => {
   const dispatch = useDispatch();
@@ -29,17 +37,27 @@ const ProductCard = ({ product }) => {
       dispatch(dispatchAction);
     });
   };
+
   return (
     <ProductCardContainer>
       <h2> {product.name}</h2>
-      <img src={product.imageURL} alt="" />
-      <p>{product.description}</p>
-      <ProductDetail>
-        <span>Rs.{product.price}</span>
-        <ProductCardButton onClick={addProductHandler}>
-          Buy Now
-        </ProductCardButton>
-      </ProductDetail>
+      <ProductDetailsMobileBlock>
+        <img src={product.imageURL} alt="" />
+        <ProductDescription>
+          <p>{product.description}</p>
+          <ProductCardButtonWithPrice price={product.price} />
+        </ProductDescription>
+      </ProductDetailsMobileBlock>
+      <ProductDetailsDesktopBlock>
+        <p>{product.description}</p>
+
+        <ProductPriceDetail>
+          <span>Rs.{product.price}</span>
+          <ProductCardButton onClick={addProductHandler}>
+            Buy Now
+          </ProductCardButton>
+        </ProductPriceDetail>
+      </ProductDetailsDesktopBlock>
     </ProductCardContainer>
   );
 };

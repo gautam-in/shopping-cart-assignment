@@ -1,11 +1,18 @@
 import styled from 'styled-components';
 
+import { device } from '../../utils/breakpoints/devices';
+
 const offWhite = '#eaeaea';
 const mediumGray = '#848484';
 
 export const CategorySidebarContainer = styled.div`
-  background-color: ${offWhite};
-  height: 100%;
+  display: none;
+
+  @media ${device.tablet} {
+    display: block;
+    background-color: ${offWhite};
+    height: 100%;
+  }
 `;
 
 export const CategoryLink = styled.h2`
@@ -13,7 +20,7 @@ export const CategoryLink = styled.h2`
   color: ${mediumGray};
   padding: 0.5rem 2rem;
   border-bottom: 1px solid;
-  width: 70%;
+  width: 68%;
   margin-left: auto;
   font-weight: 200;
 `;
