@@ -27,7 +27,7 @@ export const CategoryContainer = styled.div`
       width: 14rem;
     }
 
-    @media ${device.laptop} {
+    @media ${device.desktopL} {
       width: 20rem;
     }
   }

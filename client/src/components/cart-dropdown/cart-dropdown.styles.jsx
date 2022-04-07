@@ -2,23 +2,31 @@ import styled from 'styled-components';
 
 import { BaseButton, InvertedButton } from '../button/button.styles';
 
+import { device } from '../../utils/breakpoints/devices';
+
 const lightGray = '#eeeeee';
 const white = '#ffffff';
 
 export const CartDropdownContainer = styled.div`
   position: absolute;
-  width: 40%;
-
+  width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   background-color: ${lightGray};
   border: 1px solid black;
-  top: 5.75rem;
+  top: 0;
   right: 0;
   z-index: 5;
   ${BaseButton},
   ${InvertedButton} {
     margin-top: auto;
+  }
+
+  @media ${device.laptop} {
+    width: 40%;
+    height: auto;
+    top: 5.75rem;
   }
 `;
 
