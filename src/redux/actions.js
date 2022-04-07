@@ -18,7 +18,7 @@ export const registerAction = (data) => {
 export const addToCartAction = (id, cartItem, modalValue = false) => {
     return async dispatch => {
         try {
-            const response = await postData('/addToCart', { id, cartItem });
+            await postData('/addToCart', { id, cartItem });
             dispatch(addToCartActionAsync(id, cartItem));
             dispatch(showModal(modalValue))
         } catch (err) {

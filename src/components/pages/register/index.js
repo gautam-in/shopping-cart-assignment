@@ -35,12 +35,13 @@ const RegisterForm = ({ history }) => {
         confirmPassword: Yup.string()
             .required('Confirm Password is required')
             .oneOf([Yup.ref('password')], 'Passwords must match')
-
     });
+
     const formOptions = { resolver: yupResolver(validationSchema) };
     const { register, handleSubmit, watch, formState: { errors } } = useForm(formOptions);
+
     const [show, setShow] = useState(false);
-    const [dialogMsg, setDialogMsg] = useState("You have registered successfully!!");
+    const [dialogMsg, setDialogMsg] = useState("You have been registered successfully!!");
     const [isexist, setExists] = useState(false);
 
     const handleDialog = () => {
@@ -71,17 +72,17 @@ const RegisterForm = ({ history }) => {
             <div className='lr-form'>
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <div>
-                        <label><b>{_FIRSTNAME}</b></label>
-                        <input {...register("fname", { required: true, maxLength: 1, maxLength: 20, pattern: /^[A-Za-z]+$/i })} placeholder={_FIRSTNAME} type="text" autoFocus />
+                        <label htmlFor="fname"><b>{_FIRSTNAME}</b></label>
+                        <input id="fname" {...register("fname", { required: true, maxLength: 20, pattern: /^[A-Za-z]+$/i })} placeholder={_FIRSTNAME} type="text" autoFocus />
                         {errors.fname && <span>Firstname is required</span>}
                     </div>
                     <div>
-                        <label><b>{_LASTNAME}</b></label>
-                        <input {...register("lname", { maxLength: 20, pattern: /^[A-Za-z]+$/i })} placeholder={_LASTNAME} type="text" />
+                        <label htmlFor="lname"><b>{_LASTNAME}</b></label>
+                        <input id="lname" {...register("lname", { maxLength: 20, pattern: /^[A-Za-z]+$/i })} placeholder={_LASTNAME} type="text" />
                     </div>
                     <div>
-                        <label><b>{_EMAIL}</b></label>
-                        <input {...register("email", { required: true })} placeholder={_EMAIL} type="email" autoFocus />
+                        <label htmlFor="email"><b>{_EMAIL}</b></label>
+                        <input id="email" {...register("email", { required: true })} placeholder={_EMAIL} type="email" />
                         {errors.email && <span>Email is required</span>}
                     </div>
                     <div>
@@ -94,7 +95,7 @@ const RegisterForm = ({ history }) => {
                         <input {...register("confirmPassword", { required: true })} placeholder={_CONFIRM_PASS} type="password" />
                         {errors.confirmPassword && <span>Confirm Password should match with Password</span>}
                     </div>
-                    <Button label={_SIGN_UP} type={'submit'} />
+                    <Button label={_SIGN_UP} type={'submit'} id={_SIGN_UP}/>
                 </form>
                 <div className='lr-msg'>If you have an account already, please <CustomLink href={SIGNIN} label={_SIGNIN} /></div>
             </div>

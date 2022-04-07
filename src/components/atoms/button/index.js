@@ -3,7 +3,7 @@ import { string, func } from 'prop-types';
 
 import './button.scss';
 
-const Button = ({ label, onClick, className, ...props }) => {
+const Button = ({ label, onClick, className='', ...props }) => {
 
     return <button className={`${className} button`} onClick={onClick} {...props}>
         {label}
