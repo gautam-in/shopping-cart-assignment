@@ -1,0 +1,45 @@
+.register-page {
+    margin-top: 6rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 2em 0;
+    /*min-height: 75vh;*/
+}
+.signup-title {
+    /* margin-right: 8rem;
+    margin-top: 3rem; */
+    padding: 2em;
+}
+input {
+    outline: none;
+    display: block;
+    padding: 1em 0;
+    margin: 1em 0;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid gray;
+}
+.form-section {
+    padding: 1em;
+    width: 25%;
+    /* margin-top: 3rem;
+    width: 25%; */
+}
+@media screen and (max-width:480px) {
+    .form-section {
+        width: 50%;
+    }
+}
+.btn-signup {
+    padding: 0.8rem;
+    width: 100%;
+    background: #d00156;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-top: 2em;
+}
+.btn-signup:hover,.btn-signup:active {
+    background: #e02673;
+}
