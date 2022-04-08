@@ -1,12 +1,10 @@
 import React, { Fragment } from "react";
 import Button from "../button/button";
-import "./cart-modal.css";
-import { useDispatch, useSelector } from "react-redux";
-import { closeCart } from "../../store/actions";
+import "./cart-table-view.styles.css";
+import { useSelector } from "react-redux";
 import CartProductsList from "../cart-products-list/cart-products-list";
 import EmptyCart from "../empty-cart/empty-cart";
-const CartModal = () => {
-  const dispatch = useDispatch();
+const CartTabletView = () => {
   const cart = useSelector((state) => state.cart);
   const cartItems = cart.length;
   const totalPrice =
@@ -17,28 +15,23 @@ const CartModal = () => {
       : 0;
 
   return (
-    <div
-      style={{ backgroundColor: `${cart.length > 0 ? "#eee" : "#ffff"}` }}
-      className="cart-modal-box"
-    >
-      <div className="modal-header">
-        <h3 className="modal-title">
-          My Cart{" "}
-          {cart.length > 0 &&
-            (cartItems > 9 ? `(${cartItems} items)` : `(${cartItems} item)`)}
-        </h3>
-        <button onClick={() => dispatch(closeCart())} className="close-btn">
-          &#10006;
-        </button>
-      </div>
+    <div className="cart-tablet-box">
+      <h3 className="cart-tablet-title">
+        My Cart{" "}
+        {cart.length > 0 &&
+          (cartItems > 9 ? `(${cartItems} items)` : `(${cartItems} item)`)}
+      </h3>
       {cart.length > 0 ? (
         <Fragment>
-          <div className="modal-body">
+          <div className="cart-tablet-body">
             <CartProductsList />
           </div>
-          <div className="modal-footer">
+          <div className="cart-tablet-footer">
             <p>Promo code can be applied on payment page</p>
-            <Button aria-label="Proceed to checkout" className="checkout-btn">
+            <Button
+              aria-label="Proceed to checkout"
+              className="checkout-btn-tablet"
+            >
               Proceed to checkout
               <span>
                 {`Rs. ${totalPrice}`}
@@ -54,4 +47,4 @@ const CartModal = () => {
   );
 };
 
-export default CartModal;
+export default CartTabletView;

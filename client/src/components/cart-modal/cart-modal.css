@@ -37,24 +37,7 @@
   justify-content: space-between;
   align-items: center;
   width: 100%;
-}
-
-.empty-cart {
-  margin: auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  color: #000;
-}
-
-.empty-cart h3 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-}
-
-.empty-cart p {
-  font-size: 1.6rem;
+  border-radius: 5px;
 }
 
 .checkout-btn span {

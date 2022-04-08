@@ -3,6 +3,8 @@ import Logo from "../../assets/logo.png";
 import { Link, Outlet } from "react-router-dom";
 import "./header.css";
 import Cart from "../../components/cart/cart";
+import { useDispatch } from "react-redux";
+import { closeCart } from "../../store/actions";
 
 const mobileNavRoutes = [
   {
@@ -24,6 +26,11 @@ const mobileNavRoutes = [
 ];
 
 const Header = () => {
+  const dispatch = useDispatch();
+  const clickNavHandler = () => {
+    setMobileNav(false);
+    dispatch(closeCart());
+  };
   const [mobileNav, setMobileNav] = useState(false);
   const MobileNav = () => {
     return (
@@ -32,7 +39,7 @@ const Header = () => {
       >
         <ul>
           {mobileNavRoutes.map((item, index) => (
-            <li key={index} onClick={() => setMobileNav(false)}>
+            <li key={index} onClick={() => clickNavHandler()}>
               <Link to={item.route}>{item.name}</Link>
             </li>
           ))}

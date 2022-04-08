@@ -23,11 +23,11 @@ const CartItem = ({ product }) => {
         <h3 className="cart-item-title">{name}</h3>
         <div className="cart-item-actions">
           <button onClick={() => decrementHandler(id)} className="action-btn">
-            -
+            <ion-icon name="remove"></ion-icon>
           </button>
           <span>{quantity}</span>
           <button onClick={() => incrementHandler(id)} className="action-btn">
-            +
+            <ion-icon name="add"></ion-icon>
           </button>
 
           <span style={{ fontSize: "2.6rem" }}> &times;</span>

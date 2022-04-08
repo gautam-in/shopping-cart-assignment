@@ -53,3 +53,21 @@
 .item-total {
   margin-left: auto;
 }
+@media only screen and (max-width: 768px) {
+  .cart-item-title {
+    font-size: 2rem;
+  }
+  .action-btn {
+    border-radius: 5px;
+    height: 3.4rem;
+    width: 4rem;
+  }
+  .item-img {
+    max-width: 75px;
+    flex-shrink: 1;
+    display: inline-block;
+  }
+  .cart-item-actions span {
+    font-size: 2rem;
+  }
+}

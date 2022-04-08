@@ -12,3 +12,12 @@
   font-size: 1.4rem;
   font-weight: 500;
 }
+
+@media only screen and (max-width: 768px) {
+  .lowest-price-box p {
+    font-size: 1.6rem;
+  }
+  .lowest-price-box {
+    padding: 1.6rem;
+  }
+}
