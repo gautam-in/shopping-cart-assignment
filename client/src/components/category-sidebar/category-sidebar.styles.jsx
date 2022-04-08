@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { device } from '../../utils/breakpoints/devices';
 
 const offWhite = '#eaeaea';
-const mediumGray = '#848484';
+const mediumGray = '#606060';
 
 export const CategorySidebarContainer = styled.div`
   display: none;

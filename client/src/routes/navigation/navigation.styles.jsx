@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { device } from '../../utils/breakpoints/devices';
 
 const offWhite = '#eeeeee';
-const lightGray = '#797979';
+const lightGray = '#5f5f5f';
 const darkGray = '#424242';
 
 export const NavigationContainer = styled.div`

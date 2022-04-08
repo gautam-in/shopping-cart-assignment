@@ -39,3 +39,8 @@ export const CategoryContainer = styled.div`
 export const CategoryDetail = styled.div`
   text-align: center;
 `;
+
+export const CategoryTitle = styled.p`
+  font-size: 2rem;
+  font-weight: 600;
+`;

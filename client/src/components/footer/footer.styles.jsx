@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+
 import { device } from '../../utils/breakpoints/devices';
 
 const offWhite = '#eaeaea';
@@ -11,7 +12,7 @@ export const FooterContainer = styled.div`
   bottom: 0;
   width: 100%;
 
-  h2 {
+  p {
     font-size: 0.8rem;
     padding-top: 0.5rem;
     font-weight: 400;

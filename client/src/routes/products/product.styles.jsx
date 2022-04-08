@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+
 import { device } from '../../utils/breakpoints/devices';
 
 export const ProductContainers = styled.div`

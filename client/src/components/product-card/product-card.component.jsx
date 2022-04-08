@@ -1,6 +1,7 @@
 import React from 'react';
 import { toast } from 'react-toastify';
 import { useDispatch, useSelector } from 'react-redux';
+
 import { addItemToCart } from '../../store/cart/cart.actions';
 import { selectCartItems } from '../../store/cart/cart.selector';
 import {
@@ -11,7 +12,6 @@ import {
   ProductDetailsDesktopBlock,
   ProductPriceDetail,
 } from './product-card.styled';
-
 import { InvertedButton } from '../button/button.styles';
 
 const ProductCardButtonWithPrice = ({ price }) => {
@@ -42,7 +42,7 @@ const ProductCard = ({ product }) => {
     <ProductCardContainer>
       <h2> {product.name}</h2>
       <ProductDetailsMobileBlock>
-        <img src={product.imageURL} alt="" />
+        <img src={product.imageURL} alt={product.name} />
         <ProductDescription>
           <p>{product.description}</p>
           <ProductCardButtonWithPrice price={product.price} />

@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react';
+import { useSelector } from 'react-redux';
 
 import { selectCategories } from '../../store/categories/categories.selector';
 import CategoryCard from '../../components/category-card/category-card.component';
 import { HomeContainer } from './home.styles';
 import Slider from '../../components/Slider/slider.component';
-import { useSelector } from 'react-redux';
 import ApiRequestService from './../../services/api.service';
 
 const Home = () => {

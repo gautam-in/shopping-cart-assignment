@@ -3,10 +3,13 @@ import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 
 import Button from '../button/button.component';
-
 import { setCurrentCategory } from '../../store/categories/categories.actions';
 
-import { CategoryContainer, CategoryDetail } from './category-card.styles';
+import {
+  CategoryContainer,
+  CategoryDetail,
+  CategoryTitle,
+} from './category-card.styles';
 
 const CategoryCard = ({ name, id, index, imageUrl, description }) => {
   const navigate = useNavigate();
@@ -20,10 +23,10 @@ const CategoryCard = ({ name, id, index, imageUrl, description }) => {
     <CategoryContainer index={index}>
       <img
         src={imageUrl || './static/images/category/category_placeholder.png'}
-        alt=""
+        alt={`Image of ${name}`}
       />
       <CategoryDetail className="category-detail">
-        <h2>{name}</h2>
+        <CategoryTitle>{name}</CategoryTitle>
         <p>{description}</p>
         <Button
           onClick={handleCategoryClick}

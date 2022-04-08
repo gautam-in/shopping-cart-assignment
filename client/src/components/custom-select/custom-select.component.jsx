@@ -1,6 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { components } from 'react-select';
+
 import { setCurrentCategory } from '../../store/categories/categories.actions';
 import { selectCategories } from '../../store/categories/categories.selector';
 
