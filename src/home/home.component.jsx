@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, {  useEffect, } from "react";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { connect } from "react-redux";
@@ -9,7 +9,7 @@ import { getBanner, getCategory } from "../api";
 
 const Home = ({ getBanner, bannerList, categories, getCategory }) => {
   useEffect(() => {
-    if (!categories?.length) getCategory(() => {});
+    if (!categories?.length) getCategory().then(() => {});
     if (!bannerList?.length) getBanner().then(() => {});
   }, []);
   return (
