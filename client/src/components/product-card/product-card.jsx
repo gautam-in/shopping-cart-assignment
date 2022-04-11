@@ -26,26 +26,7 @@ export const ProductCard = ({ product }) => {
     }
   };
 
-  const ProductCardDesktop = () => (
-    <div className="product-card">
-      <h2 className="product-name">{name}</h2>
-      <div className="product-img-container">
-        <img className="product-img" src={imageURL} alt={name} />
-      </div>
-      <div className="product-description">{description}</div>
-      <div className="buy-now-box">
-        <span className="product-price">MRP Rs.{price}</span>
-        <Button
-          onClick={() => buyNowHandler(id)}
-          aria-label={`Add ${name} to cart`}
-        >
-          Buy Now
-        </Button>
-      </div>
-    </div>
-  );
-
-  const ProductCartMobile = () => (
+  return (
     <div className="product-card">
       <h2 className="product-name">{name}</h2>
       <div className="production-desctiption-box">
@@ -67,7 +48,6 @@ export const ProductCard = ({ product }) => {
       </div>
     </div>
   );
-  return <ProductCartMobile />;
 };
 
 export default ProductCard;
