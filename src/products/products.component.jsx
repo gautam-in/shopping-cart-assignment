@@ -81,7 +81,7 @@ const Products = ({ getProducts, allProducts, getCategory, categories }) => {
       ) : (
         !productType && isMobile && <div></div>
       )}
-      <div className="product-container">
+      <div className="product-container w-100">
         {products?.length ? (
           products.map((product) => (
             <ProductCard
@@ -92,7 +92,9 @@ const Products = ({ getProducts, allProducts, getCategory, categories }) => {
             />
           ))
         ) : (
-          <p className="text-center">No item available</p>
+          <p className="d-flex align-items-center justify-content-center">
+            No item available
+          </p>
         )}
       </div>
     </div>
