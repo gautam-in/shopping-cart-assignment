@@ -14,11 +14,11 @@
 @media only screen and (max-width: 768px) {
   .products-list {
     grid-template-columns: repeat(2, 1fr);
-    column-gap: 2rem;
+    column-gap: 1rem;
   }
 }
 
-@media only screen and (max-width: 576px) {
+@media only screen and (max-width: 481px) {
   .products-list {
     grid-template-columns: 1fr;
   }

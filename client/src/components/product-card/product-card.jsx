@@ -26,7 +26,7 @@ export const ProductCard = ({ product }) => {
     }
   };
 
-  return (
+  const ProductCardDesktop = () => (
     <div className="product-card">
       <h2 className="product-name">{name}</h2>
       <div className="product-img-container">
@@ -37,7 +37,6 @@ export const ProductCard = ({ product }) => {
         <span className="product-price">MRP Rs.{price}</span>
         <Button
           onClick={() => buyNowHandler(id)}
-          style={{ padding: "0 1rem 0 1rem" }}
           aria-label={`Add ${name} to cart`}
         >
           Buy Now
@@ -45,6 +44,30 @@ export const ProductCard = ({ product }) => {
       </div>
     </div>
   );
+
+  const ProductCartMobile = () => (
+    <div className="product-card">
+      <h2 className="product-name">{name}</h2>
+      <div className="production-desctiption-box">
+        <div className="product-img-container">
+          <img className="product-img" src={imageURL} alt={name} />
+        </div>
+        <div className="product-description">{description}</div>
+        <div className="buy-now-box">
+          <span className="product-price-desktop">MRP Rs.{price}</span>
+          <Button
+            onClick={() => buyNowHandler(id)}
+            className="buy-now-btn"
+            aria-label={`Add ${name} to cart`}
+          >
+            Buy Now @
+            <span className="product-price-tablet"> MRP Rs.{price}</span>
+          </Button>
+        </div>
+      </div>
+    </div>
+  );
+  return <ProductCartMobile />;
 };
 
 export default ProductCard;
