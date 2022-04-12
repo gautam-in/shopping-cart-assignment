@@ -1,0 +1,112 @@
+@import "../../common.module.scss";
+.header-container {
+  width: 100%;
+  height: 45px;
+  box-shadow: 1px 1.5px 5px lightgrey;
+  background-color: #ffffff;
+  position: sticky;
+  top: 0px;
+  z-index: 111;
+  .header-inner {
+    max-width: 950px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+  }
+  .navigation-links {
+    display: none;
+  }
+  .login-bar {
+    display: none;
+  }
+  .logo {
+    img {
+      width: 80px;
+      display: block;
+      margin-left: 5px;
+    }
+  }
+}
+
+@media screen and (min-width: $mobile) {
+  .header-container {
+    height: 70px;
+    .navigation-links {
+      flex-grow: 1;
+      position: relative;
+      display: block;
+      ul {
+        @include ulDefault();
+        display: flex;
+        gap: 0 20px;
+        margin-left: 100px;
+        margin-top: 20px;
+
+        li {
+          @include DosisBold();
+          font-size: 13px;
+          a {
+            color: $BriGrey;
+          }
+        }
+      }
+    }
+    .cart-login-container {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      justify-content: space-between;
+      .login-bar {
+        display: block;
+        margin-right: 5px;
+        ul {
+          @include ulDefault();
+          display: flex;
+          gap: 0 10px;
+          margin-top: 2px;
+          justify-content: flex-end;
+          li {
+            @include DosisBold();
+            font-size: 10px;
+            a,
+            span {
+              color: $DarkGrey;
+              cursor: pointer;
+            }
+          }
+        }
+      }
+    }
+    .logo {
+      img {
+        width: 100px;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: $tablet) {
+  .header-container {
+    height: 75px;
+    .logo {
+      img {
+        width: 120px;
+        margin-left: 0px;
+      }
+    }
+  }
+}
+@media screen and (min-width: $desktop) {
+  .header-container {
+    .login-bar {
+      margin-right: 0px;
+    }
+    .logo {
+      img {
+        width: 145px;
+      }
+    }
+  }
+}

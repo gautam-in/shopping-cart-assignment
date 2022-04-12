@@ -1,0 +1,44 @@
+@import "../../common.module.scss";
+.categories-list {
+  background-color: #eaeaea;
+  min-width: 240px;
+  ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    li {
+      @include DosissemiBold;
+      font-size: 13px;
+      padding: 10px 0 10px 15px;
+      margin-left: 10px;
+      border-bottom: 1px solid #9c9c9c47;
+      box-sizing: border-box;
+      a {
+        color: $DarkGrey;
+      }
+    }
+  }
+}
+@media screen and (max-width: $mobile) {
+  .categories-list {
+    display: none;
+  }
+}
+@media screen and (min-width: $mobile) {
+  .categories-list {
+    display: none;
+  }
+}
+@media screen and (min-width: $tablet) {
+  .categories-list {
+    min-width: 180px;
+    display: block;
+  }
+}
+@media screen and (min-width: $desktop) {
+  .categories-list {
+    min-width: 240px;
+  }
+}

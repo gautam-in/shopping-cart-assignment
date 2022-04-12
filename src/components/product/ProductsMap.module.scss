@@ -1,0 +1,165 @@
+@import "../../common.module.scss";
+
+.product-list-container {
+  flex-grow: 1;
+  .product-list-inner {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0px;
+    flex-direction: column;
+    align-items: center;
+    .error {
+      @include error();
+    }
+    .product {
+      max-width: 300px;
+      border-bottom: 1px dashed $DimGrey;
+      margin: 25px 0;
+      position: relative;
+      overflow: hidden;
+      background-color: #ffffff;
+      .product-name {
+        @include DosisExtraBold();
+        min-height: 0;
+        margin: 0 0 15px 0;
+        font-size: 18px;
+      }
+      .product-button-tablet {
+        position: absolute;
+        bottom: 10px;
+        width: 150px;
+        right: 0px;
+        margin: 0;
+      }
+      .product-info-container {
+        display: flex;
+        flex-direction: row;
+        .product-image {
+          width: 150px;
+          display: block;
+        }
+        .product-description-container {
+          background-color: #eaeaea;
+          height: 85px;
+          box-sizing: border-box;
+          overflow: hidden;
+          margin: 0;
+          padding: 5px;
+          .product-description-inner {
+            @include DosissemiBold();
+            height: 75px;
+            font-size: 13px;
+            line-height: 15px;
+            overflow: hidden;
+          }
+        }
+      }
+      .product-footer {
+        display: none;
+      }
+      &:after {
+        content: " ";
+        position: absolute;
+        width: 70%;
+        right: 0;
+        left: 0;
+        margin: 0 auto;
+        bottom: 7px;
+        height: 20px;
+        z-index: -1;
+        box-shadow: 0px 6px 10px 2px #777776;
+        border-radius: 25%;
+      }
+    }
+  }
+}
+@media screen and (min-width: 600px) {
+  .product-list-container {
+    .product-list-inner {
+      justify-content: space-around;
+      flex-direction: row;
+      align-items: unset;
+      .product {
+        width: 260px;
+        padding: 0px;
+        .product-button-tablet {
+          position: relative;
+          bottom: auto;
+          width: 100%;
+          right: auto;
+          margin: 10px 0;
+        }
+        .product-name {
+          min-height: 60px;
+          margin: 0;
+        }
+        .product-info-container {
+          flex-direction: row;
+          align-items: flex-start;
+          .product-image {
+            width: 130px;
+          }
+          .product-description-container {
+            .product-description-inner {
+              line-height: 15px;
+              font-size: 13px;
+              height: 60px;
+              overflow: hidden;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media screen and (min-width: $desktop) {
+  .product-list-container {
+    .product-list-inner {
+      padding: 0 0 0 20px;
+      justify-content: space-between;
+      .product {
+        width: 155px;
+        padding: 0;
+        margin: 25px 0;
+        .product-button-tablet {
+          display: none;
+        }
+        .product-name {
+          min-height: 70px;
+          font-size: 15px;
+        }
+        .product-info-container {
+          flex-direction: column;
+          .product-image {
+            width: 150px;
+          }
+          .product-description-container{
+            margin: 10px 0 0;
+            height: 67px;
+            overflow: hidden;
+            .product-description-inner {
+              height: 100%;
+              font-size: 12px;
+              line-height: 14px;
+            }
+          }
+        }
+        .product-footer {
+          display: flex;
+          margin: 10px 0 5px;
+          align-items: center;
+          justify-content: space-between;
+          .price {
+            @include DosisExtraBold();
+            font-size: 11px;
+            color: $BriGrey;
+          }
+          .product-button {
+            padding: 6px 20px;
+            font-size: 11px;
+          }
+        }
+      }
+    }
+  }
+}

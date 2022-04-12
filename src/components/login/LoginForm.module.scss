@@ -1,0 +1,30 @@
+@import "../../common.module.scss";
+.login-form {
+  max-width: 300px;
+  width: 100%;
+  margin: 0 auto;
+  .error {
+    color: red;
+    @include DosissemiBold();
+    font-size: 10px;
+    margin: 0 0 10px;
+  }
+  .sign-button {
+    width: 100%;
+    margin: 0;
+    font-size: 12px;
+  }
+}
+
+
+@media screen and (min-width: 600px) {
+  .login-form {
+    width: 280px;
+    margin: 0;
+    .sign-button {
+      margin: 15px 0 0;
+    }
+  }
+}  
+
+

@@ -1,0 +1,56 @@
+@import "../../common.module.scss";
+$main-color: #73ced3;
+@mixin shrinkLabel {
+  top: -5px;
+  font-size: 12px;
+  color: $main-color;
+}
+.sign-inner {
+  width: 85%;
+  margin: 25px auto;
+  display: flex;
+  flex-direction: column;
+  .sign-content {
+    align-self: unset;
+    margin: 0 auto 20px;
+    max-width: 300px;
+    width: 100%;
+    .sign-text {
+      @include DosisBold();
+      font-size: 24px;
+      margin: 0
+    }
+    .sign-description {
+      @include DosissemiBold();
+      font-size: 12px;
+      margin: 15px 0 0;
+    }
+  }
+  .sign-form {
+    margin: 0;
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .sign-inner {
+    margin: 35px auto 15px;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-evenly;
+    .sign-content {
+      align-self: flex-start;
+      margin: 20px 0 0;
+      width: 300px;
+    }
+    .sign-form {
+      margin: 0 0 0 20px;
+      width: auto;
+    }
+  }
+}
+@media screen and (min-width: $desktop) {
+  .sign-inner {
+    justify-content: unset;
+  }
+}

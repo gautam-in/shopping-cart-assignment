@@ -1,0 +1,118 @@
+@import "../../common.module.scss";
+
+.slider-container {
+  width: 100%;
+  position: relative;
+  height: 130px;
+  overflow: hidden;
+  margin: 10px 0 0;
+  .slider {
+    position: absolute;
+    opacity: 0;
+    background-color: #ffffff;
+    transition: opacity 0.5s ease-in-out;
+    &:after {
+      @include boxShadow();
+    }
+    img {
+      width: 100%;
+      display: block;
+    }
+  }
+  .active-slide {
+    opacity: 1;
+  }
+  .dot-container {
+    width: 140px;
+    margin: 0 auto;
+    position: absolute;
+    bottom: 8%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: space-evenly;
+    .dot {
+      width: 6px;
+      height: 6px;
+      background-color: lightslategray;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: opacity 0.5s ease-in-out;
+    }
+    .active-dot {
+      background-color: black;
+    }
+  }
+}
+
+@media screen and (min-width: 380px) {
+  .slider-container {
+    height: 140px;
+    .dot-container {
+      bottom: 5%;
+    }
+  }
+}
+@media screen and (min-width: 440px) {
+  .slider-container {
+    height: 150px;
+  }
+}
+@media screen and (min-width: $mobile) {
+  .slider-container {
+    height: 180px;
+    .dot-container {
+      bottom: 6%;
+      width: 140px;
+      .dot {
+        width: 6px;
+        height: 6px;
+      }
+    }
+  }
+}
+@media screen and (min-width: 600px) {
+  .slider-container {
+    height: 220px;
+    .dot-container {
+      bottom: 7%;
+    }
+  }
+}
+
+@media screen and (min-width: 700px) {
+  .slider-container {
+    .dot-container {
+      bottom: 4%;
+    }
+  }
+}
+
+@media screen and (min-width: $tablet) {
+  .slider-container {
+    height: 220px;
+    .dot-container {
+      bottom: 22%;
+      .dot {
+        width: 4px;
+        height: 4px;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 830px) {
+  .slider-container {
+    height: 250px;
+    .dot-container {
+      bottom: 19%;
+    }
+  }
+}
+@media screen and (min-width: 960px) {
+  .slider-container {
+    .dot-container {
+      bottom: 12%;
+    }
+  }
+}

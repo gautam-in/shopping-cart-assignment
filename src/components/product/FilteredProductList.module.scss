@@ -1,0 +1,4 @@
+@import "../../common.module.scss";
+.error {
+  @include error();
+}

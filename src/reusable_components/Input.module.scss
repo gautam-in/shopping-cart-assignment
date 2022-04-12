@@ -1,0 +1,39 @@
+@import "../common.module.scss";
+$main-color: #50DAE4;
+@mixin shrinkLabel {
+  top: -3px;
+  font-size: 10px;
+  color: $main-color;
+}
+.input {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  label {
+    font-size: 12px;
+    position: absolute;
+    top: 12px;
+    transition: 300ms ease all;
+    color: $DarkGrey;
+    @include DosissemiBold();
+  }
+  .label-active {
+    @include shrinkLabel();
+  }
+  input {
+    @include DosissemiBold();
+    font-size: 12px;  
+    border-width: 0;
+    border-bottom: 1.5px solid $DarkGrey;
+    margin: 15px 0 10px;
+    padding: 0 0 8px;
+    cursor: pointer;
+    &:focus {
+      outline: none;
+      border-color: $main-color;
+    }
+    &:focus ~ label {
+      @include shrinkLabel();
+    }
+  }
+}

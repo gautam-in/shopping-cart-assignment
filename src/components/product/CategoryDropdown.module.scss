@@ -1,0 +1,43 @@
+@import "../../common.module.scss";
+.category-dropdown {
+  margin: 25px 0px 0px;
+  background-color: $Pink;
+  padding: 10px 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  position: sticky;
+  top: 45px;
+  z-index: 111;
+  .category-select {
+    width: 300px;
+    background-color: $Pink;
+    border: unset;
+    font-size: 16px;
+    outline: unset;
+    -webkit-print-color-adjust: exact;
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3E%3Cpath stroke='%23ffffff' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.1' d='m6 8 4 4 4-4'/%3E%3C/svg%3E");
+    background-position: right;
+    background-repeat: no-repeat;
+    background-size: 40px;
+    color: white;
+    appearance: none;
+    padding: 0 10px;
+    @include DosisMedium;
+    a {
+      color: #ffffff;
+    }
+  }
+}
+
+@media screen and (min-width: $mobile) {
+  .category-dropdown {
+    top: 70px;
+  }  
+  
+}  
+@media screen and (min-width: $tablet) {
+  .category-dropdown {
+    display: none;
+  }
+}
