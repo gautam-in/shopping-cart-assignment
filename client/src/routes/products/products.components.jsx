@@ -32,7 +32,7 @@ const Products = () => {
     const filteredProducts = products?.filter(
       (product) => product.category === currentCategory
     );
-    // setProducts(filteresProducts);
+
     if (currentCategory) {
       setFilteredProducts(filteredProducts);
     }

@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { device } from '../../utils/breakpoints/devices';
 
 const white = '#ffffff';
 const red = '#c12956';
@@ -22,12 +23,6 @@ export const ItemDetails = styled.div`
   justify-content: center;
   span {
     font-size: 1rem;
-    margin-top: 0.5rem;
-    margin: 1rem 1rem 0 1rem;
-  }
-
-  div {
-    margin-top: 0.5rem;
   }
 `;
 
@@ -45,8 +40,19 @@ export const CartitemDetail = styled.div`
   display: flex;
   justify-content: space-between;
   width: 100%;
+  margin-top: 1rem;
 `;
 
 export const SingleItemTotal = styled.div`
   font-size: 1.25rem;
+`;
+
+export const CartItemActionButtons = styled.div`
+  display: flex;
+  gap: 0.25rem;
+  align-items: center;
+
+  @media ${device.laptop} {
+    gap: 0.5rem;
+  }
 `;

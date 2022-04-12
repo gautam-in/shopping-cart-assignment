@@ -9,6 +9,8 @@ import {
   ItemDetails,
   QuantityIcon,
   SingleItemTotal,
+  CartitemDetail,
+  CartItemActionButtons,
 } from './cart-item.styles';
 import { toast } from 'react-toastify';
 
@@ -16,7 +18,6 @@ const CartItem = ({ cartItem }) => {
   const { name, imageURL, price, quantity } = cartItem;
   const dispatch = useDispatch();
   const cartItems = useSelector(selectCartItems);
-  // const addItemHandler = () => dispatch(addItemToCart(cartItems, cartItem));
 
   const addProductHandler = () => {
     addItemToCart(cartItems, cartItem)
@@ -37,17 +38,16 @@ const CartItem = ({ cartItem }) => {
       <img src={imageURL} alt={`${name}`} />
       <ItemDetails>
         <span>{name}</span>
-        <div>
-          <div>
+        <CartitemDetail>
+          <CartItemActionButtons>
             <QuantityIcon onClick={removeItemHandler}>-</QuantityIcon>
             {quantity}
             <QuantityIcon onClick={addProductHandler}>+</QuantityIcon>
             <span>x</span>
-
             <span>{price}</span>
-          </div>
+          </CartItemActionButtons>
           <SingleItemTotal>Rs. {quantity * price}</SingleItemTotal>
-        </div>
+        </CartitemDetail>
       </ItemDetails>
     </CartItemContainer>
   );

@@ -6,7 +6,7 @@ import { rootReducer } from './root-reducer';
 import thunk from 'redux-thunk';
 
 const middleware = [
-  // logger,
+  // logger, // uncomment when needed to check the redux actions in console
   thunk,
 ];
 
@@ -20,7 +20,7 @@ const enhancer = composeEnhancers(applyMiddleware(...middleware));
 const persistConfig = {
   key: 'root',
   storage,
-  whitelist: ['cart'],
+  whitelist: ['cart', 'user'],
 };
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);

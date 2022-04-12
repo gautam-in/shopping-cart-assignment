@@ -1,10 +1,15 @@
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
+import { toast } from 'react-toastify';
+import { useNavigate } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
 
 import FormInput from './../../components/form-input/form-input.component';
 import Button, {
   BUTTON_TYPE_CLASSES,
 } from './../../components/button/button.component';
+import { setCurrentUser } from '../../store/user/user.actions';
+import { selectCurrentUser } from '../../store/user/user.selector';
 
 import { SignUpContainer } from './register.styles';
 
@@ -38,16 +43,27 @@ const initialValues = {
 };
 
 const Register = () => {
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const user = useSelector(selectCurrentUser);
   const formik = useFormik({
     initialValues,
     validationSchema,
-    onSubmit: async (data) => {
-      console.log(data);
-      // to be implemented once auth API is avaiable
+    onSubmit: async ({ email }) => {
+      // demo register implementation
+      await dispatch(setCurrentUser(email));
+
+      if (user) {
+        handleReset();
+        navigate('/');
+        toast.success('You have successfully registered.', {
+          position: toast.POSITION.TOP_RIGHT,
+        });
+      }
     },
   });
 
-  const { errors, handleChange, values, handleSubmit } = formik;
+  const { errors, handleChange, values, handleSubmit, handleReset } = formik;
 
   return (
     <SignUpContainer>

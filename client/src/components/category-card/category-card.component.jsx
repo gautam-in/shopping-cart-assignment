@@ -23,7 +23,7 @@ const CategoryCard = ({ name, id, index, imageUrl, description }) => {
     <CategoryContainer index={index}>
       <img
         src={imageUrl || './static/images/category/category_placeholder.png'}
-        alt={`Image of ${name}`}
+        alt={`${name}`}
       />
       <CategoryDetail className="category-detail">
         <CategoryTitle>{name}</CategoryTitle>
