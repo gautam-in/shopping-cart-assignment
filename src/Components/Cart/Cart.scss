@@ -1,0 +1,25 @@
+.cart-container {
+    // background-color: white;
+    background-color: rgb(233, 232, 232);   
+    // height: 100vh;
+    display:flex;
+    width: 100%;
+    flex-direction: column;
+    margin: 0.5rem;
+    border: 2px solid black;
+   .cart-heading{
+    background-color: white;
+    border: 2px solid black; 
+    width: 100%;
+   }
+   .cart-items{
+    background-color: white;
+    border: 2px solid black; 
+    width: 100%;
+   }
+   .checkout{
+    background-color: white;
+    border: 2px solid black; 
+    width: 100%;
+   }
+}
