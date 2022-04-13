@@ -1,0 +1,11 @@
+@import "../../common.module.scss";
+.products-container {
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (min-width: $tablet) {
+  .products-container {
+    flex-direction: row;
+  }
+}

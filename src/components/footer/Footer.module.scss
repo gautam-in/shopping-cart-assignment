@@ -1,0 +1,23 @@
+@import "../../common.module.scss";
+.footer {
+  background-color: #f0ecec;
+  padding: 12px 0;
+  .footer-inner {
+    max-width: 950px;
+    margin: 0 auto;
+  }
+  .copy-right {
+    @include DosissemiBold;
+    font-size: 12px;
+    margin-left: 10px;
+    text-align: center;
+  }
+}
+@media screen and (min-width: $desktop) {
+  .footer {
+    .copy-right {
+      margin-left: 0px;
+      text-align: left;
+    }
+  }
+}

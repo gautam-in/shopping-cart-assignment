@@ -1,0 +1,100 @@
+@import "../../common.module.scss";
+@import "../../reusable_components/Button.module.scss";
+
+.categories-container {
+  position: relative;
+  margin: 0px 10px;
+  .error {
+    @include error();
+  }
+  .category {
+    display: flex;
+    align-items: center;
+    padding: 40px 0;
+    margin: 5px 0;
+    justify-content: space-between;
+    position: relative;
+    background-color: #ffffff;
+    &:first-child {
+      padding: 20px 0 35px;
+    }
+    &:nth-child(even) {
+      flex-direction: row-reverse;
+    }
+    &:after {
+      @include boxShadow();
+    }
+    &:last-child {
+      &:after {
+        box-shadow: none;
+      }
+    }
+    img {
+      width: 150px;
+    }
+    .category-content {
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px 0;
+      .category-name {
+        @include DosisExtraBold();
+        font-size: 18px;
+        margin: 0;
+      }
+      .category-description {
+        @include DosisMedium();
+        color: $DarkGrey;
+        font-size: 14px;
+        text-align: center;
+      }
+      .category-button {
+        margin-top: 5px;
+        @include buttonStyles();
+      }
+    }
+  }
+}
+@media screen and (min-width: 600px) {
+  .categories-container {
+    .category {
+      img {
+        width: 220px;
+      }
+    }
+  }
+}
+@media screen and (min-width: $tablet) {
+  .categories-container {
+    margin: 0px;
+    .category {
+      padding: 30px 0;
+      &:first-child {
+        padding: 20px 0;
+      }
+      img {
+        width: 260px;
+      }
+      .category-content {
+        gap: 15px 0;
+        .category-button {
+          margin-top: 0px;
+        }
+      }
+    }
+  }
+}
+@media screen and (min-width: $desktop) {
+  .categories-container {
+    .category {
+      padding: 20px 0;
+      &:first-child {
+        padding: 20px 0;
+      }
+      img {
+        width: 300px;
+      }
+    }
+  }
+}

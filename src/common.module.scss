@@ -1,0 +1,54 @@
+$Dosis: "Dosis";
+$DimGrey: #696969c2;
+$BriGrey: #696969de;
+$DarkGrey: #545151;
+$Pink: #d10157;
+$mobile: "480px";
+$tablet: "750px";
+$desktop: "960px";
+
+@mixin DosisMedium {
+  font-family: $Dosis;
+  font-weight: 500;
+}
+@mixin DosissemiBold {
+  font-family: $Dosis;
+  font-weight: 600;
+}
+@mixin DosisBold {
+  font-family: $Dosis;
+  font-weight: 700;
+}
+@mixin DosisExtraBold {
+  font-family: $Dosis;
+  font-weight: 800;
+}
+@mixin ulDefault {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+@mixin error {
+  @include DosisBold();
+  font-size: 14px;
+  color: $BriGrey;
+  margin: 20px 0;
+  text-align: center;
+  width: 100%;
+}
+@mixin activeLink {
+  color: $Pink;
+}
+@mixin boxShadow {
+  content: " ";
+  position: absolute;
+  width: 70%;
+  right: 0;
+  left: 0;
+  margin: 0 auto;
+  bottom: 7px;
+  height: 20px;
+  z-index: -1;
+  box-shadow: 0px 6px 10px 2px #777776;
+  border-radius: 25%;
+}

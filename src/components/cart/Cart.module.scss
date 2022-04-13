@@ -1,0 +1,190 @@
+@import "../../common.module.scss";
+@mixin Inc {
+  color: #bc2955;
+  font-size: 16px;
+  cursor: pointer;
+  @include DosisMedium();
+}
+.cart-container {
+  position: fixed;
+  top: 50%;
+  margin: auto;
+  left: 0;
+  right: 0;
+  transform: translateY(-50%);
+  z-index: 9999;
+  width: 300px;
+  min-height: 503px;
+  .cart-header {
+    background-color: #1d2124cc;
+    color: #ffffff;
+    padding: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .cart-title {
+      @include DosissemiBold();
+      font-size: 13px;
+      .item {
+        font-size: 10px;
+        @include DosisMedium();
+      }
+    }
+    .close-button {
+      font-size: 20px;
+      line-height: 5px;
+      cursor: pointer;
+    }
+  }
+  .cart-main {
+    background-color: #eeeeee;
+    overflow: auto;
+    height: 380px;
+    /* width */
+    .empty-cart {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      height: 80%;
+      align-items: center;
+      justify-content: center;
+      gap: 3px 0;
+      div {
+        &:first-child {
+          @include DosissemiBold();
+          font-size: 14px;
+        }
+        @include DosisMedium();
+        font-size: 10px;
+      }
+    }
+    &::-webkit-scrollbar {
+      width: 4px;
+      height: 10px;
+    }
+
+    /* Track */
+    &::-webkit-scrollbar-track {
+      background: #f1f1f1;
+    }
+
+    /* Handle */
+    &::-webkit-scrollbar-thumb {
+      background: #888;
+      border-radius: 10px;
+    }
+
+    /* Handle on hover */
+    &::-webkit-scrollbar-thumb:hover {
+      background: #555;
+    }
+    .cart-item {
+      display: flex;
+      flex-direction: row;
+      margin: 5px 0;
+      padding: 10px;
+      align-items: center;
+      background-color: #ffffff;
+      justify-content: space-between;
+      .item-image {
+        width: 50px;
+      }
+      .item-name {
+        @include DosisExtraBold();
+        font-size: 12px;
+      }
+      .minus {
+        @include Inc();
+      }
+      .plus {
+        @include Inc();
+      }
+      .quantity {
+        @include DosissemiBold();
+        font-size: 12px;
+        width: 8px;
+        text-align: center;
+      }
+      .multiply {
+        color: $BriGrey;
+        font-size: 12px;
+      }
+      .price {
+        @include DosissemiBold();
+        font-size: 12px;
+      }
+      .cart-item-detail {
+        width: 170px;
+        display: flex;
+        flex-direction: column;
+        gap: 5px 0;
+      }
+      .cart-item-total {
+        @include DosissemiBold();
+        font-size: 12px;
+        margin-top: 17px;
+        width: 35px;
+        text-align: end;
+      }
+      .price-details {
+        display: flex;
+        align-items: center;
+        gap: 0px 10px;
+      }
+    }
+    .cheap-tag {
+      width: 280px;
+      margin: 10px auto;
+      background-color: #ffffff;
+      display: flex;
+      padding: 4px;
+      box-sizing: border-box;
+      justify-content: flex-start;
+      align-items: center;
+      img {
+        height: 25px;
+      }
+      .cheap-label-copy {
+        @include DosissemiBold();
+        font-size: 10px;
+        margin-left: 15px;
+      }
+    }
+  }
+  .cart-footer {
+    background-color: #ffffff;
+    padding: 10px;
+    .promo-description {
+      @include DosissemiBold();
+      font-size: 10px;
+      text-align: center;
+    }
+    .checkout-button {
+      margin-top: 10px;
+      width: 100%;
+      font-size: 11px;
+      display: flex;
+      justify-content: space-between;
+      padding: 10px;
+      border-radius: 3px;
+    }
+    .empty-button {
+      width: 100%;
+    }
+    .checkout-arrow {
+      font-size: 8px;
+      margin-left: 10px;
+    }
+    .total-amount {
+      line-height: 15px;
+    }
+  }
+}
+@media screen and (min-width: $desktop) {
+  .cart-container {
+    top: auto;
+    bottom: 0px;
+    left: 50%;
+    transform: unset;
+  }
+}

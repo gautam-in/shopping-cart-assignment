@@ -1,0 +1,35 @@
+@import "../common.module.scss";
+$lightPink: #972042;
+@mixin buttonStyles {
+  @include DosisMedium();
+  cursor: pointer;
+  padding: 8px 10px;
+  background-color: $Pink;
+  border: none;
+  color: #ffffff;
+  font-size: 13px;
+  &:hover {
+    background-color: $lightPink;
+    transition: 0.5s;
+  }
+  &:disabled {
+    cursor: not-allowed;
+  }
+}
+
+.button {
+  @include DosisMedium();
+  cursor: pointer;
+  padding: 8px 10px;
+  background-color: $Pink;
+  border: none;
+  color: #ffffff;
+  font-size: 13px;
+  &:hover {
+    background-color: $lightPink;
+    transition: 0.5s;
+  }
+  &:disabled {
+    cursor: not-allowed;
+  }
+}
