@@ -1,9 +1,10 @@
 import styles from "./Header.module.scss";
 import CartButton from "./CartButton";
 import { Fragment } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { userActions } from "../../store/userReducer";
 import { useSelector, useDispatch } from "react-redux";
+
 
 const Header = () => {
   const { isLoggedIn } = useSelector((state) => state.users);
@@ -25,10 +26,10 @@ const Header = () => {
           <nav className={styles["navigation-links"]}>
             <ul>
               <li>
-                <Link to="/">Home</Link>
+                <NavLink to="/" className={(navData) => navData.isActive ? styles.activeLink : ''}>Home</NavLink>
               </li>
               <li>
-                <Link to="/products">Products</Link>
+                <NavLink to="/products"  className={(navData) => navData.isActive ? styles.activeLink : ''}>Products</NavLink>
               </li>
             </ul>
           </nav>
@@ -36,11 +37,11 @@ const Header = () => {
             <div className={styles["login-bar"]}>
               <ul>
                 <li>
-                  {!isLoggedIn && <Link to="/login">SignIn</Link>}
+                  {!isLoggedIn && <NavLink to="/login" className={(navData) => navData.isActive ? styles.activeLink : ''}>SignIn</NavLink>}
                   {isLoggedIn && <span onClick={signOutHandler}>SignOut</span>}
                 </li>
                 <li>
-                  <Link to="/signup">Register</Link>
+                  <NavLink to="/signup" className={(navData) => navData.isActive ? styles.activeLink : ''}>Register</NavLink>
                 </li>
               </ul>
             </div>

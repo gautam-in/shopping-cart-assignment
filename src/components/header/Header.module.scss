@@ -17,6 +17,9 @@
   }
   .navigation-links {
     display: none;
+    .activeLink {
+      @include activeLink();
+    }
   }
   .login-bar {
     display: none;
@@ -70,6 +73,9 @@
           li {
             @include DosisBold();
             font-size: 10px;
+            .activeLink {
+              @include activeLink();
+            }
             a,
             span {
               color: $DarkGrey;

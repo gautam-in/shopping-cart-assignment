@@ -36,6 +36,9 @@ $desktop: "960px";
   text-align: center;
   width: 100%;
 }
+@mixin activeLink {
+  color: $Pink;
+}
 @mixin boxShadow {
   content: " ";
   position: absolute;

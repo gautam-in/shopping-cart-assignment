@@ -8,8 +8,6 @@ const FilteredProductList = () => {
   const { products, ...restItems } = useSelector((state) => state.products);
   const { categoryId } = useParams();
 
-  console.log(products, "products");
-
   const isProductExisting = products.some(
     (item) => item.category === categoryId
   );

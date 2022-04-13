@@ -18,6 +18,9 @@
       a {
         color: $DarkGrey;
       }
+      .activeLink {
+        @include activeLink();
+      }
     }
   }
 }

@@ -1,5 +1,5 @@
 import styles from "./ProductCategoryList.module.scss";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { useSelector } from "react-redux";
 
 const ProductCategoryList = () => {
@@ -9,7 +9,12 @@ const ProductCategoryList = () => {
     if (item.order > 0) {
       return (
         <li key={item.id}>
-          <Link to={path}>{item.name}</Link>
+          <NavLink
+            to={path}
+            className={(navData) => (navData.isActive ? styles.activeLink : "")}
+          >
+            {item.name}
+          </NavLink>
         </li>
       );
     } else {
