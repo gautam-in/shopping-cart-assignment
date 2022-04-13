@@ -1,0 +1,41 @@
+@use '../../scss/var.scss';
+
+.form-container {
+  justify-content: center;
+  margin: 40px 16px;
+}
+.form {
+  width: 100%;
+  flex-direction: column;
+}
+.right__description {
+  margin-top: 10px;
+}
+.left__section {
+  margin-top: 50px;
+}
+.form__button {
+  background-color: var.$primary-color001;
+  color: var.$primary-white;
+  padding: 20px;
+  width: 100%;
+  border: none;
+}
+
+@include var.tablet-min {
+  .form-container {
+    width: 70vw;
+    margin: 60px auto;
+  }
+  .form {
+    flex-direction: row;
+  }
+  .left__section,
+  .right__section {
+    width: 50%;
+  }
+  .left__section {
+    margin-left: 10px;
+    margin-top: 0;
+  }
+}
