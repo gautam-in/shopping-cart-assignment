@@ -1,0 +1,39 @@
+@use '../../scss/var.scss';
+
+.sb-categories-section {
+  .category-card {
+    margin-top: 16px;
+    background-color: var.$primary-white;
+    justify-content: center;
+    .category-image {
+      width: 40%;
+      object-fit: contain;
+    }
+    .card-body {
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 20px 5px;
+      .card-description {
+        margin-top: 16px;
+      }
+      .card-button {
+        margin-top: 26px;
+        padding: 12px;
+        background-color: var.$primary-color001;
+        border: none;
+        color: var.$primary-white;
+        cursor: pointer;
+      }
+    }
+  }
+}
+@include var.tablet-min {
+  .sb-categories-section {
+    .category-card {
+      .card-body {
+        padding: 20px;
+      }
+    }
+  }
+}

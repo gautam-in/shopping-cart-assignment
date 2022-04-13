@@ -1,0 +1,38 @@
+@use '../../scss/var.scss';
+
+.floating__form {
+  position: relative;
+  margin-bottom: 50px;
+}
+.floating__input {
+  font-size: 14px;
+  padding: 4px 4px;
+  display: block;
+  width: 100%;
+  height: 30px;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid var.$primary-color002;
+}
+.floating__input:focus {
+  outline: none;
+  border-bottom: 2px solid var.$primary-color004;
+}
+.input__label {
+  color: var.$primary-color002;
+  font-size: 14px;
+  font-weight: normal;
+  position: absolute;
+  pointer-events: none;
+  left: 5px;
+  top: 5px;
+  transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -webkit-transition: 0.2s ease all;
+}
+.floating__input:focus ~ .input__label,
+.floating__input:not(:placeholder-shown) ~ .input__label {
+  top: -18px;
+  font-size: 14px;
+  color: var.$primary-color004;
+}

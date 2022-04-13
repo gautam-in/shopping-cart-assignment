@@ -1,0 +1,48 @@
+@use 'breakpoints';
+
+.d-flex {
+  display: flex;
+}
+.fdir-col {
+  flex-direction: column;
+}
+
+.container {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+}
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+.col {
+  flex: 1 0 0%;
+}
+
+@for $i from 1 through 12 {
+  .col-#{$i} {
+    flex: 0 0 auto;
+    width: calc($i / 12) * 100%;
+    padding: 10px;
+  }
+}
+@include breakpoints.tablet-min {
+  @for $i from 1 through 12 {
+    .col-md-#{$i} {
+      flex: 0 0 auto;
+      width: calc($i / 12) * 100%;
+    }
+  }
+}
+@include breakpoints.desktop {
+  .container {
+    max-width: 80vw;
+  }
+  @for $i from 1 through 12 {
+    .col-lg-#{$i} {
+      flex: 0 0 auto;
+      width: calc($i / 12) * 100%;
+    }
+  }
+}

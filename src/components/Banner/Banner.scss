@@ -1,0 +1,16 @@
+@use '../../scss/var.scss';
+
+.sb-banner {
+  margin-top: 10px;
+  .splide__slide {
+    padding: 0;
+  }
+  img {
+    width: 100%;
+  }
+  .sb-pagination {
+    .is-active {
+      background: var.$primary-color002;
+    }
+  }
+}
