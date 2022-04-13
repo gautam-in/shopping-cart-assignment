@@ -1,0 +1,13 @@
+@import "./config";
+
+.main {
+  max-width: 1024px;
+  margin: 5.81rem auto 0 auto;
+}
+
+@media (max-width: 732px) {
+  .main {
+    margin: 4rem auto 0 auto;
+    overflow: hidden;
+  }
+}

@@ -1,0 +1,112 @@
+@import "../../config";
+
+$slider-width: 1024px;
+$slider-height: 300px;
+
+.wrapper {
+  overflow: hidden;
+  position: relative;
+  height: $slider-height;
+  z-index: 10;
+  padding-bottom: 10px;
+}
+
+.slides {
+  display: flex;
+  position: relative;
+  top: 0;
+  left: -$slider-width;
+  width: 10000px;
+}
+
+.slides.shifting {
+  transition: left 0.2s ease-out;
+}
+
+.slide {
+  width: $slider-width;
+  height: $slider-height;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: all 1s;
+  position: relative;
+  border-radius: 2px;
+  img {
+    max-width: 1024px;
+  }
+}
+
+.slider {
+  margin-bottom: 2rem;
+}
+.control {
+  position: absolute;
+  top: 50%;
+  background: $primary-color;
+  box-shadow: 0.1rem 0.1rem 0.6rem rgba(0, 0, 0, 0.3);
+  z-index: 20;
+  background: #3737375c;
+  padding: 0.3rem;
+  color: $primary-color;
+}
+
+.prev {
+  left: 0;
+  text-decoration: none;
+}
+
+.next {
+  right: 0;
+  text-decoration: none;
+}
+.prev:hover,
+.next:hover {
+  cursor: pointer;
+  background: #151515;
+}
+
+.dot {
+  cursor: pointer;
+  height: 0.5rem;
+  width: 0.5rem;
+  margin: 0 0.1rem;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+.slideBtns {
+  text-align: center;
+  padding-bottom: 0px;
+  margin-top: -70px;
+  z-index: 20;
+  position: relative;
+}
+.active,
+.dot:hover {
+  background-color: #717171;
+}
+
+@media screen and (max-width: 1024px) {
+  .wrapper,
+  .sliderContent,
+  .slide > img {
+    max-width: calc(100vw);
+    margin: 0;
+  }
+}
+
+@media screen and (max-width: 736px) {
+  .wrapper,
+  .slide {
+    height: 160px;
+  }
+  .slideBtns {
+    margin-top: -2.5rem;
+  }
+  .control {
+    display: none;
+  }
+}

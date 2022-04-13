@@ -1,0 +1,19 @@
+.products {
+  width: 75%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+@media (max-width: 1024px) {
+  .products {
+    width: 80%;
+  }
+}
+
+@media (max-width: 732px) {
+  .products {
+    width: 100%;
+  }
+}

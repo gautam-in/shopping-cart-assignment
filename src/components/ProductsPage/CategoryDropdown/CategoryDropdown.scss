@@ -1,0 +1,25 @@
+@import "../../../config";
+
+@media (max-width: 732px) {
+  .CategoryDropdown {
+    display: block;
+
+    &__select {
+      width: 100%;
+      background-color: $btn-color;
+      margin: 1rem 0;
+      padding: 0.7rem 0 0.7rem 0.7rem;
+
+      option {
+        background-color: #b6a0a0;
+      }
+      font-size: 1rem;
+      cursor: pointer;
+      color: $primary-color;
+    }
+  }
+}
+
+select:focus > option:checked {
+  background-color: $btn-color !important;
+}
