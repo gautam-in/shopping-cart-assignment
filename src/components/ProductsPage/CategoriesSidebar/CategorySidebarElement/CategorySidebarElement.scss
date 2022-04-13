@@ -1,0 +1,23 @@
+@import "../../../../config.scss";
+
+.categorySidebarElement {
+  color: $font-color;
+  font-weight: 600;
+  text-decoration: none;
+}
+.category_list {
+  list-style: none;
+  border-bottom: 1px solid #b2b9bc;
+  padding: 0.8rem;
+}
+.category_list:hover {
+  background-color: $btn-color;
+  color: $primary-color;
+}
+
+.selected_list {
+  background-color: $btn-color;
+}
+.selected_anchor {
+  color: $primary-color;
+}

@@ -1,0 +1,9 @@
+.productspage {
+  display: flex;
+}
+
+@media (max-width: 732px) {
+  .productspage {
+    display: block;
+  }
+}

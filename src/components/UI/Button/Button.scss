@@ -1,0 +1,59 @@
+@import "../../../config";
+
+.product_button {
+  @include set-btn-style();
+}
+
+.product__button_tablet {
+  width: 100%;
+  margin: 1rem 0;
+}
+
+.cartModalWindow__headerbtn {
+  font-size: 1.3rem;
+  background-color: black;
+  color: $primary-color;
+  border: none;
+  padding: 0;
+}
+
+.CartProducts__middleContainer__less {
+  border-radius: 50%;
+  font-size: 1.1rem;
+  width: 7%;
+  padding: revert;
+  width: 21px;
+}
+
+.CartProducts__middleContainer__more {
+  border-radius: 50%;
+  font-size: 1.1rem;
+  padding: revert;
+}
+
+.cartModalWindow__checkout {
+  width: 92%;
+  font-size: 1.1rem;
+  margin: 1rem 1.3rem;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cart {
+  display: flex;
+  background-color: $secondary-color;
+  height: 4rem;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  border: none;
+}
+@media (max-width: 732px) {
+  .product__button_mobile {
+    width: 100%;
+    margin: 1rem 0;
+    padding: 1rem 0;
+  }
+}

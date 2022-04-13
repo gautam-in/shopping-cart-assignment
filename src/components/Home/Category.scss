@@ -1,0 +1,55 @@
+@import "./../../config";
+
+.category {
+  height: 230px;
+  padding: 0.7rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  &__image {
+    width: 30%;
+    min-width: 175px;
+    display: inline-block;
+    Img {
+      width: 100%;
+    }
+  }
+  &__content {
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &__contentinside {
+      text-align: center;
+    }
+  }
+  &__name {
+    font-weight: 800;
+    margin: 0.8rem auto;
+  }
+
+  &__description {
+    font-size: 0.8rem;
+    font-weight: 600;
+  }
+  &__btnName {
+    @include set-btn-style();
+    margin: 1.5rem auto;
+  }
+}
+
+.reverse {
+  flex-direction: row-reverse;
+}
+
+.horizontalRow {
+  border: 0;
+  height: 1px;
+  background-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 0.75),
+    rgba(0, 0, 0, 0)
+  );
+  margin: 0;
+}

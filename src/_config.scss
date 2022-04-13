@@ -1,0 +1,41 @@
+$btn-color: #c32858;
+$primary-color: white;
+$secondary-color: #eaeaea;
+$font-color: #707679;
+$focus-color: #50dae2;
+
+@mixin set-btn-style() {
+  font-weight: 400;
+  color: $primary-color;
+  background-color: $btn-color;
+  border: none;
+  border-radius: 2px;
+  font-size: 0.8rem;
+  padding: 0.5rem;
+  &:hover {
+    cursor: pointer;
+    transform: scale(0.98);
+  }
+  &:focus {
+    outline-color: black;
+    cursor: pointer;
+  }
+}
+
+@mixin set-max-width() {
+  margin: 0 auto;
+  max-width: 1024px;
+}
+
+@mixin set-link-style() {
+  text-decoration: none;
+  color: #707679;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+@mixin set-flex() {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

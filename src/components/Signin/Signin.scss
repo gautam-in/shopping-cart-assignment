@@ -1,0 +1,67 @@
+@import "../../config";
+
+.flex--row {
+  display: flex;
+  flex-direction: row;
+}
+.flex--column {
+  display: flex;
+  flex-direction: column;
+}
+
+.pageDetails {
+  margin: 1.5rem 2rem 0 5rem;
+  flex: 2 1;
+}
+.pageDetails__heading {
+  font-size: 2rem;
+  font-weight: 900;
+}
+.pageDetails__desc {
+  font-size: 0.9rem;
+  font-weight: 900;
+}
+.auth-form {
+  margin: 2rem 0 1rem 0;
+  flex: 3 1;
+}
+
+.formRow {
+  width: 60%;
+  position: relative;
+  margin-bottom: 2rem;
+  margin-top: 1rem;
+  border-bottom: 2px solid $secondary-color;
+  font-size: 1rem;
+  &:focus-within {
+    border-bottom: 2px solid $focus-color;
+  }
+}
+.formRow__input-text {
+  text-decoration: none;
+  border: none;
+  outline: none;
+  width: 100%;
+  margin-bottom: 0.5rem;
+  position: relative;
+  padding: 0;
+}
+.formRow__input-text:focus + .formRow__labelHelper,
+.formRow__input-text:not(:placeholder-shown) + .formRow__labelHelper {
+  opacity: 1;
+  padding: 0.5rem 0;
+  bottom: 95%;
+  color: $focus-color;
+}
+
+.formRow__labelHelper {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  opacity: 0;
+  transition: 0.2s bottom, 0.2s opacity;
+}
+.submit {
+  width: 60%;
+  @include set-btn-style();
+}

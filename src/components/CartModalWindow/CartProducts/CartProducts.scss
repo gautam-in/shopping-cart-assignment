@@ -1,0 +1,62 @@
+@import "../../../config";
+
+.CartProducts {
+  display: flex;
+  width: 100%;
+  background-color: white;
+  margin: 12px auto;
+  padding: 1rem;
+  border-radius: 7px;
+
+  align-items: center;
+  &__Img {
+    width: 15%;
+    height: 15%;
+  }
+  &__middleContainer {
+    display: flex;
+    flex-direction: column;
+    width: 85%;
+    margin-left: 1.5rem;
+    &__heading {
+      font-weight: 800;
+      // max-width: 230px;
+    }
+    &__btn {
+      margin: 0.8rem 0;
+      display: flex;
+      font-weight: 600;
+      align-items: center;
+      position: relative;
+    }
+    // &__less {
+    //   @include set-btn-style;
+    //   border-radius: 50%;
+    //   font-size: 1.1rem;
+    //   width: 7%;
+    //   padding: revert;
+    //   width: 21px;
+    // }
+    // &__more {
+    //   @include set-btn-style;
+    //   border-radius: 50%;
+    //   font-size: 1.1rem;
+    //   padding: revert;
+    // }
+  }
+}
+
+@media (max-width: 1024px) {
+  .CartProducts {
+    padding: 0.5rem;
+    &__Img {
+      width: 11%;
+    }
+  }
+}
+
+@media (max-width: 732px) {
+  .CartProducts__Img {
+    width: 17%;
+  }
+}

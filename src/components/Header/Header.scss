@@ -1,0 +1,25 @@
+@import "../../config";
+
+.header {
+  border-bottom: 2px solid $secondary-color;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  opacity: 1;
+  z-index: 100;
+
+  &__main {
+    @include set-max-width();
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: $primary-color;
+  }
+}
+
+@media (max-width: 1024px) {
+  .header {
+    z-index: 1000;
+  }
+}
