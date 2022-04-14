@@ -12,8 +12,10 @@ npm run start -> for json-server
 # or
 yarn install
 yarn start 
-```
 
 #Used json-server inplace of canned server
 #Used handlebars
 #Entry point home.html : using Live server
+```
+
+
