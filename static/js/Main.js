@@ -141,6 +141,23 @@ function buyNowHandeler(product) {
     })
 }
 
+function incrementHandler(product){
+    let objIndex = cartItems.findIndex((obj => obj.product.id == product.id));
+    cartItems[objIndex].count +=1
+    onCartClick()
+}
+
+function decrementHandler(product){
+    let objIndex = cartItems.findIndex((obj => obj.product.id == product.id));
+    if (cartItems[objIndex].count > 1){
+        cartItems[objIndex].count -=1
+    }else{
+        cartItems.splice(objIndex, 1);
+    }
+    onCartClick()
+}
+
+
 function onCartClick() {
     const parentElement = document.getElementById("cartBody")
     parentElement.innerHTML = ""
@@ -181,6 +198,16 @@ function onCartClick() {
             cartDetails.classList.add("cart-details")
             const decrementButton = document.createElement("button")
             const incrementButton = document.createElement("button")
+            decrementButton.id = "dec"+item.product.id
+            incrementButton.id = "btn"+item.product.id
+            $(document).off("click", "#btn"+item.product.id);
+            $(document).on("click", "#btn"+item.product.id, function(event){
+                incrementHandler(item.product)
+            });
+            $(document).off("click", "#dec"+item.product.id);
+            $(document).on("click", "#dec"+item.product.id, function(event){
+                decrementHandler(item.product)
+            });
             const quantity = document.createElement("span")
             decrementButton.classList.add("increment-button")
             incrementButton.classList.add("increment-button")
