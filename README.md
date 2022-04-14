@@ -19,11 +19,4 @@ yarn start
 
 lighthouse diagnostics
 ```
-
-[url=https://postimg.cc/hJrYKDf9][img]https://i.postimg.cc/hJrYKDf9/home-mobile.png[/img][/url]
-
-[url=https://postimg.cc/JDz2nfkS][img]https://i.postimg.cc/JDz2nfkS/Home-web.png[/img][/url]
-
-[url=https://postimg.cc/hzZ3728v][img]https://i.postimg.cc/hzZ3728v/products-desktop.png[/img][/url]
-
-[url=https://postimg.cc/BP8752Ng][img]https://i.postimg.cc/BP8752Ng/products-mobile.png[/img][/url]
+[![home-mobile.png](https://i.postimg.cc/0QR1drvH/home-mobile.png)](https://postimg.cc/hJrYKDf9)
