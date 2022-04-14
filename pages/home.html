@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="One place stop for all your needs">
+    <link rel="shortcut icon" href="../static/images/logo.png" type="image/x-icon">
+    <link type="text/css" rel="stylesheet" href="../styles/css/homepage.css">
+    <link type="text/css" rel="stylesheet" href="../styles/css/home.css">
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Sabka Bazaar</title>
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+          <div class="left__nav">
+
+            <div class="brand__name">
+                 <h1><img src="../static/images/logo.png" alt="brand logo" height="55px"></h1>
+            </div>
+                <ul class="tabs">
+                    <li> <a href="/pages/home.html">Home</a> </li>
+                    <li> <a href="/pages/products.html">Products</a> </li>
+                </ul>
+            </div>
+            <div class="right__nav">
+                <div class="user__actions">
+                    <a href="/pages/login.html">SignIn</a>
+                    <a href="/pages/signup.html">Register</a>
+                </div>
+              
+                <button class="cart" id="open">
+                    <svg width="25px" height="25px" version="1.1" id="Layer_1" focusable="false" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                    x="0px" y="0px" viewBox="0 0 24 24" style="enable-background:new 0 0 20 20;" xml:space="preserve">
+               <path fill="rgb(191,40,88)" d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49A1.003 1.003 0 0 0 20 4H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"/>
+               </svg> &nbsp; <span class="item-count">0 items</span> 
+            </button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="homepage">
+            <section class="slideshow-container">
+                <div class="mySlides fade">
+                  <img src="../static/images/offers/offer3.jpg" style="width:100%" alt="Mega Sale">
+                </div>
+                </div>
+        </section>
+        <section style="text-align:center" class="dots">
+            <span class="dot"></span> 
+            <span class="dot"></span> 
+            <span class="dot"></span> 
+            <span class="dot"></span> 
+            <span class="dot"></span> 
+            <span class="dot"></span> 
+        </section>
+        <section class="category-container">
+         
+        </section>
+    </main>
+
+    <footer class="footer-home"><p>Copyright &#9400</p></footer>
+
+    <div class="modal-section" id="modal_container">
+        <div class="modal">
+          <div class="cart-header">
+            <p>My Cart</p>
+            <button id="close" class="close-button"><img src="../static/images/cross.png" alt="close" width="50px"/></button>
+          </div>
+          <div class="cart-items">
+
+          </div>
+          <div class="checkout-container">
+            <p>Promo code can be applied on payment page</p>
+            <div class="checkout" >
+              <p class="cart-message">Start Shopping</p>
+              <button class="total-price"></button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+</body>
+
+<script>
+    let slideIndex = 0;
+    showSlides();
+    
+    function showSlides() {
+      let i;
+      let slides = document.getElementsByClassName("mySlides");
+
+      let dots = document.getElementsByClassName("dot");
+
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";  
+      }
+      slideIndex++;
+
+      if (slideIndex > slides.length) {slideIndex = 1}    
+      for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex-1].style.display = "block";  
+      dots[slideIndex-1].className += " active";
+      setTimeout(showSlides, 2000); 
+    }
+    </script>
+
+<script src="../js/home.js"></script>
+<script src="../js/main.js"></script>
+<script src="../js/products.js"></script>
+
+
+
+
+</html>
