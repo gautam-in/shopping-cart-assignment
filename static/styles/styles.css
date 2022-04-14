@@ -1,0 +1,437 @@
+.display-none {
+  display: none;
+}
+
+.space-between, body header ul, body header .navbar, body header .authDiv, body .flexdiv, body .productCard .product-div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.center, body .cart-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  color: inherit;
+}
+
+body {
+  margin: 0px;
+}
+
+body .action-button {
+  background: #c21350;
+  color: white;
+  padding: 1rem;
+  border: 0;
+  font-size: 0.8rem;
+}
+
+body header {
+  -webkit-box-shadow: 0px 3px 0px 0px #d7d3d3;
+          box-shadow: 0px 3px 0px 0px #d7d3d3;
+}
+
+body header ul {
+  font-size: 0.7rem;
+  font-weight: bold;
+  list-style-type: none;
+  padding-top: 1.2rem;
+  padding-left: 0;
+  margin-bottom: 0.5rem;
+  width: 45%;
+  color: #6e6e6e;
+}
+
+body header .navbar {
+  padding: 0px !important;
+}
+
+body header .logo {
+  width: 30%;
+}
+
+body header .authDiv {
+  font-size: 0.6rem;
+  font-weight: bold;
+  padding-left: 1.5rem;
+  padding-bottom: 0.5rem;
+}
+
+body footer {
+  background-color: #e1dfdf;
+  padding-left: 3.5rem;
+  padding-top: 0.2rem;
+  padding-bottom: 0.2rem;
+  font-size: 0.55rem;
+  font-weight: 500;
+}
+
+body .cart-box {
+  background-color: #dcdbdb;
+  font-size: 0.7rem;
+  width: 6rem;
+  height: 2.5rem;
+  padding-left: 0.5rem;
+  cursor: pointer;
+}
+
+body #cart-count {
+  margin-left: 5px;
+}
+
+body .flexdiv {
+  padding: 0.5rem;
+  -webkit-box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.2);
+          box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.2);
+  padding-bottom: 2rem;
+}
+
+body .carousel-indicators [data-bs-target] {
+  background-color: lightgray;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  position: relative;
+  top: 1rem;
+}
+
+body .loginContent {
+  padding: 2rem;
+  width: 50%;
+}
+
+body .loginContent span {
+  font-size: 0.7rem;
+  font-weight: 700;
+}
+
+body .authForm {
+  display: block;
+  width: 60%;
+}
+
+body .authForm form {
+  width: 85%;
+}
+
+body .authForm input:not([type="submit"]) {
+  border: none;
+  border-bottom: 2px solid lightgray;
+  padding: 0.2rem 0rem 0.5rem 0rem;
+  position: relative;
+  top: -1rem;
+  width: 100%;
+}
+
+body .authForm input:not([type="submit"]):focus {
+  outline: none;
+  border: none;
+  border-bottom: 2px solid #1bcaca;
+}
+
+body .authForm input:not([type="submit"]):focus::-webkit-input-placeholder {
+  color: transparent;
+}
+
+body .authForm input:not([type="submit"]):focus:-ms-input-placeholder {
+  color: transparent;
+}
+
+body .authForm input:not([type="submit"]):focus::-ms-input-placeholder {
+  color: transparent;
+}
+
+body .authForm input:not([type="submit"]):focus::placeholder {
+  color: transparent;
+}
+
+body .authForm label {
+  font-size: 0.6rem;
+  font-weight: 700;
+  color: #1bcaca;
+}
+
+body .authForm input[type="submit"] {
+  width: 100%;
+  color: white;
+  border: none;
+  background-color: #c21350;
+  padding: 0.2rem;
+}
+
+body .productDiv {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+body .productDiv #productList {
+  width: 70%;
+}
+
+body .sidebar {
+  width: 30%;
+  height: 100%;
+  background-color: lightgray;
+}
+
+body .sidebar-button {
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid grey;
+  padding-left: 1rem;
+  padding-bottom: 1rem;
+  text-align: start;
+  width: 100%;
+  height: 1.5rem;
+  font-size: 0.7rem;
+  margin-top: 1rem;
+}
+
+body .productCard {
+  width: 10rem;
+  height: 20rem;
+  margin-bottom: 1rem;
+  margin-left: 1rem;
+  margin-top: 1rem;
+  padding: 0.5rem;
+  padding-bottom: 0;
+  -webkit-box-shadow: 5px 0px 10px #ece8e8;
+          box-shadow: 5px 0px 10px #ece8e8;
+}
+
+body .productCard h2 {
+  font-size: 0.8rem;
+  height: 2.5rem;
+}
+
+body .productCard img {
+  width: 8rem;
+  height: 8rem;
+}
+
+body .productCard .product-description {
+  font-size: 0.5rem;
+  padding: 0.3rem;
+  height: 5rem;
+  background-color: lightgray;
+  font-weight: bold;
+  margin-top: 0.5rem;
+  overflow: hidden;
+}
+
+body .productCard .product-div {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px dotted lightgray;
+}
+
+body .productCard .product-div span {
+  font-size: 0.6rem;
+}
+
+body .productCard .product-div button {
+  background-color: #c21350;
+  color: white;
+  border: none;
+  font-size: 0.5rem;
+  width: 4rem;
+  height: 1.5rem;
+}
+
+@media screen and (min-width: 1144px) {
+  body .logo {
+    position: relative;
+    top: 0.5em;
+  }
+  body main, body .navbar {
+    margin-left: 12rem;
+    margin-right: 12rem;
+  }
+  body footer {
+    padding-left: 22rem;
+  }
+}
+
+body .modal-header {
+  background-color: black;
+  color: white;
+}
+
+body .closebtn {
+  background-color: transparent;
+  border: none;
+  color: white;
+}
+
+body .modal-dialog {
+  position: fixed;
+  bottom: 0rem;
+  right: 12rem;
+  margin: 0;
+  height: 88%;
+  width: 35%;
+  border-radius: 0px;
+}
+
+body .modal-content {
+  height: 100%;
+}
+
+body .modal-body {
+  background-color: #eeecec;
+  padding-left: 0;
+  padding-right: 0;
+  padding-bottom: 0;
+  overflow-y: scroll;
+  -ms-overflow-style: none;
+  /* Internet Explorer 10+ */
+  scrollbar-width: none;
+}
+
+body .modal-body h2 {
+  font-size: 0.8rem;
+  font-weight: bolder;
+}
+
+body .modal-body #cartBody {
+  min-height: 67%;
+}
+
+body .modal-body::-webkit-scrollbar {
+  display: none;
+  /* Safari and Chrome */
+}
+
+body .modal-footer {
+  background-color: white;
+  display: block;
+  padding-top: 0;
+}
+
+body .modal-footer .action-button {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+body .modal-footer span {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0.5rem;
+  font-size: 0.8rem;
+}
+
+body .cart-card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: white;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+body .cart-card img {
+  width: 20%;
+  height: 5%;
+}
+
+body .cart-card .cart-main {
+  margin-left: 1rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-top: 1rem;
+}
+
+body .cart-card .cart-main .increment-button {
+  border: none;
+  border-radius: 50%;
+  background-color: #c21350;
+  color: white;
+  width: 1.5rem;
+  height: 1.5rem;
+  font-size: 1rem;
+  padding-bottom: 0.3rem;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body .cart-card .cart-main span {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+
+body .cart-card .cart-main .item-total {
+  margin-left: 4rem;
+  margin-right: 0;
+}
+
+body .lowest-price {
+  background-color: white;
+  padding: 0.5rem;
+  margin: 1rem;
+}
+
+body .lowest-price img {
+  width: 35%;
+  height: 30%;
+}
+
+body .lowest-price span {
+  width: 60%;
+  font-size: 0.8rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+}
+/*# sourceMappingURL=styles.css.map */
