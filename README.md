@@ -8,8 +8,12 @@ Clone this repo and run following command for starting the mock server:
 
 ```
 npm install
-npm run start
+npm run start -> for json-server
 # or
 yarn install
-yarn start
+yarn start 
 ```
+
+#Used json-server inplace of canned server
+#Used handlebars
+#Entry point home.html : using Live server
