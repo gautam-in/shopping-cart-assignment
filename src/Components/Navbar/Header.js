@@ -1,7 +1,9 @@
 import React from "react";
 import "./Header.scss";
-import { Link } from "react-router-dom";
-function Header() {
+import { Link, useNavigate } from "react-router-dom";
+import { connect } from "react-redux";
+function Header({cartItems}) {
+  const navigate=useNavigate();
   return (
     <header className="header-container">
     <div className="left-container">
@@ -27,14 +29,14 @@ function Header() {
             <Link to="/register">Register</Link>
           </span>
         </div>
-        <div className="cart-container">
+        <div className="cart-container" onClick={()=>navigate('/cart')}>
           <img
             src="static/images/cart.svg"
             alt="cart-icon"
             height="30px"
             width="30px"
           />
-          <div>0 Items</div> 
+          <div>{ cartItems?.length || 0} Items</div> 
         </div>
       </div>
       </div>
@@ -42,4 +44,16 @@ function Header() {
   );
 }
 
-export default Header;
+
+const mapStateToProps=(state)=>({
+  cartItems:state?.cart
+})
+
+
+// const mapStateToProps=(state)=>({state})
+
+// const mapDispatchToProps={
+//   increaseProductQuantity:(id)=>(dispatch)=>dispatch(increaseQuantity(id))
+// }
+
+export default connect(mapStateToProps)(Header);

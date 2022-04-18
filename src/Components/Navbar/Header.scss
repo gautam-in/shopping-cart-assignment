@@ -2,6 +2,7 @@
     width: 100%;
     display: flex;
     justify-content:space-between;
+    position: sticky;
     align-items: center;
     height: 7rem;
     box-shadow: 0 4px 10px rgba(0,0,0,0.4);
@@ -40,7 +41,8 @@ span{
     display: flex;
     justify-content: flex-end;
     align-items: flex-start;
-    padding-bottom: 1rem;
+    padding-top: 2.5rem;
+    // padding-bottom: 0.5rem;
     span{
         padding-right: 0.5rem;
        
@@ -53,6 +55,7 @@ span{
     align-items: center;
     padding: 0.5rem;
     border-radius: 4px;
+    cursor: pointer;
     margin: 2rem;;
     div{
         padding-left: 0.5rem;

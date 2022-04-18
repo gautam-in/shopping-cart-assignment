@@ -3,7 +3,10 @@ import React, { useState, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router";
 import Button from "../../Shared/Button";
 import { productsURL, categoryURL } from "../../Shared/URL";
+import { connect } from "react-redux";
+import {addToCart} from "../../Redux/Action"
 import "./Product.scss";
+
 
 function Products(props) {
   const [products, setProducts] = useState([]);
@@ -22,9 +25,6 @@ function Products(props) {
   useEffect(() => {
     getProducts();
     getCategories();
-    // if (location.state != null) {
-    //   getProductsByCategory(location.state.categoryId);
-    // }
   }, []);
 
   const getProducts = () => {
@@ -34,11 +34,6 @@ function Products(props) {
         setProducts(response.data);
         setFilteredProducts(location.state === null ? response.data 
           : response.data.filter((product) => product.category === location.state.categoryId) );
-             
-        // if (location.state != null) {
-        //   getProductsByCategory(location.state.categoryId);
-        // }
-        // getProductsByCategory(location.state?.categoryId);
       })
       .catch((error) => console.log(error));
   };
@@ -59,12 +54,8 @@ function Products(props) {
     setFilteredProducts(newList);
   };
 
-  const addToCart=(id)=>{
-    let tempcart=[...cart]
-    console.log("buttonclicked");
-    navigate('/cart');
-  }
-
+ 
+  console.log(props.state);
   return (
     <main className="products-container">
       <div className="sidebar">
@@ -93,7 +84,7 @@ function Products(props) {
                 </div>
                 <div className="product-btn">
                 <p>MRP Rs. {product.price}</p>
-                <Button onClick={()=>addToCart(product.id)}>Buy Now </Button>
+                <Button onClick={()=>props.addProductToCart(product)}>Buy Now </Button>
                 </div>
                 
               
@@ -104,5 +95,11 @@ function Products(props) {
     </main>
   );
 }
+const mapStateToProps=(state)=>({state})
 
-export default Products;
+const mapDispatchToProps={
+  addProductToCart:(product)=>(dispatch)=>dispatch(addToCart(product))
+}
+  
+
+export default connect(mapStateToProps,mapDispatchToProps)(Products);
