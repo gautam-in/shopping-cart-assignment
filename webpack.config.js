@@ -1,14 +1,13 @@
 const path = require("path");
 
 module.exports = {
+  entry: "./src/index.js",
+  mode: "development",
   output: {
     path: path.join(__dirname, "/dist"),
-    filename: "index.bundle.js",
+    filename: "[name].js",
+    chunkFilename: "[id].[chunkhash].js",
   },
-  // devServer: {
-  //   port: 3010,
-  //   watchContentBase: true,
-  // },
   module: {
     rules: [
       {
@@ -22,9 +21,25 @@ module.exports = {
         },
       },
       {
-        test: /\.(scss|css)$/,
+        test: /\.css$/,
+        use: ["style-loader", "css-loader"],
+      },
+      {
+        test: /\.html$/,
+        loader: "file-loader",
+      },
+      {
+        test: /\.scss$/,
         use: ["style-loader", "css-loader", "sass-loader"],
       },
     ],
+  },
+  resolve: {
+    extensions: [".js", ".jsx", ".json"],
+  },
+  optimization: {
+    splitChunks: {
+      chunks: "all",
+    },
   },
 };
