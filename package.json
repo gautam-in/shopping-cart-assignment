@@ -19,14 +19,14 @@
     "react-scripts": "5.0.0",
     "redux": "^4.1.2",
     "redux-thunk": "^2.4.1",
-    "sass": "^1.49.9",
     "styled-components": "^5.3.5",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
     "start": "canned -p 5000 --cors=false ./server | react-scripts start",
-    "build": "react-scripts build",
     "test": "react-scripts test",
+    "build":"react-scripts build",
+    "serve":"webpack serve --mode development",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -51,6 +51,17 @@
     "styled-components": "^5"
   },
   "devDependencies": {
-    "redux-logger": "^3.0.6"
+    "@babel/core": "^7.17.9",
+    "@babel/preset-env": "^7.16.11",
+    "@babel/preset-react": "^7.16.7",
+    "babel-loader": "^8.2.4",
+    "css-loader": "^6.7.1",
+    "file-loader": "^6.2.0",
+    "redux-logger": "^3.0.6",
+    "sass": "^1.50.0",
+    "sass-loader": "^12.6.0",
+    "style-loader": "^3.3.1",
+    "webpack": "^5.72.0",
+    "webpack-cli": "^4.9.2"
   }
 }
