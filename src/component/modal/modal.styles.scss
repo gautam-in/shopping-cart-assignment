@@ -1,0 +1,33 @@
+.popup-modal-element {
+  padding-left: 0px;
+  .modal-header {
+    background-color: rgb(44, 44, 44);
+    color: white;
+    position: relative;
+    border-top-left-radius: unset;
+    border-top-right-radius: unset;
+    font-weight: bold;
+    .close-btn {
+      position: absolute;
+      right: 20px;
+      top: 30%;
+      cursor: pointer;
+    }
+  }
+  .modal-body {
+    padding: unset;
+    background-color: rgb(233, 233, 233) !important;
+  }
+}
+
+@media (max-width: 520px) {
+  .close-btn {
+    display: none;
+  }
+  .popup-modal-element {
+    width: 100%;
+    .modal-dialog.dialog-modal {
+      margin: unset;
+    }
+  }
+}

@@ -1,0 +1,33 @@
+.cart-element.cart {
+  display: flex;
+  background-color: rgb(240, 240, 240);
+  .cart-container {
+    margin: 20px 0px;
+    width: 100%;
+  }
+  .cart-image {
+    width: 50px;
+  }
+
+  img {
+    color: red;
+  }
+
+  .items-count {
+    margin: 0px 10px;
+  }
+}
+.cart-element {
+  align-items: unset;
+  overflow-y: auto;
+}
+
+.height_60 {
+  height: 60vh;
+}
+.cart-header-element {
+  margin-top: 10px;
+  border-top: 10px solid rgb(240, 240, 240);
+  font-weight: bold;
+  padding: 14px 10px;
+}
