@@ -1,0 +1,21 @@
+.login-container{
+    width: 100%;
+    // background-color: yellow;
+    display: flex;
+    align-items: center;
+    padding: 1rem 10rem ;
+    
+
+    .login-info{
+        // background-color: yellowgreen;
+        
+        width: 40%;
+    }
+    .login-form{
+        // background-color: pink;
+        width: 40%;
+    }
+    .sign-in-btn{
+        width: 40%;
+    }
+}

@@ -1,0 +1,18 @@
+.signUp-container{
+    width: 100%;
+    // background-color: yellow;
+    display: flex;
+    align-items: flex-start;
+    padding: 1rem 10rem ;
+
+    .signUp-info{
+        width: 40%;
+    }
+    .signUp-form{
+        // background-color: pink;
+        width: 40%;
+    }
+    .sign-in-btn{
+        width: 40%;
+    }
+}
