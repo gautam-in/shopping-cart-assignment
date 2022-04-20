@@ -7,6 +7,10 @@
   color: #6e676a;
 }
 
+.product-heading {
+  height: 80px;
+}
+
 .product-description {
   background-color: rgba(0, 0, 0, 0.1);
   max-height: 180px;
