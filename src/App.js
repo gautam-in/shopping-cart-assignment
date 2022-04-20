@@ -1,25 +1,27 @@
-import logo from './logo.svg';
+import { Component, Suspense, lazy } from 'react';
+import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
-
+const Home = lazy(() => import('./pages/home'));
+const Products = lazy(() => import('./pages/products'));
+const Login = lazy(() => import('./pages/login'));
+const Register = lazy(() => import('./pages/register'));
+const PageNotFound = lazy(() => import('./components/PageNotFound'));
+class App extends Component {
+  render() {
+    return (
+      <Suspense fallback={<p>Loading..</p>}>
+        <BrowserRouter>
+        <Routes>
+          <Route path='/' element={<Login />} />
+          <Route path='/register' element={<Register />} />
+          <Route path='/home' element={<Home />} />
+          <Route path='/products' element={<Products />} />
+          <Route path='*' element={<PageNotFound />} />
+        </Routes>
+      </BrowserRouter>
+      </Suspense>
+    );
+  };
+};
 export default App;

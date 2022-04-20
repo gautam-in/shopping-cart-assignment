@@ -1,18 +1,14 @@
 import {Component} from 'react';
-import {connect} from 'react-redux';
+import {Link} from 'react-router-dom';
 
 class Navbar extends Component {
-    constructor() {};
-
-    componentDidMount() {};
-
     render() {
         return (
             <>
+                <Link className='link-item mx-2' to='/home'>Home</Link>
+                <Link className='link-item mx-2' to='/products'>Products</Link>
             </>
         );
     };
 };
-
-const mapStateToProps = (state) => {};
-export default connect(mapStateToProps)(Navbar);
+export default Navbar;

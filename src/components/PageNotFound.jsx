@@ -1,18 +1,17 @@
 import {Component} from 'react';
 import {connect} from 'react-redux';
-import withLayout from '../../hocs/withLayout';
 
-class Home extends Component {
+class PageNotFound extends Component {
     componentDidMount() {};
 
     render() {
         return (
             <>
-                Home
+            PageNotFound
             </>
         );
     };
 };
 
 const mapStateToProps = (state) => ({});
-export default connect(mapStateToProps)(withLayout(Home));
+export default connect(mapStateToProps)(PageNotFound);

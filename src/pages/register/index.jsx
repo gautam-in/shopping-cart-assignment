@@ -1,18 +1,18 @@
 import {Component} from 'react';
 import {connect} from 'react-redux';
+import withLayout from '../../hocs/withLayout';
 
 class Register extends Component {
-    constructor() {};
-
     componentDidMount() {};
 
     render() {
         return (
             <>
+            Register
             </>
         );
     };
 };
 
-const mapStateToProps = (state) => {};
-export default connect(mapStateToProps)(Register);
+const mapStateToProps = (state) => ({});
+export default connect(mapStateToProps)(withLayout(Register));

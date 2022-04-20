@@ -1,18 +1,18 @@
-import {Component} from 'react';
-import {connect} from 'react-redux';
+import { Component } from 'react';
+import { connect } from 'react-redux';
+import withLayout from '../../hocs/withLayout';
 
 class Login extends Component {
-    constructor() {};
-
-    componentDidMount() {};
+    componentDidMount() { };
 
     render() {
         return (
             <>
+                Login
             </>
         );
     };
 };
 
-const mapStateToProps = (state) => {};
-export default connect(mapStateToProps)(Login);
+const mapStateToProps = (state) => ({});
+export default connect(mapStateToProps)(withLayout(Login));

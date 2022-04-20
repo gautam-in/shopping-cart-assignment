@@ -1,10 +1,8 @@
-import {Component} from 'react';
-import {connect} from 'react-redux';
+import { Component } from 'react';
+import { connect } from 'react-redux';
 
 class Cart extends Component {
-    constructor() {};
-
-    componentDidMount() {};
+    componentDidMount() { };
 
     render() {
         return (
@@ -14,5 +12,5 @@ class Cart extends Component {
     };
 };
 
-const mapStateToProps = (state) => {};
+const mapStateToProps = (state) => ({ });
 export default connect(mapStateToProps)(Cart);

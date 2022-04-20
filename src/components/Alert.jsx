@@ -2,8 +2,6 @@ import {Component} from 'react';
 import {connect} from 'react-redux';
 
 class Alert extends Component {
-    constructor() {};
-
     componentDidMount() {};
 
     render() {
@@ -14,5 +12,5 @@ class Alert extends Component {
     };
 };
 
-const mapStateToProps = (state) => {};
+const mapStateToProps = (state) => ({});
 export default connect(mapStateToProps)(Alert);

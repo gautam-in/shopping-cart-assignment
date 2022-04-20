@@ -1,18 +1,11 @@
-import {Component} from 'react';
-import {connect} from 'react-redux';
-
+import { Component } from 'react';
 class Footer extends Component {
-    constructor() {};
-
-    componentDidMount() {};
-
     render() {
         return (
-            <>
-            </>
+            <footer>
+                Copyright &copy; 2011-2022 Sabka Bazaar Grocery Supplies Pvt Ltd.
+            </footer>
         );
     };
 };
-
-const mapStateToProps = (state) => {};
-export default connect(mapStateToProps)(Footer);
+export default Footer;
