@@ -130,28 +130,23 @@ function buyNowHandeler(product) {
     } else {
         cartItems[cartItems.indexOf(checkProduct[0])].count += 1
     }
-    let totalItems = 0
-    cartItems.map(value => {
-        totalItems += value.count
-    })
-    document.getElementById("cart-count").innerHTML = String(totalItems) + " Items"
-    document.getElementById("cartTitle").innerHTML = ' (' + String(totalItems) + " Items)"
+    updateCartCount()
     addToCart().then(response => {
         console.log(response)
     })
 }
 
-function incrementHandler(product){
+function incrementHandler(product) {
     let objIndex = cartItems.findIndex((obj => obj.product.id == product.id));
-    cartItems[objIndex].count +=1
+    cartItems[objIndex].count += 1
     onCartClick()
 }
 
-function decrementHandler(product){
+function decrementHandler(product) {
     let objIndex = cartItems.findIndex((obj => obj.product.id == product.id));
-    if (cartItems[objIndex].count > 1){
-        cartItems[objIndex].count -=1
-    }else{
+    if (cartItems[objIndex].count > 1) {
+        cartItems[objIndex].count -= 1
+    } else {
         cartItems.splice(objIndex, 1);
     }
     onCartClick()
@@ -198,14 +193,14 @@ function onCartClick() {
             cartDetails.classList.add("cart-details")
             const decrementButton = document.createElement("button")
             const incrementButton = document.createElement("button")
-            decrementButton.id = "dec"+item.product.id
-            incrementButton.id = "btn"+item.product.id
-            $(document).off("click", "#btn"+item.product.id);
-            $(document).on("click", "#btn"+item.product.id, function(event){
+            decrementButton.id = "dec" + item.product.id
+            incrementButton.id = "btn" + item.product.id
+            $(document).off("click", "#btn" + item.product.id);
+            $(document).on("click", "#btn" + item.product.id, function (event) {
                 incrementHandler(item.product)
             });
-            $(document).off("click", "#dec"+item.product.id);
-            $(document).on("click", "#dec"+item.product.id, function(event){
+            $(document).off("click", "#dec" + item.product.id);
+            $(document).on("click", "#dec" + item.product.id, function (event) {
                 decrementHandler(item.product)
             });
             const quantity = document.createElement("span")
@@ -236,11 +231,23 @@ function onCartClick() {
         parentElement.innerHTML += `<div class="space-between lowest-price">
         <img src="./static/images/lowest-price.png"> 
         <span>You won't find it cheaper anywhere</span>            
-</div>`
-        document.getElementById("total").innerHTML = "Rs."+ totalCartCost +"&nbsp;	&nbsp;>"
+        </div>`
+        document.getElementById("total").innerHTML = "Rs." + totalCartCost + "&nbsp;	&nbsp;>"
         document.getElementById("onItems").style.display = "block"
         document.getElementById("noItems").style.display = "none"
     }
+    updateCartCount()
+}
+
+function updateCartCount(){
+    let totalItems = 0
+        if (cartItems.length > 0) {
+            cartItems.map(value => {
+                totalItems += value.count
+            })
+        }
+        document.getElementById("cart-count").innerHTML = String(totalItems) + " Items"
+        document.getElementById("cartTitle").innerHTML = ' (' + String(totalItems) + " Items)"
 }
 
 function renderProduct(id) {
