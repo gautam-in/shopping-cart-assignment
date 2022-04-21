@@ -29,7 +29,7 @@ app.use(express.json());
 app.use(cors());
 
 app.get("/", (req, res) => {
-  res.send("Hello");
+  res.send("Hello from api");
 });
 
 app.get("/banners", (req, res) => {
