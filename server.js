@@ -28,6 +28,10 @@ app.use(logger);
 app.use(express.json());
 app.use(cors());
 
+app.get("/", (req, res) => {
+  res.send("Hello");
+});
+
 app.get("/banners", (req, res) => {
   res.send(banners);
 });
