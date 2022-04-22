@@ -7,6 +7,7 @@ const Products = lazy(() => import('./pages/products'));
 const Login = lazy(() => import('./pages/login'));
 const Register = lazy(() => import('./pages/register'));
 const PageNotFound = lazy(() => import('./components/PageNotFound'));
+
 class App extends Component {
   render() {
     return (
