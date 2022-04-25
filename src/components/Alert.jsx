@@ -1,16 +1,18 @@
-import {Component} from 'react';
-import {connect} from 'react-redux';
+import { Component } from 'react';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 class Alert extends Component {
-    componentDidMount() {};
-
     render() {
         return (
-            <>
-            </>
-        );
+            <ToastContainer
+                pauseOnHover
+                draggable
+                closeOnClick
+                autoClose={3000}
+                position='bottom-center'
+            />
+        )
     };
 };
-
-const mapStateToProps = (state) => ({});
-export default connect(mapStateToProps)(Alert);
+export default Alert;

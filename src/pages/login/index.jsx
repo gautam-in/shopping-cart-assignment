@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import {useDispatch} from 'react-redux';
 import withLayout from '../../hocs/withLayout';
 import CustomField from '../../components/CustomField';
-import {setUserLoggedInStatus} from '../../store/actions';
+import {loginUserRequest, setUserLoggedInStatus} from '../../store/actions';
 import { loginInitialValues, loginSchema } from '../../utils/validationsHelper';
 
 function Login() {
@@ -27,9 +27,8 @@ function Login() {
                     <Formik
                         initialValues={loginInitialValues}
                         validationSchema={loginSchema}
-                        onSubmit={() => {
-                            dispatch(setUserLoggedInStatus(true));
-                            navigate('/home', { replace: true });
+                        onSubmit={(values) => {
+                            dispatch(loginUserRequest(values, navigate));
                         }}
                     >
                         {({ errors, touched }) => (

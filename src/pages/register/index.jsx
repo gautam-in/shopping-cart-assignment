@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import {Formik, Form} from 'formik';
 import CustomField from '../../components/CustomField';
 import withLayout from '../../hocs/withLayout';
-import { setUserLoggedInStatus } from '../../store/actions';
+import { setUserLoggedInStatus, registerUserRequest } from '../../store/actions';
 import { signUpInitialValues, signUpSchema } from '../../utils/validationsHelper';
 
 function Register() {
@@ -27,9 +27,8 @@ function Register() {
                     <Formik
                         initialValues={signUpInitialValues}
                         validationSchema={signUpSchema}
-                        onSubmit={() => {
-                            dispatch(setUserLoggedInStatus(true));
-                            navigate('/home', { replace: true });
+                        onSubmit={(values) => {
+                            dispatch(registerUserRequest(values, navigate));
                         }}
                     >
                         {({ errors, touched }) => (
