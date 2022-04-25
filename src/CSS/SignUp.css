@@ -1,0 +1,92 @@
+.signUp {
+    display: flex;
+    margin-top: 5vh;
+  }
+  
+  .signUpLeftWrapper {
+    display: flex;
+    width: 40vw;
+    justify-content: flex-end;
+    padding: 3vh;
+    margin-top: 5vh;
+    font-size: 0.8rem;
+  }
+  
+  .signupForm {
+    margin-left: 5vw;
+    margin-top: 0vh;
+    position: relative;
+    flex-grow: 1;
+  }
+  
+  .signupbtn {
+    width: 20rem;
+    margin-bottom: 1rem;
+  }
+
+  .inputFieldWrapper {
+    position: relative;
+  }
+  
+  .inputField {
+    display: block;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    width: 20rem;
+    outline: none;
+    margin-top: 2vh;
+    margin-bottom: 3vh;
+    padding-top: 2vh;
+    padding-bottom: 1vh;
+    font-size: 0.8rem;
+    margin-top: 5vh;
+  }
+  
+  .inputLabel {
+    visibility: hidden;
+    position: absolute;
+    font-size: 0;
+    top: 2vh;
+    transition: all 0.5s;
+  }
+  
+  .inputField:focus + .inputLabel {
+    visibility: visible;
+    position: absolute;
+    color: rgb(37, 201, 201);
+    font-size: 0.8rem;
+    top: -2vh;
+  }
+  
+  .inputField:focus {
+    border-bottom: 1px solid rgb(37, 201, 201);
+  }
+  
+  .inputField:focus::placeholder {
+    color: transparent;
+  }
+  
+  @media (max-width: 600px) {
+    .inputField {
+      width: 16rem;
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .signUp {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 0;
+    }
+  
+    .signUpLeftWrapper {
+      width: 100%;
+      justify-content: center;
+    }
+  
+    .signupbtn {
+      width: 16rem;
+    }
+  }
