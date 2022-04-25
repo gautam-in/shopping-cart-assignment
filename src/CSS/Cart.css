@@ -1,0 +1,178 @@
+.cartModal {
+    background-color: rgb(228, 226, 226);
+    position: fixed;
+    bottom: 0;
+    right: 3%;
+    width: 25rem;
+    z-index: 999;
+    overflow: hidden;
+    min-height: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 0.5px solid #dedede;
+  }
+  .cartModalWithProducts {
+    background-color: rgb(228, 226, 226);
+    position: fixed;
+    bottom: 0;
+    right: 3%;
+    width: 25rem;
+    z-index: 999;
+    overflow: hidden;
+    min-height: 90%;
+    display: flex;
+    flex-direction: column;
+    border: 0.5px solid #dedede;
+  }
+  
+  /*----- Cart Header------ */
+  .cartHeader {
+    background-color: rgb(10, 10, 10);
+    color: #fff;
+    font-size: 0.8rem;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+  }
+  
+  .cartHeader > button {
+    background-color: rgb(10, 10, 10);
+    color: #fff;
+    border: none;
+    padding: 5px;
+  }
+  
+  /*---- Cart Items -------*/
+  .productsWrapperCart {
+    max-height: 18rem;
+    overflow-y: overlay;
+    margin-bottom: 1rem;
+  }
+  .cartItem {
+    display: flex;
+    gap: 1rem;
+    padding: 1rem 2rem 1rem 1rem;
+    background-color: white;
+    margin: 0.5rem 0;
+  }
+  
+  .cartItemImage {
+    width: 15%;
+  }
+  
+  .cartItemImage > img {
+    width: 100%;
+    background-size: cover;
+  }
+  
+  .itemDesc {
+    font-size: 0.7rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+  
+  .itemDesc>h3{
+    margin-bottom: 0.5rem;
+  }
+  .itemDesc > p {
+    word-spacing: 12px;
+    display: flex;
+  }
+  
+  .itemDesc span:not(.qty) {
+    display: inline-block;
+    text-align: center;
+    background-color: #d42559;
+    color: white;
+    height: 18px;
+    width: 18px;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+
+  .itemDesc span:nth-child(3){
+    margin-right: 2rem;
+  }
+
+  .itemDesc span.qty{
+    margin: 0 1rem;
+  }
+  
+  .priceWrapper {
+    font-size: 0.8rem;
+    align-self: flex-end;
+    margin-bottom: 12px;
+    margin-left: auto;
+  }
+  
+  /*--- Lowest Price Slogan container --- */
+  
+  .lowestPrice {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background-color: #fff;
+    padding: 0.4rem;
+    width: 90%;
+    margin: 0 auto;
+    font-size: 0.7rem;
+  }
+  .lowestPrice > img {
+    width: 30%;
+  }
+  
+  /*--- No items container --- */
+  .emptyCart{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 0.8rem;
+    margin: auto;
+  }
+  
+  .emptyCart> span {
+    font-size: 1rem;
+    font-weight: 600;
+  }
+  
+  /*-- checkout container ---*/
+  .moveToShopping {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    padding: 1rem;
+    font-size: 0.8rem;
+    background-color: #fff;
+    margin-top: auto;
+  }
+  
+  .moveToShopping button {
+    padding: 0.8rem;
+    color: #fff;
+    background-color: #d42559;
+    border: none;
+    border-radius: 3px;
+    transition: all 0.5s;
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .moveToShopping a {
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  @media only screen and (max-width: 600px) {
+    .cartModal {
+      width: 100%;
+      height: 100%;
+      bottom: 0;
+      right: 0;
+    }
+  }
