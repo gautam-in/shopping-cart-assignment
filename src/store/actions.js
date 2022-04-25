@@ -23,3 +23,12 @@ export const registerUserResponse = (updatedUsers) => ({
     type: actionTypes.REGISTER_USER_RESPONSE,
     payload: updatedUsers
 });
+
+export const getBannersAndCategoriesRequest = () => ({
+    type: actionTypes.GET_BANNERS_AND_CATEGORIES_REQUEST
+});
+
+export const getBannersAndCategoriesResponse = (banners, categories) => ({
+    type: actionTypes.GET_BANNERS_AND_CATEGORIES_RESPONSE,
+    payload: {banners, categories}
+});

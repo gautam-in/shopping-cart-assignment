@@ -1,15 +1,5 @@
 import * as Yup from 'yup';
-
-const minLengthForPassword = 6;
-const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$/gm;
-
-const messages = {
-    required: 'This field is required',
-    minLength: `Enter atleast ${minLengthForPassword} characters`,
-    email: 'Enter a valid email',
-    passwordsMissMatch: 'Password & Confirm password should be the same',
-    invalidPasswordPattern: 'Password should contain atleast 1 character and 1 number'
-};
+import {minLengthForPassword, passwordRegex, messages} from './constants';
 
 export const loginInitialValues = {
     email: '',

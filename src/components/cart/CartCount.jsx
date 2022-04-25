@@ -1,7 +1,7 @@
 import { Component } from 'react';
 import { connect } from 'react-redux';
 import { Row, Col } from 'reactstrap';
-import cartIcon from '../../images/cart.svg'
+import cartIcon from '../../static/images/cart.svg'
 
 class CartCount extends Component {
     render() {

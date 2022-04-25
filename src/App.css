@@ -1,6 +1,6 @@
 :root {
   --bar-color: #78D0D3;
-  /* --bar-color: #337ab7; */
+  --btn-color: #D10057;
 }
 
 header {
@@ -15,7 +15,24 @@ footer {
   padding: 1rem;
 }
 
-.login-text, .register-text {
+.login-btn, .register-btn, .themed-btn {
+  color: #fff;
+  background-color: var(--btn-color);
+  padding: 0.6rem;
+  width: auto;
+  border: none
+}
+
+.login-btn, .register-btn {
+  width: 100%;
+}
+
+.themed-btn {
+  padding: 0.4rem;
+}
+
+.login-text,
+.register-text {
   font-weight: bold;
 }
 
@@ -35,14 +52,6 @@ section#cart-count {
   width: 6.5rem;
 }
 
-.login-btn, .register-btn {
-  color: #fff;
-  background-color: #D10057;
-  padding: 0.6rem;
-  width: 100%;
-  border: none
-}
-
 .error-message {
   height: 1.25rem;
   color: red;
@@ -53,9 +62,11 @@ section#cart-count {
   position: relative;
   margin: 1.25rem 0;
 }
+
 .custom-form-group input {
   height: 1.9rem;
 }
+
 .custom-form-group .control-label {
   position: absolute;
   top: 0.25rem;
@@ -68,11 +79,13 @@ section#cart-count {
   -webkit-transition: all 0.28s ease;
   transition: all 0.28s ease;
 }
+
 .custom-form-group .bar {
   position: relative;
   border-bottom: 0.0625rem solid #999;
   display: block;
 }
+
 .custom-form-group .bar::before {
   content: '';
   height: 0.125rem;
@@ -85,6 +98,7 @@ section#cart-count {
   transition: left 0.28s ease, width 0.28s ease;
   z-index: 2;
 }
+
 .custom-form-group input {
   display: block;
   background: none;
@@ -99,26 +113,45 @@ section#cart-count {
   transition: all 0.28s ease;
   box-shadow: none;
 }
+
 .custom-form-group input:focus,
 .custom-form-group input:valid,
-.custom-form-group input.has-value{
+.custom-form-group input.has-value {
   color: #333;
 }
-.custom-form-group input:focus ~ .control-label,
-.custom-form-group input:valid ~ .control-label,
-.custom-form-group input.has-value ~ .control-label {
+
+.custom-form-group input:focus~.control-label,
+.custom-form-group input:valid~.control-label,
+.custom-form-group input.has-value~.control-label {
   font-size: 0.8rem;
   color: gray;
   top: -1rem;
   left: 0;
 }
-.custom-form-group input:focus{
+
+.custom-form-group input:focus {
   outline: none;
 }
-.custom-form-group input:focus ~ .control-label{
+
+.custom-form-group input:focus~.control-label {
   color: var(--bar-color);
 }
-.custom-form-group input:focus ~ .bar::before {
+
+.custom-form-group input:focus~.bar::before {
   width: 100%;
   left: 0;
+}
+
+/* home */
+.home-category-image {
+  max-height: 150px;
+}
+
+.home-category-section {
+  text-align: center;
+  margin: 3.5rem 0;
+}
+
+hr {
+  box-shadow: 1px 10px 9px -1px rgba(0,0,0,0.75);
 }

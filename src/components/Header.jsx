@@ -2,7 +2,7 @@ import { Component } from 'react';
 import { connect } from 'react-redux';
 import { Container, Row, Col } from 'reactstrap';
 import { NavLink } from 'react-router-dom';
-import logo from '../images/logo.png';
+import logo from '../static/images/logo.png';
 import Navbar from './Navbar';
 import CartCount from './cart/CartCount';
 import { handleActiveLinkStatus } from '../utils';

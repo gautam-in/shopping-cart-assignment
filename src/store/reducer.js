@@ -4,7 +4,9 @@ const initialState = {
     isUserLoggedIn: false,
     alert: null,
     users: [],
-    cart: []
+    cart: [],
+    banners: [],
+    categories: []
 };
 
 const rootReducer = (state = initialState, action) => {
@@ -26,6 +28,15 @@ const rootReducer = (state = initialState, action) => {
             state = {
                 ...state,
                 isUserLoggedIn: true
+            };
+            break;
+        case actionTypes.GET_BANNERS_AND_CATEGORIES_RESPONSE:
+            const { banners, categories } = action.payload;
+
+            state = {
+                ...state,
+                banners,
+                categories
             };
             break;
         default:

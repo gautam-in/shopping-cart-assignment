@@ -1,0 +1,1 @@
+style hr tag for home page
