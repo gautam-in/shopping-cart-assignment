@@ -1,5 +1,6 @@
 import { Component } from 'react';
 import { ToastContainer } from 'react-toastify';
+import {alertDismissTime} from '../utils/constants';
 import 'react-toastify/dist/ReactToastify.css';
 
 class Alert extends Component {
@@ -9,7 +10,7 @@ class Alert extends Component {
                 pauseOnHover
                 draggable
                 closeOnClick
-                autoClose={3000}
+                autoClose={alertDismissTime}
                 position='bottom-center'
             />
         )

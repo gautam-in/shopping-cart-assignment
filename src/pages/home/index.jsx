@@ -1,5 +1,6 @@
 import { Component } from 'react';
 import { connect } from 'react-redux';
+import { Container } from 'reactstrap';
 import Banner from './Banner';
 import Categories from './Categories';
 import withLayout from '../../hocs/withLayout';
@@ -13,7 +14,7 @@ class Home extends Component {
 
     render() {
         return (
-            <>
+            <Container>
                 {this.props.isUserLoggedIn ? (
                     <>
                         <Banner />
@@ -21,7 +22,7 @@ class Home extends Component {
                         <Categories />
                     </>
                 ) : <UnAuthorizedPage />}
-            </>
+            </Container>
         );
     };
 };

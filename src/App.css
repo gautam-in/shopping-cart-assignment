@@ -1,21 +1,25 @@
 :root {
   --bar-color: #78D0D3;
   --btn-color: #D10057;
+  --light-grey: #EAEAEA;
 }
 
 header {
-  margin: 0.5rem 0;
+  margin-top: 0.5rem;
   box-shadow: 0px 2px 3px 0px rgb(236, 228, 228);
 }
 
 footer {
-  background-color: #EAEAEA;
+  background-color: var(--light-grey);
   font-weight: bold;
   font-size: 0.9rem;
   padding: 1rem;
 }
 
-.login-btn, .register-btn, .themed-btn {
+.login-btn,
+.register-btn,
+.buy-now-btn,
+.themed-btn {
   color: #fff;
   background-color: var(--btn-color);
   padding: 0.6rem;
@@ -23,12 +27,17 @@ footer {
   border: none
 }
 
-.login-btn, .register-btn {
+.login-btn,
+.register-btn {
   width: 100%;
 }
 
 .themed-btn {
   padding: 0.4rem;
+}
+
+.buy-now-btn {
+  padding: .4rem 1.35rem;
 }
 
 .login-text,
@@ -153,5 +162,45 @@ section#cart-count {
 }
 
 hr {
-  box-shadow: 1px 10px 9px -1px rgba(0,0,0,0.75);
+  box-shadow: 1px 10px 9px -1px rgba(0, 0, 0, 0.75);
+}
+
+/* products */
+.categories-filter {
+  background-color: var(--light-grey);
+  height: 99%;
+  padding-top: 1rem;
+}
+
+.category-filter-item {
+  cursor: pointer;
+  padding-left: 1.3rem;
+}
+
+.product-name{
+  height: 2.2rem;
+  margin-bottom: 1rem;
+}
+
+.product-item {
+  margin: 1rem 0 3rem 0;
+  box-shadow: 0px 2px 3px 0px rgb(236, 228, 228);
+}
+
+.product-image {
+  height: 125px;
+  width: 125px;
+}
+
+.product-description {
+  background-color: var(--light-grey);
+  padding: .5rem;
+  text-align: left;
+  font-size: 0.85rem;
+  height: 5.8rem;
+  overflow-x: scroll;
+}
+
+.activeFilter {
+  color: var(--btn-color)
 }

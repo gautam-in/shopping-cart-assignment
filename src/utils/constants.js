@@ -1,3 +1,5 @@
+export const alertDismissTime = 5000;
+
 export const minLengthForPassword = 6;
 
 export const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$/gm;

@@ -1,1 +1,17 @@
+cart functionality
+
+color for cart svg
+
 style hr tag for home page
+
+products page (products should only scroll)
+
+find a way to use navigate() in react class components
+
+responsiveness
+
+loading
+
+dynamic importing components when needed
+
+profiling

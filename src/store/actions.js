@@ -32,3 +32,17 @@ export const getBannersAndCategoriesResponse = (banners, categories) => ({
     type: actionTypes.GET_BANNERS_AND_CATEGORIES_RESPONSE,
     payload: {banners, categories}
 });
+
+export const getProductsRequest = () => ({
+    type: actionTypes.GET_PRODUCTS_REQUEST
+});
+
+export const getProductsResponse = (products) => ({
+    type: actionTypes.GET_PRODUCTS_RESPONSE,
+    payload: products
+});
+
+export const setCategoryFilter = (categoryId) => ({
+    type: actionTypes.SET_CATEGORY_FILTER,
+    payload: categoryId
+})

@@ -3,10 +3,12 @@ import * as actionTypes from './actionTypes';
 const initialState = {
     isUserLoggedIn: false,
     alert: null,
+    categoryFilter: '',
     users: [],
     cart: [],
     banners: [],
-    categories: []
+    categories: [],
+    products: []
 };
 
 const rootReducer = (state = initialState, action) => {
@@ -37,6 +39,18 @@ const rootReducer = (state = initialState, action) => {
                 ...state,
                 banners,
                 categories
+            };
+            break;
+        case actionTypes.GET_PRODUCTS_RESPONSE:
+            state = {
+                ...state,
+                products: action.payload
+            };
+            break;
+        case actionTypes.SET_CATEGORY_FILTER:
+            state = {
+                ...state,
+                categoryFilter: action.payload
             };
             break;
         default:
