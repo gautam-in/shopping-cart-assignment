@@ -19,7 +19,8 @@ footer {
 .login-btn,
 .register-btn,
 .buy-now-btn,
-.themed-btn {
+.themed-btn,
+.checkout-btn {
   color: #fff;
   background-color: var(--btn-color);
   padding: 0.6rem;
@@ -28,7 +29,8 @@ footer {
 }
 
 .login-btn,
-.register-btn {
+.register-btn ,
+.checkout-btn {
   width: 100%;
 }
 
@@ -58,7 +60,8 @@ footer {
 section#cart-count {
   background-color: #EEEEEE;
   padding: 0.75rem;
-  width: 6.5rem;
+  width: 7.5rem;
+  cursor: pointer;
 }
 
 .error-message {
@@ -190,6 +193,7 @@ hr {
 .product-image {
   height: 125px;
   width: 125px;
+  margin-bottom: 1rem;
 }
 
 .product-description {
@@ -202,5 +206,60 @@ hr {
 }
 
 .activeFilter {
-  color: var(--btn-color)
+  color: var(--btn-color);
+}
+
+/* cart */
+.custom-modal-header {
+  background-color: #000;
+  color: #fff;
+
+}
+
+/* (required) reactstrap's close button */
+.btn-close {
+  color: #fff !important;
+  background-color: #fff !important;
+}
+
+.modal-dialog {
+  float: right;
+}
+
+.cart-product-name {
+  margin-top: .25rem;
+  font-weight: bold;
+}
+
+.cart-count-updater-btn {
+  height: 1.25rem;
+  width: 1.25rem;
+  border: none;
+  border-radius: 50%;
+  color: var(--light-grey);
+  background-color: var(--btn-color);
+  margin: 0 1rem;
+}
+
+.cart-count-updater-btn:disabled {
+  background-color: var(--light-grey);
+  color: #000;
+}
+
+.cart-count-updater-btn span {
+  display: block;
+  margin-top: -3px;
+}
+
+.cart-section {
+  width: 500px;
+  height: 60vh;
+  text-align: center;
+}
+
+.empty-cart {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }

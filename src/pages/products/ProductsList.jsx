@@ -1,11 +1,11 @@
 import { Component } from "react";
 import { connect } from "react-redux";
-import {Row, Col} from 'reactstrap';
+import { Row, Col } from 'reactstrap';
+import { addItemToCartRequest } from '../../store/actions';
 
-const productsImages = require.context('../../static/images/products', true);
 class ProductsList extends Component {
     getProductsByFilter = () => {
-        const {products, categoryFilter} = this.props;
+        const { products, categoryFilter } = this.props;
         return categoryFilter ? products.filter(product => product.category === categoryFilter) : products;
     };
 
@@ -13,12 +13,10 @@ class ProductsList extends Component {
         return (
             <Row className="mt-4">
                 {this.getProductsByFilter().map(product => {
-                    const imagePath = `./${product.categoryKey}/${product.imageURL.split(`products/${product.categoryKey}/`)[1]}`;
-
                     return (
                         <Col xs={12} md={3} key={product.id} className="product-item text-center">
                             <h6 className="product-name">{product.name}</h6>
-                            <img src={productsImages(imagePath)} alt="product-image" className="product-image" />
+                            <img src={product.imageURL} alt="product-image" className="product-image" />
                             <p className="product-description">{product.description}</p>
 
                             <Row>
@@ -26,7 +24,7 @@ class ProductsList extends Component {
                                     <p className="mt-1">MRP Rs.{product.price}</p>
                                 </Col>
                                 <Col>
-                                    <button type="button" className="buy-now-btn">Buy Now</button>
+                                    <button type="button" className="buy-now-btn" onClick={() => this.props.dispatch(addItemToCartRequest(product.id))}>Buy Now</button>
                                 </Col>
                             </Row>
                         </Col>

@@ -45,4 +45,23 @@ export const getProductsResponse = (products) => ({
 export const setCategoryFilter = (categoryId) => ({
     type: actionTypes.SET_CATEGORY_FILTER,
     payload: categoryId
-})
+});
+
+export const addItemToCartRequest = (productId) => ({
+    type: actionTypes.ADD_ITEM_TO_CART_REQUEST,
+    payload: productId
+});
+
+export const addItemToCartResponse = (updatedCartItems) => ({
+    type: actionTypes.ADD_ITEM_TO_CART_RESPONSE,
+    payload: updatedCartItems
+});
+
+export const toggleCartModalView = () => ({
+    type: actionTypes.TOGGLE_CART_MODAL_VIEW
+});
+
+export const updateCartQuanityByProduct = (productId, updaterType) => ({
+    type: actionTypes.UPDATE_CART_QUANTITY_BY_PRODUCT,
+    payload: {productId, updaterType}
+});

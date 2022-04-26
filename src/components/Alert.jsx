@@ -7,7 +7,6 @@ class Alert extends Component {
     render() {
         return (
             <ToastContainer
-                pauseOnHover
                 draggable
                 closeOnClick
                 autoClose={alertDismissTime}

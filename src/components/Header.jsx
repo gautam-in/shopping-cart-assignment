@@ -2,7 +2,6 @@ import { Component } from 'react';
 import { connect } from 'react-redux';
 import { Container, Row, Col } from 'reactstrap';
 import { NavLink } from 'react-router-dom';
-import logo from '../static/images/logo.png';
 import Navbar from './Navbar';
 import CartCount from './cart/CartCount';
 import { handleActiveLinkStatus } from '../utils';
@@ -16,7 +15,7 @@ class Header extends Component {
                 <Container>
                     <Row>
                         <Col xs="3">
-                            <img src={logo} alt="logo" className='mb-1' />
+                            <img src="/static/images/logo.png" alt="logo" className='mb-1' />
                         </Col>
 
                         <Col xs="9">

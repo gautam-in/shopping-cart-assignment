@@ -10,7 +10,7 @@ function* registerUser(action) {
     try {
         const { requestObj, navigate } = action.payload;
         const existingUsers = (yield select()).users;
-        const isUserAlreadyExists = existingUsers.find(user => user.email === requestObj.email);
+        const isUserAlreadyExists = existingUsers.findIndex(user => user.email === requestObj.email) !== -1;
 
         if (isUserAlreadyExists)
             toast.error(`${requestObj.email} is already registered`);
@@ -32,7 +32,7 @@ function* loginUser(action) {
     try {
         const { loginObj, navigate } = action.payload;
         const existingUsers = [...(yield select()).users];
-        const isValidUser = existingUsers.find(user => user.email === loginObj.email && user.password === loginObj.password);
+        const isValidUser = existingUsers.findIndex(user => user.email === loginObj.email && user.password === loginObj.password) !== -1;
 
         if (isValidUser) {
             yield put(actions.loginUserResponse());
@@ -65,7 +65,7 @@ function* getProducts() {
     try {
         const categories = (yield select()).categories;
         const products = yield call(Http.get, `${BASE_URL}/${endpoints.PRODUCTS}`);
-        
+
         const categoryKeys = {};
         categories.forEach(category => categoryKeys[category.id] = category.key);
 
@@ -76,7 +76,44 @@ function* getProducts() {
 
         yield put(actions.getProductsResponse(productsWithCategories));
     }
-    catch(error) {
+    catch (error) {
+        handleError(error);
+    }
+};
+
+function* addItemToCart(action) {
+    try {
+        const productId = action.payload;
+        const { status, responseMessage } = { status: true, responseMessage: 'Product added to cart successfully'};
+        // const { status, responseMessage } = yield call(Http.post, `${BASE_URL}/${endpoints.ADD_TO_CART}`, { id: productId });
+
+        if (status) {
+            const updatedCartItems = [...(yield select()).cart];
+            const products = (yield select()).products;
+            const productInCartIndex = updatedCartItems.findIndex(cartItem => cartItem.id === productId);
+
+            if(productInCartIndex !== -1) {
+                const cartItem = {...updatedCartItems[productInCartIndex]};
+                cartItem.quantity += 1;
+
+                updatedCartItems.splice(productInCartIndex, 1, cartItem);
+            }
+            else {
+                const product = products.find(product => product.id === productId);
+                
+                updatedCartItems.push({
+                    ...product,
+                    quantity: 1
+                });
+            }
+
+            yield put(actions.addItemToCartResponse(updatedCartItems));
+            toast.success(responseMessage);
+        } 
+        else
+            toast.error(responseMessage);
+    }
+    catch (error) {
         handleError(error);
     }
 };
@@ -86,5 +123,6 @@ function* rootSaga() {
     yield takeLatest(actionTypes.LOGIN_USER_REQUEST, loginUser);
     yield takeLatest(actionTypes.GET_BANNERS_AND_CATEGORIES_REQUEST, getBannersAndCategories);
     yield takeLatest(actionTypes.GET_PRODUCTS_REQUEST, getProducts);
+    yield takeLatest(actionTypes.ADD_ITEM_TO_CART_REQUEST, addItemToCart);
 };
 export default rootSaga;

@@ -1,16 +1,18 @@
 cart functionality
 
-color for cart svg
+products page (products should only scroll), also the modal content in cart
 
 style hr tag for home page
 
-products page (products should only scroll)
-
-find a way to use navigate() in react class components
-
 responsiveness
 
-loading
+On mobile viewport user should be able to drag between slides instead of clicks.
+
+On mobile resolution category list will convert into a dropdown.
+
+color for cart svg
+
+find a way to use navigate() in react class components
 
 dynamic importing components when needed
 

@@ -4,7 +4,6 @@ import { useNavigate } from 'react-router-dom';
 import { Row, Col } from 'reactstrap';
 import { setCategoryFilter } from '../../store/actions';
 
-const categoryImages = require.context('../../static/images/category', true);
 function Categories() {
     const categories = useSelector(state => state.categories);
     const dispatch = useDispatch();
@@ -20,20 +19,19 @@ function Categories() {
             {categories.map((category, index) => {
                 const isRightToLeft = index % 2 === 0;
                 const isNotLastCategory = index < categories.length - 1;
-                const image = categoryImages(`.${category.imageUrl.split('/category')[1]}`);
 
                 return (
                     <Fragment key={category.id}>
                         <Row className='home-category-section'>
                             {isRightToLeft ? (
                                 <>
-                                    <CategoryImage src={image} alt={category.name} />
+                                    <CategoryImage category={category} />
                                     <CategoryContent category={category} exploreCategory={exploreCategory} />
                                 </>
                             ) : (
                                 <>
                                     <CategoryContent category={category} exploreCategory={exploreCategory} />
-                                    <CategoryImage src={image} alt={category.name} />
+                                    <CategoryImage category={category} />
                                 </>
                             )}
                         </Row>
@@ -56,8 +54,8 @@ const CategoryContent = ({ category, exploreCategory }) => (
     </Col>
 );
 
-const CategoryImage = ({ src, alt }) => (
+const CategoryImage = ({ category }) => (
     <Col xs={6}>
-        <img src={src} alt={alt} className="home-category-image" />
+        <img src={category.imageUrl} alt={category.name} className="home-category-image" />
     </Col>
 );

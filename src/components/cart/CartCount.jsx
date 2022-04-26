@@ -1,19 +1,21 @@
 import { Component } from 'react';
 import { connect } from 'react-redux';
 import { Row, Col } from 'reactstrap';
-import cartIcon from '../../static/images/cart.svg'
+import {toggleCartModalView} from '../../store/actions';
 
 class CartCount extends Component {
     render() {
+        const {cartItemsCount, dispatch} = this.props;
+
         return (
-            <section id='cart-count'>
+            <section id='cart-count' onClick={() => dispatch(toggleCartModalView())}>
                 <Row>
                     <Col xs="4">
-                        <img src={cartIcon} alt="cart-icon" className='cart-icon' />
+                        <img src="/static/images/cart.svg" alt="cart-icon" className='cart-icon' />
                     </Col>
 
                     <Col xs="8" className='mt-1'>
-                        {this.props.cartItemsCount} items
+                        {cartItemsCount} items
                     </Col>
                 </Row>
             </section>
@@ -22,6 +24,6 @@ class CartCount extends Component {
 };
 
 const mapStateToProps = (state) => ({
-    cartItemsCount: state.cart.reduce((acc, curr) => acc + curr.count, 0)
+    cartItemsCount: state.cart.reduce((acc, curr) => acc + curr.quantity, 0)
 });
 export default connect(mapStateToProps)(CartCount);

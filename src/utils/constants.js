@@ -41,3 +41,8 @@ export const indicatorStyles = {
     margin: '0 8px',
     borderRadius: '50%'
 };
+
+export const cartItemUpdaterTypes = {
+    INCREMENT: 'INCREMENT',
+    DECREMENT: 'DECREMENT'
+};

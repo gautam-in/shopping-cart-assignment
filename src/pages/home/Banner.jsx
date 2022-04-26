@@ -4,8 +4,6 @@ import { Carousel } from 'react-responsive-carousel';
 import { carouselBtnStyles, indicatorStyles } from '../../utils/constants';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 
-const bannerImages = require.context('../../static/images/offers', true);
-
 class Banner extends Component {
     render() {
         const { banners } = this.props;
@@ -53,15 +51,11 @@ class Banner extends Component {
                     );
                 }}
             >
-                {banners.map(({ id, bannerImageUrl, bannerImageAlt }) => {
-                    const image = bannerImages(`.${bannerImageUrl.split('/offers')[1]}`);
-
-                    return (
-                        <section key={id}>
-                            <img src={image} alt={bannerImageAlt} />
-                        </section>
-                    )
-                })}
+                {banners.map(({ id, bannerImageUrl, bannerImageAlt }) => (
+                    <section key={id}>
+                        <img src={bannerImageUrl} alt={bannerImageAlt} />
+                    </section>
+                ))}
             </Carousel>
         );
     };
