@@ -1,0 +1,20 @@
+@import "../../../assets/stylesheets/mixins.scss";
+
+.products-container {
+    .products {
+        margin-left: 200px;
+
+        @include desktop {
+            margin-left: 240px;
+        }
+    }
+
+    @include mobile {
+        .products {
+            margin-left: 0;
+        }
+        .nav-sidebar {
+            display: none;
+        }
+    }
+}

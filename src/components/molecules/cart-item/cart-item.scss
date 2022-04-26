@@ -1,0 +1,81 @@
+@import "../../../assets/stylesheets/mixins.scss";
+
+.cart-item-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--bg1-color);
+    margin: 10px 0;
+    padding: 0 20px 0 10px;
+    .cart-item {
+        padding: 20px 0;
+        display: flex;
+        align-items: center;
+        gap: 20px;
+
+        @include desktop {
+            padding: 8px 0;
+        }
+        img {
+            width: 80px;
+            height: 80px;
+            @include desktop {
+                width: 70px;
+                height: 70px;
+            }
+        }
+
+        h4 {
+            font-size: var(--base-large);
+
+            @include desktop {
+                font-size: var(--base);
+            }
+        }
+
+        .name-items-count {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            font-size: var(--base-large);
+
+            @include desktop {
+                gap: 10px;
+                font-size: var(--base);
+            }
+
+            & > div {
+                display: flex;
+                align-items: center;
+                gap: 16px;
+
+                button {
+                    padding: 6px 16px;
+                    border-radius: 5px;
+
+                    @include desktop {
+                        padding: 5px 12px;
+                    }
+                }
+            }
+        }
+    }
+    .total-price {
+        padding-top: 16px;
+    }
+    .close-button {
+        position: absolute;
+        top: 0;
+        right: 0;
+
+        button {
+            background-color: var(--secondary-color);
+            color: var(--font1-color);
+            font-size: var(--base-larger);
+            font-weight: var(--font-weight-bold);
+            border: 1px solid var(--border1-color);
+            padding: 4px 10px;
+        }
+    }
+}

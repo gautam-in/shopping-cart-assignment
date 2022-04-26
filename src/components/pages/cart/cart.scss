@@ -1,0 +1,102 @@
+@import "../../../assets/stylesheets/mixins.scss";
+
+.cart {
+    position: relative;
+    border: 4px solid var(--bg2-color);
+
+    @include tablet {
+        min-height: 72vh;
+    }
+    @include desktop {
+        min-height: 46vh;
+    }
+    background-color: var(--bg2-color);
+    margin: 0;
+    padding-top: 24px;
+    padding-bottom: 148px;
+    .cart-count {
+        width: 100%;
+        padding: 16px 0;
+        background-color: var(--bg1-color);
+        font-size: var(--base-large);
+        color: var(--font1-color);
+        font-weight: var(--font-weight-bold);
+        margin-bottom: 24px;
+    }
+
+    .lowest-price {
+        display: flex;
+        gap: 16px;
+        padding: 16px;
+        align-items: center;
+        background-color: var(--bg1-color);
+        margin: 24px 8px;
+        border-radius: 5px;
+    }
+
+    .proceed-to-pay {
+        position: fixed;
+        bottom: 0;
+        background-color: var(--bg1-color);
+        padding: 24px 0;
+        z-index: 99;
+        box-shadow: var(--box-shadow3);
+        cursor: pointer;
+
+        @include mobile-tablet {
+            width: 100vw;
+        }
+
+        @include desktop {
+            left: 0;
+            right: 0;
+            bottom: 0;
+            padding: 12px 0;
+        }
+
+        & > div {
+            & > div {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: var(--base-larger);
+                @include desktop {
+                    font-size: var(--base);
+                }
+            }
+            & > div:first-child {
+                margin-bottom: 16px;
+                font-size: var(--base-large);
+
+                @include mobile {
+                    font-size: var(--base);
+                }
+                @include desktop {
+                    margin-bottom: 8px;
+                    font-size: var(--base);
+                }
+            }
+            & > div:nth-child(2) {
+                justify-content: space-between;
+                padding: 16px;
+                margin: 0 16px;
+                background-color: var(--primary-color);
+                color: var(--secondary-color);
+
+                @include mobile {
+                    padding: 10px 16px;
+                }
+
+                @include desktop {
+                    padding: 4px 16px;
+                }
+
+                span {
+                    padding-left: 10px;
+                    font-size: var(--base-largest);
+                    font-weight: var(--font-weight-bold);
+                }
+            }
+        }
+    }
+}

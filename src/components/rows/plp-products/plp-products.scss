@@ -1,0 +1,16 @@
+@import '../../../assets/stylesheets/mixins.scss';
+
+.plp-products {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 8px;
+
+    @include tablet {
+        grid-template-columns: repeat(2, 6fr);
+        grid-gap: 16px;
+    }
+
+    @include desktop {
+        grid-template-columns: repeat(4, 3fr);
+    }
+}
