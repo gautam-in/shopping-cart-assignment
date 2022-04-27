@@ -1,0 +1,45 @@
+.registercontainer {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    margin-top: 100px;
+    flex-wrap: wrap;
+}
+.registerform {
+    align-self: flex-start;
+    padding: 1rem;
+    width: 30em;
+}
+.emailBox {
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    font-size: large;
+    width: 100%;
+}
+.emailBox input {
+    border: none;
+    border-bottom: 2px solid cyan;
+    height: 2.5rem;
+    outline: none;
+}
+.registerbutton {
+    background-color:#d62a63;
+    color: white;
+    width: 100%;
+    padding: 10px;
+    border: none;
+    margin: 20px;
+}
+.registerheading{
+    font-weight: bold;
+    font-size: xx-large;
+    margin: 5px;
+}
+.registerdescription {
+    font-size: large;
+    margin: 5px;
+}
+.container {
+    margin:40px;
+}
