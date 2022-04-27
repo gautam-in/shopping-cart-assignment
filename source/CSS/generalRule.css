@@ -1,0 +1,109 @@
+/* Defined some general style for css which will be used later */
+
+* {
+    padding: 0%;
+    margin: 0%;
+  }
+  
+  html {
+    font-size: 62.5%;
+  }
+  
+  .container {
+    max-width: 120rem;
+    padding: 0 3.2rem;
+    margin: 0 auto;
+  }
+  
+  .heading-primary,
+  .heading-secondary,
+  .heading-tertiary {
+    font-weight: 700;
+    color: #333;
+    letter-spacing: -0.5px;
+  }
+  
+  .heading-primary {
+    font-size: 5.2rem;
+    line-height: 1.05;
+    margin-bottom: 3.2rem;
+  }
+  
+  .heading-secondary {
+    font-size: 4.4rem;
+    line-height: 1.2;
+    margin-bottom: 9.6rem;
+  }
+  
+  .heading-tertiary {
+    font-size: 3rem;
+    line-height: 1.2;
+    margin-bottom: 3.2rem;
+  }
+  
+  .heading-tertiary {
+    font-size: 3rem;
+    line-height: 1.2;
+    margin-bottom: 3.2rem;
+  }
+  
+  .sub-heading {
+    font-size: 1.8rem;
+    line-height: 1.2;
+    margin-bottom: 1.2rem;
+  }
+  
+  .content {
+    font-size: 1.6rem;
+  }
+  
+  .padding-sm {
+    padding: 0.8rem;
+  }
+  .margin-bottom-sm {
+    margin-bottom: 0.8rem;
+  }
+  .margin-bottom-md {
+    margin-bottom: 1.6rem;
+  }
+  .margin-top-sm {
+    margin-top: 0.8rem;
+  }
+  .margin-bottom-md {
+    margin-bottom: 1.6rem;
+  }
+  .bg-color-white {
+    background-color: white;
+  }
+  
+  .bg-color-pink {
+    background-color: #bf2957;
+  }
+
+  .bg-color-grey {
+    background-color: #eaeaea;
+  }
+  
+  .img-size {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .img-size-md {
+    width: 80%;
+    height: 80%;
+  }
+
+  .text-align {
+    text-align: center;
+  }
+  
+  .flex {
+    display: flex;
+    justify-content: space-around;
+  }
+  
+
+  
+
+  

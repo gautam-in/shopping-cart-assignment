@@ -1,0 +1,15 @@
+.header-box {
+    max-width: 120rem;
+    padding: 0 3.2rem;
+    margin: 0 0;
+  }
+  
+  .main {
+    display: grid;
+    grid-template-columns: 20% 55% 25%;
+    grid-template-rows: 9rem;
+    box-shadow: 0.2rem 0.2rem 0.5rem grey;
+  }
+ 
+  
+ 
