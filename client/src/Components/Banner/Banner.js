@@ -7,7 +7,7 @@ const Banner = () => {
     const [carouseldata, setCarouselData] = useState(null)
     useEffect(()=>{
         const data = async () => {
-           const response= await fetch('http://localhost:3000/banners')
+           const response= await fetch('http://localhost:8080/banners')
            const responseJson = await response.json()
            await setCarouselData(responseJson)
         }
