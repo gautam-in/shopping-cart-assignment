@@ -1,9 +1,8 @@
 import { Component } from 'react';
 import { connect } from 'react-redux';
-import { Row, Col } from 'reactstrap';
+import { Container, Row, Col } from 'reactstrap';
 import CategoryFilter from './CategoryFilter';
 import ProductsList from './ProductsList';
-import Cart from '../../components/cart';
 import UnAuthorizedPage from '../../components/UnAuthorizedPage';
 import withLayout from '../../hocs/withLayout';
 import { getProductsRequest } from '../../store/actions';
@@ -17,7 +16,7 @@ class Products extends Component {
         const { isUserLoggedIn } = this.props;
 
         return (
-            <>
+            <Container>
                 {isUserLoggedIn ? (
                     <Row>
                         <Col xs={2}>
@@ -26,11 +25,9 @@ class Products extends Component {
                         <Col xs={10}>
                             <ProductsList />
                         </Col>
-
-                        <Cart />
                     </Row>
                 ) : <UnAuthorizedPage />}
-            </>
+            </Container>
         );
     };
 };

@@ -7,6 +7,11 @@
 header {
   margin-top: 0.5rem;
   box-shadow: 0px 2px 3px 0px rgb(236, 228, 228);
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background: #fff;
+  z-index: 999;
 }
 
 footer {
@@ -14,6 +19,8 @@ footer {
   font-weight: bold;
   font-size: 0.9rem;
   padding: 1rem;
+  position: sticky;
+  bottom: 0;
 }
 
 .login-btn,
@@ -171,8 +178,11 @@ hr {
 /* products */
 .categories-filter {
   background-color: var(--light-grey);
-  height: 99%;
+  height: 95%;
   padding-top: 1rem;
+
+  position: fixed;
+  width: 215px;
 }
 
 .category-filter-item {
@@ -253,7 +263,7 @@ hr {
 
 .cart-section {
   width: 500px;
-  height: 60vh;
+  height: 50vh;
   text-align: center;
 }
 
