@@ -13,3 +13,6 @@ npm run start
 yarn install
 yarn start
 ```
+### Running Frontend Project
+
+npm install
