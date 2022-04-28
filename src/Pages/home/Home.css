@@ -1,0 +1,31 @@
+.homepagecardsection {
+    box-shadow: 0px 16px 6px -8px #11111126;
+    margin: 45px 0;
+    padding: 20px 0;
+}
+
+.homepagecardsection img {width: 100%;}
+
+
+.homepagecardsection h4 {font-size: 28px;margin: 0;}
+
+.homepagecardsection p {color: #574d4d;}
+
+.carsdescriptiontitle {height: 100%;display: flex;align-items: center;flex-direction: column;justify-content: center;}
+
+.carsdescriptionimage {height: 100%;display: flex;align-items: center;}
+.catItemCrdLft img {width: 100%;}
+
+.homeCatList .homepagecardsection:nth-child(even) .MuiGrid-root {display: flex;flex-direction: row-reverse;}
+.homeslider {min-height: 340px;}
+.css-1f8sh1y {
+    height:100%;
+}
+.css-1f8sh1y div {
+    height:100%;
+}
+.Example.css-ohwg9z {
+    overflow: inherit !important;
+    min-height: 343px;
+}
+.css-1m9128y {position: absolute;bottom: 0;}

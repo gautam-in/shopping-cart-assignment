@@ -1,0 +1,57 @@
+
+
+/*-- Cat card item --*/
+.pplwrapperCategories {
+    background-color: #fff;
+    padding: 30px 10px;
+}
+
+.pplwrapperCategoriesCard {background-color: #fff;
+    padding: 15px;
+    box-shadow: 0px 0px 15px -9px #111;
+    margin: 20px 4px;
+    border-bottom: 2px dashed #d3cdcd;
+}
+.pplwrapperCategoriesCard:hover {border-bottom: 2px dashed #d00156;}
+.pplwrapperCategoriesCard h6 {font-size: 20px;margin: 0;padding-bottom: 30px;}
+
+.catItemCrd {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 140px;
+}
+.catItemCard {background-color: #eaeaea;padding: 10px;margin: 20px 0;}
+
+.catItembutton {display: flex;justify-content: space-between;align-items: center;margin-top: 20px;}
+
+.catItemCrd img {width: 200px;}
+
+.catItemCard p {
+    padding: 0;
+    margin: 0;
+    color: #776d6d;
+    padding: 0;
+    margin: 0;
+    color: #776d6d;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.catItemCrdTitle {height: 80px;overflow:hidden;}
+
+.catItembutton span {display: block; font-size: 14px;}
+.catItembutton button [data-price="price"] {display: none;}
+
+.emptyCat {
+    height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    font-size: 26px;
+}
+.catItemCrdLft {height: 150px;display: flex;align-items: center;justify-content: center;}
+.catItemCrdLft img {width: 80%;}

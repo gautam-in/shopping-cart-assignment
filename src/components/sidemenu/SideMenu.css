@@ -1,0 +1,12 @@
+
+.pplwrappernav {height: 100%;background-color: #eaeaea;}
+
+.pplwrappernav ul {margin: 0;padding: 0;}
+
+.pplwrappernav li {list-style: none;border-bottom: 1px solid #e1d5d5;padding: 14px 30px;transition: 0.5s;}
+
+.pplwrappernav li:first-child {padding-top: 30px;}
+
+.pplwrappernav li:hover {background-color: #d00155;padding-left: 40px;transition: 0.5s;}
+.pplwrappernav li:hover a {color: #fff;}
+

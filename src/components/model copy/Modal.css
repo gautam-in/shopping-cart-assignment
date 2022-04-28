@@ -1,0 +1,44 @@
+.addCartModalRightAligmnposition {width: 444px;background-color: #FFF;margin: 0 auto;height: 80vh;
+    position: relative;
+}
+
+.addCartModalHeader {
+    height: 61PX;
+    background-color: #1c2123;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+.addCartModalContent {
+    padding: 20px;
+    height: 64vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+.addCartModal {display: flex;align-items: center;height: 100vh;}
+.addCartModalHeader button {
+    background-color: transparent;
+    border: 0;
+    padding: 12px;
+    cursor: pointer;
+    margin-right: -10px;
+}
+.addCartModalHeader img {width: 13px;}
+.addCartModalFooter button {width: 100%;}
+
+.addCartModalFooter {padding: 15px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 94%;}
+
+.addCartModalRightAligmnposition h4 {font-size: 20px;margin: 0;padding: 0;}
+
+.addCartModalRightAligmnposition h6 {margin: 0;padding: 0;padding-top: 8px;font-size: 14px;font-weight: 100;}
+
+.addCartModalContentSub {text-align: center;}
+

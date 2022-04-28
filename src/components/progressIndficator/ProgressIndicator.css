@@ -1,0 +1,4 @@
+.progressIndicator {position: fixed;left: 0;width: 100%;height: 100%;background-color: #11111187;z-index: 9999;bottom: 0;display: flex;align-items: center;justify-content: center;}
+.progressIndicator  span {color: #fff;}
+.progressIndicator  p {color: #fff;font-size: 18px;}
+.css-nen11g-MuiStack-root {display: flex;align-items: center;justify-content: center;}
