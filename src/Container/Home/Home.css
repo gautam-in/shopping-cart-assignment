@@ -1,0 +1,61 @@
+.HomePageSection {
+  margin-bottom: 50px;
+  margin-top: 100px;
+}
+
+.HomePage {
+  width: 99vw;
+  box-shadow: 0 5px 5px -5px #000000;
+}
+.carousel .thumbs-wrapper {
+  display: none;
+}
+/************Main Section Details******************/
+.homeDetails {
+  display: flex;
+  width: 99vw;
+  margin-top: 10px;
+  background-color: white;
+  box-shadow: 0 5px 5px -5px #000000;
+}
+.hDetailsImg {
+  flex-basis: 30vw;
+  height: 300px;
+}
+.hDetailsImg img:nth-of-type(1) {
+  width: 100%;
+  height: 60%;
+  vertical-align: middle;
+}
+.hDetailInfo {
+  text-align: center;
+  flex-basis: 69vw;
+  padding-top: 50px;
+  height: 300px;
+}
+.hDetailInfo > p {
+  flex-wrap: row wrap;
+}
+.hDetailInfo button {
+  background-color: #be2957;
+  border: none;
+  color: white;
+  padding: 10px 14px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+.homeDetails:nth-child(2n + 1) .hDetailsImg {
+  order: 2;
+}
+
+@media only screen and (max-width: 625px) {
+  .HomePage {
+    top: 100px;
+  }
+}
+@media only screen and (max-width: 484px) {
+}
