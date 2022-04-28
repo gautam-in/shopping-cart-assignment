@@ -123,7 +123,7 @@ export default function Cart() {
                       <span>
                         <ClearIcon />
                       </span>
-                      <span> Rs.{cartItem.quantity * cartItem.price}</span>
+                      <span> Rs.{cartItem.price}</span>
                     </div>
                   </div>
                   <div className="CartAmount">
