@@ -1,0 +1,16 @@
+section.signupwrapper {display: flex;align-items: flex-start;justify-content: center;padding: 30px;}
+
+.signupTile {width: 40%;}
+
+.signupForm {width: 40%;display: flex;flex-direction: column;}
+
+.signupTile h1 {font-size: 32px;}
+
+.signupTile p {color: #514e4e;}
+
+.signupForm .MuiInput-formControl {margin-bottom: 16px;}
+.signupForm input {margin-bottom: 13px;}
+.signupForm button {margin-top: 30px;}
+form {
+    display: flex;
+    flex-direction: column;}

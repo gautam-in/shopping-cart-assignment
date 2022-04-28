@@ -1,0 +1,50 @@
+
+header {
+    box-shadow: 0px 3px 10px -2px #11111180;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    z-index:999;
+}
+
+.headerWrapper {width: 70%;margin: 0 auto;display: flex;
+    align-items: center;
+    justify-content: space-between;height: 110px;}
+
+.logoSAection {display: flex;align-items: center;justify-content: space-between;}
+
+.logoSAection {display: flex;align-items: center;justify-content: flex-start;}
+
+.logoSAection img {width: 170px;}
+.cardItem span {cursor: pointer;}
+.cardItem span:hover {color: #d00156;}
+.logoSAection ul li:hover {color: #d00156;}
+
+
+.logoSAection ul li {margin: 0 6px;list-style: none;font-size: 16px;color: #827070;}
+
+.logoSAection ul { padding: 0;margin-left: 60px;height: 110px;display: flex;align-items: flex-end;padding-bottom: 42px;}
+
+.cardItem span {font-size: 12px;
+    
+    color: #827070;margin: 0 8px;}
+
+.addcartbtn {display: flex;align-items: center;justify-content: center;padding: 14px 20px;background-color: #f5f0f0;cursor: pointer;
+}
+
+.addcartbtn  img {width: 24px;}
+
+.addcartbtn label {font-size: 14px;padding-left: 12px;}
+
+.cardItem {height: 110px;display: flex;flex-direction: column;justify-content: space-between;align-items: flex-end;}
+.registernav {
+    margin-top: 12px;
+    display: flex;
+    align-items: center;
+}
+.registernav span img {
+    width: 17px;
+}
+.addcartbtn:hover {background-color: #c9bfbf;}

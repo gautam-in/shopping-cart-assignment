@@ -1,0 +1,35 @@
+
+
+    /*--- added cart item styles --*/
+
+
+    .addCartPrdItem {
+        background-color: #fff;
+        display: flex;
+        align-items: self-end;
+        padding: 20px 20px;
+        justify-content: space-between;
+    }
+
+.addCartPrdItemImg img {width: 90px;}
+
+.addCartPrdItemCouterVal {display: flex;align-items: center;justify-content: flex-start;margin-left: -13px;}
+
+.addCartPrdItemCouterVal div {width: 26px;height: 26px;background-color: #d00156;border-radius: 100%;display: flex;align-items: center;justify-content: center;color: #fff;font-size: 30px;margin: 0 9px;font-weight: 100;line-height: 0;padding: 0;cursor: pointer;}
+
+.addCartPrdItemCouterVal button {background-color: transparent;border: 0;transform: rotate(45deg);margin-right: 10px;cursor: pointer;}
+
+.addCartPrdItemCouterVal button img {width: 20px;}
+
+.addCartPrdItemCouterVal b {font-size: 17px;}
+
+.addCartPrdItemTile h5 {font-size: 22px;margin: 0;padding: 0;padding-bottom: 20px;}
+
+.addCartPrdItemTile {padding-left: 0;}
+
+.addCartPrdItemPrice {display: flex;align-items: flex-end;justify-content: flex-end;height: 100%;font-size: 23px;}
+
+.addCartPrdItemImg {width: 90px;display: flex;align-items: center;justify-content: center;margin-bottom: 10px;}
+.addCartPrdItemCouterVal div span {margin-top: -7px;}
+.addCartPrdItemPrice b {font-weight: 400;}
+.addCartPrdItemCouterVal div:hover {background-color: #f43181;}

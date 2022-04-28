@@ -1,0 +1,232 @@
+@media only screen and (max-width:767px) {
+
+
+	/*-- Header and home --*/
+	.headerWrapper {
+		width: 100% !important;
+	}
+
+	.logoSAection img {
+		width: 90px !important;
+	}
+
+	.logoSAection ul {
+		margin-left: 10px !important;
+	}
+
+	.logoSAection {
+		padding-left: 10px !important;
+	}
+
+	.carsdescriptionimage img {
+		width: 100% !important;
+	}
+
+	.contentWrapper {
+		width: 95%;
+	}
+
+	.homepagecardsection h4 {
+		font-size: 16px !important;
+	}
+
+	.homepagecardsection p {
+		font-size: 14px !important;
+	}
+
+	.carsdescriptiontitle {
+		text-align: center;
+	}
+
+	.homepagecardsection h4 {
+		font-size: 16px;
+	}
+
+	section.signupwrapper {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.signupTile {
+		width: 100% !important;
+	}
+
+	.signupForm {
+		width: 100% !important;
+	}
+
+	/*-- model --*/
+	.addCartModalRightAligmnposition {
+		position: fixed !important;
+		top: 0;
+		left: 0;
+		width: 100% !important;
+		height: 100vh !important;
+	}
+
+
+	/*-- cat item  --*/
+	[data-sact="catMenu"] {
+		display: none;
+	}
+
+	[data-sact="cat"] {
+		min-width: 100%;
+	}
+
+	[data-sact="cat"] .MuiGrid-grid-xs-3 {
+		min-width: 100%;
+	}
+
+	.catItemCrdWrapper {
+		display: flex;
+	}
+
+	.catItembutton span {
+		display: none;
+		font-size: 12px !important;
+	}
+
+	.catItembutton button [data-price="price"] {
+		display: none;
+	}
+
+	.catItembutton button span {
+		display: inline-block !important;
+	}
+
+	.catItembutton button {
+		font-size: 10px !important;
+		width: 100%;
+		display: flex;
+	}
+
+	.catItembutton [data-price="price"] {
+		display: none;
+	}
+
+	.catItemCrdLft {
+		width: 50%;
+		display: flex;
+		align-items: center;
+	}
+
+	.catItemCrdRgt {
+		width: 50%;
+	}
+
+	.pplwrapperCategoriesCard h6 {
+		padding-bottom: 10px !important;
+	}
+
+	.catItemCrdTitle {
+		height: auto !important;
+	}
+
+	.pplwrapperCategoriesCard {
+		box-shadow: none;
+	}
+	.btn-primary {font-size: 11px !important;}
+	.homepagecardsection:first-child {margin-top: 0;}
+	
+.homepagecardsection:first-child {margin-top: 0;}
+	/*-- home banner slider --*/
+	.homeslider img {width: 100% !important;}
+	.homeslider {
+		min-height: 140px  !important;
+	}
+	.Example.css-ohwg9z { min-height: 140px !important;}
+
+
+
+
+}
+
+@media only screen and (min-width:768px) and (max-width:991px) {
+	.catItemCrdLft {
+		width: 50%;
+		display: flex;
+		align-items: center;
+	}
+
+	.homepagecardsection h4 {
+		font-size: 28px;
+	}
+
+	.carsdescriptionimage img {
+		width: 100% !important;
+	}
+
+	.carsdescriptiontitle {
+		text-align: center;
+	}
+
+	/*-- cat item  --*/
+	.pplwrapperCategories .MuiGrid-grid-xs-3 {
+		min-width: 50% !important;
+	}
+
+	[data-sact="cat"] .MuiGrid-grid-xs-3 {
+		min-width: 100%;
+	}
+
+	.catItemCrdWrapper {
+		display: flex;
+	}
+
+	.catItembutton span {
+		display: none;
+		font-size: 12px !important;
+	}
+
+	.catItembutton button [data-price="price"] {
+		display: none;
+	}
+
+	.catItembutton button span {
+		display: inline-block !important;
+	}
+
+	.catItembutton button {
+		font-size: 10px !important;
+		width: 100%;
+		display: flex;
+	}
+
+	.catItembutton [data-price="price"] {
+		display: none;
+	}
+
+	.catItemCrdLft {
+		width: 50%;
+	}
+
+	.catItemCrdRgt {
+		width: 50%;
+	}
+
+	.pplwrapperCategoriesCard h6 {
+		padding-bottom: 10px !important;
+	}
+
+	.catItemCrdTitle {
+		height: auto !important;
+	}
+
+	.pplwrapperCategoriesCard {
+		min-height: 230px;
+	}
+
+	.catItemCrdRgt {
+		width: 50%;
+	}
+
+	section.contentWrapper {
+		width: 100%;
+	}
+	/*-- home banner slider --*/
+	.homeslider img {width: 100% !important;}
+
+
+
+}
