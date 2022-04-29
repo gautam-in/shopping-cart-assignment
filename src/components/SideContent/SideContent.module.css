@@ -1,0 +1,79 @@
+.login-container {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 3rem;
+  padding-bottom: 1.5rem;
+  max-width: 1024;
+  margin: 0 auto;
+  font-family: "Dosis", sans-serif;
+}
+@media screen and (max-width: 480px) {
+  .login-container {
+    flex-direction: column;
+    font-family: "Dosis", sans-serif;
+  }
+}
+.login__container__article {
+  flex: 3;
+  display: flex;
+  flex-direction: column;
+  text-align: start;
+  padding-left: 8.5rem;
+  padding-right: 1rem;
+  font-family: "Dosis", sans-serif;
+}
+.login__container__article h2 {
+  font-weight: 700;
+}
+@media screen and (max-width: 480px) {
+  .login__container__article {
+    padding-bottom: 3rem;
+    padding-left: 1rem;
+    font-family: "Dosis", sans-serif;
+  }
+}
+.login-container__form {
+  flex: 2;
+  font-family: "Dosis", sans-serif;
+  padding-left: 32px;
+}
+
+.signup__container {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 3rem;
+  padding-bottom: 1.5rem;
+  max-width: 1024;
+  margin: 0 auto;
+  font-family: "Dosis", sans-serif;
+}
+@media screen and (max-width: 480px) {
+  .signup__container {
+    flex-direction: column;
+    font-family: "Dosis", sans-serif;
+  }
+}
+.signup__container__article {
+  flex: 4;
+  display: flex;
+  flex-direction: column;
+  padding: 0rem 1rem 0rem 9rem;
+  /* align-items: center; */
+  font-family: "Dosis", sans-serif;
+  text-align: left;
+}
+
+.signup__container__article h2 {
+  font-weight: 700;
+}
+@media screen and (max-width: 480px) {
+  .signup__container__article {
+    padding-bottom: 3rem;
+    padding-left: 1rem;
+    font-family: "Dosis", sans-serif;
+  }
+}
+.signup-container__form {
+  flex: 5;
+  font-family: "Dosis", sans-serif;
+}

@@ -1,0 +1,21 @@
+.shadow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 75%;
+  margin-top: 25px;
+  &.bottom {
+    margin: 25px auto;
+    box-shadow: 0px 0px 5px 0px #111;
+  }
+}
+
+.cursor {
+  cursor: pointer;
+}
+
+@media (max-width: 720px) {
+  .shadow {
+    width: 100%;
+  }
+}

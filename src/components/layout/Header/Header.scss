@@ -1,0 +1,34 @@
+.cart-btn {
+  text-decoration: none;
+
+  background-color: #ece9e9 !important;
+  padding: 10px;
+  img {
+    height: 30px;
+    width: 30px;
+  }
+}
+
+.cart-btn:hover {
+  color: rgba(0, 0, 0, 0.7);
+  background-color: #ece9e9 !important;
+}
+.cart-btn:focus {
+  color: rgba(0, 0, 0, 0.7);
+  background-color: #ece9e9 !important;
+  border: none !important;
+}
+.cart-btn:active {
+  color: rgba(0, 0, 0, 0.7);
+  background-color: #ece9e9 !important;
+  border: none !important;
+}
+
+.nav .navbar .navbar-expand-lg .navbar-light {
+  box-sizing: border-box;
+  padding: 0px 0px 0px 100px !important;
+}
+.nav-logo-img {
+  width: 175px;
+  height: 70px;
+}
