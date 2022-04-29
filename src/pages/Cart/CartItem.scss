@@ -1,0 +1,45 @@
+.cart-item-row {
+  display: flex;
+  padding: 10px;
+  justify-content: flex-start;
+  max-height: 100px;
+  width: 100vw;
+  background-color: white;
+  box-sizing: border-box;
+  .cart-img {
+    height: 80px;
+    width: 80px;
+  }
+
+  .product-details {
+    display: flex;
+    padding: 0px 10px;
+    justify-content: flex-start;
+    .product-name {
+      font-family: "Dosis", sans-serif;
+      font-weight: 700;
+    }
+
+    .cart-butn {
+      width: 25px;
+      height: 25px;
+      padding: 0px;
+      margin: 5px;
+    }
+
+    .item-total-price {
+      align-items: flex-end;
+      padding-left: 80px;
+
+      .item-total-price:nth-child(1) {
+        padding-left: 120px;
+      }
+    }
+  }
+}
+
+@media (min-width: 769px) {
+  .cart-item-row {
+    width: 480px;
+  }
+}

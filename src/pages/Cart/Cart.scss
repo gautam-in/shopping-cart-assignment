@@ -1,0 +1,81 @@
+.cart {
+  background-color: #ece9e9;
+  text-align: center;
+  //margin-bottom: 40px;
+  .heading {
+    font-size: large;
+    padding: 10px 0px 0px 10px;
+    margin-bottom: 30px solid #ece9e9;
+    text-align: start;
+    background-color: white;
+    box-sizing: border-box;
+  }
+  .empty-cart {
+    // display: flex;
+    text-align: center;
+    padding: 140px 0px;
+    div {
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+      padding-bottom: 0px;
+      font-weight: 600;
+      font-family: "Dosis", sans-serif;
+    }
+
+    p {
+      //width: 200px;
+      margin: 0px;
+      //padding-left: 100px;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+  }
+
+  .checkout {
+    margin-top: 150px;
+    background-color: #c91e46;
+
+    .checkout-btn {
+      display: flex;
+      width: inherit;
+      margin: 0px 40px;
+      span {
+        padding-left: 750px;
+      }
+    }
+  }
+}
+
+@media (min-width: 769px) {
+  .modal-header {
+    background-color: black;
+    color: white;
+    font-family: "Dosis", sans-serif;
+  }
+  .modal-body {
+    padding-top: 0px;
+    padding-left: 50px;
+  }
+  .checkout {
+    max-width: 465px;
+    max-height: 80px;
+
+    .proceed-btn {
+      max-height: 50px;
+      display: flex;
+    }
+    .checkout-btn {
+      max-width: 500px;
+
+      span {
+        padding-left: 170px !important;
+        max-width: 300px !important;
+        max-height: 50px;
+        text-align: end;
+      }
+    }
+  }
+}
