@@ -1,0 +1,91 @@
+.modal-dialog .modal-content{
+    height: 100%;
+}
+.modal-dialog .modal-header{
+    background-color: #a20c5a;
+    color:white;
+}
+
+.modal-dialog .modal-header span{
+    padding-left: 10px;
+    padding-top: 3px;
+}
+.modal-dialog .modal-header .modal-title{
+    font-size: 17px;
+    display: contents;
+}
+.modal-dialog .modal-header .modal-title span{
+    font-size: 12px;
+}
+
+.modal-dialog .modal-body{
+    background: #F0F0F0;
+}
+
+.modal-dialog .cart-item{
+    display: flex;
+    justify-content: space-between;
+    background: white;
+    padding: 10px;
+}
+
+.modal-dialog .lowest-price-content{
+    background: white;
+    padding: 2px 18px;
+}
+
+.modal-dialog .lowest-price-content span{
+    padding-left: 20px;
+}
+
+.modal-dialog .cart-left-block {
+    display: flex;
+}
+.cart-item-img{
+    width:80px;
+}
+.cart-item-img img{
+    width: 80%;
+}
+.cart-item-details h4{
+    font-size: 17px;
+    font-weight: bold;
+}
+
+.cart-item-details button{
+    border: none;
+    color: white;
+    background-color: #a20c5a;
+    padding: 0px 11px;
+    border-radius: 14px;
+    font-size: 19px;
+    margin: -1px 5px;
+}
+
+.cart-item-rate{
+    display: flex;
+    justify-content: center;
+}
+
+.modal-dialog .modal-footer{
+    justify-content: center;
+}
+
+.modal-dialog .modal-footer button{ 
+    width: 100%;
+}
+
+.modal-dialog .no-items-cart.modal-body{
+    display: inline-block;
+    text-align: center;
+    line-height: 300px;
+}
+
+.modal-dialog .no-items-cart-content{
+    display: inline-block !important;
+}
+
+.modal-dialog .no-items-cart-content h4{
+    margin-bottom: 10px;
+    font-weight: bold;
+}

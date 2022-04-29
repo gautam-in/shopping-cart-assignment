@@ -1,0 +1,25 @@
+label{
+    color: #038c9e;
+    font-size: 14px;
+}
+
+.form-field{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+input, input:focus{
+    border: none;
+    border-bottom: 1px solid #038c9e;
+    border-radius: none !important;
+    width:100%;
+}
+input:focus-visible{
+    outline: none;
+}
+
+.error{
+    position: absolute;
+    color: red;
+    font-size: 12px;
+}

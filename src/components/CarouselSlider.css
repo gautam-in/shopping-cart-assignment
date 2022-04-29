@@ -1,0 +1,15 @@
+.carousel-slider{
+    margin-bottom: 20px;
+}
+.carousel-slider .carousel-indicators button{
+    width:5px;
+    height:5px;
+    border-radius: 100%;
+    background-color: black;
+}
+
+@media only screen and (max-width: 600px) {
+    .carousel-slider .carousel-indicators{
+        margin-bottom: -1rem;
+    }
+  }

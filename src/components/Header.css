@@ -1,0 +1,31 @@
+.Header{
+    box-shadow: 1px 1px 7px #aaaaaa;
+    margin-bottom: 10px;
+}
+
+.Header a{
+    text-decoration: none;
+    color: #000;
+    padding: 0px 6px;
+}
+
+.Header .logo{
+    width: 70%;
+}
+
+.Header img{
+    width: 8%;
+}
+
+.Header .home-products{
+    position: absolute;
+    bottom: 10px;
+    left: 305px;
+}
+
+
+@media only screen and (max-width: 600px) {
+    .Header img{
+        width: 16%;
+    }
+  }
