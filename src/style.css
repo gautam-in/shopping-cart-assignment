@@ -1,0 +1,16 @@
+*{
+  font-family: 'Dosis', sans-serif;
+}
+p{
+  font-family: Lato;
+  line-height: 1.2;
+}
+
+button{
+  background-color: #a20c5a;
+  color: #fff;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  padding: 10px;
+}
