@@ -18,11 +18,14 @@ main {
       width: 100%; }
 
 .carousel__button {
-  position: absolute; }
+  position: absolute;
+  opacity: 8.5;
+  border: transparent; }
 
 .prev, .next {
   top: 50%;
   background-color: #666;
+  opacity: 8.5;
   cursor: pointer;
   color: white;
   font-size: 11px;

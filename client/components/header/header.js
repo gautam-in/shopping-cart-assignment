@@ -43,9 +43,15 @@ class Header extends HTMLElement{
                 align-items: center;
             }
             @media screen and (max-width: 480px){
+                nav{
+                    width: 100%
+                }
                 #nav__logo{
                     height: 50px;
-                    margin: 0 20px 0 0;
+                    margin: 0 15px 0 0;
+                }
+                .nav__links{
+                    padding: 0 10px 0 0;
                 }
             }
         </style>

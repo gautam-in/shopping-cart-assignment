@@ -29,17 +29,27 @@ class Cart{
         </section>
         `)
 
-        document.getElementById('close__cart').addEventListener('click', this.removeCart)
+        document.getElementById('close__cart').addEventListener('click', this.removeCart);
+        document.getElementById('cart__container__main').innerHTML += `
+        <div id="lowest-price">
+            <img width="150" height="auto" src="../../../static/images/lowest-price.png" alt="Lowest Price Guranteed"/> 
+            <p>You won\'t find it cheaper anywhere</p>
+        </div>
+        `
 
     }
 
     removeCart = () => {
         document.getElementById('cart__container').style.visibility = 'hidden';
+        document.getElementById('lowest-price').style.visibility = 'hidden';
     }
 
     showCart = () => {
         if(this._itemDetail.length === 0){
             document.getElementById('cart__items__count').innerText = `My Cart (${this._itemDetail.length} item)`;
+            document.getElementById('lowest-price').style.visibility = 'hidden';
+        }else{
+            document.getElementById('lowest-price').style.visibility = 'visible';
         }
         document.getElementById('cart__container').style.visibility = 'visible';
 
@@ -81,10 +91,12 @@ class Cart{
     }
 
     updateCartItemCount = (item, action) => {
-        item.count += action;
-        document.getElementById('count__'+item.id).textContent = item.count;
-        document.getElementById('pc__productprice__'+item.id).textContent = 'Rs. '+ item.count * item.price;
-        this.totalPrice()
+        if(!((item.count === 0 && action === -1) || (item.count === item.stock && action === 1))){
+            item.count += action;
+            document.getElementById('count__'+item.id).textContent = item.count;
+            document.getElementById('pc__productprice__'+item.id).textContent = 'Rs. '+ item.count * item.price;
+            this.totalPrice();
+        }
     }
 }
 

@@ -1,4 +1,5 @@
 let currentSlide = 0;
+
 function fetchBannerData(){
     
     return fetch('http://localhost:5000/banners')
@@ -40,13 +41,13 @@ async function renderCarousel(){
         for(let index = 0; index < data.length; index++){
             template += `
             <div>
-                <img src="../../../${data[index].bannerImageUrl}" alt="${data[index].bannerImageAlt}"/>
+                <img src="../../../${data[index].bannerImageUrl}" alt="${data[index].bannerImageAlt}" loading="lazy"/>
             </div>
             `;
         }
         carouselContainer.innerHTML = template + `
-        <a class="carousel__button prev" onclick="plusSlides(-1)">Prev</a>
-        <a class="carousel__button next" onclick="plusSlides(1)">Next</a>
+        <button class="carousel__button prev" onclick="plusSlides(-1)">Prev</button>
+        <button class="carousel__button next" onclick="plusSlides(1)">Next</button>
         `
     }
     showSlides(currentSlide);    
@@ -74,7 +75,7 @@ async function renderCategories(){
             `
             <div class="categories__container">
                 <div>
-                    <img width="250" height="auto" class="categories__image" src="../../../${categories[index].imageUrl}" alt="${categories[index].name} image"/>
+                    <img width="250" height="100" class="categories__image" src="../../..${categories[index].imageUrl}" alt="${categories[index].name}" loading="lazy"/>
                 </div>
                 <div class="categories__summary">
                     <h2>${categories[index].name}</h2>

@@ -88,6 +88,19 @@ body {
   justify-content: center;
   align-items: center; }
 
+#lowest-price {
+  display: flex;
+  background-color: white;
+  padding: 5px;
+  margin: 10px; }
+
+@media screen and (max-width: 848px) {
+  #cart__container {
+    width: 100vw;
+    height: 90vh;
+    bottom: 0;
+    right: 0; } }
+
 @media screen and (max-width: 480px) {
   #cart__container {
     width: 100vw;
@@ -95,7 +108,7 @@ body {
     bottom: 0;
     right: 0; }
   .pc__container {
-    margin: 10 0px; }
+    margin: 10px 0px; }
   .pc__desc {
     width: 200px;
     font-size: 0.8rem; }

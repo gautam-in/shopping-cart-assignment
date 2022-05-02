@@ -11,28 +11,28 @@ module.exports = {
         footer: "./client/components/footer/footer.js"
     },
     output: {
-        filename: "./[name].bundle.js" 
+        filename: "./js/[name].bundle.js" 
     },
     plugins: [
         new HtmlWebpackPlugin({
             hash: true,
             template: './client/pages/register/register.html',
-            filename: './register.html' //relative to root of the application
+            filename: './html/register.html' //relative to root of the application
         }),
         new HtmlWebpackPlugin({
             hash: true,
             template: './client/pages/login/login.html',
-            filename: './login.html' //relative to root of the application
+            filename: './html/login.html' //relative to root of the application
         }),
         new HtmlWebpackPlugin({
             hash: true,
             template: './client/pages/home/home.html',
-            filename: './home.html' //relative to root of the application
+            filename: './html/home.html' //relative to root of the application
         }),
         new HtmlWebpackPlugin({
             hash: true,
             template: './client/pages/products/products.html',
-            filename: './products.html' //relative to root of the application
+            filename: './html/products.html' //relative to root of the application
         }),
         new MiniCssExtractPlugin({
             filename: "./styles/[name].css"

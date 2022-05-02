@@ -61,7 +61,7 @@ async function renderProductsList(categoryId){
                 <h3>${currentProducts[index].name}</h3>
             </div>
             <div class="product__subcard">
-                <img width="250" height="250" src="../../../${currentProducts[index].imageURL}" alt="${currentProducts[index].name} Image"/>
+                <img width="250" height="250" src="../../../${currentProducts[index].imageURL}" alt="${currentProducts[index].name}"/>
                 <div class="product__desc">
                     <div class="product__detail">
                         <p>${currentProducts[index].description}</p>
