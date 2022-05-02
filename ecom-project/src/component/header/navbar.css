@@ -1,0 +1,167 @@
+.navbar{
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+    box-shadow: 0px 10px 10px -10px #111;
+    height: 10rem;
+    position: fixed;
+    width: 100%;
+    background-color: white;
+}
+.image-resp {
+    width: 20rem;
+    height: 8rem;
+}
+.navbar-link{
+    display: flex;
+    flex-direction: row;
+    width: 63%;
+    margin: auto;
+    height: 10rem;
+}
+.navbar-brand{
+    width: 24rem;
+}
+.navbar-items{
+    position: relative;
+}
+ .navbar-items ul{
+     position: absolute;
+     bottom: 0;
+     margin-bottom: 2rem;
+     list-style-type: none;
+     width: 30rem;
+    
+}
+.navbar-cart {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 20%;
+    
+}
+.navbar-cart .navbar-login ul{
+    list-style-type: none;
+    background-color: beige;
+   
+}
+.navbar-cart .navbar-login  ul li{
+    float: left;
+    margin-right: 2rem;
+    font-size: 1.3rem;
+}
+.navbar-cart .navbar-icon{
+    height: 6rem;
+}
+.navbar-cart .navbar-icon div{
+    width: 50%;
+    height: 100%;
+    background-color: beige;
+    cursor: pointer;
+}
+.navbar-cart .navbar-icon .icon{
+    padding: 1.5rem 0;
+   font-size: 3rem;
+   color: red;
+}
+.navbar-cart .navbar-icon span{
+    padding-left: 2.5rem;
+    font-size: 2rem;
+    text-transform: lowercase;
+}
+.navbar-items ul li{
+    float: left;
+    margin-left: 2rem;
+    font-size: 2rem;
+}
+@media screen and (max-width:820px){
+    .home-main{
+      width: 100%;
+    }
+    .navbar-brand{
+        width: 22rem;
+    }
+
+    .navbar{
+        padding: 0;
+    }
+    .navbar-link{
+        width: 80%;
+        
+    }
+    .navbar-cart .navbar-login  ul li{
+        margin-right: 0.5rem;
+        font-size: 1.5rem;
+    }
+    .navbar-cart .navbar-icon div{
+        width: 100%;
+      
+    }
+    .navbar-cart .navbar-icon .icon{
+        padding: 1.5rem 0;
+       font-size: 3rem;
+       color: red;
+    }
+    .navbar-cart .navbar-icon span{
+        padding-left: 2.5rem;
+        font-size: 2rem;
+        text-transform: lowercase;
+    }
+   
+  }
+  @media screen and (max-width:500px){
+      .navbar{
+          padding: 0px;
+      }
+  .image-resp{
+    max-width: 8rem;
+    max-height: 8rem;
+  }
+  .navbar-link{
+      /* width: 60%; */
+      margin-left: -1rem;
+  }
+  .navbar-brand{
+    width: 5rem;
+}
+.navbar-items ul li{
+    font-size: 1.3rem; 
+  }
+  .navbar-cart {
+    width: 40%;
+  }
+  .navbar-cart .navbar-login  ul li{
+    margin-right: 1rem;
+    font-size: 1.3rem;
+}
+  .navbar-cart .navbar-login ul
+  {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      padding: 0 1rem;
+      background-color: white;
+  }
+  
+  .navbar-cart .navbar-icon div{
+    width: 100%;
+    height: 100%;
+    background-color: beige;
+    cursor: pointer;
+}
+.navbar-cart .navbar-icon .icon{
+    padding: 2rem 0rem;
+   font-size: 2.5rem;
+   color: red;
+}
+.navbar-cart .navbar-icon span{
+    padding-left: 1.5rem;
+    font-size: 1.5rem;
+    text-transform: lowercase;
+}
+.navbar-items ul li{
+    font-size: 1.7rem;
+}
+}
