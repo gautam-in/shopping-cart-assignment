@@ -1,0 +1,31 @@
+.auth-info {
+  display: flex;
+  flex-direction: column;
+  padding: 4rem 4rem 4rem 8rem;
+  color: black;
+}
+
+.auth-info h1 {
+  font-size: 3rem;
+  margin: 2rem 0;
+}
+
+.auth-info p {
+  font-size: 1.6rem;
+  font-weight: 500;
+  margin-bottom: 4rem;
+}
+
+@media only screen and (max-width: 576px) {
+  .auth-info {
+    padding: 0;
+    width: 90%;
+  }
+  .auth-info p {
+    margin-bottom: 0;
+    font-size: 1.8rem;
+  }
+  .auth-info h1 {
+    margin-top: 4.6rem;
+  }
+}

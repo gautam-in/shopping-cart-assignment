@@ -1,0 +1,23 @@
+.products-container {
+  display: grid;
+  grid-template-columns: 1.1fr 3fr;
+}
+.product-categories {
+  background-color: #eaeaea;
+}
+
+.category {
+  margin-left: 1rem;
+  font-size: 1.6rem;
+  padding: 1.3rem;
+  border-bottom: 1px solid #ccc;
+}
+
+@media only screen and (max-width: 576px) {
+  .product-categories {
+    display: none;
+  }
+  .products-container {
+    grid-template-columns: 1fr;
+  }
+}

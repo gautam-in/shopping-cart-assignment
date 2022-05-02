@@ -1,0 +1,8 @@
+.banner-img {
+  width: 100%;
+}
+
+.banner-container {
+  padding: 3rem 0;
+  box-shadow: 0px 20px 20px -20px rgba(0, 0, 0, 0.45);
+}
