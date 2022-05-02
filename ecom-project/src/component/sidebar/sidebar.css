@@ -1,0 +1,113 @@
+
+
+  .sidebar-toggle
+  {
+      margin: 0;
+      padding: 0;
+      width: 25rem;
+      background-color: #f1f1f1;
+      position: fixed;
+      height: 100%;
+      overflow: auto;  
+  }
+  .sidebar {
+      margin-top: 11rem;
+      padding: 0;
+      width: 25rem;
+      background-color: #f1f1f1;
+      position: fixed;
+      height: 100%;
+      overflow: auto;
+    }
+    
+    .sidebar a {
+      display: block;
+      color: black;
+      padding: 16px;
+      text-decoration: none;
+      
+    }
+    .sidebar-toggle a {
+      display: block;
+      color: black;
+      padding: 16px;
+      text-decoration: none;
+      
+    }
+     
+    .sidebar a.active {
+      background-color: #04AA6D;
+      color: white;
+    }
+    .sidebar a:nth-child(1) span{
+        display: none;;
+    }
+    .sidebar a:hover:not(.active) {
+      background-color: #555;
+      color: white;
+    }
+    /* .sidebar-toggle a:nth-child(1) span{
+      display: none;
+  } */
+  .sidebar-toggle a:hover:not(.active) {
+    /* background-color: #555; */
+    color: white;
+  }
+   
+    /* end */
+    @media screen and (max-width: 450px) {
+     
+      .sidebar {
+         width: 100%;
+         display: flex;
+         flex-direction: column;
+         height: auto;
+         position: relative;
+         z-index: -5;
+       }
+       .sidebar-toggle {
+           width: 100%;
+           display: flex;
+           flex-direction: column;
+           height: auto;
+           position: relative;
+           margin-top: 11rem;
+           z-index: -5;
+          
+         }
+       .sidebar a:nth-child(1)
+       {
+           background-color: rgb(192, 42, 42);
+           color: white;
+       }
+       .sidebar a:nth-child(1) span{
+           display: block;
+           float: right;
+       }
+       .sidebar-toggle a:nth-child(1)
+       {
+           background-color: rgb(192, 42, 42);
+           color: white;
+       }
+       .sidebar-toggle a:nth-child(1) span{
+           display: block;
+           float: right;
+       }
+       .icon-style{
+        font-size: 2rem;
+    }
+       .sidebar a:hover:not(.active) {
+      background-color:rgb(192, 42, 42) ;
+       }
+       .sidebar a:nth-child(2),.sidebar a:nth-child(3),.sidebar a:nth-child(4),.sidebar a:nth-child(5)
+       {
+           display: none;
+       }
+       
+     }
+ 
+    
+    
+  
+  
+    
