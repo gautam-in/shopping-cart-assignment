@@ -2,6 +2,11 @@
     .sidebar-content {
         margin-left: 5%;
     }
+    .cart-content {
+        margin-top: 137px;
+        overflow-y: scroll;
+        height: 66vh;
+    }
     .desc{
         font-size: 13px;
     }
@@ -38,9 +43,10 @@
     .tab-buy{
         display: none;
     }
-    .cart-content{
-        margin-top: 150px;
+    #collapsibleNavbar{
+        display: none;
     }
+    
 }
 
 @media screen and (min-width:531px) {
@@ -66,9 +72,8 @@
     .content {
         margin-top: 90px;
     }
-    .cart-content{
-        margin-top: 150px;
-    }
+    
+
 
 }
 
@@ -97,6 +102,11 @@
     }
     .tab-buy{
         display: block;
+    }
+    .cart-content {
+        margin-top: 91px;
+        overflow-y: scroll;
+        height: 81vh;
     }
 }
 

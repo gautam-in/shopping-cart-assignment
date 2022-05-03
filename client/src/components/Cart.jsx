@@ -1,8 +1,7 @@
-import React from 'react'
+import React,{useEffect,useState} from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link, NavLink } from 'react-router-dom';
 import { ADDED_TO_CART, REMOVE_FROM_CART } from '../redux/Action_creators/CartActions';
-
 const Cart = () => {
     const cartItems = useSelector(state => state.cart.cartItems);
     const dispatch = useDispatch()
@@ -10,8 +9,9 @@ const Cart = () => {
         const sumall = cartItems.map(item => item.quantity * item.price).reduce((prev, curr) => prev + curr, 0);
         return sumall
     }
+
     return (
-        <div className={cartItems.length>0?'bg-gray cart-content':'bg-white cart-content'} style={{ height: '86vh' }}>
+        <div className={cartItems.length>0?'bg-gray cart-content':'bg-white'} >
             {
                 cartItems.length > 0 && (
                     <div className='cart-header bg-white p-3 mt-3'>
@@ -26,7 +26,7 @@ const Cart = () => {
                             <img height='70px' src={item.imageURL} alt={item.id} />
                             <div className='ml-3'>
                                 <h6><strong>{item.name}</strong></h6>
-                                <p><span className='quantity-btn' onClick={() => { dispatch(REMOVE_FROM_CART(item)) }}>-</span>{item.quantity}<span className='quantity-btn' onClick={() => { dispatch(ADDED_TO_CART(item)) }}>+</span> <span>X</span> Rs{item.price} </p>
+                                <p className='d-flex'><span className='quantity-btn' onClick={() => { dispatch(REMOVE_FROM_CART(item)) }}>-</span>{item.quantity}<span className='quantity-btn' onClick={() => { dispatch(ADDED_TO_CART(item)) }}>+</span> <span className='ml-3 mr-3'>X</span> Rs{item.price} </p>
                             </div>
                             <div className='total ml-auto'>
                                 <p>Rs {item.quantity * item.price}</p>
@@ -38,11 +38,11 @@ const Cart = () => {
             {
                 cartItems.length > 0 ? (
                     <>
-                        <div className='p-3 bg-white cheaper-sec d-flex align-items-center mt-2'>
+                        <div className='p-3 bg-white mb-5 cheaper-sec d-flex align-items-center mt-2' >
                             <img src='/static/images/lowest-price.png' alt='lowest' />
                             <span className='ml-3'>You won't find it cheaper anywhere</span>
                         </div>
-                        <div className='checkout-footer mt-5 card p-3'>
+                        <div className='checkout-footer mt-5  p-3'>
                             <p className='text-center'>Promo code can be applied on the payment page</p>
                             <div className='d-flex bg-danger align-items-center p-2'>
                                 <div className='col-6 text-light'>Proceed to Checkout</div>
@@ -51,10 +51,12 @@ const Cart = () => {
                         </div>
                     </>
                 ) : (
-                    <div className='text-center alignItems-center '>
+                    <div className='cart-empty '>
+                        <div className='empty-text'>
                         <h4><strong>No items in your cart</strong></h4>
                         <p>your favourite items are just a click away</p>
-                        <div className='checkout-footer p-3  '>
+                        </div>
+                        <div className='checkout-footer   '>
                             <div className='bg-danger  p-2'>
                                <NavLink to='/'  className='text-light'>Start Shopping</NavLink>
                             </div>

@@ -2,7 +2,10 @@
 
 .navbar {
   box-shadow: 2px 1px 7px 0px #ccc;
-
+.navbar-cart{
+  background-color: #eceef0;
+  padding: 10px;
+}
   .navbar-brand {
     img {
       height: 62px;
@@ -201,6 +204,18 @@ input:not(:focus):valid~.floating-label {
   bottom: 0;
   width: 100%;
   left: 0;
+  background-color: white;
+}
+
+.cart-empty{
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  .checkout-footer{
+    padding: 25px;
+    text-align: center;
+  }
 }
 
 #myModal{
@@ -213,5 +228,27 @@ input:not(:focus):valid~.floating-label {
     margin-top: 0;
     margin-bottom: 100px;
     overflow-y: scroll;
+    height: 54vh !important;
+  }
+  
+ 
+}
+
+.quantity-btn{
+  display: flex;
+  align-items: center;
+  background:#d00155;
+  height: 16px;
+  margin-top: 3px;
+  width: 16px;
+  padding: 5px;
+  padding-bottom: 10px;
+  border-radius: 100%;
+  margin: auto 10px;
+  color: white;
+}
+.auth-sec{
+  a{
+    color:rgba(0, 0, 0, .7) ;
   }
 }

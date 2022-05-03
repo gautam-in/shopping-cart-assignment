@@ -28,13 +28,13 @@ const Login = () => {
         }
     }
     return (
-        <div className='react-container' style={{ marginTop: '120px' }}>
+        <div className='react-container p-2' style={{ marginTop: '120px' }}>
             <div className='row justify-content-center ' >
-                <div className='col-sm-4'>
+                <div className='col-sm-4 mb-3'>
                     <h4><strong>Login</strong></h4>
                     <small><strong>Get access to your Orders ,Whishlist and Recomendations</strong></small>
                 </div>
-                <div className='col-sm-4'>
+                <div className='col-sm-4 '>
                     <form onSubmit={(e) => { e.preventDefault(); handleSubmit() }}>
                         <div className='sec'>
                             <input type="text" onChange={(e) => { handleChange('email', e.target.value) }} className="inputText" required />
