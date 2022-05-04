@@ -191,6 +191,7 @@ input[type=submit] {
     background-color: #d10157;
     padding: 5px;
     color: white;
+    outline: none;
   }
 
   .all_cards {
