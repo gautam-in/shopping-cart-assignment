@@ -67,8 +67,8 @@ async function renderProductsList(categoryId){
                         <p>${currentProducts[index].description}</p>
                     </div>
                     <div class="product__price">
-                        <span>Rs. ${currentProducts[index].price}</span>
-                        <button onclick="buyProduct('${currentProducts[index].id}')">Buy Now</button>
+                        <span id="price">Rs. ${currentProducts[index].price}</span>
+                        <button onclick="buyProduct('${currentProducts[index].id}')">Buy Now <span id="atsymbol">@</span></button>
                     </div>
                 </div>
             </div>
