@@ -1,0 +1,61 @@
+.productPage {
+  display: flex;
+  flex-direction: row;
+}
+.cards {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  margin-top: 105px;
+  margin-left: 250px;
+}
+.sidenav {
+  background-color: rgb(197, 196, 196);
+  width: 15%;
+  height: 100vh;
+  position: fixed;
+  margin-top: 105px;
+}
+.categoryButton {
+  margin-top: 5px;
+  border: none;
+  background-color: rgb(197, 196, 196);
+  justify-content: space-around;
+  cursor: pointer;
+}
+.active,
+.categoryButton:hover {
+  background-color: rgb(149, 134, 134);
+}
+
+@media (max-width: 820px) {
+  .cards {
+    display: grid;
+    grid-template-columns: auto auto;
+    margin-top: 105px;
+    margin-left: 250px;
+  }
+  .sidenav {
+    background-color: rgb(197, 196, 196);
+    width: auto;
+    height: 100vh;
+    position: fixed;
+    margin-top: 105px;
+  }
+}
+@media only screen and (max-width: 767px) and (min-width: 375px) {
+  .cards {
+    display: flex;
+    flex-direction: column;
+    margin-top: 105px;
+    margin-left: 130px;
+    height: auto;
+    width: auto;
+  }
+  .sidenav {
+    background-color: rgb(197, 196, 196);
+    width: auto;
+    height: 100vh;
+    position: fixed;
+    margin-top: 105px;
+  }
+}
