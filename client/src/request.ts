@@ -1,12 +1,6 @@
 import wretch from 'wretch';
 import { ResponseChain } from 'wretch/dist/resolver';
 
-export interface ResponseProps {
-    success?: boolean;
-    data?: unknown;
-    message?: string;
-}
-
 type ApiResponse = unknown;
 
 const callAPI = async (w: ResponseChain): Promise<ApiResponse> => {

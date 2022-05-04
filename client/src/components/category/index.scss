@@ -1,0 +1,50 @@
+.banner-component {
+  position: relative;
+  box-shadow: 0 25px 31px -20px rgba(0, 0, 0, 0.22);
+  padding: 18px 0px;
+  &:nth-child(odd) {
+    flex-direction: row-reverse;
+  }
+  .content {
+    p {
+      font-size: x-small;
+      text-align: center;
+    }
+    span {
+      font-size: x-small;
+      text-align: center;
+    }
+    a {
+      text-decoration: none;
+    }
+    .heading {
+      font-size: small;
+      display: block;
+      text-align: center;
+      font-weight: bold;
+      margin: 15px 0px 0px 0px;
+    }
+    .link-button {
+      background: #e83583;
+      padding: 8px 15px;
+      border: none;
+      font-size: x-small;
+      border-radius: 3px;
+      font-weight: 500;
+      color: #fff;
+      margin: 15px auto;
+      display: block;
+      cursor: pointer;
+      text-transform: capitalize;
+      text-align: center;
+    }
+    width: 70%;
+    margin: 15px;
+  }
+  .image-container {
+    img {
+      width: 100%;
+    }
+    width: 30%;
+  }
+}

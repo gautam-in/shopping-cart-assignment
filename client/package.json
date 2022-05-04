@@ -11,9 +11,9 @@
         "react": "^16.13.1",
         "react-bootstrap": "^2.0.2",
         "react-dom": "^16.13.1",
+        "react-responsive-carousel": "^3.2.23",
         "react-router-dom": "^5.2.0",
         "react-scripts": "3.4.3",
-        "react-slick": "^0.28.1",
         "sass": "^1.43.2",
         "wretch": "^1.7.2",
         "yup": "^0.32.11"
