@@ -2,7 +2,6 @@ import React from 'react';
 import { useHistory } from 'react-router-dom';
 import { Formik } from 'formik';
 import * as Yup from 'yup';
-// import '../Login/index.scss';
 
 const Register = () => {
     const history = useHistory();

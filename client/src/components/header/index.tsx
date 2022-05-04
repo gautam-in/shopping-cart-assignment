@@ -8,10 +8,10 @@ import Cart from '../cart';
 import './index.scss';
 
 const Header = () => {
-    const [openCart, setOpenCart] = useState(false);
     const {
         appState: { cartCount },
     } = useContext(AppContext);
+    const [openCart, setOpenCart] = useState(false);
     const history = useHistory();
 
     const handleRedirect = useCallback((route) => () => history.push(route), [history]);
@@ -21,8 +21,8 @@ const Header = () => {
     return (
         <header>
             <div className="navigation" role="navigation">
-                <div onClick={handleRedirect(HOME)}>
-                    <img className="w-1" src="static/images/logo.png" alt="logo" />
+                <div className="d-flex align-items-center" onClick={handleRedirect(HOME)}>
+                    <img src="static/images/logo.png" alt="logo" height="50" />
                 </div>
                 <nav>
                     <ul className="d-flex">
