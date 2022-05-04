@@ -1,0 +1,16 @@
+.slick-next::before,
+.slick-prev::before {
+  color: black !important;
+}
+.slick-prev,
+.slick-next {
+  display: inline-block !important;
+  height: 50px !important;
+  background: rgba(0, 0, 0, 0.1) !important;
+}
+@media screen and (max-width: 480px) {
+  .slick-prev,
+  .slick-next {
+    display: none !important;
+  }
+}

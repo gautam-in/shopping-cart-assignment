@@ -1,0 +1,39 @@
+/* @media screen and (max-width: 768px) {
+  .display-cart {
+    display: none !important;
+  }
+} */
+.modal-body {
+  padding: 0rem !important;
+}
+
+.guarantee-section {
+  background-color: #fff;
+  padding: 10px;
+  margin: 15px;
+}
+.cart-section {
+  width: 100%;
+  background-color: #fff;
+}
+
+.btn-checkout {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #d00256;
+  color: white;
+  padding: 10px 15px 0px 15px;
+  border-radius: 5px;
+  width: 90%;
+  gap: 150px;
+  cursor: pointer;
+}
+.modal-body {
+  background-color: rgba(0, 0, 0, 0.1);
+  height: 60vh;
+  overflow: scroll;
+}
+i {
+  cursor: pointer;
+}

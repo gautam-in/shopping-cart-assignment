@@ -1,0 +1,14 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Roboto", sans-serif;
+}
+.btn-primary {
+  background-color: #d00256 !important;
+}
+.bg-primary {
+  background-color: #d00256 !important;
+}
