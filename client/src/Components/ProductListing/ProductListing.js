@@ -14,7 +14,6 @@ const ProductListing = () => {
       const responseJson = await response.json();
       const categories = await fetch("http://localhost:8080/categories");
       const categoriesJson = await categories.json();
-      console.log(categoriesJson, responseJson);
       setcategoryData(categoriesJson);
       setproductsData(responseJson);
     };
@@ -31,7 +30,7 @@ const ProductListing = () => {
               .map(
                 (item, index) =>
                   item.enabled && (
-                    <>
+                    <div key={index}>
                       <button
                         className="categoryButton"
                         onClick={() => setCategoryId(item.id)}
@@ -39,7 +38,7 @@ const ProductListing = () => {
                         {item.name}
                       </button>
                       <hr />
-                    </>
+                    </div>
                   )
               )}
         </div>
@@ -47,10 +46,10 @@ const ProductListing = () => {
           {productsData &&
             productsData
               .sort((a, b) => a.order - b.order)
-              .map((item) => {
+              .map((item, i) => {
                 return (
                   categoryId === item.category && (
-                    <ProductListingCard category={item} />
+                    <ProductListingCard key={i} category={item} />
                   )
                 );
               })}
