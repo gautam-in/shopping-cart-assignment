@@ -175,9 +175,22 @@ input[type=submit] {
     width: 100vw;
   }
 
+  #checkout-button {
+    cursor: pointer;
+  }
+
   .cards_container {
     flex-direction: column;
     justify-content: space-evenly;
+  }
+  .cards_container aside {
+    display: none;
+  }
+  .cards_container #filter_dropdown {
+    display: block;
+    background-color: #d10157;
+    padding: 5px;
+    color: white;
   }
 
   .all_cards {

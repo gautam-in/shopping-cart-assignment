@@ -184,10 +184,24 @@ input[type=submit]
   
   #cart-footer{
     width: 100vw;
+    
+  }
+  #checkout-button{
+    cursor: pointer;
   }
   .cards_container{
     flex-direction: column;
     justify-content: space-evenly;
+    aside{
+      display: none;
+      
+    }
+    #filter_dropdown{
+      display: block;
+      background-color: $buttonColor;
+      padding: 5px;
+      color: white;
+    }
   }
 
   .all_cards{

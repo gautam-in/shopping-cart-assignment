@@ -164,3 +164,13 @@ function deleteItem(id) {
 function closeCart() {
   document.querySelector(".cart").style.display = "none";
 }
+
+function myFunction(){
+let target = document.getElementById("filter_dropdown").value;
+
+  let filteredProducts = allProducts.filter((product) => {
+    return product.category === target;
+  });
+  productItems = "";
+  displayProductsItems(filteredProducts);
+}

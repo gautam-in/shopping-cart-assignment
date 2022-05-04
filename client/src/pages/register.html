@@ -17,6 +17,12 @@
     <link rel="stylesheet" href="../style/common.css" />
     <script src="../components/header.js"></script>
     <script src="../components//footer.js"></script>
+    <script>
+        function submitRegistration(e){
+            e.preventDefault();
+        }
+    </script>
+      
   </head>
   <body>
     <header-component></header-component>
@@ -27,18 +33,30 @@
           <div>We don't share your personal details with anyone</div>
         </div>
         <div>
-          <form action="#" class="register_details">
+          <form action="home.html" class="register_details" onsubmit="submitRegistration(e)">
             <label for="ufname">First Name : </label>
-            <input type="text" name="ufname" id="ufname" />
+            <input type="text" name="ufname" id="ufname" required />
             <label for="ulname">Last Name : </label>
-            <input type="text" name="ulname" id="ulname" />
+            <input type="text" name="ulname" id="ulname" required />
             <label for="uemail">Email : </label>
-            <input type="email" name="uemail" id="uemail" />
+            <input type="email" name="uemail" id="uemail" required />
             <label for="upassword">Password : </label>
-            <input type="password" name="upassword" id="upassword" required />
+            <input
+              type="password"
+              name="upassword"
+              id="upassword"
+              required
+              pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}"
+            />
             <label for="ucpassword">Confirm Password : </label>
-            <input type="password" name="ucpassword" id="ucpassword" required />
-            <input type="submit" value="Signup" />
+            <input
+              type="password"
+              name="ucpassword"
+              id="ucpassword"
+              required
+              pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}"
+            />
+            <input type="submit" id="submit" value="Signup" />
           </form>
         </div>
       </section>

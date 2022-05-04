@@ -20,7 +20,7 @@ class CartWebComponent extends HTMLElement {
     <footer id="cart-footer">
         <p class="promo">Promo code can be applied on payment page.</p>
         
-        <button id="checkout-button"><span>Proceed to checkout</span> <span id="cart-value">Rs. 0</span></button>
+        <button id="checkout-button" onclick="closeCart()"><span>Proceed to checkout</span> <span id="cart-value">Rs. 0</span></button>
         
     </footer>`;
   }

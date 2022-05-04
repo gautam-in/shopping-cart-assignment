@@ -9,7 +9,7 @@
       content="Sabka Bazaar is an online cheapest food shopping site"
     />
     <title>Login</title>
-  
+
     <link
       href="https://fonts.googleapis.com/css2?family=Dosis:wght@300;400&display=swap"
       rel="stylesheet"
@@ -17,26 +17,40 @@
     <link rel="stylesheet" href="../style/common.css" />
     <script src="../components/header.js"></script>
     <script src="../components//footer.js"></script>
+    <script>
+      function loginSubmit() {
+        e.preventDefault();
+      }
+    </script>
   </head>
   <body>
     <header-component></header-component>
     <main>
-        <section class="login_form">
-      <div>
-        <div><strong>Login</strong></div>
-        <div>Get access to your Orders, Wishlist and Recommendations</div>
-      </div>
-      <div>
-        <form action="#" class="login_details">
-          
-          <label for="uemail">Email : </label>
-          <input type="email" name="uemail" id="uemail" />
-          <label for="upassword">Password : </label>
-          <input type="password" name="upassword" id="upassword" required />
-          <input type="submit" value="Login"/>
-        </form>
-      </div>
-    </section>
+      <section class="login_form">
+        <div>
+          <div><strong>Login</strong></div>
+          <div>Get access to your Orders, Wishlist and Recommendations</div>
+        </div>
+        <div>
+          <form
+            action="home.html"
+            class="login_details"
+            onsubmit="loginSubmit(e)"
+          >
+            <label for="uemail">Email : </label>
+            <input type="email" name="uemail" id="uemail" required />
+            <label for="upassword">Password : </label>
+            <input
+              type="password"
+              name="upassword"
+              id="upassword"
+              required
+              pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}"
+            />
+            <input type="submit" value="Login" />
+          </form>
+        </div>
+      </section>
     </main>
     <footer-component></footer-component>
   </body>

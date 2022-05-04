@@ -70,6 +70,9 @@
 .cards_container aside a:active {
   color: blue;
 }
+.cards_container #filter_dropdown {
+  display: none;
+}
 
 #product_description {
   font-size: 11px;
