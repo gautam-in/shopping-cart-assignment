@@ -1,0 +1,54 @@
+.category {
+  display: flex;
+  box-shadow: 0 4px 6px 0 rgb(208, 209, 211);
+  padding: 20px 30px 40px;
+  margin: 10px;
+  justify-content: space-evenly;
+}
+.imageClass img {
+  height: 240px;
+  width: 320px;
+  flex: 1;
+}
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.heading {
+  font-weight: bold;
+  font-size: x-large;
+}
+.description {
+  font-size: large;
+  margin: 10px;
+  text-align: center;
+}
+.exploreButton {
+  background-color: #d62a63;
+  color: white;
+  padding: 12px;
+  border: none;
+}
+@media (max-width: 768px) {
+  .imageClass img {
+    height: 120px;
+    width: 120px;
+    flex: 1;
+  }
+  .category {
+    display: flex;
+    box-shadow: 0 4px 6px 0 rgb(208, 209, 211);
+    padding: 2px 3px 4px;
+    margin: 10px;
+    justify-content: space-around;
+  }
+}
+@media only screen and (max-width: 767px) and (min-width: 400px) {
+  .imageClass img {
+    height: 120px;
+    width: 120px;
+    flex: 1;
+  }
+}
