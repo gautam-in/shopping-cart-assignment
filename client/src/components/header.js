@@ -1,29 +1,43 @@
-class HeaderWebComponent extends HTMLElement {
-    constructor() {
-      super();
-    }
 
-    connectedCallback(){
-        this.innerHTML = `
-        <header>
-        <img src="../../../static/images/logo.png" alt="Sabka Bazaar">
+class HeaderWebComponent extends HTMLElement {
+  constructor() {
+    super();
+  }
+
+  connectedCallback() {
+    this.innerHTML = `
+        <header class="main_header">
+        <a href="./home.html"><img id="logo-img" src="../../../static/images/logo_2x.png" alt="Sabka Bazaar" width=200 height=90></a>
 
         <nav class="header_nav">
-            <div>
-            <a href="./home.html">Home</a>
-            <a href="./products.html">Products</a>
+            <div class="left_nav">
+              <a href="./home.html">Home</a>
+              <a href="./products.html">Products</a>
             </div>
-            <div>
-            <a href="./login.html">Login</a>
-            <a href="./register.html">Register</a>
-            <img class="cartImage" src="../../../static/images/cart.svg" alt="cart">
-            <span>0 Items</span>
-            <div>
+            <div class="right_nav">
+              <div>
+              <a href="./login.html">SignIn</a>
+              <a href="./register.html">Register</a>
+              </div>
+            <div class="cart_nav">
+              <img onclick="openCart()" class="cartImage" src="../../../static/images/cart.svg" alt="cart">
+              <span id="item-total-count">0 Items</span>
+            </div>
+            </div>
         </nav>
         
         
-    </header>`
-    }
+    </header>`;
   }
+  attributeChangedCallback(name, oldValue, newValue) {
+
+    document.getElementById("item-total-count").innerText = newValue + " Items";
+}
+
+
+
+static get observedAttributes() { return ['cart_count']; }
   
-  customElements.define("header-component", HeaderWebComponent);
+}
+
+customElements.define("header-component", HeaderWebComponent);

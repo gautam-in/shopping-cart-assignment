@@ -1,0 +1,212 @@
+$buttonColor : #d10157;
+$backgroundColor : lightgray;
+
+@mixin shadowBox {
+  box-shadow: 0 5px 5px -7px #000000;
+}
+
+@mixin loginField {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #000000;
+}
+
+@mixin fontFamily {
+  font-family: 'Dosis', sans-serif;
+  font-display: swap;
+}
+body{
+  margin: 0;
+}
+*{
+  box-sizing: border-box;
+   @include fontFamily();
+  button{
+    background-color: $buttonColor;
+    border: none;
+    color: white;
+    padding: 5px;
+  }
+}
+.cartImage {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
+.main_header,
+.crouselContainer,
+.productsCategory {
+  @include shadowBox();
+}
+
+.main_header,
+nav {
+  display: flex;
+  justify-content: space-around;
+}
+.main_header{
+  #logo-img{
+    width: 200px;
+    height: auto;
+  }
+}
+
+nav {
+  width: 100%;
+  align-items: end;
+}
+
+.right_nav {
+  display: flex;
+  flex-direction: column;
+  div{
+    font-size: 10px;
+    @include fontFamily();
+    a{
+      text-decoration: none;
+      margin: 3px;
+
+    }
+  }
+}
+
+.left_nav {
+  display: flex;
+  width: 20%;
+  justify-content: space-between;
+  padding-bottom: 10px;
+  a{
+    text-decoration: none;
+    font-size: 14px;
+  }
+}
+.cart_nav {
+  background-color: #f5f5f5;
+  padding: 6px;
+  margin-top: 15px;
+  img{
+    vertical-align: middle;
+  }
+}
+
+
+
+.main-footer {
+  background-color: $backgroundColor;
+  padding: 5px;
+}
+
+.login_form {
+  display: flex;
+  justify-content: center;
+  div{
+    margin: 20px;
+  }
+  strong{
+    font-size: 25px;
+  }
+  @include fontFamily();
+}
+
+
+.register_details,.login_details{
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  min-height: 300px;
+  input{
+    margin: 5px;
+  }
+  label{
+    margin: 5px;
+  }
+}
+
+input:active{
+  @include loginField()
+;}
+input[type="email"],
+input[type="password"],input[type="text"]{
+  @include loginField();
+}
+
+
+input[type=submit]
+{
+  background-color: $buttonColor;
+  color: white;
+  border: none;
+  padding: 5px;
+}
+
+
+@media screen and (max-width :600px) {
+  .header_nav{
+    justify-content: flex-end;
+    align-items: baseline;
+  }
+  .left_nav{
+    display: none;
+  }
+  .right_nav{
+    display: block;
+    div{
+      a{
+        display: none;
+
+      }
+    }
+  }
+  .cart_nav{
+    margin: 0;
+    padding: 28px;
+  }
+  .productsCategory div ul{
+    padding: 10px;
+  }
+  .prodcutsImages{
+    width: 150px;
+    height: 150px;
+  }
+
+  #product_description{
+    font-size: 12px;
+  }
+  .login_form{
+    flex-direction: column;
+  }
+
+  .cart{
+    width: 100vw;
+    height: 100vh;
+  }
+  
+  #cart-footer{
+    width: 100vw;
+  }
+  .cards_container{
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+
+  .all_cards{
+    flex-direction: row;
+    div{
+      display: flex;
+      flex-basis: auto;
+    }
+    
+  }
+  .description-button{
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .cards{
+    flex-direction: column;
+    img{
+      width: 150px;
+      height: 150px;
+    }
+  }
+}

@@ -1,0 +1,67 @@
+* {
+  box-sizing: border-box;
+  font-family: "Dosis", sans-serif;
+}
+* button {
+  background-color: #d10157;
+  border: none;
+  color: white;
+  padding: 5px;
+}
+
+.offers img {
+  width: 1200px;
+  height: auto;
+}
+
+.product_home {
+  margin: 60px 0 0 0;
+}
+
+.prodcutsImages {
+  width: 321px;
+  height: auto;
+}
+
+.productsCategory,
+.crouselContainer {
+  margin: 25px 0 0 0;
+  box-shadow: 0 5px 5px -7px #000000;
+}
+
+.productsCategory {
+  display: flex;
+  flex-direction: column;
+}
+.productsCategory div {
+  display: flex;
+  justify-content: space-around;
+  box-shadow: 0 5px 5px -7px #000000;
+  margin-top: 10px;
+}
+.productsCategory div ul {
+  list-style: none;
+  text-align: center;
+}
+.productsCategory div ul button {
+  background-color: #d10157;
+}
+.productsCategory div ul a {
+  color: white;
+}
+.productsCategory div ul li {
+  padding: 5px;
+}
+
+@media screen and (max-width: 600px) {
+  .prodcutsImages {
+    width: 100px;
+    height: 100px;
+  }
+
+  .product_home {
+    margin: 0;
+  }
+}
+
+/*# sourceMappingURL=home.css.map */

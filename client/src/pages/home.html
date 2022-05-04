@@ -4,26 +4,46 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
     <meta
       name="description"
       content="Sabka Bazaar is an online cheapest food shopping site"
     />
+   
     <link
-      rel="stylesheet"
-      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
-      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
-      crossorigin="anonymous"
-    />
-    <link
-      rel="stylesheet"
+      rel="preload"
       href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
     />
-    <link rel="stylesheet" href="../style/styles.css" />
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <script src="../components/header.js"></script>
-    <script src="./home.js"></script>
+    <link
+      rel="preload"
+      href="https://fonts.googleapis.com/css2?family=Dosis:wght@300;400&display=swap"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    
+    <link
+      rel="preload"
+      href="../style/home.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <link
+      rel="preload"
+      href="../style/common.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    
+
+    <script nonce="random123" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js" defer></script>
+    <script nonce="random123" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" defer></script>
+    <script nonce="random123" src="../components/header.js" defer></script>
+    <script nonce="random123" src="../components//footer.js" defer></script>
+    <script nonce="random123" src="./home.js" defer></script>
+
 
     <title>Sabka Bazaar</title>
   </head>
@@ -40,9 +60,7 @@
           </ol>
 
           <!-- Wrapper for slides -->
-          <div class="carousel-inner">
-           
-          </div>
+          <div class="carousel-inner"></div>
 
           <!-- Left and right controls -->
           <a class="left carousel-control" href="#myCarousel" data-slide="prev">
@@ -59,13 +77,10 @@
           </a>
         </div>
       </section>
-      <section class="productsCategory">
-        
-      </section>
+      <section class="productsCategory"></section>
+      
+      <footer-component></footer-component>
     </main>
-    <footer>
-        Copyright &#169 2011-2018 Sabka Bazaar Grocery Suplies Pvt. Ltd
 
-    </footer>
-  </body>
+      </body>
 </html>

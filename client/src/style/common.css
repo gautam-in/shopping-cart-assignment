@@ -1,0 +1,205 @@
+body {
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: "Dosis", sans-serif;
+  font-display: swap;
+}
+* button {
+  background-color: #d10157;
+  border: none;
+  color: white;
+  padding: 5px;
+}
+
+.cartImage {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
+.main_header,
+.crouselContainer,
+.productsCategory {
+  box-shadow: 0 5px 5px -7px #000000;
+}
+
+.main_header,
+nav {
+  display: flex;
+  justify-content: space-around;
+}
+
+.main_header #logo-img {
+  width: 200px;
+  height: auto;
+}
+
+nav {
+  width: 100%;
+  align-items: end;
+}
+
+.right_nav {
+  display: flex;
+  flex-direction: column;
+}
+.right_nav div {
+  font-size: 10px;
+  font-family: "Dosis", sans-serif;
+  font-display: swap;
+}
+.right_nav div a {
+  text-decoration: none;
+  margin: 3px;
+}
+
+.left_nav {
+  display: flex;
+  width: 20%;
+  justify-content: space-between;
+  padding-bottom: 10px;
+}
+.left_nav a {
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.cart_nav {
+  background-color: #f5f5f5;
+  padding: 6px;
+  margin-top: 15px;
+}
+.cart_nav img {
+  vertical-align: middle;
+}
+
+.main-footer {
+  background-color: lightgray;
+  padding: 5px;
+}
+
+.login_form {
+  display: flex;
+  justify-content: center;
+  font-family: "Dosis", sans-serif;
+  font-display: swap;
+}
+.login_form div {
+  margin: 20px;
+}
+.login_form strong {
+  font-size: 25px;
+}
+
+.register_details, .login_details {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  min-height: 300px;
+}
+.register_details input, .login_details input {
+  margin: 5px;
+}
+.register_details label, .login_details label {
+  margin: 5px;
+}
+
+input:active {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #000000;
+}
+
+input[type=email],
+input[type=password], input[type=text] {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #000000;
+}
+
+input[type=submit] {
+  background-color: #d10157;
+  color: white;
+  border: none;
+  padding: 5px;
+}
+
+@media screen and (max-width: 600px) {
+  .header_nav {
+    justify-content: flex-end;
+    align-items: baseline;
+  }
+
+  .left_nav {
+    display: none;
+  }
+
+  .right_nav {
+    display: block;
+  }
+  .right_nav div a {
+    display: none;
+  }
+
+  .cart_nav {
+    margin: 0;
+    padding: 28px;
+  }
+
+  .productsCategory div ul {
+    padding: 10px;
+  }
+
+  .prodcutsImages {
+    width: 150px;
+    height: 150px;
+  }
+
+  #product_description {
+    font-size: 12px;
+  }
+
+  .login_form {
+    flex-direction: column;
+  }
+
+  .cart {
+    width: 100vw;
+    height: 100vh;
+  }
+
+  #cart-footer {
+    width: 100vw;
+  }
+
+  .cards_container {
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+
+  .all_cards {
+    flex-direction: row;
+  }
+  .all_cards div {
+    display: flex;
+    flex-basis: auto;
+  }
+
+  .description-button {
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .cards {
+    flex-direction: column;
+  }
+  .cards img {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+/*# sourceMappingURL=common.css.map */

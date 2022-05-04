@@ -1,0 +1,81 @@
+$buttonColor: #d10157;
+$backgroundColor: lightgray;
+
+@mixin shadowBox {
+  box-shadow: 0 5px 5px -7px #000000;
+}
+
+
+
+@mixin fontFamily {
+  font-family: "Dosis", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  @include fontFamily();
+  button {
+    background-color: $buttonColor;
+    border: none;
+    color: white;
+    padding: 5px;
+  }
+}
+.offers {
+  img {
+    width: 1200px;
+    height: auto;
+  }
+}
+
+
+.product_home {
+  margin: 60px 0 0 0;
+}
+
+.prodcutsImages {
+  width: 321px;
+  height: auto;
+}
+.productsCategory,
+.crouselContainer {
+  margin: 25px 0 0 0;
+  @include shadowBox();
+}
+.productsCategory {
+  display: flex;
+  flex-direction: column;
+  div {
+    display: flex;
+    justify-content: space-around;
+    @include shadowBox();
+    margin-top: 10px;
+
+    ul {
+      list-style: none;
+      text-align: center;
+
+      button {
+        background-color: $buttonColor;
+      }
+      a {
+        color: white;
+      }
+      li {
+        padding: 5px;
+      }
+    }
+  }
+}
+@media screen and (max-width :600px) {
+    
+    
+    .prodcutsImages{
+      width: 100px;
+      height: 100px;
+    }
+    .product_home{
+        margin: 0;
+    }
+
+  }

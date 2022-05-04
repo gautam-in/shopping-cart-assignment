@@ -1,0 +1,178 @@
+* {
+  box-sizing: border-box;
+  font-family: "Dosis", sans-serif;
+  font-display: swap;
+}
+* button {
+  background-color: #d10157;
+  border: none;
+  color: white;
+  padding: 5px;
+}
+
+.cards {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  border-bottom: 1px dotted black;
+}
+.cards .buy_button {
+  display: flex;
+  justify-content: space-between;
+}
+.cards .buy_button button {
+  cursor: pointer;
+}
+.cards span button {
+  background-color: #d10157;
+  color: white;
+  border: 0;
+}
+.cards img {
+  margin-top: 5px;
+}
+.cards strong {
+  height: 35px;
+}
+
+.all_cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.all_cards div {
+  flex-basis: 275px;
+  padding: 5px;
+}
+
+.cards_container {
+  display: flex;
+}
+.cards_container aside {
+  background-color: lightgray;
+  flex-shrink: 0;
+}
+.cards_container aside ul {
+  list-style: none;
+  padding: 0;
+}
+.cards_container aside li {
+  padding: 10px;
+  margin: 5px;
+  cursor: pointer;
+  border-bottom: 1px solid gray;
+}
+.cards_container aside a {
+  text-decoration: none;
+  color: black;
+}
+.cards_container aside a:active {
+  color: blue;
+}
+
+#product_description {
+  font-size: 11px;
+  background-color: lightgray;
+  height: 65px;
+  overflow: hidden;
+  column-width: 55vh;
+  padding: 3px;
+  margin-top: 3px;
+}
+
+.cart {
+  position: fixed;
+  display: none;
+  bottom: 0;
+  right: 0;
+  width: 30vw;
+  z-index: 1;
+  background-color: #F5F5F5;
+  font-family: "Dosis", sans-serif;
+  font-display: swap;
+  height: 85vh;
+  overflow-y: auto;
+}
+.cart header {
+  background-color: black;
+  color: white;
+}
+.cart h4 {
+  margin-top: 10px;
+}
+
+.added_items {
+  display: flex;
+  justify-content: space-around;
+  border: 1px solid white;
+  border-radius: 2px;
+  padding: 5px;
+  font-size: 12px;
+  background-color: white;
+  margin: 5px 0 5px 0;
+}
+.added_items input {
+  width: 20px;
+  border: none;
+}
+.added_items .item_container {
+  display: flex;
+  flex-direction: column;
+  width: 160px;
+}
+.added_items .item_container input {
+  border: none;
+}
+
+.cart_button {
+  border-radius: 20px;
+  margin: 2px;
+  padding: 0px;
+  width: 15px;
+}
+
+.cart_header {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px;
+}
+
+#cart-footer {
+  position: fixed;
+  bottom: 0;
+  width: 30vw;
+  background-color: white;
+}
+
+.cheaper-tag {
+  display: flex;
+  justify-content: space-evenly;
+  background-color: white;
+  padding: 5px;
+  margin: 10px;
+}
+.cheaper-tag img {
+  width: 85px;
+  height: 30px;
+}
+.cheaper-tag div {
+  font-size: 14px;
+}
+
+#close-cart {
+  cursor: pointer;
+}
+
+.promo {
+  text-align: center;
+}
+
+#checkout-button {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+/*# sourceMappingURL=product.css.map */
