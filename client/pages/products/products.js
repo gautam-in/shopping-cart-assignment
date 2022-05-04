@@ -29,13 +29,11 @@ async function renderCategoryList(){
         }
     }
     let categoryContainer = document.getElementById('category__list');
-    categoryContainer.innerHTML = template;
+    categoryContainer.innerHTML += template;
     categoryContainer.addEventListener('click', function(e){
         let element = e.target;
         if(element.hasAttribute('key')){
             renderProductsList(element.getAttribute('key'));
-        }else{
-            renderProductsList();
         }
     })
 }
@@ -100,6 +98,10 @@ function openCart(){
     }
 }
 
+function dropdownOnChange(e){
+    const id = '?'+e;
+    renderProductsList(id);
+}
 
 renderCategoryList();
 renderProductsList(window.location.search);

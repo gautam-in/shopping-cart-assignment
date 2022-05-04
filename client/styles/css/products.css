@@ -67,6 +67,9 @@ main {
 #atsymbol {
   display: none; }
 
+#dropdown__list {
+  display: none; }
+
 @media screen and (max-width: 848px) {
   #products__container {
     padding: 0;
@@ -103,4 +106,16 @@ main {
       padding: 9.5px 10px 9.5px 1.5px;
       margin: 0; }
   #atsymbol {
-    display: inline; } }
+    display: inline; }
+  #dropdown__list {
+    background-color: #D10157;
+    display: block;
+    width: 100vw;
+    height: 50px;
+    font-size: 20px;
+    color: white;
+    border: none;
+    padding: 0 10px;
+    outline: none; }
+  .category {
+    display: none; } }
