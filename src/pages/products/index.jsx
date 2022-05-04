@@ -19,10 +19,10 @@ class Products extends Component {
             <Container>
                 {isUserLoggedIn ? (
                     <Row>
-                        <Col xs={2}>
+                        <Col xs={2} className="m-hide">
                             <CategoryFilter />
                         </Col>
-                        <Col xs={10}>
+                        <Col xs={12} md={10}>
                             <ProductsList />
                         </Col>
                     </Row>

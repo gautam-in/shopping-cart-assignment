@@ -55,7 +55,7 @@ const CategoryContent = ({ category, exploreCategory }) => (
 );
 
 const CategoryImage = ({ category }) => (
-    <Col xs={6}>
+    <Col xs={6} className="d-flex align-items-center justify-content-center">
         <img src={category.imageUrl} alt={category.name} className="home-category-image" />
     </Col>
 );

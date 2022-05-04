@@ -16,7 +16,7 @@ class Header extends Component {
                 <Container>
                     <Row>
                         <Col xs="3">
-                            <img src="/static/images/logo.png" alt="logo" className='mb-1' />
+                            <img src="/static/images/logo.png" alt="logo" className='logo mb-1' />
                         </Col>
 
                         <Col xs="9">

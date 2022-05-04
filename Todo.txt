@@ -1,6 +1,4 @@
-cart functionality
-
-products page (products should only scroll), also the modal content in cart
+responsive cart (only content should scroll)
 
 style hr tag for home page
 

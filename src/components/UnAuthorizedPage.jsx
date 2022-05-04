@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 class UnAuthorizedPage extends Component {
     render() {
         return (
-            <section className="text-center">
+            <section className="text-center my-5">
                 <h5 className="text-danger">UnAuthorized access, please <Link to="/">Login</Link> to continue.</h5>
             </section>
         )

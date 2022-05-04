@@ -64,7 +64,7 @@ class Cart extends Component {
                         </Row>
                     )}
                 </ModalBody>
-                <ModalFooter>
+                <ModalFooter className='custom-modal-footer'>
                     {!isEmptyCart && <p className='mx-auto'>Promo code can be applied on payment page</p>}
                     <button className='checkout-btn' type='button' onClick={this.toggleModal}>
                         {isEmptyCart ? (
