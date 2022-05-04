@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Sabka Bazaar is an online cheapest food shopping site"
+    />
+    <title>Products</title>
+
+    <link
+      rel="preload"
+      href="https://fonts.googleapis.com/css2?family=Dosis:wght@300;400&display=swap"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+
+    <link
+      rel="preload"
+      href="../style/product.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <link
+      rel="preload"
+      href="../style/common.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    
+    <script src="../components/header.js" defer></script>
+    <script src="../components//footer.js" defer></script>
+    <script src="../components/cart.js" defer></script>
+
+  </head>
+  <body>
+    <header-component ></header-component>
+
+    <main class="cards_container">
+      <aside>
+        <ul id="filterData">
+          <li>
+            <a href="#" id="5b6899953d1a866534f516e2">Fruits & Vegetables</a>
+          </li>
+          <li>
+            <a href="#" id="5b6899123d1a866534f516de">Bakery Cakes & Dairy</a>
+          </li>
+          <li><a href="#" id="5b675e5e5936635728f9fc30">Beverages</a></li>
+          <li>
+            <a href="#" id="5b68994e3d1a866534f516df">Beauty & Hygiene</a>
+          </li>
+          <li><a href="#" id="5b6899683d1a866534f516e0">Baby Care</a></li>
+        </ul>
+      </aside>
+      <select  id="filter_dropdown" onchange="filterOnchange()">
+        <option value="5b6899953d1a866534f516e2">Fruits & Vegetables</option>
+        <option value="5b6899123d1a866534f516de">Bakery Cakes & Dairy</option>
+        <option value="5b675e5e5936635728f9fc30">Beverages</option>
+        <option value="5b68994e3d1a866534f516df">Beauty & Hygiene</option>
+        <option value="5b6899683d1a866534f516e0">Baby Care</option>
+      </select>
+      <section class="all_cards"></section>
+    </main>
+
+    <section class="cart">
+      <cart-component></cart-component>
+    </section>
+    <footer-component></footer-component>
+    <script src="./products.js"></script>
+
+  </body>
+</html>
