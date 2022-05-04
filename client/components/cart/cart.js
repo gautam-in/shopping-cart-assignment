@@ -21,7 +21,7 @@ class Cart{
             
             <footer id="cart__container__footer">
                 <span>Promo code can be applied on payment page</span>
-                <button>
+                <button id="checkout__btn">
                     <span>Proceed to Checkout</span>
                     <span id="t__price">Rs. 0 &gt;</span>
                 </button>
@@ -29,6 +29,7 @@ class Cart{
         </section>
         `)
 
+        document.getElementById('checkout__btn').addEventListener('click', this.removeCart);
         document.getElementById('close__cart').addEventListener('click', this.removeCart);
         document.getElementById('cart__container__main').innerHTML += `
         <div id="lowest-price">
@@ -41,7 +42,7 @@ class Cart{
 
     removeCart = () => {
         document.getElementById('cart__container').style.visibility = 'hidden';
-        document.getElementById('lowest-price').style.visibility = 'hidden';
+        document.getElementById('lowest-price').style.visibility = 'hidden';       
     }
 
     showCart = () => {
