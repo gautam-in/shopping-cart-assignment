@@ -18,7 +18,7 @@
     <script src="../components/header.js"></script>
     <script src="../components//footer.js"></script>
     <script>
-      function loginSubmit() {
+      function loginSubmit(e) {
         e.preventDefault();
       }
     </script>
@@ -35,7 +35,7 @@
           <form
             action="home.html"
             class="login_details"
-            onsubmit="loginSubmit(e)"
+            onsubmit="loginSubmit(event)"
           >
             <label for="uemail">Email : </label>
             <input type="email" name="uemail" id="uemail" required />

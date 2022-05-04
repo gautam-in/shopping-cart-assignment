@@ -18,11 +18,21 @@
     <script src="../components/header.js"></script>
     <script src="../components//footer.js"></script>
     <script>
-        function submitRegistration(e){
-            e.preventDefault();
+      function submitRegistration(e) {
+        e.preventDefault();
+
+
+        if (
+          document.getElementById("upassword").value !==
+          document.getElementById("ucpassword").value
+        ) {
+          alert("password doesn't match");
         }
+        else{
+            window.location.href = "home.html"
+        }
+      }
     </script>
-      
   </head>
   <body>
     <header-component></header-component>
@@ -33,7 +43,11 @@
           <div>We don't share your personal details with anyone</div>
         </div>
         <div>
-          <form action="home.html" class="register_details" onsubmit="submitRegistration(e)">
+          <form
+            
+            class="register_details"
+            onsubmit="submitRegistration(event)"
+          >
             <label for="ufname">First Name : </label>
             <input type="text" name="ufname" id="ufname" required />
             <label for="ulname">Last Name : </label>
@@ -56,7 +70,8 @@
               required
               pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}"
             />
-            <input type="submit" id="submit" value="Signup" />
+            <button type="submit">Signup</button>
+            <!-- <input type="submit" id="submit" value="Signup" /> -->
           </form>
         </div>
       </section>

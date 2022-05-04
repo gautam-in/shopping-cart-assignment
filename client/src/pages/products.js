@@ -165,7 +165,7 @@ function closeCart() {
   document.querySelector(".cart").style.display = "none";
 }
 
-function myFunction(){
+function filterOnchange(){
 let target = document.getElementById("filter_dropdown").value;
 
   let filteredProducts = allProducts.filter((product) => {

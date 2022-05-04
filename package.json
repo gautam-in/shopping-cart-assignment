@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "canned -p 5000 ./server",
-    "sass": "node-sass -w ./client/src/style -o ./client/src/style",
+    "sass": "node-sass -w ./client/src/scss -o ./client/src/style",
     "build": "webpack --config webpack.config.js"
   },
   "author": "",
