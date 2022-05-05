@@ -1,4 +1,4 @@
-import React from "react";
+import {Fragment} from "react";
 import Styled from "styled-components";
 import Button from "../Button/Button";
 import P from "../Typography/P";
@@ -9,6 +9,7 @@ const Card = Styled.div`
     padding: 10px;
     box-shadow: 10px 0 20px -15px rgba(0, 0, 0, 0.15);
     display: none;
+    min-height: 600px;
    @media (min-width: 1026px){
       display: inline-block;
     }
@@ -32,10 +33,11 @@ const Title = Styled.div`
 const Description = Styled.div`
   background-color: #f0f0f0;
   height: auto;
-  min-height: 80px;
+  min-height: 120px;
   padding: 5px;
-  overflow: hidden;
-  max-height: 180px;
+  overflow: auto;
+  max-height: 120px;
+
 `;
 
 const ImageContainer = Styled.div``;
@@ -54,25 +56,25 @@ const CTAContainer = Styled.div`
   font-size: 14px;
 `;
 
-const Desktop = ({ data }) => {
+const Desktop = ({ data, key, handleClick}) => {
   return (
-    <>
-      <Card>
+    <Fragment>
+      <Card key={key}>
         <Title>
-          <H3>{data?.name}</H3>
+          <H3>{data.name}</H3>
         </Title>
         <ImageContainer>
-          <Image src={data?.imageURL} alt={data?.name} />
+          <Image src={data.imageURL} alt={data.name} />
         </ImageContainer>
         <Description>
-          <P>{data?.description}</P>
+          <P>{data.description}</P>
         </Description>
         <CTAContainer>
-          <P>{`MRP Rs.${data?.price}`}</P>
-          <Button>Buy Now</Button>
+          <P>{`MRP Rs.${data.price}`}</P>
+          <Button onClick={() => handleClick(data)}>Buy Now</Button>
         </CTAContainer>
       </Card>
-    </>
+    </Fragment>
   );
 };
 

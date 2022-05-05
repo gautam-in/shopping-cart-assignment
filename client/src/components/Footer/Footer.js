@@ -4,6 +4,7 @@ import P from "../Typography/P";
 const Footer = Styled.footer`
   background-color: #eaeaea;
   padding: 18px 0;
+  margin-top: 60px ;
 `;
 
 const Content = Styled.div`

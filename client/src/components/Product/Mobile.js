@@ -1,4 +1,4 @@
-import React from "react";
+import { Fragment } from "react";
 import Styled from "styled-components";
 import Button from "../Button/Button";
 import H3 from "../Typography/H3";
@@ -52,10 +52,10 @@ const CTAContainer = Styled.div`
   justify-content: space-between;
 `;
 
-const Product = ({ data }) => {
+const Product = ({ data, key, handleClick}) => {
   return (
-    <>
-      <Card>
+    <Fragment>
+      <Card key={key}>
         <Title>
           <H3>{data?.name}</H3>
         </Title>
@@ -67,11 +67,11 @@ const Product = ({ data }) => {
             <Description>
               <P>{data?.description}</P>
             </Description>
-            <Button>Buy Now</Button>
+            <Button onClick={() => handleClick(data)}>Buy Now</Button>
           </CTAContainer>
         </ContentContainer>
       </Card>
-    </>
+    </Fragment>
   );
 };
 

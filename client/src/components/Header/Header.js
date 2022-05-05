@@ -17,7 +17,6 @@ const Header = Styled.header`
   display: flex;
   justify-content: space-between;
   box-shadow: 0 1px 5px rgba(95, 94, 94, 0.25);
-  margin-bottom: 8px;
 `;
 
 const Nav = Styled.nav`

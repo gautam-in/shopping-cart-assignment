@@ -8,23 +8,23 @@ import Products from "../../containers/Products/Products";
 
 const SectionContainer = Styled.section`
     display: flex;
-    @media(max-width: 480px){
+    @media(max-width: 766px){
        flex-direction: column;
     }
 `
 
 const LeftSection = Styled.div`
-    width: 30%;
+    width: 20%;
     background : #eee;
-    @media(max-width: 480px){
+    @media(max-width: 766px){
        width: 100%;
        background: none;
     }
 `
 
 const RightSection = Styled.div`
-    width: 70%;
-    @media(max-width: 480px){
+    width: 80%;
+    @media(max-width: 766px){
        width: 100%;
     }
 `

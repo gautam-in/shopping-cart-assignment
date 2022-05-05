@@ -1,4 +1,4 @@
-import React from "react";
+import { Fragment } from "react";
 import Styled from "styled-components";
 import Button from "../Button/Button";
 import H3 from "../Typography/H3";
@@ -47,10 +47,10 @@ const DescriptionContainer = Styled.div`
   height: auto;
 `;
 
-const Tablet = ({ data }) => {
+const Tablet = ({ data, key, handleClick }) => {
   return (
-    <>
-      <Card>
+    <Fragment>
+      <Card key={key}>
         <Title>
           <H3>{data?.name}</H3>
         </Title>
@@ -64,9 +64,9 @@ const Tablet = ({ data }) => {
             </Description>
           </DescriptionContainer>
         </ContentContainer>
-        <Button>Buy Now</Button>
+        <Button onClick={() => handleClick(data)}>Buy Now</Button>
       </Card>
-    </>
+    </Fragment>
   );
 };
 

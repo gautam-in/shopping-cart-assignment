@@ -2,8 +2,12 @@ import Product from "../../components/Product/Product";
 
 
 const Products = ({data}) => {
-  return data.map((val) => (
-        <Product data={val} />
+
+  const handleClick = (product) => {
+      console.log(product)
+  }
+  return data.map((val,i) => (
+        <Product data={val} key={i} handleClick={handleClick}/>
   ));
 };
 
