@@ -20,15 +20,15 @@ const DropdownContainer = Styled.div`
     }
 `;
 
-const SidebarContainerComponent = ({data}) => {
+const SidebarContainerComponent = ({...rest}) => {
   return (
     <>
       <SidebarContainer>
-        <VerticalNav data={data}/>
+        <VerticalNav {...rest}/>
       </SidebarContainer>
-      <DropdownContainer>
-        <Dropdown data={data}/>
-      </DropdownContainer>
+     <DropdownContainer>
+        <Dropdown {...rest}/>
+      </DropdownContainer> 
     </>
   );
 };

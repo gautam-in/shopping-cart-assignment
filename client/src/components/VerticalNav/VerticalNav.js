@@ -39,13 +39,13 @@ const VerticalNavTitle = Styled.div`
 //   color: #fff;
 // }
 
-const VerticalNav = ({data}) => {
+const VerticalNav = ({data,setSelectedCategoryId}) => {
   return (
     <>
       <VerticalNavContainer>
         <VerticalNavList>
           {data.map((val, i) => (
-            <VerticalNavItem key={i}>
+            <VerticalNavItem key={i} onClick={() => setSelectedCategoryId(val.id)}>
               <VerticalNavTitle>
                 <P> {val.name} </P>
               </VerticalNavTitle>

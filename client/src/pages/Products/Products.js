@@ -33,12 +33,16 @@ function ProductsPage() {
 
   const [ sidebarData, setSideBarData ] = useState([])
   const [ productsData, setProductsData ] = useState([])
+  const [ sidebarDataId, setSideBarDataId] = useState('')
+  const [filterProductsData, setFilterProductsData] = useState([])
+
 
   useEffect (() => {
     const getCategoriesData = async () => {
      let res = await axios.get('/categories')
       if(res.data){
         setSideBarData(res.data)
+        setSideBarDataId(res.data[0].id)
       }
     }
     getCategoriesData()
@@ -54,14 +58,26 @@ useEffect (() => {
   getProductsData()
 },[])
 
+useEffect(() => {
+
+  if(!isEmpty(productsData) && !isEmpty(sidebarDataId)){
+    function filteredProductsData (data,id) {
+      let result = data.filter((value) => value.category === id)
+      setFilterProductsData(result)
+    }
+    filteredProductsData(productsData,sidebarDataId)
+  }
+
+},[sidebarDataId,productsData])
+
   return (
     <Layout>
       <SectionContainer>
         <LeftSection>
-            {!isEmpty(sidebarData) && <Sidebar data={sidebarData}/> }
+            {!isEmpty(sidebarData) && <Sidebar data={sidebarData} setSelectedCategoryId={setSideBarDataId} selectedCategoryId={sidebarDataId}/> }
         </LeftSection>
         <RightSection>
-            {!isEmpty(productsData) && <Products data={productsData}/> }
+            {!isEmpty(filterProductsData) && <Products data={filterProductsData}/> }
         </RightSection>
       </SectionContainer>
     </Layout>

@@ -52,7 +52,7 @@ const ButtonContainer = Styled.div`
   max-width: 100%;
 `;
 
-const Category = ({ data: {imageUrl, name, description, id }}) => {
+const Category = ({ data: {imageUrl, name, description, id, key },handleClick}) => {
   return (
     <Fragment>
       <CategoryContainer key={id}>
@@ -63,7 +63,7 @@ const Category = ({ data: {imageUrl, name, description, id }}) => {
           <H2 alignCenter>{name}</H2>
           <P>{description}</P>
           <ButtonContainer>
-            <Button onClick={() => console.log("hello")} />
+            <Button onClick={() => handleClick()} >{`Explore ${key}`}</Button>
           </ButtonContainer>
         </CategoryDescription>
       </CategoryContainer>
