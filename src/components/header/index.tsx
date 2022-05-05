@@ -1,19 +1,16 @@
-import React, { useContext, useCallback, useState } from 'react';
+import React, { useContext, useCallback } from 'react';
 import { NavLink, useHistory } from 'react-router-dom';
-import { HOME, PRODUCTS, LOGIN, REGISTER } from '../../constants/routes';
+import { HOME, PRODUCTS, LOGIN, REGISTER, CART } from '../../constants/routes';
 import AppContext from '../../contexts/appContext/app-context';
-import Cart from '../cart';
 import './index.scss';
 
 const Header = () => {
     const {
         appState: { cartCount },
     } = useContext(AppContext);
-    const [openCart, setOpenCart] = useState(false);
     const history = useHistory();
 
     const handleRedirect = useCallback((route) => () => history.push(route), [history]);
-    const toggleCart = useCallback(() => setOpenCart(!openCart), [openCart]);
     const isActiveLink = ({ isActive }) => (isActive ? 'active' : '');
 
     return (
@@ -43,15 +40,12 @@ const Header = () => {
                             </NavLink>
                         </ul>
                     </nav>
-                    <button className="btn-cart" onClick={toggleCart}>
+                    <button className="btn-cart" onClick={handleRedirect(CART)}>
                         <img src="static/images/cart.svg" alt="cart icon" className="icon" id="outside" />
                         <span className="cart-text" id="cart-items">
                             <span className="cart-count">{cartCount}</span> Items
                         </span>
                     </button>
-                    <div id="desktop-cart" className="cart-main-cont" style={{ display: openCart ? 'block' : 'none' }}>
-                        <Cart closeCart={toggleCart} />
-                    </div>
                 </div>
             </div>
         </header>
