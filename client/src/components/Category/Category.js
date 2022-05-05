@@ -1,4 +1,7 @@
+import { Fragment} from "react";
 import Styled from "styled-components";
+import { isUndefined } from "lodash";
+import FallbackImage from "../../fallbackImage/fallback_image.jpg"
 import Button from "../Button/Button";
 import H2 from "../Typography/H2";
 
@@ -51,10 +54,10 @@ const ButtonContainer = Styled.div`
 
 const Category = ({ data: {imageUrl, name, description, id }}) => {
   return (
-    <>
+    <Fragment>
       <CategoryContainer key={id}>
         <CategoryImageContainer>
-          <CategoryImage src={imageUrl} alt={name} />
+          <CategoryImage src={!isUndefined(imageUrl) ? imageUrl : FallbackImage} alt={name} />
         </CategoryImageContainer>
         <CategoryDescription>
           <H2 alignCenter>{name}</H2>
@@ -64,7 +67,7 @@ const Category = ({ data: {imageUrl, name, description, id }}) => {
           </ButtonContainer>
         </CategoryDescription>
       </CategoryContainer>
-    </>
+    </Fragment>
   );
 };
 

@@ -8,6 +8,7 @@
     "start": "canned -p 8080 ./server",
     "server": "npm run start",
     "client": "npm start --prefix client",
+    "storybook": "npm run storybook --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "author": "",
