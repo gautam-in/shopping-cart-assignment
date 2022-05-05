@@ -1,3 +1,5 @@
+@import '../../Colors.scss';
+
 .banner-component {
     position: relative;
     box-shadow: 0 25px 31px -20px rgba(0, 0, 0, 0.22);
@@ -25,7 +27,7 @@
             margin: 15px 0px 0px 0px;
         }
         .link-button {
-            background: #d00256;
+            background: $primary_color;
             padding: 8px 15px;
             border: none;
             font-size: x-small;

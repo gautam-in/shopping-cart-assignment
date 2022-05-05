@@ -1,8 +1,13 @@
-import React, { useCallback, useContext } from 'react';
+import React, { FC, useCallback, useContext } from 'react';
 import AppContext from '../../contexts/appContext/app-context';
+import { Product } from '../../services/AppService';
 import './index.scss';
 
-const ProductCard = ({ product }) => {
+interface ProductCardProps {
+    product: Product;
+}
+
+const ProductCard: FC<ProductCardProps> = ({ product }) => {
     const { updateCart } = useContext(AppContext);
 
     const handleClick = useCallback(() => {

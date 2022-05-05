@@ -1,3 +1,5 @@
+@import '../../Colors.scss';
+
 .no-item-text {
     text-align: center;
 }
@@ -6,7 +8,7 @@
     display: none;
     right: 0;
     top: 65px;
-    background: #efefef;
+    background: $primary_bg_color;
     z-index: 13;
     .cart-container {
         position: relative;
@@ -20,7 +22,7 @@
             bottom: 0;
         }
         .checkout-button {
-            background: #d00256;
+            background: $primary_color;
             border: none;
             width: 100%;
             color: #fff;
@@ -99,7 +101,7 @@
     }
 }
 .btn-increment {
-    background-color: #d00256;
+    background-color: $primary_color;
     border: none;
     padding: 2px 5px 2px 5px;
     height: 30px;
@@ -111,7 +113,7 @@
     cursor: pointer;
 }
 .btn-decrement {
-    background-color: #d00256;
+    background-color: $primary_color;
     border: none;
     padding: 2px 5px 2px 5px;
     height: 30px;

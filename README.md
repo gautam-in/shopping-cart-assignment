@@ -6,11 +6,15 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 2. Install Yarn using <a href="https://classic.yarnpkg.com/en/docs/install">this</a>.
 
-3. Go to the checked out project folder and run the command `yarn install` 
+3. Go to the checked out project folder and run the command `yarn install`
 
 ## Available Scripts
 
 In the project directory, you can run:
+
+### `yarn serve`
+
+Runs the backend server at [http://localhost:5000](http://localhost:5000).
 
 ### `yarn start`
 
@@ -25,7 +29,7 @@ You will also see any lint errors in the console.
 Launches the test runner in the interactive watch mode.<br />
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `yarn run build:development`
+### `yarn build`
 
 Builds the app for development (takes .env.development) to the `build` folder.<br />
 It correctly bundles React in production mode and optimizes the build for the best performance.
@@ -35,31 +39,11 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `yarn run build:qa`
-
-Builds the app for staging (takes .env.qa) to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn run build:production`
-
-Builds the app for production (takes .env.production) to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn run typescript`
+### `yarn typescript`
 
 To check the typescript errors
 
-### `yarn run lint`
+### `yarn lint`
 
 To check the eslint errors
 

@@ -22,7 +22,7 @@ const Products = () => {
 
     return (
         <main className="product container" id="products-list-container" role="main">
-            <ProductCategory category={categories} />
+            <ProductCategory categories={categories} />
             <section id="products-cards-container" className="product-cards-container">
                 <ul
                     className="product-list"
@@ -35,10 +35,10 @@ const Products = () => {
                         listStyle: 'none',
                     }}>
                     {selectedCategory === null && products.length > 0
-                        ? products.map((item) => <ProductCard product={item} key={item.id} />)
+                        ? products.map((product) => <ProductCard product={product} key={product.id} />)
                         : products
-                              .filter((item) => item.category === selectedCategory)
-                              .map((item) => <ProductCard product={item} key={item.id} />)}
+                              .filter((product) => product.category === selectedCategory)
+                              .map((product) => <ProductCard product={product} key={product.id} />)}
                 </ul>
             </section>
         </main>
