@@ -5,11 +5,17 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "canned -p 5000 ./server"
+    "start": "canned -p 8080 ./server",
+    "server": "npm run start",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "author": "",
   "license": "MIT",
   "dependencies": {
     "canned": "^0.3.12"
+  },
+  "devDependencies": {
+    "concurrently": "^7.1.0"
   }
 }
