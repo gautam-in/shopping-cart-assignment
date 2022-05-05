@@ -1,15 +1,24 @@
-# XT Shopping Cart Assignment
+# E-comm project by Uma Avula
 
-This is the base folder for the shopping cart exercise. You will have all the static assets and mock server responses available in this repo.
+### Available Features 
 
-## Getting Started
+- Responsive UI
+- Log in & Register components
+- Products Listing
+- Filtering of products by categories
+- Cart
+- Logout
 
-Clone this repo and run following command for starting the mock server:
+### Process for local set up
 
-```
-npm install
-npm run start
-# or
-yarn install
-yarn start
-```
+- Clone the repo
+- Install dependencies using `npm install`
+- Run the project using `npm start`
+- Open `http://localhost:3000` inorder to view the application, `http://localhost:5000` for api server
+
+
+
+
+
+
+
