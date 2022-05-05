@@ -1,0 +1,117 @@
+body {
+  margin: 0;
+  font-family: 'Dosis', sans-serif;
+  position: relative; }
+
+#cart__container {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  width: 500px;
+  height: 700px;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  flex-direction: column; }
+
+#cart__container__header {
+  background-color: black;
+  color: white;
+  padding: 5px 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; }
+  #cart__container__header button {
+    cursor: pointer;
+    color: white;
+    background-color: transparent;
+    border: none; }
+
+#cart__container__main {
+  background-color: #eee;
+  width: 100%;
+  height: 75%;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto; }
+
+#cart__container__footer {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: solid 1px lightgrey;
+  padding: 5px 10px; }
+  #cart__container__footer button {
+    cursor: pointer;
+    margin: 20px 0;
+    padding: 0 30px;
+    width: 100%;
+    height: 40px;
+    border-radius: 3px;
+    border-style: none;
+    color: white;
+    background-color: #D10157;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; }
+
+.pc__container {
+  background-color: white;
+  display: flex;
+  width: 95%;
+  margin: 5px;
+  padding: 5px;
+  height: 130px;
+  border-radius: 3px; }
+
+.pc__desc {
+  display: flex;
+  flex-direction: column;
+  padding: 5px 0px 5px 10px;
+  width: 300px;
+  font-size: 1rem; }
+  .pc__desc button {
+    border-radius: 50%;
+    background-color: #D10157;
+    border: none;
+    font-weight: bold;
+    padding: 5px 10px;
+    color: white;
+    margin: 0 20px;
+    cursor: pointer; }
+
+.pc__productprice {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+#lowest-price {
+  display: flex;
+  background-color: white;
+  padding: 5px;
+  margin: 10px; }
+
+@media screen and (max-width: 848px) {
+  #cart__container {
+    width: 100vw;
+    height: 90vh;
+    bottom: 0;
+    right: 0; } }
+
+@media screen and (max-width: 480px) {
+  #cart__container {
+    width: 100vw;
+    height: 100vh;
+    bottom: 0;
+    right: 0; }
+  .pc__container {
+    margin: 10px 0px; }
+  .pc__desc {
+    width: 200px;
+    font-size: 0.8rem; }
+    .pc__desc button {
+      border-radius: 3px;
+      margin: 0 10px; } }

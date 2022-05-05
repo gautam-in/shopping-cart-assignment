@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="title" content="Sabka Bazaar">
+    <meta name="description" content="E commerce site for day to day products">
+    <meta name="keywords" content="shopping, bazaar, e commerce, products">
+    <title>Register | Sabka Bazaar</title>
+    <link href="../../styles/css/common.css" rel="stylesheet">
+    <link href="../../styles/css/register.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200;400;600;700&display=swap" rel="stylesheet">
+    <script src="../../components/footer/footer.js" defer></script>
+    <script src="../../components/header/header.js" defer></script>
+    <script src="./register.js" defer></script>
+</head>
+<body>
+    <uc-header></uc-header>
+    <main class="register__container">
+        <section class="register__heading">
+            <h1>Signup</h1>
+            <p>We do not share your personal details with anyone.</p>
+        </section>
+        <section>
+            <section id="error__block">
+
+            </section>
+            <form class="register__form" onsubmit="registerUser(event)">
+                <div>
+                    <input type="text" id="firstname" required/>
+                    <label for="firstname">First Name</label>
+                </div>
+                <div>
+                    <input type="text" id="lastname" required/>
+                    <label for="lastname" >Last Name</label>
+                </div>
+                <div>
+                    <input type="email" id="email" required/>
+                    <label for="email">Email</label>
+                </div>
+                <div>
+                    <input type="password" id="password" minlength="6" required/>
+                    <label for="password">Password</label>
+                </div>
+                <div>
+                    <input type="password" id="cfmPassword" minlength="6" required/>
+                    <label for="cfmPassword">Confirm Password</label>
+                </div>
+                <button type="submit">Signup</button>
+            </form>
+        </section>
+    </main>
+    <uc-footer></uc-footer>
+</body>
+</html>

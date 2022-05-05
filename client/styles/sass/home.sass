@@ -1,0 +1,83 @@
+main
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    width: 100%
+    
+.carousel
+    display: flex
+    flex-wrap: nowrap
+    overflow-x: hidden
+    width: 70%
+    position: relative
+    div
+        display: none
+        box-shadow: 0 10px 6px -6px #777
+        img
+            width: 100%
+    
+.carousel__button
+    position: absolute
+    opacity: 8.5
+    border: transparent
+
+.prev, .next
+    top: 50%
+    background-color: #666
+    opacity: 8.5
+    cursor: pointer
+    color: white
+    font-size: 11px
+    padding: 5px
+
+.prev
+    left: 0
+
+.next
+    right: 0
+
+#categories
+    display: flex
+    justify-content: center
+    align-items: center
+    flex-direction: column
+    width: 70%
+
+.categories__container
+    display: flex
+    justify-content: space-between
+    align-items: center
+    width: 100%
+    margin: 10px 0
+    box-shadow: 0 8px 8px -4px rgba(0, 0, 0, 0.2)
+    
+
+.categories__image
+    width: 250px
+
+.categories__summary
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    width: 500px
+    button
+        height: 35px
+        background-color: #D10157
+        color: white
+        border-style: none
+        cursor: pointer
+        margin: 10px 0
+
+.categories__container:nth-child(2n)
+    flex-direction: row-reverse
+
+@media screen and (max-width: 480px)
+    .carousel, #categories
+        width: 90%
+    .categories__image
+        width: 100px
+    .categories__summary
+        width: auto
+        font-size: 10px
