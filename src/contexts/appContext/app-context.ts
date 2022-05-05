@@ -1,14 +1,7 @@
 import { createContext } from 'react';
+import { Product } from '../../services/AppService';
 
-export interface ProductItem {
-    name: string,
-    imageURL: string,
-    description: string,
-    price: number,
-    stock: number,
-    category: string,
-    sku: string,
-    id: string,
+export interface CartItem extends Product{
     qty: number,
 }
 
@@ -16,14 +9,14 @@ export type SelectedCategory = string | null;
 
 export interface AppState {
     cartCount: number,
-    cartItems: ProductItem[],
+    cartItems: CartItem[],
     selectedCategory: SelectedCategory,
 }
 
 export interface AppContextProps {
     appState: AppState;
-    updateCart: (item: ProductItem) => void;
-    removeCart: (item: ProductItem) => void;
+    updateCart: (item: CartItem) => void;
+    removeCart: (item: CartItem) => void;
     setSelectedCategory: (selectedCategory: SelectedCategory) => void;
 }
 

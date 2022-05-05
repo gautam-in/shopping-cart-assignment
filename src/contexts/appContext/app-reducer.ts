@@ -1,10 +1,10 @@
 import get from "lodash/get";
-import { AppState, ProductItem, SelectedCategory } from './app-context';
+import { AppState, CartItem, SelectedCategory } from './app-context';
 import {  REMOVE_CART_ITEM, SET_SELECTED_CATEGORY, UPDATE_CART_ITEM } from '../../constants/actions';
 
 interface Action {
     type: string;
-    payload: ProductItem | SelectedCategory;
+    payload: CartItem | SelectedCategory;
 }
 
 const appReducer = (state: AppState, action: Action) => {
@@ -23,7 +23,7 @@ const appReducer = (state: AppState, action: Action) => {
     //             }),
     //         };
     //     } else {
-    //         const items:ProductItem = payload as ProductItem;
+    //         const items:CartItem = payload as CartItem;
     //         return {
     //         ...state,
     //         cartCount: state.cartCount + 1,
