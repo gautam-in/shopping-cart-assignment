@@ -10,6 +10,10 @@ const Card = Styled.div`
     margin-bottom: 10px;
     border-bottom: 1px dashed #ccc;
     box-shadow: 10px 0 20px -15px rgba(0, 0, 0, 0.15);
+    display: none;
+   @media (min-width: 767px) and (max-width: 1024px){
+      display: inline-block;
+    }
 `;
 
 const Title = Styled.div`

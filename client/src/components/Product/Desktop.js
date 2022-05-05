@@ -8,21 +8,25 @@ const Card = Styled.div`
     width: 25%;
     padding: 10px;
     box-shadow: 10px 0 20px -15px rgba(0, 0, 0, 0.15);
+    display: none;
+   @media (min-width: 1026px){
+      display: inline-block;
+    }
 
-  @media (max-width: 480px) {
-    width: 100% !important;
-    box-shadow: none;
-    margin: 0;
-}
-
-@media (max-width: 768px) {
-    width: 50%;
-}
+    @media (max-width: 480px) {
+      width: 100% !important;
+      box-shadow: none;
+      margin: 0;
+  }
+    @media (max-width: 768px) {
+        width: 50%;
+    }
 `;
 
 const Title = Styled.div`
     margin: 10px 0 20px 0;
     height: 50px;
+    max-height: 80px;
 `;
 
 const Description = Styled.div`
@@ -31,6 +35,7 @@ const Description = Styled.div`
   min-height: 80px;
   padding: 5px;
   overflow: hidden;
+  max-height: 180px;
 `;
 
 const ImageContainer = Styled.div``;

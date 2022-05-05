@@ -1,7 +1,7 @@
 import Styled from "styled-components";
 import P from "../Typography/P";
-const VerticalNavContainer = Styled.div`
-  height: 100vh;
+const VerticalNavContainer = Styled.aside`
+  /* height: 100vh; */
   width: 100%;
   background-color: #eee;
 `;

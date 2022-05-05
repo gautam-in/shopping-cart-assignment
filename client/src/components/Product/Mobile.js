@@ -9,6 +9,10 @@ const Card = Styled.div`
     padding: 10px;
     margin-bottom: 10px;
     box-shadow: 10px 0 20px -15px rgba(0, 0, 0, 0.15);
+    display: none;
+   @media (max-width: 766px){
+      display: inline-block;
+    }
 `;
 
 const Title = Styled.div`
